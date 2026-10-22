@@ -15,17 +15,19 @@ class _$PlaceWeatherDigestNowAlertsStatus
   @override
   final String? statusText;
 
-  factory _$PlaceWeatherDigestNowAlertsStatus(
-          [void Function(PlaceWeatherDigestNowAlertsStatusBuilder)? updates]) =>
-      (PlaceWeatherDigestNowAlertsStatusBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNowAlertsStatus([
+    void Function(PlaceWeatherDigestNowAlertsStatusBuilder)? updates,
+  ]) => (PlaceWeatherDigestNowAlertsStatusBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestNowAlertsStatus._(
-      {required this.status, this.asOf, this.statusText})
-      : super._();
+  _$PlaceWeatherDigestNowAlertsStatus._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+  }) : super._();
   @override
   PlaceWeatherDigestNowAlertsStatus rebuild(
-          void Function(PlaceWeatherDigestNowAlertsStatusBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNowAlertsStatusBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNowAlertsStatusBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$PlaceWeatherDigestNowAlertsStatus
 
 class PlaceWeatherDigestNowAlertsStatusBuilder
     implements
-        Builder<PlaceWeatherDigestNowAlertsStatus,
-            PlaceWeatherDigestNowAlertsStatusBuilder> {
+        Builder<
+          PlaceWeatherDigestNowAlertsStatus,
+          PlaceWeatherDigestNowAlertsStatusBuilder
+        > {
   _$PlaceWeatherDigestNowAlertsStatus? _$v;
 
   WeatherSectionStatus? _status;
@@ -100,7 +104,8 @@ class PlaceWeatherDigestNowAlertsStatusBuilder
 
   @override
   void update(
-      void Function(PlaceWeatherDigestNowAlertsStatusBuilder)? updates) {
+    void Function(PlaceWeatherDigestNowAlertsStatusBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -108,10 +113,14 @@ class PlaceWeatherDigestNowAlertsStatusBuilder
   PlaceWeatherDigestNowAlertsStatus build() => _build();
 
   _$PlaceWeatherDigestNowAlertsStatus _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherDigestNowAlertsStatus._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherDigestNowAlertsStatus', 'status'),
+            status,
+            r'PlaceWeatherDigestNowAlertsStatus',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
         );

@@ -28,10 +28,10 @@ SocialVolumeScopeTypeEnum _$socialVolumeScopeTypeEnumValueOf(String name) {
 
 final BuiltSet<SocialVolumeScopeTypeEnum> _$socialVolumeScopeTypeEnumValues =
     BuiltSet<SocialVolumeScopeTypeEnum>(const <SocialVolumeScopeTypeEnum>[
-  _$socialVolumeScopeTypeEnum_topic,
-  _$socialVolumeScopeTypeEnum_place,
-  _$socialVolumeScopeTypeEnum_entity,
-]);
+      _$socialVolumeScopeTypeEnum_topic,
+      _$socialVolumeScopeTypeEnum_place,
+      _$socialVolumeScopeTypeEnum_entity,
+    ]);
 
 Serializer<SocialVolumeScopeTypeEnum> _$socialVolumeScopeTypeEnumSerializer =
     _$SocialVolumeScopeTypeEnumSerializer();
@@ -55,16 +55,20 @@ class _$SocialVolumeScopeTypeEnumSerializer
   final String wireName = 'SocialVolumeScopeTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialVolumeScopeTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialVolumeScopeTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialVolumeScopeTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialVolumeScopeTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialVolumeScopeTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialVolumeScope extends SocialVolumeScope {
@@ -73,9 +77,9 @@ class _$SocialVolumeScope extends SocialVolumeScope {
   @override
   final String id;
 
-  factory _$SocialVolumeScope(
-          [void Function(SocialVolumeScopeBuilder)? updates]) =>
-      (SocialVolumeScopeBuilder()..update(updates))._build();
+  factory _$SocialVolumeScope([
+    void Function(SocialVolumeScopeBuilder)? updates,
+  ]) => (SocialVolumeScopeBuilder()..update(updates))._build();
 
   _$SocialVolumeScope._({required this.type, required this.id}) : super._();
   @override
@@ -150,12 +154,19 @@ class SocialVolumeScopeBuilder
   SocialVolumeScope build() => _build();
 
   _$SocialVolumeScope _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialVolumeScope._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'SocialVolumeScope', 'type'),
+            type,
+            r'SocialVolumeScope',
+            'type',
+          ),
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'SocialVolumeScope', 'id'),
+            id,
+            r'SocialVolumeScope',
+            'id',
+          ),
         );
     replace(_$result);
     return _$result;

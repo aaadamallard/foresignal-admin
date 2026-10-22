@@ -9,17 +9,18 @@ part of 'corroboration_payload.dart';
 const CorroborationPayloadStatusEnum _$corroborationPayloadStatusEnum_ok =
     const CorroborationPayloadStatusEnum._('ok');
 const CorroborationPayloadStatusEnum
-    _$corroborationPayloadStatusEnum_insufficientData =
+_$corroborationPayloadStatusEnum_insufficientData =
     const CorroborationPayloadStatusEnum._('insufficientData');
 const CorroborationPayloadStatusEnum
-    _$corroborationPayloadStatusEnum_noCoverage =
+_$corroborationPayloadStatusEnum_noCoverage =
     const CorroborationPayloadStatusEnum._('noCoverage');
 const CorroborationPayloadStatusEnum
-    _$corroborationPayloadStatusEnum_degradedInput =
+_$corroborationPayloadStatusEnum_degradedInput =
     const CorroborationPayloadStatusEnum._('degradedInput');
 
 CorroborationPayloadStatusEnum _$corroborationPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$corroborationPayloadStatusEnum_ok;
@@ -35,29 +36,32 @@ CorroborationPayloadStatusEnum _$corroborationPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<CorroborationPayloadStatusEnum>
-    _$corroborationPayloadStatusEnumValues = BuiltSet<
-        CorroborationPayloadStatusEnum>(const <CorroborationPayloadStatusEnum>[
-  _$corroborationPayloadStatusEnum_ok,
-  _$corroborationPayloadStatusEnum_insufficientData,
-  _$corroborationPayloadStatusEnum_noCoverage,
-  _$corroborationPayloadStatusEnum_degradedInput,
-]);
+_$corroborationPayloadStatusEnumValues =
+    BuiltSet<CorroborationPayloadStatusEnum>(
+      const <CorroborationPayloadStatusEnum>[
+        _$corroborationPayloadStatusEnum_ok,
+        _$corroborationPayloadStatusEnum_insufficientData,
+        _$corroborationPayloadStatusEnum_noCoverage,
+        _$corroborationPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 const CorroborationPayloadKindFamilyEnum
-    _$corroborationPayloadKindFamilyEnum_earthquake =
+_$corroborationPayloadKindFamilyEnum_earthquake =
     const CorroborationPayloadKindFamilyEnum._('earthquake');
 const CorroborationPayloadKindFamilyEnum
-    _$corroborationPayloadKindFamilyEnum_fire =
+_$corroborationPayloadKindFamilyEnum_fire =
     const CorroborationPayloadKindFamilyEnum._('fire');
 const CorroborationPayloadKindFamilyEnum
-    _$corroborationPayloadKindFamilyEnum_conflict =
+_$corroborationPayloadKindFamilyEnum_conflict =
     const CorroborationPayloadKindFamilyEnum._('conflict');
 const CorroborationPayloadKindFamilyEnum
-    _$corroborationPayloadKindFamilyEnum_outage =
+_$corroborationPayloadKindFamilyEnum_outage =
     const CorroborationPayloadKindFamilyEnum._('outage');
 
 CorroborationPayloadKindFamilyEnum _$corroborationPayloadKindFamilyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'earthquake':
       return _$corroborationPayloadKindFamilyEnum_earthquake;
@@ -73,35 +77,37 @@ CorroborationPayloadKindFamilyEnum _$corroborationPayloadKindFamilyEnumValueOf(
 }
 
 final BuiltSet<CorroborationPayloadKindFamilyEnum>
-    _$corroborationPayloadKindFamilyEnumValues = BuiltSet<
-        CorroborationPayloadKindFamilyEnum>(const <CorroborationPayloadKindFamilyEnum>[
-  _$corroborationPayloadKindFamilyEnum_earthquake,
-  _$corroborationPayloadKindFamilyEnum_fire,
-  _$corroborationPayloadKindFamilyEnum_conflict,
-  _$corroborationPayloadKindFamilyEnum_outage,
-]);
+_$corroborationPayloadKindFamilyEnumValues =
+    BuiltSet<CorroborationPayloadKindFamilyEnum>(
+      const <CorroborationPayloadKindFamilyEnum>[
+        _$corroborationPayloadKindFamilyEnum_earthquake,
+        _$corroborationPayloadKindFamilyEnum_fire,
+        _$corroborationPayloadKindFamilyEnum_conflict,
+        _$corroborationPayloadKindFamilyEnum_outage,
+      ],
+    );
 
 const CorroborationPayloadReliabilityEnum
-    _$corroborationPayloadReliabilityEnum_A =
+_$corroborationPayloadReliabilityEnum_A =
     const CorroborationPayloadReliabilityEnum._('A');
 const CorroborationPayloadReliabilityEnum
-    _$corroborationPayloadReliabilityEnum_B =
+_$corroborationPayloadReliabilityEnum_B =
     const CorroborationPayloadReliabilityEnum._('B');
 const CorroborationPayloadReliabilityEnum
-    _$corroborationPayloadReliabilityEnum_C =
+_$corroborationPayloadReliabilityEnum_C =
     const CorroborationPayloadReliabilityEnum._('C');
 const CorroborationPayloadReliabilityEnum
-    _$corroborationPayloadReliabilityEnum_D =
+_$corroborationPayloadReliabilityEnum_D =
     const CorroborationPayloadReliabilityEnum._('D');
 const CorroborationPayloadReliabilityEnum
-    _$corroborationPayloadReliabilityEnum_E =
+_$corroborationPayloadReliabilityEnum_E =
     const CorroborationPayloadReliabilityEnum._('E');
 const CorroborationPayloadReliabilityEnum
-    _$corroborationPayloadReliabilityEnum_F =
+_$corroborationPayloadReliabilityEnum_F =
     const CorroborationPayloadReliabilityEnum._('F');
 
 CorroborationPayloadReliabilityEnum
-    _$corroborationPayloadReliabilityEnumValueOf(String name) {
+_$corroborationPayloadReliabilityEnumValueOf(String name) {
   switch (name) {
     case 'A':
       return _$corroborationPayloadReliabilityEnum_A;
@@ -121,24 +127,26 @@ CorroborationPayloadReliabilityEnum
 }
 
 final BuiltSet<CorroborationPayloadReliabilityEnum>
-    _$corroborationPayloadReliabilityEnumValues = BuiltSet<
-        CorroborationPayloadReliabilityEnum>(const <CorroborationPayloadReliabilityEnum>[
-  _$corroborationPayloadReliabilityEnum_A,
-  _$corroborationPayloadReliabilityEnum_B,
-  _$corroborationPayloadReliabilityEnum_C,
-  _$corroborationPayloadReliabilityEnum_D,
-  _$corroborationPayloadReliabilityEnum_E,
-  _$corroborationPayloadReliabilityEnum_F,
-]);
+_$corroborationPayloadReliabilityEnumValues =
+    BuiltSet<CorroborationPayloadReliabilityEnum>(
+      const <CorroborationPayloadReliabilityEnum>[
+        _$corroborationPayloadReliabilityEnum_A,
+        _$corroborationPayloadReliabilityEnum_B,
+        _$corroborationPayloadReliabilityEnum_C,
+        _$corroborationPayloadReliabilityEnum_D,
+        _$corroborationPayloadReliabilityEnum_E,
+        _$corroborationPayloadReliabilityEnum_F,
+      ],
+    );
 
 Serializer<CorroborationPayloadStatusEnum>
-    _$corroborationPayloadStatusEnumSerializer =
+_$corroborationPayloadStatusEnumSerializer =
     _$CorroborationPayloadStatusEnumSerializer();
 Serializer<CorroborationPayloadKindFamilyEnum>
-    _$corroborationPayloadKindFamilyEnumSerializer =
+_$corroborationPayloadKindFamilyEnumSerializer =
     _$CorroborationPayloadKindFamilyEnumSerializer();
 Serializer<CorroborationPayloadReliabilityEnum>
-    _$corroborationPayloadReliabilityEnumSerializer =
+_$corroborationPayloadReliabilityEnumSerializer =
     _$CorroborationPayloadReliabilityEnumSerializer();
 
 class _$CorroborationPayloadStatusEnumSerializer
@@ -163,16 +171,19 @@ class _$CorroborationPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, CorroborationPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CorroborationPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CorroborationPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CorroborationPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CorroborationPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CorroborationPayloadKindFamilyEnumSerializer
@@ -197,16 +208,19 @@ class _$CorroborationPayloadKindFamilyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, CorroborationPayloadKindFamilyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CorroborationPayloadKindFamilyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CorroborationPayloadKindFamilyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CorroborationPayloadKindFamilyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CorroborationPayloadKindFamilyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CorroborationPayloadReliabilityEnumSerializer
@@ -230,23 +244,26 @@ class _$CorroborationPayloadReliabilityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CorroborationPayloadReliabilityEnum
+    CorroborationPayloadReliabilityEnum,
   ];
   @override
   final String wireName = 'CorroborationPayloadReliabilityEnum';
 
   @override
   Object serialize(
-          Serializers serializers, CorroborationPayloadReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CorroborationPayloadReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CorroborationPayloadReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CorroborationPayloadReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CorroborationPayloadReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CorroborationPayload extends CorroborationPayload {
@@ -273,27 +290,27 @@ class _$CorroborationPayload extends CorroborationPayload {
   @override
   final CorroborationPayloadReliabilityEnum? reliability;
 
-  factory _$CorroborationPayload(
-          [void Function(CorroborationPayloadBuilder)? updates]) =>
-      (CorroborationPayloadBuilder()..update(updates))._build();
+  factory _$CorroborationPayload([
+    void Function(CorroborationPayloadBuilder)? updates,
+  ]) => (CorroborationPayloadBuilder()..update(updates))._build();
 
-  _$CorroborationPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.kindFamily,
-      required this.members,
-      required this.independentSources,
-      required this.credibility,
-      this.reliability})
-      : super._();
+  _$CorroborationPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.kindFamily,
+    required this.members,
+    required this.independentSources,
+    required this.credibility,
+    this.reliability,
+  }) : super._();
   @override
   CorroborationPayload rebuild(
-          void Function(CorroborationPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorroborationPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorroborationPayloadBuilder toBuilder() =>
@@ -448,26 +465,43 @@ class CorroborationPayloadBuilder
   _$CorroborationPayload _build() {
     _$CorroborationPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorroborationPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'CorroborationPayload', 'automated'),
+              automated,
+              r'CorroborationPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'CorroborationPayload', 'notAWarning'),
+              notAWarning,
+              r'CorroborationPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'CorroborationPayload', 'status'),
+              status,
+              r'CorroborationPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             kindFamily: BuiltValueNullFieldError.checkNotNull(
-                kindFamily, r'CorroborationPayload', 'kindFamily'),
+              kindFamily,
+              r'CorroborationPayload',
+              'kindFamily',
+            ),
             members: members.build(),
             independentSources: BuiltValueNullFieldError.checkNotNull(
-                independentSources,
-                r'CorroborationPayload',
-                'independentSources'),
+              independentSources,
+              r'CorroborationPayload',
+              'independentSources',
+            ),
             credibility: BuiltValueNullFieldError.checkNotNull(
-                credibility, r'CorroborationPayload', 'credibility'),
+              credibility,
+              r'CorroborationPayload',
+              'credibility',
+            ),
             reliability: reliability,
           );
     } catch (_) {
@@ -483,7 +517,10 @@ class CorroborationPayloadBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorroborationPayload', _$failedField, e.toString());
+          r'CorroborationPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

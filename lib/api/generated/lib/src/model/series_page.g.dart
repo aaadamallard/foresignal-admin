@@ -91,11 +91,8 @@ class SeriesPageBuilder implements Builder<SeriesPage, SeriesPageBuilder> {
   _$SeriesPage _build() {
     _$SeriesPage _$result;
     try {
-      _$result = _$v ??
-          _$SeriesPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$SeriesPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class SeriesPageBuilder implements Builder<SeriesPage, SeriesPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesPage', _$failedField, e.toString());
+          r'SeriesPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -24,9 +24,9 @@ abstract class IntelligenceEventContext
 
   IntelligenceEventContext._();
 
-  factory IntelligenceEventContext(
-          [void updates(IntelligenceEventContextBuilder b)]) =
-      _$IntelligenceEventContext;
+  factory IntelligenceEventContext([
+    void updates(IntelligenceEventContextBuilder b),
+  ]) = _$IntelligenceEventContext;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelligenceEventContextBuilder b) => b;
@@ -41,7 +41,7 @@ class _$IntelligenceEventContextSerializer
   @override
   final Iterable<Type> types = const [
     IntelligenceEventContext,
-    _$IntelligenceEventContext
+    _$IntelligenceEventContext,
   ];
 
   @override
@@ -56,8 +56,10 @@ class _$IntelligenceEventContextSerializer
       yield r'weather';
       yield serializers.serialize(
         object.weather,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -68,9 +70,11 @@ class _$IntelligenceEventContextSerializer
     IntelligenceEventContext object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -86,11 +90,15 @@ class _$IntelligenceEventContextSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'weather':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.weather.replace(valueDes);
           break;

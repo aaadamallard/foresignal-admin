@@ -10,15 +10,15 @@ class _$DossierSectionsOverviewLinks extends DossierSectionsOverviewLinks {
   @override
   final String? full;
 
-  factory _$DossierSectionsOverviewLinks(
-          [void Function(DossierSectionsOverviewLinksBuilder)? updates]) =>
-      (DossierSectionsOverviewLinksBuilder()..update(updates))._build();
+  factory _$DossierSectionsOverviewLinks([
+    void Function(DossierSectionsOverviewLinksBuilder)? updates,
+  ]) => (DossierSectionsOverviewLinksBuilder()..update(updates))._build();
 
   _$DossierSectionsOverviewLinks._({this.full}) : super._();
   @override
   DossierSectionsOverviewLinks rebuild(
-          void Function(DossierSectionsOverviewLinksBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsOverviewLinksBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsOverviewLinksBuilder toBuilder() =>
@@ -40,16 +40,18 @@ class _$DossierSectionsOverviewLinks extends DossierSectionsOverviewLinks {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'DossierSectionsOverviewLinks')
-          ..add('full', full))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'DossierSectionsOverviewLinks',
+    )..add('full', full)).toString();
   }
 }
 
 class DossierSectionsOverviewLinksBuilder
     implements
-        Builder<DossierSectionsOverviewLinks,
-            DossierSectionsOverviewLinksBuilder> {
+        Builder<
+          DossierSectionsOverviewLinks,
+          DossierSectionsOverviewLinksBuilder
+        > {
   _$DossierSectionsOverviewLinks? _$v;
 
   String? _full;
@@ -83,10 +85,7 @@ class DossierSectionsOverviewLinksBuilder
   DossierSectionsOverviewLinks build() => _build();
 
   _$DossierSectionsOverviewLinks _build() {
-    final _$result = _$v ??
-        _$DossierSectionsOverviewLinks._(
-          full: full,
-        );
+    final _$result = _$v ?? _$DossierSectionsOverviewLinks._(full: full);
     replace(_$result);
     return _$result;
   }

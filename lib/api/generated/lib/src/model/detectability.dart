@@ -135,25 +135,17 @@ class _$DetectabilitySerializer implements PrimitiveSerializer<Detectability> {
       specifiedType: const FullType(DateTime),
     );
     yield r'p';
-    yield serializers.serialize(
-      object.p,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.p, specifiedType: const FullType(num));
     yield r'lo';
-    yield serializers.serialize(
-      object.lo,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lo, specifiedType: const FullType(num));
     yield r'hi';
-    yield serializers.serialize(
-      object.hi,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.hi, specifiedType: const FullType(num));
     yield r'methods';
     yield serializers.serialize(
       object.methods,
-      specifiedType:
-          const FullType(BuiltList, [FullType(DetectabilityMethodsEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(DetectabilityMethodsEnum),
+      ]),
     );
     yield r'sources';
     yield serializers.serialize(
@@ -183,8 +175,9 @@ class _$DetectabilitySerializer implements PrimitiveSerializer<Detectability> {
       yield r'estimates';
       yield serializers.serialize(
         object.estimates,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ObservabilityEstimate)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ObservabilityEstimate),
+        ]),
       );
     }
   }
@@ -195,9 +188,11 @@ class _$DetectabilitySerializer implements PrimitiveSerializer<Detectability> {
     Detectability object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -213,108 +208,131 @@ class _$DetectabilitySerializer implements PrimitiveSerializer<Detectability> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'regionCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionCode = valueDes;
           break;
         case r'cell':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cell = valueDes;
           break;
         case r'band':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.band = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'p':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.p = valueDes;
           break;
         case r'lo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lo = valueDes;
           break;
         case r'hi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.hi = valueDes;
           break;
         case r'methods':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(DetectabilityMethodsEnum)]),
-          ) as BuiltList<DetectabilityMethodsEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(DetectabilityMethodsEnum),
+                    ]),
+                  )
+                  as BuiltList<DetectabilityMethodsEnum>;
           result.methods.replace(valueDes);
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.sources.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ConfidenceLevel),
-          ) as ConfidenceLevel?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ConfidenceLevel),
+                  )
+                  as ConfidenceLevel?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'absenceOk':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.absenceOk = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;
         case r'estimates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ObservabilityEstimate)]),
-          ) as BuiltList<ObservabilityEstimate>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ObservabilityEstimate),
+                    ]),
+                  )
+                  as BuiltList<ObservabilityEstimate>?;
           if (valueDes == null) continue;
           result.estimates.replace(valueDes);
           break;

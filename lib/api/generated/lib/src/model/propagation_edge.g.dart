@@ -44,14 +44,14 @@ PropagationEdgeTypeEnum _$propagationEdgeTypeEnumValueOf(String name) {
 
 final BuiltSet<PropagationEdgeTypeEnum> _$propagationEdgeTypeEnumValues =
     BuiltSet<PropagationEdgeTypeEnum>(const <PropagationEdgeTypeEnum>[
-  _$propagationEdgeTypeEnum_repost,
-  _$propagationEdgeTypeEnum_quote,
-  _$propagationEdgeTypeEnum_reply,
-  _$propagationEdgeTypeEnum_link,
-  _$propagationEdgeTypeEnum_textMatch,
-  _$propagationEdgeTypeEnum_mediaMatch,
-  _$propagationEdgeTypeEnum_crossPlatform,
-]);
+      _$propagationEdgeTypeEnum_repost,
+      _$propagationEdgeTypeEnum_quote,
+      _$propagationEdgeTypeEnum_reply,
+      _$propagationEdgeTypeEnum_link,
+      _$propagationEdgeTypeEnum_textMatch,
+      _$propagationEdgeTypeEnum_mediaMatch,
+      _$propagationEdgeTypeEnum_crossPlatform,
+    ]);
 
 Serializer<PropagationEdgeTypeEnum> _$propagationEdgeTypeEnumSerializer =
     _$PropagationEdgeTypeEnumSerializer();
@@ -83,16 +83,20 @@ class _$PropagationEdgeTypeEnumSerializer
   final String wireName = 'PropagationEdgeTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PropagationEdgeTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PropagationEdgeTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PropagationEdgeTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PropagationEdgeTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PropagationEdgeTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PropagationEdge extends PropagationEdge {
@@ -110,13 +114,13 @@ class _$PropagationEdge extends PropagationEdge {
   factory _$PropagationEdge([void Function(PropagationEdgeBuilder)? updates]) =>
       (PropagationEdgeBuilder()..update(updates))._build();
 
-  _$PropagationEdge._(
-      {required this.from,
-      required this.to,
-      required this.type,
-      required this.deltaSeconds,
-      this.count})
-      : super._();
+  _$PropagationEdge._({
+    required this.from,
+    required this.to,
+    required this.type,
+    required this.deltaSeconds,
+    this.count,
+  }) : super._();
   @override
   PropagationEdge rebuild(void Function(PropagationEdgeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -214,16 +218,29 @@ class PropagationEdgeBuilder
   PropagationEdge build() => _build();
 
   _$PropagationEdge _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PropagationEdge._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'PropagationEdge', 'from'),
+            from,
+            r'PropagationEdge',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'PropagationEdge', 'to'),
+            to,
+            r'PropagationEdge',
+            'to',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'PropagationEdge', 'type'),
+            type,
+            r'PropagationEdge',
+            'type',
+          ),
           deltaSeconds: BuiltValueNullFieldError.checkNotNull(
-              deltaSeconds, r'PropagationEdge', 'deltaSeconds'),
+            deltaSeconds,
+            r'PropagationEdge',
+            'deltaSeconds',
+          ),
           count: count,
         );
     replace(_$result);

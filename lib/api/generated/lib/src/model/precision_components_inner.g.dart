@@ -7,20 +7,20 @@ part of 'precision_components_inner.dart';
 // **************************************************************************
 
 const PrecisionComponentsInnerComponentEnum
-    _$precisionComponentsInnerComponentEnum_finding =
+_$precisionComponentsInnerComponentEnum_finding =
     const PrecisionComponentsInnerComponentEnum._('finding');
 const PrecisionComponentsInnerComponentEnum
-    _$precisionComponentsInnerComponentEnum_intelEvent =
+_$precisionComponentsInnerComponentEnum_intelEvent =
     const PrecisionComponentsInnerComponentEnum._('intelEvent');
 const PrecisionComponentsInnerComponentEnum
-    _$precisionComponentsInnerComponentEnum_situation =
+_$precisionComponentsInnerComponentEnum_situation =
     const PrecisionComponentsInnerComponentEnum._('situation');
 const PrecisionComponentsInnerComponentEnum
-    _$precisionComponentsInnerComponentEnum_precursorActive =
+_$precisionComponentsInnerComponentEnum_precursorActive =
     const PrecisionComponentsInnerComponentEnum._('precursorActive');
 
 PrecisionComponentsInnerComponentEnum
-    _$precisionComponentsInnerComponentEnumValueOf(String name) {
+_$precisionComponentsInnerComponentEnumValueOf(String name) {
   switch (name) {
     case 'finding':
       return _$precisionComponentsInnerComponentEnum_finding;
@@ -36,16 +36,18 @@ PrecisionComponentsInnerComponentEnum
 }
 
 final BuiltSet<PrecisionComponentsInnerComponentEnum>
-    _$precisionComponentsInnerComponentEnumValues = BuiltSet<
-        PrecisionComponentsInnerComponentEnum>(const <PrecisionComponentsInnerComponentEnum>[
-  _$precisionComponentsInnerComponentEnum_finding,
-  _$precisionComponentsInnerComponentEnum_intelEvent,
-  _$precisionComponentsInnerComponentEnum_situation,
-  _$precisionComponentsInnerComponentEnum_precursorActive,
-]);
+_$precisionComponentsInnerComponentEnumValues =
+    BuiltSet<PrecisionComponentsInnerComponentEnum>(
+      const <PrecisionComponentsInnerComponentEnum>[
+        _$precisionComponentsInnerComponentEnum_finding,
+        _$precisionComponentsInnerComponentEnum_intelEvent,
+        _$precisionComponentsInnerComponentEnum_situation,
+        _$precisionComponentsInnerComponentEnum_precursorActive,
+      ],
+    );
 
 Serializer<PrecisionComponentsInnerComponentEnum>
-    _$precisionComponentsInnerComponentEnumSerializer =
+_$precisionComponentsInnerComponentEnumSerializer =
     _$PrecisionComponentsInnerComponentEnumSerializer();
 
 class _$PrecisionComponentsInnerComponentEnumSerializer
@@ -65,23 +67,26 @@ class _$PrecisionComponentsInnerComponentEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PrecisionComponentsInnerComponentEnum
+    PrecisionComponentsInnerComponentEnum,
   ];
   @override
   final String wireName = 'PrecisionComponentsInnerComponentEnum';
 
   @override
   Object serialize(
-          Serializers serializers, PrecisionComponentsInnerComponentEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecisionComponentsInnerComponentEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecisionComponentsInnerComponentEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecisionComponentsInnerComponentEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecisionComponentsInnerComponentEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecisionComponentsInner extends PrecisionComponentsInner {
@@ -104,25 +109,25 @@ class _$PrecisionComponentsInner extends PrecisionComponentsInner {
   @override
   final ImpactRateInterval? interval;
 
-  factory _$PrecisionComponentsInner(
-          [void Function(PrecisionComponentsInnerBuilder)? updates]) =>
-      (PrecisionComponentsInnerBuilder()..update(updates))._build();
+  factory _$PrecisionComponentsInner([
+    void Function(PrecisionComponentsInnerBuilder)? updates,
+  ]) => (PrecisionComponentsInnerBuilder()..update(updates))._build();
 
-  _$PrecisionComponentsInner._(
-      {required this.component,
-      required this.key,
-      required this.confirmed,
-      required this.rejected,
-      this.duplicate,
-      this.needsReview,
-      required this.labelled,
-      this.precision,
-      this.interval})
-      : super._();
+  _$PrecisionComponentsInner._({
+    required this.component,
+    required this.key,
+    required this.confirmed,
+    required this.rejected,
+    this.duplicate,
+    this.needsReview,
+    required this.labelled,
+    this.precision,
+    this.interval,
+  }) : super._();
   @override
   PrecisionComponentsInner rebuild(
-          void Function(PrecisionComponentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecisionComponentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecisionComponentsInnerBuilder toBuilder() =>
@@ -256,20 +261,36 @@ class PrecisionComponentsInnerBuilder
   _$PrecisionComponentsInner _build() {
     _$PrecisionComponentsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecisionComponentsInner._(
             component: BuiltValueNullFieldError.checkNotNull(
-                component, r'PrecisionComponentsInner', 'component'),
+              component,
+              r'PrecisionComponentsInner',
+              'component',
+            ),
             key: BuiltValueNullFieldError.checkNotNull(
-                key, r'PrecisionComponentsInner', 'key'),
+              key,
+              r'PrecisionComponentsInner',
+              'key',
+            ),
             confirmed: BuiltValueNullFieldError.checkNotNull(
-                confirmed, r'PrecisionComponentsInner', 'confirmed'),
+              confirmed,
+              r'PrecisionComponentsInner',
+              'confirmed',
+            ),
             rejected: BuiltValueNullFieldError.checkNotNull(
-                rejected, r'PrecisionComponentsInner', 'rejected'),
+              rejected,
+              r'PrecisionComponentsInner',
+              'rejected',
+            ),
             duplicate: duplicate,
             needsReview: needsReview,
             labelled: BuiltValueNullFieldError.checkNotNull(
-                labelled, r'PrecisionComponentsInner', 'labelled'),
+              labelled,
+              r'PrecisionComponentsInner',
+              'labelled',
+            ),
             precision: precision,
             interval: _interval?.build(),
           );
@@ -280,7 +301,10 @@ class PrecisionComponentsInnerBuilder
         _interval?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecisionComponentsInner', _$failedField, e.toString());
+          r'PrecisionComponentsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

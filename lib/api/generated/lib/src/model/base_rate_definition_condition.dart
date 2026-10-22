@@ -25,9 +25,9 @@ abstract class BaseRateDefinitionCondition
 
   BaseRateDefinitionCondition._();
 
-  factory BaseRateDefinitionCondition(
-          [void updates(BaseRateDefinitionConditionBuilder b)]) =
-      _$BaseRateDefinitionCondition;
+  factory BaseRateDefinitionCondition([
+    void updates(BaseRateDefinitionConditionBuilder b),
+  ]) = _$BaseRateDefinitionCondition;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BaseRateDefinitionConditionBuilder b) => b;
@@ -42,7 +42,7 @@ class _$BaseRateDefinitionConditionSerializer
   @override
   final Iterable<Type> types = const [
     BaseRateDefinitionCondition,
-    _$BaseRateDefinitionCondition
+    _$BaseRateDefinitionCondition,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$BaseRateDefinitionConditionSerializer
     BaseRateDefinitionCondition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,18 @@ class _$BaseRateDefinitionConditionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'withinDays':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.withinDays = valueDes;
           break;
         default:

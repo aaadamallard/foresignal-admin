@@ -20,8 +20,8 @@ StixBundleTypeEnum _$stixBundleTypeEnumValueOf(String name) {
 
 final BuiltSet<StixBundleTypeEnum> _$stixBundleTypeEnumValues =
     BuiltSet<StixBundleTypeEnum>(const <StixBundleTypeEnum>[
-  _$stixBundleTypeEnum_bundle,
-]);
+      _$stixBundleTypeEnum_bundle,
+    ]);
 
 Serializer<StixBundleTypeEnum> _$stixBundleTypeEnumSerializer =
     _$StixBundleTypeEnumSerializer();
@@ -41,15 +41,20 @@ class _$StixBundleTypeEnumSerializer
   final String wireName = 'StixBundleTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, StixBundleTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StixBundleTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StixBundleTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StixBundleTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StixBundleTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StixBundleTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StixBundle extends StixBundle {
@@ -64,7 +69,7 @@ class _$StixBundle extends StixBundle {
       (StixBundleBuilder()..update(updates))._build();
 
   _$StixBundle._({required this.type, required this.id, required this.objects})
-      : super._();
+    : super._();
   @override
   StixBundle rebuild(void Function(StixBundleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -149,10 +154,14 @@ class StixBundleBuilder implements Builder<StixBundle, StixBundleBuilder> {
   _$StixBundle _build() {
     _$StixBundle _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StixBundle._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'StixBundle', 'type'),
+              type,
+              r'StixBundle',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(id, r'StixBundle', 'id'),
             objects: objects.build(),
           );
@@ -163,7 +172,10 @@ class StixBundleBuilder implements Builder<StixBundle, StixBundleBuilder> {
         objects.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StixBundle', _$failedField, e.toString());
+          r'StixBundle',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

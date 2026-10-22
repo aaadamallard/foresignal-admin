@@ -17,8 +17,10 @@ part 'chronicle_social_volume_selector_scopes_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleSocialVolumeSelectorScopesInner
     implements
-        Built<ChronicleSocialVolumeSelectorScopesInner,
-            ChronicleSocialVolumeSelectorScopesInnerBuilder> {
+        Built<
+          ChronicleSocialVolumeSelectorScopesInner,
+          ChronicleSocialVolumeSelectorScopesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   ChronicleSocialVolumeSelectorScopesInnerTypeEnum get type;
   // enum typeEnum {  topic,  place,  entity,  };
@@ -28,9 +30,9 @@ abstract class ChronicleSocialVolumeSelectorScopesInner
 
   ChronicleSocialVolumeSelectorScopesInner._();
 
-  factory ChronicleSocialVolumeSelectorScopesInner(
-          [void updates(ChronicleSocialVolumeSelectorScopesInnerBuilder b)]) =
-      _$ChronicleSocialVolumeSelectorScopesInner;
+  factory ChronicleSocialVolumeSelectorScopesInner([
+    void updates(ChronicleSocialVolumeSelectorScopesInnerBuilder b),
+  ]) = _$ChronicleSocialVolumeSelectorScopesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSocialVolumeSelectorScopesInnerBuilder b) => b;
@@ -45,7 +47,7 @@ class _$ChronicleSocialVolumeSelectorScopesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSocialVolumeSelectorScopesInner,
-    _$ChronicleSocialVolumeSelectorScopesInner
+    _$ChronicleSocialVolumeSelectorScopesInner,
   ];
 
   @override
@@ -59,8 +61,9 @@ class _$ChronicleSocialVolumeSelectorScopesInnerSerializer
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType:
-          const FullType(ChronicleSocialVolumeSelectorScopesInnerTypeEnum),
+      specifiedType: const FullType(
+        ChronicleSocialVolumeSelectorScopesInnerTypeEnum,
+      ),
     );
     yield r'id';
     yield serializers.serialize(
@@ -75,9 +78,11 @@ class _$ChronicleSocialVolumeSelectorScopesInnerSerializer
     ChronicleSocialVolumeSelectorScopesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +98,23 @@ class _$ChronicleSocialVolumeSelectorScopesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                ChronicleSocialVolumeSelectorScopesInnerTypeEnum),
-          ) as ChronicleSocialVolumeSelectorScopesInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleSocialVolumeSelectorScopesInnerTypeEnum,
+                    ),
+                  )
+                  as ChronicleSocialVolumeSelectorScopesInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         default:
@@ -148,15 +158,15 @@ class ChronicleSocialVolumeSelectorScopesInnerTypeEnum extends EnumClass {
       _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity;
 
   static Serializer<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>
-      get serializer =>
-          _$chronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer;
+  get serializer =>
+      _$chronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer;
 
   const ChronicleSocialVolumeSelectorScopesInnerTypeEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>
-      get values => _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValues;
+  get values => _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValues;
   static ChronicleSocialVolumeSelectorScopesInnerTypeEnum valueOf(
-          String name) =>
-      _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValueOf(name);
+    String name,
+  ) => _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValueOf(name);
 }

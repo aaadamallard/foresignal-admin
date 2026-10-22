@@ -33,19 +33,19 @@ class _$TileKeyCreated extends TileKeyCreated {
   factory _$TileKeyCreated([void Function(TileKeyCreatedBuilder)? updates]) =>
       (TileKeyCreatedBuilder()..update(updates))._build();
 
-  _$TileKeyCreated._(
-      {required this.id,
-      required this.name,
-      required this.keyPrefix,
-      required this.prefixes,
-      this.restrictions,
-      required this.createdAt,
-      required this.expiresAt,
-      this.lastUsedAt,
-      this.revokedAt,
-      required this.key,
-      required this.urlBase})
-      : super._();
+  _$TileKeyCreated._({
+    required this.id,
+    required this.name,
+    required this.keyPrefix,
+    required this.prefixes,
+    this.restrictions,
+    required this.createdAt,
+    required this.expiresAt,
+    this.lastUsedAt,
+    this.revokedAt,
+    required this.key,
+    required this.urlBase,
+  }) : super._();
   @override
   TileKeyCreated rebuild(void Function(TileKeyCreatedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -196,26 +196,48 @@ class TileKeyCreatedBuilder
   _$TileKeyCreated _build() {
     _$TileKeyCreated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TileKeyCreated._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'TileKeyCreated', 'id'),
+              id,
+              r'TileKeyCreated',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'TileKeyCreated', 'name'),
+              name,
+              r'TileKeyCreated',
+              'name',
+            ),
             keyPrefix: BuiltValueNullFieldError.checkNotNull(
-                keyPrefix, r'TileKeyCreated', 'keyPrefix'),
+              keyPrefix,
+              r'TileKeyCreated',
+              'keyPrefix',
+            ),
             prefixes: prefixes.build(),
             restrictions: _restrictions?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'TileKeyCreated', 'createdAt'),
+              createdAt,
+              r'TileKeyCreated',
+              'createdAt',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'TileKeyCreated', 'expiresAt'),
+              expiresAt,
+              r'TileKeyCreated',
+              'expiresAt',
+            ),
             lastUsedAt: lastUsedAt,
             revokedAt: revokedAt,
             key: BuiltValueNullFieldError.checkNotNull(
-                key, r'TileKeyCreated', 'key'),
+              key,
+              r'TileKeyCreated',
+              'key',
+            ),
             urlBase: BuiltValueNullFieldError.checkNotNull(
-                urlBase, r'TileKeyCreated', 'urlBase'),
+              urlBase,
+              r'TileKeyCreated',
+              'urlBase',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -226,7 +248,10 @@ class TileKeyCreatedBuilder
         _restrictions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TileKeyCreated', _$failedField, e.toString());
+          r'TileKeyCreated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

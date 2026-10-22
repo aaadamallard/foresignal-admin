@@ -89,11 +89,8 @@ class SystemInfoSinksBuilder
   SystemInfoSinks build() => _build();
 
   _$SystemInfoSinks _build() {
-    final _$result = _$v ??
-        _$SystemInfoSinks._(
-          enabled: enabled,
-          failing: failing,
-        );
+    final _$result =
+        _$v ?? _$SystemInfoSinks._(enabled: enabled, failing: failing);
     replace(_$result);
     return _$result;
   }

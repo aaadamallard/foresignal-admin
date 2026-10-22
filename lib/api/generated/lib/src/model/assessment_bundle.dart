@@ -73,8 +73,9 @@ class _$AssessmentBundleSerializer
     yield r'objects';
     yield serializers.serialize(
       object.objects,
-      specifiedType:
-          const FullType(BuiltList, [FullType(AssessmentBundleObjectsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(AssessmentBundleObjectsInner),
+      ]),
     );
     if (object.manifests != null) {
       yield r'manifests';
@@ -91,9 +92,11 @@ class _$AssessmentBundleSerializer
     AssessmentBundle object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,33 +112,43 @@ class _$AssessmentBundleSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'assessment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Assessment),
-          ) as Assessment;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Assessment),
+                  )
+                  as Assessment;
           result.assessment.replace(valueDes);
           break;
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.generatedAt = valueDes;
           break;
         case r'objects':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(AssessmentBundleObjectsInner)]),
-          ) as BuiltList<AssessmentBundleObjectsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AssessmentBundleObjectsInner),
+                    ]),
+                  )
+                  as BuiltList<AssessmentBundleObjectsInner>;
           result.objects.replace(valueDes);
           break;
         case r'manifests':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AnalysisManifest)]),
-          ) as BuiltList<AnalysisManifest>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AnalysisManifest),
+                    ]),
+                  )
+                  as BuiltList<AnalysisManifest>?;
           if (valueDes == null) continue;
           result.manifests.replace(valueDes);
           break;

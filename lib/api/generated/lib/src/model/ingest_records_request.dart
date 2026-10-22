@@ -53,7 +53,7 @@ class _$IngestRecordsRequestSerializer
   @override
   final Iterable<Type> types = const [
     IngestRecordsRequest,
-    _$IngestRecordsRequest
+    _$IngestRecordsRequest,
   ];
 
   @override
@@ -72,8 +72,10 @@ class _$IngestRecordsRequestSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -89,8 +91,9 @@ class _$IngestRecordsRequestSerializer
       FullType(IngestRecords),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }

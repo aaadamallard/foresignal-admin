@@ -18,8 +18,10 @@ part 'social_settings_compare_family_windows_value.g.dart';
 @BuiltValue()
 abstract class SocialSettingsCompareFamilyWindowsValue
     implements
-        Built<SocialSettingsCompareFamilyWindowsValue,
-            SocialSettingsCompareFamilyWindowsValueBuilder> {
+        Built<
+          SocialSettingsCompareFamilyWindowsValue,
+          SocialSettingsCompareFamilyWindowsValueBuilder
+        > {
   /// ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
   @BuiltValueField(wireName: r'before')
   String? get before;
@@ -37,9 +39,9 @@ abstract class SocialSettingsCompareFamilyWindowsValue
 
   SocialSettingsCompareFamilyWindowsValue._();
 
-  factory SocialSettingsCompareFamilyWindowsValue(
-          [void updates(SocialSettingsCompareFamilyWindowsValueBuilder b)]) =
-      _$SocialSettingsCompareFamilyWindowsValue;
+  factory SocialSettingsCompareFamilyWindowsValue([
+    void updates(SocialSettingsCompareFamilyWindowsValueBuilder b),
+  ]) = _$SocialSettingsCompareFamilyWindowsValue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsCompareFamilyWindowsValueBuilder b) => b;
@@ -54,7 +56,7 @@ class _$SocialSettingsCompareFamilyWindowsValueSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsCompareFamilyWindowsValue,
-    _$SocialSettingsCompareFamilyWindowsValue
+    _$SocialSettingsCompareFamilyWindowsValue,
   ];
 
   @override
@@ -101,9 +103,11 @@ class _$SocialSettingsCompareFamilyWindowsValueSerializer
     SocialSettingsCompareFamilyWindowsValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,34 +123,42 @@ class _$SocialSettingsCompareFamilyWindowsValueSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.before = valueDes;
           break;
         case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.after = valueDes;
           break;
         case r'toleranceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.toleranceKm = valueDes;
           break;
         case r'publicationLag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.publicationLag = valueDes;
           break;

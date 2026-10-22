@@ -276,8 +276,9 @@ class _$IntelligenceEventSerializer
       yield r'log';
       yield serializers.serialize(
         object.log,
-        specifiedType:
-            const FullType(BuiltList, [FullType(IntelEventLogEntry)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(IntelEventLogEntry),
+        ]),
       );
     }
     if (object.manifestId != null) {
@@ -295,9 +296,11 @@ class _$IntelligenceEventSerializer
     IntelligenceEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -313,174 +316,220 @@ class _$IntelligenceEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelligenceEventTypeEnum),
-          ) as IntelligenceEventTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelligenceEventTypeEnum),
+                  )
+                  as IntelligenceEventTypeEnum;
           result.type = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelligenceEventStatusEnum),
-          ) as IntelligenceEventStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelligenceEventStatusEnum),
+                  )
+                  as IntelligenceEventStatusEnum;
           result.status = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Severity),
-          ) as Severity;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Severity),
+                  )
+                  as Severity;
           result.severity = valueDes;
           break;
         case r'severityOverridden':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.severityOverridden = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;
         case r'origin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelligenceEventOriginEnum),
-          ) as IntelligenceEventOriginEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelligenceEventOriginEnum),
+                  )
+                  as IntelligenceEventOriginEnum;
           result.origin = valueDes;
           break;
         case r'recipeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.recipeId = valueDes;
           break;
         case r'recipeVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.recipeVersion = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.detector.replace(valueDes);
           break;
         case r'mergedInto':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mergedInto = valueDes;
           break;
         case r'notes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.notes = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.version = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.updatedAt = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelligenceEventEvidence),
-          ) as IntelligenceEventEvidence;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelligenceEventEvidence),
+                  )
+                  as IntelligenceEventEvidence;
           result.evidence.replace(valueDes);
           break;
         case r'inference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelligenceEventInference),
-          ) as IntelligenceEventInference;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelligenceEventInference),
+                  )
+                  as IntelligenceEventInference;
           result.inference.replace(valueDes);
           break;
         case r'speculation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelligenceEventSpeculation),
-          ) as IntelligenceEventSpeculation;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelligenceEventSpeculation),
+                  )
+                  as IntelligenceEventSpeculation;
           result.speculation.replace(valueDes);
           break;
         case r'context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IntelligenceEventContext),
-          ) as IntelligenceEventContext?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelligenceEventContext,
+                    ),
+                  )
+                  as IntelligenceEventContext?;
           if (valueDes == null) continue;
           result.context.replace(valueDes);
           break;
         case r'exposure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Exposure),
-          ) as Exposure?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Exposure),
+                  )
+                  as Exposure?;
           if (valueDes == null) continue;
           result.exposure.replace(valueDes);
           break;
         case r'log':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(IntelEventLogEntry)]),
-          ) as BuiltList<IntelEventLogEntry>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IntelEventLogEntry),
+                    ]),
+                  )
+                  as BuiltList<IntelEventLogEntry>?;
           if (valueDes == null) continue;
           result.log.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;

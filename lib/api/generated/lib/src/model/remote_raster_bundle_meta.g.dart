@@ -14,17 +14,19 @@ class _$RemoteRasterBundleMeta extends RemoteRasterBundleMeta {
   @override
   final String? product;
 
-  factory _$RemoteRasterBundleMeta(
-          [void Function(RemoteRasterBundleMetaBuilder)? updates]) =>
-      (RemoteRasterBundleMetaBuilder()..update(updates))._build();
+  factory _$RemoteRasterBundleMeta([
+    void Function(RemoteRasterBundleMetaBuilder)? updates,
+  ]) => (RemoteRasterBundleMetaBuilder()..update(updates))._build();
 
-  _$RemoteRasterBundleMeta._(
-      {required this.passFolder, required this.files, this.product})
-      : super._();
+  _$RemoteRasterBundleMeta._({
+    required this.passFolder,
+    required this.files,
+    this.product,
+  }) : super._();
   @override
   RemoteRasterBundleMeta rebuild(
-          void Function(RemoteRasterBundleMetaBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RemoteRasterBundleMetaBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RemoteRasterBundleMetaBuilder toBuilder() =>
@@ -106,10 +108,14 @@ class RemoteRasterBundleMetaBuilder
   _$RemoteRasterBundleMeta _build() {
     _$RemoteRasterBundleMeta _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RemoteRasterBundleMeta._(
             passFolder: BuiltValueNullFieldError.checkNotNull(
-                passFolder, r'RemoteRasterBundleMeta', 'passFolder'),
+              passFolder,
+              r'RemoteRasterBundleMeta',
+              'passFolder',
+            ),
             files: files.build(),
             product: product,
           );
@@ -120,7 +126,10 @@ class RemoteRasterBundleMetaBuilder
         files.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RemoteRasterBundleMeta', _$failedField, e.toString());
+          r'RemoteRasterBundleMeta',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

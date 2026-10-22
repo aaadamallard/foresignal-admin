@@ -16,16 +16,16 @@ class _$AssessmentBundle extends AssessmentBundle {
   @override
   final BuiltList<AnalysisManifest>? manifests;
 
-  factory _$AssessmentBundle(
-          [void Function(AssessmentBundleBuilder)? updates]) =>
-      (AssessmentBundleBuilder()..update(updates))._build();
+  factory _$AssessmentBundle([
+    void Function(AssessmentBundleBuilder)? updates,
+  ]) => (AssessmentBundleBuilder()..update(updates))._build();
 
-  _$AssessmentBundle._(
-      {required this.assessment,
-      required this.generatedAt,
-      required this.objects,
-      this.manifests})
-      : super._();
+  _$AssessmentBundle._({
+    required this.assessment,
+    required this.generatedAt,
+    required this.objects,
+    this.manifests,
+  }) : super._();
   @override
   AssessmentBundle rebuild(void Function(AssessmentBundleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -124,11 +124,15 @@ class AssessmentBundleBuilder
   _$AssessmentBundle _build() {
     _$AssessmentBundle _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AssessmentBundle._(
             assessment: assessment.build(),
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'AssessmentBundle', 'generatedAt'),
+              generatedAt,
+              r'AssessmentBundle',
+              'generatedAt',
+            ),
             objects: objects.build(),
             manifests: _manifests?.build(),
           );
@@ -144,7 +148,10 @@ class AssessmentBundleBuilder
         _manifests?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AssessmentBundle', _$failedField, e.toString());
+          r'AssessmentBundle',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -20,22 +20,22 @@ class _$RegionalIndexDetail extends RegionalIndexDetail {
   @override
   final IndexFitResult? latestFit;
 
-  factory _$RegionalIndexDetail(
-          [void Function(RegionalIndexDetailBuilder)? updates]) =>
-      (RegionalIndexDetailBuilder()..update(updates))._build();
+  factory _$RegionalIndexDetail([
+    void Function(RegionalIndexDetailBuilder)? updates,
+  ]) => (RegionalIndexDetailBuilder()..update(updates))._build();
 
-  _$RegionalIndexDetail._(
-      {required this.index,
-      this.region,
-      this.from,
-      this.to,
-      required this.values,
-      this.latestFit})
-      : super._();
+  _$RegionalIndexDetail._({
+    required this.index,
+    this.region,
+    this.from,
+    this.to,
+    required this.values,
+    this.latestFit,
+  }) : super._();
   @override
   RegionalIndexDetail rebuild(
-          void Function(RegionalIndexDetailBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexDetailBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexDetailBuilder toBuilder() =>
@@ -146,7 +146,8 @@ class RegionalIndexDetailBuilder
   _$RegionalIndexDetail _build() {
     _$RegionalIndexDetail _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalIndexDetail._(
             index: index.build(),
             region: region,
@@ -167,7 +168,10 @@ class RegionalIndexDetailBuilder
         _latestFit?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalIndexDetail', _$failedField, e.toString());
+          r'RegionalIndexDetail',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

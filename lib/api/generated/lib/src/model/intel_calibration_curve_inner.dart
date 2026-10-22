@@ -25,9 +25,9 @@ abstract class IntelCalibrationCurveInner
 
   IntelCalibrationCurveInner._();
 
-  factory IntelCalibrationCurveInner(
-          [void updates(IntelCalibrationCurveInnerBuilder b)]) =
-      _$IntelCalibrationCurveInner;
+  factory IntelCalibrationCurveInner([
+    void updates(IntelCalibrationCurveInnerBuilder b),
+  ]) = _$IntelCalibrationCurveInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelCalibrationCurveInnerBuilder b) => b;
@@ -42,7 +42,7 @@ class _$IntelCalibrationCurveInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelCalibrationCurveInner,
-    _$IntelCalibrationCurveInner
+    _$IntelCalibrationCurveInner,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$IntelCalibrationCurveInnerSerializer
     IntelCalibrationCurveInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$IntelCalibrationCurveInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecast':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.forecast = valueDes;
           break;
         case r'calibrated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.calibrated = valueDes;
           break;

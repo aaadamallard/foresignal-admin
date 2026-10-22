@@ -7,17 +7,17 @@ part of 'export_licence_summary_excluded_inner.dart';
 // **************************************************************************
 
 const ExportLicenceSummaryExcludedInnerReasonEnum
-    _$exportLicenceSummaryExcludedInnerReasonEnum_licenceForbidden =
+_$exportLicenceSummaryExcludedInnerReasonEnum_licenceForbidden =
     const ExportLicenceSummaryExcludedInnerReasonEnum._('licenceForbidden');
 const ExportLicenceSummaryExcludedInnerReasonEnum
-    _$exportLicenceSummaryExcludedInnerReasonEnum_licenceLocalOnly =
+_$exportLicenceSummaryExcludedInnerReasonEnum_licenceLocalOnly =
     const ExportLicenceSummaryExcludedInnerReasonEnum._('licenceLocalOnly');
 const ExportLicenceSummaryExcludedInnerReasonEnum
-    _$exportLicenceSummaryExcludedInnerReasonEnum_private =
+_$exportLicenceSummaryExcludedInnerReasonEnum_private =
     const ExportLicenceSummaryExcludedInnerReasonEnum._('private');
 
 ExportLicenceSummaryExcludedInnerReasonEnum
-    _$exportLicenceSummaryExcludedInnerReasonEnumValueOf(String name) {
+_$exportLicenceSummaryExcludedInnerReasonEnumValueOf(String name) {
   switch (name) {
     case 'licenceForbidden':
       return _$exportLicenceSummaryExcludedInnerReasonEnum_licenceForbidden;
@@ -31,15 +31,17 @@ ExportLicenceSummaryExcludedInnerReasonEnum
 }
 
 final BuiltSet<ExportLicenceSummaryExcludedInnerReasonEnum>
-    _$exportLicenceSummaryExcludedInnerReasonEnumValues = BuiltSet<
-        ExportLicenceSummaryExcludedInnerReasonEnum>(const <ExportLicenceSummaryExcludedInnerReasonEnum>[
-  _$exportLicenceSummaryExcludedInnerReasonEnum_licenceForbidden,
-  _$exportLicenceSummaryExcludedInnerReasonEnum_licenceLocalOnly,
-  _$exportLicenceSummaryExcludedInnerReasonEnum_private,
-]);
+_$exportLicenceSummaryExcludedInnerReasonEnumValues =
+    BuiltSet<ExportLicenceSummaryExcludedInnerReasonEnum>(
+      const <ExportLicenceSummaryExcludedInnerReasonEnum>[
+        _$exportLicenceSummaryExcludedInnerReasonEnum_licenceForbidden,
+        _$exportLicenceSummaryExcludedInnerReasonEnum_licenceLocalOnly,
+        _$exportLicenceSummaryExcludedInnerReasonEnum_private,
+      ],
+    );
 
 Serializer<ExportLicenceSummaryExcludedInnerReasonEnum>
-    _$exportLicenceSummaryExcludedInnerReasonEnumSerializer =
+_$exportLicenceSummaryExcludedInnerReasonEnumSerializer =
     _$ExportLicenceSummaryExcludedInnerReasonEnumSerializer();
 
 class _$ExportLicenceSummaryExcludedInnerReasonEnumSerializer
@@ -58,23 +60,26 @@ class _$ExportLicenceSummaryExcludedInnerReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ExportLicenceSummaryExcludedInnerReasonEnum
+    ExportLicenceSummaryExcludedInnerReasonEnum,
   ];
   @override
   final String wireName = 'ExportLicenceSummaryExcludedInnerReasonEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ExportLicenceSummaryExcludedInnerReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportLicenceSummaryExcludedInnerReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExportLicenceSummaryExcludedInnerReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportLicenceSummaryExcludedInnerReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportLicenceSummaryExcludedInnerReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportLicenceSummaryExcludedInner
@@ -84,17 +89,18 @@ class _$ExportLicenceSummaryExcludedInner
   @override
   final ExportLicenceSummaryExcludedInnerReasonEnum reason;
 
-  factory _$ExportLicenceSummaryExcludedInner(
-          [void Function(ExportLicenceSummaryExcludedInnerBuilder)? updates]) =>
-      (ExportLicenceSummaryExcludedInnerBuilder()..update(updates))._build();
+  factory _$ExportLicenceSummaryExcludedInner([
+    void Function(ExportLicenceSummaryExcludedInnerBuilder)? updates,
+  ]) => (ExportLicenceSummaryExcludedInnerBuilder()..update(updates))._build();
 
-  _$ExportLicenceSummaryExcludedInner._(
-      {required this.sourceId, required this.reason})
-      : super._();
+  _$ExportLicenceSummaryExcludedInner._({
+    required this.sourceId,
+    required this.reason,
+  }) : super._();
   @override
   ExportLicenceSummaryExcludedInner rebuild(
-          void Function(ExportLicenceSummaryExcludedInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExportLicenceSummaryExcludedInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExportLicenceSummaryExcludedInnerBuilder toBuilder() =>
@@ -128,8 +134,10 @@ class _$ExportLicenceSummaryExcludedInner
 
 class ExportLicenceSummaryExcludedInnerBuilder
     implements
-        Builder<ExportLicenceSummaryExcludedInner,
-            ExportLicenceSummaryExcludedInnerBuilder> {
+        Builder<
+          ExportLicenceSummaryExcludedInner,
+          ExportLicenceSummaryExcludedInnerBuilder
+        > {
   _$ExportLicenceSummaryExcludedInner? _$v;
 
   String? _sourceId;
@@ -162,7 +170,8 @@ class ExportLicenceSummaryExcludedInnerBuilder
 
   @override
   void update(
-      void Function(ExportLicenceSummaryExcludedInnerBuilder)? updates) {
+    void Function(ExportLicenceSummaryExcludedInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -170,12 +179,19 @@ class ExportLicenceSummaryExcludedInnerBuilder
   ExportLicenceSummaryExcludedInner build() => _build();
 
   _$ExportLicenceSummaryExcludedInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExportLicenceSummaryExcludedInner._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'ExportLicenceSummaryExcludedInner', 'sourceId'),
+            sourceId,
+            r'ExportLicenceSummaryExcludedInner',
+            'sourceId',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ExportLicenceSummaryExcludedInner', 'reason'),
+            reason,
+            r'ExportLicenceSummaryExcludedInner',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

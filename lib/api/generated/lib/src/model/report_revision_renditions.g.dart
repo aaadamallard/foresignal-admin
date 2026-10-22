@@ -14,16 +14,16 @@ class _$ReportRevisionRenditions extends ReportRevisionRenditions {
   @override
   final String? json;
 
-  factory _$ReportRevisionRenditions(
-          [void Function(ReportRevisionRenditionsBuilder)? updates]) =>
-      (ReportRevisionRenditionsBuilder()..update(updates))._build();
+  factory _$ReportRevisionRenditions([
+    void Function(ReportRevisionRenditionsBuilder)? updates,
+  ]) => (ReportRevisionRenditionsBuilder()..update(updates))._build();
 
   _$ReportRevisionRenditions._({this.markdown, this.html, this.json})
-      : super._();
+    : super._();
   @override
   ReportRevisionRenditions rebuild(
-          void Function(ReportRevisionRenditionsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReportRevisionRenditionsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReportRevisionRenditionsBuilder toBuilder() =>
@@ -104,7 +104,8 @@ class ReportRevisionRenditionsBuilder
   ReportRevisionRenditions build() => _build();
 
   _$ReportRevisionRenditions _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReportRevisionRenditions._(
           markdown: markdown,
           html: html,

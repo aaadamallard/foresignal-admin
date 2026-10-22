@@ -100,7 +100,7 @@ class _$ProductLoopSerializer implements PrimitiveSerializer<ProductLoop> {
     yield serializers.serialize(
       object.coordinates,
       specifiedType: const FullType(BuiltList, [
-        FullType(BuiltList, [FullType(num)])
+        FullType(BuiltList, [FullType(num)]),
       ]),
     );
     yield r'width';
@@ -124,15 +124,18 @@ class _$ProductLoopSerializer implements PrimitiveSerializer<ProductLoop> {
       yield r'runs';
       yield serializers.serialize(
         object.runs,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     yield r'frames';
     yield serializers.serialize(
       object.frames,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ProductLoopFramesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ProductLoopFramesInner),
+      ]),
     );
     if (object.legendUrl != null) {
       yield r'legendUrl';
@@ -161,9 +164,11 @@ class _$ProductLoopSerializer implements PrimitiveSerializer<ProductLoop> {
     ProductLoop object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -179,90 +184,111 @@ class _$ProductLoopSerializer implements PrimitiveSerializer<ProductLoop> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'crs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.crs = valueDes;
           break;
         case r'bounds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(num)]),
+                  )
+                  as BuiltList<num>;
           result.bounds.replace(valueDes);
           break;
         case r'coordinates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(BuiltList, [FullType(num)])
-            ]),
-          ) as BuiltList<BuiltList<num>>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(BuiltList, [FullType(num)]),
+                    ]),
+                  )
+                  as BuiltList<BuiltList<num>>;
           result.coordinates.replace(valueDes);
           break;
         case r'width':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.width = valueDes;
           break;
         case r'height':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.height = valueDes;
           break;
         case r'products':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.products.replace(valueDes);
           break;
         case r'runs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.runs.replace(valueDes);
           break;
         case r'frames':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ProductLoopFramesInner)]),
-          ) as BuiltList<ProductLoopFramesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ProductLoopFramesInner),
+                    ]),
+                  )
+                  as BuiltList<ProductLoopFramesInner>;
           result.frames.replace(valueDes);
           break;
         case r'legendUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.legendUrl = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>?;
           if (valueDes == null) continue;
           result.attribution.replace(valueDes);
           break;
         case r'serverTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.serverTime = valueDes;
           break;
         default:

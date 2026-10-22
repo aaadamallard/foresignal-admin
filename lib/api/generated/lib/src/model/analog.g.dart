@@ -31,18 +31,18 @@ class _$Analog extends Analog {
   factory _$Analog([void Function(AnalogBuilder)? updates]) =>
       (AnalogBuilder()..update(updates))._build();
 
-  _$Analog._(
-      {this.situationId,
-      required this.title,
-      this.theme,
-      required this.regionCodes,
-      required this.period,
-      required this.rank,
-      required this.similarity,
-      this.featureSimilarity,
-      this.embeddingSimilarity,
-      required this.outcomes})
-      : super._();
+  _$Analog._({
+    this.situationId,
+    required this.title,
+    this.theme,
+    required this.regionCodes,
+    required this.period,
+    required this.rank,
+    required this.similarity,
+    this.featureSimilarity,
+    this.embeddingSimilarity,
+    required this.outcomes,
+  }) : super._();
   @override
   Analog rebuild(void Function(AnalogBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -186,18 +186,28 @@ class AnalogBuilder implements Builder<Analog, AnalogBuilder> {
   _$Analog _build() {
     _$Analog _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Analog._(
             situationId: situationId,
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Analog', 'title'),
+              title,
+              r'Analog',
+              'title',
+            ),
             theme: theme,
             regionCodes: regionCodes.build(),
             period: period.build(),
-            rank:
-                BuiltValueNullFieldError.checkNotNull(rank, r'Analog', 'rank'),
+            rank: BuiltValueNullFieldError.checkNotNull(
+              rank,
+              r'Analog',
+              'rank',
+            ),
             similarity: BuiltValueNullFieldError.checkNotNull(
-                similarity, r'Analog', 'similarity'),
+              similarity,
+              r'Analog',
+              'similarity',
+            ),
             featureSimilarity: featureSimilarity,
             embeddingSimilarity: embeddingSimilarity,
             outcomes: outcomes.build(),
@@ -214,7 +224,10 @@ class AnalogBuilder implements Builder<Analog, AnalogBuilder> {
         outcomes.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Analog', _$failedField, e.toString());
+          r'Analog',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

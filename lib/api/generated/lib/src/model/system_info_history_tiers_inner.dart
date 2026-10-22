@@ -55,9 +55,9 @@ abstract class SystemInfoHistoryTiersInner
 
   SystemInfoHistoryTiersInner._();
 
-  factory SystemInfoHistoryTiersInner(
-          [void updates(SystemInfoHistoryTiersInnerBuilder b)]) =
-      _$SystemInfoHistoryTiersInner;
+  factory SystemInfoHistoryTiersInner([
+    void updates(SystemInfoHistoryTiersInnerBuilder b),
+  ]) = _$SystemInfoHistoryTiersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemInfoHistoryTiersInnerBuilder b) => b;
@@ -72,7 +72,7 @@ class _$SystemInfoHistoryTiersInnerSerializer
   @override
   final Iterable<Type> types = const [
     SystemInfoHistoryTiersInner,
-    _$SystemInfoHistoryTiersInner
+    _$SystemInfoHistoryTiersInner,
   ];
 
   @override
@@ -139,9 +139,11 @@ class _$SystemInfoHistoryTiersInnerSerializer
     SystemInfoHistoryTiersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -157,62 +159,69 @@ class _$SystemInfoHistoryTiersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HistoryTier),
-          ) as HistoryTier;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(HistoryTier),
+                  )
+                  as HistoryTier;
           result.tier = valueDes;
           break;
         case r'partitions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.partitions = valueDes;
           break;
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rows = valueDes;
           break;
         case r'bytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.bytes = valueDes;
           break;
         case r'headroomSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.headroomSeq = valueDes;
           break;
         case r'windowDays':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.windowDays = valueDes;
           break;
         case r'downsampledLeaves':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.downsampledLeaves = valueDes;
           break;
         case r'downsampledRows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.downsampledRows = valueDes;
           break;

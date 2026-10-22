@@ -12,15 +12,15 @@ class _$SystemInfoMcpTransports extends SystemInfoMcpTransports {
   @override
   final bool? legacySse;
 
-  factory _$SystemInfoMcpTransports(
-          [void Function(SystemInfoMcpTransportsBuilder)? updates]) =>
-      (SystemInfoMcpTransportsBuilder()..update(updates))._build();
+  factory _$SystemInfoMcpTransports([
+    void Function(SystemInfoMcpTransportsBuilder)? updates,
+  ]) => (SystemInfoMcpTransportsBuilder()..update(updates))._build();
 
   _$SystemInfoMcpTransports._({this.streamable, this.legacySse}) : super._();
   @override
   SystemInfoMcpTransports rebuild(
-          void Function(SystemInfoMcpTransportsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoMcpTransportsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoMcpTransportsBuilder toBuilder() =>
@@ -93,7 +93,8 @@ class SystemInfoMcpTransportsBuilder
   SystemInfoMcpTransports build() => _build();
 
   _$SystemInfoMcpTransports _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoMcpTransports._(
           streamable: streamable,
           legacySse: legacySse,

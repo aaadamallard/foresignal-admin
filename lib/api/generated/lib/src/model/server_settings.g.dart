@@ -23,14 +23,14 @@ class _$ServerSettings extends ServerSettings {
   factory _$ServerSettings([void Function(ServerSettingsBuilder)? updates]) =>
       (ServerSettingsBuilder()..update(updates))._build();
 
-  _$ServerSettings._(
-      {required this.publicBaseUrl,
-      this.timezone,
-      this.clientLinks,
-      this.warnings,
-      this.push,
-      this.contactEmail})
-      : super._();
+  _$ServerSettings._({
+    required this.publicBaseUrl,
+    this.timezone,
+    this.clientLinks,
+    this.warnings,
+    this.push,
+    this.contactEmail,
+  }) : super._();
   @override
   ServerSettings rebuild(void Function(ServerSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -143,10 +143,14 @@ class ServerSettingsBuilder
   _$ServerSettings _build() {
     _$ServerSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ServerSettings._(
             publicBaseUrl: BuiltValueNullFieldError.checkNotNull(
-                publicBaseUrl, r'ServerSettings', 'publicBaseUrl'),
+              publicBaseUrl,
+              r'ServerSettings',
+              'publicBaseUrl',
+            ),
             timezone: timezone,
             clientLinks: _clientLinks?.build(),
             warnings: _warnings?.build(),
@@ -164,7 +168,10 @@ class ServerSettingsBuilder
         _push?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ServerSettings', _$failedField, e.toString());
+          r'ServerSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

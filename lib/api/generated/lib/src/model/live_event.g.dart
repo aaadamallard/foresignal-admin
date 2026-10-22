@@ -35,20 +35,20 @@ class _$LiveEvent extends LiveEvent {
   factory _$LiveEvent([void Function(LiveEventBuilder)? updates]) =>
       (LiveEventBuilder()..update(updates))._build();
 
-  _$LiveEvent._(
-      {required this.sourceId,
-      required this.externalId,
-      required this.kind,
-      required this.observedAt,
-      this.validUntil,
-      required this.version,
-      this.geometry,
-      this.bbox,
-      this.prevBbox,
-      this.properties,
-      this.quality,
-      this.leftFilter})
-      : super._();
+  _$LiveEvent._({
+    required this.sourceId,
+    required this.externalId,
+    required this.kind,
+    required this.observedAt,
+    this.validUntil,
+    required this.version,
+    this.geometry,
+    this.bbox,
+    this.prevBbox,
+    this.properties,
+    this.quality,
+    this.leftFilter,
+  }) : super._();
   @override
   LiveEvent rebuild(void Function(LiveEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -205,19 +205,35 @@ class LiveEventBuilder implements Builder<LiveEvent, LiveEventBuilder> {
   _$LiveEvent _build() {
     _$LiveEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LiveEvent._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'LiveEvent', 'sourceId'),
+              sourceId,
+              r'LiveEvent',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'LiveEvent', 'externalId'),
+              externalId,
+              r'LiveEvent',
+              'externalId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'LiveEvent', 'kind'),
+              kind,
+              r'LiveEvent',
+              'kind',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'LiveEvent', 'observedAt'),
+              observedAt,
+              r'LiveEvent',
+              'observedAt',
+            ),
             validUntil: validUntil,
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'LiveEvent', 'version'),
+              version,
+              r'LiveEvent',
+              'version',
+            ),
             geometry: _geometry?.build(),
             bbox: _bbox?.build(),
             prevBbox: _prevBbox?.build(),
@@ -240,7 +256,10 @@ class LiveEventBuilder implements Builder<LiveEvent, LiveEventBuilder> {
         _quality?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LiveEvent', _$failedField, e.toString());
+          r'LiveEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -27,9 +27,9 @@ abstract class StatsSeriesSeriesInner
 
   StatsSeriesSeriesInner._();
 
-  factory StatsSeriesSeriesInner(
-          [void updates(StatsSeriesSeriesInnerBuilder b)]) =
-      _$StatsSeriesSeriesInner;
+  factory StatsSeriesSeriesInner([
+    void updates(StatsSeriesSeriesInnerBuilder b),
+  ]) = _$StatsSeriesSeriesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StatsSeriesSeriesInnerBuilder b) => b;
@@ -44,7 +44,7 @@ class _$StatsSeriesSeriesInnerSerializer
   @override
   final Iterable<Type> types = const [
     StatsSeriesSeriesInner,
-    _$StatsSeriesSeriesInner
+    _$StatsSeriesSeriesInner,
   ];
 
   @override
@@ -65,8 +65,9 @@ class _$StatsSeriesSeriesInnerSerializer
     yield r'points';
     yield serializers.serialize(
       object.points,
-      specifiedType: const FullType(
-          BuiltList, [FullType(StatsSeriesSeriesInnerPointsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(StatsSeriesSeriesInnerPointsInner),
+      ]),
     );
   }
 
@@ -76,9 +77,11 @@ class _$StatsSeriesSeriesInnerSerializer
     StatsSeriesSeriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,19 +97,24 @@ class _$StatsSeriesSeriesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.key = valueDes;
           break;
         case r'points':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(StatsSeriesSeriesInnerPointsInner)]),
-          ) as BuiltList<StatsSeriesSeriesInnerPointsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(StatsSeriesSeriesInnerPointsInner),
+                    ]),
+                  )
+                  as BuiltList<StatsSeriesSeriesInnerPointsInner>;
           result.points.replace(valueDes);
           break;
         default:

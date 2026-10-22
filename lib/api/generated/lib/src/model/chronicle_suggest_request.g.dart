@@ -14,16 +14,16 @@ class _$ChronicleSuggestRequest extends ChronicleSuggestRequest {
   @override
   final String? topic;
 
-  factory _$ChronicleSuggestRequest(
-          [void Function(ChronicleSuggestRequestBuilder)? updates]) =>
-      (ChronicleSuggestRequestBuilder()..update(updates))._build();
+  factory _$ChronicleSuggestRequest([
+    void Function(ChronicleSuggestRequestBuilder)? updates,
+  ]) => (ChronicleSuggestRequestBuilder()..update(updates))._build();
 
   _$ChronicleSuggestRequest._({this.situationId, this.area, this.topic})
-      : super._();
+    : super._();
   @override
   ChronicleSuggestRequest rebuild(
-          void Function(ChronicleSuggestRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSuggestRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSuggestRequestBuilder toBuilder() =>
@@ -106,7 +106,8 @@ class ChronicleSuggestRequestBuilder
   _$ChronicleSuggestRequest _build() {
     _$ChronicleSuggestRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSuggestRequest._(
             situationId: situationId,
             area: _area?.build(),
@@ -119,7 +120,10 @@ class ChronicleSuggestRequestBuilder
         _area?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSuggestRequest', _$failedField, e.toString());
+          r'ChronicleSuggestRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

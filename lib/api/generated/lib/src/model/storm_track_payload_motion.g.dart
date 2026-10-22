@@ -7,14 +7,15 @@ part of 'storm_track_payload_motion.dart';
 // **************************************************************************
 
 const StormTrackPayloadMotionMethodEnum
-    _$stormTrackPayloadMotionMethodEnum_titanLiteV1 =
+_$stormTrackPayloadMotionMethodEnum_titanLiteV1 =
     const StormTrackPayloadMotionMethodEnum._('titanLiteV1');
 const StormTrackPayloadMotionMethodEnum
-    _$stormTrackPayloadMotionMethodEnum_centroidV1 =
+_$stormTrackPayloadMotionMethodEnum_centroidV1 =
     const StormTrackPayloadMotionMethodEnum._('centroidV1');
 
 StormTrackPayloadMotionMethodEnum _$stormTrackPayloadMotionMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'titanLiteV1':
       return _$stormTrackPayloadMotionMethodEnum_titanLiteV1;
@@ -26,14 +27,16 @@ StormTrackPayloadMotionMethodEnum _$stormTrackPayloadMotionMethodEnumValueOf(
 }
 
 final BuiltSet<StormTrackPayloadMotionMethodEnum>
-    _$stormTrackPayloadMotionMethodEnumValues = BuiltSet<
-        StormTrackPayloadMotionMethodEnum>(const <StormTrackPayloadMotionMethodEnum>[
-  _$stormTrackPayloadMotionMethodEnum_titanLiteV1,
-  _$stormTrackPayloadMotionMethodEnum_centroidV1,
-]);
+_$stormTrackPayloadMotionMethodEnumValues =
+    BuiltSet<StormTrackPayloadMotionMethodEnum>(
+      const <StormTrackPayloadMotionMethodEnum>[
+        _$stormTrackPayloadMotionMethodEnum_titanLiteV1,
+        _$stormTrackPayloadMotionMethodEnum_centroidV1,
+      ],
+    );
 
 Serializer<StormTrackPayloadMotionMethodEnum>
-    _$stormTrackPayloadMotionMethodEnumSerializer =
+_$stormTrackPayloadMotionMethodEnumSerializer =
     _$StormTrackPayloadMotionMethodEnumSerializer();
 
 class _$StormTrackPayloadMotionMethodEnumSerializer
@@ -54,16 +57,19 @@ class _$StormTrackPayloadMotionMethodEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, StormTrackPayloadMotionMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StormTrackPayloadMotionMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormTrackPayloadMotionMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormTrackPayloadMotionMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormTrackPayloadMotionMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormTrackPayloadMotion extends StormTrackPayloadMotion {
@@ -74,17 +80,19 @@ class _$StormTrackPayloadMotion extends StormTrackPayloadMotion {
   @override
   final StormTrackPayloadMotionMethodEnum method;
 
-  factory _$StormTrackPayloadMotion(
-          [void Function(StormTrackPayloadMotionBuilder)? updates]) =>
-      (StormTrackPayloadMotionBuilder()..update(updates))._build();
+  factory _$StormTrackPayloadMotion([
+    void Function(StormTrackPayloadMotionBuilder)? updates,
+  ]) => (StormTrackPayloadMotionBuilder()..update(updates))._build();
 
-  _$StormTrackPayloadMotion._(
-      {required this.speedKmh, required this.bearingDeg, required this.method})
-      : super._();
+  _$StormTrackPayloadMotion._({
+    required this.speedKmh,
+    required this.bearingDeg,
+    required this.method,
+  }) : super._();
   @override
   StormTrackPayloadMotion rebuild(
-          void Function(StormTrackPayloadMotionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StormTrackPayloadMotionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StormTrackPayloadMotionBuilder toBuilder() =>
@@ -166,14 +174,24 @@ class StormTrackPayloadMotionBuilder
   StormTrackPayloadMotion build() => _build();
 
   _$StormTrackPayloadMotion _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StormTrackPayloadMotion._(
           speedKmh: BuiltValueNullFieldError.checkNotNull(
-              speedKmh, r'StormTrackPayloadMotion', 'speedKmh'),
+            speedKmh,
+            r'StormTrackPayloadMotion',
+            'speedKmh',
+          ),
           bearingDeg: BuiltValueNullFieldError.checkNotNull(
-              bearingDeg, r'StormTrackPayloadMotion', 'bearingDeg'),
+            bearingDeg,
+            r'StormTrackPayloadMotion',
+            'bearingDeg',
+          ),
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'StormTrackPayloadMotion', 'method'),
+            method,
+            r'StormTrackPayloadMotion',
+            'method',
+          ),
         );
     replace(_$result);
     return _$result;

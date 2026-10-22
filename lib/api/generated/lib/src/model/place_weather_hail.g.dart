@@ -18,17 +18,17 @@ class _$PlaceWeatherHail extends PlaceWeatherHail {
   @override
   final num? meshNearest25Km;
 
-  factory _$PlaceWeatherHail(
-          [void Function(PlaceWeatherHailBuilder)? updates]) =>
-      (PlaceWeatherHailBuilder()..update(updates))._build();
+  factory _$PlaceWeatherHail([
+    void Function(PlaceWeatherHailBuilder)? updates,
+  ]) => (PlaceWeatherHailBuilder()..update(updates))._build();
 
-  _$PlaceWeatherHail._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.meshMaxMmInRadius,
-      this.meshNearest25Km})
-      : super._();
+  _$PlaceWeatherHail._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.meshMaxMmInRadius,
+    this.meshNearest25Km,
+  }) : super._();
   @override
   PlaceWeatherHail rebuild(void Function(PlaceWeatherHailBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -129,10 +129,14 @@ class PlaceWeatherHailBuilder
   PlaceWeatherHail build() => _build();
 
   _$PlaceWeatherHail _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherHail._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherHail', 'status'),
+            status,
+            r'PlaceWeatherHail',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           meshMaxMmInRadius: meshMaxMmInRadius,

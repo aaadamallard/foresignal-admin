@@ -78,9 +78,11 @@ class _$PrecursorEventSerializer
     PrecursorEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,24 +98,30 @@ class _$PrecursorEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorEventEventEnum),
-          ) as PrecursorEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorEventEventEnum),
+                  )
+                  as PrecursorEventEventEnum;
           result.event = valueDes;
           break;
         case r'precursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorEventPrecursor),
-          ) as PrecursorEventPrecursor;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorEventPrecursor),
+                  )
+                  as PrecursorEventPrecursor;
           result.precursor.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

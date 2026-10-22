@@ -24,9 +24,9 @@ CommentEventReasonEnum _$commentEventReasonEnumValueOf(String name) {
 
 final BuiltSet<CommentEventReasonEnum> _$commentEventReasonEnumValues =
     BuiltSet<CommentEventReasonEnum>(const <CommentEventReasonEnum>[
-  _$commentEventReasonEnum_mention,
-  _$commentEventReasonEnum_reply,
-]);
+      _$commentEventReasonEnum_mention,
+      _$commentEventReasonEnum_reply,
+    ]);
 
 Serializer<CommentEventReasonEnum> _$commentEventReasonEnumSerializer =
     _$CommentEventReasonEnumSerializer();
@@ -48,15 +48,20 @@ class _$CommentEventReasonEnumSerializer
   final String wireName = 'CommentEventReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, CommentEventReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CommentEventReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CommentEventReasonEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CommentEventReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CommentEventReasonEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CommentEventReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CommentEvent extends CommentEvent {
@@ -78,15 +83,15 @@ class _$CommentEvent extends CommentEvent {
   factory _$CommentEvent([void Function(CommentEventBuilder)? updates]) =>
       (CommentEventBuilder()..update(updates))._build();
 
-  _$CommentEvent._(
-      {required this.reason,
-      required this.annotationId,
-      this.parentId,
-      required this.targetRef,
-      required this.author,
-      this.excerpt,
-      required this.at})
-      : super._();
+  _$CommentEvent._({
+    required this.reason,
+    required this.annotationId,
+    this.parentId,
+    required this.targetRef,
+    required this.author,
+    this.excerpt,
+    required this.at,
+  }) : super._();
   @override
   CommentEvent rebuild(void Function(CommentEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -203,19 +208,32 @@ class CommentEventBuilder
   _$CommentEvent _build() {
     _$CommentEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CommentEvent._(
             reason: BuiltValueNullFieldError.checkNotNull(
-                reason, r'CommentEvent', 'reason'),
+              reason,
+              r'CommentEvent',
+              'reason',
+            ),
             annotationId: BuiltValueNullFieldError.checkNotNull(
-                annotationId, r'CommentEvent', 'annotationId'),
+              annotationId,
+              r'CommentEvent',
+              'annotationId',
+            ),
             parentId: parentId,
             targetRef: BuiltValueNullFieldError.checkNotNull(
-                targetRef, r'CommentEvent', 'targetRef'),
+              targetRef,
+              r'CommentEvent',
+              'targetRef',
+            ),
             author: author.build(),
             excerpt: excerpt,
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'CommentEvent', 'at'),
+              at,
+              r'CommentEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -224,7 +242,10 @@ class CommentEventBuilder
         author.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CommentEvent', _$failedField, e.toString());
+          r'CommentEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

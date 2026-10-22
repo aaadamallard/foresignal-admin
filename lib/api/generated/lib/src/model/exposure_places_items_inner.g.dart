@@ -12,16 +12,16 @@ class _$ExposurePlacesItemsInner extends ExposurePlacesItemsInner {
   @override
   final String name;
 
-  factory _$ExposurePlacesItemsInner(
-          [void Function(ExposurePlacesItemsInnerBuilder)? updates]) =>
-      (ExposurePlacesItemsInnerBuilder()..update(updates))._build();
+  factory _$ExposurePlacesItemsInner([
+    void Function(ExposurePlacesItemsInnerBuilder)? updates,
+  ]) => (ExposurePlacesItemsInnerBuilder()..update(updates))._build();
 
   _$ExposurePlacesItemsInner._({required this.placeId, required this.name})
-      : super._();
+    : super._();
   @override
   ExposurePlacesItemsInner rebuild(
-          void Function(ExposurePlacesItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExposurePlacesItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExposurePlacesItemsInnerBuilder toBuilder() =>
@@ -94,12 +94,19 @@ class ExposurePlacesItemsInnerBuilder
   ExposurePlacesItemsInner build() => _build();
 
   _$ExposurePlacesItemsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExposurePlacesItemsInner._(
           placeId: BuiltValueNullFieldError.checkNotNull(
-              placeId, r'ExposurePlacesItemsInner', 'placeId'),
+            placeId,
+            r'ExposurePlacesItemsInner',
+            'placeId',
+          ),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'ExposurePlacesItemsInner', 'name'),
+            name,
+            r'ExposurePlacesItemsInner',
+            'name',
+          ),
         );
     replace(_$result);
     return _$result;

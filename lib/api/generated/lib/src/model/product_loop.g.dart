@@ -33,19 +33,19 @@ class _$ProductLoop extends ProductLoop {
   factory _$ProductLoop([void Function(ProductLoopBuilder)? updates]) =>
       (ProductLoopBuilder()..update(updates))._build();
 
-  _$ProductLoop._(
-      {required this.crs,
-      required this.bounds,
-      required this.coordinates,
-      required this.width,
-      required this.height,
-      this.products,
-      this.runs,
-      required this.frames,
-      this.legendUrl,
-      this.attribution,
-      required this.serverTime})
-      : super._();
+  _$ProductLoop._({
+    required this.crs,
+    required this.bounds,
+    required this.coordinates,
+    required this.width,
+    required this.height,
+    this.products,
+    this.runs,
+    required this.frames,
+    this.legendUrl,
+    this.attribution,
+    required this.serverTime,
+  }) : super._();
   @override
   ProductLoop rebuild(void Function(ProductLoopBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -200,23 +200,36 @@ class ProductLoopBuilder implements Builder<ProductLoop, ProductLoopBuilder> {
   _$ProductLoop _build() {
     _$ProductLoop _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductLoop._(
             crs: BuiltValueNullFieldError.checkNotNull(
-                crs, r'ProductLoop', 'crs'),
+              crs,
+              r'ProductLoop',
+              'crs',
+            ),
             bounds: bounds.build(),
             coordinates: coordinates.build(),
             width: BuiltValueNullFieldError.checkNotNull(
-                width, r'ProductLoop', 'width'),
+              width,
+              r'ProductLoop',
+              'width',
+            ),
             height: BuiltValueNullFieldError.checkNotNull(
-                height, r'ProductLoop', 'height'),
+              height,
+              r'ProductLoop',
+              'height',
+            ),
             products: _products?.build(),
             runs: _runs?.build(),
             frames: frames.build(),
             legendUrl: legendUrl,
             attribution: _attribution?.build(),
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'ProductLoop', 'serverTime'),
+              serverTime,
+              r'ProductLoop',
+              'serverTime',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -237,7 +250,10 @@ class ProductLoopBuilder implements Builder<ProductLoop, ProductLoopBuilder> {
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductLoop', _$failedField, e.toString());
+          r'ProductLoop',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

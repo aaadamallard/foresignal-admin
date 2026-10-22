@@ -31,18 +31,18 @@ class _$ReadRestriction extends ReadRestriction {
   factory _$ReadRestriction([void Function(ReadRestrictionBuilder)? updates]) =>
       (ReadRestrictionBuilder()..update(updates))._build();
 
-  _$ReadRestriction._(
-      {this.sources,
-      this.kinds,
-      this.bbox,
-      this.endpoints,
-      this.federation,
-      this.includeExercise,
-      this.area,
-      this.placeIds,
-      this.excludePrivate,
-      this.maxRequestsPerMinute})
-      : super._();
+  _$ReadRestriction._({
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.endpoints,
+    this.federation,
+    this.includeExercise,
+    this.area,
+    this.placeIds,
+    this.excludePrivate,
+    this.maxRequestsPerMinute,
+  }) : super._();
   @override
   ReadRestriction rebuild(void Function(ReadRestrictionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -188,7 +188,8 @@ class ReadRestrictionBuilder
   _$ReadRestriction _build() {
     _$ReadRestriction _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReadRestriction._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -219,7 +220,10 @@ class ReadRestrictionBuilder
         _placeIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReadRestriction', _$failedField, e.toString());
+          r'ReadRestriction',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

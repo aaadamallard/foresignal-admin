@@ -12,16 +12,16 @@ class _$ProposedPatchSanityChecks extends ProposedPatchSanityChecks {
   @override
   final bool? classNameUnchanged;
 
-  factory _$ProposedPatchSanityChecks(
-          [void Function(ProposedPatchSanityChecksBuilder)? updates]) =>
-      (ProposedPatchSanityChecksBuilder()..update(updates))._build();
+  factory _$ProposedPatchSanityChecks([
+    void Function(ProposedPatchSanityChecksBuilder)? updates,
+  ]) => (ProposedPatchSanityChecksBuilder()..update(updates))._build();
 
   _$ProposedPatchSanityChecks._({this.bracesBalanced, this.classNameUnchanged})
-      : super._();
+    : super._();
   @override
   ProposedPatchSanityChecks rebuild(
-          void Function(ProposedPatchSanityChecksBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProposedPatchSanityChecksBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProposedPatchSanityChecksBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class ProposedPatchSanityChecksBuilder
   ProposedPatchSanityChecks build() => _build();
 
   _$ProposedPatchSanityChecks _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProposedPatchSanityChecks._(
           bracesBalanced: bracesBalanced,
           classNameUnchanged: classNameUnchanged,

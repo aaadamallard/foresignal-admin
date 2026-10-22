@@ -40,13 +40,13 @@ SocialPlatformStateEnum _$socialPlatformStateEnumValueOf(String name) {
 
 final BuiltSet<SocialPlatformStateEnum> _$socialPlatformStateEnumValues =
     BuiltSet<SocialPlatformStateEnum>(const <SocialPlatformStateEnum>[
-  _$socialPlatformStateEnum_enabled,
-  _$socialPlatformStateEnum_disabled,
-  _$socialPlatformStateEnum_degraded,
-  _$socialPlatformStateEnum_budgetExhausted,
-  _$socialPlatformStateEnum_credentialsRequired,
-  _$socialPlatformStateEnum_unavailable,
-]);
+      _$socialPlatformStateEnum_enabled,
+      _$socialPlatformStateEnum_disabled,
+      _$socialPlatformStateEnum_degraded,
+      _$socialPlatformStateEnum_budgetExhausted,
+      _$socialPlatformStateEnum_credentialsRequired,
+      _$socialPlatformStateEnum_unavailable,
+    ]);
 
 Serializer<SocialPlatformStateEnum> _$socialPlatformStateEnumSerializer =
     _$SocialPlatformStateEnumSerializer();
@@ -76,16 +76,20 @@ class _$SocialPlatformStateEnumSerializer
   final String wireName = 'SocialPlatformStateEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialPlatformStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialPlatformStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialPlatformStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialPlatformStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialPlatformStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialPlatform extends SocialPlatform {
@@ -129,26 +133,26 @@ class _$SocialPlatform extends SocialPlatform {
   factory _$SocialPlatform([void Function(SocialPlatformBuilder)? updates]) =>
       (SocialPlatformBuilder()..update(updates))._build();
 
-  _$SocialPlatform._(
-      {required this.id,
-      required this.network,
-      required this.name,
-      required this.state,
-      this.stateReason,
-      this.defaultEnabled,
-      this.type,
-      this.mode,
-      required this.paths,
-      required this.credentials,
-      this.health,
-      this.stream,
-      this.quotas,
-      this.spend,
-      this.deletionSync,
-      this.terms,
-      required this.settings,
-      this.updatedAt})
-      : super._();
+  _$SocialPlatform._({
+    required this.id,
+    required this.network,
+    required this.name,
+    required this.state,
+    this.stateReason,
+    this.defaultEnabled,
+    this.type,
+    this.mode,
+    required this.paths,
+    required this.credentials,
+    this.health,
+    this.stream,
+    this.quotas,
+    this.spend,
+    this.deletionSync,
+    this.terms,
+    required this.settings,
+    this.updatedAt,
+  }) : super._();
   @override
   SocialPlatform rebuild(void Function(SocialPlatformBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -363,16 +367,29 @@ class SocialPlatformBuilder
   _$SocialPlatform _build() {
     _$SocialPlatform _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPlatform._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SocialPlatform', 'id'),
+              id,
+              r'SocialPlatform',
+              'id',
+            ),
             network: BuiltValueNullFieldError.checkNotNull(
-                network, r'SocialPlatform', 'network'),
+              network,
+              r'SocialPlatform',
+              'network',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SocialPlatform', 'name'),
+              name,
+              r'SocialPlatform',
+              'name',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'SocialPlatform', 'state'),
+              state,
+              r'SocialPlatform',
+              'state',
+            ),
             stateReason: stateReason,
             defaultEnabled: defaultEnabled,
             type: type,
@@ -411,7 +428,10 @@ class SocialPlatformBuilder
         settings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPlatform', _$failedField, e.toString());
+          r'SocialPlatform',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

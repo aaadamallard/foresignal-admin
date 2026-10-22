@@ -20,7 +20,7 @@ class _$AlertContext extends AlertContext {
       (AlertContextBuilder()..update(updates))._build();
 
   _$AlertContext._({this.weather, this.near, this.anomaly, this.anchor})
-      : super._();
+    : super._();
   @override
   AlertContext rebuild(void Function(AlertContextBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -116,7 +116,8 @@ class AlertContextBuilder
   _$AlertContext _build() {
     _$AlertContext _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AlertContext._(
             weather: _weather?.build(),
             near: _near?.build(),
@@ -136,7 +137,10 @@ class AlertContextBuilder
         _anchor?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AlertContext', _$failedField, e.toString());
+          r'AlertContext',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

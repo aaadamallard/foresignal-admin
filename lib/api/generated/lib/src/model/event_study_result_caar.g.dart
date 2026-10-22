@@ -12,16 +12,16 @@ class _$EventStudyResultCaar extends EventStudyResultCaar {
   @override
   final EventStudyWindowStats event;
 
-  factory _$EventStudyResultCaar(
-          [void Function(EventStudyResultCaarBuilder)? updates]) =>
-      (EventStudyResultCaarBuilder()..update(updates))._build();
+  factory _$EventStudyResultCaar([
+    void Function(EventStudyResultCaarBuilder)? updates,
+  ]) => (EventStudyResultCaarBuilder()..update(updates))._build();
 
   _$EventStudyResultCaar._({required this.preEvent, required this.event})
-      : super._();
+    : super._();
   @override
   EventStudyResultCaar rebuild(
-          void Function(EventStudyResultCaarBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStudyResultCaarBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStudyResultCaarBuilder toBuilder() =>
@@ -98,7 +98,8 @@ class EventStudyResultCaarBuilder
   _$EventStudyResultCaar _build() {
     _$EventStudyResultCaar _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStudyResultCaar._(
             preEvent: preEvent.build(),
             event: event.build(),
@@ -112,7 +113,10 @@ class EventStudyResultCaarBuilder
         event.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStudyResultCaar', _$failedField, e.toString());
+          r'EventStudyResultCaar',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

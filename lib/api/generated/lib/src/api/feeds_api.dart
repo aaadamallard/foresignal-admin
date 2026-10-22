@@ -56,16 +56,10 @@ class FeedsApi {
     final _path = r'/v1/alerts/feed.atom';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -82,7 +76,10 @@ class FeedsApi {
         ),
       if (minSeverity != null)
         r'minSeverity': encodeQueryParameter(
-            _serializers, minSeverity, const FullType(String)),
+          _serializers,
+          minSeverity,
+          const FullType(String),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -105,8 +102,11 @@ class FeedsApi {
           format: ListFormat.multi,
         ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -181,16 +181,10 @@ class FeedsApi {
     final _path = r'/v1/alerts/feed.json';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -207,7 +201,10 @@ class FeedsApi {
         ),
       if (minSeverity != null)
         r'minSeverity': encodeQueryParameter(
-            _serializers, minSeverity, const FullType(String)),
+          _serializers,
+          minSeverity,
+          const FullType(String),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -230,8 +227,11 @@ class FeedsApi {
           format: ListFormat.multi,
         ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -250,9 +250,10 @@ class FeedsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonFeed),
-            ) as JsonFeed;
+                  rawResponse,
+                  specifiedType: const FullType(JsonFeed),
+                )
+                as JsonFeed;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -301,21 +302,21 @@ class FeedsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}/runs/feed.atom'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -324,8 +325,11 @@ class FeedsApi {
 
     final _queryParameters = <String, dynamic>{
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -390,21 +394,21 @@ class FeedsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}/runs/feed.json'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -413,8 +417,11 @@ class FeedsApi {
 
     final _queryParameters = <String, dynamic>{
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -433,9 +440,10 @@ class FeedsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonFeed),
-            ) as JsonFeed;
+                  rawResponse,
+                  specifiedType: const FullType(JsonFeed),
+                )
+                as JsonFeed;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

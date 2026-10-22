@@ -7,11 +7,11 @@ part of 'intelligence_event_speculation.dart';
 // **************************************************************************
 
 const IntelligenceEventSpeculationLabelEnum
-    _$intelligenceEventSpeculationLabelEnum_speculation =
+_$intelligenceEventSpeculationLabelEnum_speculation =
     const IntelligenceEventSpeculationLabelEnum._('speculation');
 
 IntelligenceEventSpeculationLabelEnum
-    _$intelligenceEventSpeculationLabelEnumValueOf(String name) {
+_$intelligenceEventSpeculationLabelEnumValueOf(String name) {
   switch (name) {
     case 'speculation':
       return _$intelligenceEventSpeculationLabelEnum_speculation;
@@ -21,17 +21,19 @@ IntelligenceEventSpeculationLabelEnum
 }
 
 final BuiltSet<IntelligenceEventSpeculationLabelEnum>
-    _$intelligenceEventSpeculationLabelEnumValues = BuiltSet<
-        IntelligenceEventSpeculationLabelEnum>(const <IntelligenceEventSpeculationLabelEnum>[
-  _$intelligenceEventSpeculationLabelEnum_speculation,
-]);
+_$intelligenceEventSpeculationLabelEnumValues =
+    BuiltSet<IntelligenceEventSpeculationLabelEnum>(
+      const <IntelligenceEventSpeculationLabelEnum>[
+        _$intelligenceEventSpeculationLabelEnum_speculation,
+      ],
+    );
 
 const IntelligenceEventSpeculationNarrativeOriginEnum
-    _$intelligenceEventSpeculationNarrativeOriginEnum_llm =
+_$intelligenceEventSpeculationNarrativeOriginEnum_llm =
     const IntelligenceEventSpeculationNarrativeOriginEnum._('llm');
 
 IntelligenceEventSpeculationNarrativeOriginEnum
-    _$intelligenceEventSpeculationNarrativeOriginEnumValueOf(String name) {
+_$intelligenceEventSpeculationNarrativeOriginEnumValueOf(String name) {
   switch (name) {
     case 'llm':
       return _$intelligenceEventSpeculationNarrativeOriginEnum_llm;
@@ -41,16 +43,18 @@ IntelligenceEventSpeculationNarrativeOriginEnum
 }
 
 final BuiltSet<IntelligenceEventSpeculationNarrativeOriginEnum>
-    _$intelligenceEventSpeculationNarrativeOriginEnumValues = BuiltSet<
-        IntelligenceEventSpeculationNarrativeOriginEnum>(const <IntelligenceEventSpeculationNarrativeOriginEnum>[
-  _$intelligenceEventSpeculationNarrativeOriginEnum_llm,
-]);
+_$intelligenceEventSpeculationNarrativeOriginEnumValues =
+    BuiltSet<IntelligenceEventSpeculationNarrativeOriginEnum>(
+      const <IntelligenceEventSpeculationNarrativeOriginEnum>[
+        _$intelligenceEventSpeculationNarrativeOriginEnum_llm,
+      ],
+    );
 
 Serializer<IntelligenceEventSpeculationLabelEnum>
-    _$intelligenceEventSpeculationLabelEnumSerializer =
+_$intelligenceEventSpeculationLabelEnumSerializer =
     _$IntelligenceEventSpeculationLabelEnumSerializer();
 Serializer<IntelligenceEventSpeculationNarrativeOriginEnum>
-    _$intelligenceEventSpeculationNarrativeOriginEnumSerializer =
+_$intelligenceEventSpeculationNarrativeOriginEnumSerializer =
     _$IntelligenceEventSpeculationNarrativeOriginEnumSerializer();
 
 class _$IntelligenceEventSpeculationLabelEnumSerializer
@@ -64,23 +68,26 @@ class _$IntelligenceEventSpeculationLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelligenceEventSpeculationLabelEnum
+    IntelligenceEventSpeculationLabelEnum,
   ];
   @override
   final String wireName = 'IntelligenceEventSpeculationLabelEnum';
 
   @override
   Object serialize(
-          Serializers serializers, IntelligenceEventSpeculationLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelligenceEventSpeculationLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelligenceEventSpeculationLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelligenceEventSpeculationLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelligenceEventSpeculationLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelligenceEventSpeculationNarrativeOriginEnumSerializer
@@ -95,23 +102,26 @@ class _$IntelligenceEventSpeculationNarrativeOriginEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelligenceEventSpeculationNarrativeOriginEnum
+    IntelligenceEventSpeculationNarrativeOriginEnum,
   ];
   @override
   final String wireName = 'IntelligenceEventSpeculationNarrativeOriginEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          IntelligenceEventSpeculationNarrativeOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelligenceEventSpeculationNarrativeOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelligenceEventSpeculationNarrativeOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelligenceEventSpeculationNarrativeOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelligenceEventSpeculationNarrativeOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelligenceEventSpeculation extends IntelligenceEventSpeculation {
@@ -124,20 +134,20 @@ class _$IntelligenceEventSpeculation extends IntelligenceEventSpeculation {
   @override
   final IntelligenceEventSpeculationNarrativeOriginEnum? narrativeOrigin;
 
-  factory _$IntelligenceEventSpeculation(
-          [void Function(IntelligenceEventSpeculationBuilder)? updates]) =>
-      (IntelligenceEventSpeculationBuilder()..update(updates))._build();
+  factory _$IntelligenceEventSpeculation([
+    void Function(IntelligenceEventSpeculationBuilder)? updates,
+  ]) => (IntelligenceEventSpeculationBuilder()..update(updates))._build();
 
-  _$IntelligenceEventSpeculation._(
-      {required this.label,
-      required this.alternatives,
-      this.narrative,
-      this.narrativeOrigin})
-      : super._();
+  _$IntelligenceEventSpeculation._({
+    required this.label,
+    required this.alternatives,
+    this.narrative,
+    this.narrativeOrigin,
+  }) : super._();
   @override
   IntelligenceEventSpeculation rebuild(
-          void Function(IntelligenceEventSpeculationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelligenceEventSpeculationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelligenceEventSpeculationBuilder toBuilder() =>
@@ -177,8 +187,10 @@ class _$IntelligenceEventSpeculation extends IntelligenceEventSpeculation {
 
 class IntelligenceEventSpeculationBuilder
     implements
-        Builder<IntelligenceEventSpeculation,
-            IntelligenceEventSpeculationBuilder> {
+        Builder<
+          IntelligenceEventSpeculation,
+          IntelligenceEventSpeculationBuilder
+        > {
   _$IntelligenceEventSpeculation? _$v;
 
   IntelligenceEventSpeculationLabelEnum? _label;
@@ -200,8 +212,8 @@ class IntelligenceEventSpeculationBuilder
   IntelligenceEventSpeculationNarrativeOriginEnum? get narrativeOrigin =>
       _$this._narrativeOrigin;
   set narrativeOrigin(
-          IntelligenceEventSpeculationNarrativeOriginEnum? narrativeOrigin) =>
-      _$this._narrativeOrigin = narrativeOrigin;
+    IntelligenceEventSpeculationNarrativeOriginEnum? narrativeOrigin,
+  ) => _$this._narrativeOrigin = narrativeOrigin;
 
   IntelligenceEventSpeculationBuilder() {
     IntelligenceEventSpeculation._defaults(this);
@@ -235,10 +247,14 @@ class IntelligenceEventSpeculationBuilder
   _$IntelligenceEventSpeculation _build() {
     _$IntelligenceEventSpeculation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelligenceEventSpeculation._(
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'IntelligenceEventSpeculation', 'label'),
+              label,
+              r'IntelligenceEventSpeculation',
+              'label',
+            ),
             alternatives: alternatives.build(),
             narrative: narrative,
             narrativeOrigin: narrativeOrigin,
@@ -250,7 +266,10 @@ class IntelligenceEventSpeculationBuilder
         alternatives.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelligenceEventSpeculation', _$failedField, e.toString());
+          r'IntelligenceEventSpeculation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

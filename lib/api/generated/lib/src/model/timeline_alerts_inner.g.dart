@@ -16,17 +16,20 @@ class _$TimelineAlertsInner extends TimelineAlertsInner {
   @override
   final int? critical;
 
-  factory _$TimelineAlertsInner(
-          [void Function(TimelineAlertsInnerBuilder)? updates]) =>
-      (TimelineAlertsInnerBuilder()..update(updates))._build();
+  factory _$TimelineAlertsInner([
+    void Function(TimelineAlertsInnerBuilder)? updates,
+  ]) => (TimelineAlertsInnerBuilder()..update(updates))._build();
 
-  _$TimelineAlertsInner._(
-      {required this.t, this.info, this.warning, this.critical})
-      : super._();
+  _$TimelineAlertsInner._({
+    required this.t,
+    this.info,
+    this.warning,
+    this.critical,
+  }) : super._();
   @override
   TimelineAlertsInner rebuild(
-          void Function(TimelineAlertsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TimelineAlertsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TimelineAlertsInnerBuilder toBuilder() =>
@@ -114,10 +117,14 @@ class TimelineAlertsInnerBuilder
   TimelineAlertsInner build() => _build();
 
   _$TimelineAlertsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TimelineAlertsInner._(
           t: BuiltValueNullFieldError.checkNotNull(
-              t, r'TimelineAlertsInner', 't'),
+            t,
+            r'TimelineAlertsInner',
+            't',
+          ),
           info: info,
           warning: warning,
           critical: critical,

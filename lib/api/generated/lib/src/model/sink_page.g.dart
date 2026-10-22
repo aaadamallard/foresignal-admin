@@ -90,11 +90,8 @@ class SinkPageBuilder implements Builder<SinkPage, SinkPageBuilder> {
   _$SinkPage _build() {
     _$SinkPage _$result;
     try {
-      _$result = _$v ??
-          _$SinkPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$SinkPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class SinkPageBuilder implements Builder<SinkPage, SinkPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkPage', _$failedField, e.toString());
+          r'SinkPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

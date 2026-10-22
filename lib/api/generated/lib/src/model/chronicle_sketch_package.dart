@@ -73,9 +73,9 @@ abstract class ChronicleSketchPackage
 
   ChronicleSketchPackage._();
 
-  factory ChronicleSketchPackage(
-          [void updates(ChronicleSketchPackageBuilder b)]) =
-      _$ChronicleSketchPackage;
+  factory ChronicleSketchPackage([
+    void updates(ChronicleSketchPackageBuilder b),
+  ]) = _$ChronicleSketchPackage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSketchPackageBuilder b) => b;
@@ -90,7 +90,7 @@ class _$ChronicleSketchPackageSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSketchPackage,
-    _$ChronicleSketchPackage
+    _$ChronicleSketchPackage,
   ];
 
   @override
@@ -119,20 +119,25 @@ class _$ChronicleSketchPackageSerializer
     yield r'keyTypes';
     yield serializers.serialize(
       object.keyTypes,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ChronicleSketchPackageKeyTypesEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleSketchPackageKeyTypesEnum),
+      ]),
     );
     yield r'minhash';
     yield serializers.serialize(
       object.minhash,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(String)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(String),
+      ]),
     );
     yield r'sizeBand';
     yield serializers.serialize(
       object.sizeBand,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(int)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(int),
+      ]),
     );
     yield r'captureSpan';
     yield serializers.serialize(
@@ -178,9 +183,11 @@ class _$ChronicleSketchPackageSerializer
     ChronicleSketchPackage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -196,92 +203,123 @@ class _$ChronicleSketchPackageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sketchId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sketchId = valueDes;
           break;
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'networkId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.networkId = valueDes;
           break;
         case r'keyTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleSketchPackageKeyTypesEnum)]),
-          ) as BuiltList<ChronicleSketchPackageKeyTypesEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleSketchPackageKeyTypesEnum),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSketchPackageKeyTypesEnum>;
           result.keyTypes.replace(valueDes);
           break;
         case r'minhash':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>;
           result.minhash.replace(valueDes);
           break;
         case r'sizeBand':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>;
           result.sizeBand.replace(valueDes);
           break;
         case r'captureSpan':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleSketchPackageCaptureSpan),
-          ) as ChronicleSketchPackageCaptureSpan;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleSketchPackageCaptureSpan,
+                    ),
+                  )
+                  as ChronicleSketchPackageCaptureSpan;
           result.captureSpan.replace(valueDes);
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'ownerHandle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ownerHandle = valueDes;
           break;
         case r'tlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tlp = valueDes;
           break;
         case r'issuedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.issuedAt = valueDes;
           break;
         case r'expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expiresAt = valueDes;
           break;

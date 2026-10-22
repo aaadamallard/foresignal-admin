@@ -52,16 +52,16 @@ AskActionTypeEnum _$askActionTypeEnumValueOf(String name) {
 
 final BuiltSet<AskActionTypeEnum> _$askActionTypeEnumValues =
     BuiltSet<AskActionTypeEnum>(const <AskActionTypeEnum>[
-  _$askActionTypeEnum_createWatch,
-  _$askActionTypeEnum_updateWatch,
-  _$askActionTypeEnum_createBriefing,
-  _$askActionTypeEnum_acknowledgeAlert,
-  _$askActionTypeEnum_alertStatus,
-  _$askActionTypeEnum_snoozeAlert,
-  _$askActionTypeEnum_createView,
-  _$askActionTypeEnum_setAlertFeedback,
-  _$askActionTypeEnum_applyTuningSuggestion,
-]);
+      _$askActionTypeEnum_createWatch,
+      _$askActionTypeEnum_updateWatch,
+      _$askActionTypeEnum_createBriefing,
+      _$askActionTypeEnum_acknowledgeAlert,
+      _$askActionTypeEnum_alertStatus,
+      _$askActionTypeEnum_snoozeAlert,
+      _$askActionTypeEnum_createView,
+      _$askActionTypeEnum_setAlertFeedback,
+      _$askActionTypeEnum_applyTuningSuggestion,
+    ]);
 
 const AskActionStatusEnum _$askActionStatusEnum_pending =
     const AskActionStatusEnum._('pending');
@@ -89,11 +89,11 @@ AskActionStatusEnum _$askActionStatusEnumValueOf(String name) {
 
 final BuiltSet<AskActionStatusEnum> _$askActionStatusEnumValues =
     BuiltSet<AskActionStatusEnum>(const <AskActionStatusEnum>[
-  _$askActionStatusEnum_pending,
-  _$askActionStatusEnum_executed,
-  _$askActionStatusEnum_rejected,
-  _$askActionStatusEnum_failed,
-]);
+      _$askActionStatusEnum_pending,
+      _$askActionStatusEnum_executed,
+      _$askActionStatusEnum_rejected,
+      _$askActionStatusEnum_failed,
+    ]);
 
 Serializer<AskActionTypeEnum> _$askActionTypeEnumSerializer =
     _$AskActionTypeEnumSerializer();
@@ -131,15 +131,20 @@ class _$AskActionTypeEnumSerializer
   final String wireName = 'AskActionTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, AskActionTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskActionTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AskActionTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskActionTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AskActionTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskActionTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskActionStatusEnumSerializer
@@ -163,15 +168,20 @@ class _$AskActionStatusEnumSerializer
   final String wireName = 'AskActionStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AskActionStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskActionStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AskActionStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskActionStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AskActionStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskActionStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskAction extends AskAction {
@@ -195,16 +205,16 @@ class _$AskAction extends AskAction {
   factory _$AskAction([void Function(AskActionBuilder)? updates]) =>
       (AskActionBuilder()..update(updates))._build();
 
-  _$AskAction._(
-      {required this.id,
-      required this.type,
-      required this.description,
-      this.payload,
-      required this.status,
-      this.result,
-      this.createdAt,
-      this.executedAt})
-      : super._();
+  _$AskAction._({
+    required this.id,
+    required this.type,
+    required this.description,
+    this.payload,
+    required this.status,
+    this.result,
+    this.createdAt,
+    this.executedAt,
+  }) : super._();
   @override
   AskAction rebuild(void Function(AskActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -331,16 +341,26 @@ class AskActionBuilder implements Builder<AskAction, AskActionBuilder> {
   _$AskAction _build() {
     _$AskAction _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AskAction._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'AskAction', 'id'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'AskAction', 'type'),
+              type,
+              r'AskAction',
+              'type',
+            ),
             description: BuiltValueNullFieldError.checkNotNull(
-                description, r'AskAction', 'description'),
+              description,
+              r'AskAction',
+              'description',
+            ),
             payload: _payload?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AskAction', 'status'),
+              status,
+              r'AskAction',
+              'status',
+            ),
             result: _result?.build(),
             createdAt: createdAt,
             executedAt: executedAt,
@@ -355,7 +375,10 @@ class AskActionBuilder implements Builder<AskAction, AskActionBuilder> {
         _result?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AskAction', _$failedField, e.toString());
+          r'AskAction',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

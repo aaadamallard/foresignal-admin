@@ -14,16 +14,16 @@ class _$SavedSearchQueryArea extends SavedSearchQueryArea {
   @override
   final String? placeId;
 
-  factory _$SavedSearchQueryArea(
-          [void Function(SavedSearchQueryAreaBuilder)? updates]) =>
-      (SavedSearchQueryAreaBuilder()..update(updates))._build();
+  factory _$SavedSearchQueryArea([
+    void Function(SavedSearchQueryAreaBuilder)? updates,
+  ]) => (SavedSearchQueryAreaBuilder()..update(updates))._build();
 
   _$SavedSearchQueryArea._({this.bbox, this.geometry, this.placeId})
-      : super._();
+    : super._();
   @override
   SavedSearchQueryArea rebuild(
-          void Function(SavedSearchQueryAreaBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SavedSearchQueryAreaBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SavedSearchQueryAreaBuilder toBuilder() =>
@@ -105,7 +105,8 @@ class SavedSearchQueryAreaBuilder
   _$SavedSearchQueryArea _build() {
     _$SavedSearchQueryArea _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearchQueryArea._(
             bbox: bbox,
             geometry: _geometry?.build(),
@@ -118,7 +119,10 @@ class SavedSearchQueryAreaBuilder
         _geometry?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchQueryArea', _$failedField, e.toString());
+          r'SavedSearchQueryArea',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

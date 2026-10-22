@@ -12,15 +12,15 @@ class _$ProjectedImpactInterval extends ProjectedImpactInterval {
   @override
   final num hi;
 
-  factory _$ProjectedImpactInterval(
-          [void Function(ProjectedImpactIntervalBuilder)? updates]) =>
-      (ProjectedImpactIntervalBuilder()..update(updates))._build();
+  factory _$ProjectedImpactInterval([
+    void Function(ProjectedImpactIntervalBuilder)? updates,
+  ]) => (ProjectedImpactIntervalBuilder()..update(updates))._build();
 
   _$ProjectedImpactInterval._({required this.lo, required this.hi}) : super._();
   @override
   ProjectedImpactInterval rebuild(
-          void Function(ProjectedImpactIntervalBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProjectedImpactIntervalBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProjectedImpactIntervalBuilder toBuilder() =>
@@ -91,12 +91,19 @@ class ProjectedImpactIntervalBuilder
   ProjectedImpactInterval build() => _build();
 
   _$ProjectedImpactInterval _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProjectedImpactInterval._(
           lo: BuiltValueNullFieldError.checkNotNull(
-              lo, r'ProjectedImpactInterval', 'lo'),
+            lo,
+            r'ProjectedImpactInterval',
+            'lo',
+          ),
           hi: BuiltValueNullFieldError.checkNotNull(
-              hi, r'ProjectedImpactInterval', 'hi'),
+            hi,
+            r'ProjectedImpactInterval',
+            'hi',
+          ),
         );
     replace(_$result);
     return _$result;

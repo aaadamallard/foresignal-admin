@@ -7,14 +7,14 @@ part of 'tag_assign_result_skipped_inner.dart';
 // **************************************************************************
 
 const TagAssignResultSkippedInnerReasonEnum
-    _$tagAssignResultSkippedInnerReasonEnum_notVisible =
+_$tagAssignResultSkippedInnerReasonEnum_notVisible =
     const TagAssignResultSkippedInnerReasonEnum._('notVisible');
 const TagAssignResultSkippedInnerReasonEnum
-    _$tagAssignResultSkippedInnerReasonEnum_invalidRef =
+_$tagAssignResultSkippedInnerReasonEnum_invalidRef =
     const TagAssignResultSkippedInnerReasonEnum._('invalidRef');
 
 TagAssignResultSkippedInnerReasonEnum
-    _$tagAssignResultSkippedInnerReasonEnumValueOf(String name) {
+_$tagAssignResultSkippedInnerReasonEnumValueOf(String name) {
   switch (name) {
     case 'notVisible':
       return _$tagAssignResultSkippedInnerReasonEnum_notVisible;
@@ -26,14 +26,16 @@ TagAssignResultSkippedInnerReasonEnum
 }
 
 final BuiltSet<TagAssignResultSkippedInnerReasonEnum>
-    _$tagAssignResultSkippedInnerReasonEnumValues = BuiltSet<
-        TagAssignResultSkippedInnerReasonEnum>(const <TagAssignResultSkippedInnerReasonEnum>[
-  _$tagAssignResultSkippedInnerReasonEnum_notVisible,
-  _$tagAssignResultSkippedInnerReasonEnum_invalidRef,
-]);
+_$tagAssignResultSkippedInnerReasonEnumValues =
+    BuiltSet<TagAssignResultSkippedInnerReasonEnum>(
+      const <TagAssignResultSkippedInnerReasonEnum>[
+        _$tagAssignResultSkippedInnerReasonEnum_notVisible,
+        _$tagAssignResultSkippedInnerReasonEnum_invalidRef,
+      ],
+    );
 
 Serializer<TagAssignResultSkippedInnerReasonEnum>
-    _$tagAssignResultSkippedInnerReasonEnumSerializer =
+_$tagAssignResultSkippedInnerReasonEnumSerializer =
     _$TagAssignResultSkippedInnerReasonEnumSerializer();
 
 class _$TagAssignResultSkippedInnerReasonEnumSerializer
@@ -49,23 +51,26 @@ class _$TagAssignResultSkippedInnerReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    TagAssignResultSkippedInnerReasonEnum
+    TagAssignResultSkippedInnerReasonEnum,
   ];
   @override
   final String wireName = 'TagAssignResultSkippedInnerReasonEnum';
 
   @override
   Object serialize(
-          Serializers serializers, TagAssignResultSkippedInnerReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TagAssignResultSkippedInnerReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TagAssignResultSkippedInnerReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TagAssignResultSkippedInnerReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TagAssignResultSkippedInnerReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TagAssignResultSkippedInner extends TagAssignResultSkippedInner {
@@ -74,16 +79,16 @@ class _$TagAssignResultSkippedInner extends TagAssignResultSkippedInner {
   @override
   final TagAssignResultSkippedInnerReasonEnum reason;
 
-  factory _$TagAssignResultSkippedInner(
-          [void Function(TagAssignResultSkippedInnerBuilder)? updates]) =>
-      (TagAssignResultSkippedInnerBuilder()..update(updates))._build();
+  factory _$TagAssignResultSkippedInner([
+    void Function(TagAssignResultSkippedInnerBuilder)? updates,
+  ]) => (TagAssignResultSkippedInnerBuilder()..update(updates))._build();
 
   _$TagAssignResultSkippedInner._({required this.ref, required this.reason})
-      : super._();
+    : super._();
   @override
   TagAssignResultSkippedInner rebuild(
-          void Function(TagAssignResultSkippedInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TagAssignResultSkippedInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TagAssignResultSkippedInnerBuilder toBuilder() =>
@@ -117,8 +122,10 @@ class _$TagAssignResultSkippedInner extends TagAssignResultSkippedInner {
 
 class TagAssignResultSkippedInnerBuilder
     implements
-        Builder<TagAssignResultSkippedInner,
-            TagAssignResultSkippedInnerBuilder> {
+        Builder<
+          TagAssignResultSkippedInner,
+          TagAssignResultSkippedInnerBuilder
+        > {
   _$TagAssignResultSkippedInner? _$v;
 
   String? _ref;
@@ -158,12 +165,19 @@ class TagAssignResultSkippedInnerBuilder
   TagAssignResultSkippedInner build() => _build();
 
   _$TagAssignResultSkippedInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TagAssignResultSkippedInner._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'TagAssignResultSkippedInner', 'ref'),
+            ref,
+            r'TagAssignResultSkippedInner',
+            'ref',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'TagAssignResultSkippedInner', 'reason'),
+            reason,
+            r'TagAssignResultSkippedInner',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

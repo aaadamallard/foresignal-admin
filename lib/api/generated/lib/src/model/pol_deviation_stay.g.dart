@@ -14,9 +14,9 @@ class _$PolDeviationStay extends PolDeviationStay {
   @override
   final Geometry? centroid;
 
-  factory _$PolDeviationStay(
-          [void Function(PolDeviationStayBuilder)? updates]) =>
-      (PolDeviationStayBuilder()..update(updates))._build();
+  factory _$PolDeviationStay([
+    void Function(PolDeviationStayBuilder)? updates,
+  ]) => (PolDeviationStayBuilder()..update(updates))._build();
 
   _$PolDeviationStay._({this.arrive, this.depart, this.centroid}) : super._();
   @override
@@ -103,7 +103,8 @@ class PolDeviationStayBuilder
   _$PolDeviationStay _build() {
     _$PolDeviationStay _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PolDeviationStay._(
             arrive: arrive,
             depart: depart,
@@ -116,7 +117,10 @@ class PolDeviationStayBuilder
         _centroid?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolDeviationStay', _$failedField, e.toString());
+          r'PolDeviationStay',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

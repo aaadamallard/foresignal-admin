@@ -79,21 +79,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/activate'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -107,14 +107,13 @@ class ChroniclesApi {
       const _type = FullType(ChronicleActivateRequest);
       _bodyData = chronicleActivateRequest == null
           ? null
-          : _serializers.serialize(chronicleActivateRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              chronicleActivateRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -137,9 +136,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -186,21 +186,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/archive'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -222,9 +222,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -273,16 +274,10 @@ class ChroniclesApi {
     final _path = r'/v1/chronicles';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -297,10 +292,7 @@ class ChroniclesApi {
       _bodyData = _serializers.serialize(chronicleInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -323,9 +315,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -374,21 +367,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/layers'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -400,14 +393,13 @@ class ChroniclesApi {
 
     try {
       const _type = FullType(ChronicleLayerInput);
-      _bodyData =
-          _serializers.serialize(chronicleLayerInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        chronicleLayerInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -430,9 +422,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleLayer),
-            ) as ChronicleLayer;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleLayer),
+                )
+                as ChronicleLayer;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -480,22 +473,21 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicle-network/requests/{requestId}/decline'
         .replaceAll(
-            '{' r'requestId' '}',
-            encodeQueryParameter(
-                    _serializers, requestId, const FullType(String))
-                .toString());
+          '{'
+          r'requestId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            requestId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -517,9 +509,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AccessRequest),
-            ) as AccessRequest;
+                  rawResponse,
+                  specifiedType: const FullType(AccessRequest),
+                )
+                as AccessRequest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -568,21 +561,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -590,8 +583,11 @@ class ChroniclesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'confirm':
-          encodeQueryParameter(_serializers, confirm, const FullType(String)),
+      r'confirm': encodeQueryParameter(
+        _serializers,
+        confirm,
+        const FullType(String),
+      ),
     };
 
     final _response = await _dio.request<Object>(
@@ -635,26 +631,31 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/layers/{layerId}'
         .replaceAll(
-            '{' r'chronicleId' '}',
-            encodeQueryParameter(
-                    _serializers, chronicleId, const FullType(String))
-                .toString())
+          '{'
+          r'chronicleId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            chronicleId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'layerId' '}',
-            encodeQueryParameter(_serializers, layerId, const FullType(String))
-                .toString());
+          '{'
+          r'layerId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            layerId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -663,8 +664,11 @@ class ChroniclesApi {
 
     final _queryParameters = <String, dynamic>{
       if (purge != null)
-        r'purge':
-            encodeQueryParameter(_serializers, purge, const FullType(bool)),
+        r'purge': encodeQueryParameter(
+          _serializers,
+          purge,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -703,21 +707,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicle-network/links/{linkId}/dismiss'.replaceAll(
-        '{' r'linkId' '}',
-        encodeQueryParameter(_serializers, linkId, const FullType(String))
-            .toString());
+      '{'
+      r'linkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        linkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -761,21 +765,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/export'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -787,14 +791,13 @@ class ChroniclesApi {
 
     try {
       const _type = FullType(ChronicleExportRequest);
-      _bodyData =
-          _serializers.serialize(chronicleExportRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        chronicleExportRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -817,9 +820,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExportJob),
-            ) as ExportJob;
+                  rawResponse,
+                  specifiedType: const FullType(ExportJob),
+                )
+                as ExportJob;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -866,21 +870,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -902,9 +906,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -951,21 +956,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicle-network/clusters/{clusterId}'.replaceAll(
-        '{' r'clusterId' '}',
-        encodeQueryParameter(_serializers, clusterId, const FullType(String))
-            .toString());
+      '{'
+      r'clusterId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        clusterId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -987,9 +992,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleCluster),
-            ) as ChronicleCluster;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleCluster),
+                )
+                as ChronicleCluster;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1045,22 +1051,21 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicle-network/clusters/{clusterId}/timeline'
         .replaceAll(
-            '{' r'clusterId' '}',
-            encodeQueryParameter(
-                    _serializers, clusterId, const FullType(String))
-                .toString());
+          '{'
+          r'clusterId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            clusterId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1069,16 +1074,25 @@ class ChroniclesApi {
 
     final _queryParameters = <String, dynamic>{
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1097,9 +1111,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ClusterTimelinePage),
-            ) as ClusterTimelinePage;
+                  rawResponse,
+                  specifiedType: const FullType(ClusterTimelinePage),
+                )
+                as ClusterTimelinePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1146,21 +1161,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/estimate'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1182,9 +1197,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleEstimate),
-            ) as ChronicleEstimate;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleEstimate),
+                )
+                as ChronicleEstimate;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1239,21 +1255,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/frames'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1262,13 +1278,19 @@ class ChroniclesApi {
 
     final _queryParameters = <String, dynamic>{
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (step != null)
-        r'step':
-            encodeQueryParameter(_serializers, step, const FullType(String)),
+        r'step': encodeQueryParameter(
+          _serializers,
+          step,
+          const FullType(String),
+        ),
       if (layers != null)
         r'layers': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1294,9 +1316,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleFrameIndex),
-            ) as ChronicleFrameIndex;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleFrameIndex),
+                )
+                as ChronicleFrameIndex;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1349,21 +1372,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/series'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1373,8 +1396,11 @@ class ChroniclesApi {
     final _queryParameters = <String, dynamic>{
       r'ref': encodeQueryParameter(_serializers, ref, const FullType(String)),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
     };
@@ -1395,9 +1421,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleSeries),
-            ) as ChronicleSeries;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleSeries),
+                )
+                as ChronicleSeries;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1454,21 +1481,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/state'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1478,17 +1505,29 @@ class ChroniclesApi {
     final _queryParameters = <String, dynamic>{
       r'at': encodeQueryParameter(_serializers, at, const FullType(DateTime)),
       if (layer != null)
-        r'layer':
-            encodeQueryParameter(_serializers, layer, const FullType(String)),
+        r'layer': encodeQueryParameter(
+          _serializers,
+          layer,
+          const FullType(String),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1507,9 +1546,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleState),
-            ) as ChronicleState;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleState),
+                )
+                as ChronicleState;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1556,21 +1596,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/summary'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1592,9 +1632,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleSummary),
-            ) as ChronicleSummary;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleSummary),
+                )
+                as ChronicleSummary;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1649,21 +1690,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/thread'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1672,8 +1713,11 @@ class ChroniclesApi {
 
     final _queryParameters = <String, dynamic>{
       if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(DateTime)),
+        r'after': encodeQueryParameter(
+          _serializers,
+          after,
+          const FullType(DateTime),
+        ),
       if (types != null)
         r'types': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1682,11 +1726,17 @@ class ChroniclesApi {
           format: ListFormat.multi,
         ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1705,9 +1755,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleThreadPage),
-            ) as ChronicleThreadPage;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleThreadPage),
+                )
+                as ChronicleThreadPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1765,35 +1816,40 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/tiles/{z}/{x}/{y}.mvt'
         .replaceAll(
-            '{' r'chronicleId' '}',
-            encodeQueryParameter(
-                    _serializers, chronicleId, const FullType(String))
-                .toString())
+          '{'
+          r'chronicleId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            chronicleId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1883,31 +1939,41 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/tracks/{sourceId}/{externalId}'
         .replaceAll(
-            '{' r'chronicleId' '}',
-            encodeQueryParameter(
-                    _serializers, chronicleId, const FullType(String))
-                .toString())
+          '{'
+          r'chronicleId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            chronicleId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'externalId' '}',
-            encodeQueryParameter(
-                    _serializers, externalId, const FullType(String))
-                .toString());
+          '{'
+          r'externalId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            externalId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1916,13 +1982,19 @@ class ChroniclesApi {
 
     final _queryParameters = <String, dynamic>{
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (maxPoints != null)
-        r'maxPoints':
-            encodeQueryParameter(_serializers, maxPoints, const FullType(int)),
+        r'maxPoints': encodeQueryParameter(
+          _serializers,
+          maxPoints,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1941,9 +2013,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Track),
-            ) as Track;
+                  rawResponse,
+                  specifiedType: const FullType(Track),
+                )
+                as Track;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1993,22 +2066,21 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicle-network/requests/{requestId}/grant'
         .replaceAll(
-            '{' r'requestId' '}',
-            encodeQueryParameter(
-                    _serializers, requestId, const FullType(String))
-                .toString());
+          '{'
+          r'requestId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            requestId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2025,10 +2097,7 @@ class ChroniclesApi {
           : _serializers.serialize(accessGrantInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2051,9 +2120,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AccessRequest),
-            ) as AccessRequest;
+                  rawResponse,
+                  specifiedType: const FullType(AccessRequest),
+                )
+                as AccessRequest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2108,16 +2178,10 @@ class ChroniclesApi {
     final _path = r'/v1/chronicle-network/requests';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2127,16 +2191,28 @@ class ChroniclesApi {
     final _queryParameters = <String, dynamic>{
       if (direction != null)
         r'direction': encodeQueryParameter(
-            _serializers, direction, const FullType(String)),
+          _serializers,
+          direction,
+          const FullType(String),
+        ),
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2155,9 +2231,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AccessRequestPage),
-            ) as AccessRequestPage;
+                  rawResponse,
+                  specifiedType: const FullType(AccessRequestPage),
+                )
+                as AccessRequestPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2208,16 +2285,10 @@ class ChroniclesApi {
     final _path = r'/v1/chronicle-network/clusters';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2226,11 +2297,17 @@ class ChroniclesApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2249,9 +2326,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleClusterPage),
-            ) as ChronicleClusterPage;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleClusterPage),
+                )
+                as ChronicleClusterPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2310,16 +2388,10 @@ class ChroniclesApi {
     final _path = r'/v1/chronicles';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2328,22 +2400,37 @@ class ChroniclesApi {
 
     final _queryParameters = <String, dynamic>{
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (scope != null)
-        r'scope':
-            encodeQueryParameter(_serializers, scope, const FullType(String)),
+        r'scope': encodeQueryParameter(
+          _serializers,
+          scope,
+          const FullType(String),
+        ),
       if (situationId != null)
         r'situationId': encodeQueryParameter(
-            _serializers, situationId, const FullType(String)),
+          _serializers,
+          situationId,
+          const FullType(String),
+        ),
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2362,9 +2449,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChroniclePage),
-            ) as ChroniclePage;
+                  rawResponse,
+                  specifiedType: const FullType(ChroniclePage),
+                )
+                as ChroniclePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2419,21 +2507,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/related'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2443,16 +2531,28 @@ class ChroniclesApi {
     final _queryParameters = <String, dynamic>{
       if (minStrength != null)
         r'minStrength': encodeQueryParameter(
-            _serializers, minStrength, const FullType(String)),
+          _serializers,
+          minStrength,
+          const FullType(String),
+        ),
       if (includeDismissed != null)
         r'includeDismissed': encodeQueryParameter(
-            _serializers, includeDismissed, const FullType(bool)),
+          _serializers,
+          includeDismissed,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2471,9 +2571,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleRelatedPage),
-            ) as ChronicleRelatedPage;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleRelatedPage),
+                )
+                as ChronicleRelatedPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2522,21 +2623,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/thread/read'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2548,14 +2649,13 @@ class ChroniclesApi {
 
     try {
       const _type = FullType(ChronicleThreadReadRequest);
-      _bodyData = _serializers.serialize(chronicleThreadReadRequest,
-          specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        chronicleThreadReadRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2598,21 +2698,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/pause'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2634,9 +2734,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2693,11 +2794,7 @@ class ChroniclesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'peerCredential',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'peerCredential'},
         ],
         ...?extra,
       },
@@ -2709,14 +2806,13 @@ class ChroniclesApi {
 
     try {
       const _type = FullType(ChronicleSketchBatch);
-      _bodyData =
-          _serializers.serialize(chronicleSketchBatch, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        chronicleSketchBatch,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2739,9 +2835,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleSketchBatchResult),
-            ) as ChronicleSketchBatchResult;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleSketchBatchResult),
+                )
+                as ChronicleSketchBatchResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2791,21 +2888,21 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicle-network/links/{linkId}/request-access'
         .replaceAll(
-            '{' r'linkId' '}',
-            encodeQueryParameter(_serializers, linkId, const FullType(String))
-                .toString());
+          '{'
+          r'linkId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            linkId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2822,10 +2919,7 @@ class ChroniclesApi {
           : _serializers.serialize(accessRequestInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2848,9 +2942,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AccessRequest),
-            ) as AccessRequest;
+                  rawResponse,
+                  specifiedType: const FullType(AccessRequest),
+                )
+                as AccessRequest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2897,21 +2992,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/restore'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2933,9 +3028,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2982,21 +3078,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/resume'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3018,9 +3114,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3069,21 +3166,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/discoverability'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3098,10 +3195,7 @@ class ChroniclesApi {
       _bodyData = _serializers.serialize(discoverability, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3124,9 +3218,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Discoverability),
-            ) as Discoverability;
+                  rawResponse,
+                  specifiedType: const FullType(Discoverability),
+                )
+                as Discoverability;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3175,16 +3270,10 @@ class ChroniclesApi {
     final _path = r'/v1/chronicle-network/salts';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3196,14 +3285,13 @@ class ChroniclesApi {
 
     try {
       const _type = FullType(NetworkSaltInput);
-      _bodyData =
-          _serializers.serialize(networkSaltInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        networkSaltInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3226,9 +3314,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NetworkSaltStatus),
-            ) as NetworkSaltStatus;
+                  rawResponse,
+                  specifiedType: const FullType(NetworkSaltStatus),
+                )
+                as NetworkSaltStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3275,21 +3364,21 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/stop'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3311,9 +3400,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3362,16 +3452,10 @@ class ChroniclesApi {
     final _path = r'/v1/chronicles/suggest';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3383,14 +3467,13 @@ class ChroniclesApi {
 
     try {
       const _type = FullType(ChronicleSuggestRequest);
-      _bodyData =
-          _serializers.serialize(chronicleSuggestRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        chronicleSuggestRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3413,9 +3496,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleSuggestion),
-            ) as ChronicleSuggestion;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleSuggestion),
+                )
+                as ChronicleSuggestion;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3466,9 +3550,15 @@ class ChroniclesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}'.replaceAll(
-        '{' r'chronicleId' '}',
-        encodeQueryParameter(_serializers, chronicleId, const FullType(String))
-            .toString());
+      '{'
+      r'chronicleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        chronicleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -3477,11 +3567,7 @@ class ChroniclesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3496,10 +3582,7 @@ class ChroniclesApi {
       _bodyData = _serializers.serialize(chroniclePatch, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3522,9 +3605,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Chronicle),
-            ) as Chronicle;
+                  rawResponse,
+                  specifiedType: const FullType(Chronicle),
+                )
+                as Chronicle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3576,26 +3660,31 @@ class ChroniclesApi {
   }) async {
     final _path = r'/v1/chronicles/{chronicleId}/layers/{layerId}'
         .replaceAll(
-            '{' r'chronicleId' '}',
-            encodeQueryParameter(
-                    _serializers, chronicleId, const FullType(String))
-                .toString())
+          '{'
+          r'chronicleId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            chronicleId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'layerId' '}',
-            encodeQueryParameter(_serializers, layerId, const FullType(String))
-                .toString());
+          '{'
+          r'layerId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            layerId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3607,14 +3696,13 @@ class ChroniclesApi {
 
     try {
       const _type = FullType(ChronicleLayerPatch);
-      _bodyData =
-          _serializers.serialize(chronicleLayerPatch, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        chronicleLayerPatch,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3637,9 +3725,10 @@ class ChroniclesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChronicleLayer),
-            ) as ChronicleLayer;
+                  rawResponse,
+                  specifiedType: const FullType(ChronicleLayer),
+                )
+                as ChronicleLayer;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

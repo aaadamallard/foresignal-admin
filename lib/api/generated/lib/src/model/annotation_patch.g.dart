@@ -32,11 +32,11 @@ AnnotationPatchVerdictEnum _$annotationPatchVerdictEnumValueOf(String name) {
 
 final BuiltSet<AnnotationPatchVerdictEnum> _$annotationPatchVerdictEnumValues =
     BuiltSet<AnnotationPatchVerdictEnum>(const <AnnotationPatchVerdictEnum>[
-  _$annotationPatchVerdictEnum_confirmed,
-  _$annotationPatchVerdictEnum_rejected,
-  _$annotationPatchVerdictEnum_needsReview,
-  _$annotationPatchVerdictEnum_duplicateOf,
-]);
+      _$annotationPatchVerdictEnum_confirmed,
+      _$annotationPatchVerdictEnum_rejected,
+      _$annotationPatchVerdictEnum_needsReview,
+      _$annotationPatchVerdictEnum_duplicateOf,
+    ]);
 
 Serializer<AnnotationPatchVerdictEnum> _$annotationPatchVerdictEnumSerializer =
     _$AnnotationPatchVerdictEnumSerializer();
@@ -62,16 +62,20 @@ class _$AnnotationPatchVerdictEnumSerializer
   final String wireName = 'AnnotationPatchVerdictEnum';
 
   @override
-  Object serialize(Serializers serializers, AnnotationPatchVerdictEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnnotationPatchVerdictEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnnotationPatchVerdictEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnnotationPatchVerdictEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnnotationPatchVerdictEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnnotationPatch extends AnnotationPatch {
@@ -89,9 +93,13 @@ class _$AnnotationPatch extends AnnotationPatch {
   factory _$AnnotationPatch([void Function(AnnotationPatchBuilder)? updates]) =>
       (AnnotationPatchBuilder()..update(updates))._build();
 
-  _$AnnotationPatch._(
-      {this.verdict, this.duplicateOfRef, this.body, this.tags, this.private})
-      : super._();
+  _$AnnotationPatch._({
+    this.verdict,
+    this.duplicateOfRef,
+    this.body,
+    this.tags,
+    this.private,
+  }) : super._();
   @override
   AnnotationPatch rebuild(void Function(AnnotationPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -192,7 +200,8 @@ class AnnotationPatchBuilder
   _$AnnotationPatch _build() {
     _$AnnotationPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnnotationPatch._(
             verdict: verdict,
             duplicateOfRef: duplicateOfRef,
@@ -207,7 +216,10 @@ class AnnotationPatchBuilder
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnnotationPatch', _$failedField, e.toString());
+          r'AnnotationPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

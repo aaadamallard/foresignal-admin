@@ -20,8 +20,8 @@ FindingPatchStatusEnum _$findingPatchStatusEnumValueOf(String name) {
 
 final BuiltSet<FindingPatchStatusEnum> _$findingPatchStatusEnumValues =
     BuiltSet<FindingPatchStatusEnum>(const <FindingPatchStatusEnum>[
-  _$findingPatchStatusEnum_dismissed,
-]);
+      _$findingPatchStatusEnum_dismissed,
+    ]);
 
 Serializer<FindingPatchStatusEnum> _$findingPatchStatusEnumSerializer =
     _$FindingPatchStatusEnumSerializer();
@@ -41,15 +41,20 @@ class _$FindingPatchStatusEnumSerializer
   final String wireName = 'FindingPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, FindingPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FindingPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  FindingPatchStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FindingPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  FindingPatchStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FindingPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FindingPatch extends FindingPatch {
@@ -135,12 +140,19 @@ class FindingPatchBuilder
   FindingPatch build() => _build();
 
   _$FindingPatch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FindingPatch._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'FindingPatch', 'status'),
+            status,
+            r'FindingPatch',
+            'status',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'FindingPatch', 'reason'),
+            reason,
+            r'FindingPatch',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

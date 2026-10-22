@@ -14,17 +14,19 @@ class _$SystemInfoSecurity extends SystemInfoSecurity {
   @override
   final BuiltList<SettingsWarning>? warnings;
 
-  factory _$SystemInfoSecurity(
-          [void Function(SystemInfoSecurityBuilder)? updates]) =>
-      (SystemInfoSecurityBuilder()..update(updates))._build();
+  factory _$SystemInfoSecurity([
+    void Function(SystemInfoSecurityBuilder)? updates,
+  ]) => (SystemInfoSecurityBuilder()..update(updates))._build();
 
-  _$SystemInfoSecurity._(
-      {this.openReads, this.anonymousRestricted, this.warnings})
-      : super._();
+  _$SystemInfoSecurity._({
+    this.openReads,
+    this.anonymousRestricted,
+    this.warnings,
+  }) : super._();
   @override
   SystemInfoSecurity rebuild(
-          void Function(SystemInfoSecurityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoSecurityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoSecurityBuilder toBuilder() =>
@@ -109,7 +111,8 @@ class SystemInfoSecurityBuilder
   _$SystemInfoSecurity _build() {
     _$SystemInfoSecurity _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SystemInfoSecurity._(
             openReads: openReads,
             anonymousRestricted: anonymousRestricted,
@@ -122,7 +125,10 @@ class SystemInfoSecurityBuilder
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SystemInfoSecurity', _$failedField, e.toString());
+          r'SystemInfoSecurity',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -320,8 +320,9 @@ class _$TriggerRuleSerializer implements PrimitiveSerializer<TriggerRule> {
       yield r'conditions';
       yield serializers.serialize(
         object.conditions,
-        specifiedType: const FullType(
-            BuiltList, [FullType(TriggerRuleInputConditionsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(TriggerRuleInputConditionsInner),
+        ]),
       );
     }
     if (object.geofence != null) {
@@ -648,9 +649,11 @@ class _$TriggerRuleSerializer implements PrimitiveSerializer<TriggerRule> {
     TriggerRule object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -666,413 +669,530 @@ class _$TriggerRuleSerializer implements PrimitiveSerializer<TriggerRule> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.source_ = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.kind = valueDes;
           break;
         case r'conditions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(TriggerRuleInputConditionsInner)]),
-          ) as BuiltList<TriggerRuleInputConditionsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(TriggerRuleInputConditionsInner),
+                    ]),
+                  )
+                  as BuiltList<TriggerRuleInputConditionsInner>?;
           if (valueDes == null) continue;
           result.conditions.replace(valueDes);
           break;
         case r'geofence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geofence.replace(valueDes);
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TriggerRuleModeEnum),
-          ) as TriggerRuleModeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TriggerRuleModeEnum),
+                  )
+                  as TriggerRuleModeEnum?;
           if (valueDes == null) continue;
           result.mode = valueDes;
           break;
         case r'onlyNew':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.onlyNew = valueDes;
           break;
         case r'cooldown':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cooldown = valueDes;
           break;
         case r'messageTemplate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.messageTemplate = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TriggerRuleSeverityEnum),
-          ) as TriggerRuleSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TriggerRuleSeverityEnum,
+                    ),
+                  )
+                  as TriggerRuleSeverityEnum?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;
         case r'enrich':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enrich = valueDes;
           break;
         case r'enrichRadiusKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.enrichRadiusKm = valueDes;
           break;
         case r'enrichWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.enrichWindow = valueDes;
           break;
         case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.tags.replace(valueDes);
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.sources.replace(valueDes);
           break;
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.kinds.replace(valueDes);
           break;
         case r'bufferMeters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.bufferMeters = valueDes;
           break;
         case r'hysteresisMeters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.hysteresisMeters = valueDes;
           break;
         case r'near':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.near = valueDes;
           break;
         case r'reappearAsEnter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.reappearAsEnter = valueDes;
           break;
         case r'cooldownScope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(TriggerRuleCooldownScopeEnum),
-          ) as TriggerRuleCooldownScopeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TriggerRuleCooldownScopeEnum,
+                    ),
+                  )
+                  as TriggerRuleCooldownScopeEnum?;
           if (valueDes == null) continue;
           result.cooldownScope = valueDes;
           break;
         case r'autoResolve':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.autoResolve = valueDes;
           break;
         case r'maxAlertsPerHour':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxAlertsPerHour = valueDes;
           break;
         case r'autoDisableOnStorm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.autoDisableOnStorm = valueDes;
           break;
         case r'activeFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.activeFrom = valueDes;
           break;
         case r'activeUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.activeUntil = valueDes;
           break;
         case r'activeWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ActiveWindow),
-          ) as ActiveWindow?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ActiveWindow),
+                  )
+                  as ActiveWindow?;
           if (valueDes == null) continue;
           result.activeWindow.replace(valueDes);
           break;
         case r'forecastHorizon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.forecastHorizon = valueDes;
           break;
         case r'escalationPolicyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.escalationPolicyId = valueDes;
           break;
         case r'geofenceRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(GeofenceRef),
-          ) as GeofenceRef?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(GeofenceRef),
+                  )
+                  as GeofenceRef?;
           if (valueDes == null) continue;
           result.geofenceRef.replace(valueDes);
           break;
         case r'weatherContext':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(TriggerRuleWeatherContextEnum),
-          ) as TriggerRuleWeatherContextEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TriggerRuleWeatherContextEnum,
+                    ),
+                  )
+                  as TriggerRuleWeatherContextEnum?;
           if (valueDes == null) continue;
           result.weatherContext = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TriggerRuleTypeEnum),
-          ) as TriggerRuleTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TriggerRuleTypeEnum),
+                  )
+                  as TriggerRuleTypeEnum?;
           if (valueDes == null) continue;
           result.type = valueDes;
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TriggerRuleInputWindow),
-          ) as TriggerRuleInputWindow?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TriggerRuleInputWindow,
+                    ),
+                  )
+                  as TriggerRuleInputWindow?;
           if (valueDes == null) continue;
           result.window.replace(valueDes);
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.updatedAt = valueDes;
           break;
         case r'lastFiredAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastFiredAt = valueDes;
           break;
         case r'alertCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alertCount = valueDes;
           break;
         case r'lastError':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lastError = valueDes;
           break;
         case r'lastErrorAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastErrorAt = valueDes;
           break;
         case r'openAlertCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.openAlertCount = valueDes;
           break;
         case r'suppressedCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.suppressedCount = valueDes;
           break;
         case r'lastStormAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastStormAt = valueDes;
           break;
         case r'feedbackCounts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TriggerRuleFeedbackCounts),
-          ) as TriggerRuleFeedbackCounts?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TriggerRuleFeedbackCounts,
+                    ),
+                  )
+                  as TriggerRuleFeedbackCounts?;
           if (valueDes == null) continue;
           result.feedbackCounts.replace(valueDes);
           break;
         case r'snoozedUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.snoozedUntil = valueDes;
           break;
         case r'geofenceRoute':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geofenceRoute.replace(valueDes);
           break;
         case r'mutedUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.mutedUntil = valueDes;
           break;
         case r'geofenceOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(TriggerRuleGeofenceOriginEnum),
-          ) as TriggerRuleGeofenceOriginEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TriggerRuleGeofenceOriginEnum,
+                    ),
+                  )
+                  as TriggerRuleGeofenceOriginEnum?;
           if (valueDes == null) continue;
           result.geofenceOrigin = valueDes;
           break;
         case r'anchorStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TriggerRuleAnchorStatusEnum),
-          ) as TriggerRuleAnchorStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TriggerRuleAnchorStatusEnum,
+                    ),
+                  )
+                  as TriggerRuleAnchorStatusEnum?;
           if (valueDes == null) continue;
           result.anchorStatus = valueDes;
           break;
         case r'windowStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WindowStatus),
-          ) as WindowStatus?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(WindowStatus),
+                  )
+                  as WindowStatus?;
           if (valueDes == null) continue;
           result.windowStatus.replace(valueDes);
           break;

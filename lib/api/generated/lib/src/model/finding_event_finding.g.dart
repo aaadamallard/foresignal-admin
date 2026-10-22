@@ -7,44 +7,45 @@ part of 'finding_event_finding.dart';
 // **************************************************************************
 
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_changePoint =
+_$findingEventFindingFindingTypeEnum_changePoint =
     const FindingEventFindingFindingTypeEnum._('changePoint');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_preEventSignal =
+_$findingEventFindingFindingTypeEnum_preEventSignal =
     const FindingEventFindingFindingTypeEnum._('preEventSignal');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_unexplainedMove =
+_$findingEventFindingFindingTypeEnum_unexplainedMove =
     const FindingEventFindingFindingTypeEnum._('unexplainedMove');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_coOccurrence =
+_$findingEventFindingFindingTypeEnum_coOccurrence =
     const FindingEventFindingFindingTypeEnum._('coOccurrence');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_precursorActive =
+_$findingEventFindingFindingTypeEnum_precursorActive =
     const FindingEventFindingFindingTypeEnum._('precursorActive');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_forecastExceedance =
+_$findingEventFindingFindingTypeEnum_forecastExceedance =
     const FindingEventFindingFindingTypeEnum._('forecastExceedance');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_outlookExceedance =
+_$findingEventFindingFindingTypeEnum_outlookExceedance =
     const FindingEventFindingFindingTypeEnum._('outlookExceedance');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_projectedImpact =
+_$findingEventFindingFindingTypeEnum_projectedImpact =
     const FindingEventFindingFindingTypeEnum._('projectedImpact');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_socialVelocity =
+_$findingEventFindingFindingTypeEnum_socialVelocity =
     const FindingEventFindingFindingTypeEnum._('socialVelocity');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_mediaReuse =
+_$findingEventFindingFindingTypeEnum_mediaReuse =
     const FindingEventFindingFindingTypeEnum._('mediaReuse');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_socialCoordination =
+_$findingEventFindingFindingTypeEnum_socialCoordination =
     const FindingEventFindingFindingTypeEnum._('socialCoordination');
 const FindingEventFindingFindingTypeEnum
-    _$findingEventFindingFindingTypeEnum_attentionGap =
+_$findingEventFindingFindingTypeEnum_attentionGap =
     const FindingEventFindingFindingTypeEnum._('attentionGap');
 
 FindingEventFindingFindingTypeEnum _$findingEventFindingFindingTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'changePoint':
       return _$findingEventFindingFindingTypeEnum_changePoint;
@@ -76,21 +77,23 @@ FindingEventFindingFindingTypeEnum _$findingEventFindingFindingTypeEnumValueOf(
 }
 
 final BuiltSet<FindingEventFindingFindingTypeEnum>
-    _$findingEventFindingFindingTypeEnumValues = BuiltSet<
-        FindingEventFindingFindingTypeEnum>(const <FindingEventFindingFindingTypeEnum>[
-  _$findingEventFindingFindingTypeEnum_changePoint,
-  _$findingEventFindingFindingTypeEnum_preEventSignal,
-  _$findingEventFindingFindingTypeEnum_unexplainedMove,
-  _$findingEventFindingFindingTypeEnum_coOccurrence,
-  _$findingEventFindingFindingTypeEnum_precursorActive,
-  _$findingEventFindingFindingTypeEnum_forecastExceedance,
-  _$findingEventFindingFindingTypeEnum_outlookExceedance,
-  _$findingEventFindingFindingTypeEnum_projectedImpact,
-  _$findingEventFindingFindingTypeEnum_socialVelocity,
-  _$findingEventFindingFindingTypeEnum_mediaReuse,
-  _$findingEventFindingFindingTypeEnum_socialCoordination,
-  _$findingEventFindingFindingTypeEnum_attentionGap,
-]);
+_$findingEventFindingFindingTypeEnumValues =
+    BuiltSet<FindingEventFindingFindingTypeEnum>(
+      const <FindingEventFindingFindingTypeEnum>[
+        _$findingEventFindingFindingTypeEnum_changePoint,
+        _$findingEventFindingFindingTypeEnum_preEventSignal,
+        _$findingEventFindingFindingTypeEnum_unexplainedMove,
+        _$findingEventFindingFindingTypeEnum_coOccurrence,
+        _$findingEventFindingFindingTypeEnum_precursorActive,
+        _$findingEventFindingFindingTypeEnum_forecastExceedance,
+        _$findingEventFindingFindingTypeEnum_outlookExceedance,
+        _$findingEventFindingFindingTypeEnum_projectedImpact,
+        _$findingEventFindingFindingTypeEnum_socialVelocity,
+        _$findingEventFindingFindingTypeEnum_mediaReuse,
+        _$findingEventFindingFindingTypeEnum_socialCoordination,
+        _$findingEventFindingFindingTypeEnum_attentionGap,
+      ],
+    );
 
 const FindingEventFindingStatusEnum _$findingEventFindingStatusEnum_open =
     const FindingEventFindingStatusEnum._('open');
@@ -100,7 +103,8 @@ const FindingEventFindingStatusEnum _$findingEventFindingStatusEnum_dismissed =
     const FindingEventFindingStatusEnum._('dismissed');
 
 FindingEventFindingStatusEnum _$findingEventFindingStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'open':
       return _$findingEventFindingStatusEnum_open;
@@ -114,18 +118,19 @@ FindingEventFindingStatusEnum _$findingEventFindingStatusEnumValueOf(
 }
 
 final BuiltSet<FindingEventFindingStatusEnum>
-    _$findingEventFindingStatusEnumValues = BuiltSet<
-        FindingEventFindingStatusEnum>(const <FindingEventFindingStatusEnum>[
-  _$findingEventFindingStatusEnum_open,
-  _$findingEventFindingStatusEnum_superseded,
-  _$findingEventFindingStatusEnum_dismissed,
-]);
+_$findingEventFindingStatusEnumValues = BuiltSet<FindingEventFindingStatusEnum>(
+  const <FindingEventFindingStatusEnum>[
+    _$findingEventFindingStatusEnum_open,
+    _$findingEventFindingStatusEnum_superseded,
+    _$findingEventFindingStatusEnum_dismissed,
+  ],
+);
 
 Serializer<FindingEventFindingFindingTypeEnum>
-    _$findingEventFindingFindingTypeEnumSerializer =
+_$findingEventFindingFindingTypeEnumSerializer =
     _$FindingEventFindingFindingTypeEnumSerializer();
 Serializer<FindingEventFindingStatusEnum>
-    _$findingEventFindingStatusEnumSerializer =
+_$findingEventFindingStatusEnumSerializer =
     _$FindingEventFindingStatusEnumSerializer();
 
 class _$FindingEventFindingFindingTypeEnumSerializer
@@ -166,16 +171,19 @@ class _$FindingEventFindingFindingTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, FindingEventFindingFindingTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FindingEventFindingFindingTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FindingEventFindingFindingTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FindingEventFindingFindingTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FindingEventFindingFindingTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FindingEventFindingStatusEnumSerializer
@@ -198,16 +206,19 @@ class _$FindingEventFindingStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, FindingEventFindingStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FindingEventFindingStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FindingEventFindingStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FindingEventFindingStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FindingEventFindingStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FindingEventFinding extends FindingEventFinding {
@@ -230,25 +241,25 @@ class _$FindingEventFinding extends FindingEventFinding {
   @override
   final bool? private;
 
-  factory _$FindingEventFinding(
-          [void Function(FindingEventFindingBuilder)? updates]) =>
-      (FindingEventFindingBuilder()..update(updates))._build();
+  factory _$FindingEventFinding([
+    void Function(FindingEventFindingBuilder)? updates,
+  ]) => (FindingEventFindingBuilder()..update(updates))._build();
 
-  _$FindingEventFinding._(
-      {required this.id,
-      required this.findingType,
-      required this.title,
-      required this.severity,
-      required this.status,
-      this.regionCodes,
-      required this.detectedAt,
-      this.situationId,
-      this.private})
-      : super._();
+  _$FindingEventFinding._({
+    required this.id,
+    required this.findingType,
+    required this.title,
+    required this.severity,
+    required this.status,
+    this.regionCodes,
+    required this.detectedAt,
+    this.situationId,
+    this.private,
+  }) : super._();
   @override
   FindingEventFinding rebuild(
-          void Function(FindingEventFindingBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FindingEventFindingBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FindingEventFindingBuilder toBuilder() =>
@@ -381,21 +392,40 @@ class FindingEventFindingBuilder
   _$FindingEventFinding _build() {
     _$FindingEventFinding _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FindingEventFinding._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'FindingEventFinding', 'id'),
+              id,
+              r'FindingEventFinding',
+              'id',
+            ),
             findingType: BuiltValueNullFieldError.checkNotNull(
-                findingType, r'FindingEventFinding', 'findingType'),
+              findingType,
+              r'FindingEventFinding',
+              'findingType',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'FindingEventFinding', 'title'),
+              title,
+              r'FindingEventFinding',
+              'title',
+            ),
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'FindingEventFinding', 'severity'),
+              severity,
+              r'FindingEventFinding',
+              'severity',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'FindingEventFinding', 'status'),
+              status,
+              r'FindingEventFinding',
+              'status',
+            ),
             regionCodes: _regionCodes?.build(),
             detectedAt: BuiltValueNullFieldError.checkNotNull(
-                detectedAt, r'FindingEventFinding', 'detectedAt'),
+              detectedAt,
+              r'FindingEventFinding',
+              'detectedAt',
+            ),
             situationId: situationId,
             private: private,
           );
@@ -406,7 +436,10 @@ class FindingEventFindingBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FindingEventFinding', _$failedField, e.toString());
+          r'FindingEventFinding',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

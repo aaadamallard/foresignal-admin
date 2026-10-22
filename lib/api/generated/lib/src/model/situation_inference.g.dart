@@ -20,22 +20,22 @@ class _$SituationInference extends SituationInference {
   @override
   final String? manifestId;
 
-  factory _$SituationInference(
-          [void Function(SituationInferenceBuilder)? updates]) =>
-      (SituationInferenceBuilder()..update(updates))._build();
+  factory _$SituationInference([
+    void Function(SituationInferenceBuilder)? updates,
+  ]) => (SituationInferenceBuilder()..update(updates))._build();
 
-  _$SituationInference._(
-      {required this.summary,
-      this.summaryTemplateVersion,
-      required this.statusBasis,
-      required this.severityBasis,
-      this.linker,
-      this.manifestId})
-      : super._();
+  _$SituationInference._({
+    required this.summary,
+    this.summaryTemplateVersion,
+    required this.statusBasis,
+    required this.severityBasis,
+    this.linker,
+    this.manifestId,
+  }) : super._();
   @override
   SituationInference rebuild(
-          void Function(SituationInferenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationInferenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationInferenceBuilder toBuilder() =>
@@ -143,15 +143,25 @@ class SituationInferenceBuilder
   _$SituationInference _build() {
     _$SituationInference _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationInference._(
             summary: BuiltValueNullFieldError.checkNotNull(
-                summary, r'SituationInference', 'summary'),
+              summary,
+              r'SituationInference',
+              'summary',
+            ),
             summaryTemplateVersion: summaryTemplateVersion,
             statusBasis: BuiltValueNullFieldError.checkNotNull(
-                statusBasis, r'SituationInference', 'statusBasis'),
+              statusBasis,
+              r'SituationInference',
+              'statusBasis',
+            ),
             severityBasis: BuiltValueNullFieldError.checkNotNull(
-                severityBasis, r'SituationInference', 'severityBasis'),
+              severityBasis,
+              r'SituationInference',
+              'severityBasis',
+            ),
             linker: _linker?.build(),
             manifestId: manifestId,
           );
@@ -162,7 +172,10 @@ class SituationInferenceBuilder
         _linker?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationInference', _$failedField, e.toString());
+          r'SituationInference',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

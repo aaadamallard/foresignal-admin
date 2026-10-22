@@ -24,9 +24,9 @@ SituationPatchStatusEnum _$situationPatchStatusEnumValueOf(String name) {
 
 final BuiltSet<SituationPatchStatusEnum> _$situationPatchStatusEnumValues =
     BuiltSet<SituationPatchStatusEnum>(const <SituationPatchStatusEnum>[
-  _$situationPatchStatusEnum_active,
-  _$situationPatchStatusEnum_closed,
-]);
+      _$situationPatchStatusEnum_active,
+      _$situationPatchStatusEnum_closed,
+    ]);
 
 Serializer<SituationPatchStatusEnum> _$situationPatchStatusEnumSerializer =
     _$SituationPatchStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$SituationPatchStatusEnumSerializer
   final String wireName = 'SituationPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SituationPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationPatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationPatch extends SituationPatch {
@@ -83,17 +87,17 @@ class _$SituationPatch extends SituationPatch {
   factory _$SituationPatch([void Function(SituationPatchBuilder)? updates]) =>
       (SituationPatchBuilder()..update(updates))._build();
 
-  _$SituationPatch._(
-      {this.title,
-      this.theme,
-      this.severityOverride,
-      this.status,
-      this.topicIds,
-      this.entityIds,
-      this.investigationIds,
-      this.reason,
-      this.version})
-      : super._();
+  _$SituationPatch._({
+    this.title,
+    this.theme,
+    this.severityOverride,
+    this.status,
+    this.topicIds,
+    this.entityIds,
+    this.investigationIds,
+    this.reason,
+    this.version,
+  }) : super._();
   @override
   SituationPatch rebuild(void Function(SituationPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -231,7 +235,8 @@ class SituationPatchBuilder
   _$SituationPatch _build() {
     _$SituationPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationPatch._(
             title: title,
             theme: theme,
@@ -254,7 +259,10 @@ class SituationPatchBuilder
         _investigationIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationPatch', _$failedField, e.toString());
+          r'SituationPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

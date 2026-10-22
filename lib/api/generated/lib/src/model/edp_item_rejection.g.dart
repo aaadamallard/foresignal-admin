@@ -18,17 +18,17 @@ class _$EdpItemRejection extends EdpItemRejection {
   @override
   final BuiltList<EdpItemRejectionSchemaErrorsInner>? schemaErrors;
 
-  factory _$EdpItemRejection(
-          [void Function(EdpItemRejectionBuilder)? updates]) =>
-      (EdpItemRejectionBuilder()..update(updates))._build();
+  factory _$EdpItemRejection([
+    void Function(EdpItemRejectionBuilder)? updates,
+  ]) => (EdpItemRejectionBuilder()..update(updates))._build();
 
-  _$EdpItemRejection._(
-      {required this.index,
-      this.stream,
-      this.id,
-      required this.reason,
-      this.schemaErrors})
-      : super._();
+  _$EdpItemRejection._({
+    required this.index,
+    this.stream,
+    this.id,
+    required this.reason,
+    this.schemaErrors,
+  }) : super._();
   @override
   EdpItemRejection rebuild(void Function(EdpItemRejectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -96,8 +96,8 @@ class EdpItemRejectionBuilder
   ListBuilder<EdpItemRejectionSchemaErrorsInner> get schemaErrors =>
       _$this._schemaErrors ??= ListBuilder<EdpItemRejectionSchemaErrorsInner>();
   set schemaErrors(
-          ListBuilder<EdpItemRejectionSchemaErrorsInner>? schemaErrors) =>
-      _$this._schemaErrors = schemaErrors;
+    ListBuilder<EdpItemRejectionSchemaErrorsInner>? schemaErrors,
+  ) => _$this._schemaErrors = schemaErrors;
 
   EdpItemRejectionBuilder() {
     EdpItemRejection._defaults(this);
@@ -132,14 +132,21 @@ class EdpItemRejectionBuilder
   _$EdpItemRejection _build() {
     _$EdpItemRejection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpItemRejection._(
             index: BuiltValueNullFieldError.checkNotNull(
-                index, r'EdpItemRejection', 'index'),
+              index,
+              r'EdpItemRejection',
+              'index',
+            ),
             stream: stream,
             id: id,
             reason: BuiltValueNullFieldError.checkNotNull(
-                reason, r'EdpItemRejection', 'reason'),
+              reason,
+              r'EdpItemRejection',
+              'reason',
+            ),
             schemaErrors: _schemaErrors?.build(),
           );
     } catch (_) {
@@ -149,7 +156,10 @@ class EdpItemRejectionBuilder
         _schemaErrors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpItemRejection', _$failedField, e.toString());
+          r'EdpItemRejection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

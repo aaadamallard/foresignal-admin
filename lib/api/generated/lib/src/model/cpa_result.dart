@@ -143,9 +143,11 @@ class _$CpaResultSerializer implements PrimitiveSerializer<CpaResult> {
     CpaResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,75 +163,89 @@ class _$CpaResultSerializer implements PrimitiveSerializer<CpaResult> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(KinematicState),
-          ) as KinematicState;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(KinematicState),
+                  )
+                  as KinematicState;
           result.a.replace(valueDes);
           break;
         case r'b':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(KinematicState),
-          ) as KinematicState;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(KinematicState),
+                  )
+                  as KinematicState;
           result.b.replace(valueDes);
           break;
         case r't0':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.t0 = valueDes;
           break;
         case r'tcpaSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.tcpaSeconds = valueDes;
           break;
         case r'cpaAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.cpaAt = valueDes;
           break;
         case r'dcpaMeters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.dcpaMeters = valueDes;
           break;
         case r'verticalSeparationM':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.verticalSeparationM = valueDes;
           break;
         case r'horizon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.horizon = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.asOf = valueDes;
           break;
         case r'stale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.stale = valueDes;
           break;
         default:

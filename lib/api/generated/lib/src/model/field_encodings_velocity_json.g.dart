@@ -10,15 +10,15 @@ class _$FieldEncodingsVelocityJson extends FieldEncodingsVelocityJson {
   @override
   final String? url;
 
-  factory _$FieldEncodingsVelocityJson(
-          [void Function(FieldEncodingsVelocityJsonBuilder)? updates]) =>
-      (FieldEncodingsVelocityJsonBuilder()..update(updates))._build();
+  factory _$FieldEncodingsVelocityJson([
+    void Function(FieldEncodingsVelocityJsonBuilder)? updates,
+  ]) => (FieldEncodingsVelocityJsonBuilder()..update(updates))._build();
 
   _$FieldEncodingsVelocityJson._({this.url}) : super._();
   @override
   FieldEncodingsVelocityJson rebuild(
-          void Function(FieldEncodingsVelocityJsonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FieldEncodingsVelocityJsonBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FieldEncodingsVelocityJsonBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$FieldEncodingsVelocityJson extends FieldEncodingsVelocityJson {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'FieldEncodingsVelocityJson')
-          ..add('url', url))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'FieldEncodingsVelocityJson',
+    )..add('url', url)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class FieldEncodingsVelocityJsonBuilder
   FieldEncodingsVelocityJson build() => _build();
 
   _$FieldEncodingsVelocityJson _build() {
-    final _$result = _$v ??
-        _$FieldEncodingsVelocityJson._(
-          url: url,
-        );
+    final _$result = _$v ?? _$FieldEncodingsVelocityJson._(url: url);
     replace(_$result);
     return _$result;
   }

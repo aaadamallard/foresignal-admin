@@ -12,17 +12,18 @@ class _$ForecastHistorySeriesInner extends ForecastHistorySeriesInner {
   @override
   final BuiltList<ForecastHistorySeriesInnerPointsInner> points;
 
-  factory _$ForecastHistorySeriesInner(
-          [void Function(ForecastHistorySeriesInnerBuilder)? updates]) =>
-      (ForecastHistorySeriesInnerBuilder()..update(updates))._build();
+  factory _$ForecastHistorySeriesInner([
+    void Function(ForecastHistorySeriesInnerBuilder)? updates,
+  ]) => (ForecastHistorySeriesInnerBuilder()..update(updates))._build();
 
-  _$ForecastHistorySeriesInner._(
-      {required this.forecasterId, required this.points})
-      : super._();
+  _$ForecastHistorySeriesInner._({
+    required this.forecasterId,
+    required this.points,
+  }) : super._();
   @override
   ForecastHistorySeriesInner rebuild(
-          void Function(ForecastHistorySeriesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastHistorySeriesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastHistorySeriesInnerBuilder toBuilder() =>
@@ -99,10 +100,14 @@ class ForecastHistorySeriesInnerBuilder
   _$ForecastHistorySeriesInner _build() {
     _$ForecastHistorySeriesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastHistorySeriesInner._(
             forecasterId: BuiltValueNullFieldError.checkNotNull(
-                forecasterId, r'ForecastHistorySeriesInner', 'forecasterId'),
+              forecasterId,
+              r'ForecastHistorySeriesInner',
+              'forecasterId',
+            ),
             points: points.build(),
           );
     } catch (_) {
@@ -112,7 +117,10 @@ class ForecastHistorySeriesInnerBuilder
         points.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastHistorySeriesInner', _$failedField, e.toString());
+          r'ForecastHistorySeriesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

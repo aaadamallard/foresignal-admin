@@ -37,7 +37,7 @@ class _$NativePushPayloadFcmSerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadFcm,
-    _$NativePushPayloadFcm
+    _$NativePushPayloadFcm,
   ];
 
   @override
@@ -63,9 +63,11 @@ class _$NativePushPayloadFcmSerializer
     NativePushPayloadFcm object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +83,14 @@ class _$NativePushPayloadFcmSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(NativePushPayloadFcmMessage),
-          ) as NativePushPayloadFcmMessage?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadFcmMessage,
+                    ),
+                  )
+                  as NativePushPayloadFcmMessage?;
           if (valueDes == null) continue;
           result.message.replace(valueDes);
           break;

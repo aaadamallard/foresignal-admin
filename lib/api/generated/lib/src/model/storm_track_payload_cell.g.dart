@@ -16,17 +16,20 @@ class _$StormTrackPayloadCell extends StormTrackPayloadCell {
   @override
   final num? flashRate;
 
-  factory _$StormTrackPayloadCell(
-          [void Function(StormTrackPayloadCellBuilder)? updates]) =>
-      (StormTrackPayloadCellBuilder()..update(updates))._build();
+  factory _$StormTrackPayloadCell([
+    void Function(StormTrackPayloadCellBuilder)? updates,
+  ]) => (StormTrackPayloadCellBuilder()..update(updates))._build();
 
-  _$StormTrackPayloadCell._(
-      {this.maxDbz, this.areaKm2, this.meshMaxMm, this.flashRate})
-      : super._();
+  _$StormTrackPayloadCell._({
+    this.maxDbz,
+    this.areaKm2,
+    this.meshMaxMm,
+    this.flashRate,
+  }) : super._();
   @override
   StormTrackPayloadCell rebuild(
-          void Function(StormTrackPayloadCellBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StormTrackPayloadCellBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StormTrackPayloadCellBuilder toBuilder() =>
@@ -114,7 +117,8 @@ class StormTrackPayloadCellBuilder
   StormTrackPayloadCell build() => _build();
 
   _$StormTrackPayloadCell _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StormTrackPayloadCell._(
           maxDbz: maxDbz,
           areaKm2: areaKm2,

@@ -12,7 +12,8 @@ const EventStudyResultFrequencyEnum _$eventStudyResultFrequencyEnum_week =
     const EventStudyResultFrequencyEnum._('week');
 
 EventStudyResultFrequencyEnum _$eventStudyResultFrequencyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'day':
       return _$eventStudyResultFrequencyEnum_day;
@@ -24,26 +25,28 @@ EventStudyResultFrequencyEnum _$eventStudyResultFrequencyEnumValueOf(
 }
 
 final BuiltSet<EventStudyResultFrequencyEnum>
-    _$eventStudyResultFrequencyEnumValues = BuiltSet<
-        EventStudyResultFrequencyEnum>(const <EventStudyResultFrequencyEnum>[
-  _$eventStudyResultFrequencyEnum_day,
-  _$eventStudyResultFrequencyEnum_week,
-]);
+_$eventStudyResultFrequencyEnumValues = BuiltSet<EventStudyResultFrequencyEnum>(
+  const <EventStudyResultFrequencyEnum>[
+    _$eventStudyResultFrequencyEnum_day,
+    _$eventStudyResultFrequencyEnum_week,
+  ],
+);
 
 const EventStudyResultTransformEnum _$eventStudyResultTransformEnum_logReturn =
     const EventStudyResultTransformEnum._('logReturn');
 const EventStudyResultTransformEnum
-    _$eventStudyResultTransformEnum_logLevelStandardised =
+_$eventStudyResultTransformEnum_logLevelStandardised =
     const EventStudyResultTransformEnum._('logLevelStandardised');
 const EventStudyResultTransformEnum
-    _$eventStudyResultTransformEnum_weeklyDifferenceStandardised =
+_$eventStudyResultTransformEnum_weeklyDifferenceStandardised =
     const EventStudyResultTransformEnum._('weeklyDifferenceStandardised');
 const EventStudyResultTransformEnum
-    _$eventStudyResultTransformEnum_anscombeResidual =
+_$eventStudyResultTransformEnum_anscombeResidual =
     const EventStudyResultTransformEnum._('anscombeResidual');
 
 EventStudyResultTransformEnum _$eventStudyResultTransformEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'logReturn':
       return _$eventStudyResultTransformEnum_logReturn;
@@ -59,19 +62,20 @@ EventStudyResultTransformEnum _$eventStudyResultTransformEnumValueOf(
 }
 
 final BuiltSet<EventStudyResultTransformEnum>
-    _$eventStudyResultTransformEnumValues = BuiltSet<
-        EventStudyResultTransformEnum>(const <EventStudyResultTransformEnum>[
-  _$eventStudyResultTransformEnum_logReturn,
-  _$eventStudyResultTransformEnum_logLevelStandardised,
-  _$eventStudyResultTransformEnum_weeklyDifferenceStandardised,
-  _$eventStudyResultTransformEnum_anscombeResidual,
-]);
+_$eventStudyResultTransformEnumValues = BuiltSet<EventStudyResultTransformEnum>(
+  const <EventStudyResultTransformEnum>[
+    _$eventStudyResultTransformEnum_logReturn,
+    _$eventStudyResultTransformEnum_logLevelStandardised,
+    _$eventStudyResultTransformEnum_weeklyDifferenceStandardised,
+    _$eventStudyResultTransformEnum_anscombeResidual,
+  ],
+);
 
 Serializer<EventStudyResultFrequencyEnum>
-    _$eventStudyResultFrequencyEnumSerializer =
+_$eventStudyResultFrequencyEnumSerializer =
     _$EventStudyResultFrequencyEnumSerializer();
 Serializer<EventStudyResultTransformEnum>
-    _$eventStudyResultTransformEnumSerializer =
+_$eventStudyResultTransformEnumSerializer =
     _$EventStudyResultTransformEnumSerializer();
 
 class _$EventStudyResultFrequencyEnumSerializer
@@ -92,16 +96,19 @@ class _$EventStudyResultFrequencyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EventStudyResultFrequencyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EventStudyResultFrequencyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EventStudyResultFrequencyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EventStudyResultFrequencyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EventStudyResultFrequencyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EventStudyResultTransformEnumSerializer
@@ -126,16 +133,19 @@ class _$EventStudyResultTransformEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EventStudyResultTransformEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EventStudyResultTransformEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EventStudyResultTransformEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EventStudyResultTransformEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EventStudyResultTransformEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EventStudyResult extends EventStudyResult {
@@ -176,30 +186,30 @@ class _$EventStudyResult extends EventStudyResult {
   @override
   final String manifestId;
 
-  factory _$EventStudyResult(
-          [void Function(EventStudyResultBuilder)? updates]) =>
-      (EventStudyResultBuilder()..update(updates))._build();
+  factory _$EventStudyResult([
+    void Function(EventStudyResultBuilder)? updates,
+  ]) => (EventStudyResultBuilder()..update(updates))._build();
 
-  _$EventStudyResult._(
-      {required this.detector,
-      this.definitionHash,
-      required this.target,
-      required this.frequency,
-      this.transform,
-      required this.windows,
-      this.range,
-      this.asOfSeq,
-      this.placeboSeed,
-      required this.nEvents,
-      this.nClusters,
-      this.nExcluded,
-      required this.events,
-      required this.caar,
-      required this.caveats,
-      this.valuesWithheld,
-      this.truncated,
-      required this.manifestId})
-      : super._();
+  _$EventStudyResult._({
+    required this.detector,
+    this.definitionHash,
+    required this.target,
+    required this.frequency,
+    this.transform,
+    required this.windows,
+    this.range,
+    this.asOfSeq,
+    this.placeboSeed,
+    required this.nEvents,
+    this.nClusters,
+    this.nExcluded,
+    required this.events,
+    required this.caar,
+    required this.caveats,
+    this.valuesWithheld,
+    this.truncated,
+    required this.manifestId,
+  }) : super._();
   @override
   EventStudyResult rebuild(void Function(EventStudyResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -413,21 +423,31 @@ class EventStudyResultBuilder
   _$EventStudyResult _build() {
     _$EventStudyResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStudyResult._(
             detector: detector.build(),
             definitionHash: definitionHash,
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'EventStudyResult', 'target'),
+              target,
+              r'EventStudyResult',
+              'target',
+            ),
             frequency: BuiltValueNullFieldError.checkNotNull(
-                frequency, r'EventStudyResult', 'frequency'),
+              frequency,
+              r'EventStudyResult',
+              'frequency',
+            ),
             transform: transform,
             windows: windows.build(),
             range: _range?.build(),
             asOfSeq: asOfSeq,
             placeboSeed: placeboSeed,
             nEvents: BuiltValueNullFieldError.checkNotNull(
-                nEvents, r'EventStudyResult', 'nEvents'),
+              nEvents,
+              r'EventStudyResult',
+              'nEvents',
+            ),
             nClusters: nClusters,
             nExcluded: nExcluded,
             events: events.build(),
@@ -436,7 +456,10 @@ class EventStudyResultBuilder
             valuesWithheld: valuesWithheld,
             truncated: truncated,
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'EventStudyResult', 'manifestId'),
+              manifestId,
+              r'EventStudyResult',
+              'manifestId',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -457,7 +480,10 @@ class EventStudyResultBuilder
         caveats.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStudyResult', _$failedField, e.toString());
+          r'EventStudyResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -71,9 +71,9 @@ abstract class HypothesisConfidenceBasis
 
   HypothesisConfidenceBasis._();
 
-  factory HypothesisConfidenceBasis(
-          [void updates(HypothesisConfidenceBasisBuilder b)]) =
-      _$HypothesisConfidenceBasis;
+  factory HypothesisConfidenceBasis([
+    void updates(HypothesisConfidenceBasisBuilder b),
+  ]) = _$HypothesisConfidenceBasis;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisConfidenceBasisBuilder b) => b;
@@ -88,7 +88,7 @@ class _$HypothesisConfidenceBasisSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisConfidenceBasis,
-    _$HypothesisConfidenceBasis
+    _$HypothesisConfidenceBasis,
   ];
 
   @override
@@ -191,9 +191,11 @@ class _$HypothesisConfidenceBasisSerializer
     HypothesisConfidenceBasis object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -209,98 +211,122 @@ class _$HypothesisConfidenceBasisSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'observedIndicators':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.observedIndicators = valueDes;
           break;
         case r'families':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.families = valueDes;
           break;
         case r'evidenceQuality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.evidenceQuality = valueDes;
           break;
         case r'sourceReliability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceReliability = valueDes;
           break;
         case r'coverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.coverage = valueDes;
           break;
         case r'reportingDensity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reportingDensity = valueDes;
           break;
         case r'forecasterAgreement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.forecasterAgreement = valueDes;
           break;
         case r'brokenLinchpin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.brokenLinchpin = valueDes;
           break;
         case r'rule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.rule = valueDes;
           break;
         case r'newsCoverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.newsCoverage = valueDes;
           break;
         case r'circularReporting':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.circularReporting = valueDes;
           break;
         case r'circularSupports':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.circularSupports = valueDes;
           break;

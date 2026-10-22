@@ -28,10 +28,10 @@ WindowStateListTypeEnum _$windowStateListTypeEnumValueOf(String name) {
 
 final BuiltSet<WindowStateListTypeEnum> _$windowStateListTypeEnumValues =
     BuiltSet<WindowStateListTypeEnum>(const <WindowStateListTypeEnum>[
-  _$windowStateListTypeEnum_count,
-  _$windowStateListTypeEnum_absence,
-  _$windowStateListTypeEnum_anomaly,
-]);
+      _$windowStateListTypeEnum_count,
+      _$windowStateListTypeEnum_absence,
+      _$windowStateListTypeEnum_anomaly,
+    ]);
 
 Serializer<WindowStateListTypeEnum> _$windowStateListTypeEnumSerializer =
     _$WindowStateListTypeEnumSerializer();
@@ -55,16 +55,20 @@ class _$WindowStateListTypeEnumSerializer
   final String wireName = 'WindowStateListTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, WindowStateListTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WindowStateListTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WindowStateListTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WindowStateListTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WindowStateListTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WindowStateList extends WindowStateList {
@@ -80,12 +84,12 @@ class _$WindowStateList extends WindowStateList {
   factory _$WindowStateList([void Function(WindowStateListBuilder)? updates]) =>
       (WindowStateListBuilder()..update(updates))._build();
 
-  _$WindowStateList._(
-      {required this.ruleId,
-      required this.type,
-      required this.groups,
-      this.groupsTruncated})
-      : super._();
+  _$WindowStateList._({
+    required this.ruleId,
+    required this.type,
+    required this.groups,
+    this.groupsTruncated,
+  }) : super._();
   @override
   WindowStateList rebuild(void Function(WindowStateListBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -179,12 +183,19 @@ class WindowStateListBuilder
   _$WindowStateList _build() {
     _$WindowStateList _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WindowStateList._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'WindowStateList', 'ruleId'),
+              ruleId,
+              r'WindowStateList',
+              'ruleId',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'WindowStateList', 'type'),
+              type,
+              r'WindowStateList',
+              'type',
+            ),
             groups: groups.build(),
             groupsTruncated: groupsTruncated,
           );
@@ -195,7 +206,10 @@ class WindowStateListBuilder
         groups.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WindowStateList', _$failedField, e.toString());
+          r'WindowStateList',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

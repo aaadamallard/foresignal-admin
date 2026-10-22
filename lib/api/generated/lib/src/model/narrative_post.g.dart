@@ -39,18 +39,18 @@ NarrativePostLinkReasonEnum _$narrativePostLinkReasonEnumValueOf(String name) {
 }
 
 final BuiltSet<NarrativePostLinkReasonEnum>
-    _$narrativePostLinkReasonEnumValues =
+_$narrativePostLinkReasonEnumValues =
     BuiltSet<NarrativePostLinkReasonEnum>(const <NarrativePostLinkReasonEnum>[
-  _$narrativePostLinkReasonEnum_seed,
-  _$narrativePostLinkReasonEnum_repost,
-  _$narrativePostLinkReasonEnum_quote,
-  _$narrativePostLinkReasonEnum_text,
-  _$narrativePostLinkReasonEnum_link,
-  _$narrativePostLinkReasonEnum_media,
-]);
+      _$narrativePostLinkReasonEnum_seed,
+      _$narrativePostLinkReasonEnum_repost,
+      _$narrativePostLinkReasonEnum_quote,
+      _$narrativePostLinkReasonEnum_text,
+      _$narrativePostLinkReasonEnum_link,
+      _$narrativePostLinkReasonEnum_media,
+    ]);
 
 Serializer<NarrativePostLinkReasonEnum>
-    _$narrativePostLinkReasonEnumSerializer =
+_$narrativePostLinkReasonEnumSerializer =
     _$NarrativePostLinkReasonEnumSerializer();
 
 class _$NarrativePostLinkReasonEnumSerializer
@@ -78,16 +78,20 @@ class _$NarrativePostLinkReasonEnumSerializer
   final String wireName = 'NarrativePostLinkReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativePostLinkReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativePostLinkReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NarrativePostLinkReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativePostLinkReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativePostLinkReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativePost extends NarrativePost {
@@ -105,13 +109,13 @@ class _$NarrativePost extends NarrativePost {
   factory _$NarrativePost([void Function(NarrativePostBuilder)? updates]) =>
       (NarrativePostBuilder()..update(updates))._build();
 
-  _$NarrativePost._(
-      {required this.post,
-      required this.linkReason,
-      required this.evidenceGroupId,
-      required this.joinedAt,
-      this.centrality})
-      : super._();
+  _$NarrativePost._({
+    required this.post,
+    required this.linkReason,
+    required this.evidenceGroupId,
+    required this.joinedAt,
+    this.centrality,
+  }) : super._();
   @override
   NarrativePost rebuild(void Function(NarrativePostBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -213,15 +217,25 @@ class NarrativePostBuilder
   _$NarrativePost _build() {
     _$NarrativePost _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NarrativePost._(
             post: post.build(),
             linkReason: BuiltValueNullFieldError.checkNotNull(
-                linkReason, r'NarrativePost', 'linkReason'),
+              linkReason,
+              r'NarrativePost',
+              'linkReason',
+            ),
             evidenceGroupId: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupId, r'NarrativePost', 'evidenceGroupId'),
+              evidenceGroupId,
+              r'NarrativePost',
+              'evidenceGroupId',
+            ),
             joinedAt: BuiltValueNullFieldError.checkNotNull(
-                joinedAt, r'NarrativePost', 'joinedAt'),
+              joinedAt,
+              r'NarrativePost',
+              'joinedAt',
+            ),
             centrality: centrality,
           );
     } catch (_) {
@@ -231,7 +245,10 @@ class NarrativePostBuilder
         post.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativePost', _$failedField, e.toString());
+          r'NarrativePost',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

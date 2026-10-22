@@ -17,20 +17,20 @@ class _$EnsembleRefitResultWeightsInner
   @override
   final int? n;
 
-  factory _$EnsembleRefitResultWeightsInner(
-          [void Function(EnsembleRefitResultWeightsInnerBuilder)? updates]) =>
-      (EnsembleRefitResultWeightsInnerBuilder()..update(updates))._build();
+  factory _$EnsembleRefitResultWeightsInner([
+    void Function(EnsembleRefitResultWeightsInnerBuilder)? updates,
+  ]) => (EnsembleRefitResultWeightsInnerBuilder()..update(updates))._build();
 
-  _$EnsembleRefitResultWeightsInner._(
-      {required this.forecasterId,
-      required this.category,
-      required this.weight,
-      this.n})
-      : super._();
+  _$EnsembleRefitResultWeightsInner._({
+    required this.forecasterId,
+    required this.category,
+    required this.weight,
+    this.n,
+  }) : super._();
   @override
   EnsembleRefitResultWeightsInner rebuild(
-          void Function(EnsembleRefitResultWeightsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EnsembleRefitResultWeightsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EnsembleRefitResultWeightsInnerBuilder toBuilder() =>
@@ -70,8 +70,10 @@ class _$EnsembleRefitResultWeightsInner
 
 class EnsembleRefitResultWeightsInnerBuilder
     implements
-        Builder<EnsembleRefitResultWeightsInner,
-            EnsembleRefitResultWeightsInnerBuilder> {
+        Builder<
+          EnsembleRefitResultWeightsInner,
+          EnsembleRefitResultWeightsInnerBuilder
+        > {
   _$EnsembleRefitResultWeightsInner? _$v;
 
   String? _forecasterId;
@@ -120,14 +122,24 @@ class EnsembleRefitResultWeightsInnerBuilder
   EnsembleRefitResultWeightsInner build() => _build();
 
   _$EnsembleRefitResultWeightsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EnsembleRefitResultWeightsInner._(
           forecasterId: BuiltValueNullFieldError.checkNotNull(
-              forecasterId, r'EnsembleRefitResultWeightsInner', 'forecasterId'),
+            forecasterId,
+            r'EnsembleRefitResultWeightsInner',
+            'forecasterId',
+          ),
           category: BuiltValueNullFieldError.checkNotNull(
-              category, r'EnsembleRefitResultWeightsInner', 'category'),
+            category,
+            r'EnsembleRefitResultWeightsInner',
+            'category',
+          ),
           weight: BuiltValueNullFieldError.checkNotNull(
-              weight, r'EnsembleRefitResultWeightsInner', 'weight'),
+            weight,
+            r'EnsembleRefitResultWeightsInner',
+            'weight',
+          ),
           n: n,
         );
     replace(_$result);

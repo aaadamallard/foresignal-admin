@@ -12,15 +12,15 @@ class _$AnalysisSeriesPage extends AnalysisSeriesPage {
   @override
   final String? nextCursor;
 
-  factory _$AnalysisSeriesPage(
-          [void Function(AnalysisSeriesPageBuilder)? updates]) =>
-      (AnalysisSeriesPageBuilder()..update(updates))._build();
+  factory _$AnalysisSeriesPage([
+    void Function(AnalysisSeriesPageBuilder)? updates,
+  ]) => (AnalysisSeriesPageBuilder()..update(updates))._build();
 
   _$AnalysisSeriesPage._({required this.items, this.nextCursor}) : super._();
   @override
   AnalysisSeriesPage rebuild(
-          void Function(AnalysisSeriesPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisSeriesPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisSeriesPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class AnalysisSeriesPageBuilder
   _$AnalysisSeriesPage _build() {
     _$AnalysisSeriesPage _$result;
     try {
-      _$result = _$v ??
-          _$AnalysisSeriesPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AnalysisSeriesPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class AnalysisSeriesPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisSeriesPage', _$failedField, e.toString());
+          r'AnalysisSeriesPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

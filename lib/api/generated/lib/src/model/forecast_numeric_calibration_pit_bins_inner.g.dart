@@ -19,20 +19,22 @@ class _$ForecastNumericCalibrationPitBinsInner
   @override
   final num? expected;
 
-  factory _$ForecastNumericCalibrationPitBinsInner(
-          [void Function(ForecastNumericCalibrationPitBinsInnerBuilder)?
-              updates]) =>
-      (ForecastNumericCalibrationPitBinsInnerBuilder()..update(updates))
-          ._build();
+  factory _$ForecastNumericCalibrationPitBinsInner([
+    void Function(ForecastNumericCalibrationPitBinsInnerBuilder)? updates,
+  ]) => (ForecastNumericCalibrationPitBinsInnerBuilder()..update(updates))
+      ._build();
 
-  _$ForecastNumericCalibrationPitBinsInner._(
-      {this.lower, this.upper, this.count, this.frequency, this.expected})
-      : super._();
+  _$ForecastNumericCalibrationPitBinsInner._({
+    this.lower,
+    this.upper,
+    this.count,
+    this.frequency,
+    this.expected,
+  }) : super._();
   @override
   ForecastNumericCalibrationPitBinsInner rebuild(
-          void Function(ForecastNumericCalibrationPitBinsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastNumericCalibrationPitBinsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastNumericCalibrationPitBinsInnerBuilder toBuilder() =>
@@ -64,7 +66,8 @@ class _$ForecastNumericCalibrationPitBinsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ForecastNumericCalibrationPitBinsInner')
+            r'ForecastNumericCalibrationPitBinsInner',
+          )
           ..add('lower', lower)
           ..add('upper', upper)
           ..add('count', count)
@@ -76,8 +79,10 @@ class _$ForecastNumericCalibrationPitBinsInner
 
 class ForecastNumericCalibrationPitBinsInnerBuilder
     implements
-        Builder<ForecastNumericCalibrationPitBinsInner,
-            ForecastNumericCalibrationPitBinsInnerBuilder> {
+        Builder<
+          ForecastNumericCalibrationPitBinsInner,
+          ForecastNumericCalibrationPitBinsInnerBuilder
+        > {
   _$ForecastNumericCalibrationPitBinsInner? _$v;
 
   num? _lower;
@@ -124,7 +129,8 @@ class ForecastNumericCalibrationPitBinsInnerBuilder
 
   @override
   void update(
-      void Function(ForecastNumericCalibrationPitBinsInnerBuilder)? updates) {
+    void Function(ForecastNumericCalibrationPitBinsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -132,7 +138,8 @@ class ForecastNumericCalibrationPitBinsInnerBuilder
   ForecastNumericCalibrationPitBinsInner build() => _build();
 
   _$ForecastNumericCalibrationPitBinsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastNumericCalibrationPitBinsInner._(
           lower: lower,
           upper: upper,

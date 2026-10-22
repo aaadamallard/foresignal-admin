@@ -55,21 +55,21 @@ class OutlooksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/indices/{indexId}/weights'.replaceAll(
-        '{' r'indexId' '}',
-        encodeQueryParameter(_serializers, indexId, const FullType(String))
-            .toString());
+      '{'
+      r'indexId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        indexId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -81,14 +81,13 @@ class OutlooksApi {
 
     try {
       const _type = FullType(IndexWeightsInput);
-      _bodyData =
-          _serializers.serialize(indexWeightsInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        indexWeightsInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -111,9 +110,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RegionalIndexDef),
-            ) as RegionalIndexDef;
+                  rawResponse,
+                  specifiedType: const FullType(RegionalIndexDef),
+                )
+                as RegionalIndexDef;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -160,21 +160,21 @@ class OutlooksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/indices/{indexId}/fit'.replaceAll(
-        '{' r'indexId' '}',
-        encodeQueryParameter(_serializers, indexId, const FullType(String))
-            .toString());
+      '{'
+      r'indexId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        indexId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -196,9 +196,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IndexFitResult),
-            ) as IndexFitResult;
+                  rawResponse,
+                  specifiedType: const FullType(IndexFitResult),
+                )
+                as IndexFitResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -251,21 +252,21 @@ class OutlooksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/indices/{indexId}'.replaceAll(
-        '{' r'indexId' '}',
-        encodeQueryParameter(_serializers, indexId, const FullType(String))
-            .toString());
+      '{'
+      r'indexId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        indexId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -274,8 +275,11 @@ class OutlooksApi {
 
     final _queryParameters = <String, dynamic>{
       if (region != null)
-        r'region':
-            encodeQueryParameter(_serializers, region, const FullType(String)),
+        r'region': encodeQueryParameter(
+          _serializers,
+          region,
+          const FullType(String),
+        ),
       if (from != null)
         r'from': encodeQueryParameter(_serializers, from, const FullType(Date)),
       if (to != null)
@@ -298,9 +302,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RegionalIndexDetail),
-            ) as RegionalIndexDetail;
+                  rawResponse,
+                  specifiedType: const FullType(RegionalIndexDetail),
+                )
+                as RegionalIndexDetail;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -350,25 +355,31 @@ class OutlooksApi {
   }) async {
     final _path = r'/v1/outlooks/{region}/{family}'
         .replaceAll(
-            '{' r'region' '}',
-            encodeQueryParameter(_serializers, region, const FullType(String))
-                .toString())
+          '{'
+          r'region'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            region,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'family' '}',
-            encodeQueryParameter(_serializers, family, const FullType(String))
-                .toString());
+          '{'
+          r'family'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            family,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -390,9 +401,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RegionalOutlook),
-            ) as RegionalOutlook;
+                  rawResponse,
+                  specifiedType: const FullType(RegionalOutlook),
+                )
+                as RegionalOutlook;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -443,16 +455,10 @@ class OutlooksApi {
     final _path = r'/v1/analytics/series/forecast';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -462,8 +468,11 @@ class OutlooksApi {
     final _queryParameters = <String, dynamic>{
       r'ref': encodeQueryParameter(_serializers, ref, const FullType(String)),
       if (horizon != null)
-        r'horizon':
-            encodeQueryParameter(_serializers, horizon, const FullType(int)),
+        r'horizon': encodeQueryParameter(
+          _serializers,
+          horizon,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -482,9 +491,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SeriesForecast),
-            ) as SeriesForecast;
+                  rawResponse,
+                  specifiedType: const FullType(SeriesForecast),
+                )
+                as SeriesForecast;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -533,16 +543,10 @@ class OutlooksApi {
     final _path = r'/v1/analytics/series/forecast/model';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -569,9 +573,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SeriesForecastModel),
-            ) as SeriesForecastModel;
+                  rawResponse,
+                  specifiedType: const FullType(SeriesForecastModel),
+                )
+                as SeriesForecastModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -622,16 +627,10 @@ class OutlooksApi {
     final _path = r'/v1/indices';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -640,11 +639,17 @@ class OutlooksApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -663,9 +668,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RegionalIndexDefPage),
-            ) as RegionalIndexDefPage;
+                  rawResponse,
+                  specifiedType: const FullType(RegionalIndexDefPage),
+                )
+                as RegionalIndexDefPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -720,16 +726,10 @@ class OutlooksApi {
     final _path = r'/v1/outlooks';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -738,17 +738,29 @@ class OutlooksApi {
 
     final _queryParameters = <String, dynamic>{
       if (family != null)
-        r'family':
-            encodeQueryParameter(_serializers, family, const FullType(String)),
+        r'family': encodeQueryParameter(
+          _serializers,
+          family,
+          const FullType(String),
+        ),
       if (region != null)
-        r'region':
-            encodeQueryParameter(_serializers, region, const FullType(String)),
+        r'region': encodeQueryParameter(
+          _serializers,
+          region,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -767,9 +779,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RegionalOutlookPage),
-            ) as RegionalOutlookPage;
+                  rawResponse,
+                  specifiedType: const FullType(RegionalOutlookPage),
+                )
+                as RegionalOutlookPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -818,21 +831,21 @@ class OutlooksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/indices/{indexId}'.replaceAll(
-        '{' r'indexId' '}',
-        encodeQueryParameter(_serializers, indexId, const FullType(String))
-            .toString());
+      '{'
+      r'indexId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        indexId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -844,14 +857,13 @@ class OutlooksApi {
 
     try {
       const _type = FullType(RegionalIndexDefInput);
-      _bodyData =
-          _serializers.serialize(regionalIndexDefInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        regionalIndexDefInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -874,9 +886,10 @@ class OutlooksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RegionalIndexDef),
-            ) as RegionalIndexDef;
+                  rawResponse,
+                  specifiedType: const FullType(RegionalIndexDef),
+                )
+                as RegionalIndexDef;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

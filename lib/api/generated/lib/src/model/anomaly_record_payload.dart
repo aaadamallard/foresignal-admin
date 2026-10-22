@@ -76,7 +76,7 @@ class _$AnomalyRecordPayloadSerializer
   @override
   final Iterable<Type> types = const [
     AnomalyRecordPayload,
-    _$AnomalyRecordPayload
+    _$AnomalyRecordPayload,
   ];
 
   @override
@@ -159,9 +159,11 @@ class _$AnomalyRecordPayloadSerializer
     AnomalyRecordPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -177,81 +179,103 @@ class _$AnomalyRecordPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'groupKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.groupKey = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AnomalyRecordPayloadStateEnum),
-          ) as AnomalyRecordPayloadStateEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnomalyRecordPayloadStateEnum,
+                    ),
+                  )
+                  as AnomalyRecordPayloadStateEnum?;
           if (valueDes == null) continue;
           result.state = valueDes;
           break;
         case r'observed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.observed = valueDes;
           break;
         case r'expected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.expected = valueDes;
           break;
         case r'pValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pValue = valueDes;
           break;
         case r'classification':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(AnomalyRecordPayloadClassificationEnum),
-          ) as AnomalyRecordPayloadClassificationEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AnomalyRecordPayloadClassificationEnum,
+                    ),
+                  )
+                  as AnomalyRecordPayloadClassificationEnum;
           result.classification = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DetectorRef),
-          ) as DetectorRef?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DetectorRef),
+                  )
+                  as DetectorRef?;
           if (valueDes == null) continue;
           result.detector.replace(valueDes);
           break;
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.automated = valueDes;
           break;

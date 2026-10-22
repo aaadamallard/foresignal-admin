@@ -16,17 +16,20 @@ class _$BenchmarkCaseExpectations extends BenchmarkCaseExpectations {
   @override
   final String? notes;
 
-  factory _$BenchmarkCaseExpectations(
-          [void Function(BenchmarkCaseExpectationsBuilder)? updates]) =>
-      (BenchmarkCaseExpectationsBuilder()..update(updates))._build();
+  factory _$BenchmarkCaseExpectations([
+    void Function(BenchmarkCaseExpectationsBuilder)? updates,
+  ]) => (BenchmarkCaseExpectationsBuilder()..update(updates))._build();
 
-  _$BenchmarkCaseExpectations._(
-      {this.findings, this.precursors, this.questions, this.notes})
-      : super._();
+  _$BenchmarkCaseExpectations._({
+    this.findings,
+    this.precursors,
+    this.questions,
+    this.notes,
+  }) : super._();
   @override
   BenchmarkCaseExpectations rebuild(
-          void Function(BenchmarkCaseExpectationsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkCaseExpectationsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkCaseExpectationsBuilder toBuilder() =>
@@ -81,16 +84,16 @@ class BenchmarkCaseExpectationsBuilder
       _$this._precursors ??=
           ListBuilder<BenchmarkCaseExpectationsPrecursorsInner>();
   set precursors(
-          ListBuilder<BenchmarkCaseExpectationsPrecursorsInner>? precursors) =>
-      _$this._precursors = precursors;
+    ListBuilder<BenchmarkCaseExpectationsPrecursorsInner>? precursors,
+  ) => _$this._precursors = precursors;
 
   ListBuilder<BenchmarkCaseExpectationsQuestionsInner>? _questions;
   ListBuilder<BenchmarkCaseExpectationsQuestionsInner> get questions =>
       _$this._questions ??=
           ListBuilder<BenchmarkCaseExpectationsQuestionsInner>();
   set questions(
-          ListBuilder<BenchmarkCaseExpectationsQuestionsInner>? questions) =>
-      _$this._questions = questions;
+    ListBuilder<BenchmarkCaseExpectationsQuestionsInner>? questions,
+  ) => _$this._questions = questions;
 
   String? _notes;
   String? get notes => _$this._notes;
@@ -128,7 +131,8 @@ class BenchmarkCaseExpectationsBuilder
   _$BenchmarkCaseExpectations _build() {
     _$BenchmarkCaseExpectations _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkCaseExpectations._(
             findings: _findings?.build(),
             precursors: _precursors?.build(),
@@ -146,7 +150,10 @@ class BenchmarkCaseExpectationsBuilder
         _questions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkCaseExpectations', _$failedField, e.toString());
+          r'BenchmarkCaseExpectations',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

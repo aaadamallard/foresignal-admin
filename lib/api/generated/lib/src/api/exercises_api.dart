@@ -45,21 +45,21 @@ class ExercisesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exercises/{exerciseId}/cancel'.replaceAll(
-        '{' r'exerciseId' '}',
-        encodeQueryParameter(_serializers, exerciseId, const FullType(String))
-            .toString());
+      '{'
+      r'exerciseId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        exerciseId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -81,9 +81,10 @@ class ExercisesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExerciseRun),
-            ) as ExerciseRun;
+                  rawResponse,
+                  specifiedType: const FullType(ExerciseRun),
+                )
+                as ExerciseRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -132,16 +133,10 @@ class ExercisesApi {
     final _path = r'/v1/exercises';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -153,14 +148,13 @@ class ExercisesApi {
 
     try {
       const _type = FullType(ExerciseRunCreate);
-      _bodyData =
-          _serializers.serialize(exerciseRunCreate, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        exerciseRunCreate,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -183,9 +177,10 @@ class ExercisesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExerciseRun),
-            ) as ExerciseRun;
+                  rawResponse,
+                  specifiedType: const FullType(ExerciseRun),
+                )
+                as ExerciseRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -232,21 +227,21 @@ class ExercisesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exercises/{exerciseId}'.replaceAll(
-        '{' r'exerciseId' '}',
-        encodeQueryParameter(_serializers, exerciseId, const FullType(String))
-            .toString());
+      '{'
+      r'exerciseId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        exerciseId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -268,9 +263,10 @@ class ExercisesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExerciseRun),
-            ) as ExerciseRun;
+                  rawResponse,
+                  specifiedType: const FullType(ExerciseRun),
+                )
+                as ExerciseRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -323,16 +319,10 @@ class ExercisesApi {
     final _path = r'/v1/exercises';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -341,14 +331,23 @@ class ExercisesApi {
 
     final _queryParameters = <String, dynamic>{
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -367,9 +366,10 @@ class ExercisesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExerciseRunPage),
-            ) as ExerciseRunPage;
+                  rawResponse,
+                  specifiedType: const FullType(ExerciseRunPage),
+                )
+                as ExerciseRunPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -416,21 +416,21 @@ class ExercisesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exercises/{exerciseId}/alerts'.replaceAll(
-        '{' r'exerciseId' '}',
-        encodeQueryParameter(_serializers, exerciseId, const FullType(String))
-            .toString());
+      '{'
+      r'exerciseId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        exerciseId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },

@@ -23,9 +23,9 @@ abstract class ImportMediaRatingsRequest1
 
   ImportMediaRatingsRequest1._();
 
-  factory ImportMediaRatingsRequest1(
-          [void updates(ImportMediaRatingsRequest1Builder b)]) =
-      _$ImportMediaRatingsRequest1;
+  factory ImportMediaRatingsRequest1([
+    void updates(ImportMediaRatingsRequest1Builder b),
+  ]) = _$ImportMediaRatingsRequest1;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ImportMediaRatingsRequest1Builder b) => b;
@@ -40,7 +40,7 @@ class _$ImportMediaRatingsRequest1Serializer
   @override
   final Iterable<Type> types = const [
     ImportMediaRatingsRequest1,
-    _$ImportMediaRatingsRequest1
+    _$ImportMediaRatingsRequest1,
   ];
 
   @override
@@ -54,8 +54,9 @@ class _$ImportMediaRatingsRequest1Serializer
     yield r'rows';
     yield serializers.serialize(
       object.rows,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ImportMediaRatingsRequest1RowsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ImportMediaRatingsRequest1RowsInner),
+      ]),
     );
   }
 
@@ -65,9 +66,11 @@ class _$ImportMediaRatingsRequest1Serializer
     ImportMediaRatingsRequest1 object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,11 +86,14 @@ class _$ImportMediaRatingsRequest1Serializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ImportMediaRatingsRequest1RowsInner)]),
-          ) as BuiltList<ImportMediaRatingsRequest1RowsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ImportMediaRatingsRequest1RowsInner),
+                    ]),
+                  )
+                  as BuiltList<ImportMediaRatingsRequest1RowsInner>;
           result.rows.replace(valueDes);
           break;
         default:

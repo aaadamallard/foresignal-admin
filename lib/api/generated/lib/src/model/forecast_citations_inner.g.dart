@@ -14,16 +14,16 @@ class _$ForecastCitationsInner extends ForecastCitationsInner {
   @override
   final String? claim;
 
-  factory _$ForecastCitationsInner(
-          [void Function(ForecastCitationsInnerBuilder)? updates]) =>
-      (ForecastCitationsInnerBuilder()..update(updates))._build();
+  factory _$ForecastCitationsInner([
+    void Function(ForecastCitationsInnerBuilder)? updates,
+  ]) => (ForecastCitationsInnerBuilder()..update(updates))._build();
 
   _$ForecastCitationsInner._({required this.ref, this.quote, this.claim})
-      : super._();
+    : super._();
   @override
   ForecastCitationsInner rebuild(
-          void Function(ForecastCitationsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastCitationsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastCitationsInnerBuilder toBuilder() =>
@@ -103,10 +103,14 @@ class ForecastCitationsInnerBuilder
   ForecastCitationsInner build() => _build();
 
   _$ForecastCitationsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastCitationsInner._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'ForecastCitationsInner', 'ref'),
+            ref,
+            r'ForecastCitationsInner',
+            'ref',
+          ),
           quote: quote,
           claim: claim,
         );

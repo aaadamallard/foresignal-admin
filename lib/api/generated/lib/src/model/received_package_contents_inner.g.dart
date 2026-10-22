@@ -16,17 +16,20 @@ class _$ReceivedPackageContentsInner extends ReceivedPackageContentsInner {
   @override
   final String? mediaId;
 
-  factory _$ReceivedPackageContentsInner(
-          [void Function(ReceivedPackageContentsInnerBuilder)? updates]) =>
-      (ReceivedPackageContentsInnerBuilder()..update(updates))._build();
+  factory _$ReceivedPackageContentsInner([
+    void Function(ReceivedPackageContentsInnerBuilder)? updates,
+  ]) => (ReceivedPackageContentsInnerBuilder()..update(updates))._build();
 
-  _$ReceivedPackageContentsInner._(
-      {required this.path, required this.sha256, this.size, this.mediaId})
-      : super._();
+  _$ReceivedPackageContentsInner._({
+    required this.path,
+    required this.sha256,
+    this.size,
+    this.mediaId,
+  }) : super._();
   @override
   ReceivedPackageContentsInner rebuild(
-          void Function(ReceivedPackageContentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReceivedPackageContentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReceivedPackageContentsInnerBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$ReceivedPackageContentsInner extends ReceivedPackageContentsInner {
 
 class ReceivedPackageContentsInnerBuilder
     implements
-        Builder<ReceivedPackageContentsInner,
-            ReceivedPackageContentsInnerBuilder> {
+        Builder<
+          ReceivedPackageContentsInner,
+          ReceivedPackageContentsInnerBuilder
+        > {
   _$ReceivedPackageContentsInner? _$v;
 
   String? _path;
@@ -116,12 +121,19 @@ class ReceivedPackageContentsInnerBuilder
   ReceivedPackageContentsInner build() => _build();
 
   _$ReceivedPackageContentsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReceivedPackageContentsInner._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'ReceivedPackageContentsInner', 'path'),
+            path,
+            r'ReceivedPackageContentsInner',
+            'path',
+          ),
           sha256: BuiltValueNullFieldError.checkNotNull(
-              sha256, r'ReceivedPackageContentsInner', 'sha256'),
+            sha256,
+            r'ReceivedPackageContentsInner',
+            'sha256',
+          ),
           size: size,
           mediaId: mediaId,
         );

@@ -10,15 +10,15 @@ class _$JsonFeedItemAuthorsInner extends JsonFeedItemAuthorsInner {
   @override
   final String? name;
 
-  factory _$JsonFeedItemAuthorsInner(
-          [void Function(JsonFeedItemAuthorsInnerBuilder)? updates]) =>
-      (JsonFeedItemAuthorsInnerBuilder()..update(updates))._build();
+  factory _$JsonFeedItemAuthorsInner([
+    void Function(JsonFeedItemAuthorsInnerBuilder)? updates,
+  ]) => (JsonFeedItemAuthorsInnerBuilder()..update(updates))._build();
 
   _$JsonFeedItemAuthorsInner._({this.name}) : super._();
   @override
   JsonFeedItemAuthorsInner rebuild(
-          void Function(JsonFeedItemAuthorsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(JsonFeedItemAuthorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   JsonFeedItemAuthorsInnerBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$JsonFeedItemAuthorsInner extends JsonFeedItemAuthorsInner {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'JsonFeedItemAuthorsInner')
-          ..add('name', name))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'JsonFeedItemAuthorsInner',
+    )..add('name', name)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class JsonFeedItemAuthorsInnerBuilder
   JsonFeedItemAuthorsInner build() => _build();
 
   _$JsonFeedItemAuthorsInner _build() {
-    final _$result = _$v ??
-        _$JsonFeedItemAuthorsInner._(
-          name: name,
-        );
+    final _$result = _$v ?? _$JsonFeedItemAuthorsInner._(name: name);
     replace(_$result);
     return _$result;
   }

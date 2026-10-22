@@ -18,17 +18,21 @@ class _$AskThreadPageItemsInner extends AskThreadPageItemsInner {
   @override
   final int? messageCount;
 
-  factory _$AskThreadPageItemsInner(
-          [void Function(AskThreadPageItemsInnerBuilder)? updates]) =>
-      (AskThreadPageItemsInnerBuilder()..update(updates))._build();
+  factory _$AskThreadPageItemsInner([
+    void Function(AskThreadPageItemsInnerBuilder)? updates,
+  ]) => (AskThreadPageItemsInnerBuilder()..update(updates))._build();
 
-  _$AskThreadPageItemsInner._(
-      {this.id, this.title, this.createdAt, this.updatedAt, this.messageCount})
-      : super._();
+  _$AskThreadPageItemsInner._({
+    this.id,
+    this.title,
+    this.createdAt,
+    this.updatedAt,
+    this.messageCount,
+  }) : super._();
   @override
   AskThreadPageItemsInner rebuild(
-          void Function(AskThreadPageItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AskThreadPageItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AskThreadPageItemsInnerBuilder toBuilder() =>
@@ -125,7 +129,8 @@ class AskThreadPageItemsInnerBuilder
   AskThreadPageItemsInner build() => _build();
 
   _$AskThreadPageItemsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AskThreadPageItemsInner._(
           id: id,
           title: title,

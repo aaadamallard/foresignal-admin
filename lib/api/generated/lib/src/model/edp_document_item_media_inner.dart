@@ -29,9 +29,9 @@ abstract class EdpDocumentItemMediaInner
 
   EdpDocumentItemMediaInner._();
 
-  factory EdpDocumentItemMediaInner(
-          [void updates(EdpDocumentItemMediaInnerBuilder b)]) =
-      _$EdpDocumentItemMediaInner;
+  factory EdpDocumentItemMediaInner([
+    void updates(EdpDocumentItemMediaInnerBuilder b),
+  ]) = _$EdpDocumentItemMediaInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EdpDocumentItemMediaInnerBuilder b) => b;
@@ -46,7 +46,7 @@ class _$EdpDocumentItemMediaInnerSerializer
   @override
   final Iterable<Type> types = const [
     EdpDocumentItemMediaInner,
-    _$EdpDocumentItemMediaInner
+    _$EdpDocumentItemMediaInner,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$EdpDocumentItemMediaInnerSerializer
     EdpDocumentItemMediaInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,25 +104,31 @@ class _$EdpDocumentItemMediaInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.type = valueDes;
           break;
         case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.url = valueDes;
           break;
         case r'thumbUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.thumbUrl = valueDes;
           break;

@@ -24,9 +24,9 @@ GroupMemberRoleEnum _$groupMemberRoleEnumValueOf(String name) {
 
 final BuiltSet<GroupMemberRoleEnum> _$groupMemberRoleEnumValues =
     BuiltSet<GroupMemberRoleEnum>(const <GroupMemberRoleEnum>[
-  _$groupMemberRoleEnum_member,
-  _$groupMemberRoleEnum_manager,
-]);
+      _$groupMemberRoleEnum_member,
+      _$groupMemberRoleEnum_manager,
+    ]);
 
 Serializer<GroupMemberRoleEnum> _$groupMemberRoleEnumSerializer =
     _$GroupMemberRoleEnumSerializer();
@@ -48,15 +48,20 @@ class _$GroupMemberRoleEnumSerializer
   final String wireName = 'GroupMemberRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, GroupMemberRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GroupMemberRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  GroupMemberRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GroupMemberRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  GroupMemberRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GroupMemberRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GroupMember extends GroupMember {
@@ -72,9 +77,12 @@ class _$GroupMember extends GroupMember {
   factory _$GroupMember([void Function(GroupMemberBuilder)? updates]) =>
       (GroupMemberBuilder()..update(updates))._build();
 
-  _$GroupMember._(
-      {required this.principal, required this.role, this.addedAt, this.addedBy})
-      : super._();
+  _$GroupMember._({
+    required this.principal,
+    required this.role,
+    this.addedAt,
+    this.addedBy,
+  }) : super._();
   @override
   GroupMember rebuild(void Function(GroupMemberBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -168,11 +176,15 @@ class GroupMemberBuilder implements Builder<GroupMember, GroupMemberBuilder> {
   _$GroupMember _build() {
     _$GroupMember _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$GroupMember._(
             principal: principal.build(),
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'GroupMember', 'role'),
+              role,
+              r'GroupMember',
+              'role',
+            ),
             addedAt: addedAt,
             addedBy: _addedBy?.build(),
           );
@@ -186,7 +198,10 @@ class GroupMemberBuilder implements Builder<GroupMember, GroupMemberBuilder> {
         _addedBy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GroupMember', _$failedField, e.toString());
+          r'GroupMember',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

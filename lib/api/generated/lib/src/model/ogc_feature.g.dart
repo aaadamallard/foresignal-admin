@@ -20,8 +20,8 @@ OgcFeatureTypeEnum _$ogcFeatureTypeEnumValueOf(String name) {
 
 final BuiltSet<OgcFeatureTypeEnum> _$ogcFeatureTypeEnumValues =
     BuiltSet<OgcFeatureTypeEnum>(const <OgcFeatureTypeEnum>[
-  _$ogcFeatureTypeEnum_feature,
-]);
+      _$ogcFeatureTypeEnum_feature,
+    ]);
 
 Serializer<OgcFeatureTypeEnum> _$ogcFeatureTypeEnumSerializer =
     _$OgcFeatureTypeEnumSerializer();
@@ -41,15 +41,20 @@ class _$OgcFeatureTypeEnumSerializer
   final String wireName = 'OgcFeatureTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, OgcFeatureTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcFeatureTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  OgcFeatureTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcFeatureTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  OgcFeatureTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcFeatureTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcFeature extends OgcFeature {
@@ -67,13 +72,13 @@ class _$OgcFeature extends OgcFeature {
   factory _$OgcFeature([void Function(OgcFeatureBuilder)? updates]) =>
       (OgcFeatureBuilder()..update(updates))._build();
 
-  _$OgcFeature._(
-      {required this.type,
-      required this.id,
-      this.geometry,
-      required this.properties,
-      this.links})
-      : super._();
+  _$OgcFeature._({
+    required this.type,
+    required this.id,
+    this.geometry,
+    required this.properties,
+    this.links,
+  }) : super._();
   @override
   OgcFeature rebuild(void Function(OgcFeatureBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -174,10 +179,14 @@ class OgcFeatureBuilder implements Builder<OgcFeature, OgcFeatureBuilder> {
   _$OgcFeature _build() {
     _$OgcFeature _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcFeature._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'OgcFeature', 'type'),
+              type,
+              r'OgcFeature',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(id, r'OgcFeature', 'id'),
             geometry: _geometry?.build(),
             properties: properties.build(),
@@ -194,7 +203,10 @@ class OgcFeatureBuilder implements Builder<OgcFeature, OgcFeatureBuilder> {
         _links?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcFeature', _$failedField, e.toString());
+          r'OgcFeature',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

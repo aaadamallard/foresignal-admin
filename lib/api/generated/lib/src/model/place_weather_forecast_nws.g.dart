@@ -20,22 +20,22 @@ class _$PlaceWeatherForecastNws extends PlaceWeatherForecastNws {
   @override
   final num? gustMaxMs24h;
 
-  factory _$PlaceWeatherForecastNws(
-          [void Function(PlaceWeatherForecastNwsBuilder)? updates]) =>
-      (PlaceWeatherForecastNwsBuilder()..update(updates))._build();
+  factory _$PlaceWeatherForecastNws([
+    void Function(PlaceWeatherForecastNwsBuilder)? updates,
+  ]) => (PlaceWeatherForecastNwsBuilder()..update(updates))._build();
 
-  _$PlaceWeatherForecastNws._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.popMax24h,
-      this.qpf24hMm,
-      this.gustMaxMs24h})
-      : super._();
+  _$PlaceWeatherForecastNws._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.popMax24h,
+    this.qpf24hMm,
+    this.gustMaxMs24h,
+  }) : super._();
   @override
   PlaceWeatherForecastNws rebuild(
-          void Function(PlaceWeatherForecastNwsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherForecastNwsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherForecastNwsBuilder toBuilder() =>
@@ -140,10 +140,14 @@ class PlaceWeatherForecastNwsBuilder
   PlaceWeatherForecastNws build() => _build();
 
   _$PlaceWeatherForecastNws _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherForecastNws._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherForecastNws', 'status'),
+            status,
+            r'PlaceWeatherForecastNws',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           popMax24h: popMax24h,

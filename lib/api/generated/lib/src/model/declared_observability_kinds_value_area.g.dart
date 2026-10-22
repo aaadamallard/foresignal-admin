@@ -7,17 +7,17 @@ part of 'declared_observability_kinds_value_area.dart';
 // **************************************************************************
 
 const DeclaredObservabilityKindsValueAreaTypeEnum
-    _$declaredObservabilityKindsValueAreaTypeEnum_global =
+_$declaredObservabilityKindsValueAreaTypeEnum_global =
     const DeclaredObservabilityKindsValueAreaTypeEnum._('global');
 const DeclaredObservabilityKindsValueAreaTypeEnum
-    _$declaredObservabilityKindsValueAreaTypeEnum_bbox =
+_$declaredObservabilityKindsValueAreaTypeEnum_bbox =
     const DeclaredObservabilityKindsValueAreaTypeEnum._('bbox');
 const DeclaredObservabilityKindsValueAreaTypeEnum
-    _$declaredObservabilityKindsValueAreaTypeEnum_regions =
+_$declaredObservabilityKindsValueAreaTypeEnum_regions =
     const DeclaredObservabilityKindsValueAreaTypeEnum._('regions');
 
 DeclaredObservabilityKindsValueAreaTypeEnum
-    _$declaredObservabilityKindsValueAreaTypeEnumValueOf(String name) {
+_$declaredObservabilityKindsValueAreaTypeEnumValueOf(String name) {
   switch (name) {
     case 'global':
       return _$declaredObservabilityKindsValueAreaTypeEnum_global;
@@ -31,15 +31,17 @@ DeclaredObservabilityKindsValueAreaTypeEnum
 }
 
 final BuiltSet<DeclaredObservabilityKindsValueAreaTypeEnum>
-    _$declaredObservabilityKindsValueAreaTypeEnumValues = BuiltSet<
-        DeclaredObservabilityKindsValueAreaTypeEnum>(const <DeclaredObservabilityKindsValueAreaTypeEnum>[
-  _$declaredObservabilityKindsValueAreaTypeEnum_global,
-  _$declaredObservabilityKindsValueAreaTypeEnum_bbox,
-  _$declaredObservabilityKindsValueAreaTypeEnum_regions,
-]);
+_$declaredObservabilityKindsValueAreaTypeEnumValues =
+    BuiltSet<DeclaredObservabilityKindsValueAreaTypeEnum>(
+      const <DeclaredObservabilityKindsValueAreaTypeEnum>[
+        _$declaredObservabilityKindsValueAreaTypeEnum_global,
+        _$declaredObservabilityKindsValueAreaTypeEnum_bbox,
+        _$declaredObservabilityKindsValueAreaTypeEnum_regions,
+      ],
+    );
 
 Serializer<DeclaredObservabilityKindsValueAreaTypeEnum>
-    _$declaredObservabilityKindsValueAreaTypeEnumSerializer =
+_$declaredObservabilityKindsValueAreaTypeEnumSerializer =
     _$DeclaredObservabilityKindsValueAreaTypeEnumSerializer();
 
 class _$DeclaredObservabilityKindsValueAreaTypeEnumSerializer
@@ -58,23 +60,26 @@ class _$DeclaredObservabilityKindsValueAreaTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    DeclaredObservabilityKindsValueAreaTypeEnum
+    DeclaredObservabilityKindsValueAreaTypeEnum,
   ];
   @override
   final String wireName = 'DeclaredObservabilityKindsValueAreaTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          DeclaredObservabilityKindsValueAreaTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DeclaredObservabilityKindsValueAreaTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DeclaredObservabilityKindsValueAreaTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DeclaredObservabilityKindsValueAreaTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DeclaredObservabilityKindsValueAreaTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DeclaredObservabilityKindsValueArea
@@ -86,18 +91,20 @@ class _$DeclaredObservabilityKindsValueArea
   @override
   final BuiltList<String>? regionCodes;
 
-  factory _$DeclaredObservabilityKindsValueArea(
-          [void Function(DeclaredObservabilityKindsValueAreaBuilder)?
-              updates]) =>
+  factory _$DeclaredObservabilityKindsValueArea([
+    void Function(DeclaredObservabilityKindsValueAreaBuilder)? updates,
+  ]) =>
       (DeclaredObservabilityKindsValueAreaBuilder()..update(updates))._build();
 
-  _$DeclaredObservabilityKindsValueArea._(
-      {required this.type, this.bbox, this.regionCodes})
-      : super._();
+  _$DeclaredObservabilityKindsValueArea._({
+    required this.type,
+    this.bbox,
+    this.regionCodes,
+  }) : super._();
   @override
   DeclaredObservabilityKindsValueArea rebuild(
-          void Function(DeclaredObservabilityKindsValueAreaBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DeclaredObservabilityKindsValueAreaBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DeclaredObservabilityKindsValueAreaBuilder toBuilder() =>
@@ -134,8 +141,10 @@ class _$DeclaredObservabilityKindsValueArea
 
 class DeclaredObservabilityKindsValueAreaBuilder
     implements
-        Builder<DeclaredObservabilityKindsValueArea,
-            DeclaredObservabilityKindsValueAreaBuilder> {
+        Builder<
+          DeclaredObservabilityKindsValueArea,
+          DeclaredObservabilityKindsValueAreaBuilder
+        > {
   _$DeclaredObservabilityKindsValueArea? _$v;
 
   DeclaredObservabilityKindsValueAreaTypeEnum? _type;
@@ -175,7 +184,8 @@ class DeclaredObservabilityKindsValueAreaBuilder
 
   @override
   void update(
-      void Function(DeclaredObservabilityKindsValueAreaBuilder)? updates) {
+    void Function(DeclaredObservabilityKindsValueAreaBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -185,10 +195,14 @@ class DeclaredObservabilityKindsValueAreaBuilder
   _$DeclaredObservabilityKindsValueArea _build() {
     _$DeclaredObservabilityKindsValueArea _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DeclaredObservabilityKindsValueArea._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'DeclaredObservabilityKindsValueArea', 'type'),
+              type,
+              r'DeclaredObservabilityKindsValueArea',
+              'type',
+            ),
             bbox: _bbox?.build(),
             regionCodes: _regionCodes?.build(),
           );
@@ -200,8 +214,11 @@ class DeclaredObservabilityKindsValueAreaBuilder
         _$failedField = 'regionCodes';
         _regionCodes?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(r'DeclaredObservabilityKindsValueArea',
-            _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'DeclaredObservabilityKindsValueArea',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -20,7 +20,7 @@ class _$SystemInfoMcp extends SystemInfoMcp {
       (SystemInfoMcpBuilder()..update(updates))._build();
 
   _$SystemInfoMcp._({this.enabled, this.sessions, this.transports, this.tools})
-      : super._();
+    : super._();
   @override
   SystemInfoMcp rebuild(void Function(SystemInfoMcpBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,7 +114,8 @@ class SystemInfoMcpBuilder
   _$SystemInfoMcp _build() {
     _$SystemInfoMcp _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SystemInfoMcp._(
             enabled: enabled,
             sessions: sessions,
@@ -128,7 +129,10 @@ class SystemInfoMcpBuilder
         _transports?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SystemInfoMcp', _$failedField, e.toString());
+          r'SystemInfoMcp',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

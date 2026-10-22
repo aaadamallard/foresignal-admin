@@ -89,32 +89,37 @@ class _$IntelBoardSerializer implements PrimitiveSerializer<IntelBoard> {
     yield r'situations';
     yield serializers.serialize(
       object.situations,
-      specifiedType:
-          const FullType(BuiltList, [FullType(IntelBoardSituationsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(IntelBoardSituationsInner),
+      ]),
     );
     yield r'bandChanges';
     yield serializers.serialize(
       object.bandChanges,
-      specifiedType:
-          const FullType(BuiltList, [FullType(IntelBoardBandChangesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(IntelBoardBandChangesInner),
+      ]),
     );
     yield r'indicatorsObserved';
     yield serializers.serialize(
       object.indicatorsObserved,
-      specifiedType: const FullType(
-          BuiltList, [FullType(IntelBoardIndicatorsObservedInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(IntelBoardIndicatorsObservedInner),
+      ]),
     );
     yield r'forecastsDue';
     yield serializers.serialize(
       object.forecastsDue,
-      specifiedType:
-          const FullType(BuiltList, [FullType(IntelBoardForecastsDueInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(IntelBoardForecastsDueInner),
+      ]),
     );
     yield r'latestAssessments';
     yield serializers.serialize(
       object.latestAssessments,
-      specifiedType: const FullType(
-          BuiltList, [FullType(IntelBoardLatestAssessmentsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(IntelBoardLatestAssessmentsInner),
+      ]),
     );
     if (object.calibration != null) {
       yield r'calibration';
@@ -127,8 +132,9 @@ class _$IntelBoardSerializer implements PrimitiveSerializer<IntelBoard> {
       yield r'benchmarks';
       yield serializers.serialize(
         object.benchmarks,
-        specifiedType:
-            const FullType(BuiltList, [FullType(IntelBoardBenchmarksInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(IntelBoardBenchmarksInner),
+        ]),
       );
     }
     if (object.truncated != null) {
@@ -146,9 +152,11 @@ class _$IntelBoardSerializer implements PrimitiveSerializer<IntelBoard> {
     IntelBoard object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -164,75 +172,102 @@ class _$IntelBoardSerializer implements PrimitiveSerializer<IntelBoard> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.generatedAt = valueDes;
           break;
         case r'situations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(IntelBoardSituationsInner)]),
-          ) as BuiltList<IntelBoardSituationsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelBoardSituationsInner),
+                    ]),
+                  )
+                  as BuiltList<IntelBoardSituationsInner>;
           result.situations.replace(valueDes);
           break;
         case r'bandChanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(IntelBoardBandChangesInner)]),
-          ) as BuiltList<IntelBoardBandChangesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelBoardBandChangesInner),
+                    ]),
+                  )
+                  as BuiltList<IntelBoardBandChangesInner>;
           result.bandChanges.replace(valueDes);
           break;
         case r'indicatorsObserved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(IntelBoardIndicatorsObservedInner)]),
-          ) as BuiltList<IntelBoardIndicatorsObservedInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelBoardIndicatorsObservedInner),
+                    ]),
+                  )
+                  as BuiltList<IntelBoardIndicatorsObservedInner>;
           result.indicatorsObserved.replace(valueDes);
           break;
         case r'forecastsDue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(IntelBoardForecastsDueInner)]),
-          ) as BuiltList<IntelBoardForecastsDueInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelBoardForecastsDueInner),
+                    ]),
+                  )
+                  as BuiltList<IntelBoardForecastsDueInner>;
           result.forecastsDue.replace(valueDes);
           break;
         case r'latestAssessments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(IntelBoardLatestAssessmentsInner)]),
-          ) as BuiltList<IntelBoardLatestAssessmentsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelBoardLatestAssessmentsInner),
+                    ]),
+                  )
+                  as BuiltList<IntelBoardLatestAssessmentsInner>;
           result.latestAssessments.replace(valueDes);
           break;
         case r'calibration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IntelBoardCalibration),
-          ) as IntelBoardCalibration?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelBoardCalibration,
+                    ),
+                  )
+                  as IntelBoardCalibration?;
           if (valueDes == null) continue;
           result.calibration.replace(valueDes);
           break;
         case r'benchmarks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(IntelBoardBenchmarksInner)]),
-          ) as BuiltList<IntelBoardBenchmarksInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IntelBoardBenchmarksInner),
+                    ]),
+                  )
+                  as BuiltList<IntelBoardBenchmarksInner>?;
           if (valueDes == null) continue;
           result.benchmarks.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.truncated.replace(valueDes);
           break;

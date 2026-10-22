@@ -119,9 +119,11 @@ class _$SocialSettingsCuesSerializer
     SocialSettingsCues object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -137,52 +139,68 @@ class _$SocialSettingsCuesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'triggers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSettingsCuesTriggers),
-          ) as SocialSettingsCuesTriggers?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsCuesTriggers,
+                    ),
+                  )
+                  as SocialSettingsCuesTriggers?;
           if (valueDes == null) continue;
           result.triggers.replace(valueDes);
           break;
         case r'maxPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxPerDay = valueDes;
           break;
         case r'maxCostUsdPerCue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxCostUsdPerCue = valueDes;
           break;
         case r'platforms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SocialPlatformId)]),
-          ) as BuiltList<SocialPlatformId>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SocialPlatformId),
+                    ]),
+                  )
+                  as BuiltList<SocialPlatformId>?;
           if (valueDes == null) continue;
           result.platforms.replace(valueDes);
           break;
         case r'xaiXSearch':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SocialSettingsCuesXaiXSearch),
-          ) as SocialSettingsCuesXaiXSearch?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsCuesXaiXSearch,
+                    ),
+                  )
+                  as SocialSettingsCuesXaiXSearch?;
           if (valueDes == null) continue;
           result.xaiXSearch.replace(valueDes);
           break;

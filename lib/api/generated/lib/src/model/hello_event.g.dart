@@ -21,13 +21,13 @@ class _$HelloEvent extends HelloEvent {
   factory _$HelloEvent([void Function(HelloEventBuilder)? updates]) =>
       (HelloEventBuilder()..update(updates))._build();
 
-  _$HelloEvent._(
-      {required this.streamId,
-      required this.topics,
-      required this.watermarkSeq,
-      required this.filterVersion,
-      this.streamKey})
-      : super._();
+  _$HelloEvent._({
+    required this.streamId,
+    required this.topics,
+    required this.watermarkSeq,
+    required this.filterVersion,
+    this.streamKey,
+  }) : super._();
   @override
   HelloEvent rebuild(void Function(HelloEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -127,15 +127,25 @@ class HelloEventBuilder implements Builder<HelloEvent, HelloEventBuilder> {
   _$HelloEvent _build() {
     _$HelloEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HelloEvent._(
             streamId: BuiltValueNullFieldError.checkNotNull(
-                streamId, r'HelloEvent', 'streamId'),
+              streamId,
+              r'HelloEvent',
+              'streamId',
+            ),
             topics: topics.build(),
             watermarkSeq: BuiltValueNullFieldError.checkNotNull(
-                watermarkSeq, r'HelloEvent', 'watermarkSeq'),
+              watermarkSeq,
+              r'HelloEvent',
+              'watermarkSeq',
+            ),
             filterVersion: BuiltValueNullFieldError.checkNotNull(
-                filterVersion, r'HelloEvent', 'filterVersion'),
+              filterVersion,
+              r'HelloEvent',
+              'filterVersion',
+            ),
             streamKey: streamKey,
           );
     } catch (_) {
@@ -145,7 +155,10 @@ class HelloEventBuilder implements Builder<HelloEvent, HelloEventBuilder> {
         topics.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HelloEvent', _$failedField, e.toString());
+          r'HelloEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

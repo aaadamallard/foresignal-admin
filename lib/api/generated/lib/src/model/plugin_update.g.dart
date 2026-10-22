@@ -89,10 +89,14 @@ class PluginUpdateBuilder
   PluginUpdate build() => _build();
 
   _$PluginUpdate _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PluginUpdate._(
           enabled: BuiltValueNullFieldError.checkNotNull(
-              enabled, r'PluginUpdate', 'enabled'),
+            enabled,
+            r'PluginUpdate',
+            'enabled',
+          ),
           sha256: sha256,
         );
     replace(_$result);

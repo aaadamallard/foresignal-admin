@@ -84,9 +84,11 @@ class _$WorkspaceViewportSerializer
     WorkspaceViewport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +104,36 @@ class _$WorkspaceViewportSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltList<num>?;
           if (valueDes == null) continue;
           result.bbox.replace(valueDes);
           break;
         case r'center':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltList<num>?;
           if (valueDes == null) continue;
           result.center.replace(valueDes);
           break;
         case r'radiusKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.radiusKm = valueDes;
           break;

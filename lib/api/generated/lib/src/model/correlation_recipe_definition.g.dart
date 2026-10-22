@@ -7,26 +7,26 @@ part of 'correlation_recipe_definition.dart';
 // **************************************************************************
 
 const CorrelationRecipeDefinitionTypeEnum
-    _$correlationRecipeDefinitionTypeEnum_maritimeDisruption =
+_$correlationRecipeDefinitionTypeEnum_maritimeDisruption =
     const CorrelationRecipeDefinitionTypeEnum._('maritimeDisruption');
 const CorrelationRecipeDefinitionTypeEnum
-    _$correlationRecipeDefinitionTypeEnum_aviationAnomaly =
+_$correlationRecipeDefinitionTypeEnum_aviationAnomaly =
     const CorrelationRecipeDefinitionTypeEnum._('aviationAnomaly');
 const CorrelationRecipeDefinitionTypeEnum
-    _$correlationRecipeDefinitionTypeEnum_infrastructureDisruption =
+_$correlationRecipeDefinitionTypeEnum_infrastructureDisruption =
     const CorrelationRecipeDefinitionTypeEnum._('infrastructureDisruption');
 const CorrelationRecipeDefinitionTypeEnum
-    _$correlationRecipeDefinitionTypeEnum_weatherImpact =
+_$correlationRecipeDefinitionTypeEnum_weatherImpact =
     const CorrelationRecipeDefinitionTypeEnum._('weatherImpact');
 const CorrelationRecipeDefinitionTypeEnum
-    _$correlationRecipeDefinitionTypeEnum_seismic =
+_$correlationRecipeDefinitionTypeEnum_seismic =
     const CorrelationRecipeDefinitionTypeEnum._('seismic');
 const CorrelationRecipeDefinitionTypeEnum
-    _$correlationRecipeDefinitionTypeEnum_custom =
+_$correlationRecipeDefinitionTypeEnum_custom =
     const CorrelationRecipeDefinitionTypeEnum._('custom');
 
 CorrelationRecipeDefinitionTypeEnum
-    _$correlationRecipeDefinitionTypeEnumValueOf(String name) {
+_$correlationRecipeDefinitionTypeEnumValueOf(String name) {
   switch (name) {
     case 'maritimeDisruption':
       return _$correlationRecipeDefinitionTypeEnum_maritimeDisruption;
@@ -46,18 +46,20 @@ CorrelationRecipeDefinitionTypeEnum
 }
 
 final BuiltSet<CorrelationRecipeDefinitionTypeEnum>
-    _$correlationRecipeDefinitionTypeEnumValues = BuiltSet<
-        CorrelationRecipeDefinitionTypeEnum>(const <CorrelationRecipeDefinitionTypeEnum>[
-  _$correlationRecipeDefinitionTypeEnum_maritimeDisruption,
-  _$correlationRecipeDefinitionTypeEnum_aviationAnomaly,
-  _$correlationRecipeDefinitionTypeEnum_infrastructureDisruption,
-  _$correlationRecipeDefinitionTypeEnum_weatherImpact,
-  _$correlationRecipeDefinitionTypeEnum_seismic,
-  _$correlationRecipeDefinitionTypeEnum_custom,
-]);
+_$correlationRecipeDefinitionTypeEnumValues =
+    BuiltSet<CorrelationRecipeDefinitionTypeEnum>(
+      const <CorrelationRecipeDefinitionTypeEnum>[
+        _$correlationRecipeDefinitionTypeEnum_maritimeDisruption,
+        _$correlationRecipeDefinitionTypeEnum_aviationAnomaly,
+        _$correlationRecipeDefinitionTypeEnum_infrastructureDisruption,
+        _$correlationRecipeDefinitionTypeEnum_weatherImpact,
+        _$correlationRecipeDefinitionTypeEnum_seismic,
+        _$correlationRecipeDefinitionTypeEnum_custom,
+      ],
+    );
 
 Serializer<CorrelationRecipeDefinitionTypeEnum>
-    _$correlationRecipeDefinitionTypeEnumSerializer =
+_$correlationRecipeDefinitionTypeEnumSerializer =
     _$CorrelationRecipeDefinitionTypeEnumSerializer();
 
 class _$CorrelationRecipeDefinitionTypeEnumSerializer
@@ -81,23 +83,26 @@ class _$CorrelationRecipeDefinitionTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CorrelationRecipeDefinitionTypeEnum
+    CorrelationRecipeDefinitionTypeEnum,
   ];
   @override
   final String wireName = 'CorrelationRecipeDefinitionTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, CorrelationRecipeDefinitionTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CorrelationRecipeDefinitionTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CorrelationRecipeDefinitionTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CorrelationRecipeDefinitionTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CorrelationRecipeDefinitionTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CorrelationRecipeDefinition extends CorrelationRecipeDefinition {
@@ -115,7 +120,7 @@ class _$CorrelationRecipeDefinition extends CorrelationRecipeDefinition {
   final CorrelationRecipeDefinitionActivateAt? activateAt;
   @override
   final BuiltList<CorrelationRecipeDefinitionContradictionsInner>?
-      contradictions;
+  contradictions;
   @override
   final BuiltMap<String, Severity>? severityMap;
   @override
@@ -125,27 +130,27 @@ class _$CorrelationRecipeDefinition extends CorrelationRecipeDefinition {
   @override
   final String? reopenWindow;
 
-  factory _$CorrelationRecipeDefinition(
-          [void Function(CorrelationRecipeDefinitionBuilder)? updates]) =>
-      (CorrelationRecipeDefinitionBuilder()..update(updates))._build();
+  factory _$CorrelationRecipeDefinition([
+    void Function(CorrelationRecipeDefinitionBuilder)? updates,
+  ]) => (CorrelationRecipeDefinitionBuilder()..update(updates))._build();
 
-  _$CorrelationRecipeDefinition._(
-      {required this.type,
-      required this.seed,
-      this.joins,
-      this.minMembers,
-      this.minSignalFamilies,
-      this.activateAt,
-      this.contradictions,
-      this.severityMap,
-      this.dedup,
-      this.quietPeriod,
-      this.reopenWindow})
-      : super._();
+  _$CorrelationRecipeDefinition._({
+    required this.type,
+    required this.seed,
+    this.joins,
+    this.minMembers,
+    this.minSignalFamilies,
+    this.activateAt,
+    this.contradictions,
+    this.severityMap,
+    this.dedup,
+    this.quietPeriod,
+    this.reopenWindow,
+  }) : super._();
   @override
   CorrelationRecipeDefinition rebuild(
-          void Function(CorrelationRecipeDefinitionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeDefinitionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeDefinitionBuilder toBuilder() =>
@@ -206,8 +211,10 @@ class _$CorrelationRecipeDefinition extends CorrelationRecipeDefinition {
 
 class CorrelationRecipeDefinitionBuilder
     implements
-        Builder<CorrelationRecipeDefinition,
-            CorrelationRecipeDefinitionBuilder> {
+        Builder<
+          CorrelationRecipeDefinition,
+          CorrelationRecipeDefinitionBuilder
+        > {
   _$CorrelationRecipeDefinition? _$v;
 
   CorrelationRecipeDefinitionTypeEnum? _type;
@@ -242,12 +249,11 @@ class CorrelationRecipeDefinitionBuilder
 
   ListBuilder<CorrelationRecipeDefinitionContradictionsInner>? _contradictions;
   ListBuilder<CorrelationRecipeDefinitionContradictionsInner>
-      get contradictions => _$this._contradictions ??=
-          ListBuilder<CorrelationRecipeDefinitionContradictionsInner>();
+  get contradictions => _$this._contradictions ??=
+      ListBuilder<CorrelationRecipeDefinitionContradictionsInner>();
   set contradictions(
-          ListBuilder<CorrelationRecipeDefinitionContradictionsInner>?
-              contradictions) =>
-      _$this._contradictions = contradictions;
+    ListBuilder<CorrelationRecipeDefinitionContradictionsInner>? contradictions,
+  ) => _$this._contradictions = contradictions;
 
   MapBuilder<String, Severity>? _severityMap;
   MapBuilder<String, Severity> get severityMap =>
@@ -308,10 +314,14 @@ class CorrelationRecipeDefinitionBuilder
   _$CorrelationRecipeDefinition _build() {
     _$CorrelationRecipeDefinition _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorrelationRecipeDefinition._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'CorrelationRecipeDefinition', 'type'),
+              type,
+              r'CorrelationRecipeDefinition',
+              'type',
+            ),
             seed: seed.build(),
             joins: _joins?.build(),
             minMembers: minMembers,
@@ -341,7 +351,10 @@ class CorrelationRecipeDefinitionBuilder
         _dedup?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorrelationRecipeDefinition', _$failedField, e.toString());
+          r'CorrelationRecipeDefinition',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

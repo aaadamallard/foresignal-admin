@@ -51,6 +51,11 @@ java -jar "$JAR" generate \
   > "$WORK/generate.log"
 
 cd "$OUT"
+# The package lives inside the app's lib/, so the compiler can reach its part
+# files under both packages. Both must have the same language version, so the
+# package takes the app's SDK floor instead of the template's 2.18.
+APP_SDK="$(sed -n "s/^  sdk: \(.*\)$/\1/p" "$ROOT/pubspec.yaml" | head -1)"
+sed -i "s/^  sdk: .*/  sdk: '$APP_SDK'/" pubspec.yaml
 dart pub get > /dev/null
 dart run build_runner build --delete-conflicting-outputs
 dart format --output=write lib > /dev/null

@@ -7,11 +7,12 @@ part of 'social_velocity_event.dart';
 // **************************************************************************
 
 const SocialVelocityEventEventEnum
-    _$socialVelocityEventEventEnum_socialPeriodVelocity =
+_$socialVelocityEventEventEnum_socialPeriodVelocity =
     const SocialVelocityEventEventEnum._('socialPeriodVelocity');
 
 SocialVelocityEventEventEnum _$socialVelocityEventEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'socialPeriodVelocity':
       return _$socialVelocityEventEventEnum_socialPeriodVelocity;
@@ -21,13 +22,14 @@ SocialVelocityEventEventEnum _$socialVelocityEventEventEnumValueOf(
 }
 
 final BuiltSet<SocialVelocityEventEventEnum>
-    _$socialVelocityEventEventEnumValues =
-    BuiltSet<SocialVelocityEventEventEnum>(const <SocialVelocityEventEventEnum>[
-  _$socialVelocityEventEventEnum_socialPeriodVelocity,
-]);
+_$socialVelocityEventEventEnumValues = BuiltSet<SocialVelocityEventEventEnum>(
+  const <SocialVelocityEventEventEnum>[
+    _$socialVelocityEventEventEnum_socialPeriodVelocity,
+  ],
+);
 
 Serializer<SocialVelocityEventEventEnum>
-    _$socialVelocityEventEventEnumSerializer =
+_$socialVelocityEventEventEnumSerializer =
     _$SocialVelocityEventEventEnumSerializer();
 
 class _$SocialVelocityEventEventEnumSerializer
@@ -45,16 +47,20 @@ class _$SocialVelocityEventEventEnumSerializer
   final String wireName = 'SocialVelocityEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialVelocityEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialVelocityEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialVelocityEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialVelocityEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialVelocityEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialVelocityEvent extends SocialVelocityEvent {
@@ -79,26 +85,26 @@ class _$SocialVelocityEvent extends SocialVelocityEvent {
   @override
   final DateTime detectedAt;
 
-  factory _$SocialVelocityEvent(
-          [void Function(SocialVelocityEventBuilder)? updates]) =>
-      (SocialVelocityEventBuilder()..update(updates))._build();
+  factory _$SocialVelocityEvent([
+    void Function(SocialVelocityEventBuilder)? updates,
+  ]) => (SocialVelocityEventBuilder()..update(updates))._build();
 
-  _$SocialVelocityEvent._(
-      {required this.event,
-      required this.findingId,
-      required this.scope,
-      required this.platform,
-      this.language,
-      required this.velocityRatio,
-      required this.uniqueAuthors,
-      this.zRobust,
-      required this.severity,
-      required this.detectedAt})
-      : super._();
+  _$SocialVelocityEvent._({
+    required this.event,
+    required this.findingId,
+    required this.scope,
+    required this.platform,
+    this.language,
+    required this.velocityRatio,
+    required this.uniqueAuthors,
+    this.zRobust,
+    required this.severity,
+    required this.detectedAt,
+  }) : super._();
   @override
   SocialVelocityEvent rebuild(
-          void Function(SocialVelocityEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialVelocityEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialVelocityEventBuilder toBuilder() =>
@@ -239,25 +245,47 @@ class SocialVelocityEventBuilder
   _$SocialVelocityEvent _build() {
     _$SocialVelocityEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialVelocityEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'SocialVelocityEvent', 'event'),
+              event,
+              r'SocialVelocityEvent',
+              'event',
+            ),
             findingId: BuiltValueNullFieldError.checkNotNull(
-                findingId, r'SocialVelocityEvent', 'findingId'),
+              findingId,
+              r'SocialVelocityEvent',
+              'findingId',
+            ),
             scope: scope.build(),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'SocialVelocityEvent', 'platform'),
+              platform,
+              r'SocialVelocityEvent',
+              'platform',
+            ),
             language: language,
             velocityRatio: BuiltValueNullFieldError.checkNotNull(
-                velocityRatio, r'SocialVelocityEvent', 'velocityRatio'),
+              velocityRatio,
+              r'SocialVelocityEvent',
+              'velocityRatio',
+            ),
             uniqueAuthors: BuiltValueNullFieldError.checkNotNull(
-                uniqueAuthors, r'SocialVelocityEvent', 'uniqueAuthors'),
+              uniqueAuthors,
+              r'SocialVelocityEvent',
+              'uniqueAuthors',
+            ),
             zRobust: zRobust,
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'SocialVelocityEvent', 'severity'),
+              severity,
+              r'SocialVelocityEvent',
+              'severity',
+            ),
             detectedAt: BuiltValueNullFieldError.checkNotNull(
-                detectedAt, r'SocialVelocityEvent', 'detectedAt'),
+              detectedAt,
+              r'SocialVelocityEvent',
+              'detectedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -266,7 +294,10 @@ class SocialVelocityEventBuilder
         scope.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialVelocityEvent', _$failedField, e.toString());
+          r'SocialVelocityEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -57,10 +57,7 @@ class _$LeadTimeSummarySerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     if (object.median != null) {
       yield r'median';
       yield serializers.serialize(
@@ -90,9 +87,11 @@ class _$LeadTimeSummarySerializer
     LeadTimeSummary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,33 +107,38 @@ class _$LeadTimeSummarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'median':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.median = valueDes;
           break;
         case r'p25':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p25 = valueDes;
           break;
         case r'p75':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p75 = valueDes;
           break;

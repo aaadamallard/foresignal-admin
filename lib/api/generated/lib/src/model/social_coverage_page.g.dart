@@ -12,15 +12,15 @@ class _$SocialCoveragePage extends SocialCoveragePage {
   @override
   final String? nextCursor;
 
-  factory _$SocialCoveragePage(
-          [void Function(SocialCoveragePageBuilder)? updates]) =>
-      (SocialCoveragePageBuilder()..update(updates))._build();
+  factory _$SocialCoveragePage([
+    void Function(SocialCoveragePageBuilder)? updates,
+  ]) => (SocialCoveragePageBuilder()..update(updates))._build();
 
   _$SocialCoveragePage._({required this.items, this.nextCursor}) : super._();
   @override
   SocialCoveragePage rebuild(
-          void Function(SocialCoveragePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialCoveragePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialCoveragePageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class SocialCoveragePageBuilder
   _$SocialCoveragePage _build() {
     _$SocialCoveragePage _$result;
     try {
-      _$result = _$v ??
-          _$SocialCoveragePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SocialCoveragePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class SocialCoveragePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialCoveragePage', _$failedField, e.toString());
+          r'SocialCoveragePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

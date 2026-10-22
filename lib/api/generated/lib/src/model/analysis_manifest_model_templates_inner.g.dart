@@ -13,18 +13,19 @@ class _$AnalysisManifestModelTemplatesInner
   @override
   final String version;
 
-  factory _$AnalysisManifestModelTemplatesInner(
-          [void Function(AnalysisManifestModelTemplatesInnerBuilder)?
-              updates]) =>
+  factory _$AnalysisManifestModelTemplatesInner([
+    void Function(AnalysisManifestModelTemplatesInnerBuilder)? updates,
+  ]) =>
       (AnalysisManifestModelTemplatesInnerBuilder()..update(updates))._build();
 
-  _$AnalysisManifestModelTemplatesInner._(
-      {required this.templateId, required this.version})
-      : super._();
+  _$AnalysisManifestModelTemplatesInner._({
+    required this.templateId,
+    required this.version,
+  }) : super._();
   @override
   AnalysisManifestModelTemplatesInner rebuild(
-          void Function(AnalysisManifestModelTemplatesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisManifestModelTemplatesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisManifestModelTemplatesInnerBuilder toBuilder() =>
@@ -58,8 +59,10 @@ class _$AnalysisManifestModelTemplatesInner
 
 class AnalysisManifestModelTemplatesInnerBuilder
     implements
-        Builder<AnalysisManifestModelTemplatesInner,
-            AnalysisManifestModelTemplatesInnerBuilder> {
+        Builder<
+          AnalysisManifestModelTemplatesInner,
+          AnalysisManifestModelTemplatesInnerBuilder
+        > {
   _$AnalysisManifestModelTemplatesInner? _$v;
 
   String? _templateId;
@@ -91,7 +94,8 @@ class AnalysisManifestModelTemplatesInnerBuilder
 
   @override
   void update(
-      void Function(AnalysisManifestModelTemplatesInnerBuilder)? updates) {
+    void Function(AnalysisManifestModelTemplatesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -99,12 +103,19 @@ class AnalysisManifestModelTemplatesInnerBuilder
   AnalysisManifestModelTemplatesInner build() => _build();
 
   _$AnalysisManifestModelTemplatesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalysisManifestModelTemplatesInner._(
           templateId: BuiltValueNullFieldError.checkNotNull(
-              templateId, r'AnalysisManifestModelTemplatesInner', 'templateId'),
+            templateId,
+            r'AnalysisManifestModelTemplatesInner',
+            'templateId',
+          ),
           version: BuiltValueNullFieldError.checkNotNull(
-              version, r'AnalysisManifestModelTemplatesInner', 'version'),
+            version,
+            r'AnalysisManifestModelTemplatesInner',
+            'version',
+          ),
         );
     replace(_$result);
     return _$result;

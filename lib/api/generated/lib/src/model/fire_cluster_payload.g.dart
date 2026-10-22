@@ -18,21 +18,21 @@ class _$FireClusterPayload extends FireClusterPayload {
   @override
   final String label;
 
-  factory _$FireClusterPayload(
-          [void Function(FireClusterPayloadBuilder)? updates]) =>
-      (FireClusterPayloadBuilder()..update(updates))._build();
+  factory _$FireClusterPayload([
+    void Function(FireClusterPayloadBuilder)? updates,
+  ]) => (FireClusterPayloadBuilder()..update(updates))._build();
 
-  _$FireClusterPayload._(
-      {required this.pixels,
-      this.frpTotalMw,
-      this.frpMaxMw,
-      this.firstSeenAt,
-      required this.label})
-      : super._();
+  _$FireClusterPayload._({
+    required this.pixels,
+    this.frpTotalMw,
+    this.frpMaxMw,
+    this.firstSeenAt,
+    required this.label,
+  }) : super._();
   @override
   FireClusterPayload rebuild(
-          void Function(FireClusterPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FireClusterPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FireClusterPayloadBuilder toBuilder() =>
@@ -128,15 +128,22 @@ class FireClusterPayloadBuilder
   FireClusterPayload build() => _build();
 
   _$FireClusterPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FireClusterPayload._(
           pixels: BuiltValueNullFieldError.checkNotNull(
-              pixels, r'FireClusterPayload', 'pixels'),
+            pixels,
+            r'FireClusterPayload',
+            'pixels',
+          ),
           frpTotalMw: frpTotalMw,
           frpMaxMw: frpMaxMw,
           firstSeenAt: firstSeenAt,
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'FireClusterPayload', 'label'),
+            label,
+            r'FireClusterPayload',
+            'label',
+          ),
         );
     replace(_$result);
     return _$result;

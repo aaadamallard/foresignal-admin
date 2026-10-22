@@ -25,15 +25,15 @@ class _$HistoryFrames extends HistoryFrames {
   factory _$HistoryFrames([void Function(HistoryFramesBuilder)? updates]) =>
       (HistoryFramesBuilder()..update(updates))._build();
 
-  _$HistoryFrames._(
-      {required this.asOf,
-      required this.step,
-      required this.watermarkSeq,
-      this.horizon,
-      this.approximate,
-      required this.keyframe,
-      required this.frames})
-      : super._();
+  _$HistoryFrames._({
+    required this.asOf,
+    required this.step,
+    required this.watermarkSeq,
+    this.horizon,
+    this.approximate,
+    required this.keyframe,
+    required this.frames,
+  }) : super._();
   @override
   HistoryFrames rebuild(void Function(HistoryFramesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -151,14 +151,24 @@ class HistoryFramesBuilder
   _$HistoryFrames _build() {
     _$HistoryFrames _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HistoryFrames._(
             asOf: BuiltValueNullFieldError.checkNotNull(
-                asOf, r'HistoryFrames', 'asOf'),
+              asOf,
+              r'HistoryFrames',
+              'asOf',
+            ),
             step: BuiltValueNullFieldError.checkNotNull(
-                step, r'HistoryFrames', 'step'),
+              step,
+              r'HistoryFrames',
+              'step',
+            ),
             watermarkSeq: BuiltValueNullFieldError.checkNotNull(
-                watermarkSeq, r'HistoryFrames', 'watermarkSeq'),
+              watermarkSeq,
+              r'HistoryFrames',
+              'watermarkSeq',
+            ),
             horizon: horizon,
             approximate: approximate,
             keyframe: keyframe.build(),
@@ -173,7 +183,10 @@ class HistoryFramesBuilder
         frames.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HistoryFrames', _$failedField, e.toString());
+          r'HistoryFrames',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

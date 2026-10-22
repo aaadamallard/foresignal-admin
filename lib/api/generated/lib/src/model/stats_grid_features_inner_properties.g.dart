@@ -13,16 +13,16 @@ class _$StatsGridFeaturesInnerProperties
   @override
   final int value;
 
-  factory _$StatsGridFeaturesInnerProperties(
-          [void Function(StatsGridFeaturesInnerPropertiesBuilder)? updates]) =>
-      (StatsGridFeaturesInnerPropertiesBuilder()..update(updates))._build();
+  factory _$StatsGridFeaturesInnerProperties([
+    void Function(StatsGridFeaturesInnerPropertiesBuilder)? updates,
+  ]) => (StatsGridFeaturesInnerPropertiesBuilder()..update(updates))._build();
 
   _$StatsGridFeaturesInnerProperties._({this.cell, required this.value})
-      : super._();
+    : super._();
   @override
   StatsGridFeaturesInnerProperties rebuild(
-          void Function(StatsGridFeaturesInnerPropertiesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsGridFeaturesInnerPropertiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsGridFeaturesInnerPropertiesBuilder toBuilder() =>
@@ -56,8 +56,10 @@ class _$StatsGridFeaturesInnerProperties
 
 class StatsGridFeaturesInnerPropertiesBuilder
     implements
-        Builder<StatsGridFeaturesInnerProperties,
-            StatsGridFeaturesInnerPropertiesBuilder> {
+        Builder<
+          StatsGridFeaturesInnerProperties,
+          StatsGridFeaturesInnerPropertiesBuilder
+        > {
   _$StatsGridFeaturesInnerProperties? _$v;
 
   String? _cell;
@@ -96,11 +98,15 @@ class StatsGridFeaturesInnerPropertiesBuilder
   StatsGridFeaturesInnerProperties build() => _build();
 
   _$StatsGridFeaturesInnerProperties _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StatsGridFeaturesInnerProperties._(
           cell: cell,
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'StatsGridFeaturesInnerProperties', 'value'),
+            value,
+            r'StatsGridFeaturesInnerProperties',
+            'value',
+          ),
         );
     replace(_$result);
     return _$result;

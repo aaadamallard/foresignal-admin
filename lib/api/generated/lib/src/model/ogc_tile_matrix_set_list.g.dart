@@ -10,15 +10,15 @@ class _$OgcTileMatrixSetList extends OgcTileMatrixSetList {
   @override
   final BuiltList<OgcTileMatrixSetListTileMatrixSetsInner> tileMatrixSets;
 
-  factory _$OgcTileMatrixSetList(
-          [void Function(OgcTileMatrixSetListBuilder)? updates]) =>
-      (OgcTileMatrixSetListBuilder()..update(updates))._build();
+  factory _$OgcTileMatrixSetList([
+    void Function(OgcTileMatrixSetListBuilder)? updates,
+  ]) => (OgcTileMatrixSetListBuilder()..update(updates))._build();
 
   _$OgcTileMatrixSetList._({required this.tileMatrixSets}) : super._();
   @override
   OgcTileMatrixSetList rebuild(
-          void Function(OgcTileMatrixSetListBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcTileMatrixSetListBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcTileMatrixSetListBuilder toBuilder() =>
@@ -41,9 +41,9 @@ class _$OgcTileMatrixSetList extends OgcTileMatrixSetList {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'OgcTileMatrixSetList')
-          ..add('tileMatrixSets', tileMatrixSets))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'OgcTileMatrixSetList',
+    )..add('tileMatrixSets', tileMatrixSets)).toString();
   }
 }
 
@@ -56,9 +56,8 @@ class OgcTileMatrixSetListBuilder
       _$this._tileMatrixSets ??=
           ListBuilder<OgcTileMatrixSetListTileMatrixSetsInner>();
   set tileMatrixSets(
-          ListBuilder<OgcTileMatrixSetListTileMatrixSetsInner>?
-              tileMatrixSets) =>
-      _$this._tileMatrixSets = tileMatrixSets;
+    ListBuilder<OgcTileMatrixSetListTileMatrixSetsInner>? tileMatrixSets,
+  ) => _$this._tileMatrixSets = tileMatrixSets;
 
   OgcTileMatrixSetListBuilder() {
     OgcTileMatrixSetList._defaults(this);
@@ -89,10 +88,9 @@ class OgcTileMatrixSetListBuilder
   _$OgcTileMatrixSetList _build() {
     _$OgcTileMatrixSetList _$result;
     try {
-      _$result = _$v ??
-          _$OgcTileMatrixSetList._(
-            tileMatrixSets: tileMatrixSets.build(),
-          );
+      _$result =
+          _$v ??
+          _$OgcTileMatrixSetList._(tileMatrixSets: tileMatrixSets.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -100,7 +98,10 @@ class OgcTileMatrixSetListBuilder
         tileMatrixSets.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcTileMatrixSetList', _$failedField, e.toString());
+          r'OgcTileMatrixSetList',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

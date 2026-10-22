@@ -24,9 +24,9 @@ abstract class RateLimitSettingsStream
 
   RateLimitSettingsStream._();
 
-  factory RateLimitSettingsStream(
-          [void updates(RateLimitSettingsStreamBuilder b)]) =
-      _$RateLimitSettingsStream;
+  factory RateLimitSettingsStream([
+    void updates(RateLimitSettingsStreamBuilder b),
+  ]) = _$RateLimitSettingsStream;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RateLimitSettingsStreamBuilder b) => b;
@@ -41,7 +41,7 @@ class _$RateLimitSettingsStreamSerializer
   @override
   final Iterable<Type> types = const [
     RateLimitSettingsStream,
-    _$RateLimitSettingsStream
+    _$RateLimitSettingsStream,
   ];
 
   @override
@@ -74,9 +74,11 @@ class _$RateLimitSettingsStreamSerializer
     RateLimitSettingsStream object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +94,22 @@ class _$RateLimitSettingsStreamSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'opensPerMinute':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.opensPerMinute = valueDes;
           break;
         case r'concurrent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.concurrent = valueDes;
           break;

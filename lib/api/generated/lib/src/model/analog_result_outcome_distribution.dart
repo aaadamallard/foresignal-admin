@@ -23,8 +23,10 @@ part 'analog_result_outcome_distribution.g.dart';
 @BuiltValue()
 abstract class AnalogResultOutcomeDistribution
     implements
-        Built<AnalogResultOutcomeDistribution,
-            AnalogResultOutcomeDistributionBuilder> {
+        Built<
+          AnalogResultOutcomeDistribution,
+          AnalogResultOutcomeDistributionBuilder
+        > {
   /// Target outcome: `critical` (situation reaches critical) or `{family}/P{n}D` (a family within n days), e.g. `conflict:battles/P30D`
   @BuiltValueField(wireName: r'outcome')
   String get outcome;
@@ -53,9 +55,9 @@ abstract class AnalogResultOutcomeDistribution
 
   AnalogResultOutcomeDistribution._();
 
-  factory AnalogResultOutcomeDistribution(
-          [void updates(AnalogResultOutcomeDistributionBuilder b)]) =
-      _$AnalogResultOutcomeDistribution;
+  factory AnalogResultOutcomeDistribution([
+    void updates(AnalogResultOutcomeDistributionBuilder b),
+  ]) = _$AnalogResultOutcomeDistribution;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalogResultOutcomeDistributionBuilder b) => b;
@@ -70,7 +72,7 @@ class _$AnalogResultOutcomeDistributionSerializer
   @override
   final Iterable<Type> types = const [
     AnalogResultOutcomeDistribution,
-    _$AnalogResultOutcomeDistribution
+    _$AnalogResultOutcomeDistribution,
   ];
 
   @override
@@ -135,9 +137,11 @@ class _$AnalogResultOutcomeDistributionSerializer
     AnalogResultOutcomeDistribution object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -153,62 +157,69 @@ class _$AnalogResultOutcomeDistributionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.outcome = valueDes;
           break;
         case r'analogCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.analogCount = valueDes;
           break;
         case r'hits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.hits = valueDes;
           break;
         case r'frequency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.frequency = valueDes;
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseRate = valueDes;
           break;
         case r'baseRateId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.baseRateId = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.probability = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatInterval),
-          ) as StatInterval;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatInterval),
+                  )
+                  as StatInterval;
           result.interval.replace(valueDes);
           break;
         default:

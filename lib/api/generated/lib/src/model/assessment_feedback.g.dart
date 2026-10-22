@@ -14,7 +14,8 @@ const AssessmentFeedbackRatingEnum _$assessmentFeedbackRatingEnum_wrong =
     const AssessmentFeedbackRatingEnum._('wrong');
 
 AssessmentFeedbackRatingEnum _$assessmentFeedbackRatingEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'useful':
       return _$assessmentFeedbackRatingEnum_useful;
@@ -28,15 +29,15 @@ AssessmentFeedbackRatingEnum _$assessmentFeedbackRatingEnumValueOf(
 }
 
 final BuiltSet<AssessmentFeedbackRatingEnum>
-    _$assessmentFeedbackRatingEnumValues =
+_$assessmentFeedbackRatingEnumValues =
     BuiltSet<AssessmentFeedbackRatingEnum>(const <AssessmentFeedbackRatingEnum>[
-  _$assessmentFeedbackRatingEnum_useful,
-  _$assessmentFeedbackRatingEnum_notUseful,
-  _$assessmentFeedbackRatingEnum_wrong,
-]);
+      _$assessmentFeedbackRatingEnum_useful,
+      _$assessmentFeedbackRatingEnum_notUseful,
+      _$assessmentFeedbackRatingEnum_wrong,
+    ]);
 
 Serializer<AssessmentFeedbackRatingEnum>
-    _$assessmentFeedbackRatingEnumSerializer =
+_$assessmentFeedbackRatingEnumSerializer =
     _$AssessmentFeedbackRatingEnumSerializer();
 
 class _$AssessmentFeedbackRatingEnumSerializer
@@ -58,16 +59,20 @@ class _$AssessmentFeedbackRatingEnumSerializer
   final String wireName = 'AssessmentFeedbackRatingEnum';
 
   @override
-  Object serialize(Serializers serializers, AssessmentFeedbackRatingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AssessmentFeedbackRatingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AssessmentFeedbackRatingEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentFeedbackRatingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentFeedbackRatingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentFeedback extends AssessmentFeedback {
@@ -84,22 +89,22 @@ class _$AssessmentFeedback extends AssessmentFeedback {
   @override
   final DateTime at;
 
-  factory _$AssessmentFeedback(
-          [void Function(AssessmentFeedbackBuilder)? updates]) =>
-      (AssessmentFeedbackBuilder()..update(updates))._build();
+  factory _$AssessmentFeedback([
+    void Function(AssessmentFeedbackBuilder)? updates,
+  ]) => (AssessmentFeedbackBuilder()..update(updates))._build();
 
-  _$AssessmentFeedback._(
-      {required this.id,
-      required this.assessmentId,
-      required this.rating,
-      this.comment,
-      required this.by,
-      required this.at})
-      : super._();
+  _$AssessmentFeedback._({
+    required this.id,
+    required this.assessmentId,
+    required this.rating,
+    this.comment,
+    required this.by,
+    required this.at,
+  }) : super._();
   @override
   AssessmentFeedback rebuild(
-          void Function(AssessmentFeedbackBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentFeedbackBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentFeedbackBuilder toBuilder() =>
@@ -203,19 +208,35 @@ class AssessmentFeedbackBuilder
   AssessmentFeedback build() => _build();
 
   _$AssessmentFeedback _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AssessmentFeedback._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'AssessmentFeedback', 'id'),
+            id,
+            r'AssessmentFeedback',
+            'id',
+          ),
           assessmentId: BuiltValueNullFieldError.checkNotNull(
-              assessmentId, r'AssessmentFeedback', 'assessmentId'),
+            assessmentId,
+            r'AssessmentFeedback',
+            'assessmentId',
+          ),
           rating: BuiltValueNullFieldError.checkNotNull(
-              rating, r'AssessmentFeedback', 'rating'),
+            rating,
+            r'AssessmentFeedback',
+            'rating',
+          ),
           comment: comment,
           by: BuiltValueNullFieldError.checkNotNull(
-              by, r'AssessmentFeedback', 'by'),
+            by,
+            r'AssessmentFeedback',
+            'by',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'AssessmentFeedback', 'at'),
+            at,
+            r'AssessmentFeedback',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

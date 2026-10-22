@@ -18,21 +18,21 @@ class _$IntelBoardForecastsDueInner extends IntelBoardForecastsDueInner {
   @override
   final IcdTerm? estimativeTerm;
 
-  factory _$IntelBoardForecastsDueInner(
-          [void Function(IntelBoardForecastsDueInnerBuilder)? updates]) =>
-      (IntelBoardForecastsDueInnerBuilder()..update(updates))._build();
+  factory _$IntelBoardForecastsDueInner([
+    void Function(IntelBoardForecastsDueInnerBuilder)? updates,
+  ]) => (IntelBoardForecastsDueInnerBuilder()..update(updates))._build();
 
-  _$IntelBoardForecastsDueInner._(
-      {required this.questionId,
-      required this.title,
-      required this.dueAt,
-      this.probability,
-      this.estimativeTerm})
-      : super._();
+  _$IntelBoardForecastsDueInner._({
+    required this.questionId,
+    required this.title,
+    required this.dueAt,
+    this.probability,
+    this.estimativeTerm,
+  }) : super._();
   @override
   IntelBoardForecastsDueInner rebuild(
-          void Function(IntelBoardForecastsDueInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardForecastsDueInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardForecastsDueInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$IntelBoardForecastsDueInner extends IntelBoardForecastsDueInner {
 
 class IntelBoardForecastsDueInnerBuilder
     implements
-        Builder<IntelBoardForecastsDueInner,
-            IntelBoardForecastsDueInnerBuilder> {
+        Builder<
+          IntelBoardForecastsDueInner,
+          IntelBoardForecastsDueInnerBuilder
+        > {
   _$IntelBoardForecastsDueInner? _$v;
 
   String? _questionId;
@@ -131,14 +133,24 @@ class IntelBoardForecastsDueInnerBuilder
   IntelBoardForecastsDueInner build() => _build();
 
   _$IntelBoardForecastsDueInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardForecastsDueInner._(
           questionId: BuiltValueNullFieldError.checkNotNull(
-              questionId, r'IntelBoardForecastsDueInner', 'questionId'),
+            questionId,
+            r'IntelBoardForecastsDueInner',
+            'questionId',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'IntelBoardForecastsDueInner', 'title'),
+            title,
+            r'IntelBoardForecastsDueInner',
+            'title',
+          ),
           dueAt: BuiltValueNullFieldError.checkNotNull(
-              dueAt, r'IntelBoardForecastsDueInner', 'dueAt'),
+            dueAt,
+            r'IntelBoardForecastsDueInner',
+            'dueAt',
+          ),
           probability: probability,
           estimativeTerm: estimativeTerm,
         );

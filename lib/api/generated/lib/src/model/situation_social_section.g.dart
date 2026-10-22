@@ -18,21 +18,21 @@ class _$SituationSocialSection extends SituationSocialSection {
   @override
   final DateTime? updatedAt;
 
-  factory _$SituationSocialSection(
-          [void Function(SituationSocialSectionBuilder)? updates]) =>
-      (SituationSocialSectionBuilder()..update(updates))._build();
+  factory _$SituationSocialSection([
+    void Function(SituationSocialSectionBuilder)? updates,
+  ]) => (SituationSocialSectionBuilder()..update(updates))._build();
 
-  _$SituationSocialSection._(
-      {required this.narratives,
-      required this.socialEvidenceGroups,
-      this.attentionGap,
-      required this.socialCoverageOk,
-      this.updatedAt})
-      : super._();
+  _$SituationSocialSection._({
+    required this.narratives,
+    required this.socialEvidenceGroups,
+    this.attentionGap,
+    required this.socialCoverageOk,
+    this.updatedAt,
+  }) : super._();
   @override
   SituationSocialSection rebuild(
-          void Function(SituationSocialSectionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationSocialSectionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationSocialSectionBuilder toBuilder() =>
@@ -82,8 +82,8 @@ class SituationSocialSectionBuilder
       _$this._narratives ??=
           ListBuilder<SituationSocialSectionNarrativesInner>();
   set narratives(
-          ListBuilder<SituationSocialSectionNarrativesInner>? narratives) =>
-      _$this._narratives = narratives;
+    ListBuilder<SituationSocialSectionNarrativesInner>? narratives,
+  ) => _$this._narratives = narratives;
 
   int? _socialEvidenceGroups;
   int? get socialEvidenceGroups => _$this._socialEvidenceGroups;
@@ -138,18 +138,21 @@ class SituationSocialSectionBuilder
   _$SituationSocialSection _build() {
     _$SituationSocialSection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationSocialSection._(
             narratives: narratives.build(),
             socialEvidenceGroups: BuiltValueNullFieldError.checkNotNull(
-                socialEvidenceGroups,
-                r'SituationSocialSection',
-                'socialEvidenceGroups'),
+              socialEvidenceGroups,
+              r'SituationSocialSection',
+              'socialEvidenceGroups',
+            ),
             attentionGap: _attentionGap?.build(),
             socialCoverageOk: BuiltValueNullFieldError.checkNotNull(
-                socialCoverageOk,
-                r'SituationSocialSection',
-                'socialCoverageOk'),
+              socialCoverageOk,
+              r'SituationSocialSection',
+              'socialCoverageOk',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {
@@ -162,7 +165,10 @@ class SituationSocialSectionBuilder
         _attentionGap?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationSocialSection', _$failedField, e.toString());
+          r'SituationSocialSection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

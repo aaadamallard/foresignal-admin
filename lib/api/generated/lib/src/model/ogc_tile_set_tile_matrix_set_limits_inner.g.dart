@@ -19,22 +19,21 @@ class _$OgcTileSetTileMatrixSetLimitsInner
   @override
   final int? maxTileCol;
 
-  factory _$OgcTileSetTileMatrixSetLimitsInner(
-          [void Function(OgcTileSetTileMatrixSetLimitsInnerBuilder)?
-              updates]) =>
-      (OgcTileSetTileMatrixSetLimitsInnerBuilder()..update(updates))._build();
+  factory _$OgcTileSetTileMatrixSetLimitsInner([
+    void Function(OgcTileSetTileMatrixSetLimitsInnerBuilder)? updates,
+  ]) => (OgcTileSetTileMatrixSetLimitsInnerBuilder()..update(updates))._build();
 
-  _$OgcTileSetTileMatrixSetLimitsInner._(
-      {this.tileMatrix,
-      this.minTileRow,
-      this.maxTileRow,
-      this.minTileCol,
-      this.maxTileCol})
-      : super._();
+  _$OgcTileSetTileMatrixSetLimitsInner._({
+    this.tileMatrix,
+    this.minTileRow,
+    this.maxTileRow,
+    this.minTileCol,
+    this.maxTileCol,
+  }) : super._();
   @override
   OgcTileSetTileMatrixSetLimitsInner rebuild(
-          void Function(OgcTileSetTileMatrixSetLimitsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcTileSetTileMatrixSetLimitsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcTileSetTileMatrixSetLimitsInnerBuilder toBuilder() =>
@@ -77,8 +76,10 @@ class _$OgcTileSetTileMatrixSetLimitsInner
 
 class OgcTileSetTileMatrixSetLimitsInnerBuilder
     implements
-        Builder<OgcTileSetTileMatrixSetLimitsInner,
-            OgcTileSetTileMatrixSetLimitsInnerBuilder> {
+        Builder<
+          OgcTileSetTileMatrixSetLimitsInner,
+          OgcTileSetTileMatrixSetLimitsInnerBuilder
+        > {
   _$OgcTileSetTileMatrixSetLimitsInner? _$v;
 
   String? _tileMatrix;
@@ -125,7 +126,8 @@ class OgcTileSetTileMatrixSetLimitsInnerBuilder
 
   @override
   void update(
-      void Function(OgcTileSetTileMatrixSetLimitsInnerBuilder)? updates) {
+    void Function(OgcTileSetTileMatrixSetLimitsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -133,7 +135,8 @@ class OgcTileSetTileMatrixSetLimitsInnerBuilder
   OgcTileSetTileMatrixSetLimitsInner build() => _build();
 
   _$OgcTileSetTileMatrixSetLimitsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OgcTileSetTileMatrixSetLimitsInner._(
           tileMatrix: tileMatrix,
           minTileRow: minTileRow,

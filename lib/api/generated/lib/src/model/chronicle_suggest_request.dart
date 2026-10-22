@@ -31,9 +31,9 @@ abstract class ChronicleSuggestRequest
 
   ChronicleSuggestRequest._();
 
-  factory ChronicleSuggestRequest(
-          [void updates(ChronicleSuggestRequestBuilder b)]) =
-      _$ChronicleSuggestRequest;
+  factory ChronicleSuggestRequest([
+    void updates(ChronicleSuggestRequestBuilder b),
+  ]) = _$ChronicleSuggestRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSuggestRequestBuilder b) => b;
@@ -48,7 +48,7 @@ class _$ChronicleSuggestRequestSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSuggestRequest,
-    _$ChronicleSuggestRequest
+    _$ChronicleSuggestRequest,
   ];
 
   @override
@@ -88,9 +88,11 @@ class _$ChronicleSuggestRequestSerializer
     ChronicleSuggestRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -106,26 +108,32 @@ class _$ChronicleSuggestRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.situationId = valueDes;
           break;
         case r'area':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleArea),
-          ) as ChronicleArea?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ChronicleArea),
+                  )
+                  as ChronicleArea?;
           if (valueDes == null) continue;
           result.area.replace(valueDes);
           break;
         case r'topic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.topic = valueDes;
           break;

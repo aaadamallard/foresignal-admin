@@ -123,8 +123,9 @@ class _$PackageManifestSerializer
     yield r'authors';
     yield serializers.serialize(
       object.authors,
-      specifiedType:
-          const FullType(BuiltList, [FullType(PackageManifestAuthorsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(PackageManifestAuthorsInner),
+      ]),
     );
     yield r'tlp';
     yield serializers.serialize(
@@ -146,8 +147,10 @@ class _$PackageManifestSerializer
     yield r'contentHashes';
     yield serializers.serialize(
       object.contentHashes,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(String)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(String),
+      ]),
     );
     if (object.message != null) {
       yield r'message';
@@ -160,8 +163,9 @@ class _$PackageManifestSerializer
       yield r'provenanceChain';
       yield serializers.serialize(
         object.provenanceChain,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ProvenanceChainEntry)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProvenanceChainEntry),
+        ]),
       );
     }
     if (object.title != null) {
@@ -179,9 +183,11 @@ class _$PackageManifestSerializer
     PackageManifest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -197,93 +203,121 @@ class _$PackageManifestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'packageId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.packageId = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageManifestTypeEnum),
-          ) as PackageManifestTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PackageManifestTypeEnum),
+                  )
+                  as PackageManifestTypeEnum;
           result.type = valueDes;
           break;
         case r'objectRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectRef = valueDes;
           break;
         case r'sender':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageManifestSender),
-          ) as PackageManifestSender;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PackageManifestSender),
+                  )
+                  as PackageManifestSender;
           result.sender.replace(valueDes);
           break;
         case r'authors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(PackageManifestAuthorsInner)]),
-          ) as BuiltList<PackageManifestAuthorsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PackageManifestAuthorsInner),
+                    ]),
+                  )
+                  as BuiltList<PackageManifestAuthorsInner>;
           result.authors.replace(valueDes);
           break;
         case r'tlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tlp = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'recipients':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.recipients = valueDes;
           break;
         case r'contentHashes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>;
           result.contentHashes.replace(valueDes);
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'provenanceChain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProvenanceChainEntry)]),
-          ) as BuiltList<ProvenanceChainEntry>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProvenanceChainEntry),
+                    ]),
+                  )
+                  as BuiltList<ProvenanceChainEntry>?;
           if (valueDes == null) continue;
           result.provenanceChain.replace(valueDes);
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;

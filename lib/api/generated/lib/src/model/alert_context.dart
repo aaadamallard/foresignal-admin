@@ -94,9 +94,11 @@ class _$AlertContextSerializer implements PrimitiveSerializer<AlertContext> {
     AlertContext object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,34 +114,42 @@ class _$AlertContextSerializer implements PrimitiveSerializer<AlertContext> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'weather':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WeatherContext),
-          ) as WeatherContext?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(WeatherContext),
+                  )
+                  as WeatherContext?;
           if (valueDes == null) continue;
           result.weather.replace(valueDes);
           break;
         case r'near':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AlertContextNear),
-          ) as AlertContextNear?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(AlertContextNear),
+                  )
+                  as AlertContextNear?;
           if (valueDes == null) continue;
           result.near.replace(valueDes);
           break;
         case r'anomaly':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AnomalyObservation),
-          ) as AnomalyObservation?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(AnomalyObservation),
+                  )
+                  as AnomalyObservation?;
           if (valueDes == null) continue;
           result.anomaly.replace(valueDes);
           break;
         case r'anchor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AlertContextAnchor),
-          ) as AlertContextAnchor?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(AlertContextAnchor),
+                  )
+                  as AlertContextAnchor?;
           if (valueDes == null) continue;
           result.anchor.replace(valueDes);
           break;

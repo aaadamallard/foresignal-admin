@@ -33,9 +33,9 @@ abstract class ExposureDependentsByLabel
 
   ExposureDependentsByLabel._();
 
-  factory ExposureDependentsByLabel(
-          [void updates(ExposureDependentsByLabelBuilder b)]) =
-      _$ExposureDependentsByLabel;
+  factory ExposureDependentsByLabel([
+    void updates(ExposureDependentsByLabelBuilder b),
+  ]) = _$ExposureDependentsByLabel;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExposureDependentsByLabelBuilder b) => b;
@@ -50,7 +50,7 @@ class _$ExposureDependentsByLabelSerializer
   @override
   final Iterable<Type> types = const [
     ExposureDependentsByLabel,
-    _$ExposureDependentsByLabel
+    _$ExposureDependentsByLabel,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$ExposureDependentsByLabelSerializer
     ExposureDependentsByLabel object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,34 +117,42 @@ class _$ExposureDependentsByLabelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'confirmed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.confirmed = valueDes;
           break;
         case r'likely':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.likely = valueDes;
           break;
         case r'possible':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.possible = valueDes;
           break;
         case r'speculative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.speculative = valueDes;
           break;

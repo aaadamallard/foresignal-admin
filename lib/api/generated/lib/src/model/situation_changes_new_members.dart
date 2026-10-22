@@ -32,9 +32,9 @@ abstract class SituationChangesNewMembers
 
   SituationChangesNewMembers._();
 
-  factory SituationChangesNewMembers(
-          [void updates(SituationChangesNewMembersBuilder b)]) =
-      _$SituationChangesNewMembers;
+  factory SituationChangesNewMembers([
+    void updates(SituationChangesNewMembersBuilder b),
+  ]) = _$SituationChangesNewMembers;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationChangesNewMembersBuilder b) => b;
@@ -49,7 +49,7 @@ class _$SituationChangesNewMembersSerializer
   @override
   final Iterable<Type> types = const [
     SituationChangesNewMembers,
-    _$SituationChangesNewMembers
+    _$SituationChangesNewMembers,
   ];
 
   @override
@@ -68,15 +68,19 @@ class _$SituationChangesNewMembersSerializer
     yield r'byFamily';
     yield serializers.serialize(
       object.byFamily,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(int)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(int),
+      ]),
     );
     if (object.byType != null) {
       yield r'byType';
       yield serializers.serialize(
         object.byType,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
   }
@@ -87,9 +91,11 @@ class _$SituationChangesNewMembersSerializer
     SituationChangesNewMembers object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,26 +111,33 @@ class _$SituationChangesNewMembersSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'total':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.total = valueDes;
           break;
         case r'byFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>;
           result.byFamily.replace(valueDes);
           break;
         case r'byType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byType.replace(valueDes);
           break;

@@ -17,8 +17,10 @@ part 'exposure_watchlist_entities_counts_inner.g.dart';
 @BuiltValue()
 abstract class ExposureWatchlistEntitiesCountsInner
     implements
-        Built<ExposureWatchlistEntitiesCountsInner,
-            ExposureWatchlistEntitiesCountsInnerBuilder> {
+        Built<
+          ExposureWatchlistEntitiesCountsInner,
+          ExposureWatchlistEntitiesCountsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'watchlistId')
   String get watchlistId;
 
@@ -30,9 +32,9 @@ abstract class ExposureWatchlistEntitiesCountsInner
 
   ExposureWatchlistEntitiesCountsInner._();
 
-  factory ExposureWatchlistEntitiesCountsInner(
-          [void updates(ExposureWatchlistEntitiesCountsInnerBuilder b)]) =
-      _$ExposureWatchlistEntitiesCountsInner;
+  factory ExposureWatchlistEntitiesCountsInner([
+    void updates(ExposureWatchlistEntitiesCountsInnerBuilder b),
+  ]) = _$ExposureWatchlistEntitiesCountsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExposureWatchlistEntitiesCountsInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$ExposureWatchlistEntitiesCountsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExposureWatchlistEntitiesCountsInner,
-    _$ExposureWatchlistEntitiesCountsInner
+    _$ExposureWatchlistEntitiesCountsInner,
   ];
 
   @override
@@ -83,9 +85,11 @@ class _$ExposureWatchlistEntitiesCountsInnerSerializer
     ExposureWatchlistEntitiesCountsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,25 +105,28 @@ class _$ExposureWatchlistEntitiesCountsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'watchlistId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.watchlistId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         default:

@@ -50,16 +50,10 @@ class ShareLinksApi {
     final _path = r'/v1/share-links';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -74,10 +68,7 @@ class ShareLinksApi {
       _bodyData = _serializers.serialize(shareLinkCreate, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -100,9 +91,10 @@ class ShareLinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ShareLinkCreated),
-            ) as ShareLinkCreated;
+                  rawResponse,
+                  specifiedType: const FullType(ShareLinkCreated),
+                )
+                as ShareLinkCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -151,9 +143,15 @@ class ShareLinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/k/{key}/download'.replaceAll(
-        '{' r'key' '}',
-        encodeQueryParameter(_serializers, key, const FullType(String))
-            .toString());
+      '{'
+      r'key'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        key,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -161,10 +159,7 @@ class ShareLinksApi {
         if (range != null) r'Range': range,
         ...?headers,
       },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -234,31 +229,38 @@ class ShareLinksApi {
   }) async {
     final _path = r'/v1/k/{key}/tiles/{z}/{x}/{y}.mvt'
         .replaceAll(
-            '{' r'key' '}',
-            encodeQueryParameter(_serializers, key, const FullType(String))
-                .toString())
+          '{'
+          r'key'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            key,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -325,16 +327,10 @@ class ShareLinksApi {
     final _path = r'/v1/share-links';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -343,11 +339,17 @@ class ShareLinksApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -366,9 +368,10 @@ class ShareLinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ShareLinkPage),
-            ) as ShareLinkPage;
+                  rawResponse,
+                  specifiedType: const FullType(ShareLinkPage),
+                )
+                as ShareLinkPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -417,18 +420,19 @@ class ShareLinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/k/{key}'.replaceAll(
-        '{' r'key' '}',
-        encodeQueryParameter(_serializers, key, const FullType(String))
-            .toString());
+      '{'
+      r'key'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        key,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -453,9 +457,10 @@ class ShareLinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SharedContent),
-            ) as SharedContent;
+                  rawResponse,
+                  specifiedType: const FullType(SharedContent),
+                )
+                as SharedContent;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -502,18 +507,19 @@ class ShareLinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/k/{key}/geojson'.replaceAll(
-        '{' r'key' '}',
-        encodeQueryParameter(_serializers, key, const FullType(String))
-            .toString());
+      '{'
+      r'key'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        key,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -532,9 +538,10 @@ class ShareLinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FeatureCollection),
-            ) as FeatureCollection;
+                  rawResponse,
+                  specifiedType: const FullType(FeatureCollection),
+                )
+                as FeatureCollection;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -581,21 +588,21 @@ class ShareLinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/share-links/{shareLinkId}'.replaceAll(
-        '{' r'shareLinkId' '}',
-        encodeQueryParameter(_serializers, shareLinkId, const FullType(String))
-            .toString());
+      '{'
+      r'shareLinkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        shareLinkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },

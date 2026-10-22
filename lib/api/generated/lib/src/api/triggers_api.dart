@@ -61,26 +61,31 @@ class TriggersApi {
   }) async {
     final _path = r'/v1/triggers/{ruleId}/suggestions/{suggestionId}/apply'
         .replaceAll(
-            '{' r'ruleId' '}',
-            encodeQueryParameter(_serializers, ruleId, const FullType(String))
-                .toString())
+          '{'
+          r'ruleId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            ruleId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'suggestionId' '}',
-            encodeQueryParameter(
-                    _serializers, suggestionId, const FullType(String))
-                .toString());
+          '{'
+          r'suggestionId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            suggestionId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -97,10 +102,7 @@ class TriggersApi {
           : _serializers.serialize(tuningSuggestionApply, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -123,9 +125,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TuningLogEntry),
-            ) as TuningLogEntry;
+                  rawResponse,
+                  specifiedType: const FullType(TuningLogEntry),
+                )
+                as TuningLogEntry;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -174,16 +177,10 @@ class TriggersApi {
     final _path = r'/v1/triggers';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -195,14 +192,13 @@ class TriggersApi {
 
     try {
       const _type = FullType(TriggerRuleInput);
-      _bodyData =
-          _serializers.serialize(triggerRuleInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        triggerRuleInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -225,9 +221,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerRule),
-            ) as TriggerRule;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerRule),
+                )
+                as TriggerRule;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -274,21 +271,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -335,26 +332,31 @@ class TriggersApi {
   }) async {
     final _path = r'/v1/triggers/{ruleId}/suggestions/{suggestionId}/dismiss'
         .replaceAll(
-            '{' r'ruleId' '}',
-            encodeQueryParameter(_serializers, ruleId, const FullType(String))
-                .toString())
+          '{'
+          r'ruleId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            ruleId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'suggestionId' '}',
-            encodeQueryParameter(
-                    _serializers, suggestionId, const FullType(String))
-                .toString());
+          '{'
+          r'suggestionId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            suggestionId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -368,14 +370,13 @@ class TriggersApi {
       const _type = FullType(TuningSuggestionDismiss);
       _bodyData = tuningSuggestionDismiss == null
           ? null
-          : _serializers.serialize(tuningSuggestionDismiss,
-              specifiedType: _type);
+          : _serializers.serialize(
+              tuningSuggestionDismiss,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -398,9 +399,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TuningSuggestionRecord),
-            ) as TuningSuggestionRecord;
+                  rawResponse,
+                  specifiedType: const FullType(TuningSuggestionRecord),
+                )
+                as TuningSuggestionRecord;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -447,21 +449,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -483,9 +485,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerRule),
-            ) as TriggerRule;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerRule),
+                )
+                as TriggerRule;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -534,21 +537,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/baseline'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -558,7 +561,10 @@ class TriggersApi {
     final _queryParameters = <String, dynamic>{
       if (groupKey != null)
         r'groupKey': encodeQueryParameter(
-            _serializers, groupKey, const FullType(String)),
+          _serializers,
+          groupKey,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -577,9 +583,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AnomalyBaseline),
-            ) as AnomalyBaseline;
+                  rawResponse,
+                  specifiedType: const FullType(AnomalyBaseline),
+                )
+                as AnomalyBaseline;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -626,21 +633,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/window-state'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -662,9 +669,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WindowStateList),
-            ) as WindowStateList;
+                  rawResponse,
+                  specifiedType: const FullType(WindowStateList),
+                )
+                as WindowStateList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -715,16 +723,10 @@ class TriggersApi {
     final _path = r'/v1/triggers';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -735,8 +737,11 @@ class TriggersApi {
       if (tag != null)
         r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
       if (enabled != null)
-        r'enabled':
-            encodeQueryParameter(_serializers, enabled, const FullType(bool)),
+        r'enabled': encodeQueryParameter(
+          _serializers,
+          enabled,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -755,9 +760,12 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(TriggerRule)]),
-            ) as BuiltList<TriggerRule>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(TriggerRule),
+                  ]),
+                )
+                as BuiltList<TriggerRule>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -808,21 +816,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/tuning-log'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -831,11 +839,17 @@ class TriggersApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -854,9 +868,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TuningLogPage),
-            ) as TuningLogPage;
+                  rawResponse,
+                  specifiedType: const FullType(TuningLogPage),
+                )
+                as TuningLogPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -905,21 +920,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/mute'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -933,10 +948,7 @@ class TriggersApi {
       _bodyData = body;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -959,9 +971,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerRule),
-            ) as TriggerRule;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerRule),
+                )
+                as TriggerRule;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1008,21 +1021,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/baseline/rebuild'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1044,9 +1057,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BaselineRebuildResult),
-            ) as BaselineRebuildResult;
+                  rawResponse,
+                  specifiedType: const FullType(BaselineRebuildResult),
+                )
+                as BaselineRebuildResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1095,21 +1109,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/snooze'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1124,10 +1138,7 @@ class TriggersApi {
       _bodyData = _serializers.serialize(snoozeInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1150,9 +1161,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerRule),
-            ) as TriggerRule;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerRule),
+                )
+                as TriggerRule;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1211,21 +1223,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/test'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1234,23 +1246,41 @@ class TriggersApi {
 
     final _queryParameters = <String, dynamic>{
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (fromSeq != null)
-        r'fromSeq':
-            encodeQueryParameter(_serializers, fromSeq, const FullType(int)),
+        r'fromSeq': encodeQueryParameter(
+          _serializers,
+          fromSeq,
+          const FullType(int),
+        ),
       if (toSeq != null)
-        r'toSeq':
-            encodeQueryParameter(_serializers, toSeq, const FullType(int)),
+        r'toSeq': encodeQueryParameter(
+          _serializers,
+          toSeq,
+          const FullType(int),
+        ),
       if (simulate != null)
-        r'simulate':
-            encodeQueryParameter(_serializers, simulate, const FullType(bool)),
+        r'simulate': encodeQueryParameter(
+          _serializers,
+          simulate,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1269,9 +1299,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerTestResult),
-            ) as TriggerTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerTestResult),
+                )
+                as TriggerTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1321,25 +1352,31 @@ class TriggersApi {
   }) async {
     final _path = r'/v1/triggers/{ruleId}/tuning-log/{logId}/undo'
         .replaceAll(
-            '{' r'ruleId' '}',
-            encodeQueryParameter(_serializers, ruleId, const FullType(String))
-                .toString())
+          '{'
+          r'ruleId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            ruleId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'logId' '}',
-            encodeQueryParameter(_serializers, logId, const FullType(String))
-                .toString());
+          '{'
+          r'logId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            logId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1361,9 +1398,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TuningLogEntry),
-            ) as TuningLogEntry;
+                  rawResponse,
+                  specifiedType: const FullType(TuningLogEntry),
+                )
+                as TuningLogEntry;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1410,21 +1448,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/mute'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1446,9 +1484,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerRule),
-            ) as TriggerRule;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerRule),
+                )
+                as TriggerRule;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1495,21 +1534,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/snooze'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1531,9 +1570,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerRule),
-            ) as TriggerRule;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerRule),
+                )
+                as TriggerRule;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1582,21 +1622,21 @@ class TriggersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1608,14 +1648,13 @@ class TriggersApi {
 
     try {
       const _type = FullType(TriggerRuleInput);
-      _bodyData =
-          _serializers.serialize(triggerRuleInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        triggerRuleInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1638,9 +1677,10 @@ class TriggersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TriggerRule),
-            ) as TriggerRule;
+                  rawResponse,
+                  specifiedType: const FullType(TriggerRule),
+                )
+                as TriggerRule;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

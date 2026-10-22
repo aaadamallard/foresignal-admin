@@ -14,17 +14,19 @@ class _$ChronicleSuggestionEstimate extends ChronicleSuggestionEstimate {
   @override
   final BuiltList<ChronicleSuggestionEstimateLayersInner>? layers;
 
-  factory _$ChronicleSuggestionEstimate(
-          [void Function(ChronicleSuggestionEstimateBuilder)? updates]) =>
-      (ChronicleSuggestionEstimateBuilder()..update(updates))._build();
+  factory _$ChronicleSuggestionEstimate([
+    void Function(ChronicleSuggestionEstimateBuilder)? updates,
+  ]) => (ChronicleSuggestionEstimateBuilder()..update(updates))._build();
 
-  _$ChronicleSuggestionEstimate._(
-      {this.totalRowsPerDay, this.totalBytesPerDay, this.layers})
-      : super._();
+  _$ChronicleSuggestionEstimate._({
+    this.totalRowsPerDay,
+    this.totalBytesPerDay,
+    this.layers,
+  }) : super._();
   @override
   ChronicleSuggestionEstimate rebuild(
-          void Function(ChronicleSuggestionEstimateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSuggestionEstimateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSuggestionEstimateBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$ChronicleSuggestionEstimate extends ChronicleSuggestionEstimate {
 
 class ChronicleSuggestionEstimateBuilder
     implements
-        Builder<ChronicleSuggestionEstimate,
-            ChronicleSuggestionEstimateBuilder> {
+        Builder<
+          ChronicleSuggestionEstimate,
+          ChronicleSuggestionEstimateBuilder
+        > {
   _$ChronicleSuggestionEstimate? _$v;
 
   num? _totalRowsPerDay;
@@ -112,7 +116,8 @@ class ChronicleSuggestionEstimateBuilder
   _$ChronicleSuggestionEstimate _build() {
     _$ChronicleSuggestionEstimate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSuggestionEstimate._(
             totalRowsPerDay: totalRowsPerDay,
             totalBytesPerDay: totalBytesPerDay,
@@ -125,7 +130,10 @@ class ChronicleSuggestionEstimateBuilder
         _layers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSuggestionEstimate', _$failedField, e.toString());
+          r'ChronicleSuggestionEstimate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

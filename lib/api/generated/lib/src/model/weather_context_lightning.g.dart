@@ -16,17 +16,20 @@ class _$WeatherContextLightning extends WeatherContextLightning {
   @override
   final int? flashes20km15m;
 
-  factory _$WeatherContextLightning(
-          [void Function(WeatherContextLightningBuilder)? updates]) =>
-      (WeatherContextLightningBuilder()..update(updates))._build();
+  factory _$WeatherContextLightning([
+    void Function(WeatherContextLightningBuilder)? updates,
+  ]) => (WeatherContextLightningBuilder()..update(updates))._build();
 
-  _$WeatherContextLightning._(
-      {required this.status, this.asOf, this.statusText, this.flashes20km15m})
-      : super._();
+  _$WeatherContextLightning._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.flashes20km15m,
+  }) : super._();
   @override
   WeatherContextLightning rebuild(
-          void Function(WeatherContextLightningBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextLightningBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextLightningBuilder toBuilder() =>
@@ -116,10 +119,14 @@ class WeatherContextLightningBuilder
   WeatherContextLightning build() => _build();
 
   _$WeatherContextLightning _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WeatherContextLightning._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'WeatherContextLightning', 'status'),
+            status,
+            r'WeatherContextLightning',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           flashes20km15m: flashes20km15m,

@@ -19,8 +19,10 @@ part 'storm_track_payload_lightning_jump.g.dart';
 @BuiltValue()
 abstract class StormTrackPayloadLightningJump
     implements
-        Built<StormTrackPayloadLightningJump,
-            StormTrackPayloadLightningJumpBuilder> {
+        Built<
+          StormTrackPayloadLightningJump,
+          StormTrackPayloadLightningJumpBuilder
+        > {
   @BuiltValueField(wireName: r'at')
   DateTime get at;
 
@@ -36,9 +38,9 @@ abstract class StormTrackPayloadLightningJump
 
   StormTrackPayloadLightningJump._();
 
-  factory StormTrackPayloadLightningJump(
-          [void updates(StormTrackPayloadLightningJumpBuilder b)]) =
-      _$StormTrackPayloadLightningJump;
+  factory StormTrackPayloadLightningJump([
+    void updates(StormTrackPayloadLightningJumpBuilder b),
+  ]) = _$StormTrackPayloadLightningJump;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StormTrackPayloadLightningJumpBuilder b) => b;
@@ -53,7 +55,7 @@ class _$StormTrackPayloadLightningJumpSerializer
   @override
   final Iterable<Type> types = const [
     StormTrackPayloadLightningJump,
-    _$StormTrackPayloadLightningJump
+    _$StormTrackPayloadLightningJump,
   ];
 
   @override
@@ -96,9 +98,11 @@ class _$StormTrackPayloadLightningJumpSerializer
     StormTrackPayloadLightningJump object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,34 +118,43 @@ class _$StormTrackPayloadLightningJumpSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'sigma':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.sigma = valueDes;
           break;
         case r'rateFpm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.rateFpm = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(StormTrackPayloadLightningJumpMethodEnum),
-          ) as StormTrackPayloadLightningJumpMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StormTrackPayloadLightningJumpMethodEnum,
+                    ),
+                  )
+                  as StormTrackPayloadLightningJumpMethodEnum;
           result.method = valueDes;
           break;
         default:

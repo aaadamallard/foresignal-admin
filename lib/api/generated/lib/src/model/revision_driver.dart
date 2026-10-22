@@ -157,8 +157,9 @@ class _$RevisionDriverSerializer
       yield r'suppressionReason';
       yield serializers.serialize(
         object.suppressionReason,
-        specifiedType:
-            const FullType.nullable(RevisionDriverSuppressionReasonEnum),
+        specifiedType: const FullType.nullable(
+          RevisionDriverSuppressionReasonEnum,
+        ),
       );
     }
   }
@@ -169,9 +170,11 @@ class _$RevisionDriverSerializer
     RevisionDriver object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -187,87 +190,107 @@ class _$RevisionDriverSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RevisionDriverKindEnum),
-          ) as RevisionDriverKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(RevisionDriverKindEnum),
+                  )
+                  as RevisionDriverKindEnum;
           result.kind = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'hypothesisId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hypothesisId = valueDes;
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.signalFamily = valueDes;
           break;
         case r'lr':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lr = valueDes;
           break;
         case r'lnLr':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lnLr = valueDes;
           break;
         case r'pDetect':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pDetect = valueDes;
           break;
         case r'applied':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.applied = valueDes;
           break;
         case r'suppressed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.suppressed = valueDes;
           break;
         case r'suppressionReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(RevisionDriverSuppressionReasonEnum),
-          ) as RevisionDriverSuppressionReasonEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RevisionDriverSuppressionReasonEnum,
+                    ),
+                  )
+                  as RevisionDriverSuppressionReasonEnum?;
           if (valueDes == null) continue;
           result.suppressionReason = valueDes;
           break;

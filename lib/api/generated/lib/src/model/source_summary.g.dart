@@ -32,11 +32,11 @@ SourceSummaryModeEnum _$sourceSummaryModeEnumValueOf(String name) {
 
 final BuiltSet<SourceSummaryModeEnum> _$sourceSummaryModeEnumValues =
     BuiltSet<SourceSummaryModeEnum>(const <SourceSummaryModeEnum>[
-  _$sourceSummaryModeEnum_polling,
-  _$sourceSummaryModeEnum_streaming,
-  _$sourceSummaryModeEnum_push,
-  _$sourceSummaryModeEnum_derived,
-]);
+      _$sourceSummaryModeEnum_polling,
+      _$sourceSummaryModeEnum_streaming,
+      _$sourceSummaryModeEnum_push,
+      _$sourceSummaryModeEnum_derived,
+    ]);
 
 Serializer<SourceSummaryModeEnum> _$sourceSummaryModeEnumSerializer =
     _$SourceSummaryModeEnumSerializer();
@@ -62,15 +62,20 @@ class _$SourceSummaryModeEnumSerializer
   final String wireName = 'SourceSummaryModeEnum';
 
   @override
-  Object serialize(Serializers serializers, SourceSummaryModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SourceSummaryModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SourceSummaryModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceSummaryModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SourceSummaryModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceSummaryModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceSummary extends SourceSummary {
@@ -114,26 +119,26 @@ class _$SourceSummary extends SourceSummary {
   factory _$SourceSummary([void Function(SourceSummaryBuilder)? updates]) =>
       (SourceSummaryBuilder()..update(updates))._build();
 
-  _$SourceSummary._(
-      {required this.id,
-      required this.name,
-      required this.kinds,
-      required this.mode,
-      this.custom,
-      required this.enabled,
-      required this.status,
-      this.credentialsRequired,
-      this.credentialsSet,
-      this.interval,
-      this.budget,
-      this.budgetUsedToday,
-      this.lastSuccessAt,
-      this.historyTier,
-      this.licence,
-      this.termsUrl,
-      this.lastDataAt,
-      this.access})
-      : super._();
+  _$SourceSummary._({
+    required this.id,
+    required this.name,
+    required this.kinds,
+    required this.mode,
+    this.custom,
+    required this.enabled,
+    required this.status,
+    this.credentialsRequired,
+    this.credentialsSet,
+    this.interval,
+    this.budget,
+    this.budgetUsedToday,
+    this.lastSuccessAt,
+    this.historyTier,
+    this.licence,
+    this.termsUrl,
+    this.lastDataAt,
+    this.access,
+  }) : super._();
   @override
   SourceSummary rebuild(void Function(SourceSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -342,20 +347,36 @@ class SourceSummaryBuilder
   _$SourceSummary _build() {
     _$SourceSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SourceSummary._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SourceSummary', 'id'),
+              id,
+              r'SourceSummary',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SourceSummary', 'name'),
+              name,
+              r'SourceSummary',
+              'name',
+            ),
             kinds: kinds.build(),
             mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'SourceSummary', 'mode'),
+              mode,
+              r'SourceSummary',
+              'mode',
+            ),
             custom: custom,
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'SourceSummary', 'enabled'),
+              enabled,
+              r'SourceSummary',
+              'enabled',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SourceSummary', 'status'),
+              status,
+              r'SourceSummary',
+              'status',
+            ),
             credentialsRequired: credentialsRequired,
             credentialsSet: credentialsSet,
             interval: interval,
@@ -381,7 +402,10 @@ class SourceSummaryBuilder
         _access?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SourceSummary', _$failedField, e.toString());
+          r'SourceSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

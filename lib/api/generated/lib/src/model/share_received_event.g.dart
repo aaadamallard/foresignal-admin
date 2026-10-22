@@ -32,11 +32,11 @@ ShareReceivedEventRoleEnum _$shareReceivedEventRoleEnumValueOf(String name) {
 
 final BuiltSet<ShareReceivedEventRoleEnum> _$shareReceivedEventRoleEnumValues =
     BuiltSet<ShareReceivedEventRoleEnum>(const <ShareReceivedEventRoleEnum>[
-  _$shareReceivedEventRoleEnum_viewer,
-  _$shareReceivedEventRoleEnum_commenter,
-  _$shareReceivedEventRoleEnum_editor,
-  _$shareReceivedEventRoleEnum_owner,
-]);
+      _$shareReceivedEventRoleEnum_viewer,
+      _$shareReceivedEventRoleEnum_commenter,
+      _$shareReceivedEventRoleEnum_editor,
+      _$shareReceivedEventRoleEnum_owner,
+    ]);
 
 Serializer<ShareReceivedEventRoleEnum> _$shareReceivedEventRoleEnumSerializer =
     _$ShareReceivedEventRoleEnumSerializer();
@@ -62,16 +62,20 @@ class _$ShareReceivedEventRoleEnumSerializer
   final String wireName = 'ShareReceivedEventRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, ShareReceivedEventRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ShareReceivedEventRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ShareReceivedEventRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ShareReceivedEventRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ShareReceivedEventRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ShareReceivedEvent extends ShareReceivedEvent {
@@ -88,22 +92,22 @@ class _$ShareReceivedEvent extends ShareReceivedEvent {
   @override
   final DateTime at;
 
-  factory _$ShareReceivedEvent(
-          [void Function(ShareReceivedEventBuilder)? updates]) =>
-      (ShareReceivedEventBuilder()..update(updates))._build();
+  factory _$ShareReceivedEvent([
+    void Function(ShareReceivedEventBuilder)? updates,
+  ]) => (ShareReceivedEventBuilder()..update(updates))._build();
 
-  _$ShareReceivedEvent._(
-      {required this.ref,
-      this.envelope,
-      required this.role,
-      required this.sharedBy,
-      this.message,
-      required this.at})
-      : super._();
+  _$ShareReceivedEvent._({
+    required this.ref,
+    this.envelope,
+    required this.role,
+    required this.sharedBy,
+    this.message,
+    required this.at,
+  }) : super._();
   @override
   ShareReceivedEvent rebuild(
-          void Function(ShareReceivedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ShareReceivedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ShareReceivedEventBuilder toBuilder() =>
@@ -212,17 +216,27 @@ class ShareReceivedEventBuilder
   _$ShareReceivedEvent _build() {
     _$ShareReceivedEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ShareReceivedEvent._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'ShareReceivedEvent', 'ref'),
+              ref,
+              r'ShareReceivedEvent',
+              'ref',
+            ),
             envelope: _envelope?.build(),
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'ShareReceivedEvent', 'role'),
+              role,
+              r'ShareReceivedEvent',
+              'role',
+            ),
             sharedBy: sharedBy.build(),
             message: message,
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ShareReceivedEvent', 'at'),
+              at,
+              r'ShareReceivedEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -234,7 +248,10 @@ class ShareReceivedEventBuilder
         sharedBy.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ShareReceivedEvent', _$failedField, e.toString());
+          r'ShareReceivedEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

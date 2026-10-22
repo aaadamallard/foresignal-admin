@@ -93,7 +93,8 @@ class EdrInstanceListBuilder
   _$EdrInstanceList _build() {
     _$EdrInstanceList _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdrInstanceList._(
             instances: instances.build(),
             links: _links?.build(),
@@ -107,7 +108,10 @@ class EdrInstanceListBuilder
         _links?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdrInstanceList', _$failedField, e.toString());
+          r'EdrInstanceList',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

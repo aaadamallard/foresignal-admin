@@ -7,20 +7,20 @@ part of 'rule_backtest_result_samples_inner.dart';
 // **************************************************************************
 
 const RuleBacktestResultSamplesInnerEdgeEnum
-    _$ruleBacktestResultSamplesInnerEdgeEnum_match =
+_$ruleBacktestResultSamplesInnerEdgeEnum_match =
     const RuleBacktestResultSamplesInnerEdgeEnum._('match');
 const RuleBacktestResultSamplesInnerEdgeEnum
-    _$ruleBacktestResultSamplesInnerEdgeEnum_enter =
+_$ruleBacktestResultSamplesInnerEdgeEnum_enter =
     const RuleBacktestResultSamplesInnerEdgeEnum._('enter');
 const RuleBacktestResultSamplesInnerEdgeEnum
-    _$ruleBacktestResultSamplesInnerEdgeEnum_exit =
+_$ruleBacktestResultSamplesInnerEdgeEnum_exit =
     const RuleBacktestResultSamplesInnerEdgeEnum._('exit');
 const RuleBacktestResultSamplesInnerEdgeEnum
-    _$ruleBacktestResultSamplesInnerEdgeEnum_window =
+_$ruleBacktestResultSamplesInnerEdgeEnum_window =
     const RuleBacktestResultSamplesInnerEdgeEnum._('window');
 
 RuleBacktestResultSamplesInnerEdgeEnum
-    _$ruleBacktestResultSamplesInnerEdgeEnumValueOf(String name) {
+_$ruleBacktestResultSamplesInnerEdgeEnumValueOf(String name) {
   switch (name) {
     case 'match':
       return _$ruleBacktestResultSamplesInnerEdgeEnum_match;
@@ -36,16 +36,18 @@ RuleBacktestResultSamplesInnerEdgeEnum
 }
 
 final BuiltSet<RuleBacktestResultSamplesInnerEdgeEnum>
-    _$ruleBacktestResultSamplesInnerEdgeEnumValues = BuiltSet<
-        RuleBacktestResultSamplesInnerEdgeEnum>(const <RuleBacktestResultSamplesInnerEdgeEnum>[
-  _$ruleBacktestResultSamplesInnerEdgeEnum_match,
-  _$ruleBacktestResultSamplesInnerEdgeEnum_enter,
-  _$ruleBacktestResultSamplesInnerEdgeEnum_exit,
-  _$ruleBacktestResultSamplesInnerEdgeEnum_window,
-]);
+_$ruleBacktestResultSamplesInnerEdgeEnumValues =
+    BuiltSet<RuleBacktestResultSamplesInnerEdgeEnum>(
+      const <RuleBacktestResultSamplesInnerEdgeEnum>[
+        _$ruleBacktestResultSamplesInnerEdgeEnum_match,
+        _$ruleBacktestResultSamplesInnerEdgeEnum_enter,
+        _$ruleBacktestResultSamplesInnerEdgeEnum_exit,
+        _$ruleBacktestResultSamplesInnerEdgeEnum_window,
+      ],
+    );
 
 Serializer<RuleBacktestResultSamplesInnerEdgeEnum>
-    _$ruleBacktestResultSamplesInnerEdgeEnumSerializer =
+_$ruleBacktestResultSamplesInnerEdgeEnumSerializer =
     _$RuleBacktestResultSamplesInnerEdgeEnumSerializer();
 
 class _$RuleBacktestResultSamplesInnerEdgeEnumSerializer
@@ -65,23 +67,26 @@ class _$RuleBacktestResultSamplesInnerEdgeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    RuleBacktestResultSamplesInnerEdgeEnum
+    RuleBacktestResultSamplesInnerEdgeEnum,
   ];
   @override
   final String wireName = 'RuleBacktestResultSamplesInnerEdgeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          RuleBacktestResultSamplesInnerEdgeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RuleBacktestResultSamplesInnerEdgeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RuleBacktestResultSamplesInnerEdgeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RuleBacktestResultSamplesInnerEdgeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RuleBacktestResultSamplesInnerEdgeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RuleBacktestResultSamplesInner extends RuleBacktestResultSamplesInner {
@@ -96,21 +101,21 @@ class _$RuleBacktestResultSamplesInner extends RuleBacktestResultSamplesInner {
   @override
   final RuleBacktestResultSamplesInnerEdgeEnum? edge;
 
-  factory _$RuleBacktestResultSamplesInner(
-          [void Function(RuleBacktestResultSamplesInnerBuilder)? updates]) =>
-      (RuleBacktestResultSamplesInnerBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultSamplesInner([
+    void Function(RuleBacktestResultSamplesInnerBuilder)? updates,
+  ]) => (RuleBacktestResultSamplesInnerBuilder()..update(updates))._build();
 
-  _$RuleBacktestResultSamplesInner._(
-      {required this.seq,
-      required this.source_,
-      required this.externalId,
-      required this.observedAt,
-      this.edge})
-      : super._();
+  _$RuleBacktestResultSamplesInner._({
+    required this.seq,
+    required this.source_,
+    required this.externalId,
+    required this.observedAt,
+    this.edge,
+  }) : super._();
   @override
   RuleBacktestResultSamplesInner rebuild(
-          void Function(RuleBacktestResultSamplesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultSamplesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultSamplesInnerBuilder toBuilder() =>
@@ -153,8 +158,10 @@ class _$RuleBacktestResultSamplesInner extends RuleBacktestResultSamplesInner {
 
 class RuleBacktestResultSamplesInnerBuilder
     implements
-        Builder<RuleBacktestResultSamplesInner,
-            RuleBacktestResultSamplesInnerBuilder> {
+        Builder<
+          RuleBacktestResultSamplesInner,
+          RuleBacktestResultSamplesInnerBuilder
+        > {
   _$RuleBacktestResultSamplesInner? _$v;
 
   int? _seq;
@@ -208,16 +215,29 @@ class RuleBacktestResultSamplesInnerBuilder
   RuleBacktestResultSamplesInner build() => _build();
 
   _$RuleBacktestResultSamplesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RuleBacktestResultSamplesInner._(
           seq: BuiltValueNullFieldError.checkNotNull(
-              seq, r'RuleBacktestResultSamplesInner', 'seq'),
+            seq,
+            r'RuleBacktestResultSamplesInner',
+            'seq',
+          ),
           source_: BuiltValueNullFieldError.checkNotNull(
-              source_, r'RuleBacktestResultSamplesInner', 'source_'),
+            source_,
+            r'RuleBacktestResultSamplesInner',
+            'source_',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'RuleBacktestResultSamplesInner', 'externalId'),
+            externalId,
+            r'RuleBacktestResultSamplesInner',
+            'externalId',
+          ),
           observedAt: BuiltValueNullFieldError.checkNotNull(
-              observedAt, r'RuleBacktestResultSamplesInner', 'observedAt'),
+            observedAt,
+            r'RuleBacktestResultSamplesInner',
+            'observedAt',
+          ),
           edge: edge,
         );
     replace(_$result);

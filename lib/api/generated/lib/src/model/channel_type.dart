@@ -90,21 +90,24 @@ class _$ChannelTypeSerializer implements PrimitiveSerializer<ChannelType> {
     yield r'configFields';
     yield serializers.serialize(
       object.configFields,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChannelTypeConfigFieldsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChannelTypeConfigFieldsInner),
+      ]),
     );
     yield r'secretFields';
     yield serializers.serialize(
       object.secretFields,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChannelTypeConfigFieldsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChannelTypeConfigFieldsInner),
+      ]),
     );
     if (object.events != null) {
       yield r'events';
       yield serializers.serialize(
         object.events,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ChannelTypeEventsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChannelTypeEventsEnum),
+        ]),
       );
     }
     if (object.capabilities != null) {
@@ -122,9 +125,11 @@ class _$ChannelTypeSerializer implements PrimitiveSerializer<ChannelType> {
     ChannelType object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,57 +145,76 @@ class _$ChannelTypeSerializer implements PrimitiveSerializer<ChannelType> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChannelTypeIdEnum),
-          ) as ChannelTypeIdEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ChannelTypeIdEnum),
+                  )
+                  as ChannelTypeIdEnum;
           result.id = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'configFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChannelTypeConfigFieldsInner)]),
-          ) as BuiltList<ChannelTypeConfigFieldsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChannelTypeConfigFieldsInner),
+                    ]),
+                  )
+                  as BuiltList<ChannelTypeConfigFieldsInner>;
           result.configFields.replace(valueDes);
           break;
         case r'secretFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChannelTypeConfigFieldsInner)]),
-          ) as BuiltList<ChannelTypeConfigFieldsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChannelTypeConfigFieldsInner),
+                    ]),
+                  )
+                  as BuiltList<ChannelTypeConfigFieldsInner>;
           result.secretFields.replace(valueDes);
           break;
         case r'events':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ChannelTypeEventsEnum)]),
-          ) as BuiltList<ChannelTypeEventsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChannelTypeEventsEnum),
+                    ]),
+                  )
+                  as BuiltList<ChannelTypeEventsEnum>?;
           if (valueDes == null) continue;
           result.events.replace(valueDes);
           break;
         case r'capabilities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChannelTypeCapabilities),
-          ) as ChannelTypeCapabilities?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChannelTypeCapabilities,
+                    ),
+                  )
+                  as ChannelTypeCapabilities?;
           if (valueDes == null) continue;
           result.capabilities.replace(valueDes);
           break;

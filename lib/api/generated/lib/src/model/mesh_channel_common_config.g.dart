@@ -7,25 +7,26 @@ part of 'mesh_channel_common_config.dart';
 // **************************************************************************
 
 const MeshChannelCommonConfigRegionEnum
-    _$meshChannelCommonConfigRegionEnum_EU_868 =
+_$meshChannelCommonConfigRegionEnum_EU_868 =
     const MeshChannelCommonConfigRegionEnum._('EU_868');
 const MeshChannelCommonConfigRegionEnum
-    _$meshChannelCommonConfigRegionEnum_EU_433 =
+_$meshChannelCommonConfigRegionEnum_EU_433 =
     const MeshChannelCommonConfigRegionEnum._('EU_433');
 const MeshChannelCommonConfigRegionEnum
-    _$meshChannelCommonConfigRegionEnum_UK_868 =
+_$meshChannelCommonConfigRegionEnum_UK_868 =
     const MeshChannelCommonConfigRegionEnum._('UK_868');
 const MeshChannelCommonConfigRegionEnum _$meshChannelCommonConfigRegionEnum_US =
     const MeshChannelCommonConfigRegionEnum._('US');
 const MeshChannelCommonConfigRegionEnum
-    _$meshChannelCommonConfigRegionEnum_ANZ =
+_$meshChannelCommonConfigRegionEnum_ANZ =
     const MeshChannelCommonConfigRegionEnum._('ANZ');
 const MeshChannelCommonConfigRegionEnum
-    _$meshChannelCommonConfigRegionEnum_OTHER =
+_$meshChannelCommonConfigRegionEnum_OTHER =
     const MeshChannelCommonConfigRegionEnum._('OTHER');
 
 MeshChannelCommonConfigRegionEnum _$meshChannelCommonConfigRegionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'EU_868':
       return _$meshChannelCommonConfigRegionEnum_EU_868;
@@ -45,28 +46,30 @@ MeshChannelCommonConfigRegionEnum _$meshChannelCommonConfigRegionEnumValueOf(
 }
 
 final BuiltSet<MeshChannelCommonConfigRegionEnum>
-    _$meshChannelCommonConfigRegionEnumValues = BuiltSet<
-        MeshChannelCommonConfigRegionEnum>(const <MeshChannelCommonConfigRegionEnum>[
-  _$meshChannelCommonConfigRegionEnum_EU_868,
-  _$meshChannelCommonConfigRegionEnum_EU_433,
-  _$meshChannelCommonConfigRegionEnum_UK_868,
-  _$meshChannelCommonConfigRegionEnum_US,
-  _$meshChannelCommonConfigRegionEnum_ANZ,
-  _$meshChannelCommonConfigRegionEnum_OTHER,
-]);
+_$meshChannelCommonConfigRegionEnumValues =
+    BuiltSet<MeshChannelCommonConfigRegionEnum>(
+      const <MeshChannelCommonConfigRegionEnum>[
+        _$meshChannelCommonConfigRegionEnum_EU_868,
+        _$meshChannelCommonConfigRegionEnum_EU_433,
+        _$meshChannelCommonConfigRegionEnum_UK_868,
+        _$meshChannelCommonConfigRegionEnum_US,
+        _$meshChannelCommonConfigRegionEnum_ANZ,
+        _$meshChannelCommonConfigRegionEnum_OTHER,
+      ],
+    );
 
 const MeshChannelCommonConfigAirtimePresetEnum
-    _$meshChannelCommonConfigAirtimePresetEnum_meshtasticLongfast =
+_$meshChannelCommonConfigAirtimePresetEnum_meshtasticLongfast =
     const MeshChannelCommonConfigAirtimePresetEnum._('meshtasticLongfast');
 const MeshChannelCommonConfigAirtimePresetEnum
-    _$meshChannelCommonConfigAirtimePresetEnum_meshtasticMediumfast =
+_$meshChannelCommonConfigAirtimePresetEnum_meshtasticMediumfast =
     const MeshChannelCommonConfigAirtimePresetEnum._('meshtasticMediumfast');
 const MeshChannelCommonConfigAirtimePresetEnum
-    _$meshChannelCommonConfigAirtimePresetEnum_custom =
+_$meshChannelCommonConfigAirtimePresetEnum_custom =
     const MeshChannelCommonConfigAirtimePresetEnum._('custom');
 
 MeshChannelCommonConfigAirtimePresetEnum
-    _$meshChannelCommonConfigAirtimePresetEnumValueOf(String name) {
+_$meshChannelCommonConfigAirtimePresetEnumValueOf(String name) {
   switch (name) {
     case 'meshtasticLongfast':
       return _$meshChannelCommonConfigAirtimePresetEnum_meshtasticLongfast;
@@ -80,22 +83,25 @@ MeshChannelCommonConfigAirtimePresetEnum
 }
 
 final BuiltSet<MeshChannelCommonConfigAirtimePresetEnum>
-    _$meshChannelCommonConfigAirtimePresetEnumValues = BuiltSet<
-        MeshChannelCommonConfigAirtimePresetEnum>(const <MeshChannelCommonConfigAirtimePresetEnum>[
-  _$meshChannelCommonConfigAirtimePresetEnum_meshtasticLongfast,
-  _$meshChannelCommonConfigAirtimePresetEnum_meshtasticMediumfast,
-  _$meshChannelCommonConfigAirtimePresetEnum_custom,
-]);
+_$meshChannelCommonConfigAirtimePresetEnumValues =
+    BuiltSet<MeshChannelCommonConfigAirtimePresetEnum>(
+      const <MeshChannelCommonConfigAirtimePresetEnum>[
+        _$meshChannelCommonConfigAirtimePresetEnum_meshtasticLongfast,
+        _$meshChannelCommonConfigAirtimePresetEnum_meshtasticMediumfast,
+        _$meshChannelCommonConfigAirtimePresetEnum_custom,
+      ],
+    );
 
 const MeshChannelCommonConfigProfileEnum
-    _$meshChannelCommonConfigProfileEnum_text =
+_$meshChannelCommonConfigProfileEnum_text =
     const MeshChannelCommonConfigProfileEnum._('text');
 const MeshChannelCommonConfigProfileEnum
-    _$meshChannelCommonConfigProfileEnum_cbor =
+_$meshChannelCommonConfigProfileEnum_cbor =
     const MeshChannelCommonConfigProfileEnum._('cbor');
 
 MeshChannelCommonConfigProfileEnum _$meshChannelCommonConfigProfileEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'text':
       return _$meshChannelCommonConfigProfileEnum_text;
@@ -107,24 +113,26 @@ MeshChannelCommonConfigProfileEnum _$meshChannelCommonConfigProfileEnumValueOf(
 }
 
 final BuiltSet<MeshChannelCommonConfigProfileEnum>
-    _$meshChannelCommonConfigProfileEnumValues = BuiltSet<
-        MeshChannelCommonConfigProfileEnum>(const <MeshChannelCommonConfigProfileEnum>[
-  _$meshChannelCommonConfigProfileEnum_text,
-  _$meshChannelCommonConfigProfileEnum_cbor,
-]);
+_$meshChannelCommonConfigProfileEnumValues =
+    BuiltSet<MeshChannelCommonConfigProfileEnum>(
+      const <MeshChannelCommonConfigProfileEnum>[
+        _$meshChannelCommonConfigProfileEnum_text,
+        _$meshChannelCommonConfigProfileEnum_cbor,
+      ],
+    );
 
 const MeshChannelCommonConfigMinSeverityEnum
-    _$meshChannelCommonConfigMinSeverityEnum_info =
+_$meshChannelCommonConfigMinSeverityEnum_info =
     const MeshChannelCommonConfigMinSeverityEnum._('info');
 const MeshChannelCommonConfigMinSeverityEnum
-    _$meshChannelCommonConfigMinSeverityEnum_warning =
+_$meshChannelCommonConfigMinSeverityEnum_warning =
     const MeshChannelCommonConfigMinSeverityEnum._('warning');
 const MeshChannelCommonConfigMinSeverityEnum
-    _$meshChannelCommonConfigMinSeverityEnum_critical =
+_$meshChannelCommonConfigMinSeverityEnum_critical =
     const MeshChannelCommonConfigMinSeverityEnum._('critical');
 
 MeshChannelCommonConfigMinSeverityEnum
-    _$meshChannelCommonConfigMinSeverityEnumValueOf(String name) {
+_$meshChannelCommonConfigMinSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$meshChannelCommonConfigMinSeverityEnum_info;
@@ -138,22 +146,24 @@ MeshChannelCommonConfigMinSeverityEnum
 }
 
 final BuiltSet<MeshChannelCommonConfigMinSeverityEnum>
-    _$meshChannelCommonConfigMinSeverityEnumValues = BuiltSet<
-        MeshChannelCommonConfigMinSeverityEnum>(const <MeshChannelCommonConfigMinSeverityEnum>[
-  _$meshChannelCommonConfigMinSeverityEnum_info,
-  _$meshChannelCommonConfigMinSeverityEnum_warning,
-  _$meshChannelCommonConfigMinSeverityEnum_critical,
-]);
+_$meshChannelCommonConfigMinSeverityEnumValues =
+    BuiltSet<MeshChannelCommonConfigMinSeverityEnum>(
+      const <MeshChannelCommonConfigMinSeverityEnum>[
+        _$meshChannelCommonConfigMinSeverityEnum_info,
+        _$meshChannelCommonConfigMinSeverityEnum_warning,
+        _$meshChannelCommonConfigMinSeverityEnum_critical,
+      ],
+    );
 
 const MeshChannelCommonConfigAllowedSendersEnum
-    _$meshChannelCommonConfigAllowedSendersEnum_report =
+_$meshChannelCommonConfigAllowedSendersEnum_report =
     const MeshChannelCommonConfigAllowedSendersEnum._('report');
 const MeshChannelCommonConfigAllowedSendersEnum
-    _$meshChannelCommonConfigAllowedSendersEnum_ack =
+_$meshChannelCommonConfigAllowedSendersEnum_ack =
     const MeshChannelCommonConfigAllowedSendersEnum._('ack');
 
 MeshChannelCommonConfigAllowedSendersEnum
-    _$meshChannelCommonConfigAllowedSendersEnumValueOf(String name) {
+_$meshChannelCommonConfigAllowedSendersEnumValueOf(String name) {
   switch (name) {
     case 'report':
       return _$meshChannelCommonConfigAllowedSendersEnum_report;
@@ -165,26 +175,28 @@ MeshChannelCommonConfigAllowedSendersEnum
 }
 
 final BuiltSet<MeshChannelCommonConfigAllowedSendersEnum>
-    _$meshChannelCommonConfigAllowedSendersEnumValues = BuiltSet<
-        MeshChannelCommonConfigAllowedSendersEnum>(const <MeshChannelCommonConfigAllowedSendersEnum>[
-  _$meshChannelCommonConfigAllowedSendersEnum_report,
-  _$meshChannelCommonConfigAllowedSendersEnum_ack,
-]);
+_$meshChannelCommonConfigAllowedSendersEnumValues =
+    BuiltSet<MeshChannelCommonConfigAllowedSendersEnum>(
+      const <MeshChannelCommonConfigAllowedSendersEnum>[
+        _$meshChannelCommonConfigAllowedSendersEnum_report,
+        _$meshChannelCommonConfigAllowedSendersEnum_ack,
+      ],
+    );
 
 Serializer<MeshChannelCommonConfigRegionEnum>
-    _$meshChannelCommonConfigRegionEnumSerializer =
+_$meshChannelCommonConfigRegionEnumSerializer =
     _$MeshChannelCommonConfigRegionEnumSerializer();
 Serializer<MeshChannelCommonConfigAirtimePresetEnum>
-    _$meshChannelCommonConfigAirtimePresetEnumSerializer =
+_$meshChannelCommonConfigAirtimePresetEnumSerializer =
     _$MeshChannelCommonConfigAirtimePresetEnumSerializer();
 Serializer<MeshChannelCommonConfigProfileEnum>
-    _$meshChannelCommonConfigProfileEnumSerializer =
+_$meshChannelCommonConfigProfileEnumSerializer =
     _$MeshChannelCommonConfigProfileEnumSerializer();
 Serializer<MeshChannelCommonConfigMinSeverityEnum>
-    _$meshChannelCommonConfigMinSeverityEnumSerializer =
+_$meshChannelCommonConfigMinSeverityEnumSerializer =
     _$MeshChannelCommonConfigMinSeverityEnumSerializer();
 Serializer<MeshChannelCommonConfigAllowedSendersEnum>
-    _$meshChannelCommonConfigAllowedSendersEnumSerializer =
+_$meshChannelCommonConfigAllowedSendersEnumSerializer =
     _$MeshChannelCommonConfigAllowedSendersEnumSerializer();
 
 class _$MeshChannelCommonConfigRegionEnumSerializer
@@ -213,16 +225,19 @@ class _$MeshChannelCommonConfigRegionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MeshChannelCommonConfigRegionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MeshChannelCommonConfigRegionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshChannelCommonConfigRegionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshChannelCommonConfigRegionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshChannelCommonConfigRegionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshChannelCommonConfigAirtimePresetEnumSerializer
@@ -240,23 +255,26 @@ class _$MeshChannelCommonConfigAirtimePresetEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshChannelCommonConfigAirtimePresetEnum
+    MeshChannelCommonConfigAirtimePresetEnum,
   ];
   @override
   final String wireName = 'MeshChannelCommonConfigAirtimePresetEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshChannelCommonConfigAirtimePresetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshChannelCommonConfigAirtimePresetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshChannelCommonConfigAirtimePresetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshChannelCommonConfigAirtimePresetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshChannelCommonConfigAirtimePresetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshChannelCommonConfigProfileEnumSerializer
@@ -277,16 +295,19 @@ class _$MeshChannelCommonConfigProfileEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MeshChannelCommonConfigProfileEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MeshChannelCommonConfigProfileEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshChannelCommonConfigProfileEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshChannelCommonConfigProfileEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshChannelCommonConfigProfileEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshChannelCommonConfigMinSeverityEnumSerializer
@@ -304,23 +325,26 @@ class _$MeshChannelCommonConfigMinSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshChannelCommonConfigMinSeverityEnum
+    MeshChannelCommonConfigMinSeverityEnum,
   ];
   @override
   final String wireName = 'MeshChannelCommonConfigMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshChannelCommonConfigMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshChannelCommonConfigMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshChannelCommonConfigMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshChannelCommonConfigMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshChannelCommonConfigMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshChannelCommonConfigAllowedSendersEnumSerializer
@@ -336,23 +360,26 @@ class _$MeshChannelCommonConfigAllowedSendersEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshChannelCommonConfigAllowedSendersEnum
+    MeshChannelCommonConfigAllowedSendersEnum,
   ];
   @override
   final String wireName = 'MeshChannelCommonConfigAllowedSendersEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshChannelCommonConfigAllowedSendersEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshChannelCommonConfigAllowedSendersEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshChannelCommonConfigAllowedSendersEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshChannelCommonConfigAllowedSendersEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshChannelCommonConfigAllowedSendersEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshChannelCommonConfig extends MeshChannelCommonConfig {
@@ -376,31 +403,31 @@ class _$MeshChannelCommonConfig extends MeshChannelCommonConfig {
   final bool? reportsEnabled;
   @override
   final BuiltMap<String, MeshChannelCommonConfigAllowedSendersEnum>?
-      allowedSenders;
+  allowedSenders;
   @override
   final bool? compactEvents;
 
-  factory _$MeshChannelCommonConfig(
-          [void Function(MeshChannelCommonConfigBuilder)? updates]) =>
-      (MeshChannelCommonConfigBuilder()..update(updates))._build();
+  factory _$MeshChannelCommonConfig([
+    void Function(MeshChannelCommonConfigBuilder)? updates,
+  ]) => (MeshChannelCommonConfigBuilder()..update(updates))._build();
 
-  _$MeshChannelCommonConfig._(
-      {required this.region,
-      this.airtimePreset,
-      this.airtimeCustom,
-      this.dutyCyclePercent,
-      this.minSpacing,
-      this.maxMessagesPerHour,
-      this.profile,
-      this.minSeverity,
-      this.reportsEnabled,
-      this.allowedSenders,
-      this.compactEvents})
-      : super._();
+  _$MeshChannelCommonConfig._({
+    required this.region,
+    this.airtimePreset,
+    this.airtimeCustom,
+    this.dutyCyclePercent,
+    this.minSpacing,
+    this.maxMessagesPerHour,
+    this.profile,
+    this.minSeverity,
+    this.reportsEnabled,
+    this.allowedSenders,
+    this.compactEvents,
+  }) : super._();
   @override
   MeshChannelCommonConfig rebuild(
-          void Function(MeshChannelCommonConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MeshChannelCommonConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MeshChannelCommonConfigBuilder toBuilder() =>
@@ -479,8 +506,8 @@ class MeshChannelCommonConfigBuilder
   MeshChannelCommonConfigAirtimeCustomBuilder get airtimeCustom =>
       _$this._airtimeCustom ??= MeshChannelCommonConfigAirtimeCustomBuilder();
   set airtimeCustom(
-          MeshChannelCommonConfigAirtimeCustomBuilder? airtimeCustom) =>
-      _$this._airtimeCustom = airtimeCustom;
+    MeshChannelCommonConfigAirtimeCustomBuilder? airtimeCustom,
+  ) => _$this._airtimeCustom = airtimeCustom;
 
   num? _dutyCyclePercent;
   num? get dutyCyclePercent => _$this._dutyCyclePercent;
@@ -513,14 +540,14 @@ class MeshChannelCommonConfigBuilder
       _$this._reportsEnabled = reportsEnabled;
 
   MapBuilder<String, MeshChannelCommonConfigAllowedSendersEnum>?
-      _allowedSenders;
+  _allowedSenders;
   MapBuilder<String, MeshChannelCommonConfigAllowedSendersEnum>
-      get allowedSenders => _$this._allowedSenders ??=
-          MapBuilder<String, MeshChannelCommonConfigAllowedSendersEnum>();
+  get allowedSenders => _$this._allowedSenders ??=
+      MapBuilder<String, MeshChannelCommonConfigAllowedSendersEnum>();
   set allowedSenders(
-          MapBuilder<String, MeshChannelCommonConfigAllowedSendersEnum>?
-              allowedSenders) =>
-      _$this._allowedSenders = allowedSenders;
+    MapBuilder<String, MeshChannelCommonConfigAllowedSendersEnum>?
+    allowedSenders,
+  ) => _$this._allowedSenders = allowedSenders;
 
   bool? _compactEvents;
   bool? get compactEvents => _$this._compactEvents;
@@ -566,10 +593,14 @@ class MeshChannelCommonConfigBuilder
   _$MeshChannelCommonConfig _build() {
     _$MeshChannelCommonConfig _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MeshChannelCommonConfig._(
             region: BuiltValueNullFieldError.checkNotNull(
-                region, r'MeshChannelCommonConfig', 'region'),
+              region,
+              r'MeshChannelCommonConfig',
+              'region',
+            ),
             airtimePreset: airtimePreset,
             airtimeCustom: _airtimeCustom?.build(),
             dutyCyclePercent: dutyCyclePercent,
@@ -591,7 +622,10 @@ class MeshChannelCommonConfigBuilder
         _allowedSenders?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MeshChannelCommonConfig', _$failedField, e.toString());
+          r'MeshChannelCommonConfig',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

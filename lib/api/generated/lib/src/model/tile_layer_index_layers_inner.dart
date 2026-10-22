@@ -42,9 +42,9 @@ abstract class TileLayerIndexLayersInner
 
   TileLayerIndexLayersInner._();
 
-  factory TileLayerIndexLayersInner(
-          [void updates(TileLayerIndexLayersInnerBuilder b)]) =
-      _$TileLayerIndexLayersInner;
+  factory TileLayerIndexLayersInner([
+    void updates(TileLayerIndexLayersInnerBuilder b),
+  ]) = _$TileLayerIndexLayersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TileLayerIndexLayersInnerBuilder b) => b;
@@ -59,7 +59,7 @@ class _$TileLayerIndexLayersInnerSerializer
   @override
   final Iterable<Type> types = const [
     TileLayerIndexLayersInner,
-    _$TileLayerIndexLayersInner
+    _$TileLayerIndexLayersInner,
   ];
 
   @override
@@ -105,9 +105,11 @@ class _$TileLayerIndexLayersInnerSerializer
     TileLayerIndexLayersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,38 +125,50 @@ class _$TileLayerIndexLayersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TileLayerIndexLayersInnerTypeEnum),
-          ) as TileLayerIndexLayersInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      TileLayerIndexLayersInnerTypeEnum,
+                    ),
+                  )
+                  as TileLayerIndexLayersInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'tilejson':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tilejson = valueDes;
           break;
         case r'aggBelowZoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.aggBelowZoom = valueDes;
           break;

@@ -137,8 +137,10 @@ class _$ForecastScoreSerializer implements PrimitiveSerializer<ForecastScore> {
       yield r'pinball';
       yield serializers.serialize(
         object.pinball,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType(num)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType(num),
+        ]),
       );
     }
     if (object.intervalHits != null) {
@@ -185,9 +187,11 @@ class _$ForecastScoreSerializer implements PrimitiveSerializer<ForecastScore> {
     ForecastScore object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -203,103 +207,130 @@ class _$ForecastScoreSerializer implements PrimitiveSerializer<ForecastScore> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.questionId = valueDes;
           break;
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'brier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.brier = valueDes;
           break;
         case r'logScore':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.logScore = valueDes;
           break;
         case r'rps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.rps = valueDes;
           break;
         case r'crps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.crps = valueDes;
           break;
         case r'pinball':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>?;
           if (valueDes == null) continue;
           result.pinball.replace(valueDes);
           break;
         case r'intervalHits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ForecastScoreIntervalHits),
-          ) as ForecastScoreIntervalHits?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ForecastScoreIntervalHits,
+                    ),
+                  )
+                  as ForecastScoreIntervalHits?;
           if (valueDes == null) continue;
           result.intervalHits.replace(valueDes);
           break;
         case r'timeAveragedBrier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.timeAveragedBrier = valueDes;
           break;
         case r'nDays':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nDays = valueDes;
           break;
         case r'finalProbability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.finalProbability = valueDes;
           break;
         case r'scorerVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.scorerVersion = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         default:

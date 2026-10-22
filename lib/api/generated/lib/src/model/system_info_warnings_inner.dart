@@ -31,9 +31,9 @@ abstract class SystemInfoWarningsInner
 
   SystemInfoWarningsInner._();
 
-  factory SystemInfoWarningsInner(
-          [void updates(SystemInfoWarningsInnerBuilder b)]) =
-      _$SystemInfoWarningsInner;
+  factory SystemInfoWarningsInner([
+    void updates(SystemInfoWarningsInnerBuilder b),
+  ]) = _$SystemInfoWarningsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemInfoWarningsInnerBuilder b) => b;
@@ -48,7 +48,7 @@ class _$SystemInfoWarningsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SystemInfoWarningsInner,
-    _$SystemInfoWarningsInner
+    _$SystemInfoWarningsInner,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$SystemInfoWarningsInnerSerializer
     SystemInfoWarningsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +104,33 @@ class _$SystemInfoWarningsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SystemInfoWarningsInnerSeverityEnum),
-          ) as SystemInfoWarningsInnerSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoWarningsInnerSeverityEnum,
+                    ),
+                  )
+                  as SystemInfoWarningsInnerSeverityEnum?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.message = valueDes;
           break;
         default:

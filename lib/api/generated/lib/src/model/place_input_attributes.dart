@@ -37,7 +37,7 @@ class _$PlaceInputAttributesSerializer
   @override
   final Iterable<Type> types = const [
     PlaceInputAttributes,
-    _$PlaceInputAttributes
+    _$PlaceInputAttributes,
   ];
 
   @override
@@ -63,9 +63,11 @@ class _$PlaceInputAttributesSerializer
     PlaceInputAttributes object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +83,12 @@ class _$PlaceInputAttributesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'zip':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.zip = valueDes;
           break;

@@ -20,7 +20,8 @@ const MeshcoreChannelConfigRegionEnum _$meshcoreChannelConfigRegionEnum_OTHER =
     const MeshcoreChannelConfigRegionEnum._('OTHER');
 
 MeshcoreChannelConfigRegionEnum _$meshcoreChannelConfigRegionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'EU_868':
       return _$meshcoreChannelConfigRegionEnum_EU_868;
@@ -40,28 +41,30 @@ MeshcoreChannelConfigRegionEnum _$meshcoreChannelConfigRegionEnumValueOf(
 }
 
 final BuiltSet<MeshcoreChannelConfigRegionEnum>
-    _$meshcoreChannelConfigRegionEnumValues = BuiltSet<
-        MeshcoreChannelConfigRegionEnum>(const <MeshcoreChannelConfigRegionEnum>[
-  _$meshcoreChannelConfigRegionEnum_EU_868,
-  _$meshcoreChannelConfigRegionEnum_EU_433,
-  _$meshcoreChannelConfigRegionEnum_UK_868,
-  _$meshcoreChannelConfigRegionEnum_US,
-  _$meshcoreChannelConfigRegionEnum_ANZ,
-  _$meshcoreChannelConfigRegionEnum_OTHER,
-]);
+_$meshcoreChannelConfigRegionEnumValues =
+    BuiltSet<MeshcoreChannelConfigRegionEnum>(
+      const <MeshcoreChannelConfigRegionEnum>[
+        _$meshcoreChannelConfigRegionEnum_EU_868,
+        _$meshcoreChannelConfigRegionEnum_EU_433,
+        _$meshcoreChannelConfigRegionEnum_UK_868,
+        _$meshcoreChannelConfigRegionEnum_US,
+        _$meshcoreChannelConfigRegionEnum_ANZ,
+        _$meshcoreChannelConfigRegionEnum_OTHER,
+      ],
+    );
 
 const MeshcoreChannelConfigAirtimePresetEnum
-    _$meshcoreChannelConfigAirtimePresetEnum_meshtasticLongfast =
+_$meshcoreChannelConfigAirtimePresetEnum_meshtasticLongfast =
     const MeshcoreChannelConfigAirtimePresetEnum._('meshtasticLongfast');
 const MeshcoreChannelConfigAirtimePresetEnum
-    _$meshcoreChannelConfigAirtimePresetEnum_meshtasticMediumfast =
+_$meshcoreChannelConfigAirtimePresetEnum_meshtasticMediumfast =
     const MeshcoreChannelConfigAirtimePresetEnum._('meshtasticMediumfast');
 const MeshcoreChannelConfigAirtimePresetEnum
-    _$meshcoreChannelConfigAirtimePresetEnum_custom =
+_$meshcoreChannelConfigAirtimePresetEnum_custom =
     const MeshcoreChannelConfigAirtimePresetEnum._('custom');
 
 MeshcoreChannelConfigAirtimePresetEnum
-    _$meshcoreChannelConfigAirtimePresetEnumValueOf(String name) {
+_$meshcoreChannelConfigAirtimePresetEnumValueOf(String name) {
   switch (name) {
     case 'meshtasticLongfast':
       return _$meshcoreChannelConfigAirtimePresetEnum_meshtasticLongfast;
@@ -75,12 +78,14 @@ MeshcoreChannelConfigAirtimePresetEnum
 }
 
 final BuiltSet<MeshcoreChannelConfigAirtimePresetEnum>
-    _$meshcoreChannelConfigAirtimePresetEnumValues = BuiltSet<
-        MeshcoreChannelConfigAirtimePresetEnum>(const <MeshcoreChannelConfigAirtimePresetEnum>[
-  _$meshcoreChannelConfigAirtimePresetEnum_meshtasticLongfast,
-  _$meshcoreChannelConfigAirtimePresetEnum_meshtasticMediumfast,
-  _$meshcoreChannelConfigAirtimePresetEnum_custom,
-]);
+_$meshcoreChannelConfigAirtimePresetEnumValues =
+    BuiltSet<MeshcoreChannelConfigAirtimePresetEnum>(
+      const <MeshcoreChannelConfigAirtimePresetEnum>[
+        _$meshcoreChannelConfigAirtimePresetEnum_meshtasticLongfast,
+        _$meshcoreChannelConfigAirtimePresetEnum_meshtasticMediumfast,
+        _$meshcoreChannelConfigAirtimePresetEnum_custom,
+      ],
+    );
 
 const MeshcoreChannelConfigProfileEnum _$meshcoreChannelConfigProfileEnum_text =
     const MeshcoreChannelConfigProfileEnum._('text');
@@ -88,7 +93,8 @@ const MeshcoreChannelConfigProfileEnum _$meshcoreChannelConfigProfileEnum_cbor =
     const MeshcoreChannelConfigProfileEnum._('cbor');
 
 MeshcoreChannelConfigProfileEnum _$meshcoreChannelConfigProfileEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'text':
       return _$meshcoreChannelConfigProfileEnum_text;
@@ -100,24 +106,26 @@ MeshcoreChannelConfigProfileEnum _$meshcoreChannelConfigProfileEnumValueOf(
 }
 
 final BuiltSet<MeshcoreChannelConfigProfileEnum>
-    _$meshcoreChannelConfigProfileEnumValues = BuiltSet<
-        MeshcoreChannelConfigProfileEnum>(const <MeshcoreChannelConfigProfileEnum>[
-  _$meshcoreChannelConfigProfileEnum_text,
-  _$meshcoreChannelConfigProfileEnum_cbor,
-]);
+_$meshcoreChannelConfigProfileEnumValues =
+    BuiltSet<MeshcoreChannelConfigProfileEnum>(
+      const <MeshcoreChannelConfigProfileEnum>[
+        _$meshcoreChannelConfigProfileEnum_text,
+        _$meshcoreChannelConfigProfileEnum_cbor,
+      ],
+    );
 
 const MeshcoreChannelConfigMinSeverityEnum
-    _$meshcoreChannelConfigMinSeverityEnum_info =
+_$meshcoreChannelConfigMinSeverityEnum_info =
     const MeshcoreChannelConfigMinSeverityEnum._('info');
 const MeshcoreChannelConfigMinSeverityEnum
-    _$meshcoreChannelConfigMinSeverityEnum_warning =
+_$meshcoreChannelConfigMinSeverityEnum_warning =
     const MeshcoreChannelConfigMinSeverityEnum._('warning');
 const MeshcoreChannelConfigMinSeverityEnum
-    _$meshcoreChannelConfigMinSeverityEnum_critical =
+_$meshcoreChannelConfigMinSeverityEnum_critical =
     const MeshcoreChannelConfigMinSeverityEnum._('critical');
 
 MeshcoreChannelConfigMinSeverityEnum
-    _$meshcoreChannelConfigMinSeverityEnumValueOf(String name) {
+_$meshcoreChannelConfigMinSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$meshcoreChannelConfigMinSeverityEnum_info;
@@ -131,22 +139,24 @@ MeshcoreChannelConfigMinSeverityEnum
 }
 
 final BuiltSet<MeshcoreChannelConfigMinSeverityEnum>
-    _$meshcoreChannelConfigMinSeverityEnumValues = BuiltSet<
-        MeshcoreChannelConfigMinSeverityEnum>(const <MeshcoreChannelConfigMinSeverityEnum>[
-  _$meshcoreChannelConfigMinSeverityEnum_info,
-  _$meshcoreChannelConfigMinSeverityEnum_warning,
-  _$meshcoreChannelConfigMinSeverityEnum_critical,
-]);
+_$meshcoreChannelConfigMinSeverityEnumValues =
+    BuiltSet<MeshcoreChannelConfigMinSeverityEnum>(
+      const <MeshcoreChannelConfigMinSeverityEnum>[
+        _$meshcoreChannelConfigMinSeverityEnum_info,
+        _$meshcoreChannelConfigMinSeverityEnum_warning,
+        _$meshcoreChannelConfigMinSeverityEnum_critical,
+      ],
+    );
 
 const MeshcoreChannelConfigAllowedSendersEnum
-    _$meshcoreChannelConfigAllowedSendersEnum_report =
+_$meshcoreChannelConfigAllowedSendersEnum_report =
     const MeshcoreChannelConfigAllowedSendersEnum._('report');
 const MeshcoreChannelConfigAllowedSendersEnum
-    _$meshcoreChannelConfigAllowedSendersEnum_ack =
+_$meshcoreChannelConfigAllowedSendersEnum_ack =
     const MeshcoreChannelConfigAllowedSendersEnum._('ack');
 
 MeshcoreChannelConfigAllowedSendersEnum
-    _$meshcoreChannelConfigAllowedSendersEnumValueOf(String name) {
+_$meshcoreChannelConfigAllowedSendersEnumValueOf(String name) {
   switch (name) {
     case 'report':
       return _$meshcoreChannelConfigAllowedSendersEnum_report;
@@ -158,26 +168,28 @@ MeshcoreChannelConfigAllowedSendersEnum
 }
 
 final BuiltSet<MeshcoreChannelConfigAllowedSendersEnum>
-    _$meshcoreChannelConfigAllowedSendersEnumValues = BuiltSet<
-        MeshcoreChannelConfigAllowedSendersEnum>(const <MeshcoreChannelConfigAllowedSendersEnum>[
-  _$meshcoreChannelConfigAllowedSendersEnum_report,
-  _$meshcoreChannelConfigAllowedSendersEnum_ack,
-]);
+_$meshcoreChannelConfigAllowedSendersEnumValues =
+    BuiltSet<MeshcoreChannelConfigAllowedSendersEnum>(
+      const <MeshcoreChannelConfigAllowedSendersEnum>[
+        _$meshcoreChannelConfigAllowedSendersEnum_report,
+        _$meshcoreChannelConfigAllowedSendersEnum_ack,
+      ],
+    );
 
 Serializer<MeshcoreChannelConfigRegionEnum>
-    _$meshcoreChannelConfigRegionEnumSerializer =
+_$meshcoreChannelConfigRegionEnumSerializer =
     _$MeshcoreChannelConfigRegionEnumSerializer();
 Serializer<MeshcoreChannelConfigAirtimePresetEnum>
-    _$meshcoreChannelConfigAirtimePresetEnumSerializer =
+_$meshcoreChannelConfigAirtimePresetEnumSerializer =
     _$MeshcoreChannelConfigAirtimePresetEnumSerializer();
 Serializer<MeshcoreChannelConfigProfileEnum>
-    _$meshcoreChannelConfigProfileEnumSerializer =
+_$meshcoreChannelConfigProfileEnumSerializer =
     _$MeshcoreChannelConfigProfileEnumSerializer();
 Serializer<MeshcoreChannelConfigMinSeverityEnum>
-    _$meshcoreChannelConfigMinSeverityEnumSerializer =
+_$meshcoreChannelConfigMinSeverityEnumSerializer =
     _$MeshcoreChannelConfigMinSeverityEnumSerializer();
 Serializer<MeshcoreChannelConfigAllowedSendersEnum>
-    _$meshcoreChannelConfigAllowedSendersEnumSerializer =
+_$meshcoreChannelConfigAllowedSendersEnumSerializer =
     _$MeshcoreChannelConfigAllowedSendersEnumSerializer();
 
 class _$MeshcoreChannelConfigRegionEnumSerializer
@@ -206,16 +218,19 @@ class _$MeshcoreChannelConfigRegionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MeshcoreChannelConfigRegionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MeshcoreChannelConfigRegionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshcoreChannelConfigRegionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshcoreChannelConfigRegionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshcoreChannelConfigRegionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshcoreChannelConfigAirtimePresetEnumSerializer
@@ -233,23 +248,26 @@ class _$MeshcoreChannelConfigAirtimePresetEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshcoreChannelConfigAirtimePresetEnum
+    MeshcoreChannelConfigAirtimePresetEnum,
   ];
   @override
   final String wireName = 'MeshcoreChannelConfigAirtimePresetEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshcoreChannelConfigAirtimePresetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshcoreChannelConfigAirtimePresetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshcoreChannelConfigAirtimePresetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshcoreChannelConfigAirtimePresetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshcoreChannelConfigAirtimePresetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshcoreChannelConfigProfileEnumSerializer
@@ -270,16 +288,19 @@ class _$MeshcoreChannelConfigProfileEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MeshcoreChannelConfigProfileEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MeshcoreChannelConfigProfileEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshcoreChannelConfigProfileEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshcoreChannelConfigProfileEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshcoreChannelConfigProfileEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshcoreChannelConfigMinSeverityEnumSerializer
@@ -297,23 +318,26 @@ class _$MeshcoreChannelConfigMinSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshcoreChannelConfigMinSeverityEnum
+    MeshcoreChannelConfigMinSeverityEnum,
   ];
   @override
   final String wireName = 'MeshcoreChannelConfigMinSeverityEnum';
 
   @override
   Object serialize(
-          Serializers serializers, MeshcoreChannelConfigMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MeshcoreChannelConfigMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshcoreChannelConfigMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshcoreChannelConfigMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshcoreChannelConfigMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshcoreChannelConfigAllowedSendersEnumSerializer
@@ -329,23 +353,26 @@ class _$MeshcoreChannelConfigAllowedSendersEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshcoreChannelConfigAllowedSendersEnum
+    MeshcoreChannelConfigAllowedSendersEnum,
   ];
   @override
   final String wireName = 'MeshcoreChannelConfigAllowedSendersEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshcoreChannelConfigAllowedSendersEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshcoreChannelConfigAllowedSendersEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshcoreChannelConfigAllowedSendersEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshcoreChannelConfigAllowedSendersEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshcoreChannelConfigAllowedSendersEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshcoreChannelConfig extends MeshcoreChannelConfig {
@@ -369,7 +396,7 @@ class _$MeshcoreChannelConfig extends MeshcoreChannelConfig {
   final bool? reportsEnabled;
   @override
   final BuiltMap<String, MeshcoreChannelConfigAllowedSendersEnum>?
-      allowedSenders;
+  allowedSenders;
   @override
   final bool? compactEvents;
   @override
@@ -383,32 +410,32 @@ class _$MeshcoreChannelConfig extends MeshcoreChannelConfig {
   @override
   final int? dataType;
 
-  factory _$MeshcoreChannelConfig(
-          [void Function(MeshcoreChannelConfigBuilder)? updates]) =>
-      (MeshcoreChannelConfigBuilder()..update(updates))._build();
+  factory _$MeshcoreChannelConfig([
+    void Function(MeshcoreChannelConfigBuilder)? updates,
+  ]) => (MeshcoreChannelConfigBuilder()..update(updates))._build();
 
-  _$MeshcoreChannelConfig._(
-      {required this.region,
-      this.airtimePreset,
-      this.airtimeCustom,
-      this.dutyCyclePercent,
-      this.minSpacing,
-      this.maxMessagesPerHour,
-      this.profile,
-      this.minSeverity,
-      this.reportsEnabled,
-      this.allowedSenders,
-      this.compactEvents,
-      required this.companionUrl,
-      required this.channelIndex,
-      this.dmContactPrefix,
-      this.requireAck,
-      this.dataType})
-      : super._();
+  _$MeshcoreChannelConfig._({
+    required this.region,
+    this.airtimePreset,
+    this.airtimeCustom,
+    this.dutyCyclePercent,
+    this.minSpacing,
+    this.maxMessagesPerHour,
+    this.profile,
+    this.minSeverity,
+    this.reportsEnabled,
+    this.allowedSenders,
+    this.compactEvents,
+    required this.companionUrl,
+    required this.channelIndex,
+    this.dmContactPrefix,
+    this.requireAck,
+    this.dataType,
+  }) : super._();
   @override
   MeshcoreChannelConfig rebuild(
-          void Function(MeshcoreChannelConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MeshcoreChannelConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MeshcoreChannelConfigBuilder toBuilder() =>
@@ -501,8 +528,8 @@ class MeshcoreChannelConfigBuilder
   MeshChannelCommonConfigAirtimeCustomBuilder get airtimeCustom =>
       _$this._airtimeCustom ??= MeshChannelCommonConfigAirtimeCustomBuilder();
   set airtimeCustom(
-          MeshChannelCommonConfigAirtimeCustomBuilder? airtimeCustom) =>
-      _$this._airtimeCustom = airtimeCustom;
+    MeshChannelCommonConfigAirtimeCustomBuilder? airtimeCustom,
+  ) => _$this._airtimeCustom = airtimeCustom;
 
   num? _dutyCyclePercent;
   num? get dutyCyclePercent => _$this._dutyCyclePercent;
@@ -535,12 +562,11 @@ class MeshcoreChannelConfigBuilder
 
   MapBuilder<String, MeshcoreChannelConfigAllowedSendersEnum>? _allowedSenders;
   MapBuilder<String, MeshcoreChannelConfigAllowedSendersEnum>
-      get allowedSenders => _$this._allowedSenders ??=
-          MapBuilder<String, MeshcoreChannelConfigAllowedSendersEnum>();
+  get allowedSenders => _$this._allowedSenders ??=
+      MapBuilder<String, MeshcoreChannelConfigAllowedSendersEnum>();
   set allowedSenders(
-          MapBuilder<String, MeshcoreChannelConfigAllowedSendersEnum>?
-              allowedSenders) =>
-      _$this._allowedSenders = allowedSenders;
+    MapBuilder<String, MeshcoreChannelConfigAllowedSendersEnum>? allowedSenders,
+  ) => _$this._allowedSenders = allowedSenders;
 
   bool? _compactEvents;
   bool? get compactEvents => _$this._compactEvents;
@@ -612,10 +638,14 @@ class MeshcoreChannelConfigBuilder
   _$MeshcoreChannelConfig _build() {
     _$MeshcoreChannelConfig _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MeshcoreChannelConfig._(
             region: BuiltValueNullFieldError.checkNotNull(
-                region, r'MeshcoreChannelConfig', 'region'),
+              region,
+              r'MeshcoreChannelConfig',
+              'region',
+            ),
             airtimePreset: airtimePreset,
             airtimeCustom: _airtimeCustom?.build(),
             dutyCyclePercent: dutyCyclePercent,
@@ -627,9 +657,15 @@ class MeshcoreChannelConfigBuilder
             allowedSenders: _allowedSenders?.build(),
             compactEvents: compactEvents,
             companionUrl: BuiltValueNullFieldError.checkNotNull(
-                companionUrl, r'MeshcoreChannelConfig', 'companionUrl'),
+              companionUrl,
+              r'MeshcoreChannelConfig',
+              'companionUrl',
+            ),
             channelIndex: BuiltValueNullFieldError.checkNotNull(
-                channelIndex, r'MeshcoreChannelConfig', 'channelIndex'),
+              channelIndex,
+              r'MeshcoreChannelConfig',
+              'channelIndex',
+            ),
             dmContactPrefix: dmContactPrefix,
             requireAck: requireAck,
             dataType: dataType,
@@ -644,7 +680,10 @@ class MeshcoreChannelConfigBuilder
         _allowedSenders?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MeshcoreChannelConfig', _$failedField, e.toString());
+          r'MeshcoreChannelConfig',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -92,11 +92,9 @@ class PrecursorPageBuilder
   _$PrecursorPage _build() {
     _$PrecursorPage _$result;
     try {
-      _$result = _$v ??
-          _$PrecursorPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$PrecursorPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class PrecursorPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorPage', _$failedField, e.toString());
+          r'PrecursorPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

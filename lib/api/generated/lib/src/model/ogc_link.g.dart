@@ -21,13 +21,13 @@ class _$OgcLink extends OgcLink {
   factory _$OgcLink([void Function(OgcLinkBuilder)? updates]) =>
       (OgcLinkBuilder()..update(updates))._build();
 
-  _$OgcLink._(
-      {required this.href,
-      required this.rel,
-      this.type,
-      this.title,
-      this.templated})
-      : super._();
+  _$OgcLink._({
+    required this.href,
+    required this.rel,
+    this.type,
+    this.title,
+    this.templated,
+  }) : super._();
   @override
   OgcLink rebuild(void Function(OgcLinkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -124,7 +124,8 @@ class OgcLinkBuilder implements Builder<OgcLink, OgcLinkBuilder> {
   OgcLink build() => _build();
 
   _$OgcLink _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OgcLink._(
           href: BuiltValueNullFieldError.checkNotNull(href, r'OgcLink', 'href'),
           rel: BuiltValueNullFieldError.checkNotNull(rel, r'OgcLink', 'rel'),

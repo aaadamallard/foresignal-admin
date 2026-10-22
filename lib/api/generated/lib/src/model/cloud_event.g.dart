@@ -20,8 +20,8 @@ CloudEventSpecversionEnum _$cloudEventSpecversionEnumValueOf(String name) {
 
 final BuiltSet<CloudEventSpecversionEnum> _$cloudEventSpecversionEnumValues =
     BuiltSet<CloudEventSpecversionEnum>(const <CloudEventSpecversionEnum>[
-  _$cloudEventSpecversionEnum_n1period0,
-]);
+      _$cloudEventSpecversionEnum_n1period0,
+    ]);
 
 Serializer<CloudEventSpecversionEnum> _$cloudEventSpecversionEnumSerializer =
     _$CloudEventSpecversionEnumSerializer();
@@ -41,16 +41,20 @@ class _$CloudEventSpecversionEnumSerializer
   final String wireName = 'CloudEventSpecversionEnum';
 
   @override
-  Object serialize(Serializers serializers, CloudEventSpecversionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CloudEventSpecversionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CloudEventSpecversionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CloudEventSpecversionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CloudEventSpecversionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CloudEvent extends CloudEvent {
@@ -76,17 +80,17 @@ class _$CloudEvent extends CloudEvent {
   factory _$CloudEvent([void Function(CloudEventBuilder)? updates]) =>
       (CloudEventBuilder()..update(updates))._build();
 
-  _$CloudEvent._(
-      {required this.specversion,
-      required this.id,
-      required this.source_,
-      required this.type,
-      this.subject,
-      this.time,
-      this.datacontenttype,
-      this.dataschema,
-      this.data})
-      : super._();
+  _$CloudEvent._({
+    required this.specversion,
+    required this.id,
+    required this.source_,
+    required this.type,
+    this.subject,
+    this.time,
+    this.datacontenttype,
+    this.dataschema,
+    this.data,
+  }) : super._();
   @override
   CloudEvent rebuild(void Function(CloudEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -217,15 +221,25 @@ class CloudEventBuilder implements Builder<CloudEvent, CloudEventBuilder> {
   CloudEvent build() => _build();
 
   _$CloudEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CloudEvent._(
           specversion: BuiltValueNullFieldError.checkNotNull(
-              specversion, r'CloudEvent', 'specversion'),
+            specversion,
+            r'CloudEvent',
+            'specversion',
+          ),
           id: BuiltValueNullFieldError.checkNotNull(id, r'CloudEvent', 'id'),
           source_: BuiltValueNullFieldError.checkNotNull(
-              source_, r'CloudEvent', 'source_'),
+            source_,
+            r'CloudEvent',
+            'source_',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'CloudEvent', 'type'),
+            type,
+            r'CloudEvent',
+            'type',
+          ),
           subject: subject,
           time: time,
           datacontenttype: datacontenttype,

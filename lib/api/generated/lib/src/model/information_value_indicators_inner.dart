@@ -25,8 +25,10 @@ part 'information_value_indicators_inner.g.dart';
 @BuiltValue()
 abstract class InformationValueIndicatorsInner
     implements
-        Built<InformationValueIndicatorsInner,
-            InformationValueIndicatorsInnerBuilder> {
+        Built<
+          InformationValueIndicatorsInner,
+          InformationValueIndicatorsInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'indicatorId')
   String get indicatorId;
@@ -62,9 +64,9 @@ abstract class InformationValueIndicatorsInner
 
   InformationValueIndicatorsInner._();
 
-  factory InformationValueIndicatorsInner(
-          [void updates(InformationValueIndicatorsInnerBuilder b)]) =
-      _$InformationValueIndicatorsInner;
+  factory InformationValueIndicatorsInner([
+    void updates(InformationValueIndicatorsInnerBuilder b),
+  ]) = _$InformationValueIndicatorsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InformationValueIndicatorsInnerBuilder b) => b;
@@ -79,7 +81,7 @@ class _$InformationValueIndicatorsInnerSerializer
   @override
   final Iterable<Type> types = const [
     InformationValueIndicatorsInner,
-    _$InformationValueIndicatorsInner
+    _$InformationValueIndicatorsInner,
   ];
 
   @override
@@ -122,10 +124,7 @@ class _$InformationValueIndicatorsInnerSerializer
       specifiedType: const FullType(int),
     );
     yield r'eig';
-    yield serializers.serialize(
-      object.eig,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.eig, specifiedType: const FullType(num));
     yield r'potentialEig';
     yield serializers.serialize(
       object.potentialEig,
@@ -160,9 +159,11 @@ class _$InformationValueIndicatorsInnerSerializer
     InformationValueIndicatorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -178,79 +179,91 @@ class _$InformationValueIndicatorsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'indicatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.indicatorId = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.signalFamily = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                InformationValueIndicatorsInnerStateEnum),
-          ) as InformationValueIndicatorsInnerStateEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      InformationValueIndicatorsInnerStateEnum,
+                    ),
+                  )
+                  as InformationValueIndicatorsInnerStateEnum?;
           if (valueDes == null) continue;
           result.state = valueDes;
           break;
         case r'rank':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rank = valueDes;
           break;
         case r'eig':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.eig = valueDes;
           break;
         case r'potentialEig':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.potentialEig = valueDes;
           break;
         case r'pDetect':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pDetect = valueDes;
           break;
         case r'pObserved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pObserved = valueDes;
           break;
         case r'collectionGap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.collectionGap = valueDes;
           break;

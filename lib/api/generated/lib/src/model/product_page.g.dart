@@ -90,11 +90,8 @@ class ProductPageBuilder implements Builder<ProductPage, ProductPageBuilder> {
   _$ProductPage _build() {
     _$ProductPage _$result;
     try {
-      _$result = _$v ??
-          _$ProductPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$ProductPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class ProductPageBuilder implements Builder<ProductPage, ProductPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductPage', _$failedField, e.toString());
+          r'ProductPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

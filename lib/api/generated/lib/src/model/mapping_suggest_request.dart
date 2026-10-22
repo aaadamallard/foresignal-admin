@@ -31,8 +31,9 @@ abstract class MappingSuggestRequest
 
   MappingSuggestRequest._();
 
-  factory MappingSuggestRequest(
-      [void updates(MappingSuggestRequestBuilder b)]) = _$MappingSuggestRequest;
+  factory MappingSuggestRequest([
+    void updates(MappingSuggestRequestBuilder b),
+  ]) = _$MappingSuggestRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MappingSuggestRequestBuilder b) => b;
@@ -47,7 +48,7 @@ class _$MappingSuggestRequestSerializer
   @override
   final Iterable<Type> types = const [
     MappingSuggestRequest,
-    _$MappingSuggestRequest
+    _$MappingSuggestRequest,
   ];
 
   @override
@@ -85,9 +86,11 @@ class _$MappingSuggestRequestSerializer
     MappingSuggestRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,25 +106,33 @@ class _$MappingSuggestRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sample':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MappingSample),
-          ) as MappingSample;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MappingSample),
+                  )
+                  as MappingSample;
           result.sample.replace(valueDes);
           break;
         case r'hints':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(MappingSuggestRequestHints),
-          ) as MappingSuggestRequestHints?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MappingSuggestRequestHints,
+                    ),
+                  )
+                  as MappingSuggestRequestHints?;
           if (valueDes == null) continue;
           result.hints.replace(valueDes);
           break;
         case r'confirmEgress':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.confirmEgress = valueDes;
           break;

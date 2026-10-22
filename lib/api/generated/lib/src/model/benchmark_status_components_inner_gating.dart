@@ -18,16 +18,18 @@ part 'benchmark_status_components_inner_gating.g.dart';
 @BuiltValue()
 abstract class BenchmarkStatusComponentsInnerGating
     implements
-        Built<BenchmarkStatusComponentsInnerGating,
-            BenchmarkStatusComponentsInnerGatingBuilder> {
+        Built<
+          BenchmarkStatusComponentsInnerGating,
+          BenchmarkStatusComponentsInnerGatingBuilder
+        > {
   @BuiltValueField(wireName: r'proposerAutoExecution')
   BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum?
-      get proposerAutoExecution;
+  get proposerAutoExecution;
   // enum proposerAutoExecutionEnum {  allowed,  degraded,  };
 
   @BuiltValueField(wireName: r'llmEnsembleWeight')
   BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum?
-      get llmEnsembleWeight;
+  get llmEnsembleWeight;
   // enum llmEnsembleWeightEnum {  allowed,  degraded,  };
 
   /// `BENCHMARK_FAIL` while failing
@@ -36,9 +38,9 @@ abstract class BenchmarkStatusComponentsInnerGating
 
   BenchmarkStatusComponentsInnerGating._();
 
-  factory BenchmarkStatusComponentsInnerGating(
-          [void updates(BenchmarkStatusComponentsInnerGatingBuilder b)]) =
-      _$BenchmarkStatusComponentsInnerGating;
+  factory BenchmarkStatusComponentsInnerGating([
+    void updates(BenchmarkStatusComponentsInnerGatingBuilder b),
+  ]) = _$BenchmarkStatusComponentsInnerGating;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkStatusComponentsInnerGatingBuilder b) => b;
@@ -53,7 +55,7 @@ class _$BenchmarkStatusComponentsInnerGatingSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkStatusComponentsInnerGating,
-    _$BenchmarkStatusComponentsInnerGating
+    _$BenchmarkStatusComponentsInnerGating,
   ];
 
   @override
@@ -69,7 +71,8 @@ class _$BenchmarkStatusComponentsInnerGatingSerializer
       yield serializers.serialize(
         object.proposerAutoExecution,
         specifiedType: const FullType(
-            BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum),
+          BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum,
+        ),
       );
     }
     if (object.llmEnsembleWeight != null) {
@@ -77,7 +80,8 @@ class _$BenchmarkStatusComponentsInnerGatingSerializer
       yield serializers.serialize(
         object.llmEnsembleWeight,
         specifiedType: const FullType(
-            BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum),
+          BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum,
+        ),
       );
     }
     if (object.findingCaveat != null) {
@@ -95,9 +99,11 @@ class _$BenchmarkStatusComponentsInnerGatingSerializer
     BenchmarkStatusComponentsInnerGating object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,28 +119,36 @@ class _$BenchmarkStatusComponentsInnerGatingSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'proposerAutoExecution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum),
-          ) as BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum,
+                    ),
+                  )
+                  as BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum?;
           if (valueDes == null) continue;
           result.proposerAutoExecution = valueDes;
           break;
         case r'llmEnsembleWeight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum),
-          ) as BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum,
+                    ),
+                  )
+                  as BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum?;
           if (valueDes == null) continue;
           result.llmEnsembleWeight = valueDes;
           break;
         case r'findingCaveat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.findingCaveat = valueDes;
           break;
@@ -171,53 +185,54 @@ class BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
     extends EnumClass {
   @BuiltValueEnumConst(wireName: r'allowed')
   static const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
-      allowed =
+  allowed =
       _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_allowed;
   @BuiltValueEnumConst(wireName: r'degraded')
   static const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
-      degraded =
+  degraded =
       _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_degraded;
 
   static Serializer<
-          BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum>
-      get serializer =>
-          _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumSerializer;
+    BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
+  >
+  get serializer =>
+      _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumSerializer;
 
   const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum._(
-      String name)
-      : super(name);
+    String name,
+  ) : super(name);
 
   static BuiltSet<BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum>
-      get values =>
-          _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumValues;
+  get values =>
+      _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumValues;
   static BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum valueOf(
-          String name) =>
-      _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumValueOf(
-          name);
+    String name,
+  ) => _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumValueOf(
+    name,
+  );
 }
 
 class BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
     extends EnumClass {
   @BuiltValueEnumConst(wireName: r'allowed')
   static const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
-      allowed =
-      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_allowed;
+  allowed = _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_allowed;
   @BuiltValueEnumConst(wireName: r'degraded')
   static const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
-      degraded =
+  degraded =
       _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_degraded;
 
   static Serializer<BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum>
-      get serializer =>
-          _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumSerializer;
+  get serializer =>
+      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumSerializer;
 
   const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum>
-      get values =>
-          _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumValues;
+  get values =>
+      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumValues;
   static BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum valueOf(
-          String name) =>
-      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumValueOf(name);
+    String name,
+  ) => _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumValueOf(name);
 }

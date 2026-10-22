@@ -91,11 +91,8 @@ class CycleRunPageBuilder
   _$CycleRunPage _build() {
     _$CycleRunPage _$result;
     try {
-      _$result = _$v ??
-          _$CycleRunPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$CycleRunPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class CycleRunPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CycleRunPage', _$failedField, e.toString());
+          r'CycleRunPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

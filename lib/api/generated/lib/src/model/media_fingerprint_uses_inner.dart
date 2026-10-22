@@ -31,9 +31,9 @@ abstract class MediaFingerprintUsesInner
 
   MediaFingerprintUsesInner._();
 
-  factory MediaFingerprintUsesInner(
-          [void updates(MediaFingerprintUsesInnerBuilder b)]) =
-      _$MediaFingerprintUsesInner;
+  factory MediaFingerprintUsesInner([
+    void updates(MediaFingerprintUsesInnerBuilder b),
+  ]) = _$MediaFingerprintUsesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MediaFingerprintUsesInnerBuilder b) => b;
@@ -48,7 +48,7 @@ class _$MediaFingerprintUsesInnerSerializer
   @override
   final Iterable<Type> types = const [
     MediaFingerprintUsesInner,
-    _$MediaFingerprintUsesInner
+    _$MediaFingerprintUsesInner,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$MediaFingerprintUsesInnerSerializer
     MediaFingerprintUsesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,24 +104,30 @@ class _$MediaFingerprintUsesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'postRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.postRef = valueDes;
           break;
         case r'seenAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.seenAt = valueDes;
           break;
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.platform = valueDes;
           break;

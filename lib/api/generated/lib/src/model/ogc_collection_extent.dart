@@ -42,7 +42,7 @@ class _$OgcCollectionExtentSerializer
   @override
   final Iterable<Type> types = const [
     OgcCollectionExtent,
-    _$OgcCollectionExtent
+    _$OgcCollectionExtent,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$OgcCollectionExtentSerializer
     OgcCollectionExtent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,26 @@ class _$OgcCollectionExtentSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'spatial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(OgcCollectionExtentSpatial),
-          ) as OgcCollectionExtentSpatial?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCollectionExtentSpatial,
+                    ),
+                  )
+                  as OgcCollectionExtentSpatial?;
           if (valueDes == null) continue;
           result.spatial.replace(valueDes);
           break;
         case r'temporal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(OgcCollectionExtentTemporal),
-          ) as OgcCollectionExtentTemporal?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCollectionExtentTemporal,
+                    ),
+                  )
+                  as OgcCollectionExtentTemporal?;
           if (valueDes == null) continue;
           result.temporal.replace(valueDes);
           break;

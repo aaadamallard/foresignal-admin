@@ -16,17 +16,20 @@ class _$SituationChangesKeyValuesInner extends SituationChangesKeyValuesInner {
   @override
   final bool? withheld;
 
-  factory _$SituationChangesKeyValuesInner(
-          [void Function(SituationChangesKeyValuesInnerBuilder)? updates]) =>
-      (SituationChangesKeyValuesInnerBuilder()..update(updates))._build();
+  factory _$SituationChangesKeyValuesInner([
+    void Function(SituationChangesKeyValuesInnerBuilder)? updates,
+  ]) => (SituationChangesKeyValuesInnerBuilder()..update(updates))._build();
 
-  _$SituationChangesKeyValuesInner._(
-      {required this.ref, this.before, this.after, this.withheld})
-      : super._();
+  _$SituationChangesKeyValuesInner._({
+    required this.ref,
+    this.before,
+    this.after,
+    this.withheld,
+  }) : super._();
   @override
   SituationChangesKeyValuesInner rebuild(
-          void Function(SituationChangesKeyValuesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationChangesKeyValuesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationChangesKeyValuesInnerBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$SituationChangesKeyValuesInner extends SituationChangesKeyValuesInner {
 
 class SituationChangesKeyValuesInnerBuilder
     implements
-        Builder<SituationChangesKeyValuesInner,
-            SituationChangesKeyValuesInnerBuilder> {
+        Builder<
+          SituationChangesKeyValuesInner,
+          SituationChangesKeyValuesInnerBuilder
+        > {
   _$SituationChangesKeyValuesInner? _$v;
 
   String? _ref;
@@ -116,10 +121,14 @@ class SituationChangesKeyValuesInnerBuilder
   SituationChangesKeyValuesInner build() => _build();
 
   _$SituationChangesKeyValuesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationChangesKeyValuesInner._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'SituationChangesKeyValuesInner', 'ref'),
+            ref,
+            r'SituationChangesKeyValuesInner',
+            'ref',
+          ),
           before: before,
           after: after,
           withheld: withheld,

@@ -16,17 +16,20 @@ class _$SituationSplitInput extends SituationSplitInput {
   @override
   final int? version;
 
-  factory _$SituationSplitInput(
-          [void Function(SituationSplitInputBuilder)? updates]) =>
-      (SituationSplitInputBuilder()..update(updates))._build();
+  factory _$SituationSplitInput([
+    void Function(SituationSplitInputBuilder)? updates,
+  ]) => (SituationSplitInputBuilder()..update(updates))._build();
 
-  _$SituationSplitInput._(
-      {required this.memberIds, required this.title, this.theme, this.version})
-      : super._();
+  _$SituationSplitInput._({
+    required this.memberIds,
+    required this.title,
+    this.theme,
+    this.version,
+  }) : super._();
   @override
   SituationSplitInput rebuild(
-          void Function(SituationSplitInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationSplitInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationSplitInputBuilder toBuilder() =>
@@ -118,11 +121,15 @@ class SituationSplitInputBuilder
   _$SituationSplitInput _build() {
     _$SituationSplitInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationSplitInput._(
             memberIds: memberIds.build(),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SituationSplitInput', 'title'),
+              title,
+              r'SituationSplitInput',
+              'title',
+            ),
             theme: theme,
             version: version,
           );
@@ -133,7 +140,10 @@ class SituationSplitInputBuilder
         memberIds.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationSplitInput', _$failedField, e.toString());
+          r'SituationSplitInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

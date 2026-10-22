@@ -100,8 +100,9 @@ class _$InfraImpactResultSerializer
     yield r'dependents';
     yield serializers.serialize(
       object.dependents,
-      specifiedType: const FullType(
-          BuiltList, [FullType(InfraImpactResultDependentsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(InfraImpactResultDependentsInner),
+      ]),
     );
     yield r'summary';
     yield serializers.serialize(
@@ -131,9 +132,11 @@ class _$InfraImpactResultSerializer
     InfraImpactResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -149,61 +152,84 @@ class _$InfraImpactResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'buildId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.buildId = valueDes;
           break;
         case r'approximateArea':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.approximateArea = valueDes;
           break;
         case r'direct':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(InfraNode)]),
-          ) as BuiltList<InfraNode>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(InfraNode),
+                    ]),
+                  )
+                  as BuiltList<InfraNode>;
           result.direct.replace(valueDes);
           break;
         case r'dependents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(InfraImpactResultDependentsInner)]),
-          ) as BuiltList<InfraImpactResultDependentsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(InfraImpactResultDependentsInner),
+                    ]),
+                  )
+                  as BuiltList<InfraImpactResultDependentsInner>;
           result.dependents.replace(valueDes);
           break;
         case r'summary':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InfraImpactResultSummary),
-          ) as InfraImpactResultSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(InfraImpactResultSummary),
+                  )
+                  as InfraImpactResultSummary;
           result.summary.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>;
           result.caveats.replace(valueDes);
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.attribution.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.truncated = valueDes;
           break;
         default:

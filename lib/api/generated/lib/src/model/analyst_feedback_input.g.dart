@@ -9,13 +9,14 @@ part of 'analyst_feedback_input.dart';
 const AnalystFeedbackInputRatingEnum _$analystFeedbackInputRatingEnum_useful =
     const AnalystFeedbackInputRatingEnum._('useful');
 const AnalystFeedbackInputRatingEnum
-    _$analystFeedbackInputRatingEnum_notUseful =
+_$analystFeedbackInputRatingEnum_notUseful =
     const AnalystFeedbackInputRatingEnum._('notUseful');
 const AnalystFeedbackInputRatingEnum _$analystFeedbackInputRatingEnum_wrong =
     const AnalystFeedbackInputRatingEnum._('wrong');
 
 AnalystFeedbackInputRatingEnum _$analystFeedbackInputRatingEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'useful':
       return _$analystFeedbackInputRatingEnum_useful;
@@ -29,15 +30,17 @@ AnalystFeedbackInputRatingEnum _$analystFeedbackInputRatingEnumValueOf(
 }
 
 final BuiltSet<AnalystFeedbackInputRatingEnum>
-    _$analystFeedbackInputRatingEnumValues = BuiltSet<
-        AnalystFeedbackInputRatingEnum>(const <AnalystFeedbackInputRatingEnum>[
-  _$analystFeedbackInputRatingEnum_useful,
-  _$analystFeedbackInputRatingEnum_notUseful,
-  _$analystFeedbackInputRatingEnum_wrong,
-]);
+_$analystFeedbackInputRatingEnumValues =
+    BuiltSet<AnalystFeedbackInputRatingEnum>(
+      const <AnalystFeedbackInputRatingEnum>[
+        _$analystFeedbackInputRatingEnum_useful,
+        _$analystFeedbackInputRatingEnum_notUseful,
+        _$analystFeedbackInputRatingEnum_wrong,
+      ],
+    );
 
 Serializer<AnalystFeedbackInputRatingEnum>
-    _$analystFeedbackInputRatingEnumSerializer =
+_$analystFeedbackInputRatingEnumSerializer =
     _$AnalystFeedbackInputRatingEnumSerializer();
 
 class _$AnalystFeedbackInputRatingEnumSerializer
@@ -60,16 +63,19 @@ class _$AnalystFeedbackInputRatingEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalystFeedbackInputRatingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalystFeedbackInputRatingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystFeedbackInputRatingEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystFeedbackInputRatingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystFeedbackInputRatingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystFeedbackInput extends AnalystFeedbackInput {
@@ -78,15 +84,15 @@ class _$AnalystFeedbackInput extends AnalystFeedbackInput {
   @override
   final String? comment;
 
-  factory _$AnalystFeedbackInput(
-          [void Function(AnalystFeedbackInputBuilder)? updates]) =>
-      (AnalystFeedbackInputBuilder()..update(updates))._build();
+  factory _$AnalystFeedbackInput([
+    void Function(AnalystFeedbackInputBuilder)? updates,
+  ]) => (AnalystFeedbackInputBuilder()..update(updates))._build();
 
   _$AnalystFeedbackInput._({required this.rating, this.comment}) : super._();
   @override
   AnalystFeedbackInput rebuild(
-          void Function(AnalystFeedbackInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystFeedbackInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystFeedbackInputBuilder toBuilder() =>
@@ -158,10 +164,14 @@ class AnalystFeedbackInputBuilder
   AnalystFeedbackInput build() => _build();
 
   _$AnalystFeedbackInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalystFeedbackInput._(
           rating: BuiltValueNullFieldError.checkNotNull(
-              rating, r'AnalystFeedbackInput', 'rating'),
+            rating,
+            r'AnalystFeedbackInput',
+            'rating',
+          ),
           comment: comment,
         );
     replace(_$result);

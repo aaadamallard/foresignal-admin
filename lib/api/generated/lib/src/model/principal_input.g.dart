@@ -28,10 +28,10 @@ PrincipalInputKindEnum _$principalInputKindEnumValueOf(String name) {
 
 final BuiltSet<PrincipalInputKindEnum> _$principalInputKindEnumValues =
     BuiltSet<PrincipalInputKindEnum>(const <PrincipalInputKindEnum>[
-  _$principalInputKindEnum_person,
-  _$principalInputKindEnum_agent,
-  _$principalInputKindEnum_service,
-]);
+      _$principalInputKindEnum_person,
+      _$principalInputKindEnum_agent,
+      _$principalInputKindEnum_service,
+    ]);
 
 Serializer<PrincipalInputKindEnum> _$principalInputKindEnumSerializer =
     _$PrincipalInputKindEnumSerializer();
@@ -55,15 +55,20 @@ class _$PrincipalInputKindEnumSerializer
   final String wireName = 'PrincipalInputKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PrincipalInputKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrincipalInputKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PrincipalInputKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrincipalInputKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PrincipalInputKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrincipalInputKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrincipalInput extends PrincipalInput {
@@ -85,15 +90,15 @@ class _$PrincipalInput extends PrincipalInput {
   factory _$PrincipalInput([void Function(PrincipalInputBuilder)? updates]) =>
       (PrincipalInputBuilder()..update(updates))._build();
 
-  _$PrincipalInput._(
-      {required this.handle,
-      required this.displayName,
-      required this.kind,
-      this.email,
-      this.avatarMediaId,
-      this.timezone,
-      this.organization})
-      : super._();
+  _$PrincipalInput._({
+    required this.handle,
+    required this.displayName,
+    required this.kind,
+    this.email,
+    this.avatarMediaId,
+    this.timezone,
+    this.organization,
+  }) : super._();
   @override
   PrincipalInput rebuild(void Function(PrincipalInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -208,14 +213,24 @@ class PrincipalInputBuilder
   PrincipalInput build() => _build();
 
   _$PrincipalInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrincipalInput._(
           handle: BuiltValueNullFieldError.checkNotNull(
-              handle, r'PrincipalInput', 'handle'),
+            handle,
+            r'PrincipalInput',
+            'handle',
+          ),
           displayName: BuiltValueNullFieldError.checkNotNull(
-              displayName, r'PrincipalInput', 'displayName'),
+            displayName,
+            r'PrincipalInput',
+            'displayName',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'PrincipalInput', 'kind'),
+            kind,
+            r'PrincipalInput',
+            'kind',
+          ),
           email: email,
           avatarMediaId: avatarMediaId,
           timezone: timezone,

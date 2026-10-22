@@ -7,53 +7,53 @@ part of 'doctor_report_summary_top_finding.dart';
 // **************************************************************************
 
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_AUTH_FAILED =
+_$doctorReportSummaryTopFindingCodeEnum_AUTH_FAILED =
     const DoctorReportSummaryTopFindingCodeEnum._('AUTH_FAILED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_UA_BLOCKED =
+_$doctorReportSummaryTopFindingCodeEnum_UA_BLOCKED =
     const DoctorReportSummaryTopFindingCodeEnum._('UA_BLOCKED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_ENDPOINT_MOVED =
+_$doctorReportSummaryTopFindingCodeEnum_ENDPOINT_MOVED =
     const DoctorReportSummaryTopFindingCodeEnum._('ENDPOINT_MOVED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_RATE_LIMITED =
+_$doctorReportSummaryTopFindingCodeEnum_RATE_LIMITED =
     const DoctorReportSummaryTopFindingCodeEnum._('RATE_LIMITED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_UPSTREAM_ERROR =
+_$doctorReportSummaryTopFindingCodeEnum_UPSTREAM_ERROR =
     const DoctorReportSummaryTopFindingCodeEnum._('UPSTREAM_ERROR');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_HTML_INSTEAD_OF_DATA =
+_$doctorReportSummaryTopFindingCodeEnum_HTML_INSTEAD_OF_DATA =
     const DoctorReportSummaryTopFindingCodeEnum._('HTML_INSTEAD_OF_DATA');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_EMPTY_RESULT =
+_$doctorReportSummaryTopFindingCodeEnum_EMPTY_RESULT =
     const DoctorReportSummaryTopFindingCodeEnum._('EMPTY_RESULT');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_FIELD_RENAMED =
+_$doctorReportSummaryTopFindingCodeEnum_FIELD_RENAMED =
     const DoctorReportSummaryTopFindingCodeEnum._('FIELD_RENAMED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_FIELD_REMOVED =
+_$doctorReportSummaryTopFindingCodeEnum_FIELD_REMOVED =
     const DoctorReportSummaryTopFindingCodeEnum._('FIELD_REMOVED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_TYPE_CHANGED =
+_$doctorReportSummaryTopFindingCodeEnum_TYPE_CHANGED =
     const DoctorReportSummaryTopFindingCodeEnum._('TYPE_CHANGED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_FORMAT_CHANGED =
+_$doctorReportSummaryTopFindingCodeEnum_FORMAT_CHANGED =
     const DoctorReportSummaryTopFindingCodeEnum._('FORMAT_CHANGED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_PARSER_REJECTS =
+_$doctorReportSummaryTopFindingCodeEnum_PARSER_REJECTS =
     const DoctorReportSummaryTopFindingCodeEnum._('PARSER_REJECTS');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_COVERAGE_DROPPED =
+_$doctorReportSummaryTopFindingCodeEnum_COVERAGE_DROPPED =
     const DoctorReportSummaryTopFindingCodeEnum._('COVERAGE_DROPPED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_NO_CHANGE_DETECTED =
+_$doctorReportSummaryTopFindingCodeEnum_NO_CHANGE_DETECTED =
     const DoctorReportSummaryTopFindingCodeEnum._('NO_CHANGE_DETECTED');
 const DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET =
+_$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET =
     const DoctorReportSummaryTopFindingCodeEnum._('PROBE_SKIPPED_BUDGET');
 
 DoctorReportSummaryTopFindingCodeEnum
-    _$doctorReportSummaryTopFindingCodeEnumValueOf(String name) {
+_$doctorReportSummaryTopFindingCodeEnumValueOf(String name) {
   switch (name) {
     case 'AUTH_FAILED':
       return _$doctorReportSummaryTopFindingCodeEnum_AUTH_FAILED;
@@ -91,27 +91,29 @@ DoctorReportSummaryTopFindingCodeEnum
 }
 
 final BuiltSet<DoctorReportSummaryTopFindingCodeEnum>
-    _$doctorReportSummaryTopFindingCodeEnumValues = BuiltSet<
-        DoctorReportSummaryTopFindingCodeEnum>(const <DoctorReportSummaryTopFindingCodeEnum>[
-  _$doctorReportSummaryTopFindingCodeEnum_AUTH_FAILED,
-  _$doctorReportSummaryTopFindingCodeEnum_UA_BLOCKED,
-  _$doctorReportSummaryTopFindingCodeEnum_ENDPOINT_MOVED,
-  _$doctorReportSummaryTopFindingCodeEnum_RATE_LIMITED,
-  _$doctorReportSummaryTopFindingCodeEnum_UPSTREAM_ERROR,
-  _$doctorReportSummaryTopFindingCodeEnum_HTML_INSTEAD_OF_DATA,
-  _$doctorReportSummaryTopFindingCodeEnum_EMPTY_RESULT,
-  _$doctorReportSummaryTopFindingCodeEnum_FIELD_RENAMED,
-  _$doctorReportSummaryTopFindingCodeEnum_FIELD_REMOVED,
-  _$doctorReportSummaryTopFindingCodeEnum_TYPE_CHANGED,
-  _$doctorReportSummaryTopFindingCodeEnum_FORMAT_CHANGED,
-  _$doctorReportSummaryTopFindingCodeEnum_PARSER_REJECTS,
-  _$doctorReportSummaryTopFindingCodeEnum_COVERAGE_DROPPED,
-  _$doctorReportSummaryTopFindingCodeEnum_NO_CHANGE_DETECTED,
-  _$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET,
-]);
+_$doctorReportSummaryTopFindingCodeEnumValues =
+    BuiltSet<DoctorReportSummaryTopFindingCodeEnum>(
+      const <DoctorReportSummaryTopFindingCodeEnum>[
+        _$doctorReportSummaryTopFindingCodeEnum_AUTH_FAILED,
+        _$doctorReportSummaryTopFindingCodeEnum_UA_BLOCKED,
+        _$doctorReportSummaryTopFindingCodeEnum_ENDPOINT_MOVED,
+        _$doctorReportSummaryTopFindingCodeEnum_RATE_LIMITED,
+        _$doctorReportSummaryTopFindingCodeEnum_UPSTREAM_ERROR,
+        _$doctorReportSummaryTopFindingCodeEnum_HTML_INSTEAD_OF_DATA,
+        _$doctorReportSummaryTopFindingCodeEnum_EMPTY_RESULT,
+        _$doctorReportSummaryTopFindingCodeEnum_FIELD_RENAMED,
+        _$doctorReportSummaryTopFindingCodeEnum_FIELD_REMOVED,
+        _$doctorReportSummaryTopFindingCodeEnum_TYPE_CHANGED,
+        _$doctorReportSummaryTopFindingCodeEnum_FORMAT_CHANGED,
+        _$doctorReportSummaryTopFindingCodeEnum_PARSER_REJECTS,
+        _$doctorReportSummaryTopFindingCodeEnum_COVERAGE_DROPPED,
+        _$doctorReportSummaryTopFindingCodeEnum_NO_CHANGE_DETECTED,
+        _$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET,
+      ],
+    );
 
 Serializer<DoctorReportSummaryTopFindingCodeEnum>
-    _$doctorReportSummaryTopFindingCodeEnumSerializer =
+_$doctorReportSummaryTopFindingCodeEnumSerializer =
     _$DoctorReportSummaryTopFindingCodeEnumSerializer();
 
 class _$DoctorReportSummaryTopFindingCodeEnumSerializer
@@ -153,23 +155,26 @@ class _$DoctorReportSummaryTopFindingCodeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    DoctorReportSummaryTopFindingCodeEnum
+    DoctorReportSummaryTopFindingCodeEnum,
   ];
   @override
   final String wireName = 'DoctorReportSummaryTopFindingCodeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, DoctorReportSummaryTopFindingCodeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DoctorReportSummaryTopFindingCodeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DoctorReportSummaryTopFindingCodeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorReportSummaryTopFindingCodeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorReportSummaryTopFindingCodeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorReportSummaryTopFinding extends DoctorReportSummaryTopFinding {
@@ -178,16 +183,16 @@ class _$DoctorReportSummaryTopFinding extends DoctorReportSummaryTopFinding {
   @override
   final String? suggestedAction;
 
-  factory _$DoctorReportSummaryTopFinding(
-          [void Function(DoctorReportSummaryTopFindingBuilder)? updates]) =>
-      (DoctorReportSummaryTopFindingBuilder()..update(updates))._build();
+  factory _$DoctorReportSummaryTopFinding([
+    void Function(DoctorReportSummaryTopFindingBuilder)? updates,
+  ]) => (DoctorReportSummaryTopFindingBuilder()..update(updates))._build();
 
   _$DoctorReportSummaryTopFinding._({required this.code, this.suggestedAction})
-      : super._();
+    : super._();
   @override
   DoctorReportSummaryTopFinding rebuild(
-          void Function(DoctorReportSummaryTopFindingBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DoctorReportSummaryTopFindingBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DoctorReportSummaryTopFindingBuilder toBuilder() =>
@@ -221,8 +226,10 @@ class _$DoctorReportSummaryTopFinding extends DoctorReportSummaryTopFinding {
 
 class DoctorReportSummaryTopFindingBuilder
     implements
-        Builder<DoctorReportSummaryTopFinding,
-            DoctorReportSummaryTopFindingBuilder> {
+        Builder<
+          DoctorReportSummaryTopFinding,
+          DoctorReportSummaryTopFindingBuilder
+        > {
   _$DoctorReportSummaryTopFinding? _$v;
 
   DoctorReportSummaryTopFindingCodeEnum? _code;
@@ -262,10 +269,14 @@ class DoctorReportSummaryTopFindingBuilder
   DoctorReportSummaryTopFinding build() => _build();
 
   _$DoctorReportSummaryTopFinding _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DoctorReportSummaryTopFinding._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'DoctorReportSummaryTopFinding', 'code'),
+            code,
+            r'DoctorReportSummaryTopFinding',
+            'code',
+          ),
           suggestedAction: suggestedAction,
         );
     replace(_$result);

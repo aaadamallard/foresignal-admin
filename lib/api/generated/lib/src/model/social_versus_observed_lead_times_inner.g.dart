@@ -17,21 +17,20 @@ class _$SocialVersusObservedLeadTimesInner
   @override
   final LeadTimeSummary overPhysical;
 
-  factory _$SocialVersusObservedLeadTimesInner(
-          [void Function(SocialVersusObservedLeadTimesInnerBuilder)?
-              updates]) =>
-      (SocialVersusObservedLeadTimesInnerBuilder()..update(updates))._build();
+  factory _$SocialVersusObservedLeadTimesInner([
+    void Function(SocialVersusObservedLeadTimesInnerBuilder)? updates,
+  ]) => (SocialVersusObservedLeadTimesInnerBuilder()..update(updates))._build();
 
-  _$SocialVersusObservedLeadTimesInner._(
-      {required this.claimType,
-      required this.platform,
-      this.regionCode,
-      required this.overPhysical})
-      : super._();
+  _$SocialVersusObservedLeadTimesInner._({
+    required this.claimType,
+    required this.platform,
+    this.regionCode,
+    required this.overPhysical,
+  }) : super._();
   @override
   SocialVersusObservedLeadTimesInner rebuild(
-          void Function(SocialVersusObservedLeadTimesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialVersusObservedLeadTimesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialVersusObservedLeadTimesInnerBuilder toBuilder() =>
@@ -71,8 +70,10 @@ class _$SocialVersusObservedLeadTimesInner
 
 class SocialVersusObservedLeadTimesInnerBuilder
     implements
-        Builder<SocialVersusObservedLeadTimesInner,
-            SocialVersusObservedLeadTimesInnerBuilder> {
+        Builder<
+          SocialVersusObservedLeadTimesInner,
+          SocialVersusObservedLeadTimesInnerBuilder
+        > {
   _$SocialVersusObservedLeadTimesInner? _$v;
 
   String? _claimType;
@@ -116,7 +117,8 @@ class SocialVersusObservedLeadTimesInnerBuilder
 
   @override
   void update(
-      void Function(SocialVersusObservedLeadTimesInnerBuilder)? updates) {
+    void Function(SocialVersusObservedLeadTimesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -126,12 +128,19 @@ class SocialVersusObservedLeadTimesInnerBuilder
   _$SocialVersusObservedLeadTimesInner _build() {
     _$SocialVersusObservedLeadTimesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialVersusObservedLeadTimesInner._(
             claimType: BuiltValueNullFieldError.checkNotNull(
-                claimType, r'SocialVersusObservedLeadTimesInner', 'claimType'),
+              claimType,
+              r'SocialVersusObservedLeadTimesInner',
+              'claimType',
+            ),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'SocialVersusObservedLeadTimesInner', 'platform'),
+              platform,
+              r'SocialVersusObservedLeadTimesInner',
+              'platform',
+            ),
             regionCode: regionCode,
             overPhysical: overPhysical.build(),
           );
@@ -142,7 +151,10 @@ class SocialVersusObservedLeadTimesInnerBuilder
         overPhysical.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialVersusObservedLeadTimesInner', _$failedField, e.toString());
+          r'SocialVersusObservedLeadTimesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,14 +7,14 @@ part of 'timeline_tick_frames_inner.dart';
 // **************************************************************************
 
 const TimelineTickFramesInnerAvailabilityEnum
-    _$timelineTickFramesInnerAvailabilityEnum_available =
+_$timelineTickFramesInnerAvailabilityEnum_available =
     const TimelineTickFramesInnerAvailabilityEnum._('available');
 const TimelineTickFramesInnerAvailabilityEnum
-    _$timelineTickFramesInnerAvailabilityEnum_unverified =
+_$timelineTickFramesInnerAvailabilityEnum_unverified =
     const TimelineTickFramesInnerAvailabilityEnum._('unverified');
 
 TimelineTickFramesInnerAvailabilityEnum
-    _$timelineTickFramesInnerAvailabilityEnumValueOf(String name) {
+_$timelineTickFramesInnerAvailabilityEnumValueOf(String name) {
   switch (name) {
     case 'available':
       return _$timelineTickFramesInnerAvailabilityEnum_available;
@@ -26,14 +26,16 @@ TimelineTickFramesInnerAvailabilityEnum
 }
 
 final BuiltSet<TimelineTickFramesInnerAvailabilityEnum>
-    _$timelineTickFramesInnerAvailabilityEnumValues = BuiltSet<
-        TimelineTickFramesInnerAvailabilityEnum>(const <TimelineTickFramesInnerAvailabilityEnum>[
-  _$timelineTickFramesInnerAvailabilityEnum_available,
-  _$timelineTickFramesInnerAvailabilityEnum_unverified,
-]);
+_$timelineTickFramesInnerAvailabilityEnumValues =
+    BuiltSet<TimelineTickFramesInnerAvailabilityEnum>(
+      const <TimelineTickFramesInnerAvailabilityEnum>[
+        _$timelineTickFramesInnerAvailabilityEnum_available,
+        _$timelineTickFramesInnerAvailabilityEnum_unverified,
+      ],
+    );
 
 Serializer<TimelineTickFramesInnerAvailabilityEnum>
-    _$timelineTickFramesInnerAvailabilityEnumSerializer =
+_$timelineTickFramesInnerAvailabilityEnumSerializer =
     _$TimelineTickFramesInnerAvailabilityEnumSerializer();
 
 class _$TimelineTickFramesInnerAvailabilityEnumSerializer
@@ -49,23 +51,26 @@ class _$TimelineTickFramesInnerAvailabilityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    TimelineTickFramesInnerAvailabilityEnum
+    TimelineTickFramesInnerAvailabilityEnum,
   ];
   @override
   final String wireName = 'TimelineTickFramesInnerAvailabilityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          TimelineTickFramesInnerAvailabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TimelineTickFramesInnerAvailabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TimelineTickFramesInnerAvailabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TimelineTickFramesInnerAvailabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TimelineTickFramesInnerAvailabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TimelineTickFramesInner extends TimelineTickFramesInner {
@@ -84,23 +89,23 @@ class _$TimelineTickFramesInner extends TimelineTickFramesInner {
   @override
   final TimelineTickFramesInnerAvailabilityEnum availability;
 
-  factory _$TimelineTickFramesInner(
-          [void Function(TimelineTickFramesInnerBuilder)? updates]) =>
-      (TimelineTickFramesInnerBuilder()..update(updates))._build();
+  factory _$TimelineTickFramesInner([
+    void Function(TimelineTickFramesInnerBuilder)? updates,
+  ]) => (TimelineTickFramesInnerBuilder()..update(updates))._build();
 
-  _$TimelineTickFramesInner._(
-      {required this.productId,
-      this.frameKey,
-      required this.time,
-      this.run,
-      this.step,
-      required this.tiles,
-      required this.availability})
-      : super._();
+  _$TimelineTickFramesInner._({
+    required this.productId,
+    this.frameKey,
+    required this.time,
+    this.run,
+    this.step,
+    required this.tiles,
+    required this.availability,
+  }) : super._();
   @override
   TimelineTickFramesInner rebuild(
-          void Function(TimelineTickFramesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TimelineTickFramesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TimelineTickFramesInnerBuilder toBuilder() =>
@@ -215,19 +220,32 @@ class TimelineTickFramesInnerBuilder
   TimelineTickFramesInner build() => _build();
 
   _$TimelineTickFramesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TimelineTickFramesInner._(
           productId: BuiltValueNullFieldError.checkNotNull(
-              productId, r'TimelineTickFramesInner', 'productId'),
+            productId,
+            r'TimelineTickFramesInner',
+            'productId',
+          ),
           frameKey: frameKey,
           time: BuiltValueNullFieldError.checkNotNull(
-              time, r'TimelineTickFramesInner', 'time'),
+            time,
+            r'TimelineTickFramesInner',
+            'time',
+          ),
           run: run,
           step: step,
           tiles: BuiltValueNullFieldError.checkNotNull(
-              tiles, r'TimelineTickFramesInner', 'tiles'),
+            tiles,
+            r'TimelineTickFramesInner',
+            'tiles',
+          ),
           availability: BuiltValueNullFieldError.checkNotNull(
-              availability, r'TimelineTickFramesInner', 'availability'),
+            availability,
+            r'TimelineTickFramesInner',
+            'availability',
+          ),
         );
     replace(_$result);
     return _$result;

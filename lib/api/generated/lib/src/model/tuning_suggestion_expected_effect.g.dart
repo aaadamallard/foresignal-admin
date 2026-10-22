@@ -16,20 +16,20 @@ class _$TuningSuggestionExpectedEffect extends TuningSuggestionExpectedEffect {
   @override
   final String? backtestId;
 
-  factory _$TuningSuggestionExpectedEffect(
-          [void Function(TuningSuggestionExpectedEffectBuilder)? updates]) =>
-      (TuningSuggestionExpectedEffectBuilder()..update(updates))._build();
+  factory _$TuningSuggestionExpectedEffect([
+    void Function(TuningSuggestionExpectedEffectBuilder)? updates,
+  ]) => (TuningSuggestionExpectedEffectBuilder()..update(updates))._build();
 
-  _$TuningSuggestionExpectedEffect._(
-      {this.wouldFire,
-      this.removedNegatives,
-      this.keptPositives,
-      this.backtestId})
-      : super._();
+  _$TuningSuggestionExpectedEffect._({
+    this.wouldFire,
+    this.removedNegatives,
+    this.keptPositives,
+    this.backtestId,
+  }) : super._();
   @override
   TuningSuggestionExpectedEffect rebuild(
-          void Function(TuningSuggestionExpectedEffectBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TuningSuggestionExpectedEffectBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TuningSuggestionExpectedEffectBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$TuningSuggestionExpectedEffect extends TuningSuggestionExpectedEffect {
 
 class TuningSuggestionExpectedEffectBuilder
     implements
-        Builder<TuningSuggestionExpectedEffect,
-            TuningSuggestionExpectedEffectBuilder> {
+        Builder<
+          TuningSuggestionExpectedEffect,
+          TuningSuggestionExpectedEffectBuilder
+        > {
   _$TuningSuggestionExpectedEffect? _$v;
 
   int? _wouldFire;
@@ -121,7 +123,8 @@ class TuningSuggestionExpectedEffectBuilder
   TuningSuggestionExpectedEffect build() => _build();
 
   _$TuningSuggestionExpectedEffect _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TuningSuggestionExpectedEffect._(
           wouldFire: wouldFire,
           removedNegatives: removedNegatives,

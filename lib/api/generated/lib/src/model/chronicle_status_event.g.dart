@@ -18,7 +18,8 @@ const ChronicleStatusEventStatusEnum _$chronicleStatusEventStatusEnum_archived =
     const ChronicleStatusEventStatusEnum._('archived');
 
 ChronicleStatusEventStatusEnum _$chronicleStatusEventStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'proposed':
       return _$chronicleStatusEventStatusEnum_proposed;
@@ -36,33 +37,35 @@ ChronicleStatusEventStatusEnum _$chronicleStatusEventStatusEnumValueOf(
 }
 
 final BuiltSet<ChronicleStatusEventStatusEnum>
-    _$chronicleStatusEventStatusEnumValues = BuiltSet<
-        ChronicleStatusEventStatusEnum>(const <ChronicleStatusEventStatusEnum>[
-  _$chronicleStatusEventStatusEnum_proposed,
-  _$chronicleStatusEventStatusEnum_active,
-  _$chronicleStatusEventStatusEnum_paused,
-  _$chronicleStatusEventStatusEnum_stopped,
-  _$chronicleStatusEventStatusEnum_archived,
-]);
+_$chronicleStatusEventStatusEnumValues =
+    BuiltSet<ChronicleStatusEventStatusEnum>(
+      const <ChronicleStatusEventStatusEnum>[
+        _$chronicleStatusEventStatusEnum_proposed,
+        _$chronicleStatusEventStatusEnum_active,
+        _$chronicleStatusEventStatusEnum_paused,
+        _$chronicleStatusEventStatusEnum_stopped,
+        _$chronicleStatusEventStatusEnum_archived,
+      ],
+    );
 
 const ChronicleStatusEventPreviousStatusEnum
-    _$chronicleStatusEventPreviousStatusEnum_proposed =
+_$chronicleStatusEventPreviousStatusEnum_proposed =
     const ChronicleStatusEventPreviousStatusEnum._('proposed');
 const ChronicleStatusEventPreviousStatusEnum
-    _$chronicleStatusEventPreviousStatusEnum_active =
+_$chronicleStatusEventPreviousStatusEnum_active =
     const ChronicleStatusEventPreviousStatusEnum._('active');
 const ChronicleStatusEventPreviousStatusEnum
-    _$chronicleStatusEventPreviousStatusEnum_paused =
+_$chronicleStatusEventPreviousStatusEnum_paused =
     const ChronicleStatusEventPreviousStatusEnum._('paused');
 const ChronicleStatusEventPreviousStatusEnum
-    _$chronicleStatusEventPreviousStatusEnum_stopped =
+_$chronicleStatusEventPreviousStatusEnum_stopped =
     const ChronicleStatusEventPreviousStatusEnum._('stopped');
 const ChronicleStatusEventPreviousStatusEnum
-    _$chronicleStatusEventPreviousStatusEnum_archived =
+_$chronicleStatusEventPreviousStatusEnum_archived =
     const ChronicleStatusEventPreviousStatusEnum._('archived');
 
 ChronicleStatusEventPreviousStatusEnum
-    _$chronicleStatusEventPreviousStatusEnumValueOf(String name) {
+_$chronicleStatusEventPreviousStatusEnumValueOf(String name) {
   switch (name) {
     case 'proposed':
       return _$chronicleStatusEventPreviousStatusEnum_proposed;
@@ -80,26 +83,29 @@ ChronicleStatusEventPreviousStatusEnum
 }
 
 final BuiltSet<ChronicleStatusEventPreviousStatusEnum>
-    _$chronicleStatusEventPreviousStatusEnumValues = BuiltSet<
-        ChronicleStatusEventPreviousStatusEnum>(const <ChronicleStatusEventPreviousStatusEnum>[
-  _$chronicleStatusEventPreviousStatusEnum_proposed,
-  _$chronicleStatusEventPreviousStatusEnum_active,
-  _$chronicleStatusEventPreviousStatusEnum_paused,
-  _$chronicleStatusEventPreviousStatusEnum_stopped,
-  _$chronicleStatusEventPreviousStatusEnum_archived,
-]);
+_$chronicleStatusEventPreviousStatusEnumValues =
+    BuiltSet<ChronicleStatusEventPreviousStatusEnum>(
+      const <ChronicleStatusEventPreviousStatusEnum>[
+        _$chronicleStatusEventPreviousStatusEnum_proposed,
+        _$chronicleStatusEventPreviousStatusEnum_active,
+        _$chronicleStatusEventPreviousStatusEnum_paused,
+        _$chronicleStatusEventPreviousStatusEnum_stopped,
+        _$chronicleStatusEventPreviousStatusEnum_archived,
+      ],
+    );
 
 const ChronicleStatusEventCapStateEnum _$chronicleStatusEventCapStateEnum_ok =
     const ChronicleStatusEventCapStateEnum._('ok');
 const ChronicleStatusEventCapStateEnum
-    _$chronicleStatusEventCapStateEnum_warning =
+_$chronicleStatusEventCapStateEnum_warning =
     const ChronicleStatusEventCapStateEnum._('warning');
 const ChronicleStatusEventCapStateEnum
-    _$chronicleStatusEventCapStateEnum_exceeded =
+_$chronicleStatusEventCapStateEnum_exceeded =
     const ChronicleStatusEventCapStateEnum._('exceeded');
 
 ChronicleStatusEventCapStateEnum _$chronicleStatusEventCapStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$chronicleStatusEventCapStateEnum_ok;
@@ -113,21 +119,23 @@ ChronicleStatusEventCapStateEnum _$chronicleStatusEventCapStateEnumValueOf(
 }
 
 final BuiltSet<ChronicleStatusEventCapStateEnum>
-    _$chronicleStatusEventCapStateEnumValues = BuiltSet<
-        ChronicleStatusEventCapStateEnum>(const <ChronicleStatusEventCapStateEnum>[
-  _$chronicleStatusEventCapStateEnum_ok,
-  _$chronicleStatusEventCapStateEnum_warning,
-  _$chronicleStatusEventCapStateEnum_exceeded,
-]);
+_$chronicleStatusEventCapStateEnumValues =
+    BuiltSet<ChronicleStatusEventCapStateEnum>(
+      const <ChronicleStatusEventCapStateEnum>[
+        _$chronicleStatusEventCapStateEnum_ok,
+        _$chronicleStatusEventCapStateEnum_warning,
+        _$chronicleStatusEventCapStateEnum_exceeded,
+      ],
+    );
 
 Serializer<ChronicleStatusEventStatusEnum>
-    _$chronicleStatusEventStatusEnumSerializer =
+_$chronicleStatusEventStatusEnumSerializer =
     _$ChronicleStatusEventStatusEnumSerializer();
 Serializer<ChronicleStatusEventPreviousStatusEnum>
-    _$chronicleStatusEventPreviousStatusEnumSerializer =
+_$chronicleStatusEventPreviousStatusEnumSerializer =
     _$ChronicleStatusEventPreviousStatusEnumSerializer();
 Serializer<ChronicleStatusEventCapStateEnum>
-    _$chronicleStatusEventCapStateEnumSerializer =
+_$chronicleStatusEventCapStateEnumSerializer =
     _$ChronicleStatusEventCapStateEnumSerializer();
 
 class _$ChronicleStatusEventStatusEnumSerializer
@@ -154,16 +162,19 @@ class _$ChronicleStatusEventStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ChronicleStatusEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChronicleStatusEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleStatusEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleStatusEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleStatusEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleStatusEventPreviousStatusEnumSerializer
@@ -185,23 +196,26 @@ class _$ChronicleStatusEventPreviousStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleStatusEventPreviousStatusEnum
+    ChronicleStatusEventPreviousStatusEnum,
   ];
   @override
   final String wireName = 'ChronicleStatusEventPreviousStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleStatusEventPreviousStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleStatusEventPreviousStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleStatusEventPreviousStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleStatusEventPreviousStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleStatusEventPreviousStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleStatusEventCapStateEnumSerializer
@@ -224,16 +238,19 @@ class _$ChronicleStatusEventCapStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ChronicleStatusEventCapStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChronicleStatusEventCapStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleStatusEventCapStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleStatusEventCapStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleStatusEventCapStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleStatusEvent extends ChronicleStatusEvent {
@@ -252,23 +269,23 @@ class _$ChronicleStatusEvent extends ChronicleStatusEvent {
   @override
   final DateTime at;
 
-  factory _$ChronicleStatusEvent(
-          [void Function(ChronicleStatusEventBuilder)? updates]) =>
-      (ChronicleStatusEventBuilder()..update(updates))._build();
+  factory _$ChronicleStatusEvent([
+    void Function(ChronicleStatusEventBuilder)? updates,
+  ]) => (ChronicleStatusEventBuilder()..update(updates))._build();
 
-  _$ChronicleStatusEvent._(
-      {required this.chronicleId,
-      required this.status,
-      this.previousStatus,
-      this.capState,
-      this.bytesUsed,
-      this.reason,
-      required this.at})
-      : super._();
+  _$ChronicleStatusEvent._({
+    required this.chronicleId,
+    required this.status,
+    this.previousStatus,
+    this.capState,
+    this.bytesUsed,
+    this.reason,
+    required this.at,
+  }) : super._();
   @override
   ChronicleStatusEvent rebuild(
-          void Function(ChronicleStatusEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleStatusEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleStatusEventBuilder toBuilder() =>
@@ -383,18 +400,28 @@ class ChronicleStatusEventBuilder
   ChronicleStatusEvent build() => _build();
 
   _$ChronicleStatusEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleStatusEvent._(
           chronicleId: BuiltValueNullFieldError.checkNotNull(
-              chronicleId, r'ChronicleStatusEvent', 'chronicleId'),
+            chronicleId,
+            r'ChronicleStatusEvent',
+            'chronicleId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'ChronicleStatusEvent', 'status'),
+            status,
+            r'ChronicleStatusEvent',
+            'status',
+          ),
           previousStatus: previousStatus,
           capState: capState,
           bytesUsed: bytesUsed,
           reason: reason,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'ChronicleStatusEvent', 'at'),
+            at,
+            r'ChronicleStatusEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

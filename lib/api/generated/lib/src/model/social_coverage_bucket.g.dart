@@ -16,20 +16,20 @@ class _$SocialCoverageBucket extends SocialCoverageBucket {
   @override
   final bool complete;
 
-  factory _$SocialCoverageBucket(
-          [void Function(SocialCoverageBucketBuilder)? updates]) =>
-      (SocialCoverageBucketBuilder()..update(updates))._build();
+  factory _$SocialCoverageBucket([
+    void Function(SocialCoverageBucketBuilder)? updates,
+  ]) => (SocialCoverageBucketBuilder()..update(updates))._build();
 
-  _$SocialCoverageBucket._(
-      {required this.hour,
-      required this.postsSeen,
-      this.denominator,
-      required this.complete})
-      : super._();
+  _$SocialCoverageBucket._({
+    required this.hour,
+    required this.postsSeen,
+    this.denominator,
+    required this.complete,
+  }) : super._();
   @override
   SocialCoverageBucket rebuild(
-          void Function(SocialCoverageBucketBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialCoverageBucketBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialCoverageBucketBuilder toBuilder() =>
@@ -117,15 +117,25 @@ class SocialCoverageBucketBuilder
   SocialCoverageBucket build() => _build();
 
   _$SocialCoverageBucket _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialCoverageBucket._(
           hour: BuiltValueNullFieldError.checkNotNull(
-              hour, r'SocialCoverageBucket', 'hour'),
+            hour,
+            r'SocialCoverageBucket',
+            'hour',
+          ),
           postsSeen: BuiltValueNullFieldError.checkNotNull(
-              postsSeen, r'SocialCoverageBucket', 'postsSeen'),
+            postsSeen,
+            r'SocialCoverageBucket',
+            'postsSeen',
+          ),
           denominator: denominator,
           complete: BuiltValueNullFieldError.checkNotNull(
-              complete, r'SocialCoverageBucket', 'complete'),
+            complete,
+            r'SocialCoverageBucket',
+            'complete',
+          ),
         );
     replace(_$result);
     return _$result;

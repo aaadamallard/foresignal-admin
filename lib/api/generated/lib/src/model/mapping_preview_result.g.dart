@@ -16,20 +16,20 @@ class _$MappingPreviewResult extends MappingPreviewResult {
   @override
   final BuiltList<MappingWarning> warnings;
 
-  factory _$MappingPreviewResult(
-          [void Function(MappingPreviewResultBuilder)? updates]) =>
-      (MappingPreviewResultBuilder()..update(updates))._build();
+  factory _$MappingPreviewResult([
+    void Function(MappingPreviewResultBuilder)? updates,
+  ]) => (MappingPreviewResultBuilder()..update(updates))._build();
 
-  _$MappingPreviewResult._(
-      {required this.records,
-      required this.rejections,
-      this.skipped,
-      required this.warnings})
-      : super._();
+  _$MappingPreviewResult._({
+    required this.records,
+    required this.rejections,
+    this.skipped,
+    required this.warnings,
+  }) : super._();
   @override
   MappingPreviewResult rebuild(
-          void Function(MappingPreviewResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingPreviewResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingPreviewResultBuilder toBuilder() =>
@@ -125,7 +125,8 @@ class MappingPreviewResultBuilder
   _$MappingPreviewResult _build() {
     _$MappingPreviewResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingPreviewResult._(
             records: records.build(),
             rejections: rejections.build(),
@@ -144,7 +145,10 @@ class MappingPreviewResultBuilder
         warnings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingPreviewResult', _$failedField, e.toString());
+          r'MappingPreviewResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

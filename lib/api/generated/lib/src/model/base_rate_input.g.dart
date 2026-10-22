@@ -93,11 +93,8 @@ class BaseRateInputBuilder
   _$BaseRateInput _build() {
     _$BaseRateInput _$result;
     try {
-      _$result = _$v ??
-          _$BaseRateInput._(
-            name: name,
-            definition: definition.build(),
-          );
+      _$result =
+          _$v ?? _$BaseRateInput._(name: name, definition: definition.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -105,7 +102,10 @@ class BaseRateInputBuilder
         definition.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BaseRateInput', _$failedField, e.toString());
+          r'BaseRateInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

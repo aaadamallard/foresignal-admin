@@ -99,8 +99,9 @@ class _$DigestAlertsSerializer implements PrimitiveSerializer<DigestAlerts> {
       yield r'byRule';
       yield serializers.serialize(
         object.byRule,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DigestAlertsByRuleInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DigestAlertsByRuleInner),
+        ]),
       );
     }
     if (object.items != null) {
@@ -118,9 +119,11 @@ class _$DigestAlertsSerializer implements PrimitiveSerializer<DigestAlerts> {
     DigestAlerts object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,52 +139,70 @@ class _$DigestAlertsSerializer implements PrimitiveSerializer<DigestAlerts> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'sinceAlertId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.sinceAlertId = valueDes;
           break;
         case r'untilAlertId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.untilAlertId = valueDes;
           break;
         case r'bySeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DigestAlertsBySeverity),
-          ) as DigestAlertsBySeverity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DigestAlertsBySeverity,
+                    ),
+                  )
+                  as DigestAlertsBySeverity?;
           if (valueDes == null) continue;
           result.bySeverity.replace(valueDes);
           break;
         case r'byStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DigestAlertsByStatus),
-          ) as DigestAlertsByStatus?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DigestAlertsByStatus,
+                    ),
+                  )
+                  as DigestAlertsByStatus?;
           if (valueDes == null) continue;
           result.byStatus.replace(valueDes);
           break;
         case r'byRule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DigestAlertsByRuleInner)]),
-          ) as BuiltList<DigestAlertsByRuleInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DigestAlertsByRuleInner),
+                    ]),
+                  )
+                  as BuiltList<DigestAlertsByRuleInner>?;
           if (valueDes == null) continue;
           result.byRule.replace(valueDes);
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Alert)]),
-          ) as BuiltList<Alert>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Alert),
+                    ]),
+                  )
+                  as BuiltList<Alert>?;
           if (valueDes == null) continue;
           result.items.replace(valueDes);
           break;

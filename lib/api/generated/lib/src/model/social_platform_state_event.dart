@@ -50,9 +50,9 @@ abstract class SocialPlatformStateEvent
 
   SocialPlatformStateEvent._();
 
-  factory SocialPlatformStateEvent(
-          [void updates(SocialPlatformStateEventBuilder b)]) =
-      _$SocialPlatformStateEvent;
+  factory SocialPlatformStateEvent([
+    void updates(SocialPlatformStateEventBuilder b),
+  ]) = _$SocialPlatformStateEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPlatformStateEventBuilder b) => b;
@@ -67,7 +67,7 @@ class _$SocialPlatformStateEventSerializer
   @override
   final Iterable<Type> types = const [
     SocialPlatformStateEvent,
-    _$SocialPlatformStateEvent
+    _$SocialPlatformStateEvent,
   ];
 
   @override
@@ -127,9 +127,11 @@ class _$SocialPlatformStateEventSerializer
     SocialPlatformStateEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -145,55 +147,71 @@ class _$SocialPlatformStateEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPlatformStateEventEventEnum),
-          ) as SocialPlatformStateEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialPlatformStateEventEventEnum,
+                    ),
+                  )
+                  as SocialPlatformStateEventEventEnum;
           result.event = valueDes;
           break;
         case r'platformId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPlatformId),
-          ) as SocialPlatformId;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialPlatformId),
+                  )
+                  as SocialPlatformId;
           result.platformId = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.state = valueDes;
           break;
         case r'previousState':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.previousState = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;
         case r'spend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSpend),
-          ) as SocialSpend?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SocialSpend),
+                  )
+                  as SocialSpend?;
           if (valueDes == null) continue;
           result.spend.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:
@@ -228,7 +246,7 @@ class _$SocialPlatformStateEventSerializer
 class SocialPlatformStateEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social.platform.state')
   static const SocialPlatformStateEventEventEnum
-      socialPeriodPlatformPeriodState =
+  socialPeriodPlatformPeriodState =
       _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState;
 
   static Serializer<SocialPlatformStateEventEventEnum> get serializer =>

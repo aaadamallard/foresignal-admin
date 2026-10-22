@@ -14,16 +14,16 @@ class _$SavedSearchQueryTimeWindow extends SavedSearchQueryTimeWindow {
   @override
   final String? relative;
 
-  factory _$SavedSearchQueryTimeWindow(
-          [void Function(SavedSearchQueryTimeWindowBuilder)? updates]) =>
-      (SavedSearchQueryTimeWindowBuilder()..update(updates))._build();
+  factory _$SavedSearchQueryTimeWindow([
+    void Function(SavedSearchQueryTimeWindowBuilder)? updates,
+  ]) => (SavedSearchQueryTimeWindowBuilder()..update(updates))._build();
 
   _$SavedSearchQueryTimeWindow._({this.start, this.end, this.relative})
-      : super._();
+    : super._();
   @override
   SavedSearchQueryTimeWindow rebuild(
-          void Function(SavedSearchQueryTimeWindowBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SavedSearchQueryTimeWindowBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SavedSearchQueryTimeWindowBuilder toBuilder() =>
@@ -104,7 +104,8 @@ class SavedSearchQueryTimeWindowBuilder
   SavedSearchQueryTimeWindow build() => _build();
 
   _$SavedSearchQueryTimeWindow _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SavedSearchQueryTimeWindow._(
           start: start,
           end: end,

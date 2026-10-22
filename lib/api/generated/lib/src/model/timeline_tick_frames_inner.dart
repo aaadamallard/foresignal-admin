@@ -50,9 +50,9 @@ abstract class TimelineTickFramesInner
 
   TimelineTickFramesInner._();
 
-  factory TimelineTickFramesInner(
-          [void updates(TimelineTickFramesInnerBuilder b)]) =
-      _$TimelineTickFramesInner;
+  factory TimelineTickFramesInner([
+    void updates(TimelineTickFramesInnerBuilder b),
+  ]) = _$TimelineTickFramesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TimelineTickFramesInnerBuilder b) => b;
@@ -67,7 +67,7 @@ class _$TimelineTickFramesInnerSerializer
   @override
   final Iterable<Type> types = const [
     TimelineTickFramesInner,
-    _$TimelineTickFramesInner
+    _$TimelineTickFramesInner,
   ];
 
   @override
@@ -127,9 +127,11 @@ class _$TimelineTickFramesInnerSerializer
     TimelineTickFramesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -145,56 +147,71 @@ class _$TimelineTickFramesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'productId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.productId = valueDes;
           break;
         case r'frameKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.frameKey = valueDes;
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         case r'run':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.run = valueDes;
           break;
         case r'step':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.step = valueDes;
           break;
         case r'tiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tiles = valueDes;
           break;
         case r'availability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(TimelineTickFramesInnerAvailabilityEnum),
-          ) as TimelineTickFramesInnerAvailabilityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      TimelineTickFramesInnerAvailabilityEnum,
+                    ),
+                  )
+                  as TimelineTickFramesInnerAvailabilityEnum;
           result.availability = valueDes;
           break;
         default:

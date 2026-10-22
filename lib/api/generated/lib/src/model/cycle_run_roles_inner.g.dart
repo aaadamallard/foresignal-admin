@@ -32,11 +32,11 @@ CycleRunRolesInnerRoleEnum _$cycleRunRolesInnerRoleEnumValueOf(String name) {
 
 final BuiltSet<CycleRunRolesInnerRoleEnum> _$cycleRunRolesInnerRoleEnumValues =
     BuiltSet<CycleRunRolesInnerRoleEnum>(const <CycleRunRolesInnerRoleEnum>[
-  _$cycleRunRolesInnerRoleEnum_analyst,
-  _$cycleRunRolesInnerRoleEnum_redTeam,
-  _$cycleRunRolesInnerRoleEnum_forecaster,
-  _$cycleRunRolesInnerRoleEnum_proposer,
-]);
+      _$cycleRunRolesInnerRoleEnum_analyst,
+      _$cycleRunRolesInnerRoleEnum_redTeam,
+      _$cycleRunRolesInnerRoleEnum_forecaster,
+      _$cycleRunRolesInnerRoleEnum_proposer,
+    ]);
 
 const CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnum_ok =
     const CycleRunRolesInnerStatusEnum._('ok');
@@ -45,11 +45,12 @@ const CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnum_skipped =
 const CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnum_failed =
     const CycleRunRolesInnerStatusEnum._('failed');
 const CycleRunRolesInnerStatusEnum
-    _$cycleRunRolesInnerStatusEnum_notConfigured =
+_$cycleRunRolesInnerStatusEnum_notConfigured =
     const CycleRunRolesInnerStatusEnum._('notConfigured');
 
 CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$cycleRunRolesInnerStatusEnum_ok;
@@ -65,13 +66,13 @@ CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnumValueOf(
 }
 
 final BuiltSet<CycleRunRolesInnerStatusEnum>
-    _$cycleRunRolesInnerStatusEnumValues =
+_$cycleRunRolesInnerStatusEnumValues =
     BuiltSet<CycleRunRolesInnerStatusEnum>(const <CycleRunRolesInnerStatusEnum>[
-  _$cycleRunRolesInnerStatusEnum_ok,
-  _$cycleRunRolesInnerStatusEnum_skipped,
-  _$cycleRunRolesInnerStatusEnum_failed,
-  _$cycleRunRolesInnerStatusEnum_notConfigured,
-]);
+      _$cycleRunRolesInnerStatusEnum_ok,
+      _$cycleRunRolesInnerStatusEnum_skipped,
+      _$cycleRunRolesInnerStatusEnum_failed,
+      _$cycleRunRolesInnerStatusEnum_notConfigured,
+    ]);
 
 const CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnum_low =
     const CycleRunRolesInnerEffortEnum._('low');
@@ -81,7 +82,8 @@ const CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnum_high =
     const CycleRunRolesInnerEffortEnum._('high');
 
 CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'low':
       return _$cycleRunRolesInnerEffortEnum_low;
@@ -95,20 +97,20 @@ CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnumValueOf(
 }
 
 final BuiltSet<CycleRunRolesInnerEffortEnum>
-    _$cycleRunRolesInnerEffortEnumValues =
+_$cycleRunRolesInnerEffortEnumValues =
     BuiltSet<CycleRunRolesInnerEffortEnum>(const <CycleRunRolesInnerEffortEnum>[
-  _$cycleRunRolesInnerEffortEnum_low,
-  _$cycleRunRolesInnerEffortEnum_medium,
-  _$cycleRunRolesInnerEffortEnum_high,
-]);
+      _$cycleRunRolesInnerEffortEnum_low,
+      _$cycleRunRolesInnerEffortEnum_medium,
+      _$cycleRunRolesInnerEffortEnum_high,
+    ]);
 
 Serializer<CycleRunRolesInnerRoleEnum> _$cycleRunRolesInnerRoleEnumSerializer =
     _$CycleRunRolesInnerRoleEnumSerializer();
 Serializer<CycleRunRolesInnerStatusEnum>
-    _$cycleRunRolesInnerStatusEnumSerializer =
+_$cycleRunRolesInnerStatusEnumSerializer =
     _$CycleRunRolesInnerStatusEnumSerializer();
 Serializer<CycleRunRolesInnerEffortEnum>
-    _$cycleRunRolesInnerEffortEnumSerializer =
+_$cycleRunRolesInnerEffortEnumSerializer =
     _$CycleRunRolesInnerEffortEnumSerializer();
 
 class _$CycleRunRolesInnerRoleEnumSerializer
@@ -132,16 +134,20 @@ class _$CycleRunRolesInnerRoleEnumSerializer
   final String wireName = 'CycleRunRolesInnerRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, CycleRunRolesInnerRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CycleRunRolesInnerRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CycleRunRolesInnerRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CycleRunRolesInnerRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CycleRunRolesInnerRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CycleRunRolesInnerStatusEnumSerializer
@@ -165,16 +171,20 @@ class _$CycleRunRolesInnerStatusEnumSerializer
   final String wireName = 'CycleRunRolesInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, CycleRunRolesInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CycleRunRolesInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CycleRunRolesInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CycleRunRolesInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CycleRunRolesInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CycleRunRolesInnerEffortEnumSerializer
@@ -196,16 +206,20 @@ class _$CycleRunRolesInnerEffortEnumSerializer
   final String wireName = 'CycleRunRolesInnerEffortEnum';
 
   @override
-  Object serialize(Serializers serializers, CycleRunRolesInnerEffortEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CycleRunRolesInnerEffortEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CycleRunRolesInnerEffortEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CycleRunRolesInnerEffortEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CycleRunRolesInnerEffortEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CycleRunRolesInner extends CycleRunRolesInner {
@@ -236,29 +250,29 @@ class _$CycleRunRolesInner extends CycleRunRolesInner {
   @override
   final BuiltList<String>? warnings;
 
-  factory _$CycleRunRolesInner(
-          [void Function(CycleRunRolesInnerBuilder)? updates]) =>
-      (CycleRunRolesInnerBuilder()..update(updates))._build();
+  factory _$CycleRunRolesInner([
+    void Function(CycleRunRolesInnerBuilder)? updates,
+  ]) => (CycleRunRolesInnerBuilder()..update(updates))._build();
 
-  _$CycleRunRolesInner._(
-      {required this.role,
-      required this.status,
-      this.reason,
-      this.provider,
-      this.model,
-      this.effort,
-      this.inputTokens,
-      this.outputTokens,
-      this.cachedTokens,
-      this.forecastsSubmitted,
-      this.proposalIds,
-      this.promptTemplate,
-      this.warnings})
-      : super._();
+  _$CycleRunRolesInner._({
+    required this.role,
+    required this.status,
+    this.reason,
+    this.provider,
+    this.model,
+    this.effort,
+    this.inputTokens,
+    this.outputTokens,
+    this.cachedTokens,
+    this.forecastsSubmitted,
+    this.proposalIds,
+    this.promptTemplate,
+    this.warnings,
+  }) : super._();
   @override
   CycleRunRolesInner rebuild(
-          void Function(CycleRunRolesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CycleRunRolesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CycleRunRolesInnerBuilder toBuilder() =>
@@ -426,12 +440,19 @@ class CycleRunRolesInnerBuilder
   _$CycleRunRolesInner _build() {
     _$CycleRunRolesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CycleRunRolesInner._(
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'CycleRunRolesInner', 'role'),
+              role,
+              r'CycleRunRolesInner',
+              'role',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'CycleRunRolesInner', 'status'),
+              status,
+              r'CycleRunRolesInner',
+              'status',
+            ),
             reason: reason,
             provider: provider,
             model: model,
@@ -455,7 +476,10 @@ class CycleRunRolesInnerBuilder
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CycleRunRolesInner', _$failedField, e.toString());
+          r'CycleRunRolesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

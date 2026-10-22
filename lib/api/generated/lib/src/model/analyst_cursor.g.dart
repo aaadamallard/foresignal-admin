@@ -19,9 +19,12 @@ class _$AnalystCursor extends AnalystCursor {
   factory _$AnalystCursor([void Function(AnalystCursorBuilder)? updates]) =>
       (AnalystCursorBuilder()..update(updates))._build();
 
-  _$AnalystCursor._(
-      {this.seq, this.alertId, this.eventUpdatedAt, this.anomalyId})
-      : super._();
+  _$AnalystCursor._({
+    this.seq,
+    this.alertId,
+    this.eventUpdatedAt,
+    this.anomalyId,
+  }) : super._();
   @override
   AnalystCursor rebuild(void Function(AnalystCursorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -112,7 +115,8 @@ class AnalystCursorBuilder
   AnalystCursor build() => _build();
 
   _$AnalystCursor _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalystCursor._(
           seq: seq,
           alertId: alertId,

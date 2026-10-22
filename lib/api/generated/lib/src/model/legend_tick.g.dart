@@ -86,12 +86,19 @@ class LegendTickBuilder implements Builder<LegendTick, LegendTickBuilder> {
   LegendTick build() => _build();
 
   _$LegendTick _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LegendTick._(
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'LegendTick', 'value'),
+            value,
+            r'LegendTick',
+            'value',
+          ),
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'LegendTick', 'label'),
+            label,
+            r'LegendTick',
+            'label',
+          ),
         );
     replace(_$result);
     return _$result;

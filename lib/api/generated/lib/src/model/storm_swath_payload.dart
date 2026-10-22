@@ -90,9 +90,11 @@ class _$StormSwathPayloadSerializer
     StormSwathPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,32 +110,39 @@ class _$StormSwathPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'trackId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.trackId = valueDes;
           break;
         case r'meshMaxMm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meshMaxMm = valueDes;
           break;
         case r'durationMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.durationMin = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StormSwathPayloadStatusEnum),
-          ) as StormSwathPayloadStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StormSwathPayloadStatusEnum,
+                    ),
+                  )
+                  as StormSwathPayloadStatusEnum?;
           if (valueDes == null) continue;
           result.status = valueDes;
           break;

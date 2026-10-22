@@ -92,11 +92,9 @@ class ChroniclePageBuilder
   _$ChroniclePage _build() {
     _$ChroniclePage _$result;
     try {
-      _$result = _$v ??
-          _$ChroniclePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ChroniclePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class ChroniclePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChroniclePage', _$failedField, e.toString());
+          r'ChroniclePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -21,13 +21,13 @@ class _$CpaBatchRequest extends CpaBatchRequest {
   factory _$CpaBatchRequest([void Function(CpaBatchRequestBuilder)? updates]) =>
       (CpaBatchRequestBuilder()..update(updates))._build();
 
-  _$CpaBatchRequest._(
-      {required this.subject,
-      required this.filter,
-      this.horizon,
-      this.maxDcpaM,
-      this.top})
-      : super._();
+  _$CpaBatchRequest._({
+    required this.subject,
+    required this.filter,
+    this.horizon,
+    this.maxDcpaM,
+    this.top,
+  }) : super._();
   @override
   CpaBatchRequest rebuild(void Function(CpaBatchRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,10 +128,14 @@ class CpaBatchRequestBuilder
   _$CpaBatchRequest _build() {
     _$CpaBatchRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CpaBatchRequest._(
             subject: BuiltValueNullFieldError.checkNotNull(
-                subject, r'CpaBatchRequest', 'subject'),
+              subject,
+              r'CpaBatchRequest',
+              'subject',
+            ),
             filter: filter.build(),
             horizon: horizon,
             maxDcpaM: maxDcpaM,
@@ -144,7 +148,10 @@ class CpaBatchRequestBuilder
         filter.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CpaBatchRequest', _$failedField, e.toString());
+          r'CpaBatchRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

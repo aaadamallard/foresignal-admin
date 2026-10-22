@@ -31,16 +31,16 @@ RecordMappingSpreadTypeEnum _$recordMappingSpreadTypeEnumValueOf(String name) {
 }
 
 final BuiltSet<RecordMappingSpreadTypeEnum>
-    _$recordMappingSpreadTypeEnumValues =
+_$recordMappingSpreadTypeEnumValues =
     BuiltSet<RecordMappingSpreadTypeEnum>(const <RecordMappingSpreadTypeEnum>[
-  _$recordMappingSpreadTypeEnum_number,
-  _$recordMappingSpreadTypeEnum_integer,
-  _$recordMappingSpreadTypeEnum_string,
-  _$recordMappingSpreadTypeEnum_boolean,
-]);
+      _$recordMappingSpreadTypeEnum_number,
+      _$recordMappingSpreadTypeEnum_integer,
+      _$recordMappingSpreadTypeEnum_string,
+      _$recordMappingSpreadTypeEnum_boolean,
+    ]);
 
 Serializer<RecordMappingSpreadTypeEnum>
-    _$recordMappingSpreadTypeEnumSerializer =
+_$recordMappingSpreadTypeEnumSerializer =
     _$RecordMappingSpreadTypeEnumSerializer();
 
 class _$RecordMappingSpreadTypeEnumSerializer
@@ -64,16 +64,20 @@ class _$RecordMappingSpreadTypeEnumSerializer
   final String wireName = 'RecordMappingSpreadTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, RecordMappingSpreadTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RecordMappingSpreadTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RecordMappingSpreadTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RecordMappingSpreadTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RecordMappingSpreadTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RecordMappingSpread extends RecordMappingSpread {
@@ -84,16 +88,16 @@ class _$RecordMappingSpread extends RecordMappingSpread {
   @override
   final int? max;
 
-  factory _$RecordMappingSpread(
-          [void Function(RecordMappingSpreadBuilder)? updates]) =>
-      (RecordMappingSpreadBuilder()..update(updates))._build();
+  factory _$RecordMappingSpread([
+    void Function(RecordMappingSpreadBuilder)? updates,
+  ]) => (RecordMappingSpreadBuilder()..update(updates))._build();
 
   _$RecordMappingSpread._({required this.path, this.type, this.max})
-      : super._();
+    : super._();
   @override
   RecordMappingSpread rebuild(
-          void Function(RecordMappingSpreadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecordMappingSpreadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecordMappingSpreadBuilder toBuilder() =>
@@ -173,10 +177,14 @@ class RecordMappingSpreadBuilder
   RecordMappingSpread build() => _build();
 
   _$RecordMappingSpread _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RecordMappingSpread._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'RecordMappingSpread', 'path'),
+            path,
+            r'RecordMappingSpread',
+            'path',
+          ),
           type: type,
           max: max,
         );

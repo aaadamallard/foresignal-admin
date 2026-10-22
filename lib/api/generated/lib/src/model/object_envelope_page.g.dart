@@ -12,15 +12,15 @@ class _$ObjectEnvelopePage extends ObjectEnvelopePage {
   @override
   final String? nextCursor;
 
-  factory _$ObjectEnvelopePage(
-          [void Function(ObjectEnvelopePageBuilder)? updates]) =>
-      (ObjectEnvelopePageBuilder()..update(updates))._build();
+  factory _$ObjectEnvelopePage([
+    void Function(ObjectEnvelopePageBuilder)? updates,
+  ]) => (ObjectEnvelopePageBuilder()..update(updates))._build();
 
   _$ObjectEnvelopePage._({required this.items, this.nextCursor}) : super._();
   @override
   ObjectEnvelopePage rebuild(
-          void Function(ObjectEnvelopePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObjectEnvelopePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObjectEnvelopePageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ObjectEnvelopePageBuilder
   _$ObjectEnvelopePage _build() {
     _$ObjectEnvelopePage _$result;
     try {
-      _$result = _$v ??
-          _$ObjectEnvelopePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ObjectEnvelopePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ObjectEnvelopePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObjectEnvelopePage', _$failedField, e.toString());
+          r'ObjectEnvelopePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

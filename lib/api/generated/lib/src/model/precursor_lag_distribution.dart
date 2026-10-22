@@ -32,9 +32,9 @@ abstract class PrecursorLagDistribution
 
   PrecursorLagDistribution._();
 
-  factory PrecursorLagDistribution(
-          [void updates(PrecursorLagDistributionBuilder b)]) =
-      _$PrecursorLagDistribution;
+  factory PrecursorLagDistribution([
+    void updates(PrecursorLagDistributionBuilder b),
+  ]) = _$PrecursorLagDistribution;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorLagDistributionBuilder b) => b;
@@ -49,7 +49,7 @@ class _$PrecursorLagDistributionSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorLagDistribution,
-    _$PrecursorLagDistribution
+    _$PrecursorLagDistribution,
   ];
 
   @override
@@ -89,9 +89,11 @@ class _$PrecursorLagDistributionSerializer
     PrecursorLagDistribution object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,26 +109,32 @@ class _$PrecursorLagDistributionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'p25':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.p25 = valueDes;
           break;
         case r'median':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.median = valueDes;
           break;
         case r'p75':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.p75 = valueDes;
           break;

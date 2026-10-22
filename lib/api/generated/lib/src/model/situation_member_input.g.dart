@@ -7,26 +7,27 @@ part of 'situation_member_input.dart';
 // **************************************************************************
 
 const SituationMemberInputMemberTypeEnum
-    _$situationMemberInputMemberTypeEnum_intelEvent =
+_$situationMemberInputMemberTypeEnum_intelEvent =
     const SituationMemberInputMemberTypeEnum._('intelEvent');
 const SituationMemberInputMemberTypeEnum
-    _$situationMemberInputMemberTypeEnum_finding =
+_$situationMemberInputMemberTypeEnum_finding =
     const SituationMemberInputMemberTypeEnum._('finding');
 const SituationMemberInputMemberTypeEnum
-    _$situationMemberInputMemberTypeEnum_alert =
+_$situationMemberInputMemberTypeEnum_alert =
     const SituationMemberInputMemberTypeEnum._('alert');
 const SituationMemberInputMemberTypeEnum
-    _$situationMemberInputMemberTypeEnum_anomaly =
+_$situationMemberInputMemberTypeEnum_anomaly =
     const SituationMemberInputMemberTypeEnum._('anomaly');
 const SituationMemberInputMemberTypeEnum
-    _$situationMemberInputMemberTypeEnum_record =
+_$situationMemberInputMemberTypeEnum_record =
     const SituationMemberInputMemberTypeEnum._('record');
 const SituationMemberInputMemberTypeEnum
-    _$situationMemberInputMemberTypeEnum_investigation =
+_$situationMemberInputMemberTypeEnum_investigation =
     const SituationMemberInputMemberTypeEnum._('investigation');
 
 SituationMemberInputMemberTypeEnum _$situationMemberInputMemberTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'intelEvent':
       return _$situationMemberInputMemberTypeEnum_intelEvent;
@@ -46,15 +47,17 @@ SituationMemberInputMemberTypeEnum _$situationMemberInputMemberTypeEnumValueOf(
 }
 
 final BuiltSet<SituationMemberInputMemberTypeEnum>
-    _$situationMemberInputMemberTypeEnumValues = BuiltSet<
-        SituationMemberInputMemberTypeEnum>(const <SituationMemberInputMemberTypeEnum>[
-  _$situationMemberInputMemberTypeEnum_intelEvent,
-  _$situationMemberInputMemberTypeEnum_finding,
-  _$situationMemberInputMemberTypeEnum_alert,
-  _$situationMemberInputMemberTypeEnum_anomaly,
-  _$situationMemberInputMemberTypeEnum_record,
-  _$situationMemberInputMemberTypeEnum_investigation,
-]);
+_$situationMemberInputMemberTypeEnumValues =
+    BuiltSet<SituationMemberInputMemberTypeEnum>(
+      const <SituationMemberInputMemberTypeEnum>[
+        _$situationMemberInputMemberTypeEnum_intelEvent,
+        _$situationMemberInputMemberTypeEnum_finding,
+        _$situationMemberInputMemberTypeEnum_alert,
+        _$situationMemberInputMemberTypeEnum_anomaly,
+        _$situationMemberInputMemberTypeEnum_record,
+        _$situationMemberInputMemberTypeEnum_investigation,
+      ],
+    );
 
 const SituationMemberInputRoleEnum _$situationMemberInputRoleEnum_core =
     const SituationMemberInputRoleEnum._('core');
@@ -62,7 +65,8 @@ const SituationMemberInputRoleEnum _$situationMemberInputRoleEnum_context =
     const SituationMemberInputRoleEnum._('context');
 
 SituationMemberInputRoleEnum _$situationMemberInputRoleEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'core':
       return _$situationMemberInputRoleEnum_core;
@@ -74,17 +78,18 @@ SituationMemberInputRoleEnum _$situationMemberInputRoleEnumValueOf(
 }
 
 final BuiltSet<SituationMemberInputRoleEnum>
-    _$situationMemberInputRoleEnumValues =
-    BuiltSet<SituationMemberInputRoleEnum>(const <SituationMemberInputRoleEnum>[
-  _$situationMemberInputRoleEnum_core,
-  _$situationMemberInputRoleEnum_context,
-]);
+_$situationMemberInputRoleEnumValues = BuiltSet<SituationMemberInputRoleEnum>(
+  const <SituationMemberInputRoleEnum>[
+    _$situationMemberInputRoleEnum_core,
+    _$situationMemberInputRoleEnum_context,
+  ],
+);
 
 Serializer<SituationMemberInputMemberTypeEnum>
-    _$situationMemberInputMemberTypeEnumSerializer =
+_$situationMemberInputMemberTypeEnumSerializer =
     _$SituationMemberInputMemberTypeEnumSerializer();
 Serializer<SituationMemberInputRoleEnum>
-    _$situationMemberInputRoleEnumSerializer =
+_$situationMemberInputRoleEnumSerializer =
     _$SituationMemberInputRoleEnumSerializer();
 
 class _$SituationMemberInputMemberTypeEnumSerializer
@@ -113,16 +118,19 @@ class _$SituationMemberInputMemberTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationMemberInputMemberTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationMemberInputMemberTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationMemberInputMemberTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationMemberInputMemberTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationMemberInputMemberTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationMemberInputRoleEnumSerializer
@@ -142,16 +150,20 @@ class _$SituationMemberInputRoleEnumSerializer
   final String wireName = 'SituationMemberInputRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, SituationMemberInputRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationMemberInputRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationMemberInputRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationMemberInputRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationMemberInputRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationMemberInput extends SituationMemberInput {
@@ -166,21 +178,21 @@ class _$SituationMemberInput extends SituationMemberInput {
   @override
   final String? moveFromSituationId;
 
-  factory _$SituationMemberInput(
-          [void Function(SituationMemberInputBuilder)? updates]) =>
-      (SituationMemberInputBuilder()..update(updates))._build();
+  factory _$SituationMemberInput([
+    void Function(SituationMemberInputBuilder)? updates,
+  ]) => (SituationMemberInputBuilder()..update(updates))._build();
 
-  _$SituationMemberInput._(
-      {required this.memberType,
-      required this.ref,
-      this.seq,
-      this.role,
-      this.moveFromSituationId})
-      : super._();
+  _$SituationMemberInput._({
+    required this.memberType,
+    required this.ref,
+    this.seq,
+    this.role,
+    this.moveFromSituationId,
+  }) : super._();
   @override
   SituationMemberInput rebuild(
-          void Function(SituationMemberInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationMemberInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationMemberInputBuilder toBuilder() =>
@@ -278,12 +290,19 @@ class SituationMemberInputBuilder
   SituationMemberInput build() => _build();
 
   _$SituationMemberInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationMemberInput._(
           memberType: BuiltValueNullFieldError.checkNotNull(
-              memberType, r'SituationMemberInput', 'memberType'),
+            memberType,
+            r'SituationMemberInput',
+            'memberType',
+          ),
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'SituationMemberInput', 'ref'),
+            ref,
+            r'SituationMemberInput',
+            'ref',
+          ),
           seq: seq,
           role: role,
           moveFromSituationId: moveFromSituationId,

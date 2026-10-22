@@ -12,16 +12,16 @@ class _$AnalysisManifestBuild extends AnalysisManifestBuild {
   @override
   final String? gitCommit;
 
-  factory _$AnalysisManifestBuild(
-          [void Function(AnalysisManifestBuildBuilder)? updates]) =>
-      (AnalysisManifestBuildBuilder()..update(updates))._build();
+  factory _$AnalysisManifestBuild([
+    void Function(AnalysisManifestBuildBuilder)? updates,
+  ]) => (AnalysisManifestBuildBuilder()..update(updates))._build();
 
   _$AnalysisManifestBuild._({required this.version, this.gitCommit})
-      : super._();
+    : super._();
   @override
   AnalysisManifestBuild rebuild(
-          void Function(AnalysisManifestBuildBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisManifestBuildBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisManifestBuildBuilder toBuilder() =>
@@ -93,10 +93,14 @@ class AnalysisManifestBuildBuilder
   AnalysisManifestBuild build() => _build();
 
   _$AnalysisManifestBuild _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalysisManifestBuild._(
           version: BuiltValueNullFieldError.checkNotNull(
-              version, r'AnalysisManifestBuild', 'version'),
+            version,
+            r'AnalysisManifestBuild',
+            'version',
+          ),
           gitCommit: gitCommit,
         );
     replace(_$result);

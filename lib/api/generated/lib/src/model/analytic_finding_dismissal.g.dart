@@ -14,17 +14,19 @@ class _$AnalyticFindingDismissal extends AnalyticFindingDismissal {
   @override
   final String by;
 
-  factory _$AnalyticFindingDismissal(
-          [void Function(AnalyticFindingDismissalBuilder)? updates]) =>
-      (AnalyticFindingDismissalBuilder()..update(updates))._build();
+  factory _$AnalyticFindingDismissal([
+    void Function(AnalyticFindingDismissalBuilder)? updates,
+  ]) => (AnalyticFindingDismissalBuilder()..update(updates))._build();
 
-  _$AnalyticFindingDismissal._(
-      {required this.reason, required this.at, required this.by})
-      : super._();
+  _$AnalyticFindingDismissal._({
+    required this.reason,
+    required this.at,
+    required this.by,
+  }) : super._();
   @override
   AnalyticFindingDismissal rebuild(
-          void Function(AnalyticFindingDismissalBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalyticFindingDismissalBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalyticFindingDismissalBuilder toBuilder() =>
@@ -105,14 +107,24 @@ class AnalyticFindingDismissalBuilder
   AnalyticFindingDismissal build() => _build();
 
   _$AnalyticFindingDismissal _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalyticFindingDismissal._(
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'AnalyticFindingDismissal', 'reason'),
+            reason,
+            r'AnalyticFindingDismissal',
+            'reason',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'AnalyticFindingDismissal', 'at'),
+            at,
+            r'AnalyticFindingDismissal',
+            'at',
+          ),
           by: BuiltValueNullFieldError.checkNotNull(
-              by, r'AnalyticFindingDismissal', 'by'),
+            by,
+            r'AnalyticFindingDismissal',
+            'by',
+          ),
         );
     replace(_$result);
     return _$result;

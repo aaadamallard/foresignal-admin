@@ -72,9 +72,11 @@ class _$InfraNodeEdgesSerializer
     InfraNodeEdges object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,20 +92,26 @@ class _$InfraNodeEdgesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'in':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(InfraEdge)]),
-          ) as BuiltList<InfraEdge>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(InfraEdge),
+                    ]),
+                  )
+                  as BuiltList<InfraEdge>?;
           if (valueDes == null) continue;
           result.in_.replace(valueDes);
           break;
         case r'out':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(InfraEdge)]),
-          ) as BuiltList<InfraEdge>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(InfraEdge),
+                    ]),
+                  )
+                  as BuiltList<InfraEdge>?;
           if (valueDes == null) continue;
           result.out_.replace(valueDes);
           break;

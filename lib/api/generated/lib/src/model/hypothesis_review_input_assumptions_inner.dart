@@ -18,8 +18,10 @@ part 'hypothesis_review_input_assumptions_inner.g.dart';
 @BuiltValue()
 abstract class HypothesisReviewInputAssumptionsInner
     implements
-        Built<HypothesisReviewInputAssumptionsInner,
-            HypothesisReviewInputAssumptionsInnerBuilder> {
+        Built<
+          HypothesisReviewInputAssumptionsInner,
+          HypothesisReviewInputAssumptionsInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'assumptionId')
   String get assumptionId;
@@ -33,9 +35,9 @@ abstract class HypothesisReviewInputAssumptionsInner
 
   HypothesisReviewInputAssumptionsInner._();
 
-  factory HypothesisReviewInputAssumptionsInner(
-          [void updates(HypothesisReviewInputAssumptionsInnerBuilder b)]) =
-      _$HypothesisReviewInputAssumptionsInner;
+  factory HypothesisReviewInputAssumptionsInner([
+    void updates(HypothesisReviewInputAssumptionsInnerBuilder b),
+  ]) = _$HypothesisReviewInputAssumptionsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisReviewInputAssumptionsInnerBuilder b) => b;
@@ -50,7 +52,7 @@ class _$HypothesisReviewInputAssumptionsInnerSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisReviewInputAssumptionsInner,
-    _$HypothesisReviewInputAssumptionsInner
+    _$HypothesisReviewInputAssumptionsInner,
   ];
 
   @override
@@ -69,8 +71,9 @@ class _$HypothesisReviewInputAssumptionsInnerSerializer
     yield r'status';
     yield serializers.serialize(
       object.status,
-      specifiedType:
-          const FullType(HypothesisReviewInputAssumptionsInnerStatusEnum),
+      specifiedType: const FullType(
+        HypothesisReviewInputAssumptionsInnerStatusEnum,
+      ),
     );
     if (object.rationale != null) {
       yield r'rationale';
@@ -87,9 +90,11 @@ class _$HypothesisReviewInputAssumptionsInnerSerializer
     HypothesisReviewInputAssumptionsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,25 +110,32 @@ class _$HypothesisReviewInputAssumptionsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'assumptionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.assumptionId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(HypothesisReviewInputAssumptionsInnerStatusEnum),
-          ) as HypothesisReviewInputAssumptionsInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HypothesisReviewInputAssumptionsInnerStatusEnum,
+                    ),
+                  )
+                  as HypothesisReviewInputAssumptionsInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'rationale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.rationale = valueDes;
           break;
@@ -171,11 +183,10 @@ class HypothesisReviewInputAssumptionsInnerStatusEnum extends EnumClass {
       _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken;
 
   static Serializer<HypothesisReviewInputAssumptionsInnerStatusEnum>
-      get serializer =>
-          _$hypothesisReviewInputAssumptionsInnerStatusEnumSerializer;
+  get serializer => _$hypothesisReviewInputAssumptionsInnerStatusEnumSerializer;
 
   const HypothesisReviewInputAssumptionsInnerStatusEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<HypothesisReviewInputAssumptionsInnerStatusEnum> get values =>
       _$hypothesisReviewInputAssumptionsInnerStatusEnumValues;

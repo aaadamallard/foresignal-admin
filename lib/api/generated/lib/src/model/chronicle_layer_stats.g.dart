@@ -12,15 +12,15 @@ class _$ChronicleLayerStats extends ChronicleLayerStats {
   @override
   final int? bytes;
 
-  factory _$ChronicleLayerStats(
-          [void Function(ChronicleLayerStatsBuilder)? updates]) =>
-      (ChronicleLayerStatsBuilder()..update(updates))._build();
+  factory _$ChronicleLayerStats([
+    void Function(ChronicleLayerStatsBuilder)? updates,
+  ]) => (ChronicleLayerStatsBuilder()..update(updates))._build();
 
   _$ChronicleLayerStats._({this.rows, this.bytes}) : super._();
   @override
   ChronicleLayerStats rebuild(
-          void Function(ChronicleLayerStatsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleLayerStatsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleLayerStatsBuilder toBuilder() =>
@@ -92,11 +92,7 @@ class ChronicleLayerStatsBuilder
   ChronicleLayerStats build() => _build();
 
   _$ChronicleLayerStats _build() {
-    final _$result = _$v ??
-        _$ChronicleLayerStats._(
-          rows: rows,
-          bytes: bytes,
-        );
+    final _$result = _$v ?? _$ChronicleLayerStats._(rows: rows, bytes: bytes);
     replace(_$result);
     return _$result;
   }

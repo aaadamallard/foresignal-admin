@@ -41,9 +41,9 @@ abstract class AchMatrixHypothesesInner
 
   AchMatrixHypothesesInner._();
 
-  factory AchMatrixHypothesesInner(
-          [void updates(AchMatrixHypothesesInnerBuilder b)]) =
-      _$AchMatrixHypothesesInner;
+  factory AchMatrixHypothesesInner([
+    void updates(AchMatrixHypothesesInnerBuilder b),
+  ]) = _$AchMatrixHypothesesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AchMatrixHypothesesInnerBuilder b) => b;
@@ -58,7 +58,7 @@ class _$AchMatrixHypothesesInnerSerializer
   @override
   final Iterable<Type> types = const [
     AchMatrixHypothesesInner,
-    _$AchMatrixHypothesesInner
+    _$AchMatrixHypothesesInner,
   ];
 
   @override
@@ -104,9 +104,11 @@ class _$AchMatrixHypothesesInnerSerializer
     AchMatrixHypothesesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -122,39 +124,43 @@ class _$AchMatrixHypothesesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.label = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.probability = valueDes;
           break;
         case r'estimativeTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IcdTerm),
-          ) as IcdTerm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IcdTerm),
+                  )
+                  as IcdTerm?;
           if (valueDes == null) continue;
           result.estimativeTerm = valueDes;
           break;
         case r'inconsistencyScore':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.inconsistencyScore = valueDes;
           break;
         default:

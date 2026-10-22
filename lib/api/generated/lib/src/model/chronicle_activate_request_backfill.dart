@@ -15,16 +15,18 @@ part 'chronicle_activate_request_backfill.g.dart';
 @BuiltValue()
 abstract class ChronicleActivateRequestBackfill
     implements
-        Built<ChronicleActivateRequestBackfill,
-            ChronicleActivateRequestBackfillBuilder> {
+        Built<
+          ChronicleActivateRequestBackfill,
+          ChronicleActivateRequestBackfillBuilder
+        > {
   @BuiltValueField(wireName: r'from')
   DateTime get from;
 
   ChronicleActivateRequestBackfill._();
 
-  factory ChronicleActivateRequestBackfill(
-          [void updates(ChronicleActivateRequestBackfillBuilder b)]) =
-      _$ChronicleActivateRequestBackfill;
+  factory ChronicleActivateRequestBackfill([
+    void updates(ChronicleActivateRequestBackfillBuilder b),
+  ]) = _$ChronicleActivateRequestBackfill;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleActivateRequestBackfillBuilder b) => b;
@@ -39,7 +41,7 @@ class _$ChronicleActivateRequestBackfillSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleActivateRequestBackfill,
-    _$ChronicleActivateRequestBackfill
+    _$ChronicleActivateRequestBackfill,
   ];
 
   @override
@@ -63,9 +65,11 @@ class _$ChronicleActivateRequestBackfillSerializer
     ChronicleActivateRequestBackfill object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +85,12 @@ class _$ChronicleActivateRequestBackfillSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         default:

@@ -10,9 +10,9 @@ class _$AnalystNoteEvent extends AnalystNoteEvent {
   @override
   final AnalystNote note;
 
-  factory _$AnalystNoteEvent(
-          [void Function(AnalystNoteEventBuilder)? updates]) =>
-      (AnalystNoteEventBuilder()..update(updates))._build();
+  factory _$AnalystNoteEvent([
+    void Function(AnalystNoteEventBuilder)? updates,
+  ]) => (AnalystNoteEventBuilder()..update(updates))._build();
 
   _$AnalystNoteEvent._({required this.note}) : super._();
   @override
@@ -39,8 +39,9 @@ class _$AnalystNoteEvent extends AnalystNoteEvent {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AnalystNoteEvent')..add('note', note))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AnalystNoteEvent',
+    )..add('note', note)).toString();
   }
 }
 
@@ -81,10 +82,7 @@ class AnalystNoteEventBuilder
   _$AnalystNoteEvent _build() {
     _$AnalystNoteEvent _$result;
     try {
-      _$result = _$v ??
-          _$AnalystNoteEvent._(
-            note: note.build(),
-          );
+      _$result = _$v ?? _$AnalystNoteEvent._(note: note.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -92,7 +90,10 @@ class AnalystNoteEventBuilder
         note.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystNoteEvent', _$failedField, e.toString());
+          r'AnalystNoteEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

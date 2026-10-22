@@ -19,12 +19,12 @@ class _$SystemInfoLlm extends SystemInfoLlm {
   factory _$SystemInfoLlm([void Function(SystemInfoLlmBuilder)? updates]) =>
       (SystemInfoLlmBuilder()..update(updates))._build();
 
-  _$SystemInfoLlm._(
-      {this.configured,
-      this.chatProvider,
-      this.embeddingProvider,
-      this.tokensToday})
-      : super._();
+  _$SystemInfoLlm._({
+    this.configured,
+    this.chatProvider,
+    this.embeddingProvider,
+    this.tokensToday,
+  }) : super._();
   @override
   SystemInfoLlm rebuild(void Function(SystemInfoLlmBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -115,7 +115,8 @@ class SystemInfoLlmBuilder
   SystemInfoLlm build() => _build();
 
   _$SystemInfoLlm _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoLlm._(
           configured: configured,
           chatProvider: chatProvider,

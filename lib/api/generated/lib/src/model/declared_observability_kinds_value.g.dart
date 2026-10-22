@@ -17,17 +17,20 @@ class _$DeclaredObservabilityKindsValue
   @override
   final String? notes;
 
-  factory _$DeclaredObservabilityKindsValue(
-          [void Function(DeclaredObservabilityKindsValueBuilder)? updates]) =>
-      (DeclaredObservabilityKindsValueBuilder()..update(updates))._build();
+  factory _$DeclaredObservabilityKindsValue([
+    void Function(DeclaredObservabilityKindsValueBuilder)? updates,
+  ]) => (DeclaredObservabilityKindsValueBuilder()..update(updates))._build();
 
-  _$DeclaredObservabilityKindsValue._(
-      {required this.area, this.thresholds, this.typicalLatency, this.notes})
-      : super._();
+  _$DeclaredObservabilityKindsValue._({
+    required this.area,
+    this.thresholds,
+    this.typicalLatency,
+    this.notes,
+  }) : super._();
   @override
   DeclaredObservabilityKindsValue rebuild(
-          void Function(DeclaredObservabilityKindsValueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DeclaredObservabilityKindsValueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DeclaredObservabilityKindsValueBuilder toBuilder() =>
@@ -67,8 +70,10 @@ class _$DeclaredObservabilityKindsValue
 
 class DeclaredObservabilityKindsValueBuilder
     implements
-        Builder<DeclaredObservabilityKindsValue,
-            DeclaredObservabilityKindsValueBuilder> {
+        Builder<
+          DeclaredObservabilityKindsValue,
+          DeclaredObservabilityKindsValueBuilder
+        > {
   _$DeclaredObservabilityKindsValue? _$v;
 
   DeclaredObservabilityKindsValueAreaBuilder? _area;
@@ -82,9 +87,8 @@ class DeclaredObservabilityKindsValueBuilder
       _$this._thresholds ??=
           ListBuilder<DeclaredObservabilityKindsValueThresholdsInner>();
   set thresholds(
-          ListBuilder<DeclaredObservabilityKindsValueThresholdsInner>?
-              thresholds) =>
-      _$this._thresholds = thresholds;
+    ListBuilder<DeclaredObservabilityKindsValueThresholdsInner>? thresholds,
+  ) => _$this._thresholds = thresholds;
 
   String? _typicalLatency;
   String? get typicalLatency => _$this._typicalLatency;
@@ -127,7 +131,8 @@ class DeclaredObservabilityKindsValueBuilder
   _$DeclaredObservabilityKindsValue _build() {
     _$DeclaredObservabilityKindsValue _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DeclaredObservabilityKindsValue._(
             area: area.build(),
             thresholds: _thresholds?.build(),
@@ -143,7 +148,10 @@ class DeclaredObservabilityKindsValueBuilder
         _thresholds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DeclaredObservabilityKindsValue', _$failedField, e.toString());
+          r'DeclaredObservabilityKindsValue',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

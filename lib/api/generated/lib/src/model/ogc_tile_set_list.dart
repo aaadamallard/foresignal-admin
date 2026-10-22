@@ -49,8 +49,9 @@ class _$OgcTileSetListSerializer
     yield r'tilesets';
     yield serializers.serialize(
       object.tilesets,
-      specifiedType:
-          const FullType(BuiltList, [FullType(OgcTileSetListTilesetsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OgcTileSetListTilesetsInner),
+      ]),
     );
   }
 
@@ -60,9 +61,11 @@ class _$OgcTileSetListSerializer
     OgcTileSetList object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -78,11 +81,14 @@ class _$OgcTileSetListSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tilesets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(OgcTileSetListTilesetsInner)]),
-          ) as BuiltList<OgcTileSetListTilesetsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcTileSetListTilesetsInner),
+                    ]),
+                  )
+                  as BuiltList<OgcTileSetListTilesetsInner>;
           result.tilesets.replace(valueDes);
           break;
         default:

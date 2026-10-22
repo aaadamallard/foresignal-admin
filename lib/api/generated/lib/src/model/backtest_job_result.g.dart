@@ -16,7 +16,8 @@ const BacktestJobResultRuleTypeEnum _$backtestJobResultRuleTypeEnum_anomaly =
     const BacktestJobResultRuleTypeEnum._('anomaly');
 
 BacktestJobResultRuleTypeEnum _$backtestJobResultRuleTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$backtestJobResultRuleTypeEnum_record;
@@ -32,20 +33,22 @@ BacktestJobResultRuleTypeEnum _$backtestJobResultRuleTypeEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultRuleTypeEnum>
-    _$backtestJobResultRuleTypeEnumValues = BuiltSet<
-        BacktestJobResultRuleTypeEnum>(const <BacktestJobResultRuleTypeEnum>[
-  _$backtestJobResultRuleTypeEnum_record,
-  _$backtestJobResultRuleTypeEnum_count,
-  _$backtestJobResultRuleTypeEnum_absence,
-  _$backtestJobResultRuleTypeEnum_anomaly,
-]);
+_$backtestJobResultRuleTypeEnumValues = BuiltSet<BacktestJobResultRuleTypeEnum>(
+  const <BacktestJobResultRuleTypeEnum>[
+    _$backtestJobResultRuleTypeEnum_record,
+    _$backtestJobResultRuleTypeEnum_count,
+    _$backtestJobResultRuleTypeEnum_absence,
+    _$backtestJobResultRuleTypeEnum_anomaly,
+  ],
+);
 
 const BacktestJobResultPermutationsEnum
-    _$backtestJobResultPermutationsEnum_number200 =
+_$backtestJobResultPermutationsEnum_number200 =
     const BacktestJobResultPermutationsEnum._('number200');
 
 BacktestJobResultPermutationsEnum _$backtestJobResultPermutationsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'number200':
       return _$backtestJobResultPermutationsEnum_number200;
@@ -55,15 +58,17 @@ BacktestJobResultPermutationsEnum _$backtestJobResultPermutationsEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultPermutationsEnum>
-    _$backtestJobResultPermutationsEnumValues = BuiltSet<
-        BacktestJobResultPermutationsEnum>(const <BacktestJobResultPermutationsEnum>[
-  _$backtestJobResultPermutationsEnum_number200,
-]);
+_$backtestJobResultPermutationsEnumValues =
+    BuiltSet<BacktestJobResultPermutationsEnum>(
+      const <BacktestJobResultPermutationsEnum>[
+        _$backtestJobResultPermutationsEnum_number200,
+      ],
+    );
 
 const BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnum_insufficient =
     const BacktestJobResultVerdictEnum._('insufficient');
 const BacktestJobResultVerdictEnum
-    _$backtestJobResultVerdictEnum_noEvidenceOfPrecedence =
+_$backtestJobResultVerdictEnum_noEvidenceOfPrecedence =
     const BacktestJobResultVerdictEnum._('noEvidenceOfPrecedence');
 const BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnum_weak =
     const BacktestJobResultVerdictEnum._('weak');
@@ -71,7 +76,8 @@ const BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnum_notable =
     const BacktestJobResultVerdictEnum._('notable');
 
 BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'insufficient':
       return _$backtestJobResultVerdictEnum_insufficient;
@@ -87,26 +93,26 @@ BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultVerdictEnum>
-    _$backtestJobResultVerdictEnumValues =
+_$backtestJobResultVerdictEnumValues =
     BuiltSet<BacktestJobResultVerdictEnum>(const <BacktestJobResultVerdictEnum>[
-  _$backtestJobResultVerdictEnum_insufficient,
-  _$backtestJobResultVerdictEnum_noEvidenceOfPrecedence,
-  _$backtestJobResultVerdictEnum_weak,
-  _$backtestJobResultVerdictEnum_notable,
-]);
+      _$backtestJobResultVerdictEnum_insufficient,
+      _$backtestJobResultVerdictEnum_noEvidenceOfPrecedence,
+      _$backtestJobResultVerdictEnum_weak,
+      _$backtestJobResultVerdictEnum_notable,
+    ]);
 
 const BacktestJobResultFeedbackMappingEnum
-    _$backtestJobResultFeedbackMappingEnum_positive =
+_$backtestJobResultFeedbackMappingEnum_positive =
     const BacktestJobResultFeedbackMappingEnum._('positive');
 const BacktestJobResultFeedbackMappingEnum
-    _$backtestJobResultFeedbackMappingEnum_negative =
+_$backtestJobResultFeedbackMappingEnum_negative =
     const BacktestJobResultFeedbackMappingEnum._('negative');
 const BacktestJobResultFeedbackMappingEnum
-    _$backtestJobResultFeedbackMappingEnum_neutral =
+_$backtestJobResultFeedbackMappingEnum_neutral =
     const BacktestJobResultFeedbackMappingEnum._('neutral');
 
 BacktestJobResultFeedbackMappingEnum
-    _$backtestJobResultFeedbackMappingEnumValueOf(String name) {
+_$backtestJobResultFeedbackMappingEnumValueOf(String name) {
   switch (name) {
     case 'positive':
       return _$backtestJobResultFeedbackMappingEnum_positive;
@@ -120,12 +126,14 @@ BacktestJobResultFeedbackMappingEnum
 }
 
 final BuiltSet<BacktestJobResultFeedbackMappingEnum>
-    _$backtestJobResultFeedbackMappingEnumValues = BuiltSet<
-        BacktestJobResultFeedbackMappingEnum>(const <BacktestJobResultFeedbackMappingEnum>[
-  _$backtestJobResultFeedbackMappingEnum_positive,
-  _$backtestJobResultFeedbackMappingEnum_negative,
-  _$backtestJobResultFeedbackMappingEnum_neutral,
-]);
+_$backtestJobResultFeedbackMappingEnumValues =
+    BuiltSet<BacktestJobResultFeedbackMappingEnum>(
+      const <BacktestJobResultFeedbackMappingEnum>[
+        _$backtestJobResultFeedbackMappingEnum_positive,
+        _$backtestJobResultFeedbackMappingEnum_negative,
+        _$backtestJobResultFeedbackMappingEnum_neutral,
+      ],
+    );
 
 const BacktestJobResultStatusEnum _$backtestJobResultStatusEnum_queued =
     const BacktestJobResultStatusEnum._('queued');
@@ -160,26 +168,27 @@ BacktestJobResultStatusEnum _$backtestJobResultStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<BacktestJobResultStatusEnum>
-    _$backtestJobResultStatusEnumValues =
+_$backtestJobResultStatusEnumValues =
     BuiltSet<BacktestJobResultStatusEnum>(const <BacktestJobResultStatusEnum>[
-  _$backtestJobResultStatusEnum_queued,
-  _$backtestJobResultStatusEnum_running,
-  _$backtestJobResultStatusEnum_done,
-  _$backtestJobResultStatusEnum_failed,
-  _$backtestJobResultStatusEnum_skipped,
-  _$backtestJobResultStatusEnum_cancelled,
-]);
+      _$backtestJobResultStatusEnum_queued,
+      _$backtestJobResultStatusEnum_running,
+      _$backtestJobResultStatusEnum_done,
+      _$backtestJobResultStatusEnum_failed,
+      _$backtestJobResultStatusEnum_skipped,
+      _$backtestJobResultStatusEnum_cancelled,
+    ]);
 
 const BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnum_identical =
     const BacktestJobResultOutcomeEnum._('identical');
 const BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnum_differs =
     const BacktestJobResultOutcomeEnum._('differs');
 const BacktestJobResultOutcomeEnum
-    _$backtestJobResultOutcomeEnum_notReplayable =
+_$backtestJobResultOutcomeEnum_notReplayable =
     const BacktestJobResultOutcomeEnum._('notReplayable');
 
 BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'identical':
       return _$backtestJobResultOutcomeEnum_identical;
@@ -193,17 +202,17 @@ BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultOutcomeEnum>
-    _$backtestJobResultOutcomeEnumValues =
+_$backtestJobResultOutcomeEnumValues =
     BuiltSet<BacktestJobResultOutcomeEnum>(const <BacktestJobResultOutcomeEnum>[
-  _$backtestJobResultOutcomeEnum_identical,
-  _$backtestJobResultOutcomeEnum_differs,
-  _$backtestJobResultOutcomeEnum_notReplayable,
-]);
+      _$backtestJobResultOutcomeEnum_identical,
+      _$backtestJobResultOutcomeEnum_differs,
+      _$backtestJobResultOutcomeEnum_notReplayable,
+    ]);
 
 const BacktestJobResultReasonEnum _$backtestJobResultReasonEnum_inputsPurged =
     const BacktestJobResultReasonEnum._('inputsPurged');
 const BacktestJobResultReasonEnum
-    _$backtestJobResultReasonEnum_componentRemoved =
+_$backtestJobResultReasonEnum_componentRemoved =
     const BacktestJobResultReasonEnum._('componentRemoved');
 const BacktestJobResultReasonEnum _$backtestJobResultReasonEnum_llmOutput =
     const BacktestJobResultReasonEnum._('llmOutput');
@@ -222,12 +231,12 @@ BacktestJobResultReasonEnum _$backtestJobResultReasonEnumValueOf(String name) {
 }
 
 final BuiltSet<BacktestJobResultReasonEnum>
-    _$backtestJobResultReasonEnumValues =
+_$backtestJobResultReasonEnumValues =
     BuiltSet<BacktestJobResultReasonEnum>(const <BacktestJobResultReasonEnum>[
-  _$backtestJobResultReasonEnum_inputsPurged,
-  _$backtestJobResultReasonEnum_componentRemoved,
-  _$backtestJobResultReasonEnum_llmOutput,
-]);
+      _$backtestJobResultReasonEnum_inputsPurged,
+      _$backtestJobResultReasonEnum_componentRemoved,
+      _$backtestJobResultReasonEnum_llmOutput,
+    ]);
 
 const BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnum_day =
     const BacktestJobResultFrequencyEnum._('day');
@@ -235,7 +244,8 @@ const BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnum_week =
     const BacktestJobResultFrequencyEnum._('week');
 
 BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'day':
       return _$backtestJobResultFrequencyEnum_day;
@@ -247,27 +257,30 @@ BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultFrequencyEnum>
-    _$backtestJobResultFrequencyEnumValues = BuiltSet<
-        BacktestJobResultFrequencyEnum>(const <BacktestJobResultFrequencyEnum>[
-  _$backtestJobResultFrequencyEnum_day,
-  _$backtestJobResultFrequencyEnum_week,
-]);
+_$backtestJobResultFrequencyEnumValues =
+    BuiltSet<BacktestJobResultFrequencyEnum>(
+      const <BacktestJobResultFrequencyEnum>[
+        _$backtestJobResultFrequencyEnum_day,
+        _$backtestJobResultFrequencyEnum_week,
+      ],
+    );
 
 const BacktestJobResultTransformEnum
-    _$backtestJobResultTransformEnum_logReturn =
+_$backtestJobResultTransformEnum_logReturn =
     const BacktestJobResultTransformEnum._('logReturn');
 const BacktestJobResultTransformEnum
-    _$backtestJobResultTransformEnum_logLevelStandardised =
+_$backtestJobResultTransformEnum_logLevelStandardised =
     const BacktestJobResultTransformEnum._('logLevelStandardised');
 const BacktestJobResultTransformEnum
-    _$backtestJobResultTransformEnum_weeklyDifferenceStandardised =
+_$backtestJobResultTransformEnum_weeklyDifferenceStandardised =
     const BacktestJobResultTransformEnum._('weeklyDifferenceStandardised');
 const BacktestJobResultTransformEnum
-    _$backtestJobResultTransformEnum_anscombeResidual =
+_$backtestJobResultTransformEnum_anscombeResidual =
     const BacktestJobResultTransformEnum._('anscombeResidual');
 
 BacktestJobResultTransformEnum _$backtestJobResultTransformEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'logReturn':
       return _$backtestJobResultTransformEnum_logReturn;
@@ -283,13 +296,15 @@ BacktestJobResultTransformEnum _$backtestJobResultTransformEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultTransformEnum>
-    _$backtestJobResultTransformEnumValues = BuiltSet<
-        BacktestJobResultTransformEnum>(const <BacktestJobResultTransformEnum>[
-  _$backtestJobResultTransformEnum_logReturn,
-  _$backtestJobResultTransformEnum_logLevelStandardised,
-  _$backtestJobResultTransformEnum_weeklyDifferenceStandardised,
-  _$backtestJobResultTransformEnum_anscombeResidual,
-]);
+_$backtestJobResultTransformEnumValues =
+    BuiltSet<BacktestJobResultTransformEnum>(
+      const <BacktestJobResultTransformEnum>[
+        _$backtestJobResultTransformEnum_logReturn,
+        _$backtestJobResultTransformEnum_logLevelStandardised,
+        _$backtestJobResultTransformEnum_weeklyDifferenceStandardised,
+        _$backtestJobResultTransformEnum_anscombeResidual,
+      ],
+    );
 
 const BacktestJobResultModeEnum _$backtestJobResultModeEnum_mine =
     const BacktestJobResultModeEnum._('mine');
@@ -309,9 +324,9 @@ BacktestJobResultModeEnum _$backtestJobResultModeEnumValueOf(String name) {
 
 final BuiltSet<BacktestJobResultModeEnum> _$backtestJobResultModeEnumValues =
     BuiltSet<BacktestJobResultModeEnum>(const <BacktestJobResultModeEnum>[
-  _$backtestJobResultModeEnum_mine,
-  _$backtestJobResultModeEnum_retest,
-]);
+      _$backtestJobResultModeEnum_mine,
+      _$backtestJobResultModeEnum_retest,
+    ]);
 
 const BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnum_schedule =
     const BacktestJobResultTriggerEnum._('schedule');
@@ -321,7 +336,8 @@ const BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnum_cycle =
     const BacktestJobResultTriggerEnum._('cycle');
 
 BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'schedule':
       return _$backtestJobResultTriggerEnum_schedule;
@@ -335,12 +351,12 @@ BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultTriggerEnum>
-    _$backtestJobResultTriggerEnumValues =
+_$backtestJobResultTriggerEnumValues =
     BuiltSet<BacktestJobResultTriggerEnum>(const <BacktestJobResultTriggerEnum>[
-  _$backtestJobResultTriggerEnum_schedule,
-  _$backtestJobResultTriggerEnum_manual,
-  _$backtestJobResultTriggerEnum_cycle,
-]);
+      _$backtestJobResultTriggerEnum_schedule,
+      _$backtestJobResultTriggerEnum_manual,
+      _$backtestJobResultTriggerEnum_cycle,
+    ]);
 
 const BacktestJobResultMethodEnum _$backtestJobResultMethodEnum_BH =
     const BacktestJobResultMethodEnum._('BH');
@@ -359,11 +375,12 @@ BacktestJobResultMethodEnum _$backtestJobResultMethodEnumValueOf(String name) {
 }
 
 final BuiltSet<BacktestJobResultMethodEnum>
-    _$backtestJobResultMethodEnumValues =
-    BuiltSet<BacktestJobResultMethodEnum>(const <BacktestJobResultMethodEnum>[
-  _$backtestJobResultMethodEnum_BH,
-  _$backtestJobResultMethodEnum_BY,
-]);
+_$backtestJobResultMethodEnumValues = BuiltSet<BacktestJobResultMethodEnum>(
+  const <BacktestJobResultMethodEnum>[
+    _$backtestJobResultMethodEnum_BH,
+    _$backtestJobResultMethodEnum_BY,
+  ],
+);
 
 const BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnum_ucdpGed =
     const BacktestJobResultDatasetEnum._('ucdpGed');
@@ -375,7 +392,8 @@ const BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnum_gdacs =
     const BacktestJobResultDatasetEnum._('gdacs');
 
 BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ucdpGed':
       return _$backtestJobResultDatasetEnum_ucdpGed;
@@ -391,13 +409,13 @@ BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnumValueOf(
 }
 
 final BuiltSet<BacktestJobResultDatasetEnum>
-    _$backtestJobResultDatasetEnumValues =
+_$backtestJobResultDatasetEnumValues =
     BuiltSet<BacktestJobResultDatasetEnum>(const <BacktestJobResultDatasetEnum>[
-  _$backtestJobResultDatasetEnum_ucdpGed,
-  _$backtestJobResultDatasetEnum_acled,
-  _$backtestJobResultDatasetEnum_usgsComcat,
-  _$backtestJobResultDatasetEnum_gdacs,
-]);
+      _$backtestJobResultDatasetEnum_ucdpGed,
+      _$backtestJobResultDatasetEnum_acled,
+      _$backtestJobResultDatasetEnum_usgsComcat,
+      _$backtestJobResultDatasetEnum_gdacs,
+    ]);
 
 const BacktestJobResultEgressEnum _$backtestJobResultEgressEnum_OPEN =
     const BacktestJobResultEgressEnum._('OPEN');
@@ -416,52 +434,53 @@ BacktestJobResultEgressEnum _$backtestJobResultEgressEnumValueOf(String name) {
 }
 
 final BuiltSet<BacktestJobResultEgressEnum>
-    _$backtestJobResultEgressEnumValues =
-    BuiltSet<BacktestJobResultEgressEnum>(const <BacktestJobResultEgressEnum>[
-  _$backtestJobResultEgressEnum_OPEN,
-  _$backtestJobResultEgressEnum_LOCAL_ONLY,
-]);
+_$backtestJobResultEgressEnumValues = BuiltSet<BacktestJobResultEgressEnum>(
+  const <BacktestJobResultEgressEnum>[
+    _$backtestJobResultEgressEnum_OPEN,
+    _$backtestJobResultEgressEnum_LOCAL_ONLY,
+  ],
+);
 
 Serializer<BacktestJobResultRuleTypeEnum>
-    _$backtestJobResultRuleTypeEnumSerializer =
+_$backtestJobResultRuleTypeEnumSerializer =
     _$BacktestJobResultRuleTypeEnumSerializer();
 Serializer<BacktestJobResultPermutationsEnum>
-    _$backtestJobResultPermutationsEnumSerializer =
+_$backtestJobResultPermutationsEnumSerializer =
     _$BacktestJobResultPermutationsEnumSerializer();
 Serializer<BacktestJobResultVerdictEnum>
-    _$backtestJobResultVerdictEnumSerializer =
+_$backtestJobResultVerdictEnumSerializer =
     _$BacktestJobResultVerdictEnumSerializer();
 Serializer<BacktestJobResultFeedbackMappingEnum>
-    _$backtestJobResultFeedbackMappingEnumSerializer =
+_$backtestJobResultFeedbackMappingEnumSerializer =
     _$BacktestJobResultFeedbackMappingEnumSerializer();
 Serializer<BacktestJobResultStatusEnum>
-    _$backtestJobResultStatusEnumSerializer =
+_$backtestJobResultStatusEnumSerializer =
     _$BacktestJobResultStatusEnumSerializer();
 Serializer<BacktestJobResultOutcomeEnum>
-    _$backtestJobResultOutcomeEnumSerializer =
+_$backtestJobResultOutcomeEnumSerializer =
     _$BacktestJobResultOutcomeEnumSerializer();
 Serializer<BacktestJobResultReasonEnum>
-    _$backtestJobResultReasonEnumSerializer =
+_$backtestJobResultReasonEnumSerializer =
     _$BacktestJobResultReasonEnumSerializer();
 Serializer<BacktestJobResultFrequencyEnum>
-    _$backtestJobResultFrequencyEnumSerializer =
+_$backtestJobResultFrequencyEnumSerializer =
     _$BacktestJobResultFrequencyEnumSerializer();
 Serializer<BacktestJobResultTransformEnum>
-    _$backtestJobResultTransformEnumSerializer =
+_$backtestJobResultTransformEnumSerializer =
     _$BacktestJobResultTransformEnumSerializer();
 Serializer<BacktestJobResultModeEnum> _$backtestJobResultModeEnumSerializer =
     _$BacktestJobResultModeEnumSerializer();
 Serializer<BacktestJobResultTriggerEnum>
-    _$backtestJobResultTriggerEnumSerializer =
+_$backtestJobResultTriggerEnumSerializer =
     _$BacktestJobResultTriggerEnumSerializer();
 Serializer<BacktestJobResultMethodEnum>
-    _$backtestJobResultMethodEnumSerializer =
+_$backtestJobResultMethodEnumSerializer =
     _$BacktestJobResultMethodEnumSerializer();
 Serializer<BacktestJobResultDatasetEnum>
-    _$backtestJobResultDatasetEnumSerializer =
+_$backtestJobResultDatasetEnumSerializer =
     _$BacktestJobResultDatasetEnumSerializer();
 Serializer<BacktestJobResultEgressEnum>
-    _$backtestJobResultEgressEnumSerializer =
+_$backtestJobResultEgressEnumSerializer =
     _$BacktestJobResultEgressEnumSerializer();
 
 class _$BacktestJobResultRuleTypeEnumSerializer
@@ -486,16 +505,19 @@ class _$BacktestJobResultRuleTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, BacktestJobResultRuleTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    BacktestJobResultRuleTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultRuleTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultRuleTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultRuleTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultPermutationsEnumSerializer
@@ -514,16 +536,19 @@ class _$BacktestJobResultPermutationsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, BacktestJobResultPermutationsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    BacktestJobResultPermutationsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultPermutationsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultPermutationsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultPermutationsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultVerdictEnumSerializer
@@ -547,16 +572,20 @@ class _$BacktestJobResultVerdictEnumSerializer
   final String wireName = 'BacktestJobResultVerdictEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultVerdictEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultVerdictEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultVerdictEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultVerdictEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultVerdictEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultFeedbackMappingEnumSerializer
@@ -574,23 +603,26 @@ class _$BacktestJobResultFeedbackMappingEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BacktestJobResultFeedbackMappingEnum
+    BacktestJobResultFeedbackMappingEnum,
   ];
   @override
   final String wireName = 'BacktestJobResultFeedbackMappingEnum';
 
   @override
   Object serialize(
-          Serializers serializers, BacktestJobResultFeedbackMappingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    BacktestJobResultFeedbackMappingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultFeedbackMappingEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultFeedbackMappingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultFeedbackMappingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultStatusEnumSerializer
@@ -618,16 +650,20 @@ class _$BacktestJobResultStatusEnumSerializer
   final String wireName = 'BacktestJobResultStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultOutcomeEnumSerializer
@@ -649,16 +685,20 @@ class _$BacktestJobResultOutcomeEnumSerializer
   final String wireName = 'BacktestJobResultOutcomeEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultOutcomeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultOutcomeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultOutcomeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultOutcomeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultOutcomeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultReasonEnumSerializer
@@ -680,16 +720,20 @@ class _$BacktestJobResultReasonEnumSerializer
   final String wireName = 'BacktestJobResultReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultFrequencyEnumSerializer
@@ -710,16 +754,19 @@ class _$BacktestJobResultFrequencyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, BacktestJobResultFrequencyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    BacktestJobResultFrequencyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultFrequencyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultFrequencyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultFrequencyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultTransformEnumSerializer
@@ -744,16 +791,19 @@ class _$BacktestJobResultTransformEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, BacktestJobResultTransformEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    BacktestJobResultTransformEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultTransformEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultTransformEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultTransformEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultModeEnumSerializer
@@ -773,16 +823,20 @@ class _$BacktestJobResultModeEnumSerializer
   final String wireName = 'BacktestJobResultModeEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultTriggerEnumSerializer
@@ -804,16 +858,20 @@ class _$BacktestJobResultTriggerEnumSerializer
   final String wireName = 'BacktestJobResultTriggerEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultTriggerEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultTriggerEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultTriggerEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultTriggerEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultTriggerEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultMethodEnumSerializer
@@ -833,16 +891,20 @@ class _$BacktestJobResultMethodEnumSerializer
   final String wireName = 'BacktestJobResultMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultDatasetEnumSerializer
@@ -866,16 +928,20 @@ class _$BacktestJobResultDatasetEnumSerializer
   final String wireName = 'BacktestJobResultDatasetEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultDatasetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultDatasetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultDatasetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultDatasetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultDatasetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResultEgressEnumSerializer
@@ -895,25 +961,29 @@ class _$BacktestJobResultEgressEnumSerializer
   final String wireName = 'BacktestJobResultEgressEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobResultEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobResultEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestJobResultEgressEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobResultEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobResultEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobResult extends BacktestJobResult {
   @override
   final OneOf oneOf;
 
-  factory _$BacktestJobResult(
-          [void Function(BacktestJobResultBuilder)? updates]) =>
-      (BacktestJobResultBuilder()..update(updates))._build();
+  factory _$BacktestJobResult([
+    void Function(BacktestJobResultBuilder)? updates,
+  ]) => (BacktestJobResultBuilder()..update(updates))._build();
 
   _$BacktestJobResult._({required this.oneOf}) : super._();
   @override
@@ -940,9 +1010,9 @@ class _$BacktestJobResult extends BacktestJobResult {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'BacktestJobResult')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'BacktestJobResult',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -981,10 +1051,14 @@ class BacktestJobResultBuilder
   BacktestJobResult build() => _build();
 
   _$BacktestJobResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BacktestJobResult._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'BacktestJobResult', 'oneOf'),
+            oneOf,
+            r'BacktestJobResult',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

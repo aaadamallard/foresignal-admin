@@ -14,16 +14,16 @@ class _$AnalystRunInputCounts extends AnalystRunInputCounts {
   @override
   final int? alerts;
 
-  factory _$AnalystRunInputCounts(
-          [void Function(AnalystRunInputCountsBuilder)? updates]) =>
-      (AnalystRunInputCountsBuilder()..update(updates))._build();
+  factory _$AnalystRunInputCounts([
+    void Function(AnalystRunInputCountsBuilder)? updates,
+  ]) => (AnalystRunInputCountsBuilder()..update(updates))._build();
 
   _$AnalystRunInputCounts._({this.events, this.anomalies, this.alerts})
-      : super._();
+    : super._();
   @override
   AnalystRunInputCounts rebuild(
-          void Function(AnalystRunInputCountsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystRunInputCountsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystRunInputCountsBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class AnalystRunInputCountsBuilder
   AnalystRunInputCounts build() => _build();
 
   _$AnalystRunInputCounts _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalystRunInputCounts._(
           events: events,
           anomalies: anomalies,

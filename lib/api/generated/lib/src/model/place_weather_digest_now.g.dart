@@ -16,17 +16,20 @@ class _$PlaceWeatherDigestNow extends PlaceWeatherDigestNow {
   @override
   final PlaceWeatherDigestNowAlertsStatus? alertsStatus;
 
-  factory _$PlaceWeatherDigestNow(
-          [void Function(PlaceWeatherDigestNowBuilder)? updates]) =>
-      (PlaceWeatherDigestNowBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNow([
+    void Function(PlaceWeatherDigestNowBuilder)? updates,
+  ]) => (PlaceWeatherDigestNowBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestNow._(
-      {this.radar, this.lightning, this.alerts, this.alertsStatus})
-      : super._();
+  _$PlaceWeatherDigestNow._({
+    this.radar,
+    this.lightning,
+    this.alerts,
+    this.alertsStatus,
+  }) : super._();
   @override
   PlaceWeatherDigestNow rebuild(
-          void Function(PlaceWeatherDigestNowBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNowBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNowBuilder toBuilder() =>
@@ -123,7 +126,8 @@ class PlaceWeatherDigestNowBuilder
   _$PlaceWeatherDigestNow _build() {
     _$PlaceWeatherDigestNow _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlaceWeatherDigestNow._(
             radar: _radar?.build(),
             lightning: _lightning?.build(),
@@ -143,7 +147,10 @@ class PlaceWeatherDigestNowBuilder
         _alertsStatus?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceWeatherDigestNow', _$failedField, e.toString());
+          r'PlaceWeatherDigestNow',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

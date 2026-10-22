@@ -16,8 +16,10 @@ part 'stats_grid_features_inner_properties.g.dart';
 @BuiltValue()
 abstract class StatsGridFeaturesInnerProperties
     implements
-        Built<StatsGridFeaturesInnerProperties,
-            StatsGridFeaturesInnerPropertiesBuilder> {
+        Built<
+          StatsGridFeaturesInnerProperties,
+          StatsGridFeaturesInnerPropertiesBuilder
+        > {
   @BuiltValueField(wireName: r'cell')
   String? get cell;
 
@@ -26,9 +28,9 @@ abstract class StatsGridFeaturesInnerProperties
 
   StatsGridFeaturesInnerProperties._();
 
-  factory StatsGridFeaturesInnerProperties(
-          [void updates(StatsGridFeaturesInnerPropertiesBuilder b)]) =
-      _$StatsGridFeaturesInnerProperties;
+  factory StatsGridFeaturesInnerProperties([
+    void updates(StatsGridFeaturesInnerPropertiesBuilder b),
+  ]) = _$StatsGridFeaturesInnerProperties;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StatsGridFeaturesInnerPropertiesBuilder b) => b;
@@ -43,7 +45,7 @@ class _$StatsGridFeaturesInnerPropertiesSerializer
   @override
   final Iterable<Type> types = const [
     StatsGridFeaturesInnerProperties,
-    _$StatsGridFeaturesInnerProperties
+    _$StatsGridFeaturesInnerProperties,
   ];
 
   @override
@@ -74,9 +76,11 @@ class _$StatsGridFeaturesInnerPropertiesSerializer
     StatsGridFeaturesInnerProperties object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +96,19 @@ class _$StatsGridFeaturesInnerPropertiesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'cell':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cell = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.value = valueDes;
           break;
         default:

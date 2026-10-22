@@ -12,16 +12,16 @@ class _$VelocityJsonComponent extends VelocityJsonComponent {
   @override
   final BuiltList<num?> data;
 
-  factory _$VelocityJsonComponent(
-          [void Function(VelocityJsonComponentBuilder)? updates]) =>
-      (VelocityJsonComponentBuilder()..update(updates))._build();
+  factory _$VelocityJsonComponent([
+    void Function(VelocityJsonComponentBuilder)? updates,
+  ]) => (VelocityJsonComponentBuilder()..update(updates))._build();
 
   _$VelocityJsonComponent._({required this.header, required this.data})
-      : super._();
+    : super._();
   @override
   VelocityJsonComponent rebuild(
-          void Function(VelocityJsonComponentBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(VelocityJsonComponentBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   VelocityJsonComponentBuilder toBuilder() =>
@@ -97,11 +97,9 @@ class VelocityJsonComponentBuilder
   _$VelocityJsonComponent _build() {
     _$VelocityJsonComponent _$result;
     try {
-      _$result = _$v ??
-          _$VelocityJsonComponent._(
-            header: header.build(),
-            data: data.build(),
-          );
+      _$result =
+          _$v ??
+          _$VelocityJsonComponent._(header: header.build(), data: data.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -111,7 +109,10 @@ class VelocityJsonComponentBuilder
         data.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'VelocityJsonComponent', _$failedField, e.toString());
+          r'VelocityJsonComponent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

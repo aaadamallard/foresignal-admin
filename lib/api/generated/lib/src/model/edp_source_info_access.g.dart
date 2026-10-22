@@ -9,7 +9,7 @@ part of 'edp_source_info_access.dart';
 const EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnum_official =
     const EdpSourceInfoAccessRouteEnum._('official');
 const EdpSourceInfoAccessRouteEnum
-    _$edpSourceInfoAccessRouteEnum_unofficialApi =
+_$edpSourceInfoAccessRouteEnum_unofficialApi =
     const EdpSourceInfoAccessRouteEnum._('unofficialApi');
 const EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnum_scrape =
     const EdpSourceInfoAccessRouteEnum._('scrape');
@@ -19,7 +19,8 @@ const EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnum_other =
     const EdpSourceInfoAccessRouteEnum._('other');
 
 EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'official':
       return _$edpSourceInfoAccessRouteEnum_official;
@@ -37,25 +38,26 @@ EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnumValueOf(
 }
 
 final BuiltSet<EdpSourceInfoAccessRouteEnum>
-    _$edpSourceInfoAccessRouteEnumValues =
+_$edpSourceInfoAccessRouteEnumValues =
     BuiltSet<EdpSourceInfoAccessRouteEnum>(const <EdpSourceInfoAccessRouteEnum>[
-  _$edpSourceInfoAccessRouteEnum_official,
-  _$edpSourceInfoAccessRouteEnum_unofficialApi,
-  _$edpSourceInfoAccessRouteEnum_scrape,
-  _$edpSourceInfoAccessRouteEnum_browser,
-  _$edpSourceInfoAccessRouteEnum_other,
-]);
+      _$edpSourceInfoAccessRouteEnum_official,
+      _$edpSourceInfoAccessRouteEnum_unofficialApi,
+      _$edpSourceInfoAccessRouteEnum_scrape,
+      _$edpSourceInfoAccessRouteEnum_browser,
+      _$edpSourceInfoAccessRouteEnum_other,
+    ]);
 
 const EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnum_low =
     const EdpSourceInfoAccessFragilityEnum._('low');
 const EdpSourceInfoAccessFragilityEnum
-    _$edpSourceInfoAccessFragilityEnum_medium =
+_$edpSourceInfoAccessFragilityEnum_medium =
     const EdpSourceInfoAccessFragilityEnum._('medium');
 const EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnum_high =
     const EdpSourceInfoAccessFragilityEnum._('high');
 
 EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'low':
       return _$edpSourceInfoAccessFragilityEnum_low;
@@ -69,18 +71,20 @@ EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnumValueOf(
 }
 
 final BuiltSet<EdpSourceInfoAccessFragilityEnum>
-    _$edpSourceInfoAccessFragilityEnumValues = BuiltSet<
-        EdpSourceInfoAccessFragilityEnum>(const <EdpSourceInfoAccessFragilityEnum>[
-  _$edpSourceInfoAccessFragilityEnum_low,
-  _$edpSourceInfoAccessFragilityEnum_medium,
-  _$edpSourceInfoAccessFragilityEnum_high,
-]);
+_$edpSourceInfoAccessFragilityEnumValues =
+    BuiltSet<EdpSourceInfoAccessFragilityEnum>(
+      const <EdpSourceInfoAccessFragilityEnum>[
+        _$edpSourceInfoAccessFragilityEnum_low,
+        _$edpSourceInfoAccessFragilityEnum_medium,
+        _$edpSourceInfoAccessFragilityEnum_high,
+      ],
+    );
 
 Serializer<EdpSourceInfoAccessRouteEnum>
-    _$edpSourceInfoAccessRouteEnumSerializer =
+_$edpSourceInfoAccessRouteEnumSerializer =
     _$EdpSourceInfoAccessRouteEnumSerializer();
 Serializer<EdpSourceInfoAccessFragilityEnum>
-    _$edpSourceInfoAccessFragilityEnumSerializer =
+_$edpSourceInfoAccessFragilityEnumSerializer =
     _$EdpSourceInfoAccessFragilityEnumSerializer();
 
 class _$EdpSourceInfoAccessRouteEnumSerializer
@@ -106,16 +110,20 @@ class _$EdpSourceInfoAccessRouteEnumSerializer
   final String wireName = 'EdpSourceInfoAccessRouteEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpSourceInfoAccessRouteEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpSourceInfoAccessRouteEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpSourceInfoAccessRouteEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpSourceInfoAccessRouteEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpSourceInfoAccessRouteEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpSourceInfoAccessFragilityEnumSerializer
@@ -138,16 +146,19 @@ class _$EdpSourceInfoAccessFragilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EdpSourceInfoAccessFragilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EdpSourceInfoAccessFragilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpSourceInfoAccessFragilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpSourceInfoAccessFragilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpSourceInfoAccessFragilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpSourceInfoAccess extends EdpSourceInfoAccess {
@@ -156,15 +167,15 @@ class _$EdpSourceInfoAccess extends EdpSourceInfoAccess {
   @override
   final EdpSourceInfoAccessFragilityEnum? fragility;
 
-  factory _$EdpSourceInfoAccess(
-          [void Function(EdpSourceInfoAccessBuilder)? updates]) =>
-      (EdpSourceInfoAccessBuilder()..update(updates))._build();
+  factory _$EdpSourceInfoAccess([
+    void Function(EdpSourceInfoAccessBuilder)? updates,
+  ]) => (EdpSourceInfoAccessBuilder()..update(updates))._build();
 
   _$EdpSourceInfoAccess._({required this.route, this.fragility}) : super._();
   @override
   EdpSourceInfoAccess rebuild(
-          void Function(EdpSourceInfoAccessBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpSourceInfoAccessBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpSourceInfoAccessBuilder toBuilder() =>
@@ -237,10 +248,14 @@ class EdpSourceInfoAccessBuilder
   EdpSourceInfoAccess build() => _build();
 
   _$EdpSourceInfoAccess _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpSourceInfoAccess._(
           route: BuiltValueNullFieldError.checkNotNull(
-              route, r'EdpSourceInfoAccess', 'route'),
+            route,
+            r'EdpSourceInfoAccess',
+            'route',
+          ),
           fragility: fragility,
         );
     replace(_$result);

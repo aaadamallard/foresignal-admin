@@ -91,11 +91,8 @@ class EntityRecordBuilder
   _$EntityRecord _build() {
     _$EntityRecord _$result;
     try {
-      _$result = _$v ??
-          _$EntityRecord._(
-            record: record.build(),
-            link: link.build(),
-          );
+      _$result =
+          _$v ?? _$EntityRecord._(record: record.build(), link: link.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -105,7 +102,10 @@ class EntityRecordBuilder
         link.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EntityRecord', _$failedField, e.toString());
+          r'EntityRecord',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

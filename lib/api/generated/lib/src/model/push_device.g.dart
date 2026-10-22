@@ -24,9 +24,9 @@ PushDeviceTransportEnum _$pushDeviceTransportEnumValueOf(String name) {
 
 final BuiltSet<PushDeviceTransportEnum> _$pushDeviceTransportEnumValues =
     BuiltSet<PushDeviceTransportEnum>(const <PushDeviceTransportEnum>[
-  _$pushDeviceTransportEnum_apns,
-  _$pushDeviceTransportEnum_fcm,
-]);
+      _$pushDeviceTransportEnum_apns,
+      _$pushDeviceTransportEnum_fcm,
+    ]);
 
 const PushDevicePlatformEnum _$pushDevicePlatformEnum_ios =
     const PushDevicePlatformEnum._('ios');
@@ -54,11 +54,11 @@ PushDevicePlatformEnum _$pushDevicePlatformEnumValueOf(String name) {
 
 final BuiltSet<PushDevicePlatformEnum> _$pushDevicePlatformEnumValues =
     BuiltSet<PushDevicePlatformEnum>(const <PushDevicePlatformEnum>[
-  _$pushDevicePlatformEnum_ios,
-  _$pushDevicePlatformEnum_ipados,
-  _$pushDevicePlatformEnum_macos,
-  _$pushDevicePlatformEnum_android,
-]);
+      _$pushDevicePlatformEnum_ios,
+      _$pushDevicePlatformEnum_ipados,
+      _$pushDevicePlatformEnum_macos,
+      _$pushDevicePlatformEnum_android,
+    ]);
 
 const PushDeviceEnvironmentEnum _$pushDeviceEnvironmentEnum_sandbox =
     const PushDeviceEnvironmentEnum._('sandbox');
@@ -78,9 +78,9 @@ PushDeviceEnvironmentEnum _$pushDeviceEnvironmentEnumValueOf(String name) {
 
 final BuiltSet<PushDeviceEnvironmentEnum> _$pushDeviceEnvironmentEnumValues =
     BuiltSet<PushDeviceEnvironmentEnum>(const <PushDeviceEnvironmentEnum>[
-  _$pushDeviceEnvironmentEnum_sandbox,
-  _$pushDeviceEnvironmentEnum_production,
-]);
+      _$pushDeviceEnvironmentEnum_sandbox,
+      _$pushDeviceEnvironmentEnum_production,
+    ]);
 
 const PushDeviceContentLevelEnum _$pushDeviceContentLevelEnum_minimal =
     const PushDeviceContentLevelEnum._('minimal');
@@ -100,9 +100,9 @@ PushDeviceContentLevelEnum _$pushDeviceContentLevelEnumValueOf(String name) {
 
 final BuiltSet<PushDeviceContentLevelEnum> _$pushDeviceContentLevelEnumValues =
     BuiltSet<PushDeviceContentLevelEnum>(const <PushDeviceContentLevelEnum>[
-  _$pushDeviceContentLevelEnum_minimal,
-  _$pushDeviceContentLevelEnum_short,
-]);
+      _$pushDeviceContentLevelEnum_minimal,
+      _$pushDeviceContentLevelEnum_short,
+    ]);
 
 const PushDeviceStatusEnum _$pushDeviceStatusEnum_active =
     const PushDeviceStatusEnum._('active');
@@ -122,9 +122,9 @@ PushDeviceStatusEnum _$pushDeviceStatusEnumValueOf(String name) {
 
 final BuiltSet<PushDeviceStatusEnum> _$pushDeviceStatusEnumValues =
     BuiltSet<PushDeviceStatusEnum>(const <PushDeviceStatusEnum>[
-  _$pushDeviceStatusEnum_active,
-  _$pushDeviceStatusEnum_disabled,
-]);
+      _$pushDeviceStatusEnum_active,
+      _$pushDeviceStatusEnum_disabled,
+    ]);
 
 Serializer<PushDeviceTransportEnum> _$pushDeviceTransportEnumSerializer =
     _$PushDeviceTransportEnumSerializer();
@@ -154,16 +154,20 @@ class _$PushDeviceTransportEnumSerializer
   final String wireName = 'PushDeviceTransportEnum';
 
   @override
-  Object serialize(Serializers serializers, PushDeviceTransportEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushDeviceTransportEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushDeviceTransportEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushDeviceTransportEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushDeviceTransportEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushDevicePlatformEnumSerializer
@@ -187,15 +191,20 @@ class _$PushDevicePlatformEnumSerializer
   final String wireName = 'PushDevicePlatformEnum';
 
   @override
-  Object serialize(Serializers serializers, PushDevicePlatformEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushDevicePlatformEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PushDevicePlatformEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushDevicePlatformEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PushDevicePlatformEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushDevicePlatformEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushDeviceEnvironmentEnumSerializer
@@ -215,16 +224,20 @@ class _$PushDeviceEnvironmentEnumSerializer
   final String wireName = 'PushDeviceEnvironmentEnum';
 
   @override
-  Object serialize(Serializers serializers, PushDeviceEnvironmentEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushDeviceEnvironmentEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushDeviceEnvironmentEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushDeviceEnvironmentEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushDeviceEnvironmentEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushDeviceContentLevelEnumSerializer
@@ -244,16 +257,20 @@ class _$PushDeviceContentLevelEnumSerializer
   final String wireName = 'PushDeviceContentLevelEnum';
 
   @override
-  Object serialize(Serializers serializers, PushDeviceContentLevelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushDeviceContentLevelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushDeviceContentLevelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushDeviceContentLevelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushDeviceContentLevelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushDeviceStatusEnumSerializer
@@ -273,15 +290,20 @@ class _$PushDeviceStatusEnumSerializer
   final String wireName = 'PushDeviceStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, PushDeviceStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushDeviceStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PushDeviceStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushDeviceStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PushDeviceStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushDeviceStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushDevice extends PushDevice {
@@ -327,27 +349,27 @@ class _$PushDevice extends PushDevice {
   factory _$PushDevice([void Function(PushDeviceBuilder)? updates]) =>
       (PushDeviceBuilder()..update(updates))._build();
 
-  _$PushDevice._(
-      {required this.id,
-      required this.transport,
-      required this.platform,
-      required this.appId,
-      this.environment,
-      required this.tokenSuffix,
-      this.tokenId,
-      this.name,
-      this.deviceName,
-      this.appVersion,
-      this.filters,
-      this.contentLevel,
-      this.lang,
-      required this.status,
-      required this.createdAt,
-      this.lastSuccessAt,
-      this.lastFailureAt,
-      this.failureCount,
-      this.lastStatus})
-      : super._();
+  _$PushDevice._({
+    required this.id,
+    required this.transport,
+    required this.platform,
+    required this.appId,
+    this.environment,
+    required this.tokenSuffix,
+    this.tokenId,
+    this.name,
+    this.deviceName,
+    this.appVersion,
+    this.filters,
+    this.contentLevel,
+    this.lang,
+    required this.status,
+    required this.createdAt,
+    this.lastSuccessAt,
+    this.lastFailureAt,
+    this.failureCount,
+    this.lastStatus,
+  }) : super._();
   @override
   PushDevice rebuild(void Function(PushDeviceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -563,18 +585,31 @@ class PushDeviceBuilder implements Builder<PushDevice, PushDeviceBuilder> {
   _$PushDevice _build() {
     _$PushDevice _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushDevice._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'PushDevice', 'id'),
             transport: BuiltValueNullFieldError.checkNotNull(
-                transport, r'PushDevice', 'transport'),
+              transport,
+              r'PushDevice',
+              'transport',
+            ),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'PushDevice', 'platform'),
+              platform,
+              r'PushDevice',
+              'platform',
+            ),
             appId: BuiltValueNullFieldError.checkNotNull(
-                appId, r'PushDevice', 'appId'),
+              appId,
+              r'PushDevice',
+              'appId',
+            ),
             environment: environment,
             tokenSuffix: BuiltValueNullFieldError.checkNotNull(
-                tokenSuffix, r'PushDevice', 'tokenSuffix'),
+              tokenSuffix,
+              r'PushDevice',
+              'tokenSuffix',
+            ),
             tokenId: tokenId,
             name: name,
             deviceName: deviceName,
@@ -583,9 +618,15 @@ class PushDeviceBuilder implements Builder<PushDevice, PushDeviceBuilder> {
             contentLevel: contentLevel,
             lang: lang,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'PushDevice', 'status'),
+              status,
+              r'PushDevice',
+              'status',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'PushDevice', 'createdAt'),
+              createdAt,
+              r'PushDevice',
+              'createdAt',
+            ),
             lastSuccessAt: lastSuccessAt,
             lastFailureAt: lastFailureAt,
             failureCount: failureCount,
@@ -598,7 +639,10 @@ class PushDeviceBuilder implements Builder<PushDevice, PushDeviceBuilder> {
         _filters?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushDevice', _$failedField, e.toString());
+          r'PushDevice',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -14,17 +14,19 @@ class _$SituationChangesSeverity extends SituationChangesSeverity {
   @override
   final bool changed;
 
-  factory _$SituationChangesSeverity(
-          [void Function(SituationChangesSeverityBuilder)? updates]) =>
-      (SituationChangesSeverityBuilder()..update(updates))._build();
+  factory _$SituationChangesSeverity([
+    void Function(SituationChangesSeverityBuilder)? updates,
+  ]) => (SituationChangesSeverityBuilder()..update(updates))._build();
 
-  _$SituationChangesSeverity._(
-      {this.before, required this.after, required this.changed})
-      : super._();
+  _$SituationChangesSeverity._({
+    this.before,
+    required this.after,
+    required this.changed,
+  }) : super._();
   @override
   SituationChangesSeverity rebuild(
-          void Function(SituationChangesSeverityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationChangesSeverityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationChangesSeverityBuilder toBuilder() =>
@@ -105,13 +107,20 @@ class SituationChangesSeverityBuilder
   SituationChangesSeverity build() => _build();
 
   _$SituationChangesSeverity _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationChangesSeverity._(
           before: before,
           after: BuiltValueNullFieldError.checkNotNull(
-              after, r'SituationChangesSeverity', 'after'),
+            after,
+            r'SituationChangesSeverity',
+            'after',
+          ),
           changed: BuiltValueNullFieldError.checkNotNull(
-              changed, r'SituationChangesSeverity', 'changed'),
+            changed,
+            r'SituationChangesSeverity',
+            'changed',
+          ),
         );
     replace(_$result);
     return _$result;

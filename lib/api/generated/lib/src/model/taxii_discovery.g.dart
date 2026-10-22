@@ -21,13 +21,13 @@ class _$TaxiiDiscovery extends TaxiiDiscovery {
   factory _$TaxiiDiscovery([void Function(TaxiiDiscoveryBuilder)? updates]) =>
       (TaxiiDiscoveryBuilder()..update(updates))._build();
 
-  _$TaxiiDiscovery._(
-      {required this.title,
-      this.description,
-      this.contact,
-      this.default_,
-      this.apiRoots})
-      : super._();
+  _$TaxiiDiscovery._({
+    required this.title,
+    this.description,
+    this.contact,
+    this.default_,
+    this.apiRoots,
+  }) : super._();
   @override
   TaxiiDiscovery rebuild(void Function(TaxiiDiscoveryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,10 +128,14 @@ class TaxiiDiscoveryBuilder
   _$TaxiiDiscovery _build() {
     _$TaxiiDiscovery _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TaxiiDiscovery._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'TaxiiDiscovery', 'title'),
+              title,
+              r'TaxiiDiscovery',
+              'title',
+            ),
             description: description,
             contact: contact,
             default_: default_,
@@ -144,7 +148,10 @@ class TaxiiDiscoveryBuilder
         _apiRoots?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TaxiiDiscovery', _$failedField, e.toString());
+          r'TaxiiDiscovery',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -18,17 +18,17 @@ class _$ArchiveSettingsS3 extends ArchiveSettingsS3 {
   @override
   final bool? pathStyle;
 
-  factory _$ArchiveSettingsS3(
-          [void Function(ArchiveSettingsS3Builder)? updates]) =>
-      (ArchiveSettingsS3Builder()..update(updates))._build();
+  factory _$ArchiveSettingsS3([
+    void Function(ArchiveSettingsS3Builder)? updates,
+  ]) => (ArchiveSettingsS3Builder()..update(updates))._build();
 
-  _$ArchiveSettingsS3._(
-      {required this.endpoint,
-      required this.bucket,
-      this.prefix,
-      this.region,
-      this.pathStyle})
-      : super._();
+  _$ArchiveSettingsS3._({
+    required this.endpoint,
+    required this.bucket,
+    this.prefix,
+    this.region,
+    this.pathStyle,
+  }) : super._();
   @override
   ArchiveSettingsS3 rebuild(void Function(ArchiveSettingsS3Builder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -127,12 +127,19 @@ class ArchiveSettingsS3Builder
   ArchiveSettingsS3 build() => _build();
 
   _$ArchiveSettingsS3 _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ArchiveSettingsS3._(
           endpoint: BuiltValueNullFieldError.checkNotNull(
-              endpoint, r'ArchiveSettingsS3', 'endpoint'),
+            endpoint,
+            r'ArchiveSettingsS3',
+            'endpoint',
+          ),
           bucket: BuiltValueNullFieldError.checkNotNull(
-              bucket, r'ArchiveSettingsS3', 'bucket'),
+            bucket,
+            r'ArchiveSettingsS3',
+            'bucket',
+          ),
           prefix: prefix,
           region: region,
           pathStyle: pathStyle,

@@ -32,11 +32,11 @@ SinkTestResultPhaseEnum _$sinkTestResultPhaseEnumValueOf(String name) {
 
 final BuiltSet<SinkTestResultPhaseEnum> _$sinkTestResultPhaseEnumValues =
     BuiltSet<SinkTestResultPhaseEnum>(const <SinkTestResultPhaseEnum>[
-  _$sinkTestResultPhaseEnum_validate,
-  _$sinkTestResultPhaseEnum_connect,
-  _$sinkTestResultPhaseEnum_bind,
-  _$sinkTestResultPhaseEnum_send,
-]);
+      _$sinkTestResultPhaseEnum_validate,
+      _$sinkTestResultPhaseEnum_connect,
+      _$sinkTestResultPhaseEnum_bind,
+      _$sinkTestResultPhaseEnum_send,
+    ]);
 
 Serializer<SinkTestResultPhaseEnum> _$sinkTestResultPhaseEnumSerializer =
     _$SinkTestResultPhaseEnumSerializer();
@@ -62,16 +62,20 @@ class _$SinkTestResultPhaseEnumSerializer
   final String wireName = 'SinkTestResultPhaseEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkTestResultPhaseEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkTestResultPhaseEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SinkTestResultPhaseEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkTestResultPhaseEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkTestResultPhaseEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkTestResult extends SinkTestResult {
@@ -89,13 +93,13 @@ class _$SinkTestResult extends SinkTestResult {
   factory _$SinkTestResult([void Function(SinkTestResultBuilder)? updates]) =>
       (SinkTestResultBuilder()..update(updates))._build();
 
-  _$SinkTestResult._(
-      {required this.ok,
-      required this.phase,
-      required this.message,
-      this.latencyMs,
-      this.details})
-      : super._();
+  _$SinkTestResult._({
+    required this.ok,
+    required this.phase,
+    required this.message,
+    this.latencyMs,
+    this.details,
+  }) : super._();
   @override
   SinkTestResult rebuild(void Function(SinkTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -197,14 +201,24 @@ class SinkTestResultBuilder
   _$SinkTestResult _build() {
     _$SinkTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkTestResult._(
             ok: BuiltValueNullFieldError.checkNotNull(
-                ok, r'SinkTestResult', 'ok'),
+              ok,
+              r'SinkTestResult',
+              'ok',
+            ),
             phase: BuiltValueNullFieldError.checkNotNull(
-                phase, r'SinkTestResult', 'phase'),
+              phase,
+              r'SinkTestResult',
+              'phase',
+            ),
             message: BuiltValueNullFieldError.checkNotNull(
-                message, r'SinkTestResult', 'message'),
+              message,
+              r'SinkTestResult',
+              'message',
+            ),
             latencyMs: latencyMs,
             details: _details?.build(),
           );
@@ -215,7 +229,10 @@ class SinkTestResultBuilder
         _details?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkTestResult', _$failedField, e.toString());
+          r'SinkTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

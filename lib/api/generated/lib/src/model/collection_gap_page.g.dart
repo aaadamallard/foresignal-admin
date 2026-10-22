@@ -12,9 +12,9 @@ class _$CollectionGapPage extends CollectionGapPage {
   @override
   final String? nextCursor;
 
-  factory _$CollectionGapPage(
-          [void Function(CollectionGapPageBuilder)? updates]) =>
-      (CollectionGapPageBuilder()..update(updates))._build();
+  factory _$CollectionGapPage([
+    void Function(CollectionGapPageBuilder)? updates,
+  ]) => (CollectionGapPageBuilder()..update(updates))._build();
 
   _$CollectionGapPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class CollectionGapPageBuilder
   _$CollectionGapPage _build() {
     _$CollectionGapPage _$result;
     try {
-      _$result = _$v ??
-          _$CollectionGapPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$CollectionGapPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class CollectionGapPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CollectionGapPage', _$failedField, e.toString());
+          r'CollectionGapPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

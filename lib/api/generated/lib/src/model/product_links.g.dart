@@ -23,14 +23,14 @@ class _$ProductLinks extends ProductLinks {
   factory _$ProductLinks([void Function(ProductLinksBuilder)? updates]) =>
       (ProductLinksBuilder()..update(updates))._build();
 
-  _$ProductLinks._(
-      {this.self,
-      this.frames,
-      this.latest,
-      this.tilejson,
-      this.legend,
-      this.timeline})
-      : super._();
+  _$ProductLinks._({
+    this.self,
+    this.frames,
+    this.latest,
+    this.tilejson,
+    this.legend,
+    this.timeline,
+  }) : super._();
   @override
   ProductLinks rebuild(void Function(ProductLinksBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -136,7 +136,8 @@ class ProductLinksBuilder
   ProductLinks build() => _build();
 
   _$ProductLinks _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProductLinks._(
           self: self,
           frames: frames,

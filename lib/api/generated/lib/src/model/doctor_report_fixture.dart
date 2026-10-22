@@ -49,7 +49,7 @@ class _$DoctorReportFixtureSerializer
   @override
   final Iterable<Type> types = const [
     DoctorReportFixture,
-    _$DoctorReportFixture
+    _$DoctorReportFixture,
   ];
 
   @override
@@ -94,9 +94,11 @@ class _$DoctorReportFixtureSerializer
     DoctorReportFixture object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,33 +114,41 @@ class _$DoctorReportFixtureSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'file':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.file = valueDes;
           break;
         case r'capturedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.capturedAt = valueDes;
           break;
         case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sha256 = valueDes;
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;

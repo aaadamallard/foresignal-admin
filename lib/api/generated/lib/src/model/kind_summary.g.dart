@@ -19,12 +19,12 @@ class _$KindSummary extends KindSummary {
   factory _$KindSummary([void Function(KindSummaryBuilder)? updates]) =>
       (KindSummaryBuilder()..update(updates))._build();
 
-  _$KindSummary._(
-      {required this.kind,
-      required this.currentCount,
-      required this.sources,
-      this.display})
-      : super._();
+  _$KindSummary._({
+    required this.kind,
+    required this.currentCount,
+    required this.sources,
+    this.display,
+  }) : super._();
   @override
   KindSummary rebuild(void Function(KindSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -115,12 +115,19 @@ class KindSummaryBuilder implements Builder<KindSummary, KindSummaryBuilder> {
   _$KindSummary _build() {
     _$KindSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KindSummary._(
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'KindSummary', 'kind'),
+              kind,
+              r'KindSummary',
+              'kind',
+            ),
             currentCount: BuiltValueNullFieldError.checkNotNull(
-                currentCount, r'KindSummary', 'currentCount'),
+              currentCount,
+              r'KindSummary',
+              'currentCount',
+            ),
             sources: sources.build(),
             display: _display?.build(),
           );
@@ -133,7 +140,10 @@ class KindSummaryBuilder implements Builder<KindSummary, KindSummaryBuilder> {
         _display?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KindSummary', _$failedField, e.toString());
+          r'KindSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

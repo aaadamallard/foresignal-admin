@@ -52,16 +52,10 @@ class ChannelsApi {
     final _path = r'/v1/channels';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -76,10 +70,7 @@ class ChannelsApi {
       _bodyData = _serializers.serialize(channelInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -102,9 +93,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Channel),
-            ) as Channel;
+                  rawResponse,
+                  specifiedType: const FullType(Channel),
+                )
+                as Channel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -151,21 +143,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -207,21 +199,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -243,9 +235,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Channel),
-            ) as Channel;
+                  rawResponse,
+                  specifiedType: const FullType(Channel),
+                )
+                as Channel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -292,21 +285,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}/airtime'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -328,9 +321,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChannelAirtime),
-            ) as ChannelAirtime;
+                  rawResponse,
+                  specifiedType: const FullType(ChannelAirtime),
+                )
+                as ChannelAirtime;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -377,21 +371,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}/interactive'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -413,9 +407,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChannelInteractiveStatus),
-            ) as ChannelInteractiveStatus;
+                  rawResponse,
+                  specifiedType: const FullType(ChannelInteractiveStatus),
+                )
+                as ChannelInteractiveStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -468,21 +463,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}/deliveries'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -491,14 +486,23 @@ class ChannelsApi {
 
     final _queryParameters = <String, dynamic>{
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -517,9 +521,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NotificationDeliveryPage),
-            ) as NotificationDeliveryPage;
+                  rawResponse,
+                  specifiedType: const FullType(NotificationDeliveryPage),
+                )
+                as NotificationDeliveryPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -566,16 +571,10 @@ class ChannelsApi {
     final _path = r'/v1/channels/types';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -597,9 +596,12 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(ChannelType)]),
-            ) as BuiltList<ChannelType>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(ChannelType),
+                  ]),
+                )
+                as BuiltList<ChannelType>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -646,16 +648,10 @@ class ChannelsApi {
     final _path = r'/v1/channels';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -677,9 +673,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Channel)]),
-            ) as BuiltList<Channel>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [FullType(Channel)]),
+                )
+                as BuiltList<Channel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -726,21 +723,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}/mqtt/republish'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -782,21 +779,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}/test'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -818,9 +815,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChannelTestResult),
-            ) as ChannelTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(ChannelTestResult),
+                )
+                as ChannelTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -869,21 +867,21 @@ class ChannelsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/channels/{channelId}'.replaceAll(
-        '{' r'channelId' '}',
-        encodeQueryParameter(_serializers, channelId, const FullType(String))
-            .toString());
+      '{'
+      r'channelId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        channelId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -898,10 +896,7 @@ class ChannelsApi {
       _bodyData = _serializers.serialize(channelInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -924,9 +919,10 @@ class ChannelsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Channel),
-            ) as Channel;
+                  rawResponse,
+                  specifiedType: const FullType(Channel),
+                )
+                as Channel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

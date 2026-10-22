@@ -50,7 +50,7 @@ class _$ScorecardEntrySkillSerializer
   @override
   final Iterable<Type> types = const [
     ScorecardEntrySkill,
-    _$ScorecardEntrySkill
+    _$ScorecardEntrySkill,
   ];
 
   @override
@@ -91,9 +91,11 @@ class _$ScorecardEntrySkillSerializer
     ScorecardEntrySkill object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,31 +111,33 @@ class _$ScorecardEntrySkillSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.value = valueDes;
           break;
         case r'reference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reference = valueDes;
           break;
         case r'nShared':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nShared = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatInterval),
-          ) as StatInterval?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(StatInterval),
+                  )
+                  as StatInterval?;
           if (valueDes == null) continue;
           result.interval.replace(valueDes);
           break;

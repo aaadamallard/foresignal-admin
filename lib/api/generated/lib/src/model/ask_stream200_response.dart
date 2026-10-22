@@ -92,7 +92,7 @@ class _$AskStream200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     AskStream200Response,
-    _$AskStream200Response
+    _$AskStream200Response,
   ];
 
   @override
@@ -111,9 +111,13 @@ class _$AskStream200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -134,8 +138,9 @@ class _$AskStream200ResponseSerializer
       FullType(Problem),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }

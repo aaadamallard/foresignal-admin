@@ -36,9 +36,9 @@ abstract class ExternalQuestionLinkInput
 
   ExternalQuestionLinkInput._();
 
-  factory ExternalQuestionLinkInput(
-          [void updates(ExternalQuestionLinkInputBuilder b)]) =
-      _$ExternalQuestionLinkInput;
+  factory ExternalQuestionLinkInput([
+    void updates(ExternalQuestionLinkInputBuilder b),
+  ]) = _$ExternalQuestionLinkInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalQuestionLinkInputBuilder b) => b;
@@ -53,7 +53,7 @@ class _$ExternalQuestionLinkInputSerializer
   @override
   final Iterable<Type> types = const [
     ExternalQuestionLinkInput,
-    _$ExternalQuestionLinkInput
+    _$ExternalQuestionLinkInput,
   ];
 
   @override
@@ -94,9 +94,11 @@ class _$ExternalQuestionLinkInputSerializer
     ExternalQuestionLinkInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +114,41 @@ class _$ExternalQuestionLinkInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'streamId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.streamId = valueDes;
           break;
         case r'externalQuestionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalQuestionId = valueDes;
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.questionId = valueDes;
           break;
         case r'orientation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                ExternalQuestionLinkInputOrientationEnum),
-          ) as ExternalQuestionLinkInputOrientationEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExternalQuestionLinkInputOrientationEnum,
+                    ),
+                  )
+                  as ExternalQuestionLinkInputOrientationEnum?;
           if (valueDes == null) continue;
           result.orientation = valueDes;
           break;

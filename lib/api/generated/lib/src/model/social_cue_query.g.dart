@@ -19,12 +19,12 @@ class _$SocialCueQuery extends SocialCueQuery {
   factory _$SocialCueQuery([void Function(SocialCueQueryBuilder)? updates]) =>
       (SocialCueQueryBuilder()..update(updates))._build();
 
-  _$SocialCueQuery._(
-      {required this.platform,
-      required this.query,
-      this.language,
-      this.estimatedCostUsd})
-      : super._();
+  _$SocialCueQuery._({
+    required this.platform,
+    required this.query,
+    this.language,
+    this.estimatedCostUsd,
+  }) : super._();
   @override
   SocialCueQuery rebuild(void Function(SocialCueQueryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -115,12 +115,19 @@ class SocialCueQueryBuilder
   SocialCueQuery build() => _build();
 
   _$SocialCueQuery _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialCueQuery._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'SocialCueQuery', 'platform'),
+            platform,
+            r'SocialCueQuery',
+            'platform',
+          ),
           query: BuiltValueNullFieldError.checkNotNull(
-              query, r'SocialCueQuery', 'query'),
+            query,
+            r'SocialCueQuery',
+            'query',
+          ),
           language: language,
           estimatedCostUsd: estimatedCostUsd,
         );

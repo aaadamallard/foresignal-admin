@@ -24,9 +24,9 @@ TimelineTickKindEnum _$timelineTickKindEnumValueOf(String name) {
 
 final BuiltSet<TimelineTickKindEnum> _$timelineTickKindEnumValues =
     BuiltSet<TimelineTickKindEnum>(const <TimelineTickKindEnum>[
-  _$timelineTickKindEnum_observed,
-  _$timelineTickKindEnum_forecast,
-]);
+      _$timelineTickKindEnum_observed,
+      _$timelineTickKindEnum_forecast,
+    ]);
 
 Serializer<TimelineTickKindEnum> _$timelineTickKindEnumSerializer =
     _$TimelineTickKindEnumSerializer();
@@ -48,15 +48,20 @@ class _$TimelineTickKindEnumSerializer
   final String wireName = 'TimelineTickKindEnum';
 
   @override
-  Object serialize(Serializers serializers, TimelineTickKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TimelineTickKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TimelineTickKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TimelineTickKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TimelineTickKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TimelineTickKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TimelineTick extends TimelineTick {
@@ -70,9 +75,11 @@ class _$TimelineTick extends TimelineTick {
   factory _$TimelineTick([void Function(TimelineTickBuilder)? updates]) =>
       (TimelineTickBuilder()..update(updates))._build();
 
-  _$TimelineTick._(
-      {required this.time, required this.kind, required this.frames})
-      : super._();
+  _$TimelineTick._({
+    required this.time,
+    required this.kind,
+    required this.frames,
+  }) : super._();
   @override
   TimelineTick rebuild(void Function(TimelineTickBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -158,12 +165,19 @@ class TimelineTickBuilder
   _$TimelineTick _build() {
     _$TimelineTick _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TimelineTick._(
             time: BuiltValueNullFieldError.checkNotNull(
-                time, r'TimelineTick', 'time'),
+              time,
+              r'TimelineTick',
+              'time',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'TimelineTick', 'kind'),
+              kind,
+              r'TimelineTick',
+              'kind',
+            ),
             frames: frames.build(),
           );
     } catch (_) {
@@ -173,7 +187,10 @@ class TimelineTickBuilder
         frames.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TimelineTick', _$failedField, e.toString());
+          r'TimelineTick',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

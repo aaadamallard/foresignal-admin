@@ -130,9 +130,11 @@ class _$ReportDraftRequestSerializer
     ReportDraftRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -148,58 +150,73 @@ class _$ReportDraftRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReportSource),
-          ) as ReportSource;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ReportSource),
+                  )
+                  as ReportSource;
           result.source_.replace(valueDes);
           break;
         case r'template':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ReportDraftRequestTemplateEnum),
-          ) as ReportDraftRequestTemplateEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ReportDraftRequestTemplateEnum,
+                    ),
+                  )
+                  as ReportDraftRequestTemplateEnum?;
           if (valueDes == null) continue;
           result.template = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'timeWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TimeRange),
-          ) as TimeRange?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TimeRange),
+                  )
+                  as TimeRange?;
           if (valueDes == null) continue;
           result.timeWindow.replace(valueDes);
           break;
         case r'area':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.area.replace(valueDes);
           break;
         case r'narrative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.narrative = valueDes;
           break;
         case r'assessmentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.assessmentId = valueDes;
           break;

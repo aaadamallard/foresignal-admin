@@ -32,11 +32,11 @@ CoverageStatsScopeEnum _$coverageStatsScopeEnumValueOf(String name) {
 
 final BuiltSet<CoverageStatsScopeEnum> _$coverageStatsScopeEnumValues =
     BuiltSet<CoverageStatsScopeEnum>(const <CoverageStatsScopeEnum>[
-  _$coverageStatsScopeEnum_story,
-  _$coverageStatsScopeEnum_topic,
-  _$coverageStatsScopeEnum_situation,
-  _$coverageStatsScopeEnum_hypothesis,
-]);
+      _$coverageStatsScopeEnum_story,
+      _$coverageStatsScopeEnum_topic,
+      _$coverageStatsScopeEnum_situation,
+      _$coverageStatsScopeEnum_hypothesis,
+    ]);
 
 const CoverageStatsBlindspotEnum _$coverageStatsBlindspotEnum_left =
     const CoverageStatsBlindspotEnum._('left');
@@ -56,9 +56,9 @@ CoverageStatsBlindspotEnum _$coverageStatsBlindspotEnumValueOf(String name) {
 
 final BuiltSet<CoverageStatsBlindspotEnum> _$coverageStatsBlindspotEnumValues =
     BuiltSet<CoverageStatsBlindspotEnum>(const <CoverageStatsBlindspotEnum>[
-  _$coverageStatsBlindspotEnum_left,
-  _$coverageStatsBlindspotEnum_right,
-]);
+      _$coverageStatsBlindspotEnum_left,
+      _$coverageStatsBlindspotEnum_right,
+    ]);
 
 Serializer<CoverageStatsScopeEnum> _$coverageStatsScopeEnumSerializer =
     _$CoverageStatsScopeEnumSerializer();
@@ -86,15 +86,20 @@ class _$CoverageStatsScopeEnumSerializer
   final String wireName = 'CoverageStatsScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, CoverageStatsScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CoverageStatsScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CoverageStatsScopeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CoverageStatsScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CoverageStatsScopeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CoverageStatsScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CoverageStatsBlindspotEnumSerializer
@@ -114,16 +119,20 @@ class _$CoverageStatsBlindspotEnumSerializer
   final String wireName = 'CoverageStatsBlindspotEnum';
 
   @override
-  Object serialize(Serializers serializers, CoverageStatsBlindspotEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CoverageStatsBlindspotEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CoverageStatsBlindspotEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CoverageStatsBlindspotEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CoverageStatsBlindspotEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CoverageStats extends CoverageStats {
@@ -165,25 +174,25 @@ class _$CoverageStats extends CoverageStats {
   factory _$CoverageStats([void Function(CoverageStatsBuilder)? updates]) =>
       (CoverageStatsBuilder()..update(updates))._build();
 
-  _$CoverageStats._(
-      {this.scope,
-      required this.articles,
-      required this.evidenceGroups,
-      this.byCountry,
-      this.byOutletType,
-      this.byFactuality,
-      required this.coverageBalance,
-      required this.stateAffiliatedShare,
-      required this.nRated,
-      this.blindspot,
-      required this.corroborated,
-      this.corroboratedShare,
-      this.skewed,
-      this.caveats,
-      this.analyzer,
-      this.manifestId,
-      this.computedAt})
-      : super._();
+  _$CoverageStats._({
+    this.scope,
+    required this.articles,
+    required this.evidenceGroups,
+    this.byCountry,
+    this.byOutletType,
+    this.byFactuality,
+    required this.coverageBalance,
+    required this.stateAffiliatedShare,
+    required this.nRated,
+    this.blindspot,
+    required this.corroborated,
+    this.corroboratedShare,
+    this.skewed,
+    this.caveats,
+    this.analyzer,
+    this.manifestId,
+    this.computedAt,
+  }) : super._();
   @override
   CoverageStats rebuild(void Function(CoverageStatsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -394,7 +403,8 @@ class CoverageStatsBuilder
   _$CoverageStats _build() {
     _$CoverageStats _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CoverageStats._(
             scope: scope,
             articles: articles.build(),
@@ -404,12 +414,21 @@ class CoverageStatsBuilder
             byFactuality: _byFactuality?.build(),
             coverageBalance: coverageBalance.build(),
             stateAffiliatedShare: BuiltValueNullFieldError.checkNotNull(
-                stateAffiliatedShare, r'CoverageStats', 'stateAffiliatedShare'),
+              stateAffiliatedShare,
+              r'CoverageStats',
+              'stateAffiliatedShare',
+            ),
             nRated: BuiltValueNullFieldError.checkNotNull(
-                nRated, r'CoverageStats', 'nRated'),
+              nRated,
+              r'CoverageStats',
+              'nRated',
+            ),
             blindspot: blindspot,
             corroborated: BuiltValueNullFieldError.checkNotNull(
-                corroborated, r'CoverageStats', 'corroborated'),
+              corroborated,
+              r'CoverageStats',
+              'corroborated',
+            ),
             corroboratedShare: corroboratedShare,
             skewed: skewed,
             caveats: _caveats?.build(),
@@ -439,7 +458,10 @@ class CoverageStatsBuilder
         _analyzer?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CoverageStats', _$failedField, e.toString());
+          r'CoverageStats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

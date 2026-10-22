@@ -21,13 +21,13 @@ class _$EvidenceGroup extends EvidenceGroup {
   factory _$EvidenceGroup([void Function(EvidenceGroupBuilder)? updates]) =>
       (EvidenceGroupBuilder()..update(updates))._build();
 
-  _$EvidenceGroup._(
-      {required this.id,
-      required this.canonicalEventId,
-      required this.originatorRoot,
-      required this.memberCount,
-      required this.firstSeq})
-      : super._();
+  _$EvidenceGroup._({
+    required this.id,
+    required this.canonicalEventId,
+    required this.originatorRoot,
+    required this.memberCount,
+    required this.firstSeq,
+  }) : super._();
   @override
   EvidenceGroup rebuild(void Function(EvidenceGroupBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -127,17 +127,30 @@ class EvidenceGroupBuilder
   EvidenceGroup build() => _build();
 
   _$EvidenceGroup _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EvidenceGroup._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'EvidenceGroup', 'id'),
           canonicalEventId: BuiltValueNullFieldError.checkNotNull(
-              canonicalEventId, r'EvidenceGroup', 'canonicalEventId'),
+            canonicalEventId,
+            r'EvidenceGroup',
+            'canonicalEventId',
+          ),
           originatorRoot: BuiltValueNullFieldError.checkNotNull(
-              originatorRoot, r'EvidenceGroup', 'originatorRoot'),
+            originatorRoot,
+            r'EvidenceGroup',
+            'originatorRoot',
+          ),
           memberCount: BuiltValueNullFieldError.checkNotNull(
-              memberCount, r'EvidenceGroup', 'memberCount'),
+            memberCount,
+            r'EvidenceGroup',
+            'memberCount',
+          ),
           firstSeq: BuiltValueNullFieldError.checkNotNull(
-              firstSeq, r'EvidenceGroup', 'firstSeq'),
+            firstSeq,
+            r'EvidenceGroup',
+            'firstSeq',
+          ),
         );
     replace(_$result);
     return _$result;

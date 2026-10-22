@@ -10,15 +10,15 @@ class _$ChronicleThreadReadRequest extends ChronicleThreadReadRequest {
   @override
   final int upToId;
 
-  factory _$ChronicleThreadReadRequest(
-          [void Function(ChronicleThreadReadRequestBuilder)? updates]) =>
-      (ChronicleThreadReadRequestBuilder()..update(updates))._build();
+  factory _$ChronicleThreadReadRequest([
+    void Function(ChronicleThreadReadRequestBuilder)? updates,
+  ]) => (ChronicleThreadReadRequestBuilder()..update(updates))._build();
 
   _$ChronicleThreadReadRequest._({required this.upToId}) : super._();
   @override
   ChronicleThreadReadRequest rebuild(
-          void Function(ChronicleThreadReadRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleThreadReadRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleThreadReadRequestBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$ChronicleThreadReadRequest extends ChronicleThreadReadRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ChronicleThreadReadRequest')
-          ..add('upToId', upToId))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ChronicleThreadReadRequest',
+    )..add('upToId', upToId)).toString();
   }
 }
 
@@ -82,10 +82,14 @@ class ChronicleThreadReadRequestBuilder
   ChronicleThreadReadRequest build() => _build();
 
   _$ChronicleThreadReadRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleThreadReadRequest._(
           upToId: BuiltValueNullFieldError.checkNotNull(
-              upToId, r'ChronicleThreadReadRequest', 'upToId'),
+            upToId,
+            r'ChronicleThreadReadRequest',
+            'upToId',
+          ),
         );
     replace(_$result);
     return _$result;

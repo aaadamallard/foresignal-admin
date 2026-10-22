@@ -97,7 +97,7 @@ class _$OgcQueryablesSerializer implements PrimitiveSerializer<OgcQueryables> {
       object.properties,
       specifiedType: const FullType(BuiltMap, [
         FullType(String),
-        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
       ]),
     );
     if (object.additionalProperties != null) {
@@ -115,9 +115,11 @@ class _$OgcQueryablesSerializer implements PrimitiveSerializer<OgcQueryables> {
     OgcQueryables object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,52 +135,66 @@ class _$OgcQueryablesSerializer implements PrimitiveSerializer<OgcQueryables> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'$schema':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.dollarSchema = valueDes;
           break;
         case r'$id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.dollarId = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OgcQueryablesTypeEnum),
-          ) as OgcQueryablesTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OgcQueryablesTypeEnum),
+                  )
+                  as OgcQueryablesTypeEnum;
           result.type = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [
-              FullType(String),
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltMap<String, BuiltMap<String, JsonObject?>>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltMap<String, JsonObject?>>;
           result.properties.replace(valueDes);
           break;
         case r'additionalProperties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.additionalProperties = valueDes;
           break;

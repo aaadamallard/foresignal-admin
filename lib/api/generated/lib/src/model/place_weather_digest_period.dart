@@ -56,9 +56,9 @@ abstract class PlaceWeatherDigestPeriod
 
   PlaceWeatherDigestPeriod._();
 
-  factory PlaceWeatherDigestPeriod(
-          [void updates(PlaceWeatherDigestPeriodBuilder b)]) =
-      _$PlaceWeatherDigestPeriod;
+  factory PlaceWeatherDigestPeriod([
+    void updates(PlaceWeatherDigestPeriodBuilder b),
+  ]) = _$PlaceWeatherDigestPeriod;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestPeriodBuilder b) => b;
@@ -73,7 +73,7 @@ class _$PlaceWeatherDigestPeriodSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestPeriod,
-    _$PlaceWeatherDigestPeriod
+    _$PlaceWeatherDigestPeriod,
   ];
 
   @override
@@ -130,8 +130,9 @@ class _$PlaceWeatherDigestPeriodSerializer
       yield r'hazardsEntered';
       yield serializers.serialize(
         object.hazardsEntered,
-        specifiedType: const FullType(
-            BuiltList, [FullType(PlaceWeatherDigestPeriodHazardsEnteredInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(PlaceWeatherDigestPeriodHazardsEnteredInner),
+        ]),
       );
     }
     if (object.notes != null) {
@@ -149,9 +150,11 @@ class _$PlaceWeatherDigestPeriodSerializer
     PlaceWeatherDigestPeriod object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -167,68 +170,86 @@ class _$PlaceWeatherDigestPeriodSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;
         case r'partial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.partial = valueDes;
           break;
         case r'maxDbz':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxDbz = valueDes;
           break;
         case r'maxMeshMm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxMeshMm = valueDes;
           break;
         case r'lightningTotal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.lightningTotal = valueDes;
           break;
         case r'hazardsEntered':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(PlaceWeatherDigestPeriodHazardsEnteredInner)]),
-          ) as BuiltList<PlaceWeatherDigestPeriodHazardsEnteredInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(PlaceWeatherDigestPeriodHazardsEnteredInner),
+                    ]),
+                  )
+                  as BuiltList<PlaceWeatherDigestPeriodHazardsEnteredInner>?;
           if (valueDes == null) continue;
           result.hazardsEntered.replace(valueDes);
           break;
         case r'notes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.notes.replace(valueDes);
           break;

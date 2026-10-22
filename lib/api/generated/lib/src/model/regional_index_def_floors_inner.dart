@@ -35,9 +35,9 @@ abstract class RegionalIndexDefFloorsInner
 
   RegionalIndexDefFloorsInner._();
 
-  factory RegionalIndexDefFloorsInner(
-          [void updates(RegionalIndexDefFloorsInnerBuilder b)]) =
-      _$RegionalIndexDefFloorsInner;
+  factory RegionalIndexDefFloorsInner([
+    void updates(RegionalIndexDefFloorsInnerBuilder b),
+  ]) = _$RegionalIndexDefFloorsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RegionalIndexDefFloorsInnerBuilder b) => b;
@@ -52,7 +52,7 @@ class _$RegionalIndexDefFloorsInnerSerializer
   @override
   final Iterable<Type> types = const [
     RegionalIndexDefFloorsInner,
-    _$RegionalIndexDefFloorsInner
+    _$RegionalIndexDefFloorsInner,
   ];
 
   @override
@@ -79,8 +79,10 @@ class _$RegionalIndexDefFloorsInnerSerializer
       yield r'condition';
       yield serializers.serialize(
         object.condition,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     yield r'minValue';
@@ -96,9 +98,11 @@ class _$RegionalIndexDefFloorsInnerSerializer
     RegionalIndexDefFloorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,34 +118,41 @@ class _$RegionalIndexDefFloorsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.description = valueDes;
           break;
         case r'condition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.condition.replace(valueDes);
           break;
         case r'minValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.minValue = valueDes;
           break;
         default:

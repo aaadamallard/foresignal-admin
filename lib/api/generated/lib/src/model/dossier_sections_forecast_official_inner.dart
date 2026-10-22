@@ -22,8 +22,10 @@ part 'dossier_sections_forecast_official_inner.g.dart';
 @BuiltValue()
 abstract class DossierSectionsForecastOfficialInner
     implements
-        Built<DossierSectionsForecastOfficialInner,
-            DossierSectionsForecastOfficialInnerBuilder> {
+        Built<
+          DossierSectionsForecastOfficialInner,
+          DossierSectionsForecastOfficialInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'ref')
   String get ref;
@@ -51,9 +53,9 @@ abstract class DossierSectionsForecastOfficialInner
 
   DossierSectionsForecastOfficialInner._();
 
-  factory DossierSectionsForecastOfficialInner(
-          [void updates(DossierSectionsForecastOfficialInnerBuilder b)]) =
-      _$DossierSectionsForecastOfficialInner;
+  factory DossierSectionsForecastOfficialInner([
+    void updates(DossierSectionsForecastOfficialInnerBuilder b),
+  ]) = _$DossierSectionsForecastOfficialInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsForecastOfficialInnerBuilder b) => b;
@@ -68,7 +70,7 @@ class _$DossierSectionsForecastOfficialInnerSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsForecastOfficialInner,
-    _$DossierSectionsForecastOfficialInner
+    _$DossierSectionsForecastOfficialInner,
   ];
 
   @override
@@ -139,9 +141,11 @@ class _$DossierSectionsForecastOfficialInnerSerializer
     DossierSectionsForecastOfficialInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -157,64 +161,80 @@ class _$DossierSectionsForecastOfficialInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.kind = valueDes;
           break;
         case r'issuer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.issuer = valueDes;
           break;
         case r'issuedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.issuedAt = valueDes;
           break;
         case r'validFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validFrom = valueDes;
           break;
         case r'validTo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validTo = valueDes;
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;

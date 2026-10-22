@@ -7,26 +7,27 @@ part of 'analyst_profile_scope.dart';
 // **************************************************************************
 
 const AnalystProfileScopeEventTypesEnum
-    _$analystProfileScopeEventTypesEnum_maritimeDisruption =
+_$analystProfileScopeEventTypesEnum_maritimeDisruption =
     const AnalystProfileScopeEventTypesEnum._('maritimeDisruption');
 const AnalystProfileScopeEventTypesEnum
-    _$analystProfileScopeEventTypesEnum_aviationAnomaly =
+_$analystProfileScopeEventTypesEnum_aviationAnomaly =
     const AnalystProfileScopeEventTypesEnum._('aviationAnomaly');
 const AnalystProfileScopeEventTypesEnum
-    _$analystProfileScopeEventTypesEnum_infrastructureDisruption =
+_$analystProfileScopeEventTypesEnum_infrastructureDisruption =
     const AnalystProfileScopeEventTypesEnum._('infrastructureDisruption');
 const AnalystProfileScopeEventTypesEnum
-    _$analystProfileScopeEventTypesEnum_weatherImpact =
+_$analystProfileScopeEventTypesEnum_weatherImpact =
     const AnalystProfileScopeEventTypesEnum._('weatherImpact');
 const AnalystProfileScopeEventTypesEnum
-    _$analystProfileScopeEventTypesEnum_seismic =
+_$analystProfileScopeEventTypesEnum_seismic =
     const AnalystProfileScopeEventTypesEnum._('seismic');
 const AnalystProfileScopeEventTypesEnum
-    _$analystProfileScopeEventTypesEnum_custom =
+_$analystProfileScopeEventTypesEnum_custom =
     const AnalystProfileScopeEventTypesEnum._('custom');
 
 AnalystProfileScopeEventTypesEnum _$analystProfileScopeEventTypesEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'maritimeDisruption':
       return _$analystProfileScopeEventTypesEnum_maritimeDisruption;
@@ -46,18 +47,20 @@ AnalystProfileScopeEventTypesEnum _$analystProfileScopeEventTypesEnumValueOf(
 }
 
 final BuiltSet<AnalystProfileScopeEventTypesEnum>
-    _$analystProfileScopeEventTypesEnumValues = BuiltSet<
-        AnalystProfileScopeEventTypesEnum>(const <AnalystProfileScopeEventTypesEnum>[
-  _$analystProfileScopeEventTypesEnum_maritimeDisruption,
-  _$analystProfileScopeEventTypesEnum_aviationAnomaly,
-  _$analystProfileScopeEventTypesEnum_infrastructureDisruption,
-  _$analystProfileScopeEventTypesEnum_weatherImpact,
-  _$analystProfileScopeEventTypesEnum_seismic,
-  _$analystProfileScopeEventTypesEnum_custom,
-]);
+_$analystProfileScopeEventTypesEnumValues =
+    BuiltSet<AnalystProfileScopeEventTypesEnum>(
+      const <AnalystProfileScopeEventTypesEnum>[
+        _$analystProfileScopeEventTypesEnum_maritimeDisruption,
+        _$analystProfileScopeEventTypesEnum_aviationAnomaly,
+        _$analystProfileScopeEventTypesEnum_infrastructureDisruption,
+        _$analystProfileScopeEventTypesEnum_weatherImpact,
+        _$analystProfileScopeEventTypesEnum_seismic,
+        _$analystProfileScopeEventTypesEnum_custom,
+      ],
+    );
 
 Serializer<AnalystProfileScopeEventTypesEnum>
-    _$analystProfileScopeEventTypesEnumSerializer =
+_$analystProfileScopeEventTypesEnumSerializer =
     _$AnalystProfileScopeEventTypesEnumSerializer();
 
 class _$AnalystProfileScopeEventTypesEnumSerializer
@@ -86,16 +89,19 @@ class _$AnalystProfileScopeEventTypesEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalystProfileScopeEventTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalystProfileScopeEventTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystProfileScopeEventTypesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystProfileScopeEventTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystProfileScopeEventTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystProfileScope extends AnalystProfileScope {
@@ -114,23 +120,23 @@ class _$AnalystProfileScope extends AnalystProfileScope {
   @override
   final Severity? minSeverity;
 
-  factory _$AnalystProfileScope(
-          [void Function(AnalystProfileScopeBuilder)? updates]) =>
-      (AnalystProfileScopeBuilder()..update(updates))._build();
+  factory _$AnalystProfileScope([
+    void Function(AnalystProfileScopeBuilder)? updates,
+  ]) => (AnalystProfileScopeBuilder()..update(updates))._build();
 
-  _$AnalystProfileScope._(
-      {this.sources,
-      this.kinds,
-      this.places,
-      this.bbox,
-      this.eventTypes,
-      this.ruleTags,
-      this.minSeverity})
-      : super._();
+  _$AnalystProfileScope._({
+    this.sources,
+    this.kinds,
+    this.places,
+    this.bbox,
+    this.eventTypes,
+    this.ruleTags,
+    this.minSeverity,
+  }) : super._();
   @override
   AnalystProfileScope rebuild(
-          void Function(AnalystProfileScopeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystProfileScopeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystProfileScopeBuilder toBuilder() =>
@@ -247,7 +253,8 @@ class AnalystProfileScopeBuilder
   _$AnalystProfileScope _build() {
     _$AnalystProfileScope _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystProfileScope._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -274,7 +281,10 @@ class AnalystProfileScopeBuilder
         _ruleTags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystProfileScope', _$failedField, e.toString());
+          r'AnalystProfileScope',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

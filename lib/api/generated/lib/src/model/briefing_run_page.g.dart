@@ -92,11 +92,9 @@ class BriefingRunPageBuilder
   _$BriefingRunPage _build() {
     _$BriefingRunPage _$result;
     try {
-      _$result = _$v ??
-          _$BriefingRunPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$BriefingRunPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class BriefingRunPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BriefingRunPage', _$failedField, e.toString());
+          r'BriefingRunPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

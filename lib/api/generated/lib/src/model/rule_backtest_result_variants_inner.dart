@@ -23,8 +23,10 @@ part 'rule_backtest_result_variants_inner.g.dart';
 @BuiltValue()
 abstract class RuleBacktestResultVariantsInner
     implements
-        Built<RuleBacktestResultVariantsInner,
-            RuleBacktestResultVariantsInnerBuilder> {
+        Built<
+          RuleBacktestResultVariantsInner,
+          RuleBacktestResultVariantsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'index')
   int get index;
 
@@ -42,9 +44,9 @@ abstract class RuleBacktestResultVariantsInner
 
   RuleBacktestResultVariantsInner._();
 
-  factory RuleBacktestResultVariantsInner(
-          [void updates(RuleBacktestResultVariantsInnerBuilder b)]) =
-      _$RuleBacktestResultVariantsInner;
+  factory RuleBacktestResultVariantsInner([
+    void updates(RuleBacktestResultVariantsInnerBuilder b),
+  ]) = _$RuleBacktestResultVariantsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultVariantsInnerBuilder b) => b;
@@ -59,7 +61,7 @@ class _$RuleBacktestResultVariantsInnerSerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultVariantsInner,
-    _$RuleBacktestResultVariantsInner
+    _$RuleBacktestResultVariantsInner,
   ];
 
   @override
@@ -78,8 +80,10 @@ class _$RuleBacktestResultVariantsInnerSerializer
     yield r'patch';
     yield serializers.serialize(
       object.patch_,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(JsonObject),
+      ]),
     );
     yield r'wouldFire';
     yield serializers.serialize(
@@ -90,8 +94,9 @@ class _$RuleBacktestResultVariantsInnerSerializer
       yield r'perDay';
       yield serializers.serialize(
         object.perDay,
-        specifiedType: const FullType(
-            BuiltList, [FullType(RuleBacktestResultPerDayInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RuleBacktestResultPerDayInner),
+        ]),
       );
     }
     if (object.overlap != null) {
@@ -109,9 +114,11 @@ class _$RuleBacktestResultVariantsInnerSerializer
     RuleBacktestResultVariantsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,41 +134,50 @@ class _$RuleBacktestResultVariantsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'index':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.index = valueDes;
           break;
         case r'patch':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>;
           result.patch_.replace(valueDes);
           break;
         case r'wouldFire':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.wouldFire = valueDes;
           break;
         case r'perDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RuleBacktestResultPerDayInner)]),
-          ) as BuiltList<RuleBacktestResultPerDayInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RuleBacktestResultPerDayInner),
+                    ]),
+                  )
+                  as BuiltList<RuleBacktestResultPerDayInner>?;
           if (valueDes == null) continue;
           result.perDay.replace(valueDes);
           break;
         case r'overlap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RuleBacktestResultOverlap),
-          ) as RuleBacktestResultOverlap?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RuleBacktestResultOverlap,
+                    ),
+                  )
+                  as RuleBacktestResultOverlap?;
           if (valueDes == null) continue;
           result.overlap.replace(valueDes);
           break;

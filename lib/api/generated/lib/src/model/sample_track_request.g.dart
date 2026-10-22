@@ -23,14 +23,15 @@ SampleTrackRequestUnitsEnum _$sampleTrackRequestUnitsEnumValueOf(String name) {
 }
 
 final BuiltSet<SampleTrackRequestUnitsEnum>
-    _$sampleTrackRequestUnitsEnumValues =
-    BuiltSet<SampleTrackRequestUnitsEnum>(const <SampleTrackRequestUnitsEnum>[
-  _$sampleTrackRequestUnitsEnum_metric,
-  _$sampleTrackRequestUnitsEnum_imperial,
-]);
+_$sampleTrackRequestUnitsEnumValues = BuiltSet<SampleTrackRequestUnitsEnum>(
+  const <SampleTrackRequestUnitsEnum>[
+    _$sampleTrackRequestUnitsEnum_metric,
+    _$sampleTrackRequestUnitsEnum_imperial,
+  ],
+);
 
 Serializer<SampleTrackRequestUnitsEnum>
-    _$sampleTrackRequestUnitsEnumSerializer =
+_$sampleTrackRequestUnitsEnumSerializer =
     _$SampleTrackRequestUnitsEnumSerializer();
 
 class _$SampleTrackRequestUnitsEnumSerializer
@@ -50,16 +51,20 @@ class _$SampleTrackRequestUnitsEnumSerializer
   final String wireName = 'SampleTrackRequestUnitsEnum';
 
   @override
-  Object serialize(Serializers serializers, SampleTrackRequestUnitsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SampleTrackRequestUnitsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SampleTrackRequestUnitsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SampleTrackRequestUnitsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SampleTrackRequestUnitsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SampleTrackRequest extends SampleTrackRequest {
@@ -80,24 +85,24 @@ class _$SampleTrackRequest extends SampleTrackRequest {
   @override
   final SampleTrackRequestUnitsEnum? units;
 
-  factory _$SampleTrackRequest(
-          [void Function(SampleTrackRequestBuilder)? updates]) =>
-      (SampleTrackRequestBuilder()..update(updates))._build();
+  factory _$SampleTrackRequest([
+    void Function(SampleTrackRequestBuilder)? updates,
+  ]) => (SampleTrackRequestBuilder()..update(updates))._build();
 
-  _$SampleTrackRequest._(
-      {this.record,
-      this.from,
-      this.to,
-      this.points,
-      required this.products,
-      this.maxGap,
-      this.run,
-      this.units})
-      : super._();
+  _$SampleTrackRequest._({
+    this.record,
+    this.from,
+    this.to,
+    this.points,
+    required this.products,
+    this.maxGap,
+    this.run,
+    this.units,
+  }) : super._();
   @override
   SampleTrackRequest rebuild(
-          void Function(SampleTrackRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SampleTrackRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SampleTrackRequestBuilder toBuilder() =>
@@ -222,7 +227,8 @@ class SampleTrackRequestBuilder
   _$SampleTrackRequest _build() {
     _$SampleTrackRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SampleTrackRequest._(
             record: record,
             from: from,
@@ -242,7 +248,10 @@ class SampleTrackRequestBuilder
         products.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SampleTrackRequest', _$failedField, e.toString());
+          r'SampleTrackRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

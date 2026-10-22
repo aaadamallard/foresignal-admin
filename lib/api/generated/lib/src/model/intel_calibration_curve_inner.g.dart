@@ -12,15 +12,15 @@ class _$IntelCalibrationCurveInner extends IntelCalibrationCurveInner {
   @override
   final num? calibrated;
 
-  factory _$IntelCalibrationCurveInner(
-          [void Function(IntelCalibrationCurveInnerBuilder)? updates]) =>
-      (IntelCalibrationCurveInnerBuilder()..update(updates))._build();
+  factory _$IntelCalibrationCurveInner([
+    void Function(IntelCalibrationCurveInnerBuilder)? updates,
+  ]) => (IntelCalibrationCurveInnerBuilder()..update(updates))._build();
 
   _$IntelCalibrationCurveInner._({this.forecast, this.calibrated}) : super._();
   @override
   IntelCalibrationCurveInner rebuild(
-          void Function(IntelCalibrationCurveInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelCalibrationCurveInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelCalibrationCurveInnerBuilder toBuilder() =>
@@ -93,7 +93,8 @@ class IntelCalibrationCurveInnerBuilder
   IntelCalibrationCurveInner build() => _build();
 
   _$IntelCalibrationCurveInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelCalibrationCurveInner._(
           forecast: forecast,
           calibrated: calibrated,

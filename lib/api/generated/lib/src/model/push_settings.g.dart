@@ -18,7 +18,7 @@ class _$PushSettings extends PushSettings {
       (PushSettingsBuilder()..update(updates))._build();
 
   _$PushSettings._({this.contact, this.allowedPrivateHosts, this.defaultLang})
-      : super._();
+    : super._();
   @override
   PushSettings rebuild(void Function(PushSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -104,7 +104,8 @@ class PushSettingsBuilder
   _$PushSettings _build() {
     _$PushSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushSettings._(
             contact: contact,
             allowedPrivateHosts: _allowedPrivateHosts?.build(),
@@ -117,7 +118,10 @@ class PushSettingsBuilder
         _allowedPrivateHosts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushSettings', _$failedField, e.toString());
+          r'PushSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

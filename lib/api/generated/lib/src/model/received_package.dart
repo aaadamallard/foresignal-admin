@@ -159,8 +159,9 @@ class _$ReceivedPackageSerializer
     yield r'authors';
     yield serializers.serialize(
       object.authors,
-      specifiedType:
-          const FullType(BuiltList, [FullType(PackageManifestAuthorsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(PackageManifestAuthorsInner),
+      ]),
     );
     yield r'tlp';
     yield serializers.serialize(
@@ -219,16 +220,18 @@ class _$ReceivedPackageSerializer
       yield r'provenanceChain';
       yield serializers.serialize(
         object.provenanceChain,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ProvenanceChainEntry)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProvenanceChainEntry),
+        ]),
       );
     }
     if (object.contents != null) {
       yield r'contents';
       yield serializers.serialize(
         object.contents,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ReceivedPackageContentsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ReceivedPackageContentsInner),
+        ]),
       );
     }
   }
@@ -239,9 +242,11 @@ class _$ReceivedPackageSerializer
     ReceivedPackage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -257,139 +262,184 @@ class _$ReceivedPackageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'packageId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.packageId = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReceivedPackageTypeEnum),
-          ) as ReceivedPackageTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ReceivedPackageTypeEnum),
+                  )
+                  as ReceivedPackageTypeEnum;
           result.type = valueDes;
           break;
         case r'objectRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectRef = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'sender':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReceivedPackageSender),
-          ) as ReceivedPackageSender;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ReceivedPackageSender),
+                  )
+                  as ReceivedPackageSender;
           result.sender.replace(valueDes);
           break;
         case r'authors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(PackageManifestAuthorsInner)]),
-          ) as BuiltList<PackageManifestAuthorsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PackageManifestAuthorsInner),
+                    ]),
+                  )
+                  as BuiltList<PackageManifestAuthorsInner>;
           result.authors.replace(valueDes);
           break;
         case r'tlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tlp = valueDes;
           break;
         case r'signatureStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReceivedPackageSignatureStatusEnum),
-          ) as ReceivedPackageSignatureStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ReceivedPackageSignatureStatusEnum,
+                    ),
+                  )
+                  as ReceivedPackageSignatureStatusEnum;
           result.signatureStatus = valueDes;
           break;
         case r'keySource':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ReceivedPackageKeySourceEnum),
-          ) as ReceivedPackageKeySourceEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ReceivedPackageKeySourceEnum,
+                    ),
+                  )
+                  as ReceivedPackageKeySourceEnum?;
           if (valueDes == null) continue;
           result.keySource = valueDes;
           break;
         case r'hashesVerified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.hashesVerified = valueDes;
           break;
         case r'receivedVia':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReceivedPackageReceivedViaEnum),
-          ) as ReceivedPackageReceivedViaEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ReceivedPackageReceivedViaEnum,
+                    ),
+                  )
+                  as ReceivedPackageReceivedViaEnum;
           result.receivedVia = valueDes;
           break;
         case r'receivedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.receivedAt = valueDes;
           break;
         case r'recipients':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.recipients.replace(valueDes);
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'acknowledgedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.acknowledgedAt = valueDes;
           break;
         case r'provenanceChain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProvenanceChainEntry)]),
-          ) as BuiltList<ProvenanceChainEntry>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProvenanceChainEntry),
+                    ]),
+                  )
+                  as BuiltList<ProvenanceChainEntry>?;
           if (valueDes == null) continue;
           result.provenanceChain.replace(valueDes);
           break;
         case r'contents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ReceivedPackageContentsInner)]),
-          ) as BuiltList<ReceivedPackageContentsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ReceivedPackageContentsInner),
+                    ]),
+                  )
+                  as BuiltList<ReceivedPackageContentsInner>?;
           if (valueDes == null) continue;
           result.contents.replace(valueDes);
           break;

@@ -12,15 +12,15 @@ class _$OgcCoverageCollectionExtent extends OgcCoverageCollectionExtent {
   @override
   final OgcCoverageCollectionExtentTemporal? temporal;
 
-  factory _$OgcCoverageCollectionExtent(
-          [void Function(OgcCoverageCollectionExtentBuilder)? updates]) =>
-      (OgcCoverageCollectionExtentBuilder()..update(updates))._build();
+  factory _$OgcCoverageCollectionExtent([
+    void Function(OgcCoverageCollectionExtentBuilder)? updates,
+  ]) => (OgcCoverageCollectionExtentBuilder()..update(updates))._build();
 
   _$OgcCoverageCollectionExtent._({this.spatial, this.temporal}) : super._();
   @override
   OgcCoverageCollectionExtent rebuild(
-          void Function(OgcCoverageCollectionExtentBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionExtentBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionExtentBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$OgcCoverageCollectionExtent extends OgcCoverageCollectionExtent {
 
 class OgcCoverageCollectionExtentBuilder
     implements
-        Builder<OgcCoverageCollectionExtent,
-            OgcCoverageCollectionExtentBuilder> {
+        Builder<
+          OgcCoverageCollectionExtent,
+          OgcCoverageCollectionExtentBuilder
+        > {
   _$OgcCoverageCollectionExtent? _$v;
 
   OgcCoverageCollectionExtentSpatialBuilder? _spatial;
@@ -100,7 +102,8 @@ class OgcCoverageCollectionExtentBuilder
   _$OgcCoverageCollectionExtent _build() {
     _$OgcCoverageCollectionExtent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCoverageCollectionExtent._(
             spatial: _spatial?.build(),
             temporal: _temporal?.build(),
@@ -114,7 +117,10 @@ class OgcCoverageCollectionExtentBuilder
         _temporal?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCoverageCollectionExtent', _$failedField, e.toString());
+          r'OgcCoverageCollectionExtent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

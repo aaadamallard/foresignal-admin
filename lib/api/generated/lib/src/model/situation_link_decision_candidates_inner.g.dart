@@ -13,18 +13,19 @@ class _$SituationLinkDecisionCandidatesInner
   @override
   final num score;
 
-  factory _$SituationLinkDecisionCandidatesInner(
-          [void Function(SituationLinkDecisionCandidatesInnerBuilder)?
-              updates]) =>
+  factory _$SituationLinkDecisionCandidatesInner([
+    void Function(SituationLinkDecisionCandidatesInnerBuilder)? updates,
+  ]) =>
       (SituationLinkDecisionCandidatesInnerBuilder()..update(updates))._build();
 
-  _$SituationLinkDecisionCandidatesInner._(
-      {required this.situationId, required this.score})
-      : super._();
+  _$SituationLinkDecisionCandidatesInner._({
+    required this.situationId,
+    required this.score,
+  }) : super._();
   @override
   SituationLinkDecisionCandidatesInner rebuild(
-          void Function(SituationLinkDecisionCandidatesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationLinkDecisionCandidatesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationLinkDecisionCandidatesInnerBuilder toBuilder() =>
@@ -58,8 +59,10 @@ class _$SituationLinkDecisionCandidatesInner
 
 class SituationLinkDecisionCandidatesInnerBuilder
     implements
-        Builder<SituationLinkDecisionCandidatesInner,
-            SituationLinkDecisionCandidatesInnerBuilder> {
+        Builder<
+          SituationLinkDecisionCandidatesInner,
+          SituationLinkDecisionCandidatesInnerBuilder
+        > {
   _$SituationLinkDecisionCandidatesInner? _$v;
 
   String? _situationId;
@@ -91,7 +94,8 @@ class SituationLinkDecisionCandidatesInnerBuilder
 
   @override
   void update(
-      void Function(SituationLinkDecisionCandidatesInnerBuilder)? updates) {
+    void Function(SituationLinkDecisionCandidatesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -99,12 +103,19 @@ class SituationLinkDecisionCandidatesInnerBuilder
   SituationLinkDecisionCandidatesInner build() => _build();
 
   _$SituationLinkDecisionCandidatesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationLinkDecisionCandidatesInner._(
-          situationId: BuiltValueNullFieldError.checkNotNull(situationId,
-              r'SituationLinkDecisionCandidatesInner', 'situationId'),
+          situationId: BuiltValueNullFieldError.checkNotNull(
+            situationId,
+            r'SituationLinkDecisionCandidatesInner',
+            'situationId',
+          ),
           score: BuiltValueNullFieldError.checkNotNull(
-              score, r'SituationLinkDecisionCandidatesInner', 'score'),
+            score,
+            r'SituationLinkDecisionCandidatesInner',
+            'score',
+          ),
         );
     replace(_$result);
     return _$result;

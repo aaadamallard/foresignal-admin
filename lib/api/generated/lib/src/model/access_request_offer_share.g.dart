@@ -10,15 +10,15 @@ class _$AccessRequestOfferShare extends AccessRequestOfferShare {
   @override
   final String chronicleId;
 
-  factory _$AccessRequestOfferShare(
-          [void Function(AccessRequestOfferShareBuilder)? updates]) =>
-      (AccessRequestOfferShareBuilder()..update(updates))._build();
+  factory _$AccessRequestOfferShare([
+    void Function(AccessRequestOfferShareBuilder)? updates,
+  ]) => (AccessRequestOfferShareBuilder()..update(updates))._build();
 
   _$AccessRequestOfferShare._({required this.chronicleId}) : super._();
   @override
   AccessRequestOfferShare rebuild(
-          void Function(AccessRequestOfferShareBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AccessRequestOfferShareBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AccessRequestOfferShareBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$AccessRequestOfferShare extends AccessRequestOfferShare {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AccessRequestOfferShare')
-          ..add('chronicleId', chronicleId))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AccessRequestOfferShare',
+    )..add('chronicleId', chronicleId)).toString();
   }
 }
 
@@ -82,10 +82,14 @@ class AccessRequestOfferShareBuilder
   AccessRequestOfferShare build() => _build();
 
   _$AccessRequestOfferShare _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AccessRequestOfferShare._(
           chronicleId: BuiltValueNullFieldError.checkNotNull(
-              chronicleId, r'AccessRequestOfferShare', 'chronicleId'),
+            chronicleId,
+            r'AccessRequestOfferShare',
+            'chronicleId',
+          ),
         );
     replace(_$result);
     return _$result;

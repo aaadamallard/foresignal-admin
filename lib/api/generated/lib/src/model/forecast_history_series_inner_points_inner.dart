@@ -22,8 +22,10 @@ part 'forecast_history_series_inner_points_inner.g.dart';
 @BuiltValue()
 abstract class ForecastHistorySeriesInnerPointsInner
     implements
-        Built<ForecastHistorySeriesInnerPointsInner,
-            ForecastHistorySeriesInnerPointsInnerBuilder> {
+        Built<
+          ForecastHistorySeriesInnerPointsInner,
+          ForecastHistorySeriesInnerPointsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'date')
   Date get date;
 
@@ -45,9 +47,9 @@ abstract class ForecastHistorySeriesInnerPointsInner
 
   ForecastHistorySeriesInnerPointsInner._();
 
-  factory ForecastHistorySeriesInnerPointsInner(
-          [void updates(ForecastHistorySeriesInnerPointsInnerBuilder b)]) =
-      _$ForecastHistorySeriesInnerPointsInner;
+  factory ForecastHistorySeriesInnerPointsInner([
+    void updates(ForecastHistorySeriesInnerPointsInnerBuilder b),
+  ]) = _$ForecastHistorySeriesInnerPointsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastHistorySeriesInnerPointsInnerBuilder b) => b;
@@ -62,7 +64,7 @@ class _$ForecastHistorySeriesInnerPointsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ForecastHistorySeriesInnerPointsInner,
-    _$ForecastHistorySeriesInnerPointsInner
+    _$ForecastHistorySeriesInnerPointsInner,
   ];
 
   @override
@@ -89,8 +91,10 @@ class _$ForecastHistorySeriesInnerPointsInnerSerializer
       yield r'distribution';
       yield serializers.serialize(
         object.distribution,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType(num)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType(num),
+        ]),
       );
     }
     if (object.quantiles != null) {
@@ -113,9 +117,11 @@ class _$ForecastHistorySeriesInnerPointsInnerSerializer
     ForecastHistorySeriesInnerPointsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -131,42 +137,54 @@ class _$ForecastHistorySeriesInnerPointsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.date = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.probability = valueDes;
           break;
         case r'distribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>?;
           if (valueDes == null) continue;
           result.distribution.replace(valueDes);
           break;
         case r'quantiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Quantiles),
-          ) as Quantiles?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Quantiles),
+                  )
+                  as Quantiles?;
           if (valueDes == null) continue;
           result.quantiles.replace(valueDes);
           break;
         case r'forecastId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecastId = valueDes;
           break;
         default:

@@ -48,9 +48,9 @@ abstract class SocialSettingsCuesTriggers
 
   SocialSettingsCuesTriggers._();
 
-  factory SocialSettingsCuesTriggers(
-          [void updates(SocialSettingsCuesTriggersBuilder b)]) =
-      _$SocialSettingsCuesTriggers;
+  factory SocialSettingsCuesTriggers([
+    void updates(SocialSettingsCuesTriggersBuilder b),
+  ]) = _$SocialSettingsCuesTriggers;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsCuesTriggersBuilder b) => b;
@@ -65,7 +65,7 @@ class _$SocialSettingsCuesTriggersSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsCuesTriggers,
-    _$SocialSettingsCuesTriggers
+    _$SocialSettingsCuesTriggers,
   ];
 
   @override
@@ -133,9 +133,11 @@ class _$SocialSettingsCuesTriggersSerializer
     SocialSettingsCuesTriggers object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -151,60 +153,76 @@ class _$SocialSettingsCuesTriggersSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situationActivated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.situationActivated = valueDes;
           break;
         case r'situationEscalated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.situationEscalated = valueDes;
           break;
         case r'findingTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.findingTypes.replace(valueDes);
           break;
         case r'anomalies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.anomalies = valueDes;
           break;
         case r'criticalAlerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.criticalAlerts = valueDes;
           break;
         case r'canonicalFamilies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.canonicalFamilies.replace(valueDes);
           break;
         case r'minEvidenceGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minEvidenceGroups = valueDes;
           break;

@@ -59,8 +59,9 @@ class _$OgcCollectionsSerializer
     yield r'collections';
     yield serializers.serialize(
       object.collections,
-      specifiedType:
-          const FullType(BuiltList, [FullType(OgcCollection200Response)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OgcCollection200Response),
+      ]),
     );
   }
 
@@ -70,9 +71,11 @@ class _$OgcCollectionsSerializer
     OgcCollections object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,18 +91,25 @@ class _$OgcCollectionsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>;
           result.links.replace(valueDes);
           break;
         case r'collections':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(OgcCollection200Response)]),
-          ) as BuiltList<OgcCollection200Response>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcCollection200Response),
+                    ]),
+                  )
+                  as BuiltList<OgcCollection200Response>;
           result.collections.replace(valueDes);
           break;
         default:

@@ -15,17 +15,19 @@ class _$ChronicleSummaryTopEntitiesInner
   @override
   final int count;
 
-  factory _$ChronicleSummaryTopEntitiesInner(
-          [void Function(ChronicleSummaryTopEntitiesInnerBuilder)? updates]) =>
-      (ChronicleSummaryTopEntitiesInnerBuilder()..update(updates))._build();
+  factory _$ChronicleSummaryTopEntitiesInner([
+    void Function(ChronicleSummaryTopEntitiesInnerBuilder)? updates,
+  ]) => (ChronicleSummaryTopEntitiesInnerBuilder()..update(updates))._build();
 
-  _$ChronicleSummaryTopEntitiesInner._(
-      {required this.ref, this.title, required this.count})
-      : super._();
+  _$ChronicleSummaryTopEntitiesInner._({
+    required this.ref,
+    this.title,
+    required this.count,
+  }) : super._();
   @override
   ChronicleSummaryTopEntitiesInner rebuild(
-          void Function(ChronicleSummaryTopEntitiesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSummaryTopEntitiesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSummaryTopEntitiesInnerBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$ChronicleSummaryTopEntitiesInner
 
 class ChronicleSummaryTopEntitiesInnerBuilder
     implements
-        Builder<ChronicleSummaryTopEntitiesInner,
-            ChronicleSummaryTopEntitiesInnerBuilder> {
+        Builder<
+          ChronicleSummaryTopEntitiesInner,
+          ChronicleSummaryTopEntitiesInnerBuilder
+        > {
   _$ChronicleSummaryTopEntitiesInner? _$v;
 
   String? _ref;
@@ -107,13 +111,20 @@ class ChronicleSummaryTopEntitiesInnerBuilder
   ChronicleSummaryTopEntitiesInner build() => _build();
 
   _$ChronicleSummaryTopEntitiesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSummaryTopEntitiesInner._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'ChronicleSummaryTopEntitiesInner', 'ref'),
+            ref,
+            r'ChronicleSummaryTopEntitiesInner',
+            'ref',
+          ),
           title: title,
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'ChronicleSummaryTopEntitiesInner', 'count'),
+            count,
+            r'ChronicleSummaryTopEntitiesInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

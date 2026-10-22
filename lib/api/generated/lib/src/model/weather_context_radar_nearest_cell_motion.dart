@@ -17,8 +17,10 @@ part 'weather_context_radar_nearest_cell_motion.g.dart';
 @BuiltValue()
 abstract class WeatherContextRadarNearestCellMotion
     implements
-        Built<WeatherContextRadarNearestCellMotion,
-            WeatherContextRadarNearestCellMotionBuilder> {
+        Built<
+          WeatherContextRadarNearestCellMotion,
+          WeatherContextRadarNearestCellMotionBuilder
+        > {
   @BuiltValueField(wireName: r'speedKmh')
   num? get speedKmh;
 
@@ -30,9 +32,9 @@ abstract class WeatherContextRadarNearestCellMotion
 
   WeatherContextRadarNearestCellMotion._();
 
-  factory WeatherContextRadarNearestCellMotion(
-          [void updates(WeatherContextRadarNearestCellMotionBuilder b)]) =
-      _$WeatherContextRadarNearestCellMotion;
+  factory WeatherContextRadarNearestCellMotion([
+    void updates(WeatherContextRadarNearestCellMotionBuilder b),
+  ]) = _$WeatherContextRadarNearestCellMotion;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WeatherContextRadarNearestCellMotionBuilder b) => b;
@@ -47,7 +49,7 @@ class _$WeatherContextRadarNearestCellMotionSerializer
   @override
   final Iterable<Type> types = const [
     WeatherContextRadarNearestCellMotion,
-    _$WeatherContextRadarNearestCellMotion
+    _$WeatherContextRadarNearestCellMotion,
   ];
 
   @override
@@ -87,9 +89,11 @@ class _$WeatherContextRadarNearestCellMotionSerializer
     WeatherContextRadarNearestCellMotion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,26 +109,32 @@ class _$WeatherContextRadarNearestCellMotionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'speedKmh':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.speedKmh = valueDes;
           break;
         case r'bearingDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.bearingDeg = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.method = valueDes;
           break;

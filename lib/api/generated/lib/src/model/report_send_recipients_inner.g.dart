@@ -7,20 +7,20 @@ part of 'report_send_recipients_inner.dart';
 // **************************************************************************
 
 const ReportSendRecipientsInnerStatusEnum
-    _$reportSendRecipientsInnerStatusEnum_notified =
+_$reportSendRecipientsInnerStatusEnum_notified =
     const ReportSendRecipientsInnerStatusEnum._('notified');
 const ReportSendRecipientsInnerStatusEnum
-    _$reportSendRecipientsInnerStatusEnum_granted =
+_$reportSendRecipientsInnerStatusEnum_granted =
     const ReportSendRecipientsInnerStatusEnum._('granted');
 const ReportSendRecipientsInnerStatusEnum
-    _$reportSendRecipientsInnerStatusEnum_delivered =
+_$reportSendRecipientsInnerStatusEnum_delivered =
     const ReportSendRecipientsInnerStatusEnum._('delivered');
 const ReportSendRecipientsInnerStatusEnum
-    _$reportSendRecipientsInnerStatusEnum_failed =
+_$reportSendRecipientsInnerStatusEnum_failed =
     const ReportSendRecipientsInnerStatusEnum._('failed');
 
 ReportSendRecipientsInnerStatusEnum
-    _$reportSendRecipientsInnerStatusEnumValueOf(String name) {
+_$reportSendRecipientsInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'notified':
       return _$reportSendRecipientsInnerStatusEnum_notified;
@@ -36,16 +36,18 @@ ReportSendRecipientsInnerStatusEnum
 }
 
 final BuiltSet<ReportSendRecipientsInnerStatusEnum>
-    _$reportSendRecipientsInnerStatusEnumValues = BuiltSet<
-        ReportSendRecipientsInnerStatusEnum>(const <ReportSendRecipientsInnerStatusEnum>[
-  _$reportSendRecipientsInnerStatusEnum_notified,
-  _$reportSendRecipientsInnerStatusEnum_granted,
-  _$reportSendRecipientsInnerStatusEnum_delivered,
-  _$reportSendRecipientsInnerStatusEnum_failed,
-]);
+_$reportSendRecipientsInnerStatusEnumValues =
+    BuiltSet<ReportSendRecipientsInnerStatusEnum>(
+      const <ReportSendRecipientsInnerStatusEnum>[
+        _$reportSendRecipientsInnerStatusEnum_notified,
+        _$reportSendRecipientsInnerStatusEnum_granted,
+        _$reportSendRecipientsInnerStatusEnum_delivered,
+        _$reportSendRecipientsInnerStatusEnum_failed,
+      ],
+    );
 
 Serializer<ReportSendRecipientsInnerStatusEnum>
-    _$reportSendRecipientsInnerStatusEnumSerializer =
+_$reportSendRecipientsInnerStatusEnumSerializer =
     _$ReportSendRecipientsInnerStatusEnumSerializer();
 
 class _$ReportSendRecipientsInnerStatusEnumSerializer
@@ -65,23 +67,26 @@ class _$ReportSendRecipientsInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ReportSendRecipientsInnerStatusEnum
+    ReportSendRecipientsInnerStatusEnum,
   ];
   @override
   final String wireName = 'ReportSendRecipientsInnerStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ReportSendRecipientsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ReportSendRecipientsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReportSendRecipientsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportSendRecipientsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportSendRecipientsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportSendRecipientsInner extends ReportSendRecipientsInner {
@@ -92,17 +97,19 @@ class _$ReportSendRecipientsInner extends ReportSendRecipientsInner {
   @override
   final BuiltList<String>? channelIds;
 
-  factory _$ReportSendRecipientsInner(
-          [void Function(ReportSendRecipientsInnerBuilder)? updates]) =>
-      (ReportSendRecipientsInnerBuilder()..update(updates))._build();
+  factory _$ReportSendRecipientsInner([
+    void Function(ReportSendRecipientsInnerBuilder)? updates,
+  ]) => (ReportSendRecipientsInnerBuilder()..update(updates))._build();
 
-  _$ReportSendRecipientsInner._(
-      {required this.grantee, required this.status, this.channelIds})
-      : super._();
+  _$ReportSendRecipientsInner._({
+    required this.grantee,
+    required this.status,
+    this.channelIds,
+  }) : super._();
   @override
   ReportSendRecipientsInner rebuild(
-          void Function(ReportSendRecipientsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReportSendRecipientsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReportSendRecipientsInnerBuilder toBuilder() =>
@@ -188,12 +195,19 @@ class ReportSendRecipientsInnerBuilder
   _$ReportSendRecipientsInner _build() {
     _$ReportSendRecipientsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportSendRecipientsInner._(
             grantee: BuiltValueNullFieldError.checkNotNull(
-                grantee, r'ReportSendRecipientsInner', 'grantee'),
+              grantee,
+              r'ReportSendRecipientsInner',
+              'grantee',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ReportSendRecipientsInner', 'status'),
+              status,
+              r'ReportSendRecipientsInner',
+              'status',
+            ),
             channelIds: _channelIds?.build(),
           );
     } catch (_) {
@@ -203,7 +217,10 @@ class ReportSendRecipientsInnerBuilder
         _channelIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportSendRecipientsInner', _$failedField, e.toString());
+          r'ReportSendRecipientsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

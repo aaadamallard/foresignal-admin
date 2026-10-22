@@ -16,16 +16,16 @@ class _$DigestCountPrevious extends DigestCountPrevious {
   @override
   final int? active;
 
-  factory _$DigestCountPrevious(
-          [void Function(DigestCountPreviousBuilder)? updates]) =>
-      (DigestCountPreviousBuilder()..update(updates))._build();
+  factory _$DigestCountPrevious([
+    void Function(DigestCountPreviousBuilder)? updates,
+  ]) => (DigestCountPreviousBuilder()..update(updates))._build();
 
   _$DigestCountPrevious._({this.new_, this.changed, this.removed, this.active})
-      : super._();
+    : super._();
   @override
   DigestCountPrevious rebuild(
-          void Function(DigestCountPreviousBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DigestCountPreviousBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DigestCountPreviousBuilder toBuilder() =>
@@ -113,7 +113,8 @@ class DigestCountPreviousBuilder
   DigestCountPrevious build() => _build();
 
   _$DigestCountPrevious _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestCountPrevious._(
           new_: new_,
           changed: changed,

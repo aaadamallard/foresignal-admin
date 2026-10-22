@@ -30,9 +30,9 @@ abstract class FederationIngestResult
 
   FederationIngestResult._();
 
-  factory FederationIngestResult(
-          [void updates(FederationIngestResultBuilder b)]) =
-      _$FederationIngestResult;
+  factory FederationIngestResult([
+    void updates(FederationIngestResultBuilder b),
+  ]) = _$FederationIngestResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FederationIngestResultBuilder b) => b;
@@ -47,7 +47,7 @@ class _$FederationIngestResultSerializer
   @override
   final Iterable<Type> types = const [
     FederationIngestResult,
-    _$FederationIngestResult
+    _$FederationIngestResult,
   ];
 
   @override
@@ -81,9 +81,11 @@ class _$FederationIngestResultSerializer
     FederationIngestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +101,26 @@ class _$FederationIngestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accepted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.accepted = valueDes;
           break;
         case r'duplicates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.duplicates = valueDes;
           break;
         case r'dropped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FederationIngestResultDropped),
-          ) as FederationIngestResultDropped;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      FederationIngestResultDropped,
+                    ),
+                  )
+                  as FederationIngestResultDropped;
           result.dropped.replace(valueDes);
           break;
         default:

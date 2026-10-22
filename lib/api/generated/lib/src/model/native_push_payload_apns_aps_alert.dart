@@ -16,8 +16,10 @@ part 'native_push_payload_apns_aps_alert.g.dart';
 @BuiltValue()
 abstract class NativePushPayloadApnsApsAlert
     implements
-        Built<NativePushPayloadApnsApsAlert,
-            NativePushPayloadApnsApsAlertBuilder> {
+        Built<
+          NativePushPayloadApnsApsAlert,
+          NativePushPayloadApnsApsAlertBuilder
+        > {
   @BuiltValueField(wireName: r'title')
   String get title;
 
@@ -26,9 +28,9 @@ abstract class NativePushPayloadApnsApsAlert
 
   NativePushPayloadApnsApsAlert._();
 
-  factory NativePushPayloadApnsApsAlert(
-          [void updates(NativePushPayloadApnsApsAlertBuilder b)]) =
-      _$NativePushPayloadApnsApsAlert;
+  factory NativePushPayloadApnsApsAlert([
+    void updates(NativePushPayloadApnsApsAlertBuilder b),
+  ]) = _$NativePushPayloadApnsApsAlert;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NativePushPayloadApnsApsAlertBuilder b) => b;
@@ -43,7 +45,7 @@ class _$NativePushPayloadApnsApsAlertSerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadApnsApsAlert,
-    _$NativePushPayloadApnsApsAlert
+    _$NativePushPayloadApnsApsAlert,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$NativePushPayloadApnsApsAlertSerializer
     NativePushPayloadApnsApsAlert object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$NativePushPayloadApnsApsAlertSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'body':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.body = valueDes;
           break;
         default:

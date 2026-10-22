@@ -14,19 +14,19 @@ class _$HypothesisReviewInputLrInner extends HypothesisReviewInputLrInner {
   @override
   final IndicatorLikelihood likelihood;
 
-  factory _$HypothesisReviewInputLrInner(
-          [void Function(HypothesisReviewInputLrInnerBuilder)? updates]) =>
-      (HypothesisReviewInputLrInnerBuilder()..update(updates))._build();
+  factory _$HypothesisReviewInputLrInner([
+    void Function(HypothesisReviewInputLrInnerBuilder)? updates,
+  ]) => (HypothesisReviewInputLrInnerBuilder()..update(updates))._build();
 
-  _$HypothesisReviewInputLrInner._(
-      {required this.indicatorId,
-      required this.hypothesisId,
-      required this.likelihood})
-      : super._();
+  _$HypothesisReviewInputLrInner._({
+    required this.indicatorId,
+    required this.hypothesisId,
+    required this.likelihood,
+  }) : super._();
   @override
   HypothesisReviewInputLrInner rebuild(
-          void Function(HypothesisReviewInputLrInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisReviewInputLrInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisReviewInputLrInnerBuilder toBuilder() =>
@@ -63,8 +63,10 @@ class _$HypothesisReviewInputLrInner extends HypothesisReviewInputLrInner {
 
 class HypothesisReviewInputLrInnerBuilder
     implements
-        Builder<HypothesisReviewInputLrInner,
-            HypothesisReviewInputLrInnerBuilder> {
+        Builder<
+          HypothesisReviewInputLrInner,
+          HypothesisReviewInputLrInnerBuilder
+        > {
   _$HypothesisReviewInputLrInner? _$v;
 
   String? _indicatorId;
@@ -112,12 +114,19 @@ class HypothesisReviewInputLrInnerBuilder
   _$HypothesisReviewInputLrInner _build() {
     _$HypothesisReviewInputLrInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisReviewInputLrInner._(
             indicatorId: BuiltValueNullFieldError.checkNotNull(
-                indicatorId, r'HypothesisReviewInputLrInner', 'indicatorId'),
+              indicatorId,
+              r'HypothesisReviewInputLrInner',
+              'indicatorId',
+            ),
             hypothesisId: BuiltValueNullFieldError.checkNotNull(
-                hypothesisId, r'HypothesisReviewInputLrInner', 'hypothesisId'),
+              hypothesisId,
+              r'HypothesisReviewInputLrInner',
+              'hypothesisId',
+            ),
             likelihood: likelihood.build(),
           );
     } catch (_) {
@@ -127,7 +136,10 @@ class HypothesisReviewInputLrInnerBuilder
         likelihood.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisReviewInputLrInner', _$failedField, e.toString());
+          r'HypothesisReviewInputLrInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

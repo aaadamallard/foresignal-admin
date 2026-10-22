@@ -7,14 +7,14 @@ part of 'chronicle_sketch_batch_access_decisions_inner.dart';
 // **************************************************************************
 
 const ChronicleSketchBatchAccessDecisionsInnerStatusEnum
-    _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted =
+_$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted =
     const ChronicleSketchBatchAccessDecisionsInnerStatusEnum._('granted');
 const ChronicleSketchBatchAccessDecisionsInnerStatusEnum
-    _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined =
+_$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined =
     const ChronicleSketchBatchAccessDecisionsInnerStatusEnum._('declined');
 
 ChronicleSketchBatchAccessDecisionsInnerStatusEnum
-    _$chronicleSketchBatchAccessDecisionsInnerStatusEnumValueOf(String name) {
+_$chronicleSketchBatchAccessDecisionsInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'granted':
       return _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted;
@@ -26,23 +26,25 @@ ChronicleSketchBatchAccessDecisionsInnerStatusEnum
 }
 
 final BuiltSet<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>
-    _$chronicleSketchBatchAccessDecisionsInnerStatusEnumValues = BuiltSet<
-        ChronicleSketchBatchAccessDecisionsInnerStatusEnum>(const <ChronicleSketchBatchAccessDecisionsInnerStatusEnum>[
-  _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted,
-  _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined,
-]);
+_$chronicleSketchBatchAccessDecisionsInnerStatusEnumValues =
+    BuiltSet<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>(
+      const <ChronicleSketchBatchAccessDecisionsInnerStatusEnum>[
+        _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted,
+        _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined,
+      ],
+    );
 
 const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
-    _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report =
+_$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report =
     const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum._('report');
 const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
-    _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract =
+_$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract =
     const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum._(
-        'chronicleExtract');
+      'chronicleExtract',
+    );
 
 ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
-    _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumValueOf(
-        String name) {
+_$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumValueOf(String name) {
   switch (name) {
     case 'report':
       return _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report;
@@ -54,23 +56,26 @@ ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
 }
 
 final BuiltSet<ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum>
-    _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumValues = BuiltSet<
-        ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum>(const <ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum>[
-  _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report,
-  _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract,
-]);
+_$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumValues =
+    BuiltSet<ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum>(const <
+      ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
+    >[
+      _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report,
+      _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract,
+    ]);
 
 Serializer<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>
-    _$chronicleSketchBatchAccessDecisionsInnerStatusEnumSerializer =
+_$chronicleSketchBatchAccessDecisionsInnerStatusEnumSerializer =
     _$ChronicleSketchBatchAccessDecisionsInnerStatusEnumSerializer();
 Serializer<ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum>
-    _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumSerializer =
+_$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumSerializer =
     _$ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumSerializer();
 
 class _$ChronicleSketchBatchAccessDecisionsInnerStatusEnumSerializer
     implements
         PrimitiveSerializer<
-            ChronicleSketchBatchAccessDecisionsInnerStatusEnum> {
+          ChronicleSketchBatchAccessDecisionsInnerStatusEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'granted': 'granted',
     'declined': 'declined',
@@ -82,29 +87,33 @@ class _$ChronicleSketchBatchAccessDecisionsInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleSketchBatchAccessDecisionsInnerStatusEnum
+    ChronicleSketchBatchAccessDecisionsInnerStatusEnum,
   ];
   @override
   final String wireName = 'ChronicleSketchBatchAccessDecisionsInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleSketchBatchAccessDecisionsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleSketchBatchAccessDecisionsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSketchBatchAccessDecisionsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSketchBatchAccessDecisionsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSketchBatchAccessDecisionsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumSerializer
     implements
         PrimitiveSerializer<
-            ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum> {
+          ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'report': 'report',
     'chronicleExtract': 'chronicle-extract',
@@ -116,24 +125,27 @@ class _$ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
+    ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum,
   ];
   @override
   final String wireName =
       'ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSketchBatchAccessDecisionsInner
@@ -147,23 +159,21 @@ class _$ChronicleSketchBatchAccessDecisionsInner
   @override
   final String? packageId;
 
-  factory _$ChronicleSketchBatchAccessDecisionsInner(
-          [void Function(ChronicleSketchBatchAccessDecisionsInnerBuilder)?
-              updates]) =>
-      (ChronicleSketchBatchAccessDecisionsInnerBuilder()..update(updates))
-          ._build();
+  factory _$ChronicleSketchBatchAccessDecisionsInner([
+    void Function(ChronicleSketchBatchAccessDecisionsInnerBuilder)? updates,
+  ]) => (ChronicleSketchBatchAccessDecisionsInnerBuilder()..update(updates))
+      ._build();
 
-  _$ChronicleSketchBatchAccessDecisionsInner._(
-      {required this.requestId,
-      required this.status,
-      this.deliveredAs,
-      this.packageId})
-      : super._();
+  _$ChronicleSketchBatchAccessDecisionsInner._({
+    required this.requestId,
+    required this.status,
+    this.deliveredAs,
+    this.packageId,
+  }) : super._();
   @override
   ChronicleSketchBatchAccessDecisionsInner rebuild(
-          void Function(ChronicleSketchBatchAccessDecisionsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSketchBatchAccessDecisionsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSketchBatchAccessDecisionsInnerBuilder toBuilder() =>
@@ -193,7 +203,8 @@ class _$ChronicleSketchBatchAccessDecisionsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ChronicleSketchBatchAccessDecisionsInner')
+            r'ChronicleSketchBatchAccessDecisionsInner',
+          )
           ..add('requestId', requestId)
           ..add('status', status)
           ..add('deliveredAs', deliveredAs)
@@ -204,8 +215,10 @@ class _$ChronicleSketchBatchAccessDecisionsInner
 
 class ChronicleSketchBatchAccessDecisionsInnerBuilder
     implements
-        Builder<ChronicleSketchBatchAccessDecisionsInner,
-            ChronicleSketchBatchAccessDecisionsInnerBuilder> {
+        Builder<
+          ChronicleSketchBatchAccessDecisionsInner,
+          ChronicleSketchBatchAccessDecisionsInnerBuilder
+        > {
   _$ChronicleSketchBatchAccessDecisionsInner? _$v;
 
   String? _requestId;
@@ -222,9 +235,8 @@ class ChronicleSketchBatchAccessDecisionsInnerBuilder
   ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum? get deliveredAs =>
       _$this._deliveredAs;
   set deliveredAs(
-          ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum?
-              deliveredAs) =>
-      _$this._deliveredAs = deliveredAs;
+    ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum? deliveredAs,
+  ) => _$this._deliveredAs = deliveredAs;
 
   String? _packageId;
   String? get packageId => _$this._packageId;
@@ -253,7 +265,8 @@ class ChronicleSketchBatchAccessDecisionsInnerBuilder
 
   @override
   void update(
-      void Function(ChronicleSketchBatchAccessDecisionsInnerBuilder)? updates) {
+    void Function(ChronicleSketchBatchAccessDecisionsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -261,12 +274,19 @@ class ChronicleSketchBatchAccessDecisionsInnerBuilder
   ChronicleSketchBatchAccessDecisionsInner build() => _build();
 
   _$ChronicleSketchBatchAccessDecisionsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSketchBatchAccessDecisionsInner._(
-          requestId: BuiltValueNullFieldError.checkNotNull(requestId,
-              r'ChronicleSketchBatchAccessDecisionsInner', 'requestId'),
+          requestId: BuiltValueNullFieldError.checkNotNull(
+            requestId,
+            r'ChronicleSketchBatchAccessDecisionsInner',
+            'requestId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'ChronicleSketchBatchAccessDecisionsInner', 'status'),
+            status,
+            r'ChronicleSketchBatchAccessDecisionsInner',
+            'status',
+          ),
           deliveredAs: deliveredAs,
           packageId: packageId,
         );

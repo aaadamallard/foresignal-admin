@@ -16,17 +16,20 @@ class _$AnalysisManifestInputs extends AnalysisManifestInputs {
   @override
   final String hash;
 
-  factory _$AnalysisManifestInputs(
-          [void Function(AnalysisManifestInputsBuilder)? updates]) =>
-      (AnalysisManifestInputsBuilder()..update(updates))._build();
+  factory _$AnalysisManifestInputs([
+    void Function(AnalysisManifestInputsBuilder)? updates,
+  ]) => (AnalysisManifestInputsBuilder()..update(updates))._build();
 
-  _$AnalysisManifestInputs._(
-      {this.refs, this.query, required this.count, required this.hash})
-      : super._();
+  _$AnalysisManifestInputs._({
+    this.refs,
+    this.query,
+    required this.count,
+    required this.hash,
+  }) : super._();
   @override
   AnalysisManifestInputs rebuild(
-          void Function(AnalysisManifestInputsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisManifestInputsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisManifestInputsBuilder toBuilder() =>
@@ -117,14 +120,21 @@ class AnalysisManifestInputsBuilder
   _$AnalysisManifestInputs _build() {
     _$AnalysisManifestInputs _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalysisManifestInputs._(
             refs: _refs?.build(),
             query: _query?.build(),
             count: BuiltValueNullFieldError.checkNotNull(
-                count, r'AnalysisManifestInputs', 'count'),
+              count,
+              r'AnalysisManifestInputs',
+              'count',
+            ),
             hash: BuiltValueNullFieldError.checkNotNull(
-                hash, r'AnalysisManifestInputs', 'hash'),
+              hash,
+              r'AnalysisManifestInputs',
+              'hash',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -135,7 +145,10 @@ class AnalysisManifestInputsBuilder
         _query?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisManifestInputs', _$failedField, e.toString());
+          r'AnalysisManifestInputs',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

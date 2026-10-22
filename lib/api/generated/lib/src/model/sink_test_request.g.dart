@@ -90,11 +90,8 @@ class SinkTestRequestBuilder
   SinkTestRequest build() => _build();
 
   _$SinkTestRequest _build() {
-    final _$result = _$v ??
-        _$SinkTestRequest._(
-          kind: kind,
-          timeoutSeconds: timeoutSeconds,
-        );
+    final _$result =
+        _$v ?? _$SinkTestRequest._(kind: kind, timeoutSeconds: timeoutSeconds);
     replace(_$result);
     return _$result;
   }

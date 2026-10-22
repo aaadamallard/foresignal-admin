@@ -18,8 +18,10 @@ part 'hypothesis_review_input_lr_inner.g.dart';
 @BuiltValue()
 abstract class HypothesisReviewInputLrInner
     implements
-        Built<HypothesisReviewInputLrInner,
-            HypothesisReviewInputLrInnerBuilder> {
+        Built<
+          HypothesisReviewInputLrInner,
+          HypothesisReviewInputLrInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'indicatorId')
   String get indicatorId;
@@ -33,9 +35,9 @@ abstract class HypothesisReviewInputLrInner
 
   HypothesisReviewInputLrInner._();
 
-  factory HypothesisReviewInputLrInner(
-          [void updates(HypothesisReviewInputLrInnerBuilder b)]) =
-      _$HypothesisReviewInputLrInner;
+  factory HypothesisReviewInputLrInner([
+    void updates(HypothesisReviewInputLrInnerBuilder b),
+  ]) = _$HypothesisReviewInputLrInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisReviewInputLrInnerBuilder b) => b;
@@ -50,7 +52,7 @@ class _$HypothesisReviewInputLrInnerSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisReviewInputLrInner,
-    _$HypothesisReviewInputLrInner
+    _$HypothesisReviewInputLrInner,
   ];
 
   @override
@@ -84,9 +86,11 @@ class _$HypothesisReviewInputLrInnerSerializer
     HypothesisReviewInputLrInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,24 +106,30 @@ class _$HypothesisReviewInputLrInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'indicatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.indicatorId = valueDes;
           break;
         case r'hypothesisId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hypothesisId = valueDes;
           break;
         case r'likelihood':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IndicatorLikelihood),
-          ) as IndicatorLikelihood;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IndicatorLikelihood),
+                  )
+                  as IndicatorLikelihood;
           result.likelihood.replace(valueDes);
           break;
         default:

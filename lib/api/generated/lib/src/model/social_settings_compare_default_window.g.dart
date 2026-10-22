@@ -13,16 +13,15 @@ class _$SocialSettingsCompareDefaultWindow
   @override
   final String? after;
 
-  factory _$SocialSettingsCompareDefaultWindow(
-          [void Function(SocialSettingsCompareDefaultWindowBuilder)?
-              updates]) =>
-      (SocialSettingsCompareDefaultWindowBuilder()..update(updates))._build();
+  factory _$SocialSettingsCompareDefaultWindow([
+    void Function(SocialSettingsCompareDefaultWindowBuilder)? updates,
+  ]) => (SocialSettingsCompareDefaultWindowBuilder()..update(updates))._build();
 
   _$SocialSettingsCompareDefaultWindow._({this.before, this.after}) : super._();
   @override
   SocialSettingsCompareDefaultWindow rebuild(
-          void Function(SocialSettingsCompareDefaultWindowBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsCompareDefaultWindowBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsCompareDefaultWindowBuilder toBuilder() =>
@@ -56,8 +55,10 @@ class _$SocialSettingsCompareDefaultWindow
 
 class SocialSettingsCompareDefaultWindowBuilder
     implements
-        Builder<SocialSettingsCompareDefaultWindow,
-            SocialSettingsCompareDefaultWindowBuilder> {
+        Builder<
+          SocialSettingsCompareDefaultWindow,
+          SocialSettingsCompareDefaultWindowBuilder
+        > {
   _$SocialSettingsCompareDefaultWindow? _$v;
 
   String? _before;
@@ -89,7 +90,8 @@ class SocialSettingsCompareDefaultWindowBuilder
 
   @override
   void update(
-      void Function(SocialSettingsCompareDefaultWindowBuilder)? updates) {
+    void Function(SocialSettingsCompareDefaultWindowBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -97,11 +99,9 @@ class SocialSettingsCompareDefaultWindowBuilder
   SocialSettingsCompareDefaultWindow build() => _build();
 
   _$SocialSettingsCompareDefaultWindow _build() {
-    final _$result = _$v ??
-        _$SocialSettingsCompareDefaultWindow._(
-          before: before,
-          after: after,
-        );
+    final _$result =
+        _$v ??
+        _$SocialSettingsCompareDefaultWindow._(before: before, after: after);
     replace(_$result);
     return _$result;
   }

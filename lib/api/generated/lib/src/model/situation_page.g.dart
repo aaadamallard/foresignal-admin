@@ -92,11 +92,9 @@ class SituationPageBuilder
   _$SituationPage _build() {
     _$SituationPage _$result;
     try {
-      _$result = _$v ??
-          _$SituationPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SituationPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class SituationPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationPage', _$failedField, e.toString());
+          r'SituationPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

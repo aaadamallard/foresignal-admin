@@ -39,18 +39,18 @@ SharedContentTargetTypeEnum _$sharedContentTargetTypeEnumValueOf(String name) {
 }
 
 final BuiltSet<SharedContentTargetTypeEnum>
-    _$sharedContentTargetTypeEnumValues =
+_$sharedContentTargetTypeEnumValues =
     BuiltSet<SharedContentTargetTypeEnum>(const <SharedContentTargetTypeEnum>[
-  _$sharedContentTargetTypeEnum_record,
-  _$sharedContentTargetTypeEnum_alert,
-  _$sharedContentTargetTypeEnum_view,
-  _$sharedContentTargetTypeEnum_track,
-  _$sharedContentTargetTypeEnum_briefingRun,
-  _$sharedContentTargetTypeEnum_export_,
-]);
+      _$sharedContentTargetTypeEnum_record,
+      _$sharedContentTargetTypeEnum_alert,
+      _$sharedContentTargetTypeEnum_view,
+      _$sharedContentTargetTypeEnum_track,
+      _$sharedContentTargetTypeEnum_briefingRun,
+      _$sharedContentTargetTypeEnum_export_,
+    ]);
 
 Serializer<SharedContentTargetTypeEnum>
-    _$sharedContentTargetTypeEnumSerializer =
+_$sharedContentTargetTypeEnumSerializer =
     _$SharedContentTargetTypeEnumSerializer();
 
 class _$SharedContentTargetTypeEnumSerializer
@@ -78,16 +78,20 @@ class _$SharedContentTargetTypeEnumSerializer
   final String wireName = 'SharedContentTargetTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SharedContentTargetTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SharedContentTargetTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SharedContentTargetTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SharedContentTargetTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SharedContentTargetTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SharedContent extends SharedContent {
@@ -111,16 +115,16 @@ class _$SharedContent extends SharedContent {
   factory _$SharedContent([void Function(SharedContentBuilder)? updates]) =>
       (SharedContentBuilder()..update(updates))._build();
 
-  _$SharedContent._(
-      {required this.targetType,
-      this.title,
-      required this.expiresAt,
-      required this.masked,
-      this.precisionM,
-      required this.data,
-      required this.attributions,
-      this.links})
-      : super._();
+  _$SharedContent._({
+    required this.targetType,
+    this.title,
+    required this.expiresAt,
+    required this.masked,
+    this.precisionM,
+    required this.data,
+    required this.attributions,
+    this.links,
+  }) : super._();
   @override
   SharedContent rebuild(void Function(SharedContentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -249,15 +253,25 @@ class SharedContentBuilder
   _$SharedContent _build() {
     _$SharedContent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SharedContent._(
             targetType: BuiltValueNullFieldError.checkNotNull(
-                targetType, r'SharedContent', 'targetType'),
+              targetType,
+              r'SharedContent',
+              'targetType',
+            ),
             title: title,
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'SharedContent', 'expiresAt'),
+              expiresAt,
+              r'SharedContent',
+              'expiresAt',
+            ),
             masked: BuiltValueNullFieldError.checkNotNull(
-                masked, r'SharedContent', 'masked'),
+              masked,
+              r'SharedContent',
+              'masked',
+            ),
             precisionM: precisionM,
             data: data.build(),
             attributions: attributions.build(),
@@ -274,7 +288,10 @@ class SharedContentBuilder
         _links?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SharedContent', _$failedField, e.toString());
+          r'SharedContent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

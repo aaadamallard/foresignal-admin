@@ -19,8 +19,10 @@ part 'ownership_chain_node_paths_inner.g.dart';
 @BuiltValue()
 abstract class OwnershipChainNodePathsInner
     implements
-        Built<OwnershipChainNodePathsInner,
-            OwnershipChainNodePathsInnerBuilder> {
+        Built<
+          OwnershipChainNodePathsInner,
+          OwnershipChainNodePathsInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'from')
   String get from;
@@ -38,9 +40,9 @@ abstract class OwnershipChainNodePathsInner
 
   OwnershipChainNodePathsInner._();
 
-  factory OwnershipChainNodePathsInner(
-          [void updates(OwnershipChainNodePathsInnerBuilder b)]) =
-      _$OwnershipChainNodePathsInner;
+  factory OwnershipChainNodePathsInner([
+    void updates(OwnershipChainNodePathsInnerBuilder b),
+  ]) = _$OwnershipChainNodePathsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OwnershipChainNodePathsInnerBuilder b) => b;
@@ -55,7 +57,7 @@ class _$OwnershipChainNodePathsInnerSerializer
   @override
   final Iterable<Type> types = const [
     OwnershipChainNodePathsInner,
-    _$OwnershipChainNodePathsInner
+    _$OwnershipChainNodePathsInner,
   ];
 
   @override
@@ -80,15 +82,17 @@ class _$OwnershipChainNodePathsInnerSerializer
       yield r'relationTypes';
       yield serializers.serialize(
         object.relationTypes,
-        specifiedType: const FullType(BuiltList,
-            [FullType(OwnershipChainNodePathsInnerRelationTypesEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(OwnershipChainNodePathsInnerRelationTypesEnum),
+        ]),
       );
     }
     yield r'weakestEdgeLabel';
     yield serializers.serialize(
       object.weakestEdgeLabel,
-      specifiedType:
-          const FullType(OwnershipChainNodePathsInnerWeakestEdgeLabelEnum),
+      specifiedType: const FullType(
+        OwnershipChainNodePathsInnerWeakestEdgeLabelEnum,
+      ),
     );
   }
 
@@ -98,9 +102,11 @@ class _$OwnershipChainNodePathsInnerSerializer
     OwnershipChainNodePathsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,34 +122,46 @@ class _$OwnershipChainNodePathsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.from = valueDes;
           break;
         case r'hops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.hops.replace(valueDes);
           break;
         case r'relationTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(OwnershipChainNodePathsInnerRelationTypesEnum)]),
-          ) as BuiltList<OwnershipChainNodePathsInnerRelationTypesEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(OwnershipChainNodePathsInnerRelationTypesEnum),
+                    ]),
+                  )
+                  as BuiltList<OwnershipChainNodePathsInnerRelationTypesEnum>?;
           if (valueDes == null) continue;
           result.relationTypes.replace(valueDes);
           break;
         case r'weakestEdgeLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                OwnershipChainNodePathsInnerWeakestEdgeLabelEnum),
-          ) as OwnershipChainNodePathsInnerWeakestEdgeLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OwnershipChainNodePathsInnerWeakestEdgeLabelEnum,
+                    ),
+                  )
+                  as OwnershipChainNodePathsInnerWeakestEdgeLabelEnum;
           result.weakestEdgeLabel = valueDes;
           break;
         default:
@@ -193,11 +211,10 @@ class OwnershipChainNodePathsInnerRelationTypesEnum extends EnumClass {
       _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith;
 
   static Serializer<OwnershipChainNodePathsInnerRelationTypesEnum>
-      get serializer =>
-          _$ownershipChainNodePathsInnerRelationTypesEnumSerializer;
+  get serializer => _$ownershipChainNodePathsInnerRelationTypesEnumSerializer;
 
   const OwnershipChainNodePathsInnerRelationTypesEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<OwnershipChainNodePathsInnerRelationTypesEnum> get values =>
       _$ownershipChainNodePathsInnerRelationTypesEnumValues;
@@ -220,15 +237,15 @@ class OwnershipChainNodePathsInnerWeakestEdgeLabelEnum extends EnumClass {
       _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative;
 
   static Serializer<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>
-      get serializer =>
-          _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer;
+  get serializer =>
+      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer;
 
   const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>
-      get values => _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValues;
+  get values => _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValues;
   static OwnershipChainNodePathsInnerWeakestEdgeLabelEnum valueOf(
-          String name) =>
-      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValueOf(name);
+    String name,
+  ) => _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValueOf(name);
 }

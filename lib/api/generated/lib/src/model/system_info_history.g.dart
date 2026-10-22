@@ -14,13 +14,15 @@ class _$SystemInfoHistory extends SystemInfoHistory {
   @override
   final int? projectedBytes;
 
-  factory _$SystemInfoHistory(
-          [void Function(SystemInfoHistoryBuilder)? updates]) =>
-      (SystemInfoHistoryBuilder()..update(updates))._build();
+  factory _$SystemInfoHistory([
+    void Function(SystemInfoHistoryBuilder)? updates,
+  ]) => (SystemInfoHistoryBuilder()..update(updates))._build();
 
-  _$SystemInfoHistory._(
-      {this.tiers, this.versionsPerMinute, this.projectedBytes})
-      : super._();
+  _$SystemInfoHistory._({
+    this.tiers,
+    this.versionsPerMinute,
+    this.projectedBytes,
+  }) : super._();
   @override
   SystemInfoHistory rebuild(void Function(SystemInfoHistoryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -109,7 +111,8 @@ class SystemInfoHistoryBuilder
   _$SystemInfoHistory _build() {
     _$SystemInfoHistory _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SystemInfoHistory._(
             tiers: _tiers?.build(),
             versionsPerMinute: versionsPerMinute,
@@ -122,7 +125,10 @@ class SystemInfoHistoryBuilder
         _tiers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SystemInfoHistory', _$failedField, e.toString());
+          r'SystemInfoHistory',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

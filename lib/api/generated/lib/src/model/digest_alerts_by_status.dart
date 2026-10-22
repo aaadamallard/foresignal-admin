@@ -44,7 +44,7 @@ class _$DigestAlertsByStatusSerializer
   @override
   final Iterable<Type> types = const [
     DigestAlertsByStatus,
-    _$DigestAlertsByStatus
+    _$DigestAlertsByStatus,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$DigestAlertsByStatusSerializer
     DigestAlertsByStatus object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +104,32 @@ class _$DigestAlertsByStatusSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'firing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.firing = valueDes;
           break;
         case r'acknowledged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.acknowledged = valueDes;
           break;
         case r'resolved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.resolved = valueDes;
           break;

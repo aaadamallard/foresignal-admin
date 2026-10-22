@@ -88,10 +88,14 @@ class DigestNextBuilder implements Builder<DigestNext, DigestNextBuilder> {
   DigestNext build() => _build();
 
   _$DigestNext _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestNext._(
           sinceSeq: BuiltValueNullFieldError.checkNotNull(
-              sinceSeq, r'DigestNext', 'sinceSeq'),
+            sinceSeq,
+            r'DigestNext',
+            'sinceSeq',
+          ),
           sinceAlertId: sinceAlertId,
         );
     replace(_$result);

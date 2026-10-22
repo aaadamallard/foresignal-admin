@@ -44,14 +44,14 @@ WatchlistIdentityEnum _$watchlistIdentityEnumValueOf(String name) {
 
 final BuiltSet<WatchlistIdentityEnum> _$watchlistIdentityEnumValues =
     BuiltSet<WatchlistIdentityEnum>(const <WatchlistIdentityEnum>[
-  _$watchlistIdentityEnum_icao24,
-  _$watchlistIdentityEnum_registration,
-  _$watchlistIdentityEnum_callsign,
-  _$watchlistIdentityEnum_mmsi,
-  _$watchlistIdentityEnum_imo,
-  _$watchlistIdentityEnum_entity,
-  _$watchlistIdentityEnum_custom,
-]);
+      _$watchlistIdentityEnum_icao24,
+      _$watchlistIdentityEnum_registration,
+      _$watchlistIdentityEnum_callsign,
+      _$watchlistIdentityEnum_mmsi,
+      _$watchlistIdentityEnum_imo,
+      _$watchlistIdentityEnum_entity,
+      _$watchlistIdentityEnum_custom,
+    ]);
 
 const WatchlistNormalizeEnum _$watchlistNormalizeEnum_upper =
     const WatchlistNormalizeEnum._('upper');
@@ -79,11 +79,11 @@ WatchlistNormalizeEnum _$watchlistNormalizeEnumValueOf(String name) {
 
 final BuiltSet<WatchlistNormalizeEnum> _$watchlistNormalizeEnumValues =
     BuiltSet<WatchlistNormalizeEnum>(const <WatchlistNormalizeEnum>[
-  _$watchlistNormalizeEnum_upper,
-  _$watchlistNormalizeEnum_lower,
-  _$watchlistNormalizeEnum_digits,
-  _$watchlistNormalizeEnum_none,
-]);
+      _$watchlistNormalizeEnum_upper,
+      _$watchlistNormalizeEnum_lower,
+      _$watchlistNormalizeEnum_digits,
+      _$watchlistNormalizeEnum_none,
+    ]);
 
 Serializer<WatchlistIdentityEnum> _$watchlistIdentityEnumSerializer =
     _$WatchlistIdentityEnumSerializer();
@@ -117,15 +117,20 @@ class _$WatchlistIdentityEnumSerializer
   final String wireName = 'WatchlistIdentityEnum';
 
   @override
-  Object serialize(Serializers serializers, WatchlistIdentityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WatchlistIdentityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  WatchlistIdentityEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WatchlistIdentityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  WatchlistIdentityEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WatchlistIdentityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WatchlistNormalizeEnumSerializer
@@ -149,15 +154,20 @@ class _$WatchlistNormalizeEnumSerializer
   final String wireName = 'WatchlistNormalizeEnum';
 
   @override
-  Object serialize(Serializers serializers, WatchlistNormalizeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WatchlistNormalizeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  WatchlistNormalizeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WatchlistNormalizeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  WatchlistNormalizeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WatchlistNormalizeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Watchlist extends Watchlist {
@@ -181,16 +191,16 @@ class _$Watchlist extends Watchlist {
   factory _$Watchlist([void Function(WatchlistBuilder)? updates]) =>
       (WatchlistBuilder()..update(updates))._build();
 
-  _$Watchlist._(
-      {required this.name,
-      required this.identity,
-      this.normalize,
-      this.description,
-      required this.id,
-      required this.itemCount,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$Watchlist._({
+    required this.name,
+    required this.identity,
+    this.normalize,
+    this.description,
+    required this.id,
+    required this.itemCount,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   Watchlist rebuild(void Function(WatchlistBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -312,21 +322,37 @@ class WatchlistBuilder implements Builder<Watchlist, WatchlistBuilder> {
   Watchlist build() => _build();
 
   _$Watchlist _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Watchlist._(
-          name:
-              BuiltValueNullFieldError.checkNotNull(name, r'Watchlist', 'name'),
+          name: BuiltValueNullFieldError.checkNotNull(
+            name,
+            r'Watchlist',
+            'name',
+          ),
           identity: BuiltValueNullFieldError.checkNotNull(
-              identity, r'Watchlist', 'identity'),
+            identity,
+            r'Watchlist',
+            'identity',
+          ),
           normalize: normalize,
           description: description,
           id: BuiltValueNullFieldError.checkNotNull(id, r'Watchlist', 'id'),
           itemCount: BuiltValueNullFieldError.checkNotNull(
-              itemCount, r'Watchlist', 'itemCount'),
+            itemCount,
+            r'Watchlist',
+            'itemCount',
+          ),
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'Watchlist', 'createdAt'),
+            createdAt,
+            r'Watchlist',
+            'createdAt',
+          ),
           updatedAt: BuiltValueNullFieldError.checkNotNull(
-              updatedAt, r'Watchlist', 'updatedAt'),
+            updatedAt,
+            r'Watchlist',
+            'updatedAt',
+          ),
         );
     replace(_$result);
     return _$result;

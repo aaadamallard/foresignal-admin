@@ -75,15 +75,19 @@ class _$SinkUpdateSerializer implements PrimitiveSerializer<SinkUpdate> {
     yield r'config';
     yield serializers.serialize(
       object.config,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(JsonObject),
+      ]),
     );
     if (object.secrets != null) {
       yield r'secrets';
       yield serializers.serialize(
         object.secrets,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType.nullable(String)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType.nullable(String),
+        ]),
       );
     }
     if (object.filter != null) {
@@ -101,9 +105,11 @@ class _$SinkUpdateSerializer implements PrimitiveSerializer<SinkUpdate> {
     SinkUpdate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,42 +125,56 @@ class _$SinkUpdateSerializer implements PrimitiveSerializer<SinkUpdate> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>;
           result.config.replace(valueDes);
           break;
         case r'secrets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(String)]),
-          ) as BuiltMap<String, String?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String?>?;
           if (valueDes == null) continue;
           result.secrets.replace(valueDes);
           break;
         case r'filter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SinkFilter),
-          ) as SinkFilter?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SinkFilter),
+                  )
+                  as SinkFilter?;
           if (valueDes == null) continue;
           result.filter.replace(valueDes);
           break;

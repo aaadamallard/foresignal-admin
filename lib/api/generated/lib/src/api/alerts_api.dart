@@ -51,21 +51,21 @@ class AlertsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/alerts/{alertId}/ack'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -82,10 +82,7 @@ class AlertsApi {
           : _serializers.serialize(alertTransitionInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -108,9 +105,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Alert),
-            ) as Alert;
+                  rawResponse,
+                  specifiedType: const FullType(Alert),
+                )
+                as Alert;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -157,21 +155,21 @@ class AlertsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/alerts/{alertId}'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -193,9 +191,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Alert),
-            ) as Alert;
+                  rawResponse,
+                  specifiedType: const FullType(Alert),
+                )
+                as Alert;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -276,16 +275,10 @@ class AlertsApi {
     final _path = r'/v1/alerts';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -294,8 +287,11 @@ class AlertsApi {
 
     final _queryParameters = <String, dynamic>{
       if (ruleId != null)
-        r'ruleId':
-            encodeQueryParameter(_serializers, ruleId, const FullType(String)),
+        r'ruleId': encodeQueryParameter(
+          _serializers,
+          ruleId,
+          const FullType(String),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -304,17 +300,29 @@ class AlertsApi {
           format: ListFormat.multi,
         ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (acknowledged != null)
         r'acknowledged': encodeQueryParameter(
-            _serializers, acknowledged, const FullType(bool)),
+          _serializers,
+          acknowledged,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (kind != null)
         r'kind': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -338,12 +346,18 @@ class AlertsApi {
         ),
       if (minSeverity != null)
         r'minSeverity': encodeQueryParameter(
-            _serializers, minSeverity, const FullType(String)),
+          _serializers,
+          minSeverity,
+          const FullType(String),
+        ),
       if (tag != null)
         r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
       if (includeSuppressed != null)
         r'includeSuppressed': encodeQueryParameter(
-            _serializers, includeSuppressed, const FullType(bool)),
+          _serializers,
+          includeSuppressed,
+          const FullType(bool),
+        ),
       if (country != null)
         r'country': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -374,7 +388,10 @@ class AlertsApi {
         ),
       if (includeExercise != null)
         r'includeExercise': encodeQueryParameter(
-            _serializers, includeExercise, const FullType(bool)),
+          _serializers,
+          includeExercise,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -393,9 +410,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AlertPage),
-            ) as AlertPage;
+                  rawResponse,
+                  specifiedType: const FullType(AlertPage),
+                )
+                as AlertPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -444,21 +462,21 @@ class AlertsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/alerts/{alertId}/resolve'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -475,10 +493,7 @@ class AlertsApi {
           : _serializers.serialize(alertTransitionInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -501,9 +516,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Alert),
-            ) as Alert;
+                  rawResponse,
+                  specifiedType: const FullType(Alert),
+                )
+                as Alert;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -552,21 +568,21 @@ class AlertsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/alerts/{alertId}/feedback'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -578,14 +594,13 @@ class AlertsApi {
 
     try {
       const _type = FullType(AlertFeedbackInput);
-      _bodyData =
-          _serializers.serialize(alertFeedbackInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        alertFeedbackInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -608,9 +623,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Alert),
-            ) as Alert;
+                  rawResponse,
+                  specifiedType: const FullType(Alert),
+                )
+                as Alert;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -659,21 +675,21 @@ class AlertsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/alerts/{alertId}/snooze'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -688,10 +704,7 @@ class AlertsApi {
       _bodyData = _serializers.serialize(snoozeInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -714,9 +727,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Alert),
-            ) as Alert;
+                  rawResponse,
+                  specifiedType: const FullType(Alert),
+                )
+                as Alert;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -785,11 +799,7 @@ class AlertsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -806,7 +816,10 @@ class AlertsApi {
         ),
       if (minSeverity != null)
         r'minSeverity': encodeQueryParameter(
-            _serializers, minSeverity, const FullType(String)),
+          _serializers,
+          minSeverity,
+          const FullType(String),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -823,13 +836,22 @@ class AlertsApi {
         ),
       if (includeSuppressed != null)
         r'includeSuppressed': encodeQueryParameter(
-            _serializers, includeSuppressed, const FullType(bool)),
+          _serializers,
+          includeSuppressed,
+          const FullType(bool),
+        ),
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
       if (includeExercise != null)
         r'includeExercise': encodeQueryParameter(
-            _serializers, includeExercise, const FullType(bool)),
+          _serializers,
+          includeExercise,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -848,9 +870,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StreamAlerts200Response),
-            ) as StreamAlerts200Response;
+                  rawResponse,
+                  specifiedType: const FullType(StreamAlerts200Response),
+                )
+                as StreamAlerts200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -897,21 +920,21 @@ class AlertsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/alerts/{alertId}/snooze'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -933,9 +956,10 @@ class AlertsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Alert),
-            ) as Alert;
+                  rawResponse,
+                  specifiedType: const FullType(Alert),
+                )
+                as Alert;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

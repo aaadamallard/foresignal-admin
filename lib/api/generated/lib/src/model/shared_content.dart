@@ -109,8 +109,10 @@ class _$SharedContentSerializer implements PrimitiveSerializer<SharedContent> {
     yield r'data';
     yield serializers.serialize(
       object.data,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(JsonObject),
+      ]),
     );
     yield r'attributions';
     yield serializers.serialize(
@@ -132,9 +134,11 @@ class _$SharedContentSerializer implements PrimitiveSerializer<SharedContent> {
     SharedContent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -150,62 +154,82 @@ class _$SharedContentSerializer implements PrimitiveSerializer<SharedContent> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'targetType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SharedContentTargetTypeEnum),
-          ) as SharedContentTargetTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SharedContentTargetTypeEnum),
+                  )
+                  as SharedContentTargetTypeEnum;
           result.targetType = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.expiresAt = valueDes;
           break;
         case r'masked':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.masked = valueDes;
           break;
         case r'precisionM':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.precisionM = valueDes;
           break;
         case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>;
           result.data.replace(valueDes);
           break;
         case r'attributions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>;
           result.attributions.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SharedContentLinks),
-          ) as SharedContentLinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SharedContentLinks),
+                  )
+                  as SharedContentLinks?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;

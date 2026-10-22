@@ -28,13 +28,14 @@ PlaceInputShapeEnum _$placeInputShapeEnumValueOf(String name) {
 
 final BuiltSet<PlaceInputShapeEnum> _$placeInputShapeEnumValues =
     BuiltSet<PlaceInputShapeEnum>(const <PlaceInputShapeEnum>[
-  _$placeInputShapeEnum_point,
-  _$placeInputShapeEnum_polygon,
-  _$placeInputShapeEnum_route,
-]);
+      _$placeInputShapeEnum_point,
+      _$placeInputShapeEnum_polygon,
+      _$placeInputShapeEnum_route,
+    ]);
 
-const PlaceInputKindEnum _$placeInputKindEnum_user =
-    const PlaceInputKindEnum._('user');
+const PlaceInputKindEnum _$placeInputKindEnum_user = const PlaceInputKindEnum._(
+  'user',
+);
 const PlaceInputKindEnum _$placeInputKindEnum_airport =
     const PlaceInputKindEnum._('airport');
 const PlaceInputKindEnum _$placeInputKindEnum_asset =
@@ -55,10 +56,10 @@ PlaceInputKindEnum _$placeInputKindEnumValueOf(String name) {
 
 final BuiltSet<PlaceInputKindEnum> _$placeInputKindEnumValues =
     BuiltSet<PlaceInputKindEnum>(const <PlaceInputKindEnum>[
-  _$placeInputKindEnum_user,
-  _$placeInputKindEnum_airport,
-  _$placeInputKindEnum_asset,
-]);
+      _$placeInputKindEnum_user,
+      _$placeInputKindEnum_airport,
+      _$placeInputKindEnum_asset,
+    ]);
 
 Serializer<PlaceInputShapeEnum> _$placeInputShapeEnumSerializer =
     _$PlaceInputShapeEnumSerializer();
@@ -84,15 +85,20 @@ class _$PlaceInputShapeEnumSerializer
   final String wireName = 'PlaceInputShapeEnum';
 
   @override
-  Object serialize(Serializers serializers, PlaceInputShapeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PlaceInputShapeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PlaceInputShapeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PlaceInputShapeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PlaceInputShapeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PlaceInputShapeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PlaceInputKindEnumSerializer
@@ -114,15 +120,20 @@ class _$PlaceInputKindEnumSerializer
   final String wireName = 'PlaceInputKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PlaceInputKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PlaceInputKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PlaceInputKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PlaceInputKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PlaceInputKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PlaceInputKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PlaceInput extends PlaceInput {
@@ -154,20 +165,20 @@ class _$PlaceInput extends PlaceInput {
   factory _$PlaceInput([void Function(PlaceInputBuilder)? updates]) =>
       (PlaceInputBuilder()..update(updates))._build();
 
-  _$PlaceInput._(
-      {required this.id,
-      required this.name,
-      required this.shape,
-      required this.geometry,
-      this.radiusKm,
-      this.bufferM,
-      this.timezone,
-      this.kind,
-      this.tags,
-      this.products,
-      this.sensitive,
-      this.attributes})
-      : super._();
+  _$PlaceInput._({
+    required this.id,
+    required this.name,
+    required this.shape,
+    required this.geometry,
+    this.radiusKm,
+    this.bufferM,
+    this.timezone,
+    this.kind,
+    this.tags,
+    this.products,
+    this.sensitive,
+    this.attributes,
+  }) : super._();
   @override
   PlaceInput rebuild(void Function(PlaceInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -325,13 +336,20 @@ class PlaceInputBuilder implements Builder<PlaceInput, PlaceInputBuilder> {
   _$PlaceInput _build() {
     _$PlaceInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlaceInput._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'PlaceInput', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PlaceInput', 'name'),
+              name,
+              r'PlaceInput',
+              'name',
+            ),
             shape: BuiltValueNullFieldError.checkNotNull(
-                shape, r'PlaceInput', 'shape'),
+              shape,
+              r'PlaceInput',
+              'shape',
+            ),
             geometry: geometry.build(),
             radiusKm: radiusKm,
             bufferM: bufferM,
@@ -357,7 +375,10 @@ class PlaceInputBuilder implements Builder<PlaceInput, PlaceInputBuilder> {
         _attributes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceInput', _$failedField, e.toString());
+          r'PlaceInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

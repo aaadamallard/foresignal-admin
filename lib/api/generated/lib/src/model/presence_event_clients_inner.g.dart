@@ -7,32 +7,32 @@ part of 'presence_event_clients_inner.dart';
 // **************************************************************************
 
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_globe =
+_$presenceEventClientsInnerClientKindEnum_globe =
     const PresenceEventClientsInnerClientKindEnum._('globe');
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_map =
+_$presenceEventClientsInnerClientKindEnum_map =
     const PresenceEventClientsInnerClientKindEnum._('map');
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_analyst =
+_$presenceEventClientsInnerClientKindEnum_analyst =
     const PresenceEventClientsInnerClientKindEnum._('analyst');
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_satellite =
+_$presenceEventClientsInnerClientKindEnum_satellite =
     const PresenceEventClientsInnerClientKindEnum._('satellite');
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_rf =
+_$presenceEventClientsInnerClientKindEnum_rf =
     const PresenceEventClientsInnerClientKindEnum._('rf');
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_mobile =
+_$presenceEventClientsInnerClientKindEnum_mobile =
     const PresenceEventClientsInnerClientKindEnum._('mobile');
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_agent =
+_$presenceEventClientsInnerClientKindEnum_agent =
     const PresenceEventClientsInnerClientKindEnum._('agent');
 const PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnum_other =
+_$presenceEventClientsInnerClientKindEnum_other =
     const PresenceEventClientsInnerClientKindEnum._('other');
 
 PresenceEventClientsInnerClientKindEnum
-    _$presenceEventClientsInnerClientKindEnumValueOf(String name) {
+_$presenceEventClientsInnerClientKindEnumValueOf(String name) {
   switch (name) {
     case 'globe':
       return _$presenceEventClientsInnerClientKindEnum_globe;
@@ -56,20 +56,22 @@ PresenceEventClientsInnerClientKindEnum
 }
 
 final BuiltSet<PresenceEventClientsInnerClientKindEnum>
-    _$presenceEventClientsInnerClientKindEnumValues = BuiltSet<
-        PresenceEventClientsInnerClientKindEnum>(const <PresenceEventClientsInnerClientKindEnum>[
-  _$presenceEventClientsInnerClientKindEnum_globe,
-  _$presenceEventClientsInnerClientKindEnum_map,
-  _$presenceEventClientsInnerClientKindEnum_analyst,
-  _$presenceEventClientsInnerClientKindEnum_satellite,
-  _$presenceEventClientsInnerClientKindEnum_rf,
-  _$presenceEventClientsInnerClientKindEnum_mobile,
-  _$presenceEventClientsInnerClientKindEnum_agent,
-  _$presenceEventClientsInnerClientKindEnum_other,
-]);
+_$presenceEventClientsInnerClientKindEnumValues =
+    BuiltSet<PresenceEventClientsInnerClientKindEnum>(
+      const <PresenceEventClientsInnerClientKindEnum>[
+        _$presenceEventClientsInnerClientKindEnum_globe,
+        _$presenceEventClientsInnerClientKindEnum_map,
+        _$presenceEventClientsInnerClientKindEnum_analyst,
+        _$presenceEventClientsInnerClientKindEnum_satellite,
+        _$presenceEventClientsInnerClientKindEnum_rf,
+        _$presenceEventClientsInnerClientKindEnum_mobile,
+        _$presenceEventClientsInnerClientKindEnum_agent,
+        _$presenceEventClientsInnerClientKindEnum_other,
+      ],
+    );
 
 Serializer<PresenceEventClientsInnerClientKindEnum>
-    _$presenceEventClientsInnerClientKindEnumSerializer =
+_$presenceEventClientsInnerClientKindEnumSerializer =
     _$PresenceEventClientsInnerClientKindEnumSerializer();
 
 class _$PresenceEventClientsInnerClientKindEnumSerializer
@@ -97,23 +99,26 @@ class _$PresenceEventClientsInnerClientKindEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PresenceEventClientsInnerClientKindEnum
+    PresenceEventClientsInnerClientKindEnum,
   ];
   @override
   final String wireName = 'PresenceEventClientsInnerClientKindEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          PresenceEventClientsInnerClientKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PresenceEventClientsInnerClientKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PresenceEventClientsInnerClientKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PresenceEventClientsInnerClientKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PresenceEventClientsInnerClientKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PresenceEventClientsInner extends PresenceEventClientsInner {
@@ -126,20 +131,20 @@ class _$PresenceEventClientsInner extends PresenceEventClientsInner {
   @override
   final DateTime connectedAt;
 
-  factory _$PresenceEventClientsInner(
-          [void Function(PresenceEventClientsInnerBuilder)? updates]) =>
-      (PresenceEventClientsInnerBuilder()..update(updates))._build();
+  factory _$PresenceEventClientsInner([
+    void Function(PresenceEventClientsInnerBuilder)? updates,
+  ]) => (PresenceEventClientsInnerBuilder()..update(updates))._build();
 
-  _$PresenceEventClientsInner._(
-      {required this.clientId,
-      required this.clientKind,
-      this.principal,
-      required this.connectedAt})
-      : super._();
+  _$PresenceEventClientsInner._({
+    required this.clientId,
+    required this.clientKind,
+    this.principal,
+    required this.connectedAt,
+  }) : super._();
   @override
   PresenceEventClientsInner rebuild(
-          void Function(PresenceEventClientsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PresenceEventClientsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PresenceEventClientsInnerBuilder toBuilder() =>
@@ -229,15 +234,25 @@ class PresenceEventClientsInnerBuilder
   PresenceEventClientsInner build() => _build();
 
   _$PresenceEventClientsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PresenceEventClientsInner._(
           clientId: BuiltValueNullFieldError.checkNotNull(
-              clientId, r'PresenceEventClientsInner', 'clientId'),
+            clientId,
+            r'PresenceEventClientsInner',
+            'clientId',
+          ),
           clientKind: BuiltValueNullFieldError.checkNotNull(
-              clientKind, r'PresenceEventClientsInner', 'clientKind'),
+            clientKind,
+            r'PresenceEventClientsInner',
+            'clientKind',
+          ),
           principal: principal,
           connectedAt: BuiltValueNullFieldError.checkNotNull(
-              connectedAt, r'PresenceEventClientsInner', 'connectedAt'),
+            connectedAt,
+            r'PresenceEventClientsInner',
+            'connectedAt',
+          ),
         );
     replace(_$result);
     return _$result;

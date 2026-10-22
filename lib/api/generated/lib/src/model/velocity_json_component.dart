@@ -26,8 +26,9 @@ abstract class VelocityJsonComponent
 
   VelocityJsonComponent._();
 
-  factory VelocityJsonComponent(
-      [void updates(VelocityJsonComponentBuilder b)]) = _$VelocityJsonComponent;
+  factory VelocityJsonComponent([
+    void updates(VelocityJsonComponentBuilder b),
+  ]) = _$VelocityJsonComponent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(VelocityJsonComponentBuilder b) => b;
@@ -42,7 +43,7 @@ class _$VelocityJsonComponentSerializer
   @override
   final Iterable<Type> types = const [
     VelocityJsonComponent,
-    _$VelocityJsonComponent
+    _$VelocityJsonComponent,
   ];
 
   @override
@@ -71,9 +72,11 @@ class _$VelocityJsonComponentSerializer
     VelocityJsonComponent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +92,23 @@ class _$VelocityJsonComponentSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'header':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(VelocityJsonComponentHeader),
-          ) as VelocityJsonComponentHeader;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(VelocityJsonComponentHeader),
+                  )
+                  as VelocityJsonComponentHeader;
           result.header.replace(valueDes);
           break;
         case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType.nullable(num)]),
-          ) as BuiltList<num?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType.nullable(num),
+                    ]),
+                  )
+                  as BuiltList<num?>;
           result.data.replace(valueDes);
           break;
         default:

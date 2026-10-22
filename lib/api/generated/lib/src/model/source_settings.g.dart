@@ -14,7 +14,8 @@ const SourceSettingsRegionTaggingEnum _$sourceSettingsRegionTaggingEnum_off =
     const SourceSettingsRegionTaggingEnum._('off');
 
 SourceSettingsRegionTaggingEnum _$sourceSettingsRegionTaggingEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'eager':
       return _$sourceSettingsRegionTaggingEnum_eager;
@@ -28,12 +29,14 @@ SourceSettingsRegionTaggingEnum _$sourceSettingsRegionTaggingEnumValueOf(
 }
 
 final BuiltSet<SourceSettingsRegionTaggingEnum>
-    _$sourceSettingsRegionTaggingEnumValues = BuiltSet<
-        SourceSettingsRegionTaggingEnum>(const <SourceSettingsRegionTaggingEnum>[
-  _$sourceSettingsRegionTaggingEnum_eager,
-  _$sourceSettingsRegionTaggingEnum_lazy,
-  _$sourceSettingsRegionTaggingEnum_off,
-]);
+_$sourceSettingsRegionTaggingEnumValues =
+    BuiltSet<SourceSettingsRegionTaggingEnum>(
+      const <SourceSettingsRegionTaggingEnum>[
+        _$sourceSettingsRegionTaggingEnum_eager,
+        _$sourceSettingsRegionTaggingEnum_lazy,
+        _$sourceSettingsRegionTaggingEnum_off,
+      ],
+    );
 
 const SourceSettingsEgressEnum _$sourceSettingsEgressEnum_OPEN =
     const SourceSettingsEgressEnum._('OPEN');
@@ -53,9 +56,9 @@ SourceSettingsEgressEnum _$sourceSettingsEgressEnumValueOf(String name) {
 
 final BuiltSet<SourceSettingsEgressEnum> _$sourceSettingsEgressEnumValues =
     BuiltSet<SourceSettingsEgressEnum>(const <SourceSettingsEgressEnum>[
-  _$sourceSettingsEgressEnum_OPEN,
-  _$sourceSettingsEgressEnum_LOCAL_ONLY,
-]);
+      _$sourceSettingsEgressEnum_OPEN,
+      _$sourceSettingsEgressEnum_LOCAL_ONLY,
+    ]);
 
 const SourceSettingsReliabilityEnum _$sourceSettingsReliabilityEnum_A =
     const SourceSettingsReliabilityEnum._('A');
@@ -71,7 +74,8 @@ const SourceSettingsReliabilityEnum _$sourceSettingsReliabilityEnum_F =
     const SourceSettingsReliabilityEnum._('F');
 
 SourceSettingsReliabilityEnum _$sourceSettingsReliabilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'A':
       return _$sourceSettingsReliabilityEnum_A;
@@ -91,23 +95,24 @@ SourceSettingsReliabilityEnum _$sourceSettingsReliabilityEnumValueOf(
 }
 
 final BuiltSet<SourceSettingsReliabilityEnum>
-    _$sourceSettingsReliabilityEnumValues = BuiltSet<
-        SourceSettingsReliabilityEnum>(const <SourceSettingsReliabilityEnum>[
-  _$sourceSettingsReliabilityEnum_A,
-  _$sourceSettingsReliabilityEnum_B,
-  _$sourceSettingsReliabilityEnum_C,
-  _$sourceSettingsReliabilityEnum_D,
-  _$sourceSettingsReliabilityEnum_E,
-  _$sourceSettingsReliabilityEnum_F,
-]);
+_$sourceSettingsReliabilityEnumValues = BuiltSet<SourceSettingsReliabilityEnum>(
+  const <SourceSettingsReliabilityEnum>[
+    _$sourceSettingsReliabilityEnum_A,
+    _$sourceSettingsReliabilityEnum_B,
+    _$sourceSettingsReliabilityEnum_C,
+    _$sourceSettingsReliabilityEnum_D,
+    _$sourceSettingsReliabilityEnum_E,
+    _$sourceSettingsReliabilityEnum_F,
+  ],
+);
 
 Serializer<SourceSettingsRegionTaggingEnum>
-    _$sourceSettingsRegionTaggingEnumSerializer =
+_$sourceSettingsRegionTaggingEnumSerializer =
     _$SourceSettingsRegionTaggingEnumSerializer();
 Serializer<SourceSettingsEgressEnum> _$sourceSettingsEgressEnumSerializer =
     _$SourceSettingsEgressEnumSerializer();
 Serializer<SourceSettingsReliabilityEnum>
-    _$sourceSettingsReliabilityEnumSerializer =
+_$sourceSettingsReliabilityEnumSerializer =
     _$SourceSettingsReliabilityEnumSerializer();
 
 class _$SourceSettingsRegionTaggingEnumSerializer
@@ -130,16 +135,19 @@ class _$SourceSettingsRegionTaggingEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SourceSettingsRegionTaggingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SourceSettingsRegionTaggingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceSettingsRegionTaggingEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceSettingsRegionTaggingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceSettingsRegionTaggingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceSettingsEgressEnumSerializer
@@ -159,16 +167,20 @@ class _$SourceSettingsEgressEnumSerializer
   final String wireName = 'SourceSettingsEgressEnum';
 
   @override
-  Object serialize(Serializers serializers, SourceSettingsEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SourceSettingsEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceSettingsEgressEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceSettingsEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceSettingsEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceSettingsReliabilityEnumSerializer
@@ -197,16 +209,19 @@ class _$SourceSettingsReliabilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SourceSettingsReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SourceSettingsReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceSettingsReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceSettingsReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceSettingsReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceSettings extends SourceSettings {
@@ -250,26 +265,26 @@ class _$SourceSettings extends SourceSettings {
   factory _$SourceSettings([void Function(SourceSettingsBuilder)? updates]) =>
       (SourceSettingsBuilder()..update(updates))._build();
 
-  _$SourceSettings._(
-      {required this.enabled,
-      required this.interval,
-      required this.params,
-      required this.budget,
-      this.retention,
-      this.embed,
-      required this.credentialsSet,
-      this.updatedAt,
-      this.ingestPolicy,
-      this.effectiveIngestPolicy,
-      this.effectiveRetention,
-      this.statsEnabled,
-      this.statsIncludePrivate,
-      this.private,
-      this.regionTagging,
-      this.downsampleInterval,
-      this.egress,
-      this.reliability})
-      : super._();
+  _$SourceSettings._({
+    required this.enabled,
+    required this.interval,
+    required this.params,
+    required this.budget,
+    this.retention,
+    this.embed,
+    required this.credentialsSet,
+    this.updatedAt,
+    this.ingestPolicy,
+    this.effectiveIngestPolicy,
+    this.effectiveRetention,
+    this.statsEnabled,
+    this.statsIncludePrivate,
+    this.private,
+    this.regionTagging,
+    this.downsampleInterval,
+    this.egress,
+    this.reliability,
+  }) : super._();
   @override
   SourceSettings rebuild(void Function(SourceSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -485,18 +500,28 @@ class SourceSettingsBuilder
   _$SourceSettings _build() {
     _$SourceSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SourceSettings._(
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'SourceSettings', 'enabled'),
+              enabled,
+              r'SourceSettings',
+              'enabled',
+            ),
             interval: BuiltValueNullFieldError.checkNotNull(
-                interval, r'SourceSettings', 'interval'),
+              interval,
+              r'SourceSettings',
+              'interval',
+            ),
             params: params.build(),
             budget: budget.build(),
             retention: retention,
             embed: embed,
             credentialsSet: BuiltValueNullFieldError.checkNotNull(
-                credentialsSet, r'SourceSettings', 'credentialsSet'),
+              credentialsSet,
+              r'SourceSettings',
+              'credentialsSet',
+            ),
             updatedAt: updatedAt,
             ingestPolicy: _ingestPolicy?.build(),
             effectiveIngestPolicy: _effectiveIngestPolicy?.build(),
@@ -523,7 +548,10 @@ class SourceSettingsBuilder
         _effectiveIngestPolicy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SourceSettings', _$failedField, e.toString());
+          r'SourceSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

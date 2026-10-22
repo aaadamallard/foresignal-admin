@@ -19,8 +19,10 @@ part 'social_versus_observed_lead_times_inner.g.dart';
 @BuiltValue()
 abstract class SocialVersusObservedLeadTimesInner
     implements
-        Built<SocialVersusObservedLeadTimesInner,
-            SocialVersusObservedLeadTimesInnerBuilder> {
+        Built<
+          SocialVersusObservedLeadTimesInner,
+          SocialVersusObservedLeadTimesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'claimType')
   String get claimType;
 
@@ -36,9 +38,9 @@ abstract class SocialVersusObservedLeadTimesInner
 
   SocialVersusObservedLeadTimesInner._();
 
-  factory SocialVersusObservedLeadTimesInner(
-          [void updates(SocialVersusObservedLeadTimesInnerBuilder b)]) =
-      _$SocialVersusObservedLeadTimesInner;
+  factory SocialVersusObservedLeadTimesInner([
+    void updates(SocialVersusObservedLeadTimesInnerBuilder b),
+  ]) = _$SocialVersusObservedLeadTimesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialVersusObservedLeadTimesInnerBuilder b) => b;
@@ -53,7 +55,7 @@ class _$SocialVersusObservedLeadTimesInnerSerializer
   @override
   final Iterable<Type> types = const [
     SocialVersusObservedLeadTimesInner,
-    _$SocialVersusObservedLeadTimesInner
+    _$SocialVersusObservedLeadTimesInner,
   ];
 
   @override
@@ -94,9 +96,11 @@ class _$SocialVersusObservedLeadTimesInnerSerializer
     SocialVersusObservedLeadTimesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +116,40 @@ class _$SocialVersusObservedLeadTimesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'claimType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.claimType = valueDes;
           break;
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'regionCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionCode = valueDes;
           break;
         case r'overPhysical':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LeadTimeSummary),
-          ) as LeadTimeSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LeadTimeSummary),
+                  )
+                  as LeadTimeSummary;
           result.overPhysical.replace(valueDes);
           break;
         default:

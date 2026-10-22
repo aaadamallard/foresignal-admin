@@ -86,7 +86,7 @@ class _$ForecasterComparisonSerializer
   @override
   final Iterable<Type> types = const [
     ForecasterComparison,
-    _$ForecasterComparison
+    _$ForecasterComparison,
   ];
 
   @override
@@ -175,9 +175,11 @@ class _$ForecasterComparisonSerializer
     ForecasterComparison object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -193,92 +195,117 @@ class _$ForecasterComparisonSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.a = valueDes;
           break;
         case r'b':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.b = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.category = valueDes;
           break;
         case r'nShared':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nShared = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecasterComparisonLabelEnum),
-          ) as ForecasterComparisonLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecasterComparisonLabelEnum,
+                    ),
+                  )
+                  as ForecasterComparisonLabelEnum;
           result.label = valueDes;
           break;
         case r'metric':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecasterComparisonMetricEnum),
-          ) as ForecasterComparisonMetricEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecasterComparisonMetricEnum,
+                    ),
+                  )
+                  as ForecasterComparisonMetricEnum;
           result.metric = valueDes;
           break;
         case r'meanScoreA':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meanScoreA = valueDes;
           break;
         case r'meanScoreB':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meanScoreB = valueDes;
           break;
         case r'meanDifference':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meanDifference = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatInterval),
-          ) as StatInterval?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(StatInterval),
+                  )
+                  as StatInterval?;
           if (valueDes == null) continue;
           result.interval.replace(valueDes);
           break;
         case r'scorerVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.scorerVersion = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         default:

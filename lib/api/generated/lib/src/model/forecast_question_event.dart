@@ -31,8 +31,9 @@ abstract class ForecastQuestionEvent
 
   ForecastQuestionEvent._();
 
-  factory ForecastQuestionEvent(
-      [void updates(ForecastQuestionEventBuilder b)]) = _$ForecastQuestionEvent;
+  factory ForecastQuestionEvent([
+    void updates(ForecastQuestionEventBuilder b),
+  ]) = _$ForecastQuestionEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastQuestionEventBuilder b) => b;
@@ -47,7 +48,7 @@ class _$ForecastQuestionEventSerializer
   @override
   final Iterable<Type> types = const [
     ForecastQuestionEvent,
-    _$ForecastQuestionEvent
+    _$ForecastQuestionEvent,
   ];
 
   @override
@@ -81,9 +82,11 @@ class _$ForecastQuestionEventSerializer
     ForecastQuestionEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +102,32 @@ class _$ForecastQuestionEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastQuestionEventEventEnum),
-          ) as ForecastQuestionEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecastQuestionEventEventEnum,
+                    ),
+                  )
+                  as ForecastQuestionEventEventEnum;
           result.event = valueDes;
           break;
         case r'question':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastQuestionSummary),
-          ) as ForecastQuestionSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ForecastQuestionSummary),
+                  )
+                  as ForecastQuestionSummary;
           result.question.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

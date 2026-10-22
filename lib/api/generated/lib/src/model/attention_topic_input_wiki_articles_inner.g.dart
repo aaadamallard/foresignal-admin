@@ -13,18 +13,19 @@ class _$AttentionTopicInputWikiArticlesInner
   @override
   final String article;
 
-  factory _$AttentionTopicInputWikiArticlesInner(
-          [void Function(AttentionTopicInputWikiArticlesInnerBuilder)?
-              updates]) =>
+  factory _$AttentionTopicInputWikiArticlesInner([
+    void Function(AttentionTopicInputWikiArticlesInnerBuilder)? updates,
+  ]) =>
       (AttentionTopicInputWikiArticlesInnerBuilder()..update(updates))._build();
 
-  _$AttentionTopicInputWikiArticlesInner._(
-      {required this.project, required this.article})
-      : super._();
+  _$AttentionTopicInputWikiArticlesInner._({
+    required this.project,
+    required this.article,
+  }) : super._();
   @override
   AttentionTopicInputWikiArticlesInner rebuild(
-          void Function(AttentionTopicInputWikiArticlesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AttentionTopicInputWikiArticlesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AttentionTopicInputWikiArticlesInnerBuilder toBuilder() =>
@@ -58,8 +59,10 @@ class _$AttentionTopicInputWikiArticlesInner
 
 class AttentionTopicInputWikiArticlesInnerBuilder
     implements
-        Builder<AttentionTopicInputWikiArticlesInner,
-            AttentionTopicInputWikiArticlesInnerBuilder> {
+        Builder<
+          AttentionTopicInputWikiArticlesInner,
+          AttentionTopicInputWikiArticlesInnerBuilder
+        > {
   _$AttentionTopicInputWikiArticlesInner? _$v;
 
   String? _project;
@@ -91,7 +94,8 @@ class AttentionTopicInputWikiArticlesInnerBuilder
 
   @override
   void update(
-      void Function(AttentionTopicInputWikiArticlesInnerBuilder)? updates) {
+    void Function(AttentionTopicInputWikiArticlesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -99,12 +103,19 @@ class AttentionTopicInputWikiArticlesInnerBuilder
   AttentionTopicInputWikiArticlesInner build() => _build();
 
   _$AttentionTopicInputWikiArticlesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AttentionTopicInputWikiArticlesInner._(
           project: BuiltValueNullFieldError.checkNotNull(
-              project, r'AttentionTopicInputWikiArticlesInner', 'project'),
+            project,
+            r'AttentionTopicInputWikiArticlesInner',
+            'project',
+          ),
           article: BuiltValueNullFieldError.checkNotNull(
-              article, r'AttentionTopicInputWikiArticlesInner', 'article'),
+            article,
+            r'AttentionTopicInputWikiArticlesInner',
+            'article',
+          ),
         );
     replace(_$result);
     return _$result;

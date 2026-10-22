@@ -115,7 +115,7 @@ class _$PrecursorWindowStatsSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorWindowStats,
-    _$PrecursorWindowStats
+    _$PrecursorWindowStats,
   ];
 
   @override
@@ -132,10 +132,7 @@ class _$PrecursorWindowStatsSerializer
       specifiedType: const FullType(TimeRange),
     );
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     if (object.hits != null) {
       yield r'hits';
       yield serializers.serialize(
@@ -247,9 +244,11 @@ class _$PrecursorWindowStatsSerializer
     PrecursorWindowStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -265,135 +264,170 @@ class _$PrecursorWindowStatsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimeRange),
-          ) as TimeRange;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimeRange),
+                  )
+                  as TimeRange;
           result.window.replace(valueDes);
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'hits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.hits = valueDes;
           break;
         case r'hitRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.hitRate = valueDes;
           break;
         case r'hitRateInterval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatInterval),
-          ) as StatInterval?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(StatInterval),
+                  )
+                  as StatInterval?;
           if (valueDes == null) continue;
           result.hitRateInterval.replace(valueDes);
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseRate = valueDes;
           break;
         case r'lift':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lift = valueDes;
           break;
         case r'correlation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.correlation = valueDes;
           break;
         case r'bestLag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.bestLag = valueDes;
           break;
         case r'p':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p = valueDes;
           break;
         case r'adjustedP':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.adjustedP = valueDes;
           break;
         case r'verdict':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorWindowStatsVerdictEnum),
-          ) as PrecursorWindowStatsVerdictEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PrecursorWindowStatsVerdictEnum,
+                    ),
+                  )
+                  as PrecursorWindowStatsVerdictEnum;
           result.verdict = valueDes;
           break;
         case r'reverse':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrecursorWindowStatsReverse),
-          ) as PrecursorWindowStatsReverse?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorWindowStatsReverse,
+                    ),
+                  )
+                  as PrecursorWindowStatsReverse?;
           if (valueDes == null) continue;
           result.reverse.replace(valueDes);
           break;
         case r'lowDetectabilityExcluded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.lowDetectabilityExcluded = valueDes;
           break;
         case r'coverageGapFraction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.coverageGapFraction = valueDes;
           break;
         case r'blockLength':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.blockLength = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

@@ -12,15 +12,15 @@ class _$ForecastNumericCalibrationPit extends ForecastNumericCalibrationPit {
   @override
   final BuiltList<ForecastNumericCalibrationPitBinsInner>? bins;
 
-  factory _$ForecastNumericCalibrationPit(
-          [void Function(ForecastNumericCalibrationPitBuilder)? updates]) =>
-      (ForecastNumericCalibrationPitBuilder()..update(updates))._build();
+  factory _$ForecastNumericCalibrationPit([
+    void Function(ForecastNumericCalibrationPitBuilder)? updates,
+  ]) => (ForecastNumericCalibrationPitBuilder()..update(updates))._build();
 
   _$ForecastNumericCalibrationPit._({this.n, this.bins}) : super._();
   @override
   ForecastNumericCalibrationPit rebuild(
-          void Function(ForecastNumericCalibrationPitBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastNumericCalibrationPitBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastNumericCalibrationPitBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$ForecastNumericCalibrationPit extends ForecastNumericCalibrationPit {
 
 class ForecastNumericCalibrationPitBuilder
     implements
-        Builder<ForecastNumericCalibrationPit,
-            ForecastNumericCalibrationPitBuilder> {
+        Builder<
+          ForecastNumericCalibrationPit,
+          ForecastNumericCalibrationPitBuilder
+        > {
   _$ForecastNumericCalibrationPit? _$v;
 
   int? _n;
@@ -98,11 +100,8 @@ class ForecastNumericCalibrationPitBuilder
   _$ForecastNumericCalibrationPit _build() {
     _$ForecastNumericCalibrationPit _$result;
     try {
-      _$result = _$v ??
-          _$ForecastNumericCalibrationPit._(
-            n: n,
-            bins: _bins?.build(),
-          );
+      _$result =
+          _$v ?? _$ForecastNumericCalibrationPit._(n: n, bins: _bins?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -110,7 +109,10 @@ class ForecastNumericCalibrationPitBuilder
         _bins?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastNumericCalibrationPit', _$failedField, e.toString());
+          r'ForecastNumericCalibrationPit',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

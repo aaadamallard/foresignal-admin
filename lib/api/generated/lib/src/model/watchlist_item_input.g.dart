@@ -16,17 +16,20 @@ class _$WatchlistItemInput extends WatchlistItemInput {
   @override
   final BuiltList<String>? tags;
 
-  factory _$WatchlistItemInput(
-          [void Function(WatchlistItemInputBuilder)? updates]) =>
-      (WatchlistItemInputBuilder()..update(updates))._build();
+  factory _$WatchlistItemInput([
+    void Function(WatchlistItemInputBuilder)? updates,
+  ]) => (WatchlistItemInputBuilder()..update(updates))._build();
 
-  _$WatchlistItemInput._(
-      {required this.value, this.label, this.notes, this.tags})
-      : super._();
+  _$WatchlistItemInput._({
+    required this.value,
+    this.label,
+    this.notes,
+    this.tags,
+  }) : super._();
   @override
   WatchlistItemInput rebuild(
-          void Function(WatchlistItemInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WatchlistItemInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WatchlistItemInputBuilder toBuilder() =>
@@ -116,10 +119,14 @@ class WatchlistItemInputBuilder
   _$WatchlistItemInput _build() {
     _$WatchlistItemInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WatchlistItemInput._(
             value: BuiltValueNullFieldError.checkNotNull(
-                value, r'WatchlistItemInput', 'value'),
+              value,
+              r'WatchlistItemInput',
+              'value',
+            ),
             label: label,
             notes: notes,
             tags: _tags?.build(),
@@ -131,7 +138,10 @@ class WatchlistItemInputBuilder
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchlistItemInput', _$failedField, e.toString());
+          r'WatchlistItemInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

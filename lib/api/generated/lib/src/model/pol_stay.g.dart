@@ -27,16 +27,16 @@ class _$PolStay extends PolStay {
   factory _$PolStay([void Function(PolStayBuilder)? updates]) =>
       (PolStayBuilder()..update(updates))._build();
 
-  _$PolStay._(
-      {required this.id,
-      required this.subjectId,
-      required this.arrive,
-      required this.depart,
-      required this.centroid,
-      this.placeId,
-      this.clusterId,
-      this.fixes})
-      : super._();
+  _$PolStay._({
+    required this.id,
+    required this.subjectId,
+    required this.arrive,
+    required this.depart,
+    required this.centroid,
+    this.placeId,
+    this.clusterId,
+    this.fixes,
+  }) : super._();
   @override
   PolStay rebuild(void Function(PolStayBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -159,15 +159,25 @@ class PolStayBuilder implements Builder<PolStay, PolStayBuilder> {
   _$PolStay _build() {
     _$PolStay _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PolStay._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'PolStay', 'id'),
             subjectId: BuiltValueNullFieldError.checkNotNull(
-                subjectId, r'PolStay', 'subjectId'),
+              subjectId,
+              r'PolStay',
+              'subjectId',
+            ),
             arrive: BuiltValueNullFieldError.checkNotNull(
-                arrive, r'PolStay', 'arrive'),
+              arrive,
+              r'PolStay',
+              'arrive',
+            ),
             depart: BuiltValueNullFieldError.checkNotNull(
-                depart, r'PolStay', 'depart'),
+              depart,
+              r'PolStay',
+              'depart',
+            ),
             centroid: centroid.build(),
             placeId: placeId,
             clusterId: clusterId,
@@ -180,7 +190,10 @@ class PolStayBuilder implements Builder<PolStay, PolStayBuilder> {
         centroid.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolStay', _$failedField, e.toString());
+          r'PolStay',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

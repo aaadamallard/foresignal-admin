@@ -10,7 +10,8 @@ const AlertmanagerWebhookVersionEnum _$alertmanagerWebhookVersionEnum_n4 =
     const AlertmanagerWebhookVersionEnum._('n4');
 
 AlertmanagerWebhookVersionEnum _$alertmanagerWebhookVersionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'n4':
       return _$alertmanagerWebhookVersionEnum_n4;
@@ -20,10 +21,12 @@ AlertmanagerWebhookVersionEnum _$alertmanagerWebhookVersionEnumValueOf(
 }
 
 final BuiltSet<AlertmanagerWebhookVersionEnum>
-    _$alertmanagerWebhookVersionEnumValues = BuiltSet<
-        AlertmanagerWebhookVersionEnum>(const <AlertmanagerWebhookVersionEnum>[
-  _$alertmanagerWebhookVersionEnum_n4,
-]);
+_$alertmanagerWebhookVersionEnumValues =
+    BuiltSet<AlertmanagerWebhookVersionEnum>(
+      const <AlertmanagerWebhookVersionEnum>[
+        _$alertmanagerWebhookVersionEnum_n4,
+      ],
+    );
 
 const AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnum_firing =
     const AlertmanagerWebhookStatusEnum._('firing');
@@ -31,7 +34,8 @@ const AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnum_resolved =
     const AlertmanagerWebhookStatusEnum._('resolved');
 
 AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'firing':
       return _$alertmanagerWebhookStatusEnum_firing;
@@ -43,24 +47,23 @@ AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnumValueOf(
 }
 
 final BuiltSet<AlertmanagerWebhookStatusEnum>
-    _$alertmanagerWebhookStatusEnumValues = BuiltSet<
-        AlertmanagerWebhookStatusEnum>(const <AlertmanagerWebhookStatusEnum>[
-  _$alertmanagerWebhookStatusEnum_firing,
-  _$alertmanagerWebhookStatusEnum_resolved,
-]);
+_$alertmanagerWebhookStatusEnumValues = BuiltSet<AlertmanagerWebhookStatusEnum>(
+  const <AlertmanagerWebhookStatusEnum>[
+    _$alertmanagerWebhookStatusEnum_firing,
+    _$alertmanagerWebhookStatusEnum_resolved,
+  ],
+);
 
 Serializer<AlertmanagerWebhookVersionEnum>
-    _$alertmanagerWebhookVersionEnumSerializer =
+_$alertmanagerWebhookVersionEnumSerializer =
     _$AlertmanagerWebhookVersionEnumSerializer();
 Serializer<AlertmanagerWebhookStatusEnum>
-    _$alertmanagerWebhookStatusEnumSerializer =
+_$alertmanagerWebhookStatusEnumSerializer =
     _$AlertmanagerWebhookStatusEnumSerializer();
 
 class _$AlertmanagerWebhookVersionEnumSerializer
     implements PrimitiveSerializer<AlertmanagerWebhookVersionEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'n4': '4',
-  };
+  static const Map<String, Object> _toWire = const <String, Object>{'n4': '4'};
   static const Map<Object, String> _fromWire = const <Object, String>{
     '4': 'n4',
   };
@@ -72,16 +75,19 @@ class _$AlertmanagerWebhookVersionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AlertmanagerWebhookVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AlertmanagerWebhookVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AlertmanagerWebhookVersionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertmanagerWebhookVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertmanagerWebhookVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertmanagerWebhookStatusEnumSerializer
@@ -102,16 +108,19 @@ class _$AlertmanagerWebhookStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AlertmanagerWebhookStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AlertmanagerWebhookStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AlertmanagerWebhookStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertmanagerWebhookStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertmanagerWebhookStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertmanagerWebhook extends AlertmanagerWebhook {
@@ -136,26 +145,26 @@ class _$AlertmanagerWebhook extends AlertmanagerWebhook {
   @override
   final BuiltList<AlertmanagerWebhookAlertsInner> alerts;
 
-  factory _$AlertmanagerWebhook(
-          [void Function(AlertmanagerWebhookBuilder)? updates]) =>
-      (AlertmanagerWebhookBuilder()..update(updates))._build();
+  factory _$AlertmanagerWebhook([
+    void Function(AlertmanagerWebhookBuilder)? updates,
+  ]) => (AlertmanagerWebhookBuilder()..update(updates))._build();
 
-  _$AlertmanagerWebhook._(
-      {required this.version,
-      this.groupKey,
-      this.truncatedAlerts,
-      this.status,
-      this.receiver,
-      this.groupLabels,
-      this.commonLabels,
-      this.commonAnnotations,
-      this.externalURL,
-      required this.alerts})
-      : super._();
+  _$AlertmanagerWebhook._({
+    required this.version,
+    this.groupKey,
+    this.truncatedAlerts,
+    this.status,
+    this.receiver,
+    this.groupLabels,
+    this.commonLabels,
+    this.commonAnnotations,
+    this.externalURL,
+    required this.alerts,
+  }) : super._();
   @override
   AlertmanagerWebhook rebuild(
-          void Function(AlertmanagerWebhookBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AlertmanagerWebhookBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AlertmanagerWebhookBuilder toBuilder() =>
@@ -303,10 +312,14 @@ class AlertmanagerWebhookBuilder
   _$AlertmanagerWebhook _build() {
     _$AlertmanagerWebhook _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AlertmanagerWebhook._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'AlertmanagerWebhook', 'version'),
+              version,
+              r'AlertmanagerWebhook',
+              'version',
+            ),
             groupKey: groupKey,
             truncatedAlerts: truncatedAlerts,
             status: status,
@@ -331,7 +344,10 @@ class AlertmanagerWebhookBuilder
         alerts.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AlertmanagerWebhook', _$failedField, e.toString());
+          r'AlertmanagerWebhook',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

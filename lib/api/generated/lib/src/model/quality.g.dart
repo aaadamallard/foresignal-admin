@@ -19,9 +19,12 @@ class _$Quality extends Quality {
   factory _$Quality([void Function(QualityBuilder)? updates]) =>
       (QualityBuilder()..update(updates))._build();
 
-  _$Quality._(
-      {this.accuracyMeters, this.confidence, this.positionSource, this.extra})
-      : super._();
+  _$Quality._({
+    this.accuracyMeters,
+    this.confidence,
+    this.positionSource,
+    this.extra,
+  }) : super._();
   @override
   Quality rebuild(void Function(QualityBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -115,7 +118,8 @@ class QualityBuilder implements Builder<Quality, QualityBuilder> {
   _$Quality _build() {
     _$Quality _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Quality._(
             accuracyMeters: accuracyMeters,
             confidence: confidence,
@@ -129,7 +133,10 @@ class QualityBuilder implements Builder<Quality, QualityBuilder> {
         _extra?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Quality', _$failedField, e.toString());
+          r'Quality',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

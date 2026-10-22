@@ -18,8 +18,10 @@ part 'coverage_stats_coverage_balance.g.dart';
 @BuiltValue()
 abstract class CoverageStatsCoverageBalance
     implements
-        Built<CoverageStatsCoverageBalance,
-            CoverageStatsCoverageBalanceBuilder> {
+        Built<
+          CoverageStatsCoverageBalance,
+          CoverageStatsCoverageBalanceBuilder
+        > {
   @BuiltValueField(wireName: r'left')
   num get left;
 
@@ -34,9 +36,9 @@ abstract class CoverageStatsCoverageBalance
 
   CoverageStatsCoverageBalance._();
 
-  factory CoverageStatsCoverageBalance(
-          [void updates(CoverageStatsCoverageBalanceBuilder b)]) =
-      _$CoverageStatsCoverageBalance;
+  factory CoverageStatsCoverageBalance([
+    void updates(CoverageStatsCoverageBalanceBuilder b),
+  ]) = _$CoverageStatsCoverageBalance;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CoverageStatsCoverageBalanceBuilder b) => b;
@@ -51,7 +53,7 @@ class _$CoverageStatsCoverageBalanceSerializer
   @override
   final Iterable<Type> types = const [
     CoverageStatsCoverageBalance,
-    _$CoverageStatsCoverageBalance
+    _$CoverageStatsCoverageBalance,
   ];
 
   @override
@@ -90,9 +92,11 @@ class _$CoverageStatsCoverageBalanceSerializer
     CoverageStatsCoverageBalance object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,31 +112,27 @@ class _$CoverageStatsCoverageBalanceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'left':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.left = valueDes;
           break;
         case r'center':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.center = valueDes;
           break;
         case r'right':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.right = valueDes;
           break;
         case r'unrated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.unrated = valueDes;
           break;
         default:

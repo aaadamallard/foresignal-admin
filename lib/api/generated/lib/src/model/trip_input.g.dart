@@ -37,21 +37,21 @@ class _$TripInput extends TripInput {
   factory _$TripInput([void Function(TripInputBuilder)? updates]) =>
       (TripInputBuilder()..update(updates))._build();
 
-  _$TripInput._(
-      {required this.name,
-      this.routePlaceId,
-      this.route,
-      this.bufferMeters,
-      required this.schedule,
-      required this.expectedDuration,
-      this.leadTime,
-      this.hazardKinds,
-      this.minSeverity,
-      this.channelIds,
-      this.anchor,
-      this.notifyWhenClear,
-      this.enabled})
-      : super._();
+  _$TripInput._({
+    required this.name,
+    this.routePlaceId,
+    this.route,
+    this.bufferMeters,
+    required this.schedule,
+    required this.expectedDuration,
+    this.leadTime,
+    this.hazardKinds,
+    this.minSeverity,
+    this.channelIds,
+    this.anchor,
+    this.notifyWhenClear,
+    this.enabled,
+  }) : super._();
   @override
   TripInput rebuild(void Function(TripInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -221,16 +221,23 @@ class TripInputBuilder implements Builder<TripInput, TripInputBuilder> {
   _$TripInput _build() {
     _$TripInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TripInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'TripInput', 'name'),
+              name,
+              r'TripInput',
+              'name',
+            ),
             routePlaceId: routePlaceId,
             route: _route?.build(),
             bufferMeters: bufferMeters,
             schedule: schedule.build(),
             expectedDuration: BuiltValueNullFieldError.checkNotNull(
-                expectedDuration, r'TripInput', 'expectedDuration'),
+              expectedDuration,
+              r'TripInput',
+              'expectedDuration',
+            ),
             leadTime: leadTime,
             hazardKinds: _hazardKinds?.build(),
             minSeverity: minSeverity,
@@ -255,7 +262,10 @@ class TripInputBuilder implements Builder<TripInput, TripInputBuilder> {
         _channelIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TripInput', _$failedField, e.toString());
+          r'TripInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

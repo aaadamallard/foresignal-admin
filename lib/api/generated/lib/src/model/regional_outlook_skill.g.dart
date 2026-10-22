@@ -9,11 +9,12 @@ part of 'regional_outlook_skill.dart';
 const RegionalOutlookSkillLabelEnum _$regionalOutlookSkillLabelEnum_ok =
     const RegionalOutlookSkillLabelEnum._('ok');
 const RegionalOutlookSkillLabelEnum
-    _$regionalOutlookSkillLabelEnum_insufficient =
+_$regionalOutlookSkillLabelEnum_insufficient =
     const RegionalOutlookSkillLabelEnum._('insufficient');
 
 RegionalOutlookSkillLabelEnum _$regionalOutlookSkillLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$regionalOutlookSkillLabelEnum_ok;
@@ -25,14 +26,15 @@ RegionalOutlookSkillLabelEnum _$regionalOutlookSkillLabelEnumValueOf(
 }
 
 final BuiltSet<RegionalOutlookSkillLabelEnum>
-    _$regionalOutlookSkillLabelEnumValues = BuiltSet<
-        RegionalOutlookSkillLabelEnum>(const <RegionalOutlookSkillLabelEnum>[
-  _$regionalOutlookSkillLabelEnum_ok,
-  _$regionalOutlookSkillLabelEnum_insufficient,
-]);
+_$regionalOutlookSkillLabelEnumValues = BuiltSet<RegionalOutlookSkillLabelEnum>(
+  const <RegionalOutlookSkillLabelEnum>[
+    _$regionalOutlookSkillLabelEnum_ok,
+    _$regionalOutlookSkillLabelEnum_insufficient,
+  ],
+);
 
 Serializer<RegionalOutlookSkillLabelEnum>
-    _$regionalOutlookSkillLabelEnumSerializer =
+_$regionalOutlookSkillLabelEnumSerializer =
     _$RegionalOutlookSkillLabelEnumSerializer();
 
 class _$RegionalOutlookSkillLabelEnumSerializer
@@ -53,16 +55,19 @@ class _$RegionalOutlookSkillLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, RegionalOutlookSkillLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RegionalOutlookSkillLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RegionalOutlookSkillLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RegionalOutlookSkillLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RegionalOutlookSkillLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RegionalOutlookSkill extends RegionalOutlookSkill {
@@ -85,25 +90,25 @@ class _$RegionalOutlookSkill extends RegionalOutlookSkill {
   @override
   final BuiltMap<String, JsonObject?>? backtest;
 
-  factory _$RegionalOutlookSkill(
-          [void Function(RegionalOutlookSkillBuilder)? updates]) =>
-      (RegionalOutlookSkillBuilder()..update(updates))._build();
+  factory _$RegionalOutlookSkill([
+    void Function(RegionalOutlookSkillBuilder)? updates,
+  ]) => (RegionalOutlookSkillBuilder()..update(updates))._build();
 
-  _$RegionalOutlookSkill._(
-      {this.evaluatedWeeks,
-      required this.n,
-      this.meanPinballLoss,
-      this.crps,
-      this.skillVsSeasonalNaive,
-      this.skillVsClimatology,
-      this.intervalCoverageP10P90,
-      required this.label,
-      this.backtest})
-      : super._();
+  _$RegionalOutlookSkill._({
+    this.evaluatedWeeks,
+    required this.n,
+    this.meanPinballLoss,
+    this.crps,
+    this.skillVsSeasonalNaive,
+    this.skillVsClimatology,
+    this.intervalCoverageP10P90,
+    required this.label,
+    this.backtest,
+  }) : super._();
   @override
   RegionalOutlookSkill rebuild(
-          void Function(RegionalOutlookSkillBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalOutlookSkillBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalOutlookSkillBuilder toBuilder() =>
@@ -240,18 +245,25 @@ class RegionalOutlookSkillBuilder
   _$RegionalOutlookSkill _build() {
     _$RegionalOutlookSkill _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalOutlookSkill._(
             evaluatedWeeks: evaluatedWeeks,
             n: BuiltValueNullFieldError.checkNotNull(
-                n, r'RegionalOutlookSkill', 'n'),
+              n,
+              r'RegionalOutlookSkill',
+              'n',
+            ),
             meanPinballLoss: meanPinballLoss,
             crps: crps,
             skillVsSeasonalNaive: skillVsSeasonalNaive,
             skillVsClimatology: skillVsClimatology,
             intervalCoverageP10P90: intervalCoverageP10P90,
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'RegionalOutlookSkill', 'label'),
+              label,
+              r'RegionalOutlookSkill',
+              'label',
+            ),
             backtest: _backtest?.build(),
           );
     } catch (_) {
@@ -261,7 +273,10 @@ class RegionalOutlookSkillBuilder
         _backtest?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalOutlookSkill', _$failedField, e.toString());
+          r'RegionalOutlookSkill',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

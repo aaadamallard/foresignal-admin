@@ -51,8 +51,9 @@ abstract class BaseRateRefreshResult
 
   BaseRateRefreshResult._();
 
-  factory BaseRateRefreshResult(
-      [void updates(BaseRateRefreshResultBuilder b)]) = _$BaseRateRefreshResult;
+  factory BaseRateRefreshResult([
+    void updates(BaseRateRefreshResultBuilder b),
+  ]) = _$BaseRateRefreshResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BaseRateRefreshResultBuilder b) => b;
@@ -67,7 +68,7 @@ class _$BaseRateRefreshResultSerializer
   @override
   final Iterable<Type> types = const [
     BaseRateRefreshResult,
-    _$BaseRateRefreshResult
+    _$BaseRateRefreshResult,
   ];
 
   @override
@@ -129,9 +130,11 @@ class _$BaseRateRefreshResultSerializer
     BaseRateRefreshResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -147,55 +150,65 @@ class _$BaseRateRefreshResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'profiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.profiles = valueDes;
           break;
         case r'rates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rates = valueDes;
           break;
         case r'skipped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.skipped = valueDes;
           break;
         case r'removed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.removed = valueDes;
           break;
         case r'families':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.families.replace(valueDes);
           break;
         case r'regions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.regions = valueDes;
           break;
         case r'computer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DetectorRef),
-          ) as DetectorRef?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DetectorRef),
+                  )
+                  as DetectorRef?;
           if (valueDes == null) continue;
           result.computer.replace(valueDes);
           break;

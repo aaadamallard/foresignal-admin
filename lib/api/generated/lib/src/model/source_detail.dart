@@ -75,9 +75,11 @@ class _$SourceDetailSerializer implements PrimitiveSerializer<SourceDetail> {
     SourceDetail object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,24 +95,30 @@ class _$SourceDetailSerializer implements PrimitiveSerializer<SourceDetail> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'descriptor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SourceDescriptor),
-          ) as SourceDescriptor;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SourceDescriptor),
+                  )
+                  as SourceDescriptor;
           result.descriptor.replace(valueDes);
           break;
         case r'settings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SourceSettings),
-          ) as SourceSettings;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SourceSettings),
+                  )
+                  as SourceSettings;
           result.settings.replace(valueDes);
           break;
         case r'health':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SourceHealth),
-          ) as SourceHealth;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SourceHealth),
+                  )
+                  as SourceHealth;
           result.health.replace(valueDes);
           break;
         default:

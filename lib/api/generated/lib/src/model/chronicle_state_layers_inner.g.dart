@@ -22,23 +22,23 @@ class _$ChronicleStateLayersInner extends ChronicleStateLayersInner {
   @override
   final String? nextCursor;
 
-  factory _$ChronicleStateLayersInner(
-          [void Function(ChronicleStateLayersInnerBuilder)? updates]) =>
-      (ChronicleStateLayersInnerBuilder()..update(updates))._build();
+  factory _$ChronicleStateLayersInner([
+    void Function(ChronicleStateLayersInnerBuilder)? updates,
+  ]) => (ChronicleStateLayersInnerBuilder()..update(updates))._build();
 
-  _$ChronicleStateLayersInner._(
-      {required this.layerId,
-      this.name,
-      this.capture,
-      required this.count,
-      required this.items,
-      this.rollups,
-      this.nextCursor})
-      : super._();
+  _$ChronicleStateLayersInner._({
+    required this.layerId,
+    this.name,
+    this.capture,
+    required this.count,
+    required this.items,
+    this.rollups,
+    this.nextCursor,
+  }) : super._();
   @override
   ChronicleStateLayersInner rebuild(
-          void Function(ChronicleStateLayersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleStateLayersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleStateLayersInnerBuilder toBuilder() =>
@@ -157,14 +157,21 @@ class ChronicleStateLayersInnerBuilder
   _$ChronicleStateLayersInner _build() {
     _$ChronicleStateLayersInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleStateLayersInner._(
             layerId: BuiltValueNullFieldError.checkNotNull(
-                layerId, r'ChronicleStateLayersInner', 'layerId'),
+              layerId,
+              r'ChronicleStateLayersInner',
+              'layerId',
+            ),
             name: name,
             capture: _capture?.build(),
             count: BuiltValueNullFieldError.checkNotNull(
-                count, r'ChronicleStateLayersInner', 'count'),
+              count,
+              r'ChronicleStateLayersInner',
+              'count',
+            ),
             items: items.build(),
             rollups: _rollups?.build(),
             nextCursor: nextCursor,
@@ -181,7 +188,10 @@ class ChronicleStateLayersInnerBuilder
         _rollups?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleStateLayersInner', _$failedField, e.toString());
+          r'ChronicleStateLayersInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

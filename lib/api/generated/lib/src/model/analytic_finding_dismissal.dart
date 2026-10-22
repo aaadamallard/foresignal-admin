@@ -29,9 +29,9 @@ abstract class AnalyticFindingDismissal
 
   AnalyticFindingDismissal._();
 
-  factory AnalyticFindingDismissal(
-          [void updates(AnalyticFindingDismissalBuilder b)]) =
-      _$AnalyticFindingDismissal;
+  factory AnalyticFindingDismissal([
+    void updates(AnalyticFindingDismissalBuilder b),
+  ]) = _$AnalyticFindingDismissal;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalyticFindingDismissalBuilder b) => b;
@@ -46,7 +46,7 @@ class _$AnalyticFindingDismissalSerializer
   @override
   final Iterable<Type> types = const [
     AnalyticFindingDismissal,
-    _$AnalyticFindingDismissal
+    _$AnalyticFindingDismissal,
   ];
 
   @override
@@ -80,9 +80,11 @@ class _$AnalyticFindingDismissalSerializer
     AnalyticFindingDismissal object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,24 +100,30 @@ class _$AnalyticFindingDismissalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reason = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'by':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.by = valueDes;
           break;
         default:

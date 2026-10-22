@@ -40,13 +40,13 @@ EdpGeometryTypeEnum _$edpGeometryTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpGeometryTypeEnum> _$edpGeometryTypeEnumValues =
     BuiltSet<EdpGeometryTypeEnum>(const <EdpGeometryTypeEnum>[
-  _$edpGeometryTypeEnum_point,
-  _$edpGeometryTypeEnum_multiPoint,
-  _$edpGeometryTypeEnum_lineString,
-  _$edpGeometryTypeEnum_multiLineString,
-  _$edpGeometryTypeEnum_polygon,
-  _$edpGeometryTypeEnum_multiPolygon,
-]);
+      _$edpGeometryTypeEnum_point,
+      _$edpGeometryTypeEnum_multiPoint,
+      _$edpGeometryTypeEnum_lineString,
+      _$edpGeometryTypeEnum_multiLineString,
+      _$edpGeometryTypeEnum_polygon,
+      _$edpGeometryTypeEnum_multiPolygon,
+    ]);
 
 Serializer<EdpGeometryTypeEnum> _$edpGeometryTypeEnumSerializer =
     _$EdpGeometryTypeEnumSerializer();
@@ -76,15 +76,20 @@ class _$EdpGeometryTypeEnumSerializer
   final String wireName = 'EdpGeometryTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpGeometryTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpGeometryTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpGeometryTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpGeometryTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpGeometryTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpGeometryTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpGeometry extends EdpGeometry {
@@ -173,10 +178,14 @@ class EdpGeometryBuilder implements Builder<EdpGeometry, EdpGeometryBuilder> {
   _$EdpGeometry _build() {
     _$EdpGeometry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpGeometry._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'EdpGeometry', 'type'),
+              type,
+              r'EdpGeometry',
+              'type',
+            ),
             coordinates: coordinates.build(),
           );
     } catch (_) {
@@ -186,7 +195,10 @@ class EdpGeometryBuilder implements Builder<EdpGeometry, EdpGeometryBuilder> {
         coordinates.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpGeometry', _$failedField, e.toString());
+          r'EdpGeometry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

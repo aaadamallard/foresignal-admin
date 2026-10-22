@@ -108,9 +108,11 @@ class _$FieldEncodingsSerializer
     FieldEncodings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,42 +128,56 @@ class _$FieldEncodingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'velocityJson':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(FieldEncodingsVelocityJson),
-          ) as FieldEncodingsVelocityJson?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      FieldEncodingsVelocityJson,
+                    ),
+                  )
+                  as FieldEncodingsVelocityJson?;
           if (valueDes == null) continue;
           result.velocityJson.replace(valueDes);
           break;
         case r'pngUv':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(FieldEncodingsPngUv),
-          ) as FieldEncodingsPngUv?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(FieldEncodingsPngUv),
+                  )
+                  as FieldEncodingsPngUv?;
           if (valueDes == null) continue;
           result.pngUv.replace(valueDes);
           break;
         case r'i16':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(FieldEncodingsI16),
-          ) as FieldEncodingsI16?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(FieldEncodingsI16),
+                  )
+                  as FieldEncodingsI16?;
           if (valueDes == null) continue;
           result.i16.replace(valueDes);
           break;
         case r'pngTiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(FieldEncodingsPngTiles),
-          ) as FieldEncodingsPngTiles?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      FieldEncodingsPngTiles,
+                    ),
+                  )
+                  as FieldEncodingsPngTiles?;
           if (valueDes == null) continue;
           result.pngTiles.replace(valueDes);
           break;
         case r'tilejson':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tilejson = valueDes;
           break;

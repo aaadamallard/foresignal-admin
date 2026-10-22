@@ -42,8 +42,9 @@ abstract class ObservabilityCoverage
 
   ObservabilityCoverage._();
 
-  factory ObservabilityCoverage(
-      [void updates(ObservabilityCoverageBuilder b)]) = _$ObservabilityCoverage;
+  factory ObservabilityCoverage([
+    void updates(ObservabilityCoverageBuilder b),
+  ]) = _$ObservabilityCoverage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ObservabilityCoverageBuilder b) => b;
@@ -58,7 +59,7 @@ class _$ObservabilityCoverageSerializer
   @override
   final Iterable<Type> types = const [
     ObservabilityCoverage,
-    _$ObservabilityCoverage
+    _$ObservabilityCoverage,
   ];
 
   @override
@@ -111,9 +112,11 @@ class _$ObservabilityCoverageSerializer
     ObservabilityCoverage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,46 +132,57 @@ class _$ObservabilityCoverageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'band':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.band = valueDes;
           break;
         case r'absenceMinDetect':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.absenceMinDetect = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Detectability)]),
-          ) as BuiltList<Detectability>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Detectability),
+                    ]),
+                  )
+                  as BuiltList<Detectability>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

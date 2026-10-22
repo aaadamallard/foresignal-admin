@@ -59,9 +59,11 @@ class _$AnalystNotePatchSerializer
     AnalystNotePatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -77,10 +79,12 @@ class _$AnalystNotePatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnalystNotePatchStatusEnum),
-          ) as AnalystNotePatchStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnalystNotePatchStatusEnum),
+                  )
+                  as AnalystNotePatchStatusEnum;
           result.status = valueDes;
           break;
         default:

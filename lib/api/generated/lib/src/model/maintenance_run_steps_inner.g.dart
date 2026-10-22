@@ -7,41 +7,42 @@ part of 'maintenance_run_steps_inner.dart';
 // **************************************************************************
 
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_observabilityReestimation =
+_$maintenanceRunStepsInnerStepEnum_observabilityReestimation =
     const MaintenanceRunStepsInnerStepEnum._('observabilityReestimation');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_benchmarkHistorical =
+_$maintenanceRunStepsInnerStepEnum_benchmarkHistorical =
     const MaintenanceRunStepsInnerStepEnum._('benchmarkHistorical');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_baseRateRefresh =
+_$maintenanceRunStepsInnerStepEnum_baseRateRefresh =
     const MaintenanceRunStepsInnerStepEnum._('baseRateRefresh');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_precursorRetest =
+_$maintenanceRunStepsInnerStepEnum_precursorRetest =
     const MaintenanceRunStepsInnerStepEnum._('precursorRetest');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_plattRefit =
+_$maintenanceRunStepsInnerStepEnum_plattRefit =
     const MaintenanceRunStepsInnerStepEnum._('plattRefit');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_ensembleWeights =
+_$maintenanceRunStepsInnerStepEnum_ensembleWeights =
     const MaintenanceRunStepsInnerStepEnum._('ensembleWeights');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_extremizingCheck =
+_$maintenanceRunStepsInnerStepEnum_extremizingCheck =
     const MaintenanceRunStepsInnerStepEnum._('extremizingCheck');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_indexWeightFit =
+_$maintenanceRunStepsInnerStepEnum_indexWeightFit =
     const MaintenanceRunStepsInnerStepEnum._('indexWeightFit');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_seriesMethodReselection =
+_$maintenanceRunStepsInnerStepEnum_seriesMethodReselection =
     const MaintenanceRunStepsInnerStepEnum._('seriesMethodReselection');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_hypothesisArchivalProposals =
+_$maintenanceRunStepsInnerStepEnum_hypothesisArchivalProposals =
     const MaintenanceRunStepsInnerStepEnum._('hypothesisArchivalProposals');
 const MaintenanceRunStepsInnerStepEnum
-    _$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation =
+_$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation =
     const MaintenanceRunStepsInnerStepEnum._('llmRetrospectiveEvaluation');
 
 MaintenanceRunStepsInnerStepEnum _$maintenanceRunStepsInnerStepEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'observabilityReestimation':
       return _$maintenanceRunStepsInnerStepEnum_observabilityReestimation;
@@ -71,39 +72,42 @@ MaintenanceRunStepsInnerStepEnum _$maintenanceRunStepsInnerStepEnumValueOf(
 }
 
 final BuiltSet<MaintenanceRunStepsInnerStepEnum>
-    _$maintenanceRunStepsInnerStepEnumValues = BuiltSet<
-        MaintenanceRunStepsInnerStepEnum>(const <MaintenanceRunStepsInnerStepEnum>[
-  _$maintenanceRunStepsInnerStepEnum_observabilityReestimation,
-  _$maintenanceRunStepsInnerStepEnum_benchmarkHistorical,
-  _$maintenanceRunStepsInnerStepEnum_baseRateRefresh,
-  _$maintenanceRunStepsInnerStepEnum_precursorRetest,
-  _$maintenanceRunStepsInnerStepEnum_plattRefit,
-  _$maintenanceRunStepsInnerStepEnum_ensembleWeights,
-  _$maintenanceRunStepsInnerStepEnum_extremizingCheck,
-  _$maintenanceRunStepsInnerStepEnum_indexWeightFit,
-  _$maintenanceRunStepsInnerStepEnum_seriesMethodReselection,
-  _$maintenanceRunStepsInnerStepEnum_hypothesisArchivalProposals,
-  _$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation,
-]);
+_$maintenanceRunStepsInnerStepEnumValues =
+    BuiltSet<MaintenanceRunStepsInnerStepEnum>(
+      const <MaintenanceRunStepsInnerStepEnum>[
+        _$maintenanceRunStepsInnerStepEnum_observabilityReestimation,
+        _$maintenanceRunStepsInnerStepEnum_benchmarkHistorical,
+        _$maintenanceRunStepsInnerStepEnum_baseRateRefresh,
+        _$maintenanceRunStepsInnerStepEnum_precursorRetest,
+        _$maintenanceRunStepsInnerStepEnum_plattRefit,
+        _$maintenanceRunStepsInnerStepEnum_ensembleWeights,
+        _$maintenanceRunStepsInnerStepEnum_extremizingCheck,
+        _$maintenanceRunStepsInnerStepEnum_indexWeightFit,
+        _$maintenanceRunStepsInnerStepEnum_seriesMethodReselection,
+        _$maintenanceRunStepsInnerStepEnum_hypothesisArchivalProposals,
+        _$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation,
+      ],
+    );
 
 const MaintenanceRunStepsInnerStatusEnum
-    _$maintenanceRunStepsInnerStatusEnum_pending =
+_$maintenanceRunStepsInnerStatusEnum_pending =
     const MaintenanceRunStepsInnerStatusEnum._('pending');
 const MaintenanceRunStepsInnerStatusEnum
-    _$maintenanceRunStepsInnerStatusEnum_running =
+_$maintenanceRunStepsInnerStatusEnum_running =
     const MaintenanceRunStepsInnerStatusEnum._('running');
 const MaintenanceRunStepsInnerStatusEnum
-    _$maintenanceRunStepsInnerStatusEnum_done =
+_$maintenanceRunStepsInnerStatusEnum_done =
     const MaintenanceRunStepsInnerStatusEnum._('done');
 const MaintenanceRunStepsInnerStatusEnum
-    _$maintenanceRunStepsInnerStatusEnum_failed =
+_$maintenanceRunStepsInnerStatusEnum_failed =
     const MaintenanceRunStepsInnerStatusEnum._('failed');
 const MaintenanceRunStepsInnerStatusEnum
-    _$maintenanceRunStepsInnerStatusEnum_skipped =
+_$maintenanceRunStepsInnerStatusEnum_skipped =
     const MaintenanceRunStepsInnerStatusEnum._('skipped');
 
 MaintenanceRunStepsInnerStatusEnum _$maintenanceRunStepsInnerStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'pending':
       return _$maintenanceRunStepsInnerStatusEnum_pending;
@@ -121,20 +125,22 @@ MaintenanceRunStepsInnerStatusEnum _$maintenanceRunStepsInnerStatusEnumValueOf(
 }
 
 final BuiltSet<MaintenanceRunStepsInnerStatusEnum>
-    _$maintenanceRunStepsInnerStatusEnumValues = BuiltSet<
-        MaintenanceRunStepsInnerStatusEnum>(const <MaintenanceRunStepsInnerStatusEnum>[
-  _$maintenanceRunStepsInnerStatusEnum_pending,
-  _$maintenanceRunStepsInnerStatusEnum_running,
-  _$maintenanceRunStepsInnerStatusEnum_done,
-  _$maintenanceRunStepsInnerStatusEnum_failed,
-  _$maintenanceRunStepsInnerStatusEnum_skipped,
-]);
+_$maintenanceRunStepsInnerStatusEnumValues =
+    BuiltSet<MaintenanceRunStepsInnerStatusEnum>(
+      const <MaintenanceRunStepsInnerStatusEnum>[
+        _$maintenanceRunStepsInnerStatusEnum_pending,
+        _$maintenanceRunStepsInnerStatusEnum_running,
+        _$maintenanceRunStepsInnerStatusEnum_done,
+        _$maintenanceRunStepsInnerStatusEnum_failed,
+        _$maintenanceRunStepsInnerStatusEnum_skipped,
+      ],
+    );
 
 Serializer<MaintenanceRunStepsInnerStepEnum>
-    _$maintenanceRunStepsInnerStepEnumSerializer =
+_$maintenanceRunStepsInnerStepEnumSerializer =
     _$MaintenanceRunStepsInnerStepEnumSerializer();
 Serializer<MaintenanceRunStepsInnerStatusEnum>
-    _$maintenanceRunStepsInnerStatusEnumSerializer =
+_$maintenanceRunStepsInnerStatusEnumSerializer =
     _$MaintenanceRunStepsInnerStatusEnumSerializer();
 
 class _$MaintenanceRunStepsInnerStepEnumSerializer
@@ -173,16 +179,19 @@ class _$MaintenanceRunStepsInnerStepEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MaintenanceRunStepsInnerStepEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MaintenanceRunStepsInnerStepEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MaintenanceRunStepsInnerStepEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MaintenanceRunStepsInnerStepEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MaintenanceRunStepsInnerStepEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MaintenanceRunStepsInnerStatusEnumSerializer
@@ -209,16 +218,19 @@ class _$MaintenanceRunStepsInnerStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MaintenanceRunStepsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MaintenanceRunStepsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MaintenanceRunStepsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MaintenanceRunStepsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MaintenanceRunStepsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MaintenanceRunStepsInner extends MaintenanceRunStepsInner {
@@ -237,23 +249,23 @@ class _$MaintenanceRunStepsInner extends MaintenanceRunStepsInner {
   @override
   final String? error;
 
-  factory _$MaintenanceRunStepsInner(
-          [void Function(MaintenanceRunStepsInnerBuilder)? updates]) =>
-      (MaintenanceRunStepsInnerBuilder()..update(updates))._build();
+  factory _$MaintenanceRunStepsInner([
+    void Function(MaintenanceRunStepsInnerBuilder)? updates,
+  ]) => (MaintenanceRunStepsInnerBuilder()..update(updates))._build();
 
-  _$MaintenanceRunStepsInner._(
-      {required this.step,
-      required this.status,
-      this.startedAt,
-      this.finishedAt,
-      this.jobId,
-      this.result,
-      this.error})
-      : super._();
+  _$MaintenanceRunStepsInner._({
+    required this.step,
+    required this.status,
+    this.startedAt,
+    this.finishedAt,
+    this.jobId,
+    this.result,
+    this.error,
+  }) : super._();
   @override
   MaintenanceRunStepsInner rebuild(
-          void Function(MaintenanceRunStepsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MaintenanceRunStepsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MaintenanceRunStepsInnerBuilder toBuilder() =>
@@ -367,12 +379,19 @@ class MaintenanceRunStepsInnerBuilder
   MaintenanceRunStepsInner build() => _build();
 
   _$MaintenanceRunStepsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MaintenanceRunStepsInner._(
           step: BuiltValueNullFieldError.checkNotNull(
-              step, r'MaintenanceRunStepsInner', 'step'),
+            step,
+            r'MaintenanceRunStepsInner',
+            'step',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'MaintenanceRunStepsInner', 'status'),
+            status,
+            r'MaintenanceRunStepsInner',
+            'status',
+          ),
           startedAt: startedAt,
           finishedAt: finishedAt,
           jobId: jobId,

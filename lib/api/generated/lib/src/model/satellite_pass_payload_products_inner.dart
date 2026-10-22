@@ -21,8 +21,10 @@ part 'satellite_pass_payload_products_inner.g.dart';
 @BuiltValue()
 abstract class SatellitePassPayloadProductsInner
     implements
-        Built<SatellitePassPayloadProductsInner,
-            SatellitePassPayloadProductsInnerBuilder> {
+        Built<
+          SatellitePassPayloadProductsInner,
+          SatellitePassPayloadProductsInnerBuilder
+        > {
   /// The polar overlay product `satdump-{station}-{composite}` (054); present when the composite has a GeoTIFF overlay
   @BuiltValueField(wireName: r'productId')
   String? get productId;
@@ -51,9 +53,9 @@ abstract class SatellitePassPayloadProductsInner
 
   SatellitePassPayloadProductsInner._();
 
-  factory SatellitePassPayloadProductsInner(
-          [void updates(SatellitePassPayloadProductsInnerBuilder b)]) =
-      _$SatellitePassPayloadProductsInner;
+  factory SatellitePassPayloadProductsInner([
+    void updates(SatellitePassPayloadProductsInnerBuilder b),
+  ]) = _$SatellitePassPayloadProductsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SatellitePassPayloadProductsInnerBuilder b) => b;
@@ -68,7 +70,7 @@ class _$SatellitePassPayloadProductsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SatellitePassPayloadProductsInner,
-    _$SatellitePassPayloadProductsInner
+    _$SatellitePassPayloadProductsInner,
   ];
 
   @override
@@ -134,9 +136,11 @@ class _$SatellitePassPayloadProductsInnerSerializer
     SatellitePassPayloadProductsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -152,57 +156,71 @@ class _$SatellitePassPayloadProductsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'productId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.productId = valueDes;
           break;
         case r'frameKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.frameKey = valueDes;
           break;
         case r'composite':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.composite = valueDes;
           break;
         case r'thumbMediaId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.thumbMediaId = valueDes;
           break;
         case r'tilesTemplate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tilesTemplate = valueDes;
           break;
         case r'instrument':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.instrument = valueDes;
           break;
         case r'mediaId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mediaId = valueDes;
           break;

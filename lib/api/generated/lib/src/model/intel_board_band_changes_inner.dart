@@ -54,9 +54,9 @@ abstract class IntelBoardBandChangesInner
 
   IntelBoardBandChangesInner._();
 
-  factory IntelBoardBandChangesInner(
-          [void updates(IntelBoardBandChangesInnerBuilder b)]) =
-      _$IntelBoardBandChangesInner;
+  factory IntelBoardBandChangesInner([
+    void updates(IntelBoardBandChangesInnerBuilder b),
+  ]) = _$IntelBoardBandChangesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardBandChangesInnerBuilder b) => b;
@@ -71,7 +71,7 @@ class _$IntelBoardBandChangesInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardBandChangesInner,
-    _$IntelBoardBandChangesInner
+    _$IntelBoardBandChangesInner,
   ];
 
   @override
@@ -138,9 +138,11 @@ class _$IntelBoardBandChangesInnerSerializer
     IntelBoardBandChangesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,63 +158,79 @@ class _$IntelBoardBandChangesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'hypothesisId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hypothesisId = valueDes;
           break;
         case r'question':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.question = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'fromTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IcdTerm),
-          ) as IcdTerm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IcdTerm),
+                  )
+                  as IcdTerm?;
           if (valueDes == null) continue;
           result.fromTerm = valueDes;
           break;
         case r'toTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IcdTerm),
-          ) as IcdTerm;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IcdTerm),
+                  )
+                  as IcdTerm;
           result.toTerm = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.probability = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

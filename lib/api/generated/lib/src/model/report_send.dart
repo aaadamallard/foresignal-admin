@@ -106,8 +106,9 @@ class _$ReportSendSerializer implements PrimitiveSerializer<ReportSend> {
     yield r'recipients';
     yield serializers.serialize(
       object.recipients,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ReportSendRecipientsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ReportSendRecipientsInner),
+      ]),
     );
   }
 
@@ -117,9 +118,11 @@ class _$ReportSendSerializer implements PrimitiveSerializer<ReportSend> {
     ReportSend object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,55 +138,70 @@ class _$ReportSendSerializer implements PrimitiveSerializer<ReportSend> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'reportId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reportId = valueDes;
           break;
         case r'revision':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.revision = valueDes;
           break;
         case r'sentBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrincipalSummary),
-          ) as PrincipalSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrincipalSummary),
+                  )
+                  as PrincipalSummary;
           result.sentBy.replace(valueDes);
           break;
         case r'sentAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.sentAt = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'recipients':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ReportSendRecipientsInner)]),
-          ) as BuiltList<ReportSendRecipientsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ReportSendRecipientsInner),
+                    ]),
+                  )
+                  as BuiltList<ReportSendRecipientsInner>;
           result.recipients.replace(valueDes);
           break;
         default:

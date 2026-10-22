@@ -58,8 +58,9 @@ class _$AssessmentCoverageSerializer
       yield r'situations';
       yield serializers.serialize(
         object.situations,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AssessmentCoverageSituationsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AssessmentCoverageSituationsInner),
+        ]),
       );
     }
     if (object.blindspotStoryIds != null) {
@@ -84,9 +85,11 @@ class _$AssessmentCoverageSerializer
     AssessmentCoverage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,29 +105,38 @@ class _$AssessmentCoverageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AssessmentCoverageSituationsInner)]),
-          ) as BuiltList<AssessmentCoverageSituationsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AssessmentCoverageSituationsInner),
+                    ]),
+                  )
+                  as BuiltList<AssessmentCoverageSituationsInner>?;
           if (valueDes == null) continue;
           result.situations.replace(valueDes);
           break;
         case r'blindspotStoryIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.blindspotStoryIds.replace(valueDes);
           break;
         case r'divergenceFindingIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.divergenceFindingIds.replace(valueDes);
           break;

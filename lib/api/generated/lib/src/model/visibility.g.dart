@@ -38,7 +38,7 @@ class _$VisibilityMeta {
   BuiltSet<Visibility> get values => _$values;
 }
 
-abstract class _$VisibilityMixin {
+mixin _$VisibilityMixin {
   // ignore: non_constant_identifier_names
   _$VisibilityMeta get Visibility => const _$VisibilityMeta();
 }
@@ -63,15 +63,20 @@ class _$VisibilitySerializer implements PrimitiveSerializer<Visibility> {
   final String wireName = 'Visibility';
 
   @override
-  Object serialize(Serializers serializers, Visibility object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    Visibility object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  Visibility deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      Visibility.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  Visibility deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => Visibility.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

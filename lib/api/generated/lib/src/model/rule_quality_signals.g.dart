@@ -16,17 +16,20 @@ class _$RuleQualitySignals extends RuleQualitySignals {
   @override
   final int? UNOPENED;
 
-  factory _$RuleQualitySignals(
-          [void Function(RuleQualitySignalsBuilder)? updates]) =>
-      (RuleQualitySignalsBuilder()..update(updates))._build();
+  factory _$RuleQualitySignals([
+    void Function(RuleQualitySignalsBuilder)? updates,
+  ]) => (RuleQualitySignalsBuilder()..update(updates))._build();
 
-  _$RuleQualitySignals._(
-      {this.ACK_FAST, this.SNOOZED, this.FLAP, this.UNOPENED})
-      : super._();
+  _$RuleQualitySignals._({
+    this.ACK_FAST,
+    this.SNOOZED,
+    this.FLAP,
+    this.UNOPENED,
+  }) : super._();
   @override
   RuleQualitySignals rebuild(
-          void Function(RuleQualitySignalsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleQualitySignalsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleQualitySignalsBuilder toBuilder() =>
@@ -114,7 +117,8 @@ class RuleQualitySignalsBuilder
   RuleQualitySignals build() => _build();
 
   _$RuleQualitySignals _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RuleQualitySignals._(
           ACK_FAST: ACK_FAST,
           SNOOZED: SNOOZED,

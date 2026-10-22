@@ -12,15 +12,15 @@ class _$OgcCollectionExtentSpatial extends OgcCollectionExtentSpatial {
   @override
   final String? crs;
 
-  factory _$OgcCollectionExtentSpatial(
-          [void Function(OgcCollectionExtentSpatialBuilder)? updates]) =>
-      (OgcCollectionExtentSpatialBuilder()..update(updates))._build();
+  factory _$OgcCollectionExtentSpatial([
+    void Function(OgcCollectionExtentSpatialBuilder)? updates,
+  ]) => (OgcCollectionExtentSpatialBuilder()..update(updates))._build();
 
   _$OgcCollectionExtentSpatial._({this.bbox, this.crs}) : super._();
   @override
   OgcCollectionExtentSpatial rebuild(
-          void Function(OgcCollectionExtentSpatialBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCollectionExtentSpatialBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCollectionExtentSpatialBuilder toBuilder() =>
@@ -96,11 +96,8 @@ class OgcCollectionExtentSpatialBuilder
   _$OgcCollectionExtentSpatial _build() {
     _$OgcCollectionExtentSpatial _$result;
     try {
-      _$result = _$v ??
-          _$OgcCollectionExtentSpatial._(
-            bbox: _bbox?.build(),
-            crs: crs,
-          );
+      _$result =
+          _$v ?? _$OgcCollectionExtentSpatial._(bbox: _bbox?.build(), crs: crs);
     } catch (_) {
       late String _$failedField;
       try {
@@ -108,7 +105,10 @@ class OgcCollectionExtentSpatialBuilder
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCollectionExtentSpatial', _$failedField, e.toString());
+          r'OgcCollectionExtentSpatial',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

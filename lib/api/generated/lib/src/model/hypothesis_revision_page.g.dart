@@ -12,16 +12,16 @@ class _$HypothesisRevisionPage extends HypothesisRevisionPage {
   @override
   final String? nextCursor;
 
-  factory _$HypothesisRevisionPage(
-          [void Function(HypothesisRevisionPageBuilder)? updates]) =>
-      (HypothesisRevisionPageBuilder()..update(updates))._build();
+  factory _$HypothesisRevisionPage([
+    void Function(HypothesisRevisionPageBuilder)? updates,
+  ]) => (HypothesisRevisionPageBuilder()..update(updates))._build();
 
   _$HypothesisRevisionPage._({required this.items, this.nextCursor})
-      : super._();
+    : super._();
   @override
   HypothesisRevisionPage rebuild(
-          void Function(HypothesisRevisionPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisRevisionPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisRevisionPageBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class HypothesisRevisionPageBuilder
   _$HypothesisRevisionPage _build() {
     _$HypothesisRevisionPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisRevisionPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -108,7 +109,10 @@ class HypothesisRevisionPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisRevisionPage', _$failedField, e.toString());
+          r'HypothesisRevisionPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

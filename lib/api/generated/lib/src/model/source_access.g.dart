@@ -36,12 +36,12 @@ SourceAccessRouteEnum _$sourceAccessRouteEnumValueOf(String name) {
 
 final BuiltSet<SourceAccessRouteEnum> _$sourceAccessRouteEnumValues =
     BuiltSet<SourceAccessRouteEnum>(const <SourceAccessRouteEnum>[
-  _$sourceAccessRouteEnum_official,
-  _$sourceAccessRouteEnum_unofficialApi,
-  _$sourceAccessRouteEnum_scrape,
-  _$sourceAccessRouteEnum_browser,
-  _$sourceAccessRouteEnum_other,
-]);
+      _$sourceAccessRouteEnum_official,
+      _$sourceAccessRouteEnum_unofficialApi,
+      _$sourceAccessRouteEnum_scrape,
+      _$sourceAccessRouteEnum_browser,
+      _$sourceAccessRouteEnum_other,
+    ]);
 
 const SourceAccessFragilityEnum _$sourceAccessFragilityEnum_low =
     const SourceAccessFragilityEnum._('low');
@@ -65,10 +65,10 @@ SourceAccessFragilityEnum _$sourceAccessFragilityEnumValueOf(String name) {
 
 final BuiltSet<SourceAccessFragilityEnum> _$sourceAccessFragilityEnumValues =
     BuiltSet<SourceAccessFragilityEnum>(const <SourceAccessFragilityEnum>[
-  _$sourceAccessFragilityEnum_low,
-  _$sourceAccessFragilityEnum_medium,
-  _$sourceAccessFragilityEnum_high,
-]);
+      _$sourceAccessFragilityEnum_low,
+      _$sourceAccessFragilityEnum_medium,
+      _$sourceAccessFragilityEnum_high,
+    ]);
 
 Serializer<SourceAccessRouteEnum> _$sourceAccessRouteEnumSerializer =
     _$SourceAccessRouteEnumSerializer();
@@ -98,15 +98,20 @@ class _$SourceAccessRouteEnumSerializer
   final String wireName = 'SourceAccessRouteEnum';
 
   @override
-  Object serialize(Serializers serializers, SourceAccessRouteEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SourceAccessRouteEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SourceAccessRouteEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceAccessRouteEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SourceAccessRouteEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceAccessRouteEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceAccessFragilityEnumSerializer
@@ -128,16 +133,20 @@ class _$SourceAccessFragilityEnumSerializer
   final String wireName = 'SourceAccessFragilityEnum';
 
   @override
-  Object serialize(Serializers serializers, SourceAccessFragilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SourceAccessFragilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceAccessFragilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceAccessFragilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceAccessFragilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceAccess extends SourceAccess {
@@ -153,9 +162,12 @@ class _$SourceAccess extends SourceAccess {
   factory _$SourceAccess([void Function(SourceAccessBuilder)? updates]) =>
       (SourceAccessBuilder()..update(updates))._build();
 
-  _$SourceAccess._(
-      {required this.route, this.termsSummary, this.termsUrl, this.fragility})
-      : super._();
+  _$SourceAccess._({
+    required this.route,
+    this.termsSummary,
+    this.termsUrl,
+    this.fragility,
+  }) : super._();
   @override
   SourceAccess rebuild(void Function(SourceAccessBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -246,10 +258,14 @@ class SourceAccessBuilder
   SourceAccess build() => _build();
 
   _$SourceAccess _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SourceAccess._(
           route: BuiltValueNullFieldError.checkNotNull(
-              route, r'SourceAccess', 'route'),
+            route,
+            r'SourceAccess',
+            'route',
+          ),
           termsSummary: termsSummary,
           termsUrl: termsUrl,
           fragility: fragility,

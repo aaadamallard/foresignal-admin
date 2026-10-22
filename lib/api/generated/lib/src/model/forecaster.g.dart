@@ -24,8 +24,9 @@ const ForecasterTypeEnum _$forecasterTypeEnum_impact =
     const ForecasterTypeEnum._('impact');
 const ForecasterTypeEnum _$forecasterTypeEnum_indicatorBayes =
     const ForecasterTypeEnum._('indicatorBayes');
-const ForecasterTypeEnum _$forecasterTypeEnum_llm =
-    const ForecasterTypeEnum._('llm');
+const ForecasterTypeEnum _$forecasterTypeEnum_llm = const ForecasterTypeEnum._(
+  'llm',
+);
 const ForecasterTypeEnum _$forecasterTypeEnum_operator_ =
     const ForecasterTypeEnum._('operator_');
 const ForecasterTypeEnum _$forecasterTypeEnum_external_ =
@@ -68,20 +69,20 @@ ForecasterTypeEnum _$forecasterTypeEnumValueOf(String name) {
 
 final BuiltSet<ForecasterTypeEnum> _$forecasterTypeEnumValues =
     BuiltSet<ForecasterTypeEnum>(const <ForecasterTypeEnum>[
-  _$forecasterTypeEnum_baseRate,
-  _$forecasterTypeEnum_climatology,
-  _$forecasterTypeEnum_persistence,
-  _$forecasterTypeEnum_statistical,
-  _$forecasterTypeEnum_precursor,
-  _$forecasterTypeEnum_analog,
-  _$forecasterTypeEnum_threshold,
-  _$forecasterTypeEnum_impact,
-  _$forecasterTypeEnum_indicatorBayes,
-  _$forecasterTypeEnum_llm,
-  _$forecasterTypeEnum_operator_,
-  _$forecasterTypeEnum_external_,
-  _$forecasterTypeEnum_ensemble,
-]);
+      _$forecasterTypeEnum_baseRate,
+      _$forecasterTypeEnum_climatology,
+      _$forecasterTypeEnum_persistence,
+      _$forecasterTypeEnum_statistical,
+      _$forecasterTypeEnum_precursor,
+      _$forecasterTypeEnum_analog,
+      _$forecasterTypeEnum_threshold,
+      _$forecasterTypeEnum_impact,
+      _$forecasterTypeEnum_indicatorBayes,
+      _$forecasterTypeEnum_llm,
+      _$forecasterTypeEnum_operator_,
+      _$forecasterTypeEnum_external_,
+      _$forecasterTypeEnum_ensemble,
+    ]);
 
 Serializer<ForecasterTypeEnum> _$forecasterTypeEnumSerializer =
     _$ForecasterTypeEnumSerializer();
@@ -125,15 +126,20 @@ class _$ForecasterTypeEnumSerializer
   final String wireName = 'ForecasterTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecasterTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecasterTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ForecasterTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecasterTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ForecasterTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecasterTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Forecaster extends Forecaster {
@@ -157,16 +163,16 @@ class _$Forecaster extends Forecaster {
   factory _$Forecaster([void Function(ForecasterBuilder)? updates]) =>
       (ForecasterBuilder()..update(updates))._build();
 
-  _$Forecaster._(
-      {required this.id,
-      required this.type,
-      required this.name,
-      this.config,
-      required this.version,
-      required this.active,
-      this.trackRecord,
-      required this.createdAt})
-      : super._();
+  _$Forecaster._({
+    required this.id,
+    required this.type,
+    required this.name,
+    this.config,
+    required this.version,
+    required this.active,
+    this.trackRecord,
+    required this.createdAt,
+  }) : super._();
   @override
   Forecaster rebuild(void Function(ForecasterBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -293,21 +299,37 @@ class ForecasterBuilder implements Builder<Forecaster, ForecasterBuilder> {
   _$Forecaster _build() {
     _$Forecaster _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Forecaster._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Forecaster', 'id'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'Forecaster', 'type'),
+              type,
+              r'Forecaster',
+              'type',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'Forecaster', 'name'),
+              name,
+              r'Forecaster',
+              'name',
+            ),
             config: _config?.build(),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'Forecaster', 'version'),
+              version,
+              r'Forecaster',
+              'version',
+            ),
             active: BuiltValueNullFieldError.checkNotNull(
-                active, r'Forecaster', 'active'),
+              active,
+              r'Forecaster',
+              'active',
+            ),
             trackRecord: _trackRecord?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Forecaster', 'createdAt'),
+              createdAt,
+              r'Forecaster',
+              'createdAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -319,7 +341,10 @@ class ForecasterBuilder implements Builder<Forecaster, ForecasterBuilder> {
         _trackRecord?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Forecaster', _$failedField, e.toString());
+          r'Forecaster',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -18,8 +18,10 @@ part 'ogc_coverage_collection_extent_temporal.g.dart';
 @BuiltValue()
 abstract class OgcCoverageCollectionExtentTemporal
     implements
-        Built<OgcCoverageCollectionExtentTemporal,
-            OgcCoverageCollectionExtentTemporalBuilder> {
+        Built<
+          OgcCoverageCollectionExtentTemporal,
+          OgcCoverageCollectionExtentTemporalBuilder
+        > {
   @BuiltValueField(wireName: r'interval')
   BuiltList<BuiltList<DateTime?>>? get interval;
 
@@ -32,9 +34,9 @@ abstract class OgcCoverageCollectionExtentTemporal
 
   OgcCoverageCollectionExtentTemporal._();
 
-  factory OgcCoverageCollectionExtentTemporal(
-          [void updates(OgcCoverageCollectionExtentTemporalBuilder b)]) =
-      _$OgcCoverageCollectionExtentTemporal;
+  factory OgcCoverageCollectionExtentTemporal([
+    void updates(OgcCoverageCollectionExtentTemporalBuilder b),
+  ]) = _$OgcCoverageCollectionExtentTemporal;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCoverageCollectionExtentTemporalBuilder b) => b;
@@ -49,7 +51,7 @@ class _$OgcCoverageCollectionExtentTemporalSerializer
   @override
   final Iterable<Type> types = const [
     OgcCoverageCollectionExtentTemporal,
-    _$OgcCoverageCollectionExtentTemporal
+    _$OgcCoverageCollectionExtentTemporal,
   ];
 
   @override
@@ -65,7 +67,7 @@ class _$OgcCoverageCollectionExtentTemporalSerializer
       yield serializers.serialize(
         object.interval,
         specifiedType: const FullType(BuiltList, [
-          FullType(BuiltList, [FullType.nullable(DateTime)])
+          FullType(BuiltList, [FullType.nullable(DateTime)]),
         ]),
       );
     }
@@ -91,9 +93,11 @@ class _$OgcCoverageCollectionExtentTemporalSerializer
     OgcCoverageCollectionExtentTemporal object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,29 +113,36 @@ class _$OgcCoverageCollectionExtentTemporalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(BuiltList, [FullType.nullable(DateTime)])
-            ]),
-          ) as BuiltList<BuiltList<DateTime?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltList, [FullType.nullable(DateTime)]),
+                    ]),
+                  )
+                  as BuiltList<BuiltList<DateTime?>>?;
           if (valueDes == null) continue;
           result.interval.replace(valueDes);
           break;
         case r'values':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.values.replace(valueDes);
           break;
         case r'trs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.trs = valueDes;
           break;

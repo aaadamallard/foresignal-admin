@@ -20,8 +20,9 @@ abstract class TuningSuggestionApply
 
   TuningSuggestionApply._();
 
-  factory TuningSuggestionApply(
-      [void updates(TuningSuggestionApplyBuilder b)]) = _$TuningSuggestionApply;
+  factory TuningSuggestionApply([
+    void updates(TuningSuggestionApplyBuilder b),
+  ]) = _$TuningSuggestionApply;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TuningSuggestionApplyBuilder b) => b;
@@ -36,7 +37,7 @@ class _$TuningSuggestionApplySerializer
   @override
   final Iterable<Type> types = const [
     TuningSuggestionApply,
-    _$TuningSuggestionApply
+    _$TuningSuggestionApply,
   ];
 
   @override
@@ -62,9 +63,11 @@ class _$TuningSuggestionApplySerializer
     TuningSuggestionApply object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -80,10 +83,12 @@ class _$TuningSuggestionApplySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;

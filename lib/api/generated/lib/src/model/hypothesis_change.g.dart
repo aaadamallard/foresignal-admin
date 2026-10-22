@@ -16,16 +16,16 @@ class _$HypothesisChange extends HypothesisChange {
   @override
   final String? sinceRevisionId;
 
-  factory _$HypothesisChange(
-          [void Function(HypothesisChangeBuilder)? updates]) =>
-      (HypothesisChangeBuilder()..update(updates))._build();
+  factory _$HypothesisChange([
+    void Function(HypothesisChangeBuilder)? updates,
+  ]) => (HypothesisChangeBuilder()..update(updates))._build();
 
-  _$HypothesisChange._(
-      {required this.previousProbability,
-      this.previousTerm,
-      required this.delta,
-      this.sinceRevisionId})
-      : super._();
+  _$HypothesisChange._({
+    required this.previousProbability,
+    this.previousTerm,
+    required this.delta,
+    this.sinceRevisionId,
+  }) : super._();
   @override
   HypothesisChange rebuild(void Function(HypothesisChangeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -119,13 +119,20 @@ class HypothesisChangeBuilder
   HypothesisChange build() => _build();
 
   _$HypothesisChange _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisChange._(
           previousProbability: BuiltValueNullFieldError.checkNotNull(
-              previousProbability, r'HypothesisChange', 'previousProbability'),
+            previousProbability,
+            r'HypothesisChange',
+            'previousProbability',
+          ),
           previousTerm: previousTerm,
           delta: BuiltValueNullFieldError.checkNotNull(
-              delta, r'HypothesisChange', 'delta'),
+            delta,
+            r'HypothesisChange',
+            'delta',
+          ),
           sinceRevisionId: sinceRevisionId,
         );
     replace(_$result);

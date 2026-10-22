@@ -18,8 +18,10 @@ part 'received_package_contents_inner.g.dart';
 @BuiltValue()
 abstract class ReceivedPackageContentsInner
     implements
-        Built<ReceivedPackageContentsInner,
-            ReceivedPackageContentsInnerBuilder> {
+        Built<
+          ReceivedPackageContentsInner,
+          ReceivedPackageContentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'path')
   String get path;
 
@@ -34,9 +36,9 @@ abstract class ReceivedPackageContentsInner
 
   ReceivedPackageContentsInner._();
 
-  factory ReceivedPackageContentsInner(
-          [void updates(ReceivedPackageContentsInnerBuilder b)]) =
-      _$ReceivedPackageContentsInner;
+  factory ReceivedPackageContentsInner([
+    void updates(ReceivedPackageContentsInnerBuilder b),
+  ]) = _$ReceivedPackageContentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ReceivedPackageContentsInnerBuilder b) => b;
@@ -51,7 +53,7 @@ class _$ReceivedPackageContentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ReceivedPackageContentsInner,
-    _$ReceivedPackageContentsInner
+    _$ReceivedPackageContentsInner,
   ];
 
   @override
@@ -94,9 +96,11 @@ class _$ReceivedPackageContentsInnerSerializer
     ReceivedPackageContentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +116,40 @@ class _$ReceivedPackageContentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sha256 = valueDes;
           break;
         case r'size':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.size = valueDes;
           break;
         case r'mediaId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mediaId = valueDes;
           break;

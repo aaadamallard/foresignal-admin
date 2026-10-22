@@ -32,11 +32,11 @@ ProvenanceLicenceBasisEnum _$provenanceLicenceBasisEnumValueOf(String name) {
 
 final BuiltSet<ProvenanceLicenceBasisEnum> _$provenanceLicenceBasisEnumValues =
     BuiltSet<ProvenanceLicenceBasisEnum>(const <ProvenanceLicenceBasisEnum>[
-  _$provenanceLicenceBasisEnum_batch,
-  _$provenanceLicenceBasisEnum_descriptor,
-  _$provenanceLicenceBasisEnum_mlatOverride,
-  _$provenanceLicenceBasisEnum_peerOrigin,
-]);
+      _$provenanceLicenceBasisEnum_batch,
+      _$provenanceLicenceBasisEnum_descriptor,
+      _$provenanceLicenceBasisEnum_mlatOverride,
+      _$provenanceLicenceBasisEnum_peerOrigin,
+    ]);
 
 const ProvenanceReliabilityEnum _$provenanceReliabilityEnum_A =
     const ProvenanceReliabilityEnum._('A');
@@ -72,13 +72,13 @@ ProvenanceReliabilityEnum _$provenanceReliabilityEnumValueOf(String name) {
 
 final BuiltSet<ProvenanceReliabilityEnum> _$provenanceReliabilityEnumValues =
     BuiltSet<ProvenanceReliabilityEnum>(const <ProvenanceReliabilityEnum>[
-  _$provenanceReliabilityEnum_A,
-  _$provenanceReliabilityEnum_B,
-  _$provenanceReliabilityEnum_C,
-  _$provenanceReliabilityEnum_D,
-  _$provenanceReliabilityEnum_E,
-  _$provenanceReliabilityEnum_F,
-]);
+      _$provenanceReliabilityEnum_A,
+      _$provenanceReliabilityEnum_B,
+      _$provenanceReliabilityEnum_C,
+      _$provenanceReliabilityEnum_D,
+      _$provenanceReliabilityEnum_E,
+      _$provenanceReliabilityEnum_F,
+    ]);
 
 Serializer<ProvenanceLicenceBasisEnum> _$provenanceLicenceBasisEnumSerializer =
     _$ProvenanceLicenceBasisEnumSerializer();
@@ -106,16 +106,20 @@ class _$ProvenanceLicenceBasisEnumSerializer
   final String wireName = 'ProvenanceLicenceBasisEnum';
 
   @override
-  Object serialize(Serializers serializers, ProvenanceLicenceBasisEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProvenanceLicenceBasisEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProvenanceLicenceBasisEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProvenanceLicenceBasisEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProvenanceLicenceBasisEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProvenanceReliabilityEnumSerializer
@@ -143,16 +147,20 @@ class _$ProvenanceReliabilityEnumSerializer
   final String wireName = 'ProvenanceReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers, ProvenanceReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProvenanceReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProvenanceReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProvenanceReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProvenanceReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Provenance extends Provenance {
@@ -186,21 +194,21 @@ class _$Provenance extends Provenance {
   factory _$Provenance([void Function(ProvenanceBuilder)? updates]) =>
       (ProvenanceBuilder()..update(updates))._build();
 
-  _$Provenance._(
-      {this.sourceIds,
-      this.manifestId,
-      this.asOfSeq,
-      this.licence,
-      this.licenceBasis,
-      this.fetchId,
-      this.adapterVersion,
-      this.principal,
-      this.reliability,
-      this.credibility,
-      this.grade,
-      this.origin,
-      this.chain})
-      : super._();
+  _$Provenance._({
+    this.sourceIds,
+    this.manifestId,
+    this.asOfSeq,
+    this.licence,
+    this.licenceBasis,
+    this.fetchId,
+    this.adapterVersion,
+    this.principal,
+    this.reliability,
+    this.credibility,
+    this.grade,
+    this.origin,
+    this.chain,
+  }) : super._();
   @override
   Provenance rebuild(void Function(ProvenanceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -369,7 +377,8 @@ class ProvenanceBuilder implements Builder<Provenance, ProvenanceBuilder> {
   _$Provenance _build() {
     _$Provenance _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Provenance._(
             sourceIds: _sourceIds?.build(),
             manifestId: manifestId,
@@ -400,7 +409,10 @@ class ProvenanceBuilder implements Builder<Provenance, ProvenanceBuilder> {
         _chain?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Provenance', _$failedField, e.toString());
+          r'Provenance',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -25,8 +25,10 @@ part 'analyst_evaluation_profiles_inner.g.dart';
 @BuiltValue()
 abstract class AnalystEvaluationProfilesInner
     implements
-        Built<AnalystEvaluationProfilesInner,
-            AnalystEvaluationProfilesInnerBuilder> {
+        Built<
+          AnalystEvaluationProfilesInner,
+          AnalystEvaluationProfilesInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'profileId')
   String get profileId;
@@ -58,9 +60,9 @@ abstract class AnalystEvaluationProfilesInner
 
   AnalystEvaluationProfilesInner._();
 
-  factory AnalystEvaluationProfilesInner(
-          [void updates(AnalystEvaluationProfilesInnerBuilder b)]) =
-      _$AnalystEvaluationProfilesInner;
+  factory AnalystEvaluationProfilesInner([
+    void updates(AnalystEvaluationProfilesInnerBuilder b),
+  ]) = _$AnalystEvaluationProfilesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalystEvaluationProfilesInnerBuilder b) => b;
@@ -75,7 +77,7 @@ class _$AnalystEvaluationProfilesInnerSerializer
   @override
   final Iterable<Type> types = const [
     AnalystEvaluationProfilesInner,
-    _$AnalystEvaluationProfilesInner
+    _$AnalystEvaluationProfilesInner,
   ];
 
   @override
@@ -94,8 +96,10 @@ class _$AnalystEvaluationProfilesInnerSerializer
     yield r'runsByStatus';
     yield serializers.serialize(
       object.runsByStatus,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(int)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(int),
+      ]),
     );
     if (object.noopShare != null) {
       yield r'noopShare';
@@ -108,8 +112,9 @@ class _$AnalystEvaluationProfilesInnerSerializer
       yield r'tokensPerDay';
       yield serializers.serialize(
         object.tokensPerDay,
-        specifiedType: const FullType(BuiltList,
-            [FullType(AnalystEvaluationProfilesInnerTokensPerDayInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AnalystEvaluationProfilesInnerTokensPerDayInner),
+        ]),
       );
     }
     if (object.proposalAcceptanceRate != null) {
@@ -155,9 +160,11 @@ class _$AnalystEvaluationProfilesInnerSerializer
     AnalystEvaluationProfilesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -173,74 +180,97 @@ class _$AnalystEvaluationProfilesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'profileId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.profileId = valueDes;
           break;
         case r'runsByStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>;
           result.runsByStatus.replace(valueDes);
           break;
         case r'noopShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.noopShare = valueDes;
           break;
         case r'tokensPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(AnalystEvaluationProfilesInnerTokensPerDayInner)]),
-          ) as BuiltList<AnalystEvaluationProfilesInnerTokensPerDayInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AnalystEvaluationProfilesInnerTokensPerDayInner),
+                    ]),
+                  )
+                  as BuiltList<
+                    AnalystEvaluationProfilesInnerTokensPerDayInner
+                  >?;
           if (valueDes == null) continue;
           result.tokensPerDay.replace(valueDes);
           break;
         case r'proposalAcceptanceRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.proposalAcceptanceRate = valueDes;
           break;
         case r'notesDismissedShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.notesDismissedShare = valueDes;
           break;
         case r'usefulRatio':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.usefulRatio = valueDes;
           break;
         case r'wrongRatio':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.wrongRatio = valueDes;
           break;
         case r'citationsDroppedPerRun':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.citationsDroppedPerRun = valueDes;
           break;

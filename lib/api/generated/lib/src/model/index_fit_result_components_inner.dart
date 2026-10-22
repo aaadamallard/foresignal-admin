@@ -21,8 +21,10 @@ part 'index_fit_result_components_inner.g.dart';
 @BuiltValue()
 abstract class IndexFitResultComponentsInner
     implements
-        Built<IndexFitResultComponentsInner,
-            IndexFitResultComponentsInnerBuilder> {
+        Built<
+          IndexFitResultComponentsInner,
+          IndexFitResultComponentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'key')
   String get key;
 
@@ -46,9 +48,9 @@ abstract class IndexFitResultComponentsInner
 
   IndexFitResultComponentsInner._();
 
-  factory IndexFitResultComponentsInner(
-          [void updates(IndexFitResultComponentsInnerBuilder b)]) =
-      _$IndexFitResultComponentsInner;
+  factory IndexFitResultComponentsInner([
+    void updates(IndexFitResultComponentsInnerBuilder b),
+  ]) = _$IndexFitResultComponentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IndexFitResultComponentsInnerBuilder b) => b;
@@ -63,7 +65,7 @@ class _$IndexFitResultComponentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     IndexFitResultComponentsInner,
-    _$IndexFitResultComponentsInner
+    _$IndexFitResultComponentsInner,
   ];
 
   @override
@@ -125,9 +127,11 @@ class _$IndexFitResultComponentsInnerSerializer
     IndexFitResultComponentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -143,56 +147,64 @@ class _$IndexFitResultComponentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.key = valueDes;
           break;
         case r'coefficient':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.coefficient = valueDes;
           break;
         case r'standardError':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.standardError = valueDes;
           break;
         case r'pValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pValue = valueDes;
           break;
         case r'significant':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.significant = valueDes;
           break;
         case r'currentWeight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.currentWeight = valueDes;
           break;
         case r'proposedWeight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.proposedWeight = valueDes;
           break;
         default:

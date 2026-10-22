@@ -13,15 +13,15 @@ class _$EdpItemRejectionSchemaErrorsInner
   @override
   final String? message;
 
-  factory _$EdpItemRejectionSchemaErrorsInner(
-          [void Function(EdpItemRejectionSchemaErrorsInnerBuilder)? updates]) =>
-      (EdpItemRejectionSchemaErrorsInnerBuilder()..update(updates))._build();
+  factory _$EdpItemRejectionSchemaErrorsInner([
+    void Function(EdpItemRejectionSchemaErrorsInnerBuilder)? updates,
+  ]) => (EdpItemRejectionSchemaErrorsInnerBuilder()..update(updates))._build();
 
   _$EdpItemRejectionSchemaErrorsInner._({this.path, this.message}) : super._();
   @override
   EdpItemRejectionSchemaErrorsInner rebuild(
-          void Function(EdpItemRejectionSchemaErrorsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpItemRejectionSchemaErrorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpItemRejectionSchemaErrorsInnerBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$EdpItemRejectionSchemaErrorsInner
 
 class EdpItemRejectionSchemaErrorsInnerBuilder
     implements
-        Builder<EdpItemRejectionSchemaErrorsInner,
-            EdpItemRejectionSchemaErrorsInnerBuilder> {
+        Builder<
+          EdpItemRejectionSchemaErrorsInner,
+          EdpItemRejectionSchemaErrorsInnerBuilder
+        > {
   _$EdpItemRejectionSchemaErrorsInner? _$v;
 
   String? _path;
@@ -88,7 +90,8 @@ class EdpItemRejectionSchemaErrorsInnerBuilder
 
   @override
   void update(
-      void Function(EdpItemRejectionSchemaErrorsInnerBuilder)? updates) {
+    void Function(EdpItemRejectionSchemaErrorsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -96,11 +99,9 @@ class EdpItemRejectionSchemaErrorsInnerBuilder
   EdpItemRejectionSchemaErrorsInner build() => _build();
 
   _$EdpItemRejectionSchemaErrorsInner _build() {
-    final _$result = _$v ??
-        _$EdpItemRejectionSchemaErrorsInner._(
-          path: path,
-          message: message,
-        );
+    final _$result =
+        _$v ??
+        _$EdpItemRejectionSchemaErrorsInner._(path: path, message: message);
     replace(_$result);
     return _$result;
   }

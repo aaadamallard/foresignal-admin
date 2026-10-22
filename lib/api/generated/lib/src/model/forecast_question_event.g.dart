@@ -7,20 +7,21 @@ part of 'forecast_question_event.dart';
 // **************************************************************************
 
 const ForecastQuestionEventEventEnum
-    _$forecastQuestionEventEventEnum_questionPeriodOpened =
+_$forecastQuestionEventEventEnum_questionPeriodOpened =
     const ForecastQuestionEventEventEnum._('questionPeriodOpened');
 const ForecastQuestionEventEventEnum
-    _$forecastQuestionEventEventEnum_questionPeriodClosed =
+_$forecastQuestionEventEventEnum_questionPeriodClosed =
     const ForecastQuestionEventEventEnum._('questionPeriodClosed');
 const ForecastQuestionEventEventEnum
-    _$forecastQuestionEventEventEnum_questionPeriodResolved =
+_$forecastQuestionEventEventEnum_questionPeriodResolved =
     const ForecastQuestionEventEventEnum._('questionPeriodResolved');
 const ForecastQuestionEventEventEnum
-    _$forecastQuestionEventEventEnum_questionPeriodAnnulled =
+_$forecastQuestionEventEventEnum_questionPeriodAnnulled =
     const ForecastQuestionEventEventEnum._('questionPeriodAnnulled');
 
 ForecastQuestionEventEventEnum _$forecastQuestionEventEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'questionPeriodOpened':
       return _$forecastQuestionEventEventEnum_questionPeriodOpened;
@@ -36,16 +37,18 @@ ForecastQuestionEventEventEnum _$forecastQuestionEventEventEnumValueOf(
 }
 
 final BuiltSet<ForecastQuestionEventEventEnum>
-    _$forecastQuestionEventEventEnumValues = BuiltSet<
-        ForecastQuestionEventEventEnum>(const <ForecastQuestionEventEventEnum>[
-  _$forecastQuestionEventEventEnum_questionPeriodOpened,
-  _$forecastQuestionEventEventEnum_questionPeriodClosed,
-  _$forecastQuestionEventEventEnum_questionPeriodResolved,
-  _$forecastQuestionEventEventEnum_questionPeriodAnnulled,
-]);
+_$forecastQuestionEventEventEnumValues =
+    BuiltSet<ForecastQuestionEventEventEnum>(
+      const <ForecastQuestionEventEventEnum>[
+        _$forecastQuestionEventEventEnum_questionPeriodOpened,
+        _$forecastQuestionEventEventEnum_questionPeriodClosed,
+        _$forecastQuestionEventEventEnum_questionPeriodResolved,
+        _$forecastQuestionEventEventEnum_questionPeriodAnnulled,
+      ],
+    );
 
 Serializer<ForecastQuestionEventEventEnum>
-    _$forecastQuestionEventEventEnumSerializer =
+_$forecastQuestionEventEventEnumSerializer =
     _$ForecastQuestionEventEventEnumSerializer();
 
 class _$ForecastQuestionEventEventEnumSerializer
@@ -70,16 +73,19 @@ class _$ForecastQuestionEventEventEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecastQuestionEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastQuestionEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastQuestionEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastQuestionEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastQuestionEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastQuestionEvent extends ForecastQuestionEvent {
@@ -90,17 +96,19 @@ class _$ForecastQuestionEvent extends ForecastQuestionEvent {
   @override
   final DateTime at;
 
-  factory _$ForecastQuestionEvent(
-          [void Function(ForecastQuestionEventBuilder)? updates]) =>
-      (ForecastQuestionEventBuilder()..update(updates))._build();
+  factory _$ForecastQuestionEvent([
+    void Function(ForecastQuestionEventBuilder)? updates,
+  ]) => (ForecastQuestionEventBuilder()..update(updates))._build();
 
-  _$ForecastQuestionEvent._(
-      {required this.event, required this.question, required this.at})
-      : super._();
+  _$ForecastQuestionEvent._({
+    required this.event,
+    required this.question,
+    required this.at,
+  }) : super._();
   @override
   ForecastQuestionEvent rebuild(
-          void Function(ForecastQuestionEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastQuestionEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastQuestionEventBuilder toBuilder() =>
@@ -184,13 +192,20 @@ class ForecastQuestionEventBuilder
   _$ForecastQuestionEvent _build() {
     _$ForecastQuestionEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastQuestionEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'ForecastQuestionEvent', 'event'),
+              event,
+              r'ForecastQuestionEvent',
+              'event',
+            ),
             question: question.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ForecastQuestionEvent', 'at'),
+              at,
+              r'ForecastQuestionEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -199,7 +214,10 @@ class ForecastQuestionEventBuilder
         question.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastQuestionEvent', _$failedField, e.toString());
+          r'ForecastQuestionEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

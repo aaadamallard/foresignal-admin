@@ -40,9 +40,9 @@ abstract class AssessmentSectionsInner
 
   AssessmentSectionsInner._();
 
-  factory AssessmentSectionsInner(
-          [void updates(AssessmentSectionsInnerBuilder b)]) =
-      _$AssessmentSectionsInner;
+  factory AssessmentSectionsInner([
+    void updates(AssessmentSectionsInnerBuilder b),
+  ]) = _$AssessmentSectionsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AssessmentSectionsInnerBuilder b) => b;
@@ -57,7 +57,7 @@ class _$AssessmentSectionsInnerSerializer
   @override
   final Iterable<Type> types = const [
     AssessmentSectionsInner,
-    _$AssessmentSectionsInner
+    _$AssessmentSectionsInner,
   ];
 
   @override
@@ -103,9 +103,11 @@ class _$AssessmentSectionsInnerSerializer
     AssessmentSectionsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,39 +123,52 @@ class _$AssessmentSectionsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AssessmentSectionsInnerKeyEnum),
-          ) as AssessmentSectionsInnerKeyEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AssessmentSectionsInnerKeyEnum,
+                    ),
+                  )
+                  as AssessmentSectionsInnerKeyEnum;
           result.key = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'markdown':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.markdown = valueDes;
           break;
         case r'textOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(AssessmentSectionsInnerTextOriginEnum),
-          ) as AssessmentSectionsInnerTextOriginEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AssessmentSectionsInnerTextOriginEnum,
+                    ),
+                  )
+                  as AssessmentSectionsInnerTextOriginEnum;
           result.textOrigin = valueDes;
           break;
         case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.data = valueDes;
           break;

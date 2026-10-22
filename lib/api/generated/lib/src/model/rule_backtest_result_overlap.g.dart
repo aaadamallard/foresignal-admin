@@ -14,16 +14,16 @@ class _$RuleBacktestResultOverlap extends RuleBacktestResultOverlap {
   @override
   final int? onlyActual;
 
-  factory _$RuleBacktestResultOverlap(
-          [void Function(RuleBacktestResultOverlapBuilder)? updates]) =>
-      (RuleBacktestResultOverlapBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultOverlap([
+    void Function(RuleBacktestResultOverlapBuilder)? updates,
+  ]) => (RuleBacktestResultOverlapBuilder()..update(updates))._build();
 
   _$RuleBacktestResultOverlap._({this.both, this.onlyBacktest, this.onlyActual})
-      : super._();
+    : super._();
   @override
   RuleBacktestResultOverlap rebuild(
-          void Function(RuleBacktestResultOverlapBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultOverlapBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultOverlapBuilder toBuilder() =>
@@ -104,7 +104,8 @@ class RuleBacktestResultOverlapBuilder
   RuleBacktestResultOverlap build() => _build();
 
   _$RuleBacktestResultOverlap _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RuleBacktestResultOverlap._(
           both: both,
           onlyBacktest: onlyBacktest,

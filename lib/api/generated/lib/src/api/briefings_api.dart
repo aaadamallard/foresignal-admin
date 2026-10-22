@@ -50,16 +50,10 @@ class BriefingsApi {
     final _path = r'/v1/briefings';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -74,10 +68,7 @@ class BriefingsApi {
       _bodyData = _serializers.serialize(briefingInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -100,9 +91,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Briefing),
-            ) as Briefing;
+                  rawResponse,
+                  specifiedType: const FullType(Briefing),
+                )
+                as Briefing;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -149,21 +141,21 @@ class BriefingsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -205,21 +197,21 @@ class BriefingsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -241,9 +233,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Briefing),
-            ) as Briefing;
+                  rawResponse,
+                  specifiedType: const FullType(Briefing),
+                )
+                as Briefing;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -290,21 +283,21 @@ class BriefingsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}/podcast.rss'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -377,14 +370,25 @@ class BriefingsApi {
   }) async {
     final _path = r'/v1/briefings/{briefingId}/runs/{runId}'
         .replaceAll(
-            '{' r'briefingId' '}',
-            encodeQueryParameter(
-                    _serializers, briefingId, const FullType(String))
-                .toString())
+          '{'
+          r'briefingId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            briefingId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'runId' '}',
-            encodeQueryParameter(_serializers, runId, const FullType(String))
-                .toString());
+          '{'
+          r'runId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            runId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -393,11 +397,7 @@ class BriefingsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -406,8 +406,11 @@ class BriefingsApi {
 
     final _queryParameters = <String, dynamic>{
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -426,9 +429,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BriefingRun),
-            ) as BriefingRun;
+                  rawResponse,
+                  specifiedType: const FullType(BriefingRun),
+                )
+                as BriefingRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -499,11 +503,7 @@ class BriefingsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -512,11 +512,17 @@ class BriefingsApi {
 
     final _queryParameters = <String, dynamic>{
       if (sinceSeq != null)
-        r'sinceSeq':
-            encodeQueryParameter(_serializers, sinceSeq, const FullType(int)),
+        r'sinceSeq': encodeQueryParameter(
+          _serializers,
+          sinceSeq,
+          const FullType(int),
+        ),
       if (sinceAlertId != null)
         r'sinceAlertId': encodeQueryParameter(
-            _serializers, sinceAlertId, const FullType(int)),
+          _serializers,
+          sinceAlertId,
+          const FullType(int),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -532,14 +538,23 @@ class BriefingsApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (includeHealth != null)
         r'includeHealth': encodeQueryParameter(
-            _serializers, includeHealth, const FullType(bool)),
+          _serializers,
+          includeHealth,
+          const FullType(bool),
+        ),
       if (places != null)
         r'places': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -565,9 +580,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Digest),
-            ) as Digest;
+                  rawResponse,
+                  specifiedType: const FullType(Digest),
+                )
+                as Digest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -618,9 +634,15 @@ class BriefingsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}/runs/latest'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -629,11 +651,7 @@ class BriefingsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -642,8 +660,11 @@ class BriefingsApi {
 
     final _queryParameters = <String, dynamic>{
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -662,9 +683,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BriefingRun),
-            ) as BriefingRun;
+                  rawResponse,
+                  specifiedType: const FullType(BriefingRun),
+                )
+                as BriefingRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -715,21 +737,21 @@ class BriefingsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}/runs'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -738,11 +760,17 @@ class BriefingsApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -761,9 +789,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BriefingRunPage),
-            ) as BriefingRunPage;
+                  rawResponse,
+                  specifiedType: const FullType(BriefingRunPage),
+                )
+                as BriefingRunPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -810,16 +839,10 @@ class BriefingsApi {
     final _path = r'/v1/briefings';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -841,9 +864,12 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Briefing)]),
-            ) as BuiltList<Briefing>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(Briefing),
+                  ]),
+                )
+                as BuiltList<Briefing>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -892,16 +918,10 @@ class BriefingsApi {
     final _path = r'/v1/briefings/preview';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -916,10 +936,7 @@ class BriefingsApi {
       _bodyData = _serializers.serialize(briefingInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -942,9 +959,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BriefingRun),
-            ) as BriefingRun;
+                  rawResponse,
+                  specifiedType: const FullType(BriefingRun),
+                )
+                as BriefingRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -991,21 +1009,21 @@ class BriefingsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}/run'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1027,9 +1045,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BriefingRun),
-            ) as BriefingRun;
+                  rawResponse,
+                  specifiedType: const FullType(BriefingRun),
+                )
+                as BriefingRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1078,21 +1097,21 @@ class BriefingsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/briefings/{briefingId}'.replaceAll(
-        '{' r'briefingId' '}',
-        encodeQueryParameter(_serializers, briefingId, const FullType(String))
-            .toString());
+      '{'
+      r'briefingId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        briefingId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1107,10 +1126,7 @@ class BriefingsApi {
       _bodyData = _serializers.serialize(briefingInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1133,9 +1149,10 @@ class BriefingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Briefing),
-            ) as Briefing;
+                  rawResponse,
+                  specifiedType: const FullType(Briefing),
+                )
+                as Briefing;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

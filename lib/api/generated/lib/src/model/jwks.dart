@@ -55,9 +55,11 @@ class _$JwksSerializer implements PrimitiveSerializer<Jwks> {
     Jwks object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -73,10 +75,12 @@ class _$JwksSerializer implements PrimitiveSerializer<Jwks> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'keys':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Jwk)]),
-          ) as BuiltList<Jwk>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(Jwk)]),
+                  )
+                  as BuiltList<Jwk>;
           result.keys.replace(valueDes);
           break;
         default:

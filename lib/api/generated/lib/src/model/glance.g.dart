@@ -7,10 +7,12 @@ part of 'glance.dart';
 // **************************************************************************
 
 const GlanceStatusEnum _$glanceStatusEnum_ok = const GlanceStatusEnum._('ok');
-const GlanceStatusEnum _$glanceStatusEnum_degraded =
-    const GlanceStatusEnum._('degraded');
-const GlanceStatusEnum _$glanceStatusEnum_failing =
-    const GlanceStatusEnum._('failing');
+const GlanceStatusEnum _$glanceStatusEnum_degraded = const GlanceStatusEnum._(
+  'degraded',
+);
+const GlanceStatusEnum _$glanceStatusEnum_failing = const GlanceStatusEnum._(
+  'failing',
+);
 
 GlanceStatusEnum _$glanceStatusEnumValueOf(String name) {
   switch (name) {
@@ -27,10 +29,10 @@ GlanceStatusEnum _$glanceStatusEnumValueOf(String name) {
 
 final BuiltSet<GlanceStatusEnum> _$glanceStatusEnumValues =
     BuiltSet<GlanceStatusEnum>(const <GlanceStatusEnum>[
-  _$glanceStatusEnum_ok,
-  _$glanceStatusEnum_degraded,
-  _$glanceStatusEnum_failing,
-]);
+      _$glanceStatusEnum_ok,
+      _$glanceStatusEnum_degraded,
+      _$glanceStatusEnum_failing,
+    ]);
 
 Serializer<GlanceStatusEnum> _$glanceStatusEnumSerializer =
     _$GlanceStatusEnumSerializer();
@@ -54,15 +56,20 @@ class _$GlanceStatusEnumSerializer
   final String wireName = 'GlanceStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, GlanceStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GlanceStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  GlanceStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GlanceStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  GlanceStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GlanceStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Glance extends Glance {
@@ -88,17 +95,17 @@ class _$Glance extends Glance {
   factory _$Glance([void Function(GlanceBuilder)? updates]) =>
       (GlanceBuilder()..update(updates))._build();
 
-  _$Glance._(
-      {required this.serverTime,
-      required this.status,
-      this.alerts,
-      this.sources,
-      this.briefing,
-      this.activity,
-      required this.lastSeq,
-      this.links,
-      this.sections})
-      : super._();
+  _$Glance._({
+    required this.serverTime,
+    required this.status,
+    this.alerts,
+    this.sources,
+    this.briefing,
+    this.activity,
+    required this.lastSeq,
+    this.links,
+    this.sections,
+  }) : super._();
   @override
   Glance rebuild(void Function(GlanceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -235,18 +242,28 @@ class GlanceBuilder implements Builder<Glance, GlanceBuilder> {
   _$Glance _build() {
     _$Glance _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Glance._(
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'Glance', 'serverTime'),
+              serverTime,
+              r'Glance',
+              'serverTime',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Glance', 'status'),
+              status,
+              r'Glance',
+              'status',
+            ),
             alerts: _alerts?.build(),
             sources: _sources?.build(),
             briefing: _briefing?.build(),
             activity: _activity?.build(),
             lastSeq: BuiltValueNullFieldError.checkNotNull(
-                lastSeq, r'Glance', 'lastSeq'),
+              lastSeq,
+              r'Glance',
+              'lastSeq',
+            ),
             links: _links?.build(),
             sections: _sections?.build(),
           );
@@ -268,7 +285,10 @@ class GlanceBuilder implements Builder<Glance, GlanceBuilder> {
         _sections?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Glance', _$failedField, e.toString());
+          r'Glance',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

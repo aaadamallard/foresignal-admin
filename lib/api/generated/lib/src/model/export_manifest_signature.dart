@@ -31,9 +31,9 @@ abstract class ExportManifestSignature
 
   ExportManifestSignature._();
 
-  factory ExportManifestSignature(
-          [void updates(ExportManifestSignatureBuilder b)]) =
-      _$ExportManifestSignature;
+  factory ExportManifestSignature([
+    void updates(ExportManifestSignatureBuilder b),
+  ]) = _$ExportManifestSignature;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExportManifestSignatureBuilder b) => b;
@@ -48,7 +48,7 @@ class _$ExportManifestSignatureSerializer
   @override
   final Iterable<Type> types = const [
     ExportManifestSignature,
-    _$ExportManifestSignature
+    _$ExportManifestSignature,
   ];
 
   @override
@@ -82,9 +82,11 @@ class _$ExportManifestSignatureSerializer
     ExportManifestSignature object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,24 +102,32 @@ class _$ExportManifestSignatureSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'alg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExportManifestSignatureAlgEnum),
-          ) as ExportManifestSignatureAlgEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ExportManifestSignatureAlgEnum,
+                    ),
+                  )
+                  as ExportManifestSignatureAlgEnum;
           result.alg = valueDes;
           break;
         case r'kid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.kid = valueDes;
           break;
         case r'file':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.file = valueDes;
           break;
         default:

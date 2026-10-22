@@ -6,42 +6,57 @@ part of 'relation.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const RelationTypeEnum _$relationTypeEnum_memberOf =
-    const RelationTypeEnum._('memberOf');
-const RelationTypeEnum _$relationTypeEnum_observedBy =
-    const RelationTypeEnum._('observedBy');
-const RelationTypeEnum _$relationTypeEnum_sameAs =
-    const RelationTypeEnum._('sameAs');
-const RelationTypeEnum _$relationTypeEnum_locatedIn =
-    const RelationTypeEnum._('locatedIn');
-const RelationTypeEnum _$relationTypeEnum_near =
-    const RelationTypeEnum._('near');
-const RelationTypeEnum _$relationTypeEnum_dependsOn =
-    const RelationTypeEnum._('dependsOn');
-const RelationTypeEnum _$relationTypeEnum_affects =
-    const RelationTypeEnum._('affects');
+const RelationTypeEnum _$relationTypeEnum_memberOf = const RelationTypeEnum._(
+  'memberOf',
+);
+const RelationTypeEnum _$relationTypeEnum_observedBy = const RelationTypeEnum._(
+  'observedBy',
+);
+const RelationTypeEnum _$relationTypeEnum_sameAs = const RelationTypeEnum._(
+  'sameAs',
+);
+const RelationTypeEnum _$relationTypeEnum_locatedIn = const RelationTypeEnum._(
+  'locatedIn',
+);
+const RelationTypeEnum _$relationTypeEnum_near = const RelationTypeEnum._(
+  'near',
+);
+const RelationTypeEnum _$relationTypeEnum_dependsOn = const RelationTypeEnum._(
+  'dependsOn',
+);
+const RelationTypeEnum _$relationTypeEnum_affects = const RelationTypeEnum._(
+  'affects',
+);
 const RelationTypeEnum _$relationTypeEnum_derivedFrom =
     const RelationTypeEnum._('derivedFrom');
 const RelationTypeEnum _$relationTypeEnum_evidenceFor =
     const RelationTypeEnum._('evidenceFor');
 const RelationTypeEnum _$relationTypeEnum_evidenceAgainst =
     const RelationTypeEnum._('evidenceAgainst');
-const RelationTypeEnum _$relationTypeEnum_about =
-    const RelationTypeEnum._('about');
-const RelationTypeEnum _$relationTypeEnum_mentions =
-    const RelationTypeEnum._('mentions');
-const RelationTypeEnum _$relationTypeEnum_precedes =
-    const RelationTypeEnum._('precedes');
-const RelationTypeEnum _$relationTypeEnum_causes =
-    const RelationTypeEnum._('causes');
-const RelationTypeEnum _$relationTypeEnum_relatedTo =
-    const RelationTypeEnum._('relatedTo');
-const RelationTypeEnum _$relationTypeEnum_owns =
-    const RelationTypeEnum._('owns');
-const RelationTypeEnum _$relationTypeEnum_controls =
-    const RelationTypeEnum._('controls');
-const RelationTypeEnum _$relationTypeEnum_officerOf =
-    const RelationTypeEnum._('officerOf');
+const RelationTypeEnum _$relationTypeEnum_about = const RelationTypeEnum._(
+  'about',
+);
+const RelationTypeEnum _$relationTypeEnum_mentions = const RelationTypeEnum._(
+  'mentions',
+);
+const RelationTypeEnum _$relationTypeEnum_precedes = const RelationTypeEnum._(
+  'precedes',
+);
+const RelationTypeEnum _$relationTypeEnum_causes = const RelationTypeEnum._(
+  'causes',
+);
+const RelationTypeEnum _$relationTypeEnum_relatedTo = const RelationTypeEnum._(
+  'relatedTo',
+);
+const RelationTypeEnum _$relationTypeEnum_owns = const RelationTypeEnum._(
+  'owns',
+);
+const RelationTypeEnum _$relationTypeEnum_controls = const RelationTypeEnum._(
+  'controls',
+);
+const RelationTypeEnum _$relationTypeEnum_officerOf = const RelationTypeEnum._(
+  'officerOf',
+);
 const RelationTypeEnum _$relationTypeEnum_beneficialOwner =
     const RelationTypeEnum._('beneficialOwner');
 const RelationTypeEnum _$relationTypeEnum_affiliatedWith =
@@ -96,32 +111,33 @@ RelationTypeEnum _$relationTypeEnumValueOf(String name) {
 
 final BuiltSet<RelationTypeEnum> _$relationTypeEnumValues =
     BuiltSet<RelationTypeEnum>(const <RelationTypeEnum>[
-  _$relationTypeEnum_memberOf,
-  _$relationTypeEnum_observedBy,
-  _$relationTypeEnum_sameAs,
-  _$relationTypeEnum_locatedIn,
-  _$relationTypeEnum_near,
-  _$relationTypeEnum_dependsOn,
-  _$relationTypeEnum_affects,
-  _$relationTypeEnum_derivedFrom,
-  _$relationTypeEnum_evidenceFor,
-  _$relationTypeEnum_evidenceAgainst,
-  _$relationTypeEnum_about,
-  _$relationTypeEnum_mentions,
-  _$relationTypeEnum_precedes,
-  _$relationTypeEnum_causes,
-  _$relationTypeEnum_relatedTo,
-  _$relationTypeEnum_owns,
-  _$relationTypeEnum_controls,
-  _$relationTypeEnum_officerOf,
-  _$relationTypeEnum_beneficialOwner,
-  _$relationTypeEnum_affiliatedWith,
-]);
+      _$relationTypeEnum_memberOf,
+      _$relationTypeEnum_observedBy,
+      _$relationTypeEnum_sameAs,
+      _$relationTypeEnum_locatedIn,
+      _$relationTypeEnum_near,
+      _$relationTypeEnum_dependsOn,
+      _$relationTypeEnum_affects,
+      _$relationTypeEnum_derivedFrom,
+      _$relationTypeEnum_evidenceFor,
+      _$relationTypeEnum_evidenceAgainst,
+      _$relationTypeEnum_about,
+      _$relationTypeEnum_mentions,
+      _$relationTypeEnum_precedes,
+      _$relationTypeEnum_causes,
+      _$relationTypeEnum_relatedTo,
+      _$relationTypeEnum_owns,
+      _$relationTypeEnum_controls,
+      _$relationTypeEnum_officerOf,
+      _$relationTypeEnum_beneficialOwner,
+      _$relationTypeEnum_affiliatedWith,
+    ]);
 
 const RelationLabelEnum _$relationLabelEnum_confirmed =
     const RelationLabelEnum._('confirmed');
-const RelationLabelEnum _$relationLabelEnum_likely =
-    const RelationLabelEnum._('likely');
+const RelationLabelEnum _$relationLabelEnum_likely = const RelationLabelEnum._(
+  'likely',
+);
 const RelationLabelEnum _$relationLabelEnum_possible =
     const RelationLabelEnum._('possible');
 const RelationLabelEnum _$relationLabelEnum_speculative =
@@ -144,11 +160,11 @@ RelationLabelEnum _$relationLabelEnumValueOf(String name) {
 
 final BuiltSet<RelationLabelEnum> _$relationLabelEnumValues =
     BuiltSet<RelationLabelEnum>(const <RelationLabelEnum>[
-  _$relationLabelEnum_confirmed,
-  _$relationLabelEnum_likely,
-  _$relationLabelEnum_possible,
-  _$relationLabelEnum_speculative,
-]);
+      _$relationLabelEnum_confirmed,
+      _$relationLabelEnum_likely,
+      _$relationLabelEnum_possible,
+      _$relationLabelEnum_speculative,
+    ]);
 
 Serializer<RelationTypeEnum> _$relationTypeEnumSerializer =
     _$RelationTypeEnumSerializer();
@@ -208,15 +224,20 @@ class _$RelationTypeEnumSerializer
   final String wireName = 'RelationTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, RelationTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RelationTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  RelationTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RelationTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  RelationTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RelationTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RelationLabelEnumSerializer
@@ -240,15 +261,20 @@ class _$RelationLabelEnumSerializer
   final String wireName = 'RelationLabelEnum';
 
   @override
-  Object serialize(Serializers serializers, RelationLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RelationLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  RelationLabelEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RelationLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  RelationLabelEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RelationLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Relation extends Relation {
@@ -282,21 +308,21 @@ class _$Relation extends Relation {
   factory _$Relation([void Function(RelationBuilder)? updates]) =>
       (RelationBuilder()..update(updates))._build();
 
-  _$Relation._(
-      {required this.id,
-      required this.fromRef,
-      required this.toRef,
-      required this.type,
-      required this.validFrom,
-      this.validTo,
-      required this.confidence,
-      required this.label,
-      required this.provenance,
-      required this.projected,
-      this.private,
-      required this.createdAt,
-      this.retiredAt})
-      : super._();
+  _$Relation._({
+    required this.id,
+    required this.fromRef,
+    required this.toRef,
+    required this.type,
+    required this.validFrom,
+    this.validTo,
+    required this.confidence,
+    required this.label,
+    required this.provenance,
+    required this.projected,
+    this.private,
+    required this.createdAt,
+    this.retiredAt,
+  }) : super._();
   @override
   Relation rebuild(void Function(RelationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -461,28 +487,53 @@ class RelationBuilder implements Builder<Relation, RelationBuilder> {
   _$Relation _build() {
     _$Relation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Relation._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Relation', 'id'),
             fromRef: BuiltValueNullFieldError.checkNotNull(
-                fromRef, r'Relation', 'fromRef'),
+              fromRef,
+              r'Relation',
+              'fromRef',
+            ),
             toRef: BuiltValueNullFieldError.checkNotNull(
-                toRef, r'Relation', 'toRef'),
+              toRef,
+              r'Relation',
+              'toRef',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'Relation', 'type'),
+              type,
+              r'Relation',
+              'type',
+            ),
             validFrom: BuiltValueNullFieldError.checkNotNull(
-                validFrom, r'Relation', 'validFrom'),
+              validFrom,
+              r'Relation',
+              'validFrom',
+            ),
             validTo: validTo,
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'Relation', 'confidence'),
+              confidence,
+              r'Relation',
+              'confidence',
+            ),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'Relation', 'label'),
+              label,
+              r'Relation',
+              'label',
+            ),
             provenance: provenance.build(),
             projected: BuiltValueNullFieldError.checkNotNull(
-                projected, r'Relation', 'projected'),
+              projected,
+              r'Relation',
+              'projected',
+            ),
             private: private,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Relation', 'createdAt'),
+              createdAt,
+              r'Relation',
+              'createdAt',
+            ),
             retiredAt: retiredAt,
           );
     } catch (_) {
@@ -492,7 +543,10 @@ class RelationBuilder implements Builder<Relation, RelationBuilder> {
         provenance.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Relation', _$failedField, e.toString());
+          r'Relation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -25,24 +25,24 @@ class _$AnalogResultOutcomeDistribution
   @override
   final StatInterval interval;
 
-  factory _$AnalogResultOutcomeDistribution(
-          [void Function(AnalogResultOutcomeDistributionBuilder)? updates]) =>
-      (AnalogResultOutcomeDistributionBuilder()..update(updates))._build();
+  factory _$AnalogResultOutcomeDistribution([
+    void Function(AnalogResultOutcomeDistributionBuilder)? updates,
+  ]) => (AnalogResultOutcomeDistributionBuilder()..update(updates))._build();
 
-  _$AnalogResultOutcomeDistribution._(
-      {required this.outcome,
-      required this.analogCount,
-      required this.hits,
-      this.frequency,
-      this.baseRate,
-      this.baseRateId,
-      required this.probability,
-      required this.interval})
-      : super._();
+  _$AnalogResultOutcomeDistribution._({
+    required this.outcome,
+    required this.analogCount,
+    required this.hits,
+    this.frequency,
+    this.baseRate,
+    this.baseRateId,
+    required this.probability,
+    required this.interval,
+  }) : super._();
   @override
   AnalogResultOutcomeDistribution rebuild(
-          void Function(AnalogResultOutcomeDistributionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalogResultOutcomeDistributionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalogResultOutcomeDistributionBuilder toBuilder() =>
@@ -94,8 +94,10 @@ class _$AnalogResultOutcomeDistribution
 
 class AnalogResultOutcomeDistributionBuilder
     implements
-        Builder<AnalogResultOutcomeDistribution,
-            AnalogResultOutcomeDistributionBuilder> {
+        Builder<
+          AnalogResultOutcomeDistribution,
+          AnalogResultOutcomeDistributionBuilder
+        > {
   _$AnalogResultOutcomeDistribution? _$v;
 
   String? _outcome;
@@ -167,19 +169,32 @@ class AnalogResultOutcomeDistributionBuilder
   _$AnalogResultOutcomeDistribution _build() {
     _$AnalogResultOutcomeDistribution _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalogResultOutcomeDistribution._(
             outcome: BuiltValueNullFieldError.checkNotNull(
-                outcome, r'AnalogResultOutcomeDistribution', 'outcome'),
+              outcome,
+              r'AnalogResultOutcomeDistribution',
+              'outcome',
+            ),
             analogCount: BuiltValueNullFieldError.checkNotNull(
-                analogCount, r'AnalogResultOutcomeDistribution', 'analogCount'),
+              analogCount,
+              r'AnalogResultOutcomeDistribution',
+              'analogCount',
+            ),
             hits: BuiltValueNullFieldError.checkNotNull(
-                hits, r'AnalogResultOutcomeDistribution', 'hits'),
+              hits,
+              r'AnalogResultOutcomeDistribution',
+              'hits',
+            ),
             frequency: frequency,
             baseRate: baseRate,
             baseRateId: baseRateId,
             probability: BuiltValueNullFieldError.checkNotNull(
-                probability, r'AnalogResultOutcomeDistribution', 'probability'),
+              probability,
+              r'AnalogResultOutcomeDistribution',
+              'probability',
+            ),
             interval: interval.build(),
           );
     } catch (_) {
@@ -189,7 +204,10 @@ class AnalogResultOutcomeDistributionBuilder
         interval.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalogResultOutcomeDistribution', _$failedField, e.toString());
+          r'AnalogResultOutcomeDistribution',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

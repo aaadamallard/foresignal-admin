@@ -20,8 +20,10 @@ part 'notification_preference_input_channel.g.dart';
 @BuiltValue()
 abstract class NotificationPreferenceInputChannel
     implements
-        Built<NotificationPreferenceInputChannel,
-            NotificationPreferenceInputChannelBuilder> {
+        Built<
+          NotificationPreferenceInputChannel,
+          NotificationPreferenceInputChannelBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   NotificationPreferenceInputChannelTypeEnum get type;
   // enum typeEnum {  webhook,  slack,  mattermost,  discord,  teams,  google-chat,  telegram,  matrix,  ntfy,  gotify,  pushover,  email,  webpush,  };
@@ -39,9 +41,9 @@ abstract class NotificationPreferenceInputChannel
 
   NotificationPreferenceInputChannel._();
 
-  factory NotificationPreferenceInputChannel(
-          [void updates(NotificationPreferenceInputChannelBuilder b)]) =
-      _$NotificationPreferenceInputChannel;
+  factory NotificationPreferenceInputChannel([
+    void updates(NotificationPreferenceInputChannelBuilder b),
+  ]) = _$NotificationPreferenceInputChannel;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationPreferenceInputChannelBuilder b) => b;
@@ -56,7 +58,7 @@ class _$NotificationPreferenceInputChannelSerializer
   @override
   final Iterable<Type> types = const [
     NotificationPreferenceInputChannel,
-    _$NotificationPreferenceInputChannel
+    _$NotificationPreferenceInputChannel,
   ];
 
   @override
@@ -76,16 +78,20 @@ class _$NotificationPreferenceInputChannelSerializer
       yield r'config';
       yield serializers.serialize(
         object.config,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.secrets != null) {
       yield r'secrets';
       yield serializers.serialize(
         object.secrets,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.language != null) {
@@ -103,9 +109,11 @@ class _$NotificationPreferenceInputChannelSerializer
     NotificationPreferenceInputChannel object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,36 +129,49 @@ class _$NotificationPreferenceInputChannelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(NotificationPreferenceInputChannelTypeEnum),
-          ) as NotificationPreferenceInputChannelTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NotificationPreferenceInputChannelTypeEnum,
+                    ),
+                  )
+                  as NotificationPreferenceInputChannelTypeEnum;
           result.type = valueDes;
           break;
         case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.config.replace(valueDes);
           break;
         case r'secrets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.secrets.replace(valueDes);
           break;
         case r'language':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.language = valueDes;
           break;
@@ -225,7 +246,7 @@ class NotificationPreferenceInputChannelTypeEnum extends EnumClass {
       _$notificationPreferenceInputChannelTypeEnum_webpush;
 
   static Serializer<NotificationPreferenceInputChannelTypeEnum>
-      get serializer => _$notificationPreferenceInputChannelTypeEnumSerializer;
+  get serializer => _$notificationPreferenceInputChannelTypeEnumSerializer;
 
   const NotificationPreferenceInputChannelTypeEnum._(String name) : super(name);
 

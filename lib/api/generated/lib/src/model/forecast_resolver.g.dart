@@ -44,14 +44,14 @@ ForecastResolverTypeEnum _$forecastResolverTypeEnumValueOf(String name) {
 
 final BuiltSet<ForecastResolverTypeEnum> _$forecastResolverTypeEnumValues =
     BuiltSet<ForecastResolverTypeEnum>(const <ForecastResolverTypeEnum>[
-  _$forecastResolverTypeEnum_eventExists,
-  _$forecastResolverTypeEnum_countThreshold,
-  _$forecastResolverTypeEnum_seriesValue,
-  _$forecastResolverTypeEnum_alertFired,
-  _$forecastResolverTypeEnum_situationStatus,
-  _$forecastResolverTypeEnum_hypothesisOutcome,
-  _$forecastResolverTypeEnum_manual,
-]);
+      _$forecastResolverTypeEnum_eventExists,
+      _$forecastResolverTypeEnum_countThreshold,
+      _$forecastResolverTypeEnum_seriesValue,
+      _$forecastResolverTypeEnum_alertFired,
+      _$forecastResolverTypeEnum_situationStatus,
+      _$forecastResolverTypeEnum_hypothesisOutcome,
+      _$forecastResolverTypeEnum_manual,
+    ]);
 
 const ForecastResolverOpEnum _$forecastResolverOpEnum_gt =
     const ForecastResolverOpEnum._('gt');
@@ -83,12 +83,12 @@ ForecastResolverOpEnum _$forecastResolverOpEnumValueOf(String name) {
 
 final BuiltSet<ForecastResolverOpEnum> _$forecastResolverOpEnumValues =
     BuiltSet<ForecastResolverOpEnum>(const <ForecastResolverOpEnum>[
-  _$forecastResolverOpEnum_gt,
-  _$forecastResolverOpEnum_gte,
-  _$forecastResolverOpEnum_lt,
-  _$forecastResolverOpEnum_lte,
-  _$forecastResolverOpEnum_eq,
-]);
+      _$forecastResolverOpEnum_gt,
+      _$forecastResolverOpEnum_gte,
+      _$forecastResolverOpEnum_lt,
+      _$forecastResolverOpEnum_lte,
+      _$forecastResolverOpEnum_eq,
+    ]);
 
 const ForecastResolverAggregateEnum _$forecastResolverAggregateEnum_last =
     const ForecastResolverAggregateEnum._('last');
@@ -100,7 +100,8 @@ const ForecastResolverAggregateEnum _$forecastResolverAggregateEnum_sum =
     const ForecastResolverAggregateEnum._('sum');
 
 ForecastResolverAggregateEnum _$forecastResolverAggregateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'last':
       return _$forecastResolverAggregateEnum_last;
@@ -116,20 +117,21 @@ ForecastResolverAggregateEnum _$forecastResolverAggregateEnumValueOf(
 }
 
 final BuiltSet<ForecastResolverAggregateEnum>
-    _$forecastResolverAggregateEnumValues = BuiltSet<
-        ForecastResolverAggregateEnum>(const <ForecastResolverAggregateEnum>[
-  _$forecastResolverAggregateEnum_last,
-  _$forecastResolverAggregateEnum_mean,
-  _$forecastResolverAggregateEnum_max,
-  _$forecastResolverAggregateEnum_sum,
-]);
+_$forecastResolverAggregateEnumValues = BuiltSet<ForecastResolverAggregateEnum>(
+  const <ForecastResolverAggregateEnum>[
+    _$forecastResolverAggregateEnum_last,
+    _$forecastResolverAggregateEnum_mean,
+    _$forecastResolverAggregateEnum_max,
+    _$forecastResolverAggregateEnum_sum,
+  ],
+);
 
 Serializer<ForecastResolverTypeEnum> _$forecastResolverTypeEnumSerializer =
     _$ForecastResolverTypeEnumSerializer();
 Serializer<ForecastResolverOpEnum> _$forecastResolverOpEnumSerializer =
     _$ForecastResolverOpEnumSerializer();
 Serializer<ForecastResolverAggregateEnum>
-    _$forecastResolverAggregateEnumSerializer =
+_$forecastResolverAggregateEnumSerializer =
     _$ForecastResolverAggregateEnumSerializer();
 
 class _$ForecastResolverTypeEnumSerializer
@@ -159,16 +161,20 @@ class _$ForecastResolverTypeEnumSerializer
   final String wireName = 'ForecastResolverTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastResolverTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastResolverTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastResolverTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastResolverTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastResolverTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastResolverOpEnumSerializer
@@ -194,15 +200,20 @@ class _$ForecastResolverOpEnumSerializer
   final String wireName = 'ForecastResolverOpEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastResolverOpEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastResolverOpEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ForecastResolverOpEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastResolverOpEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ForecastResolverOpEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastResolverOpEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastResolverAggregateEnumSerializer
@@ -227,16 +238,19 @@ class _$ForecastResolverAggregateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecastResolverAggregateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastResolverAggregateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastResolverAggregateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastResolverAggregateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastResolverAggregateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastResolver extends ForecastResolver {
@@ -271,27 +285,27 @@ class _$ForecastResolver extends ForecastResolver {
   @override
   final String? version;
 
-  factory _$ForecastResolver(
-          [void Function(ForecastResolverBuilder)? updates]) =>
-      (ForecastResolverBuilder()..update(updates))._build();
+  factory _$ForecastResolver([
+    void Function(ForecastResolverBuilder)? updates,
+  ]) => (ForecastResolverBuilder()..update(updates))._build();
 
-  _$ForecastResolver._(
-      {required this.type,
-      this.selector,
-      this.area,
-      this.window,
-      this.op,
-      this.threshold,
-      this.ref,
-      this.period,
-      this.aggregate,
-      this.ruleId,
-      this.situationId,
-      this.status,
-      this.minSeverity,
-      this.setId,
-      this.version})
-      : super._();
+  _$ForecastResolver._({
+    required this.type,
+    this.selector,
+    this.area,
+    this.window,
+    this.op,
+    this.threshold,
+    this.ref,
+    this.period,
+    this.aggregate,
+    this.ruleId,
+    this.situationId,
+    this.status,
+    this.minSeverity,
+    this.setId,
+    this.version,
+  }) : super._();
   @override
   ForecastResolver rebuild(void Function(ForecastResolverBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -474,10 +488,14 @@ class ForecastResolverBuilder
   _$ForecastResolver _build() {
     _$ForecastResolver _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastResolver._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ForecastResolver', 'type'),
+              type,
+              r'ForecastResolver',
+              'type',
+            ),
             selector: _selector?.build(),
             area: _area?.build(),
             window: _window?.build(),
@@ -504,7 +522,10 @@ class ForecastResolverBuilder
         _window?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastResolver', _$failedField, e.toString());
+          r'ForecastResolver',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

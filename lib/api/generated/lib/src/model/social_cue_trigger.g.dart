@@ -44,14 +44,14 @@ SocialCueTriggerTypeEnum _$socialCueTriggerTypeEnumValueOf(String name) {
 
 final BuiltSet<SocialCueTriggerTypeEnum> _$socialCueTriggerTypeEnumValues =
     BuiltSet<SocialCueTriggerTypeEnum>(const <SocialCueTriggerTypeEnum>[
-  _$socialCueTriggerTypeEnum_situationActivated,
-  _$socialCueTriggerTypeEnum_situationEscalated,
-  _$socialCueTriggerTypeEnum_finding,
-  _$socialCueTriggerTypeEnum_anomaly,
-  _$socialCueTriggerTypeEnum_alert,
-  _$socialCueTriggerTypeEnum_canonicalEvent,
-  _$socialCueTriggerTypeEnum_manual,
-]);
+      _$socialCueTriggerTypeEnum_situationActivated,
+      _$socialCueTriggerTypeEnum_situationEscalated,
+      _$socialCueTriggerTypeEnum_finding,
+      _$socialCueTriggerTypeEnum_anomaly,
+      _$socialCueTriggerTypeEnum_alert,
+      _$socialCueTriggerTypeEnum_canonicalEvent,
+      _$socialCueTriggerTypeEnum_manual,
+    ]);
 
 Serializer<SocialCueTriggerTypeEnum> _$socialCueTriggerTypeEnumSerializer =
     _$SocialCueTriggerTypeEnumSerializer();
@@ -83,16 +83,20 @@ class _$SocialCueTriggerTypeEnumSerializer
   final String wireName = 'SocialCueTriggerTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialCueTriggerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialCueTriggerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialCueTriggerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialCueTriggerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialCueTriggerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialCueTrigger extends SocialCueTrigger {
@@ -101,9 +105,9 @@ class _$SocialCueTrigger extends SocialCueTrigger {
   @override
   final String? ref;
 
-  factory _$SocialCueTrigger(
-          [void Function(SocialCueTriggerBuilder)? updates]) =>
-      (SocialCueTriggerBuilder()..update(updates))._build();
+  factory _$SocialCueTrigger([
+    void Function(SocialCueTriggerBuilder)? updates,
+  ]) => (SocialCueTriggerBuilder()..update(updates))._build();
 
   _$SocialCueTrigger._({required this.type, this.ref}) : super._();
   @override
@@ -178,10 +182,14 @@ class SocialCueTriggerBuilder
   SocialCueTrigger build() => _build();
 
   _$SocialCueTrigger _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialCueTrigger._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'SocialCueTrigger', 'type'),
+            type,
+            r'SocialCueTrigger',
+            'type',
+          ),
           ref: ref,
         );
     replace(_$result);

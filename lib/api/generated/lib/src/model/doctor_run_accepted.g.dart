@@ -19,13 +19,12 @@ DoctorRunAcceptedStatusEnum _$doctorRunAcceptedStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<DoctorRunAcceptedStatusEnum>
-    _$doctorRunAcceptedStatusEnumValues =
-    BuiltSet<DoctorRunAcceptedStatusEnum>(const <DoctorRunAcceptedStatusEnum>[
-  _$doctorRunAcceptedStatusEnum_running,
-]);
+_$doctorRunAcceptedStatusEnumValues = BuiltSet<DoctorRunAcceptedStatusEnum>(
+  const <DoctorRunAcceptedStatusEnum>[_$doctorRunAcceptedStatusEnum_running],
+);
 
 Serializer<DoctorRunAcceptedStatusEnum>
-    _$doctorRunAcceptedStatusEnumSerializer =
+_$doctorRunAcceptedStatusEnumSerializer =
     _$DoctorRunAcceptedStatusEnumSerializer();
 
 class _$DoctorRunAcceptedStatusEnumSerializer
@@ -43,16 +42,20 @@ class _$DoctorRunAcceptedStatusEnumSerializer
   final String wireName = 'DoctorRunAcceptedStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorRunAcceptedStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorRunAcceptedStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DoctorRunAcceptedStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorRunAcceptedStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorRunAcceptedStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorRunAccepted extends DoctorRunAccepted {
@@ -63,13 +66,15 @@ class _$DoctorRunAccepted extends DoctorRunAccepted {
   @override
   final String location;
 
-  factory _$DoctorRunAccepted(
-          [void Function(DoctorRunAcceptedBuilder)? updates]) =>
-      (DoctorRunAcceptedBuilder()..update(updates))._build();
+  factory _$DoctorRunAccepted([
+    void Function(DoctorRunAcceptedBuilder)? updates,
+  ]) => (DoctorRunAcceptedBuilder()..update(updates))._build();
 
-  _$DoctorRunAccepted._(
-      {required this.reportId, required this.status, required this.location})
-      : super._();
+  _$DoctorRunAccepted._({
+    required this.reportId,
+    required this.status,
+    required this.location,
+  }) : super._();
   @override
   DoctorRunAccepted rebuild(void Function(DoctorRunAcceptedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -152,14 +157,24 @@ class DoctorRunAcceptedBuilder
   DoctorRunAccepted build() => _build();
 
   _$DoctorRunAccepted _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DoctorRunAccepted._(
           reportId: BuiltValueNullFieldError.checkNotNull(
-              reportId, r'DoctorRunAccepted', 'reportId'),
+            reportId,
+            r'DoctorRunAccepted',
+            'reportId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'DoctorRunAccepted', 'status'),
+            status,
+            r'DoctorRunAccepted',
+            'status',
+          ),
           location: BuiltValueNullFieldError.checkNotNull(
-              location, r'DoctorRunAccepted', 'location'),
+            location,
+            r'DoctorRunAccepted',
+            'location',
+          ),
         );
     replace(_$result);
     return _$result;

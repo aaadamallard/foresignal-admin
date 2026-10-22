@@ -88,9 +88,11 @@ class _$FeatureSerializer implements PrimitiveSerializer<Feature> {
     Feature object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -106,33 +108,41 @@ class _$FeatureSerializer implements PrimitiveSerializer<Feature> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FeatureTypeEnum),
-          ) as FeatureTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FeatureTypeEnum),
+                  )
+                  as FeatureTypeEnum;
           result.type = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geometry.replace(valueDes);
           break;
         case r'properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FeatureProperties),
-          ) as FeatureProperties;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FeatureProperties),
+                  )
+                  as FeatureProperties;
           result.properties.replace(valueDes);
           break;
         default:

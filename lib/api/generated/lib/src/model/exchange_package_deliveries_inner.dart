@@ -20,8 +20,10 @@ part 'exchange_package_deliveries_inner.g.dart';
 @BuiltValue()
 abstract class ExchangePackageDeliveriesInner
     implements
-        Built<ExchangePackageDeliveriesInner,
-            ExchangePackageDeliveriesInnerBuilder> {
+        Built<
+          ExchangePackageDeliveriesInner,
+          ExchangePackageDeliveriesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'instanceId')
   String get instanceId;
 
@@ -40,9 +42,9 @@ abstract class ExchangePackageDeliveriesInner
 
   ExchangePackageDeliveriesInner._();
 
-  factory ExchangePackageDeliveriesInner(
-          [void updates(ExchangePackageDeliveriesInnerBuilder b)]) =
-      _$ExchangePackageDeliveriesInner;
+  factory ExchangePackageDeliveriesInner([
+    void updates(ExchangePackageDeliveriesInnerBuilder b),
+  ]) = _$ExchangePackageDeliveriesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExchangePackageDeliveriesInnerBuilder b) => b;
@@ -57,7 +59,7 @@ class _$ExchangePackageDeliveriesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExchangePackageDeliveriesInner,
-    _$ExchangePackageDeliveriesInner
+    _$ExchangePackageDeliveriesInner,
   ];
 
   @override
@@ -107,9 +109,11 @@ class _$ExchangePackageDeliveriesInnerSerializer
     ExchangePackageDeliveriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,41 +129,52 @@ class _$ExchangePackageDeliveriesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'peerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.peerId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ExchangePackageDeliveriesInnerStatusEnum),
-          ) as ExchangePackageDeliveriesInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ExchangePackageDeliveriesInnerStatusEnum,
+                    ),
+                  )
+                  as ExchangePackageDeliveriesInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.at = valueDes;
           break;
         case r'error':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.error = valueDes;
           break;

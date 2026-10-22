@@ -32,9 +32,9 @@ abstract class ReportSendRecipientsInner
 
   ReportSendRecipientsInner._();
 
-  factory ReportSendRecipientsInner(
-          [void updates(ReportSendRecipientsInnerBuilder b)]) =
-      _$ReportSendRecipientsInner;
+  factory ReportSendRecipientsInner([
+    void updates(ReportSendRecipientsInnerBuilder b),
+  ]) = _$ReportSendRecipientsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ReportSendRecipientsInnerBuilder b) => b;
@@ -49,7 +49,7 @@ class _$ReportSendRecipientsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ReportSendRecipientsInner,
-    _$ReportSendRecipientsInner
+    _$ReportSendRecipientsInner,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$ReportSendRecipientsInnerSerializer
     ReportSendRecipientsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,25 +105,34 @@ class _$ReportSendRecipientsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'grantee':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.grantee = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReportSendRecipientsInnerStatusEnum),
-          ) as ReportSendRecipientsInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ReportSendRecipientsInnerStatusEnum,
+                    ),
+                  )
+                  as ReportSendRecipientsInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'channelIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.channelIds.replace(valueDes);
           break;

@@ -12,15 +12,15 @@ class _$AttentionTopicPage extends AttentionTopicPage {
   @override
   final String? nextCursor;
 
-  factory _$AttentionTopicPage(
-          [void Function(AttentionTopicPageBuilder)? updates]) =>
-      (AttentionTopicPageBuilder()..update(updates))._build();
+  factory _$AttentionTopicPage([
+    void Function(AttentionTopicPageBuilder)? updates,
+  ]) => (AttentionTopicPageBuilder()..update(updates))._build();
 
   _$AttentionTopicPage._({required this.items, this.nextCursor}) : super._();
   @override
   AttentionTopicPage rebuild(
-          void Function(AttentionTopicPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AttentionTopicPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AttentionTopicPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class AttentionTopicPageBuilder
   _$AttentionTopicPage _build() {
     _$AttentionTopicPage _$result;
     try {
-      _$result = _$v ??
-          _$AttentionTopicPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AttentionTopicPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class AttentionTopicPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AttentionTopicPage', _$failedField, e.toString());
+          r'AttentionTopicPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

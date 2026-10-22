@@ -63,9 +63,15 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/frames/latest'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -74,11 +80,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -90,7 +92,10 @@ class ProductsApi {
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (includePartial != null)
         r'includePartial': encodeQueryParameter(
-            _serializers, includePartial, const FullType(bool)),
+          _serializers,
+          includePartial,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -109,9 +114,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RasterFrame),
-            ) as RasterFrame;
+                  rawResponse,
+                  specifiedType: const FullType(RasterFrame),
+                )
+                as RasterFrame;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -160,9 +166,15 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -171,11 +183,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -197,9 +205,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Product),
-            ) as Product;
+                  rawResponse,
+                  specifiedType: const FullType(Product),
+                )
+                as Product;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -261,39 +270,50 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/data/{frameKey}/{z}/{x}/{y}.png'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString())
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -303,7 +323,10 @@ class ProductsApi {
     final _queryParameters = <String, dynamic>{
       if (encoding != null)
         r'encoding': encodeQueryParameter(
-            _serializers, encoding, const FullType(String)),
+          _serializers,
+          encoding,
+          const FullType(String),
+        ),
       if (tms != null)
         r'tms': encodeQueryParameter(_serializers, tms, const FullType(String)),
       if (run != null)
@@ -383,14 +406,25 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/fields/{frameKey}.f32'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString());
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -401,11 +435,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -418,8 +448,11 @@ class ProductsApi {
       if (res != null)
         r'res': encodeQueryParameter(_serializers, res, const FullType(String)),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -491,27 +524,32 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/fields/{frameKey}.i16'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString());
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -524,8 +562,11 @@ class ProductsApi {
       if (res != null)
         r'res': encodeQueryParameter(_serializers, res, const FullType(num)),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -599,14 +640,25 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/fields/{frameKey}.json'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString());
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -615,11 +667,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -632,8 +680,11 @@ class ProductsApi {
       if (res != null)
         r'res': encodeQueryParameter(_serializers, res, const FullType(String)),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -652,9 +703,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FieldManifest),
-            ) as FieldManifest;
+                  rawResponse,
+                  specifiedType: const FullType(FieldManifest),
+                )
+                as FieldManifest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -710,26 +762,31 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/fields/{frameKey}.png-uv'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString());
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -742,8 +799,11 @@ class ProductsApi {
       if (res != null)
         r'res': encodeQueryParameter(_serializers, res, const FullType(num)),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -819,39 +879,50 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/fields/{frameKey}/{z}/{x}/{y}.png'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString())
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -920,7 +991,7 @@ class ProductsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<VelocityJsonComponent>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<VelocityJsonComponent>>>
-      getProductFieldVelocityJson({
+  getProductFieldVelocityJson({
     required String productId,
     required String frameKey,
     String? run,
@@ -935,26 +1006,31 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/fields/{frameKey}.velocity-json'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString());
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -967,8 +1043,11 @@ class ProductsApi {
       if (res != null)
         r'res': encodeQueryParameter(_serializers, res, const FullType(num)),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -987,10 +1066,12 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(VelocityJsonComponent)]),
-            ) as BuiltList<VelocityJsonComponent>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(VelocityJsonComponent),
+                  ]),
+                )
+                as BuiltList<VelocityJsonComponent>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1060,18 +1141,35 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/image/{frameKey}.{format}'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString())
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'format' '}',
-            encodeQueryParameter(_serializers, format, const FullType(String))
-                .toString());
+          '{'
+          r'format'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            format,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -1083,11 +1181,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1097,21 +1191,33 @@ class ProductsApi {
     final _queryParameters = <String, dynamic>{
       r'bbox': encodeQueryParameter(_serializers, bbox, const FullType(String)),
       if (width != null)
-        r'width':
-            encodeQueryParameter(_serializers, width, const FullType(int)),
+        r'width': encodeQueryParameter(
+          _serializers,
+          width,
+          const FullType(int),
+        ),
       if (height != null)
-        r'height':
-            encodeQueryParameter(_serializers, height, const FullType(int)),
+        r'height': encodeQueryParameter(
+          _serializers,
+          height,
+          const FullType(int),
+        ),
       if (crs != null)
         r'crs': encodeQueryParameter(_serializers, crs, const FullType(String)),
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (prefetch != null)
-        r'prefetch':
-            encodeQueryParameter(_serializers, prefetch, const FullType(int)),
+        r'prefetch': encodeQueryParameter(
+          _serializers,
+          prefetch,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1178,21 +1284,21 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/legend'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1201,11 +1307,17 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (units != null)
-        r'units':
-            encodeQueryParameter(_serializers, units, const FullType(String)),
+        r'units': encodeQueryParameter(
+          _serializers,
+          units,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1224,9 +1336,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Legend),
-            ) as Legend;
+                  rawResponse,
+                  specifiedType: const FullType(Legend),
+                )
+                as Legend;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1283,22 +1396,22 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/legend.png'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1307,20 +1420,35 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (units != null)
-        r'units':
-            encodeQueryParameter(_serializers, units, const FullType(String)),
+        r'units': encodeQueryParameter(
+          _serializers,
+          units,
+          const FullType(String),
+        ),
       if (width != null)
-        r'width':
-            encodeQueryParameter(_serializers, width, const FullType(int)),
+        r'width': encodeQueryParameter(
+          _serializers,
+          width,
+          const FullType(int),
+        ),
       if (orientation != null)
         r'orientation': encodeQueryParameter(
-            _serializers, orientation, const FullType(String)),
+          _serializers,
+          orientation,
+          const FullType(String),
+        ),
       if (theme != null)
-        r'theme':
-            encodeQueryParameter(_serializers, theme, const FullType(String)),
+        r'theme': encodeQueryParameter(
+          _serializers,
+          theme,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1409,16 +1537,10 @@ class ProductsApi {
     final _path = r'/v1/products/loop';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1434,36 +1556,63 @@ class ProductsApi {
           format: ListFormat.multi,
         ),
       if (past != null)
-        r'past':
-            encodeQueryParameter(_serializers, past, const FullType(String)),
+        r'past': encodeQueryParameter(
+          _serializers,
+          past,
+          const FullType(String),
+        ),
       if (future != null)
-        r'future':
-            encodeQueryParameter(_serializers, future, const FullType(String)),
+        r'future': encodeQueryParameter(
+          _serializers,
+          future,
+          const FullType(String),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (frames != null)
-        r'frames':
-            encodeQueryParameter(_serializers, frames, const FullType(int)),
+        r'frames': encodeQueryParameter(
+          _serializers,
+          frames,
+          const FullType(int),
+        ),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (width != null)
-        r'width':
-            encodeQueryParameter(_serializers, width, const FullType(int)),
+        r'width': encodeQueryParameter(
+          _serializers,
+          width,
+          const FullType(int),
+        ),
       if (crs != null)
         r'crs': encodeQueryParameter(_serializers, crs, const FullType(String)),
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
     };
@@ -1484,9 +1633,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ProductLoop),
-            ) as ProductLoop;
+                  rawResponse,
+                  specifiedType: const FullType(ProductLoop),
+                )
+                as ProductLoop;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1560,16 +1710,10 @@ class ProductsApi {
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1585,39 +1729,69 @@ class ProductsApi {
           format: ListFormat.multi,
         ),
       if (past != null)
-        r'past':
-            encodeQueryParameter(_serializers, past, const FullType(String)),
+        r'past': encodeQueryParameter(
+          _serializers,
+          past,
+          const FullType(String),
+        ),
       if (future != null)
-        r'future':
-            encodeQueryParameter(_serializers, future, const FullType(String)),
+        r'future': encodeQueryParameter(
+          _serializers,
+          future,
+          const FullType(String),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (frames != null)
-        r'frames':
-            encodeQueryParameter(_serializers, frames, const FullType(int)),
+        r'frames': encodeQueryParameter(
+          _serializers,
+          frames,
+          const FullType(int),
+        ),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (width != null)
-        r'width':
-            encodeQueryParameter(_serializers, width, const FullType(int)),
+        r'width': encodeQueryParameter(
+          _serializers,
+          width,
+          const FullType(int),
+        ),
       if (crs != null)
         r'crs': encodeQueryParameter(_serializers, crs, const FullType(String)),
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (delay != null)
-        r'delay':
-            encodeQueryParameter(_serializers, delay, const FullType(int)),
+        r'delay': encodeQueryParameter(
+          _serializers,
+          delay,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1682,21 +1856,21 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/mobac.xml'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1705,8 +1879,11 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1775,21 +1952,21 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/style-fragment.json'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1799,10 +1976,16 @@ class ProductsApi {
     final _queryParameters = <String, dynamic>{
       if (frameKey != null)
         r'frameKey': encodeQueryParameter(
-            _serializers, frameKey, const FullType(String)),
+          _serializers,
+          frameKey,
+          const FullType(String),
+        ),
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (tms != null)
         r'tms': encodeQueryParameter(_serializers, tms, const FullType(String)),
     };
@@ -1823,9 +2006,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StyleFragment),
-            ) as StyleFragment;
+                  rawResponse,
+                  specifiedType: const FullType(StyleFragment),
+                )
+                as StyleFragment;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1897,26 +2081,47 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/tiles/{frameKey}/{z}/{x}/{y}.png'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString())
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(String))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            y,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -1928,11 +2133,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1941,22 +2142,37 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (empty != null)
-        r'empty':
-            encodeQueryParameter(_serializers, empty, const FullType(String)),
+        r'empty': encodeQueryParameter(
+          _serializers,
+          empty,
+          const FullType(String),
+        ),
       if (onExpired != null)
         r'onExpired': encodeQueryParameter(
-            _serializers, onExpired, const FullType(String)),
+          _serializers,
+          onExpired,
+          const FullType(String),
+        ),
       if (prefetch != null)
-        r'prefetch':
-            encodeQueryParameter(_serializers, prefetch, const FullType(int)),
+        r'prefetch': encodeQueryParameter(
+          _serializers,
+          prefetch,
+          const FullType(int),
+        ),
       if (tileSize != null)
-        r'tileSize':
-            encodeQueryParameter(_serializers, tileSize, const FullType(int)),
+        r'tileSize': encodeQueryParameter(
+          _serializers,
+          tileSize,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2037,9 +2253,15 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/tilejson'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -2048,11 +2270,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2062,26 +2280,44 @@ class ProductsApi {
     final _queryParameters = <String, dynamic>{
       if (frameKey != null)
         r'frameKey': encodeQueryParameter(
-            _serializers, frameKey, const FullType(String)),
+          _serializers,
+          frameKey,
+          const FullType(String),
+        ),
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (includePartial != null)
         r'includePartial': encodeQueryParameter(
-            _serializers, includePartial, const FullType(bool)),
+          _serializers,
+          includePartial,
+          const FullType(bool),
+        ),
       if (tms != null)
         r'tms': encodeQueryParameter(_serializers, tms, const FullType(String)),
       if (tileSize != null)
-        r'tileSize':
-            encodeQueryParameter(_serializers, tileSize, const FullType(int)),
+        r'tileSize': encodeQueryParameter(
+          _serializers,
+          tileSize,
+          const FullType(int),
+        ),
       if (encoding != null)
         r'encoding': encodeQueryParameter(
-            _serializers, encoding, const FullType(String)),
+          _serializers,
+          encoding,
+          const FullType(String),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2100,9 +2336,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TileJson),
-            ) as TileJson;
+                  rawResponse,
+                  specifiedType: const FullType(TileJson),
+                )
+                as TileJson;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2179,37 +2416,75 @@ class ProductsApi {
     final _path =
         r'/v1/products/{productId}/tiles/{frameKey}/{tileMatrixSetId}/{z}/{x}/{y}.{format}'
             .replaceAll(
-                '{' r'productId' '}',
-                encodeQueryParameter(
-                        _serializers, productId, const FullType(String))
-                    .toString())
+              '{'
+              r'productId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                productId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'frameKey' '}',
-                encodeQueryParameter(
-                        _serializers, frameKey, const FullType(String))
-                    .toString())
+              '{'
+              r'frameKey'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                frameKey,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileMatrixSetId' '}',
-                encodeQueryParameter(
-                        _serializers, tileMatrixSetId, const FullType(String))
-                    .toString())
+              '{'
+              r'tileMatrixSetId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileMatrixSetId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'z' '}',
-                encodeQueryParameter(_serializers, z, const FullType(int))
-                    .toString())
+              '{'
+              r'z'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                z,
+                const FullType(int),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'x' '}',
-                encodeQueryParameter(_serializers, x, const FullType(int))
-                    .toString())
+              '{'
+              r'x'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                x,
+                const FullType(int),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'y' '}',
-                encodeQueryParameter(_serializers, y, const FullType(String))
-                    .toString())
+              '{'
+              r'y'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                y,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'format' '}',
-                encodeQueryParameter(
-                        _serializers, format, const FullType(String))
-                    .toString());
+              '{'
+              r'format'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                format,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -2221,11 +2496,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2234,22 +2505,37 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (tileSize != null)
-        r'tileSize':
-            encodeQueryParameter(_serializers, tileSize, const FullType(int)),
+        r'tileSize': encodeQueryParameter(
+          _serializers,
+          tileSize,
+          const FullType(int),
+        ),
       if (empty != null)
-        r'empty':
-            encodeQueryParameter(_serializers, empty, const FullType(String)),
+        r'empty': encodeQueryParameter(
+          _serializers,
+          empty,
+          const FullType(String),
+        ),
       if (onExpired != null)
         r'onExpired': encodeQueryParameter(
-            _serializers, onExpired, const FullType(String)),
+          _serializers,
+          onExpired,
+          const FullType(String),
+        ),
       if (prefetch != null)
-        r'prefetch':
-            encodeQueryParameter(_serializers, prefetch, const FullType(int)),
+        r'prefetch': encodeQueryParameter(
+          _serializers,
+          prefetch,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2337,26 +2623,47 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/tiles/{frameKey}/{z}/{x}/{y}.webp'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString())
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(String))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            y,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -2368,11 +2675,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2381,22 +2684,37 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (tileSize != null)
-        r'tileSize':
-            encodeQueryParameter(_serializers, tileSize, const FullType(int)),
+        r'tileSize': encodeQueryParameter(
+          _serializers,
+          tileSize,
+          const FullType(int),
+        ),
       if (empty != null)
-        r'empty':
-            encodeQueryParameter(_serializers, empty, const FullType(String)),
+        r'empty': encodeQueryParameter(
+          _serializers,
+          empty,
+          const FullType(String),
+        ),
       if (onExpired != null)
         r'onExpired': encodeQueryParameter(
-            _serializers, onExpired, const FullType(String)),
+          _serializers,
+          onExpired,
+          const FullType(String),
+        ),
       if (prefetch != null)
-        r'prefetch':
-            encodeQueryParameter(_serializers, prefetch, const FullType(int)),
+        r'prefetch': encodeQueryParameter(
+          _serializers,
+          prefetch,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2471,16 +2789,10 @@ class ProductsApi {
     final _path = r'/v1/products/timeline';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2496,19 +2808,31 @@ class ProductsApi {
           format: ListFormat.multi,
         ),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (mode != null)
-        r'mode':
-            encodeQueryParameter(_serializers, mode, const FullType(String)),
+        r'mode': encodeQueryParameter(
+          _serializers,
+          mode,
+          const FullType(String),
+        ),
       if (past != null)
-        r'past':
-            encodeQueryParameter(_serializers, past, const FullType(String)),
+        r'past': encodeQueryParameter(
+          _serializers,
+          past,
+          const FullType(String),
+        ),
       if (future != null)
-        r'future':
-            encodeQueryParameter(_serializers, future, const FullType(String)),
+        r'future': encodeQueryParameter(
+          _serializers,
+          future,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2527,9 +2851,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ProductTimeline),
-            ) as ProductTimeline;
+                  rawResponse,
+                  specifiedType: const FullType(ProductTimeline),
+                )
+                as ProductTimeline;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2593,26 +2918,43 @@ class ProductsApi {
   }) async {
     final _path = r'/v1/products/{productId}/vectors/{frameKey}/{z}/{x}/{y}.mvt'
         .replaceAll(
-            '{' r'productId' '}',
-            encodeQueryParameter(
-                    _serializers, productId, const FullType(String))
-                .toString())
+          '{'
+          r'productId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            productId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'frameKey' '}',
-            encodeQueryParameter(_serializers, frameKey, const FullType(String))
-                .toString())
+          '{'
+          r'frameKey'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            frameKey,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -2624,11 +2966,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2639,8 +2977,11 @@ class ProductsApi {
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (prefetch != null)
-        r'prefetch':
-            encodeQueryParameter(_serializers, prefetch, const FullType(int)),
+        r'prefetch': encodeQueryParameter(
+          _serializers,
+          prefetch,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2711,16 +3052,10 @@ class ProductsApi {
     final _path = r'/v1/products/style-fragment.json';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2736,10 +3071,16 @@ class ProductsApi {
       ),
       if (frameKey != null)
         r'frameKey': encodeQueryParameter(
-            _serializers, frameKey, const FullType(String)),
+          _serializers,
+          frameKey,
+          const FullType(String),
+        ),
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (tms != null)
         r'tms': encodeQueryParameter(_serializers, tms, const FullType(String)),
     };
@@ -2760,9 +3101,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StyleFragment),
-            ) as StyleFragment;
+                  rawResponse,
+                  specifiedType: const FullType(StyleFragment),
+                )
+                as StyleFragment;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2809,21 +3151,21 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/styles/{styleId}'.replaceAll(
-        '{' r'styleId' '}',
-        encodeQueryParameter(_serializers, styleId, const FullType(String))
-            .toString());
+      '{'
+      r'styleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        styleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2845,9 +3187,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Style),
-            ) as Style;
+                  rawResponse,
+                  specifiedType: const FullType(Style),
+                )
+                as Style;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2906,21 +3249,21 @@ class ProductsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/frames'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2929,21 +3272,33 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (includePartial != null)
         r'includePartial': encodeQueryParameter(
-            _serializers, includePartial, const FullType(bool)),
+          _serializers,
+          includePartial,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2962,9 +3317,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RasterFramePage),
-            ) as RasterFramePage;
+                  rawResponse,
+                  specifiedType: const FullType(RasterFramePage),
+                )
+                as RasterFramePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3035,11 +3391,7 @@ class ProductsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3049,27 +3401,48 @@ class ProductsApi {
     final _queryParameters = <String, dynamic>{
       if (category != null)
         r'category': encodeQueryParameter(
-            _serializers, category, const FullType(String)),
+          _serializers,
+          category,
+          const FullType(String),
+        ),
       if (kind != null)
-        r'kind':
-            encodeQueryParameter(_serializers, kind, const FullType(String)),
+        r'kind': encodeQueryParameter(
+          _serializers,
+          kind,
+          const FullType(String),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (source_ != null)
-        r'source':
-            encodeQueryParameter(_serializers, source_, const FullType(String)),
+        r'source': encodeQueryParameter(
+          _serializers,
+          source_,
+          const FullType(String),
+        ),
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (compact != null)
-        r'compact':
-            encodeQueryParameter(_serializers, compact, const FullType(bool)),
+        r'compact': encodeQueryParameter(
+          _serializers,
+          compact,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -3088,9 +3461,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ProductPage),
-            ) as ProductPage;
+                  rawResponse,
+                  specifiedType: const FullType(ProductPage),
+                )
+                as ProductPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3141,16 +3515,10 @@ class ProductsApi {
     final _path = r'/v1/styles';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3159,11 +3527,17 @@ class ProductsApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -3182,9 +3556,10 @@ class ProductsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StylePage),
-            ) as StylePage;
+                  rawResponse,
+                  specifiedType: const FullType(StylePage),
+                )
+                as StylePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

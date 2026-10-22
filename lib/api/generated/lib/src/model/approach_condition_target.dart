@@ -30,9 +30,9 @@ abstract class ApproachConditionTarget
 
   ApproachConditionTarget._();
 
-  factory ApproachConditionTarget(
-          [void updates(ApproachConditionTargetBuilder b)]) =
-      _$ApproachConditionTarget;
+  factory ApproachConditionTarget([
+    void updates(ApproachConditionTargetBuilder b),
+  ]) = _$ApproachConditionTarget;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ApproachConditionTargetBuilder b) => b;
@@ -47,7 +47,7 @@ class _$ApproachConditionTargetSerializer
   @override
   final Iterable<Type> types = const [
     ApproachConditionTarget,
-    _$ApproachConditionTarget
+    _$ApproachConditionTarget,
   ];
 
   @override
@@ -87,9 +87,11 @@ class _$ApproachConditionTargetSerializer
     ApproachConditionTarget object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,26 +107,32 @@ class _$ApproachConditionTargetSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.placeId = valueDes;
           break;
         case r'point':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.point.replace(valueDes);
           break;
         case r'record':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.record = valueDes;
           break;

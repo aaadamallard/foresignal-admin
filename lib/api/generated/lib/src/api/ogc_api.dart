@@ -63,21 +63,21 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}/area'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -85,11 +85,17 @@ class OGCApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'coords':
-          encodeQueryParameter(_serializers, coords, const FullType(String)),
+      r'coords': encodeQueryParameter(
+        _serializers,
+        coords,
+        const FullType(String),
+      ),
       if (datetime != null)
         r'datetime': encodeQueryParameter(
-            _serializers, datetime, const FullType(String)),
+          _serializers,
+          datetime,
+          const FullType(String),
+        ),
       if (parameterName != null)
         r'parameter-name': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -115,9 +121,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CoverageJson),
-            ) as CoverageJson;
+                  rawResponse,
+                  specifiedType: const FullType(CoverageJson),
+                )
+                as CoverageJson;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -164,21 +171,21 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}/instances'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -200,9 +207,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EdrInstanceList),
-            ) as EdrInstanceList;
+                  rawResponse,
+                  specifiedType: const FullType(EdrInstanceList),
+                )
+                as EdrInstanceList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -255,21 +263,21 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}/position'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -277,11 +285,17 @@ class OGCApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'coords':
-          encodeQueryParameter(_serializers, coords, const FullType(String)),
+      r'coords': encodeQueryParameter(
+        _serializers,
+        coords,
+        const FullType(String),
+      ),
       if (datetime != null)
         r'datetime': encodeQueryParameter(
-            _serializers, datetime, const FullType(String)),
+          _serializers,
+          datetime,
+          const FullType(String),
+        ),
       if (parameterName != null)
         r'parameter-name': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -307,9 +321,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CoverageJson),
-            ) as CoverageJson;
+                  rawResponse,
+                  specifiedType: const FullType(CoverageJson),
+                )
+                as CoverageJson;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -356,16 +371,10 @@ class OGCApi {
     final _path = r'/v1/wmts/1.0.0/WMTSCapabilities.xml';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -455,16 +464,10 @@ class OGCApi {
     final _path = r'/v1/wmts';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -472,40 +475,76 @@ class OGCApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'SERVICE':
-          encodeQueryParameter(_serializers, SERVICE, const FullType(String)),
-      r'REQUEST':
-          encodeQueryParameter(_serializers, REQUEST, const FullType(String)),
+      r'SERVICE': encodeQueryParameter(
+        _serializers,
+        SERVICE,
+        const FullType(String),
+      ),
+      r'REQUEST': encodeQueryParameter(
+        _serializers,
+        REQUEST,
+        const FullType(String),
+      ),
       if (VERSION != null)
-        r'VERSION':
-            encodeQueryParameter(_serializers, VERSION, const FullType(String)),
+        r'VERSION': encodeQueryParameter(
+          _serializers,
+          VERSION,
+          const FullType(String),
+        ),
       if (LAYER != null)
-        r'LAYER':
-            encodeQueryParameter(_serializers, LAYER, const FullType(String)),
+        r'LAYER': encodeQueryParameter(
+          _serializers,
+          LAYER,
+          const FullType(String),
+        ),
       if (STYLE != null)
-        r'STYLE':
-            encodeQueryParameter(_serializers, STYLE, const FullType(String)),
+        r'STYLE': encodeQueryParameter(
+          _serializers,
+          STYLE,
+          const FullType(String),
+        ),
       if (FORMAT != null)
-        r'FORMAT':
-            encodeQueryParameter(_serializers, FORMAT, const FullType(String)),
+        r'FORMAT': encodeQueryParameter(
+          _serializers,
+          FORMAT,
+          const FullType(String),
+        ),
       if (TILEMATRIXSET != null)
         r'TILEMATRIXSET': encodeQueryParameter(
-            _serializers, TILEMATRIXSET, const FullType(String)),
+          _serializers,
+          TILEMATRIXSET,
+          const FullType(String),
+        ),
       if (TILEMATRIX != null)
         r'TILEMATRIX': encodeQueryParameter(
-            _serializers, TILEMATRIX, const FullType(String)),
+          _serializers,
+          TILEMATRIX,
+          const FullType(String),
+        ),
       if (TILEROW != null)
-        r'TILEROW':
-            encodeQueryParameter(_serializers, TILEROW, const FullType(int)),
+        r'TILEROW': encodeQueryParameter(
+          _serializers,
+          TILEROW,
+          const FullType(int),
+        ),
       if (TILECOL != null)
-        r'TILECOL':
-            encodeQueryParameter(_serializers, TILECOL, const FullType(int)),
+        r'TILECOL': encodeQueryParameter(
+          _serializers,
+          TILECOL,
+          const FullType(int),
+        ),
       if (TIME != null)
-        r'TIME':
-            encodeQueryParameter(_serializers, TIME, const FullType(String)),
+        r'TIME': encodeQueryParameter(
+          _serializers,
+          TIME,
+          const FullType(String),
+        ),
       if (REFTIME != null)
-        r'REFTIME':
-            encodeQueryParameter(_serializers, REFTIME, const FullType(String)),
+        r'REFTIME': encodeQueryParameter(
+          _serializers,
+          REFTIME,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -586,55 +625,92 @@ class OGCApi {
     final _path =
         r'/v1/wmts/1.0.0/{layer}/{style}/{time}/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.{format}'
             .replaceAll(
-                '{' r'layer' '}',
-                encodeQueryParameter(
-                        _serializers, layer, const FullType(String))
-                    .toString())
+              '{'
+              r'layer'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                layer,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'style' '}',
-                encodeQueryParameter(
-                        _serializers, style, const FullType(String))
-                    .toString())
+              '{'
+              r'style'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                style,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'time' '}',
-                encodeQueryParameter(_serializers, time, const FullType(String))
-                    .toString())
+              '{'
+              r'time'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                time,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileMatrixSetId' '}',
-                encodeQueryParameter(_serializers, tileMatrixSetId,
-                        const FullType(String))
-                    .toString())
+              '{'
+              r'tileMatrixSetId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileMatrixSetId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileMatrix' '}',
-                encodeQueryParameter(_serializers, tileMatrix,
-                        const FullType(String))
-                    .toString())
+              '{'
+              r'tileMatrix'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileMatrix,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileRow' '}',
-                encodeQueryParameter(_serializers, tileRow, const FullType(int))
-                    .toString())
+              '{'
+              r'tileRow'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileRow,
+                const FullType(int),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileCol' '}',
-                encodeQueryParameter(_serializers, tileCol, const FullType(int))
-                    .toString())
+              '{'
+              r'tileCol'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileCol,
+                const FullType(int),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'format' '}',
-                encodeQueryParameter(
-                        _serializers, format, const FullType(String))
-                    .toString());
+              '{'
+              r'format'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                format,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -643,8 +719,11 @@ class OGCApi {
 
     final _queryParameters = <String, dynamic>{
       if (refTime != null)
-        r'RefTime':
-            encodeQueryParameter(_serializers, refTime, const FullType(String)),
+        r'RefTime': encodeQueryParameter(
+          _serializers,
+          refTime,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -707,16 +786,10 @@ class OGCApi {
     final _path = r'/v1/ogc/api';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -758,21 +831,21 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -794,9 +867,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcCollection200Response),
-            ) as OgcCollection200Response;
+                  rawResponse,
+                  specifiedType: const FullType(OgcCollection200Response),
+                )
+                as OgcCollection200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -859,41 +933,62 @@ class OGCApi {
     final _path =
         r'/v1/ogc/collections/{collectionId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}'
             .replaceAll(
-                '{' r'collectionId' '}',
-                encodeQueryParameter(
-                        _serializers, collectionId, const FullType(String))
-                    .toString())
+              '{'
+              r'collectionId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                collectionId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileMatrixSetId' '}',
-                encodeQueryParameter(
-                        _serializers, tileMatrixSetId, const FullType(String))
-                    .toString())
+              '{'
+              r'tileMatrixSetId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileMatrixSetId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileMatrix' '}',
-                encodeQueryParameter(
-                        _serializers, tileMatrix, const FullType(String))
-                    .toString())
+              '{'
+              r'tileMatrix'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileMatrix,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileRow' '}',
-                encodeQueryParameter(_serializers, tileRow, const FullType(int))
-                    .toString())
+              '{'
+              r'tileRow'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileRow,
+                const FullType(int),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileCol' '}',
-                encodeQueryParameter(_serializers, tileCol, const FullType(int))
-                    .toString());
+              '{'
+              r'tileCol'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileCol,
+                const FullType(int),
+              ).toString(),
+            );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -903,10 +998,16 @@ class OGCApi {
     final _queryParameters = <String, dynamic>{
       if (datetime != null)
         r'datetime': encodeQueryParameter(
-            _serializers, datetime, const FullType(String)),
+          _serializers,
+          datetime,
+          const FullType(String),
+        ),
       if (style != null)
-        r'style':
-            encodeQueryParameter(_serializers, style, const FullType(String)),
+        r'style': encodeQueryParameter(
+          _serializers,
+          style,
+          const FullType(String),
+        ),
       if (f != null)
         r'f': encodeQueryParameter(_serializers, f, const FullType(String)),
     };
@@ -975,27 +1076,31 @@ class OGCApi {
     final _path =
         r'/v1/ogc/collections/{collectionId}/map/tiles/{tileMatrixSetId}'
             .replaceAll(
-                '{' r'collectionId' '}',
-                encodeQueryParameter(
-                        _serializers, collectionId, const FullType(String))
-                    .toString())
+              '{'
+              r'collectionId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                collectionId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'tileMatrixSetId' '}',
-                encodeQueryParameter(
-                        _serializers, tileMatrixSetId, const FullType(String))
-                    .toString());
+              '{'
+              r'tileMatrixSetId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                tileMatrixSetId,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1017,9 +1122,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcTileSet),
-            ) as OgcTileSet;
+                  rawResponse,
+                  specifiedType: const FullType(OgcTileSet),
+                )
+                as OgcTileSet;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1066,21 +1172,21 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}/map/tiles'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1102,9 +1208,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcTileSetList),
-            ) as OgcTileSetList;
+                  rawResponse,
+                  specifiedType: const FullType(OgcTileSetList),
+                )
+                as OgcTileSetList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1151,16 +1258,10 @@ class OGCApi {
     final _path = r'/v1/ogc/collections';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1182,9 +1283,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcCollections),
-            ) as OgcCollections;
+                  rawResponse,
+                  specifiedType: const FullType(OgcCollections),
+                )
+                as OgcCollections;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1231,16 +1333,10 @@ class OGCApi {
     final _path = r'/v1/ogc/conformance';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1262,9 +1358,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcConformance),
-            ) as OgcConformance;
+                  rawResponse,
+                  specifiedType: const FullType(OgcConformance),
+                )
+                as OgcConformance;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1320,15 +1417,25 @@ class OGCApi {
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}/items/{featureId}'
         .replaceAll(
-            '{' r'collectionId' '}',
-            encodeQueryParameter(
-                    _serializers, collectionId, const FullType(String))
-                .toString())
+          '{'
+          r'collectionId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            collectionId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'featureId' '}',
-            encodeQueryParameter(
-                    _serializers, featureId, const FullType(String))
-                .toString());
+          '{'
+          r'featureId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            featureId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1338,11 +1445,7 @@ class OGCApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1377,9 +1480,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcFeature),
-            ) as OgcFeature;
+                  rawResponse,
+                  specifiedType: const FullType(OgcFeature),
+                )
+                as OgcFeature;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1452,9 +1556,15 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}/items'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -1464,11 +1574,7 @@ class OGCApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1477,32 +1583,59 @@ class OGCApi {
 
     final _queryParameters = <String, dynamic>{
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (bboxCrs != null)
-        r'bbox-crs':
-            encodeQueryParameter(_serializers, bboxCrs, const FullType(String)),
+        r'bbox-crs': encodeQueryParameter(
+          _serializers,
+          bboxCrs,
+          const FullType(String),
+        ),
       if (datetime != null)
         r'datetime': encodeQueryParameter(
-            _serializers, datetime, const FullType(String)),
+          _serializers,
+          datetime,
+          const FullType(String),
+        ),
       if (filter != null)
-        r'filter':
-            encodeQueryParameter(_serializers, filter, const FullType(String)),
+        r'filter': encodeQueryParameter(
+          _serializers,
+          filter,
+          const FullType(String),
+        ),
       if (filterLang != null)
         r'filter-lang': encodeQueryParameter(
-            _serializers, filterLang, const FullType(String)),
+          _serializers,
+          filterLang,
+          const FullType(String),
+        ),
       if (filterCrs != null)
         r'filter-crs': encodeQueryParameter(
-            _serializers, filterCrs, const FullType(String)),
+          _serializers,
+          filterCrs,
+          const FullType(String),
+        ),
       if (count != null)
-        r'count':
-            encodeQueryParameter(_serializers, count, const FullType(bool)),
+        r'count': encodeQueryParameter(
+          _serializers,
+          count,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1537,9 +1670,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcFeatureCollection),
-            ) as OgcFeatureCollection;
+                  rawResponse,
+                  specifiedType: const FullType(OgcFeatureCollection),
+                )
+                as OgcFeatureCollection;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1586,16 +1720,10 @@ class OGCApi {
     final _path = r'/v1/ogc';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1617,9 +1745,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcLandingPage),
-            ) as OgcLandingPage;
+                  rawResponse,
+                  specifiedType: const FullType(OgcLandingPage),
+                )
+                as OgcLandingPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1666,21 +1795,21 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/collections/{collectionId}/queryables'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1702,9 +1831,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcQueryables),
-            ) as OgcQueryables;
+                  rawResponse,
+                  specifiedType: const FullType(OgcQueryables),
+                )
+                as OgcQueryables;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1751,22 +1881,21 @@ class OGCApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ogc/tileMatrixSets/{tileMatrixSetId}'.replaceAll(
-        '{' r'tileMatrixSetId' '}',
-        encodeQueryParameter(
-                _serializers, tileMatrixSetId, const FullType(String))
-            .toString());
+      '{'
+      r'tileMatrixSetId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tileMatrixSetId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1788,9 +1917,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcTileMatrixSet),
-            ) as OgcTileMatrixSet;
+                  rawResponse,
+                  specifiedType: const FullType(OgcTileMatrixSet),
+                )
+                as OgcTileMatrixSet;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1837,16 +1967,10 @@ class OGCApi {
     final _path = r'/v1/ogc/tileMatrixSets';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1868,9 +1992,10 @@ class OGCApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OgcTileMatrixSetList),
-            ) as OgcTileMatrixSetList;
+                  rawResponse,
+                  specifiedType: const FullType(OgcTileMatrixSetList),
+                )
+                as OgcTileMatrixSetList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

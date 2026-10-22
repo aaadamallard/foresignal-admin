@@ -46,8 +46,9 @@ abstract class OwnershipChainRequest
 
   OwnershipChainRequest._();
 
-  factory OwnershipChainRequest(
-      [void updates(OwnershipChainRequestBuilder b)]) = _$OwnershipChainRequest;
+  factory OwnershipChainRequest([
+    void updates(OwnershipChainRequestBuilder b),
+  ]) = _$OwnershipChainRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OwnershipChainRequestBuilder b) => b;
@@ -62,7 +63,7 @@ class _$OwnershipChainRequestSerializer
   @override
   final Iterable<Type> types = const [
     OwnershipChainRequest,
-    _$OwnershipChainRequest
+    _$OwnershipChainRequest,
   ];
 
   @override
@@ -96,8 +97,9 @@ class _$OwnershipChainRequestSerializer
       yield r'types';
       yield serializers.serialize(
         object.types,
-        specifiedType: const FullType(
-            BuiltList, [FullType(OwnershipChainRequestTypesEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(OwnershipChainRequestTypesEnum),
+        ]),
       );
     }
     if (object.minConfidence != null) {
@@ -122,9 +124,11 @@ class _$OwnershipChainRequestSerializer
     OwnershipChainRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,51 +144,67 @@ class _$OwnershipChainRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'refs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.refs.replace(valueDes);
           break;
         case r'depth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.depth = valueDes;
           break;
         case r'direction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OwnershipChainRequestDirectionEnum),
-          ) as OwnershipChainRequestDirectionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OwnershipChainRequestDirectionEnum,
+                    ),
+                  )
+                  as OwnershipChainRequestDirectionEnum?;
           if (valueDes == null) continue;
           result.direction = valueDes;
           break;
         case r'types':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(OwnershipChainRequestTypesEnum)]),
-          ) as BuiltList<OwnershipChainRequestTypesEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(OwnershipChainRequestTypesEnum),
+                    ]),
+                  )
+                  as BuiltList<OwnershipChainRequestTypesEnum>?;
           if (valueDes == null) continue;
           result.types.replace(valueDes);
           break;
         case r'minConfidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minConfidence = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;

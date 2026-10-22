@@ -32,8 +32,9 @@ abstract class ReceivedPackageSender
 
   ReceivedPackageSender._();
 
-  factory ReceivedPackageSender(
-      [void updates(ReceivedPackageSenderBuilder b)]) = _$ReceivedPackageSender;
+  factory ReceivedPackageSender([
+    void updates(ReceivedPackageSenderBuilder b),
+  ]) = _$ReceivedPackageSender;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ReceivedPackageSenderBuilder b) => b;
@@ -48,7 +49,7 @@ class _$ReceivedPackageSenderSerializer
   @override
   final Iterable<Type> types = const [
     ReceivedPackageSender,
-    _$ReceivedPackageSender
+    _$ReceivedPackageSender,
   ];
 
   @override
@@ -91,9 +92,11 @@ class _$ReceivedPackageSenderSerializer
     ReceivedPackageSender object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,32 +112,40 @@ class _$ReceivedPackageSenderSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'instanceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.instanceName = valueDes;
           break;
         case r'keyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.keyId = valueDes;
           break;
         case r'peerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.peerId = valueDes;
           break;

@@ -56,7 +56,7 @@ class _$MapSpriteIndexValueSerializer
   @override
   final Iterable<Type> types = const [
     MapSpriteIndexValue,
-    _$MapSpriteIndexValue
+    _$MapSpriteIndexValue,
   ];
 
   @override
@@ -68,15 +68,9 @@ class _$MapSpriteIndexValueSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'x';
-    yield serializers.serialize(
-      object.x,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.x, specifiedType: const FullType(int));
     yield r'y';
-    yield serializers.serialize(
-      object.y,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.y, specifiedType: const FullType(int));
     yield r'width';
     yield serializers.serialize(
       object.width,
@@ -107,9 +101,11 @@ class _$MapSpriteIndexValueSerializer
     MapSpriteIndexValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,45 +121,42 @@ class _$MapSpriteIndexValueSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'x':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.x = valueDes;
           break;
         case r'y':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.y = valueDes;
           break;
         case r'width':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.width = valueDes;
           break;
         case r'height':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.height = valueDes;
           break;
         case r'pixelRatio':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pixelRatio = valueDes;
           break;
         case r'sdf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.sdf = valueDes;
           break;

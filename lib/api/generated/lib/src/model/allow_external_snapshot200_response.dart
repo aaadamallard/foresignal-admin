@@ -18,8 +18,10 @@ part 'allow_external_snapshot200_response.g.dart';
 @BuiltValue()
 abstract class AllowExternalSnapshot200Response
     implements
-        Built<AllowExternalSnapshot200Response,
-            AllowExternalSnapshot200ResponseBuilder> {
+        Built<
+          AllowExternalSnapshot200Response,
+          AllowExternalSnapshot200ResponseBuilder
+        > {
   @BuiltValueField(wireName: r'snapshotId')
   String get snapshotId;
 
@@ -32,9 +34,9 @@ abstract class AllowExternalSnapshot200Response
 
   AllowExternalSnapshot200Response._();
 
-  factory AllowExternalSnapshot200Response(
-          [void updates(AllowExternalSnapshot200ResponseBuilder b)]) =
-      _$AllowExternalSnapshot200Response;
+  factory AllowExternalSnapshot200Response([
+    void updates(AllowExternalSnapshot200ResponseBuilder b),
+  ]) = _$AllowExternalSnapshot200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AllowExternalSnapshot200ResponseBuilder b) => b;
@@ -49,7 +51,7 @@ class _$AllowExternalSnapshot200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     AllowExternalSnapshot200Response,
-    _$AllowExternalSnapshot200Response
+    _$AllowExternalSnapshot200Response,
   ];
 
   @override
@@ -83,9 +85,11 @@ class _$AllowExternalSnapshot200ResponseSerializer
     AllowExternalSnapshot200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +105,27 @@ class _$AllowExternalSnapshot200ResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'snapshotId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.snapshotId = valueDes;
           break;
         case r'removed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.removed = valueDes;
           break;
         case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IngestOutcome),
-          ) as IngestOutcome;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IngestOutcome),
+                  )
+                  as IngestOutcome;
           result.outcome.replace(valueDes);
           break;
         default:

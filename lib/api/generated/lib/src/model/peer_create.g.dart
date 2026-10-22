@@ -6,8 +6,9 @@ part of 'peer_create.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const PeerCreateModeEnum _$peerCreateModeEnum_PULL =
-    const PeerCreateModeEnum._('PULL');
+const PeerCreateModeEnum _$peerCreateModeEnum_PULL = const PeerCreateModeEnum._(
+  'PULL',
+);
 const PeerCreateModeEnum _$peerCreateModeEnum_RECEIVE =
     const PeerCreateModeEnum._('RECEIVE');
 
@@ -24,9 +25,9 @@ PeerCreateModeEnum _$peerCreateModeEnumValueOf(String name) {
 
 final BuiltSet<PeerCreateModeEnum> _$peerCreateModeEnumValues =
     BuiltSet<PeerCreateModeEnum>(const <PeerCreateModeEnum>[
-  _$peerCreateModeEnum_PULL,
-  _$peerCreateModeEnum_RECEIVE,
-]);
+      _$peerCreateModeEnum_PULL,
+      _$peerCreateModeEnum_RECEIVE,
+    ]);
 
 const PeerCreateReliabilityEnum _$peerCreateReliabilityEnum_A =
     const PeerCreateReliabilityEnum._('A');
@@ -62,13 +63,13 @@ PeerCreateReliabilityEnum _$peerCreateReliabilityEnumValueOf(String name) {
 
 final BuiltSet<PeerCreateReliabilityEnum> _$peerCreateReliabilityEnumValues =
     BuiltSet<PeerCreateReliabilityEnum>(const <PeerCreateReliabilityEnum>[
-  _$peerCreateReliabilityEnum_A,
-  _$peerCreateReliabilityEnum_B,
-  _$peerCreateReliabilityEnum_C,
-  _$peerCreateReliabilityEnum_D,
-  _$peerCreateReliabilityEnum_E,
-  _$peerCreateReliabilityEnum_F,
-]);
+      _$peerCreateReliabilityEnum_A,
+      _$peerCreateReliabilityEnum_B,
+      _$peerCreateReliabilityEnum_C,
+      _$peerCreateReliabilityEnum_D,
+      _$peerCreateReliabilityEnum_E,
+      _$peerCreateReliabilityEnum_F,
+    ]);
 
 Serializer<PeerCreateModeEnum> _$peerCreateModeEnumSerializer =
     _$PeerCreateModeEnumSerializer();
@@ -92,15 +93,20 @@ class _$PeerCreateModeEnumSerializer
   final String wireName = 'PeerCreateModeEnum';
 
   @override
-  Object serialize(Serializers serializers, PeerCreateModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PeerCreateModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PeerCreateModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PeerCreateModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PeerCreateModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PeerCreateModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PeerCreateReliabilityEnumSerializer
@@ -128,16 +134,20 @@ class _$PeerCreateReliabilityEnumSerializer
   final String wireName = 'PeerCreateReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers, PeerCreateReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PeerCreateReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PeerCreateReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PeerCreateReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PeerCreateReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PeerCreate extends PeerCreate {
@@ -165,18 +175,18 @@ class _$PeerCreate extends PeerCreate {
   factory _$PeerCreate([void Function(PeerCreateBuilder)? updates]) =>
       (PeerCreateBuilder()..update(updates))._build();
 
-  _$PeerCreate._(
-      {required this.id,
-      required this.name,
-      required this.baseUrl,
-      this.mode,
-      this.enabled,
-      this.token,
-      this.selection,
-      this.sameOperator,
-      this.reliability,
-      this.exchangeKey})
-      : super._();
+  _$PeerCreate._({
+    required this.id,
+    required this.name,
+    required this.baseUrl,
+    this.mode,
+    this.enabled,
+    this.token,
+    this.selection,
+    this.sameOperator,
+    this.reliability,
+    this.exchangeKey,
+  }) : super._();
   @override
   PeerCreate rebuild(void Function(PeerCreateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -318,13 +328,20 @@ class PeerCreateBuilder implements Builder<PeerCreate, PeerCreateBuilder> {
   _$PeerCreate _build() {
     _$PeerCreate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PeerCreate._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'PeerCreate', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PeerCreate', 'name'),
+              name,
+              r'PeerCreate',
+              'name',
+            ),
             baseUrl: BuiltValueNullFieldError.checkNotNull(
-                baseUrl, r'PeerCreate', 'baseUrl'),
+              baseUrl,
+              r'PeerCreate',
+              'baseUrl',
+            ),
             mode: mode,
             enabled: enabled,
             token: token,
@@ -340,7 +357,10 @@ class PeerCreateBuilder implements Builder<PeerCreate, PeerCreateBuilder> {
         _selection?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PeerCreate', _$failedField, e.toString());
+          r'PeerCreate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -38,9 +38,9 @@ abstract class SavedSearchMatchesEvent
 
   SavedSearchMatchesEvent._();
 
-  factory SavedSearchMatchesEvent(
-          [void updates(SavedSearchMatchesEventBuilder b)]) =
-      _$SavedSearchMatchesEvent;
+  factory SavedSearchMatchesEvent([
+    void updates(SavedSearchMatchesEventBuilder b),
+  ]) = _$SavedSearchMatchesEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SavedSearchMatchesEventBuilder b) => b;
@@ -55,7 +55,7 @@ class _$SavedSearchMatchesEventSerializer
   @override
   final Iterable<Type> types = const [
     SavedSearchMatchesEvent,
-    _$SavedSearchMatchesEvent
+    _$SavedSearchMatchesEvent,
   ];
 
   @override
@@ -101,9 +101,11 @@ class _$SavedSearchMatchesEventSerializer
     SavedSearchMatchesEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,40 +121,48 @@ class _$SavedSearchMatchesEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'savedSearchId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.savedSearchId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'newMatches':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.newMatches = valueDes;
           break;
         case r'refs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.refs.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

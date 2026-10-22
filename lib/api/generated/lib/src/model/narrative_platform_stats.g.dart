@@ -18,21 +18,21 @@ class _$NarrativePlatformStats extends NarrativePlatformStats {
   @override
   final String earliestPostRef;
 
-  factory _$NarrativePlatformStats(
-          [void Function(NarrativePlatformStatsBuilder)? updates]) =>
-      (NarrativePlatformStatsBuilder()..update(updates))._build();
+  factory _$NarrativePlatformStats([
+    void Function(NarrativePlatformStatsBuilder)? updates,
+  ]) => (NarrativePlatformStatsBuilder()..update(updates))._build();
 
-  _$NarrativePlatformStats._(
-      {required this.platform,
-      required this.posts,
-      required this.uniqueAuthors,
-      required this.firstObservedAt,
-      required this.earliestPostRef})
-      : super._();
+  _$NarrativePlatformStats._({
+    required this.platform,
+    required this.posts,
+    required this.uniqueAuthors,
+    required this.firstObservedAt,
+    required this.earliestPostRef,
+  }) : super._();
   @override
   NarrativePlatformStats rebuild(
-          void Function(NarrativePlatformStatsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NarrativePlatformStatsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NarrativePlatformStatsBuilder toBuilder() =>
@@ -131,18 +131,34 @@ class NarrativePlatformStatsBuilder
   NarrativePlatformStats build() => _build();
 
   _$NarrativePlatformStats _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NarrativePlatformStats._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'NarrativePlatformStats', 'platform'),
+            platform,
+            r'NarrativePlatformStats',
+            'platform',
+          ),
           posts: BuiltValueNullFieldError.checkNotNull(
-              posts, r'NarrativePlatformStats', 'posts'),
+            posts,
+            r'NarrativePlatformStats',
+            'posts',
+          ),
           uniqueAuthors: BuiltValueNullFieldError.checkNotNull(
-              uniqueAuthors, r'NarrativePlatformStats', 'uniqueAuthors'),
+            uniqueAuthors,
+            r'NarrativePlatformStats',
+            'uniqueAuthors',
+          ),
           firstObservedAt: BuiltValueNullFieldError.checkNotNull(
-              firstObservedAt, r'NarrativePlatformStats', 'firstObservedAt'),
+            firstObservedAt,
+            r'NarrativePlatformStats',
+            'firstObservedAt',
+          ),
           earliestPostRef: BuiltValueNullFieldError.checkNotNull(
-              earliestPostRef, r'NarrativePlatformStats', 'earliestPostRef'),
+            earliestPostRef,
+            r'NarrativePlatformStats',
+            'earliestPostRef',
+          ),
         );
     replace(_$result);
     return _$result;

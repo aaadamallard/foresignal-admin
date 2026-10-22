@@ -15,20 +15,22 @@ class _$AnomalyObservationEvidenceFetchLogRangesInner
   @override
   final int toId;
 
-  factory _$AnomalyObservationEvidenceFetchLogRangesInner(
-          [void Function(AnomalyObservationEvidenceFetchLogRangesInnerBuilder)?
-              updates]) =>
+  factory _$AnomalyObservationEvidenceFetchLogRangesInner([
+    void Function(AnomalyObservationEvidenceFetchLogRangesInnerBuilder)?
+    updates,
+  ]) =>
       (AnomalyObservationEvidenceFetchLogRangesInnerBuilder()..update(updates))
           ._build();
 
-  _$AnomalyObservationEvidenceFetchLogRangesInner._(
-      {required this.sourceId, required this.fromId, required this.toId})
-      : super._();
+  _$AnomalyObservationEvidenceFetchLogRangesInner._({
+    required this.sourceId,
+    required this.fromId,
+    required this.toId,
+  }) : super._();
   @override
   AnomalyObservationEvidenceFetchLogRangesInner rebuild(
-          void Function(AnomalyObservationEvidenceFetchLogRangesInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyObservationEvidenceFetchLogRangesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyObservationEvidenceFetchLogRangesInnerBuilder toBuilder() =>
@@ -56,7 +58,8 @@ class _$AnomalyObservationEvidenceFetchLogRangesInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'AnomalyObservationEvidenceFetchLogRangesInner')
+            r'AnomalyObservationEvidenceFetchLogRangesInner',
+          )
           ..add('sourceId', sourceId)
           ..add('fromId', fromId)
           ..add('toId', toId))
@@ -66,8 +69,10 @@ class _$AnomalyObservationEvidenceFetchLogRangesInner
 
 class AnomalyObservationEvidenceFetchLogRangesInnerBuilder
     implements
-        Builder<AnomalyObservationEvidenceFetchLogRangesInner,
-            AnomalyObservationEvidenceFetchLogRangesInnerBuilder> {
+        Builder<
+          AnomalyObservationEvidenceFetchLogRangesInner,
+          AnomalyObservationEvidenceFetchLogRangesInnerBuilder
+        > {
   _$AnomalyObservationEvidenceFetchLogRangesInner? _$v;
 
   String? _sourceId;
@@ -104,8 +109,9 @@ class AnomalyObservationEvidenceFetchLogRangesInnerBuilder
 
   @override
   void update(
-      void Function(AnomalyObservationEvidenceFetchLogRangesInnerBuilder)?
-          updates) {
+    void Function(AnomalyObservationEvidenceFetchLogRangesInnerBuilder)?
+    updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -113,14 +119,24 @@ class AnomalyObservationEvidenceFetchLogRangesInnerBuilder
   AnomalyObservationEvidenceFetchLogRangesInner build() => _build();
 
   _$AnomalyObservationEvidenceFetchLogRangesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnomalyObservationEvidenceFetchLogRangesInner._(
-          sourceId: BuiltValueNullFieldError.checkNotNull(sourceId,
-              r'AnomalyObservationEvidenceFetchLogRangesInner', 'sourceId'),
-          fromId: BuiltValueNullFieldError.checkNotNull(fromId,
-              r'AnomalyObservationEvidenceFetchLogRangesInner', 'fromId'),
+          sourceId: BuiltValueNullFieldError.checkNotNull(
+            sourceId,
+            r'AnomalyObservationEvidenceFetchLogRangesInner',
+            'sourceId',
+          ),
+          fromId: BuiltValueNullFieldError.checkNotNull(
+            fromId,
+            r'AnomalyObservationEvidenceFetchLogRangesInner',
+            'fromId',
+          ),
           toId: BuiltValueNullFieldError.checkNotNull(
-              toId, r'AnomalyObservationEvidenceFetchLogRangesInner', 'toId'),
+            toId,
+            r'AnomalyObservationEvidenceFetchLogRangesInner',
+            'toId',
+          ),
         );
     replace(_$result);
     return _$result;

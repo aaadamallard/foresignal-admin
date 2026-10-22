@@ -53,16 +53,10 @@ class TransitApi {
     final _path = r'/v1/transit/catalog';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -71,19 +65,31 @@ class TransitApi {
 
     final _queryParameters = <String, dynamic>{
       if (country != null)
-        r'country':
-            encodeQueryParameter(_serializers, country, const FullType(String)),
+        r'country': encodeQueryParameter(
+          _serializers,
+          country,
+          const FullType(String),
+        ),
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (entityType != null)
         r'entityType': encodeQueryParameter(
-            _serializers, entityType, const FullType(String)),
+          _serializers,
+          entityType,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -102,9 +108,10 @@ class TransitApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TransitCatalogPage),
-            ) as TransitCatalogPage;
+                  rawResponse,
+                  specifiedType: const FullType(TransitCatalogPage),
+                )
+                as TransitCatalogPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -24,18 +24,19 @@ AccessGrantInputRoleEnum _$accessGrantInputRoleEnumValueOf(String name) {
 
 final BuiltSet<AccessGrantInputRoleEnum> _$accessGrantInputRoleEnumValues =
     BuiltSet<AccessGrantInputRoleEnum>(const <AccessGrantInputRoleEnum>[
-  _$accessGrantInputRoleEnum_viewer,
-  _$accessGrantInputRoleEnum_commenter,
-]);
+      _$accessGrantInputRoleEnum_viewer,
+      _$accessGrantInputRoleEnum_commenter,
+    ]);
 
 const AccessGrantInputDeliverAsEnum _$accessGrantInputDeliverAsEnum_report =
     const AccessGrantInputDeliverAsEnum._('report');
 const AccessGrantInputDeliverAsEnum
-    _$accessGrantInputDeliverAsEnum_chronicleExtract =
+_$accessGrantInputDeliverAsEnum_chronicleExtract =
     const AccessGrantInputDeliverAsEnum._('chronicleExtract');
 
 AccessGrantInputDeliverAsEnum _$accessGrantInputDeliverAsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'report':
       return _$accessGrantInputDeliverAsEnum_report;
@@ -47,16 +48,17 @@ AccessGrantInputDeliverAsEnum _$accessGrantInputDeliverAsEnumValueOf(
 }
 
 final BuiltSet<AccessGrantInputDeliverAsEnum>
-    _$accessGrantInputDeliverAsEnumValues = BuiltSet<
-        AccessGrantInputDeliverAsEnum>(const <AccessGrantInputDeliverAsEnum>[
-  _$accessGrantInputDeliverAsEnum_report,
-  _$accessGrantInputDeliverAsEnum_chronicleExtract,
-]);
+_$accessGrantInputDeliverAsEnumValues = BuiltSet<AccessGrantInputDeliverAsEnum>(
+  const <AccessGrantInputDeliverAsEnum>[
+    _$accessGrantInputDeliverAsEnum_report,
+    _$accessGrantInputDeliverAsEnum_chronicleExtract,
+  ],
+);
 
 Serializer<AccessGrantInputRoleEnum> _$accessGrantInputRoleEnumSerializer =
     _$AccessGrantInputRoleEnumSerializer();
 Serializer<AccessGrantInputDeliverAsEnum>
-    _$accessGrantInputDeliverAsEnumSerializer =
+_$accessGrantInputDeliverAsEnumSerializer =
     _$AccessGrantInputDeliverAsEnumSerializer();
 
 class _$AccessGrantInputRoleEnumSerializer
@@ -76,16 +78,20 @@ class _$AccessGrantInputRoleEnumSerializer
   final String wireName = 'AccessGrantInputRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, AccessGrantInputRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AccessGrantInputRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AccessGrantInputRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AccessGrantInputRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AccessGrantInputRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AccessGrantInputDeliverAsEnumSerializer
@@ -106,16 +112,19 @@ class _$AccessGrantInputDeliverAsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AccessGrantInputDeliverAsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AccessGrantInputDeliverAsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AccessGrantInputDeliverAsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AccessGrantInputDeliverAsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AccessGrantInputDeliverAsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AccessGrantInput extends AccessGrantInput {
@@ -128,13 +137,16 @@ class _$AccessGrantInput extends AccessGrantInput {
   @override
   final String? message;
 
-  factory _$AccessGrantInput(
-          [void Function(AccessGrantInputBuilder)? updates]) =>
-      (AccessGrantInputBuilder()..update(updates))._build();
+  factory _$AccessGrantInput([
+    void Function(AccessGrantInputBuilder)? updates,
+  ]) => (AccessGrantInputBuilder()..update(updates))._build();
 
-  _$AccessGrantInput._(
-      {this.role, this.expiresAt, this.deliverAs, this.message})
-      : super._();
+  _$AccessGrantInput._({
+    this.role,
+    this.expiresAt,
+    this.deliverAs,
+    this.message,
+  }) : super._();
   @override
   AccessGrantInput rebuild(void Function(AccessGrantInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -226,7 +238,8 @@ class AccessGrantInputBuilder
   AccessGrantInput build() => _build();
 
   _$AccessGrantInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AccessGrantInput._(
           role: role,
           expiresAt: expiresAt,

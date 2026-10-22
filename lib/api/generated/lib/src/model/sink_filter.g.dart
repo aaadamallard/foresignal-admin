@@ -23,14 +23,14 @@ class _$SinkFilter extends SinkFilter {
   factory _$SinkFilter([void Function(SinkFilterBuilder)? updates]) =>
       (SinkFilterBuilder()..update(updates))._build();
 
-  _$SinkFilter._(
-      {this.sources,
-      this.kinds,
-      this.bbox,
-      this.placeId,
-      this.watchlistId,
-      this.includePrivate})
-      : super._();
+  _$SinkFilter._({
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.placeId,
+    this.watchlistId,
+    this.includePrivate,
+  }) : super._();
   @override
   SinkFilter rebuild(void Function(SinkFilterBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -138,7 +138,8 @@ class SinkFilterBuilder implements Builder<SinkFilter, SinkFilterBuilder> {
   _$SinkFilter _build() {
     _$SinkFilter _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkFilter._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -158,7 +159,10 @@ class SinkFilterBuilder implements Builder<SinkFilter, SinkFilterBuilder> {
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkFilter', _$failedField, e.toString());
+          r'SinkFilter',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

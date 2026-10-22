@@ -80,10 +80,7 @@ class _$SpcOutlookPayloadSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'day';
-    yield serializers.serialize(
-      object.day,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.day, specifiedType: const FullType(int));
     yield r'type';
     yield serializers.serialize(
       object.type,
@@ -102,10 +99,7 @@ class _$SpcOutlookPayloadSerializer
       );
     }
     yield r'dn';
-    yield serializers.serialize(
-      object.dn,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.dn, specifiedType: const FullType(int));
     if (object.issue != null) {
       yield r'issue';
       yield serializers.serialize(
@@ -140,9 +134,11 @@ class _$SpcOutlookPayloadSerializer
     SpcOutlookPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -158,70 +154,82 @@ class _$SpcOutlookPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'day':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.day = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SpcOutlookPayloadTypeEnum),
-          ) as SpcOutlookPayloadTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SpcOutlookPayloadTypeEnum),
+                  )
+                  as SpcOutlookPayloadTypeEnum;
           result.type = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.label = valueDes;
           break;
         case r'label2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label2 = valueDes;
           break;
         case r'dn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.dn = valueDes;
           break;
         case r'issue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.issue = valueDes;
           break;
         case r'valid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.valid = valueDes;
           break;
         case r'expire':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expire = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         default:

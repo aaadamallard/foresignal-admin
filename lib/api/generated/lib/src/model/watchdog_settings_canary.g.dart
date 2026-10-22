@@ -12,15 +12,15 @@ class _$WatchdogSettingsCanary extends WatchdogSettingsCanary {
   @override
   final String? interval;
 
-  factory _$WatchdogSettingsCanary(
-          [void Function(WatchdogSettingsCanaryBuilder)? updates]) =>
-      (WatchdogSettingsCanaryBuilder()..update(updates))._build();
+  factory _$WatchdogSettingsCanary([
+    void Function(WatchdogSettingsCanaryBuilder)? updates,
+  ]) => (WatchdogSettingsCanaryBuilder()..update(updates))._build();
 
   _$WatchdogSettingsCanary._({this.enabled, this.interval}) : super._();
   @override
   WatchdogSettingsCanary rebuild(
-          void Function(WatchdogSettingsCanaryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WatchdogSettingsCanaryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WatchdogSettingsCanaryBuilder toBuilder() =>
@@ -92,11 +92,8 @@ class WatchdogSettingsCanaryBuilder
   WatchdogSettingsCanary build() => _build();
 
   _$WatchdogSettingsCanary _build() {
-    final _$result = _$v ??
-        _$WatchdogSettingsCanary._(
-          enabled: enabled,
-          interval: interval,
-        );
+    final _$result =
+        _$v ?? _$WatchdogSettingsCanary._(enabled: enabled, interval: interval);
     replace(_$result);
     return _$result;
   }

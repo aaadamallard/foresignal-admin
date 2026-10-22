@@ -12,15 +12,15 @@ class _$ForecastQuestionPage extends ForecastQuestionPage {
   @override
   final String? nextCursor;
 
-  factory _$ForecastQuestionPage(
-          [void Function(ForecastQuestionPageBuilder)? updates]) =>
-      (ForecastQuestionPageBuilder()..update(updates))._build();
+  factory _$ForecastQuestionPage([
+    void Function(ForecastQuestionPageBuilder)? updates,
+  ]) => (ForecastQuestionPageBuilder()..update(updates))._build();
 
   _$ForecastQuestionPage._({required this.items, this.nextCursor}) : super._();
   @override
   ForecastQuestionPage rebuild(
-          void Function(ForecastQuestionPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastQuestionPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastQuestionPageBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class ForecastQuestionPageBuilder
   _$ForecastQuestionPage _build() {
     _$ForecastQuestionPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastQuestionPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -108,7 +109,10 @@ class ForecastQuestionPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastQuestionPage', _$failedField, e.toString());
+          r'ForecastQuestionPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

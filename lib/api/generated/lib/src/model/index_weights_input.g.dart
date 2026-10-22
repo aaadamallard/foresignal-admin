@@ -27,15 +27,15 @@ IndexWeightsInputSource_Enum _$indexWeightsInputSourceEnumValueOf(String name) {
 }
 
 final BuiltSet<IndexWeightsInputSource_Enum>
-    _$indexWeightsInputSourceEnumValues =
+_$indexWeightsInputSourceEnumValues =
     BuiltSet<IndexWeightsInputSource_Enum>(const <IndexWeightsInputSource_Enum>[
-  _$indexWeightsInputSourceEnum_fitted,
-  _$indexWeightsInputSourceEnum_operator_,
-  _$indexWeightsInputSourceEnum_default_,
-]);
+      _$indexWeightsInputSourceEnum_fitted,
+      _$indexWeightsInputSourceEnum_operator_,
+      _$indexWeightsInputSourceEnum_default_,
+    ]);
 
 Serializer<IndexWeightsInputSource_Enum>
-    _$indexWeightsInputSourceEnumSerializer =
+_$indexWeightsInputSourceEnumSerializer =
     _$IndexWeightsInputSource_EnumSerializer();
 
 class _$IndexWeightsInputSource_EnumSerializer
@@ -57,16 +57,20 @@ class _$IndexWeightsInputSource_EnumSerializer
   final String wireName = 'IndexWeightsInputSource_Enum';
 
   @override
-  Object serialize(Serializers serializers, IndexWeightsInputSource_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndexWeightsInputSource_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndexWeightsInputSource_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndexWeightsInputSource_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndexWeightsInputSource_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndexWeightsInput extends IndexWeightsInput {
@@ -79,13 +83,16 @@ class _$IndexWeightsInput extends IndexWeightsInput {
   @override
   final String? rationale;
 
-  factory _$IndexWeightsInput(
-          [void Function(IndexWeightsInputBuilder)? updates]) =>
-      (IndexWeightsInputBuilder()..update(updates))._build();
+  factory _$IndexWeightsInput([
+    void Function(IndexWeightsInputBuilder)? updates,
+  ]) => (IndexWeightsInputBuilder()..update(updates))._build();
 
-  _$IndexWeightsInput._(
-      {required this.source_, this.version, this.weights, this.rationale})
-      : super._();
+  _$IndexWeightsInput._({
+    required this.source_,
+    this.version,
+    this.weights,
+    this.rationale,
+  }) : super._();
   @override
   IndexWeightsInput rebuild(void Function(IndexWeightsInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -180,10 +187,14 @@ class IndexWeightsInputBuilder
   _$IndexWeightsInput _build() {
     _$IndexWeightsInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndexWeightsInput._(
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'IndexWeightsInput', 'source_'),
+              source_,
+              r'IndexWeightsInput',
+              'source_',
+            ),
             version: version,
             weights: _weights?.build(),
             rationale: rationale,
@@ -195,7 +206,10 @@ class IndexWeightsInputBuilder
         _weights?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndexWeightsInput', _$failedField, e.toString());
+          r'IndexWeightsInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

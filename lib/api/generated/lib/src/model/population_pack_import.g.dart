@@ -7,11 +7,12 @@ part of 'population_pack_import.dart';
 // **************************************************************************
 
 const PopulationPackImportLicenceEnum
-    _$populationPackImportLicenceEnum_cCBY4Period0 =
+_$populationPackImportLicenceEnum_cCBY4Period0 =
     const PopulationPackImportLicenceEnum._('cCBY4Period0');
 
 PopulationPackImportLicenceEnum _$populationPackImportLicenceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'cCBY4Period0':
       return _$populationPackImportLicenceEnum_cCBY4Period0;
@@ -21,13 +22,15 @@ PopulationPackImportLicenceEnum _$populationPackImportLicenceEnumValueOf(
 }
 
 final BuiltSet<PopulationPackImportLicenceEnum>
-    _$populationPackImportLicenceEnumValues = BuiltSet<
-        PopulationPackImportLicenceEnum>(const <PopulationPackImportLicenceEnum>[
-  _$populationPackImportLicenceEnum_cCBY4Period0,
-]);
+_$populationPackImportLicenceEnumValues =
+    BuiltSet<PopulationPackImportLicenceEnum>(
+      const <PopulationPackImportLicenceEnum>[
+        _$populationPackImportLicenceEnum_cCBY4Period0,
+      ],
+    );
 
 Serializer<PopulationPackImportLicenceEnum>
-    _$populationPackImportLicenceEnumSerializer =
+_$populationPackImportLicenceEnumSerializer =
     _$PopulationPackImportLicenceEnumSerializer();
 
 class _$PopulationPackImportLicenceEnumSerializer
@@ -46,16 +49,19 @@ class _$PopulationPackImportLicenceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PopulationPackImportLicenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PopulationPackImportLicenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PopulationPackImportLicenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PopulationPackImportLicenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PopulationPackImportLicenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PopulationPackImport extends PopulationPackImport {
@@ -78,25 +84,25 @@ class _$PopulationPackImport extends PopulationPackImport {
   @override
   final int? durationMs;
 
-  factory _$PopulationPackImport(
-          [void Function(PopulationPackImportBuilder)? updates]) =>
-      (PopulationPackImportBuilder()..update(updates))._build();
+  factory _$PopulationPackImport([
+    void Function(PopulationPackImportBuilder)? updates,
+  ]) => (PopulationPackImportBuilder()..update(updates))._build();
 
-  _$PopulationPackImport._(
-      {required this.id,
-      this.path,
-      required this.fileSha256,
-      required this.epoch,
-      required this.licence,
-      required this.attribution,
-      this.cells,
-      required this.importedAt,
-      this.durationMs})
-      : super._();
+  _$PopulationPackImport._({
+    required this.id,
+    this.path,
+    required this.fileSha256,
+    required this.epoch,
+    required this.licence,
+    required this.attribution,
+    this.cells,
+    required this.importedAt,
+    this.durationMs,
+  }) : super._();
   @override
   PopulationPackImport rebuild(
-          void Function(PopulationPackImportBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PopulationPackImportBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PopulationPackImportBuilder toBuilder() =>
@@ -228,22 +234,41 @@ class PopulationPackImportBuilder
   _$PopulationPackImport _build() {
     _$PopulationPackImport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PopulationPackImport._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PopulationPackImport', 'id'),
+              id,
+              r'PopulationPackImport',
+              'id',
+            ),
             path: path,
             fileSha256: BuiltValueNullFieldError.checkNotNull(
-                fileSha256, r'PopulationPackImport', 'fileSha256'),
+              fileSha256,
+              r'PopulationPackImport',
+              'fileSha256',
+            ),
             epoch: BuiltValueNullFieldError.checkNotNull(
-                epoch, r'PopulationPackImport', 'epoch'),
+              epoch,
+              r'PopulationPackImport',
+              'epoch',
+            ),
             licence: BuiltValueNullFieldError.checkNotNull(
-                licence, r'PopulationPackImport', 'licence'),
+              licence,
+              r'PopulationPackImport',
+              'licence',
+            ),
             attribution: BuiltValueNullFieldError.checkNotNull(
-                attribution, r'PopulationPackImport', 'attribution'),
+              attribution,
+              r'PopulationPackImport',
+              'attribution',
+            ),
             cells: _cells?.build(),
             importedAt: BuiltValueNullFieldError.checkNotNull(
-                importedAt, r'PopulationPackImport', 'importedAt'),
+              importedAt,
+              r'PopulationPackImport',
+              'importedAt',
+            ),
             durationMs: durationMs,
           );
     } catch (_) {
@@ -253,7 +278,10 @@ class PopulationPackImportBuilder
         _cells?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PopulationPackImport', _$failedField, e.toString());
+          r'PopulationPackImport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

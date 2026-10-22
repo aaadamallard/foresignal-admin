@@ -6,7 +6,7 @@ part of 'change.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-abstract class ChangeBuilder {
+abstract mixin class ChangeBuilder {
   void replace(Change other);
   void update(void Function(ChangeBuilder) updates);
   int? get seq;
@@ -125,30 +125,30 @@ class _$$Change extends $Change {
   factory _$$Change([void Function($ChangeBuilder)? updates]) =>
       ($ChangeBuilder()..update(updates))._build();
 
-  _$$Change._(
-      {required this.seq,
-      required this.source_,
-      required this.externalId,
-      required this.kind,
-      required this.version,
-      required this.observedAt,
-      required this.tombstone,
-      this.geometry,
-      this.payload,
-      this.prevSeq,
-      this.historyTier,
-      this.persistReason,
-      this.eventTime,
-      this.validUntil,
-      this.qaFlags,
-      this.bbox,
-      this.prevPersistedBbox,
-      this.prevLiveBbox,
-      this.leftFilter,
-      this.purged,
-      this.validFrom,
-      this.globalRef})
-      : super._();
+  _$$Change._({
+    required this.seq,
+    required this.source_,
+    required this.externalId,
+    required this.kind,
+    required this.version,
+    required this.observedAt,
+    required this.tombstone,
+    this.geometry,
+    this.payload,
+    this.prevSeq,
+    this.historyTier,
+    this.persistReason,
+    this.eventTime,
+    this.validUntil,
+    this.qaFlags,
+    this.bbox,
+    this.prevPersistedBbox,
+    this.prevLiveBbox,
+    this.leftFilter,
+    this.purged,
+    this.validFrom,
+    this.globalRef,
+  }) : super._();
   @override
   $Change rebuild(void Function($ChangeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -396,21 +396,40 @@ class $ChangeBuilder
   _$$Change _build() {
     _$$Change _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$$Change._(
             seq: BuiltValueNullFieldError.checkNotNull(seq, r'$Change', 'seq'),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'$Change', 'source_'),
+              source_,
+              r'$Change',
+              'source_',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'$Change', 'externalId'),
-            kind:
-                BuiltValueNullFieldError.checkNotNull(kind, r'$Change', 'kind'),
+              externalId,
+              r'$Change',
+              'externalId',
+            ),
+            kind: BuiltValueNullFieldError.checkNotNull(
+              kind,
+              r'$Change',
+              'kind',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'$Change', 'version'),
+              version,
+              r'$Change',
+              'version',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'$Change', 'observedAt'),
+              observedAt,
+              r'$Change',
+              'observedAt',
+            ),
             tombstone: BuiltValueNullFieldError.checkNotNull(
-                tombstone, r'$Change', 'tombstone'),
+              tombstone,
+              r'$Change',
+              'tombstone',
+            ),
             geometry: _geometry?.build(),
             payload: _payload?.build(),
             prevSeq: prevSeq,
@@ -443,7 +462,10 @@ class $ChangeBuilder
         _prevLiveBbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'$Change', _$failedField, e.toString());
+          r'$Change',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

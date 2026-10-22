@@ -20,17 +20,15 @@ OverlandAckResultEnum _$overlandAckResultEnumValueOf(String name) {
 
 final BuiltSet<OverlandAckResultEnum> _$overlandAckResultEnumValues =
     BuiltSet<OverlandAckResultEnum>(const <OverlandAckResultEnum>[
-  _$overlandAckResultEnum_ok,
-]);
+      _$overlandAckResultEnum_ok,
+    ]);
 
 Serializer<OverlandAckResultEnum> _$overlandAckResultEnumSerializer =
     _$OverlandAckResultEnumSerializer();
 
 class _$OverlandAckResultEnumSerializer
     implements PrimitiveSerializer<OverlandAckResultEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'ok': 'ok',
-  };
+  static const Map<String, Object> _toWire = const <String, Object>{'ok': 'ok'};
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
   };
@@ -41,15 +39,20 @@ class _$OverlandAckResultEnumSerializer
   final String wireName = 'OverlandAckResultEnum';
 
   @override
-  Object serialize(Serializers serializers, OverlandAckResultEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OverlandAckResultEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  OverlandAckResultEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OverlandAckResultEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  OverlandAckResultEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OverlandAckResultEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OverlandAck extends OverlandAck {
@@ -83,8 +86,9 @@ class _$OverlandAck extends OverlandAck {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'OverlandAck')..add('result', result))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'OverlandAck',
+    )..add('result', result)).toString();
   }
 }
 
@@ -122,10 +126,14 @@ class OverlandAckBuilder implements Builder<OverlandAck, OverlandAckBuilder> {
   OverlandAck build() => _build();
 
   _$OverlandAck _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OverlandAck._(
           result: BuiltValueNullFieldError.checkNotNull(
-              result, r'OverlandAck', 'result'),
+            result,
+            r'OverlandAck',
+            'result',
+          ),
         );
     replace(_$result);
     return _$result;

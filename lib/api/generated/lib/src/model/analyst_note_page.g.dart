@@ -92,11 +92,9 @@ class AnalystNotePageBuilder
   _$AnalystNotePage _build() {
     _$AnalystNotePage _$result;
     try {
-      _$result = _$v ??
-          _$AnalystNotePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AnalystNotePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class AnalystNotePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystNotePage', _$failedField, e.toString());
+          r'AnalystNotePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

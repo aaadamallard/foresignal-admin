@@ -68,25 +68,27 @@ EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnumValueOf(String name) {
 
 final BuiltSet<EntityKeyKeyTypeEnum> _$entityKeyKeyTypeEnumValues =
     BuiltSet<EntityKeyKeyTypeEnum>(const <EntityKeyKeyTypeEnum>[
-  _$entityKeyKeyTypeEnum_airframe,
-  _$entityKeyKeyTypeEnum_icao24,
-  _$entityKeyKeyTypeEnum_registration,
-  _$entityKeyKeyTypeEnum_imo,
-  _$entityKeyKeyTypeEnum_mmsi,
-  _$entityKeyKeyTypeEnum_norad,
-  _$entityKeyKeyTypeEnum_cospar,
-  _$entityKeyKeyTypeEnum_callsign,
-  _$entityKeyKeyTypeEnum_lei,
-  _$entityKeyKeyTypeEnum_companyNumber,
-  _$entityKeyKeyTypeEnum_taxId,
-  _$entityKeyKeyTypeEnum_officerId,
-  _$entityKeyKeyTypeEnum_personKey,
-]);
+      _$entityKeyKeyTypeEnum_airframe,
+      _$entityKeyKeyTypeEnum_icao24,
+      _$entityKeyKeyTypeEnum_registration,
+      _$entityKeyKeyTypeEnum_imo,
+      _$entityKeyKeyTypeEnum_mmsi,
+      _$entityKeyKeyTypeEnum_norad,
+      _$entityKeyKeyTypeEnum_cospar,
+      _$entityKeyKeyTypeEnum_callsign,
+      _$entityKeyKeyTypeEnum_lei,
+      _$entityKeyKeyTypeEnum_companyNumber,
+      _$entityKeyKeyTypeEnum_taxId,
+      _$entityKeyKeyTypeEnum_officerId,
+      _$entityKeyKeyTypeEnum_personKey,
+    ]);
 
-const EntityKeyRoleEnum _$entityKeyRoleEnum_ANCHOR =
-    const EntityKeyRoleEnum._('ANCHOR');
-const EntityKeyRoleEnum _$entityKeyRoleEnum_WEAK =
-    const EntityKeyRoleEnum._('WEAK');
+const EntityKeyRoleEnum _$entityKeyRoleEnum_ANCHOR = const EntityKeyRoleEnum._(
+  'ANCHOR',
+);
+const EntityKeyRoleEnum _$entityKeyRoleEnum_WEAK = const EntityKeyRoleEnum._(
+  'WEAK',
+);
 
 EntityKeyRoleEnum _$entityKeyRoleEnumValueOf(String name) {
   switch (name) {
@@ -101,9 +103,9 @@ EntityKeyRoleEnum _$entityKeyRoleEnumValueOf(String name) {
 
 final BuiltSet<EntityKeyRoleEnum> _$entityKeyRoleEnumValues =
     BuiltSet<EntityKeyRoleEnum>(const <EntityKeyRoleEnum>[
-  _$entityKeyRoleEnum_ANCHOR,
-  _$entityKeyRoleEnum_WEAK,
-]);
+      _$entityKeyRoleEnum_ANCHOR,
+      _$entityKeyRoleEnum_WEAK,
+    ]);
 
 const EntityKeyOriginEnum _$entityKeyOriginEnum_REGISTRY =
     const EntityKeyOriginEnum._('REGISTRY');
@@ -131,11 +133,11 @@ EntityKeyOriginEnum _$entityKeyOriginEnumValueOf(String name) {
 
 final BuiltSet<EntityKeyOriginEnum> _$entityKeyOriginEnumValues =
     BuiltSet<EntityKeyOriginEnum>(const <EntityKeyOriginEnum>[
-  _$entityKeyOriginEnum_REGISTRY,
-  _$entityKeyOriginEnum_CO_ASSERTED,
-  _$entityKeyOriginEnum_OBSERVED,
-  _$entityKeyOriginEnum_OPERATOR,
-]);
+      _$entityKeyOriginEnum_REGISTRY,
+      _$entityKeyOriginEnum_CO_ASSERTED,
+      _$entityKeyOriginEnum_OBSERVED,
+      _$entityKeyOriginEnum_OPERATOR,
+    ]);
 
 Serializer<EntityKeyKeyTypeEnum> _$entityKeyKeyTypeEnumSerializer =
     _$EntityKeyKeyTypeEnumSerializer();
@@ -183,15 +185,20 @@ class _$EntityKeyKeyTypeEnumSerializer
   final String wireName = 'EntityKeyKeyTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityKeyKeyTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityKeyKeyTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EntityKeyKeyTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityKeyKeyTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EntityKeyKeyTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityKeyKeyTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityKeyRoleEnumSerializer
@@ -211,15 +218,20 @@ class _$EntityKeyRoleEnumSerializer
   final String wireName = 'EntityKeyRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityKeyRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityKeyRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EntityKeyRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityKeyRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EntityKeyRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityKeyRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityKeyOriginEnumSerializer
@@ -243,15 +255,20 @@ class _$EntityKeyOriginEnumSerializer
   final String wireName = 'EntityKeyOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityKeyOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityKeyOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EntityKeyOriginEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityKeyOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EntityKeyOriginEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityKeyOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityKey extends EntityKey {
@@ -281,19 +298,19 @@ class _$EntityKey extends EntityKey {
   factory _$EntityKey([void Function(EntityKeyBuilder)? updates]) =>
       (EntityKeyBuilder()..update(updates))._build();
 
-  _$EntityKey._(
-      {required this.id,
-      required this.entityId,
-      required this.keyType,
-      required this.keyValue,
-      required this.role,
-      required this.confidence,
-      required this.origin,
-      this.originRef,
-      required this.validFrom,
-      this.validTo,
-      required this.retracted})
-      : super._();
+  _$EntityKey._({
+    required this.id,
+    required this.entityId,
+    required this.keyType,
+    required this.keyValue,
+    required this.role,
+    required this.confidence,
+    required this.origin,
+    this.originRef,
+    required this.validFrom,
+    this.validTo,
+    required this.retracted,
+  }) : super._();
   @override
   EntityKey rebuild(void Function(EntityKeyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -438,27 +455,52 @@ class EntityKeyBuilder implements Builder<EntityKey, EntityKeyBuilder> {
   EntityKey build() => _build();
 
   _$EntityKey _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EntityKey._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'EntityKey', 'id'),
           entityId: BuiltValueNullFieldError.checkNotNull(
-              entityId, r'EntityKey', 'entityId'),
+            entityId,
+            r'EntityKey',
+            'entityId',
+          ),
           keyType: BuiltValueNullFieldError.checkNotNull(
-              keyType, r'EntityKey', 'keyType'),
+            keyType,
+            r'EntityKey',
+            'keyType',
+          ),
           keyValue: BuiltValueNullFieldError.checkNotNull(
-              keyValue, r'EntityKey', 'keyValue'),
-          role:
-              BuiltValueNullFieldError.checkNotNull(role, r'EntityKey', 'role'),
+            keyValue,
+            r'EntityKey',
+            'keyValue',
+          ),
+          role: BuiltValueNullFieldError.checkNotNull(
+            role,
+            r'EntityKey',
+            'role',
+          ),
           confidence: BuiltValueNullFieldError.checkNotNull(
-              confidence, r'EntityKey', 'confidence'),
+            confidence,
+            r'EntityKey',
+            'confidence',
+          ),
           origin: BuiltValueNullFieldError.checkNotNull(
-              origin, r'EntityKey', 'origin'),
+            origin,
+            r'EntityKey',
+            'origin',
+          ),
           originRef: originRef,
           validFrom: BuiltValueNullFieldError.checkNotNull(
-              validFrom, r'EntityKey', 'validFrom'),
+            validFrom,
+            r'EntityKey',
+            'validFrom',
+          ),
           validTo: validTo,
           retracted: BuiltValueNullFieldError.checkNotNull(
-              retracted, r'EntityKey', 'retracted'),
+            retracted,
+            r'EntityKey',
+            'retracted',
+          ),
         );
     replace(_$result);
     return _$result;

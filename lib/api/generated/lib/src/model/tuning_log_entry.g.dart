@@ -31,18 +31,18 @@ class _$TuningLogEntry extends TuningLogEntry {
   factory _$TuningLogEntry([void Function(TuningLogEntryBuilder)? updates]) =>
       (TuningLogEntryBuilder()..update(updates))._build();
 
-  _$TuningLogEntry._(
-      {required this.id,
-      required this.ruleId,
-      this.suggestionId,
-      required this.before,
-      required this.after,
-      this.note,
-      required this.appliedBy,
-      required this.appliedAt,
-      this.undoneBy,
-      this.undoneAt})
-      : super._();
+  _$TuningLogEntry._({
+    required this.id,
+    required this.ruleId,
+    this.suggestionId,
+    required this.before,
+    required this.after,
+    this.note,
+    required this.appliedBy,
+    required this.appliedAt,
+    this.undoneBy,
+    this.undoneAt,
+  }) : super._();
   @override
   TuningLogEntry rebuild(void Function(TuningLogEntryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -184,20 +184,33 @@ class TuningLogEntryBuilder
   _$TuningLogEntry _build() {
     _$TuningLogEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TuningLogEntry._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'TuningLogEntry', 'id'),
+              id,
+              r'TuningLogEntry',
+              'id',
+            ),
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'TuningLogEntry', 'ruleId'),
+              ruleId,
+              r'TuningLogEntry',
+              'ruleId',
+            ),
             suggestionId: suggestionId,
             before: before.build(),
             after: after.build(),
             note: note,
             appliedBy: BuiltValueNullFieldError.checkNotNull(
-                appliedBy, r'TuningLogEntry', 'appliedBy'),
+              appliedBy,
+              r'TuningLogEntry',
+              'appliedBy',
+            ),
             appliedAt: BuiltValueNullFieldError.checkNotNull(
-                appliedAt, r'TuningLogEntry', 'appliedAt'),
+              appliedAt,
+              r'TuningLogEntry',
+              'appliedAt',
+            ),
             undoneBy: undoneBy,
             undoneAt: undoneAt,
           );
@@ -210,7 +223,10 @@ class TuningLogEntryBuilder
         after.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TuningLogEntry', _$failedField, e.toString());
+          r'TuningLogEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

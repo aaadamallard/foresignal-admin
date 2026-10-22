@@ -72,7 +72,7 @@ class _$PopulationPackImportSerializer
   @override
   final Iterable<Type> types = const [
     PopulationPackImport,
-    _$PopulationPackImport
+    _$PopulationPackImport,
   ];
 
   @override
@@ -142,9 +142,11 @@ class _$PopulationPackImportSerializer
     PopulationPackImport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -160,68 +162,87 @@ class _$PopulationPackImportSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.path = valueDes;
           break;
         case r'fileSha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.fileSha256 = valueDes;
           break;
         case r'epoch':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.epoch = valueDes;
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PopulationPackImportLicenceEnum),
-          ) as PopulationPackImportLicenceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PopulationPackImportLicenceEnum,
+                    ),
+                  )
+                  as PopulationPackImportLicenceEnum;
           result.licence = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.attribution = valueDes;
           break;
         case r'cells':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PopulationPackImportCells),
-          ) as PopulationPackImportCells?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PopulationPackImportCells,
+                    ),
+                  )
+                  as PopulationPackImportCells?;
           if (valueDes == null) continue;
           result.cells.replace(valueDes);
           break;
         case r'importedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.importedAt = valueDes;
           break;
         case r'durationMs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.durationMs = valueDes;
           break;

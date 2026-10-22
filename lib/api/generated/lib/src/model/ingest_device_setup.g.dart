@@ -16,13 +16,16 @@ class _$IngestDeviceSetup extends IngestDeviceSetup {
   @override
   final IngestDeviceSetupGpslogger? gpslogger;
 
-  factory _$IngestDeviceSetup(
-          [void Function(IngestDeviceSetupBuilder)? updates]) =>
-      (IngestDeviceSetupBuilder()..update(updates))._build();
+  factory _$IngestDeviceSetup([
+    void Function(IngestDeviceSetupBuilder)? updates,
+  ]) => (IngestDeviceSetupBuilder()..update(updates))._build();
 
-  _$IngestDeviceSetup._(
-      {this.owntracks, this.overland, this.traccar, this.gpslogger})
-      : super._();
+  _$IngestDeviceSetup._({
+    this.owntracks,
+    this.overland,
+    this.traccar,
+    this.gpslogger,
+  }) : super._();
   @override
   IngestDeviceSetup rebuild(void Function(IngestDeviceSetupBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -123,7 +126,8 @@ class IngestDeviceSetupBuilder
   _$IngestDeviceSetup _build() {
     _$IngestDeviceSetup _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IngestDeviceSetup._(
             owntracks: _owntracks?.build(),
             overland: _overland?.build(),
@@ -143,7 +147,10 @@ class IngestDeviceSetupBuilder
         _gpslogger?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IngestDeviceSetup', _$failedField, e.toString());
+          r'IngestDeviceSetup',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

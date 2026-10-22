@@ -75,9 +75,9 @@ abstract class ChokepointActivityPayload
 
   ChokepointActivityPayload._();
 
-  factory ChokepointActivityPayload(
-          [void updates(ChokepointActivityPayloadBuilder b)]) =
-      _$ChokepointActivityPayload;
+  factory ChokepointActivityPayload([
+    void updates(ChokepointActivityPayloadBuilder b),
+  ]) = _$ChokepointActivityPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChokepointActivityPayloadBuilder b) => b;
@@ -92,7 +92,7 @@ class _$ChokepointActivityPayloadSerializer
   @override
   final Iterable<Type> types = const [
     ChokepointActivityPayload,
-    _$ChokepointActivityPayload
+    _$ChokepointActivityPayload,
   ];
 
   @override
@@ -134,8 +134,9 @@ class _$ChokepointActivityPayloadSerializer
       yield r'evidence';
       yield serializers.serialize(
         object.evidence,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DerivedEvidenceRef),
+        ]),
       );
     }
     yield r'chokepointId';
@@ -180,8 +181,9 @@ class _$ChokepointActivityPayloadSerializer
       yield r'coverageStatus';
       yield serializers.serialize(
         object.coverageStatus,
-        specifiedType:
-            const FullType(ChokepointActivityPayloadCoverageStatusEnum),
+        specifiedType: const FullType(
+          ChokepointActivityPayloadCoverageStatusEnum,
+        ),
       );
     }
   }
@@ -192,9 +194,11 @@ class _$ChokepointActivityPayloadSerializer
     ChokepointActivityPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -210,102 +214,134 @@ class _$ChokepointActivityPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AircraftFusionPayloadDetector),
-          ) as AircraftFusionPayloadDetector;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AircraftFusionPayloadDetector,
+                    ),
+                  )
+                  as AircraftFusionPayloadDetector;
           result.detector.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChokepointActivityPayloadStatusEnum),
-          ) as ChokepointActivityPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChokepointActivityPayloadStatusEnum,
+                    ),
+                  )
+                  as ChokepointActivityPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DerivedEvidenceRef)]),
-          ) as BuiltList<DerivedEvidenceRef>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DerivedEvidenceRef),
+                    ]),
+                  )
+                  as BuiltList<DerivedEvidenceRef>?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'chokepointId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chokepointId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'hourStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.hourStart = valueDes;
           break;
         case r'transits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.transits = valueDes;
           break;
         case r'uTurns':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.uTurns = valueDes;
           break;
         case r'stopped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.stopped = valueDes;
           break;
         case r'coverageStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                ChokepointActivityPayloadCoverageStatusEnum),
-          ) as ChokepointActivityPayloadCoverageStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChokepointActivityPayloadCoverageStatusEnum,
+                    ),
+                  )
+                  as ChokepointActivityPayloadCoverageStatusEnum?;
           if (valueDes == null) continue;
           result.coverageStatus = valueDes;
           break;
@@ -378,10 +414,10 @@ class ChokepointActivityPayloadCoverageStatusEnum extends EnumClass {
       _$chokepointActivityPayloadCoverageStatusEnum_degradedInput;
 
   static Serializer<ChokepointActivityPayloadCoverageStatusEnum>
-      get serializer => _$chokepointActivityPayloadCoverageStatusEnumSerializer;
+  get serializer => _$chokepointActivityPayloadCoverageStatusEnumSerializer;
 
   const ChokepointActivityPayloadCoverageStatusEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChokepointActivityPayloadCoverageStatusEnum> get values =>
       _$chokepointActivityPayloadCoverageStatusEnumValues;

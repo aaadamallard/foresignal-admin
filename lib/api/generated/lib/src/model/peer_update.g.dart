@@ -40,13 +40,13 @@ PeerUpdateReliabilityEnum _$peerUpdateReliabilityEnumValueOf(String name) {
 
 final BuiltSet<PeerUpdateReliabilityEnum> _$peerUpdateReliabilityEnumValues =
     BuiltSet<PeerUpdateReliabilityEnum>(const <PeerUpdateReliabilityEnum>[
-  _$peerUpdateReliabilityEnum_A,
-  _$peerUpdateReliabilityEnum_B,
-  _$peerUpdateReliabilityEnum_C,
-  _$peerUpdateReliabilityEnum_D,
-  _$peerUpdateReliabilityEnum_E,
-  _$peerUpdateReliabilityEnum_F,
-]);
+      _$peerUpdateReliabilityEnum_A,
+      _$peerUpdateReliabilityEnum_B,
+      _$peerUpdateReliabilityEnum_C,
+      _$peerUpdateReliabilityEnum_D,
+      _$peerUpdateReliabilityEnum_E,
+      _$peerUpdateReliabilityEnum_F,
+    ]);
 
 Serializer<PeerUpdateReliabilityEnum> _$peerUpdateReliabilityEnumSerializer =
     _$PeerUpdateReliabilityEnumSerializer();
@@ -76,16 +76,20 @@ class _$PeerUpdateReliabilityEnumSerializer
   final String wireName = 'PeerUpdateReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers, PeerUpdateReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PeerUpdateReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PeerUpdateReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PeerUpdateReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PeerUpdateReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PeerUpdate extends PeerUpdate {
@@ -111,17 +115,17 @@ class _$PeerUpdate extends PeerUpdate {
   factory _$PeerUpdate([void Function(PeerUpdateBuilder)? updates]) =>
       (PeerUpdateBuilder()..update(updates))._build();
 
-  _$PeerUpdate._(
-      {required this.name,
-      required this.baseUrl,
-      this.enabled,
-      this.token,
-      this.selection,
-      this.sameOperator,
-      this.reliability,
-      this.pinnedKid,
-      this.exchangeKey})
-      : super._();
+  _$PeerUpdate._({
+    required this.name,
+    required this.baseUrl,
+    this.enabled,
+    this.token,
+    this.selection,
+    this.sameOperator,
+    this.reliability,
+    this.pinnedKid,
+    this.exchangeKey,
+  }) : super._();
   @override
   PeerUpdate rebuild(void Function(PeerUpdateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -255,12 +259,19 @@ class PeerUpdateBuilder implements Builder<PeerUpdate, PeerUpdateBuilder> {
   _$PeerUpdate _build() {
     _$PeerUpdate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PeerUpdate._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PeerUpdate', 'name'),
+              name,
+              r'PeerUpdate',
+              'name',
+            ),
             baseUrl: BuiltValueNullFieldError.checkNotNull(
-                baseUrl, r'PeerUpdate', 'baseUrl'),
+              baseUrl,
+              r'PeerUpdate',
+              'baseUrl',
+            ),
             enabled: enabled,
             token: token,
             selection: _selection?.build(),
@@ -276,7 +287,10 @@ class PeerUpdateBuilder implements Builder<PeerUpdate, PeerUpdateBuilder> {
         _selection?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PeerUpdate', _$failedField, e.toString());
+          r'PeerUpdate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

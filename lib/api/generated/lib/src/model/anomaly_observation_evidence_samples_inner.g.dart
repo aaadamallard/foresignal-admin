@@ -15,20 +15,20 @@ class _$AnomalyObservationEvidenceSamplesInner
   @override
   final int seq;
 
-  factory _$AnomalyObservationEvidenceSamplesInner(
-          [void Function(AnomalyObservationEvidenceSamplesInnerBuilder)?
-              updates]) =>
-      (AnomalyObservationEvidenceSamplesInnerBuilder()..update(updates))
-          ._build();
+  factory _$AnomalyObservationEvidenceSamplesInner([
+    void Function(AnomalyObservationEvidenceSamplesInnerBuilder)? updates,
+  ]) => (AnomalyObservationEvidenceSamplesInnerBuilder()..update(updates))
+      ._build();
 
-  _$AnomalyObservationEvidenceSamplesInner._(
-      {required this.source_, required this.externalId, required this.seq})
-      : super._();
+  _$AnomalyObservationEvidenceSamplesInner._({
+    required this.source_,
+    required this.externalId,
+    required this.seq,
+  }) : super._();
   @override
   AnomalyObservationEvidenceSamplesInner rebuild(
-          void Function(AnomalyObservationEvidenceSamplesInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyObservationEvidenceSamplesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyObservationEvidenceSamplesInnerBuilder toBuilder() =>
@@ -56,7 +56,8 @@ class _$AnomalyObservationEvidenceSamplesInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'AnomalyObservationEvidenceSamplesInner')
+            r'AnomalyObservationEvidenceSamplesInner',
+          )
           ..add('source_', source_)
           ..add('externalId', externalId)
           ..add('seq', seq))
@@ -66,8 +67,10 @@ class _$AnomalyObservationEvidenceSamplesInner
 
 class AnomalyObservationEvidenceSamplesInnerBuilder
     implements
-        Builder<AnomalyObservationEvidenceSamplesInner,
-            AnomalyObservationEvidenceSamplesInnerBuilder> {
+        Builder<
+          AnomalyObservationEvidenceSamplesInner,
+          AnomalyObservationEvidenceSamplesInnerBuilder
+        > {
   _$AnomalyObservationEvidenceSamplesInner? _$v;
 
   String? _source_;
@@ -104,7 +107,8 @@ class AnomalyObservationEvidenceSamplesInnerBuilder
 
   @override
   void update(
-      void Function(AnomalyObservationEvidenceSamplesInnerBuilder)? updates) {
+    void Function(AnomalyObservationEvidenceSamplesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -112,14 +116,24 @@ class AnomalyObservationEvidenceSamplesInnerBuilder
   AnomalyObservationEvidenceSamplesInner build() => _build();
 
   _$AnomalyObservationEvidenceSamplesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnomalyObservationEvidenceSamplesInner._(
           source_: BuiltValueNullFieldError.checkNotNull(
-              source_, r'AnomalyObservationEvidenceSamplesInner', 'source_'),
-          externalId: BuiltValueNullFieldError.checkNotNull(externalId,
-              r'AnomalyObservationEvidenceSamplesInner', 'externalId'),
+            source_,
+            r'AnomalyObservationEvidenceSamplesInner',
+            'source_',
+          ),
+          externalId: BuiltValueNullFieldError.checkNotNull(
+            externalId,
+            r'AnomalyObservationEvidenceSamplesInner',
+            'externalId',
+          ),
           seq: BuiltValueNullFieldError.checkNotNull(
-              seq, r'AnomalyObservationEvidenceSamplesInner', 'seq'),
+            seq,
+            r'AnomalyObservationEvidenceSamplesInner',
+            'seq',
+          ),
         );
     replace(_$result);
     return _$result;

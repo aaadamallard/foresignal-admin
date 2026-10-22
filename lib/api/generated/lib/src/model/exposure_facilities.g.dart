@@ -14,7 +14,8 @@ const ExposureFacilitiesStatusEnum _$exposureFacilitiesStatusEnum_notInstalled =
     const ExposureFacilitiesStatusEnum._('notInstalled');
 
 ExposureFacilitiesStatusEnum _$exposureFacilitiesStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$exposureFacilitiesStatusEnum_ok;
@@ -28,15 +29,15 @@ ExposureFacilitiesStatusEnum _$exposureFacilitiesStatusEnumValueOf(
 }
 
 final BuiltSet<ExposureFacilitiesStatusEnum>
-    _$exposureFacilitiesStatusEnumValues =
+_$exposureFacilitiesStatusEnumValues =
     BuiltSet<ExposureFacilitiesStatusEnum>(const <ExposureFacilitiesStatusEnum>[
-  _$exposureFacilitiesStatusEnum_ok,
-  _$exposureFacilitiesStatusEnum_unavailable,
-  _$exposureFacilitiesStatusEnum_notInstalled,
-]);
+      _$exposureFacilitiesStatusEnum_ok,
+      _$exposureFacilitiesStatusEnum_unavailable,
+      _$exposureFacilitiesStatusEnum_notInstalled,
+    ]);
 
 Serializer<ExposureFacilitiesStatusEnum>
-    _$exposureFacilitiesStatusEnumSerializer =
+_$exposureFacilitiesStatusEnumSerializer =
     _$ExposureFacilitiesStatusEnumSerializer();
 
 class _$ExposureFacilitiesStatusEnumSerializer
@@ -58,16 +59,20 @@ class _$ExposureFacilitiesStatusEnumSerializer
   final String wireName = 'ExposureFacilitiesStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ExposureFacilitiesStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExposureFacilitiesStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExposureFacilitiesStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExposureFacilitiesStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExposureFacilitiesStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExposureFacilities extends ExposureFacilities {
@@ -80,17 +85,20 @@ class _$ExposureFacilities extends ExposureFacilities {
   @override
   final int? total;
 
-  factory _$ExposureFacilities(
-          [void Function(ExposureFacilitiesBuilder)? updates]) =>
-      (ExposureFacilitiesBuilder()..update(updates))._build();
+  factory _$ExposureFacilities([
+    void Function(ExposureFacilitiesBuilder)? updates,
+  ]) => (ExposureFacilitiesBuilder()..update(updates))._build();
 
-  _$ExposureFacilities._(
-      {required this.status, this.attribution, this.counts, this.total})
-      : super._();
+  _$ExposureFacilities._({
+    required this.status,
+    this.attribution,
+    this.counts,
+    this.total,
+  }) : super._();
   @override
   ExposureFacilities rebuild(
-          void Function(ExposureFacilitiesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExposureFacilitiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExposureFacilitiesBuilder toBuilder() =>
@@ -183,10 +191,14 @@ class ExposureFacilitiesBuilder
   _$ExposureFacilities _build() {
     _$ExposureFacilities _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExposureFacilities._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExposureFacilities', 'status'),
+              status,
+              r'ExposureFacilities',
+              'status',
+            ),
             attribution: _attribution?.build(),
             counts: _counts?.build(),
             total: total,
@@ -200,7 +212,10 @@ class ExposureFacilitiesBuilder
         _counts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExposureFacilities', _$failedField, e.toString());
+          r'ExposureFacilities',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

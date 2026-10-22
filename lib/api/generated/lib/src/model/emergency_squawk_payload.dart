@@ -66,9 +66,9 @@ abstract class EmergencySquawkPayload
 
   EmergencySquawkPayload._();
 
-  factory EmergencySquawkPayload(
-          [void updates(EmergencySquawkPayloadBuilder b)]) =
-      _$EmergencySquawkPayload;
+  factory EmergencySquawkPayload([
+    void updates(EmergencySquawkPayloadBuilder b),
+  ]) = _$EmergencySquawkPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EmergencySquawkPayloadBuilder b) => b;
@@ -83,7 +83,7 @@ class _$EmergencySquawkPayloadSerializer
   @override
   final Iterable<Type> types = const [
     EmergencySquawkPayload,
-    _$EmergencySquawkPayload
+    _$EmergencySquawkPayload,
   ];
 
   @override
@@ -125,8 +125,9 @@ class _$EmergencySquawkPayloadSerializer
       yield r'evidence';
       yield serializers.serialize(
         object.evidence,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DerivedEvidenceRef),
+        ]),
       );
     }
     yield r'hex';
@@ -166,9 +167,11 @@ class _$EmergencySquawkPayloadSerializer
     EmergencySquawkPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -184,85 +187,114 @@ class _$EmergencySquawkPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AircraftFusionPayloadDetector),
-          ) as AircraftFusionPayloadDetector;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AircraftFusionPayloadDetector,
+                    ),
+                  )
+                  as AircraftFusionPayloadDetector;
           result.detector.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmergencySquawkPayloadStatusEnum),
-          ) as EmergencySquawkPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      EmergencySquawkPayloadStatusEnum,
+                    ),
+                  )
+                  as EmergencySquawkPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DerivedEvidenceRef)]),
-          ) as BuiltList<DerivedEvidenceRef>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DerivedEvidenceRef),
+                    ]),
+                  )
+                  as BuiltList<DerivedEvidenceRef>?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'hex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hex = valueDes;
           break;
         case r'squawk':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.squawk = valueDes;
           break;
         case r'emergency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.emergency = valueDes;
           break;
         case r'meaning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EmergencySquawkPayloadMeaningEnum),
-          ) as EmergencySquawkPayloadMeaningEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      EmergencySquawkPayloadMeaningEnum,
+                    ),
+                  )
+                  as EmergencySquawkPayloadMeaningEnum;
           result.meaning = valueDes;
           break;
         case r'unverified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.unverified = valueDes;
           break;
         default:

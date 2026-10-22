@@ -59,8 +59,9 @@ class _$MappingTestResultSerializer
     yield r'samples';
     yield serializers.serialize(
       object.samples,
-      specifiedType:
-          const FullType(BuiltList, [FullType(MappingTestResultSamplesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(MappingTestResultSamplesInner),
+      ]),
     );
   }
 
@@ -70,9 +71,11 @@ class _$MappingTestResultSerializer
     MappingTestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,18 +91,25 @@ class _$MappingTestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'mappingSource':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MappingTestResultMappingSourceEnum),
-          ) as MappingTestResultMappingSourceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      MappingTestResultMappingSourceEnum,
+                    ),
+                  )
+                  as MappingTestResultMappingSourceEnum;
           result.mappingSource = valueDes;
           break;
         case r'samples':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(MappingTestResultSamplesInner)]),
-          ) as BuiltList<MappingTestResultSamplesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MappingTestResultSamplesInner),
+                    ]),
+                  )
+                  as BuiltList<MappingTestResultSamplesInner>;
           result.samples.replace(valueDes);
           break;
         default:

@@ -46,7 +46,7 @@ class _$RemoteMediaAcceptedSerializer
   @override
   final Iterable<Type> types = const [
     RemoteMediaAccepted,
-    _$RemoteMediaAccepted
+    _$RemoteMediaAccepted,
   ];
 
   @override
@@ -82,9 +82,11 @@ class _$RemoteMediaAcceptedSerializer
     RemoteMediaAccepted object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,24 +102,30 @@ class _$RemoteMediaAcceptedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'mediaId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.mediaId = valueDes;
           break;
         case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sha256 = valueDes;
           break;
         case r'passId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.passId = valueDes;
           break;

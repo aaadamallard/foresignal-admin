@@ -13,17 +13,18 @@ class _$AssessmentCoverageSituationsInner
   @override
   final CoverageStats coverage;
 
-  factory _$AssessmentCoverageSituationsInner(
-          [void Function(AssessmentCoverageSituationsInnerBuilder)? updates]) =>
-      (AssessmentCoverageSituationsInnerBuilder()..update(updates))._build();
+  factory _$AssessmentCoverageSituationsInner([
+    void Function(AssessmentCoverageSituationsInnerBuilder)? updates,
+  ]) => (AssessmentCoverageSituationsInnerBuilder()..update(updates))._build();
 
-  _$AssessmentCoverageSituationsInner._(
-      {required this.situationId, required this.coverage})
-      : super._();
+  _$AssessmentCoverageSituationsInner._({
+    required this.situationId,
+    required this.coverage,
+  }) : super._();
   @override
   AssessmentCoverageSituationsInner rebuild(
-          void Function(AssessmentCoverageSituationsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentCoverageSituationsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentCoverageSituationsInnerBuilder toBuilder() =>
@@ -57,8 +58,10 @@ class _$AssessmentCoverageSituationsInner
 
 class AssessmentCoverageSituationsInnerBuilder
     implements
-        Builder<AssessmentCoverageSituationsInner,
-            AssessmentCoverageSituationsInnerBuilder> {
+        Builder<
+          AssessmentCoverageSituationsInner,
+          AssessmentCoverageSituationsInnerBuilder
+        > {
   _$AssessmentCoverageSituationsInner? _$v;
 
   String? _situationId;
@@ -91,7 +94,8 @@ class AssessmentCoverageSituationsInnerBuilder
 
   @override
   void update(
-      void Function(AssessmentCoverageSituationsInnerBuilder)? updates) {
+    void Function(AssessmentCoverageSituationsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -101,10 +105,14 @@ class AssessmentCoverageSituationsInnerBuilder
   _$AssessmentCoverageSituationsInner _build() {
     _$AssessmentCoverageSituationsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AssessmentCoverageSituationsInner._(
-            situationId: BuiltValueNullFieldError.checkNotNull(situationId,
-                r'AssessmentCoverageSituationsInner', 'situationId'),
+            situationId: BuiltValueNullFieldError.checkNotNull(
+              situationId,
+              r'AssessmentCoverageSituationsInner',
+              'situationId',
+            ),
             coverage: coverage.build(),
           );
     } catch (_) {
@@ -114,7 +122,10 @@ class AssessmentCoverageSituationsInnerBuilder
         coverage.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AssessmentCoverageSituationsInner', _$failedField, e.toString());
+          r'AssessmentCoverageSituationsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

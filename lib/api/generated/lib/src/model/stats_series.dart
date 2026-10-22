@@ -120,8 +120,9 @@ class _$StatsSeriesSerializer implements PrimitiveSerializer<StatsSeries> {
     yield r'series';
     yield serializers.serialize(
       object.series,
-      specifiedType:
-          const FullType(BuiltList, [FullType(StatsSeriesSeriesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(StatsSeriesSeriesInner),
+      ]),
     );
     if (object.retainedFrom != null) {
       yield r'retainedFrom';
@@ -138,9 +139,11 @@ class _$StatsSeriesSerializer implements PrimitiveSerializer<StatsSeries> {
     StatsSeries object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,69 +159,92 @@ class _$StatsSeriesSerializer implements PrimitiveSerializer<StatsSeries> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         case r'bucket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.bucket = valueDes;
           break;
         case r'measure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatsSeriesMeasureEnum),
-          ) as StatsSeriesMeasureEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatsSeriesMeasureEnum),
+                  )
+                  as StatsSeriesMeasureEnum;
           result.measure = valueDes;
           break;
         case r'groupBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatsSeriesGroupByEnum),
-          ) as StatsSeriesGroupByEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StatsSeriesGroupByEnum,
+                    ),
+                  )
+                  as StatsSeriesGroupByEnum?;
           if (valueDes == null) continue;
           result.groupBy = valueDes;
           break;
         case r'timeField':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatsSeriesTimeFieldEnum),
-          ) as StatsSeriesTimeFieldEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StatsSeriesTimeFieldEnum,
+                    ),
+                  )
+                  as StatsSeriesTimeFieldEnum?;
           if (valueDes == null) continue;
           result.timeField = valueDes;
           break;
         case r'backend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatsSeriesBackendEnum),
-          ) as StatsSeriesBackendEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatsSeriesBackendEnum),
+                  )
+                  as StatsSeriesBackendEnum;
           result.backend = valueDes;
           break;
         case r'series':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(StatsSeriesSeriesInner)]),
-          ) as BuiltList<StatsSeriesSeriesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(StatsSeriesSeriesInner),
+                    ]),
+                  )
+                  as BuiltList<StatsSeriesSeriesInner>;
           result.series.replace(valueDes);
           break;
         case r'retainedFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.retainedFrom = valueDes;
           break;

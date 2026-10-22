@@ -40,9 +40,9 @@ abstract class JsonFeedItemForesignal
 
   JsonFeedItemForesignal._();
 
-  factory JsonFeedItemForesignal(
-          [void updates(JsonFeedItemForesignalBuilder b)]) =
-      _$JsonFeedItemForesignal;
+  factory JsonFeedItemForesignal([
+    void updates(JsonFeedItemForesignalBuilder b),
+  ]) = _$JsonFeedItemForesignal;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(JsonFeedItemForesignalBuilder b) => b;
@@ -57,7 +57,7 @@ class _$JsonFeedItemForesignalSerializer
   @override
   final Iterable<Type> types = const [
     JsonFeedItemForesignal,
-    _$JsonFeedItemForesignal
+    _$JsonFeedItemForesignal,
   ];
 
   @override
@@ -111,9 +111,11 @@ class _$JsonFeedItemForesignalSerializer
     JsonFeedItemForesignal object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,44 +131,56 @@ class _$JsonFeedItemForesignalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(JsonFeedItemForesignalSeverityEnum),
-          ) as JsonFeedItemForesignalSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      JsonFeedItemForesignalSeverityEnum,
+                    ),
+                  )
+                  as JsonFeedItemForesignalSeverityEnum?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(JsonFeedItemForesignalStateEnum),
-          ) as JsonFeedItemForesignalStateEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      JsonFeedItemForesignalStateEnum,
+                    ),
+                  )
+                  as JsonFeedItemForesignalStateEnum?;
           if (valueDes == null) continue;
           result.state = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.externalId = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geometry.replace(valueDes);
           break;

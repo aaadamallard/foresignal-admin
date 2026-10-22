@@ -104,24 +104,27 @@ class _$RuleBacktestResultSerializer
       yield r'perDay';
       yield serializers.serialize(
         object.perDay,
-        specifiedType: const FullType(
-            BuiltList, [FullType(RuleBacktestResultPerDayInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RuleBacktestResultPerDayInner),
+        ]),
       );
     }
     if (object.topEntities != null) {
       yield r'topEntities';
       yield serializers.serialize(
         object.topEntities,
-        specifiedType: const FullType(
-            BuiltList, [FullType(RuleBacktestResultTopEntitiesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RuleBacktestResultTopEntitiesInner),
+        ]),
       );
     }
     if (object.samples != null) {
       yield r'samples';
       yield serializers.serialize(
         object.samples,
-        specifiedType: const FullType(
-            BuiltList, [FullType(RuleBacktestResultSamplesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RuleBacktestResultSamplesInner),
+        ]),
       );
     }
     if (object.actual != null) {
@@ -156,8 +159,9 @@ class _$RuleBacktestResultSerializer
       yield r'variants';
       yield serializers.serialize(
         object.variants,
-        specifiedType: const FullType(
-            BuiltList, [FullType(RuleBacktestResultVariantsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RuleBacktestResultVariantsInner),
+        ]),
       );
     }
   }
@@ -168,9 +172,11 @@ class _$RuleBacktestResultSerializer
     RuleBacktestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -186,84 +192,115 @@ class _$RuleBacktestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ruleType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RuleBacktestResultRuleTypeEnum),
-          ) as RuleBacktestResultRuleTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RuleBacktestResultRuleTypeEnum,
+                    ),
+                  )
+                  as RuleBacktestResultRuleTypeEnum;
           result.ruleType = valueDes;
           break;
         case r'wouldFire':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.wouldFire = valueDes;
           break;
         case r'perDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RuleBacktestResultPerDayInner)]),
-          ) as BuiltList<RuleBacktestResultPerDayInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RuleBacktestResultPerDayInner),
+                    ]),
+                  )
+                  as BuiltList<RuleBacktestResultPerDayInner>?;
           if (valueDes == null) continue;
           result.perDay.replace(valueDes);
           break;
         case r'topEntities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RuleBacktestResultTopEntitiesInner)]),
-          ) as BuiltList<RuleBacktestResultTopEntitiesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RuleBacktestResultTopEntitiesInner),
+                    ]),
+                  )
+                  as BuiltList<RuleBacktestResultTopEntitiesInner>?;
           if (valueDes == null) continue;
           result.topEntities.replace(valueDes);
           break;
         case r'samples':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RuleBacktestResultSamplesInner)]),
-          ) as BuiltList<RuleBacktestResultSamplesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RuleBacktestResultSamplesInner),
+                    ]),
+                  )
+                  as BuiltList<RuleBacktestResultSamplesInner>?;
           if (valueDes == null) continue;
           result.samples.replace(valueDes);
           break;
         case r'actual':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RuleBacktestResultActual),
-          ) as RuleBacktestResultActual?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RuleBacktestResultActual,
+                    ),
+                  )
+                  as RuleBacktestResultActual?;
           if (valueDes == null) continue;
           result.actual.replace(valueDes);
           break;
         case r'overlap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RuleBacktestResultOverlap),
-          ) as RuleBacktestResultOverlap?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RuleBacktestResultOverlap,
+                    ),
+                  )
+                  as RuleBacktestResultOverlap?;
           if (valueDes == null) continue;
           result.overlap.replace(valueDes);
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RuleBacktestResultWindow),
-          ) as RuleBacktestResultWindow?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RuleBacktestResultWindow,
+                    ),
+                  )
+                  as RuleBacktestResultWindow?;
           if (valueDes == null) continue;
           result.window.replace(valueDes);
           break;
         case r'anomaly':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RuleBacktestResultAnomaly),
-          ) as RuleBacktestResultAnomaly?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RuleBacktestResultAnomaly,
+                    ),
+                  )
+                  as RuleBacktestResultAnomaly?;
           if (valueDes == null) continue;
           result.anomaly.replace(valueDes);
           break;
         case r'variants':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RuleBacktestResultVariantsInner)]),
-          ) as BuiltList<RuleBacktestResultVariantsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RuleBacktestResultVariantsInner),
+                    ]),
+                  )
+                  as BuiltList<RuleBacktestResultVariantsInner>?;
           if (valueDes == null) continue;
           result.variants.replace(valueDes);
           break;

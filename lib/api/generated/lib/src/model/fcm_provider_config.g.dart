@@ -14,13 +14,15 @@ class _$FcmProviderConfig extends FcmProviderConfig {
   @override
   final String? tokenUri;
 
-  factory _$FcmProviderConfig(
-          [void Function(FcmProviderConfigBuilder)? updates]) =>
-      (FcmProviderConfigBuilder()..update(updates))._build();
+  factory _$FcmProviderConfig([
+    void Function(FcmProviderConfigBuilder)? updates,
+  ]) => (FcmProviderConfigBuilder()..update(updates))._build();
 
-  _$FcmProviderConfig._(
-      {required this.projectId, required this.clientEmail, this.tokenUri})
-      : super._();
+  _$FcmProviderConfig._({
+    required this.projectId,
+    required this.clientEmail,
+    this.tokenUri,
+  }) : super._();
   @override
   FcmProviderConfig rebuild(void Function(FcmProviderConfigBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -103,12 +105,19 @@ class FcmProviderConfigBuilder
   FcmProviderConfig build() => _build();
 
   _$FcmProviderConfig _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FcmProviderConfig._(
           projectId: BuiltValueNullFieldError.checkNotNull(
-              projectId, r'FcmProviderConfig', 'projectId'),
+            projectId,
+            r'FcmProviderConfig',
+            'projectId',
+          ),
           clientEmail: BuiltValueNullFieldError.checkNotNull(
-              clientEmail, r'FcmProviderConfig', 'clientEmail'),
+            clientEmail,
+            r'FcmProviderConfig',
+            'clientEmail',
+          ),
           tokenUri: tokenUri,
         );
     replace(_$result);

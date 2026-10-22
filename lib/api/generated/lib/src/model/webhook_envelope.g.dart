@@ -32,11 +32,11 @@ WebhookEnvelopeEventEnum _$webhookEnvelopeEventEnumValueOf(String name) {
 
 final BuiltSet<WebhookEnvelopeEventEnum> _$webhookEnvelopeEventEnumValues =
     BuiltSet<WebhookEnvelopeEventEnum>(const <WebhookEnvelopeEventEnum>[
-  _$webhookEnvelopeEventEnum_alert,
-  _$webhookEnvelopeEventEnum_briefing,
-  _$webhookEnvelopeEventEnum_system,
-  _$webhookEnvelopeEventEnum_test,
-]);
+      _$webhookEnvelopeEventEnum_alert,
+      _$webhookEnvelopeEventEnum_briefing,
+      _$webhookEnvelopeEventEnum_system,
+      _$webhookEnvelopeEventEnum_test,
+    ]);
 
 Serializer<WebhookEnvelopeEventEnum> _$webhookEnvelopeEventEnumSerializer =
     _$WebhookEnvelopeEventEnumSerializer();
@@ -62,16 +62,20 @@ class _$WebhookEnvelopeEventEnumSerializer
   final String wireName = 'WebhookEnvelopeEventEnum';
 
   @override
-  Object serialize(Serializers serializers, WebhookEnvelopeEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WebhookEnvelopeEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WebhookEnvelopeEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WebhookEnvelopeEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WebhookEnvelopeEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WebhookEnvelope extends WebhookEnvelope {
@@ -91,14 +95,14 @@ class _$WebhookEnvelope extends WebhookEnvelope {
   factory _$WebhookEnvelope([void Function(WebhookEnvelopeBuilder)? updates]) =>
       (WebhookEnvelopeBuilder()..update(updates))._build();
 
-  _$WebhookEnvelope._(
-      {required this.event,
-      required this.subtype,
-      required this.message,
-      this.data,
-      required this.foresignalOrigin,
-      this.exercise})
-      : super._();
+  _$WebhookEnvelope._({
+    required this.event,
+    required this.subtype,
+    required this.message,
+    this.data,
+    required this.foresignalOrigin,
+    this.exercise,
+  }) : super._();
   @override
   WebhookEnvelope rebuild(void Function(WebhookEnvelopeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -209,16 +213,26 @@ class WebhookEnvelopeBuilder
   _$WebhookEnvelope _build() {
     _$WebhookEnvelope _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WebhookEnvelope._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'WebhookEnvelope', 'event'),
+              event,
+              r'WebhookEnvelope',
+              'event',
+            ),
             subtype: BuiltValueNullFieldError.checkNotNull(
-                subtype, r'WebhookEnvelope', 'subtype'),
+              subtype,
+              r'WebhookEnvelope',
+              'subtype',
+            ),
             message: message.build(),
             data: _data?.build(),
             foresignalOrigin: BuiltValueNullFieldError.checkNotNull(
-                foresignalOrigin, r'WebhookEnvelope', 'foresignalOrigin'),
+              foresignalOrigin,
+              r'WebhookEnvelope',
+              'foresignalOrigin',
+            ),
             exercise: exercise,
           );
     } catch (_) {
@@ -230,7 +244,10 @@ class WebhookEnvelopeBuilder
         _data?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WebhookEnvelope', _$failedField, e.toString());
+          r'WebhookEnvelope',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

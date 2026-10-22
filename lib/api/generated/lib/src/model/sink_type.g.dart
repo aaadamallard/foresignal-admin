@@ -6,20 +6,26 @@ part of 'sink_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const SinkTypeIdEnum _$sinkTypeIdEnum_mqttState =
-    const SinkTypeIdEnum._('mqttState');
+const SinkTypeIdEnum _$sinkTypeIdEnum_mqttState = const SinkTypeIdEnum._(
+  'mqttState',
+);
 const SinkTypeIdEnum _$sinkTypeIdEnum_cot = const SinkTypeIdEnum._('cot');
-const SinkTypeIdEnum _$sinkTypeIdEnum_readsbJson =
-    const SinkTypeIdEnum._('readsbJson');
+const SinkTypeIdEnum _$sinkTypeIdEnum_readsbJson = const SinkTypeIdEnum._(
+  'readsbJson',
+);
 const SinkTypeIdEnum _$sinkTypeIdEnum_sbs = const SinkTypeIdEnum._('sbs');
-const SinkTypeIdEnum _$sinkTypeIdEnum_nmeaAivdm =
-    const SinkTypeIdEnum._('nmeaAivdm');
-const SinkTypeIdEnum _$sinkTypeIdEnum_aprsIsServe =
-    const SinkTypeIdEnum._('aprsIsServe');
-const SinkTypeIdEnum _$sinkTypeIdEnum_cloudevents =
-    const SinkTypeIdEnum._('cloudevents');
-const SinkTypeIdEnum _$sinkTypeIdEnum_federationPush =
-    const SinkTypeIdEnum._('federationPush');
+const SinkTypeIdEnum _$sinkTypeIdEnum_nmeaAivdm = const SinkTypeIdEnum._(
+  'nmeaAivdm',
+);
+const SinkTypeIdEnum _$sinkTypeIdEnum_aprsIsServe = const SinkTypeIdEnum._(
+  'aprsIsServe',
+);
+const SinkTypeIdEnum _$sinkTypeIdEnum_cloudevents = const SinkTypeIdEnum._(
+  'cloudevents',
+);
+const SinkTypeIdEnum _$sinkTypeIdEnum_federationPush = const SinkTypeIdEnum._(
+  'federationPush',
+);
 
 SinkTypeIdEnum _$sinkTypeIdEnumValueOf(String name) {
   switch (name) {
@@ -46,15 +52,15 @@ SinkTypeIdEnum _$sinkTypeIdEnumValueOf(String name) {
 
 final BuiltSet<SinkTypeIdEnum> _$sinkTypeIdEnumValues =
     BuiltSet<SinkTypeIdEnum>(const <SinkTypeIdEnum>[
-  _$sinkTypeIdEnum_mqttState,
-  _$sinkTypeIdEnum_cot,
-  _$sinkTypeIdEnum_readsbJson,
-  _$sinkTypeIdEnum_sbs,
-  _$sinkTypeIdEnum_nmeaAivdm,
-  _$sinkTypeIdEnum_aprsIsServe,
-  _$sinkTypeIdEnum_cloudevents,
-  _$sinkTypeIdEnum_federationPush,
-]);
+      _$sinkTypeIdEnum_mqttState,
+      _$sinkTypeIdEnum_cot,
+      _$sinkTypeIdEnum_readsbJson,
+      _$sinkTypeIdEnum_sbs,
+      _$sinkTypeIdEnum_nmeaAivdm,
+      _$sinkTypeIdEnum_aprsIsServe,
+      _$sinkTypeIdEnum_cloudevents,
+      _$sinkTypeIdEnum_federationPush,
+    ]);
 
 const SinkTypeKindEnum _$sinkTypeKindEnum_CHANGE_FEED =
     const SinkTypeKindEnum._('CHANGE_FEED');
@@ -74,14 +80,16 @@ SinkTypeKindEnum _$sinkTypeKindEnumValueOf(String name) {
 
 final BuiltSet<SinkTypeKindEnum> _$sinkTypeKindEnumValues =
     BuiltSet<SinkTypeKindEnum>(const <SinkTypeKindEnum>[
-  _$sinkTypeKindEnum_CHANGE_FEED,
-  _$sinkTypeKindEnum_STATE_MIRROR,
-]);
+      _$sinkTypeKindEnum_CHANGE_FEED,
+      _$sinkTypeKindEnum_STATE_MIRROR,
+    ]);
 
-const SinkTypeModesEnum _$sinkTypeModesEnum_PUSH =
-    const SinkTypeModesEnum._('PUSH');
-const SinkTypeModesEnum _$sinkTypeModesEnum_SERVE =
-    const SinkTypeModesEnum._('SERVE');
+const SinkTypeModesEnum _$sinkTypeModesEnum_PUSH = const SinkTypeModesEnum._(
+  'PUSH',
+);
+const SinkTypeModesEnum _$sinkTypeModesEnum_SERVE = const SinkTypeModesEnum._(
+  'SERVE',
+);
 
 SinkTypeModesEnum _$sinkTypeModesEnumValueOf(String name) {
   switch (name) {
@@ -96,9 +104,9 @@ SinkTypeModesEnum _$sinkTypeModesEnumValueOf(String name) {
 
 final BuiltSet<SinkTypeModesEnum> _$sinkTypeModesEnumValues =
     BuiltSet<SinkTypeModesEnum>(const <SinkTypeModesEnum>[
-  _$sinkTypeModesEnum_PUSH,
-  _$sinkTypeModesEnum_SERVE,
-]);
+      _$sinkTypeModesEnum_PUSH,
+      _$sinkTypeModesEnum_SERVE,
+    ]);
 
 Serializer<SinkTypeIdEnum> _$sinkTypeIdEnumSerializer =
     _$SinkTypeIdEnumSerializer();
@@ -136,15 +144,20 @@ class _$SinkTypeIdEnumSerializer
   final String wireName = 'SinkTypeIdEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkTypeIdEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkTypeIdEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkTypeIdEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkTypeIdEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkTypeIdEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkTypeIdEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkTypeKindEnumSerializer
@@ -164,15 +177,20 @@ class _$SinkTypeKindEnumSerializer
   final String wireName = 'SinkTypeKindEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkTypeKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkTypeKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkTypeKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkTypeKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkTypeKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkTypeKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkTypeModesEnumSerializer
@@ -192,15 +210,20 @@ class _$SinkTypeModesEnumSerializer
   final String wireName = 'SinkTypeModesEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkTypeModesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkTypeModesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkTypeModesEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkTypeModesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkTypeModesEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkTypeModesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkType extends SinkType {
@@ -224,16 +247,16 @@ class _$SinkType extends SinkType {
   factory _$SinkType([void Function(SinkTypeBuilder)? updates]) =>
       (SinkTypeBuilder()..update(updates))._build();
 
-  _$SinkType._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.kind,
-      required this.modes,
-      required this.configSchema,
-      required this.secretFields,
-      this.defaultMaxPerSecond})
-      : super._();
+  _$SinkType._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.kind,
+    required this.modes,
+    required this.configSchema,
+    required this.secretFields,
+    this.defaultMaxPerSecond,
+  }) : super._();
   @override
   SinkType rebuild(void Function(SinkTypeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -362,14 +385,21 @@ class SinkTypeBuilder implements Builder<SinkType, SinkTypeBuilder> {
   _$SinkType _build() {
     _$SinkType _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkType._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'SinkType', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SinkType', 'name'),
+              name,
+              r'SinkType',
+              'name',
+            ),
             description: description,
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'SinkType', 'kind'),
+              kind,
+              r'SinkType',
+              'kind',
+            ),
             modes: modes.build(),
             configSchema: configSchema.build(),
             secretFields: secretFields.build(),
@@ -386,7 +416,10 @@ class SinkTypeBuilder implements Builder<SinkType, SinkTypeBuilder> {
         secretFields.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkType', _$failedField, e.toString());
+          r'SinkType',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

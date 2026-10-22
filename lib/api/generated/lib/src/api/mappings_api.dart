@@ -47,16 +47,10 @@ class MappingsApi {
     final _path = r'/v1/mappings/presets';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -78,10 +72,12 @@ class MappingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(MappingPreset)]),
-            ) as BuiltList<MappingPreset>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(MappingPreset),
+                  ]),
+                )
+                as BuiltList<MappingPreset>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -130,16 +126,10 @@ class MappingsApi {
     final _path = r'/v1/mappings/preview';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -151,14 +141,13 @@ class MappingsApi {
 
     try {
       const _type = FullType(MappingPreviewRequest);
-      _bodyData =
-          _serializers.serialize(mappingPreviewRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        mappingPreviewRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -181,9 +170,10 @@ class MappingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MappingPreviewResult),
-            ) as MappingPreviewResult;
+                  rawResponse,
+                  specifiedType: const FullType(MappingPreviewResult),
+                )
+                as MappingPreviewResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -232,16 +222,10 @@ class MappingsApi {
     final _path = r'/v1/mappings/suggest';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -253,14 +237,13 @@ class MappingsApi {
 
     try {
       const _type = FullType(MappingSuggestRequest);
-      _bodyData =
-          _serializers.serialize(mappingSuggestRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        mappingSuggestRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -283,9 +266,10 @@ class MappingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MappingSuggestResult),
-            ) as MappingSuggestResult;
+                  rawResponse,
+                  specifiedType: const FullType(MappingSuggestResult),
+                )
+                as MappingSuggestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

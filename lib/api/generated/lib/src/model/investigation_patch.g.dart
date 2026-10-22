@@ -16,7 +16,8 @@ const InvestigationPatchStatusEnum _$investigationPatchStatusEnum_archived =
     const InvestigationPatchStatusEnum._('archived');
 
 InvestigationPatchStatusEnum _$investigationPatchStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'open':
       return _$investigationPatchStatusEnum_open;
@@ -32,16 +33,16 @@ InvestigationPatchStatusEnum _$investigationPatchStatusEnumValueOf(
 }
 
 final BuiltSet<InvestigationPatchStatusEnum>
-    _$investigationPatchStatusEnumValues =
+_$investigationPatchStatusEnumValues =
     BuiltSet<InvestigationPatchStatusEnum>(const <InvestigationPatchStatusEnum>[
-  _$investigationPatchStatusEnum_open,
-  _$investigationPatchStatusEnum_active,
-  _$investigationPatchStatusEnum_closed,
-  _$investigationPatchStatusEnum_archived,
-]);
+      _$investigationPatchStatusEnum_open,
+      _$investigationPatchStatusEnum_active,
+      _$investigationPatchStatusEnum_closed,
+      _$investigationPatchStatusEnum_archived,
+    ]);
 
 Serializer<InvestigationPatchStatusEnum>
-    _$investigationPatchStatusEnumSerializer =
+_$investigationPatchStatusEnumSerializer =
     _$InvestigationPatchStatusEnumSerializer();
 
 class _$InvestigationPatchStatusEnumSerializer
@@ -65,16 +66,20 @@ class _$InvestigationPatchStatusEnumSerializer
   final String wireName = 'InvestigationPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, InvestigationPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InvestigationPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InvestigationPatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InvestigationPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InvestigationPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InvestigationPatch extends InvestigationPatch {
@@ -97,25 +102,25 @@ class _$InvestigationPatch extends InvestigationPatch {
   @override
   final BuiltList<String>? reportIds;
 
-  factory _$InvestigationPatch(
-          [void Function(InvestigationPatchBuilder)? updates]) =>
-      (InvestigationPatchBuilder()..update(updates))._build();
+  factory _$InvestigationPatch([
+    void Function(InvestigationPatchBuilder)? updates,
+  ]) => (InvestigationPatchBuilder()..update(updates))._build();
 
-  _$InvestigationPatch._(
-      {this.title,
-      this.status,
-      this.summary,
-      this.tags,
-      this.workspaceId,
-      this.hypothesisSetIds,
-      this.questionIds,
-      this.chronicleIds,
-      this.reportIds})
-      : super._();
+  _$InvestigationPatch._({
+    this.title,
+    this.status,
+    this.summary,
+    this.tags,
+    this.workspaceId,
+    this.hypothesisSetIds,
+    this.questionIds,
+    this.chronicleIds,
+    this.reportIds,
+  }) : super._();
   @override
   InvestigationPatch rebuild(
-          void Function(InvestigationPatchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InvestigationPatchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InvestigationPatchBuilder toBuilder() =>
@@ -253,7 +258,8 @@ class InvestigationPatchBuilder
   _$InvestigationPatch _build() {
     _$InvestigationPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InvestigationPatch._(
             title: title,
             status: status,
@@ -281,7 +287,10 @@ class InvestigationPatchBuilder
         _reportIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InvestigationPatch', _$failedField, e.toString());
+          r'InvestigationPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

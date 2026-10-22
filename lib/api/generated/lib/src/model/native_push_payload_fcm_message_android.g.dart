@@ -7,14 +7,14 @@ part of 'native_push_payload_fcm_message_android.dart';
 // **************************************************************************
 
 const NativePushPayloadFcmMessageAndroidPriorityEnum
-    _$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH =
+_$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH =
     const NativePushPayloadFcmMessageAndroidPriorityEnum._('HIGH');
 const NativePushPayloadFcmMessageAndroidPriorityEnum
-    _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL =
+_$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL =
     const NativePushPayloadFcmMessageAndroidPriorityEnum._('NORMAL');
 
 NativePushPayloadFcmMessageAndroidPriorityEnum
-    _$nativePushPayloadFcmMessageAndroidPriorityEnumValueOf(String name) {
+_$nativePushPayloadFcmMessageAndroidPriorityEnumValueOf(String name) {
   switch (name) {
     case 'HIGH':
       return _$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH;
@@ -26,14 +26,16 @@ NativePushPayloadFcmMessageAndroidPriorityEnum
 }
 
 final BuiltSet<NativePushPayloadFcmMessageAndroidPriorityEnum>
-    _$nativePushPayloadFcmMessageAndroidPriorityEnumValues = BuiltSet<
-        NativePushPayloadFcmMessageAndroidPriorityEnum>(const <NativePushPayloadFcmMessageAndroidPriorityEnum>[
-  _$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH,
-  _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL,
-]);
+_$nativePushPayloadFcmMessageAndroidPriorityEnumValues =
+    BuiltSet<NativePushPayloadFcmMessageAndroidPriorityEnum>(
+      const <NativePushPayloadFcmMessageAndroidPriorityEnum>[
+        _$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH,
+        _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL,
+      ],
+    );
 
 Serializer<NativePushPayloadFcmMessageAndroidPriorityEnum>
-    _$nativePushPayloadFcmMessageAndroidPriorityEnumSerializer =
+_$nativePushPayloadFcmMessageAndroidPriorityEnumSerializer =
     _$NativePushPayloadFcmMessageAndroidPriorityEnumSerializer();
 
 class _$NativePushPayloadFcmMessageAndroidPriorityEnumSerializer
@@ -50,23 +52,26 @@ class _$NativePushPayloadFcmMessageAndroidPriorityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NativePushPayloadFcmMessageAndroidPriorityEnum
+    NativePushPayloadFcmMessageAndroidPriorityEnum,
   ];
   @override
   final String wireName = 'NativePushPayloadFcmMessageAndroidPriorityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NativePushPayloadFcmMessageAndroidPriorityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NativePushPayloadFcmMessageAndroidPriorityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NativePushPayloadFcmMessageAndroidPriorityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NativePushPayloadFcmMessageAndroidPriorityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NativePushPayloadFcmMessageAndroidPriorityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NativePushPayloadFcmMessageAndroid
@@ -78,18 +83,19 @@ class _$NativePushPayloadFcmMessageAndroid
   @override
   final String? collapseKey;
 
-  factory _$NativePushPayloadFcmMessageAndroid(
-          [void Function(NativePushPayloadFcmMessageAndroidBuilder)?
-              updates]) =>
-      (NativePushPayloadFcmMessageAndroidBuilder()..update(updates))._build();
+  factory _$NativePushPayloadFcmMessageAndroid([
+    void Function(NativePushPayloadFcmMessageAndroidBuilder)? updates,
+  ]) => (NativePushPayloadFcmMessageAndroidBuilder()..update(updates))._build();
 
-  _$NativePushPayloadFcmMessageAndroid._(
-      {this.priority, this.ttl, this.collapseKey})
-      : super._();
+  _$NativePushPayloadFcmMessageAndroid._({
+    this.priority,
+    this.ttl,
+    this.collapseKey,
+  }) : super._();
   @override
   NativePushPayloadFcmMessageAndroid rebuild(
-          void Function(NativePushPayloadFcmMessageAndroidBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadFcmMessageAndroidBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadFcmMessageAndroidBuilder toBuilder() =>
@@ -126,8 +132,10 @@ class _$NativePushPayloadFcmMessageAndroid
 
 class NativePushPayloadFcmMessageAndroidBuilder
     implements
-        Builder<NativePushPayloadFcmMessageAndroid,
-            NativePushPayloadFcmMessageAndroidBuilder> {
+        Builder<
+          NativePushPayloadFcmMessageAndroid,
+          NativePushPayloadFcmMessageAndroidBuilder
+        > {
   _$NativePushPayloadFcmMessageAndroid? _$v;
 
   NativePushPayloadFcmMessageAndroidPriorityEnum? _priority;
@@ -166,7 +174,8 @@ class NativePushPayloadFcmMessageAndroidBuilder
 
   @override
   void update(
-      void Function(NativePushPayloadFcmMessageAndroidBuilder)? updates) {
+    void Function(NativePushPayloadFcmMessageAndroidBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -174,7 +183,8 @@ class NativePushPayloadFcmMessageAndroidBuilder
   NativePushPayloadFcmMessageAndroid build() => _build();
 
   _$NativePushPayloadFcmMessageAndroid _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NativePushPayloadFcmMessageAndroid._(
           priority: priority,
           ttl: ttl,

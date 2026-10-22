@@ -57,8 +57,9 @@ abstract class ImpactProjectionEvent
 
   ImpactProjectionEvent._();
 
-  factory ImpactProjectionEvent(
-      [void updates(ImpactProjectionEventBuilder b)]) = _$ImpactProjectionEvent;
+  factory ImpactProjectionEvent([
+    void updates(ImpactProjectionEventBuilder b),
+  ]) = _$ImpactProjectionEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ImpactProjectionEventBuilder b) => b;
@@ -73,7 +74,7 @@ class _$ImpactProjectionEventSerializer
   @override
   final Iterable<Type> types = const [
     ImpactProjectionEvent,
-    _$ImpactProjectionEvent
+    _$ImpactProjectionEvent,
   ];
 
   @override
@@ -143,9 +144,11 @@ class _$ImpactProjectionEventSerializer
     ImpactProjectionEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,69 +164,86 @@ class _$ImpactProjectionEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'findingId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.findingId = valueDes;
           break;
         case r'hazardType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ImpactProjectionEventHazardTypeEnum),
-          ) as ImpactProjectionEventHazardTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ImpactProjectionEventHazardTypeEnum,
+                    ),
+                  )
+                  as ImpactProjectionEventHazardTypeEnum;
           result.hazardType = valueDes;
           break;
         case r'sourceRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceRef = valueDes;
           break;
         case r'impactFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.impactFamily = valueDes;
           break;
         case r'admin1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.admin1 = valueDes;
           break;
         case r'pImpact':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pImpact = valueDes;
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.questionId = valueDes;
           break;
         case r'supersededBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.supersededBy = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

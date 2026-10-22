@@ -30,8 +30,9 @@ abstract class CpaBatchRequestFilter
 
   CpaBatchRequestFilter._();
 
-  factory CpaBatchRequestFilter(
-      [void updates(CpaBatchRequestFilterBuilder b)]) = _$CpaBatchRequestFilter;
+  factory CpaBatchRequestFilter([
+    void updates(CpaBatchRequestFilterBuilder b),
+  ]) = _$CpaBatchRequestFilter;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CpaBatchRequestFilterBuilder b) => b;
@@ -46,7 +47,7 @@ class _$CpaBatchRequestFilterSerializer
   @override
   final Iterable<Type> types = const [
     CpaBatchRequestFilter,
-    _$CpaBatchRequestFilter
+    _$CpaBatchRequestFilter,
   ];
 
   @override
@@ -86,9 +87,11 @@ class _$CpaBatchRequestFilterSerializer
     CpaBatchRequestFilter object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,28 +107,38 @@ class _$CpaBatchRequestFilterSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.kinds.replace(valueDes);
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.sources.replace(valueDes);
           break;
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltList<num>?;
           if (valueDes == null) continue;
           result.bbox.replace(valueDes);
           break;

@@ -42,8 +42,10 @@ part 'chronicle_related_page_items_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleRelatedPageItemsInner
     implements
-        Built<ChronicleRelatedPageItemsInner,
-            ChronicleRelatedPageItemsInnerBuilder> {
+        Built<
+          ChronicleRelatedPageItemsInner,
+          ChronicleRelatedPageItemsInnerBuilder
+        > {
   /// One Of [ChronicleLink], [OpaqueChronicleLink]
   OneOf get oneOf;
 
@@ -56,9 +58,9 @@ abstract class ChronicleRelatedPageItemsInner
 
   ChronicleRelatedPageItemsInner._();
 
-  factory ChronicleRelatedPageItemsInner(
-          [void updates(ChronicleRelatedPageItemsInnerBuilder b)]) =
-      _$ChronicleRelatedPageItemsInner;
+  factory ChronicleRelatedPageItemsInner([
+    void updates(ChronicleRelatedPageItemsInnerBuilder b),
+  ]) = _$ChronicleRelatedPageItemsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleRelatedPageItemsInnerBuilder b) => b;
@@ -99,7 +101,7 @@ class _$ChronicleRelatedPageItemsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleRelatedPageItemsInner,
-    _$ChronicleRelatedPageItemsInner
+    _$ChronicleRelatedPageItemsInner,
   ];
 
   @override
@@ -118,8 +120,10 @@ class _$ChronicleRelatedPageItemsInnerSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -131,41 +135,50 @@ class _$ChronicleRelatedPageItemsInnerSerializer
     final result = ChronicleRelatedPageItemsInnerBuilder();
     Object? oneOfDataSrc;
     final serializedList = (serialized as Iterable<Object?>).toList();
-    final discIndex = serializedList
-            .indexOf(ChronicleRelatedPageItemsInner.discriminatorFieldName) +
+    final discIndex =
+        serializedList.indexOf(
+          ChronicleRelatedPageItemsInner.discriminatorFieldName,
+        ) +
         1;
-    final discValue = serializers.deserialize(serializedList[discIndex],
-        specifiedType: FullType(String)) as String;
+    final discValue =
+        serializers.deserialize(
+              serializedList[discIndex],
+              specifiedType: FullType(String),
+            )
+            as String;
     oneOfDataSrc = serialized;
-    final oneOfTypes = [
-      ChronicleLink,
-      OpaqueChronicleLink,
-    ];
+    final oneOfTypes = [ChronicleLink, OpaqueChronicleLink];
     Object oneOfResult;
     Type oneOfType;
     switch (discValue) {
       case r'full':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(ChronicleLink),
-        ) as ChronicleLink;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(ChronicleLink),
+                )
+                as ChronicleLink;
         oneOfType = ChronicleLink;
         break;
       case r'opaque':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(OpaqueChronicleLink),
-        ) as OpaqueChronicleLink;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(OpaqueChronicleLink),
+                )
+                as OpaqueChronicleLink;
         oneOfType = OpaqueChronicleLink;
         break;
       default:
         throw UnsupportedError(
-            "Couldn't deserialize oneOf for the discriminator value: ${discValue}");
+          "Couldn't deserialize oneOf for the discriminator value: ${discValue}",
+        );
     }
     result.oneOf = OneOfDynamic(
-        typeIndex: oneOfTypes.indexOf(oneOfType),
-        types: oneOfTypes,
-        value: oneOfResult);
+      typeIndex: oneOfTypes.indexOf(oneOfType),
+      types: oneOfTypes,
+      value: oneOfResult,
+    );
     return result.build();
   }
 }
@@ -176,11 +189,10 @@ class ChronicleRelatedPageItemsInnerDisclosureEnum extends EnumClass {
       _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque;
 
   static Serializer<ChronicleRelatedPageItemsInnerDisclosureEnum>
-      get serializer =>
-          _$chronicleRelatedPageItemsInnerDisclosureEnumSerializer;
+  get serializer => _$chronicleRelatedPageItemsInnerDisclosureEnumSerializer;
 
   const ChronicleRelatedPageItemsInnerDisclosureEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChronicleRelatedPageItemsInnerDisclosureEnum> get values =>
       _$chronicleRelatedPageItemsInnerDisclosureEnumValues;
@@ -201,7 +213,7 @@ class ChronicleRelatedPageItemsInnerStrengthEnum extends EnumClass {
       _$chronicleRelatedPageItemsInnerStrengthEnum_high;
 
   static Serializer<ChronicleRelatedPageItemsInnerStrengthEnum>
-      get serializer => _$chronicleRelatedPageItemsInnerStrengthEnumSerializer;
+  get serializer => _$chronicleRelatedPageItemsInnerStrengthEnumSerializer;
 
   const ChronicleRelatedPageItemsInnerStrengthEnum._(String name) : super(name);
 
@@ -226,11 +238,10 @@ class ChronicleRelatedPageItemsInnerDimensionsEnum extends EnumClass {
       _$chronicleRelatedPageItemsInnerDimensionsEnum_topics;
 
   static Serializer<ChronicleRelatedPageItemsInnerDimensionsEnum>
-      get serializer =>
-          _$chronicleRelatedPageItemsInnerDimensionsEnumSerializer;
+  get serializer => _$chronicleRelatedPageItemsInnerDimensionsEnumSerializer;
 
   const ChronicleRelatedPageItemsInnerDimensionsEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChronicleRelatedPageItemsInnerDimensionsEnum> get values =>
       _$chronicleRelatedPageItemsInnerDimensionsEnumValues;
@@ -250,7 +261,7 @@ class ChronicleRelatedPageItemsInnerTemporalEnum extends EnumClass {
       _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent;
 
   static Serializer<ChronicleRelatedPageItemsInnerTemporalEnum>
-      get serializer => _$chronicleRelatedPageItemsInnerTemporalEnumSerializer;
+  get serializer => _$chronicleRelatedPageItemsInnerTemporalEnumSerializer;
 
   const ChronicleRelatedPageItemsInnerTemporalEnum._(String name) : super(name);
 
@@ -272,11 +283,10 @@ class ChronicleRelatedPageItemsInnerTimeOverlapEnum extends EnumClass {
       _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full;
 
   static Serializer<ChronicleRelatedPageItemsInnerTimeOverlapEnum>
-      get serializer =>
-          _$chronicleRelatedPageItemsInnerTimeOverlapEnumSerializer;
+  get serializer => _$chronicleRelatedPageItemsInnerTimeOverlapEnumSerializer;
 
   const ChronicleRelatedPageItemsInnerTimeOverlapEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChronicleRelatedPageItemsInnerTimeOverlapEnum> get values =>
       _$chronicleRelatedPageItemsInnerTimeOverlapEnumValues;
@@ -315,16 +325,15 @@ class ChronicleRelatedPageItemsInnerAccessRequestStatusEnum extends EnumClass {
       _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined;
 
   static Serializer<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>
-      get serializer =>
-          _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer;
+  get serializer =>
+      _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer;
 
   const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>
-      get values =>
-          _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValues;
+  get values => _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValues;
   static ChronicleRelatedPageItemsInnerAccessRequestStatusEnum valueOf(
-          String name) =>
-      _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValueOf(name);
+    String name,
+  ) => _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValueOf(name);
 }

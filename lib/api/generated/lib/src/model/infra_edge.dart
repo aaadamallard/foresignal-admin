@@ -97,10 +97,7 @@ class _$InfraEdgeSerializer implements PrimitiveSerializer<InfraEdge> {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.id, specifiedType: const FullType(int));
     yield r'fromNode';
     yield serializers.serialize(
       object.fromNode,
@@ -145,8 +142,10 @@ class _$InfraEdgeSerializer implements PrimitiveSerializer<InfraEdge> {
       yield r'params';
       yield serializers.serialize(
         object.params,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.evidence != null) {
@@ -176,9 +175,11 @@ class _$InfraEdgeSerializer implements PrimitiveSerializer<InfraEdge> {
     InfraEdge object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -194,97 +195,113 @@ class _$InfraEdgeSerializer implements PrimitiveSerializer<InfraEdge> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.id = valueDes;
           break;
         case r'fromNode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.fromNode = valueDes;
           break;
         case r'toNode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.toNode = valueDes;
           break;
         case r'relation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InfraEdgeRelationEnum),
-          ) as InfraEdgeRelationEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(InfraEdgeRelationEnum),
+                  )
+                  as InfraEdgeRelationEnum;
           result.relation = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InfraEdgeMethodEnum),
-          ) as InfraEdgeMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(InfraEdgeMethodEnum),
+                  )
+                  as InfraEdgeMethodEnum;
           result.method = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InfraEdgeLabelEnum),
-          ) as InfraEdgeLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(InfraEdgeLabelEnum),
+                  )
+                  as InfraEdgeLabelEnum;
           result.label = valueDes;
           break;
         case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.score = valueDes;
           break;
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'ruleVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleVersion = valueDes;
           break;
         case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.params.replace(valueDes);
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(InfraEdgeEvidence),
-          ) as InfraEdgeEvidence?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(InfraEdgeEvidence),
+                  )
+                  as InfraEdgeEvidence?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.licence = valueDes;
           break;
         case r'builtAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.builtAt = valueDes;
           break;

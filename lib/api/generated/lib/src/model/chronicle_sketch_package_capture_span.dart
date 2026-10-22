@@ -16,8 +16,10 @@ part 'chronicle_sketch_package_capture_span.g.dart';
 @BuiltValue()
 abstract class ChronicleSketchPackageCaptureSpan
     implements
-        Built<ChronicleSketchPackageCaptureSpan,
-            ChronicleSketchPackageCaptureSpanBuilder> {
+        Built<
+          ChronicleSketchPackageCaptureSpan,
+          ChronicleSketchPackageCaptureSpanBuilder
+        > {
   @BuiltValueField(wireName: r'from')
   String get from;
 
@@ -26,9 +28,9 @@ abstract class ChronicleSketchPackageCaptureSpan
 
   ChronicleSketchPackageCaptureSpan._();
 
-  factory ChronicleSketchPackageCaptureSpan(
-          [void updates(ChronicleSketchPackageCaptureSpanBuilder b)]) =
-      _$ChronicleSketchPackageCaptureSpan;
+  factory ChronicleSketchPackageCaptureSpan([
+    void updates(ChronicleSketchPackageCaptureSpanBuilder b),
+  ]) = _$ChronicleSketchPackageCaptureSpan;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSketchPackageCaptureSpanBuilder b) => b;
@@ -43,7 +45,7 @@ class _$ChronicleSketchPackageCaptureSpanSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSketchPackageCaptureSpan,
-    _$ChronicleSketchPackageCaptureSpan
+    _$ChronicleSketchPackageCaptureSpan,
   ];
 
   @override
@@ -74,9 +76,11 @@ class _$ChronicleSketchPackageCaptureSpanSerializer
     ChronicleSketchPackageCaptureSpan object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,17 +96,21 @@ class _$ChronicleSketchPackageCaptureSpanSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;

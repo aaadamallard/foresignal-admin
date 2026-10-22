@@ -7,11 +7,11 @@ part of 'ogc_tile_set_list_tilesets_inner.dart';
 // **************************************************************************
 
 const OgcTileSetListTilesetsInnerDataTypeEnum
-    _$ogcTileSetListTilesetsInnerDataTypeEnum_map =
+_$ogcTileSetListTilesetsInnerDataTypeEnum_map =
     const OgcTileSetListTilesetsInnerDataTypeEnum._('map');
 
 OgcTileSetListTilesetsInnerDataTypeEnum
-    _$ogcTileSetListTilesetsInnerDataTypeEnumValueOf(String name) {
+_$ogcTileSetListTilesetsInnerDataTypeEnumValueOf(String name) {
   switch (name) {
     case 'map':
       return _$ogcTileSetListTilesetsInnerDataTypeEnum_map;
@@ -21,13 +21,15 @@ OgcTileSetListTilesetsInnerDataTypeEnum
 }
 
 final BuiltSet<OgcTileSetListTilesetsInnerDataTypeEnum>
-    _$ogcTileSetListTilesetsInnerDataTypeEnumValues = BuiltSet<
-        OgcTileSetListTilesetsInnerDataTypeEnum>(const <OgcTileSetListTilesetsInnerDataTypeEnum>[
-  _$ogcTileSetListTilesetsInnerDataTypeEnum_map,
-]);
+_$ogcTileSetListTilesetsInnerDataTypeEnumValues =
+    BuiltSet<OgcTileSetListTilesetsInnerDataTypeEnum>(
+      const <OgcTileSetListTilesetsInnerDataTypeEnum>[
+        _$ogcTileSetListTilesetsInnerDataTypeEnum_map,
+      ],
+    );
 
 Serializer<OgcTileSetListTilesetsInnerDataTypeEnum>
-    _$ogcTileSetListTilesetsInnerDataTypeEnumSerializer =
+_$ogcTileSetListTilesetsInnerDataTypeEnumSerializer =
     _$OgcTileSetListTilesetsInnerDataTypeEnumSerializer();
 
 class _$OgcTileSetListTilesetsInnerDataTypeEnumSerializer
@@ -41,23 +43,26 @@ class _$OgcTileSetListTilesetsInnerDataTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OgcTileSetListTilesetsInnerDataTypeEnum
+    OgcTileSetListTilesetsInnerDataTypeEnum,
   ];
   @override
   final String wireName = 'OgcTileSetListTilesetsInnerDataTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          OgcTileSetListTilesetsInnerDataTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcTileSetListTilesetsInnerDataTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OgcTileSetListTilesetsInnerDataTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcTileSetListTilesetsInnerDataTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcTileSetListTilesetsInnerDataTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcTileSetListTilesetsInner extends OgcTileSetListTilesetsInner {
@@ -72,21 +77,21 @@ class _$OgcTileSetListTilesetsInner extends OgcTileSetListTilesetsInner {
   @override
   final BuiltList<OgcLink> links;
 
-  factory _$OgcTileSetListTilesetsInner(
-          [void Function(OgcTileSetListTilesetsInnerBuilder)? updates]) =>
-      (OgcTileSetListTilesetsInnerBuilder()..update(updates))._build();
+  factory _$OgcTileSetListTilesetsInner([
+    void Function(OgcTileSetListTilesetsInnerBuilder)? updates,
+  ]) => (OgcTileSetListTilesetsInnerBuilder()..update(updates))._build();
 
-  _$OgcTileSetListTilesetsInner._(
-      {this.title,
-      required this.dataType,
-      this.crs,
-      this.tileMatrixSetURI,
-      required this.links})
-      : super._();
+  _$OgcTileSetListTilesetsInner._({
+    this.title,
+    required this.dataType,
+    this.crs,
+    this.tileMatrixSetURI,
+    required this.links,
+  }) : super._();
   @override
   OgcTileSetListTilesetsInner rebuild(
-          void Function(OgcTileSetListTilesetsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcTileSetListTilesetsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcTileSetListTilesetsInnerBuilder toBuilder() =>
@@ -129,8 +134,10 @@ class _$OgcTileSetListTilesetsInner extends OgcTileSetListTilesetsInner {
 
 class OgcTileSetListTilesetsInnerBuilder
     implements
-        Builder<OgcTileSetListTilesetsInner,
-            OgcTileSetListTilesetsInnerBuilder> {
+        Builder<
+          OgcTileSetListTilesetsInner,
+          OgcTileSetListTilesetsInnerBuilder
+        > {
   _$OgcTileSetListTilesetsInner? _$v;
 
   String? _title;
@@ -188,11 +195,15 @@ class OgcTileSetListTilesetsInnerBuilder
   _$OgcTileSetListTilesetsInner _build() {
     _$OgcTileSetListTilesetsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcTileSetListTilesetsInner._(
             title: title,
             dataType: BuiltValueNullFieldError.checkNotNull(
-                dataType, r'OgcTileSetListTilesetsInner', 'dataType'),
+              dataType,
+              r'OgcTileSetListTilesetsInner',
+              'dataType',
+            ),
             crs: crs,
             tileMatrixSetURI: tileMatrixSetURI,
             links: links.build(),
@@ -204,7 +215,10 @@ class OgcTileSetListTilesetsInnerBuilder
         links.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcTileSetListTilesetsInner', _$failedField, e.toString());
+          r'OgcTileSetListTilesetsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

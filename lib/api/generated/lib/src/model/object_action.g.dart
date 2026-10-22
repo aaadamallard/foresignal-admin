@@ -36,12 +36,12 @@ ObjectActionMethodEnum _$objectActionMethodEnumValueOf(String name) {
 
 final BuiltSet<ObjectActionMethodEnum> _$objectActionMethodEnumValues =
     BuiltSet<ObjectActionMethodEnum>(const <ObjectActionMethodEnum>[
-  _$objectActionMethodEnum_GET,
-  _$objectActionMethodEnum_POST,
-  _$objectActionMethodEnum_PUT,
-  _$objectActionMethodEnum_PATCH,
-  _$objectActionMethodEnum_DELETE,
-]);
+      _$objectActionMethodEnum_GET,
+      _$objectActionMethodEnum_POST,
+      _$objectActionMethodEnum_PUT,
+      _$objectActionMethodEnum_PATCH,
+      _$objectActionMethodEnum_DELETE,
+    ]);
 
 const ObjectActionScopeEnum _$objectActionScopeEnum_read =
     const ObjectActionScopeEnum._('read');
@@ -65,10 +65,10 @@ ObjectActionScopeEnum _$objectActionScopeEnumValueOf(String name) {
 
 final BuiltSet<ObjectActionScopeEnum> _$objectActionScopeEnumValues =
     BuiltSet<ObjectActionScopeEnum>(const <ObjectActionScopeEnum>[
-  _$objectActionScopeEnum_read,
-  _$objectActionScopeEnum_agent,
-  _$objectActionScopeEnum_admin,
-]);
+      _$objectActionScopeEnum_read,
+      _$objectActionScopeEnum_agent,
+      _$objectActionScopeEnum_admin,
+    ]);
 
 Serializer<ObjectActionMethodEnum> _$objectActionMethodEnumSerializer =
     _$ObjectActionMethodEnumSerializer();
@@ -98,15 +98,20 @@ class _$ObjectActionMethodEnumSerializer
   final String wireName = 'ObjectActionMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, ObjectActionMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ObjectActionMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ObjectActionMethodEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ObjectActionMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ObjectActionMethodEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ObjectActionMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ObjectActionScopeEnumSerializer
@@ -128,15 +133,20 @@ class _$ObjectActionScopeEnumSerializer
   final String wireName = 'ObjectActionScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, ObjectActionScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ObjectActionScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ObjectActionScopeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ObjectActionScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ObjectActionScopeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ObjectActionScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ObjectAction extends ObjectAction {
@@ -154,13 +164,13 @@ class _$ObjectAction extends ObjectAction {
   factory _$ObjectAction([void Function(ObjectActionBuilder)? updates]) =>
       (ObjectActionBuilder()..update(updates))._build();
 
-  _$ObjectAction._(
-      {required this.id,
-      this.label,
-      required this.method,
-      required this.href,
-      required this.scope})
-      : super._();
+  _$ObjectAction._({
+    required this.id,
+    this.label,
+    required this.method,
+    required this.href,
+    required this.scope,
+  }) : super._();
   @override
   ObjectAction rebuild(void Function(ObjectActionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -258,16 +268,26 @@ class ObjectActionBuilder
   ObjectAction build() => _build();
 
   _$ObjectAction _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ObjectAction._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'ObjectAction', 'id'),
           label: label,
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'ObjectAction', 'method'),
+            method,
+            r'ObjectAction',
+            'method',
+          ),
           href: BuiltValueNullFieldError.checkNotNull(
-              href, r'ObjectAction', 'href'),
+            href,
+            r'ObjectAction',
+            'href',
+          ),
           scope: BuiltValueNullFieldError.checkNotNull(
-              scope, r'ObjectAction', 'scope'),
+            scope,
+            r'ObjectAction',
+            'scope',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -7,17 +7,17 @@ part of 'push_subscription_input.dart';
 // **************************************************************************
 
 const PushSubscriptionInputTransportLabelEnum
-    _$pushSubscriptionInputTransportLabelEnum_browser =
+_$pushSubscriptionInputTransportLabelEnum_browser =
     const PushSubscriptionInputTransportLabelEnum._('browser');
 const PushSubscriptionInputTransportLabelEnum
-    _$pushSubscriptionInputTransportLabelEnum_unifiedpush =
+_$pushSubscriptionInputTransportLabelEnum_unifiedpush =
     const PushSubscriptionInputTransportLabelEnum._('unifiedpush');
 const PushSubscriptionInputTransportLabelEnum
-    _$pushSubscriptionInputTransportLabelEnum_other =
+_$pushSubscriptionInputTransportLabelEnum_other =
     const PushSubscriptionInputTransportLabelEnum._('other');
 
 PushSubscriptionInputTransportLabelEnum
-    _$pushSubscriptionInputTransportLabelEnumValueOf(String name) {
+_$pushSubscriptionInputTransportLabelEnumValueOf(String name) {
   switch (name) {
     case 'browser':
       return _$pushSubscriptionInputTransportLabelEnum_browser;
@@ -31,22 +31,24 @@ PushSubscriptionInputTransportLabelEnum
 }
 
 final BuiltSet<PushSubscriptionInputTransportLabelEnum>
-    _$pushSubscriptionInputTransportLabelEnumValues = BuiltSet<
-        PushSubscriptionInputTransportLabelEnum>(const <PushSubscriptionInputTransportLabelEnum>[
-  _$pushSubscriptionInputTransportLabelEnum_browser,
-  _$pushSubscriptionInputTransportLabelEnum_unifiedpush,
-  _$pushSubscriptionInputTransportLabelEnum_other,
-]);
+_$pushSubscriptionInputTransportLabelEnumValues =
+    BuiltSet<PushSubscriptionInputTransportLabelEnum>(
+      const <PushSubscriptionInputTransportLabelEnum>[
+        _$pushSubscriptionInputTransportLabelEnum_browser,
+        _$pushSubscriptionInputTransportLabelEnum_unifiedpush,
+        _$pushSubscriptionInputTransportLabelEnum_other,
+      ],
+    );
 
 const PushSubscriptionInputPayloadFormatEnum
-    _$pushSubscriptionInputPayloadFormatEnum_foresignal =
+_$pushSubscriptionInputPayloadFormatEnum_foresignal =
     const PushSubscriptionInputPayloadFormatEnum._('foresignal');
 const PushSubscriptionInputPayloadFormatEnum
-    _$pushSubscriptionInputPayloadFormatEnum_declarative =
+_$pushSubscriptionInputPayloadFormatEnum_declarative =
     const PushSubscriptionInputPayloadFormatEnum._('declarative');
 
 PushSubscriptionInputPayloadFormatEnum
-    _$pushSubscriptionInputPayloadFormatEnumValueOf(String name) {
+_$pushSubscriptionInputPayloadFormatEnumValueOf(String name) {
   switch (name) {
     case 'foresignal':
       return _$pushSubscriptionInputPayloadFormatEnum_foresignal;
@@ -58,17 +60,19 @@ PushSubscriptionInputPayloadFormatEnum
 }
 
 final BuiltSet<PushSubscriptionInputPayloadFormatEnum>
-    _$pushSubscriptionInputPayloadFormatEnumValues = BuiltSet<
-        PushSubscriptionInputPayloadFormatEnum>(const <PushSubscriptionInputPayloadFormatEnum>[
-  _$pushSubscriptionInputPayloadFormatEnum_foresignal,
-  _$pushSubscriptionInputPayloadFormatEnum_declarative,
-]);
+_$pushSubscriptionInputPayloadFormatEnumValues =
+    BuiltSet<PushSubscriptionInputPayloadFormatEnum>(
+      const <PushSubscriptionInputPayloadFormatEnum>[
+        _$pushSubscriptionInputPayloadFormatEnum_foresignal,
+        _$pushSubscriptionInputPayloadFormatEnum_declarative,
+      ],
+    );
 
 Serializer<PushSubscriptionInputTransportLabelEnum>
-    _$pushSubscriptionInputTransportLabelEnumSerializer =
+_$pushSubscriptionInputTransportLabelEnumSerializer =
     _$PushSubscriptionInputTransportLabelEnumSerializer();
 Serializer<PushSubscriptionInputPayloadFormatEnum>
-    _$pushSubscriptionInputPayloadFormatEnumSerializer =
+_$pushSubscriptionInputPayloadFormatEnumSerializer =
     _$PushSubscriptionInputPayloadFormatEnumSerializer();
 
 class _$PushSubscriptionInputTransportLabelEnumSerializer
@@ -86,23 +90,26 @@ class _$PushSubscriptionInputTransportLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PushSubscriptionInputTransportLabelEnum
+    PushSubscriptionInputTransportLabelEnum,
   ];
   @override
   final String wireName = 'PushSubscriptionInputTransportLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          PushSubscriptionInputTransportLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushSubscriptionInputTransportLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushSubscriptionInputTransportLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushSubscriptionInputTransportLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushSubscriptionInputTransportLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushSubscriptionInputPayloadFormatEnumSerializer
@@ -118,23 +125,26 @@ class _$PushSubscriptionInputPayloadFormatEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PushSubscriptionInputPayloadFormatEnum
+    PushSubscriptionInputPayloadFormatEnum,
   ];
   @override
   final String wireName = 'PushSubscriptionInputPayloadFormatEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          PushSubscriptionInputPayloadFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushSubscriptionInputPayloadFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushSubscriptionInputPayloadFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushSubscriptionInputPayloadFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushSubscriptionInputPayloadFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushSubscriptionInput extends PushSubscriptionInput {
@@ -151,22 +161,22 @@ class _$PushSubscriptionInput extends PushSubscriptionInput {
   @override
   final String? lang;
 
-  factory _$PushSubscriptionInput(
-          [void Function(PushSubscriptionInputBuilder)? updates]) =>
-      (PushSubscriptionInputBuilder()..update(updates))._build();
+  factory _$PushSubscriptionInput([
+    void Function(PushSubscriptionInputBuilder)? updates,
+  ]) => (PushSubscriptionInputBuilder()..update(updates))._build();
 
-  _$PushSubscriptionInput._(
-      {this.name,
-      required this.subscription,
-      this.filters,
-      this.transportLabel,
-      this.payloadFormat,
-      this.lang})
-      : super._();
+  _$PushSubscriptionInput._({
+    this.name,
+    required this.subscription,
+    this.filters,
+    this.transportLabel,
+    this.payloadFormat,
+    this.lang,
+  }) : super._();
   @override
   PushSubscriptionInput rebuild(
-          void Function(PushSubscriptionInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushSubscriptionInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushSubscriptionInputBuilder toBuilder() =>
@@ -278,7 +288,8 @@ class PushSubscriptionInputBuilder
   _$PushSubscriptionInput _build() {
     _$PushSubscriptionInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushSubscriptionInput._(
             name: name,
             subscription: subscription.build(),
@@ -296,7 +307,10 @@ class PushSubscriptionInputBuilder
         _filters?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushSubscriptionInput', _$failedField, e.toString());
+          r'PushSubscriptionInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

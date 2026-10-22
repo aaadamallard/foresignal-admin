@@ -40,8 +40,9 @@ abstract class ContextSummaryRequest
 
   ContextSummaryRequest._();
 
-  factory ContextSummaryRequest(
-      [void updates(ContextSummaryRequestBuilder b)]) = _$ContextSummaryRequest;
+  factory ContextSummaryRequest([
+    void updates(ContextSummaryRequestBuilder b),
+  ]) = _$ContextSummaryRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContextSummaryRequestBuilder b) => b;
@@ -56,7 +57,7 @@ class _$ContextSummaryRequestSerializer
   @override
   final Iterable<Type> types = const [
     ContextSummaryRequest,
-    _$ContextSummaryRequest
+    _$ContextSummaryRequest,
   ];
 
   @override
@@ -88,8 +89,10 @@ class _$ContextSummaryRequestSerializer
       yield r'filters';
       yield serializers.serialize(
         object.filters,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.layers != null) {
@@ -107,9 +110,11 @@ class _$ContextSummaryRequestSerializer
     ContextSummaryRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,42 +130,55 @@ class _$ContextSummaryRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'viewport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkspaceViewport),
-          ) as WorkspaceViewport;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WorkspaceViewport),
+                  )
+                  as WorkspaceViewport;
           result.viewport.replace(valueDes);
           break;
         case r'timeRange':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimeRange),
-          ) as TimeRange;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimeRange),
+                  )
+                  as TimeRange;
           result.timeRange.replace(valueDes);
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.filters.replace(valueDes);
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.layers.replace(valueDes);
           break;

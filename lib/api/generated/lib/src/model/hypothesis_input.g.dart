@@ -32,11 +32,11 @@ HypothesisInputTypeEnum _$hypothesisInputTypeEnumValueOf(String name) {
 
 final BuiltSet<HypothesisInputTypeEnum> _$hypothesisInputTypeEnumValues =
     BuiltSet<HypothesisInputTypeEnum>(const <HypothesisInputTypeEnum>[
-  _$hypothesisInputTypeEnum_outcome,
-  _$hypothesisInputTypeEnum_explanation,
-  _$hypothesisInputTypeEnum_speculativeLink,
-  _$hypothesisInputTypeEnum_other,
-]);
+      _$hypothesisInputTypeEnum_outcome,
+      _$hypothesisInputTypeEnum_explanation,
+      _$hypothesisInputTypeEnum_speculativeLink,
+      _$hypothesisInputTypeEnum_other,
+    ]);
 
 Serializer<HypothesisInputTypeEnum> _$hypothesisInputTypeEnumSerializer =
     _$HypothesisInputTypeEnumSerializer();
@@ -62,16 +62,20 @@ class _$HypothesisInputTypeEnumSerializer
   final String wireName = 'HypothesisInputTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisInputTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisInput extends HypothesisInput {
@@ -97,17 +101,17 @@ class _$HypothesisInput extends HypothesisInput {
   factory _$HypothesisInput([void Function(HypothesisInputBuilder)? updates]) =>
       (HypothesisInputBuilder()..update(updates))._build();
 
-  _$HypothesisInput._(
-      {required this.label,
-      required this.statement,
-      required this.type,
-      required this.prior,
-      required this.priorBasis,
-      this.ledgerOutcome,
-      this.linkedFindingIds,
-      this.coincidenceBaseline,
-      this.alternatives})
-      : super._();
+  _$HypothesisInput._({
+    required this.label,
+    required this.statement,
+    required this.type,
+    required this.prior,
+    required this.priorBasis,
+    this.ledgerOutcome,
+    this.linkedFindingIds,
+    this.coincidenceBaseline,
+    this.alternatives,
+  }) : super._();
   @override
   HypothesisInput rebuild(void Function(HypothesisInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -203,8 +207,8 @@ class HypothesisInputBuilder
   HypothesisCoincidenceBaselineBuilder get coincidenceBaseline =>
       _$this._coincidenceBaseline ??= HypothesisCoincidenceBaselineBuilder();
   set coincidenceBaseline(
-          HypothesisCoincidenceBaselineBuilder? coincidenceBaseline) =>
-      _$this._coincidenceBaseline = coincidenceBaseline;
+    HypothesisCoincidenceBaselineBuilder? coincidenceBaseline,
+  ) => _$this._coincidenceBaseline = coincidenceBaseline;
 
   ListBuilder<String>? _alternatives;
   ListBuilder<String> get alternatives =>
@@ -249,16 +253,29 @@ class HypothesisInputBuilder
   _$HypothesisInput _build() {
     _$HypothesisInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisInput._(
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'HypothesisInput', 'label'),
+              label,
+              r'HypothesisInput',
+              'label',
+            ),
             statement: BuiltValueNullFieldError.checkNotNull(
-                statement, r'HypothesisInput', 'statement'),
+              statement,
+              r'HypothesisInput',
+              'statement',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'HypothesisInput', 'type'),
+              type,
+              r'HypothesisInput',
+              'type',
+            ),
             prior: BuiltValueNullFieldError.checkNotNull(
-                prior, r'HypothesisInput', 'prior'),
+              prior,
+              r'HypothesisInput',
+              'prior',
+            ),
             priorBasis: priorBasis.build(),
             ledgerOutcome: ledgerOutcome,
             linkedFindingIds: _linkedFindingIds?.build(),
@@ -279,7 +296,10 @@ class HypothesisInputBuilder
         _alternatives?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisInput', _$failedField, e.toString());
+          r'HypothesisInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

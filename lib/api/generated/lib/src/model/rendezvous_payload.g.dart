@@ -9,7 +9,7 @@ part of 'rendezvous_payload.dart';
 const RendezvousPayloadStatusEnum _$rendezvousPayloadStatusEnum_ok =
     const RendezvousPayloadStatusEnum._('ok');
 const RendezvousPayloadStatusEnum
-    _$rendezvousPayloadStatusEnum_insufficientData =
+_$rendezvousPayloadStatusEnum_insufficientData =
     const RendezvousPayloadStatusEnum._('insufficientData');
 const RendezvousPayloadStatusEnum _$rendezvousPayloadStatusEnum_noCoverage =
     const RendezvousPayloadStatusEnum._('noCoverage');
@@ -32,16 +32,16 @@ RendezvousPayloadStatusEnum _$rendezvousPayloadStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<RendezvousPayloadStatusEnum>
-    _$rendezvousPayloadStatusEnumValues =
+_$rendezvousPayloadStatusEnumValues =
     BuiltSet<RendezvousPayloadStatusEnum>(const <RendezvousPayloadStatusEnum>[
-  _$rendezvousPayloadStatusEnum_ok,
-  _$rendezvousPayloadStatusEnum_insufficientData,
-  _$rendezvousPayloadStatusEnum_noCoverage,
-  _$rendezvousPayloadStatusEnum_degradedInput,
-]);
+      _$rendezvousPayloadStatusEnum_ok,
+      _$rendezvousPayloadStatusEnum_insufficientData,
+      _$rendezvousPayloadStatusEnum_noCoverage,
+      _$rendezvousPayloadStatusEnum_degradedInput,
+    ]);
 
 Serializer<RendezvousPayloadStatusEnum>
-    _$rendezvousPayloadStatusEnumSerializer =
+_$rendezvousPayloadStatusEnumSerializer =
     _$RendezvousPayloadStatusEnumSerializer();
 
 class _$RendezvousPayloadStatusEnumSerializer
@@ -65,16 +65,20 @@ class _$RendezvousPayloadStatusEnumSerializer
   final String wireName = 'RendezvousPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, RendezvousPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RendezvousPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RendezvousPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RendezvousPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RendezvousPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RendezvousPayload extends RendezvousPayload {
@@ -101,23 +105,23 @@ class _$RendezvousPayload extends RendezvousPayload {
   @override
   final num? nearestPortKm;
 
-  factory _$RendezvousPayload(
-          [void Function(RendezvousPayloadBuilder)? updates]) =>
-      (RendezvousPayloadBuilder()..update(updates))._build();
+  factory _$RendezvousPayload([
+    void Function(RendezvousPayloadBuilder)? updates,
+  ]) => (RendezvousPayloadBuilder()..update(updates))._build();
 
-  _$RendezvousPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.vessels,
-      this.distanceNm,
-      required this.startedAt,
-      this.durationMin,
-      this.nearestPortKm})
-      : super._();
+  _$RendezvousPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.vessels,
+    this.distanceNm,
+    required this.startedAt,
+    this.durationMin,
+    this.nearestPortKm,
+  }) : super._();
   @override
   RendezvousPayload rebuild(void Function(RendezvousPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -271,21 +275,34 @@ class RendezvousPayloadBuilder
   _$RendezvousPayload _build() {
     _$RendezvousPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RendezvousPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'RendezvousPayload', 'automated'),
+              automated,
+              r'RendezvousPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'RendezvousPayload', 'notAWarning'),
+              notAWarning,
+              r'RendezvousPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'RendezvousPayload', 'status'),
+              status,
+              r'RendezvousPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             vessels: vessels.build(),
             distanceNm: distanceNm,
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'RendezvousPayload', 'startedAt'),
+              startedAt,
+              r'RendezvousPayload',
+              'startedAt',
+            ),
             durationMin: durationMin,
             nearestPortKm: nearestPortKm,
           );
@@ -301,7 +318,10 @@ class RendezvousPayloadBuilder
         vessels.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RendezvousPayload', _$failedField, e.toString());
+          r'RendezvousPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

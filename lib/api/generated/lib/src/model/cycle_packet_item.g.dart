@@ -25,15 +25,15 @@ class _$CyclePacketItem extends CyclePacketItem {
   factory _$CyclePacketItem([void Function(CyclePacketItemBuilder)? updates]) =>
       (CyclePacketItemBuilder()..update(updates))._build();
 
-  _$CyclePacketItem._(
-      {required this.ref,
-      required this.title,
-      required this.change,
-      this.severity,
-      this.at,
-      this.detail,
-      this.rank})
-      : super._();
+  _$CyclePacketItem._({
+    required this.ref,
+    required this.title,
+    required this.change,
+    this.severity,
+    this.at,
+    this.detail,
+    this.rank,
+  }) : super._();
   @override
   CyclePacketItem rebuild(void Function(CyclePacketItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -147,14 +147,24 @@ class CyclePacketItemBuilder
   CyclePacketItem build() => _build();
 
   _$CyclePacketItem _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CyclePacketItem._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'CyclePacketItem', 'ref'),
+            ref,
+            r'CyclePacketItem',
+            'ref',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'CyclePacketItem', 'title'),
+            title,
+            r'CyclePacketItem',
+            'title',
+          ),
           change: BuiltValueNullFieldError.checkNotNull(
-              change, r'CyclePacketItem', 'change'),
+            change,
+            r'CyclePacketItem',
+            'change',
+          ),
           severity: severity,
           at: at,
           detail: detail,

@@ -7,17 +7,17 @@ part of 'osm_infrastructure_payload.dart';
 // **************************************************************************
 
 const OsmInfrastructurePayloadOsmTypeEnum
-    _$osmInfrastructurePayloadOsmTypeEnum_node =
+_$osmInfrastructurePayloadOsmTypeEnum_node =
     const OsmInfrastructurePayloadOsmTypeEnum._('node');
 const OsmInfrastructurePayloadOsmTypeEnum
-    _$osmInfrastructurePayloadOsmTypeEnum_way =
+_$osmInfrastructurePayloadOsmTypeEnum_way =
     const OsmInfrastructurePayloadOsmTypeEnum._('way');
 const OsmInfrastructurePayloadOsmTypeEnum
-    _$osmInfrastructurePayloadOsmTypeEnum_relation =
+_$osmInfrastructurePayloadOsmTypeEnum_relation =
     const OsmInfrastructurePayloadOsmTypeEnum._('relation');
 
 OsmInfrastructurePayloadOsmTypeEnum
-    _$osmInfrastructurePayloadOsmTypeEnumValueOf(String name) {
+_$osmInfrastructurePayloadOsmTypeEnumValueOf(String name) {
   switch (name) {
     case 'node':
       return _$osmInfrastructurePayloadOsmTypeEnum_node;
@@ -31,15 +31,17 @@ OsmInfrastructurePayloadOsmTypeEnum
 }
 
 final BuiltSet<OsmInfrastructurePayloadOsmTypeEnum>
-    _$osmInfrastructurePayloadOsmTypeEnumValues = BuiltSet<
-        OsmInfrastructurePayloadOsmTypeEnum>(const <OsmInfrastructurePayloadOsmTypeEnum>[
-  _$osmInfrastructurePayloadOsmTypeEnum_node,
-  _$osmInfrastructurePayloadOsmTypeEnum_way,
-  _$osmInfrastructurePayloadOsmTypeEnum_relation,
-]);
+_$osmInfrastructurePayloadOsmTypeEnumValues =
+    BuiltSet<OsmInfrastructurePayloadOsmTypeEnum>(
+      const <OsmInfrastructurePayloadOsmTypeEnum>[
+        _$osmInfrastructurePayloadOsmTypeEnum_node,
+        _$osmInfrastructurePayloadOsmTypeEnum_way,
+        _$osmInfrastructurePayloadOsmTypeEnum_relation,
+      ],
+    );
 
 Serializer<OsmInfrastructurePayloadOsmTypeEnum>
-    _$osmInfrastructurePayloadOsmTypeEnumSerializer =
+_$osmInfrastructurePayloadOsmTypeEnumSerializer =
     _$OsmInfrastructurePayloadOsmTypeEnumSerializer();
 
 class _$OsmInfrastructurePayloadOsmTypeEnumSerializer
@@ -57,23 +59,26 @@ class _$OsmInfrastructurePayloadOsmTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OsmInfrastructurePayloadOsmTypeEnum
+    OsmInfrastructurePayloadOsmTypeEnum,
   ];
   @override
   final String wireName = 'OsmInfrastructurePayloadOsmTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, OsmInfrastructurePayloadOsmTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    OsmInfrastructurePayloadOsmTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OsmInfrastructurePayloadOsmTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OsmInfrastructurePayloadOsmTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OsmInfrastructurePayloadOsmTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OsmInfrastructurePayload extends OsmInfrastructurePayload {
@@ -100,27 +105,27 @@ class _$OsmInfrastructurePayload extends OsmInfrastructurePayload {
   @override
   final int? osmVersion;
 
-  factory _$OsmInfrastructurePayload(
-          [void Function(OsmInfrastructurePayloadBuilder)? updates]) =>
-      (OsmInfrastructurePayloadBuilder()..update(updates))._build();
+  factory _$OsmInfrastructurePayload([
+    void Function(OsmInfrastructurePayloadBuilder)? updates,
+  ]) => (OsmInfrastructurePayloadBuilder()..update(updates))._build();
 
-  _$OsmInfrastructurePayload._(
-      {this.name,
-      this.operator_,
-      this.voltageKv,
-      this.capacityMw,
-      this.beds,
-      this.emergency,
-      this.iata,
-      this.icao,
-      this.ref,
-      this.osmType,
-      this.osmVersion})
-      : super._();
+  _$OsmInfrastructurePayload._({
+    this.name,
+    this.operator_,
+    this.voltageKv,
+    this.capacityMw,
+    this.beds,
+    this.emergency,
+    this.iata,
+    this.icao,
+    this.ref,
+    this.osmType,
+    this.osmVersion,
+  }) : super._();
   @override
   OsmInfrastructurePayload rebuild(
-          void Function(OsmInfrastructurePayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OsmInfrastructurePayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OsmInfrastructurePayloadBuilder toBuilder() =>
@@ -266,7 +271,8 @@ class OsmInfrastructurePayloadBuilder
   OsmInfrastructurePayload build() => _build();
 
   _$OsmInfrastructurePayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OsmInfrastructurePayload._(
           name: name,
           operator_: operator_,

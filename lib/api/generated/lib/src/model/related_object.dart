@@ -89,9 +89,11 @@ class _$RelatedObjectSerializer implements PrimitiveSerializer<RelatedObject> {
     RelatedObject object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,31 +109,39 @@ class _$RelatedObjectSerializer implements PrimitiveSerializer<RelatedObject> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'relation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Relation),
-          ) as Relation;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Relation),
+                  )
+                  as Relation;
           result.relation.replace(valueDes);
           break;
         case r'direction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RelatedObjectDirectionEnum),
-          ) as RelatedObjectDirectionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(RelatedObjectDirectionEnum),
+                  )
+                  as RelatedObjectDirectionEnum;
           result.direction = valueDes;
           break;
         case r'object':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObjectEnvelope),
-          ) as ObjectEnvelope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ObjectEnvelope),
+                  )
+                  as ObjectEnvelope;
           result.object.replace(valueDes);
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;

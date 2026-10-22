@@ -12,15 +12,15 @@ class _$RuleBacktestResultActual extends RuleBacktestResultActual {
   @override
   final bool? comparable;
 
-  factory _$RuleBacktestResultActual(
-          [void Function(RuleBacktestResultActualBuilder)? updates]) =>
-      (RuleBacktestResultActualBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultActual([
+    void Function(RuleBacktestResultActualBuilder)? updates,
+  ]) => (RuleBacktestResultActualBuilder()..update(updates))._build();
 
   _$RuleBacktestResultActual._({this.alerts, this.comparable}) : super._();
   @override
   RuleBacktestResultActual rebuild(
-          void Function(RuleBacktestResultActualBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultActualBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultActualBuilder toBuilder() =>
@@ -93,11 +93,9 @@ class RuleBacktestResultActualBuilder
   RuleBacktestResultActual build() => _build();
 
   _$RuleBacktestResultActual _build() {
-    final _$result = _$v ??
-        _$RuleBacktestResultActual._(
-          alerts: alerts,
-          comparable: comparable,
-        );
+    final _$result =
+        _$v ??
+        _$RuleBacktestResultActual._(alerts: alerts, comparable: comparable);
     replace(_$result);
     return _$result;
   }

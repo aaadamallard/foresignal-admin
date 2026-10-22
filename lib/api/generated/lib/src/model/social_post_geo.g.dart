@@ -101,7 +101,8 @@ class SocialPostGeoBuilder
   _$SocialPostGeo _build() {
     _$SocialPostGeo _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPostGeo._(
             geometry: _geometry?.build(),
             placeName: placeName,
@@ -114,7 +115,10 @@ class SocialPostGeoBuilder
         _geometry?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPostGeo', _$failedField, e.toString());
+          r'SocialPostGeo',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

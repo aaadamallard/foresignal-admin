@@ -13,20 +13,19 @@ class _$SatellitePassPayloadRfSnrByElevationInner
   @override
   final num snrDb;
 
-  factory _$SatellitePassPayloadRfSnrByElevationInner(
-          [void Function(SatellitePassPayloadRfSnrByElevationInnerBuilder)?
-              updates]) =>
-      (SatellitePassPayloadRfSnrByElevationInnerBuilder()..update(updates))
-          ._build();
+  factory _$SatellitePassPayloadRfSnrByElevationInner([
+    void Function(SatellitePassPayloadRfSnrByElevationInnerBuilder)? updates,
+  ]) => (SatellitePassPayloadRfSnrByElevationInnerBuilder()..update(updates))
+      ._build();
 
-  _$SatellitePassPayloadRfSnrByElevationInner._(
-      {required this.elevationDeg, required this.snrDb})
-      : super._();
+  _$SatellitePassPayloadRfSnrByElevationInner._({
+    required this.elevationDeg,
+    required this.snrDb,
+  }) : super._();
   @override
   SatellitePassPayloadRfSnrByElevationInner rebuild(
-          void Function(SatellitePassPayloadRfSnrByElevationInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SatellitePassPayloadRfSnrByElevationInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SatellitePassPayloadRfSnrByElevationInnerBuilder toBuilder() =>
@@ -52,7 +51,8 @@ class _$SatellitePassPayloadRfSnrByElevationInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'SatellitePassPayloadRfSnrByElevationInner')
+            r'SatellitePassPayloadRfSnrByElevationInner',
+          )
           ..add('elevationDeg', elevationDeg)
           ..add('snrDb', snrDb))
         .toString();
@@ -61,8 +61,10 @@ class _$SatellitePassPayloadRfSnrByElevationInner
 
 class SatellitePassPayloadRfSnrByElevationInnerBuilder
     implements
-        Builder<SatellitePassPayloadRfSnrByElevationInner,
-            SatellitePassPayloadRfSnrByElevationInnerBuilder> {
+        Builder<
+          SatellitePassPayloadRfSnrByElevationInner,
+          SatellitePassPayloadRfSnrByElevationInnerBuilder
+        > {
   _$SatellitePassPayloadRfSnrByElevationInner? _$v;
 
   num? _elevationDeg;
@@ -94,8 +96,8 @@ class SatellitePassPayloadRfSnrByElevationInnerBuilder
 
   @override
   void update(
-      void Function(SatellitePassPayloadRfSnrByElevationInnerBuilder)?
-          updates) {
+    void Function(SatellitePassPayloadRfSnrByElevationInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -103,12 +105,19 @@ class SatellitePassPayloadRfSnrByElevationInnerBuilder
   SatellitePassPayloadRfSnrByElevationInner build() => _build();
 
   _$SatellitePassPayloadRfSnrByElevationInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SatellitePassPayloadRfSnrByElevationInner._(
-          elevationDeg: BuiltValueNullFieldError.checkNotNull(elevationDeg,
-              r'SatellitePassPayloadRfSnrByElevationInner', 'elevationDeg'),
+          elevationDeg: BuiltValueNullFieldError.checkNotNull(
+            elevationDeg,
+            r'SatellitePassPayloadRfSnrByElevationInner',
+            'elevationDeg',
+          ),
           snrDb: BuiltValueNullFieldError.checkNotNull(
-              snrDb, r'SatellitePassPayloadRfSnrByElevationInner', 'snrDb'),
+            snrDb,
+            r'SatellitePassPayloadRfSnrByElevationInner',
+            'snrDb',
+          ),
         );
     replace(_$result);
     return _$result;

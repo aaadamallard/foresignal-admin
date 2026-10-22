@@ -24,9 +24,9 @@ TagInputNamespaceEnum _$tagInputNamespaceEnumValueOf(String name) {
 
 final BuiltSet<TagInputNamespaceEnum> _$tagInputNamespaceEnumValues =
     BuiltSet<TagInputNamespaceEnum>(const <TagInputNamespaceEnum>[
-  _$tagInputNamespaceEnum_personal,
-  _$tagInputNamespaceEnum_shared,
-]);
+      _$tagInputNamespaceEnum_personal,
+      _$tagInputNamespaceEnum_shared,
+    ]);
 
 Serializer<TagInputNamespaceEnum> _$tagInputNamespaceEnumSerializer =
     _$TagInputNamespaceEnumSerializer();
@@ -48,15 +48,20 @@ class _$TagInputNamespaceEnumSerializer
   final String wireName = 'TagInputNamespaceEnum';
 
   @override
-  Object serialize(Serializers serializers, TagInputNamespaceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TagInputNamespaceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TagInputNamespaceEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TagInputNamespaceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TagInputNamespaceEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TagInputNamespaceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TagInput extends TagInput {
@@ -76,14 +81,14 @@ class _$TagInput extends TagInput {
   factory _$TagInput([void Function(TagInputBuilder)? updates]) =>
       (TagInputBuilder()..update(updates))._build();
 
-  _$TagInput._(
-      {required this.name,
-      this.namespace,
-      this.color,
-      this.description,
-      this.visibility,
-      this.tlp})
-      : super._();
+  _$TagInput._({
+    required this.name,
+    this.namespace,
+    this.color,
+    this.description,
+    this.visibility,
+    this.tlp,
+  }) : super._();
   @override
   TagInput rebuild(void Function(TagInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -189,10 +194,14 @@ class TagInputBuilder implements Builder<TagInput, TagInputBuilder> {
   TagInput build() => _build();
 
   _$TagInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TagInput._(
-          name:
-              BuiltValueNullFieldError.checkNotNull(name, r'TagInput', 'name'),
+          name: BuiltValueNullFieldError.checkNotNull(
+            name,
+            r'TagInput',
+            'name',
+          ),
           namespace: namespace,
           color: color,
           description: description,

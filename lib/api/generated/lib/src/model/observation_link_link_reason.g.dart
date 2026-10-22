@@ -18,21 +18,21 @@ class _$ObservationLinkLinkReason extends ObservationLinkLinkReason {
   @override
   final bool? upstreamIdMatch;
 
-  factory _$ObservationLinkLinkReason(
-          [void Function(ObservationLinkLinkReasonBuilder)? updates]) =>
-      (ObservationLinkLinkReasonBuilder()..update(updates))._build();
+  factory _$ObservationLinkLinkReason([
+    void Function(ObservationLinkLinkReasonBuilder)? updates,
+  ]) => (ObservationLinkLinkReasonBuilder()..update(updates))._build();
 
-  _$ObservationLinkLinkReason._(
-      {required this.rule,
-      this.dtSeconds,
-      this.distanceKm,
-      this.attributeDeltas,
-      this.upstreamIdMatch})
-      : super._();
+  _$ObservationLinkLinkReason._({
+    required this.rule,
+    this.dtSeconds,
+    this.distanceKm,
+    this.attributeDeltas,
+    this.upstreamIdMatch,
+  }) : super._();
   @override
   ObservationLinkLinkReason rebuild(
-          void Function(ObservationLinkLinkReasonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObservationLinkLinkReasonBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObservationLinkLinkReasonBuilder toBuilder() =>
@@ -134,10 +134,14 @@ class ObservationLinkLinkReasonBuilder
   _$ObservationLinkLinkReason _build() {
     _$ObservationLinkLinkReason _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObservationLinkLinkReason._(
             rule: BuiltValueNullFieldError.checkNotNull(
-                rule, r'ObservationLinkLinkReason', 'rule'),
+              rule,
+              r'ObservationLinkLinkReason',
+              'rule',
+            ),
             dtSeconds: dtSeconds,
             distanceKm: distanceKm,
             attributeDeltas: _attributeDeltas?.build(),
@@ -150,7 +154,10 @@ class ObservationLinkLinkReasonBuilder
         _attributeDeltas?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObservationLinkLinkReason', _$failedField, e.toString());
+          r'ObservationLinkLinkReason',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

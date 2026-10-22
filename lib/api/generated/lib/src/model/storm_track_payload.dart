@@ -98,8 +98,9 @@ class _$StormTrackPayloadSerializer
       yield r'history';
       yield serializers.serialize(
         object.history,
-        specifiedType: const FullType(
-            BuiltList, [FullType(StormTrackPayloadHistoryInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(StormTrackPayloadHistoryInner),
+        ]),
       );
     }
     yield r'motion';
@@ -125,8 +126,9 @@ class _$StormTrackPayloadSerializer
       yield r'nowcast';
       yield serializers.serialize(
         object.nowcast,
-        specifiedType: const FullType(
-            BuiltList, [FullType(StormTrackPayloadNowcastInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(StormTrackPayloadNowcastInner),
+        ]),
       );
     }
     yield r'status';
@@ -163,9 +165,11 @@ class _$StormTrackPayloadSerializer
     StormTrackPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -181,82 +185,107 @@ class _$StormTrackPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'cell':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StormTrackPayloadCell),
-          ) as StormTrackPayloadCell;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StormTrackPayloadCell),
+                  )
+                  as StormTrackPayloadCell;
           result.cell.replace(valueDes);
           break;
         case r'history':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(StormTrackPayloadHistoryInner)]),
-          ) as BuiltList<StormTrackPayloadHistoryInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StormTrackPayloadHistoryInner),
+                    ]),
+                  )
+                  as BuiltList<StormTrackPayloadHistoryInner>?;
           if (valueDes == null) continue;
           result.history.replace(valueDes);
           break;
         case r'motion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StormTrackPayloadMotion),
-          ) as StormTrackPayloadMotion;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StormTrackPayloadMotion),
+                  )
+                  as StormTrackPayloadMotion;
           result.motion.replace(valueDes);
           break;
         case r'trend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StormTrackPayloadTrend),
-          ) as StormTrackPayloadTrend?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StormTrackPayloadTrend,
+                    ),
+                  )
+                  as StormTrackPayloadTrend?;
           if (valueDes == null) continue;
           result.trend.replace(valueDes);
           break;
         case r'lightningJump':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(StormTrackPayloadLightningJump),
-          ) as StormTrackPayloadLightningJump?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StormTrackPayloadLightningJump,
+                    ),
+                  )
+                  as StormTrackPayloadLightningJump?;
           if (valueDes == null) continue;
           result.lightningJump.replace(valueDes);
           break;
         case r'nowcast':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(StormTrackPayloadNowcastInner)]),
-          ) as BuiltList<StormTrackPayloadNowcastInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StormTrackPayloadNowcastInner),
+                    ]),
+                  )
+                  as BuiltList<StormTrackPayloadNowcastInner>?;
           if (valueDes == null) continue;
           result.nowcast.replace(valueDes);
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StormTrackPayloadStatusEnum),
-          ) as StormTrackPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StormTrackPayloadStatusEnum),
+                  )
+                  as StormTrackPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'mergedInto':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mergedInto = valueDes;
           break;
         case r'parentTrackId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.parentTrackId = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DetectorRef),
-          ) as DetectorRef?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DetectorRef),
+                  )
+                  as DetectorRef?;
           if (valueDes == null) continue;
           result.detector.replace(valueDes);
           break;

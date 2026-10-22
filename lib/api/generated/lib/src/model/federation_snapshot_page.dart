@@ -31,9 +31,9 @@ abstract class FederationSnapshotPage
 
   FederationSnapshotPage._();
 
-  factory FederationSnapshotPage(
-          [void updates(FederationSnapshotPageBuilder b)]) =
-      _$FederationSnapshotPage;
+  factory FederationSnapshotPage([
+    void updates(FederationSnapshotPageBuilder b),
+  ]) = _$FederationSnapshotPage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FederationSnapshotPageBuilder b) => b;
@@ -48,7 +48,7 @@ class _$FederationSnapshotPageSerializer
   @override
   final Iterable<Type> types = const [
     FederationSnapshotPage,
-    _$FederationSnapshotPage
+    _$FederationSnapshotPage,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$FederationSnapshotPageSerializer
     FederationSnapshotPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,25 +104,29 @@ class _$FederationSnapshotPageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(FederationItem)]),
-          ) as BuiltList<FederationItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(FederationItem),
+                    ]),
+                  )
+                  as BuiltList<FederationItem>;
           result.items.replace(valueDes);
           break;
         case r'atSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.atSeq = valueDes;
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

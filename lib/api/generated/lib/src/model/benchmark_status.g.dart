@@ -32,11 +32,11 @@ BenchmarkStatusOverallEnum _$benchmarkStatusOverallEnumValueOf(String name) {
 
 final BuiltSet<BenchmarkStatusOverallEnum> _$benchmarkStatusOverallEnumValues =
     BuiltSet<BenchmarkStatusOverallEnum>(const <BenchmarkStatusOverallEnum>[
-  _$benchmarkStatusOverallEnum_pass,
-  _$benchmarkStatusOverallEnum_warn,
-  _$benchmarkStatusOverallEnum_fail,
-  _$benchmarkStatusOverallEnum_unknown,
-]);
+      _$benchmarkStatusOverallEnum_pass,
+      _$benchmarkStatusOverallEnum_warn,
+      _$benchmarkStatusOverallEnum_fail,
+      _$benchmarkStatusOverallEnum_unknown,
+    ]);
 
 Serializer<BenchmarkStatusOverallEnum> _$benchmarkStatusOverallEnumSerializer =
     _$BenchmarkStatusOverallEnumSerializer();
@@ -62,16 +62,20 @@ class _$BenchmarkStatusOverallEnumSerializer
   final String wireName = 'BenchmarkStatusOverallEnum';
 
   @override
-  Object serialize(Serializers serializers, BenchmarkStatusOverallEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkStatusOverallEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkStatusOverallEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkStatusOverallEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkStatusOverallEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkStatus extends BenchmarkStatus {
@@ -85,11 +89,11 @@ class _$BenchmarkStatus extends BenchmarkStatus {
   factory _$BenchmarkStatus([void Function(BenchmarkStatusBuilder)? updates]) =>
       (BenchmarkStatusBuilder()..update(updates))._build();
 
-  _$BenchmarkStatus._(
-      {required this.generatedAt,
-      required this.overall,
-      required this.components})
-      : super._();
+  _$BenchmarkStatus._({
+    required this.generatedAt,
+    required this.overall,
+    required this.components,
+  }) : super._();
   @override
   BenchmarkStatus rebuild(void Function(BenchmarkStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -175,12 +179,19 @@ class BenchmarkStatusBuilder
   _$BenchmarkStatus _build() {
     _$BenchmarkStatus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkStatus._(
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'BenchmarkStatus', 'generatedAt'),
+              generatedAt,
+              r'BenchmarkStatus',
+              'generatedAt',
+            ),
             overall: BuiltValueNullFieldError.checkNotNull(
-                overall, r'BenchmarkStatus', 'overall'),
+              overall,
+              r'BenchmarkStatus',
+              'overall',
+            ),
             components: components.build(),
           );
     } catch (_) {
@@ -190,7 +201,10 @@ class BenchmarkStatusBuilder
         components.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkStatus', _$failedField, e.toString());
+          r'BenchmarkStatus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

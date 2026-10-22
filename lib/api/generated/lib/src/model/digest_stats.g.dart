@@ -33,19 +33,19 @@ class _$DigestStats extends DigestStats {
   factory _$DigestStats([void Function(DigestStatsBuilder)? updates]) =>
       (DigestStatsBuilder()..update(updates))._build();
 
-  _$DigestStats._(
-      {required this.fromSeq,
-      required this.toSeq,
-      required this.gap,
-      this.gapReason,
-      required this.counts,
-      this.active,
-      this.alerts,
-      this.notable,
-      this.health,
-      this.healthSnapshot,
-      this.sections})
-      : super._();
+  _$DigestStats._({
+    required this.fromSeq,
+    required this.toSeq,
+    required this.gap,
+    this.gapReason,
+    required this.counts,
+    this.active,
+    this.alerts,
+    this.notable,
+    this.health,
+    this.healthSnapshot,
+    this.sections,
+  }) : super._();
   @override
   DigestStats rebuild(void Function(DigestStatsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -200,14 +200,24 @@ class DigestStatsBuilder implements Builder<DigestStats, DigestStatsBuilder> {
   _$DigestStats _build() {
     _$DigestStats _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DigestStats._(
             fromSeq: BuiltValueNullFieldError.checkNotNull(
-                fromSeq, r'DigestStats', 'fromSeq'),
+              fromSeq,
+              r'DigestStats',
+              'fromSeq',
+            ),
             toSeq: BuiltValueNullFieldError.checkNotNull(
-                toSeq, r'DigestStats', 'toSeq'),
+              toSeq,
+              r'DigestStats',
+              'toSeq',
+            ),
             gap: BuiltValueNullFieldError.checkNotNull(
-                gap, r'DigestStats', 'gap'),
+              gap,
+              r'DigestStats',
+              'gap',
+            ),
             gapReason: gapReason,
             counts: counts.build(),
             active: _active?.build(),
@@ -235,7 +245,10 @@ class DigestStatsBuilder implements Builder<DigestStats, DigestStatsBuilder> {
         _sections?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DigestStats', _$failedField, e.toString());
+          r'DigestStats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

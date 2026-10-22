@@ -100,8 +100,9 @@ class _$MaintenanceRunSerializer
     yield r'steps';
     yield serializers.serialize(
       object.steps,
-      specifiedType:
-          const FullType(BuiltList, [FullType(MaintenanceRunStepsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(MaintenanceRunStepsInner),
+      ]),
     );
   }
 
@@ -111,9 +112,11 @@ class _$MaintenanceRunSerializer
     MaintenanceRun object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,47 +132,60 @@ class _$MaintenanceRunSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'trigger':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MaintenanceRunTriggerEnum),
-          ) as MaintenanceRunTriggerEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MaintenanceRunTriggerEnum),
+                  )
+                  as MaintenanceRunTriggerEnum;
           result.trigger = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MaintenanceRunStatusEnum),
-          ) as MaintenanceRunStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MaintenanceRunStatusEnum),
+                  )
+                  as MaintenanceRunStatusEnum;
           result.status = valueDes;
           break;
         case r'startedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.startedAt = valueDes;
           break;
         case r'finishedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.finishedAt = valueDes;
           break;
         case r'steps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(MaintenanceRunStepsInner)]),
-          ) as BuiltList<MaintenanceRunStepsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MaintenanceRunStepsInner),
+                    ]),
+                  )
+                  as BuiltList<MaintenanceRunStepsInner>;
           result.steps.replace(valueDes);
           break;
         default:

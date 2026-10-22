@@ -35,20 +35,20 @@ class _$FeedKeyCreated extends FeedKeyCreated {
   factory _$FeedKeyCreated([void Function(FeedKeyCreatedBuilder)? updates]) =>
       (FeedKeyCreatedBuilder()..update(updates))._build();
 
-  _$FeedKeyCreated._(
-      {required this.id,
-      required this.name,
-      required this.keyPrefix,
-      required this.prefixes,
-      required this.restrictions,
-      this.privateAccess,
-      required this.createdAt,
-      required this.expiresAt,
-      this.lastUsedAt,
-      this.revokedAt,
-      required this.key,
-      required this.urls})
-      : super._();
+  _$FeedKeyCreated._({
+    required this.id,
+    required this.name,
+    required this.keyPrefix,
+    required this.prefixes,
+    required this.restrictions,
+    this.privateAccess,
+    required this.createdAt,
+    required this.expiresAt,
+    this.lastUsedAt,
+    this.revokedAt,
+    required this.key,
+    required this.urls,
+  }) : super._();
   @override
   FeedKeyCreated rebuild(void Function(FeedKeyCreatedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -209,25 +209,44 @@ class FeedKeyCreatedBuilder
   _$FeedKeyCreated _build() {
     _$FeedKeyCreated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FeedKeyCreated._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'FeedKeyCreated', 'id'),
+              id,
+              r'FeedKeyCreated',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'FeedKeyCreated', 'name'),
+              name,
+              r'FeedKeyCreated',
+              'name',
+            ),
             keyPrefix: BuiltValueNullFieldError.checkNotNull(
-                keyPrefix, r'FeedKeyCreated', 'keyPrefix'),
+              keyPrefix,
+              r'FeedKeyCreated',
+              'keyPrefix',
+            ),
             prefixes: prefixes.build(),
             restrictions: restrictions.build(),
             privateAccess: privateAccess,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'FeedKeyCreated', 'createdAt'),
+              createdAt,
+              r'FeedKeyCreated',
+              'createdAt',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'FeedKeyCreated', 'expiresAt'),
+              expiresAt,
+              r'FeedKeyCreated',
+              'expiresAt',
+            ),
             lastUsedAt: lastUsedAt,
             revokedAt: revokedAt,
             key: BuiltValueNullFieldError.checkNotNull(
-                key, r'FeedKeyCreated', 'key'),
+              key,
+              r'FeedKeyCreated',
+              'key',
+            ),
             urls: urls.build(),
           );
     } catch (_) {
@@ -242,7 +261,10 @@ class FeedKeyCreatedBuilder
         urls.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FeedKeyCreated', _$failedField, e.toString());
+          r'FeedKeyCreated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

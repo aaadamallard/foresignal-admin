@@ -16,13 +16,16 @@ class _$SinkStatusClients extends SinkStatusClients {
   @override
   final BuiltList<SinkStatusClientsPeersInner>? peers;
 
-  factory _$SinkStatusClients(
-          [void Function(SinkStatusClientsBuilder)? updates]) =>
-      (SinkStatusClientsBuilder()..update(updates))._build();
+  factory _$SinkStatusClients([
+    void Function(SinkStatusClientsBuilder)? updates,
+  ]) => (SinkStatusClientsBuilder()..update(updates))._build();
 
-  _$SinkStatusClients._(
-      {required this.connected, required this.max, this.rejected, this.peers})
-      : super._();
+  _$SinkStatusClients._({
+    required this.connected,
+    required this.max,
+    this.rejected,
+    this.peers,
+  }) : super._();
   @override
   SinkStatusClients rebuild(void Function(SinkStatusClientsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -117,12 +120,19 @@ class SinkStatusClientsBuilder
   _$SinkStatusClients _build() {
     _$SinkStatusClients _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkStatusClients._(
             connected: BuiltValueNullFieldError.checkNotNull(
-                connected, r'SinkStatusClients', 'connected'),
+              connected,
+              r'SinkStatusClients',
+              'connected',
+            ),
             max: BuiltValueNullFieldError.checkNotNull(
-                max, r'SinkStatusClients', 'max'),
+              max,
+              r'SinkStatusClients',
+              'max',
+            ),
             rejected: rejected,
             peers: _peers?.build(),
           );
@@ -133,7 +143,10 @@ class SinkStatusClientsBuilder
         _peers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkStatusClients', _$failedField, e.toString());
+          r'SinkStatusClients',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

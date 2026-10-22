@@ -24,9 +24,9 @@ abstract class ProjectedImpactInterval
 
   ProjectedImpactInterval._();
 
-  factory ProjectedImpactInterval(
-          [void updates(ProjectedImpactIntervalBuilder b)]) =
-      _$ProjectedImpactInterval;
+  factory ProjectedImpactInterval([
+    void updates(ProjectedImpactIntervalBuilder b),
+  ]) = _$ProjectedImpactInterval;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProjectedImpactIntervalBuilder b) => b;
@@ -41,7 +41,7 @@ class _$ProjectedImpactIntervalSerializer
   @override
   final Iterable<Type> types = const [
     ProjectedImpactInterval,
-    _$ProjectedImpactInterval
+    _$ProjectedImpactInterval,
   ];
 
   @override
@@ -53,15 +53,9 @@ class _$ProjectedImpactIntervalSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'lo';
-    yield serializers.serialize(
-      object.lo,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lo, specifiedType: const FullType(num));
     yield r'hi';
-    yield serializers.serialize(
-      object.hi,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.hi, specifiedType: const FullType(num));
   }
 
   @override
@@ -70,9 +64,11 @@ class _$ProjectedImpactIntervalSerializer
     ProjectedImpactInterval object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,17 +84,15 @@ class _$ProjectedImpactIntervalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lo = valueDes;
           break;
         case r'hi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.hi = valueDes;
           break;
         default:

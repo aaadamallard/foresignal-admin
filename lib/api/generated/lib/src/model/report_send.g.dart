@@ -25,15 +25,15 @@ class _$ReportSend extends ReportSend {
   factory _$ReportSend([void Function(ReportSendBuilder)? updates]) =>
       (ReportSendBuilder()..update(updates))._build();
 
-  _$ReportSend._(
-      {required this.id,
-      required this.reportId,
-      this.revision,
-      required this.sentBy,
-      required this.sentAt,
-      this.message,
-      required this.recipients})
-      : super._();
+  _$ReportSend._({
+    required this.id,
+    required this.reportId,
+    this.revision,
+    required this.sentBy,
+    required this.sentAt,
+    this.message,
+    required this.recipients,
+  }) : super._();
   @override
   ReportSend rebuild(void Function(ReportSendBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -151,15 +151,22 @@ class ReportSendBuilder implements Builder<ReportSend, ReportSendBuilder> {
   _$ReportSend _build() {
     _$ReportSend _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportSend._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'ReportSend', 'id'),
             reportId: BuiltValueNullFieldError.checkNotNull(
-                reportId, r'ReportSend', 'reportId'),
+              reportId,
+              r'ReportSend',
+              'reportId',
+            ),
             revision: revision,
             sentBy: sentBy.build(),
             sentAt: BuiltValueNullFieldError.checkNotNull(
-                sentAt, r'ReportSend', 'sentAt'),
+              sentAt,
+              r'ReportSend',
+              'sentAt',
+            ),
             message: message,
             recipients: recipients.build(),
           );
@@ -173,7 +180,10 @@ class ReportSendBuilder implements Builder<ReportSend, ReportSendBuilder> {
         recipients.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportSend', _$failedField, e.toString());
+          r'ReportSend',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

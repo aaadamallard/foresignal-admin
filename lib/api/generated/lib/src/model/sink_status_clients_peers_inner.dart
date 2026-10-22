@@ -25,9 +25,9 @@ abstract class SinkStatusClientsPeersInner
 
   SinkStatusClientsPeersInner._();
 
-  factory SinkStatusClientsPeersInner(
-          [void updates(SinkStatusClientsPeersInnerBuilder b)]) =
-      _$SinkStatusClientsPeersInner;
+  factory SinkStatusClientsPeersInner([
+    void updates(SinkStatusClientsPeersInnerBuilder b),
+  ]) = _$SinkStatusClientsPeersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SinkStatusClientsPeersInnerBuilder b) => b;
@@ -42,7 +42,7 @@ class _$SinkStatusClientsPeersInnerSerializer
   @override
   final Iterable<Type> types = const [
     SinkStatusClientsPeersInner,
-    _$SinkStatusClientsPeersInner
+    _$SinkStatusClientsPeersInner,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$SinkStatusClientsPeersInnerSerializer
     SinkStatusClientsPeersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$SinkStatusClientsPeersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'address':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.address = valueDes;
           break;
         case r'connectedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.connectedAt = valueDes;
           break;
         default:

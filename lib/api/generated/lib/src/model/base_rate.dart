@@ -199,15 +199,18 @@ class _$BaseRateSerializer implements PrimitiveSerializer<BaseRate> {
     yield r'sourceMix';
     yield serializers.serialize(
       object.sourceMix,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(int)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(int),
+      ]),
     );
     if (object.licences != null) {
       yield r'licences';
       yield serializers.serialize(
         object.licences,
-        specifiedType:
-            const FullType(BuiltList, [FullType(BaseRateLicencesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BaseRateLicencesInner),
+        ]),
       );
     }
     if (object.unconditional != null) {
@@ -264,9 +267,11 @@ class _$BaseRateSerializer implements PrimitiveSerializer<BaseRate> {
     BaseRate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -282,159 +287,197 @@ class _$BaseRateSerializer implements PrimitiveSerializer<BaseRate> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'definition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BaseRateDefinition),
-          ) as BaseRateDefinition;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BaseRateDefinition),
+                  )
+                  as BaseRateDefinition;
           result.definition.replace(valueDes);
           break;
         case r'referenceClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.referenceClass = valueDes;
           break;
         case r'ratePerWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.ratePerWindow = valueDes;
           break;
         case r'pAtLeastOne':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pAtLeastOne = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatInterval),
-          ) as StatInterval;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatInterval),
+                  )
+                  as StatInterval;
           result.interval.replace(valueDes);
           break;
         case r'nWindows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nWindows = valueDes;
           break;
         case r'nEvents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nEvents = valueDes;
           break;
         case r'periodFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.periodFrom = valueDes;
           break;
         case r'periodTo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.periodTo = valueDes;
           break;
         case r'sourceMix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>;
           result.sourceMix.replace(valueDes);
           break;
         case r'licences':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(BaseRateLicencesInner)]),
-          ) as BuiltList<BaseRateLicencesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BaseRateLicencesInner),
+                    ]),
+                  )
+                  as BuiltList<BaseRateLicencesInner>?;
           if (valueDes == null) continue;
           result.licences.replace(valueDes);
           break;
         case r'unconditional':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BaseRateUnconditional),
-          ) as BaseRateUnconditional?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      BaseRateUnconditional,
+                    ),
+                  )
+                  as BaseRateUnconditional?;
           if (valueDes == null) continue;
           result.unconditional.replace(valueDes);
           break;
         case r'regionProfiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(RegionProfile)]),
-          ) as BuiltList<RegionProfile>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RegionProfile),
+                    ]),
+                  )
+                  as BuiltList<RegionProfile>?;
           if (valueDes == null) continue;
           result.regionProfiles.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>;
           result.caveats.replace(valueDes);
           break;
         case r'computer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.computer.replace(valueDes);
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         case r'origin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BaseRateOriginEnum),
-          ) as BaseRateOriginEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BaseRateOriginEnum),
+                  )
+                  as BaseRateOriginEnum;
           result.origin = valueDes;
           break;
         case r'cached':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.cached = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.manifestId = valueDes;
           break;
         default:

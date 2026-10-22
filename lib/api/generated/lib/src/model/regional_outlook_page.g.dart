@@ -12,15 +12,15 @@ class _$RegionalOutlookPage extends RegionalOutlookPage {
   @override
   final String? nextCursor;
 
-  factory _$RegionalOutlookPage(
-          [void Function(RegionalOutlookPageBuilder)? updates]) =>
-      (RegionalOutlookPageBuilder()..update(updates))._build();
+  factory _$RegionalOutlookPage([
+    void Function(RegionalOutlookPageBuilder)? updates,
+  ]) => (RegionalOutlookPageBuilder()..update(updates))._build();
 
   _$RegionalOutlookPage._({required this.items, this.nextCursor}) : super._();
   @override
   RegionalOutlookPage rebuild(
-          void Function(RegionalOutlookPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalOutlookPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalOutlookPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class RegionalOutlookPageBuilder
   _$RegionalOutlookPage _build() {
     _$RegionalOutlookPage _$result;
     try {
-      _$result = _$v ??
-          _$RegionalOutlookPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$RegionalOutlookPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class RegionalOutlookPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalOutlookPage', _$failedField, e.toString());
+          r'RegionalOutlookPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

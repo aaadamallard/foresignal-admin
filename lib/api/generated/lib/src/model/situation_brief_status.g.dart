@@ -12,7 +12,8 @@ const SituationBriefStatusStatusEnum _$situationBriefStatusStatusEnum_running =
     const SituationBriefStatusStatusEnum._('running');
 
 SituationBriefStatusStatusEnum _$situationBriefStatusStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'queued':
       return _$situationBriefStatusStatusEnum_queued;
@@ -24,14 +25,16 @@ SituationBriefStatusStatusEnum _$situationBriefStatusStatusEnumValueOf(
 }
 
 final BuiltSet<SituationBriefStatusStatusEnum>
-    _$situationBriefStatusStatusEnumValues = BuiltSet<
-        SituationBriefStatusStatusEnum>(const <SituationBriefStatusStatusEnum>[
-  _$situationBriefStatusStatusEnum_queued,
-  _$situationBriefStatusStatusEnum_running,
-]);
+_$situationBriefStatusStatusEnumValues =
+    BuiltSet<SituationBriefStatusStatusEnum>(
+      const <SituationBriefStatusStatusEnum>[
+        _$situationBriefStatusStatusEnum_queued,
+        _$situationBriefStatusStatusEnum_running,
+      ],
+    );
 
 Serializer<SituationBriefStatusStatusEnum>
-    _$situationBriefStatusStatusEnumSerializer =
+_$situationBriefStatusStatusEnumSerializer =
     _$SituationBriefStatusStatusEnumSerializer();
 
 class _$SituationBriefStatusStatusEnumSerializer
@@ -52,16 +55,19 @@ class _$SituationBriefStatusStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationBriefStatusStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationBriefStatusStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationBriefStatusStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationBriefStatusStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationBriefStatusStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationBriefStatus extends SituationBriefStatus {
@@ -74,20 +80,20 @@ class _$SituationBriefStatus extends SituationBriefStatus {
   @override
   final DateTime? previousBriefGeneratedAt;
 
-  factory _$SituationBriefStatus(
-          [void Function(SituationBriefStatusBuilder)? updates]) =>
-      (SituationBriefStatusBuilder()..update(updates))._build();
+  factory _$SituationBriefStatus([
+    void Function(SituationBriefStatusBuilder)? updates,
+  ]) => (SituationBriefStatusBuilder()..update(updates))._build();
 
-  _$SituationBriefStatus._(
-      {required this.situationId,
-      required this.status,
-      required this.requestedAt,
-      this.previousBriefGeneratedAt})
-      : super._();
+  _$SituationBriefStatus._({
+    required this.situationId,
+    required this.status,
+    required this.requestedAt,
+    this.previousBriefGeneratedAt,
+  }) : super._();
   @override
   SituationBriefStatus rebuild(
-          void Function(SituationBriefStatusBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationBriefStatusBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationBriefStatusBuilder toBuilder() =>
@@ -176,14 +182,24 @@ class SituationBriefStatusBuilder
   SituationBriefStatus build() => _build();
 
   _$SituationBriefStatus _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationBriefStatus._(
           situationId: BuiltValueNullFieldError.checkNotNull(
-              situationId, r'SituationBriefStatus', 'situationId'),
+            situationId,
+            r'SituationBriefStatus',
+            'situationId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'SituationBriefStatus', 'status'),
+            status,
+            r'SituationBriefStatus',
+            'status',
+          ),
           requestedAt: BuiltValueNullFieldError.checkNotNull(
-              requestedAt, r'SituationBriefStatus', 'requestedAt'),
+            requestedAt,
+            r'SituationBriefStatus',
+            'requestedAt',
+          ),
           previousBriefGeneratedAt: previousBriefGeneratedAt,
         );
     replace(_$result);

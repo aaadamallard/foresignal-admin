@@ -99,7 +99,8 @@ class GlanceSourcesBuilder
   GlanceSources build() => _build();
 
   _$GlanceSources _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GlanceSources._(
           healthy: healthy,
           degraded: degraded,

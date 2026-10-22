@@ -28,26 +28,26 @@ class _$ForecastResolution extends ForecastResolution {
   @override
   final String? manifestId;
 
-  factory _$ForecastResolution(
-          [void Function(ForecastResolutionBuilder)? updates]) =>
-      (ForecastResolutionBuilder()..update(updates))._build();
+  factory _$ForecastResolution([
+    void Function(ForecastResolutionBuilder)? updates,
+  ]) => (ForecastResolutionBuilder()..update(updates))._build();
 
-  _$ForecastResolution._(
-      {this.outcome,
-      this.value,
-      required this.resolvedAt,
-      required this.resolvedBy,
-      this.early,
-      this.asOf,
-      required this.evidence,
-      this.note,
-      this.caveats,
-      this.manifestId})
-      : super._();
+  _$ForecastResolution._({
+    this.outcome,
+    this.value,
+    required this.resolvedAt,
+    required this.resolvedBy,
+    this.early,
+    this.asOf,
+    required this.evidence,
+    this.note,
+    this.caveats,
+    this.manifestId,
+  }) : super._();
   @override
   ForecastResolution rebuild(
-          void Function(ForecastResolutionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastResolutionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastResolutionBuilder toBuilder() =>
@@ -186,14 +186,21 @@ class ForecastResolutionBuilder
   _$ForecastResolution _build() {
     _$ForecastResolution _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastResolution._(
             outcome: outcome,
             value: value,
             resolvedAt: BuiltValueNullFieldError.checkNotNull(
-                resolvedAt, r'ForecastResolution', 'resolvedAt'),
+              resolvedAt,
+              r'ForecastResolution',
+              'resolvedAt',
+            ),
             resolvedBy: BuiltValueNullFieldError.checkNotNull(
-                resolvedBy, r'ForecastResolution', 'resolvedBy'),
+              resolvedBy,
+              r'ForecastResolution',
+              'resolvedBy',
+            ),
             early: early,
             asOf: asOf,
             evidence: evidence.build(),
@@ -211,7 +218,10 @@ class ForecastResolutionBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastResolution', _$failedField, e.toString());
+          r'ForecastResolution',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

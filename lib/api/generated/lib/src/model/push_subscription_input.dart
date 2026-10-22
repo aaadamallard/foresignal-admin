@@ -46,8 +46,9 @@ abstract class PushSubscriptionInput
 
   PushSubscriptionInput._();
 
-  factory PushSubscriptionInput(
-      [void updates(PushSubscriptionInputBuilder b)]) = _$PushSubscriptionInput;
+  factory PushSubscriptionInput([
+    void updates(PushSubscriptionInputBuilder b),
+  ]) = _$PushSubscriptionInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushSubscriptionInputBuilder b) => b;
@@ -62,7 +63,7 @@ class _$PushSubscriptionInputSerializer
   @override
   final Iterable<Type> types = const [
     PushSubscriptionInput,
-    _$PushSubscriptionInput
+    _$PushSubscriptionInput,
   ];
 
   @override
@@ -121,9 +122,11 @@ class _$PushSubscriptionInputSerializer
     PushSubscriptionInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -139,51 +142,67 @@ class _$PushSubscriptionInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'subscription':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PushSubscriptionInputSubscription),
-          ) as PushSubscriptionInputSubscription;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PushSubscriptionInputSubscription,
+                    ),
+                  )
+                  as PushSubscriptionInputSubscription;
           result.subscription.replace(valueDes);
           break;
         case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PushFilters),
-          ) as PushFilters?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PushFilters),
+                  )
+                  as PushFilters?;
           if (valueDes == null) continue;
           result.filters.replace(valueDes);
           break;
         case r'transportLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                PushSubscriptionInputTransportLabelEnum),
-          ) as PushSubscriptionInputTransportLabelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PushSubscriptionInputTransportLabelEnum,
+                    ),
+                  )
+                  as PushSubscriptionInputTransportLabelEnum?;
           if (valueDes == null) continue;
           result.transportLabel = valueDes;
           break;
         case r'payloadFormat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PushSubscriptionInputPayloadFormatEnum),
-          ) as PushSubscriptionInputPayloadFormatEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PushSubscriptionInputPayloadFormatEnum,
+                    ),
+                  )
+                  as PushSubscriptionInputPayloadFormatEnum?;
           if (valueDes == null) continue;
           result.payloadFormat = valueDes;
           break;
         case r'lang':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lang = valueDes;
           break;

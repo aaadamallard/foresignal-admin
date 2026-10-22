@@ -18,17 +18,21 @@ class _$ChronicleLayerPatch extends ChronicleLayerPatch {
   @override
   final bool? enabled;
 
-  factory _$ChronicleLayerPatch(
-          [void Function(ChronicleLayerPatchBuilder)? updates]) =>
-      (ChronicleLayerPatchBuilder()..update(updates))._build();
+  factory _$ChronicleLayerPatch([
+    void Function(ChronicleLayerPatchBuilder)? updates,
+  ]) => (ChronicleLayerPatchBuilder()..update(updates))._build();
 
-  _$ChronicleLayerPatch._(
-      {this.name, this.selector, this.areaOverride, this.capture, this.enabled})
-      : super._();
+  _$ChronicleLayerPatch._({
+    this.name,
+    this.selector,
+    this.areaOverride,
+    this.capture,
+    this.enabled,
+  }) : super._();
   @override
   ChronicleLayerPatch rebuild(
-          void Function(ChronicleLayerPatchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleLayerPatchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleLayerPatchBuilder toBuilder() =>
@@ -128,7 +132,8 @@ class ChronicleLayerPatchBuilder
   _$ChronicleLayerPatch _build() {
     _$ChronicleLayerPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleLayerPatch._(
             name: name,
             selector: selector,
@@ -145,7 +150,10 @@ class ChronicleLayerPatchBuilder
         _capture?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleLayerPatch', _$failedField, e.toString());
+          r'ChronicleLayerPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

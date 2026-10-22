@@ -7,17 +7,18 @@ part of 'indicator_signal_series.dart';
 // **************************************************************************
 
 const IndicatorSignalSeriesDirectionEnum
-    _$indicatorSignalSeriesDirectionEnum_up =
+_$indicatorSignalSeriesDirectionEnum_up =
     const IndicatorSignalSeriesDirectionEnum._('up');
 const IndicatorSignalSeriesDirectionEnum
-    _$indicatorSignalSeriesDirectionEnum_down =
+_$indicatorSignalSeriesDirectionEnum_down =
     const IndicatorSignalSeriesDirectionEnum._('down');
 const IndicatorSignalSeriesDirectionEnum
-    _$indicatorSignalSeriesDirectionEnum_any =
+_$indicatorSignalSeriesDirectionEnum_any =
     const IndicatorSignalSeriesDirectionEnum._('any');
 
 IndicatorSignalSeriesDirectionEnum _$indicatorSignalSeriesDirectionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'up':
       return _$indicatorSignalSeriesDirectionEnum_up;
@@ -31,15 +32,17 @@ IndicatorSignalSeriesDirectionEnum _$indicatorSignalSeriesDirectionEnumValueOf(
 }
 
 final BuiltSet<IndicatorSignalSeriesDirectionEnum>
-    _$indicatorSignalSeriesDirectionEnumValues = BuiltSet<
-        IndicatorSignalSeriesDirectionEnum>(const <IndicatorSignalSeriesDirectionEnum>[
-  _$indicatorSignalSeriesDirectionEnum_up,
-  _$indicatorSignalSeriesDirectionEnum_down,
-  _$indicatorSignalSeriesDirectionEnum_any,
-]);
+_$indicatorSignalSeriesDirectionEnumValues =
+    BuiltSet<IndicatorSignalSeriesDirectionEnum>(
+      const <IndicatorSignalSeriesDirectionEnum>[
+        _$indicatorSignalSeriesDirectionEnum_up,
+        _$indicatorSignalSeriesDirectionEnum_down,
+        _$indicatorSignalSeriesDirectionEnum_any,
+      ],
+    );
 
 Serializer<IndicatorSignalSeriesDirectionEnum>
-    _$indicatorSignalSeriesDirectionEnumSerializer =
+_$indicatorSignalSeriesDirectionEnumSerializer =
     _$IndicatorSignalSeriesDirectionEnumSerializer();
 
 class _$IndicatorSignalSeriesDirectionEnumSerializer
@@ -62,16 +65,19 @@ class _$IndicatorSignalSeriesDirectionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorSignalSeriesDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorSignalSeriesDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorSignalSeriesDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorSignalSeriesDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorSignalSeriesDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorSignalSeries extends IndicatorSignalSeries {
@@ -84,17 +90,20 @@ class _$IndicatorSignalSeries extends IndicatorSignalSeries {
   @override
   final IndicatorSignalSeriesDirectionEnum? direction;
 
-  factory _$IndicatorSignalSeries(
-          [void Function(IndicatorSignalSeriesBuilder)? updates]) =>
-      (IndicatorSignalSeriesBuilder()..update(updates))._build();
+  factory _$IndicatorSignalSeries([
+    void Function(IndicatorSignalSeriesBuilder)? updates,
+  ]) => (IndicatorSignalSeriesBuilder()..update(updates))._build();
 
-  _$IndicatorSignalSeries._(
-      {required this.ref, this.condition, this.changePoint, this.direction})
-      : super._();
+  _$IndicatorSignalSeries._({
+    required this.ref,
+    this.condition,
+    this.changePoint,
+    this.direction,
+  }) : super._();
   @override
   IndicatorSignalSeries rebuild(
-          void Function(IndicatorSignalSeriesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndicatorSignalSeriesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndicatorSignalSeriesBuilder toBuilder() =>
@@ -187,10 +196,14 @@ class IndicatorSignalSeriesBuilder
   _$IndicatorSignalSeries _build() {
     _$IndicatorSignalSeries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndicatorSignalSeries._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'IndicatorSignalSeries', 'ref'),
+              ref,
+              r'IndicatorSignalSeries',
+              'ref',
+            ),
             condition: _condition?.build(),
             changePoint: changePoint,
             direction: direction,
@@ -202,7 +215,10 @@ class IndicatorSignalSeriesBuilder
         _condition?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndicatorSignalSeries', _$failedField, e.toString());
+          r'IndicatorSignalSeries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

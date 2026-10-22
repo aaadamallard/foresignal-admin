@@ -33,9 +33,9 @@ abstract class OverlandBatchLocationsInner
 
   OverlandBatchLocationsInner._();
 
-  factory OverlandBatchLocationsInner(
-          [void updates(OverlandBatchLocationsInnerBuilder b)]) =
-      _$OverlandBatchLocationsInner;
+  factory OverlandBatchLocationsInner([
+    void updates(OverlandBatchLocationsInnerBuilder b),
+  ]) = _$OverlandBatchLocationsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OverlandBatchLocationsInnerBuilder b) => b;
@@ -50,7 +50,7 @@ class _$OverlandBatchLocationsInnerSerializer
   @override
   final Iterable<Type> types = const [
     OverlandBatchLocationsInner,
-    _$OverlandBatchLocationsInner
+    _$OverlandBatchLocationsInner,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$OverlandBatchLocationsInnerSerializer
     OverlandBatchLocationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,27 +106,35 @@ class _$OverlandBatchLocationsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OverlandBatchLocationsInnerTypeEnum),
-          ) as OverlandBatchLocationsInnerTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OverlandBatchLocationsInnerTypeEnum,
+                    ),
+                  )
+                  as OverlandBatchLocationsInnerTypeEnum?;
           if (valueDes == null) continue;
           result.type = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Geometry),
-          ) as Geometry;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Geometry),
+                  )
+                  as Geometry;
           result.geometry.replace(valueDes);
           break;
         case r'properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(OverlandBatchLocationsInnerProperties),
-          ) as OverlandBatchLocationsInnerProperties;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OverlandBatchLocationsInnerProperties,
+                    ),
+                  )
+                  as OverlandBatchLocationsInnerProperties;
           result.properties.replace(valueDes);
           break;
         default:

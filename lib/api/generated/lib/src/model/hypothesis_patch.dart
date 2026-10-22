@@ -111,8 +111,9 @@ class _$HypothesisPatchSerializer
       yield r'probabilityOverride';
       yield serializers.serialize(
         object.probabilityOverride,
-        specifiedType:
-            const FullType.nullable(HypothesisPatchProbabilityOverride),
+        specifiedType: const FullType.nullable(
+          HypothesisPatchProbabilityOverride,
+        ),
       );
     }
     if (object.version != null) {
@@ -130,9 +131,11 @@ class _$HypothesisPatchSerializer
     HypothesisPatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -148,60 +151,78 @@ class _$HypothesisPatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'statement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statement = valueDes;
           break;
         case r'priorBasis':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(HypothesisInputPriorBasis),
-          ) as HypothesisInputPriorBasis?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisInputPriorBasis,
+                    ),
+                  )
+                  as HypothesisInputPriorBasis?;
           if (valueDes == null) continue;
           result.priorBasis.replace(valueDes);
           break;
         case r'ledgerOutcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ledgerOutcome = valueDes;
           break;
         case r'alternatives':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.alternatives.replace(valueDes);
           break;
         case r'probabilityOverride':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HypothesisPatchProbabilityOverride),
-          ) as HypothesisPatchProbabilityOverride?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisPatchProbabilityOverride,
+                    ),
+                  )
+                  as HypothesisPatchProbabilityOverride?;
           if (valueDes == null) continue;
           result.probabilityOverride.replace(valueDes);
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.version = valueDes;
           break;

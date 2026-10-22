@@ -21,13 +21,13 @@ class _$PrecursorSide extends PrecursorSide {
   factory _$PrecursorSide([void Function(PrecursorSideBuilder)? updates]) =>
       (PrecursorSideBuilder()..update(updates))._build();
 
-  _$PrecursorSide._(
-      {this.selector,
-      this.seriesRef,
-      this.family,
-      required this.label,
-      this.threshold})
-      : super._();
+  _$PrecursorSide._({
+    this.selector,
+    this.seriesRef,
+    this.family,
+    required this.label,
+    this.threshold,
+  }) : super._();
   @override
   PrecursorSide rebuild(void Function(PrecursorSideBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,13 +128,17 @@ class PrecursorSideBuilder
   _$PrecursorSide _build() {
     _$PrecursorSide _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorSide._(
             selector: _selector?.build(),
             seriesRef: seriesRef,
             family: family,
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'PrecursorSide', 'label'),
+              label,
+              r'PrecursorSide',
+              'label',
+            ),
             threshold: threshold,
           );
     } catch (_) {
@@ -144,7 +148,10 @@ class PrecursorSideBuilder
         _selector?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorSide', _$failedField, e.toString());
+          r'PrecursorSide',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

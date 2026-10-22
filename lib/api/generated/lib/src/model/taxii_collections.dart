@@ -61,9 +61,11 @@ class _$TaxiiCollectionsSerializer
     TaxiiCollections object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -79,11 +81,14 @@ class _$TaxiiCollectionsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'collections':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(TaxiiCollection)]),
-          ) as BuiltList<TaxiiCollection>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(TaxiiCollection),
+                    ]),
+                  )
+                  as BuiltList<TaxiiCollection>?;
           if (valueDes == null) continue;
           result.collections.replace(valueDes);
           break;

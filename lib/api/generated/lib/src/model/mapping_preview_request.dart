@@ -31,8 +31,9 @@ abstract class MappingPreviewRequest
 
   MappingPreviewRequest._();
 
-  factory MappingPreviewRequest(
-      [void updates(MappingPreviewRequestBuilder b)]) = _$MappingPreviewRequest;
+  factory MappingPreviewRequest([
+    void updates(MappingPreviewRequestBuilder b),
+  ]) = _$MappingPreviewRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MappingPreviewRequestBuilder b) => b;
@@ -47,7 +48,7 @@ class _$MappingPreviewRequestSerializer
   @override
   final Iterable<Type> types = const [
     MappingPreviewRequest,
-    _$MappingPreviewRequest
+    _$MappingPreviewRequest,
   ];
 
   @override
@@ -83,9 +84,11 @@ class _$MappingPreviewRequestSerializer
     MappingPreviewRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +104,30 @@ class _$MappingPreviewRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'mapping':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RecordMapping),
-          ) as RecordMapping;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(RecordMapping),
+                  )
+                  as RecordMapping;
           result.mapping.replace(valueDes);
           break;
         case r'sample':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MappingSample),
-          ) as MappingSample;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MappingSample),
+                  )
+                  as MappingSample;
           result.sample.replace(valueDes);
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;

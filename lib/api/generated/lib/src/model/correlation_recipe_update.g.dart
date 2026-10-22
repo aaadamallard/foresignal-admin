@@ -14,16 +14,16 @@ class _$CorrelationRecipeUpdate extends CorrelationRecipeUpdate {
   @override
   final CorrelationRecipeDefinition? definition;
 
-  factory _$CorrelationRecipeUpdate(
-          [void Function(CorrelationRecipeUpdateBuilder)? updates]) =>
-      (CorrelationRecipeUpdateBuilder()..update(updates))._build();
+  factory _$CorrelationRecipeUpdate([
+    void Function(CorrelationRecipeUpdateBuilder)? updates,
+  ]) => (CorrelationRecipeUpdateBuilder()..update(updates))._build();
 
   _$CorrelationRecipeUpdate._({this.enabled, this.params, this.definition})
-      : super._();
+    : super._();
   @override
   CorrelationRecipeUpdate rebuild(
-          void Function(CorrelationRecipeUpdateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeUpdateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeUpdateBuilder toBuilder() =>
@@ -110,7 +110,8 @@ class CorrelationRecipeUpdateBuilder
   _$CorrelationRecipeUpdate _build() {
     _$CorrelationRecipeUpdate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorrelationRecipeUpdate._(
             enabled: enabled,
             params: _params?.build(),
@@ -125,7 +126,10 @@ class CorrelationRecipeUpdateBuilder
         _definition?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorrelationRecipeUpdate', _$failedField, e.toString());
+          r'CorrelationRecipeUpdate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

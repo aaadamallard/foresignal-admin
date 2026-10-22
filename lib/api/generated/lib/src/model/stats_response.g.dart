@@ -43,24 +43,24 @@ class _$StatsResponse extends StatsResponse {
   factory _$StatsResponse([void Function(StatsResponseBuilder)? updates]) =>
       (StatsResponseBuilder()..update(updates))._build();
 
-  _$StatsResponse._(
-      {required this.productId,
-      this.frameKey,
-      this.validTime,
-      this.run,
-      this.ageMinutes,
-      this.units,
-      required this.status,
-      this.statusText,
-      this.min,
-      this.max,
-      this.mean,
-      this.p95,
-      this.coveragePct,
-      this.areaKm2,
-      required this.thresholds,
-      required this.attribution})
-      : super._();
+  _$StatsResponse._({
+    required this.productId,
+    this.frameKey,
+    this.validTime,
+    this.run,
+    this.ageMinutes,
+    this.units,
+    required this.status,
+    this.statusText,
+    this.min,
+    this.max,
+    this.mean,
+    this.p95,
+    this.coveragePct,
+    this.areaKm2,
+    required this.thresholds,
+    required this.attribution,
+  }) : super._();
   @override
   StatsResponse rebuild(void Function(StatsResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -252,17 +252,24 @@ class StatsResponseBuilder
   _$StatsResponse _build() {
     _$StatsResponse _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StatsResponse._(
             productId: BuiltValueNullFieldError.checkNotNull(
-                productId, r'StatsResponse', 'productId'),
+              productId,
+              r'StatsResponse',
+              'productId',
+            ),
             frameKey: frameKey,
             validTime: validTime,
             run: run,
             ageMinutes: ageMinutes,
             units: units,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'StatsResponse', 'status'),
+              status,
+              r'StatsResponse',
+              'status',
+            ),
             statusText: statusText,
             min: min,
             max: max,
@@ -282,7 +289,10 @@ class StatsResponseBuilder
         attribution.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StatsResponse', _$failedField, e.toString());
+          r'StatsResponse',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

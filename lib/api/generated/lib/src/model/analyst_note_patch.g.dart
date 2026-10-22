@@ -28,10 +28,10 @@ AnalystNotePatchStatusEnum _$analystNotePatchStatusEnumValueOf(String name) {
 
 final BuiltSet<AnalystNotePatchStatusEnum> _$analystNotePatchStatusEnumValues =
     BuiltSet<AnalystNotePatchStatusEnum>(const <AnalystNotePatchStatusEnum>[
-  _$analystNotePatchStatusEnum_new_,
-  _$analystNotePatchStatusEnum_read,
-  _$analystNotePatchStatusEnum_dismissed,
-]);
+      _$analystNotePatchStatusEnum_new_,
+      _$analystNotePatchStatusEnum_read,
+      _$analystNotePatchStatusEnum_dismissed,
+    ]);
 
 Serializer<AnalystNotePatchStatusEnum> _$analystNotePatchStatusEnumSerializer =
     _$AnalystNotePatchStatusEnumSerializer();
@@ -55,25 +55,29 @@ class _$AnalystNotePatchStatusEnumSerializer
   final String wireName = 'AnalystNotePatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystNotePatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystNotePatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystNotePatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystNotePatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystNotePatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystNotePatch extends AnalystNotePatch {
   @override
   final AnalystNotePatchStatusEnum status;
 
-  factory _$AnalystNotePatch(
-          [void Function(AnalystNotePatchBuilder)? updates]) =>
-      (AnalystNotePatchBuilder()..update(updates))._build();
+  factory _$AnalystNotePatch([
+    void Function(AnalystNotePatchBuilder)? updates,
+  ]) => (AnalystNotePatchBuilder()..update(updates))._build();
 
   _$AnalystNotePatch._({required this.status}) : super._();
   @override
@@ -100,9 +104,9 @@ class _$AnalystNotePatch extends AnalystNotePatch {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AnalystNotePatch')
-          ..add('status', status))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AnalystNotePatch',
+    )..add('status', status)).toString();
   }
 }
 
@@ -141,10 +145,14 @@ class AnalystNotePatchBuilder
   AnalystNotePatch build() => _build();
 
   _$AnalystNotePatch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalystNotePatch._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'AnalystNotePatch', 'status'),
+            status,
+            r'AnalystNotePatch',
+            'status',
+          ),
         );
     replace(_$result);
     return _$result;

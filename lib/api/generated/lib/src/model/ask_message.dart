@@ -97,9 +97,11 @@ class _$AskMessageSerializer implements PrimitiveSerializer<AskMessage> {
     AskMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,41 +117,53 @@ class _$AskMessageSerializer implements PrimitiveSerializer<AskMessage> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AskMessageRoleEnum),
-          ) as AskMessageRoleEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AskMessageRoleEnum),
+                  )
+                  as AskMessageRoleEnum;
           result.role = valueDes;
           break;
         case r'content':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.content = valueDes;
           break;
         case r'citations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(AskCitation)]),
-          ) as BuiltList<AskCitation>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AskCitation),
+                    ]),
+                  )
+                  as BuiltList<AskCitation>?;
           if (valueDes == null) continue;
           result.citations.replace(valueDes);
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;

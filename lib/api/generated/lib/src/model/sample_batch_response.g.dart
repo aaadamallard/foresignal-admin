@@ -12,16 +12,16 @@ class _$SampleBatchResponse extends SampleBatchResponse {
   @override
   final DateTime serverTime;
 
-  factory _$SampleBatchResponse(
-          [void Function(SampleBatchResponseBuilder)? updates]) =>
-      (SampleBatchResponseBuilder()..update(updates))._build();
+  factory _$SampleBatchResponse([
+    void Function(SampleBatchResponseBuilder)? updates,
+  ]) => (SampleBatchResponseBuilder()..update(updates))._build();
 
   _$SampleBatchResponse._({required this.items, required this.serverTime})
-      : super._();
+    : super._();
   @override
   SampleBatchResponse rebuild(
-          void Function(SampleBatchResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SampleBatchResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SampleBatchResponseBuilder toBuilder() =>
@@ -96,11 +96,15 @@ class SampleBatchResponseBuilder
   _$SampleBatchResponse _build() {
     _$SampleBatchResponse _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SampleBatchResponse._(
             items: items.build(),
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'SampleBatchResponse', 'serverTime'),
+              serverTime,
+              r'SampleBatchResponse',
+              'serverTime',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -109,7 +113,10 @@ class SampleBatchResponseBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SampleBatchResponse', _$failedField, e.toString());
+          r'SampleBatchResponse',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

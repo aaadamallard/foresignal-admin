@@ -7,14 +7,15 @@ part of 'mapping_test_result.dart';
 // **************************************************************************
 
 const MappingTestResultMappingSourceEnum
-    _$mappingTestResultMappingSourceEnum_stored =
+_$mappingTestResultMappingSourceEnum_stored =
     const MappingTestResultMappingSourceEnum._('stored');
 const MappingTestResultMappingSourceEnum
-    _$mappingTestResultMappingSourceEnum_proposed =
+_$mappingTestResultMappingSourceEnum_proposed =
     const MappingTestResultMappingSourceEnum._('proposed');
 
 MappingTestResultMappingSourceEnum _$mappingTestResultMappingSourceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'stored':
       return _$mappingTestResultMappingSourceEnum_stored;
@@ -26,14 +27,16 @@ MappingTestResultMappingSourceEnum _$mappingTestResultMappingSourceEnumValueOf(
 }
 
 final BuiltSet<MappingTestResultMappingSourceEnum>
-    _$mappingTestResultMappingSourceEnumValues = BuiltSet<
-        MappingTestResultMappingSourceEnum>(const <MappingTestResultMappingSourceEnum>[
-  _$mappingTestResultMappingSourceEnum_stored,
-  _$mappingTestResultMappingSourceEnum_proposed,
-]);
+_$mappingTestResultMappingSourceEnumValues =
+    BuiltSet<MappingTestResultMappingSourceEnum>(
+      const <MappingTestResultMappingSourceEnum>[
+        _$mappingTestResultMappingSourceEnum_stored,
+        _$mappingTestResultMappingSourceEnum_proposed,
+      ],
+    );
 
 Serializer<MappingTestResultMappingSourceEnum>
-    _$mappingTestResultMappingSourceEnumSerializer =
+_$mappingTestResultMappingSourceEnumSerializer =
     _$MappingTestResultMappingSourceEnumSerializer();
 
 class _$MappingTestResultMappingSourceEnumSerializer
@@ -54,16 +57,19 @@ class _$MappingTestResultMappingSourceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MappingTestResultMappingSourceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MappingTestResultMappingSourceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MappingTestResultMappingSourceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MappingTestResultMappingSourceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MappingTestResultMappingSourceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MappingTestResult extends MappingTestResult {
@@ -72,12 +78,12 @@ class _$MappingTestResult extends MappingTestResult {
   @override
   final BuiltList<MappingTestResultSamplesInner> samples;
 
-  factory _$MappingTestResult(
-          [void Function(MappingTestResultBuilder)? updates]) =>
-      (MappingTestResultBuilder()..update(updates))._build();
+  factory _$MappingTestResult([
+    void Function(MappingTestResultBuilder)? updates,
+  ]) => (MappingTestResultBuilder()..update(updates))._build();
 
   _$MappingTestResult._({required this.mappingSource, required this.samples})
-      : super._();
+    : super._();
   @override
   MappingTestResult rebuild(void Function(MappingTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -158,10 +164,14 @@ class MappingTestResultBuilder
   _$MappingTestResult _build() {
     _$MappingTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingTestResult._(
             mappingSource: BuiltValueNullFieldError.checkNotNull(
-                mappingSource, r'MappingTestResult', 'mappingSource'),
+              mappingSource,
+              r'MappingTestResult',
+              'mappingSource',
+            ),
             samples: samples.build(),
           );
     } catch (_) {
@@ -171,7 +181,10 @@ class MappingTestResultBuilder
         samples.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingTestResult', _$failedField, e.toString());
+          r'MappingTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

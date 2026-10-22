@@ -117,8 +117,9 @@ class _$ApiTokenInputSerializer implements PrimitiveSerializer<ApiTokenInput> {
       yield r'licencePolicy';
       yield serializers.serialize(
         object.licencePolicy,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ApiTokenInputLicencePolicyEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ApiTokenInputLicencePolicyEnum),
+        ]),
       );
     }
   }
@@ -129,9 +130,11 @@ class _$ApiTokenInputSerializer implements PrimitiveSerializer<ApiTokenInput> {
     ApiTokenInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -147,57 +150,72 @@ class _$ApiTokenInputSerializer implements PrimitiveSerializer<ApiTokenInput> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApiTokenInputScopeEnum),
-          ) as ApiTokenInputScopeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ApiTokenInputScopeEnum),
+                  )
+                  as ApiTokenInputScopeEnum;
           result.scope = valueDes;
           break;
         case r'expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expiresAt = valueDes;
           break;
         case r'restrictions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ReadRestriction),
-          ) as ReadRestriction?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ReadRestriction),
+                  )
+                  as ReadRestriction?;
           if (valueDes == null) continue;
           result.restrictions.replace(valueDes);
           break;
         case r'principalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.principalId = valueDes;
           break;
         case r'privateAccess':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.privateAccess = valueDes;
           break;
         case r'licencePolicy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ApiTokenInputLicencePolicyEnum)]),
-          ) as BuiltList<ApiTokenInputLicencePolicyEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ApiTokenInputLicencePolicyEnum),
+                    ]),
+                  )
+                  as BuiltList<ApiTokenInputLicencePolicyEnum>?;
           if (valueDes == null) continue;
           result.licencePolicy.replace(valueDes);
           break;

@@ -33,9 +33,9 @@ abstract class AttentionTopicSocialChannel
 
   AttentionTopicSocialChannel._();
 
-  factory AttentionTopicSocialChannel(
-          [void updates(AttentionTopicSocialChannelBuilder b)]) =
-      _$AttentionTopicSocialChannel;
+  factory AttentionTopicSocialChannel([
+    void updates(AttentionTopicSocialChannelBuilder b),
+  ]) = _$AttentionTopicSocialChannel;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AttentionTopicSocialChannelBuilder b) => b;
@@ -50,7 +50,7 @@ class _$AttentionTopicSocialChannelSerializer
   @override
   final Iterable<Type> types = const [
     AttentionTopicSocialChannel,
-    _$AttentionTopicSocialChannel
+    _$AttentionTopicSocialChannel,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$AttentionTopicSocialChannelSerializer
     AttentionTopicSocialChannel object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,24 +104,32 @@ class _$AttentionTopicSocialChannelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AttentionTopicSocialChannelTypeEnum),
-          ) as AttentionTopicSocialChannelTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AttentionTopicSocialChannelTypeEnum,
+                    ),
+                  )
+                  as AttentionTopicSocialChannelTypeEnum;
           result.type = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         default:

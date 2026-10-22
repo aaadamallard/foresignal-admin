@@ -53,16 +53,10 @@ class SinksApi {
     final _path = r'/v1/sinks';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -77,10 +71,7 @@ class SinksApi {
       _bodyData = _serializers.serialize(sinkCreate, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -103,9 +94,10 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Sink),
-            ) as Sink;
+                  rawResponse,
+                  specifiedType: const FullType(Sink),
+                )
+                as Sink;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -152,21 +144,21 @@ class SinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/sinks/{sinkId}'.replaceAll(
-        '{' r'sinkId' '}',
-        encodeQueryParameter(_serializers, sinkId, const FullType(String))
-            .toString());
+      '{'
+      r'sinkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sinkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -208,21 +200,21 @@ class SinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/sinks/{sinkId}'.replaceAll(
-        '{' r'sinkId' '}',
-        encodeQueryParameter(_serializers, sinkId, const FullType(String))
-            .toString());
+      '{'
+      r'sinkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sinkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -244,9 +236,10 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Sink),
-            ) as Sink;
+                  rawResponse,
+                  specifiedType: const FullType(Sink),
+                )
+                as Sink;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -293,21 +286,21 @@ class SinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/sinks/{sinkId}/status'.replaceAll(
-        '{' r'sinkId' '}',
-        encodeQueryParameter(_serializers, sinkId, const FullType(String))
-            .toString());
+      '{'
+      r'sinkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sinkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -329,9 +322,10 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SinkStatus),
-            ) as SinkStatus;
+                  rawResponse,
+                  specifiedType: const FullType(SinkStatus),
+                )
+                as SinkStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -378,16 +372,10 @@ class SinksApi {
     final _path = r'/v1/sinks/types';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -409,9 +397,12 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(SinkType)]),
-            ) as BuiltList<SinkType>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(SinkType),
+                  ]),
+                )
+                as BuiltList<SinkType>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -462,16 +453,10 @@ class SinksApi {
     final _path = r'/v1/sinks';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -480,11 +465,17 @@ class SinksApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -503,9 +494,10 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SinkPage),
-            ) as SinkPage;
+                  rawResponse,
+                  specifiedType: const FullType(SinkPage),
+                )
+                as SinkPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -552,21 +544,21 @@ class SinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/sinks/{sinkId}/resync'.replaceAll(
-        '{' r'sinkId' '}',
-        encodeQueryParameter(_serializers, sinkId, const FullType(String))
-            .toString());
+      '{'
+      r'sinkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sinkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -588,9 +580,10 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SinkStatus),
-            ) as SinkStatus;
+                  rawResponse,
+                  specifiedType: const FullType(SinkStatus),
+                )
+                as SinkStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -639,21 +632,21 @@ class SinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/sinks/{sinkId}/test'.replaceAll(
-        '{' r'sinkId' '}',
-        encodeQueryParameter(_serializers, sinkId, const FullType(String))
-            .toString());
+      '{'
+      r'sinkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sinkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -670,10 +663,7 @@ class SinksApi {
           : _serializers.serialize(sinkTestRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -696,9 +686,10 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SinkTestResult),
-            ) as SinkTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(SinkTestResult),
+                )
+                as SinkTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -747,21 +738,21 @@ class SinksApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/sinks/{sinkId}'.replaceAll(
-        '{' r'sinkId' '}',
-        encodeQueryParameter(_serializers, sinkId, const FullType(String))
-            .toString());
+      '{'
+      r'sinkId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sinkId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -776,10 +767,7 @@ class SinksApi {
       _bodyData = _serializers.serialize(sinkUpdate, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -802,9 +790,10 @@ class SinksApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Sink),
-            ) as Sink;
+                  rawResponse,
+                  specifiedType: const FullType(Sink),
+                )
+                as Sink;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

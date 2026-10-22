@@ -7,20 +7,20 @@ part of 'benchmark_status_components_inner.dart';
 // **************************************************************************
 
 const BenchmarkStatusComponentsInnerStatusEnum
-    _$benchmarkStatusComponentsInnerStatusEnum_pass =
+_$benchmarkStatusComponentsInnerStatusEnum_pass =
     const BenchmarkStatusComponentsInnerStatusEnum._('pass');
 const BenchmarkStatusComponentsInnerStatusEnum
-    _$benchmarkStatusComponentsInnerStatusEnum_warn =
+_$benchmarkStatusComponentsInnerStatusEnum_warn =
     const BenchmarkStatusComponentsInnerStatusEnum._('warn');
 const BenchmarkStatusComponentsInnerStatusEnum
-    _$benchmarkStatusComponentsInnerStatusEnum_fail =
+_$benchmarkStatusComponentsInnerStatusEnum_fail =
     const BenchmarkStatusComponentsInnerStatusEnum._('fail');
 const BenchmarkStatusComponentsInnerStatusEnum
-    _$benchmarkStatusComponentsInnerStatusEnum_unknown =
+_$benchmarkStatusComponentsInnerStatusEnum_unknown =
     const BenchmarkStatusComponentsInnerStatusEnum._('unknown');
 
 BenchmarkStatusComponentsInnerStatusEnum
-    _$benchmarkStatusComponentsInnerStatusEnumValueOf(String name) {
+_$benchmarkStatusComponentsInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'pass':
       return _$benchmarkStatusComponentsInnerStatusEnum_pass;
@@ -36,26 +36,28 @@ BenchmarkStatusComponentsInnerStatusEnum
 }
 
 final BuiltSet<BenchmarkStatusComponentsInnerStatusEnum>
-    _$benchmarkStatusComponentsInnerStatusEnumValues = BuiltSet<
-        BenchmarkStatusComponentsInnerStatusEnum>(const <BenchmarkStatusComponentsInnerStatusEnum>[
-  _$benchmarkStatusComponentsInnerStatusEnum_pass,
-  _$benchmarkStatusComponentsInnerStatusEnum_warn,
-  _$benchmarkStatusComponentsInnerStatusEnum_fail,
-  _$benchmarkStatusComponentsInnerStatusEnum_unknown,
-]);
+_$benchmarkStatusComponentsInnerStatusEnumValues =
+    BuiltSet<BenchmarkStatusComponentsInnerStatusEnum>(
+      const <BenchmarkStatusComponentsInnerStatusEnum>[
+        _$benchmarkStatusComponentsInnerStatusEnum_pass,
+        _$benchmarkStatusComponentsInnerStatusEnum_warn,
+        _$benchmarkStatusComponentsInnerStatusEnum_fail,
+        _$benchmarkStatusComponentsInnerStatusEnum_unknown,
+      ],
+    );
 
 const BenchmarkStatusComponentsInnerSuiteEnum
-    _$benchmarkStatusComponentsInnerSuiteEnum_synthetic =
+_$benchmarkStatusComponentsInnerSuiteEnum_synthetic =
     const BenchmarkStatusComponentsInnerSuiteEnum._('synthetic');
 const BenchmarkStatusComponentsInnerSuiteEnum
-    _$benchmarkStatusComponentsInnerSuiteEnum_historical =
+_$benchmarkStatusComponentsInnerSuiteEnum_historical =
     const BenchmarkStatusComponentsInnerSuiteEnum._('historical');
 const BenchmarkStatusComponentsInnerSuiteEnum
-    _$benchmarkStatusComponentsInnerSuiteEnum_all =
+_$benchmarkStatusComponentsInnerSuiteEnum_all =
     const BenchmarkStatusComponentsInnerSuiteEnum._('all');
 
 BenchmarkStatusComponentsInnerSuiteEnum
-    _$benchmarkStatusComponentsInnerSuiteEnumValueOf(String name) {
+_$benchmarkStatusComponentsInnerSuiteEnumValueOf(String name) {
   switch (name) {
     case 'synthetic':
       return _$benchmarkStatusComponentsInnerSuiteEnum_synthetic;
@@ -69,18 +71,20 @@ BenchmarkStatusComponentsInnerSuiteEnum
 }
 
 final BuiltSet<BenchmarkStatusComponentsInnerSuiteEnum>
-    _$benchmarkStatusComponentsInnerSuiteEnumValues = BuiltSet<
-        BenchmarkStatusComponentsInnerSuiteEnum>(const <BenchmarkStatusComponentsInnerSuiteEnum>[
-  _$benchmarkStatusComponentsInnerSuiteEnum_synthetic,
-  _$benchmarkStatusComponentsInnerSuiteEnum_historical,
-  _$benchmarkStatusComponentsInnerSuiteEnum_all,
-]);
+_$benchmarkStatusComponentsInnerSuiteEnumValues =
+    BuiltSet<BenchmarkStatusComponentsInnerSuiteEnum>(
+      const <BenchmarkStatusComponentsInnerSuiteEnum>[
+        _$benchmarkStatusComponentsInnerSuiteEnum_synthetic,
+        _$benchmarkStatusComponentsInnerSuiteEnum_historical,
+        _$benchmarkStatusComponentsInnerSuiteEnum_all,
+      ],
+    );
 
 Serializer<BenchmarkStatusComponentsInnerStatusEnum>
-    _$benchmarkStatusComponentsInnerStatusEnumSerializer =
+_$benchmarkStatusComponentsInnerStatusEnumSerializer =
     _$BenchmarkStatusComponentsInnerStatusEnumSerializer();
 Serializer<BenchmarkStatusComponentsInnerSuiteEnum>
-    _$benchmarkStatusComponentsInnerSuiteEnumSerializer =
+_$benchmarkStatusComponentsInnerSuiteEnumSerializer =
     _$BenchmarkStatusComponentsInnerSuiteEnumSerializer();
 
 class _$BenchmarkStatusComponentsInnerStatusEnumSerializer
@@ -100,23 +104,26 @@ class _$BenchmarkStatusComponentsInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkStatusComponentsInnerStatusEnum
+    BenchmarkStatusComponentsInnerStatusEnum,
   ];
   @override
   final String wireName = 'BenchmarkStatusComponentsInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkStatusComponentsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkStatusComponentsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkStatusComponentsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkStatusComponentsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkStatusComponentsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkStatusComponentsInnerSuiteEnumSerializer
@@ -134,23 +141,26 @@ class _$BenchmarkStatusComponentsInnerSuiteEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkStatusComponentsInnerSuiteEnum
+    BenchmarkStatusComponentsInnerSuiteEnum,
   ];
   @override
   final String wireName = 'BenchmarkStatusComponentsInnerSuiteEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkStatusComponentsInnerSuiteEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkStatusComponentsInnerSuiteEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkStatusComponentsInnerSuiteEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkStatusComponentsInnerSuiteEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkStatusComponentsInnerSuiteEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkStatusComponentsInner extends BenchmarkStatusComponentsInner {
@@ -171,24 +181,24 @@ class _$BenchmarkStatusComponentsInner extends BenchmarkStatusComponentsInner {
   @override
   final BenchmarkStatusComponentsInnerGating? gating;
 
-  factory _$BenchmarkStatusComponentsInner(
-          [void Function(BenchmarkStatusComponentsInnerBuilder)? updates]) =>
-      (BenchmarkStatusComponentsInnerBuilder()..update(updates))._build();
+  factory _$BenchmarkStatusComponentsInner([
+    void Function(BenchmarkStatusComponentsInnerBuilder)? updates,
+  ]) => (BenchmarkStatusComponentsInnerBuilder()..update(updates))._build();
 
-  _$BenchmarkStatusComponentsInner._(
-      {required this.component,
-      this.componentVersion,
-      required this.status,
-      this.runId,
-      this.suite,
-      this.finishedAt,
-      this.versionChanged,
-      this.gating})
-      : super._();
+  _$BenchmarkStatusComponentsInner._({
+    required this.component,
+    this.componentVersion,
+    required this.status,
+    this.runId,
+    this.suite,
+    this.finishedAt,
+    this.versionChanged,
+    this.gating,
+  }) : super._();
   @override
   BenchmarkStatusComponentsInner rebuild(
-          void Function(BenchmarkStatusComponentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkStatusComponentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkStatusComponentsInnerBuilder toBuilder() =>
@@ -240,8 +250,10 @@ class _$BenchmarkStatusComponentsInner extends BenchmarkStatusComponentsInner {
 
 class BenchmarkStatusComponentsInnerBuilder
     implements
-        Builder<BenchmarkStatusComponentsInner,
-            BenchmarkStatusComponentsInnerBuilder> {
+        Builder<
+          BenchmarkStatusComponentsInner,
+          BenchmarkStatusComponentsInnerBuilder
+        > {
   _$BenchmarkStatusComponentsInner? _$v;
 
   String? _component;
@@ -318,13 +330,20 @@ class BenchmarkStatusComponentsInnerBuilder
   _$BenchmarkStatusComponentsInner _build() {
     _$BenchmarkStatusComponentsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkStatusComponentsInner._(
             component: BuiltValueNullFieldError.checkNotNull(
-                component, r'BenchmarkStatusComponentsInner', 'component'),
+              component,
+              r'BenchmarkStatusComponentsInner',
+              'component',
+            ),
             componentVersion: componentVersion,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'BenchmarkStatusComponentsInner', 'status'),
+              status,
+              r'BenchmarkStatusComponentsInner',
+              'status',
+            ),
             runId: runId,
             suite: suite,
             finishedAt: finishedAt,
@@ -338,7 +357,10 @@ class BenchmarkStatusComponentsInnerBuilder
         _gating?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkStatusComponentsInner', _$failedField, e.toString());
+          r'BenchmarkStatusComponentsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

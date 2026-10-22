@@ -16,17 +16,20 @@ class _$EscalationPolicyInput extends EscalationPolicyInput {
   @override
   final EscalationPolicyInputStopOn? stopOn;
 
-  factory _$EscalationPolicyInput(
-          [void Function(EscalationPolicyInputBuilder)? updates]) =>
-      (EscalationPolicyInputBuilder()..update(updates))._build();
+  factory _$EscalationPolicyInput([
+    void Function(EscalationPolicyInputBuilder)? updates,
+  ]) => (EscalationPolicyInputBuilder()..update(updates))._build();
 
-  _$EscalationPolicyInput._(
-      {required this.name, required this.steps, this.repeat, this.stopOn})
-      : super._();
+  _$EscalationPolicyInput._({
+    required this.name,
+    required this.steps,
+    this.repeat,
+    this.stopOn,
+  }) : super._();
   @override
   EscalationPolicyInput rebuild(
-          void Function(EscalationPolicyInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EscalationPolicyInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EscalationPolicyInputBuilder toBuilder() =>
@@ -121,10 +124,14 @@ class EscalationPolicyInputBuilder
   _$EscalationPolicyInput _build() {
     _$EscalationPolicyInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EscalationPolicyInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'EscalationPolicyInput', 'name'),
+              name,
+              r'EscalationPolicyInput',
+              'name',
+            ),
             steps: steps.build(),
             repeat: _repeat?.build(),
             stopOn: _stopOn?.build(),
@@ -140,7 +147,10 @@ class EscalationPolicyInputBuilder
         _stopOn?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EscalationPolicyInput', _$failedField, e.toString());
+          r'EscalationPolicyInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

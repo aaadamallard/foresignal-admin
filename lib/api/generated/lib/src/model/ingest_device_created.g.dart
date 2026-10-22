@@ -28,26 +28,26 @@ class _$IngestDeviceCreated extends IngestDeviceCreated {
   @override
   final IngestDeviceSetup setup;
 
-  factory _$IngestDeviceCreated(
-          [void Function(IngestDeviceCreatedBuilder)? updates]) =>
-      (IngestDeviceCreatedBuilder()..update(updates))._build();
+  factory _$IngestDeviceCreated([
+    void Function(IngestDeviceCreatedBuilder)? updates,
+  ]) => (IngestDeviceCreatedBuilder()..update(updates))._build();
 
-  _$IngestDeviceCreated._(
-      {required this.id,
-      required this.sourceId,
-      required this.externalId,
-      required this.name,
-      required this.keyPrefix,
-      required this.createdAt,
-      this.lastSeenAt,
-      this.revokedAt,
-      required this.key,
-      required this.setup})
-      : super._();
+  _$IngestDeviceCreated._({
+    required this.id,
+    required this.sourceId,
+    required this.externalId,
+    required this.name,
+    required this.keyPrefix,
+    required this.createdAt,
+    this.lastSeenAt,
+    this.revokedAt,
+    required this.key,
+    required this.setup,
+  }) : super._();
   @override
   IngestDeviceCreated rebuild(
-          void Function(IngestDeviceCreatedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestDeviceCreatedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestDeviceCreatedBuilder toBuilder() =>
@@ -186,24 +186,46 @@ class IngestDeviceCreatedBuilder
   _$IngestDeviceCreated _build() {
     _$IngestDeviceCreated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IngestDeviceCreated._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'IngestDeviceCreated', 'id'),
+              id,
+              r'IngestDeviceCreated',
+              'id',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'IngestDeviceCreated', 'sourceId'),
+              sourceId,
+              r'IngestDeviceCreated',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'IngestDeviceCreated', 'externalId'),
+              externalId,
+              r'IngestDeviceCreated',
+              'externalId',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'IngestDeviceCreated', 'name'),
+              name,
+              r'IngestDeviceCreated',
+              'name',
+            ),
             keyPrefix: BuiltValueNullFieldError.checkNotNull(
-                keyPrefix, r'IngestDeviceCreated', 'keyPrefix'),
+              keyPrefix,
+              r'IngestDeviceCreated',
+              'keyPrefix',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'IngestDeviceCreated', 'createdAt'),
+              createdAt,
+              r'IngestDeviceCreated',
+              'createdAt',
+            ),
             lastSeenAt: lastSeenAt,
             revokedAt: revokedAt,
             key: BuiltValueNullFieldError.checkNotNull(
-                key, r'IngestDeviceCreated', 'key'),
+              key,
+              r'IngestDeviceCreated',
+              'key',
+            ),
             setup: setup.build(),
           );
     } catch (_) {
@@ -213,7 +235,10 @@ class IngestDeviceCreatedBuilder
         setup.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IngestDeviceCreated', _$failedField, e.toString());
+          r'IngestDeviceCreated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

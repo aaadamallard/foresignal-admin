@@ -14,17 +14,19 @@ class _$ContextSummaryLayerCountsInner extends ContextSummaryLayerCountsInner {
   @override
   final int? liveCount;
 
-  factory _$ContextSummaryLayerCountsInner(
-          [void Function(ContextSummaryLayerCountsInnerBuilder)? updates]) =>
-      (ContextSummaryLayerCountsInnerBuilder()..update(updates))._build();
+  factory _$ContextSummaryLayerCountsInner([
+    void Function(ContextSummaryLayerCountsInnerBuilder)? updates,
+  ]) => (ContextSummaryLayerCountsInnerBuilder()..update(updates))._build();
 
-  _$ContextSummaryLayerCountsInner._(
-      {required this.layer, required this.count, this.liveCount})
-      : super._();
+  _$ContextSummaryLayerCountsInner._({
+    required this.layer,
+    required this.count,
+    this.liveCount,
+  }) : super._();
   @override
   ContextSummaryLayerCountsInner rebuild(
-          void Function(ContextSummaryLayerCountsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ContextSummaryLayerCountsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ContextSummaryLayerCountsInnerBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$ContextSummaryLayerCountsInner extends ContextSummaryLayerCountsInner {
 
 class ContextSummaryLayerCountsInnerBuilder
     implements
-        Builder<ContextSummaryLayerCountsInner,
-            ContextSummaryLayerCountsInnerBuilder> {
+        Builder<
+          ContextSummaryLayerCountsInner,
+          ContextSummaryLayerCountsInnerBuilder
+        > {
   _$ContextSummaryLayerCountsInner? _$v;
 
   String? _layer;
@@ -106,12 +110,19 @@ class ContextSummaryLayerCountsInnerBuilder
   ContextSummaryLayerCountsInner build() => _build();
 
   _$ContextSummaryLayerCountsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ContextSummaryLayerCountsInner._(
           layer: BuiltValueNullFieldError.checkNotNull(
-              layer, r'ContextSummaryLayerCountsInner', 'layer'),
+            layer,
+            r'ContextSummaryLayerCountsInner',
+            'layer',
+          ),
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'ContextSummaryLayerCountsInner', 'count'),
+            count,
+            r'ContextSummaryLayerCountsInner',
+            'count',
+          ),
           liveCount: liveCount,
         );
     replace(_$result);

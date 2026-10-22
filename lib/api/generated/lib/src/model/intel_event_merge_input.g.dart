@@ -10,15 +10,15 @@ class _$IntelEventMergeInput extends IntelEventMergeInput {
   @override
   final String intoId;
 
-  factory _$IntelEventMergeInput(
-          [void Function(IntelEventMergeInputBuilder)? updates]) =>
-      (IntelEventMergeInputBuilder()..update(updates))._build();
+  factory _$IntelEventMergeInput([
+    void Function(IntelEventMergeInputBuilder)? updates,
+  ]) => (IntelEventMergeInputBuilder()..update(updates))._build();
 
   _$IntelEventMergeInput._({required this.intoId}) : super._();
   @override
   IntelEventMergeInput rebuild(
-          void Function(IntelEventMergeInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelEventMergeInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelEventMergeInputBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$IntelEventMergeInput extends IntelEventMergeInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IntelEventMergeInput')
-          ..add('intoId', intoId))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'IntelEventMergeInput',
+    )..add('intoId', intoId)).toString();
   }
 }
 
@@ -81,10 +81,14 @@ class IntelEventMergeInputBuilder
   IntelEventMergeInput build() => _build();
 
   _$IntelEventMergeInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelEventMergeInput._(
           intoId: BuiltValueNullFieldError.checkNotNull(
-              intoId, r'IntelEventMergeInput', 'intoId'),
+            intoId,
+            r'IntelEventMergeInput',
+            'intoId',
+          ),
         );
     replace(_$result);
     return _$result;

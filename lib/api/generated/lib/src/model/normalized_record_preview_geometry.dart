@@ -18,8 +18,10 @@ part 'normalized_record_preview_geometry.g.dart';
 @BuiltValue()
 abstract class NormalizedRecordPreviewGeometry
     implements
-        Built<NormalizedRecordPreviewGeometry,
-            NormalizedRecordPreviewGeometryBuilder> {
+        Built<
+          NormalizedRecordPreviewGeometry,
+          NormalizedRecordPreviewGeometryBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   NormalizedRecordPreviewGeometryTypeEnum get type;
   // enum typeEnum {  Point,  MultiPoint,  LineString,  MultiLineString,  Polygon,  MultiPolygon,  GeometryCollection,  };
@@ -29,9 +31,9 @@ abstract class NormalizedRecordPreviewGeometry
 
   NormalizedRecordPreviewGeometry._();
 
-  factory NormalizedRecordPreviewGeometry(
-          [void updates(NormalizedRecordPreviewGeometryBuilder b)]) =
-      _$NormalizedRecordPreviewGeometry;
+  factory NormalizedRecordPreviewGeometry([
+    void updates(NormalizedRecordPreviewGeometryBuilder b),
+  ]) = _$NormalizedRecordPreviewGeometry;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NormalizedRecordPreviewGeometryBuilder b) => b;
@@ -46,7 +48,7 @@ class _$NormalizedRecordPreviewGeometrySerializer
   @override
   final Iterable<Type> types = const [
     NormalizedRecordPreviewGeometry,
-    _$NormalizedRecordPreviewGeometry
+    _$NormalizedRecordPreviewGeometry,
   ];
 
   @override
@@ -66,8 +68,9 @@ class _$NormalizedRecordPreviewGeometrySerializer
       yield r'coordinates';
       yield serializers.serialize(
         object.coordinates,
-        specifiedType:
-            const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -78,9 +81,11 @@ class _$NormalizedRecordPreviewGeometrySerializer
     NormalizedRecordPreviewGeometry object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,19 +101,25 @@ class _$NormalizedRecordPreviewGeometrySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(NormalizedRecordPreviewGeometryTypeEnum),
-          ) as NormalizedRecordPreviewGeometryTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NormalizedRecordPreviewGeometryTypeEnum,
+                    ),
+                  )
+                  as NormalizedRecordPreviewGeometryTypeEnum;
           result.type = valueDes;
           break;
         case r'coordinates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType.nullable(JsonObject)]),
-          ) as BuiltList<JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltList<JsonObject?>?;
           if (valueDes == null) continue;
           result.coordinates.replace(valueDes);
           break;

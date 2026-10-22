@@ -22,8 +22,9 @@ abstract class DeclaredObservability
 
   DeclaredObservability._();
 
-  factory DeclaredObservability(
-      [void updates(DeclaredObservabilityBuilder b)]) = _$DeclaredObservability;
+  factory DeclaredObservability([
+    void updates(DeclaredObservabilityBuilder b),
+  ]) = _$DeclaredObservability;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DeclaredObservabilityBuilder b) => b;
@@ -38,7 +39,7 @@ class _$DeclaredObservabilitySerializer
   @override
   final Iterable<Type> types = const [
     DeclaredObservability,
-    _$DeclaredObservability
+    _$DeclaredObservability,
   ];
 
   @override
@@ -52,8 +53,10 @@ class _$DeclaredObservabilitySerializer
     yield r'kinds';
     yield serializers.serialize(
       object.kinds,
-      specifiedType: const FullType(BuiltMap,
-          [FullType(String), FullType(DeclaredObservabilityKindsValue)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(DeclaredObservabilityKindsValue),
+      ]),
     );
   }
 
@@ -63,9 +66,11 @@ class _$DeclaredObservabilitySerializer
     DeclaredObservability object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,11 +86,15 @@ class _$DeclaredObservabilitySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap,
-                [FullType(String), FullType(DeclaredObservabilityKindsValue)]),
-          ) as BuiltMap<String, DeclaredObservabilityKindsValue>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(DeclaredObservabilityKindsValue),
+                    ]),
+                  )
+                  as BuiltMap<String, DeclaredObservabilityKindsValue>;
           result.kinds.replace(valueDes);
           break;
         default:

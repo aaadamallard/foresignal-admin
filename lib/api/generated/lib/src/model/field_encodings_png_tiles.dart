@@ -51,9 +51,9 @@ abstract class FieldEncodingsPngTiles
 
   FieldEncodingsPngTiles._();
 
-  factory FieldEncodingsPngTiles(
-          [void updates(FieldEncodingsPngTilesBuilder b)]) =
-      _$FieldEncodingsPngTiles;
+  factory FieldEncodingsPngTiles([
+    void updates(FieldEncodingsPngTilesBuilder b),
+  ]) = _$FieldEncodingsPngTiles;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FieldEncodingsPngTilesBuilder b) => b;
@@ -68,7 +68,7 @@ class _$FieldEncodingsPngTilesSerializer
   @override
   final Iterable<Type> types = const [
     FieldEncodingsPngTiles,
-    _$FieldEncodingsPngTiles
+    _$FieldEncodingsPngTiles,
   ];
 
   @override
@@ -143,9 +143,11 @@ class _$FieldEncodingsPngTilesSerializer
     FieldEncodingsPngTiles object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,67 +163,84 @@ class _$FieldEncodingsPngTilesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'template':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.template = valueDes;
           break;
         case r'tms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(FieldEncodingsPngTilesTmsEnum),
-          ) as FieldEncodingsPngTilesTmsEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      FieldEncodingsPngTilesTmsEnum,
+                    ),
+                  )
+                  as FieldEncodingsPngTilesTmsEnum?;
           if (valueDes == null) continue;
           result.tms = valueDes;
           break;
         case r'uMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.uMin = valueDes;
           break;
         case r'uMax':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.uMax = valueDes;
           break;
         case r'vMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.vMin = valueDes;
           break;
         case r'vMax':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.vMax = valueDes;
           break;
         case r'minzoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minzoom = valueDes;
           break;
         case r'maxzoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxzoom = valueDes;
           break;

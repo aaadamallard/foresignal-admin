@@ -32,11 +32,11 @@ CycleRunCadenceEnum _$cycleRunCadenceEnumValueOf(String name) {
 
 final BuiltSet<CycleRunCadenceEnum> _$cycleRunCadenceEnumValues =
     BuiltSet<CycleRunCadenceEnum>(const <CycleRunCadenceEnum>[
-  _$cycleRunCadenceEnum_daily,
-  _$cycleRunCadenceEnum_weekly,
-  _$cycleRunCadenceEnum_monthly,
-  _$cycleRunCadenceEnum_onDemand,
-]);
+      _$cycleRunCadenceEnum_daily,
+      _$cycleRunCadenceEnum_weekly,
+      _$cycleRunCadenceEnum_monthly,
+      _$cycleRunCadenceEnum_onDemand,
+    ]);
 
 const CycleRunTriggerEnum _$cycleRunTriggerEnum_schedule =
     const CycleRunTriggerEnum._('schedule');
@@ -64,18 +64,19 @@ CycleRunTriggerEnum _$cycleRunTriggerEnumValueOf(String name) {
 
 final BuiltSet<CycleRunTriggerEnum> _$cycleRunTriggerEnumValues =
     BuiltSet<CycleRunTriggerEnum>(const <CycleRunTriggerEnum>[
-  _$cycleRunTriggerEnum_schedule,
-  _$cycleRunTriggerEnum_missed,
-  _$cycleRunTriggerEnum_manual,
-  _$cycleRunTriggerEnum_situation,
-]);
+      _$cycleRunTriggerEnum_schedule,
+      _$cycleRunTriggerEnum_missed,
+      _$cycleRunTriggerEnum_manual,
+      _$cycleRunTriggerEnum_situation,
+    ]);
 
 const CycleRunStatusEnum _$cycleRunStatusEnum_queued =
     const CycleRunStatusEnum._('queued');
 const CycleRunStatusEnum _$cycleRunStatusEnum_running =
     const CycleRunStatusEnum._('running');
-const CycleRunStatusEnum _$cycleRunStatusEnum_ok =
-    const CycleRunStatusEnum._('ok');
+const CycleRunStatusEnum _$cycleRunStatusEnum_ok = const CycleRunStatusEnum._(
+  'ok',
+);
 const CycleRunStatusEnum _$cycleRunStatusEnum_partial =
     const CycleRunStatusEnum._('partial');
 const CycleRunStatusEnum _$cycleRunStatusEnum_digestOnly =
@@ -104,13 +105,13 @@ CycleRunStatusEnum _$cycleRunStatusEnumValueOf(String name) {
 
 final BuiltSet<CycleRunStatusEnum> _$cycleRunStatusEnumValues =
     BuiltSet<CycleRunStatusEnum>(const <CycleRunStatusEnum>[
-  _$cycleRunStatusEnum_queued,
-  _$cycleRunStatusEnum_running,
-  _$cycleRunStatusEnum_ok,
-  _$cycleRunStatusEnum_partial,
-  _$cycleRunStatusEnum_digestOnly,
-  _$cycleRunStatusEnum_failed,
-]);
+      _$cycleRunStatusEnum_queued,
+      _$cycleRunStatusEnum_running,
+      _$cycleRunStatusEnum_ok,
+      _$cycleRunStatusEnum_partial,
+      _$cycleRunStatusEnum_digestOnly,
+      _$cycleRunStatusEnum_failed,
+    ]);
 
 Serializer<CycleRunCadenceEnum> _$cycleRunCadenceEnumSerializer =
     _$CycleRunCadenceEnumSerializer();
@@ -140,15 +141,20 @@ class _$CycleRunCadenceEnumSerializer
   final String wireName = 'CycleRunCadenceEnum';
 
   @override
-  Object serialize(Serializers serializers, CycleRunCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CycleRunCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CycleRunCadenceEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CycleRunCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CycleRunCadenceEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CycleRunCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CycleRunTriggerEnumSerializer
@@ -172,15 +178,20 @@ class _$CycleRunTriggerEnumSerializer
   final String wireName = 'CycleRunTriggerEnum';
 
   @override
-  Object serialize(Serializers serializers, CycleRunTriggerEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CycleRunTriggerEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CycleRunTriggerEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CycleRunTriggerEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CycleRunTriggerEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CycleRunTriggerEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CycleRunStatusEnumSerializer
@@ -208,15 +219,20 @@ class _$CycleRunStatusEnumSerializer
   final String wireName = 'CycleRunStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, CycleRunStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CycleRunStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CycleRunStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CycleRunStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CycleRunStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CycleRunStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CycleRun extends CycleRun {
@@ -262,27 +278,27 @@ class _$CycleRun extends CycleRun {
   factory _$CycleRun([void Function(CycleRunBuilder)? updates]) =>
       (CycleRunBuilder()..update(updates))._build();
 
-  _$CycleRun._(
-      {required this.id,
-      this.cycleId,
-      this.situationId,
-      required this.cadence,
-      required this.trigger,
-      required this.status,
-      required this.periodStart,
-      required this.periodEnd,
-      this.previousRunId,
-      this.startedAt,
-      this.finishedAt,
-      this.packet,
-      this.roles,
-      this.tokensUsed,
-      this.assessmentId,
-      this.maintenance,
-      this.manifestId,
-      this.warnings,
-      this.error})
-      : super._();
+  _$CycleRun._({
+    required this.id,
+    this.cycleId,
+    this.situationId,
+    required this.cadence,
+    required this.trigger,
+    required this.status,
+    required this.periodStart,
+    required this.periodEnd,
+    this.previousRunId,
+    this.startedAt,
+    this.finishedAt,
+    this.packet,
+    this.roles,
+    this.tokensUsed,
+    this.assessmentId,
+    this.maintenance,
+    this.manifestId,
+    this.warnings,
+    this.error,
+  }) : super._();
   @override
   CycleRun rebuild(void Function(CycleRunBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -498,21 +514,37 @@ class CycleRunBuilder implements Builder<CycleRun, CycleRunBuilder> {
   _$CycleRun _build() {
     _$CycleRun _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CycleRun._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'CycleRun', 'id'),
             cycleId: cycleId,
             situationId: situationId,
             cadence: BuiltValueNullFieldError.checkNotNull(
-                cadence, r'CycleRun', 'cadence'),
+              cadence,
+              r'CycleRun',
+              'cadence',
+            ),
             trigger: BuiltValueNullFieldError.checkNotNull(
-                trigger, r'CycleRun', 'trigger'),
+              trigger,
+              r'CycleRun',
+              'trigger',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'CycleRun', 'status'),
+              status,
+              r'CycleRun',
+              'status',
+            ),
             periodStart: BuiltValueNullFieldError.checkNotNull(
-                periodStart, r'CycleRun', 'periodStart'),
+              periodStart,
+              r'CycleRun',
+              'periodStart',
+            ),
             periodEnd: BuiltValueNullFieldError.checkNotNull(
-                periodEnd, r'CycleRun', 'periodEnd'),
+              periodEnd,
+              r'CycleRun',
+              'periodEnd',
+            ),
             previousRunId: previousRunId,
             startedAt: startedAt,
             finishedAt: finishedAt,
@@ -540,7 +572,10 @@ class CycleRunBuilder implements Builder<CycleRun, CycleRunBuilder> {
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CycleRun', _$failedField, e.toString());
+          r'CycleRun',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

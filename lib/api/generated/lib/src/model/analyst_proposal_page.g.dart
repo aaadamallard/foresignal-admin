@@ -12,15 +12,15 @@ class _$AnalystProposalPage extends AnalystProposalPage {
   @override
   final String? nextCursor;
 
-  factory _$AnalystProposalPage(
-          [void Function(AnalystProposalPageBuilder)? updates]) =>
-      (AnalystProposalPageBuilder()..update(updates))._build();
+  factory _$AnalystProposalPage([
+    void Function(AnalystProposalPageBuilder)? updates,
+  ]) => (AnalystProposalPageBuilder()..update(updates))._build();
 
   _$AnalystProposalPage._({required this.items, this.nextCursor}) : super._();
   @override
   AnalystProposalPage rebuild(
-          void Function(AnalystProposalPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystProposalPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystProposalPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class AnalystProposalPageBuilder
   _$AnalystProposalPage _build() {
     _$AnalystProposalPage _$result;
     try {
-      _$result = _$v ??
-          _$AnalystProposalPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AnalystProposalPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class AnalystProposalPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystProposalPage', _$failedField, e.toString());
+          r'AnalystProposalPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

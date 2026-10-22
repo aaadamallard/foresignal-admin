@@ -41,8 +41,9 @@ abstract class IntelEventStreamEvent
 
   IntelEventStreamEvent._();
 
-  factory IntelEventStreamEvent(
-      [void updates(IntelEventStreamEventBuilder b)]) = _$IntelEventStreamEvent;
+  factory IntelEventStreamEvent([
+    void updates(IntelEventStreamEventBuilder b),
+  ]) = _$IntelEventStreamEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelEventStreamEventBuilder b) => b;
@@ -57,7 +58,7 @@ class _$IntelEventStreamEventSerializer
   @override
   final Iterable<Type> types = const [
     IntelEventStreamEvent,
-    _$IntelEventStreamEvent
+    _$IntelEventStreamEvent,
   ];
 
   @override
@@ -103,9 +104,11 @@ class _$IntelEventStreamEventSerializer
     IntelEventStreamEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,38 +124,47 @@ class _$IntelEventStreamEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'eventId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventId = valueDes;
           break;
         case r'change':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelEventStreamEventChangeEnum),
-          ) as IntelEventStreamEventChangeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelEventStreamEventChangeEnum,
+                    ),
+                  )
+                  as IntelEventStreamEventChangeEnum;
           result.change = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.version = valueDes;
           break;
         case r'summary':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelEventSummary),
-          ) as IntelEventSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelEventSummary),
+                  )
+                  as IntelEventSummary;
           result.summary.replace(valueDes);
           break;
         case r'mergedInto':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mergedInto = valueDes;
           break;

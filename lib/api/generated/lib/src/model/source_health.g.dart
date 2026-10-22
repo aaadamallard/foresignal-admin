@@ -67,36 +67,36 @@ class _$SourceHealth extends SourceHealth {
   factory _$SourceHealth([void Function(SourceHealthBuilder)? updates]) =>
       (SourceHealthBuilder()..update(updates))._build();
 
-  _$SourceHealth._(
-      {required this.sourceId,
-      required this.status,
-      this.statusReason,
-      this.lastAttemptAt,
-      this.lastSuccessAt,
-      this.lastErrorAt,
-      this.lastError,
-      this.lastHttpStatus,
-      required this.consecutiveFailures,
-      this.lastRecordsSeen,
-      this.lastRecordsChanged,
-      this.errorRateLastHour,
-      this.backoffUntil,
-      this.budget,
-      this.budgetUsedToday,
-      this.budgetRemainingToday,
-      this.refusedLastHour,
-      this.requestsLastHour,
-      this.bytesLastHour,
-      this.coverage,
-      this.storage,
-      this.lastDataAt,
-      this.budgetHoursRemaining,
-      this.newestFrameAt,
-      this.frameAgeSeconds,
-      this.details,
-      this.lastDoctorReport,
-      this.spentUsdThisMonth})
-      : super._();
+  _$SourceHealth._({
+    required this.sourceId,
+    required this.status,
+    this.statusReason,
+    this.lastAttemptAt,
+    this.lastSuccessAt,
+    this.lastErrorAt,
+    this.lastError,
+    this.lastHttpStatus,
+    required this.consecutiveFailures,
+    this.lastRecordsSeen,
+    this.lastRecordsChanged,
+    this.errorRateLastHour,
+    this.backoffUntil,
+    this.budget,
+    this.budgetUsedToday,
+    this.budgetRemainingToday,
+    this.refusedLastHour,
+    this.requestsLastHour,
+    this.bytesLastHour,
+    this.coverage,
+    this.storage,
+    this.lastDataAt,
+    this.budgetHoursRemaining,
+    this.newestFrameAt,
+    this.frameAgeSeconds,
+    this.details,
+    this.lastDoctorReport,
+    this.spentUsdThisMonth,
+  }) : super._();
   @override
   SourceHealth rebuild(void Function(SourceHealthBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -402,12 +402,19 @@ class SourceHealthBuilder
   _$SourceHealth _build() {
     _$SourceHealth _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SourceHealth._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'SourceHealth', 'sourceId'),
+              sourceId,
+              r'SourceHealth',
+              'sourceId',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SourceHealth', 'status'),
+              status,
+              r'SourceHealth',
+              'status',
+            ),
             statusReason: statusReason,
             lastAttemptAt: lastAttemptAt,
             lastSuccessAt: lastSuccessAt,
@@ -415,7 +422,10 @@ class SourceHealthBuilder
             lastError: lastError,
             lastHttpStatus: lastHttpStatus,
             consecutiveFailures: BuiltValueNullFieldError.checkNotNull(
-                consecutiveFailures, r'SourceHealth', 'consecutiveFailures'),
+              consecutiveFailures,
+              r'SourceHealth',
+              'consecutiveFailures',
+            ),
             lastRecordsSeen: lastRecordsSeen,
             lastRecordsChanged: lastRecordsChanged,
             errorRateLastHour: errorRateLastHour,
@@ -453,7 +463,10 @@ class SourceHealthBuilder
         _lastDoctorReport?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SourceHealth', _$failedField, e.toString());
+          r'SourceHealth',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

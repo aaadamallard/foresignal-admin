@@ -13,20 +13,19 @@ class _$PropagationGraphCrossPlatformOrderInner
   @override
   final DateTime firstObservedAt;
 
-  factory _$PropagationGraphCrossPlatformOrderInner(
-          [void Function(PropagationGraphCrossPlatformOrderInnerBuilder)?
-              updates]) =>
-      (PropagationGraphCrossPlatformOrderInnerBuilder()..update(updates))
-          ._build();
+  factory _$PropagationGraphCrossPlatformOrderInner([
+    void Function(PropagationGraphCrossPlatformOrderInnerBuilder)? updates,
+  ]) => (PropagationGraphCrossPlatformOrderInnerBuilder()..update(updates))
+      ._build();
 
-  _$PropagationGraphCrossPlatformOrderInner._(
-      {required this.platform, required this.firstObservedAt})
-      : super._();
+  _$PropagationGraphCrossPlatformOrderInner._({
+    required this.platform,
+    required this.firstObservedAt,
+  }) : super._();
   @override
   PropagationGraphCrossPlatformOrderInner rebuild(
-          void Function(PropagationGraphCrossPlatformOrderInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PropagationGraphCrossPlatformOrderInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PropagationGraphCrossPlatformOrderInnerBuilder toBuilder() =>
@@ -52,7 +51,8 @@ class _$PropagationGraphCrossPlatformOrderInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'PropagationGraphCrossPlatformOrderInner')
+            r'PropagationGraphCrossPlatformOrderInner',
+          )
           ..add('platform', platform)
           ..add('firstObservedAt', firstObservedAt))
         .toString();
@@ -61,8 +61,10 @@ class _$PropagationGraphCrossPlatformOrderInner
 
 class PropagationGraphCrossPlatformOrderInnerBuilder
     implements
-        Builder<PropagationGraphCrossPlatformOrderInner,
-            PropagationGraphCrossPlatformOrderInnerBuilder> {
+        Builder<
+          PropagationGraphCrossPlatformOrderInner,
+          PropagationGraphCrossPlatformOrderInnerBuilder
+        > {
   _$PropagationGraphCrossPlatformOrderInner? _$v;
 
   String? _platform;
@@ -95,7 +97,8 @@ class PropagationGraphCrossPlatformOrderInnerBuilder
 
   @override
   void update(
-      void Function(PropagationGraphCrossPlatformOrderInnerBuilder)? updates) {
+    void Function(PropagationGraphCrossPlatformOrderInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -103,14 +106,19 @@ class PropagationGraphCrossPlatformOrderInnerBuilder
   PropagationGraphCrossPlatformOrderInner build() => _build();
 
   _$PropagationGraphCrossPlatformOrderInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PropagationGraphCrossPlatformOrderInner._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'PropagationGraphCrossPlatformOrderInner', 'platform'),
+            platform,
+            r'PropagationGraphCrossPlatformOrderInner',
+            'platform',
+          ),
           firstObservedAt: BuiltValueNullFieldError.checkNotNull(
-              firstObservedAt,
-              r'PropagationGraphCrossPlatformOrderInner',
-              'firstObservedAt'),
+            firstObservedAt,
+            r'PropagationGraphCrossPlatformOrderInner',
+            'firstObservedAt',
+          ),
         );
     replace(_$result);
     return _$result;

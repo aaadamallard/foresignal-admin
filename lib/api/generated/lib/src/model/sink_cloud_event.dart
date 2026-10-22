@@ -164,9 +164,11 @@ class _$SinkCloudEventSerializer
     SinkCloudEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -182,84 +184,108 @@ class _$SinkCloudEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'specversion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SinkCloudEventSpecversionEnum),
-          ) as SinkCloudEventSpecversionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SinkCloudEventSpecversionEnum,
+                    ),
+                  )
+                  as SinkCloudEventSpecversionEnum;
           result.specversion = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.source_ = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SinkCloudEventTypeEnum),
-          ) as SinkCloudEventTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SinkCloudEventTypeEnum),
+                  )
+                  as SinkCloudEventTypeEnum;
           result.type = valueDes;
           break;
         case r'subject':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.subject = valueDes;
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         case r'datacontenttype':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.datacontenttype = valueDes;
           break;
         case r'foresignalseq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.foresignalseq = valueDes;
           break;
         case r'foresignalkind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.foresignalkind = valueDes;
           break;
         case r'foresignalreason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.foresignalreason = valueDes;
           break;
         case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SinkCloudEventData),
-          ) as SinkCloudEventData;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SinkCloudEventData),
+                  )
+                  as SinkCloudEventData;
           result.data.replace(valueDes);
           break;
         default:
@@ -310,19 +336,19 @@ class SinkCloudEventSpecversionEnum extends EnumClass {
 class SinkCloudEventTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ai.foresignal.record.created')
   static const SinkCloudEventTypeEnum
-      aiPeriodForesignalPeriodRecordPeriodCreated =
+  aiPeriodForesignalPeriodRecordPeriodCreated =
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodCreated;
   @BuiltValueEnumConst(wireName: r'ai.foresignal.record.updated')
   static const SinkCloudEventTypeEnum
-      aiPeriodForesignalPeriodRecordPeriodUpdated =
+  aiPeriodForesignalPeriodRecordPeriodUpdated =
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodUpdated;
   @BuiltValueEnumConst(wireName: r'ai.foresignal.record.tombstoned')
   static const SinkCloudEventTypeEnum
-      aiPeriodForesignalPeriodRecordPeriodTombstoned =
+  aiPeriodForesignalPeriodRecordPeriodTombstoned =
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodTombstoned;
   @BuiltValueEnumConst(wireName: r'ai.foresignal.record.snapshot')
   static const SinkCloudEventTypeEnum
-      aiPeriodForesignalPeriodRecordPeriodSnapshot =
+  aiPeriodForesignalPeriodRecordPeriodSnapshot =
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot;
 
   static Serializer<SinkCloudEventTypeEnum> get serializer =>

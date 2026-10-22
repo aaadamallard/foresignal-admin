@@ -24,9 +24,9 @@ AccessRequestDirectionEnum _$accessRequestDirectionEnumValueOf(String name) {
 
 final BuiltSet<AccessRequestDirectionEnum> _$accessRequestDirectionEnumValues =
     BuiltSet<AccessRequestDirectionEnum>(const <AccessRequestDirectionEnum>[
-  _$accessRequestDirectionEnum_incoming,
-  _$accessRequestDirectionEnum_outgoing,
-]);
+      _$accessRequestDirectionEnum_incoming,
+      _$accessRequestDirectionEnum_outgoing,
+    ]);
 
 const AccessRequestStatusEnum _$accessRequestStatusEnum_pending =
     const AccessRequestStatusEnum._('pending');
@@ -50,10 +50,10 @@ AccessRequestStatusEnum _$accessRequestStatusEnumValueOf(String name) {
 
 final BuiltSet<AccessRequestStatusEnum> _$accessRequestStatusEnumValues =
     BuiltSet<AccessRequestStatusEnum>(const <AccessRequestStatusEnum>[
-  _$accessRequestStatusEnum_pending,
-  _$accessRequestStatusEnum_granted,
-  _$accessRequestStatusEnum_declined,
-]);
+      _$accessRequestStatusEnum_pending,
+      _$accessRequestStatusEnum_granted,
+      _$accessRequestStatusEnum_declined,
+    ]);
 
 Serializer<AccessRequestDirectionEnum> _$accessRequestDirectionEnumSerializer =
     _$AccessRequestDirectionEnumSerializer();
@@ -77,16 +77,20 @@ class _$AccessRequestDirectionEnumSerializer
   final String wireName = 'AccessRequestDirectionEnum';
 
   @override
-  Object serialize(Serializers serializers, AccessRequestDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AccessRequestDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AccessRequestDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AccessRequestDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AccessRequestDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AccessRequestStatusEnumSerializer
@@ -108,16 +112,20 @@ class _$AccessRequestStatusEnumSerializer
   final String wireName = 'AccessRequestStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AccessRequestStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AccessRequestStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AccessRequestStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AccessRequestStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AccessRequestStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AccessRequest extends AccessRequest {
@@ -149,20 +157,20 @@ class _$AccessRequest extends AccessRequest {
   factory _$AccessRequest([void Function(AccessRequestBuilder)? updates]) =>
       (AccessRequestBuilder()..update(updates))._build();
 
-  _$AccessRequest._(
-      {required this.id,
-      required this.linkId,
-      required this.direction,
-      this.chronicleId,
-      required this.requesterHandle,
-      this.requesterInstanceId,
-      this.message,
-      this.offerShare,
-      required this.status,
-      required this.createdAt,
-      this.decidedAt,
-      this.grant})
-      : super._();
+  _$AccessRequest._({
+    required this.id,
+    required this.linkId,
+    required this.direction,
+    this.chronicleId,
+    required this.requesterHandle,
+    this.requesterInstanceId,
+    this.message,
+    this.offerShare,
+    required this.status,
+    required this.createdAt,
+    this.decidedAt,
+    this.grant,
+  }) : super._();
   @override
   AccessRequest rebuild(void Function(AccessRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -324,24 +332,43 @@ class AccessRequestBuilder
   _$AccessRequest _build() {
     _$AccessRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AccessRequest._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AccessRequest', 'id'),
+              id,
+              r'AccessRequest',
+              'id',
+            ),
             linkId: BuiltValueNullFieldError.checkNotNull(
-                linkId, r'AccessRequest', 'linkId'),
+              linkId,
+              r'AccessRequest',
+              'linkId',
+            ),
             direction: BuiltValueNullFieldError.checkNotNull(
-                direction, r'AccessRequest', 'direction'),
+              direction,
+              r'AccessRequest',
+              'direction',
+            ),
             chronicleId: chronicleId,
             requesterHandle: BuiltValueNullFieldError.checkNotNull(
-                requesterHandle, r'AccessRequest', 'requesterHandle'),
+              requesterHandle,
+              r'AccessRequest',
+              'requesterHandle',
+            ),
             requesterInstanceId: requesterInstanceId,
             message: message,
             offerShare: _offerShare?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AccessRequest', 'status'),
+              status,
+              r'AccessRequest',
+              'status',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AccessRequest', 'createdAt'),
+              createdAt,
+              r'AccessRequest',
+              'createdAt',
+            ),
             decidedAt: decidedAt,
             grant: _grant?.build(),
           );
@@ -355,7 +382,10 @@ class AccessRequestBuilder
         _grant?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AccessRequest', _$failedField, e.toString());
+          r'AccessRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -53,9 +53,15 @@ class CalendarsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/calendars/{feed}.ics'.replaceAll(
-        '{' r'feed' '}',
-        encodeQueryParameter(_serializers, feed, const FullType(String))
-            .toString());
+      '{'
+      r'feed'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        feed,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -64,11 +70,7 @@ class CalendarsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -77,11 +79,17 @@ class CalendarsApi {
 
     final _queryParameters = <String, dynamic>{
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (placeId != null)
-        r'placeId':
-            encodeQueryParameter(_serializers, placeId, const FullType(String)),
+        r'placeId': encodeQueryParameter(
+          _serializers,
+          placeId,
+          const FullType(String),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,

@@ -61,8 +61,9 @@ class _$PushFiltersSerializer implements PrimitiveSerializer<PushFilters> {
       yield r'events';
       yield serializers.serialize(
         object.events,
-        specifiedType:
-            const FullType(BuiltList, [FullType(PushFiltersEventsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(PushFiltersEventsEnum),
+        ]),
       );
     }
     if (object.ruleIds != null) {
@@ -94,9 +95,11 @@ class _$PushFiltersSerializer implements PrimitiveSerializer<PushFilters> {
     PushFilters object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,37 +115,50 @@ class _$PushFiltersSerializer implements PrimitiveSerializer<PushFilters> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'events':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(PushFiltersEventsEnum)]),
-          ) as BuiltList<PushFiltersEventsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(PushFiltersEventsEnum),
+                    ]),
+                  )
+                  as BuiltList<PushFiltersEventsEnum>?;
           if (valueDes == null) continue;
           result.events.replace(valueDes);
           break;
         case r'ruleIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.ruleIds.replace(valueDes);
           break;
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PushFiltersMinSeverityEnum),
-          ) as PushFiltersMinSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PushFiltersMinSeverityEnum,
+                    ),
+                  )
+                  as PushFiltersMinSeverityEnum?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;
         case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.tags.replace(valueDes);
           break;

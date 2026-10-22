@@ -17,18 +17,21 @@ class _$ExternalCatalogueEntryTimeDimension
   @override
   final String? defaultLag;
 
-  factory _$ExternalCatalogueEntryTimeDimension(
-          [void Function(ExternalCatalogueEntryTimeDimensionBuilder)?
-              updates]) =>
+  factory _$ExternalCatalogueEntryTimeDimension([
+    void Function(ExternalCatalogueEntryTimeDimensionBuilder)? updates,
+  ]) =>
       (ExternalCatalogueEntryTimeDimensionBuilder()..update(updates))._build();
 
-  _$ExternalCatalogueEntryTimeDimension._(
-      {this.format, this.period, this.typicalLatency, this.defaultLag})
-      : super._();
+  _$ExternalCatalogueEntryTimeDimension._({
+    this.format,
+    this.period,
+    this.typicalLatency,
+    this.defaultLag,
+  }) : super._();
   @override
   ExternalCatalogueEntryTimeDimension rebuild(
-          void Function(ExternalCatalogueEntryTimeDimensionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalCatalogueEntryTimeDimensionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalCatalogueEntryTimeDimensionBuilder toBuilder() =>
@@ -68,8 +71,10 @@ class _$ExternalCatalogueEntryTimeDimension
 
 class ExternalCatalogueEntryTimeDimensionBuilder
     implements
-        Builder<ExternalCatalogueEntryTimeDimension,
-            ExternalCatalogueEntryTimeDimensionBuilder> {
+        Builder<
+          ExternalCatalogueEntryTimeDimension,
+          ExternalCatalogueEntryTimeDimensionBuilder
+        > {
   _$ExternalCatalogueEntryTimeDimension? _$v;
 
   String? _format;
@@ -112,7 +117,8 @@ class ExternalCatalogueEntryTimeDimensionBuilder
 
   @override
   void update(
-      void Function(ExternalCatalogueEntryTimeDimensionBuilder)? updates) {
+    void Function(ExternalCatalogueEntryTimeDimensionBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -120,7 +126,8 @@ class ExternalCatalogueEntryTimeDimensionBuilder
   ExternalCatalogueEntryTimeDimension build() => _build();
 
   _$ExternalCatalogueEntryTimeDimension _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalCatalogueEntryTimeDimension._(
           format: format,
           period: period,

@@ -27,9 +27,9 @@ abstract class TagAssignResultSkippedInner
 
   TagAssignResultSkippedInner._();
 
-  factory TagAssignResultSkippedInner(
-          [void updates(TagAssignResultSkippedInnerBuilder b)]) =
-      _$TagAssignResultSkippedInner;
+  factory TagAssignResultSkippedInner([
+    void updates(TagAssignResultSkippedInnerBuilder b),
+  ]) = _$TagAssignResultSkippedInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TagAssignResultSkippedInnerBuilder b) => b;
@@ -44,7 +44,7 @@ class _$TagAssignResultSkippedInnerSerializer
   @override
   final Iterable<Type> types = const [
     TagAssignResultSkippedInner,
-    _$TagAssignResultSkippedInner
+    _$TagAssignResultSkippedInner,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$TagAssignResultSkippedInnerSerializer
     TagAssignResultSkippedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +93,23 @@ class _$TagAssignResultSkippedInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(TagAssignResultSkippedInnerReasonEnum),
-          ) as TagAssignResultSkippedInnerReasonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      TagAssignResultSkippedInnerReasonEnum,
+                    ),
+                  )
+                  as TagAssignResultSkippedInnerReasonEnum;
           result.reason = valueDes;
           break;
         default:

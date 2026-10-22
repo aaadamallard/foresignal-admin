@@ -29,9 +29,9 @@ abstract class RuleBacktestResultOverlap
 
   RuleBacktestResultOverlap._();
 
-  factory RuleBacktestResultOverlap(
-          [void updates(RuleBacktestResultOverlapBuilder b)]) =
-      _$RuleBacktestResultOverlap;
+  factory RuleBacktestResultOverlap([
+    void updates(RuleBacktestResultOverlapBuilder b),
+  ]) = _$RuleBacktestResultOverlap;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultOverlapBuilder b) => b;
@@ -46,7 +46,7 @@ class _$RuleBacktestResultOverlapSerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultOverlap,
-    _$RuleBacktestResultOverlap
+    _$RuleBacktestResultOverlap,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$RuleBacktestResultOverlapSerializer
     RuleBacktestResultOverlap object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,32 @@ class _$RuleBacktestResultOverlapSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'both':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.both = valueDes;
           break;
         case r'onlyBacktest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.onlyBacktest = valueDes;
           break;
         case r'onlyActual':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.onlyActual = valueDes;
           break;

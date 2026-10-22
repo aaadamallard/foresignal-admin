@@ -143,9 +143,11 @@ class _$PackSpecSerializer implements PrimitiveSerializer<PackSpec> {
     PackSpec object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,71 +163,85 @@ class _$PackSpecSerializer implements PrimitiveSerializer<PackSpec> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltList<num>?;
           if (valueDes == null) continue;
           result.bbox.replace(valueDes);
           break;
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.placeId = valueDes;
           break;
         case r'minZoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.minZoom = valueDes;
           break;
         case r'maxZoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.maxZoom = valueDes;
           break;
         case r'vector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PackSpecVector),
-          ) as PackSpecVector?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PackSpecVector),
+                  )
+                  as PackSpecVector?;
           if (valueDes == null) continue;
           result.vector.replace(valueDes);
           break;
         case r'raster':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PackSpecRaster),
-          ) as PackSpecRaster?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PackSpecRaster),
+                  )
+                  as PackSpecRaster?;
           if (valueDes == null) continue;
           result.raster.replace(valueDes);
           break;
         case r'includePrivate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.includePrivate = valueDes;
           break;
         case r'personalUse':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.personalUse = valueDes;
           break;

@@ -25,9 +25,9 @@ abstract class ExposurePlacesItemsInner
 
   ExposurePlacesItemsInner._();
 
-  factory ExposurePlacesItemsInner(
-          [void updates(ExposurePlacesItemsInnerBuilder b)]) =
-      _$ExposurePlacesItemsInner;
+  factory ExposurePlacesItemsInner([
+    void updates(ExposurePlacesItemsInnerBuilder b),
+  ]) = _$ExposurePlacesItemsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExposurePlacesItemsInnerBuilder b) => b;
@@ -42,7 +42,7 @@ class _$ExposurePlacesItemsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExposurePlacesItemsInner,
-    _$ExposurePlacesItemsInner
+    _$ExposurePlacesItemsInner,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$ExposurePlacesItemsInnerSerializer
     ExposurePlacesItemsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$ExposurePlacesItemsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.placeId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         default:

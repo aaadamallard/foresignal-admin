@@ -37,21 +37,21 @@ class _$Series extends Series {
   factory _$Series([void Function(SeriesBuilder)? updates]) =>
       (SeriesBuilder()..update(updates))._build();
 
-  _$Series._(
-      {required this.productId,
-      required this.lon,
-      required this.lat,
-      this.placeId,
-      this.timezone,
-      this.units,
-      this.label,
-      this.from,
-      this.to,
-      this.run,
-      required this.items,
-      this.attribution,
-      required this.serverTime})
-      : super._();
+  _$Series._({
+    required this.productId,
+    required this.lon,
+    required this.lat,
+    this.placeId,
+    this.timezone,
+    this.units,
+    this.label,
+    this.from,
+    this.to,
+    this.run,
+    required this.items,
+    this.attribution,
+    required this.serverTime,
+  }) : super._();
   @override
   Series rebuild(void Function(SeriesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -217,10 +217,14 @@ class SeriesBuilder implements Builder<Series, SeriesBuilder> {
   _$Series _build() {
     _$Series _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Series._(
             productId: BuiltValueNullFieldError.checkNotNull(
-                productId, r'Series', 'productId'),
+              productId,
+              r'Series',
+              'productId',
+            ),
             lon: BuiltValueNullFieldError.checkNotNull(lon, r'Series', 'lon'),
             lat: BuiltValueNullFieldError.checkNotNull(lat, r'Series', 'lat'),
             placeId: placeId,
@@ -233,7 +237,10 @@ class SeriesBuilder implements Builder<Series, SeriesBuilder> {
             items: items.build(),
             attribution: _attribution?.build(),
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'Series', 'serverTime'),
+              serverTime,
+              r'Series',
+              'serverTime',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -244,7 +251,10 @@ class SeriesBuilder implements Builder<Series, SeriesBuilder> {
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Series', _$failedField, e.toString());
+          r'Series',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

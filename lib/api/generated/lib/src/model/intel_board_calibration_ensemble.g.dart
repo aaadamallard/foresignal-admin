@@ -14,17 +14,19 @@ class _$IntelBoardCalibrationEnsemble extends IntelBoardCalibrationEnsemble {
   @override
   final int n;
 
-  factory _$IntelBoardCalibrationEnsemble(
-          [void Function(IntelBoardCalibrationEnsembleBuilder)? updates]) =>
-      (IntelBoardCalibrationEnsembleBuilder()..update(updates))._build();
+  factory _$IntelBoardCalibrationEnsemble([
+    void Function(IntelBoardCalibrationEnsembleBuilder)? updates,
+  ]) => (IntelBoardCalibrationEnsembleBuilder()..update(updates))._build();
 
-  _$IntelBoardCalibrationEnsemble._(
-      {this.brierSkill, this.calibration, required this.n})
-      : super._();
+  _$IntelBoardCalibrationEnsemble._({
+    this.brierSkill,
+    this.calibration,
+    required this.n,
+  }) : super._();
   @override
   IntelBoardCalibrationEnsemble rebuild(
-          void Function(IntelBoardCalibrationEnsembleBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardCalibrationEnsembleBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardCalibrationEnsembleBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$IntelBoardCalibrationEnsemble extends IntelBoardCalibrationEnsemble {
 
 class IntelBoardCalibrationEnsembleBuilder
     implements
-        Builder<IntelBoardCalibrationEnsemble,
-            IntelBoardCalibrationEnsembleBuilder> {
+        Builder<
+          IntelBoardCalibrationEnsemble,
+          IntelBoardCalibrationEnsembleBuilder
+        > {
   _$IntelBoardCalibrationEnsemble? _$v;
 
   num? _brierSkill;
@@ -106,12 +110,16 @@ class IntelBoardCalibrationEnsembleBuilder
   IntelBoardCalibrationEnsemble build() => _build();
 
   _$IntelBoardCalibrationEnsemble _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardCalibrationEnsemble._(
           brierSkill: brierSkill,
           calibration: calibration,
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'IntelBoardCalibrationEnsemble', 'n'),
+            n,
+            r'IntelBoardCalibrationEnsemble',
+            'n',
+          ),
         );
     replace(_$result);
     return _$result;

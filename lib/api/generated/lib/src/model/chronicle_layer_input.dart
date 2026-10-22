@@ -56,7 +56,7 @@ class _$ChronicleLayerInputSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleLayerInput,
-    _$ChronicleLayerInput
+    _$ChronicleLayerInput,
   ];
 
   @override
@@ -106,9 +106,11 @@ class _$ChronicleLayerInputSerializer
     ChronicleLayerInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -124,40 +126,50 @@ class _$ChronicleLayerInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'selector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.selector = valueDes;
           break;
         case r'areaOverride':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleArea),
-          ) as ChronicleArea?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ChronicleArea),
+                  )
+                  as ChronicleArea?;
           if (valueDes == null) continue;
           result.areaOverride.replace(valueDes);
           break;
         case r'capture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CaptureMode),
-          ) as CaptureMode;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CaptureMode),
+                  )
+                  as CaptureMode;
           result.capture.replace(valueDes);
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;

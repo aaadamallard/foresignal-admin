@@ -7,11 +7,11 @@ part of 'chronicle_social_narratives_selector.dart';
 // **************************************************************************
 
 const ChronicleSocialNarrativesSelectorTypeEnum
-    _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives =
+_$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives =
     const ChronicleSocialNarrativesSelectorTypeEnum._('socialNarratives');
 
 ChronicleSocialNarrativesSelectorTypeEnum
-    _$chronicleSocialNarrativesSelectorTypeEnumValueOf(String name) {
+_$chronicleSocialNarrativesSelectorTypeEnumValueOf(String name) {
   switch (name) {
     case 'socialNarratives':
       return _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives;
@@ -21,36 +21,39 @@ ChronicleSocialNarrativesSelectorTypeEnum
 }
 
 final BuiltSet<ChronicleSocialNarrativesSelectorTypeEnum>
-    _$chronicleSocialNarrativesSelectorTypeEnumValues = BuiltSet<
-        ChronicleSocialNarrativesSelectorTypeEnum>(const <ChronicleSocialNarrativesSelectorTypeEnum>[
-  _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives,
-]);
+_$chronicleSocialNarrativesSelectorTypeEnumValues =
+    BuiltSet<ChronicleSocialNarrativesSelectorTypeEnum>(
+      const <ChronicleSocialNarrativesSelectorTypeEnum>[
+        _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives,
+      ],
+    );
 
 const ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnum_unassessed =
+_$chronicleSocialNarrativesSelectorStatusesEnum_unassessed =
     const ChronicleSocialNarrativesSelectorStatusesEnum._('unassessed');
 const ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnum_pending =
+_$chronicleSocialNarrativesSelectorStatusesEnum_pending =
     const ChronicleSocialNarrativesSelectorStatusesEnum._('pending');
 const ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnum_corroborated =
+_$chronicleSocialNarrativesSelectorStatusesEnum_corroborated =
     const ChronicleSocialNarrativesSelectorStatusesEnum._('corroborated');
 const ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnum_unobserved =
+_$chronicleSocialNarrativesSelectorStatusesEnum_unobserved =
     const ChronicleSocialNarrativesSelectorStatusesEnum._('unobserved');
 const ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnum_contradicted =
+_$chronicleSocialNarrativesSelectorStatusesEnum_contradicted =
     const ChronicleSocialNarrativesSelectorStatusesEnum._('contradicted');
 const ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnum_mixed =
+_$chronicleSocialNarrativesSelectorStatusesEnum_mixed =
     const ChronicleSocialNarrativesSelectorStatusesEnum._('mixed');
 const ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage =
+_$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage =
     const ChronicleSocialNarrativesSelectorStatusesEnum._(
-        'insufficientCoverage');
+      'insufficientCoverage',
+    );
 
 ChronicleSocialNarrativesSelectorStatusesEnum
-    _$chronicleSocialNarrativesSelectorStatusesEnumValueOf(String name) {
+_$chronicleSocialNarrativesSelectorStatusesEnumValueOf(String name) {
   switch (name) {
     case 'unassessed':
       return _$chronicleSocialNarrativesSelectorStatusesEnum_unassessed;
@@ -72,22 +75,24 @@ ChronicleSocialNarrativesSelectorStatusesEnum
 }
 
 final BuiltSet<ChronicleSocialNarrativesSelectorStatusesEnum>
-    _$chronicleSocialNarrativesSelectorStatusesEnumValues = BuiltSet<
-        ChronicleSocialNarrativesSelectorStatusesEnum>(const <ChronicleSocialNarrativesSelectorStatusesEnum>[
-  _$chronicleSocialNarrativesSelectorStatusesEnum_unassessed,
-  _$chronicleSocialNarrativesSelectorStatusesEnum_pending,
-  _$chronicleSocialNarrativesSelectorStatusesEnum_corroborated,
-  _$chronicleSocialNarrativesSelectorStatusesEnum_unobserved,
-  _$chronicleSocialNarrativesSelectorStatusesEnum_contradicted,
-  _$chronicleSocialNarrativesSelectorStatusesEnum_mixed,
-  _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage,
-]);
+_$chronicleSocialNarrativesSelectorStatusesEnumValues =
+    BuiltSet<ChronicleSocialNarrativesSelectorStatusesEnum>(
+      const <ChronicleSocialNarrativesSelectorStatusesEnum>[
+        _$chronicleSocialNarrativesSelectorStatusesEnum_unassessed,
+        _$chronicleSocialNarrativesSelectorStatusesEnum_pending,
+        _$chronicleSocialNarrativesSelectorStatusesEnum_corroborated,
+        _$chronicleSocialNarrativesSelectorStatusesEnum_unobserved,
+        _$chronicleSocialNarrativesSelectorStatusesEnum_contradicted,
+        _$chronicleSocialNarrativesSelectorStatusesEnum_mixed,
+        _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage,
+      ],
+    );
 
 Serializer<ChronicleSocialNarrativesSelectorTypeEnum>
-    _$chronicleSocialNarrativesSelectorTypeEnumSerializer =
+_$chronicleSocialNarrativesSelectorTypeEnumSerializer =
     _$ChronicleSocialNarrativesSelectorTypeEnumSerializer();
 Serializer<ChronicleSocialNarrativesSelectorStatusesEnum>
-    _$chronicleSocialNarrativesSelectorStatusesEnumSerializer =
+_$chronicleSocialNarrativesSelectorStatusesEnumSerializer =
     _$ChronicleSocialNarrativesSelectorStatusesEnumSerializer();
 
 class _$ChronicleSocialNarrativesSelectorTypeEnumSerializer
@@ -101,23 +106,26 @@ class _$ChronicleSocialNarrativesSelectorTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleSocialNarrativesSelectorTypeEnum
+    ChronicleSocialNarrativesSelectorTypeEnum,
   ];
   @override
   final String wireName = 'ChronicleSocialNarrativesSelectorTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleSocialNarrativesSelectorTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleSocialNarrativesSelectorTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSocialNarrativesSelectorTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSocialNarrativesSelectorTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSocialNarrativesSelectorTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSocialNarrativesSelectorStatusesEnumSerializer
@@ -144,23 +152,26 @@ class _$ChronicleSocialNarrativesSelectorStatusesEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleSocialNarrativesSelectorStatusesEnum
+    ChronicleSocialNarrativesSelectorStatusesEnum,
   ];
   @override
   final String wireName = 'ChronicleSocialNarrativesSelectorStatusesEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleSocialNarrativesSelectorStatusesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleSocialNarrativesSelectorStatusesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSocialNarrativesSelectorStatusesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSocialNarrativesSelectorStatusesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSocialNarrativesSelectorStatusesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSocialNarrativesSelector
@@ -180,23 +191,23 @@ class _$ChronicleSocialNarrativesSelector
   @override
   final bool? keepPostText;
 
-  factory _$ChronicleSocialNarrativesSelector(
-          [void Function(ChronicleSocialNarrativesSelectorBuilder)? updates]) =>
-      (ChronicleSocialNarrativesSelectorBuilder()..update(updates))._build();
+  factory _$ChronicleSocialNarrativesSelector([
+    void Function(ChronicleSocialNarrativesSelectorBuilder)? updates,
+  ]) => (ChronicleSocialNarrativesSelectorBuilder()..update(updates))._build();
 
-  _$ChronicleSocialNarrativesSelector._(
-      {required this.type,
-      this.topicIds,
-      this.placeIds,
-      this.regionCodes,
-      this.situationIds,
-      this.statuses,
-      this.keepPostText})
-      : super._();
+  _$ChronicleSocialNarrativesSelector._({
+    required this.type,
+    this.topicIds,
+    this.placeIds,
+    this.regionCodes,
+    this.situationIds,
+    this.statuses,
+    this.keepPostText,
+  }) : super._();
   @override
   ChronicleSocialNarrativesSelector rebuild(
-          void Function(ChronicleSocialNarrativesSelectorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSocialNarrativesSelectorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSocialNarrativesSelectorBuilder toBuilder() =>
@@ -245,8 +256,10 @@ class _$ChronicleSocialNarrativesSelector
 
 class ChronicleSocialNarrativesSelectorBuilder
     implements
-        Builder<ChronicleSocialNarrativesSelector,
-            ChronicleSocialNarrativesSelectorBuilder> {
+        Builder<
+          ChronicleSocialNarrativesSelector,
+          ChronicleSocialNarrativesSelectorBuilder
+        > {
   _$ChronicleSocialNarrativesSelector? _$v;
 
   ChronicleSocialNarrativesSelectorTypeEnum? _type;
@@ -281,9 +294,8 @@ class ChronicleSocialNarrativesSelectorBuilder
       _$this._statuses ??=
           ListBuilder<ChronicleSocialNarrativesSelectorStatusesEnum>();
   set statuses(
-          ListBuilder<ChronicleSocialNarrativesSelectorStatusesEnum>?
-              statuses) =>
-      _$this._statuses = statuses;
+    ListBuilder<ChronicleSocialNarrativesSelectorStatusesEnum>? statuses,
+  ) => _$this._statuses = statuses;
 
   bool? _keepPostText;
   bool? get keepPostText => _$this._keepPostText;
@@ -315,7 +327,8 @@ class ChronicleSocialNarrativesSelectorBuilder
 
   @override
   void update(
-      void Function(ChronicleSocialNarrativesSelectorBuilder)? updates) {
+    void Function(ChronicleSocialNarrativesSelectorBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -325,10 +338,14 @@ class ChronicleSocialNarrativesSelectorBuilder
   _$ChronicleSocialNarrativesSelector _build() {
     _$ChronicleSocialNarrativesSelector _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSocialNarrativesSelector._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ChronicleSocialNarrativesSelector', 'type'),
+              type,
+              r'ChronicleSocialNarrativesSelector',
+              'type',
+            ),
             topicIds: _topicIds?.build(),
             placeIds: _placeIds?.build(),
             regionCodes: _regionCodes?.build(),
@@ -351,7 +368,10 @@ class ChronicleSocialNarrativesSelectorBuilder
         _statuses?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSocialNarrativesSelector', _$failedField, e.toString());
+          r'ChronicleSocialNarrativesSelector',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -39,9 +39,9 @@ abstract class OsmAndLocationLocation
 
   OsmAndLocationLocation._();
 
-  factory OsmAndLocationLocation(
-          [void updates(OsmAndLocationLocationBuilder b)]) =
-      _$OsmAndLocationLocation;
+  factory OsmAndLocationLocation([
+    void updates(OsmAndLocationLocationBuilder b),
+  ]) = _$OsmAndLocationLocation;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OsmAndLocationLocationBuilder b) => b;
@@ -56,7 +56,7 @@ class _$OsmAndLocationLocationSerializer
   @override
   final Iterable<Type> types = const [
     OsmAndLocationLocation,
-    _$OsmAndLocationLocation
+    _$OsmAndLocationLocation,
   ];
 
   @override
@@ -108,9 +108,11 @@ class _$OsmAndLocationLocationSerializer
     OsmAndLocationLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,42 +128,53 @@ class _$OsmAndLocationLocationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'timestamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.timestamp = valueDes;
           break;
         case r'coords':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OsmAndLocationLocationCoords),
-          ) as OsmAndLocationLocationCoords;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OsmAndLocationLocationCoords),
+                  )
+                  as OsmAndLocationLocationCoords;
           result.coords.replace(valueDes);
           break;
         case r'battery':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OsmAndLocationLocationBattery),
-          ) as OsmAndLocationLocationBattery?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OsmAndLocationLocationBattery,
+                    ),
+                  )
+                  as OsmAndLocationLocationBattery?;
           if (valueDes == null) continue;
           result.battery.replace(valueDes);
           break;
         case r'is_moving':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.isMoving = valueDes;
           break;
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.event = valueDes;
           break;

@@ -18,21 +18,21 @@ class _$FieldManifestCycle extends FieldManifestCycle {
   @override
   final DateTime validIso;
 
-  factory _$FieldManifestCycle(
-          [void Function(FieldManifestCycleBuilder)? updates]) =>
-      (FieldManifestCycleBuilder()..update(updates))._build();
+  factory _$FieldManifestCycle([
+    void Function(FieldManifestCycleBuilder)? updates,
+  ]) => (FieldManifestCycleBuilder()..update(updates))._build();
 
-  _$FieldManifestCycle._(
-      {required this.date,
-      required this.hour,
-      required this.forecastHour,
-      required this.runIso,
-      required this.validIso})
-      : super._();
+  _$FieldManifestCycle._({
+    required this.date,
+    required this.hour,
+    required this.forecastHour,
+    required this.runIso,
+    required this.validIso,
+  }) : super._();
   @override
   FieldManifestCycle rebuild(
-          void Function(FieldManifestCycleBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FieldManifestCycleBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FieldManifestCycleBuilder toBuilder() =>
@@ -128,18 +128,34 @@ class FieldManifestCycleBuilder
   FieldManifestCycle build() => _build();
 
   _$FieldManifestCycle _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FieldManifestCycle._(
           date: BuiltValueNullFieldError.checkNotNull(
-              date, r'FieldManifestCycle', 'date'),
+            date,
+            r'FieldManifestCycle',
+            'date',
+          ),
           hour: BuiltValueNullFieldError.checkNotNull(
-              hour, r'FieldManifestCycle', 'hour'),
+            hour,
+            r'FieldManifestCycle',
+            'hour',
+          ),
           forecastHour: BuiltValueNullFieldError.checkNotNull(
-              forecastHour, r'FieldManifestCycle', 'forecastHour'),
+            forecastHour,
+            r'FieldManifestCycle',
+            'forecastHour',
+          ),
           runIso: BuiltValueNullFieldError.checkNotNull(
-              runIso, r'FieldManifestCycle', 'runIso'),
+            runIso,
+            r'FieldManifestCycle',
+            'runIso',
+          ),
           validIso: BuiltValueNullFieldError.checkNotNull(
-              validIso, r'FieldManifestCycle', 'validIso'),
+            validIso,
+            r'FieldManifestCycle',
+            'validIso',
+          ),
         );
     replace(_$result);
     return _$result;

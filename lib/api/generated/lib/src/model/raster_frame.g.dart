@@ -24,9 +24,9 @@ RasterFrameStatusEnum _$rasterFrameStatusEnumValueOf(String name) {
 
 final BuiltSet<RasterFrameStatusEnum> _$rasterFrameStatusEnumValues =
     BuiltSet<RasterFrameStatusEnum>(const <RasterFrameStatusEnum>[
-  _$rasterFrameStatusEnum_partial,
-  _$rasterFrameStatusEnum_complete,
-]);
+      _$rasterFrameStatusEnum_partial,
+      _$rasterFrameStatusEnum_complete,
+    ]);
 
 Serializer<RasterFrameStatusEnum> _$rasterFrameStatusEnumSerializer =
     _$RasterFrameStatusEnumSerializer();
@@ -48,15 +48,20 @@ class _$RasterFrameStatusEnumSerializer
   final String wireName = 'RasterFrameStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, RasterFrameStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RasterFrameStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  RasterFrameStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RasterFrameStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  RasterFrameStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RasterFrameStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RasterFrame extends RasterFrame {
@@ -96,24 +101,24 @@ class _$RasterFrame extends RasterFrame {
   factory _$RasterFrame([void Function(RasterFrameBuilder)? updates]) =>
       (RasterFrameBuilder()..update(updates))._build();
 
-  _$RasterFrame._(
-      {required this.productId,
-      required this.time,
-      required this.timeKey,
-      required this.frameKey,
-      required this.status,
-      this.expiresAt,
-      this.run,
-      this.step,
-      this.obsStart,
-      this.obsEnd,
-      required this.tiles,
-      this.tiles2x,
-      this.image,
-      this.bounds,
-      this.stats,
-      this.thinned})
-      : super._();
+  _$RasterFrame._({
+    required this.productId,
+    required this.time,
+    required this.timeKey,
+    required this.frameKey,
+    required this.status,
+    this.expiresAt,
+    this.run,
+    this.step,
+    this.obsStart,
+    this.obsEnd,
+    required this.tiles,
+    this.tiles2x,
+    this.image,
+    this.bounds,
+    this.stats,
+    this.thinned,
+  }) : super._();
   @override
   RasterFrame rebuild(void Function(RasterFrameBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -300,25 +305,44 @@ class RasterFrameBuilder implements Builder<RasterFrame, RasterFrameBuilder> {
   _$RasterFrame _build() {
     _$RasterFrame _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RasterFrame._(
             productId: BuiltValueNullFieldError.checkNotNull(
-                productId, r'RasterFrame', 'productId'),
+              productId,
+              r'RasterFrame',
+              'productId',
+            ),
             time: BuiltValueNullFieldError.checkNotNull(
-                time, r'RasterFrame', 'time'),
+              time,
+              r'RasterFrame',
+              'time',
+            ),
             timeKey: BuiltValueNullFieldError.checkNotNull(
-                timeKey, r'RasterFrame', 'timeKey'),
+              timeKey,
+              r'RasterFrame',
+              'timeKey',
+            ),
             frameKey: BuiltValueNullFieldError.checkNotNull(
-                frameKey, r'RasterFrame', 'frameKey'),
+              frameKey,
+              r'RasterFrame',
+              'frameKey',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'RasterFrame', 'status'),
+              status,
+              r'RasterFrame',
+              'status',
+            ),
             expiresAt: expiresAt,
             run: run,
             step: step,
             obsStart: obsStart,
             obsEnd: obsEnd,
             tiles: BuiltValueNullFieldError.checkNotNull(
-                tiles, r'RasterFrame', 'tiles'),
+              tiles,
+              r'RasterFrame',
+              'tiles',
+            ),
             tiles2x: tiles2x,
             image: image,
             bounds: _bounds?.build(),
@@ -334,7 +358,10 @@ class RasterFrameBuilder implements Builder<RasterFrame, RasterFrameBuilder> {
         _stats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RasterFrame', _$failedField, e.toString());
+          r'RasterFrame',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

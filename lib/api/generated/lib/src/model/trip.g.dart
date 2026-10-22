@@ -49,27 +49,27 @@ class _$Trip extends Trip {
   factory _$Trip([void Function(TripBuilder)? updates]) =>
       (TripBuilder()..update(updates))._build();
 
-  _$Trip._(
-      {required this.name,
-      this.routePlaceId,
-      this.route,
-      this.bufferMeters,
-      required this.schedule,
-      required this.expectedDuration,
-      this.leadTime,
-      this.hazardKinds,
-      this.minSeverity,
-      this.channelIds,
-      this.anchor,
-      this.notifyWhenClear,
-      this.enabled,
-      required this.id,
-      required this.corridor,
-      this.nextOccurrence,
-      this.createdBy,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$Trip._({
+    required this.name,
+    this.routePlaceId,
+    this.route,
+    this.bufferMeters,
+    required this.schedule,
+    required this.expectedDuration,
+    this.leadTime,
+    this.hazardKinds,
+    this.minSeverity,
+    this.channelIds,
+    this.anchor,
+    this.notifyWhenClear,
+    this.enabled,
+    required this.id,
+    required this.corridor,
+    this.nextOccurrence,
+    this.createdBy,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   Trip rebuild(void Function(TripBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -288,7 +288,8 @@ class TripBuilder implements Builder<Trip, TripBuilder> {
   _$Trip _build() {
     _$Trip _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Trip._(
             name: BuiltValueNullFieldError.checkNotNull(name, r'Trip', 'name'),
             routePlaceId: routePlaceId,
@@ -296,7 +297,10 @@ class TripBuilder implements Builder<Trip, TripBuilder> {
             bufferMeters: bufferMeters,
             schedule: schedule.build(),
             expectedDuration: BuiltValueNullFieldError.checkNotNull(
-                expectedDuration, r'Trip', 'expectedDuration'),
+              expectedDuration,
+              r'Trip',
+              'expectedDuration',
+            ),
             leadTime: leadTime,
             hazardKinds: _hazardKinds?.build(),
             minSeverity: minSeverity,
@@ -309,9 +313,15 @@ class TripBuilder implements Builder<Trip, TripBuilder> {
             nextOccurrence: nextOccurrence,
             createdBy: createdBy,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Trip', 'createdAt'),
+              createdAt,
+              r'Trip',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Trip', 'updatedAt'),
+              updatedAt,
+              r'Trip',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;

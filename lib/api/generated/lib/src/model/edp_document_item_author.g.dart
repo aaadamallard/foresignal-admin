@@ -14,16 +14,16 @@ class _$EdpDocumentItemAuthor extends EdpDocumentItemAuthor {
   @override
   final String? accountId;
 
-  factory _$EdpDocumentItemAuthor(
-          [void Function(EdpDocumentItemAuthorBuilder)? updates]) =>
-      (EdpDocumentItemAuthorBuilder()..update(updates))._build();
+  factory _$EdpDocumentItemAuthor([
+    void Function(EdpDocumentItemAuthorBuilder)? updates,
+  ]) => (EdpDocumentItemAuthorBuilder()..update(updates))._build();
 
   _$EdpDocumentItemAuthor._({this.handle, this.name, this.accountId})
-      : super._();
+    : super._();
   @override
   EdpDocumentItemAuthor rebuild(
-          void Function(EdpDocumentItemAuthorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpDocumentItemAuthorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpDocumentItemAuthorBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class EdpDocumentItemAuthorBuilder
   EdpDocumentItemAuthor build() => _build();
 
   _$EdpDocumentItemAuthor _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpDocumentItemAuthor._(
           handle: handle,
           name: name,

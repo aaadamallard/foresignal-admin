@@ -7,12 +7,15 @@ part of 'edp_pull.dart';
 // **************************************************************************
 
 const EdpPullAuthEnum _$edpPullAuthEnum_none = const EdpPullAuthEnum._('none');
-const EdpPullAuthEnum _$edpPullAuthEnum_bearer =
-    const EdpPullAuthEnum._('bearer');
-const EdpPullAuthEnum _$edpPullAuthEnum_header =
-    const EdpPullAuthEnum._('header');
-const EdpPullAuthEnum _$edpPullAuthEnum_basic =
-    const EdpPullAuthEnum._('basic');
+const EdpPullAuthEnum _$edpPullAuthEnum_bearer = const EdpPullAuthEnum._(
+  'bearer',
+);
+const EdpPullAuthEnum _$edpPullAuthEnum_header = const EdpPullAuthEnum._(
+  'header',
+);
+const EdpPullAuthEnum _$edpPullAuthEnum_basic = const EdpPullAuthEnum._(
+  'basic',
+);
 
 EdpPullAuthEnum _$edpPullAuthEnumValueOf(String name) {
   switch (name) {
@@ -31,11 +34,11 @@ EdpPullAuthEnum _$edpPullAuthEnumValueOf(String name) {
 
 final BuiltSet<EdpPullAuthEnum> _$edpPullAuthEnumValues =
     BuiltSet<EdpPullAuthEnum>(const <EdpPullAuthEnum>[
-  _$edpPullAuthEnum_none,
-  _$edpPullAuthEnum_bearer,
-  _$edpPullAuthEnum_header,
-  _$edpPullAuthEnum_basic,
-]);
+      _$edpPullAuthEnum_none,
+      _$edpPullAuthEnum_bearer,
+      _$edpPullAuthEnum_header,
+      _$edpPullAuthEnum_basic,
+    ]);
 
 Serializer<EdpPullAuthEnum> _$edpPullAuthEnumSerializer =
     _$EdpPullAuthEnumSerializer();
@@ -61,15 +64,20 @@ class _$EdpPullAuthEnumSerializer
   final String wireName = 'EdpPullAuthEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpPullAuthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpPullAuthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpPullAuthEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpPullAuthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpPullAuthEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpPullAuthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpPull extends EdpPull {
@@ -85,9 +93,12 @@ class _$EdpPull extends EdpPull {
   factory _$EdpPull([void Function(EdpPullBuilder)? updates]) =>
       (EdpPullBuilder()..update(updates))._build();
 
-  _$EdpPull._(
-      {required this.itemsUrl, this.intervalSeconds, this.auth, this.header})
-      : super._();
+  _$EdpPull._({
+    required this.itemsUrl,
+    this.intervalSeconds,
+    this.auth,
+    this.header,
+  }) : super._();
   @override
   EdpPull rebuild(void Function(EdpPullBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -177,10 +188,14 @@ class EdpPullBuilder implements Builder<EdpPull, EdpPullBuilder> {
   EdpPull build() => _build();
 
   _$EdpPull _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpPull._(
           itemsUrl: BuiltValueNullFieldError.checkNotNull(
-              itemsUrl, r'EdpPull', 'itemsUrl'),
+            itemsUrl,
+            r'EdpPull',
+            'itemsUrl',
+          ),
           intervalSeconds: intervalSeconds,
           auth: auth,
           header: header,

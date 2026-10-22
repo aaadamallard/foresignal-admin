@@ -20,8 +20,10 @@ part 'intelligence_event_speculation.g.dart';
 @BuiltValue()
 abstract class IntelligenceEventSpeculation
     implements
-        Built<IntelligenceEventSpeculation,
-            IntelligenceEventSpeculationBuilder> {
+        Built<
+          IntelligenceEventSpeculation,
+          IntelligenceEventSpeculationBuilder
+        > {
   @BuiltValueField(wireName: r'label')
   IntelligenceEventSpeculationLabelEnum get label;
   // enum labelEnum {  speculation,  };
@@ -39,9 +41,9 @@ abstract class IntelligenceEventSpeculation
 
   IntelligenceEventSpeculation._();
 
-  factory IntelligenceEventSpeculation(
-          [void updates(IntelligenceEventSpeculationBuilder b)]) =
-      _$IntelligenceEventSpeculation;
+  factory IntelligenceEventSpeculation([
+    void updates(IntelligenceEventSpeculationBuilder b),
+  ]) = _$IntelligenceEventSpeculation;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelligenceEventSpeculationBuilder b) => b;
@@ -56,7 +58,7 @@ class _$IntelligenceEventSpeculationSerializer
   @override
   final Iterable<Type> types = const [
     IntelligenceEventSpeculation,
-    _$IntelligenceEventSpeculation
+    _$IntelligenceEventSpeculation,
   ];
 
   @override
@@ -75,8 +77,9 @@ class _$IntelligenceEventSpeculationSerializer
     yield r'alternatives';
     yield serializers.serialize(
       object.alternatives,
-      specifiedType:
-          const FullType(BuiltList, [FullType(IntelEventAlternative)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(IntelEventAlternative),
+      ]),
     );
     if (object.narrative != null) {
       yield r'narrative';
@@ -90,7 +93,8 @@ class _$IntelligenceEventSpeculationSerializer
       yield serializers.serialize(
         object.narrativeOrigin,
         specifiedType: const FullType.nullable(
-            IntelligenceEventSpeculationNarrativeOriginEnum),
+          IntelligenceEventSpeculationNarrativeOriginEnum,
+        ),
       );
     }
   }
@@ -101,9 +105,11 @@ class _$IntelligenceEventSpeculationSerializer
     IntelligenceEventSpeculation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,35 +125,46 @@ class _$IntelligenceEventSpeculationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(IntelligenceEventSpeculationLabelEnum),
-          ) as IntelligenceEventSpeculationLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelligenceEventSpeculationLabelEnum,
+                    ),
+                  )
+                  as IntelligenceEventSpeculationLabelEnum;
           result.label = valueDes;
           break;
         case r'alternatives':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(IntelEventAlternative)]),
-          ) as BuiltList<IntelEventAlternative>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelEventAlternative),
+                    ]),
+                  )
+                  as BuiltList<IntelEventAlternative>;
           result.alternatives.replace(valueDes);
           break;
         case r'narrative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.narrative = valueDes;
           break;
         case r'narrativeOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                IntelligenceEventSpeculationNarrativeOriginEnum),
-          ) as IntelligenceEventSpeculationNarrativeOriginEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelligenceEventSpeculationNarrativeOriginEnum,
+                    ),
+                  )
+                  as IntelligenceEventSpeculationNarrativeOriginEnum?;
           if (valueDes == null) continue;
           result.narrativeOrigin = valueDes;
           break;
@@ -202,11 +219,10 @@ class IntelligenceEventSpeculationNarrativeOriginEnum extends EnumClass {
       _$intelligenceEventSpeculationNarrativeOriginEnum_llm;
 
   static Serializer<IntelligenceEventSpeculationNarrativeOriginEnum>
-      get serializer =>
-          _$intelligenceEventSpeculationNarrativeOriginEnumSerializer;
+  get serializer => _$intelligenceEventSpeculationNarrativeOriginEnumSerializer;
 
   const IntelligenceEventSpeculationNarrativeOriginEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<IntelligenceEventSpeculationNarrativeOriginEnum> get values =>
       _$intelligenceEventSpeculationNarrativeOriginEnumValues;

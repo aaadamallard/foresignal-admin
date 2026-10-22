@@ -21,8 +21,10 @@ part 'social_comparison_detectability.g.dart';
 @BuiltValue()
 abstract class SocialComparisonDetectability
     implements
-        Built<SocialComparisonDetectability,
-            SocialComparisonDetectabilityBuilder> {
+        Built<
+          SocialComparisonDetectability,
+          SocialComparisonDetectabilityBuilder
+        > {
   @BuiltValueField(wireName: r'p')
   num get p;
 
@@ -43,9 +45,9 @@ abstract class SocialComparisonDetectability
 
   SocialComparisonDetectability._();
 
-  factory SocialComparisonDetectability(
-          [void updates(SocialComparisonDetectabilityBuilder b)]) =
-      _$SocialComparisonDetectability;
+  factory SocialComparisonDetectability([
+    void updates(SocialComparisonDetectabilityBuilder b),
+  ]) = _$SocialComparisonDetectability;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialComparisonDetectabilityBuilder b) => b;
@@ -60,7 +62,7 @@ class _$SocialComparisonDetectabilitySerializer
   @override
   final Iterable<Type> types = const [
     SocialComparisonDetectability,
-    _$SocialComparisonDetectability
+    _$SocialComparisonDetectability,
   ];
 
   @override
@@ -72,30 +74,18 @@ class _$SocialComparisonDetectabilitySerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'p';
-    yield serializers.serialize(
-      object.p,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.p, specifiedType: const FullType(num));
     yield r'lo';
-    yield serializers.serialize(
-      object.lo,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lo, specifiedType: const FullType(num));
     yield r'hi';
-    yield serializers.serialize(
-      object.hi,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.hi, specifiedType: const FullType(num));
     yield r'methods';
     yield serializers.serialize(
       object.methods,
       specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
     yield r'ok';
-    yield serializers.serialize(
-      object.ok,
-      specifiedType: const FullType(bool),
-    );
+    yield serializers.serialize(object.ok, specifiedType: const FullType(bool));
     if (object.reason != null) {
       yield r'reason';
       yield serializers.serialize(
@@ -111,9 +101,11 @@ class _$SocialComparisonDetectabilitySerializer
     SocialComparisonDetectability object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,45 +121,50 @@ class _$SocialComparisonDetectabilitySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'p':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.p = valueDes;
           break;
         case r'lo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lo = valueDes;
           break;
         case r'hi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.hi = valueDes;
           break;
         case r'methods':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.methods.replace(valueDes);
           break;
         case r'ok':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.ok = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

@@ -35,9 +35,9 @@ abstract class PresenceEventClientsInner
 
   PresenceEventClientsInner._();
 
-  factory PresenceEventClientsInner(
-          [void updates(PresenceEventClientsInnerBuilder b)]) =
-      _$PresenceEventClientsInner;
+  factory PresenceEventClientsInner([
+    void updates(PresenceEventClientsInnerBuilder b),
+  ]) = _$PresenceEventClientsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PresenceEventClientsInnerBuilder b) => b;
@@ -52,7 +52,7 @@ class _$PresenceEventClientsInnerSerializer
   @override
   final Iterable<Type> types = const [
     PresenceEventClientsInner,
-    _$PresenceEventClientsInner
+    _$PresenceEventClientsInner,
   ];
 
   @override
@@ -93,9 +93,11 @@ class _$PresenceEventClientsInnerSerializer
     PresenceEventClientsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,33 +113,42 @@ class _$PresenceEventClientsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'clientId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.clientId = valueDes;
           break;
         case r'clientKind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(PresenceEventClientsInnerClientKindEnum),
-          ) as PresenceEventClientsInnerClientKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PresenceEventClientsInnerClientKindEnum,
+                    ),
+                  )
+                  as PresenceEventClientsInnerClientKindEnum;
           result.clientKind = valueDes;
           break;
         case r'principal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.principal = valueDes;
           break;
         case r'connectedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.connectedAt = valueDes;
           break;
         default:

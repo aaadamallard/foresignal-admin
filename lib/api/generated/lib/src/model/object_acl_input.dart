@@ -96,9 +96,11 @@ class _$ObjectAclInputSerializer
     ObjectAclInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,34 +116,43 @@ class _$ObjectAclInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'visibility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Visibility),
-          ) as Visibility?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Visibility),
+                  )
+                  as Visibility?;
           if (valueDes == null) continue;
           result.visibility = valueDes;
           break;
         case r'entries':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ObjectAclEntryInput)]),
-          ) as BuiltList<ObjectAclEntryInput>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ObjectAclEntryInput),
+                    ]),
+                  )
+                  as BuiltList<ObjectAclEntryInput>;
           result.entries.replace(valueDes);
           break;
         case r'owner':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.owner = valueDes;
           break;
         case r'tlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tlp = valueDes;
           break;

@@ -13,16 +13,16 @@ class _$ChronicleSketchPackageCaptureSpan
   @override
   final String? to;
 
-  factory _$ChronicleSketchPackageCaptureSpan(
-          [void Function(ChronicleSketchPackageCaptureSpanBuilder)? updates]) =>
-      (ChronicleSketchPackageCaptureSpanBuilder()..update(updates))._build();
+  factory _$ChronicleSketchPackageCaptureSpan([
+    void Function(ChronicleSketchPackageCaptureSpanBuilder)? updates,
+  ]) => (ChronicleSketchPackageCaptureSpanBuilder()..update(updates))._build();
 
   _$ChronicleSketchPackageCaptureSpan._({required this.from, this.to})
-      : super._();
+    : super._();
   @override
   ChronicleSketchPackageCaptureSpan rebuild(
-          void Function(ChronicleSketchPackageCaptureSpanBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSketchPackageCaptureSpanBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSketchPackageCaptureSpanBuilder toBuilder() =>
@@ -56,8 +56,10 @@ class _$ChronicleSketchPackageCaptureSpan
 
 class ChronicleSketchPackageCaptureSpanBuilder
     implements
-        Builder<ChronicleSketchPackageCaptureSpan,
-            ChronicleSketchPackageCaptureSpanBuilder> {
+        Builder<
+          ChronicleSketchPackageCaptureSpan,
+          ChronicleSketchPackageCaptureSpanBuilder
+        > {
   _$ChronicleSketchPackageCaptureSpan? _$v;
 
   String? _from;
@@ -89,7 +91,8 @@ class ChronicleSketchPackageCaptureSpanBuilder
 
   @override
   void update(
-      void Function(ChronicleSketchPackageCaptureSpanBuilder)? updates) {
+    void Function(ChronicleSketchPackageCaptureSpanBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -97,10 +100,14 @@ class ChronicleSketchPackageCaptureSpanBuilder
   ChronicleSketchPackageCaptureSpan build() => _build();
 
   _$ChronicleSketchPackageCaptureSpan _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSketchPackageCaptureSpan._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'ChronicleSketchPackageCaptureSpan', 'from'),
+            from,
+            r'ChronicleSketchPackageCaptureSpan',
+            'from',
+          ),
           to: to,
         );
     replace(_$result);

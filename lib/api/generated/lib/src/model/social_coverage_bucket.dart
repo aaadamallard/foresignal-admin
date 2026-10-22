@@ -51,7 +51,7 @@ class _$SocialCoverageBucketSerializer
   @override
   final Iterable<Type> types = const [
     SocialCoverageBucket,
-    _$SocialCoverageBucket
+    _$SocialCoverageBucket,
   ];
 
   @override
@@ -92,9 +92,11 @@ class _$SocialCoverageBucketSerializer
     SocialCoverageBucket object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,32 +112,37 @@ class _$SocialCoverageBucketSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'hour':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.hour = valueDes;
           break;
         case r'postsSeen':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.postsSeen = valueDes;
           break;
         case r'denominator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.denominator = valueDes;
           break;
         case r'complete':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.complete = valueDes;
           break;
         default:

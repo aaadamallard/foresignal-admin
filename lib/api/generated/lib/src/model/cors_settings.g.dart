@@ -16,7 +16,7 @@ class _$CorsSettings extends CorsSettings {
       (CorsSettingsBuilder()..update(updates))._build();
 
   _$CorsSettings._({required this.readOrigins, required this.writeOrigins})
-      : super._();
+    : super._();
   @override
   CorsSettings rebuild(void Function(CorsSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -96,7 +96,8 @@ class CorsSettingsBuilder
   _$CorsSettings _build() {
     _$CorsSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorsSettings._(
             readOrigins: readOrigins.build(),
             writeOrigins: writeOrigins.build(),
@@ -110,7 +111,10 @@ class CorsSettingsBuilder
         writeOrigins.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorsSettings', _$failedField, e.toString());
+          r'CorsSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

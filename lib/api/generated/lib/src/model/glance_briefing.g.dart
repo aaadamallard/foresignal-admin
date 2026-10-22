@@ -99,12 +99,7 @@ class GlanceBriefingBuilder
   GlanceBriefing build() => _build();
 
   _$GlanceBriefing _build() {
-    final _$result = _$v ??
-        _$GlanceBriefing._(
-          title: title,
-          at: at,
-          url: url,
-        );
+    final _$result = _$v ?? _$GlanceBriefing._(title: title, at: at, url: url);
     replace(_$result);
     return _$result;
   }

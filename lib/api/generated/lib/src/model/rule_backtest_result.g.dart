@@ -16,7 +16,8 @@ const RuleBacktestResultRuleTypeEnum _$ruleBacktestResultRuleTypeEnum_anomaly =
     const RuleBacktestResultRuleTypeEnum._('anomaly');
 
 RuleBacktestResultRuleTypeEnum _$ruleBacktestResultRuleTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$ruleBacktestResultRuleTypeEnum_record;
@@ -32,16 +33,18 @@ RuleBacktestResultRuleTypeEnum _$ruleBacktestResultRuleTypeEnumValueOf(
 }
 
 final BuiltSet<RuleBacktestResultRuleTypeEnum>
-    _$ruleBacktestResultRuleTypeEnumValues = BuiltSet<
-        RuleBacktestResultRuleTypeEnum>(const <RuleBacktestResultRuleTypeEnum>[
-  _$ruleBacktestResultRuleTypeEnum_record,
-  _$ruleBacktestResultRuleTypeEnum_count,
-  _$ruleBacktestResultRuleTypeEnum_absence,
-  _$ruleBacktestResultRuleTypeEnum_anomaly,
-]);
+_$ruleBacktestResultRuleTypeEnumValues =
+    BuiltSet<RuleBacktestResultRuleTypeEnum>(
+      const <RuleBacktestResultRuleTypeEnum>[
+        _$ruleBacktestResultRuleTypeEnum_record,
+        _$ruleBacktestResultRuleTypeEnum_count,
+        _$ruleBacktestResultRuleTypeEnum_absence,
+        _$ruleBacktestResultRuleTypeEnum_anomaly,
+      ],
+    );
 
 Serializer<RuleBacktestResultRuleTypeEnum>
-    _$ruleBacktestResultRuleTypeEnumSerializer =
+_$ruleBacktestResultRuleTypeEnumSerializer =
     _$RuleBacktestResultRuleTypeEnumSerializer();
 
 class _$RuleBacktestResultRuleTypeEnumSerializer
@@ -66,16 +69,19 @@ class _$RuleBacktestResultRuleTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, RuleBacktestResultRuleTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RuleBacktestResultRuleTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RuleBacktestResultRuleTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RuleBacktestResultRuleTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RuleBacktestResultRuleTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RuleBacktestResult extends RuleBacktestResult {
@@ -100,26 +106,26 @@ class _$RuleBacktestResult extends RuleBacktestResult {
   @override
   final BuiltList<RuleBacktestResultVariantsInner>? variants;
 
-  factory _$RuleBacktestResult(
-          [void Function(RuleBacktestResultBuilder)? updates]) =>
-      (RuleBacktestResultBuilder()..update(updates))._build();
+  factory _$RuleBacktestResult([
+    void Function(RuleBacktestResultBuilder)? updates,
+  ]) => (RuleBacktestResultBuilder()..update(updates))._build();
 
-  _$RuleBacktestResult._(
-      {required this.ruleType,
-      required this.wouldFire,
-      this.perDay,
-      this.topEntities,
-      this.samples,
-      this.actual,
-      this.overlap,
-      this.window,
-      this.anomaly,
-      this.variants})
-      : super._();
+  _$RuleBacktestResult._({
+    required this.ruleType,
+    required this.wouldFire,
+    this.perDay,
+    this.topEntities,
+    this.samples,
+    this.actual,
+    this.overlap,
+    this.window,
+    this.anomaly,
+    this.variants,
+  }) : super._();
   @override
   RuleBacktestResult rebuild(
-          void Function(RuleBacktestResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultBuilder toBuilder() =>
@@ -198,8 +204,8 @@ class RuleBacktestResultBuilder
   ListBuilder<RuleBacktestResultTopEntitiesInner> get topEntities =>
       _$this._topEntities ??= ListBuilder<RuleBacktestResultTopEntitiesInner>();
   set topEntities(
-          ListBuilder<RuleBacktestResultTopEntitiesInner>? topEntities) =>
-      _$this._topEntities = topEntities;
+    ListBuilder<RuleBacktestResultTopEntitiesInner>? topEntities,
+  ) => _$this._topEntities = topEntities;
 
   ListBuilder<RuleBacktestResultSamplesInner>? _samples;
   ListBuilder<RuleBacktestResultSamplesInner> get samples =>
@@ -275,12 +281,19 @@ class RuleBacktestResultBuilder
   _$RuleBacktestResult _build() {
     _$RuleBacktestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RuleBacktestResult._(
             ruleType: BuiltValueNullFieldError.checkNotNull(
-                ruleType, r'RuleBacktestResult', 'ruleType'),
+              ruleType,
+              r'RuleBacktestResult',
+              'ruleType',
+            ),
             wouldFire: BuiltValueNullFieldError.checkNotNull(
-                wouldFire, r'RuleBacktestResult', 'wouldFire'),
+              wouldFire,
+              r'RuleBacktestResult',
+              'wouldFire',
+            ),
             perDay: _perDay?.build(),
             topEntities: _topEntities?.build(),
             samples: _samples?.build(),
@@ -311,7 +324,10 @@ class RuleBacktestResultBuilder
         _variants?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RuleBacktestResult', _$failedField, e.toString());
+          r'RuleBacktestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

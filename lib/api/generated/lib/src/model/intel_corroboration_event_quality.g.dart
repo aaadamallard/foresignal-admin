@@ -16,20 +16,20 @@ class _$IntelCorroborationEventQuality extends IntelCorroborationEventQuality {
   @override
   final int? requireModalities;
 
-  factory _$IntelCorroborationEventQuality(
-          [void Function(IntelCorroborationEventQualityBuilder)? updates]) =>
-      (IntelCorroborationEventQualityBuilder()..update(updates))._build();
+  factory _$IntelCorroborationEventQuality([
+    void Function(IntelCorroborationEventQualityBuilder)? updates,
+  ]) => (IntelCorroborationEventQualityBuilder()..update(updates))._build();
 
-  _$IntelCorroborationEventQuality._(
-      {this.strongFamilies,
-      this.strongGroups,
-      this.moderateFamilies,
-      this.requireModalities})
-      : super._();
+  _$IntelCorroborationEventQuality._({
+    this.strongFamilies,
+    this.strongGroups,
+    this.moderateFamilies,
+    this.requireModalities,
+  }) : super._();
   @override
   IntelCorroborationEventQuality rebuild(
-          void Function(IntelCorroborationEventQualityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelCorroborationEventQualityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelCorroborationEventQualityBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$IntelCorroborationEventQuality extends IntelCorroborationEventQuality {
 
 class IntelCorroborationEventQualityBuilder
     implements
-        Builder<IntelCorroborationEventQuality,
-            IntelCorroborationEventQualityBuilder> {
+        Builder<
+          IntelCorroborationEventQuality,
+          IntelCorroborationEventQualityBuilder
+        > {
   _$IntelCorroborationEventQuality? _$v;
 
   int? _strongFamilies;
@@ -122,7 +124,8 @@ class IntelCorroborationEventQualityBuilder
   IntelCorroborationEventQuality build() => _build();
 
   _$IntelCorroborationEventQuality _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelCorroborationEventQuality._(
           strongFamilies: strongFamilies,
           strongGroups: strongGroups,

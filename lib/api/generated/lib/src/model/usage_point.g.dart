@@ -37,21 +37,21 @@ class _$UsagePoint extends UsagePoint {
   factory _$UsagePoint([void Function(UsagePointBuilder)? updates]) =>
       (UsagePointBuilder()..update(updates))._build();
 
-  _$UsagePoint._(
-      {required this.t,
-      required this.requests,
-      required this.bytes,
-      required this.errors,
-      required this.refused,
-      this.recordsSeen,
-      this.versions,
-      this.liveUpdates,
-      this.touches,
-      this.late_,
-      this.skipped,
-      this.rejected,
-      this.versionBytes})
-      : super._();
+  _$UsagePoint._({
+    required this.t,
+    required this.requests,
+    required this.bytes,
+    required this.errors,
+    required this.refused,
+    this.recordsSeen,
+    this.versions,
+    this.liveUpdates,
+    this.touches,
+    this.late_,
+    this.skipped,
+    this.rejected,
+    this.versionBytes,
+  }) : super._();
   @override
   UsagePoint rebuild(void Function(UsagePointBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -212,17 +212,30 @@ class UsagePointBuilder implements Builder<UsagePoint, UsagePointBuilder> {
   UsagePoint build() => _build();
 
   _$UsagePoint _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$UsagePoint._(
           t: BuiltValueNullFieldError.checkNotNull(t, r'UsagePoint', 't'),
           requests: BuiltValueNullFieldError.checkNotNull(
-              requests, r'UsagePoint', 'requests'),
+            requests,
+            r'UsagePoint',
+            'requests',
+          ),
           bytes: BuiltValueNullFieldError.checkNotNull(
-              bytes, r'UsagePoint', 'bytes'),
+            bytes,
+            r'UsagePoint',
+            'bytes',
+          ),
           errors: BuiltValueNullFieldError.checkNotNull(
-              errors, r'UsagePoint', 'errors'),
+            errors,
+            r'UsagePoint',
+            'errors',
+          ),
           refused: BuiltValueNullFieldError.checkNotNull(
-              refused, r'UsagePoint', 'refused'),
+            refused,
+            r'UsagePoint',
+            'refused',
+          ),
           recordsSeen: recordsSeen,
           versions: versions,
           liveUpdates: liveUpdates,

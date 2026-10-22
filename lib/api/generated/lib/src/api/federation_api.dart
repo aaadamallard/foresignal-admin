@@ -58,9 +58,15 @@ class FederationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/federation/ingest/{peerId}'.replaceAll(
-        '{' r'peerId' '}',
-        encodeQueryParameter(_serializers, peerId, const FullType(String))
-            .toString());
+      '{'
+      r'peerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        peerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -71,11 +77,7 @@ class FederationApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'peerCredential',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'peerCredential'},
         ],
         ...?extra,
       },
@@ -87,14 +89,13 @@ class FederationApi {
 
     try {
       const _type = FullType(FederationIngestBatch);
-      _bodyData =
-          _serializers.serialize(federationIngestBatch, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        federationIngestBatch,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -117,9 +118,10 @@ class FederationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FederationIngestResult),
-            ) as FederationIngestResult;
+                  rawResponse,
+                  specifiedType: const FullType(FederationIngestResult),
+                )
+                as FederationIngestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -168,16 +170,10 @@ class FederationApi {
     final _path = r'/v1/federation/bundle';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -186,8 +182,11 @@ class FederationApi {
 
     final _queryParameters = <String, dynamic>{
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -206,10 +205,12 @@ class FederationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(CompactMessage)]),
-            ) as BuiltList<CompactMessage>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(CompactMessage),
+                  ]),
+                )
+                as BuiltList<CompactMessage>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -256,16 +257,10 @@ class FederationApi {
     final _path = r'/v1/federation/info';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -287,9 +282,10 @@ class FederationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FederationInfo),
-            ) as FederationInfo;
+                  rawResponse,
+                  specifiedType: const FullType(FederationInfo),
+                )
+                as FederationInfo;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -348,16 +344,10 @@ class FederationApi {
     final _path = r'/v1/federation/snapshot';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -366,14 +356,23 @@ class FederationApi {
 
     final _queryParameters = <String, dynamic>{
       if (atSeq != null)
-        r'atSeq':
-            encodeQueryParameter(_serializers, atSeq, const FullType(int)),
+        r'atSeq': encodeQueryParameter(
+          _serializers,
+          atSeq,
+          const FullType(int),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -389,8 +388,11 @@ class FederationApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -409,9 +411,10 @@ class FederationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FederationSnapshotPage),
-            ) as FederationSnapshotPage;
+                  rawResponse,
+                  specifiedType: const FullType(FederationSnapshotPage),
+                )
+                as FederationSnapshotPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -468,16 +471,10 @@ class FederationApi {
     final _path = r'/v1/federation/changes';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -486,11 +483,17 @@ class FederationApi {
 
     final _queryParameters = <String, dynamic>{
       if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(int)),
+        r'after': encodeQueryParameter(
+          _serializers,
+          after,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -506,8 +509,11 @@ class FederationApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -526,9 +532,10 @@ class FederationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FederationChangePage),
-            ) as FederationChangePage;
+                  rawResponse,
+                  specifiedType: const FullType(FederationChangePage),
+                )
+                as FederationChangePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -577,16 +584,10 @@ class FederationApi {
     final _path = r'/v1/federation/bundle';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'peerCredential',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'peerCredential'},
         ],
         ...?extra,
       },
@@ -601,10 +602,7 @@ class FederationApi {
       _bodyData = _serializers.serialize(compactMessage, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -627,9 +625,10 @@ class FederationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FederationIngestResult),
-            ) as FederationIngestResult;
+                  rawResponse,
+                  specifiedType: const FullType(FederationIngestResult),
+                )
+                as FederationIngestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -694,11 +693,7 @@ class FederationApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -707,8 +702,11 @@ class FederationApi {
 
     final _queryParameters = <String, dynamic>{
       if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(int)),
+        r'after': encodeQueryParameter(
+          _serializers,
+          after,
+          const FullType(int),
+        ),
       if (live != null)
         r'live': encodeQueryParameter(_serializers, live, const FullType(bool)),
       if (source_ != null)
@@ -726,8 +724,11 @@ class FederationApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -746,9 +747,10 @@ class FederationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StreamFederation200Response),
-            ) as StreamFederation200Response;
+                  rawResponse,
+                  specifiedType: const FullType(StreamFederation200Response),
+                )
+                as StreamFederation200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

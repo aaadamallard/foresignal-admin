@@ -67,9 +67,11 @@ class _$FetchPageSerializer implements PrimitiveSerializer<FetchPage> {
     FetchPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -85,17 +87,23 @@ class _$FetchPageSerializer implements PrimitiveSerializer<FetchPage> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(FetchLogEntry)]),
-          ) as BuiltList<FetchLogEntry>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(FetchLogEntry),
+                    ]),
+                  )
+                  as BuiltList<FetchLogEntry>;
           result.items.replace(valueDes);
           break;
         case r'nextAfter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.nextAfter = valueDes;
           break;

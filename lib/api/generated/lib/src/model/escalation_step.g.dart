@@ -17,9 +17,11 @@ class _$EscalationStep extends EscalationStep {
   factory _$EscalationStep([void Function(EscalationStepBuilder)? updates]) =>
       (EscalationStepBuilder()..update(updates))._build();
 
-  _$EscalationStep._(
-      {required this.afterMinutes, this.channelIds, this.includePush})
-      : super._();
+  _$EscalationStep._({
+    required this.afterMinutes,
+    this.channelIds,
+    this.includePush,
+  }) : super._();
   @override
   EscalationStep rebuild(void Function(EscalationStepBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -105,10 +107,14 @@ class EscalationStepBuilder
   _$EscalationStep _build() {
     _$EscalationStep _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EscalationStep._(
             afterMinutes: BuiltValueNullFieldError.checkNotNull(
-                afterMinutes, r'EscalationStep', 'afterMinutes'),
+              afterMinutes,
+              r'EscalationStep',
+              'afterMinutes',
+            ),
             channelIds: _channelIds?.build(),
             includePush: includePush,
           );
@@ -119,7 +125,10 @@ class EscalationStepBuilder
         _channelIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EscalationStep', _$failedField, e.toString());
+          r'EscalationStep',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

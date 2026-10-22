@@ -7,11 +7,11 @@ part of 'velocity_json_component_header.dart';
 // **************************************************************************
 
 const VelocityJsonComponentHeaderParameterCategoryEnum
-    _$velocityJsonComponentHeaderParameterCategoryEnum_number2 =
+_$velocityJsonComponentHeaderParameterCategoryEnum_number2 =
     const VelocityJsonComponentHeaderParameterCategoryEnum._('number2');
 
 VelocityJsonComponentHeaderParameterCategoryEnum
-    _$velocityJsonComponentHeaderParameterCategoryEnumValueOf(String name) {
+_$velocityJsonComponentHeaderParameterCategoryEnumValueOf(String name) {
   switch (name) {
     case 'number2':
       return _$velocityJsonComponentHeaderParameterCategoryEnum_number2;
@@ -21,20 +21,22 @@ VelocityJsonComponentHeaderParameterCategoryEnum
 }
 
 final BuiltSet<VelocityJsonComponentHeaderParameterCategoryEnum>
-    _$velocityJsonComponentHeaderParameterCategoryEnumValues = BuiltSet<
-        VelocityJsonComponentHeaderParameterCategoryEnum>(const <VelocityJsonComponentHeaderParameterCategoryEnum>[
-  _$velocityJsonComponentHeaderParameterCategoryEnum_number2,
-]);
+_$velocityJsonComponentHeaderParameterCategoryEnumValues =
+    BuiltSet<VelocityJsonComponentHeaderParameterCategoryEnum>(
+      const <VelocityJsonComponentHeaderParameterCategoryEnum>[
+        _$velocityJsonComponentHeaderParameterCategoryEnum_number2,
+      ],
+    );
 
 const VelocityJsonComponentHeaderParameterNumberEnum
-    _$velocityJsonComponentHeaderParameterNumberEnum_number2 =
+_$velocityJsonComponentHeaderParameterNumberEnum_number2 =
     const VelocityJsonComponentHeaderParameterNumberEnum._('number2');
 const VelocityJsonComponentHeaderParameterNumberEnum
-    _$velocityJsonComponentHeaderParameterNumberEnum_number3 =
+_$velocityJsonComponentHeaderParameterNumberEnum_number3 =
     const VelocityJsonComponentHeaderParameterNumberEnum._('number3');
 
 VelocityJsonComponentHeaderParameterNumberEnum
-    _$velocityJsonComponentHeaderParameterNumberEnumValueOf(String name) {
+_$velocityJsonComponentHeaderParameterNumberEnumValueOf(String name) {
   switch (name) {
     case 'number2':
       return _$velocityJsonComponentHeaderParameterNumberEnum_number2;
@@ -46,17 +48,19 @@ VelocityJsonComponentHeaderParameterNumberEnum
 }
 
 final BuiltSet<VelocityJsonComponentHeaderParameterNumberEnum>
-    _$velocityJsonComponentHeaderParameterNumberEnumValues = BuiltSet<
-        VelocityJsonComponentHeaderParameterNumberEnum>(const <VelocityJsonComponentHeaderParameterNumberEnum>[
-  _$velocityJsonComponentHeaderParameterNumberEnum_number2,
-  _$velocityJsonComponentHeaderParameterNumberEnum_number3,
-]);
+_$velocityJsonComponentHeaderParameterNumberEnumValues =
+    BuiltSet<VelocityJsonComponentHeaderParameterNumberEnum>(
+      const <VelocityJsonComponentHeaderParameterNumberEnum>[
+        _$velocityJsonComponentHeaderParameterNumberEnum_number2,
+        _$velocityJsonComponentHeaderParameterNumberEnum_number3,
+      ],
+    );
 
 Serializer<VelocityJsonComponentHeaderParameterCategoryEnum>
-    _$velocityJsonComponentHeaderParameterCategoryEnumSerializer =
+_$velocityJsonComponentHeaderParameterCategoryEnumSerializer =
     _$VelocityJsonComponentHeaderParameterCategoryEnumSerializer();
 Serializer<VelocityJsonComponentHeaderParameterNumberEnum>
-    _$velocityJsonComponentHeaderParameterNumberEnumSerializer =
+_$velocityJsonComponentHeaderParameterNumberEnumSerializer =
     _$VelocityJsonComponentHeaderParameterNumberEnumSerializer();
 
 class _$VelocityJsonComponentHeaderParameterCategoryEnumSerializer
@@ -71,23 +75,26 @@ class _$VelocityJsonComponentHeaderParameterCategoryEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    VelocityJsonComponentHeaderParameterCategoryEnum
+    VelocityJsonComponentHeaderParameterCategoryEnum,
   ];
   @override
   final String wireName = 'VelocityJsonComponentHeaderParameterCategoryEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          VelocityJsonComponentHeaderParameterCategoryEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    VelocityJsonComponentHeaderParameterCategoryEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   VelocityJsonComponentHeaderParameterCategoryEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      VelocityJsonComponentHeaderParameterCategoryEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => VelocityJsonComponentHeaderParameterCategoryEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$VelocityJsonComponentHeaderParameterNumberEnumSerializer
@@ -104,23 +111,26 @@ class _$VelocityJsonComponentHeaderParameterNumberEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    VelocityJsonComponentHeaderParameterNumberEnum
+    VelocityJsonComponentHeaderParameterNumberEnum,
   ];
   @override
   final String wireName = 'VelocityJsonComponentHeaderParameterNumberEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          VelocityJsonComponentHeaderParameterNumberEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    VelocityJsonComponentHeaderParameterNumberEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   VelocityJsonComponentHeaderParameterNumberEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      VelocityJsonComponentHeaderParameterNumberEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => VelocityJsonComponentHeaderParameterNumberEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$VelocityJsonComponentHeader extends VelocityJsonComponentHeader {
@@ -149,28 +159,28 @@ class _$VelocityJsonComponentHeader extends VelocityJsonComponentHeader {
   @override
   final int forecastTime;
 
-  factory _$VelocityJsonComponentHeader(
-          [void Function(VelocityJsonComponentHeaderBuilder)? updates]) =>
-      (VelocityJsonComponentHeaderBuilder()..update(updates))._build();
+  factory _$VelocityJsonComponentHeader([
+    void Function(VelocityJsonComponentHeaderBuilder)? updates,
+  ]) => (VelocityJsonComponentHeaderBuilder()..update(updates))._build();
 
-  _$VelocityJsonComponentHeader._(
-      {required this.parameterCategory,
-      required this.parameterNumber,
-      required this.lo1,
-      required this.la1,
-      required this.lo2,
-      required this.la2,
-      required this.dx,
-      required this.dy,
-      required this.nx,
-      required this.ny,
-      required this.refTime,
-      required this.forecastTime})
-      : super._();
+  _$VelocityJsonComponentHeader._({
+    required this.parameterCategory,
+    required this.parameterNumber,
+    required this.lo1,
+    required this.la1,
+    required this.lo2,
+    required this.la2,
+    required this.dx,
+    required this.dy,
+    required this.nx,
+    required this.ny,
+    required this.refTime,
+    required this.forecastTime,
+  }) : super._();
   @override
   VelocityJsonComponentHeader rebuild(
-          void Function(VelocityJsonComponentHeaderBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(VelocityJsonComponentHeaderBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   VelocityJsonComponentHeaderBuilder toBuilder() =>
@@ -234,24 +244,25 @@ class _$VelocityJsonComponentHeader extends VelocityJsonComponentHeader {
 
 class VelocityJsonComponentHeaderBuilder
     implements
-        Builder<VelocityJsonComponentHeader,
-            VelocityJsonComponentHeaderBuilder> {
+        Builder<
+          VelocityJsonComponentHeader,
+          VelocityJsonComponentHeaderBuilder
+        > {
   _$VelocityJsonComponentHeader? _$v;
 
   VelocityJsonComponentHeaderParameterCategoryEnum? _parameterCategory;
   VelocityJsonComponentHeaderParameterCategoryEnum? get parameterCategory =>
       _$this._parameterCategory;
   set parameterCategory(
-          VelocityJsonComponentHeaderParameterCategoryEnum?
-              parameterCategory) =>
-      _$this._parameterCategory = parameterCategory;
+    VelocityJsonComponentHeaderParameterCategoryEnum? parameterCategory,
+  ) => _$this._parameterCategory = parameterCategory;
 
   VelocityJsonComponentHeaderParameterNumberEnum? _parameterNumber;
   VelocityJsonComponentHeaderParameterNumberEnum? get parameterNumber =>
       _$this._parameterNumber;
   set parameterNumber(
-          VelocityJsonComponentHeaderParameterNumberEnum? parameterNumber) =>
-      _$this._parameterNumber = parameterNumber;
+    VelocityJsonComponentHeaderParameterNumberEnum? parameterNumber,
+  ) => _$this._parameterNumber = parameterNumber;
 
   num? _lo1;
   num? get lo1 => _$this._lo1;
@@ -331,36 +342,69 @@ class VelocityJsonComponentHeaderBuilder
   VelocityJsonComponentHeader build() => _build();
 
   _$VelocityJsonComponentHeader _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$VelocityJsonComponentHeader._(
           parameterCategory: BuiltValueNullFieldError.checkNotNull(
-              parameterCategory,
-              r'VelocityJsonComponentHeader',
-              'parameterCategory'),
+            parameterCategory,
+            r'VelocityJsonComponentHeader',
+            'parameterCategory',
+          ),
           parameterNumber: BuiltValueNullFieldError.checkNotNull(
-              parameterNumber,
-              r'VelocityJsonComponentHeader',
-              'parameterNumber'),
+            parameterNumber,
+            r'VelocityJsonComponentHeader',
+            'parameterNumber',
+          ),
           lo1: BuiltValueNullFieldError.checkNotNull(
-              lo1, r'VelocityJsonComponentHeader', 'lo1'),
+            lo1,
+            r'VelocityJsonComponentHeader',
+            'lo1',
+          ),
           la1: BuiltValueNullFieldError.checkNotNull(
-              la1, r'VelocityJsonComponentHeader', 'la1'),
+            la1,
+            r'VelocityJsonComponentHeader',
+            'la1',
+          ),
           lo2: BuiltValueNullFieldError.checkNotNull(
-              lo2, r'VelocityJsonComponentHeader', 'lo2'),
+            lo2,
+            r'VelocityJsonComponentHeader',
+            'lo2',
+          ),
           la2: BuiltValueNullFieldError.checkNotNull(
-              la2, r'VelocityJsonComponentHeader', 'la2'),
+            la2,
+            r'VelocityJsonComponentHeader',
+            'la2',
+          ),
           dx: BuiltValueNullFieldError.checkNotNull(
-              dx, r'VelocityJsonComponentHeader', 'dx'),
+            dx,
+            r'VelocityJsonComponentHeader',
+            'dx',
+          ),
           dy: BuiltValueNullFieldError.checkNotNull(
-              dy, r'VelocityJsonComponentHeader', 'dy'),
+            dy,
+            r'VelocityJsonComponentHeader',
+            'dy',
+          ),
           nx: BuiltValueNullFieldError.checkNotNull(
-              nx, r'VelocityJsonComponentHeader', 'nx'),
+            nx,
+            r'VelocityJsonComponentHeader',
+            'nx',
+          ),
           ny: BuiltValueNullFieldError.checkNotNull(
-              ny, r'VelocityJsonComponentHeader', 'ny'),
+            ny,
+            r'VelocityJsonComponentHeader',
+            'ny',
+          ),
           refTime: BuiltValueNullFieldError.checkNotNull(
-              refTime, r'VelocityJsonComponentHeader', 'refTime'),
+            refTime,
+            r'VelocityJsonComponentHeader',
+            'refTime',
+          ),
           forecastTime: BuiltValueNullFieldError.checkNotNull(
-              forecastTime, r'VelocityJsonComponentHeader', 'forecastTime'),
+            forecastTime,
+            r'VelocityJsonComponentHeader',
+            'forecastTime',
+          ),
         );
     replace(_$result);
     return _$result;

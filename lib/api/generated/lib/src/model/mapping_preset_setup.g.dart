@@ -14,17 +14,19 @@ class _$MappingPresetSetup extends MappingPresetSetup {
   @override
   final String? url;
 
-  factory _$MappingPresetSetup(
-          [void Function(MappingPresetSetupBuilder)? updates]) =>
-      (MappingPresetSetupBuilder()..update(updates))._build();
+  factory _$MappingPresetSetup([
+    void Function(MappingPresetSetupBuilder)? updates,
+  ]) => (MappingPresetSetupBuilder()..update(updates))._build();
 
-  _$MappingPresetSetup._(
-      {required this.instructions, required this.urlTemplate, this.url})
-      : super._();
+  _$MappingPresetSetup._({
+    required this.instructions,
+    required this.urlTemplate,
+    this.url,
+  }) : super._();
   @override
   MappingPresetSetup rebuild(
-          void Function(MappingPresetSetupBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingPresetSetupBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingPresetSetupBuilder toBuilder() =>
@@ -104,12 +106,19 @@ class MappingPresetSetupBuilder
   MappingPresetSetup build() => _build();
 
   _$MappingPresetSetup _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MappingPresetSetup._(
           instructions: BuiltValueNullFieldError.checkNotNull(
-              instructions, r'MappingPresetSetup', 'instructions'),
+            instructions,
+            r'MappingPresetSetup',
+            'instructions',
+          ),
           urlTemplate: BuiltValueNullFieldError.checkNotNull(
-              urlTemplate, r'MappingPresetSetup', 'urlTemplate'),
+            urlTemplate,
+            r'MappingPresetSetup',
+            'urlTemplate',
+          ),
           url: url,
         );
     replace(_$result);

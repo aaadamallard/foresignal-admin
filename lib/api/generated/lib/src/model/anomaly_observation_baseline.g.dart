@@ -7,14 +7,14 @@ part of 'anomaly_observation_baseline.dart';
 // **************************************************************************
 
 const AnomalyObservationBaselineSlotModeEnum
-    _$anomalyObservationBaselineSlotModeEnum_hourOfWeek =
+_$anomalyObservationBaselineSlotModeEnum_hourOfWeek =
     const AnomalyObservationBaselineSlotModeEnum._('hourOfWeek');
 const AnomalyObservationBaselineSlotModeEnum
-    _$anomalyObservationBaselineSlotModeEnum_hourOfDay =
+_$anomalyObservationBaselineSlotModeEnum_hourOfDay =
     const AnomalyObservationBaselineSlotModeEnum._('hourOfDay');
 
 AnomalyObservationBaselineSlotModeEnum
-    _$anomalyObservationBaselineSlotModeEnumValueOf(String name) {
+_$anomalyObservationBaselineSlotModeEnumValueOf(String name) {
   switch (name) {
     case 'hourOfWeek':
       return _$anomalyObservationBaselineSlotModeEnum_hourOfWeek;
@@ -26,21 +26,23 @@ AnomalyObservationBaselineSlotModeEnum
 }
 
 final BuiltSet<AnomalyObservationBaselineSlotModeEnum>
-    _$anomalyObservationBaselineSlotModeEnumValues = BuiltSet<
-        AnomalyObservationBaselineSlotModeEnum>(const <AnomalyObservationBaselineSlotModeEnum>[
-  _$anomalyObservationBaselineSlotModeEnum_hourOfWeek,
-  _$anomalyObservationBaselineSlotModeEnum_hourOfDay,
-]);
+_$anomalyObservationBaselineSlotModeEnumValues =
+    BuiltSet<AnomalyObservationBaselineSlotModeEnum>(
+      const <AnomalyObservationBaselineSlotModeEnum>[
+        _$anomalyObservationBaselineSlotModeEnum_hourOfWeek,
+        _$anomalyObservationBaselineSlotModeEnum_hourOfDay,
+      ],
+    );
 
 const AnomalyObservationBaselineModelEnum
-    _$anomalyObservationBaselineModelEnum_poisson =
+_$anomalyObservationBaselineModelEnum_poisson =
     const AnomalyObservationBaselineModelEnum._('poisson');
 const AnomalyObservationBaselineModelEnum
-    _$anomalyObservationBaselineModelEnum_nb =
+_$anomalyObservationBaselineModelEnum_nb =
     const AnomalyObservationBaselineModelEnum._('nb');
 
 AnomalyObservationBaselineModelEnum
-    _$anomalyObservationBaselineModelEnumValueOf(String name) {
+_$anomalyObservationBaselineModelEnumValueOf(String name) {
   switch (name) {
     case 'poisson':
       return _$anomalyObservationBaselineModelEnum_poisson;
@@ -52,17 +54,19 @@ AnomalyObservationBaselineModelEnum
 }
 
 final BuiltSet<AnomalyObservationBaselineModelEnum>
-    _$anomalyObservationBaselineModelEnumValues = BuiltSet<
-        AnomalyObservationBaselineModelEnum>(const <AnomalyObservationBaselineModelEnum>[
-  _$anomalyObservationBaselineModelEnum_poisson,
-  _$anomalyObservationBaselineModelEnum_nb,
-]);
+_$anomalyObservationBaselineModelEnumValues =
+    BuiltSet<AnomalyObservationBaselineModelEnum>(
+      const <AnomalyObservationBaselineModelEnum>[
+        _$anomalyObservationBaselineModelEnum_poisson,
+        _$anomalyObservationBaselineModelEnum_nb,
+      ],
+    );
 
 Serializer<AnomalyObservationBaselineSlotModeEnum>
-    _$anomalyObservationBaselineSlotModeEnumSerializer =
+_$anomalyObservationBaselineSlotModeEnumSerializer =
     _$AnomalyObservationBaselineSlotModeEnumSerializer();
 Serializer<AnomalyObservationBaselineModelEnum>
-    _$anomalyObservationBaselineModelEnumSerializer =
+_$anomalyObservationBaselineModelEnumSerializer =
     _$AnomalyObservationBaselineModelEnumSerializer();
 
 class _$AnomalyObservationBaselineSlotModeEnumSerializer
@@ -78,23 +82,26 @@ class _$AnomalyObservationBaselineSlotModeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AnomalyObservationBaselineSlotModeEnum
+    AnomalyObservationBaselineSlotModeEnum,
   ];
   @override
   final String wireName = 'AnomalyObservationBaselineSlotModeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          AnomalyObservationBaselineSlotModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyObservationBaselineSlotModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyObservationBaselineSlotModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyObservationBaselineSlotModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyObservationBaselineSlotModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyObservationBaselineModelEnumSerializer
@@ -110,23 +117,26 @@ class _$AnomalyObservationBaselineModelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AnomalyObservationBaselineModelEnum
+    AnomalyObservationBaselineModelEnum,
   ];
   @override
   final String wireName = 'AnomalyObservationBaselineModelEnum';
 
   @override
   Object serialize(
-          Serializers serializers, AnomalyObservationBaselineModelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnomalyObservationBaselineModelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyObservationBaselineModelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyObservationBaselineModelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyObservationBaselineModelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyObservationBaseline extends AnomalyObservationBaseline {
@@ -141,21 +151,21 @@ class _$AnomalyObservationBaseline extends AnomalyObservationBaseline {
   @override
   final AnomalyObservationBaselineModelEnum model;
 
-  factory _$AnomalyObservationBaseline(
-          [void Function(AnomalyObservationBaselineBuilder)? updates]) =>
-      (AnomalyObservationBaselineBuilder()..update(updates))._build();
+  factory _$AnomalyObservationBaseline([
+    void Function(AnomalyObservationBaselineBuilder)? updates,
+  ]) => (AnomalyObservationBaselineBuilder()..update(updates))._build();
 
-  _$AnomalyObservationBaseline._(
-      {required this.weeks,
-      required this.slotMode,
-      required this.mean,
-      required this.variance,
-      required this.model})
-      : super._();
+  _$AnomalyObservationBaseline._({
+    required this.weeks,
+    required this.slotMode,
+    required this.mean,
+    required this.variance,
+    required this.model,
+  }) : super._();
   @override
   AnomalyObservationBaseline rebuild(
-          void Function(AnomalyObservationBaselineBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyObservationBaselineBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyObservationBaselineBuilder toBuilder() =>
@@ -254,18 +264,34 @@ class AnomalyObservationBaselineBuilder
   AnomalyObservationBaseline build() => _build();
 
   _$AnomalyObservationBaseline _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnomalyObservationBaseline._(
           weeks: BuiltValueNullFieldError.checkNotNull(
-              weeks, r'AnomalyObservationBaseline', 'weeks'),
+            weeks,
+            r'AnomalyObservationBaseline',
+            'weeks',
+          ),
           slotMode: BuiltValueNullFieldError.checkNotNull(
-              slotMode, r'AnomalyObservationBaseline', 'slotMode'),
+            slotMode,
+            r'AnomalyObservationBaseline',
+            'slotMode',
+          ),
           mean: BuiltValueNullFieldError.checkNotNull(
-              mean, r'AnomalyObservationBaseline', 'mean'),
+            mean,
+            r'AnomalyObservationBaseline',
+            'mean',
+          ),
           variance: BuiltValueNullFieldError.checkNotNull(
-              variance, r'AnomalyObservationBaseline', 'variance'),
+            variance,
+            r'AnomalyObservationBaseline',
+            'variance',
+          ),
           model: BuiltValueNullFieldError.checkNotNull(
-              model, r'AnomalyObservationBaseline', 'model'),
+            model,
+            r'AnomalyObservationBaseline',
+            'model',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -19,8 +19,10 @@ part 'hazard_forecast_probability_field_inner.g.dart';
 @BuiltValue()
 abstract class HazardForecastProbabilityFieldInner
     implements
-        Built<HazardForecastProbabilityFieldInner,
-            HazardForecastProbabilityFieldInnerBuilder> {
+        Built<
+          HazardForecastProbabilityFieldInner,
+          HazardForecastProbabilityFieldInnerBuilder
+        > {
   @BuiltValueField(wireName: r'band')
   String? get band;
 
@@ -35,9 +37,9 @@ abstract class HazardForecastProbabilityFieldInner
 
   HazardForecastProbabilityFieldInner._();
 
-  factory HazardForecastProbabilityFieldInner(
-          [void updates(HazardForecastProbabilityFieldInnerBuilder b)]) =
-      _$HazardForecastProbabilityFieldInner;
+  factory HazardForecastProbabilityFieldInner([
+    void updates(HazardForecastProbabilityFieldInnerBuilder b),
+  ]) = _$HazardForecastProbabilityFieldInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HazardForecastProbabilityFieldInnerBuilder b) => b;
@@ -52,7 +54,7 @@ class _$HazardForecastProbabilityFieldInnerSerializer
   @override
   final Iterable<Type> types = const [
     HazardForecastProbabilityFieldInner,
-    _$HazardForecastProbabilityFieldInner
+    _$HazardForecastProbabilityFieldInner,
   ];
 
   @override
@@ -97,9 +99,11 @@ class _$HazardForecastProbabilityFieldInnerSerializer
     HazardForecastProbabilityFieldInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,33 +119,38 @@ class _$HazardForecastProbabilityFieldInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'band':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.band = valueDes;
           break;
         case r'pMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pMin = valueDes;
           break;
         case r'pMax':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pMax = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geometry.replace(valueDes);
           break;

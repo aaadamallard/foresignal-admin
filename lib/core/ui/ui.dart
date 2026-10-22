@@ -1,0 +1,16 @@
+/// The admin app's shared UI primitives, following the design mocks.
+library;
+
+export 'async_view.dart';
+export 'buttons.dart';
+export 'data_table_card.dart';
+export 'error_banner.dart';
+export 'filter_bar.dart';
+export 'key_value_list.dart';
+export 'labeled_field.dart';
+export 'page_header.dart';
+export 'result_panel.dart';
+export 'section_card.dart';
+export 'status_chip.dart';
+export 'status_label.dart';
+export 'write_confirm.dart';

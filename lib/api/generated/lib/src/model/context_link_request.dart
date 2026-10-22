@@ -70,9 +70,11 @@ class _$ContextLinkRequestSerializer
     ContextLinkRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,17 +90,21 @@ class _$ContextLinkRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkspaceContext),
-          ) as WorkspaceContext;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WorkspaceContext),
+                  )
+                  as WorkspaceContext;
           result.context.replace(valueDes);
           break;
         case r'workspaceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.workspaceId = valueDes;
           break;

@@ -31,9 +31,9 @@ abstract class ProjectedImpactInputsInner
 
   ProjectedImpactInputsInner._();
 
-  factory ProjectedImpactInputsInner(
-          [void updates(ProjectedImpactInputsInnerBuilder b)]) =
-      _$ProjectedImpactInputsInner;
+  factory ProjectedImpactInputsInner([
+    void updates(ProjectedImpactInputsInnerBuilder b),
+  ]) = _$ProjectedImpactInputsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProjectedImpactInputsInnerBuilder b) => b;
@@ -48,7 +48,7 @@ class _$ProjectedImpactInputsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ProjectedImpactInputsInner,
-    _$ProjectedImpactInputsInner
+    _$ProjectedImpactInputsInner,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$ProjectedImpactInputsInnerSerializer
     ProjectedImpactInputsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,25 +106,31 @@ class _$ProjectedImpactInputsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.value = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;

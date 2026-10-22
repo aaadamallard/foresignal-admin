@@ -20,7 +20,7 @@ class _$ResolverArea extends ResolverArea {
       (ResolverAreaBuilder()..update(updates))._build();
 
   _$ResolverArea._({this.bbox, this.polygon, this.placeId, this.regionCodes})
-      : super._();
+    : super._();
   @override
   ResolverArea rebuild(void Function(ResolverAreaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,7 +114,8 @@ class ResolverAreaBuilder
   _$ResolverArea _build() {
     _$ResolverArea _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ResolverArea._(
             bbox: _bbox?.build(),
             polygon: _polygon?.build(),
@@ -133,7 +134,10 @@ class ResolverAreaBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ResolverArea', _$failedField, e.toString());
+          r'ResolverArea',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

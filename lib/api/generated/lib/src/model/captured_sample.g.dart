@@ -28,10 +28,10 @@ CapturedSampleMethodEnum _$capturedSampleMethodEnumValueOf(String name) {
 
 final BuiltSet<CapturedSampleMethodEnum> _$capturedSampleMethodEnumValues =
     BuiltSet<CapturedSampleMethodEnum>(const <CapturedSampleMethodEnum>[
-  _$capturedSampleMethodEnum_GET,
-  _$capturedSampleMethodEnum_POST,
-  _$capturedSampleMethodEnum_PUT,
-]);
+      _$capturedSampleMethodEnum_GET,
+      _$capturedSampleMethodEnum_POST,
+      _$capturedSampleMethodEnum_PUT,
+    ]);
 
 Serializer<CapturedSampleMethodEnum> _$capturedSampleMethodEnumSerializer =
     _$CapturedSampleMethodEnumSerializer();
@@ -55,16 +55,20 @@ class _$CapturedSampleMethodEnumSerializer
   final String wireName = 'CapturedSampleMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, CapturedSampleMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CapturedSampleMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CapturedSampleMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CapturedSampleMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CapturedSampleMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CapturedSample extends CapturedSample {
@@ -90,17 +94,17 @@ class _$CapturedSample extends CapturedSample {
   factory _$CapturedSample([void Function(CapturedSampleBuilder)? updates]) =>
       (CapturedSampleBuilder()..update(updates))._build();
 
-  _$CapturedSample._(
-      {required this.receivedAt,
-      required this.method,
-      this.format,
-      this.contentType,
-      this.contentEncoding,
-      this.query,
-      this.body,
-      this.bodyBytes,
-      this.truncated})
-      : super._();
+  _$CapturedSample._({
+    required this.receivedAt,
+    required this.method,
+    this.format,
+    this.contentType,
+    this.contentEncoding,
+    this.query,
+    this.body,
+    this.bodyBytes,
+    this.truncated,
+  }) : super._();
   @override
   CapturedSample rebuild(void Function(CapturedSampleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -231,12 +235,19 @@ class CapturedSampleBuilder
   CapturedSample build() => _build();
 
   _$CapturedSample _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CapturedSample._(
           receivedAt: BuiltValueNullFieldError.checkNotNull(
-              receivedAt, r'CapturedSample', 'receivedAt'),
+            receivedAt,
+            r'CapturedSample',
+            'receivedAt',
+          ),
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'CapturedSample', 'method'),
+            method,
+            r'CapturedSample',
+            'method',
+          ),
           format: format,
           contentType: contentType,
           contentEncoding: contentEncoding,

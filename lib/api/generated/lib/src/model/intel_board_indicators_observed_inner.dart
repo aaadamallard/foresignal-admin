@@ -18,8 +18,10 @@ part 'intel_board_indicators_observed_inner.g.dart';
 @BuiltValue()
 abstract class IntelBoardIndicatorsObservedInner
     implements
-        Built<IntelBoardIndicatorsObservedInner,
-            IntelBoardIndicatorsObservedInnerBuilder> {
+        Built<
+          IntelBoardIndicatorsObservedInner,
+          IntelBoardIndicatorsObservedInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'indicatorId')
   String get indicatorId;
@@ -36,9 +38,9 @@ abstract class IntelBoardIndicatorsObservedInner
 
   IntelBoardIndicatorsObservedInner._();
 
-  factory IntelBoardIndicatorsObservedInner(
-          [void updates(IntelBoardIndicatorsObservedInnerBuilder b)]) =
-      _$IntelBoardIndicatorsObservedInner;
+  factory IntelBoardIndicatorsObservedInner([
+    void updates(IntelBoardIndicatorsObservedInnerBuilder b),
+  ]) = _$IntelBoardIndicatorsObservedInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardIndicatorsObservedInnerBuilder b) => b;
@@ -53,7 +55,7 @@ class _$IntelBoardIndicatorsObservedInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardIndicatorsObservedInner,
-    _$IntelBoardIndicatorsObservedInner
+    _$IntelBoardIndicatorsObservedInner,
   ];
 
   @override
@@ -94,9 +96,11 @@ class _$IntelBoardIndicatorsObservedInnerSerializer
     IntelBoardIndicatorsObservedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +116,40 @@ class _$IntelBoardIndicatorsObservedInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'indicatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.indicatorId = valueDes;
           break;
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

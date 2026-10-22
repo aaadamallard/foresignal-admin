@@ -50,7 +50,7 @@ class _$InvestigationExportSerializer
   @override
   final Iterable<Type> types = const [
     InvestigationExport,
-    _$InvestigationExport
+    _$InvestigationExport,
   ];
 
   @override
@@ -89,9 +89,11 @@ class _$InvestigationExportSerializer
     InvestigationExport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,31 +109,41 @@ class _$InvestigationExportSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'header':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.header = valueDes;
           break;
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.generatedAt = valueDes;
           break;
         case r'investigation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Investigation),
-          ) as Investigation;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Investigation),
+                  )
+                  as Investigation;
           result.investigation.replace(valueDes);
           break;
         case r'attributions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.attributions.replace(valueDes);
           break;
         default:

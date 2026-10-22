@@ -16,17 +16,20 @@ class _$RetentionSettingsStats extends RetentionSettingsStats {
   @override
   final String? regionDaily;
 
-  factory _$RetentionSettingsStats(
-          [void Function(RetentionSettingsStatsBuilder)? updates]) =>
-      (RetentionSettingsStatsBuilder()..update(updates))._build();
+  factory _$RetentionSettingsStats([
+    void Function(RetentionSettingsStatsBuilder)? updates,
+  ]) => (RetentionSettingsStatsBuilder()..update(updates))._build();
 
-  _$RetentionSettingsStats._(
-      {this.hourly, this.daily, this.regionHourly, this.regionDaily})
-      : super._();
+  _$RetentionSettingsStats._({
+    this.hourly,
+    this.daily,
+    this.regionHourly,
+    this.regionDaily,
+  }) : super._();
   @override
   RetentionSettingsStats rebuild(
-          void Function(RetentionSettingsStatsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RetentionSettingsStatsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RetentionSettingsStatsBuilder toBuilder() =>
@@ -114,7 +117,8 @@ class RetentionSettingsStatsBuilder
   RetentionSettingsStats build() => _build();
 
   _$RetentionSettingsStats _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RetentionSettingsStats._(
           hourly: hourly,
           daily: daily,

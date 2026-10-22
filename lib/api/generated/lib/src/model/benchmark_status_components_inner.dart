@@ -24,8 +24,10 @@ part 'benchmark_status_components_inner.g.dart';
 @BuiltValue()
 abstract class BenchmarkStatusComponentsInner
     implements
-        Built<BenchmarkStatusComponentsInner,
-            BenchmarkStatusComponentsInnerBuilder> {
+        Built<
+          BenchmarkStatusComponentsInner,
+          BenchmarkStatusComponentsInnerBuilder
+        > {
   /// Benchmarked component: `change-point`, `anomaly`, `event-study`, `co-occurrence`, `evidence`, `canonical-linking`, `precursor`, `situation-linker`, `forecaster:base-rate`, `forecaster:analog`, `forecaster:precursor` or `forecaster:ensemble`
   @BuiltValueField(wireName: r'component')
   String get component;
@@ -58,9 +60,9 @@ abstract class BenchmarkStatusComponentsInner
 
   BenchmarkStatusComponentsInner._();
 
-  factory BenchmarkStatusComponentsInner(
-          [void updates(BenchmarkStatusComponentsInnerBuilder b)]) =
-      _$BenchmarkStatusComponentsInner;
+  factory BenchmarkStatusComponentsInner([
+    void updates(BenchmarkStatusComponentsInnerBuilder b),
+  ]) = _$BenchmarkStatusComponentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkStatusComponentsInnerBuilder b) => b;
@@ -75,7 +77,7 @@ class _$BenchmarkStatusComponentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkStatusComponentsInner,
-    _$BenchmarkStatusComponentsInner
+    _$BenchmarkStatusComponentsInner,
   ];
 
   @override
@@ -114,8 +116,9 @@ class _$BenchmarkStatusComponentsInnerSerializer
       yield r'suite';
       yield serializers.serialize(
         object.suite,
-        specifiedType:
-            const FullType.nullable(BenchmarkStatusComponentsInnerSuiteEnum),
+        specifiedType: const FullType.nullable(
+          BenchmarkStatusComponentsInnerSuiteEnum,
+        ),
       );
     }
     if (object.finishedAt != null) {
@@ -147,9 +150,11 @@ class _$BenchmarkStatusComponentsInnerSerializer
     BenchmarkStatusComponentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -165,67 +170,86 @@ class _$BenchmarkStatusComponentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'component':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.component = valueDes;
           break;
         case r'componentVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.componentVersion = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BenchmarkStatusComponentsInnerStatusEnum),
-          ) as BenchmarkStatusComponentsInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkStatusComponentsInnerStatusEnum,
+                    ),
+                  )
+                  as BenchmarkStatusComponentsInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'runId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.runId = valueDes;
           break;
         case r'suite':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BenchmarkStatusComponentsInnerSuiteEnum),
-          ) as BenchmarkStatusComponentsInnerSuiteEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      BenchmarkStatusComponentsInnerSuiteEnum,
+                    ),
+                  )
+                  as BenchmarkStatusComponentsInnerSuiteEnum?;
           if (valueDes == null) continue;
           result.suite = valueDes;
           break;
         case r'finishedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.finishedAt = valueDes;
           break;
         case r'versionChanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.versionChanged = valueDes;
           break;
         case r'gating':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BenchmarkStatusComponentsInnerGating),
-          ) as BenchmarkStatusComponentsInnerGating?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      BenchmarkStatusComponentsInnerGating,
+                    ),
+                  )
+                  as BenchmarkStatusComponentsInnerGating?;
           if (valueDes == null) continue;
           result.gating.replace(valueDes);
           break;

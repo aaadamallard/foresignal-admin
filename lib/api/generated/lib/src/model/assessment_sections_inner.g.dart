@@ -9,30 +9,30 @@ part of 'assessment_sections_inner.dart';
 const AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnum_bluf =
     const AssessmentSectionsInnerKeyEnum._('bluf');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_whatChanged =
+_$assessmentSectionsInnerKeyEnum_whatChanged =
     const AssessmentSectionsInnerKeyEnum._('whatChanged');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_situations =
+_$assessmentSectionsInnerKeyEnum_situations =
     const AssessmentSectionsInnerKeyEnum._('situations');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_hypotheses =
+_$assessmentSectionsInnerKeyEnum_hypotheses =
     const AssessmentSectionsInnerKeyEnum._('hypotheses');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_indicators =
+_$assessmentSectionsInnerKeyEnum_indicators =
     const AssessmentSectionsInnerKeyEnum._('indicators');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_forecasts =
+_$assessmentSectionsInnerKeyEnum_forecasts =
     const AssessmentSectionsInnerKeyEnum._('forecasts');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_speculation =
+_$assessmentSectionsInnerKeyEnum_speculation =
     const AssessmentSectionsInnerKeyEnum._('speculation');
 const AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnum_sources =
     const AssessmentSectionsInnerKeyEnum._('sources');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_collectionGaps =
+_$assessmentSectionsInnerKeyEnum_collectionGaps =
     const AssessmentSectionsInnerKeyEnum._('collectionGaps');
 const AssessmentSectionsInnerKeyEnum
-    _$assessmentSectionsInnerKeyEnum_keyInsights =
+_$assessmentSectionsInnerKeyEnum_keyInsights =
     const AssessmentSectionsInnerKeyEnum._('keyInsights');
 const AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnum_outlook =
     const AssessmentSectionsInnerKeyEnum._('outlook');
@@ -42,7 +42,8 @@ const AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnum_social =
     const AssessmentSectionsInnerKeyEnum._('social');
 
 AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'bluf':
       return _$assessmentSectionsInnerKeyEnum_bluf;
@@ -76,35 +77,37 @@ AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnumValueOf(
 }
 
 final BuiltSet<AssessmentSectionsInnerKeyEnum>
-    _$assessmentSectionsInnerKeyEnumValues = BuiltSet<
-        AssessmentSectionsInnerKeyEnum>(const <AssessmentSectionsInnerKeyEnum>[
-  _$assessmentSectionsInnerKeyEnum_bluf,
-  _$assessmentSectionsInnerKeyEnum_whatChanged,
-  _$assessmentSectionsInnerKeyEnum_situations,
-  _$assessmentSectionsInnerKeyEnum_hypotheses,
-  _$assessmentSectionsInnerKeyEnum_indicators,
-  _$assessmentSectionsInnerKeyEnum_forecasts,
-  _$assessmentSectionsInnerKeyEnum_speculation,
-  _$assessmentSectionsInnerKeyEnum_sources,
-  _$assessmentSectionsInnerKeyEnum_collectionGaps,
-  _$assessmentSectionsInnerKeyEnum_keyInsights,
-  _$assessmentSectionsInnerKeyEnum_outlook,
-  _$assessmentSectionsInnerKeyEnum_risks,
-  _$assessmentSectionsInnerKeyEnum_social,
-]);
+_$assessmentSectionsInnerKeyEnumValues =
+    BuiltSet<AssessmentSectionsInnerKeyEnum>(
+      const <AssessmentSectionsInnerKeyEnum>[
+        _$assessmentSectionsInnerKeyEnum_bluf,
+        _$assessmentSectionsInnerKeyEnum_whatChanged,
+        _$assessmentSectionsInnerKeyEnum_situations,
+        _$assessmentSectionsInnerKeyEnum_hypotheses,
+        _$assessmentSectionsInnerKeyEnum_indicators,
+        _$assessmentSectionsInnerKeyEnum_forecasts,
+        _$assessmentSectionsInnerKeyEnum_speculation,
+        _$assessmentSectionsInnerKeyEnum_sources,
+        _$assessmentSectionsInnerKeyEnum_collectionGaps,
+        _$assessmentSectionsInnerKeyEnum_keyInsights,
+        _$assessmentSectionsInnerKeyEnum_outlook,
+        _$assessmentSectionsInnerKeyEnum_risks,
+        _$assessmentSectionsInnerKeyEnum_social,
+      ],
+    );
 
 const AssessmentSectionsInnerTextOriginEnum
-    _$assessmentSectionsInnerTextOriginEnum_deterministic =
+_$assessmentSectionsInnerTextOriginEnum_deterministic =
     const AssessmentSectionsInnerTextOriginEnum._('deterministic');
 const AssessmentSectionsInnerTextOriginEnum
-    _$assessmentSectionsInnerTextOriginEnum_llm =
+_$assessmentSectionsInnerTextOriginEnum_llm =
     const AssessmentSectionsInnerTextOriginEnum._('llm');
 const AssessmentSectionsInnerTextOriginEnum
-    _$assessmentSectionsInnerTextOriginEnum_mixed =
+_$assessmentSectionsInnerTextOriginEnum_mixed =
     const AssessmentSectionsInnerTextOriginEnum._('mixed');
 
 AssessmentSectionsInnerTextOriginEnum
-    _$assessmentSectionsInnerTextOriginEnumValueOf(String name) {
+_$assessmentSectionsInnerTextOriginEnumValueOf(String name) {
   switch (name) {
     case 'deterministic':
       return _$assessmentSectionsInnerTextOriginEnum_deterministic;
@@ -118,18 +121,20 @@ AssessmentSectionsInnerTextOriginEnum
 }
 
 final BuiltSet<AssessmentSectionsInnerTextOriginEnum>
-    _$assessmentSectionsInnerTextOriginEnumValues = BuiltSet<
-        AssessmentSectionsInnerTextOriginEnum>(const <AssessmentSectionsInnerTextOriginEnum>[
-  _$assessmentSectionsInnerTextOriginEnum_deterministic,
-  _$assessmentSectionsInnerTextOriginEnum_llm,
-  _$assessmentSectionsInnerTextOriginEnum_mixed,
-]);
+_$assessmentSectionsInnerTextOriginEnumValues =
+    BuiltSet<AssessmentSectionsInnerTextOriginEnum>(
+      const <AssessmentSectionsInnerTextOriginEnum>[
+        _$assessmentSectionsInnerTextOriginEnum_deterministic,
+        _$assessmentSectionsInnerTextOriginEnum_llm,
+        _$assessmentSectionsInnerTextOriginEnum_mixed,
+      ],
+    );
 
 Serializer<AssessmentSectionsInnerKeyEnum>
-    _$assessmentSectionsInnerKeyEnumSerializer =
+_$assessmentSectionsInnerKeyEnumSerializer =
     _$AssessmentSectionsInnerKeyEnumSerializer();
 Serializer<AssessmentSectionsInnerTextOriginEnum>
-    _$assessmentSectionsInnerTextOriginEnumSerializer =
+_$assessmentSectionsInnerTextOriginEnumSerializer =
     _$AssessmentSectionsInnerTextOriginEnumSerializer();
 
 class _$AssessmentSectionsInnerKeyEnumSerializer
@@ -172,16 +177,19 @@ class _$AssessmentSectionsInnerKeyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AssessmentSectionsInnerKeyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AssessmentSectionsInnerKeyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AssessmentSectionsInnerKeyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentSectionsInnerKeyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentSectionsInnerKeyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentSectionsInnerTextOriginEnumSerializer
@@ -199,23 +207,26 @@ class _$AssessmentSectionsInnerTextOriginEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AssessmentSectionsInnerTextOriginEnum
+    AssessmentSectionsInnerTextOriginEnum,
   ];
   @override
   final String wireName = 'AssessmentSectionsInnerTextOriginEnum';
 
   @override
   Object serialize(
-          Serializers serializers, AssessmentSectionsInnerTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AssessmentSectionsInnerTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AssessmentSectionsInnerTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentSectionsInnerTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentSectionsInnerTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentSectionsInner extends AssessmentSectionsInner {
@@ -230,21 +241,21 @@ class _$AssessmentSectionsInner extends AssessmentSectionsInner {
   @override
   final JsonObject? data;
 
-  factory _$AssessmentSectionsInner(
-          [void Function(AssessmentSectionsInnerBuilder)? updates]) =>
-      (AssessmentSectionsInnerBuilder()..update(updates))._build();
+  factory _$AssessmentSectionsInner([
+    void Function(AssessmentSectionsInnerBuilder)? updates,
+  ]) => (AssessmentSectionsInnerBuilder()..update(updates))._build();
 
-  _$AssessmentSectionsInner._(
-      {required this.key,
-      required this.title,
-      required this.markdown,
-      required this.textOrigin,
-      this.data})
-      : super._();
+  _$AssessmentSectionsInner._({
+    required this.key,
+    required this.title,
+    required this.markdown,
+    required this.textOrigin,
+    this.data,
+  }) : super._();
   @override
   AssessmentSectionsInner rebuild(
-          void Function(AssessmentSectionsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentSectionsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentSectionsInnerBuilder toBuilder() =>
@@ -342,16 +353,29 @@ class AssessmentSectionsInnerBuilder
   AssessmentSectionsInner build() => _build();
 
   _$AssessmentSectionsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AssessmentSectionsInner._(
           key: BuiltValueNullFieldError.checkNotNull(
-              key, r'AssessmentSectionsInner', 'key'),
+            key,
+            r'AssessmentSectionsInner',
+            'key',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'AssessmentSectionsInner', 'title'),
+            title,
+            r'AssessmentSectionsInner',
+            'title',
+          ),
           markdown: BuiltValueNullFieldError.checkNotNull(
-              markdown, r'AssessmentSectionsInner', 'markdown'),
+            markdown,
+            r'AssessmentSectionsInner',
+            'markdown',
+          ),
           textOrigin: BuiltValueNullFieldError.checkNotNull(
-              textOrigin, r'AssessmentSectionsInner', 'textOrigin'),
+            textOrigin,
+            r'AssessmentSectionsInner',
+            'textOrigin',
+          ),
           data: data,
         );
     replace(_$result);

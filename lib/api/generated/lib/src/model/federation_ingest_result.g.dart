@@ -14,17 +14,19 @@ class _$FederationIngestResult extends FederationIngestResult {
   @override
   final FederationIngestResultDropped dropped;
 
-  factory _$FederationIngestResult(
-          [void Function(FederationIngestResultBuilder)? updates]) =>
-      (FederationIngestResultBuilder()..update(updates))._build();
+  factory _$FederationIngestResult([
+    void Function(FederationIngestResultBuilder)? updates,
+  ]) => (FederationIngestResultBuilder()..update(updates))._build();
 
-  _$FederationIngestResult._(
-      {required this.accepted, required this.duplicates, required this.dropped})
-      : super._();
+  _$FederationIngestResult._({
+    required this.accepted,
+    required this.duplicates,
+    required this.dropped,
+  }) : super._();
   @override
   FederationIngestResult rebuild(
-          void Function(FederationIngestResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FederationIngestResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FederationIngestResultBuilder toBuilder() =>
@@ -108,12 +110,19 @@ class FederationIngestResultBuilder
   _$FederationIngestResult _build() {
     _$FederationIngestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FederationIngestResult._(
             accepted: BuiltValueNullFieldError.checkNotNull(
-                accepted, r'FederationIngestResult', 'accepted'),
+              accepted,
+              r'FederationIngestResult',
+              'accepted',
+            ),
             duplicates: BuiltValueNullFieldError.checkNotNull(
-                duplicates, r'FederationIngestResult', 'duplicates'),
+              duplicates,
+              r'FederationIngestResult',
+              'duplicates',
+            ),
             dropped: dropped.build(),
           );
     } catch (_) {
@@ -123,7 +132,10 @@ class FederationIngestResultBuilder
         dropped.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FederationIngestResult', _$failedField, e.toString());
+          r'FederationIngestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

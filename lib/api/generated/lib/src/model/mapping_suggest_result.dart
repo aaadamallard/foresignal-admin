@@ -64,7 +64,7 @@ class _$MappingSuggestResultSerializer
   @override
   final Iterable<Type> types = const [
     MappingSuggestResult,
-    _$MappingSuggestResult
+    _$MappingSuggestResult,
   ];
 
   @override
@@ -122,9 +122,11 @@ class _$MappingSuggestResultSerializer
     MappingSuggestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,55 +142,72 @@ class _$MappingSuggestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'draft':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RecordMapping),
-          ) as RecordMapping;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(RecordMapping),
+                  )
+                  as RecordMapping;
           result.draft.replace(valueDes);
           break;
         case r'explanation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.explanation = valueDes;
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(MappingWarning)]),
-          ) as BuiltList<MappingWarning>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MappingWarning),
+                    ]),
+                  )
+                  as BuiltList<MappingWarning>;
           result.warnings.replace(valueDes);
           break;
         case r'preview':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(MappingPreviewResult),
-          ) as MappingPreviewResult?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MappingPreviewResult,
+                    ),
+                  )
+                  as MappingPreviewResult?;
           if (valueDes == null) continue;
           result.preview.replace(valueDes);
           break;
         case r'repairRounds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.repairRounds = valueDes;
           break;
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.provider = valueDes;
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.model = valueDes;
           break;
         default:

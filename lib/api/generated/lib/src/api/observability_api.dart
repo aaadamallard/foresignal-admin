@@ -61,16 +61,10 @@ class ObservabilityApi {
     final _path = r'/v1/observability';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -78,19 +72,31 @@ class ObservabilityApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'family':
-          encodeQueryParameter(_serializers, family, const FullType(String)),
+      r'family': encodeQueryParameter(
+        _serializers,
+        family,
+        const FullType(String),
+      ),
       if (region != null)
-        r'region':
-            encodeQueryParameter(_serializers, region, const FullType(String)),
+        r'region': encodeQueryParameter(
+          _serializers,
+          region,
+          const FullType(String),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (at != null)
         r'at': encodeQueryParameter(_serializers, at, const FullType(DateTime)),
       if (band != null)
-        r'band':
-            encodeQueryParameter(_serializers, band, const FullType(String)),
+        r'band': encodeQueryParameter(
+          _serializers,
+          band,
+          const FullType(String),
+        ),
       if (include != null)
         r'include': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -99,11 +105,17 @@ class ObservabilityApi {
           format: ListFormat.csv,
         ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -122,9 +134,10 @@ class ObservabilityApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ObservabilityCoverage),
-            ) as ObservabilityCoverage;
+                  rawResponse,
+                  specifiedType: const FullType(ObservabilityCoverage),
+                )
+                as ObservabilityCoverage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -182,30 +195,30 @@ class ObservabilityApi {
   }) async {
     final _path = r'/v1/observability/tiles/{z}/{x}/{y}.mvt'
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -213,13 +226,19 @@ class ObservabilityApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'family':
-          encodeQueryParameter(_serializers, family, const FullType(String)),
+      r'family': encodeQueryParameter(
+        _serializers,
+        family,
+        const FullType(String),
+      ),
       if (at != null)
         r'at': encodeQueryParameter(_serializers, at, const FullType(DateTime)),
       if (band != null)
-        r'band':
-            encodeQueryParameter(_serializers, band, const FullType(String)),
+        r'band': encodeQueryParameter(
+          _serializers,
+          band,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(

@@ -34,29 +34,29 @@ class _$ChronicleRecordVersion extends ChronicleRecordVersion {
   @override
   final bool? backfilled;
 
-  factory _$ChronicleRecordVersion(
-          [void Function(ChronicleRecordVersionBuilder)? updates]) =>
-      (ChronicleRecordVersionBuilder()..update(updates))._build();
+  factory _$ChronicleRecordVersion([
+    void Function(ChronicleRecordVersionBuilder)? updates,
+  ]) => (ChronicleRecordVersionBuilder()..update(updates))._build();
 
-  _$ChronicleRecordVersion._(
-      {required this.ref,
-      required this.sourceId,
-      required this.externalId,
-      required this.kind,
-      required this.seq,
-      required this.observedAt,
-      this.eventTime,
-      this.ingestedAt,
-      this.geometry,
-      this.payload,
-      this.persistReason,
-      required this.layerId,
-      this.backfilled})
-      : super._();
+  _$ChronicleRecordVersion._({
+    required this.ref,
+    required this.sourceId,
+    required this.externalId,
+    required this.kind,
+    required this.seq,
+    required this.observedAt,
+    this.eventTime,
+    this.ingestedAt,
+    this.geometry,
+    this.payload,
+    this.persistReason,
+    required this.layerId,
+    this.backfilled,
+  }) : super._();
   @override
   ChronicleRecordVersion rebuild(
-          void Function(ChronicleRecordVersionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleRecordVersionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleRecordVersionBuilder toBuilder() =>
@@ -221,27 +221,49 @@ class ChronicleRecordVersionBuilder
   _$ChronicleRecordVersion _build() {
     _$ChronicleRecordVersion _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleRecordVersion._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'ChronicleRecordVersion', 'ref'),
+              ref,
+              r'ChronicleRecordVersion',
+              'ref',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'ChronicleRecordVersion', 'sourceId'),
+              sourceId,
+              r'ChronicleRecordVersion',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'ChronicleRecordVersion', 'externalId'),
+              externalId,
+              r'ChronicleRecordVersion',
+              'externalId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'ChronicleRecordVersion', 'kind'),
+              kind,
+              r'ChronicleRecordVersion',
+              'kind',
+            ),
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'ChronicleRecordVersion', 'seq'),
+              seq,
+              r'ChronicleRecordVersion',
+              'seq',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'ChronicleRecordVersion', 'observedAt'),
+              observedAt,
+              r'ChronicleRecordVersion',
+              'observedAt',
+            ),
             eventTime: eventTime,
             ingestedAt: ingestedAt,
             geometry: _geometry?.build(),
             payload: _payload?.build(),
             persistReason: persistReason,
             layerId: BuiltValueNullFieldError.checkNotNull(
-                layerId, r'ChronicleRecordVersion', 'layerId'),
+              layerId,
+              r'ChronicleRecordVersion',
+              'layerId',
+            ),
             backfilled: backfilled,
           );
     } catch (_) {
@@ -253,7 +275,10 @@ class ChronicleRecordVersionBuilder
         _payload?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleRecordVersion', _$failedField, e.toString());
+          r'ChronicleRecordVersion',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

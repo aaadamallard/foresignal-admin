@@ -14,7 +14,8 @@ const BaseRateDefinitionWindowEnum _$baseRateDefinitionWindowEnum_P90D =
     const BaseRateDefinitionWindowEnum._('P90D');
 
 BaseRateDefinitionWindowEnum _$baseRateDefinitionWindowEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'P7D':
       return _$baseRateDefinitionWindowEnum_P7D;
@@ -28,15 +29,15 @@ BaseRateDefinitionWindowEnum _$baseRateDefinitionWindowEnumValueOf(
 }
 
 final BuiltSet<BaseRateDefinitionWindowEnum>
-    _$baseRateDefinitionWindowEnumValues =
+_$baseRateDefinitionWindowEnumValues =
     BuiltSet<BaseRateDefinitionWindowEnum>(const <BaseRateDefinitionWindowEnum>[
-  _$baseRateDefinitionWindowEnum_P7D,
-  _$baseRateDefinitionWindowEnum_P28D,
-  _$baseRateDefinitionWindowEnum_P90D,
-]);
+      _$baseRateDefinitionWindowEnum_P7D,
+      _$baseRateDefinitionWindowEnum_P28D,
+      _$baseRateDefinitionWindowEnum_P90D,
+    ]);
 
 Serializer<BaseRateDefinitionWindowEnum>
-    _$baseRateDefinitionWindowEnumSerializer =
+_$baseRateDefinitionWindowEnumSerializer =
     _$BaseRateDefinitionWindowEnumSerializer();
 
 class _$BaseRateDefinitionWindowEnumSerializer
@@ -58,16 +59,20 @@ class _$BaseRateDefinitionWindowEnumSerializer
   final String wireName = 'BaseRateDefinitionWindowEnum';
 
   @override
-  Object serialize(Serializers serializers, BaseRateDefinitionWindowEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BaseRateDefinitionWindowEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BaseRateDefinitionWindowEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BaseRateDefinitionWindowEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BaseRateDefinitionWindowEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BaseRateDefinition extends BaseRateDefinition {
@@ -82,21 +87,21 @@ class _$BaseRateDefinition extends BaseRateDefinition {
   @override
   final BaseRateDefinitionCondition? condition;
 
-  factory _$BaseRateDefinition(
-          [void Function(BaseRateDefinitionBuilder)? updates]) =>
-      (BaseRateDefinitionBuilder()..update(updates))._build();
+  factory _$BaseRateDefinition([
+    void Function(BaseRateDefinitionBuilder)? updates,
+  ]) => (BaseRateDefinitionBuilder()..update(updates))._build();
 
-  _$BaseRateDefinition._(
-      {required this.family,
-      this.regionCodes,
-      this.regionClass,
-      required this.window,
-      this.condition})
-      : super._();
+  _$BaseRateDefinition._({
+    required this.family,
+    this.regionCodes,
+    this.regionClass,
+    required this.window,
+    this.condition,
+  }) : super._();
   @override
   BaseRateDefinition rebuild(
-          void Function(BaseRateDefinitionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BaseRateDefinitionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BaseRateDefinitionBuilder toBuilder() =>
@@ -198,14 +203,21 @@ class BaseRateDefinitionBuilder
   _$BaseRateDefinition _build() {
     _$BaseRateDefinition _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BaseRateDefinition._(
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'BaseRateDefinition', 'family'),
+              family,
+              r'BaseRateDefinition',
+              'family',
+            ),
             regionCodes: _regionCodes?.build(),
             regionClass: regionClass,
             window: BuiltValueNullFieldError.checkNotNull(
-                window, r'BaseRateDefinition', 'window'),
+              window,
+              r'BaseRateDefinition',
+              'window',
+            ),
             condition: _condition?.build(),
           );
     } catch (_) {
@@ -218,7 +230,10 @@ class BaseRateDefinitionBuilder
         _condition?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BaseRateDefinition', _$failedField, e.toString());
+          r'BaseRateDefinition',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -15,20 +15,20 @@ class _$NarrativeTimelineSeriesInnerPointsInner
   @override
   final int uniqueAuthors;
 
-  factory _$NarrativeTimelineSeriesInnerPointsInner(
-          [void Function(NarrativeTimelineSeriesInnerPointsInnerBuilder)?
-              updates]) =>
-      (NarrativeTimelineSeriesInnerPointsInnerBuilder()..update(updates))
-          ._build();
+  factory _$NarrativeTimelineSeriesInnerPointsInner([
+    void Function(NarrativeTimelineSeriesInnerPointsInnerBuilder)? updates,
+  ]) => (NarrativeTimelineSeriesInnerPointsInnerBuilder()..update(updates))
+      ._build();
 
-  _$NarrativeTimelineSeriesInnerPointsInner._(
-      {required this.t, required this.posts, required this.uniqueAuthors})
-      : super._();
+  _$NarrativeTimelineSeriesInnerPointsInner._({
+    required this.t,
+    required this.posts,
+    required this.uniqueAuthors,
+  }) : super._();
   @override
   NarrativeTimelineSeriesInnerPointsInner rebuild(
-          void Function(NarrativeTimelineSeriesInnerPointsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NarrativeTimelineSeriesInnerPointsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NarrativeTimelineSeriesInnerPointsInnerBuilder toBuilder() =>
@@ -56,7 +56,8 @@ class _$NarrativeTimelineSeriesInnerPointsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'NarrativeTimelineSeriesInnerPointsInner')
+            r'NarrativeTimelineSeriesInnerPointsInner',
+          )
           ..add('t', t)
           ..add('posts', posts)
           ..add('uniqueAuthors', uniqueAuthors))
@@ -66,8 +67,10 @@ class _$NarrativeTimelineSeriesInnerPointsInner
 
 class NarrativeTimelineSeriesInnerPointsInnerBuilder
     implements
-        Builder<NarrativeTimelineSeriesInnerPointsInner,
-            NarrativeTimelineSeriesInnerPointsInnerBuilder> {
+        Builder<
+          NarrativeTimelineSeriesInnerPointsInner,
+          NarrativeTimelineSeriesInnerPointsInnerBuilder
+        > {
   _$NarrativeTimelineSeriesInnerPointsInner? _$v;
 
   DateTime? _t;
@@ -105,7 +108,8 @@ class NarrativeTimelineSeriesInnerPointsInnerBuilder
 
   @override
   void update(
-      void Function(NarrativeTimelineSeriesInnerPointsInnerBuilder)? updates) {
+    void Function(NarrativeTimelineSeriesInnerPointsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -113,14 +117,24 @@ class NarrativeTimelineSeriesInnerPointsInnerBuilder
   NarrativeTimelineSeriesInnerPointsInner build() => _build();
 
   _$NarrativeTimelineSeriesInnerPointsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NarrativeTimelineSeriesInnerPointsInner._(
           t: BuiltValueNullFieldError.checkNotNull(
-              t, r'NarrativeTimelineSeriesInnerPointsInner', 't'),
+            t,
+            r'NarrativeTimelineSeriesInnerPointsInner',
+            't',
+          ),
           posts: BuiltValueNullFieldError.checkNotNull(
-              posts, r'NarrativeTimelineSeriesInnerPointsInner', 'posts'),
-          uniqueAuthors: BuiltValueNullFieldError.checkNotNull(uniqueAuthors,
-              r'NarrativeTimelineSeriesInnerPointsInner', 'uniqueAuthors'),
+            posts,
+            r'NarrativeTimelineSeriesInnerPointsInner',
+            'posts',
+          ),
+          uniqueAuthors: BuiltValueNullFieldError.checkNotNull(
+            uniqueAuthors,
+            r'NarrativeTimelineSeriesInnerPointsInner',
+            'uniqueAuthors',
+          ),
         );
     replace(_$result);
     return _$result;

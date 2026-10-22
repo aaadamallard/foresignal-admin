@@ -72,21 +72,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/intel/events/{eventId}/members'.replaceAll(
-        '{' r'eventId' '}',
-        encodeQueryParameter(_serializers, eventId, const FullType(String))
-            .toString());
+      '{'
+      r'eventId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        eventId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -98,14 +98,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(IntelEventMemberInput);
-      _bodyData =
-          _serializers.serialize(intelEventMemberInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        intelEventMemberInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -128,9 +127,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelEventMember),
-            ) as IntelEventMember;
+                  rawResponse,
+                  specifiedType: const FullType(IntelEventMember),
+                )
+                as IntelEventMember;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -179,22 +179,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/investigations/{investigationId}/items'.replaceAll(
-        '{' r'investigationId' '}',
-        encodeQueryParameter(
-                _serializers, investigationId, const FullType(String))
-            .toString());
+      '{'
+      r'investigationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        investigationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -206,14 +205,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(InvestigationItemInput);
-      _bodyData =
-          _serializers.serialize(investigationItemInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        investigationItemInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -236,9 +234,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InvestigationItem),
-            ) as InvestigationItem;
+                  rawResponse,
+                  specifiedType: const FullType(InvestigationItem),
+                )
+                as InvestigationItem;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -287,16 +286,10 @@ class IntelligenceApi {
     final _path = r'/v1/exposure';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -311,10 +304,7 @@ class IntelligenceApi {
       _bodyData = _serializers.serialize(exposureRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -337,9 +327,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Exposure),
-            ) as Exposure;
+                  rawResponse,
+                  specifiedType: const FullType(Exposure),
+                )
+                as Exposure;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -388,16 +379,10 @@ class IntelligenceApi {
     final _path = r'/v1/intel/events';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -412,10 +397,7 @@ class IntelligenceApi {
       _bodyData = _serializers.serialize(intelEventInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -438,9 +420,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelligenceEvent),
-            ) as IntelligenceEvent;
+                  rawResponse,
+                  specifiedType: const FullType(IntelligenceEvent),
+                )
+                as IntelligenceEvent;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -489,16 +472,10 @@ class IntelligenceApi {
     final _path = r'/v1/investigations';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -510,14 +487,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(InvestigationInput);
-      _bodyData =
-          _serializers.serialize(investigationInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        investigationInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -540,9 +516,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Investigation),
-            ) as Investigation;
+                  rawResponse,
+                  specifiedType: const FullType(Investigation),
+                )
+                as Investigation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -591,16 +568,10 @@ class IntelligenceApi {
     final _path = r'/v1/intel/recipes';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -612,14 +583,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(CorrelationRecipeCreate);
-      _bodyData =
-          _serializers.serialize(correlationRecipeCreate, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        correlationRecipeCreate,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -642,9 +612,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CorrelationRecipe),
-            ) as CorrelationRecipe;
+                  rawResponse,
+                  specifiedType: const FullType(CorrelationRecipe),
+                )
+                as CorrelationRecipe;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -691,22 +662,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/investigations/{investigationId}'.replaceAll(
-        '{' r'investigationId' '}',
-        encodeQueryParameter(
-                _serializers, investigationId, const FullType(String))
-            .toString());
+      '{'
+      r'investigationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        investigationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -750,22 +720,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/investigations/{investigationId}/export'.replaceAll(
-        '{' r'investigationId' '}',
-        encodeQueryParameter(
-                _serializers, investigationId, const FullType(String))
-            .toString());
+      '{'
+      r'investigationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        investigationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -774,8 +743,11 @@ class IntelligenceApi {
 
     final _queryParameters = <String, dynamic>{
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -794,9 +766,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InvestigationExport),
-            ) as InvestigationExport;
+                  rawResponse,
+                  specifiedType: const FullType(InvestigationExport),
+                )
+                as InvestigationExport;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -843,16 +816,10 @@ class IntelligenceApi {
     final _path = r'/v1/intel/calibration';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -874,9 +841,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(GetIntelCalibration200Response),
-            ) as GetIntelCalibration200Response;
+                  rawResponse,
+                  specifiedType: const FullType(GetIntelCalibration200Response),
+                )
+                as GetIntelCalibration200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -923,21 +891,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/intel/calibration/{scope}'.replaceAll(
-        '{' r'scope' '}',
-        encodeQueryParameter(_serializers, scope, const FullType(String))
-            .toString());
+      '{'
+      r'scope'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        scope,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -959,9 +927,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelCalibration),
-            ) as IntelCalibration;
+                  rawResponse,
+                  specifiedType: const FullType(IntelCalibration),
+                )
+                as IntelCalibration;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1008,16 +977,10 @@ class IntelligenceApi {
     final _path = r'/v1/intel/corroboration';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1039,9 +1002,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelCorroboration),
-            ) as IntelCorroboration;
+                  rawResponse,
+                  specifiedType: const FullType(IntelCorroboration),
+                )
+                as IntelCorroboration;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1088,21 +1052,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/intel/events/{eventId}'.replaceAll(
-        '{' r'eventId' '}',
-        encodeQueryParameter(_serializers, eventId, const FullType(String))
-            .toString());
+      '{'
+      r'eventId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        eventId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1124,9 +1088,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelligenceEvent),
-            ) as IntelligenceEvent;
+                  rawResponse,
+                  specifiedType: const FullType(IntelligenceEvent),
+                )
+                as IntelligenceEvent;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1173,22 +1138,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/investigations/{investigationId}'.replaceAll(
-        '{' r'investigationId' '}',
-        encodeQueryParameter(
-                _serializers, investigationId, const FullType(String))
-            .toString());
+      '{'
+      r'investigationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        investigationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1210,9 +1174,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Investigation),
-            ) as Investigation;
+                  rawResponse,
+                  specifiedType: const FullType(Investigation),
+                )
+                as Investigation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1261,16 +1226,10 @@ class IntelligenceApi {
     final _path = r'/v1/packs/population/import';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1282,14 +1241,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(PopulationPackImportRequest);
-      _bodyData = _serializers.serialize(populationPackImportRequest,
-          specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        populationPackImportRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1312,9 +1270,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PopulationPackImport),
-            ) as PopulationPackImport;
+                  rawResponse,
+                  specifiedType: const FullType(PopulationPackImport),
+                )
+                as PopulationPackImport;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1375,16 +1334,10 @@ class IntelligenceApi {
     final _path = r'/v1/intel/events';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1407,20 +1360,35 @@ class IntelligenceApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (minConfidence != null)
         r'minConfidence': encodeQueryParameter(
-            _serializers, minConfidence, const FullType(num)),
+          _serializers,
+          minConfidence,
+          const FullType(num),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1439,9 +1407,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelEventPage),
-            ) as IntelEventPage;
+                  rawResponse,
+                  specifiedType: const FullType(IntelEventPage),
+                )
+                as IntelEventPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1488,16 +1457,10 @@ class IntelligenceApi {
     final _path = r'/v1/intel/recipes';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1519,10 +1482,12 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(CorrelationRecipe)]),
-            ) as BuiltList<CorrelationRecipe>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(CorrelationRecipe),
+                  ]),
+                )
+                as BuiltList<CorrelationRecipe>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1577,16 +1542,10 @@ class IntelligenceApi {
     final _path = r'/v1/investigations';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1595,17 +1554,29 @@ class IntelligenceApi {
 
     final _queryParameters = <String, dynamic>{
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (scope != null)
-        r'scope':
-            encodeQueryParameter(_serializers, scope, const FullType(String)),
+        r'scope': encodeQueryParameter(
+          _serializers,
+          scope,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1624,9 +1595,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InvestigationPage),
-            ) as InvestigationPage;
+                  rawResponse,
+                  specifiedType: const FullType(InvestigationPage),
+                )
+                as InvestigationPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1675,21 +1647,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/intel/events/{eventId}/merge'.replaceAll(
-        '{' r'eventId' '}',
-        encodeQueryParameter(_serializers, eventId, const FullType(String))
-            .toString());
+      '{'
+      r'eventId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        eventId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1701,14 +1673,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(IntelEventMergeInput);
-      _bodyData =
-          _serializers.serialize(intelEventMergeInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        intelEventMergeInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1731,9 +1702,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelligenceEvent),
-            ) as IntelligenceEvent;
+                  rawResponse,
+                  specifiedType: const FullType(IntelligenceEvent),
+                )
+                as IntelligenceEvent;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1783,25 +1755,31 @@ class IntelligenceApi {
   }) async {
     final _path = r'/v1/intel/events/{eventId}/members/{memberId}'
         .replaceAll(
-            '{' r'eventId' '}',
-            encodeQueryParameter(_serializers, eventId, const FullType(String))
-                .toString())
+          '{'
+          r'eventId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            eventId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'memberId' '}',
-            encodeQueryParameter(_serializers, memberId, const FullType(String))
-                .toString());
+          '{'
+          r'memberId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            memberId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1846,26 +1824,31 @@ class IntelligenceApi {
   }) async {
     final _path = r'/v1/investigations/{investigationId}/items/{itemId}'
         .replaceAll(
-            '{' r'investigationId' '}',
-            encodeQueryParameter(
-                    _serializers, investigationId, const FullType(String))
-                .toString())
+          '{'
+          r'investigationId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            investigationId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'itemId' '}',
-            encodeQueryParameter(_serializers, itemId, const FullType(String))
-                .toString());
+          '{'
+          r'itemId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            itemId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1909,21 +1892,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/intel/recipes/{recipeId}/test'.replaceAll(
-        '{' r'recipeId' '}',
-        encodeQueryParameter(_serializers, recipeId, const FullType(String))
-            .toString());
+      '{'
+      r'recipeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        recipeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1935,14 +1918,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(RecipeTestRequest);
-      _bodyData =
-          _serializers.serialize(recipeTestRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        recipeTestRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1965,9 +1947,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RecipeTestResult),
-            ) as RecipeTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(RecipeTestResult),
+                )
+                as RecipeTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2016,16 +1999,10 @@ class IntelligenceApi {
     final _path = r'/v1/intel/corroboration';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2037,14 +2014,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(IntelCorroboration);
-      _bodyData =
-          _serializers.serialize(intelCorroboration, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        intelCorroboration,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2067,9 +2043,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelCorroboration),
-            ) as IntelCorroboration;
+                  rawResponse,
+                  specifiedType: const FullType(IntelCorroboration),
+                )
+                as IntelCorroboration;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2120,9 +2097,15 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/intel/events/{eventId}'.replaceAll(
-        '{' r'eventId' '}',
-        encodeQueryParameter(_serializers, eventId, const FullType(String))
-            .toString());
+      '{'
+      r'eventId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        eventId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -2131,11 +2114,7 @@ class IntelligenceApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2150,10 +2129,7 @@ class IntelligenceApi {
       _bodyData = _serializers.serialize(intelEventPatch, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2176,9 +2152,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IntelligenceEvent),
-            ) as IntelligenceEvent;
+                  rawResponse,
+                  specifiedType: const FullType(IntelligenceEvent),
+                )
+                as IntelligenceEvent;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2227,22 +2204,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/investigations/{investigationId}'.replaceAll(
-        '{' r'investigationId' '}',
-        encodeQueryParameter(
-                _serializers, investigationId, const FullType(String))
-            .toString());
+      '{'
+      r'investigationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        investigationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2254,14 +2230,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(InvestigationPatch);
-      _bodyData =
-          _serializers.serialize(investigationPatch, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        investigationPatch,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2284,9 +2259,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Investigation),
-            ) as Investigation;
+                  rawResponse,
+                  specifiedType: const FullType(Investigation),
+                )
+                as Investigation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2335,21 +2311,21 @@ class IntelligenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/intel/recipes/{recipeId}'.replaceAll(
-        '{' r'recipeId' '}',
-        encodeQueryParameter(_serializers, recipeId, const FullType(String))
-            .toString());
+      '{'
+      r'recipeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        recipeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2361,14 +2337,13 @@ class IntelligenceApi {
 
     try {
       const _type = FullType(CorrelationRecipeUpdate);
-      _bodyData =
-          _serializers.serialize(correlationRecipeUpdate, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        correlationRecipeUpdate,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2391,9 +2366,10 @@ class IntelligenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CorrelationRecipe),
-            ) as CorrelationRecipe;
+                  rawResponse,
+                  specifiedType: const FullType(CorrelationRecipe),
+                )
+                as CorrelationRecipe;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

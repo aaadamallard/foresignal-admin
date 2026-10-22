@@ -19,8 +19,10 @@ part 'intel_board_latest_assessments_inner.g.dart';
 @BuiltValue()
 abstract class IntelBoardLatestAssessmentsInner
     implements
-        Built<IntelBoardLatestAssessmentsInner,
-            IntelBoardLatestAssessmentsInnerBuilder> {
+        Built<
+          IntelBoardLatestAssessmentsInner,
+          IntelBoardLatestAssessmentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'cadence')
   IntelBoardLatestAssessmentsInnerCadenceEnum get cadence;
   // enum cadenceEnum {  daily,  weekly,  monthly,  };
@@ -37,9 +39,9 @@ abstract class IntelBoardLatestAssessmentsInner
 
   IntelBoardLatestAssessmentsInner._();
 
-  factory IntelBoardLatestAssessmentsInner(
-          [void updates(IntelBoardLatestAssessmentsInnerBuilder b)]) =
-      _$IntelBoardLatestAssessmentsInner;
+  factory IntelBoardLatestAssessmentsInner([
+    void updates(IntelBoardLatestAssessmentsInnerBuilder b),
+  ]) = _$IntelBoardLatestAssessmentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardLatestAssessmentsInnerBuilder b) => b;
@@ -54,7 +56,7 @@ class _$IntelBoardLatestAssessmentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardLatestAssessmentsInner,
-    _$IntelBoardLatestAssessmentsInner
+    _$IntelBoardLatestAssessmentsInner,
   ];
 
   @override
@@ -68,8 +70,9 @@ class _$IntelBoardLatestAssessmentsInnerSerializer
     yield r'cadence';
     yield serializers.serialize(
       object.cadence,
-      specifiedType:
-          const FullType(IntelBoardLatestAssessmentsInnerCadenceEnum),
+      specifiedType: const FullType(
+        IntelBoardLatestAssessmentsInnerCadenceEnum,
+      ),
     );
     yield r'assessmentId';
     yield serializers.serialize(
@@ -96,9 +99,11 @@ class _$IntelBoardLatestAssessmentsInnerSerializer
     IntelBoardLatestAssessmentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,33 +119,42 @@ class _$IntelBoardLatestAssessmentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'cadence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(IntelBoardLatestAssessmentsInnerCadenceEnum),
-          ) as IntelBoardLatestAssessmentsInnerCadenceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelBoardLatestAssessmentsInnerCadenceEnum,
+                    ),
+                  )
+                  as IntelBoardLatestAssessmentsInnerCadenceEnum;
           result.cadence = valueDes;
           break;
         case r'assessmentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.assessmentId = valueDes;
           break;
         case r'headline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.headline = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         default:
@@ -184,10 +198,10 @@ class IntelBoardLatestAssessmentsInnerCadenceEnum extends EnumClass {
       _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly;
 
   static Serializer<IntelBoardLatestAssessmentsInnerCadenceEnum>
-      get serializer => _$intelBoardLatestAssessmentsInnerCadenceEnumSerializer;
+  get serializer => _$intelBoardLatestAssessmentsInnerCadenceEnumSerializer;
 
   const IntelBoardLatestAssessmentsInnerCadenceEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<IntelBoardLatestAssessmentsInnerCadenceEnum> get values =>
       _$intelBoardLatestAssessmentsInnerCadenceEnumValues;

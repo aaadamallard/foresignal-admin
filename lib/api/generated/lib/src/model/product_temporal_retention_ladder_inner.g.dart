@@ -13,18 +13,19 @@ class _$ProductTemporalRetentionLadderInner
   @override
   final String keepEvery;
 
-  factory _$ProductTemporalRetentionLadderInner(
-          [void Function(ProductTemporalRetentionLadderInnerBuilder)?
-              updates]) =>
+  factory _$ProductTemporalRetentionLadderInner([
+    void Function(ProductTemporalRetentionLadderInnerBuilder)? updates,
+  ]) =>
       (ProductTemporalRetentionLadderInnerBuilder()..update(updates))._build();
 
-  _$ProductTemporalRetentionLadderInner._(
-      {required this.olderThan, required this.keepEvery})
-      : super._();
+  _$ProductTemporalRetentionLadderInner._({
+    required this.olderThan,
+    required this.keepEvery,
+  }) : super._();
   @override
   ProductTemporalRetentionLadderInner rebuild(
-          void Function(ProductTemporalRetentionLadderInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProductTemporalRetentionLadderInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProductTemporalRetentionLadderInnerBuilder toBuilder() =>
@@ -58,8 +59,10 @@ class _$ProductTemporalRetentionLadderInner
 
 class ProductTemporalRetentionLadderInnerBuilder
     implements
-        Builder<ProductTemporalRetentionLadderInner,
-            ProductTemporalRetentionLadderInnerBuilder> {
+        Builder<
+          ProductTemporalRetentionLadderInner,
+          ProductTemporalRetentionLadderInnerBuilder
+        > {
   _$ProductTemporalRetentionLadderInner? _$v;
 
   String? _olderThan;
@@ -91,7 +94,8 @@ class ProductTemporalRetentionLadderInnerBuilder
 
   @override
   void update(
-      void Function(ProductTemporalRetentionLadderInnerBuilder)? updates) {
+    void Function(ProductTemporalRetentionLadderInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -99,12 +103,19 @@ class ProductTemporalRetentionLadderInnerBuilder
   ProductTemporalRetentionLadderInner build() => _build();
 
   _$ProductTemporalRetentionLadderInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProductTemporalRetentionLadderInner._(
           olderThan: BuiltValueNullFieldError.checkNotNull(
-              olderThan, r'ProductTemporalRetentionLadderInner', 'olderThan'),
+            olderThan,
+            r'ProductTemporalRetentionLadderInner',
+            'olderThan',
+          ),
           keepEvery: BuiltValueNullFieldError.checkNotNull(
-              keepEvery, r'ProductTemporalRetentionLadderInner', 'keepEvery'),
+            keepEvery,
+            r'ProductTemporalRetentionLadderInner',
+            'keepEvery',
+          ),
         );
     replace(_$result);
     return _$result;

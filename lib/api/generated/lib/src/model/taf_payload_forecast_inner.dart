@@ -47,9 +47,9 @@ abstract class TafPayloadForecastInner
 
   TafPayloadForecastInner._();
 
-  factory TafPayloadForecastInner(
-          [void updates(TafPayloadForecastInnerBuilder b)]) =
-      _$TafPayloadForecastInner;
+  factory TafPayloadForecastInner([
+    void updates(TafPayloadForecastInnerBuilder b),
+  ]) = _$TafPayloadForecastInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TafPayloadForecastInnerBuilder b) => b;
@@ -64,7 +64,7 @@ class _$TafPayloadForecastInnerSerializer
   @override
   final Iterable<Type> types = const [
     TafPayloadForecastInner,
-    _$TafPayloadForecastInner
+    _$TafPayloadForecastInner,
   ];
 
   @override
@@ -100,8 +100,10 @@ class _$TafPayloadForecastInnerSerializer
       yield r'wind';
       yield serializers.serialize(
         object.wind,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.visibility != null) {
@@ -123,7 +125,7 @@ class _$TafPayloadForecastInnerSerializer
       yield serializers.serialize(
         object.clouds,
         specifiedType: const FullType(BuiltList, [
-          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
         ]),
       );
     }
@@ -135,9 +137,11 @@ class _$TafPayloadForecastInnerSerializer
     TafPayloadForecastInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -153,63 +157,82 @@ class _$TafPayloadForecastInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'changeIndicator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.changeIndicator = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;
         case r'wind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.wind.replace(valueDes);
           break;
         case r'visibility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.visibility = valueDes;
           break;
         case r'wx':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.wx.replace(valueDes);
           break;
         case r'clouds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltList<BuiltMap<String, JsonObject?>>?;
           if (valueDes == null) continue;
           result.clouds.replace(valueDes);
           break;

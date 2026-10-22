@@ -24,9 +24,9 @@ NewsStoryBlindspotEnum _$newsStoryBlindspotEnumValueOf(String name) {
 
 final BuiltSet<NewsStoryBlindspotEnum> _$newsStoryBlindspotEnumValues =
     BuiltSet<NewsStoryBlindspotEnum>(const <NewsStoryBlindspotEnum>[
-  _$newsStoryBlindspotEnum_left,
-  _$newsStoryBlindspotEnum_right,
-]);
+      _$newsStoryBlindspotEnum_left,
+      _$newsStoryBlindspotEnum_right,
+    ]);
 
 Serializer<NewsStoryBlindspotEnum> _$newsStoryBlindspotEnumSerializer =
     _$NewsStoryBlindspotEnumSerializer();
@@ -48,15 +48,20 @@ class _$NewsStoryBlindspotEnumSerializer
   final String wireName = 'NewsStoryBlindspotEnum';
 
   @override
-  Object serialize(Serializers serializers, NewsStoryBlindspotEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NewsStoryBlindspotEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  NewsStoryBlindspotEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NewsStoryBlindspotEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  NewsStoryBlindspotEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NewsStoryBlindspotEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NewsStory extends NewsStory {
@@ -100,26 +105,26 @@ class _$NewsStory extends NewsStory {
   factory _$NewsStory([void Function(NewsStoryBuilder)? updates]) =>
       (NewsStoryBuilder()..update(updates))._build();
 
-  _$NewsStory._(
-      {required this.id,
-      required this.ref,
-      required this.canonicalEventId,
-      required this.title,
-      required this.firstSeenAt,
-      required this.lastSeenAt,
-      required this.articleCount,
-      this.outletCount,
-      required this.evidenceGroupCount,
-      this.topicIds,
-      this.regionCodes,
-      required this.coverage,
-      this.blindspot,
-      required this.corroborated,
-      this.situationIds,
-      this.outlets,
-      this.situations,
-      this.canonicalEvents})
-      : super._();
+  _$NewsStory._({
+    required this.id,
+    required this.ref,
+    required this.canonicalEventId,
+    required this.title,
+    required this.firstSeenAt,
+    required this.lastSeenAt,
+    required this.articleCount,
+    this.outletCount,
+    required this.evidenceGroupCount,
+    this.topicIds,
+    this.regionCodes,
+    required this.coverage,
+    this.blindspot,
+    required this.corroborated,
+    this.situationIds,
+    this.outlets,
+    this.situations,
+    this.canonicalEvents,
+  }) : super._();
   @override
   NewsStory rebuild(void Function(NewsStoryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -337,30 +342,55 @@ class NewsStoryBuilder implements Builder<NewsStory, NewsStoryBuilder> {
   _$NewsStory _build() {
     _$NewsStory _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NewsStory._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'NewsStory', 'id'),
-            ref:
-                BuiltValueNullFieldError.checkNotNull(ref, r'NewsStory', 'ref'),
+            ref: BuiltValueNullFieldError.checkNotNull(
+              ref,
+              r'NewsStory',
+              'ref',
+            ),
             canonicalEventId: BuiltValueNullFieldError.checkNotNull(
-                canonicalEventId, r'NewsStory', 'canonicalEventId'),
+              canonicalEventId,
+              r'NewsStory',
+              'canonicalEventId',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'NewsStory', 'title'),
+              title,
+              r'NewsStory',
+              'title',
+            ),
             firstSeenAt: BuiltValueNullFieldError.checkNotNull(
-                firstSeenAt, r'NewsStory', 'firstSeenAt'),
+              firstSeenAt,
+              r'NewsStory',
+              'firstSeenAt',
+            ),
             lastSeenAt: BuiltValueNullFieldError.checkNotNull(
-                lastSeenAt, r'NewsStory', 'lastSeenAt'),
+              lastSeenAt,
+              r'NewsStory',
+              'lastSeenAt',
+            ),
             articleCount: BuiltValueNullFieldError.checkNotNull(
-                articleCount, r'NewsStory', 'articleCount'),
+              articleCount,
+              r'NewsStory',
+              'articleCount',
+            ),
             outletCount: outletCount,
             evidenceGroupCount: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupCount, r'NewsStory', 'evidenceGroupCount'),
+              evidenceGroupCount,
+              r'NewsStory',
+              'evidenceGroupCount',
+            ),
             topicIds: _topicIds?.build(),
             regionCodes: _regionCodes?.build(),
             coverage: coverage.build(),
             blindspot: blindspot,
             corroborated: BuiltValueNullFieldError.checkNotNull(
-                corroborated, r'NewsStory', 'corroborated'),
+              corroborated,
+              r'NewsStory',
+              'corroborated',
+            ),
             situationIds: _situationIds?.build(),
             outlets: _outlets?.build(),
             situations: _situations?.build(),
@@ -386,7 +416,10 @@ class NewsStoryBuilder implements Builder<NewsStory, NewsStoryBuilder> {
         _canonicalEvents?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NewsStory', _$failedField, e.toString());
+          r'NewsStory',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

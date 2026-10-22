@@ -102,9 +102,11 @@ class _$PushProviderInputSerializer
     PushProviderInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,39 +122,53 @@ class _$PushProviderInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PushProviderInputTypeEnum),
-          ) as PushProviderInputTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PushProviderInputTypeEnum),
+                  )
+                  as PushProviderInputTypeEnum;
           result.type = valueDes;
           break;
         case r'appIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.appIds.replace(valueDes);
           break;
         case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PushProviderInputConfig),
-          ) as PushProviderInputConfig;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PushProviderInputConfig),
+                  )
+                  as PushProviderInputConfig;
           result.config.replace(valueDes);
           break;
         case r'secrets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PushProviderInputSecrets),
-          ) as PushProviderInputSecrets?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PushProviderInputSecrets,
+                    ),
+                  )
+                  as PushProviderInputSecrets?;
           if (valueDes == null) continue;
           result.secrets.replace(valueDes);
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;

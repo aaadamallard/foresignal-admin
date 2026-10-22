@@ -29,29 +29,27 @@ class _$OverlandBatchLocationsInnerProperties
   @override
   final String? deviceId;
 
-  factory _$OverlandBatchLocationsInnerProperties(
-          [void Function(OverlandBatchLocationsInnerPropertiesBuilder)?
-              updates]) =>
-      (OverlandBatchLocationsInnerPropertiesBuilder()..update(updates))
-          ._build();
+  factory _$OverlandBatchLocationsInnerProperties([
+    void Function(OverlandBatchLocationsInnerPropertiesBuilder)? updates,
+  ]) => (OverlandBatchLocationsInnerPropertiesBuilder()..update(updates))
+      ._build();
 
-  _$OverlandBatchLocationsInnerProperties._(
-      {this.timestamp,
-      this.horizontalAccuracy,
-      this.altitude,
-      this.speed,
-      this.course,
-      this.motion,
-      this.batteryLevel,
-      this.batteryState,
-      this.wifi,
-      this.deviceId})
-      : super._();
+  _$OverlandBatchLocationsInnerProperties._({
+    this.timestamp,
+    this.horizontalAccuracy,
+    this.altitude,
+    this.speed,
+    this.course,
+    this.motion,
+    this.batteryLevel,
+    this.batteryState,
+    this.wifi,
+    this.deviceId,
+  }) : super._();
   @override
   OverlandBatchLocationsInnerProperties rebuild(
-          void Function(OverlandBatchLocationsInnerPropertiesBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OverlandBatchLocationsInnerPropertiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OverlandBatchLocationsInnerPropertiesBuilder toBuilder() =>
@@ -93,7 +91,8 @@ class _$OverlandBatchLocationsInnerProperties
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'OverlandBatchLocationsInnerProperties')
+            r'OverlandBatchLocationsInnerProperties',
+          )
           ..add('timestamp', timestamp)
           ..add('horizontalAccuracy', horizontalAccuracy)
           ..add('altitude', altitude)
@@ -110,8 +109,10 @@ class _$OverlandBatchLocationsInnerProperties
 
 class OverlandBatchLocationsInnerPropertiesBuilder
     implements
-        Builder<OverlandBatchLocationsInnerProperties,
-            OverlandBatchLocationsInnerPropertiesBuilder> {
+        Builder<
+          OverlandBatchLocationsInnerProperties,
+          OverlandBatchLocationsInnerPropertiesBuilder
+        > {
   _$OverlandBatchLocationsInnerProperties? _$v;
 
   DateTime? _timestamp;
@@ -184,7 +185,8 @@ class OverlandBatchLocationsInnerPropertiesBuilder
 
   @override
   void update(
-      void Function(OverlandBatchLocationsInnerPropertiesBuilder)? updates) {
+    void Function(OverlandBatchLocationsInnerPropertiesBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -194,7 +196,8 @@ class OverlandBatchLocationsInnerPropertiesBuilder
   _$OverlandBatchLocationsInnerProperties _build() {
     _$OverlandBatchLocationsInnerProperties _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OverlandBatchLocationsInnerProperties._(
             timestamp: timestamp,
             horizontalAccuracy: horizontalAccuracy,
@@ -214,9 +217,10 @@ class OverlandBatchLocationsInnerPropertiesBuilder
         _motion?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OverlandBatchLocationsInnerProperties',
-            _$failedField,
-            e.toString());
+          r'OverlandBatchLocationsInnerProperties',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

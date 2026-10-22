@@ -24,24 +24,24 @@ class _$FederationIngestResultDropped extends FederationIngestResultDropped {
   @override
   final int? selection;
 
-  factory _$FederationIngestResultDropped(
-          [void Function(FederationIngestResultDroppedBuilder)? updates]) =>
-      (FederationIngestResultDroppedBuilder()..update(updates))._build();
+  factory _$FederationIngestResultDropped([
+    void Function(FederationIngestResultDroppedBuilder)? updates,
+  ]) => (FederationIngestResultDroppedBuilder()..update(updates))._build();
 
-  _$FederationIngestResultDropped._(
-      {this.loop,
-      this.hops,
-      this.dedup,
-      this.licence,
-      this.private,
-      this.exercise,
-      this.expired,
-      this.selection})
-      : super._();
+  _$FederationIngestResultDropped._({
+    this.loop,
+    this.hops,
+    this.dedup,
+    this.licence,
+    this.private,
+    this.exercise,
+    this.expired,
+    this.selection,
+  }) : super._();
   @override
   FederationIngestResultDropped rebuild(
-          void Function(FederationIngestResultDroppedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FederationIngestResultDroppedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FederationIngestResultDroppedBuilder toBuilder() =>
@@ -93,8 +93,10 @@ class _$FederationIngestResultDropped extends FederationIngestResultDropped {
 
 class FederationIngestResultDroppedBuilder
     implements
-        Builder<FederationIngestResultDropped,
-            FederationIngestResultDroppedBuilder> {
+        Builder<
+          FederationIngestResultDropped,
+          FederationIngestResultDroppedBuilder
+        > {
   _$FederationIngestResultDropped? _$v;
 
   int? _loop;
@@ -163,7 +165,8 @@ class FederationIngestResultDroppedBuilder
   FederationIngestResultDropped build() => _build();
 
   _$FederationIngestResultDropped _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FederationIngestResultDropped._(
           loop: loop,
           hops: hops,

@@ -16,17 +16,20 @@ class _$RuleQualityDailyFeedback extends RuleQualityDailyFeedback {
   @override
   final int? falsePositive;
 
-  factory _$RuleQualityDailyFeedback(
-          [void Function(RuleQualityDailyFeedbackBuilder)? updates]) =>
-      (RuleQualityDailyFeedbackBuilder()..update(updates))._build();
+  factory _$RuleQualityDailyFeedback([
+    void Function(RuleQualityDailyFeedbackBuilder)? updates,
+  ]) => (RuleQualityDailyFeedbackBuilder()..update(updates))._build();
 
-  _$RuleQualityDailyFeedback._(
-      {this.useful, this.noise, this.late_, this.falsePositive})
-      : super._();
+  _$RuleQualityDailyFeedback._({
+    this.useful,
+    this.noise,
+    this.late_,
+    this.falsePositive,
+  }) : super._();
   @override
   RuleQualityDailyFeedback rebuild(
-          void Function(RuleQualityDailyFeedbackBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleQualityDailyFeedbackBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleQualityDailyFeedbackBuilder toBuilder() =>
@@ -116,7 +119,8 @@ class RuleQualityDailyFeedbackBuilder
   RuleQualityDailyFeedback build() => _build();
 
   _$RuleQualityDailyFeedback _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RuleQualityDailyFeedback._(
           useful: useful,
           noise: noise,

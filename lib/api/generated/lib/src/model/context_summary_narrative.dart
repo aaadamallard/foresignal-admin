@@ -26,9 +26,9 @@ abstract class ContextSummaryNarrative
 
   ContextSummaryNarrative._();
 
-  factory ContextSummaryNarrative(
-          [void updates(ContextSummaryNarrativeBuilder b)]) =
-      _$ContextSummaryNarrative;
+  factory ContextSummaryNarrative([
+    void updates(ContextSummaryNarrativeBuilder b),
+  ]) = _$ContextSummaryNarrative;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContextSummaryNarrativeBuilder b) => b;
@@ -43,7 +43,7 @@ class _$ContextSummaryNarrativeSerializer
   @override
   final Iterable<Type> types = const [
     ContextSummaryNarrative,
-    _$ContextSummaryNarrative
+    _$ContextSummaryNarrative,
   ];
 
   @override
@@ -72,9 +72,11 @@ class _$ContextSummaryNarrativeSerializer
     ContextSummaryNarrative object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,18 +92,23 @@ class _$ContextSummaryNarrativeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.text = valueDes;
           break;
         case r'textOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ContextSummaryNarrativeTextOriginEnum),
-          ) as ContextSummaryNarrativeTextOriginEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ContextSummaryNarrativeTextOriginEnum,
+                    ),
+                  )
+                  as ContextSummaryNarrativeTextOriginEnum;
           result.textOrigin = valueDes;
           break;
         default:

@@ -16,16 +16,16 @@ class _$SensorPassesInner extends SensorPassesInner {
   @override
   final num maxElevationDeg;
 
-  factory _$SensorPassesInner(
-          [void Function(SensorPassesInnerBuilder)? updates]) =>
-      (SensorPassesInnerBuilder()..update(updates))._build();
+  factory _$SensorPassesInner([
+    void Function(SensorPassesInnerBuilder)? updates,
+  ]) => (SensorPassesInnerBuilder()..update(updates))._build();
 
-  _$SensorPassesInner._(
-      {required this.aos,
-      this.tca,
-      required this.los,
-      required this.maxElevationDeg})
-      : super._();
+  _$SensorPassesInner._({
+    required this.aos,
+    this.tca,
+    required this.los,
+    required this.maxElevationDeg,
+  }) : super._();
   @override
   SensorPassesInner rebuild(void Function(SensorPassesInnerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -117,15 +117,25 @@ class SensorPassesInnerBuilder
   SensorPassesInner build() => _build();
 
   _$SensorPassesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SensorPassesInner._(
           aos: BuiltValueNullFieldError.checkNotNull(
-              aos, r'SensorPassesInner', 'aos'),
+            aos,
+            r'SensorPassesInner',
+            'aos',
+          ),
           tca: tca,
           los: BuiltValueNullFieldError.checkNotNull(
-              los, r'SensorPassesInner', 'los'),
+            los,
+            r'SensorPassesInner',
+            'los',
+          ),
           maxElevationDeg: BuiltValueNullFieldError.checkNotNull(
-              maxElevationDeg, r'SensorPassesInner', 'maxElevationDeg'),
+            maxElevationDeg,
+            r'SensorPassesInner',
+            'maxElevationDeg',
+          ),
         );
     replace(_$result);
     return _$result;

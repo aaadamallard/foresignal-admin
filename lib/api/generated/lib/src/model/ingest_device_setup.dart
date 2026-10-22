@@ -66,8 +66,10 @@ class _$IngestDeviceSetupSerializer
       yield r'owntracks';
       yield serializers.serialize(
         object.owntracks,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.overland != null) {
@@ -99,9 +101,11 @@ class _$IngestDeviceSetupSerializer
     IngestDeviceSetup object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,35 +121,51 @@ class _$IngestDeviceSetupSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'owntracks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.owntracks.replace(valueDes);
           break;
         case r'overland':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IngestDeviceSetupOverland),
-          ) as IngestDeviceSetupOverland?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IngestDeviceSetupOverland,
+                    ),
+                  )
+                  as IngestDeviceSetupOverland?;
           if (valueDes == null) continue;
           result.overland.replace(valueDes);
           break;
         case r'traccar':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IngestDeviceSetupTraccar),
-          ) as IngestDeviceSetupTraccar?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IngestDeviceSetupTraccar,
+                    ),
+                  )
+                  as IngestDeviceSetupTraccar?;
           if (valueDes == null) continue;
           result.traccar.replace(valueDes);
           break;
         case r'gpslogger':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IngestDeviceSetupGpslogger),
-          ) as IngestDeviceSetupGpslogger?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IngestDeviceSetupGpslogger,
+                    ),
+                  )
+                  as IngestDeviceSetupGpslogger?;
           if (valueDes == null) continue;
           result.gpslogger.replace(valueDes);
           break;

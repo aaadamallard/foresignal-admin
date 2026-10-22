@@ -28,10 +28,10 @@ ApiTokenCreatedScopeEnum _$apiTokenCreatedScopeEnumValueOf(String name) {
 
 final BuiltSet<ApiTokenCreatedScopeEnum> _$apiTokenCreatedScopeEnumValues =
     BuiltSet<ApiTokenCreatedScopeEnum>(const <ApiTokenCreatedScopeEnum>[
-  _$apiTokenCreatedScopeEnum_read,
-  _$apiTokenCreatedScopeEnum_agent,
-  _$apiTokenCreatedScopeEnum_admin,
-]);
+      _$apiTokenCreatedScopeEnum_read,
+      _$apiTokenCreatedScopeEnum_agent,
+      _$apiTokenCreatedScopeEnum_admin,
+    ]);
 
 const ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnum_api =
     const ApiTokenCreatedCreatedViaEnum._('api');
@@ -41,7 +41,8 @@ const ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnum_bootstrap =
     const ApiTokenCreatedCreatedViaEnum._('bootstrap');
 
 ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'api':
       return _$apiTokenCreatedCreatedViaEnum_api;
@@ -55,23 +56,25 @@ ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnumValueOf(
 }
 
 final BuiltSet<ApiTokenCreatedCreatedViaEnum>
-    _$apiTokenCreatedCreatedViaEnumValues = BuiltSet<
-        ApiTokenCreatedCreatedViaEnum>(const <ApiTokenCreatedCreatedViaEnum>[
-  _$apiTokenCreatedCreatedViaEnum_api,
-  _$apiTokenCreatedCreatedViaEnum_pairing,
-  _$apiTokenCreatedCreatedViaEnum_bootstrap,
-]);
+_$apiTokenCreatedCreatedViaEnumValues = BuiltSet<ApiTokenCreatedCreatedViaEnum>(
+  const <ApiTokenCreatedCreatedViaEnum>[
+    _$apiTokenCreatedCreatedViaEnum_api,
+    _$apiTokenCreatedCreatedViaEnum_pairing,
+    _$apiTokenCreatedCreatedViaEnum_bootstrap,
+  ],
+);
 
 const ApiTokenCreatedLicencePolicyEnum _$apiTokenCreatedLicencePolicyEnum_noNc =
     const ApiTokenCreatedLicencePolicyEnum._('noNc');
 const ApiTokenCreatedLicencePolicyEnum _$apiTokenCreatedLicencePolicyEnum_noSa =
     const ApiTokenCreatedLicencePolicyEnum._('noSa');
 const ApiTokenCreatedLicencePolicyEnum
-    _$apiTokenCreatedLicencePolicyEnum_redistributable =
+_$apiTokenCreatedLicencePolicyEnum_redistributable =
     const ApiTokenCreatedLicencePolicyEnum._('redistributable');
 
 ApiTokenCreatedLicencePolicyEnum _$apiTokenCreatedLicencePolicyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'noNc':
       return _$apiTokenCreatedLicencePolicyEnum_noNc;
@@ -85,20 +88,22 @@ ApiTokenCreatedLicencePolicyEnum _$apiTokenCreatedLicencePolicyEnumValueOf(
 }
 
 final BuiltSet<ApiTokenCreatedLicencePolicyEnum>
-    _$apiTokenCreatedLicencePolicyEnumValues = BuiltSet<
-        ApiTokenCreatedLicencePolicyEnum>(const <ApiTokenCreatedLicencePolicyEnum>[
-  _$apiTokenCreatedLicencePolicyEnum_noNc,
-  _$apiTokenCreatedLicencePolicyEnum_noSa,
-  _$apiTokenCreatedLicencePolicyEnum_redistributable,
-]);
+_$apiTokenCreatedLicencePolicyEnumValues =
+    BuiltSet<ApiTokenCreatedLicencePolicyEnum>(
+      const <ApiTokenCreatedLicencePolicyEnum>[
+        _$apiTokenCreatedLicencePolicyEnum_noNc,
+        _$apiTokenCreatedLicencePolicyEnum_noSa,
+        _$apiTokenCreatedLicencePolicyEnum_redistributable,
+      ],
+    );
 
 Serializer<ApiTokenCreatedScopeEnum> _$apiTokenCreatedScopeEnumSerializer =
     _$ApiTokenCreatedScopeEnumSerializer();
 Serializer<ApiTokenCreatedCreatedViaEnum>
-    _$apiTokenCreatedCreatedViaEnumSerializer =
+_$apiTokenCreatedCreatedViaEnumSerializer =
     _$ApiTokenCreatedCreatedViaEnumSerializer();
 Serializer<ApiTokenCreatedLicencePolicyEnum>
-    _$apiTokenCreatedLicencePolicyEnumSerializer =
+_$apiTokenCreatedLicencePolicyEnumSerializer =
     _$ApiTokenCreatedLicencePolicyEnumSerializer();
 
 class _$ApiTokenCreatedScopeEnumSerializer
@@ -120,16 +125,20 @@ class _$ApiTokenCreatedScopeEnumSerializer
   final String wireName = 'ApiTokenCreatedScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, ApiTokenCreatedScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ApiTokenCreatedScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ApiTokenCreatedScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ApiTokenCreatedScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ApiTokenCreatedScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ApiTokenCreatedCreatedViaEnumSerializer
@@ -152,16 +161,19 @@ class _$ApiTokenCreatedCreatedViaEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ApiTokenCreatedCreatedViaEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ApiTokenCreatedCreatedViaEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ApiTokenCreatedCreatedViaEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ApiTokenCreatedCreatedViaEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ApiTokenCreatedCreatedViaEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ApiTokenCreatedLicencePolicyEnumSerializer
@@ -184,16 +196,19 @@ class _$ApiTokenCreatedLicencePolicyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ApiTokenCreatedLicencePolicyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ApiTokenCreatedLicencePolicyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ApiTokenCreatedLicencePolicyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ApiTokenCreatedLicencePolicyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ApiTokenCreatedLicencePolicyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ApiTokenCreated extends ApiTokenCreated {
@@ -235,25 +250,25 @@ class _$ApiTokenCreated extends ApiTokenCreated {
   factory _$ApiTokenCreated([void Function(ApiTokenCreatedBuilder)? updates]) =>
       (ApiTokenCreatedBuilder()..update(updates))._build();
 
-  _$ApiTokenCreated._(
-      {required this.id,
-      required this.name,
-      required this.scope,
-      required this.tokenPrefix,
-      required this.createdAt,
-      this.lastUsedAt,
-      this.expiresAt,
-      this.revokedAt,
-      this.bootstrap,
-      this.restrictions,
-      this.device,
-      this.createdVia,
-      this.principalId,
-      this.privateAccess,
-      this.licencePolicy,
-      this.principalHandle,
-      required this.token})
-      : super._();
+  _$ApiTokenCreated._({
+    required this.id,
+    required this.name,
+    required this.scope,
+    required this.tokenPrefix,
+    required this.createdAt,
+    this.lastUsedAt,
+    this.expiresAt,
+    this.revokedAt,
+    this.bootstrap,
+    this.restrictions,
+    this.device,
+    this.createdVia,
+    this.principalId,
+    this.privateAccess,
+    this.licencePolicy,
+    this.principalHandle,
+    required this.token,
+  }) : super._();
   @override
   ApiTokenCreated rebuild(void Function(ApiTokenCreatedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -400,8 +415,8 @@ class ApiTokenCreatedBuilder
   ListBuilder<ApiTokenCreatedLicencePolicyEnum> get licencePolicy =>
       _$this._licencePolicy ??= ListBuilder<ApiTokenCreatedLicencePolicyEnum>();
   set licencePolicy(
-          ListBuilder<ApiTokenCreatedLicencePolicyEnum>? licencePolicy) =>
-      _$this._licencePolicy = licencePolicy;
+    ListBuilder<ApiTokenCreatedLicencePolicyEnum>? licencePolicy,
+  ) => _$this._licencePolicy = licencePolicy;
 
   String? _principalHandle;
   String? get principalHandle => _$this._principalHandle;
@@ -457,18 +472,34 @@ class ApiTokenCreatedBuilder
   _$ApiTokenCreated _build() {
     _$ApiTokenCreated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ApiTokenCreated._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ApiTokenCreated', 'id'),
+              id,
+              r'ApiTokenCreated',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ApiTokenCreated', 'name'),
+              name,
+              r'ApiTokenCreated',
+              'name',
+            ),
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'ApiTokenCreated', 'scope'),
+              scope,
+              r'ApiTokenCreated',
+              'scope',
+            ),
             tokenPrefix: BuiltValueNullFieldError.checkNotNull(
-                tokenPrefix, r'ApiTokenCreated', 'tokenPrefix'),
+              tokenPrefix,
+              r'ApiTokenCreated',
+              'tokenPrefix',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ApiTokenCreated', 'createdAt'),
+              createdAt,
+              r'ApiTokenCreated',
+              'createdAt',
+            ),
             lastUsedAt: lastUsedAt,
             expiresAt: expiresAt,
             revokedAt: revokedAt,
@@ -481,7 +512,10 @@ class ApiTokenCreatedBuilder
             licencePolicy: _licencePolicy?.build(),
             principalHandle: principalHandle,
             token: BuiltValueNullFieldError.checkNotNull(
-                token, r'ApiTokenCreated', 'token'),
+              token,
+              r'ApiTokenCreated',
+              'token',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -495,7 +529,10 @@ class ApiTokenCreatedBuilder
         _licencePolicy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ApiTokenCreated', _$failedField, e.toString());
+          r'ApiTokenCreated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

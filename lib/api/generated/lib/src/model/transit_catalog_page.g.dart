@@ -12,15 +12,15 @@ class _$TransitCatalogPage extends TransitCatalogPage {
   @override
   final String? nextCursor;
 
-  factory _$TransitCatalogPage(
-          [void Function(TransitCatalogPageBuilder)? updates]) =>
-      (TransitCatalogPageBuilder()..update(updates))._build();
+  factory _$TransitCatalogPage([
+    void Function(TransitCatalogPageBuilder)? updates,
+  ]) => (TransitCatalogPageBuilder()..update(updates))._build();
 
   _$TransitCatalogPage._({required this.items, this.nextCursor}) : super._();
   @override
   TransitCatalogPage rebuild(
-          void Function(TransitCatalogPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TransitCatalogPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TransitCatalogPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class TransitCatalogPageBuilder
   _$TransitCatalogPage _build() {
     _$TransitCatalogPage _$result;
     try {
-      _$result = _$v ??
-          _$TransitCatalogPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$TransitCatalogPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class TransitCatalogPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TransitCatalogPage', _$failedField, e.toString());
+          r'TransitCatalogPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

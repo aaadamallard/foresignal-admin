@@ -64,10 +64,7 @@ class _$EntityAliasSerializer implements PrimitiveSerializer<EntityAlias> {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.id, specifiedType: const FullType(int));
     yield r'alias';
     yield serializers.serialize(
       object.alias,
@@ -103,9 +100,11 @@ class _$EntityAliasSerializer implements PrimitiveSerializer<EntityAlias> {
     EntityAlias object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,46 +120,55 @@ class _$EntityAliasSerializer implements PrimitiveSerializer<EntityAlias> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.id = valueDes;
           break;
         case r'alias':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.alias = valueDes;
           break;
         case r'aliasType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EntityAliasAliasTypeEnum),
-          ) as EntityAliasAliasTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EntityAliasAliasTypeEnum),
+                  )
+                  as EntityAliasAliasTypeEnum;
           result.aliasType = valueDes;
           break;
         case r'validFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.validFrom = valueDes;
           break;
         case r'validTo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validTo = valueDes;
           break;
         case r'origin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EntityAliasOriginEnum),
-          ) as EntityAliasOriginEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EntityAliasOriginEnum),
+                  )
+                  as EntityAliasOriginEnum;
           result.origin = valueDes;
           break;
         default:

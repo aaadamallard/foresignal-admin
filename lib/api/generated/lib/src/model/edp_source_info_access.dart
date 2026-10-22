@@ -43,7 +43,7 @@ class _$EdpSourceInfoAccessSerializer
   @override
   final Iterable<Type> types = const [
     EdpSourceInfoAccess,
-    _$EdpSourceInfoAccess
+    _$EdpSourceInfoAccess,
   ];
 
   @override
@@ -74,9 +74,11 @@ class _$EdpSourceInfoAccessSerializer
     EdpSourceInfoAccess object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +94,23 @@ class _$EdpSourceInfoAccessSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'route':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpSourceInfoAccessRouteEnum),
-          ) as EdpSourceInfoAccessRouteEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpSourceInfoAccessRouteEnum),
+                  )
+                  as EdpSourceInfoAccessRouteEnum;
           result.route = valueDes;
           break;
         case r'fragility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EdpSourceInfoAccessFragilityEnum),
-          ) as EdpSourceInfoAccessFragilityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpSourceInfoAccessFragilityEnum,
+                    ),
+                  )
+                  as EdpSourceInfoAccessFragilityEnum?;
           if (valueDes == null) continue;
           result.fragility = valueDes;
           break;

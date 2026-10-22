@@ -24,9 +24,9 @@ PairingCodeInputScopeEnum _$pairingCodeInputScopeEnumValueOf(String name) {
 
 final BuiltSet<PairingCodeInputScopeEnum> _$pairingCodeInputScopeEnumValues =
     BuiltSet<PairingCodeInputScopeEnum>(const <PairingCodeInputScopeEnum>[
-  _$pairingCodeInputScopeEnum_read,
-  _$pairingCodeInputScopeEnum_agent,
-]);
+      _$pairingCodeInputScopeEnum_read,
+      _$pairingCodeInputScopeEnum_agent,
+    ]);
 
 Serializer<PairingCodeInputScopeEnum> _$pairingCodeInputScopeEnumSerializer =
     _$PairingCodeInputScopeEnumSerializer();
@@ -48,16 +48,20 @@ class _$PairingCodeInputScopeEnumSerializer
   final String wireName = 'PairingCodeInputScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, PairingCodeInputScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PairingCodeInputScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PairingCodeInputScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PairingCodeInputScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PairingCodeInputScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PairingCodeInput extends PairingCodeInput {
@@ -74,18 +78,18 @@ class _$PairingCodeInput extends PairingCodeInput {
   @override
   final bool? privateAccess;
 
-  factory _$PairingCodeInput(
-          [void Function(PairingCodeInputBuilder)? updates]) =>
-      (PairingCodeInputBuilder()..update(updates))._build();
+  factory _$PairingCodeInput([
+    void Function(PairingCodeInputBuilder)? updates,
+  ]) => (PairingCodeInputBuilder()..update(updates))._build();
 
-  _$PairingCodeInput._(
-      {required this.name,
-      required this.scope,
-      this.restrictions,
-      this.ttl,
-      this.principalId,
-      this.privateAccess})
-      : super._();
+  _$PairingCodeInput._({
+    required this.name,
+    required this.scope,
+    this.restrictions,
+    this.ttl,
+    this.principalId,
+    this.privateAccess,
+  }) : super._();
   @override
   PairingCodeInput rebuild(void Function(PairingCodeInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -197,12 +201,19 @@ class PairingCodeInputBuilder
   _$PairingCodeInput _build() {
     _$PairingCodeInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PairingCodeInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PairingCodeInput', 'name'),
+              name,
+              r'PairingCodeInput',
+              'name',
+            ),
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'PairingCodeInput', 'scope'),
+              scope,
+              r'PairingCodeInput',
+              'scope',
+            ),
             restrictions: _restrictions?.build(),
             ttl: ttl,
             principalId: principalId,
@@ -215,7 +226,10 @@ class PairingCodeInputBuilder
         _restrictions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PairingCodeInput', _$failedField, e.toString());
+          r'PairingCodeInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

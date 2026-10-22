@@ -12,16 +12,16 @@ class _$MetricProjectionLabelsInner extends MetricProjectionLabelsInner {
   @override
   final String path;
 
-  factory _$MetricProjectionLabelsInner(
-          [void Function(MetricProjectionLabelsInnerBuilder)? updates]) =>
-      (MetricProjectionLabelsInnerBuilder()..update(updates))._build();
+  factory _$MetricProjectionLabelsInner([
+    void Function(MetricProjectionLabelsInnerBuilder)? updates,
+  ]) => (MetricProjectionLabelsInnerBuilder()..update(updates))._build();
 
   _$MetricProjectionLabelsInner._({required this.name, required this.path})
-      : super._();
+    : super._();
   @override
   MetricProjectionLabelsInner rebuild(
-          void Function(MetricProjectionLabelsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MetricProjectionLabelsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MetricProjectionLabelsInnerBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$MetricProjectionLabelsInner extends MetricProjectionLabelsInner {
 
 class MetricProjectionLabelsInnerBuilder
     implements
-        Builder<MetricProjectionLabelsInner,
-            MetricProjectionLabelsInnerBuilder> {
+        Builder<
+          MetricProjectionLabelsInner,
+          MetricProjectionLabelsInnerBuilder
+        > {
   _$MetricProjectionLabelsInner? _$v;
 
   String? _name;
@@ -95,12 +97,19 @@ class MetricProjectionLabelsInnerBuilder
   MetricProjectionLabelsInner build() => _build();
 
   _$MetricProjectionLabelsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MetricProjectionLabelsInner._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'MetricProjectionLabelsInner', 'name'),
+            name,
+            r'MetricProjectionLabelsInner',
+            'name',
+          ),
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'MetricProjectionLabelsInner', 'path'),
+            path,
+            r'MetricProjectionLabelsInner',
+            'path',
+          ),
         );
     replace(_$result);
     return _$result;

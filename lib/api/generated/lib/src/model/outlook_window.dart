@@ -142,9 +142,11 @@ class _$OutlookWindowSerializer implements PrimitiveSerializer<OutlookWindow> {
     OutlookWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -160,69 +162,86 @@ class _$OutlookWindowSerializer implements PrimitiveSerializer<OutlookWindow> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'index':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.index = valueDes;
           break;
         case r'windowStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.windowStart = valueDes;
           break;
         case r'windowEnd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.windowEnd = valueDes;
           break;
         case r'quantiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Quantiles),
-          ) as Quantiles;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Quantiles),
+                  )
+                  as Quantiles;
           result.quantiles.replace(valueDes);
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.questionId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OutlookWindowStatusEnum),
-          ) as OutlookWindowStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OutlookWindowStatusEnum),
+                  )
+                  as OutlookWindowStatusEnum;
           result.status = valueDes;
           break;
         case r'actual':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.actual = valueDes;
           break;
         case r'withinP10P90':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.withinP10P90 = valueDes;
           break;
         case r'exceedance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(OutlookWindowExceedanceEnum),
-          ) as OutlookWindowExceedanceEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OutlookWindowExceedanceEnum,
+                    ),
+                  )
+                  as OutlookWindowExceedanceEnum?;
           if (valueDes == null) continue;
           result.exceedance = valueDes;
           break;

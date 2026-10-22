@@ -10,15 +10,15 @@ class _$ListRecords200Response extends ListRecords200Response {
   @override
   final OneOf oneOf;
 
-  factory _$ListRecords200Response(
-          [void Function(ListRecords200ResponseBuilder)? updates]) =>
-      (ListRecords200ResponseBuilder()..update(updates))._build();
+  factory _$ListRecords200Response([
+    void Function(ListRecords200ResponseBuilder)? updates,
+  ]) => (ListRecords200ResponseBuilder()..update(updates))._build();
 
   _$ListRecords200Response._({required this.oneOf}) : super._();
   @override
   ListRecords200Response rebuild(
-          void Function(ListRecords200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ListRecords200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ListRecords200ResponseBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$ListRecords200Response extends ListRecords200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ListRecords200Response')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ListRecords200Response',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -81,10 +81,14 @@ class ListRecords200ResponseBuilder
   ListRecords200Response build() => _build();
 
   _$ListRecords200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ListRecords200Response._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'ListRecords200Response', 'oneOf'),
+            oneOf,
+            r'ListRecords200Response',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

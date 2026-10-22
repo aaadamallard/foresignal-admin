@@ -20,8 +20,10 @@ part 'structure_diff_rename_candidates_inner.g.dart';
 @BuiltValue()
 abstract class StructureDiffRenameCandidatesInner
     implements
-        Built<StructureDiffRenameCandidatesInner,
-            StructureDiffRenameCandidatesInnerBuilder> {
+        Built<
+          StructureDiffRenameCandidatesInner,
+          StructureDiffRenameCandidatesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'from')
   String get from;
 
@@ -40,9 +42,9 @@ abstract class StructureDiffRenameCandidatesInner
 
   StructureDiffRenameCandidatesInner._();
 
-  factory StructureDiffRenameCandidatesInner(
-          [void updates(StructureDiffRenameCandidatesInnerBuilder b)]) =
-      _$StructureDiffRenameCandidatesInner;
+  factory StructureDiffRenameCandidatesInner([
+    void updates(StructureDiffRenameCandidatesInnerBuilder b),
+  ]) = _$StructureDiffRenameCandidatesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StructureDiffRenameCandidatesInnerBuilder b) => b;
@@ -57,7 +59,7 @@ class _$StructureDiffRenameCandidatesInnerSerializer
   @override
   final Iterable<Type> types = const [
     StructureDiffRenameCandidatesInner,
-    _$StructureDiffRenameCandidatesInner
+    _$StructureDiffRenameCandidatesInner,
   ];
 
   @override
@@ -86,8 +88,9 @@ class _$StructureDiffRenameCandidatesInnerSerializer
     yield r'reason';
     yield serializers.serialize(
       object.reason,
-      specifiedType:
-          const FullType(StructureDiffRenameCandidatesInnerReasonEnum),
+      specifiedType: const FullType(
+        StructureDiffRenameCandidatesInnerReasonEnum,
+      ),
     );
     if (object.readByParser != null) {
       yield r'readByParser';
@@ -104,9 +107,11 @@ class _$StructureDiffRenameCandidatesInnerSerializer
     StructureDiffRenameCandidatesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -122,39 +127,47 @@ class _$StructureDiffRenameCandidatesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.to = valueDes;
           break;
         case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.score = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(StructureDiffRenameCandidatesInnerReasonEnum),
-          ) as StructureDiffRenameCandidatesInnerReasonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StructureDiffRenameCandidatesInnerReasonEnum,
+                    ),
+                  )
+                  as StructureDiffRenameCandidatesInnerReasonEnum;
           result.reason = valueDes;
           break;
         case r'readByParser':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.readByParser = valueDes;
           break;
@@ -199,11 +212,10 @@ class StructureDiffRenameCandidatesInnerReasonEnum extends EnumClass {
       _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution;
 
   static Serializer<StructureDiffRenameCandidatesInnerReasonEnum>
-      get serializer =>
-          _$structureDiffRenameCandidatesInnerReasonEnumSerializer;
+  get serializer => _$structureDiffRenameCandidatesInnerReasonEnumSerializer;
 
   const StructureDiffRenameCandidatesInnerReasonEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<StructureDiffRenameCandidatesInnerReasonEnum> get values =>
       _$structureDiffRenameCandidatesInnerReasonEnumValues;

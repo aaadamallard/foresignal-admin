@@ -15,18 +15,20 @@ class _$WeatherContextRadarNearestCellMotion
   @override
   final String? method;
 
-  factory _$WeatherContextRadarNearestCellMotion(
-          [void Function(WeatherContextRadarNearestCellMotionBuilder)?
-              updates]) =>
+  factory _$WeatherContextRadarNearestCellMotion([
+    void Function(WeatherContextRadarNearestCellMotionBuilder)? updates,
+  ]) =>
       (WeatherContextRadarNearestCellMotionBuilder()..update(updates))._build();
 
-  _$WeatherContextRadarNearestCellMotion._(
-      {this.speedKmh, this.bearingDeg, this.method})
-      : super._();
+  _$WeatherContextRadarNearestCellMotion._({
+    this.speedKmh,
+    this.bearingDeg,
+    this.method,
+  }) : super._();
   @override
   WeatherContextRadarNearestCellMotion rebuild(
-          void Function(WeatherContextRadarNearestCellMotionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextRadarNearestCellMotionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextRadarNearestCellMotionBuilder toBuilder() =>
@@ -63,8 +65,10 @@ class _$WeatherContextRadarNearestCellMotion
 
 class WeatherContextRadarNearestCellMotionBuilder
     implements
-        Builder<WeatherContextRadarNearestCellMotion,
-            WeatherContextRadarNearestCellMotionBuilder> {
+        Builder<
+          WeatherContextRadarNearestCellMotion,
+          WeatherContextRadarNearestCellMotionBuilder
+        > {
   _$WeatherContextRadarNearestCellMotion? _$v;
 
   num? _speedKmh;
@@ -101,7 +105,8 @@ class WeatherContextRadarNearestCellMotionBuilder
 
   @override
   void update(
-      void Function(WeatherContextRadarNearestCellMotionBuilder)? updates) {
+    void Function(WeatherContextRadarNearestCellMotionBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -109,7 +114,8 @@ class WeatherContextRadarNearestCellMotionBuilder
   WeatherContextRadarNearestCellMotion build() => _build();
 
   _$WeatherContextRadarNearestCellMotion _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WeatherContextRadarNearestCellMotion._(
           speedKmh: speedKmh,
           bearingDeg: bearingDeg,

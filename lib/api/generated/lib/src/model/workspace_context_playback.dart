@@ -27,9 +27,9 @@ abstract class WorkspaceContextPlayback
 
   WorkspaceContextPlayback._();
 
-  factory WorkspaceContextPlayback(
-          [void updates(WorkspaceContextPlaybackBuilder b)]) =
-      _$WorkspaceContextPlayback;
+  factory WorkspaceContextPlayback([
+    void updates(WorkspaceContextPlaybackBuilder b),
+  ]) = _$WorkspaceContextPlayback;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkspaceContextPlaybackBuilder b) => b;
@@ -44,7 +44,7 @@ class _$WorkspaceContextPlaybackSerializer
   @override
   final Iterable<Type> types = const [
     WorkspaceContextPlayback,
-    _$WorkspaceContextPlayback
+    _$WorkspaceContextPlayback,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$WorkspaceContextPlaybackSerializer
     WorkspaceContextPlayback object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,17 +95,23 @@ class _$WorkspaceContextPlaybackSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkspaceContextPlaybackStateEnum),
-          ) as WorkspaceContextPlaybackStateEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      WorkspaceContextPlaybackStateEnum,
+                    ),
+                  )
+                  as WorkspaceContextPlaybackStateEnum;
           result.state = valueDes;
           break;
         case r'rate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.rate = valueDes;
           break;

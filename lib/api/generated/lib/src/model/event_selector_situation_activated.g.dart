@@ -11,15 +11,15 @@ class _$EventSelectorSituationActivated
   @override
   final SituationTheme? theme;
 
-  factory _$EventSelectorSituationActivated(
-          [void Function(EventSelectorSituationActivatedBuilder)? updates]) =>
-      (EventSelectorSituationActivatedBuilder()..update(updates))._build();
+  factory _$EventSelectorSituationActivated([
+    void Function(EventSelectorSituationActivatedBuilder)? updates,
+  ]) => (EventSelectorSituationActivatedBuilder()..update(updates))._build();
 
   _$EventSelectorSituationActivated._({this.theme}) : super._();
   @override
   EventSelectorSituationActivated rebuild(
-          void Function(EventSelectorSituationActivatedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventSelectorSituationActivatedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventSelectorSituationActivatedBuilder toBuilder() =>
@@ -41,16 +41,18 @@ class _$EventSelectorSituationActivated
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'EventSelectorSituationActivated')
-          ..add('theme', theme))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'EventSelectorSituationActivated',
+    )..add('theme', theme)).toString();
   }
 }
 
 class EventSelectorSituationActivatedBuilder
     implements
-        Builder<EventSelectorSituationActivated,
-            EventSelectorSituationActivatedBuilder> {
+        Builder<
+          EventSelectorSituationActivated,
+          EventSelectorSituationActivatedBuilder
+        > {
   _$EventSelectorSituationActivated? _$v;
 
   SituationTheme? _theme;
@@ -84,10 +86,7 @@ class EventSelectorSituationActivatedBuilder
   EventSelectorSituationActivated build() => _build();
 
   _$EventSelectorSituationActivated _build() {
-    final _$result = _$v ??
-        _$EventSelectorSituationActivated._(
-          theme: theme,
-        );
+    final _$result = _$v ?? _$EventSelectorSituationActivated._(theme: theme);
     replace(_$result);
     return _$result;
   }

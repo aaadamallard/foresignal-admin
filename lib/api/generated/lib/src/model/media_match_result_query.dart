@@ -31,8 +31,9 @@ abstract class MediaMatchResultQuery
 
   MediaMatchResultQuery._();
 
-  factory MediaMatchResultQuery(
-      [void updates(MediaMatchResultQueryBuilder b)]) = _$MediaMatchResultQuery;
+  factory MediaMatchResultQuery([
+    void updates(MediaMatchResultQueryBuilder b),
+  ]) = _$MediaMatchResultQuery;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MediaMatchResultQueryBuilder b) => b;
@@ -47,7 +48,7 @@ class _$MediaMatchResultQuerySerializer
   @override
   final Iterable<Type> types = const [
     MediaMatchResultQuery,
-    _$MediaMatchResultQuery
+    _$MediaMatchResultQuery,
   ];
 
   @override
@@ -83,9 +84,11 @@ class _$MediaMatchResultQuerySerializer
     MediaMatchResultQuery object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,25 +104,33 @@ class _$MediaMatchResultQuerySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'pdq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.pdq = valueDes;
           break;
         case r'quality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.quality = valueDes;
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MediaMatchResultQuerySource_Enum),
-          ) as MediaMatchResultQuerySource_Enum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      MediaMatchResultQuerySource_Enum,
+                    ),
+                  )
+                  as MediaMatchResultQuerySource_Enum;
           result.source_ = valueDes;
           break;
         default:

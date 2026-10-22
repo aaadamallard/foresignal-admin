@@ -22,8 +22,10 @@ part 'declarative_push_payload_notification.g.dart';
 @BuiltValue()
 abstract class DeclarativePushPayloadNotification
     implements
-        Built<DeclarativePushPayloadNotification,
-            DeclarativePushPayloadNotificationBuilder> {
+        Built<
+          DeclarativePushPayloadNotification,
+          DeclarativePushPayloadNotificationBuilder
+        > {
   @BuiltValueField(wireName: r'title')
   String get title;
 
@@ -49,9 +51,9 @@ abstract class DeclarativePushPayloadNotification
 
   DeclarativePushPayloadNotification._();
 
-  factory DeclarativePushPayloadNotification(
-          [void updates(DeclarativePushPayloadNotificationBuilder b)]) =
-      _$DeclarativePushPayloadNotification;
+  factory DeclarativePushPayloadNotification([
+    void updates(DeclarativePushPayloadNotificationBuilder b),
+  ]) = _$DeclarativePushPayloadNotification;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DeclarativePushPayloadNotificationBuilder b) => b;
@@ -66,7 +68,7 @@ class _$DeclarativePushPayloadNotificationSerializer
   @override
   final Iterable<Type> types = const [
     DeclarativePushPayloadNotification,
-    _$DeclarativePushPayloadNotification
+    _$DeclarativePushPayloadNotification,
   ];
 
   @override
@@ -130,9 +132,11 @@ class _$DeclarativePushPayloadNotificationSerializer
     DeclarativePushPayloadNotification object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -148,56 +152,70 @@ class _$DeclarativePushPayloadNotificationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'body':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.body = valueDes;
           break;
         case r'navigate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.navigate = valueDes;
           break;
         case r'lang':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lang = valueDes;
           break;
         case r'tag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tag = valueDes;
           break;
         case r'silent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.silent = valueDes;
           break;
         case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PushPayload),
-          ) as PushPayload?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PushPayload),
+                  )
+                  as PushPayload?;
           if (valueDes == null) continue;
           result.data.replace(valueDes);
           break;

@@ -12,17 +12,18 @@ class _$StatsResponseThresholdsInner extends StatsResponseThresholdsInner {
   @override
   final num areaKm2;
 
-  factory _$StatsResponseThresholdsInner(
-          [void Function(StatsResponseThresholdsInnerBuilder)? updates]) =>
-      (StatsResponseThresholdsInnerBuilder()..update(updates))._build();
+  factory _$StatsResponseThresholdsInner([
+    void Function(StatsResponseThresholdsInnerBuilder)? updates,
+  ]) => (StatsResponseThresholdsInnerBuilder()..update(updates))._build();
 
-  _$StatsResponseThresholdsInner._(
-      {required this.threshold, required this.areaKm2})
-      : super._();
+  _$StatsResponseThresholdsInner._({
+    required this.threshold,
+    required this.areaKm2,
+  }) : super._();
   @override
   StatsResponseThresholdsInner rebuild(
-          void Function(StatsResponseThresholdsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsResponseThresholdsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsResponseThresholdsInnerBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$StatsResponseThresholdsInner extends StatsResponseThresholdsInner {
 
 class StatsResponseThresholdsInnerBuilder
     implements
-        Builder<StatsResponseThresholdsInner,
-            StatsResponseThresholdsInnerBuilder> {
+        Builder<
+          StatsResponseThresholdsInner,
+          StatsResponseThresholdsInnerBuilder
+        > {
   _$StatsResponseThresholdsInner? _$v;
 
   num? _threshold;
@@ -96,12 +99,19 @@ class StatsResponseThresholdsInnerBuilder
   StatsResponseThresholdsInner build() => _build();
 
   _$StatsResponseThresholdsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StatsResponseThresholdsInner._(
           threshold: BuiltValueNullFieldError.checkNotNull(
-              threshold, r'StatsResponseThresholdsInner', 'threshold'),
+            threshold,
+            r'StatsResponseThresholdsInner',
+            'threshold',
+          ),
           areaKm2: BuiltValueNullFieldError.checkNotNull(
-              areaKm2, r'StatsResponseThresholdsInner', 'areaKm2'),
+            areaKm2,
+            r'StatsResponseThresholdsInner',
+            'areaKm2',
+          ),
         );
     replace(_$result);
     return _$result;

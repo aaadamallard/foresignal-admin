@@ -24,24 +24,24 @@ class _$RegionalIndexDefInput extends RegionalIndexDefInput {
   @override
   final bool? autoApplyFittedWeights;
 
-  factory _$RegionalIndexDefInput(
-          [void Function(RegionalIndexDefInputBuilder)? updates]) =>
-      (RegionalIndexDefInputBuilder()..update(updates))._build();
+  factory _$RegionalIndexDefInput([
+    void Function(RegionalIndexDefInputBuilder)? updates,
+  ]) => (RegionalIndexDefInputBuilder()..update(updates))._build();
 
-  _$RegionalIndexDefInput._(
-      {required this.name,
-      this.description,
-      required this.components,
-      required this.weights,
-      this.floors,
-      required this.target,
-      required this.enabled,
-      this.autoApplyFittedWeights})
-      : super._();
+  _$RegionalIndexDefInput._({
+    required this.name,
+    this.description,
+    required this.components,
+    required this.weights,
+    this.floors,
+    required this.target,
+    required this.enabled,
+    this.autoApplyFittedWeights,
+  }) : super._();
   @override
   RegionalIndexDefInput rebuild(
-          void Function(RegionalIndexDefInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexDefInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexDefInputBuilder toBuilder() =>
@@ -169,18 +169,28 @@ class RegionalIndexDefInputBuilder
   _$RegionalIndexDefInput _build() {
     _$RegionalIndexDefInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalIndexDefInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'RegionalIndexDefInput', 'name'),
+              name,
+              r'RegionalIndexDefInput',
+              'name',
+            ),
             description: description,
             components: components.build(),
             weights: weights.build(),
             floors: _floors?.build(),
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'RegionalIndexDefInput', 'target'),
+              target,
+              r'RegionalIndexDefInput',
+              'target',
+            ),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'RegionalIndexDefInput', 'enabled'),
+              enabled,
+              r'RegionalIndexDefInput',
+              'enabled',
+            ),
             autoApplyFittedWeights: autoApplyFittedWeights,
           );
     } catch (_) {
@@ -194,7 +204,10 @@ class RegionalIndexDefInputBuilder
         _floors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalIndexDefInput', _$failedField, e.toString());
+          r'RegionalIndexDefInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

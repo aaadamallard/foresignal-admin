@@ -7,17 +7,18 @@ part of 'index_changed_event.dart';
 // **************************************************************************
 
 const IndexChangedEventWeightsOriginEnum
-    _$indexChangedEventWeightsOriginEnum_default_ =
+_$indexChangedEventWeightsOriginEnum_default_ =
     const IndexChangedEventWeightsOriginEnum._('default_');
 const IndexChangedEventWeightsOriginEnum
-    _$indexChangedEventWeightsOriginEnum_fitted =
+_$indexChangedEventWeightsOriginEnum_fitted =
     const IndexChangedEventWeightsOriginEnum._('fitted');
 const IndexChangedEventWeightsOriginEnum
-    _$indexChangedEventWeightsOriginEnum_operator_ =
+_$indexChangedEventWeightsOriginEnum_operator_ =
     const IndexChangedEventWeightsOriginEnum._('operator_');
 
 IndexChangedEventWeightsOriginEnum _$indexChangedEventWeightsOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'default_':
       return _$indexChangedEventWeightsOriginEnum_default_;
@@ -31,15 +32,17 @@ IndexChangedEventWeightsOriginEnum _$indexChangedEventWeightsOriginEnumValueOf(
 }
 
 final BuiltSet<IndexChangedEventWeightsOriginEnum>
-    _$indexChangedEventWeightsOriginEnumValues = BuiltSet<
-        IndexChangedEventWeightsOriginEnum>(const <IndexChangedEventWeightsOriginEnum>[
-  _$indexChangedEventWeightsOriginEnum_default_,
-  _$indexChangedEventWeightsOriginEnum_fitted,
-  _$indexChangedEventWeightsOriginEnum_operator_,
-]);
+_$indexChangedEventWeightsOriginEnumValues =
+    BuiltSet<IndexChangedEventWeightsOriginEnum>(
+      const <IndexChangedEventWeightsOriginEnum>[
+        _$indexChangedEventWeightsOriginEnum_default_,
+        _$indexChangedEventWeightsOriginEnum_fitted,
+        _$indexChangedEventWeightsOriginEnum_operator_,
+      ],
+    );
 
 Serializer<IndexChangedEventWeightsOriginEnum>
-    _$indexChangedEventWeightsOriginEnumSerializer =
+_$indexChangedEventWeightsOriginEnumSerializer =
     _$IndexChangedEventWeightsOriginEnumSerializer();
 
 class _$IndexChangedEventWeightsOriginEnumSerializer
@@ -62,16 +65,19 @@ class _$IndexChangedEventWeightsOriginEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndexChangedEventWeightsOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndexChangedEventWeightsOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndexChangedEventWeightsOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndexChangedEventWeightsOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndexChangedEventWeightsOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndexChangedEvent extends IndexChangedEvent {
@@ -92,20 +98,20 @@ class _$IndexChangedEvent extends IndexChangedEvent {
   @override
   final IndexChangedEventWeightsOriginEnum? weightsOrigin;
 
-  factory _$IndexChangedEvent(
-          [void Function(IndexChangedEventBuilder)? updates]) =>
-      (IndexChangedEventBuilder()..update(updates))._build();
+  factory _$IndexChangedEvent([
+    void Function(IndexChangedEventBuilder)? updates,
+  ]) => (IndexChangedEventBuilder()..update(updates))._build();
 
-  _$IndexChangedEvent._(
-      {required this.indexId,
-      required this.region,
-      required this.day,
-      required this.value,
-      this.previousValue,
-      this.delta24h,
-      this.delta7d,
-      this.weightsOrigin})
-      : super._();
+  _$IndexChangedEvent._({
+    required this.indexId,
+    required this.region,
+    required this.day,
+    required this.value,
+    this.previousValue,
+    this.delta24h,
+    this.delta7d,
+    this.weightsOrigin,
+  }) : super._();
   @override
   IndexChangedEvent rebuild(void Function(IndexChangedEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -231,16 +237,29 @@ class IndexChangedEventBuilder
   IndexChangedEvent build() => _build();
 
   _$IndexChangedEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IndexChangedEvent._(
           indexId: BuiltValueNullFieldError.checkNotNull(
-              indexId, r'IndexChangedEvent', 'indexId'),
+            indexId,
+            r'IndexChangedEvent',
+            'indexId',
+          ),
           region: BuiltValueNullFieldError.checkNotNull(
-              region, r'IndexChangedEvent', 'region'),
+            region,
+            r'IndexChangedEvent',
+            'region',
+          ),
           day: BuiltValueNullFieldError.checkNotNull(
-              day, r'IndexChangedEvent', 'day'),
+            day,
+            r'IndexChangedEvent',
+            'day',
+          ),
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'IndexChangedEvent', 'value'),
+            value,
+            r'IndexChangedEvent',
+            'value',
+          ),
           previousValue: previousValue,
           delta24h: delta24h,
           delta7d: delta7d,

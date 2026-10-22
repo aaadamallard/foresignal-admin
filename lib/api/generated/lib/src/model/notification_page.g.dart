@@ -12,9 +12,9 @@ class _$NotificationPage extends NotificationPage {
   @override
   final String? nextCursor;
 
-  factory _$NotificationPage(
-          [void Function(NotificationPageBuilder)? updates]) =>
-      (NotificationPageBuilder()..update(updates))._build();
+  factory _$NotificationPage([
+    void Function(NotificationPageBuilder)? updates,
+  ]) => (NotificationPageBuilder()..update(updates))._build();
 
   _$NotificationPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class NotificationPageBuilder
   _$NotificationPage _build() {
     _$NotificationPage _$result;
     try {
-      _$result = _$v ??
-          _$NotificationPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$NotificationPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class NotificationPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationPage', _$failedField, e.toString());
+          r'NotificationPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

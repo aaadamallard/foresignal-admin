@@ -14,16 +14,16 @@ class _$ForecastAreaPayloadThreshold extends ForecastAreaPayloadThreshold {
   @override
   final String? units;
 
-  factory _$ForecastAreaPayloadThreshold(
-          [void Function(ForecastAreaPayloadThresholdBuilder)? updates]) =>
-      (ForecastAreaPayloadThresholdBuilder()..update(updates))._build();
+  factory _$ForecastAreaPayloadThreshold([
+    void Function(ForecastAreaPayloadThresholdBuilder)? updates,
+  ]) => (ForecastAreaPayloadThresholdBuilder()..update(updates))._build();
 
   _$ForecastAreaPayloadThreshold._({this.op, this.value, this.units})
-      : super._();
+    : super._();
   @override
   ForecastAreaPayloadThreshold rebuild(
-          void Function(ForecastAreaPayloadThresholdBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastAreaPayloadThresholdBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastAreaPayloadThresholdBuilder toBuilder() =>
@@ -60,8 +60,10 @@ class _$ForecastAreaPayloadThreshold extends ForecastAreaPayloadThreshold {
 
 class ForecastAreaPayloadThresholdBuilder
     implements
-        Builder<ForecastAreaPayloadThreshold,
-            ForecastAreaPayloadThresholdBuilder> {
+        Builder<
+          ForecastAreaPayloadThreshold,
+          ForecastAreaPayloadThresholdBuilder
+        > {
   _$ForecastAreaPayloadThreshold? _$v;
 
   String? _op;
@@ -105,12 +107,9 @@ class ForecastAreaPayloadThresholdBuilder
   ForecastAreaPayloadThreshold build() => _build();
 
   _$ForecastAreaPayloadThreshold _build() {
-    final _$result = _$v ??
-        _$ForecastAreaPayloadThreshold._(
-          op: op,
-          value: value,
-          units: units,
-        );
+    final _$result =
+        _$v ??
+        _$ForecastAreaPayloadThreshold._(op: op, value: value, units: units);
     replace(_$result);
     return _$result;
   }

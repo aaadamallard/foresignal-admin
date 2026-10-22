@@ -92,11 +92,9 @@ class AnalystRunPageBuilder
   _$AnalystRunPage _build() {
     _$AnalystRunPage _$result;
     try {
-      _$result = _$v ??
-          _$AnalystRunPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AnalystRunPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class AnalystRunPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystRunPage', _$failedField, e.toString());
+          r'AnalystRunPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

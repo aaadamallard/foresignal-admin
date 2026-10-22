@@ -12,16 +12,16 @@ class _$NwsForecastPayloadHazardsInner extends NwsForecastPayloadHazardsInner {
   @override
   final String? validTime;
 
-  factory _$NwsForecastPayloadHazardsInner(
-          [void Function(NwsForecastPayloadHazardsInnerBuilder)? updates]) =>
-      (NwsForecastPayloadHazardsInnerBuilder()..update(updates))._build();
+  factory _$NwsForecastPayloadHazardsInner([
+    void Function(NwsForecastPayloadHazardsInnerBuilder)? updates,
+  ]) => (NwsForecastPayloadHazardsInnerBuilder()..update(updates))._build();
 
   _$NwsForecastPayloadHazardsInner._({required this.type, this.validTime})
-      : super._();
+    : super._();
   @override
   NwsForecastPayloadHazardsInner rebuild(
-          void Function(NwsForecastPayloadHazardsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NwsForecastPayloadHazardsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NwsForecastPayloadHazardsInnerBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$NwsForecastPayloadHazardsInner extends NwsForecastPayloadHazardsInner {
 
 class NwsForecastPayloadHazardsInnerBuilder
     implements
-        Builder<NwsForecastPayloadHazardsInner,
-            NwsForecastPayloadHazardsInnerBuilder> {
+        Builder<
+          NwsForecastPayloadHazardsInner,
+          NwsForecastPayloadHazardsInnerBuilder
+        > {
   _$NwsForecastPayloadHazardsInner? _$v;
 
   String? _type;
@@ -95,10 +97,14 @@ class NwsForecastPayloadHazardsInnerBuilder
   NwsForecastPayloadHazardsInner build() => _build();
 
   _$NwsForecastPayloadHazardsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NwsForecastPayloadHazardsInner._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'NwsForecastPayloadHazardsInner', 'type'),
+            type,
+            r'NwsForecastPayloadHazardsInner',
+            'type',
+          ),
           validTime: validTime,
         );
     replace(_$result);

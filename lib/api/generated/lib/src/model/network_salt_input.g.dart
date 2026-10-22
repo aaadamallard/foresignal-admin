@@ -12,12 +12,12 @@ class _$NetworkSaltInput extends NetworkSaltInput {
   @override
   final String saltRef;
 
-  factory _$NetworkSaltInput(
-          [void Function(NetworkSaltInputBuilder)? updates]) =>
-      (NetworkSaltInputBuilder()..update(updates))._build();
+  factory _$NetworkSaltInput([
+    void Function(NetworkSaltInputBuilder)? updates,
+  ]) => (NetworkSaltInputBuilder()..update(updates))._build();
 
   _$NetworkSaltInput._({required this.networkId, required this.saltRef})
-      : super._();
+    : super._();
   @override
   NetworkSaltInput rebuild(void Function(NetworkSaltInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -92,12 +92,19 @@ class NetworkSaltInputBuilder
   NetworkSaltInput build() => _build();
 
   _$NetworkSaltInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NetworkSaltInput._(
           networkId: BuiltValueNullFieldError.checkNotNull(
-              networkId, r'NetworkSaltInput', 'networkId'),
+            networkId,
+            r'NetworkSaltInput',
+            'networkId',
+          ),
           saltRef: BuiltValueNullFieldError.checkNotNull(
-              saltRef, r'NetworkSaltInput', 'saltRef'),
+            saltRef,
+            r'NetworkSaltInput',
+            'saltRef',
+          ),
         );
     replace(_$result);
     return _$result;

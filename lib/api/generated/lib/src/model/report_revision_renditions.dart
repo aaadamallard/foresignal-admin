@@ -29,9 +29,9 @@ abstract class ReportRevisionRenditions
 
   ReportRevisionRenditions._();
 
-  factory ReportRevisionRenditions(
-          [void updates(ReportRevisionRenditionsBuilder b)]) =
-      _$ReportRevisionRenditions;
+  factory ReportRevisionRenditions([
+    void updates(ReportRevisionRenditionsBuilder b),
+  ]) = _$ReportRevisionRenditions;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ReportRevisionRenditionsBuilder b) => b;
@@ -46,7 +46,7 @@ class _$ReportRevisionRenditionsSerializer
   @override
   final Iterable<Type> types = const [
     ReportRevisionRenditions,
-    _$ReportRevisionRenditions
+    _$ReportRevisionRenditions,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$ReportRevisionRenditionsSerializer
     ReportRevisionRenditions object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,32 @@ class _$ReportRevisionRenditionsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'markdown':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.markdown = valueDes;
           break;
         case r'html':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.html = valueDes;
           break;
         case r'json':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.json = valueDes;
           break;

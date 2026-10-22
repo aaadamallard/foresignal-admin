@@ -36,12 +36,12 @@ ReportInputTemplateEnum _$reportInputTemplateEnumValueOf(String name) {
 
 final BuiltSet<ReportInputTemplateEnum> _$reportInputTemplateEnumValues =
     BuiltSet<ReportInputTemplateEnum>(const <ReportInputTemplateEnum>[
-  _$reportInputTemplateEnum_situationBrief,
-  _$reportInputTemplateEnum_investigationSummary,
-  _$reportInputTemplateEnum_chronicleRecap,
-  _$reportInputTemplateEnum_weeklyAssessment,
-  _$reportInputTemplateEnum_custom,
-]);
+      _$reportInputTemplateEnum_situationBrief,
+      _$reportInputTemplateEnum_investigationSummary,
+      _$reportInputTemplateEnum_chronicleRecap,
+      _$reportInputTemplateEnum_weeklyAssessment,
+      _$reportInputTemplateEnum_custom,
+    ]);
 
 Serializer<ReportInputTemplateEnum> _$reportInputTemplateEnumSerializer =
     _$ReportInputTemplateEnumSerializer();
@@ -69,16 +69,20 @@ class _$ReportInputTemplateEnumSerializer
   final String wireName = 'ReportInputTemplateEnum';
 
   @override
-  Object serialize(Serializers serializers, ReportInputTemplateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReportInputTemplateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReportInputTemplateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportInputTemplateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportInputTemplateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportInput extends ReportInput {
@@ -106,18 +110,18 @@ class _$ReportInput extends ReportInput {
   factory _$ReportInput([void Function(ReportInputBuilder)? updates]) =>
       (ReportInputBuilder()..update(updates))._build();
 
-  _$ReportInput._(
-      {required this.title,
-      this.subtitle,
-      this.authors,
-      this.tlp,
-      this.visibility,
-      this.source_,
-      this.template,
-      this.timeWindow,
-      this.area,
-      this.blocks})
-      : super._();
+  _$ReportInput._({
+    required this.title,
+    this.subtitle,
+    this.authors,
+    this.tlp,
+    this.visibility,
+    this.source_,
+    this.template,
+    this.timeWindow,
+    this.area,
+    this.blocks,
+  }) : super._();
   @override
   ReportInput rebuild(void Function(ReportInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -259,10 +263,14 @@ class ReportInputBuilder implements Builder<ReportInput, ReportInputBuilder> {
   _$ReportInput _build() {
     _$ReportInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportInput._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ReportInput', 'title'),
+              title,
+              r'ReportInput',
+              'title',
+            ),
             subtitle: subtitle,
             authors: _authors?.build(),
             tlp: tlp,
@@ -290,7 +298,10 @@ class ReportInputBuilder implements Builder<ReportInput, ReportInputBuilder> {
         _blocks?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportInput', _$failedField, e.toString());
+          r'ReportInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

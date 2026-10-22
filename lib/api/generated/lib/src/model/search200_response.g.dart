@@ -28,10 +28,10 @@ Search200ResponseModeEnum _$search200ResponseModeEnumValueOf(String name) {
 
 final BuiltSet<Search200ResponseModeEnum> _$search200ResponseModeEnumValues =
     BuiltSet<Search200ResponseModeEnum>(const <Search200ResponseModeEnum>[
-  _$search200ResponseModeEnum_hybrid,
-  _$search200ResponseModeEnum_semantic,
-  _$search200ResponseModeEnum_text,
-]);
+      _$search200ResponseModeEnum_hybrid,
+      _$search200ResponseModeEnum_semantic,
+      _$search200ResponseModeEnum_text,
+    ]);
 
 Serializer<Search200ResponseModeEnum> _$search200ResponseModeEnumSerializer =
     _$Search200ResponseModeEnumSerializer();
@@ -55,25 +55,29 @@ class _$Search200ResponseModeEnumSerializer
   final String wireName = 'Search200ResponseModeEnum';
 
   @override
-  Object serialize(Serializers serializers, Search200ResponseModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    Search200ResponseModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   Search200ResponseModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      Search200ResponseModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => Search200ResponseModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Search200Response extends Search200Response {
   @override
   final OneOf oneOf;
 
-  factory _$Search200Response(
-          [void Function(Search200ResponseBuilder)? updates]) =>
-      (Search200ResponseBuilder()..update(updates))._build();
+  factory _$Search200Response([
+    void Function(Search200ResponseBuilder)? updates,
+  ]) => (Search200ResponseBuilder()..update(updates))._build();
 
   _$Search200Response._({required this.oneOf}) : super._();
   @override
@@ -100,9 +104,9 @@ class _$Search200Response extends Search200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Search200Response')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'Search200Response',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -141,10 +145,14 @@ class Search200ResponseBuilder
   Search200Response build() => _build();
 
   _$Search200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Search200Response._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'Search200Response', 'oneOf'),
+            oneOf,
+            r'Search200Response',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

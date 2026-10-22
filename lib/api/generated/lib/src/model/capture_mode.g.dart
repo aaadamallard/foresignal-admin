@@ -40,13 +40,13 @@ CaptureModeModeEnum _$captureModeModeEnumValueOf(String name) {
 
 final BuiltSet<CaptureModeModeEnum> _$captureModeModeEnumValues =
     BuiltSet<CaptureModeModeEnum>(const <CaptureModeModeEnum>[
-  _$captureModeModeEnum_full,
-  _$captureModeModeEnum_downsampled,
-  _$captureModeModeEnum_eventsOnly,
-  _$captureModeModeEnum_latestPerInterval,
-  _$captureModeModeEnum_rollupOnly,
-  _$captureModeModeEnum_frames,
-]);
+      _$captureModeModeEnum_full,
+      _$captureModeModeEnum_downsampled,
+      _$captureModeModeEnum_eventsOnly,
+      _$captureModeModeEnum_latestPerInterval,
+      _$captureModeModeEnum_rollupOnly,
+      _$captureModeModeEnum_frames,
+    ]);
 
 Serializer<CaptureModeModeEnum> _$captureModeModeEnumSerializer =
     _$CaptureModeModeEnumSerializer();
@@ -76,15 +76,20 @@ class _$CaptureModeModeEnumSerializer
   final String wireName = 'CaptureModeModeEnum';
 
   @override
-  Object serialize(Serializers serializers, CaptureModeModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CaptureModeModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CaptureModeModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CaptureModeModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CaptureModeModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CaptureModeModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CaptureMode extends CaptureMode {
@@ -99,7 +104,7 @@ class _$CaptureMode extends CaptureMode {
       (CaptureModeBuilder()..update(updates))._build();
 
   _$CaptureMode._({required this.mode, this.interval, this.everyNthFrame})
-      : super._();
+    : super._();
   @override
   CaptureMode rebuild(void Function(CaptureModeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -181,10 +186,14 @@ class CaptureModeBuilder implements Builder<CaptureMode, CaptureModeBuilder> {
   CaptureMode build() => _build();
 
   _$CaptureMode _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CaptureMode._(
           mode: BuiltValueNullFieldError.checkNotNull(
-              mode, r'CaptureMode', 'mode'),
+            mode,
+            r'CaptureMode',
+            'mode',
+          ),
           interval: interval,
           everyNthFrame: everyNthFrame,
         );

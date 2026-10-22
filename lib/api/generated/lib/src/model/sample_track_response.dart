@@ -55,7 +55,7 @@ class _$SampleTrackResponseSerializer
   @override
   final Iterable<Type> types = const [
     SampleTrackResponse,
-    _$SampleTrackResponse
+    _$SampleTrackResponse,
   ];
 
   @override
@@ -81,8 +81,9 @@ class _$SampleTrackResponseSerializer
     yield r'points';
     yield serializers.serialize(
       object.points,
-      specifiedType:
-          const FullType(BuiltList, [FullType(SampleTrackResponsePointsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SampleTrackResponsePointsInner),
+      ]),
     );
     if (object.attribution != null) {
       yield r'attribution';
@@ -106,9 +107,11 @@ class _$SampleTrackResponseSerializer
     SampleTrackResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -124,42 +127,56 @@ class _$SampleTrackResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'record':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.record = valueDes;
           break;
         case r'products':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.products.replace(valueDes);
           break;
         case r'points':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(SampleTrackResponsePointsInner)]),
-          ) as BuiltList<SampleTrackResponsePointsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SampleTrackResponsePointsInner),
+                    ]),
+                  )
+                  as BuiltList<SampleTrackResponsePointsInner>;
           result.points.replace(valueDes);
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>?;
           if (valueDes == null) continue;
           result.attribution.replace(valueDes);
           break;
         case r'serverTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.serverTime = valueDes;
           break;

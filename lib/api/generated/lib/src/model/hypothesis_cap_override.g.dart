@@ -14,17 +14,19 @@ class _$HypothesisCapOverride extends HypothesisCapOverride {
   @override
   final String rationale;
 
-  factory _$HypothesisCapOverride(
-          [void Function(HypothesisCapOverrideBuilder)? updates]) =>
-      (HypothesisCapOverrideBuilder()..update(updates))._build();
+  factory _$HypothesisCapOverride([
+    void Function(HypothesisCapOverrideBuilder)? updates,
+  ]) => (HypothesisCapOverrideBuilder()..update(updates))._build();
 
-  _$HypothesisCapOverride._(
-      {required this.by, required this.at, required this.rationale})
-      : super._();
+  _$HypothesisCapOverride._({
+    required this.by,
+    required this.at,
+    required this.rationale,
+  }) : super._();
   @override
   HypothesisCapOverride rebuild(
-          void Function(HypothesisCapOverrideBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisCapOverrideBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisCapOverrideBuilder toBuilder() =>
@@ -104,14 +106,24 @@ class HypothesisCapOverrideBuilder
   HypothesisCapOverride build() => _build();
 
   _$HypothesisCapOverride _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisCapOverride._(
           by: BuiltValueNullFieldError.checkNotNull(
-              by, r'HypothesisCapOverride', 'by'),
+            by,
+            r'HypothesisCapOverride',
+            'by',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'HypothesisCapOverride', 'at'),
+            at,
+            r'HypothesisCapOverride',
+            'at',
+          ),
           rationale: BuiltValueNullFieldError.checkNotNull(
-              rationale, r'HypothesisCapOverride', 'rationale'),
+            rationale,
+            r'HypothesisCapOverride',
+            'rationale',
+          ),
         );
     replace(_$result);
     return _$result;

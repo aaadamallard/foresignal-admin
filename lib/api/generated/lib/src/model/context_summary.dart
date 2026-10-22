@@ -105,20 +105,23 @@ class _$ContextSummarySerializer
     yield r'layerCounts';
     yield serializers.serialize(
       object.layerCounts,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ContextSummaryLayerCountsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ContextSummaryLayerCountsInner),
+      ]),
     );
     yield r'activity';
     yield serializers.serialize(
       object.activity,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ContextSummaryActivityInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ContextSummaryActivityInner),
+      ]),
     );
     yield r'insights';
     yield serializers.serialize(
       object.insights,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ContextSummaryInsightsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ContextSummaryInsightsInner),
+      ]),
     );
     yield r'related';
     yield serializers.serialize(
@@ -147,9 +150,11 @@ class _$ContextSummarySerializer
     ContextSummary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -165,73 +170,99 @@ class _$ContextSummarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ContextSummaryRequest),
-          ) as ContextSummaryRequest?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ContextSummaryRequest,
+                    ),
+                  )
+                  as ContextSummaryRequest?;
           if (valueDes == null) continue;
           result.context.replace(valueDes);
           break;
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.generatedAt = valueDes;
           break;
         case r'cacheAgeSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.cacheAgeSeconds = valueDes;
           break;
         case r'layerCounts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ContextSummaryLayerCountsInner)]),
-          ) as BuiltList<ContextSummaryLayerCountsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ContextSummaryLayerCountsInner),
+                    ]),
+                  )
+                  as BuiltList<ContextSummaryLayerCountsInner>;
           result.layerCounts.replace(valueDes);
           break;
         case r'activity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ContextSummaryActivityInner)]),
-          ) as BuiltList<ContextSummaryActivityInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ContextSummaryActivityInner),
+                    ]),
+                  )
+                  as BuiltList<ContextSummaryActivityInner>;
           result.activity.replace(valueDes);
           break;
         case r'insights':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ContextSummaryInsightsInner)]),
-          ) as BuiltList<ContextSummaryInsightsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ContextSummaryInsightsInner),
+                    ]),
+                  )
+                  as BuiltList<ContextSummaryInsightsInner>;
           result.insights.replace(valueDes);
           break;
         case r'related':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ObjectEnvelope)]),
-          ) as BuiltList<ObjectEnvelope>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ObjectEnvelope),
+                    ]),
+                  )
+                  as BuiltList<ObjectEnvelope>;
           result.related.replace(valueDes);
           break;
         case r'narrative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ContextSummaryNarrative),
-          ) as ContextSummaryNarrative?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ContextSummaryNarrative,
+                    ),
+                  )
+                  as ContextSummaryNarrative?;
           if (valueDes == null) continue;
           result.narrative.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;

@@ -20,9 +20,9 @@ abstract class TuningSuggestionDismiss
 
   TuningSuggestionDismiss._();
 
-  factory TuningSuggestionDismiss(
-          [void updates(TuningSuggestionDismissBuilder b)]) =
-      _$TuningSuggestionDismiss;
+  factory TuningSuggestionDismiss([
+    void updates(TuningSuggestionDismissBuilder b),
+  ]) = _$TuningSuggestionDismiss;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TuningSuggestionDismissBuilder b) => b;
@@ -37,7 +37,7 @@ class _$TuningSuggestionDismissSerializer
   @override
   final Iterable<Type> types = const [
     TuningSuggestionDismiss,
-    _$TuningSuggestionDismiss
+    _$TuningSuggestionDismiss,
   ];
 
   @override
@@ -63,9 +63,11 @@ class _$TuningSuggestionDismissSerializer
     TuningSuggestionDismiss object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +83,12 @@ class _$TuningSuggestionDismissSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

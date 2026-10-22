@@ -28,21 +28,22 @@ ApiTokenInputScopeEnum _$apiTokenInputScopeEnumValueOf(String name) {
 
 final BuiltSet<ApiTokenInputScopeEnum> _$apiTokenInputScopeEnumValues =
     BuiltSet<ApiTokenInputScopeEnum>(const <ApiTokenInputScopeEnum>[
-  _$apiTokenInputScopeEnum_read,
-  _$apiTokenInputScopeEnum_agent,
-  _$apiTokenInputScopeEnum_admin,
-]);
+      _$apiTokenInputScopeEnum_read,
+      _$apiTokenInputScopeEnum_agent,
+      _$apiTokenInputScopeEnum_admin,
+    ]);
 
 const ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnum_noNc =
     const ApiTokenInputLicencePolicyEnum._('noNc');
 const ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnum_noSa =
     const ApiTokenInputLicencePolicyEnum._('noSa');
 const ApiTokenInputLicencePolicyEnum
-    _$apiTokenInputLicencePolicyEnum_redistributable =
+_$apiTokenInputLicencePolicyEnum_redistributable =
     const ApiTokenInputLicencePolicyEnum._('redistributable');
 
 ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'noNc':
       return _$apiTokenInputLicencePolicyEnum_noNc;
@@ -56,17 +57,19 @@ ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnumValueOf(
 }
 
 final BuiltSet<ApiTokenInputLicencePolicyEnum>
-    _$apiTokenInputLicencePolicyEnumValues = BuiltSet<
-        ApiTokenInputLicencePolicyEnum>(const <ApiTokenInputLicencePolicyEnum>[
-  _$apiTokenInputLicencePolicyEnum_noNc,
-  _$apiTokenInputLicencePolicyEnum_noSa,
-  _$apiTokenInputLicencePolicyEnum_redistributable,
-]);
+_$apiTokenInputLicencePolicyEnumValues =
+    BuiltSet<ApiTokenInputLicencePolicyEnum>(
+      const <ApiTokenInputLicencePolicyEnum>[
+        _$apiTokenInputLicencePolicyEnum_noNc,
+        _$apiTokenInputLicencePolicyEnum_noSa,
+        _$apiTokenInputLicencePolicyEnum_redistributable,
+      ],
+    );
 
 Serializer<ApiTokenInputScopeEnum> _$apiTokenInputScopeEnumSerializer =
     _$ApiTokenInputScopeEnumSerializer();
 Serializer<ApiTokenInputLicencePolicyEnum>
-    _$apiTokenInputLicencePolicyEnumSerializer =
+_$apiTokenInputLicencePolicyEnumSerializer =
     _$ApiTokenInputLicencePolicyEnumSerializer();
 
 class _$ApiTokenInputScopeEnumSerializer
@@ -88,15 +91,20 @@ class _$ApiTokenInputScopeEnumSerializer
   final String wireName = 'ApiTokenInputScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, ApiTokenInputScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ApiTokenInputScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ApiTokenInputScopeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ApiTokenInputScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ApiTokenInputScopeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ApiTokenInputScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ApiTokenInputLicencePolicyEnumSerializer
@@ -119,16 +127,19 @@ class _$ApiTokenInputLicencePolicyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ApiTokenInputLicencePolicyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ApiTokenInputLicencePolicyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ApiTokenInputLicencePolicyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ApiTokenInputLicencePolicyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ApiTokenInputLicencePolicyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ApiTokenInput extends ApiTokenInput {
@@ -150,15 +161,15 @@ class _$ApiTokenInput extends ApiTokenInput {
   factory _$ApiTokenInput([void Function(ApiTokenInputBuilder)? updates]) =>
       (ApiTokenInputBuilder()..update(updates))._build();
 
-  _$ApiTokenInput._(
-      {required this.name,
-      required this.scope,
-      this.expiresAt,
-      this.restrictions,
-      this.principalId,
-      this.privateAccess,
-      this.licencePolicy})
-      : super._();
+  _$ApiTokenInput._({
+    required this.name,
+    required this.scope,
+    this.expiresAt,
+    this.restrictions,
+    this.principalId,
+    this.privateAccess,
+    this.licencePolicy,
+  }) : super._();
   @override
   ApiTokenInput rebuild(void Function(ApiTokenInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -242,8 +253,8 @@ class ApiTokenInputBuilder
   ListBuilder<ApiTokenInputLicencePolicyEnum> get licencePolicy =>
       _$this._licencePolicy ??= ListBuilder<ApiTokenInputLicencePolicyEnum>();
   set licencePolicy(
-          ListBuilder<ApiTokenInputLicencePolicyEnum>? licencePolicy) =>
-      _$this._licencePolicy = licencePolicy;
+    ListBuilder<ApiTokenInputLicencePolicyEnum>? licencePolicy,
+  ) => _$this._licencePolicy = licencePolicy;
 
   ApiTokenInputBuilder() {
     ApiTokenInput._defaults(this);
@@ -280,12 +291,19 @@ class ApiTokenInputBuilder
   _$ApiTokenInput _build() {
     _$ApiTokenInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ApiTokenInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ApiTokenInput', 'name'),
+              name,
+              r'ApiTokenInput',
+              'name',
+            ),
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'ApiTokenInput', 'scope'),
+              scope,
+              r'ApiTokenInput',
+              'scope',
+            ),
             expiresAt: expiresAt,
             restrictions: _restrictions?.build(),
             principalId: principalId,
@@ -302,7 +320,10 @@ class ApiTokenInputBuilder
         _licencePolicy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ApiTokenInput', _$failedField, e.toString());
+          r'ApiTokenInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

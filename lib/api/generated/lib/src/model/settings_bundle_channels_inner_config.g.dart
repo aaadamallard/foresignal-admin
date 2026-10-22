@@ -7,14 +7,14 @@ part of 'settings_bundle_channels_inner_config.dart';
 // **************************************************************************
 
 const SettingsBundleChannelsInnerConfigAttachMapEnum
-    _$settingsBundleChannelsInnerConfigAttachMapEnum_none =
+_$settingsBundleChannelsInnerConfigAttachMapEnum_none =
     const SettingsBundleChannelsInnerConfigAttachMapEnum._('none');
 const SettingsBundleChannelsInnerConfigAttachMapEnum
-    _$settingsBundleChannelsInnerConfigAttachMapEnum_static_ =
+_$settingsBundleChannelsInnerConfigAttachMapEnum_static_ =
     const SettingsBundleChannelsInnerConfigAttachMapEnum._('static_');
 
 SettingsBundleChannelsInnerConfigAttachMapEnum
-    _$settingsBundleChannelsInnerConfigAttachMapEnumValueOf(String name) {
+_$settingsBundleChannelsInnerConfigAttachMapEnumValueOf(String name) {
   switch (name) {
     case 'none':
       return _$settingsBundleChannelsInnerConfigAttachMapEnum_none;
@@ -26,21 +26,23 @@ SettingsBundleChannelsInnerConfigAttachMapEnum
 }
 
 final BuiltSet<SettingsBundleChannelsInnerConfigAttachMapEnum>
-    _$settingsBundleChannelsInnerConfigAttachMapEnumValues = BuiltSet<
-        SettingsBundleChannelsInnerConfigAttachMapEnum>(const <SettingsBundleChannelsInnerConfigAttachMapEnum>[
-  _$settingsBundleChannelsInnerConfigAttachMapEnum_none,
-  _$settingsBundleChannelsInnerConfigAttachMapEnum_static_,
-]);
+_$settingsBundleChannelsInnerConfigAttachMapEnumValues =
+    BuiltSet<SettingsBundleChannelsInnerConfigAttachMapEnum>(
+      const <SettingsBundleChannelsInnerConfigAttachMapEnum>[
+        _$settingsBundleChannelsInnerConfigAttachMapEnum_none,
+        _$settingsBundleChannelsInnerConfigAttachMapEnum_static_,
+      ],
+    );
 
 const SettingsBundleChannelsInnerConfigUnitsEnum
-    _$settingsBundleChannelsInnerConfigUnitsEnum_metric =
+_$settingsBundleChannelsInnerConfigUnitsEnum_metric =
     const SettingsBundleChannelsInnerConfigUnitsEnum._('metric');
 const SettingsBundleChannelsInnerConfigUnitsEnum
-    _$settingsBundleChannelsInnerConfigUnitsEnum_imperial =
+_$settingsBundleChannelsInnerConfigUnitsEnum_imperial =
     const SettingsBundleChannelsInnerConfigUnitsEnum._('imperial');
 
 SettingsBundleChannelsInnerConfigUnitsEnum
-    _$settingsBundleChannelsInnerConfigUnitsEnumValueOf(String name) {
+_$settingsBundleChannelsInnerConfigUnitsEnumValueOf(String name) {
   switch (name) {
     case 'metric':
       return _$settingsBundleChannelsInnerConfigUnitsEnum_metric;
@@ -52,17 +54,19 @@ SettingsBundleChannelsInnerConfigUnitsEnum
 }
 
 final BuiltSet<SettingsBundleChannelsInnerConfigUnitsEnum>
-    _$settingsBundleChannelsInnerConfigUnitsEnumValues = BuiltSet<
-        SettingsBundleChannelsInnerConfigUnitsEnum>(const <SettingsBundleChannelsInnerConfigUnitsEnum>[
-  _$settingsBundleChannelsInnerConfigUnitsEnum_metric,
-  _$settingsBundleChannelsInnerConfigUnitsEnum_imperial,
-]);
+_$settingsBundleChannelsInnerConfigUnitsEnumValues =
+    BuiltSet<SettingsBundleChannelsInnerConfigUnitsEnum>(
+      const <SettingsBundleChannelsInnerConfigUnitsEnum>[
+        _$settingsBundleChannelsInnerConfigUnitsEnum_metric,
+        _$settingsBundleChannelsInnerConfigUnitsEnum_imperial,
+      ],
+    );
 
 Serializer<SettingsBundleChannelsInnerConfigAttachMapEnum>
-    _$settingsBundleChannelsInnerConfigAttachMapEnumSerializer =
+_$settingsBundleChannelsInnerConfigAttachMapEnumSerializer =
     _$SettingsBundleChannelsInnerConfigAttachMapEnumSerializer();
 Serializer<SettingsBundleChannelsInnerConfigUnitsEnum>
-    _$settingsBundleChannelsInnerConfigUnitsEnumSerializer =
+_$settingsBundleChannelsInnerConfigUnitsEnumSerializer =
     _$SettingsBundleChannelsInnerConfigUnitsEnumSerializer();
 
 class _$SettingsBundleChannelsInnerConfigAttachMapEnumSerializer
@@ -79,23 +83,26 @@ class _$SettingsBundleChannelsInnerConfigAttachMapEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SettingsBundleChannelsInnerConfigAttachMapEnum
+    SettingsBundleChannelsInnerConfigAttachMapEnum,
   ];
   @override
   final String wireName = 'SettingsBundleChannelsInnerConfigAttachMapEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SettingsBundleChannelsInnerConfigAttachMapEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SettingsBundleChannelsInnerConfigAttachMapEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SettingsBundleChannelsInnerConfigAttachMapEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SettingsBundleChannelsInnerConfigAttachMapEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SettingsBundleChannelsInnerConfigAttachMapEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SettingsBundleChannelsInnerConfigUnitsEnumSerializer
@@ -111,23 +118,26 @@ class _$SettingsBundleChannelsInnerConfigUnitsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SettingsBundleChannelsInnerConfigUnitsEnum
+    SettingsBundleChannelsInnerConfigUnitsEnum,
   ];
   @override
   final String wireName = 'SettingsBundleChannelsInnerConfigUnitsEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SettingsBundleChannelsInnerConfigUnitsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SettingsBundleChannelsInnerConfigUnitsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SettingsBundleChannelsInnerConfigUnitsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SettingsBundleChannelsInnerConfigUnitsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SettingsBundleChannelsInnerConfigUnitsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SettingsBundleChannelsInnerConfig
@@ -151,25 +161,25 @@ class _$SettingsBundleChannelsInnerConfig
   @override
   final SettingsBundleChannelsInnerConfigUnitsEnum? units;
 
-  factory _$SettingsBundleChannelsInnerConfig(
-          [void Function(SettingsBundleChannelsInnerConfigBuilder)? updates]) =>
-      (SettingsBundleChannelsInnerConfigBuilder()..update(updates))._build();
+  factory _$SettingsBundleChannelsInnerConfig([
+    void Function(SettingsBundleChannelsInnerConfigBuilder)? updates,
+  ]) => (SettingsBundleChannelsInnerConfigBuilder()..update(updates))._build();
 
-  _$SettingsBundleChannelsInnerConfig._(
-      {this.attachMap,
-      this.mapProducts,
-      this.mapRadiusKm,
-      this.maxAttachmentBytes,
-      this.actions,
-      this.allowedUserIds,
-      this.allowedSenders,
-      this.privatePayload,
-      this.units})
-      : super._();
+  _$SettingsBundleChannelsInnerConfig._({
+    this.attachMap,
+    this.mapProducts,
+    this.mapRadiusKm,
+    this.maxAttachmentBytes,
+    this.actions,
+    this.allowedUserIds,
+    this.allowedSenders,
+    this.privatePayload,
+    this.units,
+  }) : super._();
   @override
   SettingsBundleChannelsInnerConfig rebuild(
-          void Function(SettingsBundleChannelsInnerConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SettingsBundleChannelsInnerConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SettingsBundleChannelsInnerConfigBuilder toBuilder() =>
@@ -224,8 +234,10 @@ class _$SettingsBundleChannelsInnerConfig
 
 class SettingsBundleChannelsInnerConfigBuilder
     implements
-        Builder<SettingsBundleChannelsInnerConfig,
-            SettingsBundleChannelsInnerConfigBuilder> {
+        Builder<
+          SettingsBundleChannelsInnerConfig,
+          SettingsBundleChannelsInnerConfigBuilder
+        > {
   _$SettingsBundleChannelsInnerConfig? _$v;
 
   SettingsBundleChannelsInnerConfigAttachMapEnum? _attachMap;
@@ -304,7 +316,8 @@ class SettingsBundleChannelsInnerConfigBuilder
 
   @override
   void update(
-      void Function(SettingsBundleChannelsInnerConfigBuilder)? updates) {
+    void Function(SettingsBundleChannelsInnerConfigBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -314,7 +327,8 @@ class SettingsBundleChannelsInnerConfigBuilder
   _$SettingsBundleChannelsInnerConfig _build() {
     _$SettingsBundleChannelsInnerConfig _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SettingsBundleChannelsInnerConfig._(
             attachMap: attachMap,
             mapProducts: _mapProducts?.build(),
@@ -338,7 +352,10 @@ class SettingsBundleChannelsInnerConfigBuilder
         _allowedUserIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SettingsBundleChannelsInnerConfig', _$failedField, e.toString());
+          r'SettingsBundleChannelsInnerConfig',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -16,17 +16,20 @@ class _$WeatherContextRadarNearestCell extends WeatherContextRadarNearestCell {
   @override
   final num? meshMaxMm;
 
-  factory _$WeatherContextRadarNearestCell(
-          [void Function(WeatherContextRadarNearestCellBuilder)? updates]) =>
-      (WeatherContextRadarNearestCellBuilder()..update(updates))._build();
+  factory _$WeatherContextRadarNearestCell([
+    void Function(WeatherContextRadarNearestCellBuilder)? updates,
+  ]) => (WeatherContextRadarNearestCellBuilder()..update(updates))._build();
 
-  _$WeatherContextRadarNearestCell._(
-      {required this.id, this.distanceKm, this.motion, this.meshMaxMm})
-      : super._();
+  _$WeatherContextRadarNearestCell._({
+    required this.id,
+    this.distanceKm,
+    this.motion,
+    this.meshMaxMm,
+  }) : super._();
   @override
   WeatherContextRadarNearestCell rebuild(
-          void Function(WeatherContextRadarNearestCellBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextRadarNearestCellBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextRadarNearestCellBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$WeatherContextRadarNearestCell extends WeatherContextRadarNearestCell {
 
 class WeatherContextRadarNearestCellBuilder
     implements
-        Builder<WeatherContextRadarNearestCell,
-            WeatherContextRadarNearestCellBuilder> {
+        Builder<
+          WeatherContextRadarNearestCell,
+          WeatherContextRadarNearestCellBuilder
+        > {
   _$WeatherContextRadarNearestCell? _$v;
 
   String? _id;
@@ -120,10 +125,14 @@ class WeatherContextRadarNearestCellBuilder
   _$WeatherContextRadarNearestCell _build() {
     _$WeatherContextRadarNearestCell _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WeatherContextRadarNearestCell._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'WeatherContextRadarNearestCell', 'id'),
+              id,
+              r'WeatherContextRadarNearestCell',
+              'id',
+            ),
             distanceKm: distanceKm,
             motion: _motion?.build(),
             meshMaxMm: meshMaxMm,
@@ -135,7 +144,10 @@ class WeatherContextRadarNearestCellBuilder
         _motion?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WeatherContextRadarNearestCell', _$failedField, e.toString());
+          r'WeatherContextRadarNearestCell',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

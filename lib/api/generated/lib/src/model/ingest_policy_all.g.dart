@@ -20,8 +20,8 @@ IngestPolicyAllModeEnum _$ingestPolicyAllModeEnumValueOf(String name) {
 
 final BuiltSet<IngestPolicyAllModeEnum> _$ingestPolicyAllModeEnumValues =
     BuiltSet<IngestPolicyAllModeEnum>(const <IngestPolicyAllModeEnum>[
-  _$ingestPolicyAllModeEnum_ALL,
-]);
+      _$ingestPolicyAllModeEnum_ALL,
+    ]);
 
 Serializer<IngestPolicyAllModeEnum> _$ingestPolicyAllModeEnumSerializer =
     _$IngestPolicyAllModeEnumSerializer();
@@ -41,16 +41,20 @@ class _$IngestPolicyAllModeEnumSerializer
   final String wireName = 'IngestPolicyAllModeEnum';
 
   @override
-  Object serialize(Serializers serializers, IngestPolicyAllModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IngestPolicyAllModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IngestPolicyAllModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestPolicyAllModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestPolicyAllModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestPolicyAll extends IngestPolicyAll {
@@ -136,10 +140,14 @@ class IngestPolicyAllBuilder
   IngestPolicyAll build() => _build();
 
   _$IngestPolicyAll _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestPolicyAll._(
           mode: BuiltValueNullFieldError.checkNotNull(
-              mode, r'IngestPolicyAll', 'mode'),
+            mode,
+            r'IngestPolicyAll',
+            'mode',
+          ),
           keyframe: keyframe,
         );
     replace(_$result);

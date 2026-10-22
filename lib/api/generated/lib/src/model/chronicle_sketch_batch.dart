@@ -63,7 +63,7 @@ class _$ChronicleSketchBatchSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSketchBatch,
-    _$ChronicleSketchBatch
+    _$ChronicleSketchBatch,
   ];
 
   @override
@@ -87,8 +87,9 @@ class _$ChronicleSketchBatchSerializer
     yield r'sketches';
     yield serializers.serialize(
       object.sketches,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleSketchPackage)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleSketchPackage),
+      ]),
     );
     if (object.withdrawn != null) {
       yield r'withdrawn';
@@ -101,16 +102,18 @@ class _$ChronicleSketchBatchSerializer
       yield r'accessRequests';
       yield serializers.serialize(
         object.accessRequests,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ChronicleSketchBatchAccessRequestsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleSketchBatchAccessRequestsInner),
+        ]),
       );
     }
     if (object.accessDecisions != null) {
       yield r'accessDecisions';
       yield serializers.serialize(
         object.accessDecisions,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ChronicleSketchBatchAccessDecisionsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleSketchBatchAccessDecisionsInner),
+        ]),
       );
     }
   }
@@ -121,9 +124,11 @@ class _$ChronicleSketchBatchSerializer
     ChronicleSketchBatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -139,51 +144,67 @@ class _$ChronicleSketchBatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'networkId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.networkId = valueDes;
           break;
         case r'sketches':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ChronicleSketchPackage)]),
-          ) as BuiltList<ChronicleSketchPackage>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleSketchPackage),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSketchPackage>;
           result.sketches.replace(valueDes);
           break;
         case r'withdrawn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.withdrawn.replace(valueDes);
           break;
         case r'accessRequests':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ChronicleSketchBatchAccessRequestsInner)]),
-          ) as BuiltList<ChronicleSketchBatchAccessRequestsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleSketchBatchAccessRequestsInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSketchBatchAccessRequestsInner>?;
           if (valueDes == null) continue;
           result.accessRequests.replace(valueDes);
           break;
         case r'accessDecisions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(ChronicleSketchBatchAccessDecisionsInner)]),
-          ) as BuiltList<ChronicleSketchBatchAccessDecisionsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleSketchBatchAccessDecisionsInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSketchBatchAccessDecisionsInner>?;
           if (valueDes == null) continue;
           result.accessDecisions.replace(valueDes);
           break;

@@ -24,24 +24,24 @@ class _$PlaceWeatherDigestNextHrrr extends PlaceWeatherDigestNextHrrr {
   @override
   final DateTime? validTime;
 
-  factory _$PlaceWeatherDigestNextHrrr(
-          [void Function(PlaceWeatherDigestNextHrrrBuilder)? updates]) =>
-      (PlaceWeatherDigestNextHrrrBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNextHrrr([
+    void Function(PlaceWeatherDigestNextHrrrBuilder)? updates,
+  ]) => (PlaceWeatherDigestNextHrrrBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestNextHrrr._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.run,
-      this.gustMaxMs,
-      this.precipMm,
-      this.smokeMaxUgM3,
-      this.validTime})
-      : super._();
+  _$PlaceWeatherDigestNextHrrr._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.run,
+    this.gustMaxMs,
+    this.precipMm,
+    this.smokeMaxUgM3,
+    this.validTime,
+  }) : super._();
   @override
   PlaceWeatherDigestNextHrrr rebuild(
-          void Function(PlaceWeatherDigestNextHrrrBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNextHrrrBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNextHrrrBuilder toBuilder() =>
@@ -162,10 +162,14 @@ class PlaceWeatherDigestNextHrrrBuilder
   PlaceWeatherDigestNextHrrr build() => _build();
 
   _$PlaceWeatherDigestNextHrrr _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherDigestNextHrrr._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherDigestNextHrrr', 'status'),
+            status,
+            r'PlaceWeatherDigestNextHrrr',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           run: run,

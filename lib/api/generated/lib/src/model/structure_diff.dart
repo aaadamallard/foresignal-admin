@@ -129,15 +129,17 @@ class _$StructureDiffSerializer implements PrimitiveSerializer<StructureDiff> {
     yield r'typeChanged';
     yield serializers.serialize(
       object.typeChanged,
-      specifiedType:
-          const FullType(BuiltList, [FullType(StructureDiffTypeChangedInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(StructureDiffTypeChangedInner),
+      ]),
     );
     if (object.presenceDropped != null) {
       yield r'presenceDropped';
       yield serializers.serialize(
         object.presenceDropped,
-        specifiedType: const FullType(
-            BuiltList, [FullType(StructureDiffPresenceDroppedInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(StructureDiffPresenceDroppedInner),
+        ]),
       );
     }
     if (object.arrayEmpty != null) {
@@ -179,8 +181,9 @@ class _$StructureDiffSerializer implements PrimitiveSerializer<StructureDiff> {
       yield r'renameCandidates';
       yield serializers.serialize(
         object.renameCandidates,
-        specifiedType: const FullType(
-            BuiltList, [FullType(StructureDiffRenameCandidatesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(StructureDiffRenameCandidatesInner),
+        ]),
       );
     }
     if (object.htmlTitle != null) {
@@ -196,7 +199,7 @@ class _$StructureDiffSerializer implements PrimitiveSerializer<StructureDiff> {
         object.examples,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(BuiltList, [FullType(String)])
+          FullType(BuiltList, [FullType(String)]),
         ]),
       );
     }
@@ -208,9 +211,11 @@ class _$StructureDiffSerializer implements PrimitiveSerializer<StructureDiff> {
     StructureDiff object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -226,119 +231,157 @@ class _$StructureDiffSerializer implements PrimitiveSerializer<StructureDiff> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StructureDiffFormatEnum),
-          ) as StructureDiffFormatEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StructureDiffFormatEnum),
+                  )
+                  as StructureDiffFormatEnum;
           result.format = valueDes;
           break;
         case r'fixtureFile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.fixtureFile = valueDes;
           break;
         case r'addedPaths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.addedPaths.replace(valueDes);
           break;
         case r'removedPaths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.removedPaths.replace(valueDes);
           break;
         case r'typeChanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(StructureDiffTypeChangedInner)]),
-          ) as BuiltList<StructureDiffTypeChangedInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(StructureDiffTypeChangedInner),
+                    ]),
+                  )
+                  as BuiltList<StructureDiffTypeChangedInner>;
           result.typeChanged.replace(valueDes);
           break;
         case r'presenceDropped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(StructureDiffPresenceDroppedInner)]),
-          ) as BuiltList<StructureDiffPresenceDroppedInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StructureDiffPresenceDroppedInner),
+                    ]),
+                  )
+                  as BuiltList<StructureDiffPresenceDroppedInner>?;
           if (valueDes == null) continue;
           result.presenceDropped.replace(valueDes);
           break;
         case r'arrayEmpty':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.arrayEmpty.replace(valueDes);
           break;
         case r'columnsReordered':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.columnsReordered = valueDes;
           break;
         case r'delimiterChanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(StructureDiffDelimiterChanged),
-          ) as StructureDiffDelimiterChanged?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StructureDiffDelimiterChanged,
+                    ),
+                  )
+                  as StructureDiffDelimiterChanged?;
           if (valueDes == null) continue;
           result.delimiterChanged.replace(valueDes);
           break;
         case r'contentTypeChanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(StructureDiffContentTypeChanged),
-          ) as StructureDiffContentTypeChanged?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StructureDiffContentTypeChanged,
+                    ),
+                  )
+                  as StructureDiffContentTypeChanged?;
           if (valueDes == null) continue;
           result.contentTypeChanged.replace(valueDes);
           break;
         case r'sizeRatio':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.sizeRatio = valueDes;
           break;
         case r'renameCandidates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(StructureDiffRenameCandidatesInner)]),
-          ) as BuiltList<StructureDiffRenameCandidatesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StructureDiffRenameCandidatesInner),
+                    ]),
+                  )
+                  as BuiltList<StructureDiffRenameCandidatesInner>?;
           if (valueDes == null) continue;
           result.renameCandidates.replace(valueDes);
           break;
         case r'htmlTitle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.htmlTitle = valueDes;
           break;
         case r'examples':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(BuiltList, [FullType(String)])
-            ]),
-          ) as BuiltMap<String, BuiltList<String>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltList, [FullType(String)]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltList<String>>?;
           if (valueDes == null) continue;
           result.examples.replace(valueDes);
           break;

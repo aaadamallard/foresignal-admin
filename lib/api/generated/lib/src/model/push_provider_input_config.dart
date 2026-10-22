@@ -30,9 +30,9 @@ abstract class PushProviderInputConfig
 
   PushProviderInputConfig._();
 
-  factory PushProviderInputConfig(
-          [void updates(PushProviderInputConfigBuilder b)]) =
-      _$PushProviderInputConfig;
+  factory PushProviderInputConfig([
+    void updates(PushProviderInputConfigBuilder b),
+  ]) = _$PushProviderInputConfig;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushProviderInputConfigBuilder b) => b;
@@ -47,7 +47,7 @@ class _$PushProviderInputConfigSerializer
   @override
   final Iterable<Type> types = const [
     PushProviderInputConfig,
-    _$PushProviderInputConfig
+    _$PushProviderInputConfig,
   ];
 
   @override
@@ -66,8 +66,10 @@ class _$PushProviderInputConfigSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -83,8 +85,9 @@ class _$PushProviderInputConfigSerializer
       FullType(FcmProviderConfig),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }

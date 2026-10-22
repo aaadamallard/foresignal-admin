@@ -17,8 +17,10 @@ part 'ogc_coverage_collection_extent_spatial.g.dart';
 @BuiltValue()
 abstract class OgcCoverageCollectionExtentSpatial
     implements
-        Built<OgcCoverageCollectionExtentSpatial,
-            OgcCoverageCollectionExtentSpatialBuilder> {
+        Built<
+          OgcCoverageCollectionExtentSpatial,
+          OgcCoverageCollectionExtentSpatialBuilder
+        > {
   @BuiltValueField(wireName: r'bbox')
   BuiltList<BuiltList<num>>? get bbox;
 
@@ -27,9 +29,9 @@ abstract class OgcCoverageCollectionExtentSpatial
 
   OgcCoverageCollectionExtentSpatial._();
 
-  factory OgcCoverageCollectionExtentSpatial(
-          [void updates(OgcCoverageCollectionExtentSpatialBuilder b)]) =
-      _$OgcCoverageCollectionExtentSpatial;
+  factory OgcCoverageCollectionExtentSpatial([
+    void updates(OgcCoverageCollectionExtentSpatialBuilder b),
+  ]) = _$OgcCoverageCollectionExtentSpatial;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCoverageCollectionExtentSpatialBuilder b) => b;
@@ -44,7 +46,7 @@ class _$OgcCoverageCollectionExtentSpatialSerializer
   @override
   final Iterable<Type> types = const [
     OgcCoverageCollectionExtentSpatial,
-    _$OgcCoverageCollectionExtentSpatial
+    _$OgcCoverageCollectionExtentSpatial,
   ];
 
   @override
@@ -60,7 +62,7 @@ class _$OgcCoverageCollectionExtentSpatialSerializer
       yield serializers.serialize(
         object.bbox,
         specifiedType: const FullType(BuiltList, [
-          FullType(BuiltList, [FullType(num)])
+          FullType(BuiltList, [FullType(num)]),
         ]),
       );
     }
@@ -79,9 +81,11 @@ class _$OgcCoverageCollectionExtentSpatialSerializer
     OgcCoverageCollectionExtentSpatial object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,20 +101,24 @@ class _$OgcCoverageCollectionExtentSpatialSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(BuiltList, [FullType(num)])
-            ]),
-          ) as BuiltList<BuiltList<num>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltList, [FullType(num)]),
+                    ]),
+                  )
+                  as BuiltList<BuiltList<num>>?;
           if (valueDes == null) continue;
           result.bbox.replace(valueDes);
           break;
         case r'crs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.crs = valueDes;
           break;

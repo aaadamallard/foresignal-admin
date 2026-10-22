@@ -57,16 +57,10 @@ class AuditApi {
     final _path = r'/v1/audit';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -75,26 +69,47 @@ class AuditApi {
 
     final _queryParameters = <String, dynamic>{
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (tokenId != null)
-        r'tokenId':
-            encodeQueryParameter(_serializers, tokenId, const FullType(String)),
+        r'tokenId': encodeQueryParameter(
+          _serializers,
+          tokenId,
+          const FullType(String),
+        ),
       if (operationId != null)
         r'operationId': encodeQueryParameter(
-            _serializers, operationId, const FullType(String)),
+          _serializers,
+          operationId,
+          const FullType(String),
+        ),
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(int)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(int),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -113,9 +128,10 @@ class AuditApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AuditEventPage),
-            ) as AuditEventPage;
+                  rawResponse,
+                  specifiedType: const FullType(AuditEventPage),
+                )
+                as AuditEventPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

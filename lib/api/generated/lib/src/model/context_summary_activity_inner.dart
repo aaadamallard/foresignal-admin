@@ -44,9 +44,9 @@ abstract class ContextSummaryActivityInner
 
   ContextSummaryActivityInner._();
 
-  factory ContextSummaryActivityInner(
-          [void updates(ContextSummaryActivityInnerBuilder b)]) =
-      _$ContextSummaryActivityInner;
+  factory ContextSummaryActivityInner([
+    void updates(ContextSummaryActivityInnerBuilder b),
+  ]) = _$ContextSummaryActivityInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContextSummaryActivityInnerBuilder b) => b;
@@ -61,7 +61,7 @@ class _$ContextSummaryActivityInnerSerializer
   @override
   final Iterable<Type> types = const [
     ContextSummaryActivityInner,
-    _$ContextSummaryActivityInner
+    _$ContextSummaryActivityInner,
   ];
 
   @override
@@ -114,9 +114,11 @@ class _$ContextSummaryActivityInnerSerializer
     ContextSummaryActivityInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,46 +134,60 @@ class _$ContextSummaryActivityInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ContextSummaryActivityInnerTypeEnum),
-          ) as ContextSummaryActivityInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ContextSummaryActivityInnerTypeEnum,
+                    ),
+                  )
+                  as ContextSummaryActivityInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.signalFamily = valueDes;
           break;

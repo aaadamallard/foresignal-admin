@@ -18,21 +18,21 @@ class _$ForecastEvaluationRequest extends ForecastEvaluationRequest {
   @override
   final int? maxQuestions;
 
-  factory _$ForecastEvaluationRequest(
-          [void Function(ForecastEvaluationRequestBuilder)? updates]) =>
-      (ForecastEvaluationRequestBuilder()..update(updates))._build();
+  factory _$ForecastEvaluationRequest([
+    void Function(ForecastEvaluationRequestBuilder)? updates,
+  ]) => (ForecastEvaluationRequestBuilder()..update(updates))._build();
 
-  _$ForecastEvaluationRequest._(
-      {required this.forecasterId,
-      required this.from,
-      required this.to,
-      this.categories,
-      this.maxQuestions})
-      : super._();
+  _$ForecastEvaluationRequest._({
+    required this.forecasterId,
+    required this.from,
+    required this.to,
+    this.categories,
+    this.maxQuestions,
+  }) : super._();
   @override
   ForecastEvaluationRequest rebuild(
-          void Function(ForecastEvaluationRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastEvaluationRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastEvaluationRequestBuilder toBuilder() =>
@@ -133,14 +133,24 @@ class ForecastEvaluationRequestBuilder
   _$ForecastEvaluationRequest _build() {
     _$ForecastEvaluationRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastEvaluationRequest._(
             forecasterId: BuiltValueNullFieldError.checkNotNull(
-                forecasterId, r'ForecastEvaluationRequest', 'forecasterId'),
+              forecasterId,
+              r'ForecastEvaluationRequest',
+              'forecasterId',
+            ),
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'ForecastEvaluationRequest', 'from'),
+              from,
+              r'ForecastEvaluationRequest',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, r'ForecastEvaluationRequest', 'to'),
+              to,
+              r'ForecastEvaluationRequest',
+              'to',
+            ),
             categories: _categories?.build(),
             maxQuestions: maxQuestions,
           );
@@ -151,7 +161,10 @@ class ForecastEvaluationRequestBuilder
         _categories?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastEvaluationRequest', _$failedField, e.toString());
+          r'ForecastEvaluationRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

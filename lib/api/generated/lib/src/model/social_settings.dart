@@ -168,9 +168,11 @@ class _$SocialSettingsSerializer
     SocialSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -186,83 +188,112 @@ class _$SocialSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'languages':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.languages.replace(valueDes);
           break;
         case r'minRegionBaseline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minRegionBaseline = valueDes;
           break;
         case r'velocity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSettingsVelocity),
-          ) as SocialSettingsVelocity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsVelocity,
+                    ),
+                  )
+                  as SocialSettingsVelocity?;
           if (valueDes == null) continue;
           result.velocity.replace(valueDes);
           break;
         case r'llmClaimMinPosts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.llmClaimMinPosts = valueDes;
           break;
         case r'llmClaimMinEvidenceGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.llmClaimMinEvidenceGroups = valueDes;
           break;
         case r'keepMedia':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.keepMedia = valueDes;
           break;
         case r'trackRecord':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSettingsTrackRecord),
-          ) as SocialSettingsTrackRecord?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsTrackRecord,
+                    ),
+                  )
+                  as SocialSettingsTrackRecord?;
           if (valueDes == null) continue;
           result.trackRecord.replace(valueDes);
           break;
         case r'compare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSettingsCompare),
-          ) as SocialSettingsCompare?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsCompare,
+                    ),
+                  )
+                  as SocialSettingsCompare?;
           if (valueDes == null) continue;
           result.compare.replace(valueDes);
           break;
         case r'attentionGap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSettingsAttentionGap),
-          ) as SocialSettingsAttentionGap?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsAttentionGap,
+                    ),
+                  )
+                  as SocialSettingsAttentionGap?;
           if (valueDes == null) continue;
           result.attentionGap.replace(valueDes);
           break;
         case r'cues':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSettingsCues),
-          ) as SocialSettingsCues?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SocialSettingsCues),
+                  )
+                  as SocialSettingsCues?;
           if (valueDes == null) continue;
           result.cues.replace(valueDes);
           break;

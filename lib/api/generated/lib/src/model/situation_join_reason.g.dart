@@ -18,7 +18,8 @@ const SituationJoinReasonMethodEnum _$situationJoinReasonMethodEnum_analyst =
     const SituationJoinReasonMethodEnum._('analyst');
 
 SituationJoinReasonMethodEnum _$situationJoinReasonMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'linker':
       return _$situationJoinReasonMethodEnum_linker;
@@ -36,17 +37,18 @@ SituationJoinReasonMethodEnum _$situationJoinReasonMethodEnumValueOf(
 }
 
 final BuiltSet<SituationJoinReasonMethodEnum>
-    _$situationJoinReasonMethodEnumValues = BuiltSet<
-        SituationJoinReasonMethodEnum>(const <SituationJoinReasonMethodEnum>[
-  _$situationJoinReasonMethodEnum_linker,
-  _$situationJoinReasonMethodEnum_seed,
-  _$situationJoinReasonMethodEnum_operator_,
-  _$situationJoinReasonMethodEnum_agent,
-  _$situationJoinReasonMethodEnum_analyst,
-]);
+_$situationJoinReasonMethodEnumValues = BuiltSet<SituationJoinReasonMethodEnum>(
+  const <SituationJoinReasonMethodEnum>[
+    _$situationJoinReasonMethodEnum_linker,
+    _$situationJoinReasonMethodEnum_seed,
+    _$situationJoinReasonMethodEnum_operator_,
+    _$situationJoinReasonMethodEnum_agent,
+    _$situationJoinReasonMethodEnum_analyst,
+  ],
+);
 
 Serializer<SituationJoinReasonMethodEnum>
-    _$situationJoinReasonMethodEnumSerializer =
+_$situationJoinReasonMethodEnumSerializer =
     _$SituationJoinReasonMethodEnumSerializer();
 
 class _$SituationJoinReasonMethodEnumSerializer
@@ -73,16 +75,19 @@ class _$SituationJoinReasonMethodEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationJoinReasonMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationJoinReasonMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationJoinReasonMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationJoinReasonMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationJoinReasonMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationJoinReason extends SituationJoinReason {
@@ -97,21 +102,21 @@ class _$SituationJoinReason extends SituationJoinReason {
   @override
   final String? actor;
 
-  factory _$SituationJoinReason(
-          [void Function(SituationJoinReasonBuilder)? updates]) =>
-      (SituationJoinReasonBuilder()..update(updates))._build();
+  factory _$SituationJoinReason([
+    void Function(SituationJoinReasonBuilder)? updates,
+  ]) => (SituationJoinReasonBuilder()..update(updates))._build();
 
-  _$SituationJoinReason._(
-      {required this.method,
-      this.score,
-      this.components,
-      this.linkerVersion,
-      this.actor})
-      : super._();
+  _$SituationJoinReason._({
+    required this.method,
+    this.score,
+    this.components,
+    this.linkerVersion,
+    this.actor,
+  }) : super._();
   @override
   SituationJoinReason rebuild(
-          void Function(SituationJoinReasonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationJoinReasonBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationJoinReasonBuilder toBuilder() =>
@@ -212,10 +217,14 @@ class SituationJoinReasonBuilder
   _$SituationJoinReason _build() {
     _$SituationJoinReason _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationJoinReason._(
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'SituationJoinReason', 'method'),
+              method,
+              r'SituationJoinReason',
+              'method',
+            ),
             score: score,
             components: _components?.build(),
             linkerVersion: linkerVersion,
@@ -228,7 +237,10 @@ class SituationJoinReasonBuilder
         _components?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationJoinReason', _$failedField, e.toString());
+          r'SituationJoinReason',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,17 +12,18 @@ class _$ExerciseStatsSkippedRulesInner extends ExerciseStatsSkippedRulesInner {
   @override
   final String reason;
 
-  factory _$ExerciseStatsSkippedRulesInner(
-          [void Function(ExerciseStatsSkippedRulesInnerBuilder)? updates]) =>
-      (ExerciseStatsSkippedRulesInnerBuilder()..update(updates))._build();
+  factory _$ExerciseStatsSkippedRulesInner([
+    void Function(ExerciseStatsSkippedRulesInnerBuilder)? updates,
+  ]) => (ExerciseStatsSkippedRulesInnerBuilder()..update(updates))._build();
 
-  _$ExerciseStatsSkippedRulesInner._(
-      {required this.ruleId, required this.reason})
-      : super._();
+  _$ExerciseStatsSkippedRulesInner._({
+    required this.ruleId,
+    required this.reason,
+  }) : super._();
   @override
   ExerciseStatsSkippedRulesInner rebuild(
-          void Function(ExerciseStatsSkippedRulesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExerciseStatsSkippedRulesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExerciseStatsSkippedRulesInnerBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$ExerciseStatsSkippedRulesInner extends ExerciseStatsSkippedRulesInner {
 
 class ExerciseStatsSkippedRulesInnerBuilder
     implements
-        Builder<ExerciseStatsSkippedRulesInner,
-            ExerciseStatsSkippedRulesInnerBuilder> {
+        Builder<
+          ExerciseStatsSkippedRulesInner,
+          ExerciseStatsSkippedRulesInnerBuilder
+        > {
   _$ExerciseStatsSkippedRulesInner? _$v;
 
   String? _ruleId;
@@ -96,12 +99,19 @@ class ExerciseStatsSkippedRulesInnerBuilder
   ExerciseStatsSkippedRulesInner build() => _build();
 
   _$ExerciseStatsSkippedRulesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExerciseStatsSkippedRulesInner._(
           ruleId: BuiltValueNullFieldError.checkNotNull(
-              ruleId, r'ExerciseStatsSkippedRulesInner', 'ruleId'),
+            ruleId,
+            r'ExerciseStatsSkippedRulesInner',
+            'ruleId',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ExerciseStatsSkippedRulesInner', 'reason'),
+            reason,
+            r'ExerciseStatsSkippedRulesInner',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

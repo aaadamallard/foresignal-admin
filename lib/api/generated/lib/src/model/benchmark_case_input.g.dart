@@ -20,22 +20,22 @@ class _$BenchmarkCaseInput extends BenchmarkCaseInput {
   @override
   final BenchmarkCaseExpectations expectations;
 
-  factory _$BenchmarkCaseInput(
-          [void Function(BenchmarkCaseInputBuilder)? updates]) =>
-      (BenchmarkCaseInputBuilder()..update(updates))._build();
+  factory _$BenchmarkCaseInput([
+    void Function(BenchmarkCaseInputBuilder)? updates,
+  ]) => (BenchmarkCaseInputBuilder()..update(updates))._build();
 
-  _$BenchmarkCaseInput._(
-      {required this.name,
-      this.description,
-      required this.windowFrom,
-      required this.windowTo,
-      this.regionCodes,
-      required this.expectations})
-      : super._();
+  _$BenchmarkCaseInput._({
+    required this.name,
+    this.description,
+    required this.windowFrom,
+    required this.windowTo,
+    this.regionCodes,
+    required this.expectations,
+  }) : super._();
   @override
   BenchmarkCaseInput rebuild(
-          void Function(BenchmarkCaseInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkCaseInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkCaseInputBuilder toBuilder() =>
@@ -145,15 +145,25 @@ class BenchmarkCaseInputBuilder
   _$BenchmarkCaseInput _build() {
     _$BenchmarkCaseInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkCaseInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'BenchmarkCaseInput', 'name'),
+              name,
+              r'BenchmarkCaseInput',
+              'name',
+            ),
             description: description,
             windowFrom: BuiltValueNullFieldError.checkNotNull(
-                windowFrom, r'BenchmarkCaseInput', 'windowFrom'),
+              windowFrom,
+              r'BenchmarkCaseInput',
+              'windowFrom',
+            ),
             windowTo: BuiltValueNullFieldError.checkNotNull(
-                windowTo, r'BenchmarkCaseInput', 'windowTo'),
+              windowTo,
+              r'BenchmarkCaseInput',
+              'windowTo',
+            ),
             regionCodes: _regionCodes?.build(),
             expectations: expectations.build(),
           );
@@ -166,7 +176,10 @@ class BenchmarkCaseInputBuilder
         expectations.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkCaseInput', _$failedField, e.toString());
+          r'BenchmarkCaseInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

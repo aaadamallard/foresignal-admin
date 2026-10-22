@@ -35,20 +35,20 @@ class _$SavedSearch extends SavedSearch {
   factory _$SavedSearch([void Function(SavedSearchBuilder)? updates]) =>
       (SavedSearchBuilder()..update(updates))._build();
 
-  _$SavedSearch._(
-      {required this.id,
-      required this.name,
-      required this.owner,
-      required this.query,
-      required this.visibility,
-      required this.tlp,
-      required this.notify,
-      this.lastRunAt,
-      this.lastNotifiedAt,
-      this.lastMatchCount,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$SavedSearch._({
+    required this.id,
+    required this.name,
+    required this.owner,
+    required this.query,
+    required this.visibility,
+    required this.tlp,
+    required this.notify,
+    this.lastRunAt,
+    this.lastNotifiedAt,
+    this.lastMatchCount,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   SavedSearch rebuild(void Function(SavedSearchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -207,24 +207,40 @@ class SavedSearchBuilder implements Builder<SavedSearch, SavedSearchBuilder> {
   _$SavedSearch _build() {
     _$SavedSearch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearch._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'SavedSearch', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SavedSearch', 'name'),
+              name,
+              r'SavedSearch',
+              'name',
+            ),
             owner: owner.build(),
             query: query.build(),
             visibility: BuiltValueNullFieldError.checkNotNull(
-                visibility, r'SavedSearch', 'visibility'),
+              visibility,
+              r'SavedSearch',
+              'visibility',
+            ),
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'SavedSearch', 'tlp'),
+              tlp,
+              r'SavedSearch',
+              'tlp',
+            ),
             notify: BuiltValueNullFieldError.checkNotNull(
-                notify, r'SavedSearch', 'notify'),
+              notify,
+              r'SavedSearch',
+              'notify',
+            ),
             lastRunAt: lastRunAt,
             lastNotifiedAt: lastNotifiedAt,
             lastMatchCount: lastMatchCount,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'SavedSearch', 'createdAt'),
+              createdAt,
+              r'SavedSearch',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {
@@ -236,7 +252,10 @@ class SavedSearchBuilder implements Builder<SavedSearch, SavedSearchBuilder> {
         query.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearch', _$failedField, e.toString());
+          r'SavedSearch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -92,9 +92,11 @@ class _$PolSubjectInputSerializer
     PolSubjectInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,32 +112,44 @@ class _$PolSubjectInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'subjectType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PolSubjectInputSubjectTypeEnum),
-          ) as PolSubjectInputSubjectTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PolSubjectInputSubjectTypeEnum,
+                    ),
+                  )
+                  as PolSubjectInputSubjectTypeEnum;
           result.subjectType = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PolSubjectInputParams),
-          ) as PolSubjectInputParams?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PolSubjectInputParams,
+                    ),
+                  )
+                  as PolSubjectInputParams?;
           if (valueDes == null) continue;
           result.params.replace(valueDes);
           break;

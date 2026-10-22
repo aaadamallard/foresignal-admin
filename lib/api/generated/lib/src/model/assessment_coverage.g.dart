@@ -14,17 +14,19 @@ class _$AssessmentCoverage extends AssessmentCoverage {
   @override
   final BuiltList<String>? divergenceFindingIds;
 
-  factory _$AssessmentCoverage(
-          [void Function(AssessmentCoverageBuilder)? updates]) =>
-      (AssessmentCoverageBuilder()..update(updates))._build();
+  factory _$AssessmentCoverage([
+    void Function(AssessmentCoverageBuilder)? updates,
+  ]) => (AssessmentCoverageBuilder()..update(updates))._build();
 
-  _$AssessmentCoverage._(
-      {this.situations, this.blindspotStoryIds, this.divergenceFindingIds})
-      : super._();
+  _$AssessmentCoverage._({
+    this.situations,
+    this.blindspotStoryIds,
+    this.divergenceFindingIds,
+  }) : super._();
   @override
   AssessmentCoverage rebuild(
-          void Function(AssessmentCoverageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentCoverageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentCoverageBuilder toBuilder() =>
@@ -112,7 +114,8 @@ class AssessmentCoverageBuilder
   _$AssessmentCoverage _build() {
     _$AssessmentCoverage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AssessmentCoverage._(
             situations: _situations?.build(),
             blindspotStoryIds: _blindspotStoryIds?.build(),
@@ -129,7 +132,10 @@ class AssessmentCoverageBuilder
         _divergenceFindingIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AssessmentCoverage', _$failedField, e.toString());
+          r'AssessmentCoverage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

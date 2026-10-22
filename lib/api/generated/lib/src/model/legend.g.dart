@@ -6,12 +6,15 @@ part of 'legend.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const LegendTypeEnum _$legendTypeEnum_continuous =
-    const LegendTypeEnum._('continuous');
-const LegendTypeEnum _$legendTypeEnum_discrete =
-    const LegendTypeEnum._('discrete');
-const LegendTypeEnum _$legendTypeEnum_categorical =
-    const LegendTypeEnum._('categorical');
+const LegendTypeEnum _$legendTypeEnum_continuous = const LegendTypeEnum._(
+  'continuous',
+);
+const LegendTypeEnum _$legendTypeEnum_discrete = const LegendTypeEnum._(
+  'discrete',
+);
+const LegendTypeEnum _$legendTypeEnum_categorical = const LegendTypeEnum._(
+  'categorical',
+);
 
 LegendTypeEnum _$legendTypeEnumValueOf(String name) {
   switch (name) {
@@ -28,10 +31,10 @@ LegendTypeEnum _$legendTypeEnumValueOf(String name) {
 
 final BuiltSet<LegendTypeEnum> _$legendTypeEnumValues =
     BuiltSet<LegendTypeEnum>(const <LegendTypeEnum>[
-  _$legendTypeEnum_continuous,
-  _$legendTypeEnum_discrete,
-  _$legendTypeEnum_categorical,
-]);
+      _$legendTypeEnum_continuous,
+      _$legendTypeEnum_discrete,
+      _$legendTypeEnum_categorical,
+    ]);
 
 Serializer<LegendTypeEnum> _$legendTypeEnumSerializer =
     _$LegendTypeEnumSerializer();
@@ -55,15 +58,20 @@ class _$LegendTypeEnumSerializer
   final String wireName = 'LegendTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, LegendTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LegendTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  LegendTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LegendTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  LegendTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LegendTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Legend extends Legend {
@@ -93,19 +101,19 @@ class _$Legend extends Legend {
   factory _$Legend([void Function(LegendBuilder)? updates]) =>
       (LegendBuilder()..update(updates))._build();
 
-  _$Legend._(
-      {this.productId,
-      required this.styleId,
-      required this.styleVersion,
-      required this.type,
-      this.units,
-      this.unitsLabel,
-      this.stops,
-      this.ticks,
-      this.categories,
-      this.specials,
-      this.meaning})
-      : super._();
+  _$Legend._({
+    this.productId,
+    required this.styleId,
+    required this.styleVersion,
+    required this.type,
+    this.units,
+    this.unitsLabel,
+    this.stops,
+    this.ticks,
+    this.categories,
+    this.specials,
+    this.meaning,
+  }) : super._();
   @override
   Legend rebuild(void Function(LegendBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -259,15 +267,25 @@ class LegendBuilder implements Builder<Legend, LegendBuilder> {
   _$Legend _build() {
     _$Legend _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Legend._(
             productId: productId,
             styleId: BuiltValueNullFieldError.checkNotNull(
-                styleId, r'Legend', 'styleId'),
+              styleId,
+              r'Legend',
+              'styleId',
+            ),
             styleVersion: BuiltValueNullFieldError.checkNotNull(
-                styleVersion, r'Legend', 'styleVersion'),
-            type:
-                BuiltValueNullFieldError.checkNotNull(type, r'Legend', 'type'),
+              styleVersion,
+              r'Legend',
+              'styleVersion',
+            ),
+            type: BuiltValueNullFieldError.checkNotNull(
+              type,
+              r'Legend',
+              'type',
+            ),
             units: units,
             unitsLabel: unitsLabel,
             stops: _stops?.build(),
@@ -291,7 +309,10 @@ class LegendBuilder implements Builder<Legend, LegendBuilder> {
         _meaning?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Legend', _$failedField, e.toString());
+          r'Legend',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -44,14 +44,14 @@ AnalystRunStatusEnum _$analystRunStatusEnumValueOf(String name) {
 
 final BuiltSet<AnalystRunStatusEnum> _$analystRunStatusEnumValues =
     BuiltSet<AnalystRunStatusEnum>(const <AnalystRunStatusEnum>[
-  _$analystRunStatusEnum_queued,
-  _$analystRunStatusEnum_running,
-  _$analystRunStatusEnum_ok,
-  _$analystRunStatusEnum_noop,
-  _$analystRunStatusEnum_partial,
-  _$analystRunStatusEnum_failed,
-  _$analystRunStatusEnum_budgetExceeded,
-]);
+      _$analystRunStatusEnum_queued,
+      _$analystRunStatusEnum_running,
+      _$analystRunStatusEnum_ok,
+      _$analystRunStatusEnum_noop,
+      _$analystRunStatusEnum_partial,
+      _$analystRunStatusEnum_failed,
+      _$analystRunStatusEnum_budgetExceeded,
+    ]);
 
 const AnalystRunEffortEnum _$analystRunEffortEnum_low =
     const AnalystRunEffortEnum._('low');
@@ -71,9 +71,9 @@ AnalystRunEffortEnum _$analystRunEffortEnumValueOf(String name) {
 
 final BuiltSet<AnalystRunEffortEnum> _$analystRunEffortEnumValues =
     BuiltSet<AnalystRunEffortEnum>(const <AnalystRunEffortEnum>[
-  _$analystRunEffortEnum_low,
-  _$analystRunEffortEnum_medium,
-]);
+      _$analystRunEffortEnum_low,
+      _$analystRunEffortEnum_medium,
+    ]);
 
 Serializer<AnalystRunStatusEnum> _$analystRunStatusEnumSerializer =
     _$AnalystRunStatusEnumSerializer();
@@ -107,15 +107,20 @@ class _$AnalystRunStatusEnumSerializer
   final String wireName = 'AnalystRunStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystRunStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystRunStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AnalystRunStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystRunStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AnalystRunStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystRunStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystRunEffortEnumSerializer
@@ -135,15 +140,20 @@ class _$AnalystRunEffortEnumSerializer
   final String wireName = 'AnalystRunEffortEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystRunEffortEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystRunEffortEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AnalystRunEffortEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystRunEffortEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AnalystRunEffortEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystRunEffortEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystRun extends AnalystRun {
@@ -205,35 +215,35 @@ class _$AnalystRun extends AnalystRun {
   factory _$AnalystRun([void Function(AnalystRunBuilder)? updates]) =>
       (AnalystRunBuilder()..update(updates))._build();
 
-  _$AnalystRun._(
-      {required this.id,
-      required this.profileId,
-      required this.status,
-      this.startedAt,
-      this.finishedAt,
-      this.cursorFrom,
-      this.cursorTo,
-      this.inputCounts,
-      this.provider,
-      this.model,
-      this.effort,
-      this.tokensIn,
-      this.tokensOut,
-      this.cachedTokens,
-      this.toolCalls,
-      this.durationMs,
-      this.notes,
-      this.proposals,
-      this.autoExecuted,
-      this.citationsDropped,
-      this.claimsDowngraded,
-      this.warnings,
-      this.reason,
-      this.promptHash,
-      this.detectorVersion,
-      this.content,
-      this.manifestId})
-      : super._();
+  _$AnalystRun._({
+    required this.id,
+    required this.profileId,
+    required this.status,
+    this.startedAt,
+    this.finishedAt,
+    this.cursorFrom,
+    this.cursorTo,
+    this.inputCounts,
+    this.provider,
+    this.model,
+    this.effort,
+    this.tokensIn,
+    this.tokensOut,
+    this.cachedTokens,
+    this.toolCalls,
+    this.durationMs,
+    this.notes,
+    this.proposals,
+    this.autoExecuted,
+    this.citationsDropped,
+    this.claimsDowngraded,
+    this.warnings,
+    this.reason,
+    this.promptHash,
+    this.detectorVersion,
+    this.content,
+    this.manifestId,
+  }) : super._();
   @override
   AnalystRun rebuild(void Function(AnalystRunBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -519,13 +529,20 @@ class AnalystRunBuilder implements Builder<AnalystRun, AnalystRunBuilder> {
   _$AnalystRun _build() {
     _$AnalystRun _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystRun._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'AnalystRun', 'id'),
             profileId: BuiltValueNullFieldError.checkNotNull(
-                profileId, r'AnalystRun', 'profileId'),
+              profileId,
+              r'AnalystRun',
+              'profileId',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AnalystRun', 'status'),
+              status,
+              r'AnalystRun',
+              'status',
+            ),
             startedAt: startedAt,
             finishedAt: finishedAt,
             cursorFrom: _cursorFrom?.build(),
@@ -568,7 +585,10 @@ class AnalystRunBuilder implements Builder<AnalystRun, AnalystRunBuilder> {
         _content?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystRun', _$failedField, e.toString());
+          r'AnalystRun',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

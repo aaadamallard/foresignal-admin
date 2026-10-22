@@ -32,24 +32,24 @@ class _$AnalysisManifest extends AnalysisManifest {
   @override
   final DateTime createdAt;
 
-  factory _$AnalysisManifest(
-          [void Function(AnalysisManifestBuilder)? updates]) =>
-      (AnalysisManifestBuilder()..update(updates))._build();
+  factory _$AnalysisManifest([
+    void Function(AnalysisManifestBuilder)? updates,
+  ]) => (AnalysisManifestBuilder()..update(updates))._build();
 
-  _$AnalysisManifest._(
-      {required this.id,
-      required this.component,
-      required this.componentVersion,
-      required this.build_,
-      required this.config,
-      required this.configHash,
-      required this.registries,
-      this.asOfSeq,
-      required this.inputs,
-      this.model,
-      required this.contentHash,
-      required this.createdAt})
-      : super._();
+  _$AnalysisManifest._({
+    required this.id,
+    required this.component,
+    required this.componentVersion,
+    required this.build_,
+    required this.config,
+    required this.configHash,
+    required this.registries,
+    this.asOfSeq,
+    required this.inputs,
+    this.model,
+    required this.contentHash,
+    required this.createdAt,
+  }) : super._();
   @override
   AnalysisManifest rebuild(void Function(AnalysisManifestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -214,26 +214,45 @@ class AnalysisManifestBuilder
   _$AnalysisManifest _build() {
     _$AnalysisManifest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalysisManifest._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AnalysisManifest', 'id'),
+              id,
+              r'AnalysisManifest',
+              'id',
+            ),
             component: BuiltValueNullFieldError.checkNotNull(
-                component, r'AnalysisManifest', 'component'),
+              component,
+              r'AnalysisManifest',
+              'component',
+            ),
             componentVersion: BuiltValueNullFieldError.checkNotNull(
-                componentVersion, r'AnalysisManifest', 'componentVersion'),
+              componentVersion,
+              r'AnalysisManifest',
+              'componentVersion',
+            ),
             build_: build_.build(),
             config: config.build(),
             configHash: BuiltValueNullFieldError.checkNotNull(
-                configHash, r'AnalysisManifest', 'configHash'),
+              configHash,
+              r'AnalysisManifest',
+              'configHash',
+            ),
             registries: registries.build(),
             asOfSeq: asOfSeq,
             inputs: inputs.build(),
             model: _model?.build(),
             contentHash: BuiltValueNullFieldError.checkNotNull(
-                contentHash, r'AnalysisManifest', 'contentHash'),
+              contentHash,
+              r'AnalysisManifest',
+              'contentHash',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AnalysisManifest', 'createdAt'),
+              createdAt,
+              r'AnalysisManifest',
+              'createdAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -252,7 +271,10 @@ class AnalysisManifestBuilder
         _model?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisManifest', _$failedField, e.toString());
+          r'AnalysisManifest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

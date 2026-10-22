@@ -16,7 +16,8 @@ const ForecastAreaPayloadModelEnum _$forecastAreaPayloadModelEnum_aifs =
     const ForecastAreaPayloadModelEnum._('aifs');
 
 ForecastAreaPayloadModelEnum _$forecastAreaPayloadModelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'gfs':
       return _$forecastAreaPayloadModelEnum_gfs;
@@ -32,16 +33,16 @@ ForecastAreaPayloadModelEnum _$forecastAreaPayloadModelEnumValueOf(
 }
 
 final BuiltSet<ForecastAreaPayloadModelEnum>
-    _$forecastAreaPayloadModelEnumValues =
+_$forecastAreaPayloadModelEnumValues =
     BuiltSet<ForecastAreaPayloadModelEnum>(const <ForecastAreaPayloadModelEnum>[
-  _$forecastAreaPayloadModelEnum_gfs,
-  _$forecastAreaPayloadModelEnum_hrrr,
-  _$forecastAreaPayloadModelEnum_ifs,
-  _$forecastAreaPayloadModelEnum_aifs,
-]);
+      _$forecastAreaPayloadModelEnum_gfs,
+      _$forecastAreaPayloadModelEnum_hrrr,
+      _$forecastAreaPayloadModelEnum_ifs,
+      _$forecastAreaPayloadModelEnum_aifs,
+    ]);
 
 Serializer<ForecastAreaPayloadModelEnum>
-    _$forecastAreaPayloadModelEnumSerializer =
+_$forecastAreaPayloadModelEnumSerializer =
     _$ForecastAreaPayloadModelEnumSerializer();
 
 class _$ForecastAreaPayloadModelEnumSerializer
@@ -65,16 +66,20 @@ class _$ForecastAreaPayloadModelEnumSerializer
   final String wireName = 'ForecastAreaPayloadModelEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastAreaPayloadModelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastAreaPayloadModelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastAreaPayloadModelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastAreaPayloadModelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastAreaPayloadModelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastAreaPayload extends ForecastAreaPayload {
@@ -101,27 +106,27 @@ class _$ForecastAreaPayload extends ForecastAreaPayload {
   @override
   final bool? notAWarning;
 
-  factory _$ForecastAreaPayload(
-          [void Function(ForecastAreaPayloadBuilder)? updates]) =>
-      (ForecastAreaPayloadBuilder()..update(updates))._build();
+  factory _$ForecastAreaPayload([
+    void Function(ForecastAreaPayloadBuilder)? updates,
+  ]) => (ForecastAreaPayloadBuilder()..update(updates))._build();
 
-  _$ForecastAreaPayload._(
-      {required this.model,
-      required this.field,
-      required this.threshold,
-      required this.firstExceedAt,
-      this.peakValue,
-      this.peakAt,
-      this.areaKm2,
-      required this.run,
-      this.attribution,
-      this.automated,
-      this.notAWarning})
-      : super._();
+  _$ForecastAreaPayload._({
+    required this.model,
+    required this.field,
+    required this.threshold,
+    required this.firstExceedAt,
+    this.peakValue,
+    this.peakAt,
+    this.areaKm2,
+    required this.run,
+    this.attribution,
+    this.automated,
+    this.notAWarning,
+  }) : super._();
   @override
   ForecastAreaPayload rebuild(
-          void Function(ForecastAreaPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastAreaPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastAreaPayloadBuilder toBuilder() =>
@@ -270,20 +275,33 @@ class ForecastAreaPayloadBuilder
   _$ForecastAreaPayload _build() {
     _$ForecastAreaPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastAreaPayload._(
             model: BuiltValueNullFieldError.checkNotNull(
-                model, r'ForecastAreaPayload', 'model'),
+              model,
+              r'ForecastAreaPayload',
+              'model',
+            ),
             field: BuiltValueNullFieldError.checkNotNull(
-                field, r'ForecastAreaPayload', 'field'),
+              field,
+              r'ForecastAreaPayload',
+              'field',
+            ),
             threshold: threshold.build(),
             firstExceedAt: BuiltValueNullFieldError.checkNotNull(
-                firstExceedAt, r'ForecastAreaPayload', 'firstExceedAt'),
+              firstExceedAt,
+              r'ForecastAreaPayload',
+              'firstExceedAt',
+            ),
             peakValue: peakValue,
             peakAt: peakAt,
             areaKm2: areaKm2,
             run: BuiltValueNullFieldError.checkNotNull(
-                run, r'ForecastAreaPayload', 'run'),
+              run,
+              r'ForecastAreaPayload',
+              'run',
+            ),
             attribution: attribution,
             automated: automated,
             notAWarning: notAWarning,
@@ -295,7 +313,10 @@ class ForecastAreaPayloadBuilder
         threshold.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastAreaPayload', _$failedField, e.toString());
+          r'ForecastAreaPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

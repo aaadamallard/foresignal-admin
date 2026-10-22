@@ -52,16 +52,10 @@ class LLMApi {
     final _path = r'/v1/llm/providers';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -73,14 +67,13 @@ class LLMApi {
 
     try {
       const _type = FullType(LlmProviderInput);
-      _bodyData =
-          _serializers.serialize(llmProviderInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        llmProviderInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -103,9 +96,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LlmProvider),
-            ) as LlmProvider;
+                  rawResponse,
+                  specifiedType: const FullType(LlmProvider),
+                )
+                as LlmProvider;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -152,21 +146,21 @@ class LLMApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/llm/providers/{providerId}'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -208,21 +202,21 @@ class LLMApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/llm/providers/{providerId}'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -244,9 +238,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LlmProvider),
-            ) as LlmProvider;
+                  rawResponse,
+                  specifiedType: const FullType(LlmProvider),
+                )
+                as LlmProvider;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -293,16 +288,10 @@ class LLMApi {
     final _path = r'/v1/llm/settings';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -324,9 +313,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LlmSettings),
-            ) as LlmSettings;
+                  rawResponse,
+                  specifiedType: const FullType(LlmSettings),
+                )
+                as LlmSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -381,16 +371,10 @@ class LLMApi {
     final _path = r'/v1/llm/usage';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -400,15 +384,24 @@ class LLMApi {
     final _queryParameters = <String, dynamic>{
       if (provider != null)
         r'provider': encodeQueryParameter(
-            _serializers, provider, const FullType(String)),
+          _serializers,
+          provider,
+          const FullType(String),
+        ),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (resolution != null)
         r'resolution': encodeQueryParameter(
-            _serializers, resolution, const FullType(String)),
+          _serializers,
+          resolution,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -427,9 +420,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LlmUsageSeries),
-            ) as LlmUsageSeries;
+                  rawResponse,
+                  specifiedType: const FullType(LlmUsageSeries),
+                )
+                as LlmUsageSeries;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -478,21 +472,21 @@ class LLMApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/prompt-templates/{templateId}'.replaceAll(
-        '{' r'templateId' '}',
-        encodeQueryParameter(_serializers, templateId, const FullType(String))
-            .toString());
+      '{'
+      r'templateId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        templateId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -501,8 +495,11 @@ class LLMApi {
 
     final _queryParameters = <String, dynamic>{
       if (version != null)
-        r'version':
-            encodeQueryParameter(_serializers, version, const FullType(String)),
+        r'version': encodeQueryParameter(
+          _serializers,
+          version,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -521,9 +518,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PromptTemplate),
-            ) as PromptTemplate;
+                  rawResponse,
+                  specifiedType: const FullType(PromptTemplate),
+                )
+                as PromptTemplate;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -570,21 +568,21 @@ class LLMApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/llm/providers/{providerId}/models'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -606,10 +604,12 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(LlmModelInfo)]),
-            ) as BuiltList<LlmModelInfo>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(LlmModelInfo),
+                  ]),
+                )
+                as BuiltList<LlmModelInfo>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -656,16 +656,10 @@ class LLMApi {
     final _path = r'/v1/llm/providers';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -687,9 +681,12 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(LlmProvider)]),
-            ) as BuiltList<LlmProvider>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(LlmProvider),
+                  ]),
+                )
+                as BuiltList<LlmProvider>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -736,21 +733,21 @@ class LLMApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/llm/providers/{providerId}/test'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -772,9 +769,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LlmTestResult),
-            ) as LlmTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(LlmTestResult),
+                )
+                as LlmTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -823,21 +821,21 @@ class LLMApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/llm/providers/{providerId}'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -849,14 +847,13 @@ class LLMApi {
 
     try {
       const _type = FullType(LlmProviderInput);
-      _bodyData =
-          _serializers.serialize(llmProviderInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        llmProviderInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -879,9 +876,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LlmProvider),
-            ) as LlmProvider;
+                  rawResponse,
+                  specifiedType: const FullType(LlmProvider),
+                )
+                as LlmProvider;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -930,16 +928,10 @@ class LLMApi {
     final _path = r'/v1/llm/settings';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -954,10 +946,7 @@ class LLMApi {
       _bodyData = _serializers.serialize(llmSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -980,9 +969,10 @@ class LLMApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LlmSettings),
-            ) as LlmSettings;
+                  rawResponse,
+                  specifiedType: const FullType(LlmSettings),
+                )
+                as LlmSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

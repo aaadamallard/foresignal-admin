@@ -12,16 +12,16 @@ class _$ExternalSourceCreated extends ExternalSourceCreated {
   @override
   final String ingestKey;
 
-  factory _$ExternalSourceCreated(
-          [void Function(ExternalSourceCreatedBuilder)? updates]) =>
-      (ExternalSourceCreatedBuilder()..update(updates))._build();
+  factory _$ExternalSourceCreated([
+    void Function(ExternalSourceCreatedBuilder)? updates,
+  ]) => (ExternalSourceCreatedBuilder()..update(updates))._build();
 
   _$ExternalSourceCreated._({required this.source_, required this.ingestKey})
-      : super._();
+    : super._();
   @override
   ExternalSourceCreated rebuild(
-          void Function(ExternalSourceCreatedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalSourceCreatedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalSourceCreatedBuilder toBuilder() =>
@@ -96,11 +96,15 @@ class ExternalSourceCreatedBuilder
   _$ExternalSourceCreated _build() {
     _$ExternalSourceCreated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalSourceCreated._(
             source_: source_.build(),
             ingestKey: BuiltValueNullFieldError.checkNotNull(
-                ingestKey, r'ExternalSourceCreated', 'ingestKey'),
+              ingestKey,
+              r'ExternalSourceCreated',
+              'ingestKey',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -109,7 +113,10 @@ class ExternalSourceCreatedBuilder
         source_.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalSourceCreated', _$failedField, e.toString());
+          r'ExternalSourceCreated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

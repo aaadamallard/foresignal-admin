@@ -145,9 +145,11 @@ class _$EtaResultSerializer implements PrimitiveSerializer<EtaResult> {
     EtaResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -163,77 +165,94 @@ class _$EtaResultSerializer implements PrimitiveSerializer<EtaResult> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'record':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(KinematicState),
-          ) as KinematicState;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(KinematicState),
+                  )
+                  as KinematicState;
           result.record.replace(valueDes);
           break;
         case r'target':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EtaResultTarget),
-          ) as EtaResultTarget;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EtaResultTarget),
+                  )
+                  as EtaResultTarget;
           result.target.replace(valueDes);
           break;
         case r'distanceMeters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.distanceMeters = valueDes;
           break;
         case r'bearingDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.bearingDeg = valueDes;
           break;
         case r'bearingDiffDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.bearingDiffDeg = valueDes;
           break;
         case r'approaching':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.approaching = valueDes;
           break;
         case r'etaSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.etaSeconds = valueDes;
           break;
         case r'etaAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.etaAt = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.asOf = valueDes;
           break;
         case r'stale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.stale = valueDes;
           break;
         default:

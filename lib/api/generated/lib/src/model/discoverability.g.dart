@@ -7,17 +7,18 @@ part of 'discoverability.dart';
 // **************************************************************************
 
 const DiscoverabilityDiscoverabilityEnum
-    _$discoverabilityDiscoverabilityEnum_none =
+_$discoverabilityDiscoverabilityEnum_none =
     const DiscoverabilityDiscoverabilityEnum._('none');
 const DiscoverabilityDiscoverabilityEnum
-    _$discoverabilityDiscoverabilityEnum_instance =
+_$discoverabilityDiscoverabilityEnum_instance =
     const DiscoverabilityDiscoverabilityEnum._('instance');
 const DiscoverabilityDiscoverabilityEnum
-    _$discoverabilityDiscoverabilityEnum_network =
+_$discoverabilityDiscoverabilityEnum_network =
     const DiscoverabilityDiscoverabilityEnum._('network');
 
 DiscoverabilityDiscoverabilityEnum _$discoverabilityDiscoverabilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'none':
       return _$discoverabilityDiscoverabilityEnum_none;
@@ -31,12 +32,14 @@ DiscoverabilityDiscoverabilityEnum _$discoverabilityDiscoverabilityEnumValueOf(
 }
 
 final BuiltSet<DiscoverabilityDiscoverabilityEnum>
-    _$discoverabilityDiscoverabilityEnumValues = BuiltSet<
-        DiscoverabilityDiscoverabilityEnum>(const <DiscoverabilityDiscoverabilityEnum>[
-  _$discoverabilityDiscoverabilityEnum_none,
-  _$discoverabilityDiscoverabilityEnum_instance,
-  _$discoverabilityDiscoverabilityEnum_network,
-]);
+_$discoverabilityDiscoverabilityEnumValues =
+    BuiltSet<DiscoverabilityDiscoverabilityEnum>(
+      const <DiscoverabilityDiscoverabilityEnum>[
+        _$discoverabilityDiscoverabilityEnum_none,
+        _$discoverabilityDiscoverabilityEnum_instance,
+        _$discoverabilityDiscoverabilityEnum_network,
+      ],
+    );
 
 const DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnum_none =
     const DiscoverabilityMaxAllowedEnum._('none');
@@ -46,7 +49,8 @@ const DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnum_network =
     const DiscoverabilityMaxAllowedEnum._('network');
 
 DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'none':
       return _$discoverabilityMaxAllowedEnum_none;
@@ -60,18 +64,19 @@ DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnumValueOf(
 }
 
 final BuiltSet<DiscoverabilityMaxAllowedEnum>
-    _$discoverabilityMaxAllowedEnumValues = BuiltSet<
-        DiscoverabilityMaxAllowedEnum>(const <DiscoverabilityMaxAllowedEnum>[
-  _$discoverabilityMaxAllowedEnum_none,
-  _$discoverabilityMaxAllowedEnum_instance,
-  _$discoverabilityMaxAllowedEnum_network,
-]);
+_$discoverabilityMaxAllowedEnumValues = BuiltSet<DiscoverabilityMaxAllowedEnum>(
+  const <DiscoverabilityMaxAllowedEnum>[
+    _$discoverabilityMaxAllowedEnum_none,
+    _$discoverabilityMaxAllowedEnum_instance,
+    _$discoverabilityMaxAllowedEnum_network,
+  ],
+);
 
 Serializer<DiscoverabilityDiscoverabilityEnum>
-    _$discoverabilityDiscoverabilityEnumSerializer =
+_$discoverabilityDiscoverabilityEnumSerializer =
     _$DiscoverabilityDiscoverabilityEnumSerializer();
 Serializer<DiscoverabilityMaxAllowedEnum>
-    _$discoverabilityMaxAllowedEnumSerializer =
+_$discoverabilityMaxAllowedEnumSerializer =
     _$DiscoverabilityMaxAllowedEnumSerializer();
 
 class _$DiscoverabilityDiscoverabilityEnumSerializer
@@ -94,16 +99,19 @@ class _$DiscoverabilityDiscoverabilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DiscoverabilityDiscoverabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DiscoverabilityDiscoverabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DiscoverabilityDiscoverabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DiscoverabilityDiscoverabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DiscoverabilityDiscoverabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DiscoverabilityMaxAllowedEnumSerializer
@@ -126,16 +134,19 @@ class _$DiscoverabilityMaxAllowedEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DiscoverabilityMaxAllowedEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DiscoverabilityMaxAllowedEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DiscoverabilityMaxAllowedEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DiscoverabilityMaxAllowedEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DiscoverabilityMaxAllowedEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Discoverability extends Discoverability {
@@ -155,14 +166,14 @@ class _$Discoverability extends Discoverability {
   factory _$Discoverability([void Function(DiscoverabilityBuilder)? updates]) =>
       (DiscoverabilityBuilder()..update(updates))._build();
 
-  _$Discoverability._(
-      {required this.discoverability,
-      this.revealTitle,
-      this.revealOwner,
-      this.maxAllowed,
-      this.tlp,
-      this.updatedAt})
-      : super._();
+  _$Discoverability._({
+    required this.discoverability,
+    this.revealTitle,
+    this.revealOwner,
+    this.maxAllowed,
+    this.tlp,
+    this.updatedAt,
+  }) : super._();
   @override
   Discoverability rebuild(void Function(DiscoverabilityBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -271,10 +282,14 @@ class DiscoverabilityBuilder
   Discoverability build() => _build();
 
   _$Discoverability _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Discoverability._(
           discoverability: BuiltValueNullFieldError.checkNotNull(
-              discoverability, r'Discoverability', 'discoverability'),
+            discoverability,
+            r'Discoverability',
+            'discoverability',
+          ),
           revealTitle: revealTitle,
           revealOwner: revealOwner,
           maxAllowed: maxAllowed,

@@ -27,16 +27,18 @@ part 'trigger_rule_input_conditions_inner.g.dart';
 @BuiltValue()
 abstract class TriggerRuleInputConditionsInner
     implements
-        Built<TriggerRuleInputConditionsInner,
-            TriggerRuleInputConditionsInnerBuilder> {
+        Built<
+          TriggerRuleInputConditionsInner,
+          TriggerRuleInputConditionsInnerBuilder
+        > {
   /// One Of [ApproachCondition], [Condition]
   OneOf get oneOf;
 
   TriggerRuleInputConditionsInner._();
 
-  factory TriggerRuleInputConditionsInner(
-          [void updates(TriggerRuleInputConditionsInnerBuilder b)]) =
-      _$TriggerRuleInputConditionsInner;
+  factory TriggerRuleInputConditionsInner([
+    void updates(TriggerRuleInputConditionsInnerBuilder b),
+  ]) = _$TriggerRuleInputConditionsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TriggerRuleInputConditionsInnerBuilder b) => b;
@@ -51,7 +53,7 @@ class _$TriggerRuleInputConditionsInnerSerializer
   @override
   final Iterable<Type> types = const [
     TriggerRuleInputConditionsInner,
-    _$TriggerRuleInputConditionsInner
+    _$TriggerRuleInputConditionsInner,
   ];
 
   @override
@@ -70,8 +72,10 @@ class _$TriggerRuleInputConditionsInnerSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -87,8 +91,9 @@ class _$TriggerRuleInputConditionsInnerSerializer
       FullType(ApproachCondition),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }

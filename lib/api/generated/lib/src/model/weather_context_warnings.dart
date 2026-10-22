@@ -38,9 +38,9 @@ abstract class WeatherContextWarnings
 
   WeatherContextWarnings._();
 
-  factory WeatherContextWarnings(
-          [void updates(WeatherContextWarningsBuilder b)]) =
-      _$WeatherContextWarnings;
+  factory WeatherContextWarnings([
+    void updates(WeatherContextWarningsBuilder b),
+  ]) = _$WeatherContextWarnings;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WeatherContextWarningsBuilder b) => b;
@@ -55,7 +55,7 @@ class _$WeatherContextWarningsSerializer
   @override
   final Iterable<Type> types = const [
     WeatherContextWarnings,
-    _$WeatherContextWarnings
+    _$WeatherContextWarnings,
   ];
 
   @override
@@ -89,8 +89,9 @@ class _$WeatherContextWarningsSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(
-            BuiltList, [FullType(WeatherContextWarningsItemsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(WeatherContextWarningsItemsInner),
+        ]),
       );
     }
   }
@@ -101,9 +102,11 @@ class _$WeatherContextWarningsSerializer
     WeatherContextWarnings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,34 +122,43 @@ class _$WeatherContextWarningsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WeatherSectionStatus),
-          ) as WeatherSectionStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WeatherSectionStatus),
+                  )
+                  as WeatherSectionStatus;
           result.status = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'statusText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusText = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(WeatherContextWarningsItemsInner)]),
-          ) as BuiltList<WeatherContextWarningsItemsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(WeatherContextWarningsItemsInner),
+                    ]),
+                  )
+                  as BuiltList<WeatherContextWarningsItemsInner>?;
           if (valueDes == null) continue;
           result.items.replace(valueDes);
           break;

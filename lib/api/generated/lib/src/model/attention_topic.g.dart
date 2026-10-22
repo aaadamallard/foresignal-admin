@@ -37,21 +37,21 @@ class _$AttentionTopic extends AttentionTopic {
   factory _$AttentionTopic([void Function(AttentionTopicBuilder)? updates]) =>
       (AttentionTopicBuilder()..update(updates))._build();
 
-  _$AttentionTopic._(
-      {required this.id,
-      required this.name,
-      this.description,
-      this.gdeltQuery,
-      this.wikiArticles,
-      this.keywords,
-      this.regionCodes,
-      this.themes,
-      this.enabled,
-      this.social,
-      this.createdBy,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$AttentionTopic._({
+    required this.id,
+    required this.name,
+    this.description,
+    this.gdeltQuery,
+    this.wikiArticles,
+    this.keywords,
+    this.regionCodes,
+    this.themes,
+    this.enabled,
+    this.social,
+    this.createdBy,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   AttentionTopic rebuild(void Function(AttentionTopicBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -143,8 +143,8 @@ class AttentionTopicBuilder
       _$this._wikiArticles ??=
           ListBuilder<AttentionTopicInputWikiArticlesInner>();
   set wikiArticles(
-          ListBuilder<AttentionTopicInputWikiArticlesInner>? wikiArticles) =>
-      _$this._wikiArticles = wikiArticles;
+    ListBuilder<AttentionTopicInputWikiArticlesInner>? wikiArticles,
+  ) => _$this._wikiArticles = wikiArticles;
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
@@ -223,12 +223,19 @@ class AttentionTopicBuilder
   _$AttentionTopic _build() {
     _$AttentionTopic _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AttentionTopic._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AttentionTopic', 'id'),
+              id,
+              r'AttentionTopic',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'AttentionTopic', 'name'),
+              name,
+              r'AttentionTopic',
+              'name',
+            ),
             description: description,
             gdeltQuery: gdeltQuery,
             wikiArticles: _wikiArticles?.build(),
@@ -239,9 +246,15 @@ class AttentionTopicBuilder
             social: _social?.build(),
             createdBy: createdBy,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AttentionTopic', 'createdAt'),
+              createdAt,
+              r'AttentionTopic',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'AttentionTopic', 'updatedAt'),
+              updatedAt,
+              r'AttentionTopic',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -259,7 +272,10 @@ class AttentionTopicBuilder
         _social?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AttentionTopic', _$failedField, e.toString());
+          r'AttentionTopic',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

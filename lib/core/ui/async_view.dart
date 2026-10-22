@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'error_banner.dart';
+
+/// Renders an [AsyncValue]: a progress indicator while loading, an
+/// [ErrorBanner] (with Retry) on failure, and [data] once loaded. A refresh
+/// keeps the previous data on screen.
+class AsyncView<T> extends StatelessWidget {
+  /// Creates the view.
+  const AsyncView({super.key, required this.value, required this.data, this.onRetry});
+
+  /// The async state.
+  final AsyncValue<T> value;
+
+  /// Builds the loaded state.
+  final Widget Function(T value) data;
+
+  /// Called by the error banner's Retry button.
+  final VoidCallback? onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    if (value.hasValue) {
+      return data(value.requireValue);
+    }
+    if (value.hasError) {
+      return ErrorBanner(error: value.error!, onRetry: onRetry);
+    }
+    return const Padding(
+      padding: EdgeInsets.all(24),
+      child: Center(child: CircularProgressIndicator()),
+    );
+  }
+}

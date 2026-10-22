@@ -91,9 +91,11 @@ class _$HypothesisChangeSerializer
     HypothesisChange object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,32 +111,34 @@ class _$HypothesisChangeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'previousProbability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.previousProbability = valueDes;
           break;
         case r'previousTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IcdTerm),
-          ) as IcdTerm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IcdTerm),
+                  )
+                  as IcdTerm?;
           if (valueDes == null) continue;
           result.previousTerm = valueDes;
           break;
         case r'delta':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.delta = valueDes;
           break;
         case r'sinceRevisionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sinceRevisionId = valueDes;
           break;

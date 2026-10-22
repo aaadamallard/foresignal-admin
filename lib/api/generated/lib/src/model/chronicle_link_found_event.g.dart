@@ -14,17 +14,19 @@ class _$ChronicleLinkFoundEvent extends ChronicleLinkFoundEvent {
   @override
   final DateTime at;
 
-  factory _$ChronicleLinkFoundEvent(
-          [void Function(ChronicleLinkFoundEventBuilder)? updates]) =>
-      (ChronicleLinkFoundEventBuilder()..update(updates))._build();
+  factory _$ChronicleLinkFoundEvent([
+    void Function(ChronicleLinkFoundEventBuilder)? updates,
+  ]) => (ChronicleLinkFoundEventBuilder()..update(updates))._build();
 
-  _$ChronicleLinkFoundEvent._(
-      {required this.chronicleId, required this.link, required this.at})
-      : super._();
+  _$ChronicleLinkFoundEvent._({
+    required this.chronicleId,
+    required this.link,
+    required this.at,
+  }) : super._();
   @override
   ChronicleLinkFoundEvent rebuild(
-          void Function(ChronicleLinkFoundEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleLinkFoundEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleLinkFoundEventBuilder toBuilder() =>
@@ -108,13 +110,20 @@ class ChronicleLinkFoundEventBuilder
   _$ChronicleLinkFoundEvent _build() {
     _$ChronicleLinkFoundEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleLinkFoundEvent._(
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleLinkFoundEvent', 'chronicleId'),
+              chronicleId,
+              r'ChronicleLinkFoundEvent',
+              'chronicleId',
+            ),
             link: link.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ChronicleLinkFoundEvent', 'at'),
+              at,
+              r'ChronicleLinkFoundEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -123,7 +132,10 @@ class ChronicleLinkFoundEventBuilder
         link.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleLinkFoundEvent', _$failedField, e.toString());
+          r'ChronicleLinkFoundEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

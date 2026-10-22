@@ -55,9 +55,11 @@ class _$OverlandAckSerializer implements PrimitiveSerializer<OverlandAck> {
     OverlandAck object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -73,10 +75,12 @@ class _$OverlandAckSerializer implements PrimitiveSerializer<OverlandAck> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'result':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OverlandAckResultEnum),
-          ) as OverlandAckResultEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OverlandAckResultEnum),
+                  )
+                  as OverlandAckResultEnum;
           result.result = valueDes;
           break;
         default:

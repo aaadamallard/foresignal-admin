@@ -39,22 +39,22 @@ class _$ChronicleInput extends ChronicleInput {
   factory _$ChronicleInput([void Function(ChronicleInputBuilder)? updates]) =>
       (ChronicleInputBuilder()..update(updates))._build();
 
-  _$ChronicleInput._(
-      {required this.name,
-      this.description,
-      this.visibility,
-      this.tlp,
-      this.area,
-      this.retention,
-      this.sizeCapBytes,
-      this.situationIds,
-      this.hypothesisSetIds,
-      this.investigationIds,
-      this.topicIds,
-      this.layers,
-      this.fromWorkspaceId,
-      this.activate})
-      : super._();
+  _$ChronicleInput._({
+    required this.name,
+    this.description,
+    this.visibility,
+    this.tlp,
+    this.area,
+    this.retention,
+    this.sizeCapBytes,
+    this.situationIds,
+    this.hypothesisSetIds,
+    this.investigationIds,
+    this.topicIds,
+    this.layers,
+    this.fromWorkspaceId,
+    this.activate,
+  }) : super._();
   @override
   ChronicleInput rebuild(void Function(ChronicleInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -236,10 +236,14 @@ class ChronicleInputBuilder
   _$ChronicleInput _build() {
     _$ChronicleInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ChronicleInput', 'name'),
+              name,
+              r'ChronicleInput',
+              'name',
+            ),
             description: description,
             visibility: visibility,
             tlp: tlp,
@@ -272,7 +276,10 @@ class ChronicleInputBuilder
         _layers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleInput', _$failedField, e.toString());
+          r'ChronicleInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

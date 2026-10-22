@@ -20,8 +20,10 @@ part 'chronicle_external_stream_selector.g.dart';
 @BuiltValue()
 abstract class ChronicleExternalStreamSelector
     implements
-        Built<ChronicleExternalStreamSelector,
-            ChronicleExternalStreamSelectorBuilder> {
+        Built<
+          ChronicleExternalStreamSelector,
+          ChronicleExternalStreamSelectorBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   ChronicleExternalStreamSelectorTypeEnum get type;
   // enum typeEnum {  external-stream,  };
@@ -37,9 +39,9 @@ abstract class ChronicleExternalStreamSelector
 
   ChronicleExternalStreamSelector._();
 
-  factory ChronicleExternalStreamSelector(
-          [void updates(ChronicleExternalStreamSelectorBuilder b)]) =
-      _$ChronicleExternalStreamSelector;
+  factory ChronicleExternalStreamSelector([
+    void updates(ChronicleExternalStreamSelectorBuilder b),
+  ]) = _$ChronicleExternalStreamSelector;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleExternalStreamSelectorBuilder b) => b;
@@ -54,7 +56,7 @@ class _$ChronicleExternalStreamSelectorSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleExternalStreamSelector,
-    _$ChronicleExternalStreamSelector
+    _$ChronicleExternalStreamSelector,
   ];
 
   @override
@@ -85,7 +87,7 @@ class _$ChronicleExternalStreamSelectorSerializer
       yield serializers.serialize(
         object.filter,
         specifiedType: const FullType.nullable(BuiltList, [
-          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
         ]),
       );
     }
@@ -97,9 +99,11 @@ class _$ChronicleExternalStreamSelectorSerializer
     ChronicleExternalStreamSelector object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,35 +119,46 @@ class _$ChronicleExternalStreamSelectorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ChronicleExternalStreamSelectorTypeEnum),
-          ) as ChronicleExternalStreamSelectorTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleExternalStreamSelectorTypeEnum,
+                    ),
+                  )
+                  as ChronicleExternalStreamSelectorTypeEnum;
           result.type = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'streamId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.streamId = valueDes;
           break;
         case r'filter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltList<BuiltMap<String, JsonObject?>>?;
           if (valueDes == null) continue;
           result.filter.replace(valueDes);
           break;

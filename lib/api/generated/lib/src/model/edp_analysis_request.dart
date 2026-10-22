@@ -81,9 +81,11 @@ class _$EdpAnalysisRequestSerializer
     EdpAnalysisRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,25 +101,33 @@ class _$EdpAnalysisRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.url = valueDes;
           break;
         case r'auth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpAnalysisRequestAuthEnum),
-          ) as EdpAnalysisRequestAuthEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpAnalysisRequestAuthEnum,
+                    ),
+                  )
+                  as EdpAnalysisRequestAuthEnum?;
           if (valueDes == null) continue;
           result.auth = valueDes;
           break;
         case r'header':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.header = valueDes;
           break;

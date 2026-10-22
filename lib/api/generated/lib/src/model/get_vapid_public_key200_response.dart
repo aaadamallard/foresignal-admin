@@ -15,17 +15,19 @@ part 'get_vapid_public_key200_response.g.dart';
 @BuiltValue()
 abstract class GetVapidPublicKey200Response
     implements
-        Built<GetVapidPublicKey200Response,
-            GetVapidPublicKey200ResponseBuilder> {
+        Built<
+          GetVapidPublicKey200Response,
+          GetVapidPublicKey200ResponseBuilder
+        > {
   /// Base64url uncompressed P-256 point
   @BuiltValueField(wireName: r'publicKey')
   String get publicKey;
 
   GetVapidPublicKey200Response._();
 
-  factory GetVapidPublicKey200Response(
-          [void updates(GetVapidPublicKey200ResponseBuilder b)]) =
-      _$GetVapidPublicKey200Response;
+  factory GetVapidPublicKey200Response([
+    void updates(GetVapidPublicKey200ResponseBuilder b),
+  ]) = _$GetVapidPublicKey200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetVapidPublicKey200ResponseBuilder b) => b;
@@ -40,7 +42,7 @@ class _$GetVapidPublicKey200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     GetVapidPublicKey200Response,
-    _$GetVapidPublicKey200Response
+    _$GetVapidPublicKey200Response,
   ];
 
   @override
@@ -64,9 +66,11 @@ class _$GetVapidPublicKey200ResponseSerializer
     GetVapidPublicKey200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -82,10 +86,12 @@ class _$GetVapidPublicKey200ResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'publicKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.publicKey = valueDes;
           break;
         default:

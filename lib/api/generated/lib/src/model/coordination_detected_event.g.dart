@@ -7,11 +7,12 @@ part of 'coordination_detected_event.dart';
 // **************************************************************************
 
 const CoordinationDetectedEventEventEnum
-    _$coordinationDetectedEventEventEnum_coordinationPeriodDetected =
+_$coordinationDetectedEventEventEnum_coordinationPeriodDetected =
     const CoordinationDetectedEventEventEnum._('coordinationPeriodDetected');
 
 CoordinationDetectedEventEventEnum _$coordinationDetectedEventEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'coordinationPeriodDetected':
       return _$coordinationDetectedEventEventEnum_coordinationPeriodDetected;
@@ -21,29 +22,34 @@ CoordinationDetectedEventEventEnum _$coordinationDetectedEventEventEnumValueOf(
 }
 
 final BuiltSet<CoordinationDetectedEventEventEnum>
-    _$coordinationDetectedEventEventEnumValues = BuiltSet<
-        CoordinationDetectedEventEventEnum>(const <CoordinationDetectedEventEventEnum>[
-  _$coordinationDetectedEventEventEnum_coordinationPeriodDetected,
-]);
+_$coordinationDetectedEventEventEnumValues =
+    BuiltSet<CoordinationDetectedEventEventEnum>(
+      const <CoordinationDetectedEventEventEnum>[
+        _$coordinationDetectedEventEventEnum_coordinationPeriodDetected,
+      ],
+    );
 
 const CoordinationDetectedEventSignificantIndicatorsEnum
-    _$coordinationDetectedEventSignificantIndicatorsEnum_synchrony =
+_$coordinationDetectedEventSignificantIndicatorsEnum_synchrony =
     const CoordinationDetectedEventSignificantIndicatorsEnum._('synchrony');
 const CoordinationDetectedEventSignificantIndicatorsEnum
-    _$coordinationDetectedEventSignificantIndicatorsEnum_textDuplication =
+_$coordinationDetectedEventSignificantIndicatorsEnum_textDuplication =
     const CoordinationDetectedEventSignificantIndicatorsEnum._(
-        'textDuplication');
+      'textDuplication',
+    );
 const CoordinationDetectedEventSignificantIndicatorsEnum
-    _$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew =
+_$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew =
     const CoordinationDetectedEventSignificantIndicatorsEnum._(
-        'accountAgeSkew');
+      'accountAgeSkew',
+    );
 const CoordinationDetectedEventSignificantIndicatorsEnum
-    _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts =
+_$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts =
     const CoordinationDetectedEventSignificantIndicatorsEnum._(
-        'coRepostBursts');
+      'coRepostBursts',
+    );
 
 CoordinationDetectedEventSignificantIndicatorsEnum
-    _$coordinationDetectedEventSignificantIndicatorsEnumValueOf(String name) {
+_$coordinationDetectedEventSignificantIndicatorsEnumValueOf(String name) {
   switch (name) {
     case 'synchrony':
       return _$coordinationDetectedEventSignificantIndicatorsEnum_synchrony;
@@ -59,19 +65,21 @@ CoordinationDetectedEventSignificantIndicatorsEnum
 }
 
 final BuiltSet<CoordinationDetectedEventSignificantIndicatorsEnum>
-    _$coordinationDetectedEventSignificantIndicatorsEnumValues = BuiltSet<
-        CoordinationDetectedEventSignificantIndicatorsEnum>(const <CoordinationDetectedEventSignificantIndicatorsEnum>[
-  _$coordinationDetectedEventSignificantIndicatorsEnum_synchrony,
-  _$coordinationDetectedEventSignificantIndicatorsEnum_textDuplication,
-  _$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew,
-  _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts,
-]);
+_$coordinationDetectedEventSignificantIndicatorsEnumValues =
+    BuiltSet<CoordinationDetectedEventSignificantIndicatorsEnum>(
+      const <CoordinationDetectedEventSignificantIndicatorsEnum>[
+        _$coordinationDetectedEventSignificantIndicatorsEnum_synchrony,
+        _$coordinationDetectedEventSignificantIndicatorsEnum_textDuplication,
+        _$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew,
+        _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts,
+      ],
+    );
 
 Serializer<CoordinationDetectedEventEventEnum>
-    _$coordinationDetectedEventEventEnumSerializer =
+_$coordinationDetectedEventEventEnumSerializer =
     _$CoordinationDetectedEventEventEnumSerializer();
 Serializer<CoordinationDetectedEventSignificantIndicatorsEnum>
-    _$coordinationDetectedEventSignificantIndicatorsEnumSerializer =
+_$coordinationDetectedEventSignificantIndicatorsEnumSerializer =
     _$CoordinationDetectedEventSignificantIndicatorsEnumSerializer();
 
 class _$CoordinationDetectedEventEventEnumSerializer
@@ -90,22 +98,26 @@ class _$CoordinationDetectedEventEventEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, CoordinationDetectedEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CoordinationDetectedEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CoordinationDetectedEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CoordinationDetectedEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CoordinationDetectedEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CoordinationDetectedEventSignificantIndicatorsEnumSerializer
     implements
         PrimitiveSerializer<
-            CoordinationDetectedEventSignificantIndicatorsEnum> {
+          CoordinationDetectedEventSignificantIndicatorsEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'synchrony': 'synchrony',
     'textDuplication': 'textDuplication',
@@ -121,23 +133,26 @@ class _$CoordinationDetectedEventSignificantIndicatorsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CoordinationDetectedEventSignificantIndicatorsEnum
+    CoordinationDetectedEventSignificantIndicatorsEnum,
   ];
   @override
   final String wireName = 'CoordinationDetectedEventSignificantIndicatorsEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          CoordinationDetectedEventSignificantIndicatorsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CoordinationDetectedEventSignificantIndicatorsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CoordinationDetectedEventSignificantIndicatorsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CoordinationDetectedEventSignificantIndicatorsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CoordinationDetectedEventSignificantIndicatorsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CoordinationDetectedEvent extends CoordinationDetectedEvent {
@@ -149,25 +164,25 @@ class _$CoordinationDetectedEvent extends CoordinationDetectedEvent {
   final String narrativeId;
   @override
   final BuiltList<CoordinationDetectedEventSignificantIndicatorsEnum>
-      significantIndicators;
+  significantIndicators;
   @override
   final DateTime at;
 
-  factory _$CoordinationDetectedEvent(
-          [void Function(CoordinationDetectedEventBuilder)? updates]) =>
-      (CoordinationDetectedEventBuilder()..update(updates))._build();
+  factory _$CoordinationDetectedEvent([
+    void Function(CoordinationDetectedEventBuilder)? updates,
+  ]) => (CoordinationDetectedEventBuilder()..update(updates))._build();
 
-  _$CoordinationDetectedEvent._(
-      {required this.event,
-      required this.findingId,
-      required this.narrativeId,
-      required this.significantIndicators,
-      required this.at})
-      : super._();
+  _$CoordinationDetectedEvent._({
+    required this.event,
+    required this.findingId,
+    required this.narrativeId,
+    required this.significantIndicators,
+    required this.at,
+  }) : super._();
   @override
   CoordinationDetectedEvent rebuild(
-          void Function(CoordinationDetectedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CoordinationDetectedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CoordinationDetectedEventBuilder toBuilder() =>
@@ -226,14 +241,14 @@ class CoordinationDetectedEventBuilder
   set narrativeId(String? narrativeId) => _$this._narrativeId = narrativeId;
 
   ListBuilder<CoordinationDetectedEventSignificantIndicatorsEnum>?
-      _significantIndicators;
+  _significantIndicators;
   ListBuilder<CoordinationDetectedEventSignificantIndicatorsEnum>
-      get significantIndicators => _$this._significantIndicators ??=
-          ListBuilder<CoordinationDetectedEventSignificantIndicatorsEnum>();
+  get significantIndicators => _$this._significantIndicators ??=
+      ListBuilder<CoordinationDetectedEventSignificantIndicatorsEnum>();
   set significantIndicators(
-          ListBuilder<CoordinationDetectedEventSignificantIndicatorsEnum>?
-              significantIndicators) =>
-      _$this._significantIndicators = significantIndicators;
+    ListBuilder<CoordinationDetectedEventSignificantIndicatorsEnum>?
+    significantIndicators,
+  ) => _$this._significantIndicators = significantIndicators;
 
   DateTime? _at;
   DateTime? get at => _$this._at;
@@ -272,17 +287,30 @@ class CoordinationDetectedEventBuilder
   _$CoordinationDetectedEvent _build() {
     _$CoordinationDetectedEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CoordinationDetectedEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'CoordinationDetectedEvent', 'event'),
+              event,
+              r'CoordinationDetectedEvent',
+              'event',
+            ),
             findingId: BuiltValueNullFieldError.checkNotNull(
-                findingId, r'CoordinationDetectedEvent', 'findingId'),
+              findingId,
+              r'CoordinationDetectedEvent',
+              'findingId',
+            ),
             narrativeId: BuiltValueNullFieldError.checkNotNull(
-                narrativeId, r'CoordinationDetectedEvent', 'narrativeId'),
+              narrativeId,
+              r'CoordinationDetectedEvent',
+              'narrativeId',
+            ),
             significantIndicators: significantIndicators.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'CoordinationDetectedEvent', 'at'),
+              at,
+              r'CoordinationDetectedEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -291,7 +319,10 @@ class CoordinationDetectedEventBuilder
         significantIndicators.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CoordinationDetectedEvent', _$failedField, e.toString());
+          r'CoordinationDetectedEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

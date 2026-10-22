@@ -90,11 +90,8 @@ class TripPageBuilder implements Builder<TripPage, TripPageBuilder> {
   _$TripPage _build() {
     _$TripPage _$result;
     try {
-      _$result = _$v ??
-          _$TripPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$TripPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class TripPageBuilder implements Builder<TripPage, TripPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TripPage', _$failedField, e.toString());
+          r'TripPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

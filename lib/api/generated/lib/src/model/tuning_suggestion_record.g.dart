@@ -7,38 +7,39 @@ part of 'tuning_suggestion_record.dart';
 // **************************************************************************
 
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_raiseThreshold =
+_$tuningSuggestionRecordKindEnum_raiseThreshold =
     const TuningSuggestionRecordKindEnum._('raiseThreshold');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_lowerThreshold =
+_$tuningSuggestionRecordKindEnum_lowerThreshold =
     const TuningSuggestionRecordKindEnum._('lowerThreshold');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_addCooldown =
+_$tuningSuggestionRecordKindEnum_addCooldown =
     const TuningSuggestionRecordKindEnum._('addCooldown');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_switchToEnter =
+_$tuningSuggestionRecordKindEnum_switchToEnter =
     const TuningSuggestionRecordKindEnum._('switchToEnter');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_addEdgeMinInterval =
+_$tuningSuggestionRecordKindEnum_addEdgeMinInterval =
     const TuningSuggestionRecordKindEnum._('addEdgeMinInterval');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_shrinkGeofence =
+_$tuningSuggestionRecordKindEnum_shrinkGeofence =
     const TuningSuggestionRecordKindEnum._('shrinkGeofence');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_lowerAnomalySensitivity =
+_$tuningSuggestionRecordKindEnum_lowerAnomalySensitivity =
     const TuningSuggestionRecordKindEnum._('lowerAnomalySensitivity');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_ACTIVE_WINDOW =
+_$tuningSuggestionRecordKindEnum_ACTIVE_WINDOW =
     const TuningSuggestionRecordKindEnum._('ACTIVE_WINDOW');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_SEVERITY_UP =
+_$tuningSuggestionRecordKindEnum_SEVERITY_UP =
     const TuningSuggestionRecordKindEnum._('SEVERITY_UP');
 const TuningSuggestionRecordKindEnum
-    _$tuningSuggestionRecordKindEnum_SEVERITY_DOWN =
+_$tuningSuggestionRecordKindEnum_SEVERITY_DOWN =
     const TuningSuggestionRecordKindEnum._('SEVERITY_DOWN');
 
 TuningSuggestionRecordKindEnum _$tuningSuggestionRecordKindEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'raiseThreshold':
       return _$tuningSuggestionRecordKindEnum_raiseThreshold;
@@ -66,34 +67,37 @@ TuningSuggestionRecordKindEnum _$tuningSuggestionRecordKindEnumValueOf(
 }
 
 final BuiltSet<TuningSuggestionRecordKindEnum>
-    _$tuningSuggestionRecordKindEnumValues = BuiltSet<
-        TuningSuggestionRecordKindEnum>(const <TuningSuggestionRecordKindEnum>[
-  _$tuningSuggestionRecordKindEnum_raiseThreshold,
-  _$tuningSuggestionRecordKindEnum_lowerThreshold,
-  _$tuningSuggestionRecordKindEnum_addCooldown,
-  _$tuningSuggestionRecordKindEnum_switchToEnter,
-  _$tuningSuggestionRecordKindEnum_addEdgeMinInterval,
-  _$tuningSuggestionRecordKindEnum_shrinkGeofence,
-  _$tuningSuggestionRecordKindEnum_lowerAnomalySensitivity,
-  _$tuningSuggestionRecordKindEnum_ACTIVE_WINDOW,
-  _$tuningSuggestionRecordKindEnum_SEVERITY_UP,
-  _$tuningSuggestionRecordKindEnum_SEVERITY_DOWN,
-]);
+_$tuningSuggestionRecordKindEnumValues =
+    BuiltSet<TuningSuggestionRecordKindEnum>(
+      const <TuningSuggestionRecordKindEnum>[
+        _$tuningSuggestionRecordKindEnum_raiseThreshold,
+        _$tuningSuggestionRecordKindEnum_lowerThreshold,
+        _$tuningSuggestionRecordKindEnum_addCooldown,
+        _$tuningSuggestionRecordKindEnum_switchToEnter,
+        _$tuningSuggestionRecordKindEnum_addEdgeMinInterval,
+        _$tuningSuggestionRecordKindEnum_shrinkGeofence,
+        _$tuningSuggestionRecordKindEnum_lowerAnomalySensitivity,
+        _$tuningSuggestionRecordKindEnum_ACTIVE_WINDOW,
+        _$tuningSuggestionRecordKindEnum_SEVERITY_UP,
+        _$tuningSuggestionRecordKindEnum_SEVERITY_DOWN,
+      ],
+    );
 
 const TuningSuggestionRecordStatusEnum _$tuningSuggestionRecordStatusEnum_OPEN =
     const TuningSuggestionRecordStatusEnum._('OPEN');
 const TuningSuggestionRecordStatusEnum
-    _$tuningSuggestionRecordStatusEnum_APPLIED =
+_$tuningSuggestionRecordStatusEnum_APPLIED =
     const TuningSuggestionRecordStatusEnum._('APPLIED');
 const TuningSuggestionRecordStatusEnum
-    _$tuningSuggestionRecordStatusEnum_DISMISSED =
+_$tuningSuggestionRecordStatusEnum_DISMISSED =
     const TuningSuggestionRecordStatusEnum._('DISMISSED');
 const TuningSuggestionRecordStatusEnum
-    _$tuningSuggestionRecordStatusEnum_STALE =
+_$tuningSuggestionRecordStatusEnum_STALE =
     const TuningSuggestionRecordStatusEnum._('STALE');
 
 TuningSuggestionRecordStatusEnum _$tuningSuggestionRecordStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'OPEN':
       return _$tuningSuggestionRecordStatusEnum_OPEN;
@@ -109,19 +113,21 @@ TuningSuggestionRecordStatusEnum _$tuningSuggestionRecordStatusEnumValueOf(
 }
 
 final BuiltSet<TuningSuggestionRecordStatusEnum>
-    _$tuningSuggestionRecordStatusEnumValues = BuiltSet<
-        TuningSuggestionRecordStatusEnum>(const <TuningSuggestionRecordStatusEnum>[
-  _$tuningSuggestionRecordStatusEnum_OPEN,
-  _$tuningSuggestionRecordStatusEnum_APPLIED,
-  _$tuningSuggestionRecordStatusEnum_DISMISSED,
-  _$tuningSuggestionRecordStatusEnum_STALE,
-]);
+_$tuningSuggestionRecordStatusEnumValues =
+    BuiltSet<TuningSuggestionRecordStatusEnum>(
+      const <TuningSuggestionRecordStatusEnum>[
+        _$tuningSuggestionRecordStatusEnum_OPEN,
+        _$tuningSuggestionRecordStatusEnum_APPLIED,
+        _$tuningSuggestionRecordStatusEnum_DISMISSED,
+        _$tuningSuggestionRecordStatusEnum_STALE,
+      ],
+    );
 
 Serializer<TuningSuggestionRecordKindEnum>
-    _$tuningSuggestionRecordKindEnumSerializer =
+_$tuningSuggestionRecordKindEnumSerializer =
     _$TuningSuggestionRecordKindEnumSerializer();
 Serializer<TuningSuggestionRecordStatusEnum>
-    _$tuningSuggestionRecordStatusEnumSerializer =
+_$tuningSuggestionRecordStatusEnumSerializer =
     _$TuningSuggestionRecordStatusEnumSerializer();
 
 class _$TuningSuggestionRecordKindEnumSerializer
@@ -158,16 +164,19 @@ class _$TuningSuggestionRecordKindEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TuningSuggestionRecordKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TuningSuggestionRecordKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TuningSuggestionRecordKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TuningSuggestionRecordKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TuningSuggestionRecordKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TuningSuggestionRecordStatusEnumSerializer
@@ -192,16 +201,19 @@ class _$TuningSuggestionRecordStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TuningSuggestionRecordStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TuningSuggestionRecordStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TuningSuggestionRecordStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TuningSuggestionRecordStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TuningSuggestionRecordStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TuningSuggestionRecord extends TuningSuggestionRecord {
@@ -234,30 +246,30 @@ class _$TuningSuggestionRecord extends TuningSuggestionRecord {
   @override
   final String? explanation;
 
-  factory _$TuningSuggestionRecord(
-          [void Function(TuningSuggestionRecordBuilder)? updates]) =>
-      (TuningSuggestionRecordBuilder()..update(updates))._build();
+  factory _$TuningSuggestionRecord([
+    void Function(TuningSuggestionRecordBuilder)? updates,
+  ]) => (TuningSuggestionRecordBuilder()..update(updates))._build();
 
-  _$TuningSuggestionRecord._(
-      {required this.id,
-      required this.kind,
-      required this.rationale,
-      required this.patch_,
-      this.expectedEffect,
-      this.caveats,
-      required this.ruleId,
-      required this.ruleRev,
-      required this.status,
-      required this.createdAt,
-      this.decidedBy,
-      this.decidedAt,
-      this.decisionReason,
-      this.explanation})
-      : super._();
+  _$TuningSuggestionRecord._({
+    required this.id,
+    required this.kind,
+    required this.rationale,
+    required this.patch_,
+    this.expectedEffect,
+    this.caveats,
+    required this.ruleId,
+    required this.ruleRev,
+    required this.status,
+    required this.createdAt,
+    this.decidedBy,
+    this.decidedAt,
+    this.decisionReason,
+    this.explanation,
+  }) : super._();
   @override
   TuningSuggestionRecord rebuild(
-          void Function(TuningSuggestionRecordBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TuningSuggestionRecordBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TuningSuggestionRecordBuilder toBuilder() =>
@@ -433,25 +445,47 @@ class TuningSuggestionRecordBuilder
   _$TuningSuggestionRecord _build() {
     _$TuningSuggestionRecord _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TuningSuggestionRecord._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'TuningSuggestionRecord', 'id'),
+              id,
+              r'TuningSuggestionRecord',
+              'id',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'TuningSuggestionRecord', 'kind'),
+              kind,
+              r'TuningSuggestionRecord',
+              'kind',
+            ),
             rationale: BuiltValueNullFieldError.checkNotNull(
-                rationale, r'TuningSuggestionRecord', 'rationale'),
+              rationale,
+              r'TuningSuggestionRecord',
+              'rationale',
+            ),
             patch_: patch_.build(),
             expectedEffect: _expectedEffect?.build(),
             caveats: _caveats?.build(),
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'TuningSuggestionRecord', 'ruleId'),
+              ruleId,
+              r'TuningSuggestionRecord',
+              'ruleId',
+            ),
             ruleRev: BuiltValueNullFieldError.checkNotNull(
-                ruleRev, r'TuningSuggestionRecord', 'ruleRev'),
+              ruleRev,
+              r'TuningSuggestionRecord',
+              'ruleRev',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'TuningSuggestionRecord', 'status'),
+              status,
+              r'TuningSuggestionRecord',
+              'status',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'TuningSuggestionRecord', 'createdAt'),
+              createdAt,
+              r'TuningSuggestionRecord',
+              'createdAt',
+            ),
             decidedBy: decidedBy,
             decidedAt: decidedAt,
             decisionReason: decisionReason,
@@ -468,7 +502,10 @@ class TuningSuggestionRecordBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TuningSuggestionRecord', _$failedField, e.toString());
+          r'TuningSuggestionRecord',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

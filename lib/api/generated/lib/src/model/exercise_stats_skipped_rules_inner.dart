@@ -16,8 +16,10 @@ part 'exercise_stats_skipped_rules_inner.g.dart';
 @BuiltValue()
 abstract class ExerciseStatsSkippedRulesInner
     implements
-        Built<ExerciseStatsSkippedRulesInner,
-            ExerciseStatsSkippedRulesInnerBuilder> {
+        Built<
+          ExerciseStatsSkippedRulesInner,
+          ExerciseStatsSkippedRulesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'ruleId')
   String get ruleId;
 
@@ -26,9 +28,9 @@ abstract class ExerciseStatsSkippedRulesInner
 
   ExerciseStatsSkippedRulesInner._();
 
-  factory ExerciseStatsSkippedRulesInner(
-          [void updates(ExerciseStatsSkippedRulesInnerBuilder b)]) =
-      _$ExerciseStatsSkippedRulesInner;
+  factory ExerciseStatsSkippedRulesInner([
+    void updates(ExerciseStatsSkippedRulesInnerBuilder b),
+  ]) = _$ExerciseStatsSkippedRulesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExerciseStatsSkippedRulesInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$ExerciseStatsSkippedRulesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExerciseStatsSkippedRulesInner,
-    _$ExerciseStatsSkippedRulesInner
+    _$ExerciseStatsSkippedRulesInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$ExerciseStatsSkippedRulesInnerSerializer
     ExerciseStatsSkippedRulesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$ExerciseStatsSkippedRulesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reason = valueDes;
           break;
         default:

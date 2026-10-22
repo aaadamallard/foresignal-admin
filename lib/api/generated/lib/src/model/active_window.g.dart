@@ -93,10 +93,14 @@ class ActiveWindowBuilder
   _$ActiveWindow _build() {
     _$ActiveWindow _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ActiveWindow._(
             timezone: BuiltValueNullFieldError.checkNotNull(
-                timezone, r'ActiveWindow', 'timezone'),
+              timezone,
+              r'ActiveWindow',
+              'timezone',
+            ),
             windows: windows.build(),
           );
     } catch (_) {
@@ -106,7 +110,10 @@ class ActiveWindowBuilder
         windows.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ActiveWindow', _$failedField, e.toString());
+          r'ActiveWindow',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

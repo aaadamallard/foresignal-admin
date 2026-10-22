@@ -15,17 +15,19 @@ class _$WatchlistImportResultInvalidInner
   @override
   final String reason;
 
-  factory _$WatchlistImportResultInvalidInner(
-          [void Function(WatchlistImportResultInvalidInnerBuilder)? updates]) =>
-      (WatchlistImportResultInvalidInnerBuilder()..update(updates))._build();
+  factory _$WatchlistImportResultInvalidInner([
+    void Function(WatchlistImportResultInvalidInnerBuilder)? updates,
+  ]) => (WatchlistImportResultInvalidInnerBuilder()..update(updates))._build();
 
-  _$WatchlistImportResultInvalidInner._(
-      {this.row, this.value, required this.reason})
-      : super._();
+  _$WatchlistImportResultInvalidInner._({
+    this.row,
+    this.value,
+    required this.reason,
+  }) : super._();
   @override
   WatchlistImportResultInvalidInner rebuild(
-          void Function(WatchlistImportResultInvalidInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WatchlistImportResultInvalidInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WatchlistImportResultInvalidInnerBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$WatchlistImportResultInvalidInner
 
 class WatchlistImportResultInvalidInnerBuilder
     implements
-        Builder<WatchlistImportResultInvalidInner,
-            WatchlistImportResultInvalidInnerBuilder> {
+        Builder<
+          WatchlistImportResultInvalidInner,
+          WatchlistImportResultInvalidInnerBuilder
+        > {
   _$WatchlistImportResultInvalidInner? _$v;
 
   int? _row;
@@ -100,7 +104,8 @@ class WatchlistImportResultInvalidInnerBuilder
 
   @override
   void update(
-      void Function(WatchlistImportResultInvalidInnerBuilder)? updates) {
+    void Function(WatchlistImportResultInvalidInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -108,12 +113,16 @@ class WatchlistImportResultInvalidInnerBuilder
   WatchlistImportResultInvalidInner build() => _build();
 
   _$WatchlistImportResultInvalidInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WatchlistImportResultInvalidInner._(
           row: row,
           value: value,
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'WatchlistImportResultInvalidInner', 'reason'),
+            reason,
+            r'WatchlistImportResultInvalidInner',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

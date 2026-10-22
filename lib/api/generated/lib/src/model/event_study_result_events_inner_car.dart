@@ -16,8 +16,10 @@ part 'event_study_result_events_inner_car.g.dart';
 @BuiltValue()
 abstract class EventStudyResultEventsInnerCar
     implements
-        Built<EventStudyResultEventsInnerCar,
-            EventStudyResultEventsInnerCarBuilder> {
+        Built<
+          EventStudyResultEventsInnerCar,
+          EventStudyResultEventsInnerCarBuilder
+        > {
   @BuiltValueField(wireName: r'preEvent')
   num? get preEvent;
 
@@ -26,9 +28,9 @@ abstract class EventStudyResultEventsInnerCar
 
   EventStudyResultEventsInnerCar._();
 
-  factory EventStudyResultEventsInnerCar(
-          [void updates(EventStudyResultEventsInnerCarBuilder b)]) =
-      _$EventStudyResultEventsInnerCar;
+  factory EventStudyResultEventsInnerCar([
+    void updates(EventStudyResultEventsInnerCarBuilder b),
+  ]) = _$EventStudyResultEventsInnerCar;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventStudyResultEventsInnerCarBuilder b) => b;
@@ -43,7 +45,7 @@ class _$EventStudyResultEventsInnerCarSerializer
   @override
   final Iterable<Type> types = const [
     EventStudyResultEventsInnerCar,
-    _$EventStudyResultEventsInnerCar
+    _$EventStudyResultEventsInnerCar,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$EventStudyResultEventsInnerCarSerializer
     EventStudyResultEventsInnerCar object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$EventStudyResultEventsInnerCarSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'preEvent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.preEvent = valueDes;
           break;
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.event = valueDes;
           break;

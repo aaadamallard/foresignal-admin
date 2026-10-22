@@ -32,11 +32,11 @@ FetchLogEntryTriggerEnum _$fetchLogEntryTriggerEnumValueOf(String name) {
 
 final BuiltSet<FetchLogEntryTriggerEnum> _$fetchLogEntryTriggerEnumValues =
     BuiltSet<FetchLogEntryTriggerEnum>(const <FetchLogEntryTriggerEnum>[
-  _$fetchLogEntryTriggerEnum_SCHEDULED,
-  _$fetchLogEntryTriggerEnum_MANUAL,
-  _$fetchLogEntryTriggerEnum_STREAM,
-  _$fetchLogEntryTriggerEnum_PUSH,
-]);
+      _$fetchLogEntryTriggerEnum_SCHEDULED,
+      _$fetchLogEntryTriggerEnum_MANUAL,
+      _$fetchLogEntryTriggerEnum_STREAM,
+      _$fetchLogEntryTriggerEnum_PUSH,
+    ]);
 
 const FetchLogEntryStatusEnum _$fetchLogEntryStatusEnum_OK =
     const FetchLogEntryStatusEnum._('OK');
@@ -68,12 +68,12 @@ FetchLogEntryStatusEnum _$fetchLogEntryStatusEnumValueOf(String name) {
 
 final BuiltSet<FetchLogEntryStatusEnum> _$fetchLogEntryStatusEnumValues =
     BuiltSet<FetchLogEntryStatusEnum>(const <FetchLogEntryStatusEnum>[
-  _$fetchLogEntryStatusEnum_OK,
-  _$fetchLogEntryStatusEnum_NOT_MODIFIED,
-  _$fetchLogEntryStatusEnum_FAILED,
-  _$fetchLogEntryStatusEnum_REFUSED,
-  _$fetchLogEntryStatusEnum_DISCARDED,
-]);
+      _$fetchLogEntryStatusEnum_OK,
+      _$fetchLogEntryStatusEnum_NOT_MODIFIED,
+      _$fetchLogEntryStatusEnum_FAILED,
+      _$fetchLogEntryStatusEnum_REFUSED,
+      _$fetchLogEntryStatusEnum_DISCARDED,
+    ]);
 
 Serializer<FetchLogEntryTriggerEnum> _$fetchLogEntryTriggerEnumSerializer =
     _$FetchLogEntryTriggerEnumSerializer();
@@ -101,16 +101,20 @@ class _$FetchLogEntryTriggerEnumSerializer
   final String wireName = 'FetchLogEntryTriggerEnum';
 
   @override
-  Object serialize(Serializers serializers, FetchLogEntryTriggerEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FetchLogEntryTriggerEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FetchLogEntryTriggerEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FetchLogEntryTriggerEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FetchLogEntryTriggerEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FetchLogEntryStatusEnumSerializer
@@ -136,16 +140,20 @@ class _$FetchLogEntryStatusEnumSerializer
   final String wireName = 'FetchLogEntryStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, FetchLogEntryStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FetchLogEntryStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FetchLogEntryStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FetchLogEntryStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FetchLogEntryStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FetchLogEntry extends FetchLogEntry {
@@ -207,35 +215,35 @@ class _$FetchLogEntry extends FetchLogEntry {
   factory _$FetchLogEntry([void Function(FetchLogEntryBuilder)? updates]) =>
       (FetchLogEntryBuilder()..update(updates))._build();
 
-  _$FetchLogEntry._(
-      {required this.id,
-      required this.trigger,
-      required this.status,
-      required this.startedAt,
-      this.receivedAt,
-      this.ingestedAt,
-      this.httpStatus,
-      this.requestCount,
-      this.urlRedacted,
-      this.etag,
-      this.bytes,
-      this.bodySha256,
-      this.adapterVersion,
-      this.licence,
-      this.principal,
-      this.recordsSeen,
-      this.rejected,
-      this.late_,
-      this.skipped,
-      this.versionsWritten,
-      this.liveUpdates,
-      this.touches,
-      this.fromSeq,
-      this.toSeq,
-      this.coverage,
-      this.error,
-      this.runId})
-      : super._();
+  _$FetchLogEntry._({
+    required this.id,
+    required this.trigger,
+    required this.status,
+    required this.startedAt,
+    this.receivedAt,
+    this.ingestedAt,
+    this.httpStatus,
+    this.requestCount,
+    this.urlRedacted,
+    this.etag,
+    this.bytes,
+    this.bodySha256,
+    this.adapterVersion,
+    this.licence,
+    this.principal,
+    this.recordsSeen,
+    this.rejected,
+    this.late_,
+    this.skipped,
+    this.versionsWritten,
+    this.liveUpdates,
+    this.touches,
+    this.fromSeq,
+    this.toSeq,
+    this.coverage,
+    this.error,
+    this.runId,
+  }) : super._();
   @override
   FetchLogEntry rebuild(void Function(FetchLogEntryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -513,16 +521,29 @@ class FetchLogEntryBuilder
   _$FetchLogEntry _build() {
     _$FetchLogEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FetchLogEntry._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'FetchLogEntry', 'id'),
+              id,
+              r'FetchLogEntry',
+              'id',
+            ),
             trigger: BuiltValueNullFieldError.checkNotNull(
-                trigger, r'FetchLogEntry', 'trigger'),
+              trigger,
+              r'FetchLogEntry',
+              'trigger',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'FetchLogEntry', 'status'),
+              status,
+              r'FetchLogEntry',
+              'status',
+            ),
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'FetchLogEntry', 'startedAt'),
+              startedAt,
+              r'FetchLogEntry',
+              'startedAt',
+            ),
             receivedAt: receivedAt,
             ingestedAt: ingestedAt,
             httpStatus: httpStatus,
@@ -554,7 +575,10 @@ class FetchLogEntryBuilder
         _coverage?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FetchLogEntry', _$failedField, e.toString());
+          r'FetchLogEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

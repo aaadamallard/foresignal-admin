@@ -16,20 +16,20 @@ class _$FederationChangePage extends FederationChangePage {
   @override
   final int? watermarkSeq;
 
-  factory _$FederationChangePage(
-          [void Function(FederationChangePageBuilder)? updates]) =>
-      (FederationChangePageBuilder()..update(updates))._build();
+  factory _$FederationChangePage([
+    void Function(FederationChangePageBuilder)? updates,
+  ]) => (FederationChangePageBuilder()..update(updates))._build();
 
-  _$FederationChangePage._(
-      {required this.items,
-      required this.lastSeq,
-      required this.hasMore,
-      this.watermarkSeq})
-      : super._();
+  _$FederationChangePage._({
+    required this.items,
+    required this.lastSeq,
+    required this.hasMore,
+    this.watermarkSeq,
+  }) : super._();
   @override
   FederationChangePage rebuild(
-          void Function(FederationChangePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FederationChangePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FederationChangePageBuilder toBuilder() =>
@@ -120,13 +120,20 @@ class FederationChangePageBuilder
   _$FederationChangePage _build() {
     _$FederationChangePage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FederationChangePage._(
             items: items.build(),
             lastSeq: BuiltValueNullFieldError.checkNotNull(
-                lastSeq, r'FederationChangePage', 'lastSeq'),
+              lastSeq,
+              r'FederationChangePage',
+              'lastSeq',
+            ),
             hasMore: BuiltValueNullFieldError.checkNotNull(
-                hasMore, r'FederationChangePage', 'hasMore'),
+              hasMore,
+              r'FederationChangePage',
+              'hasMore',
+            ),
             watermarkSeq: watermarkSeq,
           );
     } catch (_) {
@@ -136,7 +143,10 @@ class FederationChangePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FederationChangePage', _$failedField, e.toString());
+          r'FederationChangePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

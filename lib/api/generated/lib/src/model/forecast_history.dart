@@ -102,8 +102,9 @@ class _$ForecastHistorySerializer
     yield r'series';
     yield serializers.serialize(
       object.series,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ForecastHistorySeriesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ForecastHistorySeriesInner),
+      ]),
     );
   }
 
@@ -113,9 +114,11 @@ class _$ForecastHistorySerializer
     ForecastHistory object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -131,48 +134,61 @@ class _$ForecastHistorySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.questionId = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastHistoryTypeEnum),
-          ) as ForecastHistoryTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ForecastHistoryTypeEnum),
+                  )
+                  as ForecastHistoryTypeEnum;
           result.type = valueDes;
           break;
         case r'step':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastHistoryStepEnum),
-          ) as ForecastHistoryStepEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ForecastHistoryStepEnum),
+                  )
+                  as ForecastHistoryStepEnum;
           result.step = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;
         case r'series':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ForecastHistorySeriesInner)]),
-          ) as BuiltList<ForecastHistorySeriesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ForecastHistorySeriesInner),
+                    ]),
+                  )
+                  as BuiltList<ForecastHistorySeriesInner>;
           result.series.replace(valueDes);
           break;
         default:

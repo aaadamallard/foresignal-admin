@@ -16,7 +16,7 @@ class _$OgcCollections extends OgcCollections {
       (OgcCollectionsBuilder()..update(updates))._build();
 
   _$OgcCollections._({required this.links, required this.collections})
-      : super._();
+    : super._();
   @override
   OgcCollections rebuild(void Function(OgcCollectionsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -94,7 +94,8 @@ class OgcCollectionsBuilder
   _$OgcCollections _build() {
     _$OgcCollections _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCollections._(
             links: links.build(),
             collections: collections.build(),
@@ -108,7 +109,10 @@ class OgcCollectionsBuilder
         collections.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCollections', _$failedField, e.toString());
+          r'OgcCollections',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

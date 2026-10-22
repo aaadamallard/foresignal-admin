@@ -131,9 +131,11 @@ class _$EscalationPolicySerializer
     EscalationPolicy object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -149,62 +151,83 @@ class _$EscalationPolicySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'steps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(EscalationStep)]),
-          ) as BuiltList<EscalationStep>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EscalationStep),
+                    ]),
+                  )
+                  as BuiltList<EscalationStep>;
           result.steps.replace(valueDes);
           break;
         case r'repeat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EscalationPolicyInputRepeat),
-          ) as EscalationPolicyInputRepeat?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EscalationPolicyInputRepeat,
+                    ),
+                  )
+                  as EscalationPolicyInputRepeat?;
           if (valueDes == null) continue;
           result.repeat.replace(valueDes);
           break;
         case r'stopOn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EscalationPolicyInputStopOn),
-          ) as EscalationPolicyInputStopOn?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EscalationPolicyInputStopOn,
+                    ),
+                  )
+                  as EscalationPolicyInputStopOn?;
           if (valueDes == null) continue;
           result.stopOn.replace(valueDes);
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.updatedAt = valueDes;
           break;
         case r'ruleCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.ruleCount = valueDes;
           break;

@@ -71,9 +71,11 @@ class _$GroupMemberInputSerializer
     GroupMemberInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,23 @@ class _$GroupMemberInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'principalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.principalId = valueDes;
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(GroupMemberInputRoleEnum),
-          ) as GroupMemberInputRoleEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      GroupMemberInputRoleEnum,
+                    ),
+                  )
+                  as GroupMemberInputRoleEnum?;
           if (valueDes == null) continue;
           result.role = valueDes;
           break;

@@ -12,15 +12,15 @@ class _$ClusterTimelinePage extends ClusterTimelinePage {
   @override
   final String? nextCursor;
 
-  factory _$ClusterTimelinePage(
-          [void Function(ClusterTimelinePageBuilder)? updates]) =>
-      (ClusterTimelinePageBuilder()..update(updates))._build();
+  factory _$ClusterTimelinePage([
+    void Function(ClusterTimelinePageBuilder)? updates,
+  ]) => (ClusterTimelinePageBuilder()..update(updates))._build();
 
   _$ClusterTimelinePage._({required this.items, this.nextCursor}) : super._();
   @override
   ClusterTimelinePage rebuild(
-          void Function(ClusterTimelinePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ClusterTimelinePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ClusterTimelinePageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ClusterTimelinePageBuilder
   _$ClusterTimelinePage _build() {
     _$ClusterTimelinePage _$result;
     try {
-      _$result = _$v ??
-          _$ClusterTimelinePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ClusterTimelinePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ClusterTimelinePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ClusterTimelinePage', _$failedField, e.toString());
+          r'ClusterTimelinePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -25,9 +25,9 @@ abstract class IngestDeviceSetupOverland
 
   IngestDeviceSetupOverland._();
 
-  factory IngestDeviceSetupOverland(
-          [void updates(IngestDeviceSetupOverlandBuilder b)]) =
-      _$IngestDeviceSetupOverland;
+  factory IngestDeviceSetupOverland([
+    void updates(IngestDeviceSetupOverlandBuilder b),
+  ]) = _$IngestDeviceSetupOverland;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IngestDeviceSetupOverlandBuilder b) => b;
@@ -42,7 +42,7 @@ class _$IngestDeviceSetupOverlandSerializer
   @override
   final Iterable<Type> types = const [
     IngestDeviceSetupOverland,
-    _$IngestDeviceSetupOverland
+    _$IngestDeviceSetupOverland,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$IngestDeviceSetupOverlandSerializer
     IngestDeviceSetupOverland object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$IngestDeviceSetupOverlandSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'endpoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.endpoint = valueDes;
           break;
         case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.token = valueDes;
           break;

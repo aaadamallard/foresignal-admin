@@ -16,7 +16,7 @@ class _$OsmAndLocation extends OsmAndLocation {
       (OsmAndLocationBuilder()..update(updates))._build();
 
   _$OsmAndLocation._({required this.deviceId, required this.location})
-      : super._();
+    : super._();
   @override
   OsmAndLocation rebuild(void Function(OsmAndLocationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -94,10 +94,14 @@ class OsmAndLocationBuilder
   _$OsmAndLocation _build() {
     _$OsmAndLocation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OsmAndLocation._(
             deviceId: BuiltValueNullFieldError.checkNotNull(
-                deviceId, r'OsmAndLocation', 'deviceId'),
+              deviceId,
+              r'OsmAndLocation',
+              'deviceId',
+            ),
             location: location.build(),
           );
     } catch (_) {
@@ -107,7 +111,10 @@ class OsmAndLocationBuilder
         location.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OsmAndLocation', _$failedField, e.toString());
+          r'OsmAndLocation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

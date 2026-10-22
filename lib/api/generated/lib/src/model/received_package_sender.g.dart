@@ -16,20 +16,20 @@ class _$ReceivedPackageSender extends ReceivedPackageSender {
   @override
   final String? peerId;
 
-  factory _$ReceivedPackageSender(
-          [void Function(ReceivedPackageSenderBuilder)? updates]) =>
-      (ReceivedPackageSenderBuilder()..update(updates))._build();
+  factory _$ReceivedPackageSender([
+    void Function(ReceivedPackageSenderBuilder)? updates,
+  ]) => (ReceivedPackageSenderBuilder()..update(updates))._build();
 
-  _$ReceivedPackageSender._(
-      {required this.instanceId,
-      this.instanceName,
-      required this.keyId,
-      this.peerId})
-      : super._();
+  _$ReceivedPackageSender._({
+    required this.instanceId,
+    this.instanceName,
+    required this.keyId,
+    this.peerId,
+  }) : super._();
   @override
   ReceivedPackageSender rebuild(
-          void Function(ReceivedPackageSenderBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReceivedPackageSenderBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReceivedPackageSenderBuilder toBuilder() =>
@@ -117,13 +117,20 @@ class ReceivedPackageSenderBuilder
   ReceivedPackageSender build() => _build();
 
   _$ReceivedPackageSender _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReceivedPackageSender._(
           instanceId: BuiltValueNullFieldError.checkNotNull(
-              instanceId, r'ReceivedPackageSender', 'instanceId'),
+            instanceId,
+            r'ReceivedPackageSender',
+            'instanceId',
+          ),
           instanceName: instanceName,
           keyId: BuiltValueNullFieldError.checkNotNull(
-              keyId, r'ReceivedPackageSender', 'keyId'),
+            keyId,
+            r'ReceivedPackageSender',
+            'keyId',
+          ),
           peerId: peerId,
         );
     replace(_$result);

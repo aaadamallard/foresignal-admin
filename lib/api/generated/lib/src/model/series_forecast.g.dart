@@ -36,12 +36,12 @@ SeriesForecastMethodEnum _$seriesForecastMethodEnumValueOf(String name) {
 
 final BuiltSet<SeriesForecastMethodEnum> _$seriesForecastMethodEnumValues =
     BuiltSet<SeriesForecastMethodEnum>(const <SeriesForecastMethodEnum>[
-  _$seriesForecastMethodEnum_seasonalNaive,
-  _$seriesForecastMethodEnum_etsAnn,
-  _$seriesForecastMethodEnum_etsAaa,
-  _$seriesForecastMethodEnum_nbGlm,
-  _$seriesForecastMethodEnum_dampedTrend,
-]);
+      _$seriesForecastMethodEnum_seasonalNaive,
+      _$seriesForecastMethodEnum_etsAnn,
+      _$seriesForecastMethodEnum_etsAaa,
+      _$seriesForecastMethodEnum_nbGlm,
+      _$seriesForecastMethodEnum_dampedTrend,
+    ]);
 
 const SeriesForecastUnitsEnum _$seriesForecastUnitsEnum_native_ =
     const SeriesForecastUnitsEnum._('native_');
@@ -61,9 +61,9 @@ SeriesForecastUnitsEnum _$seriesForecastUnitsEnumValueOf(String name) {
 
 final BuiltSet<SeriesForecastUnitsEnum> _$seriesForecastUnitsEnumValues =
     BuiltSet<SeriesForecastUnitsEnum>(const <SeriesForecastUnitsEnum>[
-  _$seriesForecastUnitsEnum_native_,
-  _$seriesForecastUnitsEnum_standardised,
-]);
+      _$seriesForecastUnitsEnum_native_,
+      _$seriesForecastUnitsEnum_standardised,
+    ]);
 
 Serializer<SeriesForecastMethodEnum> _$seriesForecastMethodEnumSerializer =
     _$SeriesForecastMethodEnumSerializer();
@@ -93,16 +93,20 @@ class _$SeriesForecastMethodEnumSerializer
   final String wireName = 'SeriesForecastMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesForecastMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesForecastMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesForecastMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesForecastMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesForecastMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesForecastUnitsEnumSerializer
@@ -122,16 +126,20 @@ class _$SeriesForecastUnitsEnumSerializer
   final String wireName = 'SeriesForecastUnitsEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesForecastUnitsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesForecastUnitsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesForecastUnitsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesForecastUnitsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesForecastUnitsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesForecast extends SeriesForecast {
@@ -161,19 +169,19 @@ class _$SeriesForecast extends SeriesForecast {
   factory _$SeriesForecast([void Function(SeriesForecastBuilder)? updates]) =>
       (SeriesForecastBuilder()..update(updates))._build();
 
-  _$SeriesForecast._(
-      {required this.ref,
-      required this.method,
-      required this.version,
-      required this.madeAt,
-      required this.asOfSeq,
-      this.manifestId,
-      required this.units,
-      this.unit,
-      required this.forecasts,
-      this.questionIds,
-      this.caveats})
-      : super._();
+  _$SeriesForecast._({
+    required this.ref,
+    required this.method,
+    required this.version,
+    required this.madeAt,
+    required this.asOfSeq,
+    this.manifestId,
+    required this.units,
+    this.unit,
+    required this.forecasts,
+    this.questionIds,
+    this.caveats,
+  }) : super._();
   @override
   SeriesForecast rebuild(void Function(SeriesForecastBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -325,21 +333,40 @@ class SeriesForecastBuilder
   _$SeriesForecast _build() {
     _$SeriesForecast _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesForecast._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'SeriesForecast', 'ref'),
+              ref,
+              r'SeriesForecast',
+              'ref',
+            ),
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'SeriesForecast', 'method'),
+              method,
+              r'SeriesForecast',
+              'method',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'SeriesForecast', 'version'),
+              version,
+              r'SeriesForecast',
+              'version',
+            ),
             madeAt: BuiltValueNullFieldError.checkNotNull(
-                madeAt, r'SeriesForecast', 'madeAt'),
+              madeAt,
+              r'SeriesForecast',
+              'madeAt',
+            ),
             asOfSeq: BuiltValueNullFieldError.checkNotNull(
-                asOfSeq, r'SeriesForecast', 'asOfSeq'),
+              asOfSeq,
+              r'SeriesForecast',
+              'asOfSeq',
+            ),
             manifestId: manifestId,
             units: BuiltValueNullFieldError.checkNotNull(
-                units, r'SeriesForecast', 'units'),
+              units,
+              r'SeriesForecast',
+              'units',
+            ),
             unit: unit,
             forecasts: forecasts.build(),
             questionIds: _questionIds?.build(),
@@ -356,7 +383,10 @@ class SeriesForecastBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesForecast', _$failedField, e.toString());
+          r'SeriesForecast',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

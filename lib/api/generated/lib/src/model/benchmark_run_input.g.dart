@@ -28,10 +28,10 @@ BenchmarkRunInputSuiteEnum _$benchmarkRunInputSuiteEnumValueOf(String name) {
 
 final BuiltSet<BenchmarkRunInputSuiteEnum> _$benchmarkRunInputSuiteEnumValues =
     BuiltSet<BenchmarkRunInputSuiteEnum>(const <BenchmarkRunInputSuiteEnum>[
-  _$benchmarkRunInputSuiteEnum_synthetic,
-  _$benchmarkRunInputSuiteEnum_historical,
-  _$benchmarkRunInputSuiteEnum_all,
-]);
+      _$benchmarkRunInputSuiteEnum_synthetic,
+      _$benchmarkRunInputSuiteEnum_historical,
+      _$benchmarkRunInputSuiteEnum_all,
+    ]);
 
 Serializer<BenchmarkRunInputSuiteEnum> _$benchmarkRunInputSuiteEnumSerializer =
     _$BenchmarkRunInputSuiteEnumSerializer();
@@ -55,16 +55,20 @@ class _$BenchmarkRunInputSuiteEnumSerializer
   final String wireName = 'BenchmarkRunInputSuiteEnum';
 
   @override
-  Object serialize(Serializers serializers, BenchmarkRunInputSuiteEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkRunInputSuiteEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkRunInputSuiteEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkRunInputSuiteEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkRunInputSuiteEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkRunInput extends BenchmarkRunInput {
@@ -75,12 +79,12 @@ class _$BenchmarkRunInput extends BenchmarkRunInput {
   @override
   final int? seed;
 
-  factory _$BenchmarkRunInput(
-          [void Function(BenchmarkRunInputBuilder)? updates]) =>
-      (BenchmarkRunInputBuilder()..update(updates))._build();
+  factory _$BenchmarkRunInput([
+    void Function(BenchmarkRunInputBuilder)? updates,
+  ]) => (BenchmarkRunInputBuilder()..update(updates))._build();
 
   _$BenchmarkRunInput._({required this.suite, this.components, this.seed})
-      : super._();
+    : super._();
   @override
   BenchmarkRunInput rebuild(void Function(BenchmarkRunInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -167,10 +171,14 @@ class BenchmarkRunInputBuilder
   _$BenchmarkRunInput _build() {
     _$BenchmarkRunInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkRunInput._(
             suite: BuiltValueNullFieldError.checkNotNull(
-                suite, r'BenchmarkRunInput', 'suite'),
+              suite,
+              r'BenchmarkRunInput',
+              'suite',
+            ),
             components: _components?.build(),
             seed: seed,
           );
@@ -181,7 +189,10 @@ class BenchmarkRunInputBuilder
         _components?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkRunInput', _$failedField, e.toString());
+          r'BenchmarkRunInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

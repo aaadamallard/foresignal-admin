@@ -40,7 +40,7 @@ class _$WorkspaceShareInputSerializer
   @override
   final Iterable<Type> types = const [
     WorkspaceShareInput,
-    _$WorkspaceShareInput
+    _$WorkspaceShareInput,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$WorkspaceShareInputSerializer
     WorkspaceShareInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +93,22 @@ class _$WorkspaceShareInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expiresAt = valueDes;
           break;
         case r'maxUses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxUses = valueDes;
           break;

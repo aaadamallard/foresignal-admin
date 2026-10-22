@@ -30,9 +30,9 @@ abstract class SituationAssessmentRequest
 
   SituationAssessmentRequest._();
 
-  factory SituationAssessmentRequest(
-          [void updates(SituationAssessmentRequestBuilder b)]) =
-      _$SituationAssessmentRequest;
+  factory SituationAssessmentRequest([
+    void updates(SituationAssessmentRequestBuilder b),
+  ]) = _$SituationAssessmentRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationAssessmentRequestBuilder b) => b;
@@ -47,7 +47,7 @@ class _$SituationAssessmentRequestSerializer
   @override
   final Iterable<Type> types = const [
     SituationAssessmentRequest,
-    _$SituationAssessmentRequest
+    _$SituationAssessmentRequest,
   ];
 
   @override
@@ -62,8 +62,9 @@ class _$SituationAssessmentRequestSerializer
       yield r'roles';
       yield serializers.serialize(
         object.roles,
-        specifiedType: const FullType(
-            BuiltSet, [FullType(SituationAssessmentRequestRolesEnum)]),
+        specifiedType: const FullType(BuiltSet, [
+          FullType(SituationAssessmentRequestRolesEnum),
+        ]),
       );
     }
     if (object.effort != null) {
@@ -81,9 +82,11 @@ class _$SituationAssessmentRequestSerializer
     SituationAssessmentRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,20 +102,26 @@ class _$SituationAssessmentRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'roles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltSet, [FullType(SituationAssessmentRequestRolesEnum)]),
-          ) as BuiltSet<SituationAssessmentRequestRolesEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltSet, [
+                      FullType(SituationAssessmentRequestRolesEnum),
+                    ]),
+                  )
+                  as BuiltSet<SituationAssessmentRequestRolesEnum>?;
           if (valueDes == null) continue;
           result.roles.replace(valueDes);
           break;
         case r'effort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SituationAssessmentRequestEffortEnum),
-          ) as SituationAssessmentRequestEffortEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SituationAssessmentRequestEffortEnum,
+                    ),
+                  )
+                  as SituationAssessmentRequestEffortEnum?;
           if (valueDes == null) continue;
           result.effort = valueDes;
           break;

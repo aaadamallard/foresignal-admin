@@ -22,19 +22,19 @@ class _$SocialVolumePoint extends SocialVolumePoint {
   @override
   final bool complete;
 
-  factory _$SocialVolumePoint(
-          [void Function(SocialVolumePointBuilder)? updates]) =>
-      (SocialVolumePointBuilder()..update(updates))._build();
+  factory _$SocialVolumePoint([
+    void Function(SocialVolumePointBuilder)? updates,
+  ]) => (SocialVolumePointBuilder()..update(updates))._build();
 
-  _$SocialVolumePoint._(
-      {required this.t,
-      required this.observed,
-      this.baseline,
-      this.mad,
-      this.velocityRatio,
-      this.zRobust,
-      required this.complete})
-      : super._();
+  _$SocialVolumePoint._({
+    required this.t,
+    required this.observed,
+    this.baseline,
+    this.mad,
+    this.velocityRatio,
+    this.zRobust,
+    required this.complete,
+  }) : super._();
   @override
   SocialVolumePoint rebuild(void Function(SocialVolumePointBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -150,18 +150,28 @@ class SocialVolumePointBuilder
   SocialVolumePoint build() => _build();
 
   _$SocialVolumePoint _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialVolumePoint._(
           t: BuiltValueNullFieldError.checkNotNull(
-              t, r'SocialVolumePoint', 't'),
+            t,
+            r'SocialVolumePoint',
+            't',
+          ),
           observed: BuiltValueNullFieldError.checkNotNull(
-              observed, r'SocialVolumePoint', 'observed'),
+            observed,
+            r'SocialVolumePoint',
+            'observed',
+          ),
           baseline: baseline,
           mad: mad,
           velocityRatio: velocityRatio,
           zRobust: zRobust,
           complete: BuiltValueNullFieldError.checkNotNull(
-              complete, r'SocialVolumePoint', 'complete'),
+            complete,
+            r'SocialVolumePoint',
+            'complete',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -16,8 +16,10 @@ part 'edp_item_rejection_schema_errors_inner.g.dart';
 @BuiltValue()
 abstract class EdpItemRejectionSchemaErrorsInner
     implements
-        Built<EdpItemRejectionSchemaErrorsInner,
-            EdpItemRejectionSchemaErrorsInnerBuilder> {
+        Built<
+          EdpItemRejectionSchemaErrorsInner,
+          EdpItemRejectionSchemaErrorsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'path')
   String? get path;
 
@@ -26,9 +28,9 @@ abstract class EdpItemRejectionSchemaErrorsInner
 
   EdpItemRejectionSchemaErrorsInner._();
 
-  factory EdpItemRejectionSchemaErrorsInner(
-          [void updates(EdpItemRejectionSchemaErrorsInnerBuilder b)]) =
-      _$EdpItemRejectionSchemaErrorsInner;
+  factory EdpItemRejectionSchemaErrorsInner([
+    void updates(EdpItemRejectionSchemaErrorsInnerBuilder b),
+  ]) = _$EdpItemRejectionSchemaErrorsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EdpItemRejectionSchemaErrorsInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$EdpItemRejectionSchemaErrorsInnerSerializer
   @override
   final Iterable<Type> types = const [
     EdpItemRejectionSchemaErrorsInner,
-    _$EdpItemRejectionSchemaErrorsInner
+    _$EdpItemRejectionSchemaErrorsInner,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$EdpItemRejectionSchemaErrorsInnerSerializer
     EdpItemRejectionSchemaErrorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$EdpItemRejectionSchemaErrorsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.path = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;

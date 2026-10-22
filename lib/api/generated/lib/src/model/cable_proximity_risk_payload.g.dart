@@ -7,20 +7,20 @@ part of 'cable_proximity_risk_payload.dart';
 // **************************************************************************
 
 const CableProximityRiskPayloadStatusEnum
-    _$cableProximityRiskPayloadStatusEnum_ok =
+_$cableProximityRiskPayloadStatusEnum_ok =
     const CableProximityRiskPayloadStatusEnum._('ok');
 const CableProximityRiskPayloadStatusEnum
-    _$cableProximityRiskPayloadStatusEnum_insufficientData =
+_$cableProximityRiskPayloadStatusEnum_insufficientData =
     const CableProximityRiskPayloadStatusEnum._('insufficientData');
 const CableProximityRiskPayloadStatusEnum
-    _$cableProximityRiskPayloadStatusEnum_noCoverage =
+_$cableProximityRiskPayloadStatusEnum_noCoverage =
     const CableProximityRiskPayloadStatusEnum._('noCoverage');
 const CableProximityRiskPayloadStatusEnum
-    _$cableProximityRiskPayloadStatusEnum_degradedInput =
+_$cableProximityRiskPayloadStatusEnum_degradedInput =
     const CableProximityRiskPayloadStatusEnum._('degradedInput');
 
 CableProximityRiskPayloadStatusEnum
-    _$cableProximityRiskPayloadStatusEnumValueOf(String name) {
+_$cableProximityRiskPayloadStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$cableProximityRiskPayloadStatusEnum_ok;
@@ -36,16 +36,18 @@ CableProximityRiskPayloadStatusEnum
 }
 
 final BuiltSet<CableProximityRiskPayloadStatusEnum>
-    _$cableProximityRiskPayloadStatusEnumValues = BuiltSet<
-        CableProximityRiskPayloadStatusEnum>(const <CableProximityRiskPayloadStatusEnum>[
-  _$cableProximityRiskPayloadStatusEnum_ok,
-  _$cableProximityRiskPayloadStatusEnum_insufficientData,
-  _$cableProximityRiskPayloadStatusEnum_noCoverage,
-  _$cableProximityRiskPayloadStatusEnum_degradedInput,
-]);
+_$cableProximityRiskPayloadStatusEnumValues =
+    BuiltSet<CableProximityRiskPayloadStatusEnum>(
+      const <CableProximityRiskPayloadStatusEnum>[
+        _$cableProximityRiskPayloadStatusEnum_ok,
+        _$cableProximityRiskPayloadStatusEnum_insufficientData,
+        _$cableProximityRiskPayloadStatusEnum_noCoverage,
+        _$cableProximityRiskPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 Serializer<CableProximityRiskPayloadStatusEnum>
-    _$cableProximityRiskPayloadStatusEnumSerializer =
+_$cableProximityRiskPayloadStatusEnumSerializer =
     _$CableProximityRiskPayloadStatusEnumSerializer();
 
 class _$CableProximityRiskPayloadStatusEnumSerializer
@@ -65,23 +67,26 @@ class _$CableProximityRiskPayloadStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CableProximityRiskPayloadStatusEnum
+    CableProximityRiskPayloadStatusEnum,
   ];
   @override
   final String wireName = 'CableProximityRiskPayloadStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, CableProximityRiskPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CableProximityRiskPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CableProximityRiskPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CableProximityRiskPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CableProximityRiskPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CableProximityRiskPayload extends CableProximityRiskPayload {
@@ -116,31 +121,31 @@ class _$CableProximityRiskPayload extends CableProximityRiskPayload {
   @override
   final Severity? severity;
 
-  factory _$CableProximityRiskPayload(
-          [void Function(CableProximityRiskPayloadBuilder)? updates]) =>
-      (CableProximityRiskPayloadBuilder()..update(updates))._build();
+  factory _$CableProximityRiskPayload([
+    void Function(CableProximityRiskPayloadBuilder)? updates,
+  ]) => (CableProximityRiskPayloadBuilder()..update(updates))._build();
 
-  _$CableProximityRiskPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.mmsi,
-      required this.cableId,
-      this.cableName,
-      required this.startedAt,
-      this.durationMin,
-      this.cablesWithin2Km,
-      this.possibleAnchorDrag,
-      this.aisGapNearCable,
-      this.severity})
-      : super._();
+  _$CableProximityRiskPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.mmsi,
+    required this.cableId,
+    this.cableName,
+    required this.startedAt,
+    this.durationMin,
+    this.cablesWithin2Km,
+    this.possibleAnchorDrag,
+    this.aisGapNearCable,
+    this.severity,
+  }) : super._();
   @override
   CableProximityRiskPayload rebuild(
-          void Function(CableProximityRiskPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CableProximityRiskPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CableProximityRiskPayloadBuilder toBuilder() =>
@@ -327,24 +332,43 @@ class CableProximityRiskPayloadBuilder
   _$CableProximityRiskPayload _build() {
     _$CableProximityRiskPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CableProximityRiskPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'CableProximityRiskPayload', 'automated'),
+              automated,
+              r'CableProximityRiskPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'CableProximityRiskPayload', 'notAWarning'),
+              notAWarning,
+              r'CableProximityRiskPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'CableProximityRiskPayload', 'status'),
+              status,
+              r'CableProximityRiskPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             mmsi: BuiltValueNullFieldError.checkNotNull(
-                mmsi, r'CableProximityRiskPayload', 'mmsi'),
+              mmsi,
+              r'CableProximityRiskPayload',
+              'mmsi',
+            ),
             cableId: BuiltValueNullFieldError.checkNotNull(
-                cableId, r'CableProximityRiskPayload', 'cableId'),
+              cableId,
+              r'CableProximityRiskPayload',
+              'cableId',
+            ),
             cableName: cableName,
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'CableProximityRiskPayload', 'startedAt'),
+              startedAt,
+              r'CableProximityRiskPayload',
+              'startedAt',
+            ),
             durationMin: durationMin,
             cablesWithin2Km: cablesWithin2Km,
             possibleAnchorDrag: possibleAnchorDrag,
@@ -361,7 +385,10 @@ class CableProximityRiskPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CableProximityRiskPayload', _$failedField, e.toString());
+          r'CableProximityRiskPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

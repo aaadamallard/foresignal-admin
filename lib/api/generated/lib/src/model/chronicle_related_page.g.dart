@@ -12,15 +12,15 @@ class _$ChronicleRelatedPage extends ChronicleRelatedPage {
   @override
   final String? nextCursor;
 
-  factory _$ChronicleRelatedPage(
-          [void Function(ChronicleRelatedPageBuilder)? updates]) =>
-      (ChronicleRelatedPageBuilder()..update(updates))._build();
+  factory _$ChronicleRelatedPage([
+    void Function(ChronicleRelatedPageBuilder)? updates,
+  ]) => (ChronicleRelatedPageBuilder()..update(updates))._build();
 
   _$ChronicleRelatedPage._({required this.items, this.nextCursor}) : super._();
   @override
   ChronicleRelatedPage rebuild(
-          void Function(ChronicleRelatedPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleRelatedPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleRelatedPageBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class ChronicleRelatedPageBuilder
   _$ChronicleRelatedPage _build() {
     _$ChronicleRelatedPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleRelatedPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -108,7 +109,10 @@ class ChronicleRelatedPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleRelatedPage', _$failedField, e.toString());
+          r'ChronicleRelatedPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

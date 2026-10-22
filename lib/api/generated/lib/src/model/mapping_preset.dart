@@ -157,8 +157,10 @@ class _$MappingPresetSerializer implements PrimitiveSerializer<MappingPreset> {
       yield r'fieldSpecs';
       yield serializers.serialize(
         object.fieldSpecs,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(FieldSpec)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(FieldSpec),
+        ]),
       );
     }
     yield r'observedAtMode';
@@ -233,9 +235,11 @@ class _$MappingPresetSerializer implements PrimitiveSerializer<MappingPreset> {
     MappingPreset object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -251,135 +255,179 @@ class _$MappingPresetSerializer implements PrimitiveSerializer<MappingPreset> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.format = valueDes;
           break;
         case r'mapping':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecordMapping),
-          ) as RecordMapping?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(RecordMapping),
+                  )
+                  as RecordMapping?;
           if (valueDes == null) continue;
           result.mapping.replace(valueDes);
           break;
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.kinds.replace(valueDes);
           break;
         case r'fieldSpecs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(FieldSpec)]),
-          ) as BuiltMap<String, FieldSpec>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(FieldSpec),
+                    ]),
+                  )
+                  as BuiltMap<String, FieldSpec>?;
           if (valueDes == null) continue;
           result.fieldSpecs.replace(valueDes);
           break;
         case r'observedAtMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MappingPresetObservedAtModeEnum),
-          ) as MappingPresetObservedAtModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      MappingPresetObservedAtModeEnum,
+                    ),
+                  )
+                  as MappingPresetObservedAtModeEnum;
           result.observedAtMode = valueDes;
           break;
         case r'ttl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ttl = valueDes;
           break;
         case r'ingestPolicy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IngestPolicy),
-          ) as IngestPolicy?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IngestPolicy),
+                  )
+                  as IngestPolicy?;
           if (valueDes == null) continue;
           result.ingestPolicy.replace(valueDes);
           break;
         case r'significantFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.significantFields.replace(valueDes);
           break;
         case r'volatileFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.volatileFields.replace(valueDes);
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;
         case r'allowPathKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.allowPathKey = valueDes;
           break;
         case r'allowsGet':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.allowsGet = valueDes;
           break;
         case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ParamSpec)]),
-          ) as BuiltList<ParamSpec>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ParamSpec),
+                    ]),
+                  )
+                  as BuiltList<ParamSpec>;
           result.params.replace(valueDes);
           break;
         case r'setup':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MappingPresetSetup),
-          ) as MappingPresetSetup;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MappingPresetSetup),
+                  )
+                  as MappingPresetSetup;
           result.setup.replace(valueDes);
           break;
         default:

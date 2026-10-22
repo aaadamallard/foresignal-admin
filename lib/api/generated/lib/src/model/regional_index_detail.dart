@@ -61,7 +61,7 @@ class _$RegionalIndexDetailSerializer
   @override
   final Iterable<Type> types = const [
     RegionalIndexDetail,
-    _$RegionalIndexDetail
+    _$RegionalIndexDetail,
   ];
 
   @override
@@ -118,9 +118,11 @@ class _$RegionalIndexDetailSerializer
     RegionalIndexDetail object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,49 +138,62 @@ class _$RegionalIndexDetailSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'index':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RegionalIndexDef),
-          ) as RegionalIndexDef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(RegionalIndexDef),
+                  )
+                  as RegionalIndexDef;
           result.index.replace(valueDes);
           break;
         case r'region':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.region = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;
         case r'values':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(RegionalIndexValue)]),
-          ) as BuiltList<RegionalIndexValue>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(RegionalIndexValue),
+                    ]),
+                  )
+                  as BuiltList<RegionalIndexValue>;
           result.values.replace(valueDes);
           break;
         case r'latestFit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndexFitResult),
-          ) as IndexFitResult?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IndexFitResult),
+                  )
+                  as IndexFitResult?;
           if (valueDes == null) continue;
           result.latestFit.replace(valueDes);
           break;

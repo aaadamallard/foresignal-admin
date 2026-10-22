@@ -18,7 +18,7 @@ class _$OverlandBatch extends OverlandBatch {
       (OverlandBatchBuilder()..update(updates))._build();
 
   _$OverlandBatch._({required this.locations, this.trip, this.current})
-      : super._();
+    : super._();
   @override
   OverlandBatch rebuild(void Function(OverlandBatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -104,7 +104,8 @@ class OverlandBatchBuilder
   _$OverlandBatch _build() {
     _$OverlandBatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OverlandBatch._(
             locations: locations.build(),
             trip: trip,
@@ -117,7 +118,10 @@ class OverlandBatchBuilder
         locations.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OverlandBatch', _$failedField, e.toString());
+          r'OverlandBatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

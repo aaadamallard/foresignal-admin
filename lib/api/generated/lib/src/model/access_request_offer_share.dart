@@ -20,9 +20,9 @@ abstract class AccessRequestOfferShare
 
   AccessRequestOfferShare._();
 
-  factory AccessRequestOfferShare(
-          [void updates(AccessRequestOfferShareBuilder b)]) =
-      _$AccessRequestOfferShare;
+  factory AccessRequestOfferShare([
+    void updates(AccessRequestOfferShareBuilder b),
+  ]) = _$AccessRequestOfferShare;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AccessRequestOfferShareBuilder b) => b;
@@ -37,7 +37,7 @@ class _$AccessRequestOfferShareSerializer
   @override
   final Iterable<Type> types = const [
     AccessRequestOfferShare,
-    _$AccessRequestOfferShare
+    _$AccessRequestOfferShare,
   ];
 
   @override
@@ -61,9 +61,11 @@ class _$AccessRequestOfferShareSerializer
     AccessRequestOfferShare object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -79,10 +81,12 @@ class _$AccessRequestOfferShareSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chronicleId = valueDes;
           break;
         default:

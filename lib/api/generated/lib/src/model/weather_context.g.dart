@@ -24,9 +24,9 @@ WeatherContextStatusEnum _$weatherContextStatusEnumValueOf(String name) {
 
 final BuiltSet<WeatherContextStatusEnum> _$weatherContextStatusEnumValues =
     BuiltSet<WeatherContextStatusEnum>(const <WeatherContextStatusEnum>[
-  _$weatherContextStatusEnum_ok,
-  _$weatherContextStatusEnum_unavailable,
-]);
+      _$weatherContextStatusEnum_ok,
+      _$weatherContextStatusEnum_unavailable,
+    ]);
 
 Serializer<WeatherContextStatusEnum> _$weatherContextStatusEnumSerializer =
     _$WeatherContextStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$WeatherContextStatusEnumSerializer
   final String wireName = 'WeatherContextStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, WeatherContextStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WeatherContextStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WeatherContextStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WeatherContextStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WeatherContextStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WeatherContext extends WeatherContext {
@@ -85,18 +89,18 @@ class _$WeatherContext extends WeatherContext {
   factory _$WeatherContext([void Function(WeatherContextBuilder)? updates]) =>
       (WeatherContextBuilder()..update(updates))._build();
 
-  _$WeatherContext._(
-      {required this.status,
-      this.at,
-      this.computedAt,
-      this.radar,
-      this.lightning,
-      this.precip,
-      this.warnings,
-      this.wind,
-      this.smoke,
-      this.summary})
-      : super._();
+  _$WeatherContext._({
+    required this.status,
+    this.at,
+    this.computedAt,
+    this.radar,
+    this.lightning,
+    this.precip,
+    this.warnings,
+    this.wind,
+    this.smoke,
+    this.summary,
+  }) : super._();
   @override
   WeatherContext rebuild(void Function(WeatherContextBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -244,10 +248,14 @@ class WeatherContextBuilder
   _$WeatherContext _build() {
     _$WeatherContext _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WeatherContext._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'WeatherContext', 'status'),
+              status,
+              r'WeatherContext',
+              'status',
+            ),
             at: at,
             computedAt: computedAt,
             radar: _radar?.build(),
@@ -275,7 +283,10 @@ class WeatherContextBuilder
         _smoke?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WeatherContext', _$failedField, e.toString());
+          r'WeatherContext',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

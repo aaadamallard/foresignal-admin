@@ -7,17 +7,18 @@ part of 'social_velocity_event_scope.dart';
 // **************************************************************************
 
 const SocialVelocityEventScopeTypeEnum
-    _$socialVelocityEventScopeTypeEnum_topic =
+_$socialVelocityEventScopeTypeEnum_topic =
     const SocialVelocityEventScopeTypeEnum._('topic');
 const SocialVelocityEventScopeTypeEnum
-    _$socialVelocityEventScopeTypeEnum_place =
+_$socialVelocityEventScopeTypeEnum_place =
     const SocialVelocityEventScopeTypeEnum._('place');
 const SocialVelocityEventScopeTypeEnum
-    _$socialVelocityEventScopeTypeEnum_entity =
+_$socialVelocityEventScopeTypeEnum_entity =
     const SocialVelocityEventScopeTypeEnum._('entity');
 
 SocialVelocityEventScopeTypeEnum _$socialVelocityEventScopeTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'topic':
       return _$socialVelocityEventScopeTypeEnum_topic;
@@ -31,15 +32,17 @@ SocialVelocityEventScopeTypeEnum _$socialVelocityEventScopeTypeEnumValueOf(
 }
 
 final BuiltSet<SocialVelocityEventScopeTypeEnum>
-    _$socialVelocityEventScopeTypeEnumValues = BuiltSet<
-        SocialVelocityEventScopeTypeEnum>(const <SocialVelocityEventScopeTypeEnum>[
-  _$socialVelocityEventScopeTypeEnum_topic,
-  _$socialVelocityEventScopeTypeEnum_place,
-  _$socialVelocityEventScopeTypeEnum_entity,
-]);
+_$socialVelocityEventScopeTypeEnumValues =
+    BuiltSet<SocialVelocityEventScopeTypeEnum>(
+      const <SocialVelocityEventScopeTypeEnum>[
+        _$socialVelocityEventScopeTypeEnum_topic,
+        _$socialVelocityEventScopeTypeEnum_place,
+        _$socialVelocityEventScopeTypeEnum_entity,
+      ],
+    );
 
 Serializer<SocialVelocityEventScopeTypeEnum>
-    _$socialVelocityEventScopeTypeEnumSerializer =
+_$socialVelocityEventScopeTypeEnumSerializer =
     _$SocialVelocityEventScopeTypeEnumSerializer();
 
 class _$SocialVelocityEventScopeTypeEnumSerializer
@@ -62,16 +65,19 @@ class _$SocialVelocityEventScopeTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SocialVelocityEventScopeTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SocialVelocityEventScopeTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialVelocityEventScopeTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialVelocityEventScopeTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialVelocityEventScopeTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialVelocityEventScope extends SocialVelocityEventScope {
@@ -80,16 +86,16 @@ class _$SocialVelocityEventScope extends SocialVelocityEventScope {
   @override
   final String id;
 
-  factory _$SocialVelocityEventScope(
-          [void Function(SocialVelocityEventScopeBuilder)? updates]) =>
-      (SocialVelocityEventScopeBuilder()..update(updates))._build();
+  factory _$SocialVelocityEventScope([
+    void Function(SocialVelocityEventScopeBuilder)? updates,
+  ]) => (SocialVelocityEventScopeBuilder()..update(updates))._build();
 
   _$SocialVelocityEventScope._({required this.type, required this.id})
-      : super._();
+    : super._();
   @override
   SocialVelocityEventScope rebuild(
-          void Function(SocialVelocityEventScopeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialVelocityEventScopeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialVelocityEventScopeBuilder toBuilder() =>
@@ -162,12 +168,19 @@ class SocialVelocityEventScopeBuilder
   SocialVelocityEventScope build() => _build();
 
   _$SocialVelocityEventScope _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialVelocityEventScope._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'SocialVelocityEventScope', 'type'),
+            type,
+            r'SocialVelocityEventScope',
+            'type',
+          ),
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'SocialVelocityEventScope', 'id'),
+            id,
+            r'SocialVelocityEventScope',
+            'id',
+          ),
         );
     replace(_$result);
     return _$result;

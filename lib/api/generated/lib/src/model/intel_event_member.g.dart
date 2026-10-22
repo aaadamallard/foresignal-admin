@@ -28,10 +28,10 @@ IntelEventMemberRoleEnum _$intelEventMemberRoleEnumValueOf(String name) {
 
 final BuiltSet<IntelEventMemberRoleEnum> _$intelEventMemberRoleEnumValues =
     BuiltSet<IntelEventMemberRoleEnum>(const <IntelEventMemberRoleEnum>[
-  _$intelEventMemberRoleEnum_supporting,
-  _$intelEventMemberRoleEnum_contradicting,
-  _$intelEventMemberRoleEnum_context,
-]);
+      _$intelEventMemberRoleEnum_supporting,
+      _$intelEventMemberRoleEnum_contradicting,
+      _$intelEventMemberRoleEnum_context,
+    ]);
 
 const IntelEventMemberMemberTypeEnum _$intelEventMemberMemberTypeEnum_record =
     const IntelEventMemberMemberTypeEnum._('record');
@@ -43,7 +43,8 @@ const IntelEventMemberMemberTypeEnum _$intelEventMemberMemberTypeEnum_event =
     const IntelEventMemberMemberTypeEnum._('event');
 
 IntelEventMemberMemberTypeEnum _$intelEventMemberMemberTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$intelEventMemberMemberTypeEnum_record;
@@ -59,18 +60,20 @@ IntelEventMemberMemberTypeEnum _$intelEventMemberMemberTypeEnumValueOf(
 }
 
 final BuiltSet<IntelEventMemberMemberTypeEnum>
-    _$intelEventMemberMemberTypeEnumValues = BuiltSet<
-        IntelEventMemberMemberTypeEnum>(const <IntelEventMemberMemberTypeEnum>[
-  _$intelEventMemberMemberTypeEnum_record,
-  _$intelEventMemberMemberTypeEnum_alert,
-  _$intelEventMemberMemberTypeEnum_anomaly,
-  _$intelEventMemberMemberTypeEnum_event,
-]);
+_$intelEventMemberMemberTypeEnumValues =
+    BuiltSet<IntelEventMemberMemberTypeEnum>(
+      const <IntelEventMemberMemberTypeEnum>[
+        _$intelEventMemberMemberTypeEnum_record,
+        _$intelEventMemberMemberTypeEnum_alert,
+        _$intelEventMemberMemberTypeEnum_anomaly,
+        _$intelEventMemberMemberTypeEnum_event,
+      ],
+    );
 
 Serializer<IntelEventMemberRoleEnum> _$intelEventMemberRoleEnumSerializer =
     _$IntelEventMemberRoleEnumSerializer();
 Serializer<IntelEventMemberMemberTypeEnum>
-    _$intelEventMemberMemberTypeEnumSerializer =
+_$intelEventMemberMemberTypeEnumSerializer =
     _$IntelEventMemberMemberTypeEnumSerializer();
 
 class _$IntelEventMemberRoleEnumSerializer
@@ -92,16 +95,20 @@ class _$IntelEventMemberRoleEnumSerializer
   final String wireName = 'IntelEventMemberRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventMemberRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventMemberRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventMemberRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventMemberRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventMemberRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventMemberMemberTypeEnumSerializer
@@ -126,16 +133,19 @@ class _$IntelEventMemberMemberTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IntelEventMemberMemberTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelEventMemberMemberTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventMemberMemberTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventMemberMemberTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventMemberMemberTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventMember extends IntelEventMember {
@@ -176,30 +186,30 @@ class _$IntelEventMember extends IntelEventMember {
   @override
   final String addedBy;
 
-  factory _$IntelEventMember(
-          [void Function(IntelEventMemberBuilder)? updates]) =>
-      (IntelEventMemberBuilder()..update(updates))._build();
+  factory _$IntelEventMember([
+    void Function(IntelEventMemberBuilder)? updates,
+  ]) => (IntelEventMemberBuilder()..update(updates))._build();
 
-  _$IntelEventMember._(
-      {required this.id,
-      required this.role,
-      required this.memberType,
-      this.sourceId,
-      this.externalId,
-      this.seq,
-      this.version,
-      this.alertId,
-      this.anomalyId,
-      this.eventId,
-      this.kind,
-      this.observedAt,
-      this.joinReason,
-      this.signalFamily,
-      this.weight,
-      this.snapshot,
-      required this.addedAt,
-      required this.addedBy})
-      : super._();
+  _$IntelEventMember._({
+    required this.id,
+    required this.role,
+    required this.memberType,
+    this.sourceId,
+    this.externalId,
+    this.seq,
+    this.version,
+    this.alertId,
+    this.anomalyId,
+    this.eventId,
+    this.kind,
+    this.observedAt,
+    this.joinReason,
+    this.signalFamily,
+    this.weight,
+    this.snapshot,
+    required this.addedAt,
+    required this.addedBy,
+  }) : super._();
   @override
   IntelEventMember rebuild(void Function(IntelEventMemberBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -409,14 +419,24 @@ class IntelEventMemberBuilder
   _$IntelEventMember _build() {
     _$IntelEventMember _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventMember._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'IntelEventMember', 'id'),
+              id,
+              r'IntelEventMember',
+              'id',
+            ),
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'IntelEventMember', 'role'),
+              role,
+              r'IntelEventMember',
+              'role',
+            ),
             memberType: BuiltValueNullFieldError.checkNotNull(
-                memberType, r'IntelEventMember', 'memberType'),
+              memberType,
+              r'IntelEventMember',
+              'memberType',
+            ),
             sourceId: sourceId,
             externalId: externalId,
             seq: seq,
@@ -431,9 +451,15 @@ class IntelEventMemberBuilder
             weight: weight,
             snapshot: _snapshot?.build(),
             addedAt: BuiltValueNullFieldError.checkNotNull(
-                addedAt, r'IntelEventMember', 'addedAt'),
+              addedAt,
+              r'IntelEventMember',
+              'addedAt',
+            ),
             addedBy: BuiltValueNullFieldError.checkNotNull(
-                addedBy, r'IntelEventMember', 'addedBy'),
+              addedBy,
+              r'IntelEventMember',
+              'addedBy',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -445,7 +471,10 @@ class IntelEventMemberBuilder
         _snapshot?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventMember', _$failedField, e.toString());
+          r'IntelEventMember',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

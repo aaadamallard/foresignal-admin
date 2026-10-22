@@ -17,8 +17,10 @@ part 'rule_backtest_result_per_day_inner.g.dart';
 @BuiltValue()
 abstract class RuleBacktestResultPerDayInner
     implements
-        Built<RuleBacktestResultPerDayInner,
-            RuleBacktestResultPerDayInnerBuilder> {
+        Built<
+          RuleBacktestResultPerDayInner,
+          RuleBacktestResultPerDayInnerBuilder
+        > {
   @BuiltValueField(wireName: r'date')
   Date get date;
 
@@ -27,9 +29,9 @@ abstract class RuleBacktestResultPerDayInner
 
   RuleBacktestResultPerDayInner._();
 
-  factory RuleBacktestResultPerDayInner(
-          [void updates(RuleBacktestResultPerDayInnerBuilder b)]) =
-      _$RuleBacktestResultPerDayInner;
+  factory RuleBacktestResultPerDayInner([
+    void updates(RuleBacktestResultPerDayInnerBuilder b),
+  ]) = _$RuleBacktestResultPerDayInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultPerDayInnerBuilder b) => b;
@@ -44,7 +46,7 @@ class _$RuleBacktestResultPerDayInnerSerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultPerDayInner,
-    _$RuleBacktestResultPerDayInner
+    _$RuleBacktestResultPerDayInner,
   ];
 
   @override
@@ -73,9 +75,11 @@ class _$RuleBacktestResultPerDayInnerSerializer
     RuleBacktestResultPerDayInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +95,18 @@ class _$RuleBacktestResultPerDayInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.date = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         default:

@@ -26,9 +26,9 @@ abstract class AssessmentFeedbackInput
 
   AssessmentFeedbackInput._();
 
-  factory AssessmentFeedbackInput(
-          [void updates(AssessmentFeedbackInputBuilder b)]) =
-      _$AssessmentFeedbackInput;
+  factory AssessmentFeedbackInput([
+    void updates(AssessmentFeedbackInputBuilder b),
+  ]) = _$AssessmentFeedbackInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AssessmentFeedbackInputBuilder b) => b;
@@ -43,7 +43,7 @@ class _$AssessmentFeedbackInputSerializer
   @override
   final Iterable<Type> types = const [
     AssessmentFeedbackInput,
-    _$AssessmentFeedbackInput
+    _$AssessmentFeedbackInput,
   ];
 
   @override
@@ -74,9 +74,11 @@ class _$AssessmentFeedbackInputSerializer
     AssessmentFeedbackInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,17 +94,23 @@ class _$AssessmentFeedbackInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'rating':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AssessmentFeedbackInputRatingEnum),
-          ) as AssessmentFeedbackInputRatingEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AssessmentFeedbackInputRatingEnum,
+                    ),
+                  )
+                  as AssessmentFeedbackInputRatingEnum;
           result.rating = valueDes;
           break;
         case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.comment = valueDes;
           break;

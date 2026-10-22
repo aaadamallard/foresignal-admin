@@ -29,17 +29,17 @@ class _$PackSpec extends PackSpec {
   factory _$PackSpec([void Function(PackSpecBuilder)? updates]) =>
       (PackSpecBuilder()..update(updates))._build();
 
-  _$PackSpec._(
-      {required this.name,
-      this.bbox,
-      this.placeId,
-      required this.minZoom,
-      required this.maxZoom,
-      this.vector,
-      this.raster,
-      this.includePrivate,
-      this.personalUse})
-      : super._();
+  _$PackSpec._({
+    required this.name,
+    this.bbox,
+    this.placeId,
+    required this.minZoom,
+    required this.maxZoom,
+    this.vector,
+    this.raster,
+    this.includePrivate,
+    this.personalUse,
+  }) : super._();
   @override
   PackSpec rebuild(void Function(PackSpecBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -173,16 +173,26 @@ class PackSpecBuilder implements Builder<PackSpec, PackSpecBuilder> {
   _$PackSpec _build() {
     _$PackSpec _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PackSpec._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PackSpec', 'name'),
+              name,
+              r'PackSpec',
+              'name',
+            ),
             bbox: _bbox?.build(),
             placeId: placeId,
             minZoom: BuiltValueNullFieldError.checkNotNull(
-                minZoom, r'PackSpec', 'minZoom'),
+              minZoom,
+              r'PackSpec',
+              'minZoom',
+            ),
             maxZoom: BuiltValueNullFieldError.checkNotNull(
-                maxZoom, r'PackSpec', 'maxZoom'),
+              maxZoom,
+              r'PackSpec',
+              'maxZoom',
+            ),
             vector: _vector?.build(),
             raster: _raster?.build(),
             includePrivate: includePrivate,
@@ -200,7 +210,10 @@ class PackSpecBuilder implements Builder<PackSpec, PackSpecBuilder> {
         _raster?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PackSpec', _$failedField, e.toString());
+          r'PackSpec',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

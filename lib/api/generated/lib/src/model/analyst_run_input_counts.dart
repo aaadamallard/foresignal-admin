@@ -28,8 +28,9 @@ abstract class AnalystRunInputCounts
 
   AnalystRunInputCounts._();
 
-  factory AnalystRunInputCounts(
-      [void updates(AnalystRunInputCountsBuilder b)]) = _$AnalystRunInputCounts;
+  factory AnalystRunInputCounts([
+    void updates(AnalystRunInputCountsBuilder b),
+  ]) = _$AnalystRunInputCounts;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalystRunInputCountsBuilder b) => b;
@@ -44,7 +45,7 @@ class _$AnalystRunInputCountsSerializer
   @override
   final Iterable<Type> types = const [
     AnalystRunInputCounts,
-    _$AnalystRunInputCounts
+    _$AnalystRunInputCounts,
   ];
 
   @override
@@ -84,9 +85,11 @@ class _$AnalystRunInputCountsSerializer
     AnalystRunInputCounts object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +105,32 @@ class _$AnalystRunInputCountsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'events':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.events = valueDes;
           break;
         case r'anomalies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.anomalies = valueDes;
           break;
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alerts = valueDes;
           break;

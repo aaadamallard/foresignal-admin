@@ -12,15 +12,15 @@ class _$PushProviderInputSecrets extends PushProviderInputSecrets {
   @override
   final String? serviceAccountJson;
 
-  factory _$PushProviderInputSecrets(
-          [void Function(PushProviderInputSecretsBuilder)? updates]) =>
-      (PushProviderInputSecretsBuilder()..update(updates))._build();
+  factory _$PushProviderInputSecrets([
+    void Function(PushProviderInputSecretsBuilder)? updates,
+  ]) => (PushProviderInputSecretsBuilder()..update(updates))._build();
 
   _$PushProviderInputSecrets._({this.p8, this.serviceAccountJson}) : super._();
   @override
   PushProviderInputSecrets rebuild(
-          void Function(PushProviderInputSecretsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushProviderInputSecretsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushProviderInputSecretsBuilder toBuilder() =>
@@ -94,7 +94,8 @@ class PushProviderInputSecretsBuilder
   PushProviderInputSecrets build() => _build();
 
   _$PushProviderInputSecrets _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PushProviderInputSecrets._(
           p8: p8,
           serviceAccountJson: serviceAccountJson,

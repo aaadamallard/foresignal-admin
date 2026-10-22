@@ -21,23 +21,23 @@ class _$ImportMediaRatingsRequest1RowsInner
   @override
   final String attribution;
 
-  factory _$ImportMediaRatingsRequest1RowsInner(
-          [void Function(ImportMediaRatingsRequest1RowsInnerBuilder)?
-              updates]) =>
+  factory _$ImportMediaRatingsRequest1RowsInner([
+    void Function(ImportMediaRatingsRequest1RowsInnerBuilder)? updates,
+  ]) =>
       (ImportMediaRatingsRequest1RowsInnerBuilder()..update(updates))._build();
 
-  _$ImportMediaRatingsRequest1RowsInner._(
-      {required this.domain,
-      this.dimension,
-      required this.value,
-      this.label,
-      required this.licence,
-      required this.attribution})
-      : super._();
+  _$ImportMediaRatingsRequest1RowsInner._({
+    required this.domain,
+    this.dimension,
+    required this.value,
+    this.label,
+    required this.licence,
+    required this.attribution,
+  }) : super._();
   @override
   ImportMediaRatingsRequest1RowsInner rebuild(
-          void Function(ImportMediaRatingsRequest1RowsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ImportMediaRatingsRequest1RowsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ImportMediaRatingsRequest1RowsInnerBuilder toBuilder() =>
@@ -83,8 +83,10 @@ class _$ImportMediaRatingsRequest1RowsInner
 
 class ImportMediaRatingsRequest1RowsInnerBuilder
     implements
-        Builder<ImportMediaRatingsRequest1RowsInner,
-            ImportMediaRatingsRequest1RowsInnerBuilder> {
+        Builder<
+          ImportMediaRatingsRequest1RowsInner,
+          ImportMediaRatingsRequest1RowsInnerBuilder
+        > {
   _$ImportMediaRatingsRequest1RowsInner? _$v;
 
   String? _domain;
@@ -136,7 +138,8 @@ class ImportMediaRatingsRequest1RowsInnerBuilder
 
   @override
   void update(
-      void Function(ImportMediaRatingsRequest1RowsInnerBuilder)? updates) {
+    void Function(ImportMediaRatingsRequest1RowsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -144,18 +147,31 @@ class ImportMediaRatingsRequest1RowsInnerBuilder
   ImportMediaRatingsRequest1RowsInner build() => _build();
 
   _$ImportMediaRatingsRequest1RowsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ImportMediaRatingsRequest1RowsInner._(
           domain: BuiltValueNullFieldError.checkNotNull(
-              domain, r'ImportMediaRatingsRequest1RowsInner', 'domain'),
+            domain,
+            r'ImportMediaRatingsRequest1RowsInner',
+            'domain',
+          ),
           dimension: dimension,
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'ImportMediaRatingsRequest1RowsInner', 'value'),
+            value,
+            r'ImportMediaRatingsRequest1RowsInner',
+            'value',
+          ),
           label: label,
           licence: BuiltValueNullFieldError.checkNotNull(
-              licence, r'ImportMediaRatingsRequest1RowsInner', 'licence'),
-          attribution: BuiltValueNullFieldError.checkNotNull(attribution,
-              r'ImportMediaRatingsRequest1RowsInner', 'attribution'),
+            licence,
+            r'ImportMediaRatingsRequest1RowsInner',
+            'licence',
+          ),
+          attribution: BuiltValueNullFieldError.checkNotNull(
+            attribution,
+            r'ImportMediaRatingsRequest1RowsInner',
+            'attribution',
+          ),
         );
     replace(_$result);
     return _$result;

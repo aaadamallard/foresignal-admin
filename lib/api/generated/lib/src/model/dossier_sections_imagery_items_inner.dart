@@ -23,8 +23,10 @@ part 'dossier_sections_imagery_items_inner.g.dart';
 @BuiltValue()
 abstract class DossierSectionsImageryItemsInner
     implements
-        Built<DossierSectionsImageryItemsInner,
-            DossierSectionsImageryItemsInnerBuilder> {
+        Built<
+          DossierSectionsImageryItemsInner,
+          DossierSectionsImageryItemsInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'ref')
   String get ref;
@@ -53,9 +55,9 @@ abstract class DossierSectionsImageryItemsInner
 
   DossierSectionsImageryItemsInner._();
 
-  factory DossierSectionsImageryItemsInner(
-          [void updates(DossierSectionsImageryItemsInnerBuilder b)]) =
-      _$DossierSectionsImageryItemsInner;
+  factory DossierSectionsImageryItemsInner([
+    void updates(DossierSectionsImageryItemsInnerBuilder b),
+  ]) = _$DossierSectionsImageryItemsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsImageryItemsInnerBuilder b) => b;
@@ -70,7 +72,7 @@ class _$DossierSectionsImageryItemsInnerSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsImageryItemsInner,
-    _$DossierSectionsImageryItemsInner
+    _$DossierSectionsImageryItemsInner,
   ];
 
   @override
@@ -141,9 +143,11 @@ class _$DossierSectionsImageryItemsInnerSerializer
     DossierSectionsImageryItemsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -159,65 +163,84 @@ class _$DossierSectionsImageryItemsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(DossierSectionsImageryItemsInnerKindEnum),
-          ) as DossierSectionsImageryItemsInnerKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DossierSectionsImageryItemsInnerKindEnum,
+                    ),
+                  )
+                  as DossierSectionsImageryItemsInnerKindEnum;
           result.kind = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.time = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;
         case r'frameUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.frameUrl = valueDes;
           break;
         case r'thumbnailUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.thumbnailUrl = valueDes;
           break;
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltList<num>?;
           if (valueDes == null) continue;
           result.bbox.replace(valueDes);
           break;

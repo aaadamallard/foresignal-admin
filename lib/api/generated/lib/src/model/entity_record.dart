@@ -65,9 +65,11 @@ class _$EntityRecordSerializer implements PrimitiveSerializer<EntityRecord> {
     EntityRecord object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,17 +85,21 @@ class _$EntityRecordSerializer implements PrimitiveSerializer<EntityRecord> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'record':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Record),
-          ) as Record;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Record),
+                  )
+                  as Record;
           result.record.replace(valueDes);
           break;
         case r'link':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EntityLink),
-          ) as EntityLink;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EntityLink),
+                  )
+                  as EntityLink;
           result.link.replace(valueDes);
           break;
         default:

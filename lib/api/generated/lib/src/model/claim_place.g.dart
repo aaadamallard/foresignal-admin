@@ -32,11 +32,11 @@ ClaimPlacePrecisionEnum _$claimPlacePrecisionEnumValueOf(String name) {
 
 final BuiltSet<ClaimPlacePrecisionEnum> _$claimPlacePrecisionEnumValues =
     BuiltSet<ClaimPlacePrecisionEnum>(const <ClaimPlacePrecisionEnum>[
-  _$claimPlacePrecisionEnum_point,
-  _$claimPlacePrecisionEnum_locality,
-  _$claimPlacePrecisionEnum_admin1,
-  _$claimPlacePrecisionEnum_country,
-]);
+      _$claimPlacePrecisionEnum_point,
+      _$claimPlacePrecisionEnum_locality,
+      _$claimPlacePrecisionEnum_admin1,
+      _$claimPlacePrecisionEnum_country,
+    ]);
 
 Serializer<ClaimPlacePrecisionEnum> _$claimPlacePrecisionEnumSerializer =
     _$ClaimPlacePrecisionEnumSerializer();
@@ -62,16 +62,20 @@ class _$ClaimPlacePrecisionEnumSerializer
   final String wireName = 'ClaimPlacePrecisionEnum';
 
   @override
-  Object serialize(Serializers serializers, ClaimPlacePrecisionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClaimPlacePrecisionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ClaimPlacePrecisionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClaimPlacePrecisionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClaimPlacePrecisionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClaimPlace extends ClaimPlace {
@@ -91,14 +95,14 @@ class _$ClaimPlace extends ClaimPlace {
   factory _$ClaimPlace([void Function(ClaimPlaceBuilder)? updates]) =>
       (ClaimPlaceBuilder()..update(updates))._build();
 
-  _$ClaimPlace._(
-      {this.ref,
-      required this.name,
-      this.geom,
-      required this.precision,
-      required this.confidence,
-      this.regionCode})
-      : super._();
+  _$ClaimPlace._({
+    this.ref,
+    required this.name,
+    this.geom,
+    required this.precision,
+    required this.confidence,
+    this.regionCode,
+  }) : super._();
   @override
   ClaimPlace rebuild(void Function(ClaimPlaceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -206,16 +210,26 @@ class ClaimPlaceBuilder implements Builder<ClaimPlace, ClaimPlaceBuilder> {
   _$ClaimPlace _build() {
     _$ClaimPlace _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ClaimPlace._(
             ref: ref,
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ClaimPlace', 'name'),
+              name,
+              r'ClaimPlace',
+              'name',
+            ),
             geom: _geom?.build(),
             precision: BuiltValueNullFieldError.checkNotNull(
-                precision, r'ClaimPlace', 'precision'),
+              precision,
+              r'ClaimPlace',
+              'precision',
+            ),
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'ClaimPlace', 'confidence'),
+              confidence,
+              r'ClaimPlace',
+              'confidence',
+            ),
             regionCode: regionCode,
           );
     } catch (_) {
@@ -225,7 +239,10 @@ class ClaimPlaceBuilder implements Builder<ClaimPlace, ClaimPlaceBuilder> {
         _geom?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ClaimPlace', _$failedField, e.toString());
+          r'ClaimPlace',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

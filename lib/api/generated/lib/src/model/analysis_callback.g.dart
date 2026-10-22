@@ -14,13 +14,15 @@ class _$AnalysisCallback extends AnalysisCallback {
   @override
   final BuiltMap<String, num>? quantiles;
 
-  factory _$AnalysisCallback(
-          [void Function(AnalysisCallbackBuilder)? updates]) =>
-      (AnalysisCallbackBuilder()..update(updates))._build();
+  factory _$AnalysisCallback([
+    void Function(AnalysisCallbackBuilder)? updates,
+  ]) => (AnalysisCallbackBuilder()..update(updates))._build();
 
-  _$AnalysisCallback._(
-      {required this.correlationId, this.probability, this.quantiles})
-      : super._();
+  _$AnalysisCallback._({
+    required this.correlationId,
+    this.probability,
+    this.quantiles,
+  }) : super._();
   @override
   AnalysisCallback rebuild(void Function(AnalysisCallbackBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -108,10 +110,14 @@ class AnalysisCallbackBuilder
   _$AnalysisCallback _build() {
     _$AnalysisCallback _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalysisCallback._(
             correlationId: BuiltValueNullFieldError.checkNotNull(
-                correlationId, r'AnalysisCallback', 'correlationId'),
+              correlationId,
+              r'AnalysisCallback',
+              'correlationId',
+            ),
             probability: probability,
             quantiles: _quantiles?.build(),
           );
@@ -122,7 +128,10 @@ class AnalysisCallbackBuilder
         _quantiles?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisCallback', _$failedField, e.toString());
+          r'AnalysisCallback',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

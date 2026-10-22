@@ -7,14 +7,14 @@ part of 'social_settings_attention_gap.dart';
 // **************************************************************************
 
 const SocialSettingsAttentionGapMinSeverityEnum
-    _$socialSettingsAttentionGapMinSeverityEnum_notable =
+_$socialSettingsAttentionGapMinSeverityEnum_notable =
     const SocialSettingsAttentionGapMinSeverityEnum._('notable');
 const SocialSettingsAttentionGapMinSeverityEnum
-    _$socialSettingsAttentionGapMinSeverityEnum_significant =
+_$socialSettingsAttentionGapMinSeverityEnum_significant =
     const SocialSettingsAttentionGapMinSeverityEnum._('significant');
 
 SocialSettingsAttentionGapMinSeverityEnum
-    _$socialSettingsAttentionGapMinSeverityEnumValueOf(String name) {
+_$socialSettingsAttentionGapMinSeverityEnumValueOf(String name) {
   switch (name) {
     case 'notable':
       return _$socialSettingsAttentionGapMinSeverityEnum_notable;
@@ -26,14 +26,16 @@ SocialSettingsAttentionGapMinSeverityEnum
 }
 
 final BuiltSet<SocialSettingsAttentionGapMinSeverityEnum>
-    _$socialSettingsAttentionGapMinSeverityEnumValues = BuiltSet<
-        SocialSettingsAttentionGapMinSeverityEnum>(const <SocialSettingsAttentionGapMinSeverityEnum>[
-  _$socialSettingsAttentionGapMinSeverityEnum_notable,
-  _$socialSettingsAttentionGapMinSeverityEnum_significant,
-]);
+_$socialSettingsAttentionGapMinSeverityEnumValues =
+    BuiltSet<SocialSettingsAttentionGapMinSeverityEnum>(
+      const <SocialSettingsAttentionGapMinSeverityEnum>[
+        _$socialSettingsAttentionGapMinSeverityEnum_notable,
+        _$socialSettingsAttentionGapMinSeverityEnum_significant,
+      ],
+    );
 
 Serializer<SocialSettingsAttentionGapMinSeverityEnum>
-    _$socialSettingsAttentionGapMinSeverityEnumSerializer =
+_$socialSettingsAttentionGapMinSeverityEnumSerializer =
     _$SocialSettingsAttentionGapMinSeverityEnumSerializer();
 
 class _$SocialSettingsAttentionGapMinSeverityEnumSerializer
@@ -49,23 +51,26 @@ class _$SocialSettingsAttentionGapMinSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SocialSettingsAttentionGapMinSeverityEnum
+    SocialSettingsAttentionGapMinSeverityEnum,
   ];
   @override
   final String wireName = 'SocialSettingsAttentionGapMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SocialSettingsAttentionGapMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialSettingsAttentionGapMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialSettingsAttentionGapMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialSettingsAttentionGapMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialSettingsAttentionGapMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialSettingsAttentionGap extends SocialSettingsAttentionGap {
@@ -78,17 +83,20 @@ class _$SocialSettingsAttentionGap extends SocialSettingsAttentionGap {
   @override
   final int? windowHours;
 
-  factory _$SocialSettingsAttentionGap(
-          [void Function(SocialSettingsAttentionGapBuilder)? updates]) =>
-      (SocialSettingsAttentionGapBuilder()..update(updates))._build();
+  factory _$SocialSettingsAttentionGap([
+    void Function(SocialSettingsAttentionGapBuilder)? updates,
+  ]) => (SocialSettingsAttentionGapBuilder()..update(updates))._build();
 
-  _$SocialSettingsAttentionGap._(
-      {this.minSeverity, this.percentile, this.lookbackDays, this.windowHours})
-      : super._();
+  _$SocialSettingsAttentionGap._({
+    this.minSeverity,
+    this.percentile,
+    this.lookbackDays,
+    this.windowHours,
+  }) : super._();
   @override
   SocialSettingsAttentionGap rebuild(
-          void Function(SocialSettingsAttentionGapBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsAttentionGapBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsAttentionGapBuilder toBuilder() =>
@@ -179,7 +187,8 @@ class SocialSettingsAttentionGapBuilder
   SocialSettingsAttentionGap build() => _build();
 
   _$SocialSettingsAttentionGap _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialSettingsAttentionGap._(
           minSeverity: minSeverity,
           percentile: percentile,

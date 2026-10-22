@@ -56,17 +56,17 @@ MediaOutletTypeEnum _$mediaOutletTypeEnumValueOf(String name) {
 
 final BuiltSet<MediaOutletTypeEnum> _$mediaOutletTypeEnumValues =
     BuiltSet<MediaOutletTypeEnum>(const <MediaOutletTypeEnum>[
-  _$mediaOutletTypeEnum_wire,
-  _$mediaOutletTypeEnum_national,
-  _$mediaOutletTypeEnum_regional,
-  _$mediaOutletTypeEnum_local,
-  _$mediaOutletTypeEnum_publicBroadcaster,
-  _$mediaOutletTypeEnum_stateAffiliated,
-  _$mediaOutletTypeEnum_aggregator,
-  _$mediaOutletTypeEnum_blog,
-  _$mediaOutletTypeEnum_official,
-  _$mediaOutletTypeEnum_other,
-]);
+      _$mediaOutletTypeEnum_wire,
+      _$mediaOutletTypeEnum_national,
+      _$mediaOutletTypeEnum_regional,
+      _$mediaOutletTypeEnum_local,
+      _$mediaOutletTypeEnum_publicBroadcaster,
+      _$mediaOutletTypeEnum_stateAffiliated,
+      _$mediaOutletTypeEnum_aggregator,
+      _$mediaOutletTypeEnum_blog,
+      _$mediaOutletTypeEnum_official,
+      _$mediaOutletTypeEnum_other,
+    ]);
 
 Serializer<MediaOutletTypeEnum> _$mediaOutletTypeEnumSerializer =
     _$MediaOutletTypeEnumSerializer();
@@ -104,15 +104,20 @@ class _$MediaOutletTypeEnumSerializer
   final String wireName = 'MediaOutletTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaOutletTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaOutletTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MediaOutletTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaOutletTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MediaOutletTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaOutletTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaOutlet extends MediaOutlet {
@@ -154,25 +159,25 @@ class _$MediaOutlet extends MediaOutlet {
   factory _$MediaOutlet([void Function(MediaOutletBuilder)? updates]) =>
       (MediaOutletBuilder()..update(updates))._build();
 
-  _$MediaOutlet._(
-      {required this.id,
-      required this.ref,
-      required this.name,
-      required this.domains,
-      this.country,
-      this.languages,
-      required this.type,
-      this.ownerOrg,
-      this.parentOrg,
-      this.wikidataQid,
-      this.originatorId,
-      this.aggregates,
-      required this.rated,
-      this.ratings,
-      required this.consensus,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$MediaOutlet._({
+    required this.id,
+    required this.ref,
+    required this.name,
+    required this.domains,
+    this.country,
+    this.languages,
+    required this.type,
+    this.ownerOrg,
+    this.parentOrg,
+    this.wikidataQid,
+    this.originatorId,
+    this.aggregates,
+    required this.rated,
+    this.ratings,
+    required this.consensus,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   MediaOutlet rebuild(void Function(MediaOutletBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -374,29 +379,45 @@ class MediaOutletBuilder implements Builder<MediaOutlet, MediaOutletBuilder> {
   _$MediaOutlet _build() {
     _$MediaOutlet _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MediaOutlet._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'MediaOutlet', 'id'),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'MediaOutlet', 'ref'),
+              ref,
+              r'MediaOutlet',
+              'ref',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'MediaOutlet', 'name'),
+              name,
+              r'MediaOutlet',
+              'name',
+            ),
             domains: domains.build(),
             country: country,
             languages: _languages?.build(),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'MediaOutlet', 'type'),
+              type,
+              r'MediaOutlet',
+              'type',
+            ),
             ownerOrg: ownerOrg,
             parentOrg: parentOrg,
             wikidataQid: wikidataQid,
             originatorId: originatorId,
             aggregates: _aggregates?.build(),
             rated: BuiltValueNullFieldError.checkNotNull(
-                rated, r'MediaOutlet', 'rated'),
+              rated,
+              r'MediaOutlet',
+              'rated',
+            ),
             ratings: _ratings?.build(),
             consensus: consensus.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'MediaOutlet', 'createdAt'),
+              createdAt,
+              r'MediaOutlet',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {
@@ -417,7 +438,10 @@ class MediaOutletBuilder implements Builder<MediaOutlet, MediaOutletBuilder> {
         consensus.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MediaOutlet', _$failedField, e.toString());
+          r'MediaOutlet',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

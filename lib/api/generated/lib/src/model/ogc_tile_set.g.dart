@@ -20,8 +20,8 @@ OgcTileSetDataTypeEnum _$ogcTileSetDataTypeEnumValueOf(String name) {
 
 final BuiltSet<OgcTileSetDataTypeEnum> _$ogcTileSetDataTypeEnumValues =
     BuiltSet<OgcTileSetDataTypeEnum>(const <OgcTileSetDataTypeEnum>[
-  _$ogcTileSetDataTypeEnum_map,
-]);
+      _$ogcTileSetDataTypeEnum_map,
+    ]);
 
 Serializer<OgcTileSetDataTypeEnum> _$ogcTileSetDataTypeEnumSerializer =
     _$OgcTileSetDataTypeEnumSerializer();
@@ -41,15 +41,20 @@ class _$OgcTileSetDataTypeEnumSerializer
   final String wireName = 'OgcTileSetDataTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, OgcTileSetDataTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcTileSetDataTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  OgcTileSetDataTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcTileSetDataTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  OgcTileSetDataTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcTileSetDataTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcTileSet extends OgcTileSet {
@@ -71,15 +76,15 @@ class _$OgcTileSet extends OgcTileSet {
   factory _$OgcTileSet([void Function(OgcTileSetBuilder)? updates]) =>
       (OgcTileSetBuilder()..update(updates))._build();
 
-  _$OgcTileSet._(
-      {this.title,
-      required this.dataType,
-      required this.crs,
-      this.tileMatrixSetURI,
-      this.tileMatrixSetLimits,
-      required this.links,
-      this.attribution})
-      : super._();
+  _$OgcTileSet._({
+    this.title,
+    required this.dataType,
+    required this.crs,
+    this.tileMatrixSetURI,
+    this.tileMatrixSetLimits,
+    required this.links,
+    this.attribution,
+  }) : super._();
   @override
   OgcTileSet rebuild(void Function(OgcTileSetBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -153,9 +158,8 @@ class OgcTileSetBuilder implements Builder<OgcTileSet, OgcTileSetBuilder> {
       _$this._tileMatrixSetLimits ??=
           ListBuilder<OgcTileSetTileMatrixSetLimitsInner>();
   set tileMatrixSetLimits(
-          ListBuilder<OgcTileSetTileMatrixSetLimitsInner>?
-              tileMatrixSetLimits) =>
-      _$this._tileMatrixSetLimits = tileMatrixSetLimits;
+    ListBuilder<OgcTileSetTileMatrixSetLimitsInner>? tileMatrixSetLimits,
+  ) => _$this._tileMatrixSetLimits = tileMatrixSetLimits;
 
   ListBuilder<OgcLink>? _links;
   ListBuilder<OgcLink> get links => _$this._links ??= ListBuilder<OgcLink>();
@@ -200,13 +204,20 @@ class OgcTileSetBuilder implements Builder<OgcTileSet, OgcTileSetBuilder> {
   _$OgcTileSet _build() {
     _$OgcTileSet _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcTileSet._(
             title: title,
             dataType: BuiltValueNullFieldError.checkNotNull(
-                dataType, r'OgcTileSet', 'dataType'),
+              dataType,
+              r'OgcTileSet',
+              'dataType',
+            ),
             crs: BuiltValueNullFieldError.checkNotNull(
-                crs, r'OgcTileSet', 'crs'),
+              crs,
+              r'OgcTileSet',
+              'crs',
+            ),
             tileMatrixSetURI: tileMatrixSetURI,
             tileMatrixSetLimits: _tileMatrixSetLimits?.build(),
             links: links.build(),
@@ -221,7 +232,10 @@ class OgcTileSetBuilder implements Builder<OgcTileSet, OgcTileSetBuilder> {
         links.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcTileSet', _$failedField, e.toString());
+          r'OgcTileSet',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

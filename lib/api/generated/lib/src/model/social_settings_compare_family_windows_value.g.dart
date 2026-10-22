@@ -17,20 +17,21 @@ class _$SocialSettingsCompareFamilyWindowsValue
   @override
   final String? publicationLag;
 
-  factory _$SocialSettingsCompareFamilyWindowsValue(
-          [void Function(SocialSettingsCompareFamilyWindowsValueBuilder)?
-              updates]) =>
-      (SocialSettingsCompareFamilyWindowsValueBuilder()..update(updates))
-          ._build();
+  factory _$SocialSettingsCompareFamilyWindowsValue([
+    void Function(SocialSettingsCompareFamilyWindowsValueBuilder)? updates,
+  ]) => (SocialSettingsCompareFamilyWindowsValueBuilder()..update(updates))
+      ._build();
 
-  _$SocialSettingsCompareFamilyWindowsValue._(
-      {this.before, this.after, this.toleranceKm, this.publicationLag})
-      : super._();
+  _$SocialSettingsCompareFamilyWindowsValue._({
+    this.before,
+    this.after,
+    this.toleranceKm,
+    this.publicationLag,
+  }) : super._();
   @override
   SocialSettingsCompareFamilyWindowsValue rebuild(
-          void Function(SocialSettingsCompareFamilyWindowsValueBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsCompareFamilyWindowsValueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsCompareFamilyWindowsValueBuilder toBuilder() =>
@@ -60,7 +61,8 @@ class _$SocialSettingsCompareFamilyWindowsValue
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'SocialSettingsCompareFamilyWindowsValue')
+            r'SocialSettingsCompareFamilyWindowsValue',
+          )
           ..add('before', before)
           ..add('after', after)
           ..add('toleranceKm', toleranceKm)
@@ -71,8 +73,10 @@ class _$SocialSettingsCompareFamilyWindowsValue
 
 class SocialSettingsCompareFamilyWindowsValueBuilder
     implements
-        Builder<SocialSettingsCompareFamilyWindowsValue,
-            SocialSettingsCompareFamilyWindowsValueBuilder> {
+        Builder<
+          SocialSettingsCompareFamilyWindowsValue,
+          SocialSettingsCompareFamilyWindowsValueBuilder
+        > {
   _$SocialSettingsCompareFamilyWindowsValue? _$v;
 
   String? _before;
@@ -115,7 +119,8 @@ class SocialSettingsCompareFamilyWindowsValueBuilder
 
   @override
   void update(
-      void Function(SocialSettingsCompareFamilyWindowsValueBuilder)? updates) {
+    void Function(SocialSettingsCompareFamilyWindowsValueBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -123,7 +128,8 @@ class SocialSettingsCompareFamilyWindowsValueBuilder
   SocialSettingsCompareFamilyWindowsValue build() => _build();
 
   _$SocialSettingsCompareFamilyWindowsValue _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialSettingsCompareFamilyWindowsValue._(
           before: before,
           after: after,

@@ -7,20 +7,20 @@ part of 'trigger_test_result_window_evaluations_inner.dart';
 // **************************************************************************
 
 const TriggerTestResultWindowEvaluationsInnerStateEnum
-    _$triggerTestResultWindowEvaluationsInnerStateEnum_active =
+_$triggerTestResultWindowEvaluationsInnerStateEnum_active =
     const TriggerTestResultWindowEvaluationsInnerStateEnum._('active');
 const TriggerTestResultWindowEvaluationsInnerStateEnum
-    _$triggerTestResultWindowEvaluationsInnerStateEnum_clear =
+_$triggerTestResultWindowEvaluationsInnerStateEnum_clear =
     const TriggerTestResultWindowEvaluationsInnerStateEnum._('clear');
 const TriggerTestResultWindowEvaluationsInnerStateEnum
-    _$triggerTestResultWindowEvaluationsInnerStateEnum_unknown =
+_$triggerTestResultWindowEvaluationsInnerStateEnum_unknown =
     const TriggerTestResultWindowEvaluationsInnerStateEnum._('unknown');
 const TriggerTestResultWindowEvaluationsInnerStateEnum
-    _$triggerTestResultWindowEvaluationsInnerStateEnum_learning =
+_$triggerTestResultWindowEvaluationsInnerStateEnum_learning =
     const TriggerTestResultWindowEvaluationsInnerStateEnum._('learning');
 
 TriggerTestResultWindowEvaluationsInnerStateEnum
-    _$triggerTestResultWindowEvaluationsInnerStateEnumValueOf(String name) {
+_$triggerTestResultWindowEvaluationsInnerStateEnumValueOf(String name) {
   switch (name) {
     case 'active':
       return _$triggerTestResultWindowEvaluationsInnerStateEnum_active;
@@ -36,16 +36,18 @@ TriggerTestResultWindowEvaluationsInnerStateEnum
 }
 
 final BuiltSet<TriggerTestResultWindowEvaluationsInnerStateEnum>
-    _$triggerTestResultWindowEvaluationsInnerStateEnumValues = BuiltSet<
-        TriggerTestResultWindowEvaluationsInnerStateEnum>(const <TriggerTestResultWindowEvaluationsInnerStateEnum>[
-  _$triggerTestResultWindowEvaluationsInnerStateEnum_active,
-  _$triggerTestResultWindowEvaluationsInnerStateEnum_clear,
-  _$triggerTestResultWindowEvaluationsInnerStateEnum_unknown,
-  _$triggerTestResultWindowEvaluationsInnerStateEnum_learning,
-]);
+_$triggerTestResultWindowEvaluationsInnerStateEnumValues =
+    BuiltSet<TriggerTestResultWindowEvaluationsInnerStateEnum>(
+      const <TriggerTestResultWindowEvaluationsInnerStateEnum>[
+        _$triggerTestResultWindowEvaluationsInnerStateEnum_active,
+        _$triggerTestResultWindowEvaluationsInnerStateEnum_clear,
+        _$triggerTestResultWindowEvaluationsInnerStateEnum_unknown,
+        _$triggerTestResultWindowEvaluationsInnerStateEnum_learning,
+      ],
+    );
 
 Serializer<TriggerTestResultWindowEvaluationsInnerStateEnum>
-    _$triggerTestResultWindowEvaluationsInnerStateEnumSerializer =
+_$triggerTestResultWindowEvaluationsInnerStateEnumSerializer =
     _$TriggerTestResultWindowEvaluationsInnerStateEnumSerializer();
 
 class _$TriggerTestResultWindowEvaluationsInnerStateEnumSerializer
@@ -66,23 +68,26 @@ class _$TriggerTestResultWindowEvaluationsInnerStateEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    TriggerTestResultWindowEvaluationsInnerStateEnum
+    TriggerTestResultWindowEvaluationsInnerStateEnum,
   ];
   @override
   final String wireName = 'TriggerTestResultWindowEvaluationsInnerStateEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          TriggerTestResultWindowEvaluationsInnerStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerTestResultWindowEvaluationsInnerStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerTestResultWindowEvaluationsInnerStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerTestResultWindowEvaluationsInnerStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerTestResultWindowEvaluationsInnerStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerTestResultWindowEvaluationsInner
@@ -98,24 +103,22 @@ class _$TriggerTestResultWindowEvaluationsInner
   @override
   final String? reason;
 
-  factory _$TriggerTestResultWindowEvaluationsInner(
-          [void Function(TriggerTestResultWindowEvaluationsInnerBuilder)?
-              updates]) =>
-      (TriggerTestResultWindowEvaluationsInnerBuilder()..update(updates))
-          ._build();
+  factory _$TriggerTestResultWindowEvaluationsInner([
+    void Function(TriggerTestResultWindowEvaluationsInnerBuilder)? updates,
+  ]) => (TriggerTestResultWindowEvaluationsInnerBuilder()..update(updates))
+      ._build();
 
-  _$TriggerTestResultWindowEvaluationsInner._(
-      {required this.at,
-      required this.groupKey,
-      this.value,
-      required this.state,
-      this.reason})
-      : super._();
+  _$TriggerTestResultWindowEvaluationsInner._({
+    required this.at,
+    required this.groupKey,
+    this.value,
+    required this.state,
+    this.reason,
+  }) : super._();
   @override
   TriggerTestResultWindowEvaluationsInner rebuild(
-          void Function(TriggerTestResultWindowEvaluationsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TriggerTestResultWindowEvaluationsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TriggerTestResultWindowEvaluationsInnerBuilder toBuilder() =>
@@ -147,7 +150,8 @@ class _$TriggerTestResultWindowEvaluationsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'TriggerTestResultWindowEvaluationsInner')
+            r'TriggerTestResultWindowEvaluationsInner',
+          )
           ..add('at', at)
           ..add('groupKey', groupKey)
           ..add('value', value)
@@ -159,8 +163,10 @@ class _$TriggerTestResultWindowEvaluationsInner
 
 class TriggerTestResultWindowEvaluationsInnerBuilder
     implements
-        Builder<TriggerTestResultWindowEvaluationsInner,
-            TriggerTestResultWindowEvaluationsInnerBuilder> {
+        Builder<
+          TriggerTestResultWindowEvaluationsInner,
+          TriggerTestResultWindowEvaluationsInnerBuilder
+        > {
   _$TriggerTestResultWindowEvaluationsInner? _$v;
 
   DateTime? _at;
@@ -208,7 +214,8 @@ class TriggerTestResultWindowEvaluationsInnerBuilder
 
   @override
   void update(
-      void Function(TriggerTestResultWindowEvaluationsInnerBuilder)? updates) {
+    void Function(TriggerTestResultWindowEvaluationsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -216,15 +223,25 @@ class TriggerTestResultWindowEvaluationsInnerBuilder
   TriggerTestResultWindowEvaluationsInner build() => _build();
 
   _$TriggerTestResultWindowEvaluationsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TriggerTestResultWindowEvaluationsInner._(
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'TriggerTestResultWindowEvaluationsInner', 'at'),
+            at,
+            r'TriggerTestResultWindowEvaluationsInner',
+            'at',
+          ),
           groupKey: BuiltValueNullFieldError.checkNotNull(
-              groupKey, r'TriggerTestResultWindowEvaluationsInner', 'groupKey'),
+            groupKey,
+            r'TriggerTestResultWindowEvaluationsInner',
+            'groupKey',
+          ),
           value: value,
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'TriggerTestResultWindowEvaluationsInner', 'state'),
+            state,
+            r'TriggerTestResultWindowEvaluationsInner',
+            'state',
+          ),
           reason: reason,
         );
     replace(_$result);

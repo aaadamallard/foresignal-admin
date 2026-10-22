@@ -24,9 +24,9 @@ abstract class FeedKeyCreatedUrlsInner
 
   FeedKeyCreatedUrlsInner._();
 
-  factory FeedKeyCreatedUrlsInner(
-          [void updates(FeedKeyCreatedUrlsInnerBuilder b)]) =
-      _$FeedKeyCreatedUrlsInner;
+  factory FeedKeyCreatedUrlsInner([
+    void updates(FeedKeyCreatedUrlsInnerBuilder b),
+  ]) = _$FeedKeyCreatedUrlsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FeedKeyCreatedUrlsInnerBuilder b) => b;
@@ -41,7 +41,7 @@ class _$FeedKeyCreatedUrlsInnerSerializer
   @override
   final Iterable<Type> types = const [
     FeedKeyCreatedUrlsInner,
-    _$FeedKeyCreatedUrlsInner
+    _$FeedKeyCreatedUrlsInner,
   ];
 
   @override
@@ -70,9 +70,11 @@ class _$FeedKeyCreatedUrlsInnerSerializer
     FeedKeyCreatedUrlsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,17 +90,21 @@ class _$FeedKeyCreatedUrlsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'prefix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.prefix = valueDes;
           break;
         case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.url = valueDes;
           break;
         default:

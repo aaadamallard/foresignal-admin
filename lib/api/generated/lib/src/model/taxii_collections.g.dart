@@ -10,9 +10,9 @@ class _$TaxiiCollections extends TaxiiCollections {
   @override
   final BuiltList<TaxiiCollection>? collections;
 
-  factory _$TaxiiCollections(
-          [void Function(TaxiiCollectionsBuilder)? updates]) =>
-      (TaxiiCollectionsBuilder()..update(updates))._build();
+  factory _$TaxiiCollections([
+    void Function(TaxiiCollectionsBuilder)? updates,
+  ]) => (TaxiiCollectionsBuilder()..update(updates))._build();
 
   _$TaxiiCollections._({this.collections}) : super._();
   @override
@@ -39,9 +39,9 @@ class _$TaxiiCollections extends TaxiiCollections {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'TaxiiCollections')
-          ..add('collections', collections))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'TaxiiCollections',
+    )..add('collections', collections)).toString();
   }
 }
 
@@ -84,10 +84,8 @@ class TaxiiCollectionsBuilder
   _$TaxiiCollections _build() {
     _$TaxiiCollections _$result;
     try {
-      _$result = _$v ??
-          _$TaxiiCollections._(
-            collections: _collections?.build(),
-          );
+      _$result =
+          _$v ?? _$TaxiiCollections._(collections: _collections?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95,7 +93,10 @@ class TaxiiCollectionsBuilder
         _collections?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TaxiiCollections', _$failedField, e.toString());
+          r'TaxiiCollections',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

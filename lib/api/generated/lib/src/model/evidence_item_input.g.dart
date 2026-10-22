@@ -7,26 +7,26 @@ part of 'evidence_item_input.dart';
 // **************************************************************************
 
 const EvidenceItemInputSourceReliabilityEnum
-    _$evidenceItemInputSourceReliabilityEnum_A =
+_$evidenceItemInputSourceReliabilityEnum_A =
     const EvidenceItemInputSourceReliabilityEnum._('A');
 const EvidenceItemInputSourceReliabilityEnum
-    _$evidenceItemInputSourceReliabilityEnum_B =
+_$evidenceItemInputSourceReliabilityEnum_B =
     const EvidenceItemInputSourceReliabilityEnum._('B');
 const EvidenceItemInputSourceReliabilityEnum
-    _$evidenceItemInputSourceReliabilityEnum_C =
+_$evidenceItemInputSourceReliabilityEnum_C =
     const EvidenceItemInputSourceReliabilityEnum._('C');
 const EvidenceItemInputSourceReliabilityEnum
-    _$evidenceItemInputSourceReliabilityEnum_D =
+_$evidenceItemInputSourceReliabilityEnum_D =
     const EvidenceItemInputSourceReliabilityEnum._('D');
 const EvidenceItemInputSourceReliabilityEnum
-    _$evidenceItemInputSourceReliabilityEnum_E =
+_$evidenceItemInputSourceReliabilityEnum_E =
     const EvidenceItemInputSourceReliabilityEnum._('E');
 const EvidenceItemInputSourceReliabilityEnum
-    _$evidenceItemInputSourceReliabilityEnum_F =
+_$evidenceItemInputSourceReliabilityEnum_F =
     const EvidenceItemInputSourceReliabilityEnum._('F');
 
 EvidenceItemInputSourceReliabilityEnum
-    _$evidenceItemInputSourceReliabilityEnumValueOf(String name) {
+_$evidenceItemInputSourceReliabilityEnumValueOf(String name) {
   switch (name) {
     case 'A':
       return _$evidenceItemInputSourceReliabilityEnum_A;
@@ -46,18 +46,20 @@ EvidenceItemInputSourceReliabilityEnum
 }
 
 final BuiltSet<EvidenceItemInputSourceReliabilityEnum>
-    _$evidenceItemInputSourceReliabilityEnumValues = BuiltSet<
-        EvidenceItemInputSourceReliabilityEnum>(const <EvidenceItemInputSourceReliabilityEnum>[
-  _$evidenceItemInputSourceReliabilityEnum_A,
-  _$evidenceItemInputSourceReliabilityEnum_B,
-  _$evidenceItemInputSourceReliabilityEnum_C,
-  _$evidenceItemInputSourceReliabilityEnum_D,
-  _$evidenceItemInputSourceReliabilityEnum_E,
-  _$evidenceItemInputSourceReliabilityEnum_F,
-]);
+_$evidenceItemInputSourceReliabilityEnumValues =
+    BuiltSet<EvidenceItemInputSourceReliabilityEnum>(
+      const <EvidenceItemInputSourceReliabilityEnum>[
+        _$evidenceItemInputSourceReliabilityEnum_A,
+        _$evidenceItemInputSourceReliabilityEnum_B,
+        _$evidenceItemInputSourceReliabilityEnum_C,
+        _$evidenceItemInputSourceReliabilityEnum_D,
+        _$evidenceItemInputSourceReliabilityEnum_E,
+        _$evidenceItemInputSourceReliabilityEnum_F,
+      ],
+    );
 
 Serializer<EvidenceItemInputSourceReliabilityEnum>
-    _$evidenceItemInputSourceReliabilityEnumSerializer =
+_$evidenceItemInputSourceReliabilityEnumSerializer =
     _$EvidenceItemInputSourceReliabilityEnumSerializer();
 
 class _$EvidenceItemInputSourceReliabilityEnumSerializer
@@ -81,23 +83,26 @@ class _$EvidenceItemInputSourceReliabilityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    EvidenceItemInputSourceReliabilityEnum
+    EvidenceItemInputSourceReliabilityEnum,
   ];
   @override
   final String wireName = 'EvidenceItemInputSourceReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          EvidenceItemInputSourceReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EvidenceItemInputSourceReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EvidenceItemInputSourceReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EvidenceItemInputSourceReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EvidenceItemInputSourceReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EvidenceItemInput extends EvidenceItemInput {
@@ -130,26 +135,26 @@ class _$EvidenceItemInput extends EvidenceItemInput {
   @override
   final String? tlp;
 
-  factory _$EvidenceItemInput(
-          [void Function(EvidenceItemInputBuilder)? updates]) =>
-      (EvidenceItemInputBuilder()..update(updates))._build();
+  factory _$EvidenceItemInput([
+    void Function(EvidenceItemInputBuilder)? updates,
+  ]) => (EvidenceItemInputBuilder()..update(updates))._build();
 
-  _$EvidenceItemInput._(
-      {required this.title,
-      this.description,
-      this.attachmentIds,
-      this.url,
-      this.sourceDescription,
-      this.sourceReliability,
-      this.informationCredibility,
-      this.citedSourceId,
-      this.citedRefs,
-      this.geometry,
-      this.eventTime,
-      this.tagIds,
-      this.visibility,
-      this.tlp})
-      : super._();
+  _$EvidenceItemInput._({
+    required this.title,
+    this.description,
+    this.attachmentIds,
+    this.url,
+    this.sourceDescription,
+    this.sourceReliability,
+    this.informationCredibility,
+    this.citedSourceId,
+    this.citedRefs,
+    this.geometry,
+    this.eventTime,
+    this.tagIds,
+    this.visibility,
+    this.tlp,
+  }) : super._();
   @override
   EvidenceItemInput rebuild(void Function(EvidenceItemInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -251,8 +256,8 @@ class EvidenceItemInputBuilder
   EvidenceItemInputSourceReliabilityEnum? get sourceReliability =>
       _$this._sourceReliability;
   set sourceReliability(
-          EvidenceItemInputSourceReliabilityEnum? sourceReliability) =>
-      _$this._sourceReliability = sourceReliability;
+    EvidenceItemInputSourceReliabilityEnum? sourceReliability,
+  ) => _$this._sourceReliability = sourceReliability;
 
   int? _informationCredibility;
   int? get informationCredibility => _$this._informationCredibility;
@@ -332,10 +337,14 @@ class EvidenceItemInputBuilder
   _$EvidenceItemInput _build() {
     _$EvidenceItemInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EvidenceItemInput._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'EvidenceItemInput', 'title'),
+              title,
+              r'EvidenceItemInput',
+              'title',
+            ),
             description: description,
             attachmentIds: _attachmentIds?.build(),
             url: url,
@@ -365,7 +374,10 @@ class EvidenceItemInputBuilder
         _tagIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EvidenceItemInput', _$failedField, e.toString());
+          r'EvidenceItemInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

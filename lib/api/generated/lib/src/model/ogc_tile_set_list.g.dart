@@ -37,9 +37,9 @@ class _$OgcTileSetList extends OgcTileSetList {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'OgcTileSetList')
-          ..add('tilesets', tilesets))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'OgcTileSetList',
+    )..add('tilesets', tilesets)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class OgcTileSetListBuilder
   _$OgcTileSetList _build() {
     _$OgcTileSetList _$result;
     try {
-      _$result = _$v ??
-          _$OgcTileSetList._(
-            tilesets: tilesets.build(),
-          );
+      _$result = _$v ?? _$OgcTileSetList._(tilesets: tilesets.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -93,7 +90,10 @@ class OgcTileSetListBuilder
         tilesets.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcTileSetList', _$failedField, e.toString());
+          r'OgcTileSetList',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -163,9 +163,11 @@ class _$DoctorReportSerializer implements PrimitiveSerializer<DoctorReport> {
     DoctorReport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -181,84 +183,108 @@ class _$DoctorReportSerializer implements PrimitiveSerializer<DoctorReport> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'trigger':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DoctorReportTriggerEnum),
-          ) as DoctorReportTriggerEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DoctorReportTriggerEnum),
+                  )
+                  as DoctorReportTriggerEnum;
           result.trigger = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DoctorReportStatusEnum),
-          ) as DoctorReportStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DoctorReportStatusEnum),
+                  )
+                  as DoctorReportStatusEnum;
           result.status = valueDes;
           break;
         case r'findings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DoctorFinding)]),
-          ) as BuiltList<DoctorFinding>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(DoctorFinding),
+                    ]),
+                  )
+                  as BuiltList<DoctorFinding>;
           result.findings.replace(valueDes);
           break;
         case r'diff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StructureDiff),
-          ) as StructureDiff?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(StructureDiff),
+                  )
+                  as StructureDiff?;
           if (valueDes == null) continue;
           result.diff.replace(valueDes);
           break;
         case r'probe':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DoctorReportProbe),
-          ) as DoctorReportProbe?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DoctorReportProbe),
+                  )
+                  as DoctorReportProbe?;
           if (valueDes == null) continue;
           result.probe.replace(valueDes);
           break;
         case r'fixture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DoctorReportFixture),
-          ) as DoctorReportFixture?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DoctorReportFixture),
+                  )
+                  as DoctorReportFixture?;
           if (valueDes == null) continue;
           result.fixture.replace(valueDes);
           break;
         case r'llm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DoctorReportLlm),
-          ) as DoctorReportLlm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DoctorReportLlm),
+                  )
+                  as DoctorReportLlm?;
           if (valueDes == null) continue;
           result.llm.replace(valueDes);
           break;
         case r'adapterVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.adapterVersion = valueDes;
           break;

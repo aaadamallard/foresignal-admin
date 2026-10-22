@@ -16,8 +16,10 @@ part 'correlation_recipe_definition_joins_inner_window.g.dart';
 @BuiltValue()
 abstract class CorrelationRecipeDefinitionJoinsInnerWindow
     implements
-        Built<CorrelationRecipeDefinitionJoinsInnerWindow,
-            CorrelationRecipeDefinitionJoinsInnerWindowBuilder> {
+        Built<
+          CorrelationRecipeDefinitionJoinsInnerWindow,
+          CorrelationRecipeDefinitionJoinsInnerWindowBuilder
+        > {
   /// Before the seed. ISO-8601 duration or shorthand (30m, 6h, 7d).
   @BuiltValueField(wireName: r'before')
   String? get before;
@@ -28,10 +30,9 @@ abstract class CorrelationRecipeDefinitionJoinsInnerWindow
 
   CorrelationRecipeDefinitionJoinsInnerWindow._();
 
-  factory CorrelationRecipeDefinitionJoinsInnerWindow(
-          [void updates(
-              CorrelationRecipeDefinitionJoinsInnerWindowBuilder b)]) =
-      _$CorrelationRecipeDefinitionJoinsInnerWindow;
+  factory CorrelationRecipeDefinitionJoinsInnerWindow([
+    void updates(CorrelationRecipeDefinitionJoinsInnerWindowBuilder b),
+  ]) = _$CorrelationRecipeDefinitionJoinsInnerWindow;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeDefinitionJoinsInnerWindowBuilder b) =>
@@ -39,8 +40,7 @@ abstract class CorrelationRecipeDefinitionJoinsInnerWindow
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CorrelationRecipeDefinitionJoinsInnerWindow>
-      get serializer =>
-          _$CorrelationRecipeDefinitionJoinsInnerWindowSerializer();
+  get serializer => _$CorrelationRecipeDefinitionJoinsInnerWindowSerializer();
 }
 
 class _$CorrelationRecipeDefinitionJoinsInnerWindowSerializer
@@ -49,7 +49,7 @@ class _$CorrelationRecipeDefinitionJoinsInnerWindowSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeDefinitionJoinsInnerWindow,
-    _$CorrelationRecipeDefinitionJoinsInnerWindow
+    _$CorrelationRecipeDefinitionJoinsInnerWindow,
   ];
 
   @override
@@ -82,9 +82,11 @@ class _$CorrelationRecipeDefinitionJoinsInnerWindowSerializer
     CorrelationRecipeDefinitionJoinsInnerWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,18 +102,22 @@ class _$CorrelationRecipeDefinitionJoinsInnerWindowSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.before = valueDes;
           break;
         case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.after = valueDes;
           break;

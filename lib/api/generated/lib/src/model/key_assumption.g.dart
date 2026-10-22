@@ -32,11 +32,11 @@ KeyAssumptionStatusEnum _$keyAssumptionStatusEnumValueOf(String name) {
 
 final BuiltSet<KeyAssumptionStatusEnum> _$keyAssumptionStatusEnumValues =
     BuiltSet<KeyAssumptionStatusEnum>(const <KeyAssumptionStatusEnum>[
-  _$keyAssumptionStatusEnum_solid,
-  _$keyAssumptionStatusEnum_caveated,
-  _$keyAssumptionStatusEnum_unsupported,
-  _$keyAssumptionStatusEnum_broken,
-]);
+      _$keyAssumptionStatusEnum_solid,
+      _$keyAssumptionStatusEnum_caveated,
+      _$keyAssumptionStatusEnum_unsupported,
+      _$keyAssumptionStatusEnum_broken,
+    ]);
 
 Serializer<KeyAssumptionStatusEnum> _$keyAssumptionStatusEnumSerializer =
     _$KeyAssumptionStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$KeyAssumptionStatusEnumSerializer
   final String wireName = 'KeyAssumptionStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, KeyAssumptionStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    KeyAssumptionStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   KeyAssumptionStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      KeyAssumptionStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => KeyAssumptionStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$KeyAssumption extends KeyAssumption {
@@ -101,19 +105,19 @@ class _$KeyAssumption extends KeyAssumption {
   factory _$KeyAssumption([void Function(KeyAssumptionBuilder)? updates]) =>
       (KeyAssumptionBuilder()..update(updates))._build();
 
-  _$KeyAssumption._(
-      {required this.id,
-      required this.setId,
-      required this.text,
-      required this.linchpin,
-      this.rationale,
-      this.wouldBeWrongIf,
-      required this.status,
-      this.indicatorIds,
-      this.reviewDue,
-      this.updatedBy,
-      required this.updatedAt})
-      : super._();
+  _$KeyAssumption._({
+    required this.id,
+    required this.setId,
+    required this.text,
+    required this.linchpin,
+    this.rationale,
+    this.wouldBeWrongIf,
+    required this.status,
+    this.indicatorIds,
+    this.reviewDue,
+    this.updatedBy,
+    required this.updatedAt,
+  }) : super._();
   @override
   KeyAssumption rebuild(void Function(KeyAssumptionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -264,25 +268,44 @@ class KeyAssumptionBuilder
   _$KeyAssumption _build() {
     _$KeyAssumption _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KeyAssumption._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'KeyAssumption', 'id'),
+              id,
+              r'KeyAssumption',
+              'id',
+            ),
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'KeyAssumption', 'setId'),
+              setId,
+              r'KeyAssumption',
+              'setId',
+            ),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'KeyAssumption', 'text'),
+              text,
+              r'KeyAssumption',
+              'text',
+            ),
             linchpin: BuiltValueNullFieldError.checkNotNull(
-                linchpin, r'KeyAssumption', 'linchpin'),
+              linchpin,
+              r'KeyAssumption',
+              'linchpin',
+            ),
             rationale: rationale,
             wouldBeWrongIf: wouldBeWrongIf,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'KeyAssumption', 'status'),
+              status,
+              r'KeyAssumption',
+              'status',
+            ),
             indicatorIds: _indicatorIds?.build(),
             reviewDue: reviewDue,
             updatedBy: updatedBy,
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'KeyAssumption', 'updatedAt'),
+              updatedAt,
+              r'KeyAssumption',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -291,7 +314,10 @@ class KeyAssumptionBuilder
         _indicatorIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KeyAssumption', _$failedField, e.toString());
+          r'KeyAssumption',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

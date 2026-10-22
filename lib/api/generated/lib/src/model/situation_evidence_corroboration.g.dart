@@ -20,22 +20,22 @@ class _$SituationEvidenceCorroboration extends SituationEvidenceCorroboration {
   @override
   final bool? uncorroboratedOnly;
 
-  factory _$SituationEvidenceCorroboration(
-          [void Function(SituationEvidenceCorroborationBuilder)? updates]) =>
-      (SituationEvidenceCorroborationBuilder()..update(updates))._build();
+  factory _$SituationEvidenceCorroboration([
+    void Function(SituationEvidenceCorroborationBuilder)? updates,
+  ]) => (SituationEvidenceCorroborationBuilder()..update(updates))._build();
 
-  _$SituationEvidenceCorroboration._(
-      {required this.corroborated,
-      required this.uncorroborated,
-      this.unknown,
-      this.notApplicable,
-      this.share,
-      this.uncorroboratedOnly})
-      : super._();
+  _$SituationEvidenceCorroboration._({
+    required this.corroborated,
+    required this.uncorroborated,
+    this.unknown,
+    this.notApplicable,
+    this.share,
+    this.uncorroboratedOnly,
+  }) : super._();
   @override
   SituationEvidenceCorroboration rebuild(
-          void Function(SituationEvidenceCorroborationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationEvidenceCorroborationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationEvidenceCorroborationBuilder toBuilder() =>
@@ -81,8 +81,10 @@ class _$SituationEvidenceCorroboration extends SituationEvidenceCorroboration {
 
 class SituationEvidenceCorroborationBuilder
     implements
-        Builder<SituationEvidenceCorroboration,
-            SituationEvidenceCorroborationBuilder> {
+        Builder<
+          SituationEvidenceCorroboration,
+          SituationEvidenceCorroborationBuilder
+        > {
   _$SituationEvidenceCorroboration? _$v;
 
   int? _corroborated;
@@ -144,12 +146,19 @@ class SituationEvidenceCorroborationBuilder
   SituationEvidenceCorroboration build() => _build();
 
   _$SituationEvidenceCorroboration _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationEvidenceCorroboration._(
           corroborated: BuiltValueNullFieldError.checkNotNull(
-              corroborated, r'SituationEvidenceCorroboration', 'corroborated'),
-          uncorroborated: BuiltValueNullFieldError.checkNotNull(uncorroborated,
-              r'SituationEvidenceCorroboration', 'uncorroborated'),
+            corroborated,
+            r'SituationEvidenceCorroboration',
+            'corroborated',
+          ),
+          uncorroborated: BuiltValueNullFieldError.checkNotNull(
+            uncorroborated,
+            r'SituationEvidenceCorroboration',
+            'uncorroborated',
+          ),
           unknown: unknown,
           notApplicable: notApplicable,
           share: share,

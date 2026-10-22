@@ -53,8 +53,9 @@ abstract class EventStudyWindowStats
 
   EventStudyWindowStats._();
 
-  factory EventStudyWindowStats(
-      [void updates(EventStudyWindowStatsBuilder b)]) = _$EventStudyWindowStats;
+  factory EventStudyWindowStats([
+    void updates(EventStudyWindowStatsBuilder b),
+  ]) = _$EventStudyWindowStats;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventStudyWindowStatsBuilder b) => b;
@@ -69,7 +70,7 @@ class _$EventStudyWindowStatsSerializer
   @override
   final Iterable<Type> types = const [
     EventStudyWindowStats,
-    _$EventStudyWindowStats
+    _$EventStudyWindowStats,
   ];
 
   @override
@@ -142,9 +143,11 @@ class _$EventStudyWindowStatsSerializer
     EventStudyWindowStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -160,66 +163,83 @@ class _$EventStudyWindowStatsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(int)]),
+                  )
+                  as BuiltList<int>;
           result.window.replace(valueDes);
           break;
         case r'caar':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.caar = valueDes;
           break;
         case r'standardisedZ':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.standardisedZ = valueDes;
           break;
         case r'standardisedP':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.standardisedP = valueDes;
           break;
         case r'corradoStat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.corradoStat = valueDes;
           break;
         case r'corradoP':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.corradoP = valueDes;
           break;
         case r'placeboP':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.placeboP = valueDes;
           break;
         case r'placebo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EventStudyWindowStatsPlacebo),
-          ) as EventStudyWindowStatsPlacebo?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EventStudyWindowStatsPlacebo,
+                    ),
+                  )
+                  as EventStudyWindowStatsPlacebo?;
           if (valueDes == null) continue;
           result.placebo.replace(valueDes);
           break;

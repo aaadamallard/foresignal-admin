@@ -14,12 +14,12 @@ class _$SystemInfoRecords extends SystemInfoRecords {
   @override
   final int? lastSeq;
 
-  factory _$SystemInfoRecords(
-          [void Function(SystemInfoRecordsBuilder)? updates]) =>
-      (SystemInfoRecordsBuilder()..update(updates))._build();
+  factory _$SystemInfoRecords([
+    void Function(SystemInfoRecordsBuilder)? updates,
+  ]) => (SystemInfoRecordsBuilder()..update(updates))._build();
 
   _$SystemInfoRecords._({this.current, this.versions, this.lastSeq})
-      : super._();
+    : super._();
   @override
   SystemInfoRecords rebuild(void Function(SystemInfoRecordsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -102,7 +102,8 @@ class SystemInfoRecordsBuilder
   SystemInfoRecords build() => _build();
 
   _$SystemInfoRecords _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoRecords._(
           current: current,
           versions: versions,

@@ -34,9 +34,9 @@ abstract class SystemRastersCachesValue
 
   SystemRastersCachesValue._();
 
-  factory SystemRastersCachesValue(
-          [void updates(SystemRastersCachesValueBuilder b)]) =
-      _$SystemRastersCachesValue;
+  factory SystemRastersCachesValue([
+    void updates(SystemRastersCachesValueBuilder b),
+  ]) = _$SystemRastersCachesValue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemRastersCachesValueBuilder b) => b;
@@ -51,7 +51,7 @@ class _$SystemRastersCachesValueSerializer
   @override
   final Iterable<Type> types = const [
     SystemRastersCachesValue,
-    _$SystemRastersCachesValue
+    _$SystemRastersCachesValue,
   ];
 
   @override
@@ -98,9 +98,11 @@ class _$SystemRastersCachesValueSerializer
     SystemRastersCachesValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,34 +118,42 @@ class _$SystemRastersCachesValueSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sizeBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.sizeBytes = valueDes;
           break;
         case r'maxBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxBytes = valueDes;
           break;
         case r'hitRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.hitRate = valueDes;
           break;
         case r'evictionRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.evictionRate = valueDes;
           break;

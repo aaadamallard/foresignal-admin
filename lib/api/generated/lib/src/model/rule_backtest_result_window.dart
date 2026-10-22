@@ -25,9 +25,9 @@ abstract class RuleBacktestResultWindow
 
   RuleBacktestResultWindow._();
 
-  factory RuleBacktestResultWindow(
-          [void updates(RuleBacktestResultWindowBuilder b)]) =
-      _$RuleBacktestResultWindow;
+  factory RuleBacktestResultWindow([
+    void updates(RuleBacktestResultWindowBuilder b),
+  ]) = _$RuleBacktestResultWindow;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultWindowBuilder b) => b;
@@ -42,7 +42,7 @@ class _$RuleBacktestResultWindowSerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultWindow,
-    _$RuleBacktestResultWindow
+    _$RuleBacktestResultWindow,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$RuleBacktestResultWindowSerializer
     RuleBacktestResultWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$RuleBacktestResultWindowSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'steps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.steps = valueDes;
           break;
         case r'unknownSteps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.unknownSteps = valueDes;
           break;

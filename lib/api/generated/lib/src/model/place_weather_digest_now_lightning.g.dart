@@ -18,21 +18,21 @@ class _$PlaceWeatherDigestNowLightning extends PlaceWeatherDigestNowLightning {
   @override
   final int? count15km15m;
 
-  factory _$PlaceWeatherDigestNowLightning(
-          [void Function(PlaceWeatherDigestNowLightningBuilder)? updates]) =>
-      (PlaceWeatherDigestNowLightningBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNowLightning([
+    void Function(PlaceWeatherDigestNowLightningBuilder)? updates,
+  ]) => (PlaceWeatherDigestNowLightningBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestNowLightning._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.nearestKm15m,
-      this.count15km15m})
-      : super._();
+  _$PlaceWeatherDigestNowLightning._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.nearestKm15m,
+    this.count15km15m,
+  }) : super._();
   @override
   PlaceWeatherDigestNowLightning rebuild(
-          void Function(PlaceWeatherDigestNowLightningBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNowLightningBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNowLightningBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$PlaceWeatherDigestNowLightning extends PlaceWeatherDigestNowLightning {
 
 class PlaceWeatherDigestNowLightningBuilder
     implements
-        Builder<PlaceWeatherDigestNowLightning,
-            PlaceWeatherDigestNowLightningBuilder> {
+        Builder<
+          PlaceWeatherDigestNowLightning,
+          PlaceWeatherDigestNowLightningBuilder
+        > {
   _$PlaceWeatherDigestNowLightning? _$v;
 
   WeatherSectionStatus? _status;
@@ -130,10 +132,14 @@ class PlaceWeatherDigestNowLightningBuilder
   PlaceWeatherDigestNowLightning build() => _build();
 
   _$PlaceWeatherDigestNowLightning _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherDigestNowLightning._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherDigestNowLightning', 'status'),
+            status,
+            r'PlaceWeatherDigestNowLightning',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           nearestKm15m: nearestKm15m,

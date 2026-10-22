@@ -32,9 +32,9 @@ abstract class SituationChangesSeverity
 
   SituationChangesSeverity._();
 
-  factory SituationChangesSeverity(
-          [void updates(SituationChangesSeverityBuilder b)]) =
-      _$SituationChangesSeverity;
+  factory SituationChangesSeverity([
+    void updates(SituationChangesSeverityBuilder b),
+  ]) = _$SituationChangesSeverity;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationChangesSeverityBuilder b) => b;
@@ -49,7 +49,7 @@ class _$SituationChangesSeveritySerializer
   @override
   final Iterable<Type> types = const [
     SituationChangesSeverity,
-    _$SituationChangesSeverity
+    _$SituationChangesSeverity,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$SituationChangesSeveritySerializer
     SituationChangesSeverity object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,25 +105,31 @@ class _$SituationChangesSeveritySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Severity),
-          ) as Severity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Severity),
+                  )
+                  as Severity?;
           if (valueDes == null) continue;
           result.before = valueDes;
           break;
         case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Severity),
-          ) as Severity;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Severity),
+                  )
+                  as Severity;
           result.after = valueDes;
           break;
         case r'changed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.changed = valueDes;
           break;
         default:

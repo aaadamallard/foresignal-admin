@@ -21,9 +21,9 @@ abstract class JsonFeedItemAuthorsInner
 
   JsonFeedItemAuthorsInner._();
 
-  factory JsonFeedItemAuthorsInner(
-          [void updates(JsonFeedItemAuthorsInnerBuilder b)]) =
-      _$JsonFeedItemAuthorsInner;
+  factory JsonFeedItemAuthorsInner([
+    void updates(JsonFeedItemAuthorsInnerBuilder b),
+  ]) = _$JsonFeedItemAuthorsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(JsonFeedItemAuthorsInnerBuilder b) => b;
@@ -38,7 +38,7 @@ class _$JsonFeedItemAuthorsInnerSerializer
   @override
   final Iterable<Type> types = const [
     JsonFeedItemAuthorsInner,
-    _$JsonFeedItemAuthorsInner
+    _$JsonFeedItemAuthorsInner,
   ];
 
   @override
@@ -64,9 +64,11 @@ class _$JsonFeedItemAuthorsInnerSerializer
     JsonFeedItemAuthorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -82,10 +84,12 @@ class _$JsonFeedItemAuthorsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;

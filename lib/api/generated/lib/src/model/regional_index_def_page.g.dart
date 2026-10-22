@@ -12,15 +12,15 @@ class _$RegionalIndexDefPage extends RegionalIndexDefPage {
   @override
   final String? nextCursor;
 
-  factory _$RegionalIndexDefPage(
-          [void Function(RegionalIndexDefPageBuilder)? updates]) =>
-      (RegionalIndexDefPageBuilder()..update(updates))._build();
+  factory _$RegionalIndexDefPage([
+    void Function(RegionalIndexDefPageBuilder)? updates,
+  ]) => (RegionalIndexDefPageBuilder()..update(updates))._build();
 
   _$RegionalIndexDefPage._({required this.items, this.nextCursor}) : super._();
   @override
   RegionalIndexDefPage rebuild(
-          void Function(RegionalIndexDefPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexDefPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexDefPageBuilder toBuilder() =>
@@ -95,7 +95,8 @@ class RegionalIndexDefPageBuilder
   _$RegionalIndexDefPage _build() {
     _$RegionalIndexDefPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalIndexDefPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -107,7 +108,10 @@ class RegionalIndexDefPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalIndexDefPage', _$failedField, e.toString());
+          r'RegionalIndexDefPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

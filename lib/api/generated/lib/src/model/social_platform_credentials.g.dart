@@ -14,17 +14,19 @@ class _$SocialPlatformCredentials extends SocialPlatformCredentials {
   @override
   final BuiltList<String>? fields;
 
-  factory _$SocialPlatformCredentials(
-          [void Function(SocialPlatformCredentialsBuilder)? updates]) =>
-      (SocialPlatformCredentialsBuilder()..update(updates))._build();
+  factory _$SocialPlatformCredentials([
+    void Function(SocialPlatformCredentialsBuilder)? updates,
+  ]) => (SocialPlatformCredentialsBuilder()..update(updates))._build();
 
-  _$SocialPlatformCredentials._(
-      {required this.required_, required this.configured, this.fields})
-      : super._();
+  _$SocialPlatformCredentials._({
+    required this.required_,
+    required this.configured,
+    this.fields,
+  }) : super._();
   @override
   SocialPlatformCredentials rebuild(
-          void Function(SocialPlatformCredentialsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformCredentialsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformCredentialsBuilder toBuilder() =>
@@ -107,12 +109,19 @@ class SocialPlatformCredentialsBuilder
   _$SocialPlatformCredentials _build() {
     _$SocialPlatformCredentials _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPlatformCredentials._(
             required_: BuiltValueNullFieldError.checkNotNull(
-                required_, r'SocialPlatformCredentials', 'required_'),
+              required_,
+              r'SocialPlatformCredentials',
+              'required_',
+            ),
             configured: BuiltValueNullFieldError.checkNotNull(
-                configured, r'SocialPlatformCredentials', 'configured'),
+              configured,
+              r'SocialPlatformCredentials',
+              'configured',
+            ),
             fields: _fields?.build(),
           );
     } catch (_) {
@@ -122,7 +131,10 @@ class SocialPlatformCredentialsBuilder
         _fields?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPlatformCredentials', _$failedField, e.toString());
+          r'SocialPlatformCredentials',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

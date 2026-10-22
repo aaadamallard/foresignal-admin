@@ -12,17 +12,18 @@ class _$NarrativeTimelineSeriesInner extends NarrativeTimelineSeriesInner {
   @override
   final BuiltList<NarrativeTimelineSeriesInnerPointsInner> points;
 
-  factory _$NarrativeTimelineSeriesInner(
-          [void Function(NarrativeTimelineSeriesInnerBuilder)? updates]) =>
-      (NarrativeTimelineSeriesInnerBuilder()..update(updates))._build();
+  factory _$NarrativeTimelineSeriesInner([
+    void Function(NarrativeTimelineSeriesInnerBuilder)? updates,
+  ]) => (NarrativeTimelineSeriesInnerBuilder()..update(updates))._build();
 
-  _$NarrativeTimelineSeriesInner._(
-      {required this.platform, required this.points})
-      : super._();
+  _$NarrativeTimelineSeriesInner._({
+    required this.platform,
+    required this.points,
+  }) : super._();
   @override
   NarrativeTimelineSeriesInner rebuild(
-          void Function(NarrativeTimelineSeriesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NarrativeTimelineSeriesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NarrativeTimelineSeriesInnerBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$NarrativeTimelineSeriesInner extends NarrativeTimelineSeriesInner {
 
 class NarrativeTimelineSeriesInnerBuilder
     implements
-        Builder<NarrativeTimelineSeriesInner,
-            NarrativeTimelineSeriesInnerBuilder> {
+        Builder<
+          NarrativeTimelineSeriesInner,
+          NarrativeTimelineSeriesInnerBuilder
+        > {
   _$NarrativeTimelineSeriesInner? _$v;
 
   String? _platform;
@@ -100,10 +103,14 @@ class NarrativeTimelineSeriesInnerBuilder
   _$NarrativeTimelineSeriesInner _build() {
     _$NarrativeTimelineSeriesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NarrativeTimelineSeriesInner._(
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'NarrativeTimelineSeriesInner', 'platform'),
+              platform,
+              r'NarrativeTimelineSeriesInner',
+              'platform',
+            ),
             points: points.build(),
           );
     } catch (_) {
@@ -113,7 +120,10 @@ class NarrativeTimelineSeriesInnerBuilder
         points.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativeTimelineSeriesInner', _$failedField, e.toString());
+          r'NarrativeTimelineSeriesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

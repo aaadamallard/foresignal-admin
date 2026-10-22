@@ -41,7 +41,7 @@ class _$EventStudyResultCaarSerializer
   @override
   final Iterable<Type> types = const [
     EventStudyResultCaar,
-    _$EventStudyResultCaar
+    _$EventStudyResultCaar,
   ];
 
   @override
@@ -70,9 +70,11 @@ class _$EventStudyResultCaarSerializer
     EventStudyResultCaar object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,17 +90,21 @@ class _$EventStudyResultCaarSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'preEvent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EventStudyWindowStats),
-          ) as EventStudyWindowStats;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EventStudyWindowStats),
+                  )
+                  as EventStudyWindowStats;
           result.preEvent.replace(valueDes);
           break;
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EventStudyWindowStats),
-          ) as EventStudyWindowStats;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EventStudyWindowStats),
+                  )
+                  as EventStudyWindowStats;
           result.event.replace(valueDes);
           break;
         default:

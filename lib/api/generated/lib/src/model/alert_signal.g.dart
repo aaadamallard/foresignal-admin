@@ -32,11 +32,11 @@ AlertSignalTypeEnum _$alertSignalTypeEnumValueOf(String name) {
 
 final BuiltSet<AlertSignalTypeEnum> _$alertSignalTypeEnumValues =
     BuiltSet<AlertSignalTypeEnum>(const <AlertSignalTypeEnum>[
-  _$alertSignalTypeEnum_ACK_FAST,
-  _$alertSignalTypeEnum_SNOOZED,
-  _$alertSignalTypeEnum_FLAP,
-  _$alertSignalTypeEnum_UNOPENED,
-]);
+      _$alertSignalTypeEnum_ACK_FAST,
+      _$alertSignalTypeEnum_SNOOZED,
+      _$alertSignalTypeEnum_FLAP,
+      _$alertSignalTypeEnum_UNOPENED,
+    ]);
 
 Serializer<AlertSignalTypeEnum> _$alertSignalTypeEnumSerializer =
     _$AlertSignalTypeEnumSerializer();
@@ -62,15 +62,20 @@ class _$AlertSignalTypeEnumSerializer
   final String wireName = 'AlertSignalTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, AlertSignalTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AlertSignalTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AlertSignalTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertSignalTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AlertSignalTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertSignalTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertSignal extends AlertSignal {
@@ -85,7 +90,7 @@ class _$AlertSignal extends AlertSignal {
       (AlertSignalBuilder()..update(updates))._build();
 
   _$AlertSignal._({required this.alertId, required this.type, required this.at})
-      : super._();
+    : super._();
   @override
   AlertSignal rebuild(void Function(AlertSignalBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -166,12 +171,19 @@ class AlertSignalBuilder implements Builder<AlertSignal, AlertSignalBuilder> {
   AlertSignal build() => _build();
 
   _$AlertSignal _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AlertSignal._(
           alertId: BuiltValueNullFieldError.checkNotNull(
-              alertId, r'AlertSignal', 'alertId'),
+            alertId,
+            r'AlertSignal',
+            'alertId',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'AlertSignal', 'type'),
+            type,
+            r'AlertSignal',
+            'type',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(at, r'AlertSignal', 'at'),
         );
     replace(_$result);

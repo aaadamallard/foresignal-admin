@@ -16,8 +16,10 @@ part 'chronicle_summary_layers_inner_series_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleSummaryLayersInnerSeriesInner
     implements
-        Built<ChronicleSummaryLayersInnerSeriesInner,
-            ChronicleSummaryLayersInnerSeriesInnerBuilder> {
+        Built<
+          ChronicleSummaryLayersInnerSeriesInner,
+          ChronicleSummaryLayersInnerSeriesInnerBuilder
+        > {
   @BuiltValueField(wireName: r't')
   DateTime get t;
 
@@ -26,9 +28,9 @@ abstract class ChronicleSummaryLayersInnerSeriesInner
 
   ChronicleSummaryLayersInnerSeriesInner._();
 
-  factory ChronicleSummaryLayersInnerSeriesInner(
-          [void updates(ChronicleSummaryLayersInnerSeriesInnerBuilder b)]) =
-      _$ChronicleSummaryLayersInnerSeriesInner;
+  factory ChronicleSummaryLayersInnerSeriesInner([
+    void updates(ChronicleSummaryLayersInnerSeriesInnerBuilder b),
+  ]) = _$ChronicleSummaryLayersInnerSeriesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSummaryLayersInnerSeriesInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$ChronicleSummaryLayersInnerSeriesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSummaryLayersInnerSeriesInner,
-    _$ChronicleSummaryLayersInnerSeriesInner
+    _$ChronicleSummaryLayersInnerSeriesInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$ChronicleSummaryLayersInnerSeriesInnerSerializer
     ChronicleSummaryLayersInnerSeriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,18 @@ class _$ChronicleSummaryLayersInnerSeriesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r't':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.t = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         default:

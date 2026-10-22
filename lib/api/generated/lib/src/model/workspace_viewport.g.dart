@@ -14,9 +14,9 @@ class _$WorkspaceViewport extends WorkspaceViewport {
   @override
   final num? radiusKm;
 
-  factory _$WorkspaceViewport(
-          [void Function(WorkspaceViewportBuilder)? updates]) =>
-      (WorkspaceViewportBuilder()..update(updates))._build();
+  factory _$WorkspaceViewport([
+    void Function(WorkspaceViewportBuilder)? updates,
+  ]) => (WorkspaceViewportBuilder()..update(updates))._build();
 
   _$WorkspaceViewport._({this.bbox, this.center, this.radiusKm}) : super._();
   @override
@@ -103,7 +103,8 @@ class WorkspaceViewportBuilder
   _$WorkspaceViewport _build() {
     _$WorkspaceViewport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WorkspaceViewport._(
             bbox: _bbox?.build(),
             center: _center?.build(),
@@ -118,7 +119,10 @@ class WorkspaceViewportBuilder
         _center?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WorkspaceViewport', _$failedField, e.toString());
+          r'WorkspaceViewport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

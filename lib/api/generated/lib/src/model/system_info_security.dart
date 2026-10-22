@@ -85,9 +85,11 @@ class _$SystemInfoSecuritySerializer
     SystemInfoSecurity object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,27 +105,34 @@ class _$SystemInfoSecuritySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'openReads':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.openReads = valueDes;
           break;
         case r'anonymousRestricted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.anonymousRestricted = valueDes;
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(SettingsWarning)]),
-          ) as BuiltList<SettingsWarning>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SettingsWarning),
+                    ]),
+                  )
+                  as BuiltList<SettingsWarning>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;

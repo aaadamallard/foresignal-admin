@@ -7,20 +7,20 @@ part of 'mil_naval_cooccurrence_payload.dart';
 // **************************************************************************
 
 const MilNavalCooccurrencePayloadStatusEnum
-    _$milNavalCooccurrencePayloadStatusEnum_ok =
+_$milNavalCooccurrencePayloadStatusEnum_ok =
     const MilNavalCooccurrencePayloadStatusEnum._('ok');
 const MilNavalCooccurrencePayloadStatusEnum
-    _$milNavalCooccurrencePayloadStatusEnum_insufficientData =
+_$milNavalCooccurrencePayloadStatusEnum_insufficientData =
     const MilNavalCooccurrencePayloadStatusEnum._('insufficientData');
 const MilNavalCooccurrencePayloadStatusEnum
-    _$milNavalCooccurrencePayloadStatusEnum_noCoverage =
+_$milNavalCooccurrencePayloadStatusEnum_noCoverage =
     const MilNavalCooccurrencePayloadStatusEnum._('noCoverage');
 const MilNavalCooccurrencePayloadStatusEnum
-    _$milNavalCooccurrencePayloadStatusEnum_degradedInput =
+_$milNavalCooccurrencePayloadStatusEnum_degradedInput =
     const MilNavalCooccurrencePayloadStatusEnum._('degradedInput');
 
 MilNavalCooccurrencePayloadStatusEnum
-    _$milNavalCooccurrencePayloadStatusEnumValueOf(String name) {
+_$milNavalCooccurrencePayloadStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$milNavalCooccurrencePayloadStatusEnum_ok;
@@ -36,16 +36,18 @@ MilNavalCooccurrencePayloadStatusEnum
 }
 
 final BuiltSet<MilNavalCooccurrencePayloadStatusEnum>
-    _$milNavalCooccurrencePayloadStatusEnumValues = BuiltSet<
-        MilNavalCooccurrencePayloadStatusEnum>(const <MilNavalCooccurrencePayloadStatusEnum>[
-  _$milNavalCooccurrencePayloadStatusEnum_ok,
-  _$milNavalCooccurrencePayloadStatusEnum_insufficientData,
-  _$milNavalCooccurrencePayloadStatusEnum_noCoverage,
-  _$milNavalCooccurrencePayloadStatusEnum_degradedInput,
-]);
+_$milNavalCooccurrencePayloadStatusEnumValues =
+    BuiltSet<MilNavalCooccurrencePayloadStatusEnum>(
+      const <MilNavalCooccurrencePayloadStatusEnum>[
+        _$milNavalCooccurrencePayloadStatusEnum_ok,
+        _$milNavalCooccurrencePayloadStatusEnum_insufficientData,
+        _$milNavalCooccurrencePayloadStatusEnum_noCoverage,
+        _$milNavalCooccurrencePayloadStatusEnum_degradedInput,
+      ],
+    );
 
 Serializer<MilNavalCooccurrencePayloadStatusEnum>
-    _$milNavalCooccurrencePayloadStatusEnumSerializer =
+_$milNavalCooccurrencePayloadStatusEnumSerializer =
     _$MilNavalCooccurrencePayloadStatusEnumSerializer();
 
 class _$MilNavalCooccurrencePayloadStatusEnumSerializer
@@ -65,23 +67,26 @@ class _$MilNavalCooccurrencePayloadStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MilNavalCooccurrencePayloadStatusEnum
+    MilNavalCooccurrencePayloadStatusEnum,
   ];
   @override
   final String wireName = 'MilNavalCooccurrencePayloadStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, MilNavalCooccurrencePayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MilNavalCooccurrencePayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MilNavalCooccurrencePayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MilNavalCooccurrencePayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MilNavalCooccurrencePayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MilNavalCooccurrencePayload extends MilNavalCooccurrencePayload {
@@ -108,27 +113,27 @@ class _$MilNavalCooccurrencePayload extends MilNavalCooccurrencePayload {
   @override
   final BuiltList<String>? vessels;
 
-  factory _$MilNavalCooccurrencePayload(
-          [void Function(MilNavalCooccurrencePayloadBuilder)? updates]) =>
-      (MilNavalCooccurrencePayloadBuilder()..update(updates))._build();
+  factory _$MilNavalCooccurrencePayload([
+    void Function(MilNavalCooccurrencePayloadBuilder)? updates,
+  ]) => (MilNavalCooccurrencePayloadBuilder()..update(updates))._build();
 
-  _$MilNavalCooccurrencePayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.cell,
-      required this.aircraftCount,
-      required this.vesselCount,
-      this.aircraft,
-      this.vessels})
-      : super._();
+  _$MilNavalCooccurrencePayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.cell,
+    required this.aircraftCount,
+    required this.vesselCount,
+    this.aircraft,
+    this.vessels,
+  }) : super._();
   @override
   MilNavalCooccurrencePayload rebuild(
-          void Function(MilNavalCooccurrencePayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MilNavalCooccurrencePayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MilNavalCooccurrencePayloadBuilder toBuilder() =>
@@ -189,8 +194,10 @@ class _$MilNavalCooccurrencePayload extends MilNavalCooccurrencePayload {
 
 class MilNavalCooccurrencePayloadBuilder
     implements
-        Builder<MilNavalCooccurrencePayload,
-            MilNavalCooccurrencePayloadBuilder> {
+        Builder<
+          MilNavalCooccurrencePayload,
+          MilNavalCooccurrencePayloadBuilder
+        > {
   _$MilNavalCooccurrencePayload? _$v;
 
   bool? _automated;
@@ -283,23 +290,42 @@ class MilNavalCooccurrencePayloadBuilder
   _$MilNavalCooccurrencePayload _build() {
     _$MilNavalCooccurrencePayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MilNavalCooccurrencePayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'MilNavalCooccurrencePayload', 'automated'),
+              automated,
+              r'MilNavalCooccurrencePayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'MilNavalCooccurrencePayload', 'notAWarning'),
+              notAWarning,
+              r'MilNavalCooccurrencePayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'MilNavalCooccurrencePayload', 'status'),
+              status,
+              r'MilNavalCooccurrencePayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             cell: BuiltValueNullFieldError.checkNotNull(
-                cell, r'MilNavalCooccurrencePayload', 'cell'),
+              cell,
+              r'MilNavalCooccurrencePayload',
+              'cell',
+            ),
             aircraftCount: BuiltValueNullFieldError.checkNotNull(
-                aircraftCount, r'MilNavalCooccurrencePayload', 'aircraftCount'),
+              aircraftCount,
+              r'MilNavalCooccurrencePayload',
+              'aircraftCount',
+            ),
             vesselCount: BuiltValueNullFieldError.checkNotNull(
-                vesselCount, r'MilNavalCooccurrencePayload', 'vesselCount'),
+              vesselCount,
+              r'MilNavalCooccurrencePayload',
+              'vesselCount',
+            ),
             aircraft: _aircraft?.build(),
             vessels: _vessels?.build(),
           );
@@ -318,7 +344,10 @@ class MilNavalCooccurrencePayloadBuilder
         _vessels?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MilNavalCooccurrencePayload', _$failedField, e.toString());
+          r'MilNavalCooccurrencePayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

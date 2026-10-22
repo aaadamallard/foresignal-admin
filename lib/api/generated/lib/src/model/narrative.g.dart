@@ -44,14 +44,14 @@ NarrativeStatusEnum _$narrativeStatusEnumValueOf(String name) {
 
 final BuiltSet<NarrativeStatusEnum> _$narrativeStatusEnumValues =
     BuiltSet<NarrativeStatusEnum>(const <NarrativeStatusEnum>[
-  _$narrativeStatusEnum_unassessed,
-  _$narrativeStatusEnum_pending,
-  _$narrativeStatusEnum_corroborated,
-  _$narrativeStatusEnum_unobserved,
-  _$narrativeStatusEnum_contradicted,
-  _$narrativeStatusEnum_mixed,
-  _$narrativeStatusEnum_insufficientCoverage,
-]);
+      _$narrativeStatusEnum_unassessed,
+      _$narrativeStatusEnum_pending,
+      _$narrativeStatusEnum_corroborated,
+      _$narrativeStatusEnum_unobserved,
+      _$narrativeStatusEnum_contradicted,
+      _$narrativeStatusEnum_mixed,
+      _$narrativeStatusEnum_insufficientCoverage,
+    ]);
 
 const NarrativeStateEnum _$narrativeStateEnum_emerging =
     const NarrativeStateEnum._('emerging');
@@ -79,11 +79,11 @@ NarrativeStateEnum _$narrativeStateEnumValueOf(String name) {
 
 final BuiltSet<NarrativeStateEnum> _$narrativeStateEnumValues =
     BuiltSet<NarrativeStateEnum>(const <NarrativeStateEnum>[
-  _$narrativeStateEnum_emerging,
-  _$narrativeStateEnum_active,
-  _$narrativeStateEnum_fading,
-  _$narrativeStateEnum_dormant,
-]);
+      _$narrativeStateEnum_emerging,
+      _$narrativeStateEnum_active,
+      _$narrativeStateEnum_fading,
+      _$narrativeStateEnum_dormant,
+    ]);
 
 Serializer<NarrativeStatusEnum> _$narrativeStatusEnumSerializer =
     _$NarrativeStatusEnumSerializer();
@@ -117,15 +117,20 @@ class _$NarrativeStatusEnumSerializer
   final String wireName = 'NarrativeStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativeStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativeStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  NarrativeStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  NarrativeStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativeStateEnumSerializer
@@ -149,15 +154,20 @@ class _$NarrativeStateEnumSerializer
   final String wireName = 'NarrativeStateEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativeStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativeStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  NarrativeStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  NarrativeStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Narrative extends Narrative {
@@ -237,44 +247,44 @@ class _$Narrative extends Narrative {
   factory _$Narrative([void Function(NarrativeBuilder)? updates]) =>
       (NarrativeBuilder()..update(updates))._build();
 
-  _$Narrative._(
-      {required this.id,
-      required this.ref,
-      required this.title,
-      required this.canonicalEventId,
-      this.topics,
-      this.placeRefs,
-      this.entityRefs,
-      this.regionCodes,
-      this.languages,
-      required this.platforms,
-      required this.firstObservedAt,
-      required this.lastActivityAt,
-      required this.postCount,
-      required this.uniqueAuthors,
-      required this.evidenceGroupCount,
-      required this.originConcentration,
-      this.velocity,
-      this.mediaFingerprints,
-      this.newsStoryIds,
-      this.situationIds,
-      required this.status,
-      required this.state,
-      this.coordinationIndicatorsPresent,
-      this.mergedInto,
-      required this.tlp,
-      required this.envelope,
-      required this.claims,
-      required this.media,
-      this.coordination,
-      this.newsStories,
-      this.situations,
-      this.comparisonIds,
-      required this.history,
-      required this.clusterer,
-      required this.manifestId,
-      this.caveats})
-      : super._();
+  _$Narrative._({
+    required this.id,
+    required this.ref,
+    required this.title,
+    required this.canonicalEventId,
+    this.topics,
+    this.placeRefs,
+    this.entityRefs,
+    this.regionCodes,
+    this.languages,
+    required this.platforms,
+    required this.firstObservedAt,
+    required this.lastActivityAt,
+    required this.postCount,
+    required this.uniqueAuthors,
+    required this.evidenceGroupCount,
+    required this.originConcentration,
+    this.velocity,
+    this.mediaFingerprints,
+    this.newsStoryIds,
+    this.situationIds,
+    required this.status,
+    required this.state,
+    this.coordinationIndicatorsPresent,
+    this.mergedInto,
+    required this.tlp,
+    required this.envelope,
+    required this.claims,
+    required this.media,
+    this.coordination,
+    this.newsStories,
+    this.situations,
+    this.comparisonIds,
+    required this.history,
+    required this.clusterer,
+    required this.manifestId,
+    this.caveats,
+  }) : super._();
   @override
   Narrative rebuild(void Function(NarrativeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -658,15 +668,25 @@ class NarrativeBuilder implements Builder<Narrative, NarrativeBuilder> {
   _$Narrative _build() {
     _$Narrative _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Narrative._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Narrative', 'id'),
-            ref:
-                BuiltValueNullFieldError.checkNotNull(ref, r'Narrative', 'ref'),
+            ref: BuiltValueNullFieldError.checkNotNull(
+              ref,
+              r'Narrative',
+              'ref',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Narrative', 'title'),
+              title,
+              r'Narrative',
+              'title',
+            ),
             canonicalEventId: BuiltValueNullFieldError.checkNotNull(
-                canonicalEventId, r'Narrative', 'canonicalEventId'),
+              canonicalEventId,
+              r'Narrative',
+              'canonicalEventId',
+            ),
             topics: _topics?.build(),
             placeRefs: _placeRefs?.build(),
             entityRefs: _entityRefs?.build(),
@@ -674,29 +694,56 @@ class NarrativeBuilder implements Builder<Narrative, NarrativeBuilder> {
             languages: _languages?.build(),
             platforms: platforms.build(),
             firstObservedAt: BuiltValueNullFieldError.checkNotNull(
-                firstObservedAt, r'Narrative', 'firstObservedAt'),
+              firstObservedAt,
+              r'Narrative',
+              'firstObservedAt',
+            ),
             lastActivityAt: BuiltValueNullFieldError.checkNotNull(
-                lastActivityAt, r'Narrative', 'lastActivityAt'),
+              lastActivityAt,
+              r'Narrative',
+              'lastActivityAt',
+            ),
             postCount: BuiltValueNullFieldError.checkNotNull(
-                postCount, r'Narrative', 'postCount'),
+              postCount,
+              r'Narrative',
+              'postCount',
+            ),
             uniqueAuthors: BuiltValueNullFieldError.checkNotNull(
-                uniqueAuthors, r'Narrative', 'uniqueAuthors'),
+              uniqueAuthors,
+              r'Narrative',
+              'uniqueAuthors',
+            ),
             evidenceGroupCount: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupCount, r'Narrative', 'evidenceGroupCount'),
+              evidenceGroupCount,
+              r'Narrative',
+              'evidenceGroupCount',
+            ),
             originConcentration: BuiltValueNullFieldError.checkNotNull(
-                originConcentration, r'Narrative', 'originConcentration'),
+              originConcentration,
+              r'Narrative',
+              'originConcentration',
+            ),
             velocity: velocity,
             mediaFingerprints: _mediaFingerprints?.build(),
             newsStoryIds: _newsStoryIds?.build(),
             situationIds: _situationIds?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Narrative', 'status'),
+              status,
+              r'Narrative',
+              'status',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'Narrative', 'state'),
+              state,
+              r'Narrative',
+              'state',
+            ),
             coordinationIndicatorsPresent: coordinationIndicatorsPresent,
             mergedInto: mergedInto,
-            tlp:
-                BuiltValueNullFieldError.checkNotNull(tlp, r'Narrative', 'tlp'),
+            tlp: BuiltValueNullFieldError.checkNotNull(
+              tlp,
+              r'Narrative',
+              'tlp',
+            ),
             envelope: envelope.build(),
             claims: claims.build(),
             media: media.build(),
@@ -707,7 +754,10 @@ class NarrativeBuilder implements Builder<Narrative, NarrativeBuilder> {
             history: history.build(),
             clusterer: clusterer.build(),
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'Narrative', 'manifestId'),
+              manifestId,
+              r'Narrative',
+              'manifestId',
+            ),
             caveats: _caveats?.build(),
           );
     } catch (_) {
@@ -756,7 +806,10 @@ class NarrativeBuilder implements Builder<Narrative, NarrativeBuilder> {
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Narrative', _$failedField, e.toString());
+          r'Narrative',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

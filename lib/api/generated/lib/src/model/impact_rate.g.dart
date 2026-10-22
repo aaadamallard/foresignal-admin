@@ -28,10 +28,10 @@ ImpactRateSource_Enum _$impactRateSourceEnumValueOf(String name) {
 
 final BuiltSet<ImpactRateSource_Enum> _$impactRateSourceEnumValues =
     BuiltSet<ImpactRateSource_Enum>(const <ImpactRateSource_Enum>[
-  _$impactRateSourceEnum_ownHistory,
-  _$impactRateSourceEnum_referenceImport,
-  _$impactRateSourceEnum_mixed,
-]);
+      _$impactRateSourceEnum_ownHistory,
+      _$impactRateSourceEnum_referenceImport,
+      _$impactRateSourceEnum_mixed,
+    ]);
 
 const ImpactRateStatusEnum _$impactRateStatusEnum_ok =
     const ImpactRateStatusEnum._('ok');
@@ -51,9 +51,9 @@ ImpactRateStatusEnum _$impactRateStatusEnumValueOf(String name) {
 
 final BuiltSet<ImpactRateStatusEnum> _$impactRateStatusEnumValues =
     BuiltSet<ImpactRateStatusEnum>(const <ImpactRateStatusEnum>[
-  _$impactRateStatusEnum_ok,
-  _$impactRateStatusEnum_insufficient,
-]);
+      _$impactRateStatusEnum_ok,
+      _$impactRateStatusEnum_insufficient,
+    ]);
 
 Serializer<ImpactRateSource_Enum> _$impactRateSourceEnumSerializer =
     _$ImpactRateSource_EnumSerializer();
@@ -79,15 +79,20 @@ class _$ImpactRateSource_EnumSerializer
   final String wireName = 'ImpactRateSource_Enum';
 
   @override
-  Object serialize(Serializers serializers, ImpactRateSource_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ImpactRateSource_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ImpactRateSource_Enum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ImpactRateSource_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ImpactRateSource_Enum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ImpactRateSource_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ImpactRateStatusEnumSerializer
@@ -107,15 +112,20 @@ class _$ImpactRateStatusEnumSerializer
   final String wireName = 'ImpactRateStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ImpactRateStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ImpactRateStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ImpactRateStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ImpactRateStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ImpactRateStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ImpactRateStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ImpactRate extends ImpactRate {
@@ -147,20 +157,20 @@ class _$ImpactRate extends ImpactRate {
   factory _$ImpactRate([void Function(ImpactRateBuilder)? updates]) =>
       (ImpactRateBuilder()..update(updates))._build();
 
-  _$ImpactRate._(
-      {required this.hazardClass,
-      required this.impactFamily,
-      required this.regionClass,
-      this.lagHours,
-      this.rate,
-      this.interval,
-      required this.n,
-      this.nImpacts,
-      this.source_,
-      required this.status,
-      this.baseRateId,
-      required this.computedAt})
-      : super._();
+  _$ImpactRate._({
+    required this.hazardClass,
+    required this.impactFamily,
+    required this.regionClass,
+    this.lagHours,
+    this.rate,
+    this.interval,
+    required this.n,
+    this.nImpacts,
+    this.source_,
+    required this.status,
+    this.baseRateId,
+    required this.computedAt,
+  }) : super._();
   @override
   ImpactRate rebuild(void Function(ImpactRateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -317,14 +327,24 @@ class ImpactRateBuilder implements Builder<ImpactRate, ImpactRateBuilder> {
   _$ImpactRate _build() {
     _$ImpactRate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ImpactRate._(
             hazardClass: BuiltValueNullFieldError.checkNotNull(
-                hazardClass, r'ImpactRate', 'hazardClass'),
+              hazardClass,
+              r'ImpactRate',
+              'hazardClass',
+            ),
             impactFamily: BuiltValueNullFieldError.checkNotNull(
-                impactFamily, r'ImpactRate', 'impactFamily'),
+              impactFamily,
+              r'ImpactRate',
+              'impactFamily',
+            ),
             regionClass: BuiltValueNullFieldError.checkNotNull(
-                regionClass, r'ImpactRate', 'regionClass'),
+              regionClass,
+              r'ImpactRate',
+              'regionClass',
+            ),
             lagHours: lagHours,
             rate: rate,
             interval: _interval?.build(),
@@ -332,10 +352,16 @@ class ImpactRateBuilder implements Builder<ImpactRate, ImpactRateBuilder> {
             nImpacts: nImpacts,
             source_: source_,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ImpactRate', 'status'),
+              status,
+              r'ImpactRate',
+              'status',
+            ),
             baseRateId: baseRateId,
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'ImpactRate', 'computedAt'),
+              computedAt,
+              r'ImpactRate',
+              'computedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -344,7 +370,10 @@ class ImpactRateBuilder implements Builder<ImpactRate, ImpactRateBuilder> {
         _interval?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ImpactRate', _$failedField, e.toString());
+          r'ImpactRate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

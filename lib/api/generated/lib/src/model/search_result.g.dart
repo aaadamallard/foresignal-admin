@@ -28,10 +28,10 @@ SearchResultDocTypeEnum _$searchResultDocTypeEnumValueOf(String name) {
 
 final BuiltSet<SearchResultDocTypeEnum> _$searchResultDocTypeEnumValues =
     BuiltSet<SearchResultDocTypeEnum>(const <SearchResultDocTypeEnum>[
-  _$searchResultDocTypeEnum_record,
-  _$searchResultDocTypeEnum_briefing,
-  _$searchResultDocTypeEnum_alert,
-]);
+      _$searchResultDocTypeEnum_record,
+      _$searchResultDocTypeEnum_briefing,
+      _$searchResultDocTypeEnum_alert,
+    ]);
 
 Serializer<SearchResultDocTypeEnum> _$searchResultDocTypeEnumSerializer =
     _$SearchResultDocTypeEnumSerializer();
@@ -55,16 +55,20 @@ class _$SearchResultDocTypeEnumSerializer
   final String wireName = 'SearchResultDocTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SearchResultDocTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SearchResultDocTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SearchResultDocTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SearchResultDocTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SearchResultDocTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SearchResult extends SearchResult {
@@ -96,20 +100,20 @@ class _$SearchResult extends SearchResult {
   factory _$SearchResult([void Function(SearchResultBuilder)? updates]) =>
       (SearchResultBuilder()..update(updates))._build();
 
-  _$SearchResult._(
-      {required this.docType,
-      required this.docId,
-      required this.score,
-      required this.title,
-      this.snippet,
-      this.observedAt,
-      this.source_,
-      this.kind,
-      this.geometry,
-      this.record,
-      this.seq,
-      this.effectiveTime})
-      : super._();
+  _$SearchResult._({
+    required this.docType,
+    required this.docId,
+    required this.score,
+    required this.title,
+    this.snippet,
+    this.observedAt,
+    this.source_,
+    this.kind,
+    this.geometry,
+    this.record,
+    this.seq,
+    this.effectiveTime,
+  }) : super._();
   @override
   SearchResult rebuild(void Function(SearchResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -266,16 +270,29 @@ class SearchResultBuilder
   _$SearchResult _build() {
     _$SearchResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SearchResult._(
             docType: BuiltValueNullFieldError.checkNotNull(
-                docType, r'SearchResult', 'docType'),
+              docType,
+              r'SearchResult',
+              'docType',
+            ),
             docId: BuiltValueNullFieldError.checkNotNull(
-                docId, r'SearchResult', 'docId'),
+              docId,
+              r'SearchResult',
+              'docId',
+            ),
             score: BuiltValueNullFieldError.checkNotNull(
-                score, r'SearchResult', 'score'),
+              score,
+              r'SearchResult',
+              'score',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SearchResult', 'title'),
+              title,
+              r'SearchResult',
+              'title',
+            ),
             snippet: snippet,
             observedAt: observedAt,
             source_: source_,
@@ -294,7 +311,10 @@ class SearchResultBuilder
         _record?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SearchResult', _$failedField, e.toString());
+          r'SearchResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -72,9 +72,9 @@ abstract class StreamAlerts200Response
 
   StreamAlerts200Response._();
 
-  factory StreamAlerts200Response(
-          [void updates(StreamAlerts200ResponseBuilder b)]) =
-      _$StreamAlerts200Response;
+  factory StreamAlerts200Response([
+    void updates(StreamAlerts200ResponseBuilder b),
+  ]) = _$StreamAlerts200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StreamAlerts200ResponseBuilder b) => b;
@@ -89,7 +89,7 @@ class _$StreamAlerts200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     StreamAlerts200Response,
-    _$StreamAlerts200Response
+    _$StreamAlerts200Response,
   ];
 
   @override
@@ -108,9 +108,13 @@ class _$StreamAlerts200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -128,8 +132,9 @@ class _$StreamAlerts200ResponseSerializer
       FullType(Alert),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }
@@ -263,10 +268,10 @@ class StreamAlerts200ResponseSuppressedReasonEnum extends EnumClass {
       _$streamAlerts200ResponseSuppressedReasonEnum_ruleSnoozed;
 
   static Serializer<StreamAlerts200ResponseSuppressedReasonEnum>
-      get serializer => _$streamAlerts200ResponseSuppressedReasonEnumSerializer;
+  get serializer => _$streamAlerts200ResponseSuppressedReasonEnumSerializer;
 
   const StreamAlerts200ResponseSuppressedReasonEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<StreamAlerts200ResponseSuppressedReasonEnum> get values =>
       _$streamAlerts200ResponseSuppressedReasonEnumValues;

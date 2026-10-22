@@ -12,15 +12,15 @@ class _$PlaceWeatherAurora extends PlaceWeatherAurora {
   @override
   final num? probMaxNearby;
 
-  factory _$PlaceWeatherAurora(
-          [void Function(PlaceWeatherAuroraBuilder)? updates]) =>
-      (PlaceWeatherAuroraBuilder()..update(updates))._build();
+  factory _$PlaceWeatherAurora([
+    void Function(PlaceWeatherAuroraBuilder)? updates,
+  ]) => (PlaceWeatherAuroraBuilder()..update(updates))._build();
 
   _$PlaceWeatherAurora._({this.status, this.probMaxNearby}) : super._();
   @override
   PlaceWeatherAurora rebuild(
-          void Function(PlaceWeatherAuroraBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherAuroraBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherAuroraBuilder toBuilder() =>
@@ -93,11 +93,9 @@ class PlaceWeatherAuroraBuilder
   PlaceWeatherAurora build() => _build();
 
   _$PlaceWeatherAurora _build() {
-    final _$result = _$v ??
-        _$PlaceWeatherAurora._(
-          status: status,
-          probMaxNearby: probMaxNearby,
-        );
+    final _$result =
+        _$v ??
+        _$PlaceWeatherAurora._(status: status, probMaxNearby: probMaxNearby);
     replace(_$result);
     return _$result;
   }

@@ -14,7 +14,8 @@ const SmokePolygonPayloadDensityEnum _$smokePolygonPayloadDensityEnum_heavy =
     const SmokePolygonPayloadDensityEnum._('heavy');
 
 SmokePolygonPayloadDensityEnum _$smokePolygonPayloadDensityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'light':
       return _$smokePolygonPayloadDensityEnum_light;
@@ -28,15 +29,17 @@ SmokePolygonPayloadDensityEnum _$smokePolygonPayloadDensityEnumValueOf(
 }
 
 final BuiltSet<SmokePolygonPayloadDensityEnum>
-    _$smokePolygonPayloadDensityEnumValues = BuiltSet<
-        SmokePolygonPayloadDensityEnum>(const <SmokePolygonPayloadDensityEnum>[
-  _$smokePolygonPayloadDensityEnum_light,
-  _$smokePolygonPayloadDensityEnum_medium,
-  _$smokePolygonPayloadDensityEnum_heavy,
-]);
+_$smokePolygonPayloadDensityEnumValues =
+    BuiltSet<SmokePolygonPayloadDensityEnum>(
+      const <SmokePolygonPayloadDensityEnum>[
+        _$smokePolygonPayloadDensityEnum_light,
+        _$smokePolygonPayloadDensityEnum_medium,
+        _$smokePolygonPayloadDensityEnum_heavy,
+      ],
+    );
 
 Serializer<SmokePolygonPayloadDensityEnum>
-    _$smokePolygonPayloadDensityEnumSerializer =
+_$smokePolygonPayloadDensityEnumSerializer =
     _$SmokePolygonPayloadDensityEnumSerializer();
 
 class _$SmokePolygonPayloadDensityEnumSerializer
@@ -59,16 +62,19 @@ class _$SmokePolygonPayloadDensityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SmokePolygonPayloadDensityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SmokePolygonPayloadDensityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SmokePolygonPayloadDensityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SmokePolygonPayloadDensityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SmokePolygonPayloadDensityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SmokePolygonPayload extends SmokePolygonPayload {
@@ -85,22 +91,22 @@ class _$SmokePolygonPayload extends SmokePolygonPayload {
   @override
   final String label;
 
-  factory _$SmokePolygonPayload(
-          [void Function(SmokePolygonPayloadBuilder)? updates]) =>
-      (SmokePolygonPayloadBuilder()..update(updates))._build();
+  factory _$SmokePolygonPayload([
+    void Function(SmokePolygonPayloadBuilder)? updates,
+  ]) => (SmokePolygonPayloadBuilder()..update(updates))._build();
 
-  _$SmokePolygonPayload._(
-      {required this.density,
-      required this.densityRank,
-      this.start,
-      this.end,
-      this.satellite,
-      required this.label})
-      : super._();
+  _$SmokePolygonPayload._({
+    required this.density,
+    required this.densityRank,
+    this.start,
+    this.end,
+    this.satellite,
+    required this.label,
+  }) : super._();
   @override
   SmokePolygonPayload rebuild(
-          void Function(SmokePolygonPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SmokePolygonPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SmokePolygonPayloadBuilder toBuilder() =>
@@ -205,17 +211,27 @@ class SmokePolygonPayloadBuilder
   SmokePolygonPayload build() => _build();
 
   _$SmokePolygonPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SmokePolygonPayload._(
           density: BuiltValueNullFieldError.checkNotNull(
-              density, r'SmokePolygonPayload', 'density'),
+            density,
+            r'SmokePolygonPayload',
+            'density',
+          ),
           densityRank: BuiltValueNullFieldError.checkNotNull(
-              densityRank, r'SmokePolygonPayload', 'densityRank'),
+            densityRank,
+            r'SmokePolygonPayload',
+            'densityRank',
+          ),
           start: start,
           end: end,
           satellite: satellite,
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'SmokePolygonPayload', 'label'),
+            label,
+            r'SmokePolygonPayload',
+            'label',
+          ),
         );
     replace(_$result);
     return _$result;

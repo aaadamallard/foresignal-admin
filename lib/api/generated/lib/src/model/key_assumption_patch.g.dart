@@ -16,7 +16,8 @@ const KeyAssumptionPatchStatusEnum _$keyAssumptionPatchStatusEnum_broken =
     const KeyAssumptionPatchStatusEnum._('broken');
 
 KeyAssumptionPatchStatusEnum _$keyAssumptionPatchStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'solid':
       return _$keyAssumptionPatchStatusEnum_solid;
@@ -32,16 +33,16 @@ KeyAssumptionPatchStatusEnum _$keyAssumptionPatchStatusEnumValueOf(
 }
 
 final BuiltSet<KeyAssumptionPatchStatusEnum>
-    _$keyAssumptionPatchStatusEnumValues =
+_$keyAssumptionPatchStatusEnumValues =
     BuiltSet<KeyAssumptionPatchStatusEnum>(const <KeyAssumptionPatchStatusEnum>[
-  _$keyAssumptionPatchStatusEnum_solid,
-  _$keyAssumptionPatchStatusEnum_caveated,
-  _$keyAssumptionPatchStatusEnum_unsupported,
-  _$keyAssumptionPatchStatusEnum_broken,
-]);
+      _$keyAssumptionPatchStatusEnum_solid,
+      _$keyAssumptionPatchStatusEnum_caveated,
+      _$keyAssumptionPatchStatusEnum_unsupported,
+      _$keyAssumptionPatchStatusEnum_broken,
+    ]);
 
 Serializer<KeyAssumptionPatchStatusEnum>
-    _$keyAssumptionPatchStatusEnumSerializer =
+_$keyAssumptionPatchStatusEnumSerializer =
     _$KeyAssumptionPatchStatusEnumSerializer();
 
 class _$KeyAssumptionPatchStatusEnumSerializer
@@ -65,16 +66,20 @@ class _$KeyAssumptionPatchStatusEnumSerializer
   final String wireName = 'KeyAssumptionPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, KeyAssumptionPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    KeyAssumptionPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   KeyAssumptionPatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      KeyAssumptionPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => KeyAssumptionPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$KeyAssumptionPatch extends KeyAssumptionPatch {
@@ -93,23 +98,23 @@ class _$KeyAssumptionPatch extends KeyAssumptionPatch {
   @override
   final DateTime? reviewDue;
 
-  factory _$KeyAssumptionPatch(
-          [void Function(KeyAssumptionPatchBuilder)? updates]) =>
-      (KeyAssumptionPatchBuilder()..update(updates))._build();
+  factory _$KeyAssumptionPatch([
+    void Function(KeyAssumptionPatchBuilder)? updates,
+  ]) => (KeyAssumptionPatchBuilder()..update(updates))._build();
 
-  _$KeyAssumptionPatch._(
-      {this.text,
-      this.linchpin,
-      this.rationale,
-      this.wouldBeWrongIf,
-      this.status,
-      this.indicatorIds,
-      this.reviewDue})
-      : super._();
+  _$KeyAssumptionPatch._({
+    this.text,
+    this.linchpin,
+    this.rationale,
+    this.wouldBeWrongIf,
+    this.status,
+    this.indicatorIds,
+    this.reviewDue,
+  }) : super._();
   @override
   KeyAssumptionPatch rebuild(
-          void Function(KeyAssumptionPatchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(KeyAssumptionPatchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   KeyAssumptionPatchBuilder toBuilder() =>
@@ -226,7 +231,8 @@ class KeyAssumptionPatchBuilder
   _$KeyAssumptionPatch _build() {
     _$KeyAssumptionPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KeyAssumptionPatch._(
             text: text,
             linchpin: linchpin,
@@ -243,7 +249,10 @@ class KeyAssumptionPatchBuilder
         _indicatorIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KeyAssumptionPatch', _$failedField, e.toString());
+          r'KeyAssumptionPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

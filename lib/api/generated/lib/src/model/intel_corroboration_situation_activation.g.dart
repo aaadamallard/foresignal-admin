@@ -13,19 +13,17 @@ class _$IntelCorroborationSituationActivation
   @override
   final int? minGroups;
 
-  factory _$IntelCorroborationSituationActivation(
-          [void Function(IntelCorroborationSituationActivationBuilder)?
-              updates]) =>
-      (IntelCorroborationSituationActivationBuilder()..update(updates))
-          ._build();
+  factory _$IntelCorroborationSituationActivation([
+    void Function(IntelCorroborationSituationActivationBuilder)? updates,
+  ]) => (IntelCorroborationSituationActivationBuilder()..update(updates))
+      ._build();
 
   _$IntelCorroborationSituationActivation._({this.minFamilies, this.minGroups})
-      : super._();
+    : super._();
   @override
   IntelCorroborationSituationActivation rebuild(
-          void Function(IntelCorroborationSituationActivationBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelCorroborationSituationActivationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelCorroborationSituationActivationBuilder toBuilder() =>
@@ -51,7 +49,8 @@ class _$IntelCorroborationSituationActivation
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'IntelCorroborationSituationActivation')
+            r'IntelCorroborationSituationActivation',
+          )
           ..add('minFamilies', minFamilies)
           ..add('minGroups', minGroups))
         .toString();
@@ -60,8 +59,10 @@ class _$IntelCorroborationSituationActivation
 
 class IntelCorroborationSituationActivationBuilder
     implements
-        Builder<IntelCorroborationSituationActivation,
-            IntelCorroborationSituationActivationBuilder> {
+        Builder<
+          IntelCorroborationSituationActivation,
+          IntelCorroborationSituationActivationBuilder
+        > {
   _$IntelCorroborationSituationActivation? _$v;
 
   int? _minFamilies;
@@ -93,7 +94,8 @@ class IntelCorroborationSituationActivationBuilder
 
   @override
   void update(
-      void Function(IntelCorroborationSituationActivationBuilder)? updates) {
+    void Function(IntelCorroborationSituationActivationBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -101,7 +103,8 @@ class IntelCorroborationSituationActivationBuilder
   IntelCorroborationSituationActivation build() => _build();
 
   _$IntelCorroborationSituationActivation _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelCorroborationSituationActivation._(
           minFamilies: minFamilies,
           minGroups: minGroups,

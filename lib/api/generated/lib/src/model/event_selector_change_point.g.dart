@@ -10,15 +10,15 @@ class _$EventSelectorChangePoint extends EventSelectorChangePoint {
   @override
   final String family;
 
-  factory _$EventSelectorChangePoint(
-          [void Function(EventSelectorChangePointBuilder)? updates]) =>
-      (EventSelectorChangePointBuilder()..update(updates))._build();
+  factory _$EventSelectorChangePoint([
+    void Function(EventSelectorChangePointBuilder)? updates,
+  ]) => (EventSelectorChangePointBuilder()..update(updates))._build();
 
   _$EventSelectorChangePoint._({required this.family}) : super._();
   @override
   EventSelectorChangePoint rebuild(
-          void Function(EventSelectorChangePointBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventSelectorChangePointBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventSelectorChangePointBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$EventSelectorChangePoint extends EventSelectorChangePoint {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'EventSelectorChangePoint')
-          ..add('family', family))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'EventSelectorChangePoint',
+    )..add('family', family)).toString();
   }
 }
 
@@ -82,10 +82,14 @@ class EventSelectorChangePointBuilder
   EventSelectorChangePoint build() => _build();
 
   _$EventSelectorChangePoint _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EventSelectorChangePoint._(
           family: BuiltValueNullFieldError.checkNotNull(
-              family, r'EventSelectorChangePoint', 'family'),
+            family,
+            r'EventSelectorChangePoint',
+            'family',
+          ),
         );
     replace(_$result);
     return _$result;

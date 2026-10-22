@@ -29,17 +29,17 @@ class _$SnapshotInput extends SnapshotInput {
   factory _$SnapshotInput([void Function(SnapshotInputBuilder)? updates]) =>
       (SnapshotInputBuilder()..update(updates))._build();
 
-  _$SnapshotInput._(
-      {this.name,
-      this.atSeq,
-      this.asOf,
-      this.sources,
-      this.kinds,
-      this.bbox,
-      this.includePrivate,
-      this.personalUse,
-      this.expiresAt})
-      : super._();
+  _$SnapshotInput._({
+    this.name,
+    this.atSeq,
+    this.asOf,
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.includePrivate,
+    this.personalUse,
+    this.expiresAt,
+  }) : super._();
   @override
   SnapshotInput rebuild(void Function(SnapshotInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -172,7 +172,8 @@ class SnapshotInputBuilder
   _$SnapshotInput _build() {
     _$SnapshotInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SnapshotInput._(
             name: name,
             atSeq: atSeq,
@@ -195,7 +196,10 @@ class SnapshotInputBuilder
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SnapshotInput', _$failedField, e.toString());
+          r'SnapshotInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

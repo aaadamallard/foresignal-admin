@@ -79,8 +79,9 @@ class _$GraphRequestSerializer implements PrimitiveSerializer<GraphRequest> {
       yield r'types';
       yield serializers.serialize(
         object.types,
-        specifiedType:
-            const FullType(BuiltList, [FullType(GraphRequestTypesEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(GraphRequestTypesEnum),
+        ]),
       );
     }
     if (object.asOf != null) {
@@ -112,9 +113,11 @@ class _$GraphRequestSerializer implements PrimitiveSerializer<GraphRequest> {
     GraphRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -130,50 +133,65 @@ class _$GraphRequestSerializer implements PrimitiveSerializer<GraphRequest> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'refs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.refs.replace(valueDes);
           break;
         case r'depth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.depth = valueDes;
           break;
         case r'types':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(GraphRequestTypesEnum)]),
-          ) as BuiltList<GraphRequestTypesEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(GraphRequestTypesEnum),
+                    ]),
+                  )
+                  as BuiltList<GraphRequestTypesEnum>?;
           if (valueDes == null) continue;
           result.types.replace(valueDes);
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'minConfidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minConfidence = valueDes;
           break;
         case r'limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.limit = valueDes;
           break;

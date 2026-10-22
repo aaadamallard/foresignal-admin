@@ -17,9 +17,11 @@ class _$Precision extends Precision {
   factory _$Precision([void Function(PrecisionBuilder)? updates]) =>
       (PrecisionBuilder()..update(updates))._build();
 
-  _$Precision._(
-      {this.since, required this.generatedAt, required this.components})
-      : super._();
+  _$Precision._({
+    this.since,
+    required this.generatedAt,
+    required this.components,
+  }) : super._();
   @override
   Precision rebuild(void Function(PrecisionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -104,11 +106,15 @@ class PrecisionBuilder implements Builder<Precision, PrecisionBuilder> {
   _$Precision _build() {
     _$Precision _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Precision._(
             since: since,
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'Precision', 'generatedAt'),
+              generatedAt,
+              r'Precision',
+              'generatedAt',
+            ),
             components: components.build(),
           );
     } catch (_) {
@@ -118,7 +124,10 @@ class PrecisionBuilder implements Builder<Precision, PrecisionBuilder> {
         components.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Precision', _$failedField, e.toString());
+          r'Precision',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

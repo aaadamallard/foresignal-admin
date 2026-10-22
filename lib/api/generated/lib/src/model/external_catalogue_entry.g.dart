@@ -7,17 +7,18 @@ part of 'external_catalogue_entry.dart';
 // **************************************************************************
 
 const ExternalCatalogueEntryProtocolEnum
-    _$externalCatalogueEntryProtocolEnum_wmts =
+_$externalCatalogueEntryProtocolEnum_wmts =
     const ExternalCatalogueEntryProtocolEnum._('wmts');
 const ExternalCatalogueEntryProtocolEnum
-    _$externalCatalogueEntryProtocolEnum_wms =
+_$externalCatalogueEntryProtocolEnum_wms =
     const ExternalCatalogueEntryProtocolEnum._('wms');
 const ExternalCatalogueEntryProtocolEnum
-    _$externalCatalogueEntryProtocolEnum_xyz =
+_$externalCatalogueEntryProtocolEnum_xyz =
     const ExternalCatalogueEntryProtocolEnum._('xyz');
 
 ExternalCatalogueEntryProtocolEnum _$externalCatalogueEntryProtocolEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'wmts':
       return _$externalCatalogueEntryProtocolEnum_wmts;
@@ -31,12 +32,14 @@ ExternalCatalogueEntryProtocolEnum _$externalCatalogueEntryProtocolEnumValueOf(
 }
 
 final BuiltSet<ExternalCatalogueEntryProtocolEnum>
-    _$externalCatalogueEntryProtocolEnumValues = BuiltSet<
-        ExternalCatalogueEntryProtocolEnum>(const <ExternalCatalogueEntryProtocolEnum>[
-  _$externalCatalogueEntryProtocolEnum_wmts,
-  _$externalCatalogueEntryProtocolEnum_wms,
-  _$externalCatalogueEntryProtocolEnum_xyz,
-]);
+_$externalCatalogueEntryProtocolEnumValues =
+    BuiltSet<ExternalCatalogueEntryProtocolEnum>(
+      const <ExternalCatalogueEntryProtocolEnum>[
+        _$externalCatalogueEntryProtocolEnum_wmts,
+        _$externalCatalogueEntryProtocolEnum_wms,
+        _$externalCatalogueEntryProtocolEnum_xyz,
+      ],
+    );
 
 const ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnum_png =
     const ExternalCatalogueEntryFormatEnum._('png');
@@ -44,7 +47,8 @@ const ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnum_jpg =
     const ExternalCatalogueEntryFormatEnum._('jpg');
 
 ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'png':
       return _$externalCatalogueEntryFormatEnum_png;
@@ -56,17 +60,19 @@ ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnumValueOf(
 }
 
 final BuiltSet<ExternalCatalogueEntryFormatEnum>
-    _$externalCatalogueEntryFormatEnumValues = BuiltSet<
-        ExternalCatalogueEntryFormatEnum>(const <ExternalCatalogueEntryFormatEnum>[
-  _$externalCatalogueEntryFormatEnum_png,
-  _$externalCatalogueEntryFormatEnum_jpg,
-]);
+_$externalCatalogueEntryFormatEnumValues =
+    BuiltSet<ExternalCatalogueEntryFormatEnum>(
+      const <ExternalCatalogueEntryFormatEnum>[
+        _$externalCatalogueEntryFormatEnum_png,
+        _$externalCatalogueEntryFormatEnum_jpg,
+      ],
+    );
 
 Serializer<ExternalCatalogueEntryProtocolEnum>
-    _$externalCatalogueEntryProtocolEnumSerializer =
+_$externalCatalogueEntryProtocolEnumSerializer =
     _$ExternalCatalogueEntryProtocolEnumSerializer();
 Serializer<ExternalCatalogueEntryFormatEnum>
-    _$externalCatalogueEntryFormatEnumSerializer =
+_$externalCatalogueEntryFormatEnumSerializer =
     _$ExternalCatalogueEntryFormatEnumSerializer();
 
 class _$ExternalCatalogueEntryProtocolEnumSerializer
@@ -89,16 +95,19 @@ class _$ExternalCatalogueEntryProtocolEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExternalCatalogueEntryProtocolEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExternalCatalogueEntryProtocolEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalCatalogueEntryProtocolEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalCatalogueEntryProtocolEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalCatalogueEntryProtocolEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalCatalogueEntryFormatEnumSerializer
@@ -119,16 +128,19 @@ class _$ExternalCatalogueEntryFormatEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExternalCatalogueEntryFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExternalCatalogueEntryFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalCatalogueEntryFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalCatalogueEntryFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalCatalogueEntryFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalCatalogueEntry extends ExternalCatalogueEntry {
@@ -157,28 +169,28 @@ class _$ExternalCatalogueEntry extends ExternalCatalogueEntry {
   @override
   final Attribution attribution;
 
-  factory _$ExternalCatalogueEntry(
-          [void Function(ExternalCatalogueEntryBuilder)? updates]) =>
-      (ExternalCatalogueEntryBuilder()..update(updates))._build();
+  factory _$ExternalCatalogueEntry([
+    void Function(ExternalCatalogueEntryBuilder)? updates,
+  ]) => (ExternalCatalogueEntryBuilder()..update(updates))._build();
 
-  _$ExternalCatalogueEntry._(
-      {this.provider,
-      this.layer,
-      this.protocol,
-      required this.externalTemplate,
-      required this.tilingScheme,
-      required this.tileSize,
-      required this.maxNativeZoom,
-      this.format,
-      required this.bounds,
-      this.timeDimension,
-      this.cors,
-      required this.attribution})
-      : super._();
+  _$ExternalCatalogueEntry._({
+    this.provider,
+    this.layer,
+    this.protocol,
+    required this.externalTemplate,
+    required this.tilingScheme,
+    required this.tileSize,
+    required this.maxNativeZoom,
+    this.format,
+    required this.bounds,
+    this.timeDimension,
+    this.cors,
+    required this.attribution,
+  }) : super._();
   @override
   ExternalCatalogueEntry rebuild(
-          void Function(ExternalCatalogueEntryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalCatalogueEntryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalCatalogueEntryBuilder toBuilder() =>
@@ -288,8 +300,8 @@ class ExternalCatalogueEntryBuilder
   ExternalCatalogueEntryTimeDimensionBuilder get timeDimension =>
       _$this._timeDimension ??= ExternalCatalogueEntryTimeDimensionBuilder();
   set timeDimension(
-          ExternalCatalogueEntryTimeDimensionBuilder? timeDimension) =>
-      _$this._timeDimension = timeDimension;
+    ExternalCatalogueEntryTimeDimensionBuilder? timeDimension,
+  ) => _$this._timeDimension = timeDimension;
 
   String? _cors;
   String? get cors => _$this._cors;
@@ -341,21 +353,32 @@ class ExternalCatalogueEntryBuilder
   _$ExternalCatalogueEntry _build() {
     _$ExternalCatalogueEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalCatalogueEntry._(
             provider: provider,
             layer: layer,
             protocol: protocol,
             externalTemplate: BuiltValueNullFieldError.checkNotNull(
-                externalTemplate,
-                r'ExternalCatalogueEntry',
-                'externalTemplate'),
+              externalTemplate,
+              r'ExternalCatalogueEntry',
+              'externalTemplate',
+            ),
             tilingScheme: BuiltValueNullFieldError.checkNotNull(
-                tilingScheme, r'ExternalCatalogueEntry', 'tilingScheme'),
+              tilingScheme,
+              r'ExternalCatalogueEntry',
+              'tilingScheme',
+            ),
             tileSize: BuiltValueNullFieldError.checkNotNull(
-                tileSize, r'ExternalCatalogueEntry', 'tileSize'),
+              tileSize,
+              r'ExternalCatalogueEntry',
+              'tileSize',
+            ),
             maxNativeZoom: BuiltValueNullFieldError.checkNotNull(
-                maxNativeZoom, r'ExternalCatalogueEntry', 'maxNativeZoom'),
+              maxNativeZoom,
+              r'ExternalCatalogueEntry',
+              'maxNativeZoom',
+            ),
             format: format,
             bounds: bounds.build(),
             timeDimension: _timeDimension?.build(),
@@ -374,7 +397,10 @@ class ExternalCatalogueEntryBuilder
         attribution.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalCatalogueEntry', _$failedField, e.toString());
+          r'ExternalCatalogueEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

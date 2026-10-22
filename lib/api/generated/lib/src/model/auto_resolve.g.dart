@@ -19,9 +19,12 @@ class _$AutoResolve extends AutoResolve {
   factory _$AutoResolve([void Function(AutoResolveBuilder)? updates]) =>
       (AutoResolveBuilder()..update(updates))._build();
 
-  _$AutoResolve._(
-      {this.onInverseEdge, this.onTombstone, this.onExpiry, this.staleAfter})
-      : super._();
+  _$AutoResolve._({
+    this.onInverseEdge,
+    this.onTombstone,
+    this.onExpiry,
+    this.staleAfter,
+  }) : super._();
   @override
   AutoResolve rebuild(void Function(AutoResolveBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -111,7 +114,8 @@ class AutoResolveBuilder implements Builder<AutoResolve, AutoResolveBuilder> {
   AutoResolve build() => _build();
 
   _$AutoResolve _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AutoResolve._(
           onInverseEdge: onInverseEdge,
           onTombstone: onTombstone,

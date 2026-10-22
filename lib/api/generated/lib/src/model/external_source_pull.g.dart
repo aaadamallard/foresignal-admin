@@ -14,16 +14,16 @@ class _$ExternalSourcePull extends ExternalSourcePull {
   @override
   final String? lastError;
 
-  factory _$ExternalSourcePull(
-          [void Function(ExternalSourcePullBuilder)? updates]) =>
-      (ExternalSourcePullBuilder()..update(updates))._build();
+  factory _$ExternalSourcePull([
+    void Function(ExternalSourcePullBuilder)? updates,
+  ]) => (ExternalSourcePullBuilder()..update(updates))._build();
 
   _$ExternalSourcePull._({this.cursor, this.lastPollAt, this.lastError})
-      : super._();
+    : super._();
   @override
   ExternalSourcePull rebuild(
-          void Function(ExternalSourcePullBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalSourcePullBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalSourcePullBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class ExternalSourcePullBuilder
   ExternalSourcePull build() => _build();
 
   _$ExternalSourcePull _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalSourcePull._(
           cursor: cursor,
           lastPollAt: lastPollAt,

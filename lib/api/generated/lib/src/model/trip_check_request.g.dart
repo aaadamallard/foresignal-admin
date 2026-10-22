@@ -12,9 +12,9 @@ class _$TripCheckRequest extends TripCheckRequest {
   @override
   final DateTime? occurrence;
 
-  factory _$TripCheckRequest(
-          [void Function(TripCheckRequestBuilder)? updates]) =>
-      (TripCheckRequestBuilder()..update(updates))._build();
+  factory _$TripCheckRequest([
+    void Function(TripCheckRequestBuilder)? updates,
+  ]) => (TripCheckRequestBuilder()..update(updates))._build();
 
   _$TripCheckRequest._({this.dryRun, this.occurrence}) : super._();
   @override
@@ -91,11 +91,8 @@ class TripCheckRequestBuilder
   TripCheckRequest build() => _build();
 
   _$TripCheckRequest _build() {
-    final _$result = _$v ??
-        _$TripCheckRequest._(
-          dryRun: dryRun,
-          occurrence: occurrence,
-        );
+    final _$result =
+        _$v ?? _$TripCheckRequest._(dryRun: dryRun, occurrence: occurrence);
     replace(_$result);
     return _$result;
   }

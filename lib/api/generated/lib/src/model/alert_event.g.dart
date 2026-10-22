@@ -36,12 +36,12 @@ AlertEventTypeEnum _$alertEventTypeEnumValueOf(String name) {
 
 final BuiltSet<AlertEventTypeEnum> _$alertEventTypeEnumValues =
     BuiltSet<AlertEventTypeEnum>(const <AlertEventTypeEnum>[
-  _$alertEventTypeEnum_fired,
-  _$alertEventTypeEnum_updated,
-  _$alertEventTypeEnum_acknowledged,
-  _$alertEventTypeEnum_snoozed,
-  _$alertEventTypeEnum_resolved,
-]);
+      _$alertEventTypeEnum_fired,
+      _$alertEventTypeEnum_updated,
+      _$alertEventTypeEnum_acknowledged,
+      _$alertEventTypeEnum_snoozed,
+      _$alertEventTypeEnum_resolved,
+    ]);
 
 Serializer<AlertEventTypeEnum> _$alertEventTypeEnumSerializer =
     _$AlertEventTypeEnumSerializer();
@@ -69,15 +69,20 @@ class _$AlertEventTypeEnumSerializer
   final String wireName = 'AlertEventTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, AlertEventTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AlertEventTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AlertEventTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertEventTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AlertEventTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertEventTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertEvent extends AlertEvent {
@@ -93,9 +98,12 @@ class _$AlertEvent extends AlertEvent {
   factory _$AlertEvent([void Function(AlertEventBuilder)? updates]) =>
       (AlertEventBuilder()..update(updates))._build();
 
-  _$AlertEvent._(
-      {required this.type, required this.alert, this.suppressed, this.exercise})
-      : super._();
+  _$AlertEvent._({
+    required this.type,
+    required this.alert,
+    this.suppressed,
+    this.exercise,
+  }) : super._();
   @override
   AlertEvent rebuild(void Function(AlertEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -186,10 +194,14 @@ class AlertEventBuilder implements Builder<AlertEvent, AlertEventBuilder> {
   _$AlertEvent _build() {
     _$AlertEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AlertEvent._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'AlertEvent', 'type'),
+              type,
+              r'AlertEvent',
+              'type',
+            ),
             alert: alert.build(),
             suppressed: suppressed,
             exercise: exercise,
@@ -201,7 +213,10 @@ class AlertEventBuilder implements Builder<AlertEvent, AlertEventBuilder> {
         alert.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AlertEvent', _$failedField, e.toString());
+          r'AlertEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

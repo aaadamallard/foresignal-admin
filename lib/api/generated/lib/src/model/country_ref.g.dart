@@ -31,18 +31,18 @@ class _$CountryRef extends CountryRef {
   factory _$CountryRef([void Function(CountryRefBuilder)? updates]) =>
       (CountryRefBuilder()..update(updates))._build();
 
-  _$CountryRef._(
-      {required this.iso2,
-      required this.iso3,
-      this.isoNumeric,
-      this.fips,
-      required this.name,
-      this.nameLong,
-      this.continent,
-      required this.labelLon,
-      required this.labelLat,
-      this.aliases})
-      : super._();
+  _$CountryRef._({
+    required this.iso2,
+    required this.iso3,
+    this.isoNumeric,
+    this.fips,
+    required this.name,
+    this.nameLong,
+    this.continent,
+    required this.labelLon,
+    required this.labelLat,
+    this.aliases,
+  }) : super._();
   @override
   CountryRef rebuild(void Function(CountryRefBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -181,22 +181,38 @@ class CountryRefBuilder implements Builder<CountryRef, CountryRefBuilder> {
   _$CountryRef _build() {
     _$CountryRef _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CountryRef._(
             iso2: BuiltValueNullFieldError.checkNotNull(
-                iso2, r'CountryRef', 'iso2'),
+              iso2,
+              r'CountryRef',
+              'iso2',
+            ),
             iso3: BuiltValueNullFieldError.checkNotNull(
-                iso3, r'CountryRef', 'iso3'),
+              iso3,
+              r'CountryRef',
+              'iso3',
+            ),
             isoNumeric: isoNumeric,
             fips: fips,
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'CountryRef', 'name'),
+              name,
+              r'CountryRef',
+              'name',
+            ),
             nameLong: nameLong,
             continent: continent,
             labelLon: BuiltValueNullFieldError.checkNotNull(
-                labelLon, r'CountryRef', 'labelLon'),
+              labelLon,
+              r'CountryRef',
+              'labelLon',
+            ),
             labelLat: BuiltValueNullFieldError.checkNotNull(
-                labelLat, r'CountryRef', 'labelLat'),
+              labelLat,
+              r'CountryRef',
+              'labelLat',
+            ),
             aliases: _aliases?.build(),
           );
     } catch (_) {
@@ -206,7 +222,10 @@ class CountryRefBuilder implements Builder<CountryRef, CountryRefBuilder> {
         _aliases?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CountryRef', _$failedField, e.toString());
+          r'CountryRef',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

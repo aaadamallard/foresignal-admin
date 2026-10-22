@@ -104,9 +104,11 @@ class _$WatchPairSerializer implements PrimitiveSerializer<WatchPair> {
     WatchPair object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -122,42 +124,53 @@ class _$WatchPairSerializer implements PrimitiveSerializer<WatchPair> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'eventFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventFamily = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'selector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EventSelector),
-          ) as EventSelector?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EventSelector),
+                  )
+                  as EventSelector?;
           if (valueDes == null) continue;
           result.selector.replace(valueDes);
           break;
         case r'minEffect':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minEffect = valueDes;
           break;
         case r'releaseLagDays':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.releaseLagDays = valueDes;
           break;

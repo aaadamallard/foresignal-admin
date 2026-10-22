@@ -7,20 +7,20 @@ part of 'context_summary_activity_inner.dart';
 // **************************************************************************
 
 const ContextSummaryActivityInnerTypeEnum
-    _$contextSummaryActivityInnerTypeEnum_alert =
+_$contextSummaryActivityInnerTypeEnum_alert =
     const ContextSummaryActivityInnerTypeEnum._('alert');
 const ContextSummaryActivityInnerTypeEnum
-    _$contextSummaryActivityInnerTypeEnum_finding =
+_$contextSummaryActivityInnerTypeEnum_finding =
     const ContextSummaryActivityInnerTypeEnum._('finding');
 const ContextSummaryActivityInnerTypeEnum
-    _$contextSummaryActivityInnerTypeEnum_situationChange =
+_$contextSummaryActivityInnerTypeEnum_situationChange =
     const ContextSummaryActivityInnerTypeEnum._('situationChange');
 const ContextSummaryActivityInnerTypeEnum
-    _$contextSummaryActivityInnerTypeEnum_record =
+_$contextSummaryActivityInnerTypeEnum_record =
     const ContextSummaryActivityInnerTypeEnum._('record');
 
 ContextSummaryActivityInnerTypeEnum
-    _$contextSummaryActivityInnerTypeEnumValueOf(String name) {
+_$contextSummaryActivityInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'alert':
       return _$contextSummaryActivityInnerTypeEnum_alert;
@@ -36,16 +36,18 @@ ContextSummaryActivityInnerTypeEnum
 }
 
 final BuiltSet<ContextSummaryActivityInnerTypeEnum>
-    _$contextSummaryActivityInnerTypeEnumValues = BuiltSet<
-        ContextSummaryActivityInnerTypeEnum>(const <ContextSummaryActivityInnerTypeEnum>[
-  _$contextSummaryActivityInnerTypeEnum_alert,
-  _$contextSummaryActivityInnerTypeEnum_finding,
-  _$contextSummaryActivityInnerTypeEnum_situationChange,
-  _$contextSummaryActivityInnerTypeEnum_record,
-]);
+_$contextSummaryActivityInnerTypeEnumValues =
+    BuiltSet<ContextSummaryActivityInnerTypeEnum>(
+      const <ContextSummaryActivityInnerTypeEnum>[
+        _$contextSummaryActivityInnerTypeEnum_alert,
+        _$contextSummaryActivityInnerTypeEnum_finding,
+        _$contextSummaryActivityInnerTypeEnum_situationChange,
+        _$contextSummaryActivityInnerTypeEnum_record,
+      ],
+    );
 
 Serializer<ContextSummaryActivityInnerTypeEnum>
-    _$contextSummaryActivityInnerTypeEnumSerializer =
+_$contextSummaryActivityInnerTypeEnumSerializer =
     _$ContextSummaryActivityInnerTypeEnumSerializer();
 
 class _$ContextSummaryActivityInnerTypeEnumSerializer
@@ -65,23 +67,26 @@ class _$ContextSummaryActivityInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ContextSummaryActivityInnerTypeEnum
+    ContextSummaryActivityInnerTypeEnum,
   ];
   @override
   final String wireName = 'ContextSummaryActivityInnerTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ContextSummaryActivityInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ContextSummaryActivityInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ContextSummaryActivityInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ContextSummaryActivityInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ContextSummaryActivityInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ContextSummaryActivityInner extends ContextSummaryActivityInner {
@@ -98,22 +103,22 @@ class _$ContextSummaryActivityInner extends ContextSummaryActivityInner {
   @override
   final String? signalFamily;
 
-  factory _$ContextSummaryActivityInner(
-          [void Function(ContextSummaryActivityInnerBuilder)? updates]) =>
-      (ContextSummaryActivityInnerBuilder()..update(updates))._build();
+  factory _$ContextSummaryActivityInner([
+    void Function(ContextSummaryActivityInnerBuilder)? updates,
+  ]) => (ContextSummaryActivityInnerBuilder()..update(updates))._build();
 
-  _$ContextSummaryActivityInner._(
-      {required this.at,
-      required this.ref,
-      required this.type,
-      required this.title,
-      this.severity,
-      this.signalFamily})
-      : super._();
+  _$ContextSummaryActivityInner._({
+    required this.at,
+    required this.ref,
+    required this.type,
+    required this.title,
+    this.severity,
+    this.signalFamily,
+  }) : super._();
   @override
   ContextSummaryActivityInner rebuild(
-          void Function(ContextSummaryActivityInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ContextSummaryActivityInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ContextSummaryActivityInnerBuilder toBuilder() =>
@@ -159,8 +164,10 @@ class _$ContextSummaryActivityInner extends ContextSummaryActivityInner {
 
 class ContextSummaryActivityInnerBuilder
     implements
-        Builder<ContextSummaryActivityInner,
-            ContextSummaryActivityInnerBuilder> {
+        Builder<
+          ContextSummaryActivityInner,
+          ContextSummaryActivityInnerBuilder
+        > {
   _$ContextSummaryActivityInner? _$v;
 
   DateTime? _at;
@@ -219,16 +226,29 @@ class ContextSummaryActivityInnerBuilder
   ContextSummaryActivityInner build() => _build();
 
   _$ContextSummaryActivityInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ContextSummaryActivityInner._(
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'ContextSummaryActivityInner', 'at'),
+            at,
+            r'ContextSummaryActivityInner',
+            'at',
+          ),
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'ContextSummaryActivityInner', 'ref'),
+            ref,
+            r'ContextSummaryActivityInner',
+            'ref',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'ContextSummaryActivityInner', 'type'),
+            type,
+            r'ContextSummaryActivityInner',
+            'type',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'ContextSummaryActivityInner', 'title'),
+            title,
+            r'ContextSummaryActivityInner',
+            'title',
+          ),
           severity: severity,
           signalFamily: signalFamily,
         );

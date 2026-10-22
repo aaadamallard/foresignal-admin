@@ -24,9 +24,9 @@ PrecursorPatchStatusEnum _$precursorPatchStatusEnumValueOf(String name) {
 
 final BuiltSet<PrecursorPatchStatusEnum> _$precursorPatchStatusEnumValues =
     BuiltSet<PrecursorPatchStatusEnum>(const <PrecursorPatchStatusEnum>[
-  _$precursorPatchStatusEnum_retired,
-  _$precursorPatchStatusEnum_validated,
-]);
+      _$precursorPatchStatusEnum_retired,
+      _$precursorPatchStatusEnum_validated,
+    ]);
 
 Serializer<PrecursorPatchStatusEnum> _$precursorPatchStatusEnumSerializer =
     _$PrecursorPatchStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$PrecursorPatchStatusEnumSerializer
   final String wireName = 'PrecursorPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorPatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorPatch extends PrecursorPatch {
@@ -143,12 +147,19 @@ class PrecursorPatchBuilder
   PrecursorPatch build() => _build();
 
   _$PrecursorPatch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorPatch._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PrecursorPatch', 'status'),
+            status,
+            r'PrecursorPatch',
+            'status',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'PrecursorPatch', 'reason'),
+            reason,
+            r'PrecursorPatch',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

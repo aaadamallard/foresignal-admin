@@ -64,9 +64,11 @@ class _$MediaMatchSerializer implements PrimitiveSerializer<MediaMatch> {
     MediaMatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -82,17 +84,18 @@ class _$MediaMatchSerializer implements PrimitiveSerializer<MediaMatch> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'fingerprint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MediaFingerprint),
-          ) as MediaFingerprint;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MediaFingerprint),
+                  )
+                  as MediaFingerprint;
           result.fingerprint.replace(valueDes);
           break;
         case r'distance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.distance = valueDes;
           break;
         default:

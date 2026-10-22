@@ -32,11 +32,11 @@ LoiterPayloadStatusEnum _$loiterPayloadStatusEnumValueOf(String name) {
 
 final BuiltSet<LoiterPayloadStatusEnum> _$loiterPayloadStatusEnumValues =
     BuiltSet<LoiterPayloadStatusEnum>(const <LoiterPayloadStatusEnum>[
-  _$loiterPayloadStatusEnum_ok,
-  _$loiterPayloadStatusEnum_insufficientData,
-  _$loiterPayloadStatusEnum_noCoverage,
-  _$loiterPayloadStatusEnum_degradedInput,
-]);
+      _$loiterPayloadStatusEnum_ok,
+      _$loiterPayloadStatusEnum_insufficientData,
+      _$loiterPayloadStatusEnum_noCoverage,
+      _$loiterPayloadStatusEnum_degradedInput,
+    ]);
 
 Serializer<LoiterPayloadStatusEnum> _$loiterPayloadStatusEnumSerializer =
     _$LoiterPayloadStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$LoiterPayloadStatusEnumSerializer
   final String wireName = 'LoiterPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, LoiterPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LoiterPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LoiterPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LoiterPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LoiterPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LoiterPayload extends LoiterPayload {
@@ -101,19 +105,19 @@ class _$LoiterPayload extends LoiterPayload {
   factory _$LoiterPayload([void Function(LoiterPayloadBuilder)? updates]) =>
       (LoiterPayloadBuilder()..update(updates))._build();
 
-  _$LoiterPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.entity,
-      this.fixes,
-      required this.startedAt,
-      this.durationMin,
-      this.radiusNm})
-      : super._();
+  _$LoiterPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.entity,
+    this.fixes,
+    required this.startedAt,
+    this.durationMin,
+    this.radiusNm,
+  }) : super._();
   @override
   LoiterPayload rebuild(void Function(LoiterPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -265,22 +269,38 @@ class LoiterPayloadBuilder
   _$LoiterPayload _build() {
     _$LoiterPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LoiterPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'LoiterPayload', 'automated'),
+              automated,
+              r'LoiterPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'LoiterPayload', 'notAWarning'),
+              notAWarning,
+              r'LoiterPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'LoiterPayload', 'status'),
+              status,
+              r'LoiterPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             entity: BuiltValueNullFieldError.checkNotNull(
-                entity, r'LoiterPayload', 'entity'),
+              entity,
+              r'LoiterPayload',
+              'entity',
+            ),
             fixes: fixes,
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'LoiterPayload', 'startedAt'),
+              startedAt,
+              r'LoiterPayload',
+              'startedAt',
+            ),
             durationMin: durationMin,
             radiusNm: radiusNm,
           );
@@ -294,7 +314,10 @@ class LoiterPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LoiterPayload', _$failedField, e.toString());
+          r'LoiterPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -68,9 +68,9 @@ abstract class SocialPlatformSettings
 
   SocialPlatformSettings._();
 
-  factory SocialPlatformSettings(
-          [void updates(SocialPlatformSettingsBuilder b)]) =
-      _$SocialPlatformSettings;
+  factory SocialPlatformSettings([
+    void updates(SocialPlatformSettingsBuilder b),
+  ]) = _$SocialPlatformSettings;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPlatformSettingsBuilder b) => b;
@@ -85,7 +85,7 @@ class _$SocialPlatformSettingsSerializer
   @override
   final Iterable<Type> types = const [
     SocialPlatformSettings,
-    _$SocialPlatformSettings
+    _$SocialPlatformSettings,
   ];
 
   @override
@@ -147,8 +147,9 @@ class _$SocialPlatformSettingsSerializer
       yield r'prices';
       yield serializers.serialize(
         object.prices,
-        specifiedType:
-            const FullType(BuiltList, [FullType(SocialPlatformPrice)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SocialPlatformPrice),
+        ]),
       );
     }
     if (object.pricesAsOf != null) {
@@ -173,9 +174,11 @@ class _$SocialPlatformSettingsSerializer
     SocialPlatformSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -191,84 +194,107 @@ class _$SocialPlatformSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mode = valueDes;
           break;
         case r'channels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.channels.replace(valueDes);
           break;
         case r'deletionSync':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.deletionSync = valueDes;
           break;
         case r'postRetention':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.postRetention = valueDes;
           break;
         case r'budget':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Budget),
-          ) as Budget?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Budget),
+                  )
+                  as Budget?;
           if (valueDes == null) continue;
           result.budget.replace(valueDes);
           break;
         case r'monthlyCapUsd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.monthlyCapUsd = valueDes;
           break;
         case r'prices':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SocialPlatformPrice)]),
-          ) as BuiltList<SocialPlatformPrice>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SocialPlatformPrice),
+                    ]),
+                  )
+                  as BuiltList<SocialPlatformPrice>?;
           if (valueDes == null) continue;
           result.prices.replace(valueDes);
           break;
         case r'pricesAsOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.pricesAsOf = valueDes;
           break;
         case r'options':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SocialPlatformSettingsOptions),
-          ) as SocialPlatformSettingsOptions?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialPlatformSettingsOptions,
+                    ),
+                  )
+                  as SocialPlatformSettingsOptions?;
           if (valueDes == null) continue;
           result.options.replace(valueDes);
           break;

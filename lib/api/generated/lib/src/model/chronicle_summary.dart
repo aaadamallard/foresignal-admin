@@ -97,15 +97,17 @@ class _$ChronicleSummarySerializer
     yield r'layers';
     yield serializers.serialize(
       object.layers,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleSummaryLayersInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleSummaryLayersInner),
+      ]),
     );
     if (object.topEntities != null) {
       yield r'topEntities';
       yield serializers.serialize(
         object.topEntities,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ChronicleSummaryTopEntitiesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleSummaryTopEntitiesInner),
+        ]),
       );
     }
     if (object.situations != null) {
@@ -137,8 +139,9 @@ class _$ChronicleSummarySerializer
     yield r'gaps';
     yield serializers.serialize(
       object.gaps,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleSummaryGapsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleSummaryGapsInner),
+      ]),
     );
   }
 
@@ -148,9 +151,11 @@ class _$ChronicleSummarySerializer
     ChronicleSummary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -166,76 +171,100 @@ class _$ChronicleSummarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chronicleId = valueDes;
           break;
         case r'span':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimeRange),
-          ) as TimeRange;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimeRange),
+                  )
+                  as TimeRange;
           result.span.replace(valueDes);
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleSummaryLayersInner)]),
-          ) as BuiltList<ChronicleSummaryLayersInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleSummaryLayersInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSummaryLayersInner>;
           result.layers.replace(valueDes);
           break;
         case r'topEntities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ChronicleSummaryTopEntitiesInner)]),
-          ) as BuiltList<ChronicleSummaryTopEntitiesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleSummaryTopEntitiesInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSummaryTopEntitiesInner>?;
           if (valueDes == null) continue;
           result.topEntities.replace(valueDes);
           break;
         case r'situations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(ObjectEnvelope)]),
-          ) as BuiltList<ObjectEnvelope>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ObjectEnvelope),
+                    ]),
+                  )
+                  as BuiltList<ObjectEnvelope>?;
           if (valueDes == null) continue;
           result.situations.replace(valueDes);
           break;
         case r'hypothesisSets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(ObjectEnvelope)]),
-          ) as BuiltList<ObjectEnvelope>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ObjectEnvelope),
+                    ]),
+                  )
+                  as BuiltList<ObjectEnvelope>?;
           if (valueDes == null) continue;
           result.hypothesisSets.replace(valueDes);
           break;
         case r'forecasts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(ObjectEnvelope)]),
-          ) as BuiltList<ObjectEnvelope>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ObjectEnvelope),
+                    ]),
+                  )
+                  as BuiltList<ObjectEnvelope>?;
           if (valueDes == null) continue;
           result.forecasts.replace(valueDes);
           break;
         case r'storage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleSummaryStorage),
-          ) as ChronicleSummaryStorage;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ChronicleSummaryStorage),
+                  )
+                  as ChronicleSummaryStorage;
           result.storage.replace(valueDes);
           break;
         case r'gaps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleSummaryGapsInner)]),
-          ) as BuiltList<ChronicleSummaryGapsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleSummaryGapsInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSummaryGapsInner>;
           result.gaps.replace(valueDes);
           break;
         default:

@@ -24,9 +24,9 @@ AskResponseModeEnum _$askResponseModeEnumValueOf(String name) {
 
 final BuiltSet<AskResponseModeEnum> _$askResponseModeEnumValues =
     BuiltSet<AskResponseModeEnum>(const <AskResponseModeEnum>[
-  _$askResponseModeEnum_tools,
-  _$askResponseModeEnum_retrieval,
-]);
+      _$askResponseModeEnum_tools,
+      _$askResponseModeEnum_retrieval,
+    ]);
 
 const AskResponseStopReasonEnum _$askResponseStopReasonEnum_end =
     const AskResponseStopReasonEnum._('end');
@@ -54,11 +54,11 @@ AskResponseStopReasonEnum _$askResponseStopReasonEnumValueOf(String name) {
 
 final BuiltSet<AskResponseStopReasonEnum> _$askResponseStopReasonEnumValues =
     BuiltSet<AskResponseStopReasonEnum>(const <AskResponseStopReasonEnum>[
-  _$askResponseStopReasonEnum_end,
-  _$askResponseStopReasonEnum_maxTokens,
-  _$askResponseStopReasonEnum_refusal,
-  _$askResponseStopReasonEnum_error,
-]);
+      _$askResponseStopReasonEnum_end,
+      _$askResponseStopReasonEnum_maxTokens,
+      _$askResponseStopReasonEnum_refusal,
+      _$askResponseStopReasonEnum_error,
+    ]);
 
 Serializer<AskResponseModeEnum> _$askResponseModeEnumSerializer =
     _$AskResponseModeEnumSerializer();
@@ -82,15 +82,20 @@ class _$AskResponseModeEnumSerializer
   final String wireName = 'AskResponseModeEnum';
 
   @override
-  Object serialize(Serializers serializers, AskResponseModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskResponseModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AskResponseModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskResponseModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AskResponseModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskResponseModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskResponseStopReasonEnumSerializer
@@ -114,16 +119,20 @@ class _$AskResponseStopReasonEnumSerializer
   final String wireName = 'AskResponseStopReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, AskResponseStopReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskResponseStopReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AskResponseStopReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskResponseStopReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskResponseStopReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskResponse extends AskResponse {
@@ -149,17 +158,17 @@ class _$AskResponse extends AskResponse {
   factory _$AskResponse([void Function(AskResponseBuilder)? updates]) =>
       (AskResponseBuilder()..update(updates))._build();
 
-  _$AskResponse._(
-      {required this.threadId,
-      required this.answer,
-      required this.citations,
-      required this.proposedActions,
-      this.warnings,
-      this.mode,
-      this.usage,
-      this.stopReason,
-      this.refusalCategory})
-      : super._();
+  _$AskResponse._({
+    required this.threadId,
+    required this.answer,
+    required this.citations,
+    required this.proposedActions,
+    this.warnings,
+    this.mode,
+    this.usage,
+    this.stopReason,
+    this.refusalCategory,
+  }) : super._();
   @override
   AskResponse rebuild(void Function(AskResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -298,12 +307,19 @@ class AskResponseBuilder implements Builder<AskResponse, AskResponseBuilder> {
   _$AskResponse _build() {
     _$AskResponse _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AskResponse._(
             threadId: BuiltValueNullFieldError.checkNotNull(
-                threadId, r'AskResponse', 'threadId'),
+              threadId,
+              r'AskResponse',
+              'threadId',
+            ),
             answer: BuiltValueNullFieldError.checkNotNull(
-                answer, r'AskResponse', 'answer'),
+              answer,
+              r'AskResponse',
+              'answer',
+            ),
             citations: citations.build(),
             proposedActions: proposedActions.build(),
             warnings: _warnings?.build(),
@@ -326,7 +342,10 @@ class AskResponseBuilder implements Builder<AskResponse, AskResponseBuilder> {
         _usage?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AskResponse', _$failedField, e.toString());
+          r'AskResponse',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

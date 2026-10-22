@@ -20,8 +20,10 @@ part 'chronicle_social_volume_selector.g.dart';
 @BuiltValue()
 abstract class ChronicleSocialVolumeSelector
     implements
-        Built<ChronicleSocialVolumeSelector,
-            ChronicleSocialVolumeSelectorBuilder> {
+        Built<
+          ChronicleSocialVolumeSelector,
+          ChronicleSocialVolumeSelectorBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   ChronicleSocialVolumeSelectorTypeEnum get type;
   // enum typeEnum {  social-volume,  };
@@ -38,9 +40,9 @@ abstract class ChronicleSocialVolumeSelector
 
   ChronicleSocialVolumeSelector._();
 
-  factory ChronicleSocialVolumeSelector(
-          [void updates(ChronicleSocialVolumeSelectorBuilder b)]) =
-      _$ChronicleSocialVolumeSelector;
+  factory ChronicleSocialVolumeSelector([
+    void updates(ChronicleSocialVolumeSelectorBuilder b),
+  ]) = _$ChronicleSocialVolumeSelector;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSocialVolumeSelectorBuilder b) => b;
@@ -55,7 +57,7 @@ class _$ChronicleSocialVolumeSelectorSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSocialVolumeSelector,
-    _$ChronicleSocialVolumeSelector
+    _$ChronicleSocialVolumeSelector,
   ];
 
   @override
@@ -74,8 +76,9 @@ class _$ChronicleSocialVolumeSelectorSerializer
     yield r'scopes';
     yield serializers.serialize(
       object.scopes,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ChronicleSocialVolumeSelectorScopesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleSocialVolumeSelectorScopesInner),
+      ]),
     );
     if (object.platforms != null) {
       yield r'platforms';
@@ -88,8 +91,9 @@ class _$ChronicleSocialVolumeSelectorSerializer
       yield r'metrics';
       yield serializers.serialize(
         object.metrics,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ChronicleSocialVolumeSelectorMetricsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleSocialVolumeSelectorMetricsEnum),
+        ]),
       );
     }
   }
@@ -100,9 +104,11 @@ class _$ChronicleSocialVolumeSelectorSerializer
     ChronicleSocialVolumeSelector object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,36 +124,48 @@ class _$ChronicleSocialVolumeSelectorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ChronicleSocialVolumeSelectorTypeEnum),
-          ) as ChronicleSocialVolumeSelectorTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleSocialVolumeSelectorTypeEnum,
+                    ),
+                  )
+                  as ChronicleSocialVolumeSelectorTypeEnum;
           result.type = valueDes;
           break;
         case r'scopes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(ChronicleSocialVolumeSelectorScopesInner)]),
-          ) as BuiltList<ChronicleSocialVolumeSelectorScopesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleSocialVolumeSelectorScopesInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSocialVolumeSelectorScopesInner>;
           result.scopes.replace(valueDes);
           break;
         case r'platforms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.platforms.replace(valueDes);
           break;
         case r'metrics':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(ChronicleSocialVolumeSelectorMetricsEnum)]),
-          ) as BuiltList<ChronicleSocialVolumeSelectorMetricsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleSocialVolumeSelectorMetricsEnum),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSocialVolumeSelectorMetricsEnum>?;
           if (valueDes == null) continue;
           result.metrics.replace(valueDes);
           break;

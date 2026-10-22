@@ -27,8 +27,10 @@ part 'correlation_recipe_definition_joins_inner.g.dart';
 @BuiltValue()
 abstract class CorrelationRecipeDefinitionJoinsInner
     implements
-        Built<CorrelationRecipeDefinitionJoinsInner,
-            CorrelationRecipeDefinitionJoinsInnerBuilder> {
+        Built<
+          CorrelationRecipeDefinitionJoinsInner,
+          CorrelationRecipeDefinitionJoinsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'kinds')
   BuiltList<String>? get kinds;
 
@@ -65,9 +67,9 @@ abstract class CorrelationRecipeDefinitionJoinsInner
 
   CorrelationRecipeDefinitionJoinsInner._();
 
-  factory CorrelationRecipeDefinitionJoinsInner(
-          [void updates(CorrelationRecipeDefinitionJoinsInnerBuilder b)]) =
-      _$CorrelationRecipeDefinitionJoinsInner;
+  factory CorrelationRecipeDefinitionJoinsInner([
+    void updates(CorrelationRecipeDefinitionJoinsInnerBuilder b),
+  ]) = _$CorrelationRecipeDefinitionJoinsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeDefinitionJoinsInnerBuilder b) => b;
@@ -82,7 +84,7 @@ class _$CorrelationRecipeDefinitionJoinsInnerSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeDefinitionJoinsInner,
-    _$CorrelationRecipeDefinitionJoinsInner
+    _$CorrelationRecipeDefinitionJoinsInner,
   ];
 
   @override
@@ -118,8 +120,9 @@ class _$CorrelationRecipeDefinitionJoinsInnerSerializer
       yield r'sameRegion';
       yield serializers.serialize(
         object.sameRegion,
-        specifiedType:
-            const FullType(CorrelationRecipeDefinitionJoinsInnerSameRegionEnum),
+        specifiedType: const FullType(
+          CorrelationRecipeDefinitionJoinsInnerSameRegionEnum,
+        ),
       );
     }
     if (object.sameEntity != null) {
@@ -140,16 +143,18 @@ class _$CorrelationRecipeDefinitionJoinsInnerSerializer
       yield r'window';
       yield serializers.serialize(
         object.window,
-        specifiedType:
-            const FullType(CorrelationRecipeDefinitionJoinsInnerWindow),
+        specifiedType: const FullType(
+          CorrelationRecipeDefinitionJoinsInnerWindow,
+        ),
       );
     }
     if (object.role != null) {
       yield r'role';
       yield serializers.serialize(
         object.role,
-        specifiedType:
-            const FullType(CorrelationRecipeDefinitionJoinsInnerRoleEnum),
+        specifiedType: const FullType(
+          CorrelationRecipeDefinitionJoinsInnerRoleEnum,
+        ),
       );
     }
     if (object.signalFamily != null) {
@@ -174,9 +179,11 @@ class _$CorrelationRecipeDefinitionJoinsInnerSerializer
     CorrelationRecipeDefinitionJoinsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -192,87 +199,112 @@ class _$CorrelationRecipeDefinitionJoinsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.kinds.replace(valueDes);
           break;
         case r'conditions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Condition)]),
-          ) as BuiltList<Condition>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Condition),
+                    ]),
+                  )
+                  as BuiltList<Condition>?;
           if (valueDes == null) continue;
           result.conditions.replace(valueDes);
           break;
         case r'withinKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.withinKm = valueDes;
           break;
         case r'sameRegion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                CorrelationRecipeDefinitionJoinsInnerSameRegionEnum),
-          ) as CorrelationRecipeDefinitionJoinsInnerSameRegionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CorrelationRecipeDefinitionJoinsInnerSameRegionEnum,
+                    ),
+                  )
+                  as CorrelationRecipeDefinitionJoinsInnerSameRegionEnum?;
           if (valueDes == null) continue;
           result.sameRegion = valueDes;
           break;
         case r'sameEntity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.sameEntity = valueDes;
           break;
         case r'sharedAttribute':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sharedAttribute = valueDes;
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                CorrelationRecipeDefinitionJoinsInnerWindow),
-          ) as CorrelationRecipeDefinitionJoinsInnerWindow?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CorrelationRecipeDefinitionJoinsInnerWindow,
+                    ),
+                  )
+                  as CorrelationRecipeDefinitionJoinsInnerWindow?;
           if (valueDes == null) continue;
           result.window.replace(valueDes);
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                CorrelationRecipeDefinitionJoinsInnerRoleEnum),
-          ) as CorrelationRecipeDefinitionJoinsInnerRoleEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CorrelationRecipeDefinitionJoinsInnerRoleEnum,
+                    ),
+                  )
+                  as CorrelationRecipeDefinitionJoinsInnerRoleEnum?;
           if (valueDes == null) continue;
           result.role = valueDes;
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.signalFamily = valueDes;
           break;
         case r'weight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.weight = valueDes;
           break;
@@ -314,17 +346,17 @@ class CorrelationRecipeDefinitionJoinsInnerSameRegionEnum extends EnumClass {
       _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1;
 
   static Serializer<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>
-      get serializer =>
-          _$correlationRecipeDefinitionJoinsInnerSameRegionEnumSerializer;
+  get serializer =>
+      _$correlationRecipeDefinitionJoinsInnerSameRegionEnumSerializer;
 
   const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>
-      get values => _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValues;
+  get values => _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValues;
   static CorrelationRecipeDefinitionJoinsInnerSameRegionEnum valueOf(
-          String name) =>
-      _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValueOf(name);
+    String name,
+  ) => _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValueOf(name);
 }
 
 class CorrelationRecipeDefinitionJoinsInnerRoleEnum extends EnumClass {
@@ -339,11 +371,10 @@ class CorrelationRecipeDefinitionJoinsInnerRoleEnum extends EnumClass {
       _$correlationRecipeDefinitionJoinsInnerRoleEnum_context;
 
   static Serializer<CorrelationRecipeDefinitionJoinsInnerRoleEnum>
-      get serializer =>
-          _$correlationRecipeDefinitionJoinsInnerRoleEnumSerializer;
+  get serializer => _$correlationRecipeDefinitionJoinsInnerRoleEnumSerializer;
 
   const CorrelationRecipeDefinitionJoinsInnerRoleEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<CorrelationRecipeDefinitionJoinsInnerRoleEnum> get values =>
       _$correlationRecipeDefinitionJoinsInnerRoleEnumValues;

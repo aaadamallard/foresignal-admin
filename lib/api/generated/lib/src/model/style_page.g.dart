@@ -90,11 +90,8 @@ class StylePageBuilder implements Builder<StylePage, StylePageBuilder> {
   _$StylePage _build() {
     _$StylePage _$result;
     try {
-      _$result = _$v ??
-          _$StylePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$StylePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class StylePageBuilder implements Builder<StylePage, StylePageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StylePage', _$failedField, e.toString());
+          r'StylePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

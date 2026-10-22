@@ -10,15 +10,15 @@ class _$PushSubscriptionVerify extends PushSubscriptionVerify {
   @override
   final String code;
 
-  factory _$PushSubscriptionVerify(
-          [void Function(PushSubscriptionVerifyBuilder)? updates]) =>
-      (PushSubscriptionVerifyBuilder()..update(updates))._build();
+  factory _$PushSubscriptionVerify([
+    void Function(PushSubscriptionVerifyBuilder)? updates,
+  ]) => (PushSubscriptionVerifyBuilder()..update(updates))._build();
 
   _$PushSubscriptionVerify._({required this.code}) : super._();
   @override
   PushSubscriptionVerify rebuild(
-          void Function(PushSubscriptionVerifyBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushSubscriptionVerifyBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushSubscriptionVerifyBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$PushSubscriptionVerify extends PushSubscriptionVerify {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PushSubscriptionVerify')
-          ..add('code', code))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PushSubscriptionVerify',
+    )..add('code', code)).toString();
   }
 }
 
@@ -81,10 +81,14 @@ class PushSubscriptionVerifyBuilder
   PushSubscriptionVerify build() => _build();
 
   _$PushSubscriptionVerify _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PushSubscriptionVerify._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'PushSubscriptionVerify', 'code'),
+            code,
+            r'PushSubscriptionVerify',
+            'code',
+          ),
         );
     replace(_$result);
     return _$result;

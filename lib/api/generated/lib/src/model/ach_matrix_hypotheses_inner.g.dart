@@ -18,21 +18,21 @@ class _$AchMatrixHypothesesInner extends AchMatrixHypothesesInner {
   @override
   final num inconsistencyScore;
 
-  factory _$AchMatrixHypothesesInner(
-          [void Function(AchMatrixHypothesesInnerBuilder)? updates]) =>
-      (AchMatrixHypothesesInnerBuilder()..update(updates))._build();
+  factory _$AchMatrixHypothesesInner([
+    void Function(AchMatrixHypothesesInnerBuilder)? updates,
+  ]) => (AchMatrixHypothesesInnerBuilder()..update(updates))._build();
 
-  _$AchMatrixHypothesesInner._(
-      {required this.id,
-      required this.label,
-      required this.probability,
-      this.estimativeTerm,
-      required this.inconsistencyScore})
-      : super._();
+  _$AchMatrixHypothesesInner._({
+    required this.id,
+    required this.label,
+    required this.probability,
+    this.estimativeTerm,
+    required this.inconsistencyScore,
+  }) : super._();
   @override
   AchMatrixHypothesesInner rebuild(
-          void Function(AchMatrixHypothesesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AchMatrixHypothesesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AchMatrixHypothesesInnerBuilder toBuilder() =>
@@ -131,19 +131,30 @@ class AchMatrixHypothesesInnerBuilder
   AchMatrixHypothesesInner build() => _build();
 
   _$AchMatrixHypothesesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AchMatrixHypothesesInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'AchMatrixHypothesesInner', 'id'),
+            id,
+            r'AchMatrixHypothesesInner',
+            'id',
+          ),
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'AchMatrixHypothesesInner', 'label'),
+            label,
+            r'AchMatrixHypothesesInner',
+            'label',
+          ),
           probability: BuiltValueNullFieldError.checkNotNull(
-              probability, r'AchMatrixHypothesesInner', 'probability'),
+            probability,
+            r'AchMatrixHypothesesInner',
+            'probability',
+          ),
           estimativeTerm: estimativeTerm,
           inconsistencyScore: BuiltValueNullFieldError.checkNotNull(
-              inconsistencyScore,
-              r'AchMatrixHypothesesInner',
-              'inconsistencyScore'),
+            inconsistencyScore,
+            r'AchMatrixHypothesesInner',
+            'inconsistencyScore',
+          ),
         );
     replace(_$result);
     return _$result;

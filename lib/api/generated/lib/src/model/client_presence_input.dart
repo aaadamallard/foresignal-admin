@@ -47,7 +47,7 @@ class _$ClientPresenceInputSerializer
   @override
   final Iterable<Type> types = const [
     ClientPresenceInput,
-    _$ClientPresenceInput
+    _$ClientPresenceInput,
   ];
 
   @override
@@ -83,9 +83,11 @@ class _$ClientPresenceInputSerializer
     ClientPresenceInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +103,30 @@ class _$ClientPresenceInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ClientPresenceInputKindEnum),
-          ) as ClientPresenceInputKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ClientPresenceInputKindEnum),
+                  )
+                  as ClientPresenceInputKindEnum;
           result.kind = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ClientPresenceInputStateEnum),
-          ) as ClientPresenceInputStateEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ClientPresenceInputStateEnum),
+                  )
+                  as ClientPresenceInputStateEnum;
           result.state = valueDes;
           break;
         case r'ttlSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.ttlSeconds = valueDes;
           break;

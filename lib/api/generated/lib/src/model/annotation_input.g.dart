@@ -24,9 +24,9 @@ AnnotationInputKindEnum _$annotationInputKindEnumValueOf(String name) {
 
 final BuiltSet<AnnotationInputKindEnum> _$annotationInputKindEnumValues =
     BuiltSet<AnnotationInputKindEnum>(const <AnnotationInputKindEnum>[
-  _$annotationInputKindEnum_note,
-  _$annotationInputKindEnum_verdict,
-]);
+      _$annotationInputKindEnum_note,
+      _$annotationInputKindEnum_verdict,
+    ]);
 
 const AnnotationInputVerdictEnum _$annotationInputVerdictEnum_confirmed =
     const AnnotationInputVerdictEnum._('confirmed');
@@ -54,11 +54,11 @@ AnnotationInputVerdictEnum _$annotationInputVerdictEnumValueOf(String name) {
 
 final BuiltSet<AnnotationInputVerdictEnum> _$annotationInputVerdictEnumValues =
     BuiltSet<AnnotationInputVerdictEnum>(const <AnnotationInputVerdictEnum>[
-  _$annotationInputVerdictEnum_confirmed,
-  _$annotationInputVerdictEnum_rejected,
-  _$annotationInputVerdictEnum_needsReview,
-  _$annotationInputVerdictEnum_duplicateOf,
-]);
+      _$annotationInputVerdictEnum_confirmed,
+      _$annotationInputVerdictEnum_rejected,
+      _$annotationInputVerdictEnum_needsReview,
+      _$annotationInputVerdictEnum_duplicateOf,
+    ]);
 
 Serializer<AnnotationInputKindEnum> _$annotationInputKindEnumSerializer =
     _$AnnotationInputKindEnumSerializer();
@@ -82,16 +82,20 @@ class _$AnnotationInputKindEnumSerializer
   final String wireName = 'AnnotationInputKindEnum';
 
   @override
-  Object serialize(Serializers serializers, AnnotationInputKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnnotationInputKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnnotationInputKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnnotationInputKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnnotationInputKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnnotationInputVerdictEnumSerializer
@@ -115,16 +119,20 @@ class _$AnnotationInputVerdictEnumSerializer
   final String wireName = 'AnnotationInputVerdictEnum';
 
   @override
-  Object serialize(Serializers serializers, AnnotationInputVerdictEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnnotationInputVerdictEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnnotationInputVerdictEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnnotationInputVerdictEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnnotationInputVerdictEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnnotationInput extends AnnotationInput {
@@ -146,15 +154,15 @@ class _$AnnotationInput extends AnnotationInput {
   factory _$AnnotationInput([void Function(AnnotationInputBuilder)? updates]) =>
       (AnnotationInputBuilder()..update(updates))._build();
 
-  _$AnnotationInput._(
-      {required this.kind,
-      this.verdict,
-      this.duplicateOfRef,
-      this.body,
-      this.tags,
-      this.private,
-      this.applyStatus})
-      : super._();
+  _$AnnotationInput._({
+    required this.kind,
+    this.verdict,
+    this.duplicateOfRef,
+    this.body,
+    this.tags,
+    this.private,
+    this.applyStatus,
+  }) : super._();
   @override
   AnnotationInput rebuild(void Function(AnnotationInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -271,10 +279,14 @@ class AnnotationInputBuilder
   _$AnnotationInput _build() {
     _$AnnotationInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnnotationInput._(
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'AnnotationInput', 'kind'),
+              kind,
+              r'AnnotationInput',
+              'kind',
+            ),
             verdict: verdict,
             duplicateOfRef: duplicateOfRef,
             body: body,
@@ -289,7 +301,10 @@ class AnnotationInputBuilder
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnnotationInput', _$failedField, e.toString());
+          r'AnnotationInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

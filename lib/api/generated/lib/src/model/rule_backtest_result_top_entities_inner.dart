@@ -18,8 +18,10 @@ part 'rule_backtest_result_top_entities_inner.g.dart';
 @BuiltValue()
 abstract class RuleBacktestResultTopEntitiesInner
     implements
-        Built<RuleBacktestResultTopEntitiesInner,
-            RuleBacktestResultTopEntitiesInnerBuilder> {
+        Built<
+          RuleBacktestResultTopEntitiesInner,
+          RuleBacktestResultTopEntitiesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'sourceId')
   String? get sourceId;
 
@@ -34,9 +36,9 @@ abstract class RuleBacktestResultTopEntitiesInner
 
   RuleBacktestResultTopEntitiesInner._();
 
-  factory RuleBacktestResultTopEntitiesInner(
-          [void updates(RuleBacktestResultTopEntitiesInnerBuilder b)]) =
-      _$RuleBacktestResultTopEntitiesInner;
+  factory RuleBacktestResultTopEntitiesInner([
+    void updates(RuleBacktestResultTopEntitiesInnerBuilder b),
+  ]) = _$RuleBacktestResultTopEntitiesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultTopEntitiesInnerBuilder b) => b;
@@ -51,7 +53,7 @@ class _$RuleBacktestResultTopEntitiesInnerSerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultTopEntitiesInner,
-    _$RuleBacktestResultTopEntitiesInner
+    _$RuleBacktestResultTopEntitiesInner,
   ];
 
   @override
@@ -96,9 +98,11 @@ class _$RuleBacktestResultTopEntitiesInnerSerializer
     RuleBacktestResultTopEntitiesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,34 +118,39 @@ class _$RuleBacktestResultTopEntitiesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.externalId = valueDes;
           break;
         case r'entityId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.entityId = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         default:

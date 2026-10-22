@@ -122,8 +122,9 @@ class _$ProductTemporalSerializer
       yield r'runs';
       yield serializers.serialize(
         object.runs,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ProductTemporalRunsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProductTemporalRunsInner),
+        ]),
       );
     }
   }
@@ -134,9 +135,11 @@ class _$ProductTemporalSerializer
     ProductTemporal object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -152,58 +155,75 @@ class _$ProductTemporalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ProductTemporalTypeEnum),
-          ) as ProductTemporalTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ProductTemporalTypeEnum),
+                  )
+                  as ProductTemporalTypeEnum;
           result.type = valueDes;
           break;
         case r'cadence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cadence = valueDes;
           break;
         case r'maxGap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.maxGap = valueDes;
           break;
         case r'earliest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.earliest = valueDes;
           break;
         case r'latest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.latest = valueDes;
           break;
         case r'retention':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductTemporalRetention),
-          ) as ProductTemporalRetention?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ProductTemporalRetention,
+                    ),
+                  )
+                  as ProductTemporalRetention?;
           if (valueDes == null) continue;
           result.retention.replace(valueDes);
           break;
         case r'runs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProductTemporalRunsInner)]),
-          ) as BuiltList<ProductTemporalRunsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProductTemporalRunsInner),
+                    ]),
+                  )
+                  as BuiltList<ProductTemporalRunsInner>?;
           if (valueDes == null) continue;
           result.runs.replace(valueDes);
           break;

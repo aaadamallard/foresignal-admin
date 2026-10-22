@@ -24,8 +24,10 @@ part 'ogc_tile_matrix_set_tile_matrices_inner.g.dart';
 @BuiltValue()
 abstract class OgcTileMatrixSetTileMatricesInner
     implements
-        Built<OgcTileMatrixSetTileMatricesInner,
-            OgcTileMatrixSetTileMatricesInnerBuilder> {
+        Built<
+          OgcTileMatrixSetTileMatricesInner,
+          OgcTileMatrixSetTileMatricesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -55,9 +57,9 @@ abstract class OgcTileMatrixSetTileMatricesInner
 
   OgcTileMatrixSetTileMatricesInner._();
 
-  factory OgcTileMatrixSetTileMatricesInner(
-          [void updates(OgcTileMatrixSetTileMatricesInnerBuilder b)]) =
-      _$OgcTileMatrixSetTileMatricesInner;
+  factory OgcTileMatrixSetTileMatricesInner([
+    void updates(OgcTileMatrixSetTileMatricesInnerBuilder b),
+  ]) = _$OgcTileMatrixSetTileMatricesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcTileMatrixSetTileMatricesInnerBuilder b) => b;
@@ -72,7 +74,7 @@ class _$OgcTileMatrixSetTileMatricesInnerSerializer
   @override
   final Iterable<Type> types = const [
     OgcTileMatrixSetTileMatricesInner,
-    _$OgcTileMatrixSetTileMatricesInner
+    _$OgcTileMatrixSetTileMatricesInner,
   ];
 
   @override
@@ -140,9 +142,11 @@ class _$OgcTileMatrixSetTileMatricesInnerSerializer
     OgcTileMatrixSetTileMatricesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -158,67 +162,70 @@ class _$OgcTileMatrixSetTileMatricesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'scaleDenominator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.scaleDenominator = valueDes;
           break;
         case r'cellSize':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.cellSize = valueDes;
           break;
         case r'pointOfOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(num)]),
+                  )
+                  as BuiltList<num>;
           result.pointOfOrigin.replace(valueDes);
           break;
         case r'tileWidth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.tileWidth = valueDes;
           break;
         case r'tileHeight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.tileHeight = valueDes;
           break;
         case r'matrixWidth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.matrixWidth = valueDes;
           break;
         case r'matrixHeight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.matrixHeight = valueDes;
           break;
         case r'cornerOfOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cornerOfOrigin = valueDes;
           break;

@@ -24,24 +24,24 @@ class _$PrecursorTestInput extends PrecursorTestInput {
   @override
   final String? dedupWindow;
 
-  factory _$PrecursorTestInput(
-          [void Function(PrecursorTestInputBuilder)? updates]) =>
-      (PrecursorTestInputBuilder()..update(updates))._build();
+  factory _$PrecursorTestInput([
+    void Function(PrecursorTestInputBuilder)? updates,
+  ]) => (PrecursorTestInputBuilder()..update(updates))._build();
 
-  _$PrecursorTestInput._(
-      {required this.name,
-      this.statement,
-      this.antecedent,
-      this.consequent,
-      this.minLag,
-      required this.maxLag,
-      this.spatial,
-      this.dedupWindow})
-      : super._();
+  _$PrecursorTestInput._({
+    required this.name,
+    this.statement,
+    this.antecedent,
+    this.consequent,
+    this.minLag,
+    required this.maxLag,
+    this.spatial,
+    this.dedupWindow,
+  }) : super._();
   @override
   PrecursorTestInput rebuild(
-          void Function(PrecursorTestInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorTestInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorTestInputBuilder toBuilder() =>
@@ -161,16 +161,23 @@ class PrecursorTestInputBuilder
   PrecursorTestInput build() => _build();
 
   _$PrecursorTestInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorTestInput._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'PrecursorTestInput', 'name'),
+            name,
+            r'PrecursorTestInput',
+            'name',
+          ),
           statement: statement,
           antecedent: antecedent,
           consequent: consequent,
           minLag: minLag,
           maxLag: BuiltValueNullFieldError.checkNotNull(
-              maxLag, r'PrecursorTestInput', 'maxLag'),
+            maxLag,
+            r'PrecursorTestInput',
+            'maxLag',
+          ),
           spatial: spatial,
           dedupWindow: dedupWindow,
         );

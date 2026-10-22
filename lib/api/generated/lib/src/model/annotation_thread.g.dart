@@ -18,17 +18,17 @@ class _$AnnotationThread extends AnnotationThread {
   @override
   final DateTime lastActivityAt;
 
-  factory _$AnnotationThread(
-          [void Function(AnnotationThreadBuilder)? updates]) =>
-      (AnnotationThreadBuilder()..update(updates))._build();
+  factory _$AnnotationThread([
+    void Function(AnnotationThreadBuilder)? updates,
+  ]) => (AnnotationThreadBuilder()..update(updates))._build();
 
-  _$AnnotationThread._(
-      {required this.root,
-      required this.replies,
-      required this.replyCount,
-      required this.resolved,
-      required this.lastActivityAt})
-      : super._();
+  _$AnnotationThread._({
+    required this.root,
+    required this.replies,
+    required this.replyCount,
+    required this.resolved,
+    required this.lastActivityAt,
+  }) : super._();
   @override
   AnnotationThread rebuild(void Function(AnnotationThreadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -131,16 +131,26 @@ class AnnotationThreadBuilder
   _$AnnotationThread _build() {
     _$AnnotationThread _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnnotationThread._(
             root: root.build(),
             replies: replies.build(),
             replyCount: BuiltValueNullFieldError.checkNotNull(
-                replyCount, r'AnnotationThread', 'replyCount'),
+              replyCount,
+              r'AnnotationThread',
+              'replyCount',
+            ),
             resolved: BuiltValueNullFieldError.checkNotNull(
-                resolved, r'AnnotationThread', 'resolved'),
+              resolved,
+              r'AnnotationThread',
+              'resolved',
+            ),
             lastActivityAt: BuiltValueNullFieldError.checkNotNull(
-                lastActivityAt, r'AnnotationThread', 'lastActivityAt'),
+              lastActivityAt,
+              r'AnnotationThread',
+              'lastActivityAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -151,7 +161,10 @@ class AnnotationThreadBuilder
         replies.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnnotationThread', _$failedField, e.toString());
+          r'AnnotationThread',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

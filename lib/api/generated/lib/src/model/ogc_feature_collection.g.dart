@@ -7,11 +7,12 @@ part of 'ogc_feature_collection.dart';
 // **************************************************************************
 
 const OgcFeatureCollectionTypeEnum
-    _$ogcFeatureCollectionTypeEnum_featureCollection =
+_$ogcFeatureCollectionTypeEnum_featureCollection =
     const OgcFeatureCollectionTypeEnum._('featureCollection');
 
 OgcFeatureCollectionTypeEnum _$ogcFeatureCollectionTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'featureCollection':
       return _$ogcFeatureCollectionTypeEnum_featureCollection;
@@ -21,13 +22,14 @@ OgcFeatureCollectionTypeEnum _$ogcFeatureCollectionTypeEnumValueOf(
 }
 
 final BuiltSet<OgcFeatureCollectionTypeEnum>
-    _$ogcFeatureCollectionTypeEnumValues =
-    BuiltSet<OgcFeatureCollectionTypeEnum>(const <OgcFeatureCollectionTypeEnum>[
-  _$ogcFeatureCollectionTypeEnum_featureCollection,
-]);
+_$ogcFeatureCollectionTypeEnumValues = BuiltSet<OgcFeatureCollectionTypeEnum>(
+  const <OgcFeatureCollectionTypeEnum>[
+    _$ogcFeatureCollectionTypeEnum_featureCollection,
+  ],
+);
 
 Serializer<OgcFeatureCollectionTypeEnum>
-    _$ogcFeatureCollectionTypeEnumSerializer =
+_$ogcFeatureCollectionTypeEnumSerializer =
     _$OgcFeatureCollectionTypeEnumSerializer();
 
 class _$OgcFeatureCollectionTypeEnumSerializer
@@ -45,16 +47,20 @@ class _$OgcFeatureCollectionTypeEnumSerializer
   final String wireName = 'OgcFeatureCollectionTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, OgcFeatureCollectionTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcFeatureCollectionTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OgcFeatureCollectionTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcFeatureCollectionTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcFeatureCollectionTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcFeatureCollection extends OgcFeatureCollection {
@@ -75,24 +81,24 @@ class _$OgcFeatureCollection extends OgcFeatureCollection {
   @override
   final int? licenceFiltered;
 
-  factory _$OgcFeatureCollection(
-          [void Function(OgcFeatureCollectionBuilder)? updates]) =>
-      (OgcFeatureCollectionBuilder()..update(updates))._build();
+  factory _$OgcFeatureCollection([
+    void Function(OgcFeatureCollectionBuilder)? updates,
+  ]) => (OgcFeatureCollectionBuilder()..update(updates))._build();
 
-  _$OgcFeatureCollection._(
-      {required this.type,
-      required this.features,
-      required this.links,
-      required this.numberReturned,
-      this.numberMatched,
-      required this.timeStamp,
-      this.attributions,
-      this.licenceFiltered})
-      : super._();
+  _$OgcFeatureCollection._({
+    required this.type,
+    required this.features,
+    required this.links,
+    required this.numberReturned,
+    this.numberMatched,
+    required this.timeStamp,
+    this.attributions,
+    this.licenceFiltered,
+  }) : super._();
   @override
   OgcFeatureCollection rebuild(
-          void Function(OgcFeatureCollectionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcFeatureCollectionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcFeatureCollectionBuilder toBuilder() =>
@@ -221,17 +227,27 @@ class OgcFeatureCollectionBuilder
   _$OgcFeatureCollection _build() {
     _$OgcFeatureCollection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcFeatureCollection._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'OgcFeatureCollection', 'type'),
+              type,
+              r'OgcFeatureCollection',
+              'type',
+            ),
             features: features.build(),
             links: links.build(),
             numberReturned: BuiltValueNullFieldError.checkNotNull(
-                numberReturned, r'OgcFeatureCollection', 'numberReturned'),
+              numberReturned,
+              r'OgcFeatureCollection',
+              'numberReturned',
+            ),
             numberMatched: numberMatched,
             timeStamp: BuiltValueNullFieldError.checkNotNull(
-                timeStamp, r'OgcFeatureCollection', 'timeStamp'),
+              timeStamp,
+              r'OgcFeatureCollection',
+              'timeStamp',
+            ),
             attributions: _attributions?.build(),
             licenceFiltered: licenceFiltered,
           );
@@ -247,7 +263,10 @@ class OgcFeatureCollectionBuilder
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcFeatureCollection', _$failedField, e.toString());
+          r'OgcFeatureCollection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

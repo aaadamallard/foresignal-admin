@@ -10,15 +10,15 @@ class _$NativePushPayloadFcm extends NativePushPayloadFcm {
   @override
   final NativePushPayloadFcmMessage? message;
 
-  factory _$NativePushPayloadFcm(
-          [void Function(NativePushPayloadFcmBuilder)? updates]) =>
-      (NativePushPayloadFcmBuilder()..update(updates))._build();
+  factory _$NativePushPayloadFcm([
+    void Function(NativePushPayloadFcmBuilder)? updates,
+  ]) => (NativePushPayloadFcmBuilder()..update(updates))._build();
 
   _$NativePushPayloadFcm._({this.message}) : super._();
   @override
   NativePushPayloadFcm rebuild(
-          void Function(NativePushPayloadFcmBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadFcmBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadFcmBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$NativePushPayloadFcm extends NativePushPayloadFcm {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'NativePushPayloadFcm')
-          ..add('message', message))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'NativePushPayloadFcm',
+    )..add('message', message)).toString();
   }
 }
 
@@ -85,10 +85,7 @@ class NativePushPayloadFcmBuilder
   _$NativePushPayloadFcm _build() {
     _$NativePushPayloadFcm _$result;
     try {
-      _$result = _$v ??
-          _$NativePushPayloadFcm._(
-            message: _message?.build(),
-          );
+      _$result = _$v ?? _$NativePushPayloadFcm._(message: _message?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -96,7 +93,10 @@ class NativePushPayloadFcmBuilder
         _message?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NativePushPayloadFcm', _$failedField, e.toString());
+          r'NativePushPayloadFcm',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -24,9 +24,9 @@ SigningKeyInfoAlgEnum _$signingKeyInfoAlgEnumValueOf(String name) {
 
 final BuiltSet<SigningKeyInfoAlgEnum> _$signingKeyInfoAlgEnumValues =
     BuiltSet<SigningKeyInfoAlgEnum>(const <SigningKeyInfoAlgEnum>[
-  _$signingKeyInfoAlgEnum_ed25519,
-  _$signingKeyInfoAlgEnum_edDSA,
-]);
+      _$signingKeyInfoAlgEnum_ed25519,
+      _$signingKeyInfoAlgEnum_edDSA,
+    ]);
 
 const SigningKeyInfoStatusEnum _$signingKeyInfoStatusEnum_active =
     const SigningKeyInfoStatusEnum._('active');
@@ -46,9 +46,9 @@ SigningKeyInfoStatusEnum _$signingKeyInfoStatusEnumValueOf(String name) {
 
 final BuiltSet<SigningKeyInfoStatusEnum> _$signingKeyInfoStatusEnumValues =
     BuiltSet<SigningKeyInfoStatusEnum>(const <SigningKeyInfoStatusEnum>[
-  _$signingKeyInfoStatusEnum_active,
-  _$signingKeyInfoStatusEnum_retired,
-]);
+      _$signingKeyInfoStatusEnum_active,
+      _$signingKeyInfoStatusEnum_retired,
+    ]);
 
 Serializer<SigningKeyInfoAlgEnum> _$signingKeyInfoAlgEnumSerializer =
     _$SigningKeyInfoAlgEnumSerializer();
@@ -72,15 +72,20 @@ class _$SigningKeyInfoAlgEnumSerializer
   final String wireName = 'SigningKeyInfoAlgEnum';
 
   @override
-  Object serialize(Serializers serializers, SigningKeyInfoAlgEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SigningKeyInfoAlgEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SigningKeyInfoAlgEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SigningKeyInfoAlgEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SigningKeyInfoAlgEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SigningKeyInfoAlgEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SigningKeyInfoStatusEnumSerializer
@@ -100,16 +105,20 @@ class _$SigningKeyInfoStatusEnumSerializer
   final String wireName = 'SigningKeyInfoStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SigningKeyInfoStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SigningKeyInfoStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SigningKeyInfoStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SigningKeyInfoStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SigningKeyInfoStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SigningKeyInfo extends SigningKeyInfo {
@@ -131,15 +140,15 @@ class _$SigningKeyInfo extends SigningKeyInfo {
   factory _$SigningKeyInfo([void Function(SigningKeyInfoBuilder)? updates]) =>
       (SigningKeyInfoBuilder()..update(updates))._build();
 
-  _$SigningKeyInfo._(
-      {required this.kid,
-      required this.alg,
-      required this.status,
-      required this.createdAt,
-      this.retiredAt,
-      this.removeAfter,
-      required this.jwk})
-      : super._();
+  _$SigningKeyInfo._({
+    required this.kid,
+    required this.alg,
+    required this.status,
+    required this.createdAt,
+    this.retiredAt,
+    this.removeAfter,
+    required this.jwk,
+  }) : super._();
   @override
   SigningKeyInfo rebuild(void Function(SigningKeyInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -255,16 +264,29 @@ class SigningKeyInfoBuilder
   _$SigningKeyInfo _build() {
     _$SigningKeyInfo _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SigningKeyInfo._(
             kid: BuiltValueNullFieldError.checkNotNull(
-                kid, r'SigningKeyInfo', 'kid'),
+              kid,
+              r'SigningKeyInfo',
+              'kid',
+            ),
             alg: BuiltValueNullFieldError.checkNotNull(
-                alg, r'SigningKeyInfo', 'alg'),
+              alg,
+              r'SigningKeyInfo',
+              'alg',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SigningKeyInfo', 'status'),
+              status,
+              r'SigningKeyInfo',
+              'status',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'SigningKeyInfo', 'createdAt'),
+              createdAt,
+              r'SigningKeyInfo',
+              'createdAt',
+            ),
             retiredAt: retiredAt,
             removeAfter: removeAfter,
             jwk: jwk.build(),
@@ -276,7 +298,10 @@ class SigningKeyInfoBuilder
         jwk.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SigningKeyInfo', _$failedField, e.toString());
+          r'SigningKeyInfo',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

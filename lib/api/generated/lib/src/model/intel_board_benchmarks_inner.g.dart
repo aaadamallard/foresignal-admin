@@ -7,20 +7,20 @@ part of 'intel_board_benchmarks_inner.dart';
 // **************************************************************************
 
 const IntelBoardBenchmarksInnerStatusEnum
-    _$intelBoardBenchmarksInnerStatusEnum_pass =
+_$intelBoardBenchmarksInnerStatusEnum_pass =
     const IntelBoardBenchmarksInnerStatusEnum._('pass');
 const IntelBoardBenchmarksInnerStatusEnum
-    _$intelBoardBenchmarksInnerStatusEnum_warn =
+_$intelBoardBenchmarksInnerStatusEnum_warn =
     const IntelBoardBenchmarksInnerStatusEnum._('warn');
 const IntelBoardBenchmarksInnerStatusEnum
-    _$intelBoardBenchmarksInnerStatusEnum_fail =
+_$intelBoardBenchmarksInnerStatusEnum_fail =
     const IntelBoardBenchmarksInnerStatusEnum._('fail');
 const IntelBoardBenchmarksInnerStatusEnum
-    _$intelBoardBenchmarksInnerStatusEnum_unknown =
+_$intelBoardBenchmarksInnerStatusEnum_unknown =
     const IntelBoardBenchmarksInnerStatusEnum._('unknown');
 
 IntelBoardBenchmarksInnerStatusEnum
-    _$intelBoardBenchmarksInnerStatusEnumValueOf(String name) {
+_$intelBoardBenchmarksInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'pass':
       return _$intelBoardBenchmarksInnerStatusEnum_pass;
@@ -36,16 +36,18 @@ IntelBoardBenchmarksInnerStatusEnum
 }
 
 final BuiltSet<IntelBoardBenchmarksInnerStatusEnum>
-    _$intelBoardBenchmarksInnerStatusEnumValues = BuiltSet<
-        IntelBoardBenchmarksInnerStatusEnum>(const <IntelBoardBenchmarksInnerStatusEnum>[
-  _$intelBoardBenchmarksInnerStatusEnum_pass,
-  _$intelBoardBenchmarksInnerStatusEnum_warn,
-  _$intelBoardBenchmarksInnerStatusEnum_fail,
-  _$intelBoardBenchmarksInnerStatusEnum_unknown,
-]);
+_$intelBoardBenchmarksInnerStatusEnumValues =
+    BuiltSet<IntelBoardBenchmarksInnerStatusEnum>(
+      const <IntelBoardBenchmarksInnerStatusEnum>[
+        _$intelBoardBenchmarksInnerStatusEnum_pass,
+        _$intelBoardBenchmarksInnerStatusEnum_warn,
+        _$intelBoardBenchmarksInnerStatusEnum_fail,
+        _$intelBoardBenchmarksInnerStatusEnum_unknown,
+      ],
+    );
 
 Serializer<IntelBoardBenchmarksInnerStatusEnum>
-    _$intelBoardBenchmarksInnerStatusEnumSerializer =
+_$intelBoardBenchmarksInnerStatusEnumSerializer =
     _$IntelBoardBenchmarksInnerStatusEnumSerializer();
 
 class _$IntelBoardBenchmarksInnerStatusEnumSerializer
@@ -65,23 +67,26 @@ class _$IntelBoardBenchmarksInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelBoardBenchmarksInnerStatusEnum
+    IntelBoardBenchmarksInnerStatusEnum,
   ];
   @override
   final String wireName = 'IntelBoardBenchmarksInnerStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, IntelBoardBenchmarksInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelBoardBenchmarksInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelBoardBenchmarksInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelBoardBenchmarksInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelBoardBenchmarksInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelBoardBenchmarksInner extends IntelBoardBenchmarksInner {
@@ -90,16 +95,16 @@ class _$IntelBoardBenchmarksInner extends IntelBoardBenchmarksInner {
   @override
   final IntelBoardBenchmarksInnerStatusEnum status;
 
-  factory _$IntelBoardBenchmarksInner(
-          [void Function(IntelBoardBenchmarksInnerBuilder)? updates]) =>
-      (IntelBoardBenchmarksInnerBuilder()..update(updates))._build();
+  factory _$IntelBoardBenchmarksInner([
+    void Function(IntelBoardBenchmarksInnerBuilder)? updates,
+  ]) => (IntelBoardBenchmarksInnerBuilder()..update(updates))._build();
 
   _$IntelBoardBenchmarksInner._({required this.component, required this.status})
-      : super._();
+    : super._();
   @override
   IntelBoardBenchmarksInner rebuild(
-          void Function(IntelBoardBenchmarksInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardBenchmarksInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardBenchmarksInnerBuilder toBuilder() =>
@@ -173,12 +178,19 @@ class IntelBoardBenchmarksInnerBuilder
   IntelBoardBenchmarksInner build() => _build();
 
   _$IntelBoardBenchmarksInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardBenchmarksInner._(
           component: BuiltValueNullFieldError.checkNotNull(
-              component, r'IntelBoardBenchmarksInner', 'component'),
+            component,
+            r'IntelBoardBenchmarksInner',
+            'component',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'IntelBoardBenchmarksInner', 'status'),
+            status,
+            r'IntelBoardBenchmarksInner',
+            'status',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -12,7 +12,8 @@ const PrecursorEventPrecursorKindEnum _$precursorEventPrecursorKindEnum_series =
     const PrecursorEventPrecursorKindEnum._('series');
 
 PrecursorEventPrecursorKindEnum _$precursorEventPrecursorKindEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'event':
       return _$precursorEventPrecursorKindEnum_event;
@@ -24,27 +25,30 @@ PrecursorEventPrecursorKindEnum _$precursorEventPrecursorKindEnumValueOf(
 }
 
 final BuiltSet<PrecursorEventPrecursorKindEnum>
-    _$precursorEventPrecursorKindEnumValues = BuiltSet<
-        PrecursorEventPrecursorKindEnum>(const <PrecursorEventPrecursorKindEnum>[
-  _$precursorEventPrecursorKindEnum_event,
-  _$precursorEventPrecursorKindEnum_series,
-]);
+_$precursorEventPrecursorKindEnumValues =
+    BuiltSet<PrecursorEventPrecursorKindEnum>(
+      const <PrecursorEventPrecursorKindEnum>[
+        _$precursorEventPrecursorKindEnum_event,
+        _$precursorEventPrecursorKindEnum_series,
+      ],
+    );
 
 const PrecursorEventPrecursorStatusEnum
-    _$precursorEventPrecursorStatusEnum_candidate =
+_$precursorEventPrecursorStatusEnum_candidate =
     const PrecursorEventPrecursorStatusEnum._('candidate');
 const PrecursorEventPrecursorStatusEnum
-    _$precursorEventPrecursorStatusEnum_validated =
+_$precursorEventPrecursorStatusEnum_validated =
     const PrecursorEventPrecursorStatusEnum._('validated');
 const PrecursorEventPrecursorStatusEnum
-    _$precursorEventPrecursorStatusEnum_stale =
+_$precursorEventPrecursorStatusEnum_stale =
     const PrecursorEventPrecursorStatusEnum._('stale');
 const PrecursorEventPrecursorStatusEnum
-    _$precursorEventPrecursorStatusEnum_retired =
+_$precursorEventPrecursorStatusEnum_retired =
     const PrecursorEventPrecursorStatusEnum._('retired');
 
 PrecursorEventPrecursorStatusEnum _$precursorEventPrecursorStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'candidate':
       return _$precursorEventPrecursorStatusEnum_candidate;
@@ -60,19 +64,21 @@ PrecursorEventPrecursorStatusEnum _$precursorEventPrecursorStatusEnumValueOf(
 }
 
 final BuiltSet<PrecursorEventPrecursorStatusEnum>
-    _$precursorEventPrecursorStatusEnumValues = BuiltSet<
-        PrecursorEventPrecursorStatusEnum>(const <PrecursorEventPrecursorStatusEnum>[
-  _$precursorEventPrecursorStatusEnum_candidate,
-  _$precursorEventPrecursorStatusEnum_validated,
-  _$precursorEventPrecursorStatusEnum_stale,
-  _$precursorEventPrecursorStatusEnum_retired,
-]);
+_$precursorEventPrecursorStatusEnumValues =
+    BuiltSet<PrecursorEventPrecursorStatusEnum>(
+      const <PrecursorEventPrecursorStatusEnum>[
+        _$precursorEventPrecursorStatusEnum_candidate,
+        _$precursorEventPrecursorStatusEnum_validated,
+        _$precursorEventPrecursorStatusEnum_stale,
+        _$precursorEventPrecursorStatusEnum_retired,
+      ],
+    );
 
 Serializer<PrecursorEventPrecursorKindEnum>
-    _$precursorEventPrecursorKindEnumSerializer =
+_$precursorEventPrecursorKindEnumSerializer =
     _$PrecursorEventPrecursorKindEnumSerializer();
 Serializer<PrecursorEventPrecursorStatusEnum>
-    _$precursorEventPrecursorStatusEnumSerializer =
+_$precursorEventPrecursorStatusEnumSerializer =
     _$PrecursorEventPrecursorStatusEnumSerializer();
 
 class _$PrecursorEventPrecursorKindEnumSerializer
@@ -93,16 +99,19 @@ class _$PrecursorEventPrecursorKindEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PrecursorEventPrecursorKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecursorEventPrecursorKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorEventPrecursorKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorEventPrecursorKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorEventPrecursorKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorEventPrecursorStatusEnumSerializer
@@ -127,16 +136,19 @@ class _$PrecursorEventPrecursorStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PrecursorEventPrecursorStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecursorEventPrecursorStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorEventPrecursorStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorEventPrecursorStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorEventPrecursorStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorEventPrecursor extends PrecursorEventPrecursor {
@@ -153,22 +165,22 @@ class _$PrecursorEventPrecursor extends PrecursorEventPrecursor {
   @override
   final num? lift;
 
-  factory _$PrecursorEventPrecursor(
-          [void Function(PrecursorEventPrecursorBuilder)? updates]) =>
-      (PrecursorEventPrecursorBuilder()..update(updates))._build();
+  factory _$PrecursorEventPrecursor([
+    void Function(PrecursorEventPrecursorBuilder)? updates,
+  ]) => (PrecursorEventPrecursorBuilder()..update(updates))._build();
 
-  _$PrecursorEventPrecursor._(
-      {required this.id,
-      required this.kind,
-      required this.status,
-      this.statusReason,
-      required this.description,
-      this.lift})
-      : super._();
+  _$PrecursorEventPrecursor._({
+    required this.id,
+    required this.kind,
+    required this.status,
+    this.statusReason,
+    required this.description,
+    this.lift,
+  }) : super._();
   @override
   PrecursorEventPrecursor rebuild(
-          void Function(PrecursorEventPrecursorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorEventPrecursorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorEventPrecursorBuilder toBuilder() =>
@@ -274,17 +286,30 @@ class PrecursorEventPrecursorBuilder
   PrecursorEventPrecursor build() => _build();
 
   _$PrecursorEventPrecursor _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorEventPrecursor._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'PrecursorEventPrecursor', 'id'),
+            id,
+            r'PrecursorEventPrecursor',
+            'id',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'PrecursorEventPrecursor', 'kind'),
+            kind,
+            r'PrecursorEventPrecursor',
+            'kind',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PrecursorEventPrecursor', 'status'),
+            status,
+            r'PrecursorEventPrecursor',
+            'status',
+          ),
           statusReason: statusReason,
           description: BuiltValueNullFieldError.checkNotNull(
-              description, r'PrecursorEventPrecursor', 'description'),
+            description,
+            r'PrecursorEventPrecursor',
+            'description',
+          ),
           lift: lift,
         );
     replace(_$result);

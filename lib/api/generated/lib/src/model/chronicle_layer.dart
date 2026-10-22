@@ -188,9 +188,11 @@ class _$ChronicleLayerSerializer
     ChronicleLayer object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -206,100 +208,128 @@ class _$ChronicleLayerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chronicleId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'selector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.selector = valueDes;
           break;
         case r'areaOverride':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleArea),
-          ) as ChronicleArea?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ChronicleArea),
+                  )
+                  as ChronicleArea?;
           if (valueDes == null) continue;
           result.areaOverride.replace(valueDes);
           break;
         case r'capture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CaptureMode),
-          ) as CaptureMode;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CaptureMode),
+                  )
+                  as CaptureMode;
           result.capture.replace(valueDes);
           break;
         case r'effectiveCapture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CaptureMode),
-          ) as CaptureMode?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(CaptureMode),
+                  )
+                  as CaptureMode?;
           if (valueDes == null) continue;
           result.effectiveCapture.replace(valueDes);
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'addedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.addedAt = valueDes;
           break;
         case r'addedAtSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.addedAtSeq = valueDes;
           break;
         case r'removedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.removedAt = valueDes;
           break;
         case r'estimate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleLayerEstimate),
-          ) as ChronicleLayerEstimate?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleLayerEstimate,
+                    ),
+                  )
+                  as ChronicleLayerEstimate?;
           if (valueDes == null) continue;
           result.estimate.replace(valueDes);
           break;
         case r'stats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleLayerStats),
-          ) as ChronicleLayerStats?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ChronicleLayerStats),
+                  )
+                  as ChronicleLayerStats?;
           if (valueDes == null) continue;
           result.stats.replace(valueDes);
           break;

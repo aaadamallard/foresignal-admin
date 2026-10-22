@@ -42,9 +42,9 @@ abstract class SocialPhysicalEvidence
 
   SocialPhysicalEvidence._();
 
-  factory SocialPhysicalEvidence(
-          [void updates(SocialPhysicalEvidenceBuilder b)]) =
-      _$SocialPhysicalEvidence;
+  factory SocialPhysicalEvidence([
+    void updates(SocialPhysicalEvidenceBuilder b),
+  ]) = _$SocialPhysicalEvidence;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPhysicalEvidenceBuilder b) => b;
@@ -59,7 +59,7 @@ class _$SocialPhysicalEvidenceSerializer
   @override
   final Iterable<Type> types = const [
     SocialPhysicalEvidence,
-    _$SocialPhysicalEvidence
+    _$SocialPhysicalEvidence,
   ];
 
   @override
@@ -112,9 +112,11 @@ class _$SocialPhysicalEvidenceSerializer
     SocialPhysicalEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -130,46 +132,58 @@ class _$SocialPhysicalEvidenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'originator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.originator = valueDes;
           break;
         case r'firstObservedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.firstObservedAt = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;
         case r'negates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.negates = valueDes;
           break;

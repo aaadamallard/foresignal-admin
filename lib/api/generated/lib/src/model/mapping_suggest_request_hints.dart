@@ -29,9 +29,9 @@ abstract class MappingSuggestRequestHints
 
   MappingSuggestRequestHints._();
 
-  factory MappingSuggestRequestHints(
-          [void updates(MappingSuggestRequestHintsBuilder b)]) =
-      _$MappingSuggestRequestHints;
+  factory MappingSuggestRequestHints([
+    void updates(MappingSuggestRequestHintsBuilder b),
+  ]) = _$MappingSuggestRequestHints;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MappingSuggestRequestHintsBuilder b) => b;
@@ -46,7 +46,7 @@ class _$MappingSuggestRequestHintsSerializer
   @override
   final Iterable<Type> types = const [
     MappingSuggestRequestHints,
-    _$MappingSuggestRequestHints
+    _$MappingSuggestRequestHints,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$MappingSuggestRequestHintsSerializer
     MappingSuggestRequestHints object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,32 @@ class _$MappingSuggestRequestHintsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.kind = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;

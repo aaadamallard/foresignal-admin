@@ -17,20 +17,20 @@ class _$PropagationGraphFirstNewsPickup
   @override
   final num? afterFirstPostSeconds;
 
-  factory _$PropagationGraphFirstNewsPickup(
-          [void Function(PropagationGraphFirstNewsPickupBuilder)? updates]) =>
-      (PropagationGraphFirstNewsPickupBuilder()..update(updates))._build();
+  factory _$PropagationGraphFirstNewsPickup([
+    void Function(PropagationGraphFirstNewsPickupBuilder)? updates,
+  ]) => (PropagationGraphFirstNewsPickupBuilder()..update(updates))._build();
 
-  _$PropagationGraphFirstNewsPickup._(
-      {required this.storyId,
-      this.articleRef,
-      required this.observedAt,
-      this.afterFirstPostSeconds})
-      : super._();
+  _$PropagationGraphFirstNewsPickup._({
+    required this.storyId,
+    this.articleRef,
+    required this.observedAt,
+    this.afterFirstPostSeconds,
+  }) : super._();
   @override
   PropagationGraphFirstNewsPickup rebuild(
-          void Function(PropagationGraphFirstNewsPickupBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PropagationGraphFirstNewsPickupBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PropagationGraphFirstNewsPickupBuilder toBuilder() =>
@@ -70,8 +70,10 @@ class _$PropagationGraphFirstNewsPickup
 
 class PropagationGraphFirstNewsPickupBuilder
     implements
-        Builder<PropagationGraphFirstNewsPickup,
-            PropagationGraphFirstNewsPickupBuilder> {
+        Builder<
+          PropagationGraphFirstNewsPickup,
+          PropagationGraphFirstNewsPickupBuilder
+        > {
   _$PropagationGraphFirstNewsPickup? _$v;
 
   String? _storyId;
@@ -121,13 +123,20 @@ class PropagationGraphFirstNewsPickupBuilder
   PropagationGraphFirstNewsPickup build() => _build();
 
   _$PropagationGraphFirstNewsPickup _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PropagationGraphFirstNewsPickup._(
           storyId: BuiltValueNullFieldError.checkNotNull(
-              storyId, r'PropagationGraphFirstNewsPickup', 'storyId'),
+            storyId,
+            r'PropagationGraphFirstNewsPickup',
+            'storyId',
+          ),
           articleRef: articleRef,
           observedAt: BuiltValueNullFieldError.checkNotNull(
-              observedAt, r'PropagationGraphFirstNewsPickup', 'observedAt'),
+            observedAt,
+            r'PropagationGraphFirstNewsPickup',
+            'observedAt',
+          ),
           afterFirstPostSeconds: afterFirstPostSeconds,
         );
     replace(_$result);

@@ -18,8 +18,10 @@ part 'place_weather_digest_period_hazards_entered_inner.g.dart';
 @BuiltValue()
 abstract class PlaceWeatherDigestPeriodHazardsEnteredInner
     implements
-        Built<PlaceWeatherDigestPeriodHazardsEnteredInner,
-            PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder> {
+        Built<
+          PlaceWeatherDigestPeriodHazardsEnteredInner,
+          PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder
+        > {
   @BuiltValueField(wireName: r'kind')
   String get kind;
 
@@ -34,10 +36,9 @@ abstract class PlaceWeatherDigestPeriodHazardsEnteredInner
 
   PlaceWeatherDigestPeriodHazardsEnteredInner._();
 
-  factory PlaceWeatherDigestPeriodHazardsEnteredInner(
-          [void updates(
-              PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder b)]) =
-      _$PlaceWeatherDigestPeriodHazardsEnteredInner;
+  factory PlaceWeatherDigestPeriodHazardsEnteredInner([
+    void updates(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder b),
+  ]) = _$PlaceWeatherDigestPeriodHazardsEnteredInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder b) =>
@@ -45,8 +46,7 @@ abstract class PlaceWeatherDigestPeriodHazardsEnteredInner
 
   @BuiltValueSerializer(custom: true)
   static Serializer<PlaceWeatherDigestPeriodHazardsEnteredInner>
-      get serializer =>
-          _$PlaceWeatherDigestPeriodHazardsEnteredInnerSerializer();
+  get serializer => _$PlaceWeatherDigestPeriodHazardsEnteredInnerSerializer();
 }
 
 class _$PlaceWeatherDigestPeriodHazardsEnteredInnerSerializer
@@ -55,7 +55,7 @@ class _$PlaceWeatherDigestPeriodHazardsEnteredInnerSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestPeriodHazardsEnteredInner,
-    _$PlaceWeatherDigestPeriodHazardsEnteredInner
+    _$PlaceWeatherDigestPeriodHazardsEnteredInner,
   ];
 
   @override
@@ -96,9 +96,11 @@ class _$PlaceWeatherDigestPeriodHazardsEnteredInnerSerializer
     PlaceWeatherDigestPeriodHazardsEnteredInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,31 +116,39 @@ class _$PlaceWeatherDigestPeriodHazardsEnteredInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.kind = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;

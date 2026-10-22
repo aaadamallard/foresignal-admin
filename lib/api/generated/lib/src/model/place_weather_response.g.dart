@@ -22,23 +22,23 @@ class _$PlaceWeatherResponse extends PlaceWeatherResponse {
   @override
   final DateTime serverTime;
 
-  factory _$PlaceWeatherResponse(
-          [void Function(PlaceWeatherResponseBuilder)? updates]) =>
-      (PlaceWeatherResponseBuilder()..update(updates))._build();
+  factory _$PlaceWeatherResponse([
+    void Function(PlaceWeatherResponseBuilder)? updates,
+  ]) => (PlaceWeatherResponseBuilder()..update(updates))._build();
 
-  _$PlaceWeatherResponse._(
-      {required this.placeId,
-      this.place,
-      this.timezone,
-      this.record,
-      this.weather,
-      required this.forecastSeries,
-      required this.serverTime})
-      : super._();
+  _$PlaceWeatherResponse._({
+    required this.placeId,
+    this.place,
+    this.timezone,
+    this.record,
+    this.weather,
+    required this.forecastSeries,
+    required this.serverTime,
+  }) : super._();
   @override
   PlaceWeatherResponse rebuild(
-          void Function(PlaceWeatherResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherResponseBuilder toBuilder() =>
@@ -154,17 +154,24 @@ class PlaceWeatherResponseBuilder
   _$PlaceWeatherResponse _build() {
     _$PlaceWeatherResponse _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlaceWeatherResponse._(
             placeId: BuiltValueNullFieldError.checkNotNull(
-                placeId, r'PlaceWeatherResponse', 'placeId'),
+              placeId,
+              r'PlaceWeatherResponse',
+              'placeId',
+            ),
             place: place,
             timezone: timezone,
             record: _record?.build(),
             weather: _weather?.build(),
             forecastSeries: forecastSeries.build(),
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'PlaceWeatherResponse', 'serverTime'),
+              serverTime,
+              r'PlaceWeatherResponse',
+              'serverTime',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -177,7 +184,10 @@ class PlaceWeatherResponseBuilder
         forecastSeries.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceWeatherResponse', _$failedField, e.toString());
+          r'PlaceWeatherResponse',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

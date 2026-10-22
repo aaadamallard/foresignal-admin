@@ -99,12 +99,8 @@ class SystemInfoHoldsBuilder
   SystemInfoHolds build() => _build();
 
   _$SystemInfoHolds _build() {
-    final _$result = _$v ??
-        _$SystemInfoHolds._(
-          count: count,
-          rows: rows,
-          bytes: bytes,
-        );
+    final _$result =
+        _$v ?? _$SystemInfoHolds._(count: count, rows: rows, bytes: bytes);
     replace(_$result);
     return _$result;
   }

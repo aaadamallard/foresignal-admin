@@ -13,17 +13,18 @@ class _$AttentionTopicSocialAccountsInner
   @override
   final String handle;
 
-  factory _$AttentionTopicSocialAccountsInner(
-          [void Function(AttentionTopicSocialAccountsInnerBuilder)? updates]) =>
-      (AttentionTopicSocialAccountsInnerBuilder()..update(updates))._build();
+  factory _$AttentionTopicSocialAccountsInner([
+    void Function(AttentionTopicSocialAccountsInnerBuilder)? updates,
+  ]) => (AttentionTopicSocialAccountsInnerBuilder()..update(updates))._build();
 
-  _$AttentionTopicSocialAccountsInner._(
-      {required this.platform, required this.handle})
-      : super._();
+  _$AttentionTopicSocialAccountsInner._({
+    required this.platform,
+    required this.handle,
+  }) : super._();
   @override
   AttentionTopicSocialAccountsInner rebuild(
-          void Function(AttentionTopicSocialAccountsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AttentionTopicSocialAccountsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AttentionTopicSocialAccountsInnerBuilder toBuilder() =>
@@ -57,8 +58,10 @@ class _$AttentionTopicSocialAccountsInner
 
 class AttentionTopicSocialAccountsInnerBuilder
     implements
-        Builder<AttentionTopicSocialAccountsInner,
-            AttentionTopicSocialAccountsInnerBuilder> {
+        Builder<
+          AttentionTopicSocialAccountsInner,
+          AttentionTopicSocialAccountsInnerBuilder
+        > {
   _$AttentionTopicSocialAccountsInner? _$v;
 
   String? _platform;
@@ -90,7 +93,8 @@ class AttentionTopicSocialAccountsInnerBuilder
 
   @override
   void update(
-      void Function(AttentionTopicSocialAccountsInnerBuilder)? updates) {
+    void Function(AttentionTopicSocialAccountsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -98,12 +102,19 @@ class AttentionTopicSocialAccountsInnerBuilder
   AttentionTopicSocialAccountsInner build() => _build();
 
   _$AttentionTopicSocialAccountsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AttentionTopicSocialAccountsInner._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'AttentionTopicSocialAccountsInner', 'platform'),
+            platform,
+            r'AttentionTopicSocialAccountsInner',
+            'platform',
+          ),
           handle: BuiltValueNullFieldError.checkNotNull(
-              handle, r'AttentionTopicSocialAccountsInner', 'handle'),
+            handle,
+            r'AttentionTopicSocialAccountsInner',
+            'handle',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -54,7 +54,7 @@ class _$LeadTimeStatsFiltersSerializer
   @override
   final Iterable<Type> types = const [
     LeadTimeStatsFilters,
-    _$LeadTimeStatsFilters
+    _$LeadTimeStatsFilters,
   ];
 
   @override
@@ -108,9 +108,11 @@ class _$LeadTimeStatsFiltersSerializer
     LeadTimeStatsFilters object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,43 +128,54 @@ class _$LeadTimeStatsFiltersSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'claimType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.claimType = valueDes;
           break;
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.platform = valueDes;
           break;
         case r'region':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.region = valueDes;
           break;
         case r'foundBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(LeadTimeStatsFiltersFoundByEnum),
-          ) as LeadTimeStatsFiltersFoundByEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      LeadTimeStatsFiltersFoundByEnum,
+                    ),
+                  )
+                  as LeadTimeStatsFiltersFoundByEnum?;
           if (valueDes == null) continue;
           result.foundBy = valueDes;
           break;
         case r'since':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.since = valueDes;
           break;

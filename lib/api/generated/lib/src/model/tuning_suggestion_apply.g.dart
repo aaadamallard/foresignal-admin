@@ -10,15 +10,15 @@ class _$TuningSuggestionApply extends TuningSuggestionApply {
   @override
   final String? note;
 
-  factory _$TuningSuggestionApply(
-          [void Function(TuningSuggestionApplyBuilder)? updates]) =>
-      (TuningSuggestionApplyBuilder()..update(updates))._build();
+  factory _$TuningSuggestionApply([
+    void Function(TuningSuggestionApplyBuilder)? updates,
+  ]) => (TuningSuggestionApplyBuilder()..update(updates))._build();
 
   _$TuningSuggestionApply._({this.note}) : super._();
   @override
   TuningSuggestionApply rebuild(
-          void Function(TuningSuggestionApplyBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TuningSuggestionApplyBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TuningSuggestionApplyBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$TuningSuggestionApply extends TuningSuggestionApply {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'TuningSuggestionApply')
-          ..add('note', note))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'TuningSuggestionApply',
+    )..add('note', note)).toString();
   }
 }
 
@@ -81,10 +81,7 @@ class TuningSuggestionApplyBuilder
   TuningSuggestionApply build() => _build();
 
   _$TuningSuggestionApply _build() {
-    final _$result = _$v ??
-        _$TuningSuggestionApply._(
-          note: note,
-        );
+    final _$result = _$v ?? _$TuningSuggestionApply._(note: note);
     replace(_$result);
     return _$result;
   }

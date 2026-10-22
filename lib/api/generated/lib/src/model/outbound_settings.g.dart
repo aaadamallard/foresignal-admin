@@ -16,13 +16,16 @@ class _$OutboundSettings extends OutboundSettings {
   @override
   final BuiltList<String>? denyCidrs;
 
-  factory _$OutboundSettings(
-          [void Function(OutboundSettingsBuilder)? updates]) =>
-      (OutboundSettingsBuilder()..update(updates))._build();
+  factory _$OutboundSettings([
+    void Function(OutboundSettingsBuilder)? updates,
+  ]) => (OutboundSettingsBuilder()..update(updates))._build();
 
-  _$OutboundSettings._(
-      {this.allowHosts, this.allowCidrs, this.denyHosts, this.denyCidrs})
-      : super._();
+  _$OutboundSettings._({
+    this.allowHosts,
+    this.allowCidrs,
+    this.denyHosts,
+    this.denyCidrs,
+  }) : super._();
   @override
   OutboundSettings rebuild(void Function(OutboundSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -123,7 +126,8 @@ class OutboundSettingsBuilder
   _$OutboundSettings _build() {
     _$OutboundSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OutboundSettings._(
             allowHosts: _allowHosts?.build(),
             allowCidrs: _allowCidrs?.build(),
@@ -143,7 +147,10 @@ class OutboundSettingsBuilder
         _denyCidrs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OutboundSettings', _$failedField, e.toString());
+          r'OutboundSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

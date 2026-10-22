@@ -32,9 +32,9 @@ abstract class HistoryFrameRemovalsInner
 
   HistoryFrameRemovalsInner._();
 
-  factory HistoryFrameRemovalsInner(
-          [void updates(HistoryFrameRemovalsInnerBuilder b)]) =
-      _$HistoryFrameRemovalsInner;
+  factory HistoryFrameRemovalsInner([
+    void updates(HistoryFrameRemovalsInnerBuilder b),
+  ]) = _$HistoryFrameRemovalsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HistoryFrameRemovalsInnerBuilder b) => b;
@@ -49,7 +49,7 @@ class _$HistoryFrameRemovalsInnerSerializer
   @override
   final Iterable<Type> types = const [
     HistoryFrameRemovalsInner,
-    _$HistoryFrameRemovalsInner
+    _$HistoryFrameRemovalsInner,
   ];
 
   @override
@@ -83,9 +83,11 @@ class _$HistoryFrameRemovalsInnerSerializer
     HistoryFrameRemovalsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +103,32 @@ class _$HistoryFrameRemovalsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HistoryFrameRemovalsInnerReasonEnum),
-          ) as HistoryFrameRemovalsInnerReasonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HistoryFrameRemovalsInnerReasonEnum,
+                    ),
+                  )
+                  as HistoryFrameRemovalsInnerReasonEnum;
           result.reason = valueDes;
           break;
         case r'left':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.left = valueDes;
           break;
         default:

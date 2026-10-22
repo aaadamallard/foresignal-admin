@@ -14,7 +14,8 @@ const LicenceTermsCommercialUseEnum _$licenceTermsCommercialUseEnum_UNKNOWN =
     const LicenceTermsCommercialUseEnum._('UNKNOWN');
 
 LicenceTermsCommercialUseEnum _$licenceTermsCommercialUseEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ALLOWED':
       return _$licenceTermsCommercialUseEnum_ALLOWED;
@@ -28,26 +29,28 @@ LicenceTermsCommercialUseEnum _$licenceTermsCommercialUseEnumValueOf(
 }
 
 final BuiltSet<LicenceTermsCommercialUseEnum>
-    _$licenceTermsCommercialUseEnumValues = BuiltSet<
-        LicenceTermsCommercialUseEnum>(const <LicenceTermsCommercialUseEnum>[
-  _$licenceTermsCommercialUseEnum_ALLOWED,
-  _$licenceTermsCommercialUseEnum_FORBIDDEN,
-  _$licenceTermsCommercialUseEnum_UNKNOWN,
-]);
+_$licenceTermsCommercialUseEnumValues = BuiltSet<LicenceTermsCommercialUseEnum>(
+  const <LicenceTermsCommercialUseEnum>[
+    _$licenceTermsCommercialUseEnum_ALLOWED,
+    _$licenceTermsCommercialUseEnum_FORBIDDEN,
+    _$licenceTermsCommercialUseEnum_UNKNOWN,
+  ],
+);
 
 const LicenceTermsRedistributionEnum _$licenceTermsRedistributionEnum_ALLOWED =
     const LicenceTermsRedistributionEnum._('ALLOWED');
 const LicenceTermsRedistributionEnum
-    _$licenceTermsRedistributionEnum_LOCAL_ONLY =
+_$licenceTermsRedistributionEnum_LOCAL_ONLY =
     const LicenceTermsRedistributionEnum._('LOCAL_ONLY');
 const LicenceTermsRedistributionEnum
-    _$licenceTermsRedistributionEnum_FORBIDDEN =
+_$licenceTermsRedistributionEnum_FORBIDDEN =
     const LicenceTermsRedistributionEnum._('FORBIDDEN');
 const LicenceTermsRedistributionEnum _$licenceTermsRedistributionEnum_UNKNOWN =
     const LicenceTermsRedistributionEnum._('UNKNOWN');
 
 LicenceTermsRedistributionEnum _$licenceTermsRedistributionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ALLOWED':
       return _$licenceTermsRedistributionEnum_ALLOWED;
@@ -63,19 +66,21 @@ LicenceTermsRedistributionEnum _$licenceTermsRedistributionEnumValueOf(
 }
 
 final BuiltSet<LicenceTermsRedistributionEnum>
-    _$licenceTermsRedistributionEnumValues = BuiltSet<
-        LicenceTermsRedistributionEnum>(const <LicenceTermsRedistributionEnum>[
-  _$licenceTermsRedistributionEnum_ALLOWED,
-  _$licenceTermsRedistributionEnum_LOCAL_ONLY,
-  _$licenceTermsRedistributionEnum_FORBIDDEN,
-  _$licenceTermsRedistributionEnum_UNKNOWN,
-]);
+_$licenceTermsRedistributionEnumValues =
+    BuiltSet<LicenceTermsRedistributionEnum>(
+      const <LicenceTermsRedistributionEnum>[
+        _$licenceTermsRedistributionEnum_ALLOWED,
+        _$licenceTermsRedistributionEnum_LOCAL_ONLY,
+        _$licenceTermsRedistributionEnum_FORBIDDEN,
+        _$licenceTermsRedistributionEnum_UNKNOWN,
+      ],
+    );
 
 Serializer<LicenceTermsCommercialUseEnum>
-    _$licenceTermsCommercialUseEnumSerializer =
+_$licenceTermsCommercialUseEnumSerializer =
     _$LicenceTermsCommercialUseEnumSerializer();
 Serializer<LicenceTermsRedistributionEnum>
-    _$licenceTermsRedistributionEnumSerializer =
+_$licenceTermsRedistributionEnumSerializer =
     _$LicenceTermsRedistributionEnumSerializer();
 
 class _$LicenceTermsCommercialUseEnumSerializer
@@ -98,16 +103,19 @@ class _$LicenceTermsCommercialUseEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, LicenceTermsCommercialUseEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LicenceTermsCommercialUseEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LicenceTermsCommercialUseEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LicenceTermsCommercialUseEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LicenceTermsCommercialUseEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LicenceTermsRedistributionEnumSerializer
@@ -132,16 +140,19 @@ class _$LicenceTermsRedistributionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, LicenceTermsRedistributionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LicenceTermsRedistributionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LicenceTermsRedistributionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LicenceTermsRedistributionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LicenceTermsRedistributionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LicenceTerms extends LicenceTerms {
@@ -165,16 +176,16 @@ class _$LicenceTerms extends LicenceTerms {
   factory _$LicenceTerms([void Function(LicenceTermsBuilder)? updates]) =>
       (LicenceTermsBuilder()..update(updates))._build();
 
-  _$LicenceTerms._(
-      {required this.id,
-      required this.name,
-      required this.commercialUse,
-      required this.shareAlike,
-      required this.attributionRequired,
-      required this.redistribution,
-      this.attributionText,
-      this.termsUrl})
-      : super._();
+  _$LicenceTerms._({
+    required this.id,
+    required this.name,
+    required this.commercialUse,
+    required this.shareAlike,
+    required this.attributionRequired,
+    required this.redistribution,
+    this.attributionText,
+    this.termsUrl,
+  }) : super._();
   @override
   LicenceTerms rebuild(void Function(LicenceTermsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -300,19 +311,35 @@ class LicenceTermsBuilder
   LicenceTerms build() => _build();
 
   _$LicenceTerms _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LicenceTerms._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'LicenceTerms', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'LicenceTerms', 'name'),
+            name,
+            r'LicenceTerms',
+            'name',
+          ),
           commercialUse: BuiltValueNullFieldError.checkNotNull(
-              commercialUse, r'LicenceTerms', 'commercialUse'),
+            commercialUse,
+            r'LicenceTerms',
+            'commercialUse',
+          ),
           shareAlike: BuiltValueNullFieldError.checkNotNull(
-              shareAlike, r'LicenceTerms', 'shareAlike'),
+            shareAlike,
+            r'LicenceTerms',
+            'shareAlike',
+          ),
           attributionRequired: BuiltValueNullFieldError.checkNotNull(
-              attributionRequired, r'LicenceTerms', 'attributionRequired'),
+            attributionRequired,
+            r'LicenceTerms',
+            'attributionRequired',
+          ),
           redistribution: BuiltValueNullFieldError.checkNotNull(
-              redistribution, r'LicenceTerms', 'redistribution'),
+            redistribution,
+            r'LicenceTerms',
+            'redistribution',
+          ),
           attributionText: attributionText,
           termsUrl: termsUrl,
         );

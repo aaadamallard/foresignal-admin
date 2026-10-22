@@ -12,15 +12,15 @@ class _$SystemInfoRasterFormatsWebp extends SystemInfoRasterFormatsWebp {
   @override
   final String? reason;
 
-  factory _$SystemInfoRasterFormatsWebp(
-          [void Function(SystemInfoRasterFormatsWebpBuilder)? updates]) =>
-      (SystemInfoRasterFormatsWebpBuilder()..update(updates))._build();
+  factory _$SystemInfoRasterFormatsWebp([
+    void Function(SystemInfoRasterFormatsWebpBuilder)? updates,
+  ]) => (SystemInfoRasterFormatsWebpBuilder()..update(updates))._build();
 
   _$SystemInfoRasterFormatsWebp._({this.available, this.reason}) : super._();
   @override
   SystemInfoRasterFormatsWebp rebuild(
-          void Function(SystemInfoRasterFormatsWebpBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoRasterFormatsWebpBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoRasterFormatsWebpBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$SystemInfoRasterFormatsWebp extends SystemInfoRasterFormatsWebp {
 
 class SystemInfoRasterFormatsWebpBuilder
     implements
-        Builder<SystemInfoRasterFormatsWebp,
-            SystemInfoRasterFormatsWebpBuilder> {
+        Builder<
+          SystemInfoRasterFormatsWebp,
+          SystemInfoRasterFormatsWebpBuilder
+        > {
   _$SystemInfoRasterFormatsWebp? _$v;
 
   bool? _available;
@@ -94,11 +96,9 @@ class SystemInfoRasterFormatsWebpBuilder
   SystemInfoRasterFormatsWebp build() => _build();
 
   _$SystemInfoRasterFormatsWebp _build() {
-    final _$result = _$v ??
-        _$SystemInfoRasterFormatsWebp._(
-          available: available,
-          reason: reason,
-        );
+    final _$result =
+        _$v ??
+        _$SystemInfoRasterFormatsWebp._(available: available, reason: reason);
     replace(_$result);
     return _$result;
   }

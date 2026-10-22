@@ -23,14 +23,14 @@ class _$PrincipalPatch extends PrincipalPatch {
   factory _$PrincipalPatch([void Function(PrincipalPatchBuilder)? updates]) =>
       (PrincipalPatchBuilder()..update(updates))._build();
 
-  _$PrincipalPatch._(
-      {this.displayName,
-      this.email,
-      this.avatarMediaId,
-      this.timezone,
-      this.organization,
-      this.disabled})
-      : super._();
+  _$PrincipalPatch._({
+    this.displayName,
+    this.email,
+    this.avatarMediaId,
+    this.timezone,
+    this.organization,
+    this.disabled,
+  }) : super._();
   @override
   PrincipalPatch rebuild(void Function(PrincipalPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,7 +137,8 @@ class PrincipalPatchBuilder
   PrincipalPatch build() => _build();
 
   _$PrincipalPatch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrincipalPatch._(
           displayName: displayName,
           email: email,

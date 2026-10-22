@@ -14,7 +14,8 @@ const HypothesisSetEventStatusEnum _$hypothesisSetEventStatusEnum_archived =
     const HypothesisSetEventStatusEnum._('archived');
 
 HypothesisSetEventStatusEnum _$hypothesisSetEventStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'active':
       return _$hypothesisSetEventStatusEnum_active;
@@ -28,26 +29,26 @@ HypothesisSetEventStatusEnum _$hypothesisSetEventStatusEnumValueOf(
 }
 
 final BuiltSet<HypothesisSetEventStatusEnum>
-    _$hypothesisSetEventStatusEnumValues =
+_$hypothesisSetEventStatusEnumValues =
     BuiltSet<HypothesisSetEventStatusEnum>(const <HypothesisSetEventStatusEnum>[
-  _$hypothesisSetEventStatusEnum_active,
-  _$hypothesisSetEventStatusEnum_resolved,
-  _$hypothesisSetEventStatusEnum_archived,
-]);
+      _$hypothesisSetEventStatusEnum_active,
+      _$hypothesisSetEventStatusEnum_resolved,
+      _$hypothesisSetEventStatusEnum_archived,
+    ]);
 
 const HypothesisSetEventCauseEnum
-    _$hypothesisSetEventCauseEnum_indicatorObserved =
+_$hypothesisSetEventCauseEnum_indicatorObserved =
     const HypothesisSetEventCauseEnum._('indicatorObserved');
 const HypothesisSetEventCauseEnum
-    _$hypothesisSetEventCauseEnum_indicatorAbsent =
+_$hypothesisSetEventCauseEnum_indicatorAbsent =
     const HypothesisSetEventCauseEnum._('indicatorAbsent');
 const HypothesisSetEventCauseEnum _$hypothesisSetEventCauseEnum_evidenceAdded =
     const HypothesisSetEventCauseEnum._('evidenceAdded');
 const HypothesisSetEventCauseEnum
-    _$hypothesisSetEventCauseEnum_evidenceRemoved =
+_$hypothesisSetEventCauseEnum_evidenceRemoved =
     const HypothesisSetEventCauseEnum._('evidenceRemoved');
 const HypothesisSetEventCauseEnum
-    _$hypothesisSetEventCauseEnum_baseRateRefresh =
+_$hypothesisSetEventCauseEnum_baseRateRefresh =
     const HypothesisSetEventCauseEnum._('baseRateRefresh');
 const HypothesisSetEventCauseEnum _$hypothesisSetEventCauseEnum_review =
     const HypothesisSetEventCauseEnum._('review');
@@ -80,23 +81,23 @@ HypothesisSetEventCauseEnum _$hypothesisSetEventCauseEnumValueOf(String name) {
 }
 
 final BuiltSet<HypothesisSetEventCauseEnum>
-    _$hypothesisSetEventCauseEnumValues =
+_$hypothesisSetEventCauseEnumValues =
     BuiltSet<HypothesisSetEventCauseEnum>(const <HypothesisSetEventCauseEnum>[
-  _$hypothesisSetEventCauseEnum_indicatorObserved,
-  _$hypothesisSetEventCauseEnum_indicatorAbsent,
-  _$hypothesisSetEventCauseEnum_evidenceAdded,
-  _$hypothesisSetEventCauseEnum_evidenceRemoved,
-  _$hypothesisSetEventCauseEnum_baseRateRefresh,
-  _$hypothesisSetEventCauseEnum_review,
-  _$hypothesisSetEventCauseEnum_operator_,
-  _$hypothesisSetEventCauseEnum_created,
-]);
+      _$hypothesisSetEventCauseEnum_indicatorObserved,
+      _$hypothesisSetEventCauseEnum_indicatorAbsent,
+      _$hypothesisSetEventCauseEnum_evidenceAdded,
+      _$hypothesisSetEventCauseEnum_evidenceRemoved,
+      _$hypothesisSetEventCauseEnum_baseRateRefresh,
+      _$hypothesisSetEventCauseEnum_review,
+      _$hypothesisSetEventCauseEnum_operator_,
+      _$hypothesisSetEventCauseEnum_created,
+    ]);
 
 Serializer<HypothesisSetEventStatusEnum>
-    _$hypothesisSetEventStatusEnumSerializer =
+_$hypothesisSetEventStatusEnumSerializer =
     _$HypothesisSetEventStatusEnumSerializer();
 Serializer<HypothesisSetEventCauseEnum>
-    _$hypothesisSetEventCauseEnumSerializer =
+_$hypothesisSetEventCauseEnumSerializer =
     _$HypothesisSetEventCauseEnumSerializer();
 
 class _$HypothesisSetEventStatusEnumSerializer
@@ -118,16 +119,20 @@ class _$HypothesisSetEventStatusEnumSerializer
   final String wireName = 'HypothesisSetEventStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetEventCauseEnumSerializer
@@ -159,16 +164,20 @@ class _$HypothesisSetEventCauseEnumSerializer
   final String wireName = 'HypothesisSetEventCauseEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetEventCauseEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetEventCauseEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetEventCauseEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetEventCauseEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetEventCauseEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetEvent extends HypothesisSetEvent {
@@ -193,26 +202,26 @@ class _$HypothesisSetEvent extends HypothesisSetEvent {
   @override
   final DateTime at;
 
-  factory _$HypothesisSetEvent(
-          [void Function(HypothesisSetEventBuilder)? updates]) =>
-      (HypothesisSetEventBuilder()..update(updates))._build();
+  factory _$HypothesisSetEvent([
+    void Function(HypothesisSetEventBuilder)? updates,
+  ]) => (HypothesisSetEventBuilder()..update(updates))._build();
 
-  _$HypothesisSetEvent._(
-      {required this.setId,
-      required this.version,
-      this.question,
-      required this.status,
-      this.revisionId,
-      this.cause,
-      this.hypotheses,
-      this.bandChanges,
-      this.private,
-      required this.at})
-      : super._();
+  _$HypothesisSetEvent._({
+    required this.setId,
+    required this.version,
+    this.question,
+    required this.status,
+    this.revisionId,
+    this.cause,
+    this.hypotheses,
+    this.bandChanges,
+    this.private,
+    required this.at,
+  }) : super._();
   @override
   HypothesisSetEvent rebuild(
-          void Function(HypothesisSetEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetEventBuilder toBuilder() =>
@@ -306,8 +315,8 @@ class HypothesisSetEventBuilder
   ListBuilder<HypothesisSetEventBandChangesInner> get bandChanges =>
       _$this._bandChanges ??= ListBuilder<HypothesisSetEventBandChangesInner>();
   set bandChanges(
-          ListBuilder<HypothesisSetEventBandChangesInner>? bandChanges) =>
-      _$this._bandChanges = bandChanges;
+    ListBuilder<HypothesisSetEventBandChangesInner>? bandChanges,
+  ) => _$this._bandChanges = bandChanges;
 
   bool? _private;
   bool? get private => _$this._private;
@@ -355,22 +364,35 @@ class HypothesisSetEventBuilder
   _$HypothesisSetEvent _build() {
     _$HypothesisSetEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisSetEvent._(
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'HypothesisSetEvent', 'setId'),
+              setId,
+              r'HypothesisSetEvent',
+              'setId',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'HypothesisSetEvent', 'version'),
+              version,
+              r'HypothesisSetEvent',
+              'version',
+            ),
             question: question,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'HypothesisSetEvent', 'status'),
+              status,
+              r'HypothesisSetEvent',
+              'status',
+            ),
             revisionId: revisionId,
             cause: cause,
             hypotheses: _hypotheses?.build(),
             bandChanges: _bandChanges?.build(),
             private: private,
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'HypothesisSetEvent', 'at'),
+              at,
+              r'HypothesisSetEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -381,7 +403,10 @@ class HypothesisSetEventBuilder
         _bandChanges?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisSetEvent', _$failedField, e.toString());
+          r'HypothesisSetEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

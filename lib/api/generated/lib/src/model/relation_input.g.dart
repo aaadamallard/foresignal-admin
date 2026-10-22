@@ -96,27 +96,27 @@ RelationInputTypeEnum _$relationInputTypeEnumValueOf(String name) {
 
 final BuiltSet<RelationInputTypeEnum> _$relationInputTypeEnumValues =
     BuiltSet<RelationInputTypeEnum>(const <RelationInputTypeEnum>[
-  _$relationInputTypeEnum_memberOf,
-  _$relationInputTypeEnum_observedBy,
-  _$relationInputTypeEnum_sameAs,
-  _$relationInputTypeEnum_locatedIn,
-  _$relationInputTypeEnum_near,
-  _$relationInputTypeEnum_dependsOn,
-  _$relationInputTypeEnum_affects,
-  _$relationInputTypeEnum_derivedFrom,
-  _$relationInputTypeEnum_evidenceFor,
-  _$relationInputTypeEnum_evidenceAgainst,
-  _$relationInputTypeEnum_about,
-  _$relationInputTypeEnum_mentions,
-  _$relationInputTypeEnum_precedes,
-  _$relationInputTypeEnum_causes,
-  _$relationInputTypeEnum_relatedTo,
-  _$relationInputTypeEnum_owns,
-  _$relationInputTypeEnum_controls,
-  _$relationInputTypeEnum_officerOf,
-  _$relationInputTypeEnum_beneficialOwner,
-  _$relationInputTypeEnum_affiliatedWith,
-]);
+      _$relationInputTypeEnum_memberOf,
+      _$relationInputTypeEnum_observedBy,
+      _$relationInputTypeEnum_sameAs,
+      _$relationInputTypeEnum_locatedIn,
+      _$relationInputTypeEnum_near,
+      _$relationInputTypeEnum_dependsOn,
+      _$relationInputTypeEnum_affects,
+      _$relationInputTypeEnum_derivedFrom,
+      _$relationInputTypeEnum_evidenceFor,
+      _$relationInputTypeEnum_evidenceAgainst,
+      _$relationInputTypeEnum_about,
+      _$relationInputTypeEnum_mentions,
+      _$relationInputTypeEnum_precedes,
+      _$relationInputTypeEnum_causes,
+      _$relationInputTypeEnum_relatedTo,
+      _$relationInputTypeEnum_owns,
+      _$relationInputTypeEnum_controls,
+      _$relationInputTypeEnum_officerOf,
+      _$relationInputTypeEnum_beneficialOwner,
+      _$relationInputTypeEnum_affiliatedWith,
+    ]);
 
 const RelationInputLabelEnum _$relationInputLabelEnum_confirmed =
     const RelationInputLabelEnum._('confirmed');
@@ -144,11 +144,11 @@ RelationInputLabelEnum _$relationInputLabelEnumValueOf(String name) {
 
 final BuiltSet<RelationInputLabelEnum> _$relationInputLabelEnumValues =
     BuiltSet<RelationInputLabelEnum>(const <RelationInputLabelEnum>[
-  _$relationInputLabelEnum_confirmed,
-  _$relationInputLabelEnum_likely,
-  _$relationInputLabelEnum_possible,
-  _$relationInputLabelEnum_speculative,
-]);
+      _$relationInputLabelEnum_confirmed,
+      _$relationInputLabelEnum_likely,
+      _$relationInputLabelEnum_possible,
+      _$relationInputLabelEnum_speculative,
+    ]);
 
 Serializer<RelationInputTypeEnum> _$relationInputTypeEnumSerializer =
     _$RelationInputTypeEnumSerializer();
@@ -208,15 +208,20 @@ class _$RelationInputTypeEnumSerializer
   final String wireName = 'RelationInputTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, RelationInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RelationInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  RelationInputTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RelationInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  RelationInputTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RelationInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RelationInputLabelEnumSerializer
@@ -240,15 +245,20 @@ class _$RelationInputLabelEnumSerializer
   final String wireName = 'RelationInputLabelEnum';
 
   @override
-  Object serialize(Serializers serializers, RelationInputLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RelationInputLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  RelationInputLabelEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RelationInputLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  RelationInputLabelEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RelationInputLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RelationInput extends RelationInput {
@@ -272,16 +282,16 @@ class _$RelationInput extends RelationInput {
   factory _$RelationInput([void Function(RelationInputBuilder)? updates]) =>
       (RelationInputBuilder()..update(updates))._build();
 
-  _$RelationInput._(
-      {required this.fromRef,
-      required this.toRef,
-      required this.type,
-      this.validFrom,
-      this.validTo,
-      this.confidence,
-      this.label,
-      this.private})
-      : super._();
+  _$RelationInput._({
+    required this.fromRef,
+    required this.toRef,
+    required this.type,
+    this.validFrom,
+    this.validTo,
+    this.confidence,
+    this.label,
+    this.private,
+  }) : super._();
   @override
   RelationInput rebuild(void Function(RelationInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -403,14 +413,24 @@ class RelationInputBuilder
   RelationInput build() => _build();
 
   _$RelationInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RelationInput._(
           fromRef: BuiltValueNullFieldError.checkNotNull(
-              fromRef, r'RelationInput', 'fromRef'),
+            fromRef,
+            r'RelationInput',
+            'fromRef',
+          ),
           toRef: BuiltValueNullFieldError.checkNotNull(
-              toRef, r'RelationInput', 'toRef'),
+            toRef,
+            r'RelationInput',
+            'toRef',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'RelationInput', 'type'),
+            type,
+            r'RelationInput',
+            'type',
+          ),
           validFrom: validFrom,
           validTo: validTo,
           confidence: confidence,

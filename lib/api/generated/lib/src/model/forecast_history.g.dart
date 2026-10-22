@@ -32,11 +32,11 @@ ForecastHistoryTypeEnum _$forecastHistoryTypeEnumValueOf(String name) {
 
 final BuiltSet<ForecastHistoryTypeEnum> _$forecastHistoryTypeEnumValues =
     BuiltSet<ForecastHistoryTypeEnum>(const <ForecastHistoryTypeEnum>[
-  _$forecastHistoryTypeEnum_binary,
-  _$forecastHistoryTypeEnum_multiple,
-  _$forecastHistoryTypeEnum_ordered,
-  _$forecastHistoryTypeEnum_numeric,
-]);
+      _$forecastHistoryTypeEnum_binary,
+      _$forecastHistoryTypeEnum_multiple,
+      _$forecastHistoryTypeEnum_ordered,
+      _$forecastHistoryTypeEnum_numeric,
+    ]);
 
 const ForecastHistoryStepEnum _$forecastHistoryStepEnum_P1D =
     const ForecastHistoryStepEnum._('P1D');
@@ -52,8 +52,8 @@ ForecastHistoryStepEnum _$forecastHistoryStepEnumValueOf(String name) {
 
 final BuiltSet<ForecastHistoryStepEnum> _$forecastHistoryStepEnumValues =
     BuiltSet<ForecastHistoryStepEnum>(const <ForecastHistoryStepEnum>[
-  _$forecastHistoryStepEnum_P1D,
-]);
+      _$forecastHistoryStepEnum_P1D,
+    ]);
 
 Serializer<ForecastHistoryTypeEnum> _$forecastHistoryTypeEnumSerializer =
     _$ForecastHistoryTypeEnumSerializer();
@@ -81,16 +81,20 @@ class _$ForecastHistoryTypeEnumSerializer
   final String wireName = 'ForecastHistoryTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastHistoryTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastHistoryTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastHistoryTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastHistoryTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastHistoryTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastHistoryStepEnumSerializer
@@ -108,16 +112,20 @@ class _$ForecastHistoryStepEnumSerializer
   final String wireName = 'ForecastHistoryStepEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastHistoryStepEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastHistoryStepEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastHistoryStepEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastHistoryStepEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastHistoryStepEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastHistory extends ForecastHistory {
@@ -137,14 +145,14 @@ class _$ForecastHistory extends ForecastHistory {
   factory _$ForecastHistory([void Function(ForecastHistoryBuilder)? updates]) =>
       (ForecastHistoryBuilder()..update(updates))._build();
 
-  _$ForecastHistory._(
-      {required this.questionId,
-      required this.type,
-      required this.step,
-      this.from,
-      this.to,
-      required this.series})
-      : super._();
+  _$ForecastHistory._({
+    required this.questionId,
+    required this.type,
+    required this.step,
+    this.from,
+    this.to,
+    required this.series,
+  }) : super._();
   @override
   ForecastHistory rebuild(void Function(ForecastHistoryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -254,14 +262,24 @@ class ForecastHistoryBuilder
   _$ForecastHistory _build() {
     _$ForecastHistory _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastHistory._(
             questionId: BuiltValueNullFieldError.checkNotNull(
-                questionId, r'ForecastHistory', 'questionId'),
+              questionId,
+              r'ForecastHistory',
+              'questionId',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ForecastHistory', 'type'),
+              type,
+              r'ForecastHistory',
+              'type',
+            ),
             step: BuiltValueNullFieldError.checkNotNull(
-                step, r'ForecastHistory', 'step'),
+              step,
+              r'ForecastHistory',
+              'step',
+            ),
             from: from,
             to: to,
             series: series.build(),
@@ -273,7 +291,10 @@ class ForecastHistoryBuilder
         series.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastHistory', _$failedField, e.toString());
+          r'ForecastHistory',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

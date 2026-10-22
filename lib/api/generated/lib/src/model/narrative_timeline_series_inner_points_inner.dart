@@ -17,8 +17,10 @@ part 'narrative_timeline_series_inner_points_inner.g.dart';
 @BuiltValue()
 abstract class NarrativeTimelineSeriesInnerPointsInner
     implements
-        Built<NarrativeTimelineSeriesInnerPointsInner,
-            NarrativeTimelineSeriesInnerPointsInnerBuilder> {
+        Built<
+          NarrativeTimelineSeriesInnerPointsInner,
+          NarrativeTimelineSeriesInnerPointsInnerBuilder
+        > {
   @BuiltValueField(wireName: r't')
   DateTime get t;
 
@@ -30,9 +32,9 @@ abstract class NarrativeTimelineSeriesInnerPointsInner
 
   NarrativeTimelineSeriesInnerPointsInner._();
 
-  factory NarrativeTimelineSeriesInnerPointsInner(
-          [void updates(NarrativeTimelineSeriesInnerPointsInnerBuilder b)]) =
-      _$NarrativeTimelineSeriesInnerPointsInner;
+  factory NarrativeTimelineSeriesInnerPointsInner([
+    void updates(NarrativeTimelineSeriesInnerPointsInnerBuilder b),
+  ]) = _$NarrativeTimelineSeriesInnerPointsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NarrativeTimelineSeriesInnerPointsInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$NarrativeTimelineSeriesInnerPointsInnerSerializer
   @override
   final Iterable<Type> types = const [
     NarrativeTimelineSeriesInnerPointsInner,
-    _$NarrativeTimelineSeriesInnerPointsInner
+    _$NarrativeTimelineSeriesInnerPointsInner,
   ];
 
   @override
@@ -81,9 +83,11 @@ class _$NarrativeTimelineSeriesInnerPointsInnerSerializer
     NarrativeTimelineSeriesInnerPointsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +103,24 @@ class _$NarrativeTimelineSeriesInnerPointsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r't':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.t = valueDes;
           break;
         case r'posts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.posts = valueDes;
           break;
         case r'uniqueAuthors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.uniqueAuthors = valueDes;
           break;
         default:

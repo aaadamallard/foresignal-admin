@@ -48,16 +48,10 @@ class KinematicsApi {
     final _path = r'/v1/kinematics/cpa/batch';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -72,10 +66,7 @@ class KinematicsApi {
       _bodyData = _serializers.serialize(cpaBatchRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -98,9 +89,10 @@ class KinematicsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CpaBatchResult),
-            ) as CpaBatchResult;
+                  rawResponse,
+                  specifiedType: const FullType(CpaBatchResult),
+                )
+                as CpaBatchResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -153,16 +145,10 @@ class KinematicsApi {
     final _path = r'/v1/kinematics/cpa';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -173,8 +159,11 @@ class KinematicsApi {
       r'a': encodeQueryParameter(_serializers, a, const FullType(String)),
       r'b': encodeQueryParameter(_serializers, b, const FullType(String)),
       if (horizon != null)
-        r'horizon':
-            encodeQueryParameter(_serializers, horizon, const FullType(String)),
+        r'horizon': encodeQueryParameter(
+          _serializers,
+          horizon,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -193,9 +182,10 @@ class KinematicsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CpaResult),
-            ) as CpaResult;
+                  rawResponse,
+                  specifiedType: const FullType(CpaResult),
+                )
+                as CpaResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -246,16 +236,10 @@ class KinematicsApi {
     final _path = r'/v1/kinematics/eta';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -263,8 +247,11 @@ class KinematicsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'record':
-          encodeQueryParameter(_serializers, record, const FullType(String)),
+      r'record': encodeQueryParameter(
+        _serializers,
+        record,
+        const FullType(String),
+      ),
       r'to': encodeQueryParameter(_serializers, to, const FullType(String)),
     };
 
@@ -284,9 +271,10 @@ class KinematicsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EtaResult),
-            ) as EtaResult;
+                  rawResponse,
+                  specifiedType: const FullType(EtaResult),
+                )
+                as EtaResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

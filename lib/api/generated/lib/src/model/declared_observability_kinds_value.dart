@@ -21,8 +21,10 @@ part 'declared_observability_kinds_value.g.dart';
 @BuiltValue()
 abstract class DeclaredObservabilityKindsValue
     implements
-        Built<DeclaredObservabilityKindsValue,
-            DeclaredObservabilityKindsValueBuilder> {
+        Built<
+          DeclaredObservabilityKindsValue,
+          DeclaredObservabilityKindsValueBuilder
+        > {
   @BuiltValueField(wireName: r'area')
   DeclaredObservabilityKindsValueArea get area;
 
@@ -38,9 +40,9 @@ abstract class DeclaredObservabilityKindsValue
 
   DeclaredObservabilityKindsValue._();
 
-  factory DeclaredObservabilityKindsValue(
-          [void updates(DeclaredObservabilityKindsValueBuilder b)]) =
-      _$DeclaredObservabilityKindsValue;
+  factory DeclaredObservabilityKindsValue([
+    void updates(DeclaredObservabilityKindsValueBuilder b),
+  ]) = _$DeclaredObservabilityKindsValue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DeclaredObservabilityKindsValueBuilder b) => b;
@@ -55,7 +57,7 @@ class _$DeclaredObservabilityKindsValueSerializer
   @override
   final Iterable<Type> types = const [
     DeclaredObservabilityKindsValue,
-    _$DeclaredObservabilityKindsValue
+    _$DeclaredObservabilityKindsValue,
   ];
 
   @override
@@ -75,8 +77,9 @@ class _$DeclaredObservabilityKindsValueSerializer
       yield r'thresholds';
       yield serializers.serialize(
         object.thresholds,
-        specifiedType: const FullType(BuiltList,
-            [FullType(DeclaredObservabilityKindsValueThresholdsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DeclaredObservabilityKindsValueThresholdsInner),
+        ]),
       );
     }
     if (object.typicalLatency != null) {
@@ -101,9 +104,11 @@ class _$DeclaredObservabilityKindsValueSerializer
     DeclaredObservabilityKindsValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,34 +124,45 @@ class _$DeclaredObservabilityKindsValueSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'area':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DeclaredObservabilityKindsValueArea),
-          ) as DeclaredObservabilityKindsValueArea;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DeclaredObservabilityKindsValueArea,
+                    ),
+                  )
+                  as DeclaredObservabilityKindsValueArea;
           result.area.replace(valueDes);
           break;
         case r'thresholds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(DeclaredObservabilityKindsValueThresholdsInner)]),
-          ) as BuiltList<DeclaredObservabilityKindsValueThresholdsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DeclaredObservabilityKindsValueThresholdsInner),
+                    ]),
+                  )
+                  as BuiltList<DeclaredObservabilityKindsValueThresholdsInner>?;
           if (valueDes == null) continue;
           result.thresholds.replace(valueDes);
           break;
         case r'typicalLatency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.typicalLatency = valueDes;
           break;
         case r'notes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.notes = valueDes;
           break;

@@ -12,15 +12,15 @@ class _$PrecursorBatchPage extends PrecursorBatchPage {
   @override
   final String? nextCursor;
 
-  factory _$PrecursorBatchPage(
-          [void Function(PrecursorBatchPageBuilder)? updates]) =>
-      (PrecursorBatchPageBuilder()..update(updates))._build();
+  factory _$PrecursorBatchPage([
+    void Function(PrecursorBatchPageBuilder)? updates,
+  ]) => (PrecursorBatchPageBuilder()..update(updates))._build();
 
   _$PrecursorBatchPage._({required this.items, this.nextCursor}) : super._();
   @override
   PrecursorBatchPage rebuild(
-          void Function(PrecursorBatchPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorBatchPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorBatchPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class PrecursorBatchPageBuilder
   _$PrecursorBatchPage _build() {
     _$PrecursorBatchPage _$result;
     try {
-      _$result = _$v ??
-          _$PrecursorBatchPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$PrecursorBatchPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class PrecursorBatchPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorBatchPage', _$failedField, e.toString());
+          r'PrecursorBatchPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

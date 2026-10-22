@@ -9,11 +9,12 @@ part of 'forecaster_track_record.dart';
 const ForecasterTrackRecordLabelEnum _$forecasterTrackRecordLabelEnum_ok =
     const ForecasterTrackRecordLabelEnum._('ok');
 const ForecasterTrackRecordLabelEnum
-    _$forecasterTrackRecordLabelEnum_insufficient =
+_$forecasterTrackRecordLabelEnum_insufficient =
     const ForecasterTrackRecordLabelEnum._('insufficient');
 
 ForecasterTrackRecordLabelEnum _$forecasterTrackRecordLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$forecasterTrackRecordLabelEnum_ok;
@@ -25,14 +26,16 @@ ForecasterTrackRecordLabelEnum _$forecasterTrackRecordLabelEnumValueOf(
 }
 
 final BuiltSet<ForecasterTrackRecordLabelEnum>
-    _$forecasterTrackRecordLabelEnumValues = BuiltSet<
-        ForecasterTrackRecordLabelEnum>(const <ForecasterTrackRecordLabelEnum>[
-  _$forecasterTrackRecordLabelEnum_ok,
-  _$forecasterTrackRecordLabelEnum_insufficient,
-]);
+_$forecasterTrackRecordLabelEnumValues =
+    BuiltSet<ForecasterTrackRecordLabelEnum>(
+      const <ForecasterTrackRecordLabelEnum>[
+        _$forecasterTrackRecordLabelEnum_ok,
+        _$forecasterTrackRecordLabelEnum_insufficient,
+      ],
+    );
 
 Serializer<ForecasterTrackRecordLabelEnum>
-    _$forecasterTrackRecordLabelEnumSerializer =
+_$forecasterTrackRecordLabelEnumSerializer =
     _$ForecasterTrackRecordLabelEnumSerializer();
 
 class _$ForecasterTrackRecordLabelEnumSerializer
@@ -53,16 +56,19 @@ class _$ForecasterTrackRecordLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecasterTrackRecordLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecasterTrackRecordLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecasterTrackRecordLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecasterTrackRecordLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecasterTrackRecordLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecasterTrackRecord extends ForecasterTrackRecord {
@@ -73,17 +79,19 @@ class _$ForecasterTrackRecord extends ForecasterTrackRecord {
   @override
   final ForecasterTrackRecordLabelEnum label;
 
-  factory _$ForecasterTrackRecord(
-          [void Function(ForecasterTrackRecordBuilder)? updates]) =>
-      (ForecasterTrackRecordBuilder()..update(updates))._build();
+  factory _$ForecasterTrackRecord([
+    void Function(ForecasterTrackRecordBuilder)? updates,
+  ]) => (ForecasterTrackRecordBuilder()..update(updates))._build();
 
-  _$ForecasterTrackRecord._(
-      {required this.nResolved, this.brier, required this.label})
-      : super._();
+  _$ForecasterTrackRecord._({
+    required this.nResolved,
+    this.brier,
+    required this.label,
+  }) : super._();
   @override
   ForecasterTrackRecord rebuild(
-          void Function(ForecasterTrackRecordBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecasterTrackRecordBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecasterTrackRecordBuilder toBuilder() =>
@@ -163,13 +171,20 @@ class ForecasterTrackRecordBuilder
   ForecasterTrackRecord build() => _build();
 
   _$ForecasterTrackRecord _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecasterTrackRecord._(
           nResolved: BuiltValueNullFieldError.checkNotNull(
-              nResolved, r'ForecasterTrackRecord', 'nResolved'),
+            nResolved,
+            r'ForecasterTrackRecord',
+            'nResolved',
+          ),
           brier: brier,
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'ForecasterTrackRecord', 'label'),
+            label,
+            r'ForecasterTrackRecord',
+            'label',
+          ),
         );
     replace(_$result);
     return _$result;

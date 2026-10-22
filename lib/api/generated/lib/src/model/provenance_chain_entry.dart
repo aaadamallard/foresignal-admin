@@ -61,7 +61,7 @@ class _$ProvenanceChainEntrySerializer
   @override
   final Iterable<Type> types = const [
     ProvenanceChainEntry,
-    _$ProvenanceChainEntry
+    _$ProvenanceChainEntry,
   ];
 
   @override
@@ -116,9 +116,11 @@ class _$ProvenanceChainEntrySerializer
     ProvenanceChainEntry object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -134,48 +136,61 @@ class _$ProvenanceChainEntrySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'principal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.principal = valueDes;
           break;
         case r'productRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.productRef = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ProvenanceChainEntryRoleEnum),
-          ) as ProvenanceChainEntryRoleEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ProvenanceChainEntryRoleEnum,
+                    ),
+                  )
+                  as ProvenanceChainEntryRoleEnum?;
           if (valueDes == null) continue;
           result.role = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.at = valueDes;
           break;

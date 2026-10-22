@@ -28,26 +28,26 @@ class _$WeatherContextWind extends WeatherContextWind {
   @override
   final int? step;
 
-  factory _$WeatherContextWind(
-          [void Function(WeatherContextWindBuilder)? updates]) =>
-      (WeatherContextWindBuilder()..update(updates))._build();
+  factory _$WeatherContextWind([
+    void Function(WeatherContextWindBuilder)? updates,
+  ]) => (WeatherContextWindBuilder()..update(updates))._build();
 
-  _$WeatherContextWind._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.productId,
-      this.speedMs,
-      this.gustMs,
-      this.fromDeg,
-      this.run,
-      this.validTime,
-      this.step})
-      : super._();
+  _$WeatherContextWind._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.productId,
+    this.speedMs,
+    this.gustMs,
+    this.fromDeg,
+    this.run,
+    this.validTime,
+    this.step,
+  }) : super._();
   @override
   WeatherContextWind rebuild(
-          void Function(WeatherContextWindBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextWindBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextWindBuilder toBuilder() =>
@@ -183,10 +183,14 @@ class WeatherContextWindBuilder
   WeatherContextWind build() => _build();
 
   _$WeatherContextWind _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WeatherContextWind._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'WeatherContextWind', 'status'),
+            status,
+            r'WeatherContextWind',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           productId: productId,

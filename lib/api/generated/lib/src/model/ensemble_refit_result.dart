@@ -52,7 +52,7 @@ class _$EnsembleRefitResultSerializer
   @override
   final Iterable<Type> types = const [
     EnsembleRefitResult,
-    _$EnsembleRefitResult
+    _$EnsembleRefitResult,
   ];
 
   @override
@@ -76,14 +76,16 @@ class _$EnsembleRefitResultSerializer
     yield r'platt';
     yield serializers.serialize(
       object.platt,
-      specifiedType:
-          const FullType(BuiltList, [FullType(EnsembleRefitResultPlattInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(EnsembleRefitResultPlattInner),
+      ]),
     );
     yield r'weights';
     yield serializers.serialize(
       object.weights,
-      specifiedType: const FullType(
-          BuiltList, [FullType(EnsembleRefitResultWeightsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(EnsembleRefitResultWeightsInner),
+      ]),
     );
   }
 
@@ -93,9 +95,11 @@ class _$EnsembleRefitResultSerializer
     EnsembleRefitResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,33 +115,45 @@ class _$EnsembleRefitResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'fittedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.fittedAt = valueDes;
           break;
         case r'extremizing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EnsembleRefitResultExtremizing),
-          ) as EnsembleRefitResultExtremizing;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      EnsembleRefitResultExtremizing,
+                    ),
+                  )
+                  as EnsembleRefitResultExtremizing;
           result.extremizing.replace(valueDes);
           break;
         case r'platt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(EnsembleRefitResultPlattInner)]),
-          ) as BuiltList<EnsembleRefitResultPlattInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EnsembleRefitResultPlattInner),
+                    ]),
+                  )
+                  as BuiltList<EnsembleRefitResultPlattInner>;
           result.platt.replace(valueDes);
           break;
         case r'weights':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(EnsembleRefitResultWeightsInner)]),
-          ) as BuiltList<EnsembleRefitResultWeightsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EnsembleRefitResultWeightsInner),
+                    ]),
+                  )
+                  as BuiltList<EnsembleRefitResultWeightsInner>;
           result.weights.replace(valueDes);
           break;
         default:

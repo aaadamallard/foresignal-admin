@@ -7,14 +7,14 @@ part of 'chronicle_cluster_members_inner.dart';
 // **************************************************************************
 
 const ChronicleClusterMembersInnerDisclosureEnum
-    _$chronicleClusterMembersInnerDisclosureEnum_full =
+_$chronicleClusterMembersInnerDisclosureEnum_full =
     const ChronicleClusterMembersInnerDisclosureEnum._('full');
 const ChronicleClusterMembersInnerDisclosureEnum
-    _$chronicleClusterMembersInnerDisclosureEnum_opaque =
+_$chronicleClusterMembersInnerDisclosureEnum_opaque =
     const ChronicleClusterMembersInnerDisclosureEnum._('opaque');
 
 ChronicleClusterMembersInnerDisclosureEnum
-    _$chronicleClusterMembersInnerDisclosureEnumValueOf(String name) {
+_$chronicleClusterMembersInnerDisclosureEnumValueOf(String name) {
   switch (name) {
     case 'full':
       return _$chronicleClusterMembersInnerDisclosureEnum_full;
@@ -26,24 +26,26 @@ ChronicleClusterMembersInnerDisclosureEnum
 }
 
 final BuiltSet<ChronicleClusterMembersInnerDisclosureEnum>
-    _$chronicleClusterMembersInnerDisclosureEnumValues = BuiltSet<
-        ChronicleClusterMembersInnerDisclosureEnum>(const <ChronicleClusterMembersInnerDisclosureEnum>[
-  _$chronicleClusterMembersInnerDisclosureEnum_full,
-  _$chronicleClusterMembersInnerDisclosureEnum_opaque,
-]);
+_$chronicleClusterMembersInnerDisclosureEnumValues =
+    BuiltSet<ChronicleClusterMembersInnerDisclosureEnum>(
+      const <ChronicleClusterMembersInnerDisclosureEnum>[
+        _$chronicleClusterMembersInnerDisclosureEnum_full,
+        _$chronicleClusterMembersInnerDisclosureEnum_opaque,
+      ],
+    );
 
 const ChronicleClusterMembersInnerStrengthEnum
-    _$chronicleClusterMembersInnerStrengthEnum_low =
+_$chronicleClusterMembersInnerStrengthEnum_low =
     const ChronicleClusterMembersInnerStrengthEnum._('low');
 const ChronicleClusterMembersInnerStrengthEnum
-    _$chronicleClusterMembersInnerStrengthEnum_medium =
+_$chronicleClusterMembersInnerStrengthEnum_medium =
     const ChronicleClusterMembersInnerStrengthEnum._('medium');
 const ChronicleClusterMembersInnerStrengthEnum
-    _$chronicleClusterMembersInnerStrengthEnum_high =
+_$chronicleClusterMembersInnerStrengthEnum_high =
     const ChronicleClusterMembersInnerStrengthEnum._('high');
 
 ChronicleClusterMembersInnerStrengthEnum
-    _$chronicleClusterMembersInnerStrengthEnumValueOf(String name) {
+_$chronicleClusterMembersInnerStrengthEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$chronicleClusterMembersInnerStrengthEnum_low;
@@ -57,18 +59,20 @@ ChronicleClusterMembersInnerStrengthEnum
 }
 
 final BuiltSet<ChronicleClusterMembersInnerStrengthEnum>
-    _$chronicleClusterMembersInnerStrengthEnumValues = BuiltSet<
-        ChronicleClusterMembersInnerStrengthEnum>(const <ChronicleClusterMembersInnerStrengthEnum>[
-  _$chronicleClusterMembersInnerStrengthEnum_low,
-  _$chronicleClusterMembersInnerStrengthEnum_medium,
-  _$chronicleClusterMembersInnerStrengthEnum_high,
-]);
+_$chronicleClusterMembersInnerStrengthEnumValues =
+    BuiltSet<ChronicleClusterMembersInnerStrengthEnum>(
+      const <ChronicleClusterMembersInnerStrengthEnum>[
+        _$chronicleClusterMembersInnerStrengthEnum_low,
+        _$chronicleClusterMembersInnerStrengthEnum_medium,
+        _$chronicleClusterMembersInnerStrengthEnum_high,
+      ],
+    );
 
 Serializer<ChronicleClusterMembersInnerDisclosureEnum>
-    _$chronicleClusterMembersInnerDisclosureEnumSerializer =
+_$chronicleClusterMembersInnerDisclosureEnumSerializer =
     _$ChronicleClusterMembersInnerDisclosureEnumSerializer();
 Serializer<ChronicleClusterMembersInnerStrengthEnum>
-    _$chronicleClusterMembersInnerStrengthEnumSerializer =
+_$chronicleClusterMembersInnerStrengthEnumSerializer =
     _$ChronicleClusterMembersInnerStrengthEnumSerializer();
 
 class _$ChronicleClusterMembersInnerDisclosureEnumSerializer
@@ -84,23 +88,26 @@ class _$ChronicleClusterMembersInnerDisclosureEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleClusterMembersInnerDisclosureEnum
+    ChronicleClusterMembersInnerDisclosureEnum,
   ];
   @override
   final String wireName = 'ChronicleClusterMembersInnerDisclosureEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleClusterMembersInnerDisclosureEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleClusterMembersInnerDisclosureEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleClusterMembersInnerDisclosureEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleClusterMembersInnerDisclosureEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleClusterMembersInnerDisclosureEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleClusterMembersInnerStrengthEnumSerializer
@@ -118,23 +125,26 @@ class _$ChronicleClusterMembersInnerStrengthEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleClusterMembersInnerStrengthEnum
+    ChronicleClusterMembersInnerStrengthEnum,
   ];
   @override
   final String wireName = 'ChronicleClusterMembersInnerStrengthEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleClusterMembersInnerStrengthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleClusterMembersInnerStrengthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleClusterMembersInnerStrengthEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleClusterMembersInnerStrengthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleClusterMembersInnerStrengthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleClusterMembersInner extends ChronicleClusterMembersInner {
@@ -149,21 +159,21 @@ class _$ChronicleClusterMembersInner extends ChronicleClusterMembersInner {
   @override
   final ChronicleClusterMembersInnerStrengthEnum? strength;
 
-  factory _$ChronicleClusterMembersInner(
-          [void Function(ChronicleClusterMembersInnerBuilder)? updates]) =>
-      (ChronicleClusterMembersInnerBuilder()..update(updates))._build();
+  factory _$ChronicleClusterMembersInner([
+    void Function(ChronicleClusterMembersInnerBuilder)? updates,
+  ]) => (ChronicleClusterMembersInnerBuilder()..update(updates))._build();
 
-  _$ChronicleClusterMembersInner._(
-      {required this.disclosure,
-      this.chronicleId,
-      this.envelope,
-      this.linkId,
-      this.strength})
-      : super._();
+  _$ChronicleClusterMembersInner._({
+    required this.disclosure,
+    this.chronicleId,
+    this.envelope,
+    this.linkId,
+    this.strength,
+  }) : super._();
   @override
   ChronicleClusterMembersInner rebuild(
-          void Function(ChronicleClusterMembersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleClusterMembersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleClusterMembersInnerBuilder toBuilder() =>
@@ -206,8 +216,10 @@ class _$ChronicleClusterMembersInner extends ChronicleClusterMembersInner {
 
 class ChronicleClusterMembersInnerBuilder
     implements
-        Builder<ChronicleClusterMembersInner,
-            ChronicleClusterMembersInnerBuilder> {
+        Builder<
+          ChronicleClusterMembersInner,
+          ChronicleClusterMembersInnerBuilder
+        > {
   _$ChronicleClusterMembersInner? _$v;
 
   ChronicleClusterMembersInnerDisclosureEnum? _disclosure;
@@ -267,10 +279,14 @@ class ChronicleClusterMembersInnerBuilder
   _$ChronicleClusterMembersInner _build() {
     _$ChronicleClusterMembersInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleClusterMembersInner._(
             disclosure: BuiltValueNullFieldError.checkNotNull(
-                disclosure, r'ChronicleClusterMembersInner', 'disclosure'),
+              disclosure,
+              r'ChronicleClusterMembersInner',
+              'disclosure',
+            ),
             chronicleId: chronicleId,
             envelope: _envelope?.build(),
             linkId: linkId,
@@ -283,7 +299,10 @@ class ChronicleClusterMembersInnerBuilder
         _envelope?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleClusterMembersInner', _$failedField, e.toString());
+          r'ChronicleClusterMembersInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

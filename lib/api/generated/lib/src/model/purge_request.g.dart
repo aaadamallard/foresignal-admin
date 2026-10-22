@@ -37,9 +37,9 @@ class _$PurgeRequest extends PurgeRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PurgeRequest')
-          ..add('purgeAlerts', purgeAlerts))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PurgeRequest',
+    )..add('purgeAlerts', purgeAlerts)).toString();
   }
 }
 
@@ -78,10 +78,7 @@ class PurgeRequestBuilder
   PurgeRequest build() => _build();
 
   _$PurgeRequest _build() {
-    final _$result = _$v ??
-        _$PurgeRequest._(
-          purgeAlerts: purgeAlerts,
-        );
+    final _$result = _$v ?? _$PurgeRequest._(purgeAlerts: purgeAlerts);
     replace(_$result);
     return _$result;
   }

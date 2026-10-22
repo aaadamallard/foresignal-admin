@@ -16,17 +16,20 @@ class _$ChronicleFrameIndexFramesInner extends ChronicleFrameIndexFramesInner {
   @override
   final int? changedTotal;
 
-  factory _$ChronicleFrameIndexFramesInner(
-          [void Function(ChronicleFrameIndexFramesInnerBuilder)? updates]) =>
-      (ChronicleFrameIndexFramesInnerBuilder()..update(updates))._build();
+  factory _$ChronicleFrameIndexFramesInner([
+    void Function(ChronicleFrameIndexFramesInnerBuilder)? updates,
+  ]) => (ChronicleFrameIndexFramesInnerBuilder()..update(updates))._build();
 
-  _$ChronicleFrameIndexFramesInner._(
-      {required this.t, required this.counts, this.changed, this.changedTotal})
-      : super._();
+  _$ChronicleFrameIndexFramesInner._({
+    required this.t,
+    required this.counts,
+    this.changed,
+    this.changedTotal,
+  }) : super._();
   @override
   ChronicleFrameIndexFramesInner rebuild(
-          void Function(ChronicleFrameIndexFramesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleFrameIndexFramesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleFrameIndexFramesInnerBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$ChronicleFrameIndexFramesInner extends ChronicleFrameIndexFramesInner {
 
 class ChronicleFrameIndexFramesInnerBuilder
     implements
-        Builder<ChronicleFrameIndexFramesInner,
-            ChronicleFrameIndexFramesInnerBuilder> {
+        Builder<
+          ChronicleFrameIndexFramesInner,
+          ChronicleFrameIndexFramesInnerBuilder
+        > {
   _$ChronicleFrameIndexFramesInner? _$v;
 
   DateTime? _t;
@@ -119,10 +124,14 @@ class ChronicleFrameIndexFramesInnerBuilder
   _$ChronicleFrameIndexFramesInner _build() {
     _$ChronicleFrameIndexFramesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleFrameIndexFramesInner._(
             t: BuiltValueNullFieldError.checkNotNull(
-                t, r'ChronicleFrameIndexFramesInner', 't'),
+              t,
+              r'ChronicleFrameIndexFramesInner',
+              't',
+            ),
             counts: counts.build(),
             changed: _changed?.build(),
             changedTotal: changedTotal,
@@ -136,7 +145,10 @@ class ChronicleFrameIndexFramesInnerBuilder
         _changed?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleFrameIndexFramesInner', _$failedField, e.toString());
+          r'ChronicleFrameIndexFramesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

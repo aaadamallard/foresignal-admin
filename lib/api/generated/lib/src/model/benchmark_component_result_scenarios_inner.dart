@@ -25,8 +25,10 @@ part 'benchmark_component_result_scenarios_inner.g.dart';
 @BuiltValue()
 abstract class BenchmarkComponentResultScenariosInner
     implements
-        Built<BenchmarkComponentResultScenariosInner,
-            BenchmarkComponentResultScenariosInnerBuilder> {
+        Built<
+          BenchmarkComponentResultScenariosInner,
+          BenchmarkComponentResultScenariosInnerBuilder
+        > {
   /// Synthetic scenario (`bench-scenarios` 1.0.0) or `historical` for a corpus case
   @BuiltValueField(wireName: r'scenario')
   BenchmarkComponentResultScenariosInnerScenarioEnum get scenario;
@@ -60,9 +62,9 @@ abstract class BenchmarkComponentResultScenariosInner
 
   BenchmarkComponentResultScenariosInner._();
 
-  factory BenchmarkComponentResultScenariosInner(
-          [void updates(BenchmarkComponentResultScenariosInnerBuilder b)]) =
-      _$BenchmarkComponentResultScenariosInner;
+  factory BenchmarkComponentResultScenariosInner([
+    void updates(BenchmarkComponentResultScenariosInnerBuilder b),
+  ]) = _$BenchmarkComponentResultScenariosInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkComponentResultScenariosInnerBuilder b) => b;
@@ -77,7 +79,7 @@ class _$BenchmarkComponentResultScenariosInnerSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkComponentResultScenariosInner,
-    _$BenchmarkComponentResultScenariosInner
+    _$BenchmarkComponentResultScenariosInner,
   ];
 
   @override
@@ -91,8 +93,9 @@ class _$BenchmarkComponentResultScenariosInnerSerializer
     yield r'scenario';
     yield serializers.serialize(
       object.scenario,
-      specifiedType:
-          const FullType(BenchmarkComponentResultScenariosInnerScenarioEnum),
+      specifiedType: const FullType(
+        BenchmarkComponentResultScenariosInnerScenarioEnum,
+      ),
     );
     if (object.caseId != null) {
       yield r'caseId';
@@ -111,29 +114,35 @@ class _$BenchmarkComponentResultScenariosInnerSerializer
     yield r'status';
     yield serializers.serialize(
       object.status,
-      specifiedType:
-          const FullType(BenchmarkComponentResultScenariosInnerStatusEnum),
+      specifiedType: const FullType(
+        BenchmarkComponentResultScenariosInnerStatusEnum,
+      ),
     );
     yield r'metrics';
     yield serializers.serialize(
       object.metrics,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType.nullable(num)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(num),
+      ]),
     );
     if (object.thresholds != null) {
       yield r'thresholds';
       yield serializers.serialize(
         object.thresholds,
-        specifiedType: const FullType(
-            BuiltList, [FullType(BenchmarkComponentResultThresholdsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BenchmarkComponentResultThresholdsInner),
+        ]),
       );
     }
     if (object.truth != null) {
       yield r'truth';
       yield serializers.serialize(
         object.truth,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.notes != null) {
@@ -151,9 +160,11 @@ class _$BenchmarkComponentResultScenariosInnerSerializer
     BenchmarkComponentResultScenariosInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -169,69 +180,93 @@ class _$BenchmarkComponentResultScenariosInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'scenario':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BenchmarkComponentResultScenariosInnerScenarioEnum),
-          ) as BenchmarkComponentResultScenariosInnerScenarioEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkComponentResultScenariosInnerScenarioEnum,
+                    ),
+                  )
+                  as BenchmarkComponentResultScenariosInnerScenarioEnum;
           result.scenario = valueDes;
           break;
         case r'caseId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.caseId = valueDes;
           break;
         case r'seed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.seed = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BenchmarkComponentResultScenariosInnerStatusEnum),
-          ) as BenchmarkComponentResultScenariosInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkComponentResultScenariosInnerStatusEnum,
+                    ),
+                  )
+                  as BenchmarkComponentResultScenariosInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'metrics':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(num)]),
-          ) as BuiltMap<String, num?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num?>;
           result.metrics.replace(valueDes);
           break;
         case r'thresholds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(BenchmarkComponentResultThresholdsInner)]),
-          ) as BuiltList<BenchmarkComponentResultThresholdsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BenchmarkComponentResultThresholdsInner),
+                    ]),
+                  )
+                  as BuiltList<BenchmarkComponentResultThresholdsInner>?;
           if (valueDes == null) continue;
           result.thresholds.replace(valueDes);
           break;
         case r'truth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.truth.replace(valueDes);
           break;
         case r'notes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.notes.replace(valueDes);
           break;
@@ -277,11 +312,11 @@ class BenchmarkComponentResultScenariosInnerScenarioEnum extends EnumClass {
       _$benchmarkComponentResultScenariosInnerScenarioEnum_spike;
   @BuiltValueEnumConst(wireName: r'coverage-outage')
   static const BenchmarkComponentResultScenariosInnerScenarioEnum
-      coverageOutage =
+  coverageOutage =
       _$benchmarkComponentResultScenariosInnerScenarioEnum_coverageOutage;
   @BuiltValueEnumConst(wireName: r'duplicate-echo')
   static const BenchmarkComponentResultScenariosInnerScenarioEnum
-      duplicateEcho =
+  duplicateEcho =
       _$benchmarkComponentResultScenariosInnerScenarioEnum_duplicateEcho;
   @BuiltValueEnumConst(wireName: r'late-revision')
   static const BenchmarkComponentResultScenariosInnerScenarioEnum lateRevision =
@@ -291,11 +326,11 @@ class BenchmarkComponentResultScenariosInnerScenarioEnum extends EnumClass {
       _$benchmarkComponentResultScenariosInnerScenarioEnum_commonDriver;
   @BuiltValueEnumConst(wireName: r'true-precursor')
   static const BenchmarkComponentResultScenariosInnerScenarioEnum
-      truePrecursor =
+  truePrecursor =
       _$benchmarkComponentResultScenariosInnerScenarioEnum_truePrecursor;
   @BuiltValueEnumConst(wireName: r'base-rate-drift')
   static const BenchmarkComponentResultScenariosInnerScenarioEnum
-      baseRateDrift =
+  baseRateDrift =
       _$benchmarkComponentResultScenariosInnerScenarioEnum_baseRateDrift;
   @BuiltValueEnumConst(wireName: r'pre-event-move')
   static const BenchmarkComponentResultScenariosInnerScenarioEnum preEventMove =
@@ -305,17 +340,17 @@ class BenchmarkComponentResultScenariosInnerScenarioEnum extends EnumClass {
       _$benchmarkComponentResultScenariosInnerScenarioEnum_historical;
 
   static Serializer<BenchmarkComponentResultScenariosInnerScenarioEnum>
-      get serializer =>
-          _$benchmarkComponentResultScenariosInnerScenarioEnumSerializer;
+  get serializer =>
+      _$benchmarkComponentResultScenariosInnerScenarioEnumSerializer;
 
   const BenchmarkComponentResultScenariosInnerScenarioEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<BenchmarkComponentResultScenariosInnerScenarioEnum>
-      get values => _$benchmarkComponentResultScenariosInnerScenarioEnumValues;
+  get values => _$benchmarkComponentResultScenariosInnerScenarioEnumValues;
   static BenchmarkComponentResultScenariosInnerScenarioEnum valueOf(
-          String name) =>
-      _$benchmarkComponentResultScenariosInnerScenarioEnumValueOf(name);
+    String name,
+  ) => _$benchmarkComponentResultScenariosInnerScenarioEnumValueOf(name);
 }
 
 /// Result against the documented thresholds
@@ -331,15 +366,15 @@ class BenchmarkComponentResultScenariosInnerStatusEnum extends EnumClass {
       _$benchmarkComponentResultScenariosInnerStatusEnum_fail;
 
   static Serializer<BenchmarkComponentResultScenariosInnerStatusEnum>
-      get serializer =>
-          _$benchmarkComponentResultScenariosInnerStatusEnumSerializer;
+  get serializer =>
+      _$benchmarkComponentResultScenariosInnerStatusEnumSerializer;
 
   const BenchmarkComponentResultScenariosInnerStatusEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<BenchmarkComponentResultScenariosInnerStatusEnum>
-      get values => _$benchmarkComponentResultScenariosInnerStatusEnumValues;
+  get values => _$benchmarkComponentResultScenariosInnerStatusEnumValues;
   static BenchmarkComponentResultScenariosInnerStatusEnum valueOf(
-          String name) =>
-      _$benchmarkComponentResultScenariosInnerStatusEnumValueOf(name);
+    String name,
+  ) => _$benchmarkComponentResultScenariosInnerStatusEnumValueOf(name);
 }

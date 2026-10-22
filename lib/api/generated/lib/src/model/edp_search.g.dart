@@ -6,14 +6,18 @@ part of 'edp_search.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EdpSearchAuthEnum _$edpSearchAuthEnum_none =
-    const EdpSearchAuthEnum._('none');
-const EdpSearchAuthEnum _$edpSearchAuthEnum_bearer =
-    const EdpSearchAuthEnum._('bearer');
-const EdpSearchAuthEnum _$edpSearchAuthEnum_header =
-    const EdpSearchAuthEnum._('header');
-const EdpSearchAuthEnum _$edpSearchAuthEnum_basic =
-    const EdpSearchAuthEnum._('basic');
+const EdpSearchAuthEnum _$edpSearchAuthEnum_none = const EdpSearchAuthEnum._(
+  'none',
+);
+const EdpSearchAuthEnum _$edpSearchAuthEnum_bearer = const EdpSearchAuthEnum._(
+  'bearer',
+);
+const EdpSearchAuthEnum _$edpSearchAuthEnum_header = const EdpSearchAuthEnum._(
+  'header',
+);
+const EdpSearchAuthEnum _$edpSearchAuthEnum_basic = const EdpSearchAuthEnum._(
+  'basic',
+);
 
 EdpSearchAuthEnum _$edpSearchAuthEnumValueOf(String name) {
   switch (name) {
@@ -32,11 +36,11 @@ EdpSearchAuthEnum _$edpSearchAuthEnumValueOf(String name) {
 
 final BuiltSet<EdpSearchAuthEnum> _$edpSearchAuthEnumValues =
     BuiltSet<EdpSearchAuthEnum>(const <EdpSearchAuthEnum>[
-  _$edpSearchAuthEnum_none,
-  _$edpSearchAuthEnum_bearer,
-  _$edpSearchAuthEnum_header,
-  _$edpSearchAuthEnum_basic,
-]);
+      _$edpSearchAuthEnum_none,
+      _$edpSearchAuthEnum_bearer,
+      _$edpSearchAuthEnum_header,
+      _$edpSearchAuthEnum_basic,
+    ]);
 
 Serializer<EdpSearchAuthEnum> _$edpSearchAuthEnumSerializer =
     _$EdpSearchAuthEnumSerializer();
@@ -62,15 +66,20 @@ class _$EdpSearchAuthEnumSerializer
   final String wireName = 'EdpSearchAuthEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpSearchAuthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpSearchAuthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpSearchAuthEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpSearchAuthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpSearchAuthEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpSearchAuthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpSearch extends EdpSearch {
@@ -165,7 +174,8 @@ class EdpSearchBuilder implements Builder<EdpSearch, EdpSearchBuilder> {
   EdpSearch build() => _build();
 
   _$EdpSearch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpSearch._(
           url: BuiltValueNullFieldError.checkNotNull(url, r'EdpSearch', 'url'),
           auth: auth,

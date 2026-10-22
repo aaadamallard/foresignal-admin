@@ -17,18 +17,21 @@ class _$HazardForecastProbabilityFieldInner
   @override
   final Geometry? geometry;
 
-  factory _$HazardForecastProbabilityFieldInner(
-          [void Function(HazardForecastProbabilityFieldInnerBuilder)?
-              updates]) =>
+  factory _$HazardForecastProbabilityFieldInner([
+    void Function(HazardForecastProbabilityFieldInnerBuilder)? updates,
+  ]) =>
       (HazardForecastProbabilityFieldInnerBuilder()..update(updates))._build();
 
-  _$HazardForecastProbabilityFieldInner._(
-      {this.band, required this.pMin, this.pMax, this.geometry})
-      : super._();
+  _$HazardForecastProbabilityFieldInner._({
+    this.band,
+    required this.pMin,
+    this.pMax,
+    this.geometry,
+  }) : super._();
   @override
   HazardForecastProbabilityFieldInner rebuild(
-          void Function(HazardForecastProbabilityFieldInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HazardForecastProbabilityFieldInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HazardForecastProbabilityFieldInnerBuilder toBuilder() =>
@@ -68,8 +71,10 @@ class _$HazardForecastProbabilityFieldInner
 
 class HazardForecastProbabilityFieldInnerBuilder
     implements
-        Builder<HazardForecastProbabilityFieldInner,
-            HazardForecastProbabilityFieldInnerBuilder> {
+        Builder<
+          HazardForecastProbabilityFieldInner,
+          HazardForecastProbabilityFieldInnerBuilder
+        > {
   _$HazardForecastProbabilityFieldInner? _$v;
 
   String? _band;
@@ -111,7 +116,8 @@ class HazardForecastProbabilityFieldInnerBuilder
 
   @override
   void update(
-      void Function(HazardForecastProbabilityFieldInnerBuilder)? updates) {
+    void Function(HazardForecastProbabilityFieldInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -121,11 +127,15 @@ class HazardForecastProbabilityFieldInnerBuilder
   _$HazardForecastProbabilityFieldInner _build() {
     _$HazardForecastProbabilityFieldInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HazardForecastProbabilityFieldInner._(
             band: band,
             pMin: BuiltValueNullFieldError.checkNotNull(
-                pMin, r'HazardForecastProbabilityFieldInner', 'pMin'),
+              pMin,
+              r'HazardForecastProbabilityFieldInner',
+              'pMin',
+            ),
             pMax: pMax,
             geometry: _geometry?.build(),
           );
@@ -135,8 +145,11 @@ class HazardForecastProbabilityFieldInnerBuilder
         _$failedField = 'geometry';
         _geometry?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(r'HazardForecastProbabilityFieldInner',
-            _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'HazardForecastProbabilityFieldInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

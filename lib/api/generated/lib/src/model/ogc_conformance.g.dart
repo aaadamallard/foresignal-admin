@@ -37,9 +37,9 @@ class _$OgcConformance extends OgcConformance {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'OgcConformance')
-          ..add('conformsTo', conformsTo))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'OgcConformance',
+    )..add('conformsTo', conformsTo)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class OgcConformanceBuilder
   _$OgcConformance _build() {
     _$OgcConformance _$result;
     try {
-      _$result = _$v ??
-          _$OgcConformance._(
-            conformsTo: conformsTo.build(),
-          );
+      _$result = _$v ?? _$OgcConformance._(conformsTo: conformsTo.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -93,7 +90,10 @@ class OgcConformanceBuilder
         conformsTo.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcConformance', _$failedField, e.toString());
+          r'OgcConformance',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

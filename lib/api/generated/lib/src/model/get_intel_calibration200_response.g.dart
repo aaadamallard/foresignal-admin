@@ -10,15 +10,15 @@ class _$GetIntelCalibration200Response extends GetIntelCalibration200Response {
   @override
   final BuiltList<IntelCalibration> scopes;
 
-  factory _$GetIntelCalibration200Response(
-          [void Function(GetIntelCalibration200ResponseBuilder)? updates]) =>
-      (GetIntelCalibration200ResponseBuilder()..update(updates))._build();
+  factory _$GetIntelCalibration200Response([
+    void Function(GetIntelCalibration200ResponseBuilder)? updates,
+  ]) => (GetIntelCalibration200ResponseBuilder()..update(updates))._build();
 
   _$GetIntelCalibration200Response._({required this.scopes}) : super._();
   @override
   GetIntelCalibration200Response rebuild(
-          void Function(GetIntelCalibration200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GetIntelCalibration200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GetIntelCalibration200ResponseBuilder toBuilder() =>
@@ -40,16 +40,18 @@ class _$GetIntelCalibration200Response extends GetIntelCalibration200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GetIntelCalibration200Response')
-          ..add('scopes', scopes))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'GetIntelCalibration200Response',
+    )..add('scopes', scopes)).toString();
   }
 }
 
 class GetIntelCalibration200ResponseBuilder
     implements
-        Builder<GetIntelCalibration200Response,
-            GetIntelCalibration200ResponseBuilder> {
+        Builder<
+          GetIntelCalibration200Response,
+          GetIntelCalibration200ResponseBuilder
+        > {
   _$GetIntelCalibration200Response? _$v;
 
   ListBuilder<IntelCalibration>? _scopes;
@@ -86,10 +88,8 @@ class GetIntelCalibration200ResponseBuilder
   _$GetIntelCalibration200Response _build() {
     _$GetIntelCalibration200Response _$result;
     try {
-      _$result = _$v ??
-          _$GetIntelCalibration200Response._(
-            scopes: scopes.build(),
-          );
+      _$result =
+          _$v ?? _$GetIntelCalibration200Response._(scopes: scopes.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -97,7 +97,10 @@ class GetIntelCalibration200ResponseBuilder
         scopes.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GetIntelCalibration200Response', _$failedField, e.toString());
+          r'GetIntelCalibration200Response',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

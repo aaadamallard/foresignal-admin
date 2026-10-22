@@ -13,17 +13,18 @@ class _$CycleRunRolesInnerPromptTemplate
   @override
   final String version;
 
-  factory _$CycleRunRolesInnerPromptTemplate(
-          [void Function(CycleRunRolesInnerPromptTemplateBuilder)? updates]) =>
-      (CycleRunRolesInnerPromptTemplateBuilder()..update(updates))._build();
+  factory _$CycleRunRolesInnerPromptTemplate([
+    void Function(CycleRunRolesInnerPromptTemplateBuilder)? updates,
+  ]) => (CycleRunRolesInnerPromptTemplateBuilder()..update(updates))._build();
 
-  _$CycleRunRolesInnerPromptTemplate._(
-      {required this.id, required this.version})
-      : super._();
+  _$CycleRunRolesInnerPromptTemplate._({
+    required this.id,
+    required this.version,
+  }) : super._();
   @override
   CycleRunRolesInnerPromptTemplate rebuild(
-          void Function(CycleRunRolesInnerPromptTemplateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CycleRunRolesInnerPromptTemplateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CycleRunRolesInnerPromptTemplateBuilder toBuilder() =>
@@ -57,8 +58,10 @@ class _$CycleRunRolesInnerPromptTemplate
 
 class CycleRunRolesInnerPromptTemplateBuilder
     implements
-        Builder<CycleRunRolesInnerPromptTemplate,
-            CycleRunRolesInnerPromptTemplateBuilder> {
+        Builder<
+          CycleRunRolesInnerPromptTemplate,
+          CycleRunRolesInnerPromptTemplateBuilder
+        > {
   _$CycleRunRolesInnerPromptTemplate? _$v;
 
   String? _id;
@@ -97,12 +100,19 @@ class CycleRunRolesInnerPromptTemplateBuilder
   CycleRunRolesInnerPromptTemplate build() => _build();
 
   _$CycleRunRolesInnerPromptTemplate _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CycleRunRolesInnerPromptTemplate._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'CycleRunRolesInnerPromptTemplate', 'id'),
+            id,
+            r'CycleRunRolesInnerPromptTemplate',
+            'id',
+          ),
           version: BuiltValueNullFieldError.checkNotNull(
-              version, r'CycleRunRolesInnerPromptTemplate', 'version'),
+            version,
+            r'CycleRunRolesInnerPromptTemplate',
+            'version',
+          ),
         );
     replace(_$result);
     return _$result;

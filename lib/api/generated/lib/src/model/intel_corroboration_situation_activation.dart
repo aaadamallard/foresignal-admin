@@ -16,8 +16,10 @@ part 'intel_corroboration_situation_activation.g.dart';
 @BuiltValue()
 abstract class IntelCorroborationSituationActivation
     implements
-        Built<IntelCorroborationSituationActivation,
-            IntelCorroborationSituationActivationBuilder> {
+        Built<
+          IntelCorroborationSituationActivation,
+          IntelCorroborationSituationActivationBuilder
+        > {
   /// Distinct signal families activation needs (default 2)
   @BuiltValueField(wireName: r'minFamilies')
   int? get minFamilies;
@@ -28,9 +30,9 @@ abstract class IntelCorroborationSituationActivation
 
   IntelCorroborationSituationActivation._();
 
-  factory IntelCorroborationSituationActivation(
-          [void updates(IntelCorroborationSituationActivationBuilder b)]) =
-      _$IntelCorroborationSituationActivation;
+  factory IntelCorroborationSituationActivation([
+    void updates(IntelCorroborationSituationActivationBuilder b),
+  ]) = _$IntelCorroborationSituationActivation;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelCorroborationSituationActivationBuilder b) => b;
@@ -45,7 +47,7 @@ class _$IntelCorroborationSituationActivationSerializer
   @override
   final Iterable<Type> types = const [
     IntelCorroborationSituationActivation,
-    _$IntelCorroborationSituationActivation
+    _$IntelCorroborationSituationActivation,
   ];
 
   @override
@@ -78,9 +80,11 @@ class _$IntelCorroborationSituationActivationSerializer
     IntelCorroborationSituationActivation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,18 +100,22 @@ class _$IntelCorroborationSituationActivationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'minFamilies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minFamilies = valueDes;
           break;
         case r'minGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minGroups = valueDes;
           break;

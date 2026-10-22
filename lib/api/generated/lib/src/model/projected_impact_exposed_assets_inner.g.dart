@@ -23,23 +23,23 @@ class _$ProjectedImpactExposedAssetsInner
   @override
   final String? band;
 
-  factory _$ProjectedImpactExposedAssetsInner(
-          [void Function(ProjectedImpactExposedAssetsInnerBuilder)? updates]) =>
-      (ProjectedImpactExposedAssetsInnerBuilder()..update(updates))._build();
+  factory _$ProjectedImpactExposedAssetsInner([
+    void Function(ProjectedImpactExposedAssetsInnerBuilder)? updates,
+  ]) => (ProjectedImpactExposedAssetsInnerBuilder()..update(updates))._build();
 
-  _$ProjectedImpactExposedAssetsInner._(
-      {required this.ref,
-      this.title,
-      this.kind,
-      required this.pHazard,
-      this.distanceKm,
-      this.population,
-      this.band})
-      : super._();
+  _$ProjectedImpactExposedAssetsInner._({
+    required this.ref,
+    this.title,
+    this.kind,
+    required this.pHazard,
+    this.distanceKm,
+    this.population,
+    this.band,
+  }) : super._();
   @override
   ProjectedImpactExposedAssetsInner rebuild(
-          void Function(ProjectedImpactExposedAssetsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProjectedImpactExposedAssetsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProjectedImpactExposedAssetsInnerBuilder toBuilder() =>
@@ -88,8 +88,10 @@ class _$ProjectedImpactExposedAssetsInner
 
 class ProjectedImpactExposedAssetsInnerBuilder
     implements
-        Builder<ProjectedImpactExposedAssetsInner,
-            ProjectedImpactExposedAssetsInnerBuilder> {
+        Builder<
+          ProjectedImpactExposedAssetsInner,
+          ProjectedImpactExposedAssetsInnerBuilder
+        > {
   _$ProjectedImpactExposedAssetsInner? _$v;
 
   String? _ref;
@@ -146,7 +148,8 @@ class ProjectedImpactExposedAssetsInnerBuilder
 
   @override
   void update(
-      void Function(ProjectedImpactExposedAssetsInnerBuilder)? updates) {
+    void Function(ProjectedImpactExposedAssetsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -154,14 +157,21 @@ class ProjectedImpactExposedAssetsInnerBuilder
   ProjectedImpactExposedAssetsInner build() => _build();
 
   _$ProjectedImpactExposedAssetsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProjectedImpactExposedAssetsInner._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'ProjectedImpactExposedAssetsInner', 'ref'),
+            ref,
+            r'ProjectedImpactExposedAssetsInner',
+            'ref',
+          ),
           title: title,
           kind: kind,
           pHazard: BuiltValueNullFieldError.checkNotNull(
-              pHazard, r'ProjectedImpactExposedAssetsInner', 'pHazard'),
+            pHazard,
+            r'ProjectedImpactExposedAssetsInner',
+            'pHazard',
+          ),
           distanceKm: distanceKm,
           population: population,
           band: band,

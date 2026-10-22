@@ -12,7 +12,8 @@ const ProductLoopFramesInnerKindEnum _$productLoopFramesInnerKindEnum_forecast =
     const ProductLoopFramesInnerKindEnum._('forecast');
 
 ProductLoopFramesInnerKindEnum _$productLoopFramesInnerKindEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'observed':
       return _$productLoopFramesInnerKindEnum_observed;
@@ -24,14 +25,16 @@ ProductLoopFramesInnerKindEnum _$productLoopFramesInnerKindEnumValueOf(
 }
 
 final BuiltSet<ProductLoopFramesInnerKindEnum>
-    _$productLoopFramesInnerKindEnumValues = BuiltSet<
-        ProductLoopFramesInnerKindEnum>(const <ProductLoopFramesInnerKindEnum>[
-  _$productLoopFramesInnerKindEnum_observed,
-  _$productLoopFramesInnerKindEnum_forecast,
-]);
+_$productLoopFramesInnerKindEnumValues =
+    BuiltSet<ProductLoopFramesInnerKindEnum>(
+      const <ProductLoopFramesInnerKindEnum>[
+        _$productLoopFramesInnerKindEnum_observed,
+        _$productLoopFramesInnerKindEnum_forecast,
+      ],
+    );
 
 Serializer<ProductLoopFramesInnerKindEnum>
-    _$productLoopFramesInnerKindEnumSerializer =
+_$productLoopFramesInnerKindEnumSerializer =
     _$ProductLoopFramesInnerKindEnumSerializer();
 
 class _$ProductLoopFramesInnerKindEnumSerializer
@@ -52,16 +55,19 @@ class _$ProductLoopFramesInnerKindEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ProductLoopFramesInnerKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ProductLoopFramesInnerKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProductLoopFramesInnerKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductLoopFramesInnerKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductLoopFramesInnerKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductLoopFramesInner extends ProductLoopFramesInner {
@@ -86,26 +92,26 @@ class _$ProductLoopFramesInner extends ProductLoopFramesInner {
   @override
   final DateTime? expiresAt;
 
-  factory _$ProductLoopFramesInner(
-          [void Function(ProductLoopFramesInnerBuilder)? updates]) =>
-      (ProductLoopFramesInnerBuilder()..update(updates))._build();
+  factory _$ProductLoopFramesInner([
+    void Function(ProductLoopFramesInnerBuilder)? updates,
+  ]) => (ProductLoopFramesInnerBuilder()..update(updates))._build();
 
-  _$ProductLoopFramesInner._(
-      {required this.productId,
-      required this.time,
-      this.timeKey,
-      required this.frameKey,
-      required this.kind,
-      this.run,
-      this.step,
-      required this.url,
-      this.bytes,
-      this.expiresAt})
-      : super._();
+  _$ProductLoopFramesInner._({
+    required this.productId,
+    required this.time,
+    this.timeKey,
+    required this.frameKey,
+    required this.kind,
+    this.run,
+    this.step,
+    required this.url,
+    this.bytes,
+    this.expiresAt,
+  }) : super._();
   @override
   ProductLoopFramesInner rebuild(
-          void Function(ProductLoopFramesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProductLoopFramesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProductLoopFramesInnerBuilder toBuilder() =>
@@ -241,21 +247,37 @@ class ProductLoopFramesInnerBuilder
   ProductLoopFramesInner build() => _build();
 
   _$ProductLoopFramesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProductLoopFramesInner._(
           productId: BuiltValueNullFieldError.checkNotNull(
-              productId, r'ProductLoopFramesInner', 'productId'),
+            productId,
+            r'ProductLoopFramesInner',
+            'productId',
+          ),
           time: BuiltValueNullFieldError.checkNotNull(
-              time, r'ProductLoopFramesInner', 'time'),
+            time,
+            r'ProductLoopFramesInner',
+            'time',
+          ),
           timeKey: timeKey,
           frameKey: BuiltValueNullFieldError.checkNotNull(
-              frameKey, r'ProductLoopFramesInner', 'frameKey'),
+            frameKey,
+            r'ProductLoopFramesInner',
+            'frameKey',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'ProductLoopFramesInner', 'kind'),
+            kind,
+            r'ProductLoopFramesInner',
+            'kind',
+          ),
           run: run,
           step: step,
           url: BuiltValueNullFieldError.checkNotNull(
-              url, r'ProductLoopFramesInner', 'url'),
+            url,
+            r'ProductLoopFramesInner',
+            'url',
+          ),
           bytes: bytes,
           expiresAt: expiresAt,
         );

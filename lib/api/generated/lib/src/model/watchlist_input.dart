@@ -92,9 +92,11 @@ class _$WatchlistInputSerializer
     WatchlistInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,32 +112,42 @@ class _$WatchlistInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'identity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WatchlistInputIdentityEnum),
-          ) as WatchlistInputIdentityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WatchlistInputIdentityEnum),
+                  )
+                  as WatchlistInputIdentityEnum;
           result.identity = valueDes;
           break;
         case r'normalize':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WatchlistInputNormalizeEnum),
-          ) as WatchlistInputNormalizeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WatchlistInputNormalizeEnum,
+                    ),
+                  )
+                  as WatchlistInputNormalizeEnum?;
           if (valueDes == null) continue;
           result.normalize = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;

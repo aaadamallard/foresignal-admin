@@ -12,15 +12,15 @@ class _$ObjectEnvelopeLinks extends ObjectEnvelopeLinks {
   @override
   final String? related;
 
-  factory _$ObjectEnvelopeLinks(
-          [void Function(ObjectEnvelopeLinksBuilder)? updates]) =>
-      (ObjectEnvelopeLinksBuilder()..update(updates))._build();
+  factory _$ObjectEnvelopeLinks([
+    void Function(ObjectEnvelopeLinksBuilder)? updates,
+  ]) => (ObjectEnvelopeLinksBuilder()..update(updates))._build();
 
   _$ObjectEnvelopeLinks._({this.self, this.related}) : super._();
   @override
   ObjectEnvelopeLinks rebuild(
-          void Function(ObjectEnvelopeLinksBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObjectEnvelopeLinksBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObjectEnvelopeLinksBuilder toBuilder() =>
@@ -92,11 +92,8 @@ class ObjectEnvelopeLinksBuilder
   ObjectEnvelopeLinks build() => _build();
 
   _$ObjectEnvelopeLinks _build() {
-    final _$result = _$v ??
-        _$ObjectEnvelopeLinks._(
-          self: self,
-          related: related,
-        );
+    final _$result =
+        _$v ?? _$ObjectEnvelopeLinks._(self: self, related: related);
     replace(_$result);
     return _$result;
   }

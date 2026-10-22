@@ -29,17 +29,17 @@ class _$PeerSelection extends PeerSelection {
   factory _$PeerSelection([void Function(PeerSelectionBuilder)? updates]) =>
       (PeerSelectionBuilder()..update(updates))._build();
 
-  _$PeerSelection._(
-      {this.sources,
-      this.kinds,
-      this.bbox,
-      this.placeId,
-      this.maxAge,
-      this.backfill,
-      this.live,
-      this.maxHops,
-      this.trackTtl})
-      : super._();
+  _$PeerSelection._({
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.placeId,
+    this.maxAge,
+    this.backfill,
+    this.live,
+    this.maxHops,
+    this.trackTtl,
+  }) : super._();
   @override
   PeerSelection rebuild(void Function(PeerSelectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -171,7 +171,8 @@ class PeerSelectionBuilder
   _$PeerSelection _build() {
     _$PeerSelection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PeerSelection._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -194,7 +195,10 @@ class PeerSelectionBuilder
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PeerSelection', _$failedField, e.toString());
+          r'PeerSelection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

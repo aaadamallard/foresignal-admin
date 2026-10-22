@@ -12,16 +12,16 @@ class _$DossierSectionsOverviewFacets extends DossierSectionsOverviewFacets {
   @override
   final BuiltMap<String, int>? bySource;
 
-  factory _$DossierSectionsOverviewFacets(
-          [void Function(DossierSectionsOverviewFacetsBuilder)? updates]) =>
-      (DossierSectionsOverviewFacetsBuilder()..update(updates))._build();
+  factory _$DossierSectionsOverviewFacets([
+    void Function(DossierSectionsOverviewFacetsBuilder)? updates,
+  ]) => (DossierSectionsOverviewFacetsBuilder()..update(updates))._build();
 
   _$DossierSectionsOverviewFacets._({this.byEvidenceClass, this.bySource})
-      : super._();
+    : super._();
   @override
   DossierSectionsOverviewFacets rebuild(
-          void Function(DossierSectionsOverviewFacetsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsOverviewFacetsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsOverviewFacetsBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$DossierSectionsOverviewFacets extends DossierSectionsOverviewFacets {
 
 class DossierSectionsOverviewFacetsBuilder
     implements
-        Builder<DossierSectionsOverviewFacets,
-            DossierSectionsOverviewFacetsBuilder> {
+        Builder<
+          DossierSectionsOverviewFacets,
+          DossierSectionsOverviewFacetsBuilder
+        > {
   _$DossierSectionsOverviewFacets? _$v;
 
   MapBuilder<String, int>? _byEvidenceClass;
@@ -101,7 +103,8 @@ class DossierSectionsOverviewFacetsBuilder
   _$DossierSectionsOverviewFacets _build() {
     _$DossierSectionsOverviewFacets _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsOverviewFacets._(
             byEvidenceClass: _byEvidenceClass?.build(),
             bySource: _bySource?.build(),
@@ -115,7 +118,10 @@ class DossierSectionsOverviewFacetsBuilder
         _bySource?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsOverviewFacets', _$failedField, e.toString());
+          r'DossierSectionsOverviewFacets',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

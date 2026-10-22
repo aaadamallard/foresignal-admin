@@ -42,9 +42,9 @@ abstract class SignatureVerifierConfig
 
   SignatureVerifierConfig._();
 
-  factory SignatureVerifierConfig(
-          [void updates(SignatureVerifierConfigBuilder b)]) =
-      _$SignatureVerifierConfig;
+  factory SignatureVerifierConfig([
+    void updates(SignatureVerifierConfigBuilder b),
+  ]) = _$SignatureVerifierConfig;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SignatureVerifierConfigBuilder b) => b;
@@ -59,7 +59,7 @@ class _$SignatureVerifierConfigSerializer
   @override
   final Iterable<Type> types = const [
     SignatureVerifierConfig,
-    _$SignatureVerifierConfig
+    _$SignatureVerifierConfig,
   ];
 
   @override
@@ -111,9 +111,11 @@ class _$SignatureVerifierConfigSerializer
     SignatureVerifierConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,41 +131,53 @@ class _$SignatureVerifierConfigSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'scheme':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SignatureVerifierConfigSchemeEnum),
-          ) as SignatureVerifierConfigSchemeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SignatureVerifierConfigSchemeEnum,
+                    ),
+                  )
+                  as SignatureVerifierConfigSchemeEnum;
           result.scheme = valueDes;
           break;
         case r'header':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.header = valueDes;
           break;
         case r'secret':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.secret = valueDes;
           break;
         case r'secretSet':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.secretSet = valueDes;
           break;
         case r'keyOptional':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.keyOptional = valueDes;
           break;

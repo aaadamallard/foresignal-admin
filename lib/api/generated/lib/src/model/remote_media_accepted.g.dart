@@ -14,17 +14,19 @@ class _$RemoteMediaAccepted extends RemoteMediaAccepted {
   @override
   final String? passId;
 
-  factory _$RemoteMediaAccepted(
-          [void Function(RemoteMediaAcceptedBuilder)? updates]) =>
-      (RemoteMediaAcceptedBuilder()..update(updates))._build();
+  factory _$RemoteMediaAccepted([
+    void Function(RemoteMediaAcceptedBuilder)? updates,
+  ]) => (RemoteMediaAcceptedBuilder()..update(updates))._build();
 
-  _$RemoteMediaAccepted._(
-      {required this.mediaId, required this.sha256, this.passId})
-      : super._();
+  _$RemoteMediaAccepted._({
+    required this.mediaId,
+    required this.sha256,
+    this.passId,
+  }) : super._();
   @override
   RemoteMediaAccepted rebuild(
-          void Function(RemoteMediaAcceptedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RemoteMediaAcceptedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RemoteMediaAcceptedBuilder toBuilder() =>
@@ -104,12 +106,19 @@ class RemoteMediaAcceptedBuilder
   RemoteMediaAccepted build() => _build();
 
   _$RemoteMediaAccepted _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RemoteMediaAccepted._(
           mediaId: BuiltValueNullFieldError.checkNotNull(
-              mediaId, r'RemoteMediaAccepted', 'mediaId'),
+            mediaId,
+            r'RemoteMediaAccepted',
+            'mediaId',
+          ),
           sha256: BuiltValueNullFieldError.checkNotNull(
-              sha256, r'RemoteMediaAccepted', 'sha256'),
+            sha256,
+            r'RemoteMediaAccepted',
+            'sha256',
+          ),
           passId: passId,
         );
     replace(_$result);

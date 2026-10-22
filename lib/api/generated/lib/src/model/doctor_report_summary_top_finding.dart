@@ -17,8 +17,10 @@ part 'doctor_report_summary_top_finding.g.dart';
 @BuiltValue()
 abstract class DoctorReportSummaryTopFinding
     implements
-        Built<DoctorReportSummaryTopFinding,
-            DoctorReportSummaryTopFindingBuilder> {
+        Built<
+          DoctorReportSummaryTopFinding,
+          DoctorReportSummaryTopFindingBuilder
+        > {
   @BuiltValueField(wireName: r'code')
   DoctorReportSummaryTopFindingCodeEnum get code;
   // enum codeEnum {  AUTH_FAILED,  UA_BLOCKED,  ENDPOINT_MOVED,  RATE_LIMITED,  UPSTREAM_ERROR,  HTML_INSTEAD_OF_DATA,  EMPTY_RESULT,  FIELD_RENAMED,  FIELD_REMOVED,  TYPE_CHANGED,  FORMAT_CHANGED,  PARSER_REJECTS,  COVERAGE_DROPPED,  NO_CHANGE_DETECTED,  PROBE_SKIPPED_BUDGET,  };
@@ -28,9 +30,9 @@ abstract class DoctorReportSummaryTopFinding
 
   DoctorReportSummaryTopFinding._();
 
-  factory DoctorReportSummaryTopFinding(
-          [void updates(DoctorReportSummaryTopFindingBuilder b)]) =
-      _$DoctorReportSummaryTopFinding;
+  factory DoctorReportSummaryTopFinding([
+    void updates(DoctorReportSummaryTopFindingBuilder b),
+  ]) = _$DoctorReportSummaryTopFinding;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DoctorReportSummaryTopFindingBuilder b) => b;
@@ -45,7 +47,7 @@ class _$DoctorReportSummaryTopFindingSerializer
   @override
   final Iterable<Type> types = const [
     DoctorReportSummaryTopFinding,
-    _$DoctorReportSummaryTopFinding
+    _$DoctorReportSummaryTopFinding,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$DoctorReportSummaryTopFindingSerializer
     DoctorReportSummaryTopFinding object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,23 @@ class _$DoctorReportSummaryTopFindingSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(DoctorReportSummaryTopFindingCodeEnum),
-          ) as DoctorReportSummaryTopFindingCodeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DoctorReportSummaryTopFindingCodeEnum,
+                    ),
+                  )
+                  as DoctorReportSummaryTopFindingCodeEnum;
           result.code = valueDes;
           break;
         case r'suggestedAction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.suggestedAction = valueDes;
           break;

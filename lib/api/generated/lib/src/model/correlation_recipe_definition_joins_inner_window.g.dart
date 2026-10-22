@@ -13,19 +13,17 @@ class _$CorrelationRecipeDefinitionJoinsInnerWindow
   @override
   final String? after;
 
-  factory _$CorrelationRecipeDefinitionJoinsInnerWindow(
-          [void Function(CorrelationRecipeDefinitionJoinsInnerWindowBuilder)?
-              updates]) =>
-      (CorrelationRecipeDefinitionJoinsInnerWindowBuilder()..update(updates))
-          ._build();
+  factory _$CorrelationRecipeDefinitionJoinsInnerWindow([
+    void Function(CorrelationRecipeDefinitionJoinsInnerWindowBuilder)? updates,
+  ]) => (CorrelationRecipeDefinitionJoinsInnerWindowBuilder()..update(updates))
+      ._build();
 
   _$CorrelationRecipeDefinitionJoinsInnerWindow._({this.before, this.after})
-      : super._();
+    : super._();
   @override
   CorrelationRecipeDefinitionJoinsInnerWindow rebuild(
-          void Function(CorrelationRecipeDefinitionJoinsInnerWindowBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeDefinitionJoinsInnerWindowBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeDefinitionJoinsInnerWindowBuilder toBuilder() =>
@@ -51,7 +49,8 @@ class _$CorrelationRecipeDefinitionJoinsInnerWindow
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CorrelationRecipeDefinitionJoinsInnerWindow')
+            r'CorrelationRecipeDefinitionJoinsInnerWindow',
+          )
           ..add('before', before)
           ..add('after', after))
         .toString();
@@ -60,8 +59,10 @@ class _$CorrelationRecipeDefinitionJoinsInnerWindow
 
 class CorrelationRecipeDefinitionJoinsInnerWindowBuilder
     implements
-        Builder<CorrelationRecipeDefinitionJoinsInnerWindow,
-            CorrelationRecipeDefinitionJoinsInnerWindowBuilder> {
+        Builder<
+          CorrelationRecipeDefinitionJoinsInnerWindow,
+          CorrelationRecipeDefinitionJoinsInnerWindowBuilder
+        > {
   _$CorrelationRecipeDefinitionJoinsInnerWindow? _$v;
 
   String? _before;
@@ -93,8 +94,8 @@ class CorrelationRecipeDefinitionJoinsInnerWindowBuilder
 
   @override
   void update(
-      void Function(CorrelationRecipeDefinitionJoinsInnerWindowBuilder)?
-          updates) {
+    void Function(CorrelationRecipeDefinitionJoinsInnerWindowBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -102,7 +103,8 @@ class CorrelationRecipeDefinitionJoinsInnerWindowBuilder
   CorrelationRecipeDefinitionJoinsInnerWindow build() => _build();
 
   _$CorrelationRecipeDefinitionJoinsInnerWindow _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CorrelationRecipeDefinitionJoinsInnerWindow._(
           before: before,
           after: after,

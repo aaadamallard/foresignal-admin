@@ -17,8 +17,10 @@ part 'emwin_warning_payload_duplicate_of.g.dart';
 @BuiltValue()
 abstract class EmwinWarningPayloadDuplicateOf
     implements
-        Built<EmwinWarningPayloadDuplicateOf,
-            EmwinWarningPayloadDuplicateOfBuilder> {
+        Built<
+          EmwinWarningPayloadDuplicateOf,
+          EmwinWarningPayloadDuplicateOfBuilder
+        > {
   @BuiltValueField(wireName: r'source')
   EmwinWarningPayloadDuplicateOfSource_Enum get source_;
   // enum source_Enum {  nws-alerts,  };
@@ -28,9 +30,9 @@ abstract class EmwinWarningPayloadDuplicateOf
 
   EmwinWarningPayloadDuplicateOf._();
 
-  factory EmwinWarningPayloadDuplicateOf(
-          [void updates(EmwinWarningPayloadDuplicateOfBuilder b)]) =
-      _$EmwinWarningPayloadDuplicateOf;
+  factory EmwinWarningPayloadDuplicateOf([
+    void updates(EmwinWarningPayloadDuplicateOfBuilder b),
+  ]) = _$EmwinWarningPayloadDuplicateOf;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EmwinWarningPayloadDuplicateOfBuilder b) => b;
@@ -45,7 +47,7 @@ class _$EmwinWarningPayloadDuplicateOfSerializer
   @override
   final Iterable<Type> types = const [
     EmwinWarningPayloadDuplicateOf,
-    _$EmwinWarningPayloadDuplicateOf
+    _$EmwinWarningPayloadDuplicateOf,
   ];
 
   @override
@@ -74,9 +76,11 @@ class _$EmwinWarningPayloadDuplicateOfSerializer
     EmwinWarningPayloadDuplicateOf object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +96,23 @@ class _$EmwinWarningPayloadDuplicateOfSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(EmwinWarningPayloadDuplicateOfSource_Enum),
-          ) as EmwinWarningPayloadDuplicateOfSource_Enum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      EmwinWarningPayloadDuplicateOfSource_Enum,
+                    ),
+                  )
+                  as EmwinWarningPayloadDuplicateOfSource_Enum;
           result.source_ = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalId = valueDes;
           break;
         default:

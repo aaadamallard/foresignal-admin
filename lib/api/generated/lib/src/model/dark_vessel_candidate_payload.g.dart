@@ -7,20 +7,20 @@ part of 'dark_vessel_candidate_payload.dart';
 // **************************************************************************
 
 const DarkVesselCandidatePayloadStatusEnum
-    _$darkVesselCandidatePayloadStatusEnum_ok =
+_$darkVesselCandidatePayloadStatusEnum_ok =
     const DarkVesselCandidatePayloadStatusEnum._('ok');
 const DarkVesselCandidatePayloadStatusEnum
-    _$darkVesselCandidatePayloadStatusEnum_insufficientData =
+_$darkVesselCandidatePayloadStatusEnum_insufficientData =
     const DarkVesselCandidatePayloadStatusEnum._('insufficientData');
 const DarkVesselCandidatePayloadStatusEnum
-    _$darkVesselCandidatePayloadStatusEnum_noCoverage =
+_$darkVesselCandidatePayloadStatusEnum_noCoverage =
     const DarkVesselCandidatePayloadStatusEnum._('noCoverage');
 const DarkVesselCandidatePayloadStatusEnum
-    _$darkVesselCandidatePayloadStatusEnum_degradedInput =
+_$darkVesselCandidatePayloadStatusEnum_degradedInput =
     const DarkVesselCandidatePayloadStatusEnum._('degradedInput');
 
 DarkVesselCandidatePayloadStatusEnum
-    _$darkVesselCandidatePayloadStatusEnumValueOf(String name) {
+_$darkVesselCandidatePayloadStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$darkVesselCandidatePayloadStatusEnum_ok;
@@ -36,16 +36,18 @@ DarkVesselCandidatePayloadStatusEnum
 }
 
 final BuiltSet<DarkVesselCandidatePayloadStatusEnum>
-    _$darkVesselCandidatePayloadStatusEnumValues = BuiltSet<
-        DarkVesselCandidatePayloadStatusEnum>(const <DarkVesselCandidatePayloadStatusEnum>[
-  _$darkVesselCandidatePayloadStatusEnum_ok,
-  _$darkVesselCandidatePayloadStatusEnum_insufficientData,
-  _$darkVesselCandidatePayloadStatusEnum_noCoverage,
-  _$darkVesselCandidatePayloadStatusEnum_degradedInput,
-]);
+_$darkVesselCandidatePayloadStatusEnumValues =
+    BuiltSet<DarkVesselCandidatePayloadStatusEnum>(
+      const <DarkVesselCandidatePayloadStatusEnum>[
+        _$darkVesselCandidatePayloadStatusEnum_ok,
+        _$darkVesselCandidatePayloadStatusEnum_insufficientData,
+        _$darkVesselCandidatePayloadStatusEnum_noCoverage,
+        _$darkVesselCandidatePayloadStatusEnum_degradedInput,
+      ],
+    );
 
 Serializer<DarkVesselCandidatePayloadStatusEnum>
-    _$darkVesselCandidatePayloadStatusEnumSerializer =
+_$darkVesselCandidatePayloadStatusEnumSerializer =
     _$DarkVesselCandidatePayloadStatusEnumSerializer();
 
 class _$DarkVesselCandidatePayloadStatusEnumSerializer
@@ -65,23 +67,26 @@ class _$DarkVesselCandidatePayloadStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    DarkVesselCandidatePayloadStatusEnum
+    DarkVesselCandidatePayloadStatusEnum,
   ];
   @override
   final String wireName = 'DarkVesselCandidatePayloadStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, DarkVesselCandidatePayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DarkVesselCandidatePayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DarkVesselCandidatePayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DarkVesselCandidatePayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DarkVesselCandidatePayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DarkVesselCandidatePayload extends DarkVesselCandidatePayload {
@@ -114,30 +119,30 @@ class _$DarkVesselCandidatePayload extends DarkVesselCandidatePayload {
   @override
   final String? label;
 
-  factory _$DarkVesselCandidatePayload(
-          [void Function(DarkVesselCandidatePayloadBuilder)? updates]) =>
-      (DarkVesselCandidatePayloadBuilder()..update(updates))._build();
+  factory _$DarkVesselCandidatePayload([
+    void Function(DarkVesselCandidatePayloadBuilder)? updates,
+  ]) => (DarkVesselCandidatePayloadBuilder()..update(updates))._build();
 
-  _$DarkVesselCandidatePayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.mmsi,
-      required this.gapStart,
-      required this.detectionId,
-      this.distanceKm,
-      this.timeOffsetMin,
-      this.detectionLengthM,
-      required this.matchScore,
-      this.label})
-      : super._();
+  _$DarkVesselCandidatePayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.mmsi,
+    required this.gapStart,
+    required this.detectionId,
+    this.distanceKm,
+    this.timeOffsetMin,
+    this.detectionLengthM,
+    required this.matchScore,
+    this.label,
+  }) : super._();
   @override
   DarkVesselCandidatePayload rebuild(
-          void Function(DarkVesselCandidatePayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DarkVesselCandidatePayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DarkVesselCandidatePayloadBuilder toBuilder() =>
@@ -315,28 +320,50 @@ class DarkVesselCandidatePayloadBuilder
   _$DarkVesselCandidatePayload _build() {
     _$DarkVesselCandidatePayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DarkVesselCandidatePayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'DarkVesselCandidatePayload', 'automated'),
+              automated,
+              r'DarkVesselCandidatePayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'DarkVesselCandidatePayload', 'notAWarning'),
+              notAWarning,
+              r'DarkVesselCandidatePayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DarkVesselCandidatePayload', 'status'),
+              status,
+              r'DarkVesselCandidatePayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             mmsi: BuiltValueNullFieldError.checkNotNull(
-                mmsi, r'DarkVesselCandidatePayload', 'mmsi'),
+              mmsi,
+              r'DarkVesselCandidatePayload',
+              'mmsi',
+            ),
             gapStart: BuiltValueNullFieldError.checkNotNull(
-                gapStart, r'DarkVesselCandidatePayload', 'gapStart'),
+              gapStart,
+              r'DarkVesselCandidatePayload',
+              'gapStart',
+            ),
             detectionId: BuiltValueNullFieldError.checkNotNull(
-                detectionId, r'DarkVesselCandidatePayload', 'detectionId'),
+              detectionId,
+              r'DarkVesselCandidatePayload',
+              'detectionId',
+            ),
             distanceKm: distanceKm,
             timeOffsetMin: timeOffsetMin,
             detectionLengthM: detectionLengthM,
             matchScore: BuiltValueNullFieldError.checkNotNull(
-                matchScore, r'DarkVesselCandidatePayload', 'matchScore'),
+              matchScore,
+              r'DarkVesselCandidatePayload',
+              'matchScore',
+            ),
             label: label,
           );
     } catch (_) {
@@ -349,7 +376,10 @@ class DarkVesselCandidatePayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DarkVesselCandidatePayload', _$failedField, e.toString());
+          r'DarkVesselCandidatePayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

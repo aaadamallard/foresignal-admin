@@ -195,8 +195,10 @@ class _$ProductSerializer implements PrimitiveSerializer<Product> {
       yield r'codes';
       yield serializers.serialize(
         object.codes,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.temporal != null) {
@@ -263,9 +265,11 @@ class _$ProductSerializer implements PrimitiveSerializer<Product> {
     Product object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -281,150 +285,192 @@ class _$ProductSerializer implements PrimitiveSerializer<Product> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ProductKindEnum),
-          ) as ProductKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ProductKindEnum),
+                  )
+                  as ProductKindEnum;
           result.kind = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ProductCategoryEnum),
-          ) as ProductCategoryEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ProductCategoryEnum),
+                  )
+                  as ProductCategoryEnum;
           result.category = valueDes;
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.source_ = valueDes;
           break;
         case r'dynamic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.dynamic_ = valueDes;
           break;
         case r'units':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.units = valueDes;
           break;
         case r'dtype':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductDtypeEnum),
-          ) as ProductDtypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductDtypeEnum),
+                  )
+                  as ProductDtypeEnum?;
           if (valueDes == null) continue;
           result.dtype = valueDes;
           break;
         case r'coverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductCoverageEnum),
-          ) as ProductCoverageEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductCoverageEnum),
+                  )
+                  as ProductCoverageEnum?;
           if (valueDes == null) continue;
           result.coverage = valueDes;
           break;
         case r'coverageMeaning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.coverageMeaning = valueDes;
           break;
         case r'codes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.codes.replace(valueDes);
           break;
         case r'temporal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductTemporal),
-          ) as ProductTemporal?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductTemporal),
+                  )
+                  as ProductTemporal?;
           if (valueDes == null) continue;
           result.temporal.replace(valueDes);
           break;
         case r'spatial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductSpatial),
-          ) as ProductSpatial?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductSpatial),
+                  )
+                  as ProductSpatial?;
           if (valueDes == null) continue;
           result.spatial.replace(valueDes);
           break;
         case r'render':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductRender),
-          ) as ProductRender?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductRender),
+                  )
+                  as ProductRender?;
           if (valueDes == null) continue;
           result.render.replace(valueDes);
           break;
         case r'legend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductLegend),
-          ) as ProductLegend?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductLegend),
+                  )
+                  as ProductLegend?;
           if (valueDes == null) continue;
           result.legend.replace(valueDes);
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Attribution),
-          ) as Attribution?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Attribution),
+                  )
+                  as Attribution?;
           if (valueDes == null) continue;
           result.attribution.replace(valueDes);
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductStatus),
-          ) as ProductStatus?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductStatus),
+                  )
+                  as ProductStatus?;
           if (valueDes == null) continue;
           result.status.replace(valueDes);
           break;
         case r'external':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ExternalCatalogueEntry),
-          ) as ExternalCatalogueEntry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExternalCatalogueEntry,
+                    ),
+                  )
+                  as ExternalCatalogueEntry?;
           if (valueDes == null) continue;
           result.external_.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProductLinks),
-          ) as ProductLinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProductLinks),
+                  )
+                  as ProductLinks?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;

@@ -22,23 +22,23 @@ class _$IndexFitResultComponentsInner extends IndexFitResultComponentsInner {
   @override
   final num proposedWeight;
 
-  factory _$IndexFitResultComponentsInner(
-          [void Function(IndexFitResultComponentsInnerBuilder)? updates]) =>
-      (IndexFitResultComponentsInnerBuilder()..update(updates))._build();
+  factory _$IndexFitResultComponentsInner([
+    void Function(IndexFitResultComponentsInnerBuilder)? updates,
+  ]) => (IndexFitResultComponentsInnerBuilder()..update(updates))._build();
 
-  _$IndexFitResultComponentsInner._(
-      {required this.key,
-      required this.coefficient,
-      this.standardError,
-      this.pValue,
-      this.significant,
-      this.currentWeight,
-      required this.proposedWeight})
-      : super._();
+  _$IndexFitResultComponentsInner._({
+    required this.key,
+    required this.coefficient,
+    this.standardError,
+    this.pValue,
+    this.significant,
+    this.currentWeight,
+    required this.proposedWeight,
+  }) : super._();
   @override
   IndexFitResultComponentsInner rebuild(
-          void Function(IndexFitResultComponentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndexFitResultComponentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndexFitResultComponentsInnerBuilder toBuilder() =>
@@ -87,8 +87,10 @@ class _$IndexFitResultComponentsInner extends IndexFitResultComponentsInner {
 
 class IndexFitResultComponentsInnerBuilder
     implements
-        Builder<IndexFitResultComponentsInner,
-            IndexFitResultComponentsInnerBuilder> {
+        Builder<
+          IndexFitResultComponentsInner,
+          IndexFitResultComponentsInnerBuilder
+        > {
   _$IndexFitResultComponentsInner? _$v;
 
   String? _key;
@@ -155,18 +157,28 @@ class IndexFitResultComponentsInnerBuilder
   IndexFitResultComponentsInner build() => _build();
 
   _$IndexFitResultComponentsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IndexFitResultComponentsInner._(
           key: BuiltValueNullFieldError.checkNotNull(
-              key, r'IndexFitResultComponentsInner', 'key'),
+            key,
+            r'IndexFitResultComponentsInner',
+            'key',
+          ),
           coefficient: BuiltValueNullFieldError.checkNotNull(
-              coefficient, r'IndexFitResultComponentsInner', 'coefficient'),
+            coefficient,
+            r'IndexFitResultComponentsInner',
+            'coefficient',
+          ),
           standardError: standardError,
           pValue: pValue,
           significant: significant,
           currentWeight: currentWeight,
-          proposedWeight: BuiltValueNullFieldError.checkNotNull(proposedWeight,
-              r'IndexFitResultComponentsInner', 'proposedWeight'),
+          proposedWeight: BuiltValueNullFieldError.checkNotNull(
+            proposedWeight,
+            r'IndexFitResultComponentsInner',
+            'proposedWeight',
+          ),
         );
     replace(_$result);
     return _$result;

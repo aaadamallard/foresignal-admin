@@ -57,14 +57,17 @@ class _$ModelDisagreementSerializer
     yield r'fields';
     yield serializers.serialize(
       object.fields,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ModelDisagreementFieldsEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ModelDisagreementFieldsEnum),
+      ]),
     );
     yield r'spread';
     yield serializers.serialize(
       object.spread,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(num)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(num),
+      ]),
     );
     yield r'models';
     yield serializers.serialize(
@@ -79,9 +82,11 @@ class _$ModelDisagreementSerializer
     ModelDisagreement object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,26 +102,37 @@ class _$ModelDisagreementSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'fields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ModelDisagreementFieldsEnum)]),
-          ) as BuiltList<ModelDisagreementFieldsEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ModelDisagreementFieldsEnum),
+                    ]),
+                  )
+                  as BuiltList<ModelDisagreementFieldsEnum>;
           result.fields.replace(valueDes);
           break;
         case r'spread':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>;
           result.spread.replace(valueDes);
           break;
         case r'models':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.models.replace(valueDes);
           break;
         default:

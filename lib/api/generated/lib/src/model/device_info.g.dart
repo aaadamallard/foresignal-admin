@@ -44,14 +44,14 @@ DeviceInfoPlatformEnum _$deviceInfoPlatformEnumValueOf(String name) {
 
 final BuiltSet<DeviceInfoPlatformEnum> _$deviceInfoPlatformEnumValues =
     BuiltSet<DeviceInfoPlatformEnum>(const <DeviceInfoPlatformEnum>[
-  _$deviceInfoPlatformEnum_ios,
-  _$deviceInfoPlatformEnum_android,
-  _$deviceInfoPlatformEnum_macos,
-  _$deviceInfoPlatformEnum_windows,
-  _$deviceInfoPlatformEnum_linux,
-  _$deviceInfoPlatformEnum_web,
-  _$deviceInfoPlatformEnum_other,
-]);
+      _$deviceInfoPlatformEnum_ios,
+      _$deviceInfoPlatformEnum_android,
+      _$deviceInfoPlatformEnum_macos,
+      _$deviceInfoPlatformEnum_windows,
+      _$deviceInfoPlatformEnum_linux,
+      _$deviceInfoPlatformEnum_web,
+      _$deviceInfoPlatformEnum_other,
+    ]);
 
 Serializer<DeviceInfoPlatformEnum> _$deviceInfoPlatformEnumSerializer =
     _$DeviceInfoPlatformEnumSerializer();
@@ -83,15 +83,20 @@ class _$DeviceInfoPlatformEnumSerializer
   final String wireName = 'DeviceInfoPlatformEnum';
 
   @override
-  Object serialize(Serializers serializers, DeviceInfoPlatformEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DeviceInfoPlatformEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  DeviceInfoPlatformEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DeviceInfoPlatformEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  DeviceInfoPlatformEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DeviceInfoPlatformEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DeviceInfo extends DeviceInfo {
@@ -107,12 +112,12 @@ class _$DeviceInfo extends DeviceInfo {
   factory _$DeviceInfo([void Function(DeviceInfoBuilder)? updates]) =>
       (DeviceInfoBuilder()..update(updates))._build();
 
-  _$DeviceInfo._(
-      {required this.deviceName,
-      required this.platform,
-      this.appVersion,
-      this.reportedAt})
-      : super._();
+  _$DeviceInfo._({
+    required this.deviceName,
+    required this.platform,
+    this.appVersion,
+    this.reportedAt,
+  }) : super._();
   @override
   DeviceInfo rebuild(void Function(DeviceInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -201,12 +206,19 @@ class DeviceInfoBuilder implements Builder<DeviceInfo, DeviceInfoBuilder> {
   DeviceInfo build() => _build();
 
   _$DeviceInfo _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DeviceInfo._(
           deviceName: BuiltValueNullFieldError.checkNotNull(
-              deviceName, r'DeviceInfo', 'deviceName'),
+            deviceName,
+            r'DeviceInfo',
+            'deviceName',
+          ),
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'DeviceInfo', 'platform'),
+            platform,
+            r'DeviceInfo',
+            'platform',
+          ),
           appVersion: appVersion,
           reportedAt: reportedAt,
         );

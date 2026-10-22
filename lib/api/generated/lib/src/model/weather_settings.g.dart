@@ -12,7 +12,8 @@ const WeatherSettingsAlertContextEnum _$weatherSettingsAlertContextEnum_off =
     const WeatherSettingsAlertContextEnum._('off');
 
 WeatherSettingsAlertContextEnum _$weatherSettingsAlertContextEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'auto':
       return _$weatherSettingsAlertContextEnum_auto;
@@ -24,14 +25,16 @@ WeatherSettingsAlertContextEnum _$weatherSettingsAlertContextEnumValueOf(
 }
 
 final BuiltSet<WeatherSettingsAlertContextEnum>
-    _$weatherSettingsAlertContextEnumValues = BuiltSet<
-        WeatherSettingsAlertContextEnum>(const <WeatherSettingsAlertContextEnum>[
-  _$weatherSettingsAlertContextEnum_auto,
-  _$weatherSettingsAlertContextEnum_off,
-]);
+_$weatherSettingsAlertContextEnumValues =
+    BuiltSet<WeatherSettingsAlertContextEnum>(
+      const <WeatherSettingsAlertContextEnum>[
+        _$weatherSettingsAlertContextEnum_auto,
+        _$weatherSettingsAlertContextEnum_off,
+      ],
+    );
 
 Serializer<WeatherSettingsAlertContextEnum>
-    _$weatherSettingsAlertContextEnumSerializer =
+_$weatherSettingsAlertContextEnumSerializer =
     _$WeatherSettingsAlertContextEnumSerializer();
 
 class _$WeatherSettingsAlertContextEnumSerializer
@@ -52,16 +55,19 @@ class _$WeatherSettingsAlertContextEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, WeatherSettingsAlertContextEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    WeatherSettingsAlertContextEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WeatherSettingsAlertContextEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WeatherSettingsAlertContextEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WeatherSettingsAlertContextEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WeatherSettings extends WeatherSettings {
@@ -76,7 +82,7 @@ class _$WeatherSettings extends WeatherSettings {
       (WeatherSettingsBuilder()..update(updates))._build();
 
   _$WeatherSettings._({this.alertContext, this.defaultAoi, this.aoiBufferKm})
-      : super._();
+    : super._();
   @override
   WeatherSettings rebuild(void Function(WeatherSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -159,7 +165,8 @@ class WeatherSettingsBuilder
   WeatherSettings build() => _build();
 
   _$WeatherSettings _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WeatherSettings._(
           alertContext: alertContext,
           defaultAoi: defaultAoi,

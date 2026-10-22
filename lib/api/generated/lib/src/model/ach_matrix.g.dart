@@ -27,16 +27,16 @@ class _$AchMatrix extends AchMatrix {
   factory _$AchMatrix([void Function(AchMatrixBuilder)? updates]) =>
       (AchMatrixBuilder()..update(updates))._build();
 
-  _$AchMatrix._(
-      {required this.setId,
-      required this.computedAt,
-      required this.hypotheses,
-      required this.rows,
-      required this.scores,
-      this.leastInconsistentHypothesisId,
-      this.nonDiagnosticEvidenceIds,
-      this.note})
-      : super._();
+  _$AchMatrix._({
+    required this.setId,
+    required this.computedAt,
+    required this.hypotheses,
+    required this.rows,
+    required this.scores,
+    this.leastInconsistentHypothesisId,
+    this.nonDiagnosticEvidenceIds,
+    this.note,
+  }) : super._();
   @override
   AchMatrix rebuild(void Function(AchMatrixBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -167,12 +167,19 @@ class AchMatrixBuilder implements Builder<AchMatrix, AchMatrixBuilder> {
   _$AchMatrix _build() {
     _$AchMatrix _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AchMatrix._(
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'AchMatrix', 'setId'),
+              setId,
+              r'AchMatrix',
+              'setId',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'AchMatrix', 'computedAt'),
+              computedAt,
+              r'AchMatrix',
+              'computedAt',
+            ),
             hypotheses: hypotheses.build(),
             rows: rows.build(),
             scores: scores.build(),
@@ -194,7 +201,10 @@ class AchMatrixBuilder implements Builder<AchMatrix, AchMatrixBuilder> {
         _nonDiagnosticEvidenceIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AchMatrix', _$failedField, e.toString());
+          r'AchMatrix',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

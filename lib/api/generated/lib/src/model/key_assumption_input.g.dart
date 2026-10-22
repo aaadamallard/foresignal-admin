@@ -16,7 +16,8 @@ const KeyAssumptionInputStatusEnum _$keyAssumptionInputStatusEnum_broken =
     const KeyAssumptionInputStatusEnum._('broken');
 
 KeyAssumptionInputStatusEnum _$keyAssumptionInputStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'solid':
       return _$keyAssumptionInputStatusEnum_solid;
@@ -32,16 +33,16 @@ KeyAssumptionInputStatusEnum _$keyAssumptionInputStatusEnumValueOf(
 }
 
 final BuiltSet<KeyAssumptionInputStatusEnum>
-    _$keyAssumptionInputStatusEnumValues =
+_$keyAssumptionInputStatusEnumValues =
     BuiltSet<KeyAssumptionInputStatusEnum>(const <KeyAssumptionInputStatusEnum>[
-  _$keyAssumptionInputStatusEnum_solid,
-  _$keyAssumptionInputStatusEnum_caveated,
-  _$keyAssumptionInputStatusEnum_unsupported,
-  _$keyAssumptionInputStatusEnum_broken,
-]);
+      _$keyAssumptionInputStatusEnum_solid,
+      _$keyAssumptionInputStatusEnum_caveated,
+      _$keyAssumptionInputStatusEnum_unsupported,
+      _$keyAssumptionInputStatusEnum_broken,
+    ]);
 
 Serializer<KeyAssumptionInputStatusEnum>
-    _$keyAssumptionInputStatusEnumSerializer =
+_$keyAssumptionInputStatusEnumSerializer =
     _$KeyAssumptionInputStatusEnumSerializer();
 
 class _$KeyAssumptionInputStatusEnumSerializer
@@ -65,16 +66,20 @@ class _$KeyAssumptionInputStatusEnumSerializer
   final String wireName = 'KeyAssumptionInputStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, KeyAssumptionInputStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    KeyAssumptionInputStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   KeyAssumptionInputStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      KeyAssumptionInputStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => KeyAssumptionInputStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$KeyAssumptionInput extends KeyAssumptionInput {
@@ -93,23 +98,23 @@ class _$KeyAssumptionInput extends KeyAssumptionInput {
   @override
   final DateTime? reviewDue;
 
-  factory _$KeyAssumptionInput(
-          [void Function(KeyAssumptionInputBuilder)? updates]) =>
-      (KeyAssumptionInputBuilder()..update(updates))._build();
+  factory _$KeyAssumptionInput([
+    void Function(KeyAssumptionInputBuilder)? updates,
+  ]) => (KeyAssumptionInputBuilder()..update(updates))._build();
 
-  _$KeyAssumptionInput._(
-      {required this.text,
-      this.linchpin,
-      this.rationale,
-      this.wouldBeWrongIf,
-      this.status,
-      this.indicatorIds,
-      this.reviewDue})
-      : super._();
+  _$KeyAssumptionInput._({
+    required this.text,
+    this.linchpin,
+    this.rationale,
+    this.wouldBeWrongIf,
+    this.status,
+    this.indicatorIds,
+    this.reviewDue,
+  }) : super._();
   @override
   KeyAssumptionInput rebuild(
-          void Function(KeyAssumptionInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(KeyAssumptionInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   KeyAssumptionInputBuilder toBuilder() =>
@@ -226,10 +231,14 @@ class KeyAssumptionInputBuilder
   _$KeyAssumptionInput _build() {
     _$KeyAssumptionInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KeyAssumptionInput._(
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'KeyAssumptionInput', 'text'),
+              text,
+              r'KeyAssumptionInput',
+              'text',
+            ),
             linchpin: linchpin,
             rationale: rationale,
             wouldBeWrongIf: wouldBeWrongIf,
@@ -244,7 +253,10 @@ class KeyAssumptionInputBuilder
         _indicatorIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KeyAssumptionInput', _$failedField, e.toString());
+          r'KeyAssumptionInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

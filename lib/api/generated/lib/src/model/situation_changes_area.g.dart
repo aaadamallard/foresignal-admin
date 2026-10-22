@@ -14,16 +14,16 @@ class _$SituationChangesArea extends SituationChangesArea {
   @override
   final num? deltaKm2;
 
-  factory _$SituationChangesArea(
-          [void Function(SituationChangesAreaBuilder)? updates]) =>
-      (SituationChangesAreaBuilder()..update(updates))._build();
+  factory _$SituationChangesArea([
+    void Function(SituationChangesAreaBuilder)? updates,
+  ]) => (SituationChangesAreaBuilder()..update(updates))._build();
 
   _$SituationChangesArea._({this.beforeKm2, this.afterKm2, this.deltaKm2})
-      : super._();
+    : super._();
   @override
   SituationChangesArea rebuild(
-          void Function(SituationChangesAreaBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationChangesAreaBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationChangesAreaBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class SituationChangesAreaBuilder
   SituationChangesArea build() => _build();
 
   _$SituationChangesArea _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationChangesArea._(
           beforeKm2: beforeKm2,
           afterKm2: afterKm2,

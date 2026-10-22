@@ -16,17 +16,20 @@ class _$WeatherContextWarnings extends WeatherContextWarnings {
   @override
   final BuiltList<WeatherContextWarningsItemsInner>? items;
 
-  factory _$WeatherContextWarnings(
-          [void Function(WeatherContextWarningsBuilder)? updates]) =>
-      (WeatherContextWarningsBuilder()..update(updates))._build();
+  factory _$WeatherContextWarnings([
+    void Function(WeatherContextWarningsBuilder)? updates,
+  ]) => (WeatherContextWarningsBuilder()..update(updates))._build();
 
-  _$WeatherContextWarnings._(
-      {required this.status, this.asOf, this.statusText, this.items})
-      : super._();
+  _$WeatherContextWarnings._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.items,
+  }) : super._();
   @override
   WeatherContextWarnings rebuild(
-          void Function(WeatherContextWarningsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextWarningsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextWarningsBuilder toBuilder() =>
@@ -118,10 +121,14 @@ class WeatherContextWarningsBuilder
   _$WeatherContextWarnings _build() {
     _$WeatherContextWarnings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WeatherContextWarnings._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'WeatherContextWarnings', 'status'),
+              status,
+              r'WeatherContextWarnings',
+              'status',
+            ),
             asOf: asOf,
             statusText: statusText,
             items: _items?.build(),
@@ -133,7 +140,10 @@ class WeatherContextWarningsBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WeatherContextWarnings', _$failedField, e.toString());
+          r'WeatherContextWarnings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

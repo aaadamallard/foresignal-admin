@@ -17,8 +17,10 @@ part 'event_study_result_events_inner_abnormal_inner.g.dart';
 @BuiltValue()
 abstract class EventStudyResultEventsInnerAbnormalInner
     implements
-        Built<EventStudyResultEventsInnerAbnormalInner,
-            EventStudyResultEventsInnerAbnormalInnerBuilder> {
+        Built<
+          EventStudyResultEventsInnerAbnormalInner,
+          EventStudyResultEventsInnerAbnormalInnerBuilder
+        > {
   @BuiltValueField(wireName: r'offset')
   int get offset;
 
@@ -30,9 +32,9 @@ abstract class EventStudyResultEventsInnerAbnormalInner
 
   EventStudyResultEventsInnerAbnormalInner._();
 
-  factory EventStudyResultEventsInnerAbnormalInner(
-          [void updates(EventStudyResultEventsInnerAbnormalInnerBuilder b)]) =
-      _$EventStudyResultEventsInnerAbnormalInner;
+  factory EventStudyResultEventsInnerAbnormalInner([
+    void updates(EventStudyResultEventsInnerAbnormalInnerBuilder b),
+  ]) = _$EventStudyResultEventsInnerAbnormalInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventStudyResultEventsInnerAbnormalInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$EventStudyResultEventsInnerAbnormalInnerSerializer
   @override
   final Iterable<Type> types = const [
     EventStudyResultEventsInnerAbnormalInner,
-    _$EventStudyResultEventsInnerAbnormalInner
+    _$EventStudyResultEventsInnerAbnormalInner,
   ];
 
   @override
@@ -85,9 +87,11 @@ class _$EventStudyResultEventsInnerAbnormalInnerSerializer
     EventStudyResultEventsInnerAbnormalInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,25 +107,28 @@ class _$EventStudyResultEventsInnerAbnormalInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'offset':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.offset = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.value = valueDes;
           break;
         case r'cumulative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.cumulative = valueDes;
           break;

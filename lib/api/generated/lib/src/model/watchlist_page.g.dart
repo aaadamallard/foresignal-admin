@@ -92,11 +92,9 @@ class WatchlistPageBuilder
   _$WatchlistPage _build() {
     _$WatchlistPage _$result;
     try {
-      _$result = _$v ??
-          _$WatchlistPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$WatchlistPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class WatchlistPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchlistPage', _$failedField, e.toString());
+          r'WatchlistPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -179,9 +179,11 @@ class _$StyleSerializer implements PrimitiveSerializer<Style> {
     Style object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -197,98 +199,123 @@ class _$StyleSerializer implements PrimitiveSerializer<Style> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.version = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'current':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.current = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StyleTypeEnum),
-          ) as StyleTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StyleTypeEnum),
+                  )
+                  as StyleTypeEnum;
           result.type = valueDes;
           break;
         case r'units':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.units = valueDes;
           break;
         case r'stops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleStop)]),
-          ) as BuiltList<StyleStop>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleStop),
+                    ]),
+                  )
+                  as BuiltList<StyleStop>?;
           if (valueDes == null) continue;
           result.stops.replace(valueDes);
           break;
         case r'categories':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleCategory)]),
-          ) as BuiltList<StyleCategory>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleCategory),
+                    ]),
+                  )
+                  as BuiltList<StyleCategory>?;
           if (valueDes == null) continue;
           result.categories.replace(valueDes);
           break;
         case r'specials':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleSpecial)]),
-          ) as BuiltList<StyleSpecial>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleSpecial),
+                    ]),
+                  )
+                  as BuiltList<StyleSpecial>?;
           if (valueDes == null) continue;
           result.specials.replace(valueDes);
           break;
         case r'meaning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleMeaning)]),
-          ) as BuiltList<StyleMeaning>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleMeaning),
+                    ]),
+                  )
+                  as BuiltList<StyleMeaning>?;
           if (valueDes == null) continue;
           result.meaning.replace(valueDes);
           break;
         case r'notice':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.notice = valueDes;
           break;
         case r'derive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StyleDeriveEnum),
-          ) as StyleDeriveEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(StyleDeriveEnum),
+                  )
+                  as StyleDeriveEnum?;
           if (valueDes == null) continue;
           result.derive = valueDes;
           break;

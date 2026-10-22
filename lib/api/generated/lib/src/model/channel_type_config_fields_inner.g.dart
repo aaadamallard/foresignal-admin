@@ -7,32 +7,32 @@ part of 'channel_type_config_fields_inner.dart';
 // **************************************************************************
 
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_string =
+_$channelTypeConfigFieldsInnerTypeEnum_string =
     const ChannelTypeConfigFieldsInnerTypeEnum._('string');
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_url =
+_$channelTypeConfigFieldsInnerTypeEnum_url =
     const ChannelTypeConfigFieldsInnerTypeEnum._('url');
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_integer =
+_$channelTypeConfigFieldsInnerTypeEnum_integer =
     const ChannelTypeConfigFieldsInnerTypeEnum._('integer');
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_number =
+_$channelTypeConfigFieldsInnerTypeEnum_number =
     const ChannelTypeConfigFieldsInnerTypeEnum._('number');
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_boolean =
+_$channelTypeConfigFieldsInnerTypeEnum_boolean =
     const ChannelTypeConfigFieldsInnerTypeEnum._('boolean');
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_stringList =
+_$channelTypeConfigFieldsInnerTypeEnum_stringList =
     const ChannelTypeConfigFieldsInnerTypeEnum._('stringList');
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_map =
+_$channelTypeConfigFieldsInnerTypeEnum_map =
     const ChannelTypeConfigFieldsInnerTypeEnum._('map');
 const ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnum_enum_ =
+_$channelTypeConfigFieldsInnerTypeEnum_enum_ =
     const ChannelTypeConfigFieldsInnerTypeEnum._('enum_');
 
 ChannelTypeConfigFieldsInnerTypeEnum
-    _$channelTypeConfigFieldsInnerTypeEnumValueOf(String name) {
+_$channelTypeConfigFieldsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'string':
       return _$channelTypeConfigFieldsInnerTypeEnum_string;
@@ -56,20 +56,22 @@ ChannelTypeConfigFieldsInnerTypeEnum
 }
 
 final BuiltSet<ChannelTypeConfigFieldsInnerTypeEnum>
-    _$channelTypeConfigFieldsInnerTypeEnumValues = BuiltSet<
-        ChannelTypeConfigFieldsInnerTypeEnum>(const <ChannelTypeConfigFieldsInnerTypeEnum>[
-  _$channelTypeConfigFieldsInnerTypeEnum_string,
-  _$channelTypeConfigFieldsInnerTypeEnum_url,
-  _$channelTypeConfigFieldsInnerTypeEnum_integer,
-  _$channelTypeConfigFieldsInnerTypeEnum_number,
-  _$channelTypeConfigFieldsInnerTypeEnum_boolean,
-  _$channelTypeConfigFieldsInnerTypeEnum_stringList,
-  _$channelTypeConfigFieldsInnerTypeEnum_map,
-  _$channelTypeConfigFieldsInnerTypeEnum_enum_,
-]);
+_$channelTypeConfigFieldsInnerTypeEnumValues =
+    BuiltSet<ChannelTypeConfigFieldsInnerTypeEnum>(
+      const <ChannelTypeConfigFieldsInnerTypeEnum>[
+        _$channelTypeConfigFieldsInnerTypeEnum_string,
+        _$channelTypeConfigFieldsInnerTypeEnum_url,
+        _$channelTypeConfigFieldsInnerTypeEnum_integer,
+        _$channelTypeConfigFieldsInnerTypeEnum_number,
+        _$channelTypeConfigFieldsInnerTypeEnum_boolean,
+        _$channelTypeConfigFieldsInnerTypeEnum_stringList,
+        _$channelTypeConfigFieldsInnerTypeEnum_map,
+        _$channelTypeConfigFieldsInnerTypeEnum_enum_,
+      ],
+    );
 
 Serializer<ChannelTypeConfigFieldsInnerTypeEnum>
-    _$channelTypeConfigFieldsInnerTypeEnumSerializer =
+_$channelTypeConfigFieldsInnerTypeEnumSerializer =
     _$ChannelTypeConfigFieldsInnerTypeEnumSerializer();
 
 class _$ChannelTypeConfigFieldsInnerTypeEnumSerializer
@@ -97,23 +99,26 @@ class _$ChannelTypeConfigFieldsInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChannelTypeConfigFieldsInnerTypeEnum
+    ChannelTypeConfigFieldsInnerTypeEnum,
   ];
   @override
   final String wireName = 'ChannelTypeConfigFieldsInnerTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ChannelTypeConfigFieldsInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChannelTypeConfigFieldsInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChannelTypeConfigFieldsInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChannelTypeConfigFieldsInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChannelTypeConfigFieldsInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChannelTypeConfigFieldsInner extends ChannelTypeConfigFieldsInner {
@@ -130,22 +135,22 @@ class _$ChannelTypeConfigFieldsInner extends ChannelTypeConfigFieldsInner {
   @override
   final BuiltList<String>? allowed;
 
-  factory _$ChannelTypeConfigFieldsInner(
-          [void Function(ChannelTypeConfigFieldsInnerBuilder)? updates]) =>
-      (ChannelTypeConfigFieldsInnerBuilder()..update(updates))._build();
+  factory _$ChannelTypeConfigFieldsInner([
+    void Function(ChannelTypeConfigFieldsInnerBuilder)? updates,
+  ]) => (ChannelTypeConfigFieldsInnerBuilder()..update(updates))._build();
 
-  _$ChannelTypeConfigFieldsInner._(
-      {required this.name,
-      required this.type,
-      required this.required_,
-      this.description,
-      this.default_,
-      this.allowed})
-      : super._();
+  _$ChannelTypeConfigFieldsInner._({
+    required this.name,
+    required this.type,
+    required this.required_,
+    this.description,
+    this.default_,
+    this.allowed,
+  }) : super._();
   @override
   ChannelTypeConfigFieldsInner rebuild(
-          void Function(ChannelTypeConfigFieldsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChannelTypeConfigFieldsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChannelTypeConfigFieldsInnerBuilder toBuilder() =>
@@ -191,8 +196,10 @@ class _$ChannelTypeConfigFieldsInner extends ChannelTypeConfigFieldsInner {
 
 class ChannelTypeConfigFieldsInnerBuilder
     implements
-        Builder<ChannelTypeConfigFieldsInner,
-            ChannelTypeConfigFieldsInnerBuilder> {
+        Builder<
+          ChannelTypeConfigFieldsInner,
+          ChannelTypeConfigFieldsInnerBuilder
+        > {
   _$ChannelTypeConfigFieldsInner? _$v;
 
   String? _name;
@@ -253,14 +260,24 @@ class ChannelTypeConfigFieldsInnerBuilder
   _$ChannelTypeConfigFieldsInner _build() {
     _$ChannelTypeConfigFieldsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChannelTypeConfigFieldsInner._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ChannelTypeConfigFieldsInner', 'name'),
+              name,
+              r'ChannelTypeConfigFieldsInner',
+              'name',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ChannelTypeConfigFieldsInner', 'type'),
+              type,
+              r'ChannelTypeConfigFieldsInner',
+              'type',
+            ),
             required_: BuiltValueNullFieldError.checkNotNull(
-                required_, r'ChannelTypeConfigFieldsInner', 'required_'),
+              required_,
+              r'ChannelTypeConfigFieldsInner',
+              'required_',
+            ),
             description: description,
             default_: default_,
             allowed: _allowed?.build(),
@@ -272,7 +289,10 @@ class ChannelTypeConfigFieldsInnerBuilder
         _allowed?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChannelTypeConfigFieldsInner', _$failedField, e.toString());
+          r'ChannelTypeConfigFieldsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

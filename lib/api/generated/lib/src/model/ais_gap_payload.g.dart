@@ -32,11 +32,11 @@ AisGapPayloadStatusEnum _$aisGapPayloadStatusEnumValueOf(String name) {
 
 final BuiltSet<AisGapPayloadStatusEnum> _$aisGapPayloadStatusEnumValues =
     BuiltSet<AisGapPayloadStatusEnum>(const <AisGapPayloadStatusEnum>[
-  _$aisGapPayloadStatusEnum_ok,
-  _$aisGapPayloadStatusEnum_insufficientData,
-  _$aisGapPayloadStatusEnum_noCoverage,
-  _$aisGapPayloadStatusEnum_degradedInput,
-]);
+      _$aisGapPayloadStatusEnum_ok,
+      _$aisGapPayloadStatusEnum_insufficientData,
+      _$aisGapPayloadStatusEnum_noCoverage,
+      _$aisGapPayloadStatusEnum_degradedInput,
+    ]);
 
 Serializer<AisGapPayloadStatusEnum> _$aisGapPayloadStatusEnumSerializer =
     _$AisGapPayloadStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$AisGapPayloadStatusEnumSerializer
   final String wireName = 'AisGapPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AisGapPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AisGapPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AisGapPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AisGapPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AisGapPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AisGapPayload extends AisGapPayload {
@@ -111,24 +115,24 @@ class _$AisGapPayload extends AisGapPayload {
   factory _$AisGapPayload([void Function(AisGapPayloadBuilder)? updates]) =>
       (AisGapPayloadBuilder()..update(updates))._build();
 
-  _$AisGapPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.mmsi,
-      this.entityId,
-      required this.gapStart,
-      this.lastSog,
-      this.lastCog,
-      required this.open,
-      this.gapEnd,
-      this.gapMinutes,
-      this.displacementKm,
-      this.impliedKn})
-      : super._();
+  _$AisGapPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.mmsi,
+    this.entityId,
+    required this.gapStart,
+    this.lastSog,
+    this.lastCog,
+    required this.open,
+    this.gapEnd,
+    this.gapMinutes,
+    this.displacementKm,
+    this.impliedKn,
+  }) : super._();
   @override
   AisGapPayload rebuild(void Function(AisGapPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -321,26 +325,45 @@ class AisGapPayloadBuilder
   _$AisGapPayload _build() {
     _$AisGapPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AisGapPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'AisGapPayload', 'automated'),
+              automated,
+              r'AisGapPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'AisGapPayload', 'notAWarning'),
+              notAWarning,
+              r'AisGapPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AisGapPayload', 'status'),
+              status,
+              r'AisGapPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             mmsi: BuiltValueNullFieldError.checkNotNull(
-                mmsi, r'AisGapPayload', 'mmsi'),
+              mmsi,
+              r'AisGapPayload',
+              'mmsi',
+            ),
             entityId: entityId,
             gapStart: BuiltValueNullFieldError.checkNotNull(
-                gapStart, r'AisGapPayload', 'gapStart'),
+              gapStart,
+              r'AisGapPayload',
+              'gapStart',
+            ),
             lastSog: lastSog,
             lastCog: lastCog,
             open: BuiltValueNullFieldError.checkNotNull(
-                open, r'AisGapPayload', 'open'),
+              open,
+              r'AisGapPayload',
+              'open',
+            ),
             gapEnd: gapEnd,
             gapMinutes: gapMinutes,
             displacementKm: displacementKm,
@@ -356,7 +379,10 @@ class AisGapPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AisGapPayload', _$failedField, e.toString());
+          r'AisGapPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

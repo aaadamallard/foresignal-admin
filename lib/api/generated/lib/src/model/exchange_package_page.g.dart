@@ -12,15 +12,15 @@ class _$ExchangePackagePage extends ExchangePackagePage {
   @override
   final String? nextCursor;
 
-  factory _$ExchangePackagePage(
-          [void Function(ExchangePackagePageBuilder)? updates]) =>
-      (ExchangePackagePageBuilder()..update(updates))._build();
+  factory _$ExchangePackagePage([
+    void Function(ExchangePackagePageBuilder)? updates,
+  ]) => (ExchangePackagePageBuilder()..update(updates))._build();
 
   _$ExchangePackagePage._({required this.items, this.nextCursor}) : super._();
   @override
   ExchangePackagePage rebuild(
-          void Function(ExchangePackagePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExchangePackagePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExchangePackagePageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ExchangePackagePageBuilder
   _$ExchangePackagePage _build() {
     _$ExchangePackagePage _$result;
     try {
-      _$result = _$v ??
-          _$ExchangePackagePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ExchangePackagePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ExchangePackagePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExchangePackagePage', _$failedField, e.toString());
+          r'ExchangePackagePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

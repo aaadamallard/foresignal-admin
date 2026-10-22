@@ -29,17 +29,17 @@ class _$IntelBoard extends IntelBoard {
   factory _$IntelBoard([void Function(IntelBoardBuilder)? updates]) =>
       (IntelBoardBuilder()..update(updates))._build();
 
-  _$IntelBoard._(
-      {required this.generatedAt,
-      required this.situations,
-      required this.bandChanges,
-      required this.indicatorsObserved,
-      required this.forecastsDue,
-      required this.latestAssessments,
-      this.calibration,
-      this.benchmarks,
-      this.truncated})
-      : super._();
+  _$IntelBoard._({
+    required this.generatedAt,
+    required this.situations,
+    required this.bandChanges,
+    required this.indicatorsObserved,
+    required this.forecastsDue,
+    required this.latestAssessments,
+    this.calibration,
+    this.benchmarks,
+    this.truncated,
+  }) : super._();
   @override
   IntelBoard rebuild(void Function(IntelBoardBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -118,8 +118,8 @@ class IntelBoardBuilder implements Builder<IntelBoard, IntelBoardBuilder> {
       _$this._indicatorsObserved ??=
           ListBuilder<IntelBoardIndicatorsObservedInner>();
   set indicatorsObserved(
-          ListBuilder<IntelBoardIndicatorsObservedInner>? indicatorsObserved) =>
-      _$this._indicatorsObserved = indicatorsObserved;
+    ListBuilder<IntelBoardIndicatorsObservedInner>? indicatorsObserved,
+  ) => _$this._indicatorsObserved = indicatorsObserved;
 
   ListBuilder<IntelBoardForecastsDueInner>? _forecastsDue;
   ListBuilder<IntelBoardForecastsDueInner> get forecastsDue =>
@@ -132,8 +132,8 @@ class IntelBoardBuilder implements Builder<IntelBoard, IntelBoardBuilder> {
       _$this._latestAssessments ??=
           ListBuilder<IntelBoardLatestAssessmentsInner>();
   set latestAssessments(
-          ListBuilder<IntelBoardLatestAssessmentsInner>? latestAssessments) =>
-      _$this._latestAssessments = latestAssessments;
+    ListBuilder<IntelBoardLatestAssessmentsInner>? latestAssessments,
+  ) => _$this._latestAssessments = latestAssessments;
 
   IntelBoardCalibrationBuilder? _calibration;
   IntelBoardCalibrationBuilder get calibration =>
@@ -190,10 +190,14 @@ class IntelBoardBuilder implements Builder<IntelBoard, IntelBoardBuilder> {
   _$IntelBoard _build() {
     _$IntelBoard _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelBoard._(
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'IntelBoard', 'generatedAt'),
+              generatedAt,
+              r'IntelBoard',
+              'generatedAt',
+            ),
             situations: situations.build(),
             bandChanges: bandChanges.build(),
             indicatorsObserved: indicatorsObserved.build(),
@@ -224,7 +228,10 @@ class IntelBoardBuilder implements Builder<IntelBoard, IntelBoardBuilder> {
         _truncated?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelBoard', _$failedField, e.toString());
+          r'IntelBoard',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

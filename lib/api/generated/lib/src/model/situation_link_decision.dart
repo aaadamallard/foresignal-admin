@@ -64,8 +64,9 @@ abstract class SituationLinkDecision
 
   SituationLinkDecision._();
 
-  factory SituationLinkDecision(
-      [void updates(SituationLinkDecisionBuilder b)]) = _$SituationLinkDecision;
+  factory SituationLinkDecision([
+    void updates(SituationLinkDecisionBuilder b),
+  ]) = _$SituationLinkDecision;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationLinkDecisionBuilder b) => b;
@@ -80,7 +81,7 @@ class _$SituationLinkDecisionSerializer
   @override
   final Iterable<Type> types = const [
     SituationLinkDecision,
-    _$SituationLinkDecision
+    _$SituationLinkDecision,
   ];
 
   @override
@@ -92,10 +93,7 @@ class _$SituationLinkDecisionSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'seq';
-    yield serializers.serialize(
-      object.seq,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.seq, specifiedType: const FullType(int));
     yield r'inputRef';
     yield serializers.serialize(
       object.inputRef,
@@ -152,8 +150,9 @@ class _$SituationLinkDecisionSerializer
       yield r'candidates';
       yield serializers.serialize(
         object.candidates,
-        specifiedType: const FullType(
-            BuiltList, [FullType(SituationLinkDecisionCandidatesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SituationLinkDecisionCandidatesInner),
+        ]),
       );
     }
   }
@@ -164,9 +163,11 @@ class _$SituationLinkDecisionSerializer
     SituationLinkDecision object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -182,81 +183,102 @@ class _$SituationLinkDecisionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.seq = valueDes;
           break;
         case r'inputRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.inputRef = valueDes;
           break;
         case r'memberType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SituationLinkDecisionMemberTypeEnum),
-          ) as SituationLinkDecisionMemberTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SituationLinkDecisionMemberTypeEnum,
+                    ),
+                  )
+                  as SituationLinkDecisionMemberTypeEnum?;
           if (valueDes == null) continue;
           result.memberType = valueDes;
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.signalFamily = valueDes;
           break;
         case r'action':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationLinkDecisionActionEnum),
-          ) as SituationLinkDecisionActionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SituationLinkDecisionActionEnum,
+                    ),
+                  )
+                  as SituationLinkDecisionActionEnum;
           result.action = valueDes;
           break;
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.situationId = valueDes;
           break;
         case r'seedTitle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.seedTitle = valueDes;
           break;
         case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.score = valueDes;
           break;
         case r'joinReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SituationJoinReason),
-          ) as SituationJoinReason?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SituationJoinReason),
+                  )
+                  as SituationJoinReason?;
           if (valueDes == null) continue;
           result.joinReason.replace(valueDes);
           break;
         case r'candidates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SituationLinkDecisionCandidatesInner)]),
-          ) as BuiltList<SituationLinkDecisionCandidatesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SituationLinkDecisionCandidatesInner),
+                    ]),
+                  )
+                  as BuiltList<SituationLinkDecisionCandidatesInner>?;
           if (valueDes == null) continue;
           result.candidates.replace(valueDes);
           break;

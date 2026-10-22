@@ -18,21 +18,21 @@ class _$ScorecardEntryMurphy extends ScorecardEntryMurphy {
   @override
   final num? withinBinCovariance;
 
-  factory _$ScorecardEntryMurphy(
-          [void Function(ScorecardEntryMurphyBuilder)? updates]) =>
-      (ScorecardEntryMurphyBuilder()..update(updates))._build();
+  factory _$ScorecardEntryMurphy([
+    void Function(ScorecardEntryMurphyBuilder)? updates,
+  ]) => (ScorecardEntryMurphyBuilder()..update(updates))._build();
 
-  _$ScorecardEntryMurphy._(
-      {required this.reliability,
-      required this.resolution,
-      required this.uncertainty,
-      this.withinBinVariance,
-      this.withinBinCovariance})
-      : super._();
+  _$ScorecardEntryMurphy._({
+    required this.reliability,
+    required this.resolution,
+    required this.uncertainty,
+    this.withinBinVariance,
+    this.withinBinCovariance,
+  }) : super._();
   @override
   ScorecardEntryMurphy rebuild(
-          void Function(ScorecardEntryMurphyBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ScorecardEntryMurphyBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ScorecardEntryMurphyBuilder toBuilder() =>
@@ -130,14 +130,24 @@ class ScorecardEntryMurphyBuilder
   ScorecardEntryMurphy build() => _build();
 
   _$ScorecardEntryMurphy _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ScorecardEntryMurphy._(
           reliability: BuiltValueNullFieldError.checkNotNull(
-              reliability, r'ScorecardEntryMurphy', 'reliability'),
+            reliability,
+            r'ScorecardEntryMurphy',
+            'reliability',
+          ),
           resolution: BuiltValueNullFieldError.checkNotNull(
-              resolution, r'ScorecardEntryMurphy', 'resolution'),
+            resolution,
+            r'ScorecardEntryMurphy',
+            'resolution',
+          ),
           uncertainty: BuiltValueNullFieldError.checkNotNull(
-              uncertainty, r'ScorecardEntryMurphy', 'uncertainty'),
+            uncertainty,
+            r'ScorecardEntryMurphy',
+            'uncertainty',
+          ),
           withinBinVariance: withinBinVariance,
           withinBinCovariance: withinBinCovariance,
         );

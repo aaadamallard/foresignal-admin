@@ -24,20 +24,20 @@ class _$ForecastScorecard extends ForecastScorecard {
   @override
   final DateTime computedAt;
 
-  factory _$ForecastScorecard(
-          [void Function(ForecastScorecardBuilder)? updates]) =>
-      (ForecastScorecardBuilder()..update(updates))._build();
+  factory _$ForecastScorecard([
+    void Function(ForecastScorecardBuilder)? updates,
+  ]) => (ForecastScorecardBuilder()..update(updates))._build();
 
-  _$ForecastScorecard._(
-      {this.forecasterId,
-      this.category,
-      this.from,
-      this.to,
-      required this.retrospective,
-      required this.entries,
-      required this.scorerVersion,
-      required this.computedAt})
-      : super._();
+  _$ForecastScorecard._({
+    this.forecasterId,
+    this.category,
+    this.from,
+    this.to,
+    required this.retrospective,
+    required this.entries,
+    required this.scorerVersion,
+    required this.computedAt,
+  }) : super._();
   @override
   ForecastScorecard rebuild(void Function(ForecastScorecardBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -166,19 +166,29 @@ class ForecastScorecardBuilder
   _$ForecastScorecard _build() {
     _$ForecastScorecard _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastScorecard._(
             forecasterId: forecasterId,
             category: category,
             from: from,
             to: to,
             retrospective: BuiltValueNullFieldError.checkNotNull(
-                retrospective, r'ForecastScorecard', 'retrospective'),
+              retrospective,
+              r'ForecastScorecard',
+              'retrospective',
+            ),
             entries: entries.build(),
             scorerVersion: BuiltValueNullFieldError.checkNotNull(
-                scorerVersion, r'ForecastScorecard', 'scorerVersion'),
+              scorerVersion,
+              r'ForecastScorecard',
+              'scorerVersion',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'ForecastScorecard', 'computedAt'),
+              computedAt,
+              r'ForecastScorecard',
+              'computedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -187,7 +197,10 @@ class ForecastScorecardBuilder
         entries.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastScorecard', _$failedField, e.toString());
+          r'ForecastScorecard',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

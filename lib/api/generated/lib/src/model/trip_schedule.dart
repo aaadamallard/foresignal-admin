@@ -80,8 +80,9 @@ class _$TripScheduleSerializer implements PrimitiveSerializer<TripSchedule> {
       yield r'days';
       yield serializers.serialize(
         object.days,
-        specifiedType:
-            const FullType(BuiltList, [FullType(TripScheduleDaysEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(TripScheduleDaysEnum),
+        ]),
       );
     }
     if (object.departTime != null) {
@@ -106,9 +107,11 @@ class _$TripScheduleSerializer implements PrimitiveSerializer<TripSchedule> {
     TripSchedule object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -124,42 +127,53 @@ class _$TripScheduleSerializer implements PrimitiveSerializer<TripSchedule> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TripScheduleTypeEnum),
-          ) as TripScheduleTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TripScheduleTypeEnum),
+                  )
+                  as TripScheduleTypeEnum;
           result.type = valueDes;
           break;
         case r'departAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.departAt = valueDes;
           break;
         case r'days':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(TripScheduleDaysEnum)]),
-          ) as BuiltList<TripScheduleDaysEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(TripScheduleDaysEnum),
+                    ]),
+                  )
+                  as BuiltList<TripScheduleDaysEnum>?;
           if (valueDes == null) continue;
           result.days.replace(valueDes);
           break;
         case r'departTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.departTime = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.timezone = valueDes;
           break;

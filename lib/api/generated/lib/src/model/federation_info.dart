@@ -101,8 +101,9 @@ class _$FederationInfoSerializer
     yield r'capabilities';
     yield serializers.serialize(
       object.capabilities,
-      specifiedType:
-          const FullType(BuiltList, [FullType(FederationInfoCapabilitiesEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(FederationInfoCapabilitiesEnum),
+      ]),
     );
     yield r'time';
     yield serializers.serialize(
@@ -117,9 +118,11 @@ class _$FederationInfoSerializer
     FederationInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,54 +138,69 @@ class _$FederationInfoSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'instanceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.instanceName = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         case r'apiVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.apiVersion = valueDes;
           break;
         case r'jwksUri':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.jwksUri = valueDes;
           break;
         case r'capabilities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(FederationInfoCapabilitiesEnum)]),
-          ) as BuiltList<FederationInfoCapabilitiesEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(FederationInfoCapabilitiesEnum),
+                    ]),
+                  )
+                  as BuiltList<FederationInfoCapabilitiesEnum>;
           result.capabilities.replace(valueDes);
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         default:

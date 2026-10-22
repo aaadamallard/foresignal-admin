@@ -12,9 +12,9 @@ class _$NarrativePostPage extends NarrativePostPage {
   @override
   final String? nextCursor;
 
-  factory _$NarrativePostPage(
-          [void Function(NarrativePostPageBuilder)? updates]) =>
-      (NarrativePostPageBuilder()..update(updates))._build();
+  factory _$NarrativePostPage([
+    void Function(NarrativePostPageBuilder)? updates,
+  ]) => (NarrativePostPageBuilder()..update(updates))._build();
 
   _$NarrativePostPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class NarrativePostPageBuilder
   _$NarrativePostPage _build() {
     _$NarrativePostPage _$result;
     try {
-      _$result = _$v ??
-          _$NarrativePostPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$NarrativePostPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class NarrativePostPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativePostPage', _$failedField, e.toString());
+          r'NarrativePostPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -24,20 +24,20 @@ class _$EscalationPolicy extends EscalationPolicy {
   @override
   final int? ruleCount;
 
-  factory _$EscalationPolicy(
-          [void Function(EscalationPolicyBuilder)? updates]) =>
-      (EscalationPolicyBuilder()..update(updates))._build();
+  factory _$EscalationPolicy([
+    void Function(EscalationPolicyBuilder)? updates,
+  ]) => (EscalationPolicyBuilder()..update(updates))._build();
 
-  _$EscalationPolicy._(
-      {required this.name,
-      required this.steps,
-      this.repeat,
-      this.stopOn,
-      required this.id,
-      required this.createdAt,
-      required this.updatedAt,
-      this.ruleCount})
-      : super._();
+  _$EscalationPolicy._({
+    required this.name,
+    required this.steps,
+    this.repeat,
+    this.stopOn,
+    required this.id,
+    required this.createdAt,
+    required this.updatedAt,
+    this.ruleCount,
+  }) : super._();
   @override
   EscalationPolicy rebuild(void Function(EscalationPolicyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -167,19 +167,32 @@ class EscalationPolicyBuilder
   _$EscalationPolicy _build() {
     _$EscalationPolicy _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EscalationPolicy._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'EscalationPolicy', 'name'),
+              name,
+              r'EscalationPolicy',
+              'name',
+            ),
             steps: steps.build(),
             repeat: _repeat?.build(),
             stopOn: _stopOn?.build(),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EscalationPolicy', 'id'),
+              id,
+              r'EscalationPolicy',
+              'id',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'EscalationPolicy', 'createdAt'),
+              createdAt,
+              r'EscalationPolicy',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'EscalationPolicy', 'updatedAt'),
+              updatedAt,
+              r'EscalationPolicy',
+              'updatedAt',
+            ),
             ruleCount: ruleCount,
           );
     } catch (_) {
@@ -193,7 +206,10 @@ class EscalationPolicyBuilder
         _stopOn?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EscalationPolicy', _$failedField, e.toString());
+          r'EscalationPolicy',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

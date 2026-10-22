@@ -50,9 +50,9 @@ abstract class DossierSectionsForecast
 
   DossierSectionsForecast._();
 
-  factory DossierSectionsForecast(
-          [void updates(DossierSectionsForecastBuilder b)]) =
-      _$DossierSectionsForecast;
+  factory DossierSectionsForecast([
+    void updates(DossierSectionsForecastBuilder b),
+  ]) = _$DossierSectionsForecast;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsForecastBuilder b) => b;
@@ -67,7 +67,7 @@ class _$DossierSectionsForecastSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsForecast,
-    _$DossierSectionsForecast
+    _$DossierSectionsForecast,
   ];
 
   @override
@@ -115,16 +115,18 @@ class _$DossierSectionsForecastSerializer
       yield r'official';
       yield serializers.serialize(
         object.official,
-        specifiedType: const FullType(
-            BuiltList, [FullType(DossierSectionsForecastOfficialInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DossierSectionsForecastOfficialInner),
+        ]),
       );
     }
     if (object.questions != null) {
       yield r'questions';
       yield serializers.serialize(
         object.questions,
-        specifiedType:
-            const FullType(BuiltList, [FullType(LedgerQuestionBrief)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(LedgerQuestionBrief),
+        ]),
       );
     }
   }
@@ -135,9 +137,11 @@ class _$DossierSectionsForecastSerializer
     DossierSectionsForecast object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -153,61 +157,81 @@ class _$DossierSectionsForecastSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DossierSectionsForecastStatusEnum),
-          ) as DossierSectionsForecastStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DossierSectionsForecastStatusEnum,
+                    ),
+                  )
+                  as DossierSectionsForecastStatusEnum;
           result.status = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DossierSectionsOverviewLinks),
-          ) as DossierSectionsOverviewLinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DossierSectionsOverviewLinks,
+                    ),
+                  )
+                  as DossierSectionsOverviewLinks?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;
         case r'facets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DossierSectionsOverviewFacets),
-          ) as DossierSectionsOverviewFacets?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DossierSectionsOverviewFacets,
+                    ),
+                  )
+                  as DossierSectionsOverviewFacets?;
           if (valueDes == null) continue;
           result.facets.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;
         case r'official':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DossierSectionsForecastOfficialInner)]),
-          ) as BuiltList<DossierSectionsForecastOfficialInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DossierSectionsForecastOfficialInner),
+                    ]),
+                  )
+                  as BuiltList<DossierSectionsForecastOfficialInner>?;
           if (valueDes == null) continue;
           result.official.replace(valueDes);
           break;
         case r'questions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(LedgerQuestionBrief)]),
-          ) as BuiltList<LedgerQuestionBrief>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(LedgerQuestionBrief),
+                    ]),
+                  )
+                  as BuiltList<LedgerQuestionBrief>?;
           if (valueDes == null) continue;
           result.questions.replace(valueDes);
           break;

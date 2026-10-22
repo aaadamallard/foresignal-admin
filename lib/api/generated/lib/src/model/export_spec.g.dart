@@ -32,11 +32,11 @@ ExportSpecFormatEnum _$exportSpecFormatEnumValueOf(String name) {
 
 final BuiltSet<ExportSpecFormatEnum> _$exportSpecFormatEnumValues =
     BuiltSet<ExportSpecFormatEnum>(const <ExportSpecFormatEnum>[
-  _$exportSpecFormatEnum_geoparquet,
-  _$exportSpecFormatEnum_geopackage,
-  _$exportSpecFormatEnum_flatgeobuf,
-  _$exportSpecFormatEnum_gpx,
-]);
+      _$exportSpecFormatEnum_geoparquet,
+      _$exportSpecFormatEnum_geopackage,
+      _$exportSpecFormatEnum_flatgeobuf,
+      _$exportSpecFormatEnum_gpx,
+    ]);
 
 const ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnum_effective =
     const ExportSpecTimeFieldEnum._('effective');
@@ -64,18 +64,19 @@ ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnumValueOf(String name) {
 
 final BuiltSet<ExportSpecTimeFieldEnum> _$exportSpecTimeFieldEnumValues =
     BuiltSet<ExportSpecTimeFieldEnum>(const <ExportSpecTimeFieldEnum>[
-  _$exportSpecTimeFieldEnum_effective,
-  _$exportSpecTimeFieldEnum_observed,
-  _$exportSpecTimeFieldEnum_event,
-  _$exportSpecTimeFieldEnum_ingested,
-]);
+      _$exportSpecTimeFieldEnum_effective,
+      _$exportSpecTimeFieldEnum_observed,
+      _$exportSpecTimeFieldEnum_event,
+      _$exportSpecTimeFieldEnum_ingested,
+    ]);
 
 const ExportSpecModeEnum _$exportSpecModeEnum_current =
     const ExportSpecModeEnum._('current');
 const ExportSpecModeEnum _$exportSpecModeEnum_history =
     const ExportSpecModeEnum._('history');
-const ExportSpecModeEnum _$exportSpecModeEnum_asOf =
-    const ExportSpecModeEnum._('asOf');
+const ExportSpecModeEnum _$exportSpecModeEnum_asOf = const ExportSpecModeEnum._(
+  'asOf',
+);
 const ExportSpecModeEnum _$exportSpecModeEnum_atSeq =
     const ExportSpecModeEnum._('atSeq');
 
@@ -96,11 +97,11 @@ ExportSpecModeEnum _$exportSpecModeEnumValueOf(String name) {
 
 final BuiltSet<ExportSpecModeEnum> _$exportSpecModeEnumValues =
     BuiltSet<ExportSpecModeEnum>(const <ExportSpecModeEnum>[
-  _$exportSpecModeEnum_current,
-  _$exportSpecModeEnum_history,
-  _$exportSpecModeEnum_asOf,
-  _$exportSpecModeEnum_atSeq,
-]);
+      _$exportSpecModeEnum_current,
+      _$exportSpecModeEnum_history,
+      _$exportSpecModeEnum_asOf,
+      _$exportSpecModeEnum_atSeq,
+    ]);
 
 Serializer<ExportSpecFormatEnum> _$exportSpecFormatEnumSerializer =
     _$ExportSpecFormatEnumSerializer();
@@ -130,15 +131,20 @@ class _$ExportSpecFormatEnumSerializer
   final String wireName = 'ExportSpecFormatEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportSpecFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportSpecFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExportSpecFormatEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportSpecFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExportSpecFormatEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportSpecFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportSpecTimeFieldEnumSerializer
@@ -162,16 +168,20 @@ class _$ExportSpecTimeFieldEnumSerializer
   final String wireName = 'ExportSpecTimeFieldEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportSpecTimeFieldEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportSpecTimeFieldEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExportSpecTimeFieldEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportSpecTimeFieldEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportSpecTimeFieldEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportSpecModeEnumSerializer
@@ -195,15 +205,20 @@ class _$ExportSpecModeEnumSerializer
   final String wireName = 'ExportSpecModeEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportSpecModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportSpecModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExportSpecModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportSpecModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExportSpecModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportSpecModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportSpec extends ExportSpec {
@@ -243,24 +258,24 @@ class _$ExportSpec extends ExportSpec {
   factory _$ExportSpec([void Function(ExportSpecBuilder)? updates]) =>
       (ExportSpecBuilder()..update(updates))._build();
 
-  _$ExportSpec._(
-      {this.name,
-      this.format,
-      this.sources,
-      this.kinds,
-      this.bbox,
-      this.placeId,
-      this.from,
-      this.to,
-      this.timeField,
-      this.mode,
-      this.asOf,
-      this.atSeq,
-      this.fields,
-      this.flatten,
-      this.includePrivate,
-      this.personalUse})
-      : super._();
+  _$ExportSpec._({
+    this.name,
+    this.format,
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.placeId,
+    this.from,
+    this.to,
+    this.timeField,
+    this.mode,
+    this.asOf,
+    this.atSeq,
+    this.fields,
+    this.flatten,
+    this.includePrivate,
+    this.personalUse,
+  }) : super._();
   @override
   ExportSpec rebuild(void Function(ExportSpecBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -449,7 +464,8 @@ class ExportSpecBuilder implements Builder<ExportSpec, ExportSpecBuilder> {
   _$ExportSpec _build() {
     _$ExportSpec _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExportSpec._(
             name: name,
             format: format,
@@ -482,7 +498,10 @@ class ExportSpecBuilder implements Builder<ExportSpec, ExportSpecBuilder> {
         _fields?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExportSpec', _$failedField, e.toString());
+          r'ExportSpec',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

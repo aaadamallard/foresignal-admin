@@ -30,27 +30,27 @@ class _$NwsForecastPayload extends NwsForecastPayload {
   @override
   final DateTime forecastUpdated;
 
-  factory _$NwsForecastPayload(
-          [void Function(NwsForecastPayloadBuilder)? updates]) =>
-      (NwsForecastPayloadBuilder()..update(updates))._build();
+  factory _$NwsForecastPayload([
+    void Function(NwsForecastPayloadBuilder)? updates,
+  ]) => (NwsForecastPayloadBuilder()..update(updates))._build();
 
-  _$NwsForecastPayload._(
-      {required this.place,
-      required this.wfo,
-      required this.gridX,
-      required this.gridY,
-      this.popMax24h,
-      this.qpf24hMm,
-      this.tMaxC24h,
-      this.tMinC24h,
-      this.gustMaxMs24h,
-      this.hazards,
-      required this.forecastUpdated})
-      : super._();
+  _$NwsForecastPayload._({
+    required this.place,
+    required this.wfo,
+    required this.gridX,
+    required this.gridY,
+    this.popMax24h,
+    this.qpf24hMm,
+    this.tMaxC24h,
+    this.tMinC24h,
+    this.gustMaxMs24h,
+    this.hazards,
+    required this.forecastUpdated,
+  }) : super._();
   @override
   NwsForecastPayload rebuild(
-          void Function(NwsForecastPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NwsForecastPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NwsForecastPayloadBuilder toBuilder() =>
@@ -199,16 +199,29 @@ class NwsForecastPayloadBuilder
   _$NwsForecastPayload _build() {
     _$NwsForecastPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NwsForecastPayload._(
             place: BuiltValueNullFieldError.checkNotNull(
-                place, r'NwsForecastPayload', 'place'),
+              place,
+              r'NwsForecastPayload',
+              'place',
+            ),
             wfo: BuiltValueNullFieldError.checkNotNull(
-                wfo, r'NwsForecastPayload', 'wfo'),
+              wfo,
+              r'NwsForecastPayload',
+              'wfo',
+            ),
             gridX: BuiltValueNullFieldError.checkNotNull(
-                gridX, r'NwsForecastPayload', 'gridX'),
+              gridX,
+              r'NwsForecastPayload',
+              'gridX',
+            ),
             gridY: BuiltValueNullFieldError.checkNotNull(
-                gridY, r'NwsForecastPayload', 'gridY'),
+              gridY,
+              r'NwsForecastPayload',
+              'gridY',
+            ),
             popMax24h: popMax24h,
             qpf24hMm: qpf24hMm,
             tMaxC24h: tMaxC24h,
@@ -216,7 +229,10 @@ class NwsForecastPayloadBuilder
             gustMaxMs24h: gustMaxMs24h,
             hazards: _hazards?.build(),
             forecastUpdated: BuiltValueNullFieldError.checkNotNull(
-                forecastUpdated, r'NwsForecastPayload', 'forecastUpdated'),
+              forecastUpdated,
+              r'NwsForecastPayload',
+              'forecastUpdated',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -225,7 +241,10 @@ class NwsForecastPayloadBuilder
         _hazards?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NwsForecastPayload', _$failedField, e.toString());
+          r'NwsForecastPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

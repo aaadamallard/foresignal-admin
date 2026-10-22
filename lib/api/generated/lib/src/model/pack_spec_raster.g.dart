@@ -89,10 +89,14 @@ class PackSpecRasterBuilder
   PackSpecRaster build() => _build();
 
   _$PackSpecRaster _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PackSpecRaster._(
           productId: BuiltValueNullFieldError.checkNotNull(
-              productId, r'PackSpecRaster', 'productId'),
+            productId,
+            r'PackSpecRaster',
+            'productId',
+          ),
           frame: frame,
         );
     replace(_$result);

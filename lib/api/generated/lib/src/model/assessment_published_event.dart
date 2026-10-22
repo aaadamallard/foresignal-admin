@@ -63,9 +63,9 @@ abstract class AssessmentPublishedEvent
 
   AssessmentPublishedEvent._();
 
-  factory AssessmentPublishedEvent(
-          [void updates(AssessmentPublishedEventBuilder b)]) =
-      _$AssessmentPublishedEvent;
+  factory AssessmentPublishedEvent([
+    void updates(AssessmentPublishedEventBuilder b),
+  ]) = _$AssessmentPublishedEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AssessmentPublishedEventBuilder b) => b;
@@ -80,7 +80,7 @@ class _$AssessmentPublishedEventSerializer
   @override
   final Iterable<Type> types = const [
     AssessmentPublishedEvent,
-    _$AssessmentPublishedEvent
+    _$AssessmentPublishedEvent,
   ];
 
   @override
@@ -161,9 +161,11 @@ class _$AssessmentPublishedEventSerializer
     AssessmentPublishedEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -179,79 +181,103 @@ class _$AssessmentPublishedEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'assessmentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.assessmentId = valueDes;
           break;
         case r'cycleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cycleId = valueDes;
           break;
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.situationId = valueDes;
           break;
         case r'cadence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AssessmentPublishedEventCadenceEnum),
-          ) as AssessmentPublishedEventCadenceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AssessmentPublishedEventCadenceEnum,
+                    ),
+                  )
+                  as AssessmentPublishedEventCadenceEnum;
           result.cadence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AssessmentPublishedEventStatusEnum),
-          ) as AssessmentPublishedEventStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AssessmentPublishedEventStatusEnum,
+                    ),
+                  )
+                  as AssessmentPublishedEventStatusEnum;
           result.status = valueDes;
           break;
         case r'periodStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.periodStart = valueDes;
           break;
         case r'periodEnd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.periodEnd = valueDes;
           break;
         case r'headline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.headline = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

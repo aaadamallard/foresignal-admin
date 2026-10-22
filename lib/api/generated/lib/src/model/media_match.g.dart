@@ -16,7 +16,7 @@ class _$MediaMatch extends MediaMatch {
       (MediaMatchBuilder()..update(updates))._build();
 
   _$MediaMatch._({required this.fingerprint, required this.distance})
-      : super._();
+    : super._();
   @override
   MediaMatch rebuild(void Function(MediaMatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -93,11 +93,15 @@ class MediaMatchBuilder implements Builder<MediaMatch, MediaMatchBuilder> {
   _$MediaMatch _build() {
     _$MediaMatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MediaMatch._(
             fingerprint: fingerprint.build(),
             distance: BuiltValueNullFieldError.checkNotNull(
-                distance, r'MediaMatch', 'distance'),
+              distance,
+              r'MediaMatch',
+              'distance',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -106,7 +110,10 @@ class MediaMatchBuilder implements Builder<MediaMatch, MediaMatchBuilder> {
         fingerprint.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MediaMatch', _$failedField, e.toString());
+          r'MediaMatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

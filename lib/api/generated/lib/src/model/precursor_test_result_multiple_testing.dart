@@ -16,8 +16,10 @@ part 'precursor_test_result_multiple_testing.g.dart';
 @BuiltValue()
 abstract class PrecursorTestResultMultipleTesting
     implements
-        Built<PrecursorTestResultMultipleTesting,
-            PrecursorTestResultMultipleTestingBuilder> {
+        Built<
+          PrecursorTestResultMultipleTesting,
+          PrecursorTestResultMultipleTestingBuilder
+        > {
   @BuiltValueField(wireName: r'testsLast30d')
   int? get testsLast30d;
 
@@ -26,9 +28,9 @@ abstract class PrecursorTestResultMultipleTesting
 
   PrecursorTestResultMultipleTesting._();
 
-  factory PrecursorTestResultMultipleTesting(
-          [void updates(PrecursorTestResultMultipleTestingBuilder b)]) =
-      _$PrecursorTestResultMultipleTesting;
+  factory PrecursorTestResultMultipleTesting([
+    void updates(PrecursorTestResultMultipleTestingBuilder b),
+  ]) = _$PrecursorTestResultMultipleTesting;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorTestResultMultipleTestingBuilder b) => b;
@@ -43,7 +45,7 @@ class _$PrecursorTestResultMultipleTestingSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorTestResultMultipleTesting,
-    _$PrecursorTestResultMultipleTesting
+    _$PrecursorTestResultMultipleTesting,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$PrecursorTestResultMultipleTestingSerializer
     PrecursorTestResultMultipleTesting object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$PrecursorTestResultMultipleTestingSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'testsLast30d':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.testsLast30d = valueDes;
           break;
         case r'bonferroniPValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.bonferroniPValue = valueDes;
           break;

@@ -41,7 +41,7 @@ class _$NarrativeMergeInputSerializer
   @override
   final Iterable<Type> types = const [
     NarrativeMergeInput,
-    _$NarrativeMergeInput
+    _$NarrativeMergeInput,
   ];
 
   @override
@@ -72,9 +72,11 @@ class _$NarrativeMergeInputSerializer
     NarrativeMergeInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +92,23 @@ class _$NarrativeMergeInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'narrativeIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.narrativeIds.replace(valueDes);
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

@@ -72,16 +72,10 @@ class IngestApi {
     final _path = r'/v1/custom-sources';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -93,14 +87,13 @@ class IngestApi {
 
     try {
       const _type = FullType(CustomSourceInput);
-      _bodyData =
-          _serializers.serialize(customSourceInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        customSourceInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -123,9 +116,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CustomSourceCreated),
-            ) as CustomSourceCreated;
+                  rawResponse,
+                  specifiedType: const FullType(CustomSourceCreated),
+                )
+                as CustomSourceCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -174,21 +168,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/devices'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -200,14 +194,13 @@ class IngestApi {
 
     try {
       const _type = FullType(IngestDeviceInput);
-      _bodyData =
-          _serializers.serialize(ingestDeviceInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        ingestDeviceInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -230,9 +223,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IngestDeviceCreated),
-            ) as IngestDeviceCreated;
+                  rawResponse,
+                  specifiedType: const FullType(IngestDeviceCreated),
+                )
+                as IngestDeviceCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -279,21 +273,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -338,25 +332,31 @@ class IngestApi {
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/devices/{deviceId}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'deviceId' '}',
-            encodeQueryParameter(_serializers, deviceId, const FullType(String))
-                .toString());
+          '{'
+          r'deviceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            deviceId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -398,21 +398,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -434,9 +434,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CustomSource),
-            ) as CustomSource;
+                  rawResponse,
+                  specifiedType: const FullType(CustomSource),
+                )
+                as CustomSource;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -495,27 +496,15 @@ class IngestApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -525,16 +514,21 @@ class IngestApi {
 
     final _queryParameters = <String, dynamic>{
       if (token != null)
-        r'token':
-            encodeQueryParameter(_serializers, token, const FullType(String)),
+        r'token': encodeQueryParameter(
+          _serializers,
+          token,
+          const FullType(String),
+        ),
     };
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(GotifyMessageInput);
-      _bodyData =
-          _serializers.serialize(gotifyMessageInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        gotifyMessageInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -565,9 +559,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(GotifyMessage),
-            ) as GotifyMessage;
+                  rawResponse,
+                  specifiedType: const FullType(GotifyMessage),
+                )
+                as GotifyMessage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -618,9 +613,15 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ingest/{sourceId}'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -629,27 +630,15 @@ class IngestApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -661,14 +650,13 @@ class IngestApi {
 
     try {
       const _type = FullType(IngestRecordsRequest);
-      _bodyData =
-          _serializers.serialize(ingestRecordsRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        ingestRecordsRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -691,9 +679,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IngestOutcome),
-            ) as IngestOutcome;
+                  rawResponse,
+                  specifiedType: const FullType(IngestOutcome),
+                )
+                as IngestOutcome;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -777,13 +766,25 @@ class IngestApi {
   }) async {
     final _path = r'/v1/ingest/{sourceId}/{format}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'format' '}',
-            encodeQueryParameter(_serializers, format, const FullType(String))
-                .toString());
+          '{'
+          r'format'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            format,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -810,27 +811,15 @@ class IngestApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -844,10 +833,7 @@ class IngestApi {
       _bodyData = body;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -870,9 +856,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IngestOutcome),
-            ) as IngestOutcome;
+                  rawResponse,
+                  specifiedType: const FullType(IngestOutcome),
+                )
+                as IngestOutcome;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -966,41 +953,39 @@ class IngestApi {
   }) async {
     final _path = r'/v1/ingest/{sourceId}/{format}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'format' '}',
-            encodeQueryParameter(_serializers, format, const FullType(String))
-                .toString());
+          '{'
+          r'format'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            format,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1012,56 +997,92 @@ class IngestApi {
         r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
       if (deviceid != null)
         r'deviceid': encodeQueryParameter(
-            _serializers, deviceid, const FullType(String)),
+          _serializers,
+          deviceid,
+          const FullType(String),
+        ),
       if (lat != null)
         r'lat': encodeQueryParameter(_serializers, lat, const FullType(num)),
       if (lon != null)
         r'lon': encodeQueryParameter(_serializers, lon, const FullType(num)),
       if (location != null)
         r'location': encodeQueryParameter(
-            _serializers, location, const FullType(String)),
+          _serializers,
+          location,
+          const FullType(String),
+        ),
       if (timestamp != null)
         r'timestamp': encodeQueryParameter(
-            _serializers, timestamp, const FullType(String)),
+          _serializers,
+          timestamp,
+          const FullType(String),
+        ),
       if (time != null)
-        r'time':
-            encodeQueryParameter(_serializers, time, const FullType(String)),
+        r'time': encodeQueryParameter(
+          _serializers,
+          time,
+          const FullType(String),
+        ),
       if (speed != null)
-        r'speed':
-            encodeQueryParameter(_serializers, speed, const FullType(num)),
+        r'speed': encodeQueryParameter(
+          _serializers,
+          speed,
+          const FullType(num),
+        ),
       if (spd != null)
         r'spd': encodeQueryParameter(_serializers, spd, const FullType(num)),
       if (bearing != null)
-        r'bearing':
-            encodeQueryParameter(_serializers, bearing, const FullType(num)),
+        r'bearing': encodeQueryParameter(
+          _serializers,
+          bearing,
+          const FullType(num),
+        ),
       if (heading != null)
-        r'heading':
-            encodeQueryParameter(_serializers, heading, const FullType(num)),
+        r'heading': encodeQueryParameter(
+          _serializers,
+          heading,
+          const FullType(num),
+        ),
       if (dir != null)
         r'dir': encodeQueryParameter(_serializers, dir, const FullType(num)),
       if (altitude != null)
-        r'altitude':
-            encodeQueryParameter(_serializers, altitude, const FullType(num)),
+        r'altitude': encodeQueryParameter(
+          _serializers,
+          altitude,
+          const FullType(num),
+        ),
       if (alt != null)
         r'alt': encodeQueryParameter(_serializers, alt, const FullType(num)),
       if (accuracy != null)
-        r'accuracy':
-            encodeQueryParameter(_serializers, accuracy, const FullType(num)),
+        r'accuracy': encodeQueryParameter(
+          _serializers,
+          accuracy,
+          const FullType(num),
+        ),
       if (acc != null)
         r'acc': encodeQueryParameter(_serializers, acc, const FullType(num)),
       if (batt != null)
         r'batt': encodeQueryParameter(_serializers, batt, const FullType(num)),
       if (charge != null)
-        r'charge':
-            encodeQueryParameter(_serializers, charge, const FullType(bool)),
+        r'charge': encodeQueryParameter(
+          _serializers,
+          charge,
+          const FullType(bool),
+        ),
       if (valid != null)
-        r'valid':
-            encodeQueryParameter(_serializers, valid, const FullType(bool)),
+        r'valid': encodeQueryParameter(
+          _serializers,
+          valid,
+          const FullType(bool),
+        ),
       if (dev != null)
         r'dev': encodeQueryParameter(_serializers, dev, const FullType(String)),
       if (PASSWORD != null)
         r'PASSWORD': encodeQueryParameter(
-            _serializers, PASSWORD, const FullType(String)),
+          _serializers,
+          PASSWORD,
+          const FullType(String),
+        ),
       if (ID != null)
         r'ID': encodeQueryParameter(_serializers, ID, const FullType(String)),
     };
@@ -1135,17 +1156,35 @@ class IngestApi {
   }) async {
     final _path = r'/v1/ingest/{sourceId}/k/{key}/{format}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'key' '}',
-            encodeQueryParameter(_serializers, key, const FullType(String))
-                .toString())
+          '{'
+          r'key'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            key,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'format' '}',
-            encodeQueryParameter(_serializers, format, const FullType(String))
-                .toString());
+          '{'
+          r'format'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            format,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -1173,14 +1212,13 @@ class IngestApi {
       const _type = FullType(IngestRecordsPathKeyRequest);
       _bodyData = ingestRecordsPathKeyRequest == null
           ? null
-          : _serializers.serialize(ingestRecordsPathKeyRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              ingestRecordsPathKeyRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1203,9 +1241,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1295,22 +1334,38 @@ class IngestApi {
   }) async {
     final _path = r'/v1/ingest/{sourceId}/k/{key}/{format}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'key' '}',
-            encodeQueryParameter(_serializers, key, const FullType(String))
-                .toString())
+          '{'
+          r'key'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            key,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'format' '}',
-            encodeQueryParameter(_serializers, format, const FullType(String))
-                .toString());
+          '{'
+          r'format'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            format,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
           {
@@ -1330,40 +1385,70 @@ class IngestApi {
         r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
       if (deviceid != null)
         r'deviceid': encodeQueryParameter(
-            _serializers, deviceid, const FullType(String)),
+          _serializers,
+          deviceid,
+          const FullType(String),
+        ),
       if (lat != null)
         r'lat': encodeQueryParameter(_serializers, lat, const FullType(num)),
       if (lon != null)
         r'lon': encodeQueryParameter(_serializers, lon, const FullType(num)),
       if (location != null)
         r'location': encodeQueryParameter(
-            _serializers, location, const FullType(String)),
+          _serializers,
+          location,
+          const FullType(String),
+        ),
       if (timestamp != null)
         r'timestamp': encodeQueryParameter(
-            _serializers, timestamp, const FullType(String)),
+          _serializers,
+          timestamp,
+          const FullType(String),
+        ),
       if (speed != null)
-        r'speed':
-            encodeQueryParameter(_serializers, speed, const FullType(num)),
+        r'speed': encodeQueryParameter(
+          _serializers,
+          speed,
+          const FullType(num),
+        ),
       if (bearing != null)
-        r'bearing':
-            encodeQueryParameter(_serializers, bearing, const FullType(num)),
+        r'bearing': encodeQueryParameter(
+          _serializers,
+          bearing,
+          const FullType(num),
+        ),
       if (altitude != null)
-        r'altitude':
-            encodeQueryParameter(_serializers, altitude, const FullType(num)),
+        r'altitude': encodeQueryParameter(
+          _serializers,
+          altitude,
+          const FullType(num),
+        ),
       if (accuracy != null)
-        r'accuracy':
-            encodeQueryParameter(_serializers, accuracy, const FullType(num)),
+        r'accuracy': encodeQueryParameter(
+          _serializers,
+          accuracy,
+          const FullType(num),
+        ),
       if (batt != null)
         r'batt': encodeQueryParameter(_serializers, batt, const FullType(num)),
       if (charge != null)
-        r'charge':
-            encodeQueryParameter(_serializers, charge, const FullType(bool)),
+        r'charge': encodeQueryParameter(
+          _serializers,
+          charge,
+          const FullType(bool),
+        ),
       if (valid != null)
-        r'valid':
-            encodeQueryParameter(_serializers, valid, const FullType(bool)),
+        r'valid': encodeQueryParameter(
+          _serializers,
+          valid,
+          const FullType(bool),
+        ),
       if (time != null)
-        r'time':
-            encodeQueryParameter(_serializers, time, const FullType(String)),
+        r'time': encodeQueryParameter(
+          _serializers,
+          time,
+          const FullType(String),
+        ),
       if (spd != null)
         r'spd': encodeQueryParameter(_serializers, spd, const FullType(num)),
       if (dir != null)
@@ -1416,37 +1501,29 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ingest/{sourceId}/media'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1460,14 +1537,14 @@ class IngestApi {
       _bodyData = FormData.fromMap(<String, dynamic>{
         r'file': file,
         r'meta': encodeFormParameter(
-            _serializers, meta, const FullType(RemoteMediaMeta)),
+          _serializers,
+          meta,
+          const FullType(RemoteMediaMeta),
+        ),
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1490,9 +1567,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RemoteMediaAccepted),
-            ) as RemoteMediaAccepted;
+                  rawResponse,
+                  specifiedType: const FullType(RemoteMediaAccepted),
+                )
+                as RemoteMediaAccepted;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1543,37 +1621,29 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ingest/{sourceId}/rasters'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1586,15 +1656,15 @@ class IngestApi {
     try {
       _bodyData = FormData.fromMap(<String, dynamic>{
         r'meta': encodeFormParameter(
-            _serializers, meta, const FullType(RemoteRasterBundleMeta)),
+          _serializers,
+          meta,
+          const FullType(RemoteRasterBundleMeta),
+        ),
         r'files': files.toList(),
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1617,9 +1687,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RemoteRasterBundleAccepted),
-            ) as RemoteRasterBundleAccepted;
+                  rawResponse,
+                  specifiedType: const FullType(RemoteRasterBundleAccepted),
+                )
+                as RemoteRasterBundleAccepted;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1675,13 +1746,25 @@ class IngestApi {
   }) async {
     final _path = r'/v1/ingest/{sourceId}/{format}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'format' '}',
-            encodeQueryParameter(_serializers, format, const FullType(String))
-                .toString());
+          '{'
+          r'format'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            format,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'OPTIONS',
       headers: <String, dynamic>{
@@ -1694,27 +1777,15 @@ class IngestApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1756,21 +1827,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/samples'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1792,10 +1863,12 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(CapturedSample)]),
-            ) as BuiltList<CapturedSample>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(CapturedSample),
+                  ]),
+                )
+                as BuiltList<CapturedSample>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1842,16 +1915,10 @@ class IngestApi {
     final _path = r'/v1/custom-sources';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1873,10 +1940,12 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(CustomSource)]),
-            ) as BuiltList<CustomSource>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(CustomSource),
+                  ]),
+                )
+                as BuiltList<CustomSource>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1923,21 +1992,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/devices'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1959,10 +2028,12 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(IngestDevice)]),
-            ) as BuiltList<IngestDevice>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(IngestDevice),
+                  ]),
+                )
+                as BuiltList<IngestDevice>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2009,16 +2080,10 @@ class IngestApi {
     final _path = r'/v1/ingest/formats';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2040,10 +2105,12 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(IngestFormatInfo)]),
-            ) as BuiltList<IngestFormatInfo>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(IngestFormatInfo),
+                  ]),
+                )
+                as BuiltList<IngestFormatInfo>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2104,9 +2171,15 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/compat/ntfy/{topic}'.replaceAll(
-        '{' r'topic' '}',
-        encodeQueryParameter(_serializers, topic, const FullType(String))
-            .toString());
+      '{'
+      r'topic'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        topic,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -2120,27 +2193,15 @@ class IngestApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2150,8 +2211,11 @@ class IngestApi {
 
     final _queryParameters = <String, dynamic>{
       if (auth != null)
-        r'auth':
-            encodeQueryParameter(_serializers, auth, const FullType(String)),
+        r'auth': encodeQueryParameter(
+          _serializers,
+          auth,
+          const FullType(String),
+        ),
     };
 
     dynamic _bodyData;
@@ -2188,9 +2252,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NtfyMessage),
-            ) as NtfyMessage;
+                  rawResponse,
+                  specifiedType: const FullType(NtfyMessage),
+                )
+                as NtfyMessage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2241,32 +2306,18 @@ class IngestApi {
     final _path = r'/compat/ntfy';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2276,16 +2327,21 @@ class IngestApi {
 
     final _queryParameters = <String, dynamic>{
       if (auth != null)
-        r'auth':
-            encodeQueryParameter(_serializers, auth, const FullType(String)),
+        r'auth': encodeQueryParameter(
+          _serializers,
+          auth,
+          const FullType(String),
+        ),
     };
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(NtfyPublishRequest);
-      _bodyData =
-          _serializers.serialize(ntfyPublishRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        ntfyPublishRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -2316,9 +2372,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NtfyMessage),
-            ) as NtfyMessage;
+                  rawResponse,
+                  specifiedType: const FullType(NtfyMessage),
+                )
+                as NtfyMessage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2379,9 +2436,15 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/compat/ntfy/{topic}'.replaceAll(
-        '{' r'topic' '}',
-        encodeQueryParameter(_serializers, topic, const FullType(String))
-            .toString());
+      '{'
+      r'topic'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        topic,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -2395,27 +2458,15 @@ class IngestApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2425,8 +2476,11 @@ class IngestApi {
 
     final _queryParameters = <String, dynamic>{
       if (auth != null)
-        r'auth':
-            encodeQueryParameter(_serializers, auth, const FullType(String)),
+        r'auth': encodeQueryParameter(
+          _serializers,
+          auth,
+          const FullType(String),
+        ),
     };
 
     dynamic _bodyData;
@@ -2463,9 +2517,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NtfyMessage),
-            ) as NtfyMessage;
+                  rawResponse,
+                  specifiedType: const FullType(NtfyMessage),
+                )
+                as NtfyMessage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2525,41 +2580,39 @@ class IngestApi {
   }) async {
     final _path = r'/compat/ntfy/{topic}/{action}'
         .replaceAll(
-            '{' r'topic' '}',
-            encodeQueryParameter(_serializers, topic, const FullType(String))
-                .toString())
+          '{'
+          r'topic'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            topic,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'action' '}',
-            encodeQueryParameter(_serializers, action, const FullType(String))
-                .toString());
+          '{'
+          r'action'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            action,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2568,20 +2621,35 @@ class IngestApi {
 
     final _queryParameters = <String, dynamic>{
       if (message != null)
-        r'message':
-            encodeQueryParameter(_serializers, message, const FullType(String)),
+        r'message': encodeQueryParameter(
+          _serializers,
+          message,
+          const FullType(String),
+        ),
       if (title != null)
-        r'title':
-            encodeQueryParameter(_serializers, title, const FullType(String)),
+        r'title': encodeQueryParameter(
+          _serializers,
+          title,
+          const FullType(String),
+        ),
       if (priority != null)
         r'priority': encodeQueryParameter(
-            _serializers, priority, const FullType(String)),
+          _serializers,
+          priority,
+          const FullType(String),
+        ),
       if (tags != null)
-        r'tags':
-            encodeQueryParameter(_serializers, tags, const FullType(String)),
+        r'tags': encodeQueryParameter(
+          _serializers,
+          tags,
+          const FullType(String),
+        ),
       if (auth != null)
-        r'auth':
-            encodeQueryParameter(_serializers, auth, const FullType(String)),
+        r'auth': encodeQueryParameter(
+          _serializers,
+          auth,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2600,9 +2668,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NtfyMessage),
-            ) as NtfyMessage;
+                  rawResponse,
+                  specifiedType: const FullType(NtfyMessage),
+                )
+                as NtfyMessage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2662,41 +2731,39 @@ class IngestApi {
   }) async {
     final _path = r'/compat/ntfy/{topic}/{action}'
         .replaceAll(
-            '{' r'topic' '}',
-            encodeQueryParameter(_serializers, topic, const FullType(String))
-                .toString())
+          '{'
+          r'topic'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            topic,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'action' '}',
-            encodeQueryParameter(_serializers, action, const FullType(String))
-                .toString());
+          '{'
+          r'action'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            action,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'ingestKeyBearer',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'ingestKeyBearer'},
           {
             'type': 'apiKey',
             'name': 'ingestKey',
             'keyName': 'X-Foresignal-Ingest-Key',
             'where': 'header',
           },
-          {
-            'type': 'http',
-            'scheme': 'basic',
-            'name': 'ingestKeyBasic',
-          },
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'basic', 'name': 'ingestKeyBasic'},
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2705,20 +2772,35 @@ class IngestApi {
 
     final _queryParameters = <String, dynamic>{
       if (message != null)
-        r'message':
-            encodeQueryParameter(_serializers, message, const FullType(String)),
+        r'message': encodeQueryParameter(
+          _serializers,
+          message,
+          const FullType(String),
+        ),
       if (title != null)
-        r'title':
-            encodeQueryParameter(_serializers, title, const FullType(String)),
+        r'title': encodeQueryParameter(
+          _serializers,
+          title,
+          const FullType(String),
+        ),
       if (priority != null)
         r'priority': encodeQueryParameter(
-            _serializers, priority, const FullType(String)),
+          _serializers,
+          priority,
+          const FullType(String),
+        ),
       if (tags != null)
-        r'tags':
-            encodeQueryParameter(_serializers, tags, const FullType(String)),
+        r'tags': encodeQueryParameter(
+          _serializers,
+          tags,
+          const FullType(String),
+        ),
       if (auth != null)
-        r'auth':
-            encodeQueryParameter(_serializers, auth, const FullType(String)),
+        r'auth': encodeQueryParameter(
+          _serializers,
+          auth,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2737,9 +2819,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NtfyMessage),
-            ) as NtfyMessage;
+                  rawResponse,
+                  specifiedType: const FullType(NtfyMessage),
+                )
+                as NtfyMessage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2791,25 +2874,31 @@ class IngestApi {
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/devices/{deviceId}/purge'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'deviceId' '}',
-            encodeQueryParameter(_serializers, deviceId, const FullType(String))
-                .toString());
+          '{'
+          r'deviceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            deviceId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2826,10 +2915,7 @@ class IngestApi {
           : _serializers.serialize(purgeRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2852,9 +2938,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PurgeReport),
-            ) as PurgeReport;
+                  rawResponse,
+                  specifiedType: const FullType(PurgeReport),
+                )
+                as PurgeReport;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2904,25 +2991,31 @@ class IngestApi {
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/devices/{deviceId}/key/rotate'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'deviceId' '}',
-            encodeQueryParameter(_serializers, deviceId, const FullType(String))
-                .toString());
+          '{'
+          r'deviceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            deviceId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2944,9 +3037,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IngestDeviceCreated),
-            ) as IngestDeviceCreated;
+                  rawResponse,
+                  specifiedType: const FullType(IngestDeviceCreated),
+                )
+                as IngestDeviceCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2993,21 +3087,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/ingest-key/rotate'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3029,9 +3123,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(IngestKeyResponse),
-            ) as IngestKeyResponse;
+                  rawResponse,
+                  specifiedType: const FullType(IngestKeyResponse),
+                )
+                as IngestKeyResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3080,21 +3175,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}/mapping/test'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3111,10 +3206,7 @@ class IngestApi {
           : _serializers.serialize(mappingTestRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3137,9 +3229,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MappingTestResult),
-            ) as MappingTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(MappingTestResult),
+                )
+                as MappingTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3188,21 +3281,21 @@ class IngestApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/custom-sources/{sourceId}'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3214,14 +3307,13 @@ class IngestApi {
 
     try {
       const _type = FullType(CustomSourceInput);
-      _bodyData =
-          _serializers.serialize(customSourceInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        customSourceInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3244,9 +3336,10 @@ class IngestApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CustomSource),
-            ) as CustomSource;
+                  rawResponse,
+                  specifiedType: const FullType(CustomSource),
+                )
+                as CustomSource;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

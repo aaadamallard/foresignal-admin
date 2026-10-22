@@ -12,16 +12,16 @@ class _$AnomalyObservationPage extends AnomalyObservationPage {
   @override
   final String? nextCursor;
 
-  factory _$AnomalyObservationPage(
-          [void Function(AnomalyObservationPageBuilder)? updates]) =>
-      (AnomalyObservationPageBuilder()..update(updates))._build();
+  factory _$AnomalyObservationPage([
+    void Function(AnomalyObservationPageBuilder)? updates,
+  ]) => (AnomalyObservationPageBuilder()..update(updates))._build();
 
   _$AnomalyObservationPage._({required this.items, this.nextCursor})
-      : super._();
+    : super._();
   @override
   AnomalyObservationPage rebuild(
-          void Function(AnomalyObservationPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyObservationPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyObservationPageBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class AnomalyObservationPageBuilder
   _$AnomalyObservationPage _build() {
     _$AnomalyObservationPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnomalyObservationPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -108,7 +109,10 @@ class AnomalyObservationPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnomalyObservationPage', _$failedField, e.toString());
+          r'AnomalyObservationPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

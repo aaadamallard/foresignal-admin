@@ -32,9 +32,9 @@ abstract class EnableCoreSourcesResult
 
   EnableCoreSourcesResult._();
 
-  factory EnableCoreSourcesResult(
-          [void updates(EnableCoreSourcesResultBuilder b)]) =
-      _$EnableCoreSourcesResult;
+  factory EnableCoreSourcesResult([
+    void updates(EnableCoreSourcesResultBuilder b),
+  ]) = _$EnableCoreSourcesResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EnableCoreSourcesResultBuilder b) => b;
@@ -49,7 +49,7 @@ class _$EnableCoreSourcesResultSerializer
   @override
   final Iterable<Type> types = const [
     EnableCoreSourcesResult,
-    _$EnableCoreSourcesResult
+    _$EnableCoreSourcesResult,
   ];
 
   @override
@@ -83,9 +83,11 @@ class _$EnableCoreSourcesResultSerializer
     EnableCoreSourcesResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +103,26 @@ class _$EnableCoreSourcesResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.enabled.replace(valueDes);
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         case r'skipped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.skipped = valueDes;
           break;
         default:

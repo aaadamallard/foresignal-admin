@@ -90,11 +90,8 @@ class PolStayPageBuilder implements Builder<PolStayPage, PolStayPageBuilder> {
   _$PolStayPage _build() {
     _$PolStayPage _$result;
     try {
-      _$result = _$v ??
-          _$PolStayPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$PolStayPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class PolStayPageBuilder implements Builder<PolStayPage, PolStayPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolStayPage', _$failedField, e.toString());
+          r'PolStayPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

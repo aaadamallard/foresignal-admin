@@ -32,11 +32,11 @@ ObjectAclEntryRoleEnum _$objectAclEntryRoleEnumValueOf(String name) {
 
 final BuiltSet<ObjectAclEntryRoleEnum> _$objectAclEntryRoleEnumValues =
     BuiltSet<ObjectAclEntryRoleEnum>(const <ObjectAclEntryRoleEnum>[
-  _$objectAclEntryRoleEnum_viewer,
-  _$objectAclEntryRoleEnum_commenter,
-  _$objectAclEntryRoleEnum_editor,
-  _$objectAclEntryRoleEnum_owner,
-]);
+      _$objectAclEntryRoleEnum_viewer,
+      _$objectAclEntryRoleEnum_commenter,
+      _$objectAclEntryRoleEnum_editor,
+      _$objectAclEntryRoleEnum_owner,
+    ]);
 
 Serializer<ObjectAclEntryRoleEnum> _$objectAclEntryRoleEnumSerializer =
     _$ObjectAclEntryRoleEnumSerializer();
@@ -62,15 +62,20 @@ class _$ObjectAclEntryRoleEnumSerializer
   final String wireName = 'ObjectAclEntryRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, ObjectAclEntryRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ObjectAclEntryRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ObjectAclEntryRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ObjectAclEntryRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ObjectAclEntryRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ObjectAclEntryRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ObjectAclEntry extends ObjectAclEntry {
@@ -90,14 +95,14 @@ class _$ObjectAclEntry extends ObjectAclEntry {
   factory _$ObjectAclEntry([void Function(ObjectAclEntryBuilder)? updates]) =>
       (ObjectAclEntryBuilder()..update(updates))._build();
 
-  _$ObjectAclEntry._(
-      {required this.grantee,
-      this.granteeDisplay,
-      required this.role,
-      this.grantedBy,
-      required this.grantedAt,
-      this.expiresAt})
-      : super._();
+  _$ObjectAclEntry._({
+    required this.grantee,
+    this.granteeDisplay,
+    required this.role,
+    this.grantedBy,
+    required this.grantedAt,
+    this.expiresAt,
+  }) : super._();
   @override
   ObjectAclEntry rebuild(void Function(ObjectAclEntryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -208,16 +213,26 @@ class ObjectAclEntryBuilder
   _$ObjectAclEntry _build() {
     _$ObjectAclEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObjectAclEntry._(
             grantee: BuiltValueNullFieldError.checkNotNull(
-                grantee, r'ObjectAclEntry', 'grantee'),
+              grantee,
+              r'ObjectAclEntry',
+              'grantee',
+            ),
             granteeDisplay: granteeDisplay,
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'ObjectAclEntry', 'role'),
+              role,
+              r'ObjectAclEntry',
+              'role',
+            ),
             grantedBy: _grantedBy?.build(),
             grantedAt: BuiltValueNullFieldError.checkNotNull(
-                grantedAt, r'ObjectAclEntry', 'grantedAt'),
+              grantedAt,
+              r'ObjectAclEntry',
+              'grantedAt',
+            ),
             expiresAt: expiresAt,
           );
     } catch (_) {
@@ -227,7 +242,10 @@ class ObjectAclEntryBuilder
         _grantedBy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObjectAclEntry', _$failedField, e.toString());
+          r'ObjectAclEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -49,7 +49,7 @@ class _$ChronicleLinkScoresSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleLinkScores,
-    _$ChronicleLinkScores
+    _$ChronicleLinkScores,
   ];
 
   @override
@@ -96,9 +96,11 @@ class _$ChronicleLinkScoresSerializer
     ChronicleLinkScores object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,34 +116,50 @@ class _$ChronicleLinkScoresSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleLinkScoresEvidence),
-          ) as ChronicleLinkScoresEvidence?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleLinkScoresEvidence,
+                    ),
+                  )
+                  as ChronicleLinkScoresEvidence?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'entities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleLinkScoresEvidence),
-          ) as ChronicleLinkScoresEvidence?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleLinkScoresEvidence,
+                    ),
+                  )
+                  as ChronicleLinkScoresEvidence?;
           if (valueDes == null) continue;
           result.entities.replace(valueDes);
           break;
         case r'area-time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleLinkScoresEvidence),
-          ) as ChronicleLinkScoresEvidence?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleLinkScoresEvidence,
+                    ),
+                  )
+                  as ChronicleLinkScoresEvidence?;
           if (valueDes == null) continue;
           result.areaTime.replace(valueDes);
           break;
         case r'topics':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleLinkScoresEvidence),
-          ) as ChronicleLinkScoresEvidence?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleLinkScoresEvidence,
+                    ),
+                  )
+                  as ChronicleLinkScoresEvidence?;
           if (valueDes == null) continue;
           result.topics.replace(valueDes);
           break;

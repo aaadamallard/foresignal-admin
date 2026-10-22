@@ -13,17 +13,18 @@ class _$ForecastNumericCalibrationSummary
   @override
   final num? maxCoverageDeviation;
 
-  factory _$ForecastNumericCalibrationSummary(
-          [void Function(ForecastNumericCalibrationSummaryBuilder)? updates]) =>
-      (ForecastNumericCalibrationSummaryBuilder()..update(updates))._build();
+  factory _$ForecastNumericCalibrationSummary([
+    void Function(ForecastNumericCalibrationSummaryBuilder)? updates,
+  ]) => (ForecastNumericCalibrationSummaryBuilder()..update(updates))._build();
 
-  _$ForecastNumericCalibrationSummary._(
-      {this.meanAbsoluteCoverageError, this.maxCoverageDeviation})
-      : super._();
+  _$ForecastNumericCalibrationSummary._({
+    this.meanAbsoluteCoverageError,
+    this.maxCoverageDeviation,
+  }) : super._();
   @override
   ForecastNumericCalibrationSummary rebuild(
-          void Function(ForecastNumericCalibrationSummaryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastNumericCalibrationSummaryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastNumericCalibrationSummaryBuilder toBuilder() =>
@@ -57,8 +58,10 @@ class _$ForecastNumericCalibrationSummary
 
 class ForecastNumericCalibrationSummaryBuilder
     implements
-        Builder<ForecastNumericCalibrationSummary,
-            ForecastNumericCalibrationSummaryBuilder> {
+        Builder<
+          ForecastNumericCalibrationSummary,
+          ForecastNumericCalibrationSummaryBuilder
+        > {
   _$ForecastNumericCalibrationSummary? _$v;
 
   num? _meanAbsoluteCoverageError;
@@ -92,7 +95,8 @@ class ForecastNumericCalibrationSummaryBuilder
 
   @override
   void update(
-      void Function(ForecastNumericCalibrationSummaryBuilder)? updates) {
+    void Function(ForecastNumericCalibrationSummaryBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -100,7 +104,8 @@ class ForecastNumericCalibrationSummaryBuilder
   ForecastNumericCalibrationSummary build() => _build();
 
   _$ForecastNumericCalibrationSummary _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastNumericCalibrationSummary._(
           meanAbsoluteCoverageError: meanAbsoluteCoverageError,
           maxCoverageDeviation: maxCoverageDeviation,

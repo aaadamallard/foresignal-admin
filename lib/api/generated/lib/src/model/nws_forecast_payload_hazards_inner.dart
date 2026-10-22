@@ -16,8 +16,10 @@ part 'nws_forecast_payload_hazards_inner.g.dart';
 @BuiltValue()
 abstract class NwsForecastPayloadHazardsInner
     implements
-        Built<NwsForecastPayloadHazardsInner,
-            NwsForecastPayloadHazardsInnerBuilder> {
+        Built<
+          NwsForecastPayloadHazardsInner,
+          NwsForecastPayloadHazardsInnerBuilder
+        > {
   /// phenomenon.significance, for example FZ.W
   @BuiltValueField(wireName: r'type')
   String get type;
@@ -28,9 +30,9 @@ abstract class NwsForecastPayloadHazardsInner
 
   NwsForecastPayloadHazardsInner._();
 
-  factory NwsForecastPayloadHazardsInner(
-          [void updates(NwsForecastPayloadHazardsInnerBuilder b)]) =
-      _$NwsForecastPayloadHazardsInner;
+  factory NwsForecastPayloadHazardsInner([
+    void updates(NwsForecastPayloadHazardsInnerBuilder b),
+  ]) = _$NwsForecastPayloadHazardsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NwsForecastPayloadHazardsInnerBuilder b) => b;
@@ -45,7 +47,7 @@ class _$NwsForecastPayloadHazardsInnerSerializer
   @override
   final Iterable<Type> types = const [
     NwsForecastPayloadHazardsInner,
-    _$NwsForecastPayloadHazardsInner
+    _$NwsForecastPayloadHazardsInner,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$NwsForecastPayloadHazardsInnerSerializer
     NwsForecastPayloadHazardsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,17 +98,21 @@ class _$NwsForecastPayloadHazardsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.type = valueDes;
           break;
         case r'validTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.validTime = valueDes;
           break;

@@ -62,11 +62,7 @@ class AskApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -119,9 +115,10 @@ class AskApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AskResponse),
-            ) as AskResponse;
+                  rawResponse,
+                  specifiedType: const FullType(AskResponse),
+                )
+                as AskResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -181,11 +178,7 @@ class AskApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -238,9 +231,10 @@ class AskApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AskStream200Response),
-            ) as AskStream200Response;
+                  rawResponse,
+                  specifiedType: const FullType(AskStream200Response),
+                )
+                as AskStream200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -287,21 +281,21 @@ class AskApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ask/actions/{actionId}/confirm'.replaceAll(
-        '{' r'actionId' '}',
-        encodeQueryParameter(_serializers, actionId, const FullType(String))
-            .toString());
+      '{'
+      r'actionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        actionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -323,9 +317,10 @@ class AskApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AskAction),
-            ) as AskAction;
+                  rawResponse,
+                  specifiedType: const FullType(AskAction),
+                )
+                as AskAction;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -372,21 +367,21 @@ class AskApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ask/threads/{threadId}'.replaceAll(
-        '{' r'threadId' '}',
-        encodeQueryParameter(_serializers, threadId, const FullType(String))
-            .toString());
+      '{'
+      r'threadId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        threadId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -428,21 +423,21 @@ class AskApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ask/threads/{threadId}'.replaceAll(
-        '{' r'threadId' '}',
-        encodeQueryParameter(_serializers, threadId, const FullType(String))
-            .toString());
+      '{'
+      r'threadId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        threadId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -464,9 +459,10 @@ class AskApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AskThread),
-            ) as AskThread;
+                  rawResponse,
+                  specifiedType: const FullType(AskThread),
+                )
+                as AskThread;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -517,16 +513,10 @@ class AskApi {
     final _path = r'/v1/ask/threads';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -535,11 +525,17 @@ class AskApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -558,9 +554,10 @@ class AskApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AskThreadPage),
-            ) as AskThreadPage;
+                  rawResponse,
+                  specifiedType: const FullType(AskThreadPage),
+                )
+                as AskThreadPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -607,21 +604,21 @@ class AskApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ask/actions/{actionId}/reject'.replaceAll(
-        '{' r'actionId' '}',
-        encodeQueryParameter(_serializers, actionId, const FullType(String))
-            .toString());
+      '{'
+      r'actionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        actionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -643,9 +640,10 @@ class AskApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AskAction),
-            ) as AskAction;
+                  rawResponse,
+                  specifiedType: const FullType(AskAction),
+                )
+                as AskAction;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

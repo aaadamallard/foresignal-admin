@@ -16,20 +16,20 @@ class _$CoverageStatsCoverageBalance extends CoverageStatsCoverageBalance {
   @override
   final num unrated;
 
-  factory _$CoverageStatsCoverageBalance(
-          [void Function(CoverageStatsCoverageBalanceBuilder)? updates]) =>
-      (CoverageStatsCoverageBalanceBuilder()..update(updates))._build();
+  factory _$CoverageStatsCoverageBalance([
+    void Function(CoverageStatsCoverageBalanceBuilder)? updates,
+  ]) => (CoverageStatsCoverageBalanceBuilder()..update(updates))._build();
 
-  _$CoverageStatsCoverageBalance._(
-      {required this.left,
-      required this.center,
-      required this.right,
-      required this.unrated})
-      : super._();
+  _$CoverageStatsCoverageBalance._({
+    required this.left,
+    required this.center,
+    required this.right,
+    required this.unrated,
+  }) : super._();
   @override
   CoverageStatsCoverageBalance rebuild(
-          void Function(CoverageStatsCoverageBalanceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CoverageStatsCoverageBalanceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CoverageStatsCoverageBalanceBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$CoverageStatsCoverageBalance extends CoverageStatsCoverageBalance {
 
 class CoverageStatsCoverageBalanceBuilder
     implements
-        Builder<CoverageStatsCoverageBalance,
-            CoverageStatsCoverageBalanceBuilder> {
+        Builder<
+          CoverageStatsCoverageBalance,
+          CoverageStatsCoverageBalanceBuilder
+        > {
   _$CoverageStatsCoverageBalance? _$v;
 
   num? _left;
@@ -119,16 +121,29 @@ class CoverageStatsCoverageBalanceBuilder
   CoverageStatsCoverageBalance build() => _build();
 
   _$CoverageStatsCoverageBalance _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CoverageStatsCoverageBalance._(
           left: BuiltValueNullFieldError.checkNotNull(
-              left, r'CoverageStatsCoverageBalance', 'left'),
+            left,
+            r'CoverageStatsCoverageBalance',
+            'left',
+          ),
           center: BuiltValueNullFieldError.checkNotNull(
-              center, r'CoverageStatsCoverageBalance', 'center'),
+            center,
+            r'CoverageStatsCoverageBalance',
+            'center',
+          ),
           right: BuiltValueNullFieldError.checkNotNull(
-              right, r'CoverageStatsCoverageBalance', 'right'),
+            right,
+            r'CoverageStatsCoverageBalance',
+            'right',
+          ),
           unrated: BuiltValueNullFieldError.checkNotNull(
-              unrated, r'CoverageStatsCoverageBalance', 'unrated'),
+            unrated,
+            r'CoverageStatsCoverageBalance',
+            'unrated',
+          ),
         );
     replace(_$result);
     return _$result;

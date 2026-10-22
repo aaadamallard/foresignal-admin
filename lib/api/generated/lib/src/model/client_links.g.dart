@@ -21,9 +21,13 @@ class _$ClientLinks extends ClientLinks {
   factory _$ClientLinks([void Function(ClientLinksBuilder)? updates]) =>
       (ClientLinksBuilder()..update(updates))._build();
 
-  _$ClientLinks._(
-      {this.alert, this.record, this.briefingRun, this.pair, this.share})
-      : super._();
+  _$ClientLinks._({
+    this.alert,
+    this.record,
+    this.briefingRun,
+    this.pair,
+    this.share,
+  }) : super._();
   @override
   ClientLinks rebuild(void Function(ClientLinksBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -120,7 +124,8 @@ class ClientLinksBuilder implements Builder<ClientLinks, ClientLinksBuilder> {
   ClientLinks build() => _build();
 
   _$ClientLinks _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ClientLinks._(
           alert: alert,
           record: record,

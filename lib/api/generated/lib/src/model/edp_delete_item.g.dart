@@ -20,8 +20,8 @@ EdpDeleteItemTypeEnum _$edpDeleteItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpDeleteItemTypeEnum> _$edpDeleteItemTypeEnumValues =
     BuiltSet<EdpDeleteItemTypeEnum>(const <EdpDeleteItemTypeEnum>[
-  _$edpDeleteItemTypeEnum_delete,
-]);
+      _$edpDeleteItemTypeEnum_delete,
+    ]);
 
 Serializer<EdpDeleteItemTypeEnum> _$edpDeleteItemTypeEnumSerializer =
     _$EdpDeleteItemTypeEnumSerializer();
@@ -41,15 +41,20 @@ class _$EdpDeleteItemTypeEnumSerializer
   final String wireName = 'EdpDeleteItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpDeleteItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpDeleteItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpDeleteItemTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpDeleteItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpDeleteItemTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpDeleteItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpDeleteItem extends EdpDeleteItem {
@@ -67,13 +72,13 @@ class _$EdpDeleteItem extends EdpDeleteItem {
   factory _$EdpDeleteItem([void Function(EdpDeleteItemBuilder)? updates]) =>
       (EdpDeleteItemBuilder()..update(updates))._build();
 
-  _$EdpDeleteItem._(
-      {required this.stream,
-      required this.type,
-      required this.id,
-      this.observedAt,
-      this.properties})
-      : super._();
+  _$EdpDeleteItem._({
+    required this.stream,
+    required this.type,
+    required this.id,
+    this.observedAt,
+    this.properties,
+  }) : super._();
   @override
   EdpDeleteItem rebuild(void Function(EdpDeleteItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -175,14 +180,24 @@ class EdpDeleteItemBuilder
   _$EdpDeleteItem _build() {
     _$EdpDeleteItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpDeleteItem._(
             stream: BuiltValueNullFieldError.checkNotNull(
-                stream, r'EdpDeleteItem', 'stream'),
+              stream,
+              r'EdpDeleteItem',
+              'stream',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'EdpDeleteItem', 'type'),
+              type,
+              r'EdpDeleteItem',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpDeleteItem', 'id'),
+              id,
+              r'EdpDeleteItem',
+              'id',
+            ),
             observedAt: observedAt,
             properties: _properties?.build(),
           );
@@ -193,7 +208,10 @@ class EdpDeleteItemBuilder
         _properties?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpDeleteItem', _$failedField, e.toString());
+          r'EdpDeleteItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

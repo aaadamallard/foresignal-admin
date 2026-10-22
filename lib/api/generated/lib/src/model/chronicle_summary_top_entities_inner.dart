@@ -17,8 +17,10 @@ part 'chronicle_summary_top_entities_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleSummaryTopEntitiesInner
     implements
-        Built<ChronicleSummaryTopEntitiesInner,
-            ChronicleSummaryTopEntitiesInnerBuilder> {
+        Built<
+          ChronicleSummaryTopEntitiesInner,
+          ChronicleSummaryTopEntitiesInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'ref')
   String get ref;
@@ -31,9 +33,9 @@ abstract class ChronicleSummaryTopEntitiesInner
 
   ChronicleSummaryTopEntitiesInner._();
 
-  factory ChronicleSummaryTopEntitiesInner(
-          [void updates(ChronicleSummaryTopEntitiesInnerBuilder b)]) =
-      _$ChronicleSummaryTopEntitiesInner;
+  factory ChronicleSummaryTopEntitiesInner([
+    void updates(ChronicleSummaryTopEntitiesInnerBuilder b),
+  ]) = _$ChronicleSummaryTopEntitiesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSummaryTopEntitiesInnerBuilder b) => b;
@@ -48,7 +50,7 @@ class _$ChronicleSummaryTopEntitiesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSummaryTopEntitiesInner,
-    _$ChronicleSummaryTopEntitiesInner
+    _$ChronicleSummaryTopEntitiesInner,
   ];
 
   @override
@@ -84,9 +86,11 @@ class _$ChronicleSummaryTopEntitiesInnerSerializer
     ChronicleSummaryTopEntitiesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,25 +106,28 @@ class _$ChronicleSummaryTopEntitiesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         default:

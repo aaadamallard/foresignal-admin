@@ -18,21 +18,21 @@ class _$ChronicleLayerInput extends ChronicleLayerInput {
   @override
   final bool? enabled;
 
-  factory _$ChronicleLayerInput(
-          [void Function(ChronicleLayerInputBuilder)? updates]) =>
-      (ChronicleLayerInputBuilder()..update(updates))._build();
+  factory _$ChronicleLayerInput([
+    void Function(ChronicleLayerInputBuilder)? updates,
+  ]) => (ChronicleLayerInputBuilder()..update(updates))._build();
 
-  _$ChronicleLayerInput._(
-      {required this.name,
-      this.selector,
-      this.areaOverride,
-      required this.capture,
-      this.enabled})
-      : super._();
+  _$ChronicleLayerInput._({
+    required this.name,
+    this.selector,
+    this.areaOverride,
+    required this.capture,
+    this.enabled,
+  }) : super._();
   @override
   ChronicleLayerInput rebuild(
-          void Function(ChronicleLayerInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleLayerInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleLayerInputBuilder toBuilder() =>
@@ -132,10 +132,14 @@ class ChronicleLayerInputBuilder
   _$ChronicleLayerInput _build() {
     _$ChronicleLayerInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleLayerInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ChronicleLayerInput', 'name'),
+              name,
+              r'ChronicleLayerInput',
+              'name',
+            ),
             selector: selector,
             areaOverride: _areaOverride?.build(),
             capture: capture.build(),
@@ -150,7 +154,10 @@ class ChronicleLayerInputBuilder
         capture.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleLayerInput', _$failedField, e.toString());
+          r'ChronicleLayerInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

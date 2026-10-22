@@ -32,8 +32,9 @@ abstract class SocialSettingsCompare
 
   SocialSettingsCompare._();
 
-  factory SocialSettingsCompare(
-      [void updates(SocialSettingsCompareBuilder b)]) = _$SocialSettingsCompare;
+  factory SocialSettingsCompare([
+    void updates(SocialSettingsCompareBuilder b),
+  ]) = _$SocialSettingsCompare;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsCompareBuilder b) => b;
@@ -48,7 +49,7 @@ class _$SocialSettingsCompareSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsCompare,
-    _$SocialSettingsCompare
+    _$SocialSettingsCompare,
   ];
 
   @override
@@ -79,7 +80,7 @@ class _$SocialSettingsCompareSerializer
         object.familyWindows,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(SocialSettingsCompareFamilyWindowsValue)
+          FullType(SocialSettingsCompareFamilyWindowsValue),
         ]),
       );
     }
@@ -91,9 +92,11 @@ class _$SocialSettingsCompareSerializer
     SocialSettingsCompare object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,30 +112,37 @@ class _$SocialSettingsCompareSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'minGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minGroups = valueDes;
           break;
         case r'defaultWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SocialSettingsCompareDefaultWindow),
-          ) as SocialSettingsCompareDefaultWindow?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsCompareDefaultWindow,
+                    ),
+                  )
+                  as SocialSettingsCompareDefaultWindow?;
           if (valueDes == null) continue;
           result.defaultWindow.replace(valueDes);
           break;
         case r'familyWindows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(SocialSettingsCompareFamilyWindowsValue)
-            ]),
-          ) as BuiltMap<String, SocialSettingsCompareFamilyWindowsValue>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(SocialSettingsCompareFamilyWindowsValue),
+                    ]),
+                  )
+                  as BuiltMap<String, SocialSettingsCompareFamilyWindowsValue>?;
           if (valueDes == null) continue;
           result.familyWindows.replace(valueDes);
           break;

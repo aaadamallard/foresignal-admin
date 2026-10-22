@@ -28,20 +28,21 @@ ExternalSourceStateEnum _$externalSourceStateEnumValueOf(String name) {
 
 final BuiltSet<ExternalSourceStateEnum> _$externalSourceStateEnumValues =
     BuiltSet<ExternalSourceStateEnum>(const <ExternalSourceStateEnum>[
-  _$externalSourceStateEnum_pending,
-  _$externalSourceStateEnum_active,
-  _$externalSourceStateEnum_suspended,
-]);
+      _$externalSourceStateEnum_pending,
+      _$externalSourceStateEnum_active,
+      _$externalSourceStateEnum_suspended,
+    ]);
 
 const ExternalSourceRegisteredViaEnum
-    _$externalSourceRegisteredViaEnum_operator_ =
+_$externalSourceRegisteredViaEnum_operator_ =
     const ExternalSourceRegisteredViaEnum._('operator_');
 const ExternalSourceRegisteredViaEnum
-    _$externalSourceRegisteredViaEnum_registrationToken =
+_$externalSourceRegisteredViaEnum_registrationToken =
     const ExternalSourceRegisteredViaEnum._('registrationToken');
 
 ExternalSourceRegisteredViaEnum _$externalSourceRegisteredViaEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'operator_':
       return _$externalSourceRegisteredViaEnum_operator_;
@@ -53,16 +54,18 @@ ExternalSourceRegisteredViaEnum _$externalSourceRegisteredViaEnumValueOf(
 }
 
 final BuiltSet<ExternalSourceRegisteredViaEnum>
-    _$externalSourceRegisteredViaEnumValues = BuiltSet<
-        ExternalSourceRegisteredViaEnum>(const <ExternalSourceRegisteredViaEnum>[
-  _$externalSourceRegisteredViaEnum_operator_,
-  _$externalSourceRegisteredViaEnum_registrationToken,
-]);
+_$externalSourceRegisteredViaEnumValues =
+    BuiltSet<ExternalSourceRegisteredViaEnum>(
+      const <ExternalSourceRegisteredViaEnum>[
+        _$externalSourceRegisteredViaEnum_operator_,
+        _$externalSourceRegisteredViaEnum_registrationToken,
+      ],
+    );
 
 Serializer<ExternalSourceStateEnum> _$externalSourceStateEnumSerializer =
     _$ExternalSourceStateEnumSerializer();
 Serializer<ExternalSourceRegisteredViaEnum>
-    _$externalSourceRegisteredViaEnumSerializer =
+_$externalSourceRegisteredViaEnumSerializer =
     _$ExternalSourceRegisteredViaEnumSerializer();
 
 class _$ExternalSourceStateEnumSerializer
@@ -84,16 +87,20 @@ class _$ExternalSourceStateEnumSerializer
   final String wireName = 'ExternalSourceStateEnum';
 
   @override
-  Object serialize(Serializers serializers, ExternalSourceStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExternalSourceStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalSourceStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalSourceStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalSourceStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalSourceRegisteredViaEnumSerializer
@@ -114,16 +121,19 @@ class _$ExternalSourceRegisteredViaEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExternalSourceRegisteredViaEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExternalSourceRegisteredViaEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalSourceRegisteredViaEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalSourceRegisteredViaEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalSourceRegisteredViaEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalSource extends ExternalSource {
@@ -167,26 +177,26 @@ class _$ExternalSource extends ExternalSource {
   factory _$ExternalSource([void Function(ExternalSourceBuilder)? updates]) =>
       (ExternalSourceBuilder()..update(updates))._build();
 
-  _$ExternalSource._(
-      {required this.sourceId,
-      required this.state,
-      this.registeredVia,
-      required this.manifest,
-      this.manifestSha256,
-      this.access,
-      this.egress,
-      this.approvedBy,
-      this.approvedAt,
-      required this.createdAt,
-      this.lastItemAt,
-      this.pull,
-      this.streams,
-      this.lastValidationErrors,
-      this.health,
-      this.allowPrivateNetwork,
-      this.presentation,
-      this.breakingChanges})
-      : super._();
+  _$ExternalSource._({
+    required this.sourceId,
+    required this.state,
+    this.registeredVia,
+    required this.manifest,
+    this.manifestSha256,
+    this.access,
+    this.egress,
+    this.approvedBy,
+    this.approvedAt,
+    required this.createdAt,
+    this.lastItemAt,
+    this.pull,
+    this.streams,
+    this.lastValidationErrors,
+    this.health,
+    this.allowPrivateNetwork,
+    this.presentation,
+    this.breakingChanges,
+  }) : super._();
   @override
   ExternalSource rebuild(void Function(ExternalSourceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -333,8 +343,8 @@ class ExternalSourceBuilder
   ListBuilder<EdpItemRejection> get lastValidationErrors =>
       _$this._lastValidationErrors ??= ListBuilder<EdpItemRejection>();
   set lastValidationErrors(
-          ListBuilder<EdpItemRejection>? lastValidationErrors) =>
-      _$this._lastValidationErrors = lastValidationErrors;
+    ListBuilder<EdpItemRejection>? lastValidationErrors,
+  ) => _$this._lastValidationErrors = lastValidationErrors;
 
   String? _health;
   String? get health => _$this._health;
@@ -403,12 +413,19 @@ class ExternalSourceBuilder
   _$ExternalSource _build() {
     _$ExternalSource _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalSource._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'ExternalSource', 'sourceId'),
+              sourceId,
+              r'ExternalSource',
+              'sourceId',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'ExternalSource', 'state'),
+              state,
+              r'ExternalSource',
+              'state',
+            ),
             registeredVia: registeredVia,
             manifest: manifest.build(),
             manifestSha256: manifestSha256,
@@ -417,7 +434,10 @@ class ExternalSourceBuilder
             approvedBy: approvedBy,
             approvedAt: approvedAt,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ExternalSource', 'createdAt'),
+              createdAt,
+              r'ExternalSource',
+              'createdAt',
+            ),
             lastItemAt: lastItemAt,
             pull: _pull?.build(),
             streams: _streams?.build(),
@@ -449,7 +469,10 @@ class ExternalSourceBuilder
         _breakingChanges?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalSource', _$failedField, e.toString());
+          r'ExternalSource',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

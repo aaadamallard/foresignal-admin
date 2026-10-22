@@ -21,13 +21,13 @@ class _$Contract extends Contract {
   factory _$Contract([void Function(ContractBuilder)? updates]) =>
       (ContractBuilder()..update(updates))._build();
 
-  _$Contract._(
-      {required this.contractVersion,
-      required this.objectTypes,
-      required this.relationTypes,
-      required this.contextSchemaVersion,
-      required this.deepLinkVersion})
-      : super._();
+  _$Contract._({
+    required this.contractVersion,
+    required this.objectTypes,
+    required this.relationTypes,
+    required this.contextSchemaVersion,
+    required this.deepLinkVersion,
+  }) : super._();
   @override
   Contract rebuild(void Function(ContractBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -133,16 +133,26 @@ class ContractBuilder implements Builder<Contract, ContractBuilder> {
   _$Contract _build() {
     _$Contract _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Contract._(
             contractVersion: BuiltValueNullFieldError.checkNotNull(
-                contractVersion, r'Contract', 'contractVersion'),
+              contractVersion,
+              r'Contract',
+              'contractVersion',
+            ),
             objectTypes: objectTypes.build(),
             relationTypes: relationTypes.build(),
             contextSchemaVersion: BuiltValueNullFieldError.checkNotNull(
-                contextSchemaVersion, r'Contract', 'contextSchemaVersion'),
+              contextSchemaVersion,
+              r'Contract',
+              'contextSchemaVersion',
+            ),
             deepLinkVersion: BuiltValueNullFieldError.checkNotNull(
-                deepLinkVersion, r'Contract', 'deepLinkVersion'),
+              deepLinkVersion,
+              r'Contract',
+              'deepLinkVersion',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -153,7 +163,10 @@ class ContractBuilder implements Builder<Contract, ContractBuilder> {
         relationTypes.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Contract', _$failedField, e.toString());
+          r'Contract',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

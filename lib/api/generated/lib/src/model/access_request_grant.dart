@@ -83,9 +83,11 @@ class _$AccessRequestGrantSerializer
     AccessRequestGrant object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,25 +103,35 @@ class _$AccessRequestGrantSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deliveredAs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AccessRequestGrantDeliveredAsEnum),
-          ) as AccessRequestGrantDeliveredAsEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AccessRequestGrantDeliveredAsEnum,
+                    ),
+                  )
+                  as AccessRequestGrantDeliveredAsEnum;
           result.deliveredAs = valueDes;
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AccessRequestGrantRoleEnum),
-          ) as AccessRequestGrantRoleEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AccessRequestGrantRoleEnum,
+                    ),
+                  )
+                  as AccessRequestGrantRoleEnum?;
           if (valueDes == null) continue;
           result.role = valueDes;
           break;
         case r'packageId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.packageId = valueDes;
           break;

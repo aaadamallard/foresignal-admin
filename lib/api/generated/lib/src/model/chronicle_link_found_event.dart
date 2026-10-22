@@ -30,9 +30,9 @@ abstract class ChronicleLinkFoundEvent
 
   ChronicleLinkFoundEvent._();
 
-  factory ChronicleLinkFoundEvent(
-          [void updates(ChronicleLinkFoundEventBuilder b)]) =
-      _$ChronicleLinkFoundEvent;
+  factory ChronicleLinkFoundEvent([
+    void updates(ChronicleLinkFoundEventBuilder b),
+  ]) = _$ChronicleLinkFoundEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleLinkFoundEventBuilder b) => b;
@@ -47,7 +47,7 @@ class _$ChronicleLinkFoundEventSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleLinkFoundEvent,
-    _$ChronicleLinkFoundEvent
+    _$ChronicleLinkFoundEvent,
   ];
 
   @override
@@ -81,9 +81,11 @@ class _$ChronicleLinkFoundEventSerializer
     ChronicleLinkFoundEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +101,32 @@ class _$ChronicleLinkFoundEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chronicleId = valueDes;
           break;
         case r'link':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleRelatedPageItemsInner),
-          ) as ChronicleRelatedPageItemsInner;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleRelatedPageItemsInner,
+                    ),
+                  )
+                  as ChronicleRelatedPageItemsInner;
           result.link.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

@@ -72,8 +72,10 @@ class _$AnalysisCallbackSerializer
       yield r'quantiles';
       yield serializers.serialize(
         object.quantiles,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(num)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(num),
+        ]),
       );
     }
   }
@@ -84,9 +86,11 @@ class _$AnalysisCallbackSerializer
     AnalysisCallback object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +106,34 @@ class _$AnalysisCallbackSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'correlationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.correlationId = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.probability = valueDes;
           break;
         case r'quantiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>?;
           if (valueDes == null) continue;
           result.quantiles.replace(valueDes);
           break;

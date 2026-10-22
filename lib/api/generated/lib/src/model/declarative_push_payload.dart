@@ -27,9 +27,9 @@ abstract class DeclarativePushPayload
 
   DeclarativePushPayload._();
 
-  factory DeclarativePushPayload(
-          [void updates(DeclarativePushPayloadBuilder b)]) =
-      _$DeclarativePushPayload;
+  factory DeclarativePushPayload([
+    void updates(DeclarativePushPayloadBuilder b),
+  ]) = _$DeclarativePushPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DeclarativePushPayloadBuilder b) => b;
@@ -44,7 +44,7 @@ class _$DeclarativePushPayloadSerializer
   @override
   final Iterable<Type> types = const [
     DeclarativePushPayload,
-    _$DeclarativePushPayload
+    _$DeclarativePushPayload,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$DeclarativePushPayloadSerializer
     DeclarativePushPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +93,25 @@ class _$DeclarativePushPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'web_push':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DeclarativePushPayloadWebPushEnum),
-          ) as DeclarativePushPayloadWebPushEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DeclarativePushPayloadWebPushEnum,
+                    ),
+                  )
+                  as DeclarativePushPayloadWebPushEnum;
           result.webPush = valueDes;
           break;
         case r'notification':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DeclarativePushPayloadNotification),
-          ) as DeclarativePushPayloadNotification;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DeclarativePushPayloadNotification,
+                    ),
+                  )
+                  as DeclarativePushPayloadNotification;
           result.notification.replace(valueDes);
           break;
         default:

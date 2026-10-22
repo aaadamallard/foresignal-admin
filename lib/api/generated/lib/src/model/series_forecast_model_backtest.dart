@@ -35,9 +35,9 @@ abstract class SeriesForecastModelBacktest
 
   SeriesForecastModelBacktest._();
 
-  factory SeriesForecastModelBacktest(
-          [void updates(SeriesForecastModelBacktestBuilder b)]) =
-      _$SeriesForecastModelBacktest;
+  factory SeriesForecastModelBacktest([
+    void updates(SeriesForecastModelBacktestBuilder b),
+  ]) = _$SeriesForecastModelBacktest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SeriesForecastModelBacktestBuilder b) => b;
@@ -52,7 +52,7 @@ class _$SeriesForecastModelBacktestSerializer
   @override
   final Iterable<Type> types = const [
     SeriesForecastModelBacktest,
-    _$SeriesForecastModelBacktest
+    _$SeriesForecastModelBacktest,
   ];
 
   @override
@@ -85,8 +85,9 @@ class _$SeriesForecastModelBacktestSerializer
     yield r'results';
     yield serializers.serialize(
       object.results,
-      specifiedType: const FullType(
-          BuiltList, [FullType(SeriesForecastModelBacktestResultsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SeriesForecastModelBacktestResultsInner),
+      ]),
     );
   }
 
@@ -96,9 +97,11 @@ class _$SeriesForecastModelBacktestSerializer
     SeriesForecastModelBacktest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,34 +117,40 @@ class _$SeriesForecastModelBacktestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'origins':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.origins = valueDes;
           break;
         case r'spacing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.spacing = valueDes;
           break;
         case r'selectionHorizon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.selectionHorizon = valueDes;
           break;
         case r'results':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(SeriesForecastModelBacktestResultsInner)]),
-          ) as BuiltList<SeriesForecastModelBacktestResultsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SeriesForecastModelBacktestResultsInner),
+                    ]),
+                  )
+                  as BuiltList<SeriesForecastModelBacktestResultsInner>;
           result.results.replace(valueDes);
           break;
         default:

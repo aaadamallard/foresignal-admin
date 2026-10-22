@@ -75,7 +75,7 @@ class _$FindingEventFindingSerializer
   @override
   final Iterable<Type> types = const [
     FindingEventFinding,
-    _$FindingEventFinding
+    _$FindingEventFinding,
   ];
 
   @override
@@ -145,9 +145,11 @@ class _$FindingEventFindingSerializer
     FindingEventFinding object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -163,69 +165,92 @@ class _$FindingEventFindingSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'findingType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FindingEventFindingFindingTypeEnum),
-          ) as FindingEventFindingFindingTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      FindingEventFindingFindingTypeEnum,
+                    ),
+                  )
+                  as FindingEventFindingFindingTypeEnum;
           result.findingType = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FindingSeverity),
-          ) as FindingSeverity;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FindingSeverity),
+                  )
+                  as FindingSeverity;
           result.severity = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FindingEventFindingStatusEnum),
-          ) as FindingEventFindingStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      FindingEventFindingStatusEnum,
+                    ),
+                  )
+                  as FindingEventFindingStatusEnum;
           result.status = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'detectedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.detectedAt = valueDes;
           break;
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.situationId = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;

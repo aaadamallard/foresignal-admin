@@ -34,9 +34,9 @@ abstract class AnalysisManifestInputs
 
   AnalysisManifestInputs._();
 
-  factory AnalysisManifestInputs(
-          [void updates(AnalysisManifestInputsBuilder b)]) =
-      _$AnalysisManifestInputs;
+  factory AnalysisManifestInputs([
+    void updates(AnalysisManifestInputsBuilder b),
+  ]) = _$AnalysisManifestInputs;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalysisManifestInputsBuilder b) => b;
@@ -51,7 +51,7 @@ class _$AnalysisManifestInputsSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisManifestInputs,
-    _$AnalysisManifestInputs
+    _$AnalysisManifestInputs,
   ];
 
   @override
@@ -73,8 +73,10 @@ class _$AnalysisManifestInputsSerializer
       yield r'query';
       yield serializers.serialize(
         object.query,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     yield r'count';
@@ -95,9 +97,11 @@ class _$AnalysisManifestInputsSerializer
     AnalysisManifestInputs object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,35 +117,43 @@ class _$AnalysisManifestInputsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'refs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.refs.replace(valueDes);
           break;
         case r'query':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.query.replace(valueDes);
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         case r'hash':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hash = valueDes;
           break;
         default:

@@ -98,7 +98,8 @@ class ConditionBuilder implements Builder<Condition, ConditionBuilder> {
   Condition build() => _build();
 
   _$Condition _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Condition._(
           path: path,
           op: BuiltValueNullFieldError.checkNotNull(op, r'Condition', 'op'),

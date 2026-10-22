@@ -18,7 +18,7 @@ class _$DetectorRef extends DetectorRef {
       (DetectorRefBuilder()..update(updates))._build();
 
   _$DetectorRef._({required this.name, required this.version, this.params})
-      : super._();
+    : super._();
   @override
   DetectorRef rebuild(void Function(DetectorRefBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -103,12 +103,19 @@ class DetectorRefBuilder implements Builder<DetectorRef, DetectorRefBuilder> {
   _$DetectorRef _build() {
     _$DetectorRef _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DetectorRef._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'DetectorRef', 'name'),
+              name,
+              r'DetectorRef',
+              'name',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'DetectorRef', 'version'),
+              version,
+              r'DetectorRef',
+              'version',
+            ),
             params: _params?.build(),
           );
     } catch (_) {
@@ -118,7 +125,10 @@ class DetectorRefBuilder implements Builder<DetectorRef, DetectorRefBuilder> {
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DetectorRef', _$failedField, e.toString());
+          r'DetectorRef',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

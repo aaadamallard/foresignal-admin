@@ -71,9 +71,11 @@ class _$BriefingInputAudioSerializer
     BriefingInputAudio object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,18 +91,23 @@ class _$BriefingInputAudioSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'voice':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.voice = valueDes;
           break;
         case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BriefingInputAudioFormatEnum),
-          ) as BriefingInputAudioFormatEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      BriefingInputAudioFormatEnum,
+                    ),
+                  )
+                  as BriefingInputAudioFormatEnum?;
           if (valueDes == null) continue;
           result.format = valueDes;
           break;

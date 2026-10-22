@@ -22,19 +22,19 @@ class _$SystemInfoLimits extends SystemInfoLimits {
   @override
   final int? tileMaxFeatures;
 
-  factory _$SystemInfoLimits(
-          [void Function(SystemInfoLimitsBuilder)? updates]) =>
-      (SystemInfoLimitsBuilder()..update(updates))._build();
+  factory _$SystemInfoLimits([
+    void Function(SystemInfoLimitsBuilder)? updates,
+  ]) => (SystemInfoLimitsBuilder()..update(updates))._build();
 
-  _$SystemInfoLimits._(
-      {this.pageMax,
-      this.historyPageMax,
-      this.sseClientBuffer,
-      this.liveMaxEntities,
-      this.ingestMaxBytes,
-      this.ingestMaxRecords,
-      this.tileMaxFeatures})
-      : super._();
+  _$SystemInfoLimits._({
+    this.pageMax,
+    this.historyPageMax,
+    this.sseClientBuffer,
+    this.liveMaxEntities,
+    this.ingestMaxBytes,
+    this.ingestMaxRecords,
+    this.tileMaxFeatures,
+  }) : super._();
   @override
   SystemInfoLimits rebuild(void Function(SystemInfoLimitsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -155,7 +155,8 @@ class SystemInfoLimitsBuilder
   SystemInfoLimits build() => _build();
 
   _$SystemInfoLimits _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoLimits._(
           pageMax: pageMax,
           historyPageMax: historyPageMax,

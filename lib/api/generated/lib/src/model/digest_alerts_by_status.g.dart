@@ -14,16 +14,16 @@ class _$DigestAlertsByStatus extends DigestAlertsByStatus {
   @override
   final int? resolved;
 
-  factory _$DigestAlertsByStatus(
-          [void Function(DigestAlertsByStatusBuilder)? updates]) =>
-      (DigestAlertsByStatusBuilder()..update(updates))._build();
+  factory _$DigestAlertsByStatus([
+    void Function(DigestAlertsByStatusBuilder)? updates,
+  ]) => (DigestAlertsByStatusBuilder()..update(updates))._build();
 
   _$DigestAlertsByStatus._({this.firing, this.acknowledged, this.resolved})
-      : super._();
+    : super._();
   @override
   DigestAlertsByStatus rebuild(
-          void Function(DigestAlertsByStatusBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DigestAlertsByStatusBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DigestAlertsByStatusBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class DigestAlertsByStatusBuilder
   DigestAlertsByStatus build() => _build();
 
   _$DigestAlertsByStatus _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestAlertsByStatus._(
           firing: firing,
           acknowledged: acknowledged,

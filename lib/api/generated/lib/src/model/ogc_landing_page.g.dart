@@ -19,9 +19,12 @@ class _$OgcLandingPage extends OgcLandingPage {
   factory _$OgcLandingPage([void Function(OgcLandingPageBuilder)? updates]) =>
       (OgcLandingPageBuilder()..update(updates))._build();
 
-  _$OgcLandingPage._(
-      {this.title, this.description, this.attribution, required this.links})
-      : super._();
+  _$OgcLandingPage._({
+    this.title,
+    this.description,
+    this.attribution,
+    required this.links,
+  }) : super._();
   @override
   OgcLandingPage rebuild(void Function(OgcLandingPageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -113,7 +116,8 @@ class OgcLandingPageBuilder
   _$OgcLandingPage _build() {
     _$OgcLandingPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcLandingPage._(
             title: title,
             description: description,
@@ -127,7 +131,10 @@ class OgcLandingPageBuilder
         links.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcLandingPage', _$failedField, e.toString());
+          r'OgcLandingPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

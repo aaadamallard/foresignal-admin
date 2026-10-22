@@ -25,9 +25,9 @@ abstract class StatsRollupRebuildRequest
 
   StatsRollupRebuildRequest._();
 
-  factory StatsRollupRebuildRequest(
-          [void updates(StatsRollupRebuildRequestBuilder b)]) =
-      _$StatsRollupRebuildRequest;
+  factory StatsRollupRebuildRequest([
+    void updates(StatsRollupRebuildRequestBuilder b),
+  ]) = _$StatsRollupRebuildRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StatsRollupRebuildRequestBuilder b) => b;
@@ -42,7 +42,7 @@ class _$StatsRollupRebuildRequestSerializer
   @override
   final Iterable<Type> types = const [
     StatsRollupRebuildRequest,
-    _$StatsRollupRebuildRequest
+    _$StatsRollupRebuildRequest,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$StatsRollupRebuildRequestSerializer
     StatsRollupRebuildRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$StatsRollupRebuildRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         default:

@@ -9,17 +9,18 @@ part of 'emergency_squawk_payload.dart';
 const EmergencySquawkPayloadStatusEnum _$emergencySquawkPayloadStatusEnum_ok =
     const EmergencySquawkPayloadStatusEnum._('ok');
 const EmergencySquawkPayloadStatusEnum
-    _$emergencySquawkPayloadStatusEnum_insufficientData =
+_$emergencySquawkPayloadStatusEnum_insufficientData =
     const EmergencySquawkPayloadStatusEnum._('insufficientData');
 const EmergencySquawkPayloadStatusEnum
-    _$emergencySquawkPayloadStatusEnum_noCoverage =
+_$emergencySquawkPayloadStatusEnum_noCoverage =
     const EmergencySquawkPayloadStatusEnum._('noCoverage');
 const EmergencySquawkPayloadStatusEnum
-    _$emergencySquawkPayloadStatusEnum_degradedInput =
+_$emergencySquawkPayloadStatusEnum_degradedInput =
     const EmergencySquawkPayloadStatusEnum._('degradedInput');
 
 EmergencySquawkPayloadStatusEnum _$emergencySquawkPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$emergencySquawkPayloadStatusEnum_ok;
@@ -35,26 +36,29 @@ EmergencySquawkPayloadStatusEnum _$emergencySquawkPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<EmergencySquawkPayloadStatusEnum>
-    _$emergencySquawkPayloadStatusEnumValues = BuiltSet<
-        EmergencySquawkPayloadStatusEnum>(const <EmergencySquawkPayloadStatusEnum>[
-  _$emergencySquawkPayloadStatusEnum_ok,
-  _$emergencySquawkPayloadStatusEnum_insufficientData,
-  _$emergencySquawkPayloadStatusEnum_noCoverage,
-  _$emergencySquawkPayloadStatusEnum_degradedInput,
-]);
+_$emergencySquawkPayloadStatusEnumValues =
+    BuiltSet<EmergencySquawkPayloadStatusEnum>(
+      const <EmergencySquawkPayloadStatusEnum>[
+        _$emergencySquawkPayloadStatusEnum_ok,
+        _$emergencySquawkPayloadStatusEnum_insufficientData,
+        _$emergencySquawkPayloadStatusEnum_noCoverage,
+        _$emergencySquawkPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 const EmergencySquawkPayloadMeaningEnum
-    _$emergencySquawkPayloadMeaningEnum_unlawfulInterference =
+_$emergencySquawkPayloadMeaningEnum_unlawfulInterference =
     const EmergencySquawkPayloadMeaningEnum._('unlawfulInterference');
 const EmergencySquawkPayloadMeaningEnum
-    _$emergencySquawkPayloadMeaningEnum_radioFailure =
+_$emergencySquawkPayloadMeaningEnum_radioFailure =
     const EmergencySquawkPayloadMeaningEnum._('radioFailure');
 const EmergencySquawkPayloadMeaningEnum
-    _$emergencySquawkPayloadMeaningEnum_emergency =
+_$emergencySquawkPayloadMeaningEnum_emergency =
     const EmergencySquawkPayloadMeaningEnum._('emergency');
 
 EmergencySquawkPayloadMeaningEnum _$emergencySquawkPayloadMeaningEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'unlawfulInterference':
       return _$emergencySquawkPayloadMeaningEnum_unlawfulInterference;
@@ -68,18 +72,20 @@ EmergencySquawkPayloadMeaningEnum _$emergencySquawkPayloadMeaningEnumValueOf(
 }
 
 final BuiltSet<EmergencySquawkPayloadMeaningEnum>
-    _$emergencySquawkPayloadMeaningEnumValues = BuiltSet<
-        EmergencySquawkPayloadMeaningEnum>(const <EmergencySquawkPayloadMeaningEnum>[
-  _$emergencySquawkPayloadMeaningEnum_unlawfulInterference,
-  _$emergencySquawkPayloadMeaningEnum_radioFailure,
-  _$emergencySquawkPayloadMeaningEnum_emergency,
-]);
+_$emergencySquawkPayloadMeaningEnumValues =
+    BuiltSet<EmergencySquawkPayloadMeaningEnum>(
+      const <EmergencySquawkPayloadMeaningEnum>[
+        _$emergencySquawkPayloadMeaningEnum_unlawfulInterference,
+        _$emergencySquawkPayloadMeaningEnum_radioFailure,
+        _$emergencySquawkPayloadMeaningEnum_emergency,
+      ],
+    );
 
 Serializer<EmergencySquawkPayloadStatusEnum>
-    _$emergencySquawkPayloadStatusEnumSerializer =
+_$emergencySquawkPayloadStatusEnumSerializer =
     _$EmergencySquawkPayloadStatusEnumSerializer();
 Serializer<EmergencySquawkPayloadMeaningEnum>
-    _$emergencySquawkPayloadMeaningEnumSerializer =
+_$emergencySquawkPayloadMeaningEnumSerializer =
     _$EmergencySquawkPayloadMeaningEnumSerializer();
 
 class _$EmergencySquawkPayloadStatusEnumSerializer
@@ -104,16 +110,19 @@ class _$EmergencySquawkPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EmergencySquawkPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EmergencySquawkPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EmergencySquawkPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EmergencySquawkPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EmergencySquawkPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EmergencySquawkPayloadMeaningEnumSerializer
@@ -136,16 +145,19 @@ class _$EmergencySquawkPayloadMeaningEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EmergencySquawkPayloadMeaningEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EmergencySquawkPayloadMeaningEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EmergencySquawkPayloadMeaningEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EmergencySquawkPayloadMeaningEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EmergencySquawkPayloadMeaningEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EmergencySquawkPayload extends EmergencySquawkPayload {
@@ -172,27 +184,27 @@ class _$EmergencySquawkPayload extends EmergencySquawkPayload {
   @override
   final bool unverified;
 
-  factory _$EmergencySquawkPayload(
-          [void Function(EmergencySquawkPayloadBuilder)? updates]) =>
-      (EmergencySquawkPayloadBuilder()..update(updates))._build();
+  factory _$EmergencySquawkPayload([
+    void Function(EmergencySquawkPayloadBuilder)? updates,
+  ]) => (EmergencySquawkPayloadBuilder()..update(updates))._build();
 
-  _$EmergencySquawkPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.hex,
-      this.squawk,
-      this.emergency,
-      required this.meaning,
-      required this.unverified})
-      : super._();
+  _$EmergencySquawkPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.hex,
+    this.squawk,
+    this.emergency,
+    required this.meaning,
+    required this.unverified,
+  }) : super._();
   @override
   EmergencySquawkPayload rebuild(
-          void Function(EmergencySquawkPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EmergencySquawkPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EmergencySquawkPayloadBuilder toBuilder() =>
@@ -344,25 +356,44 @@ class EmergencySquawkPayloadBuilder
   _$EmergencySquawkPayload _build() {
     _$EmergencySquawkPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EmergencySquawkPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'EmergencySquawkPayload', 'automated'),
+              automated,
+              r'EmergencySquawkPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'EmergencySquawkPayload', 'notAWarning'),
+              notAWarning,
+              r'EmergencySquawkPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'EmergencySquawkPayload', 'status'),
+              status,
+              r'EmergencySquawkPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             hex: BuiltValueNullFieldError.checkNotNull(
-                hex, r'EmergencySquawkPayload', 'hex'),
+              hex,
+              r'EmergencySquawkPayload',
+              'hex',
+            ),
             squawk: squawk,
             emergency: emergency,
             meaning: BuiltValueNullFieldError.checkNotNull(
-                meaning, r'EmergencySquawkPayload', 'meaning'),
+              meaning,
+              r'EmergencySquawkPayload',
+              'meaning',
+            ),
             unverified: BuiltValueNullFieldError.checkNotNull(
-                unverified, r'EmergencySquawkPayload', 'unverified'),
+              unverified,
+              r'EmergencySquawkPayload',
+              'unverified',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -374,7 +405,10 @@ class EmergencySquawkPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EmergencySquawkPayload', _$failedField, e.toString());
+          r'EmergencySquawkPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

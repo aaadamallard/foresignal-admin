@@ -58,9 +58,11 @@ class _$AnalystNoteEventSerializer
     AnalystNoteEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -76,10 +78,12 @@ class _$AnalystNoteEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnalystNote),
-          ) as AnalystNote;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnalystNote),
+                  )
+                  as AnalystNote;
           result.note.replace(valueDes);
           break;
         default:

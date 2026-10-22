@@ -12,15 +12,15 @@ class _$SituationMemberPage extends SituationMemberPage {
   @override
   final String? nextCursor;
 
-  factory _$SituationMemberPage(
-          [void Function(SituationMemberPageBuilder)? updates]) =>
-      (SituationMemberPageBuilder()..update(updates))._build();
+  factory _$SituationMemberPage([
+    void Function(SituationMemberPageBuilder)? updates,
+  ]) => (SituationMemberPageBuilder()..update(updates))._build();
 
   _$SituationMemberPage._({required this.items, this.nextCursor}) : super._();
   @override
   SituationMemberPage rebuild(
-          void Function(SituationMemberPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationMemberPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationMemberPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class SituationMemberPageBuilder
   _$SituationMemberPage _build() {
     _$SituationMemberPage _$result;
     try {
-      _$result = _$v ??
-          _$SituationMemberPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SituationMemberPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class SituationMemberPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationMemberPage', _$failedField, e.toString());
+          r'SituationMemberPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

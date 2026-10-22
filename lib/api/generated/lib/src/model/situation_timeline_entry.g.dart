@@ -7,14 +7,14 @@ part of 'situation_timeline_entry.dart';
 // **************************************************************************
 
 const SituationTimelineEntryEntryTypeEnum
-    _$situationTimelineEntryEntryTypeEnum_member =
+_$situationTimelineEntryEntryTypeEnum_member =
     const SituationTimelineEntryEntryTypeEnum._('member');
 const SituationTimelineEntryEntryTypeEnum
-    _$situationTimelineEntryEntryTypeEnum_log =
+_$situationTimelineEntryEntryTypeEnum_log =
     const SituationTimelineEntryEntryTypeEnum._('log');
 
 SituationTimelineEntryEntryTypeEnum
-    _$situationTimelineEntryEntryTypeEnumValueOf(String name) {
+_$situationTimelineEntryEntryTypeEnumValueOf(String name) {
   switch (name) {
     case 'member':
       return _$situationTimelineEntryEntryTypeEnum_member;
@@ -26,45 +26,48 @@ SituationTimelineEntryEntryTypeEnum
 }
 
 final BuiltSet<SituationTimelineEntryEntryTypeEnum>
-    _$situationTimelineEntryEntryTypeEnumValues = BuiltSet<
-        SituationTimelineEntryEntryTypeEnum>(const <SituationTimelineEntryEntryTypeEnum>[
-  _$situationTimelineEntryEntryTypeEnum_member,
-  _$situationTimelineEntryEntryTypeEnum_log,
-]);
+_$situationTimelineEntryEntryTypeEnumValues =
+    BuiltSet<SituationTimelineEntryEntryTypeEnum>(
+      const <SituationTimelineEntryEntryTypeEnum>[
+        _$situationTimelineEntryEntryTypeEnum_member,
+        _$situationTimelineEntryEntryTypeEnum_log,
+      ],
+    );
 
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_created =
+_$situationTimelineEntryActionEnum_created =
     const SituationTimelineEntryActionEnum._('created');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_memberAdded =
+_$situationTimelineEntryActionEnum_memberAdded =
     const SituationTimelineEntryActionEnum._('memberAdded');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_memberRemoved =
+_$situationTimelineEntryActionEnum_memberRemoved =
     const SituationTimelineEntryActionEnum._('memberRemoved');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_status =
+_$situationTimelineEntryActionEnum_status =
     const SituationTimelineEntryActionEnum._('status');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_severity =
+_$situationTimelineEntryActionEnum_severity =
     const SituationTimelineEntryActionEnum._('severity');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_merged =
+_$situationTimelineEntryActionEnum_merged =
     const SituationTimelineEntryActionEnum._('merged');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_split =
+_$situationTimelineEntryActionEnum_split =
     const SituationTimelineEntryActionEnum._('split');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_renamed =
+_$situationTimelineEntryActionEnum_renamed =
     const SituationTimelineEntryActionEnum._('renamed');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_theme =
+_$situationTimelineEntryActionEnum_theme =
     const SituationTimelineEntryActionEnum._('theme');
 const SituationTimelineEntryActionEnum
-    _$situationTimelineEntryActionEnum_brief =
+_$situationTimelineEntryActionEnum_brief =
     const SituationTimelineEntryActionEnum._('brief');
 
 SituationTimelineEntryActionEnum _$situationTimelineEntryActionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'created':
       return _$situationTimelineEntryActionEnum_created;
@@ -92,25 +95,27 @@ SituationTimelineEntryActionEnum _$situationTimelineEntryActionEnumValueOf(
 }
 
 final BuiltSet<SituationTimelineEntryActionEnum>
-    _$situationTimelineEntryActionEnumValues = BuiltSet<
-        SituationTimelineEntryActionEnum>(const <SituationTimelineEntryActionEnum>[
-  _$situationTimelineEntryActionEnum_created,
-  _$situationTimelineEntryActionEnum_memberAdded,
-  _$situationTimelineEntryActionEnum_memberRemoved,
-  _$situationTimelineEntryActionEnum_status,
-  _$situationTimelineEntryActionEnum_severity,
-  _$situationTimelineEntryActionEnum_merged,
-  _$situationTimelineEntryActionEnum_split,
-  _$situationTimelineEntryActionEnum_renamed,
-  _$situationTimelineEntryActionEnum_theme,
-  _$situationTimelineEntryActionEnum_brief,
-]);
+_$situationTimelineEntryActionEnumValues =
+    BuiltSet<SituationTimelineEntryActionEnum>(
+      const <SituationTimelineEntryActionEnum>[
+        _$situationTimelineEntryActionEnum_created,
+        _$situationTimelineEntryActionEnum_memberAdded,
+        _$situationTimelineEntryActionEnum_memberRemoved,
+        _$situationTimelineEntryActionEnum_status,
+        _$situationTimelineEntryActionEnum_severity,
+        _$situationTimelineEntryActionEnum_merged,
+        _$situationTimelineEntryActionEnum_split,
+        _$situationTimelineEntryActionEnum_renamed,
+        _$situationTimelineEntryActionEnum_theme,
+        _$situationTimelineEntryActionEnum_brief,
+      ],
+    );
 
 Serializer<SituationTimelineEntryEntryTypeEnum>
-    _$situationTimelineEntryEntryTypeEnumSerializer =
+_$situationTimelineEntryEntryTypeEnumSerializer =
     _$SituationTimelineEntryEntryTypeEnumSerializer();
 Serializer<SituationTimelineEntryActionEnum>
-    _$situationTimelineEntryActionEnumSerializer =
+_$situationTimelineEntryActionEnumSerializer =
     _$SituationTimelineEntryActionEnumSerializer();
 
 class _$SituationTimelineEntryEntryTypeEnumSerializer
@@ -126,23 +131,26 @@ class _$SituationTimelineEntryEntryTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SituationTimelineEntryEntryTypeEnum
+    SituationTimelineEntryEntryTypeEnum,
   ];
   @override
   final String wireName = 'SituationTimelineEntryEntryTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, SituationTimelineEntryEntryTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationTimelineEntryEntryTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationTimelineEntryEntryTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationTimelineEntryEntryTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationTimelineEntryEntryTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationTimelineEntryActionEnumSerializer
@@ -179,16 +187,19 @@ class _$SituationTimelineEntryActionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationTimelineEntryActionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationTimelineEntryActionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationTimelineEntryActionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationTimelineEntryActionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationTimelineEntryActionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationTimelineEntry extends SituationTimelineEntry {
@@ -207,23 +218,23 @@ class _$SituationTimelineEntry extends SituationTimelineEntry {
   @override
   final BuiltMap<String, JsonObject?>? after;
 
-  factory _$SituationTimelineEntry(
-          [void Function(SituationTimelineEntryBuilder)? updates]) =>
-      (SituationTimelineEntryBuilder()..update(updates))._build();
+  factory _$SituationTimelineEntry([
+    void Function(SituationTimelineEntryBuilder)? updates,
+  ]) => (SituationTimelineEntryBuilder()..update(updates))._build();
 
-  _$SituationTimelineEntry._(
-      {required this.at,
-      required this.entryType,
-      this.member,
-      this.action,
-      this.actor,
-      this.before,
-      this.after})
-      : super._();
+  _$SituationTimelineEntry._({
+    required this.at,
+    required this.entryType,
+    this.member,
+    this.action,
+    this.actor,
+    this.before,
+    this.after,
+  }) : super._();
   @override
   SituationTimelineEntry rebuild(
-          void Function(SituationTimelineEntryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationTimelineEntryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationTimelineEntryBuilder toBuilder() =>
@@ -343,12 +354,19 @@ class SituationTimelineEntryBuilder
   _$SituationTimelineEntry _build() {
     _$SituationTimelineEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationTimelineEntry._(
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'SituationTimelineEntry', 'at'),
+              at,
+              r'SituationTimelineEntry',
+              'at',
+            ),
             entryType: BuiltValueNullFieldError.checkNotNull(
-                entryType, r'SituationTimelineEntry', 'entryType'),
+              entryType,
+              r'SituationTimelineEntry',
+              'entryType',
+            ),
             member: _member?.build(),
             action: action,
             actor: actor,
@@ -367,7 +385,10 @@ class SituationTimelineEntryBuilder
         _after?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationTimelineEntry', _$failedField, e.toString());
+          r'SituationTimelineEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

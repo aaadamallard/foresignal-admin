@@ -29,9 +29,9 @@ abstract class CollabAttachmentImageMeta
 
   CollabAttachmentImageMeta._();
 
-  factory CollabAttachmentImageMeta(
-          [void updates(CollabAttachmentImageMetaBuilder b)]) =
-      _$CollabAttachmentImageMeta;
+  factory CollabAttachmentImageMeta([
+    void updates(CollabAttachmentImageMetaBuilder b),
+  ]) = _$CollabAttachmentImageMeta;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CollabAttachmentImageMetaBuilder b) => b;
@@ -46,7 +46,7 @@ class _$CollabAttachmentImageMetaSerializer
   @override
   final Iterable<Type> types = const [
     CollabAttachmentImageMeta,
-    _$CollabAttachmentImageMeta
+    _$CollabAttachmentImageMeta,
   ];
 
   @override
@@ -80,9 +80,11 @@ class _$CollabAttachmentImageMetaSerializer
     CollabAttachmentImageMeta object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,24 +100,24 @@ class _$CollabAttachmentImageMetaSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'width':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.width = valueDes;
           break;
         case r'height':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.height = valueDes;
           break;
         case r'exifStripped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.exifStripped = valueDes;
           break;
         default:

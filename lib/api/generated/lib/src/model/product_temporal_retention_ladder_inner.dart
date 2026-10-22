@@ -16,8 +16,10 @@ part 'product_temporal_retention_ladder_inner.g.dart';
 @BuiltValue()
 abstract class ProductTemporalRetentionLadderInner
     implements
-        Built<ProductTemporalRetentionLadderInner,
-            ProductTemporalRetentionLadderInnerBuilder> {
+        Built<
+          ProductTemporalRetentionLadderInner,
+          ProductTemporalRetentionLadderInnerBuilder
+        > {
   /// ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
   @BuiltValueField(wireName: r'olderThan')
   String get olderThan;
@@ -28,9 +30,9 @@ abstract class ProductTemporalRetentionLadderInner
 
   ProductTemporalRetentionLadderInner._();
 
-  factory ProductTemporalRetentionLadderInner(
-          [void updates(ProductTemporalRetentionLadderInnerBuilder b)]) =
-      _$ProductTemporalRetentionLadderInner;
+  factory ProductTemporalRetentionLadderInner([
+    void updates(ProductTemporalRetentionLadderInnerBuilder b),
+  ]) = _$ProductTemporalRetentionLadderInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProductTemporalRetentionLadderInnerBuilder b) => b;
@@ -45,7 +47,7 @@ class _$ProductTemporalRetentionLadderInnerSerializer
   @override
   final Iterable<Type> types = const [
     ProductTemporalRetentionLadderInner,
-    _$ProductTemporalRetentionLadderInner
+    _$ProductTemporalRetentionLadderInner,
   ];
 
   @override
@@ -74,9 +76,11 @@ class _$ProductTemporalRetentionLadderInnerSerializer
     ProductTemporalRetentionLadderInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,17 +96,21 @@ class _$ProductTemporalRetentionLadderInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'olderThan':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.olderThan = valueDes;
           break;
         case r'keepEvery':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.keepEvery = valueDes;
           break;
         default:

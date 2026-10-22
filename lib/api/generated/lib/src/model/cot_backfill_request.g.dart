@@ -10,15 +10,15 @@ class _$CotBackfillRequest extends CotBackfillRequest {
   @override
   final Date? from;
 
-  factory _$CotBackfillRequest(
-          [void Function(CotBackfillRequestBuilder)? updates]) =>
-      (CotBackfillRequestBuilder()..update(updates))._build();
+  factory _$CotBackfillRequest([
+    void Function(CotBackfillRequestBuilder)? updates,
+  ]) => (CotBackfillRequestBuilder()..update(updates))._build();
 
   _$CotBackfillRequest._({this.from}) : super._();
   @override
   CotBackfillRequest rebuild(
-          void Function(CotBackfillRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CotBackfillRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CotBackfillRequestBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$CotBackfillRequest extends CotBackfillRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CotBackfillRequest')
-          ..add('from', from))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'CotBackfillRequest',
+    )..add('from', from)).toString();
   }
 }
 
@@ -81,10 +81,7 @@ class CotBackfillRequestBuilder
   CotBackfillRequest build() => _build();
 
   _$CotBackfillRequest _build() {
-    final _$result = _$v ??
-        _$CotBackfillRequest._(
-          from: from,
-        );
+    final _$result = _$v ?? _$CotBackfillRequest._(from: from);
     replace(_$result);
     return _$result;
   }

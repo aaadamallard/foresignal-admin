@@ -39,16 +39,18 @@ part 'get_forecast_calibration200_response.g.dart';
 @BuiltValue()
 abstract class GetForecastCalibration200Response
     implements
-        Built<GetForecastCalibration200Response,
-            GetForecastCalibration200ResponseBuilder> {
+        Built<
+          GetForecastCalibration200Response,
+          GetForecastCalibration200ResponseBuilder
+        > {
   /// One Of [ForecastCalibration], [ForecastNumericCalibration]
   OneOf get oneOf;
 
   GetForecastCalibration200Response._();
 
-  factory GetForecastCalibration200Response(
-          [void updates(GetForecastCalibration200ResponseBuilder b)]) =
-      _$GetForecastCalibration200Response;
+  factory GetForecastCalibration200Response([
+    void updates(GetForecastCalibration200ResponseBuilder b),
+  ]) = _$GetForecastCalibration200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetForecastCalibration200ResponseBuilder b) => b;
@@ -63,7 +65,7 @@ class _$GetForecastCalibration200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     GetForecastCalibration200Response,
-    _$GetForecastCalibration200Response
+    _$GetForecastCalibration200Response,
   ];
 
   @override
@@ -82,8 +84,10 @@ class _$GetForecastCalibration200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -99,8 +103,9 @@ class _$GetForecastCalibration200ResponseSerializer
       FullType(ForecastNumericCalibration),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }
@@ -114,7 +119,7 @@ class GetForecastCalibration200ResponseLabelEnum extends EnumClass {
       _$getForecastCalibration200ResponseLabelEnum_insufficient;
 
   static Serializer<GetForecastCalibration200ResponseLabelEnum>
-      get serializer => _$getForecastCalibration200ResponseLabelEnumSerializer;
+  get serializer => _$getForecastCalibration200ResponseLabelEnumSerializer;
 
   const GetForecastCalibration200ResponseLabelEnum._(String name) : super(name);
 
@@ -134,10 +139,10 @@ class GetForecastCalibration200ResponseMethodEnum extends EnumClass {
       _$getForecastCalibration200ResponseMethodEnum_bins;
 
   static Serializer<GetForecastCalibration200ResponseMethodEnum>
-      get serializer => _$getForecastCalibration200ResponseMethodEnumSerializer;
+  get serializer => _$getForecastCalibration200ResponseMethodEnumSerializer;
 
   const GetForecastCalibration200ResponseMethodEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<GetForecastCalibration200ResponseMethodEnum> get values =>
       _$getForecastCalibration200ResponseMethodEnumValues;

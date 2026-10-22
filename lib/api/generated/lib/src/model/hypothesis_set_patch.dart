@@ -94,9 +94,11 @@ class _$HypothesisSetPatchSerializer
     HypothesisSetPatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,36 +114,43 @@ class _$HypothesisSetPatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'cadence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HypothesisSetPatchCadenceEnum),
-          ) as HypothesisSetPatchCadenceEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisSetPatchCadenceEnum,
+                    ),
+                  )
+                  as HypothesisSetPatchCadenceEnum?;
           if (valueDes == null) continue;
           result.cadence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HypothesisSetPatchStatusEnum),
-          ) as HypothesisSetPatchStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisSetPatchStatusEnum,
+                    ),
+                  )
+                  as HypothesisSetPatchStatusEnum?;
           if (valueDes == null) continue;
           result.status = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.version = valueDes;
           break;
         default:

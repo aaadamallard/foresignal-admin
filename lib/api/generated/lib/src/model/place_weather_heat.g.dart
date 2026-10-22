@@ -16,13 +16,16 @@ class _$PlaceWeatherHeat extends PlaceWeatherHeat {
   @override
   final Date? peakDay;
 
-  factory _$PlaceWeatherHeat(
-          [void Function(PlaceWeatherHeatBuilder)? updates]) =>
-      (PlaceWeatherHeatBuilder()..update(updates))._build();
+  factory _$PlaceWeatherHeat([
+    void Function(PlaceWeatherHeatBuilder)? updates,
+  ]) => (PlaceWeatherHeatBuilder()..update(updates))._build();
 
-  _$PlaceWeatherHeat._(
-      {this.status, this.riskMaxDay1, this.riskMax7d, this.peakDay})
-      : super._();
+  _$PlaceWeatherHeat._({
+    this.status,
+    this.riskMaxDay1,
+    this.riskMax7d,
+    this.peakDay,
+  }) : super._();
   @override
   PlaceWeatherHeat rebuild(void Function(PlaceWeatherHeatBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -113,7 +116,8 @@ class PlaceWeatherHeatBuilder
   PlaceWeatherHeat build() => _build();
 
   _$PlaceWeatherHeat _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherHeat._(
           status: status,
           riskMaxDay1: riskMaxDay1,

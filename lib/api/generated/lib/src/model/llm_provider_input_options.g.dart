@@ -7,23 +7,24 @@ part of 'llm_provider_input_options.dart';
 // **************************************************************************
 
 const LlmProviderInputOptionsEffortEnum
-    _$llmProviderInputOptionsEffortEnum_low =
+_$llmProviderInputOptionsEffortEnum_low =
     const LlmProviderInputOptionsEffortEnum._('low');
 const LlmProviderInputOptionsEffortEnum
-    _$llmProviderInputOptionsEffortEnum_medium =
+_$llmProviderInputOptionsEffortEnum_medium =
     const LlmProviderInputOptionsEffortEnum._('medium');
 const LlmProviderInputOptionsEffortEnum
-    _$llmProviderInputOptionsEffortEnum_high =
+_$llmProviderInputOptionsEffortEnum_high =
     const LlmProviderInputOptionsEffortEnum._('high');
 const LlmProviderInputOptionsEffortEnum
-    _$llmProviderInputOptionsEffortEnum_xhigh =
+_$llmProviderInputOptionsEffortEnum_xhigh =
     const LlmProviderInputOptionsEffortEnum._('xhigh');
 const LlmProviderInputOptionsEffortEnum
-    _$llmProviderInputOptionsEffortEnum_max =
+_$llmProviderInputOptionsEffortEnum_max =
     const LlmProviderInputOptionsEffortEnum._('max');
 
 LlmProviderInputOptionsEffortEnum _$llmProviderInputOptionsEffortEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'low':
       return _$llmProviderInputOptionsEffortEnum_low;
@@ -41,17 +42,19 @@ LlmProviderInputOptionsEffortEnum _$llmProviderInputOptionsEffortEnumValueOf(
 }
 
 final BuiltSet<LlmProviderInputOptionsEffortEnum>
-    _$llmProviderInputOptionsEffortEnumValues = BuiltSet<
-        LlmProviderInputOptionsEffortEnum>(const <LlmProviderInputOptionsEffortEnum>[
-  _$llmProviderInputOptionsEffortEnum_low,
-  _$llmProviderInputOptionsEffortEnum_medium,
-  _$llmProviderInputOptionsEffortEnum_high,
-  _$llmProviderInputOptionsEffortEnum_xhigh,
-  _$llmProviderInputOptionsEffortEnum_max,
-]);
+_$llmProviderInputOptionsEffortEnumValues =
+    BuiltSet<LlmProviderInputOptionsEffortEnum>(
+      const <LlmProviderInputOptionsEffortEnum>[
+        _$llmProviderInputOptionsEffortEnum_low,
+        _$llmProviderInputOptionsEffortEnum_medium,
+        _$llmProviderInputOptionsEffortEnum_high,
+        _$llmProviderInputOptionsEffortEnum_xhigh,
+        _$llmProviderInputOptionsEffortEnum_max,
+      ],
+    );
 
 Serializer<LlmProviderInputOptionsEffortEnum>
-    _$llmProviderInputOptionsEffortEnumSerializer =
+_$llmProviderInputOptionsEffortEnumSerializer =
     _$LlmProviderInputOptionsEffortEnumSerializer();
 
 class _$LlmProviderInputOptionsEffortEnumSerializer
@@ -78,16 +81,19 @@ class _$LlmProviderInputOptionsEffortEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, LlmProviderInputOptionsEffortEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LlmProviderInputOptionsEffortEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LlmProviderInputOptionsEffortEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LlmProviderInputOptionsEffortEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LlmProviderInputOptionsEffortEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LlmProviderInputOptions extends LlmProviderInputOptions {
@@ -106,23 +112,23 @@ class _$LlmProviderInputOptions extends LlmProviderInputOptions {
   @override
   final int? ttsCharactersPerDay;
 
-  factory _$LlmProviderInputOptions(
-          [void Function(LlmProviderInputOptionsBuilder)? updates]) =>
-      (LlmProviderInputOptionsBuilder()..update(updates))._build();
+  factory _$LlmProviderInputOptions([
+    void Function(LlmProviderInputOptionsBuilder)? updates,
+  ]) => (LlmProviderInputOptionsBuilder()..update(updates))._build();
 
-  _$LlmProviderInputOptions._(
-      {this.effort,
-      this.maxTokens,
-      this.temperature,
-      this.extraHeaders,
-      this.local,
-      this.ttsModel,
-      this.ttsCharactersPerDay})
-      : super._();
+  _$LlmProviderInputOptions._({
+    this.effort,
+    this.maxTokens,
+    this.temperature,
+    this.extraHeaders,
+    this.local,
+    this.ttsModel,
+    this.ttsCharactersPerDay,
+  }) : super._();
   @override
   LlmProviderInputOptions rebuild(
-          void Function(LlmProviderInputOptionsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(LlmProviderInputOptionsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   LlmProviderInputOptionsBuilder toBuilder() =>
@@ -241,7 +247,8 @@ class LlmProviderInputOptionsBuilder
   _$LlmProviderInputOptions _build() {
     _$LlmProviderInputOptions _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LlmProviderInputOptions._(
             effort: effort,
             maxTokens: maxTokens,
@@ -258,7 +265,10 @@ class LlmProviderInputOptionsBuilder
         _extraHeaders?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LlmProviderInputOptions', _$failedField, e.toString());
+          r'LlmProviderInputOptions',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

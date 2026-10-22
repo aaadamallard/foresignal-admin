@@ -22,23 +22,23 @@ class _$StatsTopItemsInner extends StatsTopItemsInner {
   @override
   final int count;
 
-  factory _$StatsTopItemsInner(
-          [void Function(StatsTopItemsInnerBuilder)? updates]) =>
-      (StatsTopItemsInnerBuilder()..update(updates))._build();
+  factory _$StatsTopItemsInner([
+    void Function(StatsTopItemsInnerBuilder)? updates,
+  ]) => (StatsTopItemsInnerBuilder()..update(updates))._build();
 
-  _$StatsTopItemsInner._(
-      {required this.key,
-      this.sourceId,
-      this.kind,
-      this.cell,
-      this.externalId,
-      this.title,
-      required this.count})
-      : super._();
+  _$StatsTopItemsInner._({
+    required this.key,
+    this.sourceId,
+    this.kind,
+    this.cell,
+    this.externalId,
+    this.title,
+    required this.count,
+  }) : super._();
   @override
   StatsTopItemsInner rebuild(
-          void Function(StatsTopItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsTopItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsTopItemsInnerBuilder toBuilder() =>
@@ -150,17 +150,24 @@ class StatsTopItemsInnerBuilder
   StatsTopItemsInner build() => _build();
 
   _$StatsTopItemsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StatsTopItemsInner._(
           key: BuiltValueNullFieldError.checkNotNull(
-              key, r'StatsTopItemsInner', 'key'),
+            key,
+            r'StatsTopItemsInner',
+            'key',
+          ),
           sourceId: sourceId,
           kind: kind,
           cell: cell,
           externalId: externalId,
           title: title,
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'StatsTopItemsInner', 'count'),
+            count,
+            r'StatsTopItemsInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

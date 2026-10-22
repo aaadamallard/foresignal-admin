@@ -70,8 +70,10 @@ class _$CoverageJsonSerializer implements PrimitiveSerializer<CoverageJson> {
       yield r'domain';
       yield serializers.serialize(
         object.domain,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.parameters != null) {
@@ -80,7 +82,7 @@ class _$CoverageJsonSerializer implements PrimitiveSerializer<CoverageJson> {
         object.parameters,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
         ]),
       );
     }
@@ -90,7 +92,7 @@ class _$CoverageJsonSerializer implements PrimitiveSerializer<CoverageJson> {
         object.ranges,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
         ]),
       );
     }
@@ -99,7 +101,7 @@ class _$CoverageJsonSerializer implements PrimitiveSerializer<CoverageJson> {
       yield serializers.serialize(
         object.coverages,
         specifiedType: const FullType(BuiltList, [
-          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
         ]),
       );
     }
@@ -111,9 +113,11 @@ class _$CoverageJsonSerializer implements PrimitiveSerializer<CoverageJson> {
     CoverageJson object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,53 +133,71 @@ class _$CoverageJsonSerializer implements PrimitiveSerializer<CoverageJson> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoverageJsonTypeEnum),
-          ) as CoverageJsonTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoverageJsonTypeEnum),
+                  )
+                  as CoverageJsonTypeEnum;
           result.type = valueDes;
           break;
         case r'domain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.domain.replace(valueDes);
           break;
         case r'parameters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltMap<String, BuiltMap<String, JsonObject?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltMap<String, JsonObject?>>?;
           if (valueDes == null) continue;
           result.parameters.replace(valueDes);
           break;
         case r'ranges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltMap<String, BuiltMap<String, JsonObject?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltMap<String, JsonObject?>>?;
           if (valueDes == null) continue;
           result.ranges.replace(valueDes);
           break;
         case r'coverages':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltList<BuiltMap<String, JsonObject?>>?;
           if (valueDes == null) continue;
           result.coverages.replace(valueDes);
           break;

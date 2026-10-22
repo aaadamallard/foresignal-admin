@@ -113,7 +113,7 @@ class _$LedgerQuestionBriefSerializer
   @override
   final Iterable<Type> types = const [
     LedgerQuestionBrief,
-    _$LedgerQuestionBrief
+    _$LedgerQuestionBrief,
   ];
 
   @override
@@ -209,8 +209,9 @@ class _$LedgerQuestionBriefSerializer
       yield r'forecasters';
       yield serializers.serialize(
         object.forecasters,
-        specifiedType: const FullType(
-            BuiltList, [FullType(LedgerQuestionBriefForecastersInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(LedgerQuestionBriefForecastersInner),
+        ]),
       );
     }
     if (object.knowledgeCutoff != null) {
@@ -242,9 +243,11 @@ class _$LedgerQuestionBriefSerializer
     LedgerQuestionBrief object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -260,134 +263,171 @@ class _$LedgerQuestionBriefSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LedgerQuestionBriefTypeEnum),
-          ) as LedgerQuestionBriefTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LedgerQuestionBriefTypeEnum),
+                  )
+                  as LedgerQuestionBriefTypeEnum;
           result.type = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LedgerQuestionBriefStatusEnum),
-          ) as LedgerQuestionBriefStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      LedgerQuestionBriefStatusEnum,
+                    ),
+                  )
+                  as LedgerQuestionBriefStatusEnum;
           result.status = valueDes;
           break;
         case r'closesAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.closesAt = valueDes;
           break;
         case r'resolveBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.resolveBy = valueDes;
           break;
         case r'resolutionCriteria':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.resolutionCriteria = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.probability = valueDes;
           break;
         case r'estimativeTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IcdTerm),
-          ) as IcdTerm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IcdTerm),
+                  )
+                  as IcdTerm?;
           if (valueDes == null) continue;
           result.estimativeTerm = valueDes;
           break;
         case r'distribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.distribution = valueDes;
           break;
         case r'quantiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Quantiles),
-          ) as Quantiles?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Quantiles),
+                  )
+                  as Quantiles?;
           if (valueDes == null) continue;
           result.quantiles.replace(valueDes);
           break;
         case r'issuer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.issuer = valueDes;
           break;
         case r'forecasters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(LedgerQuestionBriefForecastersInner)]),
-          ) as BuiltList<LedgerQuestionBriefForecastersInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(LedgerQuestionBriefForecastersInner),
+                    ]),
+                  )
+                  as BuiltList<LedgerQuestionBriefForecastersInner>?;
           if (valueDes == null) continue;
           result.forecasters.replace(valueDes);
           break;
         case r'knowledgeCutoff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.knowledgeCutoff = valueDes;
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseRate = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

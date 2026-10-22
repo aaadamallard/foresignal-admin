@@ -52,7 +52,7 @@ class _$ChronicleSuggestionSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSuggestion,
-    _$ChronicleSuggestion
+    _$ChronicleSuggestion,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$ChronicleSuggestionSerializer
     ChronicleSuggestion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,35 +117,47 @@ class _$ChronicleSuggestionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'draft':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleInput),
-          ) as ChronicleInput;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ChronicleInput),
+                  )
+                  as ChronicleInput;
           result.draft.replace(valueDes);
           break;
         case r'estimate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleSuggestionEstimate),
-          ) as ChronicleSuggestionEstimate?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleSuggestionEstimate,
+                    ),
+                  )
+                  as ChronicleSuggestionEstimate?;
           if (valueDes == null) continue;
           result.estimate.replace(valueDes);
           break;
         case r'rationale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.rationale.replace(valueDes);
           break;
         case r'textOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ChronicleSuggestionTextOriginEnum),
-          ) as ChronicleSuggestionTextOriginEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleSuggestionTextOriginEnum,
+                    ),
+                  )
+                  as ChronicleSuggestionTextOriginEnum?;
           if (valueDes == null) continue;
           result.textOrigin = valueDes;
           break;

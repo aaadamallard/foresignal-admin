@@ -24,8 +24,9 @@ abstract class AnalysisManifestBuild
 
   AnalysisManifestBuild._();
 
-  factory AnalysisManifestBuild(
-      [void updates(AnalysisManifestBuildBuilder b)]) = _$AnalysisManifestBuild;
+  factory AnalysisManifestBuild([
+    void updates(AnalysisManifestBuildBuilder b),
+  ]) = _$AnalysisManifestBuild;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalysisManifestBuildBuilder b) => b;
@@ -40,7 +41,7 @@ class _$AnalysisManifestBuildSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisManifestBuild,
-    _$AnalysisManifestBuild
+    _$AnalysisManifestBuild,
   ];
 
   @override
@@ -71,9 +72,11 @@ class _$AnalysisManifestBuildSerializer
     AnalysisManifestBuild object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +92,21 @@ class _$AnalysisManifestBuildSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         case r'gitCommit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.gitCommit = valueDes;
           break;

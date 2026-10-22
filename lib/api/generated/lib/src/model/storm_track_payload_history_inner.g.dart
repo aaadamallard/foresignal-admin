@@ -14,17 +14,19 @@ class _$StormTrackPayloadHistoryInner extends StormTrackPayloadHistoryInner {
   @override
   final num lat;
 
-  factory _$StormTrackPayloadHistoryInner(
-          [void Function(StormTrackPayloadHistoryInnerBuilder)? updates]) =>
-      (StormTrackPayloadHistoryInnerBuilder()..update(updates))._build();
+  factory _$StormTrackPayloadHistoryInner([
+    void Function(StormTrackPayloadHistoryInnerBuilder)? updates,
+  ]) => (StormTrackPayloadHistoryInnerBuilder()..update(updates))._build();
 
-  _$StormTrackPayloadHistoryInner._(
-      {required this.time, required this.lon, required this.lat})
-      : super._();
+  _$StormTrackPayloadHistoryInner._({
+    required this.time,
+    required this.lon,
+    required this.lat,
+  }) : super._();
   @override
   StormTrackPayloadHistoryInner rebuild(
-          void Function(StormTrackPayloadHistoryInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StormTrackPayloadHistoryInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StormTrackPayloadHistoryInnerBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$StormTrackPayloadHistoryInner extends StormTrackPayloadHistoryInner {
 
 class StormTrackPayloadHistoryInnerBuilder
     implements
-        Builder<StormTrackPayloadHistoryInner,
-            StormTrackPayloadHistoryInnerBuilder> {
+        Builder<
+          StormTrackPayloadHistoryInner,
+          StormTrackPayloadHistoryInnerBuilder
+        > {
   _$StormTrackPayloadHistoryInner? _$v;
 
   DateTime? _time;
@@ -106,14 +110,24 @@ class StormTrackPayloadHistoryInnerBuilder
   StormTrackPayloadHistoryInner build() => _build();
 
   _$StormTrackPayloadHistoryInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StormTrackPayloadHistoryInner._(
           time: BuiltValueNullFieldError.checkNotNull(
-              time, r'StormTrackPayloadHistoryInner', 'time'),
+            time,
+            r'StormTrackPayloadHistoryInner',
+            'time',
+          ),
           lon: BuiltValueNullFieldError.checkNotNull(
-              lon, r'StormTrackPayloadHistoryInner', 'lon'),
+            lon,
+            r'StormTrackPayloadHistoryInner',
+            'lon',
+          ),
           lat: BuiltValueNullFieldError.checkNotNull(
-              lat, r'StormTrackPayloadHistoryInner', 'lat'),
+            lat,
+            r'StormTrackPayloadHistoryInner',
+            'lat',
+          ),
         );
     replace(_$result);
     return _$result;

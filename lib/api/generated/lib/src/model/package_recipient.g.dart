@@ -12,12 +12,12 @@ class _$PackageRecipient extends PackageRecipient {
   @override
   final BuiltList<String> principals;
 
-  factory _$PackageRecipient(
-          [void Function(PackageRecipientBuilder)? updates]) =>
-      (PackageRecipientBuilder()..update(updates))._build();
+  factory _$PackageRecipient([
+    void Function(PackageRecipientBuilder)? updates,
+  ]) => (PackageRecipientBuilder()..update(updates))._build();
 
   _$PackageRecipient._({required this.instanceId, required this.principals})
-      : super._();
+    : super._();
   @override
   PackageRecipient rebuild(void Function(PackageRecipientBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -96,10 +96,14 @@ class PackageRecipientBuilder
   _$PackageRecipient _build() {
     _$PackageRecipient _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PackageRecipient._(
             instanceId: BuiltValueNullFieldError.checkNotNull(
-                instanceId, r'PackageRecipient', 'instanceId'),
+              instanceId,
+              r'PackageRecipient',
+              'instanceId',
+            ),
             principals: principals.build(),
           );
     } catch (_) {
@@ -109,7 +113,10 @@ class PackageRecipientBuilder
         principals.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PackageRecipient', _$failedField, e.toString());
+          r'PackageRecipient',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

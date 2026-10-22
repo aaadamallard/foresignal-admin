@@ -13,11 +13,12 @@ const AlertFeedbackInputFeedbackEnum _$alertFeedbackInputFeedbackEnum_noise =
 const AlertFeedbackInputFeedbackEnum _$alertFeedbackInputFeedbackEnum_late_ =
     const AlertFeedbackInputFeedbackEnum._('late_');
 const AlertFeedbackInputFeedbackEnum
-    _$alertFeedbackInputFeedbackEnum_falsePositive =
+_$alertFeedbackInputFeedbackEnum_falsePositive =
     const AlertFeedbackInputFeedbackEnum._('falsePositive');
 
 AlertFeedbackInputFeedbackEnum _$alertFeedbackInputFeedbackEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'useful':
       return _$alertFeedbackInputFeedbackEnum_useful;
@@ -33,16 +34,18 @@ AlertFeedbackInputFeedbackEnum _$alertFeedbackInputFeedbackEnumValueOf(
 }
 
 final BuiltSet<AlertFeedbackInputFeedbackEnum>
-    _$alertFeedbackInputFeedbackEnumValues = BuiltSet<
-        AlertFeedbackInputFeedbackEnum>(const <AlertFeedbackInputFeedbackEnum>[
-  _$alertFeedbackInputFeedbackEnum_useful,
-  _$alertFeedbackInputFeedbackEnum_noise,
-  _$alertFeedbackInputFeedbackEnum_late_,
-  _$alertFeedbackInputFeedbackEnum_falsePositive,
-]);
+_$alertFeedbackInputFeedbackEnumValues =
+    BuiltSet<AlertFeedbackInputFeedbackEnum>(
+      const <AlertFeedbackInputFeedbackEnum>[
+        _$alertFeedbackInputFeedbackEnum_useful,
+        _$alertFeedbackInputFeedbackEnum_noise,
+        _$alertFeedbackInputFeedbackEnum_late_,
+        _$alertFeedbackInputFeedbackEnum_falsePositive,
+      ],
+    );
 
 Serializer<AlertFeedbackInputFeedbackEnum>
-    _$alertFeedbackInputFeedbackEnumSerializer =
+_$alertFeedbackInputFeedbackEnumSerializer =
     _$AlertFeedbackInputFeedbackEnumSerializer();
 
 class _$AlertFeedbackInputFeedbackEnumSerializer
@@ -67,16 +70,19 @@ class _$AlertFeedbackInputFeedbackEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AlertFeedbackInputFeedbackEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AlertFeedbackInputFeedbackEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AlertFeedbackInputFeedbackEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertFeedbackInputFeedbackEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertFeedbackInputFeedbackEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertFeedbackInput extends AlertFeedbackInput {
@@ -85,15 +91,15 @@ class _$AlertFeedbackInput extends AlertFeedbackInput {
   @override
   final String? note;
 
-  factory _$AlertFeedbackInput(
-          [void Function(AlertFeedbackInputBuilder)? updates]) =>
-      (AlertFeedbackInputBuilder()..update(updates))._build();
+  factory _$AlertFeedbackInput([
+    void Function(AlertFeedbackInputBuilder)? updates,
+  ]) => (AlertFeedbackInputBuilder()..update(updates))._build();
 
   _$AlertFeedbackInput._({required this.feedback, this.note}) : super._();
   @override
   AlertFeedbackInput rebuild(
-          void Function(AlertFeedbackInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AlertFeedbackInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AlertFeedbackInputBuilder toBuilder() =>
@@ -166,10 +172,14 @@ class AlertFeedbackInputBuilder
   AlertFeedbackInput build() => _build();
 
   _$AlertFeedbackInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AlertFeedbackInput._(
           feedback: BuiltValueNullFieldError.checkNotNull(
-              feedback, r'AlertFeedbackInput', 'feedback'),
+            feedback,
+            r'AlertFeedbackInput',
+            'feedback',
+          ),
           note: note,
         );
     replace(_$result);

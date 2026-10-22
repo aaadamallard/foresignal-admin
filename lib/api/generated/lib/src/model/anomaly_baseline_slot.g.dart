@@ -12,7 +12,8 @@ const AnomalyBaselineSlotModelEnum _$anomalyBaselineSlotModelEnum_nb =
     const AnomalyBaselineSlotModelEnum._('nb');
 
 AnomalyBaselineSlotModelEnum _$anomalyBaselineSlotModelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'poisson':
       return _$anomalyBaselineSlotModelEnum_poisson;
@@ -24,14 +25,15 @@ AnomalyBaselineSlotModelEnum _$anomalyBaselineSlotModelEnumValueOf(
 }
 
 final BuiltSet<AnomalyBaselineSlotModelEnum>
-    _$anomalyBaselineSlotModelEnumValues =
-    BuiltSet<AnomalyBaselineSlotModelEnum>(const <AnomalyBaselineSlotModelEnum>[
-  _$anomalyBaselineSlotModelEnum_poisson,
-  _$anomalyBaselineSlotModelEnum_nb,
-]);
+_$anomalyBaselineSlotModelEnumValues = BuiltSet<AnomalyBaselineSlotModelEnum>(
+  const <AnomalyBaselineSlotModelEnum>[
+    _$anomalyBaselineSlotModelEnum_poisson,
+    _$anomalyBaselineSlotModelEnum_nb,
+  ],
+);
 
 Serializer<AnomalyBaselineSlotModelEnum>
-    _$anomalyBaselineSlotModelEnumSerializer =
+_$anomalyBaselineSlotModelEnumSerializer =
     _$AnomalyBaselineSlotModelEnumSerializer();
 
 class _$AnomalyBaselineSlotModelEnumSerializer
@@ -51,16 +53,20 @@ class _$AnomalyBaselineSlotModelEnumSerializer
   final String wireName = 'AnomalyBaselineSlotModelEnum';
 
   @override
-  Object serialize(Serializers serializers, AnomalyBaselineSlotModelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyBaselineSlotModelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyBaselineSlotModelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyBaselineSlotModelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyBaselineSlotModelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyBaselineSlot extends AnomalyBaselineSlot {
@@ -77,22 +83,22 @@ class _$AnomalyBaselineSlot extends AnomalyBaselineSlot {
   @override
   final AnomalyBaselineSlotModelEnum model;
 
-  factory _$AnomalyBaselineSlot(
-          [void Function(AnomalyBaselineSlotBuilder)? updates]) =>
-      (AnomalyBaselineSlotBuilder()..update(updates))._build();
+  factory _$AnomalyBaselineSlot([
+    void Function(AnomalyBaselineSlotBuilder)? updates,
+  ]) => (AnomalyBaselineSlotBuilder()..update(updates))._build();
 
-  _$AnomalyBaselineSlot._(
-      {required this.groupKey,
-      required this.slot,
-      required this.n,
-      required this.mean,
-      required this.variance,
-      required this.model})
-      : super._();
+  _$AnomalyBaselineSlot._({
+    required this.groupKey,
+    required this.slot,
+    required this.n,
+    required this.mean,
+    required this.variance,
+    required this.model,
+  }) : super._();
   @override
   AnomalyBaselineSlot rebuild(
-          void Function(AnomalyBaselineSlotBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyBaselineSlotBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyBaselineSlotBuilder toBuilder() =>
@@ -196,20 +202,39 @@ class AnomalyBaselineSlotBuilder
   AnomalyBaselineSlot build() => _build();
 
   _$AnomalyBaselineSlot _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnomalyBaselineSlot._(
           groupKey: BuiltValueNullFieldError.checkNotNull(
-              groupKey, r'AnomalyBaselineSlot', 'groupKey'),
+            groupKey,
+            r'AnomalyBaselineSlot',
+            'groupKey',
+          ),
           slot: BuiltValueNullFieldError.checkNotNull(
-              slot, r'AnomalyBaselineSlot', 'slot'),
+            slot,
+            r'AnomalyBaselineSlot',
+            'slot',
+          ),
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'AnomalyBaselineSlot', 'n'),
+            n,
+            r'AnomalyBaselineSlot',
+            'n',
+          ),
           mean: BuiltValueNullFieldError.checkNotNull(
-              mean, r'AnomalyBaselineSlot', 'mean'),
+            mean,
+            r'AnomalyBaselineSlot',
+            'mean',
+          ),
           variance: BuiltValueNullFieldError.checkNotNull(
-              variance, r'AnomalyBaselineSlot', 'variance'),
+            variance,
+            r'AnomalyBaselineSlot',
+            'variance',
+          ),
           model: BuiltValueNullFieldError.checkNotNull(
-              model, r'AnomalyBaselineSlot', 'model'),
+            model,
+            r'AnomalyBaselineSlot',
+            'model',
+          ),
         );
     replace(_$result);
     return _$result;

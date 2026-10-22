@@ -12,17 +12,18 @@ class _$RasterFramePagePrefetch extends RasterFramePagePrefetch {
   @override
   final int? maxZoomForAnimation;
 
-  factory _$RasterFramePagePrefetch(
-          [void Function(RasterFramePagePrefetchBuilder)? updates]) =>
-      (RasterFramePagePrefetchBuilder()..update(updates))._build();
+  factory _$RasterFramePagePrefetch([
+    void Function(RasterFramePagePrefetchBuilder)? updates,
+  ]) => (RasterFramePagePrefetchBuilder()..update(updates))._build();
 
-  _$RasterFramePagePrefetch._(
-      {required this.recommendedFrames, this.maxZoomForAnimation})
-      : super._();
+  _$RasterFramePagePrefetch._({
+    required this.recommendedFrames,
+    this.maxZoomForAnimation,
+  }) : super._();
   @override
   RasterFramePagePrefetch rebuild(
-          void Function(RasterFramePagePrefetchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RasterFramePagePrefetchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RasterFramePagePrefetchBuilder toBuilder() =>
@@ -97,12 +98,14 @@ class RasterFramePagePrefetchBuilder
   RasterFramePagePrefetch build() => _build();
 
   _$RasterFramePagePrefetch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RasterFramePagePrefetch._(
           recommendedFrames: BuiltValueNullFieldError.checkNotNull(
-              recommendedFrames,
-              r'RasterFramePagePrefetch',
-              'recommendedFrames'),
+            recommendedFrames,
+            r'RasterFramePagePrefetch',
+            'recommendedFrames',
+          ),
           maxZoomForAnimation: maxZoomForAnimation,
         );
     replace(_$result);

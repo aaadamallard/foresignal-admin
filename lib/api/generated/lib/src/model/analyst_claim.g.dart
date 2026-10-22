@@ -28,10 +28,10 @@ AnalystClaimBasisEnum _$analystClaimBasisEnumValueOf(String name) {
 
 final BuiltSet<AnalystClaimBasisEnum> _$analystClaimBasisEnumValues =
     BuiltSet<AnalystClaimBasisEnum>(const <AnalystClaimBasisEnum>[
-  _$analystClaimBasisEnum_evidence,
-  _$analystClaimBasisEnum_inference,
-  _$analystClaimBasisEnum_speculation,
-]);
+      _$analystClaimBasisEnum_evidence,
+      _$analystClaimBasisEnum_inference,
+      _$analystClaimBasisEnum_speculation,
+    ]);
 
 Serializer<AnalystClaimBasisEnum> _$analystClaimBasisEnumSerializer =
     _$AnalystClaimBasisEnumSerializer();
@@ -55,15 +55,20 @@ class _$AnalystClaimBasisEnumSerializer
   final String wireName = 'AnalystClaimBasisEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystClaimBasisEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystClaimBasisEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AnalystClaimBasisEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystClaimBasisEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AnalystClaimBasisEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystClaimBasisEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystClaim extends AnalystClaim {
@@ -81,13 +86,13 @@ class _$AnalystClaim extends AnalystClaim {
   factory _$AnalystClaim([void Function(AnalystClaimBuilder)? updates]) =>
       (AnalystClaimBuilder()..update(updates))._build();
 
-  _$AnalystClaim._(
-      {required this.text,
-      required this.basis,
-      required this.citations,
-      this.downgraded,
-      this.warning})
-      : super._();
+  _$AnalystClaim._({
+    required this.text,
+    required this.basis,
+    required this.citations,
+    this.downgraded,
+    this.warning,
+  }) : super._();
   @override
   AnalystClaim rebuild(void Function(AnalystClaimBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -189,12 +194,19 @@ class AnalystClaimBuilder
   _$AnalystClaim _build() {
     _$AnalystClaim _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystClaim._(
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'AnalystClaim', 'text'),
+              text,
+              r'AnalystClaim',
+              'text',
+            ),
             basis: BuiltValueNullFieldError.checkNotNull(
-                basis, r'AnalystClaim', 'basis'),
+              basis,
+              r'AnalystClaim',
+              'basis',
+            ),
             citations: citations.build(),
             downgraded: downgraded,
             warning: warning,
@@ -206,7 +218,10 @@ class AnalystClaimBuilder
         citations.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystClaim', _$failedField, e.toString());
+          r'AnalystClaim',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

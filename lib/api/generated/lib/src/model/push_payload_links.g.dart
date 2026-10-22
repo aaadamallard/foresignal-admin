@@ -14,9 +14,9 @@ class _$PushPayloadLinks extends PushPayloadLinks {
   @override
   final String? web;
 
-  factory _$PushPayloadLinks(
-          [void Function(PushPayloadLinksBuilder)? updates]) =>
-      (PushPayloadLinksBuilder()..update(updates))._build();
+  factory _$PushPayloadLinks([
+    void Function(PushPayloadLinksBuilder)? updates,
+  ]) => (PushPayloadLinksBuilder()..update(updates))._build();
 
   _$PushPayloadLinks._({this.api, this.app, this.web}) : super._();
   @override
@@ -101,12 +101,7 @@ class PushPayloadLinksBuilder
   PushPayloadLinks build() => _build();
 
   _$PushPayloadLinks _build() {
-    final _$result = _$v ??
-        _$PushPayloadLinks._(
-          api: api,
-          app: app,
-          web: web,
-        );
+    final _$result = _$v ?? _$PushPayloadLinks._(api: api, app: app, web: web);
     replace(_$result);
     return _$result;
   }

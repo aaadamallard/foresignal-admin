@@ -29,9 +29,9 @@ abstract class SocialPlatformStreamLastGap
 
   SocialPlatformStreamLastGap._();
 
-  factory SocialPlatformStreamLastGap(
-          [void updates(SocialPlatformStreamLastGapBuilder b)]) =
-      _$SocialPlatformStreamLastGap;
+  factory SocialPlatformStreamLastGap([
+    void updates(SocialPlatformStreamLastGapBuilder b),
+  ]) = _$SocialPlatformStreamLastGap;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPlatformStreamLastGapBuilder b) => b;
@@ -46,7 +46,7 @@ class _$SocialPlatformStreamLastGapSerializer
   @override
   final Iterable<Type> types = const [
     SocialPlatformStreamLastGap,
-    _$SocialPlatformStreamLastGap
+    _$SocialPlatformStreamLastGap,
   ];
 
   @override
@@ -80,9 +80,11 @@ class _$SocialPlatformStreamLastGapSerializer
     SocialPlatformStreamLastGap object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,24 +100,30 @@ class _$SocialPlatformStreamLastGapSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         case r'replayed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.replayed = valueDes;
           break;
         default:

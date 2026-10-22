@@ -28,9 +28,9 @@ abstract class LlmTestResultEmbedding
 
   LlmTestResultEmbedding._();
 
-  factory LlmTestResultEmbedding(
-          [void updates(LlmTestResultEmbeddingBuilder b)]) =
-      _$LlmTestResultEmbedding;
+  factory LlmTestResultEmbedding([
+    void updates(LlmTestResultEmbeddingBuilder b),
+  ]) = _$LlmTestResultEmbedding;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LlmTestResultEmbeddingBuilder b) => b;
@@ -45,7 +45,7 @@ class _$LlmTestResultEmbeddingSerializer
   @override
   final Iterable<Type> types = const [
     LlmTestResultEmbedding,
-    _$LlmTestResultEmbedding
+    _$LlmTestResultEmbedding,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$LlmTestResultEmbeddingSerializer
     LlmTestResultEmbedding object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +105,32 @@ class _$LlmTestResultEmbeddingSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.model = valueDes;
           break;
         case r'dimensions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.dimensions = valueDes;
           break;
         case r'latencyMs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.latencyMs = valueDes;
           break;

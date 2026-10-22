@@ -19,8 +19,10 @@ part 'situation_social_section_attention_gap.g.dart';
 @BuiltValue()
 abstract class SituationSocialSectionAttentionGap
     implements
-        Built<SituationSocialSectionAttentionGap,
-            SituationSocialSectionAttentionGapBuilder> {
+        Built<
+          SituationSocialSectionAttentionGap,
+          SituationSocialSectionAttentionGapBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'findingId')
   String get findingId;
@@ -36,9 +38,9 @@ abstract class SituationSocialSectionAttentionGap
 
   SituationSocialSectionAttentionGap._();
 
-  factory SituationSocialSectionAttentionGap(
-          [void updates(SituationSocialSectionAttentionGapBuilder b)]) =
-      _$SituationSocialSectionAttentionGap;
+  factory SituationSocialSectionAttentionGap([
+    void updates(SituationSocialSectionAttentionGapBuilder b),
+  ]) = _$SituationSocialSectionAttentionGap;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationSocialSectionAttentionGapBuilder b) => b;
@@ -53,7 +55,7 @@ class _$SituationSocialSectionAttentionGapSerializer
   @override
   final Iterable<Type> types = const [
     SituationSocialSectionAttentionGap,
-    _$SituationSocialSectionAttentionGap
+    _$SituationSocialSectionAttentionGap,
   ];
 
   @override
@@ -94,9 +96,11 @@ class _$SituationSocialSectionAttentionGapSerializer
     SituationSocialSectionAttentionGap object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +116,35 @@ class _$SituationSocialSectionAttentionGapSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'findingId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.findingId = valueDes;
           break;
         case r'expected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.expected = valueDes;
           break;
         case r'observed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.observed = valueDes;
           break;
         case r'platforms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.platforms.replace(valueDes);
           break;

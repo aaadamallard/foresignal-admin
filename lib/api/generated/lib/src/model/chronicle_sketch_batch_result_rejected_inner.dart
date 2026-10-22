@@ -16,8 +16,10 @@ part 'chronicle_sketch_batch_result_rejected_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleSketchBatchResultRejectedInner
     implements
-        Built<ChronicleSketchBatchResultRejectedInner,
-            ChronicleSketchBatchResultRejectedInnerBuilder> {
+        Built<
+          ChronicleSketchBatchResultRejectedInner,
+          ChronicleSketchBatchResultRejectedInnerBuilder
+        > {
   @BuiltValueField(wireName: r'sketchId')
   String get sketchId;
 
@@ -26,9 +28,9 @@ abstract class ChronicleSketchBatchResultRejectedInner
 
   ChronicleSketchBatchResultRejectedInner._();
 
-  factory ChronicleSketchBatchResultRejectedInner(
-          [void updates(ChronicleSketchBatchResultRejectedInnerBuilder b)]) =
-      _$ChronicleSketchBatchResultRejectedInner;
+  factory ChronicleSketchBatchResultRejectedInner([
+    void updates(ChronicleSketchBatchResultRejectedInnerBuilder b),
+  ]) = _$ChronicleSketchBatchResultRejectedInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSketchBatchResultRejectedInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$ChronicleSketchBatchResultRejectedInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSketchBatchResultRejectedInner,
-    _$ChronicleSketchBatchResultRejectedInner
+    _$ChronicleSketchBatchResultRejectedInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$ChronicleSketchBatchResultRejectedInnerSerializer
     ChronicleSketchBatchResultRejectedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$ChronicleSketchBatchResultRejectedInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sketchId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sketchId = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reason = valueDes;
           break;
         default:

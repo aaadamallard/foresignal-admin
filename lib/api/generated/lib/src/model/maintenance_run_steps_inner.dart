@@ -49,9 +49,9 @@ abstract class MaintenanceRunStepsInner
 
   MaintenanceRunStepsInner._();
 
-  factory MaintenanceRunStepsInner(
-          [void updates(MaintenanceRunStepsInnerBuilder b)]) =
-      _$MaintenanceRunStepsInner;
+  factory MaintenanceRunStepsInner([
+    void updates(MaintenanceRunStepsInnerBuilder b),
+  ]) = _$MaintenanceRunStepsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MaintenanceRunStepsInnerBuilder b) => b;
@@ -66,7 +66,7 @@ class _$MaintenanceRunStepsInnerSerializer
   @override
   final Iterable<Type> types = const [
     MaintenanceRunStepsInner,
-    _$MaintenanceRunStepsInner
+    _$MaintenanceRunStepsInner,
   ];
 
   @override
@@ -130,9 +130,11 @@ class _$MaintenanceRunStepsInnerSerializer
     MaintenanceRunStepsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -148,56 +150,74 @@ class _$MaintenanceRunStepsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'step':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MaintenanceRunStepsInnerStepEnum),
-          ) as MaintenanceRunStepsInnerStepEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      MaintenanceRunStepsInnerStepEnum,
+                    ),
+                  )
+                  as MaintenanceRunStepsInnerStepEnum;
           result.step = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MaintenanceRunStepsInnerStatusEnum),
-          ) as MaintenanceRunStepsInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      MaintenanceRunStepsInnerStatusEnum,
+                    ),
+                  )
+                  as MaintenanceRunStepsInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'startedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.startedAt = valueDes;
           break;
         case r'finishedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.finishedAt = valueDes;
           break;
         case r'jobId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.jobId = valueDes;
           break;
         case r'result':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.result = valueDes;
           break;
         case r'error':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.error = valueDes;
           break;

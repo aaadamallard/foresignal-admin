@@ -85,9 +85,11 @@ class _$StatIntervalSerializer implements PrimitiveSerializer<StatInterval> {
     StatInterval object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,31 +105,30 @@ class _$StatIntervalSerializer implements PrimitiveSerializer<StatInterval> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'lower':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lower = valueDes;
           break;
         case r'upper':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.upper = valueDes;
           break;
         case r'level':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.level = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatIntervalMethodEnum),
-          ) as StatIntervalMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatIntervalMethodEnum),
+                  )
+                  as StatIntervalMethodEnum;
           result.method = valueDes;
           break;
         default:

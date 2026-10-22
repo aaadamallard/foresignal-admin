@@ -45,16 +45,10 @@ class SearchApi {
     final _path = r'/v1/search/reindex';
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -76,9 +70,10 @@ class SearchApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SearchStatus),
-            ) as SearchStatus;
+                  rawResponse,
+                  specifiedType: const FullType(SearchStatus),
+                )
+                as SearchStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -125,16 +120,10 @@ class SearchApi {
     final _path = r'/v1/search/status';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -156,9 +145,10 @@ class SearchApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SearchStatus),
-            ) as SearchStatus;
+                  rawResponse,
+                  specifiedType: const FullType(SearchStatus),
+                )
+                as SearchStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -205,16 +195,10 @@ class SearchApi {
     final _path = r'/v1/search/reindex';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -236,9 +220,10 @@ class SearchApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SearchStatus),
-            ) as SearchStatus;
+                  rawResponse,
+                  specifiedType: const FullType(SearchStatus),
+                )
+                as SearchStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -332,11 +317,7 @@ class SearchApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -346,8 +327,11 @@ class SearchApi {
     final _queryParameters = <String, dynamic>{
       r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (mode != null)
-        r'mode':
-            encodeQueryParameter(_serializers, mode, const FullType(String)),
+        r'mode': encodeQueryParameter(
+          _serializers,
+          mode,
+          const FullType(String),
+        ),
       if (docType != null)
         r'docType': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -370,23 +354,41 @@ class SearchApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (timeField != null)
         r'timeField': encodeQueryParameter(
-            _serializers, timeField, const FullType(String)),
+          _serializers,
+          timeField,
+          const FullType(String),
+        ),
       if (count != null)
-        r'count':
-            encodeQueryParameter(_serializers, count, const FullType(bool)),
+        r'count': encodeQueryParameter(
+          _serializers,
+          count,
+          const FullType(bool),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -395,14 +397,23 @@ class SearchApi {
           format: ListFormat.csv,
         ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (view != null)
-        r'view':
-            encodeQueryParameter(_serializers, view, const FullType(String)),
+        r'view': encodeQueryParameter(
+          _serializers,
+          view,
+          const FullType(String),
+        ),
       if (inWatchlist != null)
         r'inWatchlist': encodeQueryParameter(
-            _serializers, inWatchlist, const FullType(String)),
+          _serializers,
+          inWatchlist,
+          const FullType(String),
+        ),
       if (country != null)
         r'country': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -449,9 +460,10 @@ class SearchApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Search200Response),
-            ) as Search200Response;
+                  rawResponse,
+                  specifiedType: const FullType(Search200Response),
+                )
+                as Search200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

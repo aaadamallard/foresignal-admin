@@ -7,17 +7,17 @@ part of 'intelligence_event_inference.dart';
 // **************************************************************************
 
 const IntelligenceEventInferenceConfidenceLabelEnum
-    _$intelligenceEventInferenceConfidenceLabelEnum_low =
+_$intelligenceEventInferenceConfidenceLabelEnum_low =
     const IntelligenceEventInferenceConfidenceLabelEnum._('low');
 const IntelligenceEventInferenceConfidenceLabelEnum
-    _$intelligenceEventInferenceConfidenceLabelEnum_moderate =
+_$intelligenceEventInferenceConfidenceLabelEnum_moderate =
     const IntelligenceEventInferenceConfidenceLabelEnum._('moderate');
 const IntelligenceEventInferenceConfidenceLabelEnum
-    _$intelligenceEventInferenceConfidenceLabelEnum_high =
+_$intelligenceEventInferenceConfidenceLabelEnum_high =
     const IntelligenceEventInferenceConfidenceLabelEnum._('high');
 
 IntelligenceEventInferenceConfidenceLabelEnum
-    _$intelligenceEventInferenceConfidenceLabelEnumValueOf(String name) {
+_$intelligenceEventInferenceConfidenceLabelEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$intelligenceEventInferenceConfidenceLabelEnum_low;
@@ -31,28 +31,30 @@ IntelligenceEventInferenceConfidenceLabelEnum
 }
 
 final BuiltSet<IntelligenceEventInferenceConfidenceLabelEnum>
-    _$intelligenceEventInferenceConfidenceLabelEnumValues = BuiltSet<
-        IntelligenceEventInferenceConfidenceLabelEnum>(const <IntelligenceEventInferenceConfidenceLabelEnum>[
-  _$intelligenceEventInferenceConfidenceLabelEnum_low,
-  _$intelligenceEventInferenceConfidenceLabelEnum_moderate,
-  _$intelligenceEventInferenceConfidenceLabelEnum_high,
-]);
+_$intelligenceEventInferenceConfidenceLabelEnumValues =
+    BuiltSet<IntelligenceEventInferenceConfidenceLabelEnum>(
+      const <IntelligenceEventInferenceConfidenceLabelEnum>[
+        _$intelligenceEventInferenceConfidenceLabelEnum_low,
+        _$intelligenceEventInferenceConfidenceLabelEnum_moderate,
+        _$intelligenceEventInferenceConfidenceLabelEnum_high,
+      ],
+    );
 
 const IntelligenceEventInferenceEvidenceQualityEnum
-    _$intelligenceEventInferenceEvidenceQualityEnum_strong =
+_$intelligenceEventInferenceEvidenceQualityEnum_strong =
     const IntelligenceEventInferenceEvidenceQualityEnum._('strong');
 const IntelligenceEventInferenceEvidenceQualityEnum
-    _$intelligenceEventInferenceEvidenceQualityEnum_moderate =
+_$intelligenceEventInferenceEvidenceQualityEnum_moderate =
     const IntelligenceEventInferenceEvidenceQualityEnum._('moderate');
 const IntelligenceEventInferenceEvidenceQualityEnum
-    _$intelligenceEventInferenceEvidenceQualityEnum_weak =
+_$intelligenceEventInferenceEvidenceQualityEnum_weak =
     const IntelligenceEventInferenceEvidenceQualityEnum._('weak');
 const IntelligenceEventInferenceEvidenceQualityEnum
-    _$intelligenceEventInferenceEvidenceQualityEnum_insufficient =
+_$intelligenceEventInferenceEvidenceQualityEnum_insufficient =
     const IntelligenceEventInferenceEvidenceQualityEnum._('insufficient');
 
 IntelligenceEventInferenceEvidenceQualityEnum
-    _$intelligenceEventInferenceEvidenceQualityEnumValueOf(String name) {
+_$intelligenceEventInferenceEvidenceQualityEnumValueOf(String name) {
   switch (name) {
     case 'strong':
       return _$intelligenceEventInferenceEvidenceQualityEnum_strong;
@@ -68,19 +70,21 @@ IntelligenceEventInferenceEvidenceQualityEnum
 }
 
 final BuiltSet<IntelligenceEventInferenceEvidenceQualityEnum>
-    _$intelligenceEventInferenceEvidenceQualityEnumValues = BuiltSet<
-        IntelligenceEventInferenceEvidenceQualityEnum>(const <IntelligenceEventInferenceEvidenceQualityEnum>[
-  _$intelligenceEventInferenceEvidenceQualityEnum_strong,
-  _$intelligenceEventInferenceEvidenceQualityEnum_moderate,
-  _$intelligenceEventInferenceEvidenceQualityEnum_weak,
-  _$intelligenceEventInferenceEvidenceQualityEnum_insufficient,
-]);
+_$intelligenceEventInferenceEvidenceQualityEnumValues =
+    BuiltSet<IntelligenceEventInferenceEvidenceQualityEnum>(
+      const <IntelligenceEventInferenceEvidenceQualityEnum>[
+        _$intelligenceEventInferenceEvidenceQualityEnum_strong,
+        _$intelligenceEventInferenceEvidenceQualityEnum_moderate,
+        _$intelligenceEventInferenceEvidenceQualityEnum_weak,
+        _$intelligenceEventInferenceEvidenceQualityEnum_insufficient,
+      ],
+    );
 
 Serializer<IntelligenceEventInferenceConfidenceLabelEnum>
-    _$intelligenceEventInferenceConfidenceLabelEnumSerializer =
+_$intelligenceEventInferenceConfidenceLabelEnumSerializer =
     _$IntelligenceEventInferenceConfidenceLabelEnumSerializer();
 Serializer<IntelligenceEventInferenceEvidenceQualityEnum>
-    _$intelligenceEventInferenceEvidenceQualityEnumSerializer =
+_$intelligenceEventInferenceEvidenceQualityEnumSerializer =
     _$IntelligenceEventInferenceEvidenceQualityEnumSerializer();
 
 class _$IntelligenceEventInferenceConfidenceLabelEnumSerializer
@@ -99,23 +103,26 @@ class _$IntelligenceEventInferenceConfidenceLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelligenceEventInferenceConfidenceLabelEnum
+    IntelligenceEventInferenceConfidenceLabelEnum,
   ];
   @override
   final String wireName = 'IntelligenceEventInferenceConfidenceLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          IntelligenceEventInferenceConfidenceLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelligenceEventInferenceConfidenceLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelligenceEventInferenceConfidenceLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelligenceEventInferenceConfidenceLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelligenceEventInferenceConfidenceLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelligenceEventInferenceEvidenceQualityEnumSerializer
@@ -136,23 +143,26 @@ class _$IntelligenceEventInferenceEvidenceQualityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelligenceEventInferenceEvidenceQualityEnum
+    IntelligenceEventInferenceEvidenceQualityEnum,
   ];
   @override
   final String wireName = 'IntelligenceEventInferenceEvidenceQualityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          IntelligenceEventInferenceEvidenceQualityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelligenceEventInferenceEvidenceQualityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelligenceEventInferenceEvidenceQualityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelligenceEventInferenceEvidenceQualityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelligenceEventInferenceEvidenceQualityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelligenceEventInference extends IntelligenceEventInference {
@@ -183,29 +193,29 @@ class _$IntelligenceEventInference extends IntelligenceEventInference {
   @override
   final String explanation;
 
-  factory _$IntelligenceEventInference(
-          [void Function(IntelligenceEventInferenceBuilder)? updates]) =>
-      (IntelligenceEventInferenceBuilder()..update(updates))._build();
+  factory _$IntelligenceEventInference([
+    void Function(IntelligenceEventInferenceBuilder)? updates,
+  ]) => (IntelligenceEventInferenceBuilder()..update(updates))._build();
 
-  _$IntelligenceEventInference._(
-      {required this.confidence,
-      this.rawConfidence,
-      required this.confidenceLabel,
-      required this.confidenceMethod,
-      required this.calibrated,
-      required this.evidenceQuality,
-      required this.startTime,
-      this.endTime,
-      this.lastEvidenceAt,
-      this.geometry,
-      this.centroid,
-      this.regionTags,
-      required this.explanation})
-      : super._();
+  _$IntelligenceEventInference._({
+    required this.confidence,
+    this.rawConfidence,
+    required this.confidenceLabel,
+    required this.confidenceMethod,
+    required this.calibrated,
+    required this.evidenceQuality,
+    required this.startTime,
+    this.endTime,
+    this.lastEvidenceAt,
+    this.geometry,
+    this.centroid,
+    this.regionTags,
+    required this.explanation,
+  }) : super._();
   @override
   IntelligenceEventInference rebuild(
-          void Function(IntelligenceEventInferenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelligenceEventInferenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelligenceEventInferenceBuilder toBuilder() =>
@@ -288,8 +298,8 @@ class IntelligenceEventInferenceBuilder
   IntelligenceEventInferenceConfidenceLabelEnum? get confidenceLabel =>
       _$this._confidenceLabel;
   set confidenceLabel(
-          IntelligenceEventInferenceConfidenceLabelEnum? confidenceLabel) =>
-      _$this._confidenceLabel = confidenceLabel;
+    IntelligenceEventInferenceConfidenceLabelEnum? confidenceLabel,
+  ) => _$this._confidenceLabel = confidenceLabel;
 
   String? _confidenceMethod;
   String? get confidenceMethod => _$this._confidenceMethod;
@@ -304,8 +314,8 @@ class IntelligenceEventInferenceBuilder
   IntelligenceEventInferenceEvidenceQualityEnum? get evidenceQuality =>
       _$this._evidenceQuality;
   set evidenceQuality(
-          IntelligenceEventInferenceEvidenceQualityEnum? evidenceQuality) =>
-      _$this._evidenceQuality = evidenceQuality;
+    IntelligenceEventInferenceEvidenceQualityEnum? evidenceQuality,
+  ) => _$this._evidenceQuality = evidenceQuality;
 
   DateTime? _startTime;
   DateTime? get startTime => _$this._startTime;
@@ -379,34 +389,50 @@ class IntelligenceEventInferenceBuilder
   _$IntelligenceEventInference _build() {
     _$IntelligenceEventInference _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelligenceEventInference._(
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'IntelligenceEventInference', 'confidence'),
+              confidence,
+              r'IntelligenceEventInference',
+              'confidence',
+            ),
             rawConfidence: rawConfidence,
             confidenceLabel: BuiltValueNullFieldError.checkNotNull(
-                confidenceLabel,
-                r'IntelligenceEventInference',
-                'confidenceLabel'),
+              confidenceLabel,
+              r'IntelligenceEventInference',
+              'confidenceLabel',
+            ),
             confidenceMethod: BuiltValueNullFieldError.checkNotNull(
-                confidenceMethod,
-                r'IntelligenceEventInference',
-                'confidenceMethod'),
+              confidenceMethod,
+              r'IntelligenceEventInference',
+              'confidenceMethod',
+            ),
             calibrated: BuiltValueNullFieldError.checkNotNull(
-                calibrated, r'IntelligenceEventInference', 'calibrated'),
+              calibrated,
+              r'IntelligenceEventInference',
+              'calibrated',
+            ),
             evidenceQuality: BuiltValueNullFieldError.checkNotNull(
-                evidenceQuality,
-                r'IntelligenceEventInference',
-                'evidenceQuality'),
+              evidenceQuality,
+              r'IntelligenceEventInference',
+              'evidenceQuality',
+            ),
             startTime: BuiltValueNullFieldError.checkNotNull(
-                startTime, r'IntelligenceEventInference', 'startTime'),
+              startTime,
+              r'IntelligenceEventInference',
+              'startTime',
+            ),
             endTime: endTime,
             lastEvidenceAt: lastEvidenceAt,
             geometry: _geometry?.build(),
             centroid: _centroid?.build(),
             regionTags: _regionTags?.build(),
             explanation: BuiltValueNullFieldError.checkNotNull(
-                explanation, r'IntelligenceEventInference', 'explanation'),
+              explanation,
+              r'IntelligenceEventInference',
+              'explanation',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -419,7 +445,10 @@ class IntelligenceEventInferenceBuilder
         _regionTags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelligenceEventInference', _$failedField, e.toString());
+          r'IntelligenceEventInference',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

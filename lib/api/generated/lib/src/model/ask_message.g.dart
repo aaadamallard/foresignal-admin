@@ -6,8 +6,9 @@ part of 'ask_message.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const AskMessageRoleEnum _$askMessageRoleEnum_user =
-    const AskMessageRoleEnum._('user');
+const AskMessageRoleEnum _$askMessageRoleEnum_user = const AskMessageRoleEnum._(
+  'user',
+);
 const AskMessageRoleEnum _$askMessageRoleEnum_assistant =
     const AskMessageRoleEnum._('assistant');
 
@@ -24,9 +25,9 @@ AskMessageRoleEnum _$askMessageRoleEnumValueOf(String name) {
 
 final BuiltSet<AskMessageRoleEnum> _$askMessageRoleEnumValues =
     BuiltSet<AskMessageRoleEnum>(const <AskMessageRoleEnum>[
-  _$askMessageRoleEnum_user,
-  _$askMessageRoleEnum_assistant,
-]);
+      _$askMessageRoleEnum_user,
+      _$askMessageRoleEnum_assistant,
+    ]);
 
 Serializer<AskMessageRoleEnum> _$askMessageRoleEnumSerializer =
     _$AskMessageRoleEnumSerializer();
@@ -48,15 +49,20 @@ class _$AskMessageRoleEnumSerializer
   final String wireName = 'AskMessageRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, AskMessageRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskMessageRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AskMessageRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskMessageRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AskMessageRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskMessageRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskMessage extends AskMessage {
@@ -74,13 +80,13 @@ class _$AskMessage extends AskMessage {
   factory _$AskMessage([void Function(AskMessageBuilder)? updates]) =>
       (AskMessageBuilder()..update(updates))._build();
 
-  _$AskMessage._(
-      {required this.role,
-      required this.content,
-      this.citations,
-      required this.createdAt,
-      this.warnings})
-      : super._();
+  _$AskMessage._({
+    required this.role,
+    required this.content,
+    this.citations,
+    required this.createdAt,
+    this.warnings,
+  }) : super._();
   @override
   AskMessage rebuild(void Function(AskMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -182,15 +188,25 @@ class AskMessageBuilder implements Builder<AskMessage, AskMessageBuilder> {
   _$AskMessage _build() {
     _$AskMessage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AskMessage._(
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'AskMessage', 'role'),
+              role,
+              r'AskMessage',
+              'role',
+            ),
             content: BuiltValueNullFieldError.checkNotNull(
-                content, r'AskMessage', 'content'),
+              content,
+              r'AskMessage',
+              'content',
+            ),
             citations: _citations?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AskMessage', 'createdAt'),
+              createdAt,
+              r'AskMessage',
+              'createdAt',
+            ),
             warnings: _warnings?.build(),
           );
     } catch (_) {
@@ -203,7 +219,10 @@ class AskMessageBuilder implements Builder<AskMessage, AskMessageBuilder> {
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AskMessage', _$failedField, e.toString());
+          r'AskMessage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

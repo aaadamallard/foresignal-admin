@@ -12,9 +12,9 @@ class _$InvestigationPage extends InvestigationPage {
   @override
   final String? nextCursor;
 
-  factory _$InvestigationPage(
-          [void Function(InvestigationPageBuilder)? updates]) =>
-      (InvestigationPageBuilder()..update(updates))._build();
+  factory _$InvestigationPage([
+    void Function(InvestigationPageBuilder)? updates,
+  ]) => (InvestigationPageBuilder()..update(updates))._build();
 
   _$InvestigationPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class InvestigationPageBuilder
   _$InvestigationPage _build() {
     _$InvestigationPage _$result;
     try {
-      _$result = _$v ??
-          _$InvestigationPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$InvestigationPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class InvestigationPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InvestigationPage', _$failedField, e.toString());
+          r'InvestigationPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

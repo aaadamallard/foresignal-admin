@@ -16,8 +16,10 @@ part 'forecast_calibration_curve_inner.g.dart';
 @BuiltValue()
 abstract class ForecastCalibrationCurveInner
     implements
-        Built<ForecastCalibrationCurveInner,
-            ForecastCalibrationCurveInnerBuilder> {
+        Built<
+          ForecastCalibrationCurveInner,
+          ForecastCalibrationCurveInnerBuilder
+        > {
   @BuiltValueField(wireName: r'forecast')
   num get forecast;
 
@@ -26,9 +28,9 @@ abstract class ForecastCalibrationCurveInner
 
   ForecastCalibrationCurveInner._();
 
-  factory ForecastCalibrationCurveInner(
-          [void updates(ForecastCalibrationCurveInnerBuilder b)]) =
-      _$ForecastCalibrationCurveInner;
+  factory ForecastCalibrationCurveInner([
+    void updates(ForecastCalibrationCurveInnerBuilder b),
+  ]) = _$ForecastCalibrationCurveInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastCalibrationCurveInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$ForecastCalibrationCurveInnerSerializer
   @override
   final Iterable<Type> types = const [
     ForecastCalibrationCurveInner,
-    _$ForecastCalibrationCurveInner
+    _$ForecastCalibrationCurveInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$ForecastCalibrationCurveInnerSerializer
     ForecastCalibrationCurveInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,15 @@ class _$ForecastCalibrationCurveInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecast':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.forecast = valueDes;
           break;
         case r'calibrated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.calibrated = valueDes;
           break;
         default:

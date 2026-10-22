@@ -20,22 +20,22 @@ class _$ObservabilityCoverage extends ObservabilityCoverage {
   @override
   final String? nextCursor;
 
-  factory _$ObservabilityCoverage(
-          [void Function(ObservabilityCoverageBuilder)? updates]) =>
-      (ObservabilityCoverageBuilder()..update(updates))._build();
+  factory _$ObservabilityCoverage([
+    void Function(ObservabilityCoverageBuilder)? updates,
+  ]) => (ObservabilityCoverageBuilder()..update(updates))._build();
 
-  _$ObservabilityCoverage._(
-      {required this.family,
-      required this.at,
-      this.band,
-      required this.absenceMinDetect,
-      required this.items,
-      this.nextCursor})
-      : super._();
+  _$ObservabilityCoverage._({
+    required this.family,
+    required this.at,
+    this.band,
+    required this.absenceMinDetect,
+    required this.items,
+    this.nextCursor,
+  }) : super._();
   @override
   ObservabilityCoverage rebuild(
-          void Function(ObservabilityCoverageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObservabilityCoverageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObservabilityCoverageBuilder toBuilder() =>
@@ -143,15 +143,25 @@ class ObservabilityCoverageBuilder
   _$ObservabilityCoverage _build() {
     _$ObservabilityCoverage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObservabilityCoverage._(
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'ObservabilityCoverage', 'family'),
+              family,
+              r'ObservabilityCoverage',
+              'family',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ObservabilityCoverage', 'at'),
+              at,
+              r'ObservabilityCoverage',
+              'at',
+            ),
             band: band,
             absenceMinDetect: BuiltValueNullFieldError.checkNotNull(
-                absenceMinDetect, r'ObservabilityCoverage', 'absenceMinDetect'),
+              absenceMinDetect,
+              r'ObservabilityCoverage',
+              'absenceMinDetect',
+            ),
             items: items.build(),
             nextCursor: nextCursor,
           );
@@ -162,7 +172,10 @@ class ObservabilityCoverageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObservabilityCoverage', _$failedField, e.toString());
+          r'ObservabilityCoverage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

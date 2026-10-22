@@ -19,8 +19,10 @@ part 'forecast_numeric_calibration_quantile_reliability_inner.g.dart';
 @BuiltValue()
 abstract class ForecastNumericCalibrationQuantileReliabilityInner
     implements
-        Built<ForecastNumericCalibrationQuantileReliabilityInner,
-            ForecastNumericCalibrationQuantileReliabilityInnerBuilder> {
+        Built<
+          ForecastNumericCalibrationQuantileReliabilityInner,
+          ForecastNumericCalibrationQuantileReliabilityInnerBuilder
+        > {
   @BuiltValueField(wireName: r'level')
   num? get level;
 
@@ -38,30 +40,30 @@ abstract class ForecastNumericCalibrationQuantileReliabilityInner
 
   ForecastNumericCalibrationQuantileReliabilityInner._();
 
-  factory ForecastNumericCalibrationQuantileReliabilityInner(
-          [void updates(
-              ForecastNumericCalibrationQuantileReliabilityInnerBuilder b)]) =
-      _$ForecastNumericCalibrationQuantileReliabilityInner;
+  factory ForecastNumericCalibrationQuantileReliabilityInner([
+    void updates(ForecastNumericCalibrationQuantileReliabilityInnerBuilder b),
+  ]) = _$ForecastNumericCalibrationQuantileReliabilityInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          ForecastNumericCalibrationQuantileReliabilityInnerBuilder b) =>
-      b;
+    ForecastNumericCalibrationQuantileReliabilityInnerBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<ForecastNumericCalibrationQuantileReliabilityInner>
-      get serializer =>
-          _$ForecastNumericCalibrationQuantileReliabilityInnerSerializer();
+  get serializer =>
+      _$ForecastNumericCalibrationQuantileReliabilityInnerSerializer();
 }
 
 class _$ForecastNumericCalibrationQuantileReliabilityInnerSerializer
     implements
         PrimitiveSerializer<
-            ForecastNumericCalibrationQuantileReliabilityInner> {
+          ForecastNumericCalibrationQuantileReliabilityInner
+        > {
   @override
   final Iterable<Type> types = const [
     ForecastNumericCalibrationQuantileReliabilityInner,
-    _$ForecastNumericCalibrationQuantileReliabilityInner
+    _$ForecastNumericCalibrationQuantileReliabilityInner,
   ];
 
   @override
@@ -102,10 +104,7 @@ class _$ForecastNumericCalibrationQuantileReliabilityInnerSerializer
     }
     if (object.n != null) {
       yield r'n';
-      yield serializers.serialize(
-        object.n,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.n, specifiedType: const FullType(int));
     }
   }
 
@@ -115,9 +114,11 @@ class _$ForecastNumericCalibrationQuantileReliabilityInnerSerializer
     ForecastNumericCalibrationQuantileReliabilityInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,42 +134,52 @@ class _$ForecastNumericCalibrationQuantileReliabilityInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'level':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.level = valueDes;
           break;
         case r'quantile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.quantile = valueDes;
           break;
         case r'nominal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.nominal = valueDes;
           break;
         case r'empirical':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.empirical = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n = valueDes;
           break;

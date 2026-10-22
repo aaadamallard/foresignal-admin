@@ -16,7 +16,8 @@ const KeyAssumptionEventStatusEnum _$keyAssumptionEventStatusEnum_broken =
     const KeyAssumptionEventStatusEnum._('broken');
 
 KeyAssumptionEventStatusEnum _$keyAssumptionEventStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'solid':
       return _$keyAssumptionEventStatusEnum_solid;
@@ -32,29 +33,29 @@ KeyAssumptionEventStatusEnum _$keyAssumptionEventStatusEnumValueOf(
 }
 
 final BuiltSet<KeyAssumptionEventStatusEnum>
-    _$keyAssumptionEventStatusEnumValues =
+_$keyAssumptionEventStatusEnumValues =
     BuiltSet<KeyAssumptionEventStatusEnum>(const <KeyAssumptionEventStatusEnum>[
-  _$keyAssumptionEventStatusEnum_solid,
-  _$keyAssumptionEventStatusEnum_caveated,
-  _$keyAssumptionEventStatusEnum_unsupported,
-  _$keyAssumptionEventStatusEnum_broken,
-]);
+      _$keyAssumptionEventStatusEnum_solid,
+      _$keyAssumptionEventStatusEnum_caveated,
+      _$keyAssumptionEventStatusEnum_unsupported,
+      _$keyAssumptionEventStatusEnum_broken,
+    ]);
 
 const KeyAssumptionEventPreviousStatusEnum
-    _$keyAssumptionEventPreviousStatusEnum_solid =
+_$keyAssumptionEventPreviousStatusEnum_solid =
     const KeyAssumptionEventPreviousStatusEnum._('solid');
 const KeyAssumptionEventPreviousStatusEnum
-    _$keyAssumptionEventPreviousStatusEnum_caveated =
+_$keyAssumptionEventPreviousStatusEnum_caveated =
     const KeyAssumptionEventPreviousStatusEnum._('caveated');
 const KeyAssumptionEventPreviousStatusEnum
-    _$keyAssumptionEventPreviousStatusEnum_unsupported =
+_$keyAssumptionEventPreviousStatusEnum_unsupported =
     const KeyAssumptionEventPreviousStatusEnum._('unsupported');
 const KeyAssumptionEventPreviousStatusEnum
-    _$keyAssumptionEventPreviousStatusEnum_broken =
+_$keyAssumptionEventPreviousStatusEnum_broken =
     const KeyAssumptionEventPreviousStatusEnum._('broken');
 
 KeyAssumptionEventPreviousStatusEnum
-    _$keyAssumptionEventPreviousStatusEnumValueOf(String name) {
+_$keyAssumptionEventPreviousStatusEnumValueOf(String name) {
   switch (name) {
     case 'solid':
       return _$keyAssumptionEventPreviousStatusEnum_solid;
@@ -70,19 +71,21 @@ KeyAssumptionEventPreviousStatusEnum
 }
 
 final BuiltSet<KeyAssumptionEventPreviousStatusEnum>
-    _$keyAssumptionEventPreviousStatusEnumValues = BuiltSet<
-        KeyAssumptionEventPreviousStatusEnum>(const <KeyAssumptionEventPreviousStatusEnum>[
-  _$keyAssumptionEventPreviousStatusEnum_solid,
-  _$keyAssumptionEventPreviousStatusEnum_caveated,
-  _$keyAssumptionEventPreviousStatusEnum_unsupported,
-  _$keyAssumptionEventPreviousStatusEnum_broken,
-]);
+_$keyAssumptionEventPreviousStatusEnumValues =
+    BuiltSet<KeyAssumptionEventPreviousStatusEnum>(
+      const <KeyAssumptionEventPreviousStatusEnum>[
+        _$keyAssumptionEventPreviousStatusEnum_solid,
+        _$keyAssumptionEventPreviousStatusEnum_caveated,
+        _$keyAssumptionEventPreviousStatusEnum_unsupported,
+        _$keyAssumptionEventPreviousStatusEnum_broken,
+      ],
+    );
 
 Serializer<KeyAssumptionEventStatusEnum>
-    _$keyAssumptionEventStatusEnumSerializer =
+_$keyAssumptionEventStatusEnumSerializer =
     _$KeyAssumptionEventStatusEnumSerializer();
 Serializer<KeyAssumptionEventPreviousStatusEnum>
-    _$keyAssumptionEventPreviousStatusEnumSerializer =
+_$keyAssumptionEventPreviousStatusEnumSerializer =
     _$KeyAssumptionEventPreviousStatusEnumSerializer();
 
 class _$KeyAssumptionEventStatusEnumSerializer
@@ -106,16 +109,20 @@ class _$KeyAssumptionEventStatusEnumSerializer
   final String wireName = 'KeyAssumptionEventStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, KeyAssumptionEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    KeyAssumptionEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   KeyAssumptionEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      KeyAssumptionEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => KeyAssumptionEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$KeyAssumptionEventPreviousStatusEnumSerializer
@@ -135,23 +142,26 @@ class _$KeyAssumptionEventPreviousStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    KeyAssumptionEventPreviousStatusEnum
+    KeyAssumptionEventPreviousStatusEnum,
   ];
   @override
   final String wireName = 'KeyAssumptionEventPreviousStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, KeyAssumptionEventPreviousStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    KeyAssumptionEventPreviousStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   KeyAssumptionEventPreviousStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      KeyAssumptionEventPreviousStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => KeyAssumptionEventPreviousStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$KeyAssumptionEvent extends KeyAssumptionEvent {
@@ -172,24 +182,24 @@ class _$KeyAssumptionEvent extends KeyAssumptionEvent {
   @override
   final DateTime at;
 
-  factory _$KeyAssumptionEvent(
-          [void Function(KeyAssumptionEventBuilder)? updates]) =>
-      (KeyAssumptionEventBuilder()..update(updates))._build();
+  factory _$KeyAssumptionEvent([
+    void Function(KeyAssumptionEventBuilder)? updates,
+  ]) => (KeyAssumptionEventBuilder()..update(updates))._build();
 
-  _$KeyAssumptionEvent._(
-      {required this.assumptionId,
-      required this.setId,
-      this.text,
-      this.linchpin,
-      required this.status,
-      this.previousStatus,
-      this.private,
-      required this.at})
-      : super._();
+  _$KeyAssumptionEvent._({
+    required this.assumptionId,
+    required this.setId,
+    this.text,
+    this.linchpin,
+    required this.status,
+    this.previousStatus,
+    this.private,
+    required this.at,
+  }) : super._();
   @override
   KeyAssumptionEvent rebuild(
-          void Function(KeyAssumptionEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(KeyAssumptionEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   KeyAssumptionEventBuilder toBuilder() =>
@@ -311,20 +321,33 @@ class KeyAssumptionEventBuilder
   KeyAssumptionEvent build() => _build();
 
   _$KeyAssumptionEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$KeyAssumptionEvent._(
           assumptionId: BuiltValueNullFieldError.checkNotNull(
-              assumptionId, r'KeyAssumptionEvent', 'assumptionId'),
+            assumptionId,
+            r'KeyAssumptionEvent',
+            'assumptionId',
+          ),
           setId: BuiltValueNullFieldError.checkNotNull(
-              setId, r'KeyAssumptionEvent', 'setId'),
+            setId,
+            r'KeyAssumptionEvent',
+            'setId',
+          ),
           text: text,
           linchpin: linchpin,
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'KeyAssumptionEvent', 'status'),
+            status,
+            r'KeyAssumptionEvent',
+            'status',
+          ),
           previousStatus: previousStatus,
           private: private,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'KeyAssumptionEvent', 'at'),
+            at,
+            r'KeyAssumptionEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

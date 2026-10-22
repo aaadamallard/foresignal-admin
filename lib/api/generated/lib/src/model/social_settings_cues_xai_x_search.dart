@@ -16,8 +16,10 @@ part 'social_settings_cues_xai_x_search.g.dart';
 @BuiltValue()
 abstract class SocialSettingsCuesXaiXSearch
     implements
-        Built<SocialSettingsCuesXaiXSearch,
-            SocialSettingsCuesXaiXSearchBuilder> {
+        Built<
+          SocialSettingsCuesXaiXSearch,
+          SocialSettingsCuesXaiXSearchBuilder
+        > {
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
 
@@ -26,9 +28,9 @@ abstract class SocialSettingsCuesXaiXSearch
 
   SocialSettingsCuesXaiXSearch._();
 
-  factory SocialSettingsCuesXaiXSearch(
-          [void updates(SocialSettingsCuesXaiXSearchBuilder b)]) =
-      _$SocialSettingsCuesXaiXSearch;
+  factory SocialSettingsCuesXaiXSearch([
+    void updates(SocialSettingsCuesXaiXSearchBuilder b),
+  ]) = _$SocialSettingsCuesXaiXSearch;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsCuesXaiXSearchBuilder b) => b;
@@ -43,7 +45,7 @@ class _$SocialSettingsCuesXaiXSearchSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsCuesXaiXSearch,
-    _$SocialSettingsCuesXaiXSearch
+    _$SocialSettingsCuesXaiXSearch,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$SocialSettingsCuesXaiXSearchSerializer
     SocialSettingsCuesXaiXSearch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$SocialSettingsCuesXaiXSearchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'maxResults':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxResults = valueDes;
           break;

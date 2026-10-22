@@ -71,7 +71,7 @@ class _$OgcFeatureCollectionSerializer
   @override
   final Iterable<Type> types = const [
     OgcFeatureCollection,
-    _$OgcFeatureCollection
+    _$OgcFeatureCollection,
   ];
 
   @override
@@ -136,9 +136,11 @@ class _$OgcFeatureCollectionSerializer
     OgcFeatureCollection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -154,62 +156,80 @@ class _$OgcFeatureCollectionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OgcFeatureCollectionTypeEnum),
-          ) as OgcFeatureCollectionTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OgcFeatureCollectionTypeEnum),
+                  )
+                  as OgcFeatureCollectionTypeEnum;
           result.type = valueDes;
           break;
         case r'features':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcFeature)]),
-          ) as BuiltList<OgcFeature>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcFeature),
+                    ]),
+                  )
+                  as BuiltList<OgcFeature>;
           result.features.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>;
           result.links.replace(valueDes);
           break;
         case r'numberReturned':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.numberReturned = valueDes;
           break;
         case r'numberMatched':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.numberMatched = valueDes;
           break;
         case r'timeStamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.timeStamp = valueDes;
           break;
         case r'attributions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>?;
           if (valueDes == null) continue;
           result.attributions.replace(valueDes);
           break;
         case r'licenceFiltered':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.licenceFiltered = valueDes;
           break;

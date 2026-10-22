@@ -145,8 +145,9 @@ class _$NwsForecastPayloadSerializer
       yield r'hazards';
       yield serializers.serialize(
         object.hazards,
-        specifiedType: const FullType(
-            BuiltList, [FullType(NwsForecastPayloadHazardsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(NwsForecastPayloadHazardsInner),
+        ]),
       );
     }
     yield r'forecastUpdated';
@@ -162,9 +163,11 @@ class _$NwsForecastPayloadSerializer
     NwsForecastPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -180,87 +183,104 @@ class _$NwsForecastPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'place':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.place = valueDes;
           break;
         case r'wfo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.wfo = valueDes;
           break;
         case r'gridX':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.gridX = valueDes;
           break;
         case r'gridY':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.gridY = valueDes;
           break;
         case r'popMax24h':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.popMax24h = valueDes;
           break;
         case r'qpf24hMm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.qpf24hMm = valueDes;
           break;
         case r'tMaxC24h':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.tMaxC24h = valueDes;
           break;
         case r'tMinC24h':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.tMinC24h = valueDes;
           break;
         case r'gustMaxMs24h':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.gustMaxMs24h = valueDes;
           break;
         case r'hazards':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(NwsForecastPayloadHazardsInner)]),
-          ) as BuiltList<NwsForecastPayloadHazardsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(NwsForecastPayloadHazardsInner),
+                    ]),
+                  )
+                  as BuiltList<NwsForecastPayloadHazardsInner>?;
           if (valueDes == null) continue;
           result.hazards.replace(valueDes);
           break;
         case r'forecastUpdated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.forecastUpdated = valueDes;
           break;
         default:

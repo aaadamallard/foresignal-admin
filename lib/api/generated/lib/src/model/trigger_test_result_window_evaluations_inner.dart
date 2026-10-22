@@ -20,8 +20,10 @@ part 'trigger_test_result_window_evaluations_inner.g.dart';
 @BuiltValue()
 abstract class TriggerTestResultWindowEvaluationsInner
     implements
-        Built<TriggerTestResultWindowEvaluationsInner,
-            TriggerTestResultWindowEvaluationsInnerBuilder> {
+        Built<
+          TriggerTestResultWindowEvaluationsInner,
+          TriggerTestResultWindowEvaluationsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'at')
   DateTime get at;
 
@@ -40,9 +42,9 @@ abstract class TriggerTestResultWindowEvaluationsInner
 
   TriggerTestResultWindowEvaluationsInner._();
 
-  factory TriggerTestResultWindowEvaluationsInner(
-          [void updates(TriggerTestResultWindowEvaluationsInnerBuilder b)]) =
-      _$TriggerTestResultWindowEvaluationsInner;
+  factory TriggerTestResultWindowEvaluationsInner([
+    void updates(TriggerTestResultWindowEvaluationsInnerBuilder b),
+  ]) = _$TriggerTestResultWindowEvaluationsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TriggerTestResultWindowEvaluationsInnerBuilder b) => b;
@@ -57,7 +59,7 @@ class _$TriggerTestResultWindowEvaluationsInnerSerializer
   @override
   final Iterable<Type> types = const [
     TriggerTestResultWindowEvaluationsInner,
-    _$TriggerTestResultWindowEvaluationsInner
+    _$TriggerTestResultWindowEvaluationsInner,
   ];
 
   @override
@@ -88,8 +90,9 @@ class _$TriggerTestResultWindowEvaluationsInnerSerializer
     yield r'state';
     yield serializers.serialize(
       object.state,
-      specifiedType:
-          const FullType(TriggerTestResultWindowEvaluationsInnerStateEnum),
+      specifiedType: const FullType(
+        TriggerTestResultWindowEvaluationsInnerStateEnum,
+      ),
     );
     if (object.reason != null) {
       yield r'reason';
@@ -106,9 +109,11 @@ class _$TriggerTestResultWindowEvaluationsInnerSerializer
     TriggerTestResultWindowEvaluationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -124,40 +129,51 @@ class _$TriggerTestResultWindowEvaluationsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'groupKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.groupKey = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.value = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                TriggerTestResultWindowEvaluationsInnerStateEnum),
-          ) as TriggerTestResultWindowEvaluationsInnerStateEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      TriggerTestResultWindowEvaluationsInnerStateEnum,
+                    ),
+                  )
+                  as TriggerTestResultWindowEvaluationsInnerStateEnum;
           result.state = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;
@@ -205,15 +221,15 @@ class TriggerTestResultWindowEvaluationsInnerStateEnum extends EnumClass {
       _$triggerTestResultWindowEvaluationsInnerStateEnum_learning;
 
   static Serializer<TriggerTestResultWindowEvaluationsInnerStateEnum>
-      get serializer =>
-          _$triggerTestResultWindowEvaluationsInnerStateEnumSerializer;
+  get serializer =>
+      _$triggerTestResultWindowEvaluationsInnerStateEnumSerializer;
 
   const TriggerTestResultWindowEvaluationsInnerStateEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<TriggerTestResultWindowEvaluationsInnerStateEnum>
-      get values => _$triggerTestResultWindowEvaluationsInnerStateEnumValues;
+  get values => _$triggerTestResultWindowEvaluationsInnerStateEnumValues;
   static TriggerTestResultWindowEvaluationsInnerStateEnum valueOf(
-          String name) =>
-      _$triggerTestResultWindowEvaluationsInnerStateEnumValueOf(name);
+    String name,
+  ) => _$triggerTestResultWindowEvaluationsInnerStateEnumValueOf(name);
 }

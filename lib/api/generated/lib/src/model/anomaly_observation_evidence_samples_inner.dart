@@ -17,8 +17,10 @@ part 'anomaly_observation_evidence_samples_inner.g.dart';
 @BuiltValue()
 abstract class AnomalyObservationEvidenceSamplesInner
     implements
-        Built<AnomalyObservationEvidenceSamplesInner,
-            AnomalyObservationEvidenceSamplesInnerBuilder> {
+        Built<
+          AnomalyObservationEvidenceSamplesInner,
+          AnomalyObservationEvidenceSamplesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'source')
   String get source_;
 
@@ -30,9 +32,9 @@ abstract class AnomalyObservationEvidenceSamplesInner
 
   AnomalyObservationEvidenceSamplesInner._();
 
-  factory AnomalyObservationEvidenceSamplesInner(
-          [void updates(AnomalyObservationEvidenceSamplesInnerBuilder b)]) =
-      _$AnomalyObservationEvidenceSamplesInner;
+  factory AnomalyObservationEvidenceSamplesInner([
+    void updates(AnomalyObservationEvidenceSamplesInnerBuilder b),
+  ]) = _$AnomalyObservationEvidenceSamplesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnomalyObservationEvidenceSamplesInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$AnomalyObservationEvidenceSamplesInnerSerializer
   @override
   final Iterable<Type> types = const [
     AnomalyObservationEvidenceSamplesInner,
-    _$AnomalyObservationEvidenceSamplesInner
+    _$AnomalyObservationEvidenceSamplesInner,
   ];
 
   @override
@@ -69,10 +71,7 @@ class _$AnomalyObservationEvidenceSamplesInnerSerializer
       specifiedType: const FullType(String),
     );
     yield r'seq';
-    yield serializers.serialize(
-      object.seq,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.seq, specifiedType: const FullType(int));
   }
 
   @override
@@ -81,9 +80,11 @@ class _$AnomalyObservationEvidenceSamplesInnerSerializer
     AnomalyObservationEvidenceSamplesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +100,27 @@ class _$AnomalyObservationEvidenceSamplesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.source_ = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalId = valueDes;
           break;
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.seq = valueDes;
           break;
         default:

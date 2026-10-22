@@ -51,9 +51,9 @@ abstract class SituationTimelineEntry
 
   SituationTimelineEntry._();
 
-  factory SituationTimelineEntry(
-          [void updates(SituationTimelineEntryBuilder b)]) =
-      _$SituationTimelineEntry;
+  factory SituationTimelineEntry([
+    void updates(SituationTimelineEntryBuilder b),
+  ]) = _$SituationTimelineEntry;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationTimelineEntryBuilder b) => b;
@@ -68,7 +68,7 @@ class _$SituationTimelineEntrySerializer
   @override
   final Iterable<Type> types = const [
     SituationTimelineEntry,
-    _$SituationTimelineEntry
+    _$SituationTimelineEntry,
   ];
 
   @override
@@ -100,8 +100,9 @@ class _$SituationTimelineEntrySerializer
       yield r'action';
       yield serializers.serialize(
         object.action,
-        specifiedType:
-            const FullType.nullable(SituationTimelineEntryActionEnum),
+        specifiedType: const FullType.nullable(
+          SituationTimelineEntryActionEnum,
+        ),
       );
     }
     if (object.actor != null) {
@@ -115,16 +116,20 @@ class _$SituationTimelineEntrySerializer
       yield r'before';
       yield serializers.serialize(
         object.before,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.after != null) {
       yield r'after';
       yield serializers.serialize(
         object.after,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -135,9 +140,11 @@ class _$SituationTimelineEntrySerializer
     SituationTimelineEntry object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -153,59 +160,80 @@ class _$SituationTimelineEntrySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'entryType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationTimelineEntryEntryTypeEnum),
-          ) as SituationTimelineEntryEntryTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SituationTimelineEntryEntryTypeEnum,
+                    ),
+                  )
+                  as SituationTimelineEntryEntryTypeEnum;
           result.entryType = valueDes;
           break;
         case r'member':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SituationMember),
-          ) as SituationMember?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SituationMember),
+                  )
+                  as SituationMember?;
           if (valueDes == null) continue;
           result.member.replace(valueDes);
           break;
         case r'action':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SituationTimelineEntryActionEnum),
-          ) as SituationTimelineEntryActionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SituationTimelineEntryActionEnum,
+                    ),
+                  )
+                  as SituationTimelineEntryActionEnum?;
           if (valueDes == null) continue;
           result.action = valueDes;
           break;
         case r'actor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.actor = valueDes;
           break;
         case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.before.replace(valueDes);
           break;
         case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.after.replace(valueDes);
           break;

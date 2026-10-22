@@ -7,17 +7,18 @@ part of 'storm_track_payload_trend.dart';
 // **************************************************************************
 
 const StormTrackPayloadTrendMaxDbzEnum
-    _$stormTrackPayloadTrendMaxDbzEnum_rising =
+_$stormTrackPayloadTrendMaxDbzEnum_rising =
     const StormTrackPayloadTrendMaxDbzEnum._('rising');
 const StormTrackPayloadTrendMaxDbzEnum
-    _$stormTrackPayloadTrendMaxDbzEnum_steady =
+_$stormTrackPayloadTrendMaxDbzEnum_steady =
     const StormTrackPayloadTrendMaxDbzEnum._('steady');
 const StormTrackPayloadTrendMaxDbzEnum
-    _$stormTrackPayloadTrendMaxDbzEnum_falling =
+_$stormTrackPayloadTrendMaxDbzEnum_falling =
     const StormTrackPayloadTrendMaxDbzEnum._('falling');
 
 StormTrackPayloadTrendMaxDbzEnum _$stormTrackPayloadTrendMaxDbzEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'rising':
       return _$stormTrackPayloadTrendMaxDbzEnum_rising;
@@ -31,15 +32,17 @@ StormTrackPayloadTrendMaxDbzEnum _$stormTrackPayloadTrendMaxDbzEnumValueOf(
 }
 
 final BuiltSet<StormTrackPayloadTrendMaxDbzEnum>
-    _$stormTrackPayloadTrendMaxDbzEnumValues = BuiltSet<
-        StormTrackPayloadTrendMaxDbzEnum>(const <StormTrackPayloadTrendMaxDbzEnum>[
-  _$stormTrackPayloadTrendMaxDbzEnum_rising,
-  _$stormTrackPayloadTrendMaxDbzEnum_steady,
-  _$stormTrackPayloadTrendMaxDbzEnum_falling,
-]);
+_$stormTrackPayloadTrendMaxDbzEnumValues =
+    BuiltSet<StormTrackPayloadTrendMaxDbzEnum>(
+      const <StormTrackPayloadTrendMaxDbzEnum>[
+        _$stormTrackPayloadTrendMaxDbzEnum_rising,
+        _$stormTrackPayloadTrendMaxDbzEnum_steady,
+        _$stormTrackPayloadTrendMaxDbzEnum_falling,
+      ],
+    );
 
 Serializer<StormTrackPayloadTrendMaxDbzEnum>
-    _$stormTrackPayloadTrendMaxDbzEnumSerializer =
+_$stormTrackPayloadTrendMaxDbzEnumSerializer =
     _$StormTrackPayloadTrendMaxDbzEnumSerializer();
 
 class _$StormTrackPayloadTrendMaxDbzEnumSerializer
@@ -62,31 +65,34 @@ class _$StormTrackPayloadTrendMaxDbzEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, StormTrackPayloadTrendMaxDbzEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StormTrackPayloadTrendMaxDbzEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormTrackPayloadTrendMaxDbzEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormTrackPayloadTrendMaxDbzEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormTrackPayloadTrendMaxDbzEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormTrackPayloadTrend extends StormTrackPayloadTrend {
   @override
   final StormTrackPayloadTrendMaxDbzEnum? maxDbz;
 
-  factory _$StormTrackPayloadTrend(
-          [void Function(StormTrackPayloadTrendBuilder)? updates]) =>
-      (StormTrackPayloadTrendBuilder()..update(updates))._build();
+  factory _$StormTrackPayloadTrend([
+    void Function(StormTrackPayloadTrendBuilder)? updates,
+  ]) => (StormTrackPayloadTrendBuilder()..update(updates))._build();
 
   _$StormTrackPayloadTrend._({this.maxDbz}) : super._();
   @override
   StormTrackPayloadTrend rebuild(
-          void Function(StormTrackPayloadTrendBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StormTrackPayloadTrendBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StormTrackPayloadTrendBuilder toBuilder() =>
@@ -108,9 +114,9 @@ class _$StormTrackPayloadTrend extends StormTrackPayloadTrend {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'StormTrackPayloadTrend')
-          ..add('maxDbz', maxDbz))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'StormTrackPayloadTrend',
+    )..add('maxDbz', maxDbz)).toString();
   }
 }
 
@@ -150,10 +156,7 @@ class StormTrackPayloadTrendBuilder
   StormTrackPayloadTrend build() => _build();
 
   _$StormTrackPayloadTrend _build() {
-    final _$result = _$v ??
-        _$StormTrackPayloadTrend._(
-          maxDbz: maxDbz,
-        );
+    final _$result = _$v ?? _$StormTrackPayloadTrend._(maxDbz: maxDbz);
     replace(_$result);
     return _$result;
   }

@@ -115,9 +115,11 @@ class _$SearchResultsSerializer implements PrimitiveSerializer<SearchResults> {
     SearchResults object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,49 +135,64 @@ class _$SearchResultsSerializer implements PrimitiveSerializer<SearchResults> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SearchResultsModeEnum),
-          ) as SearchResultsModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SearchResultsModeEnum),
+                  )
+                  as SearchResultsModeEnum;
           result.mode = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(SearchResult)]),
-          ) as BuiltList<SearchResult>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SearchResult),
+                    ]),
+                  )
+                  as BuiltList<SearchResult>;
           result.items.replace(valueDes);
           break;
         case r'degraded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.degraded = valueDes;
           break;
         case r'attributions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>?;
           if (valueDes == null) continue;
           result.attributions.replace(valueDes);
           break;
         case r'licenceFiltered':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.licenceFiltered = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

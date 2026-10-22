@@ -24,9 +24,9 @@ AnomalyWindowBucketEnum _$anomalyWindowBucketEnumValueOf(String name) {
 
 final BuiltSet<AnomalyWindowBucketEnum> _$anomalyWindowBucketEnumValues =
     BuiltSet<AnomalyWindowBucketEnum>(const <AnomalyWindowBucketEnum>[
-  _$anomalyWindowBucketEnum_n15m,
-  _$anomalyWindowBucketEnum_n1h,
-]);
+      _$anomalyWindowBucketEnum_n15m,
+      _$anomalyWindowBucketEnum_n1h,
+    ]);
 
 const AnomalyWindowSlotModeEnum _$anomalyWindowSlotModeEnum_hourOfWeek =
     const AnomalyWindowSlotModeEnum._('hourOfWeek');
@@ -46,9 +46,9 @@ AnomalyWindowSlotModeEnum _$anomalyWindowSlotModeEnumValueOf(String name) {
 
 final BuiltSet<AnomalyWindowSlotModeEnum> _$anomalyWindowSlotModeEnumValues =
     BuiltSet<AnomalyWindowSlotModeEnum>(const <AnomalyWindowSlotModeEnum>[
-  _$anomalyWindowSlotModeEnum_hourOfWeek,
-  _$anomalyWindowSlotModeEnum_hourOfDay,
-]);
+      _$anomalyWindowSlotModeEnum_hourOfWeek,
+      _$anomalyWindowSlotModeEnum_hourOfDay,
+    ]);
 
 const AnomalyWindowDirectionEnum _$anomalyWindowDirectionEnum_up =
     const AnomalyWindowDirectionEnum._('up');
@@ -72,10 +72,10 @@ AnomalyWindowDirectionEnum _$anomalyWindowDirectionEnumValueOf(String name) {
 
 final BuiltSet<AnomalyWindowDirectionEnum> _$anomalyWindowDirectionEnumValues =
     BuiltSet<AnomalyWindowDirectionEnum>(const <AnomalyWindowDirectionEnum>[
-  _$anomalyWindowDirectionEnum_up,
-  _$anomalyWindowDirectionEnum_down,
-  _$anomalyWindowDirectionEnum_both,
-]);
+      _$anomalyWindowDirectionEnum_up,
+      _$anomalyWindowDirectionEnum_down,
+      _$anomalyWindowDirectionEnum_both,
+    ]);
 
 const AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnum_low =
     const AnomalyWindowSensitivityEnum._('low');
@@ -85,7 +85,8 @@ const AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnum_high =
     const AnomalyWindowSensitivityEnum._('high');
 
 AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'low':
       return _$anomalyWindowSensitivityEnum_low;
@@ -99,12 +100,12 @@ AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnumValueOf(
 }
 
 final BuiltSet<AnomalyWindowSensitivityEnum>
-    _$anomalyWindowSensitivityEnumValues =
+_$anomalyWindowSensitivityEnumValues =
     BuiltSet<AnomalyWindowSensitivityEnum>(const <AnomalyWindowSensitivityEnum>[
-  _$anomalyWindowSensitivityEnum_low,
-  _$anomalyWindowSensitivityEnum_medium,
-  _$anomalyWindowSensitivityEnum_high,
-]);
+      _$anomalyWindowSensitivityEnum_low,
+      _$anomalyWindowSensitivityEnum_medium,
+      _$anomalyWindowSensitivityEnum_high,
+    ]);
 
 Serializer<AnomalyWindowBucketEnum> _$anomalyWindowBucketEnumSerializer =
     _$AnomalyWindowBucketEnumSerializer();
@@ -113,7 +114,7 @@ Serializer<AnomalyWindowSlotModeEnum> _$anomalyWindowSlotModeEnumSerializer =
 Serializer<AnomalyWindowDirectionEnum> _$anomalyWindowDirectionEnumSerializer =
     _$AnomalyWindowDirectionEnumSerializer();
 Serializer<AnomalyWindowSensitivityEnum>
-    _$anomalyWindowSensitivityEnumSerializer =
+_$anomalyWindowSensitivityEnumSerializer =
     _$AnomalyWindowSensitivityEnumSerializer();
 
 class _$AnomalyWindowBucketEnumSerializer
@@ -133,16 +134,20 @@ class _$AnomalyWindowBucketEnumSerializer
   final String wireName = 'AnomalyWindowBucketEnum';
 
   @override
-  Object serialize(Serializers serializers, AnomalyWindowBucketEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyWindowBucketEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyWindowBucketEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyWindowBucketEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyWindowBucketEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyWindowSlotModeEnumSerializer
@@ -162,16 +167,20 @@ class _$AnomalyWindowSlotModeEnumSerializer
   final String wireName = 'AnomalyWindowSlotModeEnum';
 
   @override
-  Object serialize(Serializers serializers, AnomalyWindowSlotModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyWindowSlotModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyWindowSlotModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyWindowSlotModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyWindowSlotModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyWindowDirectionEnumSerializer
@@ -193,16 +202,20 @@ class _$AnomalyWindowDirectionEnumSerializer
   final String wireName = 'AnomalyWindowDirectionEnum';
 
   @override
-  Object serialize(Serializers serializers, AnomalyWindowDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyWindowDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyWindowDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyWindowDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyWindowDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyWindowSensitivityEnumSerializer
@@ -224,16 +237,20 @@ class _$AnomalyWindowSensitivityEnumSerializer
   final String wireName = 'AnomalyWindowSensitivityEnum';
 
   @override
-  Object serialize(Serializers serializers, AnomalyWindowSensitivityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyWindowSensitivityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyWindowSensitivityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyWindowSensitivityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyWindowSensitivityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyWindow extends AnomalyWindow {
@@ -265,20 +282,20 @@ class _$AnomalyWindow extends AnomalyWindow {
   factory _$AnomalyWindow([void Function(AnomalyWindowBuilder)? updates]) =>
       (AnomalyWindowBuilder()..update(updates))._build();
 
-  _$AnomalyWindow._(
-      {required this.window,
-      this.step,
-      this.distinctBy,
-      this.groupBy,
-      this.maxGroups,
-      this.bucket,
-      this.slotMode,
-      this.direction,
-      this.sensitivity,
-      this.minAbsoluteDelta,
-      this.minWeeks,
-      this.coverageMin})
-      : super._();
+  _$AnomalyWindow._({
+    required this.window,
+    this.step,
+    this.distinctBy,
+    this.groupBy,
+    this.maxGroups,
+    this.bucket,
+    this.slotMode,
+    this.direction,
+    this.sensitivity,
+    this.minAbsoluteDelta,
+    this.minWeeks,
+    this.coverageMin,
+  }) : super._();
   @override
   AnomalyWindow rebuild(void Function(AnomalyWindowBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -436,10 +453,14 @@ class AnomalyWindowBuilder
   AnomalyWindow build() => _build();
 
   _$AnomalyWindow _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnomalyWindow._(
           window: BuiltValueNullFieldError.checkNotNull(
-              window, r'AnomalyWindow', 'window'),
+            window,
+            r'AnomalyWindow',
+            'window',
+          ),
           step: step,
           distinctBy: distinctBy,
           groupBy: groupBy,

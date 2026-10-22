@@ -19,8 +19,10 @@ part 'forecast_numeric_calibration_pit_bins_inner.g.dart';
 @BuiltValue()
 abstract class ForecastNumericCalibrationPitBinsInner
     implements
-        Built<ForecastNumericCalibrationPitBinsInner,
-            ForecastNumericCalibrationPitBinsInnerBuilder> {
+        Built<
+          ForecastNumericCalibrationPitBinsInner,
+          ForecastNumericCalibrationPitBinsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'lower')
   num? get lower;
 
@@ -39,9 +41,9 @@ abstract class ForecastNumericCalibrationPitBinsInner
 
   ForecastNumericCalibrationPitBinsInner._();
 
-  factory ForecastNumericCalibrationPitBinsInner(
-          [void updates(ForecastNumericCalibrationPitBinsInnerBuilder b)]) =
-      _$ForecastNumericCalibrationPitBinsInner;
+  factory ForecastNumericCalibrationPitBinsInner([
+    void updates(ForecastNumericCalibrationPitBinsInnerBuilder b),
+  ]) = _$ForecastNumericCalibrationPitBinsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastNumericCalibrationPitBinsInnerBuilder b) => b;
@@ -56,7 +58,7 @@ class _$ForecastNumericCalibrationPitBinsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ForecastNumericCalibrationPitBinsInner,
-    _$ForecastNumericCalibrationPitBinsInner
+    _$ForecastNumericCalibrationPitBinsInner,
   ];
 
   @override
@@ -110,9 +112,11 @@ class _$ForecastNumericCalibrationPitBinsInnerSerializer
     ForecastNumericCalibrationPitBinsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -128,42 +132,52 @@ class _$ForecastNumericCalibrationPitBinsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lower':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lower = valueDes;
           break;
         case r'upper':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.upper = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.count = valueDes;
           break;
         case r'frequency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.frequency = valueDes;
           break;
         case r'expected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.expected = valueDes;
           break;

@@ -16,20 +16,20 @@ class _$RegionalIndexDefFloorsInner extends RegionalIndexDefFloorsInner {
   @override
   final num minValue;
 
-  factory _$RegionalIndexDefFloorsInner(
-          [void Function(RegionalIndexDefFloorsInnerBuilder)? updates]) =>
-      (RegionalIndexDefFloorsInnerBuilder()..update(updates))._build();
+  factory _$RegionalIndexDefFloorsInner([
+    void Function(RegionalIndexDefFloorsInnerBuilder)? updates,
+  ]) => (RegionalIndexDefFloorsInnerBuilder()..update(updates))._build();
 
-  _$RegionalIndexDefFloorsInner._(
-      {this.id,
-      required this.description,
-      this.condition,
-      required this.minValue})
-      : super._();
+  _$RegionalIndexDefFloorsInner._({
+    this.id,
+    required this.description,
+    this.condition,
+    required this.minValue,
+  }) : super._();
   @override
   RegionalIndexDefFloorsInner rebuild(
-          void Function(RegionalIndexDefFloorsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexDefFloorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexDefFloorsInnerBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$RegionalIndexDefFloorsInner extends RegionalIndexDefFloorsInner {
 
 class RegionalIndexDefFloorsInnerBuilder
     implements
-        Builder<RegionalIndexDefFloorsInner,
-            RegionalIndexDefFloorsInnerBuilder> {
+        Builder<
+          RegionalIndexDefFloorsInner,
+          RegionalIndexDefFloorsInnerBuilder
+        > {
   _$RegionalIndexDefFloorsInner? _$v;
 
   String? _id;
@@ -123,14 +125,21 @@ class RegionalIndexDefFloorsInnerBuilder
   _$RegionalIndexDefFloorsInner _build() {
     _$RegionalIndexDefFloorsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalIndexDefFloorsInner._(
             id: id,
             description: BuiltValueNullFieldError.checkNotNull(
-                description, r'RegionalIndexDefFloorsInner', 'description'),
+              description,
+              r'RegionalIndexDefFloorsInner',
+              'description',
+            ),
             condition: _condition?.build(),
             minValue: BuiltValueNullFieldError.checkNotNull(
-                minValue, r'RegionalIndexDefFloorsInner', 'minValue'),
+              minValue,
+              r'RegionalIndexDefFloorsInner',
+              'minValue',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -139,7 +148,10 @@ class RegionalIndexDefFloorsInnerBuilder
         _condition?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalIndexDefFloorsInner', _$failedField, e.toString());
+          r'RegionalIndexDefFloorsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

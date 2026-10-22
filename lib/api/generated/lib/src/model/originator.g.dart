@@ -48,15 +48,15 @@ OriginatorClass_Enum _$originatorClassEnumValueOf(String name) {
 
 final BuiltSet<OriginatorClass_Enum> _$originatorClassEnumValues =
     BuiltSet<OriginatorClass_Enum>(const <OriginatorClass_Enum>[
-  _$originatorClassEnum_sensorNetwork,
-  _$originatorClassEnum_agency,
-  _$originatorClassEnum_aggregator,
-  _$originatorClassEnum_media,
-  _$originatorClassEnum_crowd,
-  _$originatorClassEnum_operator_,
-  _$originatorClassEnum_derived,
-  _$originatorClassEnum_social,
-]);
+      _$originatorClassEnum_sensorNetwork,
+      _$originatorClassEnum_agency,
+      _$originatorClassEnum_aggregator,
+      _$originatorClassEnum_media,
+      _$originatorClassEnum_crowd,
+      _$originatorClassEnum_operator_,
+      _$originatorClassEnum_derived,
+      _$originatorClassEnum_social,
+    ]);
 
 Serializer<OriginatorClass_Enum> _$originatorClassEnumSerializer =
     _$OriginatorClass_EnumSerializer();
@@ -90,15 +90,20 @@ class _$OriginatorClass_EnumSerializer
   final String wireName = 'OriginatorClass_Enum';
 
   @override
-  Object serialize(Serializers serializers, OriginatorClass_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OriginatorClass_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  OriginatorClass_Enum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OriginatorClass_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  OriginatorClass_Enum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OriginatorClass_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Originator extends Originator {
@@ -116,13 +121,13 @@ class _$Originator extends Originator {
   factory _$Originator([void Function(OriginatorBuilder)? updates]) =>
       (OriginatorBuilder()..update(updates))._build();
 
-  _$Originator._(
-      {required this.id,
-      required this.class_,
-      this.independenceGroup,
-      this.aggregates,
-      this.notes})
-      : super._();
+  _$Originator._({
+    required this.id,
+    required this.class_,
+    this.independenceGroup,
+    this.aggregates,
+    this.notes,
+  }) : super._();
   @override
   Originator rebuild(void Function(OriginatorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -224,11 +229,15 @@ class OriginatorBuilder implements Builder<Originator, OriginatorBuilder> {
   _$Originator _build() {
     _$Originator _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Originator._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Originator', 'id'),
             class_: BuiltValueNullFieldError.checkNotNull(
-                class_, r'Originator', 'class_'),
+              class_,
+              r'Originator',
+              'class_',
+            ),
             independenceGroup: independenceGroup,
             aggregates: _aggregates?.build(),
             notes: notes,
@@ -240,7 +249,10 @@ class OriginatorBuilder implements Builder<Originator, OriginatorBuilder> {
         _aggregates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Originator', _$failedField, e.toString());
+          r'Originator',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

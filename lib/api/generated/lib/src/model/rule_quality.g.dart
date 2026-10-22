@@ -14,7 +14,8 @@ const RuleQualityFeedbackMappingEnum _$ruleQualityFeedbackMappingEnum_neutral =
     const RuleQualityFeedbackMappingEnum._('neutral');
 
 RuleQualityFeedbackMappingEnum _$ruleQualityFeedbackMappingEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'positive':
       return _$ruleQualityFeedbackMappingEnum_positive;
@@ -28,15 +29,17 @@ RuleQualityFeedbackMappingEnum _$ruleQualityFeedbackMappingEnumValueOf(
 }
 
 final BuiltSet<RuleQualityFeedbackMappingEnum>
-    _$ruleQualityFeedbackMappingEnumValues = BuiltSet<
-        RuleQualityFeedbackMappingEnum>(const <RuleQualityFeedbackMappingEnum>[
-  _$ruleQualityFeedbackMappingEnum_positive,
-  _$ruleQualityFeedbackMappingEnum_negative,
-  _$ruleQualityFeedbackMappingEnum_neutral,
-]);
+_$ruleQualityFeedbackMappingEnumValues =
+    BuiltSet<RuleQualityFeedbackMappingEnum>(
+      const <RuleQualityFeedbackMappingEnum>[
+        _$ruleQualityFeedbackMappingEnum_positive,
+        _$ruleQualityFeedbackMappingEnum_negative,
+        _$ruleQualityFeedbackMappingEnum_neutral,
+      ],
+    );
 
 Serializer<RuleQualityFeedbackMappingEnum>
-    _$ruleQualityFeedbackMappingEnumSerializer =
+_$ruleQualityFeedbackMappingEnumSerializer =
     _$RuleQualityFeedbackMappingEnumSerializer();
 
 class _$RuleQualityFeedbackMappingEnumSerializer
@@ -59,16 +62,19 @@ class _$RuleQualityFeedbackMappingEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, RuleQualityFeedbackMappingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RuleQualityFeedbackMappingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RuleQualityFeedbackMappingEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RuleQualityFeedbackMappingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RuleQualityFeedbackMappingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RuleQuality extends RuleQuality {
@@ -118,29 +124,29 @@ class _$RuleQuality extends RuleQuality {
   factory _$RuleQuality([void Function(RuleQualityBuilder)? updates]) =>
       (RuleQualityBuilder()..update(updates))._build();
 
-  _$RuleQuality._(
-      {required this.ruleId,
-      required this.since,
-      required this.alerts,
-      required this.labelled,
-      this.labelledShare,
-      required this.positive,
-      required this.negative,
-      required this.neutral,
-      this.precision,
-      this.precisionCi,
-      this.medianTimeToAck,
-      this.medianTimeToResolve,
-      this.flapping,
-      this.duplicates,
-      this.severityDistribution,
-      this.feedbackMapping,
-      this.caveats,
-      this.signals,
-      this.signalScore,
-      this.daily,
-      this.signalWeights})
-      : super._();
+  _$RuleQuality._({
+    required this.ruleId,
+    required this.since,
+    required this.alerts,
+    required this.labelled,
+    this.labelledShare,
+    required this.positive,
+    required this.negative,
+    required this.neutral,
+    this.precision,
+    this.precisionCi,
+    this.medianTimeToAck,
+    this.medianTimeToResolve,
+    this.flapping,
+    this.duplicates,
+    this.severityDistribution,
+    this.feedbackMapping,
+    this.caveats,
+    this.signals,
+    this.signalScore,
+    this.daily,
+    this.signalWeights,
+  }) : super._();
   @override
   RuleQuality rebuild(void Function(RuleQualityBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -306,9 +312,8 @@ class RuleQualityBuilder implements Builder<RuleQuality, RuleQualityBuilder> {
       _$this._feedbackMapping ??=
           MapBuilder<String, RuleQualityFeedbackMappingEnum>();
   set feedbackMapping(
-          MapBuilder<String, RuleQualityFeedbackMappingEnum>?
-              feedbackMapping) =>
-      _$this._feedbackMapping = feedbackMapping;
+    MapBuilder<String, RuleQualityFeedbackMappingEnum>? feedbackMapping,
+  ) => _$this._feedbackMapping = feedbackMapping;
 
   ListBuilder<Caveat>? _caveats;
   ListBuilder<Caveat> get caveats => _$this._caveats ??= ListBuilder<Caveat>();
@@ -383,23 +388,45 @@ class RuleQualityBuilder implements Builder<RuleQuality, RuleQualityBuilder> {
   _$RuleQuality _build() {
     _$RuleQuality _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RuleQuality._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'RuleQuality', 'ruleId'),
+              ruleId,
+              r'RuleQuality',
+              'ruleId',
+            ),
             since: BuiltValueNullFieldError.checkNotNull(
-                since, r'RuleQuality', 'since'),
+              since,
+              r'RuleQuality',
+              'since',
+            ),
             alerts: BuiltValueNullFieldError.checkNotNull(
-                alerts, r'RuleQuality', 'alerts'),
+              alerts,
+              r'RuleQuality',
+              'alerts',
+            ),
             labelled: BuiltValueNullFieldError.checkNotNull(
-                labelled, r'RuleQuality', 'labelled'),
+              labelled,
+              r'RuleQuality',
+              'labelled',
+            ),
             labelledShare: labelledShare,
             positive: BuiltValueNullFieldError.checkNotNull(
-                positive, r'RuleQuality', 'positive'),
+              positive,
+              r'RuleQuality',
+              'positive',
+            ),
             negative: BuiltValueNullFieldError.checkNotNull(
-                negative, r'RuleQuality', 'negative'),
+              negative,
+              r'RuleQuality',
+              'negative',
+            ),
             neutral: BuiltValueNullFieldError.checkNotNull(
-                neutral, r'RuleQuality', 'neutral'),
+              neutral,
+              r'RuleQuality',
+              'neutral',
+            ),
             precision: precision,
             precisionCi: _precisionCi?.build(),
             medianTimeToAck: medianTimeToAck,
@@ -435,7 +462,10 @@ class RuleQualityBuilder implements Builder<RuleQuality, RuleQualityBuilder> {
         _signalWeights?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RuleQuality', _$failedField, e.toString());
+          r'RuleQuality',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

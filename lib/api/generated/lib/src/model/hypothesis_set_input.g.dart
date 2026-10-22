@@ -24,9 +24,9 @@ HypothesisSetInputKindEnum _$hypothesisSetInputKindEnumValueOf(String name) {
 
 final BuiltSet<HypothesisSetInputKindEnum> _$hypothesisSetInputKindEnumValues =
     BuiltSet<HypothesisSetInputKindEnum>(const <HypothesisSetInputKindEnum>[
-  _$hypothesisSetInputKindEnum_exclusive,
-  _$hypothesisSetInputKindEnum_independent,
-]);
+      _$hypothesisSetInputKindEnum_exclusive,
+      _$hypothesisSetInputKindEnum_independent,
+    ]);
 
 const HypothesisSetInputCadenceEnum _$hypothesisSetInputCadenceEnum_daily =
     const HypothesisSetInputCadenceEnum._('daily');
@@ -36,7 +36,8 @@ const HypothesisSetInputCadenceEnum _$hypothesisSetInputCadenceEnum_monthly =
     const HypothesisSetInputCadenceEnum._('monthly');
 
 HypothesisSetInputCadenceEnum _$hypothesisSetInputCadenceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'daily':
       return _$hypothesisSetInputCadenceEnum_daily;
@@ -50,17 +51,18 @@ HypothesisSetInputCadenceEnum _$hypothesisSetInputCadenceEnumValueOf(
 }
 
 final BuiltSet<HypothesisSetInputCadenceEnum>
-    _$hypothesisSetInputCadenceEnumValues = BuiltSet<
-        HypothesisSetInputCadenceEnum>(const <HypothesisSetInputCadenceEnum>[
-  _$hypothesisSetInputCadenceEnum_daily,
-  _$hypothesisSetInputCadenceEnum_weekly,
-  _$hypothesisSetInputCadenceEnum_monthly,
-]);
+_$hypothesisSetInputCadenceEnumValues = BuiltSet<HypothesisSetInputCadenceEnum>(
+  const <HypothesisSetInputCadenceEnum>[
+    _$hypothesisSetInputCadenceEnum_daily,
+    _$hypothesisSetInputCadenceEnum_weekly,
+    _$hypothesisSetInputCadenceEnum_monthly,
+  ],
+);
 
 Serializer<HypothesisSetInputKindEnum> _$hypothesisSetInputKindEnumSerializer =
     _$HypothesisSetInputKindEnumSerializer();
 Serializer<HypothesisSetInputCadenceEnum>
-    _$hypothesisSetInputCadenceEnumSerializer =
+_$hypothesisSetInputCadenceEnumSerializer =
     _$HypothesisSetInputCadenceEnumSerializer();
 
 class _$HypothesisSetInputKindEnumSerializer
@@ -80,16 +82,20 @@ class _$HypothesisSetInputKindEnumSerializer
   final String wireName = 'HypothesisSetInputKindEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetInputKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetInputKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetInputKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetInputKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetInputKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetInputCadenceEnumSerializer
@@ -112,16 +118,19 @@ class _$HypothesisSetInputCadenceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HypothesisSetInputCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HypothesisSetInputCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetInputCadenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetInputCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetInputCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetInput extends HypothesisSetInput {
@@ -156,31 +165,31 @@ class _$HypothesisSetInput extends HypothesisSetInput {
   @override
   final String? proposalId;
 
-  factory _$HypothesisSetInput(
-          [void Function(HypothesisSetInputBuilder)? updates]) =>
-      (HypothesisSetInputBuilder()..update(updates))._build();
+  factory _$HypothesisSetInput([
+    void Function(HypothesisSetInputBuilder)? updates,
+  ]) => (HypothesisSetInputBuilder()..update(updates))._build();
 
-  _$HypothesisSetInput._(
-      {required this.question,
-      this.description,
-      required this.kind,
-      required this.cadence,
-      this.horizon,
-      this.situationId,
-      this.questionId,
-      this.regionCodes,
-      this.themes,
-      this.private,
-      required this.hypotheses,
-      this.indicators,
-      this.assumptions,
-      this.ledgerQuestion,
-      this.proposalId})
-      : super._();
+  _$HypothesisSetInput._({
+    required this.question,
+    this.description,
+    required this.kind,
+    required this.cadence,
+    this.horizon,
+    this.situationId,
+    this.questionId,
+    this.regionCodes,
+    this.themes,
+    this.private,
+    required this.hypotheses,
+    this.indicators,
+    this.assumptions,
+    this.ledgerQuestion,
+    this.proposalId,
+  }) : super._();
   @override
   HypothesisSetInput rebuild(
-          void Function(HypothesisSetInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetInputBuilder toBuilder() =>
@@ -369,15 +378,25 @@ class HypothesisSetInputBuilder
   _$HypothesisSetInput _build() {
     _$HypothesisSetInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisSetInput._(
             question: BuiltValueNullFieldError.checkNotNull(
-                question, r'HypothesisSetInput', 'question'),
+              question,
+              r'HypothesisSetInput',
+              'question',
+            ),
             description: description,
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'HypothesisSetInput', 'kind'),
+              kind,
+              r'HypothesisSetInput',
+              'kind',
+            ),
             cadence: BuiltValueNullFieldError.checkNotNull(
-                cadence, r'HypothesisSetInput', 'cadence'),
+              cadence,
+              r'HypothesisSetInput',
+              'cadence',
+            ),
             horizon: horizon,
             situationId: situationId,
             questionId: questionId,
@@ -408,7 +427,10 @@ class HypothesisSetInputBuilder
         _ledgerQuestion?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisSetInput', _$failedField, e.toString());
+          r'HypothesisSetInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

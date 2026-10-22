@@ -12,15 +12,15 @@ class _$CanonicalEventPage extends CanonicalEventPage {
   @override
   final String? nextCursor;
 
-  factory _$CanonicalEventPage(
-          [void Function(CanonicalEventPageBuilder)? updates]) =>
-      (CanonicalEventPageBuilder()..update(updates))._build();
+  factory _$CanonicalEventPage([
+    void Function(CanonicalEventPageBuilder)? updates,
+  ]) => (CanonicalEventPageBuilder()..update(updates))._build();
 
   _$CanonicalEventPage._({required this.items, this.nextCursor}) : super._();
   @override
   CanonicalEventPage rebuild(
-          void Function(CanonicalEventPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CanonicalEventPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CanonicalEventPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class CanonicalEventPageBuilder
   _$CanonicalEventPage _build() {
     _$CanonicalEventPage _$result;
     try {
-      _$result = _$v ??
-          _$CanonicalEventPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$CanonicalEventPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class CanonicalEventPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CanonicalEventPage', _$failedField, e.toString());
+          r'CanonicalEventPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

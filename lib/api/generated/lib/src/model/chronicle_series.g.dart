@@ -23,14 +23,14 @@ class _$ChronicleSeries extends ChronicleSeries {
   factory _$ChronicleSeries([void Function(ChronicleSeriesBuilder)? updates]) =>
       (ChronicleSeriesBuilder()..update(updates))._build();
 
-  _$ChronicleSeries._(
-      {required this.chronicleId,
-      required this.ref,
-      this.from,
-      this.to,
-      required this.points,
-      this.backfilled})
-      : super._();
+  _$ChronicleSeries._({
+    required this.chronicleId,
+    required this.ref,
+    this.from,
+    this.to,
+    required this.points,
+    this.backfilled,
+  }) : super._();
   @override
   ChronicleSeries rebuild(void Function(ChronicleSeriesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -139,12 +139,19 @@ class ChronicleSeriesBuilder
   _$ChronicleSeries _build() {
     _$ChronicleSeries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSeries._(
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleSeries', 'chronicleId'),
+              chronicleId,
+              r'ChronicleSeries',
+              'chronicleId',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'ChronicleSeries', 'ref'),
+              ref,
+              r'ChronicleSeries',
+              'ref',
+            ),
             from: from,
             to: to,
             points: points.build(),
@@ -157,7 +164,10 @@ class ChronicleSeriesBuilder
         points.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSeries', _$failedField, e.toString());
+          r'ChronicleSeries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

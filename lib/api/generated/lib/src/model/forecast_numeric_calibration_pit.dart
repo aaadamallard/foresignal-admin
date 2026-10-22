@@ -18,8 +18,10 @@ part 'forecast_numeric_calibration_pit.g.dart';
 @BuiltValue()
 abstract class ForecastNumericCalibrationPit
     implements
-        Built<ForecastNumericCalibrationPit,
-            ForecastNumericCalibrationPitBuilder> {
+        Built<
+          ForecastNumericCalibrationPit,
+          ForecastNumericCalibrationPitBuilder
+        > {
   @BuiltValueField(wireName: r'n')
   int? get n;
 
@@ -28,9 +30,9 @@ abstract class ForecastNumericCalibrationPit
 
   ForecastNumericCalibrationPit._();
 
-  factory ForecastNumericCalibrationPit(
-          [void updates(ForecastNumericCalibrationPitBuilder b)]) =
-      _$ForecastNumericCalibrationPit;
+  factory ForecastNumericCalibrationPit([
+    void updates(ForecastNumericCalibrationPitBuilder b),
+  ]) = _$ForecastNumericCalibrationPit;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastNumericCalibrationPitBuilder b) => b;
@@ -45,7 +47,7 @@ class _$ForecastNumericCalibrationPitSerializer
   @override
   final Iterable<Type> types = const [
     ForecastNumericCalibrationPit,
-    _$ForecastNumericCalibrationPit
+    _$ForecastNumericCalibrationPit,
   ];
 
   @override
@@ -58,17 +60,15 @@ class _$ForecastNumericCalibrationPitSerializer
   }) sync* {
     if (object.n != null) {
       yield r'n';
-      yield serializers.serialize(
-        object.n,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.n, specifiedType: const FullType(int));
     }
     if (object.bins != null) {
       yield r'bins';
       yield serializers.serialize(
         object.bins,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ForecastNumericCalibrationPitBinsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ForecastNumericCalibrationPitBinsInner),
+        ]),
       );
     }
   }
@@ -79,9 +79,11 @@ class _$ForecastNumericCalibrationPitSerializer
     ForecastNumericCalibrationPit object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,19 +99,24 @@ class _$ForecastNumericCalibrationPitSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n = valueDes;
           break;
         case r'bins':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ForecastNumericCalibrationPitBinsInner)]),
-          ) as BuiltList<ForecastNumericCalibrationPitBinsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ForecastNumericCalibrationPitBinsInner),
+                    ]),
+                  )
+                  as BuiltList<ForecastNumericCalibrationPitBinsInner>?;
           if (valueDes == null) continue;
           result.bins.replace(valueDes);
           break;

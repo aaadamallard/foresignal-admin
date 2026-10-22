@@ -29,17 +29,17 @@ class _$RegionTags extends RegionTags {
   factory _$RegionTags([void Function(RegionTagsBuilder)? updates]) =>
       (RegionTagsBuilder()..update(updates))._build();
 
-  _$RegionTags._(
-      {this.iso2,
-      this.admin1,
-      this.admin2,
-      this.sea,
-      this.near,
-      this.countryName,
-      this.admin1Name,
-      this.countyName,
-      this.attribution})
-      : super._();
+  _$RegionTags._({
+    this.iso2,
+    this.admin1,
+    this.admin2,
+    this.sea,
+    this.near,
+    this.countryName,
+    this.admin1Name,
+    this.countyName,
+    this.attribution,
+  }) : super._();
   @override
   RegionTags rebuild(void Function(RegionTagsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -170,7 +170,8 @@ class RegionTagsBuilder implements Builder<RegionTags, RegionTagsBuilder> {
   _$RegionTags _build() {
     _$RegionTags _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionTags._(
             iso2: iso2,
             admin1: admin1,
@@ -189,7 +190,10 @@ class RegionTagsBuilder implements Builder<RegionTags, RegionTagsBuilder> {
         _near?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionTags', _$failedField, e.toString());
+          r'RegionTags',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

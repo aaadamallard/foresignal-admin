@@ -36,9 +36,9 @@ abstract class AskThreadPageItemsInner
 
   AskThreadPageItemsInner._();
 
-  factory AskThreadPageItemsInner(
-          [void updates(AskThreadPageItemsInnerBuilder b)]) =
-      _$AskThreadPageItemsInner;
+  factory AskThreadPageItemsInner([
+    void updates(AskThreadPageItemsInnerBuilder b),
+  ]) = _$AskThreadPageItemsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AskThreadPageItemsInnerBuilder b) => b;
@@ -53,7 +53,7 @@ class _$AskThreadPageItemsInnerSerializer
   @override
   final Iterable<Type> types = const [
     AskThreadPageItemsInner,
-    _$AskThreadPageItemsInner
+    _$AskThreadPageItemsInner,
   ];
 
   @override
@@ -107,9 +107,11 @@ class _$AskThreadPageItemsInnerSerializer
     AskThreadPageItemsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,42 +127,52 @@ class _$AskThreadPageItemsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;
         case r'messageCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.messageCount = valueDes;
           break;

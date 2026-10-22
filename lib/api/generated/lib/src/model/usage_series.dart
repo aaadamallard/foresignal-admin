@@ -85,9 +85,11 @@ class _$UsageSeriesSerializer implements PrimitiveSerializer<UsageSeries> {
     UsageSeries object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,31 +105,41 @@ class _$UsageSeriesSerializer implements PrimitiveSerializer<UsageSeries> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'resolution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UsageSeriesResolutionEnum),
-          ) as UsageSeriesResolutionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(UsageSeriesResolutionEnum),
+                  )
+                  as UsageSeriesResolutionEnum;
           result.resolution = valueDes;
           break;
         case r'points':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(UsagePoint)]),
-          ) as BuiltList<UsagePoint>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UsagePoint),
+                    ]),
+                  )
+                  as BuiltList<UsagePoint>;
           result.points.replace(valueDes);
           break;
         case r'totals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(UsagePoint),
-          ) as UsagePoint?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(UsagePoint),
+                  )
+                  as UsagePoint?;
           if (valueDes == null) continue;
           result.totals.replace(valueDes);
           break;

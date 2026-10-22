@@ -24,9 +24,9 @@ OgcTileMatrixSetIdEnum _$ogcTileMatrixSetIdEnumValueOf(String name) {
 
 final BuiltSet<OgcTileMatrixSetIdEnum> _$ogcTileMatrixSetIdEnumValues =
     BuiltSet<OgcTileMatrixSetIdEnum>(const <OgcTileMatrixSetIdEnum>[
-  _$ogcTileMatrixSetIdEnum_webMercatorQuad,
-  _$ogcTileMatrixSetIdEnum_worldCRS84Quad,
-]);
+      _$ogcTileMatrixSetIdEnum_webMercatorQuad,
+      _$ogcTileMatrixSetIdEnum_worldCRS84Quad,
+    ]);
 
 Serializer<OgcTileMatrixSetIdEnum> _$ogcTileMatrixSetIdEnumSerializer =
     _$OgcTileMatrixSetIdEnumSerializer();
@@ -48,15 +48,20 @@ class _$OgcTileMatrixSetIdEnumSerializer
   final String wireName = 'OgcTileMatrixSetIdEnum';
 
   @override
-  Object serialize(Serializers serializers, OgcTileMatrixSetIdEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcTileMatrixSetIdEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  OgcTileMatrixSetIdEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcTileMatrixSetIdEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  OgcTileMatrixSetIdEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcTileMatrixSetIdEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcTileMatrixSet extends OgcTileMatrixSet {
@@ -75,19 +80,19 @@ class _$OgcTileMatrixSet extends OgcTileMatrixSet {
   @override
   final BuiltList<OgcTileMatrixSetTileMatricesInner> tileMatrices;
 
-  factory _$OgcTileMatrixSet(
-          [void Function(OgcTileMatrixSetBuilder)? updates]) =>
-      (OgcTileMatrixSetBuilder()..update(updates))._build();
+  factory _$OgcTileMatrixSet([
+    void Function(OgcTileMatrixSetBuilder)? updates,
+  ]) => (OgcTileMatrixSetBuilder()..update(updates))._build();
 
-  _$OgcTileMatrixSet._(
-      {required this.id,
-      this.title,
-      this.uri,
-      required this.crs,
-      this.orderedAxes,
-      this.wellKnownScaleSet,
-      required this.tileMatrices})
-      : super._();
+  _$OgcTileMatrixSet._({
+    required this.id,
+    this.title,
+    this.uri,
+    required this.crs,
+    this.orderedAxes,
+    this.wellKnownScaleSet,
+    required this.tileMatrices,
+  }) : super._();
   @override
   OgcTileMatrixSet rebuild(void Function(OgcTileMatrixSetBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -172,8 +177,8 @@ class OgcTileMatrixSetBuilder
   ListBuilder<OgcTileMatrixSetTileMatricesInner> get tileMatrices =>
       _$this._tileMatrices ??= ListBuilder<OgcTileMatrixSetTileMatricesInner>();
   set tileMatrices(
-          ListBuilder<OgcTileMatrixSetTileMatricesInner>? tileMatrices) =>
-      _$this._tileMatrices = tileMatrices;
+    ListBuilder<OgcTileMatrixSetTileMatricesInner>? tileMatrices,
+  ) => _$this._tileMatrices = tileMatrices;
 
   OgcTileMatrixSetBuilder() {
     OgcTileMatrixSet._defaults(this);
@@ -210,14 +215,21 @@ class OgcTileMatrixSetBuilder
   _$OgcTileMatrixSet _build() {
     _$OgcTileMatrixSet _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcTileMatrixSet._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'OgcTileMatrixSet', 'id'),
+              id,
+              r'OgcTileMatrixSet',
+              'id',
+            ),
             title: title,
             uri: uri,
             crs: BuiltValueNullFieldError.checkNotNull(
-                crs, r'OgcTileMatrixSet', 'crs'),
+              crs,
+              r'OgcTileMatrixSet',
+              'crs',
+            ),
             orderedAxes: _orderedAxes?.build(),
             wellKnownScaleSet: wellKnownScaleSet,
             tileMatrices: tileMatrices.build(),
@@ -232,7 +244,10 @@ class OgcTileMatrixSetBuilder
         tileMatrices.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcTileMatrixSet', _$failedField, e.toString());
+          r'OgcTileMatrixSet',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

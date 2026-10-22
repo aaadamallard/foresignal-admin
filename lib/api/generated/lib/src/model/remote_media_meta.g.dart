@@ -19,12 +19,12 @@ class _$RemoteMediaMeta extends RemoteMediaMeta {
   factory _$RemoteMediaMeta([void Function(RemoteMediaMetaBuilder)? updates]) =>
       (RemoteMediaMetaBuilder()..update(updates))._build();
 
-  _$RemoteMediaMeta._(
-      {this.passId,
-      required this.composite,
-      required this.timestamp,
-      required this.satellite})
-      : super._();
+  _$RemoteMediaMeta._({
+    this.passId,
+    required this.composite,
+    required this.timestamp,
+    required this.satellite,
+  }) : super._();
   @override
   RemoteMediaMeta rebuild(void Function(RemoteMediaMetaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,15 +114,25 @@ class RemoteMediaMetaBuilder
   RemoteMediaMeta build() => _build();
 
   _$RemoteMediaMeta _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RemoteMediaMeta._(
           passId: passId,
           composite: BuiltValueNullFieldError.checkNotNull(
-              composite, r'RemoteMediaMeta', 'composite'),
+            composite,
+            r'RemoteMediaMeta',
+            'composite',
+          ),
           timestamp: BuiltValueNullFieldError.checkNotNull(
-              timestamp, r'RemoteMediaMeta', 'timestamp'),
+            timestamp,
+            r'RemoteMediaMeta',
+            'timestamp',
+          ),
           satellite: BuiltValueNullFieldError.checkNotNull(
-              satellite, r'RemoteMediaMeta', 'satellite'),
+            satellite,
+            r'RemoteMediaMeta',
+            'satellite',
+          ),
         );
     replace(_$result);
     return _$result;

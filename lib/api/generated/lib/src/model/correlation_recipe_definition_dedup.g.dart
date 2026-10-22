@@ -13,16 +13,16 @@ class _$CorrelationRecipeDefinitionDedup
   @override
   final String? window;
 
-  factory _$CorrelationRecipeDefinitionDedup(
-          [void Function(CorrelationRecipeDefinitionDedupBuilder)? updates]) =>
-      (CorrelationRecipeDefinitionDedupBuilder()..update(updates))._build();
+  factory _$CorrelationRecipeDefinitionDedup([
+    void Function(CorrelationRecipeDefinitionDedupBuilder)? updates,
+  ]) => (CorrelationRecipeDefinitionDedupBuilder()..update(updates))._build();
 
   _$CorrelationRecipeDefinitionDedup._({this.radiusKm, this.window})
-      : super._();
+    : super._();
   @override
   CorrelationRecipeDefinitionDedup rebuild(
-          void Function(CorrelationRecipeDefinitionDedupBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeDefinitionDedupBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeDefinitionDedupBuilder toBuilder() =>
@@ -56,8 +56,10 @@ class _$CorrelationRecipeDefinitionDedup
 
 class CorrelationRecipeDefinitionDedupBuilder
     implements
-        Builder<CorrelationRecipeDefinitionDedup,
-            CorrelationRecipeDefinitionDedupBuilder> {
+        Builder<
+          CorrelationRecipeDefinitionDedup,
+          CorrelationRecipeDefinitionDedupBuilder
+        > {
   _$CorrelationRecipeDefinitionDedup? _$v;
 
   num? _radiusKm;
@@ -96,7 +98,8 @@ class CorrelationRecipeDefinitionDedupBuilder
   CorrelationRecipeDefinitionDedup build() => _build();
 
   _$CorrelationRecipeDefinitionDedup _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CorrelationRecipeDefinitionDedup._(
           radiusKm: radiusKm,
           window: window,

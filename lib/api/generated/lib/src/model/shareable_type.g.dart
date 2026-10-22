@@ -43,16 +43,16 @@ ShareableType _$valueOf(String name) {
 
 final BuiltSet<ShareableType> _$values =
     BuiltSet<ShareableType>(const <ShareableType>[
-  _$investigation,
-  _$workspace,
-  _$chronicle,
-  _$report,
-  _$savedSearch,
-  _$annotation,
-  _$attachment,
-  _$evidenceItem,
-  _$tag,
-]);
+      _$investigation,
+      _$workspace,
+      _$chronicle,
+      _$report,
+      _$savedSearch,
+      _$annotation,
+      _$attachment,
+      _$evidenceItem,
+      _$tag,
+    ]);
 
 class _$ShareableTypeMeta {
   const _$ShareableTypeMeta();
@@ -69,7 +69,7 @@ class _$ShareableTypeMeta {
   BuiltSet<ShareableType> get values => _$values;
 }
 
-abstract class _$ShareableTypeMixin {
+mixin _$ShareableTypeMixin {
   // ignore: non_constant_identifier_names
   _$ShareableTypeMeta get ShareableType => const _$ShareableTypeMeta();
 }
@@ -107,15 +107,20 @@ class _$ShareableTypeSerializer implements PrimitiveSerializer<ShareableType> {
   final String wireName = 'ShareableType';
 
   @override
-  Object serialize(Serializers serializers, ShareableType object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ShareableType object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ShareableType deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ShareableType.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ShareableType deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ShareableType.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

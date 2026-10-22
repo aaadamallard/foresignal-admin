@@ -28,10 +28,10 @@ InfraBuildStatusEnum _$infraBuildStatusEnumValueOf(String name) {
 
 final BuiltSet<InfraBuildStatusEnum> _$infraBuildStatusEnumValues =
     BuiltSet<InfraBuildStatusEnum>(const <InfraBuildStatusEnum>[
-  _$infraBuildStatusEnum_running,
-  _$infraBuildStatusEnum_done,
-  _$infraBuildStatusEnum_failed,
-]);
+      _$infraBuildStatusEnum_running,
+      _$infraBuildStatusEnum_done,
+      _$infraBuildStatusEnum_failed,
+    ]);
 
 Serializer<InfraBuildStatusEnum> _$infraBuildStatusEnumSerializer =
     _$InfraBuildStatusEnumSerializer();
@@ -55,15 +55,20 @@ class _$InfraBuildStatusEnumSerializer
   final String wireName = 'InfraBuildStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, InfraBuildStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraBuildStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  InfraBuildStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraBuildStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  InfraBuildStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraBuildStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraBuild extends InfraBuild {
@@ -91,18 +96,18 @@ class _$InfraBuild extends InfraBuild {
   factory _$InfraBuild([void Function(InfraBuildBuilder)? updates]) =>
       (InfraBuildBuilder()..update(updates))._build();
 
-  _$InfraBuild._(
-      {required this.id,
-      required this.status,
-      required this.startedAt,
-      this.finishedAt,
-      required this.rulesVersion,
-      this.inputs,
-      this.nodes,
-      this.edgesByMethod,
-      this.edgesByLabel,
-      this.warnings})
-      : super._();
+  _$InfraBuild._({
+    required this.id,
+    required this.status,
+    required this.startedAt,
+    this.finishedAt,
+    required this.rulesVersion,
+    this.inputs,
+    this.nodes,
+    this.edgesByMethod,
+    this.edgesByLabel,
+    this.warnings,
+  }) : super._();
   @override
   InfraBuild rebuild(void Function(InfraBuildBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -247,16 +252,26 @@ class InfraBuildBuilder implements Builder<InfraBuild, InfraBuildBuilder> {
   _$InfraBuild _build() {
     _$InfraBuild _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraBuild._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'InfraBuild', 'id'),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'InfraBuild', 'status'),
+              status,
+              r'InfraBuild',
+              'status',
+            ),
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'InfraBuild', 'startedAt'),
+              startedAt,
+              r'InfraBuild',
+              'startedAt',
+            ),
             finishedAt: finishedAt,
             rulesVersion: BuiltValueNullFieldError.checkNotNull(
-                rulesVersion, r'InfraBuild', 'rulesVersion'),
+              rulesVersion,
+              r'InfraBuild',
+              'rulesVersion',
+            ),
             inputs: _inputs?.build(),
             nodes: nodes,
             edgesByMethod: _edgesByMethod?.build(),
@@ -277,7 +292,10 @@ class InfraBuildBuilder implements Builder<InfraBuild, InfraBuildBuilder> {
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraBuild', _$failedField, e.toString());
+          r'InfraBuild',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

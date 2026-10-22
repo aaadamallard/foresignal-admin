@@ -22,9 +22,9 @@ abstract class StormTrackPayloadTrend
 
   StormTrackPayloadTrend._();
 
-  factory StormTrackPayloadTrend(
-          [void updates(StormTrackPayloadTrendBuilder b)]) =
-      _$StormTrackPayloadTrend;
+  factory StormTrackPayloadTrend([
+    void updates(StormTrackPayloadTrendBuilder b),
+  ]) = _$StormTrackPayloadTrend;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StormTrackPayloadTrendBuilder b) => b;
@@ -39,7 +39,7 @@ class _$StormTrackPayloadTrendSerializer
   @override
   final Iterable<Type> types = const [
     StormTrackPayloadTrend,
-    _$StormTrackPayloadTrend
+    _$StormTrackPayloadTrend,
   ];
 
   @override
@@ -65,9 +65,11 @@ class _$StormTrackPayloadTrendSerializer
     StormTrackPayloadTrend object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,11 +85,14 @@ class _$StormTrackPayloadTrendSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'maxDbz':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(StormTrackPayloadTrendMaxDbzEnum),
-          ) as StormTrackPayloadTrendMaxDbzEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StormTrackPayloadTrendMaxDbzEnum,
+                    ),
+                  )
+                  as StormTrackPayloadTrendMaxDbzEnum?;
           if (valueDes == null) continue;
           result.maxDbz = valueDes;
           break;

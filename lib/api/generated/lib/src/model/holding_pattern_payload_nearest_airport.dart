@@ -17,8 +17,10 @@ part 'holding_pattern_payload_nearest_airport.g.dart';
 @BuiltValue()
 abstract class HoldingPatternPayloadNearestAirport
     implements
-        Built<HoldingPatternPayloadNearestAirport,
-            HoldingPatternPayloadNearestAirportBuilder> {
+        Built<
+          HoldingPatternPayloadNearestAirport,
+          HoldingPatternPayloadNearestAirportBuilder
+        > {
   @BuiltValueField(wireName: r'ident')
   String get ident;
 
@@ -30,9 +32,9 @@ abstract class HoldingPatternPayloadNearestAirport
 
   HoldingPatternPayloadNearestAirport._();
 
-  factory HoldingPatternPayloadNearestAirport(
-          [void updates(HoldingPatternPayloadNearestAirportBuilder b)]) =
-      _$HoldingPatternPayloadNearestAirport;
+  factory HoldingPatternPayloadNearestAirport([
+    void updates(HoldingPatternPayloadNearestAirportBuilder b),
+  ]) = _$HoldingPatternPayloadNearestAirport;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HoldingPatternPayloadNearestAirportBuilder b) => b;
@@ -47,7 +49,7 @@ class _$HoldingPatternPayloadNearestAirportSerializer
   @override
   final Iterable<Type> types = const [
     HoldingPatternPayloadNearestAirport,
-    _$HoldingPatternPayloadNearestAirport
+    _$HoldingPatternPayloadNearestAirport,
   ];
 
   @override
@@ -85,9 +87,11 @@ class _$HoldingPatternPayloadNearestAirportSerializer
     HoldingPatternPayloadNearestAirport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,25 +107,31 @@ class _$HoldingPatternPayloadNearestAirportSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ident':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ident = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;

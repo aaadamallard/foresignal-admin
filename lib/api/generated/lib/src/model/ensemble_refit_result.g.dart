@@ -16,20 +16,20 @@ class _$EnsembleRefitResult extends EnsembleRefitResult {
   @override
   final BuiltList<EnsembleRefitResultWeightsInner> weights;
 
-  factory _$EnsembleRefitResult(
-          [void Function(EnsembleRefitResultBuilder)? updates]) =>
-      (EnsembleRefitResultBuilder()..update(updates))._build();
+  factory _$EnsembleRefitResult([
+    void Function(EnsembleRefitResultBuilder)? updates,
+  ]) => (EnsembleRefitResultBuilder()..update(updates))._build();
 
-  _$EnsembleRefitResult._(
-      {required this.fittedAt,
-      required this.extremizing,
-      required this.platt,
-      required this.weights})
-      : super._();
+  _$EnsembleRefitResult._({
+    required this.fittedAt,
+    required this.extremizing,
+    required this.platt,
+    required this.weights,
+  }) : super._();
   @override
   EnsembleRefitResult rebuild(
-          void Function(EnsembleRefitResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EnsembleRefitResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EnsembleRefitResultBuilder toBuilder() =>
@@ -125,10 +125,14 @@ class EnsembleRefitResultBuilder
   _$EnsembleRefitResult _build() {
     _$EnsembleRefitResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EnsembleRefitResult._(
             fittedAt: BuiltValueNullFieldError.checkNotNull(
-                fittedAt, r'EnsembleRefitResult', 'fittedAt'),
+              fittedAt,
+              r'EnsembleRefitResult',
+              'fittedAt',
+            ),
             extremizing: extremizing.build(),
             platt: platt.build(),
             weights: weights.build(),
@@ -144,7 +148,10 @@ class EnsembleRefitResultBuilder
         weights.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EnsembleRefitResult', _$failedField, e.toString());
+          r'EnsembleRefitResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

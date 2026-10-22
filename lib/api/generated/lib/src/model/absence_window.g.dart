@@ -23,14 +23,14 @@ class _$AbsenceWindow extends AbsenceWindow {
   factory _$AbsenceWindow([void Function(AbsenceWindowBuilder)? updates]) =>
       (AbsenceWindowBuilder()..update(updates))._build();
 
-  _$AbsenceWindow._(
-      {required this.window,
-      this.step,
-      this.distinctBy,
-      this.groupBy,
-      this.maxGroups,
-      this.coverageMin})
-      : super._();
+  _$AbsenceWindow._({
+    required this.window,
+    this.step,
+    this.distinctBy,
+    this.groupBy,
+    this.maxGroups,
+    this.coverageMin,
+  }) : super._();
   @override
   AbsenceWindow rebuild(void Function(AbsenceWindowBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -136,10 +136,14 @@ class AbsenceWindowBuilder
   AbsenceWindow build() => _build();
 
   _$AbsenceWindow _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AbsenceWindow._(
           window: BuiltValueNullFieldError.checkNotNull(
-              window, r'AbsenceWindow', 'window'),
+            window,
+            r'AbsenceWindow',
+            'window',
+          ),
           step: step,
           distinctBy: distinctBy,
           groupBy: groupBy,

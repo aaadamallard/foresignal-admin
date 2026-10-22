@@ -28,10 +28,10 @@ BriefingRunAudioStatusEnum _$briefingRunAudioStatusEnumValueOf(String name) {
 
 final BuiltSet<BriefingRunAudioStatusEnum> _$briefingRunAudioStatusEnumValues =
     BuiltSet<BriefingRunAudioStatusEnum>(const <BriefingRunAudioStatusEnum>[
-  _$briefingRunAudioStatusEnum_ok,
-  _$briefingRunAudioStatusEnum_failed,
-  _$briefingRunAudioStatusEnum_skipped,
-]);
+      _$briefingRunAudioStatusEnum_ok,
+      _$briefingRunAudioStatusEnum_failed,
+      _$briefingRunAudioStatusEnum_skipped,
+    ]);
 
 const BriefingRunAudioFormatEnum _$briefingRunAudioFormatEnum_mp3 =
     const BriefingRunAudioFormatEnum._('mp3');
@@ -51,9 +51,9 @@ BriefingRunAudioFormatEnum _$briefingRunAudioFormatEnumValueOf(String name) {
 
 final BuiltSet<BriefingRunAudioFormatEnum> _$briefingRunAudioFormatEnumValues =
     BuiltSet<BriefingRunAudioFormatEnum>(const <BriefingRunAudioFormatEnum>[
-  _$briefingRunAudioFormatEnum_mp3,
-  _$briefingRunAudioFormatEnum_opus,
-]);
+      _$briefingRunAudioFormatEnum_mp3,
+      _$briefingRunAudioFormatEnum_opus,
+    ]);
 
 Serializer<BriefingRunAudioStatusEnum> _$briefingRunAudioStatusEnumSerializer =
     _$BriefingRunAudioStatusEnumSerializer();
@@ -79,16 +79,20 @@ class _$BriefingRunAudioStatusEnumSerializer
   final String wireName = 'BriefingRunAudioStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, BriefingRunAudioStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BriefingRunAudioStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BriefingRunAudioStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BriefingRunAudioStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BriefingRunAudioStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BriefingRunAudioFormatEnumSerializer
@@ -108,16 +112,20 @@ class _$BriefingRunAudioFormatEnumSerializer
   final String wireName = 'BriefingRunAudioFormatEnum';
 
   @override
-  Object serialize(Serializers serializers, BriefingRunAudioFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BriefingRunAudioFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BriefingRunAudioFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BriefingRunAudioFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BriefingRunAudioFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BriefingRunAudio extends BriefingRunAudio {
@@ -142,22 +150,22 @@ class _$BriefingRunAudio extends BriefingRunAudio {
   @override
   final String? signature;
 
-  factory _$BriefingRunAudio(
-          [void Function(BriefingRunAudioBuilder)? updates]) =>
-      (BriefingRunAudioBuilder()..update(updates))._build();
+  factory _$BriefingRunAudio([
+    void Function(BriefingRunAudioBuilder)? updates,
+  ]) => (BriefingRunAudioBuilder()..update(updates))._build();
 
-  _$BriefingRunAudio._(
-      {required this.status,
-      this.mediaId,
-      this.format,
-      this.voice,
-      this.characters,
-      this.truncated,
-      this.error,
-      this.bytes,
-      this.contentType,
-      this.signature})
-      : super._();
+  _$BriefingRunAudio._({
+    required this.status,
+    this.mediaId,
+    this.format,
+    this.voice,
+    this.characters,
+    this.truncated,
+    this.error,
+    this.bytes,
+    this.contentType,
+    this.signature,
+  }) : super._();
   @override
   BriefingRunAudio rebuild(void Function(BriefingRunAudioBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -296,10 +304,14 @@ class BriefingRunAudioBuilder
   BriefingRunAudio build() => _build();
 
   _$BriefingRunAudio _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BriefingRunAudio._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'BriefingRunAudio', 'status'),
+            status,
+            r'BriefingRunAudio',
+            'status',
+          ),
           mediaId: mediaId,
           format: format,
           voice: voice,

@@ -7,11 +7,12 @@ part of 'export_manifest.dart';
 // **************************************************************************
 
 const ExportManifestManifestVersionEnum
-    _$exportManifestManifestVersionEnum_number1 =
+_$exportManifestManifestVersionEnum_number1 =
     const ExportManifestManifestVersionEnum._('number1');
 
 ExportManifestManifestVersionEnum _$exportManifestManifestVersionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'number1':
       return _$exportManifestManifestVersionEnum_number1;
@@ -21,10 +22,12 @@ ExportManifestManifestVersionEnum _$exportManifestManifestVersionEnumValueOf(
 }
 
 final BuiltSet<ExportManifestManifestVersionEnum>
-    _$exportManifestManifestVersionEnumValues = BuiltSet<
-        ExportManifestManifestVersionEnum>(const <ExportManifestManifestVersionEnum>[
-  _$exportManifestManifestVersionEnum_number1,
-]);
+_$exportManifestManifestVersionEnumValues =
+    BuiltSet<ExportManifestManifestVersionEnum>(
+      const <ExportManifestManifestVersionEnum>[
+        _$exportManifestManifestVersionEnum_number1,
+      ],
+    );
 
 const ExportManifestKindEnum _$exportManifestKindEnum_EXPORT =
     const ExportManifestKindEnum._('EXPORT');
@@ -48,10 +51,10 @@ ExportManifestKindEnum _$exportManifestKindEnumValueOf(String name) {
 
 final BuiltSet<ExportManifestKindEnum> _$exportManifestKindEnumValues =
     BuiltSet<ExportManifestKindEnum>(const <ExportManifestKindEnum>[
-  _$exportManifestKindEnum_EXPORT,
-  _$exportManifestKindEnum_SNAPSHOT,
-  _$exportManifestKindEnum_PACK,
-]);
+      _$exportManifestKindEnum_EXPORT,
+      _$exportManifestKindEnum_SNAPSHOT,
+      _$exportManifestKindEnum_PACK,
+    ]);
 
 const ExportManifestFormatEnum _$exportManifestFormatEnum_geoparquet =
     const ExportManifestFormatEnum._('geoparquet');
@@ -83,15 +86,15 @@ ExportManifestFormatEnum _$exportManifestFormatEnumValueOf(String name) {
 
 final BuiltSet<ExportManifestFormatEnum> _$exportManifestFormatEnumValues =
     BuiltSet<ExportManifestFormatEnum>(const <ExportManifestFormatEnum>[
-  _$exportManifestFormatEnum_geoparquet,
-  _$exportManifestFormatEnum_geopackage,
-  _$exportManifestFormatEnum_flatgeobuf,
-  _$exportManifestFormatEnum_gpx,
-  _$exportManifestFormatEnum_pmtiles,
-]);
+      _$exportManifestFormatEnum_geoparquet,
+      _$exportManifestFormatEnum_geopackage,
+      _$exportManifestFormatEnum_flatgeobuf,
+      _$exportManifestFormatEnum_gpx,
+      _$exportManifestFormatEnum_pmtiles,
+    ]);
 
 Serializer<ExportManifestManifestVersionEnum>
-    _$exportManifestManifestVersionEnumSerializer =
+_$exportManifestManifestVersionEnumSerializer =
     _$ExportManifestManifestVersionEnumSerializer();
 Serializer<ExportManifestKindEnum> _$exportManifestKindEnumSerializer =
     _$ExportManifestKindEnumSerializer();
@@ -114,16 +117,19 @@ class _$ExportManifestManifestVersionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExportManifestManifestVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExportManifestManifestVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExportManifestManifestVersionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportManifestManifestVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportManifestManifestVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportManifestKindEnumSerializer
@@ -145,15 +151,20 @@ class _$ExportManifestKindEnumSerializer
   final String wireName = 'ExportManifestKindEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportManifestKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportManifestKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExportManifestKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportManifestKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExportManifestKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportManifestKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportManifestFormatEnumSerializer
@@ -179,16 +190,20 @@ class _$ExportManifestFormatEnumSerializer
   final String wireName = 'ExportManifestFormatEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportManifestFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportManifestFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExportManifestFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportManifestFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportManifestFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportManifest extends ExportManifest {
@@ -224,22 +239,22 @@ class _$ExportManifest extends ExportManifest {
   factory _$ExportManifest([void Function(ExportManifestBuilder)? updates]) =>
       (ExportManifestBuilder()..update(updates))._build();
 
-  _$ExportManifest._(
-      {this.manifestVersion,
-      required this.id,
-      required this.kind,
-      required this.format,
-      required this.instanceId,
-      required this.createdAt,
-      this.watermarkSeq,
-      this.atSeq,
-      this.spec,
-      this.rowCount,
-      required this.files,
-      required this.licence,
-      this.personalUse,
-      this.signature})
-      : super._();
+  _$ExportManifest._({
+    this.manifestVersion,
+    required this.id,
+    required this.kind,
+    required this.format,
+    required this.instanceId,
+    required this.createdAt,
+    this.watermarkSeq,
+    this.atSeq,
+    this.spec,
+    this.rowCount,
+    required this.files,
+    required this.licence,
+    this.personalUse,
+    this.signature,
+  }) : super._();
   @override
   ExportManifest rebuild(void Function(ExportManifestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -420,19 +435,35 @@ class ExportManifestBuilder
   _$ExportManifest _build() {
     _$ExportManifest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExportManifest._(
             manifestVersion: manifestVersion,
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ExportManifest', 'id'),
+              id,
+              r'ExportManifest',
+              'id',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'ExportManifest', 'kind'),
+              kind,
+              r'ExportManifest',
+              'kind',
+            ),
             format: BuiltValueNullFieldError.checkNotNull(
-                format, r'ExportManifest', 'format'),
+              format,
+              r'ExportManifest',
+              'format',
+            ),
             instanceId: BuiltValueNullFieldError.checkNotNull(
-                instanceId, r'ExportManifest', 'instanceId'),
+              instanceId,
+              r'ExportManifest',
+              'instanceId',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ExportManifest', 'createdAt'),
+              createdAt,
+              r'ExportManifest',
+              'createdAt',
+            ),
             watermarkSeq: watermarkSeq,
             atSeq: atSeq,
             spec: _spec?.build(),
@@ -457,7 +488,10 @@ class ExportManifestBuilder
         _signature?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExportManifest', _$failedField, e.toString());
+          r'ExportManifest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

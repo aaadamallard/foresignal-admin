@@ -91,11 +91,8 @@ class BaseRatePageBuilder
   _$BaseRatePage _build() {
     _$BaseRatePage _$result;
     try {
-      _$result = _$v ??
-          _$BaseRatePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$BaseRatePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class BaseRatePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BaseRatePage', _$failedField, e.toString());
+          r'BaseRatePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -41,9 +41,9 @@ abstract class PlaceWeatherDigestNowRadar
 
   PlaceWeatherDigestNowRadar._();
 
-  factory PlaceWeatherDigestNowRadar(
-          [void updates(PlaceWeatherDigestNowRadarBuilder b)]) =
-      _$PlaceWeatherDigestNowRadar;
+  factory PlaceWeatherDigestNowRadar([
+    void updates(PlaceWeatherDigestNowRadarBuilder b),
+  ]) = _$PlaceWeatherDigestNowRadar;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestNowRadarBuilder b) => b;
@@ -58,7 +58,7 @@ class _$PlaceWeatherDigestNowRadarSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestNowRadar,
-    _$PlaceWeatherDigestNowRadar
+    _$PlaceWeatherDigestNowRadar,
   ];
 
   @override
@@ -110,9 +110,11 @@ class _$PlaceWeatherDigestNowRadarSerializer
     PlaceWeatherDigestNowRadar object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -128,41 +130,51 @@ class _$PlaceWeatherDigestNowRadarSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WeatherSectionStatus),
-          ) as WeatherSectionStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WeatherSectionStatus),
+                  )
+                  as WeatherSectionStatus;
           result.status = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'statusText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusText = valueDes;
           break;
         case r'maxDbzInRadius':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxDbzInRadius = valueDes;
           break;
         case r'nearest50Km':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.nearest50Km = valueDes;
           break;

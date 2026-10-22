@@ -23,8 +23,10 @@ part 'mapping_test_result_samples_inner.g.dart';
 @BuiltValue()
 abstract class MappingTestResultSamplesInner
     implements
-        Built<MappingTestResultSamplesInner,
-            MappingTestResultSamplesInnerBuilder> {
+        Built<
+          MappingTestResultSamplesInner,
+          MappingTestResultSamplesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'records')
   BuiltList<NormalizedRecordPreview> get records;
 
@@ -43,9 +45,9 @@ abstract class MappingTestResultSamplesInner
 
   MappingTestResultSamplesInner._();
 
-  factory MappingTestResultSamplesInner(
-          [void updates(MappingTestResultSamplesInnerBuilder b)]) =
-      _$MappingTestResultSamplesInner;
+  factory MappingTestResultSamplesInner([
+    void updates(MappingTestResultSamplesInnerBuilder b),
+  ]) = _$MappingTestResultSamplesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MappingTestResultSamplesInnerBuilder b) => b;
@@ -60,7 +62,7 @@ class _$MappingTestResultSamplesInnerSerializer
   @override
   final Iterable<Type> types = const [
     MappingTestResultSamplesInner,
-    _$MappingTestResultSamplesInner
+    _$MappingTestResultSamplesInner,
   ];
 
   @override
@@ -74,8 +76,9 @@ class _$MappingTestResultSamplesInnerSerializer
     yield r'records';
     yield serializers.serialize(
       object.records,
-      specifiedType:
-          const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NormalizedRecordPreview),
+      ]),
     );
     yield r'rejections';
     yield serializers.serialize(
@@ -107,9 +110,11 @@ class _$MappingTestResultSamplesInnerSerializer
     MappingTestResultSamplesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,42 +130,55 @@ class _$MappingTestResultSamplesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'records':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
-          ) as BuiltList<NormalizedRecordPreview>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NormalizedRecordPreview),
+                    ]),
+                  )
+                  as BuiltList<NormalizedRecordPreview>;
           result.records.replace(valueDes);
           break;
         case r'rejections':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(MappingRejection)]),
-          ) as BuiltList<MappingRejection>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MappingRejection),
+                    ]),
+                  )
+                  as BuiltList<MappingRejection>;
           result.rejections.replace(valueDes);
           break;
         case r'skipped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.skipped = valueDes;
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(MappingWarning)]),
-          ) as BuiltList<MappingWarning>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MappingWarning),
+                    ]),
+                  )
+                  as BuiltList<MappingWarning>;
           result.warnings.replace(valueDes);
           break;
         case r'receivedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.receivedAt = valueDes;
           break;
         default:

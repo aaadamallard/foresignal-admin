@@ -58,9 +58,9 @@ abstract class ChannelInteractiveStatus
 
   ChannelInteractiveStatus._();
 
-  factory ChannelInteractiveStatus(
-          [void updates(ChannelInteractiveStatusBuilder b)]) =
-      _$ChannelInteractiveStatus;
+  factory ChannelInteractiveStatus([
+    void updates(ChannelInteractiveStatusBuilder b),
+  ]) = _$ChannelInteractiveStatus;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChannelInteractiveStatusBuilder b) => b;
@@ -75,7 +75,7 @@ class _$ChannelInteractiveStatusSerializer
   @override
   final Iterable<Type> types = const [
     ChannelInteractiveStatus,
-    _$ChannelInteractiveStatus
+    _$ChannelInteractiveStatus,
   ];
 
   @override
@@ -139,8 +139,9 @@ class _$ChannelInteractiveStatusSerializer
     yield r'chats';
     yield serializers.serialize(
       object.chats,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ChannelInteractiveStatusChatsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChannelInteractiveStatusChatsInner),
+      ]),
     );
   }
 
@@ -150,9 +151,11 @@ class _$ChannelInteractiveStatusSerializer
     ChannelInteractiveStatus object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -168,72 +171,91 @@ class _$ChannelInteractiveStatusSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'interactive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.interactive = valueDes;
           break;
         case r'chatopsEnabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.chatopsEnabled = valueDes;
           break;
         case r'connected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.connected = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HealthStatus),
-          ) as HealthStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(HealthStatus),
+                  )
+                  as HealthStatus;
           result.status = valueDes;
           break;
         case r'statusReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusReason = valueDes;
           break;
         case r'lastPollAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastPollAt = valueDes;
           break;
         case r'lastError':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lastError = valueDes;
           break;
         case r'discoveryModeUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.discoveryModeUntil = valueDes;
           break;
         case r'chats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChannelInteractiveStatusChatsInner)]),
-          ) as BuiltList<ChannelInteractiveStatusChatsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChannelInteractiveStatusChatsInner),
+                    ]),
+                  )
+                  as BuiltList<ChannelInteractiveStatusChatsInner>;
           result.chats.replace(valueDes);
           break;
         default:

@@ -30,9 +30,9 @@ abstract class RadarCellPayloadMotion
 
   RadarCellPayloadMotion._();
 
-  factory RadarCellPayloadMotion(
-          [void updates(RadarCellPayloadMotionBuilder b)]) =
-      _$RadarCellPayloadMotion;
+  factory RadarCellPayloadMotion([
+    void updates(RadarCellPayloadMotionBuilder b),
+  ]) = _$RadarCellPayloadMotion;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RadarCellPayloadMotionBuilder b) => b;
@@ -47,7 +47,7 @@ class _$RadarCellPayloadMotionSerializer
   @override
   final Iterable<Type> types = const [
     RadarCellPayloadMotion,
-    _$RadarCellPayloadMotion
+    _$RadarCellPayloadMotion,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$RadarCellPayloadMotionSerializer
     RadarCellPayloadMotion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +105,34 @@ class _$RadarCellPayloadMotionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'speedKmh':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.speedKmh = valueDes;
           break;
         case r'bearingDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.bearingDeg = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RadarCellPayloadMotionMethodEnum),
-          ) as RadarCellPayloadMotionMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RadarCellPayloadMotionMethodEnum,
+                    ),
+                  )
+                  as RadarCellPayloadMotionMethodEnum;
           result.method = valueDes;
           break;
         default:

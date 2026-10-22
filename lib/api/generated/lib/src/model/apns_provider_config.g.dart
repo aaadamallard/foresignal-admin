@@ -7,17 +7,17 @@ part of 'apns_provider_config.dart';
 // **************************************************************************
 
 const ApnsProviderConfigKeyEnvironmentEnum
-    _$apnsProviderConfigKeyEnvironmentEnum_sandbox =
+_$apnsProviderConfigKeyEnvironmentEnum_sandbox =
     const ApnsProviderConfigKeyEnvironmentEnum._('sandbox');
 const ApnsProviderConfigKeyEnvironmentEnum
-    _$apnsProviderConfigKeyEnvironmentEnum_production =
+_$apnsProviderConfigKeyEnvironmentEnum_production =
     const ApnsProviderConfigKeyEnvironmentEnum._('production');
 const ApnsProviderConfigKeyEnvironmentEnum
-    _$apnsProviderConfigKeyEnvironmentEnum_both =
+_$apnsProviderConfigKeyEnvironmentEnum_both =
     const ApnsProviderConfigKeyEnvironmentEnum._('both');
 
 ApnsProviderConfigKeyEnvironmentEnum
-    _$apnsProviderConfigKeyEnvironmentEnumValueOf(String name) {
+_$apnsProviderConfigKeyEnvironmentEnumValueOf(String name) {
   switch (name) {
     case 'sandbox':
       return _$apnsProviderConfigKeyEnvironmentEnum_sandbox;
@@ -31,15 +31,17 @@ ApnsProviderConfigKeyEnvironmentEnum
 }
 
 final BuiltSet<ApnsProviderConfigKeyEnvironmentEnum>
-    _$apnsProviderConfigKeyEnvironmentEnumValues = BuiltSet<
-        ApnsProviderConfigKeyEnvironmentEnum>(const <ApnsProviderConfigKeyEnvironmentEnum>[
-  _$apnsProviderConfigKeyEnvironmentEnum_sandbox,
-  _$apnsProviderConfigKeyEnvironmentEnum_production,
-  _$apnsProviderConfigKeyEnvironmentEnum_both,
-]);
+_$apnsProviderConfigKeyEnvironmentEnumValues =
+    BuiltSet<ApnsProviderConfigKeyEnvironmentEnum>(
+      const <ApnsProviderConfigKeyEnvironmentEnum>[
+        _$apnsProviderConfigKeyEnvironmentEnum_sandbox,
+        _$apnsProviderConfigKeyEnvironmentEnum_production,
+        _$apnsProviderConfigKeyEnvironmentEnum_both,
+      ],
+    );
 
 Serializer<ApnsProviderConfigKeyEnvironmentEnum>
-    _$apnsProviderConfigKeyEnvironmentEnumSerializer =
+_$apnsProviderConfigKeyEnvironmentEnumSerializer =
     _$ApnsProviderConfigKeyEnvironmentEnumSerializer();
 
 class _$ApnsProviderConfigKeyEnvironmentEnumSerializer
@@ -57,23 +59,26 @@ class _$ApnsProviderConfigKeyEnvironmentEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ApnsProviderConfigKeyEnvironmentEnum
+    ApnsProviderConfigKeyEnvironmentEnum,
   ];
   @override
   final String wireName = 'ApnsProviderConfigKeyEnvironmentEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ApnsProviderConfigKeyEnvironmentEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ApnsProviderConfigKeyEnvironmentEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ApnsProviderConfigKeyEnvironmentEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ApnsProviderConfigKeyEnvironmentEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ApnsProviderConfigKeyEnvironmentEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ApnsProviderConfig extends ApnsProviderConfig {
@@ -86,20 +91,20 @@ class _$ApnsProviderConfig extends ApnsProviderConfig {
   @override
   final bool? timeSensitive;
 
-  factory _$ApnsProviderConfig(
-          [void Function(ApnsProviderConfigBuilder)? updates]) =>
-      (ApnsProviderConfigBuilder()..update(updates))._build();
+  factory _$ApnsProviderConfig([
+    void Function(ApnsProviderConfigBuilder)? updates,
+  ]) => (ApnsProviderConfigBuilder()..update(updates))._build();
 
-  _$ApnsProviderConfig._(
-      {required this.teamId,
-      required this.keyId,
-      required this.keyEnvironment,
-      this.timeSensitive})
-      : super._();
+  _$ApnsProviderConfig._({
+    required this.teamId,
+    required this.keyId,
+    required this.keyEnvironment,
+    this.timeSensitive,
+  }) : super._();
   @override
   ApnsProviderConfig rebuild(
-          void Function(ApnsProviderConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ApnsProviderConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ApnsProviderConfigBuilder toBuilder() =>
@@ -190,14 +195,24 @@ class ApnsProviderConfigBuilder
   ApnsProviderConfig build() => _build();
 
   _$ApnsProviderConfig _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ApnsProviderConfig._(
           teamId: BuiltValueNullFieldError.checkNotNull(
-              teamId, r'ApnsProviderConfig', 'teamId'),
+            teamId,
+            r'ApnsProviderConfig',
+            'teamId',
+          ),
           keyId: BuiltValueNullFieldError.checkNotNull(
-              keyId, r'ApnsProviderConfig', 'keyId'),
+            keyId,
+            r'ApnsProviderConfig',
+            'keyId',
+          ),
           keyEnvironment: BuiltValueNullFieldError.checkNotNull(
-              keyEnvironment, r'ApnsProviderConfig', 'keyEnvironment'),
+            keyEnvironment,
+            r'ApnsProviderConfig',
+            'keyEnvironment',
+          ),
           timeSensitive: timeSensitive,
         );
     replace(_$result);

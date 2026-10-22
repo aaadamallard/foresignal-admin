@@ -91,9 +91,9 @@ abstract class HfPropagationAnomalyPayload
 
   HfPropagationAnomalyPayload._();
 
-  factory HfPropagationAnomalyPayload(
-          [void updates(HfPropagationAnomalyPayloadBuilder b)]) =
-      _$HfPropagationAnomalyPayload;
+  factory HfPropagationAnomalyPayload([
+    void updates(HfPropagationAnomalyPayloadBuilder b),
+  ]) = _$HfPropagationAnomalyPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HfPropagationAnomalyPayloadBuilder b) => b;
@@ -108,7 +108,7 @@ class _$HfPropagationAnomalyPayloadSerializer
   @override
   final Iterable<Type> types = const [
     HfPropagationAnomalyPayload,
-    _$HfPropagationAnomalyPayload
+    _$HfPropagationAnomalyPayload,
   ];
 
   @override
@@ -150,8 +150,9 @@ class _$HfPropagationAnomalyPayloadSerializer
       yield r'evidence';
       yield serializers.serialize(
         object.evidence,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DerivedEvidenceRef),
+        ]),
       );
     }
     yield r'band';
@@ -233,9 +234,11 @@ class _$HfPropagationAnomalyPayloadSerializer
     HfPropagationAnomalyPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -251,133 +254,171 @@ class _$HfPropagationAnomalyPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AircraftFusionPayloadDetector),
-          ) as AircraftFusionPayloadDetector;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AircraftFusionPayloadDetector,
+                    ),
+                  )
+                  as AircraftFusionPayloadDetector;
           result.detector.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(HfPropagationAnomalyPayloadStatusEnum),
-          ) as HfPropagationAnomalyPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HfPropagationAnomalyPayloadStatusEnum,
+                    ),
+                  )
+                  as HfPropagationAnomalyPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DerivedEvidenceRef)]),
-          ) as BuiltList<DerivedEvidenceRef>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DerivedEvidenceRef),
+                    ]),
+                  )
+                  as BuiltList<DerivedEvidenceRef>?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'band':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.band = valueDes;
           break;
         case r'pathClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.pathClass = valueDes;
           break;
         case r'utcHour':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.utcHour = valueDes;
           break;
         case r'spotCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.spotCount = valueDes;
           break;
         case r'baselineSpotCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baselineSpotCount = valueDes;
           break;
         case r'spotDropPct':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.spotDropPct = valueDes;
           break;
         case r'medianSnrDb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.medianSnrDb = valueDes;
           break;
         case r'baselineMedianSnrDb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baselineMedianSnrDb = valueDes;
           break;
         case r'snrDropDb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.snrDropDb = valueDes;
           break;
         case r'sunlit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.sunlit = valueDes;
           break;
         case r'flareConcurrent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.flareConcurrent = valueDes;
           break;

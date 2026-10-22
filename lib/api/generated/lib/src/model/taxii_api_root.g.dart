@@ -19,12 +19,12 @@ class _$TaxiiApiRoot extends TaxiiApiRoot {
   factory _$TaxiiApiRoot([void Function(TaxiiApiRootBuilder)? updates]) =>
       (TaxiiApiRootBuilder()..update(updates))._build();
 
-  _$TaxiiApiRoot._(
-      {required this.title,
-      this.description,
-      required this.versions,
-      required this.maxContentLength})
-      : super._();
+  _$TaxiiApiRoot._({
+    required this.title,
+    this.description,
+    required this.versions,
+    required this.maxContentLength,
+  }) : super._();
   @override
   TaxiiApiRoot rebuild(void Function(TaxiiApiRootBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -118,14 +118,21 @@ class TaxiiApiRootBuilder
   _$TaxiiApiRoot _build() {
     _$TaxiiApiRoot _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TaxiiApiRoot._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'TaxiiApiRoot', 'title'),
+              title,
+              r'TaxiiApiRoot',
+              'title',
+            ),
             description: description,
             versions: versions.build(),
             maxContentLength: BuiltValueNullFieldError.checkNotNull(
-                maxContentLength, r'TaxiiApiRoot', 'maxContentLength'),
+              maxContentLength,
+              r'TaxiiApiRoot',
+              'maxContentLength',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -134,7 +141,10 @@ class TaxiiApiRootBuilder
         versions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TaxiiApiRoot', _$failedField, e.toString());
+          r'TaxiiApiRoot',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

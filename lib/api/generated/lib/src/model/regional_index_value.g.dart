@@ -32,28 +32,28 @@ class _$RegionalIndexValue extends RegionalIndexValue {
   @override
   final String? recordRef;
 
-  factory _$RegionalIndexValue(
-          [void Function(RegionalIndexValueBuilder)? updates]) =>
-      (RegionalIndexValueBuilder()..update(updates))._build();
+  factory _$RegionalIndexValue([
+    void Function(RegionalIndexValueBuilder)? updates,
+  ]) => (RegionalIndexValueBuilder()..update(updates))._build();
 
-  _$RegionalIndexValue._(
-      {required this.indexId,
-      required this.region,
-      required this.day,
-      required this.value,
-      required this.components,
-      this.floorsApplied,
-      this.delta24h,
-      this.delta7d,
-      this.weightsVersion,
-      required this.asOfSeq,
-      this.manifestId,
-      this.recordRef})
-      : super._();
+  _$RegionalIndexValue._({
+    required this.indexId,
+    required this.region,
+    required this.day,
+    required this.value,
+    required this.components,
+    this.floorsApplied,
+    this.delta24h,
+    this.delta7d,
+    this.weightsVersion,
+    required this.asOfSeq,
+    this.manifestId,
+    this.recordRef,
+  }) : super._();
   @override
   RegionalIndexValue rebuild(
-          void Function(RegionalIndexValueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexValueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexValueBuilder toBuilder() =>
@@ -212,23 +212,39 @@ class RegionalIndexValueBuilder
   _$RegionalIndexValue _build() {
     _$RegionalIndexValue _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalIndexValue._(
             indexId: BuiltValueNullFieldError.checkNotNull(
-                indexId, r'RegionalIndexValue', 'indexId'),
+              indexId,
+              r'RegionalIndexValue',
+              'indexId',
+            ),
             region: BuiltValueNullFieldError.checkNotNull(
-                region, r'RegionalIndexValue', 'region'),
+              region,
+              r'RegionalIndexValue',
+              'region',
+            ),
             day: BuiltValueNullFieldError.checkNotNull(
-                day, r'RegionalIndexValue', 'day'),
+              day,
+              r'RegionalIndexValue',
+              'day',
+            ),
             value: BuiltValueNullFieldError.checkNotNull(
-                value, r'RegionalIndexValue', 'value'),
+              value,
+              r'RegionalIndexValue',
+              'value',
+            ),
             components: components.build(),
             floorsApplied: _floorsApplied?.build(),
             delta24h: delta24h,
             delta7d: delta7d,
             weightsVersion: weightsVersion,
             asOfSeq: BuiltValueNullFieldError.checkNotNull(
-                asOfSeq, r'RegionalIndexValue', 'asOfSeq'),
+              asOfSeq,
+              r'RegionalIndexValue',
+              'asOfSeq',
+            ),
             manifestId: manifestId,
             recordRef: recordRef,
           );
@@ -241,7 +257,10 @@ class RegionalIndexValueBuilder
         _floorsApplied?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalIndexValue', _$failedField, e.toString());
+          r'RegionalIndexValue',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

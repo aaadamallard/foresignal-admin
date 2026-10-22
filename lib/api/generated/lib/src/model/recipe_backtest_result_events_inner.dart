@@ -22,8 +22,10 @@ part 'recipe_backtest_result_events_inner.g.dart';
 @BuiltValue()
 abstract class RecipeBacktestResultEventsInner
     implements
-        Built<RecipeBacktestResultEventsInner,
-            RecipeBacktestResultEventsInnerBuilder> {
+        Built<
+          RecipeBacktestResultEventsInner,
+          RecipeBacktestResultEventsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   RecipeBacktestResultEventsInnerTypeEnum get type;
   // enum typeEnum {  maritime-disruption,  aviation-anomaly,  infrastructure-disruption,  weather-impact,  seismic,  custom,  };
@@ -46,9 +48,9 @@ abstract class RecipeBacktestResultEventsInner
 
   RecipeBacktestResultEventsInner._();
 
-  factory RecipeBacktestResultEventsInner(
-          [void updates(RecipeBacktestResultEventsInnerBuilder b)]) =
-      _$RecipeBacktestResultEventsInner;
+  factory RecipeBacktestResultEventsInner([
+    void updates(RecipeBacktestResultEventsInnerBuilder b),
+  ]) = _$RecipeBacktestResultEventsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RecipeBacktestResultEventsInnerBuilder b) => b;
@@ -63,7 +65,7 @@ class _$RecipeBacktestResultEventsInnerSerializer
   @override
   final Iterable<Type> types = const [
     RecipeBacktestResultEventsInner,
-    _$RecipeBacktestResultEventsInner
+    _$RecipeBacktestResultEventsInner,
   ];
 
   @override
@@ -107,8 +109,9 @@ class _$RecipeBacktestResultEventsInnerSerializer
       yield r'evidenceQuality';
       yield serializers.serialize(
         object.evidenceQuality,
-        specifiedType:
-            const FullType(RecipeBacktestResultEventsInnerEvidenceQualityEnum),
+        specifiedType: const FullType(
+          RecipeBacktestResultEventsInnerEvidenceQualityEnum,
+        ),
       );
     }
   }
@@ -119,9 +122,11 @@ class _$RecipeBacktestResultEventsInnerSerializer
     RecipeBacktestResultEventsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -137,50 +142,65 @@ class _$RecipeBacktestResultEventsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(RecipeBacktestResultEventsInnerTypeEnum),
-          ) as RecipeBacktestResultEventsInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RecipeBacktestResultEventsInnerTypeEnum,
+                    ),
+                  )
+                  as RecipeBacktestResultEventsInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'startTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.startTime = valueDes;
           break;
         case r'endTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.endTime = valueDes;
           break;
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(IntelEventMember)]),
-          ) as BuiltList<IntelEventMember>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelEventMember),
+                    ]),
+                  )
+                  as BuiltList<IntelEventMember>;
           result.members.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'evidenceQuality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                RecipeBacktestResultEventsInnerEvidenceQualityEnum),
-          ) as RecipeBacktestResultEventsInnerEvidenceQualityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RecipeBacktestResultEventsInnerEvidenceQualityEnum,
+                    ),
+                  )
+                  as RecipeBacktestResultEventsInnerEvidenceQualityEnum?;
           if (valueDes == null) continue;
           result.evidenceQuality = valueDes;
           break;
@@ -222,7 +242,7 @@ class RecipeBacktestResultEventsInnerTypeEnum extends EnumClass {
       _$recipeBacktestResultEventsInnerTypeEnum_aviationAnomaly;
   @BuiltValueEnumConst(wireName: r'infrastructure-disruption')
   static const RecipeBacktestResultEventsInnerTypeEnum
-      infrastructureDisruption =
+  infrastructureDisruption =
       _$recipeBacktestResultEventsInnerTypeEnum_infrastructureDisruption;
   @BuiltValueEnumConst(wireName: r'weather-impact')
   static const RecipeBacktestResultEventsInnerTypeEnum weatherImpact =
@@ -260,15 +280,15 @@ class RecipeBacktestResultEventsInnerEvidenceQualityEnum extends EnumClass {
       _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient;
 
   static Serializer<RecipeBacktestResultEventsInnerEvidenceQualityEnum>
-      get serializer =>
-          _$recipeBacktestResultEventsInnerEvidenceQualityEnumSerializer;
+  get serializer =>
+      _$recipeBacktestResultEventsInnerEvidenceQualityEnumSerializer;
 
   const RecipeBacktestResultEventsInnerEvidenceQualityEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<RecipeBacktestResultEventsInnerEvidenceQualityEnum>
-      get values => _$recipeBacktestResultEventsInnerEvidenceQualityEnumValues;
+  get values => _$recipeBacktestResultEventsInnerEvidenceQualityEnumValues;
   static RecipeBacktestResultEventsInnerEvidenceQualityEnum valueOf(
-          String name) =>
-      _$recipeBacktestResultEventsInnerEvidenceQualityEnumValueOf(name);
+    String name,
+  ) => _$recipeBacktestResultEventsInnerEvidenceQualityEnumValueOf(name);
 }

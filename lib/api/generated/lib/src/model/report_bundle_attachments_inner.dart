@@ -19,8 +19,10 @@ part 'report_bundle_attachments_inner.g.dart';
 @BuiltValue()
 abstract class ReportBundleAttachmentsInner
     implements
-        Built<ReportBundleAttachmentsInner,
-            ReportBundleAttachmentsInnerBuilder> {
+        Built<
+          ReportBundleAttachmentsInner,
+          ReportBundleAttachmentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'sha256')
   String get sha256;
 
@@ -39,9 +41,9 @@ abstract class ReportBundleAttachmentsInner
 
   ReportBundleAttachmentsInner._();
 
-  factory ReportBundleAttachmentsInner(
-          [void updates(ReportBundleAttachmentsInnerBuilder b)]) =
-      _$ReportBundleAttachmentsInner;
+  factory ReportBundleAttachmentsInner([
+    void updates(ReportBundleAttachmentsInnerBuilder b),
+  ]) = _$ReportBundleAttachmentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ReportBundleAttachmentsInnerBuilder b) => b;
@@ -56,7 +58,7 @@ class _$ReportBundleAttachmentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ReportBundleAttachmentsInner,
-    _$ReportBundleAttachmentsInner
+    _$ReportBundleAttachmentsInner,
   ];
 
   @override
@@ -108,9 +110,11 @@ class _$ReportBundleAttachmentsInnerSerializer
     ReportBundleAttachmentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,41 +130,51 @@ class _$ReportBundleAttachmentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sha256 = valueDes;
           break;
         case r'filename':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.filename = valueDes;
           break;
         case r'contentType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.contentType = valueDes;
           break;
         case r'size':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.size = valueDes;
           break;
         case r'attachmentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.attachmentId = valueDes;
           break;

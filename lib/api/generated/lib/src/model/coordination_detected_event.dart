@@ -35,7 +35,7 @@ abstract class CoordinationDetectedEvent
 
   @BuiltValueField(wireName: r'significantIndicators')
   BuiltList<CoordinationDetectedEventSignificantIndicatorsEnum>
-      get significantIndicators;
+  get significantIndicators;
   // enum significantIndicatorsEnum {  synchrony,  textDuplication,  accountAgeSkew,  coRepostBursts,  };
 
   @BuiltValueField(wireName: r'at')
@@ -43,9 +43,9 @@ abstract class CoordinationDetectedEvent
 
   CoordinationDetectedEvent._();
 
-  factory CoordinationDetectedEvent(
-          [void updates(CoordinationDetectedEventBuilder b)]) =
-      _$CoordinationDetectedEvent;
+  factory CoordinationDetectedEvent([
+    void updates(CoordinationDetectedEventBuilder b),
+  ]) = _$CoordinationDetectedEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CoordinationDetectedEventBuilder b) => b;
@@ -60,7 +60,7 @@ class _$CoordinationDetectedEventSerializer
   @override
   final Iterable<Type> types = const [
     CoordinationDetectedEvent,
-    _$CoordinationDetectedEvent
+    _$CoordinationDetectedEvent,
   ];
 
   @override
@@ -89,8 +89,9 @@ class _$CoordinationDetectedEventSerializer
     yield r'significantIndicators';
     yield serializers.serialize(
       object.significantIndicators,
-      specifiedType: const FullType(BuiltList,
-          [FullType(CoordinationDetectedEventSignificantIndicatorsEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(CoordinationDetectedEventSignificantIndicatorsEnum),
+      ]),
     );
     yield r'at';
     yield serializers.serialize(
@@ -105,9 +106,11 @@ class _$CoordinationDetectedEventSerializer
     CoordinationDetectedEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,39 +126,56 @@ class _$CoordinationDetectedEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoordinationDetectedEventEventEnum),
-          ) as CoordinationDetectedEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      CoordinationDetectedEventEventEnum,
+                    ),
+                  )
+                  as CoordinationDetectedEventEventEnum;
           result.event = valueDes;
           break;
         case r'findingId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.findingId = valueDes;
           break;
         case r'narrativeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.narrativeId = valueDes;
           break;
         case r'significantIndicators':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(CoordinationDetectedEventSignificantIndicatorsEnum)]),
-          ) as BuiltList<CoordinationDetectedEventSignificantIndicatorsEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        CoordinationDetectedEventSignificantIndicatorsEnum,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    CoordinationDetectedEventSignificantIndicatorsEnum
+                  >;
           result.significantIndicators.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:
@@ -209,27 +229,27 @@ class CoordinationDetectedEventSignificantIndicatorsEnum extends EnumClass {
       _$coordinationDetectedEventSignificantIndicatorsEnum_synchrony;
   @BuiltValueEnumConst(wireName: r'textDuplication')
   static const CoordinationDetectedEventSignificantIndicatorsEnum
-      textDuplication =
+  textDuplication =
       _$coordinationDetectedEventSignificantIndicatorsEnum_textDuplication;
   @BuiltValueEnumConst(wireName: r'accountAgeSkew')
   static const CoordinationDetectedEventSignificantIndicatorsEnum
-      accountAgeSkew =
+  accountAgeSkew =
       _$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew;
   @BuiltValueEnumConst(wireName: r'coRepostBursts')
   static const CoordinationDetectedEventSignificantIndicatorsEnum
-      coRepostBursts =
+  coRepostBursts =
       _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts;
 
   static Serializer<CoordinationDetectedEventSignificantIndicatorsEnum>
-      get serializer =>
-          _$coordinationDetectedEventSignificantIndicatorsEnumSerializer;
+  get serializer =>
+      _$coordinationDetectedEventSignificantIndicatorsEnumSerializer;
 
   const CoordinationDetectedEventSignificantIndicatorsEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<CoordinationDetectedEventSignificantIndicatorsEnum>
-      get values => _$coordinationDetectedEventSignificantIndicatorsEnumValues;
+  get values => _$coordinationDetectedEventSignificantIndicatorsEnumValues;
   static CoordinationDetectedEventSignificantIndicatorsEnum valueOf(
-          String name) =>
-      _$coordinationDetectedEventSignificantIndicatorsEnumValueOf(name);
+    String name,
+  ) => _$coordinationDetectedEventSignificantIndicatorsEnumValueOf(name);
 }

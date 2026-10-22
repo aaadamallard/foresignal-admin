@@ -19,9 +19,12 @@ class _$RelatedObjects extends RelatedObjects {
   factory _$RelatedObjects([void Function(RelatedObjectsBuilder)? updates]) =>
       (RelatedObjectsBuilder()..update(updates))._build();
 
-  _$RelatedObjects._(
-      {required this.ref, this.asOf, required this.items, this.truncated})
-      : super._();
+  _$RelatedObjects._({
+    required this.ref,
+    this.asOf,
+    required this.items,
+    this.truncated,
+  }) : super._();
   @override
   RelatedObjects rebuild(void Function(RelatedObjectsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,10 +117,14 @@ class RelatedObjectsBuilder
   _$RelatedObjects _build() {
     _$RelatedObjects _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RelatedObjects._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'RelatedObjects', 'ref'),
+              ref,
+              r'RelatedObjects',
+              'ref',
+            ),
             asOf: asOf,
             items: items.build(),
             truncated: truncated,
@@ -129,7 +136,10 @@ class RelatedObjectsBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RelatedObjects', _$failedField, e.toString());
+          r'RelatedObjects',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -9,11 +9,12 @@ part of 'base_rate_licences_inner.dart';
 const BaseRateLicencesInnerEgressEnum _$baseRateLicencesInnerEgressEnum_OPEN =
     const BaseRateLicencesInnerEgressEnum._('OPEN');
 const BaseRateLicencesInnerEgressEnum
-    _$baseRateLicencesInnerEgressEnum_LOCAL_ONLY =
+_$baseRateLicencesInnerEgressEnum_LOCAL_ONLY =
     const BaseRateLicencesInnerEgressEnum._('LOCAL_ONLY');
 
 BaseRateLicencesInnerEgressEnum _$baseRateLicencesInnerEgressEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'OPEN':
       return _$baseRateLicencesInnerEgressEnum_OPEN;
@@ -25,14 +26,16 @@ BaseRateLicencesInnerEgressEnum _$baseRateLicencesInnerEgressEnumValueOf(
 }
 
 final BuiltSet<BaseRateLicencesInnerEgressEnum>
-    _$baseRateLicencesInnerEgressEnumValues = BuiltSet<
-        BaseRateLicencesInnerEgressEnum>(const <BaseRateLicencesInnerEgressEnum>[
-  _$baseRateLicencesInnerEgressEnum_OPEN,
-  _$baseRateLicencesInnerEgressEnum_LOCAL_ONLY,
-]);
+_$baseRateLicencesInnerEgressEnumValues =
+    BuiltSet<BaseRateLicencesInnerEgressEnum>(
+      const <BaseRateLicencesInnerEgressEnum>[
+        _$baseRateLicencesInnerEgressEnum_OPEN,
+        _$baseRateLicencesInnerEgressEnum_LOCAL_ONLY,
+      ],
+    );
 
 Serializer<BaseRateLicencesInnerEgressEnum>
-    _$baseRateLicencesInnerEgressEnumSerializer =
+_$baseRateLicencesInnerEgressEnumSerializer =
     _$BaseRateLicencesInnerEgressEnumSerializer();
 
 class _$BaseRateLicencesInnerEgressEnumSerializer
@@ -53,16 +56,19 @@ class _$BaseRateLicencesInnerEgressEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, BaseRateLicencesInnerEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    BaseRateLicencesInnerEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BaseRateLicencesInnerEgressEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BaseRateLicencesInnerEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BaseRateLicencesInnerEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BaseRateLicencesInner extends BaseRateLicencesInner {
@@ -73,17 +79,19 @@ class _$BaseRateLicencesInner extends BaseRateLicencesInner {
   @override
   final BaseRateLicencesInnerEgressEnum? egress;
 
-  factory _$BaseRateLicencesInner(
-          [void Function(BaseRateLicencesInnerBuilder)? updates]) =>
-      (BaseRateLicencesInnerBuilder()..update(updates))._build();
+  factory _$BaseRateLicencesInner([
+    void Function(BaseRateLicencesInnerBuilder)? updates,
+  ]) => (BaseRateLicencesInnerBuilder()..update(updates))._build();
 
-  _$BaseRateLicencesInner._(
-      {required this.source_, required this.licence, this.egress})
-      : super._();
+  _$BaseRateLicencesInner._({
+    required this.source_,
+    required this.licence,
+    this.egress,
+  }) : super._();
   @override
   BaseRateLicencesInner rebuild(
-          void Function(BaseRateLicencesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BaseRateLicencesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BaseRateLicencesInnerBuilder toBuilder() =>
@@ -164,12 +172,19 @@ class BaseRateLicencesInnerBuilder
   BaseRateLicencesInner build() => _build();
 
   _$BaseRateLicencesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BaseRateLicencesInner._(
           source_: BuiltValueNullFieldError.checkNotNull(
-              source_, r'BaseRateLicencesInner', 'source_'),
+            source_,
+            r'BaseRateLicencesInner',
+            'source_',
+          ),
           licence: BuiltValueNullFieldError.checkNotNull(
-              licence, r'BaseRateLicencesInner', 'licence'),
+            licence,
+            r'BaseRateLicencesInner',
+            'licence',
+          ),
           egress: egress,
         );
     replace(_$result);

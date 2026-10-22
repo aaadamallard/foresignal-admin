@@ -24,9 +24,9 @@ IntelCalibrationScopeEnum _$intelCalibrationScopeEnumValueOf(String name) {
 
 final BuiltSet<IntelCalibrationScopeEnum> _$intelCalibrationScopeEnumValues =
     BuiltSet<IntelCalibrationScopeEnum>(const <IntelCalibrationScopeEnum>[
-  _$intelCalibrationScopeEnum_intelEvent,
-  _$intelCalibrationScopeEnum_precursorActive,
-]);
+      _$intelCalibrationScopeEnum_intelEvent,
+      _$intelCalibrationScopeEnum_precursorActive,
+    ]);
 
 Serializer<IntelCalibrationScopeEnum> _$intelCalibrationScopeEnumSerializer =
     _$IntelCalibrationScopeEnumSerializer();
@@ -48,16 +48,20 @@ class _$IntelCalibrationScopeEnumSerializer
   final String wireName = 'IntelCalibrationScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelCalibrationScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelCalibrationScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelCalibrationScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelCalibrationScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelCalibrationScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelCalibration extends IntelCalibration {
@@ -80,21 +84,21 @@ class _$IntelCalibration extends IntelCalibration {
   @override
   final DateTime? updatedAt;
 
-  factory _$IntelCalibration(
-          [void Function(IntelCalibrationBuilder)? updates]) =>
-      (IntelCalibrationBuilder()..update(updates))._build();
+  factory _$IntelCalibration([
+    void Function(IntelCalibrationBuilder)? updates,
+  ]) => (IntelCalibrationBuilder()..update(updates))._build();
 
-  _$IntelCalibration._(
-      {required this.scope,
-      required this.calibrated,
-      required this.sampleN,
-      required this.minSamples,
-      this.brier,
-      this.bins,
-      this.curve,
-      this.fittedAt,
-      this.updatedAt})
-      : super._();
+  _$IntelCalibration._({
+    required this.scope,
+    required this.calibrated,
+    required this.sampleN,
+    required this.minSamples,
+    this.brier,
+    this.bins,
+    this.curve,
+    this.fittedAt,
+    this.updatedAt,
+  }) : super._();
   @override
   IntelCalibration rebuild(void Function(IntelCalibrationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -230,16 +234,29 @@ class IntelCalibrationBuilder
   _$IntelCalibration _build() {
     _$IntelCalibration _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelCalibration._(
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'IntelCalibration', 'scope'),
+              scope,
+              r'IntelCalibration',
+              'scope',
+            ),
             calibrated: BuiltValueNullFieldError.checkNotNull(
-                calibrated, r'IntelCalibration', 'calibrated'),
+              calibrated,
+              r'IntelCalibration',
+              'calibrated',
+            ),
             sampleN: BuiltValueNullFieldError.checkNotNull(
-                sampleN, r'IntelCalibration', 'sampleN'),
+              sampleN,
+              r'IntelCalibration',
+              'sampleN',
+            ),
             minSamples: BuiltValueNullFieldError.checkNotNull(
-                minSamples, r'IntelCalibration', 'minSamples'),
+              minSamples,
+              r'IntelCalibration',
+              'minSamples',
+            ),
             brier: brier,
             bins: _bins?.build(),
             curve: _curve?.build(),
@@ -255,7 +272,10 @@ class IntelCalibrationBuilder
         _curve?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelCalibration', _$failedField, e.toString());
+          r'IntelCalibration',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

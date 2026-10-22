@@ -84,7 +84,7 @@ class _$MapStyleSerializer implements PrimitiveSerializer<MapStyle> {
       object.sources,
       specifiedType: const FullType(BuiltMap, [
         FullType(String),
-        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
       ]),
     );
     yield r'sprite';
@@ -96,7 +96,7 @@ class _$MapStyleSerializer implements PrimitiveSerializer<MapStyle> {
     yield serializers.serialize(
       object.layers,
       specifiedType: const FullType(BuiltList, [
-        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
       ]),
     );
     yield r'metadata';
@@ -112,9 +112,11 @@ class _$MapStyleSerializer implements PrimitiveSerializer<MapStyle> {
     MapStyle object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -130,53 +132,69 @@ class _$MapStyleSerializer implements PrimitiveSerializer<MapStyle> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MapStyleVersionEnum),
-          ) as MapStyleVersionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MapStyleVersionEnum),
+                  )
+                  as MapStyleVersionEnum;
           result.version = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [
-              FullType(String),
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltMap<String, BuiltMap<String, JsonObject?>>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltMap<String, JsonObject?>>;
           result.sources.replace(valueDes);
           break;
         case r'sprite':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sprite = valueDes;
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltList<BuiltMap<String, JsonObject?>>;
           result.layers.replace(valueDes);
           break;
         case r'metadata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MapStyleMetadata),
-          ) as MapStyleMetadata;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MapStyleMetadata),
+                  )
+                  as MapStyleMetadata;
           result.metadata.replace(valueDes);
           break;
         default:

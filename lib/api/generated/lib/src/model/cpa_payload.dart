@@ -108,8 +108,9 @@ class _$CpaPayloadSerializer implements PrimitiveSerializer<CpaPayload> {
       yield r'evidence';
       yield serializers.serialize(
         object.evidence,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DerivedEvidenceRef),
+        ]),
       );
     }
     yield r'vessels';
@@ -135,9 +136,11 @@ class _$CpaPayloadSerializer implements PrimitiveSerializer<CpaPayload> {
     CpaPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -153,69 +156,86 @@ class _$CpaPayloadSerializer implements PrimitiveSerializer<CpaPayload> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AircraftFusionPayloadDetector),
-          ) as AircraftFusionPayloadDetector;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AircraftFusionPayloadDetector,
+                    ),
+                  )
+                  as AircraftFusionPayloadDetector;
           result.detector.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CpaPayloadStatusEnum),
-          ) as CpaPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CpaPayloadStatusEnum),
+                  )
+                  as CpaPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DerivedEvidenceRef)]),
-          ) as BuiltList<DerivedEvidenceRef>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DerivedEvidenceRef),
+                    ]),
+                  )
+                  as BuiltList<DerivedEvidenceRef>?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'vessels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.vessels.replace(valueDes);
           break;
         case r'cpaNm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.cpaNm = valueDes;
           break;
         case r'tcpaMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.tcpaMin = valueDes;
           break;
         default:

@@ -6,12 +6,15 @@ part of 'product.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ProductKindEnum _$productKindEnum_raster =
-    const ProductKindEnum._('raster');
-const ProductKindEnum _$productKindEnum_field =
-    const ProductKindEnum._('field');
-const ProductKindEnum _$productKindEnum_external_ =
-    const ProductKindEnum._('external_');
+const ProductKindEnum _$productKindEnum_raster = const ProductKindEnum._(
+  'raster',
+);
+const ProductKindEnum _$productKindEnum_field = const ProductKindEnum._(
+  'field',
+);
+const ProductKindEnum _$productKindEnum_external_ = const ProductKindEnum._(
+  'external_',
+);
 
 ProductKindEnum _$productKindEnumValueOf(String name) {
   switch (name) {
@@ -28,10 +31,10 @@ ProductKindEnum _$productKindEnumValueOf(String name) {
 
 final BuiltSet<ProductKindEnum> _$productKindEnumValues =
     BuiltSet<ProductKindEnum>(const <ProductKindEnum>[
-  _$productKindEnum_raster,
-  _$productKindEnum_field,
-  _$productKindEnum_external_,
-]);
+      _$productKindEnum_raster,
+      _$productKindEnum_field,
+      _$productKindEnum_external_,
+    ]);
 
 const ProductCategoryEnum _$productCategoryEnum_radar =
     const ProductCategoryEnum._('radar');
@@ -63,19 +66,20 @@ ProductCategoryEnum _$productCategoryEnumValueOf(String name) {
 
 final BuiltSet<ProductCategoryEnum> _$productCategoryEnumValues =
     BuiltSet<ProductCategoryEnum>(const <ProductCategoryEnum>[
-  _$productCategoryEnum_radar,
-  _$productCategoryEnum_satellite,
-  _$productCategoryEnum_model,
-  _$productCategoryEnum_lightning,
-  _$productCategoryEnum_imagery,
-]);
+      _$productCategoryEnum_radar,
+      _$productCategoryEnum_satellite,
+      _$productCategoryEnum_model,
+      _$productCategoryEnum_lightning,
+      _$productCategoryEnum_imagery,
+    ]);
 
 const ProductDtypeEnum _$productDtypeEnum_u8 = const ProductDtypeEnum._('u8');
 const ProductDtypeEnum _$productDtypeEnum_u16 = const ProductDtypeEnum._('u16');
 const ProductDtypeEnum _$productDtypeEnum_i16 = const ProductDtypeEnum._('i16');
 const ProductDtypeEnum _$productDtypeEnum_f32 = const ProductDtypeEnum._('f32');
-const ProductDtypeEnum _$productDtypeEnum_rgba8 =
-    const ProductDtypeEnum._('rgba8');
+const ProductDtypeEnum _$productDtypeEnum_rgba8 = const ProductDtypeEnum._(
+  'rgba8',
+);
 
 ProductDtypeEnum _$productDtypeEnumValueOf(String name) {
   switch (name) {
@@ -96,12 +100,12 @@ ProductDtypeEnum _$productDtypeEnumValueOf(String name) {
 
 final BuiltSet<ProductDtypeEnum> _$productDtypeEnumValues =
     BuiltSet<ProductDtypeEnum>(const <ProductDtypeEnum>[
-  _$productDtypeEnum_u8,
-  _$productDtypeEnum_u16,
-  _$productDtypeEnum_i16,
-  _$productDtypeEnum_f32,
-  _$productDtypeEnum_rgba8,
-]);
+      _$productDtypeEnum_u8,
+      _$productDtypeEnum_u16,
+      _$productDtypeEnum_i16,
+      _$productDtypeEnum_f32,
+      _$productDtypeEnum_rgba8,
+    ]);
 
 const ProductCoverageEnum _$productCoverageEnum_CONUS =
     const ProductCoverageEnum._('CONUS');
@@ -129,11 +133,11 @@ ProductCoverageEnum _$productCoverageEnumValueOf(String name) {
 
 final BuiltSet<ProductCoverageEnum> _$productCoverageEnumValues =
     BuiltSet<ProductCoverageEnum>(const <ProductCoverageEnum>[
-  _$productCoverageEnum_CONUS,
-  _$productCoverageEnum_global,
-  _$productCoverageEnum_stationDisc,
-  _$productCoverageEnum_swath,
-]);
+      _$productCoverageEnum_CONUS,
+      _$productCoverageEnum_global,
+      _$productCoverageEnum_stationDisc,
+      _$productCoverageEnum_swath,
+    ]);
 
 Serializer<ProductKindEnum> _$productKindEnumSerializer =
     _$ProductKindEnumSerializer();
@@ -163,15 +167,20 @@ class _$ProductKindEnumSerializer
   final String wireName = 'ProductKindEnum';
 
   @override
-  Object serialize(Serializers serializers, ProductKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProductKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ProductKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ProductKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductCategoryEnumSerializer
@@ -197,15 +206,20 @@ class _$ProductCategoryEnumSerializer
   final String wireName = 'ProductCategoryEnum';
 
   @override
-  Object serialize(Serializers serializers, ProductCategoryEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProductCategoryEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ProductCategoryEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductCategoryEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ProductCategoryEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductCategoryEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductDtypeEnumSerializer
@@ -231,15 +245,20 @@ class _$ProductDtypeEnumSerializer
   final String wireName = 'ProductDtypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ProductDtypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProductDtypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ProductDtypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductDtypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ProductDtypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductDtypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductCoverageEnumSerializer
@@ -263,15 +282,20 @@ class _$ProductCoverageEnumSerializer
   final String wireName = 'ProductCoverageEnum';
 
   @override
-  Object serialize(Serializers serializers, ProductCoverageEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProductCoverageEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ProductCoverageEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductCoverageEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ProductCoverageEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductCoverageEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Product extends Product {
@@ -317,27 +341,27 @@ class _$Product extends Product {
   factory _$Product([void Function(ProductBuilder)? updates]) =>
       (ProductBuilder()..update(updates))._build();
 
-  _$Product._(
-      {required this.id,
-      required this.title,
-      required this.kind,
-      required this.category,
-      required this.source_,
-      this.dynamic_,
-      this.units,
-      this.dtype,
-      this.coverage,
-      this.coverageMeaning,
-      this.codes,
-      this.temporal,
-      this.spatial,
-      this.render,
-      this.legend,
-      this.attribution,
-      this.status,
-      this.external_,
-      this.links})
-      : super._();
+  _$Product._({
+    required this.id,
+    required this.title,
+    required this.kind,
+    required this.category,
+    required this.source_,
+    this.dynamic_,
+    this.units,
+    this.dtype,
+    this.coverage,
+    this.coverageMeaning,
+    this.codes,
+    this.temporal,
+    this.spatial,
+    this.render,
+    this.legend,
+    this.attribution,
+    this.status,
+    this.external_,
+    this.links,
+  }) : super._();
   @override
   Product rebuild(void Function(ProductBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -556,17 +580,30 @@ class ProductBuilder implements Builder<Product, ProductBuilder> {
   _$Product _build() {
     _$Product _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Product._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Product', 'id'),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Product', 'title'),
-            kind:
-                BuiltValueNullFieldError.checkNotNull(kind, r'Product', 'kind'),
+              title,
+              r'Product',
+              'title',
+            ),
+            kind: BuiltValueNullFieldError.checkNotNull(
+              kind,
+              r'Product',
+              'kind',
+            ),
             category: BuiltValueNullFieldError.checkNotNull(
-                category, r'Product', 'category'),
+              category,
+              r'Product',
+              'category',
+            ),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'Product', 'source_'),
+              source_,
+              r'Product',
+              'source_',
+            ),
             dynamic_: dynamic_,
             units: units,
             dtype: dtype,
@@ -605,7 +642,10 @@ class ProductBuilder implements Builder<Product, ProductBuilder> {
         _links?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Product', _$failedField, e.toString());
+          r'Product',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

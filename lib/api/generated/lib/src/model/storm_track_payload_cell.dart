@@ -32,8 +32,9 @@ abstract class StormTrackPayloadCell
 
   StormTrackPayloadCell._();
 
-  factory StormTrackPayloadCell(
-      [void updates(StormTrackPayloadCellBuilder b)]) = _$StormTrackPayloadCell;
+  factory StormTrackPayloadCell([
+    void updates(StormTrackPayloadCellBuilder b),
+  ]) = _$StormTrackPayloadCell;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StormTrackPayloadCellBuilder b) => b;
@@ -48,7 +49,7 @@ class _$StormTrackPayloadCellSerializer
   @override
   final Iterable<Type> types = const [
     StormTrackPayloadCell,
-    _$StormTrackPayloadCell
+    _$StormTrackPayloadCell,
   ];
 
   @override
@@ -95,9 +96,11 @@ class _$StormTrackPayloadCellSerializer
     StormTrackPayloadCell object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,34 +116,42 @@ class _$StormTrackPayloadCellSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'maxDbz':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxDbz = valueDes;
           break;
         case r'areaKm2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.areaKm2 = valueDes;
           break;
         case r'meshMaxMm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meshMaxMm = valueDes;
           break;
         case r'flashRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.flashRate = valueDes;
           break;

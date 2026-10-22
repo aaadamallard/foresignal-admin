@@ -59,7 +59,7 @@ class _$SituationJoinReasonSerializer
   @override
   final Iterable<Type> types = const [
     SituationJoinReason,
-    _$SituationJoinReason
+    _$SituationJoinReason,
   ];
 
   @override
@@ -111,9 +111,11 @@ class _$SituationJoinReasonSerializer
     SituationJoinReason object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,42 +131,55 @@ class _$SituationJoinReasonSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationJoinReasonMethodEnum),
-          ) as SituationJoinReasonMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SituationJoinReasonMethodEnum,
+                    ),
+                  )
+                  as SituationJoinReasonMethodEnum;
           result.method = valueDes;
           break;
         case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.score = valueDes;
           break;
         case r'components':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SituationJoinReasonComponents),
-          ) as SituationJoinReasonComponents?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SituationJoinReasonComponents,
+                    ),
+                  )
+                  as SituationJoinReasonComponents?;
           if (valueDes == null) continue;
           result.components.replace(valueDes);
           break;
         case r'linkerVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.linkerVersion = valueDes;
           break;
         case r'actor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.actor = valueDes;
           break;

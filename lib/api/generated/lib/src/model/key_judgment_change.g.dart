@@ -14,13 +14,15 @@ class _$KeyJudgmentChange extends KeyJudgmentChange {
   @override
   final String explanation;
 
-  factory _$KeyJudgmentChange(
-          [void Function(KeyJudgmentChangeBuilder)? updates]) =>
-      (KeyJudgmentChangeBuilder()..update(updates))._build();
+  factory _$KeyJudgmentChange([
+    void Function(KeyJudgmentChangeBuilder)? updates,
+  ]) => (KeyJudgmentChangeBuilder()..update(updates))._build();
 
-  _$KeyJudgmentChange._(
-      {this.previousProbability, this.previousText, required this.explanation})
-      : super._();
+  _$KeyJudgmentChange._({
+    this.previousProbability,
+    this.previousText,
+    required this.explanation,
+  }) : super._();
   @override
   KeyJudgmentChange rebuild(void Function(KeyJudgmentChangeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -104,12 +106,16 @@ class KeyJudgmentChangeBuilder
   KeyJudgmentChange build() => _build();
 
   _$KeyJudgmentChange _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$KeyJudgmentChange._(
           previousProbability: previousProbability,
           previousText: previousText,
           explanation: BuiltValueNullFieldError.checkNotNull(
-              explanation, r'KeyJudgmentChange', 'explanation'),
+            explanation,
+            r'KeyJudgmentChange',
+            'explanation',
+          ),
         );
     replace(_$result);
     return _$result;

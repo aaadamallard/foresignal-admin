@@ -19,8 +19,10 @@ part 'ensemble_refit_result_extremizing.g.dart';
 @BuiltValue()
 abstract class EnsembleRefitResultExtremizing
     implements
-        Built<EnsembleRefitResultExtremizing,
-            EnsembleRefitResultExtremizingBuilder> {
+        Built<
+          EnsembleRefitResultExtremizing,
+          EnsembleRefitResultExtremizingBuilder
+        > {
   @BuiltValueField(wireName: r'a')
   num get a;
 
@@ -39,9 +41,9 @@ abstract class EnsembleRefitResultExtremizing
 
   EnsembleRefitResultExtremizing._();
 
-  factory EnsembleRefitResultExtremizing(
-          [void updates(EnsembleRefitResultExtremizingBuilder b)]) =
-      _$EnsembleRefitResultExtremizing;
+  factory EnsembleRefitResultExtremizing([
+    void updates(EnsembleRefitResultExtremizingBuilder b),
+  ]) = _$EnsembleRefitResultExtremizing;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EnsembleRefitResultExtremizingBuilder b) => b;
@@ -56,7 +58,7 @@ class _$EnsembleRefitResultExtremizingSerializer
   @override
   final Iterable<Type> types = const [
     EnsembleRefitResultExtremizing,
-    _$EnsembleRefitResultExtremizing
+    _$EnsembleRefitResultExtremizing,
   ];
 
   @override
@@ -68,10 +70,7 @@ class _$EnsembleRefitResultExtremizingSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'a';
-    yield serializers.serialize(
-      object.a,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.a, specifiedType: const FullType(num));
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -102,9 +101,11 @@ class _$EnsembleRefitResultExtremizingSerializer
     EnsembleRefitResultExtremizing object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,38 +121,39 @@ class _$EnsembleRefitResultExtremizingSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.a = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'nResolutions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nResolutions = valueDes;
           break;
         case r'distinctForecasterTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.distinctForecasterTypes = valueDes;
           break;
         case r'logScoreImprovement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.logScoreImprovement = valueDes;
           break;

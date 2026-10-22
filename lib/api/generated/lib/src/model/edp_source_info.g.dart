@@ -33,19 +33,19 @@ class _$EdpSourceInfo extends EdpSourceInfo {
   factory _$EdpSourceInfo([void Function(EdpSourceInfoBuilder)? updates]) =>
       (EdpSourceInfoBuilder()..update(updates))._build();
 
-  _$EdpSourceInfo._(
-      {required this.id,
-      required this.name,
-      this.description,
-      this.version,
-      required this.publisher,
-      this.homepage,
-      this.licence,
-      this.terms,
-      this.access,
-      required this.originator,
-      this.private})
-      : super._();
+  _$EdpSourceInfo._({
+    required this.id,
+    required this.name,
+    this.description,
+    this.version,
+    required this.publisher,
+    this.homepage,
+    this.licence,
+    this.terms,
+    this.access,
+    required this.originator,
+    this.private,
+  }) : super._();
   @override
   EdpSourceInfo rebuild(void Function(EdpSourceInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -201,12 +201,19 @@ class EdpSourceInfoBuilder
   _$EdpSourceInfo _build() {
     _$EdpSourceInfo _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpSourceInfo._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpSourceInfo', 'id'),
+              id,
+              r'EdpSourceInfo',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'EdpSourceInfo', 'name'),
+              name,
+              r'EdpSourceInfo',
+              'name',
+            ),
             description: description,
             version: version,
             publisher: publisher.build(),
@@ -233,7 +240,10 @@ class EdpSourceInfoBuilder
         originator.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpSourceInfo', _$failedField, e.toString());
+          r'EdpSourceInfo',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -15,20 +15,23 @@ class _$DeclaredObservabilityKindsValueThresholdsInner
   @override
   final String? area;
 
-  factory _$DeclaredObservabilityKindsValueThresholdsInner(
-          [void Function(DeclaredObservabilityKindsValueThresholdsInnerBuilder)?
-              updates]) =>
+  factory _$DeclaredObservabilityKindsValueThresholdsInner([
+    void Function(DeclaredObservabilityKindsValueThresholdsInnerBuilder)?
+    updates,
+  ]) =>
       (DeclaredObservabilityKindsValueThresholdsInnerBuilder()..update(updates))
           ._build();
 
-  _$DeclaredObservabilityKindsValueThresholdsInner._(
-      {required this.field, required this.min, this.area})
-      : super._();
+  _$DeclaredObservabilityKindsValueThresholdsInner._({
+    required this.field,
+    required this.min,
+    this.area,
+  }) : super._();
   @override
   DeclaredObservabilityKindsValueThresholdsInner rebuild(
-          void Function(DeclaredObservabilityKindsValueThresholdsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DeclaredObservabilityKindsValueThresholdsInnerBuilder)
+    updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DeclaredObservabilityKindsValueThresholdsInnerBuilder toBuilder() =>
@@ -56,7 +59,8 @@ class _$DeclaredObservabilityKindsValueThresholdsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'DeclaredObservabilityKindsValueThresholdsInner')
+            r'DeclaredObservabilityKindsValueThresholdsInner',
+          )
           ..add('field', field)
           ..add('min', min)
           ..add('area', area))
@@ -66,8 +70,10 @@ class _$DeclaredObservabilityKindsValueThresholdsInner
 
 class DeclaredObservabilityKindsValueThresholdsInnerBuilder
     implements
-        Builder<DeclaredObservabilityKindsValueThresholdsInner,
-            DeclaredObservabilityKindsValueThresholdsInnerBuilder> {
+        Builder<
+          DeclaredObservabilityKindsValueThresholdsInner,
+          DeclaredObservabilityKindsValueThresholdsInnerBuilder
+        > {
   _$DeclaredObservabilityKindsValueThresholdsInner? _$v;
 
   String? _field;
@@ -104,8 +110,9 @@ class DeclaredObservabilityKindsValueThresholdsInnerBuilder
 
   @override
   void update(
-      void Function(DeclaredObservabilityKindsValueThresholdsInnerBuilder)?
-          updates) {
+    void Function(DeclaredObservabilityKindsValueThresholdsInnerBuilder)?
+    updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -113,12 +120,19 @@ class DeclaredObservabilityKindsValueThresholdsInnerBuilder
   DeclaredObservabilityKindsValueThresholdsInner build() => _build();
 
   _$DeclaredObservabilityKindsValueThresholdsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DeclaredObservabilityKindsValueThresholdsInner._(
-          field: BuiltValueNullFieldError.checkNotNull(field,
-              r'DeclaredObservabilityKindsValueThresholdsInner', 'field'),
+          field: BuiltValueNullFieldError.checkNotNull(
+            field,
+            r'DeclaredObservabilityKindsValueThresholdsInner',
+            'field',
+          ),
           min: BuiltValueNullFieldError.checkNotNull(
-              min, r'DeclaredObservabilityKindsValueThresholdsInner', 'min'),
+            min,
+            r'DeclaredObservabilityKindsValueThresholdsInner',
+            'min',
+          ),
           area: area,
         );
     replace(_$result);

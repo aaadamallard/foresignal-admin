@@ -40,13 +40,13 @@ ReportSourceTypeEnum _$reportSourceTypeEnumValueOf(String name) {
 
 final BuiltSet<ReportSourceTypeEnum> _$reportSourceTypeEnumValues =
     BuiltSet<ReportSourceTypeEnum>(const <ReportSourceTypeEnum>[
-  _$reportSourceTypeEnum_selection,
-  _$reportSourceTypeEnum_tag,
-  _$reportSourceTypeEnum_investigation,
-  _$reportSourceTypeEnum_chronicle,
-  _$reportSourceTypeEnum_situation,
-  _$reportSourceTypeEnum_workspace,
-]);
+      _$reportSourceTypeEnum_selection,
+      _$reportSourceTypeEnum_tag,
+      _$reportSourceTypeEnum_investigation,
+      _$reportSourceTypeEnum_chronicle,
+      _$reportSourceTypeEnum_situation,
+      _$reportSourceTypeEnum_workspace,
+    ]);
 
 Serializer<ReportSourceTypeEnum> _$reportSourceTypeEnumSerializer =
     _$ReportSourceTypeEnumSerializer();
@@ -76,15 +76,20 @@ class _$ReportSourceTypeEnumSerializer
   final String wireName = 'ReportSourceTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ReportSourceTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReportSourceTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ReportSourceTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportSourceTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ReportSourceTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportSourceTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportSource extends ReportSource {
@@ -182,10 +187,14 @@ class ReportSourceBuilder
   _$ReportSource _build() {
     _$ReportSource _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportSource._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ReportSource', 'type'),
+              type,
+              r'ReportSource',
+              'type',
+            ),
             ref: ref,
             refs: _refs?.build(),
           );
@@ -196,7 +205,10 @@ class ReportSourceBuilder
         _refs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportSource', _$failedField, e.toString());
+          r'ReportSource',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -14,17 +14,19 @@ class _$SituationChangesNewMembers extends SituationChangesNewMembers {
   @override
   final BuiltMap<String, int>? byType;
 
-  factory _$SituationChangesNewMembers(
-          [void Function(SituationChangesNewMembersBuilder)? updates]) =>
-      (SituationChangesNewMembersBuilder()..update(updates))._build();
+  factory _$SituationChangesNewMembers([
+    void Function(SituationChangesNewMembersBuilder)? updates,
+  ]) => (SituationChangesNewMembersBuilder()..update(updates))._build();
 
-  _$SituationChangesNewMembers._(
-      {required this.total, required this.byFamily, this.byType})
-      : super._();
+  _$SituationChangesNewMembers._({
+    required this.total,
+    required this.byFamily,
+    this.byType,
+  }) : super._();
   @override
   SituationChangesNewMembers rebuild(
-          void Function(SituationChangesNewMembersBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationChangesNewMembersBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationChangesNewMembersBuilder toBuilder() =>
@@ -110,10 +112,14 @@ class SituationChangesNewMembersBuilder
   _$SituationChangesNewMembers _build() {
     _$SituationChangesNewMembers _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationChangesNewMembers._(
             total: BuiltValueNullFieldError.checkNotNull(
-                total, r'SituationChangesNewMembers', 'total'),
+              total,
+              r'SituationChangesNewMembers',
+              'total',
+            ),
             byFamily: byFamily.build(),
             byType: _byType?.build(),
           );
@@ -126,7 +132,10 @@ class SituationChangesNewMembersBuilder
         _byType?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationChangesNewMembers', _$failedField, e.toString());
+          r'SituationChangesNewMembers',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

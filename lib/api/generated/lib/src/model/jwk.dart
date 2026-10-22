@@ -106,9 +106,11 @@ class _$JwkSerializer implements PrimitiveSerializer<Jwk> {
     Jwk object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -124,45 +126,57 @@ class _$JwkSerializer implements PrimitiveSerializer<Jwk> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'kty':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JwkKtyEnum),
-          ) as JwkKtyEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(JwkKtyEnum),
+                  )
+                  as JwkKtyEnum;
           result.kty = valueDes;
           break;
         case r'crv':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JwkCrvEnum),
-          ) as JwkCrvEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(JwkCrvEnum),
+                  )
+                  as JwkCrvEnum;
           result.crv = valueDes;
           break;
         case r'x':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.x = valueDes;
           break;
         case r'kid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.kid = valueDes;
           break;
         case r'use':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JwkUseEnum),
-          ) as JwkUseEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(JwkUseEnum),
+                  )
+                  as JwkUseEnum;
           result.use = valueDes;
           break;
         case r'alg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JwkAlgEnum),
-          ) as JwkAlgEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(JwkAlgEnum),
+                  )
+                  as JwkAlgEnum;
           result.alg = valueDes;
           break;
         default:

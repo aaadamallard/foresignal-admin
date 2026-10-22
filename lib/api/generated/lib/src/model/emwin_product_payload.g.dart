@@ -18,21 +18,21 @@ class _$EmwinProductPayload extends EmwinProductPayload {
   @override
   final String text;
 
-  factory _$EmwinProductPayload(
-          [void Function(EmwinProductPayloadBuilder)? updates]) =>
-      (EmwinProductPayloadBuilder()..update(updates))._build();
+  factory _$EmwinProductPayload([
+    void Function(EmwinProductPayloadBuilder)? updates,
+  ]) => (EmwinProductPayloadBuilder()..update(updates))._build();
 
-  _$EmwinProductPayload._(
-      {required this.heading,
-      required this.awipsId,
-      this.office,
-      required this.issuedAt,
-      required this.text})
-      : super._();
+  _$EmwinProductPayload._({
+    required this.heading,
+    required this.awipsId,
+    this.office,
+    required this.issuedAt,
+    required this.text,
+  }) : super._();
   @override
   EmwinProductPayload rebuild(
-          void Function(EmwinProductPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EmwinProductPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EmwinProductPayloadBuilder toBuilder() =>
@@ -128,17 +128,30 @@ class EmwinProductPayloadBuilder
   EmwinProductPayload build() => _build();
 
   _$EmwinProductPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EmwinProductPayload._(
           heading: BuiltValueNullFieldError.checkNotNull(
-              heading, r'EmwinProductPayload', 'heading'),
+            heading,
+            r'EmwinProductPayload',
+            'heading',
+          ),
           awipsId: BuiltValueNullFieldError.checkNotNull(
-              awipsId, r'EmwinProductPayload', 'awipsId'),
+            awipsId,
+            r'EmwinProductPayload',
+            'awipsId',
+          ),
           office: office,
           issuedAt: BuiltValueNullFieldError.checkNotNull(
-              issuedAt, r'EmwinProductPayload', 'issuedAt'),
+            issuedAt,
+            r'EmwinProductPayload',
+            'issuedAt',
+          ),
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'EmwinProductPayload', 'text'),
+            text,
+            r'EmwinProductPayload',
+            'text',
+          ),
         );
     replace(_$result);
     return _$result;

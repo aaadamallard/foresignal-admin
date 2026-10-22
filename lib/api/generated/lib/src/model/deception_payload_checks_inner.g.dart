@@ -7,17 +7,17 @@ part of 'deception_payload_checks_inner.dart';
 // **************************************************************************
 
 const DeceptionPayloadChecksInnerCheckEnum
-    _$deceptionPayloadChecksInnerCheckEnum_duplicateMmsi =
+_$deceptionPayloadChecksInnerCheckEnum_duplicateMmsi =
     const DeceptionPayloadChecksInnerCheckEnum._('duplicateMmsi');
 const DeceptionPayloadChecksInnerCheckEnum
-    _$deceptionPayloadChecksInnerCheckEnum_vesselImpliedSpeed =
+_$deceptionPayloadChecksInnerCheckEnum_vesselImpliedSpeed =
     const DeceptionPayloadChecksInnerCheckEnum._('vesselImpliedSpeed');
 const DeceptionPayloadChecksInnerCheckEnum
-    _$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed =
+_$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed =
     const DeceptionPayloadChecksInnerCheckEnum._('aircraftImpliedSpeed');
 
 DeceptionPayloadChecksInnerCheckEnum
-    _$deceptionPayloadChecksInnerCheckEnumValueOf(String name) {
+_$deceptionPayloadChecksInnerCheckEnumValueOf(String name) {
   switch (name) {
     case 'duplicateMmsi':
       return _$deceptionPayloadChecksInnerCheckEnum_duplicateMmsi;
@@ -31,15 +31,17 @@ DeceptionPayloadChecksInnerCheckEnum
 }
 
 final BuiltSet<DeceptionPayloadChecksInnerCheckEnum>
-    _$deceptionPayloadChecksInnerCheckEnumValues = BuiltSet<
-        DeceptionPayloadChecksInnerCheckEnum>(const <DeceptionPayloadChecksInnerCheckEnum>[
-  _$deceptionPayloadChecksInnerCheckEnum_duplicateMmsi,
-  _$deceptionPayloadChecksInnerCheckEnum_vesselImpliedSpeed,
-  _$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed,
-]);
+_$deceptionPayloadChecksInnerCheckEnumValues =
+    BuiltSet<DeceptionPayloadChecksInnerCheckEnum>(
+      const <DeceptionPayloadChecksInnerCheckEnum>[
+        _$deceptionPayloadChecksInnerCheckEnum_duplicateMmsi,
+        _$deceptionPayloadChecksInnerCheckEnum_vesselImpliedSpeed,
+        _$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed,
+      ],
+    );
 
 Serializer<DeceptionPayloadChecksInnerCheckEnum>
-    _$deceptionPayloadChecksInnerCheckEnumSerializer =
+_$deceptionPayloadChecksInnerCheckEnumSerializer =
     _$DeceptionPayloadChecksInnerCheckEnumSerializer();
 
 class _$DeceptionPayloadChecksInnerCheckEnumSerializer
@@ -57,23 +59,26 @@ class _$DeceptionPayloadChecksInnerCheckEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    DeceptionPayloadChecksInnerCheckEnum
+    DeceptionPayloadChecksInnerCheckEnum,
   ];
   @override
   final String wireName = 'DeceptionPayloadChecksInnerCheckEnum';
 
   @override
   Object serialize(
-          Serializers serializers, DeceptionPayloadChecksInnerCheckEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DeceptionPayloadChecksInnerCheckEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DeceptionPayloadChecksInnerCheckEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DeceptionPayloadChecksInnerCheckEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DeceptionPayloadChecksInnerCheckEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DeceptionPayloadChecksInner extends DeceptionPayloadChecksInner {
@@ -86,17 +91,20 @@ class _$DeceptionPayloadChecksInner extends DeceptionPayloadChecksInner {
   @override
   final String? detail;
 
-  factory _$DeceptionPayloadChecksInner(
-          [void Function(DeceptionPayloadChecksInnerBuilder)? updates]) =>
-      (DeceptionPayloadChecksInnerBuilder()..update(updates))._build();
+  factory _$DeceptionPayloadChecksInner([
+    void Function(DeceptionPayloadChecksInnerBuilder)? updates,
+  ]) => (DeceptionPayloadChecksInnerBuilder()..update(updates))._build();
 
-  _$DeceptionPayloadChecksInner._(
-      {required this.check, required this.count, this.lastAt, this.detail})
-      : super._();
+  _$DeceptionPayloadChecksInner._({
+    required this.check,
+    required this.count,
+    this.lastAt,
+    this.detail,
+  }) : super._();
   @override
   DeceptionPayloadChecksInner rebuild(
-          void Function(DeceptionPayloadChecksInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DeceptionPayloadChecksInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DeceptionPayloadChecksInnerBuilder toBuilder() =>
@@ -136,8 +144,10 @@ class _$DeceptionPayloadChecksInner extends DeceptionPayloadChecksInner {
 
 class DeceptionPayloadChecksInnerBuilder
     implements
-        Builder<DeceptionPayloadChecksInner,
-            DeceptionPayloadChecksInnerBuilder> {
+        Builder<
+          DeceptionPayloadChecksInner,
+          DeceptionPayloadChecksInnerBuilder
+        > {
   _$DeceptionPayloadChecksInner? _$v;
 
   DeceptionPayloadChecksInnerCheckEnum? _check;
@@ -187,12 +197,19 @@ class DeceptionPayloadChecksInnerBuilder
   DeceptionPayloadChecksInner build() => _build();
 
   _$DeceptionPayloadChecksInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DeceptionPayloadChecksInner._(
           check: BuiltValueNullFieldError.checkNotNull(
-              check, r'DeceptionPayloadChecksInner', 'check'),
+            check,
+            r'DeceptionPayloadChecksInner',
+            'check',
+          ),
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'DeceptionPayloadChecksInner', 'count'),
+            count,
+            r'DeceptionPayloadChecksInner',
+            'count',
+          ),
           lastAt: lastAt,
           detail: detail,
         );

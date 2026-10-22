@@ -21,13 +21,13 @@ class _$WatchPair extends WatchPair {
   factory _$WatchPair([void Function(WatchPairBuilder)? updates]) =>
       (WatchPairBuilder()..update(updates))._build();
 
-  _$WatchPair._(
-      {required this.eventFamily,
-      this.regionCodes,
-      this.selector,
-      this.minEffect,
-      this.releaseLagDays})
-      : super._();
+  _$WatchPair._({
+    required this.eventFamily,
+    this.regionCodes,
+    this.selector,
+    this.minEffect,
+    this.releaseLagDays,
+  }) : super._();
   @override
   WatchPair rebuild(void Function(WatchPairBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -130,10 +130,14 @@ class WatchPairBuilder implements Builder<WatchPair, WatchPairBuilder> {
   _$WatchPair _build() {
     _$WatchPair _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WatchPair._(
             eventFamily: BuiltValueNullFieldError.checkNotNull(
-                eventFamily, r'WatchPair', 'eventFamily'),
+              eventFamily,
+              r'WatchPair',
+              'eventFamily',
+            ),
             regionCodes: _regionCodes?.build(),
             selector: _selector?.build(),
             minEffect: minEffect,
@@ -148,7 +152,10 @@ class WatchPairBuilder implements Builder<WatchPair, WatchPairBuilder> {
         _selector?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchPair', _$failedField, e.toString());
+          r'WatchPair',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

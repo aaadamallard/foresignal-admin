@@ -28,10 +28,10 @@ UsageSeriesResolutionEnum _$usageSeriesResolutionEnumValueOf(String name) {
 
 final BuiltSet<UsageSeriesResolutionEnum> _$usageSeriesResolutionEnumValues =
     BuiltSet<UsageSeriesResolutionEnum>(const <UsageSeriesResolutionEnum>[
-  _$usageSeriesResolutionEnum_minute,
-  _$usageSeriesResolutionEnum_hour,
-  _$usageSeriesResolutionEnum_day,
-]);
+      _$usageSeriesResolutionEnum_minute,
+      _$usageSeriesResolutionEnum_hour,
+      _$usageSeriesResolutionEnum_day,
+    ]);
 
 Serializer<UsageSeriesResolutionEnum> _$usageSeriesResolutionEnumSerializer =
     _$UsageSeriesResolutionEnumSerializer();
@@ -55,16 +55,20 @@ class _$UsageSeriesResolutionEnumSerializer
   final String wireName = 'UsageSeriesResolutionEnum';
 
   @override
-  Object serialize(Serializers serializers, UsageSeriesResolutionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    UsageSeriesResolutionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   UsageSeriesResolutionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      UsageSeriesResolutionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => UsageSeriesResolutionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$UsageSeries extends UsageSeries {
@@ -80,12 +84,12 @@ class _$UsageSeries extends UsageSeries {
   factory _$UsageSeries([void Function(UsageSeriesBuilder)? updates]) =>
       (UsageSeriesBuilder()..update(updates))._build();
 
-  _$UsageSeries._(
-      {required this.sourceId,
-      required this.resolution,
-      required this.points,
-      this.totals})
-      : super._();
+  _$UsageSeries._({
+    required this.sourceId,
+    required this.resolution,
+    required this.points,
+    this.totals,
+  }) : super._();
   @override
   UsageSeries rebuild(void Function(UsageSeriesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -178,12 +182,19 @@ class UsageSeriesBuilder implements Builder<UsageSeries, UsageSeriesBuilder> {
   _$UsageSeries _build() {
     _$UsageSeries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$UsageSeries._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'UsageSeries', 'sourceId'),
+              sourceId,
+              r'UsageSeries',
+              'sourceId',
+            ),
             resolution: BuiltValueNullFieldError.checkNotNull(
-                resolution, r'UsageSeries', 'resolution'),
+              resolution,
+              r'UsageSeries',
+              'resolution',
+            ),
             points: points.build(),
             totals: _totals?.build(),
           );
@@ -196,7 +207,10 @@ class UsageSeriesBuilder implements Builder<UsageSeries, UsageSeriesBuilder> {
         _totals?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'UsageSeries', _$failedField, e.toString());
+          r'UsageSeries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

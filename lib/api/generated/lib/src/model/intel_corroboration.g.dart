@@ -14,17 +14,19 @@ class _$IntelCorroboration extends IntelCorroboration {
   @override
   final IntelCorroborationAutoCorroborate? autoCorroborate;
 
-  factory _$IntelCorroboration(
-          [void Function(IntelCorroborationBuilder)? updates]) =>
-      (IntelCorroborationBuilder()..update(updates))._build();
+  factory _$IntelCorroboration([
+    void Function(IntelCorroborationBuilder)? updates,
+  ]) => (IntelCorroborationBuilder()..update(updates))._build();
 
-  _$IntelCorroboration._(
-      {this.eventQuality, this.situationActivation, this.autoCorroborate})
-      : super._();
+  _$IntelCorroboration._({
+    this.eventQuality,
+    this.situationActivation,
+    this.autoCorroborate,
+  }) : super._();
   @override
   IntelCorroboration rebuild(
-          void Function(IntelCorroborationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelCorroborationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelCorroborationBuilder toBuilder() =>
@@ -74,15 +76,15 @@ class IntelCorroborationBuilder
       _$this._situationActivation ??=
           IntelCorroborationSituationActivationBuilder();
   set situationActivation(
-          IntelCorroborationSituationActivationBuilder? situationActivation) =>
-      _$this._situationActivation = situationActivation;
+    IntelCorroborationSituationActivationBuilder? situationActivation,
+  ) => _$this._situationActivation = situationActivation;
 
   IntelCorroborationAutoCorroborateBuilder? _autoCorroborate;
   IntelCorroborationAutoCorroborateBuilder get autoCorroborate =>
       _$this._autoCorroborate ??= IntelCorroborationAutoCorroborateBuilder();
   set autoCorroborate(
-          IntelCorroborationAutoCorroborateBuilder? autoCorroborate) =>
-      _$this._autoCorroborate = autoCorroborate;
+    IntelCorroborationAutoCorroborateBuilder? autoCorroborate,
+  ) => _$this._autoCorroborate = autoCorroborate;
 
   IntelCorroborationBuilder() {
     IntelCorroboration._defaults(this);
@@ -115,7 +117,8 @@ class IntelCorroborationBuilder
   _$IntelCorroboration _build() {
     _$IntelCorroboration _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelCorroboration._(
             eventQuality: _eventQuality?.build(),
             situationActivation: _situationActivation?.build(),
@@ -132,7 +135,10 @@ class IntelCorroborationBuilder
         _autoCorroborate?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelCorroboration', _$failedField, e.toString());
+          r'IntelCorroboration',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

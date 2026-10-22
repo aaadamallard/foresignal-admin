@@ -32,11 +32,11 @@ CpaPayloadStatusEnum _$cpaPayloadStatusEnumValueOf(String name) {
 
 final BuiltSet<CpaPayloadStatusEnum> _$cpaPayloadStatusEnumValues =
     BuiltSet<CpaPayloadStatusEnum>(const <CpaPayloadStatusEnum>[
-  _$cpaPayloadStatusEnum_ok,
-  _$cpaPayloadStatusEnum_insufficientData,
-  _$cpaPayloadStatusEnum_noCoverage,
-  _$cpaPayloadStatusEnum_degradedInput,
-]);
+      _$cpaPayloadStatusEnum_ok,
+      _$cpaPayloadStatusEnum_insufficientData,
+      _$cpaPayloadStatusEnum_noCoverage,
+      _$cpaPayloadStatusEnum_degradedInput,
+    ]);
 
 Serializer<CpaPayloadStatusEnum> _$cpaPayloadStatusEnumSerializer =
     _$CpaPayloadStatusEnumSerializer();
@@ -62,15 +62,20 @@ class _$CpaPayloadStatusEnumSerializer
   final String wireName = 'CpaPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, CpaPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CpaPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CpaPayloadStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CpaPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CpaPayloadStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CpaPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CpaPayload extends CpaPayload {
@@ -96,17 +101,17 @@ class _$CpaPayload extends CpaPayload {
   factory _$CpaPayload([void Function(CpaPayloadBuilder)? updates]) =>
       (CpaPayloadBuilder()..update(updates))._build();
 
-  _$CpaPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.vessels,
-      required this.cpaNm,
-      required this.tcpaMin})
-      : super._();
+  _$CpaPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.vessels,
+    required this.cpaNm,
+    required this.tcpaMin,
+  }) : super._();
   @override
   CpaPayload rebuild(void Function(CpaPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -241,22 +246,38 @@ class CpaPayloadBuilder implements Builder<CpaPayload, CpaPayloadBuilder> {
   _$CpaPayload _build() {
     _$CpaPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CpaPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'CpaPayload', 'automated'),
+              automated,
+              r'CpaPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'CpaPayload', 'notAWarning'),
+              notAWarning,
+              r'CpaPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'CpaPayload', 'status'),
+              status,
+              r'CpaPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             vessels: vessels.build(),
             cpaNm: BuiltValueNullFieldError.checkNotNull(
-                cpaNm, r'CpaPayload', 'cpaNm'),
+              cpaNm,
+              r'CpaPayload',
+              'cpaNm',
+            ),
             tcpaMin: BuiltValueNullFieldError.checkNotNull(
-                tcpaMin, r'CpaPayload', 'tcpaMin'),
+              tcpaMin,
+              r'CpaPayload',
+              'tcpaMin',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -270,7 +291,10 @@ class CpaPayloadBuilder implements Builder<CpaPayload, CpaPayloadBuilder> {
         vessels.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CpaPayload', _$failedField, e.toString());
+          r'CpaPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

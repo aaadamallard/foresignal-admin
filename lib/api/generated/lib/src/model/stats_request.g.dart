@@ -24,9 +24,9 @@ StatsRequestUnitsEnum _$statsRequestUnitsEnumValueOf(String name) {
 
 final BuiltSet<StatsRequestUnitsEnum> _$statsRequestUnitsEnumValues =
     BuiltSet<StatsRequestUnitsEnum>(const <StatsRequestUnitsEnum>[
-  _$statsRequestUnitsEnum_metric,
-  _$statsRequestUnitsEnum_imperial,
-]);
+      _$statsRequestUnitsEnum_metric,
+      _$statsRequestUnitsEnum_imperial,
+    ]);
 
 Serializer<StatsRequestUnitsEnum> _$statsRequestUnitsEnumSerializer =
     _$StatsRequestUnitsEnumSerializer();
@@ -48,15 +48,20 @@ class _$StatsRequestUnitsEnumSerializer
   final String wireName = 'StatsRequestUnitsEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsRequestUnitsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsRequestUnitsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsRequestUnitsEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsRequestUnitsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsRequestUnitsEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsRequestUnitsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsRequest extends StatsRequest {
@@ -78,15 +83,15 @@ class _$StatsRequest extends StatsRequest {
   factory _$StatsRequest([void Function(StatsRequestBuilder)? updates]) =>
       (StatsRequestBuilder()..update(updates))._build();
 
-  _$StatsRequest._(
-      {this.geometry,
-      this.place,
-      this.bbox,
-      this.time,
-      this.run,
-      this.thresholds,
-      this.units})
-      : super._();
+  _$StatsRequest._({
+    this.geometry,
+    this.place,
+    this.bbox,
+    this.time,
+    this.run,
+    this.thresholds,
+    this.units,
+  }) : super._();
   @override
   StatsRequest rebuild(void Function(StatsRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -203,7 +208,8 @@ class StatsRequestBuilder
   _$StatsRequest _build() {
     _$StatsRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StatsRequest._(
             geometry: _geometry?.build(),
             place: place,
@@ -223,7 +229,10 @@ class StatsRequestBuilder
         _thresholds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StatsRequest', _$failedField, e.toString());
+          r'StatsRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

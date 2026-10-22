@@ -32,11 +32,11 @@ PortCallPayloadStatusEnum _$portCallPayloadStatusEnumValueOf(String name) {
 
 final BuiltSet<PortCallPayloadStatusEnum> _$portCallPayloadStatusEnumValues =
     BuiltSet<PortCallPayloadStatusEnum>(const <PortCallPayloadStatusEnum>[
-  _$portCallPayloadStatusEnum_ok,
-  _$portCallPayloadStatusEnum_insufficientData,
-  _$portCallPayloadStatusEnum_noCoverage,
-  _$portCallPayloadStatusEnum_degradedInput,
-]);
+      _$portCallPayloadStatusEnum_ok,
+      _$portCallPayloadStatusEnum_insufficientData,
+      _$portCallPayloadStatusEnum_noCoverage,
+      _$portCallPayloadStatusEnum_degradedInput,
+    ]);
 
 Serializer<PortCallPayloadStatusEnum> _$portCallPayloadStatusEnumSerializer =
     _$PortCallPayloadStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$PortCallPayloadStatusEnumSerializer
   final String wireName = 'PortCallPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, PortCallPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PortCallPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PortCallPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PortCallPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PortCallPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PortCallPayload extends PortCallPayload {
@@ -105,21 +109,21 @@ class _$PortCallPayload extends PortCallPayload {
   factory _$PortCallPayload([void Function(PortCallPayloadBuilder)? updates]) =>
       (PortCallPayloadBuilder()..update(updates))._build();
 
-  _$PortCallPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.mmsi,
-      required this.portNumber,
-      this.portName,
-      required this.arrival,
-      this.departure,
-      this.durationH,
-      this.departureUnknown})
-      : super._();
+  _$PortCallPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.mmsi,
+    required this.portNumber,
+    this.portName,
+    required this.arrival,
+    this.departure,
+    this.durationH,
+    this.departureUnknown,
+  }) : super._();
   @override
   PortCallPayload rebuild(void Function(PortCallPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -288,24 +292,43 @@ class PortCallPayloadBuilder
   _$PortCallPayload _build() {
     _$PortCallPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PortCallPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'PortCallPayload', 'automated'),
+              automated,
+              r'PortCallPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'PortCallPayload', 'notAWarning'),
+              notAWarning,
+              r'PortCallPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'PortCallPayload', 'status'),
+              status,
+              r'PortCallPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             mmsi: BuiltValueNullFieldError.checkNotNull(
-                mmsi, r'PortCallPayload', 'mmsi'),
+              mmsi,
+              r'PortCallPayload',
+              'mmsi',
+            ),
             portNumber: BuiltValueNullFieldError.checkNotNull(
-                portNumber, r'PortCallPayload', 'portNumber'),
+              portNumber,
+              r'PortCallPayload',
+              'portNumber',
+            ),
             portName: portName,
             arrival: BuiltValueNullFieldError.checkNotNull(
-                arrival, r'PortCallPayload', 'arrival'),
+              arrival,
+              r'PortCallPayload',
+              'arrival',
+            ),
             departure: departure,
             durationH: durationH,
             departureUnknown: departureUnknown,
@@ -320,7 +343,10 @@ class PortCallPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PortCallPayload', _$failedField, e.toString());
+          r'PortCallPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

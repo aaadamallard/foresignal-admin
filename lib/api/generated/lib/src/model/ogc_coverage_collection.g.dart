@@ -7,11 +7,12 @@ part of 'ogc_coverage_collection.dart';
 // **************************************************************************
 
 const OgcCoverageCollectionItemTypeEnum
-    _$ogcCoverageCollectionItemTypeEnum_coverage =
+_$ogcCoverageCollectionItemTypeEnum_coverage =
     const OgcCoverageCollectionItemTypeEnum._('coverage');
 
 OgcCoverageCollectionItemTypeEnum _$ogcCoverageCollectionItemTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'coverage':
       return _$ogcCoverageCollectionItemTypeEnum_coverage;
@@ -21,13 +22,15 @@ OgcCoverageCollectionItemTypeEnum _$ogcCoverageCollectionItemTypeEnumValueOf(
 }
 
 final BuiltSet<OgcCoverageCollectionItemTypeEnum>
-    _$ogcCoverageCollectionItemTypeEnumValues = BuiltSet<
-        OgcCoverageCollectionItemTypeEnum>(const <OgcCoverageCollectionItemTypeEnum>[
-  _$ogcCoverageCollectionItemTypeEnum_coverage,
-]);
+_$ogcCoverageCollectionItemTypeEnumValues =
+    BuiltSet<OgcCoverageCollectionItemTypeEnum>(
+      const <OgcCoverageCollectionItemTypeEnum>[
+        _$ogcCoverageCollectionItemTypeEnum_coverage,
+      ],
+    );
 
 Serializer<OgcCoverageCollectionItemTypeEnum>
-    _$ogcCoverageCollectionItemTypeEnumSerializer =
+_$ogcCoverageCollectionItemTypeEnumSerializer =
     _$OgcCoverageCollectionItemTypeEnumSerializer();
 
 class _$OgcCoverageCollectionItemTypeEnumSerializer
@@ -46,16 +49,19 @@ class _$OgcCoverageCollectionItemTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, OgcCoverageCollectionItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    OgcCoverageCollectionItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OgcCoverageCollectionItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcCoverageCollectionItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcCoverageCollectionItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcCoverageCollection extends OgcCoverageCollection {
@@ -82,27 +88,27 @@ class _$OgcCoverageCollection extends OgcCoverageCollection {
   @override
   final BuiltList<OgcLink> links;
 
-  factory _$OgcCoverageCollection(
-          [void Function(OgcCoverageCollectionBuilder)? updates]) =>
-      (OgcCoverageCollectionBuilder()..update(updates))._build();
+  factory _$OgcCoverageCollection([
+    void Function(OgcCoverageCollectionBuilder)? updates,
+  ]) => (OgcCoverageCollectionBuilder()..update(updates))._build();
 
-  _$OgcCoverageCollection._(
-      {required this.id,
-      this.title,
-      this.description,
-      required this.itemType,
-      this.extent,
-      this.dataQueries,
-      this.parameterNames,
-      this.outputFormats,
-      this.crs,
-      this.attribution,
-      required this.links})
-      : super._();
+  _$OgcCoverageCollection._({
+    required this.id,
+    this.title,
+    this.description,
+    required this.itemType,
+    this.extent,
+    this.dataQueries,
+    this.parameterNames,
+    this.outputFormats,
+    this.crs,
+    this.attribution,
+    required this.links,
+  }) : super._();
   @override
   OgcCoverageCollection rebuild(
-          void Function(OgcCoverageCollectionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionBuilder toBuilder() =>
@@ -199,8 +205,8 @@ class OgcCoverageCollectionBuilder
       _$this._parameterNames ??=
           MapBuilder<String, BuiltMap<String, JsonObject?>>();
   set parameterNames(
-          MapBuilder<String, BuiltMap<String, JsonObject?>>? parameterNames) =>
-      _$this._parameterNames = parameterNames;
+    MapBuilder<String, BuiltMap<String, JsonObject?>>? parameterNames,
+  ) => _$this._parameterNames = parameterNames;
 
   ListBuilder<String>? _outputFormats;
   ListBuilder<String> get outputFormats =>
@@ -259,14 +265,21 @@ class OgcCoverageCollectionBuilder
   _$OgcCoverageCollection _build() {
     _$OgcCoverageCollection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCoverageCollection._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'OgcCoverageCollection', 'id'),
+              id,
+              r'OgcCoverageCollection',
+              'id',
+            ),
             title: title,
             description: description,
             itemType: BuiltValueNullFieldError.checkNotNull(
-                itemType, r'OgcCoverageCollection', 'itemType'),
+              itemType,
+              r'OgcCoverageCollection',
+              'itemType',
+            ),
             extent: _extent?.build(),
             dataQueries: _dataQueries?.build(),
             parameterNames: _parameterNames?.build(),
@@ -293,7 +306,10 @@ class OgcCoverageCollectionBuilder
         links.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCoverageCollection', _$failedField, e.toString());
+          r'OgcCoverageCollection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

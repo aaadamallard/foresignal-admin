@@ -53,7 +53,7 @@ class _$MapAttachmentConfigSerializer
   @override
   final Iterable<Type> types = const [
     MapAttachmentConfig,
-    _$MapAttachmentConfig
+    _$MapAttachmentConfig,
   ];
 
   @override
@@ -100,9 +100,11 @@ class _$MapAttachmentConfigSerializer
     MapAttachmentConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,36 +120,46 @@ class _$MapAttachmentConfigSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'attachMap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(MapAttachmentConfigAttachMapEnum),
-          ) as MapAttachmentConfigAttachMapEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MapAttachmentConfigAttachMapEnum,
+                    ),
+                  )
+                  as MapAttachmentConfigAttachMapEnum?;
           if (valueDes == null) continue;
           result.attachMap = valueDes;
           break;
         case r'mapProducts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.mapProducts.replace(valueDes);
           break;
         case r'mapRadiusKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.mapRadiusKm = valueDes;
           break;
         case r'maxAttachmentBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxAttachmentBytes = valueDes;
           break;

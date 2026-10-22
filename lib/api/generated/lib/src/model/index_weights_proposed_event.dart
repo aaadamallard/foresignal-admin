@@ -44,9 +44,9 @@ abstract class IndexWeightsProposedEvent
 
   IndexWeightsProposedEvent._();
 
-  factory IndexWeightsProposedEvent(
-          [void updates(IndexWeightsProposedEventBuilder b)]) =
-      _$IndexWeightsProposedEvent;
+  factory IndexWeightsProposedEvent([
+    void updates(IndexWeightsProposedEventBuilder b),
+  ]) = _$IndexWeightsProposedEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IndexWeightsProposedEventBuilder b) => b;
@@ -61,7 +61,7 @@ class _$IndexWeightsProposedEventSerializer
   @override
   final Iterable<Type> types = const [
     IndexWeightsProposedEvent,
-    _$IndexWeightsProposedEvent
+    _$IndexWeightsProposedEvent,
   ];
 
   @override
@@ -90,8 +90,10 @@ class _$IndexWeightsProposedEventSerializer
     yield r'proposedWeights';
     yield serializers.serialize(
       object.proposedWeights,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(num)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(num),
+      ]),
     );
     if (object.skill != null) {
       yield r'skill';
@@ -115,9 +117,11 @@ class _$IndexWeightsProposedEventSerializer
     IndexWeightsProposedEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,47 +137,60 @@ class _$IndexWeightsProposedEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'indexId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.indexId = valueDes;
           break;
         case r'fitId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.fitId = valueDes;
           break;
         case r'weightsVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.weightsVersion = valueDes;
           break;
         case r'proposedWeights':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>;
           result.proposedWeights.replace(valueDes);
           break;
         case r'skill':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RegionalIndexDefSkill),
-          ) as RegionalIndexDefSkill?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RegionalIndexDefSkill,
+                    ),
+                  )
+                  as RegionalIndexDefSkill?;
           if (valueDes == null) continue;
           result.skill.replace(valueDes);
           break;
         case r'autoApplied':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.autoApplied = valueDes;
           break;

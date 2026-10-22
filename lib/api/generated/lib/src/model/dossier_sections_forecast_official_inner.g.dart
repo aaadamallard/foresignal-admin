@@ -25,25 +25,25 @@ class _$DossierSectionsForecastOfficialInner
   @override
   final String? note;
 
-  factory _$DossierSectionsForecastOfficialInner(
-          [void Function(DossierSectionsForecastOfficialInnerBuilder)?
-              updates]) =>
+  factory _$DossierSectionsForecastOfficialInner([
+    void Function(DossierSectionsForecastOfficialInnerBuilder)? updates,
+  ]) =>
       (DossierSectionsForecastOfficialInnerBuilder()..update(updates))._build();
 
-  _$DossierSectionsForecastOfficialInner._(
-      {required this.ref,
-      this.title,
-      this.kind,
-      required this.issuer,
-      this.issuedAt,
-      this.validFrom,
-      this.validTo,
-      this.note})
-      : super._();
+  _$DossierSectionsForecastOfficialInner._({
+    required this.ref,
+    this.title,
+    this.kind,
+    required this.issuer,
+    this.issuedAt,
+    this.validFrom,
+    this.validTo,
+    this.note,
+  }) : super._();
   @override
   DossierSectionsForecastOfficialInner rebuild(
-          void Function(DossierSectionsForecastOfficialInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsForecastOfficialInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsForecastOfficialInnerBuilder toBuilder() =>
@@ -95,8 +95,10 @@ class _$DossierSectionsForecastOfficialInner
 
 class DossierSectionsForecastOfficialInnerBuilder
     implements
-        Builder<DossierSectionsForecastOfficialInner,
-            DossierSectionsForecastOfficialInnerBuilder> {
+        Builder<
+          DossierSectionsForecastOfficialInner,
+          DossierSectionsForecastOfficialInnerBuilder
+        > {
   _$DossierSectionsForecastOfficialInner? _$v;
 
   String? _ref;
@@ -158,7 +160,8 @@ class DossierSectionsForecastOfficialInnerBuilder
 
   @override
   void update(
-      void Function(DossierSectionsForecastOfficialInnerBuilder)? updates) {
+    void Function(DossierSectionsForecastOfficialInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -166,14 +169,21 @@ class DossierSectionsForecastOfficialInnerBuilder
   DossierSectionsForecastOfficialInner build() => _build();
 
   _$DossierSectionsForecastOfficialInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DossierSectionsForecastOfficialInner._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'DossierSectionsForecastOfficialInner', 'ref'),
+            ref,
+            r'DossierSectionsForecastOfficialInner',
+            'ref',
+          ),
           title: title,
           kind: kind,
           issuer: BuiltValueNullFieldError.checkNotNull(
-              issuer, r'DossierSectionsForecastOfficialInner', 'issuer'),
+            issuer,
+            r'DossierSectionsForecastOfficialInner',
+            'issuer',
+          ),
           issuedAt: issuedAt,
           validFrom: validFrom,
           validTo: validTo,

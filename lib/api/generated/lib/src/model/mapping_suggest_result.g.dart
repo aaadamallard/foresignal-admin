@@ -22,23 +22,23 @@ class _$MappingSuggestResult extends MappingSuggestResult {
   @override
   final String model;
 
-  factory _$MappingSuggestResult(
-          [void Function(MappingSuggestResultBuilder)? updates]) =>
-      (MappingSuggestResultBuilder()..update(updates))._build();
+  factory _$MappingSuggestResult([
+    void Function(MappingSuggestResultBuilder)? updates,
+  ]) => (MappingSuggestResultBuilder()..update(updates))._build();
 
-  _$MappingSuggestResult._(
-      {required this.draft,
-      required this.explanation,
-      required this.warnings,
-      this.preview,
-      this.repairRounds,
-      required this.provider,
-      required this.model})
-      : super._();
+  _$MappingSuggestResult._({
+    required this.draft,
+    required this.explanation,
+    required this.warnings,
+    this.preview,
+    this.repairRounds,
+    required this.provider,
+    required this.model,
+  }) : super._();
   @override
   MappingSuggestResult rebuild(
-          void Function(MappingSuggestResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingSuggestResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingSuggestResultBuilder toBuilder() =>
@@ -156,18 +156,28 @@ class MappingSuggestResultBuilder
   _$MappingSuggestResult _build() {
     _$MappingSuggestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingSuggestResult._(
             draft: draft.build(),
             explanation: BuiltValueNullFieldError.checkNotNull(
-                explanation, r'MappingSuggestResult', 'explanation'),
+              explanation,
+              r'MappingSuggestResult',
+              'explanation',
+            ),
             warnings: warnings.build(),
             preview: _preview?.build(),
             repairRounds: repairRounds,
             provider: BuiltValueNullFieldError.checkNotNull(
-                provider, r'MappingSuggestResult', 'provider'),
+              provider,
+              r'MappingSuggestResult',
+              'provider',
+            ),
             model: BuiltValueNullFieldError.checkNotNull(
-                model, r'MappingSuggestResult', 'model'),
+              model,
+              r'MappingSuggestResult',
+              'model',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -181,7 +191,10 @@ class MappingSuggestResultBuilder
         _preview?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingSuggestResult', _$failedField, e.toString());
+          r'MappingSuggestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

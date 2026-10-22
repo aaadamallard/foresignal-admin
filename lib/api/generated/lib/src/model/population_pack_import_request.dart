@@ -21,9 +21,9 @@ abstract class PopulationPackImportRequest
 
   PopulationPackImportRequest._();
 
-  factory PopulationPackImportRequest(
-          [void updates(PopulationPackImportRequestBuilder b)]) =
-      _$PopulationPackImportRequest;
+  factory PopulationPackImportRequest([
+    void updates(PopulationPackImportRequestBuilder b),
+  ]) = _$PopulationPackImportRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PopulationPackImportRequestBuilder b) => b;
@@ -38,7 +38,7 @@ class _$PopulationPackImportRequestSerializer
   @override
   final Iterable<Type> types = const [
     PopulationPackImportRequest,
-    _$PopulationPackImportRequest
+    _$PopulationPackImportRequest,
   ];
 
   @override
@@ -62,9 +62,11 @@ class _$PopulationPackImportRequestSerializer
     PopulationPackImportRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -80,10 +82,12 @@ class _$PopulationPackImportRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         default:

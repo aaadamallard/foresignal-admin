@@ -20,8 +20,10 @@ part 'outlet_consensus_providers_inner.g.dart';
 @BuiltValue()
 abstract class OutletConsensusProvidersInner
     implements
-        Built<OutletConsensusProvidersInner,
-            OutletConsensusProvidersInnerBuilder> {
+        Built<
+          OutletConsensusProvidersInner,
+          OutletConsensusProvidersInnerBuilder
+        > {
   @BuiltValueField(wireName: r'provider')
   OutletConsensusProvidersInnerProviderEnum get provider;
   // enum providerEnum {  wikidata,  partisan-web,  allsides,  mbfc,  operator,  };
@@ -40,9 +42,9 @@ abstract class OutletConsensusProvidersInner
 
   OutletConsensusProvidersInner._();
 
-  factory OutletConsensusProvidersInner(
-          [void updates(OutletConsensusProvidersInnerBuilder b)]) =
-      _$OutletConsensusProvidersInner;
+  factory OutletConsensusProvidersInner([
+    void updates(OutletConsensusProvidersInnerBuilder b),
+  ]) = _$OutletConsensusProvidersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OutletConsensusProvidersInnerBuilder b) => b;
@@ -57,7 +59,7 @@ class _$OutletConsensusProvidersInnerSerializer
   @override
   final Iterable<Type> types = const [
     OutletConsensusProvidersInner,
-    _$OutletConsensusProvidersInner
+    _$OutletConsensusProvidersInner,
   ];
 
   @override
@@ -109,9 +111,11 @@ class _$OutletConsensusProvidersInnerSerializer
     OutletConsensusProvidersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,42 +131,53 @@ class _$OutletConsensusProvidersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(OutletConsensusProvidersInnerProviderEnum),
-          ) as OutletConsensusProvidersInnerProviderEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OutletConsensusProvidersInnerProviderEnum,
+                    ),
+                  )
+                  as OutletConsensusProvidersInnerProviderEnum;
           result.provider = valueDes;
           break;
         case r'valueNorm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.valueNorm = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'ratedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.ratedAt = valueDes;
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.licence = valueDes;
           break;

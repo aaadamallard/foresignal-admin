@@ -10,9 +10,9 @@ class _$EntityMergeInput extends EntityMergeInput {
   @override
   final String otherId;
 
-  factory _$EntityMergeInput(
-          [void Function(EntityMergeInputBuilder)? updates]) =>
-      (EntityMergeInputBuilder()..update(updates))._build();
+  factory _$EntityMergeInput([
+    void Function(EntityMergeInputBuilder)? updates,
+  ]) => (EntityMergeInputBuilder()..update(updates))._build();
 
   _$EntityMergeInput._({required this.otherId}) : super._();
   @override
@@ -39,9 +39,9 @@ class _$EntityMergeInput extends EntityMergeInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'EntityMergeInput')
-          ..add('otherId', otherId))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'EntityMergeInput',
+    )..add('otherId', otherId)).toString();
   }
 }
 
@@ -80,10 +80,14 @@ class EntityMergeInputBuilder
   EntityMergeInput build() => _build();
 
   _$EntityMergeInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EntityMergeInput._(
           otherId: BuiltValueNullFieldError.checkNotNull(
-              otherId, r'EntityMergeInput', 'otherId'),
+            otherId,
+            r'EntityMergeInput',
+            'otherId',
+          ),
         );
     replace(_$result);
     return _$result;

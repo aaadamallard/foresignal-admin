@@ -18,21 +18,21 @@ class _$OsmAndLocationLocation extends OsmAndLocationLocation {
   @override
   final String? event;
 
-  factory _$OsmAndLocationLocation(
-          [void Function(OsmAndLocationLocationBuilder)? updates]) =>
-      (OsmAndLocationLocationBuilder()..update(updates))._build();
+  factory _$OsmAndLocationLocation([
+    void Function(OsmAndLocationLocationBuilder)? updates,
+  ]) => (OsmAndLocationLocationBuilder()..update(updates))._build();
 
-  _$OsmAndLocationLocation._(
-      {this.timestamp,
-      required this.coords,
-      this.battery,
-      this.isMoving,
-      this.event})
-      : super._();
+  _$OsmAndLocationLocation._({
+    this.timestamp,
+    required this.coords,
+    this.battery,
+    this.isMoving,
+    this.event,
+  }) : super._();
   @override
   OsmAndLocationLocation rebuild(
-          void Function(OsmAndLocationLocationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OsmAndLocationLocationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OsmAndLocationLocationBuilder toBuilder() =>
@@ -134,7 +134,8 @@ class OsmAndLocationLocationBuilder
   _$OsmAndLocationLocation _build() {
     _$OsmAndLocationLocation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OsmAndLocationLocation._(
             timestamp: timestamp,
             coords: coords.build(),
@@ -151,7 +152,10 @@ class OsmAndLocationLocationBuilder
         _battery?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OsmAndLocationLocation', _$failedField, e.toString());
+          r'OsmAndLocationLocation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

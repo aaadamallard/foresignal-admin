@@ -37,8 +37,9 @@ class _$AskDeltaEvent extends AskDeltaEvent {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AskDeltaEvent')..add('text', text))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AskDeltaEvent',
+    )..add('text', text)).toString();
   }
 }
 
@@ -77,10 +78,14 @@ class AskDeltaEventBuilder
   AskDeltaEvent build() => _build();
 
   _$AskDeltaEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AskDeltaEvent._(
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'AskDeltaEvent', 'text'),
+            text,
+            r'AskDeltaEvent',
+            'text',
+          ),
         );
     replace(_$result);
     return _$result;

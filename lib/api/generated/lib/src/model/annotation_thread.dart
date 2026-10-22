@@ -95,9 +95,11 @@ class _$AnnotationThreadSerializer
     AnnotationThread object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,38 +115,47 @@ class _$AnnotationThreadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'root':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Annotation),
-          ) as Annotation;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Annotation),
+                  )
+                  as Annotation;
           result.root.replace(valueDes);
           break;
         case r'replies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Annotation)]),
-          ) as BuiltList<Annotation>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Annotation),
+                    ]),
+                  )
+                  as BuiltList<Annotation>;
           result.replies.replace(valueDes);
           break;
         case r'replyCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.replyCount = valueDes;
           break;
         case r'resolved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.resolved = valueDes;
           break;
         case r'lastActivityAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.lastActivityAt = valueDes;
           break;
         default:

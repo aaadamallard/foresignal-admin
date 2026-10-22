@@ -19,12 +19,12 @@ class _$ClaimReputation extends ClaimReputation {
   factory _$ClaimReputation([void Function(ClaimReputationBuilder)? updates]) =>
       (ClaimReputationBuilder()..update(updates))._build();
 
-  _$ClaimReputation._(
-      {required this.outletId,
-      required this.factuality,
-      this.lean,
-      required this.stateAffiliated})
-      : super._();
+  _$ClaimReputation._({
+    required this.outletId,
+    required this.factuality,
+    this.lean,
+    required this.stateAffiliated,
+  }) : super._();
   @override
   ClaimReputation rebuild(void Function(ClaimReputationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -115,15 +115,25 @@ class ClaimReputationBuilder
   ClaimReputation build() => _build();
 
   _$ClaimReputation _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ClaimReputation._(
           outletId: BuiltValueNullFieldError.checkNotNull(
-              outletId, r'ClaimReputation', 'outletId'),
+            outletId,
+            r'ClaimReputation',
+            'outletId',
+          ),
           factuality: BuiltValueNullFieldError.checkNotNull(
-              factuality, r'ClaimReputation', 'factuality'),
+            factuality,
+            r'ClaimReputation',
+            'factuality',
+          ),
           lean: lean,
           stateAffiliated: BuiltValueNullFieldError.checkNotNull(
-              stateAffiliated, r'ClaimReputation', 'stateAffiliated'),
+            stateAffiliated,
+            r'ClaimReputation',
+            'stateAffiliated',
+          ),
         );
     replace(_$result);
     return _$result;

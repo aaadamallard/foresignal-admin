@@ -24,24 +24,24 @@ class _$CyclePacketHypotheses extends CyclePacketHypotheses {
   @override
   final BuiltList<CyclePacketItem>? dueForReview;
 
-  factory _$CyclePacketHypotheses(
-          [void Function(CyclePacketHypothesesBuilder)? updates]) =>
-      (CyclePacketHypothesesBuilder()..update(updates))._build();
+  factory _$CyclePacketHypotheses([
+    void Function(CyclePacketHypothesesBuilder)? updates,
+  ]) => (CyclePacketHypothesesBuilder()..update(updates))._build();
 
-  _$CyclePacketHypotheses._(
-      {this.revisions,
-      this.bandChanges,
-      this.indicatorsObserved,
-      this.indicatorsAbsent,
-      this.indicatorsUnknownCoverage,
-      this.assumptionsBroken,
-      this.assumptionsQuestioned,
-      this.dueForReview})
-      : super._();
+  _$CyclePacketHypotheses._({
+    this.revisions,
+    this.bandChanges,
+    this.indicatorsObserved,
+    this.indicatorsAbsent,
+    this.indicatorsUnknownCoverage,
+    this.assumptionsBroken,
+    this.assumptionsQuestioned,
+    this.dueForReview,
+  }) : super._();
   @override
   CyclePacketHypotheses rebuild(
-          void Function(CyclePacketHypothesesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CyclePacketHypothesesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CyclePacketHypothesesBuilder toBuilder() =>
@@ -123,8 +123,8 @@ class CyclePacketHypothesesBuilder
   ListBuilder<CyclePacketItem> get indicatorsUnknownCoverage =>
       _$this._indicatorsUnknownCoverage ??= ListBuilder<CyclePacketItem>();
   set indicatorsUnknownCoverage(
-          ListBuilder<CyclePacketItem>? indicatorsUnknownCoverage) =>
-      _$this._indicatorsUnknownCoverage = indicatorsUnknownCoverage;
+    ListBuilder<CyclePacketItem>? indicatorsUnknownCoverage,
+  ) => _$this._indicatorsUnknownCoverage = indicatorsUnknownCoverage;
 
   ListBuilder<CyclePacketItem>? _assumptionsBroken;
   ListBuilder<CyclePacketItem> get assumptionsBroken =>
@@ -136,8 +136,8 @@ class CyclePacketHypothesesBuilder
   ListBuilder<CyclePacketItem> get assumptionsQuestioned =>
       _$this._assumptionsQuestioned ??= ListBuilder<CyclePacketItem>();
   set assumptionsQuestioned(
-          ListBuilder<CyclePacketItem>? assumptionsQuestioned) =>
-      _$this._assumptionsQuestioned = assumptionsQuestioned;
+    ListBuilder<CyclePacketItem>? assumptionsQuestioned,
+  ) => _$this._assumptionsQuestioned = assumptionsQuestioned;
 
   ListBuilder<CyclePacketItem>? _dueForReview;
   ListBuilder<CyclePacketItem> get dueForReview =>
@@ -181,7 +181,8 @@ class CyclePacketHypothesesBuilder
   _$CyclePacketHypotheses _build() {
     _$CyclePacketHypotheses _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CyclePacketHypotheses._(
             revisions: _revisions?.build(),
             bandChanges: _bandChanges?.build(),
@@ -213,7 +214,10 @@ class CyclePacketHypothesesBuilder
         _dueForReview?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CyclePacketHypotheses', _$failedField, e.toString());
+          r'CyclePacketHypotheses',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

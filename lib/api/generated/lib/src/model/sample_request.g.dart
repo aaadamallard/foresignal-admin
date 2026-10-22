@@ -24,9 +24,9 @@ SampleRequestUnitsEnum _$sampleRequestUnitsEnumValueOf(String name) {
 
 final BuiltSet<SampleRequestUnitsEnum> _$sampleRequestUnitsEnumValues =
     BuiltSet<SampleRequestUnitsEnum>(const <SampleRequestUnitsEnum>[
-  _$sampleRequestUnitsEnum_metric,
-  _$sampleRequestUnitsEnum_imperial,
-]);
+      _$sampleRequestUnitsEnum_metric,
+      _$sampleRequestUnitsEnum_imperial,
+    ]);
 
 Serializer<SampleRequestUnitsEnum> _$sampleRequestUnitsEnumSerializer =
     _$SampleRequestUnitsEnumSerializer();
@@ -48,15 +48,20 @@ class _$SampleRequestUnitsEnumSerializer
   final String wireName = 'SampleRequestUnitsEnum';
 
   @override
-  Object serialize(Serializers serializers, SampleRequestUnitsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SampleRequestUnitsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SampleRequestUnitsEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SampleRequestUnitsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SampleRequestUnitsEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SampleRequestUnitsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SampleRequest extends SampleRequest {
@@ -72,9 +77,12 @@ class _$SampleRequest extends SampleRequest {
   factory _$SampleRequest([void Function(SampleRequestBuilder)? updates]) =>
       (SampleRequestBuilder()..update(updates))._build();
 
-  _$SampleRequest._(
-      {required this.points, required this.products, this.time, this.units})
-      : super._();
+  _$SampleRequest._({
+    required this.points,
+    required this.products,
+    this.time,
+    this.units,
+  }) : super._();
   @override
   SampleRequest rebuild(void Function(SampleRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -168,7 +176,8 @@ class SampleRequestBuilder
   _$SampleRequest _build() {
     _$SampleRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SampleRequest._(
             points: points.build(),
             products: products.build(),
@@ -184,7 +193,10 @@ class SampleRequestBuilder
         products.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SampleRequest', _$failedField, e.toString());
+          r'SampleRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

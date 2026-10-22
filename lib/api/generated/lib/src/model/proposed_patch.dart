@@ -107,9 +107,11 @@ class _$ProposedPatchSerializer implements PrimitiveSerializer<ProposedPatch> {
     ProposedPatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,46 +127,60 @@ class _$ProposedPatchSerializer implements PrimitiveSerializer<ProposedPatch> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'file':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.file = valueDes;
           break;
         case r'unifiedDiff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unifiedDiff = valueDes;
           break;
         case r'patchApplies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.patchApplies = valueDes;
           break;
         case r'sanityChecks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProposedPatchSanityChecks),
-          ) as ProposedPatchSanityChecks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ProposedPatchSanityChecks,
+                    ),
+                  )
+                  as ProposedPatchSanityChecks?;
           if (valueDes == null) continue;
           result.sanityChecks.replace(valueDes);
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.label = valueDes;
           break;
         case r'error':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.error = valueDes;
           break;

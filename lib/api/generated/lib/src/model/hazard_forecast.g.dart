@@ -7,16 +7,16 @@ part of 'hazard_forecast.dart';
 // **************************************************************************
 
 const HazardForecastHazardTypeEnum
-    _$hazardForecastHazardTypeEnum_tropicalWind34 =
+_$hazardForecastHazardTypeEnum_tropicalWind34 =
     const HazardForecastHazardTypeEnum._('tropicalWind34');
 const HazardForecastHazardTypeEnum
-    _$hazardForecastHazardTypeEnum_tropicalWind50 =
+_$hazardForecastHazardTypeEnum_tropicalWind50 =
     const HazardForecastHazardTypeEnum._('tropicalWind50');
 const HazardForecastHazardTypeEnum
-    _$hazardForecastHazardTypeEnum_tropicalWind64 =
+_$hazardForecastHazardTypeEnum_tropicalWind64 =
     const HazardForecastHazardTypeEnum._('tropicalWind64');
 const HazardForecastHazardTypeEnum
-    _$hazardForecastHazardTypeEnum_tropicalTrack =
+_$hazardForecastHazardTypeEnum_tropicalTrack =
     const HazardForecastHazardTypeEnum._('tropicalTrack');
 const HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnum_tornado =
     const HazardForecastHazardTypeEnum._('tornado');
@@ -25,10 +25,10 @@ const HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnum_wind =
 const HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnum_hail =
     const HazardForecastHazardTypeEnum._('hail');
 const HazardForecastHazardTypeEnum
-    _$hazardForecastHazardTypeEnum_severeCategorical =
+_$hazardForecastHazardTypeEnum_severeCategorical =
     const HazardForecastHazardTypeEnum._('severeCategorical');
 const HazardForecastHazardTypeEnum
-    _$hazardForecastHazardTypeEnum_excessiveRain =
+_$hazardForecastHazardTypeEnum_excessiveRain =
     const HazardForecastHazardTypeEnum._('excessiveRain');
 const HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnum_riverFlood =
     const HazardForecastHazardTypeEnum._('riverFlood');
@@ -36,7 +36,8 @@ const HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnum_stormCell =
     const HazardForecastHazardTypeEnum._('stormCell');
 
 HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'tropicalWind34':
       return _$hazardForecastHazardTypeEnum_tropicalWind34;
@@ -66,42 +67,43 @@ HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnumValueOf(
 }
 
 final BuiltSet<HazardForecastHazardTypeEnum>
-    _$hazardForecastHazardTypeEnumValues =
+_$hazardForecastHazardTypeEnumValues =
     BuiltSet<HazardForecastHazardTypeEnum>(const <HazardForecastHazardTypeEnum>[
-  _$hazardForecastHazardTypeEnum_tropicalWind34,
-  _$hazardForecastHazardTypeEnum_tropicalWind50,
-  _$hazardForecastHazardTypeEnum_tropicalWind64,
-  _$hazardForecastHazardTypeEnum_tropicalTrack,
-  _$hazardForecastHazardTypeEnum_tornado,
-  _$hazardForecastHazardTypeEnum_wind,
-  _$hazardForecastHazardTypeEnum_hail,
-  _$hazardForecastHazardTypeEnum_severeCategorical,
-  _$hazardForecastHazardTypeEnum_excessiveRain,
-  _$hazardForecastHazardTypeEnum_riverFlood,
-  _$hazardForecastHazardTypeEnum_stormCell,
-]);
+      _$hazardForecastHazardTypeEnum_tropicalWind34,
+      _$hazardForecastHazardTypeEnum_tropicalWind50,
+      _$hazardForecastHazardTypeEnum_tropicalWind64,
+      _$hazardForecastHazardTypeEnum_tropicalTrack,
+      _$hazardForecastHazardTypeEnum_tornado,
+      _$hazardForecastHazardTypeEnum_wind,
+      _$hazardForecastHazardTypeEnum_hail,
+      _$hazardForecastHazardTypeEnum_severeCategorical,
+      _$hazardForecastHazardTypeEnum_excessiveRain,
+      _$hazardForecastHazardTypeEnum_riverFlood,
+      _$hazardForecastHazardTypeEnum_stormCell,
+    ]);
 
 const HazardForecastProbabilityModelEnum
-    _$hazardForecastProbabilityModelEnum_publishedPolygons =
+_$hazardForecastProbabilityModelEnum_publishedPolygons =
     const HazardForecastProbabilityModelEnum._('publishedPolygons');
 const HazardForecastProbabilityModelEnum
-    _$hazardForecastProbabilityModelEnum_publishedPoint =
+_$hazardForecastProbabilityModelEnum_publishedPoint =
     const HazardForecastProbabilityModelEnum._('publishedPoint');
 const HazardForecastProbabilityModelEnum
-    _$hazardForecastProbabilityModelEnum_publishedCategoryRange =
+_$hazardForecastProbabilityModelEnum_publishedCategoryRange =
     const HazardForecastProbabilityModelEnum._('publishedCategoryRange');
 const HazardForecastProbabilityModelEnum
-    _$hazardForecastProbabilityModelEnum_gaugeCategory =
+_$hazardForecastProbabilityModelEnum_gaugeCategory =
     const HazardForecastProbabilityModelEnum._('gaugeCategory');
 const HazardForecastProbabilityModelEnum
-    _$hazardForecastProbabilityModelEnum_trackErrorEllipse =
+_$hazardForecastProbabilityModelEnum_trackErrorEllipse =
     const HazardForecastProbabilityModelEnum._('trackErrorEllipse');
 const HazardForecastProbabilityModelEnum
-    _$hazardForecastProbabilityModelEnum_none =
+_$hazardForecastProbabilityModelEnum_none =
     const HazardForecastProbabilityModelEnum._('none');
 
 HazardForecastProbabilityModelEnum _$hazardForecastProbabilityModelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'publishedPolygons':
       return _$hazardForecastProbabilityModelEnum_publishedPolygons;
@@ -121,21 +123,23 @@ HazardForecastProbabilityModelEnum _$hazardForecastProbabilityModelEnumValueOf(
 }
 
 final BuiltSet<HazardForecastProbabilityModelEnum>
-    _$hazardForecastProbabilityModelEnumValues = BuiltSet<
-        HazardForecastProbabilityModelEnum>(const <HazardForecastProbabilityModelEnum>[
-  _$hazardForecastProbabilityModelEnum_publishedPolygons,
-  _$hazardForecastProbabilityModelEnum_publishedPoint,
-  _$hazardForecastProbabilityModelEnum_publishedCategoryRange,
-  _$hazardForecastProbabilityModelEnum_gaugeCategory,
-  _$hazardForecastProbabilityModelEnum_trackErrorEllipse,
-  _$hazardForecastProbabilityModelEnum_none,
-]);
+_$hazardForecastProbabilityModelEnumValues =
+    BuiltSet<HazardForecastProbabilityModelEnum>(
+      const <HazardForecastProbabilityModelEnum>[
+        _$hazardForecastProbabilityModelEnum_publishedPolygons,
+        _$hazardForecastProbabilityModelEnum_publishedPoint,
+        _$hazardForecastProbabilityModelEnum_publishedCategoryRange,
+        _$hazardForecastProbabilityModelEnum_gaugeCategory,
+        _$hazardForecastProbabilityModelEnum_trackErrorEllipse,
+        _$hazardForecastProbabilityModelEnum_none,
+      ],
+    );
 
 Serializer<HazardForecastHazardTypeEnum>
-    _$hazardForecastHazardTypeEnumSerializer =
+_$hazardForecastHazardTypeEnumSerializer =
     _$HazardForecastHazardTypeEnumSerializer();
 Serializer<HazardForecastProbabilityModelEnum>
-    _$hazardForecastProbabilityModelEnumSerializer =
+_$hazardForecastProbabilityModelEnumSerializer =
     _$HazardForecastProbabilityModelEnumSerializer();
 
 class _$HazardForecastHazardTypeEnumSerializer
@@ -173,16 +177,20 @@ class _$HazardForecastHazardTypeEnumSerializer
   final String wireName = 'HazardForecastHazardTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, HazardForecastHazardTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HazardForecastHazardTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HazardForecastHazardTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HazardForecastHazardTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HazardForecastHazardTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HazardForecastProbabilityModelEnumSerializer
@@ -211,16 +219,19 @@ class _$HazardForecastProbabilityModelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HazardForecastProbabilityModelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HazardForecastProbabilityModelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HazardForecastProbabilityModelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HazardForecastProbabilityModelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HazardForecastProbabilityModelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HazardForecast extends HazardForecast {
@@ -260,24 +271,24 @@ class _$HazardForecast extends HazardForecast {
   factory _$HazardForecast([void Function(HazardForecastBuilder)? updates]) =>
       (HazardForecastBuilder()..update(updates))._build();
 
-  _$HazardForecast._(
-      {required this.hazardType,
-      required this.sourceRef,
-      this.issuer,
-      required this.issuedAt,
-      required this.validFrom,
-      required this.validTo,
-      this.geometry,
-      this.probabilityField,
-      required this.probabilityModel,
-      this.category,
-      this.probabilityRange,
-      this.note,
-      this.hazardKey,
-      this.sourceRefs,
-      this.pointRadiusKm,
-      this.details})
-      : super._();
+  _$HazardForecast._({
+    required this.hazardType,
+    required this.sourceRef,
+    this.issuer,
+    required this.issuedAt,
+    required this.validFrom,
+    required this.validTo,
+    this.geometry,
+    this.probabilityField,
+    required this.probabilityModel,
+    this.category,
+    this.probabilityRange,
+    this.note,
+    this.hazardKey,
+    this.sourceRefs,
+    this.pointRadiusKm,
+    this.details,
+  }) : super._();
   @override
   HazardForecast rebuild(void Function(HazardForecastBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -391,8 +402,8 @@ class HazardForecastBuilder
       _$this._probabilityField ??=
           ListBuilder<HazardForecastProbabilityFieldInner>();
   set probabilityField(
-          ListBuilder<HazardForecastProbabilityFieldInner>? probabilityField) =>
-      _$this._probabilityField = probabilityField;
+    ListBuilder<HazardForecastProbabilityFieldInner>? probabilityField,
+  ) => _$this._probabilityField = probabilityField;
 
   HazardForecastProbabilityModelEnum? _probabilityModel;
   HazardForecastProbabilityModelEnum? get probabilityModel =>
@@ -408,8 +419,8 @@ class HazardForecastBuilder
   HazardForecastProbabilityRangeBuilder get probabilityRange =>
       _$this._probabilityRange ??= HazardForecastProbabilityRangeBuilder();
   set probabilityRange(
-          HazardForecastProbabilityRangeBuilder? probabilityRange) =>
-      _$this._probabilityRange = probabilityRange;
+    HazardForecastProbabilityRangeBuilder? probabilityRange,
+  ) => _$this._probabilityRange = probabilityRange;
 
   String? _note;
   String? get note => _$this._note;
@@ -480,23 +491,42 @@ class HazardForecastBuilder
   _$HazardForecast _build() {
     _$HazardForecast _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HazardForecast._(
             hazardType: BuiltValueNullFieldError.checkNotNull(
-                hazardType, r'HazardForecast', 'hazardType'),
+              hazardType,
+              r'HazardForecast',
+              'hazardType',
+            ),
             sourceRef: BuiltValueNullFieldError.checkNotNull(
-                sourceRef, r'HazardForecast', 'sourceRef'),
+              sourceRef,
+              r'HazardForecast',
+              'sourceRef',
+            ),
             issuer: issuer,
             issuedAt: BuiltValueNullFieldError.checkNotNull(
-                issuedAt, r'HazardForecast', 'issuedAt'),
+              issuedAt,
+              r'HazardForecast',
+              'issuedAt',
+            ),
             validFrom: BuiltValueNullFieldError.checkNotNull(
-                validFrom, r'HazardForecast', 'validFrom'),
+              validFrom,
+              r'HazardForecast',
+              'validFrom',
+            ),
             validTo: BuiltValueNullFieldError.checkNotNull(
-                validTo, r'HazardForecast', 'validTo'),
+              validTo,
+              r'HazardForecast',
+              'validTo',
+            ),
             geometry: _geometry?.build(),
             probabilityField: _probabilityField?.build(),
             probabilityModel: BuiltValueNullFieldError.checkNotNull(
-                probabilityModel, r'HazardForecast', 'probabilityModel'),
+              probabilityModel,
+              r'HazardForecast',
+              'probabilityModel',
+            ),
             category: category,
             probabilityRange: _probabilityRange?.build(),
             note: note,
@@ -523,7 +553,10 @@ class HazardForecastBuilder
         _details?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HazardForecast', _$failedField, e.toString());
+          r'HazardForecast',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

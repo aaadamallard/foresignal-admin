@@ -20,8 +20,8 @@ MapStyleVersionEnum _$mapStyleVersionEnumValueOf(String name) {
 
 final BuiltSet<MapStyleVersionEnum> _$mapStyleVersionEnumValues =
     BuiltSet<MapStyleVersionEnum>(const <MapStyleVersionEnum>[
-  _$mapStyleVersionEnum_number8,
-]);
+      _$mapStyleVersionEnum_number8,
+    ]);
 
 Serializer<MapStyleVersionEnum> _$mapStyleVersionEnumSerializer =
     _$MapStyleVersionEnumSerializer();
@@ -41,15 +41,20 @@ class _$MapStyleVersionEnumSerializer
   final String wireName = 'MapStyleVersionEnum';
 
   @override
-  Object serialize(Serializers serializers, MapStyleVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MapStyleVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MapStyleVersionEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MapStyleVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MapStyleVersionEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MapStyleVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MapStyle extends MapStyle {
@@ -69,14 +74,14 @@ class _$MapStyle extends MapStyle {
   factory _$MapStyle([void Function(MapStyleBuilder)? updates]) =>
       (MapStyleBuilder()..update(updates))._build();
 
-  _$MapStyle._(
-      {required this.version,
-      this.name,
-      required this.sources,
-      required this.sprite,
-      required this.layers,
-      required this.metadata})
-      : super._();
+  _$MapStyle._({
+    required this.version,
+    this.name,
+    required this.sources,
+    required this.sprite,
+    required this.layers,
+    required this.metadata,
+  }) : super._();
   @override
   MapStyle rebuild(void Function(MapStyleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -189,14 +194,21 @@ class MapStyleBuilder implements Builder<MapStyle, MapStyleBuilder> {
   _$MapStyle _build() {
     _$MapStyle _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MapStyle._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'MapStyle', 'version'),
+              version,
+              r'MapStyle',
+              'version',
+            ),
             name: name,
             sources: sources.build(),
             sprite: BuiltValueNullFieldError.checkNotNull(
-                sprite, r'MapStyle', 'sprite'),
+              sprite,
+              r'MapStyle',
+              'sprite',
+            ),
             layers: layers.build(),
             metadata: metadata.build(),
           );
@@ -212,7 +224,10 @@ class MapStyleBuilder implements Builder<MapStyle, MapStyleBuilder> {
         metadata.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MapStyle', _$failedField, e.toString());
+          r'MapStyle',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

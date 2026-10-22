@@ -28,10 +28,10 @@ PolSubjectSubjectTypeEnum _$polSubjectSubjectTypeEnumValueOf(String name) {
 
 final BuiltSet<PolSubjectSubjectTypeEnum> _$polSubjectSubjectTypeEnumValues =
     BuiltSet<PolSubjectSubjectTypeEnum>(const <PolSubjectSubjectTypeEnum>[
-  _$polSubjectSubjectTypeEnum_record,
-  _$polSubjectSubjectTypeEnum_entity,
-  _$polSubjectSubjectTypeEnum_watchlist,
-]);
+      _$polSubjectSubjectTypeEnum_record,
+      _$polSubjectSubjectTypeEnum_entity,
+      _$polSubjectSubjectTypeEnum_watchlist,
+    ]);
 
 Serializer<PolSubjectSubjectTypeEnum> _$polSubjectSubjectTypeEnumSerializer =
     _$PolSubjectSubjectTypeEnumSerializer();
@@ -55,16 +55,20 @@ class _$PolSubjectSubjectTypeEnumSerializer
   final String wireName = 'PolSubjectSubjectTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PolSubjectSubjectTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PolSubjectSubjectTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PolSubjectSubjectTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PolSubjectSubjectTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PolSubjectSubjectTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PolSubject extends PolSubject {
@@ -96,20 +100,20 @@ class _$PolSubject extends PolSubject {
   factory _$PolSubject([void Function(PolSubjectBuilder)? updates]) =>
       (PolSubjectBuilder()..update(updates))._build();
 
-  _$PolSubject._(
-      {required this.id,
-      required this.subjectType,
-      required this.ref,
-      required this.enabled,
-      this.params,
-      this.private,
-      this.createdBy,
-      required this.createdAt,
-      this.lastSeq,
-      this.lastComputedAt,
-      this.placeCount,
-      this.stayCount})
-      : super._();
+  _$PolSubject._({
+    required this.id,
+    required this.subjectType,
+    required this.ref,
+    required this.enabled,
+    this.params,
+    this.private,
+    this.createdBy,
+    required this.createdAt,
+    this.lastSeq,
+    this.lastComputedAt,
+    this.placeCount,
+    this.stayCount,
+  }) : super._();
   @override
   PolSubject rebuild(void Function(PolSubjectBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -268,20 +272,33 @@ class PolSubjectBuilder implements Builder<PolSubject, PolSubjectBuilder> {
   _$PolSubject _build() {
     _$PolSubject _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PolSubject._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'PolSubject', 'id'),
             subjectType: BuiltValueNullFieldError.checkNotNull(
-                subjectType, r'PolSubject', 'subjectType'),
+              subjectType,
+              r'PolSubject',
+              'subjectType',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'PolSubject', 'ref'),
+              ref,
+              r'PolSubject',
+              'ref',
+            ),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'PolSubject', 'enabled'),
+              enabled,
+              r'PolSubject',
+              'enabled',
+            ),
             params: _params?.build(),
             private: private,
             createdBy: createdBy,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'PolSubject', 'createdAt'),
+              createdAt,
+              r'PolSubject',
+              'createdAt',
+            ),
             lastSeq: lastSeq,
             lastComputedAt: lastComputedAt,
             placeCount: placeCount,
@@ -294,7 +311,10 @@ class PolSubjectBuilder implements Builder<PolSubject, PolSubjectBuilder> {
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolSubject', _$failedField, e.toString());
+          r'PolSubject',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

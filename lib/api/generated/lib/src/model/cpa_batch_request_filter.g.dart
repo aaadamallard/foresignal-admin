@@ -14,15 +14,15 @@ class _$CpaBatchRequestFilter extends CpaBatchRequestFilter {
   @override
   final BuiltList<num>? bbox;
 
-  factory _$CpaBatchRequestFilter(
-          [void Function(CpaBatchRequestFilterBuilder)? updates]) =>
-      (CpaBatchRequestFilterBuilder()..update(updates))._build();
+  factory _$CpaBatchRequestFilter([
+    void Function(CpaBatchRequestFilterBuilder)? updates,
+  ]) => (CpaBatchRequestFilterBuilder()..update(updates))._build();
 
   _$CpaBatchRequestFilter._({this.kinds, this.sources, this.bbox}) : super._();
   @override
   CpaBatchRequestFilter rebuild(
-          void Function(CpaBatchRequestFilterBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CpaBatchRequestFilterBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CpaBatchRequestFilterBuilder toBuilder() =>
@@ -104,7 +104,8 @@ class CpaBatchRequestFilterBuilder
   _$CpaBatchRequestFilter _build() {
     _$CpaBatchRequestFilter _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CpaBatchRequestFilter._(
             kinds: _kinds?.build(),
             sources: _sources?.build(),
@@ -121,7 +122,10 @@ class CpaBatchRequestFilterBuilder
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CpaBatchRequestFilter', _$failedField, e.toString());
+          r'CpaBatchRequestFilter',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

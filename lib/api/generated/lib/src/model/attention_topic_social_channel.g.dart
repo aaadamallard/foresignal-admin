@@ -7,20 +7,20 @@ part of 'attention_topic_social_channel.dart';
 // **************************************************************************
 
 const AttentionTopicSocialChannelTypeEnum
-    _$attentionTopicSocialChannelTypeEnum_subreddit =
+_$attentionTopicSocialChannelTypeEnum_subreddit =
     const AttentionTopicSocialChannelTypeEnum._('subreddit');
 const AttentionTopicSocialChannelTypeEnum
-    _$attentionTopicSocialChannelTypeEnum_mastodonInstance =
+_$attentionTopicSocialChannelTypeEnum_mastodonInstance =
     const AttentionTopicSocialChannelTypeEnum._('mastodonInstance');
 const AttentionTopicSocialChannelTypeEnum
-    _$attentionTopicSocialChannelTypeEnum_mastodonHashtag =
+_$attentionTopicSocialChannelTypeEnum_mastodonHashtag =
     const AttentionTopicSocialChannelTypeEnum._('mastodonHashtag');
 const AttentionTopicSocialChannelTypeEnum
-    _$attentionTopicSocialChannelTypeEnum_youtubeChannel =
+_$attentionTopicSocialChannelTypeEnum_youtubeChannel =
     const AttentionTopicSocialChannelTypeEnum._('youtubeChannel');
 
 AttentionTopicSocialChannelTypeEnum
-    _$attentionTopicSocialChannelTypeEnumValueOf(String name) {
+_$attentionTopicSocialChannelTypeEnumValueOf(String name) {
   switch (name) {
     case 'subreddit':
       return _$attentionTopicSocialChannelTypeEnum_subreddit;
@@ -36,16 +36,18 @@ AttentionTopicSocialChannelTypeEnum
 }
 
 final BuiltSet<AttentionTopicSocialChannelTypeEnum>
-    _$attentionTopicSocialChannelTypeEnumValues = BuiltSet<
-        AttentionTopicSocialChannelTypeEnum>(const <AttentionTopicSocialChannelTypeEnum>[
-  _$attentionTopicSocialChannelTypeEnum_subreddit,
-  _$attentionTopicSocialChannelTypeEnum_mastodonInstance,
-  _$attentionTopicSocialChannelTypeEnum_mastodonHashtag,
-  _$attentionTopicSocialChannelTypeEnum_youtubeChannel,
-]);
+_$attentionTopicSocialChannelTypeEnumValues =
+    BuiltSet<AttentionTopicSocialChannelTypeEnum>(
+      const <AttentionTopicSocialChannelTypeEnum>[
+        _$attentionTopicSocialChannelTypeEnum_subreddit,
+        _$attentionTopicSocialChannelTypeEnum_mastodonInstance,
+        _$attentionTopicSocialChannelTypeEnum_mastodonHashtag,
+        _$attentionTopicSocialChannelTypeEnum_youtubeChannel,
+      ],
+    );
 
 Serializer<AttentionTopicSocialChannelTypeEnum>
-    _$attentionTopicSocialChannelTypeEnumSerializer =
+_$attentionTopicSocialChannelTypeEnumSerializer =
     _$AttentionTopicSocialChannelTypeEnumSerializer();
 
 class _$AttentionTopicSocialChannelTypeEnumSerializer
@@ -65,23 +67,26 @@ class _$AttentionTopicSocialChannelTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AttentionTopicSocialChannelTypeEnum
+    AttentionTopicSocialChannelTypeEnum,
   ];
   @override
   final String wireName = 'AttentionTopicSocialChannelTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, AttentionTopicSocialChannelTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AttentionTopicSocialChannelTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AttentionTopicSocialChannelTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AttentionTopicSocialChannelTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AttentionTopicSocialChannelTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AttentionTopicSocialChannel extends AttentionTopicSocialChannel {
@@ -92,17 +97,19 @@ class _$AttentionTopicSocialChannel extends AttentionTopicSocialChannel {
   @override
   final String id;
 
-  factory _$AttentionTopicSocialChannel(
-          [void Function(AttentionTopicSocialChannelBuilder)? updates]) =>
-      (AttentionTopicSocialChannelBuilder()..update(updates))._build();
+  factory _$AttentionTopicSocialChannel([
+    void Function(AttentionTopicSocialChannelBuilder)? updates,
+  ]) => (AttentionTopicSocialChannelBuilder()..update(updates))._build();
 
-  _$AttentionTopicSocialChannel._(
-      {required this.platform, required this.type, required this.id})
-      : super._();
+  _$AttentionTopicSocialChannel._({
+    required this.platform,
+    required this.type,
+    required this.id,
+  }) : super._();
   @override
   AttentionTopicSocialChannel rebuild(
-          void Function(AttentionTopicSocialChannelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AttentionTopicSocialChannelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AttentionTopicSocialChannelBuilder toBuilder() =>
@@ -139,8 +146,10 @@ class _$AttentionTopicSocialChannel extends AttentionTopicSocialChannel {
 
 class AttentionTopicSocialChannelBuilder
     implements
-        Builder<AttentionTopicSocialChannel,
-            AttentionTopicSocialChannelBuilder> {
+        Builder<
+          AttentionTopicSocialChannel,
+          AttentionTopicSocialChannelBuilder
+        > {
   _$AttentionTopicSocialChannel? _$v;
 
   String? _platform;
@@ -184,14 +193,24 @@ class AttentionTopicSocialChannelBuilder
   AttentionTopicSocialChannel build() => _build();
 
   _$AttentionTopicSocialChannel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AttentionTopicSocialChannel._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'AttentionTopicSocialChannel', 'platform'),
+            platform,
+            r'AttentionTopicSocialChannel',
+            'platform',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'AttentionTopicSocialChannel', 'type'),
+            type,
+            r'AttentionTopicSocialChannel',
+            'type',
+          ),
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'AttentionTopicSocialChannel', 'id'),
+            id,
+            r'AttentionTopicSocialChannel',
+            'id',
+          ),
         );
     replace(_$result);
     return _$result;

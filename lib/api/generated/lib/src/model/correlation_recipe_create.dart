@@ -31,9 +31,9 @@ abstract class CorrelationRecipeCreate
 
   CorrelationRecipeCreate._();
 
-  factory CorrelationRecipeCreate(
-          [void updates(CorrelationRecipeCreateBuilder b)]) =
-      _$CorrelationRecipeCreate;
+  factory CorrelationRecipeCreate([
+    void updates(CorrelationRecipeCreateBuilder b),
+  ]) = _$CorrelationRecipeCreate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeCreateBuilder b) => b;
@@ -48,7 +48,7 @@ class _$CorrelationRecipeCreateSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeCreate,
-    _$CorrelationRecipeCreate
+    _$CorrelationRecipeCreate,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$CorrelationRecipeCreateSerializer
     CorrelationRecipeCreate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,24 +104,30 @@ class _$CorrelationRecipeCreateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'definition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CorrelationRecipeDefinition),
-          ) as CorrelationRecipeDefinition;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CorrelationRecipeDefinition),
+                  )
+                  as CorrelationRecipeDefinition;
           result.definition.replace(valueDes);
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;

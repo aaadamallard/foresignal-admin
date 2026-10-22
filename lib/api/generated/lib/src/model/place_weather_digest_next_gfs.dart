@@ -49,9 +49,9 @@ abstract class PlaceWeatherDigestNextGfs
 
   PlaceWeatherDigestNextGfs._();
 
-  factory PlaceWeatherDigestNextGfs(
-          [void updates(PlaceWeatherDigestNextGfsBuilder b)]) =
-      _$PlaceWeatherDigestNextGfs;
+  factory PlaceWeatherDigestNextGfs([
+    void updates(PlaceWeatherDigestNextGfsBuilder b),
+  ]) = _$PlaceWeatherDigestNextGfs;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestNextGfsBuilder b) => b;
@@ -66,7 +66,7 @@ class _$PlaceWeatherDigestNextGfsSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestNextGfs,
-    _$PlaceWeatherDigestNextGfs
+    _$PlaceWeatherDigestNextGfs,
   ];
 
   @override
@@ -132,9 +132,11 @@ class _$PlaceWeatherDigestNextGfsSerializer
     PlaceWeatherDigestNextGfs object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -150,57 +152,71 @@ class _$PlaceWeatherDigestNextGfsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WeatherSectionStatus),
-          ) as WeatherSectionStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WeatherSectionStatus),
+                  )
+                  as WeatherSectionStatus;
           result.status = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'statusText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusText = valueDes;
           break;
         case r'run':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.run = valueDes;
           break;
         case r'gustMaxMs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.gustMaxMs = valueDes;
           break;
         case r'precipMm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.precipMm = valueDes;
           break;
         case r'validTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validTime = valueDes;
           break;

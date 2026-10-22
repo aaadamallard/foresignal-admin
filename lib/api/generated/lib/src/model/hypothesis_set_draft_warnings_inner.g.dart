@@ -15,17 +15,19 @@ class _$HypothesisSetDraftWarningsInner
   @override
   final String? path;
 
-  factory _$HypothesisSetDraftWarningsInner(
-          [void Function(HypothesisSetDraftWarningsInnerBuilder)? updates]) =>
-      (HypothesisSetDraftWarningsInnerBuilder()..update(updates))._build();
+  factory _$HypothesisSetDraftWarningsInner([
+    void Function(HypothesisSetDraftWarningsInnerBuilder)? updates,
+  ]) => (HypothesisSetDraftWarningsInnerBuilder()..update(updates))._build();
 
-  _$HypothesisSetDraftWarningsInner._(
-      {required this.code, required this.message, this.path})
-      : super._();
+  _$HypothesisSetDraftWarningsInner._({
+    required this.code,
+    required this.message,
+    this.path,
+  }) : super._();
   @override
   HypothesisSetDraftWarningsInner rebuild(
-          void Function(HypothesisSetDraftWarningsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetDraftWarningsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetDraftWarningsInnerBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$HypothesisSetDraftWarningsInner
 
 class HypothesisSetDraftWarningsInnerBuilder
     implements
-        Builder<HypothesisSetDraftWarningsInner,
-            HypothesisSetDraftWarningsInnerBuilder> {
+        Builder<
+          HypothesisSetDraftWarningsInner,
+          HypothesisSetDraftWarningsInnerBuilder
+        > {
   _$HypothesisSetDraftWarningsInner? _$v;
 
   String? _code;
@@ -107,12 +111,19 @@ class HypothesisSetDraftWarningsInnerBuilder
   HypothesisSetDraftWarningsInner build() => _build();
 
   _$HypothesisSetDraftWarningsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisSetDraftWarningsInner._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'HypothesisSetDraftWarningsInner', 'code'),
+            code,
+            r'HypothesisSetDraftWarningsInner',
+            'code',
+          ),
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'HypothesisSetDraftWarningsInner', 'message'),
+            message,
+            r'HypothesisSetDraftWarningsInner',
+            'message',
+          ),
           path: path,
         );
     replace(_$result);

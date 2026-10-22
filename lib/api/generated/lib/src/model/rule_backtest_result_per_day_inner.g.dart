@@ -12,16 +12,16 @@ class _$RuleBacktestResultPerDayInner extends RuleBacktestResultPerDayInner {
   @override
   final int count;
 
-  factory _$RuleBacktestResultPerDayInner(
-          [void Function(RuleBacktestResultPerDayInnerBuilder)? updates]) =>
-      (RuleBacktestResultPerDayInnerBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultPerDayInner([
+    void Function(RuleBacktestResultPerDayInnerBuilder)? updates,
+  ]) => (RuleBacktestResultPerDayInnerBuilder()..update(updates))._build();
 
   _$RuleBacktestResultPerDayInner._({required this.date, required this.count})
-      : super._();
+    : super._();
   @override
   RuleBacktestResultPerDayInner rebuild(
-          void Function(RuleBacktestResultPerDayInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultPerDayInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultPerDayInnerBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$RuleBacktestResultPerDayInner extends RuleBacktestResultPerDayInner {
 
 class RuleBacktestResultPerDayInnerBuilder
     implements
-        Builder<RuleBacktestResultPerDayInner,
-            RuleBacktestResultPerDayInnerBuilder> {
+        Builder<
+          RuleBacktestResultPerDayInner,
+          RuleBacktestResultPerDayInnerBuilder
+        > {
   _$RuleBacktestResultPerDayInner? _$v;
 
   Date? _date;
@@ -95,12 +97,19 @@ class RuleBacktestResultPerDayInnerBuilder
   RuleBacktestResultPerDayInner build() => _build();
 
   _$RuleBacktestResultPerDayInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RuleBacktestResultPerDayInner._(
           date: BuiltValueNullFieldError.checkNotNull(
-              date, r'RuleBacktestResultPerDayInner', 'date'),
+            date,
+            r'RuleBacktestResultPerDayInner',
+            'date',
+          ),
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'RuleBacktestResultPerDayInner', 'count'),
+            count,
+            r'RuleBacktestResultPerDayInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

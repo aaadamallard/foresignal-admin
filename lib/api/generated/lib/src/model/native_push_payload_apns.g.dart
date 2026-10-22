@@ -12,15 +12,15 @@ class _$NativePushPayloadApns extends NativePushPayloadApns {
   @override
   final NativePushPayloadApnsE? e;
 
-  factory _$NativePushPayloadApns(
-          [void Function(NativePushPayloadApnsBuilder)? updates]) =>
-      (NativePushPayloadApnsBuilder()..update(updates))._build();
+  factory _$NativePushPayloadApns([
+    void Function(NativePushPayloadApnsBuilder)? updates,
+  ]) => (NativePushPayloadApnsBuilder()..update(updates))._build();
 
   _$NativePushPayloadApns._({this.aps, this.e}) : super._();
   @override
   NativePushPayloadApns rebuild(
-          void Function(NativePushPayloadApnsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadApnsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadApnsBuilder toBuilder() =>
@@ -94,11 +94,8 @@ class NativePushPayloadApnsBuilder
   _$NativePushPayloadApns _build() {
     _$NativePushPayloadApns _$result;
     try {
-      _$result = _$v ??
-          _$NativePushPayloadApns._(
-            aps: _aps?.build(),
-            e: _e?.build(),
-          );
+      _$result =
+          _$v ?? _$NativePushPayloadApns._(aps: _aps?.build(), e: _e?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -108,7 +105,10 @@ class NativePushPayloadApnsBuilder
         _e?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NativePushPayloadApns', _$failedField, e.toString());
+          r'NativePushPayloadApns',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

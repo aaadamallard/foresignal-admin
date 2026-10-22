@@ -239,9 +239,11 @@ class _$ScorecardEntrySerializer
     ScorecardEntry object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -257,137 +259,174 @@ class _$ScorecardEntrySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'forecasterType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ScorecardEntryForecasterTypeEnum),
-          ) as ScorecardEntryForecasterTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ScorecardEntryForecasterTypeEnum,
+                    ),
+                  )
+                  as ScorecardEntryForecasterTypeEnum?;
           if (valueDes == null) continue;
           result.forecasterType = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.category = valueDes;
           break;
         case r'nResolved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nResolved = valueDes;
           break;
         case r'nForecasts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.nForecasts = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ScorecardEntryLabelEnum),
-          ) as ScorecardEntryLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ScorecardEntryLabelEnum),
+                  )
+                  as ScorecardEntryLabelEnum;
           result.label = valueDes;
           break;
         case r'brier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.brier = valueDes;
           break;
         case r'logScore':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.logScore = valueDes;
           break;
         case r'rps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.rps = valueDes;
           break;
         case r'crps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.crps = valueDes;
           break;
         case r'timeAveragedBrier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.timeAveragedBrier = valueDes;
           break;
         case r'intervalCoverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ScorecardEntryIntervalCoverage),
-          ) as ScorecardEntryIntervalCoverage?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ScorecardEntryIntervalCoverage,
+                    ),
+                  )
+                  as ScorecardEntryIntervalCoverage?;
           if (valueDes == null) continue;
           result.intervalCoverage.replace(valueDes);
           break;
         case r'murphy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ScorecardEntryMurphy),
-          ) as ScorecardEntryMurphy?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ScorecardEntryMurphy,
+                    ),
+                  )
+                  as ScorecardEntryMurphy?;
           if (valueDes == null) continue;
           result.murphy.replace(valueDes);
           break;
         case r'skill':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ScorecardEntrySkill),
-          ) as ScorecardEntrySkill?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ScorecardEntrySkill),
+                  )
+                  as ScorecardEntrySkill?;
           if (valueDes == null) continue;
           result.skill.replace(valueDes);
           break;
         case r'bias':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ScorecardEntryBias),
-          ) as ScorecardEntryBias?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ScorecardEntryBias),
+                  )
+                  as ScorecardEntryBias?;
           if (valueDes == null) continue;
           result.bias.replace(valueDes);
           break;
         case r'recalibration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ScorecardEntryRecalibration),
-          ) as ScorecardEntryRecalibration?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ScorecardEntryRecalibration,
+                    ),
+                  )
+                  as ScorecardEntryRecalibration?;
           if (valueDes == null) continue;
           result.recalibration.replace(valueDes);
           break;
         case r'ensembleWeight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.ensembleWeight = valueDes;
           break;

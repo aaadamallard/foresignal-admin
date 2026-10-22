@@ -54,9 +54,9 @@ abstract class ArchivePartitionFilesInner
 
   ArchivePartitionFilesInner._();
 
-  factory ArchivePartitionFilesInner(
-          [void updates(ArchivePartitionFilesInnerBuilder b)]) =
-      _$ArchivePartitionFilesInner;
+  factory ArchivePartitionFilesInner([
+    void updates(ArchivePartitionFilesInnerBuilder b),
+  ]) = _$ArchivePartitionFilesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ArchivePartitionFilesInnerBuilder b) => b;
@@ -71,7 +71,7 @@ class _$ArchivePartitionFilesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ArchivePartitionFilesInner,
-    _$ArchivePartitionFilesInner
+    _$ArchivePartitionFilesInner,
   ];
 
   @override
@@ -141,9 +141,11 @@ class _$ArchivePartitionFilesInnerSerializer
     ArchivePartitionFilesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -159,68 +161,74 @@ class _$ArchivePartitionFilesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'fromSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.fromSeq = valueDes;
           break;
         case r'toSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.toSeq = valueDes;
           break;
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rows = valueDes;
           break;
         case r'bytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.bytes = valueDes;
           break;
         case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sha256 = valueDes;
           break;
         case r'local':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.local = valueDes;
           break;
         case r'uploadedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.uploadedAt = valueDes;
           break;
         case r's3Key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.s3Key = valueDes;
           break;

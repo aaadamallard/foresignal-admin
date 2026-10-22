@@ -40,13 +40,13 @@ StatsSeriesMeasureEnum _$statsSeriesMeasureEnumValueOf(String name) {
 
 final BuiltSet<StatsSeriesMeasureEnum> _$statsSeriesMeasureEnumValues =
     BuiltSet<StatsSeriesMeasureEnum>(const <StatsSeriesMeasureEnum>[
-  _$statsSeriesMeasureEnum_versions,
-  _$statsSeriesMeasureEnum_entities,
-  _$statsSeriesMeasureEnum_firsts,
-  _$statsSeriesMeasureEnum_tombstones,
-  _$statsSeriesMeasureEnum_edges,
-  _$statsSeriesMeasureEnum_alerts,
-]);
+      _$statsSeriesMeasureEnum_versions,
+      _$statsSeriesMeasureEnum_entities,
+      _$statsSeriesMeasureEnum_firsts,
+      _$statsSeriesMeasureEnum_tombstones,
+      _$statsSeriesMeasureEnum_edges,
+      _$statsSeriesMeasureEnum_alerts,
+    ]);
 
 const StatsSeriesGroupByEnum _$statsSeriesGroupByEnum_none =
     const StatsSeriesGroupByEnum._('none');
@@ -70,10 +70,10 @@ StatsSeriesGroupByEnum _$statsSeriesGroupByEnumValueOf(String name) {
 
 final BuiltSet<StatsSeriesGroupByEnum> _$statsSeriesGroupByEnumValues =
     BuiltSet<StatsSeriesGroupByEnum>(const <StatsSeriesGroupByEnum>[
-  _$statsSeriesGroupByEnum_none,
-  _$statsSeriesGroupByEnum_source_,
-  _$statsSeriesGroupByEnum_kind,
-]);
+      _$statsSeriesGroupByEnum_none,
+      _$statsSeriesGroupByEnum_source_,
+      _$statsSeriesGroupByEnum_kind,
+    ]);
 
 const StatsSeriesTimeFieldEnum _$statsSeriesTimeFieldEnum_ingested =
     const StatsSeriesTimeFieldEnum._('ingested');
@@ -101,11 +101,11 @@ StatsSeriesTimeFieldEnum _$statsSeriesTimeFieldEnumValueOf(String name) {
 
 final BuiltSet<StatsSeriesTimeFieldEnum> _$statsSeriesTimeFieldEnumValues =
     BuiltSet<StatsSeriesTimeFieldEnum>(const <StatsSeriesTimeFieldEnum>[
-  _$statsSeriesTimeFieldEnum_ingested,
-  _$statsSeriesTimeFieldEnum_effective,
-  _$statsSeriesTimeFieldEnum_observed,
-  _$statsSeriesTimeFieldEnum_event,
-]);
+      _$statsSeriesTimeFieldEnum_ingested,
+      _$statsSeriesTimeFieldEnum_effective,
+      _$statsSeriesTimeFieldEnum_observed,
+      _$statsSeriesTimeFieldEnum_event,
+    ]);
 
 const StatsSeriesBackendEnum _$statsSeriesBackendEnum_rollup =
     const StatsSeriesBackendEnum._('rollup');
@@ -129,10 +129,10 @@ StatsSeriesBackendEnum _$statsSeriesBackendEnumValueOf(String name) {
 
 final BuiltSet<StatsSeriesBackendEnum> _$statsSeriesBackendEnumValues =
     BuiltSet<StatsSeriesBackendEnum>(const <StatsSeriesBackendEnum>[
-  _$statsSeriesBackendEnum_rollup,
-  _$statsSeriesBackendEnum_raw,
-  _$statsSeriesBackendEnum_mixed,
-]);
+      _$statsSeriesBackendEnum_rollup,
+      _$statsSeriesBackendEnum_raw,
+      _$statsSeriesBackendEnum_mixed,
+    ]);
 
 Serializer<StatsSeriesMeasureEnum> _$statsSeriesMeasureEnumSerializer =
     _$StatsSeriesMeasureEnumSerializer();
@@ -168,15 +168,20 @@ class _$StatsSeriesMeasureEnumSerializer
   final String wireName = 'StatsSeriesMeasureEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsSeriesMeasureEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsSeriesMeasureEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsSeriesMeasureEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsSeriesMeasureEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsSeriesMeasureEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsSeriesMeasureEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsSeriesGroupByEnumSerializer
@@ -198,15 +203,20 @@ class _$StatsSeriesGroupByEnumSerializer
   final String wireName = 'StatsSeriesGroupByEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsSeriesGroupByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsSeriesGroupByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsSeriesGroupByEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsSeriesGroupByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsSeriesGroupByEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsSeriesGroupByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsSeriesTimeFieldEnumSerializer
@@ -230,16 +240,20 @@ class _$StatsSeriesTimeFieldEnumSerializer
   final String wireName = 'StatsSeriesTimeFieldEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsSeriesTimeFieldEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsSeriesTimeFieldEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StatsSeriesTimeFieldEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsSeriesTimeFieldEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsSeriesTimeFieldEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsSeriesBackendEnumSerializer
@@ -261,15 +275,20 @@ class _$StatsSeriesBackendEnumSerializer
   final String wireName = 'StatsSeriesBackendEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsSeriesBackendEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsSeriesBackendEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsSeriesBackendEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsSeriesBackendEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsSeriesBackendEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsSeriesBackendEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsSeries extends StatsSeries {
@@ -295,17 +314,17 @@ class _$StatsSeries extends StatsSeries {
   factory _$StatsSeries([void Function(StatsSeriesBuilder)? updates]) =>
       (StatsSeriesBuilder()..update(updates))._build();
 
-  _$StatsSeries._(
-      {required this.from,
-      required this.to,
-      required this.bucket,
-      required this.measure,
-      this.groupBy,
-      this.timeField,
-      required this.backend,
-      required this.series,
-      this.retainedFrom})
-      : super._();
+  _$StatsSeries._({
+    required this.from,
+    required this.to,
+    required this.bucket,
+    required this.measure,
+    this.groupBy,
+    this.timeField,
+    required this.backend,
+    required this.series,
+    this.retainedFrom,
+  }) : super._();
   @override
   StatsSeries rebuild(void Function(StatsSeriesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -440,19 +459,32 @@ class StatsSeriesBuilder implements Builder<StatsSeries, StatsSeriesBuilder> {
   _$StatsSeries _build() {
     _$StatsSeries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StatsSeries._(
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'StatsSeries', 'from'),
+              from,
+              r'StatsSeries',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(to, r'StatsSeries', 'to'),
             bucket: BuiltValueNullFieldError.checkNotNull(
-                bucket, r'StatsSeries', 'bucket'),
+              bucket,
+              r'StatsSeries',
+              'bucket',
+            ),
             measure: BuiltValueNullFieldError.checkNotNull(
-                measure, r'StatsSeries', 'measure'),
+              measure,
+              r'StatsSeries',
+              'measure',
+            ),
             groupBy: groupBy,
             timeField: timeField,
             backend: BuiltValueNullFieldError.checkNotNull(
-                backend, r'StatsSeries', 'backend'),
+              backend,
+              r'StatsSeries',
+              'backend',
+            ),
             series: series.build(),
             retainedFrom: retainedFrom,
           );
@@ -463,7 +495,10 @@ class StatsSeriesBuilder implements Builder<StatsSeries, StatsSeriesBuilder> {
         series.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StatsSeries', _$failedField, e.toString());
+          r'StatsSeries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

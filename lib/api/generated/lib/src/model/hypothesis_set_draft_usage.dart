@@ -28,9 +28,9 @@ abstract class HypothesisSetDraftUsage
 
   HypothesisSetDraftUsage._();
 
-  factory HypothesisSetDraftUsage(
-          [void updates(HypothesisSetDraftUsageBuilder b)]) =
-      _$HypothesisSetDraftUsage;
+  factory HypothesisSetDraftUsage([
+    void updates(HypothesisSetDraftUsageBuilder b),
+  ]) = _$HypothesisSetDraftUsage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisSetDraftUsageBuilder b) => b;
@@ -45,7 +45,7 @@ class _$HypothesisSetDraftUsageSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisSetDraftUsage,
-    _$HypothesisSetDraftUsage
+    _$HypothesisSetDraftUsage,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$HypothesisSetDraftUsageSerializer
     HypothesisSetDraftUsage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +105,32 @@ class _$HypothesisSetDraftUsageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'inputTokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.inputTokens = valueDes;
           break;
         case r'outputTokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.outputTokens = valueDes;
           break;
         case r'cachedTokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.cachedTokens = valueDes;
           break;

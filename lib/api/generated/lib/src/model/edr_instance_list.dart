@@ -54,8 +54,9 @@ class _$EdrInstanceListSerializer
     yield r'instances';
     yield serializers.serialize(
       object.instances,
-      specifiedType:
-          const FullType(BuiltList, [FullType(EdrInstanceListInstancesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(EdrInstanceListInstancesInner),
+      ]),
     );
     if (object.links != null) {
       yield r'links';
@@ -72,9 +73,11 @@ class _$EdrInstanceListSerializer
     EdrInstanceList object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,19 +93,25 @@ class _$EdrInstanceListSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'instances':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(EdrInstanceListInstancesInner)]),
-          ) as BuiltList<EdrInstanceListInstancesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EdrInstanceListInstancesInner),
+                    ]),
+                  )
+                  as BuiltList<EdrInstanceListInstancesInner>;
           result.instances.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;

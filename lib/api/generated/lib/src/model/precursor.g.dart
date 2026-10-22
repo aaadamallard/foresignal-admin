@@ -6,10 +6,12 @@ part of 'precursor.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const PrecursorKindEnum _$precursorKindEnum_event =
-    const PrecursorKindEnum._('event');
-const PrecursorKindEnum _$precursorKindEnum_series =
-    const PrecursorKindEnum._('series');
+const PrecursorKindEnum _$precursorKindEnum_event = const PrecursorKindEnum._(
+  'event',
+);
+const PrecursorKindEnum _$precursorKindEnum_series = const PrecursorKindEnum._(
+  'series',
+);
 
 PrecursorKindEnum _$precursorKindEnumValueOf(String name) {
   switch (name) {
@@ -24,9 +26,9 @@ PrecursorKindEnum _$precursorKindEnumValueOf(String name) {
 
 final BuiltSet<PrecursorKindEnum> _$precursorKindEnumValues =
     BuiltSet<PrecursorKindEnum>(const <PrecursorKindEnum>[
-  _$precursorKindEnum_event,
-  _$precursorKindEnum_series,
-]);
+      _$precursorKindEnum_event,
+      _$precursorKindEnum_series,
+    ]);
 
 const PrecursorCorrelationSignEnum _$precursorCorrelationSignEnum_positive =
     const PrecursorCorrelationSignEnum._('positive');
@@ -34,7 +36,8 @@ const PrecursorCorrelationSignEnum _$precursorCorrelationSignEnum_negative =
     const PrecursorCorrelationSignEnum._('negative');
 
 PrecursorCorrelationSignEnum _$precursorCorrelationSignEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'positive':
       return _$precursorCorrelationSignEnum_positive;
@@ -46,11 +49,11 @@ PrecursorCorrelationSignEnum _$precursorCorrelationSignEnumValueOf(
 }
 
 final BuiltSet<PrecursorCorrelationSignEnum>
-    _$precursorCorrelationSignEnumValues =
+_$precursorCorrelationSignEnumValues =
     BuiltSet<PrecursorCorrelationSignEnum>(const <PrecursorCorrelationSignEnum>[
-  _$precursorCorrelationSignEnum_positive,
-  _$precursorCorrelationSignEnum_negative,
-]);
+      _$precursorCorrelationSignEnum_positive,
+      _$precursorCorrelationSignEnum_negative,
+    ]);
 
 const PrecursorStatusEnum _$precursorStatusEnum_candidate =
     const PrecursorStatusEnum._('candidate');
@@ -78,11 +81,11 @@ PrecursorStatusEnum _$precursorStatusEnumValueOf(String name) {
 
 final BuiltSet<PrecursorStatusEnum> _$precursorStatusEnumValues =
     BuiltSet<PrecursorStatusEnum>(const <PrecursorStatusEnum>[
-  _$precursorStatusEnum_candidate,
-  _$precursorStatusEnum_validated,
-  _$precursorStatusEnum_stale,
-  _$precursorStatusEnum_retired,
-]);
+      _$precursorStatusEnum_candidate,
+      _$precursorStatusEnum_validated,
+      _$precursorStatusEnum_stale,
+      _$precursorStatusEnum_retired,
+    ]);
 
 const PrecursorOriginEnum _$precursorOriginEnum_auto =
     const PrecursorOriginEnum._('auto');
@@ -102,14 +105,14 @@ PrecursorOriginEnum _$precursorOriginEnumValueOf(String name) {
 
 final BuiltSet<PrecursorOriginEnum> _$precursorOriginEnumValues =
     BuiltSet<PrecursorOriginEnum>(const <PrecursorOriginEnum>[
-  _$precursorOriginEnum_auto,
-  _$precursorOriginEnum_operator_,
-]);
+      _$precursorOriginEnum_auto,
+      _$precursorOriginEnum_operator_,
+    ]);
 
 Serializer<PrecursorKindEnum> _$precursorKindEnumSerializer =
     _$PrecursorKindEnumSerializer();
 Serializer<PrecursorCorrelationSignEnum>
-    _$precursorCorrelationSignEnumSerializer =
+_$precursorCorrelationSignEnumSerializer =
     _$PrecursorCorrelationSignEnumSerializer();
 Serializer<PrecursorStatusEnum> _$precursorStatusEnumSerializer =
     _$PrecursorStatusEnumSerializer();
@@ -133,15 +136,20 @@ class _$PrecursorKindEnumSerializer
   final String wireName = 'PrecursorKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PrecursorKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PrecursorKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorCorrelationSignEnumSerializer
@@ -161,16 +169,20 @@ class _$PrecursorCorrelationSignEnumSerializer
   final String wireName = 'PrecursorCorrelationSignEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorCorrelationSignEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorCorrelationSignEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorCorrelationSignEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorCorrelationSignEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorCorrelationSignEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorStatusEnumSerializer
@@ -194,15 +206,20 @@ class _$PrecursorStatusEnumSerializer
   final String wireName = 'PrecursorStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PrecursorStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PrecursorStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorOriginEnumSerializer
@@ -222,15 +239,20 @@ class _$PrecursorOriginEnumSerializer
   final String wireName = 'PrecursorOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PrecursorOriginEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PrecursorOriginEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Precursor extends Precursor {
@@ -310,44 +332,44 @@ class _$Precursor extends Precursor {
   factory _$Precursor([void Function(PrecursorBuilder)? updates]) =>
       (PrecursorBuilder()..update(updates))._build();
 
-  _$Precursor._(
-      {required this.id,
-      required this.kind,
-      required this.antecedent,
-      required this.consequent,
-      required this.spatial,
-      this.regionCodes,
-      required this.lagMin,
-      required this.lagMax,
-      this.bestLag,
-      this.lagDistribution,
-      this.hitRate,
-      this.hitRateInterval,
-      this.baseRate,
-      this.lift,
-      this.correlation,
-      this.correlationSign,
-      required this.nAntecedent,
-      required this.discovery,
-      this.validation,
-      this.lastRetest,
-      required this.batchId,
-      required this.batchSize,
-      required this.status,
-      this.statusReason,
-      this.operatorValidated,
-      required this.detector,
-      this.firstValidatedAt,
-      this.lastTestedAt,
-      required this.origin,
-      required this.description,
-      required this.associationNote,
-      required this.caveats,
-      this.history,
-      required this.manifestId,
-      this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$Precursor._({
+    required this.id,
+    required this.kind,
+    required this.antecedent,
+    required this.consequent,
+    required this.spatial,
+    this.regionCodes,
+    required this.lagMin,
+    required this.lagMax,
+    this.bestLag,
+    this.lagDistribution,
+    this.hitRate,
+    this.hitRateInterval,
+    this.baseRate,
+    this.lift,
+    this.correlation,
+    this.correlationSign,
+    required this.nAntecedent,
+    required this.discovery,
+    this.validation,
+    this.lastRetest,
+    required this.batchId,
+    required this.batchSize,
+    required this.status,
+    this.statusReason,
+    this.operatorValidated,
+    required this.detector,
+    this.firstValidatedAt,
+    this.lastTestedAt,
+    required this.origin,
+    required this.description,
+    required this.associationNote,
+    required this.caveats,
+    this.history,
+    required this.manifestId,
+    this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   Precursor rebuild(void Function(PrecursorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -718,19 +740,29 @@ class PrecursorBuilder implements Builder<Precursor, PrecursorBuilder> {
   _$Precursor _build() {
     _$Precursor _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Precursor._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Precursor', 'id'),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'Precursor', 'kind'),
+              kind,
+              r'Precursor',
+              'kind',
+            ),
             antecedent: antecedent.build(),
             consequent: consequent.build(),
             spatial: spatial.build(),
             regionCodes: _regionCodes?.build(),
             lagMin: BuiltValueNullFieldError.checkNotNull(
-                lagMin, r'Precursor', 'lagMin'),
+              lagMin,
+              r'Precursor',
+              'lagMin',
+            ),
             lagMax: BuiltValueNullFieldError.checkNotNull(
-                lagMax, r'Precursor', 'lagMax'),
+              lagMax,
+              r'Precursor',
+              'lagMax',
+            ),
             bestLag: bestLag,
             lagDistribution: _lagDistribution?.build(),
             hitRate: hitRate,
@@ -740,31 +772,55 @@ class PrecursorBuilder implements Builder<Precursor, PrecursorBuilder> {
             correlation: correlation,
             correlationSign: correlationSign,
             nAntecedent: BuiltValueNullFieldError.checkNotNull(
-                nAntecedent, r'Precursor', 'nAntecedent'),
+              nAntecedent,
+              r'Precursor',
+              'nAntecedent',
+            ),
             discovery: discovery.build(),
             validation: _validation?.build(),
             lastRetest: _lastRetest?.build(),
             batchId: BuiltValueNullFieldError.checkNotNull(
-                batchId, r'Precursor', 'batchId'),
+              batchId,
+              r'Precursor',
+              'batchId',
+            ),
             batchSize: BuiltValueNullFieldError.checkNotNull(
-                batchSize, r'Precursor', 'batchSize'),
+              batchSize,
+              r'Precursor',
+              'batchSize',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Precursor', 'status'),
+              status,
+              r'Precursor',
+              'status',
+            ),
             statusReason: statusReason,
             operatorValidated: operatorValidated,
             detector: detector.build(),
             firstValidatedAt: firstValidatedAt,
             lastTestedAt: lastTestedAt,
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'Precursor', 'origin'),
+              origin,
+              r'Precursor',
+              'origin',
+            ),
             description: BuiltValueNullFieldError.checkNotNull(
-                description, r'Precursor', 'description'),
+              description,
+              r'Precursor',
+              'description',
+            ),
             associationNote: BuiltValueNullFieldError.checkNotNull(
-                associationNote, r'Precursor', 'associationNote'),
+              associationNote,
+              r'Precursor',
+              'associationNote',
+            ),
             caveats: caveats.build(),
             history: _history?.build(),
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'Precursor', 'manifestId'),
+              manifestId,
+              r'Precursor',
+              'manifestId',
+            ),
             createdAt: createdAt,
             updatedAt: updatedAt,
           );
@@ -802,7 +858,10 @@ class PrecursorBuilder implements Builder<Precursor, PrecursorBuilder> {
         _history?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Precursor', _$failedField, e.toString());
+          r'Precursor',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

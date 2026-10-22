@@ -28,10 +28,10 @@ ShareRequestRoleEnum _$shareRequestRoleEnumValueOf(String name) {
 
 final BuiltSet<ShareRequestRoleEnum> _$shareRequestRoleEnumValues =
     BuiltSet<ShareRequestRoleEnum>(const <ShareRequestRoleEnum>[
-  _$shareRequestRoleEnum_viewer,
-  _$shareRequestRoleEnum_commenter,
-  _$shareRequestRoleEnum_editor,
-]);
+      _$shareRequestRoleEnum_viewer,
+      _$shareRequestRoleEnum_commenter,
+      _$shareRequestRoleEnum_editor,
+    ]);
 
 Serializer<ShareRequestRoleEnum> _$shareRequestRoleEnumSerializer =
     _$ShareRequestRoleEnumSerializer();
@@ -55,15 +55,20 @@ class _$ShareRequestRoleEnumSerializer
   final String wireName = 'ShareRequestRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, ShareRequestRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ShareRequestRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ShareRequestRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ShareRequestRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ShareRequestRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ShareRequestRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ShareRequest extends ShareRequest {
@@ -79,9 +84,12 @@ class _$ShareRequest extends ShareRequest {
   factory _$ShareRequest([void Function(ShareRequestBuilder)? updates]) =>
       (ShareRequestBuilder()..update(updates))._build();
 
-  _$ShareRequest._(
-      {required this.grantees, this.role, this.message, this.expiresAt})
-      : super._();
+  _$ShareRequest._({
+    required this.grantees,
+    this.role,
+    this.message,
+    this.expiresAt,
+  }) : super._();
   @override
   ShareRequest rebuild(void Function(ShareRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -174,7 +182,8 @@ class ShareRequestBuilder
   _$ShareRequest _build() {
     _$ShareRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ShareRequest._(
             grantees: grantees.build(),
             role: role,
@@ -188,7 +197,10 @@ class ShareRequestBuilder
         grantees.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ShareRequest', _$failedField, e.toString());
+          r'ShareRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

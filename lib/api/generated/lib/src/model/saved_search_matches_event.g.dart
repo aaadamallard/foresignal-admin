@@ -18,21 +18,21 @@ class _$SavedSearchMatchesEvent extends SavedSearchMatchesEvent {
   @override
   final DateTime at;
 
-  factory _$SavedSearchMatchesEvent(
-          [void Function(SavedSearchMatchesEventBuilder)? updates]) =>
-      (SavedSearchMatchesEventBuilder()..update(updates))._build();
+  factory _$SavedSearchMatchesEvent([
+    void Function(SavedSearchMatchesEventBuilder)? updates,
+  ]) => (SavedSearchMatchesEventBuilder()..update(updates))._build();
 
-  _$SavedSearchMatchesEvent._(
-      {required this.savedSearchId,
-      required this.name,
-      required this.newMatches,
-      this.refs,
-      required this.at})
-      : super._();
+  _$SavedSearchMatchesEvent._({
+    required this.savedSearchId,
+    required this.name,
+    required this.newMatches,
+    this.refs,
+    required this.at,
+  }) : super._();
   @override
   SavedSearchMatchesEvent rebuild(
-          void Function(SavedSearchMatchesEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SavedSearchMatchesEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SavedSearchMatchesEventBuilder toBuilder() =>
@@ -132,17 +132,30 @@ class SavedSearchMatchesEventBuilder
   _$SavedSearchMatchesEvent _build() {
     _$SavedSearchMatchesEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearchMatchesEvent._(
             savedSearchId: BuiltValueNullFieldError.checkNotNull(
-                savedSearchId, r'SavedSearchMatchesEvent', 'savedSearchId'),
+              savedSearchId,
+              r'SavedSearchMatchesEvent',
+              'savedSearchId',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SavedSearchMatchesEvent', 'name'),
+              name,
+              r'SavedSearchMatchesEvent',
+              'name',
+            ),
             newMatches: BuiltValueNullFieldError.checkNotNull(
-                newMatches, r'SavedSearchMatchesEvent', 'newMatches'),
+              newMatches,
+              r'SavedSearchMatchesEvent',
+              'newMatches',
+            ),
             refs: _refs?.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'SavedSearchMatchesEvent', 'at'),
+              at,
+              r'SavedSearchMatchesEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -151,7 +164,10 @@ class SavedSearchMatchesEventBuilder
         _refs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchMatchesEvent', _$failedField, e.toString());
+          r'SavedSearchMatchesEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

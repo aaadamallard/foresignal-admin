@@ -29,8 +29,9 @@ abstract class IntelEventAlternative
 
   IntelEventAlternative._();
 
-  factory IntelEventAlternative(
-      [void updates(IntelEventAlternativeBuilder b)]) = _$IntelEventAlternative;
+  factory IntelEventAlternative([
+    void updates(IntelEventAlternativeBuilder b),
+  ]) = _$IntelEventAlternative;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelEventAlternativeBuilder b) => b;
@@ -45,7 +46,7 @@ class _$IntelEventAlternativeSerializer
   @override
   final Iterable<Type> types = const [
     IntelEventAlternative,
-    _$IntelEventAlternative
+    _$IntelEventAlternative,
   ];
 
   @override
@@ -81,9 +82,11 @@ class _$IntelEventAlternativeSerializer
     IntelEventAlternative object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,25 +102,32 @@ class _$IntelEventAlternativeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'hypothesis':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hypothesis = valueDes;
           break;
         case r'basis':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.basis = valueDes;
           break;
         case r'supportingMemberIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.supportingMemberIds.replace(valueDes);
           break;

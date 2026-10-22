@@ -14,17 +14,19 @@ class _$StructureDiffTypeChangedInner extends StructureDiffTypeChangedInner {
   @override
   final String to;
 
-  factory _$StructureDiffTypeChangedInner(
-          [void Function(StructureDiffTypeChangedInnerBuilder)? updates]) =>
-      (StructureDiffTypeChangedInnerBuilder()..update(updates))._build();
+  factory _$StructureDiffTypeChangedInner([
+    void Function(StructureDiffTypeChangedInnerBuilder)? updates,
+  ]) => (StructureDiffTypeChangedInnerBuilder()..update(updates))._build();
 
-  _$StructureDiffTypeChangedInner._(
-      {required this.path, required this.from, required this.to})
-      : super._();
+  _$StructureDiffTypeChangedInner._({
+    required this.path,
+    required this.from,
+    required this.to,
+  }) : super._();
   @override
   StructureDiffTypeChangedInner rebuild(
-          void Function(StructureDiffTypeChangedInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StructureDiffTypeChangedInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StructureDiffTypeChangedInnerBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$StructureDiffTypeChangedInner extends StructureDiffTypeChangedInner {
 
 class StructureDiffTypeChangedInnerBuilder
     implements
-        Builder<StructureDiffTypeChangedInner,
-            StructureDiffTypeChangedInnerBuilder> {
+        Builder<
+          StructureDiffTypeChangedInner,
+          StructureDiffTypeChangedInnerBuilder
+        > {
   _$StructureDiffTypeChangedInner? _$v;
 
   String? _path;
@@ -106,14 +110,24 @@ class StructureDiffTypeChangedInnerBuilder
   StructureDiffTypeChangedInner build() => _build();
 
   _$StructureDiffTypeChangedInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StructureDiffTypeChangedInner._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'StructureDiffTypeChangedInner', 'path'),
+            path,
+            r'StructureDiffTypeChangedInner',
+            'path',
+          ),
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'StructureDiffTypeChangedInner', 'from'),
+            from,
+            r'StructureDiffTypeChangedInner',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'StructureDiffTypeChangedInner', 'to'),
+            to,
+            r'StructureDiffTypeChangedInner',
+            'to',
+          ),
         );
     replace(_$result);
     return _$result;

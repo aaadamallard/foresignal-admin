@@ -18,17 +18,17 @@ class _$ChronicleCluster extends ChronicleCluster {
   @override
   final DateTime updatedAt;
 
-  factory _$ChronicleCluster(
-          [void Function(ChronicleClusterBuilder)? updates]) =>
-      (ChronicleClusterBuilder()..update(updates))._build();
+  factory _$ChronicleCluster([
+    void Function(ChronicleClusterBuilder)? updates,
+  ]) => (ChronicleClusterBuilder()..update(updates))._build();
 
-  _$ChronicleCluster._(
-      {required this.id,
-      required this.members,
-      required this.visibleMembers,
-      required this.opaqueMembers,
-      required this.updatedAt})
-      : super._();
+  _$ChronicleCluster._({
+    required this.id,
+    required this.members,
+    required this.visibleMembers,
+    required this.opaqueMembers,
+    required this.updatedAt,
+  }) : super._();
   @override
   ChronicleCluster rebuild(void Function(ChronicleClusterBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -133,17 +133,30 @@ class ChronicleClusterBuilder
   _$ChronicleCluster _build() {
     _$ChronicleCluster _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleCluster._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ChronicleCluster', 'id'),
+              id,
+              r'ChronicleCluster',
+              'id',
+            ),
             members: members.build(),
             visibleMembers: BuiltValueNullFieldError.checkNotNull(
-                visibleMembers, r'ChronicleCluster', 'visibleMembers'),
+              visibleMembers,
+              r'ChronicleCluster',
+              'visibleMembers',
+            ),
             opaqueMembers: BuiltValueNullFieldError.checkNotNull(
-                opaqueMembers, r'ChronicleCluster', 'opaqueMembers'),
+              opaqueMembers,
+              r'ChronicleCluster',
+              'opaqueMembers',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'ChronicleCluster', 'updatedAt'),
+              updatedAt,
+              r'ChronicleCluster',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -152,7 +165,10 @@ class ChronicleClusterBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleCluster', _$failedField, e.toString());
+          r'ChronicleCluster',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

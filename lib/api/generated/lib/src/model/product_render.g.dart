@@ -17,9 +17,11 @@ class _$ProductRender extends ProductRender {
   factory _$ProductRender([void Function(ProductRenderBuilder)? updates]) =>
       (ProductRenderBuilder()..update(updates))._build();
 
-  _$ProductRender._(
-      {required this.defaultStyle, required this.styles, this.defaultOpacity})
-      : super._();
+  _$ProductRender._({
+    required this.defaultStyle,
+    required this.styles,
+    this.defaultOpacity,
+  }) : super._();
   @override
   ProductRender rebuild(void Function(ProductRenderBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -104,10 +106,14 @@ class ProductRenderBuilder
   _$ProductRender _build() {
     _$ProductRender _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductRender._(
             defaultStyle: BuiltValueNullFieldError.checkNotNull(
-                defaultStyle, r'ProductRender', 'defaultStyle'),
+              defaultStyle,
+              r'ProductRender',
+              'defaultStyle',
+            ),
             styles: styles.build(),
             defaultOpacity: defaultOpacity,
           );
@@ -118,7 +124,10 @@ class ProductRenderBuilder
         styles.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductRender', _$failedField, e.toString());
+          r'ProductRender',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -16,17 +16,20 @@ class _$ExposureDependentsByLabel extends ExposureDependentsByLabel {
   @override
   final int? speculative;
 
-  factory _$ExposureDependentsByLabel(
-          [void Function(ExposureDependentsByLabelBuilder)? updates]) =>
-      (ExposureDependentsByLabelBuilder()..update(updates))._build();
+  factory _$ExposureDependentsByLabel([
+    void Function(ExposureDependentsByLabelBuilder)? updates,
+  ]) => (ExposureDependentsByLabelBuilder()..update(updates))._build();
 
-  _$ExposureDependentsByLabel._(
-      {this.confirmed, this.likely, this.possible, this.speculative})
-      : super._();
+  _$ExposureDependentsByLabel._({
+    this.confirmed,
+    this.likely,
+    this.possible,
+    this.speculative,
+  }) : super._();
   @override
   ExposureDependentsByLabel rebuild(
-          void Function(ExposureDependentsByLabelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExposureDependentsByLabelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExposureDependentsByLabelBuilder toBuilder() =>
@@ -115,7 +118,8 @@ class ExposureDependentsByLabelBuilder
   ExposureDependentsByLabel build() => _build();
 
   _$ExposureDependentsByLabel _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExposureDependentsByLabel._(
           confirmed: confirmed,
           likely: likely,

@@ -27,16 +27,16 @@ class _$IngestDevice extends IngestDevice {
   factory _$IngestDevice([void Function(IngestDeviceBuilder)? updates]) =>
       (IngestDeviceBuilder()..update(updates))._build();
 
-  _$IngestDevice._(
-      {required this.id,
-      required this.sourceId,
-      required this.externalId,
-      required this.name,
-      required this.keyPrefix,
-      required this.createdAt,
-      this.lastSeenAt,
-      this.revokedAt})
-      : super._();
+  _$IngestDevice._({
+    required this.id,
+    required this.sourceId,
+    required this.externalId,
+    required this.name,
+    required this.keyPrefix,
+    required this.createdAt,
+    this.lastSeenAt,
+    this.revokedAt,
+  }) : super._();
   @override
   IngestDevice rebuild(void Function(IngestDeviceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -158,19 +158,35 @@ class IngestDeviceBuilder
   IngestDevice build() => _build();
 
   _$IngestDevice _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestDevice._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'IngestDevice', 'id'),
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'IngestDevice', 'sourceId'),
+            sourceId,
+            r'IngestDevice',
+            'sourceId',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'IngestDevice', 'externalId'),
+            externalId,
+            r'IngestDevice',
+            'externalId',
+          ),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'IngestDevice', 'name'),
+            name,
+            r'IngestDevice',
+            'name',
+          ),
           keyPrefix: BuiltValueNullFieldError.checkNotNull(
-              keyPrefix, r'IngestDevice', 'keyPrefix'),
+            keyPrefix,
+            r'IngestDevice',
+            'keyPrefix',
+          ),
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'IngestDevice', 'createdAt'),
+            createdAt,
+            r'IngestDevice',
+            'createdAt',
+          ),
           lastSeenAt: lastSeenAt,
           revokedAt: revokedAt,
         );

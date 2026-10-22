@@ -7,17 +7,18 @@ part of 'hypothesis_input_prior_basis.dart';
 // **************************************************************************
 
 const HypothesisInputPriorBasisTypeEnum
-    _$hypothesisInputPriorBasisTypeEnum_baseRate =
+_$hypothesisInputPriorBasisTypeEnum_baseRate =
     const HypothesisInputPriorBasisTypeEnum._('baseRate');
 const HypothesisInputPriorBasisTypeEnum
-    _$hypothesisInputPriorBasisTypeEnum_analogs =
+_$hypothesisInputPriorBasisTypeEnum_analogs =
     const HypothesisInputPriorBasisTypeEnum._('analogs');
 const HypothesisInputPriorBasisTypeEnum
-    _$hypothesisInputPriorBasisTypeEnum_operator_ =
+_$hypothesisInputPriorBasisTypeEnum_operator_ =
     const HypothesisInputPriorBasisTypeEnum._('operator_');
 
 HypothesisInputPriorBasisTypeEnum _$hypothesisInputPriorBasisTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'baseRate':
       return _$hypothesisInputPriorBasisTypeEnum_baseRate;
@@ -31,15 +32,17 @@ HypothesisInputPriorBasisTypeEnum _$hypothesisInputPriorBasisTypeEnumValueOf(
 }
 
 final BuiltSet<HypothesisInputPriorBasisTypeEnum>
-    _$hypothesisInputPriorBasisTypeEnumValues = BuiltSet<
-        HypothesisInputPriorBasisTypeEnum>(const <HypothesisInputPriorBasisTypeEnum>[
-  _$hypothesisInputPriorBasisTypeEnum_baseRate,
-  _$hypothesisInputPriorBasisTypeEnum_analogs,
-  _$hypothesisInputPriorBasisTypeEnum_operator_,
-]);
+_$hypothesisInputPriorBasisTypeEnumValues =
+    BuiltSet<HypothesisInputPriorBasisTypeEnum>(
+      const <HypothesisInputPriorBasisTypeEnum>[
+        _$hypothesisInputPriorBasisTypeEnum_baseRate,
+        _$hypothesisInputPriorBasisTypeEnum_analogs,
+        _$hypothesisInputPriorBasisTypeEnum_operator_,
+      ],
+    );
 
 Serializer<HypothesisInputPriorBasisTypeEnum>
-    _$hypothesisInputPriorBasisTypeEnumSerializer =
+_$hypothesisInputPriorBasisTypeEnumSerializer =
     _$HypothesisInputPriorBasisTypeEnumSerializer();
 
 class _$HypothesisInputPriorBasisTypeEnumSerializer
@@ -62,16 +65,19 @@ class _$HypothesisInputPriorBasisTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HypothesisInputPriorBasisTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HypothesisInputPriorBasisTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisInputPriorBasisTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisInputPriorBasisTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisInputPriorBasisTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisInputPriorBasis extends HypothesisInputPriorBasis {
@@ -84,17 +90,20 @@ class _$HypothesisInputPriorBasis extends HypothesisInputPriorBasis {
   @override
   final num? value;
 
-  factory _$HypothesisInputPriorBasis(
-          [void Function(HypothesisInputPriorBasisBuilder)? updates]) =>
-      (HypothesisInputPriorBasisBuilder()..update(updates))._build();
+  factory _$HypothesisInputPriorBasis([
+    void Function(HypothesisInputPriorBasisBuilder)? updates,
+  ]) => (HypothesisInputPriorBasisBuilder()..update(updates))._build();
 
-  _$HypothesisInputPriorBasis._(
-      {required this.type, this.ref, this.rationale, this.value})
-      : super._();
+  _$HypothesisInputPriorBasis._({
+    required this.type,
+    this.ref,
+    this.rationale,
+    this.value,
+  }) : super._();
   @override
   HypothesisInputPriorBasis rebuild(
-          void Function(HypothesisInputPriorBasisBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisInputPriorBasisBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisInputPriorBasisBuilder toBuilder() =>
@@ -183,10 +192,14 @@ class HypothesisInputPriorBasisBuilder
   HypothesisInputPriorBasis build() => _build();
 
   _$HypothesisInputPriorBasis _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisInputPriorBasis._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'HypothesisInputPriorBasis', 'type'),
+            type,
+            r'HypothesisInputPriorBasis',
+            'type',
+          ),
           ref: ref,
           rationale: rationale,
           value: value,

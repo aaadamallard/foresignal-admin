@@ -8,8 +8,9 @@ part of 'claim.dart';
 
 const ClaimPolarityEnum _$claimPolarityEnum_asserted =
     const ClaimPolarityEnum._('asserted');
-const ClaimPolarityEnum _$claimPolarityEnum_denied =
-    const ClaimPolarityEnum._('denied');
+const ClaimPolarityEnum _$claimPolarityEnum_denied = const ClaimPolarityEnum._(
+  'denied',
+);
 const ClaimPolarityEnum _$claimPolarityEnum_questioned =
     const ClaimPolarityEnum._('questioned');
 
@@ -28,10 +29,10 @@ ClaimPolarityEnum _$claimPolarityEnumValueOf(String name) {
 
 final BuiltSet<ClaimPolarityEnum> _$claimPolarityEnumValues =
     BuiltSet<ClaimPolarityEnum>(const <ClaimPolarityEnum>[
-  _$claimPolarityEnum_asserted,
-  _$claimPolarityEnum_denied,
-  _$claimPolarityEnum_questioned,
-]);
+      _$claimPolarityEnum_asserted,
+      _$claimPolarityEnum_denied,
+      _$claimPolarityEnum_questioned,
+    ]);
 
 const ClaimExtractionEnum _$claimExtractionEnum_deterministic =
     const ClaimExtractionEnum._('deterministic');
@@ -51,20 +52,25 @@ ClaimExtractionEnum _$claimExtractionEnumValueOf(String name) {
 
 final BuiltSet<ClaimExtractionEnum> _$claimExtractionEnumValues =
     BuiltSet<ClaimExtractionEnum>(const <ClaimExtractionEnum>[
-  _$claimExtractionEnum_deterministic,
-  _$claimExtractionEnum_llm,
-]);
+      _$claimExtractionEnum_deterministic,
+      _$claimExtractionEnum_llm,
+    ]);
 
-const ClaimStatusEnum _$claimStatusEnum_unassessed =
-    const ClaimStatusEnum._('unassessed');
-const ClaimStatusEnum _$claimStatusEnum_pending =
-    const ClaimStatusEnum._('pending');
-const ClaimStatusEnum _$claimStatusEnum_corroborated =
-    const ClaimStatusEnum._('corroborated');
-const ClaimStatusEnum _$claimStatusEnum_unobserved =
-    const ClaimStatusEnum._('unobserved');
-const ClaimStatusEnum _$claimStatusEnum_contradicted =
-    const ClaimStatusEnum._('contradicted');
+const ClaimStatusEnum _$claimStatusEnum_unassessed = const ClaimStatusEnum._(
+  'unassessed',
+);
+const ClaimStatusEnum _$claimStatusEnum_pending = const ClaimStatusEnum._(
+  'pending',
+);
+const ClaimStatusEnum _$claimStatusEnum_corroborated = const ClaimStatusEnum._(
+  'corroborated',
+);
+const ClaimStatusEnum _$claimStatusEnum_unobserved = const ClaimStatusEnum._(
+  'unobserved',
+);
+const ClaimStatusEnum _$claimStatusEnum_contradicted = const ClaimStatusEnum._(
+  'contradicted',
+);
 const ClaimStatusEnum _$claimStatusEnum_insufficientCoverage =
     const ClaimStatusEnum._('insufficientCoverage');
 
@@ -89,13 +95,13 @@ ClaimStatusEnum _$claimStatusEnumValueOf(String name) {
 
 final BuiltSet<ClaimStatusEnum> _$claimStatusEnumValues =
     BuiltSet<ClaimStatusEnum>(const <ClaimStatusEnum>[
-  _$claimStatusEnum_unassessed,
-  _$claimStatusEnum_pending,
-  _$claimStatusEnum_corroborated,
-  _$claimStatusEnum_unobserved,
-  _$claimStatusEnum_contradicted,
-  _$claimStatusEnum_insufficientCoverage,
-]);
+      _$claimStatusEnum_unassessed,
+      _$claimStatusEnum_pending,
+      _$claimStatusEnum_corroborated,
+      _$claimStatusEnum_unobserved,
+      _$claimStatusEnum_contradicted,
+      _$claimStatusEnum_insufficientCoverage,
+    ]);
 
 const ClaimSourceReliabilityEnum _$claimSourceReliabilityEnum_A =
     const ClaimSourceReliabilityEnum._('A');
@@ -131,13 +137,13 @@ ClaimSourceReliabilityEnum _$claimSourceReliabilityEnumValueOf(String name) {
 
 final BuiltSet<ClaimSourceReliabilityEnum> _$claimSourceReliabilityEnumValues =
     BuiltSet<ClaimSourceReliabilityEnum>(const <ClaimSourceReliabilityEnum>[
-  _$claimSourceReliabilityEnum_A,
-  _$claimSourceReliabilityEnum_B,
-  _$claimSourceReliabilityEnum_C,
-  _$claimSourceReliabilityEnum_D,
-  _$claimSourceReliabilityEnum_E,
-  _$claimSourceReliabilityEnum_F,
-]);
+      _$claimSourceReliabilityEnum_A,
+      _$claimSourceReliabilityEnum_B,
+      _$claimSourceReliabilityEnum_C,
+      _$claimSourceReliabilityEnum_D,
+      _$claimSourceReliabilityEnum_E,
+      _$claimSourceReliabilityEnum_F,
+    ]);
 
 const ClaimFramingLabelEnum _$claimFramingLabelEnum_neutral =
     const ClaimFramingLabelEnum._('neutral');
@@ -161,10 +167,10 @@ ClaimFramingLabelEnum _$claimFramingLabelEnumValueOf(String name) {
 
 final BuiltSet<ClaimFramingLabelEnum> _$claimFramingLabelEnumValues =
     BuiltSet<ClaimFramingLabelEnum>(const <ClaimFramingLabelEnum>[
-  _$claimFramingLabelEnum_neutral,
-  _$claimFramingLabelEnum_charged,
-  _$claimFramingLabelEnum_inflammatory,
-]);
+      _$claimFramingLabelEnum_neutral,
+      _$claimFramingLabelEnum_charged,
+      _$claimFramingLabelEnum_inflammatory,
+    ]);
 
 Serializer<ClaimPolarityEnum> _$claimPolarityEnumSerializer =
     _$ClaimPolarityEnumSerializer();
@@ -196,15 +202,20 @@ class _$ClaimPolarityEnumSerializer
   final String wireName = 'ClaimPolarityEnum';
 
   @override
-  Object serialize(Serializers serializers, ClaimPolarityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClaimPolarityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ClaimPolarityEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClaimPolarityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ClaimPolarityEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClaimPolarityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClaimExtractionEnumSerializer
@@ -224,15 +235,20 @@ class _$ClaimExtractionEnumSerializer
   final String wireName = 'ClaimExtractionEnum';
 
   @override
-  Object serialize(Serializers serializers, ClaimExtractionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClaimExtractionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ClaimExtractionEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClaimExtractionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ClaimExtractionEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClaimExtractionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClaimStatusEnumSerializer
@@ -260,15 +276,20 @@ class _$ClaimStatusEnumSerializer
   final String wireName = 'ClaimStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ClaimStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClaimStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ClaimStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClaimStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ClaimStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClaimStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClaimSourceReliabilityEnumSerializer
@@ -296,16 +317,20 @@ class _$ClaimSourceReliabilityEnumSerializer
   final String wireName = 'ClaimSourceReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers, ClaimSourceReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClaimSourceReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ClaimSourceReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClaimSourceReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClaimSourceReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClaimFramingLabelEnumSerializer
@@ -327,15 +352,20 @@ class _$ClaimFramingLabelEnumSerializer
   final String wireName = 'ClaimFramingLabelEnum';
 
   @override
-  Object serialize(Serializers serializers, ClaimFramingLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClaimFramingLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ClaimFramingLabelEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClaimFramingLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ClaimFramingLabelEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClaimFramingLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Claim extends Claim {
@@ -399,36 +429,36 @@ class _$Claim extends Claim {
   factory _$Claim([void Function(ClaimBuilder)? updates]) =>
       (ClaimBuilder()..update(updates))._build();
 
-  _$Claim._(
-      {required this.id,
-      required this.ref,
-      required this.narrativeId,
-      required this.type,
-      required this.signalFamily,
-      required this.polarity,
-      required this.hedged,
-      this.place,
-      this.entityRefs,
-      this.eventTime,
-      this.actor,
-      required this.supportCount,
-      required this.evidenceGroupCount,
-      required this.firstObservedAt,
-      required this.extraction,
-      required this.manifestId,
-      required this.confidence,
-      required this.status,
-      this.comparisonId,
-      required this.sourceReliability,
-      required this.informationCredibility,
-      required this.grade,
-      this.restatement,
-      this.framingScore,
-      this.framingLabel,
-      this.reputation,
-      this.tlp,
-      this.createdAt})
-      : super._();
+  _$Claim._({
+    required this.id,
+    required this.ref,
+    required this.narrativeId,
+    required this.type,
+    required this.signalFamily,
+    required this.polarity,
+    required this.hedged,
+    this.place,
+    this.entityRefs,
+    this.eventTime,
+    this.actor,
+    required this.supportCount,
+    required this.evidenceGroupCount,
+    required this.firstObservedAt,
+    required this.extraction,
+    required this.manifestId,
+    required this.confidence,
+    required this.status,
+    this.comparisonId,
+    required this.sourceReliability,
+    required this.informationCredibility,
+    required this.grade,
+    this.restatement,
+    this.framingScore,
+    this.framingLabel,
+    this.reputation,
+    this.tlp,
+    this.createdAt,
+  }) : super._();
   @override
   Claim rebuild(void Function(ClaimBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -724,44 +754,87 @@ class ClaimBuilder implements Builder<Claim, ClaimBuilder> {
   _$Claim _build() {
     _$Claim _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Claim._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Claim', 'id'),
             ref: BuiltValueNullFieldError.checkNotNull(ref, r'Claim', 'ref'),
             narrativeId: BuiltValueNullFieldError.checkNotNull(
-                narrativeId, r'Claim', 'narrativeId'),
+              narrativeId,
+              r'Claim',
+              'narrativeId',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(type, r'Claim', 'type'),
             signalFamily: BuiltValueNullFieldError.checkNotNull(
-                signalFamily, r'Claim', 'signalFamily'),
+              signalFamily,
+              r'Claim',
+              'signalFamily',
+            ),
             polarity: BuiltValueNullFieldError.checkNotNull(
-                polarity, r'Claim', 'polarity'),
+              polarity,
+              r'Claim',
+              'polarity',
+            ),
             hedged: BuiltValueNullFieldError.checkNotNull(
-                hedged, r'Claim', 'hedged'),
+              hedged,
+              r'Claim',
+              'hedged',
+            ),
             place: _place?.build(),
             entityRefs: _entityRefs?.build(),
             eventTime: _eventTime?.build(),
             actor: actor,
             supportCount: BuiltValueNullFieldError.checkNotNull(
-                supportCount, r'Claim', 'supportCount'),
+              supportCount,
+              r'Claim',
+              'supportCount',
+            ),
             evidenceGroupCount: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupCount, r'Claim', 'evidenceGroupCount'),
+              evidenceGroupCount,
+              r'Claim',
+              'evidenceGroupCount',
+            ),
             firstObservedAt: BuiltValueNullFieldError.checkNotNull(
-                firstObservedAt, r'Claim', 'firstObservedAt'),
+              firstObservedAt,
+              r'Claim',
+              'firstObservedAt',
+            ),
             extraction: BuiltValueNullFieldError.checkNotNull(
-                extraction, r'Claim', 'extraction'),
+              extraction,
+              r'Claim',
+              'extraction',
+            ),
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'Claim', 'manifestId'),
+              manifestId,
+              r'Claim',
+              'manifestId',
+            ),
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'Claim', 'confidence'),
+              confidence,
+              r'Claim',
+              'confidence',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Claim', 'status'),
+              status,
+              r'Claim',
+              'status',
+            ),
             comparisonId: comparisonId,
             sourceReliability: BuiltValueNullFieldError.checkNotNull(
-                sourceReliability, r'Claim', 'sourceReliability'),
+              sourceReliability,
+              r'Claim',
+              'sourceReliability',
+            ),
             informationCredibility: BuiltValueNullFieldError.checkNotNull(
-                informationCredibility, r'Claim', 'informationCredibility'),
-            grade:
-                BuiltValueNullFieldError.checkNotNull(grade, r'Claim', 'grade'),
+              informationCredibility,
+              r'Claim',
+              'informationCredibility',
+            ),
+            grade: BuiltValueNullFieldError.checkNotNull(
+              grade,
+              r'Claim',
+              'grade',
+            ),
             restatement: restatement,
             framingScore: framingScore,
             framingLabel: framingLabel,

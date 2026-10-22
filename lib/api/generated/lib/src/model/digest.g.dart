@@ -41,23 +41,23 @@ class _$Digest extends Digest {
   factory _$Digest([void Function(DigestBuilder)? updates]) =>
       (DigestBuilder()..update(updates))._build();
 
-  _$Digest._(
-      {required this.fromSeq,
-      required this.toSeq,
-      required this.gap,
-      this.gapReason,
-      required this.counts,
-      this.active,
-      this.alerts,
-      this.notable,
-      this.health,
-      this.healthSnapshot,
-      this.sections,
-      required this.fromTime,
-      required this.toTime,
-      required this.next,
-      this.weatherAtPlaces})
-      : super._();
+  _$Digest._({
+    required this.fromSeq,
+    required this.toSeq,
+    required this.gap,
+    this.gapReason,
+    required this.counts,
+    this.active,
+    this.alerts,
+    this.notable,
+    this.health,
+    this.healthSnapshot,
+    this.sections,
+    required this.fromTime,
+    required this.toTime,
+    required this.next,
+    this.weatherAtPlaces,
+  }) : super._();
   @override
   Digest rebuild(void Function(DigestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -246,12 +246,19 @@ class DigestBuilder implements Builder<Digest, DigestBuilder> {
   _$Digest _build() {
     _$Digest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Digest._(
             fromSeq: BuiltValueNullFieldError.checkNotNull(
-                fromSeq, r'Digest', 'fromSeq'),
+              fromSeq,
+              r'Digest',
+              'fromSeq',
+            ),
             toSeq: BuiltValueNullFieldError.checkNotNull(
-                toSeq, r'Digest', 'toSeq'),
+              toSeq,
+              r'Digest',
+              'toSeq',
+            ),
             gap: BuiltValueNullFieldError.checkNotNull(gap, r'Digest', 'gap'),
             gapReason: gapReason,
             counts: counts.build(),
@@ -262,9 +269,15 @@ class DigestBuilder implements Builder<Digest, DigestBuilder> {
             healthSnapshot: healthSnapshot,
             sections: _sections?.build(),
             fromTime: BuiltValueNullFieldError.checkNotNull(
-                fromTime, r'Digest', 'fromTime'),
+              fromTime,
+              r'Digest',
+              'fromTime',
+            ),
             toTime: BuiltValueNullFieldError.checkNotNull(
-                toTime, r'Digest', 'toTime'),
+              toTime,
+              r'Digest',
+              'toTime',
+            ),
             next: next.build(),
             weatherAtPlaces: _weatherAtPlaces?.build(),
           );
@@ -291,7 +304,10 @@ class DigestBuilder implements Builder<Digest, DigestBuilder> {
         _weatherAtPlaces?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Digest', _$failedField, e.toString());
+          r'Digest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

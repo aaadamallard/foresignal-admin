@@ -90,11 +90,8 @@ class TileKeyPageBuilder implements Builder<TileKeyPage, TileKeyPageBuilder> {
   _$TileKeyPage _build() {
     _$TileKeyPage _$result;
     try {
-      _$result = _$v ??
-          _$TileKeyPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$TileKeyPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class TileKeyPageBuilder implements Builder<TileKeyPage, TileKeyPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TileKeyPage', _$failedField, e.toString());
+          r'TileKeyPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

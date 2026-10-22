@@ -20,11 +20,9 @@ HistoryTier _$valueOf(String name) {
   }
 }
 
-final BuiltSet<HistoryTier> _$values =
-    BuiltSet<HistoryTier>(const <HistoryTier>[
-  _$STANDARD,
-  _$TRACK,
-]);
+final BuiltSet<HistoryTier> _$values = BuiltSet<HistoryTier>(
+  const <HistoryTier>[_$STANDARD, _$TRACK],
+);
 
 class _$HistoryTierMeta {
   const _$HistoryTierMeta();
@@ -34,7 +32,7 @@ class _$HistoryTierMeta {
   BuiltSet<HistoryTier> get values => _$values;
 }
 
-abstract class _$HistoryTierMixin {
+mixin _$HistoryTierMixin {
   // ignore: non_constant_identifier_names
   _$HistoryTierMeta get HistoryTier => const _$HistoryTierMeta();
 }
@@ -57,15 +55,20 @@ class _$HistoryTierSerializer implements PrimitiveSerializer<HistoryTier> {
   final String wireName = 'HistoryTier';
 
   @override
-  Object serialize(Serializers serializers, HistoryTier object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HistoryTier object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  HistoryTier deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HistoryTier.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  HistoryTier deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HistoryTier.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

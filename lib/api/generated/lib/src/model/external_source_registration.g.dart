@@ -16,17 +16,20 @@ class _$ExternalSourceRegistration extends ExternalSourceRegistration {
   @override
   final bool? allowPrivateNetwork;
 
-  factory _$ExternalSourceRegistration(
-          [void Function(ExternalSourceRegistrationBuilder)? updates]) =>
-      (ExternalSourceRegistrationBuilder()..update(updates))._build();
+  factory _$ExternalSourceRegistration([
+    void Function(ExternalSourceRegistrationBuilder)? updates,
+  ]) => (ExternalSourceRegistrationBuilder()..update(updates))._build();
 
-  _$ExternalSourceRegistration._(
-      {this.manifest, this.manifestUrl, this.approve, this.allowPrivateNetwork})
-      : super._();
+  _$ExternalSourceRegistration._({
+    this.manifest,
+    this.manifestUrl,
+    this.approve,
+    this.allowPrivateNetwork,
+  }) : super._();
   @override
   ExternalSourceRegistration rebuild(
-          void Function(ExternalSourceRegistrationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalSourceRegistrationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalSourceRegistrationBuilder toBuilder() =>
@@ -118,7 +121,8 @@ class ExternalSourceRegistrationBuilder
   _$ExternalSourceRegistration _build() {
     _$ExternalSourceRegistration _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalSourceRegistration._(
             manifest: _manifest?.build(),
             manifestUrl: manifestUrl,
@@ -132,7 +136,10 @@ class ExternalSourceRegistrationBuilder
         _manifest?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalSourceRegistration', _$failedField, e.toString());
+          r'ExternalSourceRegistration',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

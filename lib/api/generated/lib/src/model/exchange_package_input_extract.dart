@@ -30,9 +30,9 @@ abstract class ExchangePackageInputExtract
 
   ExchangePackageInputExtract._();
 
-  factory ExchangePackageInputExtract(
-          [void updates(ExchangePackageInputExtractBuilder b)]) =
-      _$ExchangePackageInputExtract;
+  factory ExchangePackageInputExtract([
+    void updates(ExchangePackageInputExtractBuilder b),
+  ]) = _$ExchangePackageInputExtract;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExchangePackageInputExtractBuilder b) => b;
@@ -47,7 +47,7 @@ class _$ExchangePackageInputExtractSerializer
   @override
   final Iterable<Type> types = const [
     ExchangePackageInputExtract,
-    _$ExchangePackageInputExtract
+    _$ExchangePackageInputExtract,
   ];
 
   @override
@@ -87,9 +87,11 @@ class _$ExchangePackageInputExtractSerializer
     ExchangePackageInputExtract object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,27 +107,34 @@ class _$ExchangePackageInputExtractSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.layers.replace(valueDes);
           break;

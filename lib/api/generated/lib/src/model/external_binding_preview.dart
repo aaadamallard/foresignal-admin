@@ -34,9 +34,9 @@ abstract class ExternalBindingPreview
 
   ExternalBindingPreview._();
 
-  factory ExternalBindingPreview(
-          [void updates(ExternalBindingPreviewBuilder b)]) =
-      _$ExternalBindingPreview;
+  factory ExternalBindingPreview([
+    void updates(ExternalBindingPreviewBuilder b),
+  ]) = _$ExternalBindingPreview;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalBindingPreviewBuilder b) => b;
@@ -51,7 +51,7 @@ class _$ExternalBindingPreviewSerializer
   @override
   final Iterable<Type> types = const [
     ExternalBindingPreview,
-    _$ExternalBindingPreview
+    _$ExternalBindingPreview,
   ];
 
   @override
@@ -75,8 +75,9 @@ class _$ExternalBindingPreviewSerializer
     yield r'effects';
     yield serializers.serialize(
       object.effects,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ExternalBindingPreviewEffectsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ExternalBindingPreviewEffectsInner),
+      ]),
     );
     if (object.errors != null) {
       yield r'errors';
@@ -93,9 +94,11 @@ class _$ExternalBindingPreviewSerializer
     ExternalBindingPreview object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,33 +114,37 @@ class _$ExternalBindingPreviewSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'evaluated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.evaluated = valueDes;
           break;
         case r'matched':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.matched = valueDes;
           break;
         case r'effects':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ExternalBindingPreviewEffectsInner)]),
-          ) as BuiltList<ExternalBindingPreviewEffectsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ExternalBindingPreviewEffectsInner),
+                    ]),
+                  )
+                  as BuiltList<ExternalBindingPreviewEffectsInner>;
           result.effects.replace(valueDes);
           break;
         case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.errors.replace(valueDes);
           break;

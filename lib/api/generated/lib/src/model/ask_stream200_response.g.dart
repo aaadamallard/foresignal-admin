@@ -12,7 +12,8 @@ const AskStream200ResponseModeEnum _$askStream200ResponseModeEnum_retrieval =
     const AskStream200ResponseModeEnum._('retrieval');
 
 AskStream200ResponseModeEnum _$askStream200ResponseModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'tools':
       return _$askStream200ResponseModeEnum_tools;
@@ -24,27 +25,29 @@ AskStream200ResponseModeEnum _$askStream200ResponseModeEnumValueOf(
 }
 
 final BuiltSet<AskStream200ResponseModeEnum>
-    _$askStream200ResponseModeEnumValues =
-    BuiltSet<AskStream200ResponseModeEnum>(const <AskStream200ResponseModeEnum>[
-  _$askStream200ResponseModeEnum_tools,
-  _$askStream200ResponseModeEnum_retrieval,
-]);
+_$askStream200ResponseModeEnumValues = BuiltSet<AskStream200ResponseModeEnum>(
+  const <AskStream200ResponseModeEnum>[
+    _$askStream200ResponseModeEnum_tools,
+    _$askStream200ResponseModeEnum_retrieval,
+  ],
+);
 
 const AskStream200ResponseStopReasonEnum
-    _$askStream200ResponseStopReasonEnum_end =
+_$askStream200ResponseStopReasonEnum_end =
     const AskStream200ResponseStopReasonEnum._('end');
 const AskStream200ResponseStopReasonEnum
-    _$askStream200ResponseStopReasonEnum_maxTokens =
+_$askStream200ResponseStopReasonEnum_maxTokens =
     const AskStream200ResponseStopReasonEnum._('maxTokens');
 const AskStream200ResponseStopReasonEnum
-    _$askStream200ResponseStopReasonEnum_refusal =
+_$askStream200ResponseStopReasonEnum_refusal =
     const AskStream200ResponseStopReasonEnum._('refusal');
 const AskStream200ResponseStopReasonEnum
-    _$askStream200ResponseStopReasonEnum_error =
+_$askStream200ResponseStopReasonEnum_error =
     const AskStream200ResponseStopReasonEnum._('error');
 
 AskStream200ResponseStopReasonEnum _$askStream200ResponseStopReasonEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'end':
       return _$askStream200ResponseStopReasonEnum_end;
@@ -60,26 +63,28 @@ AskStream200ResponseStopReasonEnum _$askStream200ResponseStopReasonEnumValueOf(
 }
 
 final BuiltSet<AskStream200ResponseStopReasonEnum>
-    _$askStream200ResponseStopReasonEnumValues = BuiltSet<
-        AskStream200ResponseStopReasonEnum>(const <AskStream200ResponseStopReasonEnum>[
-  _$askStream200ResponseStopReasonEnum_end,
-  _$askStream200ResponseStopReasonEnum_maxTokens,
-  _$askStream200ResponseStopReasonEnum_refusal,
-  _$askStream200ResponseStopReasonEnum_error,
-]);
+_$askStream200ResponseStopReasonEnumValues =
+    BuiltSet<AskStream200ResponseStopReasonEnum>(
+      const <AskStream200ResponseStopReasonEnum>[
+        _$askStream200ResponseStopReasonEnum_end,
+        _$askStream200ResponseStopReasonEnum_maxTokens,
+        _$askStream200ResponseStopReasonEnum_refusal,
+        _$askStream200ResponseStopReasonEnum_error,
+      ],
+    );
 
 const AskStream200ResponseRequiredScopeEnum
-    _$askStream200ResponseRequiredScopeEnum_read =
+_$askStream200ResponseRequiredScopeEnum_read =
     const AskStream200ResponseRequiredScopeEnum._('read');
 const AskStream200ResponseRequiredScopeEnum
-    _$askStream200ResponseRequiredScopeEnum_agent =
+_$askStream200ResponseRequiredScopeEnum_agent =
     const AskStream200ResponseRequiredScopeEnum._('agent');
 const AskStream200ResponseRequiredScopeEnum
-    _$askStream200ResponseRequiredScopeEnum_admin =
+_$askStream200ResponseRequiredScopeEnum_admin =
     const AskStream200ResponseRequiredScopeEnum._('admin');
 
 AskStream200ResponseRequiredScopeEnum
-    _$askStream200ResponseRequiredScopeEnumValueOf(String name) {
+_$askStream200ResponseRequiredScopeEnumValueOf(String name) {
   switch (name) {
     case 'read':
       return _$askStream200ResponseRequiredScopeEnum_read;
@@ -93,12 +98,14 @@ AskStream200ResponseRequiredScopeEnum
 }
 
 final BuiltSet<AskStream200ResponseRequiredScopeEnum>
-    _$askStream200ResponseRequiredScopeEnumValues = BuiltSet<
-        AskStream200ResponseRequiredScopeEnum>(const <AskStream200ResponseRequiredScopeEnum>[
-  _$askStream200ResponseRequiredScopeEnum_read,
-  _$askStream200ResponseRequiredScopeEnum_agent,
-  _$askStream200ResponseRequiredScopeEnum_admin,
-]);
+_$askStream200ResponseRequiredScopeEnumValues =
+    BuiltSet<AskStream200ResponseRequiredScopeEnum>(
+      const <AskStream200ResponseRequiredScopeEnum>[
+        _$askStream200ResponseRequiredScopeEnum_read,
+        _$askStream200ResponseRequiredScopeEnum_agent,
+        _$askStream200ResponseRequiredScopeEnum_admin,
+      ],
+    );
 
 const AskStream200ResponseClass_Enum _$askStream200ResponseClassEnum_read =
     const AskStream200ResponseClass_Enum._('read');
@@ -116,7 +123,8 @@ const AskStream200ResponseClass_Enum _$askStream200ResponseClassEnum_metrics =
     const AskStream200ResponseClass_Enum._('metrics');
 
 AskStream200ResponseClass_Enum _$askStream200ResponseClassEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'read':
       return _$askStream200ResponseClassEnum_read;
@@ -138,28 +146,30 @@ AskStream200ResponseClass_Enum _$askStream200ResponseClassEnumValueOf(
 }
 
 final BuiltSet<AskStream200ResponseClass_Enum>
-    _$askStream200ResponseClassEnumValues = BuiltSet<
-        AskStream200ResponseClass_Enum>(const <AskStream200ResponseClass_Enum>[
-  _$askStream200ResponseClassEnum_read,
-  _$askStream200ResponseClassEnum_tiles,
-  _$askStream200ResponseClassEnum_stream,
-  _$askStream200ResponseClassEnum_expensive,
-  _$askStream200ResponseClassEnum_write,
-  _$askStream200ResponseClassEnum_anonymous,
-  _$askStream200ResponseClassEnum_metrics,
-]);
+_$askStream200ResponseClassEnumValues =
+    BuiltSet<AskStream200ResponseClass_Enum>(
+      const <AskStream200ResponseClass_Enum>[
+        _$askStream200ResponseClassEnum_read,
+        _$askStream200ResponseClassEnum_tiles,
+        _$askStream200ResponseClassEnum_stream,
+        _$askStream200ResponseClassEnum_expensive,
+        _$askStream200ResponseClassEnum_write,
+        _$askStream200ResponseClassEnum_anonymous,
+        _$askStream200ResponseClassEnum_metrics,
+      ],
+    );
 
 Serializer<AskStream200ResponseModeEnum>
-    _$askStream200ResponseModeEnumSerializer =
+_$askStream200ResponseModeEnumSerializer =
     _$AskStream200ResponseModeEnumSerializer();
 Serializer<AskStream200ResponseStopReasonEnum>
-    _$askStream200ResponseStopReasonEnumSerializer =
+_$askStream200ResponseStopReasonEnumSerializer =
     _$AskStream200ResponseStopReasonEnumSerializer();
 Serializer<AskStream200ResponseRequiredScopeEnum>
-    _$askStream200ResponseRequiredScopeEnumSerializer =
+_$askStream200ResponseRequiredScopeEnumSerializer =
     _$AskStream200ResponseRequiredScopeEnumSerializer();
 Serializer<AskStream200ResponseClass_Enum>
-    _$askStream200ResponseClassEnumSerializer =
+_$askStream200ResponseClassEnumSerializer =
     _$AskStream200ResponseClass_EnumSerializer();
 
 class _$AskStream200ResponseModeEnumSerializer
@@ -179,16 +189,20 @@ class _$AskStream200ResponseModeEnumSerializer
   final String wireName = 'AskStream200ResponseModeEnum';
 
   @override
-  Object serialize(Serializers serializers, AskStream200ResponseModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskStream200ResponseModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AskStream200ResponseModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskStream200ResponseModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskStream200ResponseModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskStream200ResponseStopReasonEnumSerializer
@@ -213,16 +227,19 @@ class _$AskStream200ResponseStopReasonEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AskStream200ResponseStopReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AskStream200ResponseStopReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AskStream200ResponseStopReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskStream200ResponseStopReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskStream200ResponseStopReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskStream200ResponseRequiredScopeEnumSerializer
@@ -240,23 +257,26 @@ class _$AskStream200ResponseRequiredScopeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AskStream200ResponseRequiredScopeEnum
+    AskStream200ResponseRequiredScopeEnum,
   ];
   @override
   final String wireName = 'AskStream200ResponseRequiredScopeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, AskStream200ResponseRequiredScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AskStream200ResponseRequiredScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AskStream200ResponseRequiredScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskStream200ResponseRequiredScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskStream200ResponseRequiredScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskStream200ResponseClass_EnumSerializer
@@ -287,31 +307,34 @@ class _$AskStream200ResponseClass_EnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AskStream200ResponseClass_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AskStream200ResponseClass_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AskStream200ResponseClass_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskStream200ResponseClass_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskStream200ResponseClass_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskStream200Response extends AskStream200Response {
   @override
   final AnyOf anyOf;
 
-  factory _$AskStream200Response(
-          [void Function(AskStream200ResponseBuilder)? updates]) =>
-      (AskStream200ResponseBuilder()..update(updates))._build();
+  factory _$AskStream200Response([
+    void Function(AskStream200ResponseBuilder)? updates,
+  ]) => (AskStream200ResponseBuilder()..update(updates))._build();
 
   _$AskStream200Response._({required this.anyOf}) : super._();
   @override
   AskStream200Response rebuild(
-          void Function(AskStream200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AskStream200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AskStream200ResponseBuilder toBuilder() =>
@@ -333,9 +356,9 @@ class _$AskStream200Response extends AskStream200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AskStream200Response')
-          ..add('anyOf', anyOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AskStream200Response',
+    )..add('anyOf', anyOf)).toString();
   }
 }
 
@@ -374,10 +397,14 @@ class AskStream200ResponseBuilder
   AskStream200Response build() => _build();
 
   _$AskStream200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AskStream200Response._(
           anyOf: BuiltValueNullFieldError.checkNotNull(
-              anyOf, r'AskStream200Response', 'anyOf'),
+            anyOf,
+            r'AskStream200Response',
+            'anyOf',
+          ),
         );
     replace(_$result);
     return _$result;

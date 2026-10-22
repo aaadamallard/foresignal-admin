@@ -85,9 +85,11 @@ class _$EdpManifestSerializer implements PrimitiveSerializer<EdpManifest> {
     EdpManifest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,31 +105,41 @@ class _$EdpManifestSerializer implements PrimitiveSerializer<EdpManifest> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'protocol':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.protocol = valueDes;
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpSourceInfo),
-          ) as EdpSourceInfo;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpSourceInfo),
+                  )
+                  as EdpSourceInfo;
           result.source_.replace(valueDes);
           break;
         case r'transport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpTransport),
-          ) as EdpTransport;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpTransport),
+                  )
+                  as EdpTransport;
           result.transport.replace(valueDes);
           break;
         case r'streams':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(EdpStream)]),
-          ) as BuiltList<EdpStream>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EdpStream),
+                    ]),
+                  )
+                  as BuiltList<EdpStream>;
           result.streams.replace(valueDes);
           break;
         default:

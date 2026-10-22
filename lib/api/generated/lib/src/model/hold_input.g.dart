@@ -29,17 +29,17 @@ class _$HoldInput extends HoldInput {
   factory _$HoldInput([void Function(HoldInputBuilder)? updates]) =>
       (HoldInputBuilder()..update(updates))._build();
 
-  _$HoldInput._(
-      {required this.name,
-      required this.reason,
-      this.sources,
-      this.kinds,
-      this.from,
-      this.to,
-      this.fromSeq,
-      this.toSeq,
-      this.expiresAt})
-      : super._();
+  _$HoldInput._({
+    required this.name,
+    required this.reason,
+    this.sources,
+    this.kinds,
+    this.from,
+    this.to,
+    this.fromSeq,
+    this.toSeq,
+    this.expiresAt,
+  }) : super._();
   @override
   HoldInput rebuild(void Function(HoldInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -170,12 +170,19 @@ class HoldInputBuilder implements Builder<HoldInput, HoldInputBuilder> {
   _$HoldInput _build() {
     _$HoldInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HoldInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'HoldInput', 'name'),
+              name,
+              r'HoldInput',
+              'name',
+            ),
             reason: BuiltValueNullFieldError.checkNotNull(
-                reason, r'HoldInput', 'reason'),
+              reason,
+              r'HoldInput',
+              'reason',
+            ),
             sources: _sources?.build(),
             kinds: _kinds?.build(),
             from: from,
@@ -193,7 +200,10 @@ class HoldInputBuilder implements Builder<HoldInput, HoldInputBuilder> {
         _kinds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HoldInput', _$failedField, e.toString());
+          r'HoldInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

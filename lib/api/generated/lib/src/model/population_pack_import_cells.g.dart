@@ -12,15 +12,15 @@ class _$PopulationPackImportCells extends PopulationPackImportCells {
   @override
   final int? res7;
 
-  factory _$PopulationPackImportCells(
-          [void Function(PopulationPackImportCellsBuilder)? updates]) =>
-      (PopulationPackImportCellsBuilder()..update(updates))._build();
+  factory _$PopulationPackImportCells([
+    void Function(PopulationPackImportCellsBuilder)? updates,
+  ]) => (PopulationPackImportCellsBuilder()..update(updates))._build();
 
   _$PopulationPackImportCells._({this.res5, this.res7}) : super._();
   @override
   PopulationPackImportCells rebuild(
-          void Function(PopulationPackImportCellsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PopulationPackImportCellsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PopulationPackImportCellsBuilder toBuilder() =>
@@ -93,11 +93,8 @@ class PopulationPackImportCellsBuilder
   PopulationPackImportCells build() => _build();
 
   _$PopulationPackImportCells _build() {
-    final _$result = _$v ??
-        _$PopulationPackImportCells._(
-          res5: res5,
-          res7: res7,
-        );
+    final _$result =
+        _$v ?? _$PopulationPackImportCells._(res5: res5, res7: res7);
     replace(_$result);
     return _$result;
   }

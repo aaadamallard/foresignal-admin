@@ -52,9 +52,9 @@ abstract class NativePushPayloadApnsAps
 
   NativePushPayloadApnsAps._();
 
-  factory NativePushPayloadApnsAps(
-          [void updates(NativePushPayloadApnsApsBuilder b)]) =
-      _$NativePushPayloadApnsAps;
+  factory NativePushPayloadApnsAps([
+    void updates(NativePushPayloadApnsApsBuilder b),
+  ]) = _$NativePushPayloadApnsAps;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NativePushPayloadApnsApsBuilder b) => b;
@@ -69,7 +69,7 @@ class _$NativePushPayloadApnsApsSerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadApnsAps,
-    _$NativePushPayloadApnsAps
+    _$NativePushPayloadApnsAps,
   ];
 
   @override
@@ -96,16 +96,18 @@ class _$NativePushPayloadApnsApsSerializer
       yield r'mutable-content';
       yield serializers.serialize(
         object.mutableContent,
-        specifiedType:
-            const FullType(NativePushPayloadApnsApsMutableContentEnum),
+        specifiedType: const FullType(
+          NativePushPayloadApnsApsMutableContentEnum,
+        ),
       );
     }
     if (object.interruptionLevel != null) {
       yield r'interruption-level';
       yield serializers.serialize(
         object.interruptionLevel,
-        specifiedType:
-            const FullType(NativePushPayloadApnsApsInterruptionLevelEnum),
+        specifiedType: const FullType(
+          NativePushPayloadApnsApsInterruptionLevelEnum,
+        ),
       );
     }
     if (object.threadId != null) {
@@ -137,9 +139,11 @@ class _$NativePushPayloadApnsApsSerializer
     NativePushPayloadApnsAps object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -155,60 +159,79 @@ class _$NativePushPayloadApnsApsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'alert':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NativePushPayloadApnsApsAlert),
-          ) as NativePushPayloadApnsApsAlert;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NativePushPayloadApnsApsAlert,
+                    ),
+                  )
+                  as NativePushPayloadApnsApsAlert;
           result.alert.replace(valueDes);
           break;
         case r'sound':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(NativePushPayloadApnsApsSoundEnum),
-          ) as NativePushPayloadApnsApsSoundEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadApnsApsSoundEnum,
+                    ),
+                  )
+                  as NativePushPayloadApnsApsSoundEnum?;
           if (valueDes == null) continue;
           result.sound = valueDes;
           break;
         case r'mutable-content':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                NativePushPayloadApnsApsMutableContentEnum),
-          ) as NativePushPayloadApnsApsMutableContentEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadApnsApsMutableContentEnum,
+                    ),
+                  )
+                  as NativePushPayloadApnsApsMutableContentEnum?;
           if (valueDes == null) continue;
           result.mutableContent = valueDes;
           break;
         case r'interruption-level':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                NativePushPayloadApnsApsInterruptionLevelEnum),
-          ) as NativePushPayloadApnsApsInterruptionLevelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadApnsApsInterruptionLevelEnum,
+                    ),
+                  )
+                  as NativePushPayloadApnsApsInterruptionLevelEnum?;
           if (valueDes == null) continue;
           result.interruptionLevel = valueDes;
           break;
         case r'thread-id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.threadId = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.category = valueDes;
           break;
         case r'badge':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.badge = valueDes;
           break;
@@ -263,7 +286,7 @@ class NativePushPayloadApnsApsMutableContentEnum extends EnumClass {
       _$nativePushPayloadApnsApsMutableContentEnum_number1;
 
   static Serializer<NativePushPayloadApnsApsMutableContentEnum>
-      get serializer => _$nativePushPayloadApnsApsMutableContentEnumSerializer;
+  get serializer => _$nativePushPayloadApnsApsMutableContentEnumSerializer;
 
   const NativePushPayloadApnsApsMutableContentEnum._(String name) : super(name);
 
@@ -285,11 +308,10 @@ class NativePushPayloadApnsApsInterruptionLevelEnum extends EnumClass {
       _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive;
 
   static Serializer<NativePushPayloadApnsApsInterruptionLevelEnum>
-      get serializer =>
-          _$nativePushPayloadApnsApsInterruptionLevelEnumSerializer;
+  get serializer => _$nativePushPayloadApnsApsInterruptionLevelEnumSerializer;
 
   const NativePushPayloadApnsApsInterruptionLevelEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<NativePushPayloadApnsApsInterruptionLevelEnum> get values =>
       _$nativePushPayloadApnsApsInterruptionLevelEnumValues;

@@ -12,7 +12,8 @@ const ForecastCalibrationLabelEnum _$forecastCalibrationLabelEnum_insufficient =
     const ForecastCalibrationLabelEnum._('insufficient');
 
 ForecastCalibrationLabelEnum _$forecastCalibrationLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$forecastCalibrationLabelEnum_ok;
@@ -24,11 +25,12 @@ ForecastCalibrationLabelEnum _$forecastCalibrationLabelEnumValueOf(
 }
 
 final BuiltSet<ForecastCalibrationLabelEnum>
-    _$forecastCalibrationLabelEnumValues =
-    BuiltSet<ForecastCalibrationLabelEnum>(const <ForecastCalibrationLabelEnum>[
-  _$forecastCalibrationLabelEnum_ok,
-  _$forecastCalibrationLabelEnum_insufficient,
-]);
+_$forecastCalibrationLabelEnumValues = BuiltSet<ForecastCalibrationLabelEnum>(
+  const <ForecastCalibrationLabelEnum>[
+    _$forecastCalibrationLabelEnum_ok,
+    _$forecastCalibrationLabelEnum_insufficient,
+  ],
+);
 
 const ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnum_corp =
     const ForecastCalibrationMethodEnum._('corp');
@@ -36,7 +38,8 @@ const ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnum_bins =
     const ForecastCalibrationMethodEnum._('bins');
 
 ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'corp':
       return _$forecastCalibrationMethodEnum_corp;
@@ -48,17 +51,18 @@ ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnumValueOf(
 }
 
 final BuiltSet<ForecastCalibrationMethodEnum>
-    _$forecastCalibrationMethodEnumValues = BuiltSet<
-        ForecastCalibrationMethodEnum>(const <ForecastCalibrationMethodEnum>[
-  _$forecastCalibrationMethodEnum_corp,
-  _$forecastCalibrationMethodEnum_bins,
-]);
+_$forecastCalibrationMethodEnumValues = BuiltSet<ForecastCalibrationMethodEnum>(
+  const <ForecastCalibrationMethodEnum>[
+    _$forecastCalibrationMethodEnum_corp,
+    _$forecastCalibrationMethodEnum_bins,
+  ],
+);
 
 Serializer<ForecastCalibrationLabelEnum>
-    _$forecastCalibrationLabelEnumSerializer =
+_$forecastCalibrationLabelEnumSerializer =
     _$ForecastCalibrationLabelEnumSerializer();
 Serializer<ForecastCalibrationMethodEnum>
-    _$forecastCalibrationMethodEnumSerializer =
+_$forecastCalibrationMethodEnumSerializer =
     _$ForecastCalibrationMethodEnumSerializer();
 
 class _$ForecastCalibrationLabelEnumSerializer
@@ -78,16 +82,20 @@ class _$ForecastCalibrationLabelEnumSerializer
   final String wireName = 'ForecastCalibrationLabelEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastCalibrationLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastCalibrationLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastCalibrationLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastCalibrationLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastCalibrationLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastCalibrationMethodEnumSerializer
@@ -108,16 +116,19 @@ class _$ForecastCalibrationMethodEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecastCalibrationMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastCalibrationMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastCalibrationMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastCalibrationMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastCalibrationMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastCalibration extends ForecastCalibration {
@@ -144,27 +155,27 @@ class _$ForecastCalibration extends ForecastCalibration {
   @override
   final DateTime computedAt;
 
-  factory _$ForecastCalibration(
-          [void Function(ForecastCalibrationBuilder)? updates]) =>
-      (ForecastCalibrationBuilder()..update(updates))._build();
+  factory _$ForecastCalibration([
+    void Function(ForecastCalibrationBuilder)? updates,
+  ]) => (ForecastCalibrationBuilder()..update(updates))._build();
 
-  _$ForecastCalibration._(
-      {this.forecasterId,
-      this.category,
-      required this.n,
-      required this.label,
-      required this.method,
-      required this.curve,
-      required this.bins,
-      this.decomposition,
-      this.sharpness,
-      required this.scorerVersion,
-      required this.computedAt})
-      : super._();
+  _$ForecastCalibration._({
+    this.forecasterId,
+    this.category,
+    required this.n,
+    required this.label,
+    required this.method,
+    required this.curve,
+    required this.bins,
+    this.decomposition,
+    this.sharpness,
+    required this.scorerVersion,
+    required this.computedAt,
+  }) : super._();
   @override
   ForecastCalibration rebuild(
-          void Function(ForecastCalibrationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastCalibrationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastCalibrationBuilder toBuilder() =>
@@ -317,24 +328,40 @@ class ForecastCalibrationBuilder
   _$ForecastCalibration _build() {
     _$ForecastCalibration _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastCalibration._(
             forecasterId: forecasterId,
             category: category,
             n: BuiltValueNullFieldError.checkNotNull(
-                n, r'ForecastCalibration', 'n'),
+              n,
+              r'ForecastCalibration',
+              'n',
+            ),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'ForecastCalibration', 'label'),
+              label,
+              r'ForecastCalibration',
+              'label',
+            ),
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'ForecastCalibration', 'method'),
+              method,
+              r'ForecastCalibration',
+              'method',
+            ),
             curve: curve.build(),
             bins: bins.build(),
             decomposition: _decomposition?.build(),
             sharpness: sharpness,
             scorerVersion: BuiltValueNullFieldError.checkNotNull(
-                scorerVersion, r'ForecastCalibration', 'scorerVersion'),
+              scorerVersion,
+              r'ForecastCalibration',
+              'scorerVersion',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'ForecastCalibration', 'computedAt'),
+              computedAt,
+              r'ForecastCalibration',
+              'computedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -347,7 +374,10 @@ class ForecastCalibrationBuilder
         _decomposition?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastCalibration', _$failedField, e.toString());
+          r'ForecastCalibration',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -65,21 +65,21 @@ class SamplingApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/series'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -92,18 +92,27 @@ class SamplingApi {
       if (lat != null)
         r'lat': encodeQueryParameter(_serializers, lat, const FullType(num)),
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (units != null)
-        r'units':
-            encodeQueryParameter(_serializers, units, const FullType(String)),
+        r'units': encodeQueryParameter(
+          _serializers,
+          units,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -122,9 +131,10 @@ class SamplingApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Series),
-            ) as Series;
+                  rawResponse,
+                  specifiedType: const FullType(Series),
+                )
+                as Series;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -185,16 +195,10 @@ class SamplingApi {
     final _path = r'/v1/sample';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -207,8 +211,11 @@ class SamplingApi {
       if (lat != null)
         r'lat': encodeQueryParameter(_serializers, lat, const FullType(num)),
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       r'products': encodeCollectionQueryParameter<String>(
         _serializers,
         products,
@@ -216,14 +223,23 @@ class SamplingApi {
         format: ListFormat.multi,
       ),
       if (time != null)
-        r'time':
-            encodeQueryParameter(_serializers, time, const FullType(String)),
+        r'time': encodeQueryParameter(
+          _serializers,
+          time,
+          const FullType(String),
+        ),
       if (units != null)
-        r'units':
-            encodeQueryParameter(_serializers, units, const FullType(String)),
+        r'units': encodeQueryParameter(
+          _serializers,
+          units,
+          const FullType(String),
+        ),
       if (record != null)
-        r'record':
-            encodeQueryParameter(_serializers, record, const FullType(String)),
+        r'record': encodeQueryParameter(
+          _serializers,
+          record,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -242,9 +258,10 @@ class SamplingApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SampleResponse),
-            ) as SampleResponse;
+                  rawResponse,
+                  specifiedType: const FullType(SampleResponse),
+                )
+                as SampleResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -293,21 +310,21 @@ class SamplingApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/products/{productId}/stats'.replaceAll(
-        '{' r'productId' '}',
-        encodeQueryParameter(_serializers, productId, const FullType(String))
-            .toString());
+      '{'
+      r'productId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        productId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -322,10 +339,7 @@ class SamplingApi {
       _bodyData = _serializers.serialize(statsRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -348,9 +362,10 @@ class SamplingApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StatsResponse),
-            ) as StatsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(StatsResponse),
+                )
+                as StatsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -399,16 +414,10 @@ class SamplingApi {
     final _path = r'/v1/sample';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -423,10 +432,7 @@ class SamplingApi {
       _bodyData = _serializers.serialize(sampleRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -449,9 +455,10 @@ class SamplingApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SampleBatchResponse),
-            ) as SampleBatchResponse;
+                  rawResponse,
+                  specifiedType: const FullType(SampleBatchResponse),
+                )
+                as SampleBatchResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -500,16 +507,10 @@ class SamplingApi {
     final _path = r'/v1/sample/track';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -521,14 +522,13 @@ class SamplingApi {
 
     try {
       const _type = FullType(SampleTrackRequest);
-      _bodyData =
-          _serializers.serialize(sampleTrackRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        sampleTrackRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -551,9 +551,10 @@ class SamplingApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SampleTrackResponse),
-            ) as SampleTrackResponse;
+                  rawResponse,
+                  specifiedType: const FullType(SampleTrackResponse),
+                )
+                as SampleTrackResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -69,14 +69,14 @@ class _$StyleFragmentSerializer implements PrimitiveSerializer<StyleFragment> {
       object.sources,
       specifiedType: const FullType(BuiltMap, [
         FullType(String),
-        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
       ]),
     );
     yield r'layers';
     yield serializers.serialize(
       object.layers,
       specifiedType: const FullType(BuiltList, [
-        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
       ]),
     );
     if (object.metadata != null) {
@@ -94,9 +94,11 @@ class _$StyleFragmentSerializer implements PrimitiveSerializer<StyleFragment> {
     StyleFragment object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,38 +114,52 @@ class _$StyleFragmentSerializer implements PrimitiveSerializer<StyleFragment> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StyleFragmentVersionEnum),
-          ) as StyleFragmentVersionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StyleFragmentVersionEnum),
+                  )
+                  as StyleFragmentVersionEnum;
           result.version = valueDes;
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [
-              FullType(String),
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltMap<String, BuiltMap<String, JsonObject?>>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltMap<String, JsonObject?>>;
           result.sources.replace(valueDes);
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltList<BuiltMap<String, JsonObject?>>;
           result.layers.replace(valueDes);
           break;
         case r'metadata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StyleFragmentMetadata),
-          ) as StyleFragmentMetadata?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StyleFragmentMetadata,
+                    ),
+                  )
+                  as StyleFragmentMetadata?;
           if (valueDes == null) continue;
           result.metadata.replace(valueDes);
           break;

@@ -7,20 +7,20 @@ part of 'ownership_chain_node.dart';
 // **************************************************************************
 
 const OwnershipChainNodeWeakestEdgeLabelEnum
-    _$ownershipChainNodeWeakestEdgeLabelEnum_confirmed =
+_$ownershipChainNodeWeakestEdgeLabelEnum_confirmed =
     const OwnershipChainNodeWeakestEdgeLabelEnum._('confirmed');
 const OwnershipChainNodeWeakestEdgeLabelEnum
-    _$ownershipChainNodeWeakestEdgeLabelEnum_likely =
+_$ownershipChainNodeWeakestEdgeLabelEnum_likely =
     const OwnershipChainNodeWeakestEdgeLabelEnum._('likely');
 const OwnershipChainNodeWeakestEdgeLabelEnum
-    _$ownershipChainNodeWeakestEdgeLabelEnum_possible =
+_$ownershipChainNodeWeakestEdgeLabelEnum_possible =
     const OwnershipChainNodeWeakestEdgeLabelEnum._('possible');
 const OwnershipChainNodeWeakestEdgeLabelEnum
-    _$ownershipChainNodeWeakestEdgeLabelEnum_speculative =
+_$ownershipChainNodeWeakestEdgeLabelEnum_speculative =
     const OwnershipChainNodeWeakestEdgeLabelEnum._('speculative');
 
 OwnershipChainNodeWeakestEdgeLabelEnum
-    _$ownershipChainNodeWeakestEdgeLabelEnumValueOf(String name) {
+_$ownershipChainNodeWeakestEdgeLabelEnumValueOf(String name) {
   switch (name) {
     case 'confirmed':
       return _$ownershipChainNodeWeakestEdgeLabelEnum_confirmed;
@@ -36,16 +36,18 @@ OwnershipChainNodeWeakestEdgeLabelEnum
 }
 
 final BuiltSet<OwnershipChainNodeWeakestEdgeLabelEnum>
-    _$ownershipChainNodeWeakestEdgeLabelEnumValues = BuiltSet<
-        OwnershipChainNodeWeakestEdgeLabelEnum>(const <OwnershipChainNodeWeakestEdgeLabelEnum>[
-  _$ownershipChainNodeWeakestEdgeLabelEnum_confirmed,
-  _$ownershipChainNodeWeakestEdgeLabelEnum_likely,
-  _$ownershipChainNodeWeakestEdgeLabelEnum_possible,
-  _$ownershipChainNodeWeakestEdgeLabelEnum_speculative,
-]);
+_$ownershipChainNodeWeakestEdgeLabelEnumValues =
+    BuiltSet<OwnershipChainNodeWeakestEdgeLabelEnum>(
+      const <OwnershipChainNodeWeakestEdgeLabelEnum>[
+        _$ownershipChainNodeWeakestEdgeLabelEnum_confirmed,
+        _$ownershipChainNodeWeakestEdgeLabelEnum_likely,
+        _$ownershipChainNodeWeakestEdgeLabelEnum_possible,
+        _$ownershipChainNodeWeakestEdgeLabelEnum_speculative,
+      ],
+    );
 
 Serializer<OwnershipChainNodeWeakestEdgeLabelEnum>
-    _$ownershipChainNodeWeakestEdgeLabelEnumSerializer =
+_$ownershipChainNodeWeakestEdgeLabelEnumSerializer =
     _$OwnershipChainNodeWeakestEdgeLabelEnumSerializer();
 
 class _$OwnershipChainNodeWeakestEdgeLabelEnumSerializer
@@ -65,23 +67,26 @@ class _$OwnershipChainNodeWeakestEdgeLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OwnershipChainNodeWeakestEdgeLabelEnum
+    OwnershipChainNodeWeakestEdgeLabelEnum,
   ];
   @override
   final String wireName = 'OwnershipChainNodeWeakestEdgeLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          OwnershipChainNodeWeakestEdgeLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OwnershipChainNodeWeakestEdgeLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OwnershipChainNodeWeakestEdgeLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OwnershipChainNodeWeakestEdgeLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OwnershipChainNodeWeakestEdgeLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OwnershipChainNode extends OwnershipChainNode {
@@ -94,20 +99,20 @@ class _$OwnershipChainNode extends OwnershipChainNode {
   @override
   final BuiltList<OwnershipChainNodePathsInner> paths;
 
-  factory _$OwnershipChainNode(
-          [void Function(OwnershipChainNodeBuilder)? updates]) =>
-      (OwnershipChainNodeBuilder()..update(updates))._build();
+  factory _$OwnershipChainNode([
+    void Function(OwnershipChainNodeBuilder)? updates,
+  ]) => (OwnershipChainNodeBuilder()..update(updates))._build();
 
-  _$OwnershipChainNode._(
-      {required this.node,
-      required this.reachedFrom,
-      required this.weakestEdgeLabel,
-      required this.paths})
-      : super._();
+  _$OwnershipChainNode._({
+    required this.node,
+    required this.reachedFrom,
+    required this.weakestEdgeLabel,
+    required this.paths,
+  }) : super._();
   @override
   OwnershipChainNode rebuild(
-          void Function(OwnershipChainNodeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OwnershipChainNodeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OwnershipChainNodeBuilder toBuilder() =>
@@ -163,8 +168,8 @@ class OwnershipChainNodeBuilder
   OwnershipChainNodeWeakestEdgeLabelEnum? get weakestEdgeLabel =>
       _$this._weakestEdgeLabel;
   set weakestEdgeLabel(
-          OwnershipChainNodeWeakestEdgeLabelEnum? weakestEdgeLabel) =>
-      _$this._weakestEdgeLabel = weakestEdgeLabel;
+    OwnershipChainNodeWeakestEdgeLabelEnum? weakestEdgeLabel,
+  ) => _$this._weakestEdgeLabel = weakestEdgeLabel;
 
   ListBuilder<OwnershipChainNodePathsInner>? _paths;
   ListBuilder<OwnershipChainNodePathsInner> get paths =>
@@ -204,12 +209,16 @@ class OwnershipChainNodeBuilder
   _$OwnershipChainNode _build() {
     _$OwnershipChainNode _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OwnershipChainNode._(
             node: node.build(),
             reachedFrom: reachedFrom.build(),
             weakestEdgeLabel: BuiltValueNullFieldError.checkNotNull(
-                weakestEdgeLabel, r'OwnershipChainNode', 'weakestEdgeLabel'),
+              weakestEdgeLabel,
+              r'OwnershipChainNode',
+              'weakestEdgeLabel',
+            ),
             paths: paths.build(),
           );
     } catch (_) {
@@ -224,7 +233,10 @@ class OwnershipChainNodeBuilder
         paths.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OwnershipChainNode', _$failedField, e.toString());
+          r'OwnershipChainNode',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

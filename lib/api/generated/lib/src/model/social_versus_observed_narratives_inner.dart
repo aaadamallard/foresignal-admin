@@ -19,8 +19,10 @@ part 'social_versus_observed_narratives_inner.g.dart';
 @BuiltValue()
 abstract class SocialVersusObservedNarrativesInner
     implements
-        Built<SocialVersusObservedNarrativesInner,
-            SocialVersusObservedNarrativesInnerBuilder> {
+        Built<
+          SocialVersusObservedNarrativesInner,
+          SocialVersusObservedNarrativesInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'narrativeId')
   String get narrativeId;
@@ -38,9 +40,9 @@ abstract class SocialVersusObservedNarrativesInner
 
   SocialVersusObservedNarrativesInner._();
 
-  factory SocialVersusObservedNarrativesInner(
-          [void updates(SocialVersusObservedNarrativesInnerBuilder b)]) =
-      _$SocialVersusObservedNarrativesInner;
+  factory SocialVersusObservedNarrativesInner([
+    void updates(SocialVersusObservedNarrativesInnerBuilder b),
+  ]) = _$SocialVersusObservedNarrativesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialVersusObservedNarrativesInnerBuilder b) => b;
@@ -55,7 +57,7 @@ class _$SocialVersusObservedNarrativesInnerSerializer
   @override
   final Iterable<Type> types = const [
     SocialVersusObservedNarrativesInner,
-    _$SocialVersusObservedNarrativesInner
+    _$SocialVersusObservedNarrativesInner,
   ];
 
   @override
@@ -79,8 +81,9 @@ class _$SocialVersusObservedNarrativesInnerSerializer
     yield r'status';
     yield serializers.serialize(
       object.status,
-      specifiedType:
-          const FullType(SocialVersusObservedNarrativesInnerStatusEnum),
+      specifiedType: const FullType(
+        SocialVersusObservedNarrativesInnerStatusEnum,
+      ),
     );
     if (object.situationId != null) {
       yield r'situationId';
@@ -97,9 +100,11 @@ class _$SocialVersusObservedNarrativesInnerSerializer
     SocialVersusObservedNarrativesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,32 +120,41 @@ class _$SocialVersusObservedNarrativesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'narrativeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.narrativeId = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(SocialVersusObservedNarrativesInnerStatusEnum),
-          ) as SocialVersusObservedNarrativesInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialVersusObservedNarrativesInnerStatusEnum,
+                    ),
+                  )
+                  as SocialVersusObservedNarrativesInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.situationId = valueDes;
           break;
@@ -194,15 +208,14 @@ class SocialVersusObservedNarrativesInnerStatusEnum extends EnumClass {
       _$socialVersusObservedNarrativesInnerStatusEnum_mixed;
   @BuiltValueEnumConst(wireName: r'insufficient-coverage')
   static const SocialVersusObservedNarrativesInnerStatusEnum
-      insufficientCoverage =
+  insufficientCoverage =
       _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage;
 
   static Serializer<SocialVersusObservedNarrativesInnerStatusEnum>
-      get serializer =>
-          _$socialVersusObservedNarrativesInnerStatusEnumSerializer;
+  get serializer => _$socialVersusObservedNarrativesInnerStatusEnumSerializer;
 
   const SocialVersusObservedNarrativesInnerStatusEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<SocialVersusObservedNarrativesInnerStatusEnum> get values =>
       _$socialVersusObservedNarrativesInnerStatusEnumValues;

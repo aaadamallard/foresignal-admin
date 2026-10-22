@@ -26,8 +26,9 @@ abstract class NativePushPayloadApns
 
   NativePushPayloadApns._();
 
-  factory NativePushPayloadApns(
-      [void updates(NativePushPayloadApnsBuilder b)]) = _$NativePushPayloadApns;
+  factory NativePushPayloadApns([
+    void updates(NativePushPayloadApnsBuilder b),
+  ]) = _$NativePushPayloadApns;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NativePushPayloadApnsBuilder b) => b;
@@ -42,7 +43,7 @@ class _$NativePushPayloadApnsSerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadApns,
-    _$NativePushPayloadApns
+    _$NativePushPayloadApns,
   ];
 
   @override
@@ -75,9 +76,11 @@ class _$NativePushPayloadApnsSerializer
     NativePushPayloadApns object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +96,26 @@ class _$NativePushPayloadApnsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'aps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(NativePushPayloadApnsAps),
-          ) as NativePushPayloadApnsAps?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadApnsAps,
+                    ),
+                  )
+                  as NativePushPayloadApnsAps?;
           if (valueDes == null) continue;
           result.aps.replace(valueDes);
           break;
         case r'e':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(NativePushPayloadApnsE),
-          ) as NativePushPayloadApnsE?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadApnsE,
+                    ),
+                  )
+                  as NativePushPayloadApnsE?;
           if (valueDes == null) continue;
           result.e.replace(valueDes);
           break;

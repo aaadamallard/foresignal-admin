@@ -12,7 +12,8 @@ const CustomSourceObservedAtModeEnum _$customSourceObservedAtModeEnum_RECEIVED =
     const CustomSourceObservedAtModeEnum._('RECEIVED');
 
 CustomSourceObservedAtModeEnum _$customSourceObservedAtModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'UPSTREAM':
       return _$customSourceObservedAtModeEnum_UPSTREAM;
@@ -24,11 +25,13 @@ CustomSourceObservedAtModeEnum _$customSourceObservedAtModeEnumValueOf(
 }
 
 final BuiltSet<CustomSourceObservedAtModeEnum>
-    _$customSourceObservedAtModeEnumValues = BuiltSet<
-        CustomSourceObservedAtModeEnum>(const <CustomSourceObservedAtModeEnum>[
-  _$customSourceObservedAtModeEnum_UPSTREAM,
-  _$customSourceObservedAtModeEnum_RECEIVED,
-]);
+_$customSourceObservedAtModeEnumValues =
+    BuiltSet<CustomSourceObservedAtModeEnum>(
+      const <CustomSourceObservedAtModeEnum>[
+        _$customSourceObservedAtModeEnum_UPSTREAM,
+        _$customSourceObservedAtModeEnum_RECEIVED,
+      ],
+    );
 
 const CustomSourceTtlAnchorEnum _$customSourceTtlAnchorEnum_RECEIVED =
     const CustomSourceTtlAnchorEnum._('RECEIVED');
@@ -48,9 +51,9 @@ CustomSourceTtlAnchorEnum _$customSourceTtlAnchorEnumValueOf(String name) {
 
 final BuiltSet<CustomSourceTtlAnchorEnum> _$customSourceTtlAnchorEnumValues =
     BuiltSet<CustomSourceTtlAnchorEnum>(const <CustomSourceTtlAnchorEnum>[
-  _$customSourceTtlAnchorEnum_RECEIVED,
-  _$customSourceTtlAnchorEnum_OBSERVED,
-]);
+      _$customSourceTtlAnchorEnum_RECEIVED,
+      _$customSourceTtlAnchorEnum_OBSERVED,
+    ]);
 
 const CustomSourceProfileEnum _$customSourceProfileEnum_personalLocation =
     const CustomSourceProfileEnum._('personalLocation');
@@ -66,11 +69,11 @@ CustomSourceProfileEnum _$customSourceProfileEnumValueOf(String name) {
 
 final BuiltSet<CustomSourceProfileEnum> _$customSourceProfileEnumValues =
     BuiltSet<CustomSourceProfileEnum>(const <CustomSourceProfileEnum>[
-  _$customSourceProfileEnum_personalLocation,
-]);
+      _$customSourceProfileEnum_personalLocation,
+    ]);
 
 Serializer<CustomSourceObservedAtModeEnum>
-    _$customSourceObservedAtModeEnumSerializer =
+_$customSourceObservedAtModeEnumSerializer =
     _$CustomSourceObservedAtModeEnumSerializer();
 Serializer<CustomSourceTtlAnchorEnum> _$customSourceTtlAnchorEnumSerializer =
     _$CustomSourceTtlAnchorEnumSerializer();
@@ -95,16 +98,19 @@ class _$CustomSourceObservedAtModeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, CustomSourceObservedAtModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CustomSourceObservedAtModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CustomSourceObservedAtModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CustomSourceObservedAtModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CustomSourceObservedAtModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CustomSourceTtlAnchorEnumSerializer
@@ -124,16 +130,20 @@ class _$CustomSourceTtlAnchorEnumSerializer
   final String wireName = 'CustomSourceTtlAnchorEnum';
 
   @override
-  Object serialize(Serializers serializers, CustomSourceTtlAnchorEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CustomSourceTtlAnchorEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CustomSourceTtlAnchorEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CustomSourceTtlAnchorEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CustomSourceTtlAnchorEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CustomSourceProfileEnumSerializer
@@ -151,16 +161,20 @@ class _$CustomSourceProfileEnumSerializer
   final String wireName = 'CustomSourceProfileEnum';
 
   @override
-  Object serialize(Serializers serializers, CustomSourceProfileEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CustomSourceProfileEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CustomSourceProfileEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CustomSourceProfileEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CustomSourceProfileEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CustomSource extends CustomSource {
@@ -234,41 +248,41 @@ class _$CustomSource extends CustomSource {
   factory _$CustomSource([void Function(CustomSourceBuilder)? updates]) =>
       (CustomSourceBuilder()..update(updates))._build();
 
-  _$CustomSource._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.kinds,
-      this.attribution,
-      this.recordTtl,
-      this.tileProperties,
-      this.searchFields,
-      this.embedFields,
-      this.rankField,
-      this.rateLimitPerMinute,
-      this.observedAtMode,
-      this.ttlAnchor,
-      this.volatileFields,
-      this.significantFields,
-      this.titleField,
-      this.fieldSpecs,
-      this.private,
-      this.licence,
-      this.recordsPerMinute,
-      this.formats,
-      this.verifiers,
-      this.profile,
-      this.mapping,
-      this.preset,
-      this.presetParams,
-      this.allowPathKey,
-      this.ingestAllowCidrs,
-      this.captureSamples,
-      this.licenceTerms,
-      required this.createdAt,
-      this.lastIngestAt,
-      this.ingestKeyPrefix})
-      : super._();
+  _$CustomSource._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.kinds,
+    this.attribution,
+    this.recordTtl,
+    this.tileProperties,
+    this.searchFields,
+    this.embedFields,
+    this.rankField,
+    this.rateLimitPerMinute,
+    this.observedAtMode,
+    this.ttlAnchor,
+    this.volatileFields,
+    this.significantFields,
+    this.titleField,
+    this.fieldSpecs,
+    this.private,
+    this.licence,
+    this.recordsPerMinute,
+    this.formats,
+    this.verifiers,
+    this.profile,
+    this.mapping,
+    this.preset,
+    this.presetParams,
+    this.allowPathKey,
+    this.ingestAllowCidrs,
+    this.captureSamples,
+    this.licenceTerms,
+    required this.createdAt,
+    this.lastIngestAt,
+    this.ingestKeyPrefix,
+  }) : super._();
   @override
   CustomSource rebuild(void Function(CustomSourceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -622,12 +636,19 @@ class CustomSourceBuilder
   _$CustomSource _build() {
     _$CustomSource _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CustomSource._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CustomSource', 'id'),
+              id,
+              r'CustomSource',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'CustomSource', 'name'),
+              name,
+              r'CustomSource',
+              'name',
+            ),
             description: description,
             kinds: kinds.build(),
             attribution: attribution,
@@ -657,7 +678,10 @@ class CustomSourceBuilder
             captureSamples: captureSamples,
             licenceTerms: _licenceTerms?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'CustomSource', 'createdAt'),
+              createdAt,
+              r'CustomSource',
+              'createdAt',
+            ),
             lastIngestAt: lastIngestAt,
             ingestKeyPrefix: ingestKeyPrefix,
           );
@@ -700,7 +724,10 @@ class CustomSourceBuilder
         _licenceTerms?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CustomSource', _$failedField, e.toString());
+          r'CustomSource',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

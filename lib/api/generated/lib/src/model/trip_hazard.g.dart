@@ -28,10 +28,10 @@ TripHazardSectionEnum _$tripHazardSectionEnumValueOf(String name) {
 
 final BuiltSet<TripHazardSectionEnum> _$tripHazardSectionEnumValues =
     BuiltSet<TripHazardSectionEnum>(const <TripHazardSectionEnum>[
-  _$tripHazardSectionEnum_onRoute,
-  _$tripHazardSectionEnum_nearRoute,
-  _$tripHazardSectionEnum_timing,
-]);
+      _$tripHazardSectionEnum_onRoute,
+      _$tripHazardSectionEnum_nearRoute,
+      _$tripHazardSectionEnum_timing,
+    ]);
 
 Serializer<TripHazardSectionEnum> _$tripHazardSectionEnumSerializer =
     _$TripHazardSectionEnumSerializer();
@@ -55,15 +55,20 @@ class _$TripHazardSectionEnumSerializer
   final String wireName = 'TripHazardSectionEnum';
 
   @override
-  Object serialize(Serializers serializers, TripHazardSectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TripHazardSectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TripHazardSectionEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TripHazardSectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TripHazardSectionEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TripHazardSectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TripHazard extends TripHazard {
@@ -97,21 +102,21 @@ class _$TripHazard extends TripHazard {
   factory _$TripHazard([void Function(TripHazardBuilder)? updates]) =>
       (TripHazardBuilder()..update(updates))._build();
 
-  _$TripHazard._(
-      {required this.ref,
-      required this.sourceId,
-      required this.externalId,
-      required this.kind,
-      this.title,
-      this.severity,
-      required this.section,
-      required this.distanceAlongRouteM,
-      this.distanceFromRouteM,
-      this.validFrom,
-      this.validUntil,
-      this.ahead,
-      this.etaSeconds})
-      : super._();
+  _$TripHazard._({
+    required this.ref,
+    required this.sourceId,
+    required this.externalId,
+    required this.kind,
+    this.title,
+    this.severity,
+    required this.section,
+    required this.distanceAlongRouteM,
+    this.distanceFromRouteM,
+    this.validFrom,
+    this.validUntil,
+    this.ahead,
+    this.etaSeconds,
+  }) : super._();
   @override
   TripHazard rebuild(void Function(TripHazardBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -274,21 +279,37 @@ class TripHazardBuilder implements Builder<TripHazard, TripHazardBuilder> {
   TripHazard build() => _build();
 
   _$TripHazard _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TripHazard._(
           ref: BuiltValueNullFieldError.checkNotNull(ref, r'TripHazard', 'ref'),
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'TripHazard', 'sourceId'),
+            sourceId,
+            r'TripHazard',
+            'sourceId',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'TripHazard', 'externalId'),
+            externalId,
+            r'TripHazard',
+            'externalId',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'TripHazard', 'kind'),
+            kind,
+            r'TripHazard',
+            'kind',
+          ),
           title: title,
           severity: severity,
           section: BuiltValueNullFieldError.checkNotNull(
-              section, r'TripHazard', 'section'),
+            section,
+            r'TripHazard',
+            'section',
+          ),
           distanceAlongRouteM: BuiltValueNullFieldError.checkNotNull(
-              distanceAlongRouteM, r'TripHazard', 'distanceAlongRouteM'),
+            distanceAlongRouteM,
+            r'TripHazard',
+            'distanceAlongRouteM',
+          ),
           distanceFromRouteM: distanceFromRouteM,
           validFrom: validFrom,
           validUntil: validUntil,

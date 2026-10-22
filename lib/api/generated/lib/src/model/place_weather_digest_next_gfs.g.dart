@@ -22,23 +22,23 @@ class _$PlaceWeatherDigestNextGfs extends PlaceWeatherDigestNextGfs {
   @override
   final DateTime? validTime;
 
-  factory _$PlaceWeatherDigestNextGfs(
-          [void Function(PlaceWeatherDigestNextGfsBuilder)? updates]) =>
-      (PlaceWeatherDigestNextGfsBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNextGfs([
+    void Function(PlaceWeatherDigestNextGfsBuilder)? updates,
+  ]) => (PlaceWeatherDigestNextGfsBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestNextGfs._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.run,
-      this.gustMaxMs,
-      this.precipMm,
-      this.validTime})
-      : super._();
+  _$PlaceWeatherDigestNextGfs._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.run,
+    this.gustMaxMs,
+    this.precipMm,
+    this.validTime,
+  }) : super._();
   @override
   PlaceWeatherDigestNextGfs rebuild(
-          void Function(PlaceWeatherDigestNextGfsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNextGfsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNextGfsBuilder toBuilder() =>
@@ -151,10 +151,14 @@ class PlaceWeatherDigestNextGfsBuilder
   PlaceWeatherDigestNextGfs build() => _build();
 
   _$PlaceWeatherDigestNextGfs _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherDigestNextGfs._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherDigestNextGfs', 'status'),
+            status,
+            r'PlaceWeatherDigestNextGfs',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           run: run,

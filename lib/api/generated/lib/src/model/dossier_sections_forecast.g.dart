@@ -9,17 +9,18 @@ part of 'dossier_sections_forecast.dart';
 const DossierSectionsForecastStatusEnum _$dossierSectionsForecastStatusEnum_ok =
     const DossierSectionsForecastStatusEnum._('ok');
 const DossierSectionsForecastStatusEnum
-    _$dossierSectionsForecastStatusEnum_empty =
+_$dossierSectionsForecastStatusEnum_empty =
     const DossierSectionsForecastStatusEnum._('empty');
 const DossierSectionsForecastStatusEnum
-    _$dossierSectionsForecastStatusEnum_unavailable =
+_$dossierSectionsForecastStatusEnum_unavailable =
     const DossierSectionsForecastStatusEnum._('unavailable');
 const DossierSectionsForecastStatusEnum
-    _$dossierSectionsForecastStatusEnum_notInstalled =
+_$dossierSectionsForecastStatusEnum_notInstalled =
     const DossierSectionsForecastStatusEnum._('notInstalled');
 
 DossierSectionsForecastStatusEnum _$dossierSectionsForecastStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$dossierSectionsForecastStatusEnum_ok;
@@ -35,16 +36,18 @@ DossierSectionsForecastStatusEnum _$dossierSectionsForecastStatusEnumValueOf(
 }
 
 final BuiltSet<DossierSectionsForecastStatusEnum>
-    _$dossierSectionsForecastStatusEnumValues = BuiltSet<
-        DossierSectionsForecastStatusEnum>(const <DossierSectionsForecastStatusEnum>[
-  _$dossierSectionsForecastStatusEnum_ok,
-  _$dossierSectionsForecastStatusEnum_empty,
-  _$dossierSectionsForecastStatusEnum_unavailable,
-  _$dossierSectionsForecastStatusEnum_notInstalled,
-]);
+_$dossierSectionsForecastStatusEnumValues =
+    BuiltSet<DossierSectionsForecastStatusEnum>(
+      const <DossierSectionsForecastStatusEnum>[
+        _$dossierSectionsForecastStatusEnum_ok,
+        _$dossierSectionsForecastStatusEnum_empty,
+        _$dossierSectionsForecastStatusEnum_unavailable,
+        _$dossierSectionsForecastStatusEnum_notInstalled,
+      ],
+    );
 
 Serializer<DossierSectionsForecastStatusEnum>
-    _$dossierSectionsForecastStatusEnumSerializer =
+_$dossierSectionsForecastStatusEnumSerializer =
     _$DossierSectionsForecastStatusEnumSerializer();
 
 class _$DossierSectionsForecastStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$DossierSectionsForecastStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DossierSectionsForecastStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DossierSectionsForecastStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsForecastStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsForecastStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsForecastStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsForecast extends DossierSectionsForecast {
@@ -97,23 +103,23 @@ class _$DossierSectionsForecast extends DossierSectionsForecast {
   @override
   final BuiltList<LedgerQuestionBrief>? questions;
 
-  factory _$DossierSectionsForecast(
-          [void Function(DossierSectionsForecastBuilder)? updates]) =>
-      (DossierSectionsForecastBuilder()..update(updates))._build();
+  factory _$DossierSectionsForecast([
+    void Function(DossierSectionsForecastBuilder)? updates,
+  ]) => (DossierSectionsForecastBuilder()..update(updates))._build();
 
-  _$DossierSectionsForecast._(
-      {required this.status,
-      this.message,
-      this.links,
-      this.facets,
-      this.truncated,
-      this.official,
-      this.questions})
-      : super._();
+  _$DossierSectionsForecast._({
+    required this.status,
+    this.message,
+    this.links,
+    this.facets,
+    this.truncated,
+    this.official,
+    this.questions,
+  }) : super._();
   @override
   DossierSectionsForecast rebuild(
-          void Function(DossierSectionsForecastBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsForecastBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsForecastBuilder toBuilder() =>
@@ -237,10 +243,14 @@ class DossierSectionsForecastBuilder
   _$DossierSectionsForecast _build() {
     _$DossierSectionsForecast _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsForecast._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DossierSectionsForecast', 'status'),
+              status,
+              r'DossierSectionsForecast',
+              'status',
+            ),
             message: message,
             links: _links?.build(),
             facets: _facets?.build(),
@@ -262,7 +272,10 @@ class DossierSectionsForecastBuilder
         _questions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsForecast', _$failedField, e.toString());
+          r'DossierSectionsForecast',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

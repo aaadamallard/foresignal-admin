@@ -63,34 +63,34 @@ class _$Record extends Record {
   factory _$Record([void Function(RecordBuilder)? updates]) =>
       (RecordBuilder()..update(updates))._build();
 
-  _$Record._(
-      {required this.id,
-      required this.source_,
-      required this.externalId,
-      required this.kind,
-      required this.version,
-      required this.seq,
-      required this.observedAt,
-      this.ingestedAt,
-      this.validUntil,
-      this.tombstone,
-      this.geometry,
-      required this.payload,
-      this.attribution,
-      this.title,
-      this.persistedObservedAt,
-      this.eventTime,
-      this.validFrom,
-      this.quality,
-      this.live,
-      this.qaFlags,
-      this.distanceKm,
-      this.observer,
-      this.region,
-      this.entityId,
-      this.provenance,
-      this.globalRef})
-      : super._();
+  _$Record._({
+    required this.id,
+    required this.source_,
+    required this.externalId,
+    required this.kind,
+    required this.version,
+    required this.seq,
+    required this.observedAt,
+    this.ingestedAt,
+    this.validUntil,
+    this.tombstone,
+    this.geometry,
+    required this.payload,
+    this.attribution,
+    this.title,
+    this.persistedObservedAt,
+    this.eventTime,
+    this.validFrom,
+    this.quality,
+    this.live,
+    this.qaFlags,
+    this.distanceKm,
+    this.observer,
+    this.region,
+    this.entityId,
+    this.provenance,
+    this.globalRef,
+  }) : super._();
   @override
   Record rebuild(void Function(RecordBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -363,20 +363,36 @@ class RecordBuilder implements Builder<Record, RecordBuilder> {
   _$Record _build() {
     _$Record _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Record._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Record', 'id'),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'Record', 'source_'),
+              source_,
+              r'Record',
+              'source_',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'Record', 'externalId'),
-            kind:
-                BuiltValueNullFieldError.checkNotNull(kind, r'Record', 'kind'),
+              externalId,
+              r'Record',
+              'externalId',
+            ),
+            kind: BuiltValueNullFieldError.checkNotNull(
+              kind,
+              r'Record',
+              'kind',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'Record', 'version'),
+              version,
+              r'Record',
+              'version',
+            ),
             seq: BuiltValueNullFieldError.checkNotNull(seq, r'Record', 'seq'),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'Record', 'observedAt'),
+              observedAt,
+              r'Record',
+              'observedAt',
+            ),
             ingestedAt: ingestedAt,
             validUntil: validUntil,
             tombstone: tombstone,
@@ -417,7 +433,10 @@ class RecordBuilder implements Builder<Record, RecordBuilder> {
         _provenance?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Record', _$failedField, e.toString());
+          r'Record',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

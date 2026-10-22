@@ -17,8 +17,10 @@ part 'watchlist_import_result_invalid_inner.g.dart';
 @BuiltValue()
 abstract class WatchlistImportResultInvalidInner
     implements
-        Built<WatchlistImportResultInvalidInner,
-            WatchlistImportResultInvalidInnerBuilder> {
+        Built<
+          WatchlistImportResultInvalidInner,
+          WatchlistImportResultInvalidInnerBuilder
+        > {
   @BuiltValueField(wireName: r'row')
   int? get row;
 
@@ -30,9 +32,9 @@ abstract class WatchlistImportResultInvalidInner
 
   WatchlistImportResultInvalidInner._();
 
-  factory WatchlistImportResultInvalidInner(
-          [void updates(WatchlistImportResultInvalidInnerBuilder b)]) =
-      _$WatchlistImportResultInvalidInner;
+  factory WatchlistImportResultInvalidInner([
+    void updates(WatchlistImportResultInvalidInnerBuilder b),
+  ]) = _$WatchlistImportResultInvalidInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WatchlistImportResultInvalidInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$WatchlistImportResultInvalidInnerSerializer
   @override
   final Iterable<Type> types = const [
     WatchlistImportResultInvalidInner,
-    _$WatchlistImportResultInvalidInner
+    _$WatchlistImportResultInvalidInner,
   ];
 
   @override
@@ -85,9 +87,11 @@ class _$WatchlistImportResultInvalidInnerSerializer
     WatchlistImportResultInvalidInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +107,32 @@ class _$WatchlistImportResultInvalidInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'row':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.row = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.value = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reason = valueDes;
           break;
         default:

@@ -50,8 +50,9 @@ abstract class CyclePacketHypotheses
 
   CyclePacketHypotheses._();
 
-  factory CyclePacketHypotheses(
-      [void updates(CyclePacketHypothesesBuilder b)]) = _$CyclePacketHypotheses;
+  factory CyclePacketHypotheses([
+    void updates(CyclePacketHypothesesBuilder b),
+  ]) = _$CyclePacketHypotheses;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CyclePacketHypothesesBuilder b) => b;
@@ -66,7 +67,7 @@ class _$CyclePacketHypothesesSerializer
   @override
   final Iterable<Type> types = const [
     CyclePacketHypotheses,
-    _$CyclePacketHypotheses
+    _$CyclePacketHypotheses,
   ];
 
   @override
@@ -141,9 +142,11 @@ class _$CyclePacketHypothesesSerializer
     CyclePacketHypotheses object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -159,74 +162,98 @@ class _$CyclePacketHypothesesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'revisions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.revisions.replace(valueDes);
           break;
         case r'bandChanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.bandChanges.replace(valueDes);
           break;
         case r'indicatorsObserved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.indicatorsObserved.replace(valueDes);
           break;
         case r'indicatorsAbsent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.indicatorsAbsent.replace(valueDes);
           break;
         case r'indicatorsUnknownCoverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.indicatorsUnknownCoverage.replace(valueDes);
           break;
         case r'assumptionsBroken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.assumptionsBroken.replace(valueDes);
           break;
         case r'assumptionsQuestioned':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.assumptionsQuestioned.replace(valueDes);
           break;
         case r'dueForReview':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.dueForReview.replace(valueDes);
           break;

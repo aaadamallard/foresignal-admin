@@ -116,11 +116,7 @@ class EventsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -158,25 +154,46 @@ class EventsApi {
         ),
       if (changesPeriodBbox != null)
         r'changes.bbox': encodeQueryParameter(
-            _serializers, changesPeriodBbox, const FullType(String)),
+          _serializers,
+          changesPeriodBbox,
+          const FullType(String),
+        ),
       if (changesPeriodNear != null)
         r'changes.near': encodeQueryParameter(
-            _serializers, changesPeriodNear, const FullType(String)),
+          _serializers,
+          changesPeriodNear,
+          const FullType(String),
+        ),
       if (changesPeriodRadiusKm != null)
         r'changes.radiusKm': encodeQueryParameter(
-            _serializers, changesPeriodRadiusKm, const FullType(num)),
+          _serializers,
+          changesPeriodRadiusKm,
+          const FullType(num),
+        ),
       if (changesPeriodLive != null)
         r'changes.live': encodeQueryParameter(
-            _serializers, changesPeriodLive, const FullType(bool)),
+          _serializers,
+          changesPeriodLive,
+          const FullType(bool),
+        ),
       if (changesPeriodTouches != null)
         r'changes.touches': encodeQueryParameter(
-            _serializers, changesPeriodTouches, const FullType(bool)),
+          _serializers,
+          changesPeriodTouches,
+          const FullType(bool),
+        ),
       if (changesPeriodPayload != null)
         r'changes.payload': encodeQueryParameter(
-            _serializers, changesPeriodPayload, const FullType(bool)),
+          _serializers,
+          changesPeriodPayload,
+          const FullType(bool),
+        ),
       if (alertsPeriodMinSeverity != null)
         r'alerts.minSeverity': encodeQueryParameter(
-            _serializers, alertsPeriodMinSeverity, const FullType(String)),
+          _serializers,
+          alertsPeriodMinSeverity,
+          const FullType(String),
+        ),
       if (alertsPeriodRuleId != null)
         r'alerts.ruleId': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -200,10 +217,16 @@ class EventsApi {
         ),
       if (alertsPeriodIncludeSuppressed != null)
         r'alerts.includeSuppressed': encodeQueryParameter(
-            _serializers, alertsPeriodIncludeSuppressed, const FullType(bool)),
+          _serializers,
+          alertsPeriodIncludeSuppressed,
+          const FullType(bool),
+        ),
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
       if (changesPeriodPlace != null)
         r'changes.place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -213,13 +236,22 @@ class EventsApi {
         ),
       if (changesPeriodView != null)
         r'changes.view': encodeQueryParameter(
-            _serializers, changesPeriodView, const FullType(String)),
+          _serializers,
+          changesPeriodView,
+          const FullType(String),
+        ),
       if (changesPeriodInWatchlist != null)
         r'changes.inWatchlist': encodeQueryParameter(
-            _serializers, changesPeriodInWatchlist, const FullType(String)),
+          _serializers,
+          changesPeriodInWatchlist,
+          const FullType(String),
+        ),
       if (alertsPeriodIncludeExercise != null)
         r'alerts.includeExercise': encodeQueryParameter(
-            _serializers, alertsPeriodIncludeExercise, const FullType(bool)),
+          _serializers,
+          alertsPeriodIncludeExercise,
+          const FullType(bool),
+        ),
       if (licencePolicy != null)
         r'licencePolicy': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -229,13 +261,22 @@ class EventsApi {
         ),
       if (workspacePeriodWorkspaceId != null)
         r'workspace.workspaceId': encodeQueryParameter(
-            _serializers, workspacePeriodWorkspaceId, const FullType(String)),
+          _serializers,
+          workspacePeriodWorkspaceId,
+          const FullType(String),
+        ),
       if (workspacePeriodClientId != null)
         r'workspace.clientId': encodeQueryParameter(
-            _serializers, workspacePeriodClientId, const FullType(String)),
+          _serializers,
+          workspacePeriodClientId,
+          const FullType(String),
+        ),
       if (workspacePeriodClientKind != null)
         r'workspace.clientKind': encodeQueryParameter(
-            _serializers, workspacePeriodClientKind, const FullType(String)),
+          _serializers,
+          workspacePeriodClientKind,
+          const FullType(String),
+        ),
       if (chroniclePeriodChronicleId != null)
         r'chronicle.chronicleId': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -245,16 +286,28 @@ class EventsApi {
         ),
       if (lastEventId != null)
         r'lastEventId': encodeQueryParameter(
-            _serializers, lastEventId, const FullType(String)),
+          _serializers,
+          lastEventId,
+          const FullType(String),
+        ),
       if (situationsPeriodStatus != null)
         r'situations.status': encodeQueryParameter(
-            _serializers, situationsPeriodStatus, const FullType(String)),
+          _serializers,
+          situationsPeriodStatus,
+          const FullType(String),
+        ),
       if (situationsPeriodTheme != null)
-        r'situations.theme': encodeQueryParameter(_serializers,
-            situationsPeriodTheme, const FullType(SituationTheme)),
+        r'situations.theme': encodeQueryParameter(
+          _serializers,
+          situationsPeriodTheme,
+          const FullType(SituationTheme),
+        ),
       if (externalPeriodSourceId != null)
         r'external.sourceId': encodeQueryParameter(
-            _serializers, externalPeriodSourceId, const FullType(String)),
+          _serializers,
+          externalPeriodSourceId,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -273,9 +326,10 @@ class EventsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StreamEvents200Response),
-            ) as StreamEvents200Response;
+                  rawResponse,
+                  specifiedType: const FullType(StreamEvents200Response),
+                )
+                as StreamEvents200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -315,7 +369,7 @@ class EventsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltMap<String, BuiltMap<String, JsonObject>>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltMap<String, BuiltMap<String, JsonObject>>>>
-      updateEventStreamFilter({
+  updateEventStreamFilter({
     required String streamId,
     required BuiltMap<String, BuiltMap<String, JsonObject>> requestBody,
     String? foresignalStreamKey,
@@ -327,9 +381,15 @@ class EventsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/events/stream/{streamId}/filter'.replaceAll(
-        '{' r'streamId' '}',
-        encodeQueryParameter(_serializers, streamId, const FullType(String))
-            .toString());
+      '{'
+      r'streamId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        streamId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -339,11 +399,7 @@ class EventsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -358,10 +414,7 @@ class EventsApi {
       _bodyData = _serializers.serialize(requestBody, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -384,10 +437,13 @@ class EventsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  BuiltMap, [FullType(String), FullType(BuiltMap)]),
-            ) as BuiltMap<String, BuiltMap<String, JsonObject>>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltMap, [
+                    FullType(String),
+                    FullType(BuiltMap),
+                  ]),
+                )
+                as BuiltMap<String, BuiltMap<String, JsonObject>>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

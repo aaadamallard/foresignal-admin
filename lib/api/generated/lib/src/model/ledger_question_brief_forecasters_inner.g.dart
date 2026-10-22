@@ -17,21 +17,21 @@ class _$LedgerQuestionBriefForecastersInner
   @override
   final Date? knowledgeCutoff;
 
-  factory _$LedgerQuestionBriefForecastersInner(
-          [void Function(LedgerQuestionBriefForecastersInnerBuilder)?
-              updates]) =>
+  factory _$LedgerQuestionBriefForecastersInner([
+    void Function(LedgerQuestionBriefForecastersInnerBuilder)? updates,
+  ]) =>
       (LedgerQuestionBriefForecastersInnerBuilder()..update(updates))._build();
 
-  _$LedgerQuestionBriefForecastersInner._(
-      {required this.forecasterId,
-      this.probability,
-      this.madeAt,
-      this.knowledgeCutoff})
-      : super._();
+  _$LedgerQuestionBriefForecastersInner._({
+    required this.forecasterId,
+    this.probability,
+    this.madeAt,
+    this.knowledgeCutoff,
+  }) : super._();
   @override
   LedgerQuestionBriefForecastersInner rebuild(
-          void Function(LedgerQuestionBriefForecastersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(LedgerQuestionBriefForecastersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   LedgerQuestionBriefForecastersInnerBuilder toBuilder() =>
@@ -71,8 +71,10 @@ class _$LedgerQuestionBriefForecastersInner
 
 class LedgerQuestionBriefForecastersInnerBuilder
     implements
-        Builder<LedgerQuestionBriefForecastersInner,
-            LedgerQuestionBriefForecastersInnerBuilder> {
+        Builder<
+          LedgerQuestionBriefForecastersInner,
+          LedgerQuestionBriefForecastersInnerBuilder
+        > {
   _$LedgerQuestionBriefForecastersInner? _$v;
 
   String? _forecasterId;
@@ -115,7 +117,8 @@ class LedgerQuestionBriefForecastersInnerBuilder
 
   @override
   void update(
-      void Function(LedgerQuestionBriefForecastersInnerBuilder)? updates) {
+    void Function(LedgerQuestionBriefForecastersInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -123,10 +126,14 @@ class LedgerQuestionBriefForecastersInnerBuilder
   LedgerQuestionBriefForecastersInner build() => _build();
 
   _$LedgerQuestionBriefForecastersInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LedgerQuestionBriefForecastersInner._(
-          forecasterId: BuiltValueNullFieldError.checkNotNull(forecasterId,
-              r'LedgerQuestionBriefForecastersInner', 'forecasterId'),
+          forecasterId: BuiltValueNullFieldError.checkNotNull(
+            forecasterId,
+            r'LedgerQuestionBriefForecastersInner',
+            'forecasterId',
+          ),
           probability: probability,
           madeAt: madeAt,
           knowledgeCutoff: knowledgeCutoff,

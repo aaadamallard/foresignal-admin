@@ -12,17 +12,18 @@ class _$RemoteRasterBundleAccepted extends RemoteRasterBundleAccepted {
   @override
   final String passFolder;
 
-  factory _$RemoteRasterBundleAccepted(
-          [void Function(RemoteRasterBundleAcceptedBuilder)? updates]) =>
-      (RemoteRasterBundleAcceptedBuilder()..update(updates))._build();
+  factory _$RemoteRasterBundleAccepted([
+    void Function(RemoteRasterBundleAcceptedBuilder)? updates,
+  ]) => (RemoteRasterBundleAcceptedBuilder()..update(updates))._build();
 
-  _$RemoteRasterBundleAccepted._(
-      {required this.uploadId, required this.passFolder})
-      : super._();
+  _$RemoteRasterBundleAccepted._({
+    required this.uploadId,
+    required this.passFolder,
+  }) : super._();
   @override
   RemoteRasterBundleAccepted rebuild(
-          void Function(RemoteRasterBundleAcceptedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RemoteRasterBundleAcceptedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RemoteRasterBundleAcceptedBuilder toBuilder() =>
@@ -95,12 +96,19 @@ class RemoteRasterBundleAcceptedBuilder
   RemoteRasterBundleAccepted build() => _build();
 
   _$RemoteRasterBundleAccepted _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RemoteRasterBundleAccepted._(
           uploadId: BuiltValueNullFieldError.checkNotNull(
-              uploadId, r'RemoteRasterBundleAccepted', 'uploadId'),
+            uploadId,
+            r'RemoteRasterBundleAccepted',
+            'uploadId',
+          ),
           passFolder: BuiltValueNullFieldError.checkNotNull(
-              passFolder, r'RemoteRasterBundleAccepted', 'passFolder'),
+            passFolder,
+            r'RemoteRasterBundleAccepted',
+            'passFolder',
+          ),
         );
     replace(_$result);
     return _$result;

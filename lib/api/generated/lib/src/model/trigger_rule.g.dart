@@ -28,10 +28,10 @@ TriggerRuleModeEnum _$triggerRuleModeEnumValueOf(String name) {
 
 final BuiltSet<TriggerRuleModeEnum> _$triggerRuleModeEnumValues =
     BuiltSet<TriggerRuleModeEnum>(const <TriggerRuleModeEnum>[
-  _$triggerRuleModeEnum_match,
-  _$triggerRuleModeEnum_enter,
-  _$triggerRuleModeEnum_exit,
-]);
+      _$triggerRuleModeEnum_match,
+      _$triggerRuleModeEnum_enter,
+      _$triggerRuleModeEnum_exit,
+    ]);
 
 const TriggerRuleSeverityEnum _$triggerRuleSeverityEnum_info =
     const TriggerRuleSeverityEnum._('info');
@@ -55,10 +55,10 @@ TriggerRuleSeverityEnum _$triggerRuleSeverityEnumValueOf(String name) {
 
 final BuiltSet<TriggerRuleSeverityEnum> _$triggerRuleSeverityEnumValues =
     BuiltSet<TriggerRuleSeverityEnum>(const <TriggerRuleSeverityEnum>[
-  _$triggerRuleSeverityEnum_info,
-  _$triggerRuleSeverityEnum_warning,
-  _$triggerRuleSeverityEnum_critical,
-]);
+      _$triggerRuleSeverityEnum_info,
+      _$triggerRuleSeverityEnum_warning,
+      _$triggerRuleSeverityEnum_critical,
+    ]);
 
 const TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnum_record =
     const TriggerRuleCooldownScopeEnum._('record');
@@ -66,7 +66,8 @@ const TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnum_rule =
     const TriggerRuleCooldownScopeEnum._('rule');
 
 TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$triggerRuleCooldownScopeEnum_record;
@@ -78,11 +79,12 @@ TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleCooldownScopeEnum>
-    _$triggerRuleCooldownScopeEnumValues =
-    BuiltSet<TriggerRuleCooldownScopeEnum>(const <TriggerRuleCooldownScopeEnum>[
-  _$triggerRuleCooldownScopeEnum_record,
-  _$triggerRuleCooldownScopeEnum_rule,
-]);
+_$triggerRuleCooldownScopeEnumValues = BuiltSet<TriggerRuleCooldownScopeEnum>(
+  const <TriggerRuleCooldownScopeEnum>[
+    _$triggerRuleCooldownScopeEnum_record,
+    _$triggerRuleCooldownScopeEnum_rule,
+  ],
+);
 
 const TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnum_auto =
     const TriggerRuleWeatherContextEnum._('auto');
@@ -90,7 +92,8 @@ const TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnum_off =
     const TriggerRuleWeatherContextEnum._('off');
 
 TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'auto':
       return _$triggerRuleWeatherContextEnum_auto;
@@ -102,11 +105,12 @@ TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleWeatherContextEnum>
-    _$triggerRuleWeatherContextEnumValues = BuiltSet<
-        TriggerRuleWeatherContextEnum>(const <TriggerRuleWeatherContextEnum>[
-  _$triggerRuleWeatherContextEnum_auto,
-  _$triggerRuleWeatherContextEnum_off,
-]);
+_$triggerRuleWeatherContextEnumValues = BuiltSet<TriggerRuleWeatherContextEnum>(
+  const <TriggerRuleWeatherContextEnum>[
+    _$triggerRuleWeatherContextEnum_auto,
+    _$triggerRuleWeatherContextEnum_off,
+  ],
+);
 
 const TriggerRuleTypeEnum _$triggerRuleTypeEnum_record =
     const TriggerRuleTypeEnum._('record');
@@ -134,11 +138,11 @@ TriggerRuleTypeEnum _$triggerRuleTypeEnumValueOf(String name) {
 
 final BuiltSet<TriggerRuleTypeEnum> _$triggerRuleTypeEnumValues =
     BuiltSet<TriggerRuleTypeEnum>(const <TriggerRuleTypeEnum>[
-  _$triggerRuleTypeEnum_record,
-  _$triggerRuleTypeEnum_count,
-  _$triggerRuleTypeEnum_absence,
-  _$triggerRuleTypeEnum_anomaly,
-]);
+      _$triggerRuleTypeEnum_record,
+      _$triggerRuleTypeEnum_count,
+      _$triggerRuleTypeEnum_absence,
+      _$triggerRuleTypeEnum_anomaly,
+    ]);
 
 const TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnum_inline =
     const TriggerRuleGeofenceOriginEnum._('inline');
@@ -146,7 +150,8 @@ const TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnum_near =
     const TriggerRuleGeofenceOriginEnum._('near');
 
 TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'inline':
       return _$triggerRuleGeofenceOriginEnum_inline;
@@ -158,11 +163,12 @@ TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleGeofenceOriginEnum>
-    _$triggerRuleGeofenceOriginEnumValues = BuiltSet<
-        TriggerRuleGeofenceOriginEnum>(const <TriggerRuleGeofenceOriginEnum>[
-  _$triggerRuleGeofenceOriginEnum_inline,
-  _$triggerRuleGeofenceOriginEnum_near,
-]);
+_$triggerRuleGeofenceOriginEnumValues = BuiltSet<TriggerRuleGeofenceOriginEnum>(
+  const <TriggerRuleGeofenceOriginEnum>[
+    _$triggerRuleGeofenceOriginEnum_inline,
+    _$triggerRuleGeofenceOriginEnum_near,
+  ],
+);
 
 const TriggerRuleAnchorStatusEnum _$triggerRuleAnchorStatusEnum_active =
     const TriggerRuleAnchorStatusEnum._('active');
@@ -181,29 +187,30 @@ TriggerRuleAnchorStatusEnum _$triggerRuleAnchorStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<TriggerRuleAnchorStatusEnum>
-    _$triggerRuleAnchorStatusEnumValues =
-    BuiltSet<TriggerRuleAnchorStatusEnum>(const <TriggerRuleAnchorStatusEnum>[
-  _$triggerRuleAnchorStatusEnum_active,
-  _$triggerRuleAnchorStatusEnum_stale,
-]);
+_$triggerRuleAnchorStatusEnumValues = BuiltSet<TriggerRuleAnchorStatusEnum>(
+  const <TriggerRuleAnchorStatusEnum>[
+    _$triggerRuleAnchorStatusEnum_active,
+    _$triggerRuleAnchorStatusEnum_stale,
+  ],
+);
 
 Serializer<TriggerRuleModeEnum> _$triggerRuleModeEnumSerializer =
     _$TriggerRuleModeEnumSerializer();
 Serializer<TriggerRuleSeverityEnum> _$triggerRuleSeverityEnumSerializer =
     _$TriggerRuleSeverityEnumSerializer();
 Serializer<TriggerRuleCooldownScopeEnum>
-    _$triggerRuleCooldownScopeEnumSerializer =
+_$triggerRuleCooldownScopeEnumSerializer =
     _$TriggerRuleCooldownScopeEnumSerializer();
 Serializer<TriggerRuleWeatherContextEnum>
-    _$triggerRuleWeatherContextEnumSerializer =
+_$triggerRuleWeatherContextEnumSerializer =
     _$TriggerRuleWeatherContextEnumSerializer();
 Serializer<TriggerRuleTypeEnum> _$triggerRuleTypeEnumSerializer =
     _$TriggerRuleTypeEnumSerializer();
 Serializer<TriggerRuleGeofenceOriginEnum>
-    _$triggerRuleGeofenceOriginEnumSerializer =
+_$triggerRuleGeofenceOriginEnumSerializer =
     _$TriggerRuleGeofenceOriginEnumSerializer();
 Serializer<TriggerRuleAnchorStatusEnum>
-    _$triggerRuleAnchorStatusEnumSerializer =
+_$triggerRuleAnchorStatusEnumSerializer =
     _$TriggerRuleAnchorStatusEnumSerializer();
 
 class _$TriggerRuleModeEnumSerializer
@@ -225,15 +232,20 @@ class _$TriggerRuleModeEnumSerializer
   final String wireName = 'TriggerRuleModeEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TriggerRuleModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TriggerRuleModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleSeverityEnumSerializer
@@ -255,16 +267,20 @@ class _$TriggerRuleSeverityEnumSerializer
   final String wireName = 'TriggerRuleSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleCooldownScopeEnumSerializer
@@ -284,16 +300,20 @@ class _$TriggerRuleCooldownScopeEnumSerializer
   final String wireName = 'TriggerRuleCooldownScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleCooldownScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleCooldownScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleCooldownScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleCooldownScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleCooldownScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleWeatherContextEnumSerializer
@@ -314,16 +334,19 @@ class _$TriggerRuleWeatherContextEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleWeatherContextEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleWeatherContextEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleWeatherContextEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleWeatherContextEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleWeatherContextEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleTypeEnumSerializer
@@ -347,15 +370,20 @@ class _$TriggerRuleTypeEnumSerializer
   final String wireName = 'TriggerRuleTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TriggerRuleTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TriggerRuleTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleGeofenceOriginEnumSerializer
@@ -376,16 +404,19 @@ class _$TriggerRuleGeofenceOriginEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleGeofenceOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleGeofenceOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleGeofenceOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleGeofenceOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleGeofenceOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleAnchorStatusEnumSerializer
@@ -405,16 +436,20 @@ class _$TriggerRuleAnchorStatusEnumSerializer
   final String wireName = 'TriggerRuleAnchorStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleAnchorStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleAnchorStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleAnchorStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleAnchorStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleAnchorStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRule extends TriggerRule {
@@ -524,59 +559,59 @@ class _$TriggerRule extends TriggerRule {
   factory _$TriggerRule([void Function(TriggerRuleBuilder)? updates]) =>
       (TriggerRuleBuilder()..update(updates))._build();
 
-  _$TriggerRule._(
-      {required this.name,
-      this.enabled,
-      this.source_,
-      this.kind,
-      this.conditions,
-      this.geofence,
-      this.mode,
-      this.onlyNew,
-      this.cooldown,
-      this.messageTemplate,
-      this.severity,
-      this.enrich,
-      this.enrichRadiusKm,
-      this.enrichWindow,
-      this.tags,
-      this.sources,
-      this.kinds,
-      this.bufferMeters,
-      this.hysteresisMeters,
-      this.near,
-      this.reappearAsEnter,
-      this.cooldownScope,
-      this.autoResolve,
-      this.maxAlertsPerHour,
-      this.autoDisableOnStorm,
-      this.activeFrom,
-      this.activeUntil,
-      this.activeWindow,
-      this.forecastHorizon,
-      this.escalationPolicyId,
-      this.geofenceRef,
-      this.weatherContext,
-      this.type,
-      this.window,
-      required this.id,
-      required this.createdAt,
-      required this.updatedAt,
-      this.lastFiredAt,
-      this.alertCount,
-      this.lastError,
-      this.lastErrorAt,
-      this.openAlertCount,
-      this.suppressedCount,
-      this.lastStormAt,
-      this.feedbackCounts,
-      this.snoozedUntil,
-      this.geofenceRoute,
-      this.mutedUntil,
-      this.geofenceOrigin,
-      this.anchorStatus,
-      this.windowStatus})
-      : super._();
+  _$TriggerRule._({
+    required this.name,
+    this.enabled,
+    this.source_,
+    this.kind,
+    this.conditions,
+    this.geofence,
+    this.mode,
+    this.onlyNew,
+    this.cooldown,
+    this.messageTemplate,
+    this.severity,
+    this.enrich,
+    this.enrichRadiusKm,
+    this.enrichWindow,
+    this.tags,
+    this.sources,
+    this.kinds,
+    this.bufferMeters,
+    this.hysteresisMeters,
+    this.near,
+    this.reappearAsEnter,
+    this.cooldownScope,
+    this.autoResolve,
+    this.maxAlertsPerHour,
+    this.autoDisableOnStorm,
+    this.activeFrom,
+    this.activeUntil,
+    this.activeWindow,
+    this.forecastHorizon,
+    this.escalationPolicyId,
+    this.geofenceRef,
+    this.weatherContext,
+    this.type,
+    this.window,
+    required this.id,
+    required this.createdAt,
+    required this.updatedAt,
+    this.lastFiredAt,
+    this.alertCount,
+    this.lastError,
+    this.lastErrorAt,
+    this.openAlertCount,
+    this.suppressedCount,
+    this.lastStormAt,
+    this.feedbackCounts,
+    this.snoozedUntil,
+    this.geofenceRoute,
+    this.mutedUntil,
+    this.geofenceOrigin,
+    this.anchorStatus,
+    this.windowStatus,
+  }) : super._();
   @override
   TriggerRule rebuild(void Function(TriggerRuleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -1072,10 +1107,14 @@ class TriggerRuleBuilder implements Builder<TriggerRule, TriggerRuleBuilder> {
   _$TriggerRule _build() {
     _$TriggerRule _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TriggerRule._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'TriggerRule', 'name'),
+              name,
+              r'TriggerRule',
+              'name',
+            ),
             enabled: enabled,
             source_: source_,
             kind: kind,
@@ -1111,9 +1150,15 @@ class TriggerRuleBuilder implements Builder<TriggerRule, TriggerRuleBuilder> {
             window: _window?.build(),
             id: BuiltValueNullFieldError.checkNotNull(id, r'TriggerRule', 'id'),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'TriggerRule', 'createdAt'),
+              createdAt,
+              r'TriggerRule',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'TriggerRule', 'updatedAt'),
+              updatedAt,
+              r'TriggerRule',
+              'updatedAt',
+            ),
             lastFiredAt: lastFiredAt,
             alertCount: alertCount,
             lastError: lastError,
@@ -1163,7 +1208,10 @@ class TriggerRuleBuilder implements Builder<TriggerRule, TriggerRuleBuilder> {
         _windowStatus?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TriggerRule', _$failedField, e.toString());
+          r'TriggerRule',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

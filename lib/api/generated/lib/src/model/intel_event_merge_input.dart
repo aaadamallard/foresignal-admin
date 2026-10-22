@@ -37,7 +37,7 @@ class _$IntelEventMergeInputSerializer
   @override
   final Iterable<Type> types = const [
     IntelEventMergeInput,
-    _$IntelEventMergeInput
+    _$IntelEventMergeInput,
   ];
 
   @override
@@ -61,9 +61,11 @@ class _$IntelEventMergeInputSerializer
     IntelEventMergeInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -79,10 +81,12 @@ class _$IntelEventMergeInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'intoId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.intoId = valueDes;
           break;
         default:

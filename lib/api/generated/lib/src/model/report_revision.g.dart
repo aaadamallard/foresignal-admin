@@ -24,9 +24,9 @@ ReportRevisionStatusEnum _$reportRevisionStatusEnumValueOf(String name) {
 
 final BuiltSet<ReportRevisionStatusEnum> _$reportRevisionStatusEnumValues =
     BuiltSet<ReportRevisionStatusEnum>(const <ReportRevisionStatusEnum>[
-  _$reportRevisionStatusEnum_published,
-  _$reportRevisionStatusEnum_retracted,
-]);
+      _$reportRevisionStatusEnum_published,
+      _$reportRevisionStatusEnum_retracted,
+    ]);
 
 Serializer<ReportRevisionStatusEnum> _$reportRevisionStatusEnumSerializer =
     _$ReportRevisionStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$ReportRevisionStatusEnumSerializer
   final String wireName = 'ReportRevisionStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ReportRevisionStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReportRevisionStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReportRevisionStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportRevisionStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportRevisionStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportRevision extends ReportRevision {
@@ -91,21 +95,21 @@ class _$ReportRevision extends ReportRevision {
   factory _$ReportRevision([void Function(ReportRevisionBuilder)? updates]) =>
       (ReportRevisionBuilder()..update(updates))._build();
 
-  _$ReportRevision._(
-      {required this.reportId,
-      required this.revision,
-      required this.title,
-      required this.tlp,
-      required this.status,
-      required this.publishedAt,
-      this.publishedBy,
-      this.retractedAt,
-      this.retractionReason,
-      this.manifestId,
-      this.pinnedRefs,
-      this.bundleSha256,
-      this.renditions})
-      : super._();
+  _$ReportRevision._({
+    required this.reportId,
+    required this.revision,
+    required this.title,
+    required this.tlp,
+    required this.status,
+    required this.publishedAt,
+    this.publishedBy,
+    this.retractedAt,
+    this.retractionReason,
+    this.manifestId,
+    this.pinnedRefs,
+    this.bundleSha256,
+    this.renditions,
+  }) : super._();
   @override
   ReportRevision rebuild(void Function(ReportRevisionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -276,20 +280,39 @@ class ReportRevisionBuilder
   _$ReportRevision _build() {
     _$ReportRevision _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportRevision._(
             reportId: BuiltValueNullFieldError.checkNotNull(
-                reportId, r'ReportRevision', 'reportId'),
+              reportId,
+              r'ReportRevision',
+              'reportId',
+            ),
             revision: BuiltValueNullFieldError.checkNotNull(
-                revision, r'ReportRevision', 'revision'),
+              revision,
+              r'ReportRevision',
+              'revision',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ReportRevision', 'title'),
+              title,
+              r'ReportRevision',
+              'title',
+            ),
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'ReportRevision', 'tlp'),
+              tlp,
+              r'ReportRevision',
+              'tlp',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ReportRevision', 'status'),
+              status,
+              r'ReportRevision',
+              'status',
+            ),
             publishedAt: BuiltValueNullFieldError.checkNotNull(
-                publishedAt, r'ReportRevision', 'publishedAt'),
+              publishedAt,
+              r'ReportRevision',
+              'publishedAt',
+            ),
             publishedBy: _publishedBy?.build(),
             retractedAt: retractedAt,
             retractionReason: retractionReason,
@@ -311,7 +334,10 @@ class ReportRevisionBuilder
         _renditions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportRevision', _$failedField, e.toString());
+          r'ReportRevision',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

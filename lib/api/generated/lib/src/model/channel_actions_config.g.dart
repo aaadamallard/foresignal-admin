@@ -16,17 +16,20 @@ class _$ChannelActionsConfig extends ChannelActionsConfig {
   @override
   final bool? reactions;
 
-  factory _$ChannelActionsConfig(
-          [void Function(ChannelActionsConfigBuilder)? updates]) =>
-      (ChannelActionsConfigBuilder()..update(updates))._build();
+  factory _$ChannelActionsConfig([
+    void Function(ChannelActionsConfigBuilder)? updates,
+  ]) => (ChannelActionsConfigBuilder()..update(updates))._build();
 
-  _$ChannelActionsConfig._(
-      {this.enabled, this.list, this.links, this.reactions})
-      : super._();
+  _$ChannelActionsConfig._({
+    this.enabled,
+    this.list,
+    this.links,
+    this.reactions,
+  }) : super._();
   @override
   ChannelActionsConfig rebuild(
-          void Function(ChannelActionsConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChannelActionsConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChannelActionsConfigBuilder toBuilder() =>
@@ -116,7 +119,8 @@ class ChannelActionsConfigBuilder
   _$ChannelActionsConfig _build() {
     _$ChannelActionsConfig _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChannelActionsConfig._(
             enabled: enabled,
             list: _list?.build(),
@@ -130,7 +134,10 @@ class ChannelActionsConfigBuilder
         _list?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChannelActionsConfig', _$failedField, e.toString());
+          r'ChannelActionsConfig',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -38,9 +38,9 @@ abstract class TriggerRuleInputWindow
 
   TriggerRuleInputWindow._();
 
-  factory TriggerRuleInputWindow(
-          [void updates(TriggerRuleInputWindowBuilder b)]) =
-      _$TriggerRuleInputWindow;
+  factory TriggerRuleInputWindow([
+    void updates(TriggerRuleInputWindowBuilder b),
+  ]) = _$TriggerRuleInputWindow;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TriggerRuleInputWindowBuilder b) => b;
@@ -55,7 +55,7 @@ class _$TriggerRuleInputWindowSerializer
   @override
   final Iterable<Type> types = const [
     TriggerRuleInputWindow,
-    _$TriggerRuleInputWindow
+    _$TriggerRuleInputWindow,
   ];
 
   @override
@@ -74,8 +74,10 @@ class _$TriggerRuleInputWindowSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -92,8 +94,9 @@ class _$TriggerRuleInputWindowSerializer
       FullType(AnomalyWindow),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }

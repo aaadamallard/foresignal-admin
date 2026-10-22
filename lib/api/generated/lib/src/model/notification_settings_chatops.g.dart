@@ -10,15 +10,15 @@ class _$NotificationSettingsChatops extends NotificationSettingsChatops {
   @override
   final bool? enabled;
 
-  factory _$NotificationSettingsChatops(
-          [void Function(NotificationSettingsChatopsBuilder)? updates]) =>
-      (NotificationSettingsChatopsBuilder()..update(updates))._build();
+  factory _$NotificationSettingsChatops([
+    void Function(NotificationSettingsChatopsBuilder)? updates,
+  ]) => (NotificationSettingsChatopsBuilder()..update(updates))._build();
 
   _$NotificationSettingsChatops._({this.enabled}) : super._();
   @override
   NotificationSettingsChatops rebuild(
-          void Function(NotificationSettingsChatopsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationSettingsChatopsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationSettingsChatopsBuilder toBuilder() =>
@@ -40,16 +40,18 @@ class _$NotificationSettingsChatops extends NotificationSettingsChatops {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'NotificationSettingsChatops')
-          ..add('enabled', enabled))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'NotificationSettingsChatops',
+    )..add('enabled', enabled)).toString();
   }
 }
 
 class NotificationSettingsChatopsBuilder
     implements
-        Builder<NotificationSettingsChatops,
-            NotificationSettingsChatopsBuilder> {
+        Builder<
+          NotificationSettingsChatops,
+          NotificationSettingsChatopsBuilder
+        > {
   _$NotificationSettingsChatops? _$v;
 
   bool? _enabled;
@@ -83,10 +85,7 @@ class NotificationSettingsChatopsBuilder
   NotificationSettingsChatops build() => _build();
 
   _$NotificationSettingsChatops _build() {
-    final _$result = _$v ??
-        _$NotificationSettingsChatops._(
-          enabled: enabled,
-        );
+    final _$result = _$v ?? _$NotificationSettingsChatops._(enabled: enabled);
     replace(_$result);
     return _$result;
   }

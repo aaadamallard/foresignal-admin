@@ -19,7 +19,7 @@ const TuningSuggestionKindEnum _$tuningSuggestionKindEnum_addEdgeMinInterval =
 const TuningSuggestionKindEnum _$tuningSuggestionKindEnum_shrinkGeofence =
     const TuningSuggestionKindEnum._('shrinkGeofence');
 const TuningSuggestionKindEnum
-    _$tuningSuggestionKindEnum_lowerAnomalySensitivity =
+_$tuningSuggestionKindEnum_lowerAnomalySensitivity =
     const TuningSuggestionKindEnum._('lowerAnomalySensitivity');
 const TuningSuggestionKindEnum _$tuningSuggestionKindEnum_ACTIVE_WINDOW =
     const TuningSuggestionKindEnum._('ACTIVE_WINDOW');
@@ -57,17 +57,17 @@ TuningSuggestionKindEnum _$tuningSuggestionKindEnumValueOf(String name) {
 
 final BuiltSet<TuningSuggestionKindEnum> _$tuningSuggestionKindEnumValues =
     BuiltSet<TuningSuggestionKindEnum>(const <TuningSuggestionKindEnum>[
-  _$tuningSuggestionKindEnum_raiseThreshold,
-  _$tuningSuggestionKindEnum_lowerThreshold,
-  _$tuningSuggestionKindEnum_addCooldown,
-  _$tuningSuggestionKindEnum_switchToEnter,
-  _$tuningSuggestionKindEnum_addEdgeMinInterval,
-  _$tuningSuggestionKindEnum_shrinkGeofence,
-  _$tuningSuggestionKindEnum_lowerAnomalySensitivity,
-  _$tuningSuggestionKindEnum_ACTIVE_WINDOW,
-  _$tuningSuggestionKindEnum_SEVERITY_UP,
-  _$tuningSuggestionKindEnum_SEVERITY_DOWN,
-]);
+      _$tuningSuggestionKindEnum_raiseThreshold,
+      _$tuningSuggestionKindEnum_lowerThreshold,
+      _$tuningSuggestionKindEnum_addCooldown,
+      _$tuningSuggestionKindEnum_switchToEnter,
+      _$tuningSuggestionKindEnum_addEdgeMinInterval,
+      _$tuningSuggestionKindEnum_shrinkGeofence,
+      _$tuningSuggestionKindEnum_lowerAnomalySensitivity,
+      _$tuningSuggestionKindEnum_ACTIVE_WINDOW,
+      _$tuningSuggestionKindEnum_SEVERITY_UP,
+      _$tuningSuggestionKindEnum_SEVERITY_DOWN,
+    ]);
 
 Serializer<TuningSuggestionKindEnum> _$tuningSuggestionKindEnumSerializer =
     _$TuningSuggestionKindEnumSerializer();
@@ -105,16 +105,20 @@ class _$TuningSuggestionKindEnumSerializer
   final String wireName = 'TuningSuggestionKindEnum';
 
   @override
-  Object serialize(Serializers serializers, TuningSuggestionKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TuningSuggestionKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TuningSuggestionKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TuningSuggestionKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TuningSuggestionKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TuningSuggestion extends TuningSuggestion {
@@ -131,18 +135,18 @@ class _$TuningSuggestion extends TuningSuggestion {
   @override
   final BuiltList<Caveat>? caveats;
 
-  factory _$TuningSuggestion(
-          [void Function(TuningSuggestionBuilder)? updates]) =>
-      (TuningSuggestionBuilder()..update(updates))._build();
+  factory _$TuningSuggestion([
+    void Function(TuningSuggestionBuilder)? updates,
+  ]) => (TuningSuggestionBuilder()..update(updates))._build();
 
-  _$TuningSuggestion._(
-      {required this.id,
-      required this.kind,
-      required this.rationale,
-      required this.patch_,
-      this.expectedEffect,
-      this.caveats})
-      : super._();
+  _$TuningSuggestion._({
+    required this.id,
+    required this.kind,
+    required this.rationale,
+    required this.patch_,
+    this.expectedEffect,
+    this.caveats,
+  }) : super._();
   @override
   TuningSuggestion rebuild(void Function(TuningSuggestionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -255,14 +259,24 @@ class TuningSuggestionBuilder
   _$TuningSuggestion _build() {
     _$TuningSuggestion _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TuningSuggestion._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'TuningSuggestion', 'id'),
+              id,
+              r'TuningSuggestion',
+              'id',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'TuningSuggestion', 'kind'),
+              kind,
+              r'TuningSuggestion',
+              'kind',
+            ),
             rationale: BuiltValueNullFieldError.checkNotNull(
-                rationale, r'TuningSuggestion', 'rationale'),
+              rationale,
+              r'TuningSuggestion',
+              'rationale',
+            ),
             patch_: patch_.build(),
             expectedEffect: _expectedEffect?.build(),
             caveats: _caveats?.build(),
@@ -278,7 +292,10 @@ class TuningSuggestionBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TuningSuggestion', _$failedField, e.toString());
+          r'TuningSuggestion',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

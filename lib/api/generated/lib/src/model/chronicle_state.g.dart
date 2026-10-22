@@ -19,12 +19,12 @@ class _$ChronicleState extends ChronicleState {
   factory _$ChronicleState([void Function(ChronicleStateBuilder)? updates]) =>
       (ChronicleStateBuilder()..update(updates))._build();
 
-  _$ChronicleState._(
-      {required this.chronicleId,
-      required this.at,
-      required this.layers,
-      this.caveats})
-      : super._();
+  _$ChronicleState._({
+    required this.chronicleId,
+    required this.at,
+    required this.layers,
+    this.caveats,
+  }) : super._();
   @override
   ChronicleState rebuild(void Function(ChronicleStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -118,12 +118,19 @@ class ChronicleStateBuilder
   _$ChronicleState _build() {
     _$ChronicleState _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleState._(
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleState', 'chronicleId'),
+              chronicleId,
+              r'ChronicleState',
+              'chronicleId',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ChronicleState', 'at'),
+              at,
+              r'ChronicleState',
+              'at',
+            ),
             layers: layers.build(),
             caveats: _caveats?.build(),
           );
@@ -136,7 +143,10 @@ class ChronicleStateBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleState', _$failedField, e.toString());
+          r'ChronicleState',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

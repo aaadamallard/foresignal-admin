@@ -187,9 +187,11 @@ class _$AnomalyWindowSerializer implements PrimitiveSerializer<AnomalyWindow> {
     AnomalyWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -205,98 +207,129 @@ class _$AnomalyWindowSerializer implements PrimitiveSerializer<AnomalyWindow> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.window = valueDes;
           break;
         case r'step':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.step = valueDes;
           break;
         case r'distinctBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.distinctBy = valueDes;
           break;
         case r'groupBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.groupBy = valueDes;
           break;
         case r'maxGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxGroups = valueDes;
           break;
         case r'bucket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AnomalyWindowBucketEnum),
-          ) as AnomalyWindowBucketEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnomalyWindowBucketEnum,
+                    ),
+                  )
+                  as AnomalyWindowBucketEnum?;
           if (valueDes == null) continue;
           result.bucket = valueDes;
           break;
         case r'slotMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AnomalyWindowSlotModeEnum),
-          ) as AnomalyWindowSlotModeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnomalyWindowSlotModeEnum,
+                    ),
+                  )
+                  as AnomalyWindowSlotModeEnum?;
           if (valueDes == null) continue;
           result.slotMode = valueDes;
           break;
         case r'direction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AnomalyWindowDirectionEnum),
-          ) as AnomalyWindowDirectionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnomalyWindowDirectionEnum,
+                    ),
+                  )
+                  as AnomalyWindowDirectionEnum?;
           if (valueDes == null) continue;
           result.direction = valueDes;
           break;
         case r'sensitivity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AnomalyWindowSensitivityEnum),
-          ) as AnomalyWindowSensitivityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnomalyWindowSensitivityEnum,
+                    ),
+                  )
+                  as AnomalyWindowSensitivityEnum?;
           if (valueDes == null) continue;
           result.sensitivity = valueDes;
           break;
         case r'minAbsoluteDelta':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minAbsoluteDelta = valueDes;
           break;
         case r'minWeeks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minWeeks = valueDes;
           break;
         case r'coverageMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.coverageMin = valueDes;
           break;

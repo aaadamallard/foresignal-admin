@@ -17,10 +17,9 @@ JwkKtyEnum _$jwkKtyEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<JwkKtyEnum> _$jwkKtyEnumValues =
-    BuiltSet<JwkKtyEnum>(const <JwkKtyEnum>[
-  _$jwkKtyEnum_OKP,
-]);
+final BuiltSet<JwkKtyEnum> _$jwkKtyEnumValues = BuiltSet<JwkKtyEnum>(
+  const <JwkKtyEnum>[_$jwkKtyEnum_OKP],
+);
 
 const JwkCrvEnum _$jwkCrvEnum_ed25519 = const JwkCrvEnum._('ed25519');
 
@@ -33,10 +32,9 @@ JwkCrvEnum _$jwkCrvEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<JwkCrvEnum> _$jwkCrvEnumValues =
-    BuiltSet<JwkCrvEnum>(const <JwkCrvEnum>[
-  _$jwkCrvEnum_ed25519,
-]);
+final BuiltSet<JwkCrvEnum> _$jwkCrvEnumValues = BuiltSet<JwkCrvEnum>(
+  const <JwkCrvEnum>[_$jwkCrvEnum_ed25519],
+);
 
 const JwkUseEnum _$jwkUseEnum_sig = const JwkUseEnum._('sig');
 
@@ -49,10 +47,9 @@ JwkUseEnum _$jwkUseEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<JwkUseEnum> _$jwkUseEnumValues =
-    BuiltSet<JwkUseEnum>(const <JwkUseEnum>[
-  _$jwkUseEnum_sig,
-]);
+final BuiltSet<JwkUseEnum> _$jwkUseEnumValues = BuiltSet<JwkUseEnum>(
+  const <JwkUseEnum>[_$jwkUseEnum_sig],
+);
 
 const JwkAlgEnum _$jwkAlgEnum_ed25519 = const JwkAlgEnum._('ed25519');
 const JwkAlgEnum _$jwkAlgEnum_edDSA = const JwkAlgEnum._('edDSA');
@@ -68,11 +65,9 @@ JwkAlgEnum _$jwkAlgEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<JwkAlgEnum> _$jwkAlgEnumValues =
-    BuiltSet<JwkAlgEnum>(const <JwkAlgEnum>[
-  _$jwkAlgEnum_ed25519,
-  _$jwkAlgEnum_edDSA,
-]);
+final BuiltSet<JwkAlgEnum> _$jwkAlgEnumValues = BuiltSet<JwkAlgEnum>(
+  const <JwkAlgEnum>[_$jwkAlgEnum_ed25519, _$jwkAlgEnum_edDSA],
+);
 
 Serializer<JwkKtyEnum> _$jwkKtyEnumSerializer = _$JwkKtyEnumSerializer();
 Serializer<JwkCrvEnum> _$jwkCrvEnumSerializer = _$JwkCrvEnumSerializer();
@@ -93,15 +88,20 @@ class _$JwkKtyEnumSerializer implements PrimitiveSerializer<JwkKtyEnum> {
   final String wireName = 'JwkKtyEnum';
 
   @override
-  Object serialize(Serializers serializers, JwkKtyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    JwkKtyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  JwkKtyEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JwkKtyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  JwkKtyEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JwkKtyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JwkCrvEnumSerializer implements PrimitiveSerializer<JwkCrvEnum> {
@@ -118,15 +118,20 @@ class _$JwkCrvEnumSerializer implements PrimitiveSerializer<JwkCrvEnum> {
   final String wireName = 'JwkCrvEnum';
 
   @override
-  Object serialize(Serializers serializers, JwkCrvEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    JwkCrvEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  JwkCrvEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JwkCrvEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  JwkCrvEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JwkCrvEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JwkUseEnumSerializer implements PrimitiveSerializer<JwkUseEnum> {
@@ -143,15 +148,20 @@ class _$JwkUseEnumSerializer implements PrimitiveSerializer<JwkUseEnum> {
   final String wireName = 'JwkUseEnum';
 
   @override
-  Object serialize(Serializers serializers, JwkUseEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    JwkUseEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  JwkUseEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JwkUseEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  JwkUseEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JwkUseEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JwkAlgEnumSerializer implements PrimitiveSerializer<JwkAlgEnum> {
@@ -170,15 +180,20 @@ class _$JwkAlgEnumSerializer implements PrimitiveSerializer<JwkAlgEnum> {
   final String wireName = 'JwkAlgEnum';
 
   @override
-  Object serialize(Serializers serializers, JwkAlgEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    JwkAlgEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  JwkAlgEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JwkAlgEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  JwkAlgEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JwkAlgEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Jwk extends Jwk {
@@ -198,14 +213,14 @@ class _$Jwk extends Jwk {
   factory _$Jwk([void Function(JwkBuilder)? updates]) =>
       (JwkBuilder()..update(updates))._build();
 
-  _$Jwk._(
-      {required this.kty,
-      required this.crv,
-      required this.x,
-      required this.kid,
-      required this.use,
-      required this.alg})
-      : super._();
+  _$Jwk._({
+    required this.kty,
+    required this.crv,
+    required this.x,
+    required this.kid,
+    required this.use,
+    required this.alg,
+  }) : super._();
   @override
   Jwk rebuild(void Function(JwkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -310,7 +325,8 @@ class JwkBuilder implements Builder<Jwk, JwkBuilder> {
   Jwk build() => _build();
 
   _$Jwk _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Jwk._(
           kty: BuiltValueNullFieldError.checkNotNull(kty, r'Jwk', 'kty'),
           crv: BuiltValueNullFieldError.checkNotNull(crv, r'Jwk', 'crv'),

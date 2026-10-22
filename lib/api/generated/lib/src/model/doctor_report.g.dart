@@ -28,10 +28,10 @@ DoctorReportTriggerEnum _$doctorReportTriggerEnumValueOf(String name) {
 
 final BuiltSet<DoctorReportTriggerEnum> _$doctorReportTriggerEnumValues =
     BuiltSet<DoctorReportTriggerEnum>(const <DoctorReportTriggerEnum>[
-  _$doctorReportTriggerEnum_MANUAL,
-  _$doctorReportTriggerEnum_AUTO,
-  _$doctorReportTriggerEnum_MCP,
-]);
+      _$doctorReportTriggerEnum_MANUAL,
+      _$doctorReportTriggerEnum_AUTO,
+      _$doctorReportTriggerEnum_MCP,
+    ]);
 
 const DoctorReportStatusEnum _$doctorReportStatusEnum_OK =
     const DoctorReportStatusEnum._('OK');
@@ -55,10 +55,10 @@ DoctorReportStatusEnum _$doctorReportStatusEnumValueOf(String name) {
 
 final BuiltSet<DoctorReportStatusEnum> _$doctorReportStatusEnumValues =
     BuiltSet<DoctorReportStatusEnum>(const <DoctorReportStatusEnum>[
-  _$doctorReportStatusEnum_OK,
-  _$doctorReportStatusEnum_DEGRADED_INFO,
-  _$doctorReportStatusEnum_BROKEN,
-]);
+      _$doctorReportStatusEnum_OK,
+      _$doctorReportStatusEnum_DEGRADED_INFO,
+      _$doctorReportStatusEnum_BROKEN,
+    ]);
 
 Serializer<DoctorReportTriggerEnum> _$doctorReportTriggerEnumSerializer =
     _$DoctorReportTriggerEnumSerializer();
@@ -84,16 +84,20 @@ class _$DoctorReportTriggerEnumSerializer
   final String wireName = 'DoctorReportTriggerEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorReportTriggerEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorReportTriggerEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DoctorReportTriggerEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorReportTriggerEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorReportTriggerEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorReportStatusEnumSerializer
@@ -115,15 +119,20 @@ class _$DoctorReportStatusEnumSerializer
   final String wireName = 'DoctorReportStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorReportStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorReportStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  DoctorReportStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorReportStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  DoctorReportStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorReportStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorReport extends DoctorReport {
@@ -153,19 +162,19 @@ class _$DoctorReport extends DoctorReport {
   factory _$DoctorReport([void Function(DoctorReportBuilder)? updates]) =>
       (DoctorReportBuilder()..update(updates))._build();
 
-  _$DoctorReport._(
-      {required this.id,
-      required this.sourceId,
-      required this.createdAt,
-      required this.trigger,
-      required this.status,
-      required this.findings,
-      this.diff,
-      this.probe,
-      this.fixture,
-      this.llm,
-      this.adapterVersion})
-      : super._();
+  _$DoctorReport._({
+    required this.id,
+    required this.sourceId,
+    required this.createdAt,
+    required this.trigger,
+    required this.status,
+    required this.findings,
+    this.diff,
+    this.probe,
+    this.fixture,
+    this.llm,
+    this.adapterVersion,
+  }) : super._();
   @override
   DoctorReport rebuild(void Function(DoctorReportBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -318,18 +327,34 @@ class DoctorReportBuilder
   _$DoctorReport _build() {
     _$DoctorReport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DoctorReport._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'DoctorReport', 'id'),
+              id,
+              r'DoctorReport',
+              'id',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'DoctorReport', 'sourceId'),
+              sourceId,
+              r'DoctorReport',
+              'sourceId',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'DoctorReport', 'createdAt'),
+              createdAt,
+              r'DoctorReport',
+              'createdAt',
+            ),
             trigger: BuiltValueNullFieldError.checkNotNull(
-                trigger, r'DoctorReport', 'trigger'),
+              trigger,
+              r'DoctorReport',
+              'trigger',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DoctorReport', 'status'),
+              status,
+              r'DoctorReport',
+              'status',
+            ),
             findings: findings.build(),
             diff: _diff?.build(),
             probe: _probe?.build(),
@@ -352,7 +377,10 @@ class DoctorReportBuilder
         _llm?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DoctorReport', _$failedField, e.toString());
+          r'DoctorReport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

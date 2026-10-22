@@ -7,20 +7,21 @@ part of 'chronicle_sketch_package.dart';
 // **************************************************************************
 
 const ChronicleSketchPackageKeyTypesEnum
-    _$chronicleSketchPackageKeyTypesEnum_evidence =
+_$chronicleSketchPackageKeyTypesEnum_evidence =
     const ChronicleSketchPackageKeyTypesEnum._('evidence');
 const ChronicleSketchPackageKeyTypesEnum
-    _$chronicleSketchPackageKeyTypesEnum_entities =
+_$chronicleSketchPackageKeyTypesEnum_entities =
     const ChronicleSketchPackageKeyTypesEnum._('entities');
 const ChronicleSketchPackageKeyTypesEnum
-    _$chronicleSketchPackageKeyTypesEnum_areaTime =
+_$chronicleSketchPackageKeyTypesEnum_areaTime =
     const ChronicleSketchPackageKeyTypesEnum._('areaTime');
 const ChronicleSketchPackageKeyTypesEnum
-    _$chronicleSketchPackageKeyTypesEnum_topics =
+_$chronicleSketchPackageKeyTypesEnum_topics =
     const ChronicleSketchPackageKeyTypesEnum._('topics');
 
 ChronicleSketchPackageKeyTypesEnum _$chronicleSketchPackageKeyTypesEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'evidence':
       return _$chronicleSketchPackageKeyTypesEnum_evidence;
@@ -36,16 +37,18 @@ ChronicleSketchPackageKeyTypesEnum _$chronicleSketchPackageKeyTypesEnumValueOf(
 }
 
 final BuiltSet<ChronicleSketchPackageKeyTypesEnum>
-    _$chronicleSketchPackageKeyTypesEnumValues = BuiltSet<
-        ChronicleSketchPackageKeyTypesEnum>(const <ChronicleSketchPackageKeyTypesEnum>[
-  _$chronicleSketchPackageKeyTypesEnum_evidence,
-  _$chronicleSketchPackageKeyTypesEnum_entities,
-  _$chronicleSketchPackageKeyTypesEnum_areaTime,
-  _$chronicleSketchPackageKeyTypesEnum_topics,
-]);
+_$chronicleSketchPackageKeyTypesEnumValues =
+    BuiltSet<ChronicleSketchPackageKeyTypesEnum>(
+      const <ChronicleSketchPackageKeyTypesEnum>[
+        _$chronicleSketchPackageKeyTypesEnum_evidence,
+        _$chronicleSketchPackageKeyTypesEnum_entities,
+        _$chronicleSketchPackageKeyTypesEnum_areaTime,
+        _$chronicleSketchPackageKeyTypesEnum_topics,
+      ],
+    );
 
 Serializer<ChronicleSketchPackageKeyTypesEnum>
-    _$chronicleSketchPackageKeyTypesEnumSerializer =
+_$chronicleSketchPackageKeyTypesEnumSerializer =
     _$ChronicleSketchPackageKeyTypesEnumSerializer();
 
 class _$ChronicleSketchPackageKeyTypesEnumSerializer
@@ -70,16 +73,19 @@ class _$ChronicleSketchPackageKeyTypesEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ChronicleSketchPackageKeyTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChronicleSketchPackageKeyTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSketchPackageKeyTypesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSketchPackageKeyTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSketchPackageKeyTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSketchPackage extends ChronicleSketchPackage {
@@ -108,28 +114,28 @@ class _$ChronicleSketchPackage extends ChronicleSketchPackage {
   @override
   final DateTime? expiresAt;
 
-  factory _$ChronicleSketchPackage(
-          [void Function(ChronicleSketchPackageBuilder)? updates]) =>
-      (ChronicleSketchPackageBuilder()..update(updates))._build();
+  factory _$ChronicleSketchPackage([
+    void Function(ChronicleSketchPackageBuilder)? updates,
+  ]) => (ChronicleSketchPackageBuilder()..update(updates))._build();
 
-  _$ChronicleSketchPackage._(
-      {required this.sketchId,
-      required this.instanceId,
-      required this.networkId,
-      required this.keyTypes,
-      required this.minhash,
-      required this.sizeBand,
-      required this.captureSpan,
-      this.title,
-      this.ownerHandle,
-      required this.tlp,
-      required this.issuedAt,
-      this.expiresAt})
-      : super._();
+  _$ChronicleSketchPackage._({
+    required this.sketchId,
+    required this.instanceId,
+    required this.networkId,
+    required this.keyTypes,
+    required this.minhash,
+    required this.sizeBand,
+    required this.captureSpan,
+    this.title,
+    this.ownerHandle,
+    required this.tlp,
+    required this.issuedAt,
+    this.expiresAt,
+  }) : super._();
   @override
   ChronicleSketchPackage rebuild(
-          void Function(ChronicleSketchPackageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSketchPackageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSketchPackageBuilder toBuilder() =>
@@ -290,14 +296,24 @@ class ChronicleSketchPackageBuilder
   _$ChronicleSketchPackage _build() {
     _$ChronicleSketchPackage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSketchPackage._(
             sketchId: BuiltValueNullFieldError.checkNotNull(
-                sketchId, r'ChronicleSketchPackage', 'sketchId'),
+              sketchId,
+              r'ChronicleSketchPackage',
+              'sketchId',
+            ),
             instanceId: BuiltValueNullFieldError.checkNotNull(
-                instanceId, r'ChronicleSketchPackage', 'instanceId'),
+              instanceId,
+              r'ChronicleSketchPackage',
+              'instanceId',
+            ),
             networkId: BuiltValueNullFieldError.checkNotNull(
-                networkId, r'ChronicleSketchPackage', 'networkId'),
+              networkId,
+              r'ChronicleSketchPackage',
+              'networkId',
+            ),
             keyTypes: keyTypes.build(),
             minhash: minhash.build(),
             sizeBand: sizeBand.build(),
@@ -305,9 +321,15 @@ class ChronicleSketchPackageBuilder
             title: title,
             ownerHandle: ownerHandle,
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'ChronicleSketchPackage', 'tlp'),
+              tlp,
+              r'ChronicleSketchPackage',
+              'tlp',
+            ),
             issuedAt: BuiltValueNullFieldError.checkNotNull(
-                issuedAt, r'ChronicleSketchPackage', 'issuedAt'),
+              issuedAt,
+              r'ChronicleSketchPackage',
+              'issuedAt',
+            ),
             expiresAt: expiresAt,
           );
     } catch (_) {
@@ -323,7 +345,10 @@ class ChronicleSketchPackageBuilder
         captureSpan.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSketchPackage', _$failedField, e.toString());
+          r'ChronicleSketchPackage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

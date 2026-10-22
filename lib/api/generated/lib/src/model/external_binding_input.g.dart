@@ -9,7 +9,7 @@ part of 'external_binding_input.dart';
 const ExternalBindingInputTargetEnum _$externalBindingInputTargetEnum_series =
     const ExternalBindingInputTargetEnum._('series');
 const ExternalBindingInputTargetEnum
-    _$externalBindingInputTargetEnum_canonicalFamily =
+_$externalBindingInputTargetEnum_canonicalFamily =
     const ExternalBindingInputTargetEnum._('canonicalFamily');
 const ExternalBindingInputTargetEnum _$externalBindingInputTargetEnum_social =
     const ExternalBindingInputTargetEnum._('social');
@@ -18,21 +18,22 @@ const ExternalBindingInputTargetEnum _$externalBindingInputTargetEnum_news =
 const ExternalBindingInputTargetEnum _$externalBindingInputTargetEnum_evidence =
     const ExternalBindingInputTargetEnum._('evidence');
 const ExternalBindingInputTargetEnum
-    _$externalBindingInputTargetEnum_indicator =
+_$externalBindingInputTargetEnum_indicator =
     const ExternalBindingInputTargetEnum._('indicator');
 const ExternalBindingInputTargetEnum _$externalBindingInputTargetEnum_forecast =
     const ExternalBindingInputTargetEnum._('forecast');
 const ExternalBindingInputTargetEnum _$externalBindingInputTargetEnum_place =
     const ExternalBindingInputTargetEnum._('place');
 const ExternalBindingInputTargetEnum
-    _$externalBindingInputTargetEnum_situation =
+_$externalBindingInputTargetEnum_situation =
     const ExternalBindingInputTargetEnum._('situation');
 const ExternalBindingInputTargetEnum
-    _$externalBindingInputTargetEnum_chronicle =
+_$externalBindingInputTargetEnum_chronicle =
     const ExternalBindingInputTargetEnum._('chronicle');
 
 ExternalBindingInputTargetEnum _$externalBindingInputTargetEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'series':
       return _$externalBindingInputTargetEnum_series;
@@ -60,22 +61,24 @@ ExternalBindingInputTargetEnum _$externalBindingInputTargetEnumValueOf(
 }
 
 final BuiltSet<ExternalBindingInputTargetEnum>
-    _$externalBindingInputTargetEnumValues = BuiltSet<
-        ExternalBindingInputTargetEnum>(const <ExternalBindingInputTargetEnum>[
-  _$externalBindingInputTargetEnum_series,
-  _$externalBindingInputTargetEnum_canonicalFamily,
-  _$externalBindingInputTargetEnum_social,
-  _$externalBindingInputTargetEnum_news,
-  _$externalBindingInputTargetEnum_evidence,
-  _$externalBindingInputTargetEnum_indicator,
-  _$externalBindingInputTargetEnum_forecast,
-  _$externalBindingInputTargetEnum_place,
-  _$externalBindingInputTargetEnum_situation,
-  _$externalBindingInputTargetEnum_chronicle,
-]);
+_$externalBindingInputTargetEnumValues =
+    BuiltSet<ExternalBindingInputTargetEnum>(
+      const <ExternalBindingInputTargetEnum>[
+        _$externalBindingInputTargetEnum_series,
+        _$externalBindingInputTargetEnum_canonicalFamily,
+        _$externalBindingInputTargetEnum_social,
+        _$externalBindingInputTargetEnum_news,
+        _$externalBindingInputTargetEnum_evidence,
+        _$externalBindingInputTargetEnum_indicator,
+        _$externalBindingInputTargetEnum_forecast,
+        _$externalBindingInputTargetEnum_place,
+        _$externalBindingInputTargetEnum_situation,
+        _$externalBindingInputTargetEnum_chronicle,
+      ],
+    );
 
 Serializer<ExternalBindingInputTargetEnum>
-    _$externalBindingInputTargetEnumSerializer =
+_$externalBindingInputTargetEnumSerializer =
     _$ExternalBindingInputTargetEnumSerializer();
 
 class _$ExternalBindingInputTargetEnumSerializer
@@ -112,16 +115,19 @@ class _$ExternalBindingInputTargetEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExternalBindingInputTargetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExternalBindingInputTargetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalBindingInputTargetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalBindingInputTargetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalBindingInputTargetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalBindingInput extends ExternalBindingInput {
@@ -138,22 +144,22 @@ class _$ExternalBindingInput extends ExternalBindingInput {
   @override
   final bool? backfill;
 
-  factory _$ExternalBindingInput(
-          [void Function(ExternalBindingInputBuilder)? updates]) =>
-      (ExternalBindingInputBuilder()..update(updates))._build();
+  factory _$ExternalBindingInput([
+    void Function(ExternalBindingInputBuilder)? updates,
+  ]) => (ExternalBindingInputBuilder()..update(updates))._build();
 
-  _$ExternalBindingInput._(
-      {required this.streamId,
-      required this.target,
-      this.config,
-      this.filter,
-      this.enabled,
-      this.backfill})
-      : super._();
+  _$ExternalBindingInput._({
+    required this.streamId,
+    required this.target,
+    this.config,
+    this.filter,
+    this.enabled,
+    this.backfill,
+  }) : super._();
   @override
   ExternalBindingInput rebuild(
-          void Function(ExternalBindingInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalBindingInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalBindingInputBuilder toBuilder() =>
@@ -263,12 +269,19 @@ class ExternalBindingInputBuilder
   _$ExternalBindingInput _build() {
     _$ExternalBindingInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalBindingInput._(
             streamId: BuiltValueNullFieldError.checkNotNull(
-                streamId, r'ExternalBindingInput', 'streamId'),
+              streamId,
+              r'ExternalBindingInput',
+              'streamId',
+            ),
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'ExternalBindingInput', 'target'),
+              target,
+              r'ExternalBindingInput',
+              'target',
+            ),
             config: _config?.build(),
             filter: _filter?.build(),
             enabled: enabled,
@@ -283,7 +296,10 @@ class ExternalBindingInputBuilder
         _filter?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalBindingInput', _$failedField, e.toString());
+          r'ExternalBindingInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

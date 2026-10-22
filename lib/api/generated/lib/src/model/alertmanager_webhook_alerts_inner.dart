@@ -22,8 +22,10 @@ part 'alertmanager_webhook_alerts_inner.g.dart';
 @BuiltValue()
 abstract class AlertmanagerWebhookAlertsInner
     implements
-        Built<AlertmanagerWebhookAlertsInner,
-            AlertmanagerWebhookAlertsInnerBuilder> {
+        Built<
+          AlertmanagerWebhookAlertsInner,
+          AlertmanagerWebhookAlertsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'status')
   AlertmanagerWebhookAlertsInnerStatusEnum get status;
   // enum statusEnum {  firing,  resolved,  };
@@ -49,9 +51,9 @@ abstract class AlertmanagerWebhookAlertsInner
 
   AlertmanagerWebhookAlertsInner._();
 
-  factory AlertmanagerWebhookAlertsInner(
-          [void updates(AlertmanagerWebhookAlertsInnerBuilder b)]) =
-      _$AlertmanagerWebhookAlertsInner;
+  factory AlertmanagerWebhookAlertsInner([
+    void updates(AlertmanagerWebhookAlertsInnerBuilder b),
+  ]) = _$AlertmanagerWebhookAlertsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AlertmanagerWebhookAlertsInnerBuilder b) => b;
@@ -66,7 +68,7 @@ class _$AlertmanagerWebhookAlertsInnerSerializer
   @override
   final Iterable<Type> types = const [
     AlertmanagerWebhookAlertsInner,
-    _$AlertmanagerWebhookAlertsInner
+    _$AlertmanagerWebhookAlertsInner,
   ];
 
   @override
@@ -85,15 +87,19 @@ class _$AlertmanagerWebhookAlertsInnerSerializer
     yield r'labels';
     yield serializers.serialize(
       object.labels,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(String)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(String),
+      ]),
     );
     if (object.annotations != null) {
       yield r'annotations';
       yield serializers.serialize(
         object.annotations,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     yield r'startsAt';
@@ -128,9 +134,11 @@ class _$AlertmanagerWebhookAlertsInnerSerializer
     AlertmanagerWebhookAlertsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -146,58 +154,77 @@ class _$AlertmanagerWebhookAlertsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(AlertmanagerWebhookAlertsInnerStatusEnum),
-          ) as AlertmanagerWebhookAlertsInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AlertmanagerWebhookAlertsInnerStatusEnum,
+                    ),
+                  )
+                  as AlertmanagerWebhookAlertsInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'labels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>;
           result.labels.replace(valueDes);
           break;
         case r'annotations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.annotations.replace(valueDes);
           break;
         case r'startsAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.startsAt = valueDes;
           break;
         case r'endsAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.endsAt = valueDes;
           break;
         case r'generatorURL':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.generatorURL = valueDes;
           break;
         case r'fingerprint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.fingerprint = valueDes;
           break;
         default:

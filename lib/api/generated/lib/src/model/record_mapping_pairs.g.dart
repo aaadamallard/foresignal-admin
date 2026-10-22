@@ -14,17 +14,19 @@ class _$RecordMappingPairs extends RecordMappingPairs {
   @override
   final String value;
 
-  factory _$RecordMappingPairs(
-          [void Function(RecordMappingPairsBuilder)? updates]) =>
-      (RecordMappingPairsBuilder()..update(updates))._build();
+  factory _$RecordMappingPairs([
+    void Function(RecordMappingPairsBuilder)? updates,
+  ]) => (RecordMappingPairsBuilder()..update(updates))._build();
 
-  _$RecordMappingPairs._(
-      {required this.path, required this.key, required this.value})
-      : super._();
+  _$RecordMappingPairs._({
+    required this.path,
+    required this.key,
+    required this.value,
+  }) : super._();
   @override
   RecordMappingPairs rebuild(
-          void Function(RecordMappingPairsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecordMappingPairsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecordMappingPairsBuilder toBuilder() =>
@@ -104,14 +106,24 @@ class RecordMappingPairsBuilder
   RecordMappingPairs build() => _build();
 
   _$RecordMappingPairs _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RecordMappingPairs._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'RecordMappingPairs', 'path'),
+            path,
+            r'RecordMappingPairs',
+            'path',
+          ),
           key: BuiltValueNullFieldError.checkNotNull(
-              key, r'RecordMappingPairs', 'key'),
+            key,
+            r'RecordMappingPairs',
+            'key',
+          ),
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'RecordMappingPairs', 'value'),
+            value,
+            r'RecordMappingPairs',
+            'value',
+          ),
         );
     replace(_$result);
     return _$result;

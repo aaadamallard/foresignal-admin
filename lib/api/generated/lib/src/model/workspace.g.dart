@@ -24,9 +24,9 @@ WorkspaceMembersEnum _$workspaceMembersEnumValueOf(String name) {
 
 final BuiltSet<WorkspaceMembersEnum> _$workspaceMembersEnumValues =
     BuiltSet<WorkspaceMembersEnum>(const <WorkspaceMembersEnum>[
-  _$workspaceMembersEnum_viewer,
-  _$workspaceMembersEnum_editor,
-]);
+      _$workspaceMembersEnum_viewer,
+      _$workspaceMembersEnum_editor,
+    ]);
 
 const WorkspaceCallerRoleEnum _$workspaceCallerRoleEnum_owner =
     const WorkspaceCallerRoleEnum._('owner');
@@ -50,10 +50,10 @@ WorkspaceCallerRoleEnum _$workspaceCallerRoleEnumValueOf(String name) {
 
 final BuiltSet<WorkspaceCallerRoleEnum> _$workspaceCallerRoleEnumValues =
     BuiltSet<WorkspaceCallerRoleEnum>(const <WorkspaceCallerRoleEnum>[
-  _$workspaceCallerRoleEnum_owner,
-  _$workspaceCallerRoleEnum_editor,
-  _$workspaceCallerRoleEnum_viewer,
-]);
+      _$workspaceCallerRoleEnum_owner,
+      _$workspaceCallerRoleEnum_editor,
+      _$workspaceCallerRoleEnum_viewer,
+    ]);
 
 Serializer<WorkspaceMembersEnum> _$workspaceMembersEnumSerializer =
     _$WorkspaceMembersEnumSerializer();
@@ -77,15 +77,20 @@ class _$WorkspaceMembersEnumSerializer
   final String wireName = 'WorkspaceMembersEnum';
 
   @override
-  Object serialize(Serializers serializers, WorkspaceMembersEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WorkspaceMembersEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  WorkspaceMembersEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WorkspaceMembersEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  WorkspaceMembersEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WorkspaceMembersEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WorkspaceCallerRoleEnumSerializer
@@ -107,16 +112,20 @@ class _$WorkspaceCallerRoleEnumSerializer
   final String wireName = 'WorkspaceCallerRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, WorkspaceCallerRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WorkspaceCallerRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WorkspaceCallerRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WorkspaceCallerRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WorkspaceCallerRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Workspace extends Workspace {
@@ -152,22 +161,22 @@ class _$Workspace extends Workspace {
   factory _$Workspace([void Function(WorkspaceBuilder)? updates]) =>
       (WorkspaceBuilder()..update(updates))._build();
 
-  _$Workspace._(
-      {required this.id,
-      this.ref,
-      required this.name,
-      required this.owner,
-      required this.members,
-      this.callerRole,
-      required this.context,
-      required this.contextVersion,
-      this.layout,
-      this.savedViewIds,
-      this.investigationId,
-      required this.private,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$Workspace._({
+    required this.id,
+    this.ref,
+    required this.name,
+    required this.owner,
+    required this.members,
+    this.callerRole,
+    required this.context,
+    required this.contextVersion,
+    this.layout,
+    this.savedViewIds,
+    this.investigationId,
+    required this.private,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   Workspace rebuild(void Function(WorkspaceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -348,28 +357,47 @@ class WorkspaceBuilder implements Builder<Workspace, WorkspaceBuilder> {
   _$Workspace _build() {
     _$Workspace _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Workspace._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Workspace', 'id'),
             ref: ref,
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'Workspace', 'name'),
+              name,
+              r'Workspace',
+              'name',
+            ),
             owner: BuiltValueNullFieldError.checkNotNull(
-                owner, r'Workspace', 'owner'),
+              owner,
+              r'Workspace',
+              'owner',
+            ),
             members: members.build(),
             callerRole: callerRole,
             context: context.build(),
             contextVersion: BuiltValueNullFieldError.checkNotNull(
-                contextVersion, r'Workspace', 'contextVersion'),
+              contextVersion,
+              r'Workspace',
+              'contextVersion',
+            ),
             layout: _layout?.build(),
             savedViewIds: _savedViewIds?.build(),
             investigationId: investigationId,
             private: BuiltValueNullFieldError.checkNotNull(
-                private, r'Workspace', 'private'),
+              private,
+              r'Workspace',
+              'private',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Workspace', 'createdAt'),
+              createdAt,
+              r'Workspace',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Workspace', 'updatedAt'),
+              updatedAt,
+              r'Workspace',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -386,7 +414,10 @@ class WorkspaceBuilder implements Builder<Workspace, WorkspaceBuilder> {
         _savedViewIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Workspace', _$failedField, e.toString());
+          r'Workspace',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -79,8 +79,10 @@ class _$InfraStatusSerializer implements PrimitiveSerializer<InfraStatus> {
       yield r'nodesByType';
       yield serializers.serialize(
         object.nodesByType,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.osmExtractDate != null) {
@@ -98,9 +100,11 @@ class _$InfraStatusSerializer implements PrimitiveSerializer<InfraStatus> {
     InfraStatus object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,41 +120,53 @@ class _$InfraStatusSerializer implements PrimitiveSerializer<InfraStatus> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'built':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.built = valueDes;
           break;
         case r'building':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.building = valueDes;
           break;
         case r'lastBuild':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(InfraBuild),
-          ) as InfraBuild?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(InfraBuild),
+                  )
+                  as InfraBuild?;
           if (valueDes == null) continue;
           result.lastBuild.replace(valueDes);
           break;
         case r'nodesByType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.nodesByType.replace(valueDes);
           break;
         case r'osmExtractDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.osmExtractDate = valueDes;
           break;

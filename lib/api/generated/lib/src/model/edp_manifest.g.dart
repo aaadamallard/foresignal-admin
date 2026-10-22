@@ -19,12 +19,12 @@ class _$EdpManifest extends EdpManifest {
   factory _$EdpManifest([void Function(EdpManifestBuilder)? updates]) =>
       (EdpManifestBuilder()..update(updates))._build();
 
-  _$EdpManifest._(
-      {required this.protocol,
-      required this.source_,
-      required this.transport,
-      required this.streams})
-      : super._();
+  _$EdpManifest._({
+    required this.protocol,
+    required this.source_,
+    required this.transport,
+    required this.streams,
+  }) : super._();
   @override
   EdpManifest rebuild(void Function(EdpManifestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -119,10 +119,14 @@ class EdpManifestBuilder implements Builder<EdpManifest, EdpManifestBuilder> {
   _$EdpManifest _build() {
     _$EdpManifest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpManifest._(
             protocol: BuiltValueNullFieldError.checkNotNull(
-                protocol, r'EdpManifest', 'protocol'),
+              protocol,
+              r'EdpManifest',
+              'protocol',
+            ),
             source_: source_.build(),
             transport: transport.build(),
             streams: streams.build(),
@@ -138,7 +142,10 @@ class EdpManifestBuilder implements Builder<EdpManifest, EdpManifestBuilder> {
         streams.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpManifest', _$failedField, e.toString());
+          r'EdpManifest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

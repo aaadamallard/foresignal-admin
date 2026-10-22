@@ -16,8 +16,10 @@ part 'propagation_graph_cross_platform_order_inner.g.dart';
 @BuiltValue()
 abstract class PropagationGraphCrossPlatformOrderInner
     implements
-        Built<PropagationGraphCrossPlatformOrderInner,
-            PropagationGraphCrossPlatformOrderInnerBuilder> {
+        Built<
+          PropagationGraphCrossPlatformOrderInner,
+          PropagationGraphCrossPlatformOrderInnerBuilder
+        > {
   /// Social network: `bluesky`, `mastodon`, `reddit`, `youtube`, `x`, `threads`, `instagram`, or the platform an EDP provider (024, 138) declares
   @BuiltValueField(wireName: r'platform')
   String get platform;
@@ -27,9 +29,9 @@ abstract class PropagationGraphCrossPlatformOrderInner
 
   PropagationGraphCrossPlatformOrderInner._();
 
-  factory PropagationGraphCrossPlatformOrderInner(
-          [void updates(PropagationGraphCrossPlatformOrderInnerBuilder b)]) =
-      _$PropagationGraphCrossPlatformOrderInner;
+  factory PropagationGraphCrossPlatformOrderInner([
+    void updates(PropagationGraphCrossPlatformOrderInnerBuilder b),
+  ]) = _$PropagationGraphCrossPlatformOrderInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PropagationGraphCrossPlatformOrderInnerBuilder b) => b;
@@ -44,7 +46,7 @@ class _$PropagationGraphCrossPlatformOrderInnerSerializer
   @override
   final Iterable<Type> types = const [
     PropagationGraphCrossPlatformOrderInner,
-    _$PropagationGraphCrossPlatformOrderInner
+    _$PropagationGraphCrossPlatformOrderInner,
   ];
 
   @override
@@ -73,9 +75,11 @@ class _$PropagationGraphCrossPlatformOrderInnerSerializer
     PropagationGraphCrossPlatformOrderInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +95,21 @@ class _$PropagationGraphCrossPlatformOrderInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'firstObservedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.firstObservedAt = valueDes;
           break;
         default:

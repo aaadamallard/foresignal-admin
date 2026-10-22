@@ -18,8 +18,10 @@ part 'tuning_suggestion_expected_effect.g.dart';
 @BuiltValue()
 abstract class TuningSuggestionExpectedEffect
     implements
-        Built<TuningSuggestionExpectedEffect,
-            TuningSuggestionExpectedEffectBuilder> {
+        Built<
+          TuningSuggestionExpectedEffect,
+          TuningSuggestionExpectedEffectBuilder
+        > {
   @BuiltValueField(wireName: r'wouldFire')
   int? get wouldFire;
 
@@ -35,9 +37,9 @@ abstract class TuningSuggestionExpectedEffect
 
   TuningSuggestionExpectedEffect._();
 
-  factory TuningSuggestionExpectedEffect(
-          [void updates(TuningSuggestionExpectedEffectBuilder b)]) =
-      _$TuningSuggestionExpectedEffect;
+  factory TuningSuggestionExpectedEffect([
+    void updates(TuningSuggestionExpectedEffectBuilder b),
+  ]) = _$TuningSuggestionExpectedEffect;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TuningSuggestionExpectedEffectBuilder b) => b;
@@ -52,7 +54,7 @@ class _$TuningSuggestionExpectedEffectSerializer
   @override
   final Iterable<Type> types = const [
     TuningSuggestionExpectedEffect,
-    _$TuningSuggestionExpectedEffect
+    _$TuningSuggestionExpectedEffect,
   ];
 
   @override
@@ -99,9 +101,11 @@ class _$TuningSuggestionExpectedEffectSerializer
     TuningSuggestionExpectedEffect object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,34 +121,42 @@ class _$TuningSuggestionExpectedEffectSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'wouldFire':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.wouldFire = valueDes;
           break;
         case r'removedNegatives':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.removedNegatives = valueDes;
           break;
         case r'keptPositives':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.keptPositives = valueDes;
           break;
         case r'backtestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.backtestId = valueDes;
           break;

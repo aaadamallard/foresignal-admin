@@ -7,38 +7,39 @@ part of 'investigation_item_input.dart';
 // **************************************************************************
 
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_event =
+_$investigationItemInputItemTypeEnum_event =
     const InvestigationItemInputItemTypeEnum._('event');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_alert =
+_$investigationItemInputItemTypeEnum_alert =
     const InvestigationItemInputItemTypeEnum._('alert');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_record =
+_$investigationItemInputItemTypeEnum_record =
     const InvestigationItemInputItemTypeEnum._('record');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_anomaly =
+_$investigationItemInputItemTypeEnum_anomaly =
     const InvestigationItemInputItemTypeEnum._('anomaly');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_place =
+_$investigationItemInputItemTypeEnum_place =
     const InvestigationItemInputItemTypeEnum._('place');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_briefingRun =
+_$investigationItemInputItemTypeEnum_briefingRun =
     const InvestigationItemInputItemTypeEnum._('briefingRun');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_note =
+_$investigationItemInputItemTypeEnum_note =
     const InvestigationItemInputItemTypeEnum._('note');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_evidenceItem =
+_$investigationItemInputItemTypeEnum_evidenceItem =
     const InvestigationItemInputItemTypeEnum._('evidenceItem');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_attachment =
+_$investigationItemInputItemTypeEnum_attachment =
     const InvestigationItemInputItemTypeEnum._('attachment');
 const InvestigationItemInputItemTypeEnum
-    _$investigationItemInputItemTypeEnum_object =
+_$investigationItemInputItemTypeEnum_object =
     const InvestigationItemInputItemTypeEnum._('object');
 
 InvestigationItemInputItemTypeEnum _$investigationItemInputItemTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'event':
       return _$investigationItemInputItemTypeEnum_event;
@@ -66,22 +67,24 @@ InvestigationItemInputItemTypeEnum _$investigationItemInputItemTypeEnumValueOf(
 }
 
 final BuiltSet<InvestigationItemInputItemTypeEnum>
-    _$investigationItemInputItemTypeEnumValues = BuiltSet<
-        InvestigationItemInputItemTypeEnum>(const <InvestigationItemInputItemTypeEnum>[
-  _$investigationItemInputItemTypeEnum_event,
-  _$investigationItemInputItemTypeEnum_alert,
-  _$investigationItemInputItemTypeEnum_record,
-  _$investigationItemInputItemTypeEnum_anomaly,
-  _$investigationItemInputItemTypeEnum_place,
-  _$investigationItemInputItemTypeEnum_briefingRun,
-  _$investigationItemInputItemTypeEnum_note,
-  _$investigationItemInputItemTypeEnum_evidenceItem,
-  _$investigationItemInputItemTypeEnum_attachment,
-  _$investigationItemInputItemTypeEnum_object,
-]);
+_$investigationItemInputItemTypeEnumValues =
+    BuiltSet<InvestigationItemInputItemTypeEnum>(
+      const <InvestigationItemInputItemTypeEnum>[
+        _$investigationItemInputItemTypeEnum_event,
+        _$investigationItemInputItemTypeEnum_alert,
+        _$investigationItemInputItemTypeEnum_record,
+        _$investigationItemInputItemTypeEnum_anomaly,
+        _$investigationItemInputItemTypeEnum_place,
+        _$investigationItemInputItemTypeEnum_briefingRun,
+        _$investigationItemInputItemTypeEnum_note,
+        _$investigationItemInputItemTypeEnum_evidenceItem,
+        _$investigationItemInputItemTypeEnum_attachment,
+        _$investigationItemInputItemTypeEnum_object,
+      ],
+    );
 
 Serializer<InvestigationItemInputItemTypeEnum>
-    _$investigationItemInputItemTypeEnumSerializer =
+_$investigationItemInputItemTypeEnumSerializer =
     _$InvestigationItemInputItemTypeEnumSerializer();
 
 class _$InvestigationItemInputItemTypeEnumSerializer
@@ -118,16 +121,19 @@ class _$InvestigationItemInputItemTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, InvestigationItemInputItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    InvestigationItemInputItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InvestigationItemInputItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InvestigationItemInputItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InvestigationItemInputItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InvestigationItemInput extends InvestigationItemInput {
@@ -140,17 +146,20 @@ class _$InvestigationItemInput extends InvestigationItemInput {
   @override
   final String? note;
 
-  factory _$InvestigationItemInput(
-          [void Function(InvestigationItemInputBuilder)? updates]) =>
-      (InvestigationItemInputBuilder()..update(updates))._build();
+  factory _$InvestigationItemInput([
+    void Function(InvestigationItemInputBuilder)? updates,
+  ]) => (InvestigationItemInputBuilder()..update(updates))._build();
 
-  _$InvestigationItemInput._(
-      {required this.itemType, required this.ref, this.seq, this.note})
-      : super._();
+  _$InvestigationItemInput._({
+    required this.itemType,
+    required this.ref,
+    this.seq,
+    this.note,
+  }) : super._();
   @override
   InvestigationItemInput rebuild(
-          void Function(InvestigationItemInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InvestigationItemInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InvestigationItemInputBuilder toBuilder() =>
@@ -239,12 +248,19 @@ class InvestigationItemInputBuilder
   InvestigationItemInput build() => _build();
 
   _$InvestigationItemInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$InvestigationItemInput._(
           itemType: BuiltValueNullFieldError.checkNotNull(
-              itemType, r'InvestigationItemInput', 'itemType'),
+            itemType,
+            r'InvestigationItemInput',
+            'itemType',
+          ),
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'InvestigationItemInput', 'ref'),
+            ref,
+            r'InvestigationItemInput',
+            'ref',
+          ),
           seq: seq,
           note: note,
         );

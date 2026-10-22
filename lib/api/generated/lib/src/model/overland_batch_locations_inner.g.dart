@@ -7,11 +7,11 @@ part of 'overland_batch_locations_inner.dart';
 // **************************************************************************
 
 const OverlandBatchLocationsInnerTypeEnum
-    _$overlandBatchLocationsInnerTypeEnum_feature =
+_$overlandBatchLocationsInnerTypeEnum_feature =
     const OverlandBatchLocationsInnerTypeEnum._('feature');
 
 OverlandBatchLocationsInnerTypeEnum
-    _$overlandBatchLocationsInnerTypeEnumValueOf(String name) {
+_$overlandBatchLocationsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'feature':
       return _$overlandBatchLocationsInnerTypeEnum_feature;
@@ -21,13 +21,15 @@ OverlandBatchLocationsInnerTypeEnum
 }
 
 final BuiltSet<OverlandBatchLocationsInnerTypeEnum>
-    _$overlandBatchLocationsInnerTypeEnumValues = BuiltSet<
-        OverlandBatchLocationsInnerTypeEnum>(const <OverlandBatchLocationsInnerTypeEnum>[
-  _$overlandBatchLocationsInnerTypeEnum_feature,
-]);
+_$overlandBatchLocationsInnerTypeEnumValues =
+    BuiltSet<OverlandBatchLocationsInnerTypeEnum>(
+      const <OverlandBatchLocationsInnerTypeEnum>[
+        _$overlandBatchLocationsInnerTypeEnum_feature,
+      ],
+    );
 
 Serializer<OverlandBatchLocationsInnerTypeEnum>
-    _$overlandBatchLocationsInnerTypeEnumSerializer =
+_$overlandBatchLocationsInnerTypeEnumSerializer =
     _$OverlandBatchLocationsInnerTypeEnumSerializer();
 
 class _$OverlandBatchLocationsInnerTypeEnumSerializer
@@ -41,23 +43,26 @@ class _$OverlandBatchLocationsInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OverlandBatchLocationsInnerTypeEnum
+    OverlandBatchLocationsInnerTypeEnum,
   ];
   @override
   final String wireName = 'OverlandBatchLocationsInnerTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, OverlandBatchLocationsInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    OverlandBatchLocationsInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OverlandBatchLocationsInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OverlandBatchLocationsInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OverlandBatchLocationsInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OverlandBatchLocationsInner extends OverlandBatchLocationsInner {
@@ -68,17 +73,19 @@ class _$OverlandBatchLocationsInner extends OverlandBatchLocationsInner {
   @override
   final OverlandBatchLocationsInnerProperties properties;
 
-  factory _$OverlandBatchLocationsInner(
-          [void Function(OverlandBatchLocationsInnerBuilder)? updates]) =>
-      (OverlandBatchLocationsInnerBuilder()..update(updates))._build();
+  factory _$OverlandBatchLocationsInner([
+    void Function(OverlandBatchLocationsInnerBuilder)? updates,
+  ]) => (OverlandBatchLocationsInnerBuilder()..update(updates))._build();
 
-  _$OverlandBatchLocationsInner._(
-      {this.type, required this.geometry, required this.properties})
-      : super._();
+  _$OverlandBatchLocationsInner._({
+    this.type,
+    required this.geometry,
+    required this.properties,
+  }) : super._();
   @override
   OverlandBatchLocationsInner rebuild(
-          void Function(OverlandBatchLocationsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OverlandBatchLocationsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OverlandBatchLocationsInnerBuilder toBuilder() =>
@@ -115,8 +122,10 @@ class _$OverlandBatchLocationsInner extends OverlandBatchLocationsInner {
 
 class OverlandBatchLocationsInnerBuilder
     implements
-        Builder<OverlandBatchLocationsInner,
-            OverlandBatchLocationsInnerBuilder> {
+        Builder<
+          OverlandBatchLocationsInner,
+          OverlandBatchLocationsInnerBuilder
+        > {
   _$OverlandBatchLocationsInner? _$v;
 
   OverlandBatchLocationsInnerTypeEnum? _type;
@@ -164,7 +173,8 @@ class OverlandBatchLocationsInnerBuilder
   _$OverlandBatchLocationsInner _build() {
     _$OverlandBatchLocationsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OverlandBatchLocationsInner._(
             type: type,
             geometry: geometry.build(),
@@ -179,7 +189,10 @@ class OverlandBatchLocationsInnerBuilder
         properties.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OverlandBatchLocationsInner', _$failedField, e.toString());
+          r'OverlandBatchLocationsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

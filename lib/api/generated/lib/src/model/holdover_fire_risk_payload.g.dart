@@ -9,17 +9,18 @@ part of 'holdover_fire_risk_payload.dart';
 const HoldoverFireRiskPayloadStatusEnum _$holdoverFireRiskPayloadStatusEnum_ok =
     const HoldoverFireRiskPayloadStatusEnum._('ok');
 const HoldoverFireRiskPayloadStatusEnum
-    _$holdoverFireRiskPayloadStatusEnum_insufficientData =
+_$holdoverFireRiskPayloadStatusEnum_insufficientData =
     const HoldoverFireRiskPayloadStatusEnum._('insufficientData');
 const HoldoverFireRiskPayloadStatusEnum
-    _$holdoverFireRiskPayloadStatusEnum_noCoverage =
+_$holdoverFireRiskPayloadStatusEnum_noCoverage =
     const HoldoverFireRiskPayloadStatusEnum._('noCoverage');
 const HoldoverFireRiskPayloadStatusEnum
-    _$holdoverFireRiskPayloadStatusEnum_degradedInput =
+_$holdoverFireRiskPayloadStatusEnum_degradedInput =
     const HoldoverFireRiskPayloadStatusEnum._('degradedInput');
 
 HoldoverFireRiskPayloadStatusEnum _$holdoverFireRiskPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$holdoverFireRiskPayloadStatusEnum_ok;
@@ -35,23 +36,25 @@ HoldoverFireRiskPayloadStatusEnum _$holdoverFireRiskPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<HoldoverFireRiskPayloadStatusEnum>
-    _$holdoverFireRiskPayloadStatusEnumValues = BuiltSet<
-        HoldoverFireRiskPayloadStatusEnum>(const <HoldoverFireRiskPayloadStatusEnum>[
-  _$holdoverFireRiskPayloadStatusEnum_ok,
-  _$holdoverFireRiskPayloadStatusEnum_insufficientData,
-  _$holdoverFireRiskPayloadStatusEnum_noCoverage,
-  _$holdoverFireRiskPayloadStatusEnum_degradedInput,
-]);
+_$holdoverFireRiskPayloadStatusEnumValues =
+    BuiltSet<HoldoverFireRiskPayloadStatusEnum>(
+      const <HoldoverFireRiskPayloadStatusEnum>[
+        _$holdoverFireRiskPayloadStatusEnum_ok,
+        _$holdoverFireRiskPayloadStatusEnum_insufficientData,
+        _$holdoverFireRiskPayloadStatusEnum_noCoverage,
+        _$holdoverFireRiskPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 const HoldoverFireRiskPayloadPrecipSourceEnum
-    _$holdoverFireRiskPayloadPrecipSourceEnum_mrms =
+_$holdoverFireRiskPayloadPrecipSourceEnum_mrms =
     const HoldoverFireRiskPayloadPrecipSourceEnum._('mrms');
 const HoldoverFireRiskPayloadPrecipSourceEnum
-    _$holdoverFireRiskPayloadPrecipSourceEnum_model =
+_$holdoverFireRiskPayloadPrecipSourceEnum_model =
     const HoldoverFireRiskPayloadPrecipSourceEnum._('model');
 
 HoldoverFireRiskPayloadPrecipSourceEnum
-    _$holdoverFireRiskPayloadPrecipSourceEnumValueOf(String name) {
+_$holdoverFireRiskPayloadPrecipSourceEnumValueOf(String name) {
   switch (name) {
     case 'mrms':
       return _$holdoverFireRiskPayloadPrecipSourceEnum_mrms;
@@ -63,17 +66,19 @@ HoldoverFireRiskPayloadPrecipSourceEnum
 }
 
 final BuiltSet<HoldoverFireRiskPayloadPrecipSourceEnum>
-    _$holdoverFireRiskPayloadPrecipSourceEnumValues = BuiltSet<
-        HoldoverFireRiskPayloadPrecipSourceEnum>(const <HoldoverFireRiskPayloadPrecipSourceEnum>[
-  _$holdoverFireRiskPayloadPrecipSourceEnum_mrms,
-  _$holdoverFireRiskPayloadPrecipSourceEnum_model,
-]);
+_$holdoverFireRiskPayloadPrecipSourceEnumValues =
+    BuiltSet<HoldoverFireRiskPayloadPrecipSourceEnum>(
+      const <HoldoverFireRiskPayloadPrecipSourceEnum>[
+        _$holdoverFireRiskPayloadPrecipSourceEnum_mrms,
+        _$holdoverFireRiskPayloadPrecipSourceEnum_model,
+      ],
+    );
 
 Serializer<HoldoverFireRiskPayloadStatusEnum>
-    _$holdoverFireRiskPayloadStatusEnumSerializer =
+_$holdoverFireRiskPayloadStatusEnumSerializer =
     _$HoldoverFireRiskPayloadStatusEnumSerializer();
 Serializer<HoldoverFireRiskPayloadPrecipSourceEnum>
-    _$holdoverFireRiskPayloadPrecipSourceEnumSerializer =
+_$holdoverFireRiskPayloadPrecipSourceEnumSerializer =
     _$HoldoverFireRiskPayloadPrecipSourceEnumSerializer();
 
 class _$HoldoverFireRiskPayloadStatusEnumSerializer
@@ -98,16 +103,19 @@ class _$HoldoverFireRiskPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HoldoverFireRiskPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HoldoverFireRiskPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HoldoverFireRiskPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HoldoverFireRiskPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HoldoverFireRiskPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HoldoverFireRiskPayloadPrecipSourceEnumSerializer
@@ -123,23 +131,26 @@ class _$HoldoverFireRiskPayloadPrecipSourceEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    HoldoverFireRiskPayloadPrecipSourceEnum
+    HoldoverFireRiskPayloadPrecipSourceEnum,
   ];
   @override
   final String wireName = 'HoldoverFireRiskPayloadPrecipSourceEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          HoldoverFireRiskPayloadPrecipSourceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HoldoverFireRiskPayloadPrecipSourceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HoldoverFireRiskPayloadPrecipSourceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HoldoverFireRiskPayloadPrecipSourceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HoldoverFireRiskPayloadPrecipSourceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HoldoverFireRiskPayload extends HoldoverFireRiskPayload {
@@ -176,32 +187,32 @@ class _$HoldoverFireRiskPayload extends HoldoverFireRiskPayload {
   @override
   final Severity? severity;
 
-  factory _$HoldoverFireRiskPayload(
-          [void Function(HoldoverFireRiskPayloadBuilder)? updates]) =>
-      (HoldoverFireRiskPayloadBuilder()..update(updates))._build();
+  factory _$HoldoverFireRiskPayload([
+    void Function(HoldoverFireRiskPayloadBuilder)? updates,
+  ]) => (HoldoverFireRiskPayloadBuilder()..update(updates))._build();
 
-  _$HoldoverFireRiskPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.cell,
-      required this.utcDay,
-      required this.flashCount,
-      this.qpe72hMm,
-      this.precipSource,
-      this.relativeHumidityPct,
-      required this.ignitionConfirmed,
-      this.ignitionDelayH,
-      this.watchUntil,
-      this.severity})
-      : super._();
+  _$HoldoverFireRiskPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.cell,
+    required this.utcDay,
+    required this.flashCount,
+    this.qpe72hMm,
+    this.precipSource,
+    this.relativeHumidityPct,
+    required this.ignitionConfirmed,
+    this.ignitionDelayH,
+    this.watchUntil,
+    this.severity,
+  }) : super._();
   @override
   HoldoverFireRiskPayload rebuild(
-          void Function(HoldoverFireRiskPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HoldoverFireRiskPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HoldoverFireRiskPayloadBuilder toBuilder() =>
@@ -398,30 +409,50 @@ class HoldoverFireRiskPayloadBuilder
   _$HoldoverFireRiskPayload _build() {
     _$HoldoverFireRiskPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HoldoverFireRiskPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'HoldoverFireRiskPayload', 'automated'),
+              automated,
+              r'HoldoverFireRiskPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'HoldoverFireRiskPayload', 'notAWarning'),
+              notAWarning,
+              r'HoldoverFireRiskPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'HoldoverFireRiskPayload', 'status'),
+              status,
+              r'HoldoverFireRiskPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             cell: BuiltValueNullFieldError.checkNotNull(
-                cell, r'HoldoverFireRiskPayload', 'cell'),
+              cell,
+              r'HoldoverFireRiskPayload',
+              'cell',
+            ),
             utcDay: BuiltValueNullFieldError.checkNotNull(
-                utcDay, r'HoldoverFireRiskPayload', 'utcDay'),
+              utcDay,
+              r'HoldoverFireRiskPayload',
+              'utcDay',
+            ),
             flashCount: BuiltValueNullFieldError.checkNotNull(
-                flashCount, r'HoldoverFireRiskPayload', 'flashCount'),
+              flashCount,
+              r'HoldoverFireRiskPayload',
+              'flashCount',
+            ),
             qpe72hMm: qpe72hMm,
             precipSource: precipSource,
             relativeHumidityPct: relativeHumidityPct,
             ignitionConfirmed: BuiltValueNullFieldError.checkNotNull(
-                ignitionConfirmed,
-                r'HoldoverFireRiskPayload',
-                'ignitionConfirmed'),
+              ignitionConfirmed,
+              r'HoldoverFireRiskPayload',
+              'ignitionConfirmed',
+            ),
             ignitionDelayH: ignitionDelayH,
             watchUntil: watchUntil,
             severity: severity,
@@ -436,7 +467,10 @@ class HoldoverFireRiskPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HoldoverFireRiskPayload', _$failedField, e.toString());
+          r'HoldoverFireRiskPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

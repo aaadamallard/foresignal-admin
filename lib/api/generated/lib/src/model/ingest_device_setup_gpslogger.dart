@@ -25,9 +25,9 @@ abstract class IngestDeviceSetupGpslogger
 
   IngestDeviceSetupGpslogger._();
 
-  factory IngestDeviceSetupGpslogger(
-          [void updates(IngestDeviceSetupGpsloggerBuilder b)]) =
-      _$IngestDeviceSetupGpslogger;
+  factory IngestDeviceSetupGpslogger([
+    void updates(IngestDeviceSetupGpsloggerBuilder b),
+  ]) = _$IngestDeviceSetupGpslogger;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IngestDeviceSetupGpsloggerBuilder b) => b;
@@ -42,7 +42,7 @@ class _$IngestDeviceSetupGpsloggerSerializer
   @override
   final Iterable<Type> types = const [
     IngestDeviceSetupGpslogger,
-    _$IngestDeviceSetupGpslogger
+    _$IngestDeviceSetupGpslogger,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$IngestDeviceSetupGpsloggerSerializer
     IngestDeviceSetupGpslogger object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$IngestDeviceSetupGpsloggerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'urlTemplate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.urlTemplate = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.method = valueDes;
           break;

@@ -25,9 +25,9 @@ abstract class RemoteRasterBundleAccepted
 
   RemoteRasterBundleAccepted._();
 
-  factory RemoteRasterBundleAccepted(
-          [void updates(RemoteRasterBundleAcceptedBuilder b)]) =
-      _$RemoteRasterBundleAccepted;
+  factory RemoteRasterBundleAccepted([
+    void updates(RemoteRasterBundleAcceptedBuilder b),
+  ]) = _$RemoteRasterBundleAccepted;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RemoteRasterBundleAcceptedBuilder b) => b;
@@ -42,7 +42,7 @@ class _$RemoteRasterBundleAcceptedSerializer
   @override
   final Iterable<Type> types = const [
     RemoteRasterBundleAccepted,
-    _$RemoteRasterBundleAccepted
+    _$RemoteRasterBundleAccepted,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$RemoteRasterBundleAcceptedSerializer
     RemoteRasterBundleAccepted object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$RemoteRasterBundleAcceptedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'uploadId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.uploadId = valueDes;
           break;
         case r'passFolder':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.passFolder = valueDes;
           break;
         default:

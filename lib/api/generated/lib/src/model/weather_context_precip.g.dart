@@ -18,21 +18,21 @@ class _$WeatherContextPrecip extends WeatherContextPrecip {
   @override
   final num? qpe1hMm;
 
-  factory _$WeatherContextPrecip(
-          [void Function(WeatherContextPrecipBuilder)? updates]) =>
-      (WeatherContextPrecipBuilder()..update(updates))._build();
+  factory _$WeatherContextPrecip([
+    void Function(WeatherContextPrecipBuilder)? updates,
+  ]) => (WeatherContextPrecipBuilder()..update(updates))._build();
 
-  _$WeatherContextPrecip._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.rateMmH,
-      this.qpe1hMm})
-      : super._();
+  _$WeatherContextPrecip._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.rateMmH,
+    this.qpe1hMm,
+  }) : super._();
   @override
   WeatherContextPrecip rebuild(
-          void Function(WeatherContextPrecipBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextPrecipBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextPrecipBuilder toBuilder() =>
@@ -128,10 +128,14 @@ class WeatherContextPrecipBuilder
   WeatherContextPrecip build() => _build();
 
   _$WeatherContextPrecip _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WeatherContextPrecip._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'WeatherContextPrecip', 'status'),
+            status,
+            r'WeatherContextPrecip',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           rateMmH: rateMmH,

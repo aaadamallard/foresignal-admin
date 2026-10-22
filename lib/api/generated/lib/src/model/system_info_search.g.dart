@@ -9,17 +9,18 @@ part of 'system_info_search.dart';
 const SystemInfoSearchReindexStateEnum _$systemInfoSearchReindexStateEnum_idle =
     const SystemInfoSearchReindexStateEnum._('idle');
 const SystemInfoSearchReindexStateEnum
-    _$systemInfoSearchReindexStateEnum_backfilling =
+_$systemInfoSearchReindexStateEnum_backfilling =
     const SystemInfoSearchReindexStateEnum._('backfilling');
 const SystemInfoSearchReindexStateEnum
-    _$systemInfoSearchReindexStateEnum_indexing =
+_$systemInfoSearchReindexStateEnum_indexing =
     const SystemInfoSearchReindexStateEnum._('indexing');
 const SystemInfoSearchReindexStateEnum
-    _$systemInfoSearchReindexStateEnum_swapping =
+_$systemInfoSearchReindexStateEnum_swapping =
     const SystemInfoSearchReindexStateEnum._('swapping');
 
 SystemInfoSearchReindexStateEnum _$systemInfoSearchReindexStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'idle':
       return _$systemInfoSearchReindexStateEnum_idle;
@@ -35,16 +36,18 @@ SystemInfoSearchReindexStateEnum _$systemInfoSearchReindexStateEnumValueOf(
 }
 
 final BuiltSet<SystemInfoSearchReindexStateEnum>
-    _$systemInfoSearchReindexStateEnumValues = BuiltSet<
-        SystemInfoSearchReindexStateEnum>(const <SystemInfoSearchReindexStateEnum>[
-  _$systemInfoSearchReindexStateEnum_idle,
-  _$systemInfoSearchReindexStateEnum_backfilling,
-  _$systemInfoSearchReindexStateEnum_indexing,
-  _$systemInfoSearchReindexStateEnum_swapping,
-]);
+_$systemInfoSearchReindexStateEnumValues =
+    BuiltSet<SystemInfoSearchReindexStateEnum>(
+      const <SystemInfoSearchReindexStateEnum>[
+        _$systemInfoSearchReindexStateEnum_idle,
+        _$systemInfoSearchReindexStateEnum_backfilling,
+        _$systemInfoSearchReindexStateEnum_indexing,
+        _$systemInfoSearchReindexStateEnum_swapping,
+      ],
+    );
 
 Serializer<SystemInfoSearchReindexStateEnum>
-    _$systemInfoSearchReindexStateEnumSerializer =
+_$systemInfoSearchReindexStateEnumSerializer =
     _$SystemInfoSearchReindexStateEnumSerializer();
 
 class _$SystemInfoSearchReindexStateEnumSerializer
@@ -69,16 +72,19 @@ class _$SystemInfoSearchReindexStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SystemInfoSearchReindexStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SystemInfoSearchReindexStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SystemInfoSearchReindexStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemInfoSearchReindexStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemInfoSearchReindexStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemInfoSearch extends SystemInfoSearch {
@@ -95,18 +101,18 @@ class _$SystemInfoSearch extends SystemInfoSearch {
   @override
   final SystemInfoSearchReindexStateEnum? reindexState;
 
-  factory _$SystemInfoSearch(
-          [void Function(SystemInfoSearchBuilder)? updates]) =>
-      (SystemInfoSearchBuilder()..update(updates))._build();
+  factory _$SystemInfoSearch([
+    void Function(SystemInfoSearchBuilder)? updates,
+  ]) => (SystemInfoSearchBuilder()..update(updates))._build();
 
-  _$SystemInfoSearch._(
-      {this.semanticEnabled,
-      this.reason,
-      this.documents,
-      this.backlog,
-      this.activeModel,
-      this.reindexState})
-      : super._();
+  _$SystemInfoSearch._({
+    this.semanticEnabled,
+    this.reason,
+    this.documents,
+    this.backlog,
+    this.activeModel,
+    this.reindexState,
+  }) : super._();
   @override
   SystemInfoSearch rebuild(void Function(SystemInfoSearchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -215,7 +221,8 @@ class SystemInfoSearchBuilder
   SystemInfoSearch build() => _build();
 
   _$SystemInfoSearch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoSearch._(
           semanticEnabled: semanticEnabled,
           reason: reason,

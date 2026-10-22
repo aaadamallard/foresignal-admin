@@ -12,9 +12,9 @@ class _$WatchlistItemPage extends WatchlistItemPage {
   @override
   final String? nextCursor;
 
-  factory _$WatchlistItemPage(
-          [void Function(WatchlistItemPageBuilder)? updates]) =>
-      (WatchlistItemPageBuilder()..update(updates))._build();
+  factory _$WatchlistItemPage([
+    void Function(WatchlistItemPageBuilder)? updates,
+  ]) => (WatchlistItemPageBuilder()..update(updates))._build();
 
   _$WatchlistItemPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class WatchlistItemPageBuilder
   _$WatchlistItemPage _build() {
     _$WatchlistItemPage _$result;
     try {
-      _$result = _$v ??
-          _$WatchlistItemPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$WatchlistItemPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class WatchlistItemPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchlistItemPage', _$failedField, e.toString());
+          r'WatchlistItemPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

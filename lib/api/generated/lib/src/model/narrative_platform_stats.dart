@@ -38,9 +38,9 @@ abstract class NarrativePlatformStats
 
   NarrativePlatformStats._();
 
-  factory NarrativePlatformStats(
-          [void updates(NarrativePlatformStatsBuilder b)]) =
-      _$NarrativePlatformStats;
+  factory NarrativePlatformStats([
+    void updates(NarrativePlatformStatsBuilder b),
+  ]) = _$NarrativePlatformStats;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NarrativePlatformStatsBuilder b) => b;
@@ -55,7 +55,7 @@ class _$NarrativePlatformStatsSerializer
   @override
   final Iterable<Type> types = const [
     NarrativePlatformStats,
-    _$NarrativePlatformStats
+    _$NarrativePlatformStats,
   ];
 
   @override
@@ -99,9 +99,11 @@ class _$NarrativePlatformStatsSerializer
     NarrativePlatformStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,38 +119,42 @@ class _$NarrativePlatformStatsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'posts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.posts = valueDes;
           break;
         case r'uniqueAuthors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.uniqueAuthors = valueDes;
           break;
         case r'firstObservedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.firstObservedAt = valueDes;
           break;
         case r'earliestPostRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.earliestPostRef = valueDes;
           break;
         default:

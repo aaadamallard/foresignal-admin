@@ -28,25 +28,26 @@ EvidenceEventStatusEnum _$evidenceEventStatusEnumValueOf(String name) {
 
 final BuiltSet<EvidenceEventStatusEnum> _$evidenceEventStatusEnumValues =
     BuiltSet<EvidenceEventStatusEnum>(const <EvidenceEventStatusEnum>[
-  _$evidenceEventStatusEnum_open,
-  _$evidenceEventStatusEnum_merged,
-  _$evidenceEventStatusEnum_closed,
-]);
+      _$evidenceEventStatusEnum_open,
+      _$evidenceEventStatusEnum_merged,
+      _$evidenceEventStatusEnum_closed,
+    ]);
 
 const EvidenceEventQualityFlagsEnum _$evidenceEventQualityFlagsEnum_ECHO =
     const EvidenceEventQualityFlagsEnum._('ECHO');
 const EvidenceEventQualityFlagsEnum
-    _$evidenceEventQualityFlagsEnum_TIMESTAMP_CONFLICT =
+_$evidenceEventQualityFlagsEnum_TIMESTAMP_CONFLICT =
     const EvidenceEventQualityFlagsEnum._('TIMESTAMP_CONFLICT');
 const EvidenceEventQualityFlagsEnum
-    _$evidenceEventQualityFlagsEnum_SINGLE_ORIGINATOR =
+_$evidenceEventQualityFlagsEnum_SINGLE_ORIGINATOR =
     const EvidenceEventQualityFlagsEnum._('SINGLE_ORIGINATOR');
 const EvidenceEventQualityFlagsEnum
-    _$evidenceEventQualityFlagsEnum_LATE_REVISION =
+_$evidenceEventQualityFlagsEnum_LATE_REVISION =
     const EvidenceEventQualityFlagsEnum._('LATE_REVISION');
 
 EvidenceEventQualityFlagsEnum _$evidenceEventQualityFlagsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ECHO':
       return _$evidenceEventQualityFlagsEnum_ECHO;
@@ -62,21 +63,22 @@ EvidenceEventQualityFlagsEnum _$evidenceEventQualityFlagsEnumValueOf(
 }
 
 final BuiltSet<EvidenceEventQualityFlagsEnum>
-    _$evidenceEventQualityFlagsEnumValues = BuiltSet<
-        EvidenceEventQualityFlagsEnum>(const <EvidenceEventQualityFlagsEnum>[
-  _$evidenceEventQualityFlagsEnum_ECHO,
-  _$evidenceEventQualityFlagsEnum_TIMESTAMP_CONFLICT,
-  _$evidenceEventQualityFlagsEnum_SINGLE_ORIGINATOR,
-  _$evidenceEventQualityFlagsEnum_LATE_REVISION,
-]);
+_$evidenceEventQualityFlagsEnumValues = BuiltSet<EvidenceEventQualityFlagsEnum>(
+  const <EvidenceEventQualityFlagsEnum>[
+    _$evidenceEventQualityFlagsEnum_ECHO,
+    _$evidenceEventQualityFlagsEnum_TIMESTAMP_CONFLICT,
+    _$evidenceEventQualityFlagsEnum_SINGLE_ORIGINATOR,
+    _$evidenceEventQualityFlagsEnum_LATE_REVISION,
+  ],
+);
 
 const EvidenceEventFlagsAddedEnum _$evidenceEventFlagsAddedEnum_ECHO =
     const EvidenceEventFlagsAddedEnum._('ECHO');
 const EvidenceEventFlagsAddedEnum
-    _$evidenceEventFlagsAddedEnum_TIMESTAMP_CONFLICT =
+_$evidenceEventFlagsAddedEnum_TIMESTAMP_CONFLICT =
     const EvidenceEventFlagsAddedEnum._('TIMESTAMP_CONFLICT');
 const EvidenceEventFlagsAddedEnum
-    _$evidenceEventFlagsAddedEnum_SINGLE_ORIGINATOR =
+_$evidenceEventFlagsAddedEnum_SINGLE_ORIGINATOR =
     const EvidenceEventFlagsAddedEnum._('SINGLE_ORIGINATOR');
 const EvidenceEventFlagsAddedEnum _$evidenceEventFlagsAddedEnum_LATE_REVISION =
     const EvidenceEventFlagsAddedEnum._('LATE_REVISION');
@@ -97,21 +99,21 @@ EvidenceEventFlagsAddedEnum _$evidenceEventFlagsAddedEnumValueOf(String name) {
 }
 
 final BuiltSet<EvidenceEventFlagsAddedEnum>
-    _$evidenceEventFlagsAddedEnumValues =
+_$evidenceEventFlagsAddedEnumValues =
     BuiltSet<EvidenceEventFlagsAddedEnum>(const <EvidenceEventFlagsAddedEnum>[
-  _$evidenceEventFlagsAddedEnum_ECHO,
-  _$evidenceEventFlagsAddedEnum_TIMESTAMP_CONFLICT,
-  _$evidenceEventFlagsAddedEnum_SINGLE_ORIGINATOR,
-  _$evidenceEventFlagsAddedEnum_LATE_REVISION,
-]);
+      _$evidenceEventFlagsAddedEnum_ECHO,
+      _$evidenceEventFlagsAddedEnum_TIMESTAMP_CONFLICT,
+      _$evidenceEventFlagsAddedEnum_SINGLE_ORIGINATOR,
+      _$evidenceEventFlagsAddedEnum_LATE_REVISION,
+    ]);
 
 Serializer<EvidenceEventStatusEnum> _$evidenceEventStatusEnumSerializer =
     _$EvidenceEventStatusEnumSerializer();
 Serializer<EvidenceEventQualityFlagsEnum>
-    _$evidenceEventQualityFlagsEnumSerializer =
+_$evidenceEventQualityFlagsEnumSerializer =
     _$EvidenceEventQualityFlagsEnumSerializer();
 Serializer<EvidenceEventFlagsAddedEnum>
-    _$evidenceEventFlagsAddedEnumSerializer =
+_$evidenceEventFlagsAddedEnumSerializer =
     _$EvidenceEventFlagsAddedEnumSerializer();
 
 class _$EvidenceEventStatusEnumSerializer
@@ -133,16 +135,20 @@ class _$EvidenceEventStatusEnumSerializer
   final String wireName = 'EvidenceEventStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, EvidenceEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EvidenceEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EvidenceEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EvidenceEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EvidenceEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EvidenceEventQualityFlagsEnumSerializer
@@ -167,16 +173,19 @@ class _$EvidenceEventQualityFlagsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EvidenceEventQualityFlagsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EvidenceEventQualityFlagsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EvidenceEventQualityFlagsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EvidenceEventQualityFlagsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EvidenceEventQualityFlagsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EvidenceEventFlagsAddedEnumSerializer
@@ -200,16 +209,20 @@ class _$EvidenceEventFlagsAddedEnumSerializer
   final String wireName = 'EvidenceEventFlagsAddedEnum';
 
   @override
-  Object serialize(Serializers serializers, EvidenceEventFlagsAddedEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EvidenceEventFlagsAddedEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EvidenceEventFlagsAddedEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EvidenceEventFlagsAddedEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EvidenceEventFlagsAddedEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EvidenceEvent extends EvidenceEvent {
@@ -241,20 +254,20 @@ class _$EvidenceEvent extends EvidenceEvent {
   factory _$EvidenceEvent([void Function(EvidenceEventBuilder)? updates]) =>
       (EvidenceEventBuilder()..update(updates))._build();
 
-  _$EvidenceEvent._(
-      {required this.canonicalEventId,
-      required this.ref,
-      required this.family,
-      required this.status,
-      required this.eventTime,
-      this.regionCodes,
-      required this.observationCount,
-      required this.evidenceGroupCount,
-      required this.qualityFlags,
-      this.flagsAdded,
-      this.mergedInto,
-      this.mergedFrom})
-      : super._();
+  _$EvidenceEvent._({
+    required this.canonicalEventId,
+    required this.ref,
+    required this.family,
+    required this.status,
+    required this.eventTime,
+    this.regionCodes,
+    required this.observationCount,
+    required this.evidenceGroupCount,
+    required this.qualityFlags,
+    this.flagsAdded,
+    this.mergedInto,
+    this.mergedFrom,
+  }) : super._();
   @override
   EvidenceEvent rebuild(void Function(EvidenceEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -421,23 +434,45 @@ class EvidenceEventBuilder
   _$EvidenceEvent _build() {
     _$EvidenceEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EvidenceEvent._(
             canonicalEventId: BuiltValueNullFieldError.checkNotNull(
-                canonicalEventId, r'EvidenceEvent', 'canonicalEventId'),
+              canonicalEventId,
+              r'EvidenceEvent',
+              'canonicalEventId',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'EvidenceEvent', 'ref'),
+              ref,
+              r'EvidenceEvent',
+              'ref',
+            ),
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'EvidenceEvent', 'family'),
+              family,
+              r'EvidenceEvent',
+              'family',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'EvidenceEvent', 'status'),
+              status,
+              r'EvidenceEvent',
+              'status',
+            ),
             eventTime: BuiltValueNullFieldError.checkNotNull(
-                eventTime, r'EvidenceEvent', 'eventTime'),
+              eventTime,
+              r'EvidenceEvent',
+              'eventTime',
+            ),
             regionCodes: _regionCodes?.build(),
             observationCount: BuiltValueNullFieldError.checkNotNull(
-                observationCount, r'EvidenceEvent', 'observationCount'),
+              observationCount,
+              r'EvidenceEvent',
+              'observationCount',
+            ),
             evidenceGroupCount: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupCount, r'EvidenceEvent', 'evidenceGroupCount'),
+              evidenceGroupCount,
+              r'EvidenceEvent',
+              'evidenceGroupCount',
+            ),
             qualityFlags: qualityFlags.build(),
             flagsAdded: _flagsAdded?.build(),
             mergedInto: mergedInto,
@@ -458,7 +493,10 @@ class EvidenceEventBuilder
         _mergedFrom?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EvidenceEvent', _$failedField, e.toString());
+          r'EvidenceEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

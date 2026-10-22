@@ -21,13 +21,13 @@ class _$ProductSpatial extends ProductSpatial {
   factory _$ProductSpatial([void Function(ProductSpatialBuilder)? updates]) =>
       (ProductSpatialBuilder()..update(updates))._build();
 
-  _$ProductSpatial._(
-      {required this.bounds,
-      required this.minZoom,
-      required this.maxZoom,
-      this.maxZoomForAnimation,
-      this.center})
-      : super._();
+  _$ProductSpatial._({
+    required this.bounds,
+    required this.minZoom,
+    required this.maxZoom,
+    this.maxZoomForAnimation,
+    this.center,
+  }) : super._();
   @override
   ProductSpatial rebuild(void Function(ProductSpatialBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,13 +128,20 @@ class ProductSpatialBuilder
   _$ProductSpatial _build() {
     _$ProductSpatial _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductSpatial._(
             bounds: bounds.build(),
             minZoom: BuiltValueNullFieldError.checkNotNull(
-                minZoom, r'ProductSpatial', 'minZoom'),
+              minZoom,
+              r'ProductSpatial',
+              'minZoom',
+            ),
             maxZoom: BuiltValueNullFieldError.checkNotNull(
-                maxZoom, r'ProductSpatial', 'maxZoom'),
+              maxZoom,
+              r'ProductSpatial',
+              'maxZoom',
+            ),
             maxZoomForAnimation: maxZoomForAnimation,
             center: _center?.build(),
           );
@@ -148,7 +155,10 @@ class ProductSpatialBuilder
         _center?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductSpatial', _$failedField, e.toString());
+          r'ProductSpatial',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

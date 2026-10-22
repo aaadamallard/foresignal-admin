@@ -21,13 +21,13 @@ class _$CpaBatchResult extends CpaBatchResult {
   factory _$CpaBatchResult([void Function(CpaBatchResultBuilder)? updates]) =>
       (CpaBatchResultBuilder()..update(updates))._build();
 
-  _$CpaBatchResult._(
-      {required this.subject,
-      required this.asOf,
-      required this.evaluated,
-      this.truncated,
-      required this.items})
-      : super._();
+  _$CpaBatchResult._({
+    required this.subject,
+    required this.asOf,
+    required this.evaluated,
+    this.truncated,
+    required this.items,
+  }) : super._();
   @override
   CpaBatchResult rebuild(void Function(CpaBatchResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -129,13 +129,20 @@ class CpaBatchResultBuilder
   _$CpaBatchResult _build() {
     _$CpaBatchResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CpaBatchResult._(
             subject: subject.build(),
             asOf: BuiltValueNullFieldError.checkNotNull(
-                asOf, r'CpaBatchResult', 'asOf'),
+              asOf,
+              r'CpaBatchResult',
+              'asOf',
+            ),
             evaluated: BuiltValueNullFieldError.checkNotNull(
-                evaluated, r'CpaBatchResult', 'evaluated'),
+              evaluated,
+              r'CpaBatchResult',
+              'evaluated',
+            ),
             truncated: truncated,
             items: items.build(),
           );
@@ -149,7 +156,10 @@ class CpaBatchResultBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CpaBatchResult', _$failedField, e.toString());
+          r'CpaBatchResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

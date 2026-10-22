@@ -26,8 +26,9 @@ abstract class StyleFragmentMetadata
 
   StyleFragmentMetadata._();
 
-  factory StyleFragmentMetadata(
-      [void updates(StyleFragmentMetadataBuilder b)]) = _$StyleFragmentMetadata;
+  factory StyleFragmentMetadata([
+    void updates(StyleFragmentMetadataBuilder b),
+  ]) = _$StyleFragmentMetadata;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StyleFragmentMetadataBuilder b) => b;
@@ -42,7 +43,7 @@ class _$StyleFragmentMetadataSerializer
   @override
   final Iterable<Type> types = const [
     StyleFragmentMetadata,
-    _$StyleFragmentMetadata
+    _$StyleFragmentMetadata,
   ];
 
   @override
@@ -57,8 +58,10 @@ class _$StyleFragmentMetadataSerializer
       yield r'legends';
       yield serializers.serialize(
         object.legends,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.attribution != null) {
@@ -76,9 +79,11 @@ class _$StyleFragmentMetadataSerializer
     StyleFragmentMetadata object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,20 +99,27 @@ class _$StyleFragmentMetadataSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'legends':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.legends.replace(valueDes);
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>?;
           if (valueDes == null) continue;
           result.attribution.replace(valueDes);
           break;

@@ -7,14 +7,15 @@ part of 'edp_stream_fields.dart';
 // **************************************************************************
 
 const EdpStreamFieldsObservedAtModeEnum
-    _$edpStreamFieldsObservedAtModeEnum_upstream =
+_$edpStreamFieldsObservedAtModeEnum_upstream =
     const EdpStreamFieldsObservedAtModeEnum._('upstream');
 const EdpStreamFieldsObservedAtModeEnum
-    _$edpStreamFieldsObservedAtModeEnum_received =
+_$edpStreamFieldsObservedAtModeEnum_received =
     const EdpStreamFieldsObservedAtModeEnum._('received');
 
 EdpStreamFieldsObservedAtModeEnum _$edpStreamFieldsObservedAtModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'upstream':
       return _$edpStreamFieldsObservedAtModeEnum_upstream;
@@ -26,14 +27,16 @@ EdpStreamFieldsObservedAtModeEnum _$edpStreamFieldsObservedAtModeEnumValueOf(
 }
 
 final BuiltSet<EdpStreamFieldsObservedAtModeEnum>
-    _$edpStreamFieldsObservedAtModeEnumValues = BuiltSet<
-        EdpStreamFieldsObservedAtModeEnum>(const <EdpStreamFieldsObservedAtModeEnum>[
-  _$edpStreamFieldsObservedAtModeEnum_upstream,
-  _$edpStreamFieldsObservedAtModeEnum_received,
-]);
+_$edpStreamFieldsObservedAtModeEnumValues =
+    BuiltSet<EdpStreamFieldsObservedAtModeEnum>(
+      const <EdpStreamFieldsObservedAtModeEnum>[
+        _$edpStreamFieldsObservedAtModeEnum_upstream,
+        _$edpStreamFieldsObservedAtModeEnum_received,
+      ],
+    );
 
 Serializer<EdpStreamFieldsObservedAtModeEnum>
-    _$edpStreamFieldsObservedAtModeEnumSerializer =
+_$edpStreamFieldsObservedAtModeEnumSerializer =
     _$EdpStreamFieldsObservedAtModeEnumSerializer();
 
 class _$EdpStreamFieldsObservedAtModeEnumSerializer
@@ -54,16 +57,19 @@ class _$EdpStreamFieldsObservedAtModeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EdpStreamFieldsObservedAtModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EdpStreamFieldsObservedAtModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpStreamFieldsObservedAtModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStreamFieldsObservedAtModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStreamFieldsObservedAtModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStreamFields extends EdpStreamFields {
@@ -79,9 +85,12 @@ class _$EdpStreamFields extends EdpStreamFields {
   factory _$EdpStreamFields([void Function(EdpStreamFieldsBuilder)? updates]) =>
       (EdpStreamFieldsBuilder()..update(updates))._build();
 
-  _$EdpStreamFields._(
-      {this.title, this.significant, this.volatile, this.observedAtMode})
-      : super._();
+  _$EdpStreamFields._({
+    this.title,
+    this.significant,
+    this.volatile,
+    this.observedAtMode,
+  }) : super._();
   @override
   EdpStreamFields rebuild(void Function(EdpStreamFieldsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -178,7 +187,8 @@ class EdpStreamFieldsBuilder
   _$EdpStreamFields _build() {
     _$EdpStreamFields _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpStreamFields._(
             title: title,
             significant: _significant?.build(),
@@ -194,7 +204,10 @@ class EdpStreamFieldsBuilder
         _volatile?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpStreamFields', _$failedField, e.toString());
+          r'EdpStreamFields',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

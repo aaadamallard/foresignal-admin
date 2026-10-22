@@ -28,25 +28,30 @@ ProblemRequiredScopeEnum _$problemRequiredScopeEnumValueOf(String name) {
 
 final BuiltSet<ProblemRequiredScopeEnum> _$problemRequiredScopeEnumValues =
     BuiltSet<ProblemRequiredScopeEnum>(const <ProblemRequiredScopeEnum>[
-  _$problemRequiredScopeEnum_read,
-  _$problemRequiredScopeEnum_agent,
-  _$problemRequiredScopeEnum_admin,
-]);
+      _$problemRequiredScopeEnum_read,
+      _$problemRequiredScopeEnum_agent,
+      _$problemRequiredScopeEnum_admin,
+    ]);
 
-const ProblemClass_Enum _$problemClassEnum_read =
-    const ProblemClass_Enum._('read');
-const ProblemClass_Enum _$problemClassEnum_tiles =
-    const ProblemClass_Enum._('tiles');
-const ProblemClass_Enum _$problemClassEnum_stream =
-    const ProblemClass_Enum._('stream');
+const ProblemClass_Enum _$problemClassEnum_read = const ProblemClass_Enum._(
+  'read',
+);
+const ProblemClass_Enum _$problemClassEnum_tiles = const ProblemClass_Enum._(
+  'tiles',
+);
+const ProblemClass_Enum _$problemClassEnum_stream = const ProblemClass_Enum._(
+  'stream',
+);
 const ProblemClass_Enum _$problemClassEnum_expensive =
     const ProblemClass_Enum._('expensive');
-const ProblemClass_Enum _$problemClassEnum_write =
-    const ProblemClass_Enum._('write');
+const ProblemClass_Enum _$problemClassEnum_write = const ProblemClass_Enum._(
+  'write',
+);
 const ProblemClass_Enum _$problemClassEnum_anonymous =
     const ProblemClass_Enum._('anonymous');
-const ProblemClass_Enum _$problemClassEnum_metrics =
-    const ProblemClass_Enum._('metrics');
+const ProblemClass_Enum _$problemClassEnum_metrics = const ProblemClass_Enum._(
+  'metrics',
+);
 
 ProblemClass_Enum _$problemClassEnumValueOf(String name) {
   switch (name) {
@@ -71,14 +76,14 @@ ProblemClass_Enum _$problemClassEnumValueOf(String name) {
 
 final BuiltSet<ProblemClass_Enum> _$problemClassEnumValues =
     BuiltSet<ProblemClass_Enum>(const <ProblemClass_Enum>[
-  _$problemClassEnum_read,
-  _$problemClassEnum_tiles,
-  _$problemClassEnum_stream,
-  _$problemClassEnum_expensive,
-  _$problemClassEnum_write,
-  _$problemClassEnum_anonymous,
-  _$problemClassEnum_metrics,
-]);
+      _$problemClassEnum_read,
+      _$problemClassEnum_tiles,
+      _$problemClassEnum_stream,
+      _$problemClassEnum_expensive,
+      _$problemClassEnum_write,
+      _$problemClassEnum_anonymous,
+      _$problemClassEnum_metrics,
+    ]);
 
 Serializer<ProblemRequiredScopeEnum> _$problemRequiredScopeEnumSerializer =
     _$ProblemRequiredScopeEnumSerializer();
@@ -104,16 +109,20 @@ class _$ProblemRequiredScopeEnumSerializer
   final String wireName = 'ProblemRequiredScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, ProblemRequiredScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProblemRequiredScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProblemRequiredScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProblemRequiredScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProblemRequiredScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProblemClass_EnumSerializer
@@ -143,15 +152,20 @@ class _$ProblemClass_EnumSerializer
   final String wireName = 'ProblemClass_Enum';
 
   @override
-  Object serialize(Serializers serializers, ProblemClass_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProblemClass_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ProblemClass_Enum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProblemClass_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ProblemClass_Enum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProblemClass_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Problem extends Problem {
@@ -195,26 +209,26 @@ class _$Problem extends Problem {
   factory _$Problem([void Function(ProblemBuilder)? updates]) =>
       (ProblemBuilder()..update(updates))._build();
 
-  _$Problem._(
-      {this.type,
-      required this.title,
-      required this.status,
-      this.detail,
-      this.instance,
-      this.code,
-      this.errors,
-      this.purgeHorizon,
-      this.watermarkSeq,
-      this.horizon,
-      this.capUsd,
-      this.spentUsd,
-      this.estimateUsd,
-      this.requiredScope,
-      this.class_,
-      this.retryAfterSeconds,
-      this.references,
-      this.reason})
-      : super._();
+  _$Problem._({
+    this.type,
+    required this.title,
+    required this.status,
+    this.detail,
+    this.instance,
+    this.code,
+    this.errors,
+    this.purgeHorizon,
+    this.watermarkSeq,
+    this.horizon,
+    this.capUsd,
+    this.spentUsd,
+    this.estimateUsd,
+    this.requiredScope,
+    this.class_,
+    this.retryAfterSeconds,
+    this.references,
+    this.reason,
+  }) : super._();
   @override
   Problem rebuild(void Function(ProblemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -423,13 +437,20 @@ class ProblemBuilder implements Builder<Problem, ProblemBuilder> {
   _$Problem _build() {
     _$Problem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Problem._(
             type: type,
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Problem', 'title'),
+              title,
+              r'Problem',
+              'title',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Problem', 'status'),
+              status,
+              r'Problem',
+              'status',
+            ),
             detail: detail,
             instance: instance,
             code: code,
@@ -456,7 +477,10 @@ class ProblemBuilder implements Builder<Problem, ProblemBuilder> {
         _references?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Problem', _$failedField, e.toString());
+          r'Problem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

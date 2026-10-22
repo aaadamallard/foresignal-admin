@@ -89,9 +89,9 @@ abstract class HoldoverFireRiskPayload
 
   HoldoverFireRiskPayload._();
 
-  factory HoldoverFireRiskPayload(
-          [void updates(HoldoverFireRiskPayloadBuilder b)]) =
-      _$HoldoverFireRiskPayload;
+  factory HoldoverFireRiskPayload([
+    void updates(HoldoverFireRiskPayloadBuilder b),
+  ]) = _$HoldoverFireRiskPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HoldoverFireRiskPayloadBuilder b) => b;
@@ -106,7 +106,7 @@ class _$HoldoverFireRiskPayloadSerializer
   @override
   final Iterable<Type> types = const [
     HoldoverFireRiskPayload,
-    _$HoldoverFireRiskPayload
+    _$HoldoverFireRiskPayload,
   ];
 
   @override
@@ -148,8 +148,9 @@ class _$HoldoverFireRiskPayloadSerializer
       yield r'evidence';
       yield serializers.serialize(
         object.evidence,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DerivedEvidenceRef),
+        ]),
       );
     }
     yield r'cell';
@@ -222,9 +223,11 @@ class _$HoldoverFireRiskPayloadSerializer
     HoldoverFireRiskPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -240,124 +243,159 @@ class _$HoldoverFireRiskPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AircraftFusionPayloadDetector),
-          ) as AircraftFusionPayloadDetector;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AircraftFusionPayloadDetector,
+                    ),
+                  )
+                  as AircraftFusionPayloadDetector;
           result.detector.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HoldoverFireRiskPayloadStatusEnum),
-          ) as HoldoverFireRiskPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HoldoverFireRiskPayloadStatusEnum,
+                    ),
+                  )
+                  as HoldoverFireRiskPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DerivedEvidenceRef)]),
-          ) as BuiltList<DerivedEvidenceRef>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DerivedEvidenceRef),
+                    ]),
+                  )
+                  as BuiltList<DerivedEvidenceRef>?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'cell':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.cell = valueDes;
           break;
         case r'utcDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.utcDay = valueDes;
           break;
         case r'flashCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.flashCount = valueDes;
           break;
         case r'qpe72hMm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.qpe72hMm = valueDes;
           break;
         case r'precipSource':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                HoldoverFireRiskPayloadPrecipSourceEnum),
-          ) as HoldoverFireRiskPayloadPrecipSourceEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HoldoverFireRiskPayloadPrecipSourceEnum,
+                    ),
+                  )
+                  as HoldoverFireRiskPayloadPrecipSourceEnum?;
           if (valueDes == null) continue;
           result.precipSource = valueDes;
           break;
         case r'relativeHumidityPct':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.relativeHumidityPct = valueDes;
           break;
         case r'ignitionConfirmed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.ignitionConfirmed = valueDes;
           break;
         case r'ignitionDelayH':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.ignitionDelayH = valueDes;
           break;
         case r'watchUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.watchUntil = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Severity),
-          ) as Severity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Severity),
+                  )
+                  as Severity?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;

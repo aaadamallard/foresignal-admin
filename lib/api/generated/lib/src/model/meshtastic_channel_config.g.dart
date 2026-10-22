@@ -7,25 +7,26 @@ part of 'meshtastic_channel_config.dart';
 // **************************************************************************
 
 const MeshtasticChannelConfigRegionEnum
-    _$meshtasticChannelConfigRegionEnum_EU_868 =
+_$meshtasticChannelConfigRegionEnum_EU_868 =
     const MeshtasticChannelConfigRegionEnum._('EU_868');
 const MeshtasticChannelConfigRegionEnum
-    _$meshtasticChannelConfigRegionEnum_EU_433 =
+_$meshtasticChannelConfigRegionEnum_EU_433 =
     const MeshtasticChannelConfigRegionEnum._('EU_433');
 const MeshtasticChannelConfigRegionEnum
-    _$meshtasticChannelConfigRegionEnum_UK_868 =
+_$meshtasticChannelConfigRegionEnum_UK_868 =
     const MeshtasticChannelConfigRegionEnum._('UK_868');
 const MeshtasticChannelConfigRegionEnum _$meshtasticChannelConfigRegionEnum_US =
     const MeshtasticChannelConfigRegionEnum._('US');
 const MeshtasticChannelConfigRegionEnum
-    _$meshtasticChannelConfigRegionEnum_ANZ =
+_$meshtasticChannelConfigRegionEnum_ANZ =
     const MeshtasticChannelConfigRegionEnum._('ANZ');
 const MeshtasticChannelConfigRegionEnum
-    _$meshtasticChannelConfigRegionEnum_OTHER =
+_$meshtasticChannelConfigRegionEnum_OTHER =
     const MeshtasticChannelConfigRegionEnum._('OTHER');
 
 MeshtasticChannelConfigRegionEnum _$meshtasticChannelConfigRegionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'EU_868':
       return _$meshtasticChannelConfigRegionEnum_EU_868;
@@ -45,28 +46,30 @@ MeshtasticChannelConfigRegionEnum _$meshtasticChannelConfigRegionEnumValueOf(
 }
 
 final BuiltSet<MeshtasticChannelConfigRegionEnum>
-    _$meshtasticChannelConfigRegionEnumValues = BuiltSet<
-        MeshtasticChannelConfigRegionEnum>(const <MeshtasticChannelConfigRegionEnum>[
-  _$meshtasticChannelConfigRegionEnum_EU_868,
-  _$meshtasticChannelConfigRegionEnum_EU_433,
-  _$meshtasticChannelConfigRegionEnum_UK_868,
-  _$meshtasticChannelConfigRegionEnum_US,
-  _$meshtasticChannelConfigRegionEnum_ANZ,
-  _$meshtasticChannelConfigRegionEnum_OTHER,
-]);
+_$meshtasticChannelConfigRegionEnumValues =
+    BuiltSet<MeshtasticChannelConfigRegionEnum>(
+      const <MeshtasticChannelConfigRegionEnum>[
+        _$meshtasticChannelConfigRegionEnum_EU_868,
+        _$meshtasticChannelConfigRegionEnum_EU_433,
+        _$meshtasticChannelConfigRegionEnum_UK_868,
+        _$meshtasticChannelConfigRegionEnum_US,
+        _$meshtasticChannelConfigRegionEnum_ANZ,
+        _$meshtasticChannelConfigRegionEnum_OTHER,
+      ],
+    );
 
 const MeshtasticChannelConfigAirtimePresetEnum
-    _$meshtasticChannelConfigAirtimePresetEnum_meshtasticLongfast =
+_$meshtasticChannelConfigAirtimePresetEnum_meshtasticLongfast =
     const MeshtasticChannelConfigAirtimePresetEnum._('meshtasticLongfast');
 const MeshtasticChannelConfigAirtimePresetEnum
-    _$meshtasticChannelConfigAirtimePresetEnum_meshtasticMediumfast =
+_$meshtasticChannelConfigAirtimePresetEnum_meshtasticMediumfast =
     const MeshtasticChannelConfigAirtimePresetEnum._('meshtasticMediumfast');
 const MeshtasticChannelConfigAirtimePresetEnum
-    _$meshtasticChannelConfigAirtimePresetEnum_custom =
+_$meshtasticChannelConfigAirtimePresetEnum_custom =
     const MeshtasticChannelConfigAirtimePresetEnum._('custom');
 
 MeshtasticChannelConfigAirtimePresetEnum
-    _$meshtasticChannelConfigAirtimePresetEnumValueOf(String name) {
+_$meshtasticChannelConfigAirtimePresetEnumValueOf(String name) {
   switch (name) {
     case 'meshtasticLongfast':
       return _$meshtasticChannelConfigAirtimePresetEnum_meshtasticLongfast;
@@ -80,22 +83,25 @@ MeshtasticChannelConfigAirtimePresetEnum
 }
 
 final BuiltSet<MeshtasticChannelConfigAirtimePresetEnum>
-    _$meshtasticChannelConfigAirtimePresetEnumValues = BuiltSet<
-        MeshtasticChannelConfigAirtimePresetEnum>(const <MeshtasticChannelConfigAirtimePresetEnum>[
-  _$meshtasticChannelConfigAirtimePresetEnum_meshtasticLongfast,
-  _$meshtasticChannelConfigAirtimePresetEnum_meshtasticMediumfast,
-  _$meshtasticChannelConfigAirtimePresetEnum_custom,
-]);
+_$meshtasticChannelConfigAirtimePresetEnumValues =
+    BuiltSet<MeshtasticChannelConfigAirtimePresetEnum>(
+      const <MeshtasticChannelConfigAirtimePresetEnum>[
+        _$meshtasticChannelConfigAirtimePresetEnum_meshtasticLongfast,
+        _$meshtasticChannelConfigAirtimePresetEnum_meshtasticMediumfast,
+        _$meshtasticChannelConfigAirtimePresetEnum_custom,
+      ],
+    );
 
 const MeshtasticChannelConfigProfileEnum
-    _$meshtasticChannelConfigProfileEnum_text =
+_$meshtasticChannelConfigProfileEnum_text =
     const MeshtasticChannelConfigProfileEnum._('text');
 const MeshtasticChannelConfigProfileEnum
-    _$meshtasticChannelConfigProfileEnum_cbor =
+_$meshtasticChannelConfigProfileEnum_cbor =
     const MeshtasticChannelConfigProfileEnum._('cbor');
 
 MeshtasticChannelConfigProfileEnum _$meshtasticChannelConfigProfileEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'text':
       return _$meshtasticChannelConfigProfileEnum_text;
@@ -107,24 +113,26 @@ MeshtasticChannelConfigProfileEnum _$meshtasticChannelConfigProfileEnumValueOf(
 }
 
 final BuiltSet<MeshtasticChannelConfigProfileEnum>
-    _$meshtasticChannelConfigProfileEnumValues = BuiltSet<
-        MeshtasticChannelConfigProfileEnum>(const <MeshtasticChannelConfigProfileEnum>[
-  _$meshtasticChannelConfigProfileEnum_text,
-  _$meshtasticChannelConfigProfileEnum_cbor,
-]);
+_$meshtasticChannelConfigProfileEnumValues =
+    BuiltSet<MeshtasticChannelConfigProfileEnum>(
+      const <MeshtasticChannelConfigProfileEnum>[
+        _$meshtasticChannelConfigProfileEnum_text,
+        _$meshtasticChannelConfigProfileEnum_cbor,
+      ],
+    );
 
 const MeshtasticChannelConfigMinSeverityEnum
-    _$meshtasticChannelConfigMinSeverityEnum_info =
+_$meshtasticChannelConfigMinSeverityEnum_info =
     const MeshtasticChannelConfigMinSeverityEnum._('info');
 const MeshtasticChannelConfigMinSeverityEnum
-    _$meshtasticChannelConfigMinSeverityEnum_warning =
+_$meshtasticChannelConfigMinSeverityEnum_warning =
     const MeshtasticChannelConfigMinSeverityEnum._('warning');
 const MeshtasticChannelConfigMinSeverityEnum
-    _$meshtasticChannelConfigMinSeverityEnum_critical =
+_$meshtasticChannelConfigMinSeverityEnum_critical =
     const MeshtasticChannelConfigMinSeverityEnum._('critical');
 
 MeshtasticChannelConfigMinSeverityEnum
-    _$meshtasticChannelConfigMinSeverityEnumValueOf(String name) {
+_$meshtasticChannelConfigMinSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$meshtasticChannelConfigMinSeverityEnum_info;
@@ -138,22 +146,24 @@ MeshtasticChannelConfigMinSeverityEnum
 }
 
 final BuiltSet<MeshtasticChannelConfigMinSeverityEnum>
-    _$meshtasticChannelConfigMinSeverityEnumValues = BuiltSet<
-        MeshtasticChannelConfigMinSeverityEnum>(const <MeshtasticChannelConfigMinSeverityEnum>[
-  _$meshtasticChannelConfigMinSeverityEnum_info,
-  _$meshtasticChannelConfigMinSeverityEnum_warning,
-  _$meshtasticChannelConfigMinSeverityEnum_critical,
-]);
+_$meshtasticChannelConfigMinSeverityEnumValues =
+    BuiltSet<MeshtasticChannelConfigMinSeverityEnum>(
+      const <MeshtasticChannelConfigMinSeverityEnum>[
+        _$meshtasticChannelConfigMinSeverityEnum_info,
+        _$meshtasticChannelConfigMinSeverityEnum_warning,
+        _$meshtasticChannelConfigMinSeverityEnum_critical,
+      ],
+    );
 
 const MeshtasticChannelConfigAllowedSendersEnum
-    _$meshtasticChannelConfigAllowedSendersEnum_report =
+_$meshtasticChannelConfigAllowedSendersEnum_report =
     const MeshtasticChannelConfigAllowedSendersEnum._('report');
 const MeshtasticChannelConfigAllowedSendersEnum
-    _$meshtasticChannelConfigAllowedSendersEnum_ack =
+_$meshtasticChannelConfigAllowedSendersEnum_ack =
     const MeshtasticChannelConfigAllowedSendersEnum._('ack');
 
 MeshtasticChannelConfigAllowedSendersEnum
-    _$meshtasticChannelConfigAllowedSendersEnumValueOf(String name) {
+_$meshtasticChannelConfigAllowedSendersEnumValueOf(String name) {
   switch (name) {
     case 'report':
       return _$meshtasticChannelConfigAllowedSendersEnum_report;
@@ -165,26 +175,28 @@ MeshtasticChannelConfigAllowedSendersEnum
 }
 
 final BuiltSet<MeshtasticChannelConfigAllowedSendersEnum>
-    _$meshtasticChannelConfigAllowedSendersEnumValues = BuiltSet<
-        MeshtasticChannelConfigAllowedSendersEnum>(const <MeshtasticChannelConfigAllowedSendersEnum>[
-  _$meshtasticChannelConfigAllowedSendersEnum_report,
-  _$meshtasticChannelConfigAllowedSendersEnum_ack,
-]);
+_$meshtasticChannelConfigAllowedSendersEnumValues =
+    BuiltSet<MeshtasticChannelConfigAllowedSendersEnum>(
+      const <MeshtasticChannelConfigAllowedSendersEnum>[
+        _$meshtasticChannelConfigAllowedSendersEnum_report,
+        _$meshtasticChannelConfigAllowedSendersEnum_ack,
+      ],
+    );
 
 Serializer<MeshtasticChannelConfigRegionEnum>
-    _$meshtasticChannelConfigRegionEnumSerializer =
+_$meshtasticChannelConfigRegionEnumSerializer =
     _$MeshtasticChannelConfigRegionEnumSerializer();
 Serializer<MeshtasticChannelConfigAirtimePresetEnum>
-    _$meshtasticChannelConfigAirtimePresetEnumSerializer =
+_$meshtasticChannelConfigAirtimePresetEnumSerializer =
     _$MeshtasticChannelConfigAirtimePresetEnumSerializer();
 Serializer<MeshtasticChannelConfigProfileEnum>
-    _$meshtasticChannelConfigProfileEnumSerializer =
+_$meshtasticChannelConfigProfileEnumSerializer =
     _$MeshtasticChannelConfigProfileEnumSerializer();
 Serializer<MeshtasticChannelConfigMinSeverityEnum>
-    _$meshtasticChannelConfigMinSeverityEnumSerializer =
+_$meshtasticChannelConfigMinSeverityEnumSerializer =
     _$MeshtasticChannelConfigMinSeverityEnumSerializer();
 Serializer<MeshtasticChannelConfigAllowedSendersEnum>
-    _$meshtasticChannelConfigAllowedSendersEnumSerializer =
+_$meshtasticChannelConfigAllowedSendersEnumSerializer =
     _$MeshtasticChannelConfigAllowedSendersEnumSerializer();
 
 class _$MeshtasticChannelConfigRegionEnumSerializer
@@ -213,16 +225,19 @@ class _$MeshtasticChannelConfigRegionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MeshtasticChannelConfigRegionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MeshtasticChannelConfigRegionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshtasticChannelConfigRegionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshtasticChannelConfigRegionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshtasticChannelConfigRegionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshtasticChannelConfigAirtimePresetEnumSerializer
@@ -240,23 +255,26 @@ class _$MeshtasticChannelConfigAirtimePresetEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshtasticChannelConfigAirtimePresetEnum
+    MeshtasticChannelConfigAirtimePresetEnum,
   ];
   @override
   final String wireName = 'MeshtasticChannelConfigAirtimePresetEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshtasticChannelConfigAirtimePresetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshtasticChannelConfigAirtimePresetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshtasticChannelConfigAirtimePresetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshtasticChannelConfigAirtimePresetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshtasticChannelConfigAirtimePresetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshtasticChannelConfigProfileEnumSerializer
@@ -277,16 +295,19 @@ class _$MeshtasticChannelConfigProfileEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MeshtasticChannelConfigProfileEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MeshtasticChannelConfigProfileEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshtasticChannelConfigProfileEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshtasticChannelConfigProfileEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshtasticChannelConfigProfileEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshtasticChannelConfigMinSeverityEnumSerializer
@@ -304,23 +325,26 @@ class _$MeshtasticChannelConfigMinSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshtasticChannelConfigMinSeverityEnum
+    MeshtasticChannelConfigMinSeverityEnum,
   ];
   @override
   final String wireName = 'MeshtasticChannelConfigMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshtasticChannelConfigMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshtasticChannelConfigMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshtasticChannelConfigMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshtasticChannelConfigMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshtasticChannelConfigMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshtasticChannelConfigAllowedSendersEnumSerializer
@@ -336,23 +360,26 @@ class _$MeshtasticChannelConfigAllowedSendersEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MeshtasticChannelConfigAllowedSendersEnum
+    MeshtasticChannelConfigAllowedSendersEnum,
   ];
   @override
   final String wireName = 'MeshtasticChannelConfigAllowedSendersEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          MeshtasticChannelConfigAllowedSendersEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeshtasticChannelConfigAllowedSendersEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MeshtasticChannelConfigAllowedSendersEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeshtasticChannelConfigAllowedSendersEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeshtasticChannelConfigAllowedSendersEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeshtasticChannelConfig extends MeshtasticChannelConfig {
@@ -376,7 +403,7 @@ class _$MeshtasticChannelConfig extends MeshtasticChannelConfig {
   final bool? reportsEnabled;
   @override
   final BuiltMap<String, MeshtasticChannelConfigAllowedSendersEnum>?
-      allowedSenders;
+  allowedSenders;
   @override
   final bool? compactEvents;
   @override
@@ -398,36 +425,36 @@ class _$MeshtasticChannelConfig extends MeshtasticChannelConfig {
   @override
   final bool privateChannelConfirmed;
 
-  factory _$MeshtasticChannelConfig(
-          [void Function(MeshtasticChannelConfigBuilder)? updates]) =>
-      (MeshtasticChannelConfigBuilder()..update(updates))._build();
+  factory _$MeshtasticChannelConfig([
+    void Function(MeshtasticChannelConfigBuilder)? updates,
+  ]) => (MeshtasticChannelConfigBuilder()..update(updates))._build();
 
-  _$MeshtasticChannelConfig._(
-      {required this.region,
-      this.airtimePreset,
-      this.airtimeCustom,
-      this.dutyCyclePercent,
-      this.minSpacing,
-      this.maxMessagesPerHour,
-      this.profile,
-      this.minSeverity,
-      this.reportsEnabled,
-      this.allowedSenders,
-      this.compactEvents,
-      required this.brokerUrl,
-      this.root,
-      required this.gatewayNodeNum,
-      required this.channelIndex,
-      required this.channelName,
-      this.toNodeNum,
-      this.topicSuffixNodeId,
-      this.licensedMode,
-      required this.privateChannelConfirmed})
-      : super._();
+  _$MeshtasticChannelConfig._({
+    required this.region,
+    this.airtimePreset,
+    this.airtimeCustom,
+    this.dutyCyclePercent,
+    this.minSpacing,
+    this.maxMessagesPerHour,
+    this.profile,
+    this.minSeverity,
+    this.reportsEnabled,
+    this.allowedSenders,
+    this.compactEvents,
+    required this.brokerUrl,
+    this.root,
+    required this.gatewayNodeNum,
+    required this.channelIndex,
+    required this.channelName,
+    this.toNodeNum,
+    this.topicSuffixNodeId,
+    this.licensedMode,
+    required this.privateChannelConfirmed,
+  }) : super._();
   @override
   MeshtasticChannelConfig rebuild(
-          void Function(MeshtasticChannelConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MeshtasticChannelConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MeshtasticChannelConfigBuilder toBuilder() =>
@@ -533,8 +560,8 @@ class MeshtasticChannelConfigBuilder
   MeshChannelCommonConfigAirtimeCustomBuilder get airtimeCustom =>
       _$this._airtimeCustom ??= MeshChannelCommonConfigAirtimeCustomBuilder();
   set airtimeCustom(
-          MeshChannelCommonConfigAirtimeCustomBuilder? airtimeCustom) =>
-      _$this._airtimeCustom = airtimeCustom;
+    MeshChannelCommonConfigAirtimeCustomBuilder? airtimeCustom,
+  ) => _$this._airtimeCustom = airtimeCustom;
 
   num? _dutyCyclePercent;
   num? get dutyCyclePercent => _$this._dutyCyclePercent;
@@ -567,14 +594,14 @@ class MeshtasticChannelConfigBuilder
       _$this._reportsEnabled = reportsEnabled;
 
   MapBuilder<String, MeshtasticChannelConfigAllowedSendersEnum>?
-      _allowedSenders;
+  _allowedSenders;
   MapBuilder<String, MeshtasticChannelConfigAllowedSendersEnum>
-      get allowedSenders => _$this._allowedSenders ??=
-          MapBuilder<String, MeshtasticChannelConfigAllowedSendersEnum>();
+  get allowedSenders => _$this._allowedSenders ??=
+      MapBuilder<String, MeshtasticChannelConfigAllowedSendersEnum>();
   set allowedSenders(
-          MapBuilder<String, MeshtasticChannelConfigAllowedSendersEnum>?
-              allowedSenders) =>
-      _$this._allowedSenders = allowedSenders;
+    MapBuilder<String, MeshtasticChannelConfigAllowedSendersEnum>?
+    allowedSenders,
+  ) => _$this._allowedSenders = allowedSenders;
 
   bool? _compactEvents;
   bool? get compactEvents => _$this._compactEvents;
@@ -668,10 +695,14 @@ class MeshtasticChannelConfigBuilder
   _$MeshtasticChannelConfig _build() {
     _$MeshtasticChannelConfig _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MeshtasticChannelConfig._(
             region: BuiltValueNullFieldError.checkNotNull(
-                region, r'MeshtasticChannelConfig', 'region'),
+              region,
+              r'MeshtasticChannelConfig',
+              'region',
+            ),
             airtimePreset: airtimePreset,
             airtimeCustom: _airtimeCustom?.build(),
             dutyCyclePercent: dutyCyclePercent,
@@ -683,21 +714,34 @@ class MeshtasticChannelConfigBuilder
             allowedSenders: _allowedSenders?.build(),
             compactEvents: compactEvents,
             brokerUrl: BuiltValueNullFieldError.checkNotNull(
-                brokerUrl, r'MeshtasticChannelConfig', 'brokerUrl'),
+              brokerUrl,
+              r'MeshtasticChannelConfig',
+              'brokerUrl',
+            ),
             root: root,
             gatewayNodeNum: BuiltValueNullFieldError.checkNotNull(
-                gatewayNodeNum, r'MeshtasticChannelConfig', 'gatewayNodeNum'),
+              gatewayNodeNum,
+              r'MeshtasticChannelConfig',
+              'gatewayNodeNum',
+            ),
             channelIndex: BuiltValueNullFieldError.checkNotNull(
-                channelIndex, r'MeshtasticChannelConfig', 'channelIndex'),
+              channelIndex,
+              r'MeshtasticChannelConfig',
+              'channelIndex',
+            ),
             channelName: BuiltValueNullFieldError.checkNotNull(
-                channelName, r'MeshtasticChannelConfig', 'channelName'),
+              channelName,
+              r'MeshtasticChannelConfig',
+              'channelName',
+            ),
             toNodeNum: toNodeNum,
             topicSuffixNodeId: topicSuffixNodeId,
             licensedMode: licensedMode,
             privateChannelConfirmed: BuiltValueNullFieldError.checkNotNull(
-                privateChannelConfirmed,
-                r'MeshtasticChannelConfig',
-                'privateChannelConfirmed'),
+              privateChannelConfirmed,
+              r'MeshtasticChannelConfig',
+              'privateChannelConfirmed',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -709,7 +753,10 @@ class MeshtasticChannelConfigBuilder
         _allowedSenders?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MeshtasticChannelConfig', _$failedField, e.toString());
+          r'MeshtasticChannelConfig',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

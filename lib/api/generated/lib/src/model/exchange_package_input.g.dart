@@ -12,7 +12,8 @@ const ExchangePackageInputDeliverEnum _$exchangePackageInputDeliverEnum_file =
     const ExchangePackageInputDeliverEnum._('file');
 
 ExchangePackageInputDeliverEnum _$exchangePackageInputDeliverEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'peer':
       return _$exchangePackageInputDeliverEnum_peer;
@@ -24,14 +25,16 @@ ExchangePackageInputDeliverEnum _$exchangePackageInputDeliverEnumValueOf(
 }
 
 final BuiltSet<ExchangePackageInputDeliverEnum>
-    _$exchangePackageInputDeliverEnumValues = BuiltSet<
-        ExchangePackageInputDeliverEnum>(const <ExchangePackageInputDeliverEnum>[
-  _$exchangePackageInputDeliverEnum_peer,
-  _$exchangePackageInputDeliverEnum_file,
-]);
+_$exchangePackageInputDeliverEnumValues =
+    BuiltSet<ExchangePackageInputDeliverEnum>(
+      const <ExchangePackageInputDeliverEnum>[
+        _$exchangePackageInputDeliverEnum_peer,
+        _$exchangePackageInputDeliverEnum_file,
+      ],
+    );
 
 Serializer<ExchangePackageInputDeliverEnum>
-    _$exchangePackageInputDeliverEnumSerializer =
+_$exchangePackageInputDeliverEnumSerializer =
     _$ExchangePackageInputDeliverEnumSerializer();
 
 class _$ExchangePackageInputDeliverEnumSerializer
@@ -52,16 +55,19 @@ class _$ExchangePackageInputDeliverEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExchangePackageInputDeliverEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExchangePackageInputDeliverEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExchangePackageInputDeliverEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExchangePackageInputDeliverEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExchangePackageInputDeliverEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExchangePackageInput extends ExchangePackageInput {
@@ -76,21 +82,21 @@ class _$ExchangePackageInput extends ExchangePackageInput {
   @override
   final ExchangePackageInputExtract? extract;
 
-  factory _$ExchangePackageInput(
-          [void Function(ExchangePackageInputBuilder)? updates]) =>
-      (ExchangePackageInputBuilder()..update(updates))._build();
+  factory _$ExchangePackageInput([
+    void Function(ExchangePackageInputBuilder)? updates,
+  ]) => (ExchangePackageInputBuilder()..update(updates))._build();
 
-  _$ExchangePackageInput._(
-      {required this.objectRef,
-      this.recipients,
-      this.message,
-      this.deliver,
-      this.extract})
-      : super._();
+  _$ExchangePackageInput._({
+    required this.objectRef,
+    this.recipients,
+    this.message,
+    this.deliver,
+    this.extract,
+  }) : super._();
   @override
   ExchangePackageInput rebuild(
-          void Function(ExchangePackageInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExchangePackageInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExchangePackageInputBuilder toBuilder() =>
@@ -191,10 +197,14 @@ class ExchangePackageInputBuilder
   _$ExchangePackageInput _build() {
     _$ExchangePackageInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExchangePackageInput._(
             objectRef: BuiltValueNullFieldError.checkNotNull(
-                objectRef, r'ExchangePackageInput', 'objectRef'),
+              objectRef,
+              r'ExchangePackageInput',
+              'objectRef',
+            ),
             recipients: recipients,
             message: message,
             deliver: deliver,
@@ -207,7 +217,10 @@ class ExchangePackageInputBuilder
         _extract?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExchangePackageInput', _$failedField, e.toString());
+          r'ExchangePackageInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

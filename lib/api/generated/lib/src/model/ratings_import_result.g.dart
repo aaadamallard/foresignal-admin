@@ -7,22 +7,23 @@ part of 'ratings_import_result.dart';
 // **************************************************************************
 
 const RatingsImportResultProviderEnum
-    _$ratingsImportResultProviderEnum_wikidata =
+_$ratingsImportResultProviderEnum_wikidata =
     const RatingsImportResultProviderEnum._('wikidata');
 const RatingsImportResultProviderEnum
-    _$ratingsImportResultProviderEnum_partisanWeb =
+_$ratingsImportResultProviderEnum_partisanWeb =
     const RatingsImportResultProviderEnum._('partisanWeb');
 const RatingsImportResultProviderEnum
-    _$ratingsImportResultProviderEnum_allsides =
+_$ratingsImportResultProviderEnum_allsides =
     const RatingsImportResultProviderEnum._('allsides');
 const RatingsImportResultProviderEnum _$ratingsImportResultProviderEnum_mbfc =
     const RatingsImportResultProviderEnum._('mbfc');
 const RatingsImportResultProviderEnum
-    _$ratingsImportResultProviderEnum_operator_ =
+_$ratingsImportResultProviderEnum_operator_ =
     const RatingsImportResultProviderEnum._('operator_');
 
 RatingsImportResultProviderEnum _$ratingsImportResultProviderEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'wikidata':
       return _$ratingsImportResultProviderEnum_wikidata;
@@ -40,17 +41,19 @@ RatingsImportResultProviderEnum _$ratingsImportResultProviderEnumValueOf(
 }
 
 final BuiltSet<RatingsImportResultProviderEnum>
-    _$ratingsImportResultProviderEnumValues = BuiltSet<
-        RatingsImportResultProviderEnum>(const <RatingsImportResultProviderEnum>[
-  _$ratingsImportResultProviderEnum_wikidata,
-  _$ratingsImportResultProviderEnum_partisanWeb,
-  _$ratingsImportResultProviderEnum_allsides,
-  _$ratingsImportResultProviderEnum_mbfc,
-  _$ratingsImportResultProviderEnum_operator_,
-]);
+_$ratingsImportResultProviderEnumValues =
+    BuiltSet<RatingsImportResultProviderEnum>(
+      const <RatingsImportResultProviderEnum>[
+        _$ratingsImportResultProviderEnum_wikidata,
+        _$ratingsImportResultProviderEnum_partisanWeb,
+        _$ratingsImportResultProviderEnum_allsides,
+        _$ratingsImportResultProviderEnum_mbfc,
+        _$ratingsImportResultProviderEnum_operator_,
+      ],
+    );
 
 Serializer<RatingsImportResultProviderEnum>
-    _$ratingsImportResultProviderEnumSerializer =
+_$ratingsImportResultProviderEnumSerializer =
     _$RatingsImportResultProviderEnumSerializer();
 
 class _$RatingsImportResultProviderEnumSerializer
@@ -77,16 +80,19 @@ class _$RatingsImportResultProviderEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, RatingsImportResultProviderEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RatingsImportResultProviderEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RatingsImportResultProviderEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RatingsImportResultProviderEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RatingsImportResultProviderEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RatingsImportResult extends RatingsImportResult {
@@ -105,23 +111,23 @@ class _$RatingsImportResult extends RatingsImportResult {
   @override
   final DateTime importedAt;
 
-  factory _$RatingsImportResult(
-          [void Function(RatingsImportResultBuilder)? updates]) =>
-      (RatingsImportResultBuilder()..update(updates))._build();
+  factory _$RatingsImportResult([
+    void Function(RatingsImportResultBuilder)? updates,
+  ]) => (RatingsImportResultBuilder()..update(updates))._build();
 
-  _$RatingsImportResult._(
-      {required this.provider,
-      required this.imported,
-      required this.updated,
-      required this.rejected,
-      this.outletsCreated,
-      this.errors,
-      required this.importedAt})
-      : super._();
+  _$RatingsImportResult._({
+    required this.provider,
+    required this.imported,
+    required this.updated,
+    required this.rejected,
+    this.outletsCreated,
+    this.errors,
+    required this.importedAt,
+  }) : super._();
   @override
   RatingsImportResult rebuild(
-          void Function(RatingsImportResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RatingsImportResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RatingsImportResultBuilder toBuilder() =>
@@ -239,20 +245,36 @@ class RatingsImportResultBuilder
   _$RatingsImportResult _build() {
     _$RatingsImportResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RatingsImportResult._(
             provider: BuiltValueNullFieldError.checkNotNull(
-                provider, r'RatingsImportResult', 'provider'),
+              provider,
+              r'RatingsImportResult',
+              'provider',
+            ),
             imported: BuiltValueNullFieldError.checkNotNull(
-                imported, r'RatingsImportResult', 'imported'),
+              imported,
+              r'RatingsImportResult',
+              'imported',
+            ),
             updated: BuiltValueNullFieldError.checkNotNull(
-                updated, r'RatingsImportResult', 'updated'),
+              updated,
+              r'RatingsImportResult',
+              'updated',
+            ),
             rejected: BuiltValueNullFieldError.checkNotNull(
-                rejected, r'RatingsImportResult', 'rejected'),
+              rejected,
+              r'RatingsImportResult',
+              'rejected',
+            ),
             outletsCreated: outletsCreated,
             errors: _errors?.build(),
             importedAt: BuiltValueNullFieldError.checkNotNull(
-                importedAt, r'RatingsImportResult', 'importedAt'),
+              importedAt,
+              r'RatingsImportResult',
+              'importedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -261,7 +283,10 @@ class RatingsImportResultBuilder
         _errors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RatingsImportResult', _$failedField, e.toString());
+          r'RatingsImportResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

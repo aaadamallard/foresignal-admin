@@ -7,15 +7,16 @@ part of 'benchmark_case_expectations_precursors_inner.dart';
 // **************************************************************************
 
 const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
-    _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated =
+_$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated =
     const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum._('validated');
 const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
-    _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated =
+_$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated =
     const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum._(
-        'notValidated');
+      'notValidated',
+    );
 
 BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
-    _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValueOf(String name) {
+_$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValueOf(String name) {
   switch (name) {
     case 'validated':
       return _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated;
@@ -27,20 +28,23 @@ BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
 }
 
 final BuiltSet<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>
-    _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValues = BuiltSet<
-        BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>(const <BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>[
-  _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated,
-  _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated,
-]);
+_$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValues =
+    BuiltSet<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>(
+      const <BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>[
+        _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated,
+        _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated,
+      ],
+    );
 
 Serializer<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>
-    _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer =
+_$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer =
     _$BenchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer();
 
 class _$BenchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer
     implements
         PrimitiveSerializer<
-            BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum> {
+          BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'validated': 'validated',
     'notValidated': 'not-validated',
@@ -52,24 +56,27 @@ class _$BenchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
+    BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum,
   ];
   @override
   final String wireName =
       'BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkCaseExpectationsPrecursorsInner
@@ -85,24 +92,22 @@ class _$BenchmarkCaseExpectationsPrecursorsInner
   @override
   final num? lagHours;
 
-  factory _$BenchmarkCaseExpectationsPrecursorsInner(
-          [void Function(BenchmarkCaseExpectationsPrecursorsInnerBuilder)?
-              updates]) =>
-      (BenchmarkCaseExpectationsPrecursorsInnerBuilder()..update(updates))
-          ._build();
+  factory _$BenchmarkCaseExpectationsPrecursorsInner([
+    void Function(BenchmarkCaseExpectationsPrecursorsInnerBuilder)? updates,
+  ]) => (BenchmarkCaseExpectationsPrecursorsInnerBuilder()..update(updates))
+      ._build();
 
-  _$BenchmarkCaseExpectationsPrecursorsInner._(
-      {this.precursorId,
-      this.leader,
-      this.follower,
-      required this.expected,
-      this.lagHours})
-      : super._();
+  _$BenchmarkCaseExpectationsPrecursorsInner._({
+    this.precursorId,
+    this.leader,
+    this.follower,
+    required this.expected,
+    this.lagHours,
+  }) : super._();
   @override
   BenchmarkCaseExpectationsPrecursorsInner rebuild(
-          void Function(BenchmarkCaseExpectationsPrecursorsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkCaseExpectationsPrecursorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkCaseExpectationsPrecursorsInnerBuilder toBuilder() =>
@@ -134,7 +139,8 @@ class _$BenchmarkCaseExpectationsPrecursorsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'BenchmarkCaseExpectationsPrecursorsInner')
+            r'BenchmarkCaseExpectationsPrecursorsInner',
+          )
           ..add('precursorId', precursorId)
           ..add('leader', leader)
           ..add('follower', follower)
@@ -146,8 +152,10 @@ class _$BenchmarkCaseExpectationsPrecursorsInner
 
 class BenchmarkCaseExpectationsPrecursorsInnerBuilder
     implements
-        Builder<BenchmarkCaseExpectationsPrecursorsInner,
-            BenchmarkCaseExpectationsPrecursorsInnerBuilder> {
+        Builder<
+          BenchmarkCaseExpectationsPrecursorsInner,
+          BenchmarkCaseExpectationsPrecursorsInnerBuilder
+        > {
   _$BenchmarkCaseExpectationsPrecursorsInner? _$v;
 
   String? _precursorId;
@@ -166,8 +174,8 @@ class BenchmarkCaseExpectationsPrecursorsInnerBuilder
   BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum? get expected =>
       _$this._expected;
   set expected(
-          BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum? expected) =>
-      _$this._expected = expected;
+    BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum? expected,
+  ) => _$this._expected = expected;
 
   num? _lagHours;
   num? get lagHours => _$this._lagHours;
@@ -197,7 +205,8 @@ class BenchmarkCaseExpectationsPrecursorsInnerBuilder
 
   @override
   void update(
-      void Function(BenchmarkCaseExpectationsPrecursorsInnerBuilder)? updates) {
+    void Function(BenchmarkCaseExpectationsPrecursorsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -205,13 +214,17 @@ class BenchmarkCaseExpectationsPrecursorsInnerBuilder
   BenchmarkCaseExpectationsPrecursorsInner build() => _build();
 
   _$BenchmarkCaseExpectationsPrecursorsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BenchmarkCaseExpectationsPrecursorsInner._(
           precursorId: precursorId,
           leader: leader,
           follower: follower,
-          expected: BuiltValueNullFieldError.checkNotNull(expected,
-              r'BenchmarkCaseExpectationsPrecursorsInner', 'expected'),
+          expected: BuiltValueNullFieldError.checkNotNull(
+            expected,
+            r'BenchmarkCaseExpectationsPrecursorsInner',
+            'expected',
+          ),
           lagHours: lagHours,
         );
     replace(_$result);

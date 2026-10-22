@@ -16,20 +16,20 @@ class _$ChronicleSummaryLayersInner extends ChronicleSummaryLayersInner {
   @override
   final BuiltList<ChronicleSummaryLayersInnerSeriesInner>? series;
 
-  factory _$ChronicleSummaryLayersInner(
-          [void Function(ChronicleSummaryLayersInnerBuilder)? updates]) =>
-      (ChronicleSummaryLayersInnerBuilder()..update(updates))._build();
+  factory _$ChronicleSummaryLayersInner([
+    void Function(ChronicleSummaryLayersInnerBuilder)? updates,
+  ]) => (ChronicleSummaryLayersInnerBuilder()..update(updates))._build();
 
-  _$ChronicleSummaryLayersInner._(
-      {required this.layerId,
-      required this.name,
-      required this.rows,
-      this.series})
-      : super._();
+  _$ChronicleSummaryLayersInner._({
+    required this.layerId,
+    required this.name,
+    required this.rows,
+    this.series,
+  }) : super._();
   @override
   ChronicleSummaryLayersInner rebuild(
-          void Function(ChronicleSummaryLayersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSummaryLayersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSummaryLayersInnerBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$ChronicleSummaryLayersInner extends ChronicleSummaryLayersInner {
 
 class ChronicleSummaryLayersInnerBuilder
     implements
-        Builder<ChronicleSummaryLayersInner,
-            ChronicleSummaryLayersInnerBuilder> {
+        Builder<
+          ChronicleSummaryLayersInner,
+          ChronicleSummaryLayersInnerBuilder
+        > {
   _$ChronicleSummaryLayersInner? _$v;
 
   String? _layerId;
@@ -123,14 +125,24 @@ class ChronicleSummaryLayersInnerBuilder
   _$ChronicleSummaryLayersInner _build() {
     _$ChronicleSummaryLayersInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSummaryLayersInner._(
             layerId: BuiltValueNullFieldError.checkNotNull(
-                layerId, r'ChronicleSummaryLayersInner', 'layerId'),
+              layerId,
+              r'ChronicleSummaryLayersInner',
+              'layerId',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ChronicleSummaryLayersInner', 'name'),
+              name,
+              r'ChronicleSummaryLayersInner',
+              'name',
+            ),
             rows: BuiltValueNullFieldError.checkNotNull(
-                rows, r'ChronicleSummaryLayersInner', 'rows'),
+              rows,
+              r'ChronicleSummaryLayersInner',
+              'rows',
+            ),
             series: _series?.build(),
           );
     } catch (_) {
@@ -140,7 +152,10 @@ class ChronicleSummaryLayersInnerBuilder
         _series?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSummaryLayersInner', _$failedField, e.toString());
+          r'ChronicleSummaryLayersInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

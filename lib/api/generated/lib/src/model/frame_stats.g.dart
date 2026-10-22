@@ -23,14 +23,14 @@ class _$FrameStats extends FrameStats {
   factory _$FrameStats([void Function(FrameStatsBuilder)? updates]) =>
       (FrameStatsBuilder()..update(updates))._build();
 
-  _$FrameStats._(
-      {this.min,
-      this.max,
-      this.mean,
-      this.coveragePct,
-      this.codeCounts,
-      this.flagMissing})
-      : super._();
+  _$FrameStats._({
+    this.min,
+    this.max,
+    this.mean,
+    this.coveragePct,
+    this.codeCounts,
+    this.flagMissing,
+  }) : super._();
   @override
   FrameStats rebuild(void Function(FrameStatsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -139,7 +139,8 @@ class FrameStatsBuilder implements Builder<FrameStats, FrameStatsBuilder> {
   _$FrameStats _build() {
     _$FrameStats _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FrameStats._(
             min: min,
             max: max,
@@ -155,7 +156,10 @@ class FrameStatsBuilder implements Builder<FrameStats, FrameStatsBuilder> {
         _codeCounts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FrameStats', _$failedField, e.toString());
+          r'FrameStats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -39,9 +39,9 @@ abstract class IntelEventMemberJoinReason
 
   IntelEventMemberJoinReason._();
 
-  factory IntelEventMemberJoinReason(
-          [void updates(IntelEventMemberJoinReasonBuilder b)]) =
-      _$IntelEventMemberJoinReason;
+  factory IntelEventMemberJoinReason([
+    void updates(IntelEventMemberJoinReasonBuilder b),
+  ]) = _$IntelEventMemberJoinReason;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelEventMemberJoinReasonBuilder b) => b;
@@ -56,7 +56,7 @@ class _$IntelEventMemberJoinReasonSerializer
   @override
   final Iterable<Type> types = const [
     IntelEventMemberJoinReason,
-    _$IntelEventMemberJoinReason
+    _$IntelEventMemberJoinReason,
   ];
 
   @override
@@ -110,9 +110,11 @@ class _$IntelEventMemberJoinReasonSerializer
     IntelEventMemberJoinReason object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -128,43 +130,54 @@ class _$IntelEventMemberJoinReasonSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'clause':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.clause = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;
         case r'dtMinutes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.dtMinutes = valueDes;
           break;
         case r'matchedKeys':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.matchedKeys.replace(valueDes);
           break;
         case r'regionTag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionTag = valueDes;
           break;

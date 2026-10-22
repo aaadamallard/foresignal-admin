@@ -23,14 +23,15 @@ StormSwathPayloadStatusEnum _$stormSwathPayloadStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<StormSwathPayloadStatusEnum>
-    _$stormSwathPayloadStatusEnumValues =
-    BuiltSet<StormSwathPayloadStatusEnum>(const <StormSwathPayloadStatusEnum>[
-  _$stormSwathPayloadStatusEnum_active,
-  _$stormSwathPayloadStatusEnum_ended,
-]);
+_$stormSwathPayloadStatusEnumValues = BuiltSet<StormSwathPayloadStatusEnum>(
+  const <StormSwathPayloadStatusEnum>[
+    _$stormSwathPayloadStatusEnum_active,
+    _$stormSwathPayloadStatusEnum_ended,
+  ],
+);
 
 Serializer<StormSwathPayloadStatusEnum>
-    _$stormSwathPayloadStatusEnumSerializer =
+_$stormSwathPayloadStatusEnumSerializer =
     _$StormSwathPayloadStatusEnumSerializer();
 
 class _$StormSwathPayloadStatusEnumSerializer
@@ -50,16 +51,20 @@ class _$StormSwathPayloadStatusEnumSerializer
   final String wireName = 'StormSwathPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, StormSwathPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StormSwathPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormSwathPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormSwathPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormSwathPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormSwathPayload extends StormSwathPayload {
@@ -72,16 +77,16 @@ class _$StormSwathPayload extends StormSwathPayload {
   @override
   final StormSwathPayloadStatusEnum? status;
 
-  factory _$StormSwathPayload(
-          [void Function(StormSwathPayloadBuilder)? updates]) =>
-      (StormSwathPayloadBuilder()..update(updates))._build();
+  factory _$StormSwathPayload([
+    void Function(StormSwathPayloadBuilder)? updates,
+  ]) => (StormSwathPayloadBuilder()..update(updates))._build();
 
-  _$StormSwathPayload._(
-      {required this.trackId,
-      this.meshMaxMm,
-      required this.durationMin,
-      this.status})
-      : super._();
+  _$StormSwathPayload._({
+    required this.trackId,
+    this.meshMaxMm,
+    required this.durationMin,
+    this.status,
+  }) : super._();
   @override
   StormSwathPayload rebuild(void Function(StormSwathPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -172,13 +177,20 @@ class StormSwathPayloadBuilder
   StormSwathPayload build() => _build();
 
   _$StormSwathPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StormSwathPayload._(
           trackId: BuiltValueNullFieldError.checkNotNull(
-              trackId, r'StormSwathPayload', 'trackId'),
+            trackId,
+            r'StormSwathPayload',
+            'trackId',
+          ),
           meshMaxMm: meshMaxMm,
           durationMin: BuiltValueNullFieldError.checkNotNull(
-              durationMin, r'StormSwathPayload', 'durationMin'),
+            durationMin,
+            r'StormSwathPayload',
+            'durationMin',
+          ),
           status: status,
         );
     replace(_$result);

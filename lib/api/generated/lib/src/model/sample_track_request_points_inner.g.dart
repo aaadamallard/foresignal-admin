@@ -14,17 +14,19 @@ class _$SampleTrackRequestPointsInner extends SampleTrackRequestPointsInner {
   @override
   final DateTime time;
 
-  factory _$SampleTrackRequestPointsInner(
-          [void Function(SampleTrackRequestPointsInnerBuilder)? updates]) =>
-      (SampleTrackRequestPointsInnerBuilder()..update(updates))._build();
+  factory _$SampleTrackRequestPointsInner([
+    void Function(SampleTrackRequestPointsInnerBuilder)? updates,
+  ]) => (SampleTrackRequestPointsInnerBuilder()..update(updates))._build();
 
-  _$SampleTrackRequestPointsInner._(
-      {required this.lon, required this.lat, required this.time})
-      : super._();
+  _$SampleTrackRequestPointsInner._({
+    required this.lon,
+    required this.lat,
+    required this.time,
+  }) : super._();
   @override
   SampleTrackRequestPointsInner rebuild(
-          void Function(SampleTrackRequestPointsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SampleTrackRequestPointsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SampleTrackRequestPointsInnerBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$SampleTrackRequestPointsInner extends SampleTrackRequestPointsInner {
 
 class SampleTrackRequestPointsInnerBuilder
     implements
-        Builder<SampleTrackRequestPointsInner,
-            SampleTrackRequestPointsInnerBuilder> {
+        Builder<
+          SampleTrackRequestPointsInner,
+          SampleTrackRequestPointsInnerBuilder
+        > {
   _$SampleTrackRequestPointsInner? _$v;
 
   num? _lon;
@@ -106,14 +110,24 @@ class SampleTrackRequestPointsInnerBuilder
   SampleTrackRequestPointsInner build() => _build();
 
   _$SampleTrackRequestPointsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SampleTrackRequestPointsInner._(
           lon: BuiltValueNullFieldError.checkNotNull(
-              lon, r'SampleTrackRequestPointsInner', 'lon'),
+            lon,
+            r'SampleTrackRequestPointsInner',
+            'lon',
+          ),
           lat: BuiltValueNullFieldError.checkNotNull(
-              lat, r'SampleTrackRequestPointsInner', 'lat'),
+            lat,
+            r'SampleTrackRequestPointsInner',
+            'lat',
+          ),
           time: BuiltValueNullFieldError.checkNotNull(
-              time, r'SampleTrackRequestPointsInner', 'time'),
+            time,
+            r'SampleTrackRequestPointsInner',
+            'time',
+          ),
         );
     replace(_$result);
     return _$result;

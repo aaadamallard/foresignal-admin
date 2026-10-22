@@ -23,8 +23,10 @@ part 'reference_import_request_params.g.dart';
 @BuiltValue()
 abstract class ReferenceImportRequestParams
     implements
-        Built<ReferenceImportRequestParams,
-            ReferenceImportRequestParamsBuilder> {
+        Built<
+          ReferenceImportRequestParams,
+          ReferenceImportRequestParamsBuilder
+        > {
   /// ucdp-ged: CSV (or the downloaded ZIP holding it) path relative to `${FORESIGNAL_DATA_DIR}/imports`
   @BuiltValueField(wireName: r'file')
   String? get file;
@@ -57,9 +59,9 @@ abstract class ReferenceImportRequestParams
 
   ReferenceImportRequestParams._();
 
-  factory ReferenceImportRequestParams(
-          [void updates(ReferenceImportRequestParamsBuilder b)]) =
-      _$ReferenceImportRequestParams;
+  factory ReferenceImportRequestParams([
+    void updates(ReferenceImportRequestParamsBuilder b),
+  ]) = _$ReferenceImportRequestParams;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ReferenceImportRequestParamsBuilder b) => b;
@@ -74,7 +76,7 @@ class _$ReferenceImportRequestParamsSerializer
   @override
   final Iterable<Type> types = const [
     ReferenceImportRequestParams,
-    _$ReferenceImportRequestParams
+    _$ReferenceImportRequestParams,
   ];
 
   @override
@@ -149,9 +151,11 @@ class _$ReferenceImportRequestParamsSerializer
     ReferenceImportRequestParams object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -167,68 +171,86 @@ class _$ReferenceImportRequestParamsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'file':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.file = valueDes;
           break;
         case r'useApi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.useApi = valueDes;
           break;
         case r'yearFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.yearFrom = valueDes;
           break;
         case r'yearTo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.yearTo = valueDes;
           break;
         case r'countries':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.countries.replace(valueDes);
           break;
         case r'minMagnitude':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minMagnitude = valueDes;
           break;
         case r'hazardTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.hazardTypes.replace(valueDes);
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.version = valueDes;
           break;

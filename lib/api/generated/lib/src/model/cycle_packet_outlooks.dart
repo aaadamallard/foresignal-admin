@@ -42,7 +42,7 @@ class _$CyclePacketOutlooksSerializer
   @override
   final Iterable<Type> types = const [
     CyclePacketOutlooks,
-    _$CyclePacketOutlooks
+    _$CyclePacketOutlooks,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$CyclePacketOutlooksSerializer
     CyclePacketOutlooks object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,20 +95,26 @@ class _$CyclePacketOutlooksSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'indexChanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.indexChanges.replace(valueDes);
           break;
         case r'windowsOutsideP10P90':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.windowsOutsideP10P90.replace(valueDes);
           break;

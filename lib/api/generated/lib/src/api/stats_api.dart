@@ -61,11 +61,7 @@ class StatsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -74,11 +70,17 @@ class StatsApi {
 
     final _queryParameters = <String, dynamic>{
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -97,9 +99,10 @@ class StatsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Glance),
-            ) as Glance;
+                  rawResponse,
+                  specifiedType: const FullType(Glance),
+                )
+                as Glance;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -146,16 +149,10 @@ class StatsApi {
     final _path = r'/v1/metrics';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -245,16 +242,10 @@ class StatsApi {
     final _path = r'/v1/stats/grid';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -277,20 +268,32 @@ class StatsApi {
           format: ListFormat.multi,
         ),
       r'bbox': encodeQueryParameter(_serializers, bbox, const FullType(String)),
-      r'from':
-          encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+      r'from': encodeQueryParameter(
+        _serializers,
+        from,
+        const FullType(DateTime),
+      ),
       r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (measure != null)
-        r'measure':
-            encodeQueryParameter(_serializers, measure, const FullType(String)),
+        r'measure': encodeQueryParameter(
+          _serializers,
+          measure,
+          const FullType(String),
+        ),
       if (res != null)
         r'res': encodeQueryParameter(_serializers, res, const FullType(int)),
       if (mode != null)
-        r'mode':
-            encodeQueryParameter(_serializers, mode, const FullType(String)),
+        r'mode': encodeQueryParameter(
+          _serializers,
+          mode,
+          const FullType(String),
+        ),
       if (sizeKm != null)
-        r'sizeKm':
-            encodeQueryParameter(_serializers, sizeKm, const FullType(num)),
+        r'sizeKm': encodeQueryParameter(
+          _serializers,
+          sizeKm,
+          const FullType(num),
+        ),
       if (country != null)
         r'country': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -330,9 +333,10 @@ class StatsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StatsGrid),
-            ) as StatsGrid;
+                  rawResponse,
+                  specifiedType: const FullType(StatsGrid),
+                )
+                as StatsGrid;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -407,16 +411,10 @@ class StatsApi {
     final _path = r'/v1/stats/timeseries';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -439,8 +437,11 @@ class StatsApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -448,21 +449,36 @@ class StatsApi {
           const FullType(BuiltList, [FullType(String)]),
           format: ListFormat.csv,
         ),
-      r'from':
-          encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+      r'from': encodeQueryParameter(
+        _serializers,
+        from,
+        const FullType(DateTime),
+      ),
       r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (bucket != null)
-        r'bucket':
-            encodeQueryParameter(_serializers, bucket, const FullType(String)),
+        r'bucket': encodeQueryParameter(
+          _serializers,
+          bucket,
+          const FullType(String),
+        ),
       if (measure != null)
-        r'measure':
-            encodeQueryParameter(_serializers, measure, const FullType(String)),
+        r'measure': encodeQueryParameter(
+          _serializers,
+          measure,
+          const FullType(String),
+        ),
       if (groupBy != null)
-        r'groupBy':
-            encodeQueryParameter(_serializers, groupBy, const FullType(String)),
+        r'groupBy': encodeQueryParameter(
+          _serializers,
+          groupBy,
+          const FullType(String),
+        ),
       if (timeField != null)
         r'timeField': encodeQueryParameter(
-            _serializers, timeField, const FullType(String)),
+          _serializers,
+          timeField,
+          const FullType(String),
+        ),
       if (country != null)
         r'country': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -509,9 +525,10 @@ class StatsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StatsSeries),
-            ) as StatsSeries;
+                  rawResponse,
+                  specifiedType: const FullType(StatsSeries),
+                )
+                as StatsSeries;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -580,16 +597,10 @@ class StatsApi {
     final _path = r'/v1/stats/top';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -600,14 +611,23 @@ class StatsApi {
       if (by != null)
         r'by': encodeQueryParameter(_serializers, by, const FullType(String)),
       if (measure != null)
-        r'measure':
-            encodeQueryParameter(_serializers, measure, const FullType(String)),
-      r'from':
-          encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'measure': encodeQueryParameter(
+          _serializers,
+          measure,
+          const FullType(String),
+        ),
+      r'from': encodeQueryParameter(
+        _serializers,
+        from,
+        const FullType(DateTime),
+      ),
       r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -668,9 +688,10 @@ class StatsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StatsTop),
-            ) as StatsTop;
+                  rawResponse,
+                  specifiedType: const FullType(StatsTop),
+                )
+                as StatsTop;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -719,16 +740,10 @@ class StatsApi {
     final _path = r'/v1/stats/rollup/rebuild';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -740,14 +755,13 @@ class StatsApi {
 
     try {
       const _type = FullType(StatsRollupRebuildRequest);
-      _bodyData = _serializers.serialize(statsRollupRebuildRequest,
-          specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        statsRollupRebuildRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -770,9 +784,10 @@ class StatsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StatsRollupRebuild),
-            ) as StatsRollupRebuild;
+                  rawResponse,
+                  specifiedType: const FullType(StatsRollupRebuild),
+                )
+                as StatsRollupRebuild;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

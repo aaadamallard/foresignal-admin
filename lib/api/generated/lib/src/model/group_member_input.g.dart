@@ -24,9 +24,9 @@ GroupMemberInputRoleEnum _$groupMemberInputRoleEnumValueOf(String name) {
 
 final BuiltSet<GroupMemberInputRoleEnum> _$groupMemberInputRoleEnumValues =
     BuiltSet<GroupMemberInputRoleEnum>(const <GroupMemberInputRoleEnum>[
-  _$groupMemberInputRoleEnum_member,
-  _$groupMemberInputRoleEnum_manager,
-]);
+      _$groupMemberInputRoleEnum_member,
+      _$groupMemberInputRoleEnum_manager,
+    ]);
 
 Serializer<GroupMemberInputRoleEnum> _$groupMemberInputRoleEnumSerializer =
     _$GroupMemberInputRoleEnumSerializer();
@@ -48,16 +48,20 @@ class _$GroupMemberInputRoleEnumSerializer
   final String wireName = 'GroupMemberInputRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, GroupMemberInputRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GroupMemberInputRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GroupMemberInputRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GroupMemberInputRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GroupMemberInputRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GroupMemberInput extends GroupMemberInput {
@@ -66,9 +70,9 @@ class _$GroupMemberInput extends GroupMemberInput {
   @override
   final GroupMemberInputRoleEnum? role;
 
-  factory _$GroupMemberInput(
-          [void Function(GroupMemberInputBuilder)? updates]) =>
-      (GroupMemberInputBuilder()..update(updates))._build();
+  factory _$GroupMemberInput([
+    void Function(GroupMemberInputBuilder)? updates,
+  ]) => (GroupMemberInputBuilder()..update(updates))._build();
 
   _$GroupMemberInput._({required this.principalId, this.role}) : super._();
   @override
@@ -145,10 +149,14 @@ class GroupMemberInputBuilder
   GroupMemberInput build() => _build();
 
   _$GroupMemberInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GroupMemberInput._(
           principalId: BuiltValueNullFieldError.checkNotNull(
-              principalId, r'GroupMemberInput', 'principalId'),
+            principalId,
+            r'GroupMemberInput',
+            'principalId',
+          ),
           role: role,
         );
     replace(_$result);

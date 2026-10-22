@@ -19,7 +19,7 @@ const NarrativeSummaryStatusEnum _$narrativeSummaryStatusEnum_contradicted =
 const NarrativeSummaryStatusEnum _$narrativeSummaryStatusEnum_mixed =
     const NarrativeSummaryStatusEnum._('mixed');
 const NarrativeSummaryStatusEnum
-    _$narrativeSummaryStatusEnum_insufficientCoverage =
+_$narrativeSummaryStatusEnum_insufficientCoverage =
     const NarrativeSummaryStatusEnum._('insufficientCoverage');
 
 NarrativeSummaryStatusEnum _$narrativeSummaryStatusEnumValueOf(String name) {
@@ -45,14 +45,14 @@ NarrativeSummaryStatusEnum _$narrativeSummaryStatusEnumValueOf(String name) {
 
 final BuiltSet<NarrativeSummaryStatusEnum> _$narrativeSummaryStatusEnumValues =
     BuiltSet<NarrativeSummaryStatusEnum>(const <NarrativeSummaryStatusEnum>[
-  _$narrativeSummaryStatusEnum_unassessed,
-  _$narrativeSummaryStatusEnum_pending,
-  _$narrativeSummaryStatusEnum_corroborated,
-  _$narrativeSummaryStatusEnum_unobserved,
-  _$narrativeSummaryStatusEnum_contradicted,
-  _$narrativeSummaryStatusEnum_mixed,
-  _$narrativeSummaryStatusEnum_insufficientCoverage,
-]);
+      _$narrativeSummaryStatusEnum_unassessed,
+      _$narrativeSummaryStatusEnum_pending,
+      _$narrativeSummaryStatusEnum_corroborated,
+      _$narrativeSummaryStatusEnum_unobserved,
+      _$narrativeSummaryStatusEnum_contradicted,
+      _$narrativeSummaryStatusEnum_mixed,
+      _$narrativeSummaryStatusEnum_insufficientCoverage,
+    ]);
 
 const NarrativeSummaryStateEnum _$narrativeSummaryStateEnum_emerging =
     const NarrativeSummaryStateEnum._('emerging');
@@ -80,11 +80,11 @@ NarrativeSummaryStateEnum _$narrativeSummaryStateEnumValueOf(String name) {
 
 final BuiltSet<NarrativeSummaryStateEnum> _$narrativeSummaryStateEnumValues =
     BuiltSet<NarrativeSummaryStateEnum>(const <NarrativeSummaryStateEnum>[
-  _$narrativeSummaryStateEnum_emerging,
-  _$narrativeSummaryStateEnum_active,
-  _$narrativeSummaryStateEnum_fading,
-  _$narrativeSummaryStateEnum_dormant,
-]);
+      _$narrativeSummaryStateEnum_emerging,
+      _$narrativeSummaryStateEnum_active,
+      _$narrativeSummaryStateEnum_fading,
+      _$narrativeSummaryStateEnum_dormant,
+    ]);
 
 Serializer<NarrativeSummaryStatusEnum> _$narrativeSummaryStatusEnumSerializer =
     _$NarrativeSummaryStatusEnumSerializer();
@@ -118,16 +118,20 @@ class _$NarrativeSummaryStatusEnumSerializer
   final String wireName = 'NarrativeSummaryStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativeSummaryStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativeSummaryStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NarrativeSummaryStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeSummaryStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeSummaryStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativeSummaryStateEnumSerializer
@@ -151,16 +155,20 @@ class _$NarrativeSummaryStateEnumSerializer
   final String wireName = 'NarrativeSummaryStateEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativeSummaryStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativeSummaryStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NarrativeSummaryStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeSummaryStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeSummaryStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativeSummary extends NarrativeSummary {
@@ -215,37 +223,37 @@ class _$NarrativeSummary extends NarrativeSummary {
   @override
   final String tlp;
 
-  factory _$NarrativeSummary(
-          [void Function(NarrativeSummaryBuilder)? updates]) =>
-      (NarrativeSummaryBuilder()..update(updates))._build();
+  factory _$NarrativeSummary([
+    void Function(NarrativeSummaryBuilder)? updates,
+  ]) => (NarrativeSummaryBuilder()..update(updates))._build();
 
-  _$NarrativeSummary._(
-      {required this.id,
-      required this.ref,
-      required this.title,
-      required this.canonicalEventId,
-      this.topics,
-      this.placeRefs,
-      this.entityRefs,
-      this.regionCodes,
-      this.languages,
-      required this.platforms,
-      required this.firstObservedAt,
-      required this.lastActivityAt,
-      required this.postCount,
-      required this.uniqueAuthors,
-      required this.evidenceGroupCount,
-      required this.originConcentration,
-      this.velocity,
-      this.mediaFingerprints,
-      this.newsStoryIds,
-      this.situationIds,
-      required this.status,
-      required this.state,
-      this.coordinationIndicatorsPresent,
-      this.mergedInto,
-      required this.tlp})
-      : super._();
+  _$NarrativeSummary._({
+    required this.id,
+    required this.ref,
+    required this.title,
+    required this.canonicalEventId,
+    this.topics,
+    this.placeRefs,
+    this.entityRefs,
+    this.regionCodes,
+    this.languages,
+    required this.platforms,
+    required this.firstObservedAt,
+    required this.lastActivityAt,
+    required this.postCount,
+    required this.uniqueAuthors,
+    required this.evidenceGroupCount,
+    required this.originConcentration,
+    this.velocity,
+    this.mediaFingerprints,
+    this.newsStoryIds,
+    this.situationIds,
+    required this.status,
+    required this.state,
+    this.coordinationIndicatorsPresent,
+    this.mergedInto,
+    required this.tlp,
+  }) : super._();
   @override
   NarrativeSummary rebuild(void Function(NarrativeSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -530,16 +538,29 @@ class NarrativeSummaryBuilder
   _$NarrativeSummary _build() {
     _$NarrativeSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NarrativeSummary._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'NarrativeSummary', 'id'),
+              id,
+              r'NarrativeSummary',
+              'id',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'NarrativeSummary', 'ref'),
+              ref,
+              r'NarrativeSummary',
+              'ref',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'NarrativeSummary', 'title'),
+              title,
+              r'NarrativeSummary',
+              'title',
+            ),
             canonicalEventId: BuiltValueNullFieldError.checkNotNull(
-                canonicalEventId, r'NarrativeSummary', 'canonicalEventId'),
+              canonicalEventId,
+              r'NarrativeSummary',
+              'canonicalEventId',
+            ),
             topics: _topics?.build(),
             placeRefs: _placeRefs?.build(),
             entityRefs: _entityRefs?.build(),
@@ -547,31 +568,56 @@ class NarrativeSummaryBuilder
             languages: _languages?.build(),
             platforms: platforms.build(),
             firstObservedAt: BuiltValueNullFieldError.checkNotNull(
-                firstObservedAt, r'NarrativeSummary', 'firstObservedAt'),
+              firstObservedAt,
+              r'NarrativeSummary',
+              'firstObservedAt',
+            ),
             lastActivityAt: BuiltValueNullFieldError.checkNotNull(
-                lastActivityAt, r'NarrativeSummary', 'lastActivityAt'),
+              lastActivityAt,
+              r'NarrativeSummary',
+              'lastActivityAt',
+            ),
             postCount: BuiltValueNullFieldError.checkNotNull(
-                postCount, r'NarrativeSummary', 'postCount'),
+              postCount,
+              r'NarrativeSummary',
+              'postCount',
+            ),
             uniqueAuthors: BuiltValueNullFieldError.checkNotNull(
-                uniqueAuthors, r'NarrativeSummary', 'uniqueAuthors'),
+              uniqueAuthors,
+              r'NarrativeSummary',
+              'uniqueAuthors',
+            ),
             evidenceGroupCount: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupCount, r'NarrativeSummary', 'evidenceGroupCount'),
+              evidenceGroupCount,
+              r'NarrativeSummary',
+              'evidenceGroupCount',
+            ),
             originConcentration: BuiltValueNullFieldError.checkNotNull(
-                originConcentration,
-                r'NarrativeSummary',
-                'originConcentration'),
+              originConcentration,
+              r'NarrativeSummary',
+              'originConcentration',
+            ),
             velocity: velocity,
             mediaFingerprints: _mediaFingerprints?.build(),
             newsStoryIds: _newsStoryIds?.build(),
             situationIds: _situationIds?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'NarrativeSummary', 'status'),
+              status,
+              r'NarrativeSummary',
+              'status',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'NarrativeSummary', 'state'),
+              state,
+              r'NarrativeSummary',
+              'state',
+            ),
             coordinationIndicatorsPresent: coordinationIndicatorsPresent,
             mergedInto: mergedInto,
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'NarrativeSummary', 'tlp'),
+              tlp,
+              r'NarrativeSummary',
+              'tlp',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -597,7 +643,10 @@ class NarrativeSummaryBuilder
         _situationIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativeSummary', _$failedField, e.toString());
+          r'NarrativeSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

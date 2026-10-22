@@ -22,9 +22,9 @@ abstract class NotificationSettingsChatops
 
   NotificationSettingsChatops._();
 
-  factory NotificationSettingsChatops(
-          [void updates(NotificationSettingsChatopsBuilder b)]) =
-      _$NotificationSettingsChatops;
+  factory NotificationSettingsChatops([
+    void updates(NotificationSettingsChatopsBuilder b),
+  ]) = _$NotificationSettingsChatops;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationSettingsChatopsBuilder b) => b;
@@ -39,7 +39,7 @@ class _$NotificationSettingsChatopsSerializer
   @override
   final Iterable<Type> types = const [
     NotificationSettingsChatops,
-    _$NotificationSettingsChatops
+    _$NotificationSettingsChatops,
   ];
 
   @override
@@ -65,9 +65,11 @@ class _$NotificationSettingsChatopsSerializer
     NotificationSettingsChatops object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,10 +85,12 @@ class _$NotificationSettingsChatopsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;

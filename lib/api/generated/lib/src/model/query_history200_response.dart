@@ -32,9 +32,9 @@ abstract class QueryHistory200Response
 
   QueryHistory200Response._();
 
-  factory QueryHistory200Response(
-          [void updates(QueryHistory200ResponseBuilder b)]) =
-      _$QueryHistory200Response;
+  factory QueryHistory200Response([
+    void updates(QueryHistory200ResponseBuilder b),
+  ]) = _$QueryHistory200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(QueryHistory200ResponseBuilder b) => b;
@@ -49,7 +49,7 @@ class _$QueryHistory200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     QueryHistory200Response,
-    _$QueryHistory200Response
+    _$QueryHistory200Response,
   ];
 
   @override
@@ -68,8 +68,10 @@ class _$QueryHistory200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -85,8 +87,9 @@ class _$QueryHistory200ResponseSerializer
       FullType(CountResult),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }

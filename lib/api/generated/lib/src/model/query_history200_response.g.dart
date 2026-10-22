@@ -10,15 +10,15 @@ class _$QueryHistory200Response extends QueryHistory200Response {
   @override
   final OneOf oneOf;
 
-  factory _$QueryHistory200Response(
-          [void Function(QueryHistory200ResponseBuilder)? updates]) =>
-      (QueryHistory200ResponseBuilder()..update(updates))._build();
+  factory _$QueryHistory200Response([
+    void Function(QueryHistory200ResponseBuilder)? updates,
+  ]) => (QueryHistory200ResponseBuilder()..update(updates))._build();
 
   _$QueryHistory200Response._({required this.oneOf}) : super._();
   @override
   QueryHistory200Response rebuild(
-          void Function(QueryHistory200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(QueryHistory200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   QueryHistory200ResponseBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$QueryHistory200Response extends QueryHistory200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'QueryHistory200Response')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'QueryHistory200Response',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -82,10 +82,14 @@ class QueryHistory200ResponseBuilder
   QueryHistory200Response build() => _build();
 
   _$QueryHistory200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$QueryHistory200Response._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'QueryHistory200Response', 'oneOf'),
+            oneOf,
+            r'QueryHistory200Response',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

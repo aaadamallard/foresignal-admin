@@ -42,7 +42,7 @@ class _$NarrativeSplitInputSerializer
   @override
   final Iterable<Type> types = const [
     NarrativeSplitInput,
-    _$NarrativeSplitInput
+    _$NarrativeSplitInput,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$NarrativeSplitInputSerializer
     NarrativeSplitInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +93,23 @@ class _$NarrativeSplitInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'postRefs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.postRefs.replace(valueDes);
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

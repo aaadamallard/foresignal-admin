@@ -32,11 +32,11 @@ BriefingRunStatusEnum _$briefingRunStatusEnumValueOf(String name) {
 
 final BuiltSet<BriefingRunStatusEnum> _$briefingRunStatusEnumValues =
     BuiltSet<BriefingRunStatusEnum>(const <BriefingRunStatusEnum>[
-  _$briefingRunStatusEnum_running,
-  _$briefingRunStatusEnum_succeeded,
-  _$briefingRunStatusEnum_fallback,
-  _$briefingRunStatusEnum_failed,
-]);
+      _$briefingRunStatusEnum_running,
+      _$briefingRunStatusEnum_succeeded,
+      _$briefingRunStatusEnum_fallback,
+      _$briefingRunStatusEnum_failed,
+    ]);
 
 const BriefingRunModeEnum _$briefingRunModeEnum_digest =
     const BriefingRunModeEnum._('digest');
@@ -56,9 +56,9 @@ BriefingRunModeEnum _$briefingRunModeEnumValueOf(String name) {
 
 final BuiltSet<BriefingRunModeEnum> _$briefingRunModeEnumValues =
     BuiltSet<BriefingRunModeEnum>(const <BriefingRunModeEnum>[
-  _$briefingRunModeEnum_digest,
-  _$briefingRunModeEnum_llm,
-]);
+      _$briefingRunModeEnum_digest,
+      _$briefingRunModeEnum_llm,
+    ]);
 
 Serializer<BriefingRunStatusEnum> _$briefingRunStatusEnumSerializer =
     _$BriefingRunStatusEnumSerializer();
@@ -86,15 +86,20 @@ class _$BriefingRunStatusEnumSerializer
   final String wireName = 'BriefingRunStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, BriefingRunStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BriefingRunStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BriefingRunStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BriefingRunStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BriefingRunStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BriefingRunStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BriefingRunModeEnumSerializer
@@ -114,15 +119,20 @@ class _$BriefingRunModeEnumSerializer
   final String wireName = 'BriefingRunModeEnum';
 
   @override
-  Object serialize(Serializers serializers, BriefingRunModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BriefingRunModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BriefingRunModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BriefingRunModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BriefingRunModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BriefingRunModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BriefingRun extends BriefingRun {
@@ -164,25 +174,25 @@ class _$BriefingRun extends BriefingRun {
   factory _$BriefingRun([void Function(BriefingRunBuilder)? updates]) =>
       (BriefingRunBuilder()..update(updates))._build();
 
-  _$BriefingRun._(
-      {this.id,
-      this.briefingId,
-      required this.status,
-      required this.startedAt,
-      this.finishedAt,
-      required this.periodFrom,
-      required this.periodTo,
-      this.mode,
-      required this.contentMarkdown,
-      this.citations,
-      this.stats,
-      this.error,
-      this.usage,
-      this.deliveries,
-      this.warnings,
-      this.signature,
-      this.audio})
-      : super._();
+  _$BriefingRun._({
+    this.id,
+    this.briefingId,
+    required this.status,
+    required this.startedAt,
+    this.finishedAt,
+    required this.periodFrom,
+    required this.periodTo,
+    this.mode,
+    required this.contentMarkdown,
+    this.citations,
+    this.stats,
+    this.error,
+    this.usage,
+    this.deliveries,
+    this.warnings,
+    this.signature,
+    this.audio,
+  }) : super._();
   @override
   BriefingRun rebuild(void Function(BriefingRunBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -383,22 +393,38 @@ class BriefingRunBuilder implements Builder<BriefingRun, BriefingRunBuilder> {
   _$BriefingRun _build() {
     _$BriefingRun _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BriefingRun._(
             id: id,
             briefingId: briefingId,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'BriefingRun', 'status'),
+              status,
+              r'BriefingRun',
+              'status',
+            ),
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'BriefingRun', 'startedAt'),
+              startedAt,
+              r'BriefingRun',
+              'startedAt',
+            ),
             finishedAt: finishedAt,
             periodFrom: BuiltValueNullFieldError.checkNotNull(
-                periodFrom, r'BriefingRun', 'periodFrom'),
+              periodFrom,
+              r'BriefingRun',
+              'periodFrom',
+            ),
             periodTo: BuiltValueNullFieldError.checkNotNull(
-                periodTo, r'BriefingRun', 'periodTo'),
+              periodTo,
+              r'BriefingRun',
+              'periodTo',
+            ),
             mode: mode,
             contentMarkdown: BuiltValueNullFieldError.checkNotNull(
-                contentMarkdown, r'BriefingRun', 'contentMarkdown'),
+              contentMarkdown,
+              r'BriefingRun',
+              'contentMarkdown',
+            ),
             citations: _citations?.build(),
             stats: _stats?.build(),
             error: error,
@@ -426,7 +452,10 @@ class BriefingRunBuilder implements Builder<BriefingRun, BriefingRunBuilder> {
         _audio?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BriefingRun', _$failedField, e.toString());
+          r'BriefingRun',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

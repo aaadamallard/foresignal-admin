@@ -14,17 +14,19 @@ class _$SocialPlatformStreamLastGap extends SocialPlatformStreamLastGap {
   @override
   final bool replayed;
 
-  factory _$SocialPlatformStreamLastGap(
-          [void Function(SocialPlatformStreamLastGapBuilder)? updates]) =>
-      (SocialPlatformStreamLastGapBuilder()..update(updates))._build();
+  factory _$SocialPlatformStreamLastGap([
+    void Function(SocialPlatformStreamLastGapBuilder)? updates,
+  ]) => (SocialPlatformStreamLastGapBuilder()..update(updates))._build();
 
-  _$SocialPlatformStreamLastGap._(
-      {required this.from, required this.to, required this.replayed})
-      : super._();
+  _$SocialPlatformStreamLastGap._({
+    required this.from,
+    required this.to,
+    required this.replayed,
+  }) : super._();
   @override
   SocialPlatformStreamLastGap rebuild(
-          void Function(SocialPlatformStreamLastGapBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformStreamLastGapBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformStreamLastGapBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$SocialPlatformStreamLastGap extends SocialPlatformStreamLastGap {
 
 class SocialPlatformStreamLastGapBuilder
     implements
-        Builder<SocialPlatformStreamLastGap,
-            SocialPlatformStreamLastGapBuilder> {
+        Builder<
+          SocialPlatformStreamLastGap,
+          SocialPlatformStreamLastGapBuilder
+        > {
   _$SocialPlatformStreamLastGap? _$v;
 
   DateTime? _from;
@@ -106,14 +110,24 @@ class SocialPlatformStreamLastGapBuilder
   SocialPlatformStreamLastGap build() => _build();
 
   _$SocialPlatformStreamLastGap _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialPlatformStreamLastGap._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'SocialPlatformStreamLastGap', 'from'),
+            from,
+            r'SocialPlatformStreamLastGap',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'SocialPlatformStreamLastGap', 'to'),
+            to,
+            r'SocialPlatformStreamLastGap',
+            'to',
+          ),
           replayed: BuiltValueNullFieldError.checkNotNull(
-              replayed, r'SocialPlatformStreamLastGap', 'replayed'),
+            replayed,
+            r'SocialPlatformStreamLastGap',
+            'replayed',
+          ),
         );
     replace(_$result);
     return _$result;

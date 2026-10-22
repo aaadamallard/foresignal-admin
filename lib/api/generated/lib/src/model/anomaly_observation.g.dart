@@ -12,7 +12,8 @@ const AnomalyObservationDirectionEnum _$anomalyObservationDirectionEnum_down =
     const AnomalyObservationDirectionEnum._('down');
 
 AnomalyObservationDirectionEnum _$anomalyObservationDirectionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'up':
       return _$anomalyObservationDirectionEnum_up;
@@ -24,33 +25,35 @@ AnomalyObservationDirectionEnum _$anomalyObservationDirectionEnumValueOf(
 }
 
 final BuiltSet<AnomalyObservationDirectionEnum>
-    _$anomalyObservationDirectionEnumValues = BuiltSet<
-        AnomalyObservationDirectionEnum>(const <AnomalyObservationDirectionEnum>[
-  _$anomalyObservationDirectionEnum_up,
-  _$anomalyObservationDirectionEnum_down,
-]);
+_$anomalyObservationDirectionEnumValues =
+    BuiltSet<AnomalyObservationDirectionEnum>(
+      const <AnomalyObservationDirectionEnum>[
+        _$anomalyObservationDirectionEnum_up,
+        _$anomalyObservationDirectionEnum_down,
+      ],
+    );
 
 const AnomalyObservationClassificationEnum
-    _$anomalyObservationClassificationEnum_activityUp =
+_$anomalyObservationClassificationEnum_activityUp =
     const AnomalyObservationClassificationEnum._('activityUp');
 const AnomalyObservationClassificationEnum
-    _$anomalyObservationClassificationEnum_activityDown =
+_$anomalyObservationClassificationEnum_activityDown =
     const AnomalyObservationClassificationEnum._('activityDown');
 const AnomalyObservationClassificationEnum
-    _$anomalyObservationClassificationEnum_coverageDrop =
+_$anomalyObservationClassificationEnum_coverageDrop =
     const AnomalyObservationClassificationEnum._('coverageDrop');
 const AnomalyObservationClassificationEnum
-    _$anomalyObservationClassificationEnum_insufficientCoverage =
+_$anomalyObservationClassificationEnum_insufficientCoverage =
     const AnomalyObservationClassificationEnum._('insufficientCoverage');
 const AnomalyObservationClassificationEnum
-    _$anomalyObservationClassificationEnum_learning =
+_$anomalyObservationClassificationEnum_learning =
     const AnomalyObservationClassificationEnum._('learning');
 const AnomalyObservationClassificationEnum
-    _$anomalyObservationClassificationEnum_normal =
+_$anomalyObservationClassificationEnum_normal =
     const AnomalyObservationClassificationEnum._('normal');
 
 AnomalyObservationClassificationEnum
-    _$anomalyObservationClassificationEnumValueOf(String name) {
+_$anomalyObservationClassificationEnumValueOf(String name) {
   switch (name) {
     case 'activityUp':
       return _$anomalyObservationClassificationEnum_activityUp;
@@ -70,21 +73,23 @@ AnomalyObservationClassificationEnum
 }
 
 final BuiltSet<AnomalyObservationClassificationEnum>
-    _$anomalyObservationClassificationEnumValues = BuiltSet<
-        AnomalyObservationClassificationEnum>(const <AnomalyObservationClassificationEnum>[
-  _$anomalyObservationClassificationEnum_activityUp,
-  _$anomalyObservationClassificationEnum_activityDown,
-  _$anomalyObservationClassificationEnum_coverageDrop,
-  _$anomalyObservationClassificationEnum_insufficientCoverage,
-  _$anomalyObservationClassificationEnum_learning,
-  _$anomalyObservationClassificationEnum_normal,
-]);
+_$anomalyObservationClassificationEnumValues =
+    BuiltSet<AnomalyObservationClassificationEnum>(
+      const <AnomalyObservationClassificationEnum>[
+        _$anomalyObservationClassificationEnum_activityUp,
+        _$anomalyObservationClassificationEnum_activityDown,
+        _$anomalyObservationClassificationEnum_coverageDrop,
+        _$anomalyObservationClassificationEnum_insufficientCoverage,
+        _$anomalyObservationClassificationEnum_learning,
+        _$anomalyObservationClassificationEnum_normal,
+      ],
+    );
 
 Serializer<AnomalyObservationDirectionEnum>
-    _$anomalyObservationDirectionEnumSerializer =
+_$anomalyObservationDirectionEnumSerializer =
     _$AnomalyObservationDirectionEnumSerializer();
 Serializer<AnomalyObservationClassificationEnum>
-    _$anomalyObservationClassificationEnumSerializer =
+_$anomalyObservationClassificationEnumSerializer =
     _$AnomalyObservationClassificationEnumSerializer();
 
 class _$AnomalyObservationDirectionEnumSerializer
@@ -105,16 +110,19 @@ class _$AnomalyObservationDirectionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnomalyObservationDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnomalyObservationDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyObservationDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyObservationDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyObservationDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyObservationClassificationEnumSerializer
@@ -138,23 +146,26 @@ class _$AnomalyObservationClassificationEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AnomalyObservationClassificationEnum
+    AnomalyObservationClassificationEnum,
   ];
   @override
   final String wireName = 'AnomalyObservationClassificationEnum';
 
   @override
   Object serialize(
-          Serializers serializers, AnomalyObservationClassificationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnomalyObservationClassificationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyObservationClassificationEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyObservationClassificationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyObservationClassificationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyObservation extends AnomalyObservation {
@@ -197,35 +208,35 @@ class _$AnomalyObservation extends AnomalyObservation {
   @override
   final String? manifestId;
 
-  factory _$AnomalyObservation(
-          [void Function(AnomalyObservationBuilder)? updates]) =>
-      (AnomalyObservationBuilder()..update(updates))._build();
+  factory _$AnomalyObservation([
+    void Function(AnomalyObservationBuilder)? updates,
+  ]) => (AnomalyObservationBuilder()..update(updates))._build();
 
-  _$AnomalyObservation._(
-      {required this.id,
-      required this.ruleId,
-      required this.groupKey,
-      required this.bucketStart,
-      required this.bucketEnd,
-      required this.observed,
-      required this.expected,
-      this.exposure,
-      this.pValue,
-      this.score,
-      this.direction,
-      required this.classification,
-      this.lowConfidence,
-      required this.baseline,
-      required this.detector,
-      this.evidence,
-      required this.watermarkSeq,
-      this.alertId,
-      this.manifestId})
-      : super._();
+  _$AnomalyObservation._({
+    required this.id,
+    required this.ruleId,
+    required this.groupKey,
+    required this.bucketStart,
+    required this.bucketEnd,
+    required this.observed,
+    required this.expected,
+    this.exposure,
+    this.pValue,
+    this.score,
+    this.direction,
+    required this.classification,
+    this.lowConfidence,
+    required this.baseline,
+    required this.detector,
+    this.evidence,
+    required this.watermarkSeq,
+    this.alertId,
+    this.manifestId,
+  }) : super._();
   @override
   AnomalyObservation rebuild(
-          void Function(AnomalyObservationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyObservationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyObservationBuilder toBuilder() =>
@@ -443,34 +454,62 @@ class AnomalyObservationBuilder
   _$AnomalyObservation _build() {
     _$AnomalyObservation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnomalyObservation._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AnomalyObservation', 'id'),
+              id,
+              r'AnomalyObservation',
+              'id',
+            ),
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'AnomalyObservation', 'ruleId'),
+              ruleId,
+              r'AnomalyObservation',
+              'ruleId',
+            ),
             groupKey: BuiltValueNullFieldError.checkNotNull(
-                groupKey, r'AnomalyObservation', 'groupKey'),
+              groupKey,
+              r'AnomalyObservation',
+              'groupKey',
+            ),
             bucketStart: BuiltValueNullFieldError.checkNotNull(
-                bucketStart, r'AnomalyObservation', 'bucketStart'),
+              bucketStart,
+              r'AnomalyObservation',
+              'bucketStart',
+            ),
             bucketEnd: BuiltValueNullFieldError.checkNotNull(
-                bucketEnd, r'AnomalyObservation', 'bucketEnd'),
+              bucketEnd,
+              r'AnomalyObservation',
+              'bucketEnd',
+            ),
             observed: BuiltValueNullFieldError.checkNotNull(
-                observed, r'AnomalyObservation', 'observed'),
+              observed,
+              r'AnomalyObservation',
+              'observed',
+            ),
             expected: BuiltValueNullFieldError.checkNotNull(
-                expected, r'AnomalyObservation', 'expected'),
+              expected,
+              r'AnomalyObservation',
+              'expected',
+            ),
             exposure: exposure,
             pValue: pValue,
             score: score,
             direction: direction,
             classification: BuiltValueNullFieldError.checkNotNull(
-                classification, r'AnomalyObservation', 'classification'),
+              classification,
+              r'AnomalyObservation',
+              'classification',
+            ),
             lowConfidence: lowConfidence,
             baseline: baseline.build(),
             detector: detector.build(),
             evidence: _evidence?.build(),
             watermarkSeq: BuiltValueNullFieldError.checkNotNull(
-                watermarkSeq, r'AnomalyObservation', 'watermarkSeq'),
+              watermarkSeq,
+              r'AnomalyObservation',
+              'watermarkSeq',
+            ),
             alertId: alertId,
             manifestId: manifestId,
           );
@@ -485,7 +524,10 @@ class AnomalyObservationBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnomalyObservation', _$failedField, e.toString());
+          r'AnomalyObservation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

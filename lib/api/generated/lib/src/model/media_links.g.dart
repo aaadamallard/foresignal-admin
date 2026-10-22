@@ -20,7 +20,7 @@ class _$MediaLinks extends MediaLinks {
       (MediaLinksBuilder()..update(updates))._build();
 
   _$MediaLinks._({this.self, this.meta, this.thumbnail256, this.thumbnail1024})
-      : super._();
+    : super._();
   @override
   MediaLinks rebuild(void Function(MediaLinksBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -110,7 +110,8 @@ class MediaLinksBuilder implements Builder<MediaLinks, MediaLinksBuilder> {
   MediaLinks build() => _build();
 
   _$MediaLinks _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaLinks._(
           self: self,
           meta: meta,

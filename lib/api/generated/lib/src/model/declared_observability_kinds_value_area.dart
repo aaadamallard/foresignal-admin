@@ -18,8 +18,10 @@ part 'declared_observability_kinds_value_area.g.dart';
 @BuiltValue()
 abstract class DeclaredObservabilityKindsValueArea
     implements
-        Built<DeclaredObservabilityKindsValueArea,
-            DeclaredObservabilityKindsValueAreaBuilder> {
+        Built<
+          DeclaredObservabilityKindsValueArea,
+          DeclaredObservabilityKindsValueAreaBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   DeclaredObservabilityKindsValueAreaTypeEnum get type;
   // enum typeEnum {  global,  bbox,  regions,  };
@@ -33,9 +35,9 @@ abstract class DeclaredObservabilityKindsValueArea
 
   DeclaredObservabilityKindsValueArea._();
 
-  factory DeclaredObservabilityKindsValueArea(
-          [void updates(DeclaredObservabilityKindsValueAreaBuilder b)]) =
-      _$DeclaredObservabilityKindsValueArea;
+  factory DeclaredObservabilityKindsValueArea([
+    void updates(DeclaredObservabilityKindsValueAreaBuilder b),
+  ]) = _$DeclaredObservabilityKindsValueArea;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DeclaredObservabilityKindsValueAreaBuilder b) => b;
@@ -50,7 +52,7 @@ class _$DeclaredObservabilityKindsValueAreaSerializer
   @override
   final Iterable<Type> types = const [
     DeclaredObservabilityKindsValueArea,
-    _$DeclaredObservabilityKindsValueArea
+    _$DeclaredObservabilityKindsValueArea,
   ];
 
   @override
@@ -64,8 +66,9 @@ class _$DeclaredObservabilityKindsValueAreaSerializer
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType:
-          const FullType(DeclaredObservabilityKindsValueAreaTypeEnum),
+      specifiedType: const FullType(
+        DeclaredObservabilityKindsValueAreaTypeEnum,
+      ),
     );
     if (object.bbox != null) {
       yield r'bbox';
@@ -89,9 +92,11 @@ class _$DeclaredObservabilityKindsValueAreaSerializer
     DeclaredObservabilityKindsValueArea object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,27 +112,37 @@ class _$DeclaredObservabilityKindsValueAreaSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(DeclaredObservabilityKindsValueAreaTypeEnum),
-          ) as DeclaredObservabilityKindsValueAreaTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DeclaredObservabilityKindsValueAreaTypeEnum,
+                    ),
+                  )
+                  as DeclaredObservabilityKindsValueAreaTypeEnum;
           result.type = valueDes;
           break;
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltList<num>?;
           if (valueDes == null) continue;
           result.bbox.replace(valueDes);
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
@@ -172,10 +187,10 @@ class DeclaredObservabilityKindsValueAreaTypeEnum extends EnumClass {
       _$declaredObservabilityKindsValueAreaTypeEnum_regions;
 
   static Serializer<DeclaredObservabilityKindsValueAreaTypeEnum>
-      get serializer => _$declaredObservabilityKindsValueAreaTypeEnumSerializer;
+  get serializer => _$declaredObservabilityKindsValueAreaTypeEnumSerializer;
 
   const DeclaredObservabilityKindsValueAreaTypeEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<DeclaredObservabilityKindsValueAreaTypeEnum> get values =>
       _$declaredObservabilityKindsValueAreaTypeEnumValues;

@@ -9,19 +9,20 @@ part of 'llm_test_result_chat.dart';
 const LlmTestResultChatStopReasonEnum _$llmTestResultChatStopReasonEnum_end =
     const LlmTestResultChatStopReasonEnum._('end');
 const LlmTestResultChatStopReasonEnum
-    _$llmTestResultChatStopReasonEnum_toolUse =
+_$llmTestResultChatStopReasonEnum_toolUse =
     const LlmTestResultChatStopReasonEnum._('toolUse');
 const LlmTestResultChatStopReasonEnum
-    _$llmTestResultChatStopReasonEnum_maxTokens =
+_$llmTestResultChatStopReasonEnum_maxTokens =
     const LlmTestResultChatStopReasonEnum._('maxTokens');
 const LlmTestResultChatStopReasonEnum
-    _$llmTestResultChatStopReasonEnum_refusal =
+_$llmTestResultChatStopReasonEnum_refusal =
     const LlmTestResultChatStopReasonEnum._('refusal');
 const LlmTestResultChatStopReasonEnum _$llmTestResultChatStopReasonEnum_error =
     const LlmTestResultChatStopReasonEnum._('error');
 
 LlmTestResultChatStopReasonEnum _$llmTestResultChatStopReasonEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'end':
       return _$llmTestResultChatStopReasonEnum_end;
@@ -39,17 +40,19 @@ LlmTestResultChatStopReasonEnum _$llmTestResultChatStopReasonEnumValueOf(
 }
 
 final BuiltSet<LlmTestResultChatStopReasonEnum>
-    _$llmTestResultChatStopReasonEnumValues = BuiltSet<
-        LlmTestResultChatStopReasonEnum>(const <LlmTestResultChatStopReasonEnum>[
-  _$llmTestResultChatStopReasonEnum_end,
-  _$llmTestResultChatStopReasonEnum_toolUse,
-  _$llmTestResultChatStopReasonEnum_maxTokens,
-  _$llmTestResultChatStopReasonEnum_refusal,
-  _$llmTestResultChatStopReasonEnum_error,
-]);
+_$llmTestResultChatStopReasonEnumValues =
+    BuiltSet<LlmTestResultChatStopReasonEnum>(
+      const <LlmTestResultChatStopReasonEnum>[
+        _$llmTestResultChatStopReasonEnum_end,
+        _$llmTestResultChatStopReasonEnum_toolUse,
+        _$llmTestResultChatStopReasonEnum_maxTokens,
+        _$llmTestResultChatStopReasonEnum_refusal,
+        _$llmTestResultChatStopReasonEnum_error,
+      ],
+    );
 
 Serializer<LlmTestResultChatStopReasonEnum>
-    _$llmTestResultChatStopReasonEnumSerializer =
+_$llmTestResultChatStopReasonEnumSerializer =
     _$LlmTestResultChatStopReasonEnumSerializer();
 
 class _$LlmTestResultChatStopReasonEnumSerializer
@@ -76,16 +79,19 @@ class _$LlmTestResultChatStopReasonEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, LlmTestResultChatStopReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LlmTestResultChatStopReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LlmTestResultChatStopReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LlmTestResultChatStopReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LlmTestResultChatStopReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LlmTestResultChat extends LlmTestResultChat {
@@ -104,19 +110,19 @@ class _$LlmTestResultChat extends LlmTestResultChat {
   @override
   final LlmTestResultChatStopReasonEnum? stopReason;
 
-  factory _$LlmTestResultChat(
-          [void Function(LlmTestResultChatBuilder)? updates]) =>
-      (LlmTestResultChatBuilder()..update(updates))._build();
+  factory _$LlmTestResultChat([
+    void Function(LlmTestResultChatBuilder)? updates,
+  ]) => (LlmTestResultChatBuilder()..update(updates))._build();
 
-  _$LlmTestResultChat._(
-      {this.model,
-      this.latencyMs,
-      this.inputTokens,
-      this.outputTokens,
-      this.text,
-      this.cachedTokens,
-      this.stopReason})
-      : super._();
+  _$LlmTestResultChat._({
+    this.model,
+    this.latencyMs,
+    this.inputTokens,
+    this.outputTokens,
+    this.text,
+    this.cachedTokens,
+    this.stopReason,
+  }) : super._();
   @override
   LlmTestResultChat rebuild(void Function(LlmTestResultChatBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -232,7 +238,8 @@ class LlmTestResultChatBuilder
   LlmTestResultChat build() => _build();
 
   _$LlmTestResultChat _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LlmTestResultChat._(
           model: model,
           latencyMs: latencyMs,

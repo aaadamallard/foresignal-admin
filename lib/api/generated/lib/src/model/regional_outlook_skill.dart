@@ -72,7 +72,7 @@ class _$RegionalOutlookSkillSerializer
   @override
   final Iterable<Type> types = const [
     RegionalOutlookSkill,
-    _$RegionalOutlookSkill
+    _$RegionalOutlookSkill,
   ];
 
   @override
@@ -91,10 +91,7 @@ class _$RegionalOutlookSkillSerializer
       );
     }
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     if (object.meanPinballLoss != null) {
       yield r'meanPinballLoss';
       yield serializers.serialize(
@@ -139,8 +136,10 @@ class _$RegionalOutlookSkillSerializer
       yield r'backtest';
       yield serializers.serialize(
         object.backtest,
-        specifiedType: const FullType.nullable(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType.nullable(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -151,9 +150,11 @@ class _$RegionalOutlookSkillSerializer
     RegionalOutlookSkill object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -169,73 +170,92 @@ class _$RegionalOutlookSkillSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'evaluatedWeeks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.evaluatedWeeks = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'meanPinballLoss':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meanPinballLoss = valueDes;
           break;
         case r'crps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.crps = valueDes;
           break;
         case r'skillVsSeasonalNaive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.skillVsSeasonalNaive = valueDes;
           break;
         case r'skillVsClimatology':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.skillVsClimatology = valueDes;
           break;
         case r'intervalCoverageP10P90':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.intervalCoverageP10P90 = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RegionalOutlookSkillLabelEnum),
-          ) as RegionalOutlookSkillLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RegionalOutlookSkillLabelEnum,
+                    ),
+                  )
+                  as RegionalOutlookSkillLabelEnum;
           result.label = valueDes;
           break;
         case r'backtest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.backtest.replace(valueDes);
           break;

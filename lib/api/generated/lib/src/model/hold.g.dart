@@ -39,22 +39,22 @@ class _$Hold extends Hold {
   factory _$Hold([void Function(HoldBuilder)? updates]) =>
       (HoldBuilder()..update(updates))._build();
 
-  _$Hold._(
-      {required this.id,
-      required this.name,
-      required this.reason,
-      this.sources,
-      this.kinds,
-      this.from,
-      this.to,
-      this.fromSeq,
-      this.toSeq,
-      this.expiresAt,
-      required this.createdAt,
-      this.createdBy,
-      required this.heldRows,
-      required this.heldBytes})
-      : super._();
+  _$Hold._({
+    required this.id,
+    required this.name,
+    required this.reason,
+    this.sources,
+    this.kinds,
+    this.from,
+    this.to,
+    this.fromSeq,
+    this.toSeq,
+    this.expiresAt,
+    required this.createdAt,
+    this.createdBy,
+    required this.heldRows,
+    required this.heldBytes,
+  }) : super._();
   @override
   Hold rebuild(void Function(HoldBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -225,12 +225,16 @@ class HoldBuilder implements Builder<Hold, HoldBuilder> {
   _$Hold _build() {
     _$Hold _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Hold._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Hold', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'Hold', 'name'),
             reason: BuiltValueNullFieldError.checkNotNull(
-                reason, r'Hold', 'reason'),
+              reason,
+              r'Hold',
+              'reason',
+            ),
             sources: _sources?.build(),
             kinds: _kinds?.build(),
             from: from,
@@ -239,12 +243,21 @@ class HoldBuilder implements Builder<Hold, HoldBuilder> {
             toSeq: toSeq,
             expiresAt: expiresAt,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Hold', 'createdAt'),
+              createdAt,
+              r'Hold',
+              'createdAt',
+            ),
             createdBy: createdBy,
             heldRows: BuiltValueNullFieldError.checkNotNull(
-                heldRows, r'Hold', 'heldRows'),
+              heldRows,
+              r'Hold',
+              'heldRows',
+            ),
             heldBytes: BuiltValueNullFieldError.checkNotNull(
-                heldBytes, r'Hold', 'heldBytes'),
+              heldBytes,
+              r'Hold',
+              'heldBytes',
+            ),
           );
     } catch (_) {
       late String _$failedField;

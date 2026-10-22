@@ -12,15 +12,15 @@ class _$WorkspaceShareInput extends WorkspaceShareInput {
   @override
   final int? maxUses;
 
-  factory _$WorkspaceShareInput(
-          [void Function(WorkspaceShareInputBuilder)? updates]) =>
-      (WorkspaceShareInputBuilder()..update(updates))._build();
+  factory _$WorkspaceShareInput([
+    void Function(WorkspaceShareInputBuilder)? updates,
+  ]) => (WorkspaceShareInputBuilder()..update(updates))._build();
 
   _$WorkspaceShareInput._({this.expiresAt, this.maxUses}) : super._();
   @override
   WorkspaceShareInput rebuild(
-          void Function(WorkspaceShareInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WorkspaceShareInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WorkspaceShareInputBuilder toBuilder() =>
@@ -92,11 +92,8 @@ class WorkspaceShareInputBuilder
   WorkspaceShareInput build() => _build();
 
   _$WorkspaceShareInput _build() {
-    final _$result = _$v ??
-        _$WorkspaceShareInput._(
-          expiresAt: expiresAt,
-          maxUses: maxUses,
-        );
+    final _$result =
+        _$v ?? _$WorkspaceShareInput._(expiresAt: expiresAt, maxUses: maxUses);
     replace(_$result);
     return _$result;
   }

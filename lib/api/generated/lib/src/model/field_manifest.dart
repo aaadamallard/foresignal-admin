@@ -158,8 +158,9 @@ class _$FieldManifestSerializer implements PrimitiveSerializer<FieldManifest> {
     yield r'components';
     yield serializers.serialize(
       object.components,
-      specifiedType:
-          const FullType(BuiltList, [FullType(FieldManifestComponentsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(FieldManifestComponentsInner),
+      ]),
     );
     yield r'byteLength';
     yield serializers.serialize(
@@ -198,9 +199,11 @@ class _$FieldManifestSerializer implements PrimitiveSerializer<FieldManifest> {
     FieldManifest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -216,111 +219,141 @@ class _$FieldManifestSerializer implements PrimitiveSerializer<FieldManifest> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'schemaVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FieldManifestSchemaVersionEnum),
-          ) as FieldManifestSchemaVersionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      FieldManifestSchemaVersionEnum,
+                    ),
+                  )
+                  as FieldManifestSchemaVersionEnum;
           result.schemaVersion = valueDes;
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.model = valueDes;
           break;
         case r'cycle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FieldManifestCycle),
-          ) as FieldManifestCycle;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FieldManifestCycle),
+                  )
+                  as FieldManifestCycle;
           result.cycle.replace(valueDes);
           break;
         case r'level':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.level = valueDes;
           break;
         case r'units':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.units = valueDes;
           break;
         case r'grid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FieldManifestGrid),
-          ) as FieldManifestGrid;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FieldManifestGrid),
+                  )
+                  as FieldManifestGrid;
           result.grid.replace(valueDes);
           break;
         case r'stale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.stale = valueDes;
           break;
         case r'unavailable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.unavailable = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;
         case r'components':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(FieldManifestComponentsInner)]),
-          ) as BuiltList<FieldManifestComponentsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(FieldManifestComponentsInner),
+                    ]),
+                  )
+                  as BuiltList<FieldManifestComponentsInner>;
           result.components.replace(valueDes);
           break;
         case r'byteLength':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.byteLength = valueDes;
           break;
         case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sha256 = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Attribution),
-          ) as Attribution?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Attribution),
+                  )
+                  as Attribution?;
           if (valueDes == null) continue;
           result.attribution.replace(valueDes);
           break;
         case r'dataUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.dataUrl = valueDes;
           break;
         case r'encodings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(FieldEncodings),
-          ) as FieldEncodings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(FieldEncodings),
+                  )
+                  as FieldEncodings?;
           if (valueDes == null) continue;
           result.encodings.replace(valueDes);
           break;

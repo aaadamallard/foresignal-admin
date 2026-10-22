@@ -128,21 +128,25 @@ class _$RegionalIndexDefSerializer
     yield r'components';
     yield serializers.serialize(
       object.components,
-      specifiedType: const FullType(
-          BuiltList, [FullType(RegionalIndexDefComponentsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(RegionalIndexDefComponentsInner),
+      ]),
     );
     yield r'weights';
     yield serializers.serialize(
       object.weights,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(num)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(num),
+      ]),
     );
     if (object.floors != null) {
       yield r'floors';
       yield serializers.serialize(
         object.floors,
-        specifiedType:
-            const FullType(BuiltList, [FullType(RegionalIndexDefFloorsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RegionalIndexDefFloorsInner),
+        ]),
       );
     }
     yield r'target';
@@ -208,9 +212,11 @@ class _$RegionalIndexDefSerializer
     RegionalIndexDef object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -226,117 +232,152 @@ class _$RegionalIndexDefSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'components':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(RegionalIndexDefComponentsInner)]),
-          ) as BuiltList<RegionalIndexDefComponentsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(RegionalIndexDefComponentsInner),
+                    ]),
+                  )
+                  as BuiltList<RegionalIndexDefComponentsInner>;
           result.components.replace(valueDes);
           break;
         case r'weights':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>;
           result.weights.replace(valueDes);
           break;
         case r'floors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RegionalIndexDefFloorsInner)]),
-          ) as BuiltList<RegionalIndexDefFloorsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RegionalIndexDefFloorsInner),
+                    ]),
+                  )
+                  as BuiltList<RegionalIndexDefFloorsInner>?;
           if (valueDes == null) continue;
           result.floors.replace(valueDes);
           break;
         case r'target':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.target = valueDes;
           break;
         case r'weightsVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.weightsVersion = valueDes;
           break;
         case r'weightsOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RegionalIndexDefWeightsOriginEnum),
-          ) as RegionalIndexDefWeightsOriginEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RegionalIndexDefWeightsOriginEnum,
+                    ),
+                  )
+                  as RegionalIndexDefWeightsOriginEnum;
           result.weightsOrigin = valueDes;
           break;
         case r'autoApplyFittedWeights':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.autoApplyFittedWeights = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'builtIn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.builtIn = valueDes;
           break;
         case r'ready':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.ready = valueDes;
           break;
         case r'skill':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RegionalIndexDefSkill),
-          ) as RegionalIndexDefSkill?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RegionalIndexDefSkill,
+                    ),
+                  )
+                  as RegionalIndexDefSkill?;
           if (valueDes == null) continue;
           result.skill.replace(valueDes);
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

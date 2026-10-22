@@ -38,8 +38,9 @@ abstract class ForecastQuestionPatch
 
   ForecastQuestionPatch._();
 
-  factory ForecastQuestionPatch(
-      [void updates(ForecastQuestionPatchBuilder b)]) = _$ForecastQuestionPatch;
+  factory ForecastQuestionPatch([
+    void updates(ForecastQuestionPatchBuilder b),
+  ]) = _$ForecastQuestionPatch;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastQuestionPatchBuilder b) => b;
@@ -54,7 +55,7 @@ class _$ForecastQuestionPatchSerializer
   @override
   final Iterable<Type> types = const [
     ForecastQuestionPatch,
-    _$ForecastQuestionPatch
+    _$ForecastQuestionPatch,
   ];
 
   @override
@@ -108,9 +109,11 @@ class _$ForecastQuestionPatchSerializer
     ForecastQuestionPatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,43 +129,54 @@ class _$ForecastQuestionPatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.tags.replace(valueDes);
           break;
         case r'closesAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.closesAt = valueDes;
           break;
         case r'resolutionCriteria':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.resolutionCriteria = valueDes;
           break;
         case r'resolver':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ForecastResolver),
-          ) as ForecastResolver?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ForecastResolver),
+                  )
+                  as ForecastResolver?;
           if (valueDes == null) continue;
           result.resolver.replace(valueDes);
           break;

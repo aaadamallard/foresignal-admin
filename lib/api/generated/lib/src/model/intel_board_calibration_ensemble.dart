@@ -17,8 +17,10 @@ part 'intel_board_calibration_ensemble.g.dart';
 @BuiltValue()
 abstract class IntelBoardCalibrationEnsemble
     implements
-        Built<IntelBoardCalibrationEnsemble,
-            IntelBoardCalibrationEnsembleBuilder> {
+        Built<
+          IntelBoardCalibrationEnsemble,
+          IntelBoardCalibrationEnsembleBuilder
+        > {
   @BuiltValueField(wireName: r'brierSkill')
   num? get brierSkill;
 
@@ -30,9 +32,9 @@ abstract class IntelBoardCalibrationEnsemble
 
   IntelBoardCalibrationEnsemble._();
 
-  factory IntelBoardCalibrationEnsemble(
-          [void updates(IntelBoardCalibrationEnsembleBuilder b)]) =
-      _$IntelBoardCalibrationEnsemble;
+  factory IntelBoardCalibrationEnsemble([
+    void updates(IntelBoardCalibrationEnsembleBuilder b),
+  ]) = _$IntelBoardCalibrationEnsemble;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardCalibrationEnsembleBuilder b) => b;
@@ -47,7 +49,7 @@ class _$IntelBoardCalibrationEnsembleSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardCalibrationEnsemble,
-    _$IntelBoardCalibrationEnsemble
+    _$IntelBoardCalibrationEnsemble,
   ];
 
   @override
@@ -73,10 +75,7 @@ class _$IntelBoardCalibrationEnsembleSerializer
       );
     }
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
   }
 
   @override
@@ -85,9 +84,11 @@ class _$IntelBoardCalibrationEnsembleSerializer
     IntelBoardCalibrationEnsemble object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +104,29 @@ class _$IntelBoardCalibrationEnsembleSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'brierSkill':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.brierSkill = valueDes;
           break;
         case r'calibration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.calibration = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         default:

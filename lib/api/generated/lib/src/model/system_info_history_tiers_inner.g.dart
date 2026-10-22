@@ -24,24 +24,24 @@ class _$SystemInfoHistoryTiersInner extends SystemInfoHistoryTiersInner {
   @override
   final int? downsampledRows;
 
-  factory _$SystemInfoHistoryTiersInner(
-          [void Function(SystemInfoHistoryTiersInnerBuilder)? updates]) =>
-      (SystemInfoHistoryTiersInnerBuilder()..update(updates))._build();
+  factory _$SystemInfoHistoryTiersInner([
+    void Function(SystemInfoHistoryTiersInnerBuilder)? updates,
+  ]) => (SystemInfoHistoryTiersInnerBuilder()..update(updates))._build();
 
-  _$SystemInfoHistoryTiersInner._(
-      {required this.tier,
-      required this.partitions,
-      required this.rows,
-      required this.bytes,
-      this.headroomSeq,
-      this.windowDays,
-      this.downsampledLeaves,
-      this.downsampledRows})
-      : super._();
+  _$SystemInfoHistoryTiersInner._({
+    required this.tier,
+    required this.partitions,
+    required this.rows,
+    required this.bytes,
+    this.headroomSeq,
+    this.windowDays,
+    this.downsampledLeaves,
+    this.downsampledRows,
+  }) : super._();
   @override
   SystemInfoHistoryTiersInner rebuild(
-          void Function(SystemInfoHistoryTiersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoHistoryTiersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoHistoryTiersInnerBuilder toBuilder() =>
@@ -93,8 +93,10 @@ class _$SystemInfoHistoryTiersInner extends SystemInfoHistoryTiersInner {
 
 class SystemInfoHistoryTiersInnerBuilder
     implements
-        Builder<SystemInfoHistoryTiersInner,
-            SystemInfoHistoryTiersInnerBuilder> {
+        Builder<
+          SystemInfoHistoryTiersInner,
+          SystemInfoHistoryTiersInnerBuilder
+        > {
   _$SystemInfoHistoryTiersInner? _$v;
 
   HistoryTier? _tier;
@@ -165,16 +167,29 @@ class SystemInfoHistoryTiersInnerBuilder
   SystemInfoHistoryTiersInner build() => _build();
 
   _$SystemInfoHistoryTiersInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoHistoryTiersInner._(
           tier: BuiltValueNullFieldError.checkNotNull(
-              tier, r'SystemInfoHistoryTiersInner', 'tier'),
+            tier,
+            r'SystemInfoHistoryTiersInner',
+            'tier',
+          ),
           partitions: BuiltValueNullFieldError.checkNotNull(
-              partitions, r'SystemInfoHistoryTiersInner', 'partitions'),
+            partitions,
+            r'SystemInfoHistoryTiersInner',
+            'partitions',
+          ),
           rows: BuiltValueNullFieldError.checkNotNull(
-              rows, r'SystemInfoHistoryTiersInner', 'rows'),
+            rows,
+            r'SystemInfoHistoryTiersInner',
+            'rows',
+          ),
           bytes: BuiltValueNullFieldError.checkNotNull(
-              bytes, r'SystemInfoHistoryTiersInner', 'bytes'),
+            bytes,
+            r'SystemInfoHistoryTiersInner',
+            'bytes',
+          ),
           headroomSeq: headroomSeq,
           windowDays: windowDays,
           downsampledLeaves: downsampledLeaves,

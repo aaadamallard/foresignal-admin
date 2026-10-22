@@ -75,10 +75,7 @@ class _$AnalogQuerySerializer implements PrimitiveSerializer<AnalogQuery> {
     );
     if (object.k != null) {
       yield r'k';
-      yield serializers.serialize(
-        object.k,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.k, specifiedType: const FullType(int));
     }
     if (object.outcome != null) {
       yield r'outcome';
@@ -95,9 +92,11 @@ class _$AnalogQuerySerializer implements PrimitiveSerializer<AnalogQuery> {
     AnalogQuery object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,39 +112,49 @@ class _$AnalogQuerySerializer implements PrimitiveSerializer<AnalogQuery> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'regionCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.regionCode = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         case r'k':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.k = valueDes;
           break;
         case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.outcome = valueDes;
           break;

@@ -27,16 +27,16 @@ class _$Exposure extends Exposure {
   factory _$Exposure([void Function(ExposureBuilder)? updates]) =>
       (ExposureBuilder()..update(updates))._build();
 
-  _$Exposure._(
-      {required this.area,
-      required this.computedAt,
-      required this.facilities,
-      required this.places,
-      required this.watchlistEntities,
-      required this.traffic,
-      required this.population,
-      this.dependents})
-      : super._();
+  _$Exposure._({
+    required this.area,
+    required this.computedAt,
+    required this.facilities,
+    required this.places,
+    required this.watchlistEntities,
+    required this.traffic,
+    required this.population,
+    this.dependents,
+  }) : super._();
   @override
   Exposure rebuild(void Function(ExposureBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -169,11 +169,15 @@ class ExposureBuilder implements Builder<Exposure, ExposureBuilder> {
   _$Exposure _build() {
     _$Exposure _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Exposure._(
             area: area.build(),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'Exposure', 'computedAt'),
+              computedAt,
+              r'Exposure',
+              'computedAt',
+            ),
             facilities: facilities.build(),
             places: places.build(),
             watchlistEntities: watchlistEntities.build(),
@@ -201,7 +205,10 @@ class ExposureBuilder implements Builder<Exposure, ExposureBuilder> {
         _dependents?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Exposure', _$failedField, e.toString());
+          r'Exposure',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

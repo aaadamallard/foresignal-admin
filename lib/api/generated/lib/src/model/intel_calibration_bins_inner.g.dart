@@ -18,21 +18,21 @@ class _$IntelCalibrationBinsInner extends IntelCalibrationBinsInner {
   @override
   final num? observedFrequency;
 
-  factory _$IntelCalibrationBinsInner(
-          [void Function(IntelCalibrationBinsInnerBuilder)? updates]) =>
-      (IntelCalibrationBinsInnerBuilder()..update(updates))._build();
+  factory _$IntelCalibrationBinsInner([
+    void Function(IntelCalibrationBinsInnerBuilder)? updates,
+  ]) => (IntelCalibrationBinsInnerBuilder()..update(updates))._build();
 
-  _$IntelCalibrationBinsInner._(
-      {this.lower,
-      this.upper,
-      this.n,
-      this.meanForecast,
-      this.observedFrequency})
-      : super._();
+  _$IntelCalibrationBinsInner._({
+    this.lower,
+    this.upper,
+    this.n,
+    this.meanForecast,
+    this.observedFrequency,
+  }) : super._();
   @override
   IntelCalibrationBinsInner rebuild(
-          void Function(IntelCalibrationBinsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelCalibrationBinsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelCalibrationBinsInnerBuilder toBuilder() =>
@@ -130,7 +130,8 @@ class IntelCalibrationBinsInnerBuilder
   IntelCalibrationBinsInner build() => _build();
 
   _$IntelCalibrationBinsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelCalibrationBinsInner._(
           lower: lower,
           upper: upper,

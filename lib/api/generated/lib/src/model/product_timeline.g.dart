@@ -24,9 +24,9 @@ ProductTimelineModeEnum _$productTimelineModeEnumValueOf(String name) {
 
 final BuiltSet<ProductTimelineModeEnum> _$productTimelineModeEnumValues =
     BuiltSet<ProductTimelineModeEnum>(const <ProductTimelineModeEnum>[
-  _$productTimelineModeEnum_products,
-  _$productTimelineModeEnum_seamless,
-]);
+      _$productTimelineModeEnum_products,
+      _$productTimelineModeEnum_seamless,
+    ]);
 
 Serializer<ProductTimelineModeEnum> _$productTimelineModeEnumSerializer =
     _$ProductTimelineModeEnumSerializer();
@@ -48,16 +48,20 @@ class _$ProductTimelineModeEnumSerializer
   final String wireName = 'ProductTimelineModeEnum';
 
   @override
-  Object serialize(Serializers serializers, ProductTimelineModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProductTimelineModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProductTimelineModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductTimelineModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductTimelineModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductTimeline extends ProductTimeline {
@@ -81,16 +85,16 @@ class _$ProductTimeline extends ProductTimeline {
   factory _$ProductTimeline([void Function(ProductTimelineBuilder)? updates]) =>
       (ProductTimelineBuilder()..update(updates))._build();
 
-  _$ProductTimeline._(
-      {required this.mode,
-      required this.products,
-      this.from,
-      this.to,
-      this.runs,
-      this.nowIndex,
-      required this.ticks,
-      required this.serverTime})
-      : super._();
+  _$ProductTimeline._({
+    required this.mode,
+    required this.products,
+    this.from,
+    this.to,
+    this.runs,
+    this.nowIndex,
+    required this.ticks,
+    required this.serverTime,
+  }) : super._();
   @override
   ProductTimeline rebuild(void Function(ProductTimelineBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -217,10 +221,14 @@ class ProductTimelineBuilder
   _$ProductTimeline _build() {
     _$ProductTimeline _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductTimeline._(
             mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'ProductTimeline', 'mode'),
+              mode,
+              r'ProductTimeline',
+              'mode',
+            ),
             products: products.build(),
             from: from,
             to: to,
@@ -228,7 +236,10 @@ class ProductTimelineBuilder
             nowIndex: nowIndex,
             ticks: ticks.build(),
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'ProductTimeline', 'serverTime'),
+              serverTime,
+              r'ProductTimeline',
+              'serverTime',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -243,7 +254,10 @@ class ProductTimelineBuilder
         ticks.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductTimeline', _$failedField, e.toString());
+          r'ProductTimeline',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

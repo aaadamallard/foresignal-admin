@@ -42,8 +42,9 @@ abstract class CoordinationIndicator
 
   CoordinationIndicator._();
 
-  factory CoordinationIndicator(
-      [void updates(CoordinationIndicatorBuilder b)]) = _$CoordinationIndicator;
+  factory CoordinationIndicator([
+    void updates(CoordinationIndicatorBuilder b),
+  ]) = _$CoordinationIndicator;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CoordinationIndicatorBuilder b) => b;
@@ -58,7 +59,7 @@ class _$CoordinationIndicatorSerializer
   @override
   final Iterable<Type> types = const [
     CoordinationIndicator,
-    _$CoordinationIndicator
+    _$CoordinationIndicator,
   ];
 
   @override
@@ -99,10 +100,7 @@ class _$CoordinationIndicatorSerializer
     }
     if (object.n != null) {
       yield r'n';
-      yield serializers.serialize(
-        object.n,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.n, specifiedType: const FullType(int));
     }
     yield r'available';
     yield serializers.serialize(
@@ -117,9 +115,11 @@ class _$CoordinationIndicatorSerializer
     CoordinationIndicator object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,50 +135,62 @@ class _$CoordinationIndicatorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.value = valueDes;
           break;
         case r'nullExpectation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.nullExpectation = valueDes;
           break;
         case r'pValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pValue = valueDes;
           break;
         case r'qValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.qValue = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n = valueDes;
           break;
         case r'available':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.available = valueDes;
           break;
         default:

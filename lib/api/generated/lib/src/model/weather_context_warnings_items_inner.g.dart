@@ -19,21 +19,21 @@ class _$WeatherContextWarningsItemsInner
   @override
   final bool? untrusted;
 
-  factory _$WeatherContextWarningsItemsInner(
-          [void Function(WeatherContextWarningsItemsInnerBuilder)? updates]) =>
-      (WeatherContextWarningsItemsInnerBuilder()..update(updates))._build();
+  factory _$WeatherContextWarningsItemsInner([
+    void Function(WeatherContextWarningsItemsInnerBuilder)? updates,
+  ]) => (WeatherContextWarningsItemsInnerBuilder()..update(updates))._build();
 
-  _$WeatherContextWarningsItemsInner._(
-      {required this.id,
-      required this.event,
-      this.severity,
-      this.expires,
-      this.untrusted})
-      : super._();
+  _$WeatherContextWarningsItemsInner._({
+    required this.id,
+    required this.event,
+    this.severity,
+    this.expires,
+    this.untrusted,
+  }) : super._();
   @override
   WeatherContextWarningsItemsInner rebuild(
-          void Function(WeatherContextWarningsItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextWarningsItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextWarningsItemsInnerBuilder toBuilder() =>
@@ -76,8 +76,10 @@ class _$WeatherContextWarningsItemsInner
 
 class WeatherContextWarningsItemsInnerBuilder
     implements
-        Builder<WeatherContextWarningsItemsInner,
-            WeatherContextWarningsItemsInnerBuilder> {
+        Builder<
+          WeatherContextWarningsItemsInner,
+          WeatherContextWarningsItemsInnerBuilder
+        > {
   _$WeatherContextWarningsItemsInner? _$v;
 
   String? _id;
@@ -131,12 +133,19 @@ class WeatherContextWarningsItemsInnerBuilder
   WeatherContextWarningsItemsInner build() => _build();
 
   _$WeatherContextWarningsItemsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WeatherContextWarningsItemsInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'WeatherContextWarningsItemsInner', 'id'),
+            id,
+            r'WeatherContextWarningsItemsInner',
+            'id',
+          ),
           event: BuiltValueNullFieldError.checkNotNull(
-              event, r'WeatherContextWarningsItemsInner', 'event'),
+            event,
+            r'WeatherContextWarningsItemsInner',
+            'event',
+          ),
           severity: severity,
           expires: expires,
           untrusted: untrusted,

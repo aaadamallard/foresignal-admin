@@ -16,17 +16,20 @@ class _$ScorecardEntryRecalibration extends ScorecardEntryRecalibration {
   @override
   final DateTime? fittedAt;
 
-  factory _$ScorecardEntryRecalibration(
-          [void Function(ScorecardEntryRecalibrationBuilder)? updates]) =>
-      (ScorecardEntryRecalibrationBuilder()..update(updates))._build();
+  factory _$ScorecardEntryRecalibration([
+    void Function(ScorecardEntryRecalibrationBuilder)? updates,
+  ]) => (ScorecardEntryRecalibrationBuilder()..update(updates))._build();
 
-  _$ScorecardEntryRecalibration._(
-      {required this.a, required this.b, required this.n, this.fittedAt})
-      : super._();
+  _$ScorecardEntryRecalibration._({
+    required this.a,
+    required this.b,
+    required this.n,
+    this.fittedAt,
+  }) : super._();
   @override
   ScorecardEntryRecalibration rebuild(
-          void Function(ScorecardEntryRecalibrationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ScorecardEntryRecalibrationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ScorecardEntryRecalibrationBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$ScorecardEntryRecalibration extends ScorecardEntryRecalibration {
 
 class ScorecardEntryRecalibrationBuilder
     implements
-        Builder<ScorecardEntryRecalibration,
-            ScorecardEntryRecalibrationBuilder> {
+        Builder<
+          ScorecardEntryRecalibration,
+          ScorecardEntryRecalibrationBuilder
+        > {
   _$ScorecardEntryRecalibration? _$v;
 
   num? _a;
@@ -116,14 +121,24 @@ class ScorecardEntryRecalibrationBuilder
   ScorecardEntryRecalibration build() => _build();
 
   _$ScorecardEntryRecalibration _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ScorecardEntryRecalibration._(
           a: BuiltValueNullFieldError.checkNotNull(
-              a, r'ScorecardEntryRecalibration', 'a'),
+            a,
+            r'ScorecardEntryRecalibration',
+            'a',
+          ),
           b: BuiltValueNullFieldError.checkNotNull(
-              b, r'ScorecardEntryRecalibration', 'b'),
+            b,
+            r'ScorecardEntryRecalibration',
+            'b',
+          ),
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'ScorecardEntryRecalibration', 'n'),
+            n,
+            r'ScorecardEntryRecalibration',
+            'n',
+          ),
           fittedAt: fittedAt,
         );
     replace(_$result);

@@ -20,11 +20,12 @@ TileJsonTilejsonEnum _$tileJsonTilejsonEnumValueOf(String name) {
 
 final BuiltSet<TileJsonTilejsonEnum> _$tileJsonTilejsonEnumValues =
     BuiltSet<TileJsonTilejsonEnum>(const <TileJsonTilejsonEnum>[
-  _$tileJsonTilejsonEnum_n3period0Period0,
-]);
+      _$tileJsonTilejsonEnum_n3period0Period0,
+    ]);
 
-const TileJsonSchemeEnum _$tileJsonSchemeEnum_xyz =
-    const TileJsonSchemeEnum._('xyz');
+const TileJsonSchemeEnum _$tileJsonSchemeEnum_xyz = const TileJsonSchemeEnum._(
+  'xyz',
+);
 
 TileJsonSchemeEnum _$tileJsonSchemeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +38,8 @@ TileJsonSchemeEnum _$tileJsonSchemeEnumValueOf(String name) {
 
 final BuiltSet<TileJsonSchemeEnum> _$tileJsonSchemeEnumValues =
     BuiltSet<TileJsonSchemeEnum>(const <TileJsonSchemeEnum>[
-  _$tileJsonSchemeEnum_xyz,
-]);
+      _$tileJsonSchemeEnum_xyz,
+    ]);
 
 const TileJsonTileSizeEnum _$tileJsonTileSizeEnum_number256 =
     const TileJsonTileSizeEnum._('number256');
@@ -58,9 +59,9 @@ TileJsonTileSizeEnum _$tileJsonTileSizeEnumValueOf(String name) {
 
 final BuiltSet<TileJsonTileSizeEnum> _$tileJsonTileSizeEnumValues =
     BuiltSet<TileJsonTileSizeEnum>(const <TileJsonTileSizeEnum>[
-  _$tileJsonTileSizeEnum_number256,
-  _$tileJsonTileSizeEnum_number512,
-]);
+      _$tileJsonTileSizeEnum_number256,
+      _$tileJsonTileSizeEnum_number512,
+    ]);
 
 const TileJsonTmsEnum _$tileJsonTmsEnum_webMercatorQuad =
     const TileJsonTmsEnum._('webMercatorQuad');
@@ -80,9 +81,9 @@ TileJsonTmsEnum _$tileJsonTmsEnumValueOf(String name) {
 
 final BuiltSet<TileJsonTmsEnum> _$tileJsonTmsEnumValues =
     BuiltSet<TileJsonTmsEnum>(const <TileJsonTmsEnum>[
-  _$tileJsonTmsEnum_webMercatorQuad,
-  _$tileJsonTmsEnum_worldCRS84Quad,
-]);
+      _$tileJsonTmsEnum_webMercatorQuad,
+      _$tileJsonTmsEnum_worldCRS84Quad,
+    ]);
 
 const TileJsonEncodingEnum _$tileJsonEncodingEnum_custom =
     const TileJsonEncodingEnum._('custom');
@@ -102,9 +103,9 @@ TileJsonEncodingEnum _$tileJsonEncodingEnumValueOf(String name) {
 
 final BuiltSet<TileJsonEncodingEnum> _$tileJsonEncodingEnumValues =
     BuiltSet<TileJsonEncodingEnum>(const <TileJsonEncodingEnum>[
-  _$tileJsonEncodingEnum_custom,
-  _$tileJsonEncodingEnum_terrarium,
-]);
+      _$tileJsonEncodingEnum_custom,
+      _$tileJsonEncodingEnum_terrarium,
+    ]);
 
 Serializer<TileJsonTilejsonEnum> _$tileJsonTilejsonEnumSerializer =
     _$TileJsonTilejsonEnumSerializer();
@@ -132,15 +133,20 @@ class _$TileJsonTilejsonEnumSerializer
   final String wireName = 'TileJsonTilejsonEnum';
 
   @override
-  Object serialize(Serializers serializers, TileJsonTilejsonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TileJsonTilejsonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TileJsonTilejsonEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TileJsonTilejsonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TileJsonTilejsonEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TileJsonTilejsonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TileJsonSchemeEnumSerializer
@@ -158,15 +164,20 @@ class _$TileJsonSchemeEnumSerializer
   final String wireName = 'TileJsonSchemeEnum';
 
   @override
-  Object serialize(Serializers serializers, TileJsonSchemeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TileJsonSchemeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TileJsonSchemeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TileJsonSchemeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TileJsonSchemeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TileJsonSchemeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TileJsonTileSizeEnumSerializer
@@ -186,15 +197,20 @@ class _$TileJsonTileSizeEnumSerializer
   final String wireName = 'TileJsonTileSizeEnum';
 
   @override
-  Object serialize(Serializers serializers, TileJsonTileSizeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TileJsonTileSizeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TileJsonTileSizeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TileJsonTileSizeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TileJsonTileSizeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TileJsonTileSizeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TileJsonTmsEnumSerializer
@@ -214,15 +230,20 @@ class _$TileJsonTmsEnumSerializer
   final String wireName = 'TileJsonTmsEnum';
 
   @override
-  Object serialize(Serializers serializers, TileJsonTmsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TileJsonTmsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TileJsonTmsEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TileJsonTmsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TileJsonTmsEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TileJsonTmsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TileJsonEncodingEnumSerializer
@@ -242,15 +263,20 @@ class _$TileJsonEncodingEnumSerializer
   final String wireName = 'TileJsonEncodingEnum';
 
   @override
-  Object serialize(Serializers serializers, TileJsonEncodingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TileJsonEncodingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TileJsonEncodingEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TileJsonEncodingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TileJsonEncodingEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TileJsonEncodingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TileJson extends TileJson {
@@ -312,35 +338,35 @@ class _$TileJson extends TileJson {
   factory _$TileJson([void Function(TileJsonBuilder)? updates]) =>
       (TileJsonBuilder()..update(updates))._build();
 
-  _$TileJson._(
-      {required this.tilejson,
-      this.name,
-      this.description,
-      this.version,
-      this.attribution,
-      this.scheme,
-      required this.tiles,
-      this.minzoom,
-      this.maxzoom,
-      this.bounds,
-      this.vectorLayers,
-      this.foresignalColonAggBelowZoom,
-      this.foresignalColonProperties,
-      this.tileSize,
-      this.foresignalColonTiles2x,
-      this.foresignalColonFrameKey,
-      this.foresignalColonStyle,
-      this.foresignalColonRun,
-      this.foresignalColonExpiresAt,
-      this.tms,
-      this.encoding,
-      this.redFactor,
-      this.greenFactor,
-      this.blueFactor,
-      this.baseShift,
-      this.units,
-      this.nodata})
-      : super._();
+  _$TileJson._({
+    required this.tilejson,
+    this.name,
+    this.description,
+    this.version,
+    this.attribution,
+    this.scheme,
+    required this.tiles,
+    this.minzoom,
+    this.maxzoom,
+    this.bounds,
+    this.vectorLayers,
+    this.foresignalColonAggBelowZoom,
+    this.foresignalColonProperties,
+    this.tileSize,
+    this.foresignalColonTiles2x,
+    this.foresignalColonFrameKey,
+    this.foresignalColonStyle,
+    this.foresignalColonRun,
+    this.foresignalColonExpiresAt,
+    this.tms,
+    this.encoding,
+    this.redFactor,
+    this.greenFactor,
+    this.blueFactor,
+    this.baseShift,
+    this.units,
+    this.nodata,
+  }) : super._();
   @override
   TileJson rebuild(void Function(TileJsonBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -507,8 +533,8 @@ class TileJsonBuilder implements Builder<TileJson, TileJsonBuilder> {
   ListBuilder<String> get foresignalColonProperties =>
       _$this._foresignalColonProperties ??= ListBuilder<String>();
   set foresignalColonProperties(
-          ListBuilder<String>? foresignalColonProperties) =>
-      _$this._foresignalColonProperties = foresignalColonProperties;
+    ListBuilder<String>? foresignalColonProperties,
+  ) => _$this._foresignalColonProperties = foresignalColonProperties;
 
   TileJsonTileSizeEnum? _tileSize;
   TileJsonTileSizeEnum? get tileSize => _$this._tileSize;
@@ -627,10 +653,14 @@ class TileJsonBuilder implements Builder<TileJson, TileJsonBuilder> {
   _$TileJson _build() {
     _$TileJson _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TileJson._(
             tilejson: BuiltValueNullFieldError.checkNotNull(
-                tilejson, r'TileJson', 'tilejson'),
+              tilejson,
+              r'TileJson',
+              'tilejson',
+            ),
             name: name,
             description: description,
             version: version,
@@ -676,7 +706,10 @@ class TileJsonBuilder implements Builder<TileJson, TileJsonBuilder> {
         _foresignalColonTiles2x?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TileJson', _$failedField, e.toString());
+          r'TileJson',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

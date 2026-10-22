@@ -16,8 +16,10 @@ part 'social_settings_compare_default_window.g.dart';
 @BuiltValue()
 abstract class SocialSettingsCompareDefaultWindow
     implements
-        Built<SocialSettingsCompareDefaultWindow,
-            SocialSettingsCompareDefaultWindowBuilder> {
+        Built<
+          SocialSettingsCompareDefaultWindow,
+          SocialSettingsCompareDefaultWindowBuilder
+        > {
   /// ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
   @BuiltValueField(wireName: r'before')
   String? get before;
@@ -28,9 +30,9 @@ abstract class SocialSettingsCompareDefaultWindow
 
   SocialSettingsCompareDefaultWindow._();
 
-  factory SocialSettingsCompareDefaultWindow(
-          [void updates(SocialSettingsCompareDefaultWindowBuilder b)]) =
-      _$SocialSettingsCompareDefaultWindow;
+  factory SocialSettingsCompareDefaultWindow([
+    void updates(SocialSettingsCompareDefaultWindowBuilder b),
+  ]) = _$SocialSettingsCompareDefaultWindow;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsCompareDefaultWindowBuilder b) => b;
@@ -45,7 +47,7 @@ class _$SocialSettingsCompareDefaultWindowSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsCompareDefaultWindow,
-    _$SocialSettingsCompareDefaultWindow
+    _$SocialSettingsCompareDefaultWindow,
   ];
 
   @override
@@ -78,9 +80,11 @@ class _$SocialSettingsCompareDefaultWindowSerializer
     SocialSettingsCompareDefaultWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,18 +100,22 @@ class _$SocialSettingsCompareDefaultWindowSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.before = valueDes;
           break;
         case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.after = valueDes;
           break;

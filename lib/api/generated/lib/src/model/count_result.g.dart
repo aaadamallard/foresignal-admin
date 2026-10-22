@@ -17,9 +17,11 @@ class _$CountResult extends CountResult {
   factory _$CountResult([void Function(CountResultBuilder)? updates]) =>
       (CountResultBuilder()..update(updates))._build();
 
-  _$CountResult._(
-      {required this.count, required this.exact, required this.watermarkSeq})
-      : super._();
+  _$CountResult._({
+    required this.count,
+    required this.exact,
+    required this.watermarkSeq,
+  }) : super._();
   @override
   CountResult rebuild(void Function(CountResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -100,14 +102,24 @@ class CountResultBuilder implements Builder<CountResult, CountResultBuilder> {
   CountResult build() => _build();
 
   _$CountResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CountResult._(
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'CountResult', 'count'),
+            count,
+            r'CountResult',
+            'count',
+          ),
           exact: BuiltValueNullFieldError.checkNotNull(
-              exact, r'CountResult', 'exact'),
+            exact,
+            r'CountResult',
+            'exact',
+          ),
           watermarkSeq: BuiltValueNullFieldError.checkNotNull(
-              watermarkSeq, r'CountResult', 'watermarkSeq'),
+            watermarkSeq,
+            r'CountResult',
+            'watermarkSeq',
+          ),
         );
     replace(_$result);
     return _$result;

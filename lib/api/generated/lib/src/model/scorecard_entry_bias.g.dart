@@ -14,19 +14,19 @@ class _$ScorecardEntryBias extends ScorecardEntryBias {
   @override
   final num? meanForecastOnNo;
 
-  factory _$ScorecardEntryBias(
-          [void Function(ScorecardEntryBiasBuilder)? updates]) =>
-      (ScorecardEntryBiasBuilder()..update(updates))._build();
+  factory _$ScorecardEntryBias([
+    void Function(ScorecardEntryBiasBuilder)? updates,
+  ]) => (ScorecardEntryBiasBuilder()..update(updates))._build();
 
-  _$ScorecardEntryBias._(
-      {required this.meanForecastMinusObserved,
-      required this.hedgedShare,
-      this.meanForecastOnNo})
-      : super._();
+  _$ScorecardEntryBias._({
+    required this.meanForecastMinusObserved,
+    required this.hedgedShare,
+    this.meanForecastOnNo,
+  }) : super._();
   @override
   ScorecardEntryBias rebuild(
-          void Function(ScorecardEntryBiasBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ScorecardEntryBiasBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ScorecardEntryBiasBuilder toBuilder() =>
@@ -108,14 +108,19 @@ class ScorecardEntryBiasBuilder
   ScorecardEntryBias build() => _build();
 
   _$ScorecardEntryBias _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ScorecardEntryBias._(
           meanForecastMinusObserved: BuiltValueNullFieldError.checkNotNull(
-              meanForecastMinusObserved,
-              r'ScorecardEntryBias',
-              'meanForecastMinusObserved'),
+            meanForecastMinusObserved,
+            r'ScorecardEntryBias',
+            'meanForecastMinusObserved',
+          ),
           hedgedShare: BuiltValueNullFieldError.checkNotNull(
-              hedgedShare, r'ScorecardEntryBias', 'hedgedShare'),
+            hedgedShare,
+            r'ScorecardEntryBias',
+            'hedgedShare',
+          ),
           meanForecastOnNo: meanForecastOnNo,
         );
     replace(_$result);

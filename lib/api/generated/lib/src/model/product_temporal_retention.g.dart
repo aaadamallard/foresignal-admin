@@ -16,17 +16,20 @@ class _$ProductTemporalRetention extends ProductTemporalRetention {
   @override
   final String? summary;
 
-  factory _$ProductTemporalRetention(
-          [void Function(ProductTemporalRetentionBuilder)? updates]) =>
-      (ProductTemporalRetentionBuilder()..update(updates))._build();
+  factory _$ProductTemporalRetention([
+    void Function(ProductTemporalRetentionBuilder)? updates,
+  ]) => (ProductTemporalRetentionBuilder()..update(updates))._build();
 
-  _$ProductTemporalRetention._(
-      {this.ladder, this.maxAge, this.runs, this.summary})
-      : super._();
+  _$ProductTemporalRetention._({
+    this.ladder,
+    this.maxAge,
+    this.runs,
+    this.summary,
+  }) : super._();
   @override
   ProductTemporalRetention rebuild(
-          void Function(ProductTemporalRetentionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProductTemporalRetentionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProductTemporalRetentionBuilder toBuilder() =>
@@ -119,7 +122,8 @@ class ProductTemporalRetentionBuilder
   _$ProductTemporalRetention _build() {
     _$ProductTemporalRetention _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductTemporalRetention._(
             ladder: _ladder?.build(),
             maxAge: maxAge,
@@ -133,7 +137,10 @@ class ProductTemporalRetentionBuilder
         _ladder?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductTemporalRetention', _$failedField, e.toString());
+          r'ProductTemporalRetention',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

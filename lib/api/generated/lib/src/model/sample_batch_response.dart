@@ -42,7 +42,7 @@ class _$SampleBatchResponseSerializer
   @override
   final Iterable<Type> types = const [
     SampleBatchResponse,
-    _$SampleBatchResponse
+    _$SampleBatchResponse,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$SampleBatchResponseSerializer
     SampleBatchResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,18 +91,23 @@ class _$SampleBatchResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SampleResponse)]),
-          ) as BuiltList<SampleResponse>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SampleResponse),
+                    ]),
+                  )
+                  as BuiltList<SampleResponse>;
           result.items.replace(valueDes);
           break;
         case r'serverTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.serverTime = valueDes;
           break;
         default:

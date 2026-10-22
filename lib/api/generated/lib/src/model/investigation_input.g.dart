@@ -16,7 +16,8 @@ const InvestigationInputStatusEnum _$investigationInputStatusEnum_archived =
     const InvestigationInputStatusEnum._('archived');
 
 InvestigationInputStatusEnum _$investigationInputStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'open':
       return _$investigationInputStatusEnum_open;
@@ -32,16 +33,16 @@ InvestigationInputStatusEnum _$investigationInputStatusEnumValueOf(
 }
 
 final BuiltSet<InvestigationInputStatusEnum>
-    _$investigationInputStatusEnumValues =
+_$investigationInputStatusEnumValues =
     BuiltSet<InvestigationInputStatusEnum>(const <InvestigationInputStatusEnum>[
-  _$investigationInputStatusEnum_open,
-  _$investigationInputStatusEnum_active,
-  _$investigationInputStatusEnum_closed,
-  _$investigationInputStatusEnum_archived,
-]);
+      _$investigationInputStatusEnum_open,
+      _$investigationInputStatusEnum_active,
+      _$investigationInputStatusEnum_closed,
+      _$investigationInputStatusEnum_archived,
+    ]);
 
 Serializer<InvestigationInputStatusEnum>
-    _$investigationInputStatusEnumSerializer =
+_$investigationInputStatusEnumSerializer =
     _$InvestigationInputStatusEnumSerializer();
 
 class _$InvestigationInputStatusEnumSerializer
@@ -65,16 +66,20 @@ class _$InvestigationInputStatusEnumSerializer
   final String wireName = 'InvestigationInputStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, InvestigationInputStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InvestigationInputStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InvestigationInputStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InvestigationInputStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InvestigationInputStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InvestigationInput extends InvestigationInput {
@@ -101,27 +106,27 @@ class _$InvestigationInput extends InvestigationInput {
   @override
   final BuiltList<String>? reportIds;
 
-  factory _$InvestigationInput(
-          [void Function(InvestigationInputBuilder)? updates]) =>
-      (InvestigationInputBuilder()..update(updates))._build();
+  factory _$InvestigationInput([
+    void Function(InvestigationInputBuilder)? updates,
+  ]) => (InvestigationInputBuilder()..update(updates))._build();
 
-  _$InvestigationInput._(
-      {required this.title,
-      this.summary,
-      this.tags,
-      this.status,
-      this.visibility,
-      this.tlp,
-      this.workspaceId,
-      this.hypothesisSetIds,
-      this.questionIds,
-      this.chronicleIds,
-      this.reportIds})
-      : super._();
+  _$InvestigationInput._({
+    required this.title,
+    this.summary,
+    this.tags,
+    this.status,
+    this.visibility,
+    this.tlp,
+    this.workspaceId,
+    this.hypothesisSetIds,
+    this.questionIds,
+    this.chronicleIds,
+    this.reportIds,
+  }) : super._();
   @override
   InvestigationInput rebuild(
-          void Function(InvestigationInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InvestigationInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InvestigationInputBuilder toBuilder() =>
@@ -275,10 +280,14 @@ class InvestigationInputBuilder
   _$InvestigationInput _build() {
     _$InvestigationInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InvestigationInput._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'InvestigationInput', 'title'),
+              title,
+              r'InvestigationInput',
+              'title',
+            ),
             summary: summary,
             tags: _tags?.build(),
             status: status,
@@ -306,7 +315,10 @@ class InvestigationInputBuilder
         _reportIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InvestigationInput', _$failedField, e.toString());
+          r'InvestigationInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

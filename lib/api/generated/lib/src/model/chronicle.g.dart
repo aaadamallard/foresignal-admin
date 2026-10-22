@@ -36,12 +36,12 @@ ChronicleStatusEnum _$chronicleStatusEnumValueOf(String name) {
 
 final BuiltSet<ChronicleStatusEnum> _$chronicleStatusEnumValues =
     BuiltSet<ChronicleStatusEnum>(const <ChronicleStatusEnum>[
-  _$chronicleStatusEnum_proposed,
-  _$chronicleStatusEnum_active,
-  _$chronicleStatusEnum_paused,
-  _$chronicleStatusEnum_stopped,
-  _$chronicleStatusEnum_archived,
-]);
+      _$chronicleStatusEnum_proposed,
+      _$chronicleStatusEnum_active,
+      _$chronicleStatusEnum_paused,
+      _$chronicleStatusEnum_stopped,
+      _$chronicleStatusEnum_archived,
+    ]);
 
 const ChronicleCapStateEnum _$chronicleCapStateEnum_ok =
     const ChronicleCapStateEnum._('ok');
@@ -65,10 +65,10 @@ ChronicleCapStateEnum _$chronicleCapStateEnumValueOf(String name) {
 
 final BuiltSet<ChronicleCapStateEnum> _$chronicleCapStateEnumValues =
     BuiltSet<ChronicleCapStateEnum>(const <ChronicleCapStateEnum>[
-  _$chronicleCapStateEnum_ok,
-  _$chronicleCapStateEnum_warning,
-  _$chronicleCapStateEnum_exceeded,
-]);
+      _$chronicleCapStateEnum_ok,
+      _$chronicleCapStateEnum_warning,
+      _$chronicleCapStateEnum_exceeded,
+    ]);
 
 const ChronicleOriginEnum _$chronicleOriginEnum_operator_ =
     const ChronicleOriginEnum._('operator_');
@@ -92,10 +92,10 @@ ChronicleOriginEnum _$chronicleOriginEnumValueOf(String name) {
 
 final BuiltSet<ChronicleOriginEnum> _$chronicleOriginEnumValues =
     BuiltSet<ChronicleOriginEnum>(const <ChronicleOriginEnum>[
-  _$chronicleOriginEnum_operator_,
-  _$chronicleOriginEnum_agent,
-  _$chronicleOriginEnum_analyst,
-]);
+      _$chronicleOriginEnum_operator_,
+      _$chronicleOriginEnum_agent,
+      _$chronicleOriginEnum_analyst,
+    ]);
 
 const ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnum_none =
     const ChronicleDiscoverabilityEnum._('none');
@@ -105,7 +105,8 @@ const ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnum_network =
     const ChronicleDiscoverabilityEnum._('network');
 
 ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'none':
       return _$chronicleDiscoverabilityEnum_none;
@@ -119,12 +120,12 @@ ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnumValueOf(
 }
 
 final BuiltSet<ChronicleDiscoverabilityEnum>
-    _$chronicleDiscoverabilityEnumValues =
+_$chronicleDiscoverabilityEnumValues =
     BuiltSet<ChronicleDiscoverabilityEnum>(const <ChronicleDiscoverabilityEnum>[
-  _$chronicleDiscoverabilityEnum_none,
-  _$chronicleDiscoverabilityEnum_instance,
-  _$chronicleDiscoverabilityEnum_network,
-]);
+      _$chronicleDiscoverabilityEnum_none,
+      _$chronicleDiscoverabilityEnum_instance,
+      _$chronicleDiscoverabilityEnum_network,
+    ]);
 
 Serializer<ChronicleStatusEnum> _$chronicleStatusEnumSerializer =
     _$ChronicleStatusEnumSerializer();
@@ -133,7 +134,7 @@ Serializer<ChronicleCapStateEnum> _$chronicleCapStateEnumSerializer =
 Serializer<ChronicleOriginEnum> _$chronicleOriginEnumSerializer =
     _$ChronicleOriginEnumSerializer();
 Serializer<ChronicleDiscoverabilityEnum>
-    _$chronicleDiscoverabilityEnumSerializer =
+_$chronicleDiscoverabilityEnumSerializer =
     _$ChronicleDiscoverabilityEnumSerializer();
 
 class _$ChronicleStatusEnumSerializer
@@ -159,15 +160,20 @@ class _$ChronicleStatusEnumSerializer
   final String wireName = 'ChronicleStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ChronicleStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ChronicleStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleCapStateEnumSerializer
@@ -189,15 +195,20 @@ class _$ChronicleCapStateEnumSerializer
   final String wireName = 'ChronicleCapStateEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleCapStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleCapStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ChronicleCapStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleCapStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ChronicleCapStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleCapStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleOriginEnumSerializer
@@ -219,15 +230,20 @@ class _$ChronicleOriginEnumSerializer
   final String wireName = 'ChronicleOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ChronicleOriginEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ChronicleOriginEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleDiscoverabilityEnumSerializer
@@ -249,16 +265,20 @@ class _$ChronicleDiscoverabilityEnumSerializer
   final String wireName = 'ChronicleDiscoverabilityEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleDiscoverabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleDiscoverabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleDiscoverabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleDiscoverabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleDiscoverabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Chronicle extends Chronicle {
@@ -336,43 +356,43 @@ class _$Chronicle extends Chronicle {
   factory _$Chronicle([void Function(ChronicleBuilder)? updates]) =>
       (ChronicleBuilder()..update(updates))._build();
 
-  _$Chronicle._(
-      {required this.id,
-      required this.ref,
-      required this.displayId,
-      required this.name,
-      this.description,
-      required this.owner,
-      required this.visibility,
-      required this.tlp,
-      required this.status,
-      this.area,
-      this.startedAt,
-      this.stoppedAt,
-      this.captureFromSeq,
-      this.captureToSeq,
-      required this.retention,
-      required this.sizeCapBytes,
-      required this.bytesUsed,
-      this.capState,
-      required this.workspaceId,
-      this.situationIds,
-      this.hypothesisSetIds,
-      this.investigationIds,
-      this.topicIds,
-      required this.origin,
-      this.proposalId,
-      required this.layers,
-      this.archive,
-      this.discoverability,
-      this.revealTitle,
-      this.revealOwner,
-      this.unreadCount,
-      this.tags,
-      required this.version,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$Chronicle._({
+    required this.id,
+    required this.ref,
+    required this.displayId,
+    required this.name,
+    this.description,
+    required this.owner,
+    required this.visibility,
+    required this.tlp,
+    required this.status,
+    this.area,
+    this.startedAt,
+    this.stoppedAt,
+    this.captureFromSeq,
+    this.captureToSeq,
+    required this.retention,
+    required this.sizeCapBytes,
+    required this.bytesUsed,
+    this.capState,
+    required this.workspaceId,
+    this.situationIds,
+    this.hypothesisSetIds,
+    this.investigationIds,
+    this.topicIds,
+    required this.origin,
+    this.proposalId,
+    required this.layers,
+    this.archive,
+    this.discoverability,
+    this.revealTitle,
+    this.revealOwner,
+    this.unreadCount,
+    this.tags,
+    required this.version,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   Chronicle rebuild(void Function(ChronicleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -723,43 +743,77 @@ class ChronicleBuilder implements Builder<Chronicle, ChronicleBuilder> {
   _$Chronicle _build() {
     _$Chronicle _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Chronicle._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Chronicle', 'id'),
-            ref:
-                BuiltValueNullFieldError.checkNotNull(ref, r'Chronicle', 'ref'),
+            ref: BuiltValueNullFieldError.checkNotNull(
+              ref,
+              r'Chronicle',
+              'ref',
+            ),
             displayId: BuiltValueNullFieldError.checkNotNull(
-                displayId, r'Chronicle', 'displayId'),
+              displayId,
+              r'Chronicle',
+              'displayId',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'Chronicle', 'name'),
+              name,
+              r'Chronicle',
+              'name',
+            ),
             description: description,
             owner: owner.build(),
             visibility: BuiltValueNullFieldError.checkNotNull(
-                visibility, r'Chronicle', 'visibility'),
-            tlp:
-                BuiltValueNullFieldError.checkNotNull(tlp, r'Chronicle', 'tlp'),
+              visibility,
+              r'Chronicle',
+              'visibility',
+            ),
+            tlp: BuiltValueNullFieldError.checkNotNull(
+              tlp,
+              r'Chronicle',
+              'tlp',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Chronicle', 'status'),
+              status,
+              r'Chronicle',
+              'status',
+            ),
             area: _area?.build(),
             startedAt: startedAt,
             stoppedAt: stoppedAt,
             captureFromSeq: captureFromSeq,
             captureToSeq: captureToSeq,
             retention: BuiltValueNullFieldError.checkNotNull(
-                retention, r'Chronicle', 'retention'),
+              retention,
+              r'Chronicle',
+              'retention',
+            ),
             sizeCapBytes: BuiltValueNullFieldError.checkNotNull(
-                sizeCapBytes, r'Chronicle', 'sizeCapBytes'),
+              sizeCapBytes,
+              r'Chronicle',
+              'sizeCapBytes',
+            ),
             bytesUsed: BuiltValueNullFieldError.checkNotNull(
-                bytesUsed, r'Chronicle', 'bytesUsed'),
+              bytesUsed,
+              r'Chronicle',
+              'bytesUsed',
+            ),
             capState: capState,
             workspaceId: BuiltValueNullFieldError.checkNotNull(
-                workspaceId, r'Chronicle', 'workspaceId'),
+              workspaceId,
+              r'Chronicle',
+              'workspaceId',
+            ),
             situationIds: _situationIds?.build(),
             hypothesisSetIds: _hypothesisSetIds?.build(),
             investigationIds: _investigationIds?.build(),
             topicIds: _topicIds?.build(),
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'Chronicle', 'origin'),
+              origin,
+              r'Chronicle',
+              'origin',
+            ),
             proposalId: proposalId,
             layers: layers.build(),
             archive: _archive?.build(),
@@ -769,9 +823,15 @@ class ChronicleBuilder implements Builder<Chronicle, ChronicleBuilder> {
             unreadCount: unreadCount,
             tags: _tags?.build(),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'Chronicle', 'version'),
+              version,
+              r'Chronicle',
+              'version',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Chronicle', 'createdAt'),
+              createdAt,
+              r'Chronicle',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {
@@ -801,7 +861,10 @@ class ChronicleBuilder implements Builder<Chronicle, ChronicleBuilder> {
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Chronicle', _$failedField, e.toString());
+          r'Chronicle',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

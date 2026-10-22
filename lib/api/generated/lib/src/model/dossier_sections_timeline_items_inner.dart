@@ -20,8 +20,10 @@ part 'dossier_sections_timeline_items_inner.g.dart';
 @BuiltValue()
 abstract class DossierSectionsTimelineItemsInner
     implements
-        Built<DossierSectionsTimelineItemsInner,
-            DossierSectionsTimelineItemsInnerBuilder> {
+        Built<
+          DossierSectionsTimelineItemsInner,
+          DossierSectionsTimelineItemsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'at')
   DateTime get at;
 
@@ -41,9 +43,9 @@ abstract class DossierSectionsTimelineItemsInner
 
   DossierSectionsTimelineItemsInner._();
 
-  factory DossierSectionsTimelineItemsInner(
-          [void updates(DossierSectionsTimelineItemsInnerBuilder b)]) =
-      _$DossierSectionsTimelineItemsInner;
+  factory DossierSectionsTimelineItemsInner([
+    void updates(DossierSectionsTimelineItemsInnerBuilder b),
+  ]) = _$DossierSectionsTimelineItemsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsTimelineItemsInnerBuilder b) => b;
@@ -58,7 +60,7 @@ class _$DossierSectionsTimelineItemsInnerSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsTimelineItemsInner,
-    _$DossierSectionsTimelineItemsInner
+    _$DossierSectionsTimelineItemsInner,
   ];
 
   @override
@@ -106,9 +108,11 @@ class _$DossierSectionsTimelineItemsInnerSerializer
     DossierSectionsTimelineItemsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -124,40 +128,51 @@ class _$DossierSectionsTimelineItemsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(DossierSectionsTimelineItemsInnerKindEnum),
-          ) as DossierSectionsTimelineItemsInnerKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DossierSectionsTimelineItemsInnerKindEnum,
+                    ),
+                  )
+                  as DossierSectionsTimelineItemsInnerKindEnum;
           result.kind = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;

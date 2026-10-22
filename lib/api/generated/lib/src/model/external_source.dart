@@ -204,8 +204,9 @@ class _$ExternalSourceSerializer
       yield r'streams';
       yield serializers.serialize(
         object.streams,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ExternalStreamStats)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ExternalStreamStats),
+        ]),
       );
     }
     if (object.lastValidationErrors != null) {
@@ -233,8 +234,10 @@ class _$ExternalSourceSerializer
       yield r'presentation';
       yield serializers.serialize(
         object.presentation,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType(EdpPresentation)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(EdpPresentation),
+        ]),
       );
     }
     if (object.breakingChanges != null) {
@@ -252,9 +255,11 @@ class _$ExternalSourceSerializer
     ExternalSource object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -270,147 +275,189 @@ class _$ExternalSourceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExternalSourceStateEnum),
-          ) as ExternalSourceStateEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExternalSourceStateEnum),
+                  )
+                  as ExternalSourceStateEnum;
           result.state = valueDes;
           break;
         case r'registeredVia':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ExternalSourceRegisteredViaEnum),
-          ) as ExternalSourceRegisteredViaEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExternalSourceRegisteredViaEnum,
+                    ),
+                  )
+                  as ExternalSourceRegisteredViaEnum?;
           if (valueDes == null) continue;
           result.registeredVia = valueDes;
           break;
         case r'manifest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpManifest),
-          ) as EdpManifest;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpManifest),
+                  )
+                  as EdpManifest;
           result.manifest.replace(valueDes);
           break;
         case r'manifestSha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestSha256 = valueDes;
           break;
         case r'access':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SourceAccess),
-          ) as SourceAccess?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SourceAccess),
+                  )
+                  as SourceAccess?;
           if (valueDes == null) continue;
           result.access.replace(valueDes);
           break;
         case r'egress':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.egress = valueDes;
           break;
         case r'approvedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.approvedBy = valueDes;
           break;
         case r'approvedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.approvedAt = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'lastItemAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastItemAt = valueDes;
           break;
         case r'pull':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ExternalSourcePull),
-          ) as ExternalSourcePull?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ExternalSourcePull),
+                  )
+                  as ExternalSourcePull?;
           if (valueDes == null) continue;
           result.pull.replace(valueDes);
           break;
         case r'streams':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ExternalStreamStats)]),
-          ) as BuiltList<ExternalStreamStats>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ExternalStreamStats),
+                    ]),
+                  )
+                  as BuiltList<ExternalStreamStats>?;
           if (valueDes == null) continue;
           result.streams.replace(valueDes);
           break;
         case r'lastValidationErrors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(EdpItemRejection)]),
-          ) as BuiltList<EdpItemRejection>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EdpItemRejection),
+                    ]),
+                  )
+                  as BuiltList<EdpItemRejection>?;
           if (valueDes == null) continue;
           result.lastValidationErrors.replace(valueDes);
           break;
         case r'health':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.health = valueDes;
           break;
         case r'allowPrivateNetwork':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.allowPrivateNetwork = valueDes;
           break;
         case r'presentation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(EdpPresentation)]),
-          ) as BuiltMap<String, EdpPresentation>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(EdpPresentation),
+                    ]),
+                  )
+                  as BuiltMap<String, EdpPresentation>?;
           if (valueDes == null) continue;
           result.presentation.replace(valueDes);
           break;
         case r'breakingChanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.breakingChanges.replace(valueDes);
           break;

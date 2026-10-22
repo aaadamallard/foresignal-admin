@@ -52,8 +52,9 @@ abstract class RegionalIndexDefSkill
 
   RegionalIndexDefSkill._();
 
-  factory RegionalIndexDefSkill(
-      [void updates(RegionalIndexDefSkillBuilder b)]) = _$RegionalIndexDefSkill;
+  factory RegionalIndexDefSkill([
+    void updates(RegionalIndexDefSkillBuilder b),
+  ]) = _$RegionalIndexDefSkill;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RegionalIndexDefSkillBuilder b) => b;
@@ -68,7 +69,7 @@ class _$RegionalIndexDefSkillSerializer
   @override
   final Iterable<Type> types = const [
     RegionalIndexDefSkill,
-    _$RegionalIndexDefSkill
+    _$RegionalIndexDefSkill,
   ];
 
   @override
@@ -85,10 +86,7 @@ class _$RegionalIndexDefSkillSerializer
       specifiedType: const FullType(DateTime),
     );
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     if (object.pinballLoss != null) {
       yield r'pinballLoss';
       yield serializers.serialize(
@@ -146,9 +144,11 @@ class _$RegionalIndexDefSkillSerializer
     RegionalIndexDefSkill object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -164,72 +164,87 @@ class _$RegionalIndexDefSkillSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'evaluatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.evaluatedAt = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'pinballLoss':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pinballLoss = valueDes;
           break;
         case r'logScore':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.logScore = valueDes;
           break;
         case r'baselinePinballLoss':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baselinePinballLoss = valueDes;
           break;
         case r'baselineLogScore':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baselineLogScore = valueDes;
           break;
         case r'skillPinball':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.skillPinball = valueDes;
           break;
         case r'skillLog':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.skillLog = valueDes;
           break;
         case r'baseline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.baseline = valueDes;
           break;

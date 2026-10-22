@@ -12,12 +12,12 @@ class _$AnalystEvaluation extends AnalystEvaluation {
   @override
   final BuiltList<AnalystEvaluationProfilesInner> profiles;
 
-  factory _$AnalystEvaluation(
-          [void Function(AnalystEvaluationBuilder)? updates]) =>
-      (AnalystEvaluationBuilder()..update(updates))._build();
+  factory _$AnalystEvaluation([
+    void Function(AnalystEvaluationBuilder)? updates,
+  ]) => (AnalystEvaluationBuilder()..update(updates))._build();
 
   _$AnalystEvaluation._({required this.since, required this.profiles})
-      : super._();
+    : super._();
   @override
   AnalystEvaluation rebuild(void Function(AnalystEvaluationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -96,10 +96,14 @@ class AnalystEvaluationBuilder
   _$AnalystEvaluation _build() {
     _$AnalystEvaluation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystEvaluation._(
             since: BuiltValueNullFieldError.checkNotNull(
-                since, r'AnalystEvaluation', 'since'),
+              since,
+              r'AnalystEvaluation',
+              'since',
+            ),
             profiles: profiles.build(),
           );
     } catch (_) {
@@ -109,7 +113,10 @@ class AnalystEvaluationBuilder
         profiles.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystEvaluation', _$failedField, e.toString());
+          r'AnalystEvaluation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

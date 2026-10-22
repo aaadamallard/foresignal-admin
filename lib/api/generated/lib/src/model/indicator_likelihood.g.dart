@@ -16,7 +16,8 @@ const IndicatorLikelihoodClass_Enum _$indicatorLikelihoodClassEnum_neutral =
     const IndicatorLikelihoodClass_Enum._('neutral');
 
 IndicatorLikelihoodClass_Enum _$indicatorLikelihoodClassEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'high':
       return _$indicatorLikelihoodClassEnum_high;
@@ -32,23 +33,25 @@ IndicatorLikelihoodClass_Enum _$indicatorLikelihoodClassEnumValueOf(
 }
 
 final BuiltSet<IndicatorLikelihoodClass_Enum>
-    _$indicatorLikelihoodClassEnumValues = BuiltSet<
-        IndicatorLikelihoodClass_Enum>(const <IndicatorLikelihoodClass_Enum>[
-  _$indicatorLikelihoodClassEnum_high,
-  _$indicatorLikelihoodClassEnum_medium,
-  _$indicatorLikelihoodClassEnum_low,
-  _$indicatorLikelihoodClassEnum_neutral,
-]);
+_$indicatorLikelihoodClassEnumValues = BuiltSet<IndicatorLikelihoodClass_Enum>(
+  const <IndicatorLikelihoodClass_Enum>[
+    _$indicatorLikelihoodClassEnum_high,
+    _$indicatorLikelihoodClassEnum_medium,
+    _$indicatorLikelihoodClassEnum_low,
+    _$indicatorLikelihoodClassEnum_neutral,
+  ],
+);
 
 const IndicatorLikelihoodDirectionEnum
-    _$indicatorLikelihoodDirectionEnum_supports =
+_$indicatorLikelihoodDirectionEnum_supports =
     const IndicatorLikelihoodDirectionEnum._('supports');
 const IndicatorLikelihoodDirectionEnum
-    _$indicatorLikelihoodDirectionEnum_weakens =
+_$indicatorLikelihoodDirectionEnum_weakens =
     const IndicatorLikelihoodDirectionEnum._('weakens');
 
 IndicatorLikelihoodDirectionEnum _$indicatorLikelihoodDirectionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'supports':
       return _$indicatorLikelihoodDirectionEnum_supports;
@@ -60,17 +63,19 @@ IndicatorLikelihoodDirectionEnum _$indicatorLikelihoodDirectionEnumValueOf(
 }
 
 final BuiltSet<IndicatorLikelihoodDirectionEnum>
-    _$indicatorLikelihoodDirectionEnumValues = BuiltSet<
-        IndicatorLikelihoodDirectionEnum>(const <IndicatorLikelihoodDirectionEnum>[
-  _$indicatorLikelihoodDirectionEnum_supports,
-  _$indicatorLikelihoodDirectionEnum_weakens,
-]);
+_$indicatorLikelihoodDirectionEnumValues =
+    BuiltSet<IndicatorLikelihoodDirectionEnum>(
+      const <IndicatorLikelihoodDirectionEnum>[
+        _$indicatorLikelihoodDirectionEnum_supports,
+        _$indicatorLikelihoodDirectionEnum_weakens,
+      ],
+    );
 
 Serializer<IndicatorLikelihoodClass_Enum>
-    _$indicatorLikelihoodClassEnumSerializer =
+_$indicatorLikelihoodClassEnumSerializer =
     _$IndicatorLikelihoodClass_EnumSerializer();
 Serializer<IndicatorLikelihoodDirectionEnum>
-    _$indicatorLikelihoodDirectionEnumSerializer =
+_$indicatorLikelihoodDirectionEnumSerializer =
     _$IndicatorLikelihoodDirectionEnumSerializer();
 
 class _$IndicatorLikelihoodClass_EnumSerializer
@@ -95,16 +100,19 @@ class _$IndicatorLikelihoodClass_EnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorLikelihoodClass_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorLikelihoodClass_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorLikelihoodClass_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorLikelihoodClass_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorLikelihoodClass_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorLikelihoodDirectionEnumSerializer
@@ -125,16 +133,19 @@ class _$IndicatorLikelihoodDirectionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorLikelihoodDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorLikelihoodDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorLikelihoodDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorLikelihoodDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorLikelihoodDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorLikelihood extends IndicatorLikelihood {
@@ -149,21 +160,21 @@ class _$IndicatorLikelihood extends IndicatorLikelihood {
   @override
   final num? effective;
 
-  factory _$IndicatorLikelihood(
-          [void Function(IndicatorLikelihoodBuilder)? updates]) =>
-      (IndicatorLikelihoodBuilder()..update(updates))._build();
+  factory _$IndicatorLikelihood([
+    void Function(IndicatorLikelihoodBuilder)? updates,
+  ]) => (IndicatorLikelihoodBuilder()..update(updates))._build();
 
-  _$IndicatorLikelihood._(
-      {required this.class_,
-      required this.direction,
-      this.value,
-      this.rationale,
-      this.effective})
-      : super._();
+  _$IndicatorLikelihood._({
+    required this.class_,
+    required this.direction,
+    this.value,
+    this.rationale,
+    this.effective,
+  }) : super._();
   @override
   IndicatorLikelihood rebuild(
-          void Function(IndicatorLikelihoodBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndicatorLikelihoodBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndicatorLikelihoodBuilder toBuilder() =>
@@ -260,12 +271,19 @@ class IndicatorLikelihoodBuilder
   IndicatorLikelihood build() => _build();
 
   _$IndicatorLikelihood _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IndicatorLikelihood._(
           class_: BuiltValueNullFieldError.checkNotNull(
-              class_, r'IndicatorLikelihood', 'class_'),
+            class_,
+            r'IndicatorLikelihood',
+            'class_',
+          ),
           direction: BuiltValueNullFieldError.checkNotNull(
-              direction, r'IndicatorLikelihood', 'direction'),
+            direction,
+            r'IndicatorLikelihood',
+            'direction',
+          ),
           value: value,
           rationale: rationale,
           effective: effective,

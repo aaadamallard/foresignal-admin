@@ -14,16 +14,16 @@ class _$ApproachConditionTarget extends ApproachConditionTarget {
   @override
   final String? record;
 
-  factory _$ApproachConditionTarget(
-          [void Function(ApproachConditionTargetBuilder)? updates]) =>
-      (ApproachConditionTargetBuilder()..update(updates))._build();
+  factory _$ApproachConditionTarget([
+    void Function(ApproachConditionTargetBuilder)? updates,
+  ]) => (ApproachConditionTargetBuilder()..update(updates))._build();
 
   _$ApproachConditionTarget._({this.placeId, this.point, this.record})
-      : super._();
+    : super._();
   @override
   ApproachConditionTarget rebuild(
-          void Function(ApproachConditionTargetBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ApproachConditionTargetBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ApproachConditionTargetBuilder toBuilder() =>
@@ -106,7 +106,8 @@ class ApproachConditionTargetBuilder
   _$ApproachConditionTarget _build() {
     _$ApproachConditionTarget _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ApproachConditionTarget._(
             placeId: placeId,
             point: _point?.build(),
@@ -119,7 +120,10 @@ class ApproachConditionTargetBuilder
         _point?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ApproachConditionTarget', _$failedField, e.toString());
+          r'ApproachConditionTarget',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

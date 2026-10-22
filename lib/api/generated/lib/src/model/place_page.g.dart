@@ -90,11 +90,8 @@ class PlacePageBuilder implements Builder<PlacePage, PlacePageBuilder> {
   _$PlacePage _build() {
     _$PlacePage _$result;
     try {
-      _$result = _$v ??
-          _$PlacePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$PlacePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class PlacePageBuilder implements Builder<PlacePage, PlacePageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlacePage', _$failedField, e.toString());
+          r'PlacePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

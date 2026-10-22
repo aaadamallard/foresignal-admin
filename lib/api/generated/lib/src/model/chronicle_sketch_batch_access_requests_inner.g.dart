@@ -21,25 +21,23 @@ class _$ChronicleSketchBatchAccessRequestsInner
   @override
   final bool? offerShare;
 
-  factory _$ChronicleSketchBatchAccessRequestsInner(
-          [void Function(ChronicleSketchBatchAccessRequestsInnerBuilder)?
-              updates]) =>
-      (ChronicleSketchBatchAccessRequestsInnerBuilder()..update(updates))
-          ._build();
+  factory _$ChronicleSketchBatchAccessRequestsInner([
+    void Function(ChronicleSketchBatchAccessRequestsInnerBuilder)? updates,
+  ]) => (ChronicleSketchBatchAccessRequestsInnerBuilder()..update(updates))
+      ._build();
 
-  _$ChronicleSketchBatchAccessRequestsInner._(
-      {required this.requestId,
-      this.linkId,
-      required this.sketchId,
-      required this.requesterHandle,
-      this.message,
-      this.offerShare})
-      : super._();
+  _$ChronicleSketchBatchAccessRequestsInner._({
+    required this.requestId,
+    this.linkId,
+    required this.sketchId,
+    required this.requesterHandle,
+    this.message,
+    this.offerShare,
+  }) : super._();
   @override
   ChronicleSketchBatchAccessRequestsInner rebuild(
-          void Function(ChronicleSketchBatchAccessRequestsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSketchBatchAccessRequestsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSketchBatchAccessRequestsInnerBuilder toBuilder() =>
@@ -73,7 +71,8 @@ class _$ChronicleSketchBatchAccessRequestsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ChronicleSketchBatchAccessRequestsInner')
+            r'ChronicleSketchBatchAccessRequestsInner',
+          )
           ..add('requestId', requestId)
           ..add('linkId', linkId)
           ..add('sketchId', sketchId)
@@ -86,8 +85,10 @@ class _$ChronicleSketchBatchAccessRequestsInner
 
 class ChronicleSketchBatchAccessRequestsInnerBuilder
     implements
-        Builder<ChronicleSketchBatchAccessRequestsInner,
-            ChronicleSketchBatchAccessRequestsInnerBuilder> {
+        Builder<
+          ChronicleSketchBatchAccessRequestsInner,
+          ChronicleSketchBatchAccessRequestsInnerBuilder
+        > {
   _$ChronicleSketchBatchAccessRequestsInner? _$v;
 
   String? _requestId;
@@ -140,7 +141,8 @@ class ChronicleSketchBatchAccessRequestsInnerBuilder
 
   @override
   void update(
-      void Function(ChronicleSketchBatchAccessRequestsInnerBuilder)? updates) {
+    void Function(ChronicleSketchBatchAccessRequestsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -148,17 +150,25 @@ class ChronicleSketchBatchAccessRequestsInnerBuilder
   ChronicleSketchBatchAccessRequestsInner build() => _build();
 
   _$ChronicleSketchBatchAccessRequestsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSketchBatchAccessRequestsInner._(
-          requestId: BuiltValueNullFieldError.checkNotNull(requestId,
-              r'ChronicleSketchBatchAccessRequestsInner', 'requestId'),
+          requestId: BuiltValueNullFieldError.checkNotNull(
+            requestId,
+            r'ChronicleSketchBatchAccessRequestsInner',
+            'requestId',
+          ),
           linkId: linkId,
           sketchId: BuiltValueNullFieldError.checkNotNull(
-              sketchId, r'ChronicleSketchBatchAccessRequestsInner', 'sketchId'),
+            sketchId,
+            r'ChronicleSketchBatchAccessRequestsInner',
+            'sketchId',
+          ),
           requesterHandle: BuiltValueNullFieldError.checkNotNull(
-              requesterHandle,
-              r'ChronicleSketchBatchAccessRequestsInner',
-              'requesterHandle'),
+            requesterHandle,
+            r'ChronicleSketchBatchAccessRequestsInner',
+            'requesterHandle',
+          ),
           message: message,
           offerShare: offerShare,
         );

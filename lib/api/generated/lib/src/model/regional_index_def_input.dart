@@ -52,8 +52,9 @@ abstract class RegionalIndexDefInput
 
   RegionalIndexDefInput._();
 
-  factory RegionalIndexDefInput(
-      [void updates(RegionalIndexDefInputBuilder b)]) = _$RegionalIndexDefInput;
+  factory RegionalIndexDefInput([
+    void updates(RegionalIndexDefInputBuilder b),
+  ]) = _$RegionalIndexDefInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RegionalIndexDefInputBuilder b) => b;
@@ -68,7 +69,7 @@ class _$RegionalIndexDefInputSerializer
   @override
   final Iterable<Type> types = const [
     RegionalIndexDefInput,
-    _$RegionalIndexDefInput
+    _$RegionalIndexDefInput,
   ];
 
   @override
@@ -94,21 +95,25 @@ class _$RegionalIndexDefInputSerializer
     yield r'components';
     yield serializers.serialize(
       object.components,
-      specifiedType: const FullType(
-          BuiltList, [FullType(RegionalIndexDefComponentsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(RegionalIndexDefComponentsInner),
+      ]),
     );
     yield r'weights';
     yield serializers.serialize(
       object.weights,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(num)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(num),
+      ]),
     );
     if (object.floors != null) {
       yield r'floors';
       yield serializers.serialize(
         object.floors,
-        specifiedType:
-            const FullType(BuiltList, [FullType(RegionalIndexDefFloorsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RegionalIndexDefFloorsInner),
+        ]),
       );
     }
     yield r'target';
@@ -136,9 +141,11 @@ class _$RegionalIndexDefInputSerializer
     RegionalIndexDefInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -154,64 +161,84 @@ class _$RegionalIndexDefInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'components':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(RegionalIndexDefComponentsInner)]),
-          ) as BuiltList<RegionalIndexDefComponentsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(RegionalIndexDefComponentsInner),
+                    ]),
+                  )
+                  as BuiltList<RegionalIndexDefComponentsInner>;
           result.components.replace(valueDes);
           break;
         case r'weights':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>;
           result.weights.replace(valueDes);
           break;
         case r'floors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RegionalIndexDefFloorsInner)]),
-          ) as BuiltList<RegionalIndexDefFloorsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RegionalIndexDefFloorsInner),
+                    ]),
+                  )
+                  as BuiltList<RegionalIndexDefFloorsInner>?;
           if (valueDes == null) continue;
           result.floors.replace(valueDes);
           break;
         case r'target':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.target = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'autoApplyFittedWeights':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.autoApplyFittedWeights = valueDes;
           break;

@@ -30,8 +30,9 @@ abstract class ForecasterTrackRecord
 
   ForecasterTrackRecord._();
 
-  factory ForecasterTrackRecord(
-      [void updates(ForecasterTrackRecordBuilder b)]) = _$ForecasterTrackRecord;
+  factory ForecasterTrackRecord([
+    void updates(ForecasterTrackRecordBuilder b),
+  ]) = _$ForecasterTrackRecord;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecasterTrackRecordBuilder b) => b;
@@ -46,7 +47,7 @@ class _$ForecasterTrackRecordSerializer
   @override
   final Iterable<Type> types = const [
     ForecasterTrackRecord,
-    _$ForecasterTrackRecord
+    _$ForecasterTrackRecord,
   ];
 
   @override
@@ -82,9 +83,11 @@ class _$ForecasterTrackRecordSerializer
     ForecasterTrackRecord object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,25 +103,30 @@ class _$ForecasterTrackRecordSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'nResolved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nResolved = valueDes;
           break;
         case r'brier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.brier = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecasterTrackRecordLabelEnum),
-          ) as ForecasterTrackRecordLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecasterTrackRecordLabelEnum,
+                    ),
+                  )
+                  as ForecasterTrackRecordLabelEnum;
           result.label = valueDes;
           break;
         default:

@@ -28,10 +28,10 @@ PushFiltersEventsEnum _$pushFiltersEventsEnumValueOf(String name) {
 
 final BuiltSet<PushFiltersEventsEnum> _$pushFiltersEventsEnumValues =
     BuiltSet<PushFiltersEventsEnum>(const <PushFiltersEventsEnum>[
-  _$pushFiltersEventsEnum_alert,
-  _$pushFiltersEventsEnum_briefing,
-  _$pushFiltersEventsEnum_system,
-]);
+      _$pushFiltersEventsEnum_alert,
+      _$pushFiltersEventsEnum_briefing,
+      _$pushFiltersEventsEnum_system,
+    ]);
 
 const PushFiltersMinSeverityEnum _$pushFiltersMinSeverityEnum_info =
     const PushFiltersMinSeverityEnum._('info');
@@ -55,10 +55,10 @@ PushFiltersMinSeverityEnum _$pushFiltersMinSeverityEnumValueOf(String name) {
 
 final BuiltSet<PushFiltersMinSeverityEnum> _$pushFiltersMinSeverityEnumValues =
     BuiltSet<PushFiltersMinSeverityEnum>(const <PushFiltersMinSeverityEnum>[
-  _$pushFiltersMinSeverityEnum_info,
-  _$pushFiltersMinSeverityEnum_warning,
-  _$pushFiltersMinSeverityEnum_critical,
-]);
+      _$pushFiltersMinSeverityEnum_info,
+      _$pushFiltersMinSeverityEnum_warning,
+      _$pushFiltersMinSeverityEnum_critical,
+    ]);
 
 Serializer<PushFiltersEventsEnum> _$pushFiltersEventsEnumSerializer =
     _$PushFiltersEventsEnumSerializer();
@@ -84,15 +84,20 @@ class _$PushFiltersEventsEnumSerializer
   final String wireName = 'PushFiltersEventsEnum';
 
   @override
-  Object serialize(Serializers serializers, PushFiltersEventsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushFiltersEventsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PushFiltersEventsEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushFiltersEventsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PushFiltersEventsEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushFiltersEventsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushFiltersMinSeverityEnumSerializer
@@ -114,16 +119,20 @@ class _$PushFiltersMinSeverityEnumSerializer
   final String wireName = 'PushFiltersMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, PushFiltersMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushFiltersMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushFiltersMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushFiltersMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushFiltersMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushFilters extends PushFilters {
@@ -140,7 +149,7 @@ class _$PushFilters extends PushFilters {
       (PushFiltersBuilder()..update(updates))._build();
 
   _$PushFilters._({this.events, this.ruleIds, this.minSeverity, this.tags})
-      : super._();
+    : super._();
   @override
   PushFilters rebuild(void Function(PushFiltersBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -234,7 +243,8 @@ class PushFiltersBuilder implements Builder<PushFilters, PushFiltersBuilder> {
   _$PushFilters _build() {
     _$PushFilters _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushFilters._(
             events: _events?.build(),
             ruleIds: _ruleIds?.build(),
@@ -253,7 +263,10 @@ class PushFiltersBuilder implements Builder<PushFilters, PushFiltersBuilder> {
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushFilters', _$failedField, e.toString());
+          r'PushFilters',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

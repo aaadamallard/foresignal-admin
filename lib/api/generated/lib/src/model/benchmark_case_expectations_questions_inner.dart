@@ -20,8 +20,10 @@ part 'benchmark_case_expectations_questions_inner.g.dart';
 @BuiltValue()
 abstract class BenchmarkCaseExpectationsQuestionsInner
     implements
-        Built<BenchmarkCaseExpectationsQuestionsInner,
-            BenchmarkCaseExpectationsQuestionsInnerBuilder> {
+        Built<
+          BenchmarkCaseExpectationsQuestionsInner,
+          BenchmarkCaseExpectationsQuestionsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'text')
   String get text;
 
@@ -37,9 +39,9 @@ abstract class BenchmarkCaseExpectationsQuestionsInner
 
   BenchmarkCaseExpectationsQuestionsInner._();
 
-  factory BenchmarkCaseExpectationsQuestionsInner(
-          [void updates(BenchmarkCaseExpectationsQuestionsInnerBuilder b)]) =
-      _$BenchmarkCaseExpectationsQuestionsInner;
+  factory BenchmarkCaseExpectationsQuestionsInner([
+    void updates(BenchmarkCaseExpectationsQuestionsInnerBuilder b),
+  ]) = _$BenchmarkCaseExpectationsQuestionsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkCaseExpectationsQuestionsInnerBuilder b) => b;
@@ -54,7 +56,7 @@ class _$BenchmarkCaseExpectationsQuestionsInnerSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkCaseExpectationsQuestionsInner,
-    _$BenchmarkCaseExpectationsQuestionsInner
+    _$BenchmarkCaseExpectationsQuestionsInner,
   ];
 
   @override
@@ -73,8 +75,9 @@ class _$BenchmarkCaseExpectationsQuestionsInnerSerializer
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType:
-          const FullType(BenchmarkCaseExpectationsQuestionsInnerTypeEnum),
+      specifiedType: const FullType(
+        BenchmarkCaseExpectationsQuestionsInnerTypeEnum,
+      ),
     );
     yield r'outcome';
     yield object.outcome == null
@@ -98,9 +101,11 @@ class _$BenchmarkCaseExpectationsQuestionsInnerSerializer
     BenchmarkCaseExpectationsQuestionsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,33 +121,42 @@ class _$BenchmarkCaseExpectationsQuestionsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.text = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BenchmarkCaseExpectationsQuestionsInnerTypeEnum),
-          ) as BenchmarkCaseExpectationsQuestionsInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkCaseExpectationsQuestionsInnerTypeEnum,
+                    ),
+                  )
+                  as BenchmarkCaseExpectationsQuestionsInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.outcome = valueDes;
           break;
         case r'resolvedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.resolvedAt = valueDes;
           break;
@@ -184,11 +198,10 @@ class BenchmarkCaseExpectationsQuestionsInnerTypeEnum extends EnumClass {
       _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric;
 
   static Serializer<BenchmarkCaseExpectationsQuestionsInnerTypeEnum>
-      get serializer =>
-          _$benchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer;
+  get serializer => _$benchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer;
 
   const BenchmarkCaseExpectationsQuestionsInnerTypeEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<BenchmarkCaseExpectationsQuestionsInnerTypeEnum> get values =>
       _$benchmarkCaseExpectationsQuestionsInnerTypeEnumValues;

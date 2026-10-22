@@ -10,7 +10,8 @@ const StatsGridFeaturesInnerTypeEnum _$statsGridFeaturesInnerTypeEnum_feature =
     const StatsGridFeaturesInnerTypeEnum._('feature');
 
 StatsGridFeaturesInnerTypeEnum _$statsGridFeaturesInnerTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'feature':
       return _$statsGridFeaturesInnerTypeEnum_feature;
@@ -20,13 +21,15 @@ StatsGridFeaturesInnerTypeEnum _$statsGridFeaturesInnerTypeEnumValueOf(
 }
 
 final BuiltSet<StatsGridFeaturesInnerTypeEnum>
-    _$statsGridFeaturesInnerTypeEnumValues = BuiltSet<
-        StatsGridFeaturesInnerTypeEnum>(const <StatsGridFeaturesInnerTypeEnum>[
-  _$statsGridFeaturesInnerTypeEnum_feature,
-]);
+_$statsGridFeaturesInnerTypeEnumValues =
+    BuiltSet<StatsGridFeaturesInnerTypeEnum>(
+      const <StatsGridFeaturesInnerTypeEnum>[
+        _$statsGridFeaturesInnerTypeEnum_feature,
+      ],
+    );
 
 Serializer<StatsGridFeaturesInnerTypeEnum>
-    _$statsGridFeaturesInnerTypeEnumSerializer =
+_$statsGridFeaturesInnerTypeEnumSerializer =
     _$StatsGridFeaturesInnerTypeEnumSerializer();
 
 class _$StatsGridFeaturesInnerTypeEnumSerializer
@@ -45,16 +48,19 @@ class _$StatsGridFeaturesInnerTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, StatsGridFeaturesInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StatsGridFeaturesInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StatsGridFeaturesInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsGridFeaturesInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsGridFeaturesInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsGridFeaturesInner extends StatsGridFeaturesInner {
@@ -67,20 +73,20 @@ class _$StatsGridFeaturesInner extends StatsGridFeaturesInner {
   @override
   final StatsGridFeaturesInnerProperties properties;
 
-  factory _$StatsGridFeaturesInner(
-          [void Function(StatsGridFeaturesInnerBuilder)? updates]) =>
-      (StatsGridFeaturesInnerBuilder()..update(updates))._build();
+  factory _$StatsGridFeaturesInner([
+    void Function(StatsGridFeaturesInnerBuilder)? updates,
+  ]) => (StatsGridFeaturesInnerBuilder()..update(updates))._build();
 
-  _$StatsGridFeaturesInner._(
-      {required this.type,
-      this.id,
-      required this.geometry,
-      required this.properties})
-      : super._();
+  _$StatsGridFeaturesInner._({
+    required this.type,
+    this.id,
+    required this.geometry,
+    required this.properties,
+  }) : super._();
   @override
   StatsGridFeaturesInner rebuild(
-          void Function(StatsGridFeaturesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsGridFeaturesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsGridFeaturesInnerBuilder toBuilder() =>
@@ -172,10 +178,14 @@ class StatsGridFeaturesInnerBuilder
   _$StatsGridFeaturesInner _build() {
     _$StatsGridFeaturesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StatsGridFeaturesInner._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'StatsGridFeaturesInner', 'type'),
+              type,
+              r'StatsGridFeaturesInner',
+              'type',
+            ),
             id: id,
             geometry: geometry.build(),
             properties: properties.build(),
@@ -189,7 +199,10 @@ class StatsGridFeaturesInnerBuilder
         properties.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StatsGridFeaturesInner', _$failedField, e.toString());
+          r'StatsGridFeaturesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

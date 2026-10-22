@@ -21,13 +21,13 @@ class _$Observer extends Observer {
   factory _$Observer([void Function(ObserverBuilder)? updates]) =>
       (ObserverBuilder()..update(updates))._build();
 
-  _$Observer._(
-      {required this.receiverId,
-      this.frequencyHz,
-      this.rssi,
-      this.snr,
-      this.decodeQuality})
-      : super._();
+  _$Observer._({
+    required this.receiverId,
+    this.frequencyHz,
+    this.rssi,
+    this.snr,
+    this.decodeQuality,
+  }) : super._();
   @override
   Observer rebuild(void Function(ObserverBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -125,10 +125,14 @@ class ObserverBuilder implements Builder<Observer, ObserverBuilder> {
   Observer build() => _build();
 
   _$Observer _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Observer._(
           receiverId: BuiltValueNullFieldError.checkNotNull(
-              receiverId, r'Observer', 'receiverId'),
+            receiverId,
+            r'Observer',
+            'receiverId',
+          ),
           frequencyHz: frequencyHz,
           rssi: rssi,
           snr: snr,

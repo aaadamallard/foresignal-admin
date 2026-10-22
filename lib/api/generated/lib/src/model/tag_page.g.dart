@@ -90,11 +90,8 @@ class TagPageBuilder implements Builder<TagPage, TagPageBuilder> {
   _$TagPage _build() {
     _$TagPage _$result;
     try {
-      _$result = _$v ??
-          _$TagPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$TagPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class TagPageBuilder implements Builder<TagPage, TagPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TagPage', _$failedField, e.toString());
+          r'TagPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -117,16 +117,18 @@ class _$IntelCalibrationSerializer
       yield r'bins';
       yield serializers.serialize(
         object.bins,
-        specifiedType:
-            const FullType(BuiltList, [FullType(IntelCalibrationBinsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(IntelCalibrationBinsInner),
+        ]),
       );
     }
     if (object.curve != null) {
       yield r'curve';
       yield serializers.serialize(
         object.curve,
-        specifiedType:
-            const FullType(BuiltList, [FullType(IntelCalibrationCurveInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(IntelCalibrationCurveInner),
+        ]),
       );
     }
     if (object.fittedAt != null) {
@@ -151,9 +153,11 @@ class _$IntelCalibrationSerializer
     IntelCalibration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -169,72 +173,86 @@ class _$IntelCalibrationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelCalibrationScopeEnum),
-          ) as IntelCalibrationScopeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IntelCalibrationScopeEnum),
+                  )
+                  as IntelCalibrationScopeEnum;
           result.scope = valueDes;
           break;
         case r'calibrated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.calibrated = valueDes;
           break;
         case r'sampleN':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.sampleN = valueDes;
           break;
         case r'minSamples':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.minSamples = valueDes;
           break;
         case r'brier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.brier = valueDes;
           break;
         case r'bins':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(IntelCalibrationBinsInner)]),
-          ) as BuiltList<IntelCalibrationBinsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IntelCalibrationBinsInner),
+                    ]),
+                  )
+                  as BuiltList<IntelCalibrationBinsInner>?;
           if (valueDes == null) continue;
           result.bins.replace(valueDes);
           break;
         case r'curve':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(IntelCalibrationCurveInner)]),
-          ) as BuiltList<IntelCalibrationCurveInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IntelCalibrationCurveInner),
+                    ]),
+                  )
+                  as BuiltList<IntelCalibrationCurveInner>?;
           if (valueDes == null) continue;
           result.curve.replace(valueDes);
           break;
         case r'fittedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.fittedAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

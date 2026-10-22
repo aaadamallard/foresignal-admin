@@ -14,15 +14,15 @@ class _$ObjectEnvelopeTime extends ObjectEnvelopeTime {
   @override
   final DateTime? observedAt;
 
-  factory _$ObjectEnvelopeTime(
-          [void Function(ObjectEnvelopeTimeBuilder)? updates]) =>
-      (ObjectEnvelopeTimeBuilder()..update(updates))._build();
+  factory _$ObjectEnvelopeTime([
+    void Function(ObjectEnvelopeTimeBuilder)? updates,
+  ]) => (ObjectEnvelopeTimeBuilder()..update(updates))._build();
 
   _$ObjectEnvelopeTime._({this.start, this.end, this.observedAt}) : super._();
   @override
   ObjectEnvelopeTime rebuild(
-          void Function(ObjectEnvelopeTimeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObjectEnvelopeTimeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObjectEnvelopeTimeBuilder toBuilder() =>
@@ -102,12 +102,9 @@ class ObjectEnvelopeTimeBuilder
   ObjectEnvelopeTime build() => _build();
 
   _$ObjectEnvelopeTime _build() {
-    final _$result = _$v ??
-        _$ObjectEnvelopeTime._(
-          start: start,
-          end: end,
-          observedAt: observedAt,
-        );
+    final _$result =
+        _$v ??
+        _$ObjectEnvelopeTime._(start: start, end: end, observedAt: observedAt);
     replace(_$result);
     return _$result;
   }

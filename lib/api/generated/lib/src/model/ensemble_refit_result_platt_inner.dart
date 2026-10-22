@@ -19,8 +19,10 @@ part 'ensemble_refit_result_platt_inner.g.dart';
 @BuiltValue()
 abstract class EnsembleRefitResultPlattInner
     implements
-        Built<EnsembleRefitResultPlattInner,
-            EnsembleRefitResultPlattInnerBuilder> {
+        Built<
+          EnsembleRefitResultPlattInner,
+          EnsembleRefitResultPlattInnerBuilder
+        > {
   @BuiltValueField(wireName: r'forecasterId')
   String get forecasterId;
 
@@ -38,9 +40,9 @@ abstract class EnsembleRefitResultPlattInner
 
   EnsembleRefitResultPlattInner._();
 
-  factory EnsembleRefitResultPlattInner(
-          [void updates(EnsembleRefitResultPlattInnerBuilder b)]) =
-      _$EnsembleRefitResultPlattInner;
+  factory EnsembleRefitResultPlattInner([
+    void updates(EnsembleRefitResultPlattInnerBuilder b),
+  ]) = _$EnsembleRefitResultPlattInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EnsembleRefitResultPlattInnerBuilder b) => b;
@@ -55,7 +57,7 @@ class _$EnsembleRefitResultPlattInnerSerializer
   @override
   final Iterable<Type> types = const [
     EnsembleRefitResultPlattInner,
-    _$EnsembleRefitResultPlattInner
+    _$EnsembleRefitResultPlattInner,
   ];
 
   @override
@@ -77,20 +79,11 @@ class _$EnsembleRefitResultPlattInnerSerializer
       specifiedType: const FullType(String),
     );
     yield r'a';
-    yield serializers.serialize(
-      object.a,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.a, specifiedType: const FullType(num));
     yield r'b';
-    yield serializers.serialize(
-      object.b,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.b, specifiedType: const FullType(num));
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
   }
 
   @override
@@ -99,9 +92,11 @@ class _$EnsembleRefitResultPlattInnerSerializer
     EnsembleRefitResultPlattInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,38 +112,39 @@ class _$EnsembleRefitResultPlattInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.category = valueDes;
           break;
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.a = valueDes;
           break;
         case r'b':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.b = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         default:

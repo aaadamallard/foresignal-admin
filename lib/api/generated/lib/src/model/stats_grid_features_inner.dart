@@ -36,9 +36,9 @@ abstract class StatsGridFeaturesInner
 
   StatsGridFeaturesInner._();
 
-  factory StatsGridFeaturesInner(
-          [void updates(StatsGridFeaturesInnerBuilder b)]) =
-      _$StatsGridFeaturesInner;
+  factory StatsGridFeaturesInner([
+    void updates(StatsGridFeaturesInnerBuilder b),
+  ]) = _$StatsGridFeaturesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StatsGridFeaturesInnerBuilder b) => b;
@@ -53,7 +53,7 @@ class _$StatsGridFeaturesInnerSerializer
   @override
   final Iterable<Type> types = const [
     StatsGridFeaturesInner,
-    _$StatsGridFeaturesInner
+    _$StatsGridFeaturesInner,
   ];
 
   @override
@@ -94,9 +94,11 @@ class _$StatsGridFeaturesInnerSerializer
     StatsGridFeaturesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +114,44 @@ class _$StatsGridFeaturesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatsGridFeaturesInnerTypeEnum),
-          ) as StatsGridFeaturesInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StatsGridFeaturesInnerTypeEnum,
+                    ),
+                  )
+                  as StatsGridFeaturesInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Geometry),
-          ) as Geometry;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Geometry),
+                  )
+                  as Geometry;
           result.geometry.replace(valueDes);
           break;
         case r'properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatsGridFeaturesInnerProperties),
-          ) as StatsGridFeaturesInnerProperties;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StatsGridFeaturesInnerProperties,
+                    ),
+                  )
+                  as StatsGridFeaturesInnerProperties;
           result.properties.replace(valueDes);
           break;
         default:

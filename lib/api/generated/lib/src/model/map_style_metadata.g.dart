@@ -10,9 +10,9 @@ class _$MapStyleMetadata extends MapStyleMetadata {
   @override
   final MapStyleMetadata? foresignal;
 
-  factory _$MapStyleMetadata(
-          [void Function(MapStyleMetadataBuilder)? updates]) =>
-      (MapStyleMetadataBuilder()..update(updates))._build();
+  factory _$MapStyleMetadata([
+    void Function(MapStyleMetadataBuilder)? updates,
+  ]) => (MapStyleMetadataBuilder()..update(updates))._build();
 
   _$MapStyleMetadata._({this.foresignal}) : super._();
   @override
@@ -39,9 +39,9 @@ class _$MapStyleMetadata extends MapStyleMetadata {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'MapStyleMetadata')
-          ..add('foresignal', foresignal))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'MapStyleMetadata',
+    )..add('foresignal', foresignal)).toString();
   }
 }
 
@@ -84,10 +84,7 @@ class MapStyleMetadataBuilder
   _$MapStyleMetadata _build() {
     _$MapStyleMetadata _$result;
     try {
-      _$result = _$v ??
-          _$MapStyleMetadata._(
-            foresignal: _foresignal?.build(),
-          );
+      _$result = _$v ?? _$MapStyleMetadata._(foresignal: _foresignal?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95,7 +92,10 @@ class MapStyleMetadataBuilder
         _foresignal?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MapStyleMetadata', _$failedField, e.toString());
+          r'MapStyleMetadata',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

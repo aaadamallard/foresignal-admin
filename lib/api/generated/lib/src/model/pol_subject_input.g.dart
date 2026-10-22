@@ -11,11 +11,12 @@ const PolSubjectInputSubjectTypeEnum _$polSubjectInputSubjectTypeEnum_record =
 const PolSubjectInputSubjectTypeEnum _$polSubjectInputSubjectTypeEnum_entity =
     const PolSubjectInputSubjectTypeEnum._('entity');
 const PolSubjectInputSubjectTypeEnum
-    _$polSubjectInputSubjectTypeEnum_watchlist =
+_$polSubjectInputSubjectTypeEnum_watchlist =
     const PolSubjectInputSubjectTypeEnum._('watchlist');
 
 PolSubjectInputSubjectTypeEnum _$polSubjectInputSubjectTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$polSubjectInputSubjectTypeEnum_record;
@@ -29,15 +30,17 @@ PolSubjectInputSubjectTypeEnum _$polSubjectInputSubjectTypeEnumValueOf(
 }
 
 final BuiltSet<PolSubjectInputSubjectTypeEnum>
-    _$polSubjectInputSubjectTypeEnumValues = BuiltSet<
-        PolSubjectInputSubjectTypeEnum>(const <PolSubjectInputSubjectTypeEnum>[
-  _$polSubjectInputSubjectTypeEnum_record,
-  _$polSubjectInputSubjectTypeEnum_entity,
-  _$polSubjectInputSubjectTypeEnum_watchlist,
-]);
+_$polSubjectInputSubjectTypeEnumValues =
+    BuiltSet<PolSubjectInputSubjectTypeEnum>(
+      const <PolSubjectInputSubjectTypeEnum>[
+        _$polSubjectInputSubjectTypeEnum_record,
+        _$polSubjectInputSubjectTypeEnum_entity,
+        _$polSubjectInputSubjectTypeEnum_watchlist,
+      ],
+    );
 
 Serializer<PolSubjectInputSubjectTypeEnum>
-    _$polSubjectInputSubjectTypeEnumSerializer =
+_$polSubjectInputSubjectTypeEnumSerializer =
     _$PolSubjectInputSubjectTypeEnumSerializer();
 
 class _$PolSubjectInputSubjectTypeEnumSerializer
@@ -60,16 +63,19 @@ class _$PolSubjectInputSubjectTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PolSubjectInputSubjectTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PolSubjectInputSubjectTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PolSubjectInputSubjectTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PolSubjectInputSubjectTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PolSubjectInputSubjectTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PolSubjectInput extends PolSubjectInput {
@@ -85,9 +91,12 @@ class _$PolSubjectInput extends PolSubjectInput {
   factory _$PolSubjectInput([void Function(PolSubjectInputBuilder)? updates]) =>
       (PolSubjectInputBuilder()..update(updates))._build();
 
-  _$PolSubjectInput._(
-      {required this.subjectType, required this.ref, this.enabled, this.params})
-      : super._();
+  _$PolSubjectInput._({
+    required this.subjectType,
+    required this.ref,
+    this.enabled,
+    this.params,
+  }) : super._();
   @override
   PolSubjectInput rebuild(void Function(PolSubjectInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -181,12 +190,19 @@ class PolSubjectInputBuilder
   _$PolSubjectInput _build() {
     _$PolSubjectInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PolSubjectInput._(
             subjectType: BuiltValueNullFieldError.checkNotNull(
-                subjectType, r'PolSubjectInput', 'subjectType'),
+              subjectType,
+              r'PolSubjectInput',
+              'subjectType',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'PolSubjectInput', 'ref'),
+              ref,
+              r'PolSubjectInput',
+              'ref',
+            ),
             enabled: enabled,
             params: _params?.build(),
           );
@@ -197,7 +213,10 @@ class PolSubjectInputBuilder
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolSubjectInput', _$failedField, e.toString());
+          r'PolSubjectInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

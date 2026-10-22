@@ -20,18 +20,18 @@ class _$FieldManifestGrid extends FieldManifestGrid {
   @override
   final num dy;
 
-  factory _$FieldManifestGrid(
-          [void Function(FieldManifestGridBuilder)? updates]) =>
-      (FieldManifestGridBuilder()..update(updates))._build();
+  factory _$FieldManifestGrid([
+    void Function(FieldManifestGridBuilder)? updates,
+  ]) => (FieldManifestGridBuilder()..update(updates))._build();
 
-  _$FieldManifestGrid._(
-      {required this.nx,
-      required this.ny,
-      required this.lo1,
-      required this.la1,
-      required this.dx,
-      required this.dy})
-      : super._();
+  _$FieldManifestGrid._({
+    required this.nx,
+    required this.ny,
+    required this.lo1,
+    required this.la1,
+    required this.dx,
+    required this.dy,
+  }) : super._();
   @override
   FieldManifestGrid rebuild(void Function(FieldManifestGridBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -138,20 +138,39 @@ class FieldManifestGridBuilder
   FieldManifestGrid build() => _build();
 
   _$FieldManifestGrid _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FieldManifestGrid._(
           nx: BuiltValueNullFieldError.checkNotNull(
-              nx, r'FieldManifestGrid', 'nx'),
+            nx,
+            r'FieldManifestGrid',
+            'nx',
+          ),
           ny: BuiltValueNullFieldError.checkNotNull(
-              ny, r'FieldManifestGrid', 'ny'),
+            ny,
+            r'FieldManifestGrid',
+            'ny',
+          ),
           lo1: BuiltValueNullFieldError.checkNotNull(
-              lo1, r'FieldManifestGrid', 'lo1'),
+            lo1,
+            r'FieldManifestGrid',
+            'lo1',
+          ),
           la1: BuiltValueNullFieldError.checkNotNull(
-              la1, r'FieldManifestGrid', 'la1'),
+            la1,
+            r'FieldManifestGrid',
+            'la1',
+          ),
           dx: BuiltValueNullFieldError.checkNotNull(
-              dx, r'FieldManifestGrid', 'dx'),
+            dx,
+            r'FieldManifestGrid',
+            'dx',
+          ),
           dy: BuiltValueNullFieldError.checkNotNull(
-              dy, r'FieldManifestGrid', 'dy'),
+            dy,
+            r'FieldManifestGrid',
+            'dy',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -68,20 +68,20 @@ ForecastForecasterTypeEnum _$forecastForecasterTypeEnumValueOf(String name) {
 
 final BuiltSet<ForecastForecasterTypeEnum> _$forecastForecasterTypeEnumValues =
     BuiltSet<ForecastForecasterTypeEnum>(const <ForecastForecasterTypeEnum>[
-  _$forecastForecasterTypeEnum_baseRate,
-  _$forecastForecasterTypeEnum_climatology,
-  _$forecastForecasterTypeEnum_persistence,
-  _$forecastForecasterTypeEnum_statistical,
-  _$forecastForecasterTypeEnum_precursor,
-  _$forecastForecasterTypeEnum_analog,
-  _$forecastForecasterTypeEnum_threshold,
-  _$forecastForecasterTypeEnum_impact,
-  _$forecastForecasterTypeEnum_indicatorBayes,
-  _$forecastForecasterTypeEnum_llm,
-  _$forecastForecasterTypeEnum_operator_,
-  _$forecastForecasterTypeEnum_external_,
-  _$forecastForecasterTypeEnum_ensemble,
-]);
+      _$forecastForecasterTypeEnum_baseRate,
+      _$forecastForecasterTypeEnum_climatology,
+      _$forecastForecasterTypeEnum_persistence,
+      _$forecastForecasterTypeEnum_statistical,
+      _$forecastForecasterTypeEnum_precursor,
+      _$forecastForecasterTypeEnum_analog,
+      _$forecastForecasterTypeEnum_threshold,
+      _$forecastForecasterTypeEnum_impact,
+      _$forecastForecasterTypeEnum_indicatorBayes,
+      _$forecastForecasterTypeEnum_llm,
+      _$forecastForecasterTypeEnum_operator_,
+      _$forecastForecasterTypeEnum_external_,
+      _$forecastForecasterTypeEnum_ensemble,
+    ]);
 
 Serializer<ForecastForecasterTypeEnum> _$forecastForecasterTypeEnumSerializer =
     _$ForecastForecasterTypeEnumSerializer();
@@ -125,16 +125,20 @@ class _$ForecastForecasterTypeEnumSerializer
   final String wireName = 'ForecastForecasterTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastForecasterTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastForecasterTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastForecasterTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastForecasterTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastForecasterTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Forecast extends Forecast {
@@ -178,26 +182,26 @@ class _$Forecast extends Forecast {
   factory _$Forecast([void Function(ForecastBuilder)? updates]) =>
       (ForecastBuilder()..update(updates))._build();
 
-  _$Forecast._(
-      {required this.id,
-      required this.questionId,
-      required this.forecasterId,
-      required this.forecasterType,
-      required this.madeAt,
-      required this.asOfSeq,
-      this.knowledgeCutoff,
-      this.probability,
-      this.distribution,
-      this.quantiles,
-      this.estimativeTerm,
-      this.rationale,
-      this.claims,
-      this.citations,
-      this.inputs,
-      this.supersedesId,
-      required this.recalibrated,
-      required this.manifestId})
-      : super._();
+  _$Forecast._({
+    required this.id,
+    required this.questionId,
+    required this.forecasterId,
+    required this.forecasterType,
+    required this.madeAt,
+    required this.asOfSeq,
+    this.knowledgeCutoff,
+    this.probability,
+    this.distribution,
+    this.quantiles,
+    this.estimativeTerm,
+    this.rationale,
+    this.claims,
+    this.citations,
+    this.inputs,
+    this.supersedesId,
+    required this.recalibrated,
+    required this.manifestId,
+  }) : super._();
   @override
   Forecast rebuild(void Function(ForecastBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -411,19 +415,35 @@ class ForecastBuilder implements Builder<Forecast, ForecastBuilder> {
   _$Forecast _build() {
     _$Forecast _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Forecast._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Forecast', 'id'),
             questionId: BuiltValueNullFieldError.checkNotNull(
-                questionId, r'Forecast', 'questionId'),
+              questionId,
+              r'Forecast',
+              'questionId',
+            ),
             forecasterId: BuiltValueNullFieldError.checkNotNull(
-                forecasterId, r'Forecast', 'forecasterId'),
+              forecasterId,
+              r'Forecast',
+              'forecasterId',
+            ),
             forecasterType: BuiltValueNullFieldError.checkNotNull(
-                forecasterType, r'Forecast', 'forecasterType'),
+              forecasterType,
+              r'Forecast',
+              'forecasterType',
+            ),
             madeAt: BuiltValueNullFieldError.checkNotNull(
-                madeAt, r'Forecast', 'madeAt'),
+              madeAt,
+              r'Forecast',
+              'madeAt',
+            ),
             asOfSeq: BuiltValueNullFieldError.checkNotNull(
-                asOfSeq, r'Forecast', 'asOfSeq'),
+              asOfSeq,
+              r'Forecast',
+              'asOfSeq',
+            ),
             knowledgeCutoff: knowledgeCutoff,
             probability: probability,
             distribution: _distribution?.build(),
@@ -435,9 +455,15 @@ class ForecastBuilder implements Builder<Forecast, ForecastBuilder> {
             inputs: _inputs?.build(),
             supersedesId: supersedesId,
             recalibrated: BuiltValueNullFieldError.checkNotNull(
-                recalibrated, r'Forecast', 'recalibrated'),
+              recalibrated,
+              r'Forecast',
+              'recalibrated',
+            ),
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'Forecast', 'manifestId'),
+              manifestId,
+              r'Forecast',
+              'manifestId',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -455,7 +481,10 @@ class ForecastBuilder implements Builder<Forecast, ForecastBuilder> {
         _inputs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Forecast', _$failedField, e.toString());
+          r'Forecast',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

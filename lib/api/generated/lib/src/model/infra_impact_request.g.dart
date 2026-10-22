@@ -7,18 +7,19 @@ part of 'infra_impact_request.dart';
 // **************************************************************************
 
 const InfraImpactRequestMinLabelEnum
-    _$infraImpactRequestMinLabelEnum_confirmed =
+_$infraImpactRequestMinLabelEnum_confirmed =
     const InfraImpactRequestMinLabelEnum._('confirmed');
 const InfraImpactRequestMinLabelEnum _$infraImpactRequestMinLabelEnum_likely =
     const InfraImpactRequestMinLabelEnum._('likely');
 const InfraImpactRequestMinLabelEnum _$infraImpactRequestMinLabelEnum_possible =
     const InfraImpactRequestMinLabelEnum._('possible');
 const InfraImpactRequestMinLabelEnum
-    _$infraImpactRequestMinLabelEnum_speculative =
+_$infraImpactRequestMinLabelEnum_speculative =
     const InfraImpactRequestMinLabelEnum._('speculative');
 
 InfraImpactRequestMinLabelEnum _$infraImpactRequestMinLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'confirmed':
       return _$infraImpactRequestMinLabelEnum_confirmed;
@@ -34,55 +35,57 @@ InfraImpactRequestMinLabelEnum _$infraImpactRequestMinLabelEnumValueOf(
 }
 
 final BuiltSet<InfraImpactRequestMinLabelEnum>
-    _$infraImpactRequestMinLabelEnumValues = BuiltSet<
-        InfraImpactRequestMinLabelEnum>(const <InfraImpactRequestMinLabelEnum>[
-  _$infraImpactRequestMinLabelEnum_confirmed,
-  _$infraImpactRequestMinLabelEnum_likely,
-  _$infraImpactRequestMinLabelEnum_possible,
-  _$infraImpactRequestMinLabelEnum_speculative,
-]);
+_$infraImpactRequestMinLabelEnumValues =
+    BuiltSet<InfraImpactRequestMinLabelEnum>(
+      const <InfraImpactRequestMinLabelEnum>[
+        _$infraImpactRequestMinLabelEnum_confirmed,
+        _$infraImpactRequestMinLabelEnum_likely,
+        _$infraImpactRequestMinLabelEnum_possible,
+        _$infraImpactRequestMinLabelEnum_speculative,
+      ],
+    );
 
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_powerPeriodGeneration =
+_$infraImpactRequestTypesEnum_powerPeriodGeneration =
     const InfraImpactRequestTypesEnum._('powerPeriodGeneration');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_powerPeriodNuclear =
+_$infraImpactRequestTypesEnum_powerPeriodNuclear =
     const InfraImpactRequestTypesEnum._('powerPeriodNuclear');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_powerPeriodSubstation =
+_$infraImpactRequestTypesEnum_powerPeriodSubstation =
     const InfraImpactRequestTypesEnum._('powerPeriodSubstation');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_powerPeriodLine =
+_$infraImpactRequestTypesEnum_powerPeriodLine =
     const InfraImpactRequestTypesEnum._('powerPeriodLine');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_telecomPeriodDatacentre =
+_$infraImpactRequestTypesEnum_telecomPeriodDatacentre =
     const InfraImpactRequestTypesEnum._('telecomPeriodDatacentre');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_telecomPeriodIxp =
+_$infraImpactRequestTypesEnum_telecomPeriodIxp =
     const InfraImpactRequestTypesEnum._('telecomPeriodIxp');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_telecomPeriodExchange =
+_$infraImpactRequestTypesEnum_telecomPeriodExchange =
     const InfraImpactRequestTypesEnum._('telecomPeriodExchange');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_telecomPeriodCable =
+_$infraImpactRequestTypesEnum_telecomPeriodCable =
     const InfraImpactRequestTypesEnum._('telecomPeriodCable');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_telecomPeriodLanding =
+_$infraImpactRequestTypesEnum_telecomPeriodLanding =
     const InfraImpactRequestTypesEnum._('telecomPeriodLanding');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_transportPeriodAirport =
+_$infraImpactRequestTypesEnum_transportPeriodAirport =
     const InfraImpactRequestTypesEnum._('transportPeriodAirport');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_transportPeriodPort =
+_$infraImpactRequestTypesEnum_transportPeriodPort =
     const InfraImpactRequestTypesEnum._('transportPeriodPort');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_healthPeriodHospital =
+_$infraImpactRequestTypesEnum_healthPeriodHospital =
     const InfraImpactRequestTypesEnum._('healthPeriodHospital');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_waterPeriodTreatment =
+_$infraImpactRequestTypesEnum_waterPeriodTreatment =
     const InfraImpactRequestTypesEnum._('waterPeriodTreatment');
 const InfraImpactRequestTypesEnum
-    _$infraImpactRequestTypesEnum_spacePeriodSpaceport =
+_$infraImpactRequestTypesEnum_spacePeriodSpaceport =
     const InfraImpactRequestTypesEnum._('spacePeriodSpaceport');
 
 InfraImpactRequestTypesEnum _$infraImpactRequestTypesEnumValueOf(String name) {
@@ -121,29 +124,29 @@ InfraImpactRequestTypesEnum _$infraImpactRequestTypesEnumValueOf(String name) {
 }
 
 final BuiltSet<InfraImpactRequestTypesEnum>
-    _$infraImpactRequestTypesEnumValues =
+_$infraImpactRequestTypesEnumValues =
     BuiltSet<InfraImpactRequestTypesEnum>(const <InfraImpactRequestTypesEnum>[
-  _$infraImpactRequestTypesEnum_powerPeriodGeneration,
-  _$infraImpactRequestTypesEnum_powerPeriodNuclear,
-  _$infraImpactRequestTypesEnum_powerPeriodSubstation,
-  _$infraImpactRequestTypesEnum_powerPeriodLine,
-  _$infraImpactRequestTypesEnum_telecomPeriodDatacentre,
-  _$infraImpactRequestTypesEnum_telecomPeriodIxp,
-  _$infraImpactRequestTypesEnum_telecomPeriodExchange,
-  _$infraImpactRequestTypesEnum_telecomPeriodCable,
-  _$infraImpactRequestTypesEnum_telecomPeriodLanding,
-  _$infraImpactRequestTypesEnum_transportPeriodAirport,
-  _$infraImpactRequestTypesEnum_transportPeriodPort,
-  _$infraImpactRequestTypesEnum_healthPeriodHospital,
-  _$infraImpactRequestTypesEnum_waterPeriodTreatment,
-  _$infraImpactRequestTypesEnum_spacePeriodSpaceport,
-]);
+      _$infraImpactRequestTypesEnum_powerPeriodGeneration,
+      _$infraImpactRequestTypesEnum_powerPeriodNuclear,
+      _$infraImpactRequestTypesEnum_powerPeriodSubstation,
+      _$infraImpactRequestTypesEnum_powerPeriodLine,
+      _$infraImpactRequestTypesEnum_telecomPeriodDatacentre,
+      _$infraImpactRequestTypesEnum_telecomPeriodIxp,
+      _$infraImpactRequestTypesEnum_telecomPeriodExchange,
+      _$infraImpactRequestTypesEnum_telecomPeriodCable,
+      _$infraImpactRequestTypesEnum_telecomPeriodLanding,
+      _$infraImpactRequestTypesEnum_transportPeriodAirport,
+      _$infraImpactRequestTypesEnum_transportPeriodPort,
+      _$infraImpactRequestTypesEnum_healthPeriodHospital,
+      _$infraImpactRequestTypesEnum_waterPeriodTreatment,
+      _$infraImpactRequestTypesEnum_spacePeriodSpaceport,
+    ]);
 
 Serializer<InfraImpactRequestMinLabelEnum>
-    _$infraImpactRequestMinLabelEnumSerializer =
+_$infraImpactRequestMinLabelEnumSerializer =
     _$InfraImpactRequestMinLabelEnumSerializer();
 Serializer<InfraImpactRequestTypesEnum>
-    _$infraImpactRequestTypesEnumSerializer =
+_$infraImpactRequestTypesEnumSerializer =
     _$InfraImpactRequestTypesEnumSerializer();
 
 class _$InfraImpactRequestMinLabelEnumSerializer
@@ -168,16 +171,19 @@ class _$InfraImpactRequestMinLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, InfraImpactRequestMinLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    InfraImpactRequestMinLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraImpactRequestMinLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraImpactRequestMinLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraImpactRequestMinLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraImpactRequestTypesEnumSerializer
@@ -221,16 +227,20 @@ class _$InfraImpactRequestTypesEnumSerializer
   final String wireName = 'InfraImpactRequestTypesEnum';
 
   @override
-  Object serialize(Serializers serializers, InfraImpactRequestTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraImpactRequestTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraImpactRequestTypesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraImpactRequestTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraImpactRequestTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraImpactRequest extends InfraImpactRequest {
@@ -247,22 +257,22 @@ class _$InfraImpactRequest extends InfraImpactRequest {
   @override
   final BuiltList<InfraImpactRequestTypesEnum>? types;
 
-  factory _$InfraImpactRequest(
-          [void Function(InfraImpactRequestBuilder)? updates]) =>
-      (InfraImpactRequestBuilder()..update(updates))._build();
+  factory _$InfraImpactRequest([
+    void Function(InfraImpactRequestBuilder)? updates,
+  ]) => (InfraImpactRequestBuilder()..update(updates))._build();
 
-  _$InfraImpactRequest._(
-      {this.geometry,
-      this.eventId,
-      this.record,
-      this.depth,
-      this.minLabel,
-      this.types})
-      : super._();
+  _$InfraImpactRequest._({
+    this.geometry,
+    this.eventId,
+    this.record,
+    this.depth,
+    this.minLabel,
+    this.types,
+  }) : super._();
   @override
   InfraImpactRequest rebuild(
-          void Function(InfraImpactRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InfraImpactRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InfraImpactRequestBuilder toBuilder() =>
@@ -373,7 +383,8 @@ class InfraImpactRequestBuilder
   _$InfraImpactRequest _build() {
     _$InfraImpactRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraImpactRequest._(
             geometry: _geometry?.build(),
             eventId: eventId,
@@ -395,7 +406,10 @@ class InfraImpactRequestBuilder
         _types?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraImpactRequest', _$failedField, e.toString());
+          r'InfraImpactRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

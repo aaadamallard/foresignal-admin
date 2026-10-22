@@ -58,8 +58,9 @@ class _$SystemInfoHistorySerializer
       yield r'tiers';
       yield serializers.serialize(
         object.tiers,
-        specifiedType:
-            const FullType(BuiltList, [FullType(SystemInfoHistoryTiersInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SystemInfoHistoryTiersInner),
+        ]),
       );
     }
     if (object.versionsPerMinute != null) {
@@ -84,9 +85,11 @@ class _$SystemInfoHistorySerializer
     SystemInfoHistory object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,27 +105,34 @@ class _$SystemInfoHistorySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tiers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SystemInfoHistoryTiersInner)]),
-          ) as BuiltList<SystemInfoHistoryTiersInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SystemInfoHistoryTiersInner),
+                    ]),
+                  )
+                  as BuiltList<SystemInfoHistoryTiersInner>?;
           if (valueDes == null) continue;
           result.tiers.replace(valueDes);
           break;
         case r'versionsPerMinute':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.versionsPerMinute = valueDes;
           break;
         case r'projectedBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.projectedBytes = valueDes;
           break;

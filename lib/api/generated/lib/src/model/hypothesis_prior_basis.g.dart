@@ -14,7 +14,8 @@ const HypothesisPriorBasisTypeEnum _$hypothesisPriorBasisTypeEnum_operator_ =
     const HypothesisPriorBasisTypeEnum._('operator_');
 
 HypothesisPriorBasisTypeEnum _$hypothesisPriorBasisTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'baseRate':
       return _$hypothesisPriorBasisTypeEnum_baseRate;
@@ -28,15 +29,15 @@ HypothesisPriorBasisTypeEnum _$hypothesisPriorBasisTypeEnumValueOf(
 }
 
 final BuiltSet<HypothesisPriorBasisTypeEnum>
-    _$hypothesisPriorBasisTypeEnumValues =
+_$hypothesisPriorBasisTypeEnumValues =
     BuiltSet<HypothesisPriorBasisTypeEnum>(const <HypothesisPriorBasisTypeEnum>[
-  _$hypothesisPriorBasisTypeEnum_baseRate,
-  _$hypothesisPriorBasisTypeEnum_analogs,
-  _$hypothesisPriorBasisTypeEnum_operator_,
-]);
+      _$hypothesisPriorBasisTypeEnum_baseRate,
+      _$hypothesisPriorBasisTypeEnum_analogs,
+      _$hypothesisPriorBasisTypeEnum_operator_,
+    ]);
 
 Serializer<HypothesisPriorBasisTypeEnum>
-    _$hypothesisPriorBasisTypeEnumSerializer =
+_$hypothesisPriorBasisTypeEnumSerializer =
     _$HypothesisPriorBasisTypeEnumSerializer();
 
 class _$HypothesisPriorBasisTypeEnumSerializer
@@ -58,16 +59,20 @@ class _$HypothesisPriorBasisTypeEnumSerializer
   final String wireName = 'HypothesisPriorBasisTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisPriorBasisTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisPriorBasisTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisPriorBasisTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisPriorBasisTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisPriorBasisTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisPriorBasis extends HypothesisPriorBasis {
@@ -82,21 +87,21 @@ class _$HypothesisPriorBasis extends HypothesisPriorBasis {
   @override
   final DateTime? refreshedAt;
 
-  factory _$HypothesisPriorBasis(
-          [void Function(HypothesisPriorBasisBuilder)? updates]) =>
-      (HypothesisPriorBasisBuilder()..update(updates))._build();
+  factory _$HypothesisPriorBasis([
+    void Function(HypothesisPriorBasisBuilder)? updates,
+  ]) => (HypothesisPriorBasisBuilder()..update(updates))._build();
 
-  _$HypothesisPriorBasis._(
-      {required this.type,
-      this.ref,
-      this.rationale,
-      this.value,
-      this.refreshedAt})
-      : super._();
+  _$HypothesisPriorBasis._({
+    required this.type,
+    this.ref,
+    this.rationale,
+    this.value,
+    this.refreshedAt,
+  }) : super._();
   @override
   HypothesisPriorBasis rebuild(
-          void Function(HypothesisPriorBasisBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisPriorBasisBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisPriorBasisBuilder toBuilder() =>
@@ -192,10 +197,14 @@ class HypothesisPriorBasisBuilder
   HypothesisPriorBasis build() => _build();
 
   _$HypothesisPriorBasis _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisPriorBasis._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'HypothesisPriorBasis', 'type'),
+            type,
+            r'HypothesisPriorBasis',
+            'type',
+          ),
           ref: ref,
           rationale: rationale,
           value: value,

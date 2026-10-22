@@ -24,9 +24,9 @@ TripScheduleTypeEnum _$tripScheduleTypeEnumValueOf(String name) {
 
 final BuiltSet<TripScheduleTypeEnum> _$tripScheduleTypeEnumValues =
     BuiltSet<TripScheduleTypeEnum>(const <TripScheduleTypeEnum>[
-  _$tripScheduleTypeEnum_once,
-  _$tripScheduleTypeEnum_recurring,
-]);
+      _$tripScheduleTypeEnum_once,
+      _$tripScheduleTypeEnum_recurring,
+    ]);
 
 const TripScheduleDaysEnum _$tripScheduleDaysEnum_MO =
     const TripScheduleDaysEnum._('MO');
@@ -66,14 +66,14 @@ TripScheduleDaysEnum _$tripScheduleDaysEnumValueOf(String name) {
 
 final BuiltSet<TripScheduleDaysEnum> _$tripScheduleDaysEnumValues =
     BuiltSet<TripScheduleDaysEnum>(const <TripScheduleDaysEnum>[
-  _$tripScheduleDaysEnum_MO,
-  _$tripScheduleDaysEnum_TU,
-  _$tripScheduleDaysEnum_WE,
-  _$tripScheduleDaysEnum_TH,
-  _$tripScheduleDaysEnum_FR,
-  _$tripScheduleDaysEnum_SA,
-  _$tripScheduleDaysEnum_SU,
-]);
+      _$tripScheduleDaysEnum_MO,
+      _$tripScheduleDaysEnum_TU,
+      _$tripScheduleDaysEnum_WE,
+      _$tripScheduleDaysEnum_TH,
+      _$tripScheduleDaysEnum_FR,
+      _$tripScheduleDaysEnum_SA,
+      _$tripScheduleDaysEnum_SU,
+    ]);
 
 Serializer<TripScheduleTypeEnum> _$tripScheduleTypeEnumSerializer =
     _$TripScheduleTypeEnumSerializer();
@@ -97,15 +97,20 @@ class _$TripScheduleTypeEnumSerializer
   final String wireName = 'TripScheduleTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, TripScheduleTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TripScheduleTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TripScheduleTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TripScheduleTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TripScheduleTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TripScheduleTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TripScheduleDaysEnumSerializer
@@ -135,15 +140,20 @@ class _$TripScheduleDaysEnumSerializer
   final String wireName = 'TripScheduleDaysEnum';
 
   @override
-  Object serialize(Serializers serializers, TripScheduleDaysEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TripScheduleDaysEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TripScheduleDaysEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TripScheduleDaysEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TripScheduleDaysEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TripScheduleDaysEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TripSchedule extends TripSchedule {
@@ -161,13 +171,13 @@ class _$TripSchedule extends TripSchedule {
   factory _$TripSchedule([void Function(TripScheduleBuilder)? updates]) =>
       (TripScheduleBuilder()..update(updates))._build();
 
-  _$TripSchedule._(
-      {required this.type,
-      this.departAt,
-      this.days,
-      this.departTime,
-      this.timezone})
-      : super._();
+  _$TripSchedule._({
+    required this.type,
+    this.departAt,
+    this.days,
+    this.departTime,
+    this.timezone,
+  }) : super._();
   @override
   TripSchedule rebuild(void Function(TripScheduleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -268,10 +278,14 @@ class TripScheduleBuilder
   _$TripSchedule _build() {
     _$TripSchedule _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TripSchedule._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'TripSchedule', 'type'),
+              type,
+              r'TripSchedule',
+              'type',
+            ),
             departAt: departAt,
             days: _days?.build(),
             departTime: departTime,
@@ -284,7 +298,10 @@ class TripScheduleBuilder
         _days?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TripSchedule', _$failedField, e.toString());
+          r'TripSchedule',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

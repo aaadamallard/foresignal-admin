@@ -20,8 +20,10 @@ part 'situation_evidence_corroboration.g.dart';
 @BuiltValue()
 abstract class SituationEvidenceCorroboration
     implements
-        Built<SituationEvidenceCorroboration,
-            SituationEvidenceCorroborationBuilder> {
+        Built<
+          SituationEvidenceCorroboration,
+          SituationEvidenceCorroborationBuilder
+        > {
   @BuiltValueField(wireName: r'corroborated')
   int get corroborated;
 
@@ -43,9 +45,9 @@ abstract class SituationEvidenceCorroboration
 
   SituationEvidenceCorroboration._();
 
-  factory SituationEvidenceCorroboration(
-          [void updates(SituationEvidenceCorroborationBuilder b)]) =
-      _$SituationEvidenceCorroboration;
+  factory SituationEvidenceCorroboration([
+    void updates(SituationEvidenceCorroborationBuilder b),
+  ]) = _$SituationEvidenceCorroboration;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationEvidenceCorroborationBuilder b) => b;
@@ -60,7 +62,7 @@ class _$SituationEvidenceCorroborationSerializer
   @override
   final Iterable<Type> types = const [
     SituationEvidenceCorroboration,
-    _$SituationEvidenceCorroboration
+    _$SituationEvidenceCorroboration,
   ];
 
   @override
@@ -117,9 +119,11 @@ class _$SituationEvidenceCorroborationSerializer
     SituationEvidenceCorroboration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,48 +139,54 @@ class _$SituationEvidenceCorroborationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'corroborated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.corroborated = valueDes;
           break;
         case r'uncorroborated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.uncorroborated = valueDes;
           break;
         case r'unknown':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.unknown = valueDes;
           break;
         case r'notApplicable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.notApplicable = valueDes;
           break;
         case r'share':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.share = valueDes;
           break;
         case r'uncorroboratedOnly':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.uncorroboratedOnly = valueDes;
           break;

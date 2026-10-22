@@ -32,11 +32,11 @@ StatIntervalMethodEnum _$statIntervalMethodEnumValueOf(String name) {
 
 final BuiltSet<StatIntervalMethodEnum> _$statIntervalMethodEnumValues =
     BuiltSet<StatIntervalMethodEnum>(const <StatIntervalMethodEnum>[
-  _$statIntervalMethodEnum_wilson,
-  _$statIntervalMethodEnum_jeffreys,
-  _$statIntervalMethodEnum_pairedBootstrap,
-  _$statIntervalMethodEnum_empirical,
-]);
+      _$statIntervalMethodEnum_wilson,
+      _$statIntervalMethodEnum_jeffreys,
+      _$statIntervalMethodEnum_pairedBootstrap,
+      _$statIntervalMethodEnum_empirical,
+    ]);
 
 Serializer<StatIntervalMethodEnum> _$statIntervalMethodEnumSerializer =
     _$StatIntervalMethodEnumSerializer();
@@ -62,15 +62,20 @@ class _$StatIntervalMethodEnumSerializer
   final String wireName = 'StatIntervalMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, StatIntervalMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatIntervalMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatIntervalMethodEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatIntervalMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatIntervalMethodEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatIntervalMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatInterval extends StatInterval {
@@ -86,12 +91,12 @@ class _$StatInterval extends StatInterval {
   factory _$StatInterval([void Function(StatIntervalBuilder)? updates]) =>
       (StatIntervalBuilder()..update(updates))._build();
 
-  _$StatInterval._(
-      {required this.lower,
-      required this.upper,
-      required this.level,
-      required this.method})
-      : super._();
+  _$StatInterval._({
+    required this.lower,
+    required this.upper,
+    required this.level,
+    required this.method,
+  }) : super._();
   @override
   StatInterval rebuild(void Function(StatIntervalBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -181,16 +186,29 @@ class StatIntervalBuilder
   StatInterval build() => _build();
 
   _$StatInterval _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StatInterval._(
           lower: BuiltValueNullFieldError.checkNotNull(
-              lower, r'StatInterval', 'lower'),
+            lower,
+            r'StatInterval',
+            'lower',
+          ),
           upper: BuiltValueNullFieldError.checkNotNull(
-              upper, r'StatInterval', 'upper'),
+            upper,
+            r'StatInterval',
+            'upper',
+          ),
           level: BuiltValueNullFieldError.checkNotNull(
-              level, r'StatInterval', 'level'),
+            level,
+            r'StatInterval',
+            'level',
+          ),
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'StatInterval', 'method'),
+            method,
+            r'StatInterval',
+            'method',
+          ),
         );
     replace(_$result);
     return _$result;

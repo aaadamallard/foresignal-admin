@@ -7,20 +7,20 @@ part of 'infra_impact_result_dependents_inner.dart';
 // **************************************************************************
 
 const InfraImpactResultDependentsInnerPathLabelEnum
-    _$infraImpactResultDependentsInnerPathLabelEnum_confirmed =
+_$infraImpactResultDependentsInnerPathLabelEnum_confirmed =
     const InfraImpactResultDependentsInnerPathLabelEnum._('confirmed');
 const InfraImpactResultDependentsInnerPathLabelEnum
-    _$infraImpactResultDependentsInnerPathLabelEnum_likely =
+_$infraImpactResultDependentsInnerPathLabelEnum_likely =
     const InfraImpactResultDependentsInnerPathLabelEnum._('likely');
 const InfraImpactResultDependentsInnerPathLabelEnum
-    _$infraImpactResultDependentsInnerPathLabelEnum_possible =
+_$infraImpactResultDependentsInnerPathLabelEnum_possible =
     const InfraImpactResultDependentsInnerPathLabelEnum._('possible');
 const InfraImpactResultDependentsInnerPathLabelEnum
-    _$infraImpactResultDependentsInnerPathLabelEnum_speculative =
+_$infraImpactResultDependentsInnerPathLabelEnum_speculative =
     const InfraImpactResultDependentsInnerPathLabelEnum._('speculative');
 
 InfraImpactResultDependentsInnerPathLabelEnum
-    _$infraImpactResultDependentsInnerPathLabelEnumValueOf(String name) {
+_$infraImpactResultDependentsInnerPathLabelEnumValueOf(String name) {
   switch (name) {
     case 'confirmed':
       return _$infraImpactResultDependentsInnerPathLabelEnum_confirmed;
@@ -36,16 +36,18 @@ InfraImpactResultDependentsInnerPathLabelEnum
 }
 
 final BuiltSet<InfraImpactResultDependentsInnerPathLabelEnum>
-    _$infraImpactResultDependentsInnerPathLabelEnumValues = BuiltSet<
-        InfraImpactResultDependentsInnerPathLabelEnum>(const <InfraImpactResultDependentsInnerPathLabelEnum>[
-  _$infraImpactResultDependentsInnerPathLabelEnum_confirmed,
-  _$infraImpactResultDependentsInnerPathLabelEnum_likely,
-  _$infraImpactResultDependentsInnerPathLabelEnum_possible,
-  _$infraImpactResultDependentsInnerPathLabelEnum_speculative,
-]);
+_$infraImpactResultDependentsInnerPathLabelEnumValues =
+    BuiltSet<InfraImpactResultDependentsInnerPathLabelEnum>(
+      const <InfraImpactResultDependentsInnerPathLabelEnum>[
+        _$infraImpactResultDependentsInnerPathLabelEnum_confirmed,
+        _$infraImpactResultDependentsInnerPathLabelEnum_likely,
+        _$infraImpactResultDependentsInnerPathLabelEnum_possible,
+        _$infraImpactResultDependentsInnerPathLabelEnum_speculative,
+      ],
+    );
 
 Serializer<InfraImpactResultDependentsInnerPathLabelEnum>
-    _$infraImpactResultDependentsInnerPathLabelEnumSerializer =
+_$infraImpactResultDependentsInnerPathLabelEnumSerializer =
     _$InfraImpactResultDependentsInnerPathLabelEnumSerializer();
 
 class _$InfraImpactResultDependentsInnerPathLabelEnumSerializer
@@ -66,23 +68,26 @@ class _$InfraImpactResultDependentsInnerPathLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    InfraImpactResultDependentsInnerPathLabelEnum
+    InfraImpactResultDependentsInnerPathLabelEnum,
   ];
   @override
   final String wireName = 'InfraImpactResultDependentsInnerPathLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          InfraImpactResultDependentsInnerPathLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraImpactResultDependentsInnerPathLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraImpactResultDependentsInnerPathLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraImpactResultDependentsInnerPathLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraImpactResultDependentsInnerPathLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraImpactResultDependentsInner
@@ -98,21 +103,21 @@ class _$InfraImpactResultDependentsInner
   @override
   final BuiltList<InfraImpactResultDependentsInnerPathInner> path;
 
-  factory _$InfraImpactResultDependentsInner(
-          [void Function(InfraImpactResultDependentsInnerBuilder)? updates]) =>
-      (InfraImpactResultDependentsInnerBuilder()..update(updates))._build();
+  factory _$InfraImpactResultDependentsInner([
+    void Function(InfraImpactResultDependentsInnerBuilder)? updates,
+  ]) => (InfraImpactResultDependentsInnerBuilder()..update(updates))._build();
 
-  _$InfraImpactResultDependentsInner._(
-      {required this.node,
-      required this.depth,
-      required this.pathLabel,
-      required this.pathScore,
-      required this.path})
-      : super._();
+  _$InfraImpactResultDependentsInner._({
+    required this.node,
+    required this.depth,
+    required this.pathLabel,
+    required this.pathScore,
+    required this.path,
+  }) : super._();
   @override
   InfraImpactResultDependentsInner rebuild(
-          void Function(InfraImpactResultDependentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InfraImpactResultDependentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InfraImpactResultDependentsInnerBuilder toBuilder() =>
@@ -155,8 +160,10 @@ class _$InfraImpactResultDependentsInner
 
 class InfraImpactResultDependentsInnerBuilder
     implements
-        Builder<InfraImpactResultDependentsInner,
-            InfraImpactResultDependentsInnerBuilder> {
+        Builder<
+          InfraImpactResultDependentsInner,
+          InfraImpactResultDependentsInnerBuilder
+        > {
   _$InfraImpactResultDependentsInner? _$v;
 
   InfraNodeBuilder? _node;
@@ -216,15 +223,25 @@ class InfraImpactResultDependentsInnerBuilder
   _$InfraImpactResultDependentsInner _build() {
     _$InfraImpactResultDependentsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraImpactResultDependentsInner._(
             node: node.build(),
             depth: BuiltValueNullFieldError.checkNotNull(
-                depth, r'InfraImpactResultDependentsInner', 'depth'),
+              depth,
+              r'InfraImpactResultDependentsInner',
+              'depth',
+            ),
             pathLabel: BuiltValueNullFieldError.checkNotNull(
-                pathLabel, r'InfraImpactResultDependentsInner', 'pathLabel'),
+              pathLabel,
+              r'InfraImpactResultDependentsInner',
+              'pathLabel',
+            ),
             pathScore: BuiltValueNullFieldError.checkNotNull(
-                pathScore, r'InfraImpactResultDependentsInner', 'pathScore'),
+              pathScore,
+              r'InfraImpactResultDependentsInner',
+              'pathScore',
+            ),
             path: path.build(),
           );
     } catch (_) {
@@ -237,7 +254,10 @@ class InfraImpactResultDependentsInnerBuilder
         path.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraImpactResultDependentsInner', _$failedField, e.toString());
+          r'InfraImpactResultDependentsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

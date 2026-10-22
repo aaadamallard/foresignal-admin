@@ -26,25 +26,25 @@ class _$PersistReasonCounts extends PersistReasonCounts {
   @override
   final int TRIGGER_EDGE;
 
-  factory _$PersistReasonCounts(
-          [void Function(PersistReasonCountsBuilder)? updates]) =>
-      (PersistReasonCountsBuilder()..update(updates))._build();
+  factory _$PersistReasonCounts([
+    void Function(PersistReasonCountsBuilder)? updates,
+  ]) => (PersistReasonCountsBuilder()..update(updates))._build();
 
-  _$PersistReasonCounts._(
-      {required this.FIRST,
-      required this.REAPPEAR,
-      required this.SIGNIFICANT,
-      required this.TOMBSTONE,
-      required this.CHANGE,
-      required this.SAMPLE,
-      required this.KEYFRAME,
-      required this.HEARTBEAT,
-      required this.TRIGGER_EDGE})
-      : super._();
+  _$PersistReasonCounts._({
+    required this.FIRST,
+    required this.REAPPEAR,
+    required this.SIGNIFICANT,
+    required this.TOMBSTONE,
+    required this.CHANGE,
+    required this.SAMPLE,
+    required this.KEYFRAME,
+    required this.HEARTBEAT,
+    required this.TRIGGER_EDGE,
+  }) : super._();
   @override
   PersistReasonCounts rebuild(
-          void Function(PersistReasonCountsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PersistReasonCountsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PersistReasonCountsBuilder toBuilder() =>
@@ -172,26 +172,54 @@ class PersistReasonCountsBuilder
   PersistReasonCounts build() => _build();
 
   _$PersistReasonCounts _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PersistReasonCounts._(
           FIRST: BuiltValueNullFieldError.checkNotNull(
-              FIRST, r'PersistReasonCounts', 'FIRST'),
+            FIRST,
+            r'PersistReasonCounts',
+            'FIRST',
+          ),
           REAPPEAR: BuiltValueNullFieldError.checkNotNull(
-              REAPPEAR, r'PersistReasonCounts', 'REAPPEAR'),
+            REAPPEAR,
+            r'PersistReasonCounts',
+            'REAPPEAR',
+          ),
           SIGNIFICANT: BuiltValueNullFieldError.checkNotNull(
-              SIGNIFICANT, r'PersistReasonCounts', 'SIGNIFICANT'),
+            SIGNIFICANT,
+            r'PersistReasonCounts',
+            'SIGNIFICANT',
+          ),
           TOMBSTONE: BuiltValueNullFieldError.checkNotNull(
-              TOMBSTONE, r'PersistReasonCounts', 'TOMBSTONE'),
+            TOMBSTONE,
+            r'PersistReasonCounts',
+            'TOMBSTONE',
+          ),
           CHANGE: BuiltValueNullFieldError.checkNotNull(
-              CHANGE, r'PersistReasonCounts', 'CHANGE'),
+            CHANGE,
+            r'PersistReasonCounts',
+            'CHANGE',
+          ),
           SAMPLE: BuiltValueNullFieldError.checkNotNull(
-              SAMPLE, r'PersistReasonCounts', 'SAMPLE'),
+            SAMPLE,
+            r'PersistReasonCounts',
+            'SAMPLE',
+          ),
           KEYFRAME: BuiltValueNullFieldError.checkNotNull(
-              KEYFRAME, r'PersistReasonCounts', 'KEYFRAME'),
+            KEYFRAME,
+            r'PersistReasonCounts',
+            'KEYFRAME',
+          ),
           HEARTBEAT: BuiltValueNullFieldError.checkNotNull(
-              HEARTBEAT, r'PersistReasonCounts', 'HEARTBEAT'),
+            HEARTBEAT,
+            r'PersistReasonCounts',
+            'HEARTBEAT',
+          ),
           TRIGGER_EDGE: BuiltValueNullFieldError.checkNotNull(
-              TRIGGER_EDGE, r'PersistReasonCounts', 'TRIGGER_EDGE'),
+            TRIGGER_EDGE,
+            r'PersistReasonCounts',
+            'TRIGGER_EDGE',
+          ),
         );
     replace(_$result);
     return _$result;

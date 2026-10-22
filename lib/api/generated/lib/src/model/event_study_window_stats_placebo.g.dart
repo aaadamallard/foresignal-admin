@@ -20,17 +20,22 @@ class _$EventStudyWindowStatsPlacebo extends EventStudyWindowStatsPlacebo {
   @override
   final num? p95;
 
-  factory _$EventStudyWindowStatsPlacebo(
-          [void Function(EventStudyWindowStatsPlaceboBuilder)? updates]) =>
-      (EventStudyWindowStatsPlaceboBuilder()..update(updates))._build();
+  factory _$EventStudyWindowStatsPlacebo([
+    void Function(EventStudyWindowStatsPlaceboBuilder)? updates,
+  ]) => (EventStudyWindowStatsPlaceboBuilder()..update(updates))._build();
 
-  _$EventStudyWindowStatsPlacebo._(
-      {required this.count, this.mean, this.sd, this.p05, this.p50, this.p95})
-      : super._();
+  _$EventStudyWindowStatsPlacebo._({
+    required this.count,
+    this.mean,
+    this.sd,
+    this.p05,
+    this.p50,
+    this.p95,
+  }) : super._();
   @override
   EventStudyWindowStatsPlacebo rebuild(
-          void Function(EventStudyWindowStatsPlaceboBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStudyWindowStatsPlaceboBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStudyWindowStatsPlaceboBuilder toBuilder() =>
@@ -76,8 +81,10 @@ class _$EventStudyWindowStatsPlacebo extends EventStudyWindowStatsPlacebo {
 
 class EventStudyWindowStatsPlaceboBuilder
     implements
-        Builder<EventStudyWindowStatsPlacebo,
-            EventStudyWindowStatsPlaceboBuilder> {
+        Builder<
+          EventStudyWindowStatsPlacebo,
+          EventStudyWindowStatsPlaceboBuilder
+        > {
   _$EventStudyWindowStatsPlacebo? _$v;
 
   int? _count;
@@ -136,10 +143,14 @@ class EventStudyWindowStatsPlaceboBuilder
   EventStudyWindowStatsPlacebo build() => _build();
 
   _$EventStudyWindowStatsPlacebo _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EventStudyWindowStatsPlacebo._(
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'EventStudyWindowStatsPlacebo', 'count'),
+            count,
+            r'EventStudyWindowStatsPlacebo',
+            'count',
+          ),
           mean: mean,
           sd: sd,
           p05: p05,

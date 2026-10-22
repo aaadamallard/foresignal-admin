@@ -32,11 +32,11 @@ ForecastQuestionTypeEnum _$forecastQuestionTypeEnumValueOf(String name) {
 
 final BuiltSet<ForecastQuestionTypeEnum> _$forecastQuestionTypeEnumValues =
     BuiltSet<ForecastQuestionTypeEnum>(const <ForecastQuestionTypeEnum>[
-  _$forecastQuestionTypeEnum_binary,
-  _$forecastQuestionTypeEnum_multiple,
-  _$forecastQuestionTypeEnum_ordered,
-  _$forecastQuestionTypeEnum_numeric,
-]);
+      _$forecastQuestionTypeEnum_binary,
+      _$forecastQuestionTypeEnum_multiple,
+      _$forecastQuestionTypeEnum_ordered,
+      _$forecastQuestionTypeEnum_numeric,
+    ]);
 
 const ForecastQuestionStatusEnum _$forecastQuestionStatusEnum_open =
     const ForecastQuestionStatusEnum._('open');
@@ -64,36 +64,37 @@ ForecastQuestionStatusEnum _$forecastQuestionStatusEnumValueOf(String name) {
 
 final BuiltSet<ForecastQuestionStatusEnum> _$forecastQuestionStatusEnumValues =
     BuiltSet<ForecastQuestionStatusEnum>(const <ForecastQuestionStatusEnum>[
-  _$forecastQuestionStatusEnum_open,
-  _$forecastQuestionStatusEnum_closed,
-  _$forecastQuestionStatusEnum_resolved,
-  _$forecastQuestionStatusEnum_annulled,
-]);
+      _$forecastQuestionStatusEnum_open,
+      _$forecastQuestionStatusEnum_closed,
+      _$forecastQuestionStatusEnum_resolved,
+      _$forecastQuestionStatusEnum_annulled,
+    ]);
 
 const ForecastQuestionResolverTypeEnum
-    _$forecastQuestionResolverTypeEnum_eventExists =
+_$forecastQuestionResolverTypeEnum_eventExists =
     const ForecastQuestionResolverTypeEnum._('eventExists');
 const ForecastQuestionResolverTypeEnum
-    _$forecastQuestionResolverTypeEnum_countThreshold =
+_$forecastQuestionResolverTypeEnum_countThreshold =
     const ForecastQuestionResolverTypeEnum._('countThreshold');
 const ForecastQuestionResolverTypeEnum
-    _$forecastQuestionResolverTypeEnum_seriesValue =
+_$forecastQuestionResolverTypeEnum_seriesValue =
     const ForecastQuestionResolverTypeEnum._('seriesValue');
 const ForecastQuestionResolverTypeEnum
-    _$forecastQuestionResolverTypeEnum_alertFired =
+_$forecastQuestionResolverTypeEnum_alertFired =
     const ForecastQuestionResolverTypeEnum._('alertFired');
 const ForecastQuestionResolverTypeEnum
-    _$forecastQuestionResolverTypeEnum_situationStatus =
+_$forecastQuestionResolverTypeEnum_situationStatus =
     const ForecastQuestionResolverTypeEnum._('situationStatus');
 const ForecastQuestionResolverTypeEnum
-    _$forecastQuestionResolverTypeEnum_hypothesisOutcome =
+_$forecastQuestionResolverTypeEnum_hypothesisOutcome =
     const ForecastQuestionResolverTypeEnum._('hypothesisOutcome');
 const ForecastQuestionResolverTypeEnum
-    _$forecastQuestionResolverTypeEnum_manual =
+_$forecastQuestionResolverTypeEnum_manual =
     const ForecastQuestionResolverTypeEnum._('manual');
 
 ForecastQuestionResolverTypeEnum _$forecastQuestionResolverTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'eventExists':
       return _$forecastQuestionResolverTypeEnum_eventExists;
@@ -115,16 +116,18 @@ ForecastQuestionResolverTypeEnum _$forecastQuestionResolverTypeEnumValueOf(
 }
 
 final BuiltSet<ForecastQuestionResolverTypeEnum>
-    _$forecastQuestionResolverTypeEnumValues = BuiltSet<
-        ForecastQuestionResolverTypeEnum>(const <ForecastQuestionResolverTypeEnum>[
-  _$forecastQuestionResolverTypeEnum_eventExists,
-  _$forecastQuestionResolverTypeEnum_countThreshold,
-  _$forecastQuestionResolverTypeEnum_seriesValue,
-  _$forecastQuestionResolverTypeEnum_alertFired,
-  _$forecastQuestionResolverTypeEnum_situationStatus,
-  _$forecastQuestionResolverTypeEnum_hypothesisOutcome,
-  _$forecastQuestionResolverTypeEnum_manual,
-]);
+_$forecastQuestionResolverTypeEnumValues =
+    BuiltSet<ForecastQuestionResolverTypeEnum>(
+      const <ForecastQuestionResolverTypeEnum>[
+        _$forecastQuestionResolverTypeEnum_eventExists,
+        _$forecastQuestionResolverTypeEnum_countThreshold,
+        _$forecastQuestionResolverTypeEnum_seriesValue,
+        _$forecastQuestionResolverTypeEnum_alertFired,
+        _$forecastQuestionResolverTypeEnum_situationStatus,
+        _$forecastQuestionResolverTypeEnum_hypothesisOutcome,
+        _$forecastQuestionResolverTypeEnum_manual,
+      ],
+    );
 
 const ForecastQuestionOriginEnum _$forecastQuestionOriginEnum_operator_ =
     const ForecastQuestionOriginEnum._('operator_');
@@ -152,18 +155,18 @@ ForecastQuestionOriginEnum _$forecastQuestionOriginEnumValueOf(String name) {
 
 final BuiltSet<ForecastQuestionOriginEnum> _$forecastQuestionOriginEnumValues =
     BuiltSet<ForecastQuestionOriginEnum>(const <ForecastQuestionOriginEnum>[
-  _$forecastQuestionOriginEnum_operator_,
-  _$forecastQuestionOriginEnum_agent,
-  _$forecastQuestionOriginEnum_system,
-  _$forecastQuestionOriginEnum_analyst,
-]);
+      _$forecastQuestionOriginEnum_operator_,
+      _$forecastQuestionOriginEnum_agent,
+      _$forecastQuestionOriginEnum_system,
+      _$forecastQuestionOriginEnum_analyst,
+    ]);
 
 Serializer<ForecastQuestionTypeEnum> _$forecastQuestionTypeEnumSerializer =
     _$ForecastQuestionTypeEnumSerializer();
 Serializer<ForecastQuestionStatusEnum> _$forecastQuestionStatusEnumSerializer =
     _$ForecastQuestionStatusEnumSerializer();
 Serializer<ForecastQuestionResolverTypeEnum>
-    _$forecastQuestionResolverTypeEnumSerializer =
+_$forecastQuestionResolverTypeEnumSerializer =
     _$ForecastQuestionResolverTypeEnumSerializer();
 Serializer<ForecastQuestionOriginEnum> _$forecastQuestionOriginEnumSerializer =
     _$ForecastQuestionOriginEnumSerializer();
@@ -189,16 +192,20 @@ class _$ForecastQuestionTypeEnumSerializer
   final String wireName = 'ForecastQuestionTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastQuestionTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastQuestionTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastQuestionTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastQuestionTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastQuestionTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastQuestionStatusEnumSerializer
@@ -222,16 +229,20 @@ class _$ForecastQuestionStatusEnumSerializer
   final String wireName = 'ForecastQuestionStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastQuestionStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastQuestionStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastQuestionStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastQuestionStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastQuestionStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastQuestionResolverTypeEnumSerializer
@@ -262,16 +273,19 @@ class _$ForecastQuestionResolverTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecastQuestionResolverTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastQuestionResolverTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastQuestionResolverTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastQuestionResolverTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastQuestionResolverTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastQuestionOriginEnumSerializer
@@ -295,16 +309,20 @@ class _$ForecastQuestionOriginEnumSerializer
   final String wireName = 'ForecastQuestionOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastQuestionOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastQuestionOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastQuestionOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastQuestionOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastQuestionOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastQuestion extends ForecastQuestion {
@@ -371,43 +389,43 @@ class _$ForecastQuestion extends ForecastQuestion {
   @override
   final String? manifestId;
 
-  factory _$ForecastQuestion(
-          [void Function(ForecastQuestionBuilder)? updates]) =>
-      (ForecastQuestionBuilder()..update(updates))._build();
+  factory _$ForecastQuestion([
+    void Function(ForecastQuestionBuilder)? updates,
+  ]) => (ForecastQuestionBuilder()..update(updates))._build();
 
-  _$ForecastQuestion._(
-      {required this.id,
-      required this.title,
-      required this.type,
-      required this.status,
-      required this.category,
-      this.tags,
-      required this.resolverType,
-      required this.opensAt,
-      required this.closesAt,
-      required this.resolveBy,
-      required this.origin,
-      this.links,
-      required this.private,
-      this.forecastCount,
-      this.ensembleProbability,
-      this.estimativeTerm,
-      this.resolvedOutcome,
-      this.resolvedValue,
-      this.outcomes,
-      required this.resolutionCriteria,
-      required this.resolver,
-      this.resolution,
-      this.annulment,
-      this.dedupKey,
-      required this.latestForecasts,
-      this.ensemble,
-      this.scores,
-      this.createdAt,
-      this.updatedAt,
-      this.baselineNotes,
-      this.manifestId})
-      : super._();
+  _$ForecastQuestion._({
+    required this.id,
+    required this.title,
+    required this.type,
+    required this.status,
+    required this.category,
+    this.tags,
+    required this.resolverType,
+    required this.opensAt,
+    required this.closesAt,
+    required this.resolveBy,
+    required this.origin,
+    this.links,
+    required this.private,
+    this.forecastCount,
+    this.ensembleProbability,
+    this.estimativeTerm,
+    this.resolvedOutcome,
+    this.resolvedValue,
+    this.outcomes,
+    required this.resolutionCriteria,
+    required this.resolver,
+    this.resolution,
+    this.annulment,
+    this.dedupKey,
+    required this.latestForecasts,
+    this.ensemble,
+    this.scores,
+    this.createdAt,
+    this.updatedAt,
+    this.baselineNotes,
+    this.manifestId,
+  }) : super._();
   @override
   ForecastQuestion rebuild(void Function(ForecastQuestionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -736,32 +754,66 @@ class ForecastQuestionBuilder
   _$ForecastQuestion _build() {
     _$ForecastQuestion _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastQuestion._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ForecastQuestion', 'id'),
+              id,
+              r'ForecastQuestion',
+              'id',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ForecastQuestion', 'title'),
+              title,
+              r'ForecastQuestion',
+              'title',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ForecastQuestion', 'type'),
+              type,
+              r'ForecastQuestion',
+              'type',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ForecastQuestion', 'status'),
+              status,
+              r'ForecastQuestion',
+              'status',
+            ),
             category: BuiltValueNullFieldError.checkNotNull(
-                category, r'ForecastQuestion', 'category'),
+              category,
+              r'ForecastQuestion',
+              'category',
+            ),
             tags: _tags?.build(),
             resolverType: BuiltValueNullFieldError.checkNotNull(
-                resolverType, r'ForecastQuestion', 'resolverType'),
+              resolverType,
+              r'ForecastQuestion',
+              'resolverType',
+            ),
             opensAt: BuiltValueNullFieldError.checkNotNull(
-                opensAt, r'ForecastQuestion', 'opensAt'),
+              opensAt,
+              r'ForecastQuestion',
+              'opensAt',
+            ),
             closesAt: BuiltValueNullFieldError.checkNotNull(
-                closesAt, r'ForecastQuestion', 'closesAt'),
+              closesAt,
+              r'ForecastQuestion',
+              'closesAt',
+            ),
             resolveBy: BuiltValueNullFieldError.checkNotNull(
-                resolveBy, r'ForecastQuestion', 'resolveBy'),
+              resolveBy,
+              r'ForecastQuestion',
+              'resolveBy',
+            ),
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'ForecastQuestion', 'origin'),
+              origin,
+              r'ForecastQuestion',
+              'origin',
+            ),
             links: _links?.build(),
             private: BuiltValueNullFieldError.checkNotNull(
-                private, r'ForecastQuestion', 'private'),
+              private,
+              r'ForecastQuestion',
+              'private',
+            ),
             forecastCount: forecastCount,
             ensembleProbability: ensembleProbability,
             estimativeTerm: estimativeTerm,
@@ -769,7 +821,10 @@ class ForecastQuestionBuilder
             resolvedValue: resolvedValue,
             outcomes: _outcomes?.build(),
             resolutionCriteria: BuiltValueNullFieldError.checkNotNull(
-                resolutionCriteria, r'ForecastQuestion', 'resolutionCriteria'),
+              resolutionCriteria,
+              r'ForecastQuestion',
+              'resolutionCriteria',
+            ),
             resolver: resolver.build(),
             resolution: _resolution?.build(),
             annulment: _annulment?.build(),
@@ -812,7 +867,10 @@ class ForecastQuestionBuilder
         _baselineNotes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastQuestion', _$failedField, e.toString());
+          r'ForecastQuestion',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -21,13 +21,13 @@ class _$LlmTestResult extends LlmTestResult {
   factory _$LlmTestResult([void Function(LlmTestResultBuilder)? updates]) =>
       (LlmTestResultBuilder()..update(updates))._build();
 
-  _$LlmTestResult._(
-      {required this.success,
-      this.chat,
-      this.embedding,
-      this.error,
-      this.refusalCategory})
-      : super._();
+  _$LlmTestResult._({
+    required this.success,
+    this.chat,
+    this.embedding,
+    this.error,
+    this.refusalCategory,
+  }) : super._();
   @override
   LlmTestResult rebuild(void Function(LlmTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -131,10 +131,14 @@ class LlmTestResultBuilder
   _$LlmTestResult _build() {
     _$LlmTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LlmTestResult._(
             success: BuiltValueNullFieldError.checkNotNull(
-                success, r'LlmTestResult', 'success'),
+              success,
+              r'LlmTestResult',
+              'success',
+            ),
             chat: _chat?.build(),
             embedding: _embedding?.build(),
             error: error,
@@ -149,7 +153,10 @@ class LlmTestResultBuilder
         _embedding?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LlmTestResult', _$failedField, e.toString());
+          r'LlmTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

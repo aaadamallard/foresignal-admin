@@ -27,16 +27,16 @@ class _$ReportEvent extends ReportEvent {
   factory _$ReportEvent([void Function(ReportEventBuilder)? updates]) =>
       (ReportEventBuilder()..update(updates))._build();
 
-  _$ReportEvent._(
-      {required this.reportRef,
-      required this.title,
-      required this.tlp,
-      this.revision,
-      this.from,
-      this.message,
-      this.reason,
-      required this.at})
-      : super._();
+  _$ReportEvent._({
+    required this.reportRef,
+    required this.title,
+    required this.tlp,
+    this.revision,
+    this.from,
+    this.message,
+    this.reason,
+    required this.at,
+  }) : super._();
   @override
   ReportEvent rebuild(void Function(ReportEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -160,14 +160,24 @@ class ReportEventBuilder implements Builder<ReportEvent, ReportEventBuilder> {
   _$ReportEvent _build() {
     _$ReportEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportEvent._(
             reportRef: BuiltValueNullFieldError.checkNotNull(
-                reportRef, r'ReportEvent', 'reportRef'),
+              reportRef,
+              r'ReportEvent',
+              'reportRef',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ReportEvent', 'title'),
+              title,
+              r'ReportEvent',
+              'title',
+            ),
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'ReportEvent', 'tlp'),
+              tlp,
+              r'ReportEvent',
+              'tlp',
+            ),
             revision: revision,
             from: _from?.build(),
             message: message,
@@ -181,7 +191,10 @@ class ReportEventBuilder implements Builder<ReportEvent, ReportEventBuilder> {
         _from?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportEvent', _$failedField, e.toString());
+          r'ReportEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

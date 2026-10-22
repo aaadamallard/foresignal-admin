@@ -29,17 +29,17 @@ class _$SampleResponse extends SampleResponse {
   factory _$SampleResponse([void Function(SampleResponseBuilder)? updates]) =>
       (SampleResponseBuilder()..update(updates))._build();
 
-  _$SampleResponse._(
-      {required this.lon,
-      required this.lat,
-      this.placeId,
-      this.timezone,
-      this.time,
-      required this.serverTime,
-      required this.values,
-      this.disagreement,
-      this.position})
-      : super._();
+  _$SampleResponse._({
+    required this.lon,
+    required this.lat,
+    this.placeId,
+    this.timezone,
+    this.time,
+    required this.serverTime,
+    required this.values,
+    this.disagreement,
+    this.position,
+  }) : super._();
   @override
   SampleResponse rebuild(void Function(SampleResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -175,17 +175,27 @@ class SampleResponseBuilder
   _$SampleResponse _build() {
     _$SampleResponse _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SampleResponse._(
             lon: BuiltValueNullFieldError.checkNotNull(
-                lon, r'SampleResponse', 'lon'),
+              lon,
+              r'SampleResponse',
+              'lon',
+            ),
             lat: BuiltValueNullFieldError.checkNotNull(
-                lat, r'SampleResponse', 'lat'),
+              lat,
+              r'SampleResponse',
+              'lat',
+            ),
             placeId: placeId,
             timezone: timezone,
             time: time,
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'SampleResponse', 'serverTime'),
+              serverTime,
+              r'SampleResponse',
+              'serverTime',
+            ),
             values: values.build(),
             disagreement: _disagreement?.build(),
             position: _position?.build(),
@@ -201,7 +211,10 @@ class SampleResponseBuilder
         _position?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SampleResponse', _$failedField, e.toString());
+          r'SampleResponse',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

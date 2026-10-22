@@ -29,17 +29,17 @@ class _$CollectionGap extends CollectionGap {
   factory _$CollectionGap([void Function(CollectionGapBuilder)? updates]) =>
       (CollectionGapBuilder()..update(updates))._build();
 
-  _$CollectionGap._(
-      {required this.id,
-      required this.setId,
-      required this.indicatorId,
-      required this.potentialEig,
-      required this.actualEig,
-      this.pDetect,
-      required this.recommendations,
-      this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$CollectionGap._({
+    required this.id,
+    required this.setId,
+    required this.indicatorId,
+    required this.potentialEig,
+    required this.actualEig,
+    this.pDetect,
+    required this.recommendations,
+    this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   CollectionGap rebuild(void Function(CollectionGapBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -127,8 +127,8 @@ class CollectionGapBuilder
       _$this._recommendations ??=
           ListBuilder<CollectionGapRecommendationsInner>();
   set recommendations(
-          ListBuilder<CollectionGapRecommendationsInner>? recommendations) =>
-      _$this._recommendations = recommendations;
+    ListBuilder<CollectionGapRecommendationsInner>? recommendations,
+  ) => _$this._recommendations = recommendations;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
@@ -175,18 +175,34 @@ class CollectionGapBuilder
   _$CollectionGap _build() {
     _$CollectionGap _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CollectionGap._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CollectionGap', 'id'),
+              id,
+              r'CollectionGap',
+              'id',
+            ),
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'CollectionGap', 'setId'),
+              setId,
+              r'CollectionGap',
+              'setId',
+            ),
             indicatorId: BuiltValueNullFieldError.checkNotNull(
-                indicatorId, r'CollectionGap', 'indicatorId'),
+              indicatorId,
+              r'CollectionGap',
+              'indicatorId',
+            ),
             potentialEig: BuiltValueNullFieldError.checkNotNull(
-                potentialEig, r'CollectionGap', 'potentialEig'),
+              potentialEig,
+              r'CollectionGap',
+              'potentialEig',
+            ),
             actualEig: BuiltValueNullFieldError.checkNotNull(
-                actualEig, r'CollectionGap', 'actualEig'),
+              actualEig,
+              r'CollectionGap',
+              'actualEig',
+            ),
             pDetect: pDetect,
             recommendations: recommendations.build(),
             createdAt: createdAt,
@@ -199,7 +215,10 @@ class CollectionGapBuilder
         recommendations.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CollectionGap', _$failedField, e.toString());
+          r'CollectionGap',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

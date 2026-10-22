@@ -16,8 +16,10 @@ part 'scorecard_entry_interval_coverage.g.dart';
 @BuiltValue()
 abstract class ScorecardEntryIntervalCoverage
     implements
-        Built<ScorecardEntryIntervalCoverage,
-            ScorecardEntryIntervalCoverageBuilder> {
+        Built<
+          ScorecardEntryIntervalCoverage,
+          ScorecardEntryIntervalCoverageBuilder
+        > {
   @BuiltValueField(wireName: r'p05p95')
   num? get p05p95;
 
@@ -26,9 +28,9 @@ abstract class ScorecardEntryIntervalCoverage
 
   ScorecardEntryIntervalCoverage._();
 
-  factory ScorecardEntryIntervalCoverage(
-          [void updates(ScorecardEntryIntervalCoverageBuilder b)]) =
-      _$ScorecardEntryIntervalCoverage;
+  factory ScorecardEntryIntervalCoverage([
+    void updates(ScorecardEntryIntervalCoverageBuilder b),
+  ]) = _$ScorecardEntryIntervalCoverage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ScorecardEntryIntervalCoverageBuilder b) => b;
@@ -43,7 +45,7 @@ class _$ScorecardEntryIntervalCoverageSerializer
   @override
   final Iterable<Type> types = const [
     ScorecardEntryIntervalCoverage,
-    _$ScorecardEntryIntervalCoverage
+    _$ScorecardEntryIntervalCoverage,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$ScorecardEntryIntervalCoverageSerializer
     ScorecardEntryIntervalCoverage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$ScorecardEntryIntervalCoverageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'p05p95':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p05p95 = valueDes;
           break;
         case r'p25p75':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p25p75 = valueDes;
           break;

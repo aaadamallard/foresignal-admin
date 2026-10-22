@@ -235,8 +235,9 @@ class _$AssessmentSerializer implements PrimitiveSerializer<Assessment> {
     yield r'sections';
     yield serializers.serialize(
       object.sections,
-      specifiedType:
-          const FullType(BuiltList, [FullType(AssessmentSectionsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(AssessmentSectionsInner),
+      ]),
     );
     if (object.markdown != null) {
       yield r'markdown';
@@ -263,8 +264,10 @@ class _$AssessmentSerializer implements PrimitiveSerializer<Assessment> {
       yield r'roles';
       yield serializers.serialize(
         object.roles,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType(CycleRunRolesInner)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(CycleRunRolesInner),
+        ]),
       );
     }
     if (object.model != null) {
@@ -292,8 +295,9 @@ class _$AssessmentSerializer implements PrimitiveSerializer<Assessment> {
       yield r'promptTemplates';
       yield serializers.serialize(
         object.promptTemplates,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AssessmentPromptTemplatesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AssessmentPromptTemplatesInner),
+        ]),
       );
     }
     if (object.citations != null) {
@@ -349,9 +353,11 @@ class _$AssessmentSerializer implements PrimitiveSerializer<Assessment> {
     Assessment object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -367,214 +373,280 @@ class _$AssessmentSerializer implements PrimitiveSerializer<Assessment> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'cycleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cycleId = valueDes;
           break;
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.situationId = valueDes;
           break;
         case r'cadence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AssessmentCadenceEnum),
-          ) as AssessmentCadenceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AssessmentCadenceEnum),
+                  )
+                  as AssessmentCadenceEnum;
           result.cadence = valueDes;
           break;
         case r'periodStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.periodStart = valueDes;
           break;
         case r'periodEnd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.periodEnd = valueDes;
           break;
         case r'previousAssessmentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.previousAssessmentId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AssessmentStatusEnum),
-          ) as AssessmentStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AssessmentStatusEnum),
+                  )
+                  as AssessmentStatusEnum;
           result.status = valueDes;
           break;
         case r'bluf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(KeyJudgment)]),
-          ) as BuiltList<KeyJudgment>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(KeyJudgment),
+                    ]),
+                  )
+                  as BuiltList<KeyJudgment>;
           result.bluf.replace(valueDes);
           break;
         case r'headline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.headline = valueDes;
           break;
         case r'sections':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(AssessmentSectionsInner)]),
-          ) as BuiltList<AssessmentSectionsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AssessmentSectionsInner),
+                    ]),
+                  )
+                  as BuiltList<AssessmentSectionsInner>;
           result.sections.replace(valueDes);
           break;
         case r'markdown':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.markdown = valueDes;
           break;
         case r'html':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.html = valueDes;
           break;
         case r'packetRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.packetRef = valueDes;
           break;
         case r'roles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(CycleRunRolesInner)]),
-          ) as BuiltMap<String, CycleRunRolesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(CycleRunRolesInner),
+                    ]),
+                  )
+                  as BuiltMap<String, CycleRunRolesInner>?;
           if (valueDes == null) continue;
           result.roles.replace(valueDes);
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.model = valueDes;
           break;
         case r'effort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AssessmentEffortEnum),
-          ) as AssessmentEffortEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AssessmentEffortEnum,
+                    ),
+                  )
+                  as AssessmentEffortEnum?;
           if (valueDes == null) continue;
           result.effort = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
         case r'promptTemplates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AssessmentPromptTemplatesInner)]),
-          ) as BuiltList<AssessmentPromptTemplatesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AssessmentPromptTemplatesInner),
+                    ]),
+                  )
+                  as BuiltList<AssessmentPromptTemplatesInner>?;
           if (valueDes == null) continue;
           result.promptTemplates.replace(valueDes);
           break;
         case r'citations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.citations.replace(valueDes);
           break;
         case r'lintWarnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.lintWarnings.replace(valueDes);
           break;
         case r'footer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.footer = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.private = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'coverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AssessmentCoverage),
-          ) as AssessmentCoverage?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(AssessmentCoverage),
+                  )
+                  as AssessmentCoverage?;
           if (valueDes == null) continue;
           result.coverage.replace(valueDes);
           break;
         case r'social':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialVersusObserved),
-          ) as SocialVersusObserved?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialVersusObserved,
+                    ),
+                  )
+                  as SocialVersusObserved?;
           if (valueDes == null) continue;
           result.social.replace(valueDes);
           break;

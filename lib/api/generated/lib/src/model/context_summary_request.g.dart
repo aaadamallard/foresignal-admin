@@ -18,21 +18,21 @@ class _$ContextSummaryRequest extends ContextSummaryRequest {
   @override
   final BuiltList<String>? layers;
 
-  factory _$ContextSummaryRequest(
-          [void Function(ContextSummaryRequestBuilder)? updates]) =>
-      (ContextSummaryRequestBuilder()..update(updates))._build();
+  factory _$ContextSummaryRequest([
+    void Function(ContextSummaryRequestBuilder)? updates,
+  ]) => (ContextSummaryRequestBuilder()..update(updates))._build();
 
-  _$ContextSummaryRequest._(
-      {required this.viewport,
-      required this.timeRange,
-      this.asOf,
-      this.filters,
-      this.layers})
-      : super._();
+  _$ContextSummaryRequest._({
+    required this.viewport,
+    required this.timeRange,
+    this.asOf,
+    this.filters,
+    this.layers,
+  }) : super._();
   @override
   ContextSummaryRequest rebuild(
-          void Function(ContextSummaryRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ContextSummaryRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ContextSummaryRequestBuilder toBuilder() =>
@@ -134,7 +134,8 @@ class ContextSummaryRequestBuilder
   _$ContextSummaryRequest _build() {
     _$ContextSummaryRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ContextSummaryRequest._(
             viewport: viewport.build(),
             timeRange: timeRange.build(),
@@ -156,7 +157,10 @@ class ContextSummaryRequestBuilder
         _layers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ContextSummaryRequest', _$failedField, e.toString());
+          r'ContextSummaryRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

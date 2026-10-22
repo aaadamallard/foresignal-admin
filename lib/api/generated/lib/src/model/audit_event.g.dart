@@ -44,14 +44,14 @@ AuditEventActorKindEnum _$auditEventActorKindEnumValueOf(String name) {
 
 final BuiltSet<AuditEventActorKindEnum> _$auditEventActorKindEnumValues =
     BuiltSet<AuditEventActorKindEnum>(const <AuditEventActorKindEnum>[
-  _$auditEventActorKindEnum_token,
-  _$auditEventActorKindEnum_ingestKey,
-  _$auditEventActorKindEnum_pairing,
-  _$auditEventActorKindEnum_system,
-  _$auditEventActorKindEnum_action,
-  _$auditEventActorKindEnum_chat,
-  _$auditEventActorKindEnum_mesh,
-]);
+      _$auditEventActorKindEnum_token,
+      _$auditEventActorKindEnum_ingestKey,
+      _$auditEventActorKindEnum_pairing,
+      _$auditEventActorKindEnum_system,
+      _$auditEventActorKindEnum_action,
+      _$auditEventActorKindEnum_chat,
+      _$auditEventActorKindEnum_mesh,
+    ]);
 
 const AuditEventScopeEnum _$auditEventScopeEnum_read =
     const AuditEventScopeEnum._('read');
@@ -75,10 +75,10 @@ AuditEventScopeEnum _$auditEventScopeEnumValueOf(String name) {
 
 final BuiltSet<AuditEventScopeEnum> _$auditEventScopeEnumValues =
     BuiltSet<AuditEventScopeEnum>(const <AuditEventScopeEnum>[
-  _$auditEventScopeEnum_read,
-  _$auditEventScopeEnum_agent,
-  _$auditEventScopeEnum_admin,
-]);
+      _$auditEventScopeEnum_read,
+      _$auditEventScopeEnum_agent,
+      _$auditEventScopeEnum_admin,
+    ]);
 
 Serializer<AuditEventActorKindEnum> _$auditEventActorKindEnumSerializer =
     _$AuditEventActorKindEnumSerializer();
@@ -112,16 +112,20 @@ class _$AuditEventActorKindEnumSerializer
   final String wireName = 'AuditEventActorKindEnum';
 
   @override
-  Object serialize(Serializers serializers, AuditEventActorKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AuditEventActorKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AuditEventActorKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AuditEventActorKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AuditEventActorKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AuditEventScopeEnumSerializer
@@ -143,15 +147,20 @@ class _$AuditEventScopeEnumSerializer
   final String wireName = 'AuditEventScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, AuditEventScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AuditEventScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AuditEventScopeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AuditEventScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AuditEventScopeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AuditEventScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AuditEvent extends AuditEvent {
@@ -189,23 +198,23 @@ class _$AuditEvent extends AuditEvent {
   factory _$AuditEvent([void Function(AuditEventBuilder)? updates]) =>
       (AuditEventBuilder()..update(updates))._build();
 
-  _$AuditEvent._(
-      {required this.id,
-      required this.at,
-      required this.actorKind,
-      this.tokenId,
-      this.tokenName,
-      this.principalId,
-      this.scope,
-      this.method,
-      this.path,
-      this.operationId,
-      this.status,
-      this.targetType,
-      this.targetId,
-      this.remoteIp,
-      this.detail})
-      : super._();
+  _$AuditEvent._({
+    required this.id,
+    required this.at,
+    required this.actorKind,
+    this.tokenId,
+    this.tokenName,
+    this.principalId,
+    this.scope,
+    this.method,
+    this.path,
+    this.operationId,
+    this.status,
+    this.targetType,
+    this.targetId,
+    this.remoteIp,
+    this.detail,
+  }) : super._();
   @override
   AuditEvent rebuild(void Function(AuditEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -387,12 +396,16 @@ class AuditEventBuilder implements Builder<AuditEvent, AuditEventBuilder> {
   _$AuditEvent _build() {
     _$AuditEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AuditEvent._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'AuditEvent', 'id'),
             at: BuiltValueNullFieldError.checkNotNull(at, r'AuditEvent', 'at'),
             actorKind: BuiltValueNullFieldError.checkNotNull(
-                actorKind, r'AuditEvent', 'actorKind'),
+              actorKind,
+              r'AuditEvent',
+              'actorKind',
+            ),
             tokenId: tokenId,
             tokenName: tokenName,
             principalId: principalId,
@@ -413,7 +426,10 @@ class AuditEventBuilder implements Builder<AuditEvent, AuditEventBuilder> {
         _detail?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AuditEvent', _$failedField, e.toString());
+          r'AuditEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

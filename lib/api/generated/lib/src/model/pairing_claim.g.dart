@@ -91,10 +91,14 @@ class PairingClaimBuilder
   _$PairingClaim _build() {
     _$PairingClaim _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PairingClaim._(
             code: BuiltValueNullFieldError.checkNotNull(
-                code, r'PairingClaim', 'code'),
+              code,
+              r'PairingClaim',
+              'code',
+            ),
             device: device.build(),
           );
     } catch (_) {
@@ -104,7 +108,10 @@ class PairingClaimBuilder
         device.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PairingClaim', _$failedField, e.toString());
+          r'PairingClaim',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

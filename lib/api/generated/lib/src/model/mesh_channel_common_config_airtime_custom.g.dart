@@ -17,21 +17,21 @@ class _$MeshChannelCommonConfigAirtimeCustom
   @override
   final int? preambleSymbols;
 
-  factory _$MeshChannelCommonConfigAirtimeCustom(
-          [void Function(MeshChannelCommonConfigAirtimeCustomBuilder)?
-              updates]) =>
+  factory _$MeshChannelCommonConfigAirtimeCustom([
+    void Function(MeshChannelCommonConfigAirtimeCustomBuilder)? updates,
+  ]) =>
       (MeshChannelCommonConfigAirtimeCustomBuilder()..update(updates))._build();
 
-  _$MeshChannelCommonConfigAirtimeCustom._(
-      {this.spreadingFactor,
-      this.bandwidthKhz,
-      this.codingRate,
-      this.preambleSymbols})
-      : super._();
+  _$MeshChannelCommonConfigAirtimeCustom._({
+    this.spreadingFactor,
+    this.bandwidthKhz,
+    this.codingRate,
+    this.preambleSymbols,
+  }) : super._();
   @override
   MeshChannelCommonConfigAirtimeCustom rebuild(
-          void Function(MeshChannelCommonConfigAirtimeCustomBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MeshChannelCommonConfigAirtimeCustomBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MeshChannelCommonConfigAirtimeCustomBuilder toBuilder() =>
@@ -71,8 +71,10 @@ class _$MeshChannelCommonConfigAirtimeCustom
 
 class MeshChannelCommonConfigAirtimeCustomBuilder
     implements
-        Builder<MeshChannelCommonConfigAirtimeCustom,
-            MeshChannelCommonConfigAirtimeCustomBuilder> {
+        Builder<
+          MeshChannelCommonConfigAirtimeCustom,
+          MeshChannelCommonConfigAirtimeCustomBuilder
+        > {
   _$MeshChannelCommonConfigAirtimeCustom? _$v;
 
   int? _spreadingFactor;
@@ -116,7 +118,8 @@ class MeshChannelCommonConfigAirtimeCustomBuilder
 
   @override
   void update(
-      void Function(MeshChannelCommonConfigAirtimeCustomBuilder)? updates) {
+    void Function(MeshChannelCommonConfigAirtimeCustomBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -124,7 +127,8 @@ class MeshChannelCommonConfigAirtimeCustomBuilder
   MeshChannelCommonConfigAirtimeCustom build() => _build();
 
   _$MeshChannelCommonConfigAirtimeCustom _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MeshChannelCommonConfigAirtimeCustom._(
           spreadingFactor: spreadingFactor,
           bandwidthKhz: bandwidthKhz,

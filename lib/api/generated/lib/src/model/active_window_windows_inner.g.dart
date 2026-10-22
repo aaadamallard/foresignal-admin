@@ -22,7 +22,8 @@ const ActiveWindowWindowsInnerDaysEnum _$activeWindowWindowsInnerDaysEnum_SUN =
     const ActiveWindowWindowsInnerDaysEnum._('SUN');
 
 ActiveWindowWindowsInnerDaysEnum _$activeWindowWindowsInnerDaysEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'MON':
       return _$activeWindowWindowsInnerDaysEnum_MON;
@@ -44,19 +45,21 @@ ActiveWindowWindowsInnerDaysEnum _$activeWindowWindowsInnerDaysEnumValueOf(
 }
 
 final BuiltSet<ActiveWindowWindowsInnerDaysEnum>
-    _$activeWindowWindowsInnerDaysEnumValues = BuiltSet<
-        ActiveWindowWindowsInnerDaysEnum>(const <ActiveWindowWindowsInnerDaysEnum>[
-  _$activeWindowWindowsInnerDaysEnum_MON,
-  _$activeWindowWindowsInnerDaysEnum_TUE,
-  _$activeWindowWindowsInnerDaysEnum_WED,
-  _$activeWindowWindowsInnerDaysEnum_THU,
-  _$activeWindowWindowsInnerDaysEnum_FRI,
-  _$activeWindowWindowsInnerDaysEnum_SAT,
-  _$activeWindowWindowsInnerDaysEnum_SUN,
-]);
+_$activeWindowWindowsInnerDaysEnumValues =
+    BuiltSet<ActiveWindowWindowsInnerDaysEnum>(
+      const <ActiveWindowWindowsInnerDaysEnum>[
+        _$activeWindowWindowsInnerDaysEnum_MON,
+        _$activeWindowWindowsInnerDaysEnum_TUE,
+        _$activeWindowWindowsInnerDaysEnum_WED,
+        _$activeWindowWindowsInnerDaysEnum_THU,
+        _$activeWindowWindowsInnerDaysEnum_FRI,
+        _$activeWindowWindowsInnerDaysEnum_SAT,
+        _$activeWindowWindowsInnerDaysEnum_SUN,
+      ],
+    );
 
 Serializer<ActiveWindowWindowsInnerDaysEnum>
-    _$activeWindowWindowsInnerDaysEnumSerializer =
+_$activeWindowWindowsInnerDaysEnumSerializer =
     _$ActiveWindowWindowsInnerDaysEnumSerializer();
 
 class _$ActiveWindowWindowsInnerDaysEnumSerializer
@@ -87,16 +90,19 @@ class _$ActiveWindowWindowsInnerDaysEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ActiveWindowWindowsInnerDaysEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ActiveWindowWindowsInnerDaysEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ActiveWindowWindowsInnerDaysEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ActiveWindowWindowsInnerDaysEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ActiveWindowWindowsInnerDaysEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ActiveWindowWindowsInner extends ActiveWindowWindowsInner {
@@ -107,17 +113,19 @@ class _$ActiveWindowWindowsInner extends ActiveWindowWindowsInner {
   @override
   final String end;
 
-  factory _$ActiveWindowWindowsInner(
-          [void Function(ActiveWindowWindowsInnerBuilder)? updates]) =>
-      (ActiveWindowWindowsInnerBuilder()..update(updates))._build();
+  factory _$ActiveWindowWindowsInner([
+    void Function(ActiveWindowWindowsInnerBuilder)? updates,
+  ]) => (ActiveWindowWindowsInnerBuilder()..update(updates))._build();
 
-  _$ActiveWindowWindowsInner._(
-      {required this.days, required this.start, required this.end})
-      : super._();
+  _$ActiveWindowWindowsInner._({
+    required this.days,
+    required this.start,
+    required this.end,
+  }) : super._();
   @override
   ActiveWindowWindowsInner rebuild(
-          void Function(ActiveWindowWindowsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ActiveWindowWindowsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ActiveWindowWindowsInnerBuilder toBuilder() =>
@@ -202,13 +210,20 @@ class ActiveWindowWindowsInnerBuilder
   _$ActiveWindowWindowsInner _build() {
     _$ActiveWindowWindowsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ActiveWindowWindowsInner._(
             days: days.build(),
             start: BuiltValueNullFieldError.checkNotNull(
-                start, r'ActiveWindowWindowsInner', 'start'),
+              start,
+              r'ActiveWindowWindowsInner',
+              'start',
+            ),
             end: BuiltValueNullFieldError.checkNotNull(
-                end, r'ActiveWindowWindowsInner', 'end'),
+              end,
+              r'ActiveWindowWindowsInner',
+              'end',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -217,7 +232,10 @@ class ActiveWindowWindowsInnerBuilder
         days.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ActiveWindowWindowsInner', _$failedField, e.toString());
+          r'ActiveWindowWindowsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

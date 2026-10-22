@@ -7,17 +7,17 @@ part of 'context_summary_insights_inner.dart';
 // **************************************************************************
 
 const ContextSummaryInsightsInnerKindEnum
-    _$contextSummaryInsightsInnerKindEnum_finding =
+_$contextSummaryInsightsInnerKindEnum_finding =
     const ContextSummaryInsightsInnerKindEnum._('finding');
 const ContextSummaryInsightsInnerKindEnum
-    _$contextSummaryInsightsInnerKindEnum_forecast =
+_$contextSummaryInsightsInnerKindEnum_forecast =
     const ContextSummaryInsightsInnerKindEnum._('forecast');
 const ContextSummaryInsightsInnerKindEnum
-    _$contextSummaryInsightsInnerKindEnum_bandChange =
+_$contextSummaryInsightsInnerKindEnum_bandChange =
     const ContextSummaryInsightsInnerKindEnum._('bandChange');
 
 ContextSummaryInsightsInnerKindEnum
-    _$contextSummaryInsightsInnerKindEnumValueOf(String name) {
+_$contextSummaryInsightsInnerKindEnumValueOf(String name) {
   switch (name) {
     case 'finding':
       return _$contextSummaryInsightsInnerKindEnum_finding;
@@ -31,22 +31,24 @@ ContextSummaryInsightsInnerKindEnum
 }
 
 final BuiltSet<ContextSummaryInsightsInnerKindEnum>
-    _$contextSummaryInsightsInnerKindEnumValues = BuiltSet<
-        ContextSummaryInsightsInnerKindEnum>(const <ContextSummaryInsightsInnerKindEnum>[
-  _$contextSummaryInsightsInnerKindEnum_finding,
-  _$contextSummaryInsightsInnerKindEnum_forecast,
-  _$contextSummaryInsightsInnerKindEnum_bandChange,
-]);
+_$contextSummaryInsightsInnerKindEnumValues =
+    BuiltSet<ContextSummaryInsightsInnerKindEnum>(
+      const <ContextSummaryInsightsInnerKindEnum>[
+        _$contextSummaryInsightsInnerKindEnum_finding,
+        _$contextSummaryInsightsInnerKindEnum_forecast,
+        _$contextSummaryInsightsInnerKindEnum_bandChange,
+      ],
+    );
 
 const ContextSummaryInsightsInnerTextOriginEnum
-    _$contextSummaryInsightsInnerTextOriginEnum_deterministic =
+_$contextSummaryInsightsInnerTextOriginEnum_deterministic =
     const ContextSummaryInsightsInnerTextOriginEnum._('deterministic');
 const ContextSummaryInsightsInnerTextOriginEnum
-    _$contextSummaryInsightsInnerTextOriginEnum_llm =
+_$contextSummaryInsightsInnerTextOriginEnum_llm =
     const ContextSummaryInsightsInnerTextOriginEnum._('llm');
 
 ContextSummaryInsightsInnerTextOriginEnum
-    _$contextSummaryInsightsInnerTextOriginEnumValueOf(String name) {
+_$contextSummaryInsightsInnerTextOriginEnumValueOf(String name) {
   switch (name) {
     case 'deterministic':
       return _$contextSummaryInsightsInnerTextOriginEnum_deterministic;
@@ -58,17 +60,19 @@ ContextSummaryInsightsInnerTextOriginEnum
 }
 
 final BuiltSet<ContextSummaryInsightsInnerTextOriginEnum>
-    _$contextSummaryInsightsInnerTextOriginEnumValues = BuiltSet<
-        ContextSummaryInsightsInnerTextOriginEnum>(const <ContextSummaryInsightsInnerTextOriginEnum>[
-  _$contextSummaryInsightsInnerTextOriginEnum_deterministic,
-  _$contextSummaryInsightsInnerTextOriginEnum_llm,
-]);
+_$contextSummaryInsightsInnerTextOriginEnumValues =
+    BuiltSet<ContextSummaryInsightsInnerTextOriginEnum>(
+      const <ContextSummaryInsightsInnerTextOriginEnum>[
+        _$contextSummaryInsightsInnerTextOriginEnum_deterministic,
+        _$contextSummaryInsightsInnerTextOriginEnum_llm,
+      ],
+    );
 
 Serializer<ContextSummaryInsightsInnerKindEnum>
-    _$contextSummaryInsightsInnerKindEnumSerializer =
+_$contextSummaryInsightsInnerKindEnumSerializer =
     _$ContextSummaryInsightsInnerKindEnumSerializer();
 Serializer<ContextSummaryInsightsInnerTextOriginEnum>
-    _$contextSummaryInsightsInnerTextOriginEnumSerializer =
+_$contextSummaryInsightsInnerTextOriginEnumSerializer =
     _$ContextSummaryInsightsInnerTextOriginEnumSerializer();
 
 class _$ContextSummaryInsightsInnerKindEnumSerializer
@@ -86,23 +90,26 @@ class _$ContextSummaryInsightsInnerKindEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ContextSummaryInsightsInnerKindEnum
+    ContextSummaryInsightsInnerKindEnum,
   ];
   @override
   final String wireName = 'ContextSummaryInsightsInnerKindEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ContextSummaryInsightsInnerKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ContextSummaryInsightsInnerKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ContextSummaryInsightsInnerKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ContextSummaryInsightsInnerKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ContextSummaryInsightsInnerKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ContextSummaryInsightsInnerTextOriginEnumSerializer
@@ -118,23 +125,26 @@ class _$ContextSummaryInsightsInnerTextOriginEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ContextSummaryInsightsInnerTextOriginEnum
+    ContextSummaryInsightsInnerTextOriginEnum,
   ];
   @override
   final String wireName = 'ContextSummaryInsightsInnerTextOriginEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ContextSummaryInsightsInnerTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ContextSummaryInsightsInnerTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ContextSummaryInsightsInnerTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ContextSummaryInsightsInnerTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ContextSummaryInsightsInnerTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ContextSummaryInsightsInner extends ContextSummaryInsightsInner {
@@ -159,26 +169,26 @@ class _$ContextSummaryInsightsInner extends ContextSummaryInsightsInner {
   @override
   final ContextSummaryInsightsInnerTextOriginEnum? textOrigin;
 
-  factory _$ContextSummaryInsightsInner(
-          [void Function(ContextSummaryInsightsInnerBuilder)? updates]) =>
-      (ContextSummaryInsightsInnerBuilder()..update(updates))._build();
+  factory _$ContextSummaryInsightsInner([
+    void Function(ContextSummaryInsightsInnerBuilder)? updates,
+  ]) => (ContextSummaryInsightsInnerBuilder()..update(updates))._build();
 
-  _$ContextSummaryInsightsInner._(
-      {required this.ref,
-      required this.kind,
-      required this.title,
-      this.probability,
-      this.estimativeTerm,
-      this.issuer,
-      this.baseRate,
-      this.knowledgeCutoff,
-      this.at,
-      this.textOrigin})
-      : super._();
+  _$ContextSummaryInsightsInner._({
+    required this.ref,
+    required this.kind,
+    required this.title,
+    this.probability,
+    this.estimativeTerm,
+    this.issuer,
+    this.baseRate,
+    this.knowledgeCutoff,
+    this.at,
+    this.textOrigin,
+  }) : super._();
   @override
   ContextSummaryInsightsInner rebuild(
-          void Function(ContextSummaryInsightsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ContextSummaryInsightsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ContextSummaryInsightsInnerBuilder toBuilder() =>
@@ -236,8 +246,10 @@ class _$ContextSummaryInsightsInner extends ContextSummaryInsightsInner {
 
 class ContextSummaryInsightsInnerBuilder
     implements
-        Builder<ContextSummaryInsightsInner,
-            ContextSummaryInsightsInnerBuilder> {
+        Builder<
+          ContextSummaryInsightsInner,
+          ContextSummaryInsightsInnerBuilder
+        > {
   _$ContextSummaryInsightsInner? _$v;
 
   String? _ref;
@@ -320,14 +332,24 @@ class ContextSummaryInsightsInnerBuilder
   ContextSummaryInsightsInner build() => _build();
 
   _$ContextSummaryInsightsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ContextSummaryInsightsInner._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'ContextSummaryInsightsInner', 'ref'),
+            ref,
+            r'ContextSummaryInsightsInner',
+            'ref',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'ContextSummaryInsightsInner', 'kind'),
+            kind,
+            r'ContextSummaryInsightsInner',
+            'kind',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'ContextSummaryInsightsInner', 'title'),
+            title,
+            r'ContextSummaryInsightsInner',
+            'title',
+          ),
           probability: probability,
           estimativeTerm: estimativeTerm,
           issuer: issuer,

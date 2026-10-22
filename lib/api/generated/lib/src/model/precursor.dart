@@ -398,8 +398,9 @@ class _$PrecursorSerializer implements PrimitiveSerializer<Precursor> {
       yield r'history';
       yield serializers.serialize(
         object.history,
-        specifiedType:
-            const FullType(BuiltList, [FullType(PrecursorHistoryInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(PrecursorHistoryInner),
+        ]),
       );
     }
     yield r'manifestId';
@@ -429,9 +430,11 @@ class _$PrecursorSerializer implements PrimitiveSerializer<Precursor> {
     Precursor object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -447,275 +450,352 @@ class _$PrecursorSerializer implements PrimitiveSerializer<Precursor> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorKindEnum),
-          ) as PrecursorKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorKindEnum),
+                  )
+                  as PrecursorKindEnum;
           result.kind = valueDes;
           break;
         case r'antecedent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorSide),
-          ) as PrecursorSide;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorSide),
+                  )
+                  as PrecursorSide;
           result.antecedent.replace(valueDes);
           break;
         case r'consequent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorSide),
-          ) as PrecursorSide;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorSide),
+                  )
+                  as PrecursorSide;
           result.consequent.replace(valueDes);
           break;
         case r'spatial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorSpatial),
-          ) as PrecursorSpatial;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorSpatial),
+                  )
+                  as PrecursorSpatial;
           result.spatial.replace(valueDes);
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'lagMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.lagMin = valueDes;
           break;
         case r'lagMax':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.lagMax = valueDes;
           break;
         case r'bestLag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.bestLag = valueDes;
           break;
         case r'lagDistribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrecursorLagDistribution),
-          ) as PrecursorLagDistribution?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorLagDistribution,
+                    ),
+                  )
+                  as PrecursorLagDistribution?;
           if (valueDes == null) continue;
           result.lagDistribution.replace(valueDes);
           break;
         case r'hitRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.hitRate = valueDes;
           break;
         case r'hitRateInterval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatInterval),
-          ) as StatInterval?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(StatInterval),
+                  )
+                  as StatInterval?;
           if (valueDes == null) continue;
           result.hitRateInterval.replace(valueDes);
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseRate = valueDes;
           break;
         case r'lift':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lift = valueDes;
           break;
         case r'correlation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.correlation = valueDes;
           break;
         case r'correlationSign':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PrecursorCorrelationSignEnum),
-          ) as PrecursorCorrelationSignEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorCorrelationSignEnum,
+                    ),
+                  )
+                  as PrecursorCorrelationSignEnum?;
           if (valueDes == null) continue;
           result.correlationSign = valueDes;
           break;
         case r'nAntecedent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nAntecedent = valueDes;
           break;
         case r'discovery':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorWindowStats),
-          ) as PrecursorWindowStats;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorWindowStats),
+                  )
+                  as PrecursorWindowStats;
           result.discovery.replace(valueDes);
           break;
         case r'validation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrecursorWindowStats),
-          ) as PrecursorWindowStats?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorWindowStats,
+                    ),
+                  )
+                  as PrecursorWindowStats?;
           if (valueDes == null) continue;
           result.validation.replace(valueDes);
           break;
         case r'lastRetest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrecursorWindowStats),
-          ) as PrecursorWindowStats?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorWindowStats,
+                    ),
+                  )
+                  as PrecursorWindowStats?;
           if (valueDes == null) continue;
           result.lastRetest.replace(valueDes);
           break;
         case r'batchId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.batchId = valueDes;
           break;
         case r'batchSize':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.batchSize = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorStatusEnum),
-          ) as PrecursorStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorStatusEnum),
+                  )
+                  as PrecursorStatusEnum;
           result.status = valueDes;
           break;
         case r'statusReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusReason = valueDes;
           break;
         case r'operatorValidated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.operatorValidated = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.detector.replace(valueDes);
           break;
         case r'firstValidatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.firstValidatedAt = valueDes;
           break;
         case r'lastTestedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastTestedAt = valueDes;
           break;
         case r'origin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorOriginEnum),
-          ) as PrecursorOriginEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorOriginEnum),
+                  )
+                  as PrecursorOriginEnum;
           result.origin = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.description = valueDes;
           break;
         case r'associationNote':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.associationNote = valueDes;
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>;
           result.caveats.replace(valueDes);
           break;
         case r'history':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(PrecursorHistoryInner)]),
-          ) as BuiltList<PrecursorHistoryInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(PrecursorHistoryInner),
+                    ]),
+                  )
+                  as BuiltList<PrecursorHistoryInner>?;
           if (valueDes == null) continue;
           result.history.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.manifestId = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

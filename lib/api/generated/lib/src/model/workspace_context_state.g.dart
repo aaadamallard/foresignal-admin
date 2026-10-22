@@ -14,19 +14,19 @@ class _$WorkspaceContextState extends WorkspaceContextState {
   @override
   final WorkspaceContext context;
 
-  factory _$WorkspaceContextState(
-          [void Function(WorkspaceContextStateBuilder)? updates]) =>
-      (WorkspaceContextStateBuilder()..update(updates))._build();
+  factory _$WorkspaceContextState([
+    void Function(WorkspaceContextStateBuilder)? updates,
+  ]) => (WorkspaceContextStateBuilder()..update(updates))._build();
 
-  _$WorkspaceContextState._(
-      {required this.workspaceId,
-      required this.contextVersion,
-      required this.context})
-      : super._();
+  _$WorkspaceContextState._({
+    required this.workspaceId,
+    required this.contextVersion,
+    required this.context,
+  }) : super._();
   @override
   WorkspaceContextState rebuild(
-          void Function(WorkspaceContextStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WorkspaceContextStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WorkspaceContextStateBuilder toBuilder() =>
@@ -110,12 +110,19 @@ class WorkspaceContextStateBuilder
   _$WorkspaceContextState _build() {
     _$WorkspaceContextState _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WorkspaceContextState._(
             workspaceId: BuiltValueNullFieldError.checkNotNull(
-                workspaceId, r'WorkspaceContextState', 'workspaceId'),
+              workspaceId,
+              r'WorkspaceContextState',
+              'workspaceId',
+            ),
             contextVersion: BuiltValueNullFieldError.checkNotNull(
-                contextVersion, r'WorkspaceContextState', 'contextVersion'),
+              contextVersion,
+              r'WorkspaceContextState',
+              'contextVersion',
+            ),
             context: context.build(),
           );
     } catch (_) {
@@ -125,7 +132,10 @@ class WorkspaceContextStateBuilder
         context.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WorkspaceContextState', _$failedField, e.toString());
+          r'WorkspaceContextState',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

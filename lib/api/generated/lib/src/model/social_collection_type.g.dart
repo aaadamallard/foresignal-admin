@@ -6,8 +6,9 @@ part of 'social_collection_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const SocialCollectionType _$complete =
-    const SocialCollectionType._('complete');
+const SocialCollectionType _$complete = const SocialCollectionType._(
+  'complete',
+);
 const SocialCollectionType _$paged = const SocialCollectionType._('paged');
 const SocialCollectionType _$sampled = const SocialCollectionType._('sampled');
 
@@ -24,12 +25,9 @@ SocialCollectionType _$valueOf(String name) {
   }
 }
 
-final BuiltSet<SocialCollectionType> _$values =
-    BuiltSet<SocialCollectionType>(const <SocialCollectionType>[
-  _$complete,
-  _$paged,
-  _$sampled,
-]);
+final BuiltSet<SocialCollectionType> _$values = BuiltSet<SocialCollectionType>(
+  const <SocialCollectionType>[_$complete, _$paged, _$sampled],
+);
 
 class _$SocialCollectionTypeMeta {
   const _$SocialCollectionTypeMeta();
@@ -40,7 +38,7 @@ class _$SocialCollectionTypeMeta {
   BuiltSet<SocialCollectionType> get values => _$values;
 }
 
-abstract class _$SocialCollectionTypeMixin {
+mixin _$SocialCollectionTypeMixin {
   // ignore: non_constant_identifier_names
   _$SocialCollectionTypeMeta get SocialCollectionType =>
       const _$SocialCollectionTypeMeta();
@@ -68,15 +66,20 @@ class _$SocialCollectionTypeSerializer
   final String wireName = 'SocialCollectionType';
 
   @override
-  Object serialize(Serializers serializers, SocialCollectionType object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialCollectionType object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SocialCollectionType deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialCollectionType.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SocialCollectionType deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialCollectionType.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

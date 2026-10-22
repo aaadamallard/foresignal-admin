@@ -12,15 +12,15 @@ class _$ProjectedImpactQuestionWindow extends ProjectedImpactQuestionWindow {
   @override
   final DateTime? end;
 
-  factory _$ProjectedImpactQuestionWindow(
-          [void Function(ProjectedImpactQuestionWindowBuilder)? updates]) =>
-      (ProjectedImpactQuestionWindowBuilder()..update(updates))._build();
+  factory _$ProjectedImpactQuestionWindow([
+    void Function(ProjectedImpactQuestionWindowBuilder)? updates,
+  ]) => (ProjectedImpactQuestionWindowBuilder()..update(updates))._build();
 
   _$ProjectedImpactQuestionWindow._({this.start, this.end}) : super._();
   @override
   ProjectedImpactQuestionWindow rebuild(
-          void Function(ProjectedImpactQuestionWindowBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProjectedImpactQuestionWindowBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProjectedImpactQuestionWindowBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$ProjectedImpactQuestionWindow extends ProjectedImpactQuestionWindow {
 
 class ProjectedImpactQuestionWindowBuilder
     implements
-        Builder<ProjectedImpactQuestionWindow,
-            ProjectedImpactQuestionWindowBuilder> {
+        Builder<
+          ProjectedImpactQuestionWindow,
+          ProjectedImpactQuestionWindowBuilder
+        > {
   _$ProjectedImpactQuestionWindow? _$v;
 
   DateTime? _start;
@@ -94,11 +96,8 @@ class ProjectedImpactQuestionWindowBuilder
   ProjectedImpactQuestionWindow build() => _build();
 
   _$ProjectedImpactQuestionWindow _build() {
-    final _$result = _$v ??
-        _$ProjectedImpactQuestionWindow._(
-          start: start,
-          end: end,
-        );
+    final _$result =
+        _$v ?? _$ProjectedImpactQuestionWindow._(start: start, end: end);
     replace(_$result);
     return _$result;
   }

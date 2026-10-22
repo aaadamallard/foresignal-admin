@@ -14,17 +14,19 @@ class _$HypothesisSetDraftRequest extends HypothesisSetDraftRequest {
   @override
   final BuiltList<String>? regionCodes;
 
-  factory _$HypothesisSetDraftRequest(
-          [void Function(HypothesisSetDraftRequestBuilder)? updates]) =>
-      (HypothesisSetDraftRequestBuilder()..update(updates))._build();
+  factory _$HypothesisSetDraftRequest([
+    void Function(HypothesisSetDraftRequestBuilder)? updates,
+  ]) => (HypothesisSetDraftRequestBuilder()..update(updates))._build();
 
-  _$HypothesisSetDraftRequest._(
-      {required this.text, this.situationId, this.regionCodes})
-      : super._();
+  _$HypothesisSetDraftRequest._({
+    required this.text,
+    this.situationId,
+    this.regionCodes,
+  }) : super._();
   @override
   HypothesisSetDraftRequest rebuild(
-          void Function(HypothesisSetDraftRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetDraftRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetDraftRequestBuilder toBuilder() =>
@@ -109,10 +111,14 @@ class HypothesisSetDraftRequestBuilder
   _$HypothesisSetDraftRequest _build() {
     _$HypothesisSetDraftRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisSetDraftRequest._(
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'HypothesisSetDraftRequest', 'text'),
+              text,
+              r'HypothesisSetDraftRequest',
+              'text',
+            ),
             situationId: situationId,
             regionCodes: _regionCodes?.build(),
           );
@@ -123,7 +129,10 @@ class HypothesisSetDraftRequestBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisSetDraftRequest', _$failedField, e.toString());
+          r'HypothesisSetDraftRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

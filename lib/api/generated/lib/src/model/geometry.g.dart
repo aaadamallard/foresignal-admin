@@ -6,16 +6,20 @@ part of 'geometry.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const GeometryTypeEnum _$geometryTypeEnum_point =
-    const GeometryTypeEnum._('point');
-const GeometryTypeEnum _$geometryTypeEnum_multiPoint =
-    const GeometryTypeEnum._('multiPoint');
-const GeometryTypeEnum _$geometryTypeEnum_lineString =
-    const GeometryTypeEnum._('lineString');
+const GeometryTypeEnum _$geometryTypeEnum_point = const GeometryTypeEnum._(
+  'point',
+);
+const GeometryTypeEnum _$geometryTypeEnum_multiPoint = const GeometryTypeEnum._(
+  'multiPoint',
+);
+const GeometryTypeEnum _$geometryTypeEnum_lineString = const GeometryTypeEnum._(
+  'lineString',
+);
 const GeometryTypeEnum _$geometryTypeEnum_multiLineString =
     const GeometryTypeEnum._('multiLineString');
-const GeometryTypeEnum _$geometryTypeEnum_polygon =
-    const GeometryTypeEnum._('polygon');
+const GeometryTypeEnum _$geometryTypeEnum_polygon = const GeometryTypeEnum._(
+  'polygon',
+);
 const GeometryTypeEnum _$geometryTypeEnum_multiPolygon =
     const GeometryTypeEnum._('multiPolygon');
 const GeometryTypeEnum _$geometryTypeEnum_geometryCollection =
@@ -44,14 +48,14 @@ GeometryTypeEnum _$geometryTypeEnumValueOf(String name) {
 
 final BuiltSet<GeometryTypeEnum> _$geometryTypeEnumValues =
     BuiltSet<GeometryTypeEnum>(const <GeometryTypeEnum>[
-  _$geometryTypeEnum_point,
-  _$geometryTypeEnum_multiPoint,
-  _$geometryTypeEnum_lineString,
-  _$geometryTypeEnum_multiLineString,
-  _$geometryTypeEnum_polygon,
-  _$geometryTypeEnum_multiPolygon,
-  _$geometryTypeEnum_geometryCollection,
-]);
+      _$geometryTypeEnum_point,
+      _$geometryTypeEnum_multiPoint,
+      _$geometryTypeEnum_lineString,
+      _$geometryTypeEnum_multiLineString,
+      _$geometryTypeEnum_polygon,
+      _$geometryTypeEnum_multiPolygon,
+      _$geometryTypeEnum_geometryCollection,
+    ]);
 
 Serializer<GeometryTypeEnum> _$geometryTypeEnumSerializer =
     _$GeometryTypeEnumSerializer();
@@ -83,15 +87,20 @@ class _$GeometryTypeEnumSerializer
   final String wireName = 'GeometryTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, GeometryTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GeometryTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  GeometryTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GeometryTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  GeometryTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GeometryTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Geometry extends Geometry {
@@ -180,10 +189,14 @@ class GeometryBuilder implements Builder<Geometry, GeometryBuilder> {
   _$Geometry _build() {
     _$Geometry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Geometry._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'Geometry', 'type'),
+              type,
+              r'Geometry',
+              'type',
+            ),
             coordinates: _coordinates?.build(),
           );
     } catch (_) {
@@ -193,7 +206,10 @@ class GeometryBuilder implements Builder<Geometry, GeometryBuilder> {
         _coordinates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Geometry', _$failedField, e.toString());
+          r'Geometry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

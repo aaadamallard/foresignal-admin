@@ -50,7 +50,7 @@ class _$CyclePacketForecastsSerializer
   @override
   final Iterable<Type> types = const [
     CyclePacketForecasts,
-    _$CyclePacketForecasts
+    _$CyclePacketForecasts,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$CyclePacketForecastsSerializer
     CyclePacketForecasts object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,38 +117,50 @@ class _$CyclePacketForecastsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'opened':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.opened.replace(valueDes);
           break;
         case r'due':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.due.replace(valueDes);
           break;
         case r'resolved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.resolved.replace(valueDes);
           break;
         case r'scorecardChanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.scorecardChanges.replace(valueDes);
           break;

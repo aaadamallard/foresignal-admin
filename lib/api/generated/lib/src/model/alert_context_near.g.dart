@@ -12,9 +12,9 @@ class _$AlertContextNear extends AlertContextNear {
   @override
   final BuiltList<int>? placeVersions;
 
-  factory _$AlertContextNear(
-          [void Function(AlertContextNearBuilder)? updates]) =>
-      (AlertContextNearBuilder()..update(updates))._build();
+  factory _$AlertContextNear([
+    void Function(AlertContextNearBuilder)? updates,
+  ]) => (AlertContextNearBuilder()..update(updates))._build();
 
   _$AlertContextNear._({this.placeIds, this.placeVersions}) : super._();
   @override
@@ -96,7 +96,8 @@ class AlertContextNearBuilder
   _$AlertContextNear _build() {
     _$AlertContextNear _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AlertContextNear._(
             placeIds: _placeIds?.build(),
             placeVersions: _placeVersions?.build(),
@@ -110,7 +111,10 @@ class AlertContextNearBuilder
         _placeVersions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AlertContextNear', _$failedField, e.toString());
+          r'AlertContextNear',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

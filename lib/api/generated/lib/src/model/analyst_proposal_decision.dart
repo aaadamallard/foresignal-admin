@@ -20,9 +20,9 @@ abstract class AnalystProposalDecision
 
   AnalystProposalDecision._();
 
-  factory AnalystProposalDecision(
-          [void updates(AnalystProposalDecisionBuilder b)]) =
-      _$AnalystProposalDecision;
+  factory AnalystProposalDecision([
+    void updates(AnalystProposalDecisionBuilder b),
+  ]) = _$AnalystProposalDecision;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalystProposalDecisionBuilder b) => b;
@@ -37,7 +37,7 @@ class _$AnalystProposalDecisionSerializer
   @override
   final Iterable<Type> types = const [
     AnalystProposalDecision,
-    _$AnalystProposalDecision
+    _$AnalystProposalDecision,
   ];
 
   @override
@@ -63,9 +63,11 @@ class _$AnalystProposalDecisionSerializer
     AnalystProposalDecision object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +83,12 @@ class _$AnalystProposalDecisionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

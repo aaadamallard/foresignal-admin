@@ -12,15 +12,15 @@ class _$ProjectedImpactPage extends ProjectedImpactPage {
   @override
   final String? nextCursor;
 
-  factory _$ProjectedImpactPage(
-          [void Function(ProjectedImpactPageBuilder)? updates]) =>
-      (ProjectedImpactPageBuilder()..update(updates))._build();
+  factory _$ProjectedImpactPage([
+    void Function(ProjectedImpactPageBuilder)? updates,
+  ]) => (ProjectedImpactPageBuilder()..update(updates))._build();
 
   _$ProjectedImpactPage._({required this.items, this.nextCursor}) : super._();
   @override
   ProjectedImpactPage rebuild(
-          void Function(ProjectedImpactPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProjectedImpactPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProjectedImpactPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ProjectedImpactPageBuilder
   _$ProjectedImpactPage _build() {
     _$ProjectedImpactPage _$result;
     try {
-      _$result = _$v ??
-          _$ProjectedImpactPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ProjectedImpactPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ProjectedImpactPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProjectedImpactPage', _$failedField, e.toString());
+          r'ProjectedImpactPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -24,9 +24,9 @@ MetarPayloadMetarTypeEnum _$metarPayloadMetarTypeEnumValueOf(String name) {
 
 final BuiltSet<MetarPayloadMetarTypeEnum> _$metarPayloadMetarTypeEnumValues =
     BuiltSet<MetarPayloadMetarTypeEnum>(const <MetarPayloadMetarTypeEnum>[
-  _$metarPayloadMetarTypeEnum_METAR,
-  _$metarPayloadMetarTypeEnum_SPECI,
-]);
+      _$metarPayloadMetarTypeEnum_METAR,
+      _$metarPayloadMetarTypeEnum_SPECI,
+    ]);
 
 const MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnum_VFR =
     const MetarPayloadFlightCategoryEnum._('VFR');
@@ -38,7 +38,8 @@ const MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnum_LIFR =
     const MetarPayloadFlightCategoryEnum._('LIFR');
 
 MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'VFR':
       return _$metarPayloadFlightCategoryEnum_VFR;
@@ -54,18 +55,20 @@ MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnumValueOf(
 }
 
 final BuiltSet<MetarPayloadFlightCategoryEnum>
-    _$metarPayloadFlightCategoryEnumValues = BuiltSet<
-        MetarPayloadFlightCategoryEnum>(const <MetarPayloadFlightCategoryEnum>[
-  _$metarPayloadFlightCategoryEnum_VFR,
-  _$metarPayloadFlightCategoryEnum_MVFR,
-  _$metarPayloadFlightCategoryEnum_IFR,
-  _$metarPayloadFlightCategoryEnum_LIFR,
-]);
+_$metarPayloadFlightCategoryEnumValues =
+    BuiltSet<MetarPayloadFlightCategoryEnum>(
+      const <MetarPayloadFlightCategoryEnum>[
+        _$metarPayloadFlightCategoryEnum_VFR,
+        _$metarPayloadFlightCategoryEnum_MVFR,
+        _$metarPayloadFlightCategoryEnum_IFR,
+        _$metarPayloadFlightCategoryEnum_LIFR,
+      ],
+    );
 
 Serializer<MetarPayloadMetarTypeEnum> _$metarPayloadMetarTypeEnumSerializer =
     _$MetarPayloadMetarTypeEnumSerializer();
 Serializer<MetarPayloadFlightCategoryEnum>
-    _$metarPayloadFlightCategoryEnumSerializer =
+_$metarPayloadFlightCategoryEnumSerializer =
     _$MetarPayloadFlightCategoryEnumSerializer();
 
 class _$MetarPayloadMetarTypeEnumSerializer
@@ -85,16 +88,20 @@ class _$MetarPayloadMetarTypeEnumSerializer
   final String wireName = 'MetarPayloadMetarTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, MetarPayloadMetarTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MetarPayloadMetarTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MetarPayloadMetarTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MetarPayloadMetarTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MetarPayloadMetarTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MetarPayloadFlightCategoryEnumSerializer
@@ -119,16 +126,19 @@ class _$MetarPayloadFlightCategoryEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MetarPayloadFlightCategoryEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MetarPayloadFlightCategoryEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MetarPayloadFlightCategoryEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MetarPayloadFlightCategoryEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MetarPayloadFlightCategoryEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MetarPayload extends MetarPayload {
@@ -170,25 +180,25 @@ class _$MetarPayload extends MetarPayload {
   factory _$MetarPayload([void Function(MetarPayloadBuilder)? updates]) =>
       (MetarPayloadBuilder()..update(updates))._build();
 
-  _$MetarPayload._(
-      {required this.raw,
-      required this.stationId,
-      this.metarType,
-      this.tempC,
-      this.dewpointC,
-      this.windDirDeg,
-      this.windVariable,
-      this.windKt,
-      this.gustKt,
-      this.visibilitySm,
-      this.visibilityPlus,
-      this.altimInHg,
-      this.slpMb,
-      this.wx,
-      this.sky,
-      this.flightCategory,
-      this.elevationM})
-      : super._();
+  _$MetarPayload._({
+    required this.raw,
+    required this.stationId,
+    this.metarType,
+    this.tempC,
+    this.dewpointC,
+    this.windDirDeg,
+    this.windVariable,
+    this.windKt,
+    this.gustKt,
+    this.visibilitySm,
+    this.visibilityPlus,
+    this.altimInHg,
+    this.slpMb,
+    this.wx,
+    this.sky,
+    this.flightCategory,
+    this.elevationM,
+  }) : super._();
   @override
   MetarPayload rebuild(void Function(MetarPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -388,12 +398,19 @@ class MetarPayloadBuilder
   _$MetarPayload _build() {
     _$MetarPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MetarPayload._(
             raw: BuiltValueNullFieldError.checkNotNull(
-                raw, r'MetarPayload', 'raw'),
+              raw,
+              r'MetarPayload',
+              'raw',
+            ),
             stationId: BuiltValueNullFieldError.checkNotNull(
-                stationId, r'MetarPayload', 'stationId'),
+              stationId,
+              r'MetarPayload',
+              'stationId',
+            ),
             metarType: metarType,
             tempC: tempC,
             dewpointC: dewpointC,
@@ -417,7 +434,10 @@ class MetarPayloadBuilder
         _sky?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MetarPayload', _$failedField, e.toString());
+          r'MetarPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -16,17 +16,20 @@ class _$SavedSearchResultPage extends SavedSearchResultPage {
   @override
   final bool? semantic;
 
-  factory _$SavedSearchResultPage(
-          [void Function(SavedSearchResultPageBuilder)? updates]) =>
-      (SavedSearchResultPageBuilder()..update(updates))._build();
+  factory _$SavedSearchResultPage([
+    void Function(SavedSearchResultPageBuilder)? updates,
+  ]) => (SavedSearchResultPageBuilder()..update(updates))._build();
 
-  _$SavedSearchResultPage._(
-      {required this.items, this.nextCursor, this.ranAt, this.semantic})
-      : super._();
+  _$SavedSearchResultPage._({
+    required this.items,
+    this.nextCursor,
+    this.ranAt,
+    this.semantic,
+  }) : super._();
   @override
   SavedSearchResultPage rebuild(
-          void Function(SavedSearchResultPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SavedSearchResultPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SavedSearchResultPageBuilder toBuilder() =>
@@ -117,7 +120,8 @@ class SavedSearchResultPageBuilder
   _$SavedSearchResultPage _build() {
     _$SavedSearchResultPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearchResultPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -131,7 +135,10 @@ class SavedSearchResultPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchResultPage', _$failedField, e.toString());
+          r'SavedSearchResultPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

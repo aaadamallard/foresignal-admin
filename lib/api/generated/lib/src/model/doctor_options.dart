@@ -86,9 +86,11 @@ class _$DoctorOptionsSerializer implements PrimitiveSerializer<DoctorOptions> {
     DoctorOptions object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,36 @@ class _$DoctorOptionsSerializer implements PrimitiveSerializer<DoctorOptions> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'probe':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.probe = valueDes;
           break;
         case r'llm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DoctorOptionsLlmEnum),
-          ) as DoctorOptionsLlmEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DoctorOptionsLlmEnum,
+                    ),
+                  )
+                  as DoctorOptionsLlmEnum?;
           if (valueDes == null) continue;
           result.llm = valueDes;
           break;
         case r'detail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DoctorOptionsDetailEnum),
-          ) as DoctorOptionsDetailEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DoctorOptionsDetailEnum,
+                    ),
+                  )
+                  as DoctorOptionsDetailEnum?;
           if (valueDes == null) continue;
           result.detail = valueDes;
           break;

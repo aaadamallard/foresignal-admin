@@ -39,9 +39,9 @@ abstract class AnalysisRequestSubmission
 
   AnalysisRequestSubmission._();
 
-  factory AnalysisRequestSubmission(
-          [void updates(AnalysisRequestSubmissionBuilder b)]) =
-      _$AnalysisRequestSubmission;
+  factory AnalysisRequestSubmission([
+    void updates(AnalysisRequestSubmissionBuilder b),
+  ]) = _$AnalysisRequestSubmission;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalysisRequestSubmissionBuilder b) => b;
@@ -56,7 +56,7 @@ class _$AnalysisRequestSubmissionSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisRequestSubmission,
-    _$AnalysisRequestSubmission
+    _$AnalysisRequestSubmission,
   ];
 
   @override
@@ -99,9 +99,11 @@ class _$AnalysisRequestSubmissionSerializer
     AnalysisRequestSubmission object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,33 +119,42 @@ class _$AnalysisRequestSubmissionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.questionId = valueDes;
           break;
         case r'orientation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                AnalysisRequestSubmissionOrientationEnum),
-          ) as AnalysisRequestSubmissionOrientationEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnalysisRequestSubmissionOrientationEnum,
+                    ),
+                  )
+                  as AnalysisRequestSubmissionOrientationEnum?;
           if (valueDes == null) continue;
           result.orientation = valueDes;
           break;
         case r'horizon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.horizon = valueDes;
           break;

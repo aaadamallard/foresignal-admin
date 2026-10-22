@@ -24,9 +24,9 @@ ArchiveSettingsTargetEnum _$archiveSettingsTargetEnumValueOf(String name) {
 
 final BuiltSet<ArchiveSettingsTargetEnum> _$archiveSettingsTargetEnumValues =
     BuiltSet<ArchiveSettingsTargetEnum>(const <ArchiveSettingsTargetEnum>[
-  _$archiveSettingsTargetEnum_local,
-  _$archiveSettingsTargetEnum_s3,
-]);
+      _$archiveSettingsTargetEnum_local,
+      _$archiveSettingsTargetEnum_s3,
+    ]);
 
 Serializer<ArchiveSettingsTargetEnum> _$archiveSettingsTargetEnumSerializer =
     _$ArchiveSettingsTargetEnumSerializer();
@@ -48,16 +48,20 @@ class _$ArchiveSettingsTargetEnumSerializer
   final String wireName = 'ArchiveSettingsTargetEnum';
 
   @override
-  Object serialize(Serializers serializers, ArchiveSettingsTargetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ArchiveSettingsTargetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ArchiveSettingsTargetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ArchiveSettingsTargetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ArchiveSettingsTargetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ArchiveSettings extends ArchiveSettings {
@@ -81,16 +85,16 @@ class _$ArchiveSettings extends ArchiveSettings {
   factory _$ArchiveSettings([void Function(ArchiveSettingsBuilder)? updates]) =>
       (ArchiveSettingsBuilder()..update(updates))._build();
 
-  _$ArchiveSettings._(
-      {required this.enabled,
-      this.sources,
-      this.root,
-      required this.target,
-      this.s3,
-      this.secrets,
-      this.secretsSet,
-      this.keepLocal})
-      : super._();
+  _$ArchiveSettings._({
+    required this.enabled,
+    this.sources,
+    this.root,
+    required this.target,
+    this.s3,
+    this.secrets,
+    this.secretsSet,
+    this.keepLocal,
+  }) : super._();
   @override
   ArchiveSettings rebuild(void Function(ArchiveSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -218,14 +222,21 @@ class ArchiveSettingsBuilder
   _$ArchiveSettings _build() {
     _$ArchiveSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ArchiveSettings._(
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'ArchiveSettings', 'enabled'),
+              enabled,
+              r'ArchiveSettings',
+              'enabled',
+            ),
             sources: _sources?.build(),
             root: root,
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'ArchiveSettings', 'target'),
+              target,
+              r'ArchiveSettings',
+              'target',
+            ),
             s3: _s3?.build(),
             secrets: _secrets?.build(),
             secretsSet: _secretsSet?.build(),
@@ -245,7 +256,10 @@ class ArchiveSettingsBuilder
         _secretsSet?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ArchiveSettings', _$failedField, e.toString());
+          r'ArchiveSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

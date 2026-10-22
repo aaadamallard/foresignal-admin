@@ -21,9 +21,9 @@ abstract class PushSubscriptionVerify
 
   PushSubscriptionVerify._();
 
-  factory PushSubscriptionVerify(
-          [void updates(PushSubscriptionVerifyBuilder b)]) =
-      _$PushSubscriptionVerify;
+  factory PushSubscriptionVerify([
+    void updates(PushSubscriptionVerifyBuilder b),
+  ]) = _$PushSubscriptionVerify;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushSubscriptionVerifyBuilder b) => b;
@@ -38,7 +38,7 @@ class _$PushSubscriptionVerifySerializer
   @override
   final Iterable<Type> types = const [
     PushSubscriptionVerify,
-    _$PushSubscriptionVerify
+    _$PushSubscriptionVerify,
   ];
 
   @override
@@ -62,9 +62,11 @@ class _$PushSubscriptionVerifySerializer
     PushSubscriptionVerify object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -80,10 +82,12 @@ class _$PushSubscriptionVerifySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         default:

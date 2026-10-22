@@ -7,18 +7,18 @@ part of 'hypothesis_revision.dart';
 // **************************************************************************
 
 const HypothesisRevisionCauseEnum
-    _$hypothesisRevisionCauseEnum_indicatorObserved =
+_$hypothesisRevisionCauseEnum_indicatorObserved =
     const HypothesisRevisionCauseEnum._('indicatorObserved');
 const HypothesisRevisionCauseEnum
-    _$hypothesisRevisionCauseEnum_indicatorAbsent =
+_$hypothesisRevisionCauseEnum_indicatorAbsent =
     const HypothesisRevisionCauseEnum._('indicatorAbsent');
 const HypothesisRevisionCauseEnum _$hypothesisRevisionCauseEnum_evidenceAdded =
     const HypothesisRevisionCauseEnum._('evidenceAdded');
 const HypothesisRevisionCauseEnum
-    _$hypothesisRevisionCauseEnum_evidenceRemoved =
+_$hypothesisRevisionCauseEnum_evidenceRemoved =
     const HypothesisRevisionCauseEnum._('evidenceRemoved');
 const HypothesisRevisionCauseEnum
-    _$hypothesisRevisionCauseEnum_baseRateRefresh =
+_$hypothesisRevisionCauseEnum_baseRateRefresh =
     const HypothesisRevisionCauseEnum._('baseRateRefresh');
 const HypothesisRevisionCauseEnum _$hypothesisRevisionCauseEnum_review =
     const HypothesisRevisionCauseEnum._('review');
@@ -51,30 +51,30 @@ HypothesisRevisionCauseEnum _$hypothesisRevisionCauseEnumValueOf(String name) {
 }
 
 final BuiltSet<HypothesisRevisionCauseEnum>
-    _$hypothesisRevisionCauseEnumValues =
+_$hypothesisRevisionCauseEnumValues =
     BuiltSet<HypothesisRevisionCauseEnum>(const <HypothesisRevisionCauseEnum>[
-  _$hypothesisRevisionCauseEnum_indicatorObserved,
-  _$hypothesisRevisionCauseEnum_indicatorAbsent,
-  _$hypothesisRevisionCauseEnum_evidenceAdded,
-  _$hypothesisRevisionCauseEnum_evidenceRemoved,
-  _$hypothesisRevisionCauseEnum_baseRateRefresh,
-  _$hypothesisRevisionCauseEnum_review,
-  _$hypothesisRevisionCauseEnum_operator_,
-  _$hypothesisRevisionCauseEnum_created,
-]);
+      _$hypothesisRevisionCauseEnum_indicatorObserved,
+      _$hypothesisRevisionCauseEnum_indicatorAbsent,
+      _$hypothesisRevisionCauseEnum_evidenceAdded,
+      _$hypothesisRevisionCauseEnum_evidenceRemoved,
+      _$hypothesisRevisionCauseEnum_baseRateRefresh,
+      _$hypothesisRevisionCauseEnum_review,
+      _$hypothesisRevisionCauseEnum_operator_,
+      _$hypothesisRevisionCauseEnum_created,
+    ]);
 
 const HypothesisRevisionRationaleOriginEnum
-    _$hypothesisRevisionRationaleOriginEnum_deterministic =
+_$hypothesisRevisionRationaleOriginEnum_deterministic =
     const HypothesisRevisionRationaleOriginEnum._('deterministic');
 const HypothesisRevisionRationaleOriginEnum
-    _$hypothesisRevisionRationaleOriginEnum_operator_ =
+_$hypothesisRevisionRationaleOriginEnum_operator_ =
     const HypothesisRevisionRationaleOriginEnum._('operator_');
 const HypothesisRevisionRationaleOriginEnum
-    _$hypothesisRevisionRationaleOriginEnum_analyst =
+_$hypothesisRevisionRationaleOriginEnum_analyst =
     const HypothesisRevisionRationaleOriginEnum._('analyst');
 
 HypothesisRevisionRationaleOriginEnum
-    _$hypothesisRevisionRationaleOriginEnumValueOf(String name) {
+_$hypothesisRevisionRationaleOriginEnumValueOf(String name) {
   switch (name) {
     case 'deterministic':
       return _$hypothesisRevisionRationaleOriginEnum_deterministic;
@@ -88,18 +88,20 @@ HypothesisRevisionRationaleOriginEnum
 }
 
 final BuiltSet<HypothesisRevisionRationaleOriginEnum>
-    _$hypothesisRevisionRationaleOriginEnumValues = BuiltSet<
-        HypothesisRevisionRationaleOriginEnum>(const <HypothesisRevisionRationaleOriginEnum>[
-  _$hypothesisRevisionRationaleOriginEnum_deterministic,
-  _$hypothesisRevisionRationaleOriginEnum_operator_,
-  _$hypothesisRevisionRationaleOriginEnum_analyst,
-]);
+_$hypothesisRevisionRationaleOriginEnumValues =
+    BuiltSet<HypothesisRevisionRationaleOriginEnum>(
+      const <HypothesisRevisionRationaleOriginEnum>[
+        _$hypothesisRevisionRationaleOriginEnum_deterministic,
+        _$hypothesisRevisionRationaleOriginEnum_operator_,
+        _$hypothesisRevisionRationaleOriginEnum_analyst,
+      ],
+    );
 
 Serializer<HypothesisRevisionCauseEnum>
-    _$hypothesisRevisionCauseEnumSerializer =
+_$hypothesisRevisionCauseEnumSerializer =
     _$HypothesisRevisionCauseEnumSerializer();
 Serializer<HypothesisRevisionRationaleOriginEnum>
-    _$hypothesisRevisionRationaleOriginEnumSerializer =
+_$hypothesisRevisionRationaleOriginEnumSerializer =
     _$HypothesisRevisionRationaleOriginEnumSerializer();
 
 class _$HypothesisRevisionCauseEnumSerializer
@@ -131,16 +133,20 @@ class _$HypothesisRevisionCauseEnumSerializer
   final String wireName = 'HypothesisRevisionCauseEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisRevisionCauseEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisRevisionCauseEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisRevisionCauseEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisRevisionCauseEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisRevisionCauseEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisRevisionRationaleOriginEnumSerializer
@@ -158,23 +164,26 @@ class _$HypothesisRevisionRationaleOriginEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    HypothesisRevisionRationaleOriginEnum
+    HypothesisRevisionRationaleOriginEnum,
   ];
   @override
   final String wireName = 'HypothesisRevisionRationaleOriginEnum';
 
   @override
   Object serialize(
-          Serializers serializers, HypothesisRevisionRationaleOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HypothesisRevisionRationaleOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisRevisionRationaleOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisRevisionRationaleOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisRevisionRationaleOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisRevision extends HypothesisRevision {
@@ -211,32 +220,32 @@ class _$HypothesisRevision extends HypothesisRevision {
   @override
   final String updaterVersion;
 
-  factory _$HypothesisRevision(
-          [void Function(HypothesisRevisionBuilder)? updates]) =>
-      (HypothesisRevisionBuilder()..update(updates))._build();
+  factory _$HypothesisRevision([
+    void Function(HypothesisRevisionBuilder)? updates,
+  ]) => (HypothesisRevisionBuilder()..update(updates))._build();
 
-  _$HypothesisRevision._(
-      {required this.id,
-      required this.setId,
-      required this.at,
-      required this.cause,
-      required this.actor,
-      required this.asOfSeq,
-      required this.before,
-      required this.after,
-      required this.drivers,
-      this.citations,
-      required this.rationale,
-      this.rationaleOrigin,
-      this.bandChanged,
-      this.override_,
-      this.ledgerForecastId,
-      required this.updaterVersion})
-      : super._();
+  _$HypothesisRevision._({
+    required this.id,
+    required this.setId,
+    required this.at,
+    required this.cause,
+    required this.actor,
+    required this.asOfSeq,
+    required this.before,
+    required this.after,
+    required this.drivers,
+    this.citations,
+    required this.rationale,
+    this.rationaleOrigin,
+    this.bandChanged,
+    this.override_,
+    this.ledgerForecastId,
+    required this.updaterVersion,
+  }) : super._();
   @override
   HypothesisRevision rebuild(
-          void Function(HypothesisRevisionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisRevisionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisRevisionBuilder toBuilder() =>
@@ -434,32 +443,57 @@ class HypothesisRevisionBuilder
   _$HypothesisRevision _build() {
     _$HypothesisRevision _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisRevision._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'HypothesisRevision', 'id'),
+              id,
+              r'HypothesisRevision',
+              'id',
+            ),
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'HypothesisRevision', 'setId'),
+              setId,
+              r'HypothesisRevision',
+              'setId',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'HypothesisRevision', 'at'),
+              at,
+              r'HypothesisRevision',
+              'at',
+            ),
             cause: BuiltValueNullFieldError.checkNotNull(
-                cause, r'HypothesisRevision', 'cause'),
+              cause,
+              r'HypothesisRevision',
+              'cause',
+            ),
             actor: BuiltValueNullFieldError.checkNotNull(
-                actor, r'HypothesisRevision', 'actor'),
+              actor,
+              r'HypothesisRevision',
+              'actor',
+            ),
             asOfSeq: BuiltValueNullFieldError.checkNotNull(
-                asOfSeq, r'HypothesisRevision', 'asOfSeq'),
+              asOfSeq,
+              r'HypothesisRevision',
+              'asOfSeq',
+            ),
             before: before.build(),
             after: after.build(),
             drivers: drivers.build(),
             citations: _citations?.build(),
             rationale: BuiltValueNullFieldError.checkNotNull(
-                rationale, r'HypothesisRevision', 'rationale'),
+              rationale,
+              r'HypothesisRevision',
+              'rationale',
+            ),
             rationaleOrigin: rationaleOrigin,
             bandChanged: bandChanged,
             override_: override_,
             ledgerForecastId: ledgerForecastId,
             updaterVersion: BuiltValueNullFieldError.checkNotNull(
-                updaterVersion, r'HypothesisRevision', 'updaterVersion'),
+              updaterVersion,
+              r'HypothesisRevision',
+              'updaterVersion',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -474,7 +508,10 @@ class HypothesisRevisionBuilder
         _citations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisRevision', _$failedField, e.toString());
+          r'HypothesisRevision',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

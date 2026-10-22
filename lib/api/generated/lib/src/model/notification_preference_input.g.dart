@@ -7,26 +7,26 @@ part of 'notification_preference_input.dart';
 // **************************************************************************
 
 const NotificationPreferenceInputEventTypesEnum
-    _$notificationPreferenceInputEventTypesEnum_mention =
+_$notificationPreferenceInputEventTypesEnum_mention =
     const NotificationPreferenceInputEventTypesEnum._('mention');
 const NotificationPreferenceInputEventTypesEnum
-    _$notificationPreferenceInputEventTypesEnum_share =
+_$notificationPreferenceInputEventTypesEnum_share =
     const NotificationPreferenceInputEventTypesEnum._('share');
 const NotificationPreferenceInputEventTypesEnum
-    _$notificationPreferenceInputEventTypesEnum_report =
+_$notificationPreferenceInputEventTypesEnum_report =
     const NotificationPreferenceInputEventTypesEnum._('report');
 const NotificationPreferenceInputEventTypesEnum
-    _$notificationPreferenceInputEventTypesEnum_chronicle =
+_$notificationPreferenceInputEventTypesEnum_chronicle =
     const NotificationPreferenceInputEventTypesEnum._('chronicle');
 const NotificationPreferenceInputEventTypesEnum
-    _$notificationPreferenceInputEventTypesEnum_assessment =
+_$notificationPreferenceInputEventTypesEnum_assessment =
     const NotificationPreferenceInputEventTypesEnum._('assessment');
 const NotificationPreferenceInputEventTypesEnum
-    _$notificationPreferenceInputEventTypesEnum_commentReply =
+_$notificationPreferenceInputEventTypesEnum_commentReply =
     const NotificationPreferenceInputEventTypesEnum._('commentReply');
 
 NotificationPreferenceInputEventTypesEnum
-    _$notificationPreferenceInputEventTypesEnumValueOf(String name) {
+_$notificationPreferenceInputEventTypesEnumValueOf(String name) {
   switch (name) {
     case 'mention':
       return _$notificationPreferenceInputEventTypesEnum_mention;
@@ -46,18 +46,20 @@ NotificationPreferenceInputEventTypesEnum
 }
 
 final BuiltSet<NotificationPreferenceInputEventTypesEnum>
-    _$notificationPreferenceInputEventTypesEnumValues = BuiltSet<
-        NotificationPreferenceInputEventTypesEnum>(const <NotificationPreferenceInputEventTypesEnum>[
-  _$notificationPreferenceInputEventTypesEnum_mention,
-  _$notificationPreferenceInputEventTypesEnum_share,
-  _$notificationPreferenceInputEventTypesEnum_report,
-  _$notificationPreferenceInputEventTypesEnum_chronicle,
-  _$notificationPreferenceInputEventTypesEnum_assessment,
-  _$notificationPreferenceInputEventTypesEnum_commentReply,
-]);
+_$notificationPreferenceInputEventTypesEnumValues =
+    BuiltSet<NotificationPreferenceInputEventTypesEnum>(
+      const <NotificationPreferenceInputEventTypesEnum>[
+        _$notificationPreferenceInputEventTypesEnum_mention,
+        _$notificationPreferenceInputEventTypesEnum_share,
+        _$notificationPreferenceInputEventTypesEnum_report,
+        _$notificationPreferenceInputEventTypesEnum_chronicle,
+        _$notificationPreferenceInputEventTypesEnum_assessment,
+        _$notificationPreferenceInputEventTypesEnum_commentReply,
+      ],
+    );
 
 Serializer<NotificationPreferenceInputEventTypesEnum>
-    _$notificationPreferenceInputEventTypesEnumSerializer =
+_$notificationPreferenceInputEventTypesEnumSerializer =
     _$NotificationPreferenceInputEventTypesEnumSerializer();
 
 class _$NotificationPreferenceInputEventTypesEnumSerializer
@@ -81,23 +83,26 @@ class _$NotificationPreferenceInputEventTypesEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NotificationPreferenceInputEventTypesEnum
+    NotificationPreferenceInputEventTypesEnum,
   ];
   @override
   final String wireName = 'NotificationPreferenceInputEventTypesEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NotificationPreferenceInputEventTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationPreferenceInputEventTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationPreferenceInputEventTypesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationPreferenceInputEventTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationPreferenceInputEventTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationPreferenceInput extends NotificationPreferenceInput {
@@ -112,21 +117,21 @@ class _$NotificationPreferenceInput extends NotificationPreferenceInput {
   @override
   final bool? enabled;
 
-  factory _$NotificationPreferenceInput(
-          [void Function(NotificationPreferenceInputBuilder)? updates]) =>
-      (NotificationPreferenceInputBuilder()..update(updates))._build();
+  factory _$NotificationPreferenceInput([
+    void Function(NotificationPreferenceInputBuilder)? updates,
+  ]) => (NotificationPreferenceInputBuilder()..update(updates))._build();
 
-  _$NotificationPreferenceInput._(
-      {this.id,
-      required this.eventTypes,
-      required this.channel,
-      this.quietHours,
-      this.enabled})
-      : super._();
+  _$NotificationPreferenceInput._({
+    this.id,
+    required this.eventTypes,
+    required this.channel,
+    this.quietHours,
+    this.enabled,
+  }) : super._();
   @override
   NotificationPreferenceInput rebuild(
-          void Function(NotificationPreferenceInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationPreferenceInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationPreferenceInputBuilder toBuilder() =>
@@ -169,8 +174,10 @@ class _$NotificationPreferenceInput extends NotificationPreferenceInput {
 
 class NotificationPreferenceInputBuilder
     implements
-        Builder<NotificationPreferenceInput,
-            NotificationPreferenceInputBuilder> {
+        Builder<
+          NotificationPreferenceInput,
+          NotificationPreferenceInputBuilder
+        > {
   _$NotificationPreferenceInput? _$v;
 
   String? _id;
@@ -182,8 +189,8 @@ class NotificationPreferenceInputBuilder
       _$this._eventTypes ??=
           ListBuilder<NotificationPreferenceInputEventTypesEnum>();
   set eventTypes(
-          ListBuilder<NotificationPreferenceInputEventTypesEnum>? eventTypes) =>
-      _$this._eventTypes = eventTypes;
+    ListBuilder<NotificationPreferenceInputEventTypesEnum>? eventTypes,
+  ) => _$this._eventTypes = eventTypes;
 
   NotificationPreferenceInputChannelBuilder? _channel;
   NotificationPreferenceInputChannelBuilder get channel =>
@@ -234,7 +241,8 @@ class NotificationPreferenceInputBuilder
   _$NotificationPreferenceInput _build() {
     _$NotificationPreferenceInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NotificationPreferenceInput._(
             id: id,
             eventTypes: eventTypes.build(),
@@ -253,7 +261,10 @@ class NotificationPreferenceInputBuilder
         _quietHours?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationPreferenceInput', _$failedField, e.toString());
+          r'NotificationPreferenceInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

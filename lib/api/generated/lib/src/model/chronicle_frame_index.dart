@@ -64,7 +64,7 @@ class _$ChronicleFrameIndexSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleFrameIndex,
-    _$ChronicleFrameIndex
+    _$ChronicleFrameIndex,
   ];
 
   @override
@@ -105,8 +105,9 @@ class _$ChronicleFrameIndexSerializer
     yield r'frames';
     yield serializers.serialize(
       object.frames,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleFrameIndexFramesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleFrameIndexFramesInner),
+      ]),
     );
     if (object.truncated != null) {
       yield r'truncated';
@@ -123,9 +124,11 @@ class _$ChronicleFrameIndexSerializer
     ChronicleFrameIndex object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -141,55 +144,71 @@ class _$ChronicleFrameIndexSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chronicleId = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         case r'step':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.step = valueDes;
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.layers.replace(valueDes);
           break;
         case r'frames':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleFrameIndexFramesInner)]),
-          ) as BuiltList<ChronicleFrameIndexFramesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleFrameIndexFramesInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleFrameIndexFramesInner>;
           result.frames.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;

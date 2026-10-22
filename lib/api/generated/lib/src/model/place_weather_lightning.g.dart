@@ -22,23 +22,23 @@ class _$PlaceWeatherLightning extends PlaceWeatherLightning {
   @override
   final num? verifiedNearestKm30m;
 
-  factory _$PlaceWeatherLightning(
-          [void Function(PlaceWeatherLightningBuilder)? updates]) =>
-      (PlaceWeatherLightningBuilder()..update(updates))._build();
+  factory _$PlaceWeatherLightning([
+    void Function(PlaceWeatherLightningBuilder)? updates,
+  ]) => (PlaceWeatherLightningBuilder()..update(updates))._build();
 
-  _$PlaceWeatherLightning._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.nearestKm15m,
-      this.nearestKm30m,
-      this.count15km15m,
-      this.verifiedNearestKm30m})
-      : super._();
+  _$PlaceWeatherLightning._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.nearestKm15m,
+    this.nearestKm30m,
+    this.count15km15m,
+    this.verifiedNearestKm30m,
+  }) : super._();
   @override
   PlaceWeatherLightning rebuild(
-          void Function(PlaceWeatherLightningBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherLightningBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherLightningBuilder toBuilder() =>
@@ -151,10 +151,14 @@ class PlaceWeatherLightningBuilder
   PlaceWeatherLightning build() => _build();
 
   _$PlaceWeatherLightning _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherLightning._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherLightning', 'status'),
+            status,
+            r'PlaceWeatherLightning',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           nearestKm15m: nearestKm15m,

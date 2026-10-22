@@ -42,7 +42,7 @@ class _$AlertTransitionInputSerializer
   @override
   final Iterable<Type> types = const [
     AlertTransitionInput,
-    _$AlertTransitionInput
+    _$AlertTransitionInput,
   ];
 
   @override
@@ -64,8 +64,9 @@ class _$AlertTransitionInputSerializer
       yield r'feedback';
       yield serializers.serialize(
         object.feedback,
-        specifiedType:
-            const FullType.nullable(AlertTransitionInputFeedbackEnum),
+        specifiedType: const FullType.nullable(
+          AlertTransitionInputFeedbackEnum,
+        ),
       );
     }
   }
@@ -76,9 +77,11 @@ class _$AlertTransitionInputSerializer
     AlertTransitionInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,19 +97,24 @@ class _$AlertTransitionInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;
         case r'feedback':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AlertTransitionInputFeedbackEnum),
-          ) as AlertTransitionInputFeedbackEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AlertTransitionInputFeedbackEnum,
+                    ),
+                  )
+                  as AlertTransitionInputFeedbackEnum?;
           if (valueDes == null) continue;
           result.feedback = valueDes;
           break;

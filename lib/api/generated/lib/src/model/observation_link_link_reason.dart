@@ -39,9 +39,9 @@ abstract class ObservationLinkLinkReason
 
   ObservationLinkLinkReason._();
 
-  factory ObservationLinkLinkReason(
-          [void updates(ObservationLinkLinkReasonBuilder b)]) =
-      _$ObservationLinkLinkReason;
+  factory ObservationLinkLinkReason([
+    void updates(ObservationLinkLinkReasonBuilder b),
+  ]) = _$ObservationLinkLinkReason;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ObservationLinkLinkReasonBuilder b) => b;
@@ -56,7 +56,7 @@ class _$ObservationLinkLinkReasonSerializer
   @override
   final Iterable<Type> types = const [
     ObservationLinkLinkReason,
-    _$ObservationLinkLinkReason
+    _$ObservationLinkLinkReason,
   ];
 
   @override
@@ -90,8 +90,10 @@ class _$ObservationLinkLinkReasonSerializer
       yield r'attributeDeltas';
       yield serializers.serialize(
         object.attributeDeltas,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.upstreamIdMatch != null) {
@@ -109,9 +111,11 @@ class _$ObservationLinkLinkReasonSerializer
     ObservationLinkLinkReason object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,42 +131,54 @@ class _$ObservationLinkLinkReasonSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'rule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.rule = valueDes;
           break;
         case r'dtSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.dtSeconds = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;
         case r'attributeDeltas':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.attributeDeltas.replace(valueDes);
           break;
         case r'upstreamIdMatch':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.upstreamIdMatch = valueDes;
           break;

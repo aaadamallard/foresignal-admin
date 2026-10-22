@@ -28,26 +28,26 @@ class _$SatellitePassPayloadRf extends SatellitePassPayloadRf {
   @override
   final BuiltList<SatellitePassPayloadRfSnrByElevationInner>? snrByElevation;
 
-  factory _$SatellitePassPayloadRf(
-          [void Function(SatellitePassPayloadRfBuilder)? updates]) =>
-      (SatellitePassPayloadRfBuilder()..update(updates))._build();
+  factory _$SatellitePassPayloadRf([
+    void Function(SatellitePassPayloadRfBuilder)? updates,
+  ]) => (SatellitePassPayloadRfBuilder()..update(updates))._build();
 
-  _$SatellitePassPayloadRf._(
-      {this.snrMaxDb,
-      this.snrMeanDb,
-      this.berMin,
-      this.berMean,
-      this.syncedFraction,
-      this.firstLockAt,
-      this.lastLockAt,
-      this.firstLockElevationDeg,
-      this.lastLockElevationDeg,
-      this.snrByElevation})
-      : super._();
+  _$SatellitePassPayloadRf._({
+    this.snrMaxDb,
+    this.snrMeanDb,
+    this.berMin,
+    this.berMean,
+    this.syncedFraction,
+    this.firstLockAt,
+    this.lastLockAt,
+    this.firstLockElevationDeg,
+    this.lastLockElevationDeg,
+    this.snrByElevation,
+  }) : super._();
   @override
   SatellitePassPayloadRf rebuild(
-          void Function(SatellitePassPayloadRfBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SatellitePassPayloadRfBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SatellitePassPayloadRfBuilder toBuilder() =>
@@ -151,9 +151,8 @@ class SatellitePassPayloadRfBuilder
       _$this._snrByElevation ??=
           ListBuilder<SatellitePassPayloadRfSnrByElevationInner>();
   set snrByElevation(
-          ListBuilder<SatellitePassPayloadRfSnrByElevationInner>?
-              snrByElevation) =>
-      _$this._snrByElevation = snrByElevation;
+    ListBuilder<SatellitePassPayloadRfSnrByElevationInner>? snrByElevation,
+  ) => _$this._snrByElevation = snrByElevation;
 
   SatellitePassPayloadRfBuilder() {
     SatellitePassPayloadRf._defaults(this);
@@ -193,7 +192,8 @@ class SatellitePassPayloadRfBuilder
   _$SatellitePassPayloadRf _build() {
     _$SatellitePassPayloadRf _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SatellitePassPayloadRf._(
             snrMaxDb: snrMaxDb,
             snrMeanDb: snrMeanDb,
@@ -213,7 +213,10 @@ class SatellitePassPayloadRfBuilder
         _snrByElevation?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SatellitePassPayloadRf', _$failedField, e.toString());
+          r'SatellitePassPayloadRf',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

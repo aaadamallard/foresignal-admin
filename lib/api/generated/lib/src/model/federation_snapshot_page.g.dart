@@ -14,17 +14,19 @@ class _$FederationSnapshotPage extends FederationSnapshotPage {
   @override
   final String? nextCursor;
 
-  factory _$FederationSnapshotPage(
-          [void Function(FederationSnapshotPageBuilder)? updates]) =>
-      (FederationSnapshotPageBuilder()..update(updates))._build();
+  factory _$FederationSnapshotPage([
+    void Function(FederationSnapshotPageBuilder)? updates,
+  ]) => (FederationSnapshotPageBuilder()..update(updates))._build();
 
-  _$FederationSnapshotPage._(
-      {required this.items, required this.atSeq, this.nextCursor})
-      : super._();
+  _$FederationSnapshotPage._({
+    required this.items,
+    required this.atSeq,
+    this.nextCursor,
+  }) : super._();
   @override
   FederationSnapshotPage rebuild(
-          void Function(FederationSnapshotPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FederationSnapshotPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FederationSnapshotPageBuilder toBuilder() =>
@@ -107,11 +109,15 @@ class FederationSnapshotPageBuilder
   _$FederationSnapshotPage _build() {
     _$FederationSnapshotPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FederationSnapshotPage._(
             items: items.build(),
             atSeq: BuiltValueNullFieldError.checkNotNull(
-                atSeq, r'FederationSnapshotPage', 'atSeq'),
+              atSeq,
+              r'FederationSnapshotPage',
+              'atSeq',
+            ),
             nextCursor: nextCursor,
           );
     } catch (_) {
@@ -121,7 +127,10 @@ class FederationSnapshotPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FederationSnapshotPage', _$failedField, e.toString());
+          r'FederationSnapshotPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

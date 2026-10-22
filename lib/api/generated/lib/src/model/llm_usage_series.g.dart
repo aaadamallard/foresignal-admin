@@ -14,7 +14,8 @@ const LlmUsageSeriesResolutionEnum _$llmUsageSeriesResolutionEnum_day =
     const LlmUsageSeriesResolutionEnum._('day');
 
 LlmUsageSeriesResolutionEnum _$llmUsageSeriesResolutionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'minute':
       return _$llmUsageSeriesResolutionEnum_minute;
@@ -28,15 +29,15 @@ LlmUsageSeriesResolutionEnum _$llmUsageSeriesResolutionEnumValueOf(
 }
 
 final BuiltSet<LlmUsageSeriesResolutionEnum>
-    _$llmUsageSeriesResolutionEnumValues =
+_$llmUsageSeriesResolutionEnumValues =
     BuiltSet<LlmUsageSeriesResolutionEnum>(const <LlmUsageSeriesResolutionEnum>[
-  _$llmUsageSeriesResolutionEnum_minute,
-  _$llmUsageSeriesResolutionEnum_hour,
-  _$llmUsageSeriesResolutionEnum_day,
-]);
+      _$llmUsageSeriesResolutionEnum_minute,
+      _$llmUsageSeriesResolutionEnum_hour,
+      _$llmUsageSeriesResolutionEnum_day,
+    ]);
 
 Serializer<LlmUsageSeriesResolutionEnum>
-    _$llmUsageSeriesResolutionEnumSerializer =
+_$llmUsageSeriesResolutionEnumSerializer =
     _$LlmUsageSeriesResolutionEnumSerializer();
 
 class _$LlmUsageSeriesResolutionEnumSerializer
@@ -58,16 +59,20 @@ class _$LlmUsageSeriesResolutionEnumSerializer
   final String wireName = 'LlmUsageSeriesResolutionEnum';
 
   @override
-  Object serialize(Serializers serializers, LlmUsageSeriesResolutionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LlmUsageSeriesResolutionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LlmUsageSeriesResolutionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LlmUsageSeriesResolutionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LlmUsageSeriesResolutionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LlmUsageSeries extends LlmUsageSeries {
@@ -83,12 +88,12 @@ class _$LlmUsageSeries extends LlmUsageSeries {
   factory _$LlmUsageSeries([void Function(LlmUsageSeriesBuilder)? updates]) =>
       (LlmUsageSeriesBuilder()..update(updates))._build();
 
-  _$LlmUsageSeries._(
-      {this.provider,
-      required this.resolution,
-      required this.points,
-      this.totals})
-      : super._();
+  _$LlmUsageSeries._({
+    this.provider,
+    required this.resolution,
+    required this.points,
+    this.totals,
+  }) : super._();
   @override
   LlmUsageSeries rebuild(void Function(LlmUsageSeriesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -182,11 +187,15 @@ class LlmUsageSeriesBuilder
   _$LlmUsageSeries _build() {
     _$LlmUsageSeries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LlmUsageSeries._(
             provider: provider,
             resolution: BuiltValueNullFieldError.checkNotNull(
-                resolution, r'LlmUsageSeries', 'resolution'),
+              resolution,
+              r'LlmUsageSeries',
+              'resolution',
+            ),
             points: points.build(),
             totals: _totals?.build(),
           );
@@ -199,7 +208,10 @@ class LlmUsageSeriesBuilder
         _totals?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LlmUsageSeries', _$failedField, e.toString());
+          r'LlmUsageSeries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -59,8 +59,9 @@ class _$GlanceAlertsSerializer implements PrimitiveSerializer<GlanceAlerts> {
       yield r'latest';
       yield serializers.serialize(
         object.latest,
-        specifiedType:
-            const FullType(BuiltList, [FullType(GlanceAlertsLatestInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(GlanceAlertsLatestInner),
+        ]),
       );
     }
   }
@@ -71,9 +72,11 @@ class _$GlanceAlertsSerializer implements PrimitiveSerializer<GlanceAlerts> {
     GlanceAlerts object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,19 +92,24 @@ class _$GlanceAlertsSerializer implements PrimitiveSerializer<GlanceAlerts> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'open':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(GlanceAlertsOpen),
-          ) as GlanceAlertsOpen?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(GlanceAlertsOpen),
+                  )
+                  as GlanceAlertsOpen?;
           if (valueDes == null) continue;
           result.open.replace(valueDes);
           break;
         case r'latest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(GlanceAlertsLatestInner)]),
-          ) as BuiltList<GlanceAlertsLatestInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(GlanceAlertsLatestInner),
+                    ]),
+                  )
+                  as BuiltList<GlanceAlertsLatestInner>?;
           if (valueDes == null) continue;
           result.latest.replace(valueDes);
           break;

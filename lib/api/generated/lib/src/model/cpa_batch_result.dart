@@ -99,9 +99,11 @@ class _$CpaBatchResultSerializer
     CpaBatchResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,39 +119,48 @@ class _$CpaBatchResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'subject':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(KinematicState),
-          ) as KinematicState;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(KinematicState),
+                  )
+                  as KinematicState;
           result.subject.replace(valueDes);
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.asOf = valueDes;
           break;
         case r'evaluated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.evaluated = valueDes;
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(CpaResult)]),
-          ) as BuiltList<CpaResult>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(CpaResult),
+                    ]),
+                  )
+                  as BuiltList<CpaResult>;
           result.items.replace(valueDes);
           break;
         default:

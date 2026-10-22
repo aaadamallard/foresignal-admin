@@ -6,10 +6,12 @@ part of 'alert.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const AlertSeverityEnum _$alertSeverityEnum_info =
-    const AlertSeverityEnum._('info');
-const AlertSeverityEnum _$alertSeverityEnum_warning =
-    const AlertSeverityEnum._('warning');
+const AlertSeverityEnum _$alertSeverityEnum_info = const AlertSeverityEnum._(
+  'info',
+);
+const AlertSeverityEnum _$alertSeverityEnum_warning = const AlertSeverityEnum._(
+  'warning',
+);
 const AlertSeverityEnum _$alertSeverityEnum_critical =
     const AlertSeverityEnum._('critical');
 
@@ -28,16 +30,18 @@ AlertSeverityEnum _$alertSeverityEnumValueOf(String name) {
 
 final BuiltSet<AlertSeverityEnum> _$alertSeverityEnumValues =
     BuiltSet<AlertSeverityEnum>(const <AlertSeverityEnum>[
-  _$alertSeverityEnum_info,
-  _$alertSeverityEnum_warning,
-  _$alertSeverityEnum_critical,
-]);
+      _$alertSeverityEnum_info,
+      _$alertSeverityEnum_warning,
+      _$alertSeverityEnum_critical,
+    ]);
 
 const AlertStateEnum _$alertStateEnum_firing = const AlertStateEnum._('firing');
-const AlertStateEnum _$alertStateEnum_acknowledged =
-    const AlertStateEnum._('acknowledged');
-const AlertStateEnum _$alertStateEnum_resolved =
-    const AlertStateEnum._('resolved');
+const AlertStateEnum _$alertStateEnum_acknowledged = const AlertStateEnum._(
+  'acknowledged',
+);
+const AlertStateEnum _$alertStateEnum_resolved = const AlertStateEnum._(
+  'resolved',
+);
 
 AlertStateEnum _$alertStateEnumValueOf(String name) {
   switch (name) {
@@ -54,17 +58,20 @@ AlertStateEnum _$alertStateEnumValueOf(String name) {
 
 final BuiltSet<AlertStateEnum> _$alertStateEnumValues =
     BuiltSet<AlertStateEnum>(const <AlertStateEnum>[
-  _$alertStateEnum_firing,
-  _$alertStateEnum_acknowledged,
-  _$alertStateEnum_resolved,
-]);
+      _$alertStateEnum_firing,
+      _$alertStateEnum_acknowledged,
+      _$alertStateEnum_resolved,
+    ]);
 
-const AlertFeedbackEnum _$alertFeedbackEnum_useful =
-    const AlertFeedbackEnum._('useful');
-const AlertFeedbackEnum _$alertFeedbackEnum_noise =
-    const AlertFeedbackEnum._('noise');
-const AlertFeedbackEnum _$alertFeedbackEnum_late_ =
-    const AlertFeedbackEnum._('late_');
+const AlertFeedbackEnum _$alertFeedbackEnum_useful = const AlertFeedbackEnum._(
+  'useful',
+);
+const AlertFeedbackEnum _$alertFeedbackEnum_noise = const AlertFeedbackEnum._(
+  'noise',
+);
+const AlertFeedbackEnum _$alertFeedbackEnum_late_ = const AlertFeedbackEnum._(
+  'late_',
+);
 const AlertFeedbackEnum _$alertFeedbackEnum_falsePositive =
     const AlertFeedbackEnum._('falsePositive');
 
@@ -85,11 +92,11 @@ AlertFeedbackEnum _$alertFeedbackEnumValueOf(String name) {
 
 final BuiltSet<AlertFeedbackEnum> _$alertFeedbackEnumValues =
     BuiltSet<AlertFeedbackEnum>(const <AlertFeedbackEnum>[
-  _$alertFeedbackEnum_useful,
-  _$alertFeedbackEnum_noise,
-  _$alertFeedbackEnum_late_,
-  _$alertFeedbackEnum_falsePositive,
-]);
+      _$alertFeedbackEnum_useful,
+      _$alertFeedbackEnum_noise,
+      _$alertFeedbackEnum_late_,
+      _$alertFeedbackEnum_falsePositive,
+    ]);
 
 const AlertSuppressedReasonEnum _$alertSuppressedReasonEnum_alertSnoozed =
     const AlertSuppressedReasonEnum._('alertSnoozed');
@@ -109,9 +116,9 @@ AlertSuppressedReasonEnum _$alertSuppressedReasonEnumValueOf(String name) {
 
 final BuiltSet<AlertSuppressedReasonEnum> _$alertSuppressedReasonEnumValues =
     BuiltSet<AlertSuppressedReasonEnum>(const <AlertSuppressedReasonEnum>[
-  _$alertSuppressedReasonEnum_alertSnoozed,
-  _$alertSuppressedReasonEnum_ruleSnoozed,
-]);
+      _$alertSuppressedReasonEnum_alertSnoozed,
+      _$alertSuppressedReasonEnum_ruleSnoozed,
+    ]);
 
 Serializer<AlertSeverityEnum> _$alertSeverityEnumSerializer =
     _$AlertSeverityEnumSerializer();
@@ -141,15 +148,20 @@ class _$AlertSeverityEnumSerializer
   final String wireName = 'AlertSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, AlertSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AlertSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AlertSeverityEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AlertSeverityEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertStateEnumSerializer
@@ -171,15 +183,20 @@ class _$AlertStateEnumSerializer
   final String wireName = 'AlertStateEnum';
 
   @override
-  Object serialize(Serializers serializers, AlertStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AlertStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AlertStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AlertStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertFeedbackEnumSerializer
@@ -203,15 +220,20 @@ class _$AlertFeedbackEnumSerializer
   final String wireName = 'AlertFeedbackEnum';
 
   @override
-  Object serialize(Serializers serializers, AlertFeedbackEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AlertFeedbackEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AlertFeedbackEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertFeedbackEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AlertFeedbackEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertFeedbackEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertSuppressedReasonEnumSerializer
@@ -231,16 +253,20 @@ class _$AlertSuppressedReasonEnumSerializer
   final String wireName = 'AlertSuppressedReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, AlertSuppressedReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AlertSuppressedReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AlertSuppressedReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertSuppressedReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertSuppressedReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Alert extends Alert {
@@ -320,44 +346,44 @@ class _$Alert extends Alert {
   factory _$Alert([void Function(AlertBuilder)? updates]) =>
       (AlertBuilder()..update(updates))._build();
 
-  _$Alert._(
-      {required this.id,
-      required this.ruleId,
-      this.ruleName,
-      required this.seq,
-      required this.source_,
-      required this.externalId,
-      this.kind,
-      required this.firedAt,
-      required this.message,
-      this.acknowledgedAt,
-      required this.severity,
-      this.summary,
-      this.enrichedAt,
-      this.record,
-      required this.rev,
-      required this.state,
-      this.observedAt,
-      this.acknowledgedBy,
-      this.resolvedAt,
-      this.resolvedBy,
-      this.resolvedSeq,
-      this.feedback,
-      this.feedbackAt,
-      this.note,
-      this.snoozedUntil,
-      this.suppressed,
-      this.suppressedReason,
-      this.tags,
-      this.recordSnapshot,
-      this.summaryCitations,
-      this.sensitive,
-      this.region,
-      this.context,
-      this.exercise,
-      this.exerciseRunId,
-      this.signals})
-      : super._();
+  _$Alert._({
+    required this.id,
+    required this.ruleId,
+    this.ruleName,
+    required this.seq,
+    required this.source_,
+    required this.externalId,
+    this.kind,
+    required this.firedAt,
+    required this.message,
+    this.acknowledgedAt,
+    required this.severity,
+    this.summary,
+    this.enrichedAt,
+    this.record,
+    required this.rev,
+    required this.state,
+    this.observedAt,
+    this.acknowledgedBy,
+    this.resolvedAt,
+    this.resolvedBy,
+    this.resolvedSeq,
+    this.feedback,
+    this.feedbackAt,
+    this.note,
+    this.snoozedUntil,
+    this.suppressed,
+    this.suppressedReason,
+    this.tags,
+    this.recordSnapshot,
+    this.summaryCitations,
+    this.sensitive,
+    this.region,
+    this.context,
+    this.exercise,
+    this.exerciseRunId,
+    this.signals,
+  }) : super._();
   @override
   Alert rebuild(void Function(AlertBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -714,31 +740,53 @@ class AlertBuilder implements Builder<Alert, AlertBuilder> {
   _$Alert _build() {
     _$Alert _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Alert._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Alert', 'id'),
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'Alert', 'ruleId'),
+              ruleId,
+              r'Alert',
+              'ruleId',
+            ),
             ruleName: ruleName,
             seq: BuiltValueNullFieldError.checkNotNull(seq, r'Alert', 'seq'),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'Alert', 'source_'),
+              source_,
+              r'Alert',
+              'source_',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'Alert', 'externalId'),
+              externalId,
+              r'Alert',
+              'externalId',
+            ),
             kind: kind,
             firedAt: BuiltValueNullFieldError.checkNotNull(
-                firedAt, r'Alert', 'firedAt'),
+              firedAt,
+              r'Alert',
+              'firedAt',
+            ),
             message: BuiltValueNullFieldError.checkNotNull(
-                message, r'Alert', 'message'),
+              message,
+              r'Alert',
+              'message',
+            ),
             acknowledgedAt: acknowledgedAt,
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'Alert', 'severity'),
+              severity,
+              r'Alert',
+              'severity',
+            ),
             summary: summary,
             enrichedAt: enrichedAt,
             record: _record?.build(),
             rev: BuiltValueNullFieldError.checkNotNull(rev, r'Alert', 'rev'),
-            state:
-                BuiltValueNullFieldError.checkNotNull(state, r'Alert', 'state'),
+            state: BuiltValueNullFieldError.checkNotNull(
+              state,
+              r'Alert',
+              'state',
+            ),
             observedAt: observedAt,
             acknowledgedBy: acknowledgedBy,
             resolvedAt: resolvedAt,

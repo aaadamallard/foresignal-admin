@@ -56,16 +56,10 @@ class WorkspacesApi {
     final _path = r'/v1/context-links';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -77,14 +71,13 @@ class WorkspacesApi {
 
     try {
       const _type = FullType(ContextLinkRequest);
-      _bodyData =
-          _serializers.serialize(contextLinkRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        contextLinkRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -107,9 +100,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ContextLink),
-            ) as ContextLink;
+                  rawResponse,
+                  specifiedType: const FullType(ContextLink),
+                )
+                as ContextLink;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -158,16 +152,10 @@ class WorkspacesApi {
     final _path = r'/v1/workspaces';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -182,10 +170,7 @@ class WorkspacesApi {
       _bodyData = _serializers.serialize(workspaceInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -208,9 +193,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Workspace),
-            ) as Workspace;
+                  rawResponse,
+                  specifiedType: const FullType(Workspace),
+                )
+                as Workspace;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -257,21 +243,21 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -313,21 +299,21 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -349,9 +335,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Workspace),
-            ) as Workspace;
+                  rawResponse,
+                  specifiedType: const FullType(Workspace),
+                )
+                as Workspace;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -398,21 +385,21 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}/context-link'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -434,9 +421,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ContextLink),
-            ) as ContextLink;
+                  rawResponse,
+                  specifiedType: const FullType(ContextLink),
+                )
+                as ContextLink;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -483,21 +471,21 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}/summary'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -519,9 +507,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ContextSummary),
-            ) as ContextSummary;
+                  rawResponse,
+                  specifiedType: const FullType(ContextSummary),
+                )
+                as ContextSummary;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -572,16 +561,10 @@ class WorkspacesApi {
     final _path = r'/v1/workspaces';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -590,11 +573,17 @@ class WorkspacesApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -613,9 +602,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WorkspacePage),
-            ) as WorkspacePage;
+                  rawResponse,
+                  specifiedType: const FullType(WorkspacePage),
+                )
+                as WorkspacePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -668,9 +658,15 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}/context'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -681,11 +677,7 @@ class WorkspacesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -696,15 +688,14 @@ class WorkspacesApi {
     dynamic _bodyData;
 
     try {
-      const _type =
-          FullType(BuiltMap, [FullType(String), FullType(JsonObject)]);
+      const _type = FullType(BuiltMap, [
+        FullType(String),
+        FullType(JsonObject),
+      ]);
       _bodyData = _serializers.serialize(requestBody, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -727,9 +718,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WorkspaceContextState),
-            ) as WorkspaceContextState;
+                  rawResponse,
+                  specifiedType: const FullType(WorkspaceContextState),
+                )
+                as WorkspaceContextState;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -778,21 +770,21 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}/layout'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -803,15 +795,14 @@ class WorkspacesApi {
     dynamic _bodyData;
 
     try {
-      const _type =
-          FullType(BuiltMap, [FullType(String), FullType(JsonObject)]);
+      const _type = FullType(BuiltMap, [
+        FullType(String),
+        FullType(JsonObject),
+      ]);
       _bodyData = _serializers.serialize(requestBody, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -834,9 +825,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Workspace),
-            ) as Workspace;
+                  rawResponse,
+                  specifiedType: const FullType(Workspace),
+                )
+                as Workspace;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -885,21 +877,21 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}/share'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -916,10 +908,7 @@ class WorkspacesApi {
           : _serializers.serialize(workspaceShareInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -942,9 +931,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ShareLink),
-            ) as ShareLink;
+                  rawResponse,
+                  specifiedType: const FullType(ShareLink),
+                )
+                as ShareLink;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -993,21 +983,21 @@ class WorkspacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/workspaces/{workspaceId}'.replaceAll(
-        '{' r'workspaceId' '}',
-        encodeQueryParameter(_serializers, workspaceId, const FullType(String))
-            .toString());
+      '{'
+      r'workspaceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        workspaceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1022,10 +1012,7 @@ class WorkspacesApi {
       _bodyData = _serializers.serialize(workspacePatch, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1048,9 +1035,10 @@ class WorkspacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Workspace),
-            ) as Workspace;
+                  rawResponse,
+                  specifiedType: const FullType(Workspace),
+                )
+                as Workspace;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

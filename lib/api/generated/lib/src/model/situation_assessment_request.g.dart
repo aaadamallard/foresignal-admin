@@ -7,20 +7,20 @@ part of 'situation_assessment_request.dart';
 // **************************************************************************
 
 const SituationAssessmentRequestRolesEnum
-    _$situationAssessmentRequestRolesEnum_analyst =
+_$situationAssessmentRequestRolesEnum_analyst =
     const SituationAssessmentRequestRolesEnum._('analyst');
 const SituationAssessmentRequestRolesEnum
-    _$situationAssessmentRequestRolesEnum_redTeam =
+_$situationAssessmentRequestRolesEnum_redTeam =
     const SituationAssessmentRequestRolesEnum._('redTeam');
 const SituationAssessmentRequestRolesEnum
-    _$situationAssessmentRequestRolesEnum_forecaster =
+_$situationAssessmentRequestRolesEnum_forecaster =
     const SituationAssessmentRequestRolesEnum._('forecaster');
 const SituationAssessmentRequestRolesEnum
-    _$situationAssessmentRequestRolesEnum_proposer =
+_$situationAssessmentRequestRolesEnum_proposer =
     const SituationAssessmentRequestRolesEnum._('proposer');
 
 SituationAssessmentRequestRolesEnum
-    _$situationAssessmentRequestRolesEnumValueOf(String name) {
+_$situationAssessmentRequestRolesEnumValueOf(String name) {
   switch (name) {
     case 'analyst':
       return _$situationAssessmentRequestRolesEnum_analyst;
@@ -36,26 +36,28 @@ SituationAssessmentRequestRolesEnum
 }
 
 final BuiltSet<SituationAssessmentRequestRolesEnum>
-    _$situationAssessmentRequestRolesEnumValues = BuiltSet<
-        SituationAssessmentRequestRolesEnum>(const <SituationAssessmentRequestRolesEnum>[
-  _$situationAssessmentRequestRolesEnum_analyst,
-  _$situationAssessmentRequestRolesEnum_redTeam,
-  _$situationAssessmentRequestRolesEnum_forecaster,
-  _$situationAssessmentRequestRolesEnum_proposer,
-]);
+_$situationAssessmentRequestRolesEnumValues =
+    BuiltSet<SituationAssessmentRequestRolesEnum>(
+      const <SituationAssessmentRequestRolesEnum>[
+        _$situationAssessmentRequestRolesEnum_analyst,
+        _$situationAssessmentRequestRolesEnum_redTeam,
+        _$situationAssessmentRequestRolesEnum_forecaster,
+        _$situationAssessmentRequestRolesEnum_proposer,
+      ],
+    );
 
 const SituationAssessmentRequestEffortEnum
-    _$situationAssessmentRequestEffortEnum_low =
+_$situationAssessmentRequestEffortEnum_low =
     const SituationAssessmentRequestEffortEnum._('low');
 const SituationAssessmentRequestEffortEnum
-    _$situationAssessmentRequestEffortEnum_medium =
+_$situationAssessmentRequestEffortEnum_medium =
     const SituationAssessmentRequestEffortEnum._('medium');
 const SituationAssessmentRequestEffortEnum
-    _$situationAssessmentRequestEffortEnum_high =
+_$situationAssessmentRequestEffortEnum_high =
     const SituationAssessmentRequestEffortEnum._('high');
 
 SituationAssessmentRequestEffortEnum
-    _$situationAssessmentRequestEffortEnumValueOf(String name) {
+_$situationAssessmentRequestEffortEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$situationAssessmentRequestEffortEnum_low;
@@ -69,18 +71,20 @@ SituationAssessmentRequestEffortEnum
 }
 
 final BuiltSet<SituationAssessmentRequestEffortEnum>
-    _$situationAssessmentRequestEffortEnumValues = BuiltSet<
-        SituationAssessmentRequestEffortEnum>(const <SituationAssessmentRequestEffortEnum>[
-  _$situationAssessmentRequestEffortEnum_low,
-  _$situationAssessmentRequestEffortEnum_medium,
-  _$situationAssessmentRequestEffortEnum_high,
-]);
+_$situationAssessmentRequestEffortEnumValues =
+    BuiltSet<SituationAssessmentRequestEffortEnum>(
+      const <SituationAssessmentRequestEffortEnum>[
+        _$situationAssessmentRequestEffortEnum_low,
+        _$situationAssessmentRequestEffortEnum_medium,
+        _$situationAssessmentRequestEffortEnum_high,
+      ],
+    );
 
 Serializer<SituationAssessmentRequestRolesEnum>
-    _$situationAssessmentRequestRolesEnumSerializer =
+_$situationAssessmentRequestRolesEnumSerializer =
     _$SituationAssessmentRequestRolesEnumSerializer();
 Serializer<SituationAssessmentRequestEffortEnum>
-    _$situationAssessmentRequestEffortEnumSerializer =
+_$situationAssessmentRequestEffortEnumSerializer =
     _$SituationAssessmentRequestEffortEnumSerializer();
 
 class _$SituationAssessmentRequestRolesEnumSerializer
@@ -100,23 +104,26 @@ class _$SituationAssessmentRequestRolesEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SituationAssessmentRequestRolesEnum
+    SituationAssessmentRequestRolesEnum,
   ];
   @override
   final String wireName = 'SituationAssessmentRequestRolesEnum';
 
   @override
   Object serialize(
-          Serializers serializers, SituationAssessmentRequestRolesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationAssessmentRequestRolesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationAssessmentRequestRolesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationAssessmentRequestRolesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationAssessmentRequestRolesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationAssessmentRequestEffortEnumSerializer
@@ -134,23 +141,26 @@ class _$SituationAssessmentRequestEffortEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SituationAssessmentRequestEffortEnum
+    SituationAssessmentRequestEffortEnum,
   ];
   @override
   final String wireName = 'SituationAssessmentRequestEffortEnum';
 
   @override
   Object serialize(
-          Serializers serializers, SituationAssessmentRequestEffortEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationAssessmentRequestEffortEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationAssessmentRequestEffortEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationAssessmentRequestEffortEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationAssessmentRequestEffortEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationAssessmentRequest extends SituationAssessmentRequest {
@@ -159,15 +169,15 @@ class _$SituationAssessmentRequest extends SituationAssessmentRequest {
   @override
   final SituationAssessmentRequestEffortEnum? effort;
 
-  factory _$SituationAssessmentRequest(
-          [void Function(SituationAssessmentRequestBuilder)? updates]) =>
-      (SituationAssessmentRequestBuilder()..update(updates))._build();
+  factory _$SituationAssessmentRequest([
+    void Function(SituationAssessmentRequestBuilder)? updates,
+  ]) => (SituationAssessmentRequestBuilder()..update(updates))._build();
 
   _$SituationAssessmentRequest._({this.roles, this.effort}) : super._();
   @override
   SituationAssessmentRequest rebuild(
-          void Function(SituationAssessmentRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationAssessmentRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationAssessmentRequestBuilder toBuilder() =>
@@ -245,7 +255,8 @@ class SituationAssessmentRequestBuilder
   _$SituationAssessmentRequest _build() {
     _$SituationAssessmentRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationAssessmentRequest._(
             roles: _roles?.build(),
             effort: effort,
@@ -257,7 +268,10 @@ class SituationAssessmentRequestBuilder
         _roles?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationAssessmentRequest', _$failedField, e.toString());
+          r'SituationAssessmentRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

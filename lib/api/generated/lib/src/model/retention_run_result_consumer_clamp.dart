@@ -17,8 +17,10 @@ part 'retention_run_result_consumer_clamp.g.dart';
 @BuiltValue()
 abstract class RetentionRunResultConsumerClamp
     implements
-        Built<RetentionRunResultConsumerClamp,
-            RetentionRunResultConsumerClampBuilder> {
+        Built<
+          RetentionRunResultConsumerClamp,
+          RetentionRunResultConsumerClampBuilder
+        > {
   @BuiltValueField(wireName: r'active')
   bool? get active;
 
@@ -30,9 +32,9 @@ abstract class RetentionRunResultConsumerClamp
 
   RetentionRunResultConsumerClamp._();
 
-  factory RetentionRunResultConsumerClamp(
-          [void updates(RetentionRunResultConsumerClampBuilder b)]) =
-      _$RetentionRunResultConsumerClamp;
+  factory RetentionRunResultConsumerClamp([
+    void updates(RetentionRunResultConsumerClampBuilder b),
+  ]) = _$RetentionRunResultConsumerClamp;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RetentionRunResultConsumerClampBuilder b) => b;
@@ -47,7 +49,7 @@ class _$RetentionRunResultConsumerClampSerializer
   @override
   final Iterable<Type> types = const [
     RetentionRunResultConsumerClamp,
-    _$RetentionRunResultConsumerClamp
+    _$RetentionRunResultConsumerClamp,
   ];
 
   @override
@@ -87,9 +89,11 @@ class _$RetentionRunResultConsumerClampSerializer
     RetentionRunResultConsumerClamp object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,26 +109,32 @@ class _$RetentionRunResultConsumerClampSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'active':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.active = valueDes;
           break;
         case r'consumer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.consumer = valueDes;
           break;
         case r'cursorSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.cursorSeq = valueDes;
           break;

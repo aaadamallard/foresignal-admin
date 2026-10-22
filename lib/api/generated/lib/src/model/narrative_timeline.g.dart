@@ -16,7 +16,8 @@ const NarrativeTimelineIntervalEnum _$narrativeTimelineIntervalEnum_P1D =
     const NarrativeTimelineIntervalEnum._('P1D');
 
 NarrativeTimelineIntervalEnum _$narrativeTimelineIntervalEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'PT5M':
       return _$narrativeTimelineIntervalEnum_PT5M;
@@ -32,16 +33,17 @@ NarrativeTimelineIntervalEnum _$narrativeTimelineIntervalEnumValueOf(
 }
 
 final BuiltSet<NarrativeTimelineIntervalEnum>
-    _$narrativeTimelineIntervalEnumValues = BuiltSet<
-        NarrativeTimelineIntervalEnum>(const <NarrativeTimelineIntervalEnum>[
-  _$narrativeTimelineIntervalEnum_PT5M,
-  _$narrativeTimelineIntervalEnum_PT15M,
-  _$narrativeTimelineIntervalEnum_PT1H,
-  _$narrativeTimelineIntervalEnum_P1D,
-]);
+_$narrativeTimelineIntervalEnumValues = BuiltSet<NarrativeTimelineIntervalEnum>(
+  const <NarrativeTimelineIntervalEnum>[
+    _$narrativeTimelineIntervalEnum_PT5M,
+    _$narrativeTimelineIntervalEnum_PT15M,
+    _$narrativeTimelineIntervalEnum_PT1H,
+    _$narrativeTimelineIntervalEnum_P1D,
+  ],
+);
 
 Serializer<NarrativeTimelineIntervalEnum>
-    _$narrativeTimelineIntervalEnumSerializer =
+_$narrativeTimelineIntervalEnumSerializer =
     _$NarrativeTimelineIntervalEnumSerializer();
 
 class _$NarrativeTimelineIntervalEnumSerializer
@@ -66,16 +68,19 @@ class _$NarrativeTimelineIntervalEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, NarrativeTimelineIntervalEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NarrativeTimelineIntervalEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NarrativeTimelineIntervalEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeTimelineIntervalEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeTimelineIntervalEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativeTimeline extends NarrativeTimeline {
@@ -86,13 +91,15 @@ class _$NarrativeTimeline extends NarrativeTimeline {
   @override
   final BuiltList<NarrativeTimelineSeriesInner> series;
 
-  factory _$NarrativeTimeline(
-          [void Function(NarrativeTimelineBuilder)? updates]) =>
-      (NarrativeTimelineBuilder()..update(updates))._build();
+  factory _$NarrativeTimeline([
+    void Function(NarrativeTimelineBuilder)? updates,
+  ]) => (NarrativeTimelineBuilder()..update(updates))._build();
 
-  _$NarrativeTimeline._(
-      {required this.narrativeId, required this.interval, required this.series})
-      : super._();
+  _$NarrativeTimeline._({
+    required this.narrativeId,
+    required this.interval,
+    required this.series,
+  }) : super._();
   @override
   NarrativeTimeline rebuild(void Function(NarrativeTimelineBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -180,12 +187,19 @@ class NarrativeTimelineBuilder
   _$NarrativeTimeline _build() {
     _$NarrativeTimeline _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NarrativeTimeline._(
             narrativeId: BuiltValueNullFieldError.checkNotNull(
-                narrativeId, r'NarrativeTimeline', 'narrativeId'),
+              narrativeId,
+              r'NarrativeTimeline',
+              'narrativeId',
+            ),
             interval: BuiltValueNullFieldError.checkNotNull(
-                interval, r'NarrativeTimeline', 'interval'),
+              interval,
+              r'NarrativeTimeline',
+              'interval',
+            ),
             series: series.build(),
           );
     } catch (_) {
@@ -195,7 +209,10 @@ class NarrativeTimelineBuilder
         series.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativeTimeline', _$failedField, e.toString());
+          r'NarrativeTimeline',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

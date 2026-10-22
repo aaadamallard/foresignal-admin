@@ -16,7 +16,8 @@ const ProvenanceChainEntryRoleEnum _$provenanceChainEntryRoleEnum_importer =
     const ProvenanceChainEntryRoleEnum._('importer');
 
 ProvenanceChainEntryRoleEnum _$provenanceChainEntryRoleEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'origin':
       return _$provenanceChainEntryRoleEnum_origin;
@@ -32,16 +33,16 @@ ProvenanceChainEntryRoleEnum _$provenanceChainEntryRoleEnumValueOf(
 }
 
 final BuiltSet<ProvenanceChainEntryRoleEnum>
-    _$provenanceChainEntryRoleEnumValues =
+_$provenanceChainEntryRoleEnumValues =
     BuiltSet<ProvenanceChainEntryRoleEnum>(const <ProvenanceChainEntryRoleEnum>[
-  _$provenanceChainEntryRoleEnum_origin,
-  _$provenanceChainEntryRoleEnum_author,
-  _$provenanceChainEntryRoleEnum_forwarder,
-  _$provenanceChainEntryRoleEnum_importer,
-]);
+      _$provenanceChainEntryRoleEnum_origin,
+      _$provenanceChainEntryRoleEnum_author,
+      _$provenanceChainEntryRoleEnum_forwarder,
+      _$provenanceChainEntryRoleEnum_importer,
+    ]);
 
 Serializer<ProvenanceChainEntryRoleEnum>
-    _$provenanceChainEntryRoleEnumSerializer =
+_$provenanceChainEntryRoleEnumSerializer =
     _$ProvenanceChainEntryRoleEnumSerializer();
 
 class _$ProvenanceChainEntryRoleEnumSerializer
@@ -65,16 +66,20 @@ class _$ProvenanceChainEntryRoleEnumSerializer
   final String wireName = 'ProvenanceChainEntryRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, ProvenanceChainEntryRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProvenanceChainEntryRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProvenanceChainEntryRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProvenanceChainEntryRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProvenanceChainEntryRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProvenanceChainEntry extends ProvenanceChainEntry {
@@ -91,22 +96,22 @@ class _$ProvenanceChainEntry extends ProvenanceChainEntry {
   @override
   final DateTime? at;
 
-  factory _$ProvenanceChainEntry(
-          [void Function(ProvenanceChainEntryBuilder)? updates]) =>
-      (ProvenanceChainEntryBuilder()..update(updates))._build();
+  factory _$ProvenanceChainEntry([
+    void Function(ProvenanceChainEntryBuilder)? updates,
+  ]) => (ProvenanceChainEntryBuilder()..update(updates))._build();
 
-  _$ProvenanceChainEntry._(
-      {required this.instanceId,
-      required this.principal,
-      required this.productRef,
-      this.manifestId,
-      this.role,
-      this.at})
-      : super._();
+  _$ProvenanceChainEntry._({
+    required this.instanceId,
+    required this.principal,
+    required this.productRef,
+    this.manifestId,
+    this.role,
+    this.at,
+  }) : super._();
   @override
   ProvenanceChainEntry rebuild(
-          void Function(ProvenanceChainEntryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProvenanceChainEntryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProvenanceChainEntryBuilder toBuilder() =>
@@ -210,14 +215,24 @@ class ProvenanceChainEntryBuilder
   ProvenanceChainEntry build() => _build();
 
   _$ProvenanceChainEntry _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProvenanceChainEntry._(
           instanceId: BuiltValueNullFieldError.checkNotNull(
-              instanceId, r'ProvenanceChainEntry', 'instanceId'),
+            instanceId,
+            r'ProvenanceChainEntry',
+            'instanceId',
+          ),
           principal: BuiltValueNullFieldError.checkNotNull(
-              principal, r'ProvenanceChainEntry', 'principal'),
+            principal,
+            r'ProvenanceChainEntry',
+            'principal',
+          ),
           productRef: BuiltValueNullFieldError.checkNotNull(
-              productRef, r'ProvenanceChainEntry', 'productRef'),
+            productRef,
+            r'ProvenanceChainEntry',
+            'productRef',
+          ),
           manifestId: manifestId,
           role: role,
           at: at,

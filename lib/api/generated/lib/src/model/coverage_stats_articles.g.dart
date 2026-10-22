@@ -16,20 +16,20 @@ class _$CoverageStatsArticles extends CoverageStatsArticles {
   @override
   final int unrated;
 
-  factory _$CoverageStatsArticles(
-          [void Function(CoverageStatsArticlesBuilder)? updates]) =>
-      (CoverageStatsArticlesBuilder()..update(updates))._build();
+  factory _$CoverageStatsArticles([
+    void Function(CoverageStatsArticlesBuilder)? updates,
+  ]) => (CoverageStatsArticlesBuilder()..update(updates))._build();
 
-  _$CoverageStatsArticles._(
-      {required this.left,
-      required this.center,
-      required this.right,
-      required this.unrated})
-      : super._();
+  _$CoverageStatsArticles._({
+    required this.left,
+    required this.center,
+    required this.right,
+    required this.unrated,
+  }) : super._();
   @override
   CoverageStatsArticles rebuild(
-          void Function(CoverageStatsArticlesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CoverageStatsArticlesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CoverageStatsArticlesBuilder toBuilder() =>
@@ -117,16 +117,29 @@ class CoverageStatsArticlesBuilder
   CoverageStatsArticles build() => _build();
 
   _$CoverageStatsArticles _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CoverageStatsArticles._(
           left: BuiltValueNullFieldError.checkNotNull(
-              left, r'CoverageStatsArticles', 'left'),
+            left,
+            r'CoverageStatsArticles',
+            'left',
+          ),
           center: BuiltValueNullFieldError.checkNotNull(
-              center, r'CoverageStatsArticles', 'center'),
+            center,
+            r'CoverageStatsArticles',
+            'center',
+          ),
           right: BuiltValueNullFieldError.checkNotNull(
-              right, r'CoverageStatsArticles', 'right'),
+            right,
+            r'CoverageStatsArticles',
+            'right',
+          ),
           unrated: BuiltValueNullFieldError.checkNotNull(
-              unrated, r'CoverageStatsArticles', 'unrated'),
+            unrated,
+            r'CoverageStatsArticles',
+            'unrated',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -53,7 +53,7 @@ class _$SocialCollectionPathSerializer
   @override
   final Iterable<Type> types = const [
     SocialCollectionPath,
-    _$SocialCollectionPath
+    _$SocialCollectionPath,
   ];
 
   @override
@@ -92,9 +92,11 @@ class _$SocialCollectionPathSerializer
     SocialCollectionPath object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,31 +112,39 @@ class _$SocialCollectionPathSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialCollectionPathPathEnum),
-          ) as SocialCollectionPathPathEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialCollectionPathPathEnum),
+                  )
+                  as SocialCollectionPathPathEnum;
           result.path = valueDes;
           break;
         case r'collectionType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialCollectionType),
-          ) as SocialCollectionType;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialCollectionType),
+                  )
+                  as SocialCollectionType;
           result.collectionType = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'feedsBaselines':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.feedsBaselines = valueDes;
           break;
         default:

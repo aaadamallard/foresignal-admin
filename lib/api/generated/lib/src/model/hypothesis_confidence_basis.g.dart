@@ -32,28 +32,28 @@ class _$HypothesisConfidenceBasis extends HypothesisConfidenceBasis {
   @override
   final int? circularSupports;
 
-  factory _$HypothesisConfidenceBasis(
-          [void Function(HypothesisConfidenceBasisBuilder)? updates]) =>
-      (HypothesisConfidenceBasisBuilder()..update(updates))._build();
+  factory _$HypothesisConfidenceBasis([
+    void Function(HypothesisConfidenceBasisBuilder)? updates,
+  ]) => (HypothesisConfidenceBasisBuilder()..update(updates))._build();
 
-  _$HypothesisConfidenceBasis._(
-      {this.observedIndicators,
-      this.families,
-      this.evidenceQuality,
-      this.sourceReliability,
-      this.coverage,
-      this.reportingDensity,
-      this.forecasterAgreement,
-      this.brokenLinchpin,
-      this.rule,
-      this.newsCoverage,
-      this.circularReporting,
-      this.circularSupports})
-      : super._();
+  _$HypothesisConfidenceBasis._({
+    this.observedIndicators,
+    this.families,
+    this.evidenceQuality,
+    this.sourceReliability,
+    this.coverage,
+    this.reportingDensity,
+    this.forecasterAgreement,
+    this.brokenLinchpin,
+    this.rule,
+    this.newsCoverage,
+    this.circularReporting,
+    this.circularSupports,
+  }) : super._();
   @override
   HypothesisConfidenceBasis rebuild(
-          void Function(HypothesisConfidenceBasisBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisConfidenceBasisBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisConfidenceBasisBuilder toBuilder() =>
@@ -214,7 +214,8 @@ class HypothesisConfidenceBasisBuilder
   HypothesisConfidenceBasis build() => _build();
 
   _$HypothesisConfidenceBasis _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisConfidenceBasis._(
           observedIndicators: observedIndicators,
           families: families,

@@ -46,7 +46,7 @@ class _$ObjectResolveResultSerializer
   @override
   final Iterable<Type> types = const [
     ObjectResolveResult,
-    _$ObjectResolveResult
+    _$ObjectResolveResult,
   ];
 
   @override
@@ -82,9 +82,11 @@ class _$ObjectResolveResultSerializer
     ObjectResolveResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,25 +102,34 @@ class _$ObjectResolveResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ObjectEnvelope)]),
-          ) as BuiltList<ObjectEnvelope>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ObjectEnvelope),
+                    ]),
+                  )
+                  as BuiltList<ObjectEnvelope>;
           result.items.replace(valueDes);
           break;
         case r'missing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.missing.replace(valueDes);
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;

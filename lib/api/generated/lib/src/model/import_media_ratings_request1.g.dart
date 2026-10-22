@@ -10,15 +10,15 @@ class _$ImportMediaRatingsRequest1 extends ImportMediaRatingsRequest1 {
   @override
   final BuiltList<ImportMediaRatingsRequest1RowsInner> rows;
 
-  factory _$ImportMediaRatingsRequest1(
-          [void Function(ImportMediaRatingsRequest1Builder)? updates]) =>
-      (ImportMediaRatingsRequest1Builder()..update(updates))._build();
+  factory _$ImportMediaRatingsRequest1([
+    void Function(ImportMediaRatingsRequest1Builder)? updates,
+  ]) => (ImportMediaRatingsRequest1Builder()..update(updates))._build();
 
   _$ImportMediaRatingsRequest1._({required this.rows}) : super._();
   @override
   ImportMediaRatingsRequest1 rebuild(
-          void Function(ImportMediaRatingsRequest1Builder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ImportMediaRatingsRequest1Builder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ImportMediaRatingsRequest1Builder toBuilder() =>
@@ -40,9 +40,9 @@ class _$ImportMediaRatingsRequest1 extends ImportMediaRatingsRequest1 {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ImportMediaRatingsRequest1')
-          ..add('rows', rows))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ImportMediaRatingsRequest1',
+    )..add('rows', rows)).toString();
   }
 }
 
@@ -86,10 +86,7 @@ class ImportMediaRatingsRequest1Builder
   _$ImportMediaRatingsRequest1 _build() {
     _$ImportMediaRatingsRequest1 _$result;
     try {
-      _$result = _$v ??
-          _$ImportMediaRatingsRequest1._(
-            rows: rows.build(),
-          );
+      _$result = _$v ?? _$ImportMediaRatingsRequest1._(rows: rows.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -97,7 +94,10 @@ class ImportMediaRatingsRequest1Builder
         rows.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ImportMediaRatingsRequest1', _$failedField, e.toString());
+          r'ImportMediaRatingsRequest1',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

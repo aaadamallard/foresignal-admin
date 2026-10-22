@@ -14,12 +14,12 @@ class _$ForecasterUpdate extends ForecasterUpdate {
   @override
   final String? name;
 
-  factory _$ForecasterUpdate(
-          [void Function(ForecasterUpdateBuilder)? updates]) =>
-      (ForecasterUpdateBuilder()..update(updates))._build();
+  factory _$ForecasterUpdate([
+    void Function(ForecasterUpdateBuilder)? updates,
+  ]) => (ForecasterUpdateBuilder()..update(updates))._build();
 
   _$ForecasterUpdate._({required this.active, this.config, this.name})
-      : super._();
+    : super._();
   @override
   ForecasterUpdate rebuild(void Function(ForecasterUpdateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -106,10 +106,14 @@ class ForecasterUpdateBuilder
   _$ForecasterUpdate _build() {
     _$ForecasterUpdate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecasterUpdate._(
             active: BuiltValueNullFieldError.checkNotNull(
-                active, r'ForecasterUpdate', 'active'),
+              active,
+              r'ForecasterUpdate',
+              'active',
+            ),
             config: _config?.build(),
             name: name,
           );
@@ -120,7 +124,10 @@ class ForecasterUpdateBuilder
         _config?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecasterUpdate', _$failedField, e.toString());
+          r'ForecasterUpdate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,89 +7,110 @@ part of 'common_dependencies_dependencies_inner_paths_inner.dart';
 // **************************************************************************
 
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_memberOf =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_memberOf =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'memberOf');
+      'memberOf',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_observedBy =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_observedBy =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'observedBy');
+      'observedBy',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_sameAs =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_sameAs =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'sameAs');
+      'sameAs',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_locatedIn =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_locatedIn =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'locatedIn');
+      'locatedIn',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_near =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_near =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'near');
+      'near',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_dependsOn =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_dependsOn =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'dependsOn');
+      'dependsOn',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affects =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affects =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'affects');
+      'affects',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_derivedFrom =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_derivedFrom =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'derivedFrom');
+      'derivedFrom',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceFor =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceFor =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'evidenceFor');
+      'evidenceFor',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceAgainst =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceAgainst =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'evidenceAgainst');
+      'evidenceAgainst',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_about =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_about =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'about');
+      'about',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_mentions =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_mentions =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'mentions');
+      'mentions',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_precedes =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_precedes =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'precedes');
+      'precedes',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_causes =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_causes =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'causes');
+      'causes',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_relatedTo =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_relatedTo =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'relatedTo');
+      'relatedTo',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_owns =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_owns =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'owns');
+      'owns',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_controls =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_controls =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'controls');
+      'controls',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_officerOf =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_officerOf =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'officerOf');
+      'officerOf',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_beneficialOwner =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_beneficialOwner =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'beneficialOwner');
+      'beneficialOwner',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affiliatedWith =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affiliatedWith =
     const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-        'affiliatedWith');
+      'affiliatedWith',
+    );
 
 CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValueOf(
-        String name) {
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValueOf(
+  String name,
+) {
   switch (name) {
     case 'memberOf':
       return _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_memberOf;
@@ -137,51 +158,57 @@ CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
 }
 
 final BuiltSet<CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValues =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValues =
     BuiltSet<
-        CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>(const <CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>[
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_memberOf,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_observedBy,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_sameAs,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_locatedIn,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_near,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_dependsOn,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affects,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_derivedFrom,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceFor,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceAgainst,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_about,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_mentions,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_precedes,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_causes,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_relatedTo,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_owns,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_controls,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_officerOf,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_beneficialOwner,
-  _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affiliatedWith,
-]);
+      CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+    >(const <CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>[
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_memberOf,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_observedBy,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_sameAs,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_locatedIn,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_near,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_dependsOn,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affects,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_derivedFrom,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceFor,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceAgainst,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_about,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_mentions,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_precedes,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_causes,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_relatedTo,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_owns,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_controls,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_officerOf,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_beneficialOwner,
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affiliatedWith,
+    ]);
 
 const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_confirmed =
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_confirmed =
     const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum._(
-        'confirmed');
+      'confirmed',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_likely =
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_likely =
     const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum._(
-        'likely');
+      'likely',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_possible =
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_possible =
     const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum._(
-        'possible');
+      'possible',
+    );
 const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative =
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative =
     const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum._(
-        'speculative');
+      'speculative',
+    );
 
 CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValueOf(
-        String name) {
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValueOf(
+  String name,
+) {
   switch (name) {
     case 'confirmed':
       return _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_confirmed;
@@ -197,27 +224,30 @@ CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
 }
 
 final BuiltSet<
-        CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>
-    _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValues =
+  CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+>
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValues =
     BuiltSet<
-        CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>(const <CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>[
-  _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_confirmed,
-  _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_likely,
-  _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_possible,
-  _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative,
-]);
+      CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+    >(const <CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>[
+      _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_confirmed,
+      _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_likely,
+      _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_possible,
+      _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative,
+    ]);
 
 Serializer<CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>
-    _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer =
+_$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer =
     _$CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer();
 Serializer<CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>
-    _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSerializer =
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSerializer =
     _$CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSerializer();
 
 class _$CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer
     implements
         PrimitiveSerializer<
-            CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum> {
+          CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'memberOf': 'member-of',
     'observedBy': 'observed-by',
@@ -265,30 +295,34 @@ class _$CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum,
   ];
   @override
   final String wireName =
       'CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSerializer
     implements
         PrimitiveSerializer<
-            CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum> {
+          CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'confirmed': 'confirmed',
     'likely': 'likely',
@@ -304,7 +338,7 @@ class _$CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSeriali
 
   @override
   final Iterable<Type> types = const <Type>[
-    CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+    CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum,
   ];
   @override
   final String wireName =
@@ -312,18 +346,20 @@ class _$CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSeriali
 
   @override
   Object serialize(
-          Serializers serializers,
-          CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-              object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) =>
       CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+        _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+      );
 }
 
 class _$CommonDependenciesDependenciesInnerPathsInner
@@ -334,29 +370,30 @@ class _$CommonDependenciesDependenciesInnerPathsInner
   final BuiltList<String> hops;
   @override
   final BuiltList<
-          CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>?
-      relationTypes;
+    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+  >?
+  relationTypes;
   @override
   final CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-      weakestEdgeLabel;
+  weakestEdgeLabel;
 
-  factory _$CommonDependenciesDependenciesInnerPathsInner(
-          [void Function(CommonDependenciesDependenciesInnerPathsInnerBuilder)?
-              updates]) =>
+  factory _$CommonDependenciesDependenciesInnerPathsInner([
+    void Function(CommonDependenciesDependenciesInnerPathsInnerBuilder)?
+    updates,
+  ]) =>
       (CommonDependenciesDependenciesInnerPathsInnerBuilder()..update(updates))
           ._build();
 
-  _$CommonDependenciesDependenciesInnerPathsInner._(
-      {required this.from,
-      required this.hops,
-      this.relationTypes,
-      required this.weakestEdgeLabel})
-      : super._();
+  _$CommonDependenciesDependenciesInnerPathsInner._({
+    required this.from,
+    required this.hops,
+    this.relationTypes,
+    required this.weakestEdgeLabel,
+  }) : super._();
   @override
   CommonDependenciesDependenciesInnerPathsInner rebuild(
-          void Function(CommonDependenciesDependenciesInnerPathsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CommonDependenciesDependenciesInnerPathsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CommonDependenciesDependenciesInnerPathsInnerBuilder toBuilder() =>
@@ -386,7 +423,8 @@ class _$CommonDependenciesDependenciesInnerPathsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CommonDependenciesDependenciesInnerPathsInner')
+            r'CommonDependenciesDependenciesInnerPathsInner',
+          )
           ..add('from', from)
           ..add('hops', hops)
           ..add('relationTypes', relationTypes)
@@ -397,8 +435,10 @@ class _$CommonDependenciesDependenciesInnerPathsInner
 
 class CommonDependenciesDependenciesInnerPathsInnerBuilder
     implements
-        Builder<CommonDependenciesDependenciesInnerPathsInner,
-            CommonDependenciesDependenciesInnerPathsInnerBuilder> {
+        Builder<
+          CommonDependenciesDependenciesInnerPathsInner,
+          CommonDependenciesDependenciesInnerPathsInnerBuilder
+        > {
   _$CommonDependenciesDependenciesInnerPathsInner? _$v;
 
   String? _from;
@@ -410,24 +450,25 @@ class CommonDependenciesDependenciesInnerPathsInnerBuilder
   set hops(ListBuilder<String>? hops) => _$this._hops = hops;
 
   ListBuilder<CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>?
-      _relationTypes;
+  _relationTypes;
   ListBuilder<CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>
-      get relationTypes => _$this._relationTypes ??= ListBuilder<
-          CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>();
+  get relationTypes => _$this._relationTypes ??=
+      ListBuilder<
+        CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+      >();
   set relationTypes(
-          ListBuilder<
-                  CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>?
-              relationTypes) =>
-      _$this._relationTypes = relationTypes;
+    ListBuilder<CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>?
+    relationTypes,
+  ) => _$this._relationTypes = relationTypes;
 
   CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum?
-      _weakestEdgeLabel;
+  _weakestEdgeLabel;
   CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum?
-      get weakestEdgeLabel => _$this._weakestEdgeLabel;
+  get weakestEdgeLabel => _$this._weakestEdgeLabel;
   set weakestEdgeLabel(
-          CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum?
-              weakestEdgeLabel) =>
-      _$this._weakestEdgeLabel = weakestEdgeLabel;
+    CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum?
+    weakestEdgeLabel,
+  ) => _$this._weakestEdgeLabel = weakestEdgeLabel;
 
   CommonDependenciesDependenciesInnerPathsInnerBuilder() {
     CommonDependenciesDependenciesInnerPathsInner._defaults(this);
@@ -452,8 +493,9 @@ class CommonDependenciesDependenciesInnerPathsInnerBuilder
 
   @override
   void update(
-      void Function(CommonDependenciesDependenciesInnerPathsInnerBuilder)?
-          updates) {
+    void Function(CommonDependenciesDependenciesInnerPathsInnerBuilder)?
+    updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -463,16 +505,21 @@ class CommonDependenciesDependenciesInnerPathsInnerBuilder
   _$CommonDependenciesDependenciesInnerPathsInner _build() {
     _$CommonDependenciesDependenciesInnerPathsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CommonDependenciesDependenciesInnerPathsInner._(
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'CommonDependenciesDependenciesInnerPathsInner', 'from'),
+              from,
+              r'CommonDependenciesDependenciesInnerPathsInner',
+              'from',
+            ),
             hops: hops.build(),
             relationTypes: _relationTypes?.build(),
             weakestEdgeLabel: BuiltValueNullFieldError.checkNotNull(
-                weakestEdgeLabel,
-                r'CommonDependenciesDependenciesInnerPathsInner',
-                'weakestEdgeLabel'),
+              weakestEdgeLabel,
+              r'CommonDependenciesDependenciesInnerPathsInner',
+              'weakestEdgeLabel',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -483,9 +530,10 @@ class CommonDependenciesDependenciesInnerPathsInnerBuilder
         _relationTypes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CommonDependenciesDependenciesInnerPathsInner',
-            _$failedField,
-            e.toString());
+          r'CommonDependenciesDependenciesInnerPathsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

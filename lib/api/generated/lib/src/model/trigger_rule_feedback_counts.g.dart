@@ -16,17 +16,20 @@ class _$TriggerRuleFeedbackCounts extends TriggerRuleFeedbackCounts {
   @override
   final int? falsePositive;
 
-  factory _$TriggerRuleFeedbackCounts(
-          [void Function(TriggerRuleFeedbackCountsBuilder)? updates]) =>
-      (TriggerRuleFeedbackCountsBuilder()..update(updates))._build();
+  factory _$TriggerRuleFeedbackCounts([
+    void Function(TriggerRuleFeedbackCountsBuilder)? updates,
+  ]) => (TriggerRuleFeedbackCountsBuilder()..update(updates))._build();
 
-  _$TriggerRuleFeedbackCounts._(
-      {this.useful, this.noise, this.late_, this.falsePositive})
-      : super._();
+  _$TriggerRuleFeedbackCounts._({
+    this.useful,
+    this.noise,
+    this.late_,
+    this.falsePositive,
+  }) : super._();
   @override
   TriggerRuleFeedbackCounts rebuild(
-          void Function(TriggerRuleFeedbackCountsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TriggerRuleFeedbackCountsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TriggerRuleFeedbackCountsBuilder toBuilder() =>
@@ -116,7 +119,8 @@ class TriggerRuleFeedbackCountsBuilder
   TriggerRuleFeedbackCounts build() => _build();
 
   _$TriggerRuleFeedbackCounts _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TriggerRuleFeedbackCounts._(
           useful: useful,
           noise: noise,

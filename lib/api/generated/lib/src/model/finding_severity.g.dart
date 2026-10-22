@@ -23,12 +23,9 @@ FindingSeverity _$valueOf(String name) {
   }
 }
 
-final BuiltSet<FindingSeverity> _$values =
-    BuiltSet<FindingSeverity>(const <FindingSeverity>[
-  _$info,
-  _$notable,
-  _$significant,
-]);
+final BuiltSet<FindingSeverity> _$values = BuiltSet<FindingSeverity>(
+  const <FindingSeverity>[_$info, _$notable, _$significant],
+);
 
 class _$FindingSeverityMeta {
   const _$FindingSeverityMeta();
@@ -39,7 +36,7 @@ class _$FindingSeverityMeta {
   BuiltSet<FindingSeverity> get values => _$values;
 }
 
-abstract class _$FindingSeverityMixin {
+mixin _$FindingSeverityMixin {
   // ignore: non_constant_identifier_names
   _$FindingSeverityMeta get FindingSeverity => const _$FindingSeverityMeta();
 }
@@ -66,15 +63,20 @@ class _$FindingSeveritySerializer
   final String wireName = 'FindingSeverity';
 
   @override
-  Object serialize(Serializers serializers, FindingSeverity object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FindingSeverity object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  FindingSeverity deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FindingSeverity.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  FindingSeverity deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FindingSeverity.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

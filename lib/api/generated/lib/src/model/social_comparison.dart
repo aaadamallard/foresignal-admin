@@ -194,8 +194,9 @@ class _$SocialComparisonSerializer
     yield r'physicalEvidence';
     yield serializers.serialize(
       object.physicalEvidence,
-      specifiedType:
-          const FullType(BuiltList, [FullType(SocialPhysicalEvidence)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SocialPhysicalEvidence),
+      ]),
     );
     yield r'detectability';
     yield serializers.serialize(
@@ -264,8 +265,9 @@ class _$SocialComparisonSerializer
       yield r'revisions';
       yield serializers.serialize(
         object.revisions,
-        specifiedType:
-            const FullType(BuiltList, [FullType(SocialComparisonRevision)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SocialComparisonRevision),
+        ]),
       );
     }
     if (object.caveats != null) {
@@ -283,9 +285,11 @@ class _$SocialComparisonSerializer
     SocialComparison object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -301,166 +305,213 @@ class _$SocialComparisonSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'claimId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.claimId = valueDes;
           break;
         case r'narrativeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.narrativeId = valueDes;
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.signalFamily = valueDes;
           break;
         case r'place':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ClaimPlace),
-          ) as ClaimPlace;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ClaimPlace),
+                  )
+                  as ClaimPlace;
           result.place.replace(valueDes);
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimeRange),
-          ) as TimeRange;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimeRange),
+                  )
+                  as TimeRange;
           result.window.replace(valueDes);
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialComparisonStatusEnum),
-          ) as SocialComparisonStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialComparisonStatusEnum),
+                  )
+                  as SocialComparisonStatusEnum;
           result.status = valueDes;
           break;
         case r'physicalEvidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SocialPhysicalEvidence)]),
-          ) as BuiltList<SocialPhysicalEvidence>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SocialPhysicalEvidence),
+                    ]),
+                  )
+                  as BuiltList<SocialPhysicalEvidence>;
           result.physicalEvidence.replace(valueDes);
           break;
         case r'detectability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialComparisonDetectability),
-          ) as SocialComparisonDetectability;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialComparisonDetectability,
+                    ),
+                  )
+                  as SocialComparisonDetectability;
           result.detectability.replace(valueDes);
           break;
         case r'leadTimes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialLeadTimes),
-          ) as SocialLeadTimes;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialLeadTimes),
+                  )
+                  as SocialLeadTimes;
           result.leadTimes.replace(valueDes);
           break;
         case r'contradiction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SocialComparisonContradiction),
-          ) as SocialComparisonContradiction?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialComparisonContradiction,
+                    ),
+                  )
+                  as SocialComparisonContradiction?;
           if (valueDes == null) continue;
           result.contradiction.replace(valueDes);
           break;
         case r'foundBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialComparisonFoundByEnum),
-          ) as SocialComparisonFoundByEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialComparisonFoundByEnum),
+                  )
+                  as SocialComparisonFoundByEnum;
           result.foundBy = valueDes;
           break;
         case r'cueId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cueId = valueDes;
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.questionId = valueDes;
           break;
         case r'revision':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.revision = valueDes;
           break;
         case r'finalAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.finalAt = valueDes;
           break;
         case r'comparator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.comparator.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.manifestId = valueDes;
           break;
         case r'evaluatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.evaluatedAt = valueDes;
           break;
         case r'revisions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SocialComparisonRevision)]),
-          ) as BuiltList<SocialComparisonRevision>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SocialComparisonRevision),
+                    ]),
+                  )
+                  as BuiltList<SocialComparisonRevision>?;
           if (valueDes == null) continue;
           result.revisions.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;

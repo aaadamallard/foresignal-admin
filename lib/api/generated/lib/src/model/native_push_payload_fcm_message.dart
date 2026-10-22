@@ -39,9 +39,9 @@ abstract class NativePushPayloadFcmMessage
 
   NativePushPayloadFcmMessage._();
 
-  factory NativePushPayloadFcmMessage(
-          [void updates(NativePushPayloadFcmMessageBuilder b)]) =
-      _$NativePushPayloadFcmMessage;
+  factory NativePushPayloadFcmMessage([
+    void updates(NativePushPayloadFcmMessageBuilder b),
+  ]) = _$NativePushPayloadFcmMessage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NativePushPayloadFcmMessageBuilder b) => b;
@@ -56,7 +56,7 @@ class _$NativePushPayloadFcmMessageSerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadFcmMessage,
-    _$NativePushPayloadFcmMessage
+    _$NativePushPayloadFcmMessage,
   ];
 
   @override
@@ -88,8 +88,10 @@ class _$NativePushPayloadFcmMessageSerializer
       yield r'apns';
       yield serializers.serialize(
         object.apns,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -100,9 +102,11 @@ class _$NativePushPayloadFcmMessageSerializer
     NativePushPayloadFcmMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,34 +122,47 @@ class _$NativePushPayloadFcmMessageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.token = valueDes;
           break;
         case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NativePushPayloadFcmMessageData),
-          ) as NativePushPayloadFcmMessageData;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NativePushPayloadFcmMessageData,
+                    ),
+                  )
+                  as NativePushPayloadFcmMessageData;
           result.data.replace(valueDes);
           break;
         case r'android':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(NativePushPayloadFcmMessageAndroid),
-          ) as NativePushPayloadFcmMessageAndroid?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadFcmMessageAndroid,
+                    ),
+                  )
+                  as NativePushPayloadFcmMessageAndroid?;
           if (valueDes == null) continue;
           result.android.replace(valueDes);
           break;
         case r'apns':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.apns.replace(valueDes);
           break;

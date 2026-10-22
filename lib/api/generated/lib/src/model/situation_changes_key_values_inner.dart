@@ -18,8 +18,10 @@ part 'situation_changes_key_values_inner.g.dart';
 @BuiltValue()
 abstract class SituationChangesKeyValuesInner
     implements
-        Built<SituationChangesKeyValuesInner,
-            SituationChangesKeyValuesInnerBuilder> {
+        Built<
+          SituationChangesKeyValuesInner,
+          SituationChangesKeyValuesInnerBuilder
+        > {
   /// Series reference (Intelligence-Design §4.3): `series:{sourceId}/{seriesId}` (093/117 series; `series:imf-portwatch-chokepoints/{portId}` for PortWatch daily transits), `rollup:{hour|day}/{sourceId|*}/{kind}/{region|cell:h3}` (activity rollups; `*` is the cross-source event count with canonical events counted once) `rule:{ruleId}/{groupKey}` (100 anomaly rule samples) or `rollup:news/{topicId|situationId}/{bucket}` (133: daily news coverage in evidence groups by lean bucket left, center, right, unrated or state); or `social:{topic|place|entity}:{id}/{platform}/{metric}[/{language}]` (135: hourly social mention volume of a scope on one network, metric posts, uniqueAuthors, reposts or engagement, every language summed unless a language bucket is given; `social:all/{platform}/denominator[/{language}]` is the platform-language denominator; complete and paged collection only)
   @BuiltValueField(wireName: r'ref')
   String get ref;
@@ -36,9 +38,9 @@ abstract class SituationChangesKeyValuesInner
 
   SituationChangesKeyValuesInner._();
 
-  factory SituationChangesKeyValuesInner(
-          [void updates(SituationChangesKeyValuesInnerBuilder b)]) =
-      _$SituationChangesKeyValuesInner;
+  factory SituationChangesKeyValuesInner([
+    void updates(SituationChangesKeyValuesInnerBuilder b),
+  ]) = _$SituationChangesKeyValuesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationChangesKeyValuesInnerBuilder b) => b;
@@ -53,7 +55,7 @@ class _$SituationChangesKeyValuesInnerSerializer
   @override
   final Iterable<Type> types = const [
     SituationChangesKeyValuesInner,
-    _$SituationChangesKeyValuesInner
+    _$SituationChangesKeyValuesInner,
   ];
 
   @override
@@ -98,9 +100,11 @@ class _$SituationChangesKeyValuesInnerSerializer
     SituationChangesKeyValuesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,33 +120,41 @@ class _$SituationChangesKeyValuesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.before = valueDes;
           break;
         case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.after = valueDes;
           break;
         case r'withheld':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.withheld = valueDes;
           break;

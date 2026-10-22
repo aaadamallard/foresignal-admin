@@ -29,17 +29,17 @@ class _$TileKey extends TileKey {
   factory _$TileKey([void Function(TileKeyBuilder)? updates]) =>
       (TileKeyBuilder()..update(updates))._build();
 
-  _$TileKey._(
-      {required this.id,
-      required this.name,
-      required this.keyPrefix,
-      required this.prefixes,
-      this.restrictions,
-      required this.createdAt,
-      required this.expiresAt,
-      this.lastUsedAt,
-      this.revokedAt})
-      : super._();
+  _$TileKey._({
+    required this.id,
+    required this.name,
+    required this.keyPrefix,
+    required this.prefixes,
+    this.restrictions,
+    required this.createdAt,
+    required this.expiresAt,
+    this.lastUsedAt,
+    this.revokedAt,
+  }) : super._();
   @override
   TileKey rebuild(void Function(TileKeyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -173,19 +173,32 @@ class TileKeyBuilder implements Builder<TileKey, TileKeyBuilder> {
   _$TileKey _build() {
     _$TileKey _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TileKey._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'TileKey', 'id'),
-            name:
-                BuiltValueNullFieldError.checkNotNull(name, r'TileKey', 'name'),
+            name: BuiltValueNullFieldError.checkNotNull(
+              name,
+              r'TileKey',
+              'name',
+            ),
             keyPrefix: BuiltValueNullFieldError.checkNotNull(
-                keyPrefix, r'TileKey', 'keyPrefix'),
+              keyPrefix,
+              r'TileKey',
+              'keyPrefix',
+            ),
             prefixes: prefixes.build(),
             restrictions: _restrictions?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'TileKey', 'createdAt'),
+              createdAt,
+              r'TileKey',
+              'createdAt',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'TileKey', 'expiresAt'),
+              expiresAt,
+              r'TileKey',
+              'expiresAt',
+            ),
             lastUsedAt: lastUsedAt,
             revokedAt: revokedAt,
           );
@@ -198,7 +211,10 @@ class TileKeyBuilder implements Builder<TileKey, TileKeyBuilder> {
         _restrictions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TileKey', _$failedField, e.toString());
+          r'TileKey',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

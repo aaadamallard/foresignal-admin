@@ -11,11 +11,12 @@ const GetPrincipal200ResponseKindEnum _$getPrincipal200ResponseKindEnum_person =
 const GetPrincipal200ResponseKindEnum _$getPrincipal200ResponseKindEnum_agent =
     const GetPrincipal200ResponseKindEnum._('agent');
 const GetPrincipal200ResponseKindEnum
-    _$getPrincipal200ResponseKindEnum_service =
+_$getPrincipal200ResponseKindEnum_service =
     const GetPrincipal200ResponseKindEnum._('service');
 
 GetPrincipal200ResponseKindEnum _$getPrincipal200ResponseKindEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'person':
       return _$getPrincipal200ResponseKindEnum_person;
@@ -29,15 +30,17 @@ GetPrincipal200ResponseKindEnum _$getPrincipal200ResponseKindEnumValueOf(
 }
 
 final BuiltSet<GetPrincipal200ResponseKindEnum>
-    _$getPrincipal200ResponseKindEnumValues = BuiltSet<
-        GetPrincipal200ResponseKindEnum>(const <GetPrincipal200ResponseKindEnum>[
-  _$getPrincipal200ResponseKindEnum_person,
-  _$getPrincipal200ResponseKindEnum_agent,
-  _$getPrincipal200ResponseKindEnum_service,
-]);
+_$getPrincipal200ResponseKindEnumValues =
+    BuiltSet<GetPrincipal200ResponseKindEnum>(
+      const <GetPrincipal200ResponseKindEnum>[
+        _$getPrincipal200ResponseKindEnum_person,
+        _$getPrincipal200ResponseKindEnum_agent,
+        _$getPrincipal200ResponseKindEnum_service,
+      ],
+    );
 
 Serializer<GetPrincipal200ResponseKindEnum>
-    _$getPrincipal200ResponseKindEnumSerializer =
+_$getPrincipal200ResponseKindEnumSerializer =
     _$GetPrincipal200ResponseKindEnumSerializer();
 
 class _$GetPrincipal200ResponseKindEnumSerializer
@@ -60,31 +63,34 @@ class _$GetPrincipal200ResponseKindEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, GetPrincipal200ResponseKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    GetPrincipal200ResponseKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GetPrincipal200ResponseKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GetPrincipal200ResponseKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GetPrincipal200ResponseKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GetPrincipal200Response extends GetPrincipal200Response {
   @override
   final AnyOf anyOf;
 
-  factory _$GetPrincipal200Response(
-          [void Function(GetPrincipal200ResponseBuilder)? updates]) =>
-      (GetPrincipal200ResponseBuilder()..update(updates))._build();
+  factory _$GetPrincipal200Response([
+    void Function(GetPrincipal200ResponseBuilder)? updates,
+  ]) => (GetPrincipal200ResponseBuilder()..update(updates))._build();
 
   _$GetPrincipal200Response._({required this.anyOf}) : super._();
   @override
   GetPrincipal200Response rebuild(
-          void Function(GetPrincipal200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GetPrincipal200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GetPrincipal200ResponseBuilder toBuilder() =>
@@ -106,9 +112,9 @@ class _$GetPrincipal200Response extends GetPrincipal200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GetPrincipal200Response')
-          ..add('anyOf', anyOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'GetPrincipal200Response',
+    )..add('anyOf', anyOf)).toString();
   }
 }
 
@@ -148,10 +154,14 @@ class GetPrincipal200ResponseBuilder
   GetPrincipal200Response build() => _build();
 
   _$GetPrincipal200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GetPrincipal200Response._(
           anyOf: BuiltValueNullFieldError.checkNotNull(
-              anyOf, r'GetPrincipal200Response', 'anyOf'),
+            anyOf,
+            r'GetPrincipal200Response',
+            'anyOf',
+          ),
         );
     replace(_$result);
     return _$result;

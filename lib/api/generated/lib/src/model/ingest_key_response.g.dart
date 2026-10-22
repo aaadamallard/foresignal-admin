@@ -10,9 +10,9 @@ class _$IngestKeyResponse extends IngestKeyResponse {
   @override
   final String ingestKey;
 
-  factory _$IngestKeyResponse(
-          [void Function(IngestKeyResponseBuilder)? updates]) =>
-      (IngestKeyResponseBuilder()..update(updates))._build();
+  factory _$IngestKeyResponse([
+    void Function(IngestKeyResponseBuilder)? updates,
+  ]) => (IngestKeyResponseBuilder()..update(updates))._build();
 
   _$IngestKeyResponse._({required this.ingestKey}) : super._();
   @override
@@ -39,9 +39,9 @@ class _$IngestKeyResponse extends IngestKeyResponse {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IngestKeyResponse')
-          ..add('ingestKey', ingestKey))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'IngestKeyResponse',
+    )..add('ingestKey', ingestKey)).toString();
   }
 }
 
@@ -80,10 +80,14 @@ class IngestKeyResponseBuilder
   IngestKeyResponse build() => _build();
 
   _$IngestKeyResponse _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestKeyResponse._(
           ingestKey: BuiltValueNullFieldError.checkNotNull(
-              ingestKey, r'IngestKeyResponse', 'ingestKey'),
+            ingestKey,
+            r'IngestKeyResponse',
+            'ingestKey',
+          ),
         );
     replace(_$result);
     return _$result;

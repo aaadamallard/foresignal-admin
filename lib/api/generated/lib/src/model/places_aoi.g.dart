@@ -23,14 +23,14 @@ class _$PlacesAoi extends PlacesAoi {
   factory _$PlacesAoi([void Function(PlacesAoiBuilder)? updates]) =>
       (PlacesAoiBuilder()..update(updates))._build();
 
-  _$PlacesAoi._(
-      {required this.version,
-      this.geometry,
-      required this.envelope,
-      required this.placeCount,
-      this.bufferKm,
-      required this.isDefault})
-      : super._();
+  _$PlacesAoi._({
+    required this.version,
+    this.geometry,
+    required this.envelope,
+    required this.placeCount,
+    this.bufferKm,
+    required this.isDefault,
+  }) : super._();
   @override
   PlacesAoi rebuild(void Function(PlacesAoiBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,17 +137,27 @@ class PlacesAoiBuilder implements Builder<PlacesAoi, PlacesAoiBuilder> {
   _$PlacesAoi _build() {
     _$PlacesAoi _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlacesAoi._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'PlacesAoi', 'version'),
+              version,
+              r'PlacesAoi',
+              'version',
+            ),
             geometry: _geometry?.build(),
             envelope: envelope.build(),
             placeCount: BuiltValueNullFieldError.checkNotNull(
-                placeCount, r'PlacesAoi', 'placeCount'),
+              placeCount,
+              r'PlacesAoi',
+              'placeCount',
+            ),
             bufferKm: bufferKm,
             isDefault: BuiltValueNullFieldError.checkNotNull(
-                isDefault, r'PlacesAoi', 'isDefault'),
+              isDefault,
+              r'PlacesAoi',
+              'isDefault',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -158,7 +168,10 @@ class PlacesAoiBuilder implements Builder<PlacesAoi, PlacesAoiBuilder> {
         envelope.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlacesAoi', _$failedField, e.toString());
+          r'PlacesAoi',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

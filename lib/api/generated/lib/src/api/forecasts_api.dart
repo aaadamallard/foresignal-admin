@@ -65,21 +65,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/questions/{questionId}/annul'.replaceAll(
-        '{' r'questionId' '}',
-        encodeQueryParameter(_serializers, questionId, const FullType(String))
-            .toString());
+      '{'
+      r'questionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        questionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -91,14 +91,13 @@ class ForecastsApi {
 
     try {
       const _type = FullType(ForecastAnnulInput);
-      _bodyData =
-          _serializers.serialize(forecastAnnulInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        forecastAnnulInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -121,9 +120,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastQuestion),
-            ) as ForecastQuestion;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastQuestion),
+                )
+                as ForecastQuestion;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -176,16 +176,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/compare';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -197,7 +191,10 @@ class ForecastsApi {
       r'b': encodeQueryParameter(_serializers, b, const FullType(String)),
       if (category != null)
         r'category': encodeQueryParameter(
-            _serializers, category, const FullType(String)),
+          _serializers,
+          category,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -216,9 +213,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecasterComparison),
-            ) as ForecasterComparison;
+                  rawResponse,
+                  specifiedType: const FullType(ForecasterComparison),
+                )
+                as ForecasterComparison;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -267,16 +265,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/evaluations';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -288,14 +280,13 @@ class ForecastsApi {
 
     try {
       const _type = FullType(ForecastEvaluationRequest);
-      _bodyData = _serializers.serialize(forecastEvaluationRequest,
-          specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        forecastEvaluationRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -318,9 +309,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastEvaluation),
-            ) as ForecastEvaluation;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastEvaluation),
+                )
+                as ForecastEvaluation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -369,16 +361,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/questions';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -390,14 +376,13 @@ class ForecastsApi {
 
     try {
       const _type = FullType(ForecastQuestionInput);
-      _bodyData =
-          _serializers.serialize(forecastQuestionInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        forecastQuestionInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -420,9 +405,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastQuestion),
-            ) as ForecastQuestion;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastQuestion),
+                )
+                as ForecastQuestion;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -473,16 +459,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/calibration';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -492,10 +472,16 @@ class ForecastsApi {
     final _queryParameters = <String, dynamic>{
       if (forecaster != null)
         r'forecaster': encodeQueryParameter(
-            _serializers, forecaster, const FullType(String)),
+          _serializers,
+          forecaster,
+          const FullType(String),
+        ),
       if (category != null)
         r'category': encodeQueryParameter(
-            _serializers, category, const FullType(String)),
+          _serializers,
+          category,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -514,9 +500,12 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(GetForecastCalibration200Response),
-            ) as GetForecastCalibration200Response;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    GetForecastCalibration200Response,
+                  ),
+                )
+                as GetForecastCalibration200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -563,21 +552,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/evaluations/{evaluationId}'.replaceAll(
-        '{' r'evaluationId' '}',
-        encodeQueryParameter(_serializers, evaluationId, const FullType(String))
-            .toString());
+      '{'
+      r'evaluationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        evaluationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -599,9 +588,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastEvaluation),
-            ) as ForecastEvaluation;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastEvaluation),
+                )
+                as ForecastEvaluation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -648,21 +638,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/questions/{questionId}'.replaceAll(
-        '{' r'questionId' '}',
-        encodeQueryParameter(_serializers, questionId, const FullType(String))
-            .toString());
+      '{'
+      r'questionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        questionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -684,9 +674,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastQuestion),
-            ) as ForecastQuestion;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastQuestion),
+                )
+                as ForecastQuestion;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -737,21 +728,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/questions/{questionId}/history'.replaceAll(
-        '{' r'questionId' '}',
-        encodeQueryParameter(_serializers, questionId, const FullType(String))
-            .toString());
+      '{'
+      r'questionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        questionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -767,8 +758,11 @@ class ForecastsApi {
           format: ListFormat.multi,
         ),
       if (step != null)
-        r'step':
-            encodeQueryParameter(_serializers, step, const FullType(String)),
+        r'step': encodeQueryParameter(
+          _serializers,
+          step,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -787,9 +781,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastHistory),
-            ) as ForecastHistory;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastHistory),
+                )
+                as ForecastHistory;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -844,16 +839,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/scorecard';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -863,13 +852,22 @@ class ForecastsApi {
     final _queryParameters = <String, dynamic>{
       if (forecaster != null)
         r'forecaster': encodeQueryParameter(
-            _serializers, forecaster, const FullType(String)),
+          _serializers,
+          forecaster,
+          const FullType(String),
+        ),
       if (category != null)
         r'category': encodeQueryParameter(
-            _serializers, category, const FullType(String)),
+          _serializers,
+          category,
+          const FullType(String),
+        ),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
     };
@@ -890,9 +888,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastScorecard),
-            ) as ForecastScorecard;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastScorecard),
+                )
+                as ForecastScorecard;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -953,16 +952,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/questions';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -985,8 +978,11 @@ class ForecastsApi {
           format: ListFormat.multi,
         ),
       if (linked != null)
-        r'linked':
-            encodeQueryParameter(_serializers, linked, const FullType(String)),
+        r'linked': encodeQueryParameter(
+          _serializers,
+          linked,
+          const FullType(String),
+        ),
       if (resolver != null)
         r'resolver': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -996,13 +992,22 @@ class ForecastsApi {
         ),
       if (dueBefore != null)
         r'dueBefore': encodeQueryParameter(
-            _serializers, dueBefore, const FullType(DateTime)),
+          _serializers,
+          dueBefore,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1021,9 +1026,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastQuestionPage),
-            ) as ForecastQuestionPage;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastQuestionPage),
+                )
+                as ForecastQuestionPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1078,16 +1084,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/forecasters';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1103,14 +1103,23 @@ class ForecastsApi {
           format: ListFormat.multi,
         ),
       if (active != null)
-        r'active':
-            encodeQueryParameter(_serializers, active, const FullType(bool)),
+        r'active': encodeQueryParameter(
+          _serializers,
+          active,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1129,9 +1138,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecasterPage),
-            ) as ForecasterPage;
+                  rawResponse,
+                  specifiedType: const FullType(ForecasterPage),
+                )
+                as ForecasterPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1184,21 +1194,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/questions/{questionId}/forecasts'.replaceAll(
-        '{' r'questionId' '}',
-        encodeQueryParameter(_serializers, questionId, const FullType(String))
-            .toString());
+      '{'
+      r'questionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        questionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1214,11 +1224,17 @@ class ForecastsApi {
           format: ListFormat.multi,
         ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1237,9 +1253,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastPage),
-            ) as ForecastPage;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastPage),
+                )
+                as ForecastPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1286,16 +1303,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/ensemble/refit';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1317,9 +1328,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EnsembleRefitResult),
-            ) as EnsembleRefitResult;
+                  rawResponse,
+                  specifiedType: const FullType(EnsembleRefitResult),
+                )
+                as EnsembleRefitResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1368,16 +1380,10 @@ class ForecastsApi {
     final _path = r'/v1/forecasts/forecasters';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1389,14 +1395,13 @@ class ForecastsApi {
 
     try {
       const _type = FullType(ExternalForecasterRegistration);
-      _bodyData = _serializers.serialize(externalForecasterRegistration,
-          specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        externalForecasterRegistration,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1419,9 +1424,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Forecaster),
-            ) as Forecaster;
+                  rawResponse,
+                  specifiedType: const FullType(Forecaster),
+                )
+                as Forecaster;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1470,21 +1476,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/questions/{questionId}/resolve'.replaceAll(
-        '{' r'questionId' '}',
-        encodeQueryParameter(_serializers, questionId, const FullType(String))
-            .toString());
+      '{'
+      r'questionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        questionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1496,14 +1502,13 @@ class ForecastsApi {
 
     try {
       const _type = FullType(ForecastResolutionInput);
-      _bodyData =
-          _serializers.serialize(forecastResolutionInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        forecastResolutionInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1526,9 +1531,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastQuestion),
-            ) as ForecastQuestion;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastQuestion),
+                )
+                as ForecastQuestion;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1577,21 +1583,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/questions/{questionId}/forecasts'.replaceAll(
-        '{' r'questionId' '}',
-        encodeQueryParameter(_serializers, questionId, const FullType(String))
-            .toString());
+      '{'
+      r'questionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        questionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1606,10 +1612,7 @@ class ForecastsApi {
       _bodyData = _serializers.serialize(forecastInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1632,9 +1635,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Forecast),
-            ) as Forecast;
+                  rawResponse,
+                  specifiedType: const FullType(Forecast),
+                )
+                as Forecast;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1683,21 +1687,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/questions/{questionId}'.replaceAll(
-        '{' r'questionId' '}',
-        encodeQueryParameter(_serializers, questionId, const FullType(String))
-            .toString());
+      '{'
+      r'questionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        questionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1709,14 +1713,13 @@ class ForecastsApi {
 
     try {
       const _type = FullType(ForecastQuestionPatch);
-      _bodyData =
-          _serializers.serialize(forecastQuestionPatch, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        forecastQuestionPatch,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1739,9 +1742,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ForecastQuestion),
-            ) as ForecastQuestion;
+                  rawResponse,
+                  specifiedType: const FullType(ForecastQuestion),
+                )
+                as ForecastQuestion;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1790,21 +1794,21 @@ class ForecastsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/forecasts/forecasters/{forecasterId}'.replaceAll(
-        '{' r'forecasterId' '}',
-        encodeQueryParameter(_serializers, forecasterId, const FullType(String))
-            .toString());
+      '{'
+      r'forecasterId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        forecasterId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1816,14 +1820,13 @@ class ForecastsApi {
 
     try {
       const _type = FullType(ForecasterUpdate);
-      _bodyData =
-          _serializers.serialize(forecasterUpdate, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        forecasterUpdate,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1846,9 +1849,10 @@ class ForecastsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Forecaster),
-            ) as Forecaster;
+                  rawResponse,
+                  specifiedType: const FullType(Forecaster),
+                )
+                as Forecaster;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

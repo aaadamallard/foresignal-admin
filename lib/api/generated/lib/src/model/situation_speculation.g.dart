@@ -7,11 +7,12 @@ part of 'situation_speculation.dart';
 // **************************************************************************
 
 const SituationSpeculationLabelEnum
-    _$situationSpeculationLabelEnum_speculation =
+_$situationSpeculationLabelEnum_speculation =
     const SituationSpeculationLabelEnum._('speculation');
 
 SituationSpeculationLabelEnum _$situationSpeculationLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'speculation':
       return _$situationSpeculationLabelEnum_speculation;
@@ -21,17 +22,19 @@ SituationSpeculationLabelEnum _$situationSpeculationLabelEnumValueOf(
 }
 
 final BuiltSet<SituationSpeculationLabelEnum>
-    _$situationSpeculationLabelEnumValues = BuiltSet<
-        SituationSpeculationLabelEnum>(const <SituationSpeculationLabelEnum>[
-  _$situationSpeculationLabelEnum_speculation,
-]);
+_$situationSpeculationLabelEnumValues = BuiltSet<SituationSpeculationLabelEnum>(
+  const <SituationSpeculationLabelEnum>[
+    _$situationSpeculationLabelEnum_speculation,
+  ],
+);
 
 const SituationSpeculationTextOriginEnum
-    _$situationSpeculationTextOriginEnum_llm =
+_$situationSpeculationTextOriginEnum_llm =
     const SituationSpeculationTextOriginEnum._('llm');
 
 SituationSpeculationTextOriginEnum _$situationSpeculationTextOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'llm':
       return _$situationSpeculationTextOriginEnum_llm;
@@ -41,16 +44,18 @@ SituationSpeculationTextOriginEnum _$situationSpeculationTextOriginEnumValueOf(
 }
 
 final BuiltSet<SituationSpeculationTextOriginEnum>
-    _$situationSpeculationTextOriginEnumValues = BuiltSet<
-        SituationSpeculationTextOriginEnum>(const <SituationSpeculationTextOriginEnum>[
-  _$situationSpeculationTextOriginEnum_llm,
-]);
+_$situationSpeculationTextOriginEnumValues =
+    BuiltSet<SituationSpeculationTextOriginEnum>(
+      const <SituationSpeculationTextOriginEnum>[
+        _$situationSpeculationTextOriginEnum_llm,
+      ],
+    );
 
 Serializer<SituationSpeculationLabelEnum>
-    _$situationSpeculationLabelEnumSerializer =
+_$situationSpeculationLabelEnumSerializer =
     _$SituationSpeculationLabelEnumSerializer();
 Serializer<SituationSpeculationTextOriginEnum>
-    _$situationSpeculationTextOriginEnumSerializer =
+_$situationSpeculationTextOriginEnumSerializer =
     _$SituationSpeculationTextOriginEnumSerializer();
 
 class _$SituationSpeculationLabelEnumSerializer
@@ -69,16 +74,19 @@ class _$SituationSpeculationLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationSpeculationLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationSpeculationLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationSpeculationLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationSpeculationLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationSpeculationLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationSpeculationTextOriginEnumSerializer
@@ -97,16 +105,19 @@ class _$SituationSpeculationTextOriginEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationSpeculationTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationSpeculationTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationSpeculationTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationSpeculationTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationSpeculationTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationSpeculation extends SituationSpeculation {
@@ -123,22 +134,22 @@ class _$SituationSpeculation extends SituationSpeculation {
   @override
   final String? manifestId;
 
-  factory _$SituationSpeculation(
-          [void Function(SituationSpeculationBuilder)? updates]) =>
-      (SituationSpeculationBuilder()..update(updates))._build();
+  factory _$SituationSpeculation([
+    void Function(SituationSpeculationBuilder)? updates,
+  ]) => (SituationSpeculationBuilder()..update(updates))._build();
 
-  _$SituationSpeculation._(
-      {required this.label,
-      this.textOrigin,
-      this.brief,
-      this.briefGeneratedAt,
-      this.briefModel,
-      this.manifestId})
-      : super._();
+  _$SituationSpeculation._({
+    required this.label,
+    this.textOrigin,
+    this.brief,
+    this.briefGeneratedAt,
+    this.briefModel,
+    this.manifestId,
+  }) : super._();
   @override
   SituationSpeculation rebuild(
-          void Function(SituationSpeculationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationSpeculationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationSpeculationBuilder toBuilder() =>
@@ -244,10 +255,14 @@ class SituationSpeculationBuilder
   SituationSpeculation build() => _build();
 
   _$SituationSpeculation _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationSpeculation._(
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'SituationSpeculation', 'label'),
+            label,
+            r'SituationSpeculation',
+            'label',
+          ),
           textOrigin: textOrigin,
           brief: brief,
           briefGeneratedAt: briefGeneratedAt,

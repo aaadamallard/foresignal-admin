@@ -20,7 +20,8 @@ const EvidenceItemSourceReliabilityEnum _$evidenceItemSourceReliabilityEnum_F =
     const EvidenceItemSourceReliabilityEnum._('F');
 
 EvidenceItemSourceReliabilityEnum _$evidenceItemSourceReliabilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'A':
       return _$evidenceItemSourceReliabilityEnum_A;
@@ -40,18 +41,20 @@ EvidenceItemSourceReliabilityEnum _$evidenceItemSourceReliabilityEnumValueOf(
 }
 
 final BuiltSet<EvidenceItemSourceReliabilityEnum>
-    _$evidenceItemSourceReliabilityEnumValues = BuiltSet<
-        EvidenceItemSourceReliabilityEnum>(const <EvidenceItemSourceReliabilityEnum>[
-  _$evidenceItemSourceReliabilityEnum_A,
-  _$evidenceItemSourceReliabilityEnum_B,
-  _$evidenceItemSourceReliabilityEnum_C,
-  _$evidenceItemSourceReliabilityEnum_D,
-  _$evidenceItemSourceReliabilityEnum_E,
-  _$evidenceItemSourceReliabilityEnum_F,
-]);
+_$evidenceItemSourceReliabilityEnumValues =
+    BuiltSet<EvidenceItemSourceReliabilityEnum>(
+      const <EvidenceItemSourceReliabilityEnum>[
+        _$evidenceItemSourceReliabilityEnum_A,
+        _$evidenceItemSourceReliabilityEnum_B,
+        _$evidenceItemSourceReliabilityEnum_C,
+        _$evidenceItemSourceReliabilityEnum_D,
+        _$evidenceItemSourceReliabilityEnum_E,
+        _$evidenceItemSourceReliabilityEnum_F,
+      ],
+    );
 
 Serializer<EvidenceItemSourceReliabilityEnum>
-    _$evidenceItemSourceReliabilityEnumSerializer =
+_$evidenceItemSourceReliabilityEnumSerializer =
     _$EvidenceItemSourceReliabilityEnumSerializer();
 
 class _$EvidenceItemSourceReliabilityEnumSerializer
@@ -80,16 +83,19 @@ class _$EvidenceItemSourceReliabilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EvidenceItemSourceReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EvidenceItemSourceReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EvidenceItemSourceReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EvidenceItemSourceReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EvidenceItemSourceReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EvidenceItem extends EvidenceItem {
@@ -145,32 +151,32 @@ class _$EvidenceItem extends EvidenceItem {
   factory _$EvidenceItem([void Function(EvidenceItemBuilder)? updates]) =>
       (EvidenceItemBuilder()..update(updates))._build();
 
-  _$EvidenceItem._(
-      {required this.id,
-      required this.ref,
-      required this.title,
-      this.description,
-      this.attachmentIds,
-      this.url,
-      this.sourceDescription,
-      required this.sourceReliability,
-      required this.informationCredibility,
-      this.grade,
-      this.citedSourceId,
-      required this.originator,
-      this.citedRefs,
-      this.provenanceChain,
-      this.geometry,
-      this.eventTime,
-      this.tags,
-      this.owner,
-      required this.createdBy,
-      this.visibility,
-      required this.tlp,
-      this.caveats,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$EvidenceItem._({
+    required this.id,
+    required this.ref,
+    required this.title,
+    this.description,
+    this.attachmentIds,
+    this.url,
+    this.sourceDescription,
+    required this.sourceReliability,
+    required this.informationCredibility,
+    this.grade,
+    this.citedSourceId,
+    required this.originator,
+    this.citedRefs,
+    this.provenanceChain,
+    this.geometry,
+    this.eventTime,
+    this.tags,
+    this.owner,
+    required this.createdBy,
+    this.visibility,
+    required this.tlp,
+    this.caveats,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   EvidenceItem rebuild(void Function(EvidenceItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -436,28 +442,45 @@ class EvidenceItemBuilder
   _$EvidenceItem _build() {
     _$EvidenceItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EvidenceItem._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EvidenceItem', 'id'),
+              id,
+              r'EvidenceItem',
+              'id',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'EvidenceItem', 'ref'),
+              ref,
+              r'EvidenceItem',
+              'ref',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'EvidenceItem', 'title'),
+              title,
+              r'EvidenceItem',
+              'title',
+            ),
             description: description,
             attachmentIds: _attachmentIds?.build(),
             url: url,
             sourceDescription: sourceDescription,
             sourceReliability: BuiltValueNullFieldError.checkNotNull(
-                sourceReliability, r'EvidenceItem', 'sourceReliability'),
+              sourceReliability,
+              r'EvidenceItem',
+              'sourceReliability',
+            ),
             informationCredibility: BuiltValueNullFieldError.checkNotNull(
-                informationCredibility,
-                r'EvidenceItem',
-                'informationCredibility'),
+              informationCredibility,
+              r'EvidenceItem',
+              'informationCredibility',
+            ),
             grade: grade,
             citedSourceId: citedSourceId,
             originator: BuiltValueNullFieldError.checkNotNull(
-                originator, r'EvidenceItem', 'originator'),
+              originator,
+              r'EvidenceItem',
+              'originator',
+            ),
             citedRefs: _citedRefs?.build(),
             provenanceChain: _provenanceChain?.build(),
             geometry: _geometry?.build(),
@@ -467,10 +490,16 @@ class EvidenceItemBuilder
             createdBy: createdBy.build(),
             visibility: visibility,
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'EvidenceItem', 'tlp'),
+              tlp,
+              r'EvidenceItem',
+              'tlp',
+            ),
             caveats: _caveats?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'EvidenceItem', 'createdAt'),
+              createdAt,
+              r'EvidenceItem',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {
@@ -497,7 +526,10 @@ class EvidenceItemBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EvidenceItem', _$failedField, e.toString());
+          r'EvidenceItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

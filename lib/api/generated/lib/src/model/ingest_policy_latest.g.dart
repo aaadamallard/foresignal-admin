@@ -20,8 +20,8 @@ IngestPolicyLatestModeEnum _$ingestPolicyLatestModeEnumValueOf(String name) {
 
 final BuiltSet<IngestPolicyLatestModeEnum> _$ingestPolicyLatestModeEnumValues =
     BuiltSet<IngestPolicyLatestModeEnum>(const <IngestPolicyLatestModeEnum>[
-  _$ingestPolicyLatestModeEnum_LATEST,
-]);
+      _$ingestPolicyLatestModeEnum_LATEST,
+    ]);
 
 Serializer<IngestPolicyLatestModeEnum> _$ingestPolicyLatestModeEnumSerializer =
     _$IngestPolicyLatestModeEnumSerializer();
@@ -41,16 +41,20 @@ class _$IngestPolicyLatestModeEnumSerializer
   final String wireName = 'IngestPolicyLatestModeEnum';
 
   @override
-  Object serialize(Serializers serializers, IngestPolicyLatestModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IngestPolicyLatestModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IngestPolicyLatestModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestPolicyLatestModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestPolicyLatestModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestPolicyLatest extends IngestPolicyLatest {
@@ -63,20 +67,20 @@ class _$IngestPolicyLatest extends IngestPolicyLatest {
   @override
   final String? edgeMinInterval;
 
-  factory _$IngestPolicyLatest(
-          [void Function(IngestPolicyLatestBuilder)? updates]) =>
-      (IngestPolicyLatestBuilder()..update(updates))._build();
+  factory _$IngestPolicyLatest([
+    void Function(IngestPolicyLatestBuilder)? updates,
+  ]) => (IngestPolicyLatestBuilder()..update(updates))._build();
 
-  _$IngestPolicyLatest._(
-      {required this.mode,
-      this.minInterval,
-      this.keyframe,
-      this.edgeMinInterval})
-      : super._();
+  _$IngestPolicyLatest._({
+    required this.mode,
+    this.minInterval,
+    this.keyframe,
+    this.edgeMinInterval,
+  }) : super._();
   @override
   IngestPolicyLatest rebuild(
-          void Function(IngestPolicyLatestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestPolicyLatestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestPolicyLatestBuilder toBuilder() =>
@@ -165,10 +169,14 @@ class IngestPolicyLatestBuilder
   IngestPolicyLatest build() => _build();
 
   _$IngestPolicyLatest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestPolicyLatest._(
           mode: BuiltValueNullFieldError.checkNotNull(
-              mode, r'IngestPolicyLatest', 'mode'),
+            mode,
+            r'IngestPolicyLatest',
+            'mode',
+          ),
           minInterval: minInterval,
           keyframe: keyframe,
           edgeMinInterval: edgeMinInterval,

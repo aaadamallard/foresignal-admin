@@ -10,15 +10,15 @@ class _$PlaceInputAttributes extends PlaceInputAttributes {
   @override
   final String? zip;
 
-  factory _$PlaceInputAttributes(
-          [void Function(PlaceInputAttributesBuilder)? updates]) =>
-      (PlaceInputAttributesBuilder()..update(updates))._build();
+  factory _$PlaceInputAttributes([
+    void Function(PlaceInputAttributesBuilder)? updates,
+  ]) => (PlaceInputAttributesBuilder()..update(updates))._build();
 
   _$PlaceInputAttributes._({this.zip}) : super._();
   @override
   PlaceInputAttributes rebuild(
-          void Function(PlaceInputAttributesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceInputAttributesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceInputAttributesBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$PlaceInputAttributes extends PlaceInputAttributes {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PlaceInputAttributes')
-          ..add('zip', zip))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PlaceInputAttributes',
+    )..add('zip', zip)).toString();
   }
 }
 
@@ -81,10 +81,7 @@ class PlaceInputAttributesBuilder
   PlaceInputAttributes build() => _build();
 
   _$PlaceInputAttributes _build() {
-    final _$result = _$v ??
-        _$PlaceInputAttributes._(
-          zip: zip,
-        );
+    final _$result = _$v ?? _$PlaceInputAttributes._(zip: zip);
     replace(_$result);
     return _$result;
   }

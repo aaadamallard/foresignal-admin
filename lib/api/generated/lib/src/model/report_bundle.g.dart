@@ -27,16 +27,16 @@ class _$ReportBundle extends ReportBundle {
   factory _$ReportBundle([void Function(ReportBundleBuilder)? updates]) =>
       (ReportBundleBuilder()..update(updates))._build();
 
-  _$ReportBundle._(
-      {required this.report,
-      required this.revision,
-      required this.tlp,
-      required this.envelopes,
-      this.snapshots,
-      this.attachments,
-      this.manifestId,
-      this.missing})
-      : super._();
+  _$ReportBundle._({
+    required this.report,
+    required this.revision,
+    required this.tlp,
+    required this.envelopes,
+    this.snapshots,
+    this.attachments,
+    this.manifestId,
+    this.missing,
+  }) : super._();
   @override
   ReportBundle rebuild(void Function(ReportBundleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -166,13 +166,20 @@ class ReportBundleBuilder
   _$ReportBundle _build() {
     _$ReportBundle _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportBundle._(
             report: report.build(),
             revision: BuiltValueNullFieldError.checkNotNull(
-                revision, r'ReportBundle', 'revision'),
+              revision,
+              r'ReportBundle',
+              'revision',
+            ),
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'ReportBundle', 'tlp'),
+              tlp,
+              r'ReportBundle',
+              'tlp',
+            ),
             envelopes: envelopes.build(),
             snapshots: _snapshots?.build(),
             attachments: _attachments?.build(),
@@ -196,7 +203,10 @@ class ReportBundleBuilder
         _missing?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportBundle', _$failedField, e.toString());
+          r'ReportBundle',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

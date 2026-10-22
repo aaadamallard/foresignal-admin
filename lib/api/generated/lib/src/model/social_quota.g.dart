@@ -36,12 +36,12 @@ SocialQuotaUnitEnum _$socialQuotaUnitEnumValueOf(String name) {
 
 final BuiltSet<SocialQuotaUnitEnum> _$socialQuotaUnitEnumValues =
     BuiltSet<SocialQuotaUnitEnum>(const <SocialQuotaUnitEnum>[
-  _$socialQuotaUnitEnum_requests,
-  _$socialQuotaUnitEnum_units,
-  _$socialQuotaUnitEnum_queries,
-  _$socialQuotaUnitEnum_posts,
-  _$socialQuotaUnitEnum_hashtags,
-]);
+      _$socialQuotaUnitEnum_requests,
+      _$socialQuotaUnitEnum_units,
+      _$socialQuotaUnitEnum_queries,
+      _$socialQuotaUnitEnum_posts,
+      _$socialQuotaUnitEnum_hashtags,
+    ]);
 
 Serializer<SocialQuotaUnitEnum> _$socialQuotaUnitEnumSerializer =
     _$SocialQuotaUnitEnumSerializer();
@@ -69,15 +69,20 @@ class _$SocialQuotaUnitEnumSerializer
   final String wireName = 'SocialQuotaUnitEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialQuotaUnitEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialQuotaUnitEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SocialQuotaUnitEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialQuotaUnitEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SocialQuotaUnitEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialQuotaUnitEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialQuota extends SocialQuota {
@@ -101,16 +106,16 @@ class _$SocialQuota extends SocialQuota {
   factory _$SocialQuota([void Function(SocialQuotaBuilder)? updates]) =>
       (SocialQuotaBuilder()..update(updates))._build();
 
-  _$SocialQuota._(
-      {required this.unit,
-      this.limit,
-      required this.window,
-      this.rolling,
-      required this.used,
-      this.remaining,
-      this.resetsAt,
-      this.description})
-      : super._();
+  _$SocialQuota._({
+    required this.unit,
+    this.limit,
+    required this.window,
+    this.rolling,
+    required this.used,
+    this.remaining,
+    this.resetsAt,
+    this.description,
+  }) : super._();
   @override
   SocialQuota rebuild(void Function(SocialQuotaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -231,16 +236,26 @@ class SocialQuotaBuilder implements Builder<SocialQuota, SocialQuotaBuilder> {
   SocialQuota build() => _build();
 
   _$SocialQuota _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialQuota._(
           unit: BuiltValueNullFieldError.checkNotNull(
-              unit, r'SocialQuota', 'unit'),
+            unit,
+            r'SocialQuota',
+            'unit',
+          ),
           limit: limit,
           window: BuiltValueNullFieldError.checkNotNull(
-              window, r'SocialQuota', 'window'),
+            window,
+            r'SocialQuota',
+            'window',
+          ),
           rolling: rolling,
           used: BuiltValueNullFieldError.checkNotNull(
-              used, r'SocialQuota', 'used'),
+            used,
+            r'SocialQuota',
+            'used',
+          ),
           remaining: remaining,
           resetsAt: resetsAt,
           description: description,

@@ -108,9 +108,11 @@ class _$SharedItemSerializer implements PrimitiveSerializer<SharedItem> {
     SharedItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,47 +128,59 @@ class _$SharedItemSerializer implements PrimitiveSerializer<SharedItem> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'envelope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObjectEnvelope),
-          ) as ObjectEnvelope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ObjectEnvelope),
+                  )
+                  as ObjectEnvelope;
           result.envelope.replace(valueDes);
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SharedItemRoleEnum),
-          ) as SharedItemRoleEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SharedItemRoleEnum),
+                  )
+                  as SharedItemRoleEnum;
           result.role = valueDes;
           break;
         case r'via':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SharedItemViaEnum),
-          ) as SharedItemViaEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SharedItemViaEnum),
+                  )
+                  as SharedItemViaEnum;
           result.via = valueDes;
           break;
         case r'groupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.groupId = valueDes;
           break;
         case r'sharedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrincipalSummary),
-          ) as PrincipalSummary?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PrincipalSummary),
+                  )
+                  as PrincipalSummary?;
           if (valueDes == null) continue;
           result.sharedBy.replace(valueDes);
           break;
         case r'sharedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.sharedAt = valueDes;
           break;
         default:

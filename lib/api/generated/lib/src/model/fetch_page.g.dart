@@ -91,11 +91,8 @@ class FetchPageBuilder implements Builder<FetchPage, FetchPageBuilder> {
   _$FetchPage _build() {
     _$FetchPage _$result;
     try {
-      _$result = _$v ??
-          _$FetchPage._(
-            items: items.build(),
-            nextAfter: nextAfter,
-          );
+      _$result =
+          _$v ?? _$FetchPage._(items: items.build(), nextAfter: nextAfter);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class FetchPageBuilder implements Builder<FetchPage, FetchPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FetchPage', _$failedField, e.toString());
+          r'FetchPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

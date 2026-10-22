@@ -6,16 +6,21 @@ part of 'snapshot.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const SnapshotKindEnum _$snapshotKindEnum_EXPORT =
-    const SnapshotKindEnum._('EXPORT');
-const SnapshotKindEnum _$snapshotKindEnum_SNAPSHOT =
-    const SnapshotKindEnum._('SNAPSHOT');
-const SnapshotKindEnum _$snapshotKindEnum_PACK =
-    const SnapshotKindEnum._('PACK');
-const SnapshotKindEnum _$snapshotKindEnum_RASTER =
-    const SnapshotKindEnum._('RASTER');
-const SnapshotKindEnum _$snapshotKindEnum_PLACE_PACK =
-    const SnapshotKindEnum._('PLACE_PACK');
+const SnapshotKindEnum _$snapshotKindEnum_EXPORT = const SnapshotKindEnum._(
+  'EXPORT',
+);
+const SnapshotKindEnum _$snapshotKindEnum_SNAPSHOT = const SnapshotKindEnum._(
+  'SNAPSHOT',
+);
+const SnapshotKindEnum _$snapshotKindEnum_PACK = const SnapshotKindEnum._(
+  'PACK',
+);
+const SnapshotKindEnum _$snapshotKindEnum_RASTER = const SnapshotKindEnum._(
+  'RASTER',
+);
+const SnapshotKindEnum _$snapshotKindEnum_PLACE_PACK = const SnapshotKindEnum._(
+  'PLACE_PACK',
+);
 
 SnapshotKindEnum _$snapshotKindEnumValueOf(String name) {
   switch (name) {
@@ -36,12 +41,12 @@ SnapshotKindEnum _$snapshotKindEnumValueOf(String name) {
 
 final BuiltSet<SnapshotKindEnum> _$snapshotKindEnumValues =
     BuiltSet<SnapshotKindEnum>(const <SnapshotKindEnum>[
-  _$snapshotKindEnum_EXPORT,
-  _$snapshotKindEnum_SNAPSHOT,
-  _$snapshotKindEnum_PACK,
-  _$snapshotKindEnum_RASTER,
-  _$snapshotKindEnum_PLACE_PACK,
-]);
+      _$snapshotKindEnum_EXPORT,
+      _$snapshotKindEnum_SNAPSHOT,
+      _$snapshotKindEnum_PACK,
+      _$snapshotKindEnum_RASTER,
+      _$snapshotKindEnum_PLACE_PACK,
+    ]);
 
 const SnapshotFormatEnum _$snapshotFormatEnum_geoparquet =
     const SnapshotFormatEnum._('geoparquet');
@@ -49,16 +54,19 @@ const SnapshotFormatEnum _$snapshotFormatEnum_geopackage =
     const SnapshotFormatEnum._('geopackage');
 const SnapshotFormatEnum _$snapshotFormatEnum_flatgeobuf =
     const SnapshotFormatEnum._('flatgeobuf');
-const SnapshotFormatEnum _$snapshotFormatEnum_gpx =
-    const SnapshotFormatEnum._('gpx');
+const SnapshotFormatEnum _$snapshotFormatEnum_gpx = const SnapshotFormatEnum._(
+  'gpx',
+);
 const SnapshotFormatEnum _$snapshotFormatEnum_pmtiles =
     const SnapshotFormatEnum._('pmtiles');
 const SnapshotFormatEnum _$snapshotFormatEnum_mbtiles =
     const SnapshotFormatEnum._('mbtiles');
-const SnapshotFormatEnum _$snapshotFormatEnum_cog =
-    const SnapshotFormatEnum._('cog');
-const SnapshotFormatEnum _$snapshotFormatEnum_zip =
-    const SnapshotFormatEnum._('zip');
+const SnapshotFormatEnum _$snapshotFormatEnum_cog = const SnapshotFormatEnum._(
+  'cog',
+);
+const SnapshotFormatEnum _$snapshotFormatEnum_zip = const SnapshotFormatEnum._(
+  'zip',
+);
 const SnapshotFormatEnum _$snapshotFormatEnum_jsonBundle =
     const SnapshotFormatEnum._('jsonBundle');
 
@@ -89,23 +97,24 @@ SnapshotFormatEnum _$snapshotFormatEnumValueOf(String name) {
 
 final BuiltSet<SnapshotFormatEnum> _$snapshotFormatEnumValues =
     BuiltSet<SnapshotFormatEnum>(const <SnapshotFormatEnum>[
-  _$snapshotFormatEnum_geoparquet,
-  _$snapshotFormatEnum_geopackage,
-  _$snapshotFormatEnum_flatgeobuf,
-  _$snapshotFormatEnum_gpx,
-  _$snapshotFormatEnum_pmtiles,
-  _$snapshotFormatEnum_mbtiles,
-  _$snapshotFormatEnum_cog,
-  _$snapshotFormatEnum_zip,
-  _$snapshotFormatEnum_jsonBundle,
-]);
+      _$snapshotFormatEnum_geoparquet,
+      _$snapshotFormatEnum_geopackage,
+      _$snapshotFormatEnum_flatgeobuf,
+      _$snapshotFormatEnum_gpx,
+      _$snapshotFormatEnum_pmtiles,
+      _$snapshotFormatEnum_mbtiles,
+      _$snapshotFormatEnum_cog,
+      _$snapshotFormatEnum_zip,
+      _$snapshotFormatEnum_jsonBundle,
+    ]);
 
 const SnapshotStatusEnum _$snapshotStatusEnum_QUEUED =
     const SnapshotStatusEnum._('QUEUED');
 const SnapshotStatusEnum _$snapshotStatusEnum_RUNNING =
     const SnapshotStatusEnum._('RUNNING');
-const SnapshotStatusEnum _$snapshotStatusEnum_DONE =
-    const SnapshotStatusEnum._('DONE');
+const SnapshotStatusEnum _$snapshotStatusEnum_DONE = const SnapshotStatusEnum._(
+  'DONE',
+);
 const SnapshotStatusEnum _$snapshotStatusEnum_FAILED =
     const SnapshotStatusEnum._('FAILED');
 const SnapshotStatusEnum _$snapshotStatusEnum_CANCELLED =
@@ -134,13 +143,13 @@ SnapshotStatusEnum _$snapshotStatusEnumValueOf(String name) {
 
 final BuiltSet<SnapshotStatusEnum> _$snapshotStatusEnumValues =
     BuiltSet<SnapshotStatusEnum>(const <SnapshotStatusEnum>[
-  _$snapshotStatusEnum_QUEUED,
-  _$snapshotStatusEnum_RUNNING,
-  _$snapshotStatusEnum_DONE,
-  _$snapshotStatusEnum_FAILED,
-  _$snapshotStatusEnum_CANCELLED,
-  _$snapshotStatusEnum_EXPIRED,
-]);
+      _$snapshotStatusEnum_QUEUED,
+      _$snapshotStatusEnum_RUNNING,
+      _$snapshotStatusEnum_DONE,
+      _$snapshotStatusEnum_FAILED,
+      _$snapshotStatusEnum_CANCELLED,
+      _$snapshotStatusEnum_EXPIRED,
+    ]);
 
 Serializer<SnapshotKindEnum> _$snapshotKindEnumSerializer =
     _$SnapshotKindEnumSerializer();
@@ -172,15 +181,20 @@ class _$SnapshotKindEnumSerializer
   final String wireName = 'SnapshotKindEnum';
 
   @override
-  Object serialize(Serializers serializers, SnapshotKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SnapshotKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SnapshotKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SnapshotKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SnapshotKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SnapshotKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SnapshotFormatEnumSerializer
@@ -214,15 +228,20 @@ class _$SnapshotFormatEnumSerializer
   final String wireName = 'SnapshotFormatEnum';
 
   @override
-  Object serialize(Serializers serializers, SnapshotFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SnapshotFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SnapshotFormatEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SnapshotFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SnapshotFormatEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SnapshotFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SnapshotStatusEnumSerializer
@@ -250,15 +269,20 @@ class _$SnapshotStatusEnumSerializer
   final String wireName = 'SnapshotStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SnapshotStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SnapshotStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SnapshotStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SnapshotStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SnapshotStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SnapshotStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Snapshot extends Snapshot {
@@ -318,34 +342,34 @@ class _$Snapshot extends Snapshot {
   factory _$Snapshot([void Function(SnapshotBuilder)? updates]) =>
       (SnapshotBuilder()..update(updates))._build();
 
-  _$Snapshot._(
-      {required this.id,
-      required this.kind,
-      required this.format,
-      this.spec,
-      required this.status,
-      required this.progress,
-      this.principal,
-      this.rowCount,
-      this.bytes,
-      this.manifestSha256,
-      this.licenceSummary,
-      this.watermarkSeq,
-      this.personalUse,
-      required this.createdAt,
-      this.startedAt,
-      this.finishedAt,
-      this.expiresAt,
-      this.error,
-      this.downloadUrl,
-      this.manifestUrl,
-      this.files,
-      this.productId,
-      required this.atSeq,
-      this.asOf,
-      this.name,
-      this.heldSources})
-      : super._();
+  _$Snapshot._({
+    required this.id,
+    required this.kind,
+    required this.format,
+    this.spec,
+    required this.status,
+    required this.progress,
+    this.principal,
+    this.rowCount,
+    this.bytes,
+    this.manifestSha256,
+    this.licenceSummary,
+    this.watermarkSeq,
+    this.personalUse,
+    required this.createdAt,
+    this.startedAt,
+    this.finishedAt,
+    this.expiresAt,
+    this.error,
+    this.downloadUrl,
+    this.manifestUrl,
+    this.files,
+    this.productId,
+    required this.atSeq,
+    this.asOf,
+    this.name,
+    this.heldSources,
+  }) : super._();
   @override
   Snapshot rebuild(void Function(SnapshotBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -619,18 +643,31 @@ class SnapshotBuilder implements Builder<Snapshot, SnapshotBuilder> {
   _$Snapshot _build() {
     _$Snapshot _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Snapshot._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Snapshot', 'id'),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'Snapshot', 'kind'),
+              kind,
+              r'Snapshot',
+              'kind',
+            ),
             format: BuiltValueNullFieldError.checkNotNull(
-                format, r'Snapshot', 'format'),
+              format,
+              r'Snapshot',
+              'format',
+            ),
             spec: _spec?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Snapshot', 'status'),
+              status,
+              r'Snapshot',
+              'status',
+            ),
             progress: BuiltValueNullFieldError.checkNotNull(
-                progress, r'Snapshot', 'progress'),
+              progress,
+              r'Snapshot',
+              'progress',
+            ),
             principal: principal,
             rowCount: rowCount,
             bytes: bytes,
@@ -639,7 +676,10 @@ class SnapshotBuilder implements Builder<Snapshot, SnapshotBuilder> {
             watermarkSeq: watermarkSeq,
             personalUse: personalUse,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Snapshot', 'createdAt'),
+              createdAt,
+              r'Snapshot',
+              'createdAt',
+            ),
             startedAt: startedAt,
             finishedAt: finishedAt,
             expiresAt: expiresAt,
@@ -649,7 +689,10 @@ class SnapshotBuilder implements Builder<Snapshot, SnapshotBuilder> {
             files: _files?.build(),
             productId: productId,
             atSeq: BuiltValueNullFieldError.checkNotNull(
-                atSeq, r'Snapshot', 'atSeq'),
+              atSeq,
+              r'Snapshot',
+              'atSeq',
+            ),
             asOf: asOf,
             name: name,
             heldSources: _heldSources?.build(),
@@ -670,7 +713,10 @@ class SnapshotBuilder implements Builder<Snapshot, SnapshotBuilder> {
         _heldSources?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Snapshot', _$failedField, e.toString());
+          r'Snapshot',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,15 +12,15 @@ class _$ScorecardEntryIntervalCoverage extends ScorecardEntryIntervalCoverage {
   @override
   final num? p25p75;
 
-  factory _$ScorecardEntryIntervalCoverage(
-          [void Function(ScorecardEntryIntervalCoverageBuilder)? updates]) =>
-      (ScorecardEntryIntervalCoverageBuilder()..update(updates))._build();
+  factory _$ScorecardEntryIntervalCoverage([
+    void Function(ScorecardEntryIntervalCoverageBuilder)? updates,
+  ]) => (ScorecardEntryIntervalCoverageBuilder()..update(updates))._build();
 
   _$ScorecardEntryIntervalCoverage._({this.p05p95, this.p25p75}) : super._();
   @override
   ScorecardEntryIntervalCoverage rebuild(
-          void Function(ScorecardEntryIntervalCoverageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ScorecardEntryIntervalCoverageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ScorecardEntryIntervalCoverageBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$ScorecardEntryIntervalCoverage extends ScorecardEntryIntervalCoverage {
 
 class ScorecardEntryIntervalCoverageBuilder
     implements
-        Builder<ScorecardEntryIntervalCoverage,
-            ScorecardEntryIntervalCoverageBuilder> {
+        Builder<
+          ScorecardEntryIntervalCoverage,
+          ScorecardEntryIntervalCoverageBuilder
+        > {
   _$ScorecardEntryIntervalCoverage? _$v;
 
   num? _p05p95;
@@ -94,11 +96,9 @@ class ScorecardEntryIntervalCoverageBuilder
   ScorecardEntryIntervalCoverage build() => _build();
 
   _$ScorecardEntryIntervalCoverage _build() {
-    final _$result = _$v ??
-        _$ScorecardEntryIntervalCoverage._(
-          p05p95: p05p95,
-          p25p75: p25p75,
-        );
+    final _$result =
+        _$v ??
+        _$ScorecardEntryIntervalCoverage._(p05p95: p05p95, p25p75: p25p75);
     replace(_$result);
     return _$result;
   }

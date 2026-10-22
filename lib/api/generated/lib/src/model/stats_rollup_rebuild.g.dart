@@ -12,7 +12,8 @@ const StatsRollupRebuildStatusEnum _$statsRollupRebuildStatusEnum_running =
     const StatsRollupRebuildStatusEnum._('running');
 
 StatsRollupRebuildStatusEnum _$statsRollupRebuildStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'queued':
       return _$statsRollupRebuildStatusEnum_queued;
@@ -24,14 +25,15 @@ StatsRollupRebuildStatusEnum _$statsRollupRebuildStatusEnumValueOf(
 }
 
 final BuiltSet<StatsRollupRebuildStatusEnum>
-    _$statsRollupRebuildStatusEnumValues =
-    BuiltSet<StatsRollupRebuildStatusEnum>(const <StatsRollupRebuildStatusEnum>[
-  _$statsRollupRebuildStatusEnum_queued,
-  _$statsRollupRebuildStatusEnum_running,
-]);
+_$statsRollupRebuildStatusEnumValues = BuiltSet<StatsRollupRebuildStatusEnum>(
+  const <StatsRollupRebuildStatusEnum>[
+    _$statsRollupRebuildStatusEnum_queued,
+    _$statsRollupRebuildStatusEnum_running,
+  ],
+);
 
 Serializer<StatsRollupRebuildStatusEnum>
-    _$statsRollupRebuildStatusEnumSerializer =
+_$statsRollupRebuildStatusEnumSerializer =
     _$StatsRollupRebuildStatusEnumSerializer();
 
 class _$StatsRollupRebuildStatusEnumSerializer
@@ -51,16 +53,20 @@ class _$StatsRollupRebuildStatusEnumSerializer
   final String wireName = 'StatsRollupRebuildStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsRollupRebuildStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsRollupRebuildStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StatsRollupRebuildStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsRollupRebuildStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsRollupRebuildStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsRollupRebuild extends StatsRollupRebuild {
@@ -75,21 +81,21 @@ class _$StatsRollupRebuild extends StatsRollupRebuild {
   @override
   final StatsRollupRebuildStatusEnum status;
 
-  factory _$StatsRollupRebuild(
-          [void Function(StatsRollupRebuildBuilder)? updates]) =>
-      (StatsRollupRebuildBuilder()..update(updates))._build();
+  factory _$StatsRollupRebuild([
+    void Function(StatsRollupRebuildBuilder)? updates,
+  ]) => (StatsRollupRebuildBuilder()..update(updates))._build();
 
-  _$StatsRollupRebuild._(
-      {required this.from,
-      required this.to,
-      this.hours,
-      this.days,
-      required this.status})
-      : super._();
+  _$StatsRollupRebuild._({
+    required this.from,
+    required this.to,
+    this.hours,
+    this.days,
+    required this.status,
+  }) : super._();
   @override
   StatsRollupRebuild rebuild(
-          void Function(StatsRollupRebuildBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsRollupRebuildBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsRollupRebuildBuilder toBuilder() =>
@@ -185,16 +191,26 @@ class StatsRollupRebuildBuilder
   StatsRollupRebuild build() => _build();
 
   _$StatsRollupRebuild _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StatsRollupRebuild._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'StatsRollupRebuild', 'from'),
+            from,
+            r'StatsRollupRebuild',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'StatsRollupRebuild', 'to'),
+            to,
+            r'StatsRollupRebuild',
+            'to',
+          ),
           hours: hours,
           days: days,
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'StatsRollupRebuild', 'status'),
+            status,
+            r'StatsRollupRebuild',
+            'status',
+          ),
         );
     replace(_$result);
     return _$result;

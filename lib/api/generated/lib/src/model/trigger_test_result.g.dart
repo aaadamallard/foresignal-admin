@@ -40,28 +40,28 @@ class _$TriggerTestResult extends TriggerTestResult {
   @override
   final BuiltList<TriggerTestResultWindowEvaluationsInner>? windowEvaluations;
 
-  factory _$TriggerTestResult(
-          [void Function(TriggerTestResultBuilder)? updates]) =>
-      (TriggerTestResultBuilder()..update(updates))._build();
+  factory _$TriggerTestResult([
+    void Function(TriggerTestResultBuilder)? updates,
+  ]) => (TriggerTestResultBuilder()..update(updates))._build();
 
-  _$TriggerTestResult._(
-      {required this.ruleId,
-      this.evaluatedFrom,
-      required this.matches,
-      this.truncated,
-      this.fromSeq,
-      this.toSeq,
-      this.matchCount,
-      this.simulated,
-      this.wouldFire,
-      this.wouldSuppress,
-      this.truncatedByRetention,
-      this.enrich,
-      this.warnings,
-      this.approximate,
-      this.approximateReason,
-      this.windowEvaluations})
-      : super._();
+  _$TriggerTestResult._({
+    required this.ruleId,
+    this.evaluatedFrom,
+    required this.matches,
+    this.truncated,
+    this.fromSeq,
+    this.toSeq,
+    this.matchCount,
+    this.simulated,
+    this.wouldFire,
+    this.wouldSuppress,
+    this.truncatedByRetention,
+    this.enrich,
+    this.warnings,
+    this.approximate,
+    this.approximateReason,
+    this.windowEvaluations,
+  }) : super._();
   @override
   TriggerTestResult rebuild(void Function(TriggerTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -213,9 +213,8 @@ class TriggerTestResultBuilder
       _$this._windowEvaluations ??=
           ListBuilder<TriggerTestResultWindowEvaluationsInner>();
   set windowEvaluations(
-          ListBuilder<TriggerTestResultWindowEvaluationsInner>?
-              windowEvaluations) =>
-      _$this._windowEvaluations = windowEvaluations;
+    ListBuilder<TriggerTestResultWindowEvaluationsInner>? windowEvaluations,
+  ) => _$this._windowEvaluations = windowEvaluations;
 
   TriggerTestResultBuilder() {
     TriggerTestResult._defaults(this);
@@ -261,10 +260,14 @@ class TriggerTestResultBuilder
   _$TriggerTestResult _build() {
     _$TriggerTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TriggerTestResult._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'TriggerTestResult', 'ruleId'),
+              ruleId,
+              r'TriggerTestResult',
+              'ruleId',
+            ),
             evaluatedFrom: evaluatedFrom,
             matches: matches.build(),
             truncated: truncated,
@@ -294,7 +297,10 @@ class TriggerTestResultBuilder
         _windowEvaluations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TriggerTestResult', _$failedField, e.toString());
+          r'TriggerTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

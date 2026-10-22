@@ -20,18 +20,18 @@ class _$ContextPatchEvent extends ContextPatchEvent {
   @override
   final DateTime at;
 
-  factory _$ContextPatchEvent(
-          [void Function(ContextPatchEventBuilder)? updates]) =>
-      (ContextPatchEventBuilder()..update(updates))._build();
+  factory _$ContextPatchEvent([
+    void Function(ContextPatchEventBuilder)? updates,
+  ]) => (ContextPatchEventBuilder()..update(updates))._build();
 
-  _$ContextPatchEvent._(
-      {required this.workspaceId,
-      required this.version,
-      required this.patch_,
-      this.originClientId,
-      this.principal,
-      required this.at})
-      : super._();
+  _$ContextPatchEvent._({
+    required this.workspaceId,
+    required this.version,
+    required this.patch_,
+    this.originClientId,
+    this.principal,
+    required this.at,
+  }) : super._();
   @override
   ContextPatchEvent rebuild(void Function(ContextPatchEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -143,17 +143,27 @@ class ContextPatchEventBuilder
   _$ContextPatchEvent _build() {
     _$ContextPatchEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ContextPatchEvent._(
             workspaceId: BuiltValueNullFieldError.checkNotNull(
-                workspaceId, r'ContextPatchEvent', 'workspaceId'),
+              workspaceId,
+              r'ContextPatchEvent',
+              'workspaceId',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'ContextPatchEvent', 'version'),
+              version,
+              r'ContextPatchEvent',
+              'version',
+            ),
             patch_: patch_.build(),
             originClientId: originClientId,
             principal: principal,
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ContextPatchEvent', 'at'),
+              at,
+              r'ContextPatchEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -162,7 +172,10 @@ class ContextPatchEventBuilder
         patch_.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ContextPatchEvent', _$failedField, e.toString());
+          r'ContextPatchEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

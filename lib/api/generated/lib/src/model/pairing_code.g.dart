@@ -24,9 +24,9 @@ PairingCodeScopeEnum _$pairingCodeScopeEnumValueOf(String name) {
 
 final BuiltSet<PairingCodeScopeEnum> _$pairingCodeScopeEnumValues =
     BuiltSet<PairingCodeScopeEnum>(const <PairingCodeScopeEnum>[
-  _$pairingCodeScopeEnum_read,
-  _$pairingCodeScopeEnum_agent,
-]);
+      _$pairingCodeScopeEnum_read,
+      _$pairingCodeScopeEnum_agent,
+    ]);
 
 Serializer<PairingCodeScopeEnum> _$pairingCodeScopeEnumSerializer =
     _$PairingCodeScopeEnumSerializer();
@@ -48,15 +48,20 @@ class _$PairingCodeScopeEnumSerializer
   final String wireName = 'PairingCodeScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, PairingCodeScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PairingCodeScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PairingCodeScopeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PairingCodeScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PairingCodeScopeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PairingCodeScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PairingCode extends PairingCode {
@@ -86,19 +91,19 @@ class _$PairingCode extends PairingCode {
   factory _$PairingCode([void Function(PairingCodeBuilder)? updates]) =>
       (PairingCodeBuilder()..update(updates))._build();
 
-  _$PairingCode._(
-      {required this.id,
-      required this.name,
-      required this.scope,
-      this.restrictions,
-      this.principalId,
-      this.privateAccess,
-      required this.createdAt,
-      required this.expiresAt,
-      this.createdByTokenId,
-      this.claimedAt,
-      this.claimedTokenId})
-      : super._();
+  _$PairingCode._({
+    required this.id,
+    required this.name,
+    required this.scope,
+    this.restrictions,
+    this.principalId,
+    this.privateAccess,
+    required this.createdAt,
+    required this.expiresAt,
+    this.createdByTokenId,
+    this.claimedAt,
+    this.claimedTokenId,
+  }) : super._();
   @override
   PairingCode rebuild(void Function(PairingCodeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -250,20 +255,33 @@ class PairingCodeBuilder implements Builder<PairingCode, PairingCodeBuilder> {
   _$PairingCode _build() {
     _$PairingCode _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PairingCode._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'PairingCode', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PairingCode', 'name'),
+              name,
+              r'PairingCode',
+              'name',
+            ),
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'PairingCode', 'scope'),
+              scope,
+              r'PairingCode',
+              'scope',
+            ),
             restrictions: _restrictions?.build(),
             principalId: principalId,
             privateAccess: privateAccess,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'PairingCode', 'createdAt'),
+              createdAt,
+              r'PairingCode',
+              'createdAt',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'PairingCode', 'expiresAt'),
+              expiresAt,
+              r'PairingCode',
+              'expiresAt',
+            ),
             createdByTokenId: createdByTokenId,
             claimedAt: claimedAt,
             claimedTokenId: claimedTokenId,
@@ -275,7 +293,10 @@ class PairingCodeBuilder implements Builder<PairingCode, PairingCodeBuilder> {
         _restrictions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PairingCode', _$failedField, e.toString());
+          r'PairingCode',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -109,8 +109,9 @@ class _$InfraImpactRequestSerializer
       yield r'types';
       yield serializers.serialize(
         object.types,
-        specifiedType:
-            const FullType(BuiltList, [FullType(InfraImpactRequestTypesEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(InfraImpactRequestTypesEnum),
+        ]),
       );
     }
   }
@@ -121,9 +122,11 @@ class _$InfraImpactRequestSerializer
     InfraImpactRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -139,52 +142,68 @@ class _$InfraImpactRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geometry.replace(valueDes);
           break;
         case r'eventId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.eventId = valueDes;
           break;
         case r'record':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(InfraImpactRequestRecord),
-          ) as InfraImpactRequestRecord?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      InfraImpactRequestRecord,
+                    ),
+                  )
+                  as InfraImpactRequestRecord?;
           if (valueDes == null) continue;
           result.record.replace(valueDes);
           break;
         case r'depth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.depth = valueDes;
           break;
         case r'minLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(InfraImpactRequestMinLabelEnum),
-          ) as InfraImpactRequestMinLabelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      InfraImpactRequestMinLabelEnum,
+                    ),
+                  )
+                  as InfraImpactRequestMinLabelEnum?;
           if (valueDes == null) continue;
           result.minLabel = valueDes;
           break;
         case r'types':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(InfraImpactRequestTypesEnum)]),
-          ) as BuiltList<InfraImpactRequestTypesEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(InfraImpactRequestTypesEnum),
+                    ]),
+                  )
+                  as BuiltList<InfraImpactRequestTypesEnum>?;
           if (valueDes == null) continue;
           result.types.replace(valueDes);
           break;

@@ -19,8 +19,10 @@ part 'ogc_tile_set_tile_matrix_set_limits_inner.g.dart';
 @BuiltValue()
 abstract class OgcTileSetTileMatrixSetLimitsInner
     implements
-        Built<OgcTileSetTileMatrixSetLimitsInner,
-            OgcTileSetTileMatrixSetLimitsInnerBuilder> {
+        Built<
+          OgcTileSetTileMatrixSetLimitsInner,
+          OgcTileSetTileMatrixSetLimitsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'tileMatrix')
   String? get tileMatrix;
 
@@ -38,9 +40,9 @@ abstract class OgcTileSetTileMatrixSetLimitsInner
 
   OgcTileSetTileMatrixSetLimitsInner._();
 
-  factory OgcTileSetTileMatrixSetLimitsInner(
-          [void updates(OgcTileSetTileMatrixSetLimitsInnerBuilder b)]) =
-      _$OgcTileSetTileMatrixSetLimitsInner;
+  factory OgcTileSetTileMatrixSetLimitsInner([
+    void updates(OgcTileSetTileMatrixSetLimitsInnerBuilder b),
+  ]) = _$OgcTileSetTileMatrixSetLimitsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcTileSetTileMatrixSetLimitsInnerBuilder b) => b;
@@ -55,7 +57,7 @@ class _$OgcTileSetTileMatrixSetLimitsInnerSerializer
   @override
   final Iterable<Type> types = const [
     OgcTileSetTileMatrixSetLimitsInner,
-    _$OgcTileSetTileMatrixSetLimitsInner
+    _$OgcTileSetTileMatrixSetLimitsInner,
   ];
 
   @override
@@ -109,9 +111,11 @@ class _$OgcTileSetTileMatrixSetLimitsInnerSerializer
     OgcTileSetTileMatrixSetLimitsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,42 +131,52 @@ class _$OgcTileSetTileMatrixSetLimitsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tileMatrix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tileMatrix = valueDes;
           break;
         case r'minTileRow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minTileRow = valueDes;
           break;
         case r'maxTileRow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxTileRow = valueDes;
           break;
         case r'minTileCol':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minTileCol = valueDes;
           break;
         case r'maxTileCol':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxTileCol = valueDes;
           break;

@@ -28,10 +28,10 @@ ResyncEventReasonEnum _$resyncEventReasonEnumValueOf(String name) {
 
 final BuiltSet<ResyncEventReasonEnum> _$resyncEventReasonEnumValues =
     BuiltSet<ResyncEventReasonEnum>(const <ResyncEventReasonEnum>[
-  _$resyncEventReasonEnum_gap,
-  _$resyncEventReasonEnum_liveCap,
-  _$resyncEventReasonEnum_liveDropped,
-]);
+      _$resyncEventReasonEnum_gap,
+      _$resyncEventReasonEnum_liveCap,
+      _$resyncEventReasonEnum_liveDropped,
+    ]);
 
 Serializer<ResyncEventReasonEnum> _$resyncEventReasonEnumSerializer =
     _$ResyncEventReasonEnumSerializer();
@@ -55,15 +55,20 @@ class _$ResyncEventReasonEnumSerializer
   final String wireName = 'ResyncEventReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, ResyncEventReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ResyncEventReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ResyncEventReasonEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ResyncEventReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ResyncEventReasonEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ResyncEventReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ResyncEvent extends ResyncEvent {
@@ -76,7 +81,7 @@ class _$ResyncEvent extends ResyncEvent {
       (ResyncEventBuilder()..update(updates))._build();
 
   _$ResyncEvent._({required this.reason, required this.watermarkSeq})
-      : super._();
+    : super._();
   @override
   ResyncEvent rebuild(void Function(ResyncEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -149,12 +154,19 @@ class ResyncEventBuilder implements Builder<ResyncEvent, ResyncEventBuilder> {
   ResyncEvent build() => _build();
 
   _$ResyncEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ResyncEvent._(
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ResyncEvent', 'reason'),
+            reason,
+            r'ResyncEvent',
+            'reason',
+          ),
           watermarkSeq: BuiltValueNullFieldError.checkNotNull(
-              watermarkSeq, r'ResyncEvent', 'watermarkSeq'),
+            watermarkSeq,
+            r'ResyncEvent',
+            'watermarkSeq',
+          ),
         );
     replace(_$result);
     return _$result;

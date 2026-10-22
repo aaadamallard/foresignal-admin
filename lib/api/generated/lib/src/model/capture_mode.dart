@@ -80,9 +80,11 @@ class _$CaptureModeSerializer implements PrimitiveSerializer<CaptureMode> {
     CaptureMode object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,25 +100,31 @@ class _$CaptureModeSerializer implements PrimitiveSerializer<CaptureMode> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CaptureModeModeEnum),
-          ) as CaptureModeModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CaptureModeModeEnum),
+                  )
+                  as CaptureModeModeEnum;
           result.mode = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.interval = valueDes;
           break;
         case r'everyNthFrame':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.everyNthFrame = valueDes;
           break;

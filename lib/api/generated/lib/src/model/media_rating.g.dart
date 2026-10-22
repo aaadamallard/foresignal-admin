@@ -36,12 +36,12 @@ MediaRatingProviderEnum _$mediaRatingProviderEnumValueOf(String name) {
 
 final BuiltSet<MediaRatingProviderEnum> _$mediaRatingProviderEnumValues =
     BuiltSet<MediaRatingProviderEnum>(const <MediaRatingProviderEnum>[
-  _$mediaRatingProviderEnum_wikidata,
-  _$mediaRatingProviderEnum_partisanWeb,
-  _$mediaRatingProviderEnum_allsides,
-  _$mediaRatingProviderEnum_mbfc,
-  _$mediaRatingProviderEnum_operator_,
-]);
+      _$mediaRatingProviderEnum_wikidata,
+      _$mediaRatingProviderEnum_partisanWeb,
+      _$mediaRatingProviderEnum_allsides,
+      _$mediaRatingProviderEnum_mbfc,
+      _$mediaRatingProviderEnum_operator_,
+    ]);
 
 const MediaRatingEgressEnum _$mediaRatingEgressEnum_OPEN =
     const MediaRatingEgressEnum._('OPEN');
@@ -61,9 +61,9 @@ MediaRatingEgressEnum _$mediaRatingEgressEnumValueOf(String name) {
 
 final BuiltSet<MediaRatingEgressEnum> _$mediaRatingEgressEnumValues =
     BuiltSet<MediaRatingEgressEnum>(const <MediaRatingEgressEnum>[
-  _$mediaRatingEgressEnum_OPEN,
-  _$mediaRatingEgressEnum_LOCAL_ONLY,
-]);
+      _$mediaRatingEgressEnum_OPEN,
+      _$mediaRatingEgressEnum_LOCAL_ONLY,
+    ]);
 
 Serializer<MediaRatingProviderEnum> _$mediaRatingProviderEnumSerializer =
     _$MediaRatingProviderEnumSerializer();
@@ -93,16 +93,20 @@ class _$MediaRatingProviderEnumSerializer
   final String wireName = 'MediaRatingProviderEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaRatingProviderEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaRatingProviderEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MediaRatingProviderEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaRatingProviderEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaRatingProviderEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaRatingEgressEnumSerializer
@@ -122,15 +126,20 @@ class _$MediaRatingEgressEnumSerializer
   final String wireName = 'MediaRatingEgressEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaRatingEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaRatingEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MediaRatingEgressEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaRatingEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MediaRatingEgressEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaRatingEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaRating extends MediaRating {
@@ -162,20 +171,20 @@ class _$MediaRating extends MediaRating {
   factory _$MediaRating([void Function(MediaRatingBuilder)? updates]) =>
       (MediaRatingBuilder()..update(updates))._build();
 
-  _$MediaRating._(
-      {required this.outletId,
-      required this.provider,
-      this.dimension,
-      this.valueNorm,
-      this.valueRaw,
-      this.label,
-      this.ratedAt,
-      required this.licence,
-      required this.attribution,
-      this.url,
-      required this.egress,
-      required this.importedAt})
-      : super._();
+  _$MediaRating._({
+    required this.outletId,
+    required this.provider,
+    this.dimension,
+    this.valueNorm,
+    this.valueRaw,
+    this.label,
+    this.ratedAt,
+    required this.licence,
+    required this.attribution,
+    this.url,
+    required this.egress,
+    required this.importedAt,
+  }) : super._();
   @override
   MediaRating rebuild(void Function(MediaRatingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -329,26 +338,45 @@ class MediaRatingBuilder implements Builder<MediaRating, MediaRatingBuilder> {
   MediaRating build() => _build();
 
   _$MediaRating _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaRating._(
           outletId: BuiltValueNullFieldError.checkNotNull(
-              outletId, r'MediaRating', 'outletId'),
+            outletId,
+            r'MediaRating',
+            'outletId',
+          ),
           provider: BuiltValueNullFieldError.checkNotNull(
-              provider, r'MediaRating', 'provider'),
+            provider,
+            r'MediaRating',
+            'provider',
+          ),
           dimension: dimension,
           valueNorm: valueNorm,
           valueRaw: valueRaw,
           label: label,
           ratedAt: ratedAt,
           licence: BuiltValueNullFieldError.checkNotNull(
-              licence, r'MediaRating', 'licence'),
+            licence,
+            r'MediaRating',
+            'licence',
+          ),
           attribution: BuiltValueNullFieldError.checkNotNull(
-              attribution, r'MediaRating', 'attribution'),
+            attribution,
+            r'MediaRating',
+            'attribution',
+          ),
           url: url,
           egress: BuiltValueNullFieldError.checkNotNull(
-              egress, r'MediaRating', 'egress'),
+            egress,
+            r'MediaRating',
+            'egress',
+          ),
           importedAt: BuiltValueNullFieldError.checkNotNull(
-              importedAt, r'MediaRating', 'importedAt'),
+            importedAt,
+            r'MediaRating',
+            'importedAt',
+          ),
         );
     replace(_$result);
     return _$result;

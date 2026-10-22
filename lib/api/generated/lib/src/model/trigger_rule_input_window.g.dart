@@ -12,7 +12,8 @@ const TriggerRuleInputWindowBucketEnum _$triggerRuleInputWindowBucketEnum_n1h =
     const TriggerRuleInputWindowBucketEnum._('n1h');
 
 TriggerRuleInputWindowBucketEnum _$triggerRuleInputWindowBucketEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'n15m':
       return _$triggerRuleInputWindowBucketEnum_n15m;
@@ -24,21 +25,24 @@ TriggerRuleInputWindowBucketEnum _$triggerRuleInputWindowBucketEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleInputWindowBucketEnum>
-    _$triggerRuleInputWindowBucketEnumValues = BuiltSet<
-        TriggerRuleInputWindowBucketEnum>(const <TriggerRuleInputWindowBucketEnum>[
-  _$triggerRuleInputWindowBucketEnum_n15m,
-  _$triggerRuleInputWindowBucketEnum_n1h,
-]);
+_$triggerRuleInputWindowBucketEnumValues =
+    BuiltSet<TriggerRuleInputWindowBucketEnum>(
+      const <TriggerRuleInputWindowBucketEnum>[
+        _$triggerRuleInputWindowBucketEnum_n15m,
+        _$triggerRuleInputWindowBucketEnum_n1h,
+      ],
+    );
 
 const TriggerRuleInputWindowSlotModeEnum
-    _$triggerRuleInputWindowSlotModeEnum_hourOfWeek =
+_$triggerRuleInputWindowSlotModeEnum_hourOfWeek =
     const TriggerRuleInputWindowSlotModeEnum._('hourOfWeek');
 const TriggerRuleInputWindowSlotModeEnum
-    _$triggerRuleInputWindowSlotModeEnum_hourOfDay =
+_$triggerRuleInputWindowSlotModeEnum_hourOfDay =
     const TriggerRuleInputWindowSlotModeEnum._('hourOfDay');
 
 TriggerRuleInputWindowSlotModeEnum _$triggerRuleInputWindowSlotModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'hourOfWeek':
       return _$triggerRuleInputWindowSlotModeEnum_hourOfWeek;
@@ -50,24 +54,26 @@ TriggerRuleInputWindowSlotModeEnum _$triggerRuleInputWindowSlotModeEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleInputWindowSlotModeEnum>
-    _$triggerRuleInputWindowSlotModeEnumValues = BuiltSet<
-        TriggerRuleInputWindowSlotModeEnum>(const <TriggerRuleInputWindowSlotModeEnum>[
-  _$triggerRuleInputWindowSlotModeEnum_hourOfWeek,
-  _$triggerRuleInputWindowSlotModeEnum_hourOfDay,
-]);
+_$triggerRuleInputWindowSlotModeEnumValues =
+    BuiltSet<TriggerRuleInputWindowSlotModeEnum>(
+      const <TriggerRuleInputWindowSlotModeEnum>[
+        _$triggerRuleInputWindowSlotModeEnum_hourOfWeek,
+        _$triggerRuleInputWindowSlotModeEnum_hourOfDay,
+      ],
+    );
 
 const TriggerRuleInputWindowDirectionEnum
-    _$triggerRuleInputWindowDirectionEnum_up =
+_$triggerRuleInputWindowDirectionEnum_up =
     const TriggerRuleInputWindowDirectionEnum._('up');
 const TriggerRuleInputWindowDirectionEnum
-    _$triggerRuleInputWindowDirectionEnum_down =
+_$triggerRuleInputWindowDirectionEnum_down =
     const TriggerRuleInputWindowDirectionEnum._('down');
 const TriggerRuleInputWindowDirectionEnum
-    _$triggerRuleInputWindowDirectionEnum_both =
+_$triggerRuleInputWindowDirectionEnum_both =
     const TriggerRuleInputWindowDirectionEnum._('both');
 
 TriggerRuleInputWindowDirectionEnum
-    _$triggerRuleInputWindowDirectionEnumValueOf(String name) {
+_$triggerRuleInputWindowDirectionEnumValueOf(String name) {
   switch (name) {
     case 'up':
       return _$triggerRuleInputWindowDirectionEnum_up;
@@ -81,25 +87,27 @@ TriggerRuleInputWindowDirectionEnum
 }
 
 final BuiltSet<TriggerRuleInputWindowDirectionEnum>
-    _$triggerRuleInputWindowDirectionEnumValues = BuiltSet<
-        TriggerRuleInputWindowDirectionEnum>(const <TriggerRuleInputWindowDirectionEnum>[
-  _$triggerRuleInputWindowDirectionEnum_up,
-  _$triggerRuleInputWindowDirectionEnum_down,
-  _$triggerRuleInputWindowDirectionEnum_both,
-]);
+_$triggerRuleInputWindowDirectionEnumValues =
+    BuiltSet<TriggerRuleInputWindowDirectionEnum>(
+      const <TriggerRuleInputWindowDirectionEnum>[
+        _$triggerRuleInputWindowDirectionEnum_up,
+        _$triggerRuleInputWindowDirectionEnum_down,
+        _$triggerRuleInputWindowDirectionEnum_both,
+      ],
+    );
 
 const TriggerRuleInputWindowSensitivityEnum
-    _$triggerRuleInputWindowSensitivityEnum_low =
+_$triggerRuleInputWindowSensitivityEnum_low =
     const TriggerRuleInputWindowSensitivityEnum._('low');
 const TriggerRuleInputWindowSensitivityEnum
-    _$triggerRuleInputWindowSensitivityEnum_medium =
+_$triggerRuleInputWindowSensitivityEnum_medium =
     const TriggerRuleInputWindowSensitivityEnum._('medium');
 const TriggerRuleInputWindowSensitivityEnum
-    _$triggerRuleInputWindowSensitivityEnum_high =
+_$triggerRuleInputWindowSensitivityEnum_high =
     const TriggerRuleInputWindowSensitivityEnum._('high');
 
 TriggerRuleInputWindowSensitivityEnum
-    _$triggerRuleInputWindowSensitivityEnumValueOf(String name) {
+_$triggerRuleInputWindowSensitivityEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$triggerRuleInputWindowSensitivityEnum_low;
@@ -113,24 +121,26 @@ TriggerRuleInputWindowSensitivityEnum
 }
 
 final BuiltSet<TriggerRuleInputWindowSensitivityEnum>
-    _$triggerRuleInputWindowSensitivityEnumValues = BuiltSet<
-        TriggerRuleInputWindowSensitivityEnum>(const <TriggerRuleInputWindowSensitivityEnum>[
-  _$triggerRuleInputWindowSensitivityEnum_low,
-  _$triggerRuleInputWindowSensitivityEnum_medium,
-  _$triggerRuleInputWindowSensitivityEnum_high,
-]);
+_$triggerRuleInputWindowSensitivityEnumValues =
+    BuiltSet<TriggerRuleInputWindowSensitivityEnum>(
+      const <TriggerRuleInputWindowSensitivityEnum>[
+        _$triggerRuleInputWindowSensitivityEnum_low,
+        _$triggerRuleInputWindowSensitivityEnum_medium,
+        _$triggerRuleInputWindowSensitivityEnum_high,
+      ],
+    );
 
 Serializer<TriggerRuleInputWindowBucketEnum>
-    _$triggerRuleInputWindowBucketEnumSerializer =
+_$triggerRuleInputWindowBucketEnumSerializer =
     _$TriggerRuleInputWindowBucketEnumSerializer();
 Serializer<TriggerRuleInputWindowSlotModeEnum>
-    _$triggerRuleInputWindowSlotModeEnumSerializer =
+_$triggerRuleInputWindowSlotModeEnumSerializer =
     _$TriggerRuleInputWindowSlotModeEnumSerializer();
 Serializer<TriggerRuleInputWindowDirectionEnum>
-    _$triggerRuleInputWindowDirectionEnumSerializer =
+_$triggerRuleInputWindowDirectionEnumSerializer =
     _$TriggerRuleInputWindowDirectionEnumSerializer();
 Serializer<TriggerRuleInputWindowSensitivityEnum>
-    _$triggerRuleInputWindowSensitivityEnumSerializer =
+_$triggerRuleInputWindowSensitivityEnumSerializer =
     _$TriggerRuleInputWindowSensitivityEnumSerializer();
 
 class _$TriggerRuleInputWindowBucketEnumSerializer
@@ -151,16 +161,19 @@ class _$TriggerRuleInputWindowBucketEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleInputWindowBucketEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleInputWindowBucketEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputWindowBucketEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputWindowBucketEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputWindowBucketEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputWindowSlotModeEnumSerializer
@@ -181,16 +194,19 @@ class _$TriggerRuleInputWindowSlotModeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleInputWindowSlotModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleInputWindowSlotModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputWindowSlotModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputWindowSlotModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputWindowSlotModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputWindowDirectionEnumSerializer
@@ -208,23 +224,26 @@ class _$TriggerRuleInputWindowDirectionEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    TriggerRuleInputWindowDirectionEnum
+    TriggerRuleInputWindowDirectionEnum,
   ];
   @override
   final String wireName = 'TriggerRuleInputWindowDirectionEnum';
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleInputWindowDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleInputWindowDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputWindowDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputWindowDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputWindowDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputWindowSensitivityEnumSerializer
@@ -242,38 +261,41 @@ class _$TriggerRuleInputWindowSensitivityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    TriggerRuleInputWindowSensitivityEnum
+    TriggerRuleInputWindowSensitivityEnum,
   ];
   @override
   final String wireName = 'TriggerRuleInputWindowSensitivityEnum';
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleInputWindowSensitivityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleInputWindowSensitivityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputWindowSensitivityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputWindowSensitivityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputWindowSensitivityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputWindow extends TriggerRuleInputWindow {
   @override
   final OneOf oneOf;
 
-  factory _$TriggerRuleInputWindow(
-          [void Function(TriggerRuleInputWindowBuilder)? updates]) =>
-      (TriggerRuleInputWindowBuilder()..update(updates))._build();
+  factory _$TriggerRuleInputWindow([
+    void Function(TriggerRuleInputWindowBuilder)? updates,
+  ]) => (TriggerRuleInputWindowBuilder()..update(updates))._build();
 
   _$TriggerRuleInputWindow._({required this.oneOf}) : super._();
   @override
   TriggerRuleInputWindow rebuild(
-          void Function(TriggerRuleInputWindowBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TriggerRuleInputWindowBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TriggerRuleInputWindowBuilder toBuilder() =>
@@ -295,9 +317,9 @@ class _$TriggerRuleInputWindow extends TriggerRuleInputWindow {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'TriggerRuleInputWindow')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'TriggerRuleInputWindow',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -336,10 +358,14 @@ class TriggerRuleInputWindowBuilder
   TriggerRuleInputWindow build() => _build();
 
   _$TriggerRuleInputWindow _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TriggerRuleInputWindow._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'TriggerRuleInputWindow', 'oneOf'),
+            oneOf,
+            r'TriggerRuleInputWindow',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

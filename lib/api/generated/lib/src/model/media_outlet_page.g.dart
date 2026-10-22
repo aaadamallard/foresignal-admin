@@ -92,11 +92,9 @@ class MediaOutletPageBuilder
   _$MediaOutletPage _build() {
     _$MediaOutletPage _$result;
     try {
-      _$result = _$v ??
-          _$MediaOutletPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$MediaOutletPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class MediaOutletPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MediaOutletPage', _$failedField, e.toString());
+          r'MediaOutletPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

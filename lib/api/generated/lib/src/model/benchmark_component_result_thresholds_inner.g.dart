@@ -7,21 +7,20 @@ part of 'benchmark_component_result_thresholds_inner.dart';
 // **************************************************************************
 
 const BenchmarkComponentResultThresholdsInnerComparatorEnum
-    _$benchmarkComponentResultThresholdsInnerComparatorEnum_le =
+_$benchmarkComponentResultThresholdsInnerComparatorEnum_le =
     const BenchmarkComponentResultThresholdsInnerComparatorEnum._('le');
 const BenchmarkComponentResultThresholdsInnerComparatorEnum
-    _$benchmarkComponentResultThresholdsInnerComparatorEnum_ge =
+_$benchmarkComponentResultThresholdsInnerComparatorEnum_ge =
     const BenchmarkComponentResultThresholdsInnerComparatorEnum._('ge');
 const BenchmarkComponentResultThresholdsInnerComparatorEnum
-    _$benchmarkComponentResultThresholdsInnerComparatorEnum_eq =
+_$benchmarkComponentResultThresholdsInnerComparatorEnum_eq =
     const BenchmarkComponentResultThresholdsInnerComparatorEnum._('eq');
 const BenchmarkComponentResultThresholdsInnerComparatorEnum
-    _$benchmarkComponentResultThresholdsInnerComparatorEnum_within =
+_$benchmarkComponentResultThresholdsInnerComparatorEnum_within =
     const BenchmarkComponentResultThresholdsInnerComparatorEnum._('within');
 
 BenchmarkComponentResultThresholdsInnerComparatorEnum
-    _$benchmarkComponentResultThresholdsInnerComparatorEnumValueOf(
-        String name) {
+_$benchmarkComponentResultThresholdsInnerComparatorEnumValueOf(String name) {
   switch (name) {
     case 'le':
       return _$benchmarkComponentResultThresholdsInnerComparatorEnum_le;
@@ -37,26 +36,28 @@ BenchmarkComponentResultThresholdsInnerComparatorEnum
 }
 
 final BuiltSet<BenchmarkComponentResultThresholdsInnerComparatorEnum>
-    _$benchmarkComponentResultThresholdsInnerComparatorEnumValues = BuiltSet<
-        BenchmarkComponentResultThresholdsInnerComparatorEnum>(const <BenchmarkComponentResultThresholdsInnerComparatorEnum>[
-  _$benchmarkComponentResultThresholdsInnerComparatorEnum_le,
-  _$benchmarkComponentResultThresholdsInnerComparatorEnum_ge,
-  _$benchmarkComponentResultThresholdsInnerComparatorEnum_eq,
-  _$benchmarkComponentResultThresholdsInnerComparatorEnum_within,
-]);
+_$benchmarkComponentResultThresholdsInnerComparatorEnumValues =
+    BuiltSet<BenchmarkComponentResultThresholdsInnerComparatorEnum>(
+      const <BenchmarkComponentResultThresholdsInnerComparatorEnum>[
+        _$benchmarkComponentResultThresholdsInnerComparatorEnum_le,
+        _$benchmarkComponentResultThresholdsInnerComparatorEnum_ge,
+        _$benchmarkComponentResultThresholdsInnerComparatorEnum_eq,
+        _$benchmarkComponentResultThresholdsInnerComparatorEnum_within,
+      ],
+    );
 
 const BenchmarkComponentResultThresholdsInnerStatusEnum
-    _$benchmarkComponentResultThresholdsInnerStatusEnum_pass =
+_$benchmarkComponentResultThresholdsInnerStatusEnum_pass =
     const BenchmarkComponentResultThresholdsInnerStatusEnum._('pass');
 const BenchmarkComponentResultThresholdsInnerStatusEnum
-    _$benchmarkComponentResultThresholdsInnerStatusEnum_warn =
+_$benchmarkComponentResultThresholdsInnerStatusEnum_warn =
     const BenchmarkComponentResultThresholdsInnerStatusEnum._('warn');
 const BenchmarkComponentResultThresholdsInnerStatusEnum
-    _$benchmarkComponentResultThresholdsInnerStatusEnum_fail =
+_$benchmarkComponentResultThresholdsInnerStatusEnum_fail =
     const BenchmarkComponentResultThresholdsInnerStatusEnum._('fail');
 
 BenchmarkComponentResultThresholdsInnerStatusEnum
-    _$benchmarkComponentResultThresholdsInnerStatusEnumValueOf(String name) {
+_$benchmarkComponentResultThresholdsInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'pass':
       return _$benchmarkComponentResultThresholdsInnerStatusEnum_pass;
@@ -70,24 +71,27 @@ BenchmarkComponentResultThresholdsInnerStatusEnum
 }
 
 final BuiltSet<BenchmarkComponentResultThresholdsInnerStatusEnum>
-    _$benchmarkComponentResultThresholdsInnerStatusEnumValues = BuiltSet<
-        BenchmarkComponentResultThresholdsInnerStatusEnum>(const <BenchmarkComponentResultThresholdsInnerStatusEnum>[
-  _$benchmarkComponentResultThresholdsInnerStatusEnum_pass,
-  _$benchmarkComponentResultThresholdsInnerStatusEnum_warn,
-  _$benchmarkComponentResultThresholdsInnerStatusEnum_fail,
-]);
+_$benchmarkComponentResultThresholdsInnerStatusEnumValues =
+    BuiltSet<BenchmarkComponentResultThresholdsInnerStatusEnum>(
+      const <BenchmarkComponentResultThresholdsInnerStatusEnum>[
+        _$benchmarkComponentResultThresholdsInnerStatusEnum_pass,
+        _$benchmarkComponentResultThresholdsInnerStatusEnum_warn,
+        _$benchmarkComponentResultThresholdsInnerStatusEnum_fail,
+      ],
+    );
 
 Serializer<BenchmarkComponentResultThresholdsInnerComparatorEnum>
-    _$benchmarkComponentResultThresholdsInnerComparatorEnumSerializer =
+_$benchmarkComponentResultThresholdsInnerComparatorEnumSerializer =
     _$BenchmarkComponentResultThresholdsInnerComparatorEnumSerializer();
 Serializer<BenchmarkComponentResultThresholdsInnerStatusEnum>
-    _$benchmarkComponentResultThresholdsInnerStatusEnumSerializer =
+_$benchmarkComponentResultThresholdsInnerStatusEnumSerializer =
     _$BenchmarkComponentResultThresholdsInnerStatusEnumSerializer();
 
 class _$BenchmarkComponentResultThresholdsInnerComparatorEnumSerializer
     implements
         PrimitiveSerializer<
-            BenchmarkComponentResultThresholdsInnerComparatorEnum> {
+          BenchmarkComponentResultThresholdsInnerComparatorEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'le': 'le',
     'ge': 'ge',
@@ -103,24 +107,27 @@ class _$BenchmarkComponentResultThresholdsInnerComparatorEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkComponentResultThresholdsInnerComparatorEnum
+    BenchmarkComponentResultThresholdsInnerComparatorEnum,
   ];
   @override
   final String wireName =
       'BenchmarkComponentResultThresholdsInnerComparatorEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkComponentResultThresholdsInnerComparatorEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkComponentResultThresholdsInnerComparatorEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkComponentResultThresholdsInnerComparatorEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkComponentResultThresholdsInnerComparatorEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkComponentResultThresholdsInnerComparatorEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkComponentResultThresholdsInnerStatusEnumSerializer
@@ -139,23 +146,26 @@ class _$BenchmarkComponentResultThresholdsInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkComponentResultThresholdsInnerStatusEnum
+    BenchmarkComponentResultThresholdsInnerStatusEnum,
   ];
   @override
   final String wireName = 'BenchmarkComponentResultThresholdsInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkComponentResultThresholdsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkComponentResultThresholdsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkComponentResultThresholdsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkComponentResultThresholdsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkComponentResultThresholdsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkComponentResultThresholdsInner
@@ -177,27 +187,25 @@ class _$BenchmarkComponentResultThresholdsInner
   @override
   final String? note;
 
-  factory _$BenchmarkComponentResultThresholdsInner(
-          [void Function(BenchmarkComponentResultThresholdsInnerBuilder)?
-              updates]) =>
-      (BenchmarkComponentResultThresholdsInnerBuilder()..update(updates))
-          ._build();
+  factory _$BenchmarkComponentResultThresholdsInner([
+    void Function(BenchmarkComponentResultThresholdsInnerBuilder)? updates,
+  ]) => (BenchmarkComponentResultThresholdsInnerBuilder()..update(updates))
+      ._build();
 
-  _$BenchmarkComponentResultThresholdsInner._(
-      {required this.metric,
-      required this.comparator,
-      required this.threshold,
-      this.observed,
-      required this.status,
-      this.warn,
-      this.scenario,
-      this.note})
-      : super._();
+  _$BenchmarkComponentResultThresholdsInner._({
+    required this.metric,
+    required this.comparator,
+    required this.threshold,
+    this.observed,
+    required this.status,
+    this.warn,
+    this.scenario,
+    this.note,
+  }) : super._();
   @override
   BenchmarkComponentResultThresholdsInner rebuild(
-          void Function(BenchmarkComponentResultThresholdsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkComponentResultThresholdsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkComponentResultThresholdsInnerBuilder toBuilder() =>
@@ -235,7 +243,8 @@ class _$BenchmarkComponentResultThresholdsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'BenchmarkComponentResultThresholdsInner')
+            r'BenchmarkComponentResultThresholdsInner',
+          )
           ..add('metric', metric)
           ..add('comparator', comparator)
           ..add('threshold', threshold)
@@ -250,8 +259,10 @@ class _$BenchmarkComponentResultThresholdsInner
 
 class BenchmarkComponentResultThresholdsInnerBuilder
     implements
-        Builder<BenchmarkComponentResultThresholdsInner,
-            BenchmarkComponentResultThresholdsInnerBuilder> {
+        Builder<
+          BenchmarkComponentResultThresholdsInner,
+          BenchmarkComponentResultThresholdsInnerBuilder
+        > {
   _$BenchmarkComponentResultThresholdsInner? _$v;
 
   String? _metric;
@@ -262,8 +273,8 @@ class BenchmarkComponentResultThresholdsInnerBuilder
   BenchmarkComponentResultThresholdsInnerComparatorEnum? get comparator =>
       _$this._comparator;
   set comparator(
-          BenchmarkComponentResultThresholdsInnerComparatorEnum? comparator) =>
-      _$this._comparator = comparator;
+    BenchmarkComponentResultThresholdsInnerComparatorEnum? comparator,
+  ) => _$this._comparator = comparator;
 
   num? _threshold;
   num? get threshold => _$this._threshold;
@@ -318,7 +329,8 @@ class BenchmarkComponentResultThresholdsInnerBuilder
 
   @override
   void update(
-      void Function(BenchmarkComponentResultThresholdsInnerBuilder)? updates) {
+    void Function(BenchmarkComponentResultThresholdsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -326,17 +338,30 @@ class BenchmarkComponentResultThresholdsInnerBuilder
   BenchmarkComponentResultThresholdsInner build() => _build();
 
   _$BenchmarkComponentResultThresholdsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BenchmarkComponentResultThresholdsInner._(
           metric: BuiltValueNullFieldError.checkNotNull(
-              metric, r'BenchmarkComponentResultThresholdsInner', 'metric'),
-          comparator: BuiltValueNullFieldError.checkNotNull(comparator,
-              r'BenchmarkComponentResultThresholdsInner', 'comparator'),
-          threshold: BuiltValueNullFieldError.checkNotNull(threshold,
-              r'BenchmarkComponentResultThresholdsInner', 'threshold'),
+            metric,
+            r'BenchmarkComponentResultThresholdsInner',
+            'metric',
+          ),
+          comparator: BuiltValueNullFieldError.checkNotNull(
+            comparator,
+            r'BenchmarkComponentResultThresholdsInner',
+            'comparator',
+          ),
+          threshold: BuiltValueNullFieldError.checkNotNull(
+            threshold,
+            r'BenchmarkComponentResultThresholdsInner',
+            'threshold',
+          ),
           observed: observed,
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'BenchmarkComponentResultThresholdsInner', 'status'),
+            status,
+            r'BenchmarkComponentResultThresholdsInner',
+            'status',
+          ),
           warn: warn,
           scenario: scenario,
           note: note,

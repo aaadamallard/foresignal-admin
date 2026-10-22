@@ -63,7 +63,7 @@ class _$RatingsImportResultSerializer
   @override
   final Iterable<Type> types = const [
     RatingsImportResult,
-    _$RatingsImportResult
+    _$RatingsImportResult,
   ];
 
   @override
@@ -105,8 +105,9 @@ class _$RatingsImportResultSerializer
       yield r'errors';
       yield serializers.serialize(
         object.errors,
-        specifiedType: const FullType(
-            BuiltList, [FullType(RatingsImportResultErrorsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RatingsImportResultErrorsInner),
+        ]),
       );
     }
     yield r'importedAt';
@@ -122,9 +123,11 @@ class _$RatingsImportResultSerializer
     RatingsImportResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,55 +143,63 @@ class _$RatingsImportResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RatingsImportResultProviderEnum),
-          ) as RatingsImportResultProviderEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RatingsImportResultProviderEnum,
+                    ),
+                  )
+                  as RatingsImportResultProviderEnum;
           result.provider = valueDes;
           break;
         case r'imported':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.imported = valueDes;
           break;
         case r'updated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.updated = valueDes;
           break;
         case r'rejected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rejected = valueDes;
           break;
         case r'outletsCreated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.outletsCreated = valueDes;
           break;
         case r'errors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RatingsImportResultErrorsInner)]),
-          ) as BuiltList<RatingsImportResultErrorsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RatingsImportResultErrorsInner),
+                    ]),
+                  )
+                  as BuiltList<RatingsImportResultErrorsInner>?;
           if (valueDes == null) continue;
           result.errors.replace(valueDes);
           break;
         case r'importedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.importedAt = valueDes;
           break;
         default:

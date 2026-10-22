@@ -90,11 +90,8 @@ class ReportPageBuilder implements Builder<ReportPage, ReportPageBuilder> {
   _$ReportPage _build() {
     _$ReportPage _$result;
     try {
-      _$result = _$v ??
-          _$ReportPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$ReportPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class ReportPageBuilder implements Builder<ReportPage, ReportPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportPage', _$failedField, e.toString());
+          r'ReportPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

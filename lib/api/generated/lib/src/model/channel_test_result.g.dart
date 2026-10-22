@@ -16,13 +16,16 @@ class _$ChannelTestResult extends ChannelTestResult {
   @override
   final String? error;
 
-  factory _$ChannelTestResult(
-          [void Function(ChannelTestResultBuilder)? updates]) =>
-      (ChannelTestResultBuilder()..update(updates))._build();
+  factory _$ChannelTestResult([
+    void Function(ChannelTestResultBuilder)? updates,
+  ]) => (ChannelTestResultBuilder()..update(updates))._build();
 
-  _$ChannelTestResult._(
-      {required this.success, this.status, this.durationMs, this.error})
-      : super._();
+  _$ChannelTestResult._({
+    required this.success,
+    this.status,
+    this.durationMs,
+    this.error,
+  }) : super._();
   @override
   ChannelTestResult rebuild(void Function(ChannelTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -113,10 +116,14 @@ class ChannelTestResultBuilder
   ChannelTestResult build() => _build();
 
   _$ChannelTestResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChannelTestResult._(
           success: BuiltValueNullFieldError.checkNotNull(
-              success, r'ChannelTestResult', 'success'),
+            success,
+            r'ChannelTestResult',
+            'success',
+          ),
           status: status,
           durationMs: durationMs,
           error: error,

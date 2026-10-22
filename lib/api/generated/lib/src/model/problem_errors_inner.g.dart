@@ -12,15 +12,15 @@ class _$ProblemErrorsInner extends ProblemErrorsInner {
   @override
   final String? message;
 
-  factory _$ProblemErrorsInner(
-          [void Function(ProblemErrorsInnerBuilder)? updates]) =>
-      (ProblemErrorsInnerBuilder()..update(updates))._build();
+  factory _$ProblemErrorsInner([
+    void Function(ProblemErrorsInnerBuilder)? updates,
+  ]) => (ProblemErrorsInnerBuilder()..update(updates))._build();
 
   _$ProblemErrorsInner._({this.field, this.message}) : super._();
   @override
   ProblemErrorsInner rebuild(
-          void Function(ProblemErrorsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProblemErrorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProblemErrorsInnerBuilder toBuilder() =>
@@ -92,11 +92,8 @@ class ProblemErrorsInnerBuilder
   ProblemErrorsInner build() => _build();
 
   _$ProblemErrorsInner _build() {
-    final _$result = _$v ??
-        _$ProblemErrorsInner._(
-          field: field,
-          message: message,
-        );
+    final _$result =
+        _$v ?? _$ProblemErrorsInner._(field: field, message: message);
     replace(_$result);
     return _$result;
   }

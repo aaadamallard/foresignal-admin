@@ -31,9 +31,9 @@ abstract class AnalyticFindingEvidence
 
   AnalyticFindingEvidence._();
 
-  factory AnalyticFindingEvidence(
-          [void updates(AnalyticFindingEvidenceBuilder b)]) =
-      _$AnalyticFindingEvidence;
+  factory AnalyticFindingEvidence([
+    void updates(AnalyticFindingEvidenceBuilder b),
+  ]) = _$AnalyticFindingEvidence;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalyticFindingEvidenceBuilder b) => b;
@@ -48,7 +48,7 @@ class _$AnalyticFindingEvidenceSerializer
   @override
   final Iterable<Type> types = const [
     AnalyticFindingEvidence,
-    _$AnalyticFindingEvidence
+    _$AnalyticFindingEvidence,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$AnalyticFindingEvidenceSerializer
     AnalyticFindingEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,24 +104,34 @@ class _$AnalyticFindingEvidenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'seriesRefs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.seriesRefs.replace(valueDes);
           break;
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.members.replace(valueDes);
           break;
         case r'valuesWithheld':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.valuesWithheld = valueDes;
           break;

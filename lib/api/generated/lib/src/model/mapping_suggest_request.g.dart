@@ -14,17 +14,19 @@ class _$MappingSuggestRequest extends MappingSuggestRequest {
   @override
   final bool? confirmEgress;
 
-  factory _$MappingSuggestRequest(
-          [void Function(MappingSuggestRequestBuilder)? updates]) =>
-      (MappingSuggestRequestBuilder()..update(updates))._build();
+  factory _$MappingSuggestRequest([
+    void Function(MappingSuggestRequestBuilder)? updates,
+  ]) => (MappingSuggestRequestBuilder()..update(updates))._build();
 
-  _$MappingSuggestRequest._(
-      {required this.sample, this.hints, this.confirmEgress})
-      : super._();
+  _$MappingSuggestRequest._({
+    required this.sample,
+    this.hints,
+    this.confirmEgress,
+  }) : super._();
   @override
   MappingSuggestRequest rebuild(
-          void Function(MappingSuggestRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingSuggestRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingSuggestRequestBuilder toBuilder() =>
@@ -108,7 +110,8 @@ class MappingSuggestRequestBuilder
   _$MappingSuggestRequest _build() {
     _$MappingSuggestRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingSuggestRequest._(
             sample: sample.build(),
             hints: _hints?.build(),
@@ -123,7 +126,10 @@ class MappingSuggestRequestBuilder
         _hints?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingSuggestRequest', _$failedField, e.toString());
+          r'MappingSuggestRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -6,16 +6,20 @@ part of 'entity.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EntityTypeEnum _$entityTypeEnum_aircraft =
-    const EntityTypeEnum._('aircraft');
+const EntityTypeEnum _$entityTypeEnum_aircraft = const EntityTypeEnum._(
+  'aircraft',
+);
 const EntityTypeEnum _$entityTypeEnum_vessel = const EntityTypeEnum._('vessel');
-const EntityTypeEnum _$entityTypeEnum_satellite =
-    const EntityTypeEnum._('satellite');
-const EntityTypeEnum _$entityTypeEnum_station =
-    const EntityTypeEnum._('station');
+const EntityTypeEnum _$entityTypeEnum_satellite = const EntityTypeEnum._(
+  'satellite',
+);
+const EntityTypeEnum _$entityTypeEnum_station = const EntityTypeEnum._(
+  'station',
+);
 const EntityTypeEnum _$entityTypeEnum_person = const EntityTypeEnum._('person');
-const EntityTypeEnum _$entityTypeEnum_organization =
-    const EntityTypeEnum._('organization');
+const EntityTypeEnum _$entityTypeEnum_organization = const EntityTypeEnum._(
+  'organization',
+);
 
 EntityTypeEnum _$entityTypeEnumValueOf(String name) {
   switch (name) {
@@ -38,18 +42,20 @@ EntityTypeEnum _$entityTypeEnumValueOf(String name) {
 
 final BuiltSet<EntityTypeEnum> _$entityTypeEnumValues =
     BuiltSet<EntityTypeEnum>(const <EntityTypeEnum>[
-  _$entityTypeEnum_aircraft,
-  _$entityTypeEnum_vessel,
-  _$entityTypeEnum_satellite,
-  _$entityTypeEnum_station,
-  _$entityTypeEnum_person,
-  _$entityTypeEnum_organization,
-]);
+      _$entityTypeEnum_aircraft,
+      _$entityTypeEnum_vessel,
+      _$entityTypeEnum_satellite,
+      _$entityTypeEnum_station,
+      _$entityTypeEnum_person,
+      _$entityTypeEnum_organization,
+    ]);
 
-const EntityStatusEnum _$entityStatusEnum_ACTIVE =
-    const EntityStatusEnum._('ACTIVE');
-const EntityStatusEnum _$entityStatusEnum_MERGED =
-    const EntityStatusEnum._('MERGED');
+const EntityStatusEnum _$entityStatusEnum_ACTIVE = const EntityStatusEnum._(
+  'ACTIVE',
+);
+const EntityStatusEnum _$entityStatusEnum_MERGED = const EntityStatusEnum._(
+  'MERGED',
+);
 
 EntityStatusEnum _$entityStatusEnumValueOf(String name) {
   switch (name) {
@@ -64,9 +70,9 @@ EntityStatusEnum _$entityStatusEnumValueOf(String name) {
 
 final BuiltSet<EntityStatusEnum> _$entityStatusEnumValues =
     BuiltSet<EntityStatusEnum>(const <EntityStatusEnum>[
-  _$entityStatusEnum_ACTIVE,
-  _$entityStatusEnum_MERGED,
-]);
+      _$entityStatusEnum_ACTIVE,
+      _$entityStatusEnum_MERGED,
+    ]);
 
 Serializer<EntityTypeEnum> _$entityTypeEnumSerializer =
     _$EntityTypeEnumSerializer();
@@ -98,15 +104,20 @@ class _$EntityTypeEnumSerializer
   final String wireName = 'EntityTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EntityTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EntityTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityStatusEnumSerializer
@@ -126,15 +137,20 @@ class _$EntityStatusEnumSerializer
   final String wireName = 'EntityStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EntityStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EntityStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Entity extends Entity {
@@ -168,21 +184,21 @@ class _$Entity extends Entity {
   factory _$Entity([void Function(EntityBuilder)? updates]) =>
       (EntityBuilder()..update(updates))._build();
 
-  _$Entity._(
-      {required this.id,
-      this.requestedId,
-      required this.type,
-      this.displayName,
-      this.attributes,
-      required this.provisional,
-      required this.status,
-      this.mergedInto,
-      this.keys,
-      this.aliases,
-      this.openLinkCounts,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$Entity._({
+    required this.id,
+    this.requestedId,
+    required this.type,
+    this.displayName,
+    this.attributes,
+    required this.provisional,
+    required this.status,
+    this.mergedInto,
+    this.keys,
+    this.aliases,
+    this.openLinkCounts,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   Entity rebuild(void Function(EntityBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -350,26 +366,42 @@ class EntityBuilder implements Builder<Entity, EntityBuilder> {
   _$Entity _build() {
     _$Entity _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Entity._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Entity', 'id'),
             requestedId: requestedId,
-            type:
-                BuiltValueNullFieldError.checkNotNull(type, r'Entity', 'type'),
+            type: BuiltValueNullFieldError.checkNotNull(
+              type,
+              r'Entity',
+              'type',
+            ),
             displayName: displayName,
             attributes: _attributes?.build(),
             provisional: BuiltValueNullFieldError.checkNotNull(
-                provisional, r'Entity', 'provisional'),
+              provisional,
+              r'Entity',
+              'provisional',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Entity', 'status'),
+              status,
+              r'Entity',
+              'status',
+            ),
             mergedInto: mergedInto,
             keys: _keys?.build(),
             aliases: _aliases?.build(),
             openLinkCounts: _openLinkCounts?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Entity', 'createdAt'),
+              createdAt,
+              r'Entity',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Entity', 'updatedAt'),
+              updatedAt,
+              r'Entity',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -385,7 +417,10 @@ class EntityBuilder implements Builder<Entity, EntityBuilder> {
         _openLinkCounts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Entity', _$failedField, e.toString());
+          r'Entity',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,15 +12,15 @@ class _$EdpSourceInfoTerms extends EdpSourceInfoTerms {
   @override
   final String? url;
 
-  factory _$EdpSourceInfoTerms(
-          [void Function(EdpSourceInfoTermsBuilder)? updates]) =>
-      (EdpSourceInfoTermsBuilder()..update(updates))._build();
+  factory _$EdpSourceInfoTerms([
+    void Function(EdpSourceInfoTermsBuilder)? updates,
+  ]) => (EdpSourceInfoTermsBuilder()..update(updates))._build();
 
   _$EdpSourceInfoTerms._({this.summary, this.url}) : super._();
   @override
   EdpSourceInfoTerms rebuild(
-          void Function(EdpSourceInfoTermsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpSourceInfoTermsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpSourceInfoTermsBuilder toBuilder() =>
@@ -92,11 +92,7 @@ class EdpSourceInfoTermsBuilder
   EdpSourceInfoTerms build() => _build();
 
   _$EdpSourceInfoTerms _build() {
-    final _$result = _$v ??
-        _$EdpSourceInfoTerms._(
-          summary: summary,
-          url: url,
-        );
+    final _$result = _$v ?? _$EdpSourceInfoTerms._(summary: summary, url: url);
     replace(_$result);
     return _$result;
   }

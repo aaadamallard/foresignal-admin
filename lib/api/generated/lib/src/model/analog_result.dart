@@ -98,10 +98,7 @@ class _$AnalogResultSerializer implements PrimitiveSerializer<AnalogResult> {
       specifiedType: const FullType(AnalogResultTarget),
     );
     yield r'k';
-    yield serializers.serialize(
-      object.k,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.k, specifiedType: const FullType(int));
     yield r'countFound';
     yield serializers.serialize(
       object.countFound,
@@ -161,9 +158,11 @@ class _$AnalogResultSerializer implements PrimitiveSerializer<AnalogResult> {
     AnalogResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -179,84 +178,107 @@ class _$AnalogResultSerializer implements PrimitiveSerializer<AnalogResult> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'target':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnalogResultTarget),
-          ) as AnalogResultTarget;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnalogResultTarget),
+                  )
+                  as AnalogResultTarget;
           result.target.replace(valueDes);
           break;
         case r'k':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.k = valueDes;
           break;
         case r'countFound':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.countFound = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnalogResultMethodEnum),
-          ) as AnalogResultMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnalogResultMethodEnum),
+                  )
+                  as AnalogResultMethodEnum;
           result.method = valueDes;
           break;
         case r'methodNote':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.methodNote = valueDes;
           break;
         case r'signature':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AnalogResultSignature),
-          ) as AnalogResultSignature?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnalogResultSignature,
+                    ),
+                  )
+                  as AnalogResultSignature?;
           if (valueDes == null) continue;
           result.signature.replace(valueDes);
           break;
         case r'analogs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Analog)]),
-          ) as BuiltList<Analog>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Analog),
+                    ]),
+                  )
+                  as BuiltList<Analog>;
           result.analogs.replace(valueDes);
           break;
         case r'outcomeDistribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AnalogResultOutcomeDistribution),
-          ) as AnalogResultOutcomeDistribution?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnalogResultOutcomeDistribution,
+                    ),
+                  )
+                  as AnalogResultOutcomeDistribution?;
           if (valueDes == null) continue;
           result.outcomeDistribution.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>;
           result.caveats.replace(valueDes);
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.detector.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.manifestId = valueDes;
           break;
         default:

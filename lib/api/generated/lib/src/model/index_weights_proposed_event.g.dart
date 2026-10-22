@@ -20,22 +20,22 @@ class _$IndexWeightsProposedEvent extends IndexWeightsProposedEvent {
   @override
   final bool? autoApplied;
 
-  factory _$IndexWeightsProposedEvent(
-          [void Function(IndexWeightsProposedEventBuilder)? updates]) =>
-      (IndexWeightsProposedEventBuilder()..update(updates))._build();
+  factory _$IndexWeightsProposedEvent([
+    void Function(IndexWeightsProposedEventBuilder)? updates,
+  ]) => (IndexWeightsProposedEventBuilder()..update(updates))._build();
 
-  _$IndexWeightsProposedEvent._(
-      {required this.indexId,
-      required this.fitId,
-      required this.weightsVersion,
-      required this.proposedWeights,
-      this.skill,
-      this.autoApplied})
-      : super._();
+  _$IndexWeightsProposedEvent._({
+    required this.indexId,
+    required this.fitId,
+    required this.weightsVersion,
+    required this.proposedWeights,
+    this.skill,
+    this.autoApplied,
+  }) : super._();
   @override
   IndexWeightsProposedEvent rebuild(
-          void Function(IndexWeightsProposedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndexWeightsProposedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndexWeightsProposedEventBuilder toBuilder() =>
@@ -146,14 +146,24 @@ class IndexWeightsProposedEventBuilder
   _$IndexWeightsProposedEvent _build() {
     _$IndexWeightsProposedEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndexWeightsProposedEvent._(
             indexId: BuiltValueNullFieldError.checkNotNull(
-                indexId, r'IndexWeightsProposedEvent', 'indexId'),
+              indexId,
+              r'IndexWeightsProposedEvent',
+              'indexId',
+            ),
             fitId: BuiltValueNullFieldError.checkNotNull(
-                fitId, r'IndexWeightsProposedEvent', 'fitId'),
+              fitId,
+              r'IndexWeightsProposedEvent',
+              'fitId',
+            ),
             weightsVersion: BuiltValueNullFieldError.checkNotNull(
-                weightsVersion, r'IndexWeightsProposedEvent', 'weightsVersion'),
+              weightsVersion,
+              r'IndexWeightsProposedEvent',
+              'weightsVersion',
+            ),
             proposedWeights: proposedWeights.build(),
             skill: _skill?.build(),
             autoApplied: autoApplied,
@@ -167,7 +177,10 @@ class IndexWeightsProposedEventBuilder
         _skill?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndexWeightsProposedEvent', _$failedField, e.toString());
+          r'IndexWeightsProposedEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

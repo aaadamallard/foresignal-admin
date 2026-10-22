@@ -22,23 +22,23 @@ class _$PlaceWeatherPrecip extends PlaceWeatherPrecip {
   @override
   final num? ffgRatio1hPctMax;
 
-  factory _$PlaceWeatherPrecip(
-          [void Function(PlaceWeatherPrecipBuilder)? updates]) =>
-      (PlaceWeatherPrecipBuilder()..update(updates))._build();
+  factory _$PlaceWeatherPrecip([
+    void Function(PlaceWeatherPrecipBuilder)? updates,
+  ]) => (PlaceWeatherPrecipBuilder()..update(updates))._build();
 
-  _$PlaceWeatherPrecip._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.rateMmH,
-      this.qpe1hMmMax,
-      this.qpe24hMmMax,
-      this.ffgRatio1hPctMax})
-      : super._();
+  _$PlaceWeatherPrecip._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.rateMmH,
+    this.qpe1hMmMax,
+    this.qpe24hMmMax,
+    this.ffgRatio1hPctMax,
+  }) : super._();
   @override
   PlaceWeatherPrecip rebuild(
-          void Function(PlaceWeatherPrecipBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherPrecipBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherPrecipBuilder toBuilder() =>
@@ -151,10 +151,14 @@ class PlaceWeatherPrecipBuilder
   PlaceWeatherPrecip build() => _build();
 
   _$PlaceWeatherPrecip _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherPrecip._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherPrecip', 'status'),
+            status,
+            r'PlaceWeatherPrecip',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           rateMmH: rateMmH,

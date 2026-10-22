@@ -29,9 +29,9 @@ abstract class ChronicleLinkScoresEvidence
 
   ChronicleLinkScoresEvidence._();
 
-  factory ChronicleLinkScoresEvidence(
-          [void updates(ChronicleLinkScoresEvidenceBuilder b)]) =
-      _$ChronicleLinkScoresEvidence;
+  factory ChronicleLinkScoresEvidence([
+    void updates(ChronicleLinkScoresEvidenceBuilder b),
+  ]) = _$ChronicleLinkScoresEvidence;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleLinkScoresEvidenceBuilder b) => b;
@@ -46,7 +46,7 @@ class _$ChronicleLinkScoresEvidenceSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleLinkScoresEvidence,
-    _$ChronicleLinkScoresEvidence
+    _$ChronicleLinkScoresEvidence,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$ChronicleLinkScoresEvidenceSerializer
     ChronicleLinkScoresEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,32 @@ class _$ChronicleLinkScoresEvidenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'jaccard':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.jaccard = valueDes;
           break;
         case r'containment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.containment = valueDes;
           break;
         case r'sharedEstimate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.sharedEstimate = valueDes;
           break;

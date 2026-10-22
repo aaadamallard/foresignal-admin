@@ -46,9 +46,15 @@ class MediaApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/media/{mediaId}'.replaceAll(
-        '{' r'mediaId' '}',
-        encodeQueryParameter(_serializers, mediaId, const FullType(String))
-            .toString());
+      '{'
+      r'mediaId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        mediaId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -58,11 +64,7 @@ class MediaApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -128,21 +130,21 @@ class MediaApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/media/{mediaId}/meta'.replaceAll(
-        '{' r'mediaId' '}',
-        encodeQueryParameter(_serializers, mediaId, const FullType(String))
-            .toString());
+      '{'
+      r'mediaId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        mediaId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -164,9 +166,10 @@ class MediaApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Media),
-            ) as Media;
+                  rawResponse,
+                  specifiedType: const FullType(Media),
+                )
+                as Media;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -217,9 +220,15 @@ class MediaApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/media/{mediaId}/thumbnail'.replaceAll(
-        '{' r'mediaId' '}',
-        encodeQueryParameter(_serializers, mediaId, const FullType(String))
-            .toString());
+      '{'
+      r'mediaId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        mediaId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -229,11 +238,7 @@ class MediaApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },

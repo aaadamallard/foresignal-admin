@@ -17,8 +17,10 @@ part 'push_subscription_input_subscription.g.dart';
 @BuiltValue()
 abstract class PushSubscriptionInputSubscription
     implements
-        Built<PushSubscriptionInputSubscription,
-            PushSubscriptionInputSubscriptionBuilder> {
+        Built<
+          PushSubscriptionInputSubscription,
+          PushSubscriptionInputSubscriptionBuilder
+        > {
   @BuiltValueField(wireName: r'endpoint')
   String get endpoint;
 
@@ -27,9 +29,9 @@ abstract class PushSubscriptionInputSubscription
 
   PushSubscriptionInputSubscription._();
 
-  factory PushSubscriptionInputSubscription(
-          [void updates(PushSubscriptionInputSubscriptionBuilder b)]) =
-      _$PushSubscriptionInputSubscription;
+  factory PushSubscriptionInputSubscription([
+    void updates(PushSubscriptionInputSubscriptionBuilder b),
+  ]) = _$PushSubscriptionInputSubscription;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushSubscriptionInputSubscriptionBuilder b) => b;
@@ -44,7 +46,7 @@ class _$PushSubscriptionInputSubscriptionSerializer
   @override
   final Iterable<Type> types = const [
     PushSubscriptionInputSubscription,
-    _$PushSubscriptionInputSubscription
+    _$PushSubscriptionInputSubscription,
   ];
 
   @override
@@ -73,9 +75,11 @@ class _$PushSubscriptionInputSubscriptionSerializer
     PushSubscriptionInputSubscription object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +95,23 @@ class _$PushSubscriptionInputSubscriptionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'endpoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.endpoint = valueDes;
           break;
         case r'keys':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(PushSubscriptionInputSubscriptionKeys),
-          ) as PushSubscriptionInputSubscriptionKeys;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PushSubscriptionInputSubscriptionKeys,
+                    ),
+                  )
+                  as PushSubscriptionInputSubscriptionKeys;
           result.keys.replace(valueDes);
           break;
         default:

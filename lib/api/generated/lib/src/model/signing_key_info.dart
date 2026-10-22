@@ -108,10 +108,7 @@ class _$SigningKeyInfoSerializer
       );
     }
     yield r'jwk';
-    yield serializers.serialize(
-      object.jwk,
-      specifiedType: const FullType(Jwk),
-    );
+    yield serializers.serialize(object.jwk, specifiedType: const FullType(Jwk));
   }
 
   @override
@@ -120,9 +117,11 @@ class _$SigningKeyInfoSerializer
     SigningKeyInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -138,54 +137,65 @@ class _$SigningKeyInfoSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.kid = valueDes;
           break;
         case r'alg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SigningKeyInfoAlgEnum),
-          ) as SigningKeyInfoAlgEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SigningKeyInfoAlgEnum),
+                  )
+                  as SigningKeyInfoAlgEnum;
           result.alg = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SigningKeyInfoStatusEnum),
-          ) as SigningKeyInfoStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SigningKeyInfoStatusEnum),
+                  )
+                  as SigningKeyInfoStatusEnum;
           result.status = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'retiredAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.retiredAt = valueDes;
           break;
         case r'removeAfter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.removeAfter = valueDes;
           break;
         case r'jwk':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Jwk),
-          ) as Jwk;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(Jwk))
+                  as Jwk;
           result.jwk.replace(valueDes);
           break;
         default:

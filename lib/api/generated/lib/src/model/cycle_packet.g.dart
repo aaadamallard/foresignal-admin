@@ -32,11 +32,11 @@ CyclePacketCadenceEnum _$cyclePacketCadenceEnumValueOf(String name) {
 
 final BuiltSet<CyclePacketCadenceEnum> _$cyclePacketCadenceEnumValues =
     BuiltSet<CyclePacketCadenceEnum>(const <CyclePacketCadenceEnum>[
-  _$cyclePacketCadenceEnum_daily,
-  _$cyclePacketCadenceEnum_weekly,
-  _$cyclePacketCadenceEnum_monthly,
-  _$cyclePacketCadenceEnum_onDemand,
-]);
+      _$cyclePacketCadenceEnum_daily,
+      _$cyclePacketCadenceEnum_weekly,
+      _$cyclePacketCadenceEnum_monthly,
+      _$cyclePacketCadenceEnum_onDemand,
+    ]);
 
 Serializer<CyclePacketCadenceEnum> _$cyclePacketCadenceEnumSerializer =
     _$CyclePacketCadenceEnumSerializer();
@@ -62,15 +62,20 @@ class _$CyclePacketCadenceEnumSerializer
   final String wireName = 'CyclePacketCadenceEnum';
 
   @override
-  Object serialize(Serializers serializers, CyclePacketCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CyclePacketCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CyclePacketCadenceEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CyclePacketCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CyclePacketCadenceEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CyclePacketCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CyclePacket extends CyclePacket {
@@ -110,24 +115,24 @@ class _$CyclePacket extends CyclePacket {
   factory _$CyclePacket([void Function(CyclePacketBuilder)? updates]) =>
       (CyclePacketBuilder()..update(updates))._build();
 
-  _$CyclePacket._(
-      {required this.version,
-      required this.since,
-      required this.until,
-      this.firstRun,
-      this.situations,
-      this.hypotheses,
-      this.findings,
-      this.forecasts,
-      this.outlooks,
-      this.coverage,
-      this.collectionGaps,
-      this.verdicts,
-      this.previousJudgments,
-      this.truncatedForLlm,
-      this.social,
-      this.cadence})
-      : super._();
+  _$CyclePacket._({
+    required this.version,
+    required this.since,
+    required this.until,
+    this.firstRun,
+    this.situations,
+    this.hypotheses,
+    this.findings,
+    this.forecasts,
+    this.outlooks,
+    this.coverage,
+    this.collectionGaps,
+    this.verdicts,
+    this.previousJudgments,
+    this.truncatedForLlm,
+    this.social,
+    this.cadence,
+  }) : super._();
   @override
   CyclePacket rebuild(void Function(CyclePacketBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -335,14 +340,24 @@ class CyclePacketBuilder implements Builder<CyclePacket, CyclePacketBuilder> {
   _$CyclePacket _build() {
     _$CyclePacket _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CyclePacket._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'CyclePacket', 'version'),
+              version,
+              r'CyclePacket',
+              'version',
+            ),
             since: BuiltValueNullFieldError.checkNotNull(
-                since, r'CyclePacket', 'since'),
+              since,
+              r'CyclePacket',
+              'since',
+            ),
             until: BuiltValueNullFieldError.checkNotNull(
-                until, r'CyclePacket', 'until'),
+              until,
+              r'CyclePacket',
+              'until',
+            ),
             firstRun: firstRun,
             situations: _situations?.build(),
             hypotheses: _hypotheses?.build(),
@@ -384,7 +399,10 @@ class CyclePacketBuilder implements Builder<CyclePacket, CyclePacketBuilder> {
         _social?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CyclePacket', _$failedField, e.toString());
+          r'CyclePacket',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

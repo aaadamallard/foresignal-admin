@@ -19,8 +19,10 @@ part 'collection_gap_recommendations_inner.g.dart';
 @BuiltValue()
 abstract class CollectionGapRecommendationsInner
     implements
-        Built<CollectionGapRecommendationsInner,
-            CollectionGapRecommendationsInnerBuilder> {
+        Built<
+          CollectionGapRecommendationsInner,
+          CollectionGapRecommendationsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   CollectionGapRecommendationsInnerTypeEnum get type;
   // enum typeEnum {  enable-source,  add-receiver,  add-sensor,  none,  };
@@ -37,9 +39,9 @@ abstract class CollectionGapRecommendationsInner
 
   CollectionGapRecommendationsInner._();
 
-  factory CollectionGapRecommendationsInner(
-          [void updates(CollectionGapRecommendationsInnerBuilder b)]) =
-      _$CollectionGapRecommendationsInner;
+  factory CollectionGapRecommendationsInner([
+    void updates(CollectionGapRecommendationsInnerBuilder b),
+  ]) = _$CollectionGapRecommendationsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CollectionGapRecommendationsInnerBuilder b) => b;
@@ -54,7 +56,7 @@ class _$CollectionGapRecommendationsInnerSerializer
   @override
   final Iterable<Type> types = const [
     CollectionGapRecommendationsInner,
-    _$CollectionGapRecommendationsInner
+    _$CollectionGapRecommendationsInner,
   ];
 
   @override
@@ -97,9 +99,11 @@ class _$CollectionGapRecommendationsInnerSerializer
     CollectionGapRecommendationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,34 +119,43 @@ class _$CollectionGapRecommendationsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(CollectionGapRecommendationsInnerTypeEnum),
-          ) as CollectionGapRecommendationsInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      CollectionGapRecommendationsInnerTypeEnum,
+                    ),
+                  )
+                  as CollectionGapRecommendationsInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;
         case r'sensorFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sensorFamily = valueDes;
           break;
         case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.text = valueDes;
           break;
         default:

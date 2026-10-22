@@ -12,15 +12,15 @@ class _$ArchiveSettingsSecrets extends ArchiveSettingsSecrets {
   @override
   final String? secretKey;
 
-  factory _$ArchiveSettingsSecrets(
-          [void Function(ArchiveSettingsSecretsBuilder)? updates]) =>
-      (ArchiveSettingsSecretsBuilder()..update(updates))._build();
+  factory _$ArchiveSettingsSecrets([
+    void Function(ArchiveSettingsSecretsBuilder)? updates,
+  ]) => (ArchiveSettingsSecretsBuilder()..update(updates))._build();
 
   _$ArchiveSettingsSecrets._({this.accessKey, this.secretKey}) : super._();
   @override
   ArchiveSettingsSecrets rebuild(
-          void Function(ArchiveSettingsSecretsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ArchiveSettingsSecretsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ArchiveSettingsSecretsBuilder toBuilder() =>
@@ -92,11 +92,9 @@ class ArchiveSettingsSecretsBuilder
   ArchiveSettingsSecrets build() => _build();
 
   _$ArchiveSettingsSecrets _build() {
-    final _$result = _$v ??
-        _$ArchiveSettingsSecrets._(
-          accessKey: accessKey,
-          secretKey: secretKey,
-        );
+    final _$result =
+        _$v ??
+        _$ArchiveSettingsSecrets._(accessKey: accessKey, secretKey: secretKey);
     replace(_$result);
     return _$result;
   }

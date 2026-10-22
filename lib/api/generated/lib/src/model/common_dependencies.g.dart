@@ -16,20 +16,20 @@ class _$CommonDependencies extends CommonDependencies {
   @override
   final BuiltList<CommonDependenciesDependenciesInner> dependencies;
 
-  factory _$CommonDependencies(
-          [void Function(CommonDependenciesBuilder)? updates]) =>
-      (CommonDependenciesBuilder()..update(updates))._build();
+  factory _$CommonDependencies([
+    void Function(CommonDependenciesBuilder)? updates,
+  ]) => (CommonDependenciesBuilder()..update(updates))._build();
 
-  _$CommonDependencies._(
-      {required this.refs,
-      this.asOf,
-      this.generatedAt,
-      required this.dependencies})
-      : super._();
+  _$CommonDependencies._({
+    required this.refs,
+    this.asOf,
+    this.generatedAt,
+    required this.dependencies,
+  }) : super._();
   @override
   CommonDependencies rebuild(
-          void Function(CommonDependenciesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CommonDependenciesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CommonDependenciesBuilder toBuilder() =>
@@ -88,8 +88,8 @@ class CommonDependenciesBuilder
       _$this._dependencies ??=
           ListBuilder<CommonDependenciesDependenciesInner>();
   set dependencies(
-          ListBuilder<CommonDependenciesDependenciesInner>? dependencies) =>
-      _$this._dependencies = dependencies;
+    ListBuilder<CommonDependenciesDependenciesInner>? dependencies,
+  ) => _$this._dependencies = dependencies;
 
   CommonDependenciesBuilder() {
     CommonDependencies._defaults(this);
@@ -123,7 +123,8 @@ class CommonDependenciesBuilder
   _$CommonDependencies _build() {
     _$CommonDependencies _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CommonDependencies._(
             refs: refs.build(),
             asOf: asOf,
@@ -140,7 +141,10 @@ class CommonDependenciesBuilder
         dependencies.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CommonDependencies', _$failedField, e.toString());
+          r'CommonDependencies',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

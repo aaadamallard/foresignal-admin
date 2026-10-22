@@ -6,8 +6,9 @@ part of 'base_rate.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const BaseRateOriginEnum _$baseRateOriginEnum_auto =
-    const BaseRateOriginEnum._('auto');
+const BaseRateOriginEnum _$baseRateOriginEnum_auto = const BaseRateOriginEnum._(
+  'auto',
+);
 const BaseRateOriginEnum _$baseRateOriginEnum_operator_ =
     const BaseRateOriginEnum._('operator_');
 const BaseRateOriginEnum _$baseRateOriginEnum_agent =
@@ -28,10 +29,10 @@ BaseRateOriginEnum _$baseRateOriginEnumValueOf(String name) {
 
 final BuiltSet<BaseRateOriginEnum> _$baseRateOriginEnumValues =
     BuiltSet<BaseRateOriginEnum>(const <BaseRateOriginEnum>[
-  _$baseRateOriginEnum_auto,
-  _$baseRateOriginEnum_operator_,
-  _$baseRateOriginEnum_agent,
-]);
+      _$baseRateOriginEnum_auto,
+      _$baseRateOriginEnum_operator_,
+      _$baseRateOriginEnum_agent,
+    ]);
 
 Serializer<BaseRateOriginEnum> _$baseRateOriginEnumSerializer =
     _$BaseRateOriginEnumSerializer();
@@ -55,15 +56,20 @@ class _$BaseRateOriginEnumSerializer
   final String wireName = 'BaseRateOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, BaseRateOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BaseRateOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BaseRateOriginEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BaseRateOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BaseRateOriginEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BaseRateOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BaseRate extends BaseRate {
@@ -113,29 +119,29 @@ class _$BaseRate extends BaseRate {
   factory _$BaseRate([void Function(BaseRateBuilder)? updates]) =>
       (BaseRateBuilder()..update(updates))._build();
 
-  _$BaseRate._(
-      {this.id,
-      this.name,
-      required this.definition,
-      required this.referenceClass,
-      required this.ratePerWindow,
-      required this.pAtLeastOne,
-      required this.interval,
-      required this.nWindows,
-      required this.nEvents,
-      required this.periodFrom,
-      required this.periodTo,
-      required this.sourceMix,
-      this.licences,
-      this.unconditional,
-      this.regionProfiles,
-      required this.caveats,
-      required this.computer,
-      required this.computedAt,
-      required this.origin,
-      this.cached,
-      required this.manifestId})
-      : super._();
+  _$BaseRate._({
+    this.id,
+    this.name,
+    required this.definition,
+    required this.referenceClass,
+    required this.ratePerWindow,
+    required this.pAtLeastOne,
+    required this.interval,
+    required this.nWindows,
+    required this.nEvents,
+    required this.periodFrom,
+    required this.periodTo,
+    required this.sourceMix,
+    this.licences,
+    this.unconditional,
+    this.regionProfiles,
+    required this.caveats,
+    required this.computer,
+    required this.computedAt,
+    required this.origin,
+    this.cached,
+    required this.manifestId,
+  }) : super._();
   @override
   BaseRate rebuild(void Function(BaseRateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -375,26 +381,48 @@ class BaseRateBuilder implements Builder<BaseRate, BaseRateBuilder> {
   _$BaseRate _build() {
     _$BaseRate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BaseRate._(
             id: id,
             name: name,
             definition: definition.build(),
             referenceClass: BuiltValueNullFieldError.checkNotNull(
-                referenceClass, r'BaseRate', 'referenceClass'),
+              referenceClass,
+              r'BaseRate',
+              'referenceClass',
+            ),
             ratePerWindow: BuiltValueNullFieldError.checkNotNull(
-                ratePerWindow, r'BaseRate', 'ratePerWindow'),
+              ratePerWindow,
+              r'BaseRate',
+              'ratePerWindow',
+            ),
             pAtLeastOne: BuiltValueNullFieldError.checkNotNull(
-                pAtLeastOne, r'BaseRate', 'pAtLeastOne'),
+              pAtLeastOne,
+              r'BaseRate',
+              'pAtLeastOne',
+            ),
             interval: interval.build(),
             nWindows: BuiltValueNullFieldError.checkNotNull(
-                nWindows, r'BaseRate', 'nWindows'),
+              nWindows,
+              r'BaseRate',
+              'nWindows',
+            ),
             nEvents: BuiltValueNullFieldError.checkNotNull(
-                nEvents, r'BaseRate', 'nEvents'),
+              nEvents,
+              r'BaseRate',
+              'nEvents',
+            ),
             periodFrom: BuiltValueNullFieldError.checkNotNull(
-                periodFrom, r'BaseRate', 'periodFrom'),
+              periodFrom,
+              r'BaseRate',
+              'periodFrom',
+            ),
             periodTo: BuiltValueNullFieldError.checkNotNull(
-                periodTo, r'BaseRate', 'periodTo'),
+              periodTo,
+              r'BaseRate',
+              'periodTo',
+            ),
             sourceMix: sourceMix.build(),
             licences: _licences?.build(),
             unconditional: _unconditional?.build(),
@@ -402,12 +430,21 @@ class BaseRateBuilder implements Builder<BaseRate, BaseRateBuilder> {
             caveats: caveats.build(),
             computer: computer.build(),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'BaseRate', 'computedAt'),
+              computedAt,
+              r'BaseRate',
+              'computedAt',
+            ),
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'BaseRate', 'origin'),
+              origin,
+              r'BaseRate',
+              'origin',
+            ),
             cached: cached,
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'BaseRate', 'manifestId'),
+              manifestId,
+              r'BaseRate',
+              'manifestId',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -432,7 +469,10 @@ class BaseRateBuilder implements Builder<BaseRate, BaseRateBuilder> {
         computer.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BaseRate', _$failedField, e.toString());
+          r'BaseRate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

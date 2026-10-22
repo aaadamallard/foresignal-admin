@@ -37,9 +37,9 @@ abstract class IntelCalibrationBinsInner
 
   IntelCalibrationBinsInner._();
 
-  factory IntelCalibrationBinsInner(
-          [void updates(IntelCalibrationBinsInnerBuilder b)]) =
-      _$IntelCalibrationBinsInner;
+  factory IntelCalibrationBinsInner([
+    void updates(IntelCalibrationBinsInnerBuilder b),
+  ]) = _$IntelCalibrationBinsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelCalibrationBinsInnerBuilder b) => b;
@@ -54,7 +54,7 @@ class _$IntelCalibrationBinsInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelCalibrationBinsInner,
-    _$IntelCalibrationBinsInner
+    _$IntelCalibrationBinsInner,
   ];
 
   @override
@@ -81,10 +81,7 @@ class _$IntelCalibrationBinsInnerSerializer
     }
     if (object.n != null) {
       yield r'n';
-      yield serializers.serialize(
-        object.n,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.n, specifiedType: const FullType(int));
     }
     if (object.meanForecast != null) {
       yield r'meanForecast';
@@ -108,9 +105,11 @@ class _$IntelCalibrationBinsInnerSerializer
     IntelCalibrationBinsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,42 +125,52 @@ class _$IntelCalibrationBinsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lower':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lower = valueDes;
           break;
         case r'upper':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.upper = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n = valueDes;
           break;
         case r'meanForecast':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meanForecast = valueDes;
           break;
         case r'observedFrequency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.observedFrequency = valueDes;
           break;

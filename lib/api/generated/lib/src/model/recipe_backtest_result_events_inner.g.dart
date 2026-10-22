@@ -7,26 +7,26 @@ part of 'recipe_backtest_result_events_inner.dart';
 // **************************************************************************
 
 const RecipeBacktestResultEventsInnerTypeEnum
-    _$recipeBacktestResultEventsInnerTypeEnum_maritimeDisruption =
+_$recipeBacktestResultEventsInnerTypeEnum_maritimeDisruption =
     const RecipeBacktestResultEventsInnerTypeEnum._('maritimeDisruption');
 const RecipeBacktestResultEventsInnerTypeEnum
-    _$recipeBacktestResultEventsInnerTypeEnum_aviationAnomaly =
+_$recipeBacktestResultEventsInnerTypeEnum_aviationAnomaly =
     const RecipeBacktestResultEventsInnerTypeEnum._('aviationAnomaly');
 const RecipeBacktestResultEventsInnerTypeEnum
-    _$recipeBacktestResultEventsInnerTypeEnum_infrastructureDisruption =
+_$recipeBacktestResultEventsInnerTypeEnum_infrastructureDisruption =
     const RecipeBacktestResultEventsInnerTypeEnum._('infrastructureDisruption');
 const RecipeBacktestResultEventsInnerTypeEnum
-    _$recipeBacktestResultEventsInnerTypeEnum_weatherImpact =
+_$recipeBacktestResultEventsInnerTypeEnum_weatherImpact =
     const RecipeBacktestResultEventsInnerTypeEnum._('weatherImpact');
 const RecipeBacktestResultEventsInnerTypeEnum
-    _$recipeBacktestResultEventsInnerTypeEnum_seismic =
+_$recipeBacktestResultEventsInnerTypeEnum_seismic =
     const RecipeBacktestResultEventsInnerTypeEnum._('seismic');
 const RecipeBacktestResultEventsInnerTypeEnum
-    _$recipeBacktestResultEventsInnerTypeEnum_custom =
+_$recipeBacktestResultEventsInnerTypeEnum_custom =
     const RecipeBacktestResultEventsInnerTypeEnum._('custom');
 
 RecipeBacktestResultEventsInnerTypeEnum
-    _$recipeBacktestResultEventsInnerTypeEnumValueOf(String name) {
+_$recipeBacktestResultEventsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'maritimeDisruption':
       return _$recipeBacktestResultEventsInnerTypeEnum_maritimeDisruption;
@@ -46,31 +46,33 @@ RecipeBacktestResultEventsInnerTypeEnum
 }
 
 final BuiltSet<RecipeBacktestResultEventsInnerTypeEnum>
-    _$recipeBacktestResultEventsInnerTypeEnumValues = BuiltSet<
-        RecipeBacktestResultEventsInnerTypeEnum>(const <RecipeBacktestResultEventsInnerTypeEnum>[
-  _$recipeBacktestResultEventsInnerTypeEnum_maritimeDisruption,
-  _$recipeBacktestResultEventsInnerTypeEnum_aviationAnomaly,
-  _$recipeBacktestResultEventsInnerTypeEnum_infrastructureDisruption,
-  _$recipeBacktestResultEventsInnerTypeEnum_weatherImpact,
-  _$recipeBacktestResultEventsInnerTypeEnum_seismic,
-  _$recipeBacktestResultEventsInnerTypeEnum_custom,
-]);
+_$recipeBacktestResultEventsInnerTypeEnumValues =
+    BuiltSet<RecipeBacktestResultEventsInnerTypeEnum>(
+      const <RecipeBacktestResultEventsInnerTypeEnum>[
+        _$recipeBacktestResultEventsInnerTypeEnum_maritimeDisruption,
+        _$recipeBacktestResultEventsInnerTypeEnum_aviationAnomaly,
+        _$recipeBacktestResultEventsInnerTypeEnum_infrastructureDisruption,
+        _$recipeBacktestResultEventsInnerTypeEnum_weatherImpact,
+        _$recipeBacktestResultEventsInnerTypeEnum_seismic,
+        _$recipeBacktestResultEventsInnerTypeEnum_custom,
+      ],
+    );
 
 const RecipeBacktestResultEventsInnerEvidenceQualityEnum
-    _$recipeBacktestResultEventsInnerEvidenceQualityEnum_strong =
+_$recipeBacktestResultEventsInnerEvidenceQualityEnum_strong =
     const RecipeBacktestResultEventsInnerEvidenceQualityEnum._('strong');
 const RecipeBacktestResultEventsInnerEvidenceQualityEnum
-    _$recipeBacktestResultEventsInnerEvidenceQualityEnum_moderate =
+_$recipeBacktestResultEventsInnerEvidenceQualityEnum_moderate =
     const RecipeBacktestResultEventsInnerEvidenceQualityEnum._('moderate');
 const RecipeBacktestResultEventsInnerEvidenceQualityEnum
-    _$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak =
+_$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak =
     const RecipeBacktestResultEventsInnerEvidenceQualityEnum._('weak');
 const RecipeBacktestResultEventsInnerEvidenceQualityEnum
-    _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient =
+_$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient =
     const RecipeBacktestResultEventsInnerEvidenceQualityEnum._('insufficient');
 
 RecipeBacktestResultEventsInnerEvidenceQualityEnum
-    _$recipeBacktestResultEventsInnerEvidenceQualityEnumValueOf(String name) {
+_$recipeBacktestResultEventsInnerEvidenceQualityEnumValueOf(String name) {
   switch (name) {
     case 'strong':
       return _$recipeBacktestResultEventsInnerEvidenceQualityEnum_strong;
@@ -86,19 +88,21 @@ RecipeBacktestResultEventsInnerEvidenceQualityEnum
 }
 
 final BuiltSet<RecipeBacktestResultEventsInnerEvidenceQualityEnum>
-    _$recipeBacktestResultEventsInnerEvidenceQualityEnumValues = BuiltSet<
-        RecipeBacktestResultEventsInnerEvidenceQualityEnum>(const <RecipeBacktestResultEventsInnerEvidenceQualityEnum>[
-  _$recipeBacktestResultEventsInnerEvidenceQualityEnum_strong,
-  _$recipeBacktestResultEventsInnerEvidenceQualityEnum_moderate,
-  _$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak,
-  _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient,
-]);
+_$recipeBacktestResultEventsInnerEvidenceQualityEnumValues =
+    BuiltSet<RecipeBacktestResultEventsInnerEvidenceQualityEnum>(
+      const <RecipeBacktestResultEventsInnerEvidenceQualityEnum>[
+        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_strong,
+        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_moderate,
+        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak,
+        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient,
+      ],
+    );
 
 Serializer<RecipeBacktestResultEventsInnerTypeEnum>
-    _$recipeBacktestResultEventsInnerTypeEnumSerializer =
+_$recipeBacktestResultEventsInnerTypeEnumSerializer =
     _$RecipeBacktestResultEventsInnerTypeEnumSerializer();
 Serializer<RecipeBacktestResultEventsInnerEvidenceQualityEnum>
-    _$recipeBacktestResultEventsInnerEvidenceQualityEnumSerializer =
+_$recipeBacktestResultEventsInnerEvidenceQualityEnumSerializer =
     _$RecipeBacktestResultEventsInnerEvidenceQualityEnumSerializer();
 
 class _$RecipeBacktestResultEventsInnerTypeEnumSerializer
@@ -122,29 +126,33 @@ class _$RecipeBacktestResultEventsInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    RecipeBacktestResultEventsInnerTypeEnum
+    RecipeBacktestResultEventsInnerTypeEnum,
   ];
   @override
   final String wireName = 'RecipeBacktestResultEventsInnerTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          RecipeBacktestResultEventsInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RecipeBacktestResultEventsInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RecipeBacktestResultEventsInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RecipeBacktestResultEventsInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RecipeBacktestResultEventsInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RecipeBacktestResultEventsInnerEvidenceQualityEnumSerializer
     implements
         PrimitiveSerializer<
-            RecipeBacktestResultEventsInnerEvidenceQualityEnum> {
+          RecipeBacktestResultEventsInnerEvidenceQualityEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'strong': 'strong',
     'moderate': 'moderate',
@@ -160,23 +168,26 @@ class _$RecipeBacktestResultEventsInnerEvidenceQualityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    RecipeBacktestResultEventsInnerEvidenceQualityEnum
+    RecipeBacktestResultEventsInnerEvidenceQualityEnum,
   ];
   @override
   final String wireName = 'RecipeBacktestResultEventsInnerEvidenceQualityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          RecipeBacktestResultEventsInnerEvidenceQualityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RecipeBacktestResultEventsInnerEvidenceQualityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RecipeBacktestResultEventsInnerEvidenceQualityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RecipeBacktestResultEventsInnerEvidenceQualityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RecipeBacktestResultEventsInnerEvidenceQualityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RecipeBacktestResultEventsInner
@@ -194,22 +205,22 @@ class _$RecipeBacktestResultEventsInner
   @override
   final RecipeBacktestResultEventsInnerEvidenceQualityEnum? evidenceQuality;
 
-  factory _$RecipeBacktestResultEventsInner(
-          [void Function(RecipeBacktestResultEventsInnerBuilder)? updates]) =>
-      (RecipeBacktestResultEventsInnerBuilder()..update(updates))._build();
+  factory _$RecipeBacktestResultEventsInner([
+    void Function(RecipeBacktestResultEventsInnerBuilder)? updates,
+  ]) => (RecipeBacktestResultEventsInnerBuilder()..update(updates))._build();
 
-  _$RecipeBacktestResultEventsInner._(
-      {required this.type,
-      required this.startTime,
-      this.endTime,
-      required this.members,
-      this.confidence,
-      this.evidenceQuality})
-      : super._();
+  _$RecipeBacktestResultEventsInner._({
+    required this.type,
+    required this.startTime,
+    this.endTime,
+    required this.members,
+    this.confidence,
+    this.evidenceQuality,
+  }) : super._();
   @override
   RecipeBacktestResultEventsInner rebuild(
-          void Function(RecipeBacktestResultEventsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecipeBacktestResultEventsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecipeBacktestResultEventsInnerBuilder toBuilder() =>
@@ -255,8 +266,10 @@ class _$RecipeBacktestResultEventsInner
 
 class RecipeBacktestResultEventsInnerBuilder
     implements
-        Builder<RecipeBacktestResultEventsInner,
-            RecipeBacktestResultEventsInnerBuilder> {
+        Builder<
+          RecipeBacktestResultEventsInner,
+          RecipeBacktestResultEventsInnerBuilder
+        > {
   _$RecipeBacktestResultEventsInner? _$v;
 
   RecipeBacktestResultEventsInnerTypeEnum? _type;
@@ -286,9 +299,8 @@ class RecipeBacktestResultEventsInnerBuilder
   RecipeBacktestResultEventsInnerEvidenceQualityEnum? get evidenceQuality =>
       _$this._evidenceQuality;
   set evidenceQuality(
-          RecipeBacktestResultEventsInnerEvidenceQualityEnum?
-              evidenceQuality) =>
-      _$this._evidenceQuality = evidenceQuality;
+    RecipeBacktestResultEventsInnerEvidenceQualityEnum? evidenceQuality,
+  ) => _$this._evidenceQuality = evidenceQuality;
 
   RecipeBacktestResultEventsInnerBuilder() {
     RecipeBacktestResultEventsInner._defaults(this);
@@ -324,12 +336,19 @@ class RecipeBacktestResultEventsInnerBuilder
   _$RecipeBacktestResultEventsInner _build() {
     _$RecipeBacktestResultEventsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecipeBacktestResultEventsInner._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'RecipeBacktestResultEventsInner', 'type'),
+              type,
+              r'RecipeBacktestResultEventsInner',
+              'type',
+            ),
             startTime: BuiltValueNullFieldError.checkNotNull(
-                startTime, r'RecipeBacktestResultEventsInner', 'startTime'),
+              startTime,
+              r'RecipeBacktestResultEventsInner',
+              'startTime',
+            ),
             endTime: endTime,
             members: members.build(),
             confidence: confidence,
@@ -342,7 +361,10 @@ class RecipeBacktestResultEventsInnerBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecipeBacktestResultEventsInner', _$failedField, e.toString());
+          r'RecipeBacktestResultEventsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

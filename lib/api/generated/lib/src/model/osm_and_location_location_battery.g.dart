@@ -12,15 +12,15 @@ class _$OsmAndLocationLocationBattery extends OsmAndLocationLocationBattery {
   @override
   final bool? isCharging;
 
-  factory _$OsmAndLocationLocationBattery(
-          [void Function(OsmAndLocationLocationBatteryBuilder)? updates]) =>
-      (OsmAndLocationLocationBatteryBuilder()..update(updates))._build();
+  factory _$OsmAndLocationLocationBattery([
+    void Function(OsmAndLocationLocationBatteryBuilder)? updates,
+  ]) => (OsmAndLocationLocationBatteryBuilder()..update(updates))._build();
 
   _$OsmAndLocationLocationBattery._({this.level, this.isCharging}) : super._();
   @override
   OsmAndLocationLocationBattery rebuild(
-          void Function(OsmAndLocationLocationBatteryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OsmAndLocationLocationBatteryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OsmAndLocationLocationBatteryBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$OsmAndLocationLocationBattery extends OsmAndLocationLocationBattery {
 
 class OsmAndLocationLocationBatteryBuilder
     implements
-        Builder<OsmAndLocationLocationBattery,
-            OsmAndLocationLocationBatteryBuilder> {
+        Builder<
+          OsmAndLocationLocationBattery,
+          OsmAndLocationLocationBatteryBuilder
+        > {
   _$OsmAndLocationLocationBattery? _$v;
 
   num? _level;
@@ -94,11 +96,9 @@ class OsmAndLocationLocationBatteryBuilder
   OsmAndLocationLocationBattery build() => _build();
 
   _$OsmAndLocationLocationBattery _build() {
-    final _$result = _$v ??
-        _$OsmAndLocationLocationBattery._(
-          level: level,
-          isCharging: isCharging,
-        );
+    final _$result =
+        _$v ??
+        _$OsmAndLocationLocationBattery._(level: level, isCharging: isCharging);
     replace(_$result);
     return _$result;
   }

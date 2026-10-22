@@ -28,26 +28,26 @@ class _$DcpObservationPayload extends DcpObservationPayload {
   @override
   final JsonObject? decoded;
 
-  factory _$DcpObservationPayload(
-          [void Function(DcpObservationPayloadBuilder)? updates]) =>
-      (DcpObservationPayloadBuilder()..update(updates))._build();
+  factory _$DcpObservationPayload([
+    void Function(DcpObservationPayloadBuilder)? updates,
+  ]) => (DcpObservationPayloadBuilder()..update(updates))._build();
 
-  _$DcpObservationPayload._(
-      {required this.address,
-      this.name,
-      this.agency,
-      this.channel,
-      this.signalDbm,
-      this.frequencyOffsetHz,
-      this.failureCode,
-      this.dataAscii,
-      this.dataHex,
-      this.decoded})
-      : super._();
+  _$DcpObservationPayload._({
+    required this.address,
+    this.name,
+    this.agency,
+    this.channel,
+    this.signalDbm,
+    this.frequencyOffsetHz,
+    this.failureCode,
+    this.dataAscii,
+    this.dataHex,
+    this.decoded,
+  }) : super._();
   @override
   DcpObservationPayload rebuild(
-          void Function(DcpObservationPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DcpObservationPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DcpObservationPayloadBuilder toBuilder() =>
@@ -184,10 +184,14 @@ class DcpObservationPayloadBuilder
   DcpObservationPayload build() => _build();
 
   _$DcpObservationPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DcpObservationPayload._(
           address: BuiltValueNullFieldError.checkNotNull(
-              address, r'DcpObservationPayload', 'address'),
+            address,
+            r'DcpObservationPayload',
+            'address',
+          ),
           name: name,
           agency: agency,
           channel: channel,

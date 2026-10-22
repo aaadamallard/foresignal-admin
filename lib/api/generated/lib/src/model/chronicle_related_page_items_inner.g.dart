@@ -7,11 +7,11 @@ part of 'chronicle_related_page_items_inner.dart';
 // **************************************************************************
 
 const ChronicleRelatedPageItemsInnerDisclosureEnum
-    _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque =
+_$chronicleRelatedPageItemsInnerDisclosureEnum_opaque =
     const ChronicleRelatedPageItemsInnerDisclosureEnum._('opaque');
 
 ChronicleRelatedPageItemsInnerDisclosureEnum
-    _$chronicleRelatedPageItemsInnerDisclosureEnumValueOf(String name) {
+_$chronicleRelatedPageItemsInnerDisclosureEnumValueOf(String name) {
   switch (name) {
     case 'opaque':
       return _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque;
@@ -21,23 +21,25 @@ ChronicleRelatedPageItemsInnerDisclosureEnum
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerDisclosureEnum>
-    _$chronicleRelatedPageItemsInnerDisclosureEnumValues = BuiltSet<
-        ChronicleRelatedPageItemsInnerDisclosureEnum>(const <ChronicleRelatedPageItemsInnerDisclosureEnum>[
-  _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque,
-]);
+_$chronicleRelatedPageItemsInnerDisclosureEnumValues =
+    BuiltSet<ChronicleRelatedPageItemsInnerDisclosureEnum>(
+      const <ChronicleRelatedPageItemsInnerDisclosureEnum>[
+        _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque,
+      ],
+    );
 
 const ChronicleRelatedPageItemsInnerStrengthEnum
-    _$chronicleRelatedPageItemsInnerStrengthEnum_low =
+_$chronicleRelatedPageItemsInnerStrengthEnum_low =
     const ChronicleRelatedPageItemsInnerStrengthEnum._('low');
 const ChronicleRelatedPageItemsInnerStrengthEnum
-    _$chronicleRelatedPageItemsInnerStrengthEnum_medium =
+_$chronicleRelatedPageItemsInnerStrengthEnum_medium =
     const ChronicleRelatedPageItemsInnerStrengthEnum._('medium');
 const ChronicleRelatedPageItemsInnerStrengthEnum
-    _$chronicleRelatedPageItemsInnerStrengthEnum_high =
+_$chronicleRelatedPageItemsInnerStrengthEnum_high =
     const ChronicleRelatedPageItemsInnerStrengthEnum._('high');
 
 ChronicleRelatedPageItemsInnerStrengthEnum
-    _$chronicleRelatedPageItemsInnerStrengthEnumValueOf(String name) {
+_$chronicleRelatedPageItemsInnerStrengthEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$chronicleRelatedPageItemsInnerStrengthEnum_low;
@@ -51,28 +53,30 @@ ChronicleRelatedPageItemsInnerStrengthEnum
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerStrengthEnum>
-    _$chronicleRelatedPageItemsInnerStrengthEnumValues = BuiltSet<
-        ChronicleRelatedPageItemsInnerStrengthEnum>(const <ChronicleRelatedPageItemsInnerStrengthEnum>[
-  _$chronicleRelatedPageItemsInnerStrengthEnum_low,
-  _$chronicleRelatedPageItemsInnerStrengthEnum_medium,
-  _$chronicleRelatedPageItemsInnerStrengthEnum_high,
-]);
+_$chronicleRelatedPageItemsInnerStrengthEnumValues =
+    BuiltSet<ChronicleRelatedPageItemsInnerStrengthEnum>(
+      const <ChronicleRelatedPageItemsInnerStrengthEnum>[
+        _$chronicleRelatedPageItemsInnerStrengthEnum_low,
+        _$chronicleRelatedPageItemsInnerStrengthEnum_medium,
+        _$chronicleRelatedPageItemsInnerStrengthEnum_high,
+      ],
+    );
 
 const ChronicleRelatedPageItemsInnerDimensionsEnum
-    _$chronicleRelatedPageItemsInnerDimensionsEnum_evidence =
+_$chronicleRelatedPageItemsInnerDimensionsEnum_evidence =
     const ChronicleRelatedPageItemsInnerDimensionsEnum._('evidence');
 const ChronicleRelatedPageItemsInnerDimensionsEnum
-    _$chronicleRelatedPageItemsInnerDimensionsEnum_entities =
+_$chronicleRelatedPageItemsInnerDimensionsEnum_entities =
     const ChronicleRelatedPageItemsInnerDimensionsEnum._('entities');
 const ChronicleRelatedPageItemsInnerDimensionsEnum
-    _$chronicleRelatedPageItemsInnerDimensionsEnum_areaTime =
+_$chronicleRelatedPageItemsInnerDimensionsEnum_areaTime =
     const ChronicleRelatedPageItemsInnerDimensionsEnum._('areaTime');
 const ChronicleRelatedPageItemsInnerDimensionsEnum
-    _$chronicleRelatedPageItemsInnerDimensionsEnum_topics =
+_$chronicleRelatedPageItemsInnerDimensionsEnum_topics =
     const ChronicleRelatedPageItemsInnerDimensionsEnum._('topics');
 
 ChronicleRelatedPageItemsInnerDimensionsEnum
-    _$chronicleRelatedPageItemsInnerDimensionsEnumValueOf(String name) {
+_$chronicleRelatedPageItemsInnerDimensionsEnumValueOf(String name) {
   switch (name) {
     case 'evidence':
       return _$chronicleRelatedPageItemsInnerDimensionsEnum_evidence;
@@ -88,26 +92,28 @@ ChronicleRelatedPageItemsInnerDimensionsEnum
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerDimensionsEnum>
-    _$chronicleRelatedPageItemsInnerDimensionsEnumValues = BuiltSet<
-        ChronicleRelatedPageItemsInnerDimensionsEnum>(const <ChronicleRelatedPageItemsInnerDimensionsEnum>[
-  _$chronicleRelatedPageItemsInnerDimensionsEnum_evidence,
-  _$chronicleRelatedPageItemsInnerDimensionsEnum_entities,
-  _$chronicleRelatedPageItemsInnerDimensionsEnum_areaTime,
-  _$chronicleRelatedPageItemsInnerDimensionsEnum_topics,
-]);
+_$chronicleRelatedPageItemsInnerDimensionsEnumValues =
+    BuiltSet<ChronicleRelatedPageItemsInnerDimensionsEnum>(
+      const <ChronicleRelatedPageItemsInnerDimensionsEnum>[
+        _$chronicleRelatedPageItemsInnerDimensionsEnum_evidence,
+        _$chronicleRelatedPageItemsInnerDimensionsEnum_entities,
+        _$chronicleRelatedPageItemsInnerDimensionsEnum_areaTime,
+        _$chronicleRelatedPageItemsInnerDimensionsEnum_topics,
+      ],
+    );
 
 const ChronicleRelatedPageItemsInnerTemporalEnum
-    _$chronicleRelatedPageItemsInnerTemporalEnum_aPrecedesB =
+_$chronicleRelatedPageItemsInnerTemporalEnum_aPrecedesB =
     const ChronicleRelatedPageItemsInnerTemporalEnum._('aPrecedesB');
 const ChronicleRelatedPageItemsInnerTemporalEnum
-    _$chronicleRelatedPageItemsInnerTemporalEnum_bPrecedesA =
+_$chronicleRelatedPageItemsInnerTemporalEnum_bPrecedesA =
     const ChronicleRelatedPageItemsInnerTemporalEnum._('bPrecedesA');
 const ChronicleRelatedPageItemsInnerTemporalEnum
-    _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent =
+_$chronicleRelatedPageItemsInnerTemporalEnum_concurrent =
     const ChronicleRelatedPageItemsInnerTemporalEnum._('concurrent');
 
 ChronicleRelatedPageItemsInnerTemporalEnum
-    _$chronicleRelatedPageItemsInnerTemporalEnumValueOf(String name) {
+_$chronicleRelatedPageItemsInnerTemporalEnumValueOf(String name) {
   switch (name) {
     case 'aPrecedesB':
       return _$chronicleRelatedPageItemsInnerTemporalEnum_aPrecedesB;
@@ -121,25 +127,27 @@ ChronicleRelatedPageItemsInnerTemporalEnum
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerTemporalEnum>
-    _$chronicleRelatedPageItemsInnerTemporalEnumValues = BuiltSet<
-        ChronicleRelatedPageItemsInnerTemporalEnum>(const <ChronicleRelatedPageItemsInnerTemporalEnum>[
-  _$chronicleRelatedPageItemsInnerTemporalEnum_aPrecedesB,
-  _$chronicleRelatedPageItemsInnerTemporalEnum_bPrecedesA,
-  _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent,
-]);
+_$chronicleRelatedPageItemsInnerTemporalEnumValues =
+    BuiltSet<ChronicleRelatedPageItemsInnerTemporalEnum>(
+      const <ChronicleRelatedPageItemsInnerTemporalEnum>[
+        _$chronicleRelatedPageItemsInnerTemporalEnum_aPrecedesB,
+        _$chronicleRelatedPageItemsInnerTemporalEnum_bPrecedesA,
+        _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent,
+      ],
+    );
 
 const ChronicleRelatedPageItemsInnerTimeOverlapEnum
-    _$chronicleRelatedPageItemsInnerTimeOverlapEnum_none =
+_$chronicleRelatedPageItemsInnerTimeOverlapEnum_none =
     const ChronicleRelatedPageItemsInnerTimeOverlapEnum._('none');
 const ChronicleRelatedPageItemsInnerTimeOverlapEnum
-    _$chronicleRelatedPageItemsInnerTimeOverlapEnum_partial =
+_$chronicleRelatedPageItemsInnerTimeOverlapEnum_partial =
     const ChronicleRelatedPageItemsInnerTimeOverlapEnum._('partial');
 const ChronicleRelatedPageItemsInnerTimeOverlapEnum
-    _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full =
+_$chronicleRelatedPageItemsInnerTimeOverlapEnum_full =
     const ChronicleRelatedPageItemsInnerTimeOverlapEnum._('full');
 
 ChronicleRelatedPageItemsInnerTimeOverlapEnum
-    _$chronicleRelatedPageItemsInnerTimeOverlapEnumValueOf(String name) {
+_$chronicleRelatedPageItemsInnerTimeOverlapEnumValueOf(String name) {
   switch (name) {
     case 'none':
       return _$chronicleRelatedPageItemsInnerTimeOverlapEnum_none;
@@ -153,22 +161,24 @@ ChronicleRelatedPageItemsInnerTimeOverlapEnum
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerTimeOverlapEnum>
-    _$chronicleRelatedPageItemsInnerTimeOverlapEnumValues = BuiltSet<
-        ChronicleRelatedPageItemsInnerTimeOverlapEnum>(const <ChronicleRelatedPageItemsInnerTimeOverlapEnum>[
-  _$chronicleRelatedPageItemsInnerTimeOverlapEnum_none,
-  _$chronicleRelatedPageItemsInnerTimeOverlapEnum_partial,
-  _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full,
-]);
+_$chronicleRelatedPageItemsInnerTimeOverlapEnumValues =
+    BuiltSet<ChronicleRelatedPageItemsInnerTimeOverlapEnum>(
+      const <ChronicleRelatedPageItemsInnerTimeOverlapEnum>[
+        _$chronicleRelatedPageItemsInnerTimeOverlapEnum_none,
+        _$chronicleRelatedPageItemsInnerTimeOverlapEnum_partial,
+        _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full,
+      ],
+    );
 
 const ChronicleRelatedPageItemsInnerStatusEnum
-    _$chronicleRelatedPageItemsInnerStatusEnum_active =
+_$chronicleRelatedPageItemsInnerStatusEnum_active =
     const ChronicleRelatedPageItemsInnerStatusEnum._('active');
 const ChronicleRelatedPageItemsInnerStatusEnum
-    _$chronicleRelatedPageItemsInnerStatusEnum_dismissed =
+_$chronicleRelatedPageItemsInnerStatusEnum_dismissed =
     const ChronicleRelatedPageItemsInnerStatusEnum._('dismissed');
 
 ChronicleRelatedPageItemsInnerStatusEnum
-    _$chronicleRelatedPageItemsInnerStatusEnumValueOf(String name) {
+_$chronicleRelatedPageItemsInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'active':
       return _$chronicleRelatedPageItemsInnerStatusEnum_active;
@@ -180,25 +190,26 @@ ChronicleRelatedPageItemsInnerStatusEnum
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerStatusEnum>
-    _$chronicleRelatedPageItemsInnerStatusEnumValues = BuiltSet<
-        ChronicleRelatedPageItemsInnerStatusEnum>(const <ChronicleRelatedPageItemsInnerStatusEnum>[
-  _$chronicleRelatedPageItemsInnerStatusEnum_active,
-  _$chronicleRelatedPageItemsInnerStatusEnum_dismissed,
-]);
+_$chronicleRelatedPageItemsInnerStatusEnumValues =
+    BuiltSet<ChronicleRelatedPageItemsInnerStatusEnum>(
+      const <ChronicleRelatedPageItemsInnerStatusEnum>[
+        _$chronicleRelatedPageItemsInnerStatusEnum_active,
+        _$chronicleRelatedPageItemsInnerStatusEnum_dismissed,
+      ],
+    );
 
 const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
-    _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_pending =
+_$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_pending =
     const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum._('pending');
 const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
-    _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted =
+_$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted =
     const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum._('granted');
 const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
-    _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined =
+_$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined =
     const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum._('declined');
 
 ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
-    _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValueOf(
-        String name) {
+_$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValueOf(String name) {
   switch (name) {
     case 'pending':
       return _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_pending;
@@ -212,33 +223,35 @@ ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>
-    _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValues = BuiltSet<
-        ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>(const <ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>[
-  _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_pending,
-  _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted,
-  _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined,
-]);
+_$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValues =
+    BuiltSet<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>(
+      const <ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>[
+        _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_pending,
+        _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted,
+        _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined,
+      ],
+    );
 
 Serializer<ChronicleRelatedPageItemsInnerDisclosureEnum>
-    _$chronicleRelatedPageItemsInnerDisclosureEnumSerializer =
+_$chronicleRelatedPageItemsInnerDisclosureEnumSerializer =
     _$ChronicleRelatedPageItemsInnerDisclosureEnumSerializer();
 Serializer<ChronicleRelatedPageItemsInnerStrengthEnum>
-    _$chronicleRelatedPageItemsInnerStrengthEnumSerializer =
+_$chronicleRelatedPageItemsInnerStrengthEnumSerializer =
     _$ChronicleRelatedPageItemsInnerStrengthEnumSerializer();
 Serializer<ChronicleRelatedPageItemsInnerDimensionsEnum>
-    _$chronicleRelatedPageItemsInnerDimensionsEnumSerializer =
+_$chronicleRelatedPageItemsInnerDimensionsEnumSerializer =
     _$ChronicleRelatedPageItemsInnerDimensionsEnumSerializer();
 Serializer<ChronicleRelatedPageItemsInnerTemporalEnum>
-    _$chronicleRelatedPageItemsInnerTemporalEnumSerializer =
+_$chronicleRelatedPageItemsInnerTemporalEnumSerializer =
     _$ChronicleRelatedPageItemsInnerTemporalEnumSerializer();
 Serializer<ChronicleRelatedPageItemsInnerTimeOverlapEnum>
-    _$chronicleRelatedPageItemsInnerTimeOverlapEnumSerializer =
+_$chronicleRelatedPageItemsInnerTimeOverlapEnumSerializer =
     _$ChronicleRelatedPageItemsInnerTimeOverlapEnumSerializer();
 Serializer<ChronicleRelatedPageItemsInnerStatusEnum>
-    _$chronicleRelatedPageItemsInnerStatusEnumSerializer =
+_$chronicleRelatedPageItemsInnerStatusEnumSerializer =
     _$ChronicleRelatedPageItemsInnerStatusEnumSerializer();
 Serializer<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>
-    _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer =
+_$chronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer =
     _$ChronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer();
 
 class _$ChronicleRelatedPageItemsInnerDisclosureEnumSerializer
@@ -253,23 +266,26 @@ class _$ChronicleRelatedPageItemsInnerDisclosureEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleRelatedPageItemsInnerDisclosureEnum
+    ChronicleRelatedPageItemsInnerDisclosureEnum,
   ];
   @override
   final String wireName = 'ChronicleRelatedPageItemsInnerDisclosureEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleRelatedPageItemsInnerDisclosureEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleRelatedPageItemsInnerDisclosureEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleRelatedPageItemsInnerDisclosureEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleRelatedPageItemsInnerDisclosureEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleRelatedPageItemsInnerDisclosureEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleRelatedPageItemsInnerStrengthEnumSerializer
@@ -287,23 +303,26 @@ class _$ChronicleRelatedPageItemsInnerStrengthEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleRelatedPageItemsInnerStrengthEnum
+    ChronicleRelatedPageItemsInnerStrengthEnum,
   ];
   @override
   final String wireName = 'ChronicleRelatedPageItemsInnerStrengthEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleRelatedPageItemsInnerStrengthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleRelatedPageItemsInnerStrengthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleRelatedPageItemsInnerStrengthEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleRelatedPageItemsInnerStrengthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleRelatedPageItemsInnerStrengthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleRelatedPageItemsInnerDimensionsEnumSerializer
@@ -324,23 +343,26 @@ class _$ChronicleRelatedPageItemsInnerDimensionsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleRelatedPageItemsInnerDimensionsEnum
+    ChronicleRelatedPageItemsInnerDimensionsEnum,
   ];
   @override
   final String wireName = 'ChronicleRelatedPageItemsInnerDimensionsEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleRelatedPageItemsInnerDimensionsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleRelatedPageItemsInnerDimensionsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleRelatedPageItemsInnerDimensionsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleRelatedPageItemsInnerDimensionsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleRelatedPageItemsInnerDimensionsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleRelatedPageItemsInnerTemporalEnumSerializer
@@ -358,23 +380,26 @@ class _$ChronicleRelatedPageItemsInnerTemporalEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleRelatedPageItemsInnerTemporalEnum
+    ChronicleRelatedPageItemsInnerTemporalEnum,
   ];
   @override
   final String wireName = 'ChronicleRelatedPageItemsInnerTemporalEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleRelatedPageItemsInnerTemporalEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleRelatedPageItemsInnerTemporalEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleRelatedPageItemsInnerTemporalEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleRelatedPageItemsInnerTemporalEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleRelatedPageItemsInnerTemporalEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleRelatedPageItemsInnerTimeOverlapEnumSerializer
@@ -393,23 +418,26 @@ class _$ChronicleRelatedPageItemsInnerTimeOverlapEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleRelatedPageItemsInnerTimeOverlapEnum
+    ChronicleRelatedPageItemsInnerTimeOverlapEnum,
   ];
   @override
   final String wireName = 'ChronicleRelatedPageItemsInnerTimeOverlapEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleRelatedPageItemsInnerTimeOverlapEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleRelatedPageItemsInnerTimeOverlapEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleRelatedPageItemsInnerTimeOverlapEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleRelatedPageItemsInnerTimeOverlapEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleRelatedPageItemsInnerTimeOverlapEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleRelatedPageItemsInnerStatusEnumSerializer
@@ -425,29 +453,33 @@ class _$ChronicleRelatedPageItemsInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleRelatedPageItemsInnerStatusEnum
+    ChronicleRelatedPageItemsInnerStatusEnum,
   ];
   @override
   final String wireName = 'ChronicleRelatedPageItemsInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleRelatedPageItemsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleRelatedPageItemsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleRelatedPageItemsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleRelatedPageItemsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleRelatedPageItemsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer
     implements
         PrimitiveSerializer<
-            ChronicleRelatedPageItemsInnerAccessRequestStatusEnum> {
+          ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'pending': 'pending',
     'granted': 'granted',
@@ -461,39 +493,42 @@ class _$ChronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
+    ChronicleRelatedPageItemsInnerAccessRequestStatusEnum,
   ];
   @override
   final String wireName =
       'ChronicleRelatedPageItemsInnerAccessRequestStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleRelatedPageItemsInnerAccessRequestStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleRelatedPageItemsInnerAccessRequestStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleRelatedPageItemsInnerAccessRequestStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleRelatedPageItemsInnerAccessRequestStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleRelatedPageItemsInnerAccessRequestStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleRelatedPageItemsInner extends ChronicleRelatedPageItemsInner {
   @override
   final OneOf oneOf;
 
-  factory _$ChronicleRelatedPageItemsInner(
-          [void Function(ChronicleRelatedPageItemsInnerBuilder)? updates]) =>
-      (ChronicleRelatedPageItemsInnerBuilder()..update(updates))._build();
+  factory _$ChronicleRelatedPageItemsInner([
+    void Function(ChronicleRelatedPageItemsInnerBuilder)? updates,
+  ]) => (ChronicleRelatedPageItemsInnerBuilder()..update(updates))._build();
 
   _$ChronicleRelatedPageItemsInner._({required this.oneOf}) : super._();
   @override
   ChronicleRelatedPageItemsInner rebuild(
-          void Function(ChronicleRelatedPageItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleRelatedPageItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleRelatedPageItemsInnerBuilder toBuilder() =>
@@ -515,16 +550,18 @@ class _$ChronicleRelatedPageItemsInner extends ChronicleRelatedPageItemsInner {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ChronicleRelatedPageItemsInner')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ChronicleRelatedPageItemsInner',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
 class ChronicleRelatedPageItemsInnerBuilder
     implements
-        Builder<ChronicleRelatedPageItemsInner,
-            ChronicleRelatedPageItemsInnerBuilder> {
+        Builder<
+          ChronicleRelatedPageItemsInner,
+          ChronicleRelatedPageItemsInnerBuilder
+        > {
   _$ChronicleRelatedPageItemsInner? _$v;
 
   OneOf? _oneOf;
@@ -558,10 +595,14 @@ class ChronicleRelatedPageItemsInnerBuilder
   ChronicleRelatedPageItemsInner build() => _build();
 
   _$ChronicleRelatedPageItemsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleRelatedPageItemsInner._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'ChronicleRelatedPageItemsInner', 'oneOf'),
+            oneOf,
+            r'ChronicleRelatedPageItemsInner',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

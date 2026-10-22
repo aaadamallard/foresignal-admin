@@ -42,7 +42,7 @@ class _$PresenceEventChangeSerializer
   @override
   final Iterable<Type> types = const [
     PresenceEventChange,
-    _$PresenceEventChange
+    _$PresenceEventChange,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$PresenceEventChangeSerializer
     PresenceEventChange object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$PresenceEventChangeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PresenceEventChangeTypeEnum),
-          ) as PresenceEventChangeTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PresenceEventChangeTypeEnum),
+                  )
+                  as PresenceEventChangeTypeEnum;
           result.type = valueDes;
           break;
         case r'clientId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.clientId = valueDes;
           break;
         default:

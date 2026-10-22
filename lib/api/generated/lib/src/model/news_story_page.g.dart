@@ -92,11 +92,9 @@ class NewsStoryPageBuilder
   _$NewsStoryPage _build() {
     _$NewsStoryPage _$result;
     try {
-      _$result = _$v ??
-          _$NewsStoryPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$NewsStoryPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class NewsStoryPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NewsStoryPage', _$failedField, e.toString());
+          r'NewsStoryPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

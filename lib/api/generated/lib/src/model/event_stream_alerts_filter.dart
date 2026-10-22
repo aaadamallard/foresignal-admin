@@ -42,9 +42,9 @@ abstract class EventStreamAlertsFilter
 
   EventStreamAlertsFilter._();
 
-  factory EventStreamAlertsFilter(
-          [void updates(EventStreamAlertsFilterBuilder b)]) =
-      _$EventStreamAlertsFilter;
+  factory EventStreamAlertsFilter([
+    void updates(EventStreamAlertsFilterBuilder b),
+  ]) = _$EventStreamAlertsFilter;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventStreamAlertsFilterBuilder b) => b;
@@ -59,7 +59,7 @@ class _$EventStreamAlertsFilterSerializer
   @override
   final Iterable<Type> types = const [
     EventStreamAlertsFilter,
-    _$EventStreamAlertsFilter
+    _$EventStreamAlertsFilter,
   ];
 
   @override
@@ -74,8 +74,9 @@ class _$EventStreamAlertsFilterSerializer
       yield r'minSeverity';
       yield serializers.serialize(
         object.minSeverity,
-        specifiedType:
-            const FullType.nullable(EventStreamAlertsFilterMinSeverityEnum),
+        specifiedType: const FullType.nullable(
+          EventStreamAlertsFilterMinSeverityEnum,
+        ),
       );
     }
     if (object.ruleId != null) {
@@ -114,9 +115,11 @@ class _$EventStreamAlertsFilterSerializer
     EventStreamAlertsFilter object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,46 +135,60 @@ class _$EventStreamAlertsFilterSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EventStreamAlertsFilterMinSeverityEnum),
-          ) as EventStreamAlertsFilterMinSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EventStreamAlertsFilterMinSeverityEnum,
+                    ),
+                  )
+                  as EventStreamAlertsFilterMinSeverityEnum?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.ruleId.replace(valueDes);
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.source_.replace(valueDes);
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.kind.replace(valueDes);
           break;
         case r'includeSuppressed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.includeSuppressed = valueDes;
           break;

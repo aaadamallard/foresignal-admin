@@ -36,8 +36,9 @@ abstract class EscalationPolicyInput
 
   EscalationPolicyInput._();
 
-  factory EscalationPolicyInput(
-      [void updates(EscalationPolicyInputBuilder b)]) = _$EscalationPolicyInput;
+  factory EscalationPolicyInput([
+    void updates(EscalationPolicyInputBuilder b),
+  ]) = _$EscalationPolicyInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EscalationPolicyInputBuilder b) => b;
@@ -52,7 +53,7 @@ class _$EscalationPolicyInputSerializer
   @override
   final Iterable<Type> types = const [
     EscalationPolicyInput,
-    _$EscalationPolicyInput
+    _$EscalationPolicyInput,
   ];
 
   @override
@@ -95,9 +96,11 @@ class _$EscalationPolicyInputSerializer
     EscalationPolicyInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,33 +116,46 @@ class _$EscalationPolicyInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'steps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(EscalationStep)]),
-          ) as BuiltList<EscalationStep>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EscalationStep),
+                    ]),
+                  )
+                  as BuiltList<EscalationStep>;
           result.steps.replace(valueDes);
           break;
         case r'repeat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EscalationPolicyInputRepeat),
-          ) as EscalationPolicyInputRepeat?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EscalationPolicyInputRepeat,
+                    ),
+                  )
+                  as EscalationPolicyInputRepeat?;
           if (valueDes == null) continue;
           result.repeat.replace(valueDes);
           break;
         case r'stopOn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EscalationPolicyInputStopOn),
-          ) as EscalationPolicyInputStopOn?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EscalationPolicyInputStopOn,
+                    ),
+                  )
+                  as EscalationPolicyInputStopOn?;
           if (valueDes == null) continue;
           result.stopOn.replace(valueDes);
           break;

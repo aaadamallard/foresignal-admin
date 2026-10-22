@@ -27,16 +27,16 @@ class _$Group extends Group {
   factory _$Group([void Function(GroupBuilder)? updates]) =>
       (GroupBuilder()..update(updates))._build();
 
-  _$Group._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.createdBy,
-      required this.memberCount,
-      this.members,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$Group._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.createdBy,
+    required this.memberCount,
+    this.members,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   Group rebuild(void Function(GroupBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -162,17 +162,24 @@ class GroupBuilder implements Builder<Group, GroupBuilder> {
   _$Group _build() {
     _$Group _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Group._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Group', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'Group', 'name'),
             description: description,
             createdBy: createdBy.build(),
             memberCount: BuiltValueNullFieldError.checkNotNull(
-                memberCount, r'Group', 'memberCount'),
+              memberCount,
+              r'Group',
+              'memberCount',
+            ),
             members: _members?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Group', 'createdAt'),
+              createdAt,
+              r'Group',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {

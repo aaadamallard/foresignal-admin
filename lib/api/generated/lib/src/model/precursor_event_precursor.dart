@@ -44,9 +44,9 @@ abstract class PrecursorEventPrecursor
 
   PrecursorEventPrecursor._();
 
-  factory PrecursorEventPrecursor(
-          [void updates(PrecursorEventPrecursorBuilder b)]) =
-      _$PrecursorEventPrecursor;
+  factory PrecursorEventPrecursor([
+    void updates(PrecursorEventPrecursorBuilder b),
+  ]) = _$PrecursorEventPrecursor;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorEventPrecursorBuilder b) => b;
@@ -61,7 +61,7 @@ class _$PrecursorEventPrecursorSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorEventPrecursor,
-    _$PrecursorEventPrecursor
+    _$PrecursorEventPrecursor,
   ];
 
   @override
@@ -114,9 +114,11 @@ class _$PrecursorEventPrecursorSerializer
     PrecursorEventPrecursor object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,46 +134,62 @@ class _$PrecursorEventPrecursorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorEventPrecursorKindEnum),
-          ) as PrecursorEventPrecursorKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PrecursorEventPrecursorKindEnum,
+                    ),
+                  )
+                  as PrecursorEventPrecursorKindEnum;
           result.kind = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorEventPrecursorStatusEnum),
-          ) as PrecursorEventPrecursorStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PrecursorEventPrecursorStatusEnum,
+                    ),
+                  )
+                  as PrecursorEventPrecursorStatusEnum;
           result.status = valueDes;
           break;
         case r'statusReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusReason = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.description = valueDes;
           break;
         case r'lift':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lift = valueDes;
           break;

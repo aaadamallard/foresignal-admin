@@ -7,47 +7,47 @@ part of 'notification_preference_channel.dart';
 // **************************************************************************
 
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_webhook =
+_$notificationPreferenceChannelTypeEnum_webhook =
     const NotificationPreferenceChannelTypeEnum._('webhook');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_slack =
+_$notificationPreferenceChannelTypeEnum_slack =
     const NotificationPreferenceChannelTypeEnum._('slack');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_mattermost =
+_$notificationPreferenceChannelTypeEnum_mattermost =
     const NotificationPreferenceChannelTypeEnum._('mattermost');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_discord =
+_$notificationPreferenceChannelTypeEnum_discord =
     const NotificationPreferenceChannelTypeEnum._('discord');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_teams =
+_$notificationPreferenceChannelTypeEnum_teams =
     const NotificationPreferenceChannelTypeEnum._('teams');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_googleChat =
+_$notificationPreferenceChannelTypeEnum_googleChat =
     const NotificationPreferenceChannelTypeEnum._('googleChat');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_telegram =
+_$notificationPreferenceChannelTypeEnum_telegram =
     const NotificationPreferenceChannelTypeEnum._('telegram');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_matrix =
+_$notificationPreferenceChannelTypeEnum_matrix =
     const NotificationPreferenceChannelTypeEnum._('matrix');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_ntfy =
+_$notificationPreferenceChannelTypeEnum_ntfy =
     const NotificationPreferenceChannelTypeEnum._('ntfy');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_gotify =
+_$notificationPreferenceChannelTypeEnum_gotify =
     const NotificationPreferenceChannelTypeEnum._('gotify');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_pushover =
+_$notificationPreferenceChannelTypeEnum_pushover =
     const NotificationPreferenceChannelTypeEnum._('pushover');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_email =
+_$notificationPreferenceChannelTypeEnum_email =
     const NotificationPreferenceChannelTypeEnum._('email');
 const NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnum_webpush =
+_$notificationPreferenceChannelTypeEnum_webpush =
     const NotificationPreferenceChannelTypeEnum._('webpush');
 
 NotificationPreferenceChannelTypeEnum
-    _$notificationPreferenceChannelTypeEnumValueOf(String name) {
+_$notificationPreferenceChannelTypeEnumValueOf(String name) {
   switch (name) {
     case 'webhook':
       return _$notificationPreferenceChannelTypeEnum_webhook;
@@ -81,25 +81,27 @@ NotificationPreferenceChannelTypeEnum
 }
 
 final BuiltSet<NotificationPreferenceChannelTypeEnum>
-    _$notificationPreferenceChannelTypeEnumValues = BuiltSet<
-        NotificationPreferenceChannelTypeEnum>(const <NotificationPreferenceChannelTypeEnum>[
-  _$notificationPreferenceChannelTypeEnum_webhook,
-  _$notificationPreferenceChannelTypeEnum_slack,
-  _$notificationPreferenceChannelTypeEnum_mattermost,
-  _$notificationPreferenceChannelTypeEnum_discord,
-  _$notificationPreferenceChannelTypeEnum_teams,
-  _$notificationPreferenceChannelTypeEnum_googleChat,
-  _$notificationPreferenceChannelTypeEnum_telegram,
-  _$notificationPreferenceChannelTypeEnum_matrix,
-  _$notificationPreferenceChannelTypeEnum_ntfy,
-  _$notificationPreferenceChannelTypeEnum_gotify,
-  _$notificationPreferenceChannelTypeEnum_pushover,
-  _$notificationPreferenceChannelTypeEnum_email,
-  _$notificationPreferenceChannelTypeEnum_webpush,
-]);
+_$notificationPreferenceChannelTypeEnumValues =
+    BuiltSet<NotificationPreferenceChannelTypeEnum>(
+      const <NotificationPreferenceChannelTypeEnum>[
+        _$notificationPreferenceChannelTypeEnum_webhook,
+        _$notificationPreferenceChannelTypeEnum_slack,
+        _$notificationPreferenceChannelTypeEnum_mattermost,
+        _$notificationPreferenceChannelTypeEnum_discord,
+        _$notificationPreferenceChannelTypeEnum_teams,
+        _$notificationPreferenceChannelTypeEnum_googleChat,
+        _$notificationPreferenceChannelTypeEnum_telegram,
+        _$notificationPreferenceChannelTypeEnum_matrix,
+        _$notificationPreferenceChannelTypeEnum_ntfy,
+        _$notificationPreferenceChannelTypeEnum_gotify,
+        _$notificationPreferenceChannelTypeEnum_pushover,
+        _$notificationPreferenceChannelTypeEnum_email,
+        _$notificationPreferenceChannelTypeEnum_webpush,
+      ],
+    );
 
 Serializer<NotificationPreferenceChannelTypeEnum>
-    _$notificationPreferenceChannelTypeEnumSerializer =
+_$notificationPreferenceChannelTypeEnumSerializer =
     _$NotificationPreferenceChannelTypeEnumSerializer();
 
 class _$NotificationPreferenceChannelTypeEnumSerializer
@@ -137,23 +139,26 @@ class _$NotificationPreferenceChannelTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NotificationPreferenceChannelTypeEnum
+    NotificationPreferenceChannelTypeEnum,
   ];
   @override
   final String wireName = 'NotificationPreferenceChannelTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, NotificationPreferenceChannelTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NotificationPreferenceChannelTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationPreferenceChannelTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationPreferenceChannelTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationPreferenceChannelTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationPreferenceChannel extends NotificationPreferenceChannel {
@@ -168,21 +173,21 @@ class _$NotificationPreferenceChannel extends NotificationPreferenceChannel {
   @override
   final String? language;
 
-  factory _$NotificationPreferenceChannel(
-          [void Function(NotificationPreferenceChannelBuilder)? updates]) =>
-      (NotificationPreferenceChannelBuilder()..update(updates))._build();
+  factory _$NotificationPreferenceChannel([
+    void Function(NotificationPreferenceChannelBuilder)? updates,
+  ]) => (NotificationPreferenceChannelBuilder()..update(updates))._build();
 
-  _$NotificationPreferenceChannel._(
-      {this.channelId,
-      required this.type,
-      this.config,
-      this.secretFields,
-      this.language})
-      : super._();
+  _$NotificationPreferenceChannel._({
+    this.channelId,
+    required this.type,
+    this.config,
+    this.secretFields,
+    this.language,
+  }) : super._();
   @override
   NotificationPreferenceChannel rebuild(
-          void Function(NotificationPreferenceChannelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationPreferenceChannelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationPreferenceChannelBuilder toBuilder() =>
@@ -225,8 +230,10 @@ class _$NotificationPreferenceChannel extends NotificationPreferenceChannel {
 
 class NotificationPreferenceChannelBuilder
     implements
-        Builder<NotificationPreferenceChannel,
-            NotificationPreferenceChannelBuilder> {
+        Builder<
+          NotificationPreferenceChannel,
+          NotificationPreferenceChannelBuilder
+        > {
   _$NotificationPreferenceChannel? _$v;
 
   String? _channelId;
@@ -286,11 +293,15 @@ class NotificationPreferenceChannelBuilder
   _$NotificationPreferenceChannel _build() {
     _$NotificationPreferenceChannel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NotificationPreferenceChannel._(
             channelId: channelId,
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'NotificationPreferenceChannel', 'type'),
+              type,
+              r'NotificationPreferenceChannel',
+              'type',
+            ),
             config: _config?.build(),
             secretFields: _secretFields?.build(),
             language: language,
@@ -304,7 +315,10 @@ class NotificationPreferenceChannelBuilder
         _secretFields?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationPreferenceChannel', _$failedField, e.toString());
+          r'NotificationPreferenceChannel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

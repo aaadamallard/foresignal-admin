@@ -25,9 +25,9 @@ abstract class PopulationPackImportCells
 
   PopulationPackImportCells._();
 
-  factory PopulationPackImportCells(
-          [void updates(PopulationPackImportCellsBuilder b)]) =
-      _$PopulationPackImportCells;
+  factory PopulationPackImportCells([
+    void updates(PopulationPackImportCellsBuilder b),
+  ]) = _$PopulationPackImportCells;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PopulationPackImportCellsBuilder b) => b;
@@ -42,7 +42,7 @@ class _$PopulationPackImportCellsSerializer
   @override
   final Iterable<Type> types = const [
     PopulationPackImportCells,
-    _$PopulationPackImportCells
+    _$PopulationPackImportCells,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$PopulationPackImportCellsSerializer
     PopulationPackImportCells object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$PopulationPackImportCellsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'res5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.res5 = valueDes;
           break;
         case r'res7':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.res7 = valueDes;
           break;

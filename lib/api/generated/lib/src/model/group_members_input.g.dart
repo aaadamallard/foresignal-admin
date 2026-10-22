@@ -10,9 +10,9 @@ class _$GroupMembersInput extends GroupMembersInput {
   @override
   final BuiltList<GroupMemberInput> members;
 
-  factory _$GroupMembersInput(
-          [void Function(GroupMembersInputBuilder)? updates]) =>
-      (GroupMembersInputBuilder()..update(updates))._build();
+  factory _$GroupMembersInput([
+    void Function(GroupMembersInputBuilder)? updates,
+  ]) => (GroupMembersInputBuilder()..update(updates))._build();
 
   _$GroupMembersInput._({required this.members}) : super._();
   @override
@@ -39,9 +39,9 @@ class _$GroupMembersInput extends GroupMembersInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GroupMembersInput')
-          ..add('members', members))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'GroupMembersInput',
+    )..add('members', members)).toString();
   }
 }
 
@@ -84,10 +84,7 @@ class GroupMembersInputBuilder
   _$GroupMembersInput _build() {
     _$GroupMembersInput _$result;
     try {
-      _$result = _$v ??
-          _$GroupMembersInput._(
-            members: members.build(),
-          );
+      _$result = _$v ?? _$GroupMembersInput._(members: members.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95,7 +92,10 @@ class GroupMembersInputBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GroupMembersInput', _$failedField, e.toString());
+          r'GroupMembersInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

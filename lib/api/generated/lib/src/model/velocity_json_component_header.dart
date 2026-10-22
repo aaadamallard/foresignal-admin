@@ -70,9 +70,9 @@ abstract class VelocityJsonComponentHeader
 
   VelocityJsonComponentHeader._();
 
-  factory VelocityJsonComponentHeader(
-          [void updates(VelocityJsonComponentHeaderBuilder b)]) =
-      _$VelocityJsonComponentHeader;
+  factory VelocityJsonComponentHeader([
+    void updates(VelocityJsonComponentHeaderBuilder b),
+  ]) = _$VelocityJsonComponentHeader;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(VelocityJsonComponentHeaderBuilder b) => b;
@@ -87,7 +87,7 @@ class _$VelocityJsonComponentHeaderSerializer
   @override
   final Iterable<Type> types = const [
     VelocityJsonComponentHeader,
-    _$VelocityJsonComponentHeader
+    _$VelocityJsonComponentHeader,
   ];
 
   @override
@@ -101,55 +101,33 @@ class _$VelocityJsonComponentHeaderSerializer
     yield r'parameterCategory';
     yield serializers.serialize(
       object.parameterCategory,
-      specifiedType:
-          const FullType(VelocityJsonComponentHeaderParameterCategoryEnum),
+      specifiedType: const FullType(
+        VelocityJsonComponentHeaderParameterCategoryEnum,
+      ),
     );
     yield r'parameterNumber';
     yield serializers.serialize(
       object.parameterNumber,
-      specifiedType:
-          const FullType(VelocityJsonComponentHeaderParameterNumberEnum),
+      specifiedType: const FullType(
+        VelocityJsonComponentHeaderParameterNumberEnum,
+      ),
     );
     yield r'lo1';
-    yield serializers.serialize(
-      object.lo1,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lo1, specifiedType: const FullType(num));
     yield r'la1';
-    yield serializers.serialize(
-      object.la1,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.la1, specifiedType: const FullType(num));
     yield r'lo2';
-    yield serializers.serialize(
-      object.lo2,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lo2, specifiedType: const FullType(num));
     yield r'la2';
-    yield serializers.serialize(
-      object.la2,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.la2, specifiedType: const FullType(num));
     yield r'dx';
-    yield serializers.serialize(
-      object.dx,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.dx, specifiedType: const FullType(num));
     yield r'dy';
-    yield serializers.serialize(
-      object.dy,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.dy, specifiedType: const FullType(num));
     yield r'nx';
-    yield serializers.serialize(
-      object.nx,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.nx, specifiedType: const FullType(int));
     yield r'ny';
-    yield serializers.serialize(
-      object.ny,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.ny, specifiedType: const FullType(int));
     yield r'refTime';
     yield serializers.serialize(
       object.refTime,
@@ -168,9 +146,11 @@ class _$VelocityJsonComponentHeaderSerializer
     VelocityJsonComponentHeader object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -186,89 +166,88 @@ class _$VelocityJsonComponentHeaderSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'parameterCategory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                VelocityJsonComponentHeaderParameterCategoryEnum),
-          ) as VelocityJsonComponentHeaderParameterCategoryEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      VelocityJsonComponentHeaderParameterCategoryEnum,
+                    ),
+                  )
+                  as VelocityJsonComponentHeaderParameterCategoryEnum;
           result.parameterCategory = valueDes;
           break;
         case r'parameterNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(VelocityJsonComponentHeaderParameterNumberEnum),
-          ) as VelocityJsonComponentHeaderParameterNumberEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      VelocityJsonComponentHeaderParameterNumberEnum,
+                    ),
+                  )
+                  as VelocityJsonComponentHeaderParameterNumberEnum;
           result.parameterNumber = valueDes;
           break;
         case r'lo1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lo1 = valueDes;
           break;
         case r'la1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.la1 = valueDes;
           break;
         case r'lo2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lo2 = valueDes;
           break;
         case r'la2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.la2 = valueDes;
           break;
         case r'dx':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.dx = valueDes;
           break;
         case r'dy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.dy = valueDes;
           break;
         case r'nx':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nx = valueDes;
           break;
         case r'ny':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.ny = valueDes;
           break;
         case r'refTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.refTime = valueDes;
           break;
         case r'forecastTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.forecastTime = valueDes;
           break;
         default:
@@ -306,17 +285,17 @@ class VelocityJsonComponentHeaderParameterCategoryEnum extends EnumClass {
       _$velocityJsonComponentHeaderParameterCategoryEnum_number2;
 
   static Serializer<VelocityJsonComponentHeaderParameterCategoryEnum>
-      get serializer =>
-          _$velocityJsonComponentHeaderParameterCategoryEnumSerializer;
+  get serializer =>
+      _$velocityJsonComponentHeaderParameterCategoryEnumSerializer;
 
   const VelocityJsonComponentHeaderParameterCategoryEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<VelocityJsonComponentHeaderParameterCategoryEnum>
-      get values => _$velocityJsonComponentHeaderParameterCategoryEnumValues;
+  get values => _$velocityJsonComponentHeaderParameterCategoryEnumValues;
   static VelocityJsonComponentHeaderParameterCategoryEnum valueOf(
-          String name) =>
-      _$velocityJsonComponentHeaderParameterCategoryEnumValueOf(name);
+    String name,
+  ) => _$velocityJsonComponentHeaderParameterCategoryEnumValueOf(name);
 }
 
 /// 2 = U, 3 = V
@@ -329,11 +308,10 @@ class VelocityJsonComponentHeaderParameterNumberEnum extends EnumClass {
       _$velocityJsonComponentHeaderParameterNumberEnum_number3;
 
   static Serializer<VelocityJsonComponentHeaderParameterNumberEnum>
-      get serializer =>
-          _$velocityJsonComponentHeaderParameterNumberEnumSerializer;
+  get serializer => _$velocityJsonComponentHeaderParameterNumberEnumSerializer;
 
   const VelocityJsonComponentHeaderParameterNumberEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<VelocityJsonComponentHeaderParameterNumberEnum> get values =>
       _$velocityJsonComponentHeaderParameterNumberEnumValues;

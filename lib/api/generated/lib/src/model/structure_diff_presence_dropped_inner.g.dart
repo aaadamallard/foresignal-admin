@@ -15,17 +15,19 @@ class _$StructureDiffPresenceDroppedInner
   @override
   final num to;
 
-  factory _$StructureDiffPresenceDroppedInner(
-          [void Function(StructureDiffPresenceDroppedInnerBuilder)? updates]) =>
-      (StructureDiffPresenceDroppedInnerBuilder()..update(updates))._build();
+  factory _$StructureDiffPresenceDroppedInner([
+    void Function(StructureDiffPresenceDroppedInnerBuilder)? updates,
+  ]) => (StructureDiffPresenceDroppedInnerBuilder()..update(updates))._build();
 
-  _$StructureDiffPresenceDroppedInner._(
-      {required this.path, required this.from, required this.to})
-      : super._();
+  _$StructureDiffPresenceDroppedInner._({
+    required this.path,
+    required this.from,
+    required this.to,
+  }) : super._();
   @override
   StructureDiffPresenceDroppedInner rebuild(
-          void Function(StructureDiffPresenceDroppedInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StructureDiffPresenceDroppedInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StructureDiffPresenceDroppedInnerBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$StructureDiffPresenceDroppedInner
 
 class StructureDiffPresenceDroppedInnerBuilder
     implements
-        Builder<StructureDiffPresenceDroppedInner,
-            StructureDiffPresenceDroppedInnerBuilder> {
+        Builder<
+          StructureDiffPresenceDroppedInner,
+          StructureDiffPresenceDroppedInnerBuilder
+        > {
   _$StructureDiffPresenceDroppedInner? _$v;
 
   String? _path;
@@ -100,7 +104,8 @@ class StructureDiffPresenceDroppedInnerBuilder
 
   @override
   void update(
-      void Function(StructureDiffPresenceDroppedInnerBuilder)? updates) {
+    void Function(StructureDiffPresenceDroppedInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -108,14 +113,24 @@ class StructureDiffPresenceDroppedInnerBuilder
   StructureDiffPresenceDroppedInner build() => _build();
 
   _$StructureDiffPresenceDroppedInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StructureDiffPresenceDroppedInner._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'StructureDiffPresenceDroppedInner', 'path'),
+            path,
+            r'StructureDiffPresenceDroppedInner',
+            'path',
+          ),
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'StructureDiffPresenceDroppedInner', 'from'),
+            from,
+            r'StructureDiffPresenceDroppedInner',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'StructureDiffPresenceDroppedInner', 'to'),
+            to,
+            r'StructureDiffPresenceDroppedInner',
+            'to',
+          ),
         );
     replace(_$result);
     return _$result;

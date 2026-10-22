@@ -53,9 +53,9 @@ abstract class BenchmarkComponentResult
 
   BenchmarkComponentResult._();
 
-  factory BenchmarkComponentResult(
-          [void updates(BenchmarkComponentResultBuilder b)]) =
-      _$BenchmarkComponentResult;
+  factory BenchmarkComponentResult([
+    void updates(BenchmarkComponentResultBuilder b),
+  ]) = _$BenchmarkComponentResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkComponentResultBuilder b) => b;
@@ -70,7 +70,7 @@ class _$BenchmarkComponentResultSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkComponentResult,
-    _$BenchmarkComponentResult
+    _$BenchmarkComponentResult,
   ];
 
   @override
@@ -99,23 +99,27 @@ class _$BenchmarkComponentResultSerializer
     yield r'metrics';
     yield serializers.serialize(
       object.metrics,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType.nullable(num)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(num),
+      ]),
     );
     if (object.thresholds != null) {
       yield r'thresholds';
       yield serializers.serialize(
         object.thresholds,
-        specifiedType: const FullType(
-            BuiltList, [FullType(BenchmarkComponentResultThresholdsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BenchmarkComponentResultThresholdsInner),
+        ]),
       );
     }
     if (object.scenarios != null) {
       yield r'scenarios';
       yield serializers.serialize(
         object.scenarios,
-        specifiedType: const FullType(
-            BuiltList, [FullType(BenchmarkComponentResultScenariosInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BenchmarkComponentResultScenariosInner),
+        ]),
       );
     }
     if (object.caveats != null) {
@@ -133,9 +137,11 @@ class _$BenchmarkComponentResultSerializer
     BenchmarkComponentResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -151,58 +157,79 @@ class _$BenchmarkComponentResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'component':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.component = valueDes;
           break;
         case r'componentVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.componentVersion = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BenchmarkComponentResultStatusEnum),
-          ) as BenchmarkComponentResultStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkComponentResultStatusEnum,
+                    ),
+                  )
+                  as BenchmarkComponentResultStatusEnum;
           result.status = valueDes;
           break;
         case r'metrics':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(num)]),
-          ) as BuiltMap<String, num?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num?>;
           result.metrics.replace(valueDes);
           break;
         case r'thresholds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(BenchmarkComponentResultThresholdsInner)]),
-          ) as BuiltList<BenchmarkComponentResultThresholdsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BenchmarkComponentResultThresholdsInner),
+                    ]),
+                  )
+                  as BuiltList<BenchmarkComponentResultThresholdsInner>?;
           if (valueDes == null) continue;
           result.thresholds.replace(valueDes);
           break;
         case r'scenarios':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(BenchmarkComponentResultScenariosInner)]),
-          ) as BuiltList<BenchmarkComponentResultScenariosInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BenchmarkComponentResultScenariosInner),
+                    ]),
+                  )
+                  as BuiltList<BenchmarkComponentResultScenariosInner>?;
           if (valueDes == null) continue;
           result.scenarios.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;

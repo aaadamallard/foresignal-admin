@@ -12,15 +12,15 @@ class _$ContextLinkRequest extends ContextLinkRequest {
   @override
   final String? workspaceId;
 
-  factory _$ContextLinkRequest(
-          [void Function(ContextLinkRequestBuilder)? updates]) =>
-      (ContextLinkRequestBuilder()..update(updates))._build();
+  factory _$ContextLinkRequest([
+    void Function(ContextLinkRequestBuilder)? updates,
+  ]) => (ContextLinkRequestBuilder()..update(updates))._build();
 
   _$ContextLinkRequest._({required this.context, this.workspaceId}) : super._();
   @override
   ContextLinkRequest rebuild(
-          void Function(ContextLinkRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ContextLinkRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ContextLinkRequestBuilder toBuilder() =>
@@ -95,7 +95,8 @@ class ContextLinkRequestBuilder
   _$ContextLinkRequest _build() {
     _$ContextLinkRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ContextLinkRequest._(
             context: context.build(),
             workspaceId: workspaceId,
@@ -107,7 +108,10 @@ class ContextLinkRequestBuilder
         context.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ContextLinkRequest', _$failedField, e.toString());
+          r'ContextLinkRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

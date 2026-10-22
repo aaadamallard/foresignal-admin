@@ -14,7 +14,8 @@ const ChronicleAccessEventStatusEnum _$chronicleAccessEventStatusEnum_declined =
     const ChronicleAccessEventStatusEnum._('declined');
 
 ChronicleAccessEventStatusEnum _$chronicleAccessEventStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'pending':
       return _$chronicleAccessEventStatusEnum_pending;
@@ -28,15 +29,17 @@ ChronicleAccessEventStatusEnum _$chronicleAccessEventStatusEnumValueOf(
 }
 
 final BuiltSet<ChronicleAccessEventStatusEnum>
-    _$chronicleAccessEventStatusEnumValues = BuiltSet<
-        ChronicleAccessEventStatusEnum>(const <ChronicleAccessEventStatusEnum>[
-  _$chronicleAccessEventStatusEnum_pending,
-  _$chronicleAccessEventStatusEnum_granted,
-  _$chronicleAccessEventStatusEnum_declined,
-]);
+_$chronicleAccessEventStatusEnumValues =
+    BuiltSet<ChronicleAccessEventStatusEnum>(
+      const <ChronicleAccessEventStatusEnum>[
+        _$chronicleAccessEventStatusEnum_pending,
+        _$chronicleAccessEventStatusEnum_granted,
+        _$chronicleAccessEventStatusEnum_declined,
+      ],
+    );
 
 Serializer<ChronicleAccessEventStatusEnum>
-    _$chronicleAccessEventStatusEnumSerializer =
+_$chronicleAccessEventStatusEnumSerializer =
     _$ChronicleAccessEventStatusEnumSerializer();
 
 class _$ChronicleAccessEventStatusEnumSerializer
@@ -59,16 +62,19 @@ class _$ChronicleAccessEventStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ChronicleAccessEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChronicleAccessEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleAccessEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleAccessEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleAccessEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleAccessEvent extends ChronicleAccessEvent {
@@ -87,23 +93,23 @@ class _$ChronicleAccessEvent extends ChronicleAccessEvent {
   @override
   final DateTime at;
 
-  factory _$ChronicleAccessEvent(
-          [void Function(ChronicleAccessEventBuilder)? updates]) =>
-      (ChronicleAccessEventBuilder()..update(updates))._build();
+  factory _$ChronicleAccessEvent([
+    void Function(ChronicleAccessEventBuilder)? updates,
+  ]) => (ChronicleAccessEventBuilder()..update(updates))._build();
 
-  _$ChronicleAccessEvent._(
-      {required this.requestId,
-      required this.linkId,
-      required this.status,
-      this.requesterHandle,
-      this.message,
-      this.chronicleId,
-      required this.at})
-      : super._();
+  _$ChronicleAccessEvent._({
+    required this.requestId,
+    required this.linkId,
+    required this.status,
+    this.requesterHandle,
+    this.message,
+    this.chronicleId,
+    required this.at,
+  }) : super._();
   @override
   ChronicleAccessEvent rebuild(
-          void Function(ChronicleAccessEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleAccessEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleAccessEventBuilder toBuilder() =>
@@ -216,19 +222,32 @@ class ChronicleAccessEventBuilder
   ChronicleAccessEvent build() => _build();
 
   _$ChronicleAccessEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleAccessEvent._(
           requestId: BuiltValueNullFieldError.checkNotNull(
-              requestId, r'ChronicleAccessEvent', 'requestId'),
+            requestId,
+            r'ChronicleAccessEvent',
+            'requestId',
+          ),
           linkId: BuiltValueNullFieldError.checkNotNull(
-              linkId, r'ChronicleAccessEvent', 'linkId'),
+            linkId,
+            r'ChronicleAccessEvent',
+            'linkId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'ChronicleAccessEvent', 'status'),
+            status,
+            r'ChronicleAccessEvent',
+            'status',
+          ),
           requesterHandle: requesterHandle,
           message: message,
           chronicleId: chronicleId,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'ChronicleAccessEvent', 'at'),
+            at,
+            r'ChronicleAccessEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

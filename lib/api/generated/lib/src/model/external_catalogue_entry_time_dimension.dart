@@ -18,8 +18,10 @@ part 'external_catalogue_entry_time_dimension.g.dart';
 @BuiltValue()
 abstract class ExternalCatalogueEntryTimeDimension
     implements
-        Built<ExternalCatalogueEntryTimeDimension,
-            ExternalCatalogueEntryTimeDimensionBuilder> {
+        Built<
+          ExternalCatalogueEntryTimeDimension,
+          ExternalCatalogueEntryTimeDimensionBuilder
+        > {
   /// Time value format in the template
   @BuiltValueField(wireName: r'format')
   String? get format;
@@ -38,9 +40,9 @@ abstract class ExternalCatalogueEntryTimeDimension
 
   ExternalCatalogueEntryTimeDimension._();
 
-  factory ExternalCatalogueEntryTimeDimension(
-          [void updates(ExternalCatalogueEntryTimeDimensionBuilder b)]) =
-      _$ExternalCatalogueEntryTimeDimension;
+  factory ExternalCatalogueEntryTimeDimension([
+    void updates(ExternalCatalogueEntryTimeDimensionBuilder b),
+  ]) = _$ExternalCatalogueEntryTimeDimension;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalCatalogueEntryTimeDimensionBuilder b) => b;
@@ -55,7 +57,7 @@ class _$ExternalCatalogueEntryTimeDimensionSerializer
   @override
   final Iterable<Type> types = const [
     ExternalCatalogueEntryTimeDimension,
-    _$ExternalCatalogueEntryTimeDimension
+    _$ExternalCatalogueEntryTimeDimension,
   ];
 
   @override
@@ -102,9 +104,11 @@ class _$ExternalCatalogueEntryTimeDimensionSerializer
     ExternalCatalogueEntryTimeDimension object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,34 +124,42 @@ class _$ExternalCatalogueEntryTimeDimensionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.format = valueDes;
           break;
         case r'period':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.period = valueDes;
           break;
         case r'typicalLatency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.typicalLatency = valueDes;
           break;
         case r'defaultLag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.defaultLag = valueDes;
           break;

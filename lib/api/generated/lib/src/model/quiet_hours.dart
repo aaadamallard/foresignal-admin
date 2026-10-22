@@ -71,8 +71,9 @@ class _$QuietHoursSerializer implements PrimitiveSerializer<QuietHours> {
       yield r'days';
       yield serializers.serialize(
         object.days,
-        specifiedType:
-            const FullType(BuiltList, [FullType(QuietHoursDaysEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(QuietHoursDaysEnum),
+        ]),
       );
     }
     if (object.bypassSeverity != null) {
@@ -90,9 +91,11 @@ class _$QuietHoursSerializer implements PrimitiveSerializer<QuietHours> {
     QuietHours object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,34 +111,44 @@ class _$QuietHoursSerializer implements PrimitiveSerializer<QuietHours> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'start':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.start = valueDes;
           break;
         case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.end = valueDes;
           break;
         case r'days':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(QuietHoursDaysEnum)]),
-          ) as BuiltList<QuietHoursDaysEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(QuietHoursDaysEnum),
+                    ]),
+                  )
+                  as BuiltList<QuietHoursDaysEnum>?;
           if (valueDes == null) continue;
           result.days.replace(valueDes);
           break;
         case r'bypassSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(QuietHoursBypassSeverityEnum),
-          ) as QuietHoursBypassSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      QuietHoursBypassSeverityEnum,
+                    ),
+                  )
+                  as QuietHoursBypassSeverityEnum?;
           if (valueDes == null) continue;
           result.bypassSeverity = valueDes;
           break;

@@ -12,15 +12,15 @@ class _$CommonDependenciesRequest extends CommonDependenciesRequest {
   @override
   final DateTime? asOf;
 
-  factory _$CommonDependenciesRequest(
-          [void Function(CommonDependenciesRequestBuilder)? updates]) =>
-      (CommonDependenciesRequestBuilder()..update(updates))._build();
+  factory _$CommonDependenciesRequest([
+    void Function(CommonDependenciesRequestBuilder)? updates,
+  ]) => (CommonDependenciesRequestBuilder()..update(updates))._build();
 
   _$CommonDependenciesRequest._({required this.refs, this.asOf}) : super._();
   @override
   CommonDependenciesRequest rebuild(
-          void Function(CommonDependenciesRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CommonDependenciesRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CommonDependenciesRequestBuilder toBuilder() =>
@@ -95,11 +95,8 @@ class CommonDependenciesRequestBuilder
   _$CommonDependenciesRequest _build() {
     _$CommonDependenciesRequest _$result;
     try {
-      _$result = _$v ??
-          _$CommonDependenciesRequest._(
-            refs: refs.build(),
-            asOf: asOf,
-          );
+      _$result =
+          _$v ?? _$CommonDependenciesRequest._(refs: refs.build(), asOf: asOf);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +104,10 @@ class CommonDependenciesRequestBuilder
         refs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CommonDependenciesRequest', _$failedField, e.toString());
+          r'CommonDependenciesRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

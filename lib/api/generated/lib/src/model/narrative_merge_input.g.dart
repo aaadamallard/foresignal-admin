@@ -12,16 +12,16 @@ class _$NarrativeMergeInput extends NarrativeMergeInput {
   @override
   final String? reason;
 
-  factory _$NarrativeMergeInput(
-          [void Function(NarrativeMergeInputBuilder)? updates]) =>
-      (NarrativeMergeInputBuilder()..update(updates))._build();
+  factory _$NarrativeMergeInput([
+    void Function(NarrativeMergeInputBuilder)? updates,
+  ]) => (NarrativeMergeInputBuilder()..update(updates))._build();
 
   _$NarrativeMergeInput._({required this.narrativeIds, this.reason})
-      : super._();
+    : super._();
   @override
   NarrativeMergeInput rebuild(
-          void Function(NarrativeMergeInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NarrativeMergeInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NarrativeMergeInputBuilder toBuilder() =>
@@ -97,7 +97,8 @@ class NarrativeMergeInputBuilder
   _$NarrativeMergeInput _build() {
     _$NarrativeMergeInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NarrativeMergeInput._(
             narrativeIds: narrativeIds.build(),
             reason: reason,
@@ -109,7 +110,10 @@ class NarrativeMergeInputBuilder
         narrativeIds.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativeMergeInput', _$failedField, e.toString());
+          r'NarrativeMergeInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

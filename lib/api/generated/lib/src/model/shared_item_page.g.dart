@@ -92,11 +92,9 @@ class SharedItemPageBuilder
   _$SharedItemPage _build() {
     _$SharedItemPage _$result;
     try {
-      _$result = _$v ??
-          _$SharedItemPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SharedItemPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class SharedItemPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SharedItemPage', _$failedField, e.toString());
+          r'SharedItemPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

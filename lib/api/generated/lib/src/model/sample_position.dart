@@ -57,15 +57,9 @@ class _$SamplePositionSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'lon';
-    yield serializers.serialize(
-      object.lon,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lon, specifiedType: const FullType(num));
     yield r'lat';
-    yield serializers.serialize(
-      object.lat,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lat, specifiedType: const FullType(num));
     yield r'observedAt';
     yield serializers.serialize(
       object.observedAt,
@@ -84,9 +78,11 @@ class _$SamplePositionSerializer
     SamplePosition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,31 +98,30 @@ class _$SamplePositionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lon = valueDes;
           break;
         case r'lat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lat = valueDes;
           break;
         case r'observedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.observedAt = valueDes;
           break;
         case r'ageSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.ageSeconds = valueDes;
           break;
         default:

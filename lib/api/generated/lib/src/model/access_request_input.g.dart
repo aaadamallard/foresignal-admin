@@ -12,15 +12,15 @@ class _$AccessRequestInput extends AccessRequestInput {
   @override
   final String? offerShare;
 
-  factory _$AccessRequestInput(
-          [void Function(AccessRequestInputBuilder)? updates]) =>
-      (AccessRequestInputBuilder()..update(updates))._build();
+  factory _$AccessRequestInput([
+    void Function(AccessRequestInputBuilder)? updates,
+  ]) => (AccessRequestInputBuilder()..update(updates))._build();
 
   _$AccessRequestInput._({this.message, this.offerShare}) : super._();
   @override
   AccessRequestInput rebuild(
-          void Function(AccessRequestInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AccessRequestInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AccessRequestInputBuilder toBuilder() =>
@@ -92,11 +92,8 @@ class AccessRequestInputBuilder
   AccessRequestInput build() => _build();
 
   _$AccessRequestInput _build() {
-    final _$result = _$v ??
-        _$AccessRequestInput._(
-          message: message,
-          offerShare: offerShare,
-        );
+    final _$result =
+        _$v ?? _$AccessRequestInput._(message: message, offerShare: offerShare);
     replace(_$result);
     return _$result;
   }

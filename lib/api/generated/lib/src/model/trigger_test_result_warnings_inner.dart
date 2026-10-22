@@ -16,8 +16,10 @@ part 'trigger_test_result_warnings_inner.g.dart';
 @BuiltValue()
 abstract class TriggerTestResultWarningsInner
     implements
-        Built<TriggerTestResultWarningsInner,
-            TriggerTestResultWarningsInnerBuilder> {
+        Built<
+          TriggerTestResultWarningsInner,
+          TriggerTestResultWarningsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'code')
   String get code;
 
@@ -26,9 +28,9 @@ abstract class TriggerTestResultWarningsInner
 
   TriggerTestResultWarningsInner._();
 
-  factory TriggerTestResultWarningsInner(
-          [void updates(TriggerTestResultWarningsInnerBuilder b)]) =
-      _$TriggerTestResultWarningsInner;
+  factory TriggerTestResultWarningsInner([
+    void updates(TriggerTestResultWarningsInnerBuilder b),
+  ]) = _$TriggerTestResultWarningsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TriggerTestResultWarningsInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$TriggerTestResultWarningsInnerSerializer
   @override
   final Iterable<Type> types = const [
     TriggerTestResultWarningsInner,
-    _$TriggerTestResultWarningsInner
+    _$TriggerTestResultWarningsInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$TriggerTestResultWarningsInnerSerializer
     TriggerTestResultWarningsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$TriggerTestResultWarningsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.message = valueDes;
           break;
         default:

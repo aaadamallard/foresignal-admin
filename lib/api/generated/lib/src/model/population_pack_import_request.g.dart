@@ -10,15 +10,15 @@ class _$PopulationPackImportRequest extends PopulationPackImportRequest {
   @override
   final String path;
 
-  factory _$PopulationPackImportRequest(
-          [void Function(PopulationPackImportRequestBuilder)? updates]) =>
-      (PopulationPackImportRequestBuilder()..update(updates))._build();
+  factory _$PopulationPackImportRequest([
+    void Function(PopulationPackImportRequestBuilder)? updates,
+  ]) => (PopulationPackImportRequestBuilder()..update(updates))._build();
 
   _$PopulationPackImportRequest._({required this.path}) : super._();
   @override
   PopulationPackImportRequest rebuild(
-          void Function(PopulationPackImportRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PopulationPackImportRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PopulationPackImportRequestBuilder toBuilder() =>
@@ -40,16 +40,18 @@ class _$PopulationPackImportRequest extends PopulationPackImportRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PopulationPackImportRequest')
-          ..add('path', path))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PopulationPackImportRequest',
+    )..add('path', path)).toString();
   }
 }
 
 class PopulationPackImportRequestBuilder
     implements
-        Builder<PopulationPackImportRequest,
-            PopulationPackImportRequestBuilder> {
+        Builder<
+          PopulationPackImportRequest,
+          PopulationPackImportRequestBuilder
+        > {
   _$PopulationPackImportRequest? _$v;
 
   String? _path;
@@ -83,10 +85,14 @@ class PopulationPackImportRequestBuilder
   PopulationPackImportRequest build() => _build();
 
   _$PopulationPackImportRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PopulationPackImportRequest._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'PopulationPackImportRequest', 'path'),
+            path,
+            r'PopulationPackImportRequest',
+            'path',
+          ),
         );
     replace(_$result);
     return _$result;

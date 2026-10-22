@@ -12,12 +12,12 @@ class _$IngestDeviceInput extends IngestDeviceInput {
   @override
   final String name;
 
-  factory _$IngestDeviceInput(
-          [void Function(IngestDeviceInputBuilder)? updates]) =>
-      (IngestDeviceInputBuilder()..update(updates))._build();
+  factory _$IngestDeviceInput([
+    void Function(IngestDeviceInputBuilder)? updates,
+  ]) => (IngestDeviceInputBuilder()..update(updates))._build();
 
   _$IngestDeviceInput._({required this.externalId, required this.name})
-      : super._();
+    : super._();
   @override
   IngestDeviceInput rebuild(void Function(IngestDeviceInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -92,12 +92,19 @@ class IngestDeviceInputBuilder
   IngestDeviceInput build() => _build();
 
   _$IngestDeviceInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestDeviceInput._(
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'IngestDeviceInput', 'externalId'),
+            externalId,
+            r'IngestDeviceInput',
+            'externalId',
+          ),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'IngestDeviceInput', 'name'),
+            name,
+            r'IngestDeviceInput',
+            'name',
+          ),
         );
     replace(_$result);
     return _$result;

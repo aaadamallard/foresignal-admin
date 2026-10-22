@@ -17,8 +17,10 @@ part 'anomaly_observation_evidence_fetch_log_ranges_inner.g.dart';
 @BuiltValue()
 abstract class AnomalyObservationEvidenceFetchLogRangesInner
     implements
-        Built<AnomalyObservationEvidenceFetchLogRangesInner,
-            AnomalyObservationEvidenceFetchLogRangesInnerBuilder> {
+        Built<
+          AnomalyObservationEvidenceFetchLogRangesInner,
+          AnomalyObservationEvidenceFetchLogRangesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'sourceId')
   String get sourceId;
 
@@ -30,20 +32,18 @@ abstract class AnomalyObservationEvidenceFetchLogRangesInner
 
   AnomalyObservationEvidenceFetchLogRangesInner._();
 
-  factory AnomalyObservationEvidenceFetchLogRangesInner(
-          [void updates(
-              AnomalyObservationEvidenceFetchLogRangesInnerBuilder b)]) =
-      _$AnomalyObservationEvidenceFetchLogRangesInner;
+  factory AnomalyObservationEvidenceFetchLogRangesInner([
+    void updates(AnomalyObservationEvidenceFetchLogRangesInnerBuilder b),
+  ]) = _$AnomalyObservationEvidenceFetchLogRangesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          AnomalyObservationEvidenceFetchLogRangesInnerBuilder b) =>
-      b;
+    AnomalyObservationEvidenceFetchLogRangesInnerBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AnomalyObservationEvidenceFetchLogRangesInner>
-      get serializer =>
-          _$AnomalyObservationEvidenceFetchLogRangesInnerSerializer();
+  get serializer => _$AnomalyObservationEvidenceFetchLogRangesInnerSerializer();
 }
 
 class _$AnomalyObservationEvidenceFetchLogRangesInnerSerializer
@@ -52,7 +52,7 @@ class _$AnomalyObservationEvidenceFetchLogRangesInnerSerializer
   @override
   final Iterable<Type> types = const [
     AnomalyObservationEvidenceFetchLogRangesInner,
-    _$AnomalyObservationEvidenceFetchLogRangesInner
+    _$AnomalyObservationEvidenceFetchLogRangesInner,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$AnomalyObservationEvidenceFetchLogRangesInnerSerializer
     AnomalyObservationEvidenceFetchLogRangesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,24 +106,24 @@ class _$AnomalyObservationEvidenceFetchLogRangesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'fromId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.fromId = valueDes;
           break;
         case r'toId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.toId = valueDes;
           break;
         default:

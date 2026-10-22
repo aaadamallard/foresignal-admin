@@ -24,9 +24,9 @@ AskProgressEventStatusEnum _$askProgressEventStatusEnumValueOf(String name) {
 
 final BuiltSet<AskProgressEventStatusEnum> _$askProgressEventStatusEnumValues =
     BuiltSet<AskProgressEventStatusEnum>(const <AskProgressEventStatusEnum>[
-  _$askProgressEventStatusEnum_calling,
-  _$askProgressEventStatusEnum_done,
-]);
+      _$askProgressEventStatusEnum_calling,
+      _$askProgressEventStatusEnum_done,
+    ]);
 
 Serializer<AskProgressEventStatusEnum> _$askProgressEventStatusEnumSerializer =
     _$AskProgressEventStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$AskProgressEventStatusEnumSerializer
   final String wireName = 'AskProgressEventStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AskProgressEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskProgressEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AskProgressEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskProgressEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskProgressEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskProgressEvent extends AskProgressEvent {
@@ -68,12 +72,12 @@ class _$AskProgressEvent extends AskProgressEvent {
   @override
   final String? summary;
 
-  factory _$AskProgressEvent(
-          [void Function(AskProgressEventBuilder)? updates]) =>
-      (AskProgressEventBuilder()..update(updates))._build();
+  factory _$AskProgressEvent([
+    void Function(AskProgressEventBuilder)? updates,
+  ]) => (AskProgressEventBuilder()..update(updates))._build();
 
   _$AskProgressEvent._({required this.tool, required this.status, this.summary})
-      : super._();
+    : super._();
   @override
   AskProgressEvent rebuild(void Function(AskProgressEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -156,12 +160,19 @@ class AskProgressEventBuilder
   AskProgressEvent build() => _build();
 
   _$AskProgressEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AskProgressEvent._(
           tool: BuiltValueNullFieldError.checkNotNull(
-              tool, r'AskProgressEvent', 'tool'),
+            tool,
+            r'AskProgressEvent',
+            'tool',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'AskProgressEvent', 'status'),
+            status,
+            r'AskProgressEvent',
+            'status',
+          ),
           summary: summary,
         );
     replace(_$result);

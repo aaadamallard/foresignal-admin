@@ -17,8 +17,10 @@ part 'analyst_evaluation_profiles_inner_tokens_per_day_inner.g.dart';
 @BuiltValue()
 abstract class AnalystEvaluationProfilesInnerTokensPerDayInner
     implements
-        Built<AnalystEvaluationProfilesInnerTokensPerDayInner,
-            AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder> {
+        Built<
+          AnalystEvaluationProfilesInnerTokensPerDayInner,
+          AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder
+        > {
   @BuiltValueField(wireName: r'date')
   Date get date;
 
@@ -27,20 +29,19 @@ abstract class AnalystEvaluationProfilesInnerTokensPerDayInner
 
   AnalystEvaluationProfilesInnerTokensPerDayInner._();
 
-  factory AnalystEvaluationProfilesInnerTokensPerDayInner(
-          [void updates(
-              AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder b)]) =
-      _$AnalystEvaluationProfilesInnerTokensPerDayInner;
+  factory AnalystEvaluationProfilesInnerTokensPerDayInner([
+    void updates(AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder b),
+  ]) = _$AnalystEvaluationProfilesInnerTokensPerDayInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder b) =>
-      b;
+    AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<AnalystEvaluationProfilesInnerTokensPerDayInner>
-      get serializer =>
-          _$AnalystEvaluationProfilesInnerTokensPerDayInnerSerializer();
+  get serializer =>
+      _$AnalystEvaluationProfilesInnerTokensPerDayInnerSerializer();
 }
 
 class _$AnalystEvaluationProfilesInnerTokensPerDayInnerSerializer
@@ -49,7 +50,7 @@ class _$AnalystEvaluationProfilesInnerTokensPerDayInnerSerializer
   @override
   final Iterable<Type> types = const [
     AnalystEvaluationProfilesInnerTokensPerDayInner,
-    _$AnalystEvaluationProfilesInnerTokensPerDayInner
+    _$AnalystEvaluationProfilesInnerTokensPerDayInner,
   ];
 
   @override
@@ -78,9 +79,11 @@ class _$AnalystEvaluationProfilesInnerTokensPerDayInnerSerializer
     AnalystEvaluationProfilesInnerTokensPerDayInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,17 +99,18 @@ class _$AnalystEvaluationProfilesInnerTokensPerDayInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.date = valueDes;
           break;
         case r'tokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.tokens = valueDes;
           break;
         default:

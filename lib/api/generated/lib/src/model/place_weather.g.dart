@@ -41,23 +41,23 @@ class _$PlaceWeather extends PlaceWeather {
   factory _$PlaceWeather([void Function(PlaceWeatherBuilder)? updates]) =>
       (PlaceWeatherBuilder()..update(updates))._build();
 
-  _$PlaceWeather._(
-      {required this.place,
-      required this.radiusKm,
-      this.radar,
-      this.hail,
-      this.precip,
-      this.lightning,
-      this.cell,
-      this.smoke,
-      this.forecast,
-      required this.automated,
-      required this.notAWarning,
-      this.marine,
-      this.aurora,
-      this.heat,
-      this.uv})
-      : super._();
+  _$PlaceWeather._({
+    required this.place,
+    required this.radiusKm,
+    this.radar,
+    this.hail,
+    this.precip,
+    this.lightning,
+    this.cell,
+    this.smoke,
+    this.forecast,
+    required this.automated,
+    required this.notAWarning,
+    this.marine,
+    this.aurora,
+    this.heat,
+    this.uv,
+  }) : super._();
   @override
   PlaceWeather rebuild(void Function(PlaceWeatherBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -249,12 +249,19 @@ class PlaceWeatherBuilder
   _$PlaceWeather _build() {
     _$PlaceWeather _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlaceWeather._(
             place: BuiltValueNullFieldError.checkNotNull(
-                place, r'PlaceWeather', 'place'),
+              place,
+              r'PlaceWeather',
+              'place',
+            ),
             radiusKm: BuiltValueNullFieldError.checkNotNull(
-                radiusKm, r'PlaceWeather', 'radiusKm'),
+              radiusKm,
+              r'PlaceWeather',
+              'radiusKm',
+            ),
             radar: _radar?.build(),
             hail: _hail?.build(),
             precip: _precip?.build(),
@@ -263,9 +270,15 @@ class PlaceWeatherBuilder
             smoke: _smoke?.build(),
             forecast: _forecast?.build(),
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'PlaceWeather', 'automated'),
+              automated,
+              r'PlaceWeather',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'PlaceWeather', 'notAWarning'),
+              notAWarning,
+              r'PlaceWeather',
+              'notAWarning',
+            ),
             marine: _marine?.build(),
             aurora: _aurora?.build(),
             heat: _heat?.build(),
@@ -299,7 +312,10 @@ class PlaceWeatherBuilder
         _uv?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceWeather', _$failedField, e.toString());
+          r'PlaceWeather',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

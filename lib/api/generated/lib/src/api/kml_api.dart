@@ -47,16 +47,10 @@ class KMLApi {
     final _path = r'/v1/kml/networklink.kml';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -65,11 +59,17 @@ class KMLApi {
 
     final _queryParameters = <String, dynamic>{
       if (layers != null)
-        r'layers':
-            encodeQueryParameter(_serializers, layers, const FullType(String)),
+        r'layers': encodeQueryParameter(
+          _serializers,
+          layers,
+          const FullType(String),
+        ),
       if (refresh != null)
-        r'refresh':
-            encodeQueryParameter(_serializers, refresh, const FullType(int)),
+        r'refresh': encodeQueryParameter(
+          _serializers,
+          refresh,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -144,16 +144,10 @@ class KMLApi {
     final _path = r'/v1/kml/records.kml';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -162,8 +156,11 @@ class KMLApi {
 
     final _queryParameters = <String, dynamic>{
       if (layer != null)
-        r'layer':
-            encodeQueryParameter(_serializers, layer, const FullType(String)),
+        r'layer': encodeQueryParameter(
+          _serializers,
+          layer,
+          const FullType(String),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -179,14 +176,23 @@ class KMLApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (asOf != null)
-        r'asOf':
-            encodeQueryParameter(_serializers, asOf, const FullType(DateTime)),
+        r'asOf': encodeQueryParameter(
+          _serializers,
+          asOf,
+          const FullType(DateTime),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -263,16 +269,10 @@ class KMLApi {
     final _path = r'/v1/kml/tracks.kml';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -282,24 +282,42 @@ class KMLApi {
     final _queryParameters = <String, dynamic>{
       if (sourceId != null)
         r'sourceId': encodeQueryParameter(
-            _serializers, sourceId, const FullType(String)),
+          _serializers,
+          sourceId,
+          const FullType(String),
+        ),
       if (externalId != null)
         r'externalId': encodeQueryParameter(
-            _serializers, externalId, const FullType(String)),
+          _serializers,
+          externalId,
+          const FullType(String),
+        ),
       if (kind != null)
-        r'kind':
-            encodeQueryParameter(_serializers, kind, const FullType(String)),
+        r'kind': encodeQueryParameter(
+          _serializers,
+          kind,
+          const FullType(String),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -362,21 +380,21 @@ class KMLApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}.kml'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },

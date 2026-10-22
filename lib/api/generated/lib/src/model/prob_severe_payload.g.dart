@@ -42,29 +42,29 @@ class _$ProbSeverePayload extends ProbSeverePayload {
   @override
   final bool notAWarning;
 
-  factory _$ProbSeverePayload(
-          [void Function(ProbSeverePayloadBuilder)? updates]) =>
-      (ProbSeverePayloadBuilder()..update(updates))._build();
+  factory _$ProbSeverePayload([
+    void Function(ProbSeverePayloadBuilder)? updates,
+  ]) => (ProbSeverePayloadBuilder()..update(updates))._build();
 
-  _$ProbSeverePayload._(
-      {required this.probSevere,
-      required this.probTor,
-      required this.probHail,
-      required this.probWind,
-      this.meshIn,
-      this.compRefDbz,
-      this.vil,
-      this.echoTop50Kft,
-      this.flashRate,
-      this.muCape,
-      this.mlCape,
-      this.ebShearKt,
-      this.srh01km,
-      this.motion,
-      required this.label,
-      required this.automated,
-      required this.notAWarning})
-      : super._();
+  _$ProbSeverePayload._({
+    required this.probSevere,
+    required this.probTor,
+    required this.probHail,
+    required this.probWind,
+    this.meshIn,
+    this.compRefDbz,
+    this.vil,
+    this.echoTop50Kft,
+    this.flashRate,
+    this.muCape,
+    this.mlCape,
+    this.ebShearKt,
+    this.srh01km,
+    this.motion,
+    required this.label,
+    required this.automated,
+    required this.notAWarning,
+  }) : super._();
   @override
   ProbSeverePayload rebuild(void Function(ProbSeverePayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -262,16 +262,29 @@ class ProbSeverePayloadBuilder
   _$ProbSeverePayload _build() {
     _$ProbSeverePayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProbSeverePayload._(
             probSevere: BuiltValueNullFieldError.checkNotNull(
-                probSevere, r'ProbSeverePayload', 'probSevere'),
+              probSevere,
+              r'ProbSeverePayload',
+              'probSevere',
+            ),
             probTor: BuiltValueNullFieldError.checkNotNull(
-                probTor, r'ProbSeverePayload', 'probTor'),
+              probTor,
+              r'ProbSeverePayload',
+              'probTor',
+            ),
             probHail: BuiltValueNullFieldError.checkNotNull(
-                probHail, r'ProbSeverePayload', 'probHail'),
+              probHail,
+              r'ProbSeverePayload',
+              'probHail',
+            ),
             probWind: BuiltValueNullFieldError.checkNotNull(
-                probWind, r'ProbSeverePayload', 'probWind'),
+              probWind,
+              r'ProbSeverePayload',
+              'probWind',
+            ),
             meshIn: meshIn,
             compRefDbz: compRefDbz,
             vil: vil,
@@ -283,11 +296,20 @@ class ProbSeverePayloadBuilder
             srh01km: srh01km,
             motion: _motion?.build(),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'ProbSeverePayload', 'label'),
+              label,
+              r'ProbSeverePayload',
+              'label',
+            ),
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'ProbSeverePayload', 'automated'),
+              automated,
+              r'ProbSeverePayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'ProbSeverePayload', 'notAWarning'),
+              notAWarning,
+              r'ProbSeverePayload',
+              'notAWarning',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -296,7 +318,10 @@ class ProbSeverePayloadBuilder
         _motion?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProbSeverePayload', _$failedField, e.toString());
+          r'ProbSeverePayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

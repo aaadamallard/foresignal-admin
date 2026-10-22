@@ -7,38 +7,38 @@ part of 'stream_federation200_response.dart';
 // **************************************************************************
 
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_FIRST =
+_$streamFederation200ResponsePersistReasonEnum_FIRST =
     const StreamFederation200ResponsePersistReasonEnum._('FIRST');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_REAPPEAR =
+_$streamFederation200ResponsePersistReasonEnum_REAPPEAR =
     const StreamFederation200ResponsePersistReasonEnum._('REAPPEAR');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_SIGNIFICANT =
+_$streamFederation200ResponsePersistReasonEnum_SIGNIFICANT =
     const StreamFederation200ResponsePersistReasonEnum._('SIGNIFICANT');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_TOMBSTONE =
+_$streamFederation200ResponsePersistReasonEnum_TOMBSTONE =
     const StreamFederation200ResponsePersistReasonEnum._('TOMBSTONE');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_CHANGE =
+_$streamFederation200ResponsePersistReasonEnum_CHANGE =
     const StreamFederation200ResponsePersistReasonEnum._('CHANGE');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_SAMPLE =
+_$streamFederation200ResponsePersistReasonEnum_SAMPLE =
     const StreamFederation200ResponsePersistReasonEnum._('SAMPLE');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_KEYFRAME =
+_$streamFederation200ResponsePersistReasonEnum_KEYFRAME =
     const StreamFederation200ResponsePersistReasonEnum._('KEYFRAME');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_HEARTBEAT =
+_$streamFederation200ResponsePersistReasonEnum_HEARTBEAT =
     const StreamFederation200ResponsePersistReasonEnum._('HEARTBEAT');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_TRIGGER_EDGE =
+_$streamFederation200ResponsePersistReasonEnum_TRIGGER_EDGE =
     const StreamFederation200ResponsePersistReasonEnum._('TRIGGER_EDGE');
 const StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT =
+_$streamFederation200ResponsePersistReasonEnum_SNAPSHOT =
     const StreamFederation200ResponsePersistReasonEnum._('SNAPSHOT');
 
 StreamFederation200ResponsePersistReasonEnum
-    _$streamFederation200ResponsePersistReasonEnumValueOf(String name) {
+_$streamFederation200ResponsePersistReasonEnumValueOf(String name) {
   switch (name) {
     case 'FIRST':
       return _$streamFederation200ResponsePersistReasonEnum_FIRST;
@@ -66,29 +66,31 @@ StreamFederation200ResponsePersistReasonEnum
 }
 
 final BuiltSet<StreamFederation200ResponsePersistReasonEnum>
-    _$streamFederation200ResponsePersistReasonEnumValues = BuiltSet<
-        StreamFederation200ResponsePersistReasonEnum>(const <StreamFederation200ResponsePersistReasonEnum>[
-  _$streamFederation200ResponsePersistReasonEnum_FIRST,
-  _$streamFederation200ResponsePersistReasonEnum_REAPPEAR,
-  _$streamFederation200ResponsePersistReasonEnum_SIGNIFICANT,
-  _$streamFederation200ResponsePersistReasonEnum_TOMBSTONE,
-  _$streamFederation200ResponsePersistReasonEnum_CHANGE,
-  _$streamFederation200ResponsePersistReasonEnum_SAMPLE,
-  _$streamFederation200ResponsePersistReasonEnum_KEYFRAME,
-  _$streamFederation200ResponsePersistReasonEnum_HEARTBEAT,
-  _$streamFederation200ResponsePersistReasonEnum_TRIGGER_EDGE,
-  _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT,
-]);
+_$streamFederation200ResponsePersistReasonEnumValues =
+    BuiltSet<StreamFederation200ResponsePersistReasonEnum>(
+      const <StreamFederation200ResponsePersistReasonEnum>[
+        _$streamFederation200ResponsePersistReasonEnum_FIRST,
+        _$streamFederation200ResponsePersistReasonEnum_REAPPEAR,
+        _$streamFederation200ResponsePersistReasonEnum_SIGNIFICANT,
+        _$streamFederation200ResponsePersistReasonEnum_TOMBSTONE,
+        _$streamFederation200ResponsePersistReasonEnum_CHANGE,
+        _$streamFederation200ResponsePersistReasonEnum_SAMPLE,
+        _$streamFederation200ResponsePersistReasonEnum_KEYFRAME,
+        _$streamFederation200ResponsePersistReasonEnum_HEARTBEAT,
+        _$streamFederation200ResponsePersistReasonEnum_TRIGGER_EDGE,
+        _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT,
+      ],
+    );
 
 const StreamFederation200ResponseHistoryTierEnum
-    _$streamFederation200ResponseHistoryTierEnum_STANDARD =
+_$streamFederation200ResponseHistoryTierEnum_STANDARD =
     const StreamFederation200ResponseHistoryTierEnum._('STANDARD');
 const StreamFederation200ResponseHistoryTierEnum
-    _$streamFederation200ResponseHistoryTierEnum_TRACK =
+_$streamFederation200ResponseHistoryTierEnum_TRACK =
     const StreamFederation200ResponseHistoryTierEnum._('TRACK');
 
 StreamFederation200ResponseHistoryTierEnum
-    _$streamFederation200ResponseHistoryTierEnumValueOf(String name) {
+_$streamFederation200ResponseHistoryTierEnumValueOf(String name) {
   switch (name) {
     case 'STANDARD':
       return _$streamFederation200ResponseHistoryTierEnum_STANDARD;
@@ -100,24 +102,26 @@ StreamFederation200ResponseHistoryTierEnum
 }
 
 final BuiltSet<StreamFederation200ResponseHistoryTierEnum>
-    _$streamFederation200ResponseHistoryTierEnumValues = BuiltSet<
-        StreamFederation200ResponseHistoryTierEnum>(const <StreamFederation200ResponseHistoryTierEnum>[
-  _$streamFederation200ResponseHistoryTierEnum_STANDARD,
-  _$streamFederation200ResponseHistoryTierEnum_TRACK,
-]);
+_$streamFederation200ResponseHistoryTierEnumValues =
+    BuiltSet<StreamFederation200ResponseHistoryTierEnum>(
+      const <StreamFederation200ResponseHistoryTierEnum>[
+        _$streamFederation200ResponseHistoryTierEnum_STANDARD,
+        _$streamFederation200ResponseHistoryTierEnum_TRACK,
+      ],
+    );
 
 const StreamFederation200ResponseReasonEnum
-    _$streamFederation200ResponseReasonEnum_bufferOverflow =
+_$streamFederation200ResponseReasonEnum_bufferOverflow =
     const StreamFederation200ResponseReasonEnum._('bufferOverflow');
 const StreamFederation200ResponseReasonEnum
-    _$streamFederation200ResponseReasonEnum_replayCap =
+_$streamFederation200ResponseReasonEnum_replayCap =
     const StreamFederation200ResponseReasonEnum._('replayCap');
 const StreamFederation200ResponseReasonEnum
-    _$streamFederation200ResponseReasonEnum_resyncRequired =
+_$streamFederation200ResponseReasonEnum_resyncRequired =
     const StreamFederation200ResponseReasonEnum._('resyncRequired');
 
 StreamFederation200ResponseReasonEnum
-    _$streamFederation200ResponseReasonEnumValueOf(String name) {
+_$streamFederation200ResponseReasonEnumValueOf(String name) {
   switch (name) {
     case 'bufferOverflow':
       return _$streamFederation200ResponseReasonEnum_bufferOverflow;
@@ -131,21 +135,23 @@ StreamFederation200ResponseReasonEnum
 }
 
 final BuiltSet<StreamFederation200ResponseReasonEnum>
-    _$streamFederation200ResponseReasonEnumValues = BuiltSet<
-        StreamFederation200ResponseReasonEnum>(const <StreamFederation200ResponseReasonEnum>[
-  _$streamFederation200ResponseReasonEnum_bufferOverflow,
-  _$streamFederation200ResponseReasonEnum_replayCap,
-  _$streamFederation200ResponseReasonEnum_resyncRequired,
-]);
+_$streamFederation200ResponseReasonEnumValues =
+    BuiltSet<StreamFederation200ResponseReasonEnum>(
+      const <StreamFederation200ResponseReasonEnum>[
+        _$streamFederation200ResponseReasonEnum_bufferOverflow,
+        _$streamFederation200ResponseReasonEnum_replayCap,
+        _$streamFederation200ResponseReasonEnum_resyncRequired,
+      ],
+    );
 
 Serializer<StreamFederation200ResponsePersistReasonEnum>
-    _$streamFederation200ResponsePersistReasonEnumSerializer =
+_$streamFederation200ResponsePersistReasonEnumSerializer =
     _$StreamFederation200ResponsePersistReasonEnumSerializer();
 Serializer<StreamFederation200ResponseHistoryTierEnum>
-    _$streamFederation200ResponseHistoryTierEnumSerializer =
+_$streamFederation200ResponseHistoryTierEnumSerializer =
     _$StreamFederation200ResponseHistoryTierEnumSerializer();
 Serializer<StreamFederation200ResponseReasonEnum>
-    _$streamFederation200ResponseReasonEnumSerializer =
+_$streamFederation200ResponseReasonEnumSerializer =
     _$StreamFederation200ResponseReasonEnumSerializer();
 
 class _$StreamFederation200ResponsePersistReasonEnumSerializer
@@ -178,23 +184,26 @@ class _$StreamFederation200ResponsePersistReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StreamFederation200ResponsePersistReasonEnum
+    StreamFederation200ResponsePersistReasonEnum,
   ];
   @override
   final String wireName = 'StreamFederation200ResponsePersistReasonEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StreamFederation200ResponsePersistReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StreamFederation200ResponsePersistReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamFederation200ResponsePersistReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamFederation200ResponsePersistReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamFederation200ResponsePersistReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamFederation200ResponseHistoryTierEnumSerializer
@@ -210,23 +219,26 @@ class _$StreamFederation200ResponseHistoryTierEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StreamFederation200ResponseHistoryTierEnum
+    StreamFederation200ResponseHistoryTierEnum,
   ];
   @override
   final String wireName = 'StreamFederation200ResponseHistoryTierEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StreamFederation200ResponseHistoryTierEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StreamFederation200ResponseHistoryTierEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamFederation200ResponseHistoryTierEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamFederation200ResponseHistoryTierEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamFederation200ResponseHistoryTierEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamFederation200ResponseReasonEnumSerializer
@@ -244,38 +256,41 @@ class _$StreamFederation200ResponseReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StreamFederation200ResponseReasonEnum
+    StreamFederation200ResponseReasonEnum,
   ];
   @override
   final String wireName = 'StreamFederation200ResponseReasonEnum';
 
   @override
   Object serialize(
-          Serializers serializers, StreamFederation200ResponseReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StreamFederation200ResponseReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamFederation200ResponseReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamFederation200ResponseReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamFederation200ResponseReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamFederation200Response extends StreamFederation200Response {
   @override
   final AnyOf anyOf;
 
-  factory _$StreamFederation200Response(
-          [void Function(StreamFederation200ResponseBuilder)? updates]) =>
-      (StreamFederation200ResponseBuilder()..update(updates))._build();
+  factory _$StreamFederation200Response([
+    void Function(StreamFederation200ResponseBuilder)? updates,
+  ]) => (StreamFederation200ResponseBuilder()..update(updates))._build();
 
   _$StreamFederation200Response._({required this.anyOf}) : super._();
   @override
   StreamFederation200Response rebuild(
-          void Function(StreamFederation200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StreamFederation200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StreamFederation200ResponseBuilder toBuilder() =>
@@ -297,16 +312,18 @@ class _$StreamFederation200Response extends StreamFederation200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'StreamFederation200Response')
-          ..add('anyOf', anyOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'StreamFederation200Response',
+    )..add('anyOf', anyOf)).toString();
   }
 }
 
 class StreamFederation200ResponseBuilder
     implements
-        Builder<StreamFederation200Response,
-            StreamFederation200ResponseBuilder> {
+        Builder<
+          StreamFederation200Response,
+          StreamFederation200ResponseBuilder
+        > {
   _$StreamFederation200Response? _$v;
 
   AnyOf? _anyOf;
@@ -340,10 +357,14 @@ class StreamFederation200ResponseBuilder
   StreamFederation200Response build() => _build();
 
   _$StreamFederation200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StreamFederation200Response._(
           anyOf: BuiltValueNullFieldError.checkNotNull(
-              anyOf, r'StreamFederation200Response', 'anyOf'),
+            anyOf,
+            r'StreamFederation200Response',
+            'anyOf',
+          ),
         );
     replace(_$result);
     return _$result;

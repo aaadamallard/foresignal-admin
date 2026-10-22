@@ -29,17 +29,17 @@ class _$RecordPage extends RecordPage {
   factory _$RecordPage([void Function(RecordPageBuilder)? updates]) =>
       (RecordPageBuilder()..update(updates))._build();
 
-  _$RecordPage._(
-      {required this.items,
-      this.nextCursor,
-      this.watermarkSeq,
-      this.asOfSeq,
-      this.asOf,
-      this.approximate,
-      this.horizon,
-      this.attributions,
-      this.licenceFiltered})
-      : super._();
+  _$RecordPage._({
+    required this.items,
+    this.nextCursor,
+    this.watermarkSeq,
+    this.asOfSeq,
+    this.asOf,
+    this.approximate,
+    this.horizon,
+    this.attributions,
+    this.licenceFiltered,
+  }) : super._();
   @override
   RecordPage rebuild(void Function(RecordPageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -173,7 +173,8 @@ class RecordPageBuilder implements Builder<RecordPage, RecordPageBuilder> {
   _$RecordPage _build() {
     _$RecordPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecordPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -195,7 +196,10 @@ class RecordPageBuilder implements Builder<RecordPage, RecordPageBuilder> {
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecordPage', _$failedField, e.toString());
+          r'RecordPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

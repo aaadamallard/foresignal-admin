@@ -22,23 +22,23 @@ class _$WeatherContextSmoke extends WeatherContextSmoke {
   @override
   final int? step;
 
-  factory _$WeatherContextSmoke(
-          [void Function(WeatherContextSmokeBuilder)? updates]) =>
-      (WeatherContextSmokeBuilder()..update(updates))._build();
+  factory _$WeatherContextSmoke([
+    void Function(WeatherContextSmokeBuilder)? updates,
+  ]) => (WeatherContextSmokeBuilder()..update(updates))._build();
 
-  _$WeatherContextSmoke._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.pm25UgM3,
-      this.run,
-      this.validTime,
-      this.step})
-      : super._();
+  _$WeatherContextSmoke._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.pm25UgM3,
+    this.run,
+    this.validTime,
+    this.step,
+  }) : super._();
   @override
   WeatherContextSmoke rebuild(
-          void Function(WeatherContextSmokeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextSmokeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextSmokeBuilder toBuilder() =>
@@ -150,10 +150,14 @@ class WeatherContextSmokeBuilder
   WeatherContextSmoke build() => _build();
 
   _$WeatherContextSmoke _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WeatherContextSmoke._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'WeatherContextSmoke', 'status'),
+            status,
+            r'WeatherContextSmoke',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           pm25UgM3: pm25UgM3,

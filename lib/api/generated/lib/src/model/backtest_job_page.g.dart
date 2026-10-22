@@ -92,11 +92,9 @@ class BacktestJobPageBuilder
   _$BacktestJobPage _build() {
     _$BacktestJobPage _$result;
     try {
-      _$result = _$v ??
-          _$BacktestJobPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$BacktestJobPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class BacktestJobPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BacktestJobPage', _$failedField, e.toString());
+          r'BacktestJobPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

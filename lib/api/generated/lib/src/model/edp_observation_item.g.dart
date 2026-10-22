@@ -20,8 +20,8 @@ EdpObservationItemTypeEnum _$edpObservationItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpObservationItemTypeEnum> _$edpObservationItemTypeEnumValues =
     BuiltSet<EdpObservationItemTypeEnum>(const <EdpObservationItemTypeEnum>[
-  _$edpObservationItemTypeEnum_observation,
-]);
+      _$edpObservationItemTypeEnum_observation,
+    ]);
 
 Serializer<EdpObservationItemTypeEnum> _$edpObservationItemTypeEnumSerializer =
     _$EdpObservationItemTypeEnumSerializer();
@@ -41,16 +41,20 @@ class _$EdpObservationItemTypeEnumSerializer
   final String wireName = 'EdpObservationItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpObservationItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpObservationItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpObservationItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpObservationItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpObservationItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpObservationItem extends EdpObservationItem {
@@ -77,27 +81,27 @@ class _$EdpObservationItem extends EdpObservationItem {
   @override
   final EdpOrigin? origin;
 
-  factory _$EdpObservationItem(
-          [void Function(EdpObservationItemBuilder)? updates]) =>
-      (EdpObservationItemBuilder()..update(updates))._build();
+  factory _$EdpObservationItem([
+    void Function(EdpObservationItemBuilder)? updates,
+  ]) => (EdpObservationItemBuilder()..update(updates))._build();
 
-  _$EdpObservationItem._(
-      {required this.stream,
-      required this.type,
-      required this.id,
-      this.observedAt,
-      this.properties,
-      required this.seriesKey,
-      required this.t,
-      this.value,
-      this.knownAt,
-      this.unit,
-      this.origin})
-      : super._();
+  _$EdpObservationItem._({
+    required this.stream,
+    required this.type,
+    required this.id,
+    this.observedAt,
+    this.properties,
+    required this.seriesKey,
+    required this.t,
+    this.value,
+    this.knownAt,
+    this.unit,
+    this.origin,
+  }) : super._();
   @override
   EdpObservationItem rebuild(
-          void Function(EdpObservationItemBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpObservationItemBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpObservationItemBuilder toBuilder() =>
@@ -245,20 +249,36 @@ class EdpObservationItemBuilder
   _$EdpObservationItem _build() {
     _$EdpObservationItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpObservationItem._(
             stream: BuiltValueNullFieldError.checkNotNull(
-                stream, r'EdpObservationItem', 'stream'),
+              stream,
+              r'EdpObservationItem',
+              'stream',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'EdpObservationItem', 'type'),
+              type,
+              r'EdpObservationItem',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpObservationItem', 'id'),
+              id,
+              r'EdpObservationItem',
+              'id',
+            ),
             observedAt: observedAt,
             properties: _properties?.build(),
             seriesKey: BuiltValueNullFieldError.checkNotNull(
-                seriesKey, r'EdpObservationItem', 'seriesKey'),
+              seriesKey,
+              r'EdpObservationItem',
+              'seriesKey',
+            ),
             t: BuiltValueNullFieldError.checkNotNull(
-                t, r'EdpObservationItem', 't'),
+              t,
+              r'EdpObservationItem',
+              't',
+            ),
             value: value,
             knownAt: knownAt,
             unit: unit,
@@ -274,7 +294,10 @@ class EdpObservationItemBuilder
         _origin?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpObservationItem', _$failedField, e.toString());
+          r'EdpObservationItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

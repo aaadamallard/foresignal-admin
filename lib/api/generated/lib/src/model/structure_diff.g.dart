@@ -44,14 +44,14 @@ StructureDiffFormatEnum _$structureDiffFormatEnumValueOf(String name) {
 
 final BuiltSet<StructureDiffFormatEnum> _$structureDiffFormatEnumValues =
     BuiltSet<StructureDiffFormatEnum>(const <StructureDiffFormatEnum>[
-  _$structureDiffFormatEnum_json,
-  _$structureDiffFormatEnum_csv,
-  _$structureDiffFormatEnum_tsv,
-  _$structureDiffFormatEnum_xml,
-  _$structureDiffFormatEnum_binary,
-  _$structureDiffFormatEnum_html,
-  _$structureDiffFormatEnum_text,
-]);
+      _$structureDiffFormatEnum_json,
+      _$structureDiffFormatEnum_csv,
+      _$structureDiffFormatEnum_tsv,
+      _$structureDiffFormatEnum_xml,
+      _$structureDiffFormatEnum_binary,
+      _$structureDiffFormatEnum_html,
+      _$structureDiffFormatEnum_text,
+    ]);
 
 Serializer<StructureDiffFormatEnum> _$structureDiffFormatEnumSerializer =
     _$StructureDiffFormatEnumSerializer();
@@ -83,16 +83,20 @@ class _$StructureDiffFormatEnumSerializer
   final String wireName = 'StructureDiffFormatEnum';
 
   @override
-  Object serialize(Serializers serializers, StructureDiffFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StructureDiffFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StructureDiffFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StructureDiffFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StructureDiffFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StructureDiff extends StructureDiff {
@@ -128,22 +132,22 @@ class _$StructureDiff extends StructureDiff {
   factory _$StructureDiff([void Function(StructureDiffBuilder)? updates]) =>
       (StructureDiffBuilder()..update(updates))._build();
 
-  _$StructureDiff._(
-      {required this.format,
-      this.fixtureFile,
-      required this.addedPaths,
-      required this.removedPaths,
-      required this.typeChanged,
-      this.presenceDropped,
-      this.arrayEmpty,
-      this.columnsReordered,
-      this.delimiterChanged,
-      this.contentTypeChanged,
-      this.sizeRatio,
-      this.renameCandidates,
-      this.htmlTitle,
-      this.examples})
-      : super._();
+  _$StructureDiff._({
+    required this.format,
+    this.fixtureFile,
+    required this.addedPaths,
+    required this.removedPaths,
+    required this.typeChanged,
+    this.presenceDropped,
+    this.arrayEmpty,
+    this.columnsReordered,
+    this.delimiterChanged,
+    this.contentTypeChanged,
+    this.sizeRatio,
+    this.renameCandidates,
+    this.htmlTitle,
+    this.examples,
+  }) : super._();
   @override
   StructureDiff rebuild(void Function(StructureDiffBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -248,8 +252,8 @@ class StructureDiffBuilder
       _$this._presenceDropped ??=
           ListBuilder<StructureDiffPresenceDroppedInner>();
   set presenceDropped(
-          ListBuilder<StructureDiffPresenceDroppedInner>? presenceDropped) =>
-      _$this._presenceDropped = presenceDropped;
+    ListBuilder<StructureDiffPresenceDroppedInner>? presenceDropped,
+  ) => _$this._presenceDropped = presenceDropped;
 
   ListBuilder<String>? _arrayEmpty;
   ListBuilder<String> get arrayEmpty =>
@@ -266,15 +270,15 @@ class StructureDiffBuilder
   StructureDiffDelimiterChangedBuilder get delimiterChanged =>
       _$this._delimiterChanged ??= StructureDiffDelimiterChangedBuilder();
   set delimiterChanged(
-          StructureDiffDelimiterChangedBuilder? delimiterChanged) =>
-      _$this._delimiterChanged = delimiterChanged;
+    StructureDiffDelimiterChangedBuilder? delimiterChanged,
+  ) => _$this._delimiterChanged = delimiterChanged;
 
   StructureDiffContentTypeChangedBuilder? _contentTypeChanged;
   StructureDiffContentTypeChangedBuilder get contentTypeChanged =>
       _$this._contentTypeChanged ??= StructureDiffContentTypeChangedBuilder();
   set contentTypeChanged(
-          StructureDiffContentTypeChangedBuilder? contentTypeChanged) =>
-      _$this._contentTypeChanged = contentTypeChanged;
+    StructureDiffContentTypeChangedBuilder? contentTypeChanged,
+  ) => _$this._contentTypeChanged = contentTypeChanged;
 
   num? _sizeRatio;
   num? get sizeRatio => _$this._sizeRatio;
@@ -285,8 +289,8 @@ class StructureDiffBuilder
       _$this._renameCandidates ??=
           ListBuilder<StructureDiffRenameCandidatesInner>();
   set renameCandidates(
-          ListBuilder<StructureDiffRenameCandidatesInner>? renameCandidates) =>
-      _$this._renameCandidates = renameCandidates;
+    ListBuilder<StructureDiffRenameCandidatesInner>? renameCandidates,
+  ) => _$this._renameCandidates = renameCandidates;
 
   String? _htmlTitle;
   String? get htmlTitle => _$this._htmlTitle;
@@ -340,10 +344,14 @@ class StructureDiffBuilder
   _$StructureDiff _build() {
     _$StructureDiff _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StructureDiff._(
             format: BuiltValueNullFieldError.checkNotNull(
-                format, r'StructureDiff', 'format'),
+              format,
+              r'StructureDiff',
+              'format',
+            ),
             fixtureFile: fixtureFile,
             addedPaths: addedPaths.build(),
             removedPaths: removedPaths.build(),
@@ -384,7 +392,10 @@ class StructureDiffBuilder
         _examples?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StructureDiff', _$failedField, e.toString());
+          r'StructureDiff',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

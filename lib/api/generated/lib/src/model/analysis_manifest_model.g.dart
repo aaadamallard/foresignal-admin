@@ -22,23 +22,23 @@ class _$AnalysisManifestModel extends AnalysisManifestModel {
   @override
   final BuiltList<AnalysisManifestModelTemplatesInner>? templates;
 
-  factory _$AnalysisManifestModel(
-          [void Function(AnalysisManifestModelBuilder)? updates]) =>
-      (AnalysisManifestModelBuilder()..update(updates))._build();
+  factory _$AnalysisManifestModel([
+    void Function(AnalysisManifestModelBuilder)? updates,
+  ]) => (AnalysisManifestModelBuilder()..update(updates))._build();
 
-  _$AnalysisManifestModel._(
-      {required this.provider,
-      required this.model,
-      this.effort,
-      this.promptHash,
-      this.toolsHash,
-      this.samples,
-      this.templates})
-      : super._();
+  _$AnalysisManifestModel._({
+    required this.provider,
+    required this.model,
+    this.effort,
+    this.promptHash,
+    this.toolsHash,
+    this.samples,
+    this.templates,
+  }) : super._();
   @override
   AnalysisManifestModel rebuild(
-          void Function(AnalysisManifestModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisManifestModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisManifestModelBuilder toBuilder() =>
@@ -154,12 +154,19 @@ class AnalysisManifestModelBuilder
   _$AnalysisManifestModel _build() {
     _$AnalysisManifestModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalysisManifestModel._(
             provider: BuiltValueNullFieldError.checkNotNull(
-                provider, r'AnalysisManifestModel', 'provider'),
+              provider,
+              r'AnalysisManifestModel',
+              'provider',
+            ),
             model: BuiltValueNullFieldError.checkNotNull(
-                model, r'AnalysisManifestModel', 'model'),
+              model,
+              r'AnalysisManifestModel',
+              'model',
+            ),
             effort: effort,
             promptHash: promptHash,
             toolsHash: toolsHash,
@@ -173,7 +180,10 @@ class AnalysisManifestModelBuilder
         _templates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisManifestModel', _$failedField, e.toString());
+          r'AnalysisManifestModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

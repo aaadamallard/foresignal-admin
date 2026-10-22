@@ -24,9 +24,9 @@ NarrativeEventEventEnum _$narrativeEventEventEnumValueOf(String name) {
 
 final BuiltSet<NarrativeEventEventEnum> _$narrativeEventEventEnumValues =
     BuiltSet<NarrativeEventEventEnum>(const <NarrativeEventEventEnum>[
-  _$narrativeEventEventEnum_narrativePeriodEmerged,
-  _$narrativeEventEventEnum_narrativePeriodUpdated,
-]);
+      _$narrativeEventEventEnum_narrativePeriodEmerged,
+      _$narrativeEventEventEnum_narrativePeriodUpdated,
+    ]);
 
 const NarrativeEventChangedEnum _$narrativeEventChangedEnum_state =
     const NarrativeEventChangedEnum._('state');
@@ -70,15 +70,15 @@ NarrativeEventChangedEnum _$narrativeEventChangedEnumValueOf(String name) {
 
 final BuiltSet<NarrativeEventChangedEnum> _$narrativeEventChangedEnumValues =
     BuiltSet<NarrativeEventChangedEnum>(const <NarrativeEventChangedEnum>[
-  _$narrativeEventChangedEnum_state,
-  _$narrativeEventChangedEnum_status,
-  _$narrativeEventChangedEnum_postCount,
-  _$narrativeEventChangedEnum_evidenceGroupCount,
-  _$narrativeEventChangedEnum_velocity,
-  _$narrativeEventChangedEnum_merged,
-  _$narrativeEventChangedEnum_split,
-  _$narrativeEventChangedEnum_title,
-]);
+      _$narrativeEventChangedEnum_state,
+      _$narrativeEventChangedEnum_status,
+      _$narrativeEventChangedEnum_postCount,
+      _$narrativeEventChangedEnum_evidenceGroupCount,
+      _$narrativeEventChangedEnum_velocity,
+      _$narrativeEventChangedEnum_merged,
+      _$narrativeEventChangedEnum_split,
+      _$narrativeEventChangedEnum_title,
+    ]);
 
 Serializer<NarrativeEventEventEnum> _$narrativeEventEventEnumSerializer =
     _$NarrativeEventEventEnumSerializer();
@@ -102,16 +102,20 @@ class _$NarrativeEventEventEnumSerializer
   final String wireName = 'NarrativeEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativeEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativeEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NarrativeEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativeEventChangedEnumSerializer
@@ -143,16 +147,20 @@ class _$NarrativeEventChangedEnumSerializer
   final String wireName = 'NarrativeEventChangedEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativeEventChangedEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativeEventChangedEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NarrativeEventChangedEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeEventChangedEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeEventChangedEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativeEvent extends NarrativeEvent {
@@ -168,12 +176,12 @@ class _$NarrativeEvent extends NarrativeEvent {
   factory _$NarrativeEvent([void Function(NarrativeEventBuilder)? updates]) =>
       (NarrativeEventBuilder()..update(updates))._build();
 
-  _$NarrativeEvent._(
-      {required this.event,
-      required this.narrative,
-      this.changed,
-      required this.at})
-      : super._();
+  _$NarrativeEvent._({
+    required this.event,
+    required this.narrative,
+    this.changed,
+    required this.at,
+  }) : super._();
   @override
   NarrativeEvent rebuild(void Function(NarrativeEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -269,14 +277,21 @@ class NarrativeEventBuilder
   _$NarrativeEvent _build() {
     _$NarrativeEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NarrativeEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'NarrativeEvent', 'event'),
+              event,
+              r'NarrativeEvent',
+              'event',
+            ),
             narrative: narrative.build(),
             changed: _changed?.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'NarrativeEvent', 'at'),
+              at,
+              r'NarrativeEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -287,7 +302,10 @@ class NarrativeEventBuilder
         _changed?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativeEvent', _$failedField, e.toString());
+          r'NarrativeEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

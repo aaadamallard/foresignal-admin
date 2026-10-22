@@ -7,32 +7,33 @@ part of 'edp_source_info_originator.dart';
 // **************************************************************************
 
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_sensorNetwork =
+_$edpSourceInfoOriginatorClassEnum_sensorNetwork =
     const EdpSourceInfoOriginatorClass_Enum._('sensorNetwork');
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_agency =
+_$edpSourceInfoOriginatorClassEnum_agency =
     const EdpSourceInfoOriginatorClass_Enum._('agency');
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_aggregator =
+_$edpSourceInfoOriginatorClassEnum_aggregator =
     const EdpSourceInfoOriginatorClass_Enum._('aggregator');
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_media =
+_$edpSourceInfoOriginatorClassEnum_media =
     const EdpSourceInfoOriginatorClass_Enum._('media');
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_crowd =
+_$edpSourceInfoOriginatorClassEnum_crowd =
     const EdpSourceInfoOriginatorClass_Enum._('crowd');
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_social =
+_$edpSourceInfoOriginatorClassEnum_social =
     const EdpSourceInfoOriginatorClass_Enum._('social');
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_operator_ =
+_$edpSourceInfoOriginatorClassEnum_operator_ =
     const EdpSourceInfoOriginatorClass_Enum._('operator_');
 const EdpSourceInfoOriginatorClass_Enum
-    _$edpSourceInfoOriginatorClassEnum_derived =
+_$edpSourceInfoOriginatorClassEnum_derived =
     const EdpSourceInfoOriginatorClass_Enum._('derived');
 
 EdpSourceInfoOriginatorClass_Enum _$edpSourceInfoOriginatorClassEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'sensorNetwork':
       return _$edpSourceInfoOriginatorClassEnum_sensorNetwork;
@@ -56,20 +57,22 @@ EdpSourceInfoOriginatorClass_Enum _$edpSourceInfoOriginatorClassEnumValueOf(
 }
 
 final BuiltSet<EdpSourceInfoOriginatorClass_Enum>
-    _$edpSourceInfoOriginatorClassEnumValues = BuiltSet<
-        EdpSourceInfoOriginatorClass_Enum>(const <EdpSourceInfoOriginatorClass_Enum>[
-  _$edpSourceInfoOriginatorClassEnum_sensorNetwork,
-  _$edpSourceInfoOriginatorClassEnum_agency,
-  _$edpSourceInfoOriginatorClassEnum_aggregator,
-  _$edpSourceInfoOriginatorClassEnum_media,
-  _$edpSourceInfoOriginatorClassEnum_crowd,
-  _$edpSourceInfoOriginatorClassEnum_social,
-  _$edpSourceInfoOriginatorClassEnum_operator_,
-  _$edpSourceInfoOriginatorClassEnum_derived,
-]);
+_$edpSourceInfoOriginatorClassEnumValues =
+    BuiltSet<EdpSourceInfoOriginatorClass_Enum>(
+      const <EdpSourceInfoOriginatorClass_Enum>[
+        _$edpSourceInfoOriginatorClassEnum_sensorNetwork,
+        _$edpSourceInfoOriginatorClassEnum_agency,
+        _$edpSourceInfoOriginatorClassEnum_aggregator,
+        _$edpSourceInfoOriginatorClassEnum_media,
+        _$edpSourceInfoOriginatorClassEnum_crowd,
+        _$edpSourceInfoOriginatorClassEnum_social,
+        _$edpSourceInfoOriginatorClassEnum_operator_,
+        _$edpSourceInfoOriginatorClassEnum_derived,
+      ],
+    );
 
 Serializer<EdpSourceInfoOriginatorClass_Enum>
-    _$edpSourceInfoOriginatorClassEnumSerializer =
+_$edpSourceInfoOriginatorClassEnumSerializer =
     _$EdpSourceInfoOriginatorClass_EnumSerializer();
 
 class _$EdpSourceInfoOriginatorClass_EnumSerializer
@@ -102,16 +105,19 @@ class _$EdpSourceInfoOriginatorClass_EnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EdpSourceInfoOriginatorClass_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EdpSourceInfoOriginatorClass_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpSourceInfoOriginatorClass_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpSourceInfoOriginatorClass_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpSourceInfoOriginatorClass_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpSourceInfoOriginator extends EdpSourceInfoOriginator {
@@ -122,17 +128,19 @@ class _$EdpSourceInfoOriginator extends EdpSourceInfoOriginator {
   @override
   final BuiltList<String>? aggregates;
 
-  factory _$EdpSourceInfoOriginator(
-          [void Function(EdpSourceInfoOriginatorBuilder)? updates]) =>
-      (EdpSourceInfoOriginatorBuilder()..update(updates))._build();
+  factory _$EdpSourceInfoOriginator([
+    void Function(EdpSourceInfoOriginatorBuilder)? updates,
+  ]) => (EdpSourceInfoOriginatorBuilder()..update(updates))._build();
 
-  _$EdpSourceInfoOriginator._(
-      {required this.id, required this.class_, this.aggregates})
-      : super._();
+  _$EdpSourceInfoOriginator._({
+    required this.id,
+    required this.class_,
+    this.aggregates,
+  }) : super._();
   @override
   EdpSourceInfoOriginator rebuild(
-          void Function(EdpSourceInfoOriginatorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpSourceInfoOriginatorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpSourceInfoOriginatorBuilder toBuilder() =>
@@ -218,12 +226,19 @@ class EdpSourceInfoOriginatorBuilder
   _$EdpSourceInfoOriginator _build() {
     _$EdpSourceInfoOriginator _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpSourceInfoOriginator._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpSourceInfoOriginator', 'id'),
+              id,
+              r'EdpSourceInfoOriginator',
+              'id',
+            ),
             class_: BuiltValueNullFieldError.checkNotNull(
-                class_, r'EdpSourceInfoOriginator', 'class_'),
+              class_,
+              r'EdpSourceInfoOriginator',
+              'class_',
+            ),
             aggregates: _aggregates?.build(),
           );
     } catch (_) {
@@ -233,7 +248,10 @@ class EdpSourceInfoOriginatorBuilder
         _aggregates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpSourceInfoOriginator', _$failedField, e.toString());
+          r'EdpSourceInfoOriginator',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

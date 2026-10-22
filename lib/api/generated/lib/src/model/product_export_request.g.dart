@@ -14,7 +14,8 @@ const ProductExportRequestFormatEnum _$productExportRequestFormatEnum_cog =
     const ProductExportRequestFormatEnum._('cog');
 
 ProductExportRequestFormatEnum _$productExportRequestFormatEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'mbtiles':
       return _$productExportRequestFormatEnum_mbtiles;
@@ -28,15 +29,17 @@ ProductExportRequestFormatEnum _$productExportRequestFormatEnumValueOf(
 }
 
 final BuiltSet<ProductExportRequestFormatEnum>
-    _$productExportRequestFormatEnumValues = BuiltSet<
-        ProductExportRequestFormatEnum>(const <ProductExportRequestFormatEnum>[
-  _$productExportRequestFormatEnum_mbtiles,
-  _$productExportRequestFormatEnum_pmtiles,
-  _$productExportRequestFormatEnum_cog,
-]);
+_$productExportRequestFormatEnumValues =
+    BuiltSet<ProductExportRequestFormatEnum>(
+      const <ProductExportRequestFormatEnum>[
+        _$productExportRequestFormatEnum_mbtiles,
+        _$productExportRequestFormatEnum_pmtiles,
+        _$productExportRequestFormatEnum_cog,
+      ],
+    );
 
 const ProductExportRequestTmsEnum
-    _$productExportRequestTmsEnum_webMercatorQuad =
+_$productExportRequestTmsEnum_webMercatorQuad =
     const ProductExportRequestTmsEnum._('webMercatorQuad');
 const ProductExportRequestTmsEnum _$productExportRequestTmsEnum_worldCRS84Quad =
     const ProductExportRequestTmsEnum._('worldCRS84Quad');
@@ -53,17 +56,17 @@ ProductExportRequestTmsEnum _$productExportRequestTmsEnumValueOf(String name) {
 }
 
 final BuiltSet<ProductExportRequestTmsEnum>
-    _$productExportRequestTmsEnumValues =
+_$productExportRequestTmsEnumValues =
     BuiltSet<ProductExportRequestTmsEnum>(const <ProductExportRequestTmsEnum>[
-  _$productExportRequestTmsEnum_webMercatorQuad,
-  _$productExportRequestTmsEnum_worldCRS84Quad,
-]);
+      _$productExportRequestTmsEnum_webMercatorQuad,
+      _$productExportRequestTmsEnum_worldCRS84Quad,
+    ]);
 
 Serializer<ProductExportRequestFormatEnum>
-    _$productExportRequestFormatEnumSerializer =
+_$productExportRequestFormatEnumSerializer =
     _$ProductExportRequestFormatEnumSerializer();
 Serializer<ProductExportRequestTmsEnum>
-    _$productExportRequestTmsEnumSerializer =
+_$productExportRequestTmsEnumSerializer =
     _$ProductExportRequestTmsEnumSerializer();
 
 class _$ProductExportRequestFormatEnumSerializer
@@ -86,16 +89,19 @@ class _$ProductExportRequestFormatEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ProductExportRequestFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ProductExportRequestFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProductExportRequestFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductExportRequestFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductExportRequestFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductExportRequestTmsEnumSerializer
@@ -115,16 +121,20 @@ class _$ProductExportRequestTmsEnumSerializer
   final String wireName = 'ProductExportRequestTmsEnum';
 
   @override
-  Object serialize(Serializers serializers, ProductExportRequestTmsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProductExportRequestTmsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProductExportRequestTmsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductExportRequestTmsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductExportRequestTmsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductExportRequest extends ProductExportRequest {
@@ -149,26 +159,26 @@ class _$ProductExportRequest extends ProductExportRequest {
   @override
   final ProductExportRequestTmsEnum? tms;
 
-  factory _$ProductExportRequest(
-          [void Function(ProductExportRequestBuilder)? updates]) =>
-      (ProductExportRequestBuilder()..update(updates))._build();
+  factory _$ProductExportRequest([
+    void Function(ProductExportRequestBuilder)? updates,
+  ]) => (ProductExportRequestBuilder()..update(updates))._build();
 
-  _$ProductExportRequest._(
-      {required this.format,
-      this.frameKey,
-      this.frameKeys,
-      this.bbox,
-      this.placeId,
-      this.radiusKm,
-      this.minZoom,
-      this.maxZoom,
-      this.style,
-      this.tms})
-      : super._();
+  _$ProductExportRequest._({
+    required this.format,
+    this.frameKey,
+    this.frameKeys,
+    this.bbox,
+    this.placeId,
+    this.radiusKm,
+    this.minZoom,
+    this.maxZoom,
+    this.style,
+    this.tms,
+  }) : super._();
   @override
   ProductExportRequest rebuild(
-          void Function(ProductExportRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProductExportRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProductExportRequestBuilder toBuilder() =>
@@ -308,10 +318,14 @@ class ProductExportRequestBuilder
   _$ProductExportRequest _build() {
     _$ProductExportRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductExportRequest._(
             format: BuiltValueNullFieldError.checkNotNull(
-                format, r'ProductExportRequest', 'format'),
+              format,
+              r'ProductExportRequest',
+              'format',
+            ),
             frameKey: frameKey,
             frameKeys: _frameKeys?.build(),
             bbox: _bbox?.build(),
@@ -331,7 +345,10 @@ class ProductExportRequestBuilder
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductExportRequest', _$failedField, e.toString());
+          r'ProductExportRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -78,9 +78,11 @@ class _$TrackSerializer implements PrimitiveSerializer<Track> {
     Track object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,25 +98,31 @@ class _$TrackSerializer implements PrimitiveSerializer<Track> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TrackTypeEnum),
-          ) as TrackTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TrackTypeEnum),
+                  )
+                  as TrackTypeEnum;
           result.type = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geometry.replace(valueDes);
           break;
         case r'properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TrackProperties),
-          ) as TrackProperties;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TrackProperties),
+                  )
+                  as TrackProperties;
           result.properties.replace(valueDes);
           break;
         default:

@@ -17,8 +17,10 @@ part 'situation_evidence_member_counts.g.dart';
 @BuiltValue()
 abstract class SituationEvidenceMemberCounts
     implements
-        Built<SituationEvidenceMemberCounts,
-            SituationEvidenceMemberCountsBuilder> {
+        Built<
+          SituationEvidenceMemberCounts,
+          SituationEvidenceMemberCountsBuilder
+        > {
   /// Count per member type
   @BuiltValueField(wireName: r'byType')
   BuiltMap<String, int>? get byType;
@@ -29,9 +31,9 @@ abstract class SituationEvidenceMemberCounts
 
   SituationEvidenceMemberCounts._();
 
-  factory SituationEvidenceMemberCounts(
-          [void updates(SituationEvidenceMemberCountsBuilder b)]) =
-      _$SituationEvidenceMemberCounts;
+  factory SituationEvidenceMemberCounts([
+    void updates(SituationEvidenceMemberCountsBuilder b),
+  ]) = _$SituationEvidenceMemberCounts;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationEvidenceMemberCountsBuilder b) => b;
@@ -46,7 +48,7 @@ class _$SituationEvidenceMemberCountsSerializer
   @override
   final Iterable<Type> types = const [
     SituationEvidenceMemberCounts,
-    _$SituationEvidenceMemberCounts
+    _$SituationEvidenceMemberCounts,
   ];
 
   @override
@@ -61,16 +63,20 @@ class _$SituationEvidenceMemberCountsSerializer
       yield r'byType';
       yield serializers.serialize(
         object.byType,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.byFamily != null) {
       yield r'byFamily';
       yield serializers.serialize(
         object.byFamily,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
   }
@@ -81,9 +87,11 @@ class _$SituationEvidenceMemberCountsSerializer
     SituationEvidenceMemberCounts object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,20 +107,28 @@ class _$SituationEvidenceMemberCountsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'byType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byType.replace(valueDes);
           break;
         case r'byFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byFamily.replace(valueDes);
           break;

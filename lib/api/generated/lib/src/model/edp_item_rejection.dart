@@ -90,8 +90,9 @@ class _$EdpItemRejectionSerializer
       yield r'schemaErrors';
       yield serializers.serialize(
         object.schemaErrors,
-        specifiedType: const FullType(
-            BuiltList, [FullType(EdpItemRejectionSchemaErrorsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(EdpItemRejectionSchemaErrorsInner),
+        ]),
       );
     }
   }
@@ -102,9 +103,11 @@ class _$EdpItemRejectionSerializer
     EdpItemRejection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,41 +123,49 @@ class _$EdpItemRejectionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'index':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.index = valueDes;
           break;
         case r'stream':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.stream = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reason = valueDes;
           break;
         case r'schemaErrors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(EdpItemRejectionSchemaErrorsInner)]),
-          ) as BuiltList<EdpItemRejectionSchemaErrorsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EdpItemRejectionSchemaErrorsInner),
+                    ]),
+                  )
+                  as BuiltList<EdpItemRejectionSchemaErrorsInner>?;
           if (valueDes == null) continue;
           result.schemaErrors.replace(valueDes);
           break;

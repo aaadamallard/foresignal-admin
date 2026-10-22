@@ -10,15 +10,15 @@ class _$DeclaredObservability extends DeclaredObservability {
   @override
   final BuiltMap<String, DeclaredObservabilityKindsValue> kinds;
 
-  factory _$DeclaredObservability(
-          [void Function(DeclaredObservabilityBuilder)? updates]) =>
-      (DeclaredObservabilityBuilder()..update(updates))._build();
+  factory _$DeclaredObservability([
+    void Function(DeclaredObservabilityBuilder)? updates,
+  ]) => (DeclaredObservabilityBuilder()..update(updates))._build();
 
   _$DeclaredObservability._({required this.kinds}) : super._();
   @override
   DeclaredObservability rebuild(
-          void Function(DeclaredObservabilityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DeclaredObservabilityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DeclaredObservabilityBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$DeclaredObservability extends DeclaredObservability {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'DeclaredObservability')
-          ..add('kinds', kinds))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'DeclaredObservability',
+    )..add('kinds', kinds)).toString();
   }
 }
 
@@ -85,10 +85,7 @@ class DeclaredObservabilityBuilder
   _$DeclaredObservability _build() {
     _$DeclaredObservability _$result;
     try {
-      _$result = _$v ??
-          _$DeclaredObservability._(
-            kinds: kinds.build(),
-          );
+      _$result = _$v ?? _$DeclaredObservability._(kinds: kinds.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -96,7 +93,10 @@ class DeclaredObservabilityBuilder
         kinds.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DeclaredObservability', _$failedField, e.toString());
+          r'DeclaredObservability',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

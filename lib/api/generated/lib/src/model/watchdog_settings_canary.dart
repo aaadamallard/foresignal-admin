@@ -26,9 +26,9 @@ abstract class WatchdogSettingsCanary
 
   WatchdogSettingsCanary._();
 
-  factory WatchdogSettingsCanary(
-          [void updates(WatchdogSettingsCanaryBuilder b)]) =
-      _$WatchdogSettingsCanary;
+  factory WatchdogSettingsCanary([
+    void updates(WatchdogSettingsCanaryBuilder b),
+  ]) = _$WatchdogSettingsCanary;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WatchdogSettingsCanaryBuilder b) => b;
@@ -43,7 +43,7 @@ class _$WatchdogSettingsCanarySerializer
   @override
   final Iterable<Type> types = const [
     WatchdogSettingsCanary,
-    _$WatchdogSettingsCanary
+    _$WatchdogSettingsCanary,
   ];
 
   @override
@@ -76,9 +76,11 @@ class _$WatchdogSettingsCanarySerializer
     WatchdogSettingsCanary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +96,22 @@ class _$WatchdogSettingsCanarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.interval = valueDes;
           break;

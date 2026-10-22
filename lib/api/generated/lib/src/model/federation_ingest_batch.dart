@@ -22,8 +22,9 @@ abstract class FederationIngestBatch
 
   FederationIngestBatch._();
 
-  factory FederationIngestBatch(
-      [void updates(FederationIngestBatchBuilder b)]) = _$FederationIngestBatch;
+  factory FederationIngestBatch([
+    void updates(FederationIngestBatchBuilder b),
+  ]) = _$FederationIngestBatch;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FederationIngestBatchBuilder b) => b;
@@ -38,7 +39,7 @@ class _$FederationIngestBatchSerializer
   @override
   final Iterable<Type> types = const [
     FederationIngestBatch,
-    _$FederationIngestBatch
+    _$FederationIngestBatch,
   ];
 
   @override
@@ -62,9 +63,11 @@ class _$FederationIngestBatchSerializer
     FederationIngestBatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -80,11 +83,14 @@ class _$FederationIngestBatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(FederationItem)]),
-          ) as BuiltList<FederationItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(FederationItem),
+                    ]),
+                  )
+                  as BuiltList<FederationItem>;
           result.items.replace(valueDes);
           break;
         default:

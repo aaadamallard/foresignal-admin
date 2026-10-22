@@ -56,8 +56,9 @@ class _$ActiveWindowSerializer implements PrimitiveSerializer<ActiveWindow> {
     yield r'windows';
     yield serializers.serialize(
       object.windows,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ActiveWindowWindowsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ActiveWindowWindowsInner),
+      ]),
     );
   }
 
@@ -67,9 +68,11 @@ class _$ActiveWindowSerializer implements PrimitiveSerializer<ActiveWindow> {
     ActiveWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -85,18 +88,23 @@ class _$ActiveWindowSerializer implements PrimitiveSerializer<ActiveWindow> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.timezone = valueDes;
           break;
         case r'windows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ActiveWindowWindowsInner)]),
-          ) as BuiltList<ActiveWindowWindowsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ActiveWindowWindowsInner),
+                    ]),
+                  )
+                  as BuiltList<ActiveWindowWindowsInner>;
           result.windows.replace(valueDes);
           break;
         default:

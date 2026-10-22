@@ -7,23 +7,23 @@ part of 'series_forecast_model_backtest_results_inner.dart';
 // **************************************************************************
 
 const SeriesForecastModelBacktestResultsInnerMethodEnum
-    _$seriesForecastModelBacktestResultsInnerMethodEnum_seasonalNaive =
+_$seriesForecastModelBacktestResultsInnerMethodEnum_seasonalNaive =
     const SeriesForecastModelBacktestResultsInnerMethodEnum._('seasonalNaive');
 const SeriesForecastModelBacktestResultsInnerMethodEnum
-    _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAnn =
+_$seriesForecastModelBacktestResultsInnerMethodEnum_etsAnn =
     const SeriesForecastModelBacktestResultsInnerMethodEnum._('etsAnn');
 const SeriesForecastModelBacktestResultsInnerMethodEnum
-    _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAaa =
+_$seriesForecastModelBacktestResultsInnerMethodEnum_etsAaa =
     const SeriesForecastModelBacktestResultsInnerMethodEnum._('etsAaa');
 const SeriesForecastModelBacktestResultsInnerMethodEnum
-    _$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm =
+_$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm =
     const SeriesForecastModelBacktestResultsInnerMethodEnum._('nbGlm');
 const SeriesForecastModelBacktestResultsInnerMethodEnum
-    _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend =
+_$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend =
     const SeriesForecastModelBacktestResultsInnerMethodEnum._('dampedTrend');
 
 SeriesForecastModelBacktestResultsInnerMethodEnum
-    _$seriesForecastModelBacktestResultsInnerMethodEnumValueOf(String name) {
+_$seriesForecastModelBacktestResultsInnerMethodEnumValueOf(String name) {
   switch (name) {
     case 'seasonalNaive':
       return _$seriesForecastModelBacktestResultsInnerMethodEnum_seasonalNaive;
@@ -41,17 +41,19 @@ SeriesForecastModelBacktestResultsInnerMethodEnum
 }
 
 final BuiltSet<SeriesForecastModelBacktestResultsInnerMethodEnum>
-    _$seriesForecastModelBacktestResultsInnerMethodEnumValues = BuiltSet<
-        SeriesForecastModelBacktestResultsInnerMethodEnum>(const <SeriesForecastModelBacktestResultsInnerMethodEnum>[
-  _$seriesForecastModelBacktestResultsInnerMethodEnum_seasonalNaive,
-  _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAnn,
-  _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAaa,
-  _$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm,
-  _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend,
-]);
+_$seriesForecastModelBacktestResultsInnerMethodEnumValues =
+    BuiltSet<SeriesForecastModelBacktestResultsInnerMethodEnum>(
+      const <SeriesForecastModelBacktestResultsInnerMethodEnum>[
+        _$seriesForecastModelBacktestResultsInnerMethodEnum_seasonalNaive,
+        _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAnn,
+        _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAaa,
+        _$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm,
+        _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend,
+      ],
+    );
 
 Serializer<SeriesForecastModelBacktestResultsInnerMethodEnum>
-    _$seriesForecastModelBacktestResultsInnerMethodEnumSerializer =
+_$seriesForecastModelBacktestResultsInnerMethodEnumSerializer =
     _$SeriesForecastModelBacktestResultsInnerMethodEnumSerializer();
 
 class _$SeriesForecastModelBacktestResultsInnerMethodEnumSerializer
@@ -74,23 +76,26 @@ class _$SeriesForecastModelBacktestResultsInnerMethodEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SeriesForecastModelBacktestResultsInnerMethodEnum
+    SeriesForecastModelBacktestResultsInnerMethodEnum,
   ];
   @override
   final String wireName = 'SeriesForecastModelBacktestResultsInnerMethodEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SeriesForecastModelBacktestResultsInnerMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesForecastModelBacktestResultsInnerMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesForecastModelBacktestResultsInnerMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesForecastModelBacktestResultsInnerMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesForecastModelBacktestResultsInnerMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesForecastModelBacktestResultsInner
@@ -104,23 +109,21 @@ class _$SeriesForecastModelBacktestResultsInner
   @override
   final num? intervalCoverageP05P95;
 
-  factory _$SeriesForecastModelBacktestResultsInner(
-          [void Function(SeriesForecastModelBacktestResultsInnerBuilder)?
-              updates]) =>
-      (SeriesForecastModelBacktestResultsInnerBuilder()..update(updates))
-          ._build();
+  factory _$SeriesForecastModelBacktestResultsInner([
+    void Function(SeriesForecastModelBacktestResultsInnerBuilder)? updates,
+  ]) => (SeriesForecastModelBacktestResultsInnerBuilder()..update(updates))
+      ._build();
 
-  _$SeriesForecastModelBacktestResultsInner._(
-      {required this.method,
-      required this.horizon,
-      required this.meanPinballLoss,
-      this.intervalCoverageP05P95})
-      : super._();
+  _$SeriesForecastModelBacktestResultsInner._({
+    required this.method,
+    required this.horizon,
+    required this.meanPinballLoss,
+    this.intervalCoverageP05P95,
+  }) : super._();
   @override
   SeriesForecastModelBacktestResultsInner rebuild(
-          void Function(SeriesForecastModelBacktestResultsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SeriesForecastModelBacktestResultsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SeriesForecastModelBacktestResultsInnerBuilder toBuilder() =>
@@ -150,7 +153,8 @@ class _$SeriesForecastModelBacktestResultsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'SeriesForecastModelBacktestResultsInner')
+            r'SeriesForecastModelBacktestResultsInner',
+          )
           ..add('method', method)
           ..add('horizon', horizon)
           ..add('meanPinballLoss', meanPinballLoss)
@@ -161,8 +165,10 @@ class _$SeriesForecastModelBacktestResultsInner
 
 class SeriesForecastModelBacktestResultsInnerBuilder
     implements
-        Builder<SeriesForecastModelBacktestResultsInner,
-            SeriesForecastModelBacktestResultsInnerBuilder> {
+        Builder<
+          SeriesForecastModelBacktestResultsInner,
+          SeriesForecastModelBacktestResultsInnerBuilder
+        > {
   _$SeriesForecastModelBacktestResultsInner? _$v;
 
   SeriesForecastModelBacktestResultsInnerMethodEnum? _method;
@@ -208,7 +214,8 @@ class SeriesForecastModelBacktestResultsInnerBuilder
 
   @override
   void update(
-      void Function(SeriesForecastModelBacktestResultsInnerBuilder)? updates) {
+    void Function(SeriesForecastModelBacktestResultsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -216,16 +223,24 @@ class SeriesForecastModelBacktestResultsInnerBuilder
   SeriesForecastModelBacktestResultsInner build() => _build();
 
   _$SeriesForecastModelBacktestResultsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SeriesForecastModelBacktestResultsInner._(
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'SeriesForecastModelBacktestResultsInner', 'method'),
+            method,
+            r'SeriesForecastModelBacktestResultsInner',
+            'method',
+          ),
           horizon: BuiltValueNullFieldError.checkNotNull(
-              horizon, r'SeriesForecastModelBacktestResultsInner', 'horizon'),
+            horizon,
+            r'SeriesForecastModelBacktestResultsInner',
+            'horizon',
+          ),
           meanPinballLoss: BuiltValueNullFieldError.checkNotNull(
-              meanPinballLoss,
-              r'SeriesForecastModelBacktestResultsInner',
-              'meanPinballLoss'),
+            meanPinballLoss,
+            r'SeriesForecastModelBacktestResultsInner',
+            'meanPinballLoss',
+          ),
           intervalCoverageP05P95: intervalCoverageP05P95,
         );
     replace(_$result);

@@ -16,17 +16,20 @@ class _$DoctorReportFixture extends DoctorReportFixture {
   @override
   final bool? truncated;
 
-  factory _$DoctorReportFixture(
-          [void Function(DoctorReportFixtureBuilder)? updates]) =>
-      (DoctorReportFixtureBuilder()..update(updates))._build();
+  factory _$DoctorReportFixture([
+    void Function(DoctorReportFixtureBuilder)? updates,
+  ]) => (DoctorReportFixtureBuilder()..update(updates))._build();
 
-  _$DoctorReportFixture._(
-      {required this.file, this.capturedAt, this.sha256, this.truncated})
-      : super._();
+  _$DoctorReportFixture._({
+    required this.file,
+    this.capturedAt,
+    this.sha256,
+    this.truncated,
+  }) : super._();
   @override
   DoctorReportFixture rebuild(
-          void Function(DoctorReportFixtureBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DoctorReportFixtureBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DoctorReportFixtureBuilder toBuilder() =>
@@ -114,10 +117,14 @@ class DoctorReportFixtureBuilder
   DoctorReportFixture build() => _build();
 
   _$DoctorReportFixture _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DoctorReportFixture._(
           file: BuiltValueNullFieldError.checkNotNull(
-              file, r'DoctorReportFixture', 'file'),
+            file,
+            r'DoctorReportFixture',
+            'file',
+          ),
           capturedAt: capturedAt,
           sha256: sha256,
           truncated: truncated,

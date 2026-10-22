@@ -62,16 +62,10 @@ class SettingsApi {
     final _path = r'/v1/settings/export';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -81,10 +75,16 @@ class SettingsApi {
     final _queryParameters = <String, dynamic>{
       if (includePlaces != null)
         r'includePlaces': encodeQueryParameter(
-            _serializers, includePlaces, const FullType(bool)),
+          _serializers,
+          includePlaces,
+          const FullType(bool),
+        ),
       if (includeWatchlists != null)
         r'includeWatchlists': encodeQueryParameter(
-            _serializers, includeWatchlists, const FullType(bool)),
+          _serializers,
+          includeWatchlists,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -103,9 +103,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SettingsBundle),
-            ) as SettingsBundle;
+                  rawResponse,
+                  specifiedType: const FullType(SettingsBundle),
+                )
+                as SettingsBundle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -152,16 +153,10 @@ class SettingsApi {
     final _path = r'/v1/settings/collector';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -183,9 +178,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CollectorSettings),
-            ) as CollectorSettings;
+                  rawResponse,
+                  specifiedType: const FullType(CollectorSettings),
+                )
+                as CollectorSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -232,16 +228,10 @@ class SettingsApi {
     final _path = r'/v1/settings/cors';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -263,9 +253,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CorsSettings),
-            ) as CorsSettings;
+                  rawResponse,
+                  specifiedType: const FullType(CorsSettings),
+                )
+                as CorsSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -312,16 +303,10 @@ class SettingsApi {
     final _path = r'/v1/settings/infra-rules';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -343,9 +328,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraRules),
-            ) as InfraRules;
+                  rawResponse,
+                  specifiedType: const FullType(InfraRules),
+                )
+                as InfraRules;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -392,16 +378,10 @@ class SettingsApi {
     final _path = r'/v1/settings/mcp-auth';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -423,9 +403,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(McpAuthSettings),
-            ) as McpAuthSettings;
+                  rawResponse,
+                  specifiedType: const FullType(McpAuthSettings),
+                )
+                as McpAuthSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -472,16 +453,10 @@ class SettingsApi {
     final _path = r'/v1/settings/metrics';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -503,9 +478,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MetricSettings),
-            ) as MetricSettings;
+                  rawResponse,
+                  specifiedType: const FullType(MetricSettings),
+                )
+                as MetricSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -552,16 +528,10 @@ class SettingsApi {
     final _path = r'/v1/settings/notifications';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -583,9 +553,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NotificationSettings),
-            ) as NotificationSettings;
+                  rawResponse,
+                  specifiedType: const FullType(NotificationSettings),
+                )
+                as NotificationSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -632,16 +603,10 @@ class SettingsApi {
     final _path = r'/v1/settings/outbound';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -663,9 +628,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OutboundSettings),
-            ) as OutboundSettings;
+                  rawResponse,
+                  specifiedType: const FullType(OutboundSettings),
+                )
+                as OutboundSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -712,16 +678,10 @@ class SettingsApi {
     final _path = r'/v1/settings/ratelimits';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -743,9 +703,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RateLimitSettings),
-            ) as RateLimitSettings;
+                  rawResponse,
+                  specifiedType: const FullType(RateLimitSettings),
+                )
+                as RateLimitSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -792,16 +753,10 @@ class SettingsApi {
     final _path = r'/v1/settings/retention';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -823,9 +778,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RetentionSettings),
-            ) as RetentionSettings;
+                  rawResponse,
+                  specifiedType: const FullType(RetentionSettings),
+                )
+                as RetentionSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -872,16 +828,10 @@ class SettingsApi {
     final _path = r'/v1/settings/security';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -903,9 +853,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SecuritySettings),
-            ) as SecuritySettings;
+                  rawResponse,
+                  specifiedType: const FullType(SecuritySettings),
+                )
+                as SecuritySettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -952,16 +903,10 @@ class SettingsApi {
     final _path = r'/v1/settings/server';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -983,9 +928,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ServerSettings),
-            ) as ServerSettings;
+                  rawResponse,
+                  specifiedType: const FullType(ServerSettings),
+                )
+                as ServerSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1032,16 +978,10 @@ class SettingsApi {
     final _path = r'/v1/settings/watchdog';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1063,9 +1003,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WatchdogSettings),
-            ) as WatchdogSettings;
+                  rawResponse,
+                  specifiedType: const FullType(WatchdogSettings),
+                )
+                as WatchdogSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1112,16 +1053,10 @@ class SettingsApi {
     final _path = r'/v1/settings/weather';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1143,9 +1078,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WeatherSettings),
-            ) as WeatherSettings;
+                  rawResponse,
+                  specifiedType: const FullType(WeatherSettings),
+                )
+                as WeatherSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1194,16 +1130,10 @@ class SettingsApi {
     final _path = r'/v1/settings/import';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1218,10 +1148,7 @@ class SettingsApi {
       _bodyData = _serializers.serialize(settingsBundle, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1244,9 +1171,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ImportReport),
-            ) as ImportReport;
+                  rawResponse,
+                  specifiedType: const FullType(ImportReport),
+                )
+                as ImportReport;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1293,16 +1221,10 @@ class SettingsApi {
     final _path = r'/v1/settings/retention/run';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1324,9 +1246,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RetentionRunResult),
-            ) as RetentionRunResult;
+                  rawResponse,
+                  specifiedType: const FullType(RetentionRunResult),
+                )
+                as RetentionRunResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1375,16 +1298,10 @@ class SettingsApi {
     final _path = r'/v1/settings/collector';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1396,14 +1313,13 @@ class SettingsApi {
 
     try {
       const _type = FullType(CollectorSettings);
-      _bodyData =
-          _serializers.serialize(collectorSettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        collectorSettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1426,9 +1342,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CollectorSettings),
-            ) as CollectorSettings;
+                  rawResponse,
+                  specifiedType: const FullType(CollectorSettings),
+                )
+                as CollectorSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1477,16 +1394,10 @@ class SettingsApi {
     final _path = r'/v1/settings/cors';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1501,10 +1412,7 @@ class SettingsApi {
       _bodyData = _serializers.serialize(corsSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1527,9 +1435,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CorsSettings),
-            ) as CorsSettings;
+                  rawResponse,
+                  specifiedType: const FullType(CorsSettings),
+                )
+                as CorsSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1578,16 +1487,10 @@ class SettingsApi {
     final _path = r'/v1/settings/infra-rules';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1602,10 +1505,7 @@ class SettingsApi {
       _bodyData = _serializers.serialize(infraRules, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1628,9 +1528,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraRules),
-            ) as InfraRules;
+                  rawResponse,
+                  specifiedType: const FullType(InfraRules),
+                )
+                as InfraRules;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1679,16 +1580,10 @@ class SettingsApi {
     final _path = r'/v1/settings/mcp-auth';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1703,10 +1598,7 @@ class SettingsApi {
       _bodyData = _serializers.serialize(mcpAuthSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1729,9 +1621,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(McpAuthSettings),
-            ) as McpAuthSettings;
+                  rawResponse,
+                  specifiedType: const FullType(McpAuthSettings),
+                )
+                as McpAuthSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1780,16 +1673,10 @@ class SettingsApi {
     final _path = r'/v1/settings/metrics';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1804,10 +1691,7 @@ class SettingsApi {
       _bodyData = _serializers.serialize(metricSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1830,9 +1714,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MetricSettings),
-            ) as MetricSettings;
+                  rawResponse,
+                  specifiedType: const FullType(MetricSettings),
+                )
+                as MetricSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1881,16 +1766,10 @@ class SettingsApi {
     final _path = r'/v1/settings/notifications';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1902,14 +1781,13 @@ class SettingsApi {
 
     try {
       const _type = FullType(NotificationSettings);
-      _bodyData =
-          _serializers.serialize(notificationSettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        notificationSettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1932,9 +1810,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NotificationSettings),
-            ) as NotificationSettings;
+                  rawResponse,
+                  specifiedType: const FullType(NotificationSettings),
+                )
+                as NotificationSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1983,16 +1862,10 @@ class SettingsApi {
     final _path = r'/v1/settings/outbound';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2004,14 +1877,13 @@ class SettingsApi {
 
     try {
       const _type = FullType(OutboundSettings);
-      _bodyData =
-          _serializers.serialize(outboundSettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        outboundSettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2034,9 +1906,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(OutboundSettings),
-            ) as OutboundSettings;
+                  rawResponse,
+                  specifiedType: const FullType(OutboundSettings),
+                )
+                as OutboundSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2085,16 +1958,10 @@ class SettingsApi {
     final _path = r'/v1/settings/ratelimits';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2106,14 +1973,13 @@ class SettingsApi {
 
     try {
       const _type = FullType(RateLimitSettings);
-      _bodyData =
-          _serializers.serialize(rateLimitSettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        rateLimitSettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2136,9 +2002,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RateLimitSettings),
-            ) as RateLimitSettings;
+                  rawResponse,
+                  specifiedType: const FullType(RateLimitSettings),
+                )
+                as RateLimitSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2187,16 +2054,10 @@ class SettingsApi {
     final _path = r'/v1/settings/retention';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2208,14 +2069,13 @@ class SettingsApi {
 
     try {
       const _type = FullType(RetentionSettings);
-      _bodyData =
-          _serializers.serialize(retentionSettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        retentionSettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2238,9 +2098,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RetentionSettings),
-            ) as RetentionSettings;
+                  rawResponse,
+                  specifiedType: const FullType(RetentionSettings),
+                )
+                as RetentionSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2289,16 +2150,10 @@ class SettingsApi {
     final _path = r'/v1/settings/security';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2310,14 +2165,13 @@ class SettingsApi {
 
     try {
       const _type = FullType(SecuritySettings);
-      _bodyData =
-          _serializers.serialize(securitySettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        securitySettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2340,9 +2194,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SecuritySettings),
-            ) as SecuritySettings;
+                  rawResponse,
+                  specifiedType: const FullType(SecuritySettings),
+                )
+                as SecuritySettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2391,16 +2246,10 @@ class SettingsApi {
     final _path = r'/v1/settings/server';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2415,10 +2264,7 @@ class SettingsApi {
       _bodyData = _serializers.serialize(serverSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2441,9 +2287,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ServerSettings),
-            ) as ServerSettings;
+                  rawResponse,
+                  specifiedType: const FullType(ServerSettings),
+                )
+                as ServerSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2492,16 +2339,10 @@ class SettingsApi {
     final _path = r'/v1/settings/watchdog';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2513,14 +2354,13 @@ class SettingsApi {
 
     try {
       const _type = FullType(WatchdogSettings);
-      _bodyData =
-          _serializers.serialize(watchdogSettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        watchdogSettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2543,9 +2383,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WatchdogSettings),
-            ) as WatchdogSettings;
+                  rawResponse,
+                  specifiedType: const FullType(WatchdogSettings),
+                )
+                as WatchdogSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2594,16 +2435,10 @@ class SettingsApi {
     final _path = r'/v1/settings/weather';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2618,10 +2453,7 @@ class SettingsApi {
       _bodyData = _serializers.serialize(weatherSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2644,9 +2476,10 @@ class SettingsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WeatherSettings),
-            ) as WeatherSettings;
+                  rawResponse,
+                  specifiedType: const FullType(WeatherSettings),
+                )
+                as WeatherSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

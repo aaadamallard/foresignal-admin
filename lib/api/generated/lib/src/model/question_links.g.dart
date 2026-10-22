@@ -23,14 +23,14 @@ class _$QuestionLinks extends QuestionLinks {
   factory _$QuestionLinks([void Function(QuestionLinksBuilder)? updates]) =>
       (QuestionLinksBuilder()..update(updates))._build();
 
-  _$QuestionLinks._(
-      {this.situationId,
-      this.hypothesisSetId,
-      this.precursorId,
-      this.findingId,
-      this.seriesRef,
-      this.outlookId})
-      : super._();
+  _$QuestionLinks._({
+    this.situationId,
+    this.hypothesisSetId,
+    this.precursorId,
+    this.findingId,
+    this.seriesRef,
+    this.outlookId,
+  }) : super._();
   @override
   QuestionLinks rebuild(void Function(QuestionLinksBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,7 +137,8 @@ class QuestionLinksBuilder
   QuestionLinks build() => _build();
 
   _$QuestionLinks _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$QuestionLinks._(
           situationId: situationId,
           hypothesisSetId: hypothesisSetId,

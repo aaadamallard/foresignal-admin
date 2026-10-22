@@ -65,8 +65,9 @@ class _$HistoryFrameSerializer implements PrimitiveSerializer<HistoryFrame> {
     yield r'removals';
     yield serializers.serialize(
       object.removals,
-      specifiedType:
-          const FullType(BuiltList, [FullType(HistoryFrameRemovalsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(HistoryFrameRemovalsInner),
+      ]),
     );
   }
 
@@ -76,9 +77,11 @@ class _$HistoryFrameSerializer implements PrimitiveSerializer<HistoryFrame> {
     HistoryFrame object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,25 +97,34 @@ class _$HistoryFrameSerializer implements PrimitiveSerializer<HistoryFrame> {
       final value = serializedList[i + 1];
       switch (key) {
         case r't':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.t = valueDes;
           break;
         case r'upserts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(FrameItem)]),
-          ) as BuiltList<FrameItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(FrameItem),
+                    ]),
+                  )
+                  as BuiltList<FrameItem>;
           result.upserts.replace(valueDes);
           break;
         case r'removals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(HistoryFrameRemovalsInner)]),
-          ) as BuiltList<HistoryFrameRemovalsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(HistoryFrameRemovalsInner),
+                    ]),
+                  )
+                  as BuiltList<HistoryFrameRemovalsInner>;
           result.removals.replace(valueDes);
           break;
         default:

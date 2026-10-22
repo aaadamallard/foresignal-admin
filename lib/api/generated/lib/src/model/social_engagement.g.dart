@@ -18,13 +18,17 @@ class _$SocialEngagement extends SocialEngagement {
   @override
   final int? views;
 
-  factory _$SocialEngagement(
-          [void Function(SocialEngagementBuilder)? updates]) =>
-      (SocialEngagementBuilder()..update(updates))._build();
+  factory _$SocialEngagement([
+    void Function(SocialEngagementBuilder)? updates,
+  ]) => (SocialEngagementBuilder()..update(updates))._build();
 
-  _$SocialEngagement._(
-      {this.replies, this.reposts, this.quotes, this.likes, this.views})
-      : super._();
+  _$SocialEngagement._({
+    this.replies,
+    this.reposts,
+    this.quotes,
+    this.likes,
+    this.views,
+  }) : super._();
   @override
   SocialEngagement rebuild(void Function(SocialEngagementBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -123,7 +127,8 @@ class SocialEngagementBuilder
   SocialEngagement build() => _build();
 
   _$SocialEngagement _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialEngagement._(
           replies: replies,
           reposts: reposts,

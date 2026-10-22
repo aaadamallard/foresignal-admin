@@ -38,8 +38,9 @@ abstract class SocialCueResultsInner
 
   SocialCueResultsInner._();
 
-  factory SocialCueResultsInner(
-      [void updates(SocialCueResultsInnerBuilder b)]) = _$SocialCueResultsInner;
+  factory SocialCueResultsInner([
+    void updates(SocialCueResultsInnerBuilder b),
+  ]) = _$SocialCueResultsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialCueResultsInnerBuilder b) => b;
@@ -54,7 +55,7 @@ class _$SocialCueResultsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SocialCueResultsInner,
-    _$SocialCueResultsInner
+    _$SocialCueResultsInner,
   ];
 
   @override
@@ -104,9 +105,11 @@ class _$SocialCueResultsInnerSerializer
     SocialCueResultsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -122,40 +125,47 @@ class _$SocialCueResultsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPlatformId),
-          ) as SocialPlatformId;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialPlatformId),
+                  )
+                  as SocialPlatformId;
           result.platform = valueDes;
           break;
         case r'posts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.posts = valueDes;
           break;
         case r'newPosts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.newPosts = valueDes;
           break;
         case r'costUsd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.costUsd = valueDes;
           break;
         case r'error':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.error = valueDes;
           break;

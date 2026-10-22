@@ -23,14 +23,14 @@ class _$EdpBatch extends EdpBatch {
   factory _$EdpBatch([void Function(EdpBatchBuilder)? updates]) =>
       (EdpBatchBuilder()..update(updates))._build();
 
-  _$EdpBatch._(
-      {required this.protocol,
-      this.sourceId,
-      this.sentAt,
-      required this.items,
-      this.nextCursor,
-      this.snapshot})
-      : super._();
+  _$EdpBatch._({
+    required this.protocol,
+    this.sourceId,
+    this.sentAt,
+    required this.items,
+    this.nextCursor,
+    this.snapshot,
+  }) : super._();
   @override
   EdpBatch rebuild(void Function(EdpBatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,10 +137,14 @@ class EdpBatchBuilder implements Builder<EdpBatch, EdpBatchBuilder> {
   _$EdpBatch _build() {
     _$EdpBatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpBatch._(
             protocol: BuiltValueNullFieldError.checkNotNull(
-                protocol, r'EdpBatch', 'protocol'),
+              protocol,
+              r'EdpBatch',
+              'protocol',
+            ),
             sourceId: sourceId,
             sentAt: sentAt,
             items: items.build(),
@@ -157,7 +161,10 @@ class EdpBatchBuilder implements Builder<EdpBatch, EdpBatchBuilder> {
         _snapshot?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpBatch', _$failedField, e.toString());
+          r'EdpBatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

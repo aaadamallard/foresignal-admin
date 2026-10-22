@@ -32,11 +32,11 @@ BacktestRequestTypeEnum _$backtestRequestTypeEnumValueOf(String name) {
 
 final BuiltSet<BacktestRequestTypeEnum> _$backtestRequestTypeEnumValues =
     BuiltSet<BacktestRequestTypeEnum>(const <BacktestRequestTypeEnum>[
-  _$backtestRequestTypeEnum_rule,
-  _$backtestRequestTypeEnum_recipe,
-  _$backtestRequestTypeEnum_precursor,
-  _$backtestRequestTypeEnum_quality,
-]);
+      _$backtestRequestTypeEnum_rule,
+      _$backtestRequestTypeEnum_recipe,
+      _$backtestRequestTypeEnum_precursor,
+      _$backtestRequestTypeEnum_quality,
+    ]);
 
 Serializer<BacktestRequestTypeEnum> _$backtestRequestTypeEnumSerializer =
     _$BacktestRequestTypeEnumSerializer();
@@ -62,16 +62,20 @@ class _$BacktestRequestTypeEnumSerializer
   final String wireName = 'BacktestRequestTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestRequestTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestRequestTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BacktestRequestTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestRequestTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestRequestTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestRequest extends BacktestRequest {
@@ -95,16 +99,16 @@ class _$BacktestRequest extends BacktestRequest {
   factory _$BacktestRequest([void Function(BacktestRequestBuilder)? updates]) =>
       (BacktestRequestBuilder()..update(updates))._build();
 
-  _$BacktestRequest._(
-      {required this.type,
-      this.targetId,
-      this.definition,
-      this.from,
-      this.to,
-      this.fromSeq,
-      this.toSeq,
-      this.variants})
-      : super._();
+  _$BacktestRequest._({
+    required this.type,
+    this.targetId,
+    this.definition,
+    this.from,
+    this.to,
+    this.fromSeq,
+    this.toSeq,
+    this.variants,
+  }) : super._();
   @override
   BacktestRequest rebuild(void Function(BacktestRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -232,10 +236,14 @@ class BacktestRequestBuilder
   _$BacktestRequest _build() {
     _$BacktestRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BacktestRequest._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'BacktestRequest', 'type'),
+              type,
+              r'BacktestRequest',
+              'type',
+            ),
             targetId: targetId,
             definition: _definition?.build(),
             from: from,
@@ -254,7 +262,10 @@ class BacktestRequestBuilder
         _variants?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BacktestRequest', _$failedField, e.toString());
+          r'BacktestRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

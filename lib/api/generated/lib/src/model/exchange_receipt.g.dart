@@ -24,9 +24,9 @@ ExchangeReceiptTypeEnum _$exchangeReceiptTypeEnumValueOf(String name) {
 
 final BuiltSet<ExchangeReceiptTypeEnum> _$exchangeReceiptTypeEnumValues =
     BuiltSet<ExchangeReceiptTypeEnum>(const <ExchangeReceiptTypeEnum>[
-  _$exchangeReceiptTypeEnum_delivered,
-  _$exchangeReceiptTypeEnum_acknowledged,
-]);
+      _$exchangeReceiptTypeEnum_delivered,
+      _$exchangeReceiptTypeEnum_acknowledged,
+    ]);
 
 Serializer<ExchangeReceiptTypeEnum> _$exchangeReceiptTypeEnumSerializer =
     _$ExchangeReceiptTypeEnumSerializer();
@@ -48,16 +48,20 @@ class _$ExchangeReceiptTypeEnumSerializer
   final String wireName = 'ExchangeReceiptTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ExchangeReceiptTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExchangeReceiptTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExchangeReceiptTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExchangeReceiptTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExchangeReceiptTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExchangeReceipt extends ExchangeReceipt {
@@ -75,13 +79,13 @@ class _$ExchangeReceipt extends ExchangeReceipt {
   factory _$ExchangeReceipt([void Function(ExchangeReceiptBuilder)? updates]) =>
       (ExchangeReceiptBuilder()..update(updates))._build();
 
-  _$ExchangeReceipt._(
-      {required this.packageId,
-      required this.type,
-      required this.receiverInstanceId,
-      this.principalHandle,
-      required this.at})
-      : super._();
+  _$ExchangeReceipt._({
+    required this.packageId,
+    required this.type,
+    required this.receiverInstanceId,
+    this.principalHandle,
+    required this.at,
+  }) : super._();
   @override
   ExchangeReceipt rebuild(void Function(ExchangeReceiptBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -181,17 +185,30 @@ class ExchangeReceiptBuilder
   ExchangeReceipt build() => _build();
 
   _$ExchangeReceipt _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExchangeReceipt._(
           packageId: BuiltValueNullFieldError.checkNotNull(
-              packageId, r'ExchangeReceipt', 'packageId'),
+            packageId,
+            r'ExchangeReceipt',
+            'packageId',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'ExchangeReceipt', 'type'),
+            type,
+            r'ExchangeReceipt',
+            'type',
+          ),
           receiverInstanceId: BuiltValueNullFieldError.checkNotNull(
-              receiverInstanceId, r'ExchangeReceipt', 'receiverInstanceId'),
+            receiverInstanceId,
+            r'ExchangeReceipt',
+            'receiverInstanceId',
+          ),
           principalHandle: principalHandle,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'ExchangeReceipt', 'at'),
+            at,
+            r'ExchangeReceipt',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

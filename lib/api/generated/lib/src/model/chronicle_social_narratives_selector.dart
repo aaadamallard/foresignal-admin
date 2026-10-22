@@ -22,8 +22,10 @@ part 'chronicle_social_narratives_selector.g.dart';
 @BuiltValue()
 abstract class ChronicleSocialNarrativesSelector
     implements
-        Built<ChronicleSocialNarrativesSelector,
-            ChronicleSocialNarrativesSelectorBuilder> {
+        Built<
+          ChronicleSocialNarrativesSelector,
+          ChronicleSocialNarrativesSelectorBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   ChronicleSocialNarrativesSelectorTypeEnum get type;
   // enum typeEnum {  social-narratives,  };
@@ -50,9 +52,9 @@ abstract class ChronicleSocialNarrativesSelector
 
   ChronicleSocialNarrativesSelector._();
 
-  factory ChronicleSocialNarrativesSelector(
-          [void updates(ChronicleSocialNarrativesSelectorBuilder b)]) =
-      _$ChronicleSocialNarrativesSelector;
+  factory ChronicleSocialNarrativesSelector([
+    void updates(ChronicleSocialNarrativesSelectorBuilder b),
+  ]) = _$ChronicleSocialNarrativesSelector;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSocialNarrativesSelectorBuilder b) => b;
@@ -67,7 +69,7 @@ class _$ChronicleSocialNarrativesSelectorSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSocialNarrativesSelector,
-    _$ChronicleSocialNarrativesSelector
+    _$ChronicleSocialNarrativesSelector,
   ];
 
   @override
@@ -115,8 +117,9 @@ class _$ChronicleSocialNarrativesSelectorSerializer
       yield r'statuses';
       yield serializers.serialize(
         object.statuses,
-        specifiedType: const FullType(BuiltList,
-            [FullType(ChronicleSocialNarrativesSelectorStatusesEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleSocialNarrativesSelectorStatusesEnum),
+        ]),
       );
     }
     if (object.keepPostText != null) {
@@ -134,9 +137,11 @@ class _$ChronicleSocialNarrativesSelectorSerializer
     ChronicleSocialNarrativesSelector object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -152,63 +157,83 @@ class _$ChronicleSocialNarrativesSelectorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ChronicleSocialNarrativesSelectorTypeEnum),
-          ) as ChronicleSocialNarrativesSelectorTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleSocialNarrativesSelectorTypeEnum,
+                    ),
+                  )
+                  as ChronicleSocialNarrativesSelectorTypeEnum;
           result.type = valueDes;
           break;
         case r'topicIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.topicIds.replace(valueDes);
           break;
         case r'placeIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.placeIds.replace(valueDes);
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'situationIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.situationIds.replace(valueDes);
           break;
         case r'statuses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(ChronicleSocialNarrativesSelectorStatusesEnum)]),
-          ) as BuiltList<ChronicleSocialNarrativesSelectorStatusesEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleSocialNarrativesSelectorStatusesEnum),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSocialNarrativesSelectorStatusesEnum>?;
           if (valueDes == null) continue;
           result.statuses.replace(valueDes);
           break;
         case r'keepPostText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.keepPostText = valueDes;
           break;
@@ -278,15 +303,14 @@ class ChronicleSocialNarrativesSelectorStatusesEnum extends EnumClass {
       _$chronicleSocialNarrativesSelectorStatusesEnum_mixed;
   @BuiltValueEnumConst(wireName: r'insufficient-coverage')
   static const ChronicleSocialNarrativesSelectorStatusesEnum
-      insufficientCoverage =
+  insufficientCoverage =
       _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage;
 
   static Serializer<ChronicleSocialNarrativesSelectorStatusesEnum>
-      get serializer =>
-          _$chronicleSocialNarrativesSelectorStatusesEnumSerializer;
+  get serializer => _$chronicleSocialNarrativesSelectorStatusesEnumSerializer;
 
   const ChronicleSocialNarrativesSelectorStatusesEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChronicleSocialNarrativesSelectorStatusesEnum> get values =>
       _$chronicleSocialNarrativesSelectorStatusesEnumValues;

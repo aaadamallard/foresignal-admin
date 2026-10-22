@@ -16,7 +16,8 @@ const FederationInfoCapabilitiesEnum _$federationInfoCapabilitiesEnum_ingest =
     const FederationInfoCapabilitiesEnum._('ingest');
 
 FederationInfoCapabilitiesEnum _$federationInfoCapabilitiesEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'changes':
       return _$federationInfoCapabilitiesEnum_changes;
@@ -32,16 +33,18 @@ FederationInfoCapabilitiesEnum _$federationInfoCapabilitiesEnumValueOf(
 }
 
 final BuiltSet<FederationInfoCapabilitiesEnum>
-    _$federationInfoCapabilitiesEnumValues = BuiltSet<
-        FederationInfoCapabilitiesEnum>(const <FederationInfoCapabilitiesEnum>[
-  _$federationInfoCapabilitiesEnum_changes,
-  _$federationInfoCapabilitiesEnum_stream,
-  _$federationInfoCapabilitiesEnum_snapshot,
-  _$federationInfoCapabilitiesEnum_ingest,
-]);
+_$federationInfoCapabilitiesEnumValues =
+    BuiltSet<FederationInfoCapabilitiesEnum>(
+      const <FederationInfoCapabilitiesEnum>[
+        _$federationInfoCapabilitiesEnum_changes,
+        _$federationInfoCapabilitiesEnum_stream,
+        _$federationInfoCapabilitiesEnum_snapshot,
+        _$federationInfoCapabilitiesEnum_ingest,
+      ],
+    );
 
 Serializer<FederationInfoCapabilitiesEnum>
-    _$federationInfoCapabilitiesEnumSerializer =
+_$federationInfoCapabilitiesEnumSerializer =
     _$FederationInfoCapabilitiesEnumSerializer();
 
 class _$FederationInfoCapabilitiesEnumSerializer
@@ -66,16 +69,19 @@ class _$FederationInfoCapabilitiesEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, FederationInfoCapabilitiesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FederationInfoCapabilitiesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FederationInfoCapabilitiesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FederationInfoCapabilitiesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FederationInfoCapabilitiesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FederationInfo extends FederationInfo {
@@ -97,15 +103,15 @@ class _$FederationInfo extends FederationInfo {
   factory _$FederationInfo([void Function(FederationInfoBuilder)? updates]) =>
       (FederationInfoBuilder()..update(updates))._build();
 
-  _$FederationInfo._(
-      {required this.instanceId,
-      this.instanceName,
-      required this.version,
-      required this.apiVersion,
-      required this.jwksUri,
-      required this.capabilities,
-      required this.time})
-      : super._();
+  _$FederationInfo._({
+    required this.instanceId,
+    this.instanceName,
+    required this.version,
+    required this.apiVersion,
+    required this.jwksUri,
+    required this.capabilities,
+    required this.time,
+  }) : super._();
   @override
   FederationInfo rebuild(void Function(FederationInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -223,20 +229,36 @@ class FederationInfoBuilder
   _$FederationInfo _build() {
     _$FederationInfo _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FederationInfo._(
             instanceId: BuiltValueNullFieldError.checkNotNull(
-                instanceId, r'FederationInfo', 'instanceId'),
+              instanceId,
+              r'FederationInfo',
+              'instanceId',
+            ),
             instanceName: instanceName,
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'FederationInfo', 'version'),
+              version,
+              r'FederationInfo',
+              'version',
+            ),
             apiVersion: BuiltValueNullFieldError.checkNotNull(
-                apiVersion, r'FederationInfo', 'apiVersion'),
+              apiVersion,
+              r'FederationInfo',
+              'apiVersion',
+            ),
             jwksUri: BuiltValueNullFieldError.checkNotNull(
-                jwksUri, r'FederationInfo', 'jwksUri'),
+              jwksUri,
+              r'FederationInfo',
+              'jwksUri',
+            ),
             capabilities: capabilities.build(),
             time: BuiltValueNullFieldError.checkNotNull(
-                time, r'FederationInfo', 'time'),
+              time,
+              r'FederationInfo',
+              'time',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -245,7 +267,10 @@ class FederationInfoBuilder
         capabilities.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FederationInfo', _$failedField, e.toString());
+          r'FederationInfo',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

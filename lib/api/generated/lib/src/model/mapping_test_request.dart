@@ -60,9 +60,11 @@ class _$MappingTestRequestSerializer
     MappingTestRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -78,10 +80,12 @@ class _$MappingTestRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'mapping':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecordMapping),
-          ) as RecordMapping?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(RecordMapping),
+                  )
+                  as RecordMapping?;
           if (valueDes == null) continue;
           result.mapping.replace(valueDes);
           break;

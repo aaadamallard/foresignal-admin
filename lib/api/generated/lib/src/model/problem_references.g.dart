@@ -14,9 +14,9 @@ class _$ProblemReferences extends ProblemReferences {
   @override
   final BuiltList<String>? briefings;
 
-  factory _$ProblemReferences(
-          [void Function(ProblemReferencesBuilder)? updates]) =>
-      (ProblemReferencesBuilder()..update(updates))._build();
+  factory _$ProblemReferences([
+    void Function(ProblemReferencesBuilder)? updates,
+  ]) => (ProblemReferencesBuilder()..update(updates))._build();
 
   _$ProblemReferences._({this.rules, this.views, this.briefings}) : super._();
   @override
@@ -105,7 +105,8 @@ class ProblemReferencesBuilder
   _$ProblemReferences _build() {
     _$ProblemReferences _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProblemReferences._(
             rules: _rules?.build(),
             views: _views?.build(),
@@ -122,7 +123,10 @@ class ProblemReferencesBuilder
         _briefings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProblemReferences', _$failedField, e.toString());
+          r'ProblemReferences',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

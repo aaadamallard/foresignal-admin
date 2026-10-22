@@ -12,7 +12,8 @@ const ExportManifestSignatureAlgEnum _$exportManifestSignatureAlgEnum_edDSA =
     const ExportManifestSignatureAlgEnum._('edDSA');
 
 ExportManifestSignatureAlgEnum _$exportManifestSignatureAlgEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ed25519':
       return _$exportManifestSignatureAlgEnum_ed25519;
@@ -24,14 +25,16 @@ ExportManifestSignatureAlgEnum _$exportManifestSignatureAlgEnumValueOf(
 }
 
 final BuiltSet<ExportManifestSignatureAlgEnum>
-    _$exportManifestSignatureAlgEnumValues = BuiltSet<
-        ExportManifestSignatureAlgEnum>(const <ExportManifestSignatureAlgEnum>[
-  _$exportManifestSignatureAlgEnum_ed25519,
-  _$exportManifestSignatureAlgEnum_edDSA,
-]);
+_$exportManifestSignatureAlgEnumValues =
+    BuiltSet<ExportManifestSignatureAlgEnum>(
+      const <ExportManifestSignatureAlgEnum>[
+        _$exportManifestSignatureAlgEnum_ed25519,
+        _$exportManifestSignatureAlgEnum_edDSA,
+      ],
+    );
 
 Serializer<ExportManifestSignatureAlgEnum>
-    _$exportManifestSignatureAlgEnumSerializer =
+_$exportManifestSignatureAlgEnumSerializer =
     _$ExportManifestSignatureAlgEnumSerializer();
 
 class _$ExportManifestSignatureAlgEnumSerializer
@@ -52,16 +55,19 @@ class _$ExportManifestSignatureAlgEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExportManifestSignatureAlgEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExportManifestSignatureAlgEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExportManifestSignatureAlgEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportManifestSignatureAlgEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportManifestSignatureAlgEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportManifestSignature extends ExportManifestSignature {
@@ -72,17 +78,19 @@ class _$ExportManifestSignature extends ExportManifestSignature {
   @override
   final String file;
 
-  factory _$ExportManifestSignature(
-          [void Function(ExportManifestSignatureBuilder)? updates]) =>
-      (ExportManifestSignatureBuilder()..update(updates))._build();
+  factory _$ExportManifestSignature([
+    void Function(ExportManifestSignatureBuilder)? updates,
+  ]) => (ExportManifestSignatureBuilder()..update(updates))._build();
 
-  _$ExportManifestSignature._(
-      {required this.alg, required this.kid, required this.file})
-      : super._();
+  _$ExportManifestSignature._({
+    required this.alg,
+    required this.kid,
+    required this.file,
+  }) : super._();
   @override
   ExportManifestSignature rebuild(
-          void Function(ExportManifestSignatureBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExportManifestSignatureBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExportManifestSignatureBuilder toBuilder() =>
@@ -163,14 +171,24 @@ class ExportManifestSignatureBuilder
   ExportManifestSignature build() => _build();
 
   _$ExportManifestSignature _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExportManifestSignature._(
           alg: BuiltValueNullFieldError.checkNotNull(
-              alg, r'ExportManifestSignature', 'alg'),
+            alg,
+            r'ExportManifestSignature',
+            'alg',
+          ),
           kid: BuiltValueNullFieldError.checkNotNull(
-              kid, r'ExportManifestSignature', 'kid'),
+            kid,
+            r'ExportManifestSignature',
+            'kid',
+          ),
           file: BuiltValueNullFieldError.checkNotNull(
-              file, r'ExportManifestSignature', 'file'),
+            file,
+            r'ExportManifestSignature',
+            'file',
+          ),
         );
     replace(_$result);
     return _$result;

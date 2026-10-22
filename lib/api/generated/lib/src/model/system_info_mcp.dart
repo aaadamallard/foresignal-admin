@@ -93,9 +93,11 @@ class _$SystemInfoMcpSerializer implements PrimitiveSerializer<SystemInfoMcp> {
     SystemInfoMcp object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,34 +113,44 @@ class _$SystemInfoMcpSerializer implements PrimitiveSerializer<SystemInfoMcp> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'sessions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.sessions = valueDes;
           break;
         case r'transports':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoMcpTransports),
-          ) as SystemInfoMcpTransports?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoMcpTransports,
+                    ),
+                  )
+                  as SystemInfoMcpTransports?;
           if (valueDes == null) continue;
           result.transports.replace(valueDes);
           break;
         case r'tools':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.tools = valueDes;
           break;

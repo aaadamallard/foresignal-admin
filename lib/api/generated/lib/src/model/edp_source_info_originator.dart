@@ -30,9 +30,9 @@ abstract class EdpSourceInfoOriginator
 
   EdpSourceInfoOriginator._();
 
-  factory EdpSourceInfoOriginator(
-          [void updates(EdpSourceInfoOriginatorBuilder b)]) =
-      _$EdpSourceInfoOriginator;
+  factory EdpSourceInfoOriginator([
+    void updates(EdpSourceInfoOriginatorBuilder b),
+  ]) = _$EdpSourceInfoOriginator;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EdpSourceInfoOriginatorBuilder b) => b;
@@ -47,7 +47,7 @@ class _$EdpSourceInfoOriginatorSerializer
   @override
   final Iterable<Type> types = const [
     EdpSourceInfoOriginator,
-    _$EdpSourceInfoOriginator
+    _$EdpSourceInfoOriginator,
   ];
 
   @override
@@ -83,9 +83,11 @@ class _$EdpSourceInfoOriginatorSerializer
     EdpSourceInfoOriginator object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,25 +103,34 @@ class _$EdpSourceInfoOriginatorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'class':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpSourceInfoOriginatorClass_Enum),
-          ) as EdpSourceInfoOriginatorClass_Enum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      EdpSourceInfoOriginatorClass_Enum,
+                    ),
+                  )
+                  as EdpSourceInfoOriginatorClass_Enum;
           result.class_ = valueDes;
           break;
         case r'aggregates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.aggregates.replace(valueDes);
           break;

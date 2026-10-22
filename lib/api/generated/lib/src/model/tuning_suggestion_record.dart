@@ -81,9 +81,9 @@ abstract class TuningSuggestionRecord
 
   TuningSuggestionRecord._();
 
-  factory TuningSuggestionRecord(
-          [void updates(TuningSuggestionRecordBuilder b)]) =
-      _$TuningSuggestionRecord;
+  factory TuningSuggestionRecord([
+    void updates(TuningSuggestionRecordBuilder b),
+  ]) = _$TuningSuggestionRecord;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TuningSuggestionRecordBuilder b) => b;
@@ -98,7 +98,7 @@ class _$TuningSuggestionRecordSerializer
   @override
   final Iterable<Type> types = const [
     TuningSuggestionRecord,
-    _$TuningSuggestionRecord
+    _$TuningSuggestionRecord,
   ];
 
   @override
@@ -127,8 +127,10 @@ class _$TuningSuggestionRecordSerializer
     yield r'patch';
     yield serializers.serialize(
       object.patch_,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(JsonObject),
+      ]),
     );
     if (object.expectedEffect != null) {
       yield r'expectedEffect';
@@ -200,9 +202,11 @@ class _$TuningSuggestionRecordSerializer
     TuningSuggestionRecord object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -218,109 +222,145 @@ class _$TuningSuggestionRecordSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TuningSuggestionRecordKindEnum),
-          ) as TuningSuggestionRecordKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      TuningSuggestionRecordKindEnum,
+                    ),
+                  )
+                  as TuningSuggestionRecordKindEnum;
           result.kind = valueDes;
           break;
         case r'rationale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.rationale = valueDes;
           break;
         case r'patch':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>;
           result.patch_.replace(valueDes);
           break;
         case r'expectedEffect':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(TuningSuggestionExpectedEffect),
-          ) as TuningSuggestionExpectedEffect?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TuningSuggestionExpectedEffect,
+                    ),
+                  )
+                  as TuningSuggestionExpectedEffect?;
           if (valueDes == null) continue;
           result.expectedEffect.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'ruleRev':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleRev = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TuningSuggestionRecordStatusEnum),
-          ) as TuningSuggestionRecordStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      TuningSuggestionRecordStatusEnum,
+                    ),
+                  )
+                  as TuningSuggestionRecordStatusEnum;
           result.status = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'decidedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.decidedBy = valueDes;
           break;
         case r'decidedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.decidedAt = valueDes;
           break;
         case r'decisionReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.decisionReason = valueDes;
           break;
         case r'explanation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.explanation = valueDes;
           break;

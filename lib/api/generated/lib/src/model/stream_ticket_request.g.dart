@@ -12,7 +12,8 @@ const StreamTicketRequestPurposeEnum _$streamTicketRequestPurposeEnum_tiles =
     const StreamTicketRequestPurposeEnum._('tiles');
 
 StreamTicketRequestPurposeEnum _$streamTicketRequestPurposeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'stream':
       return _$streamTicketRequestPurposeEnum_stream;
@@ -24,14 +25,16 @@ StreamTicketRequestPurposeEnum _$streamTicketRequestPurposeEnumValueOf(
 }
 
 final BuiltSet<StreamTicketRequestPurposeEnum>
-    _$streamTicketRequestPurposeEnumValues = BuiltSet<
-        StreamTicketRequestPurposeEnum>(const <StreamTicketRequestPurposeEnum>[
-  _$streamTicketRequestPurposeEnum_stream,
-  _$streamTicketRequestPurposeEnum_tiles,
-]);
+_$streamTicketRequestPurposeEnumValues =
+    BuiltSet<StreamTicketRequestPurposeEnum>(
+      const <StreamTicketRequestPurposeEnum>[
+        _$streamTicketRequestPurposeEnum_stream,
+        _$streamTicketRequestPurposeEnum_tiles,
+      ],
+    );
 
 Serializer<StreamTicketRequestPurposeEnum>
-    _$streamTicketRequestPurposeEnumSerializer =
+_$streamTicketRequestPurposeEnumSerializer =
     _$StreamTicketRequestPurposeEnumSerializer();
 
 class _$StreamTicketRequestPurposeEnumSerializer
@@ -52,16 +55,19 @@ class _$StreamTicketRequestPurposeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, StreamTicketRequestPurposeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StreamTicketRequestPurposeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamTicketRequestPurposeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamTicketRequestPurposeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamTicketRequestPurposeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamTicketRequest extends StreamTicketRequest {
@@ -72,16 +78,16 @@ class _$StreamTicketRequest extends StreamTicketRequest {
   @override
   final String? ttl;
 
-  factory _$StreamTicketRequest(
-          [void Function(StreamTicketRequestBuilder)? updates]) =>
-      (StreamTicketRequestBuilder()..update(updates))._build();
+  factory _$StreamTicketRequest([
+    void Function(StreamTicketRequestBuilder)? updates,
+  ]) => (StreamTicketRequestBuilder()..update(updates))._build();
 
   _$StreamTicketRequest._({required this.purpose, this.paths, this.ttl})
-      : super._();
+    : super._();
   @override
   StreamTicketRequest rebuild(
-          void Function(StreamTicketRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StreamTicketRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StreamTicketRequestBuilder toBuilder() =>
@@ -164,10 +170,14 @@ class StreamTicketRequestBuilder
   _$StreamTicketRequest _build() {
     _$StreamTicketRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StreamTicketRequest._(
             purpose: BuiltValueNullFieldError.checkNotNull(
-                purpose, r'StreamTicketRequest', 'purpose'),
+              purpose,
+              r'StreamTicketRequest',
+              'purpose',
+            ),
             paths: _paths?.build(),
             ttl: ttl,
           );
@@ -178,7 +188,10 @@ class StreamTicketRequestBuilder
         _paths?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StreamTicketRequest', _$failedField, e.toString());
+          r'StreamTicketRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,7 +7,7 @@ part of 'attention_gap_event.dart';
 // **************************************************************************
 
 const AttentionGapEventEventEnum
-    _$attentionGapEventEventEnum_attentionPeriodGap =
+_$attentionGapEventEventEnum_attentionPeriodGap =
     const AttentionGapEventEventEnum._('attentionPeriodGap');
 
 AttentionGapEventEventEnum _$attentionGapEventEventEnumValueOf(String name) {
@@ -21,8 +21,8 @@ AttentionGapEventEventEnum _$attentionGapEventEventEnumValueOf(String name) {
 
 final BuiltSet<AttentionGapEventEventEnum> _$attentionGapEventEventEnumValues =
     BuiltSet<AttentionGapEventEventEnum>(const <AttentionGapEventEventEnum>[
-  _$attentionGapEventEventEnum_attentionPeriodGap,
-]);
+      _$attentionGapEventEventEnum_attentionPeriodGap,
+    ]);
 
 Serializer<AttentionGapEventEventEnum> _$attentionGapEventEventEnumSerializer =
     _$AttentionGapEventEventEnumSerializer();
@@ -42,16 +42,20 @@ class _$AttentionGapEventEventEnumSerializer
   final String wireName = 'AttentionGapEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, AttentionGapEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AttentionGapEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AttentionGapEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AttentionGapEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AttentionGapEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AttentionGapEvent extends AttentionGapEvent {
@@ -72,20 +76,20 @@ class _$AttentionGapEvent extends AttentionGapEvent {
   @override
   final DateTime at;
 
-  factory _$AttentionGapEvent(
-          [void Function(AttentionGapEventBuilder)? updates]) =>
-      (AttentionGapEventBuilder()..update(updates))._build();
+  factory _$AttentionGapEvent([
+    void Function(AttentionGapEventBuilder)? updates,
+  ]) => (AttentionGapEventBuilder()..update(updates))._build();
 
-  _$AttentionGapEvent._(
-      {required this.event,
-      required this.findingId,
-      required this.ref,
-      this.regionCodes,
-      required this.expected,
-      required this.observed,
-      required this.platforms,
-      required this.at})
-      : super._();
+  _$AttentionGapEvent._({
+    required this.event,
+    required this.findingId,
+    required this.ref,
+    this.regionCodes,
+    required this.expected,
+    required this.observed,
+    required this.platforms,
+    required this.at,
+  }) : super._();
   @override
   AttentionGapEvent rebuild(void Function(AttentionGapEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -214,22 +218,41 @@ class AttentionGapEventBuilder
   _$AttentionGapEvent _build() {
     _$AttentionGapEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AttentionGapEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'AttentionGapEvent', 'event'),
+              event,
+              r'AttentionGapEvent',
+              'event',
+            ),
             findingId: BuiltValueNullFieldError.checkNotNull(
-                findingId, r'AttentionGapEvent', 'findingId'),
+              findingId,
+              r'AttentionGapEvent',
+              'findingId',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'AttentionGapEvent', 'ref'),
+              ref,
+              r'AttentionGapEvent',
+              'ref',
+            ),
             regionCodes: _regionCodes?.build(),
             expected: BuiltValueNullFieldError.checkNotNull(
-                expected, r'AttentionGapEvent', 'expected'),
+              expected,
+              r'AttentionGapEvent',
+              'expected',
+            ),
             observed: BuiltValueNullFieldError.checkNotNull(
-                observed, r'AttentionGapEvent', 'observed'),
+              observed,
+              r'AttentionGapEvent',
+              'observed',
+            ),
             platforms: platforms.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'AttentionGapEvent', 'at'),
+              at,
+              r'AttentionGapEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -241,7 +264,10 @@ class AttentionGapEventBuilder
         platforms.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AttentionGapEvent', _$failedField, e.toString());
+          r'AttentionGapEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

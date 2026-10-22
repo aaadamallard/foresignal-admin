@@ -79,9 +79,9 @@ abstract class IntelligenceEventInference
 
   IntelligenceEventInference._();
 
-  factory IntelligenceEventInference(
-          [void updates(IntelligenceEventInferenceBuilder b)]) =
-      _$IntelligenceEventInference;
+  factory IntelligenceEventInference([
+    void updates(IntelligenceEventInferenceBuilder b),
+  ]) = _$IntelligenceEventInference;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelligenceEventInferenceBuilder b) => b;
@@ -96,7 +96,7 @@ class _$IntelligenceEventInferenceSerializer
   @override
   final Iterable<Type> types = const [
     IntelligenceEventInference,
-    _$IntelligenceEventInference
+    _$IntelligenceEventInference,
   ];
 
   @override
@@ -122,8 +122,9 @@ class _$IntelligenceEventInferenceSerializer
     yield r'confidenceLabel';
     yield serializers.serialize(
       object.confidenceLabel,
-      specifiedType:
-          const FullType(IntelligenceEventInferenceConfidenceLabelEnum),
+      specifiedType: const FullType(
+        IntelligenceEventInferenceConfidenceLabelEnum,
+      ),
     );
     yield r'confidenceMethod';
     yield serializers.serialize(
@@ -138,8 +139,9 @@ class _$IntelligenceEventInferenceSerializer
     yield r'evidenceQuality';
     yield serializers.serialize(
       object.evidenceQuality,
-      specifiedType:
-          const FullType(IntelligenceEventInferenceEvidenceQualityEnum),
+      specifiedType: const FullType(
+        IntelligenceEventInferenceEvidenceQualityEnum,
+      ),
     );
     yield r'startTime';
     yield serializers.serialize(
@@ -194,9 +196,11 @@ class _$IntelligenceEventInferenceSerializer
     IntelligenceEventInference object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -212,103 +216,129 @@ class _$IntelligenceEventInferenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.confidence = valueDes;
           break;
         case r'rawConfidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.rawConfidence = valueDes;
           break;
         case r'confidenceLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(IntelligenceEventInferenceConfidenceLabelEnum),
-          ) as IntelligenceEventInferenceConfidenceLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelligenceEventInferenceConfidenceLabelEnum,
+                    ),
+                  )
+                  as IntelligenceEventInferenceConfidenceLabelEnum;
           result.confidenceLabel = valueDes;
           break;
         case r'confidenceMethod':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.confidenceMethod = valueDes;
           break;
         case r'calibrated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.calibrated = valueDes;
           break;
         case r'evidenceQuality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(IntelligenceEventInferenceEvidenceQualityEnum),
-          ) as IntelligenceEventInferenceEvidenceQualityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelligenceEventInferenceEvidenceQualityEnum,
+                    ),
+                  )
+                  as IntelligenceEventInferenceEvidenceQualityEnum;
           result.evidenceQuality = valueDes;
           break;
         case r'startTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.startTime = valueDes;
           break;
         case r'endTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.endTime = valueDes;
           break;
         case r'lastEvidenceAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastEvidenceAt = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.geometry.replace(valueDes);
           break;
         case r'centroid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Geometry),
-          ) as Geometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Geometry),
+                  )
+                  as Geometry?;
           if (valueDes == null) continue;
           result.centroid.replace(valueDes);
           break;
         case r'regionTags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionTags.replace(valueDes);
           break;
         case r'explanation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.explanation = valueDes;
           break;
         default:
@@ -353,11 +383,10 @@ class IntelligenceEventInferenceConfidenceLabelEnum extends EnumClass {
       _$intelligenceEventInferenceConfidenceLabelEnum_high;
 
   static Serializer<IntelligenceEventInferenceConfidenceLabelEnum>
-      get serializer =>
-          _$intelligenceEventInferenceConfidenceLabelEnumSerializer;
+  get serializer => _$intelligenceEventInferenceConfidenceLabelEnumSerializer;
 
   const IntelligenceEventInferenceConfidenceLabelEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<IntelligenceEventInferenceConfidenceLabelEnum> get values =>
       _$intelligenceEventInferenceConfidenceLabelEnumValues;
@@ -380,11 +409,10 @@ class IntelligenceEventInferenceEvidenceQualityEnum extends EnumClass {
       _$intelligenceEventInferenceEvidenceQualityEnum_insufficient;
 
   static Serializer<IntelligenceEventInferenceEvidenceQualityEnum>
-      get serializer =>
-          _$intelligenceEventInferenceEvidenceQualityEnumSerializer;
+  get serializer => _$intelligenceEventInferenceEvidenceQualityEnumSerializer;
 
   const IntelligenceEventInferenceEvidenceQualityEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<IntelligenceEventInferenceEvidenceQualityEnum> get values =>
       _$intelligenceEventInferenceEvidenceQualityEnumValues;

@@ -20,18 +20,18 @@ class _$RecipeTestResult extends RecipeTestResult {
   @override
   final bool? truncated;
 
-  factory _$RecipeTestResult(
-          [void Function(RecipeTestResultBuilder)? updates]) =>
-      (RecipeTestResultBuilder()..update(updates))._build();
+  factory _$RecipeTestResult([
+    void Function(RecipeTestResultBuilder)? updates,
+  ]) => (RecipeTestResultBuilder()..update(updates))._build();
 
-  _$RecipeTestResult._(
-      {required this.recipeId,
-      this.recipeVersion,
-      required this.fromSeq,
-      required this.toSeq,
-      required this.events,
-      this.truncated})
-      : super._();
+  _$RecipeTestResult._({
+    required this.recipeId,
+    this.recipeVersion,
+    required this.fromSeq,
+    required this.toSeq,
+    required this.events,
+    this.truncated,
+  }) : super._();
   @override
   RecipeTestResult rebuild(void Function(RecipeTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -142,15 +142,25 @@ class RecipeTestResultBuilder
   _$RecipeTestResult _build() {
     _$RecipeTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecipeTestResult._(
             recipeId: BuiltValueNullFieldError.checkNotNull(
-                recipeId, r'RecipeTestResult', 'recipeId'),
+              recipeId,
+              r'RecipeTestResult',
+              'recipeId',
+            ),
             recipeVersion: recipeVersion,
             fromSeq: BuiltValueNullFieldError.checkNotNull(
-                fromSeq, r'RecipeTestResult', 'fromSeq'),
+              fromSeq,
+              r'RecipeTestResult',
+              'fromSeq',
+            ),
             toSeq: BuiltValueNullFieldError.checkNotNull(
-                toSeq, r'RecipeTestResult', 'toSeq'),
+              toSeq,
+              r'RecipeTestResult',
+              'toSeq',
+            ),
             events: events.build(),
             truncated: truncated,
           );
@@ -161,7 +171,10 @@ class RecipeTestResultBuilder
         events.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecipeTestResult', _$failedField, e.toString());
+          r'RecipeTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -58,25 +58,31 @@ class SeriesApi {
   }) async {
     final _path = r'/v1/series/{sourceId}/{seriesId}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'seriesId' '}',
-            encodeQueryParameter(_serializers, seriesId, const FullType(String))
-                .toString());
+          '{'
+          r'seriesId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            seriesId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -85,19 +91,31 @@ class SeriesApi {
 
     final _queryParameters = <String, dynamic>{
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -116,9 +134,10 @@ class SeriesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SeriesPointPage),
-            ) as SeriesPointPage;
+                  rawResponse,
+                  specifiedType: const FullType(SeriesPointPage),
+                )
+                as SeriesPointPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -173,16 +192,10 @@ class SeriesApi {
     final _path = r'/v1/series';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -200,11 +213,17 @@ class SeriesApi {
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -223,9 +242,10 @@ class SeriesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SeriesPage),
-            ) as SeriesPage;
+                  rawResponse,
+                  specifiedType: const FullType(SeriesPage),
+                )
+                as SeriesPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

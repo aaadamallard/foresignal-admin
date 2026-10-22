@@ -14,17 +14,19 @@ class _$ChronicleThreadItemGap extends ChronicleThreadItemGap {
   @override
   final String? reason;
 
-  factory _$ChronicleThreadItemGap(
-          [void Function(ChronicleThreadItemGapBuilder)? updates]) =>
-      (ChronicleThreadItemGapBuilder()..update(updates))._build();
+  factory _$ChronicleThreadItemGap([
+    void Function(ChronicleThreadItemGapBuilder)? updates,
+  ]) => (ChronicleThreadItemGapBuilder()..update(updates))._build();
 
-  _$ChronicleThreadItemGap._(
-      {required this.from, required this.to, this.reason})
-      : super._();
+  _$ChronicleThreadItemGap._({
+    required this.from,
+    required this.to,
+    this.reason,
+  }) : super._();
   @override
   ChronicleThreadItemGap rebuild(
-          void Function(ChronicleThreadItemGapBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleThreadItemGapBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleThreadItemGapBuilder toBuilder() =>
@@ -104,12 +106,19 @@ class ChronicleThreadItemGapBuilder
   ChronicleThreadItemGap build() => _build();
 
   _$ChronicleThreadItemGap _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleThreadItemGap._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'ChronicleThreadItemGap', 'from'),
+            from,
+            r'ChronicleThreadItemGap',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'ChronicleThreadItemGap', 'to'),
+            to,
+            r'ChronicleThreadItemGap',
+            'to',
+          ),
           reason: reason,
         );
     replace(_$result);

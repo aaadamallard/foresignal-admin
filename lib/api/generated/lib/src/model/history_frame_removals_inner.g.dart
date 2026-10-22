@@ -7,17 +7,17 @@ part of 'history_frame_removals_inner.dart';
 // **************************************************************************
 
 const HistoryFrameRemovalsInnerReasonEnum
-    _$historyFrameRemovalsInnerReasonEnum_tombstone =
+_$historyFrameRemovalsInnerReasonEnum_tombstone =
     const HistoryFrameRemovalsInnerReasonEnum._('tombstone');
 const HistoryFrameRemovalsInnerReasonEnum
-    _$historyFrameRemovalsInnerReasonEnum_expired =
+_$historyFrameRemovalsInnerReasonEnum_expired =
     const HistoryFrameRemovalsInnerReasonEnum._('expired');
 const HistoryFrameRemovalsInnerReasonEnum
-    _$historyFrameRemovalsInnerReasonEnum_left =
+_$historyFrameRemovalsInnerReasonEnum_left =
     const HistoryFrameRemovalsInnerReasonEnum._('left');
 
 HistoryFrameRemovalsInnerReasonEnum
-    _$historyFrameRemovalsInnerReasonEnumValueOf(String name) {
+_$historyFrameRemovalsInnerReasonEnumValueOf(String name) {
   switch (name) {
     case 'tombstone':
       return _$historyFrameRemovalsInnerReasonEnum_tombstone;
@@ -31,15 +31,17 @@ HistoryFrameRemovalsInnerReasonEnum
 }
 
 final BuiltSet<HistoryFrameRemovalsInnerReasonEnum>
-    _$historyFrameRemovalsInnerReasonEnumValues = BuiltSet<
-        HistoryFrameRemovalsInnerReasonEnum>(const <HistoryFrameRemovalsInnerReasonEnum>[
-  _$historyFrameRemovalsInnerReasonEnum_tombstone,
-  _$historyFrameRemovalsInnerReasonEnum_expired,
-  _$historyFrameRemovalsInnerReasonEnum_left,
-]);
+_$historyFrameRemovalsInnerReasonEnumValues =
+    BuiltSet<HistoryFrameRemovalsInnerReasonEnum>(
+      const <HistoryFrameRemovalsInnerReasonEnum>[
+        _$historyFrameRemovalsInnerReasonEnum_tombstone,
+        _$historyFrameRemovalsInnerReasonEnum_expired,
+        _$historyFrameRemovalsInnerReasonEnum_left,
+      ],
+    );
 
 Serializer<HistoryFrameRemovalsInnerReasonEnum>
-    _$historyFrameRemovalsInnerReasonEnumSerializer =
+_$historyFrameRemovalsInnerReasonEnumSerializer =
     _$HistoryFrameRemovalsInnerReasonEnumSerializer();
 
 class _$HistoryFrameRemovalsInnerReasonEnumSerializer
@@ -57,23 +59,26 @@ class _$HistoryFrameRemovalsInnerReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    HistoryFrameRemovalsInnerReasonEnum
+    HistoryFrameRemovalsInnerReasonEnum,
   ];
   @override
   final String wireName = 'HistoryFrameRemovalsInnerReasonEnum';
 
   @override
   Object serialize(
-          Serializers serializers, HistoryFrameRemovalsInnerReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HistoryFrameRemovalsInnerReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HistoryFrameRemovalsInnerReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HistoryFrameRemovalsInnerReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HistoryFrameRemovalsInnerReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HistoryFrameRemovalsInner extends HistoryFrameRemovalsInner {
@@ -84,17 +89,19 @@ class _$HistoryFrameRemovalsInner extends HistoryFrameRemovalsInner {
   @override
   final bool left;
 
-  factory _$HistoryFrameRemovalsInner(
-          [void Function(HistoryFrameRemovalsInnerBuilder)? updates]) =>
-      (HistoryFrameRemovalsInnerBuilder()..update(updates))._build();
+  factory _$HistoryFrameRemovalsInner([
+    void Function(HistoryFrameRemovalsInnerBuilder)? updates,
+  ]) => (HistoryFrameRemovalsInnerBuilder()..update(updates))._build();
 
-  _$HistoryFrameRemovalsInner._(
-      {required this.id, required this.reason, required this.left})
-      : super._();
+  _$HistoryFrameRemovalsInner._({
+    required this.id,
+    required this.reason,
+    required this.left,
+  }) : super._();
   @override
   HistoryFrameRemovalsInner rebuild(
-          void Function(HistoryFrameRemovalsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HistoryFrameRemovalsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HistoryFrameRemovalsInnerBuilder toBuilder() =>
@@ -176,14 +183,24 @@ class HistoryFrameRemovalsInnerBuilder
   HistoryFrameRemovalsInner build() => _build();
 
   _$HistoryFrameRemovalsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HistoryFrameRemovalsInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'HistoryFrameRemovalsInner', 'id'),
+            id,
+            r'HistoryFrameRemovalsInner',
+            'id',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'HistoryFrameRemovalsInner', 'reason'),
+            reason,
+            r'HistoryFrameRemovalsInner',
+            'reason',
+          ),
           left: BuiltValueNullFieldError.checkNotNull(
-              left, r'HistoryFrameRemovalsInner', 'left'),
+            left,
+            r'HistoryFrameRemovalsInner',
+            'left',
+          ),
         );
     replace(_$result);
     return _$result;

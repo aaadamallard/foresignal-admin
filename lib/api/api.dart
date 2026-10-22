@@ -9,4 +9,5 @@ export 'admin_token_store.dart';
 export 'api_client.dart';
 export 'api_errors.dart';
 export 'backend_endpoint.dart';
+export 'contract_version.dart';
 export 'sse.dart';

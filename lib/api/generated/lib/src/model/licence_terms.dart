@@ -127,9 +127,11 @@ class _$LicenceTermsSerializer implements PrimitiveSerializer<LicenceTerms> {
     LicenceTerms object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -145,60 +147,80 @@ class _$LicenceTermsSerializer implements PrimitiveSerializer<LicenceTerms> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'commercialUse':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LicenceTermsCommercialUseEnum),
-          ) as LicenceTermsCommercialUseEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      LicenceTermsCommercialUseEnum,
+                    ),
+                  )
+                  as LicenceTermsCommercialUseEnum;
           result.commercialUse = valueDes;
           break;
         case r'shareAlike':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.shareAlike = valueDes;
           break;
         case r'attributionRequired':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.attributionRequired = valueDes;
           break;
         case r'redistribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LicenceTermsRedistributionEnum),
-          ) as LicenceTermsRedistributionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      LicenceTermsRedistributionEnum,
+                    ),
+                  )
+                  as LicenceTermsRedistributionEnum;
           result.redistribution = valueDes;
           break;
         case r'attributionText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.attributionText = valueDes;
           break;
         case r'termsUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.termsUrl = valueDes;
           break;

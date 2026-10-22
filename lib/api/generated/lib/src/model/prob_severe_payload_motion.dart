@@ -24,9 +24,9 @@ abstract class ProbSeverePayloadMotion
 
   ProbSeverePayloadMotion._();
 
-  factory ProbSeverePayloadMotion(
-          [void updates(ProbSeverePayloadMotionBuilder b)]) =
-      _$ProbSeverePayloadMotion;
+  factory ProbSeverePayloadMotion([
+    void updates(ProbSeverePayloadMotionBuilder b),
+  ]) = _$ProbSeverePayloadMotion;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProbSeverePayloadMotionBuilder b) => b;
@@ -41,7 +41,7 @@ class _$ProbSeverePayloadMotionSerializer
   @override
   final Iterable<Type> types = const [
     ProbSeverePayloadMotion,
-    _$ProbSeverePayloadMotion
+    _$ProbSeverePayloadMotion,
   ];
 
   @override
@@ -70,9 +70,11 @@ class _$ProbSeverePayloadMotionSerializer
     ProbSeverePayloadMotion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,17 +90,15 @@ class _$ProbSeverePayloadMotionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'speedKmh':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.speedKmh = valueDes;
           break;
         case r'bearingDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.bearingDeg = valueDes;
           break;
         default:

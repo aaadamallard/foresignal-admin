@@ -19,8 +19,10 @@ part 'correlation_recipe_definition_seed.g.dart';
 @BuiltValue()
 abstract class CorrelationRecipeDefinitionSeed
     implements
-        Built<CorrelationRecipeDefinitionSeed,
-            CorrelationRecipeDefinitionSeedBuilder> {
+        Built<
+          CorrelationRecipeDefinitionSeed,
+          CorrelationRecipeDefinitionSeedBuilder
+        > {
   @BuiltValueField(wireName: r'kinds')
   BuiltList<String>? get kinds;
 
@@ -32,9 +34,9 @@ abstract class CorrelationRecipeDefinitionSeed
 
   CorrelationRecipeDefinitionSeed._();
 
-  factory CorrelationRecipeDefinitionSeed(
-          [void updates(CorrelationRecipeDefinitionSeedBuilder b)]) =
-      _$CorrelationRecipeDefinitionSeed;
+  factory CorrelationRecipeDefinitionSeed([
+    void updates(CorrelationRecipeDefinitionSeedBuilder b),
+  ]) = _$CorrelationRecipeDefinitionSeed;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeDefinitionSeedBuilder b) => b;
@@ -49,7 +51,7 @@ class _$CorrelationRecipeDefinitionSeedSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeDefinitionSeed,
-    _$CorrelationRecipeDefinitionSeed
+    _$CorrelationRecipeDefinitionSeed,
   ];
 
   @override
@@ -89,9 +91,11 @@ class _$CorrelationRecipeDefinitionSeedSerializer
     CorrelationRecipeDefinitionSeed object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,29 +111,38 @@ class _$CorrelationRecipeDefinitionSeedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.kinds.replace(valueDes);
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.sources.replace(valueDes);
           break;
         case r'conditions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Condition)]),
-          ) as BuiltList<Condition>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Condition),
+                    ]),
+                  )
+                  as BuiltList<Condition>?;
           if (valueDes == null) continue;
           result.conditions.replace(valueDes);
           break;

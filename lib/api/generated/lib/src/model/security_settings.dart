@@ -107,9 +107,11 @@ class _$SecuritySettingsSerializer
     SecuritySettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,41 +127,51 @@ class _$SecuritySettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'openReads':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.openReads = valueDes;
           break;
         case r'exposeObserver':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.exposeObserver = valueDes;
           break;
         case r'anonymous':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ReadRestriction),
-          ) as ReadRestriction?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ReadRestriction),
+                  )
+                  as ReadRestriction?;
           if (valueDes == null) continue;
           result.anonymous.replace(valueDes);
           break;
         case r'metricsOpen':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.metricsOpen = valueDes;
           break;
         case r'exposeMlat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.exposeMlat = valueDes;
           break;

@@ -14,15 +14,15 @@ class _$PlaceWeatherDigestNext extends PlaceWeatherDigestNext {
   @override
   final PlaceWeatherDigestNextHrrr? hrrr;
 
-  factory _$PlaceWeatherDigestNext(
-          [void Function(PlaceWeatherDigestNextBuilder)? updates]) =>
-      (PlaceWeatherDigestNextBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNext([
+    void Function(PlaceWeatherDigestNextBuilder)? updates,
+  ]) => (PlaceWeatherDigestNextBuilder()..update(updates))._build();
 
   _$PlaceWeatherDigestNext._({this.nws, this.gfs, this.hrrr}) : super._();
   @override
   PlaceWeatherDigestNext rebuild(
-          void Function(PlaceWeatherDigestNextBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNextBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNextBuilder toBuilder() =>
@@ -107,7 +107,8 @@ class PlaceWeatherDigestNextBuilder
   _$PlaceWeatherDigestNext _build() {
     _$PlaceWeatherDigestNext _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlaceWeatherDigestNext._(
             nws: _nws?.build(),
             gfs: _gfs?.build(),
@@ -124,7 +125,10 @@ class PlaceWeatherDigestNextBuilder
         _hrrr?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceWeatherDigestNext', _$failedField, e.toString());
+          r'PlaceWeatherDigestNext',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

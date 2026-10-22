@@ -24,9 +24,9 @@ DigestHealthItemStatusEnum _$digestHealthItemStatusEnumValueOf(String name) {
 
 final BuiltSet<DigestHealthItemStatusEnum> _$digestHealthItemStatusEnumValues =
     BuiltSet<DigestHealthItemStatusEnum>(const <DigestHealthItemStatusEnum>[
-  _$digestHealthItemStatusEnum_degraded,
-  _$digestHealthItemStatusEnum_failing,
-]);
+      _$digestHealthItemStatusEnum_degraded,
+      _$digestHealthItemStatusEnum_failing,
+    ]);
 
 Serializer<DigestHealthItemStatusEnum> _$digestHealthItemStatusEnumSerializer =
     _$DigestHealthItemStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$DigestHealthItemStatusEnumSerializer
   final String wireName = 'DigestHealthItemStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, DigestHealthItemStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DigestHealthItemStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DigestHealthItemStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DigestHealthItemStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DigestHealthItemStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DigestHealthItem extends DigestHealthItem {
@@ -70,16 +74,16 @@ class _$DigestHealthItem extends DigestHealthItem {
   @override
   final String? lastError;
 
-  factory _$DigestHealthItem(
-          [void Function(DigestHealthItemBuilder)? updates]) =>
-      (DigestHealthItemBuilder()..update(updates))._build();
+  factory _$DigestHealthItem([
+    void Function(DigestHealthItemBuilder)? updates,
+  ]) => (DigestHealthItemBuilder()..update(updates))._build();
 
-  _$DigestHealthItem._(
-      {required this.sourceId,
-      required this.status,
-      this.since,
-      this.lastError})
-      : super._();
+  _$DigestHealthItem._({
+    required this.sourceId,
+    required this.status,
+    this.since,
+    this.lastError,
+  }) : super._();
   @override
   DigestHealthItem rebuild(void Function(DigestHealthItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -170,12 +174,19 @@ class DigestHealthItemBuilder
   DigestHealthItem build() => _build();
 
   _$DigestHealthItem _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestHealthItem._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'DigestHealthItem', 'sourceId'),
+            sourceId,
+            r'DigestHealthItem',
+            'sourceId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'DigestHealthItem', 'status'),
+            status,
+            r'DigestHealthItem',
+            'status',
+          ),
           since: since,
           lastError: lastError,
         );

@@ -14,16 +14,16 @@ class _$ChannelTypeCapabilities extends ChannelTypeCapabilities {
   @override
   final bool? fanOut;
 
-  factory _$ChannelTypeCapabilities(
-          [void Function(ChannelTypeCapabilitiesBuilder)? updates]) =>
-      (ChannelTypeCapabilitiesBuilder()..update(updates))._build();
+  factory _$ChannelTypeCapabilities([
+    void Function(ChannelTypeCapabilitiesBuilder)? updates,
+  ]) => (ChannelTypeCapabilitiesBuilder()..update(updates))._build();
 
   _$ChannelTypeCapabilities._({this.editInPlace, this.attachments, this.fanOut})
-      : super._();
+    : super._();
   @override
   ChannelTypeCapabilities rebuild(
-          void Function(ChannelTypeCapabilitiesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChannelTypeCapabilitiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChannelTypeCapabilitiesBuilder toBuilder() =>
@@ -104,7 +104,8 @@ class ChannelTypeCapabilitiesBuilder
   ChannelTypeCapabilities build() => _build();
 
   _$ChannelTypeCapabilities _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChannelTypeCapabilities._(
           editInPlace: editInPlace,
           attachments: attachments,

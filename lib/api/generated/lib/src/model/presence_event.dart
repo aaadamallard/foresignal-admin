@@ -67,8 +67,9 @@ class _$PresenceEventSerializer implements PrimitiveSerializer<PresenceEvent> {
     yield r'clients';
     yield serializers.serialize(
       object.clients,
-      specifiedType:
-          const FullType(BuiltList, [FullType(PresenceEventClientsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(PresenceEventClientsInner),
+      ]),
     );
     if (object.change != null) {
       yield r'change';
@@ -90,9 +91,11 @@ class _$PresenceEventSerializer implements PrimitiveSerializer<PresenceEvent> {
     PresenceEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,33 +111,42 @@ class _$PresenceEventSerializer implements PrimitiveSerializer<PresenceEvent> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'workspaceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.workspaceId = valueDes;
           break;
         case r'clients':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(PresenceEventClientsInner)]),
-          ) as BuiltList<PresenceEventClientsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PresenceEventClientsInner),
+                    ]),
+                  )
+                  as BuiltList<PresenceEventClientsInner>;
           result.clients.replace(valueDes);
           break;
         case r'change':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PresenceEventChange),
-          ) as PresenceEventChange?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PresenceEventChange),
+                  )
+                  as PresenceEventChange?;
           if (valueDes == null) continue;
           result.change.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

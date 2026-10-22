@@ -47,7 +47,7 @@ class _$EdpValidationRequestSerializer
   @override
   final Iterable<Type> types = const [
     EdpValidationRequest,
-    _$EdpValidationRequest
+    _$EdpValidationRequest,
   ];
 
   @override
@@ -77,7 +77,7 @@ class _$EdpValidationRequestSerializer
       yield serializers.serialize(
         object.items,
         specifiedType: const FullType(BuiltList, [
-          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
         ]),
       );
     }
@@ -89,9 +89,11 @@ class _$EdpValidationRequestSerializer
     EdpValidationRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,29 +109,37 @@ class _$EdpValidationRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'manifest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpManifest),
-          ) as EdpManifest?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpManifest),
+                  )
+                  as EdpManifest?;
           if (valueDes == null) continue;
           result.manifest.replace(valueDes);
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltList<BuiltMap<String, JsonObject?>>?;
           if (valueDes == null) continue;
           result.items.replace(valueDes);
           break;

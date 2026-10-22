@@ -12,16 +12,16 @@ class _$CyclePacketOutlooks extends CyclePacketOutlooks {
   @override
   final BuiltList<CyclePacketItem>? windowsOutsideP10P90;
 
-  factory _$CyclePacketOutlooks(
-          [void Function(CyclePacketOutlooksBuilder)? updates]) =>
-      (CyclePacketOutlooksBuilder()..update(updates))._build();
+  factory _$CyclePacketOutlooks([
+    void Function(CyclePacketOutlooksBuilder)? updates,
+  ]) => (CyclePacketOutlooksBuilder()..update(updates))._build();
 
   _$CyclePacketOutlooks._({this.indexChanges, this.windowsOutsideP10P90})
-      : super._();
+    : super._();
   @override
   CyclePacketOutlooks rebuild(
-          void Function(CyclePacketOutlooksBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CyclePacketOutlooksBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CyclePacketOutlooksBuilder toBuilder() =>
@@ -67,8 +67,8 @@ class CyclePacketOutlooksBuilder
   ListBuilder<CyclePacketItem> get windowsOutsideP10P90 =>
       _$this._windowsOutsideP10P90 ??= ListBuilder<CyclePacketItem>();
   set windowsOutsideP10P90(
-          ListBuilder<CyclePacketItem>? windowsOutsideP10P90) =>
-      _$this._windowsOutsideP10P90 = windowsOutsideP10P90;
+    ListBuilder<CyclePacketItem>? windowsOutsideP10P90,
+  ) => _$this._windowsOutsideP10P90 = windowsOutsideP10P90;
 
   CyclePacketOutlooksBuilder() {
     CyclePacketOutlooks._defaults(this);
@@ -100,7 +100,8 @@ class CyclePacketOutlooksBuilder
   _$CyclePacketOutlooks _build() {
     _$CyclePacketOutlooks _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CyclePacketOutlooks._(
             indexChanges: _indexChanges?.build(),
             windowsOutsideP10P90: _windowsOutsideP10P90?.build(),
@@ -114,7 +115,10 @@ class CyclePacketOutlooksBuilder
         _windowsOutsideP10P90?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CyclePacketOutlooks', _$failedField, e.toString());
+          r'CyclePacketOutlooks',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,23 +7,24 @@ part of 'common_dependencies_dependencies_inner.dart';
 // **************************************************************************
 
 const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_confirmed =
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_confirmed =
     const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum._(
-        'confirmed');
+      'confirmed',
+    );
 const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_likely =
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_likely =
     const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum._('likely');
 const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_possible =
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_possible =
     const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum._('possible');
 const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative =
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative =
     const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum._(
-        'speculative');
+      'speculative',
+    );
 
 CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
-    _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumValueOf(
-        String name) {
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumValueOf(String name) {
   switch (name) {
     case 'confirmed':
       return _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_confirmed;
@@ -39,22 +40,25 @@ CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
 }
 
 final BuiltSet<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>
-    _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumValues = BuiltSet<
-        CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>(const <CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>[
-  _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_confirmed,
-  _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_likely,
-  _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_possible,
-  _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative,
-]);
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumValues =
+    BuiltSet<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>(
+      const <CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>[
+        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_confirmed,
+        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_likely,
+        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_possible,
+        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative,
+      ],
+    );
 
 Serializer<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>
-    _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumSerializer =
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumSerializer =
     _$CommonDependenciesDependenciesInnerWeakestEdgeLabelEnumSerializer();
 
 class _$CommonDependenciesDependenciesInnerWeakestEdgeLabelEnumSerializer
     implements
         PrimitiveSerializer<
-            CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum> {
+          CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'confirmed': 'confirmed',
     'likely': 'likely',
@@ -70,24 +74,27 @@ class _$CommonDependenciesDependenciesInnerWeakestEdgeLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
+    CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum,
   ];
   @override
   final String wireName =
       'CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CommonDependenciesDependenciesInner
@@ -98,25 +105,25 @@ class _$CommonDependenciesDependenciesInner
   final BuiltList<String> sharedBy;
   @override
   final CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
-      weakestEdgeLabel;
+  weakestEdgeLabel;
   @override
   final BuiltList<CommonDependenciesDependenciesInnerPathsInner> paths;
 
-  factory _$CommonDependenciesDependenciesInner(
-          [void Function(CommonDependenciesDependenciesInnerBuilder)?
-              updates]) =>
+  factory _$CommonDependenciesDependenciesInner([
+    void Function(CommonDependenciesDependenciesInnerBuilder)? updates,
+  ]) =>
       (CommonDependenciesDependenciesInnerBuilder()..update(updates))._build();
 
-  _$CommonDependenciesDependenciesInner._(
-      {required this.node,
-      required this.sharedBy,
-      required this.weakestEdgeLabel,
-      required this.paths})
-      : super._();
+  _$CommonDependenciesDependenciesInner._({
+    required this.node,
+    required this.sharedBy,
+    required this.weakestEdgeLabel,
+    required this.paths,
+  }) : super._();
   @override
   CommonDependenciesDependenciesInner rebuild(
-          void Function(CommonDependenciesDependenciesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CommonDependenciesDependenciesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CommonDependenciesDependenciesInnerBuilder toBuilder() =>
@@ -156,8 +163,10 @@ class _$CommonDependenciesDependenciesInner
 
 class CommonDependenciesDependenciesInnerBuilder
     implements
-        Builder<CommonDependenciesDependenciesInner,
-            CommonDependenciesDependenciesInnerBuilder> {
+        Builder<
+          CommonDependenciesDependenciesInner,
+          CommonDependenciesDependenciesInnerBuilder
+        > {
   _$CommonDependenciesDependenciesInner? _$v;
 
   ObjectEnvelopeBuilder? _node;
@@ -171,19 +180,18 @@ class CommonDependenciesDependenciesInnerBuilder
 
   CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum? _weakestEdgeLabel;
   CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum?
-      get weakestEdgeLabel => _$this._weakestEdgeLabel;
+  get weakestEdgeLabel => _$this._weakestEdgeLabel;
   set weakestEdgeLabel(
-          CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum?
-              weakestEdgeLabel) =>
-      _$this._weakestEdgeLabel = weakestEdgeLabel;
+    CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum? weakestEdgeLabel,
+  ) => _$this._weakestEdgeLabel = weakestEdgeLabel;
 
   ListBuilder<CommonDependenciesDependenciesInnerPathsInner>? _paths;
   ListBuilder<CommonDependenciesDependenciesInnerPathsInner> get paths =>
       _$this._paths ??=
           ListBuilder<CommonDependenciesDependenciesInnerPathsInner>();
   set paths(
-          ListBuilder<CommonDependenciesDependenciesInnerPathsInner>? paths) =>
-      _$this._paths = paths;
+    ListBuilder<CommonDependenciesDependenciesInnerPathsInner>? paths,
+  ) => _$this._paths = paths;
 
   CommonDependenciesDependenciesInnerBuilder() {
     CommonDependenciesDependenciesInner._defaults(this);
@@ -208,7 +216,8 @@ class CommonDependenciesDependenciesInnerBuilder
 
   @override
   void update(
-      void Function(CommonDependenciesDependenciesInnerBuilder)? updates) {
+    void Function(CommonDependenciesDependenciesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -218,14 +227,16 @@ class CommonDependenciesDependenciesInnerBuilder
   _$CommonDependenciesDependenciesInner _build() {
     _$CommonDependenciesDependenciesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CommonDependenciesDependenciesInner._(
             node: node.build(),
             sharedBy: sharedBy.build(),
             weakestEdgeLabel: BuiltValueNullFieldError.checkNotNull(
-                weakestEdgeLabel,
-                r'CommonDependenciesDependenciesInner',
-                'weakestEdgeLabel'),
+              weakestEdgeLabel,
+              r'CommonDependenciesDependenciesInner',
+              'weakestEdgeLabel',
+            ),
             paths: paths.build(),
           );
     } catch (_) {
@@ -239,8 +250,11 @@ class CommonDependenciesDependenciesInnerBuilder
         _$failedField = 'paths';
         paths.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(r'CommonDependenciesDependenciesInner',
-            _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'CommonDependenciesDependenciesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

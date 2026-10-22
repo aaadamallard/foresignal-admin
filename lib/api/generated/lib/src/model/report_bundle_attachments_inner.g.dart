@@ -18,21 +18,21 @@ class _$ReportBundleAttachmentsInner extends ReportBundleAttachmentsInner {
   @override
   final String? attachmentId;
 
-  factory _$ReportBundleAttachmentsInner(
-          [void Function(ReportBundleAttachmentsInnerBuilder)? updates]) =>
-      (ReportBundleAttachmentsInnerBuilder()..update(updates))._build();
+  factory _$ReportBundleAttachmentsInner([
+    void Function(ReportBundleAttachmentsInnerBuilder)? updates,
+  ]) => (ReportBundleAttachmentsInnerBuilder()..update(updates))._build();
 
-  _$ReportBundleAttachmentsInner._(
-      {required this.sha256,
-      this.filename,
-      this.contentType,
-      this.size,
-      this.attachmentId})
-      : super._();
+  _$ReportBundleAttachmentsInner._({
+    required this.sha256,
+    this.filename,
+    this.contentType,
+    this.size,
+    this.attachmentId,
+  }) : super._();
   @override
   ReportBundleAttachmentsInner rebuild(
-          void Function(ReportBundleAttachmentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReportBundleAttachmentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReportBundleAttachmentsInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$ReportBundleAttachmentsInner extends ReportBundleAttachmentsInner {
 
 class ReportBundleAttachmentsInnerBuilder
     implements
-        Builder<ReportBundleAttachmentsInner,
-            ReportBundleAttachmentsInnerBuilder> {
+        Builder<
+          ReportBundleAttachmentsInner,
+          ReportBundleAttachmentsInnerBuilder
+        > {
   _$ReportBundleAttachmentsInner? _$v;
 
   String? _sha256;
@@ -130,10 +132,14 @@ class ReportBundleAttachmentsInnerBuilder
   ReportBundleAttachmentsInner build() => _build();
 
   _$ReportBundleAttachmentsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReportBundleAttachmentsInner._(
           sha256: BuiltValueNullFieldError.checkNotNull(
-              sha256, r'ReportBundleAttachmentsInner', 'sha256'),
+            sha256,
+            r'ReportBundleAttachmentsInner',
+            'sha256',
+          ),
           filename: filename,
           contentType: contentType,
           size: size,

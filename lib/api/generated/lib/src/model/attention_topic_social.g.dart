@@ -12,7 +12,8 @@ const AttentionTopicSocialModeEnum _$attentionTopicSocialModeEnum_cueOnly =
     const AttentionTopicSocialModeEnum._('cueOnly');
 
 AttentionTopicSocialModeEnum _$attentionTopicSocialModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'standing':
       return _$attentionTopicSocialModeEnum_standing;
@@ -24,14 +25,15 @@ AttentionTopicSocialModeEnum _$attentionTopicSocialModeEnumValueOf(
 }
 
 final BuiltSet<AttentionTopicSocialModeEnum>
-    _$attentionTopicSocialModeEnumValues =
-    BuiltSet<AttentionTopicSocialModeEnum>(const <AttentionTopicSocialModeEnum>[
-  _$attentionTopicSocialModeEnum_standing,
-  _$attentionTopicSocialModeEnum_cueOnly,
-]);
+_$attentionTopicSocialModeEnumValues = BuiltSet<AttentionTopicSocialModeEnum>(
+  const <AttentionTopicSocialModeEnum>[
+    _$attentionTopicSocialModeEnum_standing,
+    _$attentionTopicSocialModeEnum_cueOnly,
+  ],
+);
 
 Serializer<AttentionTopicSocialModeEnum>
-    _$attentionTopicSocialModeEnumSerializer =
+_$attentionTopicSocialModeEnumSerializer =
     _$AttentionTopicSocialModeEnumSerializer();
 
 class _$AttentionTopicSocialModeEnumSerializer
@@ -51,16 +53,20 @@ class _$AttentionTopicSocialModeEnumSerializer
   final String wireName = 'AttentionTopicSocialModeEnum';
 
   @override
-  Object serialize(Serializers serializers, AttentionTopicSocialModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AttentionTopicSocialModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AttentionTopicSocialModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AttentionTopicSocialModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AttentionTopicSocialModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AttentionTopicSocial extends AttentionTopicSocial {
@@ -85,26 +91,26 @@ class _$AttentionTopicSocial extends AttentionTopicSocial {
   @override
   final AttentionTopicSocialModeEnum? mode;
 
-  factory _$AttentionTopicSocial(
-          [void Function(AttentionTopicSocialBuilder)? updates]) =>
-      (AttentionTopicSocialBuilder()..update(updates))._build();
+  factory _$AttentionTopicSocial([
+    void Function(AttentionTopicSocialBuilder)? updates,
+  ]) => (AttentionTopicSocialBuilder()..update(updates))._build();
 
-  _$AttentionTopicSocial._(
-      {this.terms,
-      this.hashtags,
-      this.accounts,
-      this.channels,
-      this.exclude,
-      this.platforms,
-      this.placeIds,
-      this.regionCodes,
-      this.entityRefs,
-      this.mode})
-      : super._();
+  _$AttentionTopicSocial._({
+    this.terms,
+    this.hashtags,
+    this.accounts,
+    this.channels,
+    this.exclude,
+    this.platforms,
+    this.placeIds,
+    this.regionCodes,
+    this.entityRefs,
+    this.mode,
+  }) : super._();
   @override
   AttentionTopicSocial rebuild(
-          void Function(AttentionTopicSocialBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AttentionTopicSocialBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AttentionTopicSocialBuilder toBuilder() =>
@@ -256,7 +262,8 @@ class AttentionTopicSocialBuilder
   _$AttentionTopicSocial _build() {
     _$AttentionTopicSocial _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AttentionTopicSocial._(
             terms: _terms?.build(),
             hashtags: _hashtags?.build(),
@@ -292,7 +299,10 @@ class AttentionTopicSocialBuilder
         _entityRefs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AttentionTopicSocial', _$failedField, e.toString());
+          r'AttentionTopicSocial',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -27,9 +27,9 @@ abstract class ForecastHistorySeriesInner
 
   ForecastHistorySeriesInner._();
 
-  factory ForecastHistorySeriesInner(
-          [void updates(ForecastHistorySeriesInnerBuilder b)]) =
-      _$ForecastHistorySeriesInner;
+  factory ForecastHistorySeriesInner([
+    void updates(ForecastHistorySeriesInnerBuilder b),
+  ]) = _$ForecastHistorySeriesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastHistorySeriesInnerBuilder b) => b;
@@ -44,7 +44,7 @@ class _$ForecastHistorySeriesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ForecastHistorySeriesInner,
-    _$ForecastHistorySeriesInner
+    _$ForecastHistorySeriesInner,
   ];
 
   @override
@@ -63,8 +63,9 @@ class _$ForecastHistorySeriesInnerSerializer
     yield r'points';
     yield serializers.serialize(
       object.points,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ForecastHistorySeriesInnerPointsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ForecastHistorySeriesInnerPointsInner),
+      ]),
     );
   }
 
@@ -74,9 +75,11 @@ class _$ForecastHistorySeriesInnerSerializer
     ForecastHistorySeriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +95,23 @@ class _$ForecastHistorySeriesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'points':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ForecastHistorySeriesInnerPointsInner)]),
-          ) as BuiltList<ForecastHistorySeriesInnerPointsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ForecastHistorySeriesInnerPointsInner),
+                    ]),
+                  )
+                  as BuiltList<ForecastHistorySeriesInnerPointsInner>;
           result.points.replace(valueDes);
           break;
         default:

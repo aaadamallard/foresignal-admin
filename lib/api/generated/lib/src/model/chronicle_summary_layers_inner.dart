@@ -36,9 +36,9 @@ abstract class ChronicleSummaryLayersInner
 
   ChronicleSummaryLayersInner._();
 
-  factory ChronicleSummaryLayersInner(
-          [void updates(ChronicleSummaryLayersInnerBuilder b)]) =
-      _$ChronicleSummaryLayersInner;
+  factory ChronicleSummaryLayersInner([
+    void updates(ChronicleSummaryLayersInnerBuilder b),
+  ]) = _$ChronicleSummaryLayersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSummaryLayersInnerBuilder b) => b;
@@ -53,7 +53,7 @@ class _$ChronicleSummaryLayersInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSummaryLayersInner,
-    _$ChronicleSummaryLayersInner
+    _$ChronicleSummaryLayersInner,
   ];
 
   @override
@@ -83,8 +83,9 @@ class _$ChronicleSummaryLayersInnerSerializer
       yield r'series';
       yield serializers.serialize(
         object.series,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ChronicleSummaryLayersInnerSeriesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleSummaryLayersInnerSeriesInner),
+        ]),
       );
     }
   }
@@ -95,9 +96,11 @@ class _$ChronicleSummaryLayersInnerSerializer
     ChronicleSummaryLayersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,32 +116,38 @@ class _$ChronicleSummaryLayersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'layerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.layerId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rows = valueDes;
           break;
         case r'series':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ChronicleSummaryLayersInnerSeriesInner)]),
-          ) as BuiltList<ChronicleSummaryLayersInnerSeriesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleSummaryLayersInnerSeriesInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSummaryLayersInnerSeriesInner>?;
           if (valueDes == null) continue;
           result.series.replace(valueDes);
           break;

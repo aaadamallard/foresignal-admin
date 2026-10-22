@@ -17,8 +17,10 @@ part 'storm_track_payload_nowcast_inner.g.dart';
 @BuiltValue()
 abstract class StormTrackPayloadNowcastInner
     implements
-        Built<StormTrackPayloadNowcastInner,
-            StormTrackPayloadNowcastInnerBuilder> {
+        Built<
+          StormTrackPayloadNowcastInner,
+          StormTrackPayloadNowcastInnerBuilder
+        > {
   @BuiltValueField(wireName: r'leadMinutes')
   StormTrackPayloadNowcastInnerLeadMinutesEnum get leadMinutes;
   // enum leadMinutesEnum {  15,  30,  60,  };
@@ -29,9 +31,9 @@ abstract class StormTrackPayloadNowcastInner
 
   StormTrackPayloadNowcastInner._();
 
-  factory StormTrackPayloadNowcastInner(
-          [void updates(StormTrackPayloadNowcastInnerBuilder b)]) =
-      _$StormTrackPayloadNowcastInner;
+  factory StormTrackPayloadNowcastInner([
+    void updates(StormTrackPayloadNowcastInnerBuilder b),
+  ]) = _$StormTrackPayloadNowcastInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StormTrackPayloadNowcastInnerBuilder b) => b;
@@ -46,7 +48,7 @@ class _$StormTrackPayloadNowcastInnerSerializer
   @override
   final Iterable<Type> types = const [
     StormTrackPayloadNowcastInner,
-    _$StormTrackPayloadNowcastInner
+    _$StormTrackPayloadNowcastInner,
   ];
 
   @override
@@ -60,8 +62,9 @@ class _$StormTrackPayloadNowcastInnerSerializer
     yield r'leadMinutes';
     yield serializers.serialize(
       object.leadMinutes,
-      specifiedType:
-          const FullType(StormTrackPayloadNowcastInnerLeadMinutesEnum),
+      specifiedType: const FullType(
+        StormTrackPayloadNowcastInnerLeadMinutesEnum,
+      ),
     );
     yield r'method';
     yield serializers.serialize(
@@ -76,9 +79,11 @@ class _$StormTrackPayloadNowcastInnerSerializer
     StormTrackPayloadNowcastInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,19 +99,25 @@ class _$StormTrackPayloadNowcastInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'leadMinutes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(StormTrackPayloadNowcastInnerLeadMinutesEnum),
-          ) as StormTrackPayloadNowcastInnerLeadMinutesEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StormTrackPayloadNowcastInnerLeadMinutesEnum,
+                    ),
+                  )
+                  as StormTrackPayloadNowcastInnerLeadMinutesEnum;
           result.leadMinutes = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(StormTrackPayloadNowcastInnerMethodEnum),
-          ) as StormTrackPayloadNowcastInnerMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StormTrackPayloadNowcastInnerMethodEnum,
+                    ),
+                  )
+                  as StormTrackPayloadNowcastInnerMethodEnum;
           result.method = valueDes;
           break;
         default:
@@ -150,11 +161,10 @@ class StormTrackPayloadNowcastInnerLeadMinutesEnum extends EnumClass {
       _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60;
 
   static Serializer<StormTrackPayloadNowcastInnerLeadMinutesEnum>
-      get serializer =>
-          _$stormTrackPayloadNowcastInnerLeadMinutesEnumSerializer;
+  get serializer => _$stormTrackPayloadNowcastInnerLeadMinutesEnumSerializer;
 
   const StormTrackPayloadNowcastInnerLeadMinutesEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<StormTrackPayloadNowcastInnerLeadMinutesEnum> get values =>
       _$stormTrackPayloadNowcastInnerLeadMinutesEnumValues;

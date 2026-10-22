@@ -29,17 +29,17 @@ class _$GpsLoggerFix extends GpsLoggerFix {
   factory _$GpsLoggerFix([void Function(GpsLoggerFixBuilder)? updates]) =>
       (GpsLoggerFixBuilder()..update(updates))._build();
 
-  _$GpsLoggerFix._(
-      {required this.lat,
-      required this.lon,
-      this.time,
-      this.acc,
-      this.alt,
-      this.spd,
-      this.dir,
-      this.batt,
-      this.dev})
-      : super._();
+  _$GpsLoggerFix._({
+    required this.lat,
+    required this.lon,
+    this.time,
+    this.acc,
+    this.alt,
+    this.spd,
+    this.dir,
+    this.batt,
+    this.dev,
+  }) : super._();
   @override
   GpsLoggerFix rebuild(void Function(GpsLoggerFixBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -169,12 +169,19 @@ class GpsLoggerFixBuilder
   GpsLoggerFix build() => _build();
 
   _$GpsLoggerFix _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GpsLoggerFix._(
           lat: BuiltValueNullFieldError.checkNotNull(
-              lat, r'GpsLoggerFix', 'lat'),
+            lat,
+            r'GpsLoggerFix',
+            'lat',
+          ),
           lon: BuiltValueNullFieldError.checkNotNull(
-              lon, r'GpsLoggerFix', 'lon'),
+            lon,
+            r'GpsLoggerFix',
+            'lon',
+          ),
           time: time,
           acc: acc,
           alt: alt,

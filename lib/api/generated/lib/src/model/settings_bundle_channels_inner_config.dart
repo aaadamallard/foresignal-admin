@@ -26,8 +26,10 @@ part 'settings_bundle_channels_inner_config.g.dart';
 @BuiltValue()
 abstract class SettingsBundleChannelsInnerConfig
     implements
-        Built<SettingsBundleChannelsInnerConfig,
-            SettingsBundleChannelsInnerConfigBuilder> {
+        Built<
+          SettingsBundleChannelsInnerConfig,
+          SettingsBundleChannelsInnerConfigBuilder
+        > {
   /// Attach a static map to geolocated alerts (cloud chat channels are opt-in)
   @BuiltValueField(wireName: r'attachMap')
   SettingsBundleChannelsInnerConfigAttachMapEnum? get attachMap;
@@ -66,9 +68,9 @@ abstract class SettingsBundleChannelsInnerConfig
 
   SettingsBundleChannelsInnerConfig._();
 
-  factory SettingsBundleChannelsInnerConfig(
-          [void updates(SettingsBundleChannelsInnerConfigBuilder b)]) =
-      _$SettingsBundleChannelsInnerConfig;
+  factory SettingsBundleChannelsInnerConfig([
+    void updates(SettingsBundleChannelsInnerConfigBuilder b),
+  ]) = _$SettingsBundleChannelsInnerConfig;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SettingsBundleChannelsInnerConfigBuilder b) => b;
@@ -83,7 +85,7 @@ class _$SettingsBundleChannelsInnerConfigSerializer
   @override
   final Iterable<Type> types = const [
     SettingsBundleChannelsInnerConfig,
-    _$SettingsBundleChannelsInnerConfig
+    _$SettingsBundleChannelsInnerConfig,
   ];
 
   @override
@@ -98,8 +100,9 @@ class _$SettingsBundleChannelsInnerConfigSerializer
       yield r'attachMap';
       yield serializers.serialize(
         object.attachMap,
-        specifiedType:
-            const FullType(SettingsBundleChannelsInnerConfigAttachMapEnum),
+        specifiedType: const FullType(
+          SettingsBundleChannelsInnerConfigAttachMapEnum,
+        ),
       );
     }
     if (object.mapProducts != null) {
@@ -155,8 +158,9 @@ class _$SettingsBundleChannelsInnerConfigSerializer
       yield r'units';
       yield serializers.serialize(
         object.units,
-        specifiedType:
-            const FullType(SettingsBundleChannelsInnerConfigUnitsEnum),
+        specifiedType: const FullType(
+          SettingsBundleChannelsInnerConfigUnitsEnum,
+        ),
       );
     }
   }
@@ -167,9 +171,11 @@ class _$SettingsBundleChannelsInnerConfigSerializer
     SettingsBundleChannelsInnerConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -185,77 +191,102 @@ class _$SettingsBundleChannelsInnerConfigSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'attachMap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                SettingsBundleChannelsInnerConfigAttachMapEnum),
-          ) as SettingsBundleChannelsInnerConfigAttachMapEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SettingsBundleChannelsInnerConfigAttachMapEnum,
+                    ),
+                  )
+                  as SettingsBundleChannelsInnerConfigAttachMapEnum?;
           if (valueDes == null) continue;
           result.attachMap = valueDes;
           break;
         case r'mapProducts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.mapProducts.replace(valueDes);
           break;
         case r'mapRadiusKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.mapRadiusKm = valueDes;
           break;
         case r'maxAttachmentBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxAttachmentBytes = valueDes;
           break;
         case r'actions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChannelActionsConfig),
-          ) as ChannelActionsConfig?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChannelActionsConfig,
+                    ),
+                  )
+                  as ChannelActionsConfig?;
           if (valueDes == null) continue;
           result.actions.replace(valueDes);
           break;
         case r'allowedUserIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltList<int>?;
           if (valueDes == null) continue;
           result.allowedUserIds.replace(valueDes);
           break;
         case r'allowedSenders':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.allowedSenders = valueDes;
           break;
         case r'privatePayload':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.privatePayload = valueDes;
           break;
         case r'units':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                SettingsBundleChannelsInnerConfigUnitsEnum),
-          ) as SettingsBundleChannelsInnerConfigUnitsEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SettingsBundleChannelsInnerConfigUnitsEnum,
+                    ),
+                  )
+                  as SettingsBundleChannelsInnerConfigUnitsEnum?;
           if (valueDes == null) continue;
           result.units = valueDes;
           break;
@@ -298,11 +329,10 @@ class SettingsBundleChannelsInnerConfigAttachMapEnum extends EnumClass {
       _$settingsBundleChannelsInnerConfigAttachMapEnum_static_;
 
   static Serializer<SettingsBundleChannelsInnerConfigAttachMapEnum>
-      get serializer =>
-          _$settingsBundleChannelsInnerConfigAttachMapEnumSerializer;
+  get serializer => _$settingsBundleChannelsInnerConfigAttachMapEnumSerializer;
 
   const SettingsBundleChannelsInnerConfigAttachMapEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<SettingsBundleChannelsInnerConfigAttachMapEnum> get values =>
       _$settingsBundleChannelsInnerConfigAttachMapEnumValues;
@@ -320,7 +350,7 @@ class SettingsBundleChannelsInnerConfigUnitsEnum extends EnumClass {
       _$settingsBundleChannelsInnerConfigUnitsEnum_imperial;
 
   static Serializer<SettingsBundleChannelsInnerConfigUnitsEnum>
-      get serializer => _$settingsBundleChannelsInnerConfigUnitsEnumSerializer;
+  get serializer => _$settingsBundleChannelsInnerConfigUnitsEnumSerializer;
 
   const SettingsBundleChannelsInnerConfigUnitsEnum._(String name) : super(name);
 

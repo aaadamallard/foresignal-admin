@@ -12,16 +12,16 @@ class _$AircraftFusionPayloadDetector extends AircraftFusionPayloadDetector {
   @override
   final String version;
 
-  factory _$AircraftFusionPayloadDetector(
-          [void Function(AircraftFusionPayloadDetectorBuilder)? updates]) =>
-      (AircraftFusionPayloadDetectorBuilder()..update(updates))._build();
+  factory _$AircraftFusionPayloadDetector([
+    void Function(AircraftFusionPayloadDetectorBuilder)? updates,
+  ]) => (AircraftFusionPayloadDetectorBuilder()..update(updates))._build();
 
   _$AircraftFusionPayloadDetector._({required this.id, required this.version})
-      : super._();
+    : super._();
   @override
   AircraftFusionPayloadDetector rebuild(
-          void Function(AircraftFusionPayloadDetectorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AircraftFusionPayloadDetectorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AircraftFusionPayloadDetectorBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$AircraftFusionPayloadDetector extends AircraftFusionPayloadDetector {
 
 class AircraftFusionPayloadDetectorBuilder
     implements
-        Builder<AircraftFusionPayloadDetector,
-            AircraftFusionPayloadDetectorBuilder> {
+        Builder<
+          AircraftFusionPayloadDetector,
+          AircraftFusionPayloadDetectorBuilder
+        > {
   _$AircraftFusionPayloadDetector? _$v;
 
   String? _id;
@@ -95,12 +97,19 @@ class AircraftFusionPayloadDetectorBuilder
   AircraftFusionPayloadDetector build() => _build();
 
   _$AircraftFusionPayloadDetector _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AircraftFusionPayloadDetector._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'AircraftFusionPayloadDetector', 'id'),
+            id,
+            r'AircraftFusionPayloadDetector',
+            'id',
+          ),
           version: BuiltValueNullFieldError.checkNotNull(
-              version, r'AircraftFusionPayloadDetector', 'version'),
+            version,
+            r'AircraftFusionPayloadDetector',
+            'version',
+          ),
         );
     replace(_$result);
     return _$result;

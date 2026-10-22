@@ -12,9 +12,9 @@ class _$HypothesisSetPage extends HypothesisSetPage {
   @override
   final String? nextCursor;
 
-  factory _$HypothesisSetPage(
-          [void Function(HypothesisSetPageBuilder)? updates]) =>
-      (HypothesisSetPageBuilder()..update(updates))._build();
+  factory _$HypothesisSetPage([
+    void Function(HypothesisSetPageBuilder)? updates,
+  ]) => (HypothesisSetPageBuilder()..update(updates))._build();
 
   _$HypothesisSetPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class HypothesisSetPageBuilder
   _$HypothesisSetPage _build() {
     _$HypothesisSetPage _$result;
     try {
-      _$result = _$v ??
-          _$HypothesisSetPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$HypothesisSetPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class HypothesisSetPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisSetPage', _$failedField, e.toString());
+          r'HypothesisSetPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

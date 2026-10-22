@@ -19,24 +19,25 @@ class _$CorrelationRecipeDefinitionContradictionsInner
   @override
   final String alternative;
 
-  factory _$CorrelationRecipeDefinitionContradictionsInner(
-          [void Function(CorrelationRecipeDefinitionContradictionsInnerBuilder)?
-              updates]) =>
+  factory _$CorrelationRecipeDefinitionContradictionsInner([
+    void Function(CorrelationRecipeDefinitionContradictionsInnerBuilder)?
+    updates,
+  ]) =>
       (CorrelationRecipeDefinitionContradictionsInnerBuilder()..update(updates))
           ._build();
 
-  _$CorrelationRecipeDefinitionContradictionsInner._(
-      {this.kinds,
-      this.healthOf,
-      this.withinKm,
-      this.window,
-      required this.alternative})
-      : super._();
+  _$CorrelationRecipeDefinitionContradictionsInner._({
+    this.kinds,
+    this.healthOf,
+    this.withinKm,
+    this.window,
+    required this.alternative,
+  }) : super._();
   @override
   CorrelationRecipeDefinitionContradictionsInner rebuild(
-          void Function(CorrelationRecipeDefinitionContradictionsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeDefinitionContradictionsInnerBuilder)
+    updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeDefinitionContradictionsInnerBuilder toBuilder() =>
@@ -68,7 +69,8 @@ class _$CorrelationRecipeDefinitionContradictionsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CorrelationRecipeDefinitionContradictionsInner')
+            r'CorrelationRecipeDefinitionContradictionsInner',
+          )
           ..add('kinds', kinds)
           ..add('healthOf', healthOf)
           ..add('withinKm', withinKm)
@@ -80,8 +82,10 @@ class _$CorrelationRecipeDefinitionContradictionsInner
 
 class CorrelationRecipeDefinitionContradictionsInnerBuilder
     implements
-        Builder<CorrelationRecipeDefinitionContradictionsInner,
-            CorrelationRecipeDefinitionContradictionsInnerBuilder> {
+        Builder<
+          CorrelationRecipeDefinitionContradictionsInner,
+          CorrelationRecipeDefinitionContradictionsInnerBuilder
+        > {
   _$CorrelationRecipeDefinitionContradictionsInner? _$v;
 
   ListBuilder<String>? _kinds;
@@ -129,8 +133,9 @@ class CorrelationRecipeDefinitionContradictionsInnerBuilder
 
   @override
   void update(
-      void Function(CorrelationRecipeDefinitionContradictionsInnerBuilder)?
-          updates) {
+    void Function(CorrelationRecipeDefinitionContradictionsInnerBuilder)?
+    updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -140,16 +145,18 @@ class CorrelationRecipeDefinitionContradictionsInnerBuilder
   _$CorrelationRecipeDefinitionContradictionsInner _build() {
     _$CorrelationRecipeDefinitionContradictionsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorrelationRecipeDefinitionContradictionsInner._(
             kinds: _kinds?.build(),
             healthOf: _healthOf?.build(),
             withinKm: withinKm,
             window: window,
             alternative: BuiltValueNullFieldError.checkNotNull(
-                alternative,
-                r'CorrelationRecipeDefinitionContradictionsInner',
-                'alternative'),
+              alternative,
+              r'CorrelationRecipeDefinitionContradictionsInner',
+              'alternative',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -160,9 +167,10 @@ class CorrelationRecipeDefinitionContradictionsInnerBuilder
         _healthOf?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorrelationRecipeDefinitionContradictionsInner',
-            _$failedField,
-            e.toString());
+          r'CorrelationRecipeDefinitionContradictionsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

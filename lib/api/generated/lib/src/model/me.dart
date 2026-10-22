@@ -91,8 +91,9 @@ class _$MeSerializer implements PrimitiveSerializer<Me> {
     yield r'notificationPreferences';
     yield serializers.serialize(
       object.notificationPreferences,
-      specifiedType:
-          const FullType(BuiltList, [FullType(NotificationPreference)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NotificationPreference),
+      ]),
     );
     if (object.defaultTlp != null) {
       yield r'defaultTlp';
@@ -109,9 +110,11 @@ class _$MeSerializer implements PrimitiveSerializer<Me> {
     Me object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,46 +130,63 @@ class _$MeSerializer implements PrimitiveSerializer<Me> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'principal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Principal),
-          ) as Principal;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Principal),
+                  )
+                  as Principal;
           result.principal.replace(valueDes);
           break;
         case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MeToken),
-          ) as MeToken;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MeToken),
+                  )
+                  as MeToken;
           result.token.replace(valueDes);
           break;
         case r'scopes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MeScopesEnum)]),
-          ) as BuiltList<MeScopesEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MeScopesEnum),
+                    ]),
+                  )
+                  as BuiltList<MeScopesEnum>;
           result.scopes.replace(valueDes);
           break;
         case r'groups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MeGroupsInner)]),
-          ) as BuiltList<MeGroupsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MeGroupsInner),
+                    ]),
+                  )
+                  as BuiltList<MeGroupsInner>;
           result.groups.replace(valueDes);
           break;
         case r'notificationPreferences':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(NotificationPreference)]),
-          ) as BuiltList<NotificationPreference>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NotificationPreference),
+                    ]),
+                  )
+                  as BuiltList<NotificationPreference>;
           result.notificationPreferences.replace(valueDes);
           break;
         case r'defaultTlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.defaultTlp = valueDes;
           break;

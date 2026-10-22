@@ -7,14 +7,14 @@ part of 'channel_interactive_status_chats_inner.dart';
 // **************************************************************************
 
 const ChannelInteractiveStatusChatsInnerScopeEnum
-    _$channelInteractiveStatusChatsInnerScopeEnum_read =
+_$channelInteractiveStatusChatsInnerScopeEnum_read =
     const ChannelInteractiveStatusChatsInnerScopeEnum._('read');
 const ChannelInteractiveStatusChatsInnerScopeEnum
-    _$channelInteractiveStatusChatsInnerScopeEnum_agent =
+_$channelInteractiveStatusChatsInnerScopeEnum_agent =
     const ChannelInteractiveStatusChatsInnerScopeEnum._('agent');
 
 ChannelInteractiveStatusChatsInnerScopeEnum
-    _$channelInteractiveStatusChatsInnerScopeEnumValueOf(String name) {
+_$channelInteractiveStatusChatsInnerScopeEnumValueOf(String name) {
   switch (name) {
     case 'read':
       return _$channelInteractiveStatusChatsInnerScopeEnum_read;
@@ -26,14 +26,16 @@ ChannelInteractiveStatusChatsInnerScopeEnum
 }
 
 final BuiltSet<ChannelInteractiveStatusChatsInnerScopeEnum>
-    _$channelInteractiveStatusChatsInnerScopeEnumValues = BuiltSet<
-        ChannelInteractiveStatusChatsInnerScopeEnum>(const <ChannelInteractiveStatusChatsInnerScopeEnum>[
-  _$channelInteractiveStatusChatsInnerScopeEnum_read,
-  _$channelInteractiveStatusChatsInnerScopeEnum_agent,
-]);
+_$channelInteractiveStatusChatsInnerScopeEnumValues =
+    BuiltSet<ChannelInteractiveStatusChatsInnerScopeEnum>(
+      const <ChannelInteractiveStatusChatsInnerScopeEnum>[
+        _$channelInteractiveStatusChatsInnerScopeEnum_read,
+        _$channelInteractiveStatusChatsInnerScopeEnum_agent,
+      ],
+    );
 
 Serializer<ChannelInteractiveStatusChatsInnerScopeEnum>
-    _$channelInteractiveStatusChatsInnerScopeEnumSerializer =
+_$channelInteractiveStatusChatsInnerScopeEnumSerializer =
     _$ChannelInteractiveStatusChatsInnerScopeEnumSerializer();
 
 class _$ChannelInteractiveStatusChatsInnerScopeEnumSerializer
@@ -50,23 +52,26 @@ class _$ChannelInteractiveStatusChatsInnerScopeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChannelInteractiveStatusChatsInnerScopeEnum
+    ChannelInteractiveStatusChatsInnerScopeEnum,
   ];
   @override
   final String wireName = 'ChannelInteractiveStatusChatsInnerScopeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChannelInteractiveStatusChatsInnerScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChannelInteractiveStatusChatsInnerScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChannelInteractiveStatusChatsInnerScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChannelInteractiveStatusChatsInnerScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChannelInteractiveStatusChatsInnerScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChannelInteractiveStatusChatsInner
@@ -86,24 +91,23 @@ class _$ChannelInteractiveStatusChatsInner
   @override
   final String? reason;
 
-  factory _$ChannelInteractiveStatusChatsInner(
-          [void Function(ChannelInteractiveStatusChatsInnerBuilder)?
-              updates]) =>
-      (ChannelInteractiveStatusChatsInnerBuilder()..update(updates))._build();
+  factory _$ChannelInteractiveStatusChatsInner([
+    void Function(ChannelInteractiveStatusChatsInnerBuilder)? updates,
+  ]) => (ChannelInteractiveStatusChatsInnerBuilder()..update(updates))._build();
 
-  _$ChannelInteractiveStatusChatsInner._(
-      {required this.chatId,
-      this.name,
-      required this.scope,
-      this.userIds,
-      this.privateAccess,
-      required this.active,
-      this.reason})
-      : super._();
+  _$ChannelInteractiveStatusChatsInner._({
+    required this.chatId,
+    this.name,
+    required this.scope,
+    this.userIds,
+    this.privateAccess,
+    required this.active,
+    this.reason,
+  }) : super._();
   @override
   ChannelInteractiveStatusChatsInner rebuild(
-          void Function(ChannelInteractiveStatusChatsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChannelInteractiveStatusChatsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChannelInteractiveStatusChatsInnerBuilder toBuilder() =>
@@ -152,8 +156,10 @@ class _$ChannelInteractiveStatusChatsInner
 
 class ChannelInteractiveStatusChatsInnerBuilder
     implements
-        Builder<ChannelInteractiveStatusChatsInner,
-            ChannelInteractiveStatusChatsInnerBuilder> {
+        Builder<
+          ChannelInteractiveStatusChatsInner,
+          ChannelInteractiveStatusChatsInnerBuilder
+        > {
   _$ChannelInteractiveStatusChatsInner? _$v;
 
   String? _chatId;
@@ -212,7 +218,8 @@ class ChannelInteractiveStatusChatsInnerBuilder
 
   @override
   void update(
-      void Function(ChannelInteractiveStatusChatsInnerBuilder)? updates) {
+    void Function(ChannelInteractiveStatusChatsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -222,17 +229,27 @@ class ChannelInteractiveStatusChatsInnerBuilder
   _$ChannelInteractiveStatusChatsInner _build() {
     _$ChannelInteractiveStatusChatsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChannelInteractiveStatusChatsInner._(
             chatId: BuiltValueNullFieldError.checkNotNull(
-                chatId, r'ChannelInteractiveStatusChatsInner', 'chatId'),
+              chatId,
+              r'ChannelInteractiveStatusChatsInner',
+              'chatId',
+            ),
             name: name,
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'ChannelInteractiveStatusChatsInner', 'scope'),
+              scope,
+              r'ChannelInteractiveStatusChatsInner',
+              'scope',
+            ),
             userIds: _userIds?.build(),
             privateAccess: privateAccess,
             active: BuiltValueNullFieldError.checkNotNull(
-                active, r'ChannelInteractiveStatusChatsInner', 'active'),
+              active,
+              r'ChannelInteractiveStatusChatsInner',
+              'active',
+            ),
             reason: reason,
           );
     } catch (_) {
@@ -242,7 +259,10 @@ class ChannelInteractiveStatusChatsInnerBuilder
         _userIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChannelInteractiveStatusChatsInner', _$failedField, e.toString());
+          r'ChannelInteractiveStatusChatsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

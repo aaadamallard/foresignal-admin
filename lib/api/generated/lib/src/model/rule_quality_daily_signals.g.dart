@@ -16,17 +16,20 @@ class _$RuleQualityDailySignals extends RuleQualityDailySignals {
   @override
   final int? UNOPENED;
 
-  factory _$RuleQualityDailySignals(
-          [void Function(RuleQualityDailySignalsBuilder)? updates]) =>
-      (RuleQualityDailySignalsBuilder()..update(updates))._build();
+  factory _$RuleQualityDailySignals([
+    void Function(RuleQualityDailySignalsBuilder)? updates,
+  ]) => (RuleQualityDailySignalsBuilder()..update(updates))._build();
 
-  _$RuleQualityDailySignals._(
-      {this.ACK_FAST, this.SNOOZED, this.FLAP, this.UNOPENED})
-      : super._();
+  _$RuleQualityDailySignals._({
+    this.ACK_FAST,
+    this.SNOOZED,
+    this.FLAP,
+    this.UNOPENED,
+  }) : super._();
   @override
   RuleQualityDailySignals rebuild(
-          void Function(RuleQualityDailySignalsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleQualityDailySignalsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleQualityDailySignalsBuilder toBuilder() =>
@@ -115,7 +118,8 @@ class RuleQualityDailySignalsBuilder
   RuleQualityDailySignals build() => _build();
 
   _$RuleQualityDailySignals _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RuleQualityDailySignals._(
           ACK_FAST: ACK_FAST,
           SNOOZED: SNOOZED,

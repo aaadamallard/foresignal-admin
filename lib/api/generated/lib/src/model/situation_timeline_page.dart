@@ -27,8 +27,9 @@ abstract class SituationTimelinePage
 
   SituationTimelinePage._();
 
-  factory SituationTimelinePage(
-      [void updates(SituationTimelinePageBuilder b)]) = _$SituationTimelinePage;
+  factory SituationTimelinePage([
+    void updates(SituationTimelinePageBuilder b),
+  ]) = _$SituationTimelinePage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationTimelinePageBuilder b) => b;
@@ -43,7 +44,7 @@ class _$SituationTimelinePageSerializer
   @override
   final Iterable<Type> types = const [
     SituationTimelinePage,
-    _$SituationTimelinePage
+    _$SituationTimelinePage,
   ];
 
   @override
@@ -57,8 +58,9 @@ class _$SituationTimelinePageSerializer
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType:
-          const FullType(BuiltList, [FullType(SituationTimelineEntry)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SituationTimelineEntry),
+      ]),
     );
     if (object.nextCursor != null) {
       yield r'nextCursor';
@@ -75,9 +77,11 @@ class _$SituationTimelinePageSerializer
     SituationTimelinePage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +97,23 @@ class _$SituationTimelinePageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SituationTimelineEntry)]),
-          ) as BuiltList<SituationTimelineEntry>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SituationTimelineEntry),
+                    ]),
+                  )
+                  as BuiltList<SituationTimelineEntry>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

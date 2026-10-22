@@ -54,9 +54,9 @@ abstract class StreamFederation200Response
 
   StreamFederation200Response._();
 
-  factory StreamFederation200Response(
-          [void updates(StreamFederation200ResponseBuilder b)]) =
-      _$StreamFederation200Response;
+  factory StreamFederation200Response([
+    void updates(StreamFederation200ResponseBuilder b),
+  ]) = _$StreamFederation200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StreamFederation200ResponseBuilder b) => b;
@@ -71,7 +71,7 @@ class _$StreamFederation200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     StreamFederation200Response,
-    _$StreamFederation200Response
+    _$StreamFederation200Response,
   ];
 
   @override
@@ -90,9 +90,13 @@ class _$StreamFederation200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -111,8 +115,9 @@ class _$StreamFederation200ResponseSerializer
       FullType(ResetEvent),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }
@@ -150,11 +155,10 @@ class StreamFederation200ResponsePersistReasonEnum extends EnumClass {
       _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT;
 
   static Serializer<StreamFederation200ResponsePersistReasonEnum>
-      get serializer =>
-          _$streamFederation200ResponsePersistReasonEnumSerializer;
+  get serializer => _$streamFederation200ResponsePersistReasonEnumSerializer;
 
   const StreamFederation200ResponsePersistReasonEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<StreamFederation200ResponsePersistReasonEnum> get values =>
       _$streamFederation200ResponsePersistReasonEnumValues;
@@ -172,7 +176,7 @@ class StreamFederation200ResponseHistoryTierEnum extends EnumClass {
       _$streamFederation200ResponseHistoryTierEnum_TRACK;
 
   static Serializer<StreamFederation200ResponseHistoryTierEnum>
-      get serializer => _$streamFederation200ResponseHistoryTierEnumSerializer;
+  get serializer => _$streamFederation200ResponseHistoryTierEnumSerializer;
 
   const StreamFederation200ResponseHistoryTierEnum._(String name) : super(name);
 

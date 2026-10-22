@@ -12,15 +12,15 @@ class _$ObjectResolveRequest extends ObjectResolveRequest {
   @override
   final DateTime? asOf;
 
-  factory _$ObjectResolveRequest(
-          [void Function(ObjectResolveRequestBuilder)? updates]) =>
-      (ObjectResolveRequestBuilder()..update(updates))._build();
+  factory _$ObjectResolveRequest([
+    void Function(ObjectResolveRequestBuilder)? updates,
+  ]) => (ObjectResolveRequestBuilder()..update(updates))._build();
 
   _$ObjectResolveRequest._({required this.refs, this.asOf}) : super._();
   @override
   ObjectResolveRequest rebuild(
-          void Function(ObjectResolveRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObjectResolveRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObjectResolveRequestBuilder toBuilder() =>
@@ -94,11 +94,8 @@ class ObjectResolveRequestBuilder
   _$ObjectResolveRequest _build() {
     _$ObjectResolveRequest _$result;
     try {
-      _$result = _$v ??
-          _$ObjectResolveRequest._(
-            refs: refs.build(),
-            asOf: asOf,
-          );
+      _$result =
+          _$v ?? _$ObjectResolveRequest._(refs: refs.build(), asOf: asOf);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +103,10 @@ class ObjectResolveRequestBuilder
         refs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObjectResolveRequest', _$failedField, e.toString());
+          r'ObjectResolveRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

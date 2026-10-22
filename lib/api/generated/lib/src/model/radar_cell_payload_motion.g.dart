@@ -7,11 +7,12 @@ part of 'radar_cell_payload_motion.dart';
 // **************************************************************************
 
 const RadarCellPayloadMotionMethodEnum
-    _$radarCellPayloadMotionMethodEnum_centroidV1 =
+_$radarCellPayloadMotionMethodEnum_centroidV1 =
     const RadarCellPayloadMotionMethodEnum._('centroidV1');
 
 RadarCellPayloadMotionMethodEnum _$radarCellPayloadMotionMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'centroidV1':
       return _$radarCellPayloadMotionMethodEnum_centroidV1;
@@ -21,13 +22,15 @@ RadarCellPayloadMotionMethodEnum _$radarCellPayloadMotionMethodEnumValueOf(
 }
 
 final BuiltSet<RadarCellPayloadMotionMethodEnum>
-    _$radarCellPayloadMotionMethodEnumValues = BuiltSet<
-        RadarCellPayloadMotionMethodEnum>(const <RadarCellPayloadMotionMethodEnum>[
-  _$radarCellPayloadMotionMethodEnum_centroidV1,
-]);
+_$radarCellPayloadMotionMethodEnumValues =
+    BuiltSet<RadarCellPayloadMotionMethodEnum>(
+      const <RadarCellPayloadMotionMethodEnum>[
+        _$radarCellPayloadMotionMethodEnum_centroidV1,
+      ],
+    );
 
 Serializer<RadarCellPayloadMotionMethodEnum>
-    _$radarCellPayloadMotionMethodEnumSerializer =
+_$radarCellPayloadMotionMethodEnumSerializer =
     _$RadarCellPayloadMotionMethodEnumSerializer();
 
 class _$RadarCellPayloadMotionMethodEnumSerializer
@@ -46,16 +49,19 @@ class _$RadarCellPayloadMotionMethodEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, RadarCellPayloadMotionMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RadarCellPayloadMotionMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RadarCellPayloadMotionMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RadarCellPayloadMotionMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RadarCellPayloadMotionMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RadarCellPayloadMotion extends RadarCellPayloadMotion {
@@ -66,17 +72,19 @@ class _$RadarCellPayloadMotion extends RadarCellPayloadMotion {
   @override
   final RadarCellPayloadMotionMethodEnum method;
 
-  factory _$RadarCellPayloadMotion(
-          [void Function(RadarCellPayloadMotionBuilder)? updates]) =>
-      (RadarCellPayloadMotionBuilder()..update(updates))._build();
+  factory _$RadarCellPayloadMotion([
+    void Function(RadarCellPayloadMotionBuilder)? updates,
+  ]) => (RadarCellPayloadMotionBuilder()..update(updates))._build();
 
-  _$RadarCellPayloadMotion._(
-      {this.speedKmh, this.bearingDeg, required this.method})
-      : super._();
+  _$RadarCellPayloadMotion._({
+    this.speedKmh,
+    this.bearingDeg,
+    required this.method,
+  }) : super._();
   @override
   RadarCellPayloadMotion rebuild(
-          void Function(RadarCellPayloadMotionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RadarCellPayloadMotionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RadarCellPayloadMotionBuilder toBuilder() =>
@@ -157,12 +165,16 @@ class RadarCellPayloadMotionBuilder
   RadarCellPayloadMotion build() => _build();
 
   _$RadarCellPayloadMotion _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RadarCellPayloadMotion._(
           speedKmh: speedKmh,
           bearingDeg: bearingDeg,
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'RadarCellPayloadMotion', 'method'),
+            method,
+            r'RadarCellPayloadMotion',
+            'method',
+          ),
         );
     replace(_$result);
     return _$result;

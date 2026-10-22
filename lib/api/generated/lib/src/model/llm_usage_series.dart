@@ -91,9 +91,11 @@ class _$LlmUsageSeriesSerializer
     LlmUsageSeries object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,32 +111,42 @@ class _$LlmUsageSeriesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.provider = valueDes;
           break;
         case r'resolution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LlmUsageSeriesResolutionEnum),
-          ) as LlmUsageSeriesResolutionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LlmUsageSeriesResolutionEnum),
+                  )
+                  as LlmUsageSeriesResolutionEnum;
           result.resolution = valueDes;
           break;
         case r'points':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(LlmUsagePoint)]),
-          ) as BuiltList<LlmUsagePoint>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(LlmUsagePoint),
+                    ]),
+                  )
+                  as BuiltList<LlmUsagePoint>;
           result.points.replace(valueDes);
           break;
         case r'totals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(LlmUsagePoint),
-          ) as LlmUsagePoint?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(LlmUsagePoint),
+                  )
+                  as LlmUsagePoint?;
           if (valueDes == null) continue;
           result.totals.replace(valueDes);
           break;

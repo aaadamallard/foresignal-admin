@@ -50,7 +50,7 @@ class _$SocialPlatformStreamSerializer
   @override
   final Iterable<Type> types = const [
     SocialPlatformStream,
-    _$SocialPlatformStream
+    _$SocialPlatformStream,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$SocialPlatformStreamSerializer
     SocialPlatformStream object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,34 +117,44 @@ class _$SocialPlatformStreamSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lagSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lagSeconds = valueDes;
           break;
         case r'cursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cursor = valueDes;
           break;
         case r'connectedSince':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.connectedSince = valueDes;
           break;
         case r'lastGap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialPlatformStreamLastGap),
-          ) as SocialPlatformStreamLastGap?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialPlatformStreamLastGap,
+                    ),
+                  )
+                  as SocialPlatformStreamLastGap?;
           if (valueDes == null) continue;
           result.lastGap.replace(valueDes);
           break;

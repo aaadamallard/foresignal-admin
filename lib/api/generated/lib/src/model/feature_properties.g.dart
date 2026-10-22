@@ -36,26 +36,26 @@ class _$FeatureProperties extends FeatureProperties {
   @override
   final PersistReason? persistReason;
 
-  factory _$FeatureProperties(
-          [void Function(FeaturePropertiesBuilder)? updates]) =>
-      (FeaturePropertiesBuilder()..update(updates))._build();
+  factory _$FeatureProperties([
+    void Function(FeaturePropertiesBuilder)? updates,
+  ]) => (FeaturePropertiesBuilder()..update(updates))._build();
 
-  _$FeatureProperties._(
-      {this.source_,
-      this.externalId,
-      this.kind,
-      this.title,
-      this.version,
-      this.seq,
-      this.observedAt,
-      this.validUntil,
-      this.live,
-      this.distanceKm,
-      this.payload,
-      this.near,
-      this.ingestedAt,
-      this.persistReason})
-      : super._();
+  _$FeatureProperties._({
+    this.source_,
+    this.externalId,
+    this.kind,
+    this.title,
+    this.version,
+    this.seq,
+    this.observedAt,
+    this.validUntil,
+    this.live,
+    this.distanceKm,
+    this.payload,
+    this.near,
+    this.ingestedAt,
+    this.persistReason,
+  }) : super._();
   @override
   FeatureProperties rebuild(void Function(FeaturePropertiesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -231,7 +231,8 @@ class FeaturePropertiesBuilder
   _$FeatureProperties _build() {
     _$FeatureProperties _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FeatureProperties._(
             source_: source_,
             externalId: externalId,
@@ -255,7 +256,10 @@ class FeaturePropertiesBuilder
         _payload?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FeatureProperties', _$failedField, e.toString());
+          r'FeatureProperties',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

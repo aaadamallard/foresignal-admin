@@ -90,16 +90,20 @@ class _$ExerciseStatsSerializer implements PrimitiveSerializer<ExerciseStats> {
       yield r'alertsByRule';
       yield serializers.serialize(
         object.alertsByRule,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.notificationsByChannel != null) {
       yield r'notificationsByChannel';
       yield serializers.serialize(
         object.notificationsByChannel,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.suppressedByCooldown != null) {
@@ -120,8 +124,9 @@ class _$ExerciseStatsSerializer implements PrimitiveSerializer<ExerciseStats> {
       yield r'skippedRules';
       yield serializers.serialize(
         object.skippedRules,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ExerciseStatsSkippedRulesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ExerciseStatsSkippedRulesInner),
+        ]),
       );
     }
     if (object.caveats != null) {
@@ -153,9 +158,11 @@ class _$ExerciseStatsSerializer implements PrimitiveSerializer<ExerciseStats> {
     ExerciseStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -171,77 +178,98 @@ class _$ExerciseStatsSerializer implements PrimitiveSerializer<ExerciseStats> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'versionsScanned':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.versionsScanned = valueDes;
           break;
         case r'alertsByRule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.alertsByRule.replace(valueDes);
           break;
         case r'notificationsByChannel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.notificationsByChannel.replace(valueDes);
           break;
         case r'suppressedByCooldown':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.suppressedByCooldown = valueDes;
           break;
         case r'suppressedByRateCap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.suppressedByRateCap = valueDes;
           break;
         case r'skippedRules':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ExerciseStatsSkippedRulesInner)]),
-          ) as BuiltList<ExerciseStatsSkippedRulesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ExerciseStatsSkippedRulesInner),
+                    ]),
+                  )
+                  as BuiltList<ExerciseStatsSkippedRulesInner>?;
           if (valueDes == null) continue;
           result.skippedRules.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;
         case r'alertsRaised':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alertsRaised = valueDes;
           break;
         case r'error':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.error = valueDes;
           break;

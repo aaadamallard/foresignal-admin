@@ -125,9 +125,11 @@ class _$ExposureSerializer implements PrimitiveSerializer<Exposure> {
     Exposure object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -143,59 +145,75 @@ class _$ExposureSerializer implements PrimitiveSerializer<Exposure> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'area':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposureArea),
-          ) as ExposureArea;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExposureArea),
+                  )
+                  as ExposureArea;
           result.area.replace(valueDes);
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         case r'facilities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposureFacilities),
-          ) as ExposureFacilities;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExposureFacilities),
+                  )
+                  as ExposureFacilities;
           result.facilities.replace(valueDes);
           break;
         case r'places':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposurePlaces),
-          ) as ExposurePlaces;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExposurePlaces),
+                  )
+                  as ExposurePlaces;
           result.places.replace(valueDes);
           break;
         case r'watchlistEntities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposureWatchlistEntities),
-          ) as ExposureWatchlistEntities;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExposureWatchlistEntities),
+                  )
+                  as ExposureWatchlistEntities;
           result.watchlistEntities.replace(valueDes);
           break;
         case r'traffic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposureTraffic),
-          ) as ExposureTraffic;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExposureTraffic),
+                  )
+                  as ExposureTraffic;
           result.traffic.replace(valueDes);
           break;
         case r'population':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposurePopulation),
-          ) as ExposurePopulation;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExposurePopulation),
+                  )
+                  as ExposurePopulation;
           result.population.replace(valueDes);
           break;
         case r'dependents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ExposureDependents),
-          ) as ExposureDependents?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ExposureDependents),
+                  )
+                  as ExposureDependents?;
           if (valueDes == null) continue;
           result.dependents.replace(valueDes);
           break;

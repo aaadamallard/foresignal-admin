@@ -12,15 +12,15 @@ class _$PlaceWeatherMarine extends PlaceWeatherMarine {
   @override
   final num? waveHeightMaxM24h;
 
-  factory _$PlaceWeatherMarine(
-          [void Function(PlaceWeatherMarineBuilder)? updates]) =>
-      (PlaceWeatherMarineBuilder()..update(updates))._build();
+  factory _$PlaceWeatherMarine([
+    void Function(PlaceWeatherMarineBuilder)? updates,
+  ]) => (PlaceWeatherMarineBuilder()..update(updates))._build();
 
   _$PlaceWeatherMarine._({this.status, this.waveHeightMaxM24h}) : super._();
   @override
   PlaceWeatherMarine rebuild(
-          void Function(PlaceWeatherMarineBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherMarineBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherMarineBuilder toBuilder() =>
@@ -93,7 +93,8 @@ class PlaceWeatherMarineBuilder
   PlaceWeatherMarine build() => _build();
 
   _$PlaceWeatherMarine _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherMarine._(
           status: status,
           waveHeightMaxM24h: waveHeightMaxM24h,

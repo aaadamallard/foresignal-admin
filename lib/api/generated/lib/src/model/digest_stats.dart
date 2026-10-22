@@ -136,16 +136,18 @@ class _$DigestStatsSerializer implements PrimitiveSerializer<DigestStats> {
       yield r'notable';
       yield serializers.serialize(
         object.notable,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DigestStatsNotableInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DigestStatsNotableInner),
+        ]),
       );
     }
     if (object.health != null) {
       yield r'health';
       yield serializers.serialize(
         object.health,
-        specifiedType:
-            const FullType.nullable(BuiltList, [FullType(DigestHealthItem)]),
+        specifiedType: const FullType.nullable(BuiltList, [
+          FullType(DigestHealthItem),
+        ]),
       );
     }
     if (object.healthSnapshot != null) {
@@ -159,8 +161,10 @@ class _$DigestStatsSerializer implements PrimitiveSerializer<DigestStats> {
       yield r'sections';
       yield serializers.serialize(
         object.sections,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -171,9 +175,11 @@ class _$DigestStatsSerializer implements PrimitiveSerializer<DigestStats> {
     DigestStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -189,90 +195,113 @@ class _$DigestStatsSerializer implements PrimitiveSerializer<DigestStats> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'fromSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.fromSeq = valueDes;
           break;
         case r'toSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.toSeq = valueDes;
           break;
         case r'gap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.gap = valueDes;
           break;
         case r'gapReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.gapReason = valueDes;
           break;
         case r'counts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(DigestCount)]),
-          ) as BuiltList<DigestCount>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(DigestCount),
+                    ]),
+                  )
+                  as BuiltList<DigestCount>;
           result.counts.replace(valueDes);
           break;
         case r'active':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(DigestActive)]),
-          ) as BuiltList<DigestActive>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DigestActive),
+                    ]),
+                  )
+                  as BuiltList<DigestActive>?;
           if (valueDes == null) continue;
           result.active.replace(valueDes);
           break;
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DigestAlerts),
-          ) as DigestAlerts?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DigestAlerts),
+                  )
+                  as DigestAlerts?;
           if (valueDes == null) continue;
           result.alerts.replace(valueDes);
           break;
         case r'notable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DigestStatsNotableInner)]),
-          ) as BuiltList<DigestStatsNotableInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DigestStatsNotableInner),
+                    ]),
+                  )
+                  as BuiltList<DigestStatsNotableInner>?;
           if (valueDes == null) continue;
           result.notable.replace(valueDes);
           break;
         case r'health':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DigestHealthItem)]),
-          ) as BuiltList<DigestHealthItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DigestHealthItem),
+                    ]),
+                  )
+                  as BuiltList<DigestHealthItem>?;
           if (valueDes == null) continue;
           result.health.replace(valueDes);
           break;
         case r'healthSnapshot':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.healthSnapshot = valueDes;
           break;
         case r'sections':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.sections.replace(valueDes);
           break;

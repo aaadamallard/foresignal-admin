@@ -18,21 +18,21 @@ class _$IntelEventMemberJoinReason extends IntelEventMemberJoinReason {
   @override
   final String? regionTag;
 
-  factory _$IntelEventMemberJoinReason(
-          [void Function(IntelEventMemberJoinReasonBuilder)? updates]) =>
-      (IntelEventMemberJoinReasonBuilder()..update(updates))._build();
+  factory _$IntelEventMemberJoinReason([
+    void Function(IntelEventMemberJoinReasonBuilder)? updates,
+  ]) => (IntelEventMemberJoinReasonBuilder()..update(updates))._build();
 
-  _$IntelEventMemberJoinReason._(
-      {this.clause,
-      this.distanceKm,
-      this.dtMinutes,
-      this.matchedKeys,
-      this.regionTag})
-      : super._();
+  _$IntelEventMemberJoinReason._({
+    this.clause,
+    this.distanceKm,
+    this.dtMinutes,
+    this.matchedKeys,
+    this.regionTag,
+  }) : super._();
   @override
   IntelEventMemberJoinReason rebuild(
-          void Function(IntelEventMemberJoinReasonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelEventMemberJoinReasonBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelEventMemberJoinReasonBuilder toBuilder() =>
@@ -133,7 +133,8 @@ class IntelEventMemberJoinReasonBuilder
   _$IntelEventMemberJoinReason _build() {
     _$IntelEventMemberJoinReason _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventMemberJoinReason._(
             clause: clause,
             distanceKm: distanceKm,
@@ -148,7 +149,10 @@ class IntelEventMemberJoinReasonBuilder
         _matchedKeys?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventMemberJoinReason', _$failedField, e.toString());
+          r'IntelEventMemberJoinReason',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

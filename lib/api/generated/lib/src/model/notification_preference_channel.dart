@@ -21,8 +21,10 @@ part 'notification_preference_channel.g.dart';
 @BuiltValue()
 abstract class NotificationPreferenceChannel
     implements
-        Built<NotificationPreferenceChannel,
-            NotificationPreferenceChannelBuilder> {
+        Built<
+          NotificationPreferenceChannel,
+          NotificationPreferenceChannelBuilder
+        > {
   /// Id of the 018 channel row owned by the principal
   @BuiltValueField(wireName: r'channelId')
   String? get channelId;
@@ -44,9 +46,9 @@ abstract class NotificationPreferenceChannel
 
   NotificationPreferenceChannel._();
 
-  factory NotificationPreferenceChannel(
-          [void updates(NotificationPreferenceChannelBuilder b)]) =
-      _$NotificationPreferenceChannel;
+  factory NotificationPreferenceChannel([
+    void updates(NotificationPreferenceChannelBuilder b),
+  ]) = _$NotificationPreferenceChannel;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationPreferenceChannelBuilder b) => b;
@@ -61,7 +63,7 @@ class _$NotificationPreferenceChannelSerializer
   @override
   final Iterable<Type> types = const [
     NotificationPreferenceChannel,
-    _$NotificationPreferenceChannel
+    _$NotificationPreferenceChannel,
   ];
 
   @override
@@ -88,8 +90,10 @@ class _$NotificationPreferenceChannelSerializer
       yield r'config';
       yield serializers.serialize(
         object.config,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.secretFields != null) {
@@ -114,9 +118,11 @@ class _$NotificationPreferenceChannelSerializer
     NotificationPreferenceChannel object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,44 +138,58 @@ class _$NotificationPreferenceChannelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'channelId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.channelId = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(NotificationPreferenceChannelTypeEnum),
-          ) as NotificationPreferenceChannelTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NotificationPreferenceChannelTypeEnum,
+                    ),
+                  )
+                  as NotificationPreferenceChannelTypeEnum;
           result.type = valueDes;
           break;
         case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.config.replace(valueDes);
           break;
         case r'secretFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.secretFields.replace(valueDes);
           break;
         case r'language':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.language = valueDes;
           break;

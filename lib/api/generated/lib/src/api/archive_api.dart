@@ -51,16 +51,10 @@ class ArchiveApi {
     final _path = r'/v1/holds';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -75,10 +69,7 @@ class ArchiveApi {
       _bodyData = _serializers.serialize(holdInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -101,9 +92,10 @@ class ArchiveApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Hold),
-            ) as Hold;
+                  rawResponse,
+                  specifiedType: const FullType(Hold),
+                )
+                as Hold;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -150,21 +142,21 @@ class ArchiveApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/holds/{holdId}'.replaceAll(
-        '{' r'holdId' '}',
-        encodeQueryParameter(_serializers, holdId, const FullType(String))
-            .toString());
+      '{'
+      r'holdId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        holdId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -216,16 +208,10 @@ class ArchiveApi {
     final _path = r'/v1/archive/catalog';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -234,18 +220,27 @@ class ArchiveApi {
 
     final _queryParameters = <String, dynamic>{
       if (source_ != null)
-        r'source':
-            encodeQueryParameter(_serializers, source_, const FullType(String)),
+        r'source': encodeQueryParameter(
+          _serializers,
+          source_,
+          const FullType(String),
+        ),
       if (from != null)
         r'from': encodeQueryParameter(_serializers, from, const FullType(Date)),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(Date)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -264,9 +259,10 @@ class ArchiveApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ArchivePartitionPage),
-            ) as ArchivePartitionPage;
+                  rawResponse,
+                  specifiedType: const FullType(ArchivePartitionPage),
+                )
+                as ArchivePartitionPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -313,16 +309,10 @@ class ArchiveApi {
     final _path = r'/v1/settings/archive';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -344,9 +334,10 @@ class ArchiveApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ArchiveSettings),
-            ) as ArchiveSettings;
+                  rawResponse,
+                  specifiedType: const FullType(ArchiveSettings),
+                )
+                as ArchiveSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -397,21 +388,21 @@ class ArchiveApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/holds/{holdId}/versions'.replaceAll(
-        '{' r'holdId' '}',
-        encodeQueryParameter(_serializers, holdId, const FullType(String))
-            .toString());
+      '{'
+      r'holdId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        holdId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -420,11 +411,17 @@ class ArchiveApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -443,9 +440,10 @@ class ArchiveApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(HoldVersionPage),
-            ) as HoldVersionPage;
+                  rawResponse,
+                  specifiedType: const FullType(HoldVersionPage),
+                )
+                as HoldVersionPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -496,16 +494,10 @@ class ArchiveApi {
     final _path = r'/v1/holds';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -514,11 +506,17 @@ class ArchiveApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -537,9 +535,10 @@ class ArchiveApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(HoldPage),
-            ) as HoldPage;
+                  rawResponse,
+                  specifiedType: const FullType(HoldPage),
+                )
+                as HoldPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -588,16 +587,10 @@ class ArchiveApi {
     final _path = r'/v1/settings/archive';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -612,10 +605,7 @@ class ArchiveApi {
       _bodyData = _serializers.serialize(archiveSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -638,9 +628,10 @@ class ArchiveApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ArchiveSettings),
-            ) as ArchiveSettings;
+                  rawResponse,
+                  specifiedType: const FullType(ArchiveSettings),
+                )
+                as ArchiveSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

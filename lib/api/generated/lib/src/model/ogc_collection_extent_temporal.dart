@@ -26,9 +26,9 @@ abstract class OgcCollectionExtentTemporal
 
   OgcCollectionExtentTemporal._();
 
-  factory OgcCollectionExtentTemporal(
-          [void updates(OgcCollectionExtentTemporalBuilder b)]) =
-      _$OgcCollectionExtentTemporal;
+  factory OgcCollectionExtentTemporal([
+    void updates(OgcCollectionExtentTemporalBuilder b),
+  ]) = _$OgcCollectionExtentTemporal;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCollectionExtentTemporalBuilder b) => b;
@@ -43,7 +43,7 @@ class _$OgcCollectionExtentTemporalSerializer
   @override
   final Iterable<Type> types = const [
     OgcCollectionExtentTemporal,
-    _$OgcCollectionExtentTemporal
+    _$OgcCollectionExtentTemporal,
   ];
 
   @override
@@ -59,7 +59,7 @@ class _$OgcCollectionExtentTemporalSerializer
       yield serializers.serialize(
         object.interval,
         specifiedType: const FullType(BuiltList, [
-          FullType(BuiltList, [FullType.nullable(DateTime)])
+          FullType(BuiltList, [FullType.nullable(DateTime)]),
         ]),
       );
     }
@@ -78,9 +78,11 @@ class _$OgcCollectionExtentTemporalSerializer
     OgcCollectionExtentTemporal object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,20 +98,24 @@ class _$OgcCollectionExtentTemporalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(BuiltList, [FullType.nullable(DateTime)])
-            ]),
-          ) as BuiltList<BuiltList<DateTime?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltList, [FullType.nullable(DateTime)]),
+                    ]),
+                  )
+                  as BuiltList<BuiltList<DateTime?>>?;
           if (valueDes == null) continue;
           result.interval.replace(valueDes);
           break;
         case r'trs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.trs = valueDes;
           break;

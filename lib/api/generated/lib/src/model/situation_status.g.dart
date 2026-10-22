@@ -26,13 +26,9 @@ SituationStatus _$valueOf(String name) {
   }
 }
 
-final BuiltSet<SituationStatus> _$values =
-    BuiltSet<SituationStatus>(const <SituationStatus>[
-  _$emerging,
-  _$active,
-  _$dormant,
-  _$closed,
-]);
+final BuiltSet<SituationStatus> _$values = BuiltSet<SituationStatus>(
+  const <SituationStatus>[_$emerging, _$active, _$dormant, _$closed],
+);
 
 class _$SituationStatusMeta {
   const _$SituationStatusMeta();
@@ -44,7 +40,7 @@ class _$SituationStatusMeta {
   BuiltSet<SituationStatus> get values => _$values;
 }
 
-abstract class _$SituationStatusMixin {
+mixin _$SituationStatusMixin {
   // ignore: non_constant_identifier_names
   _$SituationStatusMeta get SituationStatus => const _$SituationStatusMeta();
 }
@@ -73,15 +69,20 @@ class _$SituationStatusSerializer
   final String wireName = 'SituationStatus';
 
   @override
-  Object serialize(Serializers serializers, SituationStatus object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationStatus object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SituationStatus deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationStatus.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SituationStatus deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationStatus.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

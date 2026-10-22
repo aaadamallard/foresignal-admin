@@ -17,8 +17,10 @@ part 'assessment_coverage_situations_inner.g.dart';
 @BuiltValue()
 abstract class AssessmentCoverageSituationsInner
     implements
-        Built<AssessmentCoverageSituationsInner,
-            AssessmentCoverageSituationsInnerBuilder> {
+        Built<
+          AssessmentCoverageSituationsInner,
+          AssessmentCoverageSituationsInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'situationId')
   String get situationId;
@@ -28,9 +30,9 @@ abstract class AssessmentCoverageSituationsInner
 
   AssessmentCoverageSituationsInner._();
 
-  factory AssessmentCoverageSituationsInner(
-          [void updates(AssessmentCoverageSituationsInnerBuilder b)]) =
-      _$AssessmentCoverageSituationsInner;
+  factory AssessmentCoverageSituationsInner([
+    void updates(AssessmentCoverageSituationsInnerBuilder b),
+  ]) = _$AssessmentCoverageSituationsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AssessmentCoverageSituationsInnerBuilder b) => b;
@@ -45,7 +47,7 @@ class _$AssessmentCoverageSituationsInnerSerializer
   @override
   final Iterable<Type> types = const [
     AssessmentCoverageSituationsInner,
-    _$AssessmentCoverageSituationsInner
+    _$AssessmentCoverageSituationsInner,
   ];
 
   @override
@@ -74,9 +76,11 @@ class _$AssessmentCoverageSituationsInnerSerializer
     AssessmentCoverageSituationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,17 +96,21 @@ class _$AssessmentCoverageSituationsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.situationId = valueDes;
           break;
         case r'coverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoverageStats),
-          ) as CoverageStats;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoverageStats),
+                  )
+                  as CoverageStats;
           result.coverage.replace(valueDes);
           break;
         default:

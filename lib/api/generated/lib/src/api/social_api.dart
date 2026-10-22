@@ -70,16 +70,10 @@ class SocialApi {
     final _path = r'/v1/social/cues';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -94,10 +88,7 @@ class SocialApi {
       _bodyData = _serializers.serialize(socialCueInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -120,9 +111,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialCue),
-            ) as SocialCue;
+                  rawResponse,
+                  specifiedType: const FullType(SocialCue),
+                )
+                as SocialCue;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -169,21 +161,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/claims/{claimId}'.replaceAll(
-        '{' r'claimId' '}',
-        encodeQueryParameter(_serializers, claimId, const FullType(String))
-            .toString());
+      '{'
+      r'claimId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        claimId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -205,9 +197,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Claim),
-            ) as Claim;
+                  rawResponse,
+                  specifiedType: const FullType(Claim),
+                )
+                as Claim;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -254,22 +247,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/media/{fingerprintId}'.replaceAll(
-        '{' r'fingerprintId' '}',
-        encodeQueryParameter(
-                _serializers, fingerprintId, const FullType(String))
-            .toString());
+      '{'
+      r'fingerprintId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        fingerprintId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -291,9 +283,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MediaFingerprint),
-            ) as MediaFingerprint;
+                  rawResponse,
+                  specifiedType: const FullType(MediaFingerprint),
+                )
+                as MediaFingerprint;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -340,21 +333,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/narratives/{narrativeId}'.replaceAll(
-        '{' r'narrativeId' '}',
-        encodeQueryParameter(_serializers, narrativeId, const FullType(String))
-            .toString());
+      '{'
+      r'narrativeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        narrativeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -376,9 +369,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Narrative),
-            ) as Narrative;
+                  rawResponse,
+                  specifiedType: const FullType(Narrative),
+                )
+                as Narrative;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -425,21 +419,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/narratives/{narrativeId}/propagation'.replaceAll(
-        '{' r'narrativeId' '}',
-        encodeQueryParameter(_serializers, narrativeId, const FullType(String))
-            .toString());
+      '{'
+      r'narrativeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        narrativeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -461,9 +455,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PropagationGraph),
-            ) as PropagationGraph;
+                  rawResponse,
+                  specifiedType: const FullType(PropagationGraph),
+                )
+                as PropagationGraph;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -512,21 +507,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/narratives/{narrativeId}/timeline'.replaceAll(
-        '{' r'narrativeId' '}',
-        encodeQueryParameter(_serializers, narrativeId, const FullType(String))
-            .toString());
+      '{'
+      r'narrativeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        narrativeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -536,7 +531,10 @@ class SocialApi {
     final _queryParameters = <String, dynamic>{
       if (interval != null)
         r'interval': encodeQueryParameter(
-            _serializers, interval, const FullType(String)),
+          _serializers,
+          interval,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -555,9 +553,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NarrativeTimeline),
-            ) as NarrativeTimeline;
+                  rawResponse,
+                  specifiedType: const FullType(NarrativeTimeline),
+                )
+                as NarrativeTimeline;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -604,21 +603,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/comparisons/{comparisonId}'.replaceAll(
-        '{' r'comparisonId' '}',
-        encodeQueryParameter(_serializers, comparisonId, const FullType(String))
-            .toString());
+      '{'
+      r'comparisonId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        comparisonId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -640,9 +639,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialComparison),
-            ) as SocialComparison;
+                  rawResponse,
+                  specifiedType: const FullType(SocialComparison),
+                )
+                as SocialComparison;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -701,16 +701,10 @@ class SocialApi {
     final _path = r'/v1/social/coverage';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -720,22 +714,40 @@ class SocialApi {
     final _queryParameters = <String, dynamic>{
       if (platform != null)
         r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+          _serializers,
+          platform,
+          const FullType(String),
+        ),
       if (region != null)
-        r'region':
-            encodeQueryParameter(_serializers, region, const FullType(String)),
+        r'region': encodeQueryParameter(
+          _serializers,
+          region,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -754,9 +766,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialCoveragePage),
-            ) as SocialCoveragePage;
+                  rawResponse,
+                  specifiedType: const FullType(SocialCoveragePage),
+                )
+                as SocialCoveragePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -803,21 +816,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/cues/{cueId}'.replaceAll(
-        '{' r'cueId' '}',
-        encodeQueryParameter(_serializers, cueId, const FullType(String))
-            .toString());
+      '{'
+      r'cueId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        cueId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -839,9 +852,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialCue),
-            ) as SocialCue;
+                  rawResponse,
+                  specifiedType: const FullType(SocialCue),
+                )
+                as SocialCue;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -898,16 +912,10 @@ class SocialApi {
     final _path = r'/v1/social/lead-times';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -917,19 +925,34 @@ class SocialApi {
     final _queryParameters = <String, dynamic>{
       if (claimType != null)
         r'claimType': encodeQueryParameter(
-            _serializers, claimType, const FullType(String)),
+          _serializers,
+          claimType,
+          const FullType(String),
+        ),
       if (platform != null)
         r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+          _serializers,
+          platform,
+          const FullType(String),
+        ),
       if (region != null)
-        r'region':
-            encodeQueryParameter(_serializers, region, const FullType(String)),
+        r'region': encodeQueryParameter(
+          _serializers,
+          region,
+          const FullType(String),
+        ),
       if (foundBy != null)
-        r'foundBy':
-            encodeQueryParameter(_serializers, foundBy, const FullType(String)),
+        r'foundBy': encodeQueryParameter(
+          _serializers,
+          foundBy,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -948,9 +971,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LeadTimeStats),
-            ) as LeadTimeStats;
+                  rawResponse,
+                  specifiedType: const FullType(LeadTimeStats),
+                )
+                as LeadTimeStats;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -997,22 +1021,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/platforms/{platformId}'.replaceAll(
-        '{' r'platformId' '}',
-        encodeQueryParameter(
-                _serializers, platformId, const FullType(SocialPlatformId))
-            .toString());
+      '{'
+      r'platformId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        platformId,
+        const FullType(SocialPlatformId),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1034,9 +1057,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialPlatform),
-            ) as SocialPlatform;
+                  rawResponse,
+                  specifiedType: const FullType(SocialPlatform),
+                )
+                as SocialPlatform;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1086,25 +1110,31 @@ class SocialApi {
   }) async {
     final _path = r'/v1/social/posts/{platform}/{postId}'
         .replaceAll(
-            '{' r'platform' '}',
-            encodeQueryParameter(_serializers, platform, const FullType(String))
-                .toString())
+          '{'
+          r'platform'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            platform,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'postId' '}',
-            encodeQueryParameter(_serializers, postId, const FullType(String))
-                .toString());
+          '{'
+          r'postId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            postId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1126,9 +1156,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialPost),
-            ) as SocialPost;
+                  rawResponse,
+                  specifiedType: const FullType(SocialPost),
+                )
+                as SocialPost;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1175,16 +1206,10 @@ class SocialApi {
     final _path = r'/v1/settings/social';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1206,9 +1231,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialSettings),
-            ) as SocialSettings;
+                  rawResponse,
+                  specifiedType: const FullType(SocialSettings),
+                )
+                as SocialSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1273,16 +1299,10 @@ class SocialApi {
     final _path = r'/v1/social/volume';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1291,32 +1311,59 @@ class SocialApi {
 
     final _queryParameters = <String, dynamic>{
       if (topic != null)
-        r'topic':
-            encodeQueryParameter(_serializers, topic, const FullType(String)),
+        r'topic': encodeQueryParameter(
+          _serializers,
+          topic,
+          const FullType(String),
+        ),
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       if (entity != null)
-        r'entity':
-            encodeQueryParameter(_serializers, entity, const FullType(String)),
+        r'entity': encodeQueryParameter(
+          _serializers,
+          entity,
+          const FullType(String),
+        ),
       if (platform != null)
         r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+          _serializers,
+          platform,
+          const FullType(String),
+        ),
       if (language != null)
         r'language': encodeQueryParameter(
-            _serializers, language, const FullType(String)),
+          _serializers,
+          language,
+          const FullType(String),
+        ),
       if (metric != null)
-        r'metric':
-            encodeQueryParameter(_serializers, metric, const FullType(String)),
+        r'metric': encodeQueryParameter(
+          _serializers,
+          metric,
+          const FullType(String),
+        ),
       if (interval != null)
         r'interval': encodeQueryParameter(
-            _serializers, interval, const FullType(String)),
+          _serializers,
+          interval,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1335,9 +1382,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialVolume),
-            ) as SocialVolume;
+                  rawResponse,
+                  specifiedType: const FullType(SocialVolume),
+                )
+                as SocialVolume;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1400,16 +1448,10 @@ class SocialApi {
     final _path = r'/v1/social/claims';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1419,13 +1461,22 @@ class SocialApi {
     final _queryParameters = <String, dynamic>{
       if (narrativeId != null)
         r'narrativeId': encodeQueryParameter(
-            _serializers, narrativeId, const FullType(String)),
+          _serializers,
+          narrativeId,
+          const FullType(String),
+        ),
       if (situationId != null)
         r'situationId': encodeQueryParameter(
-            _serializers, situationId, const FullType(String)),
+          _serializers,
+          situationId,
+          const FullType(String),
+        ),
       if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
+        r'type': encodeQueryParameter(
+          _serializers,
+          type,
+          const FullType(String),
+        ),
       if (status != null)
         r'status': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1434,17 +1485,29 @@ class SocialApi {
           format: ListFormat.csv,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1463,9 +1526,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ClaimPage),
-            ) as ClaimPage;
+                  rawResponse,
+                  specifiedType: const FullType(ClaimPage),
+                )
+                as ClaimPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1520,21 +1584,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/narratives/{narrativeId}/posts'.replaceAll(
-        '{' r'narrativeId' '}',
-        encodeQueryParameter(_serializers, narrativeId, const FullType(String))
-            .toString());
+      '{'
+      r'narrativeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        narrativeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1544,16 +1608,28 @@ class SocialApi {
     final _queryParameters = <String, dynamic>{
       if (platform != null)
         r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+          _serializers,
+          platform,
+          const FullType(String),
+        ),
       if (evidenceGroup != null)
         r'evidenceGroup': encodeQueryParameter(
-            _serializers, evidenceGroup, const FullType(String)),
+          _serializers,
+          evidenceGroup,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1572,9 +1648,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NarrativePostPage),
-            ) as NarrativePostPage;
+                  rawResponse,
+                  specifiedType: const FullType(NarrativePostPage),
+                )
+                as NarrativePostPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1639,16 +1716,10 @@ class SocialApi {
     final _path = r'/v1/social/narratives';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1657,14 +1728,23 @@ class SocialApi {
 
     final _queryParameters = <String, dynamic>{
       if (topic != null)
-        r'topic':
-            encodeQueryParameter(_serializers, topic, const FullType(String)),
+        r'topic': encodeQueryParameter(
+          _serializers,
+          topic,
+          const FullType(String),
+        ),
       if (situationId != null)
         r'situationId': encodeQueryParameter(
-            _serializers, situationId, const FullType(String)),
+          _serializers,
+          situationId,
+          const FullType(String),
+        ),
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       if (status != null)
         r'status': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1681,16 +1761,28 @@ class SocialApi {
         ),
       if (platform != null)
         r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+          _serializers,
+          platform,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1709,9 +1801,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(NarrativePage),
-            ) as NarrativePage;
+                  rawResponse,
+                  specifiedType: const FullType(NarrativePage),
+                )
+                as NarrativePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1776,16 +1869,10 @@ class SocialApi {
     final _path = r'/v1/social/comparisons';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1802,28 +1889,52 @@ class SocialApi {
         ),
       if (situationId != null)
         r'situationId': encodeQueryParameter(
-            _serializers, situationId, const FullType(String)),
+          _serializers,
+          situationId,
+          const FullType(String),
+        ),
       if (narrativeId != null)
         r'narrativeId': encodeQueryParameter(
-            _serializers, narrativeId, const FullType(String)),
+          _serializers,
+          narrativeId,
+          const FullType(String),
+        ),
       if (claimId != null)
-        r'claimId':
-            encodeQueryParameter(_serializers, claimId, const FullType(String)),
+        r'claimId': encodeQueryParameter(
+          _serializers,
+          claimId,
+          const FullType(String),
+        ),
       if (family != null)
-        r'family':
-            encodeQueryParameter(_serializers, family, const FullType(String)),
+        r'family': encodeQueryParameter(
+          _serializers,
+          family,
+          const FullType(String),
+        ),
       if (region != null)
-        r'region':
-            encodeQueryParameter(_serializers, region, const FullType(String)),
+        r'region': encodeQueryParameter(
+          _serializers,
+          region,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1842,9 +1953,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialComparisonPage),
-            ) as SocialComparisonPage;
+                  rawResponse,
+                  specifiedType: const FullType(SocialComparisonPage),
+                )
+                as SocialComparisonPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1899,16 +2011,10 @@ class SocialApi {
     final _path = r'/v1/social/cues';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1924,14 +2030,23 @@ class SocialApi {
           format: ListFormat.csv,
         ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1950,9 +2065,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialCuePage),
-            ) as SocialCuePage;
+                  rawResponse,
+                  specifiedType: const FullType(SocialCuePage),
+                )
+                as SocialCuePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1999,16 +2115,10 @@ class SocialApi {
     final _path = r'/v1/social/platforms';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2030,10 +2140,12 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(SocialPlatform)]),
-            ) as BuiltList<SocialPlatform>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(SocialPlatform),
+                  ]),
+                )
+                as BuiltList<SocialPlatform>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2096,16 +2208,10 @@ class SocialApi {
     final _path = r'/v1/social/posts';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2114,28 +2220,49 @@ class SocialApi {
 
     final _queryParameters = <String, dynamic>{
       if (topic != null)
-        r'topic':
-            encodeQueryParameter(_serializers, topic, const FullType(String)),
+        r'topic': encodeQueryParameter(
+          _serializers,
+          topic,
+          const FullType(String),
+        ),
       if (platform != null)
         r'platform': encodeQueryParameter(
-            _serializers, platform, const FullType(String)),
+          _serializers,
+          platform,
+          const FullType(String),
+        ),
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (cueId != null)
-        r'cueId':
-            encodeQueryParameter(_serializers, cueId, const FullType(String)),
+        r'cueId': encodeQueryParameter(
+          _serializers,
+          cueId,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2154,9 +2281,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialPostPage),
-            ) as SocialPostPage;
+                  rawResponse,
+                  specifiedType: const FullType(SocialPostPage),
+                )
+                as SocialPostPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2209,16 +2337,10 @@ class SocialApi {
     final _path = r'/v1/social/media/match';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2233,17 +2355,20 @@ class SocialApi {
         r'file': file,
         if (maxDistance != null)
           r'maxDistance': encodeFormParameter(
-              _serializers, maxDistance, const FullType(int)),
+            _serializers,
+            maxDistance,
+            const FullType(int),
+          ),
         if (limit != null)
-          r'limit':
-              encodeFormParameter(_serializers, limit, const FullType(int)),
+          r'limit': encodeFormParameter(
+            _serializers,
+            limit,
+            const FullType(int),
+          ),
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2266,9 +2391,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MediaMatchResult),
-            ) as MediaMatchResult;
+                  rawResponse,
+                  specifiedType: const FullType(MediaMatchResult),
+                )
+                as MediaMatchResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2317,21 +2443,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/narratives/{narrativeId}/merge'.replaceAll(
-        '{' r'narrativeId' '}',
-        encodeQueryParameter(_serializers, narrativeId, const FullType(String))
-            .toString());
+      '{'
+      r'narrativeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        narrativeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2343,14 +2469,13 @@ class SocialApi {
 
     try {
       const _type = FullType(NarrativeMergeInput);
-      _bodyData =
-          _serializers.serialize(narrativeMergeInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        narrativeMergeInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2373,9 +2498,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Narrative),
-            ) as Narrative;
+                  rawResponse,
+                  specifiedType: const FullType(Narrative),
+                )
+                as Narrative;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2424,21 +2550,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/narratives/{narrativeId}/split'.replaceAll(
-        '{' r'narrativeId' '}',
-        encodeQueryParameter(_serializers, narrativeId, const FullType(String))
-            .toString());
+      '{'
+      r'narrativeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        narrativeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2450,14 +2576,13 @@ class SocialApi {
 
     try {
       const _type = FullType(NarrativeSplitInput);
-      _bodyData =
-          _serializers.serialize(narrativeSplitInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        narrativeSplitInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2480,9 +2605,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Narrative),
-            ) as Narrative;
+                  rawResponse,
+                  specifiedType: const FullType(Narrative),
+                )
+                as Narrative;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2531,22 +2657,21 @@ class SocialApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/social/platforms/{platformId}'.replaceAll(
-        '{' r'platformId' '}',
-        encodeQueryParameter(
-                _serializers, platformId, const FullType(SocialPlatformId))
-            .toString());
+      '{'
+      r'platformId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        platformId,
+        const FullType(SocialPlatformId),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2558,14 +2683,13 @@ class SocialApi {
 
     try {
       const _type = FullType(SocialPlatformSettings);
-      _bodyData =
-          _serializers.serialize(socialPlatformSettings, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        socialPlatformSettings,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2588,9 +2712,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialPlatform),
-            ) as SocialPlatform;
+                  rawResponse,
+                  specifiedType: const FullType(SocialPlatform),
+                )
+                as SocialPlatform;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2639,16 +2764,10 @@ class SocialApi {
     final _path = r'/v1/settings/social';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2663,10 +2782,7 @@ class SocialApi {
       _bodyData = _serializers.serialize(socialSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2689,9 +2805,10 @@ class SocialApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SocialSettings),
-            ) as SocialSettings;
+                  rawResponse,
+                  specifiedType: const FullType(SocialSettings),
+                )
+                as SocialSettings;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

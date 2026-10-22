@@ -12,16 +12,16 @@ class _$PurgeReportCitingDocuments extends PurgeReportCitingDocuments {
   @override
   final int? briefingRuns;
 
-  factory _$PurgeReportCitingDocuments(
-          [void Function(PurgeReportCitingDocumentsBuilder)? updates]) =>
-      (PurgeReportCitingDocumentsBuilder()..update(updates))._build();
+  factory _$PurgeReportCitingDocuments([
+    void Function(PurgeReportCitingDocumentsBuilder)? updates,
+  ]) => (PurgeReportCitingDocumentsBuilder()..update(updates))._build();
 
   _$PurgeReportCitingDocuments._({this.askMessages, this.briefingRuns})
-      : super._();
+    : super._();
   @override
   PurgeReportCitingDocuments rebuild(
-          void Function(PurgeReportCitingDocumentsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PurgeReportCitingDocumentsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PurgeReportCitingDocumentsBuilder toBuilder() =>
@@ -94,7 +94,8 @@ class PurgeReportCitingDocumentsBuilder
   PurgeReportCitingDocuments build() => _build();
 
   _$PurgeReportCitingDocuments _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PurgeReportCitingDocuments._(
           askMessages: askMessages,
           briefingRuns: briefingRuns,

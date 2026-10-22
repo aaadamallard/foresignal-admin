@@ -16,8 +16,10 @@ part 'aircraft_fusion_payload_detector.g.dart';
 @BuiltValue()
 abstract class AircraftFusionPayloadDetector
     implements
-        Built<AircraftFusionPayloadDetector,
-            AircraftFusionPayloadDetectorBuilder> {
+        Built<
+          AircraftFusionPayloadDetector,
+          AircraftFusionPayloadDetectorBuilder
+        > {
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -26,9 +28,9 @@ abstract class AircraftFusionPayloadDetector
 
   AircraftFusionPayloadDetector._();
 
-  factory AircraftFusionPayloadDetector(
-          [void updates(AircraftFusionPayloadDetectorBuilder b)]) =
-      _$AircraftFusionPayloadDetector;
+  factory AircraftFusionPayloadDetector([
+    void updates(AircraftFusionPayloadDetectorBuilder b),
+  ]) = _$AircraftFusionPayloadDetector;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AircraftFusionPayloadDetectorBuilder b) => b;
@@ -43,7 +45,7 @@ class _$AircraftFusionPayloadDetectorSerializer
   @override
   final Iterable<Type> types = const [
     AircraftFusionPayloadDetector,
-    _$AircraftFusionPayloadDetector
+    _$AircraftFusionPayloadDetector,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$AircraftFusionPayloadDetectorSerializer
     AircraftFusionPayloadDetector object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$AircraftFusionPayloadDetectorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         default:

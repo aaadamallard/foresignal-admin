@@ -30,27 +30,27 @@ class _$CoordinationIndicators extends CoordinationIndicators {
   @override
   final DateTime computedAt;
 
-  factory _$CoordinationIndicators(
-          [void Function(CoordinationIndicatorsBuilder)? updates]) =>
-      (CoordinationIndicatorsBuilder()..update(updates))._build();
+  factory _$CoordinationIndicators([
+    void Function(CoordinationIndicatorsBuilder)? updates,
+  ]) => (CoordinationIndicatorsBuilder()..update(updates))._build();
 
-  _$CoordinationIndicators._(
-      {required this.narrativeId,
-      required this.window,
-      required this.synchrony,
-      required this.textDuplication,
-      required this.accountAgeSkew,
-      required this.coRepostBursts,
-      required this.significantCount,
-      this.findingId,
-      this.statement,
-      required this.detector,
-      required this.computedAt})
-      : super._();
+  _$CoordinationIndicators._({
+    required this.narrativeId,
+    required this.window,
+    required this.synchrony,
+    required this.textDuplication,
+    required this.accountAgeSkew,
+    required this.coRepostBursts,
+    required this.significantCount,
+    this.findingId,
+    this.statement,
+    required this.detector,
+    required this.computedAt,
+  }) : super._();
   @override
   CoordinationIndicators rebuild(
-          void Function(CoordinationIndicatorsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CoordinationIndicatorsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CoordinationIndicatorsBuilder toBuilder() =>
@@ -205,24 +205,32 @@ class CoordinationIndicatorsBuilder
   _$CoordinationIndicators _build() {
     _$CoordinationIndicators _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CoordinationIndicators._(
             narrativeId: BuiltValueNullFieldError.checkNotNull(
-                narrativeId, r'CoordinationIndicators', 'narrativeId'),
+              narrativeId,
+              r'CoordinationIndicators',
+              'narrativeId',
+            ),
             window: window.build(),
             synchrony: synchrony.build(),
             textDuplication: textDuplication.build(),
             accountAgeSkew: accountAgeSkew.build(),
             coRepostBursts: coRepostBursts.build(),
             significantCount: BuiltValueNullFieldError.checkNotNull(
-                significantCount,
-                r'CoordinationIndicators',
-                'significantCount'),
+              significantCount,
+              r'CoordinationIndicators',
+              'significantCount',
+            ),
             findingId: findingId,
             statement: statement,
             detector: detector.build(),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'CoordinationIndicators', 'computedAt'),
+              computedAt,
+              r'CoordinationIndicators',
+              'computedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -242,7 +250,10 @@ class CoordinationIndicatorsBuilder
         detector.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CoordinationIndicators', _$failedField, e.toString());
+          r'CoordinationIndicators',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

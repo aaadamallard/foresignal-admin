@@ -20,11 +20,9 @@ PeerModeEnum _$peerModeEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<PeerModeEnum> _$peerModeEnumValues =
-    BuiltSet<PeerModeEnum>(const <PeerModeEnum>[
-  _$peerModeEnum_PULL,
-  _$peerModeEnum_RECEIVE,
-]);
+final BuiltSet<PeerModeEnum> _$peerModeEnumValues = BuiltSet<PeerModeEnum>(
+  const <PeerModeEnum>[_$peerModeEnum_PULL, _$peerModeEnum_RECEIVE],
+);
 
 const PeerHealthReasonEnum _$peerHealthReasonEnum_PEER_KEY_MISMATCH =
     const PeerHealthReasonEnum._('PEER_KEY_MISMATCH');
@@ -48,23 +46,29 @@ PeerHealthReasonEnum _$peerHealthReasonEnumValueOf(String name) {
 
 final BuiltSet<PeerHealthReasonEnum> _$peerHealthReasonEnumValues =
     BuiltSet<PeerHealthReasonEnum>(const <PeerHealthReasonEnum>[
-  _$peerHealthReasonEnum_PEER_KEY_MISMATCH,
-  _$peerHealthReasonEnum_PEER_UNREACHABLE,
-  _$peerHealthReasonEnum_PEER_RESYNC,
-]);
+      _$peerHealthReasonEnum_PEER_KEY_MISMATCH,
+      _$peerHealthReasonEnum_PEER_UNREACHABLE,
+      _$peerHealthReasonEnum_PEER_RESYNC,
+    ]);
 
-const PeerReliabilityEnum _$peerReliabilityEnum_A =
-    const PeerReliabilityEnum._('A');
-const PeerReliabilityEnum _$peerReliabilityEnum_B =
-    const PeerReliabilityEnum._('B');
-const PeerReliabilityEnum _$peerReliabilityEnum_C =
-    const PeerReliabilityEnum._('C');
-const PeerReliabilityEnum _$peerReliabilityEnum_D =
-    const PeerReliabilityEnum._('D');
-const PeerReliabilityEnum _$peerReliabilityEnum_E =
-    const PeerReliabilityEnum._('E');
-const PeerReliabilityEnum _$peerReliabilityEnum_F =
-    const PeerReliabilityEnum._('F');
+const PeerReliabilityEnum _$peerReliabilityEnum_A = const PeerReliabilityEnum._(
+  'A',
+);
+const PeerReliabilityEnum _$peerReliabilityEnum_B = const PeerReliabilityEnum._(
+  'B',
+);
+const PeerReliabilityEnum _$peerReliabilityEnum_C = const PeerReliabilityEnum._(
+  'C',
+);
+const PeerReliabilityEnum _$peerReliabilityEnum_D = const PeerReliabilityEnum._(
+  'D',
+);
+const PeerReliabilityEnum _$peerReliabilityEnum_E = const PeerReliabilityEnum._(
+  'E',
+);
+const PeerReliabilityEnum _$peerReliabilityEnum_F = const PeerReliabilityEnum._(
+  'F',
+);
 
 PeerReliabilityEnum _$peerReliabilityEnumValueOf(String name) {
   switch (name) {
@@ -87,13 +91,13 @@ PeerReliabilityEnum _$peerReliabilityEnumValueOf(String name) {
 
 final BuiltSet<PeerReliabilityEnum> _$peerReliabilityEnumValues =
     BuiltSet<PeerReliabilityEnum>(const <PeerReliabilityEnum>[
-  _$peerReliabilityEnum_A,
-  _$peerReliabilityEnum_B,
-  _$peerReliabilityEnum_C,
-  _$peerReliabilityEnum_D,
-  _$peerReliabilityEnum_E,
-  _$peerReliabilityEnum_F,
-]);
+      _$peerReliabilityEnum_A,
+      _$peerReliabilityEnum_B,
+      _$peerReliabilityEnum_C,
+      _$peerReliabilityEnum_D,
+      _$peerReliabilityEnum_E,
+      _$peerReliabilityEnum_F,
+    ]);
 
 Serializer<PeerModeEnum> _$peerModeEnumSerializer = _$PeerModeEnumSerializer();
 Serializer<PeerHealthReasonEnum> _$peerHealthReasonEnumSerializer =
@@ -117,15 +121,20 @@ class _$PeerModeEnumSerializer implements PrimitiveSerializer<PeerModeEnum> {
   final String wireName = 'PeerModeEnum';
 
   @override
-  Object serialize(Serializers serializers, PeerModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PeerModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PeerModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PeerModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PeerModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PeerModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PeerHealthReasonEnumSerializer
@@ -147,15 +156,20 @@ class _$PeerHealthReasonEnumSerializer
   final String wireName = 'PeerHealthReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, PeerHealthReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PeerHealthReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PeerHealthReasonEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PeerHealthReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PeerHealthReasonEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PeerHealthReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PeerReliabilityEnumSerializer
@@ -183,15 +197,20 @@ class _$PeerReliabilityEnumSerializer
   final String wireName = 'PeerReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers, PeerReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PeerReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PeerReliabilityEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PeerReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PeerReliabilityEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PeerReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Peer extends Peer {
@@ -241,29 +260,29 @@ class _$Peer extends Peer {
   factory _$Peer([void Function(PeerBuilder)? updates]) =>
       (PeerBuilder()..update(updates))._build();
 
-  _$Peer._(
-      {required this.id,
-      required this.name,
-      required this.baseUrl,
-      required this.mode,
-      required this.enabled,
-      required this.state,
-      this.healthReason,
-      this.lastSeq,
-      this.lagSeq,
-      this.lastError,
-      this.pinnedKid,
-      this.remoteInstanceId,
-      required this.selection,
-      this.sameOperator,
-      this.reliability,
-      this.tokenSet,
-      this.ingestKeyPrefix,
-      this.sourceIds,
-      required this.createdAt,
-      required this.updatedAt,
-      this.exchangeKeySet})
-      : super._();
+  _$Peer._({
+    required this.id,
+    required this.name,
+    required this.baseUrl,
+    required this.mode,
+    required this.enabled,
+    required this.state,
+    this.healthReason,
+    this.lastSeq,
+    this.lagSeq,
+    this.lastError,
+    this.pinnedKid,
+    this.remoteInstanceId,
+    required this.selection,
+    this.sameOperator,
+    this.reliability,
+    this.tokenSet,
+    this.ingestKeyPrefix,
+    this.sourceIds,
+    required this.createdAt,
+    required this.updatedAt,
+    this.exchangeKeySet,
+  }) : super._();
   @override
   Peer rebuild(void Function(PeerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -499,17 +518,27 @@ class PeerBuilder implements Builder<Peer, PeerBuilder> {
   _$Peer _build() {
     _$Peer _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Peer._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Peer', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'Peer', 'name'),
             baseUrl: BuiltValueNullFieldError.checkNotNull(
-                baseUrl, r'Peer', 'baseUrl'),
+              baseUrl,
+              r'Peer',
+              'baseUrl',
+            ),
             mode: BuiltValueNullFieldError.checkNotNull(mode, r'Peer', 'mode'),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'Peer', 'enabled'),
-            state:
-                BuiltValueNullFieldError.checkNotNull(state, r'Peer', 'state'),
+              enabled,
+              r'Peer',
+              'enabled',
+            ),
+            state: BuiltValueNullFieldError.checkNotNull(
+              state,
+              r'Peer',
+              'state',
+            ),
             healthReason: healthReason,
             lastSeq: lastSeq,
             lagSeq: lagSeq,
@@ -523,9 +552,15 @@ class PeerBuilder implements Builder<Peer, PeerBuilder> {
             ingestKeyPrefix: ingestKeyPrefix,
             sourceIds: _sourceIds?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Peer', 'createdAt'),
+              createdAt,
+              r'Peer',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Peer', 'updatedAt'),
+              updatedAt,
+              r'Peer',
+              'updatedAt',
+            ),
             exchangeKeySet: exchangeKeySet,
           );
     } catch (_) {

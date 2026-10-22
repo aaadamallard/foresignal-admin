@@ -18,21 +18,21 @@ class _$OgcFeatureProperties extends OgcFeatureProperties {
   @override
   final int? version;
 
-  factory _$OgcFeatureProperties(
-          [void Function(OgcFeaturePropertiesBuilder)? updates]) =>
-      (OgcFeaturePropertiesBuilder()..update(updates))._build();
+  factory _$OgcFeatureProperties([
+    void Function(OgcFeaturePropertiesBuilder)? updates,
+  ]) => (OgcFeaturePropertiesBuilder()..update(updates))._build();
 
-  _$OgcFeatureProperties._(
-      {this.title,
-      this.sourceId,
-      this.observedAt,
-      this.eventTime,
-      this.version})
-      : super._();
+  _$OgcFeatureProperties._({
+    this.title,
+    this.sourceId,
+    this.observedAt,
+    this.eventTime,
+    this.version,
+  }) : super._();
   @override
   OgcFeatureProperties rebuild(
-          void Function(OgcFeaturePropertiesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcFeaturePropertiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcFeaturePropertiesBuilder toBuilder() =>
@@ -128,7 +128,8 @@ class OgcFeaturePropertiesBuilder
   OgcFeatureProperties build() => _build();
 
   _$OgcFeatureProperties _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OgcFeatureProperties._(
           title: title,
           sourceId: sourceId,

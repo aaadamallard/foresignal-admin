@@ -12,15 +12,15 @@ class _$RuleQualityPrecisionCi extends RuleQualityPrecisionCi {
   @override
   final num? upper;
 
-  factory _$RuleQualityPrecisionCi(
-          [void Function(RuleQualityPrecisionCiBuilder)? updates]) =>
-      (RuleQualityPrecisionCiBuilder()..update(updates))._build();
+  factory _$RuleQualityPrecisionCi([
+    void Function(RuleQualityPrecisionCiBuilder)? updates,
+  ]) => (RuleQualityPrecisionCiBuilder()..update(updates))._build();
 
   _$RuleQualityPrecisionCi._({this.lower, this.upper}) : super._();
   @override
   RuleQualityPrecisionCi rebuild(
-          void Function(RuleQualityPrecisionCiBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleQualityPrecisionCiBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleQualityPrecisionCiBuilder toBuilder() =>
@@ -92,11 +92,8 @@ class RuleQualityPrecisionCiBuilder
   RuleQualityPrecisionCi build() => _build();
 
   _$RuleQualityPrecisionCi _build() {
-    final _$result = _$v ??
-        _$RuleQualityPrecisionCi._(
-          lower: lower,
-          upper: upper,
-        );
+    final _$result =
+        _$v ?? _$RuleQualityPrecisionCi._(lower: lower, upper: upper);
     replace(_$result);
     return _$result;
   }

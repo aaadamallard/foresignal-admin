@@ -93,9 +93,11 @@ class _$EdpTransportSerializer implements PrimitiveSerializer<EdpTransport> {
     EdpTransport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,34 +113,42 @@ class _$EdpTransportSerializer implements PrimitiveSerializer<EdpTransport> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'push':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.push = valueDes;
           break;
         case r'pull':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpPull),
-          ) as EdpPull?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpPull),
+                  )
+                  as EdpPull?;
           if (valueDes == null) continue;
           result.pull.replace(valueDes);
           break;
         case r'search':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpSearch),
-          ) as EdpSearch?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpSearch),
+                  )
+                  as EdpSearch?;
           if (valueDes == null) continue;
           result.search.replace(valueDes);
           break;
         case r'analysisRequest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpAnalysisRequest),
-          ) as EdpAnalysisRequest?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpAnalysisRequest),
+                  )
+                  as EdpAnalysisRequest?;
           if (valueDes == null) continue;
           result.analysisRequest.replace(valueDes);
           break;

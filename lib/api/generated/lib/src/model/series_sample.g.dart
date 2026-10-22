@@ -24,9 +24,9 @@ SeriesSampleKindEnum _$seriesSampleKindEnumValueOf(String name) {
 
 final BuiltSet<SeriesSampleKindEnum> _$seriesSampleKindEnumValues =
     BuiltSet<SeriesSampleKindEnum>(const <SeriesSampleKindEnum>[
-  _$seriesSampleKindEnum_observed,
-  _$seriesSampleKindEnum_forecast,
-]);
+      _$seriesSampleKindEnum_observed,
+      _$seriesSampleKindEnum_forecast,
+    ]);
 
 Serializer<SeriesSampleKindEnum> _$seriesSampleKindEnumSerializer =
     _$SeriesSampleKindEnumSerializer();
@@ -48,15 +48,20 @@ class _$SeriesSampleKindEnumSerializer
   final String wireName = 'SeriesSampleKindEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesSampleKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesSampleKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SeriesSampleKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesSampleKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SeriesSampleKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesSampleKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesSample extends SeriesSample {
@@ -86,19 +91,19 @@ class _$SeriesSample extends SeriesSample {
   factory _$SeriesSample([void Function(SeriesSampleBuilder)? updates]) =>
       (SeriesSampleBuilder()..update(updates))._build();
 
-  _$SeriesSample._(
-      {required this.time,
-      required this.kind,
-      this.value,
-      this.u,
-      this.v,
-      this.derived,
-      this.frameKey,
-      this.run,
-      this.step,
-      required this.status,
-      this.statusText})
-      : super._();
+  _$SeriesSample._({
+    required this.time,
+    required this.kind,
+    this.value,
+    this.u,
+    this.v,
+    this.derived,
+    this.frameKey,
+    this.run,
+    this.step,
+    required this.status,
+    this.statusText,
+  }) : super._();
   @override
   SeriesSample rebuild(void Function(SeriesSampleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -247,12 +252,19 @@ class SeriesSampleBuilder
   _$SeriesSample _build() {
     _$SeriesSample _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesSample._(
             time: BuiltValueNullFieldError.checkNotNull(
-                time, r'SeriesSample', 'time'),
+              time,
+              r'SeriesSample',
+              'time',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'SeriesSample', 'kind'),
+              kind,
+              r'SeriesSample',
+              'kind',
+            ),
             value: value,
             u: u,
             v: v,
@@ -261,7 +273,10 @@ class SeriesSampleBuilder
             run: run,
             step: step,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SeriesSample', 'status'),
+              status,
+              r'SeriesSample',
+              'status',
+            ),
             statusText: statusText,
           );
     } catch (_) {
@@ -271,7 +286,10 @@ class SeriesSampleBuilder
         _derived?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesSample', _$failedField, e.toString());
+          r'SeriesSample',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

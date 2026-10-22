@@ -14,9 +14,9 @@ class _$FieldEncodingsI16 extends FieldEncodingsI16 {
   @override
   final num? offset;
 
-  factory _$FieldEncodingsI16(
-          [void Function(FieldEncodingsI16Builder)? updates]) =>
-      (FieldEncodingsI16Builder()..update(updates))._build();
+  factory _$FieldEncodingsI16([
+    void Function(FieldEncodingsI16Builder)? updates,
+  ]) => (FieldEncodingsI16Builder()..update(updates))._build();
 
   _$FieldEncodingsI16._({this.url, this.scale, this.offset}) : super._();
   @override
@@ -101,12 +101,8 @@ class FieldEncodingsI16Builder
   FieldEncodingsI16 build() => _build();
 
   _$FieldEncodingsI16 _build() {
-    final _$result = _$v ??
-        _$FieldEncodingsI16._(
-          url: url,
-          scale: scale,
-          offset: offset,
-        );
+    final _$result =
+        _$v ?? _$FieldEncodingsI16._(url: url, scale: scale, offset: offset);
     replace(_$result);
     return _$result;
   }

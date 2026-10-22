@@ -17,8 +17,10 @@ part 'structure_diff_presence_dropped_inner.g.dart';
 @BuiltValue()
 abstract class StructureDiffPresenceDroppedInner
     implements
-        Built<StructureDiffPresenceDroppedInner,
-            StructureDiffPresenceDroppedInnerBuilder> {
+        Built<
+          StructureDiffPresenceDroppedInner,
+          StructureDiffPresenceDroppedInnerBuilder
+        > {
   @BuiltValueField(wireName: r'path')
   String get path;
 
@@ -30,9 +32,9 @@ abstract class StructureDiffPresenceDroppedInner
 
   StructureDiffPresenceDroppedInner._();
 
-  factory StructureDiffPresenceDroppedInner(
-          [void updates(StructureDiffPresenceDroppedInnerBuilder b)]) =
-      _$StructureDiffPresenceDroppedInner;
+  factory StructureDiffPresenceDroppedInner([
+    void updates(StructureDiffPresenceDroppedInnerBuilder b),
+  ]) = _$StructureDiffPresenceDroppedInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StructureDiffPresenceDroppedInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$StructureDiffPresenceDroppedInnerSerializer
   @override
   final Iterable<Type> types = const [
     StructureDiffPresenceDroppedInner,
-    _$StructureDiffPresenceDroppedInner
+    _$StructureDiffPresenceDroppedInner,
   ];
 
   @override
@@ -69,10 +71,7 @@ class _$StructureDiffPresenceDroppedInnerSerializer
       specifiedType: const FullType(num),
     );
     yield r'to';
-    yield serializers.serialize(
-      object.to,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.to, specifiedType: const FullType(num));
   }
 
   @override
@@ -81,9 +80,11 @@ class _$StructureDiffPresenceDroppedInnerSerializer
     StructureDiffPresenceDroppedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +100,24 @@ class _$StructureDiffPresenceDroppedInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.to = valueDes;
           break;
         default:

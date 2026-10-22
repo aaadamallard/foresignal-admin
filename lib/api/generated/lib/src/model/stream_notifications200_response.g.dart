@@ -7,17 +7,17 @@ part of 'stream_notifications200_response.dart';
 // **************************************************************************
 
 const StreamNotifications200ResponseEventEnum
-    _$streamNotifications200ResponseEventEnum_alert =
+_$streamNotifications200ResponseEventEnum_alert =
     const StreamNotifications200ResponseEventEnum._('alert');
 const StreamNotifications200ResponseEventEnum
-    _$streamNotifications200ResponseEventEnum_briefing =
+_$streamNotifications200ResponseEventEnum_briefing =
     const StreamNotifications200ResponseEventEnum._('briefing');
 const StreamNotifications200ResponseEventEnum
-    _$streamNotifications200ResponseEventEnum_system =
+_$streamNotifications200ResponseEventEnum_system =
     const StreamNotifications200ResponseEventEnum._('system');
 
 StreamNotifications200ResponseEventEnum
-    _$streamNotifications200ResponseEventEnumValueOf(String name) {
+_$streamNotifications200ResponseEventEnumValueOf(String name) {
   switch (name) {
     case 'alert':
       return _$streamNotifications200ResponseEventEnum_alert;
@@ -31,25 +31,27 @@ StreamNotifications200ResponseEventEnum
 }
 
 final BuiltSet<StreamNotifications200ResponseEventEnum>
-    _$streamNotifications200ResponseEventEnumValues = BuiltSet<
-        StreamNotifications200ResponseEventEnum>(const <StreamNotifications200ResponseEventEnum>[
-  _$streamNotifications200ResponseEventEnum_alert,
-  _$streamNotifications200ResponseEventEnum_briefing,
-  _$streamNotifications200ResponseEventEnum_system,
-]);
+_$streamNotifications200ResponseEventEnumValues =
+    BuiltSet<StreamNotifications200ResponseEventEnum>(
+      const <StreamNotifications200ResponseEventEnum>[
+        _$streamNotifications200ResponseEventEnum_alert,
+        _$streamNotifications200ResponseEventEnum_briefing,
+        _$streamNotifications200ResponseEventEnum_system,
+      ],
+    );
 
 const StreamNotifications200ResponseSeverityEnum
-    _$streamNotifications200ResponseSeverityEnum_info =
+_$streamNotifications200ResponseSeverityEnum_info =
     const StreamNotifications200ResponseSeverityEnum._('info');
 const StreamNotifications200ResponseSeverityEnum
-    _$streamNotifications200ResponseSeverityEnum_warning =
+_$streamNotifications200ResponseSeverityEnum_warning =
     const StreamNotifications200ResponseSeverityEnum._('warning');
 const StreamNotifications200ResponseSeverityEnum
-    _$streamNotifications200ResponseSeverityEnum_critical =
+_$streamNotifications200ResponseSeverityEnum_critical =
     const StreamNotifications200ResponseSeverityEnum._('critical');
 
 StreamNotifications200ResponseSeverityEnum
-    _$streamNotifications200ResponseSeverityEnumValueOf(String name) {
+_$streamNotifications200ResponseSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$streamNotifications200ResponseSeverityEnum_info;
@@ -63,25 +65,27 @@ StreamNotifications200ResponseSeverityEnum
 }
 
 final BuiltSet<StreamNotifications200ResponseSeverityEnum>
-    _$streamNotifications200ResponseSeverityEnumValues = BuiltSet<
-        StreamNotifications200ResponseSeverityEnum>(const <StreamNotifications200ResponseSeverityEnum>[
-  _$streamNotifications200ResponseSeverityEnum_info,
-  _$streamNotifications200ResponseSeverityEnum_warning,
-  _$streamNotifications200ResponseSeverityEnum_critical,
-]);
+_$streamNotifications200ResponseSeverityEnumValues =
+    BuiltSet<StreamNotifications200ResponseSeverityEnum>(
+      const <StreamNotifications200ResponseSeverityEnum>[
+        _$streamNotifications200ResponseSeverityEnum_info,
+        _$streamNotifications200ResponseSeverityEnum_warning,
+        _$streamNotifications200ResponseSeverityEnum_critical,
+      ],
+    );
 
 const StreamNotifications200ResponseAlertStateEnum
-    _$streamNotifications200ResponseAlertStateEnum_firing =
+_$streamNotifications200ResponseAlertStateEnum_firing =
     const StreamNotifications200ResponseAlertStateEnum._('firing');
 const StreamNotifications200ResponseAlertStateEnum
-    _$streamNotifications200ResponseAlertStateEnum_acknowledged =
+_$streamNotifications200ResponseAlertStateEnum_acknowledged =
     const StreamNotifications200ResponseAlertStateEnum._('acknowledged');
 const StreamNotifications200ResponseAlertStateEnum
-    _$streamNotifications200ResponseAlertStateEnum_resolved =
+_$streamNotifications200ResponseAlertStateEnum_resolved =
     const StreamNotifications200ResponseAlertStateEnum._('resolved');
 
 StreamNotifications200ResponseAlertStateEnum
-    _$streamNotifications200ResponseAlertStateEnumValueOf(String name) {
+_$streamNotifications200ResponseAlertStateEnumValueOf(String name) {
   switch (name) {
     case 'firing':
       return _$streamNotifications200ResponseAlertStateEnum_firing;
@@ -95,21 +99,23 @@ StreamNotifications200ResponseAlertStateEnum
 }
 
 final BuiltSet<StreamNotifications200ResponseAlertStateEnum>
-    _$streamNotifications200ResponseAlertStateEnumValues = BuiltSet<
-        StreamNotifications200ResponseAlertStateEnum>(const <StreamNotifications200ResponseAlertStateEnum>[
-  _$streamNotifications200ResponseAlertStateEnum_firing,
-  _$streamNotifications200ResponseAlertStateEnum_acknowledged,
-  _$streamNotifications200ResponseAlertStateEnum_resolved,
-]);
+_$streamNotifications200ResponseAlertStateEnumValues =
+    BuiltSet<StreamNotifications200ResponseAlertStateEnum>(
+      const <StreamNotifications200ResponseAlertStateEnum>[
+        _$streamNotifications200ResponseAlertStateEnum_firing,
+        _$streamNotifications200ResponseAlertStateEnum_acknowledged,
+        _$streamNotifications200ResponseAlertStateEnum_resolved,
+      ],
+    );
 
 Serializer<StreamNotifications200ResponseEventEnum>
-    _$streamNotifications200ResponseEventEnumSerializer =
+_$streamNotifications200ResponseEventEnumSerializer =
     _$StreamNotifications200ResponseEventEnumSerializer();
 Serializer<StreamNotifications200ResponseSeverityEnum>
-    _$streamNotifications200ResponseSeverityEnumSerializer =
+_$streamNotifications200ResponseSeverityEnumSerializer =
     _$StreamNotifications200ResponseSeverityEnumSerializer();
 Serializer<StreamNotifications200ResponseAlertStateEnum>
-    _$streamNotifications200ResponseAlertStateEnumSerializer =
+_$streamNotifications200ResponseAlertStateEnumSerializer =
     _$StreamNotifications200ResponseAlertStateEnumSerializer();
 
 class _$StreamNotifications200ResponseEventEnumSerializer
@@ -127,23 +133,26 @@ class _$StreamNotifications200ResponseEventEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StreamNotifications200ResponseEventEnum
+    StreamNotifications200ResponseEventEnum,
   ];
   @override
   final String wireName = 'StreamNotifications200ResponseEventEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StreamNotifications200ResponseEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StreamNotifications200ResponseEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamNotifications200ResponseEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamNotifications200ResponseEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamNotifications200ResponseEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamNotifications200ResponseSeverityEnumSerializer
@@ -161,23 +170,26 @@ class _$StreamNotifications200ResponseSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StreamNotifications200ResponseSeverityEnum
+    StreamNotifications200ResponseSeverityEnum,
   ];
   @override
   final String wireName = 'StreamNotifications200ResponseSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StreamNotifications200ResponseSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StreamNotifications200ResponseSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamNotifications200ResponseSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamNotifications200ResponseSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamNotifications200ResponseSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamNotifications200ResponseAlertStateEnumSerializer
@@ -196,38 +208,41 @@ class _$StreamNotifications200ResponseAlertStateEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StreamNotifications200ResponseAlertStateEnum
+    StreamNotifications200ResponseAlertStateEnum,
   ];
   @override
   final String wireName = 'StreamNotifications200ResponseAlertStateEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StreamNotifications200ResponseAlertStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StreamNotifications200ResponseAlertStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamNotifications200ResponseAlertStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamNotifications200ResponseAlertStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamNotifications200ResponseAlertStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamNotifications200Response extends StreamNotifications200Response {
   @override
   final AnyOf anyOf;
 
-  factory _$StreamNotifications200Response(
-          [void Function(StreamNotifications200ResponseBuilder)? updates]) =>
-      (StreamNotifications200ResponseBuilder()..update(updates))._build();
+  factory _$StreamNotifications200Response([
+    void Function(StreamNotifications200ResponseBuilder)? updates,
+  ]) => (StreamNotifications200ResponseBuilder()..update(updates))._build();
 
   _$StreamNotifications200Response._({required this.anyOf}) : super._();
   @override
   StreamNotifications200Response rebuild(
-          void Function(StreamNotifications200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StreamNotifications200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StreamNotifications200ResponseBuilder toBuilder() =>
@@ -249,16 +264,18 @@ class _$StreamNotifications200Response extends StreamNotifications200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'StreamNotifications200Response')
-          ..add('anyOf', anyOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'StreamNotifications200Response',
+    )..add('anyOf', anyOf)).toString();
   }
 }
 
 class StreamNotifications200ResponseBuilder
     implements
-        Builder<StreamNotifications200Response,
-            StreamNotifications200ResponseBuilder> {
+        Builder<
+          StreamNotifications200Response,
+          StreamNotifications200ResponseBuilder
+        > {
   _$StreamNotifications200Response? _$v;
 
   AnyOf? _anyOf;
@@ -292,10 +309,14 @@ class StreamNotifications200ResponseBuilder
   StreamNotifications200Response build() => _build();
 
   _$StreamNotifications200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StreamNotifications200Response._(
           anyOf: BuiltValueNullFieldError.checkNotNull(
-              anyOf, r'StreamNotifications200Response', 'anyOf'),
+            anyOf,
+            r'StreamNotifications200Response',
+            'anyOf',
+          ),
         );
     replace(_$result);
     return _$result;

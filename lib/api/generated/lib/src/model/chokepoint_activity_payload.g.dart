@@ -7,20 +7,20 @@ part of 'chokepoint_activity_payload.dart';
 // **************************************************************************
 
 const ChokepointActivityPayloadStatusEnum
-    _$chokepointActivityPayloadStatusEnum_ok =
+_$chokepointActivityPayloadStatusEnum_ok =
     const ChokepointActivityPayloadStatusEnum._('ok');
 const ChokepointActivityPayloadStatusEnum
-    _$chokepointActivityPayloadStatusEnum_insufficientData =
+_$chokepointActivityPayloadStatusEnum_insufficientData =
     const ChokepointActivityPayloadStatusEnum._('insufficientData');
 const ChokepointActivityPayloadStatusEnum
-    _$chokepointActivityPayloadStatusEnum_noCoverage =
+_$chokepointActivityPayloadStatusEnum_noCoverage =
     const ChokepointActivityPayloadStatusEnum._('noCoverage');
 const ChokepointActivityPayloadStatusEnum
-    _$chokepointActivityPayloadStatusEnum_degradedInput =
+_$chokepointActivityPayloadStatusEnum_degradedInput =
     const ChokepointActivityPayloadStatusEnum._('degradedInput');
 
 ChokepointActivityPayloadStatusEnum
-    _$chokepointActivityPayloadStatusEnumValueOf(String name) {
+_$chokepointActivityPayloadStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$chokepointActivityPayloadStatusEnum_ok;
@@ -36,29 +36,31 @@ ChokepointActivityPayloadStatusEnum
 }
 
 final BuiltSet<ChokepointActivityPayloadStatusEnum>
-    _$chokepointActivityPayloadStatusEnumValues = BuiltSet<
-        ChokepointActivityPayloadStatusEnum>(const <ChokepointActivityPayloadStatusEnum>[
-  _$chokepointActivityPayloadStatusEnum_ok,
-  _$chokepointActivityPayloadStatusEnum_insufficientData,
-  _$chokepointActivityPayloadStatusEnum_noCoverage,
-  _$chokepointActivityPayloadStatusEnum_degradedInput,
-]);
+_$chokepointActivityPayloadStatusEnumValues =
+    BuiltSet<ChokepointActivityPayloadStatusEnum>(
+      const <ChokepointActivityPayloadStatusEnum>[
+        _$chokepointActivityPayloadStatusEnum_ok,
+        _$chokepointActivityPayloadStatusEnum_insufficientData,
+        _$chokepointActivityPayloadStatusEnum_noCoverage,
+        _$chokepointActivityPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 const ChokepointActivityPayloadCoverageStatusEnum
-    _$chokepointActivityPayloadCoverageStatusEnum_ok =
+_$chokepointActivityPayloadCoverageStatusEnum_ok =
     const ChokepointActivityPayloadCoverageStatusEnum._('ok');
 const ChokepointActivityPayloadCoverageStatusEnum
-    _$chokepointActivityPayloadCoverageStatusEnum_insufficientData =
+_$chokepointActivityPayloadCoverageStatusEnum_insufficientData =
     const ChokepointActivityPayloadCoverageStatusEnum._('insufficientData');
 const ChokepointActivityPayloadCoverageStatusEnum
-    _$chokepointActivityPayloadCoverageStatusEnum_noCoverage =
+_$chokepointActivityPayloadCoverageStatusEnum_noCoverage =
     const ChokepointActivityPayloadCoverageStatusEnum._('noCoverage');
 const ChokepointActivityPayloadCoverageStatusEnum
-    _$chokepointActivityPayloadCoverageStatusEnum_degradedInput =
+_$chokepointActivityPayloadCoverageStatusEnum_degradedInput =
     const ChokepointActivityPayloadCoverageStatusEnum._('degradedInput');
 
 ChokepointActivityPayloadCoverageStatusEnum
-    _$chokepointActivityPayloadCoverageStatusEnumValueOf(String name) {
+_$chokepointActivityPayloadCoverageStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$chokepointActivityPayloadCoverageStatusEnum_ok;
@@ -74,19 +76,21 @@ ChokepointActivityPayloadCoverageStatusEnum
 }
 
 final BuiltSet<ChokepointActivityPayloadCoverageStatusEnum>
-    _$chokepointActivityPayloadCoverageStatusEnumValues = BuiltSet<
-        ChokepointActivityPayloadCoverageStatusEnum>(const <ChokepointActivityPayloadCoverageStatusEnum>[
-  _$chokepointActivityPayloadCoverageStatusEnum_ok,
-  _$chokepointActivityPayloadCoverageStatusEnum_insufficientData,
-  _$chokepointActivityPayloadCoverageStatusEnum_noCoverage,
-  _$chokepointActivityPayloadCoverageStatusEnum_degradedInput,
-]);
+_$chokepointActivityPayloadCoverageStatusEnumValues =
+    BuiltSet<ChokepointActivityPayloadCoverageStatusEnum>(
+      const <ChokepointActivityPayloadCoverageStatusEnum>[
+        _$chokepointActivityPayloadCoverageStatusEnum_ok,
+        _$chokepointActivityPayloadCoverageStatusEnum_insufficientData,
+        _$chokepointActivityPayloadCoverageStatusEnum_noCoverage,
+        _$chokepointActivityPayloadCoverageStatusEnum_degradedInput,
+      ],
+    );
 
 Serializer<ChokepointActivityPayloadStatusEnum>
-    _$chokepointActivityPayloadStatusEnumSerializer =
+_$chokepointActivityPayloadStatusEnumSerializer =
     _$ChokepointActivityPayloadStatusEnumSerializer();
 Serializer<ChokepointActivityPayloadCoverageStatusEnum>
-    _$chokepointActivityPayloadCoverageStatusEnumSerializer =
+_$chokepointActivityPayloadCoverageStatusEnumSerializer =
     _$ChokepointActivityPayloadCoverageStatusEnumSerializer();
 
 class _$ChokepointActivityPayloadStatusEnumSerializer
@@ -106,23 +110,26 @@ class _$ChokepointActivityPayloadStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChokepointActivityPayloadStatusEnum
+    ChokepointActivityPayloadStatusEnum,
   ];
   @override
   final String wireName = 'ChokepointActivityPayloadStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ChokepointActivityPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChokepointActivityPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChokepointActivityPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChokepointActivityPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChokepointActivityPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChokepointActivityPayloadCoverageStatusEnumSerializer
@@ -143,23 +150,26 @@ class _$ChokepointActivityPayloadCoverageStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChokepointActivityPayloadCoverageStatusEnum
+    ChokepointActivityPayloadCoverageStatusEnum,
   ];
   @override
   final String wireName = 'ChokepointActivityPayloadCoverageStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChokepointActivityPayloadCoverageStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChokepointActivityPayloadCoverageStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChokepointActivityPayloadCoverageStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChokepointActivityPayloadCoverageStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChokepointActivityPayloadCoverageStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChokepointActivityPayload extends ChokepointActivityPayload {
@@ -190,29 +200,29 @@ class _$ChokepointActivityPayload extends ChokepointActivityPayload {
   @override
   final ChokepointActivityPayloadCoverageStatusEnum? coverageStatus;
 
-  factory _$ChokepointActivityPayload(
-          [void Function(ChokepointActivityPayloadBuilder)? updates]) =>
-      (ChokepointActivityPayloadBuilder()..update(updates))._build();
+  factory _$ChokepointActivityPayload([
+    void Function(ChokepointActivityPayloadBuilder)? updates,
+  ]) => (ChokepointActivityPayloadBuilder()..update(updates))._build();
 
-  _$ChokepointActivityPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.chokepointId,
-      this.name,
-      required this.hourStart,
-      this.transits,
-      this.uTurns,
-      this.stopped,
-      this.coverageStatus})
-      : super._();
+  _$ChokepointActivityPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.chokepointId,
+    this.name,
+    required this.hourStart,
+    this.transits,
+    this.uTurns,
+    this.stopped,
+    this.coverageStatus,
+  }) : super._();
   @override
   ChokepointActivityPayload rebuild(
-          void Function(ChokepointActivityPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChokepointActivityPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChokepointActivityPayloadBuilder toBuilder() =>
@@ -339,8 +349,8 @@ class ChokepointActivityPayloadBuilder
   ChokepointActivityPayloadCoverageStatusEnum? get coverageStatus =>
       _$this._coverageStatus;
   set coverageStatus(
-          ChokepointActivityPayloadCoverageStatusEnum? coverageStatus) =>
-      _$this._coverageStatus = coverageStatus;
+    ChokepointActivityPayloadCoverageStatusEnum? coverageStatus,
+  ) => _$this._coverageStatus = coverageStatus;
 
   ChokepointActivityPayloadBuilder() {
     ChokepointActivityPayload._defaults(this);
@@ -383,22 +393,38 @@ class ChokepointActivityPayloadBuilder
   _$ChokepointActivityPayload _build() {
     _$ChokepointActivityPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChokepointActivityPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'ChokepointActivityPayload', 'automated'),
+              automated,
+              r'ChokepointActivityPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'ChokepointActivityPayload', 'notAWarning'),
+              notAWarning,
+              r'ChokepointActivityPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ChokepointActivityPayload', 'status'),
+              status,
+              r'ChokepointActivityPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             chokepointId: BuiltValueNullFieldError.checkNotNull(
-                chokepointId, r'ChokepointActivityPayload', 'chokepointId'),
+              chokepointId,
+              r'ChokepointActivityPayload',
+              'chokepointId',
+            ),
             name: name,
             hourStart: BuiltValueNullFieldError.checkNotNull(
-                hourStart, r'ChokepointActivityPayload', 'hourStart'),
+              hourStart,
+              r'ChokepointActivityPayload',
+              'hourStart',
+            ),
             transits: transits,
             uTurns: uTurns,
             stopped: stopped,
@@ -414,7 +440,10 @@ class ChokepointActivityPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChokepointActivityPayload', _$failedField, e.toString());
+          r'ChokepointActivityPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

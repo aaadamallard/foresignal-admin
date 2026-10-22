@@ -6,12 +6,15 @@ part of 'style.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const StyleTypeEnum _$styleTypeEnum_continuous =
-    const StyleTypeEnum._('continuous');
-const StyleTypeEnum _$styleTypeEnum_discrete =
-    const StyleTypeEnum._('discrete');
-const StyleTypeEnum _$styleTypeEnum_categorical =
-    const StyleTypeEnum._('categorical');
+const StyleTypeEnum _$styleTypeEnum_continuous = const StyleTypeEnum._(
+  'continuous',
+);
+const StyleTypeEnum _$styleTypeEnum_discrete = const StyleTypeEnum._(
+  'discrete',
+);
+const StyleTypeEnum _$styleTypeEnum_categorical = const StyleTypeEnum._(
+  'categorical',
+);
 
 StyleTypeEnum _$styleTypeEnumValueOf(String name) {
   switch (name) {
@@ -26,15 +29,17 @@ StyleTypeEnum _$styleTypeEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<StyleTypeEnum> _$styleTypeEnumValues =
-    BuiltSet<StyleTypeEnum>(const <StyleTypeEnum>[
-  _$styleTypeEnum_continuous,
-  _$styleTypeEnum_discrete,
-  _$styleTypeEnum_categorical,
-]);
+final BuiltSet<StyleTypeEnum> _$styleTypeEnumValues = BuiltSet<StyleTypeEnum>(
+  const <StyleTypeEnum>[
+    _$styleTypeEnum_continuous,
+    _$styleTypeEnum_discrete,
+    _$styleTypeEnum_categorical,
+  ],
+);
 
-const StyleDeriveEnum _$styleDeriveEnum_speed =
-    const StyleDeriveEnum._('speed');
+const StyleDeriveEnum _$styleDeriveEnum_speed = const StyleDeriveEnum._(
+  'speed',
+);
 
 StyleDeriveEnum _$styleDeriveEnumValueOf(String name) {
   switch (name) {
@@ -46,9 +51,7 @@ StyleDeriveEnum _$styleDeriveEnumValueOf(String name) {
 }
 
 final BuiltSet<StyleDeriveEnum> _$styleDeriveEnumValues =
-    BuiltSet<StyleDeriveEnum>(const <StyleDeriveEnum>[
-  _$styleDeriveEnum_speed,
-]);
+    BuiltSet<StyleDeriveEnum>(const <StyleDeriveEnum>[_$styleDeriveEnum_speed]);
 
 Serializer<StyleTypeEnum> _$styleTypeEnumSerializer =
     _$StyleTypeEnumSerializer();
@@ -73,15 +76,20 @@ class _$StyleTypeEnumSerializer implements PrimitiveSerializer<StyleTypeEnum> {
   final String wireName = 'StyleTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, StyleTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StyleTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StyleTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StyleTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StyleTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StyleTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StyleDeriveEnumSerializer
@@ -99,15 +107,20 @@ class _$StyleDeriveEnumSerializer
   final String wireName = 'StyleDeriveEnum';
 
   @override
-  Object serialize(Serializers serializers, StyleDeriveEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StyleDeriveEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StyleDeriveEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StyleDeriveEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StyleDeriveEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StyleDeriveEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Style extends Style {
@@ -139,20 +152,20 @@ class _$Style extends Style {
   factory _$Style([void Function(StyleBuilder)? updates]) =>
       (StyleBuilder()..update(updates))._build();
 
-  _$Style._(
-      {required this.id,
-      required this.version,
-      required this.ref,
-      this.current,
-      required this.type,
-      this.units,
-      this.stops,
-      this.categories,
-      this.specials,
-      this.meaning,
-      this.notice,
-      this.derive})
-      : super._();
+  _$Style._({
+    required this.id,
+    required this.version,
+    required this.ref,
+    this.current,
+    required this.type,
+    this.units,
+    this.stops,
+    this.categories,
+    this.specials,
+    this.meaning,
+    this.notice,
+    this.derive,
+  }) : super._();
   @override
   Style rebuild(void Function(StyleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -313,11 +326,15 @@ class StyleBuilder implements Builder<Style, StyleBuilder> {
   _$Style _build() {
     _$Style _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Style._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Style', 'id'),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'Style', 'version'),
+              version,
+              r'Style',
+              'version',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(ref, r'Style', 'ref'),
             current: current,
             type: BuiltValueNullFieldError.checkNotNull(type, r'Style', 'type'),

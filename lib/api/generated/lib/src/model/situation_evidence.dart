@@ -64,8 +64,9 @@ class _$SituationEvidenceSerializer
     yield r'families';
     yield serializers.serialize(
       object.families,
-      specifiedType:
-          const FullType(BuiltList, [FullType(SituationEvidenceFamiliesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SituationEvidenceFamiliesInner),
+      ]),
     );
     yield r'corroboration';
     yield serializers.serialize(
@@ -80,9 +81,11 @@ class _$SituationEvidenceSerializer
     SituationEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,25 +101,36 @@ class _$SituationEvidenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'memberCounts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationEvidenceMemberCounts),
-          ) as SituationEvidenceMemberCounts;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SituationEvidenceMemberCounts,
+                    ),
+                  )
+                  as SituationEvidenceMemberCounts;
           result.memberCounts.replace(valueDes);
           break;
         case r'families':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(SituationEvidenceFamiliesInner)]),
-          ) as BuiltList<SituationEvidenceFamiliesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SituationEvidenceFamiliesInner),
+                    ]),
+                  )
+                  as BuiltList<SituationEvidenceFamiliesInner>;
           result.families.replace(valueDes);
           break;
         case r'corroboration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationEvidenceCorroboration),
-          ) as SituationEvidenceCorroboration;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SituationEvidenceCorroboration,
+                    ),
+                  )
+                  as SituationEvidenceCorroboration;
           result.corroboration.replace(valueDes);
           break;
         default:

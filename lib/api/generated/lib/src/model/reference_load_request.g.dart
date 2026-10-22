@@ -10,15 +10,15 @@ class _$ReferenceLoadRequest extends ReferenceLoadRequest {
   @override
   final BuiltList<String> datasets;
 
-  factory _$ReferenceLoadRequest(
-          [void Function(ReferenceLoadRequestBuilder)? updates]) =>
-      (ReferenceLoadRequestBuilder()..update(updates))._build();
+  factory _$ReferenceLoadRequest([
+    void Function(ReferenceLoadRequestBuilder)? updates,
+  ]) => (ReferenceLoadRequestBuilder()..update(updates))._build();
 
   _$ReferenceLoadRequest._({required this.datasets}) : super._();
   @override
   ReferenceLoadRequest rebuild(
-          void Function(ReferenceLoadRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReferenceLoadRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReferenceLoadRequestBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$ReferenceLoadRequest extends ReferenceLoadRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ReferenceLoadRequest')
-          ..add('datasets', datasets))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ReferenceLoadRequest',
+    )..add('datasets', datasets)).toString();
   }
 }
 
@@ -84,10 +84,7 @@ class ReferenceLoadRequestBuilder
   _$ReferenceLoadRequest _build() {
     _$ReferenceLoadRequest _$result;
     try {
-      _$result = _$v ??
-          _$ReferenceLoadRequest._(
-            datasets: datasets.build(),
-          );
+      _$result = _$v ?? _$ReferenceLoadRequest._(datasets: datasets.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95,7 +92,10 @@ class ReferenceLoadRequestBuilder
         datasets.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReferenceLoadRequest', _$failedField, e.toString());
+          r'ReferenceLoadRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

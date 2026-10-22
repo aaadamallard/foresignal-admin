@@ -145,8 +145,9 @@ class _$PropagationGraphSerializer
     yield r'earliestByPlatform';
     yield serializers.serialize(
       object.earliestByPlatform,
-      specifiedType: const FullType(
-          BuiltList, [FullType(PropagationGraphEarliestByPlatformInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(PropagationGraphEarliestByPlatformInner),
+      ]),
     );
     if (object.firstNewsPickup != null) {
       yield r'firstNewsPickup';
@@ -163,8 +164,9 @@ class _$PropagationGraphSerializer
     yield r'crossPlatformOrder';
     yield serializers.serialize(
       object.crossPlatformOrder,
-      specifiedType: const FullType(
-          BuiltList, [FullType(PropagationGraphCrossPlatformOrderInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(PropagationGraphCrossPlatformOrderInner),
+      ]),
     );
     if (object.medianRepostDelaySeconds != null) {
       yield r'medianRepostDelaySeconds';
@@ -177,8 +179,9 @@ class _$PropagationGraphSerializer
       yield r'provenanceChain';
       yield serializers.serialize(
         object.provenanceChain,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ProvenanceChainEntry)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProvenanceChainEntry),
+        ]),
       );
     }
     yield r'tracer';
@@ -206,9 +209,11 @@ class _$PropagationGraphSerializer
     PropagationGraph object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -224,117 +229,144 @@ class _$PropagationGraphSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'narrativeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.narrativeId = valueDes;
           break;
         case r'summarised':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.summarised = valueDes;
           break;
         case r'totalNodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalNodes = valueDes;
           break;
         case r'totalEdges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalEdges = valueDes;
           break;
         case r'nodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(PropagationNode)]),
-          ) as BuiltList<PropagationNode>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PropagationNode),
+                    ]),
+                  )
+                  as BuiltList<PropagationNode>;
           result.nodes.replace(valueDes);
           break;
         case r'edges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(PropagationEdge)]),
-          ) as BuiltList<PropagationEdge>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PropagationEdge),
+                    ]),
+                  )
+                  as BuiltList<PropagationEdge>;
           result.edges.replace(valueDes);
           break;
         case r'earliestByPlatform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(PropagationGraphEarliestByPlatformInner)]),
-          ) as BuiltList<PropagationGraphEarliestByPlatformInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PropagationGraphEarliestByPlatformInner),
+                    ]),
+                  )
+                  as BuiltList<PropagationGraphEarliestByPlatformInner>;
           result.earliestByPlatform.replace(valueDes);
           break;
         case r'firstNewsPickup':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PropagationGraphFirstNewsPickup),
-          ) as PropagationGraphFirstNewsPickup?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PropagationGraphFirstNewsPickup,
+                    ),
+                  )
+                  as PropagationGraphFirstNewsPickup?;
           if (valueDes == null) continue;
           result.firstNewsPickup.replace(valueDes);
           break;
         case r'descentShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.descentShare = valueDes;
           break;
         case r'crossPlatformOrder':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(PropagationGraphCrossPlatformOrderInner)]),
-          ) as BuiltList<PropagationGraphCrossPlatformOrderInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PropagationGraphCrossPlatformOrderInner),
+                    ]),
+                  )
+                  as BuiltList<PropagationGraphCrossPlatformOrderInner>;
           result.crossPlatformOrder.replace(valueDes);
           break;
         case r'medianRepostDelaySeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.medianRepostDelaySeconds = valueDes;
           break;
         case r'provenanceChain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProvenanceChainEntry)]),
-          ) as BuiltList<ProvenanceChainEntry>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProvenanceChainEntry),
+                    ]),
+                  )
+                  as BuiltList<ProvenanceChainEntry>?;
           if (valueDes == null) continue;
           result.provenanceChain.replace(valueDes);
           break;
         case r'tracer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.tracer.replace(valueDes);
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;

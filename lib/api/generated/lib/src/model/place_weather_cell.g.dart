@@ -22,19 +22,19 @@ class _$PlaceWeatherCell extends PlaceWeatherCell {
   @override
   final int? etaBearingDeg;
 
-  factory _$PlaceWeatherCell(
-          [void Function(PlaceWeatherCellBuilder)? updates]) =>
-      (PlaceWeatherCellBuilder()..update(updates))._build();
+  factory _$PlaceWeatherCell([
+    void Function(PlaceWeatherCellBuilder)? updates,
+  ]) => (PlaceWeatherCellBuilder()..update(updates))._build();
 
-  _$PlaceWeatherCell._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.eta50Min,
-      this.etaCellId,
-      this.etaSpeedKmh,
-      this.etaBearingDeg})
-      : super._();
+  _$PlaceWeatherCell._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.eta50Min,
+    this.etaCellId,
+    this.etaSpeedKmh,
+    this.etaBearingDeg,
+  }) : super._();
   @override
   PlaceWeatherCell rebuild(void Function(PlaceWeatherCellBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -150,10 +150,14 @@ class PlaceWeatherCellBuilder
   PlaceWeatherCell build() => _build();
 
   _$PlaceWeatherCell _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherCell._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherCell', 'status'),
+            status,
+            r'PlaceWeatherCell',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           eta50Min: eta50Min,

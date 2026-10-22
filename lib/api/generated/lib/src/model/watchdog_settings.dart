@@ -109,9 +109,11 @@ class _$WatchdogSettingsSerializer
     WatchdogSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,42 +129,56 @@ class _$WatchdogSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'heartbeatUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.heartbeatUrl = valueDes;
           break;
         case r'failUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.failUrl = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.interval = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WatchdogSettingsMethodEnum),
-          ) as WatchdogSettingsMethodEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WatchdogSettingsMethodEnum,
+                    ),
+                  )
+                  as WatchdogSettingsMethodEnum?;
           if (valueDes == null) continue;
           result.method = valueDes;
           break;
         case r'canary':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WatchdogSettingsCanary),
-          ) as WatchdogSettingsCanary?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WatchdogSettingsCanary,
+                    ),
+                  )
+                  as WatchdogSettingsCanary?;
           if (valueDes == null) continue;
           result.canary.replace(valueDes);
           break;

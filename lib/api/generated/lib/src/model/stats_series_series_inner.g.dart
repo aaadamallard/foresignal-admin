@@ -12,15 +12,15 @@ class _$StatsSeriesSeriesInner extends StatsSeriesSeriesInner {
   @override
   final BuiltList<StatsSeriesSeriesInnerPointsInner> points;
 
-  factory _$StatsSeriesSeriesInner(
-          [void Function(StatsSeriesSeriesInnerBuilder)? updates]) =>
-      (StatsSeriesSeriesInnerBuilder()..update(updates))._build();
+  factory _$StatsSeriesSeriesInner([
+    void Function(StatsSeriesSeriesInnerBuilder)? updates,
+  ]) => (StatsSeriesSeriesInnerBuilder()..update(updates))._build();
 
   _$StatsSeriesSeriesInner._({this.key, required this.points}) : super._();
   @override
   StatsSeriesSeriesInner rebuild(
-          void Function(StatsSeriesSeriesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsSeriesSeriesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsSeriesSeriesInnerBuilder toBuilder() =>
@@ -96,11 +96,8 @@ class StatsSeriesSeriesInnerBuilder
   _$StatsSeriesSeriesInner _build() {
     _$StatsSeriesSeriesInner _$result;
     try {
-      _$result = _$v ??
-          _$StatsSeriesSeriesInner._(
-            key: key,
-            points: points.build(),
-          );
+      _$result =
+          _$v ?? _$StatsSeriesSeriesInner._(key: key, points: points.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -108,7 +105,10 @@ class StatsSeriesSeriesInnerBuilder
         points.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StatsSeriesSeriesInner', _$failedField, e.toString());
+          r'StatsSeriesSeriesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

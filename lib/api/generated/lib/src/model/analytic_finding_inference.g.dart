@@ -16,20 +16,20 @@ class _$AnalyticFindingInference extends AnalyticFindingInference {
   @override
   final String explanation;
 
-  factory _$AnalyticFindingInference(
-          [void Function(AnalyticFindingInferenceBuilder)? updates]) =>
-      (AnalyticFindingInferenceBuilder()..update(updates))._build();
+  factory _$AnalyticFindingInference([
+    void Function(AnalyticFindingInferenceBuilder)? updates,
+  ]) => (AnalyticFindingInferenceBuilder()..update(updates))._build();
 
-  _$AnalyticFindingInference._(
-      {required this.detector,
-      required this.stats,
-      required this.baseRate,
-      required this.explanation})
-      : super._();
+  _$AnalyticFindingInference._({
+    required this.detector,
+    required this.stats,
+    required this.baseRate,
+    required this.explanation,
+  }) : super._();
   @override
   AnalyticFindingInference rebuild(
-          void Function(AnalyticFindingInferenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalyticFindingInferenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalyticFindingInferenceBuilder toBuilder() =>
@@ -122,13 +122,17 @@ class AnalyticFindingInferenceBuilder
   _$AnalyticFindingInference _build() {
     _$AnalyticFindingInference _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalyticFindingInference._(
             detector: detector.build(),
             stats: stats.build(),
             baseRate: baseRate.build(),
             explanation: BuiltValueNullFieldError.checkNotNull(
-                explanation, r'AnalyticFindingInference', 'explanation'),
+              explanation,
+              r'AnalyticFindingInference',
+              'explanation',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -141,7 +145,10 @@ class AnalyticFindingInferenceBuilder
         baseRate.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalyticFindingInference', _$failedField, e.toString());
+          r'AnalyticFindingInference',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

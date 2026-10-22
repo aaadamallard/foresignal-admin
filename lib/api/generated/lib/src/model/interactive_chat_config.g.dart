@@ -20,22 +20,22 @@ class _$InteractiveChatConfig extends InteractiveChatConfig {
   @override
   final bool? discoveryMode;
 
-  factory _$InteractiveChatConfig(
-          [void Function(InteractiveChatConfigBuilder)? updates]) =>
-      (InteractiveChatConfigBuilder()..update(updates))._build();
+  factory _$InteractiveChatConfig([
+    void Function(InteractiveChatConfigBuilder)? updates,
+  ]) => (InteractiveChatConfigBuilder()..update(updates))._build();
 
-  _$InteractiveChatConfig._(
-      {this.interactive,
-      this.allowedChats,
-      this.askRateLimitPerHour,
-      this.commandRateLimit,
-      this.takeOverWebhook,
-      this.discoveryMode})
-      : super._();
+  _$InteractiveChatConfig._({
+    this.interactive,
+    this.allowedChats,
+    this.askRateLimitPerHour,
+    this.commandRateLimit,
+    this.takeOverWebhook,
+    this.discoveryMode,
+  }) : super._();
   @override
   InteractiveChatConfig rebuild(
-          void Function(InteractiveChatConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InteractiveChatConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InteractiveChatConfigBuilder toBuilder() =>
@@ -147,7 +147,8 @@ class InteractiveChatConfigBuilder
   _$InteractiveChatConfig _build() {
     _$InteractiveChatConfig _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InteractiveChatConfig._(
             interactive: interactive,
             allowedChats: _allowedChats?.build(),
@@ -163,7 +164,10 @@ class InteractiveChatConfigBuilder
         _allowedChats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InteractiveChatConfig', _$failedField, e.toString());
+          r'InteractiveChatConfig',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

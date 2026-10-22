@@ -36,9 +36,9 @@ abstract class RetentionSettingsStats
 
   RetentionSettingsStats._();
 
-  factory RetentionSettingsStats(
-          [void updates(RetentionSettingsStatsBuilder b)]) =
-      _$RetentionSettingsStats;
+  factory RetentionSettingsStats([
+    void updates(RetentionSettingsStatsBuilder b),
+  ]) = _$RetentionSettingsStats;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RetentionSettingsStatsBuilder b) => b;
@@ -53,7 +53,7 @@ class _$RetentionSettingsStatsSerializer
   @override
   final Iterable<Type> types = const [
     RetentionSettingsStats,
-    _$RetentionSettingsStats
+    _$RetentionSettingsStats,
   ];
 
   @override
@@ -100,9 +100,11 @@ class _$RetentionSettingsStatsSerializer
     RetentionSettingsStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,34 +120,42 @@ class _$RetentionSettingsStatsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'hourly':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.hourly = valueDes;
           break;
         case r'daily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.daily = valueDes;
           break;
         case r'regionHourly':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionHourly = valueDes;
           break;
         case r'regionDaily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionDaily = valueDes;
           break;

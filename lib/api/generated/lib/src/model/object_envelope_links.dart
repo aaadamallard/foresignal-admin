@@ -40,7 +40,7 @@ class _$ObjectEnvelopeLinksSerializer
   @override
   final Iterable<Type> types = const [
     ObjectEnvelopeLinks,
-    _$ObjectEnvelopeLinks
+    _$ObjectEnvelopeLinks,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$ObjectEnvelopeLinksSerializer
     ObjectEnvelopeLinks object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +93,22 @@ class _$ObjectEnvelopeLinksSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'self':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.self = valueDes;
           break;
         case r'related':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.related = valueDes;
           break;

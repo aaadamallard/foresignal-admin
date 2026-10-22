@@ -20,8 +20,8 @@ TileLayerIndexTilejsonEnum _$tileLayerIndexTilejsonEnumValueOf(String name) {
 
 final BuiltSet<TileLayerIndexTilejsonEnum> _$tileLayerIndexTilejsonEnumValues =
     BuiltSet<TileLayerIndexTilejsonEnum>(const <TileLayerIndexTilejsonEnum>[
-  _$tileLayerIndexTilejsonEnum_n3period0Period0,
-]);
+      _$tileLayerIndexTilejsonEnum_n3period0Period0,
+    ]);
 
 Serializer<TileLayerIndexTilejsonEnum> _$tileLayerIndexTilejsonEnumSerializer =
     _$TileLayerIndexTilejsonEnumSerializer();
@@ -41,16 +41,20 @@ class _$TileLayerIndexTilejsonEnumSerializer
   final String wireName = 'TileLayerIndexTilejsonEnum';
 
   @override
-  Object serialize(Serializers serializers, TileLayerIndexTilejsonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TileLayerIndexTilejsonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TileLayerIndexTilejsonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TileLayerIndexTilejsonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TileLayerIndexTilejsonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TileLayerIndex extends TileLayerIndex {
@@ -63,7 +67,7 @@ class _$TileLayerIndex extends TileLayerIndex {
       (TileLayerIndexBuilder()..update(updates))._build();
 
   _$TileLayerIndex._({required this.tilejson, required this.layers})
-      : super._();
+    : super._();
   @override
   TileLayerIndex rebuild(void Function(TileLayerIndexBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -142,10 +146,14 @@ class TileLayerIndexBuilder
   _$TileLayerIndex _build() {
     _$TileLayerIndex _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TileLayerIndex._(
             tilejson: BuiltValueNullFieldError.checkNotNull(
-                tilejson, r'TileLayerIndex', 'tilejson'),
+              tilejson,
+              r'TileLayerIndex',
+              'tilejson',
+            ),
             layers: layers.build(),
           );
     } catch (_) {
@@ -155,7 +163,10 @@ class TileLayerIndexBuilder
         layers.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TileLayerIndex', _$failedField, e.toString());
+          r'TileLayerIndex',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

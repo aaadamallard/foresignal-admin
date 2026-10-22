@@ -40,9 +40,9 @@ abstract class IntelBoardSituationsInner
 
   IntelBoardSituationsInner._();
 
-  factory IntelBoardSituationsInner(
-          [void updates(IntelBoardSituationsInnerBuilder b)]) =
-      _$IntelBoardSituationsInner;
+  factory IntelBoardSituationsInner([
+    void updates(IntelBoardSituationsInnerBuilder b),
+  ]) = _$IntelBoardSituationsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardSituationsInnerBuilder b) => b;
@@ -57,7 +57,7 @@ class _$IntelBoardSituationsInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardSituationsInner,
-    _$IntelBoardSituationsInner
+    _$IntelBoardSituationsInner,
   ];
 
   @override
@@ -105,9 +105,11 @@ class _$IntelBoardSituationsInnerSerializer
     IntelBoardSituationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,39 +125,49 @@ class _$IntelBoardSituationsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.status = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Severity),
-          ) as Severity;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Severity),
+                  )
+                  as Severity;
           result.severity = valueDes;
           break;
         case r'lastActivityAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastActivityAt = valueDes;
           break;

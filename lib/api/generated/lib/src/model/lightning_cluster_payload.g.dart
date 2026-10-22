@@ -7,29 +7,29 @@ part of 'lightning_cluster_payload.dart';
 // **************************************************************************
 
 const LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnum_number3 =
+_$lightningClusterPayloadFlashes5mEnum_number3 =
     const LightningClusterPayloadFlashes5mEnum._('number3');
 const LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnum_number5 =
+_$lightningClusterPayloadFlashes5mEnum_number5 =
     const LightningClusterPayloadFlashes5mEnum._('number5');
 const LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnum_number10 =
+_$lightningClusterPayloadFlashes5mEnum_number10 =
     const LightningClusterPayloadFlashes5mEnum._('number10');
 const LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnum_number20 =
+_$lightningClusterPayloadFlashes5mEnum_number20 =
     const LightningClusterPayloadFlashes5mEnum._('number20');
 const LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnum_number50 =
+_$lightningClusterPayloadFlashes5mEnum_number50 =
     const LightningClusterPayloadFlashes5mEnum._('number50');
 const LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnum_number100 =
+_$lightningClusterPayloadFlashes5mEnum_number100 =
     const LightningClusterPayloadFlashes5mEnum._('number100');
 const LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnum_number200 =
+_$lightningClusterPayloadFlashes5mEnum_number200 =
     const LightningClusterPayloadFlashes5mEnum._('number200');
 
 LightningClusterPayloadFlashes5mEnum
-    _$lightningClusterPayloadFlashes5mEnumValueOf(String name) {
+_$lightningClusterPayloadFlashes5mEnumValueOf(String name) {
   switch (name) {
     case 'number3':
       return _$lightningClusterPayloadFlashes5mEnum_number3;
@@ -51,19 +51,21 @@ LightningClusterPayloadFlashes5mEnum
 }
 
 final BuiltSet<LightningClusterPayloadFlashes5mEnum>
-    _$lightningClusterPayloadFlashes5mEnumValues = BuiltSet<
-        LightningClusterPayloadFlashes5mEnum>(const <LightningClusterPayloadFlashes5mEnum>[
-  _$lightningClusterPayloadFlashes5mEnum_number3,
-  _$lightningClusterPayloadFlashes5mEnum_number5,
-  _$lightningClusterPayloadFlashes5mEnum_number10,
-  _$lightningClusterPayloadFlashes5mEnum_number20,
-  _$lightningClusterPayloadFlashes5mEnum_number50,
-  _$lightningClusterPayloadFlashes5mEnum_number100,
-  _$lightningClusterPayloadFlashes5mEnum_number200,
-]);
+_$lightningClusterPayloadFlashes5mEnumValues =
+    BuiltSet<LightningClusterPayloadFlashes5mEnum>(
+      const <LightningClusterPayloadFlashes5mEnum>[
+        _$lightningClusterPayloadFlashes5mEnum_number3,
+        _$lightningClusterPayloadFlashes5mEnum_number5,
+        _$lightningClusterPayloadFlashes5mEnum_number10,
+        _$lightningClusterPayloadFlashes5mEnum_number20,
+        _$lightningClusterPayloadFlashes5mEnum_number50,
+        _$lightningClusterPayloadFlashes5mEnum_number100,
+        _$lightningClusterPayloadFlashes5mEnum_number200,
+      ],
+    );
 
 Serializer<LightningClusterPayloadFlashes5mEnum>
-    _$lightningClusterPayloadFlashes5mEnumSerializer =
+_$lightningClusterPayloadFlashes5mEnumSerializer =
     _$LightningClusterPayloadFlashes5mEnumSerializer();
 
 class _$LightningClusterPayloadFlashes5mEnumSerializer
@@ -89,23 +91,26 @@ class _$LightningClusterPayloadFlashes5mEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    LightningClusterPayloadFlashes5mEnum
+    LightningClusterPayloadFlashes5mEnum,
   ];
   @override
   final String wireName = 'LightningClusterPayloadFlashes5mEnum';
 
   @override
   Object serialize(
-          Serializers serializers, LightningClusterPayloadFlashes5mEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LightningClusterPayloadFlashes5mEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LightningClusterPayloadFlashes5mEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LightningClusterPayloadFlashes5mEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LightningClusterPayloadFlashes5mEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LightningClusterPayload extends LightningClusterPayload {
@@ -122,22 +127,22 @@ class _$LightningClusterPayload extends LightningClusterPayload {
   @override
   final bool notAWarning;
 
-  factory _$LightningClusterPayload(
-          [void Function(LightningClusterPayloadBuilder)? updates]) =>
-      (LightningClusterPayloadBuilder()..update(updates))._build();
+  factory _$LightningClusterPayload([
+    void Function(LightningClusterPayloadBuilder)? updates,
+  ]) => (LightningClusterPayloadBuilder()..update(updates))._build();
 
-  _$LightningClusterPayload._(
-      {required this.flashes5m,
-      this.radiusKm,
-      this.maxEnergyFj,
-      required this.label,
-      required this.automated,
-      required this.notAWarning})
-      : super._();
+  _$LightningClusterPayload._({
+    required this.flashes5m,
+    this.radiusKm,
+    this.maxEnergyFj,
+    required this.label,
+    required this.automated,
+    required this.notAWarning,
+  }) : super._();
   @override
   LightningClusterPayload rebuild(
-          void Function(LightningClusterPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(LightningClusterPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   LightningClusterPayloadBuilder toBuilder() =>
@@ -243,18 +248,31 @@ class LightningClusterPayloadBuilder
   LightningClusterPayload build() => _build();
 
   _$LightningClusterPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LightningClusterPayload._(
           flashes5m: BuiltValueNullFieldError.checkNotNull(
-              flashes5m, r'LightningClusterPayload', 'flashes5m'),
+            flashes5m,
+            r'LightningClusterPayload',
+            'flashes5m',
+          ),
           radiusKm: radiusKm,
           maxEnergyFj: maxEnergyFj,
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'LightningClusterPayload', 'label'),
+            label,
+            r'LightningClusterPayload',
+            'label',
+          ),
           automated: BuiltValueNullFieldError.checkNotNull(
-              automated, r'LightningClusterPayload', 'automated'),
+            automated,
+            r'LightningClusterPayload',
+            'automated',
+          ),
           notAWarning: BuiltValueNullFieldError.checkNotNull(
-              notAWarning, r'LightningClusterPayload', 'notAWarning'),
+            notAWarning,
+            r'LightningClusterPayload',
+            'notAWarning',
+          ),
         );
     replace(_$result);
     return _$result;

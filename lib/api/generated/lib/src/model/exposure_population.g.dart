@@ -14,7 +14,8 @@ const ExposurePopulationStatusEnum _$exposurePopulationStatusEnum_notInstalled =
     const ExposurePopulationStatusEnum._('notInstalled');
 
 ExposurePopulationStatusEnum _$exposurePopulationStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$exposurePopulationStatusEnum_ok;
@@ -28,15 +29,15 @@ ExposurePopulationStatusEnum _$exposurePopulationStatusEnumValueOf(
 }
 
 final BuiltSet<ExposurePopulationStatusEnum>
-    _$exposurePopulationStatusEnumValues =
+_$exposurePopulationStatusEnumValues =
     BuiltSet<ExposurePopulationStatusEnum>(const <ExposurePopulationStatusEnum>[
-  _$exposurePopulationStatusEnum_ok,
-  _$exposurePopulationStatusEnum_unavailable,
-  _$exposurePopulationStatusEnum_notInstalled,
-]);
+      _$exposurePopulationStatusEnum_ok,
+      _$exposurePopulationStatusEnum_unavailable,
+      _$exposurePopulationStatusEnum_notInstalled,
+    ]);
 
 Serializer<ExposurePopulationStatusEnum>
-    _$exposurePopulationStatusEnumSerializer =
+_$exposurePopulationStatusEnumSerializer =
     _$ExposurePopulationStatusEnumSerializer();
 
 class _$ExposurePopulationStatusEnumSerializer
@@ -58,16 +59,20 @@ class _$ExposurePopulationStatusEnumSerializer
   final String wireName = 'ExposurePopulationStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ExposurePopulationStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExposurePopulationStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExposurePopulationStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExposurePopulationStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExposurePopulationStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExposurePopulation extends ExposurePopulation {
@@ -84,22 +89,22 @@ class _$ExposurePopulation extends ExposurePopulation {
   @override
   final String? note;
 
-  factory _$ExposurePopulation(
-          [void Function(ExposurePopulationBuilder)? updates]) =>
-      (ExposurePopulationBuilder()..update(updates))._build();
+  factory _$ExposurePopulation([
+    void Function(ExposurePopulationBuilder)? updates,
+  ]) => (ExposurePopulationBuilder()..update(updates))._build();
 
-  _$ExposurePopulation._(
-      {required this.status,
-      this.attribution,
-      this.estimate,
-      this.epoch,
-      this.method,
-      this.note})
-      : super._();
+  _$ExposurePopulation._({
+    required this.status,
+    this.attribution,
+    this.estimate,
+    this.epoch,
+    this.method,
+    this.note,
+  }) : super._();
   @override
   ExposurePopulation rebuild(
-          void Function(ExposurePopulationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExposurePopulationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExposurePopulationBuilder toBuilder() =>
@@ -207,10 +212,14 @@ class ExposurePopulationBuilder
   _$ExposurePopulation _build() {
     _$ExposurePopulation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExposurePopulation._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExposurePopulation', 'status'),
+              status,
+              r'ExposurePopulation',
+              'status',
+            ),
             attribution: _attribution?.build(),
             estimate: estimate,
             epoch: epoch,
@@ -224,7 +233,10 @@ class ExposurePopulationBuilder
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExposurePopulation', _$failedField, e.toString());
+          r'ExposurePopulation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

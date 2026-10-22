@@ -29,17 +29,17 @@ class _$ExerciseStats extends ExerciseStats {
   factory _$ExerciseStats([void Function(ExerciseStatsBuilder)? updates]) =>
       (ExerciseStatsBuilder()..update(updates))._build();
 
-  _$ExerciseStats._(
-      {required this.versionsScanned,
-      this.alertsByRule,
-      this.notificationsByChannel,
-      this.suppressedByCooldown,
-      this.suppressedByRateCap,
-      this.skippedRules,
-      this.caveats,
-      this.alertsRaised,
-      this.error})
-      : super._();
+  _$ExerciseStats._({
+    required this.versionsScanned,
+    this.alertsByRule,
+    this.notificationsByChannel,
+    this.suppressedByCooldown,
+    this.suppressedByRateCap,
+    this.skippedRules,
+    this.caveats,
+    this.alertsRaised,
+    this.error,
+  }) : super._();
   @override
   ExerciseStats rebuild(void Function(ExerciseStatsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -180,10 +180,14 @@ class ExerciseStatsBuilder
   _$ExerciseStats _build() {
     _$ExerciseStats _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExerciseStats._(
             versionsScanned: BuiltValueNullFieldError.checkNotNull(
-                versionsScanned, r'ExerciseStats', 'versionsScanned'),
+              versionsScanned,
+              r'ExerciseStats',
+              'versionsScanned',
+            ),
             alertsByRule: _alertsByRule?.build(),
             notificationsByChannel: _notificationsByChannel?.build(),
             suppressedByCooldown: suppressedByCooldown,
@@ -207,7 +211,10 @@ class ExerciseStatsBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExerciseStats', _$failedField, e.toString());
+          r'ExerciseStats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

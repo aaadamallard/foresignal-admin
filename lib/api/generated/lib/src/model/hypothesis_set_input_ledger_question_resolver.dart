@@ -18,8 +18,10 @@ part 'hypothesis_set_input_ledger_question_resolver.g.dart';
 @BuiltValue()
 abstract class HypothesisSetInputLedgerQuestionResolver
     implements
-        Built<HypothesisSetInputLedgerQuestionResolver,
-            HypothesisSetInputLedgerQuestionResolverBuilder> {
+        Built<
+          HypothesisSetInputLedgerQuestionResolver,
+          HypothesisSetInputLedgerQuestionResolverBuilder
+        > {
   @BuiltValueField(wireName: r'type')
   HypothesisSetInputLedgerQuestionResolverTypeEnum get type;
   // enum typeEnum {  hypothesis-outcome,  event-exists,  count-threshold,  series-value,  alert-fired,  situation-status,  manual,  };
@@ -29,9 +31,9 @@ abstract class HypothesisSetInputLedgerQuestionResolver
 
   HypothesisSetInputLedgerQuestionResolver._();
 
-  factory HypothesisSetInputLedgerQuestionResolver(
-          [void updates(HypothesisSetInputLedgerQuestionResolverBuilder b)]) =
-      _$HypothesisSetInputLedgerQuestionResolver;
+  factory HypothesisSetInputLedgerQuestionResolver([
+    void updates(HypothesisSetInputLedgerQuestionResolverBuilder b),
+  ]) = _$HypothesisSetInputLedgerQuestionResolver;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisSetInputLedgerQuestionResolverBuilder b) => b;
@@ -46,7 +48,7 @@ class _$HypothesisSetInputLedgerQuestionResolverSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisSetInputLedgerQuestionResolver,
-    _$HypothesisSetInputLedgerQuestionResolver
+    _$HypothesisSetInputLedgerQuestionResolver,
   ];
 
   @override
@@ -60,15 +62,18 @@ class _$HypothesisSetInputLedgerQuestionResolverSerializer
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType:
-          const FullType(HypothesisSetInputLedgerQuestionResolverTypeEnum),
+      specifiedType: const FullType(
+        HypothesisSetInputLedgerQuestionResolverTypeEnum,
+      ),
     );
     if (object.params != null) {
       yield r'params';
       yield serializers.serialize(
         object.params,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -79,9 +84,11 @@ class _$HypothesisSetInputLedgerQuestionResolverSerializer
     HypothesisSetInputLedgerQuestionResolver object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,19 +104,26 @@ class _$HypothesisSetInputLedgerQuestionResolverSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                HypothesisSetInputLedgerQuestionResolverTypeEnum),
-          ) as HypothesisSetInputLedgerQuestionResolverTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HypothesisSetInputLedgerQuestionResolverTypeEnum,
+                    ),
+                  )
+                  as HypothesisSetInputLedgerQuestionResolverTypeEnum;
           result.type = valueDes;
           break;
         case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.params.replace(valueDes);
           break;
@@ -145,7 +159,7 @@ class _$HypothesisSetInputLedgerQuestionResolverSerializer
 class HypothesisSetInputLedgerQuestionResolverTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hypothesis-outcome')
   static const HypothesisSetInputLedgerQuestionResolverTypeEnum
-      hypothesisOutcome =
+  hypothesisOutcome =
       _$hypothesisSetInputLedgerQuestionResolverTypeEnum_hypothesisOutcome;
   @BuiltValueEnumConst(wireName: r'event-exists')
   static const HypothesisSetInputLedgerQuestionResolverTypeEnum eventExists =
@@ -161,22 +175,22 @@ class HypothesisSetInputLedgerQuestionResolverTypeEnum extends EnumClass {
       _$hypothesisSetInputLedgerQuestionResolverTypeEnum_alertFired;
   @BuiltValueEnumConst(wireName: r'situation-status')
   static const HypothesisSetInputLedgerQuestionResolverTypeEnum
-      situationStatus =
+  situationStatus =
       _$hypothesisSetInputLedgerQuestionResolverTypeEnum_situationStatus;
   @BuiltValueEnumConst(wireName: r'manual')
   static const HypothesisSetInputLedgerQuestionResolverTypeEnum manual =
       _$hypothesisSetInputLedgerQuestionResolverTypeEnum_manual;
 
   static Serializer<HypothesisSetInputLedgerQuestionResolverTypeEnum>
-      get serializer =>
-          _$hypothesisSetInputLedgerQuestionResolverTypeEnumSerializer;
+  get serializer =>
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnumSerializer;
 
   const HypothesisSetInputLedgerQuestionResolverTypeEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<HypothesisSetInputLedgerQuestionResolverTypeEnum>
-      get values => _$hypothesisSetInputLedgerQuestionResolverTypeEnumValues;
+  get values => _$hypothesisSetInputLedgerQuestionResolverTypeEnumValues;
   static HypothesisSetInputLedgerQuestionResolverTypeEnum valueOf(
-          String name) =>
-      _$hypothesisSetInputLedgerQuestionResolverTypeEnumValueOf(name);
+    String name,
+  ) => _$hypothesisSetInputLedgerQuestionResolverTypeEnumValueOf(name);
 }

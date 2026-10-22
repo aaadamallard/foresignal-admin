@@ -87,9 +87,11 @@ class _$ApproachConditionSerializer
     ApproachCondition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,31 +107,33 @@ class _$ApproachConditionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApproachConditionTypeEnum),
-          ) as ApproachConditionTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ApproachConditionTypeEnum),
+                  )
+                  as ApproachConditionTypeEnum;
           result.type = valueDes;
           break;
         case r'target':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApproachConditionTarget),
-          ) as ApproachConditionTarget;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ApproachConditionTarget),
+                  )
+                  as ApproachConditionTarget;
           result.target.replace(valueDes);
           break;
         case r'withinMeters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.withinMeters = valueDes;
           break;
         case r'withinMinutes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.withinMinutes = valueDes;
           break;
         default:

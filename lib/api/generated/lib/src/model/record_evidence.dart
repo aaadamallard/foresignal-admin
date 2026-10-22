@@ -98,9 +98,11 @@ class _$RecordEvidenceSerializer
     RecordEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,40 +118,52 @@ class _$RecordEvidenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalId = valueDes;
           break;
         case r'originator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Originator),
-          ) as Originator;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Originator),
+                  )
+                  as Originator;
           result.originator.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ObservationLink)]),
-          ) as BuiltList<ObservationLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ObservationLink),
+                    ]),
+                  )
+                  as BuiltList<ObservationLink>;
           result.links.replace(valueDes);
           break;
         case r'canonicalEvents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(CanonicalEvent)]),
-          ) as BuiltList<CanonicalEvent>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(CanonicalEvent),
+                    ]),
+                  )
+                  as BuiltList<CanonicalEvent>;
           result.canonicalEvents.replace(valueDes);
           break;
         default:

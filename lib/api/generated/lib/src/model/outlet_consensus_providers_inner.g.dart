@@ -7,23 +7,23 @@ part of 'outlet_consensus_providers_inner.dart';
 // **************************************************************************
 
 const OutletConsensusProvidersInnerProviderEnum
-    _$outletConsensusProvidersInnerProviderEnum_wikidata =
+_$outletConsensusProvidersInnerProviderEnum_wikidata =
     const OutletConsensusProvidersInnerProviderEnum._('wikidata');
 const OutletConsensusProvidersInnerProviderEnum
-    _$outletConsensusProvidersInnerProviderEnum_partisanWeb =
+_$outletConsensusProvidersInnerProviderEnum_partisanWeb =
     const OutletConsensusProvidersInnerProviderEnum._('partisanWeb');
 const OutletConsensusProvidersInnerProviderEnum
-    _$outletConsensusProvidersInnerProviderEnum_allsides =
+_$outletConsensusProvidersInnerProviderEnum_allsides =
     const OutletConsensusProvidersInnerProviderEnum._('allsides');
 const OutletConsensusProvidersInnerProviderEnum
-    _$outletConsensusProvidersInnerProviderEnum_mbfc =
+_$outletConsensusProvidersInnerProviderEnum_mbfc =
     const OutletConsensusProvidersInnerProviderEnum._('mbfc');
 const OutletConsensusProvidersInnerProviderEnum
-    _$outletConsensusProvidersInnerProviderEnum_operator_ =
+_$outletConsensusProvidersInnerProviderEnum_operator_ =
     const OutletConsensusProvidersInnerProviderEnum._('operator_');
 
 OutletConsensusProvidersInnerProviderEnum
-    _$outletConsensusProvidersInnerProviderEnumValueOf(String name) {
+_$outletConsensusProvidersInnerProviderEnumValueOf(String name) {
   switch (name) {
     case 'wikidata':
       return _$outletConsensusProvidersInnerProviderEnum_wikidata;
@@ -41,17 +41,19 @@ OutletConsensusProvidersInnerProviderEnum
 }
 
 final BuiltSet<OutletConsensusProvidersInnerProviderEnum>
-    _$outletConsensusProvidersInnerProviderEnumValues = BuiltSet<
-        OutletConsensusProvidersInnerProviderEnum>(const <OutletConsensusProvidersInnerProviderEnum>[
-  _$outletConsensusProvidersInnerProviderEnum_wikidata,
-  _$outletConsensusProvidersInnerProviderEnum_partisanWeb,
-  _$outletConsensusProvidersInnerProviderEnum_allsides,
-  _$outletConsensusProvidersInnerProviderEnum_mbfc,
-  _$outletConsensusProvidersInnerProviderEnum_operator_,
-]);
+_$outletConsensusProvidersInnerProviderEnumValues =
+    BuiltSet<OutletConsensusProvidersInnerProviderEnum>(
+      const <OutletConsensusProvidersInnerProviderEnum>[
+        _$outletConsensusProvidersInnerProviderEnum_wikidata,
+        _$outletConsensusProvidersInnerProviderEnum_partisanWeb,
+        _$outletConsensusProvidersInnerProviderEnum_allsides,
+        _$outletConsensusProvidersInnerProviderEnum_mbfc,
+        _$outletConsensusProvidersInnerProviderEnum_operator_,
+      ],
+    );
 
 Serializer<OutletConsensusProvidersInnerProviderEnum>
-    _$outletConsensusProvidersInnerProviderEnumSerializer =
+_$outletConsensusProvidersInnerProviderEnumSerializer =
     _$OutletConsensusProvidersInnerProviderEnumSerializer();
 
 class _$OutletConsensusProvidersInnerProviderEnumSerializer
@@ -73,23 +75,26 @@ class _$OutletConsensusProvidersInnerProviderEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OutletConsensusProvidersInnerProviderEnum
+    OutletConsensusProvidersInnerProviderEnum,
   ];
   @override
   final String wireName = 'OutletConsensusProvidersInnerProviderEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          OutletConsensusProvidersInnerProviderEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OutletConsensusProvidersInnerProviderEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OutletConsensusProvidersInnerProviderEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OutletConsensusProvidersInnerProviderEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OutletConsensusProvidersInnerProviderEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OutletConsensusProvidersInner extends OutletConsensusProvidersInner {
@@ -104,21 +109,21 @@ class _$OutletConsensusProvidersInner extends OutletConsensusProvidersInner {
   @override
   final String? licence;
 
-  factory _$OutletConsensusProvidersInner(
-          [void Function(OutletConsensusProvidersInnerBuilder)? updates]) =>
-      (OutletConsensusProvidersInnerBuilder()..update(updates))._build();
+  factory _$OutletConsensusProvidersInner([
+    void Function(OutletConsensusProvidersInnerBuilder)? updates,
+  ]) => (OutletConsensusProvidersInnerBuilder()..update(updates))._build();
 
-  _$OutletConsensusProvidersInner._(
-      {required this.provider,
-      this.valueNorm,
-      this.label,
-      this.ratedAt,
-      this.licence})
-      : super._();
+  _$OutletConsensusProvidersInner._({
+    required this.provider,
+    this.valueNorm,
+    this.label,
+    this.ratedAt,
+    this.licence,
+  }) : super._();
   @override
   OutletConsensusProvidersInner rebuild(
-          void Function(OutletConsensusProvidersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OutletConsensusProvidersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OutletConsensusProvidersInnerBuilder toBuilder() =>
@@ -161,8 +166,10 @@ class _$OutletConsensusProvidersInner extends OutletConsensusProvidersInner {
 
 class OutletConsensusProvidersInnerBuilder
     implements
-        Builder<OutletConsensusProvidersInner,
-            OutletConsensusProvidersInnerBuilder> {
+        Builder<
+          OutletConsensusProvidersInner,
+          OutletConsensusProvidersInnerBuilder
+        > {
   _$OutletConsensusProvidersInner? _$v;
 
   OutletConsensusProvidersInnerProviderEnum? _provider;
@@ -217,10 +224,14 @@ class OutletConsensusProvidersInnerBuilder
   OutletConsensusProvidersInner build() => _build();
 
   _$OutletConsensusProvidersInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OutletConsensusProvidersInner._(
           provider: BuiltValueNullFieldError.checkNotNull(
-              provider, r'OutletConsensusProvidersInner', 'provider'),
+            provider,
+            r'OutletConsensusProvidersInner',
+            'provider',
+          ),
           valueNorm: valueNorm,
           label: label,
           ratedAt: ratedAt,

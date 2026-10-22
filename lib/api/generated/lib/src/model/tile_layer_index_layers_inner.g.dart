@@ -7,14 +7,15 @@ part of 'tile_layer_index_layers_inner.dart';
 // **************************************************************************
 
 const TileLayerIndexLayersInnerTypeEnum
-    _$tileLayerIndexLayersInnerTypeEnum_source_ =
+_$tileLayerIndexLayersInnerTypeEnum_source_ =
     const TileLayerIndexLayersInnerTypeEnum._('source_');
 const TileLayerIndexLayersInnerTypeEnum
-    _$tileLayerIndexLayersInnerTypeEnum_kind =
+_$tileLayerIndexLayersInnerTypeEnum_kind =
     const TileLayerIndexLayersInnerTypeEnum._('kind');
 
 TileLayerIndexLayersInnerTypeEnum _$tileLayerIndexLayersInnerTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'source_':
       return _$tileLayerIndexLayersInnerTypeEnum_source_;
@@ -26,14 +27,16 @@ TileLayerIndexLayersInnerTypeEnum _$tileLayerIndexLayersInnerTypeEnumValueOf(
 }
 
 final BuiltSet<TileLayerIndexLayersInnerTypeEnum>
-    _$tileLayerIndexLayersInnerTypeEnumValues = BuiltSet<
-        TileLayerIndexLayersInnerTypeEnum>(const <TileLayerIndexLayersInnerTypeEnum>[
-  _$tileLayerIndexLayersInnerTypeEnum_source_,
-  _$tileLayerIndexLayersInnerTypeEnum_kind,
-]);
+_$tileLayerIndexLayersInnerTypeEnumValues =
+    BuiltSet<TileLayerIndexLayersInnerTypeEnum>(
+      const <TileLayerIndexLayersInnerTypeEnum>[
+        _$tileLayerIndexLayersInnerTypeEnum_source_,
+        _$tileLayerIndexLayersInnerTypeEnum_kind,
+      ],
+    );
 
 Serializer<TileLayerIndexLayersInnerTypeEnum>
-    _$tileLayerIndexLayersInnerTypeEnumSerializer =
+_$tileLayerIndexLayersInnerTypeEnumSerializer =
     _$TileLayerIndexLayersInnerTypeEnumSerializer();
 
 class _$TileLayerIndexLayersInnerTypeEnumSerializer
@@ -54,16 +57,19 @@ class _$TileLayerIndexLayersInnerTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TileLayerIndexLayersInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TileLayerIndexLayersInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TileLayerIndexLayersInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TileLayerIndexLayersInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TileLayerIndexLayersInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TileLayerIndexLayersInner extends TileLayerIndexLayersInner {
@@ -78,21 +84,21 @@ class _$TileLayerIndexLayersInner extends TileLayerIndexLayersInner {
   @override
   final int? aggBelowZoom;
 
-  factory _$TileLayerIndexLayersInner(
-          [void Function(TileLayerIndexLayersInnerBuilder)? updates]) =>
-      (TileLayerIndexLayersInnerBuilder()..update(updates))._build();
+  factory _$TileLayerIndexLayersInner([
+    void Function(TileLayerIndexLayersInnerBuilder)? updates,
+  ]) => (TileLayerIndexLayersInnerBuilder()..update(updates))._build();
 
-  _$TileLayerIndexLayersInner._(
-      {required this.id,
-      required this.type,
-      required this.name,
-      required this.tilejson,
-      this.aggBelowZoom})
-      : super._();
+  _$TileLayerIndexLayersInner._({
+    required this.id,
+    required this.type,
+    required this.name,
+    required this.tilejson,
+    this.aggBelowZoom,
+  }) : super._();
   @override
   TileLayerIndexLayersInner rebuild(
-          void Function(TileLayerIndexLayersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TileLayerIndexLayersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TileLayerIndexLayersInnerBuilder toBuilder() =>
@@ -189,16 +195,29 @@ class TileLayerIndexLayersInnerBuilder
   TileLayerIndexLayersInner build() => _build();
 
   _$TileLayerIndexLayersInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TileLayerIndexLayersInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'TileLayerIndexLayersInner', 'id'),
+            id,
+            r'TileLayerIndexLayersInner',
+            'id',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'TileLayerIndexLayersInner', 'type'),
+            type,
+            r'TileLayerIndexLayersInner',
+            'type',
+          ),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'TileLayerIndexLayersInner', 'name'),
+            name,
+            r'TileLayerIndexLayersInner',
+            'name',
+          ),
           tilejson: BuiltValueNullFieldError.checkNotNull(
-              tilejson, r'TileLayerIndexLayersInner', 'tilejson'),
+            tilejson,
+            r'TileLayerIndexLayersInner',
+            'tilejson',
+          ),
           aggBelowZoom: aggBelowZoom,
         );
     replace(_$result);

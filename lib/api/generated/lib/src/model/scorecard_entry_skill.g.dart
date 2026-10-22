@@ -16,20 +16,20 @@ class _$ScorecardEntrySkill extends ScorecardEntrySkill {
   @override
   final StatInterval? interval;
 
-  factory _$ScorecardEntrySkill(
-          [void Function(ScorecardEntrySkillBuilder)? updates]) =>
-      (ScorecardEntrySkillBuilder()..update(updates))._build();
+  factory _$ScorecardEntrySkill([
+    void Function(ScorecardEntrySkillBuilder)? updates,
+  ]) => (ScorecardEntrySkillBuilder()..update(updates))._build();
 
-  _$ScorecardEntrySkill._(
-      {required this.value,
-      required this.reference,
-      required this.nShared,
-      this.interval})
-      : super._();
+  _$ScorecardEntrySkill._({
+    required this.value,
+    required this.reference,
+    required this.nShared,
+    this.interval,
+  }) : super._();
   @override
   ScorecardEntrySkill rebuild(
-          void Function(ScorecardEntrySkillBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ScorecardEntrySkillBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ScorecardEntrySkillBuilder toBuilder() =>
@@ -120,14 +120,24 @@ class ScorecardEntrySkillBuilder
   _$ScorecardEntrySkill _build() {
     _$ScorecardEntrySkill _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ScorecardEntrySkill._(
             value: BuiltValueNullFieldError.checkNotNull(
-                value, r'ScorecardEntrySkill', 'value'),
+              value,
+              r'ScorecardEntrySkill',
+              'value',
+            ),
             reference: BuiltValueNullFieldError.checkNotNull(
-                reference, r'ScorecardEntrySkill', 'reference'),
+              reference,
+              r'ScorecardEntrySkill',
+              'reference',
+            ),
             nShared: BuiltValueNullFieldError.checkNotNull(
-                nShared, r'ScorecardEntrySkill', 'nShared'),
+              nShared,
+              r'ScorecardEntrySkill',
+              'nShared',
+            ),
             interval: _interval?.build(),
           );
     } catch (_) {
@@ -137,7 +147,10 @@ class ScorecardEntrySkillBuilder
         _interval?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ScorecardEntrySkill', _$failedField, e.toString());
+          r'ScorecardEntrySkill',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

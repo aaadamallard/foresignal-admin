@@ -79,8 +79,9 @@ class _$TagAssignResultSerializer
     yield r'skipped';
     yield serializers.serialize(
       object.skipped,
-      specifiedType:
-          const FullType(BuiltList, [FullType(TagAssignResultSkippedInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(TagAssignResultSkippedInner),
+      ]),
     );
   }
 
@@ -90,9 +91,11 @@ class _$TagAssignResultSerializer
     TagAssignResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,32 +111,35 @@ class _$TagAssignResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tagId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tagId = valueDes;
           break;
         case r'changed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.changed = valueDes;
           break;
         case r'unchanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.unchanged = valueDes;
           break;
         case r'skipped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(TagAssignResultSkippedInner)]),
-          ) as BuiltList<TagAssignResultSkippedInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(TagAssignResultSkippedInner),
+                    ]),
+                  )
+                  as BuiltList<TagAssignResultSkippedInner>;
           result.skipped.replace(valueDes);
           break;
         default:

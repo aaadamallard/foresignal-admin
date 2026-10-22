@@ -86,8 +86,9 @@ class _$TafPayloadSerializer implements PrimitiveSerializer<TafPayload> {
       yield r'forecast';
       yield serializers.serialize(
         object.forecast,
-        specifiedType:
-            const FullType(BuiltList, [FullType(TafPayloadForecastInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(TafPayloadForecastInner),
+        ]),
       );
     }
     yield r'rawText';
@@ -103,9 +104,11 @@ class _$TafPayloadSerializer implements PrimitiveSerializer<TafPayload> {
     TafPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,47 +124,60 @@ class _$TafPayloadSerializer implements PrimitiveSerializer<TafPayload> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'stationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.stationId = valueDes;
           break;
         case r'issueTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.issueTime = valueDes;
           break;
         case r'validFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.validFrom = valueDes;
           break;
         case r'validTo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.validTo = valueDes;
           break;
         case r'forecast':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(TafPayloadForecastInner)]),
-          ) as BuiltList<TafPayloadForecastInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(TafPayloadForecastInner),
+                    ]),
+                  )
+                  as BuiltList<TafPayloadForecastInner>?;
           if (valueDes == null) continue;
           result.forecast.replace(valueDes);
           break;
         case r'rawText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.rawText = valueDes;
           break;
         default:

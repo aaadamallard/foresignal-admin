@@ -20,22 +20,22 @@ class _$ChronicleSketchBatch extends ChronicleSketchBatch {
   @override
   final BuiltList<ChronicleSketchBatchAccessDecisionsInner>? accessDecisions;
 
-  factory _$ChronicleSketchBatch(
-          [void Function(ChronicleSketchBatchBuilder)? updates]) =>
-      (ChronicleSketchBatchBuilder()..update(updates))._build();
+  factory _$ChronicleSketchBatch([
+    void Function(ChronicleSketchBatchBuilder)? updates,
+  ]) => (ChronicleSketchBatchBuilder()..update(updates))._build();
 
-  _$ChronicleSketchBatch._(
-      {required this.instanceId,
-      required this.networkId,
-      required this.sketches,
-      this.withdrawn,
-      this.accessRequests,
-      this.accessDecisions})
-      : super._();
+  _$ChronicleSketchBatch._({
+    required this.instanceId,
+    required this.networkId,
+    required this.sketches,
+    this.withdrawn,
+    this.accessRequests,
+    this.accessDecisions,
+  }) : super._();
   @override
   ChronicleSketchBatch rebuild(
-          void Function(ChronicleSketchBatchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSketchBatchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSketchBatchBuilder toBuilder() =>
@@ -108,18 +108,16 @@ class ChronicleSketchBatchBuilder
       _$this._accessRequests ??=
           ListBuilder<ChronicleSketchBatchAccessRequestsInner>();
   set accessRequests(
-          ListBuilder<ChronicleSketchBatchAccessRequestsInner>?
-              accessRequests) =>
-      _$this._accessRequests = accessRequests;
+    ListBuilder<ChronicleSketchBatchAccessRequestsInner>? accessRequests,
+  ) => _$this._accessRequests = accessRequests;
 
   ListBuilder<ChronicleSketchBatchAccessDecisionsInner>? _accessDecisions;
   ListBuilder<ChronicleSketchBatchAccessDecisionsInner> get accessDecisions =>
       _$this._accessDecisions ??=
           ListBuilder<ChronicleSketchBatchAccessDecisionsInner>();
   set accessDecisions(
-          ListBuilder<ChronicleSketchBatchAccessDecisionsInner>?
-              accessDecisions) =>
-      _$this._accessDecisions = accessDecisions;
+    ListBuilder<ChronicleSketchBatchAccessDecisionsInner>? accessDecisions,
+  ) => _$this._accessDecisions = accessDecisions;
 
   ChronicleSketchBatchBuilder() {
     ChronicleSketchBatch._defaults(this);
@@ -155,12 +153,19 @@ class ChronicleSketchBatchBuilder
   _$ChronicleSketchBatch _build() {
     _$ChronicleSketchBatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSketchBatch._(
             instanceId: BuiltValueNullFieldError.checkNotNull(
-                instanceId, r'ChronicleSketchBatch', 'instanceId'),
+              instanceId,
+              r'ChronicleSketchBatch',
+              'instanceId',
+            ),
             networkId: BuiltValueNullFieldError.checkNotNull(
-                networkId, r'ChronicleSketchBatch', 'networkId'),
+              networkId,
+              r'ChronicleSketchBatch',
+              'networkId',
+            ),
             sketches: sketches.build(),
             withdrawn: _withdrawn?.build(),
             accessRequests: _accessRequests?.build(),
@@ -179,7 +184,10 @@ class ChronicleSketchBatchBuilder
         _accessDecisions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSketchBatch', _$failedField, e.toString());
+          r'ChronicleSketchBatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

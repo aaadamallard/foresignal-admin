@@ -25,15 +25,15 @@ class _$PromptTemplate extends PromptTemplate {
   factory _$PromptTemplate([void Function(PromptTemplateBuilder)? updates]) =>
       (PromptTemplateBuilder()..update(updates))._build();
 
-  _$PromptTemplate._(
-      {required this.id,
-      required this.version,
-      this.role,
-      required this.sha256,
-      required this.text,
-      this.versions,
-      this.instructions})
-      : super._();
+  _$PromptTemplate._({
+    required this.id,
+    required this.version,
+    this.role,
+    required this.sha256,
+    required this.text,
+    this.versions,
+    this.instructions,
+  }) : super._();
   @override
   PromptTemplate rebuild(void Function(PromptTemplateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -150,17 +150,30 @@ class PromptTemplateBuilder
   _$PromptTemplate _build() {
     _$PromptTemplate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PromptTemplate._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PromptTemplate', 'id'),
+              id,
+              r'PromptTemplate',
+              'id',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'PromptTemplate', 'version'),
+              version,
+              r'PromptTemplate',
+              'version',
+            ),
             role: role,
             sha256: BuiltValueNullFieldError.checkNotNull(
-                sha256, r'PromptTemplate', 'sha256'),
+              sha256,
+              r'PromptTemplate',
+              'sha256',
+            ),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'PromptTemplate', 'text'),
+              text,
+              r'PromptTemplate',
+              'text',
+            ),
             versions: _versions?.build(),
             instructions: instructions,
           );
@@ -171,7 +184,10 @@ class PromptTemplateBuilder
         _versions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PromptTemplate', _$failedField, e.toString());
+          r'PromptTemplate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

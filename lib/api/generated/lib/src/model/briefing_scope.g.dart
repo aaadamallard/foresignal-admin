@@ -37,21 +37,21 @@ class _$BriefingScope extends BriefingScope {
   factory _$BriefingScope([void Function(BriefingScopeBuilder)? updates]) =>
       (BriefingScopeBuilder()..update(updates))._build();
 
-  _$BriefingScope._(
-      {this.sources,
-      this.kinds,
-      this.bbox,
-      this.ruleIds,
-      this.includeHealth,
-      this.placeIds,
-      this.viewId,
-      this.country,
-      this.admin1,
-      this.county,
-      this.places,
-      this.weatherProducts,
-      this.includeAlertQuality})
-      : super._();
+  _$BriefingScope._({
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.ruleIds,
+    this.includeHealth,
+    this.placeIds,
+    this.viewId,
+    this.country,
+    this.admin1,
+    this.county,
+    this.places,
+    this.weatherProducts,
+    this.includeAlertQuality,
+  }) : super._();
   @override
   BriefingScope rebuild(void Function(BriefingScopeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -220,7 +220,8 @@ class BriefingScopeBuilder
   _$BriefingScope _build() {
     _$BriefingScope _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BriefingScope._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -262,7 +263,10 @@ class BriefingScopeBuilder
         _weatherProducts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BriefingScope', _$failedField, e.toString());
+          r'BriefingScope',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

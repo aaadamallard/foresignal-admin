@@ -18,8 +18,10 @@ part 'intel_corroboration_event_quality.g.dart';
 @BuiltValue()
 abstract class IntelCorroborationEventQuality
     implements
-        Built<IntelCorroborationEventQuality,
-            IntelCorroborationEventQualityBuilder> {
+        Built<
+          IntelCorroborationEventQuality,
+          IntelCorroborationEventQualityBuilder
+        > {
   /// Distinct signal families a strong event needs (default 3)
   @BuiltValueField(wireName: r'strongFamilies')
   int? get strongFamilies;
@@ -38,9 +40,9 @@ abstract class IntelCorroborationEventQuality
 
   IntelCorroborationEventQuality._();
 
-  factory IntelCorroborationEventQuality(
-          [void updates(IntelCorroborationEventQualityBuilder b)]) =
-      _$IntelCorroborationEventQuality;
+  factory IntelCorroborationEventQuality([
+    void updates(IntelCorroborationEventQualityBuilder b),
+  ]) = _$IntelCorroborationEventQuality;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelCorroborationEventQualityBuilder b) => b;
@@ -55,7 +57,7 @@ class _$IntelCorroborationEventQualitySerializer
   @override
   final Iterable<Type> types = const [
     IntelCorroborationEventQuality,
-    _$IntelCorroborationEventQuality
+    _$IntelCorroborationEventQuality,
   ];
 
   @override
@@ -102,9 +104,11 @@ class _$IntelCorroborationEventQualitySerializer
     IntelCorroborationEventQuality object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,34 +124,42 @@ class _$IntelCorroborationEventQualitySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'strongFamilies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.strongFamilies = valueDes;
           break;
         case r'strongGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.strongGroups = valueDes;
           break;
         case r'moderateFamilies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.moderateFamilies = valueDes;
           break;
         case r'requireModalities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.requireModalities = valueDes;
           break;

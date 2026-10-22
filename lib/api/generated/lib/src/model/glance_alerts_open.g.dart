@@ -14,9 +14,9 @@ class _$GlanceAlertsOpen extends GlanceAlertsOpen {
   @override
   final int? info;
 
-  factory _$GlanceAlertsOpen(
-          [void Function(GlanceAlertsOpenBuilder)? updates]) =>
-      (GlanceAlertsOpenBuilder()..update(updates))._build();
+  factory _$GlanceAlertsOpen([
+    void Function(GlanceAlertsOpenBuilder)? updates,
+  ]) => (GlanceAlertsOpenBuilder()..update(updates))._build();
 
   _$GlanceAlertsOpen._({this.critical, this.warning, this.info}) : super._();
   @override
@@ -101,12 +101,9 @@ class GlanceAlertsOpenBuilder
   GlanceAlertsOpen build() => _build();
 
   _$GlanceAlertsOpen _build() {
-    final _$result = _$v ??
-        _$GlanceAlertsOpen._(
-          critical: critical,
-          warning: warning,
-          info: info,
-        );
+    final _$result =
+        _$v ??
+        _$GlanceAlertsOpen._(critical: critical, warning: warning, info: info);
     replace(_$result);
     return _$result;
   }

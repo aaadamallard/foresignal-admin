@@ -17,17 +17,20 @@ class _$PlaceWeatherDigestNowAlertsInner
   @override
   final DateTime? expires;
 
-  factory _$PlaceWeatherDigestNowAlertsInner(
-          [void Function(PlaceWeatherDigestNowAlertsInnerBuilder)? updates]) =>
-      (PlaceWeatherDigestNowAlertsInnerBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNowAlertsInner([
+    void Function(PlaceWeatherDigestNowAlertsInnerBuilder)? updates,
+  ]) => (PlaceWeatherDigestNowAlertsInnerBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestNowAlertsInner._(
-      {required this.id, required this.event, this.severity, this.expires})
-      : super._();
+  _$PlaceWeatherDigestNowAlertsInner._({
+    required this.id,
+    required this.event,
+    this.severity,
+    this.expires,
+  }) : super._();
   @override
   PlaceWeatherDigestNowAlertsInner rebuild(
-          void Function(PlaceWeatherDigestNowAlertsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNowAlertsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNowAlertsInnerBuilder toBuilder() =>
@@ -67,8 +70,10 @@ class _$PlaceWeatherDigestNowAlertsInner
 
 class PlaceWeatherDigestNowAlertsInnerBuilder
     implements
-        Builder<PlaceWeatherDigestNowAlertsInner,
-            PlaceWeatherDigestNowAlertsInnerBuilder> {
+        Builder<
+          PlaceWeatherDigestNowAlertsInner,
+          PlaceWeatherDigestNowAlertsInnerBuilder
+        > {
   _$PlaceWeatherDigestNowAlertsInner? _$v;
 
   String? _id;
@@ -117,12 +122,19 @@ class PlaceWeatherDigestNowAlertsInnerBuilder
   PlaceWeatherDigestNowAlertsInner build() => _build();
 
   _$PlaceWeatherDigestNowAlertsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherDigestNowAlertsInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'PlaceWeatherDigestNowAlertsInner', 'id'),
+            id,
+            r'PlaceWeatherDigestNowAlertsInner',
+            'id',
+          ),
           event: BuiltValueNullFieldError.checkNotNull(
-              event, r'PlaceWeatherDigestNowAlertsInner', 'event'),
+            event,
+            r'PlaceWeatherDigestNowAlertsInner',
+            'event',
+          ),
           severity: severity,
           expires: expires,
         );

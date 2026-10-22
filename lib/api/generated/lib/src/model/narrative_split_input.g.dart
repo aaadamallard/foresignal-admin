@@ -12,15 +12,15 @@ class _$NarrativeSplitInput extends NarrativeSplitInput {
   @override
   final String? reason;
 
-  factory _$NarrativeSplitInput(
-          [void Function(NarrativeSplitInputBuilder)? updates]) =>
-      (NarrativeSplitInputBuilder()..update(updates))._build();
+  factory _$NarrativeSplitInput([
+    void Function(NarrativeSplitInputBuilder)? updates,
+  ]) => (NarrativeSplitInputBuilder()..update(updates))._build();
 
   _$NarrativeSplitInput._({required this.postRefs, this.reason}) : super._();
   @override
   NarrativeSplitInput rebuild(
-          void Function(NarrativeSplitInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NarrativeSplitInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NarrativeSplitInputBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class NarrativeSplitInputBuilder
   _$NarrativeSplitInput _build() {
     _$NarrativeSplitInput _$result;
     try {
-      _$result = _$v ??
-          _$NarrativeSplitInput._(
-            postRefs: postRefs.build(),
-            reason: reason,
-          );
+      _$result =
+          _$v ??
+          _$NarrativeSplitInput._(postRefs: postRefs.build(), reason: reason);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class NarrativeSplitInputBuilder
         postRefs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativeSplitInput', _$failedField, e.toString());
+          r'NarrativeSplitInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

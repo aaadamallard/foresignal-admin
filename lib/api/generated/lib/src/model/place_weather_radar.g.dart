@@ -26,21 +26,21 @@ class _$PlaceWeatherRadar extends PlaceWeatherRadar {
   @override
   final num? verifiedNearest50Km10m;
 
-  factory _$PlaceWeatherRadar(
-          [void Function(PlaceWeatherRadarBuilder)? updates]) =>
-      (PlaceWeatherRadarBuilder()..update(updates))._build();
+  factory _$PlaceWeatherRadar([
+    void Function(PlaceWeatherRadarBuilder)? updates,
+  ]) => (PlaceWeatherRadarBuilder()..update(updates))._build();
 
-  _$PlaceWeatherRadar._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.maxDbzInRadius,
-      this.nearest40Km,
-      this.nearest50Km,
-      this.nearest50Km10m,
-      this.nearest60Km,
-      this.verifiedNearest50Km10m})
-      : super._();
+  _$PlaceWeatherRadar._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.maxDbzInRadius,
+    this.nearest40Km,
+    this.nearest50Km,
+    this.nearest50Km10m,
+    this.nearest60Km,
+    this.verifiedNearest50Km10m,
+  }) : super._();
   @override
   PlaceWeatherRadar rebuild(void Function(PlaceWeatherRadarBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -174,10 +174,14 @@ class PlaceWeatherRadarBuilder
   PlaceWeatherRadar build() => _build();
 
   _$PlaceWeatherRadar _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherRadar._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherRadar', 'status'),
+            status,
+            r'PlaceWeatherRadar',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           maxDbzInRadius: maxDbzInRadius,

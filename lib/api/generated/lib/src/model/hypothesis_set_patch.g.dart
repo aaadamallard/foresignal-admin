@@ -14,7 +14,8 @@ const HypothesisSetPatchCadenceEnum _$hypothesisSetPatchCadenceEnum_monthly =
     const HypothesisSetPatchCadenceEnum._('monthly');
 
 HypothesisSetPatchCadenceEnum _$hypothesisSetPatchCadenceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'daily':
       return _$hypothesisSetPatchCadenceEnum_daily;
@@ -28,12 +29,13 @@ HypothesisSetPatchCadenceEnum _$hypothesisSetPatchCadenceEnumValueOf(
 }
 
 final BuiltSet<HypothesisSetPatchCadenceEnum>
-    _$hypothesisSetPatchCadenceEnumValues = BuiltSet<
-        HypothesisSetPatchCadenceEnum>(const <HypothesisSetPatchCadenceEnum>[
-  _$hypothesisSetPatchCadenceEnum_daily,
-  _$hypothesisSetPatchCadenceEnum_weekly,
-  _$hypothesisSetPatchCadenceEnum_monthly,
-]);
+_$hypothesisSetPatchCadenceEnumValues = BuiltSet<HypothesisSetPatchCadenceEnum>(
+  const <HypothesisSetPatchCadenceEnum>[
+    _$hypothesisSetPatchCadenceEnum_daily,
+    _$hypothesisSetPatchCadenceEnum_weekly,
+    _$hypothesisSetPatchCadenceEnum_monthly,
+  ],
+);
 
 const HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnum_active =
     const HypothesisSetPatchStatusEnum._('active');
@@ -41,7 +43,8 @@ const HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnum_archived =
     const HypothesisSetPatchStatusEnum._('archived');
 
 HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'active':
       return _$hypothesisSetPatchStatusEnum_active;
@@ -53,17 +56,18 @@ HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnumValueOf(
 }
 
 final BuiltSet<HypothesisSetPatchStatusEnum>
-    _$hypothesisSetPatchStatusEnumValues =
-    BuiltSet<HypothesisSetPatchStatusEnum>(const <HypothesisSetPatchStatusEnum>[
-  _$hypothesisSetPatchStatusEnum_active,
-  _$hypothesisSetPatchStatusEnum_archived,
-]);
+_$hypothesisSetPatchStatusEnumValues = BuiltSet<HypothesisSetPatchStatusEnum>(
+  const <HypothesisSetPatchStatusEnum>[
+    _$hypothesisSetPatchStatusEnum_active,
+    _$hypothesisSetPatchStatusEnum_archived,
+  ],
+);
 
 Serializer<HypothesisSetPatchCadenceEnum>
-    _$hypothesisSetPatchCadenceEnumSerializer =
+_$hypothesisSetPatchCadenceEnumSerializer =
     _$HypothesisSetPatchCadenceEnumSerializer();
 Serializer<HypothesisSetPatchStatusEnum>
-    _$hypothesisSetPatchStatusEnumSerializer =
+_$hypothesisSetPatchStatusEnumSerializer =
     _$HypothesisSetPatchStatusEnumSerializer();
 
 class _$HypothesisSetPatchCadenceEnumSerializer
@@ -86,16 +90,19 @@ class _$HypothesisSetPatchCadenceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HypothesisSetPatchCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HypothesisSetPatchCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetPatchCadenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetPatchCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetPatchCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetPatchStatusEnumSerializer
@@ -115,16 +122,20 @@ class _$HypothesisSetPatchStatusEnumSerializer
   final String wireName = 'HypothesisSetPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetPatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetPatch extends HypothesisSetPatch {
@@ -137,17 +148,20 @@ class _$HypothesisSetPatch extends HypothesisSetPatch {
   @override
   final int version;
 
-  factory _$HypothesisSetPatch(
-          [void Function(HypothesisSetPatchBuilder)? updates]) =>
-      (HypothesisSetPatchBuilder()..update(updates))._build();
+  factory _$HypothesisSetPatch([
+    void Function(HypothesisSetPatchBuilder)? updates,
+  ]) => (HypothesisSetPatchBuilder()..update(updates))._build();
 
-  _$HypothesisSetPatch._(
-      {this.description, this.cadence, this.status, required this.version})
-      : super._();
+  _$HypothesisSetPatch._({
+    this.description,
+    this.cadence,
+    this.status,
+    required this.version,
+  }) : super._();
   @override
   HypothesisSetPatch rebuild(
-          void Function(HypothesisSetPatchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetPatchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetPatchBuilder toBuilder() =>
@@ -236,13 +250,17 @@ class HypothesisSetPatchBuilder
   HypothesisSetPatch build() => _build();
 
   _$HypothesisSetPatch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisSetPatch._(
           description: description,
           cadence: cadence,
           status: status,
           version: BuiltValueNullFieldError.checkNotNull(
-              version, r'HypothesisSetPatch', 'version'),
+            version,
+            r'HypothesisSetPatch',
+            'version',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -28,26 +28,26 @@ class _$SocialPlatformSettings extends SocialPlatformSettings {
   @override
   final SocialPlatformSettingsOptions? options;
 
-  factory _$SocialPlatformSettings(
-          [void Function(SocialPlatformSettingsBuilder)? updates]) =>
-      (SocialPlatformSettingsBuilder()..update(updates))._build();
+  factory _$SocialPlatformSettings([
+    void Function(SocialPlatformSettingsBuilder)? updates,
+  ]) => (SocialPlatformSettingsBuilder()..update(updates))._build();
 
-  _$SocialPlatformSettings._(
-      {required this.enabled,
-      this.mode,
-      this.channels,
-      this.deletionSync,
-      this.postRetention,
-      this.budget,
-      this.monthlyCapUsd,
-      this.prices,
-      this.pricesAsOf,
-      this.options})
-      : super._();
+  _$SocialPlatformSettings._({
+    required this.enabled,
+    this.mode,
+    this.channels,
+    this.deletionSync,
+    this.postRetention,
+    this.budget,
+    this.monthlyCapUsd,
+    this.prices,
+    this.pricesAsOf,
+    this.options,
+  }) : super._();
   @override
   SocialPlatformSettings rebuild(
-          void Function(SocialPlatformSettingsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformSettingsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformSettingsBuilder toBuilder() =>
@@ -192,10 +192,14 @@ class SocialPlatformSettingsBuilder
   _$SocialPlatformSettings _build() {
     _$SocialPlatformSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPlatformSettings._(
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'SocialPlatformSettings', 'enabled'),
+              enabled,
+              r'SocialPlatformSettings',
+              'enabled',
+            ),
             mode: mode,
             channels: _channels?.build(),
             deletionSync: deletionSync,
@@ -222,7 +226,10 @@ class SocialPlatformSettingsBuilder
         _options?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPlatformSettings', _$failedField, e.toString());
+          r'SocialPlatformSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

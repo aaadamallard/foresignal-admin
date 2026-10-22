@@ -96,27 +96,27 @@ GraphRequestTypesEnum _$graphRequestTypesEnumValueOf(String name) {
 
 final BuiltSet<GraphRequestTypesEnum> _$graphRequestTypesEnumValues =
     BuiltSet<GraphRequestTypesEnum>(const <GraphRequestTypesEnum>[
-  _$graphRequestTypesEnum_memberOf,
-  _$graphRequestTypesEnum_observedBy,
-  _$graphRequestTypesEnum_sameAs,
-  _$graphRequestTypesEnum_locatedIn,
-  _$graphRequestTypesEnum_near,
-  _$graphRequestTypesEnum_dependsOn,
-  _$graphRequestTypesEnum_affects,
-  _$graphRequestTypesEnum_derivedFrom,
-  _$graphRequestTypesEnum_evidenceFor,
-  _$graphRequestTypesEnum_evidenceAgainst,
-  _$graphRequestTypesEnum_about,
-  _$graphRequestTypesEnum_mentions,
-  _$graphRequestTypesEnum_precedes,
-  _$graphRequestTypesEnum_causes,
-  _$graphRequestTypesEnum_relatedTo,
-  _$graphRequestTypesEnum_owns,
-  _$graphRequestTypesEnum_controls,
-  _$graphRequestTypesEnum_officerOf,
-  _$graphRequestTypesEnum_beneficialOwner,
-  _$graphRequestTypesEnum_affiliatedWith,
-]);
+      _$graphRequestTypesEnum_memberOf,
+      _$graphRequestTypesEnum_observedBy,
+      _$graphRequestTypesEnum_sameAs,
+      _$graphRequestTypesEnum_locatedIn,
+      _$graphRequestTypesEnum_near,
+      _$graphRequestTypesEnum_dependsOn,
+      _$graphRequestTypesEnum_affects,
+      _$graphRequestTypesEnum_derivedFrom,
+      _$graphRequestTypesEnum_evidenceFor,
+      _$graphRequestTypesEnum_evidenceAgainst,
+      _$graphRequestTypesEnum_about,
+      _$graphRequestTypesEnum_mentions,
+      _$graphRequestTypesEnum_precedes,
+      _$graphRequestTypesEnum_causes,
+      _$graphRequestTypesEnum_relatedTo,
+      _$graphRequestTypesEnum_owns,
+      _$graphRequestTypesEnum_controls,
+      _$graphRequestTypesEnum_officerOf,
+      _$graphRequestTypesEnum_beneficialOwner,
+      _$graphRequestTypesEnum_affiliatedWith,
+    ]);
 
 Serializer<GraphRequestTypesEnum> _$graphRequestTypesEnumSerializer =
     _$GraphRequestTypesEnumSerializer();
@@ -174,15 +174,20 @@ class _$GraphRequestTypesEnumSerializer
   final String wireName = 'GraphRequestTypesEnum';
 
   @override
-  Object serialize(Serializers serializers, GraphRequestTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GraphRequestTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  GraphRequestTypesEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GraphRequestTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  GraphRequestTypesEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GraphRequestTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GraphRequest extends GraphRequest {
@@ -202,14 +207,14 @@ class _$GraphRequest extends GraphRequest {
   factory _$GraphRequest([void Function(GraphRequestBuilder)? updates]) =>
       (GraphRequestBuilder()..update(updates))._build();
 
-  _$GraphRequest._(
-      {required this.refs,
-      this.depth,
-      this.types,
-      this.asOf,
-      this.minConfidence,
-      this.limit})
-      : super._();
+  _$GraphRequest._({
+    required this.refs,
+    this.depth,
+    this.types,
+    this.asOf,
+    this.minConfidence,
+    this.limit,
+  }) : super._();
   @override
   GraphRequest rebuild(void Function(GraphRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -319,7 +324,8 @@ class GraphRequestBuilder
   _$GraphRequest _build() {
     _$GraphRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$GraphRequest._(
             refs: refs.build(),
             depth: depth,
@@ -338,7 +344,10 @@ class GraphRequestBuilder
         _types?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GraphRequest', _$failedField, e.toString());
+          r'GraphRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

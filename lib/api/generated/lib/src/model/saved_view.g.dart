@@ -32,11 +32,11 @@ SavedViewTimeFieldEnum _$savedViewTimeFieldEnumValueOf(String name) {
 
 final BuiltSet<SavedViewTimeFieldEnum> _$savedViewTimeFieldEnumValues =
     BuiltSet<SavedViewTimeFieldEnum>(const <SavedViewTimeFieldEnum>[
-  _$savedViewTimeFieldEnum_effective,
-  _$savedViewTimeFieldEnum_observed,
-  _$savedViewTimeFieldEnum_event,
-  _$savedViewTimeFieldEnum_ingested,
-]);
+      _$savedViewTimeFieldEnum_effective,
+      _$savedViewTimeFieldEnum_observed,
+      _$savedViewTimeFieldEnum_event,
+      _$savedViewTimeFieldEnum_ingested,
+    ]);
 
 Serializer<SavedViewTimeFieldEnum> _$savedViewTimeFieldEnumSerializer =
     _$SavedViewTimeFieldEnumSerializer();
@@ -62,15 +62,20 @@ class _$SavedViewTimeFieldEnumSerializer
   final String wireName = 'SavedViewTimeFieldEnum';
 
   @override
-  Object serialize(Serializers serializers, SavedViewTimeFieldEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SavedViewTimeFieldEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SavedViewTimeFieldEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SavedViewTimeFieldEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SavedViewTimeFieldEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SavedViewTimeFieldEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SavedView extends SavedView {
@@ -108,23 +113,23 @@ class _$SavedView extends SavedView {
   factory _$SavedView([void Function(SavedViewBuilder)? updates]) =>
       (SavedViewBuilder()..update(updates))._build();
 
-  _$SavedView._(
-      {required this.slug,
-      required this.name,
-      this.sources,
-      this.kinds,
-      this.placeIds,
-      this.bbox,
-      this.area,
-      this.conditions,
-      this.timeField,
-      this.includeExpired,
-      this.fields,
-      required this.id,
-      required this.version,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$SavedView._({
+    required this.slug,
+    required this.name,
+    this.sources,
+    this.kinds,
+    this.placeIds,
+    this.bbox,
+    this.area,
+    this.conditions,
+    this.timeField,
+    this.includeExpired,
+    this.fields,
+    required this.id,
+    required this.version,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   SavedView rebuild(void Function(SavedViewBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -308,12 +313,19 @@ class SavedViewBuilder implements Builder<SavedView, SavedViewBuilder> {
   _$SavedView _build() {
     _$SavedView _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedView._(
             slug: BuiltValueNullFieldError.checkNotNull(
-                slug, r'SavedView', 'slug'),
+              slug,
+              r'SavedView',
+              'slug',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SavedView', 'name'),
+              name,
+              r'SavedView',
+              'name',
+            ),
             sources: _sources?.build(),
             kinds: _kinds?.build(),
             placeIds: _placeIds?.build(),
@@ -325,11 +337,20 @@ class SavedViewBuilder implements Builder<SavedView, SavedViewBuilder> {
             fields: _fields?.build(),
             id: BuiltValueNullFieldError.checkNotNull(id, r'SavedView', 'id'),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'SavedView', 'version'),
+              version,
+              r'SavedView',
+              'version',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'SavedView', 'createdAt'),
+              createdAt,
+              r'SavedView',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'SavedView', 'updatedAt'),
+              updatedAt,
+              r'SavedView',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -351,7 +372,10 @@ class SavedViewBuilder implements Builder<SavedView, SavedViewBuilder> {
         _fields?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedView', _$failedField, e.toString());
+          r'SavedView',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -77,10 +77,7 @@ class JwksBuilder implements Builder<Jwks, JwksBuilder> {
   _$Jwks _build() {
     _$Jwks _$result;
     try {
-      _$result = _$v ??
-          _$Jwks._(
-            keys: keys.build(),
-          );
+      _$result = _$v ?? _$Jwks._(keys: keys.build());
     } catch (_) {
       late String _$failedField;
       try {

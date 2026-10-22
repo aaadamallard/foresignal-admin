@@ -15,13 +15,14 @@ const ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnum_view =
 const ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnum_track =
     const ShareLinkCreateTargetTypeEnum._('track');
 const ShareLinkCreateTargetTypeEnum
-    _$shareLinkCreateTargetTypeEnum_briefingRun =
+_$shareLinkCreateTargetTypeEnum_briefingRun =
     const ShareLinkCreateTargetTypeEnum._('briefingRun');
 const ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnum_export_ =
     const ShareLinkCreateTargetTypeEnum._('export_');
 
 ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$shareLinkCreateTargetTypeEnum_record;
@@ -41,18 +42,19 @@ ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnumValueOf(
 }
 
 final BuiltSet<ShareLinkCreateTargetTypeEnum>
-    _$shareLinkCreateTargetTypeEnumValues = BuiltSet<
-        ShareLinkCreateTargetTypeEnum>(const <ShareLinkCreateTargetTypeEnum>[
-  _$shareLinkCreateTargetTypeEnum_record,
-  _$shareLinkCreateTargetTypeEnum_alert,
-  _$shareLinkCreateTargetTypeEnum_view,
-  _$shareLinkCreateTargetTypeEnum_track,
-  _$shareLinkCreateTargetTypeEnum_briefingRun,
-  _$shareLinkCreateTargetTypeEnum_export_,
-]);
+_$shareLinkCreateTargetTypeEnumValues = BuiltSet<ShareLinkCreateTargetTypeEnum>(
+  const <ShareLinkCreateTargetTypeEnum>[
+    _$shareLinkCreateTargetTypeEnum_record,
+    _$shareLinkCreateTargetTypeEnum_alert,
+    _$shareLinkCreateTargetTypeEnum_view,
+    _$shareLinkCreateTargetTypeEnum_track,
+    _$shareLinkCreateTargetTypeEnum_briefingRun,
+    _$shareLinkCreateTargetTypeEnum_export_,
+  ],
+);
 
 Serializer<ShareLinkCreateTargetTypeEnum>
-    _$shareLinkCreateTargetTypeEnumSerializer =
+_$shareLinkCreateTargetTypeEnumSerializer =
     _$ShareLinkCreateTargetTypeEnumSerializer();
 
 class _$ShareLinkCreateTargetTypeEnumSerializer
@@ -81,16 +83,19 @@ class _$ShareLinkCreateTargetTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ShareLinkCreateTargetTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ShareLinkCreateTargetTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ShareLinkCreateTargetTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ShareLinkCreateTargetTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ShareLinkCreateTargetTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ShareLinkCreate extends ShareLinkCreate {
@@ -110,14 +115,14 @@ class _$ShareLinkCreate extends ShareLinkCreate {
   factory _$ShareLinkCreate([void Function(ShareLinkCreateBuilder)? updates]) =>
       (ShareLinkCreateBuilder()..update(updates))._build();
 
-  _$ShareLinkCreate._(
-      {required this.targetType,
-      required this.targetRef,
-      this.fieldMask,
-      this.precisionM,
-      this.expiresAt,
-      this.maxUses})
-      : super._();
+  _$ShareLinkCreate._({
+    required this.targetType,
+    required this.targetRef,
+    this.fieldMask,
+    this.precisionM,
+    this.expiresAt,
+    this.maxUses,
+  }) : super._();
   @override
   ShareLinkCreate rebuild(void Function(ShareLinkCreateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -228,12 +233,19 @@ class ShareLinkCreateBuilder
   _$ShareLinkCreate _build() {
     _$ShareLinkCreate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ShareLinkCreate._(
             targetType: BuiltValueNullFieldError.checkNotNull(
-                targetType, r'ShareLinkCreate', 'targetType'),
+              targetType,
+              r'ShareLinkCreate',
+              'targetType',
+            ),
             targetRef: BuiltValueNullFieldError.checkNotNull(
-                targetRef, r'ShareLinkCreate', 'targetRef'),
+              targetRef,
+              r'ShareLinkCreate',
+              'targetRef',
+            ),
             fieldMask: _fieldMask?.build(),
             precisionM: precisionM,
             expiresAt: expiresAt,
@@ -246,7 +258,10 @@ class ShareLinkCreateBuilder
         _fieldMask?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ShareLinkCreate', _$failedField, e.toString());
+          r'ShareLinkCreate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

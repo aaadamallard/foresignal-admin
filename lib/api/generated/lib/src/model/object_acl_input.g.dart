@@ -19,9 +19,12 @@ class _$ObjectAclInput extends ObjectAclInput {
   factory _$ObjectAclInput([void Function(ObjectAclInputBuilder)? updates]) =>
       (ObjectAclInputBuilder()..update(updates))._build();
 
-  _$ObjectAclInput._(
-      {this.visibility, required this.entries, this.owner, this.tlp})
-      : super._();
+  _$ObjectAclInput._({
+    this.visibility,
+    required this.entries,
+    this.owner,
+    this.tlp,
+  }) : super._();
   @override
   ObjectAclInput rebuild(void Function(ObjectAclInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -115,7 +118,8 @@ class ObjectAclInputBuilder
   _$ObjectAclInput _build() {
     _$ObjectAclInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObjectAclInput._(
             visibility: visibility,
             entries: entries.build(),
@@ -129,7 +133,10 @@ class ObjectAclInputBuilder
         entries.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObjectAclInput', _$failedField, e.toString());
+          r'ObjectAclInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

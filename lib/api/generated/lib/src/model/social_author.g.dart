@@ -23,14 +23,14 @@ class _$SocialAuthor extends SocialAuthor {
   factory _$SocialAuthor([void Function(SocialAuthorBuilder)? updates]) =>
       (SocialAuthorBuilder()..update(updates))._build();
 
-  _$SocialAuthor._(
-      {required this.handle,
-      this.displayName,
-      required this.accountId,
-      this.accountCreatedAt,
-      this.followers,
-      this.verified})
-      : super._();
+  _$SocialAuthor._({
+    required this.handle,
+    this.displayName,
+    required this.accountId,
+    this.accountCreatedAt,
+    this.followers,
+    this.verified,
+  }) : super._();
   @override
   SocialAuthor rebuild(void Function(SocialAuthorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,13 +137,20 @@ class SocialAuthorBuilder
   SocialAuthor build() => _build();
 
   _$SocialAuthor _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialAuthor._(
           handle: BuiltValueNullFieldError.checkNotNull(
-              handle, r'SocialAuthor', 'handle'),
+            handle,
+            r'SocialAuthor',
+            'handle',
+          ),
           displayName: displayName,
           accountId: BuiltValueNullFieldError.checkNotNull(
-              accountId, r'SocialAuthor', 'accountId'),
+            accountId,
+            r'SocialAuthor',
+            'accountId',
+          ),
           accountCreatedAt: accountCreatedAt,
           followers: followers,
           verified: verified,

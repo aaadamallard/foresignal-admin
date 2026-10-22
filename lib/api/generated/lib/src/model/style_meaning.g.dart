@@ -99,12 +99,16 @@ class StyleMeaningBuilder
   StyleMeaning build() => _build();
 
   _$StyleMeaning _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StyleMeaning._(
           min: min,
           max: max,
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'StyleMeaning', 'text'),
+            text,
+            r'StyleMeaning',
+            'text',
+          ),
         );
     replace(_$result);
     return _$result;

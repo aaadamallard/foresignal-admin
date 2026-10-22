@@ -19,8 +19,10 @@ part 'weather_context_radar_nearest_cell.g.dart';
 @BuiltValue()
 abstract class WeatherContextRadarNearestCell
     implements
-        Built<WeatherContextRadarNearestCell,
-            WeatherContextRadarNearestCellBuilder> {
+        Built<
+          WeatherContextRadarNearestCell,
+          WeatherContextRadarNearestCellBuilder
+        > {
   /// radar-cell externalId
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -36,9 +38,9 @@ abstract class WeatherContextRadarNearestCell
 
   WeatherContextRadarNearestCell._();
 
-  factory WeatherContextRadarNearestCell(
-          [void updates(WeatherContextRadarNearestCellBuilder b)]) =
-      _$WeatherContextRadarNearestCell;
+  factory WeatherContextRadarNearestCell([
+    void updates(WeatherContextRadarNearestCellBuilder b),
+  ]) = _$WeatherContextRadarNearestCell;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WeatherContextRadarNearestCellBuilder b) => b;
@@ -53,7 +55,7 @@ class _$WeatherContextRadarNearestCellSerializer
   @override
   final Iterable<Type> types = const [
     WeatherContextRadarNearestCell,
-    _$WeatherContextRadarNearestCell
+    _$WeatherContextRadarNearestCell,
   ];
 
   @override
@@ -98,9 +100,11 @@ class _$WeatherContextRadarNearestCellSerializer
     WeatherContextRadarNearestCell object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,34 +120,43 @@ class _$WeatherContextRadarNearestCellSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;
         case r'motion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(WeatherContextRadarNearestCellMotion),
-          ) as WeatherContextRadarNearestCellMotion?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WeatherContextRadarNearestCellMotion,
+                    ),
+                  )
+                  as WeatherContextRadarNearestCellMotion?;
           if (valueDes == null) continue;
           result.motion.replace(valueDes);
           break;
         case r'meshMaxMm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meshMaxMm = valueDes;
           break;

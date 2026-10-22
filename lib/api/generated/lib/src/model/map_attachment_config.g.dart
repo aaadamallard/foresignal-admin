@@ -9,11 +9,12 @@ part of 'map_attachment_config.dart';
 const MapAttachmentConfigAttachMapEnum _$mapAttachmentConfigAttachMapEnum_none =
     const MapAttachmentConfigAttachMapEnum._('none');
 const MapAttachmentConfigAttachMapEnum
-    _$mapAttachmentConfigAttachMapEnum_static_ =
+_$mapAttachmentConfigAttachMapEnum_static_ =
     const MapAttachmentConfigAttachMapEnum._('static_');
 
 MapAttachmentConfigAttachMapEnum _$mapAttachmentConfigAttachMapEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'none':
       return _$mapAttachmentConfigAttachMapEnum_none;
@@ -25,14 +26,16 @@ MapAttachmentConfigAttachMapEnum _$mapAttachmentConfigAttachMapEnumValueOf(
 }
 
 final BuiltSet<MapAttachmentConfigAttachMapEnum>
-    _$mapAttachmentConfigAttachMapEnumValues = BuiltSet<
-        MapAttachmentConfigAttachMapEnum>(const <MapAttachmentConfigAttachMapEnum>[
-  _$mapAttachmentConfigAttachMapEnum_none,
-  _$mapAttachmentConfigAttachMapEnum_static_,
-]);
+_$mapAttachmentConfigAttachMapEnumValues =
+    BuiltSet<MapAttachmentConfigAttachMapEnum>(
+      const <MapAttachmentConfigAttachMapEnum>[
+        _$mapAttachmentConfigAttachMapEnum_none,
+        _$mapAttachmentConfigAttachMapEnum_static_,
+      ],
+    );
 
 Serializer<MapAttachmentConfigAttachMapEnum>
-    _$mapAttachmentConfigAttachMapEnumSerializer =
+_$mapAttachmentConfigAttachMapEnumSerializer =
     _$MapAttachmentConfigAttachMapEnumSerializer();
 
 class _$MapAttachmentConfigAttachMapEnumSerializer
@@ -53,16 +56,19 @@ class _$MapAttachmentConfigAttachMapEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MapAttachmentConfigAttachMapEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MapAttachmentConfigAttachMapEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MapAttachmentConfigAttachMapEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MapAttachmentConfigAttachMapEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MapAttachmentConfigAttachMapEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MapAttachmentConfig extends MapAttachmentConfig {
@@ -75,20 +81,20 @@ class _$MapAttachmentConfig extends MapAttachmentConfig {
   @override
   final int? maxAttachmentBytes;
 
-  factory _$MapAttachmentConfig(
-          [void Function(MapAttachmentConfigBuilder)? updates]) =>
-      (MapAttachmentConfigBuilder()..update(updates))._build();
+  factory _$MapAttachmentConfig([
+    void Function(MapAttachmentConfigBuilder)? updates,
+  ]) => (MapAttachmentConfigBuilder()..update(updates))._build();
 
-  _$MapAttachmentConfig._(
-      {this.attachMap,
-      this.mapProducts,
-      this.mapRadiusKm,
-      this.maxAttachmentBytes})
-      : super._();
+  _$MapAttachmentConfig._({
+    this.attachMap,
+    this.mapProducts,
+    this.mapRadiusKm,
+    this.maxAttachmentBytes,
+  }) : super._();
   @override
   MapAttachmentConfig rebuild(
-          void Function(MapAttachmentConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MapAttachmentConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MapAttachmentConfigBuilder toBuilder() =>
@@ -182,7 +188,8 @@ class MapAttachmentConfigBuilder
   _$MapAttachmentConfig _build() {
     _$MapAttachmentConfig _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MapAttachmentConfig._(
             attachMap: attachMap,
             mapProducts: _mapProducts?.build(),
@@ -196,7 +203,10 @@ class MapAttachmentConfigBuilder
         _mapProducts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MapAttachmentConfig', _$failedField, e.toString());
+          r'MapAttachmentConfig',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -23,14 +23,15 @@ SystemInfoArchiveTargetEnum _$systemInfoArchiveTargetEnumValueOf(String name) {
 }
 
 final BuiltSet<SystemInfoArchiveTargetEnum>
-    _$systemInfoArchiveTargetEnumValues =
-    BuiltSet<SystemInfoArchiveTargetEnum>(const <SystemInfoArchiveTargetEnum>[
-  _$systemInfoArchiveTargetEnum_local,
-  _$systemInfoArchiveTargetEnum_s3,
-]);
+_$systemInfoArchiveTargetEnumValues = BuiltSet<SystemInfoArchiveTargetEnum>(
+  const <SystemInfoArchiveTargetEnum>[
+    _$systemInfoArchiveTargetEnum_local,
+    _$systemInfoArchiveTargetEnum_s3,
+  ],
+);
 
 Serializer<SystemInfoArchiveTargetEnum>
-    _$systemInfoArchiveTargetEnumSerializer =
+_$systemInfoArchiveTargetEnumSerializer =
     _$SystemInfoArchiveTargetEnumSerializer();
 
 class _$SystemInfoArchiveTargetEnumSerializer
@@ -50,16 +51,20 @@ class _$SystemInfoArchiveTargetEnumSerializer
   final String wireName = 'SystemInfoArchiveTargetEnum';
 
   @override
-  Object serialize(Serializers serializers, SystemInfoArchiveTargetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SystemInfoArchiveTargetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SystemInfoArchiveTargetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemInfoArchiveTargetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemInfoArchiveTargetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemInfoArchive extends SystemInfoArchive {
@@ -80,20 +85,20 @@ class _$SystemInfoArchive extends SystemInfoArchive {
   @override
   final DateTime? lastFailureAt;
 
-  factory _$SystemInfoArchive(
-          [void Function(SystemInfoArchiveBuilder)? updates]) =>
-      (SystemInfoArchiveBuilder()..update(updates))._build();
+  factory _$SystemInfoArchive([
+    void Function(SystemInfoArchiveBuilder)? updates,
+  ]) => (SystemInfoArchiveBuilder()..update(updates))._build();
 
-  _$SystemInfoArchive._(
-      {this.enabled,
-      this.lastRunAt,
-      this.bytes,
-      this.failures,
-      this.target,
-      this.lastRunBytes,
-      this.lastRunFailures,
-      this.lastFailureAt})
-      : super._();
+  _$SystemInfoArchive._({
+    this.enabled,
+    this.lastRunAt,
+    this.bytes,
+    this.failures,
+    this.target,
+    this.lastRunBytes,
+    this.lastRunFailures,
+    this.lastFailureAt,
+  }) : super._();
   @override
   SystemInfoArchive rebuild(void Function(SystemInfoArchiveBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -218,7 +223,8 @@ class SystemInfoArchiveBuilder
   SystemInfoArchive build() => _build();
 
   _$SystemInfoArchive _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoArchive._(
           enabled: enabled,
           lastRunAt: lastRunAt,

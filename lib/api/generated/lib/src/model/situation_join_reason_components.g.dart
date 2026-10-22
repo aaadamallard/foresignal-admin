@@ -22,23 +22,23 @@ class _$SituationJoinReasonComponents extends SituationJoinReasonComponents {
   @override
   final num? recencyHours;
 
-  factory _$SituationJoinReasonComponents(
-          [void Function(SituationJoinReasonComponentsBuilder)? updates]) =>
-      (SituationJoinReasonComponentsBuilder()..update(updates))._build();
+  factory _$SituationJoinReasonComponents([
+    void Function(SituationJoinReasonComponentsBuilder)? updates,
+  ]) => (SituationJoinReasonComponentsBuilder()..update(updates))._build();
 
-  _$SituationJoinReasonComponents._(
-      {this.region,
-      this.distanceKm,
-      this.entity,
-      this.topic,
-      this.textSimilarity,
-      this.theme,
-      this.recencyHours})
-      : super._();
+  _$SituationJoinReasonComponents._({
+    this.region,
+    this.distanceKm,
+    this.entity,
+    this.topic,
+    this.textSimilarity,
+    this.theme,
+    this.recencyHours,
+  }) : super._();
   @override
   SituationJoinReasonComponents rebuild(
-          void Function(SituationJoinReasonComponentsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationJoinReasonComponentsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationJoinReasonComponentsBuilder toBuilder() =>
@@ -87,8 +87,10 @@ class _$SituationJoinReasonComponents extends SituationJoinReasonComponents {
 
 class SituationJoinReasonComponentsBuilder
     implements
-        Builder<SituationJoinReasonComponents,
-            SituationJoinReasonComponentsBuilder> {
+        Builder<
+          SituationJoinReasonComponents,
+          SituationJoinReasonComponentsBuilder
+        > {
   _$SituationJoinReasonComponents? _$v;
 
   num? _region;
@@ -153,7 +155,8 @@ class SituationJoinReasonComponentsBuilder
   SituationJoinReasonComponents build() => _build();
 
   _$SituationJoinReasonComponents _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationJoinReasonComponents._(
           region: region,
           distanceKm: distanceKm,

@@ -23,14 +23,14 @@ class _$ProposedPatch extends ProposedPatch {
   factory _$ProposedPatch([void Function(ProposedPatchBuilder)? updates]) =>
       (ProposedPatchBuilder()..update(updates))._build();
 
-  _$ProposedPatch._(
-      {required this.file,
-      required this.unifiedDiff,
-      required this.patchApplies,
-      this.sanityChecks,
-      required this.label,
-      this.error})
-      : super._();
+  _$ProposedPatch._({
+    required this.file,
+    required this.unifiedDiff,
+    required this.patchApplies,
+    this.sanityChecks,
+    required this.label,
+    this.error,
+  }) : super._();
   @override
   ProposedPatch rebuild(void Function(ProposedPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -140,17 +140,30 @@ class ProposedPatchBuilder
   _$ProposedPatch _build() {
     _$ProposedPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProposedPatch._(
             file: BuiltValueNullFieldError.checkNotNull(
-                file, r'ProposedPatch', 'file'),
+              file,
+              r'ProposedPatch',
+              'file',
+            ),
             unifiedDiff: BuiltValueNullFieldError.checkNotNull(
-                unifiedDiff, r'ProposedPatch', 'unifiedDiff'),
+              unifiedDiff,
+              r'ProposedPatch',
+              'unifiedDiff',
+            ),
             patchApplies: BuiltValueNullFieldError.checkNotNull(
-                patchApplies, r'ProposedPatch', 'patchApplies'),
+              patchApplies,
+              r'ProposedPatch',
+              'patchApplies',
+            ),
             sanityChecks: _sanityChecks?.build(),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'ProposedPatch', 'label'),
+              label,
+              r'ProposedPatch',
+              'label',
+            ),
             error: error,
           );
     } catch (_) {
@@ -160,7 +173,10 @@ class ProposedPatchBuilder
         _sanityChecks?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProposedPatch', _$failedField, e.toString());
+          r'ProposedPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

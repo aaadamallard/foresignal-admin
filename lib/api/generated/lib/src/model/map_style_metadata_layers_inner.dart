@@ -38,9 +38,9 @@ abstract class MapStyleMetadataLayersInner
 
   MapStyleMetadataLayersInner._();
 
-  factory MapStyleMetadataLayersInner(
-          [void updates(MapStyleMetadataLayersInnerBuilder b)]) =
-      _$MapStyleMetadataLayersInner;
+  factory MapStyleMetadataLayersInner([
+    void updates(MapStyleMetadataLayersInnerBuilder b),
+  ]) = _$MapStyleMetadataLayersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MapStyleMetadataLayersInnerBuilder b) => b;
@@ -55,7 +55,7 @@ class _$MapStyleMetadataLayersInnerSerializer
   @override
   final Iterable<Type> types = const [
     MapStyleMetadataLayersInner,
-    _$MapStyleMetadataLayersInner
+    _$MapStyleMetadataLayersInner,
   ];
 
   @override
@@ -105,9 +105,11 @@ class _$MapStyleMetadataLayersInnerSerializer
     MapStyleMetadataLayersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,40 +125,52 @@ class _$MapStyleMetadataLayersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.kinds.replace(valueDes);
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.attribution = valueDes;
           break;
         case r'minzoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minzoom = valueDes;
           break;
         case r'aggBelowZoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.aggBelowZoom = valueDes;
           break;

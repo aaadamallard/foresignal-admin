@@ -32,11 +32,11 @@ TimelineTimeFieldEnum _$timelineTimeFieldEnumValueOf(String name) {
 
 final BuiltSet<TimelineTimeFieldEnum> _$timelineTimeFieldEnumValues =
     BuiltSet<TimelineTimeFieldEnum>(const <TimelineTimeFieldEnum>[
-  _$timelineTimeFieldEnum_effective,
-  _$timelineTimeFieldEnum_observed,
-  _$timelineTimeFieldEnum_event,
-  _$timelineTimeFieldEnum_ingested,
-]);
+      _$timelineTimeFieldEnum_effective,
+      _$timelineTimeFieldEnum_observed,
+      _$timelineTimeFieldEnum_event,
+      _$timelineTimeFieldEnum_ingested,
+    ]);
 
 const TimelineMeasureEnum _$timelineMeasureEnum_versions =
     const TimelineMeasureEnum._('versions');
@@ -56,9 +56,9 @@ TimelineMeasureEnum _$timelineMeasureEnumValueOf(String name) {
 
 final BuiltSet<TimelineMeasureEnum> _$timelineMeasureEnumValues =
     BuiltSet<TimelineMeasureEnum>(const <TimelineMeasureEnum>[
-  _$timelineMeasureEnum_versions,
-  _$timelineMeasureEnum_entities,
-]);
+      _$timelineMeasureEnum_versions,
+      _$timelineMeasureEnum_entities,
+    ]);
 
 const TimelineGroupByEnum _$timelineGroupByEnum_none =
     const TimelineGroupByEnum._('none');
@@ -82,10 +82,10 @@ TimelineGroupByEnum _$timelineGroupByEnumValueOf(String name) {
 
 final BuiltSet<TimelineGroupByEnum> _$timelineGroupByEnumValues =
     BuiltSet<TimelineGroupByEnum>(const <TimelineGroupByEnum>[
-  _$timelineGroupByEnum_none,
-  _$timelineGroupByEnum_kind,
-  _$timelineGroupByEnum_source_,
-]);
+      _$timelineGroupByEnum_none,
+      _$timelineGroupByEnum_kind,
+      _$timelineGroupByEnum_source_,
+    ]);
 
 const TimelineBackendEnum _$timelineBackendEnum_raw =
     const TimelineBackendEnum._('raw');
@@ -109,10 +109,10 @@ TimelineBackendEnum _$timelineBackendEnumValueOf(String name) {
 
 final BuiltSet<TimelineBackendEnum> _$timelineBackendEnumValues =
     BuiltSet<TimelineBackendEnum>(const <TimelineBackendEnum>[
-  _$timelineBackendEnum_raw,
-  _$timelineBackendEnum_rollup,
-  _$timelineBackendEnum_mixed,
-]);
+      _$timelineBackendEnum_raw,
+      _$timelineBackendEnum_rollup,
+      _$timelineBackendEnum_mixed,
+    ]);
 
 Serializer<TimelineTimeFieldEnum> _$timelineTimeFieldEnumSerializer =
     _$TimelineTimeFieldEnumSerializer();
@@ -144,15 +144,20 @@ class _$TimelineTimeFieldEnumSerializer
   final String wireName = 'TimelineTimeFieldEnum';
 
   @override
-  Object serialize(Serializers serializers, TimelineTimeFieldEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TimelineTimeFieldEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TimelineTimeFieldEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TimelineTimeFieldEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TimelineTimeFieldEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TimelineTimeFieldEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TimelineMeasureEnumSerializer
@@ -172,15 +177,20 @@ class _$TimelineMeasureEnumSerializer
   final String wireName = 'TimelineMeasureEnum';
 
   @override
-  Object serialize(Serializers serializers, TimelineMeasureEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TimelineMeasureEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TimelineMeasureEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TimelineMeasureEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TimelineMeasureEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TimelineMeasureEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TimelineGroupByEnumSerializer
@@ -202,15 +212,20 @@ class _$TimelineGroupByEnumSerializer
   final String wireName = 'TimelineGroupByEnum';
 
   @override
-  Object serialize(Serializers serializers, TimelineGroupByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TimelineGroupByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TimelineGroupByEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TimelineGroupByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TimelineGroupByEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TimelineGroupByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TimelineBackendEnumSerializer
@@ -232,15 +247,20 @@ class _$TimelineBackendEnumSerializer
   final String wireName = 'TimelineBackendEnum';
 
   @override
-  Object serialize(Serializers serializers, TimelineBackendEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TimelineBackendEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TimelineBackendEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TimelineBackendEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TimelineBackendEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TimelineBackendEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Timeline extends Timeline {
@@ -272,20 +292,20 @@ class _$Timeline extends Timeline {
   factory _$Timeline([void Function(TimelineBuilder)? updates]) =>
       (TimelineBuilder()..update(updates))._build();
 
-  _$Timeline._(
-      {required this.from,
-      required this.to,
-      required this.bucket,
-      required this.timeField,
-      this.measure,
-      this.groupBy,
-      required this.buckets,
-      this.alerts,
-      this.maxBucket,
-      this.approximate,
-      this.retainedFrom,
-      this.backend})
-      : super._();
+  _$Timeline._({
+    required this.from,
+    required this.to,
+    required this.bucket,
+    required this.timeField,
+    this.measure,
+    this.groupBy,
+    required this.buckets,
+    this.alerts,
+    this.maxBucket,
+    this.approximate,
+    this.retainedFrom,
+    this.backend,
+  }) : super._();
   @override
   Timeline rebuild(void Function(TimelineBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -446,15 +466,25 @@ class TimelineBuilder implements Builder<Timeline, TimelineBuilder> {
   _$Timeline _build() {
     _$Timeline _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Timeline._(
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'Timeline', 'from'),
+              from,
+              r'Timeline',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(to, r'Timeline', 'to'),
             bucket: BuiltValueNullFieldError.checkNotNull(
-                bucket, r'Timeline', 'bucket'),
+              bucket,
+              r'Timeline',
+              'bucket',
+            ),
             timeField: BuiltValueNullFieldError.checkNotNull(
-                timeField, r'Timeline', 'timeField'),
+              timeField,
+              r'Timeline',
+              'timeField',
+            ),
             measure: measure,
             groupBy: groupBy,
             buckets: buckets.build(),
@@ -473,7 +503,10 @@ class TimelineBuilder implements Builder<Timeline, TimelineBuilder> {
         _alerts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Timeline', _$failedField, e.toString());
+          r'Timeline',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

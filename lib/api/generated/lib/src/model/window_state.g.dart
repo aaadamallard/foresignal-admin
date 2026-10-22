@@ -32,11 +32,11 @@ WindowStateStateEnum _$windowStateStateEnumValueOf(String name) {
 
 final BuiltSet<WindowStateStateEnum> _$windowStateStateEnumValues =
     BuiltSet<WindowStateStateEnum>(const <WindowStateStateEnum>[
-  _$windowStateStateEnum_active,
-  _$windowStateStateEnum_clear,
-  _$windowStateStateEnum_unknown,
-  _$windowStateStateEnum_learning,
-]);
+      _$windowStateStateEnum_active,
+      _$windowStateStateEnum_clear,
+      _$windowStateStateEnum_unknown,
+      _$windowStateStateEnum_learning,
+    ]);
 
 Serializer<WindowStateStateEnum> _$windowStateStateEnumSerializer =
     _$WindowStateStateEnumSerializer();
@@ -62,15 +62,20 @@ class _$WindowStateStateEnumSerializer
   final String wireName = 'WindowStateStateEnum';
 
   @override
-  Object serialize(Serializers serializers, WindowStateStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WindowStateStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  WindowStateStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WindowStateStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  WindowStateStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WindowStateStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WindowState extends WindowState {
@@ -96,17 +101,17 @@ class _$WindowState extends WindowState {
   factory _$WindowState([void Function(WindowStateBuilder)? updates]) =>
       (WindowStateBuilder()..update(updates))._build();
 
-  _$WindowState._(
-      {required this.groupKey,
-      required this.state,
-      required this.since,
-      this.lastValue,
-      this.threshold,
-      this.lastEvaluatedAt,
-      this.lastWatermarkSeq,
-      this.reason,
-      this.lastAlertId})
-      : super._();
+  _$WindowState._({
+    required this.groupKey,
+    required this.state,
+    required this.since,
+    this.lastValue,
+    this.threshold,
+    this.lastEvaluatedAt,
+    this.lastWatermarkSeq,
+    this.reason,
+    this.lastAlertId,
+  }) : super._();
   @override
   WindowState rebuild(void Function(WindowStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -237,14 +242,24 @@ class WindowStateBuilder implements Builder<WindowState, WindowStateBuilder> {
   WindowState build() => _build();
 
   _$WindowState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WindowState._(
           groupKey: BuiltValueNullFieldError.checkNotNull(
-              groupKey, r'WindowState', 'groupKey'),
+            groupKey,
+            r'WindowState',
+            'groupKey',
+          ),
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'WindowState', 'state'),
+            state,
+            r'WindowState',
+            'state',
+          ),
           since: BuiltValueNullFieldError.checkNotNull(
-              since, r'WindowState', 'since'),
+            since,
+            r'WindowState',
+            'since',
+          ),
           lastValue: lastValue,
           threshold: threshold,
           lastEvaluatedAt: lastEvaluatedAt,

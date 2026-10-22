@@ -7,11 +7,12 @@ part of 'ingest_records_request.dart';
 // **************************************************************************
 
 const IngestRecordsRequestTypeEnum
-    _$ingestRecordsRequestTypeEnum_featureCollection =
+_$ingestRecordsRequestTypeEnum_featureCollection =
     const IngestRecordsRequestTypeEnum._('featureCollection');
 
 IngestRecordsRequestTypeEnum _$ingestRecordsRequestTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'featureCollection':
       return _$ingestRecordsRequestTypeEnum_featureCollection;
@@ -21,13 +22,14 @@ IngestRecordsRequestTypeEnum _$ingestRecordsRequestTypeEnumValueOf(
 }
 
 final BuiltSet<IngestRecordsRequestTypeEnum>
-    _$ingestRecordsRequestTypeEnumValues =
-    BuiltSet<IngestRecordsRequestTypeEnum>(const <IngestRecordsRequestTypeEnum>[
-  _$ingestRecordsRequestTypeEnum_featureCollection,
-]);
+_$ingestRecordsRequestTypeEnumValues = BuiltSet<IngestRecordsRequestTypeEnum>(
+  const <IngestRecordsRequestTypeEnum>[
+    _$ingestRecordsRequestTypeEnum_featureCollection,
+  ],
+);
 
 Serializer<IngestRecordsRequestTypeEnum>
-    _$ingestRecordsRequestTypeEnumSerializer =
+_$ingestRecordsRequestTypeEnumSerializer =
     _$IngestRecordsRequestTypeEnumSerializer();
 
 class _$IngestRecordsRequestTypeEnumSerializer
@@ -45,31 +47,35 @@ class _$IngestRecordsRequestTypeEnumSerializer
   final String wireName = 'IngestRecordsRequestTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, IngestRecordsRequestTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IngestRecordsRequestTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IngestRecordsRequestTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestRecordsRequestTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestRecordsRequestTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestRecordsRequest extends IngestRecordsRequest {
   @override
   final OneOf oneOf;
 
-  factory _$IngestRecordsRequest(
-          [void Function(IngestRecordsRequestBuilder)? updates]) =>
-      (IngestRecordsRequestBuilder()..update(updates))._build();
+  factory _$IngestRecordsRequest([
+    void Function(IngestRecordsRequestBuilder)? updates,
+  ]) => (IngestRecordsRequestBuilder()..update(updates))._build();
 
   _$IngestRecordsRequest._({required this.oneOf}) : super._();
   @override
   IngestRecordsRequest rebuild(
-          void Function(IngestRecordsRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestRecordsRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestRecordsRequestBuilder toBuilder() =>
@@ -91,9 +97,9 @@ class _$IngestRecordsRequest extends IngestRecordsRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IngestRecordsRequest')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'IngestRecordsRequest',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -132,10 +138,14 @@ class IngestRecordsRequestBuilder
   IngestRecordsRequest build() => _build();
 
   _$IngestRecordsRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestRecordsRequest._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'IngestRecordsRequest', 'oneOf'),
+            oneOf,
+            r'IngestRecordsRequest',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

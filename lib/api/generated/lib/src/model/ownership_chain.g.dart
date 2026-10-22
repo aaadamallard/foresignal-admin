@@ -27,15 +27,15 @@ OwnershipChainDirectionEnum _$ownershipChainDirectionEnumValueOf(String name) {
 }
 
 final BuiltSet<OwnershipChainDirectionEnum>
-    _$ownershipChainDirectionEnumValues =
+_$ownershipChainDirectionEnumValues =
     BuiltSet<OwnershipChainDirectionEnum>(const <OwnershipChainDirectionEnum>[
-  _$ownershipChainDirectionEnum_in_,
-  _$ownershipChainDirectionEnum_out_,
-  _$ownershipChainDirectionEnum_both,
-]);
+      _$ownershipChainDirectionEnum_in_,
+      _$ownershipChainDirectionEnum_out_,
+      _$ownershipChainDirectionEnum_both,
+    ]);
 
 Serializer<OwnershipChainDirectionEnum>
-    _$ownershipChainDirectionEnumSerializer =
+_$ownershipChainDirectionEnumSerializer =
     _$OwnershipChainDirectionEnumSerializer();
 
 class _$OwnershipChainDirectionEnumSerializer
@@ -57,16 +57,20 @@ class _$OwnershipChainDirectionEnumSerializer
   final String wireName = 'OwnershipChainDirectionEnum';
 
   @override
-  Object serialize(Serializers serializers, OwnershipChainDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OwnershipChainDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OwnershipChainDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OwnershipChainDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OwnershipChainDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OwnershipChain extends OwnershipChain {
@@ -86,14 +90,14 @@ class _$OwnershipChain extends OwnershipChain {
   factory _$OwnershipChain([void Function(OwnershipChainBuilder)? updates]) =>
       (OwnershipChainBuilder()..update(updates))._build();
 
-  _$OwnershipChain._(
-      {required this.refs,
-      required this.direction,
-      this.asOf,
-      this.generatedAt,
-      required this.chains,
-      required this.shared})
-      : super._();
+  _$OwnershipChain._({
+    required this.refs,
+    required this.direction,
+    this.asOf,
+    this.generatedAt,
+    required this.chains,
+    required this.shared,
+  }) : super._();
   @override
   OwnershipChain rebuild(void Function(OwnershipChainBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -206,11 +210,15 @@ class OwnershipChainBuilder
   _$OwnershipChain _build() {
     _$OwnershipChain _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OwnershipChain._(
             refs: refs.build(),
             direction: BuiltValueNullFieldError.checkNotNull(
-                direction, r'OwnershipChain', 'direction'),
+              direction,
+              r'OwnershipChain',
+              'direction',
+            ),
             asOf: asOf,
             generatedAt: generatedAt,
             chains: chains.build(),
@@ -228,7 +236,10 @@ class OwnershipChainBuilder
         shared.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OwnershipChain', _$failedField, e.toString());
+          r'OwnershipChain',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -40,9 +40,9 @@ abstract class OgcTileSetListTilesetsInner
 
   OgcTileSetListTilesetsInner._();
 
-  factory OgcTileSetListTilesetsInner(
-          [void updates(OgcTileSetListTilesetsInnerBuilder b)]) =
-      _$OgcTileSetListTilesetsInner;
+  factory OgcTileSetListTilesetsInner([
+    void updates(OgcTileSetListTilesetsInnerBuilder b),
+  ]) = _$OgcTileSetListTilesetsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcTileSetListTilesetsInnerBuilder b) => b;
@@ -57,7 +57,7 @@ class _$OgcTileSetListTilesetsInnerSerializer
   @override
   final Iterable<Type> types = const [
     OgcTileSetListTilesetsInner,
-    _$OgcTileSetListTilesetsInner
+    _$OgcTileSetListTilesetsInner,
   ];
 
   @override
@@ -107,9 +107,11 @@ class _$OgcTileSetListTilesetsInnerSerializer
     OgcTileSetListTilesetsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,42 +127,55 @@ class _$OgcTileSetListTilesetsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'dataType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(OgcTileSetListTilesetsInnerDataTypeEnum),
-          ) as OgcTileSetListTilesetsInnerDataTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OgcTileSetListTilesetsInnerDataTypeEnum,
+                    ),
+                  )
+                  as OgcTileSetListTilesetsInnerDataTypeEnum;
           result.dataType = valueDes;
           break;
         case r'crs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.crs = valueDes;
           break;
         case r'tileMatrixSetURI':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tileMatrixSetURI = valueDes;
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>;
           result.links.replace(valueDes);
           break;
         default:

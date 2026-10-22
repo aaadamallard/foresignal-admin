@@ -162,8 +162,9 @@ class _$SocialCueSerializer implements PrimitiveSerializer<SocialCue> {
     yield r'results';
     yield serializers.serialize(
       object.results,
-      specifiedType:
-          const FullType(BuiltList, [FullType(SocialCueResultsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SocialCueResultsInner),
+      ]),
     );
     yield r'narrativeIds';
     yield serializers.serialize(
@@ -221,9 +222,11 @@ class _$SocialCueSerializer implements PrimitiveSerializer<SocialCue> {
     SocialCue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -239,129 +242,165 @@ class _$SocialCueSerializer implements PrimitiveSerializer<SocialCue> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'trigger':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialCueTrigger),
-          ) as SocialCueTrigger;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialCueTrigger),
+                  )
+                  as SocialCueTrigger;
           result.trigger.replace(valueDes);
           break;
         case r'backend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialCueBackendEnum),
-          ) as SocialCueBackendEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialCueBackendEnum),
+                  )
+                  as SocialCueBackendEnum;
           result.backend = valueDes;
           break;
         case r'queries':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SocialCueQuery)]),
-          ) as BuiltList<SocialCueQuery>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SocialCueQuery),
+                    ]),
+                  )
+                  as BuiltList<SocialCueQuery>;
           result.queries.replace(valueDes);
           break;
         case r'platforms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SocialPlatformId)]),
-          ) as BuiltList<SocialPlatformId>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SocialPlatformId),
+                    ]),
+                  )
+                  as BuiltList<SocialPlatformId>;
           result.platforms.replace(valueDes);
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimeRange),
-          ) as TimeRange;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimeRange),
+                  )
+                  as TimeRange;
           result.window.replace(valueDes);
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialCueStatusEnum),
-          ) as SocialCueStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialCueStatusEnum),
+                  )
+                  as SocialCueStatusEnum;
           result.status = valueDes;
           break;
         case r'statusReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusReason = valueDes;
           break;
         case r'results':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SocialCueResultsInner)]),
-          ) as BuiltList<SocialCueResultsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SocialCueResultsInner),
+                    ]),
+                  )
+                  as BuiltList<SocialCueResultsInner>;
           result.results.replace(valueDes);
           break;
         case r'narrativeIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.narrativeIds.replace(valueDes);
           break;
         case r'costUsd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.costUsd = valueDes;
           break;
         case r'maxCostUsd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxCostUsd = valueDes;
           break;
         case r'createdBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.createdBy = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'startedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.startedAt = valueDes;
           break;
         case r'completedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.completedAt = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;

@@ -36,12 +36,12 @@ ExchangePackageStatusEnum _$exchangePackageStatusEnumValueOf(String name) {
 
 final BuiltSet<ExchangePackageStatusEnum> _$exchangePackageStatusEnumValues =
     BuiltSet<ExchangePackageStatusEnum>(const <ExchangePackageStatusEnum>[
-  _$exchangePackageStatusEnum_building,
-  _$exchangePackageStatusEnum_ready,
-  _$exchangePackageStatusEnum_delivering,
-  _$exchangePackageStatusEnum_delivered,
-  _$exchangePackageStatusEnum_failed,
-]);
+      _$exchangePackageStatusEnum_building,
+      _$exchangePackageStatusEnum_ready,
+      _$exchangePackageStatusEnum_delivering,
+      _$exchangePackageStatusEnum_delivered,
+      _$exchangePackageStatusEnum_failed,
+    ]);
 
 Serializer<ExchangePackageStatusEnum> _$exchangePackageStatusEnumSerializer =
     _$ExchangePackageStatusEnumSerializer();
@@ -69,16 +69,20 @@ class _$ExchangePackageStatusEnumSerializer
   final String wireName = 'ExchangePackageStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ExchangePackageStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExchangePackageStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExchangePackageStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExchangePackageStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExchangePackageStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExchangePackage extends ExchangePackage {
@@ -106,18 +110,18 @@ class _$ExchangePackage extends ExchangePackage {
   factory _$ExchangePackage([void Function(ExchangePackageBuilder)? updates]) =>
       (ExchangePackageBuilder()..update(updates))._build();
 
-  _$ExchangePackage._(
-      {required this.id,
-      required this.manifest,
-      required this.status,
-      this.sizeBytes,
-      this.deliveries,
-      this.reductions,
-      required this.createdBy,
-      required this.createdAt,
-      this.downloadHref,
-      this.error})
-      : super._();
+  _$ExchangePackage._({
+    required this.id,
+    required this.manifest,
+    required this.status,
+    this.sizeBytes,
+    this.deliveries,
+    this.reductions,
+    required this.createdBy,
+    required this.createdAt,
+    this.downloadHref,
+    this.error,
+  }) : super._();
   @override
   ExchangePackage rebuild(void Function(ExchangePackageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -264,19 +268,29 @@ class ExchangePackageBuilder
   _$ExchangePackage _build() {
     _$ExchangePackage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExchangePackage._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ExchangePackage', 'id'),
+              id,
+              r'ExchangePackage',
+              'id',
+            ),
             manifest: manifest.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExchangePackage', 'status'),
+              status,
+              r'ExchangePackage',
+              'status',
+            ),
             sizeBytes: sizeBytes,
             deliveries: _deliveries?.build(),
             reductions: _reductions?.build(),
             createdBy: createdBy.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ExchangePackage', 'createdAt'),
+              createdAt,
+              r'ExchangePackage',
+              'createdAt',
+            ),
             downloadHref: downloadHref,
             error: error,
           );
@@ -294,7 +308,10 @@ class ExchangePackageBuilder
         createdBy.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExchangePackage', _$failedField, e.toString());
+          r'ExchangePackage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

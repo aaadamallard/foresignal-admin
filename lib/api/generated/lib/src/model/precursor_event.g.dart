@@ -7,7 +7,7 @@ part of 'precursor_event.dart';
 // **************************************************************************
 
 const PrecursorEventEventEnum
-    _$precursorEventEventEnum_precursorPeriodValidated =
+_$precursorEventEventEnum_precursorPeriodValidated =
     const PrecursorEventEventEnum._('precursorPeriodValidated');
 const PrecursorEventEventEnum _$precursorEventEventEnum_precursorPeriodStale =
     const PrecursorEventEventEnum._('precursorPeriodStale');
@@ -29,10 +29,10 @@ PrecursorEventEventEnum _$precursorEventEventEnumValueOf(String name) {
 
 final BuiltSet<PrecursorEventEventEnum> _$precursorEventEventEnumValues =
     BuiltSet<PrecursorEventEventEnum>(const <PrecursorEventEventEnum>[
-  _$precursorEventEventEnum_precursorPeriodValidated,
-  _$precursorEventEventEnum_precursorPeriodStale,
-  _$precursorEventEventEnum_precursorPeriodRetired,
-]);
+      _$precursorEventEventEnum_precursorPeriodValidated,
+      _$precursorEventEventEnum_precursorPeriodStale,
+      _$precursorEventEventEnum_precursorPeriodRetired,
+    ]);
 
 Serializer<PrecursorEventEventEnum> _$precursorEventEventEnumSerializer =
     _$PrecursorEventEventEnumSerializer();
@@ -56,16 +56,20 @@ class _$PrecursorEventEventEnumSerializer
   final String wireName = 'PrecursorEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorEvent extends PrecursorEvent {
@@ -79,9 +83,11 @@ class _$PrecursorEvent extends PrecursorEvent {
   factory _$PrecursorEvent([void Function(PrecursorEventBuilder)? updates]) =>
       (PrecursorEventBuilder()..update(updates))._build();
 
-  _$PrecursorEvent._(
-      {required this.event, required this.precursor, required this.at})
-      : super._();
+  _$PrecursorEvent._({
+    required this.event,
+    required this.precursor,
+    required this.at,
+  }) : super._();
   @override
   PrecursorEvent rebuild(void Function(PrecursorEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -167,13 +173,20 @@ class PrecursorEventBuilder
   _$PrecursorEvent _build() {
     _$PrecursorEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'PrecursorEvent', 'event'),
+              event,
+              r'PrecursorEvent',
+              'event',
+            ),
             precursor: precursor.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'PrecursorEvent', 'at'),
+              at,
+              r'PrecursorEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -182,7 +195,10 @@ class PrecursorEventBuilder
         precursor.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorEvent', _$failedField, e.toString());
+          r'PrecursorEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

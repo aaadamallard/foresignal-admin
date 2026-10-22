@@ -32,24 +32,24 @@ class _$SituationChanges extends SituationChanges {
   @override
   final String? manifestId;
 
-  factory _$SituationChanges(
-          [void Function(SituationChangesBuilder)? updates]) =>
-      (SituationChangesBuilder()..update(updates))._build();
+  factory _$SituationChanges([
+    void Function(SituationChangesBuilder)? updates,
+  ]) => (SituationChangesBuilder()..update(updates))._build();
 
-  _$SituationChanges._(
-      {required this.situationId,
-      required this.since,
-      this.baselineDay,
-      required this.now,
-      required this.status,
-      required this.severity,
-      required this.newMembers,
-      this.area,
-      required this.regionsAdded,
-      this.regionsRemoved,
-      this.keyValues,
-      this.manifestId})
-      : super._();
+  _$SituationChanges._({
+    required this.situationId,
+    required this.since,
+    this.baselineDay,
+    required this.now,
+    required this.status,
+    required this.severity,
+    required this.newMembers,
+    this.area,
+    required this.regionsAdded,
+    this.regionsRemoved,
+    this.keyValues,
+    this.manifestId,
+  }) : super._();
   @override
   SituationChanges rebuild(void Function(SituationChangesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -218,15 +218,25 @@ class SituationChangesBuilder
   _$SituationChanges _build() {
     _$SituationChanges _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationChanges._(
             situationId: BuiltValueNullFieldError.checkNotNull(
-                situationId, r'SituationChanges', 'situationId'),
+              situationId,
+              r'SituationChanges',
+              'situationId',
+            ),
             since: BuiltValueNullFieldError.checkNotNull(
-                since, r'SituationChanges', 'since'),
+              since,
+              r'SituationChanges',
+              'since',
+            ),
             baselineDay: baselineDay,
             now: BuiltValueNullFieldError.checkNotNull(
-                now, r'SituationChanges', 'now'),
+              now,
+              r'SituationChanges',
+              'now',
+            ),
             status: status.build(),
             severity: severity.build(),
             newMembers: newMembers.build(),
@@ -255,7 +265,10 @@ class SituationChangesBuilder
         _keyValues?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationChanges', _$failedField, e.toString());
+          r'SituationChanges',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,16 +12,16 @@ class _$StructureDiffDelimiterChanged extends StructureDiffDelimiterChanged {
   @override
   final String to;
 
-  factory _$StructureDiffDelimiterChanged(
-          [void Function(StructureDiffDelimiterChangedBuilder)? updates]) =>
-      (StructureDiffDelimiterChangedBuilder()..update(updates))._build();
+  factory _$StructureDiffDelimiterChanged([
+    void Function(StructureDiffDelimiterChangedBuilder)? updates,
+  ]) => (StructureDiffDelimiterChangedBuilder()..update(updates))._build();
 
   _$StructureDiffDelimiterChanged._({required this.from, required this.to})
-      : super._();
+    : super._();
   @override
   StructureDiffDelimiterChanged rebuild(
-          void Function(StructureDiffDelimiterChangedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StructureDiffDelimiterChangedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StructureDiffDelimiterChangedBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$StructureDiffDelimiterChanged extends StructureDiffDelimiterChanged {
 
 class StructureDiffDelimiterChangedBuilder
     implements
-        Builder<StructureDiffDelimiterChanged,
-            StructureDiffDelimiterChangedBuilder> {
+        Builder<
+          StructureDiffDelimiterChanged,
+          StructureDiffDelimiterChangedBuilder
+        > {
   _$StructureDiffDelimiterChanged? _$v;
 
   String? _from;
@@ -95,12 +97,19 @@ class StructureDiffDelimiterChangedBuilder
   StructureDiffDelimiterChanged build() => _build();
 
   _$StructureDiffDelimiterChanged _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StructureDiffDelimiterChanged._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'StructureDiffDelimiterChanged', 'from'),
+            from,
+            r'StructureDiffDelimiterChanged',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'StructureDiffDelimiterChanged', 'to'),
+            to,
+            r'StructureDiffDelimiterChanged',
+            'to',
+          ),
         );
     replace(_$result);
     return _$result;

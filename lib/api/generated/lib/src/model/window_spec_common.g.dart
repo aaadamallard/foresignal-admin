@@ -18,17 +18,17 @@ class _$WindowSpecCommon extends WindowSpecCommon {
   @override
   final int? maxGroups;
 
-  factory _$WindowSpecCommon(
-          [void Function(WindowSpecCommonBuilder)? updates]) =>
-      (WindowSpecCommonBuilder()..update(updates))._build();
+  factory _$WindowSpecCommon([
+    void Function(WindowSpecCommonBuilder)? updates,
+  ]) => (WindowSpecCommonBuilder()..update(updates))._build();
 
-  _$WindowSpecCommon._(
-      {required this.window,
-      this.step,
-      this.distinctBy,
-      this.groupBy,
-      this.maxGroups})
-      : super._();
+  _$WindowSpecCommon._({
+    required this.window,
+    this.step,
+    this.distinctBy,
+    this.groupBy,
+    this.maxGroups,
+  }) : super._();
   @override
   WindowSpecCommon rebuild(void Function(WindowSpecCommonBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -127,10 +127,14 @@ class WindowSpecCommonBuilder
   WindowSpecCommon build() => _build();
 
   _$WindowSpecCommon _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WindowSpecCommon._(
           window: BuiltValueNullFieldError.checkNotNull(
-              window, r'WindowSpecCommon', 'window'),
+            window,
+            r'WindowSpecCommon',
+            'window',
+          ),
           step: step,
           distinctBy: distinctBy,
           groupBy: groupBy,

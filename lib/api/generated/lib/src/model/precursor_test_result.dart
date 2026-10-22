@@ -115,7 +115,7 @@ class _$PrecursorTestResultSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorTestResult,
-    _$PrecursorTestResult
+    _$PrecursorTestResult,
   ];
 
   @override
@@ -248,9 +248,11 @@ class _$PrecursorTestResultSerializer
     PrecursorTestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -266,145 +268,185 @@ class _$PrecursorTestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'testerVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.testerVersion = valueDes;
           break;
         case r'nAntecedent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nAntecedent = valueDes;
           break;
         case r'nConsequent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.nConsequent = valueDes;
           break;
         case r'hits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.hits = valueDes;
           break;
         case r'hitRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.hitRate = valueDes;
           break;
         case r'hitRateCi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PrecursorTestResultHitRateCi),
-          ) as PrecursorTestResultHitRateCi?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorTestResultHitRateCi,
+                    ),
+                  )
+                  as PrecursorTestResultHitRateCi?;
           if (valueDes == null) continue;
           result.hitRateCi.replace(valueDes);
           break;
         case r'lag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrecursorTestResultLag),
-          ) as PrecursorTestResultLag?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorTestResultLag,
+                    ),
+                  )
+                  as PrecursorTestResultLag?;
           if (valueDes == null) continue;
           result.lag.replace(valueDes);
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseRate = valueDes;
           break;
         case r'lift':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lift = valueDes;
           break;
         case r'pValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pValue = valueDes;
           break;
         case r'permutations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PrecursorTestResultPermutationsEnum),
-          ) as PrecursorTestResultPermutationsEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorTestResultPermutationsEnum,
+                    ),
+                  )
+                  as PrecursorTestResultPermutationsEnum?;
           if (valueDes == null) continue;
           result.permutations = valueDes;
           break;
         case r'seed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.seed = valueDes;
           break;
         case r'reverse':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrecursorTestResultReverse),
-          ) as PrecursorTestResultReverse?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorTestResultReverse,
+                    ),
+                  )
+                  as PrecursorTestResultReverse?;
           if (valueDes == null) continue;
           result.reverse.replace(valueDes);
           break;
         case r'coOccurrenceNotPrecedence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.coOccurrenceNotPrecedence = valueDes;
           break;
         case r'verdict':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorTestResultVerdictEnum),
-          ) as PrecursorTestResultVerdictEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PrecursorTestResultVerdictEnum,
+                    ),
+                  )
+                  as PrecursorTestResultVerdictEnum;
           result.verdict = valueDes;
           break;
         case r'multipleTesting':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PrecursorTestResultMultipleTesting),
-          ) as PrecursorTestResultMultipleTesting?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorTestResultMultipleTesting,
+                    ),
+                  )
+                  as PrecursorTestResultMultipleTesting?;
           if (valueDes == null) continue;
           result.multipleTesting.replace(valueDes);
           break;
         case r'statement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.statement = valueDes;
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(BacktestCaveat)]),
-          ) as BuiltList<BacktestCaveat>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(BacktestCaveat),
+                    ]),
+                  )
+                  as BuiltList<BacktestCaveat>;
           result.caveats.replace(valueDes);
           break;
         default:

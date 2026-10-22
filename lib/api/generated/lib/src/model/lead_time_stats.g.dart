@@ -21,13 +21,13 @@ class _$LeadTimeStats extends LeadTimeStats {
   factory _$LeadTimeStats([void Function(LeadTimeStatsBuilder)? updates]) =>
       (LeadTimeStatsBuilder()..update(updates))._build();
 
-  _$LeadTimeStats._(
-      {required this.generatedAt,
-      required this.trainingCutoff,
-      this.filters,
-      required this.groups,
-      this.caveats})
-      : super._();
+  _$LeadTimeStats._({
+    required this.generatedAt,
+    required this.trainingCutoff,
+    this.filters,
+    required this.groups,
+    this.caveats,
+  }) : super._();
   @override
   LeadTimeStats rebuild(void Function(LeadTimeStatsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -132,12 +132,19 @@ class LeadTimeStatsBuilder
   _$LeadTimeStats _build() {
     _$LeadTimeStats _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LeadTimeStats._(
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'LeadTimeStats', 'generatedAt'),
+              generatedAt,
+              r'LeadTimeStats',
+              'generatedAt',
+            ),
             trainingCutoff: BuiltValueNullFieldError.checkNotNull(
-                trainingCutoff, r'LeadTimeStats', 'trainingCutoff'),
+              trainingCutoff,
+              r'LeadTimeStats',
+              'trainingCutoff',
+            ),
             filters: _filters?.build(),
             groups: groups.build(),
             caveats: _caveats?.build(),
@@ -153,7 +160,10 @@ class LeadTimeStatsBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LeadTimeStats', _$failedField, e.toString());
+          r'LeadTimeStats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

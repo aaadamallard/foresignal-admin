@@ -32,21 +32,22 @@ SourceDescriptorModeEnum _$sourceDescriptorModeEnumValueOf(String name) {
 
 final BuiltSet<SourceDescriptorModeEnum> _$sourceDescriptorModeEnumValues =
     BuiltSet<SourceDescriptorModeEnum>(const <SourceDescriptorModeEnum>[
-  _$sourceDescriptorModeEnum_polling,
-  _$sourceDescriptorModeEnum_streaming,
-  _$sourceDescriptorModeEnum_push,
-  _$sourceDescriptorModeEnum_derived,
-]);
+      _$sourceDescriptorModeEnum_polling,
+      _$sourceDescriptorModeEnum_streaming,
+      _$sourceDescriptorModeEnum_push,
+      _$sourceDescriptorModeEnum_derived,
+    ]);
 
 const SourceDescriptorObservedAtModeEnum
-    _$sourceDescriptorObservedAtModeEnum_UPSTREAM =
+_$sourceDescriptorObservedAtModeEnum_UPSTREAM =
     const SourceDescriptorObservedAtModeEnum._('UPSTREAM');
 const SourceDescriptorObservedAtModeEnum
-    _$sourceDescriptorObservedAtModeEnum_RECEIVED =
+_$sourceDescriptorObservedAtModeEnum_RECEIVED =
     const SourceDescriptorObservedAtModeEnum._('RECEIVED');
 
 SourceDescriptorObservedAtModeEnum _$sourceDescriptorObservedAtModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'UPSTREAM':
       return _$sourceDescriptorObservedAtModeEnum_UPSTREAM;
@@ -58,11 +59,13 @@ SourceDescriptorObservedAtModeEnum _$sourceDescriptorObservedAtModeEnumValueOf(
 }
 
 final BuiltSet<SourceDescriptorObservedAtModeEnum>
-    _$sourceDescriptorObservedAtModeEnumValues = BuiltSet<
-        SourceDescriptorObservedAtModeEnum>(const <SourceDescriptorObservedAtModeEnum>[
-  _$sourceDescriptorObservedAtModeEnum_UPSTREAM,
-  _$sourceDescriptorObservedAtModeEnum_RECEIVED,
-]);
+_$sourceDescriptorObservedAtModeEnumValues =
+    BuiltSet<SourceDescriptorObservedAtModeEnum>(
+      const <SourceDescriptorObservedAtModeEnum>[
+        _$sourceDescriptorObservedAtModeEnum_UPSTREAM,
+        _$sourceDescriptorObservedAtModeEnum_RECEIVED,
+      ],
+    );
 
 const SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnum_OBSERVED =
     const SourceDescriptorTtlAnchorEnum._('OBSERVED');
@@ -70,7 +73,8 @@ const SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnum_RECEIVED =
     const SourceDescriptorTtlAnchorEnum._('RECEIVED');
 
 SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'OBSERVED':
       return _$sourceDescriptorTtlAnchorEnum_OBSERVED;
@@ -82,11 +86,12 @@ SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnumValueOf(
 }
 
 final BuiltSet<SourceDescriptorTtlAnchorEnum>
-    _$sourceDescriptorTtlAnchorEnumValues = BuiltSet<
-        SourceDescriptorTtlAnchorEnum>(const <SourceDescriptorTtlAnchorEnum>[
-  _$sourceDescriptorTtlAnchorEnum_OBSERVED,
-  _$sourceDescriptorTtlAnchorEnum_RECEIVED,
-]);
+_$sourceDescriptorTtlAnchorEnumValues = BuiltSet<SourceDescriptorTtlAnchorEnum>(
+  const <SourceDescriptorTtlAnchorEnum>[
+    _$sourceDescriptorTtlAnchorEnum_OBSERVED,
+    _$sourceDescriptorTtlAnchorEnum_RECEIVED,
+  ],
+);
 
 const SourceDescriptorEgressEnum _$sourceDescriptorEgressEnum_OPEN =
     const SourceDescriptorEgressEnum._('OPEN');
@@ -106,9 +111,9 @@ SourceDescriptorEgressEnum _$sourceDescriptorEgressEnumValueOf(String name) {
 
 final BuiltSet<SourceDescriptorEgressEnum> _$sourceDescriptorEgressEnumValues =
     BuiltSet<SourceDescriptorEgressEnum>(const <SourceDescriptorEgressEnum>[
-  _$sourceDescriptorEgressEnum_OPEN,
-  _$sourceDescriptorEgressEnum_LOCAL_ONLY,
-]);
+      _$sourceDescriptorEgressEnum_OPEN,
+      _$sourceDescriptorEgressEnum_LOCAL_ONLY,
+    ]);
 
 const SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnum_A =
     const SourceDescriptorReliabilityEnum._('A');
@@ -124,7 +129,8 @@ const SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnum_F =
     const SourceDescriptorReliabilityEnum._('F');
 
 SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'A':
       return _$sourceDescriptorReliabilityEnum_A;
@@ -144,28 +150,30 @@ SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnumValueOf(
 }
 
 final BuiltSet<SourceDescriptorReliabilityEnum>
-    _$sourceDescriptorReliabilityEnumValues = BuiltSet<
-        SourceDescriptorReliabilityEnum>(const <SourceDescriptorReliabilityEnum>[
-  _$sourceDescriptorReliabilityEnum_A,
-  _$sourceDescriptorReliabilityEnum_B,
-  _$sourceDescriptorReliabilityEnum_C,
-  _$sourceDescriptorReliabilityEnum_D,
-  _$sourceDescriptorReliabilityEnum_E,
-  _$sourceDescriptorReliabilityEnum_F,
-]);
+_$sourceDescriptorReliabilityEnumValues =
+    BuiltSet<SourceDescriptorReliabilityEnum>(
+      const <SourceDescriptorReliabilityEnum>[
+        _$sourceDescriptorReliabilityEnum_A,
+        _$sourceDescriptorReliabilityEnum_B,
+        _$sourceDescriptorReliabilityEnum_C,
+        _$sourceDescriptorReliabilityEnum_D,
+        _$sourceDescriptorReliabilityEnum_E,
+        _$sourceDescriptorReliabilityEnum_F,
+      ],
+    );
 
 Serializer<SourceDescriptorModeEnum> _$sourceDescriptorModeEnumSerializer =
     _$SourceDescriptorModeEnumSerializer();
 Serializer<SourceDescriptorObservedAtModeEnum>
-    _$sourceDescriptorObservedAtModeEnumSerializer =
+_$sourceDescriptorObservedAtModeEnumSerializer =
     _$SourceDescriptorObservedAtModeEnumSerializer();
 Serializer<SourceDescriptorTtlAnchorEnum>
-    _$sourceDescriptorTtlAnchorEnumSerializer =
+_$sourceDescriptorTtlAnchorEnumSerializer =
     _$SourceDescriptorTtlAnchorEnumSerializer();
 Serializer<SourceDescriptorEgressEnum> _$sourceDescriptorEgressEnumSerializer =
     _$SourceDescriptorEgressEnumSerializer();
 Serializer<SourceDescriptorReliabilityEnum>
-    _$sourceDescriptorReliabilityEnumSerializer =
+_$sourceDescriptorReliabilityEnumSerializer =
     _$SourceDescriptorReliabilityEnumSerializer();
 
 class _$SourceDescriptorModeEnumSerializer
@@ -189,16 +197,20 @@ class _$SourceDescriptorModeEnumSerializer
   final String wireName = 'SourceDescriptorModeEnum';
 
   @override
-  Object serialize(Serializers serializers, SourceDescriptorModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SourceDescriptorModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceDescriptorModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceDescriptorModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceDescriptorModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceDescriptorObservedAtModeEnumSerializer
@@ -219,16 +231,19 @@ class _$SourceDescriptorObservedAtModeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SourceDescriptorObservedAtModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SourceDescriptorObservedAtModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceDescriptorObservedAtModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceDescriptorObservedAtModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceDescriptorObservedAtModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceDescriptorTtlAnchorEnumSerializer
@@ -249,16 +264,19 @@ class _$SourceDescriptorTtlAnchorEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SourceDescriptorTtlAnchorEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SourceDescriptorTtlAnchorEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceDescriptorTtlAnchorEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceDescriptorTtlAnchorEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceDescriptorTtlAnchorEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceDescriptorEgressEnumSerializer
@@ -278,16 +296,20 @@ class _$SourceDescriptorEgressEnumSerializer
   final String wireName = 'SourceDescriptorEgressEnum';
 
   @override
-  Object serialize(Serializers serializers, SourceDescriptorEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SourceDescriptorEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceDescriptorEgressEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceDescriptorEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceDescriptorEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceDescriptorReliabilityEnumSerializer
@@ -316,16 +338,19 @@ class _$SourceDescriptorReliabilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SourceDescriptorReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SourceDescriptorReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SourceDescriptorReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SourceDescriptorReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SourceDescriptorReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SourceDescriptor extends SourceDescriptor {
@@ -438,66 +463,66 @@ class _$SourceDescriptor extends SourceDescriptor {
   @override
   final SourceAccess? access;
 
-  factory _$SourceDescriptor(
-          [void Function(SourceDescriptorBuilder)? updates]) =>
-      (SourceDescriptorBuilder()..update(updates))._build();
+  factory _$SourceDescriptor([
+    void Function(SourceDescriptorBuilder)? updates,
+  ]) => (SourceDescriptorBuilder()..update(updates))._build();
 
-  _$SourceDescriptor._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.kinds,
-      this.homepage,
-      this.attribution,
-      required this.mode,
-      this.custom,
-      required this.credentialFields,
-      required this.params,
-      this.minInterval,
-      this.defaultInterval,
-      required this.defaultBudget,
-      this.recordTtl,
-      this.zeroResultsNormal,
-      this.tileProperties,
-      this.searchFields,
-      this.embedFields,
-      this.rankField,
-      this.licence,
-      this.termsUrl,
-      this.historyTier,
-      this.observedAtMode,
-      this.ttlAnchor,
-      this.defaultIngestPolicy,
-      this.volatileFields,
-      this.significantFields,
-      this.motion,
-      this.thresholds,
-      this.defaultRetention,
-      this.kindRetention,
-      this.skewTolerance,
-      this.allowNullIsland,
-      this.products,
-      this.titleField,
-      this.entityKeys,
-      this.fieldSpecs,
-      this.kindDisplay,
-      this.aggBelowZoom,
-      this.startField,
-      this.endField,
-      this.private,
-      this.privatePrecisionDecimals,
-      this.acceptsRemoteMedia,
-      this.egress,
-      this.egressOverridable,
-      this.llmNotice,
-      this.licenceTerms,
-      this.reliability,
-      this.derivedFrom,
-      this.originator,
-      this.upstreamRefFields,
-      this.observability,
-      this.access})
-      : super._();
+  _$SourceDescriptor._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.kinds,
+    this.homepage,
+    this.attribution,
+    required this.mode,
+    this.custom,
+    required this.credentialFields,
+    required this.params,
+    this.minInterval,
+    this.defaultInterval,
+    required this.defaultBudget,
+    this.recordTtl,
+    this.zeroResultsNormal,
+    this.tileProperties,
+    this.searchFields,
+    this.embedFields,
+    this.rankField,
+    this.licence,
+    this.termsUrl,
+    this.historyTier,
+    this.observedAtMode,
+    this.ttlAnchor,
+    this.defaultIngestPolicy,
+    this.volatileFields,
+    this.significantFields,
+    this.motion,
+    this.thresholds,
+    this.defaultRetention,
+    this.kindRetention,
+    this.skewTolerance,
+    this.allowNullIsland,
+    this.products,
+    this.titleField,
+    this.entityKeys,
+    this.fieldSpecs,
+    this.kindDisplay,
+    this.aggBelowZoom,
+    this.startField,
+    this.endField,
+    this.private,
+    this.privatePrecisionDecimals,
+    this.acceptsRemoteMedia,
+    this.egress,
+    this.egressOverridable,
+    this.llmNotice,
+    this.licenceTerms,
+    this.reliability,
+    this.derivedFrom,
+    this.originator,
+    this.upstreamRefFields,
+    this.observability,
+    this.access,
+  }) : super._();
   @override
   SourceDescriptor rebuild(void Function(SourceDescriptorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -1038,18 +1063,28 @@ class SourceDescriptorBuilder
   _$SourceDescriptor _build() {
     _$SourceDescriptor _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SourceDescriptor._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SourceDescriptor', 'id'),
+              id,
+              r'SourceDescriptor',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SourceDescriptor', 'name'),
+              name,
+              r'SourceDescriptor',
+              'name',
+            ),
             description: description,
             kinds: kinds.build(),
             homepage: homepage,
             attribution: attribution,
             mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'SourceDescriptor', 'mode'),
+              mode,
+              r'SourceDescriptor',
+              'mode',
+            ),
             custom: custom,
             credentialFields: credentialFields.build(),
             params: params.build(),
@@ -1157,7 +1192,10 @@ class SourceDescriptorBuilder
         _access?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SourceDescriptor', _$failedField, e.toString());
+          r'SourceDescriptor',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

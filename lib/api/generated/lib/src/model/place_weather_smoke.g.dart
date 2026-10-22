@@ -16,13 +16,16 @@ class _$PlaceWeatherSmoke extends PlaceWeatherSmoke {
   @override
   final num? hrrrPm25Max24h;
 
-  factory _$PlaceWeatherSmoke(
-          [void Function(PlaceWeatherSmokeBuilder)? updates]) =>
-      (PlaceWeatherSmokeBuilder()..update(updates))._build();
+  factory _$PlaceWeatherSmoke([
+    void Function(PlaceWeatherSmokeBuilder)? updates,
+  ]) => (PlaceWeatherSmokeBuilder()..update(updates))._build();
 
-  _$PlaceWeatherSmoke._(
-      {required this.status, this.asOf, this.statusText, this.hrrrPm25Max24h})
-      : super._();
+  _$PlaceWeatherSmoke._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.hrrrPm25Max24h,
+  }) : super._();
   @override
   PlaceWeatherSmoke rebuild(void Function(PlaceWeatherSmokeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,10 +117,14 @@ class PlaceWeatherSmokeBuilder
   PlaceWeatherSmoke build() => _build();
 
   _$PlaceWeatherSmoke _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherSmoke._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherSmoke', 'status'),
+            status,
+            r'PlaceWeatherSmoke',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           hrrrPm25Max24h: hrrrPm25Max24h,

@@ -35,9 +35,9 @@ abstract class SocialSettingsTrackRecord
 
   SocialSettingsTrackRecord._();
 
-  factory SocialSettingsTrackRecord(
-          [void updates(SocialSettingsTrackRecordBuilder b)]) =
-      _$SocialSettingsTrackRecord;
+  factory SocialSettingsTrackRecord([
+    void updates(SocialSettingsTrackRecordBuilder b),
+  ]) = _$SocialSettingsTrackRecord;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsTrackRecordBuilder b) => b;
@@ -52,7 +52,7 @@ class _$SocialSettingsTrackRecordSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsTrackRecord,
-    _$SocialSettingsTrackRecord
+    _$SocialSettingsTrackRecord,
   ];
 
   @override
@@ -88,8 +88,9 @@ class _$SocialSettingsTrackRecordSerializer
       yield r'overrides';
       yield serializers.serialize(
         object.overrides,
-        specifiedType: const FullType(
-            BuiltList, [FullType(SocialSettingsTrackRecordOverridesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SocialSettingsTrackRecordOverridesInner),
+        ]),
       );
     }
   }
@@ -100,9 +101,11 @@ class _$SocialSettingsTrackRecordSerializer
     SocialSettingsTrackRecord object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,35 +121,44 @@ class _$SocialSettingsTrackRecordSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'minAssessed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minAssessed = valueDes;
           break;
         case r'gradeEShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.gradeEShare = valueDes;
           break;
         case r'gradeDShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.gradeDShare = valueDes;
           break;
         case r'overrides':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SocialSettingsTrackRecordOverridesInner)]),
-          ) as BuiltList<SocialSettingsTrackRecordOverridesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SocialSettingsTrackRecordOverridesInner),
+                    ]),
+                  )
+                  as BuiltList<SocialSettingsTrackRecordOverridesInner>?;
           if (valueDes == null) continue;
           result.overrides.replace(valueDes);
           break;

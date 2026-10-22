@@ -20,7 +20,7 @@ class _$EdpTransport extends EdpTransport {
       (EdpTransportBuilder()..update(updates))._build();
 
   _$EdpTransport._({this.push, this.pull, this.search, this.analysisRequest})
-      : super._();
+    : super._();
   @override
   EdpTransport rebuild(void Function(EdpTransportBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,7 +114,8 @@ class EdpTransportBuilder
   _$EdpTransport _build() {
     _$EdpTransport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpTransport._(
             push: push,
             pull: _pull?.build(),
@@ -132,7 +133,10 @@ class EdpTransportBuilder
         _analysisRequest?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpTransport', _$failedField, e.toString());
+          r'EdpTransport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

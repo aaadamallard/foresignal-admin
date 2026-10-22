@@ -7,17 +7,18 @@ part of 'ownership_chain_request.dart';
 // **************************************************************************
 
 const OwnershipChainRequestDirectionEnum
-    _$ownershipChainRequestDirectionEnum_in_ =
+_$ownershipChainRequestDirectionEnum_in_ =
     const OwnershipChainRequestDirectionEnum._('in_');
 const OwnershipChainRequestDirectionEnum
-    _$ownershipChainRequestDirectionEnum_out_ =
+_$ownershipChainRequestDirectionEnum_out_ =
     const OwnershipChainRequestDirectionEnum._('out_');
 const OwnershipChainRequestDirectionEnum
-    _$ownershipChainRequestDirectionEnum_both =
+_$ownershipChainRequestDirectionEnum_both =
     const OwnershipChainRequestDirectionEnum._('both');
 
 OwnershipChainRequestDirectionEnum _$ownershipChainRequestDirectionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'in_':
       return _$ownershipChainRequestDirectionEnum_in_;
@@ -31,29 +32,32 @@ OwnershipChainRequestDirectionEnum _$ownershipChainRequestDirectionEnumValueOf(
 }
 
 final BuiltSet<OwnershipChainRequestDirectionEnum>
-    _$ownershipChainRequestDirectionEnumValues = BuiltSet<
-        OwnershipChainRequestDirectionEnum>(const <OwnershipChainRequestDirectionEnum>[
-  _$ownershipChainRequestDirectionEnum_in_,
-  _$ownershipChainRequestDirectionEnum_out_,
-  _$ownershipChainRequestDirectionEnum_both,
-]);
+_$ownershipChainRequestDirectionEnumValues =
+    BuiltSet<OwnershipChainRequestDirectionEnum>(
+      const <OwnershipChainRequestDirectionEnum>[
+        _$ownershipChainRequestDirectionEnum_in_,
+        _$ownershipChainRequestDirectionEnum_out_,
+        _$ownershipChainRequestDirectionEnum_both,
+      ],
+    );
 
 const OwnershipChainRequestTypesEnum _$ownershipChainRequestTypesEnum_owns =
     const OwnershipChainRequestTypesEnum._('owns');
 const OwnershipChainRequestTypesEnum _$ownershipChainRequestTypesEnum_controls =
     const OwnershipChainRequestTypesEnum._('controls');
 const OwnershipChainRequestTypesEnum
-    _$ownershipChainRequestTypesEnum_officerOf =
+_$ownershipChainRequestTypesEnum_officerOf =
     const OwnershipChainRequestTypesEnum._('officerOf');
 const OwnershipChainRequestTypesEnum
-    _$ownershipChainRequestTypesEnum_beneficialOwner =
+_$ownershipChainRequestTypesEnum_beneficialOwner =
     const OwnershipChainRequestTypesEnum._('beneficialOwner');
 const OwnershipChainRequestTypesEnum
-    _$ownershipChainRequestTypesEnum_affiliatedWith =
+_$ownershipChainRequestTypesEnum_affiliatedWith =
     const OwnershipChainRequestTypesEnum._('affiliatedWith');
 
 OwnershipChainRequestTypesEnum _$ownershipChainRequestTypesEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'owns':
       return _$ownershipChainRequestTypesEnum_owns;
@@ -71,20 +75,22 @@ OwnershipChainRequestTypesEnum _$ownershipChainRequestTypesEnumValueOf(
 }
 
 final BuiltSet<OwnershipChainRequestTypesEnum>
-    _$ownershipChainRequestTypesEnumValues = BuiltSet<
-        OwnershipChainRequestTypesEnum>(const <OwnershipChainRequestTypesEnum>[
-  _$ownershipChainRequestTypesEnum_owns,
-  _$ownershipChainRequestTypesEnum_controls,
-  _$ownershipChainRequestTypesEnum_officerOf,
-  _$ownershipChainRequestTypesEnum_beneficialOwner,
-  _$ownershipChainRequestTypesEnum_affiliatedWith,
-]);
+_$ownershipChainRequestTypesEnumValues =
+    BuiltSet<OwnershipChainRequestTypesEnum>(
+      const <OwnershipChainRequestTypesEnum>[
+        _$ownershipChainRequestTypesEnum_owns,
+        _$ownershipChainRequestTypesEnum_controls,
+        _$ownershipChainRequestTypesEnum_officerOf,
+        _$ownershipChainRequestTypesEnum_beneficialOwner,
+        _$ownershipChainRequestTypesEnum_affiliatedWith,
+      ],
+    );
 
 Serializer<OwnershipChainRequestDirectionEnum>
-    _$ownershipChainRequestDirectionEnumSerializer =
+_$ownershipChainRequestDirectionEnumSerializer =
     _$OwnershipChainRequestDirectionEnumSerializer();
 Serializer<OwnershipChainRequestTypesEnum>
-    _$ownershipChainRequestTypesEnumSerializer =
+_$ownershipChainRequestTypesEnumSerializer =
     _$OwnershipChainRequestTypesEnumSerializer();
 
 class _$OwnershipChainRequestDirectionEnumSerializer
@@ -107,16 +113,19 @@ class _$OwnershipChainRequestDirectionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, OwnershipChainRequestDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    OwnershipChainRequestDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OwnershipChainRequestDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OwnershipChainRequestDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OwnershipChainRequestDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OwnershipChainRequestTypesEnumSerializer
@@ -143,16 +152,19 @@ class _$OwnershipChainRequestTypesEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, OwnershipChainRequestTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    OwnershipChainRequestTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OwnershipChainRequestTypesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OwnershipChainRequestTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OwnershipChainRequestTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OwnershipChainRequest extends OwnershipChainRequest {
@@ -169,22 +181,22 @@ class _$OwnershipChainRequest extends OwnershipChainRequest {
   @override
   final DateTime? asOf;
 
-  factory _$OwnershipChainRequest(
-          [void Function(OwnershipChainRequestBuilder)? updates]) =>
-      (OwnershipChainRequestBuilder()..update(updates))._build();
+  factory _$OwnershipChainRequest([
+    void Function(OwnershipChainRequestBuilder)? updates,
+  ]) => (OwnershipChainRequestBuilder()..update(updates))._build();
 
-  _$OwnershipChainRequest._(
-      {required this.refs,
-      this.depth,
-      this.direction,
-      this.types,
-      this.minConfidence,
-      this.asOf})
-      : super._();
+  _$OwnershipChainRequest._({
+    required this.refs,
+    this.depth,
+    this.direction,
+    this.types,
+    this.minConfidence,
+    this.asOf,
+  }) : super._();
   @override
   OwnershipChainRequest rebuild(
-          void Function(OwnershipChainRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OwnershipChainRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OwnershipChainRequestBuilder toBuilder() =>
@@ -294,7 +306,8 @@ class OwnershipChainRequestBuilder
   _$OwnershipChainRequest _build() {
     _$OwnershipChainRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OwnershipChainRequest._(
             refs: refs.build(),
             depth: depth,
@@ -313,7 +326,10 @@ class OwnershipChainRequestBuilder
         _types?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OwnershipChainRequest', _$failedField, e.toString());
+          r'OwnershipChainRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

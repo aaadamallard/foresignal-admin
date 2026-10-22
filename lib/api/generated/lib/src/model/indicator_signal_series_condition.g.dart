@@ -7,20 +7,20 @@ part of 'indicator_signal_series_condition.dart';
 // **************************************************************************
 
 const IndicatorSignalSeriesConditionOpEnum
-    _$indicatorSignalSeriesConditionOpEnum_gt =
+_$indicatorSignalSeriesConditionOpEnum_gt =
     const IndicatorSignalSeriesConditionOpEnum._('gt');
 const IndicatorSignalSeriesConditionOpEnum
-    _$indicatorSignalSeriesConditionOpEnum_gte =
+_$indicatorSignalSeriesConditionOpEnum_gte =
     const IndicatorSignalSeriesConditionOpEnum._('gte');
 const IndicatorSignalSeriesConditionOpEnum
-    _$indicatorSignalSeriesConditionOpEnum_lt =
+_$indicatorSignalSeriesConditionOpEnum_lt =
     const IndicatorSignalSeriesConditionOpEnum._('lt');
 const IndicatorSignalSeriesConditionOpEnum
-    _$indicatorSignalSeriesConditionOpEnum_lte =
+_$indicatorSignalSeriesConditionOpEnum_lte =
     const IndicatorSignalSeriesConditionOpEnum._('lte');
 
 IndicatorSignalSeriesConditionOpEnum
-    _$indicatorSignalSeriesConditionOpEnumValueOf(String name) {
+_$indicatorSignalSeriesConditionOpEnumValueOf(String name) {
   switch (name) {
     case 'gt':
       return _$indicatorSignalSeriesConditionOpEnum_gt;
@@ -36,16 +36,18 @@ IndicatorSignalSeriesConditionOpEnum
 }
 
 final BuiltSet<IndicatorSignalSeriesConditionOpEnum>
-    _$indicatorSignalSeriesConditionOpEnumValues = BuiltSet<
-        IndicatorSignalSeriesConditionOpEnum>(const <IndicatorSignalSeriesConditionOpEnum>[
-  _$indicatorSignalSeriesConditionOpEnum_gt,
-  _$indicatorSignalSeriesConditionOpEnum_gte,
-  _$indicatorSignalSeriesConditionOpEnum_lt,
-  _$indicatorSignalSeriesConditionOpEnum_lte,
-]);
+_$indicatorSignalSeriesConditionOpEnumValues =
+    BuiltSet<IndicatorSignalSeriesConditionOpEnum>(
+      const <IndicatorSignalSeriesConditionOpEnum>[
+        _$indicatorSignalSeriesConditionOpEnum_gt,
+        _$indicatorSignalSeriesConditionOpEnum_gte,
+        _$indicatorSignalSeriesConditionOpEnum_lt,
+        _$indicatorSignalSeriesConditionOpEnum_lte,
+      ],
+    );
 
 Serializer<IndicatorSignalSeriesConditionOpEnum>
-    _$indicatorSignalSeriesConditionOpEnumSerializer =
+_$indicatorSignalSeriesConditionOpEnumSerializer =
     _$IndicatorSignalSeriesConditionOpEnumSerializer();
 
 class _$IndicatorSignalSeriesConditionOpEnumSerializer
@@ -65,23 +67,26 @@ class _$IndicatorSignalSeriesConditionOpEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IndicatorSignalSeriesConditionOpEnum
+    IndicatorSignalSeriesConditionOpEnum,
   ];
   @override
   final String wireName = 'IndicatorSignalSeriesConditionOpEnum';
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorSignalSeriesConditionOpEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorSignalSeriesConditionOpEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorSignalSeriesConditionOpEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorSignalSeriesConditionOpEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorSignalSeriesConditionOpEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorSignalSeriesCondition extends IndicatorSignalSeriesCondition {
@@ -90,16 +95,16 @@ class _$IndicatorSignalSeriesCondition extends IndicatorSignalSeriesCondition {
   @override
   final num value;
 
-  factory _$IndicatorSignalSeriesCondition(
-          [void Function(IndicatorSignalSeriesConditionBuilder)? updates]) =>
-      (IndicatorSignalSeriesConditionBuilder()..update(updates))._build();
+  factory _$IndicatorSignalSeriesCondition([
+    void Function(IndicatorSignalSeriesConditionBuilder)? updates,
+  ]) => (IndicatorSignalSeriesConditionBuilder()..update(updates))._build();
 
   _$IndicatorSignalSeriesCondition._({required this.op, required this.value})
-      : super._();
+    : super._();
   @override
   IndicatorSignalSeriesCondition rebuild(
-          void Function(IndicatorSignalSeriesConditionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndicatorSignalSeriesConditionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndicatorSignalSeriesConditionBuilder toBuilder() =>
@@ -133,8 +138,10 @@ class _$IndicatorSignalSeriesCondition extends IndicatorSignalSeriesCondition {
 
 class IndicatorSignalSeriesConditionBuilder
     implements
-        Builder<IndicatorSignalSeriesCondition,
-            IndicatorSignalSeriesConditionBuilder> {
+        Builder<
+          IndicatorSignalSeriesCondition,
+          IndicatorSignalSeriesConditionBuilder
+        > {
   _$IndicatorSignalSeriesCondition? _$v;
 
   IndicatorSignalSeriesConditionOpEnum? _op;
@@ -173,12 +180,19 @@ class IndicatorSignalSeriesConditionBuilder
   IndicatorSignalSeriesCondition build() => _build();
 
   _$IndicatorSignalSeriesCondition _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IndicatorSignalSeriesCondition._(
           op: BuiltValueNullFieldError.checkNotNull(
-              op, r'IndicatorSignalSeriesCondition', 'op'),
+            op,
+            r'IndicatorSignalSeriesCondition',
+            'op',
+          ),
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'IndicatorSignalSeriesCondition', 'value'),
+            value,
+            r'IndicatorSignalSeriesCondition',
+            'value',
+          ),
         );
     replace(_$result);
     return _$result;

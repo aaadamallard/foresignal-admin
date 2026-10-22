@@ -14,16 +14,16 @@ class _$LlmTestResultEmbedding extends LlmTestResultEmbedding {
   @override
   final int? latencyMs;
 
-  factory _$LlmTestResultEmbedding(
-          [void Function(LlmTestResultEmbeddingBuilder)? updates]) =>
-      (LlmTestResultEmbeddingBuilder()..update(updates))._build();
+  factory _$LlmTestResultEmbedding([
+    void Function(LlmTestResultEmbeddingBuilder)? updates,
+  ]) => (LlmTestResultEmbeddingBuilder()..update(updates))._build();
 
   _$LlmTestResultEmbedding._({this.model, this.dimensions, this.latencyMs})
-      : super._();
+    : super._();
   @override
   LlmTestResultEmbedding rebuild(
-          void Function(LlmTestResultEmbeddingBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(LlmTestResultEmbeddingBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   LlmTestResultEmbeddingBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class LlmTestResultEmbeddingBuilder
   LlmTestResultEmbedding build() => _build();
 
   _$LlmTestResultEmbedding _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LlmTestResultEmbedding._(
           model: model,
           dimensions: dimensions,

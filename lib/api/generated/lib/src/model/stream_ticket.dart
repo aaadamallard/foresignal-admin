@@ -87,9 +87,11 @@ class _$StreamTicketSerializer implements PrimitiveSerializer<StreamTicket> {
     StreamTicket object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,32 +107,41 @@ class _$StreamTicketSerializer implements PrimitiveSerializer<StreamTicket> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'ticket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ticket = valueDes;
           break;
         case r'purpose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StreamTicketPurposeEnum),
-          ) as StreamTicketPurposeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StreamTicketPurposeEnum),
+                  )
+                  as StreamTicketPurposeEnum;
           result.purpose = valueDes;
           break;
         case r'expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.expiresAt = valueDes;
           break;
         case r'paths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.paths.replace(valueDes);
           break;

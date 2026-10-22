@@ -15,17 +15,19 @@ class _$OgcCoverageCollectionDataQueries
   @override
   final OgcCoverageCollectionDataQueriesInstances? instances;
 
-  factory _$OgcCoverageCollectionDataQueries(
-          [void Function(OgcCoverageCollectionDataQueriesBuilder)? updates]) =>
-      (OgcCoverageCollectionDataQueriesBuilder()..update(updates))._build();
+  factory _$OgcCoverageCollectionDataQueries([
+    void Function(OgcCoverageCollectionDataQueriesBuilder)? updates,
+  ]) => (OgcCoverageCollectionDataQueriesBuilder()..update(updates))._build();
 
-  _$OgcCoverageCollectionDataQueries._(
-      {this.position, this.area, this.instances})
-      : super._();
+  _$OgcCoverageCollectionDataQueries._({
+    this.position,
+    this.area,
+    this.instances,
+  }) : super._();
   @override
   OgcCoverageCollectionDataQueries rebuild(
-          void Function(OgcCoverageCollectionDataQueriesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionDataQueriesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionDataQueriesBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$OgcCoverageCollectionDataQueries
 
 class OgcCoverageCollectionDataQueriesBuilder
     implements
-        Builder<OgcCoverageCollectionDataQueries,
-            OgcCoverageCollectionDataQueriesBuilder> {
+        Builder<
+          OgcCoverageCollectionDataQueries,
+          OgcCoverageCollectionDataQueriesBuilder
+        > {
   _$OgcCoverageCollectionDataQueries? _$v;
 
   OgcCoverageCollectionDataQueriesPositionBuilder? _position;
@@ -115,7 +119,8 @@ class OgcCoverageCollectionDataQueriesBuilder
   _$OgcCoverageCollectionDataQueries _build() {
     _$OgcCoverageCollectionDataQueries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCoverageCollectionDataQueries._(
             position: _position?.build(),
             area: _area?.build(),
@@ -132,7 +137,10 @@ class OgcCoverageCollectionDataQueriesBuilder
         _instances?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCoverageCollectionDataQueries', _$failedField, e.toString());
+          r'OgcCoverageCollectionDataQueries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

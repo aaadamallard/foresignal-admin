@@ -20,9 +20,9 @@ abstract class PushProviderTestRequest
 
   PushProviderTestRequest._();
 
-  factory PushProviderTestRequest(
-          [void updates(PushProviderTestRequestBuilder b)]) =
-      _$PushProviderTestRequest;
+  factory PushProviderTestRequest([
+    void updates(PushProviderTestRequestBuilder b),
+  ]) = _$PushProviderTestRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushProviderTestRequestBuilder b) => b;
@@ -37,7 +37,7 @@ class _$PushProviderTestRequestSerializer
   @override
   final Iterable<Type> types = const [
     PushProviderTestRequest,
-    _$PushProviderTestRequest
+    _$PushProviderTestRequest,
   ];
 
   @override
@@ -63,9 +63,11 @@ class _$PushProviderTestRequestSerializer
     PushProviderTestRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +83,12 @@ class _$PushProviderTestRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.deviceId = valueDes;
           break;

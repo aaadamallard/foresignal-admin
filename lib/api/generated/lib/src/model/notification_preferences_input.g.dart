@@ -10,15 +10,15 @@ class _$NotificationPreferencesInput extends NotificationPreferencesInput {
   @override
   final BuiltList<NotificationPreferenceInput> items;
 
-  factory _$NotificationPreferencesInput(
-          [void Function(NotificationPreferencesInputBuilder)? updates]) =>
-      (NotificationPreferencesInputBuilder()..update(updates))._build();
+  factory _$NotificationPreferencesInput([
+    void Function(NotificationPreferencesInputBuilder)? updates,
+  ]) => (NotificationPreferencesInputBuilder()..update(updates))._build();
 
   _$NotificationPreferencesInput._({required this.items}) : super._();
   @override
   NotificationPreferencesInput rebuild(
-          void Function(NotificationPreferencesInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationPreferencesInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationPreferencesInputBuilder toBuilder() =>
@@ -40,16 +40,18 @@ class _$NotificationPreferencesInput extends NotificationPreferencesInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'NotificationPreferencesInput')
-          ..add('items', items))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'NotificationPreferencesInput',
+    )..add('items', items)).toString();
   }
 }
 
 class NotificationPreferencesInputBuilder
     implements
-        Builder<NotificationPreferencesInput,
-            NotificationPreferencesInputBuilder> {
+        Builder<
+          NotificationPreferencesInput,
+          NotificationPreferencesInputBuilder
+        > {
   _$NotificationPreferencesInput? _$v;
 
   ListBuilder<NotificationPreferenceInput>? _items;
@@ -87,10 +89,7 @@ class NotificationPreferencesInputBuilder
   _$NotificationPreferencesInput _build() {
     _$NotificationPreferencesInput _$result;
     try {
-      _$result = _$v ??
-          _$NotificationPreferencesInput._(
-            items: items.build(),
-          );
+      _$result = _$v ?? _$NotificationPreferencesInput._(items: items.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -98,7 +97,10 @@ class NotificationPreferencesInputBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationPreferencesInput', _$failedField, e.toString());
+          r'NotificationPreferencesInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

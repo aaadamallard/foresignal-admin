@@ -18,7 +18,7 @@ class _$MappingSample extends MappingSample {
       (MappingSampleBuilder()..update(updates))._build();
 
   _$MappingSample._({required this.contentType, this.body, this.query})
-      : super._();
+    : super._();
   @override
   MappingSample rebuild(void Function(MappingSampleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -103,10 +103,14 @@ class MappingSampleBuilder
   _$MappingSample _build() {
     _$MappingSample _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingSample._(
             contentType: BuiltValueNullFieldError.checkNotNull(
-                contentType, r'MappingSample', 'contentType'),
+              contentType,
+              r'MappingSample',
+              'contentType',
+            ),
             body: body,
             query: _query?.build(),
           );
@@ -117,7 +121,10 @@ class MappingSampleBuilder
         _query?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingSample', _$failedField, e.toString());
+          r'MappingSample',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

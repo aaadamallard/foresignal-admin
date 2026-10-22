@@ -25,9 +25,9 @@ abstract class EscalationPolicyInputStopOn
 
   EscalationPolicyInputStopOn._();
 
-  factory EscalationPolicyInputStopOn(
-          [void updates(EscalationPolicyInputStopOnBuilder b)]) =
-      _$EscalationPolicyInputStopOn;
+  factory EscalationPolicyInputStopOn([
+    void updates(EscalationPolicyInputStopOnBuilder b),
+  ]) = _$EscalationPolicyInputStopOn;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EscalationPolicyInputStopOnBuilder b) => b;
@@ -42,7 +42,7 @@ class _$EscalationPolicyInputStopOnSerializer
   @override
   final Iterable<Type> types = const [
     EscalationPolicyInputStopOn,
-    _$EscalationPolicyInputStopOn
+    _$EscalationPolicyInputStopOn,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$EscalationPolicyInputStopOnSerializer
     EscalationPolicyInputStopOn object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$EscalationPolicyInputStopOnSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'resolve':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.resolve = valueDes;
           break;
         case r'snooze':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.snooze = valueDes;
           break;

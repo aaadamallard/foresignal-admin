@@ -7,20 +7,20 @@ part of 'hypothesis_review_input_assumptions_inner.dart';
 // **************************************************************************
 
 const HypothesisReviewInputAssumptionsInnerStatusEnum
-    _$hypothesisReviewInputAssumptionsInnerStatusEnum_solid =
+_$hypothesisReviewInputAssumptionsInnerStatusEnum_solid =
     const HypothesisReviewInputAssumptionsInnerStatusEnum._('solid');
 const HypothesisReviewInputAssumptionsInnerStatusEnum
-    _$hypothesisReviewInputAssumptionsInnerStatusEnum_caveated =
+_$hypothesisReviewInputAssumptionsInnerStatusEnum_caveated =
     const HypothesisReviewInputAssumptionsInnerStatusEnum._('caveated');
 const HypothesisReviewInputAssumptionsInnerStatusEnum
-    _$hypothesisReviewInputAssumptionsInnerStatusEnum_unsupported =
+_$hypothesisReviewInputAssumptionsInnerStatusEnum_unsupported =
     const HypothesisReviewInputAssumptionsInnerStatusEnum._('unsupported');
 const HypothesisReviewInputAssumptionsInnerStatusEnum
-    _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken =
+_$hypothesisReviewInputAssumptionsInnerStatusEnum_broken =
     const HypothesisReviewInputAssumptionsInnerStatusEnum._('broken');
 
 HypothesisReviewInputAssumptionsInnerStatusEnum
-    _$hypothesisReviewInputAssumptionsInnerStatusEnumValueOf(String name) {
+_$hypothesisReviewInputAssumptionsInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'solid':
       return _$hypothesisReviewInputAssumptionsInnerStatusEnum_solid;
@@ -36,16 +36,18 @@ HypothesisReviewInputAssumptionsInnerStatusEnum
 }
 
 final BuiltSet<HypothesisReviewInputAssumptionsInnerStatusEnum>
-    _$hypothesisReviewInputAssumptionsInnerStatusEnumValues = BuiltSet<
-        HypothesisReviewInputAssumptionsInnerStatusEnum>(const <HypothesisReviewInputAssumptionsInnerStatusEnum>[
-  _$hypothesisReviewInputAssumptionsInnerStatusEnum_solid,
-  _$hypothesisReviewInputAssumptionsInnerStatusEnum_caveated,
-  _$hypothesisReviewInputAssumptionsInnerStatusEnum_unsupported,
-  _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken,
-]);
+_$hypothesisReviewInputAssumptionsInnerStatusEnumValues =
+    BuiltSet<HypothesisReviewInputAssumptionsInnerStatusEnum>(
+      const <HypothesisReviewInputAssumptionsInnerStatusEnum>[
+        _$hypothesisReviewInputAssumptionsInnerStatusEnum_solid,
+        _$hypothesisReviewInputAssumptionsInnerStatusEnum_caveated,
+        _$hypothesisReviewInputAssumptionsInnerStatusEnum_unsupported,
+        _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken,
+      ],
+    );
 
 Serializer<HypothesisReviewInputAssumptionsInnerStatusEnum>
-    _$hypothesisReviewInputAssumptionsInnerStatusEnumSerializer =
+_$hypothesisReviewInputAssumptionsInnerStatusEnumSerializer =
     _$HypothesisReviewInputAssumptionsInnerStatusEnumSerializer();
 
 class _$HypothesisReviewInputAssumptionsInnerStatusEnumSerializer
@@ -66,23 +68,26 @@ class _$HypothesisReviewInputAssumptionsInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    HypothesisReviewInputAssumptionsInnerStatusEnum
+    HypothesisReviewInputAssumptionsInnerStatusEnum,
   ];
   @override
   final String wireName = 'HypothesisReviewInputAssumptionsInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          HypothesisReviewInputAssumptionsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisReviewInputAssumptionsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisReviewInputAssumptionsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisReviewInputAssumptionsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisReviewInputAssumptionsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisReviewInputAssumptionsInner
@@ -94,20 +99,20 @@ class _$HypothesisReviewInputAssumptionsInner
   @override
   final String? rationale;
 
-  factory _$HypothesisReviewInputAssumptionsInner(
-          [void Function(HypothesisReviewInputAssumptionsInnerBuilder)?
-              updates]) =>
-      (HypothesisReviewInputAssumptionsInnerBuilder()..update(updates))
-          ._build();
+  factory _$HypothesisReviewInputAssumptionsInner([
+    void Function(HypothesisReviewInputAssumptionsInnerBuilder)? updates,
+  ]) => (HypothesisReviewInputAssumptionsInnerBuilder()..update(updates))
+      ._build();
 
-  _$HypothesisReviewInputAssumptionsInner._(
-      {required this.assumptionId, required this.status, this.rationale})
-      : super._();
+  _$HypothesisReviewInputAssumptionsInner._({
+    required this.assumptionId,
+    required this.status,
+    this.rationale,
+  }) : super._();
   @override
   HypothesisReviewInputAssumptionsInner rebuild(
-          void Function(HypothesisReviewInputAssumptionsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisReviewInputAssumptionsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisReviewInputAssumptionsInnerBuilder toBuilder() =>
@@ -135,7 +140,8 @@ class _$HypothesisReviewInputAssumptionsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'HypothesisReviewInputAssumptionsInner')
+            r'HypothesisReviewInputAssumptionsInner',
+          )
           ..add('assumptionId', assumptionId)
           ..add('status', status)
           ..add('rationale', rationale))
@@ -145,8 +151,10 @@ class _$HypothesisReviewInputAssumptionsInner
 
 class HypothesisReviewInputAssumptionsInnerBuilder
     implements
-        Builder<HypothesisReviewInputAssumptionsInner,
-            HypothesisReviewInputAssumptionsInnerBuilder> {
+        Builder<
+          HypothesisReviewInputAssumptionsInner,
+          HypothesisReviewInputAssumptionsInnerBuilder
+        > {
   _$HypothesisReviewInputAssumptionsInner? _$v;
 
   String? _assumptionId;
@@ -184,7 +192,8 @@ class HypothesisReviewInputAssumptionsInnerBuilder
 
   @override
   void update(
-      void Function(HypothesisReviewInputAssumptionsInnerBuilder)? updates) {
+    void Function(HypothesisReviewInputAssumptionsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -192,12 +201,19 @@ class HypothesisReviewInputAssumptionsInnerBuilder
   HypothesisReviewInputAssumptionsInner build() => _build();
 
   _$HypothesisReviewInputAssumptionsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisReviewInputAssumptionsInner._(
-          assumptionId: BuiltValueNullFieldError.checkNotNull(assumptionId,
-              r'HypothesisReviewInputAssumptionsInner', 'assumptionId'),
+          assumptionId: BuiltValueNullFieldError.checkNotNull(
+            assumptionId,
+            r'HypothesisReviewInputAssumptionsInner',
+            'assumptionId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'HypothesisReviewInputAssumptionsInner', 'status'),
+            status,
+            r'HypothesisReviewInputAssumptionsInner',
+            'status',
+          ),
           rationale: rationale,
         );
     replace(_$result);

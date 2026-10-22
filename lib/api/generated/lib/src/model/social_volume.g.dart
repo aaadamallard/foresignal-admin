@@ -36,12 +36,12 @@ SocialVolumeMetricEnum _$socialVolumeMetricEnumValueOf(String name) {
 
 final BuiltSet<SocialVolumeMetricEnum> _$socialVolumeMetricEnumValues =
     BuiltSet<SocialVolumeMetricEnum>(const <SocialVolumeMetricEnum>[
-  _$socialVolumeMetricEnum_posts,
-  _$socialVolumeMetricEnum_uniqueAuthors,
-  _$socialVolumeMetricEnum_reposts,
-  _$socialVolumeMetricEnum_engagement,
-  _$socialVolumeMetricEnum_denominator,
-]);
+      _$socialVolumeMetricEnum_posts,
+      _$socialVolumeMetricEnum_uniqueAuthors,
+      _$socialVolumeMetricEnum_reposts,
+      _$socialVolumeMetricEnum_engagement,
+      _$socialVolumeMetricEnum_denominator,
+    ]);
 
 const SocialVolumeIntervalEnum _$socialVolumeIntervalEnum_PT1H =
     const SocialVolumeIntervalEnum._('PT1H');
@@ -61,9 +61,9 @@ SocialVolumeIntervalEnum _$socialVolumeIntervalEnumValueOf(String name) {
 
 final BuiltSet<SocialVolumeIntervalEnum> _$socialVolumeIntervalEnumValues =
     BuiltSet<SocialVolumeIntervalEnum>(const <SocialVolumeIntervalEnum>[
-  _$socialVolumeIntervalEnum_PT1H,
-  _$socialVolumeIntervalEnum_P1D,
-]);
+      _$socialVolumeIntervalEnum_PT1H,
+      _$socialVolumeIntervalEnum_P1D,
+    ]);
 
 Serializer<SocialVolumeMetricEnum> _$socialVolumeMetricEnumSerializer =
     _$SocialVolumeMetricEnumSerializer();
@@ -93,15 +93,20 @@ class _$SocialVolumeMetricEnumSerializer
   final String wireName = 'SocialVolumeMetricEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialVolumeMetricEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialVolumeMetricEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SocialVolumeMetricEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialVolumeMetricEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SocialVolumeMetricEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialVolumeMetricEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialVolumeIntervalEnumSerializer
@@ -121,16 +126,20 @@ class _$SocialVolumeIntervalEnumSerializer
   final String wireName = 'SocialVolumeIntervalEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialVolumeIntervalEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialVolumeIntervalEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialVolumeIntervalEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialVolumeIntervalEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialVolumeIntervalEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialVolume extends SocialVolume {
@@ -154,16 +163,16 @@ class _$SocialVolume extends SocialVolume {
   factory _$SocialVolume([void Function(SocialVolumeBuilder)? updates]) =>
       (SocialVolumeBuilder()..update(updates))._build();
 
-  _$SocialVolume._(
-      {required this.scope,
-      required this.metric,
-      required this.interval,
-      required this.since,
-      required this.until,
-      required this.series,
-      required this.baseline,
-      this.caveats})
-      : super._();
+  _$SocialVolume._({
+    required this.scope,
+    required this.metric,
+    required this.interval,
+    required this.since,
+    required this.until,
+    required this.series,
+    required this.baseline,
+    this.caveats,
+  }) : super._();
   @override
   SocialVolume rebuild(void Function(SocialVolumeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -291,17 +300,30 @@ class SocialVolumeBuilder
   _$SocialVolume _build() {
     _$SocialVolume _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialVolume._(
             scope: scope.build(),
             metric: BuiltValueNullFieldError.checkNotNull(
-                metric, r'SocialVolume', 'metric'),
+              metric,
+              r'SocialVolume',
+              'metric',
+            ),
             interval: BuiltValueNullFieldError.checkNotNull(
-                interval, r'SocialVolume', 'interval'),
+              interval,
+              r'SocialVolume',
+              'interval',
+            ),
             since: BuiltValueNullFieldError.checkNotNull(
-                since, r'SocialVolume', 'since'),
+              since,
+              r'SocialVolume',
+              'since',
+            ),
             until: BuiltValueNullFieldError.checkNotNull(
-                until, r'SocialVolume', 'until'),
+              until,
+              r'SocialVolume',
+              'until',
+            ),
             series: series.build(),
             baseline: baseline.build(),
             caveats: _caveats?.build(),
@@ -320,7 +342,10 @@ class SocialVolumeBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialVolume', _$failedField, e.toString());
+          r'SocialVolume',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -90,9 +90,11 @@ class _$SourceAccessSerializer implements PrimitiveSerializer<SourceAccess> {
     SourceAccess object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,33 +110,43 @@ class _$SourceAccessSerializer implements PrimitiveSerializer<SourceAccess> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'route':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SourceAccessRouteEnum),
-          ) as SourceAccessRouteEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SourceAccessRouteEnum),
+                  )
+                  as SourceAccessRouteEnum;
           result.route = valueDes;
           break;
         case r'termsSummary':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.termsSummary = valueDes;
           break;
         case r'termsUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.termsUrl = valueDes;
           break;
         case r'fragility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SourceAccessFragilityEnum),
-          ) as SourceAccessFragilityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SourceAccessFragilityEnum,
+                    ),
+                  )
+                  as SourceAccessFragilityEnum?;
           if (valueDes == null) continue;
           result.fragility = valueDes;
           break;

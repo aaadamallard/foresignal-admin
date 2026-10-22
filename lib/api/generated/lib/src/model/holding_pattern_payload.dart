@@ -66,8 +66,9 @@ abstract class HoldingPatternPayload
 
   HoldingPatternPayload._();
 
-  factory HoldingPatternPayload(
-      [void updates(HoldingPatternPayloadBuilder b)]) = _$HoldingPatternPayload;
+  factory HoldingPatternPayload([
+    void updates(HoldingPatternPayloadBuilder b),
+  ]) = _$HoldingPatternPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HoldingPatternPayloadBuilder b) => b;
@@ -82,7 +83,7 @@ class _$HoldingPatternPayloadSerializer
   @override
   final Iterable<Type> types = const [
     HoldingPatternPayload,
-    _$HoldingPatternPayload
+    _$HoldingPatternPayload,
   ];
 
   @override
@@ -124,8 +125,9 @@ class _$HoldingPatternPayloadSerializer
       yield r'evidence';
       yield serializers.serialize(
         object.evidence,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DerivedEvidenceRef),
+        ]),
       );
     }
     yield r'hex';
@@ -156,8 +158,9 @@ class _$HoldingPatternPayloadSerializer
       yield r'nearestAirport';
       yield serializers.serialize(
         object.nearestAirport,
-        specifiedType:
-            const FullType.nullable(HoldingPatternPayloadNearestAirport),
+        specifiedType: const FullType.nullable(
+          HoldingPatternPayloadNearestAirport,
+        ),
       );
     }
   }
@@ -168,9 +171,11 @@ class _$HoldingPatternPayloadSerializer
     HoldingPatternPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -186,86 +191,111 @@ class _$HoldingPatternPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AircraftFusionPayloadDetector),
-          ) as AircraftFusionPayloadDetector;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AircraftFusionPayloadDetector,
+                    ),
+                  )
+                  as AircraftFusionPayloadDetector;
           result.detector.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HoldingPatternPayloadStatusEnum),
-          ) as HoldingPatternPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HoldingPatternPayloadStatusEnum,
+                    ),
+                  )
+                  as HoldingPatternPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DerivedEvidenceRef)]),
-          ) as BuiltList<DerivedEvidenceRef>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DerivedEvidenceRef),
+                    ]),
+                  )
+                  as BuiltList<DerivedEvidenceRef>?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'hex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hex = valueDes;
           break;
         case r'turnsDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.turnsDeg = valueDes;
           break;
         case r'durationMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.durationMin = valueDes;
           break;
         case r'altitudeFt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.altitudeFt = valueDes;
           break;
         case r'nearestAirport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HoldingPatternPayloadNearestAirport),
-          ) as HoldingPatternPayloadNearestAirport?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HoldingPatternPayloadNearestAirport,
+                    ),
+                  )
+                  as HoldingPatternPayloadNearestAirport?;
           if (valueDes == null) continue;
           result.nearestAirport.replace(valueDes);
           break;

@@ -10,15 +10,15 @@ class _$AnnotationResolveInput extends AnnotationResolveInput {
   @override
   final bool? resolved;
 
-  factory _$AnnotationResolveInput(
-          [void Function(AnnotationResolveInputBuilder)? updates]) =>
-      (AnnotationResolveInputBuilder()..update(updates))._build();
+  factory _$AnnotationResolveInput([
+    void Function(AnnotationResolveInputBuilder)? updates,
+  ]) => (AnnotationResolveInputBuilder()..update(updates))._build();
 
   _$AnnotationResolveInput._({this.resolved}) : super._();
   @override
   AnnotationResolveInput rebuild(
-          void Function(AnnotationResolveInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnnotationResolveInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnnotationResolveInputBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$AnnotationResolveInput extends AnnotationResolveInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AnnotationResolveInput')
-          ..add('resolved', resolved))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AnnotationResolveInput',
+    )..add('resolved', resolved)).toString();
   }
 }
 
@@ -81,10 +81,7 @@ class AnnotationResolveInputBuilder
   AnnotationResolveInput build() => _build();
 
   _$AnnotationResolveInput _build() {
-    final _$result = _$v ??
-        _$AnnotationResolveInput._(
-          resolved: resolved,
-        );
+    final _$result = _$v ?? _$AnnotationResolveInput._(resolved: resolved);
     replace(_$result);
     return _$result;
   }

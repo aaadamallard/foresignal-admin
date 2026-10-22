@@ -7,11 +7,11 @@ part of 'context_summary_narrative.dart';
 // **************************************************************************
 
 const ContextSummaryNarrativeTextOriginEnum
-    _$contextSummaryNarrativeTextOriginEnum_llm =
+_$contextSummaryNarrativeTextOriginEnum_llm =
     const ContextSummaryNarrativeTextOriginEnum._('llm');
 
 ContextSummaryNarrativeTextOriginEnum
-    _$contextSummaryNarrativeTextOriginEnumValueOf(String name) {
+_$contextSummaryNarrativeTextOriginEnumValueOf(String name) {
   switch (name) {
     case 'llm':
       return _$contextSummaryNarrativeTextOriginEnum_llm;
@@ -21,13 +21,15 @@ ContextSummaryNarrativeTextOriginEnum
 }
 
 final BuiltSet<ContextSummaryNarrativeTextOriginEnum>
-    _$contextSummaryNarrativeTextOriginEnumValues = BuiltSet<
-        ContextSummaryNarrativeTextOriginEnum>(const <ContextSummaryNarrativeTextOriginEnum>[
-  _$contextSummaryNarrativeTextOriginEnum_llm,
-]);
+_$contextSummaryNarrativeTextOriginEnumValues =
+    BuiltSet<ContextSummaryNarrativeTextOriginEnum>(
+      const <ContextSummaryNarrativeTextOriginEnum>[
+        _$contextSummaryNarrativeTextOriginEnum_llm,
+      ],
+    );
 
 Serializer<ContextSummaryNarrativeTextOriginEnum>
-    _$contextSummaryNarrativeTextOriginEnumSerializer =
+_$contextSummaryNarrativeTextOriginEnumSerializer =
     _$ContextSummaryNarrativeTextOriginEnumSerializer();
 
 class _$ContextSummaryNarrativeTextOriginEnumSerializer
@@ -41,23 +43,26 @@ class _$ContextSummaryNarrativeTextOriginEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ContextSummaryNarrativeTextOriginEnum
+    ContextSummaryNarrativeTextOriginEnum,
   ];
   @override
   final String wireName = 'ContextSummaryNarrativeTextOriginEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ContextSummaryNarrativeTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ContextSummaryNarrativeTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ContextSummaryNarrativeTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ContextSummaryNarrativeTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ContextSummaryNarrativeTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ContextSummaryNarrative extends ContextSummaryNarrative {
@@ -66,16 +71,16 @@ class _$ContextSummaryNarrative extends ContextSummaryNarrative {
   @override
   final ContextSummaryNarrativeTextOriginEnum textOrigin;
 
-  factory _$ContextSummaryNarrative(
-          [void Function(ContextSummaryNarrativeBuilder)? updates]) =>
-      (ContextSummaryNarrativeBuilder()..update(updates))._build();
+  factory _$ContextSummaryNarrative([
+    void Function(ContextSummaryNarrativeBuilder)? updates,
+  ]) => (ContextSummaryNarrativeBuilder()..update(updates))._build();
 
   _$ContextSummaryNarrative._({required this.text, required this.textOrigin})
-      : super._();
+    : super._();
   @override
   ContextSummaryNarrative rebuild(
-          void Function(ContextSummaryNarrativeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ContextSummaryNarrativeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ContextSummaryNarrativeBuilder toBuilder() =>
@@ -149,12 +154,19 @@ class ContextSummaryNarrativeBuilder
   ContextSummaryNarrative build() => _build();
 
   _$ContextSummaryNarrative _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ContextSummaryNarrative._(
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'ContextSummaryNarrative', 'text'),
+            text,
+            r'ContextSummaryNarrative',
+            'text',
+          ),
           textOrigin: BuiltValueNullFieldError.checkNotNull(
-              textOrigin, r'ContextSummaryNarrative', 'textOrigin'),
+            textOrigin,
+            r'ContextSummaryNarrative',
+            'textOrigin',
+          ),
         );
     replace(_$result);
     return _$result;

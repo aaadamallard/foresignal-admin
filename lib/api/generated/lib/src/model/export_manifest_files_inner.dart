@@ -37,9 +37,9 @@ abstract class ExportManifestFilesInner
 
   ExportManifestFilesInner._();
 
-  factory ExportManifestFilesInner(
-          [void updates(ExportManifestFilesInnerBuilder b)]) =
-      _$ExportManifestFilesInner;
+  factory ExportManifestFilesInner([
+    void updates(ExportManifestFilesInnerBuilder b),
+  ]) = _$ExportManifestFilesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExportManifestFilesInnerBuilder b) => b;
@@ -54,7 +54,7 @@ class _$ExportManifestFilesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExportManifestFilesInner,
-    _$ExportManifestFilesInner
+    _$ExportManifestFilesInner,
   ];
 
   @override
@@ -102,9 +102,11 @@ class _$ExportManifestFilesInnerSerializer
     ExportManifestFilesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,39 +122,46 @@ class _$ExportManifestFilesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'mediaType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mediaType = valueDes;
           break;
         case r'bytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.bytes = valueDes;
           break;
         case r'sha256':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sha256 = valueDes;
           break;
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.rows = valueDes;
           break;

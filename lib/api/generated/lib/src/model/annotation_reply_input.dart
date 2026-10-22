@@ -41,7 +41,7 @@ class _$AnnotationReplyInputSerializer
   @override
   final Iterable<Type> types = const [
     AnnotationReplyInput,
-    _$AnnotationReplyInput
+    _$AnnotationReplyInput,
   ];
 
   @override
@@ -72,9 +72,11 @@ class _$AnnotationReplyInputSerializer
     AnnotationReplyInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +92,21 @@ class _$AnnotationReplyInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'body':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.body = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;

@@ -7,17 +7,18 @@ part of 'regional_index_def.dart';
 // **************************************************************************
 
 const RegionalIndexDefWeightsOriginEnum
-    _$regionalIndexDefWeightsOriginEnum_default_ =
+_$regionalIndexDefWeightsOriginEnum_default_ =
     const RegionalIndexDefWeightsOriginEnum._('default_');
 const RegionalIndexDefWeightsOriginEnum
-    _$regionalIndexDefWeightsOriginEnum_fitted =
+_$regionalIndexDefWeightsOriginEnum_fitted =
     const RegionalIndexDefWeightsOriginEnum._('fitted');
 const RegionalIndexDefWeightsOriginEnum
-    _$regionalIndexDefWeightsOriginEnum_operator_ =
+_$regionalIndexDefWeightsOriginEnum_operator_ =
     const RegionalIndexDefWeightsOriginEnum._('operator_');
 
 RegionalIndexDefWeightsOriginEnum _$regionalIndexDefWeightsOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'default_':
       return _$regionalIndexDefWeightsOriginEnum_default_;
@@ -31,15 +32,17 @@ RegionalIndexDefWeightsOriginEnum _$regionalIndexDefWeightsOriginEnumValueOf(
 }
 
 final BuiltSet<RegionalIndexDefWeightsOriginEnum>
-    _$regionalIndexDefWeightsOriginEnumValues = BuiltSet<
-        RegionalIndexDefWeightsOriginEnum>(const <RegionalIndexDefWeightsOriginEnum>[
-  _$regionalIndexDefWeightsOriginEnum_default_,
-  _$regionalIndexDefWeightsOriginEnum_fitted,
-  _$regionalIndexDefWeightsOriginEnum_operator_,
-]);
+_$regionalIndexDefWeightsOriginEnumValues =
+    BuiltSet<RegionalIndexDefWeightsOriginEnum>(
+      const <RegionalIndexDefWeightsOriginEnum>[
+        _$regionalIndexDefWeightsOriginEnum_default_,
+        _$regionalIndexDefWeightsOriginEnum_fitted,
+        _$regionalIndexDefWeightsOriginEnum_operator_,
+      ],
+    );
 
 Serializer<RegionalIndexDefWeightsOriginEnum>
-    _$regionalIndexDefWeightsOriginEnumSerializer =
+_$regionalIndexDefWeightsOriginEnumSerializer =
     _$RegionalIndexDefWeightsOriginEnumSerializer();
 
 class _$RegionalIndexDefWeightsOriginEnumSerializer
@@ -62,16 +65,19 @@ class _$RegionalIndexDefWeightsOriginEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, RegionalIndexDefWeightsOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RegionalIndexDefWeightsOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RegionalIndexDefWeightsOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RegionalIndexDefWeightsOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RegionalIndexDefWeightsOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RegionalIndexDef extends RegionalIndexDef {
@@ -106,27 +112,27 @@ class _$RegionalIndexDef extends RegionalIndexDef {
   @override
   final DateTime? updatedAt;
 
-  factory _$RegionalIndexDef(
-          [void Function(RegionalIndexDefBuilder)? updates]) =>
-      (RegionalIndexDefBuilder()..update(updates))._build();
+  factory _$RegionalIndexDef([
+    void Function(RegionalIndexDefBuilder)? updates,
+  ]) => (RegionalIndexDefBuilder()..update(updates))._build();
 
-  _$RegionalIndexDef._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.components,
-      required this.weights,
-      this.floors,
-      required this.target,
-      required this.weightsVersion,
-      required this.weightsOrigin,
-      this.autoApplyFittedWeights,
-      required this.enabled,
-      this.builtIn,
-      this.ready,
-      this.skill,
-      this.updatedAt})
-      : super._();
+  _$RegionalIndexDef._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.components,
+    required this.weights,
+    this.floors,
+    required this.target,
+    required this.weightsVersion,
+    required this.weightsOrigin,
+    this.autoApplyFittedWeights,
+    required this.enabled,
+    this.builtIn,
+    this.ready,
+    this.skill,
+    this.updatedAt,
+  }) : super._();
   @override
   RegionalIndexDef rebuild(void Function(RegionalIndexDefBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -316,25 +322,44 @@ class RegionalIndexDefBuilder
   _$RegionalIndexDef _build() {
     _$RegionalIndexDef _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalIndexDef._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'RegionalIndexDef', 'id'),
+              id,
+              r'RegionalIndexDef',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'RegionalIndexDef', 'name'),
+              name,
+              r'RegionalIndexDef',
+              'name',
+            ),
             description: description,
             components: components.build(),
             weights: weights.build(),
             floors: _floors?.build(),
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'RegionalIndexDef', 'target'),
+              target,
+              r'RegionalIndexDef',
+              'target',
+            ),
             weightsVersion: BuiltValueNullFieldError.checkNotNull(
-                weightsVersion, r'RegionalIndexDef', 'weightsVersion'),
+              weightsVersion,
+              r'RegionalIndexDef',
+              'weightsVersion',
+            ),
             weightsOrigin: BuiltValueNullFieldError.checkNotNull(
-                weightsOrigin, r'RegionalIndexDef', 'weightsOrigin'),
+              weightsOrigin,
+              r'RegionalIndexDef',
+              'weightsOrigin',
+            ),
             autoApplyFittedWeights: autoApplyFittedWeights,
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'RegionalIndexDef', 'enabled'),
+              enabled,
+              r'RegionalIndexDef',
+              'enabled',
+            ),
             builtIn: builtIn,
             ready: ready,
             skill: _skill?.build(),
@@ -354,7 +379,10 @@ class RegionalIndexDefBuilder
         _skill?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalIndexDef', _$failedField, e.toString());
+          r'RegionalIndexDef',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

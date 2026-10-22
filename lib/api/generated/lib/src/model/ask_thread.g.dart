@@ -23,14 +23,14 @@ class _$AskThread extends AskThread {
   factory _$AskThread([void Function(AskThreadBuilder)? updates]) =>
       (AskThreadBuilder()..update(updates))._build();
 
-  _$AskThread._(
-      {required this.id,
-      required this.title,
-      required this.createdAt,
-      this.updatedAt,
-      this.messages,
-      this.actions})
-      : super._();
+  _$AskThread._({
+    required this.id,
+    required this.title,
+    required this.createdAt,
+    this.updatedAt,
+    this.messages,
+    this.actions,
+  }) : super._();
   @override
   AskThread rebuild(void Function(AskThreadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -140,13 +140,20 @@ class AskThreadBuilder implements Builder<AskThread, AskThreadBuilder> {
   _$AskThread _build() {
     _$AskThread _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AskThread._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'AskThread', 'id'),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'AskThread', 'title'),
+              title,
+              r'AskThread',
+              'title',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AskThread', 'createdAt'),
+              createdAt,
+              r'AskThread',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
             messages: _messages?.build(),
             actions: _actions?.build(),
@@ -160,7 +167,10 @@ class AskThreadBuilder implements Builder<AskThread, AskThreadBuilder> {
         _actions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AskThread', _$failedField, e.toString());
+          r'AskThread',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -35,9 +35,9 @@ abstract class ExternalSourceStateEvent
 
   ExternalSourceStateEvent._();
 
-  factory ExternalSourceStateEvent(
-          [void updates(ExternalSourceStateEventBuilder b)]) =
-      _$ExternalSourceStateEvent;
+  factory ExternalSourceStateEvent([
+    void updates(ExternalSourceStateEventBuilder b),
+  ]) = _$ExternalSourceStateEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalSourceStateEventBuilder b) => b;
@@ -52,7 +52,7 @@ class _$ExternalSourceStateEventSerializer
   @override
   final Iterable<Type> types = const [
     ExternalSourceStateEvent,
-    _$ExternalSourceStateEvent
+    _$ExternalSourceStateEvent,
   ];
 
   @override
@@ -93,9 +93,11 @@ class _$ExternalSourceStateEventSerializer
     ExternalSourceStateEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,32 +113,42 @@ class _$ExternalSourceStateEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.state = valueDes;
           break;
         case r'change':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExternalSourceStateEventChangeEnum),
-          ) as ExternalSourceStateEventChangeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ExternalSourceStateEventChangeEnum,
+                    ),
+                  )
+                  as ExternalSourceStateEventChangeEnum;
           result.change = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

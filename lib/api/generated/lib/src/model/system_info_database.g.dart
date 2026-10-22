@@ -12,7 +12,8 @@ const SystemInfoDatabaseStatusEnum _$systemInfoDatabaseStatusEnum_down =
     const SystemInfoDatabaseStatusEnum._('down');
 
 SystemInfoDatabaseStatusEnum _$systemInfoDatabaseStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'up':
       return _$systemInfoDatabaseStatusEnum_up;
@@ -24,14 +25,15 @@ SystemInfoDatabaseStatusEnum _$systemInfoDatabaseStatusEnumValueOf(
 }
 
 final BuiltSet<SystemInfoDatabaseStatusEnum>
-    _$systemInfoDatabaseStatusEnumValues =
-    BuiltSet<SystemInfoDatabaseStatusEnum>(const <SystemInfoDatabaseStatusEnum>[
-  _$systemInfoDatabaseStatusEnum_up,
-  _$systemInfoDatabaseStatusEnum_down,
-]);
+_$systemInfoDatabaseStatusEnumValues = BuiltSet<SystemInfoDatabaseStatusEnum>(
+  const <SystemInfoDatabaseStatusEnum>[
+    _$systemInfoDatabaseStatusEnum_up,
+    _$systemInfoDatabaseStatusEnum_down,
+  ],
+);
 
 Serializer<SystemInfoDatabaseStatusEnum>
-    _$systemInfoDatabaseStatusEnumSerializer =
+_$systemInfoDatabaseStatusEnumSerializer =
     _$SystemInfoDatabaseStatusEnumSerializer();
 
 class _$SystemInfoDatabaseStatusEnumSerializer
@@ -51,16 +53,20 @@ class _$SystemInfoDatabaseStatusEnumSerializer
   final String wireName = 'SystemInfoDatabaseStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SystemInfoDatabaseStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SystemInfoDatabaseStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SystemInfoDatabaseStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemInfoDatabaseStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemInfoDatabaseStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemInfoDatabase extends SystemInfoDatabase {
@@ -71,16 +77,16 @@ class _$SystemInfoDatabase extends SystemInfoDatabase {
   @override
   final String? postgisVersion;
 
-  factory _$SystemInfoDatabase(
-          [void Function(SystemInfoDatabaseBuilder)? updates]) =>
-      (SystemInfoDatabaseBuilder()..update(updates))._build();
+  factory _$SystemInfoDatabase([
+    void Function(SystemInfoDatabaseBuilder)? updates,
+  ]) => (SystemInfoDatabaseBuilder()..update(updates))._build();
 
   _$SystemInfoDatabase._({this.status, this.sizeBytes, this.postgisVersion})
-      : super._();
+    : super._();
   @override
   SystemInfoDatabase rebuild(
-          void Function(SystemInfoDatabaseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoDatabaseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoDatabaseBuilder toBuilder() =>
@@ -161,7 +167,8 @@ class SystemInfoDatabaseBuilder
   SystemInfoDatabase build() => _build();
 
   _$SystemInfoDatabase _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoDatabase._(
           status: status,
           sizeBytes: sizeBytes,

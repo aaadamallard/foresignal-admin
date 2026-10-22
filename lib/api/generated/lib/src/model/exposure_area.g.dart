@@ -28,10 +28,10 @@ ExposureAreaSource_Enum _$exposureAreaSourceEnumValueOf(String name) {
 
 final BuiltSet<ExposureAreaSource_Enum> _$exposureAreaSourceEnumValues =
     BuiltSet<ExposureAreaSource_Enum>(const <ExposureAreaSource_Enum>[
-  _$exposureAreaSourceEnum_geometry,
-  _$exposureAreaSourceEnum_place,
-  _$exposureAreaSourceEnum_event,
-]);
+      _$exposureAreaSourceEnum_geometry,
+      _$exposureAreaSourceEnum_place,
+      _$exposureAreaSourceEnum_event,
+    ]);
 
 Serializer<ExposureAreaSource_Enum> _$exposureAreaSourceEnumSerializer =
     _$ExposureAreaSource_EnumSerializer();
@@ -55,16 +55,20 @@ class _$ExposureAreaSource_EnumSerializer
   final String wireName = 'ExposureAreaSource_Enum';
 
   @override
-  Object serialize(Serializers serializers, ExposureAreaSource_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExposureAreaSource_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExposureAreaSource_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExposureAreaSource_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExposureAreaSource_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExposureArea extends ExposureArea {
@@ -82,13 +86,13 @@ class _$ExposureArea extends ExposureArea {
   factory _$ExposureArea([void Function(ExposureAreaBuilder)? updates]) =>
       (ExposureAreaBuilder()..update(updates))._build();
 
-  _$ExposureArea._(
-      {required this.source_,
-      this.placeId,
-      this.eventId,
-      this.geometry,
-      this.areaKm2})
-      : super._();
+  _$ExposureArea._({
+    required this.source_,
+    this.placeId,
+    this.eventId,
+    this.geometry,
+    this.areaKm2,
+  }) : super._();
   @override
   ExposureArea rebuild(void Function(ExposureAreaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -188,10 +192,14 @@ class ExposureAreaBuilder
   _$ExposureArea _build() {
     _$ExposureArea _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExposureArea._(
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'ExposureArea', 'source_'),
+              source_,
+              r'ExposureArea',
+              'source_',
+            ),
             placeId: placeId,
             eventId: eventId,
             geometry: _geometry?.build(),
@@ -204,7 +212,10 @@ class ExposureAreaBuilder
         _geometry?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExposureArea', _$failedField, e.toString());
+          r'ExposureArea',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

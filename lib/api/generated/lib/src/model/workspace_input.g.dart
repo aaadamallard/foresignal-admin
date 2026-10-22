@@ -24,9 +24,9 @@ WorkspaceInputMembersEnum _$workspaceInputMembersEnumValueOf(String name) {
 
 final BuiltSet<WorkspaceInputMembersEnum> _$workspaceInputMembersEnumValues =
     BuiltSet<WorkspaceInputMembersEnum>(const <WorkspaceInputMembersEnum>[
-  _$workspaceInputMembersEnum_viewer,
-  _$workspaceInputMembersEnum_editor,
-]);
+      _$workspaceInputMembersEnum_viewer,
+      _$workspaceInputMembersEnum_editor,
+    ]);
 
 Serializer<WorkspaceInputMembersEnum> _$workspaceInputMembersEnumSerializer =
     _$WorkspaceInputMembersEnumSerializer();
@@ -48,16 +48,20 @@ class _$WorkspaceInputMembersEnumSerializer
   final String wireName = 'WorkspaceInputMembersEnum';
 
   @override
-  Object serialize(Serializers serializers, WorkspaceInputMembersEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WorkspaceInputMembersEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WorkspaceInputMembersEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WorkspaceInputMembersEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WorkspaceInputMembersEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WorkspaceInput extends WorkspaceInput {
@@ -79,15 +83,15 @@ class _$WorkspaceInput extends WorkspaceInput {
   factory _$WorkspaceInput([void Function(WorkspaceInputBuilder)? updates]) =>
       (WorkspaceInputBuilder()..update(updates))._build();
 
-  _$WorkspaceInput._(
-      {required this.name,
-      this.members,
-      this.context,
-      this.layout,
-      this.savedViewIds,
-      this.investigationId,
-      this.private})
-      : super._();
+  _$WorkspaceInput._({
+    required this.name,
+    this.members,
+    this.context,
+    this.layout,
+    this.savedViewIds,
+    this.investigationId,
+    this.private,
+  }) : super._();
   @override
   WorkspaceInput rebuild(void Function(WorkspaceInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -211,10 +215,14 @@ class WorkspaceInputBuilder
   _$WorkspaceInput _build() {
     _$WorkspaceInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WorkspaceInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'WorkspaceInput', 'name'),
+              name,
+              r'WorkspaceInput',
+              'name',
+            ),
             members: _members?.build(),
             context: _context?.build(),
             layout: _layout?.build(),
@@ -235,7 +243,10 @@ class WorkspaceInputBuilder
         _savedViewIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WorkspaceInput', _$failedField, e.toString());
+          r'WorkspaceInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

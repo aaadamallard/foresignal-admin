@@ -92,11 +92,9 @@ class IndicatorPageBuilder
   _$IndicatorPage _build() {
     _$IndicatorPage _$result;
     try {
-      _$result = _$v ??
-          _$IndicatorPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$IndicatorPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class IndicatorPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndicatorPage', _$failedField, e.toString());
+          r'IndicatorPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -28,10 +28,10 @@ LlmProviderInputTypeEnum _$llmProviderInputTypeEnumValueOf(String name) {
 
 final BuiltSet<LlmProviderInputTypeEnum> _$llmProviderInputTypeEnumValues =
     BuiltSet<LlmProviderInputTypeEnum>(const <LlmProviderInputTypeEnum>[
-  _$llmProviderInputTypeEnum_anthropic,
-  _$llmProviderInputTypeEnum_openaiCompatible,
-  _$llmProviderInputTypeEnum_ollama,
-]);
+      _$llmProviderInputTypeEnum_anthropic,
+      _$llmProviderInputTypeEnum_openaiCompatible,
+      _$llmProviderInputTypeEnum_ollama,
+    ]);
 
 Serializer<LlmProviderInputTypeEnum> _$llmProviderInputTypeEnumSerializer =
     _$LlmProviderInputTypeEnumSerializer();
@@ -55,16 +55,20 @@ class _$LlmProviderInputTypeEnumSerializer
   final String wireName = 'LlmProviderInputTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, LlmProviderInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LlmProviderInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LlmProviderInputTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LlmProviderInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LlmProviderInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LlmProviderInput extends LlmProviderInput {
@@ -93,24 +97,24 @@ class _$LlmProviderInput extends LlmProviderInput {
   @override
   final Date? knowledgeCutoff;
 
-  factory _$LlmProviderInput(
-          [void Function(LlmProviderInputBuilder)? updates]) =>
-      (LlmProviderInputBuilder()..update(updates))._build();
+  factory _$LlmProviderInput([
+    void Function(LlmProviderInputBuilder)? updates,
+  ]) => (LlmProviderInputBuilder()..update(updates))._build();
 
-  _$LlmProviderInput._(
-      {required this.id,
-      required this.type,
-      this.baseUrl,
-      this.chatModel,
-      this.embeddingModel,
-      this.embeddingDimensions,
-      this.apiKey,
-      this.options,
-      this.requestsPerMinute,
-      this.tokensPerDay,
-      this.enabled,
-      this.knowledgeCutoff})
-      : super._();
+  _$LlmProviderInput._({
+    required this.id,
+    required this.type,
+    this.baseUrl,
+    this.chatModel,
+    this.embeddingModel,
+    this.embeddingDimensions,
+    this.apiKey,
+    this.options,
+    this.requestsPerMinute,
+    this.tokensPerDay,
+    this.enabled,
+    this.knowledgeCutoff,
+  }) : super._();
   @override
   LlmProviderInput rebuild(void Function(LlmProviderInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -273,12 +277,19 @@ class LlmProviderInputBuilder
   _$LlmProviderInput _build() {
     _$LlmProviderInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LlmProviderInput._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'LlmProviderInput', 'id'),
+              id,
+              r'LlmProviderInput',
+              'id',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'LlmProviderInput', 'type'),
+              type,
+              r'LlmProviderInput',
+              'type',
+            ),
             baseUrl: baseUrl,
             chatModel: chatModel,
             embeddingModel: embeddingModel,
@@ -297,7 +308,10 @@ class LlmProviderInputBuilder
         _options?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LlmProviderInput', _$failedField, e.toString());
+          r'LlmProviderInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

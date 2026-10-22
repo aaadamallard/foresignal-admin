@@ -83,8 +83,9 @@ abstract class ObservabilityEstimate
 
   ObservabilityEstimate._();
 
-  factory ObservabilityEstimate(
-      [void updates(ObservabilityEstimateBuilder b)]) = _$ObservabilityEstimate;
+  factory ObservabilityEstimate([
+    void updates(ObservabilityEstimateBuilder b),
+  ]) = _$ObservabilityEstimate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ObservabilityEstimateBuilder b) => b;
@@ -99,7 +100,7 @@ class _$ObservabilityEstimateSerializer
   @override
   final Iterable<Type> types = const [
     ObservabilityEstimate,
-    _$ObservabilityEstimate
+    _$ObservabilityEstimate,
   ];
 
   @override
@@ -157,20 +158,11 @@ class _$ObservabilityEstimateSerializer
       specifiedType: const FullType(num),
     );
     yield r'lo';
-    yield serializers.serialize(
-      object.lo,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lo, specifiedType: const FullType(num));
     yield r'hi';
-    yield serializers.serialize(
-      object.hi,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.hi, specifiedType: const FullType(num));
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     yield r'method';
     yield serializers.serialize(
       object.method,
@@ -203,9 +195,11 @@ class _$ObservabilityEstimateSerializer
     ObservabilityEstimate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -221,112 +215,132 @@ class _$ObservabilityEstimateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'regionCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionCode = valueDes;
           break;
         case r'cell':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cell = valueDes;
           break;
         case r'band':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.band = valueDes;
           break;
         case r'periodStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.periodStart = valueDes;
           break;
         case r'periodEnd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.periodEnd = valueDes;
           break;
         case r'pDetect':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pDetect = valueDes;
           break;
         case r'lo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lo = valueDes;
           break;
         case r'hi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.hi = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObservabilityEstimateMethodEnum),
-          ) as ObservabilityEstimateMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ObservabilityEstimateMethodEnum,
+                    ),
+                  )
+                  as ObservabilityEstimateMethodEnum;
           result.method = valueDes;
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ConfidenceLevel),
-          ) as ConfidenceLevel?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ConfidenceLevel),
+                  )
+                  as ConfidenceLevel?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;

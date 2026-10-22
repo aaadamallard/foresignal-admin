@@ -47,7 +47,7 @@ class _$ClaimExtractedEventSerializer
   @override
   final Iterable<Type> types = const [
     ClaimExtractedEvent,
-    _$ClaimExtractedEvent
+    _$ClaimExtractedEvent,
   ];
 
   @override
@@ -81,9 +81,11 @@ class _$ClaimExtractedEventSerializer
     ClaimExtractedEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +101,30 @@ class _$ClaimExtractedEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ClaimExtractedEventEventEnum),
-          ) as ClaimExtractedEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ClaimExtractedEventEventEnum),
+                  )
+                  as ClaimExtractedEventEventEnum;
           result.event = valueDes;
           break;
         case r'claim':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Claim),
-          ) as Claim;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Claim),
+                  )
+                  as Claim;
           result.claim.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

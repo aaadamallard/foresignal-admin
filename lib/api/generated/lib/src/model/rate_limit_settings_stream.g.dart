@@ -12,16 +12,16 @@ class _$RateLimitSettingsStream extends RateLimitSettingsStream {
   @override
   final int? concurrent;
 
-  factory _$RateLimitSettingsStream(
-          [void Function(RateLimitSettingsStreamBuilder)? updates]) =>
-      (RateLimitSettingsStreamBuilder()..update(updates))._build();
+  factory _$RateLimitSettingsStream([
+    void Function(RateLimitSettingsStreamBuilder)? updates,
+  ]) => (RateLimitSettingsStreamBuilder()..update(updates))._build();
 
   _$RateLimitSettingsStream._({this.opensPerMinute, this.concurrent})
-      : super._();
+    : super._();
   @override
   RateLimitSettingsStream rebuild(
-          void Function(RateLimitSettingsStreamBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RateLimitSettingsStreamBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RateLimitSettingsStreamBuilder toBuilder() =>
@@ -95,7 +95,8 @@ class RateLimitSettingsStreamBuilder
   RateLimitSettingsStream build() => _build();
 
   _$RateLimitSettingsStream _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RateLimitSettingsStream._(
           opensPerMinute: opensPerMinute,
           concurrent: concurrent,

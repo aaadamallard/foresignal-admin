@@ -16,8 +16,10 @@ part 'stats_response_thresholds_inner.g.dart';
 @BuiltValue()
 abstract class StatsResponseThresholdsInner
     implements
-        Built<StatsResponseThresholdsInner,
-            StatsResponseThresholdsInnerBuilder> {
+        Built<
+          StatsResponseThresholdsInner,
+          StatsResponseThresholdsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'threshold')
   num get threshold;
 
@@ -26,9 +28,9 @@ abstract class StatsResponseThresholdsInner
 
   StatsResponseThresholdsInner._();
 
-  factory StatsResponseThresholdsInner(
-          [void updates(StatsResponseThresholdsInnerBuilder b)]) =
-      _$StatsResponseThresholdsInner;
+  factory StatsResponseThresholdsInner([
+    void updates(StatsResponseThresholdsInnerBuilder b),
+  ]) = _$StatsResponseThresholdsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StatsResponseThresholdsInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$StatsResponseThresholdsInnerSerializer
   @override
   final Iterable<Type> types = const [
     StatsResponseThresholdsInner,
-    _$StatsResponseThresholdsInner
+    _$StatsResponseThresholdsInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$StatsResponseThresholdsInnerSerializer
     StatsResponseThresholdsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,15 @@ class _$StatsResponseThresholdsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'threshold':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.threshold = valueDes;
           break;
         case r'areaKm2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.areaKm2 = valueDes;
           break;
         default:

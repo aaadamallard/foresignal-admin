@@ -76,7 +76,7 @@ class _$AlertmanagerWebhookSerializer
   @override
   final Iterable<Type> types = const [
     AlertmanagerWebhook,
-    _$AlertmanagerWebhook
+    _$AlertmanagerWebhook,
   ];
 
   @override
@@ -124,24 +124,30 @@ class _$AlertmanagerWebhookSerializer
       yield r'groupLabels';
       yield serializers.serialize(
         object.groupLabels,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.commonLabels != null) {
       yield r'commonLabels';
       yield serializers.serialize(
         object.commonLabels,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.commonAnnotations != null) {
       yield r'commonAnnotations';
       yield serializers.serialize(
         object.commonAnnotations,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.externalURL != null) {
@@ -154,8 +160,9 @@ class _$AlertmanagerWebhookSerializer
     yield r'alerts';
     yield serializers.serialize(
       object.alerts,
-      specifiedType:
-          const FullType(BuiltList, [FullType(AlertmanagerWebhookAlertsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(AlertmanagerWebhookAlertsInner),
+      ]),
     );
   }
 
@@ -165,9 +172,11 @@ class _$AlertmanagerWebhookSerializer
     AlertmanagerWebhook object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -183,86 +192,116 @@ class _$AlertmanagerWebhookSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AlertmanagerWebhookVersionEnum),
-          ) as AlertmanagerWebhookVersionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AlertmanagerWebhookVersionEnum,
+                    ),
+                  )
+                  as AlertmanagerWebhookVersionEnum;
           result.version = valueDes;
           break;
         case r'groupKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.groupKey = valueDes;
           break;
         case r'truncatedAlerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.truncatedAlerts = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AlertmanagerWebhookStatusEnum),
-          ) as AlertmanagerWebhookStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AlertmanagerWebhookStatusEnum,
+                    ),
+                  )
+                  as AlertmanagerWebhookStatusEnum?;
           if (valueDes == null) continue;
           result.status = valueDes;
           break;
         case r'receiver':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.receiver = valueDes;
           break;
         case r'groupLabels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.groupLabels.replace(valueDes);
           break;
         case r'commonLabels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.commonLabels.replace(valueDes);
           break;
         case r'commonAnnotations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.commonAnnotations.replace(valueDes);
           break;
         case r'externalURL':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.externalURL = valueDes;
           break;
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(AlertmanagerWebhookAlertsInner)]),
-          ) as BuiltList<AlertmanagerWebhookAlertsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AlertmanagerWebhookAlertsInner),
+                    ]),
+                  )
+                  as BuiltList<AlertmanagerWebhookAlertsInner>;
           result.alerts.replace(valueDes);
           break;
         default:

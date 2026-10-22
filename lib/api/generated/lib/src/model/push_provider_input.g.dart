@@ -24,9 +24,9 @@ PushProviderInputTypeEnum _$pushProviderInputTypeEnumValueOf(String name) {
 
 final BuiltSet<PushProviderInputTypeEnum> _$pushProviderInputTypeEnumValues =
     BuiltSet<PushProviderInputTypeEnum>(const <PushProviderInputTypeEnum>[
-  _$pushProviderInputTypeEnum_apns,
-  _$pushProviderInputTypeEnum_fcm,
-]);
+      _$pushProviderInputTypeEnum_apns,
+      _$pushProviderInputTypeEnum_fcm,
+    ]);
 
 Serializer<PushProviderInputTypeEnum> _$pushProviderInputTypeEnumSerializer =
     _$PushProviderInputTypeEnumSerializer();
@@ -48,16 +48,20 @@ class _$PushProviderInputTypeEnumSerializer
   final String wireName = 'PushProviderInputTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PushProviderInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushProviderInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushProviderInputTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushProviderInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushProviderInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushProviderInput extends PushProviderInput {
@@ -72,17 +76,17 @@ class _$PushProviderInput extends PushProviderInput {
   @override
   final bool? enabled;
 
-  factory _$PushProviderInput(
-          [void Function(PushProviderInputBuilder)? updates]) =>
-      (PushProviderInputBuilder()..update(updates))._build();
+  factory _$PushProviderInput([
+    void Function(PushProviderInputBuilder)? updates,
+  ]) => (PushProviderInputBuilder()..update(updates))._build();
 
-  _$PushProviderInput._(
-      {required this.type,
-      required this.appIds,
-      required this.config,
-      this.secrets,
-      this.enabled})
-      : super._();
+  _$PushProviderInput._({
+    required this.type,
+    required this.appIds,
+    required this.config,
+    this.secrets,
+    this.enabled,
+  }) : super._();
   @override
   PushProviderInput rebuild(void Function(PushProviderInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -186,10 +190,14 @@ class PushProviderInputBuilder
   _$PushProviderInput _build() {
     _$PushProviderInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushProviderInput._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'PushProviderInput', 'type'),
+              type,
+              r'PushProviderInput',
+              'type',
+            ),
             appIds: appIds.build(),
             config: config.build(),
             secrets: _secrets?.build(),
@@ -206,7 +214,10 @@ class PushProviderInputBuilder
         _secrets?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushProviderInput', _$failedField, e.toString());
+          r'PushProviderInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

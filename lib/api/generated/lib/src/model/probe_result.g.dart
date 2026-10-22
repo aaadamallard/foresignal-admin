@@ -19,12 +19,12 @@ class _$ProbeResult extends ProbeResult {
   factory _$ProbeResult([void Function(ProbeResultBuilder)? updates]) =>
       (ProbeResultBuilder()..update(updates))._build();
 
-  _$ProbeResult._(
-      {required this.sourceId,
-      required this.requests,
-      required this.records,
-      this.parseError})
-      : super._();
+  _$ProbeResult._({
+    required this.sourceId,
+    required this.requests,
+    required this.records,
+    this.parseError,
+  }) : super._();
   @override
   ProbeResult rebuild(void Function(ProbeResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -119,10 +119,14 @@ class ProbeResultBuilder implements Builder<ProbeResult, ProbeResultBuilder> {
   _$ProbeResult _build() {
     _$ProbeResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProbeResult._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'ProbeResult', 'sourceId'),
+              sourceId,
+              r'ProbeResult',
+              'sourceId',
+            ),
             requests: requests.build(),
             records: records.build(),
             parseError: parseError,
@@ -136,7 +140,10 @@ class ProbeResultBuilder implements Builder<ProbeResult, ProbeResultBuilder> {
         records.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProbeResult', _$failedField, e.toString());
+          r'ProbeResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

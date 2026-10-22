@@ -10,15 +10,15 @@ class _$ChronicleActivateRequest extends ChronicleActivateRequest {
   @override
   final ChronicleActivateRequestBackfill? backfill;
 
-  factory _$ChronicleActivateRequest(
-          [void Function(ChronicleActivateRequestBuilder)? updates]) =>
-      (ChronicleActivateRequestBuilder()..update(updates))._build();
+  factory _$ChronicleActivateRequest([
+    void Function(ChronicleActivateRequestBuilder)? updates,
+  ]) => (ChronicleActivateRequestBuilder()..update(updates))._build();
 
   _$ChronicleActivateRequest._({this.backfill}) : super._();
   @override
   ChronicleActivateRequest rebuild(
-          void Function(ChronicleActivateRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleActivateRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleActivateRequestBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$ChronicleActivateRequest extends ChronicleActivateRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ChronicleActivateRequest')
-          ..add('backfill', backfill))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ChronicleActivateRequest',
+    )..add('backfill', backfill)).toString();
   }
 }
 
@@ -86,10 +86,8 @@ class ChronicleActivateRequestBuilder
   _$ChronicleActivateRequest _build() {
     _$ChronicleActivateRequest _$result;
     try {
-      _$result = _$v ??
-          _$ChronicleActivateRequest._(
-            backfill: _backfill?.build(),
-          );
+      _$result =
+          _$v ?? _$ChronicleActivateRequest._(backfill: _backfill?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -97,7 +95,10 @@ class ChronicleActivateRequestBuilder
         _backfill?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleActivateRequest', _$failedField, e.toString());
+          r'ChronicleActivateRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

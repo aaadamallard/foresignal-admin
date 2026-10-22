@@ -23,14 +23,14 @@ class _$ExportFile extends ExportFile {
   factory _$ExportFile([void Function(ExportFileBuilder)? updates]) =>
       (ExportFileBuilder()..update(updates))._build();
 
-  _$ExportFile._(
-      {required this.name,
-      required this.url,
-      required this.bytes,
-      required this.sha256,
-      this.mediaType,
-      required this.expiresAt})
-      : super._();
+  _$ExportFile._({
+    required this.name,
+    required this.url,
+    required this.bytes,
+    required this.sha256,
+    this.mediaType,
+    required this.expiresAt,
+  }) : super._();
   @override
   ExportFile rebuild(void Function(ExportFileBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -135,18 +135,31 @@ class ExportFileBuilder implements Builder<ExportFile, ExportFileBuilder> {
   ExportFile build() => _build();
 
   _$ExportFile _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExportFile._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'ExportFile', 'name'),
+            name,
+            r'ExportFile',
+            'name',
+          ),
           url: BuiltValueNullFieldError.checkNotNull(url, r'ExportFile', 'url'),
           bytes: BuiltValueNullFieldError.checkNotNull(
-              bytes, r'ExportFile', 'bytes'),
+            bytes,
+            r'ExportFile',
+            'bytes',
+          ),
           sha256: BuiltValueNullFieldError.checkNotNull(
-              sha256, r'ExportFile', 'sha256'),
+            sha256,
+            r'ExportFile',
+            'sha256',
+          ),
           mediaType: mediaType,
           expiresAt: BuiltValueNullFieldError.checkNotNull(
-              expiresAt, r'ExportFile', 'expiresAt'),
+            expiresAt,
+            r'ExportFile',
+            'expiresAt',
+          ),
         );
     replace(_$result);
     return _$result;

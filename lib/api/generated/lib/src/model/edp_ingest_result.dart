@@ -80,9 +80,11 @@ class _$EdpIngestResultSerializer
     EdpIngestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,25 +100,29 @@ class _$EdpIngestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accepted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.accepted = valueDes;
           break;
         case r'rejected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(EdpItemRejection)]),
-          ) as BuiltList<EdpItemRejection>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EdpItemRejection),
+                    ]),
+                  )
+                  as BuiltList<EdpItemRejection>;
           result.rejected.replace(valueDes);
           break;
         case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IngestOutcome),
-          ) as IngestOutcome?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IngestOutcome),
+                  )
+                  as IngestOutcome?;
           if (valueDes == null) continue;
           result.outcome.replace(valueDes);
           break;

@@ -91,11 +91,8 @@ class FindingPageBuilder implements Builder<FindingPage, FindingPageBuilder> {
   _$FindingPage _build() {
     _$FindingPage _$result;
     try {
-      _$result = _$v ??
-          _$FindingPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$FindingPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class FindingPageBuilder implements Builder<FindingPage, FindingPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FindingPage', _$failedField, e.toString());
+          r'FindingPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

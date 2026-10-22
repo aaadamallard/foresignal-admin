@@ -14,16 +14,16 @@ class _$EdpDocumentItemMediaInner extends EdpDocumentItemMediaInner {
   @override
   final String? thumbUrl;
 
-  factory _$EdpDocumentItemMediaInner(
-          [void Function(EdpDocumentItemMediaInnerBuilder)? updates]) =>
-      (EdpDocumentItemMediaInnerBuilder()..update(updates))._build();
+  factory _$EdpDocumentItemMediaInner([
+    void Function(EdpDocumentItemMediaInnerBuilder)? updates,
+  ]) => (EdpDocumentItemMediaInnerBuilder()..update(updates))._build();
 
   _$EdpDocumentItemMediaInner._({this.type, required this.url, this.thumbUrl})
-      : super._();
+    : super._();
   @override
   EdpDocumentItemMediaInner rebuild(
-          void Function(EdpDocumentItemMediaInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpDocumentItemMediaInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpDocumentItemMediaInnerBuilder toBuilder() =>
@@ -104,11 +104,15 @@ class EdpDocumentItemMediaInnerBuilder
   EdpDocumentItemMediaInner build() => _build();
 
   _$EdpDocumentItemMediaInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpDocumentItemMediaInner._(
           type: type,
           url: BuiltValueNullFieldError.checkNotNull(
-              url, r'EdpDocumentItemMediaInner', 'url'),
+            url,
+            r'EdpDocumentItemMediaInner',
+            'url',
+          ),
           thumbUrl: thumbUrl,
         );
     replace(_$result);

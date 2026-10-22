@@ -63,14 +63,16 @@ class _$ProbeResultSerializer implements PrimitiveSerializer<ProbeResult> {
     yield r'requests';
     yield serializers.serialize(
       object.requests,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ProbeResultRequestsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ProbeResultRequestsInner),
+      ]),
     );
     yield r'records';
     yield serializers.serialize(
       object.records,
-      specifiedType:
-          const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NormalizedRecordPreview),
+      ]),
     );
     if (object.parseError != null) {
       yield r'parseError';
@@ -87,9 +89,11 @@ class _$ProbeResultSerializer implements PrimitiveSerializer<ProbeResult> {
     ProbeResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,33 +109,43 @@ class _$ProbeResultSerializer implements PrimitiveSerializer<ProbeResult> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'requests':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ProbeResultRequestsInner)]),
-          ) as BuiltList<ProbeResultRequestsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ProbeResultRequestsInner),
+                    ]),
+                  )
+                  as BuiltList<ProbeResultRequestsInner>;
           result.requests.replace(valueDes);
           break;
         case r'records':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
-          ) as BuiltList<NormalizedRecordPreview>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NormalizedRecordPreview),
+                    ]),
+                  )
+                  as BuiltList<NormalizedRecordPreview>;
           result.records.replace(valueDes);
           break;
         case r'parseError':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.parseError = valueDes;
           break;

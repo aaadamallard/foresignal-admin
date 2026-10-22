@@ -118,9 +118,11 @@ class _$DiscoverabilitySerializer
     Discoverability object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,50 +138,65 @@ class _$DiscoverabilitySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'discoverability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DiscoverabilityDiscoverabilityEnum),
-          ) as DiscoverabilityDiscoverabilityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DiscoverabilityDiscoverabilityEnum,
+                    ),
+                  )
+                  as DiscoverabilityDiscoverabilityEnum;
           result.discoverability = valueDes;
           break;
         case r'revealTitle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.revealTitle = valueDes;
           break;
         case r'revealOwner':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.revealOwner = valueDes;
           break;
         case r'maxAllowed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DiscoverabilityMaxAllowedEnum),
-          ) as DiscoverabilityMaxAllowedEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DiscoverabilityMaxAllowedEnum,
+                    ),
+                  )
+                  as DiscoverabilityMaxAllowedEnum?;
           if (valueDes == null) continue;
           result.maxAllowed = valueDes;
           break;
         case r'tlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tlp = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

@@ -28,10 +28,10 @@ OutletConsensusBucketEnum _$outletConsensusBucketEnumValueOf(String name) {
 
 final BuiltSet<OutletConsensusBucketEnum> _$outletConsensusBucketEnumValues =
     BuiltSet<OutletConsensusBucketEnum>(const <OutletConsensusBucketEnum>[
-  _$outletConsensusBucketEnum_left,
-  _$outletConsensusBucketEnum_center,
-  _$outletConsensusBucketEnum_right,
-]);
+      _$outletConsensusBucketEnum_left,
+      _$outletConsensusBucketEnum_center,
+      _$outletConsensusBucketEnum_right,
+    ]);
 
 Serializer<OutletConsensusBucketEnum> _$outletConsensusBucketEnumSerializer =
     _$OutletConsensusBucketEnumSerializer();
@@ -55,16 +55,20 @@ class _$OutletConsensusBucketEnumSerializer
   final String wireName = 'OutletConsensusBucketEnum';
 
   @override
-  Object serialize(Serializers serializers, OutletConsensusBucketEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OutletConsensusBucketEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OutletConsensusBucketEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OutletConsensusBucketEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OutletConsensusBucketEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OutletConsensus extends OutletConsensus {
@@ -88,16 +92,16 @@ class _$OutletConsensus extends OutletConsensus {
   factory _$OutletConsensus([void Function(OutletConsensusBuilder)? updates]) =>
       (OutletConsensusBuilder()..update(updates))._build();
 
-  _$OutletConsensus._(
-      {required this.outletId,
-      this.dimension,
-      this.median,
-      required this.nProviders,
-      this.disagreement,
-      this.bucket,
-      required this.providers,
-      this.computedAt})
-      : super._();
+  _$OutletConsensus._({
+    required this.outletId,
+    this.dimension,
+    this.median,
+    required this.nProviders,
+    this.disagreement,
+    this.bucket,
+    required this.providers,
+    this.computedAt,
+  }) : super._();
   @override
   OutletConsensus rebuild(void Function(OutletConsensusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -223,14 +227,21 @@ class OutletConsensusBuilder
   _$OutletConsensus _build() {
     _$OutletConsensus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OutletConsensus._(
             outletId: BuiltValueNullFieldError.checkNotNull(
-                outletId, r'OutletConsensus', 'outletId'),
+              outletId,
+              r'OutletConsensus',
+              'outletId',
+            ),
             dimension: dimension,
             median: median,
             nProviders: BuiltValueNullFieldError.checkNotNull(
-                nProviders, r'OutletConsensus', 'nProviders'),
+              nProviders,
+              r'OutletConsensus',
+              'nProviders',
+            ),
             disagreement: disagreement,
             bucket: bucket,
             providers: providers.build(),
@@ -243,7 +254,10 @@ class OutletConsensusBuilder
         providers.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OutletConsensus', _$failedField, e.toString());
+          r'OutletConsensus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

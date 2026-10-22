@@ -28,10 +28,10 @@ EntityAliasAliasTypeEnum _$entityAliasAliasTypeEnumValueOf(String name) {
 
 final BuiltSet<EntityAliasAliasTypeEnum> _$entityAliasAliasTypeEnumValues =
     BuiltSet<EntityAliasAliasTypeEnum>(const <EntityAliasAliasTypeEnum>[
-  _$entityAliasAliasTypeEnum_NAME,
-  _$entityAliasAliasTypeEnum_FORMER_NAME,
-  _$entityAliasAliasTypeEnum_OPERATOR_LABEL,
-]);
+      _$entityAliasAliasTypeEnum_NAME,
+      _$entityAliasAliasTypeEnum_FORMER_NAME,
+      _$entityAliasAliasTypeEnum_OPERATOR_LABEL,
+    ]);
 
 const EntityAliasOriginEnum _$entityAliasOriginEnum_REGISTRY =
     const EntityAliasOriginEnum._('REGISTRY');
@@ -59,11 +59,11 @@ EntityAliasOriginEnum _$entityAliasOriginEnumValueOf(String name) {
 
 final BuiltSet<EntityAliasOriginEnum> _$entityAliasOriginEnumValues =
     BuiltSet<EntityAliasOriginEnum>(const <EntityAliasOriginEnum>[
-  _$entityAliasOriginEnum_REGISTRY,
-  _$entityAliasOriginEnum_CO_ASSERTED,
-  _$entityAliasOriginEnum_OBSERVED,
-  _$entityAliasOriginEnum_OPERATOR,
-]);
+      _$entityAliasOriginEnum_REGISTRY,
+      _$entityAliasOriginEnum_CO_ASSERTED,
+      _$entityAliasOriginEnum_OBSERVED,
+      _$entityAliasOriginEnum_OPERATOR,
+    ]);
 
 Serializer<EntityAliasAliasTypeEnum> _$entityAliasAliasTypeEnumSerializer =
     _$EntityAliasAliasTypeEnumSerializer();
@@ -89,16 +89,20 @@ class _$EntityAliasAliasTypeEnumSerializer
   final String wireName = 'EntityAliasAliasTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityAliasAliasTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityAliasAliasTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EntityAliasAliasTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityAliasAliasTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityAliasAliasTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityAliasOriginEnumSerializer
@@ -122,15 +126,20 @@ class _$EntityAliasOriginEnumSerializer
   final String wireName = 'EntityAliasOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityAliasOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityAliasOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EntityAliasOriginEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityAliasOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EntityAliasOriginEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityAliasOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityAlias extends EntityAlias {
@@ -150,14 +159,14 @@ class _$EntityAlias extends EntityAlias {
   factory _$EntityAlias([void Function(EntityAliasBuilder)? updates]) =>
       (EntityAliasBuilder()..update(updates))._build();
 
-  _$EntityAlias._(
-      {required this.id,
-      required this.alias,
-      required this.aliasType,
-      required this.validFrom,
-      this.validTo,
-      required this.origin})
-      : super._();
+  _$EntityAlias._({
+    required this.id,
+    required this.alias,
+    required this.aliasType,
+    required this.validFrom,
+    this.validTo,
+    required this.origin,
+  }) : super._();
   @override
   EntityAlias rebuild(void Function(EntityAliasBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -263,18 +272,31 @@ class EntityAliasBuilder implements Builder<EntityAlias, EntityAliasBuilder> {
   EntityAlias build() => _build();
 
   _$EntityAlias _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EntityAlias._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'EntityAlias', 'id'),
           alias: BuiltValueNullFieldError.checkNotNull(
-              alias, r'EntityAlias', 'alias'),
+            alias,
+            r'EntityAlias',
+            'alias',
+          ),
           aliasType: BuiltValueNullFieldError.checkNotNull(
-              aliasType, r'EntityAlias', 'aliasType'),
+            aliasType,
+            r'EntityAlias',
+            'aliasType',
+          ),
           validFrom: BuiltValueNullFieldError.checkNotNull(
-              validFrom, r'EntityAlias', 'validFrom'),
+            validFrom,
+            r'EntityAlias',
+            'validFrom',
+          ),
           validTo: validTo,
           origin: BuiltValueNullFieldError.checkNotNull(
-              origin, r'EntityAlias', 'origin'),
+            origin,
+            r'EntityAlias',
+            'origin',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -74,7 +74,7 @@ abstract class MeshtasticChannelConfig
   /// Sender to role. A sender is a Meshtastic node id (`!xxxxxxxx`), a MeshCore key prefix (`mc:` + 12 hex) or `name:` + the advertised name: MeshCore channel messages name their sender only by its advertised name, so a MeshCore channel report is matched by `name:` (084)
   @BuiltValueField(wireName: r'allowedSenders')
   BuiltMap<String, MeshtasticChannelConfigAllowedSendersEnum>?
-      get allowedSenders;
+  get allowedSenders;
   // enum allowedSendersEnum {  report,  ack,  };
 
   /// Also send the federation compact messages (fired and resolved alerts, intelligence events) within this channel's airtime budget, through its profile (113)
@@ -115,9 +115,9 @@ abstract class MeshtasticChannelConfig
 
   MeshtasticChannelConfig._();
 
-  factory MeshtasticChannelConfig(
-          [void updates(MeshtasticChannelConfigBuilder b)]) =
-      _$MeshtasticChannelConfig;
+  factory MeshtasticChannelConfig([
+    void updates(MeshtasticChannelConfigBuilder b),
+  ]) = _$MeshtasticChannelConfig;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MeshtasticChannelConfigBuilder b) => b;
@@ -132,7 +132,7 @@ class _$MeshtasticChannelConfigSerializer
   @override
   final Iterable<Type> types = const [
     MeshtasticChannelConfig,
-    _$MeshtasticChannelConfig
+    _$MeshtasticChannelConfig,
   ];
 
   @override
@@ -159,8 +159,9 @@ class _$MeshtasticChannelConfigSerializer
       yield r'airtimeCustom';
       yield serializers.serialize(
         object.airtimeCustom,
-        specifiedType:
-            const FullType.nullable(MeshChannelCommonConfigAirtimeCustom),
+        specifiedType: const FullType.nullable(
+          MeshChannelCommonConfigAirtimeCustom,
+        ),
       );
     }
     if (object.dutyCyclePercent != null) {
@@ -211,7 +212,7 @@ class _$MeshtasticChannelConfigSerializer
         object.allowedSenders,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(MeshtasticChannelConfigAllowedSendersEnum)
+          FullType(MeshtasticChannelConfigAllowedSendersEnum),
         ]),
       );
     }
@@ -283,9 +284,11 @@ class _$MeshtasticChannelConfigSerializer
     MeshtasticChannelConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -301,164 +304,210 @@ class _$MeshtasticChannelConfigSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'region':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MeshtasticChannelConfigRegionEnum),
-          ) as MeshtasticChannelConfigRegionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      MeshtasticChannelConfigRegionEnum,
+                    ),
+                  )
+                  as MeshtasticChannelConfigRegionEnum;
           result.region = valueDes;
           break;
         case r'airtimePreset':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                MeshtasticChannelConfigAirtimePresetEnum),
-          ) as MeshtasticChannelConfigAirtimePresetEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MeshtasticChannelConfigAirtimePresetEnum,
+                    ),
+                  )
+                  as MeshtasticChannelConfigAirtimePresetEnum?;
           if (valueDes == null) continue;
           result.airtimePreset = valueDes;
           break;
         case r'airtimeCustom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(MeshChannelCommonConfigAirtimeCustom),
-          ) as MeshChannelCommonConfigAirtimeCustom?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MeshChannelCommonConfigAirtimeCustom,
+                    ),
+                  )
+                  as MeshChannelCommonConfigAirtimeCustom?;
           if (valueDes == null) continue;
           result.airtimeCustom.replace(valueDes);
           break;
         case r'dutyCyclePercent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.dutyCyclePercent = valueDes;
           break;
         case r'minSpacing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.minSpacing = valueDes;
           break;
         case r'maxMessagesPerHour':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxMessagesPerHour = valueDes;
           break;
         case r'profile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(MeshtasticChannelConfigProfileEnum),
-          ) as MeshtasticChannelConfigProfileEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MeshtasticChannelConfigProfileEnum,
+                    ),
+                  )
+                  as MeshtasticChannelConfigProfileEnum?;
           if (valueDes == null) continue;
           result.profile = valueDes;
           break;
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(MeshtasticChannelConfigMinSeverityEnum),
-          ) as MeshtasticChannelConfigMinSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MeshtasticChannelConfigMinSeverityEnum,
+                    ),
+                  )
+                  as MeshtasticChannelConfigMinSeverityEnum?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;
         case r'reportsEnabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.reportsEnabled = valueDes;
           break;
         case r'allowedSenders':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(MeshtasticChannelConfigAllowedSendersEnum)
-            ]),
-          ) as BuiltMap<String, MeshtasticChannelConfigAllowedSendersEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(MeshtasticChannelConfigAllowedSendersEnum),
+                    ]),
+                  )
+                  as BuiltMap<
+                    String,
+                    MeshtasticChannelConfigAllowedSendersEnum
+                  >?;
           if (valueDes == null) continue;
           result.allowedSenders.replace(valueDes);
           break;
         case r'compactEvents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.compactEvents = valueDes;
           break;
         case r'brokerUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.brokerUrl = valueDes;
           break;
         case r'root':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.root = valueDes;
           break;
         case r'gatewayNodeNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.gatewayNodeNum = valueDes;
           break;
         case r'channelIndex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.channelIndex = valueDes;
           break;
         case r'channelName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.channelName = valueDes;
           break;
         case r'toNodeNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.toNodeNum = valueDes;
           break;
         case r'topicSuffixNodeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.topicSuffixNodeId = valueDes;
           break;
         case r'licensedMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.licensedMode = valueDes;
           break;
         case r'privateChannelConfirmed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.privateChannelConfirmed = valueDes;
           break;
         default:

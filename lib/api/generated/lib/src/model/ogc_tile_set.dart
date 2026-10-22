@@ -96,8 +96,9 @@ class _$OgcTileSetSerializer implements PrimitiveSerializer<OgcTileSet> {
       yield r'tileMatrixSetLimits';
       yield serializers.serialize(
         object.tileMatrixSetLimits,
-        specifiedType: const FullType(
-            BuiltList, [FullType(OgcTileSetTileMatrixSetLimitsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(OgcTileSetTileMatrixSetLimitsInner),
+        ]),
       );
     }
     yield r'links';
@@ -120,9 +121,11 @@ class _$OgcTileSetSerializer implements PrimitiveSerializer<OgcTileSet> {
     OgcTileSet object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -138,56 +141,73 @@ class _$OgcTileSetSerializer implements PrimitiveSerializer<OgcTileSet> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'dataType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OgcTileSetDataTypeEnum),
-          ) as OgcTileSetDataTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OgcTileSetDataTypeEnum),
+                  )
+                  as OgcTileSetDataTypeEnum;
           result.dataType = valueDes;
           break;
         case r'crs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.crs = valueDes;
           break;
         case r'tileMatrixSetURI':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.tileMatrixSetURI = valueDes;
           break;
         case r'tileMatrixSetLimits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(OgcTileSetTileMatrixSetLimitsInner)]),
-          ) as BuiltList<OgcTileSetTileMatrixSetLimitsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(OgcTileSetTileMatrixSetLimitsInner),
+                    ]),
+                  )
+                  as BuiltList<OgcTileSetTileMatrixSetLimitsInner>?;
           if (valueDes == null) continue;
           result.tileMatrixSetLimits.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>;
           result.links.replace(valueDes);
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.attribution = valueDes;
           break;

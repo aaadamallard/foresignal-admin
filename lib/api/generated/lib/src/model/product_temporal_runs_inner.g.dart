@@ -7,14 +7,15 @@ part of 'product_temporal_runs_inner.dart';
 // **************************************************************************
 
 const ProductTemporalRunsInnerStatusEnum
-    _$productTemporalRunsInnerStatusEnum_complete =
+_$productTemporalRunsInnerStatusEnum_complete =
     const ProductTemporalRunsInnerStatusEnum._('complete');
 const ProductTemporalRunsInnerStatusEnum
-    _$productTemporalRunsInnerStatusEnum_partial =
+_$productTemporalRunsInnerStatusEnum_partial =
     const ProductTemporalRunsInnerStatusEnum._('partial');
 
 ProductTemporalRunsInnerStatusEnum _$productTemporalRunsInnerStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'complete':
       return _$productTemporalRunsInnerStatusEnum_complete;
@@ -26,14 +27,16 @@ ProductTemporalRunsInnerStatusEnum _$productTemporalRunsInnerStatusEnumValueOf(
 }
 
 final BuiltSet<ProductTemporalRunsInnerStatusEnum>
-    _$productTemporalRunsInnerStatusEnumValues = BuiltSet<
-        ProductTemporalRunsInnerStatusEnum>(const <ProductTemporalRunsInnerStatusEnum>[
-  _$productTemporalRunsInnerStatusEnum_complete,
-  _$productTemporalRunsInnerStatusEnum_partial,
-]);
+_$productTemporalRunsInnerStatusEnumValues =
+    BuiltSet<ProductTemporalRunsInnerStatusEnum>(
+      const <ProductTemporalRunsInnerStatusEnum>[
+        _$productTemporalRunsInnerStatusEnum_complete,
+        _$productTemporalRunsInnerStatusEnum_partial,
+      ],
+    );
 
 Serializer<ProductTemporalRunsInnerStatusEnum>
-    _$productTemporalRunsInnerStatusEnumSerializer =
+_$productTemporalRunsInnerStatusEnumSerializer =
     _$ProductTemporalRunsInnerStatusEnumSerializer();
 
 class _$ProductTemporalRunsInnerStatusEnumSerializer
@@ -54,16 +57,19 @@ class _$ProductTemporalRunsInnerStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ProductTemporalRunsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ProductTemporalRunsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProductTemporalRunsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductTemporalRunsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductTemporalRunsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductTemporalRunsInner extends ProductTemporalRunsInner {
@@ -78,21 +84,21 @@ class _$ProductTemporalRunsInner extends ProductTemporalRunsInner {
   @override
   final DateTime? validTo;
 
-  factory _$ProductTemporalRunsInner(
-          [void Function(ProductTemporalRunsInnerBuilder)? updates]) =>
-      (ProductTemporalRunsInnerBuilder()..update(updates))._build();
+  factory _$ProductTemporalRunsInner([
+    void Function(ProductTemporalRunsInnerBuilder)? updates,
+  ]) => (ProductTemporalRunsInnerBuilder()..update(updates))._build();
 
-  _$ProductTemporalRunsInner._(
-      {required this.run,
-      required this.status,
-      this.steps,
-      this.validFrom,
-      this.validTo})
-      : super._();
+  _$ProductTemporalRunsInner._({
+    required this.run,
+    required this.status,
+    this.steps,
+    this.validFrom,
+    this.validTo,
+  }) : super._();
   @override
   ProductTemporalRunsInner rebuild(
-          void Function(ProductTemporalRunsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProductTemporalRunsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProductTemporalRunsInnerBuilder toBuilder() =>
@@ -192,12 +198,19 @@ class ProductTemporalRunsInnerBuilder
   _$ProductTemporalRunsInner _build() {
     _$ProductTemporalRunsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductTemporalRunsInner._(
             run: BuiltValueNullFieldError.checkNotNull(
-                run, r'ProductTemporalRunsInner', 'run'),
+              run,
+              r'ProductTemporalRunsInner',
+              'run',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ProductTemporalRunsInner', 'status'),
+              status,
+              r'ProductTemporalRunsInner',
+              'status',
+            ),
             steps: _steps?.build(),
             validFrom: validFrom,
             validTo: validTo,
@@ -209,7 +222,10 @@ class ProductTemporalRunsInnerBuilder
         _steps?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductTemporalRunsInner', _$failedField, e.toString());
+          r'ProductTemporalRunsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

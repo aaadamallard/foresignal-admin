@@ -7,65 +7,65 @@ part of 'settings_bundle_channels_inner.dart';
 // **************************************************************************
 
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_webhook =
+_$settingsBundleChannelsInnerTypeEnum_webhook =
     const SettingsBundleChannelsInnerTypeEnum._('webhook');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_slack =
+_$settingsBundleChannelsInnerTypeEnum_slack =
     const SettingsBundleChannelsInnerTypeEnum._('slack');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_mattermost =
+_$settingsBundleChannelsInnerTypeEnum_mattermost =
     const SettingsBundleChannelsInnerTypeEnum._('mattermost');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_discord =
+_$settingsBundleChannelsInnerTypeEnum_discord =
     const SettingsBundleChannelsInnerTypeEnum._('discord');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_teams =
+_$settingsBundleChannelsInnerTypeEnum_teams =
     const SettingsBundleChannelsInnerTypeEnum._('teams');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_googleChat =
+_$settingsBundleChannelsInnerTypeEnum_googleChat =
     const SettingsBundleChannelsInnerTypeEnum._('googleChat');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_telegram =
+_$settingsBundleChannelsInnerTypeEnum_telegram =
     const SettingsBundleChannelsInnerTypeEnum._('telegram');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_matrix =
+_$settingsBundleChannelsInnerTypeEnum_matrix =
     const SettingsBundleChannelsInnerTypeEnum._('matrix');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_ntfy =
+_$settingsBundleChannelsInnerTypeEnum_ntfy =
     const SettingsBundleChannelsInnerTypeEnum._('ntfy');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_gotify =
+_$settingsBundleChannelsInnerTypeEnum_gotify =
     const SettingsBundleChannelsInnerTypeEnum._('gotify');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_pushover =
+_$settingsBundleChannelsInnerTypeEnum_pushover =
     const SettingsBundleChannelsInnerTypeEnum._('pushover');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_email =
+_$settingsBundleChannelsInnerTypeEnum_email =
     const SettingsBundleChannelsInnerTypeEnum._('email');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_webpush =
+_$settingsBundleChannelsInnerTypeEnum_webpush =
     const SettingsBundleChannelsInnerTypeEnum._('webpush');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_homeassistant =
+_$settingsBundleChannelsInnerTypeEnum_homeassistant =
     const SettingsBundleChannelsInnerTypeEnum._('homeassistant');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_apprise =
+_$settingsBundleChannelsInnerTypeEnum_apprise =
     const SettingsBundleChannelsInnerTypeEnum._('apprise');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_zulip =
+_$settingsBundleChannelsInnerTypeEnum_zulip =
     const SettingsBundleChannelsInnerTypeEnum._('zulip');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_mqtt =
+_$settingsBundleChannelsInnerTypeEnum_mqtt =
     const SettingsBundleChannelsInnerTypeEnum._('mqtt');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_meshtastic =
+_$settingsBundleChannelsInnerTypeEnum_meshtastic =
     const SettingsBundleChannelsInnerTypeEnum._('meshtastic');
 const SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnum_meshcore =
+_$settingsBundleChannelsInnerTypeEnum_meshcore =
     const SettingsBundleChannelsInnerTypeEnum._('meshcore');
 
 SettingsBundleChannelsInnerTypeEnum
-    _$settingsBundleChannelsInnerTypeEnumValueOf(String name) {
+_$settingsBundleChannelsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'webhook':
       return _$settingsBundleChannelsInnerTypeEnum_webhook;
@@ -111,107 +111,112 @@ SettingsBundleChannelsInnerTypeEnum
 }
 
 final BuiltSet<SettingsBundleChannelsInnerTypeEnum>
-    _$settingsBundleChannelsInnerTypeEnumValues = BuiltSet<
-        SettingsBundleChannelsInnerTypeEnum>(const <SettingsBundleChannelsInnerTypeEnum>[
-  _$settingsBundleChannelsInnerTypeEnum_webhook,
-  _$settingsBundleChannelsInnerTypeEnum_slack,
-  _$settingsBundleChannelsInnerTypeEnum_mattermost,
-  _$settingsBundleChannelsInnerTypeEnum_discord,
-  _$settingsBundleChannelsInnerTypeEnum_teams,
-  _$settingsBundleChannelsInnerTypeEnum_googleChat,
-  _$settingsBundleChannelsInnerTypeEnum_telegram,
-  _$settingsBundleChannelsInnerTypeEnum_matrix,
-  _$settingsBundleChannelsInnerTypeEnum_ntfy,
-  _$settingsBundleChannelsInnerTypeEnum_gotify,
-  _$settingsBundleChannelsInnerTypeEnum_pushover,
-  _$settingsBundleChannelsInnerTypeEnum_email,
-  _$settingsBundleChannelsInnerTypeEnum_webpush,
-  _$settingsBundleChannelsInnerTypeEnum_homeassistant,
-  _$settingsBundleChannelsInnerTypeEnum_apprise,
-  _$settingsBundleChannelsInnerTypeEnum_zulip,
-  _$settingsBundleChannelsInnerTypeEnum_mqtt,
-  _$settingsBundleChannelsInnerTypeEnum_meshtastic,
-  _$settingsBundleChannelsInnerTypeEnum_meshcore,
-]);
+_$settingsBundleChannelsInnerTypeEnumValues =
+    BuiltSet<SettingsBundleChannelsInnerTypeEnum>(
+      const <SettingsBundleChannelsInnerTypeEnum>[
+        _$settingsBundleChannelsInnerTypeEnum_webhook,
+        _$settingsBundleChannelsInnerTypeEnum_slack,
+        _$settingsBundleChannelsInnerTypeEnum_mattermost,
+        _$settingsBundleChannelsInnerTypeEnum_discord,
+        _$settingsBundleChannelsInnerTypeEnum_teams,
+        _$settingsBundleChannelsInnerTypeEnum_googleChat,
+        _$settingsBundleChannelsInnerTypeEnum_telegram,
+        _$settingsBundleChannelsInnerTypeEnum_matrix,
+        _$settingsBundleChannelsInnerTypeEnum_ntfy,
+        _$settingsBundleChannelsInnerTypeEnum_gotify,
+        _$settingsBundleChannelsInnerTypeEnum_pushover,
+        _$settingsBundleChannelsInnerTypeEnum_email,
+        _$settingsBundleChannelsInnerTypeEnum_webpush,
+        _$settingsBundleChannelsInnerTypeEnum_homeassistant,
+        _$settingsBundleChannelsInnerTypeEnum_apprise,
+        _$settingsBundleChannelsInnerTypeEnum_zulip,
+        _$settingsBundleChannelsInnerTypeEnum_mqtt,
+        _$settingsBundleChannelsInnerTypeEnum_meshtastic,
+        _$settingsBundleChannelsInnerTypeEnum_meshcore,
+      ],
+    );
 
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_alert =
+_$settingsBundleChannelsInnerEventsEnum_alert =
     const SettingsBundleChannelsInnerEventsEnum._('alert');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_briefing =
+_$settingsBundleChannelsInnerEventsEnum_briefing =
     const SettingsBundleChannelsInnerEventsEnum._('briefing');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_system =
+_$settingsBundleChannelsInnerEventsEnum_system =
     const SettingsBundleChannelsInnerEventsEnum._('system');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodProposed =
+_$settingsBundleChannelsInnerEventsEnum_chroniclePeriodProposed =
     const SettingsBundleChannelsInnerEventsEnum._('chroniclePeriodProposed');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodCapWarning =
+_$settingsBundleChannelsInnerEventsEnum_chroniclePeriodCapWarning =
     const SettingsBundleChannelsInnerEventsEnum._('chroniclePeriodCapWarning');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodGap =
+_$settingsBundleChannelsInnerEventsEnum_chroniclePeriodGap =
     const SettingsBundleChannelsInnerEventsEnum._('chroniclePeriodGap');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_socialPeriodDivergence =
+_$settingsBundleChannelsInnerEventsEnum_socialPeriodDivergence =
     const SettingsBundleChannelsInnerEventsEnum._('socialPeriodDivergence');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_socialPeriodAttentionGap =
+_$settingsBundleChannelsInnerEventsEnum_socialPeriodAttentionGap =
     const SettingsBundleChannelsInnerEventsEnum._('socialPeriodAttentionGap');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_analystPeriodNote =
+_$settingsBundleChannelsInnerEventsEnum_analystPeriodNote =
     const SettingsBundleChannelsInnerEventsEnum._('analystPeriodNote');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_situationPeriodActivated =
+_$settingsBundleChannelsInnerEventsEnum_situationPeriodActivated =
     const SettingsBundleChannelsInnerEventsEnum._('situationPeriodActivated');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_situationPeriodEscalated =
+_$settingsBundleChannelsInnerEventsEnum_situationPeriodEscalated =
     const SettingsBundleChannelsInnerEventsEnum._('situationPeriodEscalated');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_findingPeriodSignificant =
+_$settingsBundleChannelsInnerEventsEnum_findingPeriodSignificant =
     const SettingsBundleChannelsInnerEventsEnum._('findingPeriodSignificant');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolved =
+_$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolved =
     const SettingsBundleChannelsInnerEventsEnum._('forecastPeriodResolved');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolutionNeeded =
+_$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolutionNeeded =
     const SettingsBundleChannelsInnerEventsEnum._(
-        'forecastPeriodResolutionNeeded');
+      'forecastPeriodResolutionNeeded',
+    );
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_hypothesisPeriodBandChanged =
+_$settingsBundleChannelsInnerEventsEnum_hypothesisPeriodBandChanged =
     const SettingsBundleChannelsInnerEventsEnum._(
-        'hypothesisPeriodBandChanged');
+      'hypothesisPeriodBandChanged',
+    );
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_indicatorPeriodObserved =
+_$settingsBundleChannelsInnerEventsEnum_indicatorPeriodObserved =
     const SettingsBundleChannelsInnerEventsEnum._('indicatorPeriodObserved');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_assumptionPeriodBroken =
+_$settingsBundleChannelsInnerEventsEnum_assumptionPeriodBroken =
     const SettingsBundleChannelsInnerEventsEnum._('assumptionPeriodBroken');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_assessmentPeriodPublished =
+_$settingsBundleChannelsInnerEventsEnum_assessmentPeriodPublished =
     const SettingsBundleChannelsInnerEventsEnum._('assessmentPeriodPublished');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_mention =
+_$settingsBundleChannelsInnerEventsEnum_mention =
     const SettingsBundleChannelsInnerEventsEnum._('mention');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_share =
+_$settingsBundleChannelsInnerEventsEnum_share =
     const SettingsBundleChannelsInnerEventsEnum._('share');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_reportPeriodReceived =
+_$settingsBundleChannelsInnerEventsEnum_reportPeriodReceived =
     const SettingsBundleChannelsInnerEventsEnum._('reportPeriodReceived');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_packagePeriodReceived =
+_$settingsBundleChannelsInnerEventsEnum_packagePeriodReceived =
     const SettingsBundleChannelsInnerEventsEnum._('packagePeriodReceived');
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested =
+_$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested =
     const SettingsBundleChannelsInnerEventsEnum._(
-        'chroniclePeriodAccessPeriodRequested');
+      'chroniclePeriodAccessPeriodRequested',
+    );
 const SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches =
+_$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches =
     const SettingsBundleChannelsInnerEventsEnum._('savedSearchPeriodMatches');
 
 SettingsBundleChannelsInnerEventsEnum
-    _$settingsBundleChannelsInnerEventsEnumValueOf(String name) {
+_$settingsBundleChannelsInnerEventsEnumValueOf(String name) {
   switch (name) {
     case 'alert':
       return _$settingsBundleChannelsInnerEventsEnum_alert;
@@ -267,46 +272,48 @@ SettingsBundleChannelsInnerEventsEnum
 }
 
 final BuiltSet<SettingsBundleChannelsInnerEventsEnum>
-    _$settingsBundleChannelsInnerEventsEnumValues = BuiltSet<
-        SettingsBundleChannelsInnerEventsEnum>(const <SettingsBundleChannelsInnerEventsEnum>[
-  _$settingsBundleChannelsInnerEventsEnum_alert,
-  _$settingsBundleChannelsInnerEventsEnum_briefing,
-  _$settingsBundleChannelsInnerEventsEnum_system,
-  _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodProposed,
-  _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodCapWarning,
-  _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodGap,
-  _$settingsBundleChannelsInnerEventsEnum_socialPeriodDivergence,
-  _$settingsBundleChannelsInnerEventsEnum_socialPeriodAttentionGap,
-  _$settingsBundleChannelsInnerEventsEnum_analystPeriodNote,
-  _$settingsBundleChannelsInnerEventsEnum_situationPeriodActivated,
-  _$settingsBundleChannelsInnerEventsEnum_situationPeriodEscalated,
-  _$settingsBundleChannelsInnerEventsEnum_findingPeriodSignificant,
-  _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolved,
-  _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolutionNeeded,
-  _$settingsBundleChannelsInnerEventsEnum_hypothesisPeriodBandChanged,
-  _$settingsBundleChannelsInnerEventsEnum_indicatorPeriodObserved,
-  _$settingsBundleChannelsInnerEventsEnum_assumptionPeriodBroken,
-  _$settingsBundleChannelsInnerEventsEnum_assessmentPeriodPublished,
-  _$settingsBundleChannelsInnerEventsEnum_mention,
-  _$settingsBundleChannelsInnerEventsEnum_share,
-  _$settingsBundleChannelsInnerEventsEnum_reportPeriodReceived,
-  _$settingsBundleChannelsInnerEventsEnum_packagePeriodReceived,
-  _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested,
-  _$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches,
-]);
+_$settingsBundleChannelsInnerEventsEnumValues =
+    BuiltSet<SettingsBundleChannelsInnerEventsEnum>(const <
+      SettingsBundleChannelsInnerEventsEnum
+    >[
+      _$settingsBundleChannelsInnerEventsEnum_alert,
+      _$settingsBundleChannelsInnerEventsEnum_briefing,
+      _$settingsBundleChannelsInnerEventsEnum_system,
+      _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodProposed,
+      _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodCapWarning,
+      _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodGap,
+      _$settingsBundleChannelsInnerEventsEnum_socialPeriodDivergence,
+      _$settingsBundleChannelsInnerEventsEnum_socialPeriodAttentionGap,
+      _$settingsBundleChannelsInnerEventsEnum_analystPeriodNote,
+      _$settingsBundleChannelsInnerEventsEnum_situationPeriodActivated,
+      _$settingsBundleChannelsInnerEventsEnum_situationPeriodEscalated,
+      _$settingsBundleChannelsInnerEventsEnum_findingPeriodSignificant,
+      _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolved,
+      _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolutionNeeded,
+      _$settingsBundleChannelsInnerEventsEnum_hypothesisPeriodBandChanged,
+      _$settingsBundleChannelsInnerEventsEnum_indicatorPeriodObserved,
+      _$settingsBundleChannelsInnerEventsEnum_assumptionPeriodBroken,
+      _$settingsBundleChannelsInnerEventsEnum_assessmentPeriodPublished,
+      _$settingsBundleChannelsInnerEventsEnum_mention,
+      _$settingsBundleChannelsInnerEventsEnum_share,
+      _$settingsBundleChannelsInnerEventsEnum_reportPeriodReceived,
+      _$settingsBundleChannelsInnerEventsEnum_packagePeriodReceived,
+      _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested,
+      _$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches,
+    ]);
 
 const SettingsBundleChannelsInnerMinSeverityEnum
-    _$settingsBundleChannelsInnerMinSeverityEnum_info =
+_$settingsBundleChannelsInnerMinSeverityEnum_info =
     const SettingsBundleChannelsInnerMinSeverityEnum._('info');
 const SettingsBundleChannelsInnerMinSeverityEnum
-    _$settingsBundleChannelsInnerMinSeverityEnum_warning =
+_$settingsBundleChannelsInnerMinSeverityEnum_warning =
     const SettingsBundleChannelsInnerMinSeverityEnum._('warning');
 const SettingsBundleChannelsInnerMinSeverityEnum
-    _$settingsBundleChannelsInnerMinSeverityEnum_critical =
+_$settingsBundleChannelsInnerMinSeverityEnum_critical =
     const SettingsBundleChannelsInnerMinSeverityEnum._('critical');
 
 SettingsBundleChannelsInnerMinSeverityEnum
-    _$settingsBundleChannelsInnerMinSeverityEnumValueOf(String name) {
+_$settingsBundleChannelsInnerMinSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$settingsBundleChannelsInnerMinSeverityEnum_info;
@@ -320,21 +327,23 @@ SettingsBundleChannelsInnerMinSeverityEnum
 }
 
 final BuiltSet<SettingsBundleChannelsInnerMinSeverityEnum>
-    _$settingsBundleChannelsInnerMinSeverityEnumValues = BuiltSet<
-        SettingsBundleChannelsInnerMinSeverityEnum>(const <SettingsBundleChannelsInnerMinSeverityEnum>[
-  _$settingsBundleChannelsInnerMinSeverityEnum_info,
-  _$settingsBundleChannelsInnerMinSeverityEnum_warning,
-  _$settingsBundleChannelsInnerMinSeverityEnum_critical,
-]);
+_$settingsBundleChannelsInnerMinSeverityEnumValues =
+    BuiltSet<SettingsBundleChannelsInnerMinSeverityEnum>(
+      const <SettingsBundleChannelsInnerMinSeverityEnum>[
+        _$settingsBundleChannelsInnerMinSeverityEnum_info,
+        _$settingsBundleChannelsInnerMinSeverityEnum_warning,
+        _$settingsBundleChannelsInnerMinSeverityEnum_critical,
+      ],
+    );
 
 Serializer<SettingsBundleChannelsInnerTypeEnum>
-    _$settingsBundleChannelsInnerTypeEnumSerializer =
+_$settingsBundleChannelsInnerTypeEnumSerializer =
     _$SettingsBundleChannelsInnerTypeEnumSerializer();
 Serializer<SettingsBundleChannelsInnerEventsEnum>
-    _$settingsBundleChannelsInnerEventsEnumSerializer =
+_$settingsBundleChannelsInnerEventsEnumSerializer =
     _$SettingsBundleChannelsInnerEventsEnumSerializer();
 Serializer<SettingsBundleChannelsInnerMinSeverityEnum>
-    _$settingsBundleChannelsInnerMinSeverityEnumSerializer =
+_$settingsBundleChannelsInnerMinSeverityEnumSerializer =
     _$SettingsBundleChannelsInnerMinSeverityEnumSerializer();
 
 class _$SettingsBundleChannelsInnerTypeEnumSerializer
@@ -384,23 +393,26 @@ class _$SettingsBundleChannelsInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SettingsBundleChannelsInnerTypeEnum
+    SettingsBundleChannelsInnerTypeEnum,
   ];
   @override
   final String wireName = 'SettingsBundleChannelsInnerTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, SettingsBundleChannelsInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SettingsBundleChannelsInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SettingsBundleChannelsInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SettingsBundleChannelsInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SettingsBundleChannelsInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SettingsBundleChannelsInnerEventsEnumSerializer
@@ -460,23 +472,26 @@ class _$SettingsBundleChannelsInnerEventsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SettingsBundleChannelsInnerEventsEnum
+    SettingsBundleChannelsInnerEventsEnum,
   ];
   @override
   final String wireName = 'SettingsBundleChannelsInnerEventsEnum';
 
   @override
   Object serialize(
-          Serializers serializers, SettingsBundleChannelsInnerEventsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SettingsBundleChannelsInnerEventsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SettingsBundleChannelsInnerEventsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SettingsBundleChannelsInnerEventsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SettingsBundleChannelsInnerEventsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SettingsBundleChannelsInnerMinSeverityEnumSerializer
@@ -494,23 +509,26 @@ class _$SettingsBundleChannelsInnerMinSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SettingsBundleChannelsInnerMinSeverityEnum
+    SettingsBundleChannelsInnerMinSeverityEnum,
   ];
   @override
   final String wireName = 'SettingsBundleChannelsInnerMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SettingsBundleChannelsInnerMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SettingsBundleChannelsInnerMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SettingsBundleChannelsInnerMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SettingsBundleChannelsInnerMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SettingsBundleChannelsInnerMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
@@ -555,36 +573,36 @@ class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
   @override
   final String id;
 
-  factory _$SettingsBundleChannelsInner(
-          [void Function(SettingsBundleChannelsInnerBuilder)? updates]) =>
-      (SettingsBundleChannelsInnerBuilder()..update(updates))._build();
+  factory _$SettingsBundleChannelsInner([
+    void Function(SettingsBundleChannelsInnerBuilder)? updates,
+  ]) => (SettingsBundleChannelsInnerBuilder()..update(updates))._build();
 
-  _$SettingsBundleChannelsInner._(
-      {required this.name,
-      required this.type,
-      this.config,
-      this.secrets,
-      this.events,
-      this.ruleIds,
-      this.minSeverity,
-      this.titleTemplate,
-      this.bodyTemplate,
-      this.waitForEnrichmentSeconds,
-      this.enabled,
-      this.timezone,
-      this.quietHours,
-      this.groupWindowSeconds,
-      this.backlogCap,
-      this.editInPlace,
-      this.deferWhileActiveSeconds,
-      this.acceptExercise,
-      this.language,
-      required this.id})
-      : super._();
+  _$SettingsBundleChannelsInner._({
+    required this.name,
+    required this.type,
+    this.config,
+    this.secrets,
+    this.events,
+    this.ruleIds,
+    this.minSeverity,
+    this.titleTemplate,
+    this.bodyTemplate,
+    this.waitForEnrichmentSeconds,
+    this.enabled,
+    this.timezone,
+    this.quietHours,
+    this.groupWindowSeconds,
+    this.backlogCap,
+    this.editInPlace,
+    this.deferWhileActiveSeconds,
+    this.acceptExercise,
+    this.language,
+    required this.id,
+  }) : super._();
   @override
   SettingsBundleChannelsInner rebuild(
-          void Function(SettingsBundleChannelsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SettingsBundleChannelsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SettingsBundleChannelsInnerBuilder toBuilder() =>
@@ -672,8 +690,10 @@ class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
 
 class SettingsBundleChannelsInnerBuilder
     implements
-        Builder<SettingsBundleChannelsInner,
-            SettingsBundleChannelsInnerBuilder> {
+        Builder<
+          SettingsBundleChannelsInner,
+          SettingsBundleChannelsInnerBuilder
+        > {
   _$SettingsBundleChannelsInner? _$v;
 
   String? _name;
@@ -818,12 +838,19 @@ class SettingsBundleChannelsInnerBuilder
   _$SettingsBundleChannelsInner _build() {
     _$SettingsBundleChannelsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SettingsBundleChannelsInner._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SettingsBundleChannelsInner', 'name'),
+              name,
+              r'SettingsBundleChannelsInner',
+              'name',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'SettingsBundleChannelsInner', 'type'),
+              type,
+              r'SettingsBundleChannelsInner',
+              'type',
+            ),
             config: _config?.build(),
             secrets: _secrets?.build(),
             events: _events?.build(),
@@ -842,7 +869,10 @@ class SettingsBundleChannelsInnerBuilder
             acceptExercise: acceptExercise,
             language: language,
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SettingsBundleChannelsInner', 'id'),
+              id,
+              r'SettingsBundleChannelsInner',
+              'id',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -860,7 +890,10 @@ class SettingsBundleChannelsInnerBuilder
         _quietHours?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SettingsBundleChannelsInner', _$failedField, e.toString());
+          r'SettingsBundleChannelsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

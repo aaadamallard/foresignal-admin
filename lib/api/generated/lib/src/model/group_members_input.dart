@@ -59,9 +59,11 @@ class _$GroupMembersInputSerializer
     GroupMembersInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -77,11 +79,14 @@ class _$GroupMembersInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(GroupMemberInput)]),
-          ) as BuiltList<GroupMemberInput>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(GroupMemberInput),
+                    ]),
+                  )
+                  as BuiltList<GroupMemberInput>;
           result.members.replace(valueDes);
           break;
         default:

@@ -7,14 +7,15 @@ part of 'push_device_update.dart';
 // **************************************************************************
 
 const PushDeviceUpdateContentLevelEnum
-    _$pushDeviceUpdateContentLevelEnum_minimal =
+_$pushDeviceUpdateContentLevelEnum_minimal =
     const PushDeviceUpdateContentLevelEnum._('minimal');
 const PushDeviceUpdateContentLevelEnum
-    _$pushDeviceUpdateContentLevelEnum_short =
+_$pushDeviceUpdateContentLevelEnum_short =
     const PushDeviceUpdateContentLevelEnum._('short');
 
 PushDeviceUpdateContentLevelEnum _$pushDeviceUpdateContentLevelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'minimal':
       return _$pushDeviceUpdateContentLevelEnum_minimal;
@@ -26,14 +27,16 @@ PushDeviceUpdateContentLevelEnum _$pushDeviceUpdateContentLevelEnumValueOf(
 }
 
 final BuiltSet<PushDeviceUpdateContentLevelEnum>
-    _$pushDeviceUpdateContentLevelEnumValues = BuiltSet<
-        PushDeviceUpdateContentLevelEnum>(const <PushDeviceUpdateContentLevelEnum>[
-  _$pushDeviceUpdateContentLevelEnum_minimal,
-  _$pushDeviceUpdateContentLevelEnum_short,
-]);
+_$pushDeviceUpdateContentLevelEnumValues =
+    BuiltSet<PushDeviceUpdateContentLevelEnum>(
+      const <PushDeviceUpdateContentLevelEnum>[
+        _$pushDeviceUpdateContentLevelEnum_minimal,
+        _$pushDeviceUpdateContentLevelEnum_short,
+      ],
+    );
 
 Serializer<PushDeviceUpdateContentLevelEnum>
-    _$pushDeviceUpdateContentLevelEnumSerializer =
+_$pushDeviceUpdateContentLevelEnumSerializer =
     _$PushDeviceUpdateContentLevelEnumSerializer();
 
 class _$PushDeviceUpdateContentLevelEnumSerializer
@@ -54,16 +57,19 @@ class _$PushDeviceUpdateContentLevelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PushDeviceUpdateContentLevelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PushDeviceUpdateContentLevelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushDeviceUpdateContentLevelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushDeviceUpdateContentLevelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushDeviceUpdateContentLevelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushDeviceUpdate extends PushDeviceUpdate {
@@ -76,12 +82,12 @@ class _$PushDeviceUpdate extends PushDeviceUpdate {
   @override
   final String? lang;
 
-  factory _$PushDeviceUpdate(
-          [void Function(PushDeviceUpdateBuilder)? updates]) =>
-      (PushDeviceUpdateBuilder()..update(updates))._build();
+  factory _$PushDeviceUpdate([
+    void Function(PushDeviceUpdateBuilder)? updates,
+  ]) => (PushDeviceUpdateBuilder()..update(updates))._build();
 
   _$PushDeviceUpdate._({this.name, this.filters, this.contentLevel, this.lang})
-      : super._();
+    : super._();
   @override
   PushDeviceUpdate rebuild(void Function(PushDeviceUpdateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -175,7 +181,8 @@ class PushDeviceUpdateBuilder
   _$PushDeviceUpdate _build() {
     _$PushDeviceUpdate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushDeviceUpdate._(
             name: name,
             filters: _filters?.build(),
@@ -189,7 +196,10 @@ class PushDeviceUpdateBuilder
         _filters?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushDeviceUpdate', _$failedField, e.toString());
+          r'PushDeviceUpdate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

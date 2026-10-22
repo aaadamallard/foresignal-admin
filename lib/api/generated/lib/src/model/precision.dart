@@ -65,8 +65,9 @@ class _$PrecisionSerializer implements PrimitiveSerializer<Precision> {
     yield r'components';
     yield serializers.serialize(
       object.components,
-      specifiedType:
-          const FullType(BuiltList, [FullType(PrecisionComponentsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(PrecisionComponentsInner),
+      ]),
     );
   }
 
@@ -76,9 +77,11 @@ class _$PrecisionSerializer implements PrimitiveSerializer<Precision> {
     Precision object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,26 +97,33 @@ class _$PrecisionSerializer implements PrimitiveSerializer<Precision> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'since':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.since = valueDes;
           break;
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.generatedAt = valueDes;
           break;
         case r'components':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(PrecisionComponentsInner)]),
-          ) as BuiltList<PrecisionComponentsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(PrecisionComponentsInner),
+                    ]),
+                  )
+                  as BuiltList<PrecisionComponentsInner>;
           result.components.replace(valueDes);
           break;
         default:

@@ -18,17 +18,21 @@ class _$CyclePacketSituations extends CyclePacketSituations {
   @override
   final BuiltList<CyclePacketItem>? closed;
 
-  factory _$CyclePacketSituations(
-          [void Function(CyclePacketSituationsBuilder)? updates]) =>
-      (CyclePacketSituationsBuilder()..update(updates))._build();
+  factory _$CyclePacketSituations([
+    void Function(CyclePacketSituationsBuilder)? updates,
+  ]) => (CyclePacketSituationsBuilder()..update(updates))._build();
 
-  _$CyclePacketSituations._(
-      {this.new_, this.activated, this.escalated, this.dormant, this.closed})
-      : super._();
+  _$CyclePacketSituations._({
+    this.new_,
+    this.activated,
+    this.escalated,
+    this.dormant,
+    this.closed,
+  }) : super._();
   @override
   CyclePacketSituations rebuild(
-          void Function(CyclePacketSituationsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CyclePacketSituationsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CyclePacketSituationsBuilder toBuilder() =>
@@ -134,7 +138,8 @@ class CyclePacketSituationsBuilder
   _$CyclePacketSituations _build() {
     _$CyclePacketSituations _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CyclePacketSituations._(
             new_: _new_?.build(),
             activated: _activated?.build(),
@@ -157,7 +162,10 @@ class CyclePacketSituationsBuilder
         _closed?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CyclePacketSituations', _$failedField, e.toString());
+          r'CyclePacketSituations',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

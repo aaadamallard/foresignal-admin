@@ -84,9 +84,11 @@ class _$NativePushPayloadSerializer
     NativePushPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +104,36 @@ class _$NativePushPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'apns':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(NativePushPayloadApns),
-          ) as NativePushPayloadApns?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadApns,
+                    ),
+                  )
+                  as NativePushPayloadApns?;
           if (valueDes == null) continue;
           result.apns.replace(valueDes);
           break;
         case r'fcm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(NativePushPayloadFcm),
-          ) as NativePushPayloadFcm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadFcm,
+                    ),
+                  )
+                  as NativePushPayloadFcm?;
           if (valueDes == null) continue;
           result.fcm.replace(valueDes);
           break;
         case r'exercise':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.exercise = valueDes;
           break;

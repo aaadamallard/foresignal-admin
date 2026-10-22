@@ -68,7 +68,7 @@ class _$PersistReasonCountsSerializer
   @override
   final Iterable<Type> types = const [
     PersistReasonCounts,
-    _$PersistReasonCounts
+    _$PersistReasonCounts,
   ];
 
   @override
@@ -132,9 +132,11 @@ class _$PersistReasonCountsSerializer
     PersistReasonCounts object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -150,66 +152,57 @@ class _$PersistReasonCountsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'FIRST':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.FIRST = valueDes;
           break;
         case r'REAPPEAR':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.REAPPEAR = valueDes;
           break;
         case r'SIGNIFICANT':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.SIGNIFICANT = valueDes;
           break;
         case r'TOMBSTONE':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.TOMBSTONE = valueDes;
           break;
         case r'CHANGE':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.CHANGE = valueDes;
           break;
         case r'SAMPLE':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.SAMPLE = valueDes;
           break;
         case r'KEYFRAME':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.KEYFRAME = valueDes;
           break;
         case r'HEARTBEAT':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.HEARTBEAT = valueDes;
           break;
         case r'TRIGGER_EDGE':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.TRIGGER_EDGE = valueDes;
           break;
         default:

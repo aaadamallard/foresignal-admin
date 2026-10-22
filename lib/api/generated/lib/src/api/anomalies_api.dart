@@ -58,16 +58,10 @@ class AnomaliesApi {
     final _path = r'/v1/anomalies';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -76,11 +70,17 @@ class AnomaliesApi {
 
     final _queryParameters = <String, dynamic>{
       if (ruleId != null)
-        r'ruleId':
-            encodeQueryParameter(_serializers, ruleId, const FullType(String)),
+        r'ruleId': encodeQueryParameter(
+          _serializers,
+          ruleId,
+          const FullType(String),
+        ),
       if (groupKey != null)
         r'groupKey': encodeQueryParameter(
-            _serializers, groupKey, const FullType(String)),
+          _serializers,
+          groupKey,
+          const FullType(String),
+        ),
       if (classification != null)
         r'classification': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -89,17 +89,29 @@ class AnomaliesApi {
           format: ListFormat.multi,
         ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -118,9 +130,10 @@ class AnomaliesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AnomalyObservationPage),
-            ) as AnomalyObservationPage;
+                  rawResponse,
+                  specifiedType: const FullType(AnomalyObservationPage),
+                )
+                as AnomalyObservationPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

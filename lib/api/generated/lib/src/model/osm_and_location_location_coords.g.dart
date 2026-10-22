@@ -20,22 +20,22 @@ class _$OsmAndLocationLocationCoords extends OsmAndLocationLocationCoords {
   @override
   final num? altitude;
 
-  factory _$OsmAndLocationLocationCoords(
-          [void Function(OsmAndLocationLocationCoordsBuilder)? updates]) =>
-      (OsmAndLocationLocationCoordsBuilder()..update(updates))._build();
+  factory _$OsmAndLocationLocationCoords([
+    void Function(OsmAndLocationLocationCoordsBuilder)? updates,
+  ]) => (OsmAndLocationLocationCoordsBuilder()..update(updates))._build();
 
-  _$OsmAndLocationLocationCoords._(
-      {required this.latitude,
-      required this.longitude,
-      this.speed,
-      this.heading,
-      this.accuracy,
-      this.altitude})
-      : super._();
+  _$OsmAndLocationLocationCoords._({
+    required this.latitude,
+    required this.longitude,
+    this.speed,
+    this.heading,
+    this.accuracy,
+    this.altitude,
+  }) : super._();
   @override
   OsmAndLocationLocationCoords rebuild(
-          void Function(OsmAndLocationLocationCoordsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OsmAndLocationLocationCoordsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OsmAndLocationLocationCoordsBuilder toBuilder() =>
@@ -81,8 +81,10 @@ class _$OsmAndLocationLocationCoords extends OsmAndLocationLocationCoords {
 
 class OsmAndLocationLocationCoordsBuilder
     implements
-        Builder<OsmAndLocationLocationCoords,
-            OsmAndLocationLocationCoordsBuilder> {
+        Builder<
+          OsmAndLocationLocationCoords,
+          OsmAndLocationLocationCoordsBuilder
+        > {
   _$OsmAndLocationLocationCoords? _$v;
 
   num? _latitude;
@@ -141,12 +143,19 @@ class OsmAndLocationLocationCoordsBuilder
   OsmAndLocationLocationCoords build() => _build();
 
   _$OsmAndLocationLocationCoords _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OsmAndLocationLocationCoords._(
           latitude: BuiltValueNullFieldError.checkNotNull(
-              latitude, r'OsmAndLocationLocationCoords', 'latitude'),
+            latitude,
+            r'OsmAndLocationLocationCoords',
+            'latitude',
+          ),
           longitude: BuiltValueNullFieldError.checkNotNull(
-              longitude, r'OsmAndLocationLocationCoords', 'longitude'),
+            longitude,
+            r'OsmAndLocationLocationCoords',
+            'longitude',
+          ),
           speed: speed,
           heading: heading,
           accuracy: accuracy,

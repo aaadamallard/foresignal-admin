@@ -9,17 +9,18 @@ part of 'dossier_sections_impacts.dart';
 const DossierSectionsImpactsStatusEnum _$dossierSectionsImpactsStatusEnum_ok =
     const DossierSectionsImpactsStatusEnum._('ok');
 const DossierSectionsImpactsStatusEnum
-    _$dossierSectionsImpactsStatusEnum_empty =
+_$dossierSectionsImpactsStatusEnum_empty =
     const DossierSectionsImpactsStatusEnum._('empty');
 const DossierSectionsImpactsStatusEnum
-    _$dossierSectionsImpactsStatusEnum_unavailable =
+_$dossierSectionsImpactsStatusEnum_unavailable =
     const DossierSectionsImpactsStatusEnum._('unavailable');
 const DossierSectionsImpactsStatusEnum
-    _$dossierSectionsImpactsStatusEnum_notInstalled =
+_$dossierSectionsImpactsStatusEnum_notInstalled =
     const DossierSectionsImpactsStatusEnum._('notInstalled');
 
 DossierSectionsImpactsStatusEnum _$dossierSectionsImpactsStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$dossierSectionsImpactsStatusEnum_ok;
@@ -35,16 +36,18 @@ DossierSectionsImpactsStatusEnum _$dossierSectionsImpactsStatusEnumValueOf(
 }
 
 final BuiltSet<DossierSectionsImpactsStatusEnum>
-    _$dossierSectionsImpactsStatusEnumValues = BuiltSet<
-        DossierSectionsImpactsStatusEnum>(const <DossierSectionsImpactsStatusEnum>[
-  _$dossierSectionsImpactsStatusEnum_ok,
-  _$dossierSectionsImpactsStatusEnum_empty,
-  _$dossierSectionsImpactsStatusEnum_unavailable,
-  _$dossierSectionsImpactsStatusEnum_notInstalled,
-]);
+_$dossierSectionsImpactsStatusEnumValues =
+    BuiltSet<DossierSectionsImpactsStatusEnum>(
+      const <DossierSectionsImpactsStatusEnum>[
+        _$dossierSectionsImpactsStatusEnum_ok,
+        _$dossierSectionsImpactsStatusEnum_empty,
+        _$dossierSectionsImpactsStatusEnum_unavailable,
+        _$dossierSectionsImpactsStatusEnum_notInstalled,
+      ],
+    );
 
 Serializer<DossierSectionsImpactsStatusEnum>
-    _$dossierSectionsImpactsStatusEnumSerializer =
+_$dossierSectionsImpactsStatusEnumSerializer =
     _$DossierSectionsImpactsStatusEnumSerializer();
 
 class _$DossierSectionsImpactsStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$DossierSectionsImpactsStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DossierSectionsImpactsStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DossierSectionsImpactsStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsImpactsStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsImpactsStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsImpactsStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsImpacts extends DossierSectionsImpacts {
@@ -95,22 +101,22 @@ class _$DossierSectionsImpacts extends DossierSectionsImpacts {
   @override
   final BuiltList<DossierSectionsImpactsItemsInner>? items;
 
-  factory _$DossierSectionsImpacts(
-          [void Function(DossierSectionsImpactsBuilder)? updates]) =>
-      (DossierSectionsImpactsBuilder()..update(updates))._build();
+  factory _$DossierSectionsImpacts([
+    void Function(DossierSectionsImpactsBuilder)? updates,
+  ]) => (DossierSectionsImpactsBuilder()..update(updates))._build();
 
-  _$DossierSectionsImpacts._(
-      {required this.status,
-      this.message,
-      this.links,
-      this.facets,
-      this.truncated,
-      this.items})
-      : super._();
+  _$DossierSectionsImpacts._({
+    required this.status,
+    this.message,
+    this.links,
+    this.facets,
+    this.truncated,
+    this.items,
+  }) : super._();
   @override
   DossierSectionsImpacts rebuild(
-          void Function(DossierSectionsImpactsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsImpactsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsImpactsBuilder toBuilder() =>
@@ -223,10 +229,14 @@ class DossierSectionsImpactsBuilder
   _$DossierSectionsImpacts _build() {
     _$DossierSectionsImpacts _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsImpacts._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DossierSectionsImpacts', 'status'),
+              status,
+              r'DossierSectionsImpacts',
+              'status',
+            ),
             message: message,
             links: _links?.build(),
             facets: _facets?.build(),
@@ -245,7 +255,10 @@ class DossierSectionsImpactsBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsImpacts', _$failedField, e.toString());
+          r'DossierSectionsImpacts',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

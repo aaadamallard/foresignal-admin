@@ -68,9 +68,11 @@ class _$BaseRateInputSerializer implements PrimitiveSerializer<BaseRateInput> {
     BaseRateInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -86,18 +88,22 @@ class _$BaseRateInputSerializer implements PrimitiveSerializer<BaseRateInput> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'definition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BaseRateDefinition),
-          ) as BaseRateDefinition;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BaseRateDefinition),
+                  )
+                  as BaseRateDefinition;
           result.definition.replace(valueDes);
           break;
         default:

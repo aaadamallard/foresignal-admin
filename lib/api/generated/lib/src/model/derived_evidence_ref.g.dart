@@ -14,19 +14,19 @@ class _$DerivedEvidenceRef extends DerivedEvidenceRef {
   @override
   final DateTime observedAt;
 
-  factory _$DerivedEvidenceRef(
-          [void Function(DerivedEvidenceRefBuilder)? updates]) =>
-      (DerivedEvidenceRefBuilder()..update(updates))._build();
+  factory _$DerivedEvidenceRef([
+    void Function(DerivedEvidenceRefBuilder)? updates,
+  ]) => (DerivedEvidenceRefBuilder()..update(updates))._build();
 
-  _$DerivedEvidenceRef._(
-      {required this.sourceId,
-      required this.externalId,
-      required this.observedAt})
-      : super._();
+  _$DerivedEvidenceRef._({
+    required this.sourceId,
+    required this.externalId,
+    required this.observedAt,
+  }) : super._();
   @override
   DerivedEvidenceRef rebuild(
-          void Function(DerivedEvidenceRefBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DerivedEvidenceRefBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DerivedEvidenceRefBuilder toBuilder() =>
@@ -106,14 +106,24 @@ class DerivedEvidenceRefBuilder
   DerivedEvidenceRef build() => _build();
 
   _$DerivedEvidenceRef _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DerivedEvidenceRef._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'DerivedEvidenceRef', 'sourceId'),
+            sourceId,
+            r'DerivedEvidenceRef',
+            'sourceId',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'DerivedEvidenceRef', 'externalId'),
+            externalId,
+            r'DerivedEvidenceRef',
+            'externalId',
+          ),
           observedAt: BuiltValueNullFieldError.checkNotNull(
-              observedAt, r'DerivedEvidenceRef', 'observedAt'),
+            observedAt,
+            r'DerivedEvidenceRef',
+            'observedAt',
+          ),
         );
     replace(_$result);
     return _$result;

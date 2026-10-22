@@ -40,13 +40,13 @@ SocialPostMediaTypeEnum _$socialPostMediaTypeEnumValueOf(String name) {
 
 final BuiltSet<SocialPostMediaTypeEnum> _$socialPostMediaTypeEnumValues =
     BuiltSet<SocialPostMediaTypeEnum>(const <SocialPostMediaTypeEnum>[
-  _$socialPostMediaTypeEnum_image,
-  _$socialPostMediaTypeEnum_video,
-  _$socialPostMediaTypeEnum_gif,
-  _$socialPostMediaTypeEnum_audio,
-  _$socialPostMediaTypeEnum_linkCard,
-  _$socialPostMediaTypeEnum_other,
-]);
+      _$socialPostMediaTypeEnum_image,
+      _$socialPostMediaTypeEnum_video,
+      _$socialPostMediaTypeEnum_gif,
+      _$socialPostMediaTypeEnum_audio,
+      _$socialPostMediaTypeEnum_linkCard,
+      _$socialPostMediaTypeEnum_other,
+    ]);
 
 Serializer<SocialPostMediaTypeEnum> _$socialPostMediaTypeEnumSerializer =
     _$SocialPostMediaTypeEnumSerializer();
@@ -76,16 +76,20 @@ class _$SocialPostMediaTypeEnumSerializer
   final String wireName = 'SocialPostMediaTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialPostMediaTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialPostMediaTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialPostMediaTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialPostMediaTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialPostMediaTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialPostMedia extends SocialPostMedia {
@@ -103,13 +107,13 @@ class _$SocialPostMedia extends SocialPostMedia {
   factory _$SocialPostMedia([void Function(SocialPostMediaBuilder)? updates]) =>
       (SocialPostMediaBuilder()..update(updates))._build();
 
-  _$SocialPostMedia._(
-      {required this.type,
-      required this.url,
-      this.thumbUrl,
-      this.altText,
-      this.fingerprintId})
-      : super._();
+  _$SocialPostMedia._({
+    required this.type,
+    required this.url,
+    this.thumbUrl,
+    this.altText,
+    this.fingerprintId,
+  }) : super._();
   @override
   SocialPostMedia rebuild(void Function(SocialPostMediaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -208,12 +212,19 @@ class SocialPostMediaBuilder
   SocialPostMedia build() => _build();
 
   _$SocialPostMedia _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialPostMedia._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'SocialPostMedia', 'type'),
+            type,
+            r'SocialPostMedia',
+            'type',
+          ),
           url: BuiltValueNullFieldError.checkNotNull(
-              url, r'SocialPostMedia', 'url'),
+            url,
+            r'SocialPostMedia',
+            'url',
+          ),
           thumbUrl: thumbUrl,
           altText: altText,
           fingerprintId: fingerprintId,

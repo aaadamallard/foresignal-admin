@@ -18,21 +18,21 @@ class _$ForecastQuestionPatch extends ForecastQuestionPatch {
   @override
   final ForecastResolver? resolver;
 
-  factory _$ForecastQuestionPatch(
-          [void Function(ForecastQuestionPatchBuilder)? updates]) =>
-      (ForecastQuestionPatchBuilder()..update(updates))._build();
+  factory _$ForecastQuestionPatch([
+    void Function(ForecastQuestionPatchBuilder)? updates,
+  ]) => (ForecastQuestionPatchBuilder()..update(updates))._build();
 
-  _$ForecastQuestionPatch._(
-      {this.title,
-      this.tags,
-      this.closesAt,
-      this.resolutionCriteria,
-      this.resolver})
-      : super._();
+  _$ForecastQuestionPatch._({
+    this.title,
+    this.tags,
+    this.closesAt,
+    this.resolutionCriteria,
+    this.resolver,
+  }) : super._();
   @override
   ForecastQuestionPatch rebuild(
-          void Function(ForecastQuestionPatchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastQuestionPatchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastQuestionPatchBuilder toBuilder() =>
@@ -133,7 +133,8 @@ class ForecastQuestionPatchBuilder
   _$ForecastQuestionPatch _build() {
     _$ForecastQuestionPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastQuestionPatch._(
             title: title,
             tags: _tags?.build(),
@@ -151,7 +152,10 @@ class ForecastQuestionPatchBuilder
         _resolver?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastQuestionPatch', _$failedField, e.toString());
+          r'ForecastQuestionPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

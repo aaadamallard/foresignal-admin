@@ -14,16 +14,16 @@ class _$SituationMergeInput extends SituationMergeInput {
   @override
   final String? reason;
 
-  factory _$SituationMergeInput(
-          [void Function(SituationMergeInputBuilder)? updates]) =>
-      (SituationMergeInputBuilder()..update(updates))._build();
+  factory _$SituationMergeInput([
+    void Function(SituationMergeInputBuilder)? updates,
+  ]) => (SituationMergeInputBuilder()..update(updates))._build();
 
   _$SituationMergeInput._({required this.intoId, this.version, this.reason})
-      : super._();
+    : super._();
   @override
   SituationMergeInput rebuild(
-          void Function(SituationMergeInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationMergeInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationMergeInputBuilder toBuilder() =>
@@ -103,10 +103,14 @@ class SituationMergeInputBuilder
   SituationMergeInput build() => _build();
 
   _$SituationMergeInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationMergeInput._(
           intoId: BuiltValueNullFieldError.checkNotNull(
-              intoId, r'SituationMergeInput', 'intoId'),
+            intoId,
+            r'SituationMergeInput',
+            'intoId',
+          ),
           version: version,
           reason: reason,
         );

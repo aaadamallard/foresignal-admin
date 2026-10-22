@@ -12,15 +12,15 @@ class _$SituationEvidenceMemberCounts extends SituationEvidenceMemberCounts {
   @override
   final BuiltMap<String, int>? byFamily;
 
-  factory _$SituationEvidenceMemberCounts(
-          [void Function(SituationEvidenceMemberCountsBuilder)? updates]) =>
-      (SituationEvidenceMemberCountsBuilder()..update(updates))._build();
+  factory _$SituationEvidenceMemberCounts([
+    void Function(SituationEvidenceMemberCountsBuilder)? updates,
+  ]) => (SituationEvidenceMemberCountsBuilder()..update(updates))._build();
 
   _$SituationEvidenceMemberCounts._({this.byType, this.byFamily}) : super._();
   @override
   SituationEvidenceMemberCounts rebuild(
-          void Function(SituationEvidenceMemberCountsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationEvidenceMemberCountsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationEvidenceMemberCountsBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$SituationEvidenceMemberCounts extends SituationEvidenceMemberCounts {
 
 class SituationEvidenceMemberCountsBuilder
     implements
-        Builder<SituationEvidenceMemberCounts,
-            SituationEvidenceMemberCountsBuilder> {
+        Builder<
+          SituationEvidenceMemberCounts,
+          SituationEvidenceMemberCountsBuilder
+        > {
   _$SituationEvidenceMemberCounts? _$v;
 
   MapBuilder<String, int>? _byType;
@@ -99,7 +101,8 @@ class SituationEvidenceMemberCountsBuilder
   _$SituationEvidenceMemberCounts _build() {
     _$SituationEvidenceMemberCounts _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationEvidenceMemberCounts._(
             byType: _byType?.build(),
             byFamily: _byFamily?.build(),
@@ -113,7 +116,10 @@ class SituationEvidenceMemberCountsBuilder
         _byFamily?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationEvidenceMemberCounts', _$failedField, e.toString());
+          r'SituationEvidenceMemberCounts',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

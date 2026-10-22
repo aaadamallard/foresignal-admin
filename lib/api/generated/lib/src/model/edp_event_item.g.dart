@@ -20,8 +20,8 @@ EdpEventItemTypeEnum _$edpEventItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpEventItemTypeEnum> _$edpEventItemTypeEnumValues =
     BuiltSet<EdpEventItemTypeEnum>(const <EdpEventItemTypeEnum>[
-  _$edpEventItemTypeEnum_event,
-]);
+      _$edpEventItemTypeEnum_event,
+    ]);
 
 Serializer<EdpEventItemTypeEnum> _$edpEventItemTypeEnumSerializer =
     _$EdpEventItemTypeEnumSerializer();
@@ -41,15 +41,20 @@ class _$EdpEventItemTypeEnumSerializer
   final String wireName = 'EdpEventItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpEventItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpEventItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpEventItemTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpEventItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpEventItemTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpEventItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpEventItem extends EdpEventItem {
@@ -75,17 +80,17 @@ class _$EdpEventItem extends EdpEventItem {
   factory _$EdpEventItem([void Function(EdpEventItemBuilder)? updates]) =>
       (EdpEventItemBuilder()..update(updates))._build();
 
-  _$EdpEventItem._(
-      {required this.stream,
-      required this.type,
-      required this.id,
-      this.observedAt,
-      this.properties,
-      required this.eventTime,
-      this.geometry,
-      this.upstreamEventId,
-      this.origin})
-      : super._();
+  _$EdpEventItem._({
+    required this.stream,
+    required this.type,
+    required this.id,
+    this.observedAt,
+    this.properties,
+    required this.eventTime,
+    this.geometry,
+    this.upstreamEventId,
+    this.origin,
+  }) : super._();
   @override
   EdpEventItem rebuild(void Function(EdpEventItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -220,18 +225,31 @@ class EdpEventItemBuilder
   _$EdpEventItem _build() {
     _$EdpEventItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpEventItem._(
             stream: BuiltValueNullFieldError.checkNotNull(
-                stream, r'EdpEventItem', 'stream'),
+              stream,
+              r'EdpEventItem',
+              'stream',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'EdpEventItem', 'type'),
+              type,
+              r'EdpEventItem',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpEventItem', 'id'),
+              id,
+              r'EdpEventItem',
+              'id',
+            ),
             observedAt: observedAt,
             properties: _properties?.build(),
             eventTime: BuiltValueNullFieldError.checkNotNull(
-                eventTime, r'EdpEventItem', 'eventTime'),
+              eventTime,
+              r'EdpEventItem',
+              'eventTime',
+            ),
             geometry: _geometry?.build(),
             upstreamEventId: upstreamEventId,
             origin: _origin?.build(),
@@ -249,7 +267,10 @@ class EdpEventItemBuilder
         _origin?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpEventItem', _$failedField, e.toString());
+          r'EdpEventItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

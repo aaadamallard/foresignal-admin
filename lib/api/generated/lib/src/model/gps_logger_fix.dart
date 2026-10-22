@@ -76,15 +76,9 @@ class _$GpsLoggerFixSerializer implements PrimitiveSerializer<GpsLoggerFix> {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'lat';
-    yield serializers.serialize(
-      object.lat,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lat, specifiedType: const FullType(num));
     yield r'lon';
-    yield serializers.serialize(
-      object.lon,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lon, specifiedType: const FullType(num));
     if (object.time != null) {
       yield r'time';
       yield serializers.serialize(
@@ -142,9 +136,11 @@ class _$GpsLoggerFixSerializer implements PrimitiveSerializer<GpsLoggerFix> {
     GpsLoggerFix object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -160,72 +156,84 @@ class _$GpsLoggerFixSerializer implements PrimitiveSerializer<GpsLoggerFix> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'lat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lat = valueDes;
           break;
         case r'lon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lon = valueDes;
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.time = valueDes;
           break;
         case r'acc':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.acc = valueDes;
           break;
         case r'alt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.alt = valueDes;
           break;
         case r'spd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.spd = valueDes;
           break;
         case r'dir':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.dir = valueDes;
           break;
         case r'batt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.batt = valueDes;
           break;
         case r'dev':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.dev = valueDes;
           break;

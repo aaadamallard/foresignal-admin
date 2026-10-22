@@ -43,7 +43,7 @@ class _$AnalystProposalEventSerializer
   @override
   final Iterable<Type> types = const [
     AnalystProposalEvent,
-    _$AnalystProposalEvent
+    _$AnalystProposalEvent,
   ];
 
   @override
@@ -72,9 +72,11 @@ class _$AnalystProposalEventSerializer
     AnalystProposalEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +92,23 @@ class _$AnalystProposalEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'change':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnalystProposalEventChangeEnum),
-          ) as AnalystProposalEventChangeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AnalystProposalEventChangeEnum,
+                    ),
+                  )
+                  as AnalystProposalEventChangeEnum;
           result.change = valueDes;
           break;
         case r'proposal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnalystProposal),
-          ) as AnalystProposal;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnalystProposal),
+                  )
+                  as AnalystProposal;
           result.proposal.replace(valueDes);
           break;
         default:

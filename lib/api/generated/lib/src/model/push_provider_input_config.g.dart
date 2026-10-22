@@ -7,17 +7,17 @@ part of 'push_provider_input_config.dart';
 // **************************************************************************
 
 const PushProviderInputConfigKeyEnvironmentEnum
-    _$pushProviderInputConfigKeyEnvironmentEnum_sandbox =
+_$pushProviderInputConfigKeyEnvironmentEnum_sandbox =
     const PushProviderInputConfigKeyEnvironmentEnum._('sandbox');
 const PushProviderInputConfigKeyEnvironmentEnum
-    _$pushProviderInputConfigKeyEnvironmentEnum_production =
+_$pushProviderInputConfigKeyEnvironmentEnum_production =
     const PushProviderInputConfigKeyEnvironmentEnum._('production');
 const PushProviderInputConfigKeyEnvironmentEnum
-    _$pushProviderInputConfigKeyEnvironmentEnum_both =
+_$pushProviderInputConfigKeyEnvironmentEnum_both =
     const PushProviderInputConfigKeyEnvironmentEnum._('both');
 
 PushProviderInputConfigKeyEnvironmentEnum
-    _$pushProviderInputConfigKeyEnvironmentEnumValueOf(String name) {
+_$pushProviderInputConfigKeyEnvironmentEnumValueOf(String name) {
   switch (name) {
     case 'sandbox':
       return _$pushProviderInputConfigKeyEnvironmentEnum_sandbox;
@@ -31,15 +31,17 @@ PushProviderInputConfigKeyEnvironmentEnum
 }
 
 final BuiltSet<PushProviderInputConfigKeyEnvironmentEnum>
-    _$pushProviderInputConfigKeyEnvironmentEnumValues = BuiltSet<
-        PushProviderInputConfigKeyEnvironmentEnum>(const <PushProviderInputConfigKeyEnvironmentEnum>[
-  _$pushProviderInputConfigKeyEnvironmentEnum_sandbox,
-  _$pushProviderInputConfigKeyEnvironmentEnum_production,
-  _$pushProviderInputConfigKeyEnvironmentEnum_both,
-]);
+_$pushProviderInputConfigKeyEnvironmentEnumValues =
+    BuiltSet<PushProviderInputConfigKeyEnvironmentEnum>(
+      const <PushProviderInputConfigKeyEnvironmentEnum>[
+        _$pushProviderInputConfigKeyEnvironmentEnum_sandbox,
+        _$pushProviderInputConfigKeyEnvironmentEnum_production,
+        _$pushProviderInputConfigKeyEnvironmentEnum_both,
+      ],
+    );
 
 Serializer<PushProviderInputConfigKeyEnvironmentEnum>
-    _$pushProviderInputConfigKeyEnvironmentEnumSerializer =
+_$pushProviderInputConfigKeyEnvironmentEnumSerializer =
     _$PushProviderInputConfigKeyEnvironmentEnumSerializer();
 
 class _$PushProviderInputConfigKeyEnvironmentEnumSerializer
@@ -57,38 +59,41 @@ class _$PushProviderInputConfigKeyEnvironmentEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PushProviderInputConfigKeyEnvironmentEnum
+    PushProviderInputConfigKeyEnvironmentEnum,
   ];
   @override
   final String wireName = 'PushProviderInputConfigKeyEnvironmentEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          PushProviderInputConfigKeyEnvironmentEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushProviderInputConfigKeyEnvironmentEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushProviderInputConfigKeyEnvironmentEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushProviderInputConfigKeyEnvironmentEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushProviderInputConfigKeyEnvironmentEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushProviderInputConfig extends PushProviderInputConfig {
   @override
   final OneOf oneOf;
 
-  factory _$PushProviderInputConfig(
-          [void Function(PushProviderInputConfigBuilder)? updates]) =>
-      (PushProviderInputConfigBuilder()..update(updates))._build();
+  factory _$PushProviderInputConfig([
+    void Function(PushProviderInputConfigBuilder)? updates,
+  ]) => (PushProviderInputConfigBuilder()..update(updates))._build();
 
   _$PushProviderInputConfig._({required this.oneOf}) : super._();
   @override
   PushProviderInputConfig rebuild(
-          void Function(PushProviderInputConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushProviderInputConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushProviderInputConfigBuilder toBuilder() =>
@@ -110,9 +115,9 @@ class _$PushProviderInputConfig extends PushProviderInputConfig {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PushProviderInputConfig')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PushProviderInputConfig',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -152,10 +157,14 @@ class PushProviderInputConfigBuilder
   PushProviderInputConfig build() => _build();
 
   _$PushProviderInputConfig _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PushProviderInputConfig._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'PushProviderInputConfig', 'oneOf'),
+            oneOf,
+            r'PushProviderInputConfig',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

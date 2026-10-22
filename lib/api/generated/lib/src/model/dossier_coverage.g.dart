@@ -28,10 +28,10 @@ DossierCoverageStatusEnum _$dossierCoverageStatusEnumValueOf(String name) {
 
 final BuiltSet<DossierCoverageStatusEnum> _$dossierCoverageStatusEnumValues =
     BuiltSet<DossierCoverageStatusEnum>(const <DossierCoverageStatusEnum>[
-  _$dossierCoverageStatusEnum_ok,
-  _$dossierCoverageStatusEnum_partial,
-  _$dossierCoverageStatusEnum_unavailable,
-]);
+      _$dossierCoverageStatusEnum_ok,
+      _$dossierCoverageStatusEnum_partial,
+      _$dossierCoverageStatusEnum_unavailable,
+    ]);
 
 Serializer<DossierCoverageStatusEnum> _$dossierCoverageStatusEnumSerializer =
     _$DossierCoverageStatusEnumSerializer();
@@ -55,16 +55,20 @@ class _$DossierCoverageStatusEnumSerializer
   final String wireName = 'DossierCoverageStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, DossierCoverageStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DossierCoverageStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierCoverageStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierCoverageStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierCoverageStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierCoverage extends DossierCoverage {
@@ -152,10 +156,14 @@ class DossierCoverageBuilder
   _$DossierCoverage _build() {
     _$DossierCoverage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierCoverage._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DossierCoverage', 'status'),
+              status,
+              r'DossierCoverage',
+              'status',
+            ),
             stats: _stats?.build(),
           );
     } catch (_) {
@@ -165,7 +173,10 @@ class DossierCoverageBuilder
         _stats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierCoverage', _$failedField, e.toString());
+          r'DossierCoverage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

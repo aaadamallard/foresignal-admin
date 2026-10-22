@@ -86,9 +86,11 @@ class _$WeatherSettingsSerializer
     WeatherSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,27 +106,34 @@ class _$WeatherSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'alertContext':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(WeatherSettingsAlertContextEnum),
-          ) as WeatherSettingsAlertContextEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WeatherSettingsAlertContextEnum,
+                    ),
+                  )
+                  as WeatherSettingsAlertContextEnum?;
           if (valueDes == null) continue;
           result.alertContext = valueDes;
           break;
         case r'defaultAoi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.defaultAoi = valueDes;
           break;
         case r'aoiBufferKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.aoiBufferKm = valueDes;
           break;

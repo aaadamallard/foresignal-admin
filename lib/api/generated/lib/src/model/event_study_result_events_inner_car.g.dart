@@ -12,15 +12,15 @@ class _$EventStudyResultEventsInnerCar extends EventStudyResultEventsInnerCar {
   @override
   final num? event;
 
-  factory _$EventStudyResultEventsInnerCar(
-          [void Function(EventStudyResultEventsInnerCarBuilder)? updates]) =>
-      (EventStudyResultEventsInnerCarBuilder()..update(updates))._build();
+  factory _$EventStudyResultEventsInnerCar([
+    void Function(EventStudyResultEventsInnerCarBuilder)? updates,
+  ]) => (EventStudyResultEventsInnerCarBuilder()..update(updates))._build();
 
   _$EventStudyResultEventsInnerCar._({this.preEvent, this.event}) : super._();
   @override
   EventStudyResultEventsInnerCar rebuild(
-          void Function(EventStudyResultEventsInnerCarBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStudyResultEventsInnerCarBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStudyResultEventsInnerCarBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$EventStudyResultEventsInnerCar extends EventStudyResultEventsInnerCar {
 
 class EventStudyResultEventsInnerCarBuilder
     implements
-        Builder<EventStudyResultEventsInnerCar,
-            EventStudyResultEventsInnerCarBuilder> {
+        Builder<
+          EventStudyResultEventsInnerCar,
+          EventStudyResultEventsInnerCarBuilder
+        > {
   _$EventStudyResultEventsInnerCar? _$v;
 
   num? _preEvent;
@@ -94,11 +96,9 @@ class EventStudyResultEventsInnerCarBuilder
   EventStudyResultEventsInnerCar build() => _build();
 
   _$EventStudyResultEventsInnerCar _build() {
-    final _$result = _$v ??
-        _$EventStudyResultEventsInnerCar._(
-          preEvent: preEvent,
-          event: event,
-        );
+    final _$result =
+        _$v ??
+        _$EventStudyResultEventsInnerCar._(preEvent: preEvent, event: event);
     replace(_$result);
     return _$result;
   }

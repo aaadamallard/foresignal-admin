@@ -7,16 +7,17 @@ part of 'chronicle_export_request.dart';
 // **************************************************************************
 
 const ChronicleExportRequestFormatEnum
-    _$chronicleExportRequestFormatEnum_geoparquet =
+_$chronicleExportRequestFormatEnum_geoparquet =
     const ChronicleExportRequestFormatEnum._('geoparquet');
 const ChronicleExportRequestFormatEnum _$chronicleExportRequestFormatEnum_gpkg =
     const ChronicleExportRequestFormatEnum._('gpkg');
 const ChronicleExportRequestFormatEnum
-    _$chronicleExportRequestFormatEnum_jsonBundle =
+_$chronicleExportRequestFormatEnum_jsonBundle =
     const ChronicleExportRequestFormatEnum._('jsonBundle');
 
 ChronicleExportRequestFormatEnum _$chronicleExportRequestFormatEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'geoparquet':
       return _$chronicleExportRequestFormatEnum_geoparquet;
@@ -30,15 +31,17 @@ ChronicleExportRequestFormatEnum _$chronicleExportRequestFormatEnumValueOf(
 }
 
 final BuiltSet<ChronicleExportRequestFormatEnum>
-    _$chronicleExportRequestFormatEnumValues = BuiltSet<
-        ChronicleExportRequestFormatEnum>(const <ChronicleExportRequestFormatEnum>[
-  _$chronicleExportRequestFormatEnum_geoparquet,
-  _$chronicleExportRequestFormatEnum_gpkg,
-  _$chronicleExportRequestFormatEnum_jsonBundle,
-]);
+_$chronicleExportRequestFormatEnumValues =
+    BuiltSet<ChronicleExportRequestFormatEnum>(
+      const <ChronicleExportRequestFormatEnum>[
+        _$chronicleExportRequestFormatEnum_geoparquet,
+        _$chronicleExportRequestFormatEnum_gpkg,
+        _$chronicleExportRequestFormatEnum_jsonBundle,
+      ],
+    );
 
 Serializer<ChronicleExportRequestFormatEnum>
-    _$chronicleExportRequestFormatEnumSerializer =
+_$chronicleExportRequestFormatEnumSerializer =
     _$ChronicleExportRequestFormatEnumSerializer();
 
 class _$ChronicleExportRequestFormatEnumSerializer
@@ -61,16 +64,19 @@ class _$ChronicleExportRequestFormatEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ChronicleExportRequestFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChronicleExportRequestFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleExportRequestFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleExportRequestFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleExportRequestFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleExportRequest extends ChronicleExportRequest {
@@ -83,17 +89,20 @@ class _$ChronicleExportRequest extends ChronicleExportRequest {
   @override
   final DateTime? to;
 
-  factory _$ChronicleExportRequest(
-          [void Function(ChronicleExportRequestBuilder)? updates]) =>
-      (ChronicleExportRequestBuilder()..update(updates))._build();
+  factory _$ChronicleExportRequest([
+    void Function(ChronicleExportRequestBuilder)? updates,
+  ]) => (ChronicleExportRequestBuilder()..update(updates))._build();
 
-  _$ChronicleExportRequest._(
-      {required this.format, this.layers, this.from, this.to})
-      : super._();
+  _$ChronicleExportRequest._({
+    required this.format,
+    this.layers,
+    this.from,
+    this.to,
+  }) : super._();
   @override
   ChronicleExportRequest rebuild(
-          void Function(ChronicleExportRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleExportRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleExportRequestBuilder toBuilder() =>
@@ -184,10 +193,14 @@ class ChronicleExportRequestBuilder
   _$ChronicleExportRequest _build() {
     _$ChronicleExportRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleExportRequest._(
             format: BuiltValueNullFieldError.checkNotNull(
-                format, r'ChronicleExportRequest', 'format'),
+              format,
+              r'ChronicleExportRequest',
+              'format',
+            ),
             layers: _layers?.build(),
             from: from,
             to: to,
@@ -199,7 +212,10 @@ class ChronicleExportRequestBuilder
         _layers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleExportRequest', _$failedField, e.toString());
+          r'ChronicleExportRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

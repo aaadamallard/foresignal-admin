@@ -127,16 +127,18 @@ class _$HypothesisSetEventSerializer
       yield r'hypotheses';
       yield serializers.serialize(
         object.hypotheses,
-        specifiedType:
-            const FullType(BuiltList, [FullType(HypothesisProbabilityState)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(HypothesisProbabilityState),
+        ]),
       );
     }
     if (object.bandChanges != null) {
       yield r'bandChanges';
       yield serializers.serialize(
         object.bandChanges,
-        specifiedType: const FullType(
-            BuiltList, [FullType(HypothesisSetEventBandChangesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(HypothesisSetEventBandChangesInner),
+        ]),
       );
     }
     if (object.private != null) {
@@ -159,9 +161,11 @@ class _$HypothesisSetEventSerializer
     HypothesisSetEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -177,81 +181,102 @@ class _$HypothesisSetEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.version = valueDes;
           break;
         case r'question':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.question = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HypothesisSetEventStatusEnum),
-          ) as HypothesisSetEventStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(HypothesisSetEventStatusEnum),
+                  )
+                  as HypothesisSetEventStatusEnum;
           result.status = valueDes;
           break;
         case r'revisionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.revisionId = valueDes;
           break;
         case r'cause':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(HypothesisSetEventCauseEnum),
-          ) as HypothesisSetEventCauseEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisSetEventCauseEnum,
+                    ),
+                  )
+                  as HypothesisSetEventCauseEnum?;
           if (valueDes == null) continue;
           result.cause = valueDes;
           break;
         case r'hypotheses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(HypothesisProbabilityState)]),
-          ) as BuiltList<HypothesisProbabilityState>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(HypothesisProbabilityState),
+                    ]),
+                  )
+                  as BuiltList<HypothesisProbabilityState>?;
           if (valueDes == null) continue;
           result.hypotheses.replace(valueDes);
           break;
         case r'bandChanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(HypothesisSetEventBandChangesInner)]),
-          ) as BuiltList<HypothesisSetEventBandChangesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(HypothesisSetEventBandChangesInner),
+                    ]),
+                  )
+                  as BuiltList<HypothesisSetEventBandChangesInner>?;
           if (valueDes == null) continue;
           result.bandChanges.replace(valueDes);
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

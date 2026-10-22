@@ -12,15 +12,15 @@ class _$AnalogResultSignature extends AnalogResultSignature {
   @override
   final DateTime? computedAt;
 
-  factory _$AnalogResultSignature(
-          [void Function(AnalogResultSignatureBuilder)? updates]) =>
-      (AnalogResultSignatureBuilder()..update(updates))._build();
+  factory _$AnalogResultSignature([
+    void Function(AnalogResultSignatureBuilder)? updates,
+  ]) => (AnalogResultSignatureBuilder()..update(updates))._build();
 
   _$AnalogResultSignature._({required this.dayN, this.computedAt}) : super._();
   @override
   AnalogResultSignature rebuild(
-          void Function(AnalogResultSignatureBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalogResultSignatureBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalogResultSignatureBuilder toBuilder() =>
@@ -92,10 +92,14 @@ class AnalogResultSignatureBuilder
   AnalogResultSignature build() => _build();
 
   _$AnalogResultSignature _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalogResultSignature._(
           dayN: BuiltValueNullFieldError.checkNotNull(
-              dayN, r'AnalogResultSignature', 'dayN'),
+            dayN,
+            r'AnalogResultSignature',
+            'dayN',
+          ),
           computedAt: computedAt,
         );
     replace(_$result);

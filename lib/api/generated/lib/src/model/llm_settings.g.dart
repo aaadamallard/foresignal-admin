@@ -27,16 +27,16 @@ class _$LlmSettings extends LlmSettings {
   factory _$LlmSettings([void Function(LlmSettingsBuilder)? updates]) =>
       (LlmSettingsBuilder()..update(updates))._build();
 
-  _$LlmSettings._(
-      {this.chatProvider,
-      this.embeddingProvider,
-      this.askEnabled,
-      this.enrichmentEnabled,
-      this.logContent,
-      this.askMaxTokens,
-      this.allowPrivateLocal,
-      this.ttsProvider})
-      : super._();
+  _$LlmSettings._({
+    this.chatProvider,
+    this.embeddingProvider,
+    this.askEnabled,
+    this.enrichmentEnabled,
+    this.logContent,
+    this.askMaxTokens,
+    this.allowPrivateLocal,
+    this.ttsProvider,
+  }) : super._();
   @override
   LlmSettings rebuild(void Function(LlmSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -160,7 +160,8 @@ class LlmSettingsBuilder implements Builder<LlmSettings, LlmSettingsBuilder> {
   LlmSettings build() => _build();
 
   _$LlmSettings _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LlmSettings._(
           chatProvider: chatProvider,
           embeddingProvider: embeddingProvider,

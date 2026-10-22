@@ -7,14 +7,14 @@ part of 'social_platform_settings_options.dart';
 // **************************************************************************
 
 const SocialPlatformSettingsOptionsFieldsParamEnum
-    _$socialPlatformSettingsOptionsFieldsParamEnum_post =
+_$socialPlatformSettingsOptionsFieldsParamEnum_post =
     const SocialPlatformSettingsOptionsFieldsParamEnum._('post');
 const SocialPlatformSettingsOptionsFieldsParamEnum
-    _$socialPlatformSettingsOptionsFieldsParamEnum_tweet =
+_$socialPlatformSettingsOptionsFieldsParamEnum_tweet =
     const SocialPlatformSettingsOptionsFieldsParamEnum._('tweet');
 
 SocialPlatformSettingsOptionsFieldsParamEnum
-    _$socialPlatformSettingsOptionsFieldsParamEnumValueOf(String name) {
+_$socialPlatformSettingsOptionsFieldsParamEnumValueOf(String name) {
   switch (name) {
     case 'post':
       return _$socialPlatformSettingsOptionsFieldsParamEnum_post;
@@ -26,14 +26,16 @@ SocialPlatformSettingsOptionsFieldsParamEnum
 }
 
 final BuiltSet<SocialPlatformSettingsOptionsFieldsParamEnum>
-    _$socialPlatformSettingsOptionsFieldsParamEnumValues = BuiltSet<
-        SocialPlatformSettingsOptionsFieldsParamEnum>(const <SocialPlatformSettingsOptionsFieldsParamEnum>[
-  _$socialPlatformSettingsOptionsFieldsParamEnum_post,
-  _$socialPlatformSettingsOptionsFieldsParamEnum_tweet,
-]);
+_$socialPlatformSettingsOptionsFieldsParamEnumValues =
+    BuiltSet<SocialPlatformSettingsOptionsFieldsParamEnum>(
+      const <SocialPlatformSettingsOptionsFieldsParamEnum>[
+        _$socialPlatformSettingsOptionsFieldsParamEnum_post,
+        _$socialPlatformSettingsOptionsFieldsParamEnum_tweet,
+      ],
+    );
 
 Serializer<SocialPlatformSettingsOptionsFieldsParamEnum>
-    _$socialPlatformSettingsOptionsFieldsParamEnumSerializer =
+_$socialPlatformSettingsOptionsFieldsParamEnumSerializer =
     _$SocialPlatformSettingsOptionsFieldsParamEnumSerializer();
 
 class _$SocialPlatformSettingsOptionsFieldsParamEnumSerializer
@@ -50,23 +52,26 @@ class _$SocialPlatformSettingsOptionsFieldsParamEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SocialPlatformSettingsOptionsFieldsParamEnum
+    SocialPlatformSettingsOptionsFieldsParamEnum,
   ];
   @override
   final String wireName = 'SocialPlatformSettingsOptionsFieldsParamEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SocialPlatformSettingsOptionsFieldsParamEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialPlatformSettingsOptionsFieldsParamEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialPlatformSettingsOptionsFieldsParamEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialPlatformSettingsOptionsFieldsParamEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialPlatformSettingsOptionsFieldsParamEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialPlatformSettingsOptions extends SocialPlatformSettingsOptions {
@@ -85,23 +90,23 @@ class _$SocialPlatformSettingsOptions extends SocialPlatformSettingsOptions {
   @override
   final SocialPlatformSettingsOptionsFieldsParamEnum? fieldsParam;
 
-  factory _$SocialPlatformSettingsOptions(
-          [void Function(SocialPlatformSettingsOptionsBuilder)? updates]) =>
-      (SocialPlatformSettingsOptionsBuilder()..update(updates))._build();
+  factory _$SocialPlatformSettingsOptions([
+    void Function(SocialPlatformSettingsOptionsBuilder)? updates,
+  ]) => (SocialPlatformSettingsOptionsBuilder()..update(updates))._build();
 
-  _$SocialPlatformSettingsOptions._(
-      {this.instances,
-      this.replay,
-      this.standingCounts,
-      this.fullArchive,
-      this.comments,
-      this.maxResults,
-      this.fieldsParam})
-      : super._();
+  _$SocialPlatformSettingsOptions._({
+    this.instances,
+    this.replay,
+    this.standingCounts,
+    this.fullArchive,
+    this.comments,
+    this.maxResults,
+    this.fieldsParam,
+  }) : super._();
   @override
   SocialPlatformSettingsOptions rebuild(
-          void Function(SocialPlatformSettingsOptionsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformSettingsOptionsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformSettingsOptionsBuilder toBuilder() =>
@@ -150,8 +155,10 @@ class _$SocialPlatformSettingsOptions extends SocialPlatformSettingsOptions {
 
 class SocialPlatformSettingsOptionsBuilder
     implements
-        Builder<SocialPlatformSettingsOptions,
-            SocialPlatformSettingsOptionsBuilder> {
+        Builder<
+          SocialPlatformSettingsOptions,
+          SocialPlatformSettingsOptionsBuilder
+        > {
   _$SocialPlatformSettingsOptions? _$v;
 
   ListBuilder<String>? _instances;
@@ -222,7 +229,8 @@ class SocialPlatformSettingsOptionsBuilder
   _$SocialPlatformSettingsOptions _build() {
     _$SocialPlatformSettingsOptions _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPlatformSettingsOptions._(
             instances: _instances?.build(),
             replay: replay,
@@ -239,7 +247,10 @@ class SocialPlatformSettingsOptionsBuilder
         _instances?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPlatformSettingsOptions', _$failedField, e.toString());
+          r'SocialPlatformSettingsOptions',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

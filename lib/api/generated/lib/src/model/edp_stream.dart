@@ -179,8 +179,10 @@ class _$EdpStreamSerializer implements PrimitiveSerializer<EdpStream> {
       yield r'payloadSchema';
       yield serializers.serialize(
         object.payloadSchema,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.fields != null) {
@@ -243,8 +245,9 @@ class _$EdpStreamSerializer implements PrimitiveSerializer<EdpStream> {
       yield r'suggestedBindings';
       yield serializers.serialize(
         object.suggestedBindings,
-        specifiedType:
-            const FullType(BuiltList, [FullType(EdpSuggestedBinding)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(EdpSuggestedBinding),
+        ]),
       );
     }
     if (object.snapshotScope != null) {
@@ -262,9 +265,11 @@ class _$EdpStreamSerializer implements PrimitiveSerializer<EdpStream> {
     EdpStream object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -280,152 +285,201 @@ class _$EdpStreamSerializer implements PrimitiveSerializer<EdpStream> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpStreamModeEnum),
-          ) as EdpStreamModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpStreamModeEnum),
+                  )
+                  as EdpStreamModeEnum;
           result.mode = valueDes;
           break;
         case r'itemType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpStreamItemTypeEnum),
-          ) as EdpStreamItemTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpStreamItemTypeEnum),
+                  )
+                  as EdpStreamItemTypeEnum;
           result.itemType = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.kind = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpStreamGeometryEnum),
-          ) as EdpStreamGeometryEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpStreamGeometryEnum,
+                    ),
+                  )
+                  as EdpStreamGeometryEnum?;
           if (valueDes == null) continue;
           result.geometry = valueDes;
           break;
         case r'update':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpStreamUpdate_Enum),
-          ) as EdpStreamUpdate_Enum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpStreamUpdate_Enum,
+                    ),
+                  )
+                  as EdpStreamUpdate_Enum?;
           if (valueDes == null) continue;
           result.update_ = valueDes;
           break;
         case r'payloadSchema':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.payloadSchema.replace(valueDes);
           break;
         case r'fields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpStreamFields),
-          ) as EdpStreamFields?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpStreamFields),
+                  )
+                  as EdpStreamFields?;
           if (valueDes == null) continue;
           result.fields.replace(valueDes);
           break;
         case r'ttl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ttl = valueDes;
           break;
         case r'retentionClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpStreamRetentionClassEnum),
-          ) as EdpStreamRetentionClassEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpStreamRetentionClassEnum,
+                    ),
+                  )
+                  as EdpStreamRetentionClassEnum?;
           if (valueDes == null) continue;
           result.retentionClass = valueDes;
           break;
         case r'unit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.unit = valueDes;
           break;
         case r'documentType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpStreamDocumentTypeEnum),
-          ) as EdpStreamDocumentTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpStreamDocumentTypeEnum,
+                    ),
+                  )
+                  as EdpStreamDocumentTypeEnum?;
           if (valueDes == null) continue;
           result.documentType = valueDes;
           break;
         case r'presentation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpPresentation),
-          ) as EdpPresentation?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpPresentation),
+                  )
+                  as EdpPresentation?;
           if (valueDes == null) continue;
           result.presentation.replace(valueDes);
           break;
         case r'coverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpCoverage),
-          ) as EdpCoverage?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpCoverage),
+                  )
+                  as EdpCoverage?;
           if (valueDes == null) continue;
           result.coverage.replace(valueDes);
           break;
         case r'complete':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.complete = valueDes;
           break;
         case r'suggestedBindings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(EdpSuggestedBinding)]),
-          ) as BuiltList<EdpSuggestedBinding>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EdpSuggestedBinding),
+                    ]),
+                  )
+                  as BuiltList<EdpSuggestedBinding>?;
           if (valueDes == null) continue;
           result.suggestedBindings.replace(valueDes);
           break;
         case r'snapshotScope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.snapshotScope = valueDes;
           break;

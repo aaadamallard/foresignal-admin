@@ -32,15 +32,16 @@ SampleStatus _$valueOf(String name) {
   }
 }
 
-final BuiltSet<SampleStatus> _$values =
-    BuiltSet<SampleStatus>(const <SampleStatus>[
-  _$ok,
-  _$noCoverage,
-  _$noData,
-  _$stale,
-  _$unavailable,
-  _$stalePosition,
-]);
+final BuiltSet<SampleStatus> _$values = BuiltSet<SampleStatus>(
+  const <SampleStatus>[
+    _$ok,
+    _$noCoverage,
+    _$noData,
+    _$stale,
+    _$unavailable,
+    _$stalePosition,
+  ],
+);
 
 class _$SampleStatusMeta {
   const _$SampleStatusMeta();
@@ -54,7 +55,7 @@ class _$SampleStatusMeta {
   BuiltSet<SampleStatus> get values => _$values;
 }
 
-abstract class _$SampleStatusMixin {
+mixin _$SampleStatusMixin {
   // ignore: non_constant_identifier_names
   _$SampleStatusMeta get SampleStatus => const _$SampleStatusMeta();
 }
@@ -85,15 +86,20 @@ class _$SampleStatusSerializer implements PrimitiveSerializer<SampleStatus> {
   final String wireName = 'SampleStatus';
 
   @override
-  Object serialize(Serializers serializers, SampleStatus object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SampleStatus object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SampleStatus deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SampleStatus.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SampleStatus deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SampleStatus.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

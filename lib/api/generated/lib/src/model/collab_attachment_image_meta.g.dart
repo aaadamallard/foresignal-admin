@@ -14,17 +14,19 @@ class _$CollabAttachmentImageMeta extends CollabAttachmentImageMeta {
   @override
   final bool exifStripped;
 
-  factory _$CollabAttachmentImageMeta(
-          [void Function(CollabAttachmentImageMetaBuilder)? updates]) =>
-      (CollabAttachmentImageMetaBuilder()..update(updates))._build();
+  factory _$CollabAttachmentImageMeta([
+    void Function(CollabAttachmentImageMetaBuilder)? updates,
+  ]) => (CollabAttachmentImageMetaBuilder()..update(updates))._build();
 
-  _$CollabAttachmentImageMeta._(
-      {required this.width, required this.height, required this.exifStripped})
-      : super._();
+  _$CollabAttachmentImageMeta._({
+    required this.width,
+    required this.height,
+    required this.exifStripped,
+  }) : super._();
   @override
   CollabAttachmentImageMeta rebuild(
-          void Function(CollabAttachmentImageMetaBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CollabAttachmentImageMetaBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CollabAttachmentImageMetaBuilder toBuilder() =>
@@ -105,14 +107,24 @@ class CollabAttachmentImageMetaBuilder
   CollabAttachmentImageMeta build() => _build();
 
   _$CollabAttachmentImageMeta _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CollabAttachmentImageMeta._(
           width: BuiltValueNullFieldError.checkNotNull(
-              width, r'CollabAttachmentImageMeta', 'width'),
+            width,
+            r'CollabAttachmentImageMeta',
+            'width',
+          ),
           height: BuiltValueNullFieldError.checkNotNull(
-              height, r'CollabAttachmentImageMeta', 'height'),
+            height,
+            r'CollabAttachmentImageMeta',
+            'height',
+          ),
           exifStripped: BuiltValueNullFieldError.checkNotNull(
-              exifStripped, r'CollabAttachmentImageMeta', 'exifStripped'),
+            exifStripped,
+            r'CollabAttachmentImageMeta',
+            'exifStripped',
+          ),
         );
     replace(_$result);
     return _$result;

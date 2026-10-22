@@ -36,9 +36,9 @@ abstract class ListRecords200Response
 
   ListRecords200Response._();
 
-  factory ListRecords200Response(
-          [void updates(ListRecords200ResponseBuilder b)]) =
-      _$ListRecords200Response;
+  factory ListRecords200Response([
+    void updates(ListRecords200ResponseBuilder b),
+  ]) = _$ListRecords200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ListRecords200ResponseBuilder b) => b;
@@ -53,7 +53,7 @@ class _$ListRecords200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     ListRecords200Response,
-    _$ListRecords200Response
+    _$ListRecords200Response,
   ];
 
   @override
@@ -72,8 +72,10 @@ class _$ListRecords200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -89,8 +91,9 @@ class _$ListRecords200ResponseSerializer
       FullType(CountResult),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }

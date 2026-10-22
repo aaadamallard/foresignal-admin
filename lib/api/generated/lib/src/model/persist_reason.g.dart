@@ -43,16 +43,16 @@ PersistReason _$valueOf(String name) {
 
 final BuiltSet<PersistReason> _$values =
     BuiltSet<PersistReason>(const <PersistReason>[
-  _$FIRST,
-  _$REAPPEAR,
-  _$SIGNIFICANT,
-  _$TOMBSTONE,
-  _$CHANGE,
-  _$SAMPLE,
-  _$KEYFRAME,
-  _$HEARTBEAT,
-  _$TRIGGER_EDGE,
-]);
+      _$FIRST,
+      _$REAPPEAR,
+      _$SIGNIFICANT,
+      _$TOMBSTONE,
+      _$CHANGE,
+      _$SAMPLE,
+      _$KEYFRAME,
+      _$HEARTBEAT,
+      _$TRIGGER_EDGE,
+    ]);
 
 class _$PersistReasonMeta {
   const _$PersistReasonMeta();
@@ -69,7 +69,7 @@ class _$PersistReasonMeta {
   BuiltSet<PersistReason> get values => _$values;
 }
 
-abstract class _$PersistReasonMixin {
+mixin _$PersistReasonMixin {
   // ignore: non_constant_identifier_names
   _$PersistReasonMeta get PersistReason => const _$PersistReasonMeta();
 }
@@ -107,15 +107,20 @@ class _$PersistReasonSerializer implements PrimitiveSerializer<PersistReason> {
   final String wireName = 'PersistReason';
 
   @override
-  Object serialize(Serializers serializers, PersistReason object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PersistReason object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PersistReason deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PersistReason.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PersistReason deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PersistReason.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

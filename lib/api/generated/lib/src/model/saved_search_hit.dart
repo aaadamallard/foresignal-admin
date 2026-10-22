@@ -82,9 +82,11 @@ class _$SavedSearchHitSerializer
     SavedSearchHit object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,25 +102,33 @@ class _$SavedSearchHitSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'envelope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObjectEnvelope),
-          ) as ObjectEnvelope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ObjectEnvelope),
+                  )
+                  as ObjectEnvelope;
           result.envelope.replace(valueDes);
           break;
         case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.score = valueDes;
           break;
         case r'matchedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SavedSearchHitMatchedByEnum),
-          ) as SavedSearchHitMatchedByEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SavedSearchHitMatchedByEnum,
+                    ),
+                  )
+                  as SavedSearchHitMatchedByEnum?;
           if (valueDes == null) continue;
           result.matchedBy = valueDes;
           break;

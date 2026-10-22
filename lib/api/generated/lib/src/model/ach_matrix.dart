@@ -87,8 +87,9 @@ class _$AchMatrixSerializer implements PrimitiveSerializer<AchMatrix> {
     yield r'hypotheses';
     yield serializers.serialize(
       object.hypotheses,
-      specifiedType:
-          const FullType(BuiltList, [FullType(AchMatrixHypothesesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(AchMatrixHypothesesInner),
+      ]),
     );
     yield r'rows';
     yield serializers.serialize(
@@ -98,8 +99,10 @@ class _$AchMatrixSerializer implements PrimitiveSerializer<AchMatrix> {
     yield r'scores';
     yield serializers.serialize(
       object.scores,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(num)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(num),
+      ]),
     );
     if (object.leastInconsistentHypothesisId != null) {
       yield r'leastInconsistentHypothesisId';
@@ -130,9 +133,11 @@ class _$AchMatrixSerializer implements PrimitiveSerializer<AchMatrix> {
     AchMatrix object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -148,64 +153,86 @@ class _$AchMatrixSerializer implements PrimitiveSerializer<AchMatrix> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         case r'hypotheses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(AchMatrixHypothesesInner)]),
-          ) as BuiltList<AchMatrixHypothesesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AchMatrixHypothesesInner),
+                    ]),
+                  )
+                  as BuiltList<AchMatrixHypothesesInner>;
           result.hypotheses.replace(valueDes);
           break;
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AchEvidence)]),
-          ) as BuiltList<AchEvidence>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AchEvidence),
+                    ]),
+                  )
+                  as BuiltList<AchEvidence>;
           result.rows.replace(valueDes);
           break;
         case r'scores':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>;
           result.scores.replace(valueDes);
           break;
         case r'leastInconsistentHypothesisId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.leastInconsistentHypothesisId = valueDes;
           break;
         case r'nonDiagnosticEvidenceIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.nonDiagnosticEvidenceIds.replace(valueDes);
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;

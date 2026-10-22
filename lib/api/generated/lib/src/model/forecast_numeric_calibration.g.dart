@@ -7,11 +7,12 @@ part of 'forecast_numeric_calibration.dart';
 // **************************************************************************
 
 const ForecastNumericCalibrationTypeEnum
-    _$forecastNumericCalibrationTypeEnum_numeric =
+_$forecastNumericCalibrationTypeEnum_numeric =
     const ForecastNumericCalibrationTypeEnum._('numeric');
 
 ForecastNumericCalibrationTypeEnum _$forecastNumericCalibrationTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'numeric':
       return _$forecastNumericCalibrationTypeEnum_numeric;
@@ -21,20 +22,22 @@ ForecastNumericCalibrationTypeEnum _$forecastNumericCalibrationTypeEnumValueOf(
 }
 
 final BuiltSet<ForecastNumericCalibrationTypeEnum>
-    _$forecastNumericCalibrationTypeEnumValues = BuiltSet<
-        ForecastNumericCalibrationTypeEnum>(const <ForecastNumericCalibrationTypeEnum>[
-  _$forecastNumericCalibrationTypeEnum_numeric,
-]);
+_$forecastNumericCalibrationTypeEnumValues =
+    BuiltSet<ForecastNumericCalibrationTypeEnum>(
+      const <ForecastNumericCalibrationTypeEnum>[
+        _$forecastNumericCalibrationTypeEnum_numeric,
+      ],
+    );
 
 const ForecastNumericCalibrationLabelEnum
-    _$forecastNumericCalibrationLabelEnum_ok =
+_$forecastNumericCalibrationLabelEnum_ok =
     const ForecastNumericCalibrationLabelEnum._('ok');
 const ForecastNumericCalibrationLabelEnum
-    _$forecastNumericCalibrationLabelEnum_insufficient =
+_$forecastNumericCalibrationLabelEnum_insufficient =
     const ForecastNumericCalibrationLabelEnum._('insufficient');
 
 ForecastNumericCalibrationLabelEnum
-    _$forecastNumericCalibrationLabelEnumValueOf(String name) {
+_$forecastNumericCalibrationLabelEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$forecastNumericCalibrationLabelEnum_ok;
@@ -46,17 +49,19 @@ ForecastNumericCalibrationLabelEnum
 }
 
 final BuiltSet<ForecastNumericCalibrationLabelEnum>
-    _$forecastNumericCalibrationLabelEnumValues = BuiltSet<
-        ForecastNumericCalibrationLabelEnum>(const <ForecastNumericCalibrationLabelEnum>[
-  _$forecastNumericCalibrationLabelEnum_ok,
-  _$forecastNumericCalibrationLabelEnum_insufficient,
-]);
+_$forecastNumericCalibrationLabelEnumValues =
+    BuiltSet<ForecastNumericCalibrationLabelEnum>(
+      const <ForecastNumericCalibrationLabelEnum>[
+        _$forecastNumericCalibrationLabelEnum_ok,
+        _$forecastNumericCalibrationLabelEnum_insufficient,
+      ],
+    );
 
 Serializer<ForecastNumericCalibrationTypeEnum>
-    _$forecastNumericCalibrationTypeEnumSerializer =
+_$forecastNumericCalibrationTypeEnumSerializer =
     _$ForecastNumericCalibrationTypeEnumSerializer();
 Serializer<ForecastNumericCalibrationLabelEnum>
-    _$forecastNumericCalibrationLabelEnumSerializer =
+_$forecastNumericCalibrationLabelEnumSerializer =
     _$ForecastNumericCalibrationLabelEnumSerializer();
 
 class _$ForecastNumericCalibrationTypeEnumSerializer
@@ -75,16 +80,19 @@ class _$ForecastNumericCalibrationTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecastNumericCalibrationTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastNumericCalibrationTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastNumericCalibrationTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastNumericCalibrationTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastNumericCalibrationTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastNumericCalibrationLabelEnumSerializer
@@ -100,23 +108,26 @@ class _$ForecastNumericCalibrationLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ForecastNumericCalibrationLabelEnum
+    ForecastNumericCalibrationLabelEnum,
   ];
   @override
   final String wireName = 'ForecastNumericCalibrationLabelEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ForecastNumericCalibrationLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastNumericCalibrationLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastNumericCalibrationLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastNumericCalibrationLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastNumericCalibrationLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastNumericCalibration extends ForecastNumericCalibration {
@@ -132,7 +143,7 @@ class _$ForecastNumericCalibration extends ForecastNumericCalibration {
   final ForecastNumericCalibrationLabelEnum label;
   @override
   final BuiltList<ForecastNumericCalibrationQuantileReliabilityInner>
-      quantileReliability;
+  quantileReliability;
   @override
   final ForecastNumericCalibrationPit pit;
   @override
@@ -142,26 +153,26 @@ class _$ForecastNumericCalibration extends ForecastNumericCalibration {
   @override
   final DateTime computedAt;
 
-  factory _$ForecastNumericCalibration(
-          [void Function(ForecastNumericCalibrationBuilder)? updates]) =>
-      (ForecastNumericCalibrationBuilder()..update(updates))._build();
+  factory _$ForecastNumericCalibration([
+    void Function(ForecastNumericCalibrationBuilder)? updates,
+  ]) => (ForecastNumericCalibrationBuilder()..update(updates))._build();
 
-  _$ForecastNumericCalibration._(
-      {this.forecasterId,
-      this.category,
-      required this.type,
-      required this.n,
-      required this.label,
-      required this.quantileReliability,
-      required this.pit,
-      this.summary,
-      required this.scorerVersion,
-      required this.computedAt})
-      : super._();
+  _$ForecastNumericCalibration._({
+    this.forecasterId,
+    this.category,
+    required this.type,
+    required this.n,
+    required this.label,
+    required this.quantileReliability,
+    required this.pit,
+    this.summary,
+    required this.scorerVersion,
+    required this.computedAt,
+  }) : super._();
   @override
   ForecastNumericCalibration rebuild(
-          void Function(ForecastNumericCalibrationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastNumericCalibrationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastNumericCalibrationBuilder toBuilder() =>
@@ -244,14 +255,14 @@ class ForecastNumericCalibrationBuilder
       _$this._label = label;
 
   ListBuilder<ForecastNumericCalibrationQuantileReliabilityInner>?
-      _quantileReliability;
+  _quantileReliability;
   ListBuilder<ForecastNumericCalibrationQuantileReliabilityInner>
-      get quantileReliability => _$this._quantileReliability ??=
-          ListBuilder<ForecastNumericCalibrationQuantileReliabilityInner>();
+  get quantileReliability => _$this._quantileReliability ??=
+      ListBuilder<ForecastNumericCalibrationQuantileReliabilityInner>();
   set quantileReliability(
-          ListBuilder<ForecastNumericCalibrationQuantileReliabilityInner>?
-              quantileReliability) =>
-      _$this._quantileReliability = quantileReliability;
+    ListBuilder<ForecastNumericCalibrationQuantileReliabilityInner>?
+    quantileReliability,
+  ) => _$this._quantileReliability = quantileReliability;
 
   ForecastNumericCalibrationPitBuilder? _pit;
   ForecastNumericCalibrationPitBuilder get pit =>
@@ -311,23 +322,39 @@ class ForecastNumericCalibrationBuilder
   _$ForecastNumericCalibration _build() {
     _$ForecastNumericCalibration _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastNumericCalibration._(
             forecasterId: forecasterId,
             category: category,
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ForecastNumericCalibration', 'type'),
+              type,
+              r'ForecastNumericCalibration',
+              'type',
+            ),
             n: BuiltValueNullFieldError.checkNotNull(
-                n, r'ForecastNumericCalibration', 'n'),
+              n,
+              r'ForecastNumericCalibration',
+              'n',
+            ),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'ForecastNumericCalibration', 'label'),
+              label,
+              r'ForecastNumericCalibration',
+              'label',
+            ),
             quantileReliability: quantileReliability.build(),
             pit: pit.build(),
             summary: _summary?.build(),
             scorerVersion: BuiltValueNullFieldError.checkNotNull(
-                scorerVersion, r'ForecastNumericCalibration', 'scorerVersion'),
+              scorerVersion,
+              r'ForecastNumericCalibration',
+              'scorerVersion',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'ForecastNumericCalibration', 'computedAt'),
+              computedAt,
+              r'ForecastNumericCalibration',
+              'computedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -340,7 +367,10 @@ class ForecastNumericCalibrationBuilder
         _summary?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastNumericCalibration', _$failedField, e.toString());
+          r'ForecastNumericCalibration',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

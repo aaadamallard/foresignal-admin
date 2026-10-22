@@ -204,8 +204,10 @@ class _$CyclePacketSerializer implements PrimitiveSerializer<CyclePacket> {
       yield r'truncatedForLlm';
       yield serializers.serialize(
         object.truncatedForLlm,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.social != null) {
@@ -230,9 +232,11 @@ class _$CyclePacketSerializer implements PrimitiveSerializer<CyclePacket> {
     CyclePacket object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -248,132 +252,180 @@ class _$CyclePacketSerializer implements PrimitiveSerializer<CyclePacket> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         case r'since':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.since = valueDes;
           break;
         case r'until':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.until = valueDes;
           break;
         case r'firstRun':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.firstRun = valueDes;
           break;
         case r'situations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CyclePacketSituations),
-          ) as CyclePacketSituations?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CyclePacketSituations,
+                    ),
+                  )
+                  as CyclePacketSituations?;
           if (valueDes == null) continue;
           result.situations.replace(valueDes);
           break;
         case r'hypotheses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CyclePacketHypotheses),
-          ) as CyclePacketHypotheses?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CyclePacketHypotheses,
+                    ),
+                  )
+                  as CyclePacketHypotheses?;
           if (valueDes == null) continue;
           result.hypotheses.replace(valueDes);
           break;
         case r'findings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.findings.replace(valueDes);
           break;
         case r'forecasts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CyclePacketForecasts),
-          ) as CyclePacketForecasts?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CyclePacketForecasts,
+                    ),
+                  )
+                  as CyclePacketForecasts?;
           if (valueDes == null) continue;
           result.forecasts.replace(valueDes);
           break;
         case r'outlooks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CyclePacketOutlooks),
-          ) as CyclePacketOutlooks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(CyclePacketOutlooks),
+                  )
+                  as CyclePacketOutlooks?;
           if (valueDes == null) continue;
           result.outlooks.replace(valueDes);
           break;
         case r'coverage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CyclePacketCoverage),
-          ) as CyclePacketCoverage?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(CyclePacketCoverage),
+                  )
+                  as CyclePacketCoverage?;
           if (valueDes == null) continue;
           result.coverage.replace(valueDes);
           break;
         case r'collectionGaps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CollectionGap)]),
-          ) as BuiltList<CollectionGap>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CollectionGap),
+                    ]),
+                  )
+                  as BuiltList<CollectionGap>?;
           if (valueDes == null) continue;
           result.collectionGaps.replace(valueDes);
           break;
         case r'verdicts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(CyclePacketItem)]),
-          ) as BuiltList<CyclePacketItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CyclePacketItem),
+                    ]),
+                  )
+                  as BuiltList<CyclePacketItem>?;
           if (valueDes == null) continue;
           result.verdicts.replace(valueDes);
           break;
         case r'previousJudgments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(KeyJudgment)]),
-          ) as BuiltList<KeyJudgment>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(KeyJudgment),
+                    ]),
+                  )
+                  as BuiltList<KeyJudgment>?;
           if (valueDes == null) continue;
           result.previousJudgments.replace(valueDes);
           break;
         case r'truncatedForLlm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.truncatedForLlm.replace(valueDes);
           break;
         case r'social':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialVersusObserved),
-          ) as SocialVersusObserved?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialVersusObserved,
+                    ),
+                  )
+                  as SocialVersusObserved?;
           if (valueDes == null) continue;
           result.social.replace(valueDes);
           break;
         case r'cadence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CyclePacketCadenceEnum),
-          ) as CyclePacketCadenceEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CyclePacketCadenceEnum,
+                    ),
+                  )
+                  as CyclePacketCadenceEnum?;
           if (valueDes == null) continue;
           result.cadence = valueDes;
           break;

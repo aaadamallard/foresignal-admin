@@ -14,7 +14,8 @@ const AnalysisCycleInputCadenceEnum _$analysisCycleInputCadenceEnum_monthly =
     const AnalysisCycleInputCadenceEnum._('monthly');
 
 AnalysisCycleInputCadenceEnum _$analysisCycleInputCadenceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'daily':
       return _$analysisCycleInputCadenceEnum_daily;
@@ -28,12 +29,13 @@ AnalysisCycleInputCadenceEnum _$analysisCycleInputCadenceEnumValueOf(
 }
 
 final BuiltSet<AnalysisCycleInputCadenceEnum>
-    _$analysisCycleInputCadenceEnumValues = BuiltSet<
-        AnalysisCycleInputCadenceEnum>(const <AnalysisCycleInputCadenceEnum>[
-  _$analysisCycleInputCadenceEnum_daily,
-  _$analysisCycleInputCadenceEnum_weekly,
-  _$analysisCycleInputCadenceEnum_monthly,
-]);
+_$analysisCycleInputCadenceEnumValues = BuiltSet<AnalysisCycleInputCadenceEnum>(
+  const <AnalysisCycleInputCadenceEnum>[
+    _$analysisCycleInputCadenceEnum_daily,
+    _$analysisCycleInputCadenceEnum_weekly,
+    _$analysisCycleInputCadenceEnum_monthly,
+  ],
+);
 
 const AnalysisCycleInputRolesEnum _$analysisCycleInputRolesEnum_analyst =
     const AnalysisCycleInputRolesEnum._('analyst');
@@ -60,26 +62,26 @@ AnalysisCycleInputRolesEnum _$analysisCycleInputRolesEnumValueOf(String name) {
 }
 
 final BuiltSet<AnalysisCycleInputRolesEnum>
-    _$analysisCycleInputRolesEnumValues =
+_$analysisCycleInputRolesEnumValues =
     BuiltSet<AnalysisCycleInputRolesEnum>(const <AnalysisCycleInputRolesEnum>[
-  _$analysisCycleInputRolesEnum_analyst,
-  _$analysisCycleInputRolesEnum_redTeam,
-  _$analysisCycleInputRolesEnum_forecaster,
-  _$analysisCycleInputRolesEnum_proposer,
-]);
+      _$analysisCycleInputRolesEnum_analyst,
+      _$analysisCycleInputRolesEnum_redTeam,
+      _$analysisCycleInputRolesEnum_forecaster,
+      _$analysisCycleInputRolesEnum_proposer,
+    ]);
 
 const AnalysisCycleInputNotifyMinPriorityEnum
-    _$analysisCycleInputNotifyMinPriorityEnum_low =
+_$analysisCycleInputNotifyMinPriorityEnum_low =
     const AnalysisCycleInputNotifyMinPriorityEnum._('low');
 const AnalysisCycleInputNotifyMinPriorityEnum
-    _$analysisCycleInputNotifyMinPriorityEnum_normal =
+_$analysisCycleInputNotifyMinPriorityEnum_normal =
     const AnalysisCycleInputNotifyMinPriorityEnum._('normal');
 const AnalysisCycleInputNotifyMinPriorityEnum
-    _$analysisCycleInputNotifyMinPriorityEnum_high =
+_$analysisCycleInputNotifyMinPriorityEnum_high =
     const AnalysisCycleInputNotifyMinPriorityEnum._('high');
 
 AnalysisCycleInputNotifyMinPriorityEnum
-    _$analysisCycleInputNotifyMinPriorityEnumValueOf(String name) {
+_$analysisCycleInputNotifyMinPriorityEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$analysisCycleInputNotifyMinPriorityEnum_low;
@@ -93,21 +95,23 @@ AnalysisCycleInputNotifyMinPriorityEnum
 }
 
 final BuiltSet<AnalysisCycleInputNotifyMinPriorityEnum>
-    _$analysisCycleInputNotifyMinPriorityEnumValues = BuiltSet<
-        AnalysisCycleInputNotifyMinPriorityEnum>(const <AnalysisCycleInputNotifyMinPriorityEnum>[
-  _$analysisCycleInputNotifyMinPriorityEnum_low,
-  _$analysisCycleInputNotifyMinPriorityEnum_normal,
-  _$analysisCycleInputNotifyMinPriorityEnum_high,
-]);
+_$analysisCycleInputNotifyMinPriorityEnumValues =
+    BuiltSet<AnalysisCycleInputNotifyMinPriorityEnum>(
+      const <AnalysisCycleInputNotifyMinPriorityEnum>[
+        _$analysisCycleInputNotifyMinPriorityEnum_low,
+        _$analysisCycleInputNotifyMinPriorityEnum_normal,
+        _$analysisCycleInputNotifyMinPriorityEnum_high,
+      ],
+    );
 
 Serializer<AnalysisCycleInputCadenceEnum>
-    _$analysisCycleInputCadenceEnumSerializer =
+_$analysisCycleInputCadenceEnumSerializer =
     _$AnalysisCycleInputCadenceEnumSerializer();
 Serializer<AnalysisCycleInputRolesEnum>
-    _$analysisCycleInputRolesEnumSerializer =
+_$analysisCycleInputRolesEnumSerializer =
     _$AnalysisCycleInputRolesEnumSerializer();
 Serializer<AnalysisCycleInputNotifyMinPriorityEnum>
-    _$analysisCycleInputNotifyMinPriorityEnumSerializer =
+_$analysisCycleInputNotifyMinPriorityEnumSerializer =
     _$AnalysisCycleInputNotifyMinPriorityEnumSerializer();
 
 class _$AnalysisCycleInputCadenceEnumSerializer
@@ -130,16 +134,19 @@ class _$AnalysisCycleInputCadenceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalysisCycleInputCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalysisCycleInputCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalysisCycleInputCadenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalysisCycleInputCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalysisCycleInputCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalysisCycleInputRolesEnumSerializer
@@ -163,16 +170,20 @@ class _$AnalysisCycleInputRolesEnumSerializer
   final String wireName = 'AnalysisCycleInputRolesEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalysisCycleInputRolesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalysisCycleInputRolesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalysisCycleInputRolesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalysisCycleInputRolesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalysisCycleInputRolesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalysisCycleInputNotifyMinPriorityEnumSerializer
@@ -190,23 +201,26 @@ class _$AnalysisCycleInputNotifyMinPriorityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AnalysisCycleInputNotifyMinPriorityEnum
+    AnalysisCycleInputNotifyMinPriorityEnum,
   ];
   @override
   final String wireName = 'AnalysisCycleInputNotifyMinPriorityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          AnalysisCycleInputNotifyMinPriorityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalysisCycleInputNotifyMinPriorityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalysisCycleInputNotifyMinPriorityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalysisCycleInputNotifyMinPriorityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalysisCycleInputNotifyMinPriorityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalysisCycleInput extends AnalysisCycleInput {
@@ -237,29 +251,29 @@ class _$AnalysisCycleInput extends AnalysisCycleInput {
   @override
   final bool? enabled;
 
-  factory _$AnalysisCycleInput(
-          [void Function(AnalysisCycleInputBuilder)? updates]) =>
-      (AnalysisCycleInputBuilder()..update(updates))._build();
+  factory _$AnalysisCycleInput([
+    void Function(AnalysisCycleInputBuilder)? updates,
+  ]) => (AnalysisCycleInputBuilder()..update(updates))._build();
 
-  _$AnalysisCycleInput._(
-      {required this.name,
-      required this.cadence,
-      required this.schedule,
-      this.scope,
-      this.analystProfileId,
-      this.roles,
-      this.forecasterProviders,
-      this.samples,
-      this.maxQuestions,
-      this.maxTokensPerCycle,
-      this.channelIds,
-      this.notifyMinPriority,
-      this.enabled})
-      : super._();
+  _$AnalysisCycleInput._({
+    required this.name,
+    required this.cadence,
+    required this.schedule,
+    this.scope,
+    this.analystProfileId,
+    this.roles,
+    this.forecasterProviders,
+    this.samples,
+    this.maxQuestions,
+    this.maxTokensPerCycle,
+    this.channelIds,
+    this.notifyMinPriority,
+    this.enabled,
+  }) : super._();
   @override
   AnalysisCycleInput rebuild(
-          void Function(AnalysisCycleInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisCycleInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisCycleInputBuilder toBuilder() =>
@@ -387,8 +401,8 @@ class AnalysisCycleInputBuilder
   AnalysisCycleInputNotifyMinPriorityEnum? get notifyMinPriority =>
       _$this._notifyMinPriority;
   set notifyMinPriority(
-          AnalysisCycleInputNotifyMinPriorityEnum? notifyMinPriority) =>
-      _$this._notifyMinPriority = notifyMinPriority;
+    AnalysisCycleInputNotifyMinPriorityEnum? notifyMinPriority,
+  ) => _$this._notifyMinPriority = notifyMinPriority;
 
   bool? _enabled;
   bool? get enabled => _$this._enabled;
@@ -435,12 +449,19 @@ class AnalysisCycleInputBuilder
   _$AnalysisCycleInput _build() {
     _$AnalysisCycleInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalysisCycleInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'AnalysisCycleInput', 'name'),
+              name,
+              r'AnalysisCycleInput',
+              'name',
+            ),
             cadence: BuiltValueNullFieldError.checkNotNull(
-                cadence, r'AnalysisCycleInput', 'cadence'),
+              cadence,
+              r'AnalysisCycleInput',
+              'cadence',
+            ),
             schedule: schedule.build(),
             scope: _scope?.build(),
             analystProfileId: analystProfileId,
@@ -470,7 +491,10 @@ class AnalysisCycleInputBuilder
         _channelIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisCycleInput', _$failedField, e.toString());
+          r'AnalysisCycleInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -84,8 +84,9 @@ class _$LeadTimeStatsSerializer implements PrimitiveSerializer<LeadTimeStats> {
     yield r'groups';
     yield serializers.serialize(
       object.groups,
-      specifiedType:
-          const FullType(BuiltList, [FullType(LeadTimeStatsGroupsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(LeadTimeStatsGroupsInner),
+      ]),
     );
     if (object.caveats != null) {
       yield r'caveats';
@@ -102,9 +103,11 @@ class _$LeadTimeStatsSerializer implements PrimitiveSerializer<LeadTimeStats> {
     LeadTimeStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,41 +123,55 @@ class _$LeadTimeStatsSerializer implements PrimitiveSerializer<LeadTimeStats> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.generatedAt = valueDes;
           break;
         case r'trainingCutoff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.trainingCutoff = valueDes;
           break;
         case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(LeadTimeStatsFilters),
-          ) as LeadTimeStatsFilters?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      LeadTimeStatsFilters,
+                    ),
+                  )
+                  as LeadTimeStatsFilters?;
           if (valueDes == null) continue;
           result.filters.replace(valueDes);
           break;
         case r'groups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(LeadTimeStatsGroupsInner)]),
-          ) as BuiltList<LeadTimeStatsGroupsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(LeadTimeStatsGroupsInner),
+                    ]),
+                  )
+                  as BuiltList<LeadTimeStatsGroupsInner>;
           result.groups.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;

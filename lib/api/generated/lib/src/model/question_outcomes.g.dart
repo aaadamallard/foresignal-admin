@@ -16,12 +16,12 @@ class _$QuestionOutcomes extends QuestionOutcomes {
   @override
   final num? upper;
 
-  factory _$QuestionOutcomes(
-          [void Function(QuestionOutcomesBuilder)? updates]) =>
-      (QuestionOutcomesBuilder()..update(updates))._build();
+  factory _$QuestionOutcomes([
+    void Function(QuestionOutcomesBuilder)? updates,
+  ]) => (QuestionOutcomesBuilder()..update(updates))._build();
 
   _$QuestionOutcomes._({this.labels, this.unit, this.lower, this.upper})
-      : super._();
+    : super._();
   @override
   QuestionOutcomes rebuild(void Function(QuestionOutcomesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,7 +114,8 @@ class QuestionOutcomesBuilder
   _$QuestionOutcomes _build() {
     _$QuestionOutcomes _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$QuestionOutcomes._(
             labels: _labels?.build(),
             unit: unit,
@@ -128,7 +129,10 @@ class QuestionOutcomesBuilder
         _labels?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'QuestionOutcomes', _$failedField, e.toString());
+          r'QuestionOutcomes',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

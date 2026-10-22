@@ -27,9 +27,9 @@ abstract class NotificationDeliveryPage
 
   NotificationDeliveryPage._();
 
-  factory NotificationDeliveryPage(
-          [void updates(NotificationDeliveryPageBuilder b)]) =
-      _$NotificationDeliveryPage;
+  factory NotificationDeliveryPage([
+    void updates(NotificationDeliveryPageBuilder b),
+  ]) = _$NotificationDeliveryPage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationDeliveryPageBuilder b) => b;
@@ -44,7 +44,7 @@ class _$NotificationDeliveryPageSerializer
   @override
   final Iterable<Type> types = const [
     NotificationDeliveryPage,
-    _$NotificationDeliveryPage
+    _$NotificationDeliveryPage,
   ];
 
   @override
@@ -58,8 +58,9 @@ class _$NotificationDeliveryPageSerializer
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType:
-          const FullType(BuiltList, [FullType(NotificationDelivery)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NotificationDelivery),
+      ]),
     );
     if (object.nextCursor != null) {
       yield r'nextCursor';
@@ -76,9 +77,11 @@ class _$NotificationDeliveryPageSerializer
     NotificationDeliveryPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +97,23 @@ class _$NotificationDeliveryPageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(NotificationDelivery)]),
-          ) as BuiltList<NotificationDelivery>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NotificationDelivery),
+                    ]),
+                  )
+                  as BuiltList<NotificationDelivery>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

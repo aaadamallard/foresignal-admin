@@ -14,13 +14,15 @@ class _$MappingRejection extends MappingRejection {
   @override
   final String? externalId;
 
-  factory _$MappingRejection(
-          [void Function(MappingRejectionBuilder)? updates]) =>
-      (MappingRejectionBuilder()..update(updates))._build();
+  factory _$MappingRejection([
+    void Function(MappingRejectionBuilder)? updates,
+  ]) => (MappingRejectionBuilder()..update(updates))._build();
 
-  _$MappingRejection._(
-      {required this.index, required this.reason, this.externalId})
-      : super._();
+  _$MappingRejection._({
+    required this.index,
+    required this.reason,
+    this.externalId,
+  }) : super._();
   @override
   MappingRejection rebuild(void Function(MappingRejectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -103,12 +105,19 @@ class MappingRejectionBuilder
   MappingRejection build() => _build();
 
   _$MappingRejection _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MappingRejection._(
           index: BuiltValueNullFieldError.checkNotNull(
-              index, r'MappingRejection', 'index'),
+            index,
+            r'MappingRejection',
+            'index',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'MappingRejection', 'reason'),
+            reason,
+            r'MappingRejection',
+            'reason',
+          ),
           externalId: externalId,
         );
     replace(_$result);

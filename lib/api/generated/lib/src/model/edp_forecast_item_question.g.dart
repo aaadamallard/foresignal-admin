@@ -16,20 +16,20 @@ class _$EdpForecastItemQuestion extends EdpForecastItemQuestion {
   @override
   final String? resolutionCriteria;
 
-  factory _$EdpForecastItemQuestion(
-          [void Function(EdpForecastItemQuestionBuilder)? updates]) =>
-      (EdpForecastItemQuestionBuilder()..update(updates))._build();
+  factory _$EdpForecastItemQuestion([
+    void Function(EdpForecastItemQuestionBuilder)? updates,
+  ]) => (EdpForecastItemQuestionBuilder()..update(updates))._build();
 
-  _$EdpForecastItemQuestion._(
-      {required this.externalId,
-      required this.title,
-      this.closeTime,
-      this.resolutionCriteria})
-      : super._();
+  _$EdpForecastItemQuestion._({
+    required this.externalId,
+    required this.title,
+    this.closeTime,
+    this.resolutionCriteria,
+  }) : super._();
   @override
   EdpForecastItemQuestion rebuild(
-          void Function(EdpForecastItemQuestionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpForecastItemQuestionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpForecastItemQuestionBuilder toBuilder() =>
@@ -119,12 +119,19 @@ class EdpForecastItemQuestionBuilder
   EdpForecastItemQuestion build() => _build();
 
   _$EdpForecastItemQuestion _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpForecastItemQuestion._(
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'EdpForecastItemQuestion', 'externalId'),
+            externalId,
+            r'EdpForecastItemQuestion',
+            'externalId',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'EdpForecastItemQuestion', 'title'),
+            title,
+            r'EdpForecastItemQuestion',
+            'title',
+          ),
           closeTime: closeTime,
           resolutionCriteria: resolutionCriteria,
         );

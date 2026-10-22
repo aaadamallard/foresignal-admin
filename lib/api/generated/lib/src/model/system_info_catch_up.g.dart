@@ -14,13 +14,15 @@ class _$SystemInfoCatchUp extends SystemInfoCatchUp {
   @override
   final bool? catchingUp;
 
-  factory _$SystemInfoCatchUp(
-          [void Function(SystemInfoCatchUpBuilder)? updates]) =>
-      (SystemInfoCatchUpBuilder()..update(updates))._build();
+  factory _$SystemInfoCatchUp([
+    void Function(SystemInfoCatchUpBuilder)? updates,
+  ]) => (SystemInfoCatchUpBuilder()..update(updates))._build();
 
-  _$SystemInfoCatchUp._(
-      {this.triggerLagSeq, this.ingestQueueDepth, this.catchingUp})
-      : super._();
+  _$SystemInfoCatchUp._({
+    this.triggerLagSeq,
+    this.ingestQueueDepth,
+    this.catchingUp,
+  }) : super._();
   @override
   SystemInfoCatchUp rebuild(void Function(SystemInfoCatchUpBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -105,7 +107,8 @@ class SystemInfoCatchUpBuilder
   SystemInfoCatchUp build() => _build();
 
   _$SystemInfoCatchUp _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoCatchUp._(
           triggerLagSeq: triggerLagSeq,
           ingestQueueDepth: ingestQueueDepth,

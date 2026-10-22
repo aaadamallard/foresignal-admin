@@ -14,17 +14,19 @@ class _$SocialPlatformDeletionSync extends SocialPlatformDeletionSync {
   @override
   final int? tombstonedLast30d;
 
-  factory _$SocialPlatformDeletionSync(
-          [void Function(SocialPlatformDeletionSyncBuilder)? updates]) =>
-      (SocialPlatformDeletionSyncBuilder()..update(updates))._build();
+  factory _$SocialPlatformDeletionSync([
+    void Function(SocialPlatformDeletionSyncBuilder)? updates,
+  ]) => (SocialPlatformDeletionSyncBuilder()..update(updates))._build();
 
-  _$SocialPlatformDeletionSync._(
-      {required this.enabled, this.lastRunAt, this.tombstonedLast30d})
-      : super._();
+  _$SocialPlatformDeletionSync._({
+    required this.enabled,
+    this.lastRunAt,
+    this.tombstonedLast30d,
+  }) : super._();
   @override
   SocialPlatformDeletionSync rebuild(
-          void Function(SocialPlatformDeletionSyncBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformDeletionSyncBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformDeletionSyncBuilder toBuilder() =>
@@ -106,10 +108,14 @@ class SocialPlatformDeletionSyncBuilder
   SocialPlatformDeletionSync build() => _build();
 
   _$SocialPlatformDeletionSync _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialPlatformDeletionSync._(
           enabled: BuiltValueNullFieldError.checkNotNull(
-              enabled, r'SocialPlatformDeletionSync', 'enabled'),
+            enabled,
+            r'SocialPlatformDeletionSync',
+            'enabled',
+          ),
           lastRunAt: lastRunAt,
           tombstonedLast30d: tombstonedLast30d,
         );

@@ -6,10 +6,12 @@ part of 'edp_stream.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EdpStreamModeEnum _$edpStreamModeEnum_layer =
-    const EdpStreamModeEnum._('layer');
-const EdpStreamModeEnum _$edpStreamModeEnum_atomic =
-    const EdpStreamModeEnum._('atomic');
+const EdpStreamModeEnum _$edpStreamModeEnum_layer = const EdpStreamModeEnum._(
+  'layer',
+);
+const EdpStreamModeEnum _$edpStreamModeEnum_atomic = const EdpStreamModeEnum._(
+  'atomic',
+);
 
 EdpStreamModeEnum _$edpStreamModeEnumValueOf(String name) {
   switch (name) {
@@ -24,9 +26,9 @@ EdpStreamModeEnum _$edpStreamModeEnumValueOf(String name) {
 
 final BuiltSet<EdpStreamModeEnum> _$edpStreamModeEnumValues =
     BuiltSet<EdpStreamModeEnum>(const <EdpStreamModeEnum>[
-  _$edpStreamModeEnum_layer,
-  _$edpStreamModeEnum_atomic,
-]);
+      _$edpStreamModeEnum_layer,
+      _$edpStreamModeEnum_atomic,
+    ]);
 
 const EdpStreamItemTypeEnum _$edpStreamItemTypeEnum_feature =
     const EdpStreamItemTypeEnum._('feature');
@@ -58,12 +60,12 @@ EdpStreamItemTypeEnum _$edpStreamItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpStreamItemTypeEnum> _$edpStreamItemTypeEnumValues =
     BuiltSet<EdpStreamItemTypeEnum>(const <EdpStreamItemTypeEnum>[
-  _$edpStreamItemTypeEnum_feature,
-  _$edpStreamItemTypeEnum_event,
-  _$edpStreamItemTypeEnum_observation,
-  _$edpStreamItemTypeEnum_document,
-  _$edpStreamItemTypeEnum_forecast,
-]);
+      _$edpStreamItemTypeEnum_feature,
+      _$edpStreamItemTypeEnum_event,
+      _$edpStreamItemTypeEnum_observation,
+      _$edpStreamItemTypeEnum_document,
+      _$edpStreamItemTypeEnum_forecast,
+    ]);
 
 const EdpStreamGeometryEnum _$edpStreamGeometryEnum_point =
     const EdpStreamGeometryEnum._('point');
@@ -99,13 +101,13 @@ EdpStreamGeometryEnum _$edpStreamGeometryEnumValueOf(String name) {
 
 final BuiltSet<EdpStreamGeometryEnum> _$edpStreamGeometryEnumValues =
     BuiltSet<EdpStreamGeometryEnum>(const <EdpStreamGeometryEnum>[
-  _$edpStreamGeometryEnum_point,
-  _$edpStreamGeometryEnum_lineString,
-  _$edpStreamGeometryEnum_polygon,
-  _$edpStreamGeometryEnum_multiPolygon,
-  _$edpStreamGeometryEnum_any,
-  _$edpStreamGeometryEnum_none,
-]);
+      _$edpStreamGeometryEnum_point,
+      _$edpStreamGeometryEnum_lineString,
+      _$edpStreamGeometryEnum_polygon,
+      _$edpStreamGeometryEnum_multiPolygon,
+      _$edpStreamGeometryEnum_any,
+      _$edpStreamGeometryEnum_none,
+    ]);
 
 const EdpStreamUpdate_Enum _$edpStreamUpdateEnum_incremental =
     const EdpStreamUpdate_Enum._('incremental');
@@ -125,9 +127,9 @@ EdpStreamUpdate_Enum _$edpStreamUpdateEnumValueOf(String name) {
 
 final BuiltSet<EdpStreamUpdate_Enum> _$edpStreamUpdateEnumValues =
     BuiltSet<EdpStreamUpdate_Enum>(const <EdpStreamUpdate_Enum>[
-  _$edpStreamUpdateEnum_incremental,
-  _$edpStreamUpdateEnum_snapshot,
-]);
+      _$edpStreamUpdateEnum_incremental,
+      _$edpStreamUpdateEnum_snapshot,
+    ]);
 
 const EdpStreamRetentionClassEnum _$edpStreamRetentionClassEnum_event =
     const EdpStreamRetentionClassEnum._('event');
@@ -166,16 +168,16 @@ EdpStreamRetentionClassEnum _$edpStreamRetentionClassEnumValueOf(String name) {
 }
 
 final BuiltSet<EdpStreamRetentionClassEnum>
-    _$edpStreamRetentionClassEnumValues =
+_$edpStreamRetentionClassEnumValues =
     BuiltSet<EdpStreamRetentionClassEnum>(const <EdpStreamRetentionClassEnum>[
-  _$edpStreamRetentionClassEnum_event,
-  _$edpStreamRetentionClassEnum_bulkEvent,
-  _$edpStreamRetentionClassEnum_series,
-  _$edpStreamRetentionClassEnum_state,
-  _$edpStreamRetentionClassEnum_track,
-  _$edpStreamRetentionClassEnum_reference,
-  _$edpStreamRetentionClassEnum_social,
-]);
+      _$edpStreamRetentionClassEnum_event,
+      _$edpStreamRetentionClassEnum_bulkEvent,
+      _$edpStreamRetentionClassEnum_series,
+      _$edpStreamRetentionClassEnum_state,
+      _$edpStreamRetentionClassEnum_track,
+      _$edpStreamRetentionClassEnum_reference,
+      _$edpStreamRetentionClassEnum_social,
+    ]);
 
 const EdpStreamDocumentTypeEnum _$edpStreamDocumentTypeEnum_socialPost =
     const EdpStreamDocumentTypeEnum._('socialPost');
@@ -207,12 +209,12 @@ EdpStreamDocumentTypeEnum _$edpStreamDocumentTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpStreamDocumentTypeEnum> _$edpStreamDocumentTypeEnumValues =
     BuiltSet<EdpStreamDocumentTypeEnum>(const <EdpStreamDocumentTypeEnum>[
-  _$edpStreamDocumentTypeEnum_socialPost,
-  _$edpStreamDocumentTypeEnum_article,
-  _$edpStreamDocumentTypeEnum_report,
-  _$edpStreamDocumentTypeEnum_transcript,
-  _$edpStreamDocumentTypeEnum_note,
-]);
+      _$edpStreamDocumentTypeEnum_socialPost,
+      _$edpStreamDocumentTypeEnum_article,
+      _$edpStreamDocumentTypeEnum_report,
+      _$edpStreamDocumentTypeEnum_transcript,
+      _$edpStreamDocumentTypeEnum_note,
+    ]);
 
 Serializer<EdpStreamModeEnum> _$edpStreamModeEnumSerializer =
     _$EdpStreamModeEnumSerializer();
@@ -223,7 +225,7 @@ Serializer<EdpStreamGeometryEnum> _$edpStreamGeometryEnumSerializer =
 Serializer<EdpStreamUpdate_Enum> _$edpStreamUpdateEnumSerializer =
     _$EdpStreamUpdate_EnumSerializer();
 Serializer<EdpStreamRetentionClassEnum>
-    _$edpStreamRetentionClassEnumSerializer =
+_$edpStreamRetentionClassEnumSerializer =
     _$EdpStreamRetentionClassEnumSerializer();
 Serializer<EdpStreamDocumentTypeEnum> _$edpStreamDocumentTypeEnumSerializer =
     _$EdpStreamDocumentTypeEnumSerializer();
@@ -245,15 +247,20 @@ class _$EdpStreamModeEnumSerializer
   final String wireName = 'EdpStreamModeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpStreamModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStreamModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpStreamModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStreamModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpStreamModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStreamModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStreamItemTypeEnumSerializer
@@ -279,15 +286,20 @@ class _$EdpStreamItemTypeEnumSerializer
   final String wireName = 'EdpStreamItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpStreamItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStreamItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpStreamItemTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStreamItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpStreamItemTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStreamItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStreamGeometryEnumSerializer
@@ -315,15 +327,20 @@ class _$EdpStreamGeometryEnumSerializer
   final String wireName = 'EdpStreamGeometryEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpStreamGeometryEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStreamGeometryEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpStreamGeometryEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStreamGeometryEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpStreamGeometryEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStreamGeometryEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStreamUpdate_EnumSerializer
@@ -343,15 +360,20 @@ class _$EdpStreamUpdate_EnumSerializer
   final String wireName = 'EdpStreamUpdate_Enum';
 
   @override
-  Object serialize(Serializers serializers, EdpStreamUpdate_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStreamUpdate_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpStreamUpdate_Enum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStreamUpdate_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpStreamUpdate_Enum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStreamUpdate_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStreamRetentionClassEnumSerializer
@@ -381,16 +403,20 @@ class _$EdpStreamRetentionClassEnumSerializer
   final String wireName = 'EdpStreamRetentionClassEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpStreamRetentionClassEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStreamRetentionClassEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpStreamRetentionClassEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStreamRetentionClassEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStreamRetentionClassEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStreamDocumentTypeEnumSerializer
@@ -416,16 +442,20 @@ class _$EdpStreamDocumentTypeEnumSerializer
   final String wireName = 'EdpStreamDocumentTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpStreamDocumentTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStreamDocumentTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpStreamDocumentTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStreamDocumentTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStreamDocumentTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStream extends EdpStream {
@@ -471,27 +501,27 @@ class _$EdpStream extends EdpStream {
   factory _$EdpStream([void Function(EdpStreamBuilder)? updates]) =>
       (EdpStreamBuilder()..update(updates))._build();
 
-  _$EdpStream._(
-      {required this.id,
-      required this.mode,
-      required this.itemType,
-      required this.kind,
-      this.title,
-      this.description,
-      this.geometry,
-      this.update_,
-      this.payloadSchema,
-      this.fields,
-      this.ttl,
-      this.retentionClass,
-      this.unit,
-      this.documentType,
-      this.presentation,
-      this.coverage,
-      this.complete,
-      this.suggestedBindings,
-      this.snapshotScope})
-      : super._();
+  _$EdpStream._({
+    required this.id,
+    required this.mode,
+    required this.itemType,
+    required this.kind,
+    this.title,
+    this.description,
+    this.geometry,
+    this.update_,
+    this.payloadSchema,
+    this.fields,
+    this.ttl,
+    this.retentionClass,
+    this.unit,
+    this.documentType,
+    this.presentation,
+    this.coverage,
+    this.complete,
+    this.suggestedBindings,
+    this.snapshotScope,
+  }) : super._();
   @override
   EdpStream rebuild(void Function(EdpStreamBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -712,15 +742,25 @@ class EdpStreamBuilder implements Builder<EdpStream, EdpStreamBuilder> {
   _$EdpStream _build() {
     _$EdpStream _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpStream._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'EdpStream', 'id'),
             mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'EdpStream', 'mode'),
+              mode,
+              r'EdpStream',
+              'mode',
+            ),
             itemType: BuiltValueNullFieldError.checkNotNull(
-                itemType, r'EdpStream', 'itemType'),
+              itemType,
+              r'EdpStream',
+              'itemType',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'EdpStream', 'kind'),
+              kind,
+              r'EdpStream',
+              'kind',
+            ),
             title: title,
             description: description,
             geometry: geometry,
@@ -754,7 +794,10 @@ class EdpStreamBuilder implements Builder<EdpStream, EdpStreamBuilder> {
         _suggestedBindings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpStream', _$failedField, e.toString());
+          r'EdpStream',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

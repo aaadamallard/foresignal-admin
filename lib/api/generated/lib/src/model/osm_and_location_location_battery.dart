@@ -16,8 +16,10 @@ part 'osm_and_location_location_battery.g.dart';
 @BuiltValue()
 abstract class OsmAndLocationLocationBattery
     implements
-        Built<OsmAndLocationLocationBattery,
-            OsmAndLocationLocationBatteryBuilder> {
+        Built<
+          OsmAndLocationLocationBattery,
+          OsmAndLocationLocationBatteryBuilder
+        > {
   @BuiltValueField(wireName: r'level')
   num? get level;
 
@@ -26,9 +28,9 @@ abstract class OsmAndLocationLocationBattery
 
   OsmAndLocationLocationBattery._();
 
-  factory OsmAndLocationLocationBattery(
-          [void updates(OsmAndLocationLocationBatteryBuilder b)]) =
-      _$OsmAndLocationLocationBattery;
+  factory OsmAndLocationLocationBattery([
+    void updates(OsmAndLocationLocationBatteryBuilder b),
+  ]) = _$OsmAndLocationLocationBattery;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OsmAndLocationLocationBatteryBuilder b) => b;
@@ -43,7 +45,7 @@ class _$OsmAndLocationLocationBatterySerializer
   @override
   final Iterable<Type> types = const [
     OsmAndLocationLocationBattery,
-    _$OsmAndLocationLocationBattery
+    _$OsmAndLocationLocationBattery,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$OsmAndLocationLocationBatterySerializer
     OsmAndLocationLocationBattery object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$OsmAndLocationLocationBatterySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'level':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.level = valueDes;
           break;
         case r'is_charging':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.isCharging = valueDes;
           break;

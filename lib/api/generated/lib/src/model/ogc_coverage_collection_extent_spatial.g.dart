@@ -13,16 +13,15 @@ class _$OgcCoverageCollectionExtentSpatial
   @override
   final String? crs;
 
-  factory _$OgcCoverageCollectionExtentSpatial(
-          [void Function(OgcCoverageCollectionExtentSpatialBuilder)?
-              updates]) =>
-      (OgcCoverageCollectionExtentSpatialBuilder()..update(updates))._build();
+  factory _$OgcCoverageCollectionExtentSpatial([
+    void Function(OgcCoverageCollectionExtentSpatialBuilder)? updates,
+  ]) => (OgcCoverageCollectionExtentSpatialBuilder()..update(updates))._build();
 
   _$OgcCoverageCollectionExtentSpatial._({this.bbox, this.crs}) : super._();
   @override
   OgcCoverageCollectionExtentSpatial rebuild(
-          void Function(OgcCoverageCollectionExtentSpatialBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionExtentSpatialBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionExtentSpatialBuilder toBuilder() =>
@@ -56,8 +55,10 @@ class _$OgcCoverageCollectionExtentSpatial
 
 class OgcCoverageCollectionExtentSpatialBuilder
     implements
-        Builder<OgcCoverageCollectionExtentSpatial,
-            OgcCoverageCollectionExtentSpatialBuilder> {
+        Builder<
+          OgcCoverageCollectionExtentSpatial,
+          OgcCoverageCollectionExtentSpatialBuilder
+        > {
   _$OgcCoverageCollectionExtentSpatial? _$v;
 
   ListBuilder<BuiltList<num>>? _bbox;
@@ -90,7 +91,8 @@ class OgcCoverageCollectionExtentSpatialBuilder
 
   @override
   void update(
-      void Function(OgcCoverageCollectionExtentSpatialBuilder)? updates) {
+    void Function(OgcCoverageCollectionExtentSpatialBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -100,7 +102,8 @@ class OgcCoverageCollectionExtentSpatialBuilder
   _$OgcCoverageCollectionExtentSpatial _build() {
     _$OgcCoverageCollectionExtentSpatial _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCoverageCollectionExtentSpatial._(
             bbox: _bbox?.build(),
             crs: crs,
@@ -112,7 +115,10 @@ class OgcCoverageCollectionExtentSpatialBuilder
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCoverageCollectionExtentSpatial', _$failedField, e.toString());
+          r'OgcCoverageCollectionExtentSpatial',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

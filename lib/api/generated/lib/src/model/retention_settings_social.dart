@@ -27,9 +27,9 @@ abstract class RetentionSettingsSocial
 
   RetentionSettingsSocial._();
 
-  factory RetentionSettingsSocial(
-          [void updates(RetentionSettingsSocialBuilder b)]) =
-      _$RetentionSettingsSocial;
+  factory RetentionSettingsSocial([
+    void updates(RetentionSettingsSocialBuilder b),
+  ]) = _$RetentionSettingsSocial;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RetentionSettingsSocialBuilder b) => b;
@@ -44,7 +44,7 @@ class _$RetentionSettingsSocialSerializer
   @override
   final Iterable<Type> types = const [
     RetentionSettingsSocial,
-    _$RetentionSettingsSocial
+    _$RetentionSettingsSocial,
   ];
 
   @override
@@ -66,8 +66,10 @@ class _$RetentionSettingsSocialSerializer
       yield r'platforms';
       yield serializers.serialize(
         object.platforms,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
   }
@@ -78,9 +80,11 @@ class _$RetentionSettingsSocialSerializer
     RetentionSettingsSocial object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,19 +100,25 @@ class _$RetentionSettingsSocialSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'posts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.posts = valueDes;
           break;
         case r'platforms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.platforms.replace(valueDes);
           break;

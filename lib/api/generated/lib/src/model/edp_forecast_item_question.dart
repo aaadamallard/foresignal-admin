@@ -32,9 +32,9 @@ abstract class EdpForecastItemQuestion
 
   EdpForecastItemQuestion._();
 
-  factory EdpForecastItemQuestion(
-          [void updates(EdpForecastItemQuestionBuilder b)]) =
-      _$EdpForecastItemQuestion;
+  factory EdpForecastItemQuestion([
+    void updates(EdpForecastItemQuestionBuilder b),
+  ]) = _$EdpForecastItemQuestion;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EdpForecastItemQuestionBuilder b) => b;
@@ -49,7 +49,7 @@ class _$EdpForecastItemQuestionSerializer
   @override
   final Iterable<Type> types = const [
     EdpForecastItemQuestion,
-    _$EdpForecastItemQuestion
+    _$EdpForecastItemQuestion,
   ];
 
   @override
@@ -92,9 +92,11 @@ class _$EdpForecastItemQuestionSerializer
     EdpForecastItemQuestion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,32 +112,40 @@ class _$EdpForecastItemQuestionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalId = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'closeTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.closeTime = valueDes;
           break;
         case r'resolutionCriteria':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.resolutionCriteria = valueDes;
           break;

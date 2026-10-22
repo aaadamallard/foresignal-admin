@@ -39,22 +39,22 @@ class _$OsmAndQuery extends OsmAndQuery {
   factory _$OsmAndQuery([void Function(OsmAndQueryBuilder)? updates]) =>
       (OsmAndQueryBuilder()..update(updates))._build();
 
-  _$OsmAndQuery._(
-      {this.id,
-      this.deviceid,
-      this.lat,
-      this.lon,
-      this.location,
-      this.timestamp,
-      this.speed,
-      this.bearing,
-      this.heading,
-      this.altitude,
-      this.accuracy,
-      this.batt,
-      this.charge,
-      this.valid})
-      : super._();
+  _$OsmAndQuery._({
+    this.id,
+    this.deviceid,
+    this.lat,
+    this.lon,
+    this.location,
+    this.timestamp,
+    this.speed,
+    this.bearing,
+    this.heading,
+    this.altitude,
+    this.accuracy,
+    this.batt,
+    this.charge,
+    this.valid,
+  }) : super._();
   @override
   OsmAndQuery rebuild(void Function(OsmAndQueryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -223,7 +223,8 @@ class OsmAndQueryBuilder implements Builder<OsmAndQuery, OsmAndQueryBuilder> {
   OsmAndQuery build() => _build();
 
   _$OsmAndQuery _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OsmAndQuery._(
           id: id,
           deviceid: deviceid,

@@ -19,13 +19,12 @@ IngestPolicySampledModeEnum _$ingestPolicySampledModeEnumValueOf(String name) {
 }
 
 final BuiltSet<IngestPolicySampledModeEnum>
-    _$ingestPolicySampledModeEnumValues =
-    BuiltSet<IngestPolicySampledModeEnum>(const <IngestPolicySampledModeEnum>[
-  _$ingestPolicySampledModeEnum_SAMPLED,
-]);
+_$ingestPolicySampledModeEnumValues = BuiltSet<IngestPolicySampledModeEnum>(
+  const <IngestPolicySampledModeEnum>[_$ingestPolicySampledModeEnum_SAMPLED],
+);
 
 Serializer<IngestPolicySampledModeEnum>
-    _$ingestPolicySampledModeEnumSerializer =
+_$ingestPolicySampledModeEnumSerializer =
     _$IngestPolicySampledModeEnumSerializer();
 
 class _$IngestPolicySampledModeEnumSerializer
@@ -43,16 +42,20 @@ class _$IngestPolicySampledModeEnumSerializer
   final String wireName = 'IngestPolicySampledModeEnum';
 
   @override
-  Object serialize(Serializers serializers, IngestPolicySampledModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IngestPolicySampledModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IngestPolicySampledModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestPolicySampledModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestPolicySampledModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestPolicySampled extends IngestPolicySampled {
@@ -69,22 +72,22 @@ class _$IngestPolicySampled extends IngestPolicySampled {
   @override
   final String? edgeMinInterval;
 
-  factory _$IngestPolicySampled(
-          [void Function(IngestPolicySampledBuilder)? updates]) =>
-      (IngestPolicySampledBuilder()..update(updates))._build();
+  factory _$IngestPolicySampled([
+    void Function(IngestPolicySampledBuilder)? updates,
+  ]) => (IngestPolicySampledBuilder()..update(updates))._build();
 
-  _$IngestPolicySampled._(
-      {required this.mode,
-      required this.minInterval,
-      this.keyframe,
-      this.minDeviationMeters,
-      this.thresholds,
-      this.edgeMinInterval})
-      : super._();
+  _$IngestPolicySampled._({
+    required this.mode,
+    required this.minInterval,
+    this.keyframe,
+    this.minDeviationMeters,
+    this.thresholds,
+    this.edgeMinInterval,
+  }) : super._();
   @override
   IngestPolicySampled rebuild(
-          void Function(IngestPolicySampledBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestPolicySampledBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestPolicySampledBuilder toBuilder() =>
@@ -190,12 +193,19 @@ class IngestPolicySampledBuilder
   IngestPolicySampled build() => _build();
 
   _$IngestPolicySampled _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestPolicySampled._(
           mode: BuiltValueNullFieldError.checkNotNull(
-              mode, r'IngestPolicySampled', 'mode'),
+            mode,
+            r'IngestPolicySampled',
+            'mode',
+          ),
           minInterval: BuiltValueNullFieldError.checkNotNull(
-              minInterval, r'IngestPolicySampled', 'minInterval'),
+            minInterval,
+            r'IngestPolicySampled',
+            'minInterval',
+          ),
           keyframe: keyframe,
           minDeviationMeters: minDeviationMeters,
           thresholds: thresholds,

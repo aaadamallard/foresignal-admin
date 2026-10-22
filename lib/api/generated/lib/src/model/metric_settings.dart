@@ -59,9 +59,11 @@ class _$MetricSettingsSerializer
     MetricSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -77,11 +79,14 @@ class _$MetricSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'projections':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(MetricProjection)]),
-          ) as BuiltList<MetricProjection>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MetricProjection),
+                    ]),
+                  )
+                  as BuiltList<MetricProjection>;
           result.projections.replace(valueDes);
           break;
         default:

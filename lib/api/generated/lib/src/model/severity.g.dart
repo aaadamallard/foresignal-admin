@@ -38,7 +38,7 @@ class _$SeverityMeta {
   BuiltSet<Severity> get values => _$values;
 }
 
-abstract class _$SeverityMixin {
+mixin _$SeverityMixin {
   // ignore: non_constant_identifier_names
   _$SeverityMeta get Severity => const _$SeverityMeta();
 }
@@ -63,15 +63,20 @@ class _$SeveritySerializer implements PrimitiveSerializer<Severity> {
   final String wireName = 'Severity';
 
   @override
-  Object serialize(Serializers serializers, Severity object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    Severity object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  Severity deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      Severity.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  Severity deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => Severity.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -35,9 +35,9 @@ abstract class ExternalSourceRegistration
 
   ExternalSourceRegistration._();
 
-  factory ExternalSourceRegistration(
-          [void updates(ExternalSourceRegistrationBuilder b)]) =
-      _$ExternalSourceRegistration;
+  factory ExternalSourceRegistration([
+    void updates(ExternalSourceRegistrationBuilder b),
+  ]) = _$ExternalSourceRegistration;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalSourceRegistrationBuilder b) => b;
@@ -52,7 +52,7 @@ class _$ExternalSourceRegistrationSerializer
   @override
   final Iterable<Type> types = const [
     ExternalSourceRegistration,
-    _$ExternalSourceRegistration
+    _$ExternalSourceRegistration,
   ];
 
   @override
@@ -99,9 +99,11 @@ class _$ExternalSourceRegistrationSerializer
     ExternalSourceRegistration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,34 +119,42 @@ class _$ExternalSourceRegistrationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'manifest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpManifest),
-          ) as EdpManifest?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpManifest),
+                  )
+                  as EdpManifest?;
           if (valueDes == null) continue;
           result.manifest.replace(valueDes);
           break;
         case r'manifestUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestUrl = valueDes;
           break;
         case r'approve':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.approve = valueDes;
           break;
         case r'allowPrivateNetwork':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.allowPrivateNetwork = valueDes;
           break;

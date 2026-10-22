@@ -23,14 +23,14 @@ class _$DigestAlerts extends DigestAlerts {
   factory _$DigestAlerts([void Function(DigestAlertsBuilder)? updates]) =>
       (DigestAlertsBuilder()..update(updates))._build();
 
-  _$DigestAlerts._(
-      {this.sinceAlertId,
-      this.untilAlertId,
-      this.bySeverity,
-      this.byStatus,
-      this.byRule,
-      this.items})
-      : super._();
+  _$DigestAlerts._({
+    this.sinceAlertId,
+    this.untilAlertId,
+    this.bySeverity,
+    this.byStatus,
+    this.byRule,
+    this.items,
+  }) : super._();
   @override
   DigestAlerts rebuild(void Function(DigestAlertsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -144,7 +144,8 @@ class DigestAlertsBuilder
   _$DigestAlerts _build() {
     _$DigestAlerts _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DigestAlerts._(
             sinceAlertId: sinceAlertId,
             untilAlertId: untilAlertId,
@@ -166,7 +167,10 @@ class DigestAlertsBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DigestAlerts', _$failedField, e.toString());
+          r'DigestAlerts',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

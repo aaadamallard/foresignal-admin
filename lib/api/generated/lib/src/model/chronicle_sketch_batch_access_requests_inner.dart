@@ -20,8 +20,10 @@ part 'chronicle_sketch_batch_access_requests_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleSketchBatchAccessRequestsInner
     implements
-        Built<ChronicleSketchBatchAccessRequestsInner,
-            ChronicleSketchBatchAccessRequestsInnerBuilder> {
+        Built<
+          ChronicleSketchBatchAccessRequestsInner,
+          ChronicleSketchBatchAccessRequestsInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'requestId')
   String get requestId;
@@ -46,9 +48,9 @@ abstract class ChronicleSketchBatchAccessRequestsInner
 
   ChronicleSketchBatchAccessRequestsInner._();
 
-  factory ChronicleSketchBatchAccessRequestsInner(
-          [void updates(ChronicleSketchBatchAccessRequestsInnerBuilder b)]) =
-      _$ChronicleSketchBatchAccessRequestsInner;
+  factory ChronicleSketchBatchAccessRequestsInner([
+    void updates(ChronicleSketchBatchAccessRequestsInnerBuilder b),
+  ]) = _$ChronicleSketchBatchAccessRequestsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSketchBatchAccessRequestsInnerBuilder b) => b;
@@ -63,7 +65,7 @@ class _$ChronicleSketchBatchAccessRequestsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSketchBatchAccessRequestsInner,
-    _$ChronicleSketchBatchAccessRequestsInner
+    _$ChronicleSketchBatchAccessRequestsInner,
   ];
 
   @override
@@ -118,9 +120,11 @@ class _$ChronicleSketchBatchAccessRequestsInnerSerializer
     ChronicleSketchBatchAccessRequestsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,47 +140,59 @@ class _$ChronicleSketchBatchAccessRequestsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'requestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.requestId = valueDes;
           break;
         case r'linkId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.linkId = valueDes;
           break;
         case r'sketchId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sketchId = valueDes;
           break;
         case r'requesterHandle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.requesterHandle = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'offerShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.offerShare = valueDes;
           break;

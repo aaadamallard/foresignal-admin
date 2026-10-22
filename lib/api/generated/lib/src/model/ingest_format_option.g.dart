@@ -40,13 +40,13 @@ IngestFormatOptionTypeEnum _$ingestFormatOptionTypeEnumValueOf(String name) {
 
 final BuiltSet<IngestFormatOptionTypeEnum> _$ingestFormatOptionTypeEnumValues =
     BuiltSet<IngestFormatOptionTypeEnum>(const <IngestFormatOptionTypeEnum>[
-  _$ingestFormatOptionTypeEnum_string,
-  _$ingestFormatOptionTypeEnum_integer,
-  _$ingestFormatOptionTypeEnum_number,
-  _$ingestFormatOptionTypeEnum_boolean,
-  _$ingestFormatOptionTypeEnum_object,
-  _$ingestFormatOptionTypeEnum_array,
-]);
+      _$ingestFormatOptionTypeEnum_string,
+      _$ingestFormatOptionTypeEnum_integer,
+      _$ingestFormatOptionTypeEnum_number,
+      _$ingestFormatOptionTypeEnum_boolean,
+      _$ingestFormatOptionTypeEnum_object,
+      _$ingestFormatOptionTypeEnum_array,
+    ]);
 
 Serializer<IngestFormatOptionTypeEnum> _$ingestFormatOptionTypeEnumSerializer =
     _$IngestFormatOptionTypeEnumSerializer();
@@ -76,16 +76,20 @@ class _$IngestFormatOptionTypeEnumSerializer
   final String wireName = 'IngestFormatOptionTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, IngestFormatOptionTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IngestFormatOptionTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IngestFormatOptionTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestFormatOptionTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestFormatOptionTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestFormatOption extends IngestFormatOption {
@@ -100,21 +104,21 @@ class _$IngestFormatOption extends IngestFormatOption {
   @override
   final String? description;
 
-  factory _$IngestFormatOption(
-          [void Function(IngestFormatOptionBuilder)? updates]) =>
-      (IngestFormatOptionBuilder()..update(updates))._build();
+  factory _$IngestFormatOption([
+    void Function(IngestFormatOptionBuilder)? updates,
+  ]) => (IngestFormatOptionBuilder()..update(updates))._build();
 
-  _$IngestFormatOption._(
-      {required this.name,
-      required this.type,
-      this.required_,
-      this.default_,
-      this.description})
-      : super._();
+  _$IngestFormatOption._({
+    required this.name,
+    required this.type,
+    this.required_,
+    this.default_,
+    this.description,
+  }) : super._();
   @override
   IngestFormatOption rebuild(
-          void Function(IngestFormatOptionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestFormatOptionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestFormatOptionBuilder toBuilder() =>
@@ -210,12 +214,19 @@ class IngestFormatOptionBuilder
   IngestFormatOption build() => _build();
 
   _$IngestFormatOption _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestFormatOption._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'IngestFormatOption', 'name'),
+            name,
+            r'IngestFormatOption',
+            'name',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'IngestFormatOption', 'type'),
+            type,
+            r'IngestFormatOption',
+            'type',
+          ),
           required_: required_,
           default_: default_,
           description: description,

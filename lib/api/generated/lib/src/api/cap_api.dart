@@ -62,11 +62,7 @@ class CAPApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -83,7 +79,10 @@ class CAPApi {
         ),
       if (minSeverity != null)
         r'minSeverity': encodeQueryParameter(
-            _serializers, minSeverity, const FullType(Severity)),
+          _serializers,
+          minSeverity,
+          const FullType(Severity),
+        ),
       if (tags != null)
         r'tags': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -92,11 +91,17 @@ class CAPApi {
           format: ListFormat.multi,
         ),
       if (placeId != null)
-        r'placeId':
-            encodeQueryParameter(_serializers, placeId, const FullType(String)),
+        r'placeId': encodeQueryParameter(
+          _serializers,
+          placeId,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -161,9 +166,15 @@ class CAPApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/cap/alerts/{alertId}.cap'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -172,11 +183,7 @@ class CAPApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -244,9 +251,15 @@ class CAPApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/cap/messages/{identifier}.cap'.replaceAll(
-        '{' r'identifier' '}',
-        encodeQueryParameter(_serializers, identifier, const FullType(String))
-            .toString());
+      '{'
+      r'identifier'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        identifier,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -255,11 +268,7 @@ class CAPApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },

@@ -16,8 +16,10 @@ part 'assessment_prompt_templates_inner.g.dart';
 @BuiltValue()
 abstract class AssessmentPromptTemplatesInner
     implements
-        Built<AssessmentPromptTemplatesInner,
-            AssessmentPromptTemplatesInnerBuilder> {
+        Built<
+          AssessmentPromptTemplatesInner,
+          AssessmentPromptTemplatesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -26,9 +28,9 @@ abstract class AssessmentPromptTemplatesInner
 
   AssessmentPromptTemplatesInner._();
 
-  factory AssessmentPromptTemplatesInner(
-          [void updates(AssessmentPromptTemplatesInnerBuilder b)]) =
-      _$AssessmentPromptTemplatesInner;
+  factory AssessmentPromptTemplatesInner([
+    void updates(AssessmentPromptTemplatesInnerBuilder b),
+  ]) = _$AssessmentPromptTemplatesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AssessmentPromptTemplatesInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$AssessmentPromptTemplatesInnerSerializer
   @override
   final Iterable<Type> types = const [
     AssessmentPromptTemplatesInner,
-    _$AssessmentPromptTemplatesInner
+    _$AssessmentPromptTemplatesInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$AssessmentPromptTemplatesInnerSerializer
     AssessmentPromptTemplatesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$AssessmentPromptTemplatesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         default:

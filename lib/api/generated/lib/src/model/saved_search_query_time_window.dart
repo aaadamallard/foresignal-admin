@@ -30,9 +30,9 @@ abstract class SavedSearchQueryTimeWindow
 
   SavedSearchQueryTimeWindow._();
 
-  factory SavedSearchQueryTimeWindow(
-          [void updates(SavedSearchQueryTimeWindowBuilder b)]) =
-      _$SavedSearchQueryTimeWindow;
+  factory SavedSearchQueryTimeWindow([
+    void updates(SavedSearchQueryTimeWindowBuilder b),
+  ]) = _$SavedSearchQueryTimeWindow;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SavedSearchQueryTimeWindowBuilder b) => b;
@@ -47,7 +47,7 @@ class _$SavedSearchQueryTimeWindowSerializer
   @override
   final Iterable<Type> types = const [
     SavedSearchQueryTimeWindow,
-    _$SavedSearchQueryTimeWindow
+    _$SavedSearchQueryTimeWindow,
   ];
 
   @override
@@ -87,9 +87,11 @@ class _$SavedSearchQueryTimeWindowSerializer
     SavedSearchQueryTimeWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,26 +107,32 @@ class _$SavedSearchQueryTimeWindowSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'start':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.start = valueDes;
           break;
         case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.end = valueDes;
           break;
         case r'relative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.relative = valueDes;
           break;

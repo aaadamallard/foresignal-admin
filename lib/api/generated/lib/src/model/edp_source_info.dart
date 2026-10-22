@@ -165,9 +165,11 @@ class _$EdpSourceInfoSerializer implements PrimitiveSerializer<EdpSourceInfo> {
     EdpSourceInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -183,86 +185,110 @@ class _$EdpSourceInfoSerializer implements PrimitiveSerializer<EdpSourceInfo> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.version = valueDes;
           break;
         case r'publisher':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpSourceInfoPublisher),
-          ) as EdpSourceInfoPublisher;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpSourceInfoPublisher),
+                  )
+                  as EdpSourceInfoPublisher;
           result.publisher.replace(valueDes);
           break;
         case r'homepage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.homepage = valueDes;
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpSourceInfoLicence),
-          ) as EdpSourceInfoLicence?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpSourceInfoLicence,
+                    ),
+                  )
+                  as EdpSourceInfoLicence?;
           if (valueDes == null) continue;
           result.licence.replace(valueDes);
           break;
         case r'terms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpSourceInfoTerms),
-          ) as EdpSourceInfoTerms?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpSourceInfoTerms),
+                  )
+                  as EdpSourceInfoTerms?;
           if (valueDes == null) continue;
           result.terms.replace(valueDes);
           break;
         case r'access':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpSourceInfoAccess),
-          ) as EdpSourceInfoAccess?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpSourceInfoAccess),
+                  )
+                  as EdpSourceInfoAccess?;
           if (valueDes == null) continue;
           result.access.replace(valueDes);
           break;
         case r'originator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpSourceInfoOriginator),
-          ) as EdpSourceInfoOriginator;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpSourceInfoOriginator),
+                  )
+                  as EdpSourceInfoOriginator;
           result.originator.replace(valueDes);
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;

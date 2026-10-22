@@ -20,8 +20,10 @@ part 'place_weather_digest_now_lightning.g.dart';
 @BuiltValue()
 abstract class PlaceWeatherDigestNowLightning
     implements
-        Built<PlaceWeatherDigestNowLightning,
-            PlaceWeatherDigestNowLightningBuilder> {
+        Built<
+          PlaceWeatherDigestNowLightning,
+          PlaceWeatherDigestNowLightningBuilder
+        > {
   @BuiltValueField(wireName: r'status')
   WeatherSectionStatus get status;
   // enum statusEnum {  ok,  stale,  no-coverage,  unavailable,  };
@@ -42,9 +44,9 @@ abstract class PlaceWeatherDigestNowLightning
 
   PlaceWeatherDigestNowLightning._();
 
-  factory PlaceWeatherDigestNowLightning(
-          [void updates(PlaceWeatherDigestNowLightningBuilder b)]) =
-      _$PlaceWeatherDigestNowLightning;
+  factory PlaceWeatherDigestNowLightning([
+    void updates(PlaceWeatherDigestNowLightningBuilder b),
+  ]) = _$PlaceWeatherDigestNowLightning;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestNowLightningBuilder b) => b;
@@ -59,7 +61,7 @@ class _$PlaceWeatherDigestNowLightningSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestNowLightning,
-    _$PlaceWeatherDigestNowLightning
+    _$PlaceWeatherDigestNowLightning,
   ];
 
   @override
@@ -111,9 +113,11 @@ class _$PlaceWeatherDigestNowLightningSerializer
     PlaceWeatherDigestNowLightning object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,41 +133,51 @@ class _$PlaceWeatherDigestNowLightningSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WeatherSectionStatus),
-          ) as WeatherSectionStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WeatherSectionStatus),
+                  )
+                  as WeatherSectionStatus;
           result.status = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'statusText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusText = valueDes;
           break;
         case r'nearestKm15m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.nearestKm15m = valueDes;
           break;
         case r'count15km15m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.count15km15m = valueDes;
           break;

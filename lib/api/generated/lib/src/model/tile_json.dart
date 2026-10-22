@@ -231,8 +231,9 @@ class _$TileJsonSerializer implements PrimitiveSerializer<TileJson> {
       yield r'vector_layers';
       yield serializers.serialize(
         object.vectorLayers,
-        specifiedType:
-            const FullType(BuiltList, [FullType(TileJsonVectorLayersInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(TileJsonVectorLayersInner),
+        ]),
       );
     }
     if (object.foresignalColonAggBelowZoom != null) {
@@ -355,9 +356,11 @@ class _$TileJsonSerializer implements PrimitiveSerializer<TileJson> {
     TileJson object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -373,219 +376,284 @@ class _$TileJsonSerializer implements PrimitiveSerializer<TileJson> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'tilejson':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TileJsonTilejsonEnum),
-          ) as TileJsonTilejsonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TileJsonTilejsonEnum),
+                  )
+                  as TileJsonTilejsonEnum;
           result.tilejson = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.version = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.attribution = valueDes;
           break;
         case r'scheme':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TileJsonSchemeEnum),
-          ) as TileJsonSchemeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TileJsonSchemeEnum),
+                  )
+                  as TileJsonSchemeEnum?;
           if (valueDes == null) continue;
           result.scheme = valueDes;
           break;
         case r'tiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.tiles.replace(valueDes);
           break;
         case r'minzoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minzoom = valueDes;
           break;
         case r'maxzoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxzoom = valueDes;
           break;
         case r'bounds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltList<num>?;
           if (valueDes == null) continue;
           result.bounds.replace(valueDes);
           break;
         case r'vector_layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(TileJsonVectorLayersInner)]),
-          ) as BuiltList<TileJsonVectorLayersInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(TileJsonVectorLayersInner),
+                    ]),
+                  )
+                  as BuiltList<TileJsonVectorLayersInner>?;
           if (valueDes == null) continue;
           result.vectorLayers.replace(valueDes);
           break;
         case r'foresignal:aggBelowZoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.foresignalColonAggBelowZoom = valueDes;
           break;
         case r'foresignal:properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.foresignalColonProperties.replace(valueDes);
           break;
         case r'tileSize':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TileJsonTileSizeEnum),
-          ) as TileJsonTileSizeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TileJsonTileSizeEnum,
+                    ),
+                  )
+                  as TileJsonTileSizeEnum?;
           if (valueDes == null) continue;
           result.tileSize = valueDes;
           break;
         case r'foresignal:tiles2x':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.foresignalColonTiles2x.replace(valueDes);
           break;
         case r'foresignal:frameKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.foresignalColonFrameKey = valueDes;
           break;
         case r'foresignal:style':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.foresignalColonStyle = valueDes;
           break;
         case r'foresignal:run':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.foresignalColonRun = valueDes;
           break;
         case r'foresignal:expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.foresignalColonExpiresAt = valueDes;
           break;
         case r'tms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TileJsonTmsEnum),
-          ) as TileJsonTmsEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TileJsonTmsEnum),
+                  )
+                  as TileJsonTmsEnum?;
           if (valueDes == null) continue;
           result.tms = valueDes;
           break;
         case r'encoding':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TileJsonEncodingEnum),
-          ) as TileJsonEncodingEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      TileJsonEncodingEnum,
+                    ),
+                  )
+                  as TileJsonEncodingEnum?;
           if (valueDes == null) continue;
           result.encoding = valueDes;
           break;
         case r'redFactor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.redFactor = valueDes;
           break;
         case r'greenFactor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.greenFactor = valueDes;
           break;
         case r'blueFactor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.blueFactor = valueDes;
           break;
         case r'baseShift':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseShift = valueDes;
           break;
         case r'units':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.units = valueDes;
           break;
         case r'nodata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.nodata = valueDes;
           break;

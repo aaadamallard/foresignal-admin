@@ -39,9 +39,9 @@ abstract class GlanceAlertsLatestInner
 
   GlanceAlertsLatestInner._();
 
-  factory GlanceAlertsLatestInner(
-          [void updates(GlanceAlertsLatestInnerBuilder b)]) =
-      _$GlanceAlertsLatestInner;
+  factory GlanceAlertsLatestInner([
+    void updates(GlanceAlertsLatestInnerBuilder b),
+  ]) = _$GlanceAlertsLatestInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GlanceAlertsLatestInnerBuilder b) => b;
@@ -56,7 +56,7 @@ class _$GlanceAlertsLatestInnerSerializer
   @override
   final Iterable<Type> types = const [
     GlanceAlertsLatestInner,
-    _$GlanceAlertsLatestInner
+    _$GlanceAlertsLatestInner,
   ];
 
   @override
@@ -68,10 +68,7 @@ class _$GlanceAlertsLatestInnerSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.id, specifiedType: const FullType(int));
     yield r'severity';
     yield serializers.serialize(
       object.severity,
@@ -104,9 +101,11 @@ class _$GlanceAlertsLatestInnerSerializer
     GlanceAlertsLatestInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -122,39 +121,48 @@ class _$GlanceAlertsLatestInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.id = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(GlanceAlertsLatestInnerSeverityEnum),
-          ) as GlanceAlertsLatestInnerSeverityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      GlanceAlertsLatestInnerSeverityEnum,
+                    ),
+                  )
+                  as GlanceAlertsLatestInnerSeverityEnum;
           result.severity = valueDes;
           break;
         case r'shortTitle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.shortTitle = valueDes;
           break;
         case r'firedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.firedAt = valueDes;
           break;
         case r'near':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.near = valueDes;
           break;

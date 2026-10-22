@@ -25,15 +25,15 @@ class _$SocialLeadTimes extends SocialLeadTimes {
   factory _$SocialLeadTimes([void Function(SocialLeadTimesBuilder)? updates]) =>
       (SocialLeadTimesBuilder()..update(updates))._build();
 
-  _$SocialLeadTimes._(
-      {required this.socialFirst,
-      this.physicalFirst,
-      this.newsFirst,
-      this.officialFirst,
-      this.leadOverPhysicalSeconds,
-      this.leadOverNewsSeconds,
-      this.leadOverOfficialSeconds})
-      : super._();
+  _$SocialLeadTimes._({
+    required this.socialFirst,
+    this.physicalFirst,
+    this.newsFirst,
+    this.officialFirst,
+    this.leadOverPhysicalSeconds,
+    this.leadOverNewsSeconds,
+    this.leadOverOfficialSeconds,
+  }) : super._();
   @override
   SocialLeadTimes rebuild(void Function(SocialLeadTimesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -152,10 +152,14 @@ class SocialLeadTimesBuilder
   SocialLeadTimes build() => _build();
 
   _$SocialLeadTimes _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialLeadTimes._(
           socialFirst: BuiltValueNullFieldError.checkNotNull(
-              socialFirst, r'SocialLeadTimes', 'socialFirst'),
+            socialFirst,
+            r'SocialLeadTimes',
+            'socialFirst',
+          ),
           physicalFirst: physicalFirst,
           newsFirst: newsFirst,
           officialFirst: officialFirst,

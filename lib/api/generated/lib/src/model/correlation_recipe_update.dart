@@ -32,9 +32,9 @@ abstract class CorrelationRecipeUpdate
 
   CorrelationRecipeUpdate._();
 
-  factory CorrelationRecipeUpdate(
-          [void updates(CorrelationRecipeUpdateBuilder b)]) =
-      _$CorrelationRecipeUpdate;
+  factory CorrelationRecipeUpdate([
+    void updates(CorrelationRecipeUpdateBuilder b),
+  ]) = _$CorrelationRecipeUpdate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeUpdateBuilder b) => b;
@@ -49,7 +49,7 @@ class _$CorrelationRecipeUpdateSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeUpdate,
-    _$CorrelationRecipeUpdate
+    _$CorrelationRecipeUpdate,
   ];
 
   @override
@@ -71,8 +71,10 @@ class _$CorrelationRecipeUpdateSerializer
       yield r'params';
       yield serializers.serialize(
         object.params,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.definition != null) {
@@ -90,9 +92,11 @@ class _$CorrelationRecipeUpdateSerializer
     CorrelationRecipeUpdate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,27 +112,37 @@ class _$CorrelationRecipeUpdateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.params.replace(valueDes);
           break;
         case r'definition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CorrelationRecipeDefinition),
-          ) as CorrelationRecipeDefinition?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CorrelationRecipeDefinition,
+                    ),
+                  )
+                  as CorrelationRecipeDefinition?;
           if (valueDes == null) continue;
           result.definition.replace(valueDes);
           break;

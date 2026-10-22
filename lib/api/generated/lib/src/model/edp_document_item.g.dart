@@ -20,25 +20,26 @@ EdpDocumentItemTypeEnum _$edpDocumentItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpDocumentItemTypeEnum> _$edpDocumentItemTypeEnumValues =
     BuiltSet<EdpDocumentItemTypeEnum>(const <EdpDocumentItemTypeEnum>[
-  _$edpDocumentItemTypeEnum_document,
-]);
+      _$edpDocumentItemTypeEnum_document,
+    ]);
 
 const EdpDocumentItemDocumentTypeEnum
-    _$edpDocumentItemDocumentTypeEnum_socialPost =
+_$edpDocumentItemDocumentTypeEnum_socialPost =
     const EdpDocumentItemDocumentTypeEnum._('socialPost');
 const EdpDocumentItemDocumentTypeEnum
-    _$edpDocumentItemDocumentTypeEnum_article =
+_$edpDocumentItemDocumentTypeEnum_article =
     const EdpDocumentItemDocumentTypeEnum._('article');
 const EdpDocumentItemDocumentTypeEnum _$edpDocumentItemDocumentTypeEnum_report =
     const EdpDocumentItemDocumentTypeEnum._('report');
 const EdpDocumentItemDocumentTypeEnum
-    _$edpDocumentItemDocumentTypeEnum_transcript =
+_$edpDocumentItemDocumentTypeEnum_transcript =
     const EdpDocumentItemDocumentTypeEnum._('transcript');
 const EdpDocumentItemDocumentTypeEnum _$edpDocumentItemDocumentTypeEnum_note =
     const EdpDocumentItemDocumentTypeEnum._('note');
 
 EdpDocumentItemDocumentTypeEnum _$edpDocumentItemDocumentTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'socialPost':
       return _$edpDocumentItemDocumentTypeEnum_socialPost;
@@ -56,19 +57,21 @@ EdpDocumentItemDocumentTypeEnum _$edpDocumentItemDocumentTypeEnumValueOf(
 }
 
 final BuiltSet<EdpDocumentItemDocumentTypeEnum>
-    _$edpDocumentItemDocumentTypeEnumValues = BuiltSet<
-        EdpDocumentItemDocumentTypeEnum>(const <EdpDocumentItemDocumentTypeEnum>[
-  _$edpDocumentItemDocumentTypeEnum_socialPost,
-  _$edpDocumentItemDocumentTypeEnum_article,
-  _$edpDocumentItemDocumentTypeEnum_report,
-  _$edpDocumentItemDocumentTypeEnum_transcript,
-  _$edpDocumentItemDocumentTypeEnum_note,
-]);
+_$edpDocumentItemDocumentTypeEnumValues =
+    BuiltSet<EdpDocumentItemDocumentTypeEnum>(
+      const <EdpDocumentItemDocumentTypeEnum>[
+        _$edpDocumentItemDocumentTypeEnum_socialPost,
+        _$edpDocumentItemDocumentTypeEnum_article,
+        _$edpDocumentItemDocumentTypeEnum_report,
+        _$edpDocumentItemDocumentTypeEnum_transcript,
+        _$edpDocumentItemDocumentTypeEnum_note,
+      ],
+    );
 
 Serializer<EdpDocumentItemTypeEnum> _$edpDocumentItemTypeEnumSerializer =
     _$EdpDocumentItemTypeEnumSerializer();
 Serializer<EdpDocumentItemDocumentTypeEnum>
-    _$edpDocumentItemDocumentTypeEnumSerializer =
+_$edpDocumentItemDocumentTypeEnumSerializer =
     _$EdpDocumentItemDocumentTypeEnumSerializer();
 
 class _$EdpDocumentItemTypeEnumSerializer
@@ -86,16 +89,20 @@ class _$EdpDocumentItemTypeEnumSerializer
   final String wireName = 'EdpDocumentItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpDocumentItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpDocumentItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpDocumentItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpDocumentItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpDocumentItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpDocumentItemDocumentTypeEnumSerializer
@@ -122,16 +129,19 @@ class _$EdpDocumentItemDocumentTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EdpDocumentItemDocumentTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EdpDocumentItemDocumentTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpDocumentItemDocumentTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpDocumentItemDocumentTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpDocumentItemDocumentTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpDocumentItem extends EdpDocumentItem {
@@ -173,25 +183,25 @@ class _$EdpDocumentItem extends EdpDocumentItem {
   factory _$EdpDocumentItem([void Function(EdpDocumentItemBuilder)? updates]) =>
       (EdpDocumentItemBuilder()..update(updates))._build();
 
-  _$EdpDocumentItem._(
-      {required this.stream,
-      required this.type,
-      required this.id,
-      this.observedAt,
-      this.properties,
-      required this.documentType,
-      required this.text,
-      this.title,
-      this.url,
-      this.author,
-      this.language,
-      this.publishedAt,
-      this.about,
-      this.media,
-      this.geometry,
-      this.engagement,
-      this.origin})
-      : super._();
+  _$EdpDocumentItem._({
+    required this.stream,
+    required this.type,
+    required this.id,
+    this.observedAt,
+    this.properties,
+    required this.documentType,
+    required this.text,
+    this.title,
+    this.url,
+    this.author,
+    this.language,
+    this.publishedAt,
+    this.about,
+    this.media,
+    this.geometry,
+    this.engagement,
+    this.origin,
+  }) : super._();
   @override
   EdpDocumentItem rebuild(void Function(EdpDocumentItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -395,20 +405,36 @@ class EdpDocumentItemBuilder
   _$EdpDocumentItem _build() {
     _$EdpDocumentItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpDocumentItem._(
             stream: BuiltValueNullFieldError.checkNotNull(
-                stream, r'EdpDocumentItem', 'stream'),
+              stream,
+              r'EdpDocumentItem',
+              'stream',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'EdpDocumentItem', 'type'),
+              type,
+              r'EdpDocumentItem',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpDocumentItem', 'id'),
+              id,
+              r'EdpDocumentItem',
+              'id',
+            ),
             observedAt: observedAt,
             properties: _properties?.build(),
             documentType: BuiltValueNullFieldError.checkNotNull(
-                documentType, r'EdpDocumentItem', 'documentType'),
+              documentType,
+              r'EdpDocumentItem',
+              'documentType',
+            ),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'EdpDocumentItem', 'text'),
+              text,
+              r'EdpDocumentItem',
+              'text',
+            ),
             title: title,
             url: url,
             author: _author?.build(),
@@ -441,7 +467,10 @@ class EdpDocumentItemBuilder
         _origin?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpDocumentItem', _$failedField, e.toString());
+          r'EdpDocumentItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

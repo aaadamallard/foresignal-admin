@@ -11,10 +11,10 @@ const SituationEventEventEnum _$situationEventEventEnum_situationPeriodCreated =
 const SituationEventEventEnum _$situationEventEventEnum_situationPeriodUpdated =
     const SituationEventEventEnum._('situationPeriodUpdated');
 const SituationEventEventEnum
-    _$situationEventEventEnum_situationPeriodActivated =
+_$situationEventEventEnum_situationPeriodActivated =
     const SituationEventEventEnum._('situationPeriodActivated');
 const SituationEventEventEnum
-    _$situationEventEventEnum_situationPeriodEscalated =
+_$situationEventEventEnum_situationPeriodEscalated =
     const SituationEventEventEnum._('situationPeriodEscalated');
 const SituationEventEventEnum _$situationEventEventEnum_situationPeriodDormant =
     const SituationEventEventEnum._('situationPeriodDormant');
@@ -46,14 +46,14 @@ SituationEventEventEnum _$situationEventEventEnumValueOf(String name) {
 
 final BuiltSet<SituationEventEventEnum> _$situationEventEventEnumValues =
     BuiltSet<SituationEventEventEnum>(const <SituationEventEventEnum>[
-  _$situationEventEventEnum_situationPeriodCreated,
-  _$situationEventEventEnum_situationPeriodUpdated,
-  _$situationEventEventEnum_situationPeriodActivated,
-  _$situationEventEventEnum_situationPeriodEscalated,
-  _$situationEventEventEnum_situationPeriodDormant,
-  _$situationEventEventEnum_situationPeriodClosed,
-  _$situationEventEventEnum_situationPeriodMerged,
-]);
+      _$situationEventEventEnum_situationPeriodCreated,
+      _$situationEventEventEnum_situationPeriodUpdated,
+      _$situationEventEventEnum_situationPeriodActivated,
+      _$situationEventEventEnum_situationPeriodEscalated,
+      _$situationEventEventEnum_situationPeriodDormant,
+      _$situationEventEventEnum_situationPeriodClosed,
+      _$situationEventEventEnum_situationPeriodMerged,
+    ]);
 
 Serializer<SituationEventEventEnum> _$situationEventEventEnumSerializer =
     _$SituationEventEventEnumSerializer();
@@ -85,16 +85,20 @@ class _$SituationEventEventEnumSerializer
   final String wireName = 'SituationEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, SituationEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationEvent extends SituationEvent {
@@ -116,15 +120,15 @@ class _$SituationEvent extends SituationEvent {
   factory _$SituationEvent([void Function(SituationEventBuilder)? updates]) =>
       (SituationEventBuilder()..update(updates))._build();
 
-  _$SituationEvent._(
-      {required this.event,
-      required this.situation,
-      required this.version,
-      this.previousStatus,
-      this.previousSeverity,
-      this.mergedInto,
-      required this.at})
-      : super._();
+  _$SituationEvent._({
+    required this.event,
+    required this.situation,
+    required this.version,
+    this.previousStatus,
+    this.previousSeverity,
+    this.mergedInto,
+    required this.at,
+  }) : super._();
   @override
   SituationEvent rebuild(void Function(SituationEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -244,18 +248,28 @@ class SituationEventBuilder
   _$SituationEvent _build() {
     _$SituationEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'SituationEvent', 'event'),
+              event,
+              r'SituationEvent',
+              'event',
+            ),
             situation: situation.build(),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'SituationEvent', 'version'),
+              version,
+              r'SituationEvent',
+              'version',
+            ),
             previousStatus: previousStatus,
             previousSeverity: previousSeverity,
             mergedInto: mergedInto,
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'SituationEvent', 'at'),
+              at,
+              r'SituationEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -264,7 +278,10 @@ class SituationEventBuilder
         situation.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationEvent', _$failedField, e.toString());
+          r'SituationEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -13,16 +13,16 @@ class _$StatsSeriesSeriesInnerPointsInner
   @override
   final int value;
 
-  factory _$StatsSeriesSeriesInnerPointsInner(
-          [void Function(StatsSeriesSeriesInnerPointsInnerBuilder)? updates]) =>
-      (StatsSeriesSeriesInnerPointsInnerBuilder()..update(updates))._build();
+  factory _$StatsSeriesSeriesInnerPointsInner([
+    void Function(StatsSeriesSeriesInnerPointsInnerBuilder)? updates,
+  ]) => (StatsSeriesSeriesInnerPointsInnerBuilder()..update(updates))._build();
 
   _$StatsSeriesSeriesInnerPointsInner._({required this.t, required this.value})
-      : super._();
+    : super._();
   @override
   StatsSeriesSeriesInnerPointsInner rebuild(
-          void Function(StatsSeriesSeriesInnerPointsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsSeriesSeriesInnerPointsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsSeriesSeriesInnerPointsInnerBuilder toBuilder() =>
@@ -56,8 +56,10 @@ class _$StatsSeriesSeriesInnerPointsInner
 
 class StatsSeriesSeriesInnerPointsInnerBuilder
     implements
-        Builder<StatsSeriesSeriesInnerPointsInner,
-            StatsSeriesSeriesInnerPointsInnerBuilder> {
+        Builder<
+          StatsSeriesSeriesInnerPointsInner,
+          StatsSeriesSeriesInnerPointsInnerBuilder
+        > {
   _$StatsSeriesSeriesInnerPointsInner? _$v;
 
   DateTime? _t;
@@ -89,7 +91,8 @@ class StatsSeriesSeriesInnerPointsInnerBuilder
 
   @override
   void update(
-      void Function(StatsSeriesSeriesInnerPointsInnerBuilder)? updates) {
+    void Function(StatsSeriesSeriesInnerPointsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -97,12 +100,19 @@ class StatsSeriesSeriesInnerPointsInnerBuilder
   StatsSeriesSeriesInnerPointsInner build() => _build();
 
   _$StatsSeriesSeriesInnerPointsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StatsSeriesSeriesInnerPointsInner._(
           t: BuiltValueNullFieldError.checkNotNull(
-              t, r'StatsSeriesSeriesInnerPointsInner', 't'),
+            t,
+            r'StatsSeriesSeriesInnerPointsInner',
+            't',
+          ),
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'StatsSeriesSeriesInnerPointsInner', 'value'),
+            value,
+            r'StatsSeriesSeriesInnerPointsInner',
+            'value',
+          ),
         );
     replace(_$result);
     return _$result;

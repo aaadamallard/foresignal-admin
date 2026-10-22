@@ -24,8 +24,10 @@ part 'dossier_sections_impacts_items_inner.g.dart';
 @BuiltValue()
 abstract class DossierSectionsImpactsItemsInner
     implements
-        Built<DossierSectionsImpactsItemsInner,
-            DossierSectionsImpactsItemsInnerBuilder> {
+        Built<
+          DossierSectionsImpactsItemsInner,
+          DossierSectionsImpactsItemsInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'findingId')
   String get findingId;
@@ -54,9 +56,9 @@ abstract class DossierSectionsImpactsItemsInner
 
   DossierSectionsImpactsItemsInner._();
 
-  factory DossierSectionsImpactsItemsInner(
-          [void updates(DossierSectionsImpactsItemsInnerBuilder b)]) =
-      _$DossierSectionsImpactsItemsInner;
+  factory DossierSectionsImpactsItemsInner([
+    void updates(DossierSectionsImpactsItemsInnerBuilder b),
+  ]) = _$DossierSectionsImpactsItemsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsImpactsItemsInnerBuilder b) => b;
@@ -71,7 +73,7 @@ class _$DossierSectionsImpactsItemsInnerSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsImpactsItemsInner,
-    _$DossierSectionsImpactsItemsInner
+    _$DossierSectionsImpactsItemsInner,
   ];
 
   @override
@@ -138,9 +140,11 @@ class _$DossierSectionsImpactsItemsInnerSerializer
     DossierSectionsImpactsItemsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,62 +160,77 @@ class _$DossierSectionsImpactsItemsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'findingId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.findingId = valueDes;
           break;
         case r'impactFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.impactFamily = valueDes;
           break;
         case r'admin1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.admin1 = valueDes;
           break;
         case r'pImpact':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pImpact = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ImpactRateInterval),
-          ) as ImpactRateInterval?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ImpactRateInterval),
+                  )
+                  as ImpactRateInterval?;
           if (valueDes == null) continue;
           result.interval.replace(valueDes);
           break;
         case r'dependencyPaths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.dependencyPaths = valueDes;
           break;
         case r'labels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.labels.replace(valueDes);
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.questionId = valueDes;
           break;

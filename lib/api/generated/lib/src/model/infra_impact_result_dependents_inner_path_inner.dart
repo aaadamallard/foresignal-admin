@@ -19,8 +19,10 @@ part 'infra_impact_result_dependents_inner_path_inner.g.dart';
 @BuiltValue()
 abstract class InfraImpactResultDependentsInnerPathInner
     implements
-        Built<InfraImpactResultDependentsInnerPathInner,
-            InfraImpactResultDependentsInnerPathInnerBuilder> {
+        Built<
+          InfraImpactResultDependentsInnerPathInner,
+          InfraImpactResultDependentsInnerPathInnerBuilder
+        > {
   @BuiltValueField(wireName: r'edgeId')
   int get edgeId;
 
@@ -38,9 +40,9 @@ abstract class InfraImpactResultDependentsInnerPathInner
 
   InfraImpactResultDependentsInnerPathInner._();
 
-  factory InfraImpactResultDependentsInnerPathInner(
-          [void updates(InfraImpactResultDependentsInnerPathInnerBuilder b)]) =
-      _$InfraImpactResultDependentsInnerPathInner;
+  factory InfraImpactResultDependentsInnerPathInner([
+    void updates(InfraImpactResultDependentsInnerPathInnerBuilder b),
+  ]) = _$InfraImpactResultDependentsInnerPathInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InfraImpactResultDependentsInnerPathInnerBuilder b) =>
@@ -56,7 +58,7 @@ class _$InfraImpactResultDependentsInnerPathInnerSerializer
   @override
   final Iterable<Type> types = const [
     InfraImpactResultDependentsInnerPathInner,
-    _$InfraImpactResultDependentsInnerPathInner
+    _$InfraImpactResultDependentsInnerPathInner,
   ];
 
   @override
@@ -75,20 +77,23 @@ class _$InfraImpactResultDependentsInnerPathInnerSerializer
     yield r'relation';
     yield serializers.serialize(
       object.relation,
-      specifiedType:
-          const FullType(InfraImpactResultDependentsInnerPathInnerRelationEnum),
+      specifiedType: const FullType(
+        InfraImpactResultDependentsInnerPathInnerRelationEnum,
+      ),
     );
     yield r'method';
     yield serializers.serialize(
       object.method,
-      specifiedType:
-          const FullType(InfraImpactResultDependentsInnerPathInnerMethodEnum),
+      specifiedType: const FullType(
+        InfraImpactResultDependentsInnerPathInnerMethodEnum,
+      ),
     );
     yield r'label';
     yield serializers.serialize(
       object.label,
-      specifiedType:
-          const FullType(InfraImpactResultDependentsInnerPathInnerLabelEnum),
+      specifiedType: const FullType(
+        InfraImpactResultDependentsInnerPathInnerLabelEnum,
+      ),
     );
   }
 
@@ -98,9 +103,11 @@ class _$InfraImpactResultDependentsInnerPathInnerSerializer
     InfraImpactResultDependentsInnerPathInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,34 +123,42 @@ class _$InfraImpactResultDependentsInnerPathInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'edgeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.edgeId = valueDes;
           break;
         case r'relation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                InfraImpactResultDependentsInnerPathInnerRelationEnum),
-          ) as InfraImpactResultDependentsInnerPathInnerRelationEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      InfraImpactResultDependentsInnerPathInnerRelationEnum,
+                    ),
+                  )
+                  as InfraImpactResultDependentsInnerPathInnerRelationEnum;
           result.relation = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                InfraImpactResultDependentsInnerPathInnerMethodEnum),
-          ) as InfraImpactResultDependentsInnerPathInnerMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      InfraImpactResultDependentsInnerPathInnerMethodEnum,
+                    ),
+                  )
+                  as InfraImpactResultDependentsInnerPathInnerMethodEnum;
           result.method = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                InfraImpactResultDependentsInnerPathInnerLabelEnum),
-          ) as InfraImpactResultDependentsInnerPathInnerLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      InfraImpactResultDependentsInnerPathInnerLabelEnum,
+                    ),
+                  )
+                  as InfraImpactResultDependentsInnerPathInnerLabelEnum;
           result.label = valueDes;
           break;
         default:
@@ -178,18 +193,18 @@ class _$InfraImpactResultDependentsInnerPathInnerSerializer
 class InfraImpactResultDependentsInnerPathInnerRelationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'supplies_power')
   static const InfraImpactResultDependentsInnerPathInnerRelationEnum
-      suppliesPower =
+  suppliesPower =
       _$infraImpactResultDependentsInnerPathInnerRelationEnum_suppliesPower;
   @BuiltValueEnumConst(wireName: r'transmits_power')
   static const InfraImpactResultDependentsInnerPathInnerRelationEnum
-      transmitsPower =
+  transmitsPower =
       _$infraImpactResultDependentsInnerPathInnerRelationEnum_transmitsPower;
   @BuiltValueEnumConst(wireName: r'lands_at')
   static const InfraImpactResultDependentsInnerPathInnerRelationEnum landsAt =
       _$infraImpactResultDependentsInnerPathInnerRelationEnum_landsAt;
   @BuiltValueEnumConst(wireName: r'interconnects')
   static const InfraImpactResultDependentsInnerPathInnerRelationEnum
-      interconnects =
+  interconnects =
       _$infraImpactResultDependentsInnerPathInnerRelationEnum_interconnects;
   @BuiltValueEnumConst(wireName: r'hosts')
   static const InfraImpactResultDependentsInnerPathInnerRelationEnum hosts =
@@ -199,18 +214,17 @@ class InfraImpactResultDependentsInnerPathInnerRelationEnum extends EnumClass {
       _$infraImpactResultDependentsInnerPathInnerRelationEnum_serves;
 
   static Serializer<InfraImpactResultDependentsInnerPathInnerRelationEnum>
-      get serializer =>
-          _$infraImpactResultDependentsInnerPathInnerRelationEnumSerializer;
+  get serializer =>
+      _$infraImpactResultDependentsInnerPathInnerRelationEnumSerializer;
 
   const InfraImpactResultDependentsInnerPathInnerRelationEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<InfraImpactResultDependentsInnerPathInnerRelationEnum>
-      get values =>
-          _$infraImpactResultDependentsInnerPathInnerRelationEnumValues;
+  get values => _$infraImpactResultDependentsInnerPathInnerRelationEnumValues;
   static InfraImpactResultDependentsInnerPathInnerRelationEnum valueOf(
-          String name) =>
-      _$infraImpactResultDependentsInnerPathInnerRelationEnumValueOf(name);
+    String name,
+  ) => _$infraImpactResultDependentsInnerPathInnerRelationEnumValueOf(name);
 }
 
 class InfraImpactResultDependentsInnerPathInnerMethodEnum extends EnumClass {
@@ -228,17 +242,17 @@ class InfraImpactResultDependentsInnerPathInnerMethodEnum extends EnumClass {
       _$infraImpactResultDependentsInnerPathInnerMethodEnum_inferred;
 
   static Serializer<InfraImpactResultDependentsInnerPathInnerMethodEnum>
-      get serializer =>
-          _$infraImpactResultDependentsInnerPathInnerMethodEnumSerializer;
+  get serializer =>
+      _$infraImpactResultDependentsInnerPathInnerMethodEnumSerializer;
 
   const InfraImpactResultDependentsInnerPathInnerMethodEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<InfraImpactResultDependentsInnerPathInnerMethodEnum>
-      get values => _$infraImpactResultDependentsInnerPathInnerMethodEnumValues;
+  get values => _$infraImpactResultDependentsInnerPathInnerMethodEnumValues;
   static InfraImpactResultDependentsInnerPathInnerMethodEnum valueOf(
-          String name) =>
-      _$infraImpactResultDependentsInnerPathInnerMethodEnumValueOf(name);
+    String name,
+  ) => _$infraImpactResultDependentsInnerPathInnerMethodEnumValueOf(name);
 }
 
 class InfraImpactResultDependentsInnerPathInnerLabelEnum extends EnumClass {
@@ -256,15 +270,15 @@ class InfraImpactResultDependentsInnerPathInnerLabelEnum extends EnumClass {
       _$infraImpactResultDependentsInnerPathInnerLabelEnum_speculative;
 
   static Serializer<InfraImpactResultDependentsInnerPathInnerLabelEnum>
-      get serializer =>
-          _$infraImpactResultDependentsInnerPathInnerLabelEnumSerializer;
+  get serializer =>
+      _$infraImpactResultDependentsInnerPathInnerLabelEnumSerializer;
 
   const InfraImpactResultDependentsInnerPathInnerLabelEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<InfraImpactResultDependentsInnerPathInnerLabelEnum>
-      get values => _$infraImpactResultDependentsInnerPathInnerLabelEnumValues;
+  get values => _$infraImpactResultDependentsInnerPathInnerLabelEnumValues;
   static InfraImpactResultDependentsInnerPathInnerLabelEnum valueOf(
-          String name) =>
-      _$infraImpactResultDependentsInnerPathInnerLabelEnumValueOf(name);
+    String name,
+  ) => _$infraImpactResultDependentsInnerPathInnerLabelEnumValueOf(name);
 }

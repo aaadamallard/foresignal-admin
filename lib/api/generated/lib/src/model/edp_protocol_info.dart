@@ -91,8 +91,9 @@ class _$EdpProtocolInfoSerializer
     yield r'modes';
     yield serializers.serialize(
       object.modes,
-      specifiedType:
-          const FullType(BuiltList, [FullType(EdpProtocolInfoModesEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(EdpProtocolInfoModesEnum),
+      ]),
     );
     if (object.schemas != null) {
       yield r'schemas';
@@ -123,9 +124,11 @@ class _$EdpProtocolInfoSerializer
     EdpProtocolInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -141,58 +144,77 @@ class _$EdpProtocolInfoSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'protocol':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.protocol = valueDes;
           break;
         case r'supported':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.supported.replace(valueDes);
           break;
         case r'itemTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.itemTypes.replace(valueDes);
           break;
         case r'modes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(EdpProtocolInfoModesEnum)]),
-          ) as BuiltList<EdpProtocolInfoModesEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EdpProtocolInfoModesEnum),
+                    ]),
+                  )
+                  as BuiltList<EdpProtocolInfoModesEnum>;
           result.modes.replace(valueDes);
           break;
         case r'schemas':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.schemas.replace(valueDes);
           break;
         case r'documentation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.documentation = valueDes;
           break;
         case r'maxMinor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxMinor = valueDes;
           break;

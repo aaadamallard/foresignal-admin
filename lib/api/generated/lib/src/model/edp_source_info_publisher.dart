@@ -28,9 +28,9 @@ abstract class EdpSourceInfoPublisher
 
   EdpSourceInfoPublisher._();
 
-  factory EdpSourceInfoPublisher(
-          [void updates(EdpSourceInfoPublisherBuilder b)]) =
-      _$EdpSourceInfoPublisher;
+  factory EdpSourceInfoPublisher([
+    void updates(EdpSourceInfoPublisherBuilder b),
+  ]) = _$EdpSourceInfoPublisher;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EdpSourceInfoPublisherBuilder b) => b;
@@ -45,7 +45,7 @@ class _$EdpSourceInfoPublisherSerializer
   @override
   final Iterable<Type> types = const [
     EdpSourceInfoPublisher,
-    _$EdpSourceInfoPublisher
+    _$EdpSourceInfoPublisher,
   ];
 
   @override
@@ -83,9 +83,11 @@ class _$EdpSourceInfoPublisherSerializer
     EdpSourceInfoPublisher object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,25 +103,31 @@ class _$EdpSourceInfoPublisherSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.url = valueDes;
           break;
         case r'contact':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.contact = valueDes;
           break;

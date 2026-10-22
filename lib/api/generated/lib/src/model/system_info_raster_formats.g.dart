@@ -10,15 +10,15 @@ class _$SystemInfoRasterFormats extends SystemInfoRasterFormats {
   @override
   final SystemInfoRasterFormatsWebp? webp;
 
-  factory _$SystemInfoRasterFormats(
-          [void Function(SystemInfoRasterFormatsBuilder)? updates]) =>
-      (SystemInfoRasterFormatsBuilder()..update(updates))._build();
+  factory _$SystemInfoRasterFormats([
+    void Function(SystemInfoRasterFormatsBuilder)? updates,
+  ]) => (SystemInfoRasterFormatsBuilder()..update(updates))._build();
 
   _$SystemInfoRasterFormats._({this.webp}) : super._();
   @override
   SystemInfoRasterFormats rebuild(
-          void Function(SystemInfoRasterFormatsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoRasterFormatsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoRasterFormatsBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$SystemInfoRasterFormats extends SystemInfoRasterFormats {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'SystemInfoRasterFormats')
-          ..add('webp', webp))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'SystemInfoRasterFormats',
+    )..add('webp', webp)).toString();
   }
 }
 
@@ -85,10 +85,7 @@ class SystemInfoRasterFormatsBuilder
   _$SystemInfoRasterFormats _build() {
     _$SystemInfoRasterFormats _$result;
     try {
-      _$result = _$v ??
-          _$SystemInfoRasterFormats._(
-            webp: _webp?.build(),
-          );
+      _$result = _$v ?? _$SystemInfoRasterFormats._(webp: _webp?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -96,7 +93,10 @@ class SystemInfoRasterFormatsBuilder
         _webp?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SystemInfoRasterFormats', _$failedField, e.toString());
+          r'SystemInfoRasterFormats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

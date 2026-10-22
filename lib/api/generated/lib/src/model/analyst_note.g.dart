@@ -28,10 +28,10 @@ AnalystNotePriorityEnum _$analystNotePriorityEnumValueOf(String name) {
 
 final BuiltSet<AnalystNotePriorityEnum> _$analystNotePriorityEnumValues =
     BuiltSet<AnalystNotePriorityEnum>(const <AnalystNotePriorityEnum>[
-  _$analystNotePriorityEnum_low,
-  _$analystNotePriorityEnum_normal,
-  _$analystNotePriorityEnum_high,
-]);
+      _$analystNotePriorityEnum_low,
+      _$analystNotePriorityEnum_normal,
+      _$analystNotePriorityEnum_high,
+    ]);
 
 const AnalystNoteStatusEnum _$analystNoteStatusEnum_new_ =
     const AnalystNoteStatusEnum._('new_');
@@ -55,10 +55,10 @@ AnalystNoteStatusEnum _$analystNoteStatusEnumValueOf(String name) {
 
 final BuiltSet<AnalystNoteStatusEnum> _$analystNoteStatusEnumValues =
     BuiltSet<AnalystNoteStatusEnum>(const <AnalystNoteStatusEnum>[
-  _$analystNoteStatusEnum_new_,
-  _$analystNoteStatusEnum_read,
-  _$analystNoteStatusEnum_dismissed,
-]);
+      _$analystNoteStatusEnum_new_,
+      _$analystNoteStatusEnum_read,
+      _$analystNoteStatusEnum_dismissed,
+    ]);
 
 Serializer<AnalystNotePriorityEnum> _$analystNotePriorityEnumSerializer =
     _$AnalystNotePriorityEnumSerializer();
@@ -84,16 +84,20 @@ class _$AnalystNotePriorityEnumSerializer
   final String wireName = 'AnalystNotePriorityEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystNotePriorityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystNotePriorityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystNotePriorityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystNotePriorityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystNotePriorityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystNoteStatusEnumSerializer
@@ -115,15 +119,20 @@ class _$AnalystNoteStatusEnumSerializer
   final String wireName = 'AnalystNoteStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystNoteStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystNoteStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AnalystNoteStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystNoteStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AnalystNoteStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystNoteStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystNote extends AnalystNote {
@@ -157,21 +166,21 @@ class _$AnalystNote extends AnalystNote {
   factory _$AnalystNote([void Function(AnalystNoteBuilder)? updates]) =>
       (AnalystNoteBuilder()..update(updates))._build();
 
-  _$AnalystNote._(
-      {required this.id,
-      required this.profileId,
-      required this.runId,
-      required this.title,
-      required this.body,
-      required this.priority,
-      required this.claims,
-      this.citations,
-      this.private,
-      required this.status,
-      this.model,
-      this.footer,
-      required this.createdAt})
-      : super._();
+  _$AnalystNote._({
+    required this.id,
+    required this.profileId,
+    required this.runId,
+    required this.title,
+    required this.body,
+    required this.priority,
+    required this.claims,
+    this.citations,
+    this.private,
+    required this.status,
+    this.model,
+    this.footer,
+    required this.createdAt,
+  }) : super._();
   @override
   AnalystNote rebuild(void Function(AnalystNoteBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -338,28 +347,50 @@ class AnalystNoteBuilder implements Builder<AnalystNote, AnalystNoteBuilder> {
   _$AnalystNote _build() {
     _$AnalystNote _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystNote._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'AnalystNote', 'id'),
             profileId: BuiltValueNullFieldError.checkNotNull(
-                profileId, r'AnalystNote', 'profileId'),
+              profileId,
+              r'AnalystNote',
+              'profileId',
+            ),
             runId: BuiltValueNullFieldError.checkNotNull(
-                runId, r'AnalystNote', 'runId'),
+              runId,
+              r'AnalystNote',
+              'runId',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'AnalystNote', 'title'),
+              title,
+              r'AnalystNote',
+              'title',
+            ),
             body: BuiltValueNullFieldError.checkNotNull(
-                body, r'AnalystNote', 'body'),
+              body,
+              r'AnalystNote',
+              'body',
+            ),
             priority: BuiltValueNullFieldError.checkNotNull(
-                priority, r'AnalystNote', 'priority'),
+              priority,
+              r'AnalystNote',
+              'priority',
+            ),
             claims: claims.build(),
             citations: _citations?.build(),
             private: private,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AnalystNote', 'status'),
+              status,
+              r'AnalystNote',
+              'status',
+            ),
             model: model,
             footer: footer,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AnalystNote', 'createdAt'),
+              createdAt,
+              r'AnalystNote',
+              'createdAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -370,7 +401,10 @@ class AnalystNoteBuilder implements Builder<AnalystNote, AnalystNoteBuilder> {
         _citations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystNote', _$failedField, e.toString());
+          r'AnalystNote',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

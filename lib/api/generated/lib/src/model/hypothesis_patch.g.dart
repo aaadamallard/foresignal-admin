@@ -25,15 +25,15 @@ class _$HypothesisPatch extends HypothesisPatch {
   factory _$HypothesisPatch([void Function(HypothesisPatchBuilder)? updates]) =>
       (HypothesisPatchBuilder()..update(updates))._build();
 
-  _$HypothesisPatch._(
-      {this.label,
-      this.statement,
-      this.priorBasis,
-      this.ledgerOutcome,
-      this.alternatives,
-      this.probabilityOverride,
-      this.version})
-      : super._();
+  _$HypothesisPatch._({
+    this.label,
+    this.statement,
+    this.priorBasis,
+    this.ledgerOutcome,
+    this.alternatives,
+    this.probabilityOverride,
+    this.version,
+  }) : super._();
   @override
   HypothesisPatch rebuild(void Function(HypothesisPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -116,8 +116,8 @@ class HypothesisPatchBuilder
       _$this._probabilityOverride ??=
           HypothesisPatchProbabilityOverrideBuilder();
   set probabilityOverride(
-          HypothesisPatchProbabilityOverrideBuilder? probabilityOverride) =>
-      _$this._probabilityOverride = probabilityOverride;
+    HypothesisPatchProbabilityOverrideBuilder? probabilityOverride,
+  ) => _$this._probabilityOverride = probabilityOverride;
 
   int? _version;
   int? get version => _$this._version;
@@ -158,7 +158,8 @@ class HypothesisPatchBuilder
   _$HypothesisPatch _build() {
     _$HypothesisPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisPatch._(
             label: label,
             statement: statement,
@@ -180,7 +181,10 @@ class HypothesisPatchBuilder
         _probabilityOverride?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisPatch', _$failedField, e.toString());
+          r'HypothesisPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

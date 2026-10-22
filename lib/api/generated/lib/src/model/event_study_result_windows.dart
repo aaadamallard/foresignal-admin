@@ -29,9 +29,9 @@ abstract class EventStudyResultWindows
 
   EventStudyResultWindows._();
 
-  factory EventStudyResultWindows(
-          [void updates(EventStudyResultWindowsBuilder b)]) =
-      _$EventStudyResultWindows;
+  factory EventStudyResultWindows([
+    void updates(EventStudyResultWindowsBuilder b),
+  ]) = _$EventStudyResultWindows;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventStudyResultWindowsBuilder b) => b;
@@ -46,7 +46,7 @@ class _$EventStudyResultWindowsSerializer
   @override
   final Iterable<Type> types = const [
     EventStudyResultWindows,
-    _$EventStudyResultWindows
+    _$EventStudyResultWindows,
   ];
 
   @override
@@ -80,9 +80,11 @@ class _$EventStudyResultWindowsSerializer
     EventStudyResultWindows object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,24 +100,30 @@ class _$EventStudyResultWindowsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'estimation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(int)]),
+                  )
+                  as BuiltList<int>;
           result.estimation.replace(valueDes);
           break;
         case r'preEvent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(int)]),
+                  )
+                  as BuiltList<int>;
           result.preEvent.replace(valueDes);
           break;
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(int)]),
+                  )
+                  as BuiltList<int>;
           result.event.replace(valueDes);
           break;
         default:

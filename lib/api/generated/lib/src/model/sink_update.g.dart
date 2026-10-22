@@ -21,13 +21,13 @@ class _$SinkUpdate extends SinkUpdate {
   factory _$SinkUpdate([void Function(SinkUpdateBuilder)? updates]) =>
       (SinkUpdateBuilder()..update(updates))._build();
 
-  _$SinkUpdate._(
-      {required this.name,
-      this.enabled,
-      required this.config,
-      this.secrets,
-      this.filter})
-      : super._();
+  _$SinkUpdate._({
+    required this.name,
+    this.enabled,
+    required this.config,
+    this.secrets,
+    this.filter,
+  }) : super._();
   @override
   SinkUpdate rebuild(void Function(SinkUpdateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -130,10 +130,14 @@ class SinkUpdateBuilder implements Builder<SinkUpdate, SinkUpdateBuilder> {
   _$SinkUpdate _build() {
     _$SinkUpdate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkUpdate._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SinkUpdate', 'name'),
+              name,
+              r'SinkUpdate',
+              'name',
+            ),
             enabled: enabled,
             config: config.build(),
             secrets: _secrets?.build(),
@@ -150,7 +154,10 @@ class SinkUpdateBuilder implements Builder<SinkUpdate, SinkUpdateBuilder> {
         _filter?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkUpdate', _$failedField, e.toString());
+          r'SinkUpdate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

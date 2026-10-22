@@ -12,9 +12,9 @@ class _$AnalysisCyclePage extends AnalysisCyclePage {
   @override
   final String? nextCursor;
 
-  factory _$AnalysisCyclePage(
-          [void Function(AnalysisCyclePageBuilder)? updates]) =>
-      (AnalysisCyclePageBuilder()..update(updates))._build();
+  factory _$AnalysisCyclePage([
+    void Function(AnalysisCyclePageBuilder)? updates,
+  ]) => (AnalysisCyclePageBuilder()..update(updates))._build();
 
   _$AnalysisCyclePage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class AnalysisCyclePageBuilder
   _$AnalysisCyclePage _build() {
     _$AnalysisCyclePage _$result;
     try {
-      _$result = _$v ??
-          _$AnalysisCyclePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AnalysisCyclePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class AnalysisCyclePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisCyclePage', _$failedField, e.toString());
+          r'AnalysisCyclePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

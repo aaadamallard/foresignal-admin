@@ -16,8 +16,10 @@ part 'forecast_numeric_calibration_summary.g.dart';
 @BuiltValue()
 abstract class ForecastNumericCalibrationSummary
     implements
-        Built<ForecastNumericCalibrationSummary,
-            ForecastNumericCalibrationSummaryBuilder> {
+        Built<
+          ForecastNumericCalibrationSummary,
+          ForecastNumericCalibrationSummaryBuilder
+        > {
   /// Mean |empirical − nominal| over the stated levels
   @BuiltValueField(wireName: r'meanAbsoluteCoverageError')
   num? get meanAbsoluteCoverageError;
@@ -27,9 +29,9 @@ abstract class ForecastNumericCalibrationSummary
 
   ForecastNumericCalibrationSummary._();
 
-  factory ForecastNumericCalibrationSummary(
-          [void updates(ForecastNumericCalibrationSummaryBuilder b)]) =
-      _$ForecastNumericCalibrationSummary;
+  factory ForecastNumericCalibrationSummary([
+    void updates(ForecastNumericCalibrationSummaryBuilder b),
+  ]) = _$ForecastNumericCalibrationSummary;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastNumericCalibrationSummaryBuilder b) => b;
@@ -44,7 +46,7 @@ class _$ForecastNumericCalibrationSummarySerializer
   @override
   final Iterable<Type> types = const [
     ForecastNumericCalibrationSummary,
-    _$ForecastNumericCalibrationSummary
+    _$ForecastNumericCalibrationSummary,
   ];
 
   @override
@@ -77,9 +79,11 @@ class _$ForecastNumericCalibrationSummarySerializer
     ForecastNumericCalibrationSummary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -95,18 +99,22 @@ class _$ForecastNumericCalibrationSummarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'meanAbsoluteCoverageError':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.meanAbsoluteCoverageError = valueDes;
           break;
         case r'maxCoverageDeviation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxCoverageDeviation = valueDes;
           break;

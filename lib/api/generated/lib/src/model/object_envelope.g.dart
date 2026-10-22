@@ -7,13 +7,14 @@ part of 'object_envelope.dart';
 // **************************************************************************
 
 const ObjectEnvelopeTextOriginEnum
-    _$objectEnvelopeTextOriginEnum_deterministic =
+_$objectEnvelopeTextOriginEnum_deterministic =
     const ObjectEnvelopeTextOriginEnum._('deterministic');
 const ObjectEnvelopeTextOriginEnum _$objectEnvelopeTextOriginEnum_llm =
     const ObjectEnvelopeTextOriginEnum._('llm');
 
 ObjectEnvelopeTextOriginEnum _$objectEnvelopeTextOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'deterministic':
       return _$objectEnvelopeTextOriginEnum_deterministic;
@@ -25,14 +26,14 @@ ObjectEnvelopeTextOriginEnum _$objectEnvelopeTextOriginEnumValueOf(
 }
 
 final BuiltSet<ObjectEnvelopeTextOriginEnum>
-    _$objectEnvelopeTextOriginEnumValues =
+_$objectEnvelopeTextOriginEnumValues =
     BuiltSet<ObjectEnvelopeTextOriginEnum>(const <ObjectEnvelopeTextOriginEnum>[
-  _$objectEnvelopeTextOriginEnum_deterministic,
-  _$objectEnvelopeTextOriginEnum_llm,
-]);
+      _$objectEnvelopeTextOriginEnum_deterministic,
+      _$objectEnvelopeTextOriginEnum_llm,
+    ]);
 
 Serializer<ObjectEnvelopeTextOriginEnum>
-    _$objectEnvelopeTextOriginEnumSerializer =
+_$objectEnvelopeTextOriginEnumSerializer =
     _$ObjectEnvelopeTextOriginEnumSerializer();
 
 class _$ObjectEnvelopeTextOriginEnumSerializer
@@ -52,16 +53,20 @@ class _$ObjectEnvelopeTextOriginEnumSerializer
   final String wireName = 'ObjectEnvelopeTextOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, ObjectEnvelopeTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ObjectEnvelopeTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ObjectEnvelopeTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ObjectEnvelopeTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ObjectEnvelopeTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ObjectEnvelope extends ObjectEnvelope {
@@ -101,24 +106,24 @@ class _$ObjectEnvelope extends ObjectEnvelope {
   factory _$ObjectEnvelope([void Function(ObjectEnvelopeBuilder)? updates]) =>
       (ObjectEnvelopeBuilder()..update(updates))._build();
 
-  _$ObjectEnvelope._(
-      {required this.ref,
-      required this.type,
-      required this.title,
-      this.summary,
-      this.textOrigin,
-      this.status,
-      this.severity,
-      this.time,
-      this.geometry,
-      this.bbox,
-      this.private,
-      this.tlp,
-      this.tags,
-      this.provenance,
-      this.links,
-      this.actions})
-      : super._();
+  _$ObjectEnvelope._({
+    required this.ref,
+    required this.type,
+    required this.title,
+    this.summary,
+    this.textOrigin,
+    this.status,
+    this.severity,
+    this.time,
+    this.geometry,
+    this.bbox,
+    this.private,
+    this.tlp,
+    this.tags,
+    this.provenance,
+    this.links,
+    this.actions,
+  }) : super._();
   @override
   ObjectEnvelope rebuild(void Function(ObjectEnvelopeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -312,14 +317,24 @@ class ObjectEnvelopeBuilder
   _$ObjectEnvelope _build() {
     _$ObjectEnvelope _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObjectEnvelope._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'ObjectEnvelope', 'ref'),
+              ref,
+              r'ObjectEnvelope',
+              'ref',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ObjectEnvelope', 'type'),
+              type,
+              r'ObjectEnvelope',
+              'type',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ObjectEnvelope', 'title'),
+              title,
+              r'ObjectEnvelope',
+              'title',
+            ),
             summary: summary,
             textOrigin: textOrigin,
             status: status,
@@ -354,7 +369,10 @@ class ObjectEnvelopeBuilder
         _actions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObjectEnvelope', _$failedField, e.toString());
+          r'ObjectEnvelope',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

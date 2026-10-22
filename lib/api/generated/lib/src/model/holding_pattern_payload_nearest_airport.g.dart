@@ -15,18 +15,20 @@ class _$HoldingPatternPayloadNearestAirport
   @override
   final num? distanceKm;
 
-  factory _$HoldingPatternPayloadNearestAirport(
-          [void Function(HoldingPatternPayloadNearestAirportBuilder)?
-              updates]) =>
+  factory _$HoldingPatternPayloadNearestAirport([
+    void Function(HoldingPatternPayloadNearestAirportBuilder)? updates,
+  ]) =>
       (HoldingPatternPayloadNearestAirportBuilder()..update(updates))._build();
 
-  _$HoldingPatternPayloadNearestAirport._(
-      {required this.ident, this.name, this.distanceKm})
-      : super._();
+  _$HoldingPatternPayloadNearestAirport._({
+    required this.ident,
+    this.name,
+    this.distanceKm,
+  }) : super._();
   @override
   HoldingPatternPayloadNearestAirport rebuild(
-          void Function(HoldingPatternPayloadNearestAirportBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HoldingPatternPayloadNearestAirportBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HoldingPatternPayloadNearestAirportBuilder toBuilder() =>
@@ -63,8 +65,10 @@ class _$HoldingPatternPayloadNearestAirport
 
 class HoldingPatternPayloadNearestAirportBuilder
     implements
-        Builder<HoldingPatternPayloadNearestAirport,
-            HoldingPatternPayloadNearestAirportBuilder> {
+        Builder<
+          HoldingPatternPayloadNearestAirport,
+          HoldingPatternPayloadNearestAirportBuilder
+        > {
   _$HoldingPatternPayloadNearestAirport? _$v;
 
   String? _ident;
@@ -101,7 +105,8 @@ class HoldingPatternPayloadNearestAirportBuilder
 
   @override
   void update(
-      void Function(HoldingPatternPayloadNearestAirportBuilder)? updates) {
+    void Function(HoldingPatternPayloadNearestAirportBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -109,10 +114,14 @@ class HoldingPatternPayloadNearestAirportBuilder
   HoldingPatternPayloadNearestAirport build() => _build();
 
   _$HoldingPatternPayloadNearestAirport _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HoldingPatternPayloadNearestAirport._(
           ident: BuiltValueNullFieldError.checkNotNull(
-              ident, r'HoldingPatternPayloadNearestAirport', 'ident'),
+            ident,
+            r'HoldingPatternPayloadNearestAirport',
+            'ident',
+          ),
           name: name,
           distanceKm: distanceKm,
         );

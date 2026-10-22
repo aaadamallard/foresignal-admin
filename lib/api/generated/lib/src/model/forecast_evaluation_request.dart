@@ -38,9 +38,9 @@ abstract class ForecastEvaluationRequest
 
   ForecastEvaluationRequest._();
 
-  factory ForecastEvaluationRequest(
-          [void updates(ForecastEvaluationRequestBuilder b)]) =
-      _$ForecastEvaluationRequest;
+  factory ForecastEvaluationRequest([
+    void updates(ForecastEvaluationRequestBuilder b),
+  ]) = _$ForecastEvaluationRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastEvaluationRequestBuilder b) => b;
@@ -55,7 +55,7 @@ class _$ForecastEvaluationRequestSerializer
   @override
   final Iterable<Type> types = const [
     ForecastEvaluationRequest,
-    _$ForecastEvaluationRequest
+    _$ForecastEvaluationRequest,
   ];
 
   @override
@@ -103,9 +103,11 @@ class _$ForecastEvaluationRequestSerializer
     ForecastEvaluationRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,40 +123,51 @@ class _$ForecastEvaluationRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         case r'categories':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.categories.replace(valueDes);
           break;
         case r'maxQuestions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxQuestions = valueDes;
           break;

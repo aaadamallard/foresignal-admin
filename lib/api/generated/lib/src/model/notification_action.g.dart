@@ -10,7 +10,8 @@ const NotificationActionMethodEnum _$notificationActionMethodEnum_POST =
     const NotificationActionMethodEnum._('POST');
 
 NotificationActionMethodEnum _$notificationActionMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'POST':
       return _$notificationActionMethodEnum_POST;
@@ -20,13 +21,12 @@ NotificationActionMethodEnum _$notificationActionMethodEnumValueOf(
 }
 
 final BuiltSet<NotificationActionMethodEnum>
-    _$notificationActionMethodEnumValues =
-    BuiltSet<NotificationActionMethodEnum>(const <NotificationActionMethodEnum>[
-  _$notificationActionMethodEnum_POST,
-]);
+_$notificationActionMethodEnumValues = BuiltSet<NotificationActionMethodEnum>(
+  const <NotificationActionMethodEnum>[_$notificationActionMethodEnum_POST],
+);
 
 Serializer<NotificationActionMethodEnum>
-    _$notificationActionMethodEnumSerializer =
+_$notificationActionMethodEnumSerializer =
     _$NotificationActionMethodEnumSerializer();
 
 class _$NotificationActionMethodEnumSerializer
@@ -44,16 +44,20 @@ class _$NotificationActionMethodEnumSerializer
   final String wireName = 'NotificationActionMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, NotificationActionMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationActionMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationActionMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationActionMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationActionMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationAction extends NotificationAction {
@@ -72,23 +76,23 @@ class _$NotificationAction extends NotificationAction {
   @override
   final DateTime expiresAt;
 
-  factory _$NotificationAction(
-          [void Function(NotificationActionBuilder)? updates]) =>
-      (NotificationActionBuilder()..update(updates))._build();
+  factory _$NotificationAction([
+    void Function(NotificationActionBuilder)? updates,
+  ]) => (NotificationActionBuilder()..update(updates))._build();
 
-  _$NotificationAction._(
-      {required this.action,
-      this.label,
-      this.method,
-      required this.url,
-      this.confirmUrl,
-      this.params,
-      required this.expiresAt})
-      : super._();
+  _$NotificationAction._({
+    required this.action,
+    this.label,
+    this.method,
+    required this.url,
+    this.confirmUrl,
+    this.params,
+    required this.expiresAt,
+  }) : super._();
   @override
   NotificationAction rebuild(
-          void Function(NotificationActionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationActionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationActionBuilder toBuilder() =>
@@ -204,18 +208,28 @@ class NotificationActionBuilder
   _$NotificationAction _build() {
     _$NotificationAction _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NotificationAction._(
             action: BuiltValueNullFieldError.checkNotNull(
-                action, r'NotificationAction', 'action'),
+              action,
+              r'NotificationAction',
+              'action',
+            ),
             label: label,
             method: method,
             url: BuiltValueNullFieldError.checkNotNull(
-                url, r'NotificationAction', 'url'),
+              url,
+              r'NotificationAction',
+              'url',
+            ),
             confirmUrl: confirmUrl,
             params: _params?.build(),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'NotificationAction', 'expiresAt'),
+              expiresAt,
+              r'NotificationAction',
+              'expiresAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -224,7 +238,10 @@ class NotificationActionBuilder
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationAction', _$failedField, e.toString());
+          r'NotificationAction',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

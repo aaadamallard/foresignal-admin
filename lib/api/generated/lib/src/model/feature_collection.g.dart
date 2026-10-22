@@ -20,8 +20,8 @@ FeatureCollectionTypeEnum _$featureCollectionTypeEnumValueOf(String name) {
 
 final BuiltSet<FeatureCollectionTypeEnum> _$featureCollectionTypeEnumValues =
     BuiltSet<FeatureCollectionTypeEnum>(const <FeatureCollectionTypeEnum>[
-  _$featureCollectionTypeEnum_featureCollection,
-]);
+      _$featureCollectionTypeEnum_featureCollection,
+    ]);
 
 Serializer<FeatureCollectionTypeEnum> _$featureCollectionTypeEnumSerializer =
     _$FeatureCollectionTypeEnumSerializer();
@@ -41,16 +41,20 @@ class _$FeatureCollectionTypeEnumSerializer
   final String wireName = 'FeatureCollectionTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, FeatureCollectionTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FeatureCollectionTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FeatureCollectionTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FeatureCollectionTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FeatureCollectionTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FeatureCollection extends FeatureCollection {
@@ -75,22 +79,22 @@ class _$FeatureCollection extends FeatureCollection {
   @override
   final int? licenceFiltered;
 
-  factory _$FeatureCollection(
-          [void Function(FeatureCollectionBuilder)? updates]) =>
-      (FeatureCollectionBuilder()..update(updates))._build();
+  factory _$FeatureCollection([
+    void Function(FeatureCollectionBuilder)? updates,
+  ]) => (FeatureCollectionBuilder()..update(updates))._build();
 
-  _$FeatureCollection._(
-      {required this.type,
-      required this.features,
-      this.nextCursor,
-      this.attributions,
-      this.watermarkSeq,
-      this.asOfSeq,
-      this.asOf,
-      this.approximate,
-      this.horizon,
-      this.licenceFiltered})
-      : super._();
+  _$FeatureCollection._({
+    required this.type,
+    required this.features,
+    this.nextCursor,
+    this.attributions,
+    this.watermarkSeq,
+    this.asOfSeq,
+    this.asOf,
+    this.approximate,
+    this.horizon,
+    this.licenceFiltered,
+  }) : super._();
   @override
   FeatureCollection rebuild(void Function(FeatureCollectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -235,10 +239,14 @@ class FeatureCollectionBuilder
   _$FeatureCollection _build() {
     _$FeatureCollection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FeatureCollection._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'FeatureCollection', 'type'),
+              type,
+              r'FeatureCollection',
+              'type',
+            ),
             features: features.build(),
             nextCursor: nextCursor,
             attributions: _attributions?.build(),
@@ -259,7 +267,10 @@ class FeatureCollectionBuilder
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FeatureCollection', _$failedField, e.toString());
+          r'FeatureCollection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

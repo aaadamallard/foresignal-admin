@@ -17,8 +17,10 @@ part 'external_binding_preview_effects_inner.g.dart';
 @BuiltValue()
 abstract class ExternalBindingPreviewEffectsInner
     implements
-        Built<ExternalBindingPreviewEffectsInner,
-            ExternalBindingPreviewEffectsInnerBuilder> {
+        Built<
+          ExternalBindingPreviewEffectsInner,
+          ExternalBindingPreviewEffectsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'itemRef')
   String? get itemRef;
 
@@ -30,9 +32,9 @@ abstract class ExternalBindingPreviewEffectsInner
 
   ExternalBindingPreviewEffectsInner._();
 
-  factory ExternalBindingPreviewEffectsInner(
-          [void updates(ExternalBindingPreviewEffectsInnerBuilder b)]) =
-      _$ExternalBindingPreviewEffectsInner;
+  factory ExternalBindingPreviewEffectsInner([
+    void updates(ExternalBindingPreviewEffectsInnerBuilder b),
+  ]) = _$ExternalBindingPreviewEffectsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalBindingPreviewEffectsInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$ExternalBindingPreviewEffectsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExternalBindingPreviewEffectsInner,
-    _$ExternalBindingPreviewEffectsInner
+    _$ExternalBindingPreviewEffectsInner,
   ];
 
   @override
@@ -87,9 +89,11 @@ class _$ExternalBindingPreviewEffectsInnerSerializer
     ExternalBindingPreviewEffectsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,26 +109,32 @@ class _$ExternalBindingPreviewEffectsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'itemRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.itemRef = valueDes;
           break;
         case r'action':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.action = valueDes;
           break;
         case r'targetRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.targetRef = valueDes;
           break;

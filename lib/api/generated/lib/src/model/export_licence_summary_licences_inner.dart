@@ -19,8 +19,10 @@ part 'export_licence_summary_licences_inner.g.dart';
 @BuiltValue()
 abstract class ExportLicenceSummaryLicencesInner
     implements
-        Built<ExportLicenceSummaryLicencesInner,
-            ExportLicenceSummaryLicencesInnerBuilder> {
+        Built<
+          ExportLicenceSummaryLicencesInner,
+          ExportLicenceSummaryLicencesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'terms')
   LicenceTerms get terms;
 
@@ -32,9 +34,9 @@ abstract class ExportLicenceSummaryLicencesInner
 
   ExportLicenceSummaryLicencesInner._();
 
-  factory ExportLicenceSummaryLicencesInner(
-          [void updates(ExportLicenceSummaryLicencesInnerBuilder b)]) =
-      _$ExportLicenceSummaryLicencesInner;
+  factory ExportLicenceSummaryLicencesInner([
+    void updates(ExportLicenceSummaryLicencesInnerBuilder b),
+  ]) = _$ExportLicenceSummaryLicencesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExportLicenceSummaryLicencesInnerBuilder b) => b;
@@ -49,7 +51,7 @@ class _$ExportLicenceSummaryLicencesInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExportLicenceSummaryLicencesInner,
-    _$ExportLicenceSummaryLicencesInner
+    _$ExportLicenceSummaryLicencesInner,
   ];
 
   @override
@@ -83,9 +85,11 @@ class _$ExportLicenceSummaryLicencesInnerSerializer
     ExportLicenceSummaryLicencesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +105,29 @@ class _$ExportLicenceSummaryLicencesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'terms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LicenceTerms),
-          ) as LicenceTerms;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LicenceTerms),
+                  )
+                  as LicenceTerms;
           result.terms.replace(valueDes);
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.sources.replace(valueDes);
           break;
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rows = valueDes;
           break;
         default:

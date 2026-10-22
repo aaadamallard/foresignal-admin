@@ -60,29 +60,30 @@ ReportBlockBaseTypeEnum _$reportBlockBaseTypeEnumValueOf(String name) {
 
 final BuiltSet<ReportBlockBaseTypeEnum> _$reportBlockBaseTypeEnumValues =
     BuiltSet<ReportBlockBaseTypeEnum>(const <ReportBlockBaseTypeEnum>[
-  _$reportBlockBaseTypeEnum_markdown,
-  _$reportBlockBaseTypeEnum_bluf,
-  _$reportBlockBaseTypeEnum_objects,
-  _$reportBlockBaseTypeEnum_map,
-  _$reportBlockBaseTypeEnum_timeline,
-  _$reportBlockBaseTypeEnum_hypotheses,
-  _$reportBlockBaseTypeEnum_forecasts,
-  _$reportBlockBaseTypeEnum_evidence,
-  _$reportBlockBaseTypeEnum_coverage,
-  _$reportBlockBaseTypeEnum_attachments,
-  _$reportBlockBaseTypeEnum_sources,
-]);
+      _$reportBlockBaseTypeEnum_markdown,
+      _$reportBlockBaseTypeEnum_bluf,
+      _$reportBlockBaseTypeEnum_objects,
+      _$reportBlockBaseTypeEnum_map,
+      _$reportBlockBaseTypeEnum_timeline,
+      _$reportBlockBaseTypeEnum_hypotheses,
+      _$reportBlockBaseTypeEnum_forecasts,
+      _$reportBlockBaseTypeEnum_evidence,
+      _$reportBlockBaseTypeEnum_coverage,
+      _$reportBlockBaseTypeEnum_attachments,
+      _$reportBlockBaseTypeEnum_sources,
+    ]);
 
 const ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnum_author =
     const ReportBlockBaseTextOriginEnum._('author');
 const ReportBlockBaseTextOriginEnum
-    _$reportBlockBaseTextOriginEnum_deterministic =
+_$reportBlockBaseTextOriginEnum_deterministic =
     const ReportBlockBaseTextOriginEnum._('deterministic');
 const ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnum_llm =
     const ReportBlockBaseTextOriginEnum._('llm');
 
 ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'author':
       return _$reportBlockBaseTextOriginEnum_author;
@@ -96,17 +97,18 @@ ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnumValueOf(
 }
 
 final BuiltSet<ReportBlockBaseTextOriginEnum>
-    _$reportBlockBaseTextOriginEnumValues = BuiltSet<
-        ReportBlockBaseTextOriginEnum>(const <ReportBlockBaseTextOriginEnum>[
-  _$reportBlockBaseTextOriginEnum_author,
-  _$reportBlockBaseTextOriginEnum_deterministic,
-  _$reportBlockBaseTextOriginEnum_llm,
-]);
+_$reportBlockBaseTextOriginEnumValues = BuiltSet<ReportBlockBaseTextOriginEnum>(
+  const <ReportBlockBaseTextOriginEnum>[
+    _$reportBlockBaseTextOriginEnum_author,
+    _$reportBlockBaseTextOriginEnum_deterministic,
+    _$reportBlockBaseTextOriginEnum_llm,
+  ],
+);
 
 Serializer<ReportBlockBaseTypeEnum> _$reportBlockBaseTypeEnumSerializer =
     _$ReportBlockBaseTypeEnumSerializer();
 Serializer<ReportBlockBaseTextOriginEnum>
-    _$reportBlockBaseTextOriginEnumSerializer =
+_$reportBlockBaseTextOriginEnumSerializer =
     _$ReportBlockBaseTextOriginEnumSerializer();
 
 class _$ReportBlockBaseTypeEnumSerializer
@@ -144,16 +146,20 @@ class _$ReportBlockBaseTypeEnumSerializer
   final String wireName = 'ReportBlockBaseTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ReportBlockBaseTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReportBlockBaseTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReportBlockBaseTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportBlockBaseTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportBlockBaseTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportBlockBaseTextOriginEnumSerializer
@@ -176,16 +182,19 @@ class _$ReportBlockBaseTextOriginEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ReportBlockBaseTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ReportBlockBaseTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReportBlockBaseTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportBlockBaseTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportBlockBaseTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportBlockBase extends ReportBlockBase {
@@ -205,14 +214,14 @@ class _$ReportBlockBase extends ReportBlockBase {
   factory _$ReportBlockBase([void Function(ReportBlockBaseBuilder)? updates]) =>
       (ReportBlockBaseBuilder()..update(updates))._build();
 
-  _$ReportBlockBase._(
-      {this.id,
-      required this.type,
-      this.title,
-      this.textOrigin,
-      this.updatedAt,
-      this.updatedBy})
-      : super._();
+  _$ReportBlockBase._({
+    this.id,
+    required this.type,
+    this.title,
+    this.textOrigin,
+    this.updatedAt,
+    this.updatedBy,
+  }) : super._();
   @override
   ReportBlockBase rebuild(void Function(ReportBlockBaseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -323,11 +332,15 @@ class ReportBlockBaseBuilder
   _$ReportBlockBase _build() {
     _$ReportBlockBase _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportBlockBase._(
             id: id,
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ReportBlockBase', 'type'),
+              type,
+              r'ReportBlockBase',
+              'type',
+            ),
             title: title,
             textOrigin: textOrigin,
             updatedAt: updatedAt,
@@ -340,7 +353,10 @@ class ReportBlockBaseBuilder
         _updatedBy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportBlockBase', _$failedField, e.toString());
+          r'ReportBlockBase',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

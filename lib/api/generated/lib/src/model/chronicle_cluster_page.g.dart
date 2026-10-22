@@ -12,15 +12,15 @@ class _$ChronicleClusterPage extends ChronicleClusterPage {
   @override
   final String? nextCursor;
 
-  factory _$ChronicleClusterPage(
-          [void Function(ChronicleClusterPageBuilder)? updates]) =>
-      (ChronicleClusterPageBuilder()..update(updates))._build();
+  factory _$ChronicleClusterPage([
+    void Function(ChronicleClusterPageBuilder)? updates,
+  ]) => (ChronicleClusterPageBuilder()..update(updates))._build();
 
   _$ChronicleClusterPage._({required this.items, this.nextCursor}) : super._();
   @override
   ChronicleClusterPage rebuild(
-          void Function(ChronicleClusterPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleClusterPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleClusterPageBuilder toBuilder() =>
@@ -95,7 +95,8 @@ class ChronicleClusterPageBuilder
   _$ChronicleClusterPage _build() {
     _$ChronicleClusterPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleClusterPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -107,7 +108,10 @@ class ChronicleClusterPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleClusterPage', _$failedField, e.toString());
+          r'ChronicleClusterPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

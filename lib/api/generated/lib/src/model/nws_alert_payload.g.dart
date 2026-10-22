@@ -35,14 +35,14 @@ NwsAlertPayloadSeverityEnum _$nwsAlertPayloadSeverityEnumValueOf(String name) {
 }
 
 final BuiltSet<NwsAlertPayloadSeverityEnum>
-    _$nwsAlertPayloadSeverityEnumValues =
+_$nwsAlertPayloadSeverityEnumValues =
     BuiltSet<NwsAlertPayloadSeverityEnum>(const <NwsAlertPayloadSeverityEnum>[
-  _$nwsAlertPayloadSeverityEnum_extreme,
-  _$nwsAlertPayloadSeverityEnum_severe,
-  _$nwsAlertPayloadSeverityEnum_moderate,
-  _$nwsAlertPayloadSeverityEnum_minor,
-  _$nwsAlertPayloadSeverityEnum_unknown,
-]);
+      _$nwsAlertPayloadSeverityEnum_extreme,
+      _$nwsAlertPayloadSeverityEnum_severe,
+      _$nwsAlertPayloadSeverityEnum_moderate,
+      _$nwsAlertPayloadSeverityEnum_minor,
+      _$nwsAlertPayloadSeverityEnum_unknown,
+    ]);
 
 const NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnum_alert =
     const NwsAlertPayloadMessageTypeEnum._('alert');
@@ -52,7 +52,8 @@ const NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnum_cancel =
     const NwsAlertPayloadMessageTypeEnum._('cancel');
 
 NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'alert':
       return _$nwsAlertPayloadMessageTypeEnum_alert;
@@ -66,25 +67,28 @@ NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnumValueOf(
 }
 
 final BuiltSet<NwsAlertPayloadMessageTypeEnum>
-    _$nwsAlertPayloadMessageTypeEnumValues = BuiltSet<
-        NwsAlertPayloadMessageTypeEnum>(const <NwsAlertPayloadMessageTypeEnum>[
-  _$nwsAlertPayloadMessageTypeEnum_alert,
-  _$nwsAlertPayloadMessageTypeEnum_update,
-  _$nwsAlertPayloadMessageTypeEnum_cancel,
-]);
+_$nwsAlertPayloadMessageTypeEnumValues =
+    BuiltSet<NwsAlertPayloadMessageTypeEnum>(
+      const <NwsAlertPayloadMessageTypeEnum>[
+        _$nwsAlertPayloadMessageTypeEnum_alert,
+        _$nwsAlertPayloadMessageTypeEnum_update,
+        _$nwsAlertPayloadMessageTypeEnum_cancel,
+      ],
+    );
 
 const NwsAlertPayloadGeometrySourceEnum
-    _$nwsAlertPayloadGeometrySourceEnum_polygon =
+_$nwsAlertPayloadGeometrySourceEnum_polygon =
     const NwsAlertPayloadGeometrySourceEnum._('polygon');
 const NwsAlertPayloadGeometrySourceEnum
-    _$nwsAlertPayloadGeometrySourceEnum_countyUnion =
+_$nwsAlertPayloadGeometrySourceEnum_countyUnion =
     const NwsAlertPayloadGeometrySourceEnum._('countyUnion');
 const NwsAlertPayloadGeometrySourceEnum
-    _$nwsAlertPayloadGeometrySourceEnum_none =
+_$nwsAlertPayloadGeometrySourceEnum_none =
     const NwsAlertPayloadGeometrySourceEnum._('none');
 
 NwsAlertPayloadGeometrySourceEnum _$nwsAlertPayloadGeometrySourceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'polygon':
       return _$nwsAlertPayloadGeometrySourceEnum_polygon;
@@ -98,21 +102,23 @@ NwsAlertPayloadGeometrySourceEnum _$nwsAlertPayloadGeometrySourceEnumValueOf(
 }
 
 final BuiltSet<NwsAlertPayloadGeometrySourceEnum>
-    _$nwsAlertPayloadGeometrySourceEnumValues = BuiltSet<
-        NwsAlertPayloadGeometrySourceEnum>(const <NwsAlertPayloadGeometrySourceEnum>[
-  _$nwsAlertPayloadGeometrySourceEnum_polygon,
-  _$nwsAlertPayloadGeometrySourceEnum_countyUnion,
-  _$nwsAlertPayloadGeometrySourceEnum_none,
-]);
+_$nwsAlertPayloadGeometrySourceEnumValues =
+    BuiltSet<NwsAlertPayloadGeometrySourceEnum>(
+      const <NwsAlertPayloadGeometrySourceEnum>[
+        _$nwsAlertPayloadGeometrySourceEnum_polygon,
+        _$nwsAlertPayloadGeometrySourceEnum_countyUnion,
+        _$nwsAlertPayloadGeometrySourceEnum_none,
+      ],
+    );
 
 Serializer<NwsAlertPayloadSeverityEnum>
-    _$nwsAlertPayloadSeverityEnumSerializer =
+_$nwsAlertPayloadSeverityEnumSerializer =
     _$NwsAlertPayloadSeverityEnumSerializer();
 Serializer<NwsAlertPayloadMessageTypeEnum>
-    _$nwsAlertPayloadMessageTypeEnumSerializer =
+_$nwsAlertPayloadMessageTypeEnumSerializer =
     _$NwsAlertPayloadMessageTypeEnumSerializer();
 Serializer<NwsAlertPayloadGeometrySourceEnum>
-    _$nwsAlertPayloadGeometrySourceEnumSerializer =
+_$nwsAlertPayloadGeometrySourceEnumSerializer =
     _$NwsAlertPayloadGeometrySourceEnumSerializer();
 
 class _$NwsAlertPayloadSeverityEnumSerializer
@@ -138,16 +144,20 @@ class _$NwsAlertPayloadSeverityEnumSerializer
   final String wireName = 'NwsAlertPayloadSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, NwsAlertPayloadSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NwsAlertPayloadSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NwsAlertPayloadSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NwsAlertPayloadSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NwsAlertPayloadSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NwsAlertPayloadMessageTypeEnumSerializer
@@ -170,16 +180,19 @@ class _$NwsAlertPayloadMessageTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, NwsAlertPayloadMessageTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NwsAlertPayloadMessageTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NwsAlertPayloadMessageTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NwsAlertPayloadMessageTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NwsAlertPayloadMessageTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NwsAlertPayloadGeometrySourceEnumSerializer
@@ -202,16 +215,19 @@ class _$NwsAlertPayloadGeometrySourceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, NwsAlertPayloadGeometrySourceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NwsAlertPayloadGeometrySourceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NwsAlertPayloadGeometrySourceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NwsAlertPayloadGeometrySourceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NwsAlertPayloadGeometrySourceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NwsAlertPayload extends NwsAlertPayload {
@@ -275,36 +291,36 @@ class _$NwsAlertPayload extends NwsAlertPayload {
   factory _$NwsAlertPayload([void Function(NwsAlertPayloadBuilder)? updates]) =>
       (NwsAlertPayloadBuilder()..update(updates))._build();
 
-  _$NwsAlertPayload._(
-      {required this.event,
-      this.eventCode,
-      this.headline,
-      required this.severity,
-      this.certainty,
-      this.urgency,
-      this.messageType,
-      this.category,
-      this.response,
-      this.senderName,
-      this.areaDesc,
-      this.sent,
-      this.effective,
-      this.onset,
-      this.expires,
-      this.ends,
-      this.ugc,
-      this.same,
-      this.vtec,
-      this.motion,
-      this.maxHailSizeIn,
-      this.maxWindGustMph,
-      this.tornadoDetection,
-      this.thunderstormDamageThreat,
-      this.description,
-      this.instruction,
-      this.web,
-      this.geometrySource})
-      : super._();
+  _$NwsAlertPayload._({
+    required this.event,
+    this.eventCode,
+    this.headline,
+    required this.severity,
+    this.certainty,
+    this.urgency,
+    this.messageType,
+    this.category,
+    this.response,
+    this.senderName,
+    this.areaDesc,
+    this.sent,
+    this.effective,
+    this.onset,
+    this.expires,
+    this.ends,
+    this.ugc,
+    this.same,
+    this.vtec,
+    this.motion,
+    this.maxHailSizeIn,
+    this.maxWindGustMph,
+    this.tornadoDetection,
+    this.thunderstormDamageThreat,
+    this.description,
+    this.instruction,
+    this.web,
+    this.geometrySource,
+  }) : super._();
   @override
   NwsAlertPayload rebuild(void Function(NwsAlertPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -596,14 +612,21 @@ class NwsAlertPayloadBuilder
   _$NwsAlertPayload _build() {
     _$NwsAlertPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NwsAlertPayload._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'NwsAlertPayload', 'event'),
+              event,
+              r'NwsAlertPayload',
+              'event',
+            ),
             eventCode: eventCode,
             headline: headline,
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'NwsAlertPayload', 'severity'),
+              severity,
+              r'NwsAlertPayload',
+              'severity',
+            ),
             certainty: certainty,
             urgency: urgency,
             messageType: messageType,
@@ -640,7 +663,10 @@ class NwsAlertPayloadBuilder
         _vtec?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NwsAlertPayload', _$failedField, e.toString());
+          r'NwsAlertPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

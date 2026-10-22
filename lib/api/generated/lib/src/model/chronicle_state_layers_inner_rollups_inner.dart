@@ -17,8 +17,10 @@ part 'chronicle_state_layers_inner_rollups_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleStateLayersInnerRollupsInner
     implements
-        Built<ChronicleStateLayersInnerRollupsInner,
-            ChronicleStateLayersInnerRollupsInnerBuilder> {
+        Built<
+          ChronicleStateLayersInnerRollupsInner,
+          ChronicleStateLayersInnerRollupsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'region')
   String get region;
 
@@ -30,9 +32,9 @@ abstract class ChronicleStateLayersInnerRollupsInner
 
   ChronicleStateLayersInnerRollupsInner._();
 
-  factory ChronicleStateLayersInnerRollupsInner(
-          [void updates(ChronicleStateLayersInnerRollupsInnerBuilder b)]) =
-      _$ChronicleStateLayersInnerRollupsInner;
+  factory ChronicleStateLayersInnerRollupsInner([
+    void updates(ChronicleStateLayersInnerRollupsInnerBuilder b),
+  ]) = _$ChronicleStateLayersInnerRollupsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleStateLayersInnerRollupsInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$ChronicleStateLayersInnerRollupsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleStateLayersInnerRollupsInner,
-    _$ChronicleStateLayersInnerRollupsInner
+    _$ChronicleStateLayersInnerRollupsInner,
   ];
 
   @override
@@ -81,9 +83,11 @@ class _$ChronicleStateLayersInnerRollupsInnerSerializer
     ChronicleStateLayersInnerRollupsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +103,27 @@ class _$ChronicleStateLayersInnerRollupsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'region':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.region = valueDes;
           break;
         case r'hour':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.hour = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         default:

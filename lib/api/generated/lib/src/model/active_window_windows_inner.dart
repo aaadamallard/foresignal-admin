@@ -32,9 +32,9 @@ abstract class ActiveWindowWindowsInner
 
   ActiveWindowWindowsInner._();
 
-  factory ActiveWindowWindowsInner(
-          [void updates(ActiveWindowWindowsInnerBuilder b)]) =
-      _$ActiveWindowWindowsInner;
+  factory ActiveWindowWindowsInner([
+    void updates(ActiveWindowWindowsInnerBuilder b),
+  ]) = _$ActiveWindowWindowsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ActiveWindowWindowsInnerBuilder b) => b;
@@ -49,7 +49,7 @@ class _$ActiveWindowWindowsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ActiveWindowWindowsInner,
-    _$ActiveWindowWindowsInner
+    _$ActiveWindowWindowsInner,
   ];
 
   @override
@@ -63,8 +63,9 @@ class _$ActiveWindowWindowsInnerSerializer
     yield r'days';
     yield serializers.serialize(
       object.days,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ActiveWindowWindowsInnerDaysEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ActiveWindowWindowsInnerDaysEnum),
+      ]),
     );
     yield r'start';
     yield serializers.serialize(
@@ -84,9 +85,11 @@ class _$ActiveWindowWindowsInnerSerializer
     ActiveWindowWindowsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,25 +105,32 @@ class _$ActiveWindowWindowsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'days':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ActiveWindowWindowsInnerDaysEnum)]),
-          ) as BuiltList<ActiveWindowWindowsInnerDaysEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ActiveWindowWindowsInnerDaysEnum),
+                    ]),
+                  )
+                  as BuiltList<ActiveWindowWindowsInnerDaysEnum>;
           result.days.replace(valueDes);
           break;
         case r'start':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.start = valueDes;
           break;
         case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.end = valueDes;
           break;
         default:

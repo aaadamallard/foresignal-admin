@@ -25,9 +25,9 @@ abstract class SystemInfoMcpTransports
 
   SystemInfoMcpTransports._();
 
-  factory SystemInfoMcpTransports(
-          [void updates(SystemInfoMcpTransportsBuilder b)]) =
-      _$SystemInfoMcpTransports;
+  factory SystemInfoMcpTransports([
+    void updates(SystemInfoMcpTransportsBuilder b),
+  ]) = _$SystemInfoMcpTransports;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemInfoMcpTransportsBuilder b) => b;
@@ -42,7 +42,7 @@ class _$SystemInfoMcpTransportsSerializer
   @override
   final Iterable<Type> types = const [
     SystemInfoMcpTransports,
-    _$SystemInfoMcpTransports
+    _$SystemInfoMcpTransports,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$SystemInfoMcpTransportsSerializer
     SystemInfoMcpTransports object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$SystemInfoMcpTransportsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'streamable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.streamable = valueDes;
           break;
         case r'legacySse':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.legacySse = valueDes;
           break;

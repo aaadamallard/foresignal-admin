@@ -44,9 +44,9 @@ abstract class LightningClusterPayload
 
   LightningClusterPayload._();
 
-  factory LightningClusterPayload(
-          [void updates(LightningClusterPayloadBuilder b)]) =
-      _$LightningClusterPayload;
+  factory LightningClusterPayload([
+    void updates(LightningClusterPayloadBuilder b),
+  ]) = _$LightningClusterPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LightningClusterPayloadBuilder b) => b;
@@ -61,7 +61,7 @@ class _$LightningClusterPayloadSerializer
   @override
   final Iterable<Type> types = const [
     LightningClusterPayload,
-    _$LightningClusterPayload
+    _$LightningClusterPayload,
   ];
 
   @override
@@ -114,9 +114,11 @@ class _$LightningClusterPayloadSerializer
     LightningClusterPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,47 +134,61 @@ class _$LightningClusterPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'flashes5m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LightningClusterPayloadFlashes5mEnum),
-          ) as LightningClusterPayloadFlashes5mEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      LightningClusterPayloadFlashes5mEnum,
+                    ),
+                  )
+                  as LightningClusterPayloadFlashes5mEnum;
           result.flashes5m = valueDes;
           break;
         case r'radiusKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.radiusKm = valueDes;
           break;
         case r'maxEnergyFj':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxEnergyFj = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.label = valueDes;
           break;
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         default:

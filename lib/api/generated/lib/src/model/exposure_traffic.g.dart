@@ -28,10 +28,10 @@ ExposureTrafficStatusEnum _$exposureTrafficStatusEnumValueOf(String name) {
 
 final BuiltSet<ExposureTrafficStatusEnum> _$exposureTrafficStatusEnumValues =
     BuiltSet<ExposureTrafficStatusEnum>(const <ExposureTrafficStatusEnum>[
-  _$exposureTrafficStatusEnum_ok,
-  _$exposureTrafficStatusEnum_unavailable,
-  _$exposureTrafficStatusEnum_notInstalled,
-]);
+      _$exposureTrafficStatusEnum_ok,
+      _$exposureTrafficStatusEnum_unavailable,
+      _$exposureTrafficStatusEnum_notInstalled,
+    ]);
 
 Serializer<ExposureTrafficStatusEnum> _$exposureTrafficStatusEnumSerializer =
     _$ExposureTrafficStatusEnumSerializer();
@@ -55,16 +55,20 @@ class _$ExposureTrafficStatusEnumSerializer
   final String wireName = 'ExposureTrafficStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ExposureTrafficStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExposureTrafficStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExposureTrafficStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExposureTrafficStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExposureTrafficStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExposureTraffic extends ExposureTraffic {
@@ -80,9 +84,12 @@ class _$ExposureTraffic extends ExposureTraffic {
   factory _$ExposureTraffic([void Function(ExposureTrafficBuilder)? updates]) =>
       (ExposureTrafficBuilder()..update(updates))._build();
 
-  _$ExposureTraffic._(
-      {required this.status, this.attribution, this.aircraft, this.vessels})
-      : super._();
+  _$ExposureTraffic._({
+    required this.status,
+    this.attribution,
+    this.aircraft,
+    this.vessels,
+  }) : super._();
   @override
   ExposureTraffic rebuild(void Function(ExposureTrafficBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -176,10 +183,14 @@ class ExposureTrafficBuilder
   _$ExposureTraffic _build() {
     _$ExposureTraffic _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExposureTraffic._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExposureTraffic', 'status'),
+              status,
+              r'ExposureTraffic',
+              'status',
+            ),
             attribution: _attribution?.build(),
             aircraft: aircraft,
             vessels: vessels,
@@ -191,7 +202,10 @@ class ExposureTrafficBuilder
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExposureTraffic', _$failedField, e.toString());
+          r'ExposureTraffic',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

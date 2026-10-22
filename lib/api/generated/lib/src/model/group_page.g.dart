@@ -90,11 +90,8 @@ class GroupPageBuilder implements Builder<GroupPage, GroupPageBuilder> {
   _$GroupPage _build() {
     _$GroupPage _$result;
     try {
-      _$result = _$v ??
-          _$GroupPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$GroupPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class GroupPageBuilder implements Builder<GroupPage, GroupPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GroupPage', _$failedField, e.toString());
+          r'GroupPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,16 +12,16 @@ class _$RatingsImportResultErrorsInner extends RatingsImportResultErrorsInner {
   @override
   final String message;
 
-  factory _$RatingsImportResultErrorsInner(
-          [void Function(RatingsImportResultErrorsInnerBuilder)? updates]) =>
-      (RatingsImportResultErrorsInnerBuilder()..update(updates))._build();
+  factory _$RatingsImportResultErrorsInner([
+    void Function(RatingsImportResultErrorsInnerBuilder)? updates,
+  ]) => (RatingsImportResultErrorsInnerBuilder()..update(updates))._build();
 
   _$RatingsImportResultErrorsInner._({this.row, required this.message})
-      : super._();
+    : super._();
   @override
   RatingsImportResultErrorsInner rebuild(
-          void Function(RatingsImportResultErrorsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RatingsImportResultErrorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RatingsImportResultErrorsInnerBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$RatingsImportResultErrorsInner extends RatingsImportResultErrorsInner {
 
 class RatingsImportResultErrorsInnerBuilder
     implements
-        Builder<RatingsImportResultErrorsInner,
-            RatingsImportResultErrorsInnerBuilder> {
+        Builder<
+          RatingsImportResultErrorsInner,
+          RatingsImportResultErrorsInnerBuilder
+        > {
   _$RatingsImportResultErrorsInner? _$v;
 
   int? _row;
@@ -95,11 +97,15 @@ class RatingsImportResultErrorsInnerBuilder
   RatingsImportResultErrorsInner build() => _build();
 
   _$RatingsImportResultErrorsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RatingsImportResultErrorsInner._(
           row: row,
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'RatingsImportResultErrorsInner', 'message'),
+            message,
+            r'RatingsImportResultErrorsInner',
+            'message',
+          ),
         );
     replace(_$result);
     return _$result;

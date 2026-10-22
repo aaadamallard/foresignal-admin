@@ -20,22 +20,22 @@ class _$PolSubjectInputParams extends PolSubjectInputParams {
   @override
   final String? lookback;
 
-  factory _$PolSubjectInputParams(
-          [void Function(PolSubjectInputParamsBuilder)? updates]) =>
-      (PolSubjectInputParamsBuilder()..update(updates))._build();
+  factory _$PolSubjectInputParams([
+    void Function(PolSubjectInputParamsBuilder)? updates,
+  ]) => (PolSubjectInputParamsBuilder()..update(updates))._build();
 
-  _$PolSubjectInputParams._(
-      {this.stayRadiusM,
-      this.minDwell,
-      this.maxGap,
-      this.eps,
-      this.minPts,
-      this.lookback})
-      : super._();
+  _$PolSubjectInputParams._({
+    this.stayRadiusM,
+    this.minDwell,
+    this.maxGap,
+    this.eps,
+    this.minPts,
+    this.lookback,
+  }) : super._();
   @override
   PolSubjectInputParams rebuild(
-          void Function(PolSubjectInputParamsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PolSubjectInputParamsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PolSubjectInputParamsBuilder toBuilder() =>
@@ -139,7 +139,8 @@ class PolSubjectInputParamsBuilder
   PolSubjectInputParams build() => _build();
 
   _$PolSubjectInputParams _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PolSubjectInputParams._(
           stayRadiusM: stayRadiusM,
           minDwell: minDwell,

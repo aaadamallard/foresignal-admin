@@ -20,18 +20,18 @@ class _$TokenRestrictions extends TokenRestrictions {
   @override
   final bool? includeExercise;
 
-  factory _$TokenRestrictions(
-          [void Function(TokenRestrictionsBuilder)? updates]) =>
-      (TokenRestrictionsBuilder()..update(updates))._build();
+  factory _$TokenRestrictions([
+    void Function(TokenRestrictionsBuilder)? updates,
+  ]) => (TokenRestrictionsBuilder()..update(updates))._build();
 
-  _$TokenRestrictions._(
-      {this.sources,
-      this.kinds,
-      this.bbox,
-      this.endpoints,
-      this.federation,
-      this.includeExercise})
-      : super._();
+  _$TokenRestrictions._({
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.endpoints,
+    this.federation,
+    this.includeExercise,
+  }) : super._();
   @override
   TokenRestrictions rebuild(void Function(TokenRestrictionsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -143,7 +143,8 @@ class TokenRestrictionsBuilder
   _$TokenRestrictions _build() {
     _$TokenRestrictions _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TokenRestrictions._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -165,7 +166,10 @@ class TokenRestrictionsBuilder
         _endpoints?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TokenRestrictions', _$failedField, e.toString());
+          r'TokenRestrictions',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,15 +12,15 @@ class _$ArchivePartitionPage extends ArchivePartitionPage {
   @override
   final String? nextCursor;
 
-  factory _$ArchivePartitionPage(
-          [void Function(ArchivePartitionPageBuilder)? updates]) =>
-      (ArchivePartitionPageBuilder()..update(updates))._build();
+  factory _$ArchivePartitionPage([
+    void Function(ArchivePartitionPageBuilder)? updates,
+  ]) => (ArchivePartitionPageBuilder()..update(updates))._build();
 
   _$ArchivePartitionPage._({required this.items, this.nextCursor}) : super._();
   @override
   ArchivePartitionPage rebuild(
-          void Function(ArchivePartitionPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ArchivePartitionPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ArchivePartitionPageBuilder toBuilder() =>
@@ -95,7 +95,8 @@ class ArchivePartitionPageBuilder
   _$ArchivePartitionPage _build() {
     _$ArchivePartitionPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ArchivePartitionPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -107,7 +108,10 @@ class ArchivePartitionPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ArchivePartitionPage', _$failedField, e.toString());
+          r'ArchivePartitionPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -93,11 +93,9 @@ class AskThreadPageBuilder
   _$AskThreadPage _build() {
     _$AskThreadPage _$result;
     try {
-      _$result = _$v ??
-          _$AskThreadPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AskThreadPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -105,7 +103,10 @@ class AskThreadPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AskThreadPage', _$failedField, e.toString());
+          r'AskThreadPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

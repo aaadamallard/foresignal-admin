@@ -1,41 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// The application title shown in the window bar and the placeholder home.
+import 'core/router.dart';
+import 'core/theme.dart';
+import 'core/theme_mode.dart';
+
+/// The application title shown in the window bar.
 const String appTitle = 'ForeSignal Admin';
 
-/// The root widget: a [MaterialApp.router] over the app's [GoRouter].
-class ForeSignalAdminApp extends StatelessWidget {
+/// The root widget: a [MaterialApp.router] over [routerProvider], in the
+/// light or dark admin theme the operator chose.
+class ForeSignalAdminApp extends ConsumerWidget {
   /// Creates the root widget.
   const ForeSignalAdminApp({super.key});
 
-  static final GoRouter _router = GoRouter(
-    routes: <RouteBase>[
-      GoRoute(path: '/', builder: (context, state) => const PlaceholderHome()),
-    ],
-  );
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
       title: appTitle,
-      theme: ThemeData(colorSchemeSeed: Colors.teal, brightness: Brightness.dark),
-      routerConfig: _router,
-    );
-  }
-}
-
-/// A placeholder home screen that proves the scaffold builds and runs.
-class PlaceholderHome extends StatelessWidget {
-  /// Creates the placeholder home.
-  const PlaceholderHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(appTitle, style: Theme.of(context).textTheme.headlineMedium),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: buildAdminLightTheme(),
+      darkTheme: buildAdminTheme(),
+      themeMode: ref.watch(themeModeProvider),
+      routerConfig: ref.watch(routerProvider),
     );
   }
 }

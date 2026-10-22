@@ -23,23 +23,23 @@ class _$SatellitePassPayloadProductsInner
   @override
   final String? mediaId;
 
-  factory _$SatellitePassPayloadProductsInner(
-          [void Function(SatellitePassPayloadProductsInnerBuilder)? updates]) =>
-      (SatellitePassPayloadProductsInnerBuilder()..update(updates))._build();
+  factory _$SatellitePassPayloadProductsInner([
+    void Function(SatellitePassPayloadProductsInnerBuilder)? updates,
+  ]) => (SatellitePassPayloadProductsInnerBuilder()..update(updates))._build();
 
-  _$SatellitePassPayloadProductsInner._(
-      {this.productId,
-      this.frameKey,
-      required this.composite,
-      this.thumbMediaId,
-      this.tilesTemplate,
-      this.instrument,
-      this.mediaId})
-      : super._();
+  _$SatellitePassPayloadProductsInner._({
+    this.productId,
+    this.frameKey,
+    required this.composite,
+    this.thumbMediaId,
+    this.tilesTemplate,
+    this.instrument,
+    this.mediaId,
+  }) : super._();
   @override
   SatellitePassPayloadProductsInner rebuild(
-          void Function(SatellitePassPayloadProductsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SatellitePassPayloadProductsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SatellitePassPayloadProductsInnerBuilder toBuilder() =>
@@ -88,8 +88,10 @@ class _$SatellitePassPayloadProductsInner
 
 class SatellitePassPayloadProductsInnerBuilder
     implements
-        Builder<SatellitePassPayloadProductsInner,
-            SatellitePassPayloadProductsInnerBuilder> {
+        Builder<
+          SatellitePassPayloadProductsInner,
+          SatellitePassPayloadProductsInnerBuilder
+        > {
   _$SatellitePassPayloadProductsInner? _$v;
 
   String? _productId;
@@ -147,7 +149,8 @@ class SatellitePassPayloadProductsInnerBuilder
 
   @override
   void update(
-      void Function(SatellitePassPayloadProductsInnerBuilder)? updates) {
+    void Function(SatellitePassPayloadProductsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -155,12 +158,16 @@ class SatellitePassPayloadProductsInnerBuilder
   SatellitePassPayloadProductsInner build() => _build();
 
   _$SatellitePassPayloadProductsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SatellitePassPayloadProductsInner._(
           productId: productId,
           frameKey: frameKey,
           composite: BuiltValueNullFieldError.checkNotNull(
-              composite, r'SatellitePassPayloadProductsInner', 'composite'),
+            composite,
+            r'SatellitePassPayloadProductsInner',
+            'composite',
+          ),
           thumbMediaId: thumbMediaId,
           tilesTemplate: tilesTemplate,
           instrument: instrument,

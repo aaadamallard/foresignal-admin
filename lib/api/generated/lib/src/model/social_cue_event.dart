@@ -69,9 +69,11 @@ class _$SocialCueEventSerializer
     SocialCueEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -87,17 +89,21 @@ class _$SocialCueEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialCueEventEventEnum),
-          ) as SocialCueEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialCueEventEventEnum),
+                  )
+                  as SocialCueEventEventEnum;
           result.event = valueDes;
           break;
         case r'cue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialCue),
-          ) as SocialCue;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialCue),
+                  )
+                  as SocialCue;
           result.cue.replace(valueDes);
           break;
         default:

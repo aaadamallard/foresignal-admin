@@ -22,8 +22,10 @@ part 'sample_track_response_points_inner.g.dart';
 @BuiltValue()
 abstract class SampleTrackResponsePointsInner
     implements
-        Built<SampleTrackResponsePointsInner,
-            SampleTrackResponsePointsInnerBuilder> {
+        Built<
+          SampleTrackResponsePointsInner,
+          SampleTrackResponsePointsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'lon')
   num get lon;
 
@@ -42,9 +44,9 @@ abstract class SampleTrackResponsePointsInner
 
   SampleTrackResponsePointsInner._();
 
-  factory SampleTrackResponsePointsInner(
-          [void updates(SampleTrackResponsePointsInnerBuilder b)]) =
-      _$SampleTrackResponsePointsInner;
+  factory SampleTrackResponsePointsInner([
+    void updates(SampleTrackResponsePointsInnerBuilder b),
+  ]) = _$SampleTrackResponsePointsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SampleTrackResponsePointsInnerBuilder b) => b;
@@ -59,7 +61,7 @@ class _$SampleTrackResponsePointsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SampleTrackResponsePointsInner,
-    _$SampleTrackResponsePointsInner
+    _$SampleTrackResponsePointsInner,
   ];
 
   @override
@@ -71,15 +73,9 @@ class _$SampleTrackResponsePointsInnerSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'lon';
-    yield serializers.serialize(
-      object.lon,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lon, specifiedType: const FullType(num));
     yield r'lat';
-    yield serializers.serialize(
-      object.lat,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lat, specifiedType: const FullType(num));
     yield r'time';
     yield serializers.serialize(
       object.time,
@@ -103,9 +99,11 @@ class _$SampleTrackResponsePointsInnerSerializer
     SampleTrackResponsePointsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,38 +119,44 @@ class _$SampleTrackResponsePointsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lon = valueDes;
           break;
         case r'lat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lat = valueDes;
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SampleStatus),
-          ) as SampleStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SampleStatus),
+                  )
+                  as SampleStatus;
           result.status = valueDes;
           break;
         case r'values':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(SampleValue)]),
-          ) as BuiltList<SampleValue>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SampleValue),
+                    ]),
+                  )
+                  as BuiltList<SampleValue>;
           result.values.replace(valueDes);
           break;
         default:

@@ -29,17 +29,17 @@ class _$PeerTestResult extends PeerTestResult {
   factory _$PeerTestResult([void Function(PeerTestResultBuilder)? updates]) =>
       (PeerTestResultBuilder()..update(updates))._build();
 
-  _$PeerTestResult._(
-      {required this.ok,
-      required this.reachable,
-      this.latencyMs,
-      this.info,
-      this.signatureValid,
-      this.kid,
-      this.pinnedKid,
-      this.keyMatches,
-      this.error})
-      : super._();
+  _$PeerTestResult._({
+    required this.ok,
+    required this.reachable,
+    this.latencyMs,
+    this.info,
+    this.signatureValid,
+    this.kid,
+    this.pinnedKid,
+    this.keyMatches,
+    this.error,
+  }) : super._();
   @override
   PeerTestResult rebuild(void Function(PeerTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -172,12 +172,19 @@ class PeerTestResultBuilder
   _$PeerTestResult _build() {
     _$PeerTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PeerTestResult._(
             ok: BuiltValueNullFieldError.checkNotNull(
-                ok, r'PeerTestResult', 'ok'),
+              ok,
+              r'PeerTestResult',
+              'ok',
+            ),
             reachable: BuiltValueNullFieldError.checkNotNull(
-                reachable, r'PeerTestResult', 'reachable'),
+              reachable,
+              r'PeerTestResult',
+              'reachable',
+            ),
             latencyMs: latencyMs,
             info: _info?.build(),
             signatureValid: signatureValid,
@@ -193,7 +200,10 @@ class PeerTestResultBuilder
         _info?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PeerTestResult', _$failedField, e.toString());
+          r'PeerTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

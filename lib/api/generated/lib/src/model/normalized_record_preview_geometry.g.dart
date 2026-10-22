@@ -7,29 +7,29 @@ part of 'normalized_record_preview_geometry.dart';
 // **************************************************************************
 
 const NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnum_point =
+_$normalizedRecordPreviewGeometryTypeEnum_point =
     const NormalizedRecordPreviewGeometryTypeEnum._('point');
 const NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnum_multiPoint =
+_$normalizedRecordPreviewGeometryTypeEnum_multiPoint =
     const NormalizedRecordPreviewGeometryTypeEnum._('multiPoint');
 const NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnum_lineString =
+_$normalizedRecordPreviewGeometryTypeEnum_lineString =
     const NormalizedRecordPreviewGeometryTypeEnum._('lineString');
 const NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnum_multiLineString =
+_$normalizedRecordPreviewGeometryTypeEnum_multiLineString =
     const NormalizedRecordPreviewGeometryTypeEnum._('multiLineString');
 const NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnum_polygon =
+_$normalizedRecordPreviewGeometryTypeEnum_polygon =
     const NormalizedRecordPreviewGeometryTypeEnum._('polygon');
 const NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnum_multiPolygon =
+_$normalizedRecordPreviewGeometryTypeEnum_multiPolygon =
     const NormalizedRecordPreviewGeometryTypeEnum._('multiPolygon');
 const NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnum_geometryCollection =
+_$normalizedRecordPreviewGeometryTypeEnum_geometryCollection =
     const NormalizedRecordPreviewGeometryTypeEnum._('geometryCollection');
 
 NormalizedRecordPreviewGeometryTypeEnum
-    _$normalizedRecordPreviewGeometryTypeEnumValueOf(String name) {
+_$normalizedRecordPreviewGeometryTypeEnumValueOf(String name) {
   switch (name) {
     case 'point':
       return _$normalizedRecordPreviewGeometryTypeEnum_point;
@@ -51,19 +51,21 @@ NormalizedRecordPreviewGeometryTypeEnum
 }
 
 final BuiltSet<NormalizedRecordPreviewGeometryTypeEnum>
-    _$normalizedRecordPreviewGeometryTypeEnumValues = BuiltSet<
-        NormalizedRecordPreviewGeometryTypeEnum>(const <NormalizedRecordPreviewGeometryTypeEnum>[
-  _$normalizedRecordPreviewGeometryTypeEnum_point,
-  _$normalizedRecordPreviewGeometryTypeEnum_multiPoint,
-  _$normalizedRecordPreviewGeometryTypeEnum_lineString,
-  _$normalizedRecordPreviewGeometryTypeEnum_multiLineString,
-  _$normalizedRecordPreviewGeometryTypeEnum_polygon,
-  _$normalizedRecordPreviewGeometryTypeEnum_multiPolygon,
-  _$normalizedRecordPreviewGeometryTypeEnum_geometryCollection,
-]);
+_$normalizedRecordPreviewGeometryTypeEnumValues =
+    BuiltSet<NormalizedRecordPreviewGeometryTypeEnum>(
+      const <NormalizedRecordPreviewGeometryTypeEnum>[
+        _$normalizedRecordPreviewGeometryTypeEnum_point,
+        _$normalizedRecordPreviewGeometryTypeEnum_multiPoint,
+        _$normalizedRecordPreviewGeometryTypeEnum_lineString,
+        _$normalizedRecordPreviewGeometryTypeEnum_multiLineString,
+        _$normalizedRecordPreviewGeometryTypeEnum_polygon,
+        _$normalizedRecordPreviewGeometryTypeEnum_multiPolygon,
+        _$normalizedRecordPreviewGeometryTypeEnum_geometryCollection,
+      ],
+    );
 
 Serializer<NormalizedRecordPreviewGeometryTypeEnum>
-    _$normalizedRecordPreviewGeometryTypeEnumSerializer =
+_$normalizedRecordPreviewGeometryTypeEnumSerializer =
     _$NormalizedRecordPreviewGeometryTypeEnumSerializer();
 
 class _$NormalizedRecordPreviewGeometryTypeEnumSerializer
@@ -89,23 +91,26 @@ class _$NormalizedRecordPreviewGeometryTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NormalizedRecordPreviewGeometryTypeEnum
+    NormalizedRecordPreviewGeometryTypeEnum,
   ];
   @override
   final String wireName = 'NormalizedRecordPreviewGeometryTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NormalizedRecordPreviewGeometryTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NormalizedRecordPreviewGeometryTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NormalizedRecordPreviewGeometryTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NormalizedRecordPreviewGeometryTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NormalizedRecordPreviewGeometryTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NormalizedRecordPreviewGeometry
@@ -115,16 +120,16 @@ class _$NormalizedRecordPreviewGeometry
   @override
   final BuiltList<JsonObject?>? coordinates;
 
-  factory _$NormalizedRecordPreviewGeometry(
-          [void Function(NormalizedRecordPreviewGeometryBuilder)? updates]) =>
-      (NormalizedRecordPreviewGeometryBuilder()..update(updates))._build();
+  factory _$NormalizedRecordPreviewGeometry([
+    void Function(NormalizedRecordPreviewGeometryBuilder)? updates,
+  ]) => (NormalizedRecordPreviewGeometryBuilder()..update(updates))._build();
 
   _$NormalizedRecordPreviewGeometry._({required this.type, this.coordinates})
-      : super._();
+    : super._();
   @override
   NormalizedRecordPreviewGeometry rebuild(
-          void Function(NormalizedRecordPreviewGeometryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NormalizedRecordPreviewGeometryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NormalizedRecordPreviewGeometryBuilder toBuilder() =>
@@ -158,8 +163,10 @@ class _$NormalizedRecordPreviewGeometry
 
 class NormalizedRecordPreviewGeometryBuilder
     implements
-        Builder<NormalizedRecordPreviewGeometry,
-            NormalizedRecordPreviewGeometryBuilder> {
+        Builder<
+          NormalizedRecordPreviewGeometry,
+          NormalizedRecordPreviewGeometryBuilder
+        > {
   _$NormalizedRecordPreviewGeometry? _$v;
 
   NormalizedRecordPreviewGeometryTypeEnum? _type;
@@ -203,10 +210,14 @@ class NormalizedRecordPreviewGeometryBuilder
   _$NormalizedRecordPreviewGeometry _build() {
     _$NormalizedRecordPreviewGeometry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NormalizedRecordPreviewGeometry._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'NormalizedRecordPreviewGeometry', 'type'),
+              type,
+              r'NormalizedRecordPreviewGeometry',
+              'type',
+            ),
             coordinates: _coordinates?.build(),
           );
     } catch (_) {
@@ -216,7 +227,10 @@ class NormalizedRecordPreviewGeometryBuilder
         _coordinates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NormalizedRecordPreviewGeometry', _$failedField, e.toString());
+          r'NormalizedRecordPreviewGeometry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

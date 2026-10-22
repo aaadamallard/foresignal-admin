@@ -9,16 +9,17 @@ part of 'jamming_cell_payload.dart';
 const JammingCellPayloadStatusEnum _$jammingCellPayloadStatusEnum_ok =
     const JammingCellPayloadStatusEnum._('ok');
 const JammingCellPayloadStatusEnum
-    _$jammingCellPayloadStatusEnum_insufficientData =
+_$jammingCellPayloadStatusEnum_insufficientData =
     const JammingCellPayloadStatusEnum._('insufficientData');
 const JammingCellPayloadStatusEnum _$jammingCellPayloadStatusEnum_noCoverage =
     const JammingCellPayloadStatusEnum._('noCoverage');
 const JammingCellPayloadStatusEnum
-    _$jammingCellPayloadStatusEnum_degradedInput =
+_$jammingCellPayloadStatusEnum_degradedInput =
     const JammingCellPayloadStatusEnum._('degradedInput');
 
 JammingCellPayloadStatusEnum _$jammingCellPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$jammingCellPayloadStatusEnum_ok;
@@ -34,13 +35,13 @@ JammingCellPayloadStatusEnum _$jammingCellPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<JammingCellPayloadStatusEnum>
-    _$jammingCellPayloadStatusEnumValues =
+_$jammingCellPayloadStatusEnumValues =
     BuiltSet<JammingCellPayloadStatusEnum>(const <JammingCellPayloadStatusEnum>[
-  _$jammingCellPayloadStatusEnum_ok,
-  _$jammingCellPayloadStatusEnum_insufficientData,
-  _$jammingCellPayloadStatusEnum_noCoverage,
-  _$jammingCellPayloadStatusEnum_degradedInput,
-]);
+      _$jammingCellPayloadStatusEnum_ok,
+      _$jammingCellPayloadStatusEnum_insufficientData,
+      _$jammingCellPayloadStatusEnum_noCoverage,
+      _$jammingCellPayloadStatusEnum_degradedInput,
+    ]);
 
 const JammingCellPayloadLevelEnum _$jammingCellPayloadLevelEnum_medium =
     const JammingCellPayloadLevelEnum._('medium');
@@ -59,11 +60,12 @@ JammingCellPayloadLevelEnum _$jammingCellPayloadLevelEnumValueOf(String name) {
 }
 
 final BuiltSet<JammingCellPayloadLevelEnum>
-    _$jammingCellPayloadLevelEnumValues =
-    BuiltSet<JammingCellPayloadLevelEnum>(const <JammingCellPayloadLevelEnum>[
-  _$jammingCellPayloadLevelEnum_medium,
-  _$jammingCellPayloadLevelEnum_high,
-]);
+_$jammingCellPayloadLevelEnumValues = BuiltSet<JammingCellPayloadLevelEnum>(
+  const <JammingCellPayloadLevelEnum>[
+    _$jammingCellPayloadLevelEnum_medium,
+    _$jammingCellPayloadLevelEnum_high,
+  ],
+);
 
 const JammingCellPayloadGridEnum _$jammingCellPayloadGridEnum_h3 =
     const JammingCellPayloadGridEnum._('h3');
@@ -83,15 +85,15 @@ JammingCellPayloadGridEnum _$jammingCellPayloadGridEnumValueOf(String name) {
 
 final BuiltSet<JammingCellPayloadGridEnum> _$jammingCellPayloadGridEnumValues =
     BuiltSet<JammingCellPayloadGridEnum>(const <JammingCellPayloadGridEnum>[
-  _$jammingCellPayloadGridEnum_h3,
-  _$jammingCellPayloadGridEnum_deg1,
-]);
+      _$jammingCellPayloadGridEnum_h3,
+      _$jammingCellPayloadGridEnum_deg1,
+    ]);
 
 Serializer<JammingCellPayloadStatusEnum>
-    _$jammingCellPayloadStatusEnumSerializer =
+_$jammingCellPayloadStatusEnumSerializer =
     _$JammingCellPayloadStatusEnumSerializer();
 Serializer<JammingCellPayloadLevelEnum>
-    _$jammingCellPayloadLevelEnumSerializer =
+_$jammingCellPayloadLevelEnumSerializer =
     _$JammingCellPayloadLevelEnumSerializer();
 Serializer<JammingCellPayloadGridEnum> _$jammingCellPayloadGridEnumSerializer =
     _$JammingCellPayloadGridEnumSerializer();
@@ -117,16 +119,20 @@ class _$JammingCellPayloadStatusEnumSerializer
   final String wireName = 'JammingCellPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, JammingCellPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    JammingCellPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   JammingCellPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JammingCellPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JammingCellPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JammingCellPayloadLevelEnumSerializer
@@ -146,16 +152,20 @@ class _$JammingCellPayloadLevelEnumSerializer
   final String wireName = 'JammingCellPayloadLevelEnum';
 
   @override
-  Object serialize(Serializers serializers, JammingCellPayloadLevelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    JammingCellPayloadLevelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   JammingCellPayloadLevelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JammingCellPayloadLevelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JammingCellPayloadLevelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JammingCellPayloadGridEnumSerializer
@@ -175,16 +185,20 @@ class _$JammingCellPayloadGridEnumSerializer
   final String wireName = 'JammingCellPayloadGridEnum';
 
   @override
-  Object serialize(Serializers serializers, JammingCellPayloadGridEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    JammingCellPayloadGridEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   JammingCellPayloadGridEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JammingCellPayloadGridEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JammingCellPayloadGridEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JammingCellPayload extends JammingCellPayload {
@@ -215,29 +229,29 @@ class _$JammingCellPayload extends JammingCellPayload {
   @override
   final int? windowMinutes;
 
-  factory _$JammingCellPayload(
-          [void Function(JammingCellPayloadBuilder)? updates]) =>
-      (JammingCellPayloadBuilder()..update(updates))._build();
+  factory _$JammingCellPayload([
+    void Function(JammingCellPayloadBuilder)? updates,
+  ]) => (JammingCellPayloadBuilder()..update(updates))._build();
 
-  _$JammingCellPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.level,
-      this.grid,
-      required this.cell,
-      this.aircraft,
-      this.badAircraft,
-      this.ratio,
-      this.windowMinutes})
-      : super._();
+  _$JammingCellPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.level,
+    this.grid,
+    required this.cell,
+    this.aircraft,
+    this.badAircraft,
+    this.ratio,
+    this.windowMinutes,
+  }) : super._();
   @override
   JammingCellPayload rebuild(
-          void Function(JammingCellPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(JammingCellPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   JammingCellPayloadBuilder toBuilder() =>
@@ -404,22 +418,38 @@ class JammingCellPayloadBuilder
   _$JammingCellPayload _build() {
     _$JammingCellPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$JammingCellPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'JammingCellPayload', 'automated'),
+              automated,
+              r'JammingCellPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'JammingCellPayload', 'notAWarning'),
+              notAWarning,
+              r'JammingCellPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'JammingCellPayload', 'status'),
+              status,
+              r'JammingCellPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             level: BuiltValueNullFieldError.checkNotNull(
-                level, r'JammingCellPayload', 'level'),
+              level,
+              r'JammingCellPayload',
+              'level',
+            ),
             grid: grid,
             cell: BuiltValueNullFieldError.checkNotNull(
-                cell, r'JammingCellPayload', 'cell'),
+              cell,
+              r'JammingCellPayload',
+              'cell',
+            ),
             aircraft: aircraft,
             badAircraft: badAircraft,
             ratio: ratio,
@@ -435,7 +465,10 @@ class JammingCellPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'JammingCellPayload', _$failedField, e.toString());
+          r'JammingCellPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

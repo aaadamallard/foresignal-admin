@@ -35,9 +35,9 @@ abstract class DeceptionPayloadChecksInner
 
   DeceptionPayloadChecksInner._();
 
-  factory DeceptionPayloadChecksInner(
-          [void updates(DeceptionPayloadChecksInnerBuilder b)]) =
-      _$DeceptionPayloadChecksInner;
+  factory DeceptionPayloadChecksInner([
+    void updates(DeceptionPayloadChecksInnerBuilder b),
+  ]) = _$DeceptionPayloadChecksInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DeceptionPayloadChecksInnerBuilder b) => b;
@@ -52,7 +52,7 @@ class _$DeceptionPayloadChecksInnerSerializer
   @override
   final Iterable<Type> types = const [
     DeceptionPayloadChecksInner,
-    _$DeceptionPayloadChecksInner
+    _$DeceptionPayloadChecksInner,
   ];
 
   @override
@@ -95,9 +95,11 @@ class _$DeceptionPayloadChecksInnerSerializer
     DeceptionPayloadChecksInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,32 +115,39 @@ class _$DeceptionPayloadChecksInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'check':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DeceptionPayloadChecksInnerCheckEnum),
-          ) as DeceptionPayloadChecksInnerCheckEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DeceptionPayloadChecksInnerCheckEnum,
+                    ),
+                  )
+                  as DeceptionPayloadChecksInnerCheckEnum;
           result.check = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         case r'lastAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastAt = valueDes;
           break;
         case r'detail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.detail = valueDes;
           break;

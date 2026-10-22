@@ -73,9 +73,9 @@ abstract class ExternalCatalogueEntry
 
   ExternalCatalogueEntry._();
 
-  factory ExternalCatalogueEntry(
-          [void updates(ExternalCatalogueEntryBuilder b)]) =
-      _$ExternalCatalogueEntry;
+  factory ExternalCatalogueEntry([
+    void updates(ExternalCatalogueEntryBuilder b),
+  ]) = _$ExternalCatalogueEntry;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalCatalogueEntryBuilder b) => b;
@@ -90,7 +90,7 @@ class _$ExternalCatalogueEntrySerializer
   @override
   final Iterable<Type> types = const [
     ExternalCatalogueEntry,
-    _$ExternalCatalogueEntry
+    _$ExternalCatalogueEntry,
   ];
 
   @override
@@ -158,8 +158,9 @@ class _$ExternalCatalogueEntrySerializer
       yield r'timeDimension';
       yield serializers.serialize(
         object.timeDimension,
-        specifiedType:
-            const FullType.nullable(ExternalCatalogueEntryTimeDimension),
+        specifiedType: const FullType.nullable(
+          ExternalCatalogueEntryTimeDimension,
+        ),
       );
     }
     if (object.cors != null) {
@@ -182,9 +183,11 @@ class _$ExternalCatalogueEntrySerializer
     ExternalCatalogueEntry object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -200,96 +203,117 @@ class _$ExternalCatalogueEntrySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.provider = valueDes;
           break;
         case r'layer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.layer = valueDes;
           break;
         case r'protocol':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ExternalCatalogueEntryProtocolEnum),
-          ) as ExternalCatalogueEntryProtocolEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExternalCatalogueEntryProtocolEnum,
+                    ),
+                  )
+                  as ExternalCatalogueEntryProtocolEnum?;
           if (valueDes == null) continue;
           result.protocol = valueDes;
           break;
         case r'externalTemplate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalTemplate = valueDes;
           break;
         case r'tilingScheme':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tilingScheme = valueDes;
           break;
         case r'tileSize':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.tileSize = valueDes;
           break;
         case r'maxNativeZoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.maxNativeZoom = valueDes;
           break;
         case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ExternalCatalogueEntryFormatEnum),
-          ) as ExternalCatalogueEntryFormatEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExternalCatalogueEntryFormatEnum,
+                    ),
+                  )
+                  as ExternalCatalogueEntryFormatEnum?;
           if (valueDes == null) continue;
           result.format = valueDes;
           break;
         case r'bounds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(num)]),
-          ) as BuiltList<num>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [FullType(num)]),
+                  )
+                  as BuiltList<num>;
           result.bounds.replace(valueDes);
           break;
         case r'timeDimension':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ExternalCatalogueEntryTimeDimension),
-          ) as ExternalCatalogueEntryTimeDimension?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExternalCatalogueEntryTimeDimension,
+                    ),
+                  )
+                  as ExternalCatalogueEntryTimeDimension?;
           if (valueDes == null) continue;
           result.timeDimension.replace(valueDes);
           break;
         case r'cors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cors = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Attribution),
-          ) as Attribution;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Attribution),
+                  )
+                  as Attribution;
           result.attribution.replace(valueDes);
           break;
         default:

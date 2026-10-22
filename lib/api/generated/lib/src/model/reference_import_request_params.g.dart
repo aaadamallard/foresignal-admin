@@ -24,24 +24,24 @@ class _$ReferenceImportRequestParams extends ReferenceImportRequestParams {
   @override
   final String? version;
 
-  factory _$ReferenceImportRequestParams(
-          [void Function(ReferenceImportRequestParamsBuilder)? updates]) =>
-      (ReferenceImportRequestParamsBuilder()..update(updates))._build();
+  factory _$ReferenceImportRequestParams([
+    void Function(ReferenceImportRequestParamsBuilder)? updates,
+  ]) => (ReferenceImportRequestParamsBuilder()..update(updates))._build();
 
-  _$ReferenceImportRequestParams._(
-      {this.file,
-      this.useApi,
-      this.yearFrom,
-      this.yearTo,
-      this.countries,
-      this.minMagnitude,
-      this.hazardTypes,
-      this.version})
-      : super._();
+  _$ReferenceImportRequestParams._({
+    this.file,
+    this.useApi,
+    this.yearFrom,
+    this.yearTo,
+    this.countries,
+    this.minMagnitude,
+    this.hazardTypes,
+    this.version,
+  }) : super._();
   @override
   ReferenceImportRequestParams rebuild(
-          void Function(ReferenceImportRequestParamsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReferenceImportRequestParamsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReferenceImportRequestParamsBuilder toBuilder() =>
@@ -93,8 +93,10 @@ class _$ReferenceImportRequestParams extends ReferenceImportRequestParams {
 
 class ReferenceImportRequestParamsBuilder
     implements
-        Builder<ReferenceImportRequestParams,
-            ReferenceImportRequestParamsBuilder> {
+        Builder<
+          ReferenceImportRequestParams,
+          ReferenceImportRequestParamsBuilder
+        > {
   _$ReferenceImportRequestParams? _$v;
 
   String? _file;
@@ -169,7 +171,8 @@ class ReferenceImportRequestParamsBuilder
   _$ReferenceImportRequestParams _build() {
     _$ReferenceImportRequestParams _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReferenceImportRequestParams._(
             file: file,
             useApi: useApi,
@@ -190,7 +193,10 @@ class ReferenceImportRequestParamsBuilder
         _hazardTypes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReferenceImportRequestParams', _$failedField, e.toString());
+          r'ReferenceImportRequestParams',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

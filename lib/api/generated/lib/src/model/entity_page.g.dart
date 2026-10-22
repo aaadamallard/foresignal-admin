@@ -90,11 +90,8 @@ class EntityPageBuilder implements Builder<EntityPage, EntityPageBuilder> {
   _$EntityPage _build() {
     _$EntityPage _$result;
     try {
-      _$result = _$v ??
-          _$EntityPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$EntityPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class EntityPageBuilder implements Builder<EntityPage, EntityPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EntityPage', _$failedField, e.toString());
+          r'EntityPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

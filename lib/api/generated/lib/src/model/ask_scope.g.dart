@@ -25,15 +25,15 @@ class _$AskScope extends AskScope {
   factory _$AskScope([void Function(AskScopeBuilder)? updates]) =>
       (AskScopeBuilder()..update(updates))._build();
 
-  _$AskScope._(
-      {this.sources,
-      this.kinds,
-      this.bbox,
-      this.since,
-      this.until,
-      this.placeIds,
-      this.viewId})
-      : super._();
+  _$AskScope._({
+    this.sources,
+    this.kinds,
+    this.bbox,
+    this.since,
+    this.until,
+    this.placeIds,
+    this.viewId,
+  }) : super._();
   @override
   AskScope rebuild(void Function(AskScopeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -149,7 +149,8 @@ class AskScopeBuilder implements Builder<AskScope, AskScopeBuilder> {
   _$AskScope _build() {
     _$AskScope _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AskScope._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -171,7 +172,10 @@ class AskScopeBuilder implements Builder<AskScope, AskScopeBuilder> {
         _placeIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AskScope', _$failedField, e.toString());
+          r'AskScope',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -18,7 +18,7 @@ class _$FieldThreshold extends FieldThreshold {
       (FieldThresholdBuilder()..update(updates))._build();
 
   _$FieldThreshold._({required this.field, required this.delta, this.angular})
-      : super._();
+    : super._();
   @override
   FieldThreshold rebuild(void Function(FieldThresholdBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -100,12 +100,19 @@ class FieldThresholdBuilder
   FieldThreshold build() => _build();
 
   _$FieldThreshold _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FieldThreshold._(
           field: BuiltValueNullFieldError.checkNotNull(
-              field, r'FieldThreshold', 'field'),
+            field,
+            r'FieldThreshold',
+            'field',
+          ),
           delta: BuiltValueNullFieldError.checkNotNull(
-              delta, r'FieldThreshold', 'delta'),
+            delta,
+            r'FieldThreshold',
+            'delta',
+          ),
           angular: angular,
         );
     replace(_$result);

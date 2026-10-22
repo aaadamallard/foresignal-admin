@@ -91,11 +91,7 @@ class InfraRulesBuilder implements Builder<InfraRules, InfraRulesBuilder> {
   _$InfraRules _build() {
     _$InfraRules _$result;
     try {
-      _$result = _$v ??
-          _$InfraRules._(
-            version: version,
-            rules: rules.build(),
-          );
+      _$result = _$v ?? _$InfraRules._(version: version, rules: rules.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +99,10 @@ class InfraRulesBuilder implements Builder<InfraRules, InfraRulesBuilder> {
         rules.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraRules', _$failedField, e.toString());
+          r'InfraRules',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

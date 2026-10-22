@@ -50,7 +50,7 @@ class _$EdpSourceInfoLicenceSerializer
   @override
   final Iterable<Type> types = const [
     EdpSourceInfoLicence,
-    _$EdpSourceInfoLicence
+    _$EdpSourceInfoLicence,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$EdpSourceInfoLicenceSerializer
     EdpSourceInfoLicence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,35 +117,44 @@ class _$EdpSourceInfoLicenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.url = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.attribution = valueDes;
           break;
         case r'redistribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EdpSourceInfoLicenceRedistributionEnum),
-          ) as EdpSourceInfoLicenceRedistributionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EdpSourceInfoLicenceRedistributionEnum,
+                    ),
+                  )
+                  as EdpSourceInfoLicenceRedistributionEnum?;
           if (valueDes == null) continue;
           result.redistribution = valueDes;
           break;

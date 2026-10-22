@@ -28,8 +28,9 @@ abstract class EdpDocumentItemAuthor
 
   EdpDocumentItemAuthor._();
 
-  factory EdpDocumentItemAuthor(
-      [void updates(EdpDocumentItemAuthorBuilder b)]) = _$EdpDocumentItemAuthor;
+  factory EdpDocumentItemAuthor([
+    void updates(EdpDocumentItemAuthorBuilder b),
+  ]) = _$EdpDocumentItemAuthor;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EdpDocumentItemAuthorBuilder b) => b;
@@ -44,7 +45,7 @@ class _$EdpDocumentItemAuthorSerializer
   @override
   final Iterable<Type> types = const [
     EdpDocumentItemAuthor,
-    _$EdpDocumentItemAuthor
+    _$EdpDocumentItemAuthor,
   ];
 
   @override
@@ -84,9 +85,11 @@ class _$EdpDocumentItemAuthorSerializer
     EdpDocumentItemAuthor object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +105,32 @@ class _$EdpDocumentItemAuthorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'handle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.handle = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'accountId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.accountId = valueDes;
           break;

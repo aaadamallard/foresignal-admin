@@ -80,8 +80,9 @@ class _$OwnershipChainNodeSerializer
     yield r'paths';
     yield serializers.serialize(
       object.paths,
-      specifiedType:
-          const FullType(BuiltList, [FullType(OwnershipChainNodePathsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OwnershipChainNodePathsInner),
+      ]),
     );
   }
 
@@ -91,9 +92,11 @@ class _$OwnershipChainNodeSerializer
     OwnershipChainNode object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,33 +112,45 @@ class _$OwnershipChainNodeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'node':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObjectEnvelope),
-          ) as ObjectEnvelope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ObjectEnvelope),
+                  )
+                  as ObjectEnvelope;
           result.node.replace(valueDes);
           break;
         case r'reachedFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.reachedFrom.replace(valueDes);
           break;
         case r'weakestEdgeLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(OwnershipChainNodeWeakestEdgeLabelEnum),
-          ) as OwnershipChainNodeWeakestEdgeLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OwnershipChainNodeWeakestEdgeLabelEnum,
+                    ),
+                  )
+                  as OwnershipChainNodeWeakestEdgeLabelEnum;
           result.weakestEdgeLabel = valueDes;
           break;
         case r'paths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(OwnershipChainNodePathsInner)]),
-          ) as BuiltList<OwnershipChainNodePathsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OwnershipChainNodePathsInner),
+                    ]),
+                  )
+                  as BuiltList<OwnershipChainNodePathsInner>;
           result.paths.replace(valueDes);
           break;
         default:

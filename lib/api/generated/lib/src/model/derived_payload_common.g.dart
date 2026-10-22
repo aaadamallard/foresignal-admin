@@ -9,17 +9,18 @@ part of 'derived_payload_common.dart';
 const DerivedPayloadCommonStatusEnum _$derivedPayloadCommonStatusEnum_ok =
     const DerivedPayloadCommonStatusEnum._('ok');
 const DerivedPayloadCommonStatusEnum
-    _$derivedPayloadCommonStatusEnum_insufficientData =
+_$derivedPayloadCommonStatusEnum_insufficientData =
     const DerivedPayloadCommonStatusEnum._('insufficientData');
 const DerivedPayloadCommonStatusEnum
-    _$derivedPayloadCommonStatusEnum_noCoverage =
+_$derivedPayloadCommonStatusEnum_noCoverage =
     const DerivedPayloadCommonStatusEnum._('noCoverage');
 const DerivedPayloadCommonStatusEnum
-    _$derivedPayloadCommonStatusEnum_degradedInput =
+_$derivedPayloadCommonStatusEnum_degradedInput =
     const DerivedPayloadCommonStatusEnum._('degradedInput');
 
 DerivedPayloadCommonStatusEnum _$derivedPayloadCommonStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$derivedPayloadCommonStatusEnum_ok;
@@ -35,16 +36,18 @@ DerivedPayloadCommonStatusEnum _$derivedPayloadCommonStatusEnumValueOf(
 }
 
 final BuiltSet<DerivedPayloadCommonStatusEnum>
-    _$derivedPayloadCommonStatusEnumValues = BuiltSet<
-        DerivedPayloadCommonStatusEnum>(const <DerivedPayloadCommonStatusEnum>[
-  _$derivedPayloadCommonStatusEnum_ok,
-  _$derivedPayloadCommonStatusEnum_insufficientData,
-  _$derivedPayloadCommonStatusEnum_noCoverage,
-  _$derivedPayloadCommonStatusEnum_degradedInput,
-]);
+_$derivedPayloadCommonStatusEnumValues =
+    BuiltSet<DerivedPayloadCommonStatusEnum>(
+      const <DerivedPayloadCommonStatusEnum>[
+        _$derivedPayloadCommonStatusEnum_ok,
+        _$derivedPayloadCommonStatusEnum_insufficientData,
+        _$derivedPayloadCommonStatusEnum_noCoverage,
+        _$derivedPayloadCommonStatusEnum_degradedInput,
+      ],
+    );
 
 Serializer<DerivedPayloadCommonStatusEnum>
-    _$derivedPayloadCommonStatusEnumSerializer =
+_$derivedPayloadCommonStatusEnumSerializer =
     _$DerivedPayloadCommonStatusEnumSerializer();
 
 class _$DerivedPayloadCommonStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$DerivedPayloadCommonStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DerivedPayloadCommonStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DerivedPayloadCommonStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DerivedPayloadCommonStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DerivedPayloadCommonStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DerivedPayloadCommonStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DerivedPayloadCommon extends DerivedPayloadCommon {
@@ -95,22 +101,22 @@ class _$DerivedPayloadCommon extends DerivedPayloadCommon {
   @override
   final BuiltList<DerivedEvidenceRef>? evidence;
 
-  factory _$DerivedPayloadCommon(
-          [void Function(DerivedPayloadCommonBuilder)? updates]) =>
-      (DerivedPayloadCommonBuilder()..update(updates))._build();
+  factory _$DerivedPayloadCommon([
+    void Function(DerivedPayloadCommonBuilder)? updates,
+  ]) => (DerivedPayloadCommonBuilder()..update(updates))._build();
 
-  _$DerivedPayloadCommon._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence})
-      : super._();
+  _$DerivedPayloadCommon._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+  }) : super._();
   @override
   DerivedPayloadCommon rebuild(
-          void Function(DerivedPayloadCommonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DerivedPayloadCommonBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DerivedPayloadCommonBuilder toBuilder() =>
@@ -220,16 +226,26 @@ class DerivedPayloadCommonBuilder
   _$DerivedPayloadCommon _build() {
     _$DerivedPayloadCommon _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DerivedPayloadCommon._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'DerivedPayloadCommon', 'automated'),
+              automated,
+              r'DerivedPayloadCommon',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'DerivedPayloadCommon', 'notAWarning'),
+              notAWarning,
+              r'DerivedPayloadCommon',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DerivedPayloadCommon', 'status'),
+              status,
+              r'DerivedPayloadCommon',
+              'status',
+            ),
             evidence: _evidence?.build(),
           );
     } catch (_) {
@@ -242,7 +258,10 @@ class DerivedPayloadCommonBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DerivedPayloadCommon', _$failedField, e.toString());
+          r'DerivedPayloadCommon',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

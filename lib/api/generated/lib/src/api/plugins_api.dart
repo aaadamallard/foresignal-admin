@@ -46,21 +46,21 @@ class PluginsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/plugins/{name}'.replaceAll(
-        '{' r'name' '}',
-        encodeQueryParameter(_serializers, name, const FullType(String))
-            .toString());
+      '{'
+      r'name'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        name,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -82,9 +82,10 @@ class PluginsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Plugin),
-            ) as Plugin;
+                  rawResponse,
+                  specifiedType: const FullType(Plugin),
+                )
+                as Plugin;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -131,16 +132,10 @@ class PluginsApi {
     final _path = r'/v1/plugins';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -162,9 +157,10 @@ class PluginsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PluginList),
-            ) as PluginList;
+                  rawResponse,
+                  specifiedType: const FullType(PluginList),
+                )
+                as PluginList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -213,21 +209,21 @@ class PluginsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/plugins/{name}'.replaceAll(
-        '{' r'name' '}',
-        encodeQueryParameter(_serializers, name, const FullType(String))
-            .toString());
+      '{'
+      r'name'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        name,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -242,10 +238,7 @@ class PluginsApi {
       _bodyData = _serializers.serialize(pluginUpdate, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -268,9 +261,10 @@ class PluginsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Plugin),
-            ) as Plugin;
+                  rawResponse,
+                  specifiedType: const FullType(Plugin),
+                )
+                as Plugin;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -319,16 +313,10 @@ class PluginsApi {
     final _path = r'/v1/plugins';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -343,10 +331,7 @@ class PluginsApi {
       _bodyData = _serializers.serialize(pluginSettings, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -369,9 +354,10 @@ class PluginsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PluginList),
-            ) as PluginList;
+                  rawResponse,
+                  specifiedType: const FullType(PluginList),
+                )
+                as PluginList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

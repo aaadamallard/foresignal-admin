@@ -65,9 +65,9 @@ abstract class NormalizedRecordPreview
 
   NormalizedRecordPreview._();
 
-  factory NormalizedRecordPreview(
-          [void updates(NormalizedRecordPreviewBuilder b)]) =
-      _$NormalizedRecordPreview;
+  factory NormalizedRecordPreview([
+    void updates(NormalizedRecordPreviewBuilder b),
+  ]) = _$NormalizedRecordPreview;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NormalizedRecordPreviewBuilder b) => b;
@@ -82,7 +82,7 @@ class _$NormalizedRecordPreviewSerializer
   @override
   final Iterable<Type> types = const [
     NormalizedRecordPreview,
-    _$NormalizedRecordPreview
+    _$NormalizedRecordPreview,
   ];
 
   @override
@@ -132,8 +132,10 @@ class _$NormalizedRecordPreviewSerializer
     yield r'payload';
     yield serializers.serialize(
       object.payload,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(JsonObject),
+      ]),
     );
     if (object.eventTime != null) {
       yield r'eventTime';
@@ -171,9 +173,11 @@ class _$NormalizedRecordPreviewSerializer
     NormalizedRecordPreview object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -189,89 +193,115 @@ class _$NormalizedRecordPreviewSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalId = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.kind = valueDes;
           break;
         case r'observedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.observedAt = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(NormalizedRecordPreviewGeometry),
-          ) as NormalizedRecordPreviewGeometry?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NormalizedRecordPreviewGeometry,
+                    ),
+                  )
+                  as NormalizedRecordPreviewGeometry?;
           if (valueDes == null) continue;
           result.geometry.replace(valueDes);
           break;
         case r'validUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validUntil = valueDes;
           break;
         case r'tombstone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.tombstone = valueDes;
           break;
         case r'payload':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>;
           result.payload.replace(valueDes);
           break;
         case r'eventTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.eventTime = valueDes;
           break;
         case r'validFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validFrom = valueDes;
           break;
         case r'quality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Quality),
-          ) as Quality?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Quality),
+                  )
+                  as Quality?;
           if (valueDes == null) continue;
           result.quality.replace(valueDes);
           break;
         case r'observers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Observer)]),
-          ) as BuiltList<Observer>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Observer),
+                    ]),
+                  )
+                  as BuiltList<Observer>?;
           if (valueDes == null) continue;
           result.observers.replace(valueDes);
           break;

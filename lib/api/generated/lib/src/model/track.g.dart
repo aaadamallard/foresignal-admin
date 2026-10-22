@@ -17,10 +17,9 @@ TrackTypeEnum _$trackTypeEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<TrackTypeEnum> _$trackTypeEnumValues =
-    BuiltSet<TrackTypeEnum>(const <TrackTypeEnum>[
-  _$trackTypeEnum_feature,
-]);
+final BuiltSet<TrackTypeEnum> _$trackTypeEnumValues = BuiltSet<TrackTypeEnum>(
+  const <TrackTypeEnum>[_$trackTypeEnum_feature],
+);
 
 Serializer<TrackTypeEnum> _$trackTypeEnumSerializer =
     _$TrackTypeEnumSerializer();
@@ -39,15 +38,20 @@ class _$TrackTypeEnumSerializer implements PrimitiveSerializer<TrackTypeEnum> {
   final String wireName = 'TrackTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, TrackTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TrackTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TrackTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TrackTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TrackTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TrackTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Track extends Track {
@@ -62,7 +66,7 @@ class _$Track extends Track {
       (TrackBuilder()..update(updates))._build();
 
   _$Track._({required this.type, this.geometry, required this.properties})
-      : super._();
+    : super._();
   @override
   Track rebuild(void Function(TrackBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -147,7 +151,8 @@ class TrackBuilder implements Builder<Track, TrackBuilder> {
   _$Track _build() {
     _$Track _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Track._(
             type: BuiltValueNullFieldError.checkNotNull(type, r'Track', 'type'),
             geometry: _geometry?.build(),

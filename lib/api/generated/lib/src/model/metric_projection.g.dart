@@ -26,21 +26,21 @@ class _$MetricProjection extends MetricProjection {
   @override
   final bool? allowPrivate;
 
-  factory _$MetricProjection(
-          [void Function(MetricProjectionBuilder)? updates]) =>
-      (MetricProjectionBuilder()..update(updates))._build();
+  factory _$MetricProjection([
+    void Function(MetricProjectionBuilder)? updates,
+  ]) => (MetricProjectionBuilder()..update(updates))._build();
 
-  _$MetricProjection._(
-      {required this.name,
-      required this.source_,
-      this.kind,
-      required this.path,
-      this.labels,
-      this.unit,
-      this.help,
-      this.maxSeries,
-      this.allowPrivate})
-      : super._();
+  _$MetricProjection._({
+    required this.name,
+    required this.source_,
+    this.kind,
+    required this.path,
+    this.labels,
+    this.unit,
+    this.help,
+    this.maxSeries,
+    this.allowPrivate,
+  }) : super._();
   @override
   MetricProjection rebuild(void Function(MetricProjectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -175,15 +175,25 @@ class MetricProjectionBuilder
   _$MetricProjection _build() {
     _$MetricProjection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MetricProjection._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'MetricProjection', 'name'),
+              name,
+              r'MetricProjection',
+              'name',
+            ),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'MetricProjection', 'source_'),
+              source_,
+              r'MetricProjection',
+              'source_',
+            ),
             kind: kind,
             path: BuiltValueNullFieldError.checkNotNull(
-                path, r'MetricProjection', 'path'),
+              path,
+              r'MetricProjection',
+              'path',
+            ),
             labels: _labels?.build(),
             unit: unit,
             help: help,
@@ -197,7 +207,10 @@ class MetricProjectionBuilder
         _labels?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MetricProjection', _$failedField, e.toString());
+          r'MetricProjection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -211,8 +211,9 @@ class _$RecordMappingSerializer implements PrimitiveSerializer<RecordMapping> {
       yield r'filter';
       yield serializers.serialize(
         object.filter,
-        specifiedType:
-            const FullType(BuiltList, [FullType(RecordMappingFilterInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(RecordMappingFilterInner),
+        ]),
       );
     }
     if (object.spread != null) {
@@ -230,9 +231,11 @@ class _$RecordMappingSerializer implements PrimitiveSerializer<RecordMapping> {
     RecordMapping object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -248,124 +251,161 @@ class _$RecordMappingSerializer implements PrimitiveSerializer<RecordMapping> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(RecordMappingVersionEnum),
-          ) as RecordMappingVersionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(RecordMappingVersionEnum),
+                  )
+                  as RecordMappingVersionEnum;
           result.version = valueDes;
           break;
         case r'select':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.select = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.externalId = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.kind = valueDes;
           break;
         case r'observedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.observedAt = valueDes;
           break;
         case r'eventTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.eventTime = valueDes;
           break;
         case r'validUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.validUntil = valueDes;
           break;
         case r'geometry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.geometry = valueDes;
           break;
         case r'tombstone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecordMappingTombstone),
-          ) as RecordMappingTombstone?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RecordMappingTombstone,
+                    ),
+                  )
+                  as RecordMappingTombstone?;
           if (valueDes == null) continue;
           result.tombstone.replace(valueDes);
           break;
         case r'quality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecordMappingQuality),
-          ) as RecordMappingQuality?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RecordMappingQuality,
+                    ),
+                  )
+                  as RecordMappingQuality?;
           if (valueDes == null) continue;
           result.quality.replace(valueDes);
           break;
         case r'fields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(MappingField)]),
-          ) as BuiltList<MappingField>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(MappingField),
+                    ]),
+                  )
+                  as BuiltList<MappingField>?;
           if (valueDes == null) continue;
           result.fields.replace(valueDes);
           break;
         case r'pairs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecordMappingPairs),
-          ) as RecordMappingPairs?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(RecordMappingPairs),
+                  )
+                  as RecordMappingPairs?;
           if (valueDes == null) continue;
           result.pairs.replace(valueDes);
           break;
         case r'drop':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.drop.replace(valueDes);
           break;
         case r'filter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(RecordMappingFilterInner)]),
-          ) as BuiltList<RecordMappingFilterInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(RecordMappingFilterInner),
+                    ]),
+                  )
+                  as BuiltList<RecordMappingFilterInner>?;
           if (valueDes == null) continue;
           result.filter.replace(valueDes);
           break;
         case r'spread':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecordMappingSpread),
-          ) as RecordMappingSpread?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(RecordMappingSpread),
+                  )
+                  as RecordMappingSpread?;
           if (valueDes == null) continue;
           result.spread.replace(valueDes);
           break;

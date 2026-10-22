@@ -94,11 +94,9 @@ class GlanceAlertsBuilder
   _$GlanceAlerts _build() {
     _$GlanceAlerts _$result;
     try {
-      _$result = _$v ??
-          _$GlanceAlerts._(
-            open: _open?.build(),
-            latest: _latest?.build(),
-          );
+      _$result =
+          _$v ??
+          _$GlanceAlerts._(open: _open?.build(), latest: _latest?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -108,7 +106,10 @@ class GlanceAlertsBuilder
         _latest?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GlanceAlerts', _$failedField, e.toString());
+          r'GlanceAlerts',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

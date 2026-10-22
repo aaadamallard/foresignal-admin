@@ -33,9 +33,9 @@ abstract class ScorecardEntryRecalibration
 
   ScorecardEntryRecalibration._();
 
-  factory ScorecardEntryRecalibration(
-          [void updates(ScorecardEntryRecalibrationBuilder b)]) =
-      _$ScorecardEntryRecalibration;
+  factory ScorecardEntryRecalibration([
+    void updates(ScorecardEntryRecalibrationBuilder b),
+  ]) = _$ScorecardEntryRecalibration;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ScorecardEntryRecalibrationBuilder b) => b;
@@ -50,7 +50,7 @@ class _$ScorecardEntryRecalibrationSerializer
   @override
   final Iterable<Type> types = const [
     ScorecardEntryRecalibration,
-    _$ScorecardEntryRecalibration
+    _$ScorecardEntryRecalibration,
   ];
 
   @override
@@ -62,20 +62,11 @@ class _$ScorecardEntryRecalibrationSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'a';
-    yield serializers.serialize(
-      object.a,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.a, specifiedType: const FullType(num));
     yield r'b';
-    yield serializers.serialize(
-      object.b,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.b, specifiedType: const FullType(num));
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     if (object.fittedAt != null) {
       yield r'fittedAt';
       yield serializers.serialize(
@@ -91,9 +82,11 @@ class _$ScorecardEntryRecalibrationSerializer
     ScorecardEntryRecalibration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,31 +102,30 @@ class _$ScorecardEntryRecalibrationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.a = valueDes;
           break;
         case r'b':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.b = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'fittedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.fittedAt = valueDes;
           break;

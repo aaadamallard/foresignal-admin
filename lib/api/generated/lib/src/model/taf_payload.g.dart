@@ -23,14 +23,14 @@ class _$TafPayload extends TafPayload {
   factory _$TafPayload([void Function(TafPayloadBuilder)? updates]) =>
       (TafPayloadBuilder()..update(updates))._build();
 
-  _$TafPayload._(
-      {required this.stationId,
-      required this.issueTime,
-      required this.validFrom,
-      required this.validTo,
-      this.forecast,
-      required this.rawText})
-      : super._();
+  _$TafPayload._({
+    required this.stationId,
+    required this.issueTime,
+    required this.validFrom,
+    required this.validTo,
+    this.forecast,
+    required this.rawText,
+  }) : super._();
   @override
   TafPayload rebuild(void Function(TafPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -139,19 +139,35 @@ class TafPayloadBuilder implements Builder<TafPayload, TafPayloadBuilder> {
   _$TafPayload _build() {
     _$TafPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TafPayload._(
             stationId: BuiltValueNullFieldError.checkNotNull(
-                stationId, r'TafPayload', 'stationId'),
+              stationId,
+              r'TafPayload',
+              'stationId',
+            ),
             issueTime: BuiltValueNullFieldError.checkNotNull(
-                issueTime, r'TafPayload', 'issueTime'),
+              issueTime,
+              r'TafPayload',
+              'issueTime',
+            ),
             validFrom: BuiltValueNullFieldError.checkNotNull(
-                validFrom, r'TafPayload', 'validFrom'),
+              validFrom,
+              r'TafPayload',
+              'validFrom',
+            ),
             validTo: BuiltValueNullFieldError.checkNotNull(
-                validTo, r'TafPayload', 'validTo'),
+              validTo,
+              r'TafPayload',
+              'validTo',
+            ),
             forecast: _forecast?.build(),
             rawText: BuiltValueNullFieldError.checkNotNull(
-                rawText, r'TafPayload', 'rawText'),
+              rawText,
+              r'TafPayload',
+              'rawText',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -160,7 +176,10 @@ class TafPayloadBuilder implements Builder<TafPayload, TafPayloadBuilder> {
         _forecast?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TafPayload', _$failedField, e.toString());
+          r'TafPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

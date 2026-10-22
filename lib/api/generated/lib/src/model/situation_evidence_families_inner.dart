@@ -21,8 +21,10 @@ part 'situation_evidence_families_inner.g.dart';
 @BuiltValue()
 abstract class SituationEvidenceFamiliesInner
     implements
-        Built<SituationEvidenceFamiliesInner,
-            SituationEvidenceFamiliesInnerBuilder> {
+        Built<
+          SituationEvidenceFamiliesInner,
+          SituationEvidenceFamiliesInnerBuilder
+        > {
   /// Signal family from the 119 registry (`intel/signal-families.json`, operator-extensible), e.g. `ais-behaviour`, `aviation-military`, `aviation-ops`, `conflict`, `outage`, `internet-measurement`, `gnss-interference`, `nav-warning`, `attention`, `seismic`, `fire`, `weather-severe`, `cyber`, `markets`, `sanctions`, `health`, `space`
   @BuiltValueField(wireName: r'family')
   String get family;
@@ -42,9 +44,9 @@ abstract class SituationEvidenceFamiliesInner
 
   SituationEvidenceFamiliesInner._();
 
-  factory SituationEvidenceFamiliesInner(
-          [void updates(SituationEvidenceFamiliesInnerBuilder b)]) =
-      _$SituationEvidenceFamiliesInner;
+  factory SituationEvidenceFamiliesInner([
+    void updates(SituationEvidenceFamiliesInnerBuilder b),
+  ]) = _$SituationEvidenceFamiliesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationEvidenceFamiliesInnerBuilder b) => b;
@@ -59,7 +61,7 @@ class _$SituationEvidenceFamiliesInnerSerializer
   @override
   final Iterable<Type> types = const [
     SituationEvidenceFamiliesInner,
-    _$SituationEvidenceFamiliesInner
+    _$SituationEvidenceFamiliesInner,
   ];
 
   @override
@@ -107,9 +109,11 @@ class _$SituationEvidenceFamiliesInnerSerializer
     SituationEvidenceFamiliesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,40 +129,48 @@ class _$SituationEvidenceFamiliesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         case r'coreCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.coreCount = valueDes;
           break;
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SituationMember)]),
-          ) as BuiltList<SituationMember>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SituationMember),
+                    ]),
+                  )
+                  as BuiltList<SituationMember>;
           result.members.replace(valueDes);
           break;
         case r'more':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.more = valueDes;
           break;

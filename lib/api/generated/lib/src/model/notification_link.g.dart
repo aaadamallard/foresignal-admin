@@ -12,9 +12,9 @@ class _$NotificationLink extends NotificationLink {
   @override
   final String url;
 
-  factory _$NotificationLink(
-          [void Function(NotificationLinkBuilder)? updates]) =>
-      (NotificationLinkBuilder()..update(updates))._build();
+  factory _$NotificationLink([
+    void Function(NotificationLinkBuilder)? updates,
+  ]) => (NotificationLinkBuilder()..update(updates))._build();
 
   _$NotificationLink._({required this.label, required this.url}) : super._();
   @override
@@ -91,12 +91,19 @@ class NotificationLinkBuilder
   NotificationLink build() => _build();
 
   _$NotificationLink _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NotificationLink._(
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'NotificationLink', 'label'),
+            label,
+            r'NotificationLink',
+            'label',
+          ),
           url: BuiltValueNullFieldError.checkNotNull(
-              url, r'NotificationLink', 'url'),
+            url,
+            r'NotificationLink',
+            'url',
+          ),
         );
     replace(_$result);
     return _$result;

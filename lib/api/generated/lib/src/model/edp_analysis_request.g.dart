@@ -32,11 +32,11 @@ EdpAnalysisRequestAuthEnum _$edpAnalysisRequestAuthEnumValueOf(String name) {
 
 final BuiltSet<EdpAnalysisRequestAuthEnum> _$edpAnalysisRequestAuthEnumValues =
     BuiltSet<EdpAnalysisRequestAuthEnum>(const <EdpAnalysisRequestAuthEnum>[
-  _$edpAnalysisRequestAuthEnum_none,
-  _$edpAnalysisRequestAuthEnum_bearer,
-  _$edpAnalysisRequestAuthEnum_header,
-  _$edpAnalysisRequestAuthEnum_basic,
-]);
+      _$edpAnalysisRequestAuthEnum_none,
+      _$edpAnalysisRequestAuthEnum_bearer,
+      _$edpAnalysisRequestAuthEnum_header,
+      _$edpAnalysisRequestAuthEnum_basic,
+    ]);
 
 Serializer<EdpAnalysisRequestAuthEnum> _$edpAnalysisRequestAuthEnumSerializer =
     _$EdpAnalysisRequestAuthEnumSerializer();
@@ -62,16 +62,20 @@ class _$EdpAnalysisRequestAuthEnumSerializer
   final String wireName = 'EdpAnalysisRequestAuthEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpAnalysisRequestAuthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpAnalysisRequestAuthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpAnalysisRequestAuthEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpAnalysisRequestAuthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpAnalysisRequestAuthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpAnalysisRequest extends EdpAnalysisRequest {
@@ -82,16 +86,16 @@ class _$EdpAnalysisRequest extends EdpAnalysisRequest {
   @override
   final String? header;
 
-  factory _$EdpAnalysisRequest(
-          [void Function(EdpAnalysisRequestBuilder)? updates]) =>
-      (EdpAnalysisRequestBuilder()..update(updates))._build();
+  factory _$EdpAnalysisRequest([
+    void Function(EdpAnalysisRequestBuilder)? updates,
+  ]) => (EdpAnalysisRequestBuilder()..update(updates))._build();
 
   _$EdpAnalysisRequest._({required this.url, this.auth, this.header})
-      : super._();
+    : super._();
   @override
   EdpAnalysisRequest rebuild(
-          void Function(EdpAnalysisRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpAnalysisRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpAnalysisRequestBuilder toBuilder() =>
@@ -171,10 +175,14 @@ class EdpAnalysisRequestBuilder
   EdpAnalysisRequest build() => _build();
 
   _$EdpAnalysisRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpAnalysisRequest._(
           url: BuiltValueNullFieldError.checkNotNull(
-              url, r'EdpAnalysisRequest', 'url'),
+            url,
+            r'EdpAnalysisRequest',
+            'url',
+          ),
           auth: auth,
           header: header,
         );

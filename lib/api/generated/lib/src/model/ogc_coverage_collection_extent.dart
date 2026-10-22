@@ -27,9 +27,9 @@ abstract class OgcCoverageCollectionExtent
 
   OgcCoverageCollectionExtent._();
 
-  factory OgcCoverageCollectionExtent(
-          [void updates(OgcCoverageCollectionExtentBuilder b)]) =
-      _$OgcCoverageCollectionExtent;
+  factory OgcCoverageCollectionExtent([
+    void updates(OgcCoverageCollectionExtentBuilder b),
+  ]) = _$OgcCoverageCollectionExtent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCoverageCollectionExtentBuilder b) => b;
@@ -44,7 +44,7 @@ class _$OgcCoverageCollectionExtentSerializer
   @override
   final Iterable<Type> types = const [
     OgcCoverageCollectionExtent,
-    _$OgcCoverageCollectionExtent
+    _$OgcCoverageCollectionExtent,
   ];
 
   @override
@@ -77,9 +77,11 @@ class _$OgcCoverageCollectionExtentSerializer
     OgcCoverageCollectionExtent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -95,20 +97,26 @@ class _$OgcCoverageCollectionExtentSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'spatial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OgcCoverageCollectionExtentSpatial),
-          ) as OgcCoverageCollectionExtentSpatial?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCoverageCollectionExtentSpatial,
+                    ),
+                  )
+                  as OgcCoverageCollectionExtentSpatial?;
           if (valueDes == null) continue;
           result.spatial.replace(valueDes);
           break;
         case r'temporal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OgcCoverageCollectionExtentTemporal),
-          ) as OgcCoverageCollectionExtentTemporal?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCoverageCollectionExtentTemporal,
+                    ),
+                  )
+                  as OgcCoverageCollectionExtentTemporal?;
           if (valueDes == null) continue;
           result.temporal.replace(valueDes);
           break;

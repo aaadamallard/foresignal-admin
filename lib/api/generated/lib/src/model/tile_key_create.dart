@@ -89,9 +89,11 @@ class _$TileKeyCreateSerializer implements PrimitiveSerializer<TileKeyCreate> {
     TileKeyCreate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,31 +109,39 @@ class _$TileKeyCreateSerializer implements PrimitiveSerializer<TileKeyCreate> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'prefixes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltSet, [FullType(String)]),
-          ) as BuiltSet<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltSet, [FullType(String)]),
+                  )
+                  as BuiltSet<String>;
           result.prefixes.replace(valueDes);
           break;
         case r'ttl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ttl = valueDes;
           break;
         case r'restrictions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ReadRestriction),
-          ) as ReadRestriction?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ReadRestriction),
+                  )
+                  as ReadRestriction?;
           if (valueDes == null) continue;
           result.restrictions.replace(valueDes);
           break;

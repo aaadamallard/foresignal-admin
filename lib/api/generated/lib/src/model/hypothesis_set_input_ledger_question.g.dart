@@ -15,17 +15,19 @@ class _$HypothesisSetInputLedgerQuestion
   @override
   final String? category;
 
-  factory _$HypothesisSetInputLedgerQuestion(
-          [void Function(HypothesisSetInputLedgerQuestionBuilder)? updates]) =>
-      (HypothesisSetInputLedgerQuestionBuilder()..update(updates))._build();
+  factory _$HypothesisSetInputLedgerQuestion([
+    void Function(HypothesisSetInputLedgerQuestionBuilder)? updates,
+  ]) => (HypothesisSetInputLedgerQuestionBuilder()..update(updates))._build();
 
-  _$HypothesisSetInputLedgerQuestion._(
-      {required this.resolver, this.resolutionCriteria, this.category})
-      : super._();
+  _$HypothesisSetInputLedgerQuestion._({
+    required this.resolver,
+    this.resolutionCriteria,
+    this.category,
+  }) : super._();
   @override
   HypothesisSetInputLedgerQuestion rebuild(
-          void Function(HypothesisSetInputLedgerQuestionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetInputLedgerQuestionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetInputLedgerQuestionBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$HypothesisSetInputLedgerQuestion
 
 class HypothesisSetInputLedgerQuestionBuilder
     implements
-        Builder<HypothesisSetInputLedgerQuestion,
-            HypothesisSetInputLedgerQuestionBuilder> {
+        Builder<
+          HypothesisSetInputLedgerQuestion,
+          HypothesisSetInputLedgerQuestionBuilder
+        > {
   _$HypothesisSetInputLedgerQuestion? _$v;
 
   HypothesisSetInputLedgerQuestionResolverBuilder? _resolver;
@@ -112,7 +116,8 @@ class HypothesisSetInputLedgerQuestionBuilder
   _$HypothesisSetInputLedgerQuestion _build() {
     _$HypothesisSetInputLedgerQuestion _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisSetInputLedgerQuestion._(
             resolver: resolver.build(),
             resolutionCriteria: resolutionCriteria,
@@ -125,7 +130,10 @@ class HypothesisSetInputLedgerQuestionBuilder
         resolver.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisSetInputLedgerQuestion', _$failedField, e.toString());
+          r'HypothesisSetInputLedgerQuestion',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

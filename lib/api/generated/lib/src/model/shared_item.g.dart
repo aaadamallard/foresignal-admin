@@ -32,16 +32,17 @@ SharedItemRoleEnum _$sharedItemRoleEnumValueOf(String name) {
 
 final BuiltSet<SharedItemRoleEnum> _$sharedItemRoleEnumValues =
     BuiltSet<SharedItemRoleEnum>(const <SharedItemRoleEnum>[
-  _$sharedItemRoleEnum_viewer,
-  _$sharedItemRoleEnum_commenter,
-  _$sharedItemRoleEnum_editor,
-  _$sharedItemRoleEnum_owner,
-]);
+      _$sharedItemRoleEnum_viewer,
+      _$sharedItemRoleEnum_commenter,
+      _$sharedItemRoleEnum_editor,
+      _$sharedItemRoleEnum_owner,
+    ]);
 
 const SharedItemViaEnum _$sharedItemViaEnum_principal =
     const SharedItemViaEnum._('principal');
-const SharedItemViaEnum _$sharedItemViaEnum_group =
-    const SharedItemViaEnum._('group');
+const SharedItemViaEnum _$sharedItemViaEnum_group = const SharedItemViaEnum._(
+  'group',
+);
 const SharedItemViaEnum _$sharedItemViaEnum_instance =
     const SharedItemViaEnum._('instance');
 
@@ -60,10 +61,10 @@ SharedItemViaEnum _$sharedItemViaEnumValueOf(String name) {
 
 final BuiltSet<SharedItemViaEnum> _$sharedItemViaEnumValues =
     BuiltSet<SharedItemViaEnum>(const <SharedItemViaEnum>[
-  _$sharedItemViaEnum_principal,
-  _$sharedItemViaEnum_group,
-  _$sharedItemViaEnum_instance,
-]);
+      _$sharedItemViaEnum_principal,
+      _$sharedItemViaEnum_group,
+      _$sharedItemViaEnum_instance,
+    ]);
 
 Serializer<SharedItemRoleEnum> _$sharedItemRoleEnumSerializer =
     _$SharedItemRoleEnumSerializer();
@@ -91,15 +92,20 @@ class _$SharedItemRoleEnumSerializer
   final String wireName = 'SharedItemRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, SharedItemRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SharedItemRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SharedItemRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SharedItemRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SharedItemRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SharedItemRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SharedItemViaEnumSerializer
@@ -121,15 +127,20 @@ class _$SharedItemViaEnumSerializer
   final String wireName = 'SharedItemViaEnum';
 
   @override
-  Object serialize(Serializers serializers, SharedItemViaEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SharedItemViaEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SharedItemViaEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SharedItemViaEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SharedItemViaEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SharedItemViaEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SharedItem extends SharedItem {
@@ -149,14 +160,14 @@ class _$SharedItem extends SharedItem {
   factory _$SharedItem([void Function(SharedItemBuilder)? updates]) =>
       (SharedItemBuilder()..update(updates))._build();
 
-  _$SharedItem._(
-      {required this.envelope,
-      required this.role,
-      required this.via,
-      this.groupId,
-      this.sharedBy,
-      required this.sharedAt})
-      : super._();
+  _$SharedItem._({
+    required this.envelope,
+    required this.role,
+    required this.via,
+    this.groupId,
+    this.sharedBy,
+    required this.sharedAt,
+  }) : super._();
   @override
   SharedItem rebuild(void Function(SharedItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -266,17 +277,27 @@ class SharedItemBuilder implements Builder<SharedItem, SharedItemBuilder> {
   _$SharedItem _build() {
     _$SharedItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SharedItem._(
             envelope: envelope.build(),
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'SharedItem', 'role'),
+              role,
+              r'SharedItem',
+              'role',
+            ),
             via: BuiltValueNullFieldError.checkNotNull(
-                via, r'SharedItem', 'via'),
+              via,
+              r'SharedItem',
+              'via',
+            ),
             groupId: groupId,
             sharedBy: _sharedBy?.build(),
             sharedAt: BuiltValueNullFieldError.checkNotNull(
-                sharedAt, r'SharedItem', 'sharedAt'),
+              sharedAt,
+              r'SharedItem',
+              'sharedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -288,7 +309,10 @@ class SharedItemBuilder implements Builder<SharedItem, SharedItemBuilder> {
         _sharedBy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SharedItem', _$failedField, e.toString());
+          r'SharedItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

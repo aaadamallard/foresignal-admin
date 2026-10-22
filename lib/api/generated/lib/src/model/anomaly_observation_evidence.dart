@@ -28,9 +28,9 @@ abstract class AnomalyObservationEvidence
 
   AnomalyObservationEvidence._();
 
-  factory AnomalyObservationEvidence(
-          [void updates(AnomalyObservationEvidenceBuilder b)]) =
-      _$AnomalyObservationEvidence;
+  factory AnomalyObservationEvidence([
+    void updates(AnomalyObservationEvidenceBuilder b),
+  ]) = _$AnomalyObservationEvidence;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnomalyObservationEvidenceBuilder b) => b;
@@ -45,7 +45,7 @@ class _$AnomalyObservationEvidenceSerializer
   @override
   final Iterable<Type> types = const [
     AnomalyObservationEvidence,
-    _$AnomalyObservationEvidence
+    _$AnomalyObservationEvidence,
   ];
 
   @override
@@ -60,16 +60,18 @@ class _$AnomalyObservationEvidenceSerializer
       yield r'samples';
       yield serializers.serialize(
         object.samples,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AnomalyObservationEvidenceSamplesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AnomalyObservationEvidenceSamplesInner),
+        ]),
       );
     }
     if (object.fetchLogRanges != null) {
       yield r'fetchLogRanges';
       yield serializers.serialize(
         object.fetchLogRanges,
-        specifiedType: const FullType(BuiltList,
-            [FullType(AnomalyObservationEvidenceFetchLogRangesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AnomalyObservationEvidenceFetchLogRangesInner),
+        ]),
       );
     }
   }
@@ -80,9 +82,11 @@ class _$AnomalyObservationEvidenceSerializer
     AnomalyObservationEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,20 +102,26 @@ class _$AnomalyObservationEvidenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'samples':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AnomalyObservationEvidenceSamplesInner)]),
-          ) as BuiltList<AnomalyObservationEvidenceSamplesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AnomalyObservationEvidenceSamplesInner),
+                    ]),
+                  )
+                  as BuiltList<AnomalyObservationEvidenceSamplesInner>?;
           if (valueDes == null) continue;
           result.samples.replace(valueDes);
           break;
         case r'fetchLogRanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(AnomalyObservationEvidenceFetchLogRangesInner)]),
-          ) as BuiltList<AnomalyObservationEvidenceFetchLogRangesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AnomalyObservationEvidenceFetchLogRangesInner),
+                    ]),
+                  )
+                  as BuiltList<AnomalyObservationEvidenceFetchLogRangesInner>?;
           if (valueDes == null) continue;
           result.fetchLogRanges.replace(valueDes);
           break;

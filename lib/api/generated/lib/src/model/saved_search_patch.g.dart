@@ -18,13 +18,17 @@ class _$SavedSearchPatch extends SavedSearchPatch {
   @override
   final bool? notify;
 
-  factory _$SavedSearchPatch(
-          [void Function(SavedSearchPatchBuilder)? updates]) =>
-      (SavedSearchPatchBuilder()..update(updates))._build();
+  factory _$SavedSearchPatch([
+    void Function(SavedSearchPatchBuilder)? updates,
+  ]) => (SavedSearchPatchBuilder()..update(updates))._build();
 
-  _$SavedSearchPatch._(
-      {this.name, this.query, this.visibility, this.tlp, this.notify})
-      : super._();
+  _$SavedSearchPatch._({
+    this.name,
+    this.query,
+    this.visibility,
+    this.tlp,
+    this.notify,
+  }) : super._();
   @override
   SavedSearchPatch rebuild(void Function(SavedSearchPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -126,7 +130,8 @@ class SavedSearchPatchBuilder
   _$SavedSearchPatch _build() {
     _$SavedSearchPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearchPatch._(
             name: name,
             query: _query?.build(),
@@ -141,7 +146,10 @@ class SavedSearchPatchBuilder
         _query?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchPatch', _$failedField, e.toString());
+          r'SavedSearchPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -15,18 +15,20 @@ class _$OgcCoverageCollectionExtentTemporal
   @override
   final String? trs;
 
-  factory _$OgcCoverageCollectionExtentTemporal(
-          [void Function(OgcCoverageCollectionExtentTemporalBuilder)?
-              updates]) =>
+  factory _$OgcCoverageCollectionExtentTemporal([
+    void Function(OgcCoverageCollectionExtentTemporalBuilder)? updates,
+  ]) =>
       (OgcCoverageCollectionExtentTemporalBuilder()..update(updates))._build();
 
-  _$OgcCoverageCollectionExtentTemporal._(
-      {this.interval, this.values, this.trs})
-      : super._();
+  _$OgcCoverageCollectionExtentTemporal._({
+    this.interval,
+    this.values,
+    this.trs,
+  }) : super._();
   @override
   OgcCoverageCollectionExtentTemporal rebuild(
-          void Function(OgcCoverageCollectionExtentTemporalBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionExtentTemporalBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionExtentTemporalBuilder toBuilder() =>
@@ -63,8 +65,10 @@ class _$OgcCoverageCollectionExtentTemporal
 
 class OgcCoverageCollectionExtentTemporalBuilder
     implements
-        Builder<OgcCoverageCollectionExtentTemporal,
-            OgcCoverageCollectionExtentTemporalBuilder> {
+        Builder<
+          OgcCoverageCollectionExtentTemporal,
+          OgcCoverageCollectionExtentTemporalBuilder
+        > {
   _$OgcCoverageCollectionExtentTemporal? _$v;
 
   ListBuilder<BuiltList<DateTime?>>? _interval;
@@ -103,7 +107,8 @@ class OgcCoverageCollectionExtentTemporalBuilder
 
   @override
   void update(
-      void Function(OgcCoverageCollectionExtentTemporalBuilder)? updates) {
+    void Function(OgcCoverageCollectionExtentTemporalBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -113,7 +118,8 @@ class OgcCoverageCollectionExtentTemporalBuilder
   _$OgcCoverageCollectionExtentTemporal _build() {
     _$OgcCoverageCollectionExtentTemporal _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCoverageCollectionExtentTemporal._(
             interval: _interval?.build(),
             values: _values?.build(),
@@ -127,8 +133,11 @@ class OgcCoverageCollectionExtentTemporalBuilder
         _$failedField = 'values';
         _values?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(r'OgcCoverageCollectionExtentTemporal',
-            _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'OgcCoverageCollectionExtentTemporal',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

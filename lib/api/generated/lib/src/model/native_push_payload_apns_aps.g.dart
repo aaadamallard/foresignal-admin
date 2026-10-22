@@ -7,11 +7,12 @@ part of 'native_push_payload_apns_aps.dart';
 // **************************************************************************
 
 const NativePushPayloadApnsApsSoundEnum
-    _$nativePushPayloadApnsApsSoundEnum_default_ =
+_$nativePushPayloadApnsApsSoundEnum_default_ =
     const NativePushPayloadApnsApsSoundEnum._('default_');
 
 NativePushPayloadApnsApsSoundEnum _$nativePushPayloadApnsApsSoundEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'default_':
       return _$nativePushPayloadApnsApsSoundEnum_default_;
@@ -21,17 +22,19 @@ NativePushPayloadApnsApsSoundEnum _$nativePushPayloadApnsApsSoundEnumValueOf(
 }
 
 final BuiltSet<NativePushPayloadApnsApsSoundEnum>
-    _$nativePushPayloadApnsApsSoundEnumValues = BuiltSet<
-        NativePushPayloadApnsApsSoundEnum>(const <NativePushPayloadApnsApsSoundEnum>[
-  _$nativePushPayloadApnsApsSoundEnum_default_,
-]);
+_$nativePushPayloadApnsApsSoundEnumValues =
+    BuiltSet<NativePushPayloadApnsApsSoundEnum>(
+      const <NativePushPayloadApnsApsSoundEnum>[
+        _$nativePushPayloadApnsApsSoundEnum_default_,
+      ],
+    );
 
 const NativePushPayloadApnsApsMutableContentEnum
-    _$nativePushPayloadApnsApsMutableContentEnum_number1 =
+_$nativePushPayloadApnsApsMutableContentEnum_number1 =
     const NativePushPayloadApnsApsMutableContentEnum._('number1');
 
 NativePushPayloadApnsApsMutableContentEnum
-    _$nativePushPayloadApnsApsMutableContentEnumValueOf(String name) {
+_$nativePushPayloadApnsApsMutableContentEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$nativePushPayloadApnsApsMutableContentEnum_number1;
@@ -41,23 +44,25 @@ NativePushPayloadApnsApsMutableContentEnum
 }
 
 final BuiltSet<NativePushPayloadApnsApsMutableContentEnum>
-    _$nativePushPayloadApnsApsMutableContentEnumValues = BuiltSet<
-        NativePushPayloadApnsApsMutableContentEnum>(const <NativePushPayloadApnsApsMutableContentEnum>[
-  _$nativePushPayloadApnsApsMutableContentEnum_number1,
-]);
+_$nativePushPayloadApnsApsMutableContentEnumValues =
+    BuiltSet<NativePushPayloadApnsApsMutableContentEnum>(
+      const <NativePushPayloadApnsApsMutableContentEnum>[
+        _$nativePushPayloadApnsApsMutableContentEnum_number1,
+      ],
+    );
 
 const NativePushPayloadApnsApsInterruptionLevelEnum
-    _$nativePushPayloadApnsApsInterruptionLevelEnum_passive =
+_$nativePushPayloadApnsApsInterruptionLevelEnum_passive =
     const NativePushPayloadApnsApsInterruptionLevelEnum._('passive');
 const NativePushPayloadApnsApsInterruptionLevelEnum
-    _$nativePushPayloadApnsApsInterruptionLevelEnum_active =
+_$nativePushPayloadApnsApsInterruptionLevelEnum_active =
     const NativePushPayloadApnsApsInterruptionLevelEnum._('active');
 const NativePushPayloadApnsApsInterruptionLevelEnum
-    _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive =
+_$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive =
     const NativePushPayloadApnsApsInterruptionLevelEnum._('timeSensitive');
 
 NativePushPayloadApnsApsInterruptionLevelEnum
-    _$nativePushPayloadApnsApsInterruptionLevelEnumValueOf(String name) {
+_$nativePushPayloadApnsApsInterruptionLevelEnumValueOf(String name) {
   switch (name) {
     case 'passive':
       return _$nativePushPayloadApnsApsInterruptionLevelEnum_passive;
@@ -71,21 +76,23 @@ NativePushPayloadApnsApsInterruptionLevelEnum
 }
 
 final BuiltSet<NativePushPayloadApnsApsInterruptionLevelEnum>
-    _$nativePushPayloadApnsApsInterruptionLevelEnumValues = BuiltSet<
-        NativePushPayloadApnsApsInterruptionLevelEnum>(const <NativePushPayloadApnsApsInterruptionLevelEnum>[
-  _$nativePushPayloadApnsApsInterruptionLevelEnum_passive,
-  _$nativePushPayloadApnsApsInterruptionLevelEnum_active,
-  _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive,
-]);
+_$nativePushPayloadApnsApsInterruptionLevelEnumValues =
+    BuiltSet<NativePushPayloadApnsApsInterruptionLevelEnum>(
+      const <NativePushPayloadApnsApsInterruptionLevelEnum>[
+        _$nativePushPayloadApnsApsInterruptionLevelEnum_passive,
+        _$nativePushPayloadApnsApsInterruptionLevelEnum_active,
+        _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive,
+      ],
+    );
 
 Serializer<NativePushPayloadApnsApsSoundEnum>
-    _$nativePushPayloadApnsApsSoundEnumSerializer =
+_$nativePushPayloadApnsApsSoundEnumSerializer =
     _$NativePushPayloadApnsApsSoundEnumSerializer();
 Serializer<NativePushPayloadApnsApsMutableContentEnum>
-    _$nativePushPayloadApnsApsMutableContentEnumSerializer =
+_$nativePushPayloadApnsApsMutableContentEnumSerializer =
     _$NativePushPayloadApnsApsMutableContentEnumSerializer();
 Serializer<NativePushPayloadApnsApsInterruptionLevelEnum>
-    _$nativePushPayloadApnsApsInterruptionLevelEnumSerializer =
+_$nativePushPayloadApnsApsInterruptionLevelEnumSerializer =
     _$NativePushPayloadApnsApsInterruptionLevelEnumSerializer();
 
 class _$NativePushPayloadApnsApsSoundEnumSerializer
@@ -104,16 +111,19 @@ class _$NativePushPayloadApnsApsSoundEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, NativePushPayloadApnsApsSoundEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NativePushPayloadApnsApsSoundEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NativePushPayloadApnsApsSoundEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NativePushPayloadApnsApsSoundEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NativePushPayloadApnsApsSoundEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NativePushPayloadApnsApsMutableContentEnumSerializer
@@ -127,23 +137,26 @@ class _$NativePushPayloadApnsApsMutableContentEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NativePushPayloadApnsApsMutableContentEnum
+    NativePushPayloadApnsApsMutableContentEnum,
   ];
   @override
   final String wireName = 'NativePushPayloadApnsApsMutableContentEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NativePushPayloadApnsApsMutableContentEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NativePushPayloadApnsApsMutableContentEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NativePushPayloadApnsApsMutableContentEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NativePushPayloadApnsApsMutableContentEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NativePushPayloadApnsApsMutableContentEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NativePushPayloadApnsApsInterruptionLevelEnumSerializer
@@ -162,23 +175,26 @@ class _$NativePushPayloadApnsApsInterruptionLevelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NativePushPayloadApnsApsInterruptionLevelEnum
+    NativePushPayloadApnsApsInterruptionLevelEnum,
   ];
   @override
   final String wireName = 'NativePushPayloadApnsApsInterruptionLevelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NativePushPayloadApnsApsInterruptionLevelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NativePushPayloadApnsApsInterruptionLevelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NativePushPayloadApnsApsInterruptionLevelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NativePushPayloadApnsApsInterruptionLevelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NativePushPayloadApnsApsInterruptionLevelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NativePushPayloadApnsAps extends NativePushPayloadApnsAps {
@@ -197,23 +213,23 @@ class _$NativePushPayloadApnsAps extends NativePushPayloadApnsAps {
   @override
   final int? badge;
 
-  factory _$NativePushPayloadApnsAps(
-          [void Function(NativePushPayloadApnsApsBuilder)? updates]) =>
-      (NativePushPayloadApnsApsBuilder()..update(updates))._build();
+  factory _$NativePushPayloadApnsAps([
+    void Function(NativePushPayloadApnsApsBuilder)? updates,
+  ]) => (NativePushPayloadApnsApsBuilder()..update(updates))._build();
 
-  _$NativePushPayloadApnsAps._(
-      {required this.alert,
-      this.sound,
-      this.mutableContent,
-      this.interruptionLevel,
-      this.threadId,
-      this.category,
-      this.badge})
-      : super._();
+  _$NativePushPayloadApnsAps._({
+    required this.alert,
+    this.sound,
+    this.mutableContent,
+    this.interruptionLevel,
+    this.threadId,
+    this.category,
+    this.badge,
+  }) : super._();
   @override
   NativePushPayloadApnsAps rebuild(
-          void Function(NativePushPayloadApnsApsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadApnsApsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadApnsApsBuilder toBuilder() =>
@@ -279,15 +295,15 @@ class NativePushPayloadApnsApsBuilder
   NativePushPayloadApnsApsMutableContentEnum? get mutableContent =>
       _$this._mutableContent;
   set mutableContent(
-          NativePushPayloadApnsApsMutableContentEnum? mutableContent) =>
-      _$this._mutableContent = mutableContent;
+    NativePushPayloadApnsApsMutableContentEnum? mutableContent,
+  ) => _$this._mutableContent = mutableContent;
 
   NativePushPayloadApnsApsInterruptionLevelEnum? _interruptionLevel;
   NativePushPayloadApnsApsInterruptionLevelEnum? get interruptionLevel =>
       _$this._interruptionLevel;
   set interruptionLevel(
-          NativePushPayloadApnsApsInterruptionLevelEnum? interruptionLevel) =>
-      _$this._interruptionLevel = interruptionLevel;
+    NativePushPayloadApnsApsInterruptionLevelEnum? interruptionLevel,
+  ) => _$this._interruptionLevel = interruptionLevel;
 
   String? _threadId;
   String? get threadId => _$this._threadId;
@@ -336,7 +352,8 @@ class NativePushPayloadApnsApsBuilder
   _$NativePushPayloadApnsAps _build() {
     _$NativePushPayloadApnsAps _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NativePushPayloadApnsAps._(
             alert: alert.build(),
             sound: sound,
@@ -353,7 +370,10 @@ class NativePushPayloadApnsApsBuilder
         alert.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NativePushPayloadApnsAps', _$failedField, e.toString());
+          r'NativePushPayloadApnsAps',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

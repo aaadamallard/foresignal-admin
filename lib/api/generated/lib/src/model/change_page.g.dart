@@ -25,15 +25,15 @@ class _$ChangePage extends ChangePage {
   factory _$ChangePage([void Function(ChangePageBuilder)? updates]) =>
       (ChangePageBuilder()..update(updates))._build();
 
-  _$ChangePage._(
-      {required this.items,
-      required this.lastSeq,
-      required this.hasMore,
-      this.watermarkSeq,
-      this.purgeHorizon,
-      this.attributions,
-      this.licenceFiltered})
-      : super._();
+  _$ChangePage._({
+    required this.items,
+    required this.lastSeq,
+    required this.hasMore,
+    this.watermarkSeq,
+    this.purgeHorizon,
+    this.attributions,
+    this.licenceFiltered,
+  }) : super._();
   @override
   ChangePage rebuild(void Function(ChangePageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -151,13 +151,20 @@ class ChangePageBuilder implements Builder<ChangePage, ChangePageBuilder> {
   _$ChangePage _build() {
     _$ChangePage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChangePage._(
             items: items.build(),
             lastSeq: BuiltValueNullFieldError.checkNotNull(
-                lastSeq, r'ChangePage', 'lastSeq'),
+              lastSeq,
+              r'ChangePage',
+              'lastSeq',
+            ),
             hasMore: BuiltValueNullFieldError.checkNotNull(
-                hasMore, r'ChangePage', 'hasMore'),
+              hasMore,
+              r'ChangePage',
+              'hasMore',
+            ),
             watermarkSeq: watermarkSeq,
             purgeHorizon: purgeHorizon,
             attributions: _attributions?.build(),
@@ -173,7 +180,10 @@ class ChangePageBuilder implements Builder<ChangePage, ChangePageBuilder> {
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChangePage', _$failedField, e.toString());
+          r'ChangePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

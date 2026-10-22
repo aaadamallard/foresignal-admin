@@ -12,9 +12,9 @@ class _$RecordVersionPage extends RecordVersionPage {
   @override
   final String? nextCursor;
 
-  factory _$RecordVersionPage(
-          [void Function(RecordVersionPageBuilder)? updates]) =>
-      (RecordVersionPageBuilder()..update(updates))._build();
+  factory _$RecordVersionPage([
+    void Function(RecordVersionPageBuilder)? updates,
+  ]) => (RecordVersionPageBuilder()..update(updates))._build();
 
   _$RecordVersionPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class RecordVersionPageBuilder
   _$RecordVersionPage _build() {
     _$RecordVersionPage _$result;
     try {
-      _$result = _$v ??
-          _$RecordVersionPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$RecordVersionPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class RecordVersionPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecordVersionPage', _$failedField, e.toString());
+          r'RecordVersionPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

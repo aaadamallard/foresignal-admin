@@ -11,16 +11,16 @@ const ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnum_alert =
 const ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnum_finding =
     const ChronicleThreadItemTypeEnum._('finding');
 const ChronicleThreadItemTypeEnum
-    _$chronicleThreadItemTypeEnum_situationChange =
+_$chronicleThreadItemTypeEnum_situationChange =
     const ChronicleThreadItemTypeEnum._('situationChange');
 const ChronicleThreadItemTypeEnum
-    _$chronicleThreadItemTypeEnum_hypothesisBandChange =
+_$chronicleThreadItemTypeEnum_hypothesisBandChange =
     const ChronicleThreadItemTypeEnum._('hypothesisBandChange');
 const ChronicleThreadItemTypeEnum
-    _$chronicleThreadItemTypeEnum_forecastResolution =
+_$chronicleThreadItemTypeEnum_forecastResolution =
     const ChronicleThreadItemTypeEnum._('forecastResolution');
 const ChronicleThreadItemTypeEnum
-    _$chronicleThreadItemTypeEnum_firstAppearance =
+_$chronicleThreadItemTypeEnum_firstAppearance =
     const ChronicleThreadItemTypeEnum._('firstAppearance');
 const ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnum_layerEdit =
     const ChronicleThreadItemTypeEnum._('layerEdit');
@@ -35,10 +35,10 @@ const ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnum_statusChange =
 const ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnum_backfill =
     const ChronicleThreadItemTypeEnum._('backfill');
 const ChronicleThreadItemTypeEnum
-    _$chronicleThreadItemTypeEnum_narrativeChange =
+_$chronicleThreadItemTypeEnum_narrativeChange =
     const ChronicleThreadItemTypeEnum._('narrativeChange');
 const ChronicleThreadItemTypeEnum
-    _$chronicleThreadItemTypeEnum_comparisonChange =
+_$chronicleThreadItemTypeEnum_comparisonChange =
     const ChronicleThreadItemTypeEnum._('comparisonChange');
 
 ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnumValueOf(String name) {
@@ -77,26 +77,26 @@ ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnumValueOf(String name) {
 }
 
 final BuiltSet<ChronicleThreadItemTypeEnum>
-    _$chronicleThreadItemTypeEnumValues =
+_$chronicleThreadItemTypeEnumValues =
     BuiltSet<ChronicleThreadItemTypeEnum>(const <ChronicleThreadItemTypeEnum>[
-  _$chronicleThreadItemTypeEnum_alert,
-  _$chronicleThreadItemTypeEnum_finding,
-  _$chronicleThreadItemTypeEnum_situationChange,
-  _$chronicleThreadItemTypeEnum_hypothesisBandChange,
-  _$chronicleThreadItemTypeEnum_forecastResolution,
-  _$chronicleThreadItemTypeEnum_firstAppearance,
-  _$chronicleThreadItemTypeEnum_layerEdit,
-  _$chronicleThreadItemTypeEnum_captureGap,
-  _$chronicleThreadItemTypeEnum_capWarning,
-  _$chronicleThreadItemTypeEnum_capFallback,
-  _$chronicleThreadItemTypeEnum_statusChange,
-  _$chronicleThreadItemTypeEnum_backfill,
-  _$chronicleThreadItemTypeEnum_narrativeChange,
-  _$chronicleThreadItemTypeEnum_comparisonChange,
-]);
+      _$chronicleThreadItemTypeEnum_alert,
+      _$chronicleThreadItemTypeEnum_finding,
+      _$chronicleThreadItemTypeEnum_situationChange,
+      _$chronicleThreadItemTypeEnum_hypothesisBandChange,
+      _$chronicleThreadItemTypeEnum_forecastResolution,
+      _$chronicleThreadItemTypeEnum_firstAppearance,
+      _$chronicleThreadItemTypeEnum_layerEdit,
+      _$chronicleThreadItemTypeEnum_captureGap,
+      _$chronicleThreadItemTypeEnum_capWarning,
+      _$chronicleThreadItemTypeEnum_capFallback,
+      _$chronicleThreadItemTypeEnum_statusChange,
+      _$chronicleThreadItemTypeEnum_backfill,
+      _$chronicleThreadItemTypeEnum_narrativeChange,
+      _$chronicleThreadItemTypeEnum_comparisonChange,
+    ]);
 
 Serializer<ChronicleThreadItemTypeEnum>
-    _$chronicleThreadItemTypeEnumSerializer =
+_$chronicleThreadItemTypeEnumSerializer =
     _$ChronicleThreadItemTypeEnumSerializer();
 
 class _$ChronicleThreadItemTypeEnumSerializer
@@ -140,16 +140,20 @@ class _$ChronicleThreadItemTypeEnumSerializer
   final String wireName = 'ChronicleThreadItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleThreadItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleThreadItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleThreadItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleThreadItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleThreadItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleThreadItem extends ChronicleThreadItem {
@@ -180,29 +184,29 @@ class _$ChronicleThreadItem extends ChronicleThreadItem {
   @override
   final bool? backfilled;
 
-  factory _$ChronicleThreadItem(
-          [void Function(ChronicleThreadItemBuilder)? updates]) =>
-      (ChronicleThreadItemBuilder()..update(updates))._build();
+  factory _$ChronicleThreadItem([
+    void Function(ChronicleThreadItemBuilder)? updates,
+  ]) => (ChronicleThreadItemBuilder()..update(updates))._build();
 
-  _$ChronicleThreadItem._(
-      {required this.id,
-      required this.chronicleId,
-      required this.type,
-      required this.at,
-      this.seq,
-      this.layerId,
-      required this.title,
-      this.summary,
-      this.ref,
-      this.envelope,
-      this.snapshot,
-      this.gap,
-      this.backfilled})
-      : super._();
+  _$ChronicleThreadItem._({
+    required this.id,
+    required this.chronicleId,
+    required this.type,
+    required this.at,
+    this.seq,
+    this.layerId,
+    required this.title,
+    this.summary,
+    this.ref,
+    this.envelope,
+    this.snapshot,
+    this.gap,
+    this.backfilled,
+  }) : super._();
   @override
   ChronicleThreadItem rebuild(
-          void Function(ChronicleThreadItemBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleThreadItemBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleThreadItemBuilder toBuilder() =>
@@ -368,20 +372,36 @@ class ChronicleThreadItemBuilder
   _$ChronicleThreadItem _build() {
     _$ChronicleThreadItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleThreadItem._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ChronicleThreadItem', 'id'),
+              id,
+              r'ChronicleThreadItem',
+              'id',
+            ),
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleThreadItem', 'chronicleId'),
+              chronicleId,
+              r'ChronicleThreadItem',
+              'chronicleId',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ChronicleThreadItem', 'type'),
+              type,
+              r'ChronicleThreadItem',
+              'type',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ChronicleThreadItem', 'at'),
+              at,
+              r'ChronicleThreadItem',
+              'at',
+            ),
             seq: seq,
             layerId: layerId,
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ChronicleThreadItem', 'title'),
+              title,
+              r'ChronicleThreadItem',
+              'title',
+            ),
             summary: summary,
             ref: ref,
             envelope: _envelope?.build(),
@@ -400,7 +420,10 @@ class ChronicleThreadItemBuilder
         _gap?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleThreadItem', _$failedField, e.toString());
+          r'ChronicleThreadItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -13,20 +13,19 @@ class _$ChronicleSketchBatchResultRejectedInner
   @override
   final String reason;
 
-  factory _$ChronicleSketchBatchResultRejectedInner(
-          [void Function(ChronicleSketchBatchResultRejectedInnerBuilder)?
-              updates]) =>
-      (ChronicleSketchBatchResultRejectedInnerBuilder()..update(updates))
-          ._build();
+  factory _$ChronicleSketchBatchResultRejectedInner([
+    void Function(ChronicleSketchBatchResultRejectedInnerBuilder)? updates,
+  ]) => (ChronicleSketchBatchResultRejectedInnerBuilder()..update(updates))
+      ._build();
 
-  _$ChronicleSketchBatchResultRejectedInner._(
-      {required this.sketchId, required this.reason})
-      : super._();
+  _$ChronicleSketchBatchResultRejectedInner._({
+    required this.sketchId,
+    required this.reason,
+  }) : super._();
   @override
   ChronicleSketchBatchResultRejectedInner rebuild(
-          void Function(ChronicleSketchBatchResultRejectedInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSketchBatchResultRejectedInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSketchBatchResultRejectedInnerBuilder toBuilder() =>
@@ -52,7 +51,8 @@ class _$ChronicleSketchBatchResultRejectedInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ChronicleSketchBatchResultRejectedInner')
+            r'ChronicleSketchBatchResultRejectedInner',
+          )
           ..add('sketchId', sketchId)
           ..add('reason', reason))
         .toString();
@@ -61,8 +61,10 @@ class _$ChronicleSketchBatchResultRejectedInner
 
 class ChronicleSketchBatchResultRejectedInnerBuilder
     implements
-        Builder<ChronicleSketchBatchResultRejectedInner,
-            ChronicleSketchBatchResultRejectedInnerBuilder> {
+        Builder<
+          ChronicleSketchBatchResultRejectedInner,
+          ChronicleSketchBatchResultRejectedInnerBuilder
+        > {
   _$ChronicleSketchBatchResultRejectedInner? _$v;
 
   String? _sketchId;
@@ -94,7 +96,8 @@ class ChronicleSketchBatchResultRejectedInnerBuilder
 
   @override
   void update(
-      void Function(ChronicleSketchBatchResultRejectedInnerBuilder)? updates) {
+    void Function(ChronicleSketchBatchResultRejectedInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -102,12 +105,19 @@ class ChronicleSketchBatchResultRejectedInnerBuilder
   ChronicleSketchBatchResultRejectedInner build() => _build();
 
   _$ChronicleSketchBatchResultRejectedInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSketchBatchResultRejectedInner._(
           sketchId: BuiltValueNullFieldError.checkNotNull(
-              sketchId, r'ChronicleSketchBatchResultRejectedInner', 'sketchId'),
+            sketchId,
+            r'ChronicleSketchBatchResultRejectedInner',
+            'sketchId',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ChronicleSketchBatchResultRejectedInner', 'reason'),
+            reason,
+            r'ChronicleSketchBatchResultRejectedInner',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

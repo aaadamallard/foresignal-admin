@@ -55,7 +55,7 @@ class _$RecipeBacktestResultSerializer
   @override
   final Iterable<Type> types = const [
     RecipeBacktestResult,
-    _$RecipeBacktestResult
+    _$RecipeBacktestResult,
   ];
 
   @override
@@ -81,15 +81,18 @@ class _$RecipeBacktestResultSerializer
     yield r'events';
     yield serializers.serialize(
       object.events,
-      specifiedType: const FullType(
-          BuiltList, [FullType(RecipeBacktestResultEventsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(RecipeBacktestResultEventsInner),
+      ]),
     );
     if (object.countsByType != null) {
       yield r'countsByType';
       yield serializers.serialize(
         object.countsByType,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.overlap != null) {
@@ -107,9 +110,11 @@ class _$RecipeBacktestResultSerializer
     RecipeBacktestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,42 +130,57 @@ class _$RecipeBacktestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'recipeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.recipeId = valueDes;
           break;
         case r'recipeVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.recipeVersion = valueDes;
           break;
         case r'events':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(RecipeBacktestResultEventsInner)]),
-          ) as BuiltList<RecipeBacktestResultEventsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(RecipeBacktestResultEventsInner),
+                    ]),
+                  )
+                  as BuiltList<RecipeBacktestResultEventsInner>;
           result.events.replace(valueDes);
           break;
         case r'countsByType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.countsByType.replace(valueDes);
           break;
         case r'overlap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecipeBacktestResultOverlap),
-          ) as RecipeBacktestResultOverlap?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RecipeBacktestResultOverlap,
+                    ),
+                  )
+                  as RecipeBacktestResultOverlap?;
           if (valueDes == null) continue;
           result.overlap.replace(valueDes);
           break;

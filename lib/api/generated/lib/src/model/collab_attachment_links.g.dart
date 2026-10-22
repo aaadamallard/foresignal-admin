@@ -10,15 +10,15 @@ class _$CollabAttachmentLinks extends CollabAttachmentLinks {
   @override
   final String? content;
 
-  factory _$CollabAttachmentLinks(
-          [void Function(CollabAttachmentLinksBuilder)? updates]) =>
-      (CollabAttachmentLinksBuilder()..update(updates))._build();
+  factory _$CollabAttachmentLinks([
+    void Function(CollabAttachmentLinksBuilder)? updates,
+  ]) => (CollabAttachmentLinksBuilder()..update(updates))._build();
 
   _$CollabAttachmentLinks._({this.content}) : super._();
   @override
   CollabAttachmentLinks rebuild(
-          void Function(CollabAttachmentLinksBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CollabAttachmentLinksBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CollabAttachmentLinksBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$CollabAttachmentLinks extends CollabAttachmentLinks {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CollabAttachmentLinks')
-          ..add('content', content))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'CollabAttachmentLinks',
+    )..add('content', content)).toString();
   }
 }
 
@@ -81,10 +81,7 @@ class CollabAttachmentLinksBuilder
   CollabAttachmentLinks build() => _build();
 
   _$CollabAttachmentLinks _build() {
-    final _$result = _$v ??
-        _$CollabAttachmentLinks._(
-          content: content,
-        );
+    final _$result = _$v ?? _$CollabAttachmentLinks._(content: content);
     replace(_$result);
     return _$result;
   }

@@ -52,16 +52,16 @@ InboxItemCategoryEnum _$inboxItemCategoryEnumValueOf(String name) {
 
 final BuiltSet<InboxItemCategoryEnum> _$inboxItemCategoryEnumValues =
     BuiltSet<InboxItemCategoryEnum>(const <InboxItemCategoryEnum>[
-  _$inboxItemCategoryEnum_mention,
-  _$inboxItemCategoryEnum_share,
-  _$inboxItemCategoryEnum_report,
-  _$inboxItemCategoryEnum_chronicle,
-  _$inboxItemCategoryEnum_assessment,
-  _$inboxItemCategoryEnum_commentReply,
-  _$inboxItemCategoryEnum_accessRequest,
-  _$inboxItemCategoryEnum_savedSearch,
-  _$inboxItemCategoryEnum_system,
-]);
+      _$inboxItemCategoryEnum_mention,
+      _$inboxItemCategoryEnum_share,
+      _$inboxItemCategoryEnum_report,
+      _$inboxItemCategoryEnum_chronicle,
+      _$inboxItemCategoryEnum_assessment,
+      _$inboxItemCategoryEnum_commentReply,
+      _$inboxItemCategoryEnum_accessRequest,
+      _$inboxItemCategoryEnum_savedSearch,
+      _$inboxItemCategoryEnum_system,
+    ]);
 
 Serializer<InboxItemCategoryEnum> _$inboxItemCategoryEnumSerializer =
     _$InboxItemCategoryEnumSerializer();
@@ -97,15 +97,20 @@ class _$InboxItemCategoryEnumSerializer
   final String wireName = 'InboxItemCategoryEnum';
 
   @override
-  Object serialize(Serializers serializers, InboxItemCategoryEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InboxItemCategoryEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  InboxItemCategoryEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InboxItemCategoryEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  InboxItemCategoryEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InboxItemCategoryEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InboxItem extends InboxItem {
@@ -137,20 +142,20 @@ class _$InboxItem extends InboxItem {
   factory _$InboxItem([void Function(InboxItemBuilder)? updates]) =>
       (InboxItemBuilder()..update(updates))._build();
 
-  _$InboxItem._(
-      {required this.id,
-      required this.event,
-      required this.category,
-      this.severity,
-      required this.title,
-      this.body,
-      this.ref,
-      this.envelope,
-      this.actor,
-      this.tlp,
-      required this.createdAt,
-      required this.read})
-      : super._();
+  _$InboxItem._({
+    required this.id,
+    required this.event,
+    required this.category,
+    this.severity,
+    required this.title,
+    this.body,
+    this.ref,
+    this.envelope,
+    this.actor,
+    this.tlp,
+    required this.createdAt,
+    required this.read,
+  }) : super._();
   @override
   InboxItem rebuild(void Function(InboxItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -307,25 +312,41 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   _$InboxItem _build() {
     _$InboxItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InboxItem._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'InboxItem', 'id'),
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'InboxItem', 'event'),
+              event,
+              r'InboxItem',
+              'event',
+            ),
             category: BuiltValueNullFieldError.checkNotNull(
-                category, r'InboxItem', 'category'),
+              category,
+              r'InboxItem',
+              'category',
+            ),
             severity: severity,
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'InboxItem', 'title'),
+              title,
+              r'InboxItem',
+              'title',
+            ),
             body: body,
             ref: ref,
             envelope: _envelope?.build(),
             actor: _actor?.build(),
             tlp: tlp,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'InboxItem', 'createdAt'),
+              createdAt,
+              r'InboxItem',
+              'createdAt',
+            ),
             read: BuiltValueNullFieldError.checkNotNull(
-                read, r'InboxItem', 'read'),
+              read,
+              r'InboxItem',
+              'read',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -336,7 +357,10 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
         _actor?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InboxItem', _$failedField, e.toString());
+          r'InboxItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

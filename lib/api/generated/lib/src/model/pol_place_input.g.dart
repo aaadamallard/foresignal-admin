@@ -37,8 +37,9 @@ class _$PolPlaceInput extends PolPlaceInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PolPlaceInput')..add('label', label))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PolPlaceInput',
+    )..add('label', label)).toString();
   }
 }
 
@@ -77,10 +78,7 @@ class PolPlaceInputBuilder
   PolPlaceInput build() => _build();
 
   _$PolPlaceInput _build() {
-    final _$result = _$v ??
-        _$PolPlaceInput._(
-          label: label,
-        );
+    final _$result = _$v ?? _$PolPlaceInput._(label: label);
     replace(_$result);
     return _$result;
   }

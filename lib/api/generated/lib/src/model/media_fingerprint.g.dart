@@ -34,25 +34,25 @@ class _$MediaFingerprint extends MediaFingerprint {
   @override
   final BuiltList<ObjectEnvelope>? narratives;
 
-  factory _$MediaFingerprint(
-          [void Function(MediaFingerprintBuilder)? updates]) =>
-      (MediaFingerprintBuilder()..update(updates))._build();
+  factory _$MediaFingerprint([
+    void Function(MediaFingerprintBuilder)? updates,
+  ]) => (MediaFingerprintBuilder()..update(updates))._build();
 
-  _$MediaFingerprint._(
-      {required this.id,
-      required this.pdq,
-      required this.quality,
-      required this.matchable,
-      required this.firstSeenAt,
-      required this.firstPostRef,
-      required this.useCount,
-      required this.platforms,
-      required this.narrativeIds,
-      this.mediaId,
-      this.reuseFindingIds,
-      this.uses,
-      this.narratives})
-      : super._();
+  _$MediaFingerprint._({
+    required this.id,
+    required this.pdq,
+    required this.quality,
+    required this.matchable,
+    required this.firstSeenAt,
+    required this.firstPostRef,
+    required this.useCount,
+    required this.platforms,
+    required this.narrativeIds,
+    this.mediaId,
+    this.reuseFindingIds,
+    this.uses,
+    this.narratives,
+  }) : super._();
   @override
   MediaFingerprint rebuild(void Function(MediaFingerprintBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -226,22 +226,44 @@ class MediaFingerprintBuilder
   _$MediaFingerprint _build() {
     _$MediaFingerprint _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MediaFingerprint._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'MediaFingerprint', 'id'),
+              id,
+              r'MediaFingerprint',
+              'id',
+            ),
             pdq: BuiltValueNullFieldError.checkNotNull(
-                pdq, r'MediaFingerprint', 'pdq'),
+              pdq,
+              r'MediaFingerprint',
+              'pdq',
+            ),
             quality: BuiltValueNullFieldError.checkNotNull(
-                quality, r'MediaFingerprint', 'quality'),
+              quality,
+              r'MediaFingerprint',
+              'quality',
+            ),
             matchable: BuiltValueNullFieldError.checkNotNull(
-                matchable, r'MediaFingerprint', 'matchable'),
+              matchable,
+              r'MediaFingerprint',
+              'matchable',
+            ),
             firstSeenAt: BuiltValueNullFieldError.checkNotNull(
-                firstSeenAt, r'MediaFingerprint', 'firstSeenAt'),
+              firstSeenAt,
+              r'MediaFingerprint',
+              'firstSeenAt',
+            ),
             firstPostRef: BuiltValueNullFieldError.checkNotNull(
-                firstPostRef, r'MediaFingerprint', 'firstPostRef'),
+              firstPostRef,
+              r'MediaFingerprint',
+              'firstPostRef',
+            ),
             useCount: BuiltValueNullFieldError.checkNotNull(
-                useCount, r'MediaFingerprint', 'useCount'),
+              useCount,
+              r'MediaFingerprint',
+              'useCount',
+            ),
             platforms: platforms.build(),
             narrativeIds: narrativeIds.build(),
             mediaId: mediaId,
@@ -265,7 +287,10 @@ class MediaFingerprintBuilder
         _narratives?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MediaFingerprint', _$failedField, e.toString());
+          r'MediaFingerprint',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -59,9 +59,9 @@ abstract class SatellitePassPayloadRf
 
   SatellitePassPayloadRf._();
 
-  factory SatellitePassPayloadRf(
-          [void updates(SatellitePassPayloadRfBuilder b)]) =
-      _$SatellitePassPayloadRf;
+  factory SatellitePassPayloadRf([
+    void updates(SatellitePassPayloadRfBuilder b),
+  ]) = _$SatellitePassPayloadRf;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SatellitePassPayloadRfBuilder b) => b;
@@ -76,7 +76,7 @@ class _$SatellitePassPayloadRfSerializer
   @override
   final Iterable<Type> types = const [
     SatellitePassPayloadRf,
-    _$SatellitePassPayloadRf
+    _$SatellitePassPayloadRf,
   ];
 
   @override
@@ -154,8 +154,9 @@ class _$SatellitePassPayloadRfSerializer
       yield r'snrByElevation';
       yield serializers.serialize(
         object.snrByElevation,
-        specifiedType: const FullType(
-            BuiltList, [FullType(SatellitePassPayloadRfSnrByElevationInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SatellitePassPayloadRfSnrByElevationInner),
+        ]),
       );
     }
   }
@@ -166,9 +167,11 @@ class _$SatellitePassPayloadRfSerializer
     SatellitePassPayloadRf object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -184,83 +187,104 @@ class _$SatellitePassPayloadRfSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'snrMaxDb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.snrMaxDb = valueDes;
           break;
         case r'snrMeanDb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.snrMeanDb = valueDes;
           break;
         case r'berMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.berMin = valueDes;
           break;
         case r'berMean':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.berMean = valueDes;
           break;
         case r'syncedFraction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.syncedFraction = valueDes;
           break;
         case r'firstLockAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.firstLockAt = valueDes;
           break;
         case r'lastLockAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastLockAt = valueDes;
           break;
         case r'firstLockElevationDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.firstLockElevationDeg = valueDes;
           break;
         case r'lastLockElevationDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lastLockElevationDeg = valueDes;
           break;
         case r'snrByElevation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(SatellitePassPayloadRfSnrByElevationInner)]),
-          ) as BuiltList<SatellitePassPayloadRfSnrByElevationInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SatellitePassPayloadRfSnrByElevationInner),
+                    ]),
+                  )
+                  as BuiltList<SatellitePassPayloadRfSnrByElevationInner>?;
           if (valueDes == null) continue;
           result.snrByElevation.replace(valueDes);
           break;

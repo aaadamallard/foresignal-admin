@@ -19,8 +19,10 @@ part 'ledger_question_brief_forecasters_inner.g.dart';
 @BuiltValue()
 abstract class LedgerQuestionBriefForecastersInner
     implements
-        Built<LedgerQuestionBriefForecastersInner,
-            LedgerQuestionBriefForecastersInnerBuilder> {
+        Built<
+          LedgerQuestionBriefForecastersInner,
+          LedgerQuestionBriefForecastersInnerBuilder
+        > {
   @BuiltValueField(wireName: r'forecasterId')
   String get forecasterId;
 
@@ -35,9 +37,9 @@ abstract class LedgerQuestionBriefForecastersInner
 
   LedgerQuestionBriefForecastersInner._();
 
-  factory LedgerQuestionBriefForecastersInner(
-          [void updates(LedgerQuestionBriefForecastersInnerBuilder b)]) =
-      _$LedgerQuestionBriefForecastersInner;
+  factory LedgerQuestionBriefForecastersInner([
+    void updates(LedgerQuestionBriefForecastersInnerBuilder b),
+  ]) = _$LedgerQuestionBriefForecastersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LedgerQuestionBriefForecastersInnerBuilder b) => b;
@@ -52,7 +54,7 @@ class _$LedgerQuestionBriefForecastersInnerSerializer
   @override
   final Iterable<Type> types = const [
     LedgerQuestionBriefForecastersInner,
-    _$LedgerQuestionBriefForecastersInner
+    _$LedgerQuestionBriefForecastersInner,
   ];
 
   @override
@@ -97,9 +99,11 @@ class _$LedgerQuestionBriefForecastersInnerSerializer
     LedgerQuestionBriefForecastersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,33 +119,41 @@ class _$LedgerQuestionBriefForecastersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.probability = valueDes;
           break;
         case r'madeAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.madeAt = valueDes;
           break;
         case r'knowledgeCutoff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.knowledgeCutoff = valueDes;
           break;

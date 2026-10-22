@@ -7,50 +7,51 @@ part of 'analytic_finding.dart';
 // **************************************************************************
 
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_changePoint =
+_$analyticFindingFindingTypeEnum_changePoint =
     const AnalyticFindingFindingTypeEnum._('changePoint');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_preEventSignal =
+_$analyticFindingFindingTypeEnum_preEventSignal =
     const AnalyticFindingFindingTypeEnum._('preEventSignal');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_unexplainedMove =
+_$analyticFindingFindingTypeEnum_unexplainedMove =
     const AnalyticFindingFindingTypeEnum._('unexplainedMove');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_coOccurrence =
+_$analyticFindingFindingTypeEnum_coOccurrence =
     const AnalyticFindingFindingTypeEnum._('coOccurrence');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_precursorActive =
+_$analyticFindingFindingTypeEnum_precursorActive =
     const AnalyticFindingFindingTypeEnum._('precursorActive');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_forecastExceedance =
+_$analyticFindingFindingTypeEnum_forecastExceedance =
     const AnalyticFindingFindingTypeEnum._('forecastExceedance');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_outlookExceedance =
+_$analyticFindingFindingTypeEnum_outlookExceedance =
     const AnalyticFindingFindingTypeEnum._('outlookExceedance');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_projectedImpact =
+_$analyticFindingFindingTypeEnum_projectedImpact =
     const AnalyticFindingFindingTypeEnum._('projectedImpact');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_coverageBlindspot =
+_$analyticFindingFindingTypeEnum_coverageBlindspot =
     const AnalyticFindingFindingTypeEnum._('coverageBlindspot');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_coverageDivergence =
+_$analyticFindingFindingTypeEnum_coverageDivergence =
     const AnalyticFindingFindingTypeEnum._('coverageDivergence');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_socialVelocity =
+_$analyticFindingFindingTypeEnum_socialVelocity =
     const AnalyticFindingFindingTypeEnum._('socialVelocity');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_mediaReuse =
+_$analyticFindingFindingTypeEnum_mediaReuse =
     const AnalyticFindingFindingTypeEnum._('mediaReuse');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_socialCoordination =
+_$analyticFindingFindingTypeEnum_socialCoordination =
     const AnalyticFindingFindingTypeEnum._('socialCoordination');
 const AnalyticFindingFindingTypeEnum
-    _$analyticFindingFindingTypeEnum_attentionGap =
+_$analyticFindingFindingTypeEnum_attentionGap =
     const AnalyticFindingFindingTypeEnum._('attentionGap');
 
 AnalyticFindingFindingTypeEnum _$analyticFindingFindingTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'changePoint':
       return _$analyticFindingFindingTypeEnum_changePoint;
@@ -86,23 +87,25 @@ AnalyticFindingFindingTypeEnum _$analyticFindingFindingTypeEnumValueOf(
 }
 
 final BuiltSet<AnalyticFindingFindingTypeEnum>
-    _$analyticFindingFindingTypeEnumValues = BuiltSet<
-        AnalyticFindingFindingTypeEnum>(const <AnalyticFindingFindingTypeEnum>[
-  _$analyticFindingFindingTypeEnum_changePoint,
-  _$analyticFindingFindingTypeEnum_preEventSignal,
-  _$analyticFindingFindingTypeEnum_unexplainedMove,
-  _$analyticFindingFindingTypeEnum_coOccurrence,
-  _$analyticFindingFindingTypeEnum_precursorActive,
-  _$analyticFindingFindingTypeEnum_forecastExceedance,
-  _$analyticFindingFindingTypeEnum_outlookExceedance,
-  _$analyticFindingFindingTypeEnum_projectedImpact,
-  _$analyticFindingFindingTypeEnum_coverageBlindspot,
-  _$analyticFindingFindingTypeEnum_coverageDivergence,
-  _$analyticFindingFindingTypeEnum_socialVelocity,
-  _$analyticFindingFindingTypeEnum_mediaReuse,
-  _$analyticFindingFindingTypeEnum_socialCoordination,
-  _$analyticFindingFindingTypeEnum_attentionGap,
-]);
+_$analyticFindingFindingTypeEnumValues =
+    BuiltSet<AnalyticFindingFindingTypeEnum>(
+      const <AnalyticFindingFindingTypeEnum>[
+        _$analyticFindingFindingTypeEnum_changePoint,
+        _$analyticFindingFindingTypeEnum_preEventSignal,
+        _$analyticFindingFindingTypeEnum_unexplainedMove,
+        _$analyticFindingFindingTypeEnum_coOccurrence,
+        _$analyticFindingFindingTypeEnum_precursorActive,
+        _$analyticFindingFindingTypeEnum_forecastExceedance,
+        _$analyticFindingFindingTypeEnum_outlookExceedance,
+        _$analyticFindingFindingTypeEnum_projectedImpact,
+        _$analyticFindingFindingTypeEnum_coverageBlindspot,
+        _$analyticFindingFindingTypeEnum_coverageDivergence,
+        _$analyticFindingFindingTypeEnum_socialVelocity,
+        _$analyticFindingFindingTypeEnum_mediaReuse,
+        _$analyticFindingFindingTypeEnum_socialCoordination,
+        _$analyticFindingFindingTypeEnum_attentionGap,
+      ],
+    );
 
 const AnalyticFindingStatusEnum _$analyticFindingStatusEnum_open =
     const AnalyticFindingStatusEnum._('open');
@@ -126,13 +129,13 @@ AnalyticFindingStatusEnum _$analyticFindingStatusEnumValueOf(String name) {
 
 final BuiltSet<AnalyticFindingStatusEnum> _$analyticFindingStatusEnumValues =
     BuiltSet<AnalyticFindingStatusEnum>(const <AnalyticFindingStatusEnum>[
-  _$analyticFindingStatusEnum_open,
-  _$analyticFindingStatusEnum_superseded,
-  _$analyticFindingStatusEnum_dismissed,
-]);
+      _$analyticFindingStatusEnum_open,
+      _$analyticFindingStatusEnum_superseded,
+      _$analyticFindingStatusEnum_dismissed,
+    ]);
 
 Serializer<AnalyticFindingFindingTypeEnum>
-    _$analyticFindingFindingTypeEnumSerializer =
+_$analyticFindingFindingTypeEnumSerializer =
     _$AnalyticFindingFindingTypeEnumSerializer();
 Serializer<AnalyticFindingStatusEnum> _$analyticFindingStatusEnumSerializer =
     _$AnalyticFindingStatusEnumSerializer();
@@ -179,16 +182,19 @@ class _$AnalyticFindingFindingTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalyticFindingFindingTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalyticFindingFindingTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalyticFindingFindingTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalyticFindingFindingTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalyticFindingFindingTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalyticFindingStatusEnumSerializer
@@ -210,16 +216,20 @@ class _$AnalyticFindingStatusEnumSerializer
   final String wireName = 'AnalyticFindingStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalyticFindingStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalyticFindingStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalyticFindingStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalyticFindingStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalyticFindingStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalyticFinding extends AnalyticFinding {
@@ -273,31 +283,31 @@ class _$AnalyticFinding extends AnalyticFinding {
   factory _$AnalyticFinding([void Function(AnalyticFindingBuilder)? updates]) =>
       (AnalyticFindingBuilder()..update(updates))._build();
 
-  _$AnalyticFinding._(
-      {required this.id,
-      required this.findingType,
-      required this.title,
-      required this.severity,
-      required this.status,
-      required this.detectedAt,
-      this.windowStart,
-      this.windowEnd,
-      required this.regionCodes,
-      this.geometry,
-      required this.private,
-      this.situationId,
-      this.precursorId,
-      this.questionIds,
-      this.supersededBy,
-      this.dismissal,
-      this.asOfSeq,
-      required this.manifestId,
-      required this.evidence,
-      required this.inference,
-      required this.caveats,
-      this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$AnalyticFinding._({
+    required this.id,
+    required this.findingType,
+    required this.title,
+    required this.severity,
+    required this.status,
+    required this.detectedAt,
+    this.windowStart,
+    this.windowEnd,
+    required this.regionCodes,
+    this.geometry,
+    required this.private,
+    this.situationId,
+    this.precursorId,
+    this.questionIds,
+    this.supersededBy,
+    this.dismissal,
+    this.asOfSeq,
+    required this.manifestId,
+    required this.evidence,
+    required this.inference,
+    required this.caveats,
+    this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   AnalyticFinding rebuild(void Function(AnalyticFindingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -552,26 +562,48 @@ class AnalyticFindingBuilder
   _$AnalyticFinding _build() {
     _$AnalyticFinding _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalyticFinding._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AnalyticFinding', 'id'),
+              id,
+              r'AnalyticFinding',
+              'id',
+            ),
             findingType: BuiltValueNullFieldError.checkNotNull(
-                findingType, r'AnalyticFinding', 'findingType'),
+              findingType,
+              r'AnalyticFinding',
+              'findingType',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'AnalyticFinding', 'title'),
+              title,
+              r'AnalyticFinding',
+              'title',
+            ),
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'AnalyticFinding', 'severity'),
+              severity,
+              r'AnalyticFinding',
+              'severity',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AnalyticFinding', 'status'),
+              status,
+              r'AnalyticFinding',
+              'status',
+            ),
             detectedAt: BuiltValueNullFieldError.checkNotNull(
-                detectedAt, r'AnalyticFinding', 'detectedAt'),
+              detectedAt,
+              r'AnalyticFinding',
+              'detectedAt',
+            ),
             windowStart: windowStart,
             windowEnd: windowEnd,
             regionCodes: regionCodes.build(),
             geometry: _geometry?.build(),
             private: BuiltValueNullFieldError.checkNotNull(
-                private, r'AnalyticFinding', 'private'),
+              private,
+              r'AnalyticFinding',
+              'private',
+            ),
             situationId: situationId,
             precursorId: precursorId,
             questionIds: _questionIds?.build(),
@@ -579,7 +611,10 @@ class AnalyticFindingBuilder
             dismissal: _dismissal?.build(),
             asOfSeq: asOfSeq,
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'AnalyticFinding', 'manifestId'),
+              manifestId,
+              r'AnalyticFinding',
+              'manifestId',
+            ),
             evidence: evidence.build(),
             inference: inference.build(),
             caveats: caveats.build(),
@@ -608,7 +643,10 @@ class AnalyticFindingBuilder
         caveats.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalyticFinding', _$failedField, e.toString());
+          r'AnalyticFinding',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

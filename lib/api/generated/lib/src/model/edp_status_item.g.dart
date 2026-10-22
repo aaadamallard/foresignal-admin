@@ -20,8 +20,8 @@ EdpStatusItemTypeEnum _$edpStatusItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpStatusItemTypeEnum> _$edpStatusItemTypeEnumValues =
     BuiltSet<EdpStatusItemTypeEnum>(const <EdpStatusItemTypeEnum>[
-  _$edpStatusItemTypeEnum_status,
-]);
+      _$edpStatusItemTypeEnum_status,
+    ]);
 
 const EdpStatusItemHealthEnum _$edpStatusItemHealthEnum_ok =
     const EdpStatusItemHealthEnum._('ok');
@@ -53,12 +53,12 @@ EdpStatusItemHealthEnum _$edpStatusItemHealthEnumValueOf(String name) {
 
 final BuiltSet<EdpStatusItemHealthEnum> _$edpStatusItemHealthEnumValues =
     BuiltSet<EdpStatusItemHealthEnum>(const <EdpStatusItemHealthEnum>[
-  _$edpStatusItemHealthEnum_ok,
-  _$edpStatusItemHealthEnum_degraded,
-  _$edpStatusItemHealthEnum_blocked,
-  _$edpStatusItemHealthEnum_layoutChanged,
-  _$edpStatusItemHealthEnum_geoRestricted,
-]);
+      _$edpStatusItemHealthEnum_ok,
+      _$edpStatusItemHealthEnum_degraded,
+      _$edpStatusItemHealthEnum_blocked,
+      _$edpStatusItemHealthEnum_layoutChanged,
+      _$edpStatusItemHealthEnum_geoRestricted,
+    ]);
 
 Serializer<EdpStatusItemTypeEnum> _$edpStatusItemTypeEnumSerializer =
     _$EdpStatusItemTypeEnumSerializer();
@@ -80,15 +80,20 @@ class _$EdpStatusItemTypeEnumSerializer
   final String wireName = 'EdpStatusItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpStatusItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStatusItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpStatusItemTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStatusItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpStatusItemTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStatusItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStatusItemHealthEnumSerializer
@@ -114,16 +119,20 @@ class _$EdpStatusItemHealthEnumSerializer
   final String wireName = 'EdpStatusItemHealthEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpStatusItemHealthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpStatusItemHealthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpStatusItemHealthEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpStatusItemHealthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpStatusItemHealthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpStatusItem extends EdpStatusItem {
@@ -139,9 +148,12 @@ class _$EdpStatusItem extends EdpStatusItem {
   factory _$EdpStatusItem([void Function(EdpStatusItemBuilder)? updates]) =>
       (EdpStatusItemBuilder()..update(updates))._build();
 
-  _$EdpStatusItem._(
-      {this.stream, required this.type, required this.health, this.message})
-      : super._();
+  _$EdpStatusItem._({
+    this.stream,
+    required this.type,
+    required this.health,
+    this.message,
+  }) : super._();
   @override
   EdpStatusItem rebuild(void Function(EdpStatusItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -231,13 +243,20 @@ class EdpStatusItemBuilder
   EdpStatusItem build() => _build();
 
   _$EdpStatusItem _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpStatusItem._(
           stream: stream,
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'EdpStatusItem', 'type'),
+            type,
+            r'EdpStatusItem',
+            'type',
+          ),
           health: BuiltValueNullFieldError.checkNotNull(
-              health, r'EdpStatusItem', 'health'),
+            health,
+            r'EdpStatusItem',
+            'health',
+          ),
           message: message,
         );
     replace(_$result);

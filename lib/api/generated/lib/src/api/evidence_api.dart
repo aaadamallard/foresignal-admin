@@ -48,22 +48,21 @@ class EvidenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/evidence/events/{canonicalEventId}'.replaceAll(
-        '{' r'canonicalEventId' '}',
-        encodeQueryParameter(
-                _serializers, canonicalEventId, const FullType(String))
-            .toString());
+      '{'
+      r'canonicalEventId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        canonicalEventId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -85,9 +84,10 @@ class EvidenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CanonicalEvent),
-            ) as CanonicalEvent;
+                  rawResponse,
+                  specifiedType: const FullType(CanonicalEvent),
+                )
+                as CanonicalEvent;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -134,21 +134,21 @@ class EvidenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/manifests/{manifestId}'.replaceAll(
-        '{' r'manifestId' '}',
-        encodeQueryParameter(_serializers, manifestId, const FullType(String))
-            .toString());
+      '{'
+      r'manifestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        manifestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -170,9 +170,10 @@ class EvidenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AnalysisManifest),
-            ) as AnalysisManifest;
+                  rawResponse,
+                  specifiedType: const FullType(AnalysisManifest),
+                )
+                as AnalysisManifest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -223,16 +224,10 @@ class EvidenceApi {
     final _path = r'/v1/evidence/of';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -240,10 +235,16 @@ class EvidenceApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'source':
-          encodeQueryParameter(_serializers, source_, const FullType(String)),
+      r'source': encodeQueryParameter(
+        _serializers,
+        source_,
+        const FullType(String),
+      ),
       r'externalId': encodeQueryParameter(
-          _serializers, externalId, const FullType(String)),
+        _serializers,
+        externalId,
+        const FullType(String),
+      ),
     };
 
     final _response = await _dio.request<Object>(
@@ -262,9 +263,10 @@ class EvidenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RecordEvidence),
-            ) as RecordEvidence;
+                  rawResponse,
+                  specifiedType: const FullType(RecordEvidence),
+                )
+                as RecordEvidence;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -323,16 +325,10 @@ class EvidenceApi {
     final _path = r'/v1/evidence/events';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -341,14 +337,23 @@ class EvidenceApi {
 
     final _queryParameters = <String, dynamic>{
       if (family != null)
-        r'family':
-            encodeQueryParameter(_serializers, family, const FullType(String)),
+        r'family': encodeQueryParameter(
+          _serializers,
+          family,
+          const FullType(String),
+        ),
       if (region != null)
-        r'region':
-            encodeQueryParameter(_serializers, region, const FullType(String)),
+        r'region': encodeQueryParameter(
+          _serializers,
+          region,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (flags != null)
         r'flags': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -357,11 +362,17 @@ class EvidenceApi {
           format: ListFormat.csv,
         ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -380,9 +391,10 @@ class EvidenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CanonicalEventPage),
-            ) as CanonicalEventPage;
+                  rawResponse,
+                  specifiedType: const FullType(CanonicalEventPage),
+                )
+                as CanonicalEventPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -429,21 +441,21 @@ class EvidenceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/manifests/{manifestId}/replay'.replaceAll(
-        '{' r'manifestId' '}',
-        encodeQueryParameter(_serializers, manifestId, const FullType(String))
-            .toString());
+      '{'
+      r'manifestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        manifestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -465,9 +477,10 @@ class EvidenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReplayResult),
-            ) as ReplayResult;
+                  rawResponse,
+                  specifiedType: const FullType(ReplayResult),
+                )
+                as ReplayResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

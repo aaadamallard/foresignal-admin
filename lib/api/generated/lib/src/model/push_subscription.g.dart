@@ -28,23 +28,24 @@ PushSubscriptionStatusEnum _$pushSubscriptionStatusEnumValueOf(String name) {
 
 final BuiltSet<PushSubscriptionStatusEnum> _$pushSubscriptionStatusEnumValues =
     BuiltSet<PushSubscriptionStatusEnum>(const <PushSubscriptionStatusEnum>[
-  _$pushSubscriptionStatusEnum_pending,
-  _$pushSubscriptionStatusEnum_active,
-  _$pushSubscriptionStatusEnum_disabled,
-]);
+      _$pushSubscriptionStatusEnum_pending,
+      _$pushSubscriptionStatusEnum_active,
+      _$pushSubscriptionStatusEnum_disabled,
+    ]);
 
 const PushSubscriptionTransportLabelEnum
-    _$pushSubscriptionTransportLabelEnum_browser =
+_$pushSubscriptionTransportLabelEnum_browser =
     const PushSubscriptionTransportLabelEnum._('browser');
 const PushSubscriptionTransportLabelEnum
-    _$pushSubscriptionTransportLabelEnum_unifiedpush =
+_$pushSubscriptionTransportLabelEnum_unifiedpush =
     const PushSubscriptionTransportLabelEnum._('unifiedpush');
 const PushSubscriptionTransportLabelEnum
-    _$pushSubscriptionTransportLabelEnum_other =
+_$pushSubscriptionTransportLabelEnum_other =
     const PushSubscriptionTransportLabelEnum._('other');
 
 PushSubscriptionTransportLabelEnum _$pushSubscriptionTransportLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'browser':
       return _$pushSubscriptionTransportLabelEnum_browser;
@@ -58,22 +59,25 @@ PushSubscriptionTransportLabelEnum _$pushSubscriptionTransportLabelEnumValueOf(
 }
 
 final BuiltSet<PushSubscriptionTransportLabelEnum>
-    _$pushSubscriptionTransportLabelEnumValues = BuiltSet<
-        PushSubscriptionTransportLabelEnum>(const <PushSubscriptionTransportLabelEnum>[
-  _$pushSubscriptionTransportLabelEnum_browser,
-  _$pushSubscriptionTransportLabelEnum_unifiedpush,
-  _$pushSubscriptionTransportLabelEnum_other,
-]);
+_$pushSubscriptionTransportLabelEnumValues =
+    BuiltSet<PushSubscriptionTransportLabelEnum>(
+      const <PushSubscriptionTransportLabelEnum>[
+        _$pushSubscriptionTransportLabelEnum_browser,
+        _$pushSubscriptionTransportLabelEnum_unifiedpush,
+        _$pushSubscriptionTransportLabelEnum_other,
+      ],
+    );
 
 const PushSubscriptionPayloadFormatEnum
-    _$pushSubscriptionPayloadFormatEnum_foresignal =
+_$pushSubscriptionPayloadFormatEnum_foresignal =
     const PushSubscriptionPayloadFormatEnum._('foresignal');
 const PushSubscriptionPayloadFormatEnum
-    _$pushSubscriptionPayloadFormatEnum_declarative =
+_$pushSubscriptionPayloadFormatEnum_declarative =
     const PushSubscriptionPayloadFormatEnum._('declarative');
 
 PushSubscriptionPayloadFormatEnum _$pushSubscriptionPayloadFormatEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'foresignal':
       return _$pushSubscriptionPayloadFormatEnum_foresignal;
@@ -85,19 +89,21 @@ PushSubscriptionPayloadFormatEnum _$pushSubscriptionPayloadFormatEnumValueOf(
 }
 
 final BuiltSet<PushSubscriptionPayloadFormatEnum>
-    _$pushSubscriptionPayloadFormatEnumValues = BuiltSet<
-        PushSubscriptionPayloadFormatEnum>(const <PushSubscriptionPayloadFormatEnum>[
-  _$pushSubscriptionPayloadFormatEnum_foresignal,
-  _$pushSubscriptionPayloadFormatEnum_declarative,
-]);
+_$pushSubscriptionPayloadFormatEnumValues =
+    BuiltSet<PushSubscriptionPayloadFormatEnum>(
+      const <PushSubscriptionPayloadFormatEnum>[
+        _$pushSubscriptionPayloadFormatEnum_foresignal,
+        _$pushSubscriptionPayloadFormatEnum_declarative,
+      ],
+    );
 
 Serializer<PushSubscriptionStatusEnum> _$pushSubscriptionStatusEnumSerializer =
     _$PushSubscriptionStatusEnumSerializer();
 Serializer<PushSubscriptionTransportLabelEnum>
-    _$pushSubscriptionTransportLabelEnumSerializer =
+_$pushSubscriptionTransportLabelEnumSerializer =
     _$PushSubscriptionTransportLabelEnumSerializer();
 Serializer<PushSubscriptionPayloadFormatEnum>
-    _$pushSubscriptionPayloadFormatEnumSerializer =
+_$pushSubscriptionPayloadFormatEnumSerializer =
     _$PushSubscriptionPayloadFormatEnumSerializer();
 
 class _$PushSubscriptionStatusEnumSerializer
@@ -119,16 +125,20 @@ class _$PushSubscriptionStatusEnumSerializer
   final String wireName = 'PushSubscriptionStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, PushSubscriptionStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushSubscriptionStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushSubscriptionStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushSubscriptionStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushSubscriptionStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushSubscriptionTransportLabelEnumSerializer
@@ -151,16 +161,19 @@ class _$PushSubscriptionTransportLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PushSubscriptionTransportLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PushSubscriptionTransportLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushSubscriptionTransportLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushSubscriptionTransportLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushSubscriptionTransportLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushSubscriptionPayloadFormatEnumSerializer
@@ -181,16 +194,19 @@ class _$PushSubscriptionPayloadFormatEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PushSubscriptionPayloadFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PushSubscriptionPayloadFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushSubscriptionPayloadFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushSubscriptionPayloadFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushSubscriptionPayloadFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushSubscription extends PushSubscription {
@@ -221,25 +237,25 @@ class _$PushSubscription extends PushSubscription {
   @override
   final int? lastStatus;
 
-  factory _$PushSubscription(
-          [void Function(PushSubscriptionBuilder)? updates]) =>
-      (PushSubscriptionBuilder()..update(updates))._build();
+  factory _$PushSubscription([
+    void Function(PushSubscriptionBuilder)? updates,
+  ]) => (PushSubscriptionBuilder()..update(updates))._build();
 
-  _$PushSubscription._(
-      {required this.id,
-      this.name,
-      required this.endpointHost,
-      this.filters,
-      required this.createdAt,
-      this.lastSuccessAt,
-      this.status,
-      this.transportLabel,
-      this.payloadFormat,
-      this.lang,
-      this.failureCount,
-      this.lastFailureAt,
-      this.lastStatus})
-      : super._();
+  _$PushSubscription._({
+    required this.id,
+    this.name,
+    required this.endpointHost,
+    this.filters,
+    required this.createdAt,
+    this.lastSuccessAt,
+    this.status,
+    this.transportLabel,
+    this.payloadFormat,
+    this.lang,
+    this.failureCount,
+    this.lastFailureAt,
+    this.lastStatus,
+  }) : super._();
   @override
   PushSubscription rebuild(void Function(PushSubscriptionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -409,16 +425,26 @@ class PushSubscriptionBuilder
   _$PushSubscription _build() {
     _$PushSubscription _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushSubscription._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PushSubscription', 'id'),
+              id,
+              r'PushSubscription',
+              'id',
+            ),
             name: name,
             endpointHost: BuiltValueNullFieldError.checkNotNull(
-                endpointHost, r'PushSubscription', 'endpointHost'),
+              endpointHost,
+              r'PushSubscription',
+              'endpointHost',
+            ),
             filters: _filters?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'PushSubscription', 'createdAt'),
+              createdAt,
+              r'PushSubscription',
+              'createdAt',
+            ),
             lastSuccessAt: lastSuccessAt,
             status: status,
             transportLabel: transportLabel,
@@ -435,7 +461,10 @@ class PushSubscriptionBuilder
         _filters?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushSubscription', _$failedField, e.toString());
+          r'PushSubscription',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

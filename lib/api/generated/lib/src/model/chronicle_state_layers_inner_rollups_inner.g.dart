@@ -15,20 +15,20 @@ class _$ChronicleStateLayersInnerRollupsInner
   @override
   final int count;
 
-  factory _$ChronicleStateLayersInnerRollupsInner(
-          [void Function(ChronicleStateLayersInnerRollupsInnerBuilder)?
-              updates]) =>
-      (ChronicleStateLayersInnerRollupsInnerBuilder()..update(updates))
-          ._build();
+  factory _$ChronicleStateLayersInnerRollupsInner([
+    void Function(ChronicleStateLayersInnerRollupsInnerBuilder)? updates,
+  ]) => (ChronicleStateLayersInnerRollupsInnerBuilder()..update(updates))
+      ._build();
 
-  _$ChronicleStateLayersInnerRollupsInner._(
-      {required this.region, required this.hour, required this.count})
-      : super._();
+  _$ChronicleStateLayersInnerRollupsInner._({
+    required this.region,
+    required this.hour,
+    required this.count,
+  }) : super._();
   @override
   ChronicleStateLayersInnerRollupsInner rebuild(
-          void Function(ChronicleStateLayersInnerRollupsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleStateLayersInnerRollupsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleStateLayersInnerRollupsInnerBuilder toBuilder() =>
@@ -56,7 +56,8 @@ class _$ChronicleStateLayersInnerRollupsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ChronicleStateLayersInnerRollupsInner')
+            r'ChronicleStateLayersInnerRollupsInner',
+          )
           ..add('region', region)
           ..add('hour', hour)
           ..add('count', count))
@@ -66,8 +67,10 @@ class _$ChronicleStateLayersInnerRollupsInner
 
 class ChronicleStateLayersInnerRollupsInnerBuilder
     implements
-        Builder<ChronicleStateLayersInnerRollupsInner,
-            ChronicleStateLayersInnerRollupsInnerBuilder> {
+        Builder<
+          ChronicleStateLayersInnerRollupsInner,
+          ChronicleStateLayersInnerRollupsInnerBuilder
+        > {
   _$ChronicleStateLayersInnerRollupsInner? _$v;
 
   String? _region;
@@ -104,7 +107,8 @@ class ChronicleStateLayersInnerRollupsInnerBuilder
 
   @override
   void update(
-      void Function(ChronicleStateLayersInnerRollupsInnerBuilder)? updates) {
+    void Function(ChronicleStateLayersInnerRollupsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -112,14 +116,24 @@ class ChronicleStateLayersInnerRollupsInnerBuilder
   ChronicleStateLayersInnerRollupsInner build() => _build();
 
   _$ChronicleStateLayersInnerRollupsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleStateLayersInnerRollupsInner._(
           region: BuiltValueNullFieldError.checkNotNull(
-              region, r'ChronicleStateLayersInnerRollupsInner', 'region'),
+            region,
+            r'ChronicleStateLayersInnerRollupsInner',
+            'region',
+          ),
           hour: BuiltValueNullFieldError.checkNotNull(
-              hour, r'ChronicleStateLayersInnerRollupsInner', 'hour'),
+            hour,
+            r'ChronicleStateLayersInnerRollupsInner',
+            'hour',
+          ),
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'ChronicleStateLayersInnerRollupsInner', 'count'),
+            count,
+            r'ChronicleStateLayersInnerRollupsInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

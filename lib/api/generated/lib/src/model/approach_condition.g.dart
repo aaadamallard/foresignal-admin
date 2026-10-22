@@ -20,8 +20,8 @@ ApproachConditionTypeEnum _$approachConditionTypeEnumValueOf(String name) {
 
 final BuiltSet<ApproachConditionTypeEnum> _$approachConditionTypeEnumValues =
     BuiltSet<ApproachConditionTypeEnum>(const <ApproachConditionTypeEnum>[
-  _$approachConditionTypeEnum_approach,
-]);
+      _$approachConditionTypeEnum_approach,
+    ]);
 
 Serializer<ApproachConditionTypeEnum> _$approachConditionTypeEnumSerializer =
     _$ApproachConditionTypeEnumSerializer();
@@ -41,16 +41,20 @@ class _$ApproachConditionTypeEnumSerializer
   final String wireName = 'ApproachConditionTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ApproachConditionTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ApproachConditionTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ApproachConditionTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ApproachConditionTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ApproachConditionTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ApproachCondition extends ApproachCondition {
@@ -63,16 +67,16 @@ class _$ApproachCondition extends ApproachCondition {
   @override
   final num withinMinutes;
 
-  factory _$ApproachCondition(
-          [void Function(ApproachConditionBuilder)? updates]) =>
-      (ApproachConditionBuilder()..update(updates))._build();
+  factory _$ApproachCondition([
+    void Function(ApproachConditionBuilder)? updates,
+  ]) => (ApproachConditionBuilder()..update(updates))._build();
 
-  _$ApproachCondition._(
-      {required this.type,
-      required this.target,
-      required this.withinMeters,
-      required this.withinMinutes})
-      : super._();
+  _$ApproachCondition._({
+    required this.type,
+    required this.target,
+    required this.withinMeters,
+    required this.withinMinutes,
+  }) : super._();
   @override
   ApproachCondition rebuild(void Function(ApproachConditionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -167,15 +171,25 @@ class ApproachConditionBuilder
   _$ApproachCondition _build() {
     _$ApproachCondition _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ApproachCondition._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ApproachCondition', 'type'),
+              type,
+              r'ApproachCondition',
+              'type',
+            ),
             target: target.build(),
             withinMeters: BuiltValueNullFieldError.checkNotNull(
-                withinMeters, r'ApproachCondition', 'withinMeters'),
+              withinMeters,
+              r'ApproachCondition',
+              'withinMeters',
+            ),
             withinMinutes: BuiltValueNullFieldError.checkNotNull(
-                withinMinutes, r'ApproachCondition', 'withinMinutes'),
+              withinMinutes,
+              r'ApproachCondition',
+              'withinMinutes',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -184,7 +198,10 @@ class ApproachConditionBuilder
         target.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ApproachCondition', _$failedField, e.toString());
+          r'ApproachCondition',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

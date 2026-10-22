@@ -143,9 +143,11 @@ class _$AskResponseSerializer implements PrimitiveSerializer<AskResponse> {
     AskResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,71 +163,96 @@ class _$AskResponseSerializer implements PrimitiveSerializer<AskResponse> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'threadId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.threadId = valueDes;
           break;
         case r'answer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.answer = valueDes;
           break;
         case r'citations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AskCitation)]),
-          ) as BuiltList<AskCitation>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AskCitation),
+                    ]),
+                  )
+                  as BuiltList<AskCitation>;
           result.citations.replace(valueDes);
           break;
         case r'proposedActions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(AskAction)]),
-          ) as BuiltList<AskAction>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AskAction),
+                    ]),
+                  )
+                  as BuiltList<AskAction>;
           result.proposedActions.replace(valueDes);
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AskResponseModeEnum),
-          ) as AskResponseModeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(AskResponseModeEnum),
+                  )
+                  as AskResponseModeEnum?;
           if (valueDes == null) continue;
           result.mode = valueDes;
           break;
         case r'usage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AskResponseUsage),
-          ) as AskResponseUsage?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(AskResponseUsage),
+                  )
+                  as AskResponseUsage?;
           if (valueDes == null) continue;
           result.usage.replace(valueDes);
           break;
         case r'stopReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AskResponseStopReasonEnum),
-          ) as AskResponseStopReasonEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AskResponseStopReasonEnum,
+                    ),
+                  )
+                  as AskResponseStopReasonEnum?;
           if (valueDes == null) continue;
           result.stopReason = valueDes;
           break;
         case r'refusalCategory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.refusalCategory = valueDes;
           break;

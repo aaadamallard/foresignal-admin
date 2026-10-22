@@ -59,8 +59,9 @@ class _$OverlandBatchSerializer implements PrimitiveSerializer<OverlandBatch> {
     yield r'locations';
     yield serializers.serialize(
       object.locations,
-      specifiedType:
-          const FullType(BuiltList, [FullType(OverlandBatchLocationsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OverlandBatchLocationsInner),
+      ]),
     );
     if (object.trip != null) {
       yield r'trip';
@@ -84,9 +85,11 @@ class _$OverlandBatchSerializer implements PrimitiveSerializer<OverlandBatch> {
     OverlandBatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +105,33 @@ class _$OverlandBatchSerializer implements PrimitiveSerializer<OverlandBatch> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'locations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(OverlandBatchLocationsInner)]),
-          ) as BuiltList<OverlandBatchLocationsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OverlandBatchLocationsInner),
+                    ]),
+                  )
+                  as BuiltList<OverlandBatchLocationsInner>;
           result.locations.replace(valueDes);
           break;
         case r'trip':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.trip = valueDes;
           break;
         case r'current':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.current = valueDes;
           break;

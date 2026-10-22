@@ -58,8 +58,9 @@ class _$AnalystEvaluationSerializer
     yield r'profiles';
     yield serializers.serialize(
       object.profiles,
-      specifiedType:
-          const FullType(BuiltList, [FullType(AnalystEvaluationProfilesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(AnalystEvaluationProfilesInner),
+      ]),
     );
   }
 
@@ -69,9 +70,11 @@ class _$AnalystEvaluationSerializer
     AnalystEvaluation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -87,18 +90,23 @@ class _$AnalystEvaluationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'since':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.since = valueDes;
           break;
         case r'profiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(AnalystEvaluationProfilesInner)]),
-          ) as BuiltList<AnalystEvaluationProfilesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AnalystEvaluationProfilesInner),
+                    ]),
+                  )
+                  as BuiltList<AnalystEvaluationProfilesInner>;
           result.profiles.replace(valueDes);
           break;
         default:

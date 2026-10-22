@@ -200,9 +200,11 @@ class _$ProvenanceSerializer implements PrimitiveSerializer<Provenance> {
     Provenance object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -218,108 +220,140 @@ class _$ProvenanceSerializer implements PrimitiveSerializer<Provenance> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.sourceIds.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
         case r'asOfSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.asOfSeq = valueDes;
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(LicenceTerms),
-          ) as LicenceTerms?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(LicenceTerms),
+                  )
+                  as LicenceTerms?;
           if (valueDes == null) continue;
           result.licence.replace(valueDes);
           break;
         case r'licenceBasis':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProvenanceLicenceBasisEnum),
-          ) as ProvenanceLicenceBasisEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ProvenanceLicenceBasisEnum,
+                    ),
+                  )
+                  as ProvenanceLicenceBasisEnum?;
           if (valueDes == null) continue;
           result.licenceBasis = valueDes;
           break;
         case r'fetchId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.fetchId = valueDes;
           break;
         case r'adapterVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.adapterVersion = valueDes;
           break;
         case r'principal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.principal = valueDes;
           break;
         case r'reliability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProvenanceReliabilityEnum),
-          ) as ProvenanceReliabilityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ProvenanceReliabilityEnum,
+                    ),
+                  )
+                  as ProvenanceReliabilityEnum?;
           if (valueDes == null) continue;
           result.reliability = valueDes;
           break;
         case r'credibility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.credibility = valueDes;
           break;
         case r'grade':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.grade = valueDes;
           break;
         case r'origin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ProvenanceHop),
-          ) as ProvenanceHop?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ProvenanceHop),
+                  )
+                  as ProvenanceHop?;
           if (valueDes == null) continue;
           result.origin.replace(valueDes);
           break;
         case r'chain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(ProvenanceHop)]),
-          ) as BuiltList<ProvenanceHop>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProvenanceHop),
+                    ]),
+                  )
+                  as BuiltList<ProvenanceHop>?;
           if (valueDes == null) continue;
           result.chain.replace(valueDes);
           break;

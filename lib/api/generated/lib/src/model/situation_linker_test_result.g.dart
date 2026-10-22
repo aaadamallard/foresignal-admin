@@ -20,22 +20,22 @@ class _$SituationLinkerTestResult extends SituationLinkerTestResult {
   @override
   final bool? truncated;
 
-  factory _$SituationLinkerTestResult(
-          [void Function(SituationLinkerTestResultBuilder)? updates]) =>
-      (SituationLinkerTestResultBuilder()..update(updates))._build();
+  factory _$SituationLinkerTestResult([
+    void Function(SituationLinkerTestResultBuilder)? updates,
+  ]) => (SituationLinkerTestResultBuilder()..update(updates))._build();
 
-  _$SituationLinkerTestResult._(
-      {required this.fromSeq,
-      required this.toSeq,
-      required this.linkerVersion,
-      this.inputsConsidered,
-      required this.decisions,
-      this.truncated})
-      : super._();
+  _$SituationLinkerTestResult._({
+    required this.fromSeq,
+    required this.toSeq,
+    required this.linkerVersion,
+    this.inputsConsidered,
+    required this.decisions,
+    this.truncated,
+  }) : super._();
   @override
   SituationLinkerTestResult rebuild(
-          void Function(SituationLinkerTestResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationLinkerTestResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationLinkerTestResultBuilder toBuilder() =>
@@ -146,14 +146,24 @@ class SituationLinkerTestResultBuilder
   _$SituationLinkerTestResult _build() {
     _$SituationLinkerTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationLinkerTestResult._(
             fromSeq: BuiltValueNullFieldError.checkNotNull(
-                fromSeq, r'SituationLinkerTestResult', 'fromSeq'),
+              fromSeq,
+              r'SituationLinkerTestResult',
+              'fromSeq',
+            ),
             toSeq: BuiltValueNullFieldError.checkNotNull(
-                toSeq, r'SituationLinkerTestResult', 'toSeq'),
+              toSeq,
+              r'SituationLinkerTestResult',
+              'toSeq',
+            ),
             linkerVersion: BuiltValueNullFieldError.checkNotNull(
-                linkerVersion, r'SituationLinkerTestResult', 'linkerVersion'),
+              linkerVersion,
+              r'SituationLinkerTestResult',
+              'linkerVersion',
+            ),
             inputsConsidered: inputsConsidered,
             decisions: decisions.build(),
             truncated: truncated,
@@ -165,7 +175,10 @@ class SituationLinkerTestResultBuilder
         decisions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationLinkerTestResult', _$failedField, e.toString());
+          r'SituationLinkerTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -14,16 +14,16 @@ class _$IntelBoardCalibration extends IntelBoardCalibration {
   @override
   final IntelBoardCalibrationOperator? operator_;
 
-  factory _$IntelBoardCalibration(
-          [void Function(IntelBoardCalibrationBuilder)? updates]) =>
-      (IntelBoardCalibrationBuilder()..update(updates))._build();
+  factory _$IntelBoardCalibration([
+    void Function(IntelBoardCalibrationBuilder)? updates,
+  ]) => (IntelBoardCalibrationBuilder()..update(updates))._build();
 
   _$IntelBoardCalibration._({this.window, this.ensemble, this.operator_})
-      : super._();
+    : super._();
   @override
   IntelBoardCalibration rebuild(
-          void Function(IntelBoardCalibrationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardCalibrationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardCalibrationBuilder toBuilder() =>
@@ -109,7 +109,8 @@ class IntelBoardCalibrationBuilder
   _$IntelBoardCalibration _build() {
     _$IntelBoardCalibration _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelBoardCalibration._(
             window: window,
             ensemble: _ensemble?.build(),
@@ -124,7 +125,10 @@ class IntelBoardCalibrationBuilder
         _operator_?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelBoardCalibration', _$failedField, e.toString());
+          r'IntelBoardCalibration',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

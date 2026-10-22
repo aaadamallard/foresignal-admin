@@ -38,27 +38,27 @@ class _$CollabAttachment extends CollabAttachment {
   @override
   final CollabAttachmentLinks? links;
 
-  factory _$CollabAttachment(
-          [void Function(CollabAttachmentBuilder)? updates]) =>
-      (CollabAttachmentBuilder()..update(updates))._build();
+  factory _$CollabAttachment([
+    void Function(CollabAttachmentBuilder)? updates,
+  ]) => (CollabAttachmentBuilder()..update(updates))._build();
 
-  _$CollabAttachment._(
-      {required this.id,
-      required this.mediaId,
-      required this.filename,
-      required this.contentType,
-      required this.size,
-      required this.sha256,
-      this.text,
-      this.textTruncated,
-      this.imageMeta,
-      required this.uploadedBy,
-      this.owner,
-      this.visibility,
-      required this.tlp,
-      required this.createdAt,
-      this.links})
-      : super._();
+  _$CollabAttachment._({
+    required this.id,
+    required this.mediaId,
+    required this.filename,
+    required this.contentType,
+    required this.size,
+    required this.sha256,
+    this.text,
+    this.textTruncated,
+    this.imageMeta,
+    required this.uploadedBy,
+    this.owner,
+    this.visibility,
+    required this.tlp,
+    required this.createdAt,
+    this.links,
+  }) : super._();
   @override
   CollabAttachment rebuild(void Function(CollabAttachmentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -246,20 +246,39 @@ class CollabAttachmentBuilder
   _$CollabAttachment _build() {
     _$CollabAttachment _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CollabAttachment._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CollabAttachment', 'id'),
+              id,
+              r'CollabAttachment',
+              'id',
+            ),
             mediaId: BuiltValueNullFieldError.checkNotNull(
-                mediaId, r'CollabAttachment', 'mediaId'),
+              mediaId,
+              r'CollabAttachment',
+              'mediaId',
+            ),
             filename: BuiltValueNullFieldError.checkNotNull(
-                filename, r'CollabAttachment', 'filename'),
+              filename,
+              r'CollabAttachment',
+              'filename',
+            ),
             contentType: BuiltValueNullFieldError.checkNotNull(
-                contentType, r'CollabAttachment', 'contentType'),
+              contentType,
+              r'CollabAttachment',
+              'contentType',
+            ),
             size: BuiltValueNullFieldError.checkNotNull(
-                size, r'CollabAttachment', 'size'),
+              size,
+              r'CollabAttachment',
+              'size',
+            ),
             sha256: BuiltValueNullFieldError.checkNotNull(
-                sha256, r'CollabAttachment', 'sha256'),
+              sha256,
+              r'CollabAttachment',
+              'sha256',
+            ),
             text: text,
             textTruncated: textTruncated,
             imageMeta: _imageMeta?.build(),
@@ -267,9 +286,15 @@ class CollabAttachmentBuilder
             owner: _owner?.build(),
             visibility: visibility,
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'CollabAttachment', 'tlp'),
+              tlp,
+              r'CollabAttachment',
+              'tlp',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'CollabAttachment', 'createdAt'),
+              createdAt,
+              r'CollabAttachment',
+              'createdAt',
+            ),
             links: _links?.build(),
           );
     } catch (_) {
@@ -286,7 +311,10 @@ class CollabAttachmentBuilder
         _links?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CollabAttachment', _$failedField, e.toString());
+          r'CollabAttachment',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

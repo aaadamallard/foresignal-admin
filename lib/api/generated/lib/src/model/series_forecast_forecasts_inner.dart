@@ -20,8 +20,10 @@ part 'series_forecast_forecasts_inner.g.dart';
 @BuiltValue()
 abstract class SeriesForecastForecastsInner
     implements
-        Built<SeriesForecastForecastsInner,
-            SeriesForecastForecastsInnerBuilder> {
+        Built<
+          SeriesForecastForecastsInner,
+          SeriesForecastForecastsInnerBuilder
+        > {
   /// Days ahead
   @BuiltValueField(wireName: r'horizon')
   SeriesForecastForecastsInnerHorizonEnum get horizon;
@@ -35,9 +37,9 @@ abstract class SeriesForecastForecastsInner
 
   SeriesForecastForecastsInner._();
 
-  factory SeriesForecastForecastsInner(
-          [void updates(SeriesForecastForecastsInnerBuilder b)]) =
-      _$SeriesForecastForecastsInner;
+  factory SeriesForecastForecastsInner([
+    void updates(SeriesForecastForecastsInnerBuilder b),
+  ]) = _$SeriesForecastForecastsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SeriesForecastForecastsInnerBuilder b) => b;
@@ -52,7 +54,7 @@ class _$SeriesForecastForecastsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SeriesForecastForecastsInner,
-    _$SeriesForecastForecastsInner
+    _$SeriesForecastForecastsInner,
   ];
 
   @override
@@ -86,9 +88,11 @@ class _$SeriesForecastForecastsInnerSerializer
     SeriesForecastForecastsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,25 +108,32 @@ class _$SeriesForecastForecastsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'horizon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(SeriesForecastForecastsInnerHorizonEnum),
-          ) as SeriesForecastForecastsInnerHorizonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SeriesForecastForecastsInnerHorizonEnum,
+                    ),
+                  )
+                  as SeriesForecastForecastsInnerHorizonEnum;
           result.horizon = valueDes;
           break;
         case r'targetPeriod':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimeRange),
-          ) as TimeRange;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimeRange),
+                  )
+                  as TimeRange;
           result.targetPeriod.replace(valueDes);
           break;
         case r'quantiles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Quantiles),
-          ) as Quantiles;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Quantiles),
+                  )
+                  as Quantiles;
           result.quantiles.replace(valueDes);
           break;
         default:

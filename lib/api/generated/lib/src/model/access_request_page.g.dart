@@ -12,9 +12,9 @@ class _$AccessRequestPage extends AccessRequestPage {
   @override
   final String? nextCursor;
 
-  factory _$AccessRequestPage(
-          [void Function(AccessRequestPageBuilder)? updates]) =>
-      (AccessRequestPageBuilder()..update(updates))._build();
+  factory _$AccessRequestPage([
+    void Function(AccessRequestPageBuilder)? updates,
+  ]) => (AccessRequestPageBuilder()..update(updates))._build();
 
   _$AccessRequestPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class AccessRequestPageBuilder
   _$AccessRequestPage _build() {
     _$AccessRequestPage _$result;
     try {
-      _$result = _$v ??
-          _$AccessRequestPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AccessRequestPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class AccessRequestPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AccessRequestPage', _$failedField, e.toString());
+          r'AccessRequestPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

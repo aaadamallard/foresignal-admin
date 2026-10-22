@@ -22,8 +22,10 @@ part 'channel_type_config_fields_inner.g.dart';
 @BuiltValue()
 abstract class ChannelTypeConfigFieldsInner
     implements
-        Built<ChannelTypeConfigFieldsInner,
-            ChannelTypeConfigFieldsInnerBuilder> {
+        Built<
+          ChannelTypeConfigFieldsInner,
+          ChannelTypeConfigFieldsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'name')
   String get name;
 
@@ -45,9 +47,9 @@ abstract class ChannelTypeConfigFieldsInner
 
   ChannelTypeConfigFieldsInner._();
 
-  factory ChannelTypeConfigFieldsInner(
-          [void updates(ChannelTypeConfigFieldsInnerBuilder b)]) =
-      _$ChannelTypeConfigFieldsInner;
+  factory ChannelTypeConfigFieldsInner([
+    void updates(ChannelTypeConfigFieldsInnerBuilder b),
+  ]) = _$ChannelTypeConfigFieldsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChannelTypeConfigFieldsInnerBuilder b) => b;
@@ -62,7 +64,7 @@ class _$ChannelTypeConfigFieldsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChannelTypeConfigFieldsInner,
-    _$ChannelTypeConfigFieldsInner
+    _$ChannelTypeConfigFieldsInner,
   ];
 
   @override
@@ -117,9 +119,11 @@ class _$ChannelTypeConfigFieldsInnerSerializer
     ChannelTypeConfigFieldsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,48 +139,63 @@ class _$ChannelTypeConfigFieldsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChannelTypeConfigFieldsInnerTypeEnum),
-          ) as ChannelTypeConfigFieldsInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChannelTypeConfigFieldsInnerTypeEnum,
+                    ),
+                  )
+                  as ChannelTypeConfigFieldsInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'required':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.required_ = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'default':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.default_ = valueDes;
           break;
         case r'allowed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.allowed.replace(valueDes);
           break;

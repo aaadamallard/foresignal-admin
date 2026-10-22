@@ -47,16 +47,10 @@ class ReferenceApi {
     final _path = r'/v1/reference';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -78,9 +72,10 @@ class ReferenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReferenceStatus),
-            ) as ReferenceStatus;
+                  rawResponse,
+                  specifiedType: const FullType(ReferenceStatus),
+                )
+                as ReferenceStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -127,16 +122,10 @@ class ReferenceApi {
     final _path = r'/v1/reference/countries';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -158,9 +147,12 @@ class ReferenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(CountryRef)]),
-            ) as BuiltList<CountryRef>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(CountryRef),
+                  ]),
+                )
+                as BuiltList<CountryRef>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -209,16 +201,10 @@ class ReferenceApi {
     final _path = r'/v1/reference/load';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -230,14 +216,13 @@ class ReferenceApi {
 
     try {
       const _type = FullType(ReferenceLoadRequest);
-      _bodyData =
-          _serializers.serialize(referenceLoadRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        referenceLoadRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -260,9 +245,10 @@ class ReferenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReferenceStatus),
-            ) as ReferenceStatus;
+                  rawResponse,
+                  specifiedType: const FullType(ReferenceStatus),
+                )
+                as ReferenceStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -313,16 +299,10 @@ class ReferenceApi {
     final _path = r'/v1/reference/reverse';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -350,9 +330,10 @@ class ReferenceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RegionTags),
-            ) as RegionTags;
+                  rawResponse,
+                  specifiedType: const FullType(RegionTags),
+                )
+                as RegionTags;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

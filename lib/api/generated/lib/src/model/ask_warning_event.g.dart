@@ -37,9 +37,9 @@ class _$AskWarningEvent extends AskWarningEvent {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AskWarningEvent')
-          ..add('message', message))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AskWarningEvent',
+    )..add('message', message)).toString();
   }
 }
 
@@ -78,10 +78,14 @@ class AskWarningEventBuilder
   AskWarningEvent build() => _build();
 
   _$AskWarningEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AskWarningEvent._(
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'AskWarningEvent', 'message'),
+            message,
+            r'AskWarningEvent',
+            'message',
+          ),
         );
     replace(_$result);
     return _$result;

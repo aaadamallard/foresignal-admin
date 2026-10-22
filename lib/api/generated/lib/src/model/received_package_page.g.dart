@@ -12,15 +12,15 @@ class _$ReceivedPackagePage extends ReceivedPackagePage {
   @override
   final String? nextCursor;
 
-  factory _$ReceivedPackagePage(
-          [void Function(ReceivedPackagePageBuilder)? updates]) =>
-      (ReceivedPackagePageBuilder()..update(updates))._build();
+  factory _$ReceivedPackagePage([
+    void Function(ReceivedPackagePageBuilder)? updates,
+  ]) => (ReceivedPackagePageBuilder()..update(updates))._build();
 
   _$ReceivedPackagePage._({required this.items, this.nextCursor}) : super._();
   @override
   ReceivedPackagePage rebuild(
-          void Function(ReceivedPackagePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReceivedPackagePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReceivedPackagePageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ReceivedPackagePageBuilder
   _$ReceivedPackagePage _build() {
     _$ReceivedPackagePage _$result;
     try {
-      _$result = _$v ??
-          _$ReceivedPackagePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ReceivedPackagePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ReceivedPackagePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReceivedPackagePage', _$failedField, e.toString());
+          r'ReceivedPackagePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

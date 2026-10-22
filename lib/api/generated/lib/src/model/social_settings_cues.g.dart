@@ -20,22 +20,22 @@ class _$SocialSettingsCues extends SocialSettingsCues {
   @override
   final SocialSettingsCuesXaiXSearch? xaiXSearch;
 
-  factory _$SocialSettingsCues(
-          [void Function(SocialSettingsCuesBuilder)? updates]) =>
-      (SocialSettingsCuesBuilder()..update(updates))._build();
+  factory _$SocialSettingsCues([
+    void Function(SocialSettingsCuesBuilder)? updates,
+  ]) => (SocialSettingsCuesBuilder()..update(updates))._build();
 
-  _$SocialSettingsCues._(
-      {this.enabled,
-      this.triggers,
-      this.maxPerDay,
-      this.maxCostUsdPerCue,
-      this.platforms,
-      this.xaiXSearch})
-      : super._();
+  _$SocialSettingsCues._({
+    this.enabled,
+    this.triggers,
+    this.maxPerDay,
+    this.maxCostUsdPerCue,
+    this.platforms,
+    this.xaiXSearch,
+  }) : super._();
   @override
   SocialSettingsCues rebuild(
-          void Function(SocialSettingsCuesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsCuesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsCuesBuilder toBuilder() =>
@@ -148,7 +148,8 @@ class SocialSettingsCuesBuilder
   _$SocialSettingsCues _build() {
     _$SocialSettingsCues _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialSettingsCues._(
             enabled: enabled,
             triggers: _triggers?.build(),
@@ -169,7 +170,10 @@ class SocialSettingsCuesBuilder
         _xaiXSearch?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialSettingsCues', _$failedField, e.toString());
+          r'SocialSettingsCues',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

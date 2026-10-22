@@ -15,17 +15,19 @@ class _$RetentionRunResultConsumerClamp
   @override
   final int? cursorSeq;
 
-  factory _$RetentionRunResultConsumerClamp(
-          [void Function(RetentionRunResultConsumerClampBuilder)? updates]) =>
-      (RetentionRunResultConsumerClampBuilder()..update(updates))._build();
+  factory _$RetentionRunResultConsumerClamp([
+    void Function(RetentionRunResultConsumerClampBuilder)? updates,
+  ]) => (RetentionRunResultConsumerClampBuilder()..update(updates))._build();
 
-  _$RetentionRunResultConsumerClamp._(
-      {this.active, this.consumer, this.cursorSeq})
-      : super._();
+  _$RetentionRunResultConsumerClamp._({
+    this.active,
+    this.consumer,
+    this.cursorSeq,
+  }) : super._();
   @override
   RetentionRunResultConsumerClamp rebuild(
-          void Function(RetentionRunResultConsumerClampBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RetentionRunResultConsumerClampBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RetentionRunResultConsumerClampBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$RetentionRunResultConsumerClamp
 
 class RetentionRunResultConsumerClampBuilder
     implements
-        Builder<RetentionRunResultConsumerClamp,
-            RetentionRunResultConsumerClampBuilder> {
+        Builder<
+          RetentionRunResultConsumerClamp,
+          RetentionRunResultConsumerClampBuilder
+        > {
   _$RetentionRunResultConsumerClamp? _$v;
 
   bool? _active;
@@ -107,7 +111,8 @@ class RetentionRunResultConsumerClampBuilder
   RetentionRunResultConsumerClamp build() => _build();
 
   _$RetentionRunResultConsumerClamp _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RetentionRunResultConsumerClamp._(
           active: active,
           consumer: consumer,

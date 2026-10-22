@@ -17,9 +17,11 @@ class _$StyleCategory extends StyleCategory {
   factory _$StyleCategory([void Function(StyleCategoryBuilder)? updates]) =>
       (StyleCategoryBuilder()..update(updates))._build();
 
-  _$StyleCategory._(
-      {required this.code, required this.color, required this.label})
-      : super._();
+  _$StyleCategory._({
+    required this.code,
+    required this.color,
+    required this.label,
+  }) : super._();
   @override
   StyleCategory rebuild(void Function(StyleCategoryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -101,14 +103,24 @@ class StyleCategoryBuilder
   StyleCategory build() => _build();
 
   _$StyleCategory _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StyleCategory._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'StyleCategory', 'code'),
+            code,
+            r'StyleCategory',
+            'code',
+          ),
           color: BuiltValueNullFieldError.checkNotNull(
-              color, r'StyleCategory', 'color'),
+            color,
+            r'StyleCategory',
+            'color',
+          ),
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'StyleCategory', 'label'),
+            label,
+            r'StyleCategory',
+            'label',
+          ),
         );
     replace(_$result);
     return _$result;

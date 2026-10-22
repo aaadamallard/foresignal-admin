@@ -94,24 +94,27 @@ class _$IngestFormatInfoSerializer
       yield r'methods';
       yield serializers.serialize(
         object.methods,
-        specifiedType:
-            const FullType(BuiltList, [FullType(IngestFormatInfoMethodsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(IngestFormatInfoMethodsEnum),
+        ]),
       );
     }
     if (object.options != null) {
       yield r'options';
       yield serializers.serialize(
         object.options,
-        specifiedType:
-            const FullType(BuiltList, [FullType(IngestFormatOption)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(IngestFormatOption),
+        ]),
       );
     }
     if (object.verifiers != null) {
       yield r'verifiers';
       yield serializers.serialize(
         object.verifiers,
-        specifiedType: const FullType(
-            BuiltList, [FullType(IngestFormatInfoVerifiersEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(IngestFormatInfoVerifiersEnum),
+        ]),
       );
     }
     if (object.reserved != null) {
@@ -129,9 +132,11 @@ class _$IngestFormatInfoSerializer
     IngestFormatInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -147,59 +152,78 @@ class _$IngestFormatInfoSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'mediaTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.mediaTypes.replace(valueDes);
           break;
         case r'methods':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(IngestFormatInfoMethodsEnum)]),
-          ) as BuiltList<IngestFormatInfoMethodsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IngestFormatInfoMethodsEnum),
+                    ]),
+                  )
+                  as BuiltList<IngestFormatInfoMethodsEnum>?;
           if (valueDes == null) continue;
           result.methods.replace(valueDes);
           break;
         case r'options':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(IngestFormatOption)]),
-          ) as BuiltList<IngestFormatOption>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IngestFormatOption),
+                    ]),
+                  )
+                  as BuiltList<IngestFormatOption>?;
           if (valueDes == null) continue;
           result.options.replace(valueDes);
           break;
         case r'verifiers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(IngestFormatInfoVerifiersEnum)]),
-          ) as BuiltList<IngestFormatInfoVerifiersEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IngestFormatInfoVerifiersEnum),
+                    ]),
+                  )
+                  as BuiltList<IngestFormatInfoVerifiersEnum>?;
           if (valueDes == null) continue;
           result.verifiers.replace(valueDes);
           break;
         case r'reserved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.reserved = valueDes;
           break;

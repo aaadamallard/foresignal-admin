@@ -7,26 +7,26 @@ part of 'dossier_sections_timeline_items_inner.dart';
 // **************************************************************************
 
 const DossierSectionsTimelineItemsInnerKindEnum
-    _$dossierSectionsTimelineItemsInnerKindEnum_version =
+_$dossierSectionsTimelineItemsInnerKindEnum_version =
     const DossierSectionsTimelineItemsInnerKindEnum._('version');
 const DossierSectionsTimelineItemsInnerKindEnum
-    _$dossierSectionsTimelineItemsInnerKindEnum_alert =
+_$dossierSectionsTimelineItemsInnerKindEnum_alert =
     const DossierSectionsTimelineItemsInnerKindEnum._('alert');
 const DossierSectionsTimelineItemsInnerKindEnum
-    _$dossierSectionsTimelineItemsInnerKindEnum_finding =
+_$dossierSectionsTimelineItemsInnerKindEnum_finding =
     const DossierSectionsTimelineItemsInnerKindEnum._('finding');
 const DossierSectionsTimelineItemsInnerKindEnum
-    _$dossierSectionsTimelineItemsInnerKindEnum_situationLog =
+_$dossierSectionsTimelineItemsInnerKindEnum_situationLog =
     const DossierSectionsTimelineItemsInnerKindEnum._('situationLog');
 const DossierSectionsTimelineItemsInnerKindEnum
-    _$dossierSectionsTimelineItemsInnerKindEnum_annotation =
+_$dossierSectionsTimelineItemsInnerKindEnum_annotation =
     const DossierSectionsTimelineItemsInnerKindEnum._('annotation');
 const DossierSectionsTimelineItemsInnerKindEnum
-    _$dossierSectionsTimelineItemsInnerKindEnum_other =
+_$dossierSectionsTimelineItemsInnerKindEnum_other =
     const DossierSectionsTimelineItemsInnerKindEnum._('other');
 
 DossierSectionsTimelineItemsInnerKindEnum
-    _$dossierSectionsTimelineItemsInnerKindEnumValueOf(String name) {
+_$dossierSectionsTimelineItemsInnerKindEnumValueOf(String name) {
   switch (name) {
     case 'version':
       return _$dossierSectionsTimelineItemsInnerKindEnum_version;
@@ -46,18 +46,20 @@ DossierSectionsTimelineItemsInnerKindEnum
 }
 
 final BuiltSet<DossierSectionsTimelineItemsInnerKindEnum>
-    _$dossierSectionsTimelineItemsInnerKindEnumValues = BuiltSet<
-        DossierSectionsTimelineItemsInnerKindEnum>(const <DossierSectionsTimelineItemsInnerKindEnum>[
-  _$dossierSectionsTimelineItemsInnerKindEnum_version,
-  _$dossierSectionsTimelineItemsInnerKindEnum_alert,
-  _$dossierSectionsTimelineItemsInnerKindEnum_finding,
-  _$dossierSectionsTimelineItemsInnerKindEnum_situationLog,
-  _$dossierSectionsTimelineItemsInnerKindEnum_annotation,
-  _$dossierSectionsTimelineItemsInnerKindEnum_other,
-]);
+_$dossierSectionsTimelineItemsInnerKindEnumValues =
+    BuiltSet<DossierSectionsTimelineItemsInnerKindEnum>(
+      const <DossierSectionsTimelineItemsInnerKindEnum>[
+        _$dossierSectionsTimelineItemsInnerKindEnum_version,
+        _$dossierSectionsTimelineItemsInnerKindEnum_alert,
+        _$dossierSectionsTimelineItemsInnerKindEnum_finding,
+        _$dossierSectionsTimelineItemsInnerKindEnum_situationLog,
+        _$dossierSectionsTimelineItemsInnerKindEnum_annotation,
+        _$dossierSectionsTimelineItemsInnerKindEnum_other,
+      ],
+    );
 
 Serializer<DossierSectionsTimelineItemsInnerKindEnum>
-    _$dossierSectionsTimelineItemsInnerKindEnumSerializer =
+_$dossierSectionsTimelineItemsInnerKindEnumSerializer =
     _$DossierSectionsTimelineItemsInnerKindEnumSerializer();
 
 class _$DossierSectionsTimelineItemsInnerKindEnumSerializer
@@ -81,23 +83,26 @@ class _$DossierSectionsTimelineItemsInnerKindEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    DossierSectionsTimelineItemsInnerKindEnum
+    DossierSectionsTimelineItemsInnerKindEnum,
   ];
   @override
   final String wireName = 'DossierSectionsTimelineItemsInnerKindEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          DossierSectionsTimelineItemsInnerKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DossierSectionsTimelineItemsInnerKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsTimelineItemsInnerKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsTimelineItemsInnerKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsTimelineItemsInnerKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsTimelineItemsInner
@@ -113,21 +118,21 @@ class _$DossierSectionsTimelineItemsInner
   @override
   final String? severity;
 
-  factory _$DossierSectionsTimelineItemsInner(
-          [void Function(DossierSectionsTimelineItemsInnerBuilder)? updates]) =>
-      (DossierSectionsTimelineItemsInnerBuilder()..update(updates))._build();
+  factory _$DossierSectionsTimelineItemsInner([
+    void Function(DossierSectionsTimelineItemsInnerBuilder)? updates,
+  ]) => (DossierSectionsTimelineItemsInnerBuilder()..update(updates))._build();
 
-  _$DossierSectionsTimelineItemsInner._(
-      {required this.at,
-      required this.kind,
-      this.ref,
-      required this.title,
-      this.severity})
-      : super._();
+  _$DossierSectionsTimelineItemsInner._({
+    required this.at,
+    required this.kind,
+    this.ref,
+    required this.title,
+    this.severity,
+  }) : super._();
   @override
   DossierSectionsTimelineItemsInner rebuild(
-          void Function(DossierSectionsTimelineItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsTimelineItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsTimelineItemsInnerBuilder toBuilder() =>
@@ -170,8 +175,10 @@ class _$DossierSectionsTimelineItemsInner
 
 class DossierSectionsTimelineItemsInnerBuilder
     implements
-        Builder<DossierSectionsTimelineItemsInner,
-            DossierSectionsTimelineItemsInnerBuilder> {
+        Builder<
+          DossierSectionsTimelineItemsInner,
+          DossierSectionsTimelineItemsInnerBuilder
+        > {
   _$DossierSectionsTimelineItemsInner? _$v;
 
   DateTime? _at;
@@ -219,7 +226,8 @@ class DossierSectionsTimelineItemsInnerBuilder
 
   @override
   void update(
-      void Function(DossierSectionsTimelineItemsInnerBuilder)? updates) {
+    void Function(DossierSectionsTimelineItemsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -227,15 +235,25 @@ class DossierSectionsTimelineItemsInnerBuilder
   DossierSectionsTimelineItemsInner build() => _build();
 
   _$DossierSectionsTimelineItemsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DossierSectionsTimelineItemsInner._(
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'DossierSectionsTimelineItemsInner', 'at'),
+            at,
+            r'DossierSectionsTimelineItemsInner',
+            'at',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'DossierSectionsTimelineItemsInner', 'kind'),
+            kind,
+            r'DossierSectionsTimelineItemsInner',
+            'kind',
+          ),
           ref: ref,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'DossierSectionsTimelineItemsInner', 'title'),
+            title,
+            r'DossierSectionsTimelineItemsInner',
+            'title',
+          ),
           severity: severity,
         );
     replace(_$result);

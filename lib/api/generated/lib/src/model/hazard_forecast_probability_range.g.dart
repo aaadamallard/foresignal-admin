@@ -12,16 +12,16 @@ class _$HazardForecastProbabilityRange extends HazardForecastProbabilityRange {
   @override
   final num? high;
 
-  factory _$HazardForecastProbabilityRange(
-          [void Function(HazardForecastProbabilityRangeBuilder)? updates]) =>
-      (HazardForecastProbabilityRangeBuilder()..update(updates))._build();
+  factory _$HazardForecastProbabilityRange([
+    void Function(HazardForecastProbabilityRangeBuilder)? updates,
+  ]) => (HazardForecastProbabilityRangeBuilder()..update(updates))._build();
 
   _$HazardForecastProbabilityRange._({required this.low, this.high})
-      : super._();
+    : super._();
   @override
   HazardForecastProbabilityRange rebuild(
-          void Function(HazardForecastProbabilityRangeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HazardForecastProbabilityRangeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HazardForecastProbabilityRangeBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$HazardForecastProbabilityRange extends HazardForecastProbabilityRange {
 
 class HazardForecastProbabilityRangeBuilder
     implements
-        Builder<HazardForecastProbabilityRange,
-            HazardForecastProbabilityRangeBuilder> {
+        Builder<
+          HazardForecastProbabilityRange,
+          HazardForecastProbabilityRangeBuilder
+        > {
   _$HazardForecastProbabilityRange? _$v;
 
   num? _low;
@@ -95,10 +97,14 @@ class HazardForecastProbabilityRangeBuilder
   HazardForecastProbabilityRange build() => _build();
 
   _$HazardForecastProbabilityRange _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HazardForecastProbabilityRange._(
           low: BuiltValueNullFieldError.checkNotNull(
-              low, r'HazardForecastProbabilityRange', 'low'),
+            low,
+            r'HazardForecastProbabilityRange',
+            'low',
+          ),
           high: high,
         );
     replace(_$result);

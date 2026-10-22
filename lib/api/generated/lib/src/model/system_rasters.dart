@@ -147,8 +147,10 @@ class _$SystemRastersSerializer implements PrimitiveSerializer<SystemRasters> {
       yield r'caches';
       yield serializers.serialize(
         object.caches,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType(SystemRastersCachesValue)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(SystemRastersCachesValue),
+        ]),
       );
     }
     if (object.renderQueue != null) {
@@ -187,9 +189,11 @@ class _$SystemRastersSerializer implements PrimitiveSerializer<SystemRasters> {
     SystemRasters object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -205,98 +209,126 @@ class _$SystemRastersSerializer implements PrimitiveSerializer<SystemRasters> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'profile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SystemRastersProfileEnum),
-          ) as SystemRastersProfileEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SystemRastersProfileEnum),
+                  )
+                  as SystemRastersProfileEnum;
           result.profile = valueDes;
           break;
         case r'products':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.products = valueDes;
           break;
         case r'frames':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.frames = valueDes;
           break;
         case r'storeBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.storeBytes = valueDes;
           break;
         case r'mediaBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.mediaBytes = valueDes;
           break;
         case r'diskQuotaGb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.diskQuotaGb = valueDes;
           break;
         case r'diskQuotaPct':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.diskQuotaPct = valueDes;
           break;
         case r'caches':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap,
-                [FullType(String), FullType(SystemRastersCachesValue)]),
-          ) as BuiltMap<String, SystemRastersCachesValue>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(SystemRastersCachesValue),
+                    ]),
+                  )
+                  as BuiltMap<String, SystemRastersCachesValue>?;
           if (valueDes == null) continue;
           result.caches.replace(valueDes);
           break;
         case r'renderQueue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemRastersRenderQueue),
-          ) as SystemRastersRenderQueue?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemRastersRenderQueue,
+                    ),
+                  )
+                  as SystemRastersRenderQueue?;
           if (valueDes == null) continue;
           result.renderQueue.replace(valueDes);
           break;
         case r'renderBusyLastHour':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.renderBusyLastHour = valueDes;
           break;
         case r'mbDownloadedToday':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.mbDownloadedToday = valueDes;
           break;
         case r'glm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemRastersGlm),
-          ) as SystemRastersGlm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemRastersGlm),
+                  )
+                  as SystemRastersGlm?;
           if (valueDes == null) continue;
           result.glm.replace(valueDes);
           break;

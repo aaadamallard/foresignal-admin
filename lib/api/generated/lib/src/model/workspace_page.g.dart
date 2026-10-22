@@ -92,11 +92,9 @@ class WorkspacePageBuilder
   _$WorkspacePage _build() {
     _$WorkspacePage _$result;
     try {
-      _$result = _$v ??
-          _$WorkspacePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$WorkspacePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class WorkspacePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WorkspacePage', _$failedField, e.toString());
+          r'WorkspacePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

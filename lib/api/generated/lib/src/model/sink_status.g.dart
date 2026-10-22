@@ -32,11 +32,11 @@ SinkStatusStateEnum _$sinkStatusStateEnumValueOf(String name) {
 
 final BuiltSet<SinkStatusStateEnum> _$sinkStatusStateEnumValues =
     BuiltSet<SinkStatusStateEnum>(const <SinkStatusStateEnum>[
-  _$sinkStatusStateEnum_RUNNING,
-  _$sinkStatusStateEnum_RESYNCING,
-  _$sinkStatusStateEnum_FAILING,
-  _$sinkStatusStateEnum_STOPPED,
-]);
+      _$sinkStatusStateEnum_RUNNING,
+      _$sinkStatusStateEnum_RESYNCING,
+      _$sinkStatusStateEnum_FAILING,
+      _$sinkStatusStateEnum_STOPPED,
+    ]);
 
 Serializer<SinkStatusStateEnum> _$sinkStatusStateEnumSerializer =
     _$SinkStatusStateEnumSerializer();
@@ -62,15 +62,20 @@ class _$SinkStatusStateEnumSerializer
   final String wireName = 'SinkStatusStateEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkStatusStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkStatusStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkStatusStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkStatusStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkStatusStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkStatusStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkStatus extends SinkStatus {
@@ -106,22 +111,22 @@ class _$SinkStatus extends SinkStatus {
   factory _$SinkStatus([void Function(SinkStatusBuilder)? updates]) =>
       (SinkStatusBuilder()..update(updates))._build();
 
-  _$SinkStatus._(
-      {required this.sinkId,
-      required this.state,
-      this.lastSeq,
-      this.watermarkSeq,
-      this.lastPublishedSeq,
-      this.lagSeq,
-      this.lastDeliveredAt,
-      this.lastError,
-      this.failingSince,
-      this.resyncCount,
-      required this.delivered,
-      required this.dropped,
-      required this.denied,
-      this.clients})
-      : super._();
+  _$SinkStatus._({
+    required this.sinkId,
+    required this.state,
+    this.lastSeq,
+    this.watermarkSeq,
+    this.lastPublishedSeq,
+    this.lagSeq,
+    this.lastDeliveredAt,
+    this.lastError,
+    this.failingSince,
+    this.resyncCount,
+    required this.delivered,
+    required this.dropped,
+    required this.denied,
+    this.clients,
+  }) : super._();
   @override
   SinkStatus rebuild(void Function(SinkStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -297,12 +302,19 @@ class SinkStatusBuilder implements Builder<SinkStatus, SinkStatusBuilder> {
   _$SinkStatus _build() {
     _$SinkStatus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkStatus._(
             sinkId: BuiltValueNullFieldError.checkNotNull(
-                sinkId, r'SinkStatus', 'sinkId'),
+              sinkId,
+              r'SinkStatus',
+              'sinkId',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'SinkStatus', 'state'),
+              state,
+              r'SinkStatus',
+              'state',
+            ),
             lastSeq: lastSeq,
             watermarkSeq: watermarkSeq,
             lastPublishedSeq: lastPublishedSeq,
@@ -312,9 +324,15 @@ class SinkStatusBuilder implements Builder<SinkStatus, SinkStatusBuilder> {
             failingSince: failingSince,
             resyncCount: resyncCount,
             delivered: BuiltValueNullFieldError.checkNotNull(
-                delivered, r'SinkStatus', 'delivered'),
+              delivered,
+              r'SinkStatus',
+              'delivered',
+            ),
             dropped: BuiltValueNullFieldError.checkNotNull(
-                dropped, r'SinkStatus', 'dropped'),
+              dropped,
+              r'SinkStatus',
+              'dropped',
+            ),
             denied: denied.build(),
             clients: _clients?.build(),
           );
@@ -327,7 +345,10 @@ class SinkStatusBuilder implements Builder<SinkStatus, SinkStatusBuilder> {
         _clients?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkStatus', _$failedField, e.toString());
+          r'SinkStatus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

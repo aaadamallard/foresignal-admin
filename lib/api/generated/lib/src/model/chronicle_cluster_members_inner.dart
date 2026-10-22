@@ -21,8 +21,10 @@ part 'chronicle_cluster_members_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleClusterMembersInner
     implements
-        Built<ChronicleClusterMembersInner,
-            ChronicleClusterMembersInnerBuilder> {
+        Built<
+          ChronicleClusterMembersInner,
+          ChronicleClusterMembersInnerBuilder
+        > {
   @BuiltValueField(wireName: r'disclosure')
   ChronicleClusterMembersInnerDisclosureEnum get disclosure;
   // enum disclosureEnum {  full,  opaque,  };
@@ -45,9 +47,9 @@ abstract class ChronicleClusterMembersInner
 
   ChronicleClusterMembersInner._();
 
-  factory ChronicleClusterMembersInner(
-          [void updates(ChronicleClusterMembersInnerBuilder b)]) =
-      _$ChronicleClusterMembersInner;
+  factory ChronicleClusterMembersInner([
+    void updates(ChronicleClusterMembersInnerBuilder b),
+  ]) = _$ChronicleClusterMembersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleClusterMembersInnerBuilder b) => b;
@@ -62,7 +64,7 @@ class _$ChronicleClusterMembersInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleClusterMembersInner,
-    _$ChronicleClusterMembersInner
+    _$ChronicleClusterMembersInner,
   ];
 
   @override
@@ -114,9 +116,11 @@ class _$ChronicleClusterMembersInnerSerializer
     ChronicleClusterMembersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,43 +136,55 @@ class _$ChronicleClusterMembersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'disclosure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ChronicleClusterMembersInnerDisclosureEnum),
-          ) as ChronicleClusterMembersInnerDisclosureEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleClusterMembersInnerDisclosureEnum,
+                    ),
+                  )
+                  as ChronicleClusterMembersInnerDisclosureEnum;
           result.disclosure = valueDes;
           break;
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.chronicleId = valueDes;
           break;
         case r'envelope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ObjectEnvelope),
-          ) as ObjectEnvelope?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ObjectEnvelope),
+                  )
+                  as ObjectEnvelope?;
           if (valueDes == null) continue;
           result.envelope.replace(valueDes);
           break;
         case r'linkId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.linkId = valueDes;
           break;
         case r'strength':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                ChronicleClusterMembersInnerStrengthEnum),
-          ) as ChronicleClusterMembersInnerStrengthEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleClusterMembersInnerStrengthEnum,
+                    ),
+                  )
+                  as ChronicleClusterMembersInnerStrengthEnum?;
           if (valueDes == null) continue;
           result.strength = valueDes;
           break;
@@ -210,7 +226,7 @@ class ChronicleClusterMembersInnerDisclosureEnum extends EnumClass {
       _$chronicleClusterMembersInnerDisclosureEnum_opaque;
 
   static Serializer<ChronicleClusterMembersInnerDisclosureEnum>
-      get serializer => _$chronicleClusterMembersInnerDisclosureEnumSerializer;
+  get serializer => _$chronicleClusterMembersInnerDisclosureEnumSerializer;
 
   const ChronicleClusterMembersInnerDisclosureEnum._(String name) : super(name);
 

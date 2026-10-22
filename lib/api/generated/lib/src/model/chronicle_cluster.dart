@@ -71,8 +71,9 @@ class _$ChronicleClusterSerializer
     yield r'members';
     yield serializers.serialize(
       object.members,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleClusterMembersInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleClusterMembersInner),
+      ]),
     );
     yield r'visibleMembers';
     yield serializers.serialize(
@@ -97,9 +98,11 @@ class _$ChronicleClusterSerializer
     ChronicleCluster object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,39 +118,44 @@ class _$ChronicleClusterSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleClusterMembersInner)]),
-          ) as BuiltList<ChronicleClusterMembersInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleClusterMembersInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleClusterMembersInner>;
           result.members.replace(valueDes);
           break;
         case r'visibleMembers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.visibleMembers = valueDes;
           break;
         case r'opaqueMembers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.opaqueMembers = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

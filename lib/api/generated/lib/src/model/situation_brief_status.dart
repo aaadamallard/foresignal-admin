@@ -51,7 +51,7 @@ class _$SituationBriefStatusSerializer
   @override
   final Iterable<Type> types = const [
     SituationBriefStatus,
-    _$SituationBriefStatus
+    _$SituationBriefStatus,
   ];
 
   @override
@@ -92,9 +92,11 @@ class _$SituationBriefStatusSerializer
     SituationBriefStatus object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,31 +112,41 @@ class _$SituationBriefStatusSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.situationId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationBriefStatusStatusEnum),
-          ) as SituationBriefStatusStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SituationBriefStatusStatusEnum,
+                    ),
+                  )
+                  as SituationBriefStatusStatusEnum;
           result.status = valueDes;
           break;
         case r'requestedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.requestedAt = valueDes;
           break;
         case r'previousBriefGeneratedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.previousBriefGeneratedAt = valueDes;
           break;

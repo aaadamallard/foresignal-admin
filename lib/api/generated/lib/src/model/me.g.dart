@@ -23,12 +23,13 @@ MeScopesEnum _$meScopesEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<MeScopesEnum> _$meScopesEnumValues =
-    BuiltSet<MeScopesEnum>(const <MeScopesEnum>[
-  _$meScopesEnum_read,
-  _$meScopesEnum_agent,
-  _$meScopesEnum_admin,
-]);
+final BuiltSet<MeScopesEnum> _$meScopesEnumValues = BuiltSet<MeScopesEnum>(
+  const <MeScopesEnum>[
+    _$meScopesEnum_read,
+    _$meScopesEnum_agent,
+    _$meScopesEnum_admin,
+  ],
+);
 
 Serializer<MeScopesEnum> _$meScopesEnumSerializer = _$MeScopesEnumSerializer();
 
@@ -50,15 +51,20 @@ class _$MeScopesEnumSerializer implements PrimitiveSerializer<MeScopesEnum> {
   final String wireName = 'MeScopesEnum';
 
   @override
-  Object serialize(Serializers serializers, MeScopesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeScopesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MeScopesEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeScopesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MeScopesEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeScopesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Me extends Me {
@@ -78,14 +84,14 @@ class _$Me extends Me {
   factory _$Me([void Function(MeBuilder)? updates]) =>
       (MeBuilder()..update(updates))._build();
 
-  _$Me._(
-      {required this.principal,
-      required this.token,
-      required this.scopes,
-      required this.groups,
-      required this.notificationPreferences,
-      this.defaultTlp})
-      : super._();
+  _$Me._({
+    required this.principal,
+    required this.token,
+    required this.scopes,
+    required this.groups,
+    required this.notificationPreferences,
+    this.defaultTlp,
+  }) : super._();
   @override
   Me rebuild(void Function(MeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -156,8 +162,8 @@ class MeBuilder implements Builder<Me, MeBuilder> {
   ListBuilder<NotificationPreference> get notificationPreferences =>
       _$this._notificationPreferences ??= ListBuilder<NotificationPreference>();
   set notificationPreferences(
-          ListBuilder<NotificationPreference>? notificationPreferences) =>
-      _$this._notificationPreferences = notificationPreferences;
+    ListBuilder<NotificationPreference>? notificationPreferences,
+  ) => _$this._notificationPreferences = notificationPreferences;
 
   String? _defaultTlp;
   String? get defaultTlp => _$this._defaultTlp;
@@ -197,7 +203,8 @@ class MeBuilder implements Builder<Me, MeBuilder> {
   _$Me _build() {
     _$Me _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Me._(
             principal: principal.build(),
             token: token.build(),

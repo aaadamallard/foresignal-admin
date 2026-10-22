@@ -28,22 +28,22 @@ class _$WorkspaceContext extends WorkspaceContext {
   @override
   final BuiltList<String>? layers;
 
-  factory _$WorkspaceContext(
-          [void Function(WorkspaceContextBuilder)? updates]) =>
-      (WorkspaceContextBuilder()..update(updates))._build();
+  factory _$WorkspaceContext([
+    void Function(WorkspaceContextBuilder)? updates,
+  ]) => (WorkspaceContextBuilder()..update(updates))._build();
 
-  _$WorkspaceContext._(
-      {this.selectedRefs,
-      this.focusRef,
-      this.timeRange,
-      this.asOf,
-      this.playback,
-      this.viewport,
-      this.activeSituationId,
-      this.activeHypothesisSetId,
-      this.filters,
-      this.layers})
-      : super._();
+  _$WorkspaceContext._({
+    this.selectedRefs,
+    this.focusRef,
+    this.timeRange,
+    this.asOf,
+    this.playback,
+    this.viewport,
+    this.activeSituationId,
+    this.activeHypothesisSetId,
+    this.filters,
+    this.layers,
+  }) : super._();
   @override
   WorkspaceContext rebuild(void Function(WorkspaceContextBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -194,7 +194,8 @@ class WorkspaceContextBuilder
   _$WorkspaceContext _build() {
     _$WorkspaceContext _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WorkspaceContext._(
             selectedRefs: _selectedRefs?.build(),
             focusRef: focusRef,
@@ -227,7 +228,10 @@ class WorkspaceContextBuilder
         _layers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WorkspaceContext', _$failedField, e.toString());
+          r'WorkspaceContext',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

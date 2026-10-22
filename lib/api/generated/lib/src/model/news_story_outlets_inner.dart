@@ -31,8 +31,9 @@ abstract class NewsStoryOutletsInner
 
   NewsStoryOutletsInner._();
 
-  factory NewsStoryOutletsInner(
-      [void updates(NewsStoryOutletsInnerBuilder b)]) = _$NewsStoryOutletsInner;
+  factory NewsStoryOutletsInner([
+    void updates(NewsStoryOutletsInnerBuilder b),
+  ]) = _$NewsStoryOutletsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NewsStoryOutletsInnerBuilder b) => b;
@@ -47,7 +48,7 @@ class _$NewsStoryOutletsInnerSerializer
   @override
   final Iterable<Type> types = const [
     NewsStoryOutletsInner,
-    _$NewsStoryOutletsInner
+    _$NewsStoryOutletsInner,
   ];
 
   @override
@@ -83,9 +84,11 @@ class _$NewsStoryOutletsInnerSerializer
     NewsStoryOutletsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +104,32 @@ class _$NewsStoryOutletsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'outlet':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MediaOutlet),
-          ) as MediaOutlet;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MediaOutlet),
+                  )
+                  as MediaOutlet;
           result.outlet.replace(valueDes);
           break;
         case r'articles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(NewsArticle)]),
-          ) as BuiltList<NewsArticle>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NewsArticle),
+                    ]),
+                  )
+                  as BuiltList<NewsArticle>;
           result.articles.replace(valueDes);
           break;
         case r'evidenceGroupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.evidenceGroupId = valueDes;
           break;

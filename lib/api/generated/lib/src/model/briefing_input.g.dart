@@ -24,9 +24,9 @@ BriefingInputModeEnum _$briefingInputModeEnumValueOf(String name) {
 
 final BuiltSet<BriefingInputModeEnum> _$briefingInputModeEnumValues =
     BuiltSet<BriefingInputModeEnum>(const <BriefingInputModeEnum>[
-  _$briefingInputModeEnum_digest,
-  _$briefingInputModeEnum_llm,
-]);
+      _$briefingInputModeEnum_digest,
+      _$briefingInputModeEnum_llm,
+    ]);
 
 Serializer<BriefingInputModeEnum> _$briefingInputModeEnumSerializer =
     _$BriefingInputModeEnumSerializer();
@@ -48,15 +48,20 @@ class _$BriefingInputModeEnumSerializer
   final String wireName = 'BriefingInputModeEnum';
 
   @override
-  Object serialize(Serializers serializers, BriefingInputModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BriefingInputModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BriefingInputModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BriefingInputModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BriefingInputModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BriefingInputModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BriefingInput extends BriefingInput {
@@ -86,19 +91,19 @@ class _$BriefingInput extends BriefingInput {
   factory _$BriefingInput([void Function(BriefingInputBuilder)? updates]) =>
       (BriefingInputBuilder()..update(updates))._build();
 
-  _$BriefingInput._(
-      {required this.name,
-      this.enabled,
-      required this.schedule,
-      this.timezone,
-      this.scope,
-      this.lookback,
-      this.mode,
-      this.instructions,
-      this.channelIds,
-      this.maxItemsPerKind,
-      this.audio})
-      : super._();
+  _$BriefingInput._({
+    required this.name,
+    this.enabled,
+    required this.schedule,
+    this.timezone,
+    this.scope,
+    this.lookback,
+    this.mode,
+    this.instructions,
+    this.channelIds,
+    this.maxItemsPerKind,
+    this.audio,
+  }) : super._();
   @override
   BriefingInput rebuild(void Function(BriefingInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -250,13 +255,20 @@ class BriefingInputBuilder
   _$BriefingInput _build() {
     _$BriefingInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BriefingInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'BriefingInput', 'name'),
+              name,
+              r'BriefingInput',
+              'name',
+            ),
             enabled: enabled,
             schedule: BuiltValueNullFieldError.checkNotNull(
-                schedule, r'BriefingInput', 'schedule'),
+              schedule,
+              r'BriefingInput',
+              'schedule',
+            ),
             timezone: timezone,
             scope: _scope?.build(),
             lookback: lookback,
@@ -279,7 +291,10 @@ class BriefingInputBuilder
         _audio?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BriefingInput', _$failedField, e.toString());
+          r'BriefingInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -15,18 +15,19 @@ class _$ExternalBindingPreviewEffectsInner
   @override
   final String? targetRef;
 
-  factory _$ExternalBindingPreviewEffectsInner(
-          [void Function(ExternalBindingPreviewEffectsInnerBuilder)?
-              updates]) =>
-      (ExternalBindingPreviewEffectsInnerBuilder()..update(updates))._build();
+  factory _$ExternalBindingPreviewEffectsInner([
+    void Function(ExternalBindingPreviewEffectsInnerBuilder)? updates,
+  ]) => (ExternalBindingPreviewEffectsInnerBuilder()..update(updates))._build();
 
-  _$ExternalBindingPreviewEffectsInner._(
-      {this.itemRef, this.action, this.targetRef})
-      : super._();
+  _$ExternalBindingPreviewEffectsInner._({
+    this.itemRef,
+    this.action,
+    this.targetRef,
+  }) : super._();
   @override
   ExternalBindingPreviewEffectsInner rebuild(
-          void Function(ExternalBindingPreviewEffectsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalBindingPreviewEffectsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalBindingPreviewEffectsInnerBuilder toBuilder() =>
@@ -63,8 +64,10 @@ class _$ExternalBindingPreviewEffectsInner
 
 class ExternalBindingPreviewEffectsInnerBuilder
     implements
-        Builder<ExternalBindingPreviewEffectsInner,
-            ExternalBindingPreviewEffectsInnerBuilder> {
+        Builder<
+          ExternalBindingPreviewEffectsInner,
+          ExternalBindingPreviewEffectsInnerBuilder
+        > {
   _$ExternalBindingPreviewEffectsInner? _$v;
 
   String? _itemRef;
@@ -101,7 +104,8 @@ class ExternalBindingPreviewEffectsInnerBuilder
 
   @override
   void update(
-      void Function(ExternalBindingPreviewEffectsInnerBuilder)? updates) {
+    void Function(ExternalBindingPreviewEffectsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -109,7 +113,8 @@ class ExternalBindingPreviewEffectsInnerBuilder
   ExternalBindingPreviewEffectsInner build() => _build();
 
   _$ExternalBindingPreviewEffectsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalBindingPreviewEffectsInner._(
           itemRef: itemRef,
           action: action,

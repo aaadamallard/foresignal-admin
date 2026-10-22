@@ -12,15 +12,15 @@ class _$DoctorReportLlmTokens extends DoctorReportLlmTokens {
   @override
   final int? output;
 
-  factory _$DoctorReportLlmTokens(
-          [void Function(DoctorReportLlmTokensBuilder)? updates]) =>
-      (DoctorReportLlmTokensBuilder()..update(updates))._build();
+  factory _$DoctorReportLlmTokens([
+    void Function(DoctorReportLlmTokensBuilder)? updates,
+  ]) => (DoctorReportLlmTokensBuilder()..update(updates))._build();
 
   _$DoctorReportLlmTokens._({this.input, this.output}) : super._();
   @override
   DoctorReportLlmTokens rebuild(
-          void Function(DoctorReportLlmTokensBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DoctorReportLlmTokensBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DoctorReportLlmTokensBuilder toBuilder() =>
@@ -92,11 +92,8 @@ class DoctorReportLlmTokensBuilder
   DoctorReportLlmTokens build() => _build();
 
   _$DoctorReportLlmTokens _build() {
-    final _$result = _$v ??
-        _$DoctorReportLlmTokens._(
-          input: input,
-          output: output,
-        );
+    final _$result =
+        _$v ?? _$DoctorReportLlmTokens._(input: input, output: output);
     replace(_$result);
     return _$result;
   }

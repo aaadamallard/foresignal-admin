@@ -24,9 +24,9 @@ AllowedChatScopeEnum _$allowedChatScopeEnumValueOf(String name) {
 
 final BuiltSet<AllowedChatScopeEnum> _$allowedChatScopeEnumValues =
     BuiltSet<AllowedChatScopeEnum>(const <AllowedChatScopeEnum>[
-  _$allowedChatScopeEnum_read,
-  _$allowedChatScopeEnum_agent,
-]);
+      _$allowedChatScopeEnum_read,
+      _$allowedChatScopeEnum_agent,
+    ]);
 
 Serializer<AllowedChatScopeEnum> _$allowedChatScopeEnumSerializer =
     _$AllowedChatScopeEnumSerializer();
@@ -48,15 +48,20 @@ class _$AllowedChatScopeEnumSerializer
   final String wireName = 'AllowedChatScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, AllowedChatScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AllowedChatScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AllowedChatScopeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AllowedChatScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AllowedChatScopeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AllowedChatScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AllowedChat extends AllowedChat {
@@ -74,13 +79,13 @@ class _$AllowedChat extends AllowedChat {
   factory _$AllowedChat([void Function(AllowedChatBuilder)? updates]) =>
       (AllowedChatBuilder()..update(updates))._build();
 
-  _$AllowedChat._(
-      {required this.chatId,
-      this.name,
-      required this.scope,
-      this.userIds,
-      this.privateAccess})
-      : super._();
+  _$AllowedChat._({
+    required this.chatId,
+    this.name,
+    required this.scope,
+    this.userIds,
+    this.privateAccess,
+  }) : super._();
   @override
   AllowedChat rebuild(void Function(AllowedChatBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -180,13 +185,20 @@ class AllowedChatBuilder implements Builder<AllowedChat, AllowedChatBuilder> {
   _$AllowedChat _build() {
     _$AllowedChat _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AllowedChat._(
             chatId: BuiltValueNullFieldError.checkNotNull(
-                chatId, r'AllowedChat', 'chatId'),
+              chatId,
+              r'AllowedChat',
+              'chatId',
+            ),
             name: name,
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'AllowedChat', 'scope'),
+              scope,
+              r'AllowedChat',
+              'scope',
+            ),
             userIds: _userIds?.build(),
             privateAccess: privateAccess,
           );
@@ -197,7 +209,10 @@ class AllowedChatBuilder implements Builder<AllowedChat, AllowedChatBuilder> {
         _userIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AllowedChat', _$failedField, e.toString());
+          r'AllowedChat',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

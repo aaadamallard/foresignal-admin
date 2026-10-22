@@ -7,17 +7,17 @@ part of 'series_forecast_forecasts_inner.dart';
 // **************************************************************************
 
 const SeriesForecastForecastsInnerHorizonEnum
-    _$seriesForecastForecastsInnerHorizonEnum_number1 =
+_$seriesForecastForecastsInnerHorizonEnum_number1 =
     const SeriesForecastForecastsInnerHorizonEnum._('number1');
 const SeriesForecastForecastsInnerHorizonEnum
-    _$seriesForecastForecastsInnerHorizonEnum_number7 =
+_$seriesForecastForecastsInnerHorizonEnum_number7 =
     const SeriesForecastForecastsInnerHorizonEnum._('number7');
 const SeriesForecastForecastsInnerHorizonEnum
-    _$seriesForecastForecastsInnerHorizonEnum_number28 =
+_$seriesForecastForecastsInnerHorizonEnum_number28 =
     const SeriesForecastForecastsInnerHorizonEnum._('number28');
 
 SeriesForecastForecastsInnerHorizonEnum
-    _$seriesForecastForecastsInnerHorizonEnumValueOf(String name) {
+_$seriesForecastForecastsInnerHorizonEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$seriesForecastForecastsInnerHorizonEnum_number1;
@@ -31,15 +31,17 @@ SeriesForecastForecastsInnerHorizonEnum
 }
 
 final BuiltSet<SeriesForecastForecastsInnerHorizonEnum>
-    _$seriesForecastForecastsInnerHorizonEnumValues = BuiltSet<
-        SeriesForecastForecastsInnerHorizonEnum>(const <SeriesForecastForecastsInnerHorizonEnum>[
-  _$seriesForecastForecastsInnerHorizonEnum_number1,
-  _$seriesForecastForecastsInnerHorizonEnum_number7,
-  _$seriesForecastForecastsInnerHorizonEnum_number28,
-]);
+_$seriesForecastForecastsInnerHorizonEnumValues =
+    BuiltSet<SeriesForecastForecastsInnerHorizonEnum>(
+      const <SeriesForecastForecastsInnerHorizonEnum>[
+        _$seriesForecastForecastsInnerHorizonEnum_number1,
+        _$seriesForecastForecastsInnerHorizonEnum_number7,
+        _$seriesForecastForecastsInnerHorizonEnum_number28,
+      ],
+    );
 
 Serializer<SeriesForecastForecastsInnerHorizonEnum>
-    _$seriesForecastForecastsInnerHorizonEnumSerializer =
+_$seriesForecastForecastsInnerHorizonEnumSerializer =
     _$SeriesForecastForecastsInnerHorizonEnumSerializer();
 
 class _$SeriesForecastForecastsInnerHorizonEnumSerializer
@@ -57,23 +59,26 @@ class _$SeriesForecastForecastsInnerHorizonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SeriesForecastForecastsInnerHorizonEnum
+    SeriesForecastForecastsInnerHorizonEnum,
   ];
   @override
   final String wireName = 'SeriesForecastForecastsInnerHorizonEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SeriesForecastForecastsInnerHorizonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesForecastForecastsInnerHorizonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesForecastForecastsInnerHorizonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesForecastForecastsInnerHorizonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesForecastForecastsInnerHorizonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesForecastForecastsInner extends SeriesForecastForecastsInner {
@@ -84,19 +89,19 @@ class _$SeriesForecastForecastsInner extends SeriesForecastForecastsInner {
   @override
   final Quantiles quantiles;
 
-  factory _$SeriesForecastForecastsInner(
-          [void Function(SeriesForecastForecastsInnerBuilder)? updates]) =>
-      (SeriesForecastForecastsInnerBuilder()..update(updates))._build();
+  factory _$SeriesForecastForecastsInner([
+    void Function(SeriesForecastForecastsInnerBuilder)? updates,
+  ]) => (SeriesForecastForecastsInnerBuilder()..update(updates))._build();
 
-  _$SeriesForecastForecastsInner._(
-      {required this.horizon,
-      required this.targetPeriod,
-      required this.quantiles})
-      : super._();
+  _$SeriesForecastForecastsInner._({
+    required this.horizon,
+    required this.targetPeriod,
+    required this.quantiles,
+  }) : super._();
   @override
   SeriesForecastForecastsInner rebuild(
-          void Function(SeriesForecastForecastsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SeriesForecastForecastsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SeriesForecastForecastsInnerBuilder toBuilder() =>
@@ -133,8 +138,10 @@ class _$SeriesForecastForecastsInner extends SeriesForecastForecastsInner {
 
 class SeriesForecastForecastsInnerBuilder
     implements
-        Builder<SeriesForecastForecastsInner,
-            SeriesForecastForecastsInnerBuilder> {
+        Builder<
+          SeriesForecastForecastsInner,
+          SeriesForecastForecastsInnerBuilder
+        > {
   _$SeriesForecastForecastsInner? _$v;
 
   SeriesForecastForecastsInnerHorizonEnum? _horizon;
@@ -183,10 +190,14 @@ class SeriesForecastForecastsInnerBuilder
   _$SeriesForecastForecastsInner _build() {
     _$SeriesForecastForecastsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesForecastForecastsInner._(
             horizon: BuiltValueNullFieldError.checkNotNull(
-                horizon, r'SeriesForecastForecastsInner', 'horizon'),
+              horizon,
+              r'SeriesForecastForecastsInner',
+              'horizon',
+            ),
             targetPeriod: targetPeriod.build(),
             quantiles: quantiles.build(),
           );
@@ -199,7 +210,10 @@ class SeriesForecastForecastsInnerBuilder
         quantiles.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesForecastForecastsInner', _$failedField, e.toString());
+          r'SeriesForecastForecastsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

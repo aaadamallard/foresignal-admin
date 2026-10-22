@@ -13,19 +13,21 @@ class _$SocialSettingsCompare extends SocialSettingsCompare {
   final SocialSettingsCompareDefaultWindow? defaultWindow;
   @override
   final BuiltMap<String, SocialSettingsCompareFamilyWindowsValue>?
-      familyWindows;
+  familyWindows;
 
-  factory _$SocialSettingsCompare(
-          [void Function(SocialSettingsCompareBuilder)? updates]) =>
-      (SocialSettingsCompareBuilder()..update(updates))._build();
+  factory _$SocialSettingsCompare([
+    void Function(SocialSettingsCompareBuilder)? updates,
+  ]) => (SocialSettingsCompareBuilder()..update(updates))._build();
 
-  _$SocialSettingsCompare._(
-      {this.minGroups, this.defaultWindow, this.familyWindows})
-      : super._();
+  _$SocialSettingsCompare._({
+    this.minGroups,
+    this.defaultWindow,
+    this.familyWindows,
+  }) : super._();
   @override
   SocialSettingsCompare rebuild(
-          void Function(SocialSettingsCompareBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsCompareBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsCompareBuilder toBuilder() =>
@@ -76,12 +78,11 @@ class SocialSettingsCompareBuilder
 
   MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>? _familyWindows;
   MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>
-      get familyWindows => _$this._familyWindows ??=
-          MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>();
+  get familyWindows => _$this._familyWindows ??=
+      MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>();
   set familyWindows(
-          MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>?
-              familyWindows) =>
-      _$this._familyWindows = familyWindows;
+    MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>? familyWindows,
+  ) => _$this._familyWindows = familyWindows;
 
   SocialSettingsCompareBuilder() {
     SocialSettingsCompare._defaults(this);
@@ -114,7 +115,8 @@ class SocialSettingsCompareBuilder
   _$SocialSettingsCompare _build() {
     _$SocialSettingsCompare _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialSettingsCompare._(
             minGroups: minGroups,
             defaultWindow: _defaultWindow?.build(),
@@ -129,7 +131,10 @@ class SocialSettingsCompareBuilder
         _familyWindows?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialSettingsCompare', _$failedField, e.toString());
+          r'SocialSettingsCompare',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

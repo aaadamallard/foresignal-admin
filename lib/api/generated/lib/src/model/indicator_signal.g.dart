@@ -44,14 +44,14 @@ IndicatorSignalTypeEnum _$indicatorSignalTypeEnumValueOf(String name) {
 
 final BuiltSet<IndicatorSignalTypeEnum> _$indicatorSignalTypeEnumValues =
     BuiltSet<IndicatorSignalTypeEnum>(const <IndicatorSignalTypeEnum>[
-  _$indicatorSignalTypeEnum_rule,
-  _$indicatorSignalTypeEnum_precursor,
-  _$indicatorSignalTypeEnum_series,
-  _$indicatorSignalTypeEnum_intelEvent,
-  _$indicatorSignalTypeEnum_situation,
-  _$indicatorSignalTypeEnum_question,
-  _$indicatorSignalTypeEnum_manual,
-]);
+      _$indicatorSignalTypeEnum_rule,
+      _$indicatorSignalTypeEnum_precursor,
+      _$indicatorSignalTypeEnum_series,
+      _$indicatorSignalTypeEnum_intelEvent,
+      _$indicatorSignalTypeEnum_situation,
+      _$indicatorSignalTypeEnum_question,
+      _$indicatorSignalTypeEnum_manual,
+    ]);
 
 Serializer<IndicatorSignalTypeEnum> _$indicatorSignalTypeEnumSerializer =
     _$IndicatorSignalTypeEnumSerializer();
@@ -83,16 +83,20 @@ class _$IndicatorSignalTypeEnumSerializer
   final String wireName = 'IndicatorSignalTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorSignalTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorSignalTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorSignalTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorSignalTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorSignalTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorSignal extends IndicatorSignal {
@@ -118,17 +122,17 @@ class _$IndicatorSignal extends IndicatorSignal {
   factory _$IndicatorSignal([void Function(IndicatorSignalBuilder)? updates]) =>
       (IndicatorSignalBuilder()..update(updates))._build();
 
-  _$IndicatorSignal._(
-      {required this.type,
-      this.rule,
-      this.precursorId,
-      this.series,
-      this.intelEvent,
-      this.situation,
-      this.question,
-      this.emerging,
-      this.baseRate})
-      : super._();
+  _$IndicatorSignal._({
+    required this.type,
+    this.rule,
+    this.precursorId,
+    this.series,
+    this.intelEvent,
+    this.situation,
+    this.question,
+    this.emerging,
+    this.baseRate,
+  }) : super._();
   @override
   IndicatorSignal rebuild(void Function(IndicatorSignalBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -268,10 +272,14 @@ class IndicatorSignalBuilder
   _$IndicatorSignal _build() {
     _$IndicatorSignal _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndicatorSignal._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'IndicatorSignal', 'type'),
+              type,
+              r'IndicatorSignal',
+              'type',
+            ),
             rule: _rule?.build(),
             precursorId: precursorId,
             series: _series?.build(),
@@ -297,7 +305,10 @@ class IndicatorSignalBuilder
         _question?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndicatorSignal', _$failedField, e.toString());
+          r'IndicatorSignal',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

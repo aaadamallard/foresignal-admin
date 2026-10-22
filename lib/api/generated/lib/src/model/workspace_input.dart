@@ -82,8 +82,10 @@ class _$WorkspaceInputSerializer
       yield r'members';
       yield serializers.serialize(
         object.members,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType(WorkspaceInputMembersEnum)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(WorkspaceInputMembersEnum),
+        ]),
       );
     }
     if (object.context != null) {
@@ -97,8 +99,10 @@ class _$WorkspaceInputSerializer
       yield r'layout';
       yield serializers.serialize(
         object.layout,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.savedViewIds != null) {
@@ -130,9 +134,11 @@ class _$WorkspaceInputSerializer
     WorkspaceInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -148,60 +154,79 @@ class _$WorkspaceInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap,
-                [FullType(String), FullType(WorkspaceInputMembersEnum)]),
-          ) as BuiltMap<String, WorkspaceInputMembersEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(WorkspaceInputMembersEnum),
+                    ]),
+                  )
+                  as BuiltMap<String, WorkspaceInputMembersEnum>?;
           if (valueDes == null) continue;
           result.members.replace(valueDes);
           break;
         case r'context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WorkspaceContext),
-          ) as WorkspaceContext?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(WorkspaceContext),
+                  )
+                  as WorkspaceContext?;
           if (valueDes == null) continue;
           result.context.replace(valueDes);
           break;
         case r'layout':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.layout.replace(valueDes);
           break;
         case r'savedViewIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.savedViewIds.replace(valueDes);
           break;
         case r'investigationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.investigationId = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;

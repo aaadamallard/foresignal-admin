@@ -7,13 +7,14 @@ part of 'lead_time_stats_filters.dart';
 // **************************************************************************
 
 const LeadTimeStatsFiltersFoundByEnum
-    _$leadTimeStatsFiltersFoundByEnum_organic =
+_$leadTimeStatsFiltersFoundByEnum_organic =
     const LeadTimeStatsFiltersFoundByEnum._('organic');
 const LeadTimeStatsFiltersFoundByEnum _$leadTimeStatsFiltersFoundByEnum_cue =
     const LeadTimeStatsFiltersFoundByEnum._('cue');
 
 LeadTimeStatsFiltersFoundByEnum _$leadTimeStatsFiltersFoundByEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'organic':
       return _$leadTimeStatsFiltersFoundByEnum_organic;
@@ -25,14 +26,16 @@ LeadTimeStatsFiltersFoundByEnum _$leadTimeStatsFiltersFoundByEnumValueOf(
 }
 
 final BuiltSet<LeadTimeStatsFiltersFoundByEnum>
-    _$leadTimeStatsFiltersFoundByEnumValues = BuiltSet<
-        LeadTimeStatsFiltersFoundByEnum>(const <LeadTimeStatsFiltersFoundByEnum>[
-  _$leadTimeStatsFiltersFoundByEnum_organic,
-  _$leadTimeStatsFiltersFoundByEnum_cue,
-]);
+_$leadTimeStatsFiltersFoundByEnumValues =
+    BuiltSet<LeadTimeStatsFiltersFoundByEnum>(
+      const <LeadTimeStatsFiltersFoundByEnum>[
+        _$leadTimeStatsFiltersFoundByEnum_organic,
+        _$leadTimeStatsFiltersFoundByEnum_cue,
+      ],
+    );
 
 Serializer<LeadTimeStatsFiltersFoundByEnum>
-    _$leadTimeStatsFiltersFoundByEnumSerializer =
+_$leadTimeStatsFiltersFoundByEnumSerializer =
     _$LeadTimeStatsFiltersFoundByEnumSerializer();
 
 class _$LeadTimeStatsFiltersFoundByEnumSerializer
@@ -53,16 +56,19 @@ class _$LeadTimeStatsFiltersFoundByEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, LeadTimeStatsFiltersFoundByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LeadTimeStatsFiltersFoundByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LeadTimeStatsFiltersFoundByEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LeadTimeStatsFiltersFoundByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LeadTimeStatsFiltersFoundByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LeadTimeStatsFilters extends LeadTimeStatsFilters {
@@ -77,17 +83,21 @@ class _$LeadTimeStatsFilters extends LeadTimeStatsFilters {
   @override
   final DateTime? since;
 
-  factory _$LeadTimeStatsFilters(
-          [void Function(LeadTimeStatsFiltersBuilder)? updates]) =>
-      (LeadTimeStatsFiltersBuilder()..update(updates))._build();
+  factory _$LeadTimeStatsFilters([
+    void Function(LeadTimeStatsFiltersBuilder)? updates,
+  ]) => (LeadTimeStatsFiltersBuilder()..update(updates))._build();
 
-  _$LeadTimeStatsFilters._(
-      {this.claimType, this.platform, this.region, this.foundBy, this.since})
-      : super._();
+  _$LeadTimeStatsFilters._({
+    this.claimType,
+    this.platform,
+    this.region,
+    this.foundBy,
+    this.since,
+  }) : super._();
   @override
   LeadTimeStatsFilters rebuild(
-          void Function(LeadTimeStatsFiltersBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(LeadTimeStatsFiltersBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   LeadTimeStatsFiltersBuilder toBuilder() =>
@@ -184,7 +194,8 @@ class LeadTimeStatsFiltersBuilder
   LeadTimeStatsFilters build() => _build();
 
   _$LeadTimeStatsFilters _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LeadTimeStatsFilters._(
           claimType: claimType,
           platform: platform,

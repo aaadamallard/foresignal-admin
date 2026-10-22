@@ -24,19 +24,19 @@ MqttChannelConfigQosEnum _$mqttChannelConfigQosEnumValueOf(String name) {
 
 final BuiltSet<MqttChannelConfigQosEnum> _$mqttChannelConfigQosEnumValues =
     BuiltSet<MqttChannelConfigQosEnum>(const <MqttChannelConfigQosEnum>[
-  _$mqttChannelConfigQosEnum_number0,
-  _$mqttChannelConfigQosEnum_number1,
-]);
+      _$mqttChannelConfigQosEnum_number0,
+      _$mqttChannelConfigQosEnum_number1,
+    ]);
 
 const MqttChannelConfigProtocolVersionEnum
-    _$mqttChannelConfigProtocolVersionEnum_n5 =
+_$mqttChannelConfigProtocolVersionEnum_n5 =
     const MqttChannelConfigProtocolVersionEnum._('n5');
 const MqttChannelConfigProtocolVersionEnum
-    _$mqttChannelConfigProtocolVersionEnum_n3period1Period1 =
+_$mqttChannelConfigProtocolVersionEnum_n3period1Period1 =
     const MqttChannelConfigProtocolVersionEnum._('n3period1Period1');
 
 MqttChannelConfigProtocolVersionEnum
-    _$mqttChannelConfigProtocolVersionEnumValueOf(String name) {
+_$mqttChannelConfigProtocolVersionEnumValueOf(String name) {
   switch (name) {
     case 'n5':
       return _$mqttChannelConfigProtocolVersionEnum_n5;
@@ -48,16 +48,18 @@ MqttChannelConfigProtocolVersionEnum
 }
 
 final BuiltSet<MqttChannelConfigProtocolVersionEnum>
-    _$mqttChannelConfigProtocolVersionEnumValues = BuiltSet<
-        MqttChannelConfigProtocolVersionEnum>(const <MqttChannelConfigProtocolVersionEnum>[
-  _$mqttChannelConfigProtocolVersionEnum_n5,
-  _$mqttChannelConfigProtocolVersionEnum_n3period1Period1,
-]);
+_$mqttChannelConfigProtocolVersionEnumValues =
+    BuiltSet<MqttChannelConfigProtocolVersionEnum>(
+      const <MqttChannelConfigProtocolVersionEnum>[
+        _$mqttChannelConfigProtocolVersionEnum_n5,
+        _$mqttChannelConfigProtocolVersionEnum_n3period1Period1,
+      ],
+    );
 
 Serializer<MqttChannelConfigQosEnum> _$mqttChannelConfigQosEnumSerializer =
     _$MqttChannelConfigQosEnumSerializer();
 Serializer<MqttChannelConfigProtocolVersionEnum>
-    _$mqttChannelConfigProtocolVersionEnumSerializer =
+_$mqttChannelConfigProtocolVersionEnumSerializer =
     _$MqttChannelConfigProtocolVersionEnumSerializer();
 
 class _$MqttChannelConfigQosEnumSerializer
@@ -77,16 +79,20 @@ class _$MqttChannelConfigQosEnumSerializer
   final String wireName = 'MqttChannelConfigQosEnum';
 
   @override
-  Object serialize(Serializers serializers, MqttChannelConfigQosEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MqttChannelConfigQosEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MqttChannelConfigQosEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MqttChannelConfigQosEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MqttChannelConfigQosEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MqttChannelConfigProtocolVersionEnumSerializer
@@ -102,23 +108,26 @@ class _$MqttChannelConfigProtocolVersionEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    MqttChannelConfigProtocolVersionEnum
+    MqttChannelConfigProtocolVersionEnum,
   ];
   @override
   final String wireName = 'MqttChannelConfigProtocolVersionEnum';
 
   @override
   Object serialize(
-          Serializers serializers, MqttChannelConfigProtocolVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MqttChannelConfigProtocolVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MqttChannelConfigProtocolVersionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MqttChannelConfigProtocolVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MqttChannelConfigProtocolVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MqttChannelConfig extends MqttChannelConfig {
@@ -151,26 +160,26 @@ class _$MqttChannelConfig extends MqttChannelConfig {
   @override
   final bool? haRetainDiscovery;
 
-  factory _$MqttChannelConfig(
-          [void Function(MqttChannelConfigBuilder)? updates]) =>
-      (MqttChannelConfigBuilder()..update(updates))._build();
+  factory _$MqttChannelConfig([
+    void Function(MqttChannelConfigBuilder)? updates,
+  ]) => (MqttChannelConfigBuilder()..update(updates))._build();
 
-  _$MqttChannelConfig._(
-      {required this.brokerUrl,
-      this.topicPrefix,
-      this.qos,
-      this.protocolVersion,
-      this.messageExpiry,
-      this.payloadTemplate,
-      this.publishHealth,
-      this.publishSummary,
-      this.summaryInterval,
-      this.haDiscovery,
-      this.haPrefix,
-      this.haMaxRules,
-      this.haMaxSources,
-      this.haRetainDiscovery})
-      : super._();
+  _$MqttChannelConfig._({
+    required this.brokerUrl,
+    this.topicPrefix,
+    this.qos,
+    this.protocolVersion,
+    this.messageExpiry,
+    this.payloadTemplate,
+    this.publishHealth,
+    this.publishSummary,
+    this.summaryInterval,
+    this.haDiscovery,
+    this.haPrefix,
+    this.haMaxRules,
+    this.haMaxSources,
+    this.haRetainDiscovery,
+  }) : super._();
   @override
   MqttChannelConfig rebuild(void Function(MqttChannelConfigBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -349,10 +358,14 @@ class MqttChannelConfigBuilder
   MqttChannelConfig build() => _build();
 
   _$MqttChannelConfig _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MqttChannelConfig._(
           brokerUrl: BuiltValueNullFieldError.checkNotNull(
-              brokerUrl, r'MqttChannelConfig', 'brokerUrl'),
+            brokerUrl,
+            r'MqttChannelConfig',
+            'brokerUrl',
+          ),
           topicPrefix: topicPrefix,
           qos: qos,
           protocolVersion: protocolVersion,

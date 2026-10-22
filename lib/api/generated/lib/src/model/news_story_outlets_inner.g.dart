@@ -14,17 +14,19 @@ class _$NewsStoryOutletsInner extends NewsStoryOutletsInner {
   @override
   final String? evidenceGroupId;
 
-  factory _$NewsStoryOutletsInner(
-          [void Function(NewsStoryOutletsInnerBuilder)? updates]) =>
-      (NewsStoryOutletsInnerBuilder()..update(updates))._build();
+  factory _$NewsStoryOutletsInner([
+    void Function(NewsStoryOutletsInnerBuilder)? updates,
+  ]) => (NewsStoryOutletsInnerBuilder()..update(updates))._build();
 
-  _$NewsStoryOutletsInner._(
-      {required this.outlet, required this.articles, this.evidenceGroupId})
-      : super._();
+  _$NewsStoryOutletsInner._({
+    required this.outlet,
+    required this.articles,
+    this.evidenceGroupId,
+  }) : super._();
   @override
   NewsStoryOutletsInner rebuild(
-          void Function(NewsStoryOutletsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NewsStoryOutletsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NewsStoryOutletsInnerBuilder toBuilder() =>
@@ -109,7 +111,8 @@ class NewsStoryOutletsInnerBuilder
   _$NewsStoryOutletsInner _build() {
     _$NewsStoryOutletsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NewsStoryOutletsInner._(
             outlet: outlet.build(),
             articles: articles.build(),
@@ -124,7 +127,10 @@ class NewsStoryOutletsInnerBuilder
         articles.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NewsStoryOutletsInner', _$failedField, e.toString());
+          r'NewsStoryOutletsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

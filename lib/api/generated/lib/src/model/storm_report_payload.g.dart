@@ -28,23 +28,23 @@ StormReportPayloadTypeEnum _$stormReportPayloadTypeEnumValueOf(String name) {
 
 final BuiltSet<StormReportPayloadTypeEnum> _$stormReportPayloadTypeEnumValues =
     BuiltSet<StormReportPayloadTypeEnum>(const <StormReportPayloadTypeEnum>[
-  _$stormReportPayloadTypeEnum_tornado,
-  _$stormReportPayloadTypeEnum_wind,
-  _$stormReportPayloadTypeEnum_hail,
-]);
+      _$stormReportPayloadTypeEnum_tornado,
+      _$stormReportPayloadTypeEnum_wind,
+      _$stormReportPayloadTypeEnum_hail,
+    ]);
 
 const StormReportPayloadMagnitudeUnitsEnum
-    _$stormReportPayloadMagnitudeUnitsEnum_EF =
+_$stormReportPayloadMagnitudeUnitsEnum_EF =
     const StormReportPayloadMagnitudeUnitsEnum._('EF');
 const StormReportPayloadMagnitudeUnitsEnum
-    _$stormReportPayloadMagnitudeUnitsEnum_mph =
+_$stormReportPayloadMagnitudeUnitsEnum_mph =
     const StormReportPayloadMagnitudeUnitsEnum._('mph');
 const StormReportPayloadMagnitudeUnitsEnum
-    _$stormReportPayloadMagnitudeUnitsEnum_in_ =
+_$stormReportPayloadMagnitudeUnitsEnum_in_ =
     const StormReportPayloadMagnitudeUnitsEnum._('in_');
 
 StormReportPayloadMagnitudeUnitsEnum
-    _$stormReportPayloadMagnitudeUnitsEnumValueOf(String name) {
+_$stormReportPayloadMagnitudeUnitsEnumValueOf(String name) {
   switch (name) {
     case 'EF':
       return _$stormReportPayloadMagnitudeUnitsEnum_EF;
@@ -58,17 +58,19 @@ StormReportPayloadMagnitudeUnitsEnum
 }
 
 final BuiltSet<StormReportPayloadMagnitudeUnitsEnum>
-    _$stormReportPayloadMagnitudeUnitsEnumValues = BuiltSet<
-        StormReportPayloadMagnitudeUnitsEnum>(const <StormReportPayloadMagnitudeUnitsEnum>[
-  _$stormReportPayloadMagnitudeUnitsEnum_EF,
-  _$stormReportPayloadMagnitudeUnitsEnum_mph,
-  _$stormReportPayloadMagnitudeUnitsEnum_in_,
-]);
+_$stormReportPayloadMagnitudeUnitsEnumValues =
+    BuiltSet<StormReportPayloadMagnitudeUnitsEnum>(
+      const <StormReportPayloadMagnitudeUnitsEnum>[
+        _$stormReportPayloadMagnitudeUnitsEnum_EF,
+        _$stormReportPayloadMagnitudeUnitsEnum_mph,
+        _$stormReportPayloadMagnitudeUnitsEnum_in_,
+      ],
+    );
 
 Serializer<StormReportPayloadTypeEnum> _$stormReportPayloadTypeEnumSerializer =
     _$StormReportPayloadTypeEnumSerializer();
 Serializer<StormReportPayloadMagnitudeUnitsEnum>
-    _$stormReportPayloadMagnitudeUnitsEnumSerializer =
+_$stormReportPayloadMagnitudeUnitsEnumSerializer =
     _$StormReportPayloadMagnitudeUnitsEnumSerializer();
 
 class _$StormReportPayloadTypeEnumSerializer
@@ -90,16 +92,20 @@ class _$StormReportPayloadTypeEnumSerializer
   final String wireName = 'StormReportPayloadTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, StormReportPayloadTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StormReportPayloadTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormReportPayloadTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormReportPayloadTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormReportPayloadTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormReportPayloadMagnitudeUnitsEnumSerializer
@@ -117,23 +123,26 @@ class _$StormReportPayloadMagnitudeUnitsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StormReportPayloadMagnitudeUnitsEnum
+    StormReportPayloadMagnitudeUnitsEnum,
   ];
   @override
   final String wireName = 'StormReportPayloadMagnitudeUnitsEnum';
 
   @override
   Object serialize(
-          Serializers serializers, StormReportPayloadMagnitudeUnitsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StormReportPayloadMagnitudeUnitsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormReportPayloadMagnitudeUnitsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormReportPayloadMagnitudeUnitsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormReportPayloadMagnitudeUnitsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormReportPayload extends StormReportPayload {
@@ -156,25 +165,25 @@ class _$StormReportPayload extends StormReportPayload {
   @override
   final String title;
 
-  factory _$StormReportPayload(
-          [void Function(StormReportPayloadBuilder)? updates]) =>
-      (StormReportPayloadBuilder()..update(updates))._build();
+  factory _$StormReportPayload([
+    void Function(StormReportPayloadBuilder)? updates,
+  ]) => (StormReportPayloadBuilder()..update(updates))._build();
 
-  _$StormReportPayload._(
-      {required this.type,
-      this.magnitude,
-      this.magnitudeUnits,
-      required this.location,
-      this.county,
-      this.state,
-      this.wfo,
-      this.comments,
-      required this.title})
-      : super._();
+  _$StormReportPayload._({
+    required this.type,
+    this.magnitude,
+    this.magnitudeUnits,
+    required this.location,
+    this.county,
+    this.state,
+    this.wfo,
+    this.comments,
+    required this.title,
+  }) : super._();
   @override
   StormReportPayload rebuild(
-          void Function(StormReportPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StormReportPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StormReportPayloadBuilder toBuilder() =>
@@ -304,20 +313,30 @@ class StormReportPayloadBuilder
   StormReportPayload build() => _build();
 
   _$StormReportPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StormReportPayload._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'StormReportPayload', 'type'),
+            type,
+            r'StormReportPayload',
+            'type',
+          ),
           magnitude: magnitude,
           magnitudeUnits: magnitudeUnits,
           location: BuiltValueNullFieldError.checkNotNull(
-              location, r'StormReportPayload', 'location'),
+            location,
+            r'StormReportPayload',
+            'location',
+          ),
           county: county,
           state: state,
           wfo: wfo,
           comments: comments,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'StormReportPayload', 'title'),
+            title,
+            r'StormReportPayload',
+            'title',
+          ),
         );
     replace(_$result);
     return _$result;

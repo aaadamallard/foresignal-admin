@@ -65,10 +65,7 @@ class _$QuantilesSerializer implements PrimitiveSerializer<Quantiles> {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'p05';
-    yield serializers.serialize(
-      object.p05,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.p05, specifiedType: const FullType(num));
     if (object.p10 != null) {
       yield r'p10';
       yield serializers.serialize(
@@ -77,20 +74,11 @@ class _$QuantilesSerializer implements PrimitiveSerializer<Quantiles> {
       );
     }
     yield r'p25';
-    yield serializers.serialize(
-      object.p25,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.p25, specifiedType: const FullType(num));
     yield r'p50';
-    yield serializers.serialize(
-      object.p50,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.p50, specifiedType: const FullType(num));
     yield r'p75';
-    yield serializers.serialize(
-      object.p75,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.p75, specifiedType: const FullType(num));
     if (object.p90 != null) {
       yield r'p90';
       yield serializers.serialize(
@@ -99,10 +87,7 @@ class _$QuantilesSerializer implements PrimitiveSerializer<Quantiles> {
       );
     }
     yield r'p95';
-    yield serializers.serialize(
-      object.p95,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.p95, specifiedType: const FullType(num));
   }
 
   @override
@@ -111,9 +96,11 @@ class _$QuantilesSerializer implements PrimitiveSerializer<Quantiles> {
     Quantiles object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,54 +116,53 @@ class _$QuantilesSerializer implements PrimitiveSerializer<Quantiles> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'p05':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.p05 = valueDes;
           break;
         case r'p10':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p10 = valueDes;
           break;
         case r'p25':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.p25 = valueDes;
           break;
         case r'p50':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.p50 = valueDes;
           break;
         case r'p75':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.p75 = valueDes;
           break;
         case r'p90':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p90 = valueDes;
           break;
         case r'p95':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.p95 = valueDes;
           break;
         default:

@@ -18,8 +18,10 @@ part 'hypothesis_set_input_ledger_question.g.dart';
 @BuiltValue()
 abstract class HypothesisSetInputLedgerQuestion
     implements
-        Built<HypothesisSetInputLedgerQuestion,
-            HypothesisSetInputLedgerQuestionBuilder> {
+        Built<
+          HypothesisSetInputLedgerQuestion,
+          HypothesisSetInputLedgerQuestionBuilder
+        > {
   @BuiltValueField(wireName: r'resolver')
   HypothesisSetInputLedgerQuestionResolver get resolver;
 
@@ -31,9 +33,9 @@ abstract class HypothesisSetInputLedgerQuestion
 
   HypothesisSetInputLedgerQuestion._();
 
-  factory HypothesisSetInputLedgerQuestion(
-          [void updates(HypothesisSetInputLedgerQuestionBuilder b)]) =
-      _$HypothesisSetInputLedgerQuestion;
+  factory HypothesisSetInputLedgerQuestion([
+    void updates(HypothesisSetInputLedgerQuestionBuilder b),
+  ]) = _$HypothesisSetInputLedgerQuestion;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisSetInputLedgerQuestionBuilder b) => b;
@@ -48,7 +50,7 @@ class _$HypothesisSetInputLedgerQuestionSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisSetInputLedgerQuestion,
-    _$HypothesisSetInputLedgerQuestion
+    _$HypothesisSetInputLedgerQuestion,
   ];
 
   @override
@@ -86,9 +88,11 @@ class _$HypothesisSetInputLedgerQuestionSerializer
     HypothesisSetInputLedgerQuestion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +108,33 @@ class _$HypothesisSetInputLedgerQuestionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'resolver':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(HypothesisSetInputLedgerQuestionResolver),
-          ) as HypothesisSetInputLedgerQuestionResolver;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HypothesisSetInputLedgerQuestionResolver,
+                    ),
+                  )
+                  as HypothesisSetInputLedgerQuestionResolver;
           result.resolver.replace(valueDes);
           break;
         case r'resolutionCriteria':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.resolutionCriteria = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.category = valueDes;
           break;

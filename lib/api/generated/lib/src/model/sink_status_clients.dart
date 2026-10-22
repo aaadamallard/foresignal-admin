@@ -65,10 +65,7 @@ class _$SinkStatusClientsSerializer
       specifiedType: const FullType(int),
     );
     yield r'max';
-    yield serializers.serialize(
-      object.max,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.max, specifiedType: const FullType(int));
     if (object.rejected != null) {
       yield r'rejected';
       yield serializers.serialize(
@@ -80,8 +77,9 @@ class _$SinkStatusClientsSerializer
       yield r'peers';
       yield serializers.serialize(
         object.peers,
-        specifiedType:
-            const FullType(BuiltList, [FullType(SinkStatusClientsPeersInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SinkStatusClientsPeersInner),
+        ]),
       );
     }
   }
@@ -92,9 +90,11 @@ class _$SinkStatusClientsSerializer
     SinkStatusClients object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,33 +110,36 @@ class _$SinkStatusClientsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'connected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.connected = valueDes;
           break;
         case r'max':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.max = valueDes;
           break;
         case r'rejected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.rejected = valueDes;
           break;
         case r'peers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SinkStatusClientsPeersInner)]),
-          ) as BuiltList<SinkStatusClientsPeersInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SinkStatusClientsPeersInner),
+                    ]),
+                  )
+                  as BuiltList<SinkStatusClientsPeersInner>?;
           if (valueDes == null) continue;
           result.peers.replace(valueDes);
           break;

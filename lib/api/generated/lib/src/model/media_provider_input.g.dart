@@ -16,20 +16,20 @@ class _$MediaProviderInput extends MediaProviderInput {
   @override
   final String? apiKey;
 
-  factory _$MediaProviderInput(
-          [void Function(MediaProviderInputBuilder)? updates]) =>
-      (MediaProviderInputBuilder()..update(updates))._build();
+  factory _$MediaProviderInput([
+    void Function(MediaProviderInputBuilder)? updates,
+  ]) => (MediaProviderInputBuilder()..update(updates))._build();
 
-  _$MediaProviderInput._(
-      {this.enabled,
-      this.licenceAcknowledged,
-      this.permissionRecorded,
-      this.apiKey})
-      : super._();
+  _$MediaProviderInput._({
+    this.enabled,
+    this.licenceAcknowledged,
+    this.permissionRecorded,
+    this.apiKey,
+  }) : super._();
   @override
   MediaProviderInput rebuild(
-          void Function(MediaProviderInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MediaProviderInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MediaProviderInputBuilder toBuilder() =>
@@ -119,7 +119,8 @@ class MediaProviderInputBuilder
   MediaProviderInput build() => _build();
 
   _$MediaProviderInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaProviderInput._(
           enabled: enabled,
           licenceAcknowledged: licenceAcknowledged,

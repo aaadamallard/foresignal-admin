@@ -22,8 +22,10 @@ part 'assessment_bundle_objects_inner.g.dart';
 @BuiltValue()
 abstract class AssessmentBundleObjectsInner
     implements
-        Built<AssessmentBundleObjectsInner,
-            AssessmentBundleObjectsInnerBuilder> {
+        Built<
+          AssessmentBundleObjectsInner,
+          AssessmentBundleObjectsInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'ref')
   String get ref;
@@ -40,9 +42,9 @@ abstract class AssessmentBundleObjectsInner
 
   AssessmentBundleObjectsInner._();
 
-  factory AssessmentBundleObjectsInner(
-          [void updates(AssessmentBundleObjectsInnerBuilder b)]) =
-      _$AssessmentBundleObjectsInner;
+  factory AssessmentBundleObjectsInner([
+    void updates(AssessmentBundleObjectsInnerBuilder b),
+  ]) = _$AssessmentBundleObjectsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AssessmentBundleObjectsInnerBuilder b) => b;
@@ -57,7 +59,7 @@ class _$AssessmentBundleObjectsInnerSerializer
   @override
   final Iterable<Type> types = const [
     AssessmentBundleObjectsInner,
-    _$AssessmentBundleObjectsInner
+    _$AssessmentBundleObjectsInner,
   ];
 
   @override
@@ -82,8 +84,10 @@ class _$AssessmentBundleObjectsInnerSerializer
       yield r'data';
       yield serializers.serialize(
         object.data,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.provenance != null) {
@@ -101,9 +105,11 @@ class _$AssessmentBundleObjectsInnerSerializer
     AssessmentBundleObjectsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,33 +125,43 @@ class _$AssessmentBundleObjectsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'envelope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObjectEnvelope),
-          ) as ObjectEnvelope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ObjectEnvelope),
+                  )
+                  as ObjectEnvelope;
           result.envelope.replace(valueDes);
           break;
         case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.data.replace(valueDes);
           break;
         case r'provenance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Provenance),
-          ) as Provenance?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Provenance),
+                  )
+                  as Provenance?;
           if (valueDes == null) continue;
           result.provenance.replace(valueDes);
           break;

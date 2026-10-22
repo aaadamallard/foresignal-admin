@@ -8,12 +8,14 @@ part of 'sink_create.dart';
 
 const SinkCreateTypeEnum _$sinkCreateTypeEnum_mqttState =
     const SinkCreateTypeEnum._('mqttState');
-const SinkCreateTypeEnum _$sinkCreateTypeEnum_cot =
-    const SinkCreateTypeEnum._('cot');
+const SinkCreateTypeEnum _$sinkCreateTypeEnum_cot = const SinkCreateTypeEnum._(
+  'cot',
+);
 const SinkCreateTypeEnum _$sinkCreateTypeEnum_readsbJson =
     const SinkCreateTypeEnum._('readsbJson');
-const SinkCreateTypeEnum _$sinkCreateTypeEnum_sbs =
-    const SinkCreateTypeEnum._('sbs');
+const SinkCreateTypeEnum _$sinkCreateTypeEnum_sbs = const SinkCreateTypeEnum._(
+  'sbs',
+);
 const SinkCreateTypeEnum _$sinkCreateTypeEnum_nmeaAivdm =
     const SinkCreateTypeEnum._('nmeaAivdm');
 const SinkCreateTypeEnum _$sinkCreateTypeEnum_aprsIsServe =
@@ -48,15 +50,15 @@ SinkCreateTypeEnum _$sinkCreateTypeEnumValueOf(String name) {
 
 final BuiltSet<SinkCreateTypeEnum> _$sinkCreateTypeEnumValues =
     BuiltSet<SinkCreateTypeEnum>(const <SinkCreateTypeEnum>[
-  _$sinkCreateTypeEnum_mqttState,
-  _$sinkCreateTypeEnum_cot,
-  _$sinkCreateTypeEnum_readsbJson,
-  _$sinkCreateTypeEnum_sbs,
-  _$sinkCreateTypeEnum_nmeaAivdm,
-  _$sinkCreateTypeEnum_aprsIsServe,
-  _$sinkCreateTypeEnum_cloudevents,
-  _$sinkCreateTypeEnum_federationPush,
-]);
+      _$sinkCreateTypeEnum_mqttState,
+      _$sinkCreateTypeEnum_cot,
+      _$sinkCreateTypeEnum_readsbJson,
+      _$sinkCreateTypeEnum_sbs,
+      _$sinkCreateTypeEnum_nmeaAivdm,
+      _$sinkCreateTypeEnum_aprsIsServe,
+      _$sinkCreateTypeEnum_cloudevents,
+      _$sinkCreateTypeEnum_federationPush,
+    ]);
 
 Serializer<SinkCreateTypeEnum> _$sinkCreateTypeEnumSerializer =
     _$SinkCreateTypeEnumSerializer();
@@ -90,15 +92,20 @@ class _$SinkCreateTypeEnumSerializer
   final String wireName = 'SinkCreateTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkCreateTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkCreateTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkCreateTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkCreateTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkCreateTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkCreateTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkCreate extends SinkCreate {
@@ -120,15 +127,15 @@ class _$SinkCreate extends SinkCreate {
   factory _$SinkCreate([void Function(SinkCreateBuilder)? updates]) =>
       (SinkCreateBuilder()..update(updates))._build();
 
-  _$SinkCreate._(
-      {required this.id,
-      required this.type,
-      required this.name,
-      this.enabled,
-      required this.config,
-      this.secrets,
-      this.filter})
-      : super._();
+  _$SinkCreate._({
+    required this.id,
+    required this.type,
+    required this.name,
+    this.enabled,
+    required this.config,
+    this.secrets,
+    this.filter,
+  }) : super._();
   @override
   SinkCreate rebuild(void Function(SinkCreateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -246,13 +253,20 @@ class SinkCreateBuilder implements Builder<SinkCreate, SinkCreateBuilder> {
   _$SinkCreate _build() {
     _$SinkCreate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkCreate._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'SinkCreate', 'id'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'SinkCreate', 'type'),
+              type,
+              r'SinkCreate',
+              'type',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SinkCreate', 'name'),
+              name,
+              r'SinkCreate',
+              'name',
+            ),
             enabled: enabled,
             config: config.build(),
             secrets: _secrets?.build(),
@@ -269,7 +283,10 @@ class SinkCreateBuilder implements Builder<SinkCreate, SinkCreateBuilder> {
         _filter?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkCreate', _$failedField, e.toString());
+          r'SinkCreate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

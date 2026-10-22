@@ -45,9 +45,9 @@ abstract class DossierSectionsOverview
 
   DossierSectionsOverview._();
 
-  factory DossierSectionsOverview(
-          [void updates(DossierSectionsOverviewBuilder b)]) =
-      _$DossierSectionsOverview;
+  factory DossierSectionsOverview([
+    void updates(DossierSectionsOverviewBuilder b),
+  ]) = _$DossierSectionsOverview;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsOverviewBuilder b) => b;
@@ -62,7 +62,7 @@ class _$DossierSectionsOverviewSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsOverview,
-    _$DossierSectionsOverview
+    _$DossierSectionsOverview,
   ];
 
   @override
@@ -110,8 +110,10 @@ class _$DossierSectionsOverviewSerializer
       yield r'fields';
       yield serializers.serialize(
         object.fields,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -122,9 +124,11 @@ class _$DossierSectionsOverviewSerializer
     DossierSectionsOverview object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,52 +144,70 @@ class _$DossierSectionsOverviewSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DossierSectionsOverviewStatusEnum),
-          ) as DossierSectionsOverviewStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DossierSectionsOverviewStatusEnum,
+                    ),
+                  )
+                  as DossierSectionsOverviewStatusEnum;
           result.status = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DossierSectionsOverviewLinks),
-          ) as DossierSectionsOverviewLinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DossierSectionsOverviewLinks,
+                    ),
+                  )
+                  as DossierSectionsOverviewLinks?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;
         case r'facets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DossierSectionsOverviewFacets),
-          ) as DossierSectionsOverviewFacets?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DossierSectionsOverviewFacets,
+                    ),
+                  )
+                  as DossierSectionsOverviewFacets?;
           if (valueDes == null) continue;
           result.facets.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;
         case r'fields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.fields.replace(valueDes);
           break;

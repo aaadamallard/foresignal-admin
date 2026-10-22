@@ -12,9 +12,9 @@ class _$DoctorReportPage extends DoctorReportPage {
   @override
   final String? nextCursor;
 
-  factory _$DoctorReportPage(
-          [void Function(DoctorReportPageBuilder)? updates]) =>
-      (DoctorReportPageBuilder()..update(updates))._build();
+  factory _$DoctorReportPage([
+    void Function(DoctorReportPageBuilder)? updates,
+  ]) => (DoctorReportPageBuilder()..update(updates))._build();
 
   _$DoctorReportPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class DoctorReportPageBuilder
   _$DoctorReportPage _build() {
     _$DoctorReportPage _$result;
     try {
-      _$result = _$v ??
-          _$DoctorReportPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$DoctorReportPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class DoctorReportPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DoctorReportPage', _$failedField, e.toString());
+          r'DoctorReportPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

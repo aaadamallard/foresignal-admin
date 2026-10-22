@@ -22,23 +22,23 @@ class _$SensorDiscoveryResult extends SensorDiscoveryResult {
   @override
   final String? note;
 
-  factory _$SensorDiscoveryResult(
-          [void Function(SensorDiscoveryResultBuilder)? updates]) =>
-      (SensorDiscoveryResultBuilder()..update(updates))._build();
+  factory _$SensorDiscoveryResult([
+    void Function(SensorDiscoveryResultBuilder)? updates,
+  ]) => (SensorDiscoveryResultBuilder()..update(updates))._build();
 
-  _$SensorDiscoveryResult._(
-      {this.bbox,
-      this.placeId,
-      required this.from,
-      required this.to,
-      required this.items,
-      this.truncated,
-      this.note})
-      : super._();
+  _$SensorDiscoveryResult._({
+    this.bbox,
+    this.placeId,
+    required this.from,
+    required this.to,
+    required this.items,
+    this.truncated,
+    this.note,
+  }) : super._();
   @override
   SensorDiscoveryResult rebuild(
-          void Function(SensorDiscoveryResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SensorDiscoveryResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SensorDiscoveryResultBuilder toBuilder() =>
@@ -152,14 +152,21 @@ class SensorDiscoveryResultBuilder
   _$SensorDiscoveryResult _build() {
     _$SensorDiscoveryResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SensorDiscoveryResult._(
             bbox: _bbox?.build(),
             placeId: placeId,
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'SensorDiscoveryResult', 'from'),
+              from,
+              r'SensorDiscoveryResult',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, r'SensorDiscoveryResult', 'to'),
+              to,
+              r'SensorDiscoveryResult',
+              'to',
+            ),
             items: items.build(),
             truncated: truncated,
             note: note,
@@ -174,7 +181,10 @@ class SensorDiscoveryResultBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SensorDiscoveryResult', _$failedField, e.toString());
+          r'SensorDiscoveryResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

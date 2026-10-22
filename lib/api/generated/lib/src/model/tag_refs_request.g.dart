@@ -37,8 +37,9 @@ class _$TagRefsRequest extends TagRefsRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'TagRefsRequest')..add('refs', refs))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'TagRefsRequest',
+    )..add('refs', refs)).toString();
   }
 }
 
@@ -79,10 +80,7 @@ class TagRefsRequestBuilder
   _$TagRefsRequest _build() {
     _$TagRefsRequest _$result;
     try {
-      _$result = _$v ??
-          _$TagRefsRequest._(
-            refs: refs.build(),
-          );
+      _$result = _$v ?? _$TagRefsRequest._(refs: refs.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -90,7 +88,10 @@ class TagRefsRequestBuilder
         refs.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TagRefsRequest', _$failedField, e.toString());
+          r'TagRefsRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

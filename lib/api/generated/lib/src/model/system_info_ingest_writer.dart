@@ -38,9 +38,9 @@ abstract class SystemInfoIngestWriter
 
   SystemInfoIngestWriter._();
 
-  factory SystemInfoIngestWriter(
-          [void updates(SystemInfoIngestWriterBuilder b)]) =
-      _$SystemInfoIngestWriter;
+  factory SystemInfoIngestWriter([
+    void updates(SystemInfoIngestWriterBuilder b),
+  ]) = _$SystemInfoIngestWriter;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemInfoIngestWriterBuilder b) => b;
@@ -55,7 +55,7 @@ class _$SystemInfoIngestWriterSerializer
   @override
   final Iterable<Type> types = const [
     SystemInfoIngestWriter,
-    _$SystemInfoIngestWriter
+    _$SystemInfoIngestWriter,
   ];
 
   @override
@@ -109,9 +109,11 @@ class _$SystemInfoIngestWriterSerializer
     SystemInfoIngestWriter object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,44 +129,56 @@ class _$SystemInfoIngestWriterSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SystemInfoIngestWriterStateEnum),
-          ) as SystemInfoIngestWriterStateEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoIngestWriterStateEnum,
+                    ),
+                  )
+                  as SystemInfoIngestWriterStateEnum?;
           if (valueDes == null) continue;
           result.state = valueDes;
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;
         case r'lastSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.lastSeq = valueDes;
           break;
         case r'lastIngestedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastIngestedAt = valueDes;
           break;
         case r'queueDepth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.queueDepth = valueDes;
           break;

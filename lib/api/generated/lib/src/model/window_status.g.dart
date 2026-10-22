@@ -23,14 +23,14 @@ class _$WindowStatus extends WindowStatus {
   factory _$WindowStatus([void Function(WindowStatusBuilder)? updates]) =>
       (WindowStatusBuilder()..update(updates))._build();
 
-  _$WindowStatus._(
-      {required this.states,
-      required this.groups,
-      this.groupsTruncated,
-      this.learningUntil,
-      this.lastEvaluatedAt,
-      this.lowConfidence})
-      : super._();
+  _$WindowStatus._({
+    required this.states,
+    required this.groups,
+    this.groupsTruncated,
+    this.learningUntil,
+    this.lastEvaluatedAt,
+    this.lowConfidence,
+  }) : super._();
   @override
   WindowStatus rebuild(void Function(WindowStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -143,11 +143,15 @@ class WindowStatusBuilder
   _$WindowStatus _build() {
     _$WindowStatus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WindowStatus._(
             states: states.build(),
             groups: BuiltValueNullFieldError.checkNotNull(
-                groups, r'WindowStatus', 'groups'),
+              groups,
+              r'WindowStatus',
+              'groups',
+            ),
             groupsTruncated: groupsTruncated,
             learningUntil: learningUntil,
             lastEvaluatedAt: lastEvaluatedAt,
@@ -160,7 +164,10 @@ class WindowStatusBuilder
         states.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WindowStatus', _$failedField, e.toString());
+          r'WindowStatus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -27,9 +27,9 @@ abstract class IntelBoardBenchmarksInner
 
   IntelBoardBenchmarksInner._();
 
-  factory IntelBoardBenchmarksInner(
-          [void updates(IntelBoardBenchmarksInnerBuilder b)]) =
-      _$IntelBoardBenchmarksInner;
+  factory IntelBoardBenchmarksInner([
+    void updates(IntelBoardBenchmarksInnerBuilder b),
+  ]) = _$IntelBoardBenchmarksInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardBenchmarksInnerBuilder b) => b;
@@ -44,7 +44,7 @@ class _$IntelBoardBenchmarksInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardBenchmarksInner,
-    _$IntelBoardBenchmarksInner
+    _$IntelBoardBenchmarksInner,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$IntelBoardBenchmarksInnerSerializer
     IntelBoardBenchmarksInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +93,23 @@ class _$IntelBoardBenchmarksInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'component':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.component = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelBoardBenchmarksInnerStatusEnum),
-          ) as IntelBoardBenchmarksInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelBoardBenchmarksInnerStatusEnum,
+                    ),
+                  )
+                  as IntelBoardBenchmarksInnerStatusEnum;
           result.status = valueDes;
           break;
         default:

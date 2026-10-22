@@ -7,20 +7,21 @@ part of 'system_info_ingest_writer.dart';
 // **************************************************************************
 
 const SystemInfoIngestWriterStateEnum
-    _$systemInfoIngestWriterStateEnum_RUNNING =
+_$systemInfoIngestWriterStateEnum_RUNNING =
     const SystemInfoIngestWriterStateEnum._('RUNNING');
 const SystemInfoIngestWriterStateEnum
-    _$systemInfoIngestWriterStateEnum_CLOCK_BEHIND =
+_$systemInfoIngestWriterStateEnum_CLOCK_BEHIND =
     const SystemInfoIngestWriterStateEnum._('CLOCK_BEHIND');
 const SystemInfoIngestWriterStateEnum
-    _$systemInfoIngestWriterStateEnum_LOCK_LOST =
+_$systemInfoIngestWriterStateEnum_LOCK_LOST =
     const SystemInfoIngestWriterStateEnum._('LOCK_LOST');
 const SystemInfoIngestWriterStateEnum
-    _$systemInfoIngestWriterStateEnum_STOPPED =
+_$systemInfoIngestWriterStateEnum_STOPPED =
     const SystemInfoIngestWriterStateEnum._('STOPPED');
 
 SystemInfoIngestWriterStateEnum _$systemInfoIngestWriterStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'RUNNING':
       return _$systemInfoIngestWriterStateEnum_RUNNING;
@@ -36,16 +37,18 @@ SystemInfoIngestWriterStateEnum _$systemInfoIngestWriterStateEnumValueOf(
 }
 
 final BuiltSet<SystemInfoIngestWriterStateEnum>
-    _$systemInfoIngestWriterStateEnumValues = BuiltSet<
-        SystemInfoIngestWriterStateEnum>(const <SystemInfoIngestWriterStateEnum>[
-  _$systemInfoIngestWriterStateEnum_RUNNING,
-  _$systemInfoIngestWriterStateEnum_CLOCK_BEHIND,
-  _$systemInfoIngestWriterStateEnum_LOCK_LOST,
-  _$systemInfoIngestWriterStateEnum_STOPPED,
-]);
+_$systemInfoIngestWriterStateEnumValues =
+    BuiltSet<SystemInfoIngestWriterStateEnum>(
+      const <SystemInfoIngestWriterStateEnum>[
+        _$systemInfoIngestWriterStateEnum_RUNNING,
+        _$systemInfoIngestWriterStateEnum_CLOCK_BEHIND,
+        _$systemInfoIngestWriterStateEnum_LOCK_LOST,
+        _$systemInfoIngestWriterStateEnum_STOPPED,
+      ],
+    );
 
 Serializer<SystemInfoIngestWriterStateEnum>
-    _$systemInfoIngestWriterStateEnumSerializer =
+_$systemInfoIngestWriterStateEnumSerializer =
     _$SystemInfoIngestWriterStateEnumSerializer();
 
 class _$SystemInfoIngestWriterStateEnumSerializer
@@ -70,16 +73,19 @@ class _$SystemInfoIngestWriterStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SystemInfoIngestWriterStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SystemInfoIngestWriterStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SystemInfoIngestWriterStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemInfoIngestWriterStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemInfoIngestWriterStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemInfoIngestWriter extends SystemInfoIngestWriter {
@@ -94,21 +100,21 @@ class _$SystemInfoIngestWriter extends SystemInfoIngestWriter {
   @override
   final int? queueDepth;
 
-  factory _$SystemInfoIngestWriter(
-          [void Function(SystemInfoIngestWriterBuilder)? updates]) =>
-      (SystemInfoIngestWriterBuilder()..update(updates))._build();
+  factory _$SystemInfoIngestWriter([
+    void Function(SystemInfoIngestWriterBuilder)? updates,
+  ]) => (SystemInfoIngestWriterBuilder()..update(updates))._build();
 
-  _$SystemInfoIngestWriter._(
-      {this.state,
-      this.warnings,
-      this.lastSeq,
-      this.lastIngestedAt,
-      this.queueDepth})
-      : super._();
+  _$SystemInfoIngestWriter._({
+    this.state,
+    this.warnings,
+    this.lastSeq,
+    this.lastIngestedAt,
+    this.queueDepth,
+  }) : super._();
   @override
   SystemInfoIngestWriter rebuild(
-          void Function(SystemInfoIngestWriterBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoIngestWriterBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoIngestWriterBuilder toBuilder() =>
@@ -208,7 +214,8 @@ class SystemInfoIngestWriterBuilder
   _$SystemInfoIngestWriter _build() {
     _$SystemInfoIngestWriter _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SystemInfoIngestWriter._(
             state: state,
             warnings: _warnings?.build(),
@@ -223,7 +230,10 @@ class SystemInfoIngestWriterBuilder
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SystemInfoIngestWriter', _$failedField, e.toString());
+          r'SystemInfoIngestWriter',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

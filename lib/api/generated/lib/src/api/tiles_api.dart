@@ -73,21 +73,33 @@ class TilesApi {
   }) async {
     final _path = r'/v1/tiles/{layer}/{z}/{x}/{y}.mvt'
         .replaceAll(
-            '{' r'layer' '}',
-            encodeQueryParameter(_serializers, layer, const FullType(String))
-                .toString())
+          '{'
+          r'layer'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            layer,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
@@ -99,11 +111,7 @@ class TilesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -114,8 +122,11 @@ class TilesApi {
       if (agg != null)
         r'agg': encodeQueryParameter(_serializers, agg, const FullType(String)),
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -124,17 +135,29 @@ class TilesApi {
           format: ListFormat.csv,
         ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (view != null)
-        r'view':
-            encodeQueryParameter(_serializers, view, const FullType(String)),
+        r'view': encodeQueryParameter(
+          _serializers,
+          view,
+          const FullType(String),
+        ),
       if (inWatchlist != null)
         r'inWatchlist': encodeQueryParameter(
-            _serializers, inWatchlist, const FullType(String)),
+          _serializers,
+          inWatchlist,
+          const FullType(String),
+        ),
       if (asOf != null)
-        r'asOf':
-            encodeQueryParameter(_serializers, asOf, const FullType(DateTime)),
+        r'asOf': encodeQueryParameter(
+          _serializers,
+          asOf,
+          const FullType(DateTime),
+        ),
       if (licencePolicy != null)
         r'licencePolicy': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -210,9 +233,15 @@ class TilesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tiles/{layer}.json'.replaceAll(
-        '{' r'layer' '}',
-        encodeQueryParameter(_serializers, layer, const FullType(String))
-            .toString());
+      '{'
+      r'layer'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        layer,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -221,11 +250,7 @@ class TilesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -234,11 +259,17 @@ class TilesApi {
 
     final _queryParameters = <String, dynamic>{
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
       if (asOf != null)
-        r'asOf':
-            encodeQueryParameter(_serializers, asOf, const FullType(DateTime)),
+        r'asOf': encodeQueryParameter(
+          _serializers,
+          asOf,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -257,9 +288,10 @@ class TilesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TileJson),
-            ) as TileJson;
+                  rawResponse,
+                  specifiedType: const FullType(TileJson),
+                )
+                as TileJson;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -318,11 +350,7 @@ class TilesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -331,11 +359,17 @@ class TilesApi {
 
     final _queryParameters = <String, dynamic>{
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
       if (asOf != null)
-        r'asOf':
-            encodeQueryParameter(_serializers, asOf, const FullType(DateTime)),
+        r'asOf': encodeQueryParameter(
+          _serializers,
+          asOf,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -354,9 +388,10 @@ class TilesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TileLayerIndex),
-            ) as TileLayerIndex;
+                  rawResponse,
+                  specifiedType: const FullType(TileLayerIndex),
+                )
+                as TileLayerIndex;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

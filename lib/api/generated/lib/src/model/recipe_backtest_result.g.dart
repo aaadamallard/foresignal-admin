@@ -18,21 +18,21 @@ class _$RecipeBacktestResult extends RecipeBacktestResult {
   @override
   final RecipeBacktestResultOverlap? overlap;
 
-  factory _$RecipeBacktestResult(
-          [void Function(RecipeBacktestResultBuilder)? updates]) =>
-      (RecipeBacktestResultBuilder()..update(updates))._build();
+  factory _$RecipeBacktestResult([
+    void Function(RecipeBacktestResultBuilder)? updates,
+  ]) => (RecipeBacktestResultBuilder()..update(updates))._build();
 
-  _$RecipeBacktestResult._(
-      {required this.recipeId,
-      this.recipeVersion,
-      required this.events,
-      this.countsByType,
-      this.overlap})
-      : super._();
+  _$RecipeBacktestResult._({
+    required this.recipeId,
+    this.recipeVersion,
+    required this.events,
+    this.countsByType,
+    this.overlap,
+  }) : super._();
   @override
   RecipeBacktestResult rebuild(
-          void Function(RecipeBacktestResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecipeBacktestResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecipeBacktestResultBuilder toBuilder() =>
@@ -137,10 +137,14 @@ class RecipeBacktestResultBuilder
   _$RecipeBacktestResult _build() {
     _$RecipeBacktestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecipeBacktestResult._(
             recipeId: BuiltValueNullFieldError.checkNotNull(
-                recipeId, r'RecipeBacktestResult', 'recipeId'),
+              recipeId,
+              r'RecipeBacktestResult',
+              'recipeId',
+            ),
             recipeVersion: recipeVersion,
             events: events.build(),
             countsByType: _countsByType?.build(),
@@ -157,7 +161,10 @@ class RecipeBacktestResultBuilder
         _overlap?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecipeBacktestResult', _$failedField, e.toString());
+          r'RecipeBacktestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

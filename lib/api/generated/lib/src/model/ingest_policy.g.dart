@@ -20,8 +20,8 @@ IngestPolicyModeEnum _$ingestPolicyModeEnumValueOf(String name) {
 
 final BuiltSet<IngestPolicyModeEnum> _$ingestPolicyModeEnumValues =
     BuiltSet<IngestPolicyModeEnum>(const <IngestPolicyModeEnum>[
-  _$ingestPolicyModeEnum_LATEST,
-]);
+      _$ingestPolicyModeEnum_LATEST,
+    ]);
 
 Serializer<IngestPolicyModeEnum> _$ingestPolicyModeEnumSerializer =
     _$IngestPolicyModeEnumSerializer();
@@ -41,15 +41,20 @@ class _$IngestPolicyModeEnumSerializer
   final String wireName = 'IngestPolicyModeEnum';
 
   @override
-  Object serialize(Serializers serializers, IngestPolicyModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IngestPolicyModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  IngestPolicyModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestPolicyModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  IngestPolicyModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestPolicyModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestPolicy extends IngestPolicy {
@@ -83,8 +88,9 @@ class _$IngestPolicy extends IngestPolicy {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IngestPolicy')..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'IngestPolicy',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -123,10 +129,14 @@ class IngestPolicyBuilder
   IngestPolicy build() => _build();
 
   _$IngestPolicy _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestPolicy._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'IngestPolicy', 'oneOf'),
+            oneOf,
+            r'IngestPolicy',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

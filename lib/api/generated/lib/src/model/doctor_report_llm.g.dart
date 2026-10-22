@@ -40,13 +40,13 @@ DoctorReportLlmStatusEnum _$doctorReportLlmStatusEnumValueOf(String name) {
 
 final BuiltSet<DoctorReportLlmStatusEnum> _$doctorReportLlmStatusEnumValues =
     BuiltSet<DoctorReportLlmStatusEnum>(const <DoctorReportLlmStatusEnum>[
-  _$doctorReportLlmStatusEnum_ok,
-  _$doctorReportLlmStatusEnum_off,
-  _$doctorReportLlmStatusEnum_noProvider,
-  _$doctorReportLlmStatusEnum_budgetRefused,
-  _$doctorReportLlmStatusEnum_timeout,
-  _$doctorReportLlmStatusEnum_failed,
-]);
+      _$doctorReportLlmStatusEnum_ok,
+      _$doctorReportLlmStatusEnum_off,
+      _$doctorReportLlmStatusEnum_noProvider,
+      _$doctorReportLlmStatusEnum_budgetRefused,
+      _$doctorReportLlmStatusEnum_timeout,
+      _$doctorReportLlmStatusEnum_failed,
+    ]);
 
 const DoctorReportLlmDetailEnum _$doctorReportLlmDetailEnum_compact =
     const DoctorReportLlmDetailEnum._('compact');
@@ -66,9 +66,9 @@ DoctorReportLlmDetailEnum _$doctorReportLlmDetailEnumValueOf(String name) {
 
 final BuiltSet<DoctorReportLlmDetailEnum> _$doctorReportLlmDetailEnumValues =
     BuiltSet<DoctorReportLlmDetailEnum>(const <DoctorReportLlmDetailEnum>[
-  _$doctorReportLlmDetailEnum_compact,
-  _$doctorReportLlmDetailEnum_full,
-]);
+      _$doctorReportLlmDetailEnum_compact,
+      _$doctorReportLlmDetailEnum_full,
+    ]);
 
 Serializer<DoctorReportLlmStatusEnum> _$doctorReportLlmStatusEnumSerializer =
     _$DoctorReportLlmStatusEnumSerializer();
@@ -100,16 +100,20 @@ class _$DoctorReportLlmStatusEnumSerializer
   final String wireName = 'DoctorReportLlmStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorReportLlmStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorReportLlmStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DoctorReportLlmStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorReportLlmStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorReportLlmStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorReportLlmDetailEnumSerializer
@@ -129,16 +133,20 @@ class _$DoctorReportLlmDetailEnumSerializer
   final String wireName = 'DoctorReportLlmDetailEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorReportLlmDetailEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorReportLlmDetailEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DoctorReportLlmDetailEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorReportLlmDetailEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorReportLlmDetailEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorReportLlm extends DoctorReportLlm {
@@ -172,21 +180,21 @@ class _$DoctorReportLlm extends DoctorReportLlm {
   factory _$DoctorReportLlm([void Function(DoctorReportLlmBuilder)? updates]) =>
       (DoctorReportLlmBuilder()..update(updates))._build();
 
-  _$DoctorReportLlm._(
-      {required this.status,
-      this.provider,
-      this.model,
-      this.tokens,
-      this.summary,
-      this.likelyCause,
-      this.confidence,
-      this.evidence,
-      this.suggestedActions,
-      this.patch_,
-      this.contextTokens,
-      this.detail,
-      this.error})
-      : super._();
+  _$DoctorReportLlm._({
+    required this.status,
+    this.provider,
+    this.model,
+    this.tokens,
+    this.summary,
+    this.likelyCause,
+    this.confidence,
+    this.evidence,
+    this.suggestedActions,
+    this.patch_,
+    this.contextTokens,
+    this.detail,
+    this.error,
+  }) : super._();
   @override
   DoctorReportLlm rebuild(void Function(DoctorReportLlmBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -355,10 +363,14 @@ class DoctorReportLlmBuilder
   _$DoctorReportLlm _build() {
     _$DoctorReportLlm _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DoctorReportLlm._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DoctorReportLlm', 'status'),
+              status,
+              r'DoctorReportLlm',
+              'status',
+            ),
             provider: provider,
             model: model,
             tokens: _tokens?.build(),
@@ -386,7 +398,10 @@ class DoctorReportLlmBuilder
         _patch_?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DoctorReportLlm', _$failedField, e.toString());
+          r'DoctorReportLlm',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

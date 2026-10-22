@@ -60,18 +60,18 @@ BacktestJobTypeEnum _$backtestJobTypeEnumValueOf(String name) {
 
 final BuiltSet<BacktestJobTypeEnum> _$backtestJobTypeEnumValues =
     BuiltSet<BacktestJobTypeEnum>(const <BacktestJobTypeEnum>[
-  _$backtestJobTypeEnum_rule,
-  _$backtestJobTypeEnum_recipe,
-  _$backtestJobTypeEnum_precursor,
-  _$backtestJobTypeEnum_quality,
-  _$backtestJobTypeEnum_eventStudy,
-  _$backtestJobTypeEnum_precursorMining,
-  _$backtestJobTypeEnum_forecastEvaluation,
-  _$backtestJobTypeEnum_referenceImport,
-  _$backtestJobTypeEnum_baseRateRefresh,
-  _$backtestJobTypeEnum_manifestReplay,
-  _$backtestJobTypeEnum_benchmark,
-]);
+      _$backtestJobTypeEnum_rule,
+      _$backtestJobTypeEnum_recipe,
+      _$backtestJobTypeEnum_precursor,
+      _$backtestJobTypeEnum_quality,
+      _$backtestJobTypeEnum_eventStudy,
+      _$backtestJobTypeEnum_precursorMining,
+      _$backtestJobTypeEnum_forecastEvaluation,
+      _$backtestJobTypeEnum_referenceImport,
+      _$backtestJobTypeEnum_baseRateRefresh,
+      _$backtestJobTypeEnum_manifestReplay,
+      _$backtestJobTypeEnum_benchmark,
+    ]);
 
 const BacktestJobStatusEnum _$backtestJobStatusEnum_queued =
     const BacktestJobStatusEnum._('queued');
@@ -103,12 +103,12 @@ BacktestJobStatusEnum _$backtestJobStatusEnumValueOf(String name) {
 
 final BuiltSet<BacktestJobStatusEnum> _$backtestJobStatusEnumValues =
     BuiltSet<BacktestJobStatusEnum>(const <BacktestJobStatusEnum>[
-  _$backtestJobStatusEnum_queued,
-  _$backtestJobStatusEnum_running,
-  _$backtestJobStatusEnum_done,
-  _$backtestJobStatusEnum_failed,
-  _$backtestJobStatusEnum_cancelled,
-]);
+      _$backtestJobStatusEnum_queued,
+      _$backtestJobStatusEnum_running,
+      _$backtestJobStatusEnum_done,
+      _$backtestJobStatusEnum_failed,
+      _$backtestJobStatusEnum_cancelled,
+    ]);
 
 Serializer<BacktestJobTypeEnum> _$backtestJobTypeEnumSerializer =
     _$BacktestJobTypeEnumSerializer();
@@ -150,15 +150,20 @@ class _$BacktestJobTypeEnumSerializer
   final String wireName = 'BacktestJobTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BacktestJobTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BacktestJobTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJobStatusEnumSerializer
@@ -184,15 +189,20 @@ class _$BacktestJobStatusEnumSerializer
   final String wireName = 'BacktestJobStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestJobStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestJobStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BacktestJobStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestJobStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BacktestJobStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestJobStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestJob extends BacktestJob {
@@ -242,29 +252,29 @@ class _$BacktestJob extends BacktestJob {
   factory _$BacktestJob([void Function(BacktestJobBuilder)? updates]) =>
       (BacktestJobBuilder()..update(updates))._build();
 
-  _$BacktestJob._(
-      {required this.id,
-      required this.type,
-      this.targetId,
-      this.definition,
-      required this.definitionHash,
-      required this.fromSeq,
-      required this.toSeq,
-      this.from,
-      this.to,
-      required this.status,
-      required this.progress,
-      required this.createdAt,
-      this.startedAt,
-      this.finishedAt,
-      this.createdBy,
-      this.detectorVersion,
-      required this.caveats,
-      this.result,
-      this.truncated,
-      this.error,
-      this.manifestId})
-      : super._();
+  _$BacktestJob._({
+    required this.id,
+    required this.type,
+    this.targetId,
+    this.definition,
+    required this.definitionHash,
+    required this.fromSeq,
+    required this.toSeq,
+    this.from,
+    this.to,
+    required this.status,
+    required this.progress,
+    required this.createdAt,
+    this.startedAt,
+    this.finishedAt,
+    this.createdBy,
+    this.detectorVersion,
+    required this.caveats,
+    this.result,
+    this.truncated,
+    this.error,
+    this.manifestId,
+  }) : super._();
   @override
   BacktestJob rebuild(void Function(BacktestJobBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -498,27 +508,49 @@ class BacktestJobBuilder implements Builder<BacktestJob, BacktestJobBuilder> {
   _$BacktestJob _build() {
     _$BacktestJob _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BacktestJob._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'BacktestJob', 'id'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'BacktestJob', 'type'),
+              type,
+              r'BacktestJob',
+              'type',
+            ),
             targetId: targetId,
             definition: _definition?.build(),
             definitionHash: BuiltValueNullFieldError.checkNotNull(
-                definitionHash, r'BacktestJob', 'definitionHash'),
+              definitionHash,
+              r'BacktestJob',
+              'definitionHash',
+            ),
             fromSeq: BuiltValueNullFieldError.checkNotNull(
-                fromSeq, r'BacktestJob', 'fromSeq'),
+              fromSeq,
+              r'BacktestJob',
+              'fromSeq',
+            ),
             toSeq: BuiltValueNullFieldError.checkNotNull(
-                toSeq, r'BacktestJob', 'toSeq'),
+              toSeq,
+              r'BacktestJob',
+              'toSeq',
+            ),
             from: from,
             to: to,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'BacktestJob', 'status'),
+              status,
+              r'BacktestJob',
+              'status',
+            ),
             progress: BuiltValueNullFieldError.checkNotNull(
-                progress, r'BacktestJob', 'progress'),
+              progress,
+              r'BacktestJob',
+              'progress',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'BacktestJob', 'createdAt'),
+              createdAt,
+              r'BacktestJob',
+              'createdAt',
+            ),
             startedAt: startedAt,
             finishedAt: finishedAt,
             createdBy: createdBy,
@@ -541,7 +573,10 @@ class BacktestJobBuilder implements Builder<BacktestJob, BacktestJobBuilder> {
         _result?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BacktestJob', _$failedField, e.toString());
+          r'BacktestJob',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

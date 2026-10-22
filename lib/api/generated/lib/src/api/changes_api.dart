@@ -82,11 +82,7 @@ class ChangesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -95,8 +91,11 @@ class ChangesApi {
 
     final _queryParameters = <String, dynamic>{
       if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(int)),
+        r'after': encodeQueryParameter(
+          _serializers,
+          after,
+          const FullType(int),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -112,14 +111,23 @@ class ChangesApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (payload != null)
-        r'payload':
-            encodeQueryParameter(_serializers, payload, const FullType(bool)),
+        r'payload': encodeQueryParameter(
+          _serializers,
+          payload,
+          const FullType(bool),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (externalId != null)
         r'externalId': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -128,11 +136,17 @@ class ChangesApi {
           format: ListFormat.multi,
         ),
       if (fields != null)
-        r'fields':
-            encodeQueryParameter(_serializers, fields, const FullType(String)),
+        r'fields': encodeQueryParameter(
+          _serializers,
+          fields,
+          const FullType(String),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -141,14 +155,23 @@ class ChangesApi {
           format: ListFormat.csv,
         ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (view != null)
-        r'view':
-            encodeQueryParameter(_serializers, view, const FullType(String)),
+        r'view': encodeQueryParameter(
+          _serializers,
+          view,
+          const FullType(String),
+        ),
       if (inWatchlist != null)
         r'inWatchlist': encodeQueryParameter(
-            _serializers, inWatchlist, const FullType(String)),
+          _serializers,
+          inWatchlist,
+          const FullType(String),
+        ),
       if (licencePolicy != null)
         r'licencePolicy': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -174,9 +197,10 @@ class ChangesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ChangePage),
-            ) as ChangePage;
+                  rawResponse,
+                  specifiedType: const FullType(ChangePage),
+                )
+                as ChangePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -265,11 +289,7 @@ class ChangesApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -278,8 +298,11 @@ class ChangesApi {
 
     final _queryParameters = <String, dynamic>{
       if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(int)),
+        r'after': encodeQueryParameter(
+          _serializers,
+          after,
+          const FullType(int),
+        ),
       if (source_ != null)
         r'source': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -295,11 +318,17 @@ class ChangesApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (payload != null)
-        r'payload':
-            encodeQueryParameter(_serializers, payload, const FullType(bool)),
+        r'payload': encodeQueryParameter(
+          _serializers,
+          payload,
+          const FullType(bool),
+        ),
       if (externalId != null)
         r'externalId': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -308,19 +337,31 @@ class ChangesApi {
           format: ListFormat.multi,
         ),
       if (near != null)
-        r'near':
-            encodeQueryParameter(_serializers, near, const FullType(String)),
+        r'near': encodeQueryParameter(
+          _serializers,
+          near,
+          const FullType(String),
+        ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (live != null)
         r'live': encodeQueryParameter(_serializers, live, const FullType(bool)),
       if (touches != null)
-        r'touches':
-            encodeQueryParameter(_serializers, touches, const FullType(bool)),
+        r'touches': encodeQueryParameter(
+          _serializers,
+          touches,
+          const FullType(bool),
+        ),
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -329,11 +370,17 @@ class ChangesApi {
           format: ListFormat.csv,
         ),
       if (view != null)
-        r'view':
-            encodeQueryParameter(_serializers, view, const FullType(String)),
+        r'view': encodeQueryParameter(
+          _serializers,
+          view,
+          const FullType(String),
+        ),
       if (inWatchlist != null)
         r'inWatchlist': encodeQueryParameter(
-            _serializers, inWatchlist, const FullType(String)),
+          _serializers,
+          inWatchlist,
+          const FullType(String),
+        ),
       if (licencePolicy != null)
         r'licencePolicy': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -359,9 +406,10 @@ class ChangesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StreamChanges200Response),
-            ) as StreamChanges200Response;
+                  rawResponse,
+                  specifiedType: const FullType(StreamChanges200Response),
+                )
+                as StreamChanges200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

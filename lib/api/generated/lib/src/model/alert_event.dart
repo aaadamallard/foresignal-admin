@@ -90,9 +90,11 @@ class _$AlertEventSerializer implements PrimitiveSerializer<AlertEvent> {
     AlertEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,32 +110,40 @@ class _$AlertEventSerializer implements PrimitiveSerializer<AlertEvent> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AlertEventTypeEnum),
-          ) as AlertEventTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AlertEventTypeEnum),
+                  )
+                  as AlertEventTypeEnum;
           result.type = valueDes;
           break;
         case r'alert':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Alert),
-          ) as Alert;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Alert),
+                  )
+                  as Alert;
           result.alert.replace(valueDes);
           break;
         case r'suppressed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.suppressed = valueDes;
           break;
         case r'exercise':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.exercise = valueDes;
           break;

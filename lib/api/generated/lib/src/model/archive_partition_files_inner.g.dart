@@ -26,25 +26,25 @@ class _$ArchivePartitionFilesInner extends ArchivePartitionFilesInner {
   @override
   final String? s3Key;
 
-  factory _$ArchivePartitionFilesInner(
-          [void Function(ArchivePartitionFilesInnerBuilder)? updates]) =>
-      (ArchivePartitionFilesInnerBuilder()..update(updates))._build();
+  factory _$ArchivePartitionFilesInner([
+    void Function(ArchivePartitionFilesInnerBuilder)? updates,
+  ]) => (ArchivePartitionFilesInnerBuilder()..update(updates))._build();
 
-  _$ArchivePartitionFilesInner._(
-      {required this.name,
-      required this.fromSeq,
-      required this.toSeq,
-      required this.rows,
-      required this.bytes,
-      required this.sha256,
-      this.local,
-      this.uploadedAt,
-      this.s3Key})
-      : super._();
+  _$ArchivePartitionFilesInner._({
+    required this.name,
+    required this.fromSeq,
+    required this.toSeq,
+    required this.rows,
+    required this.bytes,
+    required this.sha256,
+    this.local,
+    this.uploadedAt,
+    this.s3Key,
+  }) : super._();
   @override
   ArchivePartitionFilesInner rebuild(
-          void Function(ArchivePartitionFilesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ArchivePartitionFilesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ArchivePartitionFilesInnerBuilder toBuilder() =>
@@ -173,20 +173,39 @@ class ArchivePartitionFilesInnerBuilder
   ArchivePartitionFilesInner build() => _build();
 
   _$ArchivePartitionFilesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ArchivePartitionFilesInner._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'ArchivePartitionFilesInner', 'name'),
+            name,
+            r'ArchivePartitionFilesInner',
+            'name',
+          ),
           fromSeq: BuiltValueNullFieldError.checkNotNull(
-              fromSeq, r'ArchivePartitionFilesInner', 'fromSeq'),
+            fromSeq,
+            r'ArchivePartitionFilesInner',
+            'fromSeq',
+          ),
           toSeq: BuiltValueNullFieldError.checkNotNull(
-              toSeq, r'ArchivePartitionFilesInner', 'toSeq'),
+            toSeq,
+            r'ArchivePartitionFilesInner',
+            'toSeq',
+          ),
           rows: BuiltValueNullFieldError.checkNotNull(
-              rows, r'ArchivePartitionFilesInner', 'rows'),
+            rows,
+            r'ArchivePartitionFilesInner',
+            'rows',
+          ),
           bytes: BuiltValueNullFieldError.checkNotNull(
-              bytes, r'ArchivePartitionFilesInner', 'bytes'),
+            bytes,
+            r'ArchivePartitionFilesInner',
+            'bytes',
+          ),
           sha256: BuiltValueNullFieldError.checkNotNull(
-              sha256, r'ArchivePartitionFilesInner', 'sha256'),
+            sha256,
+            r'ArchivePartitionFilesInner',
+            'sha256',
+          ),
           local: local,
           uploadedAt: uploadedAt,
           s3Key: s3Key,

@@ -18,21 +18,21 @@ class _$MappingTestResultSamplesInner extends MappingTestResultSamplesInner {
   @override
   final DateTime receivedAt;
 
-  factory _$MappingTestResultSamplesInner(
-          [void Function(MappingTestResultSamplesInnerBuilder)? updates]) =>
-      (MappingTestResultSamplesInnerBuilder()..update(updates))._build();
+  factory _$MappingTestResultSamplesInner([
+    void Function(MappingTestResultSamplesInnerBuilder)? updates,
+  ]) => (MappingTestResultSamplesInnerBuilder()..update(updates))._build();
 
-  _$MappingTestResultSamplesInner._(
-      {required this.records,
-      required this.rejections,
-      this.skipped,
-      required this.warnings,
-      required this.receivedAt})
-      : super._();
+  _$MappingTestResultSamplesInner._({
+    required this.records,
+    required this.rejections,
+    this.skipped,
+    required this.warnings,
+    required this.receivedAt,
+  }) : super._();
   @override
   MappingTestResultSamplesInner rebuild(
-          void Function(MappingTestResultSamplesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingTestResultSamplesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingTestResultSamplesInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$MappingTestResultSamplesInner extends MappingTestResultSamplesInner {
 
 class MappingTestResultSamplesInnerBuilder
     implements
-        Builder<MappingTestResultSamplesInner,
-            MappingTestResultSamplesInnerBuilder> {
+        Builder<
+          MappingTestResultSamplesInner,
+          MappingTestResultSamplesInnerBuilder
+        > {
   _$MappingTestResultSamplesInner? _$v;
 
   ListBuilder<NormalizedRecordPreview>? _records;
@@ -138,14 +140,18 @@ class MappingTestResultSamplesInnerBuilder
   _$MappingTestResultSamplesInner _build() {
     _$MappingTestResultSamplesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingTestResultSamplesInner._(
             records: records.build(),
             rejections: rejections.build(),
             skipped: skipped,
             warnings: warnings.build(),
             receivedAt: BuiltValueNullFieldError.checkNotNull(
-                receivedAt, r'MappingTestResultSamplesInner', 'receivedAt'),
+              receivedAt,
+              r'MappingTestResultSamplesInner',
+              'receivedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -159,7 +165,10 @@ class MappingTestResultSamplesInnerBuilder
         warnings.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingTestResultSamplesInner', _$failedField, e.toString());
+          r'MappingTestResultSamplesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

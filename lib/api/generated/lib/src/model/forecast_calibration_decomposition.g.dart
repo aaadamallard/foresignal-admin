@@ -17,20 +17,20 @@ class _$ForecastCalibrationDecomposition
   @override
   final num uncertainty;
 
-  factory _$ForecastCalibrationDecomposition(
-          [void Function(ForecastCalibrationDecompositionBuilder)? updates]) =>
-      (ForecastCalibrationDecompositionBuilder()..update(updates))._build();
+  factory _$ForecastCalibrationDecomposition([
+    void Function(ForecastCalibrationDecompositionBuilder)? updates,
+  ]) => (ForecastCalibrationDecompositionBuilder()..update(updates))._build();
 
-  _$ForecastCalibrationDecomposition._(
-      {required this.score,
-      required this.miscalibration,
-      required this.discrimination,
-      required this.uncertainty})
-      : super._();
+  _$ForecastCalibrationDecomposition._({
+    required this.score,
+    required this.miscalibration,
+    required this.discrimination,
+    required this.uncertainty,
+  }) : super._();
   @override
   ForecastCalibrationDecomposition rebuild(
-          void Function(ForecastCalibrationDecompositionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastCalibrationDecompositionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastCalibrationDecompositionBuilder toBuilder() =>
@@ -70,8 +70,10 @@ class _$ForecastCalibrationDecomposition
 
 class ForecastCalibrationDecompositionBuilder
     implements
-        Builder<ForecastCalibrationDecomposition,
-            ForecastCalibrationDecompositionBuilder> {
+        Builder<
+          ForecastCalibrationDecomposition,
+          ForecastCalibrationDecompositionBuilder
+        > {
   _$ForecastCalibrationDecomposition? _$v;
 
   num? _score;
@@ -122,16 +124,29 @@ class ForecastCalibrationDecompositionBuilder
   ForecastCalibrationDecomposition build() => _build();
 
   _$ForecastCalibrationDecomposition _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastCalibrationDecomposition._(
           score: BuiltValueNullFieldError.checkNotNull(
-              score, r'ForecastCalibrationDecomposition', 'score'),
-          miscalibration: BuiltValueNullFieldError.checkNotNull(miscalibration,
-              r'ForecastCalibrationDecomposition', 'miscalibration'),
-          discrimination: BuiltValueNullFieldError.checkNotNull(discrimination,
-              r'ForecastCalibrationDecomposition', 'discrimination'),
+            score,
+            r'ForecastCalibrationDecomposition',
+            'score',
+          ),
+          miscalibration: BuiltValueNullFieldError.checkNotNull(
+            miscalibration,
+            r'ForecastCalibrationDecomposition',
+            'miscalibration',
+          ),
+          discrimination: BuiltValueNullFieldError.checkNotNull(
+            discrimination,
+            r'ForecastCalibrationDecomposition',
+            'discrimination',
+          ),
           uncertainty: BuiltValueNullFieldError.checkNotNull(
-              uncertainty, r'ForecastCalibrationDecomposition', 'uncertainty'),
+            uncertainty,
+            r'ForecastCalibrationDecomposition',
+            'uncertainty',
+          ),
         );
     replace(_$result);
     return _$result;

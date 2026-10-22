@@ -92,11 +92,9 @@ class ForecasterPageBuilder
   _$ForecasterPage _build() {
     _$ForecasterPage _$result;
     try {
-      _$result = _$v ??
-          _$ForecasterPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ForecasterPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class ForecasterPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecasterPage', _$failedField, e.toString());
+          r'ForecasterPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

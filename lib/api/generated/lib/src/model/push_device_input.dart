@@ -148,9 +148,11 @@ class _$PushDeviceInputSerializer
     PushDeviceInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -166,72 +168,92 @@ class _$PushDeviceInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'transport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PushDeviceInputTransportEnum),
-          ) as PushDeviceInputTransportEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PushDeviceInputTransportEnum),
+                  )
+                  as PushDeviceInputTransportEnum;
           result.transport = valueDes;
           break;
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PushDeviceInputPlatformEnum),
-          ) as PushDeviceInputPlatformEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PushDeviceInputPlatformEnum),
+                  )
+                  as PushDeviceInputPlatformEnum;
           result.platform = valueDes;
           break;
         case r'appId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.appId = valueDes;
           break;
         case r'environment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PushDeviceInputEnvironmentEnum),
-          ) as PushDeviceInputEnvironmentEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PushDeviceInputEnvironmentEnum,
+                    ),
+                  )
+                  as PushDeviceInputEnvironmentEnum?;
           if (valueDes == null) continue;
           result.environment = valueDes;
           break;
         case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.token = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'filters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PushFilters),
-          ) as PushFilters?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PushFilters),
+                  )
+                  as PushFilters?;
           if (valueDes == null) continue;
           result.filters.replace(valueDes);
           break;
         case r'contentLevel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PushDeviceInputContentLevelEnum),
-          ) as PushDeviceInputContentLevelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PushDeviceInputContentLevelEnum,
+                    ),
+                  )
+                  as PushDeviceInputContentLevelEnum?;
           if (valueDes == null) continue;
           result.contentLevel = valueDes;
           break;
         case r'lang':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lang = valueDes;
           break;

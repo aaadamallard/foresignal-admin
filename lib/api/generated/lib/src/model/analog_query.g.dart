@@ -21,13 +21,13 @@ class _$AnalogQuery extends AnalogQuery {
   factory _$AnalogQuery([void Function(AnalogQueryBuilder)? updates]) =>
       (AnalogQueryBuilder()..update(updates))._build();
 
-  _$AnalogQuery._(
-      {required this.regionCode,
-      required this.from,
-      required this.to,
-      this.k,
-      this.outcome})
-      : super._();
+  _$AnalogQuery._({
+    required this.regionCode,
+    required this.from,
+    required this.to,
+    this.k,
+    this.outcome,
+  }) : super._();
   @override
   AnalogQuery rebuild(void Function(AnalogQueryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -124,12 +124,19 @@ class AnalogQueryBuilder implements Builder<AnalogQuery, AnalogQueryBuilder> {
   AnalogQuery build() => _build();
 
   _$AnalogQuery _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalogQuery._(
           regionCode: BuiltValueNullFieldError.checkNotNull(
-              regionCode, r'AnalogQuery', 'regionCode'),
+            regionCode,
+            r'AnalogQuery',
+            'regionCode',
+          ),
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'AnalogQuery', 'from'),
+            from,
+            r'AnalogQuery',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(to, r'AnalogQuery', 'to'),
           k: k,
           outcome: outcome,

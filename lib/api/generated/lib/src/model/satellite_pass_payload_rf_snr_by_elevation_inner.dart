@@ -16,8 +16,10 @@ part 'satellite_pass_payload_rf_snr_by_elevation_inner.g.dart';
 @BuiltValue()
 abstract class SatellitePassPayloadRfSnrByElevationInner
     implements
-        Built<SatellitePassPayloadRfSnrByElevationInner,
-            SatellitePassPayloadRfSnrByElevationInnerBuilder> {
+        Built<
+          SatellitePassPayloadRfSnrByElevationInner,
+          SatellitePassPayloadRfSnrByElevationInnerBuilder
+        > {
   @BuiltValueField(wireName: r'elevationDeg')
   num get elevationDeg;
 
@@ -26,9 +28,9 @@ abstract class SatellitePassPayloadRfSnrByElevationInner
 
   SatellitePassPayloadRfSnrByElevationInner._();
 
-  factory SatellitePassPayloadRfSnrByElevationInner(
-          [void updates(SatellitePassPayloadRfSnrByElevationInnerBuilder b)]) =
-      _$SatellitePassPayloadRfSnrByElevationInner;
+  factory SatellitePassPayloadRfSnrByElevationInner([
+    void updates(SatellitePassPayloadRfSnrByElevationInnerBuilder b),
+  ]) = _$SatellitePassPayloadRfSnrByElevationInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SatellitePassPayloadRfSnrByElevationInnerBuilder b) =>
@@ -44,7 +46,7 @@ class _$SatellitePassPayloadRfSnrByElevationInnerSerializer
   @override
   final Iterable<Type> types = const [
     SatellitePassPayloadRfSnrByElevationInner,
-    _$SatellitePassPayloadRfSnrByElevationInner
+    _$SatellitePassPayloadRfSnrByElevationInner,
   ];
 
   @override
@@ -73,9 +75,11 @@ class _$SatellitePassPayloadRfSnrByElevationInnerSerializer
     SatellitePassPayloadRfSnrByElevationInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +95,15 @@ class _$SatellitePassPayloadRfSnrByElevationInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'elevationDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.elevationDeg = valueDes;
           break;
         case r'snrDb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.snrDb = valueDes;
           break;
         default:

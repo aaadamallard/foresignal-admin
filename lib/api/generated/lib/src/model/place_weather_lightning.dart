@@ -51,8 +51,9 @@ abstract class PlaceWeatherLightning
 
   PlaceWeatherLightning._();
 
-  factory PlaceWeatherLightning(
-      [void updates(PlaceWeatherLightningBuilder b)]) = _$PlaceWeatherLightning;
+  factory PlaceWeatherLightning([
+    void updates(PlaceWeatherLightningBuilder b),
+  ]) = _$PlaceWeatherLightning;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherLightningBuilder b) => b;
@@ -67,7 +68,7 @@ class _$PlaceWeatherLightningSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherLightning,
-    _$PlaceWeatherLightning
+    _$PlaceWeatherLightning,
   ];
 
   @override
@@ -133,9 +134,11 @@ class _$PlaceWeatherLightningSerializer
     PlaceWeatherLightning object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -151,57 +154,71 @@ class _$PlaceWeatherLightningSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WeatherSectionStatus),
-          ) as WeatherSectionStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WeatherSectionStatus),
+                  )
+                  as WeatherSectionStatus;
           result.status = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'statusText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusText = valueDes;
           break;
         case r'nearestKm15m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.nearestKm15m = valueDes;
           break;
         case r'nearestKm30m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.nearestKm30m = valueDes;
           break;
         case r'count15km15m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.count15km15m = valueDes;
           break;
         case r'verifiedNearestKm30m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.verifiedNearestKm30m = valueDes;
           break;

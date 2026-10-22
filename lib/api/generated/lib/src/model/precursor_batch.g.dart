@@ -24,9 +24,9 @@ PrecursorBatchModeEnum _$precursorBatchModeEnumValueOf(String name) {
 
 final BuiltSet<PrecursorBatchModeEnum> _$precursorBatchModeEnumValues =
     BuiltSet<PrecursorBatchModeEnum>(const <PrecursorBatchModeEnum>[
-  _$precursorBatchModeEnum_mine,
-  _$precursorBatchModeEnum_retest,
-]);
+      _$precursorBatchModeEnum_mine,
+      _$precursorBatchModeEnum_retest,
+    ]);
 
 const PrecursorBatchTriggerEnum _$precursorBatchTriggerEnum_schedule =
     const PrecursorBatchTriggerEnum._('schedule');
@@ -50,10 +50,10 @@ PrecursorBatchTriggerEnum _$precursorBatchTriggerEnumValueOf(String name) {
 
 final BuiltSet<PrecursorBatchTriggerEnum> _$precursorBatchTriggerEnumValues =
     BuiltSet<PrecursorBatchTriggerEnum>(const <PrecursorBatchTriggerEnum>[
-  _$precursorBatchTriggerEnum_schedule,
-  _$precursorBatchTriggerEnum_manual,
-  _$precursorBatchTriggerEnum_cycle,
-]);
+      _$precursorBatchTriggerEnum_schedule,
+      _$precursorBatchTriggerEnum_manual,
+      _$precursorBatchTriggerEnum_cycle,
+    ]);
 
 const PrecursorBatchStatusEnum _$precursorBatchStatusEnum_running =
     const PrecursorBatchStatusEnum._('running');
@@ -81,11 +81,11 @@ PrecursorBatchStatusEnum _$precursorBatchStatusEnumValueOf(String name) {
 
 final BuiltSet<PrecursorBatchStatusEnum> _$precursorBatchStatusEnumValues =
     BuiltSet<PrecursorBatchStatusEnum>(const <PrecursorBatchStatusEnum>[
-  _$precursorBatchStatusEnum_running,
-  _$precursorBatchStatusEnum_done,
-  _$precursorBatchStatusEnum_failed,
-  _$precursorBatchStatusEnum_cancelled,
-]);
+      _$precursorBatchStatusEnum_running,
+      _$precursorBatchStatusEnum_done,
+      _$precursorBatchStatusEnum_failed,
+      _$precursorBatchStatusEnum_cancelled,
+    ]);
 
 const PrecursorBatchMethodEnum _$precursorBatchMethodEnum_BH =
     const PrecursorBatchMethodEnum._('BH');
@@ -105,9 +105,9 @@ PrecursorBatchMethodEnum _$precursorBatchMethodEnumValueOf(String name) {
 
 final BuiltSet<PrecursorBatchMethodEnum> _$precursorBatchMethodEnumValues =
     BuiltSet<PrecursorBatchMethodEnum>(const <PrecursorBatchMethodEnum>[
-  _$precursorBatchMethodEnum_BH,
-  _$precursorBatchMethodEnum_BY,
-]);
+      _$precursorBatchMethodEnum_BH,
+      _$precursorBatchMethodEnum_BY,
+    ]);
 
 Serializer<PrecursorBatchModeEnum> _$precursorBatchModeEnumSerializer =
     _$PrecursorBatchModeEnumSerializer();
@@ -135,15 +135,20 @@ class _$PrecursorBatchModeEnumSerializer
   final String wireName = 'PrecursorBatchModeEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorBatchModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorBatchModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PrecursorBatchModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorBatchModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PrecursorBatchModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorBatchModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorBatchTriggerEnumSerializer
@@ -165,16 +170,20 @@ class _$PrecursorBatchTriggerEnumSerializer
   final String wireName = 'PrecursorBatchTriggerEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorBatchTriggerEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorBatchTriggerEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorBatchTriggerEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorBatchTriggerEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorBatchTriggerEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorBatchStatusEnumSerializer
@@ -198,16 +207,20 @@ class _$PrecursorBatchStatusEnumSerializer
   final String wireName = 'PrecursorBatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorBatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorBatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorBatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorBatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorBatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorBatchMethodEnumSerializer
@@ -227,16 +240,20 @@ class _$PrecursorBatchMethodEnumSerializer
   final String wireName = 'PrecursorBatchMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorBatchMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorBatchMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorBatchMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorBatchMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorBatchMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorBatch extends PrecursorBatch {
@@ -280,26 +297,26 @@ class _$PrecursorBatch extends PrecursorBatch {
   factory _$PrecursorBatch([void Function(PrecursorBatchBuilder)? updates]) =>
       (PrecursorBatchBuilder()..update(updates))._build();
 
-  _$PrecursorBatch._(
-      {required this.id,
-      this.jobId,
-      required this.mode,
-      this.trigger,
-      required this.status,
-      required this.startedAt,
-      this.finishedAt,
-      required this.candidatesGenerated,
-      required this.tested,
-      required this.capped,
-      this.insufficient,
-      required this.survivors,
-      required this.validated,
-      required this.q,
-      required this.method,
-      this.windows,
-      this.error,
-      this.manifestId})
-      : super._();
+  _$PrecursorBatch._({
+    required this.id,
+    this.jobId,
+    required this.mode,
+    this.trigger,
+    required this.status,
+    required this.startedAt,
+    this.finishedAt,
+    required this.candidatesGenerated,
+    required this.tested,
+    required this.capped,
+    this.insufficient,
+    required this.survivors,
+    required this.validated,
+    required this.q,
+    required this.method,
+    this.windows,
+    this.error,
+    this.manifestId,
+  }) : super._();
   @override
   PrecursorBatch rebuild(void Function(PrecursorBatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -506,33 +523,64 @@ class PrecursorBatchBuilder
   _$PrecursorBatch _build() {
     _$PrecursorBatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorBatch._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PrecursorBatch', 'id'),
+              id,
+              r'PrecursorBatch',
+              'id',
+            ),
             jobId: jobId,
             mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'PrecursorBatch', 'mode'),
+              mode,
+              r'PrecursorBatch',
+              'mode',
+            ),
             trigger: trigger,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'PrecursorBatch', 'status'),
+              status,
+              r'PrecursorBatch',
+              'status',
+            ),
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'PrecursorBatch', 'startedAt'),
+              startedAt,
+              r'PrecursorBatch',
+              'startedAt',
+            ),
             finishedAt: finishedAt,
             candidatesGenerated: BuiltValueNullFieldError.checkNotNull(
-                candidatesGenerated, r'PrecursorBatch', 'candidatesGenerated'),
+              candidatesGenerated,
+              r'PrecursorBatch',
+              'candidatesGenerated',
+            ),
             tested: BuiltValueNullFieldError.checkNotNull(
-                tested, r'PrecursorBatch', 'tested'),
+              tested,
+              r'PrecursorBatch',
+              'tested',
+            ),
             capped: BuiltValueNullFieldError.checkNotNull(
-                capped, r'PrecursorBatch', 'capped'),
+              capped,
+              r'PrecursorBatch',
+              'capped',
+            ),
             insufficient: insufficient,
             survivors: BuiltValueNullFieldError.checkNotNull(
-                survivors, r'PrecursorBatch', 'survivors'),
+              survivors,
+              r'PrecursorBatch',
+              'survivors',
+            ),
             validated: BuiltValueNullFieldError.checkNotNull(
-                validated, r'PrecursorBatch', 'validated'),
+              validated,
+              r'PrecursorBatch',
+              'validated',
+            ),
             q: BuiltValueNullFieldError.checkNotNull(q, r'PrecursorBatch', 'q'),
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'PrecursorBatch', 'method'),
+              method,
+              r'PrecursorBatch',
+              'method',
+            ),
             windows: _windows?.build(),
             error: error,
             manifestId: manifestId,
@@ -544,7 +592,10 @@ class PrecursorBatchBuilder
         _windows?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorBatch', _$failedField, e.toString());
+          r'PrecursorBatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

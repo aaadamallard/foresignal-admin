@@ -24,9 +24,9 @@ MeGroupsInnerRoleEnum _$meGroupsInnerRoleEnumValueOf(String name) {
 
 final BuiltSet<MeGroupsInnerRoleEnum> _$meGroupsInnerRoleEnumValues =
     BuiltSet<MeGroupsInnerRoleEnum>(const <MeGroupsInnerRoleEnum>[
-  _$meGroupsInnerRoleEnum_member,
-  _$meGroupsInnerRoleEnum_manager,
-]);
+      _$meGroupsInnerRoleEnum_member,
+      _$meGroupsInnerRoleEnum_manager,
+    ]);
 
 Serializer<MeGroupsInnerRoleEnum> _$meGroupsInnerRoleEnumSerializer =
     _$MeGroupsInnerRoleEnumSerializer();
@@ -48,15 +48,20 @@ class _$MeGroupsInnerRoleEnumSerializer
   final String wireName = 'MeGroupsInnerRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, MeGroupsInnerRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeGroupsInnerRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MeGroupsInnerRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeGroupsInnerRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MeGroupsInnerRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeGroupsInnerRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeGroupsInner extends MeGroupsInner {
@@ -71,7 +76,7 @@ class _$MeGroupsInner extends MeGroupsInner {
       (MeGroupsInnerBuilder()..update(updates))._build();
 
   _$MeGroupsInner._({required this.id, required this.name, required this.role})
-      : super._();
+    : super._();
   @override
   MeGroupsInner rebuild(void Function(MeGroupsInnerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -153,13 +158,20 @@ class MeGroupsInnerBuilder
   MeGroupsInner build() => _build();
 
   _$MeGroupsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MeGroupsInner._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'MeGroupsInner', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'MeGroupsInner', 'name'),
+            name,
+            r'MeGroupsInner',
+            'name',
+          ),
           role: BuiltValueNullFieldError.checkNotNull(
-              role, r'MeGroupsInner', 'role'),
+            role,
+            r'MeGroupsInner',
+            'role',
+          ),
         );
     replace(_$result);
     return _$result;

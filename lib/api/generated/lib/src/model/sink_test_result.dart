@@ -65,10 +65,7 @@ class _$SinkTestResultSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'ok';
-    yield serializers.serialize(
-      object.ok,
-      specifiedType: const FullType(bool),
-    );
+    yield serializers.serialize(object.ok, specifiedType: const FullType(bool));
     yield r'phase';
     yield serializers.serialize(
       object.phase,
@@ -90,8 +87,10 @@ class _$SinkTestResultSerializer
       yield r'details';
       yield serializers.serialize(
         object.details,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -102,9 +101,11 @@ class _$SinkTestResultSerializer
     SinkTestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,40 +121,52 @@ class _$SinkTestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ok':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.ok = valueDes;
           break;
         case r'phase':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SinkTestResultPhaseEnum),
-          ) as SinkTestResultPhaseEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SinkTestResultPhaseEnum),
+                  )
+                  as SinkTestResultPhaseEnum;
           result.phase = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.message = valueDes;
           break;
         case r'latencyMs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.latencyMs = valueDes;
           break;
         case r'details':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.details.replace(valueDes);
           break;

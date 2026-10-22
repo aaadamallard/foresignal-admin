@@ -23,14 +23,14 @@ class _$ForecastInput extends ForecastInput {
   factory _$ForecastInput([void Function(ForecastInputBuilder)? updates]) =>
       (ForecastInputBuilder()..update(updates))._build();
 
-  _$ForecastInput._(
-      {this.probability,
-      this.distribution,
-      this.quantiles,
-      this.rationale,
-      this.citations,
-      this.forecasterId})
-      : super._();
+  _$ForecastInput._({
+    this.probability,
+    this.distribution,
+    this.quantiles,
+    this.rationale,
+    this.citations,
+    this.forecasterId,
+  }) : super._();
   @override
   ForecastInput rebuild(void Function(ForecastInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -142,7 +142,8 @@ class ForecastInputBuilder
   _$ForecastInput _build() {
     _$ForecastInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastInput._(
             probability: probability,
             distribution: _distribution?.build(),
@@ -163,7 +164,10 @@ class ForecastInputBuilder
         _citations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastInput', _$failedField, e.toString());
+          r'ForecastInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

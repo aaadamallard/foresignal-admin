@@ -19,12 +19,12 @@ class _$HistoryPage extends HistoryPage {
   factory _$HistoryPage([void Function(HistoryPageBuilder)? updates]) =>
       (HistoryPageBuilder()..update(updates))._build();
 
-  _$HistoryPage._(
-      {required this.items,
-      this.nextCursor,
-      this.attributions,
-      this.licenceFiltered})
-      : super._();
+  _$HistoryPage._({
+    required this.items,
+    this.nextCursor,
+    this.attributions,
+    this.licenceFiltered,
+  }) : super._();
   @override
   HistoryPage rebuild(void Function(HistoryPageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -119,7 +119,8 @@ class HistoryPageBuilder implements Builder<HistoryPage, HistoryPageBuilder> {
   _$HistoryPage _build() {
     _$HistoryPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HistoryPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -136,7 +137,10 @@ class HistoryPageBuilder implements Builder<HistoryPage, HistoryPageBuilder> {
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HistoryPage', _$failedField, e.toString());
+          r'HistoryPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

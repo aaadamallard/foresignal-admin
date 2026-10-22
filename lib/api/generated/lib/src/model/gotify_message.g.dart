@@ -20,8 +20,8 @@ GotifyMessageAppidEnum _$gotifyMessageAppidEnumValueOf(String name) {
 
 final BuiltSet<GotifyMessageAppidEnum> _$gotifyMessageAppidEnumValues =
     BuiltSet<GotifyMessageAppidEnum>(const <GotifyMessageAppidEnum>[
-  _$gotifyMessageAppidEnum_number1,
-]);
+      _$gotifyMessageAppidEnum_number1,
+    ]);
 
 Serializer<GotifyMessageAppidEnum> _$gotifyMessageAppidEnumSerializer =
     _$GotifyMessageAppidEnumSerializer();
@@ -41,15 +41,20 @@ class _$GotifyMessageAppidEnumSerializer
   final String wireName = 'GotifyMessageAppidEnum';
 
   @override
-  Object serialize(Serializers serializers, GotifyMessageAppidEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GotifyMessageAppidEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  GotifyMessageAppidEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GotifyMessageAppidEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  GotifyMessageAppidEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GotifyMessageAppidEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GotifyMessage extends GotifyMessage {
@@ -71,15 +76,15 @@ class _$GotifyMessage extends GotifyMessage {
   factory _$GotifyMessage([void Function(GotifyMessageBuilder)? updates]) =>
       (GotifyMessageBuilder()..update(updates))._build();
 
-  _$GotifyMessage._(
-      {required this.id,
-      required this.appid,
-      required this.date,
-      this.title,
-      required this.message,
-      this.priority,
-      this.extras})
-      : super._();
+  _$GotifyMessage._({
+    required this.id,
+    required this.appid,
+    required this.date,
+    this.title,
+    required this.message,
+    this.priority,
+    this.extras,
+  }) : super._();
   @override
   GotifyMessage rebuild(void Function(GotifyMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -197,17 +202,30 @@ class GotifyMessageBuilder
   _$GotifyMessage _build() {
     _$GotifyMessage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$GotifyMessage._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GotifyMessage', 'id'),
+              id,
+              r'GotifyMessage',
+              'id',
+            ),
             appid: BuiltValueNullFieldError.checkNotNull(
-                appid, r'GotifyMessage', 'appid'),
+              appid,
+              r'GotifyMessage',
+              'appid',
+            ),
             date: BuiltValueNullFieldError.checkNotNull(
-                date, r'GotifyMessage', 'date'),
+              date,
+              r'GotifyMessage',
+              'date',
+            ),
             title: title,
             message: BuiltValueNullFieldError.checkNotNull(
-                message, r'GotifyMessage', 'message'),
+              message,
+              r'GotifyMessage',
+              'message',
+            ),
             priority: priority,
             extras: _extras?.build(),
           );
@@ -218,7 +236,10 @@ class GotifyMessageBuilder
         _extras?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GotifyMessage', _$failedField, e.toString());
+          r'GotifyMessage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

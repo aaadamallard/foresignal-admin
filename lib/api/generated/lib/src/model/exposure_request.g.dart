@@ -14,7 +14,8 @@ const ExposureRequestPopulationEnum _$exposureRequestPopulationEnum_required_ =
     const ExposureRequestPopulationEnum._('required_');
 
 ExposureRequestPopulationEnum _$exposureRequestPopulationEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'auto':
       return _$exposureRequestPopulationEnum_auto;
@@ -28,15 +29,16 @@ ExposureRequestPopulationEnum _$exposureRequestPopulationEnumValueOf(
 }
 
 final BuiltSet<ExposureRequestPopulationEnum>
-    _$exposureRequestPopulationEnumValues = BuiltSet<
-        ExposureRequestPopulationEnum>(const <ExposureRequestPopulationEnum>[
-  _$exposureRequestPopulationEnum_auto,
-  _$exposureRequestPopulationEnum_off,
-  _$exposureRequestPopulationEnum_required_,
-]);
+_$exposureRequestPopulationEnumValues = BuiltSet<ExposureRequestPopulationEnum>(
+  const <ExposureRequestPopulationEnum>[
+    _$exposureRequestPopulationEnum_auto,
+    _$exposureRequestPopulationEnum_off,
+    _$exposureRequestPopulationEnum_required_,
+  ],
+);
 
 Serializer<ExposureRequestPopulationEnum>
-    _$exposureRequestPopulationEnumSerializer =
+_$exposureRequestPopulationEnumSerializer =
     _$ExposureRequestPopulationEnumSerializer();
 
 class _$ExposureRequestPopulationEnumSerializer
@@ -59,16 +61,19 @@ class _$ExposureRequestPopulationEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExposureRequestPopulationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExposureRequestPopulationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExposureRequestPopulationEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExposureRequestPopulationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExposureRequestPopulationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExposureRequest extends ExposureRequest {
@@ -86,13 +91,13 @@ class _$ExposureRequest extends ExposureRequest {
   factory _$ExposureRequest([void Function(ExposureRequestBuilder)? updates]) =>
       (ExposureRequestBuilder()..update(updates))._build();
 
-  _$ExposureRequest._(
-      {this.geometry,
-      this.placeId,
-      this.eventId,
-      this.population,
-      this.dependents})
-      : super._();
+  _$ExposureRequest._({
+    this.geometry,
+    this.placeId,
+    this.eventId,
+    this.population,
+    this.dependents,
+  }) : super._();
   @override
   ExposureRequest rebuild(void Function(ExposureRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -193,7 +198,8 @@ class ExposureRequestBuilder
   _$ExposureRequest _build() {
     _$ExposureRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExposureRequest._(
             geometry: _geometry?.build(),
             placeId: placeId,
@@ -208,7 +214,10 @@ class ExposureRequestBuilder
         _geometry?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExposureRequest', _$failedField, e.toString());
+          r'ExposureRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -10,15 +10,15 @@ class _$MappingTestRequest extends MappingTestRequest {
   @override
   final RecordMapping? mapping;
 
-  factory _$MappingTestRequest(
-          [void Function(MappingTestRequestBuilder)? updates]) =>
-      (MappingTestRequestBuilder()..update(updates))._build();
+  factory _$MappingTestRequest([
+    void Function(MappingTestRequestBuilder)? updates,
+  ]) => (MappingTestRequestBuilder()..update(updates))._build();
 
   _$MappingTestRequest._({this.mapping}) : super._();
   @override
   MappingTestRequest rebuild(
-          void Function(MappingTestRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingTestRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingTestRequestBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$MappingTestRequest extends MappingTestRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'MappingTestRequest')
-          ..add('mapping', mapping))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'MappingTestRequest',
+    )..add('mapping', mapping)).toString();
   }
 }
 
@@ -84,10 +84,7 @@ class MappingTestRequestBuilder
   _$MappingTestRequest _build() {
     _$MappingTestRequest _$result;
     try {
-      _$result = _$v ??
-          _$MappingTestRequest._(
-            mapping: _mapping?.build(),
-          );
+      _$result = _$v ?? _$MappingTestRequest._(mapping: _mapping?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95,7 +92,10 @@ class MappingTestRequestBuilder
         _mapping?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingTestRequest', _$failedField, e.toString());
+          r'MappingTestRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

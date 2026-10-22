@@ -92,11 +92,9 @@ class ExportJobPageBuilder
   _$ExportJobPage _build() {
     _$ExportJobPage _$result;
     try {
-      _$result = _$v ??
-          _$ExportJobPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ExportJobPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class ExportJobPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExportJobPage', _$failedField, e.toString());
+          r'ExportJobPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

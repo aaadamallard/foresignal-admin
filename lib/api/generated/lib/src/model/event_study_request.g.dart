@@ -20,18 +20,18 @@ class _$EventStudyRequest extends EventStudyRequest {
   @override
   final DateTime? asOf;
 
-  factory _$EventStudyRequest(
-          [void Function(EventStudyRequestBuilder)? updates]) =>
-      (EventStudyRequestBuilder()..update(updates))._build();
+  factory _$EventStudyRequest([
+    void Function(EventStudyRequestBuilder)? updates,
+  ]) => (EventStudyRequestBuilder()..update(updates))._build();
 
-  _$EventStudyRequest._(
-      {this.name,
-      required this.selector,
-      required this.target,
-      required this.from,
-      required this.to,
-      this.asOf})
-      : super._();
+  _$EventStudyRequest._({
+    this.name,
+    required this.selector,
+    required this.target,
+    required this.from,
+    required this.to,
+    this.asOf,
+  }) : super._();
   @override
   EventStudyRequest rebuild(void Function(EventStudyRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -141,16 +141,26 @@ class EventStudyRequestBuilder
   _$EventStudyRequest _build() {
     _$EventStudyRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStudyRequest._(
             name: name,
             selector: selector.build(),
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'EventStudyRequest', 'target'),
+              target,
+              r'EventStudyRequest',
+              'target',
+            ),
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'EventStudyRequest', 'from'),
+              from,
+              r'EventStudyRequest',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, r'EventStudyRequest', 'to'),
+              to,
+              r'EventStudyRequest',
+              'to',
+            ),
             asOf: asOf,
           );
     } catch (_) {
@@ -160,7 +170,10 @@ class EventStudyRequestBuilder
         selector.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStudyRequest', _$failedField, e.toString());
+          r'EventStudyRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

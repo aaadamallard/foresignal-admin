@@ -14,17 +14,19 @@ class _$EventStudyResultWindows extends EventStudyResultWindows {
   @override
   final BuiltList<int> event;
 
-  factory _$EventStudyResultWindows(
-          [void Function(EventStudyResultWindowsBuilder)? updates]) =>
-      (EventStudyResultWindowsBuilder()..update(updates))._build();
+  factory _$EventStudyResultWindows([
+    void Function(EventStudyResultWindowsBuilder)? updates,
+  ]) => (EventStudyResultWindowsBuilder()..update(updates))._build();
 
-  _$EventStudyResultWindows._(
-      {required this.estimation, required this.preEvent, required this.event})
-      : super._();
+  _$EventStudyResultWindows._({
+    required this.estimation,
+    required this.preEvent,
+    required this.event,
+  }) : super._();
   @override
   EventStudyResultWindows rebuild(
-          void Function(EventStudyResultWindowsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStudyResultWindowsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStudyResultWindowsBuilder toBuilder() =>
@@ -108,7 +110,8 @@ class EventStudyResultWindowsBuilder
   _$EventStudyResultWindows _build() {
     _$EventStudyResultWindows _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStudyResultWindows._(
             estimation: estimation.build(),
             preEvent: preEvent.build(),
@@ -125,7 +128,10 @@ class EventStudyResultWindowsBuilder
         event.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStudyResultWindows', _$failedField, e.toString());
+          r'EventStudyResultWindows',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -21,8 +21,10 @@ part 'situation_join_reason_components.g.dart';
 @BuiltValue()
 abstract class SituationJoinReasonComponents
     implements
-        Built<SituationJoinReasonComponents,
-            SituationJoinReasonComponentsBuilder> {
+        Built<
+          SituationJoinReasonComponents,
+          SituationJoinReasonComponentsBuilder
+        > {
   /// Region contribution (0.30 shared admin1, 0.20 shared country)
   @BuiltValueField(wireName: r'region')
   num? get region;
@@ -53,9 +55,9 @@ abstract class SituationJoinReasonComponents
 
   SituationJoinReasonComponents._();
 
-  factory SituationJoinReasonComponents(
-          [void updates(SituationJoinReasonComponentsBuilder b)]) =
-      _$SituationJoinReasonComponents;
+  factory SituationJoinReasonComponents([
+    void updates(SituationJoinReasonComponentsBuilder b),
+  ]) = _$SituationJoinReasonComponents;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationJoinReasonComponentsBuilder b) => b;
@@ -70,7 +72,7 @@ class _$SituationJoinReasonComponentsSerializer
   @override
   final Iterable<Type> types = const [
     SituationJoinReasonComponents,
-    _$SituationJoinReasonComponents
+    _$SituationJoinReasonComponents,
   ];
 
   @override
@@ -138,9 +140,11 @@ class _$SituationJoinReasonComponentsSerializer
     SituationJoinReasonComponents object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,58 +160,72 @@ class _$SituationJoinReasonComponentsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'region':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.region = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;
         case r'entity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.entity = valueDes;
           break;
         case r'topic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.topic = valueDes;
           break;
         case r'textSimilarity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.textSimilarity = valueDes;
           break;
         case r'theme':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.theme = valueDes;
           break;
         case r'recencyHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.recencyHours = valueDes;
           break;

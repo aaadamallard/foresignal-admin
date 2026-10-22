@@ -90,9 +90,11 @@ class _$EdpOriginSerializer implements PrimitiveSerializer<EdpOrigin> {
     EdpOrigin object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,34 +110,43 @@ class _$EdpOriginSerializer implements PrimitiveSerializer<EdpOrigin> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'originator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.originator = valueDes;
           break;
         case r'class':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EdpOriginClass_Enum),
-          ) as EdpOriginClass_Enum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(EdpOriginClass_Enum),
+                  )
+                  as EdpOriginClass_Enum?;
           if (valueDes == null) continue;
           result.class_ = valueDes;
           break;
         case r'upstreamId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.upstreamId = valueDes;
           break;
         case r'derivedFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.derivedFrom.replace(valueDes);
           break;

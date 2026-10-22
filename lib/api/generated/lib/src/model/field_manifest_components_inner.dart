@@ -17,8 +17,10 @@ part 'field_manifest_components_inner.g.dart';
 @BuiltValue()
 abstract class FieldManifestComponentsInner
     implements
-        Built<FieldManifestComponentsInner,
-            FieldManifestComponentsInnerBuilder> {
+        Built<
+          FieldManifestComponentsInner,
+          FieldManifestComponentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'name')
   FieldManifestComponentsInnerNameEnum get name;
   // enum nameEnum {  u,  v,  };
@@ -29,9 +31,9 @@ abstract class FieldManifestComponentsInner
 
   FieldManifestComponentsInner._();
 
-  factory FieldManifestComponentsInner(
-          [void updates(FieldManifestComponentsInnerBuilder b)]) =
-      _$FieldManifestComponentsInner;
+  factory FieldManifestComponentsInner([
+    void updates(FieldManifestComponentsInnerBuilder b),
+  ]) = _$FieldManifestComponentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FieldManifestComponentsInnerBuilder b) => b;
@@ -46,7 +48,7 @@ class _$FieldManifestComponentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     FieldManifestComponentsInner,
-    _$FieldManifestComponentsInner
+    _$FieldManifestComponentsInner,
   ];
 
   @override
@@ -75,9 +77,11 @@ class _$FieldManifestComponentsInnerSerializer
     FieldManifestComponentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,17 +97,20 @@ class _$FieldManifestComponentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FieldManifestComponentsInnerNameEnum),
-          ) as FieldManifestComponentsInnerNameEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      FieldManifestComponentsInnerNameEnum,
+                    ),
+                  )
+                  as FieldManifestComponentsInnerNameEnum;
           result.name = valueDes;
           break;
         case r'offset':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.offset = valueDes;
           break;
         default:

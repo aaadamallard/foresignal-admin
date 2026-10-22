@@ -179,8 +179,10 @@ class _$AchEvidenceSerializer implements PrimitiveSerializer<AchEvidence> {
     yield r'ratings';
     yield serializers.serialize(
       object.ratings,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType(AchEvidenceRatingsEnum)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(AchEvidenceRatingsEnum),
+      ]),
     );
     if (object.nonDiagnostic != null) {
       yield r'nonDiagnostic';
@@ -217,8 +219,9 @@ class _$AchEvidenceSerializer implements PrimitiveSerializer<AchEvidence> {
       yield r'provenanceChain';
       yield serializers.serialize(
         object.provenanceChain,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ProvenanceChainEntry)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProvenanceChainEntry),
+        ]),
       );
     }
     if (object.refs != null) {
@@ -232,8 +235,9 @@ class _$AchEvidenceSerializer implements PrimitiveSerializer<AchEvidence> {
       yield r'caveats';
       yield serializers.serialize(
         object.caveats,
-        specifiedType:
-            const FullType(BuiltList, [FullType(AchEvidenceCaveatsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AchEvidenceCaveatsEnum),
+        ]),
       );
     }
   }
@@ -244,9 +248,11 @@ class _$AchEvidenceSerializer implements PrimitiveSerializer<AchEvidence> {
     AchEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -262,141 +268,182 @@ class _$AchEvidenceSerializer implements PrimitiveSerializer<AchEvidence> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AchEvidenceSource_Enum),
-          ) as AchEvidenceSource_Enum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AchEvidenceSource_Enum),
+                  )
+                  as AchEvidenceSource_Enum;
           result.source_ = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'evidenceGroupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.evidenceGroupId = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.description = valueDes;
           break;
         case r'credibility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AchEvidenceCredibilityEnum),
-          ) as AchEvidenceCredibilityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AchEvidenceCredibilityEnum),
+                  )
+                  as AchEvidenceCredibilityEnum;
           result.credibility = valueDes;
           break;
         case r'relevance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AchEvidenceRelevanceEnum),
-          ) as AchEvidenceRelevanceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AchEvidenceRelevanceEnum),
+                  )
+                  as AchEvidenceRelevanceEnum;
           result.relevance = valueDes;
           break;
         case r'weight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.weight = valueDes;
           break;
         case r'ratings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType(AchEvidenceRatingsEnum)]),
-          ) as BuiltMap<String, AchEvidenceRatingsEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(AchEvidenceRatingsEnum),
+                    ]),
+                  )
+                  as BuiltMap<String, AchEvidenceRatingsEnum>;
           result.ratings.replace(valueDes);
           break;
         case r'nonDiagnostic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.nonDiagnostic = valueDes;
           break;
         case r'addedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.addedBy = valueDes;
           break;
         case r'addedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.addedAt = valueDes;
           break;
         case r'removedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.removedAt = valueDes;
           break;
         case r'evidenceItemId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.evidenceItemId = valueDes;
           break;
         case r'provenanceChain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProvenanceChainEntry)]),
-          ) as BuiltList<ProvenanceChainEntry>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProvenanceChainEntry),
+                    ]),
+                  )
+                  as BuiltList<ProvenanceChainEntry>?;
           if (valueDes == null) continue;
           result.provenanceChain.replace(valueDes);
           break;
         case r'refs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.refs.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AchEvidenceCaveatsEnum)]),
-          ) as BuiltList<AchEvidenceCaveatsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AchEvidenceCaveatsEnum),
+                    ]),
+                  )
+                  as BuiltList<AchEvidenceCaveatsEnum>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;

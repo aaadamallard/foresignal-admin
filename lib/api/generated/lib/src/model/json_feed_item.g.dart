@@ -31,18 +31,18 @@ class _$JsonFeedItem extends JsonFeedItem {
   factory _$JsonFeedItem([void Function(JsonFeedItemBuilder)? updates]) =>
       (JsonFeedItemBuilder()..update(updates))._build();
 
-  _$JsonFeedItem._(
-      {required this.id,
-      this.url,
-      required this.title,
-      this.contentHtml,
-      this.contentText,
-      this.datePublished,
-      this.dateModified,
-      this.tags,
-      this.authors,
-      this.foresignal})
-      : super._();
+  _$JsonFeedItem._({
+    required this.id,
+    this.url,
+    required this.title,
+    this.contentHtml,
+    this.contentText,
+    this.datePublished,
+    this.dateModified,
+    this.tags,
+    this.authors,
+    this.foresignal,
+  }) : super._();
   @override
   JsonFeedItem rebuild(void Function(JsonFeedItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -188,13 +188,20 @@ class JsonFeedItemBuilder
   _$JsonFeedItem _build() {
     _$JsonFeedItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$JsonFeedItem._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'JsonFeedItem', 'id'),
+              id,
+              r'JsonFeedItem',
+              'id',
+            ),
             url: url,
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'JsonFeedItem', 'title'),
+              title,
+              r'JsonFeedItem',
+              'title',
+            ),
             contentHtml: contentHtml,
             contentText: contentText,
             datePublished: datePublished,
@@ -214,7 +221,10 @@ class JsonFeedItemBuilder
         _foresignal?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'JsonFeedItem', _$failedField, e.toString());
+          r'JsonFeedItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

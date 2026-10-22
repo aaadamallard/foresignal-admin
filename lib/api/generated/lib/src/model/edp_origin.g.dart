@@ -48,15 +48,15 @@ EdpOriginClass_Enum _$edpOriginClassEnumValueOf(String name) {
 
 final BuiltSet<EdpOriginClass_Enum> _$edpOriginClassEnumValues =
     BuiltSet<EdpOriginClass_Enum>(const <EdpOriginClass_Enum>[
-  _$edpOriginClassEnum_sensorNetwork,
-  _$edpOriginClassEnum_agency,
-  _$edpOriginClassEnum_aggregator,
-  _$edpOriginClassEnum_media,
-  _$edpOriginClassEnum_crowd,
-  _$edpOriginClassEnum_social,
-  _$edpOriginClassEnum_operator_,
-  _$edpOriginClassEnum_derived,
-]);
+      _$edpOriginClassEnum_sensorNetwork,
+      _$edpOriginClassEnum_agency,
+      _$edpOriginClassEnum_aggregator,
+      _$edpOriginClassEnum_media,
+      _$edpOriginClassEnum_crowd,
+      _$edpOriginClassEnum_social,
+      _$edpOriginClassEnum_operator_,
+      _$edpOriginClassEnum_derived,
+    ]);
 
 Serializer<EdpOriginClass_Enum> _$edpOriginClassEnumSerializer =
     _$EdpOriginClass_EnumSerializer();
@@ -90,15 +90,20 @@ class _$EdpOriginClass_EnumSerializer
   final String wireName = 'EdpOriginClass_Enum';
 
   @override
-  Object serialize(Serializers serializers, EdpOriginClass_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpOriginClass_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpOriginClass_Enum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpOriginClass_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpOriginClass_Enum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpOriginClass_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpOrigin extends EdpOrigin {
@@ -114,12 +119,12 @@ class _$EdpOrigin extends EdpOrigin {
   factory _$EdpOrigin([void Function(EdpOriginBuilder)? updates]) =>
       (EdpOriginBuilder()..update(updates))._build();
 
-  _$EdpOrigin._(
-      {required this.originator,
-      this.class_,
-      this.upstreamId,
-      this.derivedFrom})
-      : super._();
+  _$EdpOrigin._({
+    required this.originator,
+    this.class_,
+    this.upstreamId,
+    this.derivedFrom,
+  }) : super._();
   @override
   EdpOrigin rebuild(void Function(EdpOriginBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -212,10 +217,14 @@ class EdpOriginBuilder implements Builder<EdpOrigin, EdpOriginBuilder> {
   _$EdpOrigin _build() {
     _$EdpOrigin _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpOrigin._(
             originator: BuiltValueNullFieldError.checkNotNull(
-                originator, r'EdpOrigin', 'originator'),
+              originator,
+              r'EdpOrigin',
+              'originator',
+            ),
             class_: class_,
             upstreamId: upstreamId,
             derivedFrom: _derivedFrom?.build(),
@@ -227,7 +236,10 @@ class EdpOriginBuilder implements Builder<EdpOrigin, EdpOriginBuilder> {
         _derivedFrom?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpOrigin', _$failedField, e.toString());
+          r'EdpOrigin',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

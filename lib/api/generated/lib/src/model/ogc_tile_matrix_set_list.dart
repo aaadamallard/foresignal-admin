@@ -38,7 +38,7 @@ class _$OgcTileMatrixSetListSerializer
   @override
   final Iterable<Type> types = const [
     OgcTileMatrixSetList,
-    _$OgcTileMatrixSetList
+    _$OgcTileMatrixSetList,
   ];
 
   @override
@@ -52,8 +52,9 @@ class _$OgcTileMatrixSetListSerializer
     yield r'tileMatrixSets';
     yield serializers.serialize(
       object.tileMatrixSets,
-      specifiedType: const FullType(
-          BuiltList, [FullType(OgcTileMatrixSetListTileMatrixSetsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OgcTileMatrixSetListTileMatrixSetsInner),
+      ]),
     );
   }
 
@@ -63,9 +64,11 @@ class _$OgcTileMatrixSetListSerializer
     OgcTileMatrixSetList object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,11 +84,14 @@ class _$OgcTileMatrixSetListSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tileMatrixSets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(OgcTileMatrixSetListTileMatrixSetsInner)]),
-          ) as BuiltList<OgcTileMatrixSetListTileMatrixSetsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcTileMatrixSetListTileMatrixSetsInner),
+                    ]),
+                  )
+                  as BuiltList<OgcTileMatrixSetListTileMatrixSetsInner>;
           result.tileMatrixSets.replace(valueDes);
           break;
         default:

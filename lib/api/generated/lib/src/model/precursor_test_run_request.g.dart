@@ -16,16 +16,16 @@ class _$PrecursorTestRunRequest extends PrecursorTestRunRequest {
   @override
   final int? toSeq;
 
-  factory _$PrecursorTestRunRequest(
-          [void Function(PrecursorTestRunRequestBuilder)? updates]) =>
-      (PrecursorTestRunRequestBuilder()..update(updates))._build();
+  factory _$PrecursorTestRunRequest([
+    void Function(PrecursorTestRunRequestBuilder)? updates,
+  ]) => (PrecursorTestRunRequestBuilder()..update(updates))._build();
 
   _$PrecursorTestRunRequest._({this.from, this.to, this.fromSeq, this.toSeq})
-      : super._();
+    : super._();
   @override
   PrecursorTestRunRequest rebuild(
-          void Function(PrecursorTestRunRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorTestRunRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorTestRunRequestBuilder toBuilder() =>
@@ -114,7 +114,8 @@ class PrecursorTestRunRequestBuilder
   PrecursorTestRunRequest build() => _build();
 
   _$PrecursorTestRunRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorTestRunRequest._(
           from: from,
           to: to,

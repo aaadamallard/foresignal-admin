@@ -92,11 +92,9 @@ class HoldVersionPageBuilder
   _$HoldVersionPage _build() {
     _$HoldVersionPage _$result;
     try {
-      _$result = _$v ??
-          _$HoldVersionPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$HoldVersionPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class HoldVersionPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HoldVersionPage', _$failedField, e.toString());
+          r'HoldVersionPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

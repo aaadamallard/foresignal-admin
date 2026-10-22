@@ -12,9 +12,9 @@ class _$MappingFieldUnit extends MappingFieldUnit {
   @override
   final String to;
 
-  factory _$MappingFieldUnit(
-          [void Function(MappingFieldUnitBuilder)? updates]) =>
-      (MappingFieldUnitBuilder()..update(updates))._build();
+  factory _$MappingFieldUnit([
+    void Function(MappingFieldUnitBuilder)? updates,
+  ]) => (MappingFieldUnitBuilder()..update(updates))._build();
 
   _$MappingFieldUnit._({required this.from, required this.to}) : super._();
   @override
@@ -89,12 +89,19 @@ class MappingFieldUnitBuilder
   MappingFieldUnit build() => _build();
 
   _$MappingFieldUnit _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MappingFieldUnit._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'MappingFieldUnit', 'from'),
+            from,
+            r'MappingFieldUnit',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'MappingFieldUnit', 'to'),
+            to,
+            r'MappingFieldUnit',
+            'to',
+          ),
         );
     replace(_$result);
     return _$result;

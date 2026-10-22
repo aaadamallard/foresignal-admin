@@ -118,7 +118,7 @@ class _$NotificationDeliverySerializer
   @override
   final Iterable<Type> types = const [
     NotificationDelivery,
-    _$NotificationDelivery
+    _$NotificationDelivery,
   ];
 
   @override
@@ -130,10 +130,7 @@ class _$NotificationDeliverySerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.id, specifiedType: const FullType(int));
     yield r'event';
     yield serializers.serialize(
       object.event,
@@ -202,8 +199,9 @@ class _$NotificationDeliverySerializer
       yield r'deferredReason';
       yield serializers.serialize(
         object.deferredReason,
-        specifiedType:
-            const FullType.nullable(NotificationDeliveryDeferredReasonEnum),
+        specifiedType: const FullType.nullable(
+          NotificationDeliveryDeferredReasonEnum,
+        ),
       );
     }
     if (object.edited != null) {
@@ -231,8 +229,9 @@ class _$NotificationDeliverySerializer
       yield r'attachmentLevel';
       yield serializers.serialize(
         object.attachmentLevel,
-        specifiedType:
-            const FullType.nullable(NotificationDeliveryAttachmentLevelEnum),
+        specifiedType: const FullType.nullable(
+          NotificationDeliveryAttachmentLevelEnum,
+        ),
       );
     }
     if (object.attachments != null) {
@@ -257,9 +256,11 @@ class _$NotificationDeliverySerializer
     NotificationDelivery object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -275,146 +276,184 @@ class _$NotificationDeliverySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.id = valueDes;
           break;
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NotificationDeliveryEventEnum),
-          ) as NotificationDeliveryEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NotificationDeliveryEventEnum,
+                    ),
+                  )
+                  as NotificationDeliveryEventEnum;
           result.event = valueDes;
           break;
         case r'alertId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alertId = valueDes;
           break;
         case r'briefingRunId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.briefingRunId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NotificationDeliveryStatusEnum),
-          ) as NotificationDeliveryStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NotificationDeliveryStatusEnum,
+                    ),
+                  )
+                  as NotificationDeliveryStatusEnum;
           result.status = valueDes;
           break;
         case r'attempts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.attempts = valueDes;
           break;
         case r'lastError':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lastError = valueDes;
           break;
         case r'nextAttemptAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.nextAttemptAt = valueDes;
           break;
         case r'deliveredAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.deliveredAt = valueDes;
           break;
         case r'notificationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.notificationId = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(NotificationDeliveryKindEnum),
-          ) as NotificationDeliveryKindEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NotificationDeliveryKindEnum,
+                    ),
+                  )
+                  as NotificationDeliveryKindEnum?;
           if (valueDes == null) continue;
           result.kind = valueDes;
           break;
         case r'deferredReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(NotificationDeliveryDeferredReasonEnum),
-          ) as NotificationDeliveryDeferredReasonEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NotificationDeliveryDeferredReasonEnum,
+                    ),
+                  )
+                  as NotificationDeliveryDeferredReasonEnum?;
           if (valueDes == null) continue;
           result.deferredReason = valueDes;
           break;
         case r'edited':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.edited = valueDes;
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;
         case r'escalationStep':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.escalationStep = valueDes;
           break;
         case r'attachmentLevel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                NotificationDeliveryAttachmentLevelEnum),
-          ) as NotificationDeliveryAttachmentLevelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NotificationDeliveryAttachmentLevelEnum,
+                    ),
+                  )
+                  as NotificationDeliveryAttachmentLevelEnum?;
           if (valueDes == null) continue;
           result.attachmentLevel = valueDes;
           break;
         case r'attachments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attachment)]),
-          ) as BuiltList<Attachment>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attachment),
+                    ]),
+                  )
+                  as BuiltList<Attachment>?;
           if (valueDes == null) continue;
           result.attachments.replace(valueDes);
           break;
         case r'shortCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.shortCode = valueDes;
           break;
@@ -516,7 +555,7 @@ class NotificationDeliveryEventEnum extends EnumClass {
       _$notificationDeliveryEventEnum_packagePeriodReceived;
   @BuiltValueEnumConst(wireName: r'chronicle.access.requested')
   static const NotificationDeliveryEventEnum
-      chroniclePeriodAccessPeriodRequested =
+  chroniclePeriodAccessPeriodRequested =
       _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested;
   @BuiltValueEnumConst(wireName: r'saved-search.matches')
   static const NotificationDeliveryEventEnum savedSearchPeriodMatches =

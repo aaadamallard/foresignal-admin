@@ -14,17 +14,19 @@ class _$SocialSettingsVelocity extends SocialSettingsVelocity {
   @override
   final int? dedupHours;
 
-  factory _$SocialSettingsVelocity(
-          [void Function(SocialSettingsVelocityBuilder)? updates]) =>
-      (SocialSettingsVelocityBuilder()..update(updates))._build();
+  factory _$SocialSettingsVelocity([
+    void Function(SocialSettingsVelocityBuilder)? updates,
+  ]) => (SocialSettingsVelocityBuilder()..update(updates))._build();
 
-  _$SocialSettingsVelocity._(
-      {this.minRatio, this.minUniqueAuthors, this.dedupHours})
-      : super._();
+  _$SocialSettingsVelocity._({
+    this.minRatio,
+    this.minUniqueAuthors,
+    this.dedupHours,
+  }) : super._();
   @override
   SocialSettingsVelocity rebuild(
-          void Function(SocialSettingsVelocityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsVelocityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsVelocityBuilder toBuilder() =>
@@ -105,7 +107,8 @@ class SocialSettingsVelocityBuilder
   SocialSettingsVelocity build() => _build();
 
   _$SocialSettingsVelocity _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialSettingsVelocity._(
           minRatio: minRatio,
           minUniqueAuthors: minUniqueAuthors,

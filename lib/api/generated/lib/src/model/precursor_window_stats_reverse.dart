@@ -30,9 +30,9 @@ abstract class PrecursorWindowStatsReverse
 
   PrecursorWindowStatsReverse._();
 
-  factory PrecursorWindowStatsReverse(
-          [void updates(PrecursorWindowStatsReverseBuilder b)]) =
-      _$PrecursorWindowStatsReverse;
+  factory PrecursorWindowStatsReverse([
+    void updates(PrecursorWindowStatsReverseBuilder b),
+  ]) = _$PrecursorWindowStatsReverse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorWindowStatsReverseBuilder b) => b;
@@ -47,7 +47,7 @@ class _$PrecursorWindowStatsReverseSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorWindowStatsReverse,
-    _$PrecursorWindowStatsReverse
+    _$PrecursorWindowStatsReverse,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$PrecursorWindowStatsReverseSerializer
     PrecursorWindowStatsReverse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +105,32 @@ class _$PrecursorWindowStatsReverseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'p':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p = valueDes;
           break;
         case r'statistic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.statistic = valueDes;
           break;
         case r'coMovement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.coMovement = valueDes;
           break;
         default:

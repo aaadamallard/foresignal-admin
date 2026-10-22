@@ -18,17 +18,17 @@ class _$InformationValue extends InformationValue {
   @override
   final BuiltList<InformationValueIndicatorsInner> indicators;
 
-  factory _$InformationValue(
-          [void Function(InformationValueBuilder)? updates]) =>
-      (InformationValueBuilder()..update(updates))._build();
+  factory _$InformationValue([
+    void Function(InformationValueBuilder)? updates,
+  ]) => (InformationValueBuilder()..update(updates))._build();
 
-  _$InformationValue._(
-      {required this.setId,
-      required this.computedAt,
-      required this.entropy,
-      this.version,
-      required this.indicators})
-      : super._();
+  _$InformationValue._({
+    required this.setId,
+    required this.computedAt,
+    required this.entropy,
+    this.version,
+    required this.indicators,
+  }) : super._();
   @override
   InformationValue rebuild(void Function(InformationValueBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -131,14 +131,24 @@ class InformationValueBuilder
   _$InformationValue _build() {
     _$InformationValue _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InformationValue._(
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'InformationValue', 'setId'),
+              setId,
+              r'InformationValue',
+              'setId',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'InformationValue', 'computedAt'),
+              computedAt,
+              r'InformationValue',
+              'computedAt',
+            ),
             entropy: BuiltValueNullFieldError.checkNotNull(
-                entropy, r'InformationValue', 'entropy'),
+              entropy,
+              r'InformationValue',
+              'entropy',
+            ),
             version: version,
             indicators: indicators.build(),
           );
@@ -149,7 +159,10 @@ class InformationValueBuilder
         indicators.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InformationValue', _$failedField, e.toString());
+          r'InformationValue',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

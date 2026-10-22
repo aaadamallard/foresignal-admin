@@ -29,9 +29,9 @@ abstract class ForecastCitationsInner
 
   ForecastCitationsInner._();
 
-  factory ForecastCitationsInner(
-          [void updates(ForecastCitationsInnerBuilder b)]) =
-      _$ForecastCitationsInner;
+  factory ForecastCitationsInner([
+    void updates(ForecastCitationsInnerBuilder b),
+  ]) = _$ForecastCitationsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastCitationsInnerBuilder b) => b;
@@ -46,7 +46,7 @@ class _$ForecastCitationsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ForecastCitationsInner,
-    _$ForecastCitationsInner
+    _$ForecastCitationsInner,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$ForecastCitationsInnerSerializer
     ForecastCitationsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,25 +104,31 @@ class _$ForecastCitationsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'quote':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.quote = valueDes;
           break;
         case r'claim':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.claim = valueDes;
           break;

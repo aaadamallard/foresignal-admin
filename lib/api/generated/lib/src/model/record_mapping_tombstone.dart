@@ -30,9 +30,9 @@ abstract class RecordMappingTombstone
 
   RecordMappingTombstone._();
 
-  factory RecordMappingTombstone(
-          [void updates(RecordMappingTombstoneBuilder b)]) =
-      _$RecordMappingTombstone;
+  factory RecordMappingTombstone([
+    void updates(RecordMappingTombstoneBuilder b),
+  ]) = _$RecordMappingTombstone;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RecordMappingTombstoneBuilder b) => b;
@@ -47,7 +47,7 @@ class _$RecordMappingTombstoneSerializer
   @override
   final Iterable<Type> types = const [
     RecordMappingTombstone,
-    _$RecordMappingTombstone
+    _$RecordMappingTombstone,
   ];
 
   @override
@@ -74,8 +74,9 @@ class _$RecordMappingTombstoneSerializer
       yield r'in';
       yield serializers.serialize(
         object.in_,
-        specifiedType:
-            const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -86,9 +87,11 @@ class _$RecordMappingTombstoneSerializer
     RecordMappingTombstone object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +107,33 @@ class _$RecordMappingTombstoneSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         case r'equals':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.equals = valueDes;
           break;
         case r'in':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType.nullable(JsonObject)]),
-          ) as BuiltList<JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltList<JsonObject?>?;
           if (valueDes == null) continue;
           result.in_.replace(valueDes);
           break;

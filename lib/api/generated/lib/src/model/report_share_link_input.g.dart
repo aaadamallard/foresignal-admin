@@ -10,15 +10,15 @@ class _$ReportShareLinkInput extends ReportShareLinkInput {
   @override
   final DateTime? expiresAt;
 
-  factory _$ReportShareLinkInput(
-          [void Function(ReportShareLinkInputBuilder)? updates]) =>
-      (ReportShareLinkInputBuilder()..update(updates))._build();
+  factory _$ReportShareLinkInput([
+    void Function(ReportShareLinkInputBuilder)? updates,
+  ]) => (ReportShareLinkInputBuilder()..update(updates))._build();
 
   _$ReportShareLinkInput._({this.expiresAt}) : super._();
   @override
   ReportShareLinkInput rebuild(
-          void Function(ReportShareLinkInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReportShareLinkInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReportShareLinkInputBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$ReportShareLinkInput extends ReportShareLinkInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ReportShareLinkInput')
-          ..add('expiresAt', expiresAt))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ReportShareLinkInput',
+    )..add('expiresAt', expiresAt)).toString();
   }
 }
 
@@ -81,10 +81,7 @@ class ReportShareLinkInputBuilder
   ReportShareLinkInput build() => _build();
 
   _$ReportShareLinkInput _build() {
-    final _$result = _$v ??
-        _$ReportShareLinkInput._(
-          expiresAt: expiresAt,
-        );
+    final _$result = _$v ?? _$ReportShareLinkInput._(expiresAt: expiresAt);
     replace(_$result);
     return _$result;
   }

@@ -36,12 +36,12 @@ MediaProviderIdEnum _$mediaProviderIdEnumValueOf(String name) {
 
 final BuiltSet<MediaProviderIdEnum> _$mediaProviderIdEnumValues =
     BuiltSet<MediaProviderIdEnum>(const <MediaProviderIdEnum>[
-  _$mediaProviderIdEnum_wikidata,
-  _$mediaProviderIdEnum_partisanWeb,
-  _$mediaProviderIdEnum_allsides,
-  _$mediaProviderIdEnum_mbfc,
-  _$mediaProviderIdEnum_operator_,
-]);
+      _$mediaProviderIdEnum_wikidata,
+      _$mediaProviderIdEnum_partisanWeb,
+      _$mediaProviderIdEnum_allsides,
+      _$mediaProviderIdEnum_mbfc,
+      _$mediaProviderIdEnum_operator_,
+    ]);
 
 const MediaProviderEgressEnum _$mediaProviderEgressEnum_OPEN =
     const MediaProviderEgressEnum._('OPEN');
@@ -61,21 +61,22 @@ MediaProviderEgressEnum _$mediaProviderEgressEnumValueOf(String name) {
 
 final BuiltSet<MediaProviderEgressEnum> _$mediaProviderEgressEnumValues =
     BuiltSet<MediaProviderEgressEnum>(const <MediaProviderEgressEnum>[
-  _$mediaProviderEgressEnum_OPEN,
-  _$mediaProviderEgressEnum_LOCAL_ONLY,
-]);
+      _$mediaProviderEgressEnum_OPEN,
+      _$mediaProviderEgressEnum_LOCAL_ONLY,
+    ]);
 
 const MediaProviderLastImportStatusEnum _$mediaProviderLastImportStatusEnum_ok =
     const MediaProviderLastImportStatusEnum._('ok');
 const MediaProviderLastImportStatusEnum
-    _$mediaProviderLastImportStatusEnum_partial =
+_$mediaProviderLastImportStatusEnum_partial =
     const MediaProviderLastImportStatusEnum._('partial');
 const MediaProviderLastImportStatusEnum
-    _$mediaProviderLastImportStatusEnum_failed =
+_$mediaProviderLastImportStatusEnum_failed =
     const MediaProviderLastImportStatusEnum._('failed');
 
 MediaProviderLastImportStatusEnum _$mediaProviderLastImportStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$mediaProviderLastImportStatusEnum_ok;
@@ -89,19 +90,21 @@ MediaProviderLastImportStatusEnum _$mediaProviderLastImportStatusEnumValueOf(
 }
 
 final BuiltSet<MediaProviderLastImportStatusEnum>
-    _$mediaProviderLastImportStatusEnumValues = BuiltSet<
-        MediaProviderLastImportStatusEnum>(const <MediaProviderLastImportStatusEnum>[
-  _$mediaProviderLastImportStatusEnum_ok,
-  _$mediaProviderLastImportStatusEnum_partial,
-  _$mediaProviderLastImportStatusEnum_failed,
-]);
+_$mediaProviderLastImportStatusEnumValues =
+    BuiltSet<MediaProviderLastImportStatusEnum>(
+      const <MediaProviderLastImportStatusEnum>[
+        _$mediaProviderLastImportStatusEnum_ok,
+        _$mediaProviderLastImportStatusEnum_partial,
+        _$mediaProviderLastImportStatusEnum_failed,
+      ],
+    );
 
 Serializer<MediaProviderIdEnum> _$mediaProviderIdEnumSerializer =
     _$MediaProviderIdEnumSerializer();
 Serializer<MediaProviderEgressEnum> _$mediaProviderEgressEnumSerializer =
     _$MediaProviderEgressEnumSerializer();
 Serializer<MediaProviderLastImportStatusEnum>
-    _$mediaProviderLastImportStatusEnumSerializer =
+_$mediaProviderLastImportStatusEnumSerializer =
     _$MediaProviderLastImportStatusEnumSerializer();
 
 class _$MediaProviderIdEnumSerializer
@@ -127,15 +130,20 @@ class _$MediaProviderIdEnumSerializer
   final String wireName = 'MediaProviderIdEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaProviderIdEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaProviderIdEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MediaProviderIdEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaProviderIdEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MediaProviderIdEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaProviderIdEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaProviderEgressEnumSerializer
@@ -155,16 +163,20 @@ class _$MediaProviderEgressEnumSerializer
   final String wireName = 'MediaProviderEgressEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaProviderEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaProviderEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MediaProviderEgressEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaProviderEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaProviderEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaProviderLastImportStatusEnumSerializer
@@ -187,16 +199,19 @@ class _$MediaProviderLastImportStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MediaProviderLastImportStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MediaProviderLastImportStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MediaProviderLastImportStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaProviderLastImportStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaProviderLastImportStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaProvider extends MediaProvider {
@@ -236,24 +251,24 @@ class _$MediaProvider extends MediaProvider {
   factory _$MediaProvider([void Function(MediaProviderBuilder)? updates]) =>
       (MediaProviderBuilder()..update(updates))._build();
 
-  _$MediaProvider._(
-      {required this.id,
-      required this.name,
-      required this.enabled,
-      this.defaultEnabled,
-      required this.licence,
-      this.licenceUrl,
-      this.attribution,
-      required this.licenceAcknowledged,
-      this.acknowledgedBy,
-      this.acknowledgedAt,
-      required this.egress,
-      this.permissionRecorded,
-      this.credentialSet,
-      this.lastImportAt,
-      this.lastImportStatus,
-      this.ratingsCount})
-      : super._();
+  _$MediaProvider._({
+    required this.id,
+    required this.name,
+    required this.enabled,
+    this.defaultEnabled,
+    required this.licence,
+    this.licenceUrl,
+    this.attribution,
+    required this.licenceAcknowledged,
+    this.acknowledgedBy,
+    this.acknowledgedAt,
+    required this.egress,
+    this.permissionRecorded,
+    this.credentialSet,
+    this.lastImportAt,
+    this.lastImportStatus,
+    this.ratingsCount,
+  }) : super._();
   @override
   MediaProvider rebuild(void Function(MediaProviderBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -448,24 +463,40 @@ class MediaProviderBuilder
   MediaProvider build() => _build();
 
   _$MediaProvider _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaProvider._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'MediaProvider', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'MediaProvider', 'name'),
+            name,
+            r'MediaProvider',
+            'name',
+          ),
           enabled: BuiltValueNullFieldError.checkNotNull(
-              enabled, r'MediaProvider', 'enabled'),
+            enabled,
+            r'MediaProvider',
+            'enabled',
+          ),
           defaultEnabled: defaultEnabled,
           licence: BuiltValueNullFieldError.checkNotNull(
-              licence, r'MediaProvider', 'licence'),
+            licence,
+            r'MediaProvider',
+            'licence',
+          ),
           licenceUrl: licenceUrl,
           attribution: attribution,
           licenceAcknowledged: BuiltValueNullFieldError.checkNotNull(
-              licenceAcknowledged, r'MediaProvider', 'licenceAcknowledged'),
+            licenceAcknowledged,
+            r'MediaProvider',
+            'licenceAcknowledged',
+          ),
           acknowledgedBy: acknowledgedBy,
           acknowledgedAt: acknowledgedAt,
           egress: BuiltValueNullFieldError.checkNotNull(
-              egress, r'MediaProvider', 'egress'),
+            egress,
+            r'MediaProvider',
+            'egress',
+          ),
           permissionRecorded: permissionRecorded,
           credentialSet: credentialSet,
           lastImportAt: lastImportAt,

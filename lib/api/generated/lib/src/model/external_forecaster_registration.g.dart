@@ -14,16 +14,16 @@ class _$ExternalForecasterRegistration extends ExternalForecasterRegistration {
   @override
   final BuiltMap<String, JsonObject?>? config;
 
-  factory _$ExternalForecasterRegistration(
-          [void Function(ExternalForecasterRegistrationBuilder)? updates]) =>
-      (ExternalForecasterRegistrationBuilder()..update(updates))._build();
+  factory _$ExternalForecasterRegistration([
+    void Function(ExternalForecasterRegistrationBuilder)? updates,
+  ]) => (ExternalForecasterRegistrationBuilder()..update(updates))._build();
 
   _$ExternalForecasterRegistration._({required this.id, this.name, this.config})
-      : super._();
+    : super._();
   @override
   ExternalForecasterRegistration rebuild(
-          void Function(ExternalForecasterRegistrationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalForecasterRegistrationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalForecasterRegistrationBuilder toBuilder() =>
@@ -60,8 +60,10 @@ class _$ExternalForecasterRegistration extends ExternalForecasterRegistration {
 
 class ExternalForecasterRegistrationBuilder
     implements
-        Builder<ExternalForecasterRegistration,
-            ExternalForecasterRegistrationBuilder> {
+        Builder<
+          ExternalForecasterRegistration,
+          ExternalForecasterRegistrationBuilder
+        > {
   _$ExternalForecasterRegistration? _$v;
 
   String? _id;
@@ -109,10 +111,14 @@ class ExternalForecasterRegistrationBuilder
   _$ExternalForecasterRegistration _build() {
     _$ExternalForecasterRegistration _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalForecasterRegistration._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ExternalForecasterRegistration', 'id'),
+              id,
+              r'ExternalForecasterRegistration',
+              'id',
+            ),
             name: name,
             config: _config?.build(),
           );
@@ -123,7 +129,10 @@ class ExternalForecasterRegistrationBuilder
         _config?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalForecasterRegistration', _$failedField, e.toString());
+          r'ExternalForecasterRegistration',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

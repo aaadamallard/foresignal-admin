@@ -20,8 +20,10 @@ part 'event_study_window_stats_placebo.g.dart';
 @BuiltValue()
 abstract class EventStudyWindowStatsPlacebo
     implements
-        Built<EventStudyWindowStatsPlacebo,
-            EventStudyWindowStatsPlaceboBuilder> {
+        Built<
+          EventStudyWindowStatsPlacebo,
+          EventStudyWindowStatsPlaceboBuilder
+        > {
   @BuiltValueField(wireName: r'count')
   int get count;
 
@@ -42,9 +44,9 @@ abstract class EventStudyWindowStatsPlacebo
 
   EventStudyWindowStatsPlacebo._();
 
-  factory EventStudyWindowStatsPlacebo(
-          [void updates(EventStudyWindowStatsPlaceboBuilder b)]) =
-      _$EventStudyWindowStatsPlacebo;
+  factory EventStudyWindowStatsPlacebo([
+    void updates(EventStudyWindowStatsPlaceboBuilder b),
+  ]) = _$EventStudyWindowStatsPlacebo;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventStudyWindowStatsPlaceboBuilder b) => b;
@@ -59,7 +61,7 @@ class _$EventStudyWindowStatsPlaceboSerializer
   @override
   final Iterable<Type> types = const [
     EventStudyWindowStatsPlacebo,
-    _$EventStudyWindowStatsPlacebo
+    _$EventStudyWindowStatsPlacebo,
   ];
 
   @override
@@ -118,9 +120,11 @@ class _$EventStudyWindowStatsPlaceboSerializer
     EventStudyWindowStatsPlacebo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,49 +140,58 @@ class _$EventStudyWindowStatsPlaceboSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         case r'mean':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.mean = valueDes;
           break;
         case r'sd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.sd = valueDes;
           break;
         case r'p05':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p05 = valueDes;
           break;
         case r'p50':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p50 = valueDes;
           break;
         case r'p95':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.p95 = valueDes;
           break;

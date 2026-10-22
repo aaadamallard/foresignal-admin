@@ -27,9 +27,9 @@ abstract class ChronicleSketchBatchResult
 
   ChronicleSketchBatchResult._();
 
-  factory ChronicleSketchBatchResult(
-          [void updates(ChronicleSketchBatchResultBuilder b)]) =
-      _$ChronicleSketchBatchResult;
+  factory ChronicleSketchBatchResult([
+    void updates(ChronicleSketchBatchResultBuilder b),
+  ]) = _$ChronicleSketchBatchResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSketchBatchResultBuilder b) => b;
@@ -44,7 +44,7 @@ class _$ChronicleSketchBatchResultSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSketchBatchResult,
-    _$ChronicleSketchBatchResult
+    _$ChronicleSketchBatchResult,
   ];
 
   @override
@@ -63,8 +63,9 @@ class _$ChronicleSketchBatchResultSerializer
     yield r'rejected';
     yield serializers.serialize(
       object.rejected,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ChronicleSketchBatchResultRejectedInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleSketchBatchResultRejectedInner),
+      ]),
     );
   }
 
@@ -74,9 +75,11 @@ class _$ChronicleSketchBatchResultSerializer
     ChronicleSketchBatchResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +95,20 @@ class _$ChronicleSketchBatchResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accepted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.accepted = valueDes;
           break;
         case r'rejected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleSketchBatchResultRejectedInner)]),
-          ) as BuiltList<ChronicleSketchBatchResultRejectedInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleSketchBatchResultRejectedInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSketchBatchResultRejectedInner>;
           result.rejected.replace(valueDes);
           break;
         default:

@@ -6,8 +6,9 @@ part of 'feature.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const FeatureTypeEnum _$featureTypeEnum_feature =
-    const FeatureTypeEnum._('feature');
+const FeatureTypeEnum _$featureTypeEnum_feature = const FeatureTypeEnum._(
+  'feature',
+);
 
 FeatureTypeEnum _$featureTypeEnumValueOf(String name) {
   switch (name) {
@@ -20,8 +21,8 @@ FeatureTypeEnum _$featureTypeEnumValueOf(String name) {
 
 final BuiltSet<FeatureTypeEnum> _$featureTypeEnumValues =
     BuiltSet<FeatureTypeEnum>(const <FeatureTypeEnum>[
-  _$featureTypeEnum_feature,
-]);
+      _$featureTypeEnum_feature,
+    ]);
 
 Serializer<FeatureTypeEnum> _$featureTypeEnumSerializer =
     _$FeatureTypeEnumSerializer();
@@ -41,15 +42,20 @@ class _$FeatureTypeEnumSerializer
   final String wireName = 'FeatureTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, FeatureTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FeatureTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  FeatureTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FeatureTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  FeatureTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FeatureTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Feature extends Feature {
@@ -65,9 +71,12 @@ class _$Feature extends Feature {
   factory _$Feature([void Function(FeatureBuilder)? updates]) =>
       (FeatureBuilder()..update(updates))._build();
 
-  _$Feature._(
-      {required this.type, this.id, this.geometry, required this.properties})
-      : super._();
+  _$Feature._({
+    required this.type,
+    this.id,
+    this.geometry,
+    required this.properties,
+  }) : super._();
   @override
   Feature rebuild(void Function(FeatureBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -160,10 +169,14 @@ class FeatureBuilder implements Builder<Feature, FeatureBuilder> {
   _$Feature _build() {
     _$Feature _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Feature._(
-            type:
-                BuiltValueNullFieldError.checkNotNull(type, r'Feature', 'type'),
+            type: BuiltValueNullFieldError.checkNotNull(
+              type,
+              r'Feature',
+              'type',
+            ),
             id: id,
             geometry: _geometry?.build(),
             properties: properties.build(),
@@ -177,7 +190,10 @@ class FeatureBuilder implements Builder<Feature, FeatureBuilder> {
         properties.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Feature', _$failedField, e.toString());
+          r'Feature',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

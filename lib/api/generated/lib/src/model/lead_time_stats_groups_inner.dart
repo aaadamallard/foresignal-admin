@@ -61,9 +61,9 @@ abstract class LeadTimeStatsGroupsInner
 
   LeadTimeStatsGroupsInner._();
 
-  factory LeadTimeStatsGroupsInner(
-          [void updates(LeadTimeStatsGroupsInnerBuilder b)]) =
-      _$LeadTimeStatsGroupsInner;
+  factory LeadTimeStatsGroupsInner([
+    void updates(LeadTimeStatsGroupsInnerBuilder b),
+  ]) = _$LeadTimeStatsGroupsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LeadTimeStatsGroupsInnerBuilder b) => b;
@@ -78,7 +78,7 @@ class _$LeadTimeStatsGroupsInnerSerializer
   @override
   final Iterable<Type> types = const [
     LeadTimeStatsGroupsInner,
-    _$LeadTimeStatsGroupsInner
+    _$LeadTimeStatsGroupsInner,
   ];
 
   @override
@@ -151,9 +151,11 @@ class _$LeadTimeStatsGroupsInnerSerializer
     LeadTimeStatsGroupsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -169,74 +171,90 @@ class _$LeadTimeStatsGroupsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'claimType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.claimType = valueDes;
           break;
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'regionCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionCode = valueDes;
           break;
         case r'foundBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LeadTimeStatsGroupsInnerFoundByEnum),
-          ) as LeadTimeStatsGroupsInnerFoundByEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      LeadTimeStatsGroupsInnerFoundByEnum,
+                    ),
+                  )
+                  as LeadTimeStatsGroupsInnerFoundByEnum;
           result.foundBy = valueDes;
           break;
         case r'comparisons':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.comparisons = valueDes;
           break;
         case r'outOfSample':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.outOfSample = valueDes;
           break;
         case r'overPhysical':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LeadTimeSummary),
-          ) as LeadTimeSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LeadTimeSummary),
+                  )
+                  as LeadTimeSummary;
           result.overPhysical.replace(valueDes);
           break;
         case r'overNews':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LeadTimeSummary),
-          ) as LeadTimeSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LeadTimeSummary),
+                  )
+                  as LeadTimeSummary;
           result.overNews.replace(valueDes);
           break;
         case r'overOfficial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LeadTimeSummary),
-          ) as LeadTimeSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LeadTimeSummary),
+                  )
+                  as LeadTimeSummary;
           result.overOfficial.replace(valueDes);
           break;
         case r'outOfSampleOverPhysical':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(LeadTimeSummary),
-          ) as LeadTimeSummary?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(LeadTimeSummary),
+                  )
+                  as LeadTimeSummary?;
           if (valueDes == null) continue;
           result.outOfSampleOverPhysical.replace(valueDes);
           break;

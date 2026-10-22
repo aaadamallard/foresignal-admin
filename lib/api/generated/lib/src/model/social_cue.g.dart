@@ -24,9 +24,9 @@ SocialCueBackendEnum _$socialCueBackendEnumValueOf(String name) {
 
 final BuiltSet<SocialCueBackendEnum> _$socialCueBackendEnumValues =
     BuiltSet<SocialCueBackendEnum>(const <SocialCueBackendEnum>[
-  _$socialCueBackendEnum_platformApis,
-  _$socialCueBackendEnum_xaiXSearch,
-]);
+      _$socialCueBackendEnum_platformApis,
+      _$socialCueBackendEnum_xaiXSearch,
+    ]);
 
 const SocialCueStatusEnum _$socialCueStatusEnum_queued =
     const SocialCueStatusEnum._('queued');
@@ -58,12 +58,12 @@ SocialCueStatusEnum _$socialCueStatusEnumValueOf(String name) {
 
 final BuiltSet<SocialCueStatusEnum> _$socialCueStatusEnumValues =
     BuiltSet<SocialCueStatusEnum>(const <SocialCueStatusEnum>[
-  _$socialCueStatusEnum_queued,
-  _$socialCueStatusEnum_running,
-  _$socialCueStatusEnum_done,
-  _$socialCueStatusEnum_failed,
-  _$socialCueStatusEnum_budgetRefused,
-]);
+      _$socialCueStatusEnum_queued,
+      _$socialCueStatusEnum_running,
+      _$socialCueStatusEnum_done,
+      _$socialCueStatusEnum_failed,
+      _$socialCueStatusEnum_budgetRefused,
+    ]);
 
 Serializer<SocialCueBackendEnum> _$socialCueBackendEnumSerializer =
     _$SocialCueBackendEnumSerializer();
@@ -87,15 +87,20 @@ class _$SocialCueBackendEnumSerializer
   final String wireName = 'SocialCueBackendEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialCueBackendEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialCueBackendEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SocialCueBackendEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialCueBackendEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SocialCueBackendEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialCueBackendEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialCueStatusEnumSerializer
@@ -121,15 +126,20 @@ class _$SocialCueStatusEnumSerializer
   final String wireName = 'SocialCueStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialCueStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialCueStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SocialCueStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialCueStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SocialCueStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialCueStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialCue extends SocialCue {
@@ -171,25 +181,25 @@ class _$SocialCue extends SocialCue {
   factory _$SocialCue([void Function(SocialCueBuilder)? updates]) =>
       (SocialCueBuilder()..update(updates))._build();
 
-  _$SocialCue._(
-      {required this.id,
-      required this.trigger,
-      required this.backend,
-      required this.queries,
-      required this.platforms,
-      required this.window,
-      required this.status,
-      this.statusReason,
-      required this.results,
-      required this.narrativeIds,
-      required this.costUsd,
-      this.maxCostUsd,
-      required this.createdBy,
-      required this.createdAt,
-      this.startedAt,
-      this.completedAt,
-      this.manifestId})
-      : super._();
+  _$SocialCue._({
+    required this.id,
+    required this.trigger,
+    required this.backend,
+    required this.queries,
+    required this.platforms,
+    required this.window,
+    required this.status,
+    this.statusReason,
+    required this.results,
+    required this.narrativeIds,
+    required this.costUsd,
+    this.maxCostUsd,
+    required this.createdBy,
+    required this.createdAt,
+    this.startedAt,
+    this.completedAt,
+    this.manifestId,
+  }) : super._();
   @override
   SocialCue rebuild(void Function(SocialCueBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -393,27 +403,43 @@ class SocialCueBuilder implements Builder<SocialCue, SocialCueBuilder> {
   _$SocialCue _build() {
     _$SocialCue _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialCue._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'SocialCue', 'id'),
             trigger: trigger.build(),
             backend: BuiltValueNullFieldError.checkNotNull(
-                backend, r'SocialCue', 'backend'),
+              backend,
+              r'SocialCue',
+              'backend',
+            ),
             queries: queries.build(),
             platforms: platforms.build(),
             window: window.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SocialCue', 'status'),
+              status,
+              r'SocialCue',
+              'status',
+            ),
             statusReason: statusReason,
             results: results.build(),
             narrativeIds: narrativeIds.build(),
             costUsd: BuiltValueNullFieldError.checkNotNull(
-                costUsd, r'SocialCue', 'costUsd'),
+              costUsd,
+              r'SocialCue',
+              'costUsd',
+            ),
             maxCostUsd: maxCostUsd,
             createdBy: BuiltValueNullFieldError.checkNotNull(
-                createdBy, r'SocialCue', 'createdBy'),
+              createdBy,
+              r'SocialCue',
+              'createdBy',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'SocialCue', 'createdAt'),
+              createdAt,
+              r'SocialCue',
+              'createdAt',
+            ),
             startedAt: startedAt,
             completedAt: completedAt,
             manifestId: manifestId,
@@ -437,7 +463,10 @@ class SocialCueBuilder implements Builder<SocialCue, SocialCueBuilder> {
         narrativeIds.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialCue', _$failedField, e.toString());
+          r'SocialCue',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

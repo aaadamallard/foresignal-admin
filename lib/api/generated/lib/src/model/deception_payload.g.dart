@@ -32,11 +32,11 @@ DeceptionPayloadStatusEnum _$deceptionPayloadStatusEnumValueOf(String name) {
 
 final BuiltSet<DeceptionPayloadStatusEnum> _$deceptionPayloadStatusEnumValues =
     BuiltSet<DeceptionPayloadStatusEnum>(const <DeceptionPayloadStatusEnum>[
-  _$deceptionPayloadStatusEnum_ok,
-  _$deceptionPayloadStatusEnum_insufficientData,
-  _$deceptionPayloadStatusEnum_noCoverage,
-  _$deceptionPayloadStatusEnum_degradedInput,
-]);
+      _$deceptionPayloadStatusEnum_ok,
+      _$deceptionPayloadStatusEnum_insufficientData,
+      _$deceptionPayloadStatusEnum_noCoverage,
+      _$deceptionPayloadStatusEnum_degradedInput,
+    ]);
 
 Serializer<DeceptionPayloadStatusEnum> _$deceptionPayloadStatusEnumSerializer =
     _$DeceptionPayloadStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$DeceptionPayloadStatusEnumSerializer
   final String wireName = 'DeceptionPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, DeceptionPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DeceptionPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DeceptionPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DeceptionPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DeceptionPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DeceptionPayload extends DeceptionPayload {
@@ -92,20 +96,20 @@ class _$DeceptionPayload extends DeceptionPayload {
   @override
   final BuiltList<DeceptionPayloadChecksInner> checks;
 
-  factory _$DeceptionPayload(
-          [void Function(DeceptionPayloadBuilder)? updates]) =>
-      (DeceptionPayloadBuilder()..update(updates))._build();
+  factory _$DeceptionPayload([
+    void Function(DeceptionPayloadBuilder)? updates,
+  ]) => (DeceptionPayloadBuilder()..update(updates))._build();
 
-  _$DeceptionPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.entity,
-      required this.checks})
-      : super._();
+  _$DeceptionPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.entity,
+    required this.checks,
+  }) : super._();
   @override
   DeceptionPayload rebuild(void Function(DeceptionPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -236,19 +240,32 @@ class DeceptionPayloadBuilder
   _$DeceptionPayload _build() {
     _$DeceptionPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DeceptionPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'DeceptionPayload', 'automated'),
+              automated,
+              r'DeceptionPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'DeceptionPayload', 'notAWarning'),
+              notAWarning,
+              r'DeceptionPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DeceptionPayload', 'status'),
+              status,
+              r'DeceptionPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             entity: BuiltValueNullFieldError.checkNotNull(
-                entity, r'DeceptionPayload', 'entity'),
+              entity,
+              r'DeceptionPayload',
+              'entity',
+            ),
             checks: checks.build(),
           );
     } catch (_) {
@@ -264,7 +281,10 @@ class DeceptionPayloadBuilder
         checks.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DeceptionPayload', _$failedField, e.toString());
+          r'DeceptionPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

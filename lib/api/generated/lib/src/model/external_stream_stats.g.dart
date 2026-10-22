@@ -22,23 +22,23 @@ class _$ExternalStreamStats extends ExternalStreamStats {
   @override
   final int? bindings;
 
-  factory _$ExternalStreamStats(
-          [void Function(ExternalStreamStatsBuilder)? updates]) =>
-      (ExternalStreamStatsBuilder()..update(updates))._build();
+  factory _$ExternalStreamStats([
+    void Function(ExternalStreamStatsBuilder)? updates,
+  ]) => (ExternalStreamStatsBuilder()..update(updates))._build();
 
-  _$ExternalStreamStats._(
-      {this.streamId,
-      this.mode,
-      this.kind,
-      this.items,
-      this.rejected,
-      this.lastItemAt,
-      this.bindings})
-      : super._();
+  _$ExternalStreamStats._({
+    this.streamId,
+    this.mode,
+    this.kind,
+    this.items,
+    this.rejected,
+    this.lastItemAt,
+    this.bindings,
+  }) : super._();
   @override
   ExternalStreamStats rebuild(
-          void Function(ExternalStreamStatsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalStreamStatsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalStreamStatsBuilder toBuilder() =>
@@ -150,7 +150,8 @@ class ExternalStreamStatsBuilder
   ExternalStreamStats build() => _build();
 
   _$ExternalStreamStats _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalStreamStats._(
           streamId: streamId,
           mode: mode,

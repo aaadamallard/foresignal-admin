@@ -22,23 +22,23 @@ class _$SocialVersusObserved extends SocialVersusObserved {
   @override
   final BuiltList<Caveat>? caveats;
 
-  factory _$SocialVersusObserved(
-          [void Function(SocialVersusObservedBuilder)? updates]) =>
-      (SocialVersusObservedBuilder()..update(updates))._build();
+  factory _$SocialVersusObserved([
+    void Function(SocialVersusObservedBuilder)? updates,
+  ]) => (SocialVersusObservedBuilder()..update(updates))._build();
 
-  _$SocialVersusObserved._(
-      {required this.narrativesByStatus,
-      required this.narratives,
-      this.attentionGapFindingIds,
-      this.leadTimes,
-      this.mediaReuseFindingIds,
-      this.coordinationFindingIds,
-      this.caveats})
-      : super._();
+  _$SocialVersusObserved._({
+    required this.narrativesByStatus,
+    required this.narratives,
+    this.attentionGapFindingIds,
+    this.leadTimes,
+    this.mediaReuseFindingIds,
+    this.coordinationFindingIds,
+    this.caveats,
+  }) : super._();
   @override
   SocialVersusObserved rebuild(
-          void Function(SocialVersusObservedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialVersusObservedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialVersusObservedBuilder toBuilder() =>
@@ -99,8 +99,8 @@ class SocialVersusObservedBuilder
   ListBuilder<SocialVersusObservedNarrativesInner> get narratives =>
       _$this._narratives ??= ListBuilder<SocialVersusObservedNarrativesInner>();
   set narratives(
-          ListBuilder<SocialVersusObservedNarrativesInner>? narratives) =>
-      _$this._narratives = narratives;
+    ListBuilder<SocialVersusObservedNarrativesInner>? narratives,
+  ) => _$this._narratives = narratives;
 
   ListBuilder<String>? _attentionGapFindingIds;
   ListBuilder<String> get attentionGapFindingIds =>
@@ -165,7 +165,8 @@ class SocialVersusObservedBuilder
   _$SocialVersusObserved _build() {
     _$SocialVersusObserved _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialVersusObserved._(
             narrativesByStatus: narrativesByStatus.build(),
             narratives: narratives.build(),
@@ -194,7 +195,10 @@ class SocialVersusObservedBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialVersusObserved', _$failedField, e.toString());
+          r'SocialVersusObserved',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,17 +7,17 @@ part of 'dossier_sections_imagery_items_inner.dart';
 // **************************************************************************
 
 const DossierSectionsImageryItemsInnerKindEnum
-    _$dossierSectionsImageryItemsInnerKindEnum_rasterFrame =
+_$dossierSectionsImageryItemsInnerKindEnum_rasterFrame =
     const DossierSectionsImageryItemsInnerKindEnum._('rasterFrame');
 const DossierSectionsImageryItemsInnerKindEnum
-    _$dossierSectionsImageryItemsInnerKindEnum_satdumpProduct =
+_$dossierSectionsImageryItemsInnerKindEnum_satdumpProduct =
     const DossierSectionsImageryItemsInnerKindEnum._('satdumpProduct');
 const DossierSectionsImageryItemsInnerKindEnum
-    _$dossierSectionsImageryItemsInnerKindEnum_stacScene =
+_$dossierSectionsImageryItemsInnerKindEnum_stacScene =
     const DossierSectionsImageryItemsInnerKindEnum._('stacScene');
 
 DossierSectionsImageryItemsInnerKindEnum
-    _$dossierSectionsImageryItemsInnerKindEnumValueOf(String name) {
+_$dossierSectionsImageryItemsInnerKindEnumValueOf(String name) {
   switch (name) {
     case 'rasterFrame':
       return _$dossierSectionsImageryItemsInnerKindEnum_rasterFrame;
@@ -31,15 +31,17 @@ DossierSectionsImageryItemsInnerKindEnum
 }
 
 final BuiltSet<DossierSectionsImageryItemsInnerKindEnum>
-    _$dossierSectionsImageryItemsInnerKindEnumValues = BuiltSet<
-        DossierSectionsImageryItemsInnerKindEnum>(const <DossierSectionsImageryItemsInnerKindEnum>[
-  _$dossierSectionsImageryItemsInnerKindEnum_rasterFrame,
-  _$dossierSectionsImageryItemsInnerKindEnum_satdumpProduct,
-  _$dossierSectionsImageryItemsInnerKindEnum_stacScene,
-]);
+_$dossierSectionsImageryItemsInnerKindEnumValues =
+    BuiltSet<DossierSectionsImageryItemsInnerKindEnum>(
+      const <DossierSectionsImageryItemsInnerKindEnum>[
+        _$dossierSectionsImageryItemsInnerKindEnum_rasterFrame,
+        _$dossierSectionsImageryItemsInnerKindEnum_satdumpProduct,
+        _$dossierSectionsImageryItemsInnerKindEnum_stacScene,
+      ],
+    );
 
 Serializer<DossierSectionsImageryItemsInnerKindEnum>
-    _$dossierSectionsImageryItemsInnerKindEnumSerializer =
+_$dossierSectionsImageryItemsInnerKindEnumSerializer =
     _$DossierSectionsImageryItemsInnerKindEnumSerializer();
 
 class _$DossierSectionsImageryItemsInnerKindEnumSerializer
@@ -57,23 +59,26 @@ class _$DossierSectionsImageryItemsInnerKindEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    DossierSectionsImageryItemsInnerKindEnum
+    DossierSectionsImageryItemsInnerKindEnum,
   ];
   @override
   final String wireName = 'DossierSectionsImageryItemsInnerKindEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          DossierSectionsImageryItemsInnerKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DossierSectionsImageryItemsInnerKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsImageryItemsInnerKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsImageryItemsInnerKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsImageryItemsInnerKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsImageryItemsInner
@@ -95,24 +100,24 @@ class _$DossierSectionsImageryItemsInner
   @override
   final BuiltList<num>? bbox;
 
-  factory _$DossierSectionsImageryItemsInner(
-          [void Function(DossierSectionsImageryItemsInnerBuilder)? updates]) =>
-      (DossierSectionsImageryItemsInnerBuilder()..update(updates))._build();
+  factory _$DossierSectionsImageryItemsInner([
+    void Function(DossierSectionsImageryItemsInnerBuilder)? updates,
+  ]) => (DossierSectionsImageryItemsInnerBuilder()..update(updates))._build();
 
-  _$DossierSectionsImageryItemsInner._(
-      {required this.ref,
-      required this.kind,
-      this.title,
-      this.time,
-      this.sourceId,
-      this.frameUrl,
-      this.thumbnailUrl,
-      this.bbox})
-      : super._();
+  _$DossierSectionsImageryItemsInner._({
+    required this.ref,
+    required this.kind,
+    this.title,
+    this.time,
+    this.sourceId,
+    this.frameUrl,
+    this.thumbnailUrl,
+    this.bbox,
+  }) : super._();
   @override
   DossierSectionsImageryItemsInner rebuild(
-          void Function(DossierSectionsImageryItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsImageryItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsImageryItemsInnerBuilder toBuilder() =>
@@ -164,8 +169,10 @@ class _$DossierSectionsImageryItemsInner
 
 class DossierSectionsImageryItemsInnerBuilder
     implements
-        Builder<DossierSectionsImageryItemsInner,
-            DossierSectionsImageryItemsInnerBuilder> {
+        Builder<
+          DossierSectionsImageryItemsInner,
+          DossierSectionsImageryItemsInnerBuilder
+        > {
   _$DossierSectionsImageryItemsInner? _$v;
 
   String? _ref;
@@ -237,12 +244,19 @@ class DossierSectionsImageryItemsInnerBuilder
   _$DossierSectionsImageryItemsInner _build() {
     _$DossierSectionsImageryItemsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsImageryItemsInner._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'DossierSectionsImageryItemsInner', 'ref'),
+              ref,
+              r'DossierSectionsImageryItemsInner',
+              'ref',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'DossierSectionsImageryItemsInner', 'kind'),
+              kind,
+              r'DossierSectionsImageryItemsInner',
+              'kind',
+            ),
             title: title,
             time: time,
             sourceId: sourceId,
@@ -257,7 +271,10 @@ class DossierSectionsImageryItemsInnerBuilder
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsImageryItemsInner', _$failedField, e.toString());
+          r'DossierSectionsImageryItemsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

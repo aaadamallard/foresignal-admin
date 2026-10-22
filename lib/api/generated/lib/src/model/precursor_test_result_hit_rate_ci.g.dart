@@ -7,11 +7,11 @@ part of 'precursor_test_result_hit_rate_ci.dart';
 // **************************************************************************
 
 const PrecursorTestResultHitRateCiMethodEnum
-    _$precursorTestResultHitRateCiMethodEnum_wilson95 =
+_$precursorTestResultHitRateCiMethodEnum_wilson95 =
     const PrecursorTestResultHitRateCiMethodEnum._('wilson95');
 
 PrecursorTestResultHitRateCiMethodEnum
-    _$precursorTestResultHitRateCiMethodEnumValueOf(String name) {
+_$precursorTestResultHitRateCiMethodEnumValueOf(String name) {
   switch (name) {
     case 'wilson95':
       return _$precursorTestResultHitRateCiMethodEnum_wilson95;
@@ -21,13 +21,15 @@ PrecursorTestResultHitRateCiMethodEnum
 }
 
 final BuiltSet<PrecursorTestResultHitRateCiMethodEnum>
-    _$precursorTestResultHitRateCiMethodEnumValues = BuiltSet<
-        PrecursorTestResultHitRateCiMethodEnum>(const <PrecursorTestResultHitRateCiMethodEnum>[
-  _$precursorTestResultHitRateCiMethodEnum_wilson95,
-]);
+_$precursorTestResultHitRateCiMethodEnumValues =
+    BuiltSet<PrecursorTestResultHitRateCiMethodEnum>(
+      const <PrecursorTestResultHitRateCiMethodEnum>[
+        _$precursorTestResultHitRateCiMethodEnum_wilson95,
+      ],
+    );
 
 Serializer<PrecursorTestResultHitRateCiMethodEnum>
-    _$precursorTestResultHitRateCiMethodEnumSerializer =
+_$precursorTestResultHitRateCiMethodEnumSerializer =
     _$PrecursorTestResultHitRateCiMethodEnumSerializer();
 
 class _$PrecursorTestResultHitRateCiMethodEnumSerializer
@@ -41,23 +43,26 @@ class _$PrecursorTestResultHitRateCiMethodEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PrecursorTestResultHitRateCiMethodEnum
+    PrecursorTestResultHitRateCiMethodEnum,
   ];
   @override
   final String wireName = 'PrecursorTestResultHitRateCiMethodEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          PrecursorTestResultHitRateCiMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorTestResultHitRateCiMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorTestResultHitRateCiMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorTestResultHitRateCiMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorTestResultHitRateCiMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorTestResultHitRateCi extends PrecursorTestResultHitRateCi {
@@ -68,16 +73,16 @@ class _$PrecursorTestResultHitRateCi extends PrecursorTestResultHitRateCi {
   @override
   final PrecursorTestResultHitRateCiMethodEnum? method;
 
-  factory _$PrecursorTestResultHitRateCi(
-          [void Function(PrecursorTestResultHitRateCiBuilder)? updates]) =>
-      (PrecursorTestResultHitRateCiBuilder()..update(updates))._build();
+  factory _$PrecursorTestResultHitRateCi([
+    void Function(PrecursorTestResultHitRateCiBuilder)? updates,
+  ]) => (PrecursorTestResultHitRateCiBuilder()..update(updates))._build();
 
   _$PrecursorTestResultHitRateCi._({this.lower, this.upper, this.method})
-      : super._();
+    : super._();
   @override
   PrecursorTestResultHitRateCi rebuild(
-          void Function(PrecursorTestResultHitRateCiBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorTestResultHitRateCiBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorTestResultHitRateCiBuilder toBuilder() =>
@@ -114,8 +119,10 @@ class _$PrecursorTestResultHitRateCi extends PrecursorTestResultHitRateCi {
 
 class PrecursorTestResultHitRateCiBuilder
     implements
-        Builder<PrecursorTestResultHitRateCi,
-            PrecursorTestResultHitRateCiBuilder> {
+        Builder<
+          PrecursorTestResultHitRateCi,
+          PrecursorTestResultHitRateCiBuilder
+        > {
   _$PrecursorTestResultHitRateCi? _$v;
 
   num? _lower;
@@ -160,7 +167,8 @@ class PrecursorTestResultHitRateCiBuilder
   PrecursorTestResultHitRateCi build() => _build();
 
   _$PrecursorTestResultHitRateCi _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorTestResultHitRateCi._(
           lower: lower,
           upper: upper,

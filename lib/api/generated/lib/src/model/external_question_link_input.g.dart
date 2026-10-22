@@ -7,14 +7,14 @@ part of 'external_question_link_input.dart';
 // **************************************************************************
 
 const ExternalQuestionLinkInputOrientationEnum
-    _$externalQuestionLinkInputOrientationEnum_same =
+_$externalQuestionLinkInputOrientationEnum_same =
     const ExternalQuestionLinkInputOrientationEnum._('same');
 const ExternalQuestionLinkInputOrientationEnum
-    _$externalQuestionLinkInputOrientationEnum_inverse =
+_$externalQuestionLinkInputOrientationEnum_inverse =
     const ExternalQuestionLinkInputOrientationEnum._('inverse');
 
 ExternalQuestionLinkInputOrientationEnum
-    _$externalQuestionLinkInputOrientationEnumValueOf(String name) {
+_$externalQuestionLinkInputOrientationEnumValueOf(String name) {
   switch (name) {
     case 'same':
       return _$externalQuestionLinkInputOrientationEnum_same;
@@ -26,14 +26,16 @@ ExternalQuestionLinkInputOrientationEnum
 }
 
 final BuiltSet<ExternalQuestionLinkInputOrientationEnum>
-    _$externalQuestionLinkInputOrientationEnumValues = BuiltSet<
-        ExternalQuestionLinkInputOrientationEnum>(const <ExternalQuestionLinkInputOrientationEnum>[
-  _$externalQuestionLinkInputOrientationEnum_same,
-  _$externalQuestionLinkInputOrientationEnum_inverse,
-]);
+_$externalQuestionLinkInputOrientationEnumValues =
+    BuiltSet<ExternalQuestionLinkInputOrientationEnum>(
+      const <ExternalQuestionLinkInputOrientationEnum>[
+        _$externalQuestionLinkInputOrientationEnum_same,
+        _$externalQuestionLinkInputOrientationEnum_inverse,
+      ],
+    );
 
 Serializer<ExternalQuestionLinkInputOrientationEnum>
-    _$externalQuestionLinkInputOrientationEnumSerializer =
+_$externalQuestionLinkInputOrientationEnumSerializer =
     _$ExternalQuestionLinkInputOrientationEnumSerializer();
 
 class _$ExternalQuestionLinkInputOrientationEnumSerializer
@@ -49,23 +51,26 @@ class _$ExternalQuestionLinkInputOrientationEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ExternalQuestionLinkInputOrientationEnum
+    ExternalQuestionLinkInputOrientationEnum,
   ];
   @override
   final String wireName = 'ExternalQuestionLinkInputOrientationEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ExternalQuestionLinkInputOrientationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExternalQuestionLinkInputOrientationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalQuestionLinkInputOrientationEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalQuestionLinkInputOrientationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalQuestionLinkInputOrientationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalQuestionLinkInput extends ExternalQuestionLinkInput {
@@ -78,20 +83,20 @@ class _$ExternalQuestionLinkInput extends ExternalQuestionLinkInput {
   @override
   final ExternalQuestionLinkInputOrientationEnum? orientation;
 
-  factory _$ExternalQuestionLinkInput(
-          [void Function(ExternalQuestionLinkInputBuilder)? updates]) =>
-      (ExternalQuestionLinkInputBuilder()..update(updates))._build();
+  factory _$ExternalQuestionLinkInput([
+    void Function(ExternalQuestionLinkInputBuilder)? updates,
+  ]) => (ExternalQuestionLinkInputBuilder()..update(updates))._build();
 
-  _$ExternalQuestionLinkInput._(
-      {required this.streamId,
-      required this.externalQuestionId,
-      required this.questionId,
-      this.orientation})
-      : super._();
+  _$ExternalQuestionLinkInput._({
+    required this.streamId,
+    required this.externalQuestionId,
+    required this.questionId,
+    this.orientation,
+  }) : super._();
   @override
   ExternalQuestionLinkInput rebuild(
-          void Function(ExternalQuestionLinkInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalQuestionLinkInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalQuestionLinkInputBuilder toBuilder() =>
@@ -183,16 +188,24 @@ class ExternalQuestionLinkInputBuilder
   ExternalQuestionLinkInput build() => _build();
 
   _$ExternalQuestionLinkInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalQuestionLinkInput._(
           streamId: BuiltValueNullFieldError.checkNotNull(
-              streamId, r'ExternalQuestionLinkInput', 'streamId'),
+            streamId,
+            r'ExternalQuestionLinkInput',
+            'streamId',
+          ),
           externalQuestionId: BuiltValueNullFieldError.checkNotNull(
-              externalQuestionId,
-              r'ExternalQuestionLinkInput',
-              'externalQuestionId'),
+            externalQuestionId,
+            r'ExternalQuestionLinkInput',
+            'externalQuestionId',
+          ),
           questionId: BuiltValueNullFieldError.checkNotNull(
-              questionId, r'ExternalQuestionLinkInput', 'questionId'),
+            questionId,
+            r'ExternalQuestionLinkInput',
+            'questionId',
+          ),
           orientation: orientation,
         );
     replace(_$result);

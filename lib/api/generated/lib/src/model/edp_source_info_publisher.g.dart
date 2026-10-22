@@ -14,16 +14,16 @@ class _$EdpSourceInfoPublisher extends EdpSourceInfoPublisher {
   @override
   final String? contact;
 
-  factory _$EdpSourceInfoPublisher(
-          [void Function(EdpSourceInfoPublisherBuilder)? updates]) =>
-      (EdpSourceInfoPublisherBuilder()..update(updates))._build();
+  factory _$EdpSourceInfoPublisher([
+    void Function(EdpSourceInfoPublisherBuilder)? updates,
+  ]) => (EdpSourceInfoPublisherBuilder()..update(updates))._build();
 
   _$EdpSourceInfoPublisher._({required this.name, this.url, this.contact})
-      : super._();
+    : super._();
   @override
   EdpSourceInfoPublisher rebuild(
-          void Function(EdpSourceInfoPublisherBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpSourceInfoPublisherBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpSourceInfoPublisherBuilder toBuilder() =>
@@ -103,10 +103,14 @@ class EdpSourceInfoPublisherBuilder
   EdpSourceInfoPublisher build() => _build();
 
   _$EdpSourceInfoPublisher _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpSourceInfoPublisher._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'EdpSourceInfoPublisher', 'name'),
+            name,
+            r'EdpSourceInfoPublisher',
+            'name',
+          ),
           url: url,
           contact: contact,
         );

@@ -24,9 +24,9 @@ WatchdogSettingsMethodEnum _$watchdogSettingsMethodEnumValueOf(String name) {
 
 final BuiltSet<WatchdogSettingsMethodEnum> _$watchdogSettingsMethodEnumValues =
     BuiltSet<WatchdogSettingsMethodEnum>(const <WatchdogSettingsMethodEnum>[
-  _$watchdogSettingsMethodEnum_GET,
-  _$watchdogSettingsMethodEnum_POST,
-]);
+      _$watchdogSettingsMethodEnum_GET,
+      _$watchdogSettingsMethodEnum_POST,
+    ]);
 
 Serializer<WatchdogSettingsMethodEnum> _$watchdogSettingsMethodEnumSerializer =
     _$WatchdogSettingsMethodEnumSerializer();
@@ -48,16 +48,20 @@ class _$WatchdogSettingsMethodEnumSerializer
   final String wireName = 'WatchdogSettingsMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, WatchdogSettingsMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WatchdogSettingsMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WatchdogSettingsMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WatchdogSettingsMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WatchdogSettingsMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WatchdogSettings extends WatchdogSettings {
@@ -72,17 +76,17 @@ class _$WatchdogSettings extends WatchdogSettings {
   @override
   final WatchdogSettingsCanary? canary;
 
-  factory _$WatchdogSettings(
-          [void Function(WatchdogSettingsBuilder)? updates]) =>
-      (WatchdogSettingsBuilder()..update(updates))._build();
+  factory _$WatchdogSettings([
+    void Function(WatchdogSettingsBuilder)? updates,
+  ]) => (WatchdogSettingsBuilder()..update(updates))._build();
 
-  _$WatchdogSettings._(
-      {this.heartbeatUrl,
-      this.failUrl,
-      this.interval,
-      this.method,
-      this.canary})
-      : super._();
+  _$WatchdogSettings._({
+    this.heartbeatUrl,
+    this.failUrl,
+    this.interval,
+    this.method,
+    this.canary,
+  }) : super._();
   @override
   WatchdogSettings rebuild(void Function(WatchdogSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -184,7 +188,8 @@ class WatchdogSettingsBuilder
   _$WatchdogSettings _build() {
     _$WatchdogSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WatchdogSettings._(
             heartbeatUrl: heartbeatUrl,
             failUrl: failUrl,
@@ -199,7 +204,10 @@ class WatchdogSettingsBuilder
         _canary?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchdogSettings', _$failedField, e.toString());
+          r'WatchdogSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

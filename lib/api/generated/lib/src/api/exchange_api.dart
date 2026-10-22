@@ -50,21 +50,21 @@ class ExchangeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exchange/received/{receivedId}/acknowledge'.replaceAll(
-        '{' r'receivedId' '}',
-        encodeQueryParameter(_serializers, receivedId, const FullType(String))
-            .toString());
+      '{'
+      r'receivedId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        receivedId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -86,9 +86,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExchangeReceipt),
-            ) as ExchangeReceipt;
+                  rawResponse,
+                  specifiedType: const FullType(ExchangeReceipt),
+                )
+                as ExchangeReceipt;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -137,16 +138,10 @@ class ExchangeApi {
     final _path = r'/v1/exchange/packages';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -158,14 +153,13 @@ class ExchangeApi {
 
     try {
       const _type = FullType(ExchangePackageInput);
-      _bodyData =
-          _serializers.serialize(exchangePackageInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        exchangePackageInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -188,9 +182,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExchangePackage),
-            ) as ExchangePackage;
+                  rawResponse,
+                  specifiedType: const FullType(ExchangePackage),
+                )
+                as ExchangePackage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -237,22 +232,22 @@ class ExchangeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exchange/packages/{packageId}/download'.replaceAll(
-        '{' r'packageId' '}',
-        encodeQueryParameter(_serializers, packageId, const FullType(String))
-            .toString());
+      '{'
+      r'packageId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        packageId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -318,21 +313,21 @@ class ExchangeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exchange/packages/{packageId}'.replaceAll(
-        '{' r'packageId' '}',
-        encodeQueryParameter(_serializers, packageId, const FullType(String))
-            .toString());
+      '{'
+      r'packageId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        packageId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -354,9 +349,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExchangePackage),
-            ) as ExchangePackage;
+                  rawResponse,
+                  specifiedType: const FullType(ExchangePackage),
+                )
+                as ExchangePackage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -403,21 +399,21 @@ class ExchangeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exchange/received/{receivedId}'.replaceAll(
-        '{' r'receivedId' '}',
-        encodeQueryParameter(_serializers, receivedId, const FullType(String))
-            .toString());
+      '{'
+      r'receivedId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        receivedId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -439,9 +435,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReceivedPackage),
-            ) as ReceivedPackage;
+                  rawResponse,
+                  specifiedType: const FullType(ReceivedPackage),
+                )
+                as ReceivedPackage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -490,21 +487,21 @@ class ExchangeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/exchange/received/{receivedId}/rendition'.replaceAll(
-        '{' r'receivedId' '}',
-        encodeQueryParameter(_serializers, receivedId, const FullType(String))
-            .toString());
+      '{'
+      r'receivedId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        receivedId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -512,8 +509,11 @@ class ExchangeApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'format':
-          encodeQueryParameter(_serializers, format, const FullType(String)),
+      r'format': encodeQueryParameter(
+        _serializers,
+        format,
+        const FullType(String),
+      ),
     };
 
     final _response = await _dio.request<Object>(
@@ -580,16 +580,10 @@ class ExchangeApi {
     final _path = r'/v1/exchange/import';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -602,15 +596,15 @@ class ExchangeApi {
     try {
       _bodyData = FormData.fromMap(<String, dynamic>{
         r'file': file,
-        r'jwks':
-            encodeFormParameter(_serializers, jwks, const FullType(String)),
+        r'jwks': encodeFormParameter(
+          _serializers,
+          jwks,
+          const FullType(String),
+        ),
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -633,9 +627,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReceivedPackage),
-            ) as ReceivedPackage;
+                  rawResponse,
+                  specifiedType: const FullType(ReceivedPackage),
+                )
+                as ReceivedPackage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -692,16 +687,10 @@ class ExchangeApi {
     final _path = r'/v1/exchange/received';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -710,20 +699,35 @@ class ExchangeApi {
 
     final _queryParameters = <String, dynamic>{
       if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
+        r'type': encodeQueryParameter(
+          _serializers,
+          type,
+          const FullType(String),
+        ),
       if (senderInstanceId != null)
         r'senderInstanceId': encodeQueryParameter(
-            _serializers, senderInstanceId, const FullType(String)),
+          _serializers,
+          senderInstanceId,
+          const FullType(String),
+        ),
       if (acknowledged != null)
         r'acknowledged': encodeQueryParameter(
-            _serializers, acknowledged, const FullType(bool)),
+          _serializers,
+          acknowledged,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -742,9 +746,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReceivedPackagePage),
-            ) as ReceivedPackagePage;
+                  rawResponse,
+                  specifiedType: const FullType(ReceivedPackagePage),
+                )
+                as ReceivedPackagePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -797,16 +802,10 @@ class ExchangeApi {
     final _path = r'/v1/exchange/sent';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -815,14 +814,23 @@ class ExchangeApi {
 
     final _queryParameters = <String, dynamic>{
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -841,9 +849,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExchangePackagePage),
-            ) as ExchangePackagePage;
+                  rawResponse,
+                  specifiedType: const FullType(ExchangePackagePage),
+                )
+                as ExchangePackagePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -892,16 +901,10 @@ class ExchangeApi {
     final _path = r'/v1/exchange/inbox';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'peerCredential',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'peerCredential'},
         ],
         ...?extra,
       },
@@ -915,10 +918,7 @@ class ExchangeApi {
       _bodyData = body.finalize();
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -941,9 +941,10 @@ class ExchangeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ExchangeReceipt),
-            ) as ExchangeReceipt;
+                  rawResponse,
+                  specifiedType: const FullType(ExchangeReceipt),
+                )
+                as ExchangeReceipt;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -992,16 +993,10 @@ class ExchangeApi {
     final _path = r'/v1/exchange/receipts';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'peerCredential',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'peerCredential'},
         ],
         ...?extra,
       },
@@ -1016,10 +1011,7 @@ class ExchangeApi {
       _bodyData = _serializers.serialize(exchangeReceipt, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,

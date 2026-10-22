@@ -40,9 +40,9 @@ abstract class AnomalyObservationBaseline
 
   AnomalyObservationBaseline._();
 
-  factory AnomalyObservationBaseline(
-          [void updates(AnomalyObservationBaselineBuilder b)]) =
-      _$AnomalyObservationBaseline;
+  factory AnomalyObservationBaseline([
+    void updates(AnomalyObservationBaselineBuilder b),
+  ]) = _$AnomalyObservationBaseline;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnomalyObservationBaselineBuilder b) => b;
@@ -57,7 +57,7 @@ class _$AnomalyObservationBaselineSerializer
   @override
   final Iterable<Type> types = const [
     AnomalyObservationBaseline,
-    _$AnomalyObservationBaseline
+    _$AnomalyObservationBaseline,
   ];
 
   @override
@@ -101,9 +101,11 @@ class _$AnomalyObservationBaselineSerializer
     AnomalyObservationBaseline object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,39 +121,43 @@ class _$AnomalyObservationBaselineSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'weeks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.weeks = valueDes;
           break;
         case r'slotMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(AnomalyObservationBaselineSlotModeEnum),
-          ) as AnomalyObservationBaselineSlotModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AnomalyObservationBaselineSlotModeEnum,
+                    ),
+                  )
+                  as AnomalyObservationBaselineSlotModeEnum;
           result.slotMode = valueDes;
           break;
         case r'mean':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.mean = valueDes;
           break;
         case r'variance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.variance = valueDes;
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnomalyObservationBaselineModelEnum),
-          ) as AnomalyObservationBaselineModelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AnomalyObservationBaselineModelEnum,
+                    ),
+                  )
+                  as AnomalyObservationBaselineModelEnum;
           result.model = valueDes;
           break;
         default:

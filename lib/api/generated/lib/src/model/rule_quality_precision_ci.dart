@@ -24,9 +24,9 @@ abstract class RuleQualityPrecisionCi
 
   RuleQualityPrecisionCi._();
 
-  factory RuleQualityPrecisionCi(
-          [void updates(RuleQualityPrecisionCiBuilder b)]) =
-      _$RuleQualityPrecisionCi;
+  factory RuleQualityPrecisionCi([
+    void updates(RuleQualityPrecisionCiBuilder b),
+  ]) = _$RuleQualityPrecisionCi;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleQualityPrecisionCiBuilder b) => b;
@@ -41,7 +41,7 @@ class _$RuleQualityPrecisionCiSerializer
   @override
   final Iterable<Type> types = const [
     RuleQualityPrecisionCi,
-    _$RuleQualityPrecisionCi
+    _$RuleQualityPrecisionCi,
   ];
 
   @override
@@ -74,9 +74,11 @@ class _$RuleQualityPrecisionCiSerializer
     RuleQualityPrecisionCi object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +94,22 @@ class _$RuleQualityPrecisionCiSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lower':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lower = valueDes;
           break;
         case r'upper':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.upper = valueDes;
           break;

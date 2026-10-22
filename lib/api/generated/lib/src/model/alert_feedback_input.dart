@@ -70,9 +70,11 @@ class _$AlertFeedbackInputSerializer
     AlertFeedbackInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,17 +90,23 @@ class _$AlertFeedbackInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'feedback':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AlertFeedbackInputFeedbackEnum),
-          ) as AlertFeedbackInputFeedbackEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AlertFeedbackInputFeedbackEnum,
+                    ),
+                  )
+                  as AlertFeedbackInputFeedbackEnum;
           result.feedback = valueDes;
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;

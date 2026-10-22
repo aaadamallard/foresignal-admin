@@ -18,21 +18,21 @@ class _$SampleTrackResponsePointsInner extends SampleTrackResponsePointsInner {
   @override
   final BuiltList<SampleValue> values;
 
-  factory _$SampleTrackResponsePointsInner(
-          [void Function(SampleTrackResponsePointsInnerBuilder)? updates]) =>
-      (SampleTrackResponsePointsInnerBuilder()..update(updates))._build();
+  factory _$SampleTrackResponsePointsInner([
+    void Function(SampleTrackResponsePointsInnerBuilder)? updates,
+  ]) => (SampleTrackResponsePointsInnerBuilder()..update(updates))._build();
 
-  _$SampleTrackResponsePointsInner._(
-      {required this.lon,
-      required this.lat,
-      required this.time,
-      required this.status,
-      required this.values})
-      : super._();
+  _$SampleTrackResponsePointsInner._({
+    required this.lon,
+    required this.lat,
+    required this.time,
+    required this.status,
+    required this.values,
+  }) : super._();
   @override
   SampleTrackResponsePointsInner rebuild(
-          void Function(SampleTrackResponsePointsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SampleTrackResponsePointsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SampleTrackResponsePointsInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$SampleTrackResponsePointsInner extends SampleTrackResponsePointsInner {
 
 class SampleTrackResponsePointsInnerBuilder
     implements
-        Builder<SampleTrackResponsePointsInner,
-            SampleTrackResponsePointsInnerBuilder> {
+        Builder<
+          SampleTrackResponsePointsInner,
+          SampleTrackResponsePointsInnerBuilder
+        > {
   _$SampleTrackResponsePointsInner? _$v;
 
   num? _lon;
@@ -133,16 +135,29 @@ class SampleTrackResponsePointsInnerBuilder
   _$SampleTrackResponsePointsInner _build() {
     _$SampleTrackResponsePointsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SampleTrackResponsePointsInner._(
             lon: BuiltValueNullFieldError.checkNotNull(
-                lon, r'SampleTrackResponsePointsInner', 'lon'),
+              lon,
+              r'SampleTrackResponsePointsInner',
+              'lon',
+            ),
             lat: BuiltValueNullFieldError.checkNotNull(
-                lat, r'SampleTrackResponsePointsInner', 'lat'),
+              lat,
+              r'SampleTrackResponsePointsInner',
+              'lat',
+            ),
             time: BuiltValueNullFieldError.checkNotNull(
-                time, r'SampleTrackResponsePointsInner', 'time'),
+              time,
+              r'SampleTrackResponsePointsInner',
+              'time',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SampleTrackResponsePointsInner', 'status'),
+              status,
+              r'SampleTrackResponsePointsInner',
+              'status',
+            ),
             values: values.build(),
           );
     } catch (_) {
@@ -152,7 +167,10 @@ class SampleTrackResponsePointsInnerBuilder
         values.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SampleTrackResponsePointsInner', _$failedField, e.toString());
+          r'SampleTrackResponsePointsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

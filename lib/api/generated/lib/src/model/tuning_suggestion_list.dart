@@ -60,7 +60,7 @@ class _$TuningSuggestionListSerializer
   @override
   final Iterable<Type> types = const [
     TuningSuggestionList,
-    _$TuningSuggestionList
+    _$TuningSuggestionList,
   ];
 
   @override
@@ -89,8 +89,9 @@ class _$TuningSuggestionListSerializer
     yield r'suggestions';
     yield serializers.serialize(
       object.suggestions,
-      specifiedType:
-          const FullType(BuiltList, [FullType(TuningSuggestionRecord)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(TuningSuggestionRecord),
+      ]),
     );
     if (object.simulationJobId != null) {
       yield r'simulationJobId';
@@ -114,9 +115,11 @@ class _$TuningSuggestionListSerializer
     TuningSuggestionList object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,47 +135,60 @@ class _$TuningSuggestionListSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'since':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.since = valueDes;
           break;
         case r'suggesterVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.suggesterVersion = valueDes;
           break;
         case r'suggestions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(TuningSuggestionRecord)]),
-          ) as BuiltList<TuningSuggestionRecord>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(TuningSuggestionRecord),
+                    ]),
+                  )
+                  as BuiltList<TuningSuggestionRecord>;
           result.suggestions.replace(valueDes);
           break;
         case r'simulationJobId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.simulationJobId = valueDes;
           break;
         case r'jobId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.jobId = valueDes;
           break;

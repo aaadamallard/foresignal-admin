@@ -22,8 +22,10 @@ part 'federation_ingest_result_dropped.g.dart';
 @BuiltValue()
 abstract class FederationIngestResultDropped
     implements
-        Built<FederationIngestResultDropped,
-            FederationIngestResultDroppedBuilder> {
+        Built<
+          FederationIngestResultDropped,
+          FederationIngestResultDroppedBuilder
+        > {
   @BuiltValueField(wireName: r'loop')
   int? get loop;
 
@@ -51,9 +53,9 @@ abstract class FederationIngestResultDropped
 
   FederationIngestResultDropped._();
 
-  factory FederationIngestResultDropped(
-          [void updates(FederationIngestResultDroppedBuilder b)]) =
-      _$FederationIngestResultDropped;
+  factory FederationIngestResultDropped([
+    void updates(FederationIngestResultDroppedBuilder b),
+  ]) = _$FederationIngestResultDropped;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FederationIngestResultDroppedBuilder b) => b;
@@ -68,7 +70,7 @@ class _$FederationIngestResultDroppedSerializer
   @override
   final Iterable<Type> types = const [
     FederationIngestResultDropped,
-    _$FederationIngestResultDropped
+    _$FederationIngestResultDropped,
   ];
 
   @override
@@ -143,9 +145,11 @@ class _$FederationIngestResultDroppedSerializer
     FederationIngestResultDropped object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,66 +165,82 @@ class _$FederationIngestResultDroppedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'loop':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.loop = valueDes;
           break;
         case r'hops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.hops = valueDes;
           break;
         case r'dedup':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.dedup = valueDes;
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.licence = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;
         case r'exercise':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.exercise = valueDes;
           break;
         case r'expired':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.expired = valueDes;
           break;
         case r'selection':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.selection = valueDes;
           break;

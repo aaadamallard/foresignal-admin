@@ -16,16 +16,16 @@ class _$WindowStatusStates extends WindowStatusStates {
   @override
   final int? learning;
 
-  factory _$WindowStatusStates(
-          [void Function(WindowStatusStatesBuilder)? updates]) =>
-      (WindowStatusStatesBuilder()..update(updates))._build();
+  factory _$WindowStatusStates([
+    void Function(WindowStatusStatesBuilder)? updates,
+  ]) => (WindowStatusStatesBuilder()..update(updates))._build();
 
   _$WindowStatusStates._({this.active, this.clear, this.unknown, this.learning})
-      : super._();
+    : super._();
   @override
   WindowStatusStates rebuild(
-          void Function(WindowStatusStatesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WindowStatusStatesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WindowStatusStatesBuilder toBuilder() =>
@@ -113,7 +113,8 @@ class WindowStatusStatesBuilder
   WindowStatusStates build() => _build();
 
   _$WindowStatusStates _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WindowStatusStates._(
           active: active,
           clear: clear,

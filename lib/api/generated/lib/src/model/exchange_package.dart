@@ -114,8 +114,9 @@ class _$ExchangePackageSerializer
       yield r'deliveries';
       yield serializers.serialize(
         object.deliveries,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ExchangePackageDeliveriesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ExchangePackageDeliveriesInner),
+        ]),
       );
     }
     if (object.reductions != null) {
@@ -157,9 +158,11 @@ class _$ExchangePackageSerializer
     ExchangePackage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -175,79 +178,101 @@ class _$ExchangePackageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'manifest':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageManifest),
-          ) as PackageManifest;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PackageManifest),
+                  )
+                  as PackageManifest;
           result.manifest.replace(valueDes);
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExchangePackageStatusEnum),
-          ) as ExchangePackageStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExchangePackageStatusEnum),
+                  )
+                  as ExchangePackageStatusEnum;
           result.status = valueDes;
           break;
         case r'sizeBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.sizeBytes = valueDes;
           break;
         case r'deliveries':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ExchangePackageDeliveriesInner)]),
-          ) as BuiltList<ExchangePackageDeliveriesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ExchangePackageDeliveriesInner),
+                    ]),
+                  )
+                  as BuiltList<ExchangePackageDeliveriesInner>?;
           if (valueDes == null) continue;
           result.deliveries.replace(valueDes);
           break;
         case r'reductions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.reductions.replace(valueDes);
           break;
         case r'createdBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrincipalSummary),
-          ) as PrincipalSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrincipalSummary),
+                  )
+                  as PrincipalSummary;
           result.createdBy.replace(valueDes);
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'downloadHref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.downloadHref = valueDes;
           break;
         case r'error':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.error = valueDes;
           break;

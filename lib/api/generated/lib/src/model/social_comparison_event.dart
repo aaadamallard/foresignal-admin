@@ -55,8 +55,9 @@ abstract class SocialComparisonEvent
 
   SocialComparisonEvent._();
 
-  factory SocialComparisonEvent(
-      [void updates(SocialComparisonEventBuilder b)]) = _$SocialComparisonEvent;
+  factory SocialComparisonEvent([
+    void updates(SocialComparisonEventBuilder b),
+  ]) = _$SocialComparisonEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialComparisonEventBuilder b) => b;
@@ -71,7 +72,7 @@ class _$SocialComparisonEventSerializer
   @override
   final Iterable<Type> types = const [
     SocialComparisonEvent,
-    _$SocialComparisonEvent
+    _$SocialComparisonEvent,
   ];
 
   @override
@@ -111,8 +112,9 @@ class _$SocialComparisonEventSerializer
       yield r'previousStatus';
       yield serializers.serialize(
         object.previousStatus,
-        specifiedType:
-            const FullType.nullable(SocialComparisonEventPreviousStatusEnum),
+        specifiedType: const FullType.nullable(
+          SocialComparisonEventPreviousStatusEnum,
+        ),
       );
     }
     yield r'revision';
@@ -133,9 +135,11 @@ class _$SocialComparisonEventSerializer
     SocialComparisonEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -151,61 +155,79 @@ class _$SocialComparisonEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialComparisonEventEventEnum),
-          ) as SocialComparisonEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialComparisonEventEventEnum,
+                    ),
+                  )
+                  as SocialComparisonEventEventEnum;
           result.event = valueDes;
           break;
         case r'comparisonId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.comparisonId = valueDes;
           break;
         case r'claimId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.claimId = valueDes;
           break;
         case r'narrativeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.narrativeId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialComparisonEventStatusEnum),
-          ) as SocialComparisonEventStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialComparisonEventStatusEnum,
+                    ),
+                  )
+                  as SocialComparisonEventStatusEnum;
           result.status = valueDes;
           break;
         case r'previousStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                SocialComparisonEventPreviousStatusEnum),
-          ) as SocialComparisonEventPreviousStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialComparisonEventPreviousStatusEnum,
+                    ),
+                  )
+                  as SocialComparisonEventPreviousStatusEnum?;
           if (valueDes == null) continue;
           result.previousStatus = valueDes;
           break;
         case r'revision':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.revision = valueDes;
           break;
         case r'evaluatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.evaluatedAt = valueDes;
           break;
         default:

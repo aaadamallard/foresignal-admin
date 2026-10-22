@@ -24,8 +24,9 @@ abstract class AnalogResultSignature
 
   AnalogResultSignature._();
 
-  factory AnalogResultSignature(
-      [void updates(AnalogResultSignatureBuilder b)]) = _$AnalogResultSignature;
+  factory AnalogResultSignature([
+    void updates(AnalogResultSignatureBuilder b),
+  ]) = _$AnalogResultSignature;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalogResultSignatureBuilder b) => b;
@@ -40,7 +41,7 @@ class _$AnalogResultSignatureSerializer
   @override
   final Iterable<Type> types = const [
     AnalogResultSignature,
-    _$AnalogResultSignature
+    _$AnalogResultSignature,
   ];
 
   @override
@@ -71,9 +72,11 @@ class _$AnalogResultSignatureSerializer
     AnalogResultSignature object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +92,18 @@ class _$AnalogResultSignatureSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'dayN':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.dayN = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.computedAt = valueDes;
           break;

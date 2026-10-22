@@ -27,12 +27,12 @@ ClientPresenceInputKindEnum _$clientPresenceInputKindEnumValueOf(String name) {
 }
 
 final BuiltSet<ClientPresenceInputKindEnum>
-    _$clientPresenceInputKindEnumValues =
+_$clientPresenceInputKindEnumValues =
     BuiltSet<ClientPresenceInputKindEnum>(const <ClientPresenceInputKindEnum>[
-  _$clientPresenceInputKindEnum_desktop,
-  _$clientPresenceInputKindEnum_mobile,
-  _$clientPresenceInputKindEnum_web,
-]);
+      _$clientPresenceInputKindEnum_desktop,
+      _$clientPresenceInputKindEnum_mobile,
+      _$clientPresenceInputKindEnum_web,
+    ]);
 
 const ClientPresenceInputStateEnum _$clientPresenceInputStateEnum_active =
     const ClientPresenceInputStateEnum._('active');
@@ -42,7 +42,8 @@ const ClientPresenceInputStateEnum _$clientPresenceInputStateEnum_background =
     const ClientPresenceInputStateEnum._('background');
 
 ClientPresenceInputStateEnum _$clientPresenceInputStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'active':
       return _$clientPresenceInputStateEnum_active;
@@ -56,18 +57,18 @@ ClientPresenceInputStateEnum _$clientPresenceInputStateEnumValueOf(
 }
 
 final BuiltSet<ClientPresenceInputStateEnum>
-    _$clientPresenceInputStateEnumValues =
+_$clientPresenceInputStateEnumValues =
     BuiltSet<ClientPresenceInputStateEnum>(const <ClientPresenceInputStateEnum>[
-  _$clientPresenceInputStateEnum_active,
-  _$clientPresenceInputStateEnum_idle,
-  _$clientPresenceInputStateEnum_background,
-]);
+      _$clientPresenceInputStateEnum_active,
+      _$clientPresenceInputStateEnum_idle,
+      _$clientPresenceInputStateEnum_background,
+    ]);
 
 Serializer<ClientPresenceInputKindEnum>
-    _$clientPresenceInputKindEnumSerializer =
+_$clientPresenceInputKindEnumSerializer =
     _$ClientPresenceInputKindEnumSerializer();
 Serializer<ClientPresenceInputStateEnum>
-    _$clientPresenceInputStateEnumSerializer =
+_$clientPresenceInputStateEnumSerializer =
     _$ClientPresenceInputStateEnumSerializer();
 
 class _$ClientPresenceInputKindEnumSerializer
@@ -89,16 +90,20 @@ class _$ClientPresenceInputKindEnumSerializer
   final String wireName = 'ClientPresenceInputKindEnum';
 
   @override
-  Object serialize(Serializers serializers, ClientPresenceInputKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClientPresenceInputKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ClientPresenceInputKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClientPresenceInputKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClientPresenceInputKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClientPresenceInputStateEnumSerializer
@@ -120,16 +125,20 @@ class _$ClientPresenceInputStateEnumSerializer
   final String wireName = 'ClientPresenceInputStateEnum';
 
   @override
-  Object serialize(Serializers serializers, ClientPresenceInputStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClientPresenceInputStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ClientPresenceInputStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClientPresenceInputStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClientPresenceInputStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClientPresenceInput extends ClientPresenceInput {
@@ -140,17 +149,19 @@ class _$ClientPresenceInput extends ClientPresenceInput {
   @override
   final int? ttlSeconds;
 
-  factory _$ClientPresenceInput(
-          [void Function(ClientPresenceInputBuilder)? updates]) =>
-      (ClientPresenceInputBuilder()..update(updates))._build();
+  factory _$ClientPresenceInput([
+    void Function(ClientPresenceInputBuilder)? updates,
+  ]) => (ClientPresenceInputBuilder()..update(updates))._build();
 
-  _$ClientPresenceInput._(
-      {required this.kind, required this.state, this.ttlSeconds})
-      : super._();
+  _$ClientPresenceInput._({
+    required this.kind,
+    required this.state,
+    this.ttlSeconds,
+  }) : super._();
   @override
   ClientPresenceInput rebuild(
-          void Function(ClientPresenceInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ClientPresenceInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ClientPresenceInputBuilder toBuilder() =>
@@ -230,12 +241,19 @@ class ClientPresenceInputBuilder
   ClientPresenceInput build() => _build();
 
   _$ClientPresenceInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ClientPresenceInput._(
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'ClientPresenceInput', 'kind'),
+            kind,
+            r'ClientPresenceInput',
+            'kind',
+          ),
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'ClientPresenceInput', 'state'),
+            state,
+            r'ClientPresenceInput',
+            'state',
+          ),
           ttlSeconds: ttlSeconds,
         );
     replace(_$result);

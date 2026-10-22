@@ -14,17 +14,19 @@ class _$RecordMappingFilterInner extends RecordMappingFilterInner {
   @override
   final JsonObject? value;
 
-  factory _$RecordMappingFilterInner(
-          [void Function(RecordMappingFilterInnerBuilder)? updates]) =>
-      (RecordMappingFilterInnerBuilder()..update(updates))._build();
+  factory _$RecordMappingFilterInner([
+    void Function(RecordMappingFilterInnerBuilder)? updates,
+  ]) => (RecordMappingFilterInnerBuilder()..update(updates))._build();
 
-  _$RecordMappingFilterInner._(
-      {required this.path, required this.op, this.value})
-      : super._();
+  _$RecordMappingFilterInner._({
+    required this.path,
+    required this.op,
+    this.value,
+  }) : super._();
   @override
   RecordMappingFilterInner rebuild(
-          void Function(RecordMappingFilterInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecordMappingFilterInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecordMappingFilterInnerBuilder toBuilder() =>
@@ -105,12 +107,19 @@ class RecordMappingFilterInnerBuilder
   RecordMappingFilterInner build() => _build();
 
   _$RecordMappingFilterInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RecordMappingFilterInner._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'RecordMappingFilterInner', 'path'),
+            path,
+            r'RecordMappingFilterInner',
+            'path',
+          ),
           op: BuiltValueNullFieldError.checkNotNull(
-              op, r'RecordMappingFilterInner', 'op'),
+            op,
+            r'RecordMappingFilterInner',
+            'op',
+          ),
           value: value,
         );
     replace(_$result);

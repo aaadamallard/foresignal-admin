@@ -89,11 +89,8 @@ class InfraNodeEdgesBuilder
   _$InfraNodeEdges _build() {
     _$InfraNodeEdges _$result;
     try {
-      _$result = _$v ??
-          _$InfraNodeEdges._(
-            in_: _in_?.build(),
-            out_: _out_?.build(),
-          );
+      _$result =
+          _$v ?? _$InfraNodeEdges._(in_: _in_?.build(), out_: _out_?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class InfraNodeEdgesBuilder
         _out_?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraNodeEdges', _$failedField, e.toString());
+          r'InfraNodeEdges',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -120,9 +120,11 @@ class _$ServerSettingsSerializer
     ServerSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -138,50 +140,63 @@ class _$ServerSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'publicBaseUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.publicBaseUrl = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.timezone = valueDes;
           break;
         case r'clientLinks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ClientLinks),
-          ) as ClientLinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ClientLinks),
+                  )
+                  as ClientLinks?;
           if (valueDes == null) continue;
           result.clientLinks.replace(valueDes);
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(SettingsWarning)]),
-          ) as BuiltList<SettingsWarning>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SettingsWarning),
+                    ]),
+                  )
+                  as BuiltList<SettingsWarning>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;
         case r'push':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PushSettings),
-          ) as PushSettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PushSettings),
+                  )
+                  as PushSettings?;
           if (valueDes == null) continue;
           result.push.replace(valueDes);
           break;
         case r'contactEmail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.contactEmail = valueDes;
           break;

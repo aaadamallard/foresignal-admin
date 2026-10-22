@@ -7,17 +7,17 @@ part of 'notification_settings.dart';
 // **************************************************************************
 
 const NotificationSettingsPauseBypassSeverityEnum
-    _$notificationSettingsPauseBypassSeverityEnum_info =
+_$notificationSettingsPauseBypassSeverityEnum_info =
     const NotificationSettingsPauseBypassSeverityEnum._('info');
 const NotificationSettingsPauseBypassSeverityEnum
-    _$notificationSettingsPauseBypassSeverityEnum_warning =
+_$notificationSettingsPauseBypassSeverityEnum_warning =
     const NotificationSettingsPauseBypassSeverityEnum._('warning');
 const NotificationSettingsPauseBypassSeverityEnum
-    _$notificationSettingsPauseBypassSeverityEnum_critical =
+_$notificationSettingsPauseBypassSeverityEnum_critical =
     const NotificationSettingsPauseBypassSeverityEnum._('critical');
 
 NotificationSettingsPauseBypassSeverityEnum
-    _$notificationSettingsPauseBypassSeverityEnumValueOf(String name) {
+_$notificationSettingsPauseBypassSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$notificationSettingsPauseBypassSeverityEnum_info;
@@ -31,15 +31,17 @@ NotificationSettingsPauseBypassSeverityEnum
 }
 
 final BuiltSet<NotificationSettingsPauseBypassSeverityEnum>
-    _$notificationSettingsPauseBypassSeverityEnumValues = BuiltSet<
-        NotificationSettingsPauseBypassSeverityEnum>(const <NotificationSettingsPauseBypassSeverityEnum>[
-  _$notificationSettingsPauseBypassSeverityEnum_info,
-  _$notificationSettingsPauseBypassSeverityEnum_warning,
-  _$notificationSettingsPauseBypassSeverityEnum_critical,
-]);
+_$notificationSettingsPauseBypassSeverityEnumValues =
+    BuiltSet<NotificationSettingsPauseBypassSeverityEnum>(
+      const <NotificationSettingsPauseBypassSeverityEnum>[
+        _$notificationSettingsPauseBypassSeverityEnum_info,
+        _$notificationSettingsPauseBypassSeverityEnum_warning,
+        _$notificationSettingsPauseBypassSeverityEnum_critical,
+      ],
+    );
 
 Serializer<NotificationSettingsPauseBypassSeverityEnum>
-    _$notificationSettingsPauseBypassSeverityEnumSerializer =
+_$notificationSettingsPauseBypassSeverityEnumSerializer =
     _$NotificationSettingsPauseBypassSeverityEnumSerializer();
 
 class _$NotificationSettingsPauseBypassSeverityEnumSerializer
@@ -58,23 +60,26 @@ class _$NotificationSettingsPauseBypassSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NotificationSettingsPauseBypassSeverityEnum
+    NotificationSettingsPauseBypassSeverityEnum,
   ];
   @override
   final String wireName = 'NotificationSettingsPauseBypassSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NotificationSettingsPauseBypassSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationSettingsPauseBypassSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationSettingsPauseBypassSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationSettingsPauseBypassSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationSettingsPauseBypassSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationSettings extends NotificationSettings {
@@ -89,21 +94,21 @@ class _$NotificationSettings extends NotificationSettings {
   @override
   final String? defaultLanguage;
 
-  factory _$NotificationSettings(
-          [void Function(NotificationSettingsBuilder)? updates]) =>
-      (NotificationSettingsBuilder()..update(updates))._build();
+  factory _$NotificationSettings([
+    void Function(NotificationSettingsBuilder)? updates,
+  ]) => (NotificationSettingsBuilder()..update(updates))._build();
 
-  _$NotificationSettings._(
-      {this.pausedUntil,
-      this.pauseBypassSeverity,
-      this.chatops,
-      this.imageLinks,
-      this.defaultLanguage})
-      : super._();
+  _$NotificationSettings._({
+    this.pausedUntil,
+    this.pauseBypassSeverity,
+    this.chatops,
+    this.imageLinks,
+    this.defaultLanguage,
+  }) : super._();
   @override
   NotificationSettings rebuild(
-          void Function(NotificationSettingsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationSettingsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationSettingsBuilder toBuilder() =>
@@ -156,8 +161,8 @@ class NotificationSettingsBuilder
   NotificationSettingsPauseBypassSeverityEnum? get pauseBypassSeverity =>
       _$this._pauseBypassSeverity;
   set pauseBypassSeverity(
-          NotificationSettingsPauseBypassSeverityEnum? pauseBypassSeverity) =>
-      _$this._pauseBypassSeverity = pauseBypassSeverity;
+    NotificationSettingsPauseBypassSeverityEnum? pauseBypassSeverity,
+  ) => _$this._pauseBypassSeverity = pauseBypassSeverity;
 
   NotificationSettingsChatopsBuilder? _chatops;
   NotificationSettingsChatopsBuilder get chatops =>
@@ -207,7 +212,8 @@ class NotificationSettingsBuilder
   _$NotificationSettings _build() {
     _$NotificationSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NotificationSettings._(
             pausedUntil: pausedUntil,
             pauseBypassSeverity: pauseBypassSeverity,
@@ -222,7 +228,10 @@ class NotificationSettingsBuilder
         _chatops?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationSettings', _$failedField, e.toString());
+          r'NotificationSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

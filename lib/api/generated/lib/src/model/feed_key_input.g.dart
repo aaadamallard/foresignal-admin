@@ -21,13 +21,13 @@ class _$FeedKeyInput extends FeedKeyInput {
   factory _$FeedKeyInput([void Function(FeedKeyInputBuilder)? updates]) =>
       (FeedKeyInputBuilder()..update(updates))._build();
 
-  _$FeedKeyInput._(
-      {required this.name,
-      required this.prefixes,
-      required this.restrictions,
-      required this.expiresAt,
-      this.privateAccess})
-      : super._();
+  _$FeedKeyInput._({
+    required this.name,
+    required this.prefixes,
+    required this.restrictions,
+    required this.expiresAt,
+    this.privateAccess,
+  }) : super._();
   @override
   FeedKeyInput rebuild(void Function(FeedKeyInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -131,14 +131,21 @@ class FeedKeyInputBuilder
   _$FeedKeyInput _build() {
     _$FeedKeyInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FeedKeyInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'FeedKeyInput', 'name'),
+              name,
+              r'FeedKeyInput',
+              'name',
+            ),
             prefixes: prefixes.build(),
             restrictions: restrictions.build(),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'FeedKeyInput', 'expiresAt'),
+              expiresAt,
+              r'FeedKeyInput',
+              'expiresAt',
+            ),
             privateAccess: privateAccess,
           );
     } catch (_) {
@@ -150,7 +157,10 @@ class FeedKeyInputBuilder
         restrictions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FeedKeyInput', _$failedField, e.toString());
+          r'FeedKeyInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

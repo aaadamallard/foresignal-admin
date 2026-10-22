@@ -74,49 +74,49 @@ class _$SinkCloudEventData extends SinkCloudEventData {
   @override
   final BuiltList<Attribution>? attributions;
 
-  factory _$SinkCloudEventData(
-          [void Function(SinkCloudEventDataBuilder)? updates]) =>
-      (SinkCloudEventDataBuilder()..update(updates))._build();
+  factory _$SinkCloudEventData([
+    void Function(SinkCloudEventDataBuilder)? updates,
+  ]) => (SinkCloudEventDataBuilder()..update(updates))._build();
 
-  _$SinkCloudEventData._(
-      {required this.id,
-      required this.source_,
-      required this.externalId,
-      required this.kind,
-      required this.version,
-      required this.seq,
-      required this.observedAt,
-      required this.ingestedAt,
-      this.validUntil,
-      this.tombstone,
-      this.geometry,
-      required this.payload,
-      this.attribution,
-      this.title,
-      this.persistedObservedAt,
-      this.eventTime,
-      this.validFrom,
-      this.quality,
-      this.live,
-      this.qaFlags,
-      this.distanceKm,
-      this.observer,
-      this.region,
-      this.entityId,
-      this.provenance,
-      this.globalRef,
-      required this.persistReason,
-      this.prevSeq,
-      this.historyTier,
-      required this.receivedAt,
-      this.batchId,
-      this.downsampled,
-      this.attributions})
-      : super._();
+  _$SinkCloudEventData._({
+    required this.id,
+    required this.source_,
+    required this.externalId,
+    required this.kind,
+    required this.version,
+    required this.seq,
+    required this.observedAt,
+    required this.ingestedAt,
+    this.validUntil,
+    this.tombstone,
+    this.geometry,
+    required this.payload,
+    this.attribution,
+    this.title,
+    this.persistedObservedAt,
+    this.eventTime,
+    this.validFrom,
+    this.quality,
+    this.live,
+    this.qaFlags,
+    this.distanceKm,
+    this.observer,
+    this.region,
+    this.entityId,
+    this.provenance,
+    this.globalRef,
+    required this.persistReason,
+    this.prevSeq,
+    this.historyTier,
+    required this.receivedAt,
+    this.batchId,
+    this.downsampled,
+    this.attributions,
+  }) : super._();
   @override
   SinkCloudEventData rebuild(
-          void Function(SinkCloudEventDataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SinkCloudEventDataBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SinkCloudEventDataBuilder toBuilder() =>
@@ -448,24 +448,49 @@ class SinkCloudEventDataBuilder
   _$SinkCloudEventData _build() {
     _$SinkCloudEventData _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkCloudEventData._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SinkCloudEventData', 'id'),
+              id,
+              r'SinkCloudEventData',
+              'id',
+            ),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'SinkCloudEventData', 'source_'),
+              source_,
+              r'SinkCloudEventData',
+              'source_',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'SinkCloudEventData', 'externalId'),
+              externalId,
+              r'SinkCloudEventData',
+              'externalId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'SinkCloudEventData', 'kind'),
+              kind,
+              r'SinkCloudEventData',
+              'kind',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'SinkCloudEventData', 'version'),
+              version,
+              r'SinkCloudEventData',
+              'version',
+            ),
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'SinkCloudEventData', 'seq'),
+              seq,
+              r'SinkCloudEventData',
+              'seq',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'SinkCloudEventData', 'observedAt'),
+              observedAt,
+              r'SinkCloudEventData',
+              'observedAt',
+            ),
             ingestedAt: BuiltValueNullFieldError.checkNotNull(
-                ingestedAt, r'SinkCloudEventData', 'ingestedAt'),
+              ingestedAt,
+              r'SinkCloudEventData',
+              'ingestedAt',
+            ),
             validUntil: validUntil,
             tombstone: tombstone,
             geometry: _geometry?.build(),
@@ -485,11 +510,17 @@ class SinkCloudEventDataBuilder
             provenance: _provenance?.build(),
             globalRef: globalRef,
             persistReason: BuiltValueNullFieldError.checkNotNull(
-                persistReason, r'SinkCloudEventData', 'persistReason'),
+              persistReason,
+              r'SinkCloudEventData',
+              'persistReason',
+            ),
             prevSeq: prevSeq,
             historyTier: historyTier,
             receivedAt: BuiltValueNullFieldError.checkNotNull(
-                receivedAt, r'SinkCloudEventData', 'receivedAt'),
+              receivedAt,
+              r'SinkCloudEventData',
+              'receivedAt',
+            ),
             batchId: batchId,
             downsampled: downsampled,
             attributions: _attributions?.build(),
@@ -517,7 +548,10 @@ class SinkCloudEventDataBuilder
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkCloudEventData', _$failedField, e.toString());
+          r'SinkCloudEventData',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -21,8 +21,10 @@ part 'import_media_ratings_request1_rows_inner.g.dart';
 @BuiltValue()
 abstract class ImportMediaRatingsRequest1RowsInner
     implements
-        Built<ImportMediaRatingsRequest1RowsInner,
-            ImportMediaRatingsRequest1RowsInnerBuilder> {
+        Built<
+          ImportMediaRatingsRequest1RowsInner,
+          ImportMediaRatingsRequest1RowsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'domain')
   String get domain;
 
@@ -44,9 +46,9 @@ abstract class ImportMediaRatingsRequest1RowsInner
 
   ImportMediaRatingsRequest1RowsInner._();
 
-  factory ImportMediaRatingsRequest1RowsInner(
-          [void updates(ImportMediaRatingsRequest1RowsInnerBuilder b)]) =
-      _$ImportMediaRatingsRequest1RowsInner;
+  factory ImportMediaRatingsRequest1RowsInner([
+    void updates(ImportMediaRatingsRequest1RowsInnerBuilder b),
+  ]) = _$ImportMediaRatingsRequest1RowsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ImportMediaRatingsRequest1RowsInnerBuilder b) => b;
@@ -61,7 +63,7 @@ class _$ImportMediaRatingsRequest1RowsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ImportMediaRatingsRequest1RowsInner,
-    _$ImportMediaRatingsRequest1RowsInner
+    _$ImportMediaRatingsRequest1RowsInner,
   ];
 
   @override
@@ -114,9 +116,11 @@ class _$ImportMediaRatingsRequest1RowsInnerSerializer
     ImportMediaRatingsRequest1RowsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -132,47 +136,59 @@ class _$ImportMediaRatingsRequest1RowsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'domain':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.domain = valueDes;
           break;
         case r'dimension':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.dimension = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.value = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.licence = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.attribution = valueDes;
           break;
         default:

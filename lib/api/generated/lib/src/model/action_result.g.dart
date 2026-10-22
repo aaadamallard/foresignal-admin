@@ -17,9 +17,11 @@ class _$ActionResult extends ActionResult {
   factory _$ActionResult([void Function(ActionResultBuilder)? updates]) =>
       (ActionResultBuilder()..update(updates))._build();
 
-  _$ActionResult._(
-      {required this.action, required this.alertId, required this.result})
-      : super._();
+  _$ActionResult._({
+    required this.action,
+    required this.alertId,
+    required this.result,
+  }) : super._();
   @override
   ActionResult rebuild(void Function(ActionResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -101,14 +103,24 @@ class ActionResultBuilder
   ActionResult build() => _build();
 
   _$ActionResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ActionResult._(
           action: BuiltValueNullFieldError.checkNotNull(
-              action, r'ActionResult', 'action'),
+            action,
+            r'ActionResult',
+            'action',
+          ),
           alertId: BuiltValueNullFieldError.checkNotNull(
-              alertId, r'ActionResult', 'alertId'),
+            alertId,
+            r'ActionResult',
+            'alertId',
+          ),
           result: BuiltValueNullFieldError.checkNotNull(
-              result, r'ActionResult', 'result'),
+            result,
+            r'ActionResult',
+            'result',
+          ),
         );
     replace(_$result);
     return _$result;

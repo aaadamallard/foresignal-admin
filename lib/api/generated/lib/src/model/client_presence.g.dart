@@ -28,10 +28,10 @@ ClientPresenceKindEnum _$clientPresenceKindEnumValueOf(String name) {
 
 final BuiltSet<ClientPresenceKindEnum> _$clientPresenceKindEnumValues =
     BuiltSet<ClientPresenceKindEnum>(const <ClientPresenceKindEnum>[
-  _$clientPresenceKindEnum_desktop,
-  _$clientPresenceKindEnum_mobile,
-  _$clientPresenceKindEnum_web,
-]);
+      _$clientPresenceKindEnum_desktop,
+      _$clientPresenceKindEnum_mobile,
+      _$clientPresenceKindEnum_web,
+    ]);
 
 const ClientPresenceStateEnum _$clientPresenceStateEnum_active =
     const ClientPresenceStateEnum._('active');
@@ -55,10 +55,10 @@ ClientPresenceStateEnum _$clientPresenceStateEnumValueOf(String name) {
 
 final BuiltSet<ClientPresenceStateEnum> _$clientPresenceStateEnumValues =
     BuiltSet<ClientPresenceStateEnum>(const <ClientPresenceStateEnum>[
-  _$clientPresenceStateEnum_active,
-  _$clientPresenceStateEnum_idle,
-  _$clientPresenceStateEnum_background,
-]);
+      _$clientPresenceStateEnum_active,
+      _$clientPresenceStateEnum_idle,
+      _$clientPresenceStateEnum_background,
+    ]);
 
 Serializer<ClientPresenceKindEnum> _$clientPresenceKindEnumSerializer =
     _$ClientPresenceKindEnumSerializer();
@@ -84,15 +84,20 @@ class _$ClientPresenceKindEnumSerializer
   final String wireName = 'ClientPresenceKindEnum';
 
   @override
-  Object serialize(Serializers serializers, ClientPresenceKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClientPresenceKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ClientPresenceKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClientPresenceKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ClientPresenceKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClientPresenceKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClientPresenceStateEnumSerializer
@@ -114,16 +119,20 @@ class _$ClientPresenceStateEnumSerializer
   final String wireName = 'ClientPresenceStateEnum';
 
   @override
-  Object serialize(Serializers serializers, ClientPresenceStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClientPresenceStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ClientPresenceStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClientPresenceStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClientPresenceStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClientPresence extends ClientPresence {
@@ -141,13 +150,13 @@ class _$ClientPresence extends ClientPresence {
   factory _$ClientPresence([void Function(ClientPresenceBuilder)? updates]) =>
       (ClientPresenceBuilder()..update(updates))._build();
 
-  _$ClientPresence._(
-      {required this.deviceKey,
-      required this.kind,
-      required this.state,
-      required this.expiresAt,
-      this.updatedAt})
-      : super._();
+  _$ClientPresence._({
+    required this.deviceKey,
+    required this.kind,
+    required this.state,
+    required this.expiresAt,
+    this.updatedAt,
+  }) : super._();
   @override
   ClientPresence rebuild(void Function(ClientPresenceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -245,16 +254,29 @@ class ClientPresenceBuilder
   ClientPresence build() => _build();
 
   _$ClientPresence _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ClientPresence._(
           deviceKey: BuiltValueNullFieldError.checkNotNull(
-              deviceKey, r'ClientPresence', 'deviceKey'),
+            deviceKey,
+            r'ClientPresence',
+            'deviceKey',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'ClientPresence', 'kind'),
+            kind,
+            r'ClientPresence',
+            'kind',
+          ),
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'ClientPresence', 'state'),
+            state,
+            r'ClientPresence',
+            'state',
+          ),
           expiresAt: BuiltValueNullFieldError.checkNotNull(
-              expiresAt, r'ClientPresence', 'expiresAt'),
+            expiresAt,
+            r'ClientPresence',
+            'expiresAt',
+          ),
           updatedAt: updatedAt,
         );
     replace(_$result);

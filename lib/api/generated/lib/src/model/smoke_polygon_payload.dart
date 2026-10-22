@@ -58,7 +58,7 @@ class _$SmokePolygonPayloadSerializer
   @override
   final Iterable<Type> types = const [
     SmokePolygonPayload,
-    _$SmokePolygonPayload
+    _$SmokePolygonPayload,
   ];
 
   @override
@@ -113,9 +113,11 @@ class _$SmokePolygonPayloadSerializer
     SmokePolygonPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -131,48 +133,59 @@ class _$SmokePolygonPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'density':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SmokePolygonPayloadDensityEnum),
-          ) as SmokePolygonPayloadDensityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SmokePolygonPayloadDensityEnum,
+                    ),
+                  )
+                  as SmokePolygonPayloadDensityEnum;
           result.density = valueDes;
           break;
         case r'densityRank':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.densityRank = valueDes;
           break;
         case r'start':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.start = valueDes;
           break;
         case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.end = valueDes;
           break;
         case r'satellite':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.satellite = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.label = valueDes;
           break;
         default:

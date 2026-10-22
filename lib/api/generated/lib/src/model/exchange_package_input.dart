@@ -58,7 +58,7 @@ class _$ExchangePackageInputSerializer
   @override
   final Iterable<Type> types = const [
     ExchangePackageInput,
-    _$ExchangePackageInput
+    _$ExchangePackageInput,
   ];
 
   @override
@@ -110,9 +110,11 @@ class _$ExchangePackageInputSerializer
     ExchangePackageInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -128,42 +130,55 @@ class _$ExchangePackageInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'objectRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectRef = valueDes;
           break;
         case r'recipients':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.recipients = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'deliver':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ExchangePackageInputDeliverEnum),
-          ) as ExchangePackageInputDeliverEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExchangePackageInputDeliverEnum,
+                    ),
+                  )
+                  as ExchangePackageInputDeliverEnum?;
           if (valueDes == null) continue;
           result.deliver = valueDes;
           break;
         case r'extract':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ExchangePackageInputExtract),
-          ) as ExchangePackageInputExtract?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExchangePackageInputExtract,
+                    ),
+                  )
+                  as ExchangePackageInputExtract?;
           if (valueDes == null) continue;
           result.extract.replace(valueDes);
           break;

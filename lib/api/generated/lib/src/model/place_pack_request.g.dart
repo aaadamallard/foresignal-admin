@@ -16,13 +16,16 @@ class _$PlacePackRequest extends PlacePackRequest {
   @override
   final int? maxZoom;
 
-  factory _$PlacePackRequest(
-          [void Function(PlacePackRequestBuilder)? updates]) =>
-      (PlacePackRequestBuilder()..update(updates))._build();
+  factory _$PlacePackRequest([
+    void Function(PlacePackRequestBuilder)? updates,
+  ]) => (PlacePackRequestBuilder()..update(updates))._build();
 
-  _$PlacePackRequest._(
-      {this.products, this.frames, this.radiusKm, this.maxZoom})
-      : super._();
+  _$PlacePackRequest._({
+    this.products,
+    this.frames,
+    this.radiusKm,
+    this.maxZoom,
+  }) : super._();
   @override
   PlacePackRequest rebuild(void Function(PlacePackRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -116,7 +119,8 @@ class PlacePackRequestBuilder
   _$PlacePackRequest _build() {
     _$PlacePackRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlacePackRequest._(
             products: _products?.build(),
             frames: frames,
@@ -130,7 +134,10 @@ class PlacePackRequestBuilder
         _products?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlacePackRequest', _$failedField, e.toString());
+          r'PlacePackRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,9 +12,9 @@ class _$BenchmarkRunPage extends BenchmarkRunPage {
   @override
   final String? nextCursor;
 
-  factory _$BenchmarkRunPage(
-          [void Function(BenchmarkRunPageBuilder)? updates]) =>
-      (BenchmarkRunPageBuilder()..update(updates))._build();
+  factory _$BenchmarkRunPage([
+    void Function(BenchmarkRunPageBuilder)? updates,
+  ]) => (BenchmarkRunPageBuilder()..update(updates))._build();
 
   _$BenchmarkRunPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class BenchmarkRunPageBuilder
   _$BenchmarkRunPage _build() {
     _$BenchmarkRunPage _$result;
     try {
-      _$result = _$v ??
-          _$BenchmarkRunPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$BenchmarkRunPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class BenchmarkRunPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkRunPage', _$failedField, e.toString());
+          r'BenchmarkRunPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

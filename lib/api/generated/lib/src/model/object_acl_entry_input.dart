@@ -47,7 +47,7 @@ class _$ObjectAclEntryInputSerializer
   @override
   final Iterable<Type> types = const [
     ObjectAclEntryInput,
-    _$ObjectAclEntryInput
+    _$ObjectAclEntryInput,
   ];
 
   @override
@@ -83,9 +83,11 @@ class _$ObjectAclEntryInputSerializer
     ObjectAclEntryInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +103,30 @@ class _$ObjectAclEntryInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'grantee':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.grantee = valueDes;
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObjectAclEntryInputRoleEnum),
-          ) as ObjectAclEntryInputRoleEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ObjectAclEntryInputRoleEnum),
+                  )
+                  as ObjectAclEntryInputRoleEnum;
           result.role = valueDes;
           break;
         case r'expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expiresAt = valueDes;
           break;

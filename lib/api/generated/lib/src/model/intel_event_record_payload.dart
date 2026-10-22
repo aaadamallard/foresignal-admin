@@ -63,9 +63,9 @@ abstract class IntelEventRecordPayload
 
   IntelEventRecordPayload._();
 
-  factory IntelEventRecordPayload(
-          [void updates(IntelEventRecordPayloadBuilder b)]) =
-      _$IntelEventRecordPayload;
+  factory IntelEventRecordPayload([
+    void updates(IntelEventRecordPayloadBuilder b),
+  ]) = _$IntelEventRecordPayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelEventRecordPayloadBuilder b) => b;
@@ -80,7 +80,7 @@ class _$IntelEventRecordPayloadSerializer
   @override
   final Iterable<Type> types = const [
     IntelEventRecordPayload,
-    _$IntelEventRecordPayload
+    _$IntelEventRecordPayload,
   ];
 
   @override
@@ -122,8 +122,9 @@ class _$IntelEventRecordPayloadSerializer
       yield r'evidenceQuality';
       yield serializers.serialize(
         object.evidenceQuality,
-        specifiedType:
-            const FullType(IntelEventRecordPayloadEvidenceQualityEnum),
+        specifiedType: const FullType(
+          IntelEventRecordPayloadEvidenceQualityEnum,
+        ),
       );
     }
     if (object.memberCount != null) {
@@ -158,9 +159,11 @@ class _$IntelEventRecordPayloadSerializer
     IntelEventRecordPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -176,80 +179,104 @@ class _$IntelEventRecordPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelEventRecordPayloadTypeEnum),
-          ) as IntelEventRecordPayloadTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelEventRecordPayloadTypeEnum,
+                    ),
+                  )
+                  as IntelEventRecordPayloadTypeEnum;
           result.type = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Severity),
-          ) as Severity;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Severity),
+                  )
+                  as Severity;
           result.severity = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelEventRecordPayloadStatusEnum),
-          ) as IntelEventRecordPayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelEventRecordPayloadStatusEnum,
+                    ),
+                  )
+                  as IntelEventRecordPayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.confidence = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IntelEventRecordPayloadLabelEnum),
-          ) as IntelEventRecordPayloadLabelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelEventRecordPayloadLabelEnum,
+                    ),
+                  )
+                  as IntelEventRecordPayloadLabelEnum?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'evidenceQuality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                IntelEventRecordPayloadEvidenceQualityEnum),
-          ) as IntelEventRecordPayloadEvidenceQualityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelEventRecordPayloadEvidenceQualityEnum,
+                    ),
+                  )
+                  as IntelEventRecordPayloadEvidenceQualityEnum?;
           if (valueDes == null) continue;
           result.evidenceQuality = valueDes;
           break;
         case r'memberCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.memberCount = valueDes;
           break;
         case r'signalFamilies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.signalFamilies.replace(valueDes);
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         default:
@@ -374,7 +401,7 @@ class IntelEventRecordPayloadEvidenceQualityEnum extends EnumClass {
       _$intelEventRecordPayloadEvidenceQualityEnum_insufficient;
 
   static Serializer<IntelEventRecordPayloadEvidenceQualityEnum>
-      get serializer => _$intelEventRecordPayloadEvidenceQualityEnumSerializer;
+  get serializer => _$intelEventRecordPayloadEvidenceQualityEnumSerializer;
 
   const IntelEventRecordPayloadEvidenceQualityEnum._(String name) : super(name);
 

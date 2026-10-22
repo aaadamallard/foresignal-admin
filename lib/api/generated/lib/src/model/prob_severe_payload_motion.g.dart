@@ -12,17 +12,18 @@ class _$ProbSeverePayloadMotion extends ProbSeverePayloadMotion {
   @override
   final int bearingDeg;
 
-  factory _$ProbSeverePayloadMotion(
-          [void Function(ProbSeverePayloadMotionBuilder)? updates]) =>
-      (ProbSeverePayloadMotionBuilder()..update(updates))._build();
+  factory _$ProbSeverePayloadMotion([
+    void Function(ProbSeverePayloadMotionBuilder)? updates,
+  ]) => (ProbSeverePayloadMotionBuilder()..update(updates))._build();
 
-  _$ProbSeverePayloadMotion._(
-      {required this.speedKmh, required this.bearingDeg})
-      : super._();
+  _$ProbSeverePayloadMotion._({
+    required this.speedKmh,
+    required this.bearingDeg,
+  }) : super._();
   @override
   ProbSeverePayloadMotion rebuild(
-          void Function(ProbSeverePayloadMotionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProbSeverePayloadMotionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProbSeverePayloadMotionBuilder toBuilder() =>
@@ -95,12 +96,19 @@ class ProbSeverePayloadMotionBuilder
   ProbSeverePayloadMotion build() => _build();
 
   _$ProbSeverePayloadMotion _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProbSeverePayloadMotion._(
           speedKmh: BuiltValueNullFieldError.checkNotNull(
-              speedKmh, r'ProbSeverePayloadMotion', 'speedKmh'),
+            speedKmh,
+            r'ProbSeverePayloadMotion',
+            'speedKmh',
+          ),
           bearingDeg: BuiltValueNullFieldError.checkNotNull(
-              bearingDeg, r'ProbSeverePayloadMotion', 'bearingDeg'),
+            bearingDeg,
+            r'ProbSeverePayloadMotion',
+            'bearingDeg',
+          ),
         );
     replace(_$result);
     return _$result;

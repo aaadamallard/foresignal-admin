@@ -12,15 +12,15 @@ class _$PrincipalSummaryPage extends PrincipalSummaryPage {
   @override
   final String? nextCursor;
 
-  factory _$PrincipalSummaryPage(
-          [void Function(PrincipalSummaryPageBuilder)? updates]) =>
-      (PrincipalSummaryPageBuilder()..update(updates))._build();
+  factory _$PrincipalSummaryPage([
+    void Function(PrincipalSummaryPageBuilder)? updates,
+  ]) => (PrincipalSummaryPageBuilder()..update(updates))._build();
 
   _$PrincipalSummaryPage._({required this.items, this.nextCursor}) : super._();
   @override
   PrincipalSummaryPage rebuild(
-          void Function(PrincipalSummaryPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrincipalSummaryPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrincipalSummaryPageBuilder toBuilder() =>
@@ -95,7 +95,8 @@ class PrincipalSummaryPageBuilder
   _$PrincipalSummaryPage _build() {
     _$PrincipalSummaryPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrincipalSummaryPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -107,7 +108,10 @@ class PrincipalSummaryPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrincipalSummaryPage', _$failedField, e.toString());
+          r'PrincipalSummaryPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

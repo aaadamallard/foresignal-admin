@@ -31,9 +31,9 @@ abstract class SocialPlatformCredentials
 
   SocialPlatformCredentials._();
 
-  factory SocialPlatformCredentials(
-          [void updates(SocialPlatformCredentialsBuilder b)]) =
-      _$SocialPlatformCredentials;
+  factory SocialPlatformCredentials([
+    void updates(SocialPlatformCredentialsBuilder b),
+  ]) = _$SocialPlatformCredentials;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPlatformCredentialsBuilder b) => b;
@@ -48,7 +48,7 @@ class _$SocialPlatformCredentialsSerializer
   @override
   final Iterable<Type> types = const [
     SocialPlatformCredentials,
-    _$SocialPlatformCredentials
+    _$SocialPlatformCredentials,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$SocialPlatformCredentialsSerializer
     SocialPlatformCredentials object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,25 +104,32 @@ class _$SocialPlatformCredentialsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'required':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.required_ = valueDes;
           break;
         case r'configured':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.configured = valueDes;
           break;
         case r'fields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.fields.replace(valueDes);
           break;

@@ -19,9 +19,12 @@ class _$ChronicleArea extends ChronicleArea {
   factory _$ChronicleArea([void Function(ChronicleAreaBuilder)? updates]) =>
       (ChronicleAreaBuilder()..update(updates))._build();
 
-  _$ChronicleArea._(
-      {this.geometry, this.placeIds, this.regionCodes, this.bufferKm})
-      : super._();
+  _$ChronicleArea._({
+    this.geometry,
+    this.placeIds,
+    this.regionCodes,
+    this.bufferKm,
+  }) : super._();
   @override
   ChronicleArea rebuild(void Function(ChronicleAreaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -116,7 +119,8 @@ class ChronicleAreaBuilder
   _$ChronicleArea _build() {
     _$ChronicleArea _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleArea._(
             geometry: _geometry?.build(),
             placeIds: _placeIds?.build(),
@@ -134,7 +138,10 @@ class ChronicleAreaBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleArea', _$failedField, e.toString());
+          r'ChronicleArea',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

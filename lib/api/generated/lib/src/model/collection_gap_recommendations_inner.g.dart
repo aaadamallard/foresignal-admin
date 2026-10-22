@@ -7,20 +7,20 @@ part of 'collection_gap_recommendations_inner.dart';
 // **************************************************************************
 
 const CollectionGapRecommendationsInnerTypeEnum
-    _$collectionGapRecommendationsInnerTypeEnum_enableSource =
+_$collectionGapRecommendationsInnerTypeEnum_enableSource =
     const CollectionGapRecommendationsInnerTypeEnum._('enableSource');
 const CollectionGapRecommendationsInnerTypeEnum
-    _$collectionGapRecommendationsInnerTypeEnum_addReceiver =
+_$collectionGapRecommendationsInnerTypeEnum_addReceiver =
     const CollectionGapRecommendationsInnerTypeEnum._('addReceiver');
 const CollectionGapRecommendationsInnerTypeEnum
-    _$collectionGapRecommendationsInnerTypeEnum_addSensor =
+_$collectionGapRecommendationsInnerTypeEnum_addSensor =
     const CollectionGapRecommendationsInnerTypeEnum._('addSensor');
 const CollectionGapRecommendationsInnerTypeEnum
-    _$collectionGapRecommendationsInnerTypeEnum_none =
+_$collectionGapRecommendationsInnerTypeEnum_none =
     const CollectionGapRecommendationsInnerTypeEnum._('none');
 
 CollectionGapRecommendationsInnerTypeEnum
-    _$collectionGapRecommendationsInnerTypeEnumValueOf(String name) {
+_$collectionGapRecommendationsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'enableSource':
       return _$collectionGapRecommendationsInnerTypeEnum_enableSource;
@@ -36,16 +36,18 @@ CollectionGapRecommendationsInnerTypeEnum
 }
 
 final BuiltSet<CollectionGapRecommendationsInnerTypeEnum>
-    _$collectionGapRecommendationsInnerTypeEnumValues = BuiltSet<
-        CollectionGapRecommendationsInnerTypeEnum>(const <CollectionGapRecommendationsInnerTypeEnum>[
-  _$collectionGapRecommendationsInnerTypeEnum_enableSource,
-  _$collectionGapRecommendationsInnerTypeEnum_addReceiver,
-  _$collectionGapRecommendationsInnerTypeEnum_addSensor,
-  _$collectionGapRecommendationsInnerTypeEnum_none,
-]);
+_$collectionGapRecommendationsInnerTypeEnumValues =
+    BuiltSet<CollectionGapRecommendationsInnerTypeEnum>(
+      const <CollectionGapRecommendationsInnerTypeEnum>[
+        _$collectionGapRecommendationsInnerTypeEnum_enableSource,
+        _$collectionGapRecommendationsInnerTypeEnum_addReceiver,
+        _$collectionGapRecommendationsInnerTypeEnum_addSensor,
+        _$collectionGapRecommendationsInnerTypeEnum_none,
+      ],
+    );
 
 Serializer<CollectionGapRecommendationsInnerTypeEnum>
-    _$collectionGapRecommendationsInnerTypeEnumSerializer =
+_$collectionGapRecommendationsInnerTypeEnumSerializer =
     _$CollectionGapRecommendationsInnerTypeEnumSerializer();
 
 class _$CollectionGapRecommendationsInnerTypeEnumSerializer
@@ -65,23 +67,26 @@ class _$CollectionGapRecommendationsInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CollectionGapRecommendationsInnerTypeEnum
+    CollectionGapRecommendationsInnerTypeEnum,
   ];
   @override
   final String wireName = 'CollectionGapRecommendationsInnerTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          CollectionGapRecommendationsInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CollectionGapRecommendationsInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CollectionGapRecommendationsInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CollectionGapRecommendationsInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CollectionGapRecommendationsInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CollectionGapRecommendationsInner
@@ -95,20 +100,20 @@ class _$CollectionGapRecommendationsInner
   @override
   final String text;
 
-  factory _$CollectionGapRecommendationsInner(
-          [void Function(CollectionGapRecommendationsInnerBuilder)? updates]) =>
-      (CollectionGapRecommendationsInnerBuilder()..update(updates))._build();
+  factory _$CollectionGapRecommendationsInner([
+    void Function(CollectionGapRecommendationsInnerBuilder)? updates,
+  ]) => (CollectionGapRecommendationsInnerBuilder()..update(updates))._build();
 
-  _$CollectionGapRecommendationsInner._(
-      {required this.type,
-      this.sourceId,
-      this.sensorFamily,
-      required this.text})
-      : super._();
+  _$CollectionGapRecommendationsInner._({
+    required this.type,
+    this.sourceId,
+    this.sensorFamily,
+    required this.text,
+  }) : super._();
   @override
   CollectionGapRecommendationsInner rebuild(
-          void Function(CollectionGapRecommendationsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CollectionGapRecommendationsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CollectionGapRecommendationsInnerBuilder toBuilder() =>
@@ -148,8 +153,10 @@ class _$CollectionGapRecommendationsInner
 
 class CollectionGapRecommendationsInnerBuilder
     implements
-        Builder<CollectionGapRecommendationsInner,
-            CollectionGapRecommendationsInnerBuilder> {
+        Builder<
+          CollectionGapRecommendationsInner,
+          CollectionGapRecommendationsInnerBuilder
+        > {
   _$CollectionGapRecommendationsInner? _$v;
 
   CollectionGapRecommendationsInnerTypeEnum? _type;
@@ -192,7 +199,8 @@ class CollectionGapRecommendationsInnerBuilder
 
   @override
   void update(
-      void Function(CollectionGapRecommendationsInnerBuilder)? updates) {
+    void Function(CollectionGapRecommendationsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -200,14 +208,21 @@ class CollectionGapRecommendationsInnerBuilder
   CollectionGapRecommendationsInner build() => _build();
 
   _$CollectionGapRecommendationsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CollectionGapRecommendationsInner._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'CollectionGapRecommendationsInner', 'type'),
+            type,
+            r'CollectionGapRecommendationsInner',
+            'type',
+          ),
           sourceId: sourceId,
           sensorFamily: sensorFamily,
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'CollectionGapRecommendationsInner', 'text'),
+            text,
+            r'CollectionGapRecommendationsInner',
+            'text',
+          ),
         );
     replace(_$result);
     return _$result;

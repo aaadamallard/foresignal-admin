@@ -90,11 +90,8 @@ class PeerPageBuilder implements Builder<PeerPage, PeerPageBuilder> {
   _$PeerPage _build() {
     _$PeerPage _$result;
     try {
-      _$result = _$v ??
-          _$PeerPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$PeerPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class PeerPageBuilder implements Builder<PeerPage, PeerPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PeerPage', _$failedField, e.toString());
+          r'PeerPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

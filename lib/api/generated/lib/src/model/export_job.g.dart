@@ -6,14 +6,17 @@ part of 'export_job.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ExportJobKindEnum _$exportJobKindEnum_EXPORT =
-    const ExportJobKindEnum._('EXPORT');
+const ExportJobKindEnum _$exportJobKindEnum_EXPORT = const ExportJobKindEnum._(
+  'EXPORT',
+);
 const ExportJobKindEnum _$exportJobKindEnum_SNAPSHOT =
     const ExportJobKindEnum._('SNAPSHOT');
-const ExportJobKindEnum _$exportJobKindEnum_PACK =
-    const ExportJobKindEnum._('PACK');
-const ExportJobKindEnum _$exportJobKindEnum_RASTER =
-    const ExportJobKindEnum._('RASTER');
+const ExportJobKindEnum _$exportJobKindEnum_PACK = const ExportJobKindEnum._(
+  'PACK',
+);
+const ExportJobKindEnum _$exportJobKindEnum_RASTER = const ExportJobKindEnum._(
+  'RASTER',
+);
 const ExportJobKindEnum _$exportJobKindEnum_PLACE_PACK =
     const ExportJobKindEnum._('PLACE_PACK');
 
@@ -36,12 +39,12 @@ ExportJobKindEnum _$exportJobKindEnumValueOf(String name) {
 
 final BuiltSet<ExportJobKindEnum> _$exportJobKindEnumValues =
     BuiltSet<ExportJobKindEnum>(const <ExportJobKindEnum>[
-  _$exportJobKindEnum_EXPORT,
-  _$exportJobKindEnum_SNAPSHOT,
-  _$exportJobKindEnum_PACK,
-  _$exportJobKindEnum_RASTER,
-  _$exportJobKindEnum_PLACE_PACK,
-]);
+      _$exportJobKindEnum_EXPORT,
+      _$exportJobKindEnum_SNAPSHOT,
+      _$exportJobKindEnum_PACK,
+      _$exportJobKindEnum_RASTER,
+      _$exportJobKindEnum_PLACE_PACK,
+    ]);
 
 const ExportJobFormatEnum _$exportJobFormatEnum_geoparquet =
     const ExportJobFormatEnum._('geoparquet');
@@ -89,16 +92,16 @@ ExportJobFormatEnum _$exportJobFormatEnumValueOf(String name) {
 
 final BuiltSet<ExportJobFormatEnum> _$exportJobFormatEnumValues =
     BuiltSet<ExportJobFormatEnum>(const <ExportJobFormatEnum>[
-  _$exportJobFormatEnum_geoparquet,
-  _$exportJobFormatEnum_geopackage,
-  _$exportJobFormatEnum_flatgeobuf,
-  _$exportJobFormatEnum_gpx,
-  _$exportJobFormatEnum_pmtiles,
-  _$exportJobFormatEnum_mbtiles,
-  _$exportJobFormatEnum_cog,
-  _$exportJobFormatEnum_zip,
-  _$exportJobFormatEnum_jsonBundle,
-]);
+      _$exportJobFormatEnum_geoparquet,
+      _$exportJobFormatEnum_geopackage,
+      _$exportJobFormatEnum_flatgeobuf,
+      _$exportJobFormatEnum_gpx,
+      _$exportJobFormatEnum_pmtiles,
+      _$exportJobFormatEnum_mbtiles,
+      _$exportJobFormatEnum_cog,
+      _$exportJobFormatEnum_zip,
+      _$exportJobFormatEnum_jsonBundle,
+    ]);
 
 const ExportJobStatusEnum _$exportJobStatusEnum_QUEUED =
     const ExportJobStatusEnum._('QUEUED');
@@ -134,13 +137,13 @@ ExportJobStatusEnum _$exportJobStatusEnumValueOf(String name) {
 
 final BuiltSet<ExportJobStatusEnum> _$exportJobStatusEnumValues =
     BuiltSet<ExportJobStatusEnum>(const <ExportJobStatusEnum>[
-  _$exportJobStatusEnum_QUEUED,
-  _$exportJobStatusEnum_RUNNING,
-  _$exportJobStatusEnum_DONE,
-  _$exportJobStatusEnum_FAILED,
-  _$exportJobStatusEnum_CANCELLED,
-  _$exportJobStatusEnum_EXPIRED,
-]);
+      _$exportJobStatusEnum_QUEUED,
+      _$exportJobStatusEnum_RUNNING,
+      _$exportJobStatusEnum_DONE,
+      _$exportJobStatusEnum_FAILED,
+      _$exportJobStatusEnum_CANCELLED,
+      _$exportJobStatusEnum_EXPIRED,
+    ]);
 
 Serializer<ExportJobKindEnum> _$exportJobKindEnumSerializer =
     _$ExportJobKindEnumSerializer();
@@ -172,15 +175,20 @@ class _$ExportJobKindEnumSerializer
   final String wireName = 'ExportJobKindEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportJobKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportJobKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExportJobKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportJobKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExportJobKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportJobKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportJobFormatEnumSerializer
@@ -214,15 +222,20 @@ class _$ExportJobFormatEnumSerializer
   final String wireName = 'ExportJobFormatEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportJobFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportJobFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExportJobFormatEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportJobFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExportJobFormatEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportJobFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportJobStatusEnumSerializer
@@ -250,15 +263,20 @@ class _$ExportJobStatusEnumSerializer
   final String wireName = 'ExportJobStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ExportJobStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExportJobStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExportJobStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExportJobStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExportJobStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExportJobStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExportJob extends ExportJob {
@@ -310,30 +328,30 @@ class _$ExportJob extends ExportJob {
   factory _$ExportJob([void Function(ExportJobBuilder)? updates]) =>
       (ExportJobBuilder()..update(updates))._build();
 
-  _$ExportJob._(
-      {required this.id,
-      required this.kind,
-      required this.format,
-      this.spec,
-      required this.status,
-      required this.progress,
-      this.principal,
-      this.rowCount,
-      this.bytes,
-      this.manifestSha256,
-      this.licenceSummary,
-      this.watermarkSeq,
-      this.personalUse,
-      required this.createdAt,
-      this.startedAt,
-      this.finishedAt,
-      this.expiresAt,
-      this.error,
-      this.downloadUrl,
-      this.manifestUrl,
-      this.files,
-      this.productId})
-      : super._();
+  _$ExportJob._({
+    required this.id,
+    required this.kind,
+    required this.format,
+    this.spec,
+    required this.status,
+    required this.progress,
+    this.principal,
+    this.rowCount,
+    this.bytes,
+    this.manifestSha256,
+    this.licenceSummary,
+    this.watermarkSeq,
+    this.personalUse,
+    required this.createdAt,
+    this.startedAt,
+    this.finishedAt,
+    this.expiresAt,
+    this.error,
+    this.downloadUrl,
+    this.manifestUrl,
+    this.files,
+    this.productId,
+  }) : super._();
   @override
   ExportJob rebuild(void Function(ExportJobBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -573,18 +591,31 @@ class ExportJobBuilder implements Builder<ExportJob, ExportJobBuilder> {
   _$ExportJob _build() {
     _$ExportJob _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExportJob._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'ExportJob', 'id'),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'ExportJob', 'kind'),
+              kind,
+              r'ExportJob',
+              'kind',
+            ),
             format: BuiltValueNullFieldError.checkNotNull(
-                format, r'ExportJob', 'format'),
+              format,
+              r'ExportJob',
+              'format',
+            ),
             spec: _spec?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExportJob', 'status'),
+              status,
+              r'ExportJob',
+              'status',
+            ),
             progress: BuiltValueNullFieldError.checkNotNull(
-                progress, r'ExportJob', 'progress'),
+              progress,
+              r'ExportJob',
+              'progress',
+            ),
             principal: principal,
             rowCount: rowCount,
             bytes: bytes,
@@ -593,7 +624,10 @@ class ExportJobBuilder implements Builder<ExportJob, ExportJobBuilder> {
             watermarkSeq: watermarkSeq,
             personalUse: personalUse,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ExportJob', 'createdAt'),
+              createdAt,
+              r'ExportJob',
+              'createdAt',
+            ),
             startedAt: startedAt,
             finishedAt: finishedAt,
             expiresAt: expiresAt,
@@ -616,7 +650,10 @@ class ExportJobBuilder implements Builder<ExportJob, ExportJobBuilder> {
         _files?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExportJob', _$failedField, e.toString());
+          r'ExportJob',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

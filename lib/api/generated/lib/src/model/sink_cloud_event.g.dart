@@ -10,7 +10,8 @@ const SinkCloudEventSpecversionEnum _$sinkCloudEventSpecversionEnum_n1period0 =
     const SinkCloudEventSpecversionEnum._('n1period0');
 
 SinkCloudEventSpecversionEnum _$sinkCloudEventSpecversionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'n1period0':
       return _$sinkCloudEventSpecversionEnum_n1period0;
@@ -20,27 +21,32 @@ SinkCloudEventSpecversionEnum _$sinkCloudEventSpecversionEnumValueOf(
 }
 
 final BuiltSet<SinkCloudEventSpecversionEnum>
-    _$sinkCloudEventSpecversionEnumValues = BuiltSet<
-        SinkCloudEventSpecversionEnum>(const <SinkCloudEventSpecversionEnum>[
-  _$sinkCloudEventSpecversionEnum_n1period0,
-]);
+_$sinkCloudEventSpecversionEnumValues = BuiltSet<SinkCloudEventSpecversionEnum>(
+  const <SinkCloudEventSpecversionEnum>[
+    _$sinkCloudEventSpecversionEnum_n1period0,
+  ],
+);
 
 const SinkCloudEventTypeEnum
-    _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodCreated =
+_$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodCreated =
     const SinkCloudEventTypeEnum._(
-        'aiPeriodForesignalPeriodRecordPeriodCreated');
+      'aiPeriodForesignalPeriodRecordPeriodCreated',
+    );
 const SinkCloudEventTypeEnum
-    _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodUpdated =
+_$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodUpdated =
     const SinkCloudEventTypeEnum._(
-        'aiPeriodForesignalPeriodRecordPeriodUpdated');
+      'aiPeriodForesignalPeriodRecordPeriodUpdated',
+    );
 const SinkCloudEventTypeEnum
-    _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodTombstoned =
+_$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodTombstoned =
     const SinkCloudEventTypeEnum._(
-        'aiPeriodForesignalPeriodRecordPeriodTombstoned');
+      'aiPeriodForesignalPeriodRecordPeriodTombstoned',
+    );
 const SinkCloudEventTypeEnum
-    _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot =
+_$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot =
     const SinkCloudEventTypeEnum._(
-        'aiPeriodForesignalPeriodRecordPeriodSnapshot');
+      'aiPeriodForesignalPeriodRecordPeriodSnapshot',
+    );
 
 SinkCloudEventTypeEnum _$sinkCloudEventTypeEnumValueOf(String name) {
   switch (name) {
@@ -59,14 +65,14 @@ SinkCloudEventTypeEnum _$sinkCloudEventTypeEnumValueOf(String name) {
 
 final BuiltSet<SinkCloudEventTypeEnum> _$sinkCloudEventTypeEnumValues =
     BuiltSet<SinkCloudEventTypeEnum>(const <SinkCloudEventTypeEnum>[
-  _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodCreated,
-  _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodUpdated,
-  _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodTombstoned,
-  _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot,
-]);
+      _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodCreated,
+      _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodUpdated,
+      _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodTombstoned,
+      _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot,
+    ]);
 
 Serializer<SinkCloudEventSpecversionEnum>
-    _$sinkCloudEventSpecversionEnumSerializer =
+_$sinkCloudEventSpecversionEnumSerializer =
     _$SinkCloudEventSpecversionEnumSerializer();
 Serializer<SinkCloudEventTypeEnum> _$sinkCloudEventTypeEnumSerializer =
     _$SinkCloudEventTypeEnumSerializer();
@@ -87,16 +93,19 @@ class _$SinkCloudEventSpecversionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SinkCloudEventSpecversionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SinkCloudEventSpecversionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SinkCloudEventSpecversionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkCloudEventSpecversionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkCloudEventSpecversionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkCloudEventTypeEnumSerializer
@@ -128,15 +137,20 @@ class _$SinkCloudEventTypeEnumSerializer
   final String wireName = 'SinkCloudEventTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkCloudEventTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkCloudEventTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkCloudEventTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkCloudEventTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkCloudEventTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkCloudEventTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkCloudEvent extends SinkCloudEvent {
@@ -166,19 +180,19 @@ class _$SinkCloudEvent extends SinkCloudEvent {
   factory _$SinkCloudEvent([void Function(SinkCloudEventBuilder)? updates]) =>
       (SinkCloudEventBuilder()..update(updates))._build();
 
-  _$SinkCloudEvent._(
-      {required this.specversion,
-      required this.id,
-      required this.source_,
-      required this.type,
-      required this.subject,
-      required this.time,
-      this.datacontenttype,
-      this.foresignalseq,
-      this.foresignalkind,
-      this.foresignalreason,
-      required this.data})
-      : super._();
+  _$SinkCloudEvent._({
+    required this.specversion,
+    required this.id,
+    required this.source_,
+    required this.type,
+    required this.subject,
+    required this.time,
+    this.datacontenttype,
+    this.foresignalseq,
+    this.foresignalkind,
+    this.foresignalreason,
+    required this.data,
+  }) : super._();
   @override
   SinkCloudEvent rebuild(void Function(SinkCloudEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -332,20 +346,39 @@ class SinkCloudEventBuilder
   _$SinkCloudEvent _build() {
     _$SinkCloudEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkCloudEvent._(
             specversion: BuiltValueNullFieldError.checkNotNull(
-                specversion, r'SinkCloudEvent', 'specversion'),
+              specversion,
+              r'SinkCloudEvent',
+              'specversion',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SinkCloudEvent', 'id'),
+              id,
+              r'SinkCloudEvent',
+              'id',
+            ),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'SinkCloudEvent', 'source_'),
+              source_,
+              r'SinkCloudEvent',
+              'source_',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'SinkCloudEvent', 'type'),
+              type,
+              r'SinkCloudEvent',
+              'type',
+            ),
             subject: BuiltValueNullFieldError.checkNotNull(
-                subject, r'SinkCloudEvent', 'subject'),
+              subject,
+              r'SinkCloudEvent',
+              'subject',
+            ),
             time: BuiltValueNullFieldError.checkNotNull(
-                time, r'SinkCloudEvent', 'time'),
+              time,
+              r'SinkCloudEvent',
+              'time',
+            ),
             datacontenttype: datacontenttype,
             foresignalseq: foresignalseq,
             foresignalkind: foresignalkind,
@@ -359,7 +392,10 @@ class SinkCloudEventBuilder
         data.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkCloudEvent', _$failedField, e.toString());
+          r'SinkCloudEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

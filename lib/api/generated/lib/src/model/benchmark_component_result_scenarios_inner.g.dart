@@ -7,42 +7,43 @@ part of 'benchmark_component_result_scenarios_inner.dart';
 // **************************************************************************
 
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_nullSeasonal =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_nullSeasonal =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('nullSeasonal');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_stepChange =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_stepChange =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('stepChange');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_spike =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_spike =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('spike');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_coverageOutage =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_coverageOutage =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._(
-        'coverageOutage');
+      'coverageOutage',
+    );
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_duplicateEcho =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_duplicateEcho =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('duplicateEcho');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_lateRevision =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_lateRevision =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('lateRevision');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_commonDriver =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_commonDriver =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('commonDriver');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_truePrecursor =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_truePrecursor =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('truePrecursor');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_baseRateDrift =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_baseRateDrift =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('baseRateDrift');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('preEventMove');
 const BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnum_historical =
+_$benchmarkComponentResultScenariosInnerScenarioEnum_historical =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('historical');
 
 BenchmarkComponentResultScenariosInnerScenarioEnum
-    _$benchmarkComponentResultScenariosInnerScenarioEnumValueOf(String name) {
+_$benchmarkComponentResultScenariosInnerScenarioEnumValueOf(String name) {
   switch (name) {
     case 'nullSeasonal':
       return _$benchmarkComponentResultScenariosInnerScenarioEnum_nullSeasonal;
@@ -72,33 +73,35 @@ BenchmarkComponentResultScenariosInnerScenarioEnum
 }
 
 final BuiltSet<BenchmarkComponentResultScenariosInnerScenarioEnum>
-    _$benchmarkComponentResultScenariosInnerScenarioEnumValues = BuiltSet<
-        BenchmarkComponentResultScenariosInnerScenarioEnum>(const <BenchmarkComponentResultScenariosInnerScenarioEnum>[
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_nullSeasonal,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_stepChange,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_spike,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_coverageOutage,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_duplicateEcho,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_lateRevision,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_commonDriver,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_truePrecursor,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_baseRateDrift,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove,
-  _$benchmarkComponentResultScenariosInnerScenarioEnum_historical,
-]);
+_$benchmarkComponentResultScenariosInnerScenarioEnumValues =
+    BuiltSet<BenchmarkComponentResultScenariosInnerScenarioEnum>(
+      const <BenchmarkComponentResultScenariosInnerScenarioEnum>[
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_nullSeasonal,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_stepChange,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_spike,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_coverageOutage,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_duplicateEcho,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_lateRevision,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_commonDriver,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_truePrecursor,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_baseRateDrift,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove,
+        _$benchmarkComponentResultScenariosInnerScenarioEnum_historical,
+      ],
+    );
 
 const BenchmarkComponentResultScenariosInnerStatusEnum
-    _$benchmarkComponentResultScenariosInnerStatusEnum_pass =
+_$benchmarkComponentResultScenariosInnerStatusEnum_pass =
     const BenchmarkComponentResultScenariosInnerStatusEnum._('pass');
 const BenchmarkComponentResultScenariosInnerStatusEnum
-    _$benchmarkComponentResultScenariosInnerStatusEnum_warn =
+_$benchmarkComponentResultScenariosInnerStatusEnum_warn =
     const BenchmarkComponentResultScenariosInnerStatusEnum._('warn');
 const BenchmarkComponentResultScenariosInnerStatusEnum
-    _$benchmarkComponentResultScenariosInnerStatusEnum_fail =
+_$benchmarkComponentResultScenariosInnerStatusEnum_fail =
     const BenchmarkComponentResultScenariosInnerStatusEnum._('fail');
 
 BenchmarkComponentResultScenariosInnerStatusEnum
-    _$benchmarkComponentResultScenariosInnerStatusEnumValueOf(String name) {
+_$benchmarkComponentResultScenariosInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'pass':
       return _$benchmarkComponentResultScenariosInnerStatusEnum_pass;
@@ -112,24 +115,27 @@ BenchmarkComponentResultScenariosInnerStatusEnum
 }
 
 final BuiltSet<BenchmarkComponentResultScenariosInnerStatusEnum>
-    _$benchmarkComponentResultScenariosInnerStatusEnumValues = BuiltSet<
-        BenchmarkComponentResultScenariosInnerStatusEnum>(const <BenchmarkComponentResultScenariosInnerStatusEnum>[
-  _$benchmarkComponentResultScenariosInnerStatusEnum_pass,
-  _$benchmarkComponentResultScenariosInnerStatusEnum_warn,
-  _$benchmarkComponentResultScenariosInnerStatusEnum_fail,
-]);
+_$benchmarkComponentResultScenariosInnerStatusEnumValues =
+    BuiltSet<BenchmarkComponentResultScenariosInnerStatusEnum>(
+      const <BenchmarkComponentResultScenariosInnerStatusEnum>[
+        _$benchmarkComponentResultScenariosInnerStatusEnum_pass,
+        _$benchmarkComponentResultScenariosInnerStatusEnum_warn,
+        _$benchmarkComponentResultScenariosInnerStatusEnum_fail,
+      ],
+    );
 
 Serializer<BenchmarkComponentResultScenariosInnerScenarioEnum>
-    _$benchmarkComponentResultScenariosInnerScenarioEnumSerializer =
+_$benchmarkComponentResultScenariosInnerScenarioEnumSerializer =
     _$BenchmarkComponentResultScenariosInnerScenarioEnumSerializer();
 Serializer<BenchmarkComponentResultScenariosInnerStatusEnum>
-    _$benchmarkComponentResultScenariosInnerStatusEnumSerializer =
+_$benchmarkComponentResultScenariosInnerStatusEnumSerializer =
     _$BenchmarkComponentResultScenariosInnerStatusEnumSerializer();
 
 class _$BenchmarkComponentResultScenariosInnerScenarioEnumSerializer
     implements
         PrimitiveSerializer<
-            BenchmarkComponentResultScenariosInnerScenarioEnum> {
+          BenchmarkComponentResultScenariosInnerScenarioEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'nullSeasonal': 'null-seasonal',
     'stepChange': 'step-change',
@@ -159,23 +165,26 @@ class _$BenchmarkComponentResultScenariosInnerScenarioEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkComponentResultScenariosInnerScenarioEnum
+    BenchmarkComponentResultScenariosInnerScenarioEnum,
   ];
   @override
   final String wireName = 'BenchmarkComponentResultScenariosInnerScenarioEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkComponentResultScenariosInnerScenarioEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkComponentResultScenariosInnerScenarioEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkComponentResultScenariosInnerScenarioEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkComponentResultScenariosInnerScenarioEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkComponentResultScenariosInnerScenarioEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkComponentResultScenariosInnerStatusEnumSerializer
@@ -194,23 +203,26 @@ class _$BenchmarkComponentResultScenariosInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkComponentResultScenariosInnerStatusEnum
+    BenchmarkComponentResultScenariosInnerStatusEnum,
   ];
   @override
   final String wireName = 'BenchmarkComponentResultScenariosInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkComponentResultScenariosInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkComponentResultScenariosInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkComponentResultScenariosInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkComponentResultScenariosInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkComponentResultScenariosInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkComponentResultScenariosInner
@@ -232,27 +244,25 @@ class _$BenchmarkComponentResultScenariosInner
   @override
   final BuiltList<String>? notes;
 
-  factory _$BenchmarkComponentResultScenariosInner(
-          [void Function(BenchmarkComponentResultScenariosInnerBuilder)?
-              updates]) =>
-      (BenchmarkComponentResultScenariosInnerBuilder()..update(updates))
-          ._build();
+  factory _$BenchmarkComponentResultScenariosInner([
+    void Function(BenchmarkComponentResultScenariosInnerBuilder)? updates,
+  ]) => (BenchmarkComponentResultScenariosInnerBuilder()..update(updates))
+      ._build();
 
-  _$BenchmarkComponentResultScenariosInner._(
-      {required this.scenario,
-      this.caseId,
-      this.seed,
-      required this.status,
-      required this.metrics,
-      this.thresholds,
-      this.truth,
-      this.notes})
-      : super._();
+  _$BenchmarkComponentResultScenariosInner._({
+    required this.scenario,
+    this.caseId,
+    this.seed,
+    required this.status,
+    required this.metrics,
+    this.thresholds,
+    this.truth,
+    this.notes,
+  }) : super._();
   @override
   BenchmarkComponentResultScenariosInner rebuild(
-          void Function(BenchmarkComponentResultScenariosInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkComponentResultScenariosInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkComponentResultScenariosInnerBuilder toBuilder() =>
@@ -290,7 +300,8 @@ class _$BenchmarkComponentResultScenariosInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'BenchmarkComponentResultScenariosInner')
+            r'BenchmarkComponentResultScenariosInner',
+          )
           ..add('scenario', scenario)
           ..add('caseId', caseId)
           ..add('seed', seed)
@@ -305,8 +316,10 @@ class _$BenchmarkComponentResultScenariosInner
 
 class BenchmarkComponentResultScenariosInnerBuilder
     implements
-        Builder<BenchmarkComponentResultScenariosInner,
-            BenchmarkComponentResultScenariosInnerBuilder> {
+        Builder<
+          BenchmarkComponentResultScenariosInner,
+          BenchmarkComponentResultScenariosInnerBuilder
+        > {
   _$BenchmarkComponentResultScenariosInner? _$v;
 
   BenchmarkComponentResultScenariosInnerScenarioEnum? _scenario;
@@ -339,8 +352,8 @@ class BenchmarkComponentResultScenariosInnerBuilder
       _$this._thresholds ??=
           ListBuilder<BenchmarkComponentResultThresholdsInner>();
   set thresholds(
-          ListBuilder<BenchmarkComponentResultThresholdsInner>? thresholds) =>
-      _$this._thresholds = thresholds;
+    ListBuilder<BenchmarkComponentResultThresholdsInner>? thresholds,
+  ) => _$this._thresholds = thresholds;
 
   MapBuilder<String, JsonObject?>? _truth;
   MapBuilder<String, JsonObject?> get truth =>
@@ -378,7 +391,8 @@ class BenchmarkComponentResultScenariosInnerBuilder
 
   @override
   void update(
-      void Function(BenchmarkComponentResultScenariosInnerBuilder)? updates) {
+    void Function(BenchmarkComponentResultScenariosInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -388,14 +402,21 @@ class BenchmarkComponentResultScenariosInnerBuilder
   _$BenchmarkComponentResultScenariosInner _build() {
     _$BenchmarkComponentResultScenariosInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkComponentResultScenariosInner._(
-            scenario: BuiltValueNullFieldError.checkNotNull(scenario,
-                r'BenchmarkComponentResultScenariosInner', 'scenario'),
+            scenario: BuiltValueNullFieldError.checkNotNull(
+              scenario,
+              r'BenchmarkComponentResultScenariosInner',
+              'scenario',
+            ),
             caseId: caseId,
             seed: seed,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'BenchmarkComponentResultScenariosInner', 'status'),
+              status,
+              r'BenchmarkComponentResultScenariosInner',
+              'status',
+            ),
             metrics: metrics.build(),
             thresholds: _thresholds?.build(),
             truth: _truth?.build(),
@@ -414,9 +435,10 @@ class BenchmarkComponentResultScenariosInnerBuilder
         _notes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkComponentResultScenariosInner',
-            _$failedField,
-            e.toString());
+          r'BenchmarkComponentResultScenariosInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

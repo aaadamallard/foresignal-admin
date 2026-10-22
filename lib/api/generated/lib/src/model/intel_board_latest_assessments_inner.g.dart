@@ -7,17 +7,17 @@ part of 'intel_board_latest_assessments_inner.dart';
 // **************************************************************************
 
 const IntelBoardLatestAssessmentsInnerCadenceEnum
-    _$intelBoardLatestAssessmentsInnerCadenceEnum_daily =
+_$intelBoardLatestAssessmentsInnerCadenceEnum_daily =
     const IntelBoardLatestAssessmentsInnerCadenceEnum._('daily');
 const IntelBoardLatestAssessmentsInnerCadenceEnum
-    _$intelBoardLatestAssessmentsInnerCadenceEnum_weekly =
+_$intelBoardLatestAssessmentsInnerCadenceEnum_weekly =
     const IntelBoardLatestAssessmentsInnerCadenceEnum._('weekly');
 const IntelBoardLatestAssessmentsInnerCadenceEnum
-    _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly =
+_$intelBoardLatestAssessmentsInnerCadenceEnum_monthly =
     const IntelBoardLatestAssessmentsInnerCadenceEnum._('monthly');
 
 IntelBoardLatestAssessmentsInnerCadenceEnum
-    _$intelBoardLatestAssessmentsInnerCadenceEnumValueOf(String name) {
+_$intelBoardLatestAssessmentsInnerCadenceEnumValueOf(String name) {
   switch (name) {
     case 'daily':
       return _$intelBoardLatestAssessmentsInnerCadenceEnum_daily;
@@ -31,15 +31,17 @@ IntelBoardLatestAssessmentsInnerCadenceEnum
 }
 
 final BuiltSet<IntelBoardLatestAssessmentsInnerCadenceEnum>
-    _$intelBoardLatestAssessmentsInnerCadenceEnumValues = BuiltSet<
-        IntelBoardLatestAssessmentsInnerCadenceEnum>(const <IntelBoardLatestAssessmentsInnerCadenceEnum>[
-  _$intelBoardLatestAssessmentsInnerCadenceEnum_daily,
-  _$intelBoardLatestAssessmentsInnerCadenceEnum_weekly,
-  _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly,
-]);
+_$intelBoardLatestAssessmentsInnerCadenceEnumValues =
+    BuiltSet<IntelBoardLatestAssessmentsInnerCadenceEnum>(
+      const <IntelBoardLatestAssessmentsInnerCadenceEnum>[
+        _$intelBoardLatestAssessmentsInnerCadenceEnum_daily,
+        _$intelBoardLatestAssessmentsInnerCadenceEnum_weekly,
+        _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly,
+      ],
+    );
 
 Serializer<IntelBoardLatestAssessmentsInnerCadenceEnum>
-    _$intelBoardLatestAssessmentsInnerCadenceEnumSerializer =
+_$intelBoardLatestAssessmentsInnerCadenceEnumSerializer =
     _$IntelBoardLatestAssessmentsInnerCadenceEnumSerializer();
 
 class _$IntelBoardLatestAssessmentsInnerCadenceEnumSerializer
@@ -58,23 +60,26 @@ class _$IntelBoardLatestAssessmentsInnerCadenceEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelBoardLatestAssessmentsInnerCadenceEnum
+    IntelBoardLatestAssessmentsInnerCadenceEnum,
   ];
   @override
   final String wireName = 'IntelBoardLatestAssessmentsInnerCadenceEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          IntelBoardLatestAssessmentsInnerCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelBoardLatestAssessmentsInnerCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelBoardLatestAssessmentsInnerCadenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelBoardLatestAssessmentsInnerCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelBoardLatestAssessmentsInnerCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelBoardLatestAssessmentsInner
@@ -88,20 +93,20 @@ class _$IntelBoardLatestAssessmentsInner
   @override
   final DateTime createdAt;
 
-  factory _$IntelBoardLatestAssessmentsInner(
-          [void Function(IntelBoardLatestAssessmentsInnerBuilder)? updates]) =>
-      (IntelBoardLatestAssessmentsInnerBuilder()..update(updates))._build();
+  factory _$IntelBoardLatestAssessmentsInner([
+    void Function(IntelBoardLatestAssessmentsInnerBuilder)? updates,
+  ]) => (IntelBoardLatestAssessmentsInnerBuilder()..update(updates))._build();
 
-  _$IntelBoardLatestAssessmentsInner._(
-      {required this.cadence,
-      required this.assessmentId,
-      this.headline,
-      required this.createdAt})
-      : super._();
+  _$IntelBoardLatestAssessmentsInner._({
+    required this.cadence,
+    required this.assessmentId,
+    this.headline,
+    required this.createdAt,
+  }) : super._();
   @override
   IntelBoardLatestAssessmentsInner rebuild(
-          void Function(IntelBoardLatestAssessmentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardLatestAssessmentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardLatestAssessmentsInnerBuilder toBuilder() =>
@@ -141,8 +146,10 @@ class _$IntelBoardLatestAssessmentsInner
 
 class IntelBoardLatestAssessmentsInnerBuilder
     implements
-        Builder<IntelBoardLatestAssessmentsInner,
-            IntelBoardLatestAssessmentsInnerBuilder> {
+        Builder<
+          IntelBoardLatestAssessmentsInner,
+          IntelBoardLatestAssessmentsInnerBuilder
+        > {
   _$IntelBoardLatestAssessmentsInner? _$v;
 
   IntelBoardLatestAssessmentsInnerCadenceEnum? _cadence;
@@ -192,15 +199,25 @@ class IntelBoardLatestAssessmentsInnerBuilder
   IntelBoardLatestAssessmentsInner build() => _build();
 
   _$IntelBoardLatestAssessmentsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardLatestAssessmentsInner._(
           cadence: BuiltValueNullFieldError.checkNotNull(
-              cadence, r'IntelBoardLatestAssessmentsInner', 'cadence'),
-          assessmentId: BuiltValueNullFieldError.checkNotNull(assessmentId,
-              r'IntelBoardLatestAssessmentsInner', 'assessmentId'),
+            cadence,
+            r'IntelBoardLatestAssessmentsInner',
+            'cadence',
+          ),
+          assessmentId: BuiltValueNullFieldError.checkNotNull(
+            assessmentId,
+            r'IntelBoardLatestAssessmentsInner',
+            'assessmentId',
+          ),
           headline: headline,
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'IntelBoardLatestAssessmentsInner', 'createdAt'),
+            createdAt,
+            r'IntelBoardLatestAssessmentsInner',
+            'createdAt',
+          ),
         );
     replace(_$result);
     return _$result;

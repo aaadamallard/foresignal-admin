@@ -20,8 +20,8 @@ CompactMessageN0Enum _$compactMessageN0EnumValueOf(String name) {
 
 final BuiltSet<CompactMessageN0Enum> _$compactMessageN0EnumValues =
     BuiltSet<CompactMessageN0Enum>(const <CompactMessageN0Enum>[
-  _$compactMessageN0Enum_number1,
-]);
+      _$compactMessageN0Enum_number1,
+    ]);
 
 Serializer<CompactMessageN0Enum> _$compactMessageN0EnumSerializer =
     _$CompactMessageN0EnumSerializer();
@@ -41,15 +41,20 @@ class _$CompactMessageN0EnumSerializer
   final String wireName = 'CompactMessageN0Enum';
 
   @override
-  Object serialize(Serializers serializers, CompactMessageN0Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CompactMessageN0Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CompactMessageN0Enum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CompactMessageN0Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CompactMessageN0Enum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CompactMessageN0Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CompactMessage extends CompactMessage {
@@ -83,21 +88,21 @@ class _$CompactMessage extends CompactMessage {
   factory _$CompactMessage([void Function(CompactMessageBuilder)? updates]) =>
       (CompactMessageBuilder()..update(updates))._build();
 
-  _$CompactMessage._(
-      {required this.n0,
-      required this.n1,
-      this.n2,
-      required this.n3,
-      this.n4,
-      this.n5,
-      this.n6,
-      required this.n7,
-      this.n8,
-      this.n9,
-      this.n10,
-      this.n11,
-      this.n12})
-      : super._();
+  _$CompactMessage._({
+    required this.n0,
+    required this.n1,
+    this.n2,
+    required this.n3,
+    this.n4,
+    this.n5,
+    this.n6,
+    required this.n7,
+    this.n8,
+    this.n9,
+    this.n10,
+    this.n11,
+    this.n12,
+  }) : super._();
   @override
   CompactMessage rebuild(void Function(CompactMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -259,20 +264,33 @@ class CompactMessageBuilder
   CompactMessage build() => _build();
 
   _$CompactMessage _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CompactMessage._(
           n0: BuiltValueNullFieldError.checkNotNull(
-              n0, r'CompactMessage', 'n0'),
+            n0,
+            r'CompactMessage',
+            'n0',
+          ),
           n1: BuiltValueNullFieldError.checkNotNull(
-              n1, r'CompactMessage', 'n1'),
+            n1,
+            r'CompactMessage',
+            'n1',
+          ),
           n2: n2,
           n3: BuiltValueNullFieldError.checkNotNull(
-              n3, r'CompactMessage', 'n3'),
+            n3,
+            r'CompactMessage',
+            'n3',
+          ),
           n4: n4,
           n5: n5,
           n6: n6,
           n7: BuiltValueNullFieldError.checkNotNull(
-              n7, r'CompactMessage', 'n7'),
+            n7,
+            r'CompactMessage',
+            'n7',
+          ),
           n8: n8,
           n9: n9,
           n10: n10,

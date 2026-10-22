@@ -23,8 +23,10 @@ part 'benchmark_case_expectations_findings_inner.g.dart';
 @BuiltValue()
 abstract class BenchmarkCaseExpectationsFindingsInner
     implements
-        Built<BenchmarkCaseExpectationsFindingsInner,
-            BenchmarkCaseExpectationsFindingsInnerBuilder> {
+        Built<
+          BenchmarkCaseExpectationsFindingsInner,
+          BenchmarkCaseExpectationsFindingsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'findingType')
   String get findingType;
 
@@ -51,9 +53,9 @@ abstract class BenchmarkCaseExpectationsFindingsInner
 
   BenchmarkCaseExpectationsFindingsInner._();
 
-  factory BenchmarkCaseExpectationsFindingsInner(
-          [void updates(BenchmarkCaseExpectationsFindingsInnerBuilder b)]) =
-      _$BenchmarkCaseExpectationsFindingsInner;
+  factory BenchmarkCaseExpectationsFindingsInner([
+    void updates(BenchmarkCaseExpectationsFindingsInnerBuilder b),
+  ]) = _$BenchmarkCaseExpectationsFindingsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkCaseExpectationsFindingsInnerBuilder b) => b;
@@ -68,7 +70,7 @@ class _$BenchmarkCaseExpectationsFindingsInnerSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkCaseExpectationsFindingsInner,
-    _$BenchmarkCaseExpectationsFindingsInner
+    _$BenchmarkCaseExpectationsFindingsInner,
   ];
 
   @override
@@ -132,9 +134,11 @@ class _$BenchmarkCaseExpectationsFindingsInnerSerializer
     BenchmarkCaseExpectationsFindingsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -150,57 +154,72 @@ class _$BenchmarkCaseExpectationsFindingsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'findingType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.findingType = valueDes;
           break;
         case r'present':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.present = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'seriesRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.seriesRef = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(FindingSeverity),
-          ) as FindingSeverity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(FindingSeverity),
+                  )
+                  as FindingSeverity?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;

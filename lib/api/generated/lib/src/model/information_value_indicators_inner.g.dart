@@ -7,29 +7,29 @@ part of 'information_value_indicators_inner.dart';
 // **************************************************************************
 
 const InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnum_pending =
+_$informationValueIndicatorsInnerStateEnum_pending =
     const InformationValueIndicatorsInnerStateEnum._('pending');
 const InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnum_emerging =
+_$informationValueIndicatorsInnerStateEnum_emerging =
     const InformationValueIndicatorsInnerStateEnum._('emerging');
 const InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnum_observed =
+_$informationValueIndicatorsInnerStateEnum_observed =
     const InformationValueIndicatorsInnerStateEnum._('observed');
 const InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnum_absent =
+_$informationValueIndicatorsInnerStateEnum_absent =
     const InformationValueIndicatorsInnerStateEnum._('absent');
 const InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnum_unknownCoverage =
+_$informationValueIndicatorsInnerStateEnum_unknownCoverage =
     const InformationValueIndicatorsInnerStateEnum._('unknownCoverage');
 const InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnum_retired =
+_$informationValueIndicatorsInnerStateEnum_retired =
     const InformationValueIndicatorsInnerStateEnum._('retired');
 const InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnum_reported =
+_$informationValueIndicatorsInnerStateEnum_reported =
     const InformationValueIndicatorsInnerStateEnum._('reported');
 
 InformationValueIndicatorsInnerStateEnum
-    _$informationValueIndicatorsInnerStateEnumValueOf(String name) {
+_$informationValueIndicatorsInnerStateEnumValueOf(String name) {
   switch (name) {
     case 'pending':
       return _$informationValueIndicatorsInnerStateEnum_pending;
@@ -51,19 +51,21 @@ InformationValueIndicatorsInnerStateEnum
 }
 
 final BuiltSet<InformationValueIndicatorsInnerStateEnum>
-    _$informationValueIndicatorsInnerStateEnumValues = BuiltSet<
-        InformationValueIndicatorsInnerStateEnum>(const <InformationValueIndicatorsInnerStateEnum>[
-  _$informationValueIndicatorsInnerStateEnum_pending,
-  _$informationValueIndicatorsInnerStateEnum_emerging,
-  _$informationValueIndicatorsInnerStateEnum_observed,
-  _$informationValueIndicatorsInnerStateEnum_absent,
-  _$informationValueIndicatorsInnerStateEnum_unknownCoverage,
-  _$informationValueIndicatorsInnerStateEnum_retired,
-  _$informationValueIndicatorsInnerStateEnum_reported,
-]);
+_$informationValueIndicatorsInnerStateEnumValues =
+    BuiltSet<InformationValueIndicatorsInnerStateEnum>(
+      const <InformationValueIndicatorsInnerStateEnum>[
+        _$informationValueIndicatorsInnerStateEnum_pending,
+        _$informationValueIndicatorsInnerStateEnum_emerging,
+        _$informationValueIndicatorsInnerStateEnum_observed,
+        _$informationValueIndicatorsInnerStateEnum_absent,
+        _$informationValueIndicatorsInnerStateEnum_unknownCoverage,
+        _$informationValueIndicatorsInnerStateEnum_retired,
+        _$informationValueIndicatorsInnerStateEnum_reported,
+      ],
+    );
 
 Serializer<InformationValueIndicatorsInnerStateEnum>
-    _$informationValueIndicatorsInnerStateEnumSerializer =
+_$informationValueIndicatorsInnerStateEnumSerializer =
     _$InformationValueIndicatorsInnerStateEnumSerializer();
 
 class _$InformationValueIndicatorsInnerStateEnumSerializer
@@ -89,23 +91,26 @@ class _$InformationValueIndicatorsInnerStateEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    InformationValueIndicatorsInnerStateEnum
+    InformationValueIndicatorsInnerStateEnum,
   ];
   @override
   final String wireName = 'InformationValueIndicatorsInnerStateEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          InformationValueIndicatorsInnerStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InformationValueIndicatorsInnerStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InformationValueIndicatorsInnerStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InformationValueIndicatorsInnerStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InformationValueIndicatorsInnerStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InformationValueIndicatorsInner
@@ -131,26 +136,26 @@ class _$InformationValueIndicatorsInner
   @override
   final bool? collectionGap;
 
-  factory _$InformationValueIndicatorsInner(
-          [void Function(InformationValueIndicatorsInnerBuilder)? updates]) =>
-      (InformationValueIndicatorsInnerBuilder()..update(updates))._build();
+  factory _$InformationValueIndicatorsInner([
+    void Function(InformationValueIndicatorsInnerBuilder)? updates,
+  ]) => (InformationValueIndicatorsInnerBuilder()..update(updates))._build();
 
-  _$InformationValueIndicatorsInner._(
-      {required this.indicatorId,
-      this.description,
-      this.signalFamily,
-      this.state,
-      required this.rank,
-      required this.eig,
-      required this.potentialEig,
-      this.pDetect,
-      this.pObserved,
-      this.collectionGap})
-      : super._();
+  _$InformationValueIndicatorsInner._({
+    required this.indicatorId,
+    this.description,
+    this.signalFamily,
+    this.state,
+    required this.rank,
+    required this.eig,
+    required this.potentialEig,
+    this.pDetect,
+    this.pObserved,
+    this.collectionGap,
+  }) : super._();
   @override
   InformationValueIndicatorsInner rebuild(
-          void Function(InformationValueIndicatorsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InformationValueIndicatorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InformationValueIndicatorsInnerBuilder toBuilder() =>
@@ -208,8 +213,10 @@ class _$InformationValueIndicatorsInner
 
 class InformationValueIndicatorsInnerBuilder
     implements
-        Builder<InformationValueIndicatorsInner,
-            InformationValueIndicatorsInnerBuilder> {
+        Builder<
+          InformationValueIndicatorsInner,
+          InformationValueIndicatorsInnerBuilder
+        > {
   _$InformationValueIndicatorsInner? _$v;
 
   String? _indicatorId;
@@ -290,19 +297,32 @@ class InformationValueIndicatorsInnerBuilder
   InformationValueIndicatorsInner build() => _build();
 
   _$InformationValueIndicatorsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$InformationValueIndicatorsInner._(
           indicatorId: BuiltValueNullFieldError.checkNotNull(
-              indicatorId, r'InformationValueIndicatorsInner', 'indicatorId'),
+            indicatorId,
+            r'InformationValueIndicatorsInner',
+            'indicatorId',
+          ),
           description: description,
           signalFamily: signalFamily,
           state: state,
           rank: BuiltValueNullFieldError.checkNotNull(
-              rank, r'InformationValueIndicatorsInner', 'rank'),
+            rank,
+            r'InformationValueIndicatorsInner',
+            'rank',
+          ),
           eig: BuiltValueNullFieldError.checkNotNull(
-              eig, r'InformationValueIndicatorsInner', 'eig'),
+            eig,
+            r'InformationValueIndicatorsInner',
+            'eig',
+          ),
           potentialEig: BuiltValueNullFieldError.checkNotNull(
-              potentialEig, r'InformationValueIndicatorsInner', 'potentialEig'),
+            potentialEig,
+            r'InformationValueIndicatorsInner',
+            'potentialEig',
+          ),
           pDetect: pDetect,
           pObserved: pObserved,
           collectionGap: collectionGap,

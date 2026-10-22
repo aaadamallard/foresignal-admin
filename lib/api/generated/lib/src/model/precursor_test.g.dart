@@ -35,20 +35,20 @@ class _$PrecursorTest extends PrecursorTest {
   factory _$PrecursorTest([void Function(PrecursorTestBuilder)? updates]) =>
       (PrecursorTestBuilder()..update(updates))._build();
 
-  _$PrecursorTest._(
-      {required this.id,
-      required this.name,
-      this.statement,
-      this.antecedent,
-      this.consequent,
-      this.minLag,
-      required this.maxLag,
-      this.spatial,
-      this.dedupWindow,
-      this.createdBy,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$PrecursorTest._({
+    required this.id,
+    required this.name,
+    this.statement,
+    this.antecedent,
+    this.consequent,
+    this.minLag,
+    required this.maxLag,
+    this.spatial,
+    this.dedupWindow,
+    this.createdBy,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   PrecursorTest rebuild(void Function(PrecursorTestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -202,22 +202,32 @@ class PrecursorTestBuilder
   PrecursorTest build() => _build();
 
   _$PrecursorTest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorTest._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'PrecursorTest', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'PrecursorTest', 'name'),
+            name,
+            r'PrecursorTest',
+            'name',
+          ),
           statement: statement,
           antecedent: antecedent,
           consequent: consequent,
           minLag: minLag,
           maxLag: BuiltValueNullFieldError.checkNotNull(
-              maxLag, r'PrecursorTest', 'maxLag'),
+            maxLag,
+            r'PrecursorTest',
+            'maxLag',
+          ),
           spatial: spatial,
           dedupWindow: dedupWindow,
           createdBy: createdBy,
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'PrecursorTest', 'createdAt'),
+            createdAt,
+            r'PrecursorTest',
+            'createdAt',
+          ),
           updatedAt: updatedAt,
         );
     replace(_$result);

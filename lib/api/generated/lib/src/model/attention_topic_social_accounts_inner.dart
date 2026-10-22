@@ -16,8 +16,10 @@ part 'attention_topic_social_accounts_inner.g.dart';
 @BuiltValue()
 abstract class AttentionTopicSocialAccountsInner
     implements
-        Built<AttentionTopicSocialAccountsInner,
-            AttentionTopicSocialAccountsInnerBuilder> {
+        Built<
+          AttentionTopicSocialAccountsInner,
+          AttentionTopicSocialAccountsInnerBuilder
+        > {
   /// Social network: `bluesky`, `mastodon`, `reddit`, `youtube`, `x`, `threads`, `instagram`, or the platform an EDP provider (024, 138) declares
   @BuiltValueField(wireName: r'platform')
   String get platform;
@@ -27,9 +29,9 @@ abstract class AttentionTopicSocialAccountsInner
 
   AttentionTopicSocialAccountsInner._();
 
-  factory AttentionTopicSocialAccountsInner(
-          [void updates(AttentionTopicSocialAccountsInnerBuilder b)]) =
-      _$AttentionTopicSocialAccountsInner;
+  factory AttentionTopicSocialAccountsInner([
+    void updates(AttentionTopicSocialAccountsInnerBuilder b),
+  ]) = _$AttentionTopicSocialAccountsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AttentionTopicSocialAccountsInnerBuilder b) => b;
@@ -44,7 +46,7 @@ class _$AttentionTopicSocialAccountsInnerSerializer
   @override
   final Iterable<Type> types = const [
     AttentionTopicSocialAccountsInner,
-    _$AttentionTopicSocialAccountsInner
+    _$AttentionTopicSocialAccountsInner,
   ];
 
   @override
@@ -73,9 +75,11 @@ class _$AttentionTopicSocialAccountsInnerSerializer
     AttentionTopicSocialAccountsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +95,21 @@ class _$AttentionTopicSocialAccountsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'handle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.handle = valueDes;
           break;
         default:

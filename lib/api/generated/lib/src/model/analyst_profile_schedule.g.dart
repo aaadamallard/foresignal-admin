@@ -14,16 +14,16 @@ class _$AnalystProfileSchedule extends AnalystProfileSchedule {
   @override
   final String? every;
 
-  factory _$AnalystProfileSchedule(
-          [void Function(AnalystProfileScheduleBuilder)? updates]) =>
-      (AnalystProfileScheduleBuilder()..update(updates))._build();
+  factory _$AnalystProfileSchedule([
+    void Function(AnalystProfileScheduleBuilder)? updates,
+  ]) => (AnalystProfileScheduleBuilder()..update(updates))._build();
 
   _$AnalystProfileSchedule._({this.cron, this.timezone, this.every})
-      : super._();
+    : super._();
   @override
   AnalystProfileSchedule rebuild(
-          void Function(AnalystProfileScheduleBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystProfileScheduleBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystProfileScheduleBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class AnalystProfileScheduleBuilder
   AnalystProfileSchedule build() => _build();
 
   _$AnalystProfileSchedule _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalystProfileSchedule._(
           cron: cron,
           timezone: timezone,

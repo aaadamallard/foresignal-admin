@@ -16,17 +16,20 @@ class _$RegistrationTokenInput extends RegistrationTokenInput {
   @override
   final String? sourceIdPrefix;
 
-  factory _$RegistrationTokenInput(
-          [void Function(RegistrationTokenInputBuilder)? updates]) =>
-      (RegistrationTokenInputBuilder()..update(updates))._build();
+  factory _$RegistrationTokenInput([
+    void Function(RegistrationTokenInputBuilder)? updates,
+  ]) => (RegistrationTokenInputBuilder()..update(updates))._build();
 
-  _$RegistrationTokenInput._(
-      {required this.name, this.expiresAt, this.maxUses, this.sourceIdPrefix})
-      : super._();
+  _$RegistrationTokenInput._({
+    required this.name,
+    this.expiresAt,
+    this.maxUses,
+    this.sourceIdPrefix,
+  }) : super._();
   @override
   RegistrationTokenInput rebuild(
-          void Function(RegistrationTokenInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegistrationTokenInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegistrationTokenInputBuilder toBuilder() =>
@@ -115,10 +118,14 @@ class RegistrationTokenInputBuilder
   RegistrationTokenInput build() => _build();
 
   _$RegistrationTokenInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RegistrationTokenInput._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'RegistrationTokenInput', 'name'),
+            name,
+            r'RegistrationTokenInput',
+            'name',
+          ),
           expiresAt: expiresAt,
           maxUses: maxUses,
           sourceIdPrefix: sourceIdPrefix,

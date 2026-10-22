@@ -17,18 +17,20 @@ class _$RuleBacktestResultTopEntitiesInner
   @override
   final int count;
 
-  factory _$RuleBacktestResultTopEntitiesInner(
-          [void Function(RuleBacktestResultTopEntitiesInnerBuilder)?
-              updates]) =>
-      (RuleBacktestResultTopEntitiesInnerBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultTopEntitiesInner([
+    void Function(RuleBacktestResultTopEntitiesInnerBuilder)? updates,
+  ]) => (RuleBacktestResultTopEntitiesInnerBuilder()..update(updates))._build();
 
-  _$RuleBacktestResultTopEntitiesInner._(
-      {this.sourceId, this.externalId, this.entityId, required this.count})
-      : super._();
+  _$RuleBacktestResultTopEntitiesInner._({
+    this.sourceId,
+    this.externalId,
+    this.entityId,
+    required this.count,
+  }) : super._();
   @override
   RuleBacktestResultTopEntitiesInner rebuild(
-          void Function(RuleBacktestResultTopEntitiesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultTopEntitiesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultTopEntitiesInnerBuilder toBuilder() =>
@@ -68,8 +70,10 @@ class _$RuleBacktestResultTopEntitiesInner
 
 class RuleBacktestResultTopEntitiesInnerBuilder
     implements
-        Builder<RuleBacktestResultTopEntitiesInner,
-            RuleBacktestResultTopEntitiesInnerBuilder> {
+        Builder<
+          RuleBacktestResultTopEntitiesInner,
+          RuleBacktestResultTopEntitiesInnerBuilder
+        > {
   _$RuleBacktestResultTopEntitiesInner? _$v;
 
   String? _sourceId;
@@ -111,7 +115,8 @@ class RuleBacktestResultTopEntitiesInnerBuilder
 
   @override
   void update(
-      void Function(RuleBacktestResultTopEntitiesInnerBuilder)? updates) {
+    void Function(RuleBacktestResultTopEntitiesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -119,13 +124,17 @@ class RuleBacktestResultTopEntitiesInnerBuilder
   RuleBacktestResultTopEntitiesInner build() => _build();
 
   _$RuleBacktestResultTopEntitiesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RuleBacktestResultTopEntitiesInner._(
           sourceId: sourceId,
           externalId: externalId,
           entityId: entityId,
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'RuleBacktestResultTopEntitiesInner', 'count'),
+            count,
+            r'RuleBacktestResultTopEntitiesInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

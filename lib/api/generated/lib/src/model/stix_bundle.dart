@@ -65,7 +65,7 @@ class _$StixBundleSerializer implements PrimitiveSerializer<StixBundle> {
     yield serializers.serialize(
       object.objects,
       specifiedType: const FullType(BuiltList, [
-        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+        FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
       ]),
     );
   }
@@ -76,9 +76,11 @@ class _$StixBundleSerializer implements PrimitiveSerializer<StixBundle> {
     StixBundle object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,27 +96,35 @@ class _$StixBundleSerializer implements PrimitiveSerializer<StixBundle> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StixBundleTypeEnum),
-          ) as StixBundleTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StixBundleTypeEnum),
+                  )
+                  as StixBundleTypeEnum;
           result.type = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'objects':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltList<BuiltMap<String, JsonObject?>>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltList<BuiltMap<String, JsonObject?>>;
           result.objects.replace(valueDes);
           break;
         default:

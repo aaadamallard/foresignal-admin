@@ -97,8 +97,10 @@ class _$IngestPolicySerializer implements PrimitiveSerializer<IngestPolicy> {
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -112,8 +114,12 @@ class _$IngestPolicySerializer implements PrimitiveSerializer<IngestPolicy> {
     final serializedList = (serialized as Iterable<Object?>).toList();
     final discIndex =
         serializedList.indexOf(IngestPolicy.discriminatorFieldName) + 1;
-    final discValue = serializers.deserialize(serializedList[discIndex],
-        specifiedType: FullType(String)) as String;
+    final discValue =
+        serializers.deserialize(
+              serializedList[discIndex],
+              specifiedType: FullType(String),
+            )
+            as String;
     oneOfDataSrc = serialized;
     final oneOfTypes = [
       IngestPolicyAll,
@@ -124,34 +130,42 @@ class _$IngestPolicySerializer implements PrimitiveSerializer<IngestPolicy> {
     Type oneOfType;
     switch (discValue) {
       case r'ALL':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(IngestPolicyAll),
-        ) as IngestPolicyAll;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(IngestPolicyAll),
+                )
+                as IngestPolicyAll;
         oneOfType = IngestPolicyAll;
         break;
       case r'LATEST':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(IngestPolicyLatest),
-        ) as IngestPolicyLatest;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(IngestPolicyLatest),
+                )
+                as IngestPolicyLatest;
         oneOfType = IngestPolicyLatest;
         break;
       case r'SAMPLED':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(IngestPolicySampled),
-        ) as IngestPolicySampled;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(IngestPolicySampled),
+                )
+                as IngestPolicySampled;
         oneOfType = IngestPolicySampled;
         break;
       default:
         throw UnsupportedError(
-            "Couldn't deserialize oneOf for the discriminator value: ${discValue}");
+          "Couldn't deserialize oneOf for the discriminator value: ${discValue}",
+        );
     }
     result.oneOf = OneOfDynamic(
-        typeIndex: oneOfTypes.indexOf(oneOfType),
-        types: oneOfTypes,
-        value: oneOfResult);
+      typeIndex: oneOfTypes.indexOf(oneOfType),
+      types: oneOfTypes,
+      value: oneOfResult,
+    );
     return result.build();
   }
 }

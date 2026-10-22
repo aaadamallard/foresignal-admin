@@ -84,9 +84,11 @@ class _$IntelCorroborationSerializer
     IntelCorroboration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,29 +104,38 @@ class _$IntelCorroborationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'eventQuality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IntelCorroborationEventQuality),
-          ) as IntelCorroborationEventQuality?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelCorroborationEventQuality,
+                    ),
+                  )
+                  as IntelCorroborationEventQuality?;
           if (valueDes == null) continue;
           result.eventQuality.replace(valueDes);
           break;
         case r'situationActivation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IntelCorroborationSituationActivation),
-          ) as IntelCorroborationSituationActivation?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelCorroborationSituationActivation,
+                    ),
+                  )
+                  as IntelCorroborationSituationActivation?;
           if (valueDes == null) continue;
           result.situationActivation.replace(valueDes);
           break;
         case r'autoCorroborate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IntelCorroborationAutoCorroborate),
-          ) as IntelCorroborationAutoCorroborate?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelCorroborationAutoCorroborate,
+                    ),
+                  )
+                  as IntelCorroborationAutoCorroborate?;
           if (valueDes == null) continue;
           result.autoCorroborate.replace(valueDes);
           break;

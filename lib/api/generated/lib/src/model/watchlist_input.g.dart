@@ -44,14 +44,14 @@ WatchlistInputIdentityEnum _$watchlistInputIdentityEnumValueOf(String name) {
 
 final BuiltSet<WatchlistInputIdentityEnum> _$watchlistInputIdentityEnumValues =
     BuiltSet<WatchlistInputIdentityEnum>(const <WatchlistInputIdentityEnum>[
-  _$watchlistInputIdentityEnum_icao24,
-  _$watchlistInputIdentityEnum_registration,
-  _$watchlistInputIdentityEnum_callsign,
-  _$watchlistInputIdentityEnum_mmsi,
-  _$watchlistInputIdentityEnum_imo,
-  _$watchlistInputIdentityEnum_entity,
-  _$watchlistInputIdentityEnum_custom,
-]);
+      _$watchlistInputIdentityEnum_icao24,
+      _$watchlistInputIdentityEnum_registration,
+      _$watchlistInputIdentityEnum_callsign,
+      _$watchlistInputIdentityEnum_mmsi,
+      _$watchlistInputIdentityEnum_imo,
+      _$watchlistInputIdentityEnum_entity,
+      _$watchlistInputIdentityEnum_custom,
+    ]);
 
 const WatchlistInputNormalizeEnum _$watchlistInputNormalizeEnum_upper =
     const WatchlistInputNormalizeEnum._('upper');
@@ -78,18 +78,18 @@ WatchlistInputNormalizeEnum _$watchlistInputNormalizeEnumValueOf(String name) {
 }
 
 final BuiltSet<WatchlistInputNormalizeEnum>
-    _$watchlistInputNormalizeEnumValues =
+_$watchlistInputNormalizeEnumValues =
     BuiltSet<WatchlistInputNormalizeEnum>(const <WatchlistInputNormalizeEnum>[
-  _$watchlistInputNormalizeEnum_upper,
-  _$watchlistInputNormalizeEnum_lower,
-  _$watchlistInputNormalizeEnum_digits,
-  _$watchlistInputNormalizeEnum_none,
-]);
+      _$watchlistInputNormalizeEnum_upper,
+      _$watchlistInputNormalizeEnum_lower,
+      _$watchlistInputNormalizeEnum_digits,
+      _$watchlistInputNormalizeEnum_none,
+    ]);
 
 Serializer<WatchlistInputIdentityEnum> _$watchlistInputIdentityEnumSerializer =
     _$WatchlistInputIdentityEnumSerializer();
 Serializer<WatchlistInputNormalizeEnum>
-    _$watchlistInputNormalizeEnumSerializer =
+_$watchlistInputNormalizeEnumSerializer =
     _$WatchlistInputNormalizeEnumSerializer();
 
 class _$WatchlistInputIdentityEnumSerializer
@@ -119,16 +119,20 @@ class _$WatchlistInputIdentityEnumSerializer
   final String wireName = 'WatchlistInputIdentityEnum';
 
   @override
-  Object serialize(Serializers serializers, WatchlistInputIdentityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WatchlistInputIdentityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WatchlistInputIdentityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WatchlistInputIdentityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WatchlistInputIdentityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WatchlistInputNormalizeEnumSerializer
@@ -152,16 +156,20 @@ class _$WatchlistInputNormalizeEnumSerializer
   final String wireName = 'WatchlistInputNormalizeEnum';
 
   @override
-  Object serialize(Serializers serializers, WatchlistInputNormalizeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WatchlistInputNormalizeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WatchlistInputNormalizeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WatchlistInputNormalizeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WatchlistInputNormalizeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WatchlistInput extends WatchlistInput {
@@ -177,12 +185,12 @@ class _$WatchlistInput extends WatchlistInput {
   factory _$WatchlistInput([void Function(WatchlistInputBuilder)? updates]) =>
       (WatchlistInputBuilder()..update(updates))._build();
 
-  _$WatchlistInput._(
-      {required this.name,
-      required this.identity,
-      this.normalize,
-      this.description})
-      : super._();
+  _$WatchlistInput._({
+    required this.name,
+    required this.identity,
+    this.normalize,
+    this.description,
+  }) : super._();
   @override
   WatchlistInput rebuild(void Function(WatchlistInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -274,12 +282,19 @@ class WatchlistInputBuilder
   WatchlistInput build() => _build();
 
   _$WatchlistInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WatchlistInput._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'WatchlistInput', 'name'),
+            name,
+            r'WatchlistInput',
+            'name',
+          ),
           identity: BuiltValueNullFieldError.checkNotNull(
-              identity, r'WatchlistInput', 'identity'),
+            identity,
+            r'WatchlistInput',
+            'identity',
+          ),
           normalize: normalize,
           description: description,
         );

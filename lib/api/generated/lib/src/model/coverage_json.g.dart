@@ -24,9 +24,9 @@ CoverageJsonTypeEnum _$coverageJsonTypeEnumValueOf(String name) {
 
 final BuiltSet<CoverageJsonTypeEnum> _$coverageJsonTypeEnumValues =
     BuiltSet<CoverageJsonTypeEnum>(const <CoverageJsonTypeEnum>[
-  _$coverageJsonTypeEnum_coverage,
-  _$coverageJsonTypeEnum_coverageCollection,
-]);
+      _$coverageJsonTypeEnum_coverage,
+      _$coverageJsonTypeEnum_coverageCollection,
+    ]);
 
 Serializer<CoverageJsonTypeEnum> _$coverageJsonTypeEnumSerializer =
     _$CoverageJsonTypeEnumSerializer();
@@ -48,15 +48,20 @@ class _$CoverageJsonTypeEnumSerializer
   final String wireName = 'CoverageJsonTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, CoverageJsonTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CoverageJsonTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  CoverageJsonTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CoverageJsonTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  CoverageJsonTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CoverageJsonTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CoverageJson extends CoverageJson {
@@ -74,13 +79,13 @@ class _$CoverageJson extends CoverageJson {
   factory _$CoverageJson([void Function(CoverageJsonBuilder)? updates]) =>
       (CoverageJsonBuilder()..update(updates))._build();
 
-  _$CoverageJson._(
-      {required this.type,
-      this.domain,
-      this.parameters,
-      this.ranges,
-      this.coverages})
-      : super._();
+  _$CoverageJson._({
+    required this.type,
+    this.domain,
+    this.parameters,
+    this.ranges,
+    this.coverages,
+  }) : super._();
   @override
   CoverageJson rebuild(void Function(CoverageJsonBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -142,8 +147,8 @@ class CoverageJsonBuilder
       _$this._parameters ??=
           MapBuilder<String, BuiltMap<String, JsonObject?>>();
   set parameters(
-          MapBuilder<String, BuiltMap<String, JsonObject?>>? parameters) =>
-      _$this._parameters = parameters;
+    MapBuilder<String, BuiltMap<String, JsonObject?>>? parameters,
+  ) => _$this._parameters = parameters;
 
   MapBuilder<String, BuiltMap<String, JsonObject?>>? _ranges;
   MapBuilder<String, BuiltMap<String, JsonObject?>> get ranges =>
@@ -190,10 +195,14 @@ class CoverageJsonBuilder
   _$CoverageJson _build() {
     _$CoverageJson _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CoverageJson._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'CoverageJson', 'type'),
+              type,
+              r'CoverageJson',
+              'type',
+            ),
             domain: _domain?.build(),
             parameters: _parameters?.build(),
             ranges: _ranges?.build(),
@@ -212,7 +221,10 @@ class CoverageJsonBuilder
         _coverages?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CoverageJson', _$failedField, e.toString());
+          r'CoverageJson',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

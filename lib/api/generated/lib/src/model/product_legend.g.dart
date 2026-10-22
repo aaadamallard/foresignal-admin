@@ -99,12 +99,8 @@ class ProductLegendBuilder
   ProductLegend build() => _build();
 
   _$ProductLegend _build() {
-    final _$result = _$v ??
-        _$ProductLegend._(
-          summary: summary,
-          url: url,
-          pngUrl: pngUrl,
-        );
+    final _$result =
+        _$v ?? _$ProductLegend._(summary: summary, url: url, pngUrl: pngUrl);
     replace(_$result);
     return _$result;
   }

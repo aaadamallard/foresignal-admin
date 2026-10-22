@@ -7,11 +7,11 @@ part of 'trigger_rule_input_conditions_inner.dart';
 // **************************************************************************
 
 const TriggerRuleInputConditionsInnerTypeEnum
-    _$triggerRuleInputConditionsInnerTypeEnum_approach =
+_$triggerRuleInputConditionsInnerTypeEnum_approach =
     const TriggerRuleInputConditionsInnerTypeEnum._('approach');
 
 TriggerRuleInputConditionsInnerTypeEnum
-    _$triggerRuleInputConditionsInnerTypeEnumValueOf(String name) {
+_$triggerRuleInputConditionsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'approach':
       return _$triggerRuleInputConditionsInnerTypeEnum_approach;
@@ -21,13 +21,15 @@ TriggerRuleInputConditionsInnerTypeEnum
 }
 
 final BuiltSet<TriggerRuleInputConditionsInnerTypeEnum>
-    _$triggerRuleInputConditionsInnerTypeEnumValues = BuiltSet<
-        TriggerRuleInputConditionsInnerTypeEnum>(const <TriggerRuleInputConditionsInnerTypeEnum>[
-  _$triggerRuleInputConditionsInnerTypeEnum_approach,
-]);
+_$triggerRuleInputConditionsInnerTypeEnumValues =
+    BuiltSet<TriggerRuleInputConditionsInnerTypeEnum>(
+      const <TriggerRuleInputConditionsInnerTypeEnum>[
+        _$triggerRuleInputConditionsInnerTypeEnum_approach,
+      ],
+    );
 
 Serializer<TriggerRuleInputConditionsInnerTypeEnum>
-    _$triggerRuleInputConditionsInnerTypeEnumSerializer =
+_$triggerRuleInputConditionsInnerTypeEnumSerializer =
     _$TriggerRuleInputConditionsInnerTypeEnumSerializer();
 
 class _$TriggerRuleInputConditionsInnerTypeEnumSerializer
@@ -41,23 +43,26 @@ class _$TriggerRuleInputConditionsInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    TriggerRuleInputConditionsInnerTypeEnum
+    TriggerRuleInputConditionsInnerTypeEnum,
   ];
   @override
   final String wireName = 'TriggerRuleInputConditionsInnerTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          TriggerRuleInputConditionsInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleInputConditionsInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputConditionsInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputConditionsInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputConditionsInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputConditionsInner
@@ -65,15 +70,15 @@ class _$TriggerRuleInputConditionsInner
   @override
   final OneOf oneOf;
 
-  factory _$TriggerRuleInputConditionsInner(
-          [void Function(TriggerRuleInputConditionsInnerBuilder)? updates]) =>
-      (TriggerRuleInputConditionsInnerBuilder()..update(updates))._build();
+  factory _$TriggerRuleInputConditionsInner([
+    void Function(TriggerRuleInputConditionsInnerBuilder)? updates,
+  ]) => (TriggerRuleInputConditionsInnerBuilder()..update(updates))._build();
 
   _$TriggerRuleInputConditionsInner._({required this.oneOf}) : super._();
   @override
   TriggerRuleInputConditionsInner rebuild(
-          void Function(TriggerRuleInputConditionsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TriggerRuleInputConditionsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TriggerRuleInputConditionsInnerBuilder toBuilder() =>
@@ -95,16 +100,18 @@ class _$TriggerRuleInputConditionsInner
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'TriggerRuleInputConditionsInner')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'TriggerRuleInputConditionsInner',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
 class TriggerRuleInputConditionsInnerBuilder
     implements
-        Builder<TriggerRuleInputConditionsInner,
-            TriggerRuleInputConditionsInnerBuilder> {
+        Builder<
+          TriggerRuleInputConditionsInner,
+          TriggerRuleInputConditionsInnerBuilder
+        > {
   _$TriggerRuleInputConditionsInner? _$v;
 
   OneOf? _oneOf;
@@ -138,10 +145,14 @@ class TriggerRuleInputConditionsInnerBuilder
   TriggerRuleInputConditionsInner build() => _build();
 
   _$TriggerRuleInputConditionsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TriggerRuleInputConditionsInner._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'TriggerRuleInputConditionsInner', 'oneOf'),
+            oneOf,
+            r'TriggerRuleInputConditionsInner',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

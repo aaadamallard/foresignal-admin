@@ -19,12 +19,12 @@ class _$ReferenceStatus extends ReferenceStatus {
   factory _$ReferenceStatus([void Function(ReferenceStatusBuilder)? updates]) =>
       (ReferenceStatusBuilder()..update(updates))._build();
 
-  _$ReferenceStatus._(
-      {required this.datasets,
-      this.loading,
-      this.attributions,
-      this.boundaryNote})
-      : super._();
+  _$ReferenceStatus._({
+    required this.datasets,
+    this.loading,
+    this.attributions,
+    this.boundaryNote,
+  }) : super._();
   @override
   ReferenceStatus rebuild(void Function(ReferenceStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -120,7 +120,8 @@ class ReferenceStatusBuilder
   _$ReferenceStatus _build() {
     _$ReferenceStatus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReferenceStatus._(
             datasets: datasets.build(),
             loading: loading,
@@ -137,7 +138,10 @@ class ReferenceStatusBuilder
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReferenceStatus', _$failedField, e.toString());
+          r'ReferenceStatus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

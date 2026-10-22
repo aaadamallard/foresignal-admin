@@ -32,11 +32,11 @@ PropagationNodeTypeEnum _$propagationNodeTypeEnumValueOf(String name) {
 
 final BuiltSet<PropagationNodeTypeEnum> _$propagationNodeTypeEnumValues =
     BuiltSet<PropagationNodeTypeEnum>(const <PropagationNodeTypeEnum>[
-  _$propagationNodeTypeEnum_post,
-  _$propagationNodeTypeEnum_evidenceGroup,
-  _$propagationNodeTypeEnum_newsArticle,
-  _$propagationNodeTypeEnum_officialRecord,
-]);
+      _$propagationNodeTypeEnum_post,
+      _$propagationNodeTypeEnum_evidenceGroup,
+      _$propagationNodeTypeEnum_newsArticle,
+      _$propagationNodeTypeEnum_officialRecord,
+    ]);
 
 Serializer<PropagationNodeTypeEnum> _$propagationNodeTypeEnumSerializer =
     _$PropagationNodeTypeEnumSerializer();
@@ -62,16 +62,20 @@ class _$PropagationNodeTypeEnumSerializer
   final String wireName = 'PropagationNodeTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PropagationNodeTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PropagationNodeTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PropagationNodeTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PropagationNodeTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PropagationNodeTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PropagationNode extends PropagationNode {
@@ -95,16 +99,16 @@ class _$PropagationNode extends PropagationNode {
   factory _$PropagationNode([void Function(PropagationNodeBuilder)? updates]) =>
       (PropagationNodeBuilder()..update(updates))._build();
 
-  _$PropagationNode._(
-      {required this.id,
-      required this.type,
-      this.ref,
-      this.platform,
-      required this.observedAt,
-      this.evidenceGroupId,
-      this.memberCount,
-      this.label})
-      : super._();
+  _$PropagationNode._({
+    required this.id,
+    required this.type,
+    this.ref,
+    this.platform,
+    required this.observedAt,
+    this.evidenceGroupId,
+    this.memberCount,
+    this.label,
+  }) : super._();
   @override
   PropagationNode rebuild(void Function(PropagationNodeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -227,16 +231,26 @@ class PropagationNodeBuilder
   PropagationNode build() => _build();
 
   _$PropagationNode _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PropagationNode._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'PropagationNode', 'id'),
+            id,
+            r'PropagationNode',
+            'id',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'PropagationNode', 'type'),
+            type,
+            r'PropagationNode',
+            'type',
+          ),
           ref: ref,
           platform: platform,
           observedAt: BuiltValueNullFieldError.checkNotNull(
-              observedAt, r'PropagationNode', 'observedAt'),
+            observedAt,
+            r'PropagationNode',
+            'observedAt',
+          ),
           evidenceGroupId: evidenceGroupId,
           memberCount: memberCount,
           label: label,

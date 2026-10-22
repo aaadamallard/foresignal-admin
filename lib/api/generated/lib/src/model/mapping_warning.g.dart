@@ -18,7 +18,7 @@ class _$MappingWarning extends MappingWarning {
       (MappingWarningBuilder()..update(updates))._build();
 
   _$MappingWarning._({required this.code, required this.message, this.path})
-      : super._();
+    : super._();
   @override
   MappingWarning rebuild(void Function(MappingWarningBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -100,12 +100,19 @@ class MappingWarningBuilder
   MappingWarning build() => _build();
 
   _$MappingWarning _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MappingWarning._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'MappingWarning', 'code'),
+            code,
+            r'MappingWarning',
+            'code',
+          ),
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'MappingWarning', 'message'),
+            message,
+            r'MappingWarning',
+            'message',
+          ),
           path: path,
         );
     replace(_$result);

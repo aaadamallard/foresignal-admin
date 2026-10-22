@@ -72,9 +72,9 @@ abstract class CorrelationRecipeDefinition
 
   CorrelationRecipeDefinition._();
 
-  factory CorrelationRecipeDefinition(
-          [void updates(CorrelationRecipeDefinitionBuilder b)]) =
-      _$CorrelationRecipeDefinition;
+  factory CorrelationRecipeDefinition([
+    void updates(CorrelationRecipeDefinitionBuilder b),
+  ]) = _$CorrelationRecipeDefinition;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeDefinitionBuilder b) => b;
@@ -89,7 +89,7 @@ class _$CorrelationRecipeDefinitionSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeDefinition,
-    _$CorrelationRecipeDefinition
+    _$CorrelationRecipeDefinition,
   ];
 
   @override
@@ -114,8 +114,9 @@ class _$CorrelationRecipeDefinitionSerializer
       yield r'joins';
       yield serializers.serialize(
         object.joins,
-        specifiedType: const FullType(
-            BuiltList, [FullType(CorrelationRecipeDefinitionJoinsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(CorrelationRecipeDefinitionJoinsInner),
+        ]),
       );
     }
     if (object.minMembers != null) {
@@ -143,16 +144,19 @@ class _$CorrelationRecipeDefinitionSerializer
       yield r'contradictions';
       yield serializers.serialize(
         object.contradictions,
-        specifiedType: const FullType(BuiltList,
-            [FullType(CorrelationRecipeDefinitionContradictionsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(CorrelationRecipeDefinitionContradictionsInner),
+        ]),
       );
     }
     if (object.severityMap != null) {
       yield r'severityMap';
       yield serializers.serialize(
         object.severityMap,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(Severity)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(Severity),
+        ]),
       );
     }
     if (object.dedup != null) {
@@ -184,9 +188,11 @@ class _$CorrelationRecipeDefinitionSerializer
     CorrelationRecipeDefinition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -202,93 +208,125 @@ class _$CorrelationRecipeDefinitionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CorrelationRecipeDefinitionTypeEnum),
-          ) as CorrelationRecipeDefinitionTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      CorrelationRecipeDefinitionTypeEnum,
+                    ),
+                  )
+                  as CorrelationRecipeDefinitionTypeEnum;
           result.type = valueDes;
           break;
         case r'seed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CorrelationRecipeDefinitionSeed),
-          ) as CorrelationRecipeDefinitionSeed;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      CorrelationRecipeDefinitionSeed,
+                    ),
+                  )
+                  as CorrelationRecipeDefinitionSeed;
           result.seed.replace(valueDes);
           break;
         case r'joins':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(CorrelationRecipeDefinitionJoinsInner)]),
-          ) as BuiltList<CorrelationRecipeDefinitionJoinsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CorrelationRecipeDefinitionJoinsInner),
+                    ]),
+                  )
+                  as BuiltList<CorrelationRecipeDefinitionJoinsInner>?;
           if (valueDes == null) continue;
           result.joins.replace(valueDes);
           break;
         case r'minMembers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minMembers = valueDes;
           break;
         case r'minSignalFamilies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minSignalFamilies = valueDes;
           break;
         case r'activateAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(CorrelationRecipeDefinitionActivateAt),
-          ) as CorrelationRecipeDefinitionActivateAt?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CorrelationRecipeDefinitionActivateAt,
+                    ),
+                  )
+                  as CorrelationRecipeDefinitionActivateAt?;
           if (valueDes == null) continue;
           result.activateAt.replace(valueDes);
           break;
         case r'contradictions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(CorrelationRecipeDefinitionContradictionsInner)]),
-          ) as BuiltList<CorrelationRecipeDefinitionContradictionsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CorrelationRecipeDefinitionContradictionsInner),
+                    ]),
+                  )
+                  as BuiltList<CorrelationRecipeDefinitionContradictionsInner>?;
           if (valueDes == null) continue;
           result.contradictions.replace(valueDes);
           break;
         case r'severityMap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(Severity)]),
-          ) as BuiltMap<String, Severity>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(Severity),
+                    ]),
+                  )
+                  as BuiltMap<String, Severity>?;
           if (valueDes == null) continue;
           result.severityMap.replace(valueDes);
           break;
         case r'dedup':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(CorrelationRecipeDefinitionDedup),
-          ) as CorrelationRecipeDefinitionDedup?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CorrelationRecipeDefinitionDedup,
+                    ),
+                  )
+                  as CorrelationRecipeDefinitionDedup?;
           if (valueDes == null) continue;
           result.dedup.replace(valueDes);
           break;
         case r'quietPeriod':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.quietPeriod = valueDes;
           break;
         case r'reopenWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reopenWindow = valueDes;
           break;

@@ -9,33 +9,34 @@ part of 'federation_item.dart';
 const FederationItemPersistReasonEnum _$federationItemPersistReasonEnum_FIRST =
     const FederationItemPersistReasonEnum._('FIRST');
 const FederationItemPersistReasonEnum
-    _$federationItemPersistReasonEnum_REAPPEAR =
+_$federationItemPersistReasonEnum_REAPPEAR =
     const FederationItemPersistReasonEnum._('REAPPEAR');
 const FederationItemPersistReasonEnum
-    _$federationItemPersistReasonEnum_SIGNIFICANT =
+_$federationItemPersistReasonEnum_SIGNIFICANT =
     const FederationItemPersistReasonEnum._('SIGNIFICANT');
 const FederationItemPersistReasonEnum
-    _$federationItemPersistReasonEnum_TOMBSTONE =
+_$federationItemPersistReasonEnum_TOMBSTONE =
     const FederationItemPersistReasonEnum._('TOMBSTONE');
 const FederationItemPersistReasonEnum _$federationItemPersistReasonEnum_CHANGE =
     const FederationItemPersistReasonEnum._('CHANGE');
 const FederationItemPersistReasonEnum _$federationItemPersistReasonEnum_SAMPLE =
     const FederationItemPersistReasonEnum._('SAMPLE');
 const FederationItemPersistReasonEnum
-    _$federationItemPersistReasonEnum_KEYFRAME =
+_$federationItemPersistReasonEnum_KEYFRAME =
     const FederationItemPersistReasonEnum._('KEYFRAME');
 const FederationItemPersistReasonEnum
-    _$federationItemPersistReasonEnum_HEARTBEAT =
+_$federationItemPersistReasonEnum_HEARTBEAT =
     const FederationItemPersistReasonEnum._('HEARTBEAT');
 const FederationItemPersistReasonEnum
-    _$federationItemPersistReasonEnum_TRIGGER_EDGE =
+_$federationItemPersistReasonEnum_TRIGGER_EDGE =
     const FederationItemPersistReasonEnum._('TRIGGER_EDGE');
 const FederationItemPersistReasonEnum
-    _$federationItemPersistReasonEnum_SNAPSHOT =
+_$federationItemPersistReasonEnum_SNAPSHOT =
     const FederationItemPersistReasonEnum._('SNAPSHOT');
 
 FederationItemPersistReasonEnum _$federationItemPersistReasonEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'FIRST':
       return _$federationItemPersistReasonEnum_FIRST;
@@ -63,19 +64,21 @@ FederationItemPersistReasonEnum _$federationItemPersistReasonEnumValueOf(
 }
 
 final BuiltSet<FederationItemPersistReasonEnum>
-    _$federationItemPersistReasonEnumValues = BuiltSet<
-        FederationItemPersistReasonEnum>(const <FederationItemPersistReasonEnum>[
-  _$federationItemPersistReasonEnum_FIRST,
-  _$federationItemPersistReasonEnum_REAPPEAR,
-  _$federationItemPersistReasonEnum_SIGNIFICANT,
-  _$federationItemPersistReasonEnum_TOMBSTONE,
-  _$federationItemPersistReasonEnum_CHANGE,
-  _$federationItemPersistReasonEnum_SAMPLE,
-  _$federationItemPersistReasonEnum_KEYFRAME,
-  _$federationItemPersistReasonEnum_HEARTBEAT,
-  _$federationItemPersistReasonEnum_TRIGGER_EDGE,
-  _$federationItemPersistReasonEnum_SNAPSHOT,
-]);
+_$federationItemPersistReasonEnumValues =
+    BuiltSet<FederationItemPersistReasonEnum>(
+      const <FederationItemPersistReasonEnum>[
+        _$federationItemPersistReasonEnum_FIRST,
+        _$federationItemPersistReasonEnum_REAPPEAR,
+        _$federationItemPersistReasonEnum_SIGNIFICANT,
+        _$federationItemPersistReasonEnum_TOMBSTONE,
+        _$federationItemPersistReasonEnum_CHANGE,
+        _$federationItemPersistReasonEnum_SAMPLE,
+        _$federationItemPersistReasonEnum_KEYFRAME,
+        _$federationItemPersistReasonEnum_HEARTBEAT,
+        _$federationItemPersistReasonEnum_TRIGGER_EDGE,
+        _$federationItemPersistReasonEnum_SNAPSHOT,
+      ],
+    );
 
 const FederationItemHistoryTierEnum _$federationItemHistoryTierEnum_STANDARD =
     const FederationItemHistoryTierEnum._('STANDARD');
@@ -83,7 +86,8 @@ const FederationItemHistoryTierEnum _$federationItemHistoryTierEnum_TRACK =
     const FederationItemHistoryTierEnum._('TRACK');
 
 FederationItemHistoryTierEnum _$federationItemHistoryTierEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'STANDARD':
       return _$federationItemHistoryTierEnum_STANDARD;
@@ -95,17 +99,18 @@ FederationItemHistoryTierEnum _$federationItemHistoryTierEnumValueOf(
 }
 
 final BuiltSet<FederationItemHistoryTierEnum>
-    _$federationItemHistoryTierEnumValues = BuiltSet<
-        FederationItemHistoryTierEnum>(const <FederationItemHistoryTierEnum>[
-  _$federationItemHistoryTierEnum_STANDARD,
-  _$federationItemHistoryTierEnum_TRACK,
-]);
+_$federationItemHistoryTierEnumValues = BuiltSet<FederationItemHistoryTierEnum>(
+  const <FederationItemHistoryTierEnum>[
+    _$federationItemHistoryTierEnum_STANDARD,
+    _$federationItemHistoryTierEnum_TRACK,
+  ],
+);
 
 Serializer<FederationItemPersistReasonEnum>
-    _$federationItemPersistReasonEnumSerializer =
+_$federationItemPersistReasonEnumSerializer =
     _$FederationItemPersistReasonEnumSerializer();
 Serializer<FederationItemHistoryTierEnum>
-    _$federationItemHistoryTierEnumSerializer =
+_$federationItemHistoryTierEnumSerializer =
     _$FederationItemHistoryTierEnumSerializer();
 
 class _$FederationItemPersistReasonEnumSerializer
@@ -142,16 +147,19 @@ class _$FederationItemPersistReasonEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, FederationItemPersistReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FederationItemPersistReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FederationItemPersistReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FederationItemPersistReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FederationItemPersistReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FederationItemHistoryTierEnumSerializer
@@ -172,16 +180,19 @@ class _$FederationItemHistoryTierEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, FederationItemHistoryTierEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FederationItemHistoryTierEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FederationItemHistoryTierEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FederationItemHistoryTierEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FederationItemHistoryTierEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FederationItem extends FederationItem {
@@ -223,25 +234,25 @@ class _$FederationItem extends FederationItem {
   factory _$FederationItem([void Function(FederationItemBuilder)? updates]) =>
       (FederationItemBuilder()..update(updates))._build();
 
-  _$FederationItem._(
-      {required this.seq,
-      required this.ref,
-      required this.sourceId,
-      required this.externalId,
-      required this.kind,
-      required this.version,
-      this.persistReason,
-      this.historyTier,
-      required this.observedAt,
-      this.eventTime,
-      this.validUntil,
-      required this.tombstone,
-      this.geometry,
-      required this.payload,
-      this.quality,
-      required this.licence,
-      required this.provenance})
-      : super._();
+  _$FederationItem._({
+    required this.seq,
+    required this.ref,
+    required this.sourceId,
+    required this.externalId,
+    required this.kind,
+    required this.version,
+    this.persistReason,
+    this.historyTier,
+    required this.observedAt,
+    this.eventTime,
+    this.validUntil,
+    required this.tombstone,
+    this.geometry,
+    required this.payload,
+    this.quality,
+    required this.licence,
+    required this.provenance,
+  }) : super._();
   @override
   FederationItem rebuild(void Function(FederationItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -443,33 +454,61 @@ class FederationItemBuilder
   _$FederationItem _build() {
     _$FederationItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FederationItem._(
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'FederationItem', 'seq'),
+              seq,
+              r'FederationItem',
+              'seq',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'FederationItem', 'ref'),
+              ref,
+              r'FederationItem',
+              'ref',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'FederationItem', 'sourceId'),
+              sourceId,
+              r'FederationItem',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'FederationItem', 'externalId'),
+              externalId,
+              r'FederationItem',
+              'externalId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'FederationItem', 'kind'),
+              kind,
+              r'FederationItem',
+              'kind',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'FederationItem', 'version'),
+              version,
+              r'FederationItem',
+              'version',
+            ),
             persistReason: persistReason,
             historyTier: historyTier,
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'FederationItem', 'observedAt'),
+              observedAt,
+              r'FederationItem',
+              'observedAt',
+            ),
             eventTime: eventTime,
             validUntil: validUntil,
             tombstone: BuiltValueNullFieldError.checkNotNull(
-                tombstone, r'FederationItem', 'tombstone'),
+              tombstone,
+              r'FederationItem',
+              'tombstone',
+            ),
             geometry: _geometry?.build(),
             payload: payload.build(),
             quality: _quality?.build(),
             licence: BuiltValueNullFieldError.checkNotNull(
-                licence, r'FederationItem', 'licence'),
+              licence,
+              r'FederationItem',
+              'licence',
+            ),
             provenance: provenance.build(),
           );
     } catch (_) {
@@ -486,7 +525,10 @@ class FederationItemBuilder
         provenance.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FederationItem', _$failedField, e.toString());
+          r'FederationItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

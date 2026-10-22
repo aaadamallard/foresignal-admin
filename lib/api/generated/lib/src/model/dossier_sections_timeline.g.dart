@@ -9,17 +9,18 @@ part of 'dossier_sections_timeline.dart';
 const DossierSectionsTimelineStatusEnum _$dossierSectionsTimelineStatusEnum_ok =
     const DossierSectionsTimelineStatusEnum._('ok');
 const DossierSectionsTimelineStatusEnum
-    _$dossierSectionsTimelineStatusEnum_empty =
+_$dossierSectionsTimelineStatusEnum_empty =
     const DossierSectionsTimelineStatusEnum._('empty');
 const DossierSectionsTimelineStatusEnum
-    _$dossierSectionsTimelineStatusEnum_unavailable =
+_$dossierSectionsTimelineStatusEnum_unavailable =
     const DossierSectionsTimelineStatusEnum._('unavailable');
 const DossierSectionsTimelineStatusEnum
-    _$dossierSectionsTimelineStatusEnum_notInstalled =
+_$dossierSectionsTimelineStatusEnum_notInstalled =
     const DossierSectionsTimelineStatusEnum._('notInstalled');
 
 DossierSectionsTimelineStatusEnum _$dossierSectionsTimelineStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$dossierSectionsTimelineStatusEnum_ok;
@@ -35,16 +36,18 @@ DossierSectionsTimelineStatusEnum _$dossierSectionsTimelineStatusEnumValueOf(
 }
 
 final BuiltSet<DossierSectionsTimelineStatusEnum>
-    _$dossierSectionsTimelineStatusEnumValues = BuiltSet<
-        DossierSectionsTimelineStatusEnum>(const <DossierSectionsTimelineStatusEnum>[
-  _$dossierSectionsTimelineStatusEnum_ok,
-  _$dossierSectionsTimelineStatusEnum_empty,
-  _$dossierSectionsTimelineStatusEnum_unavailable,
-  _$dossierSectionsTimelineStatusEnum_notInstalled,
-]);
+_$dossierSectionsTimelineStatusEnumValues =
+    BuiltSet<DossierSectionsTimelineStatusEnum>(
+      const <DossierSectionsTimelineStatusEnum>[
+        _$dossierSectionsTimelineStatusEnum_ok,
+        _$dossierSectionsTimelineStatusEnum_empty,
+        _$dossierSectionsTimelineStatusEnum_unavailable,
+        _$dossierSectionsTimelineStatusEnum_notInstalled,
+      ],
+    );
 
 Serializer<DossierSectionsTimelineStatusEnum>
-    _$dossierSectionsTimelineStatusEnumSerializer =
+_$dossierSectionsTimelineStatusEnumSerializer =
     _$DossierSectionsTimelineStatusEnumSerializer();
 
 class _$DossierSectionsTimelineStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$DossierSectionsTimelineStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DossierSectionsTimelineStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DossierSectionsTimelineStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsTimelineStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsTimelineStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsTimelineStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsTimeline extends DossierSectionsTimeline {
@@ -95,22 +101,22 @@ class _$DossierSectionsTimeline extends DossierSectionsTimeline {
   @override
   final BuiltList<DossierSectionsTimelineItemsInner>? items;
 
-  factory _$DossierSectionsTimeline(
-          [void Function(DossierSectionsTimelineBuilder)? updates]) =>
-      (DossierSectionsTimelineBuilder()..update(updates))._build();
+  factory _$DossierSectionsTimeline([
+    void Function(DossierSectionsTimelineBuilder)? updates,
+  ]) => (DossierSectionsTimelineBuilder()..update(updates))._build();
 
-  _$DossierSectionsTimeline._(
-      {required this.status,
-      this.message,
-      this.links,
-      this.facets,
-      this.truncated,
-      this.items})
-      : super._();
+  _$DossierSectionsTimeline._({
+    required this.status,
+    this.message,
+    this.links,
+    this.facets,
+    this.truncated,
+    this.items,
+  }) : super._();
   @override
   DossierSectionsTimeline rebuild(
-          void Function(DossierSectionsTimelineBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsTimelineBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsTimelineBuilder toBuilder() =>
@@ -224,10 +230,14 @@ class DossierSectionsTimelineBuilder
   _$DossierSectionsTimeline _build() {
     _$DossierSectionsTimeline _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsTimeline._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DossierSectionsTimeline', 'status'),
+              status,
+              r'DossierSectionsTimeline',
+              'status',
+            ),
             message: message,
             links: _links?.build(),
             facets: _facets?.build(),
@@ -246,7 +256,10 @@ class DossierSectionsTimelineBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsTimeline', _$failedField, e.toString());
+          r'DossierSectionsTimeline',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

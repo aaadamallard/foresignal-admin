@@ -179,8 +179,9 @@ class _$SocialPlatformSerializer
     yield r'paths';
     yield serializers.serialize(
       object.paths,
-      specifiedType:
-          const FullType(BuiltList, [FullType(SocialCollectionPath)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SocialCollectionPath),
+      ]),
     );
     yield r'credentials';
     yield serializers.serialize(
@@ -249,9 +250,11 @@ class _$SocialPlatformSerializer
     SocialPlatform object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -267,141 +270,183 @@ class _$SocialPlatformSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPlatformId),
-          ) as SocialPlatformId;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialPlatformId),
+                  )
+                  as SocialPlatformId;
           result.id = valueDes;
           break;
         case r'network':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.network = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPlatformStateEnum),
-          ) as SocialPlatformStateEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialPlatformStateEnum),
+                  )
+                  as SocialPlatformStateEnum;
           result.state = valueDes;
           break;
         case r'stateReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.stateReason = valueDes;
           break;
         case r'defaultEnabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.defaultEnabled = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.type = valueDes;
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mode = valueDes;
           break;
         case r'paths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SocialCollectionPath)]),
-          ) as BuiltList<SocialCollectionPath>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SocialCollectionPath),
+                    ]),
+                  )
+                  as BuiltList<SocialCollectionPath>;
           result.paths.replace(valueDes);
           break;
         case r'credentials':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPlatformCredentials),
-          ) as SocialPlatformCredentials;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialPlatformCredentials),
+                  )
+                  as SocialPlatformCredentials;
           result.credentials.replace(valueDes);
           break;
         case r'health':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SourceHealth),
-          ) as SourceHealth?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SourceHealth),
+                  )
+                  as SourceHealth?;
           if (valueDes == null) continue;
           result.health.replace(valueDes);
           break;
         case r'stream':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialPlatformStream),
-          ) as SocialPlatformStream?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialPlatformStream,
+                    ),
+                  )
+                  as SocialPlatformStream?;
           if (valueDes == null) continue;
           result.stream.replace(valueDes);
           break;
         case r'quotas':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(SocialQuota)]),
-          ) as BuiltList<SocialQuota>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SocialQuota),
+                    ]),
+                  )
+                  as BuiltList<SocialQuota>?;
           if (valueDes == null) continue;
           result.quotas.replace(valueDes);
           break;
         case r'spend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialSpend),
-          ) as SocialSpend?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SocialSpend),
+                  )
+                  as SocialSpend?;
           if (valueDes == null) continue;
           result.spend.replace(valueDes);
           break;
         case r'deletionSync':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialPlatformDeletionSync),
-          ) as SocialPlatformDeletionSync?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialPlatformDeletionSync,
+                    ),
+                  )
+                  as SocialPlatformDeletionSync?;
           if (valueDes == null) continue;
           result.deletionSync.replace(valueDes);
           break;
         case r'terms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SocialPlatformTerms),
-          ) as SocialPlatformTerms?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SocialPlatformTerms),
+                  )
+                  as SocialPlatformTerms?;
           if (valueDes == null) continue;
           result.terms.replace(valueDes);
           break;
         case r'settings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPlatformSettings),
-          ) as SocialPlatformSettings;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialPlatformSettings),
+                  )
+                  as SocialPlatformSettings;
           result.settings.replace(valueDes);
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

@@ -24,9 +24,9 @@ SensorTextOriginEnum _$sensorTextOriginEnumValueOf(String name) {
 
 final BuiltSet<SensorTextOriginEnum> _$sensorTextOriginEnumValues =
     BuiltSet<SensorTextOriginEnum>(const <SensorTextOriginEnum>[
-  _$sensorTextOriginEnum_deterministic,
-  _$sensorTextOriginEnum_llm,
-]);
+      _$sensorTextOriginEnum_deterministic,
+      _$sensorTextOriginEnum_llm,
+    ]);
 
 const SensorSensorKindEnum _$sensorSensorKindEnum_source_ =
     const SensorSensorKindEnum._('source_');
@@ -62,13 +62,13 @@ SensorSensorKindEnum _$sensorSensorKindEnumValueOf(String name) {
 
 final BuiltSet<SensorSensorKindEnum> _$sensorSensorKindEnumValues =
     BuiltSet<SensorSensorKindEnum>(const <SensorSensorKindEnum>[
-  _$sensorSensorKindEnum_source_,
-  _$sensorSensorKindEnum_receiver,
-  _$sensorSensorKindEnum_station,
-  _$sensorSensorKindEnum_satellite,
-  _$sensorSensorKindEnum_scene,
-  _$sensorSensorKindEnum_rasterProduct,
-]);
+      _$sensorSensorKindEnum_source_,
+      _$sensorSensorKindEnum_receiver,
+      _$sensorSensorKindEnum_station,
+      _$sensorSensorKindEnum_satellite,
+      _$sensorSensorKindEnum_scene,
+      _$sensorSensorKindEnum_rasterProduct,
+    ]);
 
 Serializer<SensorTextOriginEnum> _$sensorTextOriginEnumSerializer =
     _$SensorTextOriginEnumSerializer();
@@ -92,15 +92,20 @@ class _$SensorTextOriginEnumSerializer
   final String wireName = 'SensorTextOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, SensorTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SensorTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SensorTextOriginEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SensorTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SensorTextOriginEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SensorTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SensorSensorKindEnumSerializer
@@ -128,15 +133,20 @@ class _$SensorSensorKindEnumSerializer
   final String wireName = 'SensorSensorKindEnum';
 
   @override
-  Object serialize(Serializers serializers, SensorSensorKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SensorSensorKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SensorSensorKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SensorSensorKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SensorSensorKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SensorSensorKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Sensor extends Sensor {
@@ -194,33 +204,33 @@ class _$Sensor extends Sensor {
   factory _$Sensor([void Function(SensorBuilder)? updates]) =>
       (SensorBuilder()..update(updates))._build();
 
-  _$Sensor._(
-      {required this.ref,
-      required this.type,
-      required this.title,
-      this.summary,
-      this.textOrigin,
-      this.status,
-      this.severity,
-      this.time,
-      this.geometry,
-      this.bbox,
-      this.private,
-      this.tlp,
-      this.tags,
-      this.provenance,
-      this.links,
-      this.actions,
-      required this.sensorKind,
-      this.pDetect,
-      this.method,
-      this.families,
-      this.rangeKm,
-      this.passes,
-      this.capabilities,
-      this.footprint,
-      this.acquiredAt})
-      : super._();
+  _$Sensor._({
+    required this.ref,
+    required this.type,
+    required this.title,
+    this.summary,
+    this.textOrigin,
+    this.status,
+    this.severity,
+    this.time,
+    this.geometry,
+    this.bbox,
+    this.private,
+    this.tlp,
+    this.tags,
+    this.provenance,
+    this.links,
+    this.actions,
+    required this.sensorKind,
+    this.pDetect,
+    this.method,
+    this.families,
+    this.rangeKm,
+    this.passes,
+    this.capabilities,
+    this.footprint,
+    this.acquiredAt,
+  }) : super._();
   @override
   Sensor rebuild(void Function(SensorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -490,13 +500,20 @@ class SensorBuilder implements Builder<Sensor, SensorBuilder> {
   _$Sensor _build() {
     _$Sensor _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Sensor._(
             ref: BuiltValueNullFieldError.checkNotNull(ref, r'Sensor', 'ref'),
-            type:
-                BuiltValueNullFieldError.checkNotNull(type, r'Sensor', 'type'),
+            type: BuiltValueNullFieldError.checkNotNull(
+              type,
+              r'Sensor',
+              'type',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Sensor', 'title'),
+              title,
+              r'Sensor',
+              'title',
+            ),
             summary: summary,
             textOrigin: textOrigin,
             status: status,
@@ -511,7 +528,10 @@ class SensorBuilder implements Builder<Sensor, SensorBuilder> {
             links: _links?.build(),
             actions: _actions?.build(),
             sensorKind: BuiltValueNullFieldError.checkNotNull(
-                sensorKind, r'Sensor', 'sensorKind'),
+              sensorKind,
+              r'Sensor',
+              'sensorKind',
+            ),
             pDetect: pDetect,
             method: method,
             families: _families?.build(),
@@ -551,7 +571,10 @@ class SensorBuilder implements Builder<Sensor, SensorBuilder> {
         _footprint?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Sensor', _$failedField, e.toString());
+          r'Sensor',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

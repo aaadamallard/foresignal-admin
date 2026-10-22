@@ -80,8 +80,9 @@ class _$CommonDependenciesSerializer
     yield r'dependencies';
     yield serializers.serialize(
       object.dependencies,
-      specifiedType: const FullType(
-          BuiltList, [FullType(CommonDependenciesDependenciesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(CommonDependenciesDependenciesInner),
+      ]),
     );
   }
 
@@ -91,9 +92,11 @@ class _$CommonDependenciesSerializer
     CommonDependencies object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,34 +112,45 @@ class _$CommonDependenciesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'refs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.refs.replace(valueDes);
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.generatedAt = valueDes;
           break;
         case r'dependencies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(CommonDependenciesDependenciesInner)]),
-          ) as BuiltList<CommonDependenciesDependenciesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(CommonDependenciesDependenciesInner),
+                    ]),
+                  )
+                  as BuiltList<CommonDependenciesDependenciesInner>;
           result.dependencies.replace(valueDes);
           break;
         default:

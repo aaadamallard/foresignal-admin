@@ -11,16 +11,16 @@ class _$OgcCoverageCollectionDataQueriesArea
   @override
   final OgcLink? link;
 
-  factory _$OgcCoverageCollectionDataQueriesArea(
-          [void Function(OgcCoverageCollectionDataQueriesAreaBuilder)?
-              updates]) =>
+  factory _$OgcCoverageCollectionDataQueriesArea([
+    void Function(OgcCoverageCollectionDataQueriesAreaBuilder)? updates,
+  ]) =>
       (OgcCoverageCollectionDataQueriesAreaBuilder()..update(updates))._build();
 
   _$OgcCoverageCollectionDataQueriesArea._({this.link}) : super._();
   @override
   OgcCoverageCollectionDataQueriesArea rebuild(
-          void Function(OgcCoverageCollectionDataQueriesAreaBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionDataQueriesAreaBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionDataQueriesAreaBuilder toBuilder() =>
@@ -42,16 +42,18 @@ class _$OgcCoverageCollectionDataQueriesArea
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'OgcCoverageCollectionDataQueriesArea')
-          ..add('link', link))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'OgcCoverageCollectionDataQueriesArea',
+    )..add('link', link)).toString();
   }
 }
 
 class OgcCoverageCollectionDataQueriesAreaBuilder
     implements
-        Builder<OgcCoverageCollectionDataQueriesArea,
-            OgcCoverageCollectionDataQueriesAreaBuilder> {
+        Builder<
+          OgcCoverageCollectionDataQueriesArea,
+          OgcCoverageCollectionDataQueriesAreaBuilder
+        > {
   _$OgcCoverageCollectionDataQueriesArea? _$v;
 
   OgcLinkBuilder? _link;
@@ -78,7 +80,8 @@ class OgcCoverageCollectionDataQueriesAreaBuilder
 
   @override
   void update(
-      void Function(OgcCoverageCollectionDataQueriesAreaBuilder)? updates) {
+    void Function(OgcCoverageCollectionDataQueriesAreaBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -88,10 +91,8 @@ class OgcCoverageCollectionDataQueriesAreaBuilder
   _$OgcCoverageCollectionDataQueriesArea _build() {
     _$OgcCoverageCollectionDataQueriesArea _$result;
     try {
-      _$result = _$v ??
-          _$OgcCoverageCollectionDataQueriesArea._(
-            link: _link?.build(),
-          );
+      _$result =
+          _$v ?? _$OgcCoverageCollectionDataQueriesArea._(link: _link?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -99,9 +100,10 @@ class OgcCoverageCollectionDataQueriesAreaBuilder
         _link?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCoverageCollectionDataQueriesArea',
-            _$failedField,
-            e.toString());
+          r'OgcCoverageCollectionDataQueriesArea',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

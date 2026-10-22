@@ -30,8 +30,9 @@ abstract class BaseRateLicencesInner
 
   BaseRateLicencesInner._();
 
-  factory BaseRateLicencesInner(
-      [void updates(BaseRateLicencesInnerBuilder b)]) = _$BaseRateLicencesInner;
+  factory BaseRateLicencesInner([
+    void updates(BaseRateLicencesInnerBuilder b),
+  ]) = _$BaseRateLicencesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BaseRateLicencesInnerBuilder b) => b;
@@ -46,7 +47,7 @@ class _$BaseRateLicencesInnerSerializer
   @override
   final Iterable<Type> types = const [
     BaseRateLicencesInner,
-    _$BaseRateLicencesInner
+    _$BaseRateLicencesInner,
   ];
 
   @override
@@ -82,9 +83,11 @@ class _$BaseRateLicencesInnerSerializer
     BaseRateLicencesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,25 +103,32 @@ class _$BaseRateLicencesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.source_ = valueDes;
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.licence = valueDes;
           break;
         case r'egress':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BaseRateLicencesInnerEgressEnum),
-          ) as BaseRateLicencesInnerEgressEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      BaseRateLicencesInnerEgressEnum,
+                    ),
+                  )
+                  as BaseRateLicencesInnerEgressEnum?;
           if (valueDes == null) continue;
           result.egress = valueDes;
           break;

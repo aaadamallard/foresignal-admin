@@ -28,10 +28,10 @@ EscalationStateEnum _$escalationStateEnumValueOf(String name) {
 
 final BuiltSet<EscalationStateEnum> _$escalationStateEnumValues =
     BuiltSet<EscalationStateEnum>(const <EscalationStateEnum>[
-  _$escalationStateEnum_active,
-  _$escalationStateEnum_stopped,
-  _$escalationStateEnum_exhausted,
-]);
+      _$escalationStateEnum_active,
+      _$escalationStateEnum_stopped,
+      _$escalationStateEnum_exhausted,
+    ]);
 
 Serializer<EscalationStateEnum> _$escalationStateEnumSerializer =
     _$EscalationStateEnumSerializer();
@@ -55,15 +55,20 @@ class _$EscalationStateEnumSerializer
   final String wireName = 'EscalationStateEnum';
 
   @override
-  Object serialize(Serializers serializers, EscalationStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EscalationStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EscalationStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EscalationStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EscalationStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EscalationStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Escalation extends Escalation {
@@ -87,16 +92,16 @@ class _$Escalation extends Escalation {
   factory _$Escalation([void Function(EscalationBuilder)? updates]) =>
       (EscalationBuilder()..update(updates))._build();
 
-  _$Escalation._(
-      {required this.alertId,
-      required this.policyId,
-      this.nextStep,
-      this.nextAt,
-      this.repeatsDone,
-      required this.state,
-      this.stoppedReason,
-      this.updatedAt})
-      : super._();
+  _$Escalation._({
+    required this.alertId,
+    required this.policyId,
+    this.nextStep,
+    this.nextAt,
+    this.repeatsDone,
+    required this.state,
+    this.stoppedReason,
+    this.updatedAt,
+  }) : super._();
   @override
   Escalation rebuild(void Function(EscalationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -218,17 +223,27 @@ class EscalationBuilder implements Builder<Escalation, EscalationBuilder> {
   Escalation build() => _build();
 
   _$Escalation _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Escalation._(
           alertId: BuiltValueNullFieldError.checkNotNull(
-              alertId, r'Escalation', 'alertId'),
+            alertId,
+            r'Escalation',
+            'alertId',
+          ),
           policyId: BuiltValueNullFieldError.checkNotNull(
-              policyId, r'Escalation', 'policyId'),
+            policyId,
+            r'Escalation',
+            'policyId',
+          ),
           nextStep: nextStep,
           nextAt: nextAt,
           repeatsDone: repeatsDone,
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'Escalation', 'state'),
+            state,
+            r'Escalation',
+            'state',
+          ),
           stoppedReason: stoppedReason,
           updatedAt: updatedAt,
         );

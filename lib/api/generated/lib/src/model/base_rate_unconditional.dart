@@ -35,8 +35,9 @@ abstract class BaseRateUnconditional
 
   BaseRateUnconditional._();
 
-  factory BaseRateUnconditional(
-      [void updates(BaseRateUnconditionalBuilder b)]) = _$BaseRateUnconditional;
+  factory BaseRateUnconditional([
+    void updates(BaseRateUnconditionalBuilder b),
+  ]) = _$BaseRateUnconditional;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BaseRateUnconditionalBuilder b) => b;
@@ -51,7 +52,7 @@ class _$BaseRateUnconditionalSerializer
   @override
   final Iterable<Type> types = const [
     BaseRateUnconditional,
-    _$BaseRateUnconditional
+    _$BaseRateUnconditional,
   ];
 
   @override
@@ -92,9 +93,11 @@ class _$BaseRateUnconditionalSerializer
     BaseRateUnconditional object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,31 +113,33 @@ class _$BaseRateUnconditionalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ratePerWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.ratePerWindow = valueDes;
           break;
         case r'pAtLeastOne':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pAtLeastOne = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatInterval),
-          ) as StatInterval;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatInterval),
+                  )
+                  as StatInterval;
           result.interval.replace(valueDes);
           break;
         case r'nWindows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.nWindows = valueDes;
           break;

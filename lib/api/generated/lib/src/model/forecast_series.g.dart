@@ -36,12 +36,12 @@ ForecastSeriesProviderEnum _$forecastSeriesProviderEnumValueOf(String name) {
 
 final BuiltSet<ForecastSeriesProviderEnum> _$forecastSeriesProviderEnumValues =
     BuiltSet<ForecastSeriesProviderEnum>(const <ForecastSeriesProviderEnum>[
-  _$forecastSeriesProviderEnum_gfs,
-  _$forecastSeriesProviderEnum_hrrr,
-  _$forecastSeriesProviderEnum_ifs,
-  _$forecastSeriesProviderEnum_aifs,
-  _$forecastSeriesProviderEnum_nws,
-]);
+      _$forecastSeriesProviderEnum_gfs,
+      _$forecastSeriesProviderEnum_hrrr,
+      _$forecastSeriesProviderEnum_ifs,
+      _$forecastSeriesProviderEnum_aifs,
+      _$forecastSeriesProviderEnum_nws,
+    ]);
 
 Serializer<ForecastSeriesProviderEnum> _$forecastSeriesProviderEnumSerializer =
     _$ForecastSeriesProviderEnumSerializer();
@@ -69,16 +69,20 @@ class _$ForecastSeriesProviderEnumSerializer
   final String wireName = 'ForecastSeriesProviderEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastSeriesProviderEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastSeriesProviderEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastSeriesProviderEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastSeriesProviderEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastSeriesProviderEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastSeries extends ForecastSeries {
@@ -98,14 +102,14 @@ class _$ForecastSeries extends ForecastSeries {
   factory _$ForecastSeries([void Function(ForecastSeriesBuilder)? updates]) =>
       (ForecastSeriesBuilder()..update(updates))._build();
 
-  _$ForecastSeries._(
-      {required this.provider,
-      this.run,
-      required this.updatedAt,
-      this.validFrom,
-      this.status,
-      required this.items})
-      : super._();
+  _$ForecastSeries._({
+    required this.provider,
+    this.run,
+    required this.updatedAt,
+    this.validFrom,
+    this.status,
+    required this.items,
+  }) : super._();
   @override
   ForecastSeries rebuild(void Function(ForecastSeriesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -215,13 +219,20 @@ class ForecastSeriesBuilder
   _$ForecastSeries _build() {
     _$ForecastSeries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastSeries._(
             provider: BuiltValueNullFieldError.checkNotNull(
-                provider, r'ForecastSeries', 'provider'),
+              provider,
+              r'ForecastSeries',
+              'provider',
+            ),
             run: run,
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'ForecastSeries', 'updatedAt'),
+              updatedAt,
+              r'ForecastSeries',
+              'updatedAt',
+            ),
             validFrom: validFrom,
             status: status,
             items: items.build(),
@@ -233,7 +244,10 @@ class ForecastSeriesBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastSeries', _$failedField, e.toString());
+          r'ForecastSeries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

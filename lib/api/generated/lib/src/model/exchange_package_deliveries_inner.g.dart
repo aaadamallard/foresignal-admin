@@ -7,20 +7,20 @@ part of 'exchange_package_deliveries_inner.dart';
 // **************************************************************************
 
 const ExchangePackageDeliveriesInnerStatusEnum
-    _$exchangePackageDeliveriesInnerStatusEnum_pending =
+_$exchangePackageDeliveriesInnerStatusEnum_pending =
     const ExchangePackageDeliveriesInnerStatusEnum._('pending');
 const ExchangePackageDeliveriesInnerStatusEnum
-    _$exchangePackageDeliveriesInnerStatusEnum_delivered =
+_$exchangePackageDeliveriesInnerStatusEnum_delivered =
     const ExchangePackageDeliveriesInnerStatusEnum._('delivered');
 const ExchangePackageDeliveriesInnerStatusEnum
-    _$exchangePackageDeliveriesInnerStatusEnum_acknowledged =
+_$exchangePackageDeliveriesInnerStatusEnum_acknowledged =
     const ExchangePackageDeliveriesInnerStatusEnum._('acknowledged');
 const ExchangePackageDeliveriesInnerStatusEnum
-    _$exchangePackageDeliveriesInnerStatusEnum_failed =
+_$exchangePackageDeliveriesInnerStatusEnum_failed =
     const ExchangePackageDeliveriesInnerStatusEnum._('failed');
 
 ExchangePackageDeliveriesInnerStatusEnum
-    _$exchangePackageDeliveriesInnerStatusEnumValueOf(String name) {
+_$exchangePackageDeliveriesInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'pending':
       return _$exchangePackageDeliveriesInnerStatusEnum_pending;
@@ -36,16 +36,18 @@ ExchangePackageDeliveriesInnerStatusEnum
 }
 
 final BuiltSet<ExchangePackageDeliveriesInnerStatusEnum>
-    _$exchangePackageDeliveriesInnerStatusEnumValues = BuiltSet<
-        ExchangePackageDeliveriesInnerStatusEnum>(const <ExchangePackageDeliveriesInnerStatusEnum>[
-  _$exchangePackageDeliveriesInnerStatusEnum_pending,
-  _$exchangePackageDeliveriesInnerStatusEnum_delivered,
-  _$exchangePackageDeliveriesInnerStatusEnum_acknowledged,
-  _$exchangePackageDeliveriesInnerStatusEnum_failed,
-]);
+_$exchangePackageDeliveriesInnerStatusEnumValues =
+    BuiltSet<ExchangePackageDeliveriesInnerStatusEnum>(
+      const <ExchangePackageDeliveriesInnerStatusEnum>[
+        _$exchangePackageDeliveriesInnerStatusEnum_pending,
+        _$exchangePackageDeliveriesInnerStatusEnum_delivered,
+        _$exchangePackageDeliveriesInnerStatusEnum_acknowledged,
+        _$exchangePackageDeliveriesInnerStatusEnum_failed,
+      ],
+    );
 
 Serializer<ExchangePackageDeliveriesInnerStatusEnum>
-    _$exchangePackageDeliveriesInnerStatusEnumSerializer =
+_$exchangePackageDeliveriesInnerStatusEnumSerializer =
     _$ExchangePackageDeliveriesInnerStatusEnumSerializer();
 
 class _$ExchangePackageDeliveriesInnerStatusEnumSerializer
@@ -65,23 +67,26 @@ class _$ExchangePackageDeliveriesInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ExchangePackageDeliveriesInnerStatusEnum
+    ExchangePackageDeliveriesInnerStatusEnum,
   ];
   @override
   final String wireName = 'ExchangePackageDeliveriesInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ExchangePackageDeliveriesInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExchangePackageDeliveriesInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExchangePackageDeliveriesInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExchangePackageDeliveriesInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExchangePackageDeliveriesInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExchangePackageDeliveriesInner extends ExchangePackageDeliveriesInner {
@@ -96,21 +101,21 @@ class _$ExchangePackageDeliveriesInner extends ExchangePackageDeliveriesInner {
   @override
   final String? error;
 
-  factory _$ExchangePackageDeliveriesInner(
-          [void Function(ExchangePackageDeliveriesInnerBuilder)? updates]) =>
-      (ExchangePackageDeliveriesInnerBuilder()..update(updates))._build();
+  factory _$ExchangePackageDeliveriesInner([
+    void Function(ExchangePackageDeliveriesInnerBuilder)? updates,
+  ]) => (ExchangePackageDeliveriesInnerBuilder()..update(updates))._build();
 
-  _$ExchangePackageDeliveriesInner._(
-      {required this.instanceId,
-      this.peerId,
-      required this.status,
-      this.at,
-      this.error})
-      : super._();
+  _$ExchangePackageDeliveriesInner._({
+    required this.instanceId,
+    this.peerId,
+    required this.status,
+    this.at,
+    this.error,
+  }) : super._();
   @override
   ExchangePackageDeliveriesInner rebuild(
-          void Function(ExchangePackageDeliveriesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExchangePackageDeliveriesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExchangePackageDeliveriesInnerBuilder toBuilder() =>
@@ -153,8 +158,10 @@ class _$ExchangePackageDeliveriesInner extends ExchangePackageDeliveriesInner {
 
 class ExchangePackageDeliveriesInnerBuilder
     implements
-        Builder<ExchangePackageDeliveriesInner,
-            ExchangePackageDeliveriesInnerBuilder> {
+        Builder<
+          ExchangePackageDeliveriesInner,
+          ExchangePackageDeliveriesInnerBuilder
+        > {
   _$ExchangePackageDeliveriesInner? _$v;
 
   String? _instanceId;
@@ -209,13 +216,20 @@ class ExchangePackageDeliveriesInnerBuilder
   ExchangePackageDeliveriesInner build() => _build();
 
   _$ExchangePackageDeliveriesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExchangePackageDeliveriesInner._(
           instanceId: BuiltValueNullFieldError.checkNotNull(
-              instanceId, r'ExchangePackageDeliveriesInner', 'instanceId'),
+            instanceId,
+            r'ExchangePackageDeliveriesInner',
+            'instanceId',
+          ),
           peerId: peerId,
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'ExchangePackageDeliveriesInner', 'status'),
+            status,
+            r'ExchangePackageDeliveriesInner',
+            'status',
+          ),
           at: at,
           error: error,
         );

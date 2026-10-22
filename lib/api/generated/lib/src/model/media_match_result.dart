@@ -100,9 +100,11 @@ class _$MediaMatchResultSerializer
     MediaMatchResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,39 +120,50 @@ class _$MediaMatchResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'query':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MediaMatchResultQuery),
-          ) as MediaMatchResultQuery;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(MediaMatchResultQuery),
+                  )
+                  as MediaMatchResultQuery;
           result.query.replace(valueDes);
           break;
         case r'maxDistance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.maxDistance = valueDes;
           break;
         case r'matches':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MediaMatch)]),
-          ) as BuiltList<MediaMatch>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(MediaMatch),
+                    ]),
+                  )
+                  as BuiltList<MediaMatch>;
           result.matches.replace(valueDes);
           break;
         case r'referenceWindowStart':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.referenceWindowStart = valueDes;
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>;
           result.caveats.replace(valueDes);
           break;
         default:

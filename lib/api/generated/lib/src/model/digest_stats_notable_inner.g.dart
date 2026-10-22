@@ -12,16 +12,16 @@ class _$DigestStatsNotableInner extends DigestStatsNotableInner {
   @override
   final BuiltList<DigestNotableItem> items;
 
-  factory _$DigestStatsNotableInner(
-          [void Function(DigestStatsNotableInnerBuilder)? updates]) =>
-      (DigestStatsNotableInnerBuilder()..update(updates))._build();
+  factory _$DigestStatsNotableInner([
+    void Function(DigestStatsNotableInnerBuilder)? updates,
+  ]) => (DigestStatsNotableInnerBuilder()..update(updates))._build();
 
   _$DigestStatsNotableInner._({required this.kind, required this.items})
-      : super._();
+    : super._();
   @override
   DigestStatsNotableInner rebuild(
-          void Function(DigestStatsNotableInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DigestStatsNotableInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DigestStatsNotableInnerBuilder toBuilder() =>
@@ -97,10 +97,14 @@ class DigestStatsNotableInnerBuilder
   _$DigestStatsNotableInner _build() {
     _$DigestStatsNotableInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DigestStatsNotableInner._(
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'DigestStatsNotableInner', 'kind'),
+              kind,
+              r'DigestStatsNotableInner',
+              'kind',
+            ),
             items: items.build(),
           );
     } catch (_) {
@@ -110,7 +114,10 @@ class DigestStatsNotableInnerBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DigestStatsNotableInner', _$failedField, e.toString());
+          r'DigestStatsNotableInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

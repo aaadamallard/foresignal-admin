@@ -6,10 +6,12 @@ part of 'tag.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const TagNamespaceEnum _$tagNamespaceEnum_personal =
-    const TagNamespaceEnum._('personal');
-const TagNamespaceEnum _$tagNamespaceEnum_shared =
-    const TagNamespaceEnum._('shared');
+const TagNamespaceEnum _$tagNamespaceEnum_personal = const TagNamespaceEnum._(
+  'personal',
+);
+const TagNamespaceEnum _$tagNamespaceEnum_shared = const TagNamespaceEnum._(
+  'shared',
+);
 
 TagNamespaceEnum _$tagNamespaceEnumValueOf(String name) {
   switch (name) {
@@ -24,9 +26,9 @@ TagNamespaceEnum _$tagNamespaceEnumValueOf(String name) {
 
 final BuiltSet<TagNamespaceEnum> _$tagNamespaceEnumValues =
     BuiltSet<TagNamespaceEnum>(const <TagNamespaceEnum>[
-  _$tagNamespaceEnum_personal,
-  _$tagNamespaceEnum_shared,
-]);
+      _$tagNamespaceEnum_personal,
+      _$tagNamespaceEnum_shared,
+    ]);
 
 Serializer<TagNamespaceEnum> _$tagNamespaceEnumSerializer =
     _$TagNamespaceEnumSerializer();
@@ -48,15 +50,20 @@ class _$TagNamespaceEnumSerializer
   final String wireName = 'TagNamespaceEnum';
 
   @override
-  Object serialize(Serializers serializers, TagNamespaceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TagNamespaceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TagNamespaceEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TagNamespaceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TagNamespaceEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TagNamespaceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Tag extends Tag {
@@ -86,19 +93,19 @@ class _$Tag extends Tag {
   factory _$Tag([void Function(TagBuilder)? updates]) =>
       (TagBuilder()..update(updates))._build();
 
-  _$Tag._(
-      {required this.id,
-      required this.name,
-      required this.namespace,
-      this.color,
-      this.description,
-      required this.owner,
-      required this.visibility,
-      this.tlp,
-      this.objectCount,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$Tag._({
+    required this.id,
+    required this.name,
+    required this.namespace,
+    this.color,
+    this.description,
+    required this.owner,
+    required this.visibility,
+    this.tlp,
+    this.objectCount,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   Tag rebuild(void Function(TagBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -246,21 +253,31 @@ class TagBuilder implements Builder<Tag, TagBuilder> {
   _$Tag _build() {
     _$Tag _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Tag._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Tag', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'Tag', 'name'),
             namespace: BuiltValueNullFieldError.checkNotNull(
-                namespace, r'Tag', 'namespace'),
+              namespace,
+              r'Tag',
+              'namespace',
+            ),
             color: color,
             description: description,
             owner: owner.build(),
             visibility: BuiltValueNullFieldError.checkNotNull(
-                visibility, r'Tag', 'visibility'),
+              visibility,
+              r'Tag',
+              'visibility',
+            ),
             tlp: tlp,
             objectCount: objectCount,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Tag', 'createdAt'),
+              createdAt,
+              r'Tag',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {

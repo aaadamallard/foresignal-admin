@@ -12,7 +12,8 @@ const BriefingInputAudioFormatEnum _$briefingInputAudioFormatEnum_opus =
     const BriefingInputAudioFormatEnum._('opus');
 
 BriefingInputAudioFormatEnum _$briefingInputAudioFormatEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'mp3':
       return _$briefingInputAudioFormatEnum_mp3;
@@ -24,14 +25,15 @@ BriefingInputAudioFormatEnum _$briefingInputAudioFormatEnumValueOf(
 }
 
 final BuiltSet<BriefingInputAudioFormatEnum>
-    _$briefingInputAudioFormatEnumValues =
-    BuiltSet<BriefingInputAudioFormatEnum>(const <BriefingInputAudioFormatEnum>[
-  _$briefingInputAudioFormatEnum_mp3,
-  _$briefingInputAudioFormatEnum_opus,
-]);
+_$briefingInputAudioFormatEnumValues = BuiltSet<BriefingInputAudioFormatEnum>(
+  const <BriefingInputAudioFormatEnum>[
+    _$briefingInputAudioFormatEnum_mp3,
+    _$briefingInputAudioFormatEnum_opus,
+  ],
+);
 
 Serializer<BriefingInputAudioFormatEnum>
-    _$briefingInputAudioFormatEnumSerializer =
+_$briefingInputAudioFormatEnumSerializer =
     _$BriefingInputAudioFormatEnumSerializer();
 
 class _$BriefingInputAudioFormatEnumSerializer
@@ -51,16 +53,20 @@ class _$BriefingInputAudioFormatEnumSerializer
   final String wireName = 'BriefingInputAudioFormatEnum';
 
   @override
-  Object serialize(Serializers serializers, BriefingInputAudioFormatEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BriefingInputAudioFormatEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BriefingInputAudioFormatEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BriefingInputAudioFormatEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BriefingInputAudioFormatEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BriefingInputAudio extends BriefingInputAudio {
@@ -69,15 +75,15 @@ class _$BriefingInputAudio extends BriefingInputAudio {
   @override
   final BriefingInputAudioFormatEnum? format;
 
-  factory _$BriefingInputAudio(
-          [void Function(BriefingInputAudioBuilder)? updates]) =>
-      (BriefingInputAudioBuilder()..update(updates))._build();
+  factory _$BriefingInputAudio([
+    void Function(BriefingInputAudioBuilder)? updates,
+  ]) => (BriefingInputAudioBuilder()..update(updates))._build();
 
   _$BriefingInputAudio._({required this.voice, this.format}) : super._();
   @override
   BriefingInputAudio rebuild(
-          void Function(BriefingInputAudioBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BriefingInputAudioBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BriefingInputAudioBuilder toBuilder() =>
@@ -149,10 +155,14 @@ class BriefingInputAudioBuilder
   BriefingInputAudio build() => _build();
 
   _$BriefingInputAudio _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BriefingInputAudio._(
           voice: BuiltValueNullFieldError.checkNotNull(
-              voice, r'BriefingInputAudio', 'voice'),
+            voice,
+            r'BriefingInputAudio',
+            'voice',
+          ),
           format: format,
         );
     replace(_$result);

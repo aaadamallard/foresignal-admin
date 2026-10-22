@@ -12,16 +12,16 @@ class _$FilterAppliedEvent extends FilterAppliedEvent {
   @override
   final int filterVersion;
 
-  factory _$FilterAppliedEvent(
-          [void Function(FilterAppliedEventBuilder)? updates]) =>
-      (FilterAppliedEventBuilder()..update(updates))._build();
+  factory _$FilterAppliedEvent([
+    void Function(FilterAppliedEventBuilder)? updates,
+  ]) => (FilterAppliedEventBuilder()..update(updates))._build();
 
   _$FilterAppliedEvent._({required this.atSeq, required this.filterVersion})
-      : super._();
+    : super._();
   @override
   FilterAppliedEvent rebuild(
-          void Function(FilterAppliedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FilterAppliedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FilterAppliedEventBuilder toBuilder() =>
@@ -94,12 +94,19 @@ class FilterAppliedEventBuilder
   FilterAppliedEvent build() => _build();
 
   _$FilterAppliedEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FilterAppliedEvent._(
           atSeq: BuiltValueNullFieldError.checkNotNull(
-              atSeq, r'FilterAppliedEvent', 'atSeq'),
+            atSeq,
+            r'FilterAppliedEvent',
+            'atSeq',
+          ),
           filterVersion: BuiltValueNullFieldError.checkNotNull(
-              filterVersion, r'FilterAppliedEvent', 'filterVersion'),
+            filterVersion,
+            r'FilterAppliedEvent',
+            'filterVersion',
+          ),
         );
     replace(_$result);
     return _$result;

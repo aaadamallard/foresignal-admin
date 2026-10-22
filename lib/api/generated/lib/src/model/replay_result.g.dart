@@ -32,11 +32,11 @@ ReplayResultStatusEnum _$replayResultStatusEnumValueOf(String name) {
 
 final BuiltSet<ReplayResultStatusEnum> _$replayResultStatusEnumValues =
     BuiltSet<ReplayResultStatusEnum>(const <ReplayResultStatusEnum>[
-  _$replayResultStatusEnum_queued,
-  _$replayResultStatusEnum_running,
-  _$replayResultStatusEnum_done,
-  _$replayResultStatusEnum_failed,
-]);
+      _$replayResultStatusEnum_queued,
+      _$replayResultStatusEnum_running,
+      _$replayResultStatusEnum_done,
+      _$replayResultStatusEnum_failed,
+    ]);
 
 const ReplayResultOutcomeEnum _$replayResultOutcomeEnum_identical =
     const ReplayResultOutcomeEnum._('identical');
@@ -60,10 +60,10 @@ ReplayResultOutcomeEnum _$replayResultOutcomeEnumValueOf(String name) {
 
 final BuiltSet<ReplayResultOutcomeEnum> _$replayResultOutcomeEnumValues =
     BuiltSet<ReplayResultOutcomeEnum>(const <ReplayResultOutcomeEnum>[
-  _$replayResultOutcomeEnum_identical,
-  _$replayResultOutcomeEnum_differs,
-  _$replayResultOutcomeEnum_notReplayable,
-]);
+      _$replayResultOutcomeEnum_identical,
+      _$replayResultOutcomeEnum_differs,
+      _$replayResultOutcomeEnum_notReplayable,
+    ]);
 
 const ReplayResultReasonEnum _$replayResultReasonEnum_inputsPurged =
     const ReplayResultReasonEnum._('inputsPurged');
@@ -87,10 +87,10 @@ ReplayResultReasonEnum _$replayResultReasonEnumValueOf(String name) {
 
 final BuiltSet<ReplayResultReasonEnum> _$replayResultReasonEnumValues =
     BuiltSet<ReplayResultReasonEnum>(const <ReplayResultReasonEnum>[
-  _$replayResultReasonEnum_inputsPurged,
-  _$replayResultReasonEnum_componentRemoved,
-  _$replayResultReasonEnum_llmOutput,
-]);
+      _$replayResultReasonEnum_inputsPurged,
+      _$replayResultReasonEnum_componentRemoved,
+      _$replayResultReasonEnum_llmOutput,
+    ]);
 
 Serializer<ReplayResultStatusEnum> _$replayResultStatusEnumSerializer =
     _$ReplayResultStatusEnumSerializer();
@@ -120,15 +120,20 @@ class _$ReplayResultStatusEnumSerializer
   final String wireName = 'ReplayResultStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ReplayResultStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReplayResultStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ReplayResultStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReplayResultStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ReplayResultStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReplayResultStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReplayResultOutcomeEnumSerializer
@@ -150,16 +155,20 @@ class _$ReplayResultOutcomeEnumSerializer
   final String wireName = 'ReplayResultOutcomeEnum';
 
   @override
-  Object serialize(Serializers serializers, ReplayResultOutcomeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReplayResultOutcomeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReplayResultOutcomeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReplayResultOutcomeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReplayResultOutcomeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReplayResultReasonEnumSerializer
@@ -181,15 +190,20 @@ class _$ReplayResultReasonEnumSerializer
   final String wireName = 'ReplayResultReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, ReplayResultReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReplayResultReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ReplayResultReasonEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReplayResultReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ReplayResultReasonEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReplayResultReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReplayResult extends ReplayResult {
@@ -215,17 +229,17 @@ class _$ReplayResult extends ReplayResult {
   factory _$ReplayResult([void Function(ReplayResultBuilder)? updates]) =>
       (ReplayResultBuilder()..update(updates))._build();
 
-  _$ReplayResult._(
-      {required this.jobId,
-      required this.manifestId,
-      required this.status,
-      this.outcome,
-      this.reason,
-      this.diffSummary,
-      this.message,
-      this.startedAt,
-      this.finishedAt})
-      : super._();
+  _$ReplayResult._({
+    required this.jobId,
+    required this.manifestId,
+    required this.status,
+    this.outcome,
+    this.reason,
+    this.diffSummary,
+    this.message,
+    this.startedAt,
+    this.finishedAt,
+  }) : super._();
   @override
   ReplayResult rebuild(void Function(ReplayResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -355,14 +369,24 @@ class ReplayResultBuilder
   ReplayResult build() => _build();
 
   _$ReplayResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReplayResult._(
           jobId: BuiltValueNullFieldError.checkNotNull(
-              jobId, r'ReplayResult', 'jobId'),
+            jobId,
+            r'ReplayResult',
+            'jobId',
+          ),
           manifestId: BuiltValueNullFieldError.checkNotNull(
-              manifestId, r'ReplayResult', 'manifestId'),
+            manifestId,
+            r'ReplayResult',
+            'manifestId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'ReplayResult', 'status'),
+            status,
+            r'ReplayResult',
+            'status',
+          ),
           outcome: outcome,
           reason: reason,
           diffSummary: diffSummary,

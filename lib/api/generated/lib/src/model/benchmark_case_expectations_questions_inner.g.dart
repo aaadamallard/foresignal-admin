@@ -7,14 +7,14 @@ part of 'benchmark_case_expectations_questions_inner.dart';
 // **************************************************************************
 
 const BenchmarkCaseExpectationsQuestionsInnerTypeEnum
-    _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary =
+_$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary =
     const BenchmarkCaseExpectationsQuestionsInnerTypeEnum._('binary');
 const BenchmarkCaseExpectationsQuestionsInnerTypeEnum
-    _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric =
+_$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric =
     const BenchmarkCaseExpectationsQuestionsInnerTypeEnum._('numeric');
 
 BenchmarkCaseExpectationsQuestionsInnerTypeEnum
-    _$benchmarkCaseExpectationsQuestionsInnerTypeEnumValueOf(String name) {
+_$benchmarkCaseExpectationsQuestionsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'binary':
       return _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary;
@@ -26,14 +26,16 @@ BenchmarkCaseExpectationsQuestionsInnerTypeEnum
 }
 
 final BuiltSet<BenchmarkCaseExpectationsQuestionsInnerTypeEnum>
-    _$benchmarkCaseExpectationsQuestionsInnerTypeEnumValues = BuiltSet<
-        BenchmarkCaseExpectationsQuestionsInnerTypeEnum>(const <BenchmarkCaseExpectationsQuestionsInnerTypeEnum>[
-  _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary,
-  _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric,
-]);
+_$benchmarkCaseExpectationsQuestionsInnerTypeEnumValues =
+    BuiltSet<BenchmarkCaseExpectationsQuestionsInnerTypeEnum>(
+      const <BenchmarkCaseExpectationsQuestionsInnerTypeEnum>[
+        _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary,
+        _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric,
+      ],
+    );
 
 Serializer<BenchmarkCaseExpectationsQuestionsInnerTypeEnum>
-    _$benchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer =
+_$benchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer =
     _$BenchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer();
 
 class _$BenchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer
@@ -50,23 +52,26 @@ class _$BenchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    BenchmarkCaseExpectationsQuestionsInnerTypeEnum
+    BenchmarkCaseExpectationsQuestionsInnerTypeEnum,
   ];
   @override
   final String wireName = 'BenchmarkCaseExpectationsQuestionsInnerTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          BenchmarkCaseExpectationsQuestionsInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkCaseExpectationsQuestionsInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkCaseExpectationsQuestionsInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkCaseExpectationsQuestionsInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkCaseExpectationsQuestionsInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkCaseExpectationsQuestionsInner
@@ -80,20 +85,21 @@ class _$BenchmarkCaseExpectationsQuestionsInner
   @override
   final DateTime? resolvedAt;
 
-  factory _$BenchmarkCaseExpectationsQuestionsInner(
-          [void Function(BenchmarkCaseExpectationsQuestionsInnerBuilder)?
-              updates]) =>
-      (BenchmarkCaseExpectationsQuestionsInnerBuilder()..update(updates))
-          ._build();
+  factory _$BenchmarkCaseExpectationsQuestionsInner([
+    void Function(BenchmarkCaseExpectationsQuestionsInnerBuilder)? updates,
+  ]) => (BenchmarkCaseExpectationsQuestionsInnerBuilder()..update(updates))
+      ._build();
 
-  _$BenchmarkCaseExpectationsQuestionsInner._(
-      {required this.text, required this.type, this.outcome, this.resolvedAt})
-      : super._();
+  _$BenchmarkCaseExpectationsQuestionsInner._({
+    required this.text,
+    required this.type,
+    this.outcome,
+    this.resolvedAt,
+  }) : super._();
   @override
   BenchmarkCaseExpectationsQuestionsInner rebuild(
-          void Function(BenchmarkCaseExpectationsQuestionsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkCaseExpectationsQuestionsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkCaseExpectationsQuestionsInnerBuilder toBuilder() =>
@@ -123,7 +129,8 @@ class _$BenchmarkCaseExpectationsQuestionsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'BenchmarkCaseExpectationsQuestionsInner')
+            r'BenchmarkCaseExpectationsQuestionsInner',
+          )
           ..add('text', text)
           ..add('type', type)
           ..add('outcome', outcome)
@@ -134,8 +141,10 @@ class _$BenchmarkCaseExpectationsQuestionsInner
 
 class BenchmarkCaseExpectationsQuestionsInnerBuilder
     implements
-        Builder<BenchmarkCaseExpectationsQuestionsInner,
-            BenchmarkCaseExpectationsQuestionsInnerBuilder> {
+        Builder<
+          BenchmarkCaseExpectationsQuestionsInner,
+          BenchmarkCaseExpectationsQuestionsInnerBuilder
+        > {
   _$BenchmarkCaseExpectationsQuestionsInner? _$v;
 
   String? _text;
@@ -178,7 +187,8 @@ class BenchmarkCaseExpectationsQuestionsInnerBuilder
 
   @override
   void update(
-      void Function(BenchmarkCaseExpectationsQuestionsInnerBuilder)? updates) {
+    void Function(BenchmarkCaseExpectationsQuestionsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -186,12 +196,19 @@ class BenchmarkCaseExpectationsQuestionsInnerBuilder
   BenchmarkCaseExpectationsQuestionsInner build() => _build();
 
   _$BenchmarkCaseExpectationsQuestionsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BenchmarkCaseExpectationsQuestionsInner._(
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'BenchmarkCaseExpectationsQuestionsInner', 'text'),
+            text,
+            r'BenchmarkCaseExpectationsQuestionsInner',
+            'text',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'BenchmarkCaseExpectationsQuestionsInner', 'type'),
+            type,
+            r'BenchmarkCaseExpectationsQuestionsInner',
+            'type',
+          ),
           outcome: outcome,
           resolvedAt: resolvedAt,
         );

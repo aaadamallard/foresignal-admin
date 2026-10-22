@@ -12,17 +12,18 @@ class _$EscalationPolicyInputRepeat extends EscalationPolicyInputRepeat {
   @override
   final int maxTimes;
 
-  factory _$EscalationPolicyInputRepeat(
-          [void Function(EscalationPolicyInputRepeatBuilder)? updates]) =>
-      (EscalationPolicyInputRepeatBuilder()..update(updates))._build();
+  factory _$EscalationPolicyInputRepeat([
+    void Function(EscalationPolicyInputRepeatBuilder)? updates,
+  ]) => (EscalationPolicyInputRepeatBuilder()..update(updates))._build();
 
-  _$EscalationPolicyInputRepeat._(
-      {required this.everyMinutes, required this.maxTimes})
-      : super._();
+  _$EscalationPolicyInputRepeat._({
+    required this.everyMinutes,
+    required this.maxTimes,
+  }) : super._();
   @override
   EscalationPolicyInputRepeat rebuild(
-          void Function(EscalationPolicyInputRepeatBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EscalationPolicyInputRepeatBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EscalationPolicyInputRepeatBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$EscalationPolicyInputRepeat extends EscalationPolicyInputRepeat {
 
 class EscalationPolicyInputRepeatBuilder
     implements
-        Builder<EscalationPolicyInputRepeat,
-            EscalationPolicyInputRepeatBuilder> {
+        Builder<
+          EscalationPolicyInputRepeat,
+          EscalationPolicyInputRepeatBuilder
+        > {
   _$EscalationPolicyInputRepeat? _$v;
 
   int? _everyMinutes;
@@ -96,12 +99,19 @@ class EscalationPolicyInputRepeatBuilder
   EscalationPolicyInputRepeat build() => _build();
 
   _$EscalationPolicyInputRepeat _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EscalationPolicyInputRepeat._(
           everyMinutes: BuiltValueNullFieldError.checkNotNull(
-              everyMinutes, r'EscalationPolicyInputRepeat', 'everyMinutes'),
+            everyMinutes,
+            r'EscalationPolicyInputRepeat',
+            'everyMinutes',
+          ),
           maxTimes: BuiltValueNullFieldError.checkNotNull(
-              maxTimes, r'EscalationPolicyInputRepeat', 'maxTimes'),
+            maxTimes,
+            r'EscalationPolicyInputRepeat',
+            'maxTimes',
+          ),
         );
     replace(_$result);
     return _$result;

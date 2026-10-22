@@ -36,9 +36,9 @@ abstract class ForecastResolutionInput
 
   ForecastResolutionInput._();
 
-  factory ForecastResolutionInput(
-          [void updates(ForecastResolutionInputBuilder b)]) =
-      _$ForecastResolutionInput;
+  factory ForecastResolutionInput([
+    void updates(ForecastResolutionInputBuilder b),
+  ]) = _$ForecastResolutionInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastResolutionInputBuilder b) => b;
@@ -53,7 +53,7 @@ class _$ForecastResolutionInputSerializer
   @override
   final Iterable<Type> types = const [
     ForecastResolutionInput,
-    _$ForecastResolutionInput
+    _$ForecastResolutionInput,
   ];
 
   @override
@@ -98,9 +98,11 @@ class _$ForecastResolutionInputSerializer
     ForecastResolutionInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,33 +118,43 @@ class _$ForecastResolutionInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.outcome = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.value = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.evidence.replace(valueDes);
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;

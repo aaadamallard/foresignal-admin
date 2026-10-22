@@ -31,9 +31,9 @@ abstract class PlaceWeatherDigestNext
 
   PlaceWeatherDigestNext._();
 
-  factory PlaceWeatherDigestNext(
-          [void updates(PlaceWeatherDigestNextBuilder b)]) =
-      _$PlaceWeatherDigestNext;
+  factory PlaceWeatherDigestNext([
+    void updates(PlaceWeatherDigestNextBuilder b),
+  ]) = _$PlaceWeatherDigestNext;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestNextBuilder b) => b;
@@ -48,7 +48,7 @@ class _$PlaceWeatherDigestNextSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestNext,
-    _$PlaceWeatherDigestNext
+    _$PlaceWeatherDigestNext,
   ];
 
   @override
@@ -88,9 +88,11 @@ class _$PlaceWeatherDigestNextSerializer
     PlaceWeatherDigestNext object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -106,26 +108,38 @@ class _$PlaceWeatherDigestNextSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'nws':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherDigestNextNws),
-          ) as PlaceWeatherDigestNextNws?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNextNws,
+                    ),
+                  )
+                  as PlaceWeatherDigestNextNws?;
           if (valueDes == null) continue;
           result.nws.replace(valueDes);
           break;
         case r'gfs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherDigestNextGfs),
-          ) as PlaceWeatherDigestNextGfs?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNextGfs,
+                    ),
+                  )
+                  as PlaceWeatherDigestNextGfs?;
           if (valueDes == null) continue;
           result.gfs.replace(valueDes);
           break;
         case r'hrrr':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherDigestNextHrrr),
-          ) as PlaceWeatherDigestNextHrrr?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNextHrrr,
+                    ),
+                  )
+                  as PlaceWeatherDigestNextHrrr?;
           if (valueDes == null) continue;
           result.hrrr.replace(valueDes);
           break;

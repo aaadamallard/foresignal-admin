@@ -45,8 +45,9 @@ abstract class PolSubjectInputParams
 
   PolSubjectInputParams._();
 
-  factory PolSubjectInputParams(
-      [void updates(PolSubjectInputParamsBuilder b)]) = _$PolSubjectInputParams;
+  factory PolSubjectInputParams([
+    void updates(PolSubjectInputParamsBuilder b),
+  ]) = _$PolSubjectInputParams;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PolSubjectInputParamsBuilder b) => b;
@@ -61,7 +62,7 @@ class _$PolSubjectInputParamsSerializer
   @override
   final Iterable<Type> types = const [
     PolSubjectInputParams,
-    _$PolSubjectInputParams
+    _$PolSubjectInputParams,
   ];
 
   @override
@@ -122,9 +123,11 @@ class _$PolSubjectInputParamsSerializer
     PolSubjectInputParams object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,50 +143,62 @@ class _$PolSubjectInputParamsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'stayRadiusM':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.stayRadiusM = valueDes;
           break;
         case r'minDwell':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.minDwell = valueDes;
           break;
         case r'maxGap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.maxGap = valueDes;
           break;
         case r'eps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.eps = valueDes;
           break;
         case r'minPts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minPts = valueDes;
           break;
         case r'lookback':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lookback = valueDes;
           break;

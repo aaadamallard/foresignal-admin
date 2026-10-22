@@ -12,17 +12,18 @@ class _$SinkStatusClientsPeersInner extends SinkStatusClientsPeersInner {
   @override
   final DateTime connectedAt;
 
-  factory _$SinkStatusClientsPeersInner(
-          [void Function(SinkStatusClientsPeersInnerBuilder)? updates]) =>
-      (SinkStatusClientsPeersInnerBuilder()..update(updates))._build();
+  factory _$SinkStatusClientsPeersInner([
+    void Function(SinkStatusClientsPeersInnerBuilder)? updates,
+  ]) => (SinkStatusClientsPeersInnerBuilder()..update(updates))._build();
 
-  _$SinkStatusClientsPeersInner._(
-      {required this.address, required this.connectedAt})
-      : super._();
+  _$SinkStatusClientsPeersInner._({
+    required this.address,
+    required this.connectedAt,
+  }) : super._();
   @override
   SinkStatusClientsPeersInner rebuild(
-          void Function(SinkStatusClientsPeersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SinkStatusClientsPeersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SinkStatusClientsPeersInnerBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$SinkStatusClientsPeersInner extends SinkStatusClientsPeersInner {
 
 class SinkStatusClientsPeersInnerBuilder
     implements
-        Builder<SinkStatusClientsPeersInner,
-            SinkStatusClientsPeersInnerBuilder> {
+        Builder<
+          SinkStatusClientsPeersInner,
+          SinkStatusClientsPeersInnerBuilder
+        > {
   _$SinkStatusClientsPeersInner? _$v;
 
   String? _address;
@@ -96,12 +99,19 @@ class SinkStatusClientsPeersInnerBuilder
   SinkStatusClientsPeersInner build() => _build();
 
   _$SinkStatusClientsPeersInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SinkStatusClientsPeersInner._(
           address: BuiltValueNullFieldError.checkNotNull(
-              address, r'SinkStatusClientsPeersInner', 'address'),
+            address,
+            r'SinkStatusClientsPeersInner',
+            'address',
+          ),
           connectedAt: BuiltValueNullFieldError.checkNotNull(
-              connectedAt, r'SinkStatusClientsPeersInner', 'connectedAt'),
+            connectedAt,
+            r'SinkStatusClientsPeersInner',
+            'connectedAt',
+          ),
         );
     replace(_$result);
     return _$result;

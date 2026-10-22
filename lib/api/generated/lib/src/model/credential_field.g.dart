@@ -17,9 +17,11 @@ class _$CredentialField extends CredentialField {
   factory _$CredentialField([void Function(CredentialFieldBuilder)? updates]) =>
       (CredentialFieldBuilder()..update(updates))._build();
 
-  _$CredentialField._(
-      {required this.name, this.description, required this.required_})
-      : super._();
+  _$CredentialField._({
+    required this.name,
+    this.description,
+    required this.required_,
+  }) : super._();
   @override
   CredentialField rebuild(void Function(CredentialFieldBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -101,13 +103,20 @@ class CredentialFieldBuilder
   CredentialField build() => _build();
 
   _$CredentialField _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CredentialField._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'CredentialField', 'name'),
+            name,
+            r'CredentialField',
+            'name',
+          ),
           description: description,
           required_: BuiltValueNullFieldError.checkNotNull(
-              required_, r'CredentialField', 'required_'),
+            required_,
+            r'CredentialField',
+            'required_',
+          ),
         );
     replace(_$result);
     return _$result;

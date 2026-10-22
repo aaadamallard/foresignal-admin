@@ -30,9 +30,9 @@ abstract class RuleBacktestResultAnomaly
 
   RuleBacktestResultAnomaly._();
 
-  factory RuleBacktestResultAnomaly(
-          [void updates(RuleBacktestResultAnomalyBuilder b)]) =
-      _$RuleBacktestResultAnomaly;
+  factory RuleBacktestResultAnomaly([
+    void updates(RuleBacktestResultAnomalyBuilder b),
+  ]) = _$RuleBacktestResultAnomaly;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultAnomalyBuilder b) => b;
@@ -47,7 +47,7 @@ class _$RuleBacktestResultAnomalySerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultAnomaly,
-    _$RuleBacktestResultAnomaly
+    _$RuleBacktestResultAnomaly,
   ];
 
   @override
@@ -69,8 +69,10 @@ class _$RuleBacktestResultAnomalySerializer
       yield r'byClassification';
       yield serializers.serialize(
         object.byClassification,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.coverageDrops != null) {
@@ -88,9 +90,11 @@ class _$RuleBacktestResultAnomalySerializer
     RuleBacktestResultAnomaly object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -106,27 +110,35 @@ class _$RuleBacktestResultAnomalySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'warmupConsumed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.warmupConsumed = valueDes;
           break;
         case r'byClassification':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byClassification.replace(valueDes);
           break;
         case r'coverageDrops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.coverageDrops = valueDes;
           break;

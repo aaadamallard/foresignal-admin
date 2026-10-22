@@ -30,27 +30,27 @@ class _$NormalizedRecordPreview extends NormalizedRecordPreview {
   @override
   final BuiltList<Observer>? observers;
 
-  factory _$NormalizedRecordPreview(
-          [void Function(NormalizedRecordPreviewBuilder)? updates]) =>
-      (NormalizedRecordPreviewBuilder()..update(updates))._build();
+  factory _$NormalizedRecordPreview([
+    void Function(NormalizedRecordPreviewBuilder)? updates,
+  ]) => (NormalizedRecordPreviewBuilder()..update(updates))._build();
 
-  _$NormalizedRecordPreview._(
-      {required this.externalId,
-      required this.kind,
-      required this.observedAt,
-      this.geometry,
-      this.validUntil,
-      this.tombstone,
-      required this.payload,
-      this.eventTime,
-      this.validFrom,
-      this.quality,
-      this.observers})
-      : super._();
+  _$NormalizedRecordPreview._({
+    required this.externalId,
+    required this.kind,
+    required this.observedAt,
+    this.geometry,
+    this.validUntil,
+    this.tombstone,
+    required this.payload,
+    this.eventTime,
+    this.validFrom,
+    this.quality,
+    this.observers,
+  }) : super._();
   @override
   NormalizedRecordPreview rebuild(
-          void Function(NormalizedRecordPreviewBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NormalizedRecordPreviewBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NormalizedRecordPreviewBuilder toBuilder() =>
@@ -203,14 +203,24 @@ class NormalizedRecordPreviewBuilder
   _$NormalizedRecordPreview _build() {
     _$NormalizedRecordPreview _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NormalizedRecordPreview._(
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'NormalizedRecordPreview', 'externalId'),
+              externalId,
+              r'NormalizedRecordPreview',
+              'externalId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'NormalizedRecordPreview', 'kind'),
+              kind,
+              r'NormalizedRecordPreview',
+              'kind',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'NormalizedRecordPreview', 'observedAt'),
+              observedAt,
+              r'NormalizedRecordPreview',
+              'observedAt',
+            ),
             geometry: _geometry?.build(),
             validUntil: validUntil,
             tombstone: tombstone,
@@ -235,7 +245,10 @@ class NormalizedRecordPreviewBuilder
         _observers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NormalizedRecordPreview', _$failedField, e.toString());
+          r'NormalizedRecordPreview',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

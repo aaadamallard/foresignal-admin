@@ -45,9 +45,9 @@ abstract class DossierSectionsTimeline
 
   DossierSectionsTimeline._();
 
-  factory DossierSectionsTimeline(
-          [void updates(DossierSectionsTimelineBuilder b)]) =
-      _$DossierSectionsTimeline;
+  factory DossierSectionsTimeline([
+    void updates(DossierSectionsTimelineBuilder b),
+  ]) = _$DossierSectionsTimeline;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsTimelineBuilder b) => b;
@@ -62,7 +62,7 @@ class _$DossierSectionsTimelineSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsTimeline,
-    _$DossierSectionsTimeline
+    _$DossierSectionsTimeline,
   ];
 
   @override
@@ -110,8 +110,9 @@ class _$DossierSectionsTimelineSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(
-            BuiltList, [FullType(DossierSectionsTimelineItemsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DossierSectionsTimelineItemsInner),
+        ]),
       );
     }
   }
@@ -122,9 +123,11 @@ class _$DossierSectionsTimelineSerializer
     DossierSectionsTimeline object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,52 +143,69 @@ class _$DossierSectionsTimelineSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DossierSectionsTimelineStatusEnum),
-          ) as DossierSectionsTimelineStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DossierSectionsTimelineStatusEnum,
+                    ),
+                  )
+                  as DossierSectionsTimelineStatusEnum;
           result.status = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DossierSectionsOverviewLinks),
-          ) as DossierSectionsOverviewLinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DossierSectionsOverviewLinks,
+                    ),
+                  )
+                  as DossierSectionsOverviewLinks?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;
         case r'facets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DossierSectionsOverviewFacets),
-          ) as DossierSectionsOverviewFacets?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DossierSectionsOverviewFacets,
+                    ),
+                  )
+                  as DossierSectionsOverviewFacets?;
           if (valueDes == null) continue;
           result.facets.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DossierSectionsTimelineItemsInner)]),
-          ) as BuiltList<DossierSectionsTimelineItemsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DossierSectionsTimelineItemsInner),
+                    ]),
+                  )
+                  as BuiltList<DossierSectionsTimelineItemsInner>?;
           if (valueDes == null) continue;
           result.items.replace(valueDes);
           break;

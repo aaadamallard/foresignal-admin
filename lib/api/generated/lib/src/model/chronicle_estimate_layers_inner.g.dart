@@ -20,22 +20,22 @@ class _$ChronicleEstimateLayersInner extends ChronicleEstimateLayersInner {
   @override
   final String? basis;
 
-  factory _$ChronicleEstimateLayersInner(
-          [void Function(ChronicleEstimateLayersInnerBuilder)? updates]) =>
-      (ChronicleEstimateLayersInnerBuilder()..update(updates))._build();
+  factory _$ChronicleEstimateLayersInner([
+    void Function(ChronicleEstimateLayersInnerBuilder)? updates,
+  ]) => (ChronicleEstimateLayersInnerBuilder()..update(updates))._build();
 
-  _$ChronicleEstimateLayersInner._(
-      {required this.layerId,
-      this.name,
-      this.capture,
-      required this.rowsPerDay,
-      required this.bytesPerDay,
-      this.basis})
-      : super._();
+  _$ChronicleEstimateLayersInner._({
+    required this.layerId,
+    this.name,
+    this.capture,
+    required this.rowsPerDay,
+    required this.bytesPerDay,
+    this.basis,
+  }) : super._();
   @override
   ChronicleEstimateLayersInner rebuild(
-          void Function(ChronicleEstimateLayersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleEstimateLayersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleEstimateLayersInnerBuilder toBuilder() =>
@@ -81,8 +81,10 @@ class _$ChronicleEstimateLayersInner extends ChronicleEstimateLayersInner {
 
 class ChronicleEstimateLayersInnerBuilder
     implements
-        Builder<ChronicleEstimateLayersInner,
-            ChronicleEstimateLayersInnerBuilder> {
+        Builder<
+          ChronicleEstimateLayersInner,
+          ChronicleEstimateLayersInnerBuilder
+        > {
   _$ChronicleEstimateLayersInner? _$v;
 
   String? _layerId;
@@ -143,16 +145,26 @@ class ChronicleEstimateLayersInnerBuilder
   _$ChronicleEstimateLayersInner _build() {
     _$ChronicleEstimateLayersInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleEstimateLayersInner._(
             layerId: BuiltValueNullFieldError.checkNotNull(
-                layerId, r'ChronicleEstimateLayersInner', 'layerId'),
+              layerId,
+              r'ChronicleEstimateLayersInner',
+              'layerId',
+            ),
             name: name,
             capture: _capture?.build(),
             rowsPerDay: BuiltValueNullFieldError.checkNotNull(
-                rowsPerDay, r'ChronicleEstimateLayersInner', 'rowsPerDay'),
+              rowsPerDay,
+              r'ChronicleEstimateLayersInner',
+              'rowsPerDay',
+            ),
             bytesPerDay: BuiltValueNullFieldError.checkNotNull(
-                bytesPerDay, r'ChronicleEstimateLayersInner', 'bytesPerDay'),
+              bytesPerDay,
+              r'ChronicleEstimateLayersInner',
+              'bytesPerDay',
+            ),
             basis: basis,
           );
     } catch (_) {
@@ -162,7 +174,10 @@ class ChronicleEstimateLayersInnerBuilder
         _capture?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleEstimateLayersInner', _$failedField, e.toString());
+          r'ChronicleEstimateLayersInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -42,13 +42,8 @@ class MCPApi {
     final _path = r'/.well-known/oauth-protected-resource/mcp';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -67,9 +62,10 @@ class MCPApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ProtectedResourceMetadata),
-            ) as ProtectedResourceMetadata;
+                  rawResponse,
+                  specifiedType: const FullType(ProtectedResourceMetadata),
+                )
+                as ProtectedResourceMetadata;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -116,13 +112,8 @@ class MCPApi {
     final _path = r'/.well-known/oauth-protected-resource';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -141,9 +132,10 @@ class MCPApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ProtectedResourceMetadata),
-            ) as ProtectedResourceMetadata;
+                  rawResponse,
+                  specifiedType: const FullType(ProtectedResourceMetadata),
+                )
+                as ProtectedResourceMetadata;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

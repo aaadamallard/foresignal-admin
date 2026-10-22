@@ -39,9 +39,9 @@ abstract class ProductTemporalRetention
 
   ProductTemporalRetention._();
 
-  factory ProductTemporalRetention(
-          [void updates(ProductTemporalRetentionBuilder b)]) =
-      _$ProductTemporalRetention;
+  factory ProductTemporalRetention([
+    void updates(ProductTemporalRetentionBuilder b),
+  ]) = _$ProductTemporalRetention;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProductTemporalRetentionBuilder b) => b;
@@ -56,7 +56,7 @@ class _$ProductTemporalRetentionSerializer
   @override
   final Iterable<Type> types = const [
     ProductTemporalRetention,
-    _$ProductTemporalRetention
+    _$ProductTemporalRetention,
   ];
 
   @override
@@ -71,8 +71,9 @@ class _$ProductTemporalRetentionSerializer
       yield r'ladder';
       yield serializers.serialize(
         object.ladder,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ProductTemporalRetentionLadderInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProductTemporalRetentionLadderInner),
+        ]),
       );
     }
     if (object.maxAge != null) {
@@ -104,9 +105,11 @@ class _$ProductTemporalRetentionSerializer
     ProductTemporalRetention object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -122,35 +125,44 @@ class _$ProductTemporalRetentionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ladder':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProductTemporalRetentionLadderInner)]),
-          ) as BuiltList<ProductTemporalRetentionLadderInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProductTemporalRetentionLadderInner),
+                    ]),
+                  )
+                  as BuiltList<ProductTemporalRetentionLadderInner>?;
           if (valueDes == null) continue;
           result.ladder.replace(valueDes);
           break;
         case r'maxAge':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.maxAge = valueDes;
           break;
         case r'runs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.runs = valueDes;
           break;
         case r'summary':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.summary = valueDes;
           break;

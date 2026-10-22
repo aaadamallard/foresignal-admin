@@ -19,12 +19,12 @@ class _$RegionProfile extends RegionProfile {
   factory _$RegionProfile([void Function(RegionProfileBuilder)? updates]) =>
       (RegionProfileBuilder()..update(updates))._build();
 
-  _$RegionProfile._(
-      {required this.regionCode,
-      required this.reportingDensity,
-      required this.densityDecile,
-      required this.computedAt})
-      : super._();
+  _$RegionProfile._({
+    required this.regionCode,
+    required this.reportingDensity,
+    required this.densityDecile,
+    required this.computedAt,
+  }) : super._();
   @override
   RegionProfile rebuild(void Function(RegionProfileBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -116,16 +116,29 @@ class RegionProfileBuilder
   RegionProfile build() => _build();
 
   _$RegionProfile _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RegionProfile._(
           regionCode: BuiltValueNullFieldError.checkNotNull(
-              regionCode, r'RegionProfile', 'regionCode'),
+            regionCode,
+            r'RegionProfile',
+            'regionCode',
+          ),
           reportingDensity: BuiltValueNullFieldError.checkNotNull(
-              reportingDensity, r'RegionProfile', 'reportingDensity'),
+            reportingDensity,
+            r'RegionProfile',
+            'reportingDensity',
+          ),
           densityDecile: BuiltValueNullFieldError.checkNotNull(
-              densityDecile, r'RegionProfile', 'densityDecile'),
+            densityDecile,
+            r'RegionProfile',
+            'densityDecile',
+          ),
           computedAt: BuiltValueNullFieldError.checkNotNull(
-              computedAt, r'RegionProfile', 'computedAt'),
+            computedAt,
+            r'RegionProfile',
+            'computedAt',
+          ),
         );
     replace(_$result);
     return _$result;

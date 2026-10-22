@@ -7,17 +7,17 @@ part of 'glance_alerts_latest_inner.dart';
 // **************************************************************************
 
 const GlanceAlertsLatestInnerSeverityEnum
-    _$glanceAlertsLatestInnerSeverityEnum_info =
+_$glanceAlertsLatestInnerSeverityEnum_info =
     const GlanceAlertsLatestInnerSeverityEnum._('info');
 const GlanceAlertsLatestInnerSeverityEnum
-    _$glanceAlertsLatestInnerSeverityEnum_warning =
+_$glanceAlertsLatestInnerSeverityEnum_warning =
     const GlanceAlertsLatestInnerSeverityEnum._('warning');
 const GlanceAlertsLatestInnerSeverityEnum
-    _$glanceAlertsLatestInnerSeverityEnum_critical =
+_$glanceAlertsLatestInnerSeverityEnum_critical =
     const GlanceAlertsLatestInnerSeverityEnum._('critical');
 
 GlanceAlertsLatestInnerSeverityEnum
-    _$glanceAlertsLatestInnerSeverityEnumValueOf(String name) {
+_$glanceAlertsLatestInnerSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$glanceAlertsLatestInnerSeverityEnum_info;
@@ -31,15 +31,17 @@ GlanceAlertsLatestInnerSeverityEnum
 }
 
 final BuiltSet<GlanceAlertsLatestInnerSeverityEnum>
-    _$glanceAlertsLatestInnerSeverityEnumValues = BuiltSet<
-        GlanceAlertsLatestInnerSeverityEnum>(const <GlanceAlertsLatestInnerSeverityEnum>[
-  _$glanceAlertsLatestInnerSeverityEnum_info,
-  _$glanceAlertsLatestInnerSeverityEnum_warning,
-  _$glanceAlertsLatestInnerSeverityEnum_critical,
-]);
+_$glanceAlertsLatestInnerSeverityEnumValues =
+    BuiltSet<GlanceAlertsLatestInnerSeverityEnum>(
+      const <GlanceAlertsLatestInnerSeverityEnum>[
+        _$glanceAlertsLatestInnerSeverityEnum_info,
+        _$glanceAlertsLatestInnerSeverityEnum_warning,
+        _$glanceAlertsLatestInnerSeverityEnum_critical,
+      ],
+    );
 
 Serializer<GlanceAlertsLatestInnerSeverityEnum>
-    _$glanceAlertsLatestInnerSeverityEnumSerializer =
+_$glanceAlertsLatestInnerSeverityEnumSerializer =
     _$GlanceAlertsLatestInnerSeverityEnumSerializer();
 
 class _$GlanceAlertsLatestInnerSeverityEnumSerializer
@@ -57,23 +59,26 @@ class _$GlanceAlertsLatestInnerSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    GlanceAlertsLatestInnerSeverityEnum
+    GlanceAlertsLatestInnerSeverityEnum,
   ];
   @override
   final String wireName = 'GlanceAlertsLatestInnerSeverityEnum';
 
   @override
   Object serialize(
-          Serializers serializers, GlanceAlertsLatestInnerSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    GlanceAlertsLatestInnerSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GlanceAlertsLatestInnerSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GlanceAlertsLatestInnerSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GlanceAlertsLatestInnerSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GlanceAlertsLatestInner extends GlanceAlertsLatestInner {
@@ -88,21 +93,21 @@ class _$GlanceAlertsLatestInner extends GlanceAlertsLatestInner {
   @override
   final String? near;
 
-  factory _$GlanceAlertsLatestInner(
-          [void Function(GlanceAlertsLatestInnerBuilder)? updates]) =>
-      (GlanceAlertsLatestInnerBuilder()..update(updates))._build();
+  factory _$GlanceAlertsLatestInner([
+    void Function(GlanceAlertsLatestInnerBuilder)? updates,
+  ]) => (GlanceAlertsLatestInnerBuilder()..update(updates))._build();
 
-  _$GlanceAlertsLatestInner._(
-      {required this.id,
-      required this.severity,
-      this.shortTitle,
-      required this.firedAt,
-      this.near})
-      : super._();
+  _$GlanceAlertsLatestInner._({
+    required this.id,
+    required this.severity,
+    this.shortTitle,
+    required this.firedAt,
+    this.near,
+  }) : super._();
   @override
   GlanceAlertsLatestInner rebuild(
-          void Function(GlanceAlertsLatestInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GlanceAlertsLatestInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GlanceAlertsLatestInnerBuilder toBuilder() =>
@@ -200,15 +205,25 @@ class GlanceAlertsLatestInnerBuilder
   GlanceAlertsLatestInner build() => _build();
 
   _$GlanceAlertsLatestInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GlanceAlertsLatestInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'GlanceAlertsLatestInner', 'id'),
+            id,
+            r'GlanceAlertsLatestInner',
+            'id',
+          ),
           severity: BuiltValueNullFieldError.checkNotNull(
-              severity, r'GlanceAlertsLatestInner', 'severity'),
+            severity,
+            r'GlanceAlertsLatestInner',
+            'severity',
+          ),
           shortTitle: shortTitle,
           firedAt: BuiltValueNullFieldError.checkNotNull(
-              firedAt, r'GlanceAlertsLatestInner', 'firedAt'),
+            firedAt,
+            r'GlanceAlertsLatestInner',
+            'firedAt',
+          ),
           near: near,
         );
     replace(_$result);

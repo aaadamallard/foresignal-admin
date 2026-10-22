@@ -17,20 +17,21 @@ class _$PlaceWeatherDigestPeriodHazardsEnteredInner
   @override
   final String? ref;
 
-  factory _$PlaceWeatherDigestPeriodHazardsEnteredInner(
-          [void Function(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder)?
-              updates]) =>
-      (PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder()..update(updates))
-          ._build();
+  factory _$PlaceWeatherDigestPeriodHazardsEnteredInner([
+    void Function(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder)? updates,
+  ]) => (PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder()..update(updates))
+      ._build();
 
-  _$PlaceWeatherDigestPeriodHazardsEnteredInner._(
-      {required this.kind, required this.title, required this.at, this.ref})
-      : super._();
+  _$PlaceWeatherDigestPeriodHazardsEnteredInner._({
+    required this.kind,
+    required this.title,
+    required this.at,
+    this.ref,
+  }) : super._();
   @override
   PlaceWeatherDigestPeriodHazardsEnteredInner rebuild(
-          void Function(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder toBuilder() =>
@@ -60,7 +61,8 @@ class _$PlaceWeatherDigestPeriodHazardsEnteredInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'PlaceWeatherDigestPeriodHazardsEnteredInner')
+            r'PlaceWeatherDigestPeriodHazardsEnteredInner',
+          )
           ..add('kind', kind)
           ..add('title', title)
           ..add('at', at)
@@ -71,8 +73,10 @@ class _$PlaceWeatherDigestPeriodHazardsEnteredInner
 
 class PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder
     implements
-        Builder<PlaceWeatherDigestPeriodHazardsEnteredInner,
-            PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder> {
+        Builder<
+          PlaceWeatherDigestPeriodHazardsEnteredInner,
+          PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder
+        > {
   _$PlaceWeatherDigestPeriodHazardsEnteredInner? _$v;
 
   String? _kind;
@@ -114,8 +118,8 @@ class PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder
 
   @override
   void update(
-      void Function(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder)?
-          updates) {
+    void Function(PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -123,14 +127,24 @@ class PlaceWeatherDigestPeriodHazardsEnteredInnerBuilder
   PlaceWeatherDigestPeriodHazardsEnteredInner build() => _build();
 
   _$PlaceWeatherDigestPeriodHazardsEnteredInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherDigestPeriodHazardsEnteredInner._(
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'PlaceWeatherDigestPeriodHazardsEnteredInner', 'kind'),
+            kind,
+            r'PlaceWeatherDigestPeriodHazardsEnteredInner',
+            'kind',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'PlaceWeatherDigestPeriodHazardsEnteredInner', 'title'),
+            title,
+            r'PlaceWeatherDigestPeriodHazardsEnteredInner',
+            'title',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'PlaceWeatherDigestPeriodHazardsEnteredInner', 'at'),
+            at,
+            r'PlaceWeatherDigestPeriodHazardsEnteredInner',
+            'at',
+          ),
           ref: ref,
         );
     replace(_$result);

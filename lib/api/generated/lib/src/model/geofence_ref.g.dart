@@ -100,7 +100,8 @@ class GeofenceRefBuilder implements Builder<GeofenceRef, GeofenceRefBuilder> {
   _$GeofenceRef _build() {
     _$GeofenceRef _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$GeofenceRef._(
             country: _country?.build(),
             admin1: _admin1?.build(),
@@ -117,7 +118,10 @@ class GeofenceRefBuilder implements Builder<GeofenceRef, GeofenceRefBuilder> {
         _county?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GeofenceRef', _$failedField, e.toString());
+          r'GeofenceRef',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

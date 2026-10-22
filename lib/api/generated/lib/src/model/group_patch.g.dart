@@ -88,11 +88,8 @@ class GroupPatchBuilder implements Builder<GroupPatch, GroupPatchBuilder> {
   GroupPatch build() => _build();
 
   _$GroupPatch _build() {
-    final _$result = _$v ??
-        _$GroupPatch._(
-          name: name,
-          description: description,
-        );
+    final _$result =
+        _$v ?? _$GroupPatch._(name: name, description: description);
     replace(_$result);
     return _$result;
   }

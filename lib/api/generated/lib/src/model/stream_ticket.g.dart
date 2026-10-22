@@ -24,9 +24,9 @@ StreamTicketPurposeEnum _$streamTicketPurposeEnumValueOf(String name) {
 
 final BuiltSet<StreamTicketPurposeEnum> _$streamTicketPurposeEnumValues =
     BuiltSet<StreamTicketPurposeEnum>(const <StreamTicketPurposeEnum>[
-  _$streamTicketPurposeEnum_stream,
-  _$streamTicketPurposeEnum_tiles,
-]);
+      _$streamTicketPurposeEnum_stream,
+      _$streamTicketPurposeEnum_tiles,
+    ]);
 
 Serializer<StreamTicketPurposeEnum> _$streamTicketPurposeEnumSerializer =
     _$StreamTicketPurposeEnumSerializer();
@@ -48,16 +48,20 @@ class _$StreamTicketPurposeEnumSerializer
   final String wireName = 'StreamTicketPurposeEnum';
 
   @override
-  Object serialize(Serializers serializers, StreamTicketPurposeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StreamTicketPurposeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamTicketPurposeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamTicketPurposeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamTicketPurposeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamTicket extends StreamTicket {
@@ -73,12 +77,12 @@ class _$StreamTicket extends StreamTicket {
   factory _$StreamTicket([void Function(StreamTicketBuilder)? updates]) =>
       (StreamTicketBuilder()..update(updates))._build();
 
-  _$StreamTicket._(
-      {required this.ticket,
-      required this.purpose,
-      required this.expiresAt,
-      this.paths})
-      : super._();
+  _$StreamTicket._({
+    required this.ticket,
+    required this.purpose,
+    required this.expiresAt,
+    this.paths,
+  }) : super._();
   @override
   StreamTicket rebuild(void Function(StreamTicketBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -170,14 +174,24 @@ class StreamTicketBuilder
   _$StreamTicket _build() {
     _$StreamTicket _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StreamTicket._(
             ticket: BuiltValueNullFieldError.checkNotNull(
-                ticket, r'StreamTicket', 'ticket'),
+              ticket,
+              r'StreamTicket',
+              'ticket',
+            ),
             purpose: BuiltValueNullFieldError.checkNotNull(
-                purpose, r'StreamTicket', 'purpose'),
+              purpose,
+              r'StreamTicket',
+              'purpose',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'StreamTicket', 'expiresAt'),
+              expiresAt,
+              r'StreamTicket',
+              'expiresAt',
+            ),
             paths: _paths?.build(),
           );
     } catch (_) {
@@ -187,7 +201,10 @@ class StreamTicketBuilder
         _paths?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StreamTicket', _$failedField, e.toString());
+          r'StreamTicket',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

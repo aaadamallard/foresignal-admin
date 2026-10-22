@@ -42,9 +42,9 @@ abstract class HypothesisProbabilityState
 
   HypothesisProbabilityState._();
 
-  factory HypothesisProbabilityState(
-          [void updates(HypothesisProbabilityStateBuilder b)]) =
-      _$HypothesisProbabilityState;
+  factory HypothesisProbabilityState([
+    void updates(HypothesisProbabilityStateBuilder b),
+  ]) = _$HypothesisProbabilityState;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisProbabilityStateBuilder b) => b;
@@ -59,7 +59,7 @@ class _$HypothesisProbabilityStateSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisProbabilityState,
-    _$HypothesisProbabilityState
+    _$HypothesisProbabilityState,
   ];
 
   @override
@@ -107,9 +107,11 @@ class _$HypothesisProbabilityStateSerializer
     HypothesisProbabilityState object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,39 +127,46 @@ class _$HypothesisProbabilityStateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'hypothesisId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hypothesisId = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.probability = valueDes;
           break;
         case r'estimativeTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IcdTerm),
-          ) as IcdTerm;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IcdTerm),
+                  )
+                  as IcdTerm;
           result.estimativeTerm = valueDes;
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ConfidenceLevel),
-          ) as ConfidenceLevel?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ConfidenceLevel),
+                  )
+                  as ConfidenceLevel?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;

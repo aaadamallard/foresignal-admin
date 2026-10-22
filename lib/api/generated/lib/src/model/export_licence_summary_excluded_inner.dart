@@ -17,8 +17,10 @@ part 'export_licence_summary_excluded_inner.g.dart';
 @BuiltValue()
 abstract class ExportLicenceSummaryExcludedInner
     implements
-        Built<ExportLicenceSummaryExcludedInner,
-            ExportLicenceSummaryExcludedInnerBuilder> {
+        Built<
+          ExportLicenceSummaryExcludedInner,
+          ExportLicenceSummaryExcludedInnerBuilder
+        > {
   @BuiltValueField(wireName: r'sourceId')
   String get sourceId;
 
@@ -28,9 +30,9 @@ abstract class ExportLicenceSummaryExcludedInner
 
   ExportLicenceSummaryExcludedInner._();
 
-  factory ExportLicenceSummaryExcludedInner(
-          [void updates(ExportLicenceSummaryExcludedInnerBuilder b)]) =
-      _$ExportLicenceSummaryExcludedInner;
+  factory ExportLicenceSummaryExcludedInner([
+    void updates(ExportLicenceSummaryExcludedInnerBuilder b),
+  ]) = _$ExportLicenceSummaryExcludedInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExportLicenceSummaryExcludedInnerBuilder b) => b;
@@ -45,7 +47,7 @@ class _$ExportLicenceSummaryExcludedInnerSerializer
   @override
   final Iterable<Type> types = const [
     ExportLicenceSummaryExcludedInner,
-    _$ExportLicenceSummaryExcludedInner
+    _$ExportLicenceSummaryExcludedInner,
   ];
 
   @override
@@ -64,8 +66,9 @@ class _$ExportLicenceSummaryExcludedInnerSerializer
     yield r'reason';
     yield serializers.serialize(
       object.reason,
-      specifiedType:
-          const FullType(ExportLicenceSummaryExcludedInnerReasonEnum),
+      specifiedType: const FullType(
+        ExportLicenceSummaryExcludedInnerReasonEnum,
+      ),
     );
   }
 
@@ -75,9 +78,11 @@ class _$ExportLicenceSummaryExcludedInnerSerializer
     ExportLicenceSummaryExcludedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +98,23 @@ class _$ExportLicenceSummaryExcludedInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ExportLicenceSummaryExcludedInnerReasonEnum),
-          ) as ExportLicenceSummaryExcludedInnerReasonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ExportLicenceSummaryExcludedInnerReasonEnum,
+                    ),
+                  )
+                  as ExportLicenceSummaryExcludedInnerReasonEnum;
           result.reason = valueDes;
           break;
         default:
@@ -148,10 +158,10 @@ class ExportLicenceSummaryExcludedInnerReasonEnum extends EnumClass {
       _$exportLicenceSummaryExcludedInnerReasonEnum_private;
 
   static Serializer<ExportLicenceSummaryExcludedInnerReasonEnum>
-      get serializer => _$exportLicenceSummaryExcludedInnerReasonEnumSerializer;
+  get serializer => _$exportLicenceSummaryExcludedInnerReasonEnumSerializer;
 
   const ExportLicenceSummaryExcludedInnerReasonEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ExportLicenceSummaryExcludedInnerReasonEnum> get values =>
       _$exportLicenceSummaryExcludedInnerReasonEnumValues;

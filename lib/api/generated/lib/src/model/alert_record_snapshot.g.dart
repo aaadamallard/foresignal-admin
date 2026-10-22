@@ -20,22 +20,22 @@ class _$AlertRecordSnapshot extends AlertRecordSnapshot {
   @override
   final bool? truncated;
 
-  factory _$AlertRecordSnapshot(
-          [void Function(AlertRecordSnapshotBuilder)? updates]) =>
-      (AlertRecordSnapshotBuilder()..update(updates))._build();
+  factory _$AlertRecordSnapshot([
+    void Function(AlertRecordSnapshotBuilder)? updates,
+  ]) => (AlertRecordSnapshotBuilder()..update(updates))._build();
 
-  _$AlertRecordSnapshot._(
-      {required this.kind,
-      required this.version,
-      required this.observedAt,
-      this.geometry,
-      this.payload,
-      this.truncated})
-      : super._();
+  _$AlertRecordSnapshot._({
+    required this.kind,
+    required this.version,
+    required this.observedAt,
+    this.geometry,
+    this.payload,
+    this.truncated,
+  }) : super._();
   @override
   AlertRecordSnapshot rebuild(
-          void Function(AlertRecordSnapshotBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AlertRecordSnapshotBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AlertRecordSnapshotBuilder toBuilder() =>
@@ -143,14 +143,24 @@ class AlertRecordSnapshotBuilder
   _$AlertRecordSnapshot _build() {
     _$AlertRecordSnapshot _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AlertRecordSnapshot._(
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'AlertRecordSnapshot', 'kind'),
+              kind,
+              r'AlertRecordSnapshot',
+              'kind',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'AlertRecordSnapshot', 'version'),
+              version,
+              r'AlertRecordSnapshot',
+              'version',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'AlertRecordSnapshot', 'observedAt'),
+              observedAt,
+              r'AlertRecordSnapshot',
+              'observedAt',
+            ),
             geometry: _geometry?.build(),
             payload: _payload?.build(),
             truncated: truncated,
@@ -164,7 +174,10 @@ class AlertRecordSnapshotBuilder
         _payload?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AlertRecordSnapshot', _$failedField, e.toString());
+          r'AlertRecordSnapshot',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

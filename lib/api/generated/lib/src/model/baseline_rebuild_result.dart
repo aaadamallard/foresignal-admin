@@ -32,8 +32,9 @@ abstract class BaselineRebuildResult
 
   BaselineRebuildResult._();
 
-  factory BaselineRebuildResult(
-      [void updates(BaselineRebuildResultBuilder b)]) = _$BaselineRebuildResult;
+  factory BaselineRebuildResult([
+    void updates(BaselineRebuildResultBuilder b),
+  ]) = _$BaselineRebuildResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BaselineRebuildResultBuilder b) => b;
@@ -48,7 +49,7 @@ class _$BaselineRebuildResultSerializer
   @override
   final Iterable<Type> types = const [
     BaselineRebuildResult,
-    _$BaselineRebuildResult
+    _$BaselineRebuildResult,
   ];
 
   @override
@@ -91,9 +92,11 @@ class _$BaselineRebuildResultSerializer
     BaselineRebuildResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,32 +112,40 @@ class _$BaselineRebuildResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'accepted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.accepted = valueDes;
           break;
         case r'weeksAvailable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.weeksAvailable = valueDes;
           break;
         case r'backfillFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.backfillFrom = valueDes;
           break;

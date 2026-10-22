@@ -12,15 +12,15 @@ class _$RetentionSettingsSocial extends RetentionSettingsSocial {
   @override
   final BuiltMap<String, String>? platforms;
 
-  factory _$RetentionSettingsSocial(
-          [void Function(RetentionSettingsSocialBuilder)? updates]) =>
-      (RetentionSettingsSocialBuilder()..update(updates))._build();
+  factory _$RetentionSettingsSocial([
+    void Function(RetentionSettingsSocialBuilder)? updates,
+  ]) => (RetentionSettingsSocialBuilder()..update(updates))._build();
 
   _$RetentionSettingsSocial._({this.posts, this.platforms}) : super._();
   @override
   RetentionSettingsSocial rebuild(
-          void Function(RetentionSettingsSocialBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RetentionSettingsSocialBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RetentionSettingsSocialBuilder toBuilder() =>
@@ -97,7 +97,8 @@ class RetentionSettingsSocialBuilder
   _$RetentionSettingsSocial _build() {
     _$RetentionSettingsSocial _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RetentionSettingsSocial._(
             posts: posts,
             platforms: _platforms?.build(),
@@ -109,7 +110,10 @@ class RetentionSettingsSocialBuilder
         _platforms?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RetentionSettingsSocial', _$failedField, e.toString());
+          r'RetentionSettingsSocial',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

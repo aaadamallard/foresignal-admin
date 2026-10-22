@@ -24,24 +24,24 @@ class _$FieldEncodingsPngUv extends FieldEncodingsPngUv {
   @override
   final BuiltList<num>? bounds;
 
-  factory _$FieldEncodingsPngUv(
-          [void Function(FieldEncodingsPngUvBuilder)? updates]) =>
-      (FieldEncodingsPngUvBuilder()..update(updates))._build();
+  factory _$FieldEncodingsPngUv([
+    void Function(FieldEncodingsPngUvBuilder)? updates,
+  ]) => (FieldEncodingsPngUvBuilder()..update(updates))._build();
 
-  _$FieldEncodingsPngUv._(
-      {this.url,
-      this.uMin,
-      this.uMax,
-      this.vMin,
-      this.vMax,
-      this.width,
-      this.height,
-      this.bounds})
-      : super._();
+  _$FieldEncodingsPngUv._({
+    this.url,
+    this.uMin,
+    this.uMax,
+    this.vMin,
+    this.vMax,
+    this.width,
+    this.height,
+    this.bounds,
+  }) : super._();
   @override
   FieldEncodingsPngUv rebuild(
-          void Function(FieldEncodingsPngUvBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FieldEncodingsPngUvBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FieldEncodingsPngUvBuilder toBuilder() =>
@@ -163,7 +163,8 @@ class FieldEncodingsPngUvBuilder
   _$FieldEncodingsPngUv _build() {
     _$FieldEncodingsPngUv _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FieldEncodingsPngUv._(
             url: url,
             uMin: uMin,
@@ -181,7 +182,10 @@ class FieldEncodingsPngUvBuilder
         _bounds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FieldEncodingsPngUv', _$failedField, e.toString());
+          r'FieldEncodingsPngUv',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

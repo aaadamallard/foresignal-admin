@@ -12,15 +12,15 @@ class _$ReportRetractRequest extends ReportRetractRequest {
   @override
   final String reason;
 
-  factory _$ReportRetractRequest(
-          [void Function(ReportRetractRequestBuilder)? updates]) =>
-      (ReportRetractRequestBuilder()..update(updates))._build();
+  factory _$ReportRetractRequest([
+    void Function(ReportRetractRequestBuilder)? updates,
+  ]) => (ReportRetractRequestBuilder()..update(updates))._build();
 
   _$ReportRetractRequest._({this.revision, required this.reason}) : super._();
   @override
   ReportRetractRequest rebuild(
-          void Function(ReportRetractRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReportRetractRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReportRetractRequestBuilder toBuilder() =>
@@ -92,11 +92,15 @@ class ReportRetractRequestBuilder
   ReportRetractRequest build() => _build();
 
   _$ReportRetractRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReportRetractRequest._(
           revision: revision,
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ReportRetractRequest', 'reason'),
+            reason,
+            r'ReportRetractRequest',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

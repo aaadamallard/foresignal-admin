@@ -82,9 +82,11 @@ class _$PrecursorSpatialSerializer
     PrecursorSpatial object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,26 +102,33 @@ class _$PrecursorSpatialSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'rule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorSpatialRuleEnum),
-          ) as PrecursorSpatialRuleEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorSpatialRuleEnum),
+                  )
+                  as PrecursorSpatialRuleEnum;
           result.rule = valueDes;
           break;
         case r'withinKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.withinKm = valueDes;
           break;
         case r'regionLevel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PrecursorSpatialRegionLevelEnum),
-          ) as PrecursorSpatialRegionLevelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorSpatialRegionLevelEnum,
+                    ),
+                  )
+                  as PrecursorSpatialRegionLevelEnum?;
           if (valueDes == null) continue;
           result.regionLevel = valueDes;
           break;

@@ -18,21 +18,21 @@ class _$ExportManifestFilesInner extends ExportManifestFilesInner {
   @override
   final int? rows;
 
-  factory _$ExportManifestFilesInner(
-          [void Function(ExportManifestFilesInnerBuilder)? updates]) =>
-      (ExportManifestFilesInnerBuilder()..update(updates))._build();
+  factory _$ExportManifestFilesInner([
+    void Function(ExportManifestFilesInnerBuilder)? updates,
+  ]) => (ExportManifestFilesInnerBuilder()..update(updates))._build();
 
-  _$ExportManifestFilesInner._(
-      {required this.name,
-      this.mediaType,
-      required this.bytes,
-      required this.sha256,
-      this.rows})
-      : super._();
+  _$ExportManifestFilesInner._({
+    required this.name,
+    this.mediaType,
+    required this.bytes,
+    required this.sha256,
+    this.rows,
+  }) : super._();
   @override
   ExportManifestFilesInner rebuild(
-          void Function(ExportManifestFilesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExportManifestFilesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExportManifestFilesInnerBuilder toBuilder() =>
@@ -129,15 +129,25 @@ class ExportManifestFilesInnerBuilder
   ExportManifestFilesInner build() => _build();
 
   _$ExportManifestFilesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExportManifestFilesInner._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'ExportManifestFilesInner', 'name'),
+            name,
+            r'ExportManifestFilesInner',
+            'name',
+          ),
           mediaType: mediaType,
           bytes: BuiltValueNullFieldError.checkNotNull(
-              bytes, r'ExportManifestFilesInner', 'bytes'),
+            bytes,
+            r'ExportManifestFilesInner',
+            'bytes',
+          ),
           sha256: BuiltValueNullFieldError.checkNotNull(
-              sha256, r'ExportManifestFilesInner', 'sha256'),
+            sha256,
+            r'ExportManifestFilesInner',
+            'sha256',
+          ),
           rows: rows,
         );
     replace(_$result);

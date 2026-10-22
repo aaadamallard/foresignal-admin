@@ -28,9 +28,9 @@ abstract class SystemInfoNotifications
 
   SystemInfoNotifications._();
 
-  factory SystemInfoNotifications(
-          [void updates(SystemInfoNotificationsBuilder b)]) =
-      _$SystemInfoNotifications;
+  factory SystemInfoNotifications([
+    void updates(SystemInfoNotificationsBuilder b),
+  ]) = _$SystemInfoNotifications;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemInfoNotificationsBuilder b) => b;
@@ -45,7 +45,7 @@ class _$SystemInfoNotificationsSerializer
   @override
   final Iterable<Type> types = const [
     SystemInfoNotifications,
-    _$SystemInfoNotifications
+    _$SystemInfoNotifications,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$SystemInfoNotificationsSerializer
     SystemInfoNotifications object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +105,32 @@ class _$SystemInfoNotificationsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'channels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.channels = valueDes;
           break;
         case r'pendingDeliveries':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.pendingDeliveries = valueDes;
           break;
         case r'failedLast24h':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.failedLast24h = valueDes;
           break;

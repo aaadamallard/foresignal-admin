@@ -24,20 +24,20 @@ class _$RegistrationToken extends RegistrationToken {
   @override
   final DateTime createdAt;
 
-  factory _$RegistrationToken(
-          [void Function(RegistrationTokenBuilder)? updates]) =>
-      (RegistrationTokenBuilder()..update(updates))._build();
+  factory _$RegistrationToken([
+    void Function(RegistrationTokenBuilder)? updates,
+  ]) => (RegistrationTokenBuilder()..update(updates))._build();
 
-  _$RegistrationToken._(
-      {required this.id,
-      required this.name,
-      required this.prefix,
-      this.expiresAt,
-      required this.maxUses,
-      required this.uses,
-      this.sourceIdPrefix,
-      required this.createdAt})
-      : super._();
+  _$RegistrationToken._({
+    required this.id,
+    required this.name,
+    required this.prefix,
+    this.expiresAt,
+    required this.maxUses,
+    required this.uses,
+    this.sourceIdPrefix,
+    required this.createdAt,
+  }) : super._();
   @override
   RegistrationToken rebuild(void Function(RegistrationTokenBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -161,22 +161,41 @@ class RegistrationTokenBuilder
   RegistrationToken build() => _build();
 
   _$RegistrationToken _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RegistrationToken._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'RegistrationToken', 'id'),
+            id,
+            r'RegistrationToken',
+            'id',
+          ),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'RegistrationToken', 'name'),
+            name,
+            r'RegistrationToken',
+            'name',
+          ),
           prefix: BuiltValueNullFieldError.checkNotNull(
-              prefix, r'RegistrationToken', 'prefix'),
+            prefix,
+            r'RegistrationToken',
+            'prefix',
+          ),
           expiresAt: expiresAt,
           maxUses: BuiltValueNullFieldError.checkNotNull(
-              maxUses, r'RegistrationToken', 'maxUses'),
+            maxUses,
+            r'RegistrationToken',
+            'maxUses',
+          ),
           uses: BuiltValueNullFieldError.checkNotNull(
-              uses, r'RegistrationToken', 'uses'),
+            uses,
+            r'RegistrationToken',
+            'uses',
+          ),
           sourceIdPrefix: sourceIdPrefix,
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'RegistrationToken', 'createdAt'),
+            createdAt,
+            r'RegistrationToken',
+            'createdAt',
+          ),
         );
     replace(_$result);
     return _$result;

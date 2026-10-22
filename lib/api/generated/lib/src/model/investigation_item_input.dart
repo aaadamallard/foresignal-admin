@@ -36,9 +36,9 @@ abstract class InvestigationItemInput
 
   InvestigationItemInput._();
 
-  factory InvestigationItemInput(
-          [void updates(InvestigationItemInputBuilder b)]) =
-      _$InvestigationItemInput;
+  factory InvestigationItemInput([
+    void updates(InvestigationItemInputBuilder b),
+  ]) = _$InvestigationItemInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InvestigationItemInputBuilder b) => b;
@@ -53,7 +53,7 @@ class _$InvestigationItemInputSerializer
   @override
   final Iterable<Type> types = const [
     InvestigationItemInput,
-    _$InvestigationItemInput
+    _$InvestigationItemInput,
   ];
 
   @override
@@ -96,9 +96,11 @@ class _$InvestigationItemInputSerializer
     InvestigationItemInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,32 +116,42 @@ class _$InvestigationItemInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'itemType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InvestigationItemInputItemTypeEnum),
-          ) as InvestigationItemInputItemTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      InvestigationItemInputItemTypeEnum,
+                    ),
+                  )
+                  as InvestigationItemInputItemTypeEnum;
           result.itemType = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.seq = valueDes;
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;

@@ -6,20 +6,27 @@ part of 'quiet_hours.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const QuietHoursDaysEnum _$quietHoursDaysEnum_MON =
-    const QuietHoursDaysEnum._('MON');
-const QuietHoursDaysEnum _$quietHoursDaysEnum_TUE =
-    const QuietHoursDaysEnum._('TUE');
-const QuietHoursDaysEnum _$quietHoursDaysEnum_WED =
-    const QuietHoursDaysEnum._('WED');
-const QuietHoursDaysEnum _$quietHoursDaysEnum_THU =
-    const QuietHoursDaysEnum._('THU');
-const QuietHoursDaysEnum _$quietHoursDaysEnum_FRI =
-    const QuietHoursDaysEnum._('FRI');
-const QuietHoursDaysEnum _$quietHoursDaysEnum_SAT =
-    const QuietHoursDaysEnum._('SAT');
-const QuietHoursDaysEnum _$quietHoursDaysEnum_SUN =
-    const QuietHoursDaysEnum._('SUN');
+const QuietHoursDaysEnum _$quietHoursDaysEnum_MON = const QuietHoursDaysEnum._(
+  'MON',
+);
+const QuietHoursDaysEnum _$quietHoursDaysEnum_TUE = const QuietHoursDaysEnum._(
+  'TUE',
+);
+const QuietHoursDaysEnum _$quietHoursDaysEnum_WED = const QuietHoursDaysEnum._(
+  'WED',
+);
+const QuietHoursDaysEnum _$quietHoursDaysEnum_THU = const QuietHoursDaysEnum._(
+  'THU',
+);
+const QuietHoursDaysEnum _$quietHoursDaysEnum_FRI = const QuietHoursDaysEnum._(
+  'FRI',
+);
+const QuietHoursDaysEnum _$quietHoursDaysEnum_SAT = const QuietHoursDaysEnum._(
+  'SAT',
+);
+const QuietHoursDaysEnum _$quietHoursDaysEnum_SUN = const QuietHoursDaysEnum._(
+  'SUN',
+);
 
 QuietHoursDaysEnum _$quietHoursDaysEnumValueOf(String name) {
   switch (name) {
@@ -44,14 +51,14 @@ QuietHoursDaysEnum _$quietHoursDaysEnumValueOf(String name) {
 
 final BuiltSet<QuietHoursDaysEnum> _$quietHoursDaysEnumValues =
     BuiltSet<QuietHoursDaysEnum>(const <QuietHoursDaysEnum>[
-  _$quietHoursDaysEnum_MON,
-  _$quietHoursDaysEnum_TUE,
-  _$quietHoursDaysEnum_WED,
-  _$quietHoursDaysEnum_THU,
-  _$quietHoursDaysEnum_FRI,
-  _$quietHoursDaysEnum_SAT,
-  _$quietHoursDaysEnum_SUN,
-]);
+      _$quietHoursDaysEnum_MON,
+      _$quietHoursDaysEnum_TUE,
+      _$quietHoursDaysEnum_WED,
+      _$quietHoursDaysEnum_THU,
+      _$quietHoursDaysEnum_FRI,
+      _$quietHoursDaysEnum_SAT,
+      _$quietHoursDaysEnum_SUN,
+    ]);
 
 const QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnum_info =
     const QuietHoursBypassSeverityEnum._('info');
@@ -61,7 +68,8 @@ const QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnum_critical =
     const QuietHoursBypassSeverityEnum._('critical');
 
 QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'info':
       return _$quietHoursBypassSeverityEnum_info;
@@ -75,17 +83,17 @@ QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnumValueOf(
 }
 
 final BuiltSet<QuietHoursBypassSeverityEnum>
-    _$quietHoursBypassSeverityEnumValues =
+_$quietHoursBypassSeverityEnumValues =
     BuiltSet<QuietHoursBypassSeverityEnum>(const <QuietHoursBypassSeverityEnum>[
-  _$quietHoursBypassSeverityEnum_info,
-  _$quietHoursBypassSeverityEnum_warning,
-  _$quietHoursBypassSeverityEnum_critical,
-]);
+      _$quietHoursBypassSeverityEnum_info,
+      _$quietHoursBypassSeverityEnum_warning,
+      _$quietHoursBypassSeverityEnum_critical,
+    ]);
 
 Serializer<QuietHoursDaysEnum> _$quietHoursDaysEnumSerializer =
     _$QuietHoursDaysEnumSerializer();
 Serializer<QuietHoursBypassSeverityEnum>
-    _$quietHoursBypassSeverityEnumSerializer =
+_$quietHoursBypassSeverityEnumSerializer =
     _$QuietHoursBypassSeverityEnumSerializer();
 
 class _$QuietHoursDaysEnumSerializer
@@ -115,15 +123,20 @@ class _$QuietHoursDaysEnumSerializer
   final String wireName = 'QuietHoursDaysEnum';
 
   @override
-  Object serialize(Serializers serializers, QuietHoursDaysEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    QuietHoursDaysEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  QuietHoursDaysEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      QuietHoursDaysEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  QuietHoursDaysEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => QuietHoursDaysEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$QuietHoursBypassSeverityEnumSerializer
@@ -145,16 +158,20 @@ class _$QuietHoursBypassSeverityEnumSerializer
   final String wireName = 'QuietHoursBypassSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, QuietHoursBypassSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    QuietHoursBypassSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   QuietHoursBypassSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      QuietHoursBypassSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => QuietHoursBypassSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$QuietHours extends QuietHours {
@@ -170,9 +187,12 @@ class _$QuietHours extends QuietHours {
   factory _$QuietHours([void Function(QuietHoursBuilder)? updates]) =>
       (QuietHoursBuilder()..update(updates))._build();
 
-  _$QuietHours._(
-      {required this.start, required this.end, this.days, this.bypassSeverity})
-      : super._();
+  _$QuietHours._({
+    required this.start,
+    required this.end,
+    this.days,
+    this.bypassSeverity,
+  }) : super._();
   @override
   QuietHours rebuild(void Function(QuietHoursBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -265,12 +285,19 @@ class QuietHoursBuilder implements Builder<QuietHours, QuietHoursBuilder> {
   _$QuietHours _build() {
     _$QuietHours _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$QuietHours._(
             start: BuiltValueNullFieldError.checkNotNull(
-                start, r'QuietHours', 'start'),
+              start,
+              r'QuietHours',
+              'start',
+            ),
             end: BuiltValueNullFieldError.checkNotNull(
-                end, r'QuietHours', 'end'),
+              end,
+              r'QuietHours',
+              'end',
+            ),
             days: _days?.build(),
             bypassSeverity: bypassSeverity,
           );
@@ -281,7 +308,10 @@ class QuietHoursBuilder implements Builder<QuietHours, QuietHoursBuilder> {
         _days?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'QuietHours', _$failedField, e.toString());
+          r'QuietHours',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

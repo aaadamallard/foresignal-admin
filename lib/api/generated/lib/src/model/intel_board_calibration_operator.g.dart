@@ -14,17 +14,19 @@ class _$IntelBoardCalibrationOperator extends IntelBoardCalibrationOperator {
   @override
   final int n;
 
-  factory _$IntelBoardCalibrationOperator(
-          [void Function(IntelBoardCalibrationOperatorBuilder)? updates]) =>
-      (IntelBoardCalibrationOperatorBuilder()..update(updates))._build();
+  factory _$IntelBoardCalibrationOperator([
+    void Function(IntelBoardCalibrationOperatorBuilder)? updates,
+  ]) => (IntelBoardCalibrationOperatorBuilder()..update(updates))._build();
 
-  _$IntelBoardCalibrationOperator._(
-      {this.brierSkill, this.calibration, required this.n})
-      : super._();
+  _$IntelBoardCalibrationOperator._({
+    this.brierSkill,
+    this.calibration,
+    required this.n,
+  }) : super._();
   @override
   IntelBoardCalibrationOperator rebuild(
-          void Function(IntelBoardCalibrationOperatorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardCalibrationOperatorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardCalibrationOperatorBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$IntelBoardCalibrationOperator extends IntelBoardCalibrationOperator {
 
 class IntelBoardCalibrationOperatorBuilder
     implements
-        Builder<IntelBoardCalibrationOperator,
-            IntelBoardCalibrationOperatorBuilder> {
+        Builder<
+          IntelBoardCalibrationOperator,
+          IntelBoardCalibrationOperatorBuilder
+        > {
   _$IntelBoardCalibrationOperator? _$v;
 
   num? _brierSkill;
@@ -106,12 +110,16 @@ class IntelBoardCalibrationOperatorBuilder
   IntelBoardCalibrationOperator build() => _build();
 
   _$IntelBoardCalibrationOperator _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardCalibrationOperator._(
           brierSkill: brierSkill,
           calibration: calibration,
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'IntelBoardCalibrationOperator', 'n'),
+            n,
+            r'IntelBoardCalibrationOperator',
+            'n',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -7,17 +7,17 @@ part of 'update_token_request.dart';
 // **************************************************************************
 
 const UpdateTokenRequestLicencePolicyEnum
-    _$updateTokenRequestLicencePolicyEnum_noNc =
+_$updateTokenRequestLicencePolicyEnum_noNc =
     const UpdateTokenRequestLicencePolicyEnum._('noNc');
 const UpdateTokenRequestLicencePolicyEnum
-    _$updateTokenRequestLicencePolicyEnum_noSa =
+_$updateTokenRequestLicencePolicyEnum_noSa =
     const UpdateTokenRequestLicencePolicyEnum._('noSa');
 const UpdateTokenRequestLicencePolicyEnum
-    _$updateTokenRequestLicencePolicyEnum_redistributable =
+_$updateTokenRequestLicencePolicyEnum_redistributable =
     const UpdateTokenRequestLicencePolicyEnum._('redistributable');
 
 UpdateTokenRequestLicencePolicyEnum
-    _$updateTokenRequestLicencePolicyEnumValueOf(String name) {
+_$updateTokenRequestLicencePolicyEnumValueOf(String name) {
   switch (name) {
     case 'noNc':
       return _$updateTokenRequestLicencePolicyEnum_noNc;
@@ -31,15 +31,17 @@ UpdateTokenRequestLicencePolicyEnum
 }
 
 final BuiltSet<UpdateTokenRequestLicencePolicyEnum>
-    _$updateTokenRequestLicencePolicyEnumValues = BuiltSet<
-        UpdateTokenRequestLicencePolicyEnum>(const <UpdateTokenRequestLicencePolicyEnum>[
-  _$updateTokenRequestLicencePolicyEnum_noNc,
-  _$updateTokenRequestLicencePolicyEnum_noSa,
-  _$updateTokenRequestLicencePolicyEnum_redistributable,
-]);
+_$updateTokenRequestLicencePolicyEnumValues =
+    BuiltSet<UpdateTokenRequestLicencePolicyEnum>(
+      const <UpdateTokenRequestLicencePolicyEnum>[
+        _$updateTokenRequestLicencePolicyEnum_noNc,
+        _$updateTokenRequestLicencePolicyEnum_noSa,
+        _$updateTokenRequestLicencePolicyEnum_redistributable,
+      ],
+    );
 
 Serializer<UpdateTokenRequestLicencePolicyEnum>
-    _$updateTokenRequestLicencePolicyEnumSerializer =
+_$updateTokenRequestLicencePolicyEnumSerializer =
     _$UpdateTokenRequestLicencePolicyEnumSerializer();
 
 class _$UpdateTokenRequestLicencePolicyEnumSerializer
@@ -57,38 +59,41 @@ class _$UpdateTokenRequestLicencePolicyEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    UpdateTokenRequestLicencePolicyEnum
+    UpdateTokenRequestLicencePolicyEnum,
   ];
   @override
   final String wireName = 'UpdateTokenRequestLicencePolicyEnum';
 
   @override
   Object serialize(
-          Serializers serializers, UpdateTokenRequestLicencePolicyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    UpdateTokenRequestLicencePolicyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   UpdateTokenRequestLicencePolicyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      UpdateTokenRequestLicencePolicyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => UpdateTokenRequestLicencePolicyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$UpdateTokenRequest extends UpdateTokenRequest {
   @override
   final BuiltList<UpdateTokenRequestLicencePolicyEnum>? licencePolicy;
 
-  factory _$UpdateTokenRequest(
-          [void Function(UpdateTokenRequestBuilder)? updates]) =>
-      (UpdateTokenRequestBuilder()..update(updates))._build();
+  factory _$UpdateTokenRequest([
+    void Function(UpdateTokenRequestBuilder)? updates,
+  ]) => (UpdateTokenRequestBuilder()..update(updates))._build();
 
   _$UpdateTokenRequest._({this.licencePolicy}) : super._();
   @override
   UpdateTokenRequest rebuild(
-          void Function(UpdateTokenRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(UpdateTokenRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   UpdateTokenRequestBuilder toBuilder() =>
@@ -110,9 +115,9 @@ class _$UpdateTokenRequest extends UpdateTokenRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'UpdateTokenRequest')
-          ..add('licencePolicy', licencePolicy))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'UpdateTokenRequest',
+    )..add('licencePolicy', licencePolicy)).toString();
   }
 }
 
@@ -125,8 +130,8 @@ class UpdateTokenRequestBuilder
       _$this._licencePolicy ??=
           ListBuilder<UpdateTokenRequestLicencePolicyEnum>();
   set licencePolicy(
-          ListBuilder<UpdateTokenRequestLicencePolicyEnum>? licencePolicy) =>
-      _$this._licencePolicy = licencePolicy;
+    ListBuilder<UpdateTokenRequestLicencePolicyEnum>? licencePolicy,
+  ) => _$this._licencePolicy = licencePolicy;
 
   UpdateTokenRequestBuilder() {
     UpdateTokenRequest._defaults(this);
@@ -157,10 +162,8 @@ class UpdateTokenRequestBuilder
   _$UpdateTokenRequest _build() {
     _$UpdateTokenRequest _$result;
     try {
-      _$result = _$v ??
-          _$UpdateTokenRequest._(
-            licencePolicy: _licencePolicy?.build(),
-          );
+      _$result =
+          _$v ?? _$UpdateTokenRequest._(licencePolicy: _licencePolicy?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -168,7 +171,10 @@ class UpdateTokenRequestBuilder
         _licencePolicy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'UpdateTokenRequest', _$failedField, e.toString());
+          r'UpdateTokenRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

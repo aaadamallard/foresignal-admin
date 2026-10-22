@@ -19,9 +19,12 @@ class _$AskRequest extends AskRequest {
   factory _$AskRequest([void Function(AskRequestBuilder)? updates]) =>
       (AskRequestBuilder()..update(updates))._build();
 
-  _$AskRequest._(
-      {required this.question, this.threadId, this.scope, this.allowActions})
-      : super._();
+  _$AskRequest._({
+    required this.question,
+    this.threadId,
+    this.scope,
+    this.allowActions,
+  }) : super._();
   @override
   AskRequest rebuild(void Function(AskRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -112,10 +115,14 @@ class AskRequestBuilder implements Builder<AskRequest, AskRequestBuilder> {
   _$AskRequest _build() {
     _$AskRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AskRequest._(
             question: BuiltValueNullFieldError.checkNotNull(
-                question, r'AskRequest', 'question'),
+              question,
+              r'AskRequest',
+              'question',
+            ),
             threadId: threadId,
             scope: _scope?.build(),
             allowActions: allowActions,
@@ -127,7 +134,10 @@ class AskRequestBuilder implements Builder<AskRequest, AskRequestBuilder> {
         _scope?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AskRequest', _$failedField, e.toString());
+          r'AskRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

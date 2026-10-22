@@ -28,10 +28,10 @@ ExposurePlacesStatusEnum _$exposurePlacesStatusEnumValueOf(String name) {
 
 final BuiltSet<ExposurePlacesStatusEnum> _$exposurePlacesStatusEnumValues =
     BuiltSet<ExposurePlacesStatusEnum>(const <ExposurePlacesStatusEnum>[
-  _$exposurePlacesStatusEnum_ok,
-  _$exposurePlacesStatusEnum_unavailable,
-  _$exposurePlacesStatusEnum_notInstalled,
-]);
+      _$exposurePlacesStatusEnum_ok,
+      _$exposurePlacesStatusEnum_unavailable,
+      _$exposurePlacesStatusEnum_notInstalled,
+    ]);
 
 Serializer<ExposurePlacesStatusEnum> _$exposurePlacesStatusEnumSerializer =
     _$ExposurePlacesStatusEnumSerializer();
@@ -55,16 +55,20 @@ class _$ExposurePlacesStatusEnumSerializer
   final String wireName = 'ExposurePlacesStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ExposurePlacesStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExposurePlacesStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExposurePlacesStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExposurePlacesStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExposurePlacesStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExposurePlaces extends ExposurePlaces {
@@ -79,7 +83,7 @@ class _$ExposurePlaces extends ExposurePlaces {
       (ExposurePlacesBuilder()..update(updates))._build();
 
   _$ExposurePlaces._({required this.status, this.attribution, this.items})
-      : super._();
+    : super._();
   @override
   ExposurePlaces rebuild(void Function(ExposurePlacesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -167,10 +171,14 @@ class ExposurePlacesBuilder
   _$ExposurePlaces _build() {
     _$ExposurePlaces _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExposurePlaces._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExposurePlaces', 'status'),
+              status,
+              r'ExposurePlaces',
+              'status',
+            ),
             attribution: _attribution?.build(),
             items: _items?.build(),
           );
@@ -183,7 +191,10 @@ class ExposurePlacesBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExposurePlaces', _$failedField, e.toString());
+          r'ExposurePlaces',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

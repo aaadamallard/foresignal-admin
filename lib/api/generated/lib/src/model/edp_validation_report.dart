@@ -55,7 +55,7 @@ class _$EdpValidationReportSerializer
   @override
   final Iterable<Type> types = const [
     EdpValidationReport,
-    _$EdpValidationReport
+    _$EdpValidationReport,
   ];
 
   @override
@@ -77,8 +77,9 @@ class _$EdpValidationReportSerializer
       yield r'manifestErrors';
       yield serializers.serialize(
         object.manifestErrors,
-        specifiedType: const FullType(
-            BuiltList, [FullType(EdpItemRejectionSchemaErrorsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(EdpItemRejectionSchemaErrorsInner),
+        ]),
       );
     }
     if (object.breakingChanges != null) {
@@ -110,9 +111,11 @@ class _$EdpValidationReportSerializer
     EdpValidationReport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -128,45 +131,58 @@ class _$EdpValidationReportSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'manifestValid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.manifestValid = valueDes;
           break;
         case r'manifestErrors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(EdpItemRejectionSchemaErrorsInner)]),
-          ) as BuiltList<EdpItemRejectionSchemaErrorsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EdpItemRejectionSchemaErrorsInner),
+                    ]),
+                  )
+                  as BuiltList<EdpItemRejectionSchemaErrorsInner>?;
           if (valueDes == null) continue;
           result.manifestErrors.replace(valueDes);
           break;
         case r'breakingChanges':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.breakingChanges.replace(valueDes);
           break;
         case r'itemsValid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.itemsValid = valueDes;
           break;
         case r'rejected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(EdpItemRejection)]),
-          ) as BuiltList<EdpItemRejection>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EdpItemRejection),
+                    ]),
+                  )
+                  as BuiltList<EdpItemRejection>?;
           if (valueDes == null) continue;
           result.rejected.replace(valueDes);
           break;

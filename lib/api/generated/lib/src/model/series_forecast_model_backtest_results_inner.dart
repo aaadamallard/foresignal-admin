@@ -19,8 +19,10 @@ part 'series_forecast_model_backtest_results_inner.g.dart';
 @BuiltValue()
 abstract class SeriesForecastModelBacktestResultsInner
     implements
-        Built<SeriesForecastModelBacktestResultsInner,
-            SeriesForecastModelBacktestResultsInnerBuilder> {
+        Built<
+          SeriesForecastModelBacktestResultsInner,
+          SeriesForecastModelBacktestResultsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'method')
   SeriesForecastModelBacktestResultsInnerMethodEnum get method;
   // enum methodEnum {  seasonal-naive,  ets-ann,  ets-aaa,  nb-glm,  damped-trend,  };
@@ -36,9 +38,9 @@ abstract class SeriesForecastModelBacktestResultsInner
 
   SeriesForecastModelBacktestResultsInner._();
 
-  factory SeriesForecastModelBacktestResultsInner(
-          [void updates(SeriesForecastModelBacktestResultsInnerBuilder b)]) =
-      _$SeriesForecastModelBacktestResultsInner;
+  factory SeriesForecastModelBacktestResultsInner([
+    void updates(SeriesForecastModelBacktestResultsInnerBuilder b),
+  ]) = _$SeriesForecastModelBacktestResultsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SeriesForecastModelBacktestResultsInnerBuilder b) => b;
@@ -53,7 +55,7 @@ class _$SeriesForecastModelBacktestResultsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SeriesForecastModelBacktestResultsInner,
-    _$SeriesForecastModelBacktestResultsInner
+    _$SeriesForecastModelBacktestResultsInner,
   ];
 
   @override
@@ -67,8 +69,9 @@ class _$SeriesForecastModelBacktestResultsInnerSerializer
     yield r'method';
     yield serializers.serialize(
       object.method,
-      specifiedType:
-          const FullType(SeriesForecastModelBacktestResultsInnerMethodEnum),
+      specifiedType: const FullType(
+        SeriesForecastModelBacktestResultsInnerMethodEnum,
+      ),
     );
     yield r'horizon';
     yield serializers.serialize(
@@ -95,9 +98,11 @@ class _$SeriesForecastModelBacktestResultsInnerSerializer
     SeriesForecastModelBacktestResultsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,32 +118,35 @@ class _$SeriesForecastModelBacktestResultsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                SeriesForecastModelBacktestResultsInnerMethodEnum),
-          ) as SeriesForecastModelBacktestResultsInnerMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SeriesForecastModelBacktestResultsInnerMethodEnum,
+                    ),
+                  )
+                  as SeriesForecastModelBacktestResultsInnerMethodEnum;
           result.method = valueDes;
           break;
         case r'horizon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.horizon = valueDes;
           break;
         case r'meanPinballLoss':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.meanPinballLoss = valueDes;
           break;
         case r'intervalCoverageP05P95':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.intervalCoverageP05P95 = valueDes;
           break;
@@ -189,15 +197,15 @@ class SeriesForecastModelBacktestResultsInnerMethodEnum extends EnumClass {
       _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend;
 
   static Serializer<SeriesForecastModelBacktestResultsInnerMethodEnum>
-      get serializer =>
-          _$seriesForecastModelBacktestResultsInnerMethodEnumSerializer;
+  get serializer =>
+      _$seriesForecastModelBacktestResultsInnerMethodEnumSerializer;
 
   const SeriesForecastModelBacktestResultsInnerMethodEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<SeriesForecastModelBacktestResultsInnerMethodEnum>
-      get values => _$seriesForecastModelBacktestResultsInnerMethodEnumValues;
+  get values => _$seriesForecastModelBacktestResultsInnerMethodEnumValues;
   static SeriesForecastModelBacktestResultsInnerMethodEnum valueOf(
-          String name) =>
-      _$seriesForecastModelBacktestResultsInnerMethodEnumValueOf(name);
+    String name,
+  ) => _$seriesForecastModelBacktestResultsInnerMethodEnumValueOf(name);
 }

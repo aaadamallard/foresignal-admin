@@ -19,12 +19,12 @@ class _$PeerIngestKey extends PeerIngestKey {
   factory _$PeerIngestKey([void Function(PeerIngestKeyBuilder)? updates]) =>
       (PeerIngestKeyBuilder()..update(updates))._build();
 
-  _$PeerIngestKey._(
-      {required this.peerId,
-      required this.key,
-      required this.keyPrefix,
-      required this.createdAt})
-      : super._();
+  _$PeerIngestKey._({
+    required this.peerId,
+    required this.key,
+    required this.keyPrefix,
+    required this.createdAt,
+  }) : super._();
   @override
   PeerIngestKey rebuild(void Function(PeerIngestKeyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,16 +114,29 @@ class PeerIngestKeyBuilder
   PeerIngestKey build() => _build();
 
   _$PeerIngestKey _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PeerIngestKey._(
           peerId: BuiltValueNullFieldError.checkNotNull(
-              peerId, r'PeerIngestKey', 'peerId'),
+            peerId,
+            r'PeerIngestKey',
+            'peerId',
+          ),
           key: BuiltValueNullFieldError.checkNotNull(
-              key, r'PeerIngestKey', 'key'),
+            key,
+            r'PeerIngestKey',
+            'key',
+          ),
           keyPrefix: BuiltValueNullFieldError.checkNotNull(
-              keyPrefix, r'PeerIngestKey', 'keyPrefix'),
+            keyPrefix,
+            r'PeerIngestKey',
+            'keyPrefix',
+          ),
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'PeerIngestKey', 'createdAt'),
+            createdAt,
+            r'PeerIngestKey',
+            'createdAt',
+          ),
         );
     replace(_$result);
     return _$result;

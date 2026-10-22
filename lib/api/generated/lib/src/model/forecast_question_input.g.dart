@@ -16,7 +16,8 @@ const ForecastQuestionInputTypeEnum _$forecastQuestionInputTypeEnum_numeric =
     const ForecastQuestionInputTypeEnum._('numeric');
 
 ForecastQuestionInputTypeEnum _$forecastQuestionInputTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'binary':
       return _$forecastQuestionInputTypeEnum_binary;
@@ -32,16 +33,17 @@ ForecastQuestionInputTypeEnum _$forecastQuestionInputTypeEnumValueOf(
 }
 
 final BuiltSet<ForecastQuestionInputTypeEnum>
-    _$forecastQuestionInputTypeEnumValues = BuiltSet<
-        ForecastQuestionInputTypeEnum>(const <ForecastQuestionInputTypeEnum>[
-  _$forecastQuestionInputTypeEnum_binary,
-  _$forecastQuestionInputTypeEnum_multiple,
-  _$forecastQuestionInputTypeEnum_ordered,
-  _$forecastQuestionInputTypeEnum_numeric,
-]);
+_$forecastQuestionInputTypeEnumValues = BuiltSet<ForecastQuestionInputTypeEnum>(
+  const <ForecastQuestionInputTypeEnum>[
+    _$forecastQuestionInputTypeEnum_binary,
+    _$forecastQuestionInputTypeEnum_multiple,
+    _$forecastQuestionInputTypeEnum_ordered,
+    _$forecastQuestionInputTypeEnum_numeric,
+  ],
+);
 
 Serializer<ForecastQuestionInputTypeEnum>
-    _$forecastQuestionInputTypeEnumSerializer =
+_$forecastQuestionInputTypeEnumSerializer =
     _$ForecastQuestionInputTypeEnumSerializer();
 
 class _$ForecastQuestionInputTypeEnumSerializer
@@ -66,16 +68,19 @@ class _$ForecastQuestionInputTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecastQuestionInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastQuestionInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastQuestionInputTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastQuestionInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastQuestionInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastQuestionInput extends ForecastQuestionInput {
@@ -106,29 +111,29 @@ class _$ForecastQuestionInput extends ForecastQuestionInput {
   @override
   final bool? private;
 
-  factory _$ForecastQuestionInput(
-          [void Function(ForecastQuestionInputBuilder)? updates]) =>
-      (ForecastQuestionInputBuilder()..update(updates))._build();
+  factory _$ForecastQuestionInput([
+    void Function(ForecastQuestionInputBuilder)? updates,
+  ]) => (ForecastQuestionInputBuilder()..update(updates))._build();
 
-  _$ForecastQuestionInput._(
-      {required this.title,
-      required this.type,
-      this.outcomes,
-      required this.resolutionCriteria,
-      required this.resolver,
-      this.opensAt,
-      required this.closesAt,
-      required this.resolveBy,
-      required this.category,
-      this.tags,
-      this.links,
-      this.dedupKey,
-      this.private})
-      : super._();
+  _$ForecastQuestionInput._({
+    required this.title,
+    required this.type,
+    this.outcomes,
+    required this.resolutionCriteria,
+    required this.resolver,
+    this.opensAt,
+    required this.closesAt,
+    required this.resolveBy,
+    required this.category,
+    this.tags,
+    this.links,
+    this.dedupKey,
+    this.private,
+  }) : super._();
   @override
   ForecastQuestionInput rebuild(
-          void Function(ForecastQuestionInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastQuestionInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastQuestionInputBuilder toBuilder() =>
@@ -295,25 +300,42 @@ class ForecastQuestionInputBuilder
   _$ForecastQuestionInput _build() {
     _$ForecastQuestionInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastQuestionInput._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ForecastQuestionInput', 'title'),
+              title,
+              r'ForecastQuestionInput',
+              'title',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ForecastQuestionInput', 'type'),
+              type,
+              r'ForecastQuestionInput',
+              'type',
+            ),
             outcomes: _outcomes?.build(),
             resolutionCriteria: BuiltValueNullFieldError.checkNotNull(
-                resolutionCriteria,
-                r'ForecastQuestionInput',
-                'resolutionCriteria'),
+              resolutionCriteria,
+              r'ForecastQuestionInput',
+              'resolutionCriteria',
+            ),
             resolver: resolver.build(),
             opensAt: opensAt,
             closesAt: BuiltValueNullFieldError.checkNotNull(
-                closesAt, r'ForecastQuestionInput', 'closesAt'),
+              closesAt,
+              r'ForecastQuestionInput',
+              'closesAt',
+            ),
             resolveBy: BuiltValueNullFieldError.checkNotNull(
-                resolveBy, r'ForecastQuestionInput', 'resolveBy'),
+              resolveBy,
+              r'ForecastQuestionInput',
+              'resolveBy',
+            ),
             category: BuiltValueNullFieldError.checkNotNull(
-                category, r'ForecastQuestionInput', 'category'),
+              category,
+              r'ForecastQuestionInput',
+              'category',
+            ),
             tags: _tags?.build(),
             links: _links?.build(),
             dedupKey: dedupKey,
@@ -334,7 +356,10 @@ class ForecastQuestionInputBuilder
         _links?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastQuestionInput', _$failedField, e.toString());
+          r'ForecastQuestionInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

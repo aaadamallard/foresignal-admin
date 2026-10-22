@@ -50,37 +50,37 @@ class _$AircraftRegistrationPayload extends AircraftRegistrationPayload {
   @override
   final String? name;
 
-  factory _$AircraftRegistrationPayload(
-          [void Function(AircraftRegistrationPayloadBuilder)? updates]) =>
-      (AircraftRegistrationPayloadBuilder()..update(updates))._build();
+  factory _$AircraftRegistrationPayload([
+    void Function(AircraftRegistrationPayloadBuilder)? updates,
+  ]) => (AircraftRegistrationPayloadBuilder()..update(updates))._build();
 
-  _$AircraftRegistrationPayload._(
-      {required this.nNumber,
-      this.serial,
-      this.mfrMdlCode,
-      this.manufacturer,
-      this.model,
-      this.typeAircraft,
-      this.typeEngine,
-      this.engines,
-      this.seats,
-      this.weightClass,
-      this.yearMfr,
-      this.registrantType,
-      this.certIssueDate,
-      this.airworthinessDate,
-      this.expirationDate,
-      this.statusCode,
-      this.modeSHex,
-      this.fractionalOwner,
-      this.kitMfr,
-      this.kitModel,
-      this.name})
-      : super._();
+  _$AircraftRegistrationPayload._({
+    required this.nNumber,
+    this.serial,
+    this.mfrMdlCode,
+    this.manufacturer,
+    this.model,
+    this.typeAircraft,
+    this.typeEngine,
+    this.engines,
+    this.seats,
+    this.weightClass,
+    this.yearMfr,
+    this.registrantType,
+    this.certIssueDate,
+    this.airworthinessDate,
+    this.expirationDate,
+    this.statusCode,
+    this.modeSHex,
+    this.fractionalOwner,
+    this.kitMfr,
+    this.kitModel,
+    this.name,
+  }) : super._();
   @override
   AircraftRegistrationPayload rebuild(
-          void Function(AircraftRegistrationPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AircraftRegistrationPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AircraftRegistrationPayloadBuilder toBuilder() =>
@@ -171,8 +171,10 @@ class _$AircraftRegistrationPayload extends AircraftRegistrationPayload {
 
 class AircraftRegistrationPayloadBuilder
     implements
-        Builder<AircraftRegistrationPayload,
-            AircraftRegistrationPayloadBuilder> {
+        Builder<
+          AircraftRegistrationPayload,
+          AircraftRegistrationPayloadBuilder
+        > {
   _$AircraftRegistrationPayload? _$v;
 
   String? _nNumber;
@@ -311,10 +313,14 @@ class AircraftRegistrationPayloadBuilder
   AircraftRegistrationPayload build() => _build();
 
   _$AircraftRegistrationPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AircraftRegistrationPayload._(
           nNumber: BuiltValueNullFieldError.checkNotNull(
-              nNumber, r'AircraftRegistrationPayload', 'nNumber'),
+            nNumber,
+            r'AircraftRegistrationPayload',
+            'nNumber',
+          ),
           serial: serial,
           mfrMdlCode: mfrMdlCode,
           manufacturer: manufacturer,

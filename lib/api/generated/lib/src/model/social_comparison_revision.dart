@@ -49,9 +49,9 @@ abstract class SocialComparisonRevision
 
   SocialComparisonRevision._();
 
-  factory SocialComparisonRevision(
-          [void updates(SocialComparisonRevisionBuilder b)]) =
-      _$SocialComparisonRevision;
+  factory SocialComparisonRevision([
+    void updates(SocialComparisonRevisionBuilder b),
+  ]) = _$SocialComparisonRevision;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialComparisonRevisionBuilder b) => b;
@@ -66,7 +66,7 @@ class _$SocialComparisonRevisionSerializer
   @override
   final Iterable<Type> types = const [
     SocialComparisonRevision,
-    _$SocialComparisonRevision
+    _$SocialComparisonRevision,
   ];
 
   @override
@@ -96,8 +96,9 @@ class _$SocialComparisonRevisionSerializer
       yield r'previousStatus';
       yield serializers.serialize(
         object.previousStatus,
-        specifiedType:
-            const FullType.nullable(SocialComparisonRevisionPreviousStatusEnum),
+        specifiedType: const FullType.nullable(
+          SocialComparisonRevisionPreviousStatusEnum,
+        ),
       );
     }
     yield r'reason';
@@ -127,9 +128,11 @@ class _$SocialComparisonRevisionSerializer
     SocialComparisonRevision object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -145,56 +148,71 @@ class _$SocialComparisonRevisionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'revision':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.revision = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialComparisonRevisionStatusEnum),
-          ) as SocialComparisonRevisionStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialComparisonRevisionStatusEnum,
+                    ),
+                  )
+                  as SocialComparisonRevisionStatusEnum;
           result.status = valueDes;
           break;
         case r'previousStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                SocialComparisonRevisionPreviousStatusEnum),
-          ) as SocialComparisonRevisionPreviousStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialComparisonRevisionPreviousStatusEnum,
+                    ),
+                  )
+                  as SocialComparisonRevisionPreviousStatusEnum?;
           if (valueDes == null) continue;
           result.previousStatus = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reason = valueDes;
           break;
         case r'physicalEvidenceRefs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.physicalEvidenceRefs.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
@@ -273,7 +291,7 @@ class SocialComparisonRevisionPreviousStatusEnum extends EnumClass {
       _$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage;
 
   static Serializer<SocialComparisonRevisionPreviousStatusEnum>
-      get serializer => _$socialComparisonRevisionPreviousStatusEnumSerializer;
+  get serializer => _$socialComparisonRevisionPreviousStatusEnumSerializer;
 
   const SocialComparisonRevisionPreviousStatusEnum._(String name) : super(name);
 

@@ -25,9 +25,9 @@ abstract class MetricProjectionLabelsInner
 
   MetricProjectionLabelsInner._();
 
-  factory MetricProjectionLabelsInner(
-          [void updates(MetricProjectionLabelsInnerBuilder b)]) =
-      _$MetricProjectionLabelsInner;
+  factory MetricProjectionLabelsInner([
+    void updates(MetricProjectionLabelsInnerBuilder b),
+  ]) = _$MetricProjectionLabelsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MetricProjectionLabelsInnerBuilder b) => b;
@@ -42,7 +42,7 @@ class _$MetricProjectionLabelsInnerSerializer
   @override
   final Iterable<Type> types = const [
     MetricProjectionLabelsInner,
-    _$MetricProjectionLabelsInner
+    _$MetricProjectionLabelsInner,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$MetricProjectionLabelsInnerSerializer
     MetricProjectionLabelsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$MetricProjectionLabelsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         default:

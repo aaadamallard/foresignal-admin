@@ -19,12 +19,12 @@ class _$ProductStatus extends ProductStatus {
   factory _$ProductStatus([void Function(ProductStatusBuilder)? updates]) =>
       (ProductStatusBuilder()..update(updates))._build();
 
-  _$ProductStatus._(
-      {required this.health,
-      required this.stale,
-      this.lastFrameAt,
-      this.reason})
-      : super._();
+  _$ProductStatus._({
+    required this.health,
+    required this.stale,
+    this.lastFrameAt,
+    this.reason,
+  }) : super._();
   @override
   ProductStatus rebuild(void Function(ProductStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,12 +114,19 @@ class ProductStatusBuilder
   ProductStatus build() => _build();
 
   _$ProductStatus _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProductStatus._(
           health: BuiltValueNullFieldError.checkNotNull(
-              health, r'ProductStatus', 'health'),
+            health,
+            r'ProductStatus',
+            'health',
+          ),
           stale: BuiltValueNullFieldError.checkNotNull(
-              stale, r'ProductStatus', 'stale'),
+            stale,
+            r'ProductStatus',
+            'stale',
+          ),
           lastFrameAt: lastFrameAt,
           reason: reason,
         );

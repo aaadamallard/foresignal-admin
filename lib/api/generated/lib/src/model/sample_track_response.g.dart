@@ -18,21 +18,21 @@ class _$SampleTrackResponse extends SampleTrackResponse {
   @override
   final DateTime? serverTime;
 
-  factory _$SampleTrackResponse(
-          [void Function(SampleTrackResponseBuilder)? updates]) =>
-      (SampleTrackResponseBuilder()..update(updates))._build();
+  factory _$SampleTrackResponse([
+    void Function(SampleTrackResponseBuilder)? updates,
+  ]) => (SampleTrackResponseBuilder()..update(updates))._build();
 
-  _$SampleTrackResponse._(
-      {this.record,
-      required this.products,
-      required this.points,
-      this.attribution,
-      this.serverTime})
-      : super._();
+  _$SampleTrackResponse._({
+    this.record,
+    required this.products,
+    required this.points,
+    this.attribution,
+    this.serverTime,
+  }) : super._();
   @override
   SampleTrackResponse rebuild(
-          void Function(SampleTrackResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SampleTrackResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SampleTrackResponseBuilder toBuilder() =>
@@ -135,7 +135,8 @@ class SampleTrackResponseBuilder
   _$SampleTrackResponse _build() {
     _$SampleTrackResponse _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SampleTrackResponse._(
             record: record,
             products: products.build(),
@@ -154,7 +155,10 @@ class SampleTrackResponseBuilder
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SampleTrackResponse', _$failedField, e.toString());
+          r'SampleTrackResponse',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

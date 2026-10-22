@@ -14,9 +14,9 @@ class _$NativePushPayload extends NativePushPayload {
   @override
   final bool? exercise;
 
-  factory _$NativePushPayload(
-          [void Function(NativePushPayloadBuilder)? updates]) =>
-      (NativePushPayloadBuilder()..update(updates))._build();
+  factory _$NativePushPayload([
+    void Function(NativePushPayloadBuilder)? updates,
+  ]) => (NativePushPayloadBuilder()..update(updates))._build();
 
   _$NativePushPayload._({this.apns, this.fcm, this.exercise}) : super._();
   @override
@@ -105,7 +105,8 @@ class NativePushPayloadBuilder
   _$NativePushPayload _build() {
     _$NativePushPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NativePushPayload._(
             apns: _apns?.build(),
             fcm: _fcm?.build(),
@@ -120,7 +121,10 @@ class NativePushPayloadBuilder
         _fcm?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NativePushPayload', _$failedField, e.toString());
+          r'NativePushPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

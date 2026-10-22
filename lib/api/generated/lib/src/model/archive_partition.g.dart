@@ -24,9 +24,9 @@ ArchivePartitionTierEnum _$archivePartitionTierEnumValueOf(String name) {
 
 final BuiltSet<ArchivePartitionTierEnum> _$archivePartitionTierEnumValues =
     BuiltSet<ArchivePartitionTierEnum>(const <ArchivePartitionTierEnum>[
-  _$archivePartitionTierEnum_std,
-  _$archivePartitionTierEnum_trk,
-]);
+      _$archivePartitionTierEnum_std,
+      _$archivePartitionTierEnum_trk,
+    ]);
 
 Serializer<ArchivePartitionTierEnum> _$archivePartitionTierEnumSerializer =
     _$ArchivePartitionTierEnumSerializer();
@@ -48,16 +48,20 @@ class _$ArchivePartitionTierEnumSerializer
   final String wireName = 'ArchivePartitionTierEnum';
 
   @override
-  Object serialize(Serializers serializers, ArchivePartitionTierEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ArchivePartitionTierEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ArchivePartitionTierEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ArchivePartitionTierEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ArchivePartitionTierEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ArchivePartition extends ArchivePartition {
@@ -74,18 +78,18 @@ class _$ArchivePartition extends ArchivePartition {
   @override
   final ExportLicenceSummary? licence;
 
-  factory _$ArchivePartition(
-          [void Function(ArchivePartitionBuilder)? updates]) =>
-      (ArchivePartitionBuilder()..update(updates))._build();
+  factory _$ArchivePartition([
+    void Function(ArchivePartitionBuilder)? updates,
+  ]) => (ArchivePartitionBuilder()..update(updates))._build();
 
-  _$ArchivePartition._(
-      {required this.tier,
-      required this.sourceId,
-      required this.date,
-      required this.path,
-      required this.files,
-      this.licence})
-      : super._();
+  _$ArchivePartition._({
+    required this.tier,
+    required this.sourceId,
+    required this.date,
+    required this.path,
+    required this.files,
+    this.licence,
+  }) : super._();
   @override
   ArchivePartition rebuild(void Function(ArchivePartitionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -198,16 +202,29 @@ class ArchivePartitionBuilder
   _$ArchivePartition _build() {
     _$ArchivePartition _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ArchivePartition._(
             tier: BuiltValueNullFieldError.checkNotNull(
-                tier, r'ArchivePartition', 'tier'),
+              tier,
+              r'ArchivePartition',
+              'tier',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'ArchivePartition', 'sourceId'),
+              sourceId,
+              r'ArchivePartition',
+              'sourceId',
+            ),
             date: BuiltValueNullFieldError.checkNotNull(
-                date, r'ArchivePartition', 'date'),
+              date,
+              r'ArchivePartition',
+              'date',
+            ),
             path: BuiltValueNullFieldError.checkNotNull(
-                path, r'ArchivePartition', 'path'),
+              path,
+              r'ArchivePartition',
+              'path',
+            ),
             files: files.build(),
             licence: _licence?.build(),
           );
@@ -220,7 +237,10 @@ class ArchivePartitionBuilder
         _licence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ArchivePartition', _$failedField, e.toString());
+          r'ArchivePartition',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

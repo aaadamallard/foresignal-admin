@@ -89,21 +89,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/groups/{groupId}/members'.replaceAll(
-        '{' r'groupId' '}',
-        encodeQueryParameter(_serializers, groupId, const FullType(String))
-            .toString());
+      '{'
+      r'groupId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        groupId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -115,14 +115,13 @@ class CollaborationApi {
 
     try {
       const _type = FullType(GroupMembersInput);
-      _bodyData =
-          _serializers.serialize(groupMembersInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        groupMembersInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -145,9 +144,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Group),
-            ) as Group;
+                  rawResponse,
+                  specifiedType: const FullType(Group),
+                )
+                as Group;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -196,21 +196,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tags/{tagId}/assign'.replaceAll(
-        '{' r'tagId' '}',
-        encodeQueryParameter(_serializers, tagId, const FullType(String))
-            .toString());
+      '{'
+      r'tagId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tagId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -225,10 +225,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(tagRefsRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -251,9 +248,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TagAssignResult),
-            ) as TagAssignResult;
+                  rawResponse,
+                  specifiedType: const FullType(TagAssignResult),
+                )
+                as TagAssignResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -302,16 +300,10 @@ class CollaborationApi {
     final _path = r'/v1/evidence-items';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -323,14 +315,13 @@ class CollaborationApi {
 
     try {
       const _type = FullType(EvidenceItemInput);
-      _bodyData =
-          _serializers.serialize(evidenceItemInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        evidenceItemInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -353,9 +344,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EvidenceItem),
-            ) as EvidenceItem;
+                  rawResponse,
+                  specifiedType: const FullType(EvidenceItem),
+                )
+                as EvidenceItem;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -404,16 +396,10 @@ class CollaborationApi {
     final _path = r'/v1/groups';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -428,10 +414,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(groupInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -454,9 +437,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Group),
-            ) as Group;
+                  rawResponse,
+                  specifiedType: const FullType(Group),
+                )
+                as Group;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -505,16 +489,10 @@ class CollaborationApi {
     final _path = r'/v1/principals';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -529,10 +507,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(principalInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -555,9 +530,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Principal),
-            ) as Principal;
+                  rawResponse,
+                  specifiedType: const FullType(Principal),
+                )
+                as Principal;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -606,21 +582,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/principals/{principalId}/tokens'.replaceAll(
-        '{' r'principalId' '}',
-        encodeQueryParameter(_serializers, principalId, const FullType(String))
-            .toString());
+      '{'
+      r'principalId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        principalId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -635,10 +611,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(apiTokenInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -661,9 +634,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiTokenCreated),
-            ) as ApiTokenCreated;
+                  rawResponse,
+                  specifiedType: const FullType(ApiTokenCreated),
+                )
+                as ApiTokenCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -712,16 +686,10 @@ class CollaborationApi {
     final _path = r'/v1/saved-searches';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -733,14 +701,13 @@ class CollaborationApi {
 
     try {
       const _type = FullType(SavedSearchInput);
-      _bodyData =
-          _serializers.serialize(savedSearchInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        savedSearchInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -763,9 +730,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedSearch),
-            ) as SavedSearch;
+                  rawResponse,
+                  specifiedType: const FullType(SavedSearch),
+                )
+                as SavedSearch;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -814,16 +782,10 @@ class CollaborationApi {
     final _path = r'/v1/tags';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -838,10 +800,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(tagInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -864,9 +823,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Tag),
-            ) as Tag;
+                  rawResponse,
+                  specifiedType: const FullType(Tag),
+                )
+                as Tag;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -913,21 +873,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/attachments/{attachmentId}'.replaceAll(
-        '{' r'attachmentId' '}',
-        encodeQueryParameter(_serializers, attachmentId, const FullType(String))
-            .toString());
+      '{'
+      r'attachmentId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        attachmentId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -969,22 +929,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/evidence-items/{evidenceItemId}'.replaceAll(
-        '{' r'evidenceItemId' '}',
-        encodeQueryParameter(
-                _serializers, evidenceItemId, const FullType(String))
-            .toString());
+      '{'
+      r'evidenceItemId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        evidenceItemId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1026,21 +985,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/groups/{groupId}'.replaceAll(
-        '{' r'groupId' '}',
-        encodeQueryParameter(_serializers, groupId, const FullType(String))
-            .toString());
+      '{'
+      r'groupId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        groupId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1082,22 +1041,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/saved-searches/{savedSearchId}'.replaceAll(
-        '{' r'savedSearchId' '}',
-        encodeQueryParameter(
-                _serializers, savedSearchId, const FullType(String))
-            .toString());
+      '{'
+      r'savedSearchId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        savedSearchId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1139,21 +1097,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tags/{tagId}'.replaceAll(
-        '{' r'tagId' '}',
-        encodeQueryParameter(_serializers, tagId, const FullType(String))
-            .toString());
+      '{'
+      r'tagId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tagId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1195,21 +1153,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/attachments/{attachmentId}'.replaceAll(
-        '{' r'attachmentId' '}',
-        encodeQueryParameter(_serializers, attachmentId, const FullType(String))
-            .toString());
+      '{'
+      r'attachmentId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        attachmentId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1231,9 +1189,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CollabAttachment),
-            ) as CollabAttachment;
+                  rawResponse,
+                  specifiedType: const FullType(CollabAttachment),
+                )
+                as CollabAttachment;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1280,22 +1239,22 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/attachments/{attachmentId}/content'.replaceAll(
-        '{' r'attachmentId' '}',
-        encodeQueryParameter(_serializers, attachmentId, const FullType(String))
-            .toString());
+      '{'
+      r'attachmentId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        attachmentId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1361,22 +1320,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/evidence-items/{evidenceItemId}'.replaceAll(
-        '{' r'evidenceItemId' '}',
-        encodeQueryParameter(
-                _serializers, evidenceItemId, const FullType(String))
-            .toString());
+      '{'
+      r'evidenceItemId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        evidenceItemId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1398,9 +1356,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EvidenceItem),
-            ) as EvidenceItem;
+                  rawResponse,
+                  specifiedType: const FullType(EvidenceItem),
+                )
+                as EvidenceItem;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1447,21 +1406,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/groups/{groupId}'.replaceAll(
-        '{' r'groupId' '}',
-        encodeQueryParameter(_serializers, groupId, const FullType(String))
-            .toString());
+      '{'
+      r'groupId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        groupId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1483,9 +1442,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Group),
-            ) as Group;
+                  rawResponse,
+                  specifiedType: const FullType(Group),
+                )
+                as Group;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1532,16 +1492,10 @@ class CollaborationApi {
     final _path = r'/v1/me';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1563,9 +1517,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Me),
-            ) as Me;
+                  rawResponse,
+                  specifiedType: const FullType(Me),
+                )
+                as Me;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1612,21 +1567,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/objects/{ref}/acl'.replaceAll(
-        '{' r'ref' '}',
-        encodeQueryParameter(_serializers, ref, const FullType(String))
-            .toString());
+      '{'
+      r'ref'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ref,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1648,9 +1603,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ObjectAcl),
-            ) as ObjectAcl;
+                  rawResponse,
+                  specifiedType: const FullType(ObjectAcl),
+                )
+                as ObjectAcl;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1697,21 +1653,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/principals/{principalId}'.replaceAll(
-        '{' r'principalId' '}',
-        encodeQueryParameter(_serializers, principalId, const FullType(String))
-            .toString());
+      '{'
+      r'principalId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        principalId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1733,9 +1689,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(GetPrincipal200Response),
-            ) as GetPrincipal200Response;
+                  rawResponse,
+                  specifiedType: const FullType(GetPrincipal200Response),
+                )
+                as GetPrincipal200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1782,22 +1739,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/saved-searches/{savedSearchId}'.replaceAll(
-        '{' r'savedSearchId' '}',
-        encodeQueryParameter(
-                _serializers, savedSearchId, const FullType(String))
-            .toString());
+      '{'
+      r'savedSearchId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        savedSearchId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1819,9 +1775,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedSearch),
-            ) as SavedSearch;
+                  rawResponse,
+                  specifiedType: const FullType(SavedSearch),
+                )
+                as SavedSearch;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1868,21 +1825,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tags/{tagId}'.replaceAll(
-        '{' r'tagId' '}',
-        encodeQueryParameter(_serializers, tagId, const FullType(String))
-            .toString());
+      '{'
+      r'tagId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tagId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1904,9 +1861,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Tag),
-            ) as Tag;
+                  rawResponse,
+                  specifiedType: const FullType(Tag),
+                )
+                as Tag;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1965,16 +1923,10 @@ class CollaborationApi {
     final _path = r'/v1/evidence-items';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1986,18 +1938,30 @@ class CollaborationApi {
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (sourceReliability != null)
         r'sourceReliability': encodeQueryParameter(
-            _serializers, sourceReliability, const FullType(String)),
+          _serializers,
+          sourceReliability,
+          const FullType(String),
+        ),
       if (tag != null)
         r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
       if (investigationId != null)
         r'investigationId': encodeQueryParameter(
-            _serializers, investigationId, const FullType(String)),
+          _serializers,
+          investigationId,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2016,9 +1980,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EvidenceItemPage),
-            ) as EvidenceItemPage;
+                  rawResponse,
+                  specifiedType: const FullType(EvidenceItemPage),
+                )
+                as EvidenceItemPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2073,16 +2038,10 @@ class CollaborationApi {
     final _path = r'/v1/groups';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2093,14 +2052,23 @@ class CollaborationApi {
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (member != null)
-        r'member':
-            encodeQueryParameter(_serializers, member, const FullType(bool)),
+        r'member': encodeQueryParameter(
+          _serializers,
+          member,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2119,9 +2087,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(GroupPage),
-            ) as GroupPage;
+                  rawResponse,
+                  specifiedType: const FullType(GroupPage),
+                )
+                as GroupPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2178,16 +2147,10 @@ class CollaborationApi {
     final _path = r'/v1/inbox';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2196,20 +2159,35 @@ class CollaborationApi {
 
     final _queryParameters = <String, dynamic>{
       if (unread != null)
-        r'unread':
-            encodeQueryParameter(_serializers, unread, const FullType(bool)),
+        r'unread': encodeQueryParameter(
+          _serializers,
+          unread,
+          const FullType(bool),
+        ),
       if (category != null)
         r'category': encodeQueryParameter(
-            _serializers, category, const FullType(String)),
+          _serializers,
+          category,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2228,9 +2206,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InboxPage),
-            ) as InboxPage;
+                  rawResponse,
+                  specifiedType: const FullType(InboxPage),
+                )
+                as InboxPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2267,7 +2246,7 @@ class CollaborationApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<NotificationPreference>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<NotificationPreference>>>
-      listMyNotificationPreferences({
+  listMyNotificationPreferences({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2278,16 +2257,10 @@ class CollaborationApi {
     final _path = r'/v1/me/notification-preferences';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2309,10 +2282,12 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(NotificationPreference)]),
-            ) as BuiltList<NotificationPreference>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(NotificationPreference),
+                  ]),
+                )
+                as BuiltList<NotificationPreference>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2365,16 +2340,10 @@ class CollaborationApi {
     final _path = r'/v1/my';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2384,13 +2353,22 @@ class CollaborationApi {
     final _queryParameters = <String, dynamic>{
       if (type != null)
         r'type': encodeQueryParameter(
-            _serializers, type, const FullType(ShareableType)),
+          _serializers,
+          type,
+          const FullType(ShareableType),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2409,9 +2387,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ObjectEnvelopePage),
-            ) as ObjectEnvelopePage;
+                  rawResponse,
+                  specifiedType: const FullType(ObjectEnvelopePage),
+                )
+                as ObjectEnvelopePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2458,21 +2437,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/objects/{ref}/tags'.replaceAll(
-        '{' r'ref' '}',
-        encodeQueryParameter(_serializers, ref, const FullType(String))
-            .toString());
+      '{'
+      r'ref'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ref,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2494,10 +2473,12 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(TagAssignment)]),
-            ) as BuiltList<TagAssignment>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(TagAssignment),
+                  ]),
+                )
+                as BuiltList<TagAssignment>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2552,16 +2533,10 @@ class CollaborationApi {
     final _path = r'/v1/principals';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2572,14 +2547,23 @@ class CollaborationApi {
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (kind != null)
-        r'kind':
-            encodeQueryParameter(_serializers, kind, const FullType(String)),
+        r'kind': encodeQueryParameter(
+          _serializers,
+          kind,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2598,9 +2582,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PrincipalSummaryPage),
-            ) as PrincipalSummaryPage;
+                  rawResponse,
+                  specifiedType: const FullType(PrincipalSummaryPage),
+                )
+                as PrincipalSummaryPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2651,16 +2636,10 @@ class CollaborationApi {
     final _path = r'/v1/saved-searches';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2669,11 +2648,17 @@ class CollaborationApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2692,9 +2677,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedSearchPage),
-            ) as SavedSearchPage;
+                  rawResponse,
+                  specifiedType: const FullType(SavedSearchPage),
+                )
+                as SavedSearchPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2747,16 +2733,10 @@ class CollaborationApi {
     final _path = r'/v1/shared-with-me';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2766,13 +2746,22 @@ class CollaborationApi {
     final _queryParameters = <String, dynamic>{
       if (type != null)
         r'type': encodeQueryParameter(
-            _serializers, type, const FullType(ShareableType)),
+          _serializers,
+          type,
+          const FullType(ShareableType),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2791,9 +2780,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SharedItemPage),
-            ) as SharedItemPage;
+                  rawResponse,
+                  specifiedType: const FullType(SharedItemPage),
+                )
+                as SharedItemPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2846,21 +2836,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tags/{tagId}/objects'.replaceAll(
-        '{' r'tagId' '}',
-        encodeQueryParameter(_serializers, tagId, const FullType(String))
-            .toString());
+      '{'
+      r'tagId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tagId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2869,14 +2859,23 @@ class CollaborationApi {
 
     final _queryParameters = <String, dynamic>{
       if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
+        r'type': encodeQueryParameter(
+          _serializers,
+          type,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2895,9 +2894,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ObjectEnvelopePage),
-            ) as ObjectEnvelopePage;
+                  rawResponse,
+                  specifiedType: const FullType(ObjectEnvelopePage),
+                )
+                as ObjectEnvelopePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2952,16 +2952,10 @@ class CollaborationApi {
     final _path = r'/v1/tags';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2971,15 +2965,24 @@ class CollaborationApi {
     final _queryParameters = <String, dynamic>{
       if (namespace != null)
         r'namespace': encodeQueryParameter(
-            _serializers, namespace, const FullType(String)),
+          _serializers,
+          namespace,
+          const FullType(String),
+        ),
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2998,9 +3001,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TagPage),
-            ) as TagPage;
+                  rawResponse,
+                  specifiedType: const FullType(TagPage),
+                )
+                as TagPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3049,21 +3053,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/groups/{groupId}/members'.replaceAll(
-        '{' r'groupId' '}',
-        encodeQueryParameter(_serializers, groupId, const FullType(String))
-            .toString());
+      '{'
+      r'groupId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        groupId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3095,9 +3099,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Group),
-            ) as Group;
+                  rawResponse,
+                  specifiedType: const FullType(Group),
+                )
+                as Group;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3135,7 +3140,7 @@ class CollaborationApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<NotificationPreference>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<NotificationPreference>>>
-      replaceMyNotificationPreferences({
+  replaceMyNotificationPreferences({
     required NotificationPreferencesInput notificationPreferencesInput,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -3147,16 +3152,10 @@ class CollaborationApi {
     final _path = r'/v1/me/notification-preferences';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3168,14 +3167,13 @@ class CollaborationApi {
 
     try {
       const _type = FullType(NotificationPreferencesInput);
-      _bodyData = _serializers.serialize(notificationPreferencesInput,
-          specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        notificationPreferencesInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3198,10 +3196,12 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(NotificationPreference)]),
-            ) as BuiltList<NotificationPreference>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(NotificationPreference),
+                  ]),
+                )
+                as BuiltList<NotificationPreference>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3250,21 +3250,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/objects/{ref}/acl'.replaceAll(
-        '{' r'ref' '}',
-        encodeQueryParameter(_serializers, ref, const FullType(String))
-            .toString());
+      '{'
+      r'ref'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ref,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3279,10 +3279,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(objectAclInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3305,9 +3302,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ObjectAcl),
-            ) as ObjectAcl;
+                  rawResponse,
+                  specifiedType: const FullType(ObjectAcl),
+                )
+                as ObjectAcl;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3356,21 +3354,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/annotations/{annotationId}/replies'.replaceAll(
-        '{' r'annotationId' '}',
-        encodeQueryParameter(_serializers, annotationId, const FullType(String))
-            .toString());
+      '{'
+      r'annotationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        annotationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3382,14 +3380,13 @@ class CollaborationApi {
 
     try {
       const _type = FullType(AnnotationReplyInput);
-      _bodyData =
-          _serializers.serialize(annotationReplyInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        annotationReplyInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3412,9 +3409,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Annotation),
-            ) as Annotation;
+                  rawResponse,
+                  specifiedType: const FullType(Annotation),
+                )
+                as Annotation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3463,21 +3461,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/annotations/{annotationId}/resolve'.replaceAll(
-        '{' r'annotationId' '}',
-        encodeQueryParameter(_serializers, annotationId, const FullType(String))
-            .toString());
+      '{'
+      r'annotationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        annotationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3491,14 +3489,13 @@ class CollaborationApi {
       const _type = FullType(AnnotationResolveInput);
       _bodyData = annotationResolveInput == null
           ? null
-          : _serializers.serialize(annotationResolveInput,
-              specifiedType: _type);
+          : _serializers.serialize(
+              annotationResolveInput,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3521,9 +3518,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Annotation),
-            ) as Annotation;
+                  rawResponse,
+                  specifiedType: const FullType(Annotation),
+                )
+                as Annotation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3574,22 +3572,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/saved-searches/{savedSearchId}/results'.replaceAll(
-        '{' r'savedSearchId' '}',
-        encodeQueryParameter(
-                _serializers, savedSearchId, const FullType(String))
-            .toString());
+      '{'
+      r'savedSearchId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        savedSearchId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3598,11 +3595,17 @@ class CollaborationApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -3621,9 +3624,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedSearchResultPage),
-            ) as SavedSearchResultPage;
+                  rawResponse,
+                  specifiedType: const FullType(SavedSearchResultPage),
+                )
+                as SavedSearchResultPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3672,21 +3676,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/objects/{ref}/share'.replaceAll(
-        '{' r'ref' '}',
-        encodeQueryParameter(_serializers, ref, const FullType(String))
-            .toString());
+      '{'
+      r'ref'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ref,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3701,10 +3705,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(shareRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3727,9 +3728,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ObjectAcl),
-            ) as ObjectAcl;
+                  rawResponse,
+                  specifiedType: const FullType(ObjectAcl),
+                )
+                as ObjectAcl;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3778,21 +3780,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tags/{tagId}/unassign'.replaceAll(
-        '{' r'tagId' '}',
-        encodeQueryParameter(_serializers, tagId, const FullType(String))
-            .toString());
+      '{'
+      r'tagId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tagId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3807,10 +3809,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(tagRefsRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3833,9 +3832,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TagAssignResult),
-            ) as TagAssignResult;
+                  rawResponse,
+                  specifiedType: const FullType(TagAssignResult),
+                )
+                as TagAssignResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3884,22 +3884,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/evidence-items/{evidenceItemId}'.replaceAll(
-        '{' r'evidenceItemId' '}',
-        encodeQueryParameter(
-                _serializers, evidenceItemId, const FullType(String))
-            .toString());
+      '{'
+      r'evidenceItemId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        evidenceItemId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -3911,14 +3910,13 @@ class CollaborationApi {
 
     try {
       const _type = FullType(EvidenceItemPatch);
-      _bodyData =
-          _serializers.serialize(evidenceItemPatch, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        evidenceItemPatch,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3941,9 +3939,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EvidenceItem),
-            ) as EvidenceItem;
+                  rawResponse,
+                  specifiedType: const FullType(EvidenceItem),
+                )
+                as EvidenceItem;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -3992,21 +3991,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/groups/{groupId}'.replaceAll(
-        '{' r'groupId' '}',
-        encodeQueryParameter(_serializers, groupId, const FullType(String))
-            .toString());
+      '{'
+      r'groupId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        groupId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -4021,10 +4020,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(groupPatch, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -4047,9 +4043,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Group),
-            ) as Group;
+                  rawResponse,
+                  specifiedType: const FullType(Group),
+                )
+                as Group;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -4098,21 +4095,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/principals/{principalId}'.replaceAll(
-        '{' r'principalId' '}',
-        encodeQueryParameter(_serializers, principalId, const FullType(String))
-            .toString());
+      '{'
+      r'principalId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        principalId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -4127,10 +4124,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(principalPatch, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -4153,9 +4147,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Principal),
-            ) as Principal;
+                  rawResponse,
+                  specifiedType: const FullType(Principal),
+                )
+                as Principal;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -4204,22 +4199,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/saved-searches/{savedSearchId}'.replaceAll(
-        '{' r'savedSearchId' '}',
-        encodeQueryParameter(
-                _serializers, savedSearchId, const FullType(String))
-            .toString());
+      '{'
+      r'savedSearchId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        savedSearchId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -4231,14 +4225,13 @@ class CollaborationApi {
 
     try {
       const _type = FullType(SavedSearchPatch);
-      _bodyData =
-          _serializers.serialize(savedSearchPatch, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        savedSearchPatch,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -4261,9 +4254,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedSearch),
-            ) as SavedSearch;
+                  rawResponse,
+                  specifiedType: const FullType(SavedSearch),
+                )
+                as SavedSearch;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -4312,21 +4306,21 @@ class CollaborationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tags/{tagId}'.replaceAll(
-        '{' r'tagId' '}',
-        encodeQueryParameter(_serializers, tagId, const FullType(String))
-            .toString());
+      '{'
+      r'tagId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tagId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -4341,10 +4335,7 @@ class CollaborationApi {
       _bodyData = _serializers.serialize(tagPatch, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -4367,9 +4358,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Tag),
-            ) as Tag;
+                  rawResponse,
+                  specifiedType: const FullType(Tag),
+                )
+                as Tag;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -4422,16 +4414,10 @@ class CollaborationApi {
     final _path = r'/v1/attachments';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -4445,18 +4431,21 @@ class CollaborationApi {
       _bodyData = FormData.fromMap(<String, dynamic>{
         r'file': file,
         if (tlp != null)
-          r'tlp':
-              encodeFormParameter(_serializers, tlp, const FullType(String)),
+          r'tlp': encodeFormParameter(
+            _serializers,
+            tlp,
+            const FullType(String),
+          ),
         if (visibility != null)
           r'visibility': encodeFormParameter(
-              _serializers, visibility, const FullType(Visibility)),
+            _serializers,
+            visibility,
+            const FullType(Visibility),
+          ),
       });
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -4479,9 +4468,10 @@ class CollaborationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CollabAttachment),
-            ) as CollabAttachment;
+                  rawResponse,
+                  specifiedType: const FullType(CollabAttachment),
+                )
+                as CollabAttachment;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

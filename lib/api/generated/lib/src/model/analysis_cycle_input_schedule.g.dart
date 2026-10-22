@@ -12,16 +12,16 @@ class _$AnalysisCycleInputSchedule extends AnalysisCycleInputSchedule {
   @override
   final String timezone;
 
-  factory _$AnalysisCycleInputSchedule(
-          [void Function(AnalysisCycleInputScheduleBuilder)? updates]) =>
-      (AnalysisCycleInputScheduleBuilder()..update(updates))._build();
+  factory _$AnalysisCycleInputSchedule([
+    void Function(AnalysisCycleInputScheduleBuilder)? updates,
+  ]) => (AnalysisCycleInputScheduleBuilder()..update(updates))._build();
 
   _$AnalysisCycleInputSchedule._({required this.cron, required this.timezone})
-      : super._();
+    : super._();
   @override
   AnalysisCycleInputSchedule rebuild(
-          void Function(AnalysisCycleInputScheduleBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisCycleInputScheduleBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisCycleInputScheduleBuilder toBuilder() =>
@@ -94,12 +94,19 @@ class AnalysisCycleInputScheduleBuilder
   AnalysisCycleInputSchedule build() => _build();
 
   _$AnalysisCycleInputSchedule _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalysisCycleInputSchedule._(
           cron: BuiltValueNullFieldError.checkNotNull(
-              cron, r'AnalysisCycleInputSchedule', 'cron'),
+            cron,
+            r'AnalysisCycleInputSchedule',
+            'cron',
+          ),
           timezone: BuiltValueNullFieldError.checkNotNull(
-              timezone, r'AnalysisCycleInputSchedule', 'timezone'),
+            timezone,
+            r'AnalysisCycleInputSchedule',
+            'timezone',
+          ),
         );
     replace(_$result);
     return _$result;

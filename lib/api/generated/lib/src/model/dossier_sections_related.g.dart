@@ -9,17 +9,18 @@ part of 'dossier_sections_related.dart';
 const DossierSectionsRelatedStatusEnum _$dossierSectionsRelatedStatusEnum_ok =
     const DossierSectionsRelatedStatusEnum._('ok');
 const DossierSectionsRelatedStatusEnum
-    _$dossierSectionsRelatedStatusEnum_empty =
+_$dossierSectionsRelatedStatusEnum_empty =
     const DossierSectionsRelatedStatusEnum._('empty');
 const DossierSectionsRelatedStatusEnum
-    _$dossierSectionsRelatedStatusEnum_unavailable =
+_$dossierSectionsRelatedStatusEnum_unavailable =
     const DossierSectionsRelatedStatusEnum._('unavailable');
 const DossierSectionsRelatedStatusEnum
-    _$dossierSectionsRelatedStatusEnum_notInstalled =
+_$dossierSectionsRelatedStatusEnum_notInstalled =
     const DossierSectionsRelatedStatusEnum._('notInstalled');
 
 DossierSectionsRelatedStatusEnum _$dossierSectionsRelatedStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$dossierSectionsRelatedStatusEnum_ok;
@@ -35,16 +36,18 @@ DossierSectionsRelatedStatusEnum _$dossierSectionsRelatedStatusEnumValueOf(
 }
 
 final BuiltSet<DossierSectionsRelatedStatusEnum>
-    _$dossierSectionsRelatedStatusEnumValues = BuiltSet<
-        DossierSectionsRelatedStatusEnum>(const <DossierSectionsRelatedStatusEnum>[
-  _$dossierSectionsRelatedStatusEnum_ok,
-  _$dossierSectionsRelatedStatusEnum_empty,
-  _$dossierSectionsRelatedStatusEnum_unavailable,
-  _$dossierSectionsRelatedStatusEnum_notInstalled,
-]);
+_$dossierSectionsRelatedStatusEnumValues =
+    BuiltSet<DossierSectionsRelatedStatusEnum>(
+      const <DossierSectionsRelatedStatusEnum>[
+        _$dossierSectionsRelatedStatusEnum_ok,
+        _$dossierSectionsRelatedStatusEnum_empty,
+        _$dossierSectionsRelatedStatusEnum_unavailable,
+        _$dossierSectionsRelatedStatusEnum_notInstalled,
+      ],
+    );
 
 Serializer<DossierSectionsRelatedStatusEnum>
-    _$dossierSectionsRelatedStatusEnumSerializer =
+_$dossierSectionsRelatedStatusEnumSerializer =
     _$DossierSectionsRelatedStatusEnumSerializer();
 
 class _$DossierSectionsRelatedStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$DossierSectionsRelatedStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DossierSectionsRelatedStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DossierSectionsRelatedStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsRelatedStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsRelatedStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsRelatedStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsRelated extends DossierSectionsRelated {
@@ -101,25 +107,25 @@ class _$DossierSectionsRelated extends DossierSectionsRelated {
   @override
   final BuiltList<RelatedObject>? historical;
 
-  factory _$DossierSectionsRelated(
-          [void Function(DossierSectionsRelatedBuilder)? updates]) =>
-      (DossierSectionsRelatedBuilder()..update(updates))._build();
+  factory _$DossierSectionsRelated([
+    void Function(DossierSectionsRelatedBuilder)? updates,
+  ]) => (DossierSectionsRelatedBuilder()..update(updates))._build();
 
-  _$DossierSectionsRelated._(
-      {required this.status,
-      this.message,
-      this.links,
-      this.facets,
-      this.truncated,
-      this.nearby,
-      this.operational,
-      this.infrastructure,
-      this.historical})
-      : super._();
+  _$DossierSectionsRelated._({
+    required this.status,
+    this.message,
+    this.links,
+    this.facets,
+    this.truncated,
+    this.nearby,
+    this.operational,
+    this.infrastructure,
+    this.historical,
+  }) : super._();
   @override
   DossierSectionsRelated rebuild(
-          void Function(DossierSectionsRelatedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsRelatedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsRelatedBuilder toBuilder() =>
@@ -261,10 +267,14 @@ class DossierSectionsRelatedBuilder
   _$DossierSectionsRelated _build() {
     _$DossierSectionsRelated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsRelated._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DossierSectionsRelated', 'status'),
+              status,
+              r'DossierSectionsRelated',
+              'status',
+            ),
             message: message,
             links: _links?.build(),
             facets: _facets?.build(),
@@ -292,7 +302,10 @@ class DossierSectionsRelatedBuilder
         _historical?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsRelated', _$failedField, e.toString());
+          r'DossierSectionsRelated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

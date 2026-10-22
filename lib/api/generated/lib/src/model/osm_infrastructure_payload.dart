@@ -63,9 +63,9 @@ abstract class OsmInfrastructurePayload
 
   OsmInfrastructurePayload._();
 
-  factory OsmInfrastructurePayload(
-          [void updates(OsmInfrastructurePayloadBuilder b)]) =
-      _$OsmInfrastructurePayload;
+  factory OsmInfrastructurePayload([
+    void updates(OsmInfrastructurePayloadBuilder b),
+  ]) = _$OsmInfrastructurePayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OsmInfrastructurePayloadBuilder b) => b;
@@ -80,7 +80,7 @@ class _$OsmInfrastructurePayloadSerializer
   @override
   final Iterable<Type> types = const [
     OsmInfrastructurePayload,
-    _$OsmInfrastructurePayload
+    _$OsmInfrastructurePayload,
   ];
 
   @override
@@ -158,8 +158,9 @@ class _$OsmInfrastructurePayloadSerializer
       yield r'osmType';
       yield serializers.serialize(
         object.osmType,
-        specifiedType:
-            const FullType.nullable(OsmInfrastructurePayloadOsmTypeEnum),
+        specifiedType: const FullType.nullable(
+          OsmInfrastructurePayloadOsmTypeEnum,
+        ),
       );
     }
     if (object.osmVersion != null) {
@@ -177,9 +178,11 @@ class _$OsmInfrastructurePayloadSerializer
     OsmInfrastructurePayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -195,91 +198,114 @@ class _$OsmInfrastructurePayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'operator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.operator_ = valueDes;
           break;
         case r'voltageKv':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.voltageKv = valueDes;
           break;
         case r'capacityMw':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.capacityMw = valueDes;
           break;
         case r'beds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.beds = valueDes;
           break;
         case r'emergency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.emergency = valueDes;
           break;
         case r'iata':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.iata = valueDes;
           break;
         case r'icao':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.icao = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'osmType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OsmInfrastructurePayloadOsmTypeEnum),
-          ) as OsmInfrastructurePayloadOsmTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OsmInfrastructurePayloadOsmTypeEnum,
+                    ),
+                  )
+                  as OsmInfrastructurePayloadOsmTypeEnum?;
           if (valueDes == null) continue;
           result.osmType = valueDes;
           break;
         case r'osmVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.osmVersion = valueDes;
           break;

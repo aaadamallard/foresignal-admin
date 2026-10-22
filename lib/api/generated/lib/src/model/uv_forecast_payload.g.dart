@@ -16,13 +16,16 @@ class _$UvForecastPayload extends UvForecastPayload {
   @override
   final DateTime? maxAt;
 
-  factory _$UvForecastPayload(
-          [void Function(UvForecastPayloadBuilder)? updates]) =>
-      (UvForecastPayloadBuilder()..update(updates))._build();
+  factory _$UvForecastPayload([
+    void Function(UvForecastPayloadBuilder)? updates,
+  ]) => (UvForecastPayloadBuilder()..update(updates))._build();
 
-  _$UvForecastPayload._(
-      {required this.zip, required this.hours, this.maxUv, this.maxAt})
-      : super._();
+  _$UvForecastPayload._({
+    required this.zip,
+    required this.hours,
+    this.maxUv,
+    this.maxAt,
+  }) : super._();
   @override
   UvForecastPayload rebuild(void Function(UvForecastPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -117,10 +120,14 @@ class UvForecastPayloadBuilder
   _$UvForecastPayload _build() {
     _$UvForecastPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$UvForecastPayload._(
             zip: BuiltValueNullFieldError.checkNotNull(
-                zip, r'UvForecastPayload', 'zip'),
+              zip,
+              r'UvForecastPayload',
+              'zip',
+            ),
             hours: hours.build(),
             maxUv: maxUv,
             maxAt: maxAt,
@@ -132,7 +139,10 @@ class UvForecastPayloadBuilder
         hours.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'UvForecastPayload', _$failedField, e.toString());
+          r'UvForecastPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

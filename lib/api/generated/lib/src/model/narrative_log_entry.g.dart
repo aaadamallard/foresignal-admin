@@ -47,20 +47,20 @@ NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnumValueOf(String name) {
 }
 
 final BuiltSet<NarrativeLogEntryActionEnum>
-    _$narrativeLogEntryActionEnumValues =
+_$narrativeLogEntryActionEnumValues =
     BuiltSet<NarrativeLogEntryActionEnum>(const <NarrativeLogEntryActionEnum>[
-  _$narrativeLogEntryActionEnum_created,
-  _$narrativeLogEntryActionEnum_merged,
-  _$narrativeLogEntryActionEnum_mergedInto,
-  _$narrativeLogEntryActionEnum_split,
-  _$narrativeLogEntryActionEnum_splitFrom,
-  _$narrativeLogEntryActionEnum_stateChanged,
-  _$narrativeLogEntryActionEnum_statusChanged,
-  _$narrativeLogEntryActionEnum_titleChanged,
-]);
+      _$narrativeLogEntryActionEnum_created,
+      _$narrativeLogEntryActionEnum_merged,
+      _$narrativeLogEntryActionEnum_mergedInto,
+      _$narrativeLogEntryActionEnum_split,
+      _$narrativeLogEntryActionEnum_splitFrom,
+      _$narrativeLogEntryActionEnum_stateChanged,
+      _$narrativeLogEntryActionEnum_statusChanged,
+      _$narrativeLogEntryActionEnum_titleChanged,
+    ]);
 
 Serializer<NarrativeLogEntryActionEnum>
-    _$narrativeLogEntryActionEnumSerializer =
+_$narrativeLogEntryActionEnumSerializer =
     _$NarrativeLogEntryActionEnumSerializer();
 
 class _$NarrativeLogEntryActionEnumSerializer
@@ -92,16 +92,20 @@ class _$NarrativeLogEntryActionEnumSerializer
   final String wireName = 'NarrativeLogEntryActionEnum';
 
   @override
-  Object serialize(Serializers serializers, NarrativeLogEntryActionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NarrativeLogEntryActionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NarrativeLogEntryActionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NarrativeLogEntryActionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NarrativeLogEntryActionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NarrativeLogEntry extends NarrativeLogEntry {
@@ -120,19 +124,19 @@ class _$NarrativeLogEntry extends NarrativeLogEntry {
   @override
   final String? reason;
 
-  factory _$NarrativeLogEntry(
-          [void Function(NarrativeLogEntryBuilder)? updates]) =>
-      (NarrativeLogEntryBuilder()..update(updates))._build();
+  factory _$NarrativeLogEntry([
+    void Function(NarrativeLogEntryBuilder)? updates,
+  ]) => (NarrativeLogEntryBuilder()..update(updates))._build();
 
-  _$NarrativeLogEntry._(
-      {required this.at,
-      required this.action,
-      required this.by,
-      this.relatedNarrativeIds,
-      this.from,
-      this.to,
-      this.reason})
-      : super._();
+  _$NarrativeLogEntry._({
+    required this.at,
+    required this.action,
+    required this.by,
+    this.relatedNarrativeIds,
+    this.from,
+    this.to,
+    this.reason,
+  }) : super._();
   @override
   NarrativeLogEntry rebuild(void Function(NarrativeLogEntryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -251,14 +255,24 @@ class NarrativeLogEntryBuilder
   _$NarrativeLogEntry _build() {
     _$NarrativeLogEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NarrativeLogEntry._(
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'NarrativeLogEntry', 'at'),
+              at,
+              r'NarrativeLogEntry',
+              'at',
+            ),
             action: BuiltValueNullFieldError.checkNotNull(
-                action, r'NarrativeLogEntry', 'action'),
+              action,
+              r'NarrativeLogEntry',
+              'action',
+            ),
             by: BuiltValueNullFieldError.checkNotNull(
-                by, r'NarrativeLogEntry', 'by'),
+              by,
+              r'NarrativeLogEntry',
+              'by',
+            ),
             relatedNarrativeIds: _relatedNarrativeIds?.build(),
             from: from,
             to: to,
@@ -271,7 +285,10 @@ class NarrativeLogEntryBuilder
         _relatedNarrativeIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NarrativeLogEntry', _$failedField, e.toString());
+          r'NarrativeLogEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

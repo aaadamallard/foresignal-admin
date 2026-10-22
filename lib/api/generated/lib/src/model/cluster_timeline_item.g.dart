@@ -11,16 +11,16 @@ const ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnum_alert =
 const ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnum_finding =
     const ClusterTimelineItemTypeEnum._('finding');
 const ClusterTimelineItemTypeEnum
-    _$clusterTimelineItemTypeEnum_situationChange =
+_$clusterTimelineItemTypeEnum_situationChange =
     const ClusterTimelineItemTypeEnum._('situationChange');
 const ClusterTimelineItemTypeEnum
-    _$clusterTimelineItemTypeEnum_hypothesisBandChange =
+_$clusterTimelineItemTypeEnum_hypothesisBandChange =
     const ClusterTimelineItemTypeEnum._('hypothesisBandChange');
 const ClusterTimelineItemTypeEnum
-    _$clusterTimelineItemTypeEnum_forecastResolution =
+_$clusterTimelineItemTypeEnum_forecastResolution =
     const ClusterTimelineItemTypeEnum._('forecastResolution');
 const ClusterTimelineItemTypeEnum
-    _$clusterTimelineItemTypeEnum_firstAppearance =
+_$clusterTimelineItemTypeEnum_firstAppearance =
     const ClusterTimelineItemTypeEnum._('firstAppearance');
 const ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnum_layerEdit =
     const ClusterTimelineItemTypeEnum._('layerEdit');
@@ -71,25 +71,25 @@ ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnumValueOf(String name) {
 }
 
 final BuiltSet<ClusterTimelineItemTypeEnum>
-    _$clusterTimelineItemTypeEnumValues =
+_$clusterTimelineItemTypeEnumValues =
     BuiltSet<ClusterTimelineItemTypeEnum>(const <ClusterTimelineItemTypeEnum>[
-  _$clusterTimelineItemTypeEnum_alert,
-  _$clusterTimelineItemTypeEnum_finding,
-  _$clusterTimelineItemTypeEnum_situationChange,
-  _$clusterTimelineItemTypeEnum_hypothesisBandChange,
-  _$clusterTimelineItemTypeEnum_forecastResolution,
-  _$clusterTimelineItemTypeEnum_firstAppearance,
-  _$clusterTimelineItemTypeEnum_layerEdit,
-  _$clusterTimelineItemTypeEnum_captureGap,
-  _$clusterTimelineItemTypeEnum_capWarning,
-  _$clusterTimelineItemTypeEnum_capFallback,
-  _$clusterTimelineItemTypeEnum_statusChange,
-  _$clusterTimelineItemTypeEnum_backfill,
-  _$clusterTimelineItemTypeEnum_record,
-]);
+      _$clusterTimelineItemTypeEnum_alert,
+      _$clusterTimelineItemTypeEnum_finding,
+      _$clusterTimelineItemTypeEnum_situationChange,
+      _$clusterTimelineItemTypeEnum_hypothesisBandChange,
+      _$clusterTimelineItemTypeEnum_forecastResolution,
+      _$clusterTimelineItemTypeEnum_firstAppearance,
+      _$clusterTimelineItemTypeEnum_layerEdit,
+      _$clusterTimelineItemTypeEnum_captureGap,
+      _$clusterTimelineItemTypeEnum_capWarning,
+      _$clusterTimelineItemTypeEnum_capFallback,
+      _$clusterTimelineItemTypeEnum_statusChange,
+      _$clusterTimelineItemTypeEnum_backfill,
+      _$clusterTimelineItemTypeEnum_record,
+    ]);
 
 Serializer<ClusterTimelineItemTypeEnum>
-    _$clusterTimelineItemTypeEnumSerializer =
+_$clusterTimelineItemTypeEnumSerializer =
     _$ClusterTimelineItemTypeEnumSerializer();
 
 class _$ClusterTimelineItemTypeEnumSerializer
@@ -131,16 +131,20 @@ class _$ClusterTimelineItemTypeEnumSerializer
   final String wireName = 'ClusterTimelineItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ClusterTimelineItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClusterTimelineItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ClusterTimelineItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClusterTimelineItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClusterTimelineItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClusterTimelineItem extends ClusterTimelineItem {
@@ -159,23 +163,23 @@ class _$ClusterTimelineItem extends ClusterTimelineItem {
   @override
   final BuiltList<String> heldBy;
 
-  factory _$ClusterTimelineItem(
-          [void Function(ClusterTimelineItemBuilder)? updates]) =>
-      (ClusterTimelineItemBuilder()..update(updates))._build();
+  factory _$ClusterTimelineItem([
+    void Function(ClusterTimelineItemBuilder)? updates,
+  ]) => (ClusterTimelineItemBuilder()..update(updates))._build();
 
-  _$ClusterTimelineItem._(
-      {required this.evidenceKey,
-      required this.at,
-      required this.type,
-      required this.title,
-      this.ref,
-      this.envelope,
-      required this.heldBy})
-      : super._();
+  _$ClusterTimelineItem._({
+    required this.evidenceKey,
+    required this.at,
+    required this.type,
+    required this.title,
+    this.ref,
+    this.envelope,
+    required this.heldBy,
+  }) : super._();
   @override
   ClusterTimelineItem rebuild(
-          void Function(ClusterTimelineItemBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ClusterTimelineItemBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ClusterTimelineItemBuilder toBuilder() =>
@@ -290,16 +294,29 @@ class ClusterTimelineItemBuilder
   _$ClusterTimelineItem _build() {
     _$ClusterTimelineItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ClusterTimelineItem._(
             evidenceKey: BuiltValueNullFieldError.checkNotNull(
-                evidenceKey, r'ClusterTimelineItem', 'evidenceKey'),
+              evidenceKey,
+              r'ClusterTimelineItem',
+              'evidenceKey',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ClusterTimelineItem', 'at'),
+              at,
+              r'ClusterTimelineItem',
+              'at',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ClusterTimelineItem', 'type'),
+              type,
+              r'ClusterTimelineItem',
+              'type',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ClusterTimelineItem', 'title'),
+              title,
+              r'ClusterTimelineItem',
+              'title',
+            ),
             ref: ref,
             envelope: _envelope?.build(),
             heldBy: heldBy.build(),
@@ -313,7 +330,10 @@ class ClusterTimelineItemBuilder
         heldBy.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ClusterTimelineItem', _$failedField, e.toString());
+          r'ClusterTimelineItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

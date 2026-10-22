@@ -14,12 +14,12 @@ class _$EntityRecordList extends EntityRecordList {
   @override
   final BuiltList<EntityRecord> items;
 
-  factory _$EntityRecordList(
-          [void Function(EntityRecordListBuilder)? updates]) =>
-      (EntityRecordListBuilder()..update(updates))._build();
+  factory _$EntityRecordList([
+    void Function(EntityRecordListBuilder)? updates,
+  ]) => (EntityRecordListBuilder()..update(updates))._build();
 
   _$EntityRecordList._({required this.entityId, this.at, required this.items})
-      : super._();
+    : super._();
   @override
   EntityRecordList rebuild(void Function(EntityRecordListBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -105,10 +105,14 @@ class EntityRecordListBuilder
   _$EntityRecordList _build() {
     _$EntityRecordList _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EntityRecordList._(
             entityId: BuiltValueNullFieldError.checkNotNull(
-                entityId, r'EntityRecordList', 'entityId'),
+              entityId,
+              r'EntityRecordList',
+              'entityId',
+            ),
             at: at,
             items: items.build(),
           );
@@ -119,7 +123,10 @@ class EntityRecordListBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EntityRecordList', _$failedField, e.toString());
+          r'EntityRecordList',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

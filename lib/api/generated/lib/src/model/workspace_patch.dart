@@ -74,8 +74,10 @@ class _$WorkspacePatchSerializer
       yield r'members';
       yield serializers.serialize(
         object.members,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType(WorkspacePatchMembersEnum)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(WorkspacePatchMembersEnum),
+        ]),
       );
     }
     if (object.savedViewIds != null) {
@@ -107,9 +109,11 @@ class _$WorkspacePatchSerializer
     WorkspacePatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,44 +129,57 @@ class _$WorkspacePatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap,
-                [FullType(String), FullType(WorkspacePatchMembersEnum)]),
-          ) as BuiltMap<String, WorkspacePatchMembersEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(WorkspacePatchMembersEnum),
+                    ]),
+                  )
+                  as BuiltMap<String, WorkspacePatchMembersEnum>?;
           if (valueDes == null) continue;
           result.members.replace(valueDes);
           break;
         case r'savedViewIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.savedViewIds.replace(valueDes);
           break;
         case r'investigationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.investigationId = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;

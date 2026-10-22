@@ -21,13 +21,13 @@ class _$TagAssignment extends TagAssignment {
   factory _$TagAssignment([void Function(TagAssignmentBuilder)? updates]) =>
       (TagAssignmentBuilder()..update(updates))._build();
 
-  _$TagAssignment._(
-      {required this.tagId,
-      this.tag,
-      required this.objectRef,
-      this.assignedBy,
-      required this.assignedAt})
-      : super._();
+  _$TagAssignment._({
+    required this.tagId,
+    this.tag,
+    required this.objectRef,
+    this.assignedBy,
+    required this.assignedAt,
+  }) : super._();
   @override
   TagAssignment rebuild(void Function(TagAssignmentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -129,16 +129,26 @@ class TagAssignmentBuilder
   _$TagAssignment _build() {
     _$TagAssignment _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TagAssignment._(
             tagId: BuiltValueNullFieldError.checkNotNull(
-                tagId, r'TagAssignment', 'tagId'),
+              tagId,
+              r'TagAssignment',
+              'tagId',
+            ),
             tag: _tag?.build(),
             objectRef: BuiltValueNullFieldError.checkNotNull(
-                objectRef, r'TagAssignment', 'objectRef'),
+              objectRef,
+              r'TagAssignment',
+              'objectRef',
+            ),
             assignedBy: _assignedBy?.build(),
             assignedAt: BuiltValueNullFieldError.checkNotNull(
-                assignedAt, r'TagAssignment', 'assignedAt'),
+              assignedAt,
+              r'TagAssignment',
+              'assignedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -150,7 +160,10 @@ class TagAssignmentBuilder
         _assignedBy?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TagAssignment', _$failedField, e.toString());
+          r'TagAssignment',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

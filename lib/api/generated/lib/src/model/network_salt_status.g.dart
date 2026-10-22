@@ -16,16 +16,16 @@ class _$NetworkSaltStatus extends NetworkSaltStatus {
   @override
   final DateTime rotatesAt;
 
-  factory _$NetworkSaltStatus(
-          [void Function(NetworkSaltStatusBuilder)? updates]) =>
-      (NetworkSaltStatusBuilder()..update(updates))._build();
+  factory _$NetworkSaltStatus([
+    void Function(NetworkSaltStatusBuilder)? updates,
+  ]) => (NetworkSaltStatusBuilder()..update(updates))._build();
 
-  _$NetworkSaltStatus._(
-      {required this.networkId,
-      required this.saltId,
-      required this.createdAt,
-      required this.rotatesAt})
-      : super._();
+  _$NetworkSaltStatus._({
+    required this.networkId,
+    required this.saltId,
+    required this.createdAt,
+    required this.rotatesAt,
+  }) : super._();
   @override
   NetworkSaltStatus rebuild(void Function(NetworkSaltStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -116,16 +116,29 @@ class NetworkSaltStatusBuilder
   NetworkSaltStatus build() => _build();
 
   _$NetworkSaltStatus _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NetworkSaltStatus._(
           networkId: BuiltValueNullFieldError.checkNotNull(
-              networkId, r'NetworkSaltStatus', 'networkId'),
+            networkId,
+            r'NetworkSaltStatus',
+            'networkId',
+          ),
           saltId: BuiltValueNullFieldError.checkNotNull(
-              saltId, r'NetworkSaltStatus', 'saltId'),
+            saltId,
+            r'NetworkSaltStatus',
+            'saltId',
+          ),
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'NetworkSaltStatus', 'createdAt'),
+            createdAt,
+            r'NetworkSaltStatus',
+            'createdAt',
+          ),
           rotatesAt: BuiltValueNullFieldError.checkNotNull(
-              rotatesAt, r'NetworkSaltStatus', 'rotatesAt'),
+            rotatesAt,
+            r'NetworkSaltStatus',
+            'rotatesAt',
+          ),
         );
     replace(_$result);
     return _$result;

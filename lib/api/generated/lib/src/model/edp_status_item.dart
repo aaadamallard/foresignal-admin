@@ -90,9 +90,11 @@ class _$EdpStatusItemSerializer implements PrimitiveSerializer<EdpStatusItem> {
     EdpStatusItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,32 +110,40 @@ class _$EdpStatusItemSerializer implements PrimitiveSerializer<EdpStatusItem> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'stream':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.stream = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpStatusItemTypeEnum),
-          ) as EdpStatusItemTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpStatusItemTypeEnum),
+                  )
+                  as EdpStatusItemTypeEnum;
           result.type = valueDes;
           break;
         case r'health':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpStatusItemHealthEnum),
-          ) as EdpStatusItemHealthEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EdpStatusItemHealthEnum),
+                  )
+                  as EdpStatusItemHealthEnum;
           result.health = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.message = valueDes;
           break;

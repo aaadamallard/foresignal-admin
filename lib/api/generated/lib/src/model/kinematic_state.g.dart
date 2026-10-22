@@ -31,18 +31,18 @@ class _$KinematicState extends KinematicState {
   factory _$KinematicState([void Function(KinematicStateBuilder)? updates]) =>
       (KinematicStateBuilder()..update(updates))._build();
 
-  _$KinematicState._(
-      {required this.sourceId,
-      required this.externalId,
-      this.kind,
-      required this.position,
-      required this.observedAt,
-      this.speedMps,
-      this.courseDeg,
-      this.altitudeM,
-      this.derived,
-      this.stale})
-      : super._();
+  _$KinematicState._({
+    required this.sourceId,
+    required this.externalId,
+    this.kind,
+    required this.position,
+    required this.observedAt,
+    this.speedMps,
+    this.courseDeg,
+    this.altitudeM,
+    this.derived,
+    this.stale,
+  }) : super._();
   @override
   KinematicState rebuild(void Function(KinematicStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -182,16 +182,26 @@ class KinematicStateBuilder
   _$KinematicState _build() {
     _$KinematicState _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KinematicState._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'KinematicState', 'sourceId'),
+              sourceId,
+              r'KinematicState',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'KinematicState', 'externalId'),
+              externalId,
+              r'KinematicState',
+              'externalId',
+            ),
             kind: kind,
             position: position.build(),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'KinematicState', 'observedAt'),
+              observedAt,
+              r'KinematicState',
+              'observedAt',
+            ),
             speedMps: speedMps,
             courseDeg: courseDeg,
             altitudeM: altitudeM,
@@ -205,7 +215,10 @@ class KinematicStateBuilder
         position.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KinematicState', _$failedField, e.toString());
+          r'KinematicState',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

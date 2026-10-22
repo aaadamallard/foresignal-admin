@@ -42,29 +42,29 @@ class _$RetentionSettings extends RetentionSettings {
   @override
   final RetentionSettingsSocial? social;
 
-  factory _$RetentionSettings(
-          [void Function(RetentionSettingsBuilder)? updates]) =>
-      (RetentionSettingsBuilder()..update(updates))._build();
+  factory _$RetentionSettings([
+    void Function(RetentionSettingsBuilder)? updates,
+  ]) => (RetentionSettingsBuilder()..update(updates))._build();
 
-  _$RetentionSettings._(
-      {required this.default_,
-      this.alerts,
-      this.usage,
-      this.briefings,
-      this.ask,
-      this.sources,
-      this.trackWindow,
-      this.provenance,
-      this.notifications,
-      this.kinds,
-      this.audit,
-      this.stats,
-      this.inbox,
-      this.trackRawWindow,
-      this.trackDownsampleInterval,
-      this.entityLinks,
-      this.social})
-      : super._();
+  _$RetentionSettings._({
+    required this.default_,
+    this.alerts,
+    this.usage,
+    this.briefings,
+    this.ask,
+    this.sources,
+    this.trackWindow,
+    this.provenance,
+    this.notifications,
+    this.kinds,
+    this.audit,
+    this.stats,
+    this.inbox,
+    this.trackRawWindow,
+    this.trackDownsampleInterval,
+    this.entityLinks,
+    this.social,
+  }) : super._();
   @override
   RetentionSettings rebuild(void Function(RetentionSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -268,10 +268,14 @@ class RetentionSettingsBuilder
   _$RetentionSettings _build() {
     _$RetentionSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RetentionSettings._(
             default_: BuiltValueNullFieldError.checkNotNull(
-                default_, r'RetentionSettings', 'default_'),
+              default_,
+              r'RetentionSettings',
+              'default_',
+            ),
             alerts: alerts,
             usage: usage,
             briefings: briefings,
@@ -305,7 +309,10 @@ class RetentionSettingsBuilder
         _social?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RetentionSettings', _$failedField, e.toString());
+          r'RetentionSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

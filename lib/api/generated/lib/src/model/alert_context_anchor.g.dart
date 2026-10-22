@@ -16,17 +16,20 @@ class _$AlertContextAnchor extends AlertContextAnchor {
   @override
   final num? distanceKm;
 
-  factory _$AlertContextAnchor(
-          [void Function(AlertContextAnchorBuilder)? updates]) =>
-      (AlertContextAnchorBuilder()..update(updates))._build();
+  factory _$AlertContextAnchor([
+    void Function(AlertContextAnchorBuilder)? updates,
+  ]) => (AlertContextAnchorBuilder()..update(updates))._build();
 
-  _$AlertContextAnchor._(
-      {this.source_, this.externalId, this.seq, this.distanceKm})
-      : super._();
+  _$AlertContextAnchor._({
+    this.source_,
+    this.externalId,
+    this.seq,
+    this.distanceKm,
+  }) : super._();
   @override
   AlertContextAnchor rebuild(
-          void Function(AlertContextAnchorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AlertContextAnchorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AlertContextAnchorBuilder toBuilder() =>
@@ -114,7 +117,8 @@ class AlertContextAnchorBuilder
   AlertContextAnchor build() => _build();
 
   _$AlertContextAnchor _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AlertContextAnchor._(
           source_: source_,
           externalId: externalId,

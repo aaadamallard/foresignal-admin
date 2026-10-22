@@ -25,15 +25,15 @@ class _$PurgeReport extends PurgeReport {
   factory _$PurgeReport([void Function(PurgeReportBuilder)? updates]) =>
       (PurgeReportBuilder()..update(updates))._build();
 
-  _$PurgeReport._(
-      {required this.tombstoneSeq,
-      required this.versionsDeleted,
-      this.alertsRedacted,
-      this.alertsDeleted,
-      this.embeddingsDeleted,
-      this.notificationsRedacted,
-      this.citingDocuments})
-      : super._();
+  _$PurgeReport._({
+    required this.tombstoneSeq,
+    required this.versionsDeleted,
+    this.alertsRedacted,
+    this.alertsDeleted,
+    this.embeddingsDeleted,
+    this.notificationsRedacted,
+    this.citingDocuments,
+  }) : super._();
   @override
   PurgeReport rebuild(void Function(PurgeReportBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -155,12 +155,19 @@ class PurgeReportBuilder implements Builder<PurgeReport, PurgeReportBuilder> {
   _$PurgeReport _build() {
     _$PurgeReport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PurgeReport._(
             tombstoneSeq: BuiltValueNullFieldError.checkNotNull(
-                tombstoneSeq, r'PurgeReport', 'tombstoneSeq'),
+              tombstoneSeq,
+              r'PurgeReport',
+              'tombstoneSeq',
+            ),
             versionsDeleted: BuiltValueNullFieldError.checkNotNull(
-                versionsDeleted, r'PurgeReport', 'versionsDeleted'),
+              versionsDeleted,
+              r'PurgeReport',
+              'versionsDeleted',
+            ),
             alertsRedacted: alertsRedacted,
             alertsDeleted: alertsDeleted,
             embeddingsDeleted: embeddingsDeleted,
@@ -174,7 +181,10 @@ class PurgeReportBuilder implements Builder<PurgeReport, PurgeReportBuilder> {
         _citingDocuments?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PurgeReport', _$failedField, e.toString());
+          r'PurgeReport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

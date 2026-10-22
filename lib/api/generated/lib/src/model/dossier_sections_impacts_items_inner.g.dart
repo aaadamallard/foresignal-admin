@@ -25,24 +25,24 @@ class _$DossierSectionsImpactsItemsInner
   @override
   final String? questionId;
 
-  factory _$DossierSectionsImpactsItemsInner(
-          [void Function(DossierSectionsImpactsItemsInnerBuilder)? updates]) =>
-      (DossierSectionsImpactsItemsInnerBuilder()..update(updates))._build();
+  factory _$DossierSectionsImpactsItemsInner([
+    void Function(DossierSectionsImpactsItemsInnerBuilder)? updates,
+  ]) => (DossierSectionsImpactsItemsInnerBuilder()..update(updates))._build();
 
-  _$DossierSectionsImpactsItemsInner._(
-      {required this.findingId,
-      required this.impactFamily,
-      this.admin1,
-      required this.pImpact,
-      this.interval,
-      this.dependencyPaths,
-      required this.labels,
-      this.questionId})
-      : super._();
+  _$DossierSectionsImpactsItemsInner._({
+    required this.findingId,
+    required this.impactFamily,
+    this.admin1,
+    required this.pImpact,
+    this.interval,
+    this.dependencyPaths,
+    required this.labels,
+    this.questionId,
+  }) : super._();
   @override
   DossierSectionsImpactsItemsInner rebuild(
-          void Function(DossierSectionsImpactsItemsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsImpactsItemsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsImpactsItemsInnerBuilder toBuilder() =>
@@ -94,8 +94,10 @@ class _$DossierSectionsImpactsItemsInner
 
 class DossierSectionsImpactsItemsInnerBuilder
     implements
-        Builder<DossierSectionsImpactsItemsInner,
-            DossierSectionsImpactsItemsInnerBuilder> {
+        Builder<
+          DossierSectionsImpactsItemsInner,
+          DossierSectionsImpactsItemsInnerBuilder
+        > {
   _$DossierSectionsImpactsItemsInner? _$v;
 
   String? _findingId;
@@ -169,15 +171,25 @@ class DossierSectionsImpactsItemsInnerBuilder
   _$DossierSectionsImpactsItemsInner _build() {
     _$DossierSectionsImpactsItemsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsImpactsItemsInner._(
             findingId: BuiltValueNullFieldError.checkNotNull(
-                findingId, r'DossierSectionsImpactsItemsInner', 'findingId'),
-            impactFamily: BuiltValueNullFieldError.checkNotNull(impactFamily,
-                r'DossierSectionsImpactsItemsInner', 'impactFamily'),
+              findingId,
+              r'DossierSectionsImpactsItemsInner',
+              'findingId',
+            ),
+            impactFamily: BuiltValueNullFieldError.checkNotNull(
+              impactFamily,
+              r'DossierSectionsImpactsItemsInner',
+              'impactFamily',
+            ),
             admin1: admin1,
             pImpact: BuiltValueNullFieldError.checkNotNull(
-                pImpact, r'DossierSectionsImpactsItemsInner', 'pImpact'),
+              pImpact,
+              r'DossierSectionsImpactsItemsInner',
+              'pImpact',
+            ),
             interval: _interval?.build(),
             dependencyPaths: dependencyPaths,
             labels: labels.build(),
@@ -193,7 +205,10 @@ class DossierSectionsImpactsItemsInnerBuilder
         labels.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsImpactsItemsInner', _$failedField, e.toString());
+          r'DossierSectionsImpactsItemsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

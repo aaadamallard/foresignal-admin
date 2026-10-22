@@ -35,9 +35,9 @@ abstract class GetPrincipal200Response
 
   GetPrincipal200Response._();
 
-  factory GetPrincipal200Response(
-          [void updates(GetPrincipal200ResponseBuilder b)]) =
-      _$GetPrincipal200Response;
+  factory GetPrincipal200Response([
+    void updates(GetPrincipal200ResponseBuilder b),
+  ]) = _$GetPrincipal200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetPrincipal200ResponseBuilder b) => b;
@@ -52,7 +52,7 @@ class _$GetPrincipal200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     GetPrincipal200Response,
-    _$GetPrincipal200Response
+    _$GetPrincipal200Response,
   ];
 
   @override
@@ -71,9 +71,13 @@ class _$GetPrincipal200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -89,8 +93,9 @@ class _$GetPrincipal200ResponseSerializer
       FullType(PrincipalSummary),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }

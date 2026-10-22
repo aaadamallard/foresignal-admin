@@ -16,20 +16,20 @@ class _$ProjectedImpactSkippedInner extends ProjectedImpactSkippedInner {
   @override
   final String reason;
 
-  factory _$ProjectedImpactSkippedInner(
-          [void Function(ProjectedImpactSkippedInnerBuilder)? updates]) =>
-      (ProjectedImpactSkippedInnerBuilder()..update(updates))._build();
+  factory _$ProjectedImpactSkippedInner([
+    void Function(ProjectedImpactSkippedInnerBuilder)? updates,
+  ]) => (ProjectedImpactSkippedInnerBuilder()..update(updates))._build();
 
-  _$ProjectedImpactSkippedInner._(
-      {required this.impactFamily,
-      this.regionClass,
-      this.n,
-      required this.reason})
-      : super._();
+  _$ProjectedImpactSkippedInner._({
+    required this.impactFamily,
+    this.regionClass,
+    this.n,
+    required this.reason,
+  }) : super._();
   @override
   ProjectedImpactSkippedInner rebuild(
-          void Function(ProjectedImpactSkippedInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProjectedImpactSkippedInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProjectedImpactSkippedInnerBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$ProjectedImpactSkippedInner extends ProjectedImpactSkippedInner {
 
 class ProjectedImpactSkippedInnerBuilder
     implements
-        Builder<ProjectedImpactSkippedInner,
-            ProjectedImpactSkippedInnerBuilder> {
+        Builder<
+          ProjectedImpactSkippedInner,
+          ProjectedImpactSkippedInnerBuilder
+        > {
   _$ProjectedImpactSkippedInner? _$v;
 
   String? _impactFamily;
@@ -119,14 +121,21 @@ class ProjectedImpactSkippedInnerBuilder
   ProjectedImpactSkippedInner build() => _build();
 
   _$ProjectedImpactSkippedInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProjectedImpactSkippedInner._(
           impactFamily: BuiltValueNullFieldError.checkNotNull(
-              impactFamily, r'ProjectedImpactSkippedInner', 'impactFamily'),
+            impactFamily,
+            r'ProjectedImpactSkippedInner',
+            'impactFamily',
+          ),
           regionClass: regionClass,
           n: n,
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ProjectedImpactSkippedInner', 'reason'),
+            reason,
+            r'ProjectedImpactSkippedInner',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -7,23 +7,24 @@ part of 'observability_estimate.dart';
 // **************************************************************************
 
 const ObservabilityEstimateMethodEnum
-    _$observabilityEstimateMethodEnum_captureRecapture =
+_$observabilityEstimateMethodEnum_captureRecapture =
     const ObservabilityEstimateMethodEnum._('captureRecapture');
 const ObservabilityEstimateMethodEnum
-    _$observabilityEstimateMethodEnum_presenceProxy =
+_$observabilityEstimateMethodEnum_presenceProxy =
     const ObservabilityEstimateMethodEnum._('presenceProxy');
 const ObservabilityEstimateMethodEnum
-    _$observabilityEstimateMethodEnum_receiverRange =
+_$observabilityEstimateMethodEnum_receiverRange =
     const ObservabilityEstimateMethodEnum._('receiverRange');
 const ObservabilityEstimateMethodEnum
-    _$observabilityEstimateMethodEnum_declared =
+_$observabilityEstimateMethodEnum_declared =
     const ObservabilityEstimateMethodEnum._('declared');
 const ObservabilityEstimateMethodEnum
-    _$observabilityEstimateMethodEnum_platformVolume =
+_$observabilityEstimateMethodEnum_platformVolume =
     const ObservabilityEstimateMethodEnum._('platformVolume');
 
 ObservabilityEstimateMethodEnum _$observabilityEstimateMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'captureRecapture':
       return _$observabilityEstimateMethodEnum_captureRecapture;
@@ -41,17 +42,19 @@ ObservabilityEstimateMethodEnum _$observabilityEstimateMethodEnumValueOf(
 }
 
 final BuiltSet<ObservabilityEstimateMethodEnum>
-    _$observabilityEstimateMethodEnumValues = BuiltSet<
-        ObservabilityEstimateMethodEnum>(const <ObservabilityEstimateMethodEnum>[
-  _$observabilityEstimateMethodEnum_captureRecapture,
-  _$observabilityEstimateMethodEnum_presenceProxy,
-  _$observabilityEstimateMethodEnum_receiverRange,
-  _$observabilityEstimateMethodEnum_declared,
-  _$observabilityEstimateMethodEnum_platformVolume,
-]);
+_$observabilityEstimateMethodEnumValues =
+    BuiltSet<ObservabilityEstimateMethodEnum>(
+      const <ObservabilityEstimateMethodEnum>[
+        _$observabilityEstimateMethodEnum_captureRecapture,
+        _$observabilityEstimateMethodEnum_presenceProxy,
+        _$observabilityEstimateMethodEnum_receiverRange,
+        _$observabilityEstimateMethodEnum_declared,
+        _$observabilityEstimateMethodEnum_platformVolume,
+      ],
+    );
 
 Serializer<ObservabilityEstimateMethodEnum>
-    _$observabilityEstimateMethodEnumSerializer =
+_$observabilityEstimateMethodEnumSerializer =
     _$ObservabilityEstimateMethodEnumSerializer();
 
 class _$ObservabilityEstimateMethodEnumSerializer
@@ -78,16 +81,19 @@ class _$ObservabilityEstimateMethodEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ObservabilityEstimateMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ObservabilityEstimateMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ObservabilityEstimateMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ObservabilityEstimateMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ObservabilityEstimateMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ObservabilityEstimate extends ObservabilityEstimate {
@@ -122,31 +128,31 @@ class _$ObservabilityEstimate extends ObservabilityEstimate {
   @override
   final String? manifestId;
 
-  factory _$ObservabilityEstimate(
-          [void Function(ObservabilityEstimateBuilder)? updates]) =>
-      (ObservabilityEstimateBuilder()..update(updates))._build();
+  factory _$ObservabilityEstimate([
+    void Function(ObservabilityEstimateBuilder)? updates,
+  ]) => (ObservabilityEstimateBuilder()..update(updates))._build();
 
-  _$ObservabilityEstimate._(
-      {required this.sourceId,
-      required this.family,
-      this.regionCode,
-      this.cell,
-      this.band,
-      required this.periodStart,
-      required this.periodEnd,
-      required this.pDetect,
-      required this.lo,
-      required this.hi,
-      required this.n,
-      required this.method,
-      this.confidence,
-      required this.computedAt,
-      this.manifestId})
-      : super._();
+  _$ObservabilityEstimate._({
+    required this.sourceId,
+    required this.family,
+    this.regionCode,
+    this.cell,
+    this.band,
+    required this.periodStart,
+    required this.periodEnd,
+    required this.pDetect,
+    required this.lo,
+    required this.hi,
+    required this.n,
+    required this.method,
+    this.confidence,
+    required this.computedAt,
+    this.manifestId,
+  }) : super._();
   @override
   ObservabilityEstimate rebuild(
-          void Function(ObservabilityEstimateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObservabilityEstimateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObservabilityEstimateBuilder toBuilder() =>
@@ -324,32 +330,63 @@ class ObservabilityEstimateBuilder
   ObservabilityEstimate build() => _build();
 
   _$ObservabilityEstimate _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ObservabilityEstimate._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'ObservabilityEstimate', 'sourceId'),
+            sourceId,
+            r'ObservabilityEstimate',
+            'sourceId',
+          ),
           family: BuiltValueNullFieldError.checkNotNull(
-              family, r'ObservabilityEstimate', 'family'),
+            family,
+            r'ObservabilityEstimate',
+            'family',
+          ),
           regionCode: regionCode,
           cell: cell,
           band: band,
           periodStart: BuiltValueNullFieldError.checkNotNull(
-              periodStart, r'ObservabilityEstimate', 'periodStart'),
+            periodStart,
+            r'ObservabilityEstimate',
+            'periodStart',
+          ),
           periodEnd: BuiltValueNullFieldError.checkNotNull(
-              periodEnd, r'ObservabilityEstimate', 'periodEnd'),
+            periodEnd,
+            r'ObservabilityEstimate',
+            'periodEnd',
+          ),
           pDetect: BuiltValueNullFieldError.checkNotNull(
-              pDetect, r'ObservabilityEstimate', 'pDetect'),
+            pDetect,
+            r'ObservabilityEstimate',
+            'pDetect',
+          ),
           lo: BuiltValueNullFieldError.checkNotNull(
-              lo, r'ObservabilityEstimate', 'lo'),
+            lo,
+            r'ObservabilityEstimate',
+            'lo',
+          ),
           hi: BuiltValueNullFieldError.checkNotNull(
-              hi, r'ObservabilityEstimate', 'hi'),
+            hi,
+            r'ObservabilityEstimate',
+            'hi',
+          ),
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'ObservabilityEstimate', 'n'),
+            n,
+            r'ObservabilityEstimate',
+            'n',
+          ),
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'ObservabilityEstimate', 'method'),
+            method,
+            r'ObservabilityEstimate',
+            'method',
+          ),
           confidence: confidence,
           computedAt: BuiltValueNullFieldError.checkNotNull(
-              computedAt, r'ObservabilityEstimate', 'computedAt'),
+            computedAt,
+            r'ObservabilityEstimate',
+            'computedAt',
+          ),
           manifestId: manifestId,
         );
     replace(_$result);

@@ -60,7 +60,7 @@ class _$AnomalyBaselineSlotSerializer
   @override
   final Iterable<Type> types = const [
     AnomalyBaselineSlot,
-    _$AnomalyBaselineSlot
+    _$AnomalyBaselineSlot,
   ];
 
   @override
@@ -82,10 +82,7 @@ class _$AnomalyBaselineSlotSerializer
       specifiedType: const FullType(int),
     );
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     yield r'mean';
     yield serializers.serialize(
       object.mean,
@@ -109,9 +106,11 @@ class _$AnomalyBaselineSlotSerializer
     AnomalyBaselineSlot object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,45 +126,45 @@ class _$AnomalyBaselineSlotSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'groupKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.groupKey = valueDes;
           break;
         case r'slot':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.slot = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'mean':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.mean = valueDes;
           break;
         case r'variance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.variance = valueDes;
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnomalyBaselineSlotModelEnum),
-          ) as AnomalyBaselineSlotModelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnomalyBaselineSlotModelEnum),
+                  )
+                  as AnomalyBaselineSlotModelEnum;
           result.model = valueDes;
           break;
         default:

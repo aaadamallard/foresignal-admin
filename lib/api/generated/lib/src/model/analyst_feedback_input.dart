@@ -42,7 +42,7 @@ class _$AnalystFeedbackInputSerializer
   @override
   final Iterable<Type> types = const [
     AnalystFeedbackInput,
-    _$AnalystFeedbackInput
+    _$AnalystFeedbackInput,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$AnalystFeedbackInputSerializer
     AnalystFeedbackInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +93,23 @@ class _$AnalystFeedbackInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'rating':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnalystFeedbackInputRatingEnum),
-          ) as AnalystFeedbackInputRatingEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AnalystFeedbackInputRatingEnum,
+                    ),
+                  )
+                  as AnalystFeedbackInputRatingEnum;
           result.rating = valueDes;
           break;
         case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.comment = valueDes;
           break;

@@ -18,21 +18,21 @@ class _$SocialCueResultsInner extends SocialCueResultsInner {
   @override
   final String? error;
 
-  factory _$SocialCueResultsInner(
-          [void Function(SocialCueResultsInnerBuilder)? updates]) =>
-      (SocialCueResultsInnerBuilder()..update(updates))._build();
+  factory _$SocialCueResultsInner([
+    void Function(SocialCueResultsInnerBuilder)? updates,
+  ]) => (SocialCueResultsInnerBuilder()..update(updates))._build();
 
-  _$SocialCueResultsInner._(
-      {required this.platform,
-      required this.posts,
-      this.newPosts,
-      this.costUsd,
-      this.error})
-      : super._();
+  _$SocialCueResultsInner._({
+    required this.platform,
+    required this.posts,
+    this.newPosts,
+    this.costUsd,
+    this.error,
+  }) : super._();
   @override
   SocialCueResultsInner rebuild(
-          void Function(SocialCueResultsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialCueResultsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialCueResultsInnerBuilder toBuilder() =>
@@ -128,12 +128,19 @@ class SocialCueResultsInnerBuilder
   SocialCueResultsInner build() => _build();
 
   _$SocialCueResultsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialCueResultsInner._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'SocialCueResultsInner', 'platform'),
+            platform,
+            r'SocialCueResultsInner',
+            'platform',
+          ),
           posts: BuiltValueNullFieldError.checkNotNull(
-              posts, r'SocialCueResultsInner', 'posts'),
+            posts,
+            r'SocialCueResultsInner',
+            'posts',
+          ),
           newPosts: newPosts,
           costUsd: costUsd,
           error: error,

@@ -7,14 +7,15 @@ part of 'mapping_preset.dart';
 // **************************************************************************
 
 const MappingPresetObservedAtModeEnum
-    _$mappingPresetObservedAtModeEnum_UPSTREAM =
+_$mappingPresetObservedAtModeEnum_UPSTREAM =
     const MappingPresetObservedAtModeEnum._('UPSTREAM');
 const MappingPresetObservedAtModeEnum
-    _$mappingPresetObservedAtModeEnum_RECEIVED =
+_$mappingPresetObservedAtModeEnum_RECEIVED =
     const MappingPresetObservedAtModeEnum._('RECEIVED');
 
 MappingPresetObservedAtModeEnum _$mappingPresetObservedAtModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'UPSTREAM':
       return _$mappingPresetObservedAtModeEnum_UPSTREAM;
@@ -26,14 +27,16 @@ MappingPresetObservedAtModeEnum _$mappingPresetObservedAtModeEnumValueOf(
 }
 
 final BuiltSet<MappingPresetObservedAtModeEnum>
-    _$mappingPresetObservedAtModeEnumValues = BuiltSet<
-        MappingPresetObservedAtModeEnum>(const <MappingPresetObservedAtModeEnum>[
-  _$mappingPresetObservedAtModeEnum_UPSTREAM,
-  _$mappingPresetObservedAtModeEnum_RECEIVED,
-]);
+_$mappingPresetObservedAtModeEnumValues =
+    BuiltSet<MappingPresetObservedAtModeEnum>(
+      const <MappingPresetObservedAtModeEnum>[
+        _$mappingPresetObservedAtModeEnum_UPSTREAM,
+        _$mappingPresetObservedAtModeEnum_RECEIVED,
+      ],
+    );
 
 Serializer<MappingPresetObservedAtModeEnum>
-    _$mappingPresetObservedAtModeEnumSerializer =
+_$mappingPresetObservedAtModeEnumSerializer =
     _$MappingPresetObservedAtModeEnumSerializer();
 
 class _$MappingPresetObservedAtModeEnumSerializer
@@ -54,16 +57,19 @@ class _$MappingPresetObservedAtModeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MappingPresetObservedAtModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MappingPresetObservedAtModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MappingPresetObservedAtModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MappingPresetObservedAtModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MappingPresetObservedAtModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MappingPreset extends MappingPreset {
@@ -105,25 +111,25 @@ class _$MappingPreset extends MappingPreset {
   factory _$MappingPreset([void Function(MappingPresetBuilder)? updates]) =>
       (MappingPresetBuilder()..update(updates))._build();
 
-  _$MappingPreset._(
-      {required this.id,
-      required this.title,
-      this.description,
-      required this.format,
-      this.mapping,
-      required this.kinds,
-      this.fieldSpecs,
-      required this.observedAtMode,
-      this.ttl,
-      this.ingestPolicy,
-      this.significantFields,
-      this.volatileFields,
-      this.private,
-      this.allowPathKey,
-      this.allowsGet,
-      required this.params,
-      required this.setup})
-      : super._();
+  _$MappingPreset._({
+    required this.id,
+    required this.title,
+    this.description,
+    required this.format,
+    this.mapping,
+    required this.kinds,
+    this.fieldSpecs,
+    required this.observedAtMode,
+    this.ttl,
+    this.ingestPolicy,
+    this.significantFields,
+    this.volatileFields,
+    this.private,
+    this.allowPathKey,
+    this.allowsGet,
+    required this.params,
+    required this.setup,
+  }) : super._();
   @override
   MappingPreset rebuild(void Function(MappingPresetBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -331,20 +337,33 @@ class MappingPresetBuilder
   _$MappingPreset _build() {
     _$MappingPreset _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingPreset._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'MappingPreset', 'id'),
+              id,
+              r'MappingPreset',
+              'id',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'MappingPreset', 'title'),
+              title,
+              r'MappingPreset',
+              'title',
+            ),
             description: description,
             format: BuiltValueNullFieldError.checkNotNull(
-                format, r'MappingPreset', 'format'),
+              format,
+              r'MappingPreset',
+              'format',
+            ),
             mapping: _mapping?.build(),
             kinds: kinds.build(),
             fieldSpecs: _fieldSpecs?.build(),
             observedAtMode: BuiltValueNullFieldError.checkNotNull(
-                observedAtMode, r'MappingPreset', 'observedAtMode'),
+              observedAtMode,
+              r'MappingPreset',
+              'observedAtMode',
+            ),
             ttl: ttl,
             ingestPolicy: _ingestPolicy?.build(),
             significantFields: _significantFields?.build(),
@@ -378,7 +397,10 @@ class MappingPresetBuilder
         setup.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingPreset', _$failedField, e.toString());
+          r'MappingPreset',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

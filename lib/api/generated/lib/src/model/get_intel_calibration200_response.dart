@@ -17,16 +17,18 @@ part 'get_intel_calibration200_response.g.dart';
 @BuiltValue()
 abstract class GetIntelCalibration200Response
     implements
-        Built<GetIntelCalibration200Response,
-            GetIntelCalibration200ResponseBuilder> {
+        Built<
+          GetIntelCalibration200Response,
+          GetIntelCalibration200ResponseBuilder
+        > {
   @BuiltValueField(wireName: r'scopes')
   BuiltList<IntelCalibration> get scopes;
 
   GetIntelCalibration200Response._();
 
-  factory GetIntelCalibration200Response(
-          [void updates(GetIntelCalibration200ResponseBuilder b)]) =
-      _$GetIntelCalibration200Response;
+  factory GetIntelCalibration200Response([
+    void updates(GetIntelCalibration200ResponseBuilder b),
+  ]) = _$GetIntelCalibration200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GetIntelCalibration200ResponseBuilder b) => b;
@@ -41,7 +43,7 @@ class _$GetIntelCalibration200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     GetIntelCalibration200Response,
-    _$GetIntelCalibration200Response
+    _$GetIntelCalibration200Response,
   ];
 
   @override
@@ -65,9 +67,11 @@ class _$GetIntelCalibration200ResponseSerializer
     GetIntelCalibration200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,11 +87,14 @@ class _$GetIntelCalibration200ResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'scopes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(IntelCalibration)]),
-          ) as BuiltList<IntelCalibration>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelCalibration),
+                    ]),
+                  )
+                  as BuiltList<IntelCalibration>;
           result.scopes.replace(valueDes);
           break;
         default:

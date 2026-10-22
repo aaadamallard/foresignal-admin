@@ -33,9 +33,9 @@ abstract class ExposureWatchlistEntities
 
   ExposureWatchlistEntities._();
 
-  factory ExposureWatchlistEntities(
-          [void updates(ExposureWatchlistEntitiesBuilder b)]) =
-      _$ExposureWatchlistEntities;
+  factory ExposureWatchlistEntities([
+    void updates(ExposureWatchlistEntitiesBuilder b),
+  ]) = _$ExposureWatchlistEntities;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExposureWatchlistEntitiesBuilder b) => b;
@@ -50,7 +50,7 @@ class _$ExposureWatchlistEntitiesSerializer
   @override
   final Iterable<Type> types = const [
     ExposureWatchlistEntities,
-    _$ExposureWatchlistEntities
+    _$ExposureWatchlistEntities,
   ];
 
   @override
@@ -77,8 +77,9 @@ class _$ExposureWatchlistEntitiesSerializer
       yield r'counts';
       yield serializers.serialize(
         object.counts,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ExposureWatchlistEntitiesCountsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ExposureWatchlistEntitiesCountsInner),
+        ]),
       );
     }
   }
@@ -89,9 +90,11 @@ class _$ExposureWatchlistEntitiesSerializer
     ExposureWatchlistEntities object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,27 +110,37 @@ class _$ExposureWatchlistEntitiesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposureWatchlistEntitiesStatusEnum),
-          ) as ExposureWatchlistEntitiesStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ExposureWatchlistEntitiesStatusEnum,
+                    ),
+                  )
+                  as ExposureWatchlistEntitiesStatusEnum;
           result.status = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>?;
           if (valueDes == null) continue;
           result.attribution.replace(valueDes);
           break;
         case r'counts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ExposureWatchlistEntitiesCountsInner)]),
-          ) as BuiltList<ExposureWatchlistEntitiesCountsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ExposureWatchlistEntitiesCountsInner),
+                    ]),
+                  )
+                  as BuiltList<ExposureWatchlistEntitiesCountsInner>?;
           if (valueDes == null) continue;
           result.counts.replace(valueDes);
           break;

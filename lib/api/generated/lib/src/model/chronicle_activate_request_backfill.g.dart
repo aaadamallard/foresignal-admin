@@ -11,15 +11,15 @@ class _$ChronicleActivateRequestBackfill
   @override
   final DateTime from;
 
-  factory _$ChronicleActivateRequestBackfill(
-          [void Function(ChronicleActivateRequestBackfillBuilder)? updates]) =>
-      (ChronicleActivateRequestBackfillBuilder()..update(updates))._build();
+  factory _$ChronicleActivateRequestBackfill([
+    void Function(ChronicleActivateRequestBackfillBuilder)? updates,
+  ]) => (ChronicleActivateRequestBackfillBuilder()..update(updates))._build();
 
   _$ChronicleActivateRequestBackfill._({required this.from}) : super._();
   @override
   ChronicleActivateRequestBackfill rebuild(
-          void Function(ChronicleActivateRequestBackfillBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleActivateRequestBackfillBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleActivateRequestBackfillBuilder toBuilder() =>
@@ -41,16 +41,18 @@ class _$ChronicleActivateRequestBackfill
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ChronicleActivateRequestBackfill')
-          ..add('from', from))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ChronicleActivateRequestBackfill',
+    )..add('from', from)).toString();
   }
 }
 
 class ChronicleActivateRequestBackfillBuilder
     implements
-        Builder<ChronicleActivateRequestBackfill,
-            ChronicleActivateRequestBackfillBuilder> {
+        Builder<
+          ChronicleActivateRequestBackfill,
+          ChronicleActivateRequestBackfillBuilder
+        > {
   _$ChronicleActivateRequestBackfill? _$v;
 
   DateTime? _from;
@@ -84,10 +86,14 @@ class ChronicleActivateRequestBackfillBuilder
   ChronicleActivateRequestBackfill build() => _build();
 
   _$ChronicleActivateRequestBackfill _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleActivateRequestBackfill._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'ChronicleActivateRequestBackfill', 'from'),
+            from,
+            r'ChronicleActivateRequestBackfill',
+            'from',
+          ),
         );
     replace(_$result);
     return _$result;

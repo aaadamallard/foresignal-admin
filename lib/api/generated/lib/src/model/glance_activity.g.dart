@@ -38,9 +38,9 @@ class _$GlanceActivity extends GlanceActivity {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GlanceActivity')
-          ..add('versionsLastHour', versionsLastHour))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'GlanceActivity',
+    )..add('versionsLastHour', versionsLastHour)).toString();
   }
 }
 
@@ -80,10 +80,8 @@ class GlanceActivityBuilder
   GlanceActivity build() => _build();
 
   _$GlanceActivity _build() {
-    final _$result = _$v ??
-        _$GlanceActivity._(
-          versionsLastHour: versionsLastHour,
-        );
+    final _$result =
+        _$v ?? _$GlanceActivity._(versionsLastHour: versionsLastHour);
     replace(_$result);
     return _$result;
   }

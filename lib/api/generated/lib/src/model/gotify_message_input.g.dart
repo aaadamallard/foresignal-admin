@@ -16,17 +16,20 @@ class _$GotifyMessageInput extends GotifyMessageInput {
   @override
   final BuiltMap<String, JsonObject?>? extras;
 
-  factory _$GotifyMessageInput(
-          [void Function(GotifyMessageInputBuilder)? updates]) =>
-      (GotifyMessageInputBuilder()..update(updates))._build();
+  factory _$GotifyMessageInput([
+    void Function(GotifyMessageInputBuilder)? updates,
+  ]) => (GotifyMessageInputBuilder()..update(updates))._build();
 
-  _$GotifyMessageInput._(
-      {this.title, required this.message, this.priority, this.extras})
-      : super._();
+  _$GotifyMessageInput._({
+    this.title,
+    required this.message,
+    this.priority,
+    this.extras,
+  }) : super._();
   @override
   GotifyMessageInput rebuild(
-          void Function(GotifyMessageInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GotifyMessageInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GotifyMessageInputBuilder toBuilder() =>
@@ -118,11 +121,15 @@ class GotifyMessageInputBuilder
   _$GotifyMessageInput _build() {
     _$GotifyMessageInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$GotifyMessageInput._(
             title: title,
             message: BuiltValueNullFieldError.checkNotNull(
-                message, r'GotifyMessageInput', 'message'),
+              message,
+              r'GotifyMessageInput',
+              'message',
+            ),
             priority: priority,
             extras: _extras?.build(),
           );
@@ -133,7 +140,10 @@ class GotifyMessageInputBuilder
         _extras?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GotifyMessageInput', _$failedField, e.toString());
+          r'GotifyMessageInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,17 +12,18 @@ class _$BaseRateDefinitionCondition extends BaseRateDefinitionCondition {
   @override
   final int withinDays;
 
-  factory _$BaseRateDefinitionCondition(
-          [void Function(BaseRateDefinitionConditionBuilder)? updates]) =>
-      (BaseRateDefinitionConditionBuilder()..update(updates))._build();
+  factory _$BaseRateDefinitionCondition([
+    void Function(BaseRateDefinitionConditionBuilder)? updates,
+  ]) => (BaseRateDefinitionConditionBuilder()..update(updates))._build();
 
-  _$BaseRateDefinitionCondition._(
-      {required this.family, required this.withinDays})
-      : super._();
+  _$BaseRateDefinitionCondition._({
+    required this.family,
+    required this.withinDays,
+  }) : super._();
   @override
   BaseRateDefinitionCondition rebuild(
-          void Function(BaseRateDefinitionConditionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BaseRateDefinitionConditionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BaseRateDefinitionConditionBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$BaseRateDefinitionCondition extends BaseRateDefinitionCondition {
 
 class BaseRateDefinitionConditionBuilder
     implements
-        Builder<BaseRateDefinitionCondition,
-            BaseRateDefinitionConditionBuilder> {
+        Builder<
+          BaseRateDefinitionCondition,
+          BaseRateDefinitionConditionBuilder
+        > {
   _$BaseRateDefinitionCondition? _$v;
 
   String? _family;
@@ -96,12 +99,19 @@ class BaseRateDefinitionConditionBuilder
   BaseRateDefinitionCondition build() => _build();
 
   _$BaseRateDefinitionCondition _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BaseRateDefinitionCondition._(
           family: BuiltValueNullFieldError.checkNotNull(
-              family, r'BaseRateDefinitionCondition', 'family'),
+            family,
+            r'BaseRateDefinitionCondition',
+            'family',
+          ),
           withinDays: BuiltValueNullFieldError.checkNotNull(
-              withinDays, r'BaseRateDefinitionCondition', 'withinDays'),
+            withinDays,
+            r'BaseRateDefinitionCondition',
+            'withinDays',
+          ),
         );
     replace(_$result);
     return _$result;

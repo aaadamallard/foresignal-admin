@@ -24,24 +24,24 @@ class _$PlaceWeatherDigestPeriod extends PlaceWeatherDigestPeriod {
   @override
   final BuiltList<String>? notes;
 
-  factory _$PlaceWeatherDigestPeriod(
-          [void Function(PlaceWeatherDigestPeriodBuilder)? updates]) =>
-      (PlaceWeatherDigestPeriodBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestPeriod([
+    void Function(PlaceWeatherDigestPeriodBuilder)? updates,
+  ]) => (PlaceWeatherDigestPeriodBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestPeriod._(
-      {this.from,
-      this.to,
-      this.partial,
-      this.maxDbz,
-      this.maxMeshMm,
-      this.lightningTotal,
-      this.hazardsEntered,
-      this.notes})
-      : super._();
+  _$PlaceWeatherDigestPeriod._({
+    this.from,
+    this.to,
+    this.partial,
+    this.maxDbz,
+    this.maxMeshMm,
+    this.lightningTotal,
+    this.hazardsEntered,
+    this.notes,
+  }) : super._();
   @override
   PlaceWeatherDigestPeriod rebuild(
-          void Function(PlaceWeatherDigestPeriodBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestPeriodBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestPeriodBuilder toBuilder() =>
@@ -126,9 +126,8 @@ class PlaceWeatherDigestPeriodBuilder
       _$this._hazardsEntered ??=
           ListBuilder<PlaceWeatherDigestPeriodHazardsEnteredInner>();
   set hazardsEntered(
-          ListBuilder<PlaceWeatherDigestPeriodHazardsEnteredInner>?
-              hazardsEntered) =>
-      _$this._hazardsEntered = hazardsEntered;
+    ListBuilder<PlaceWeatherDigestPeriodHazardsEnteredInner>? hazardsEntered,
+  ) => _$this._hazardsEntered = hazardsEntered;
 
   ListBuilder<String>? _notes;
   ListBuilder<String> get notes => _$this._notes ??= ListBuilder<String>();
@@ -170,7 +169,8 @@ class PlaceWeatherDigestPeriodBuilder
   _$PlaceWeatherDigestPeriod _build() {
     _$PlaceWeatherDigestPeriod _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlaceWeatherDigestPeriod._(
             from: from,
             to: to,
@@ -190,7 +190,10 @@ class PlaceWeatherDigestPeriodBuilder
         _notes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceWeatherDigestPeriod', _$failedField, e.toString());
+          r'PlaceWeatherDigestPeriod',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,15 +12,15 @@ class _$EscalationPolicyInputStopOn extends EscalationPolicyInputStopOn {
   @override
   final bool? snooze;
 
-  factory _$EscalationPolicyInputStopOn(
-          [void Function(EscalationPolicyInputStopOnBuilder)? updates]) =>
-      (EscalationPolicyInputStopOnBuilder()..update(updates))._build();
+  factory _$EscalationPolicyInputStopOn([
+    void Function(EscalationPolicyInputStopOnBuilder)? updates,
+  ]) => (EscalationPolicyInputStopOnBuilder()..update(updates))._build();
 
   _$EscalationPolicyInputStopOn._({this.resolve, this.snooze}) : super._();
   @override
   EscalationPolicyInputStopOn rebuild(
-          void Function(EscalationPolicyInputStopOnBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EscalationPolicyInputStopOnBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EscalationPolicyInputStopOnBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$EscalationPolicyInputStopOn extends EscalationPolicyInputStopOn {
 
 class EscalationPolicyInputStopOnBuilder
     implements
-        Builder<EscalationPolicyInputStopOn,
-            EscalationPolicyInputStopOnBuilder> {
+        Builder<
+          EscalationPolicyInputStopOn,
+          EscalationPolicyInputStopOnBuilder
+        > {
   _$EscalationPolicyInputStopOn? _$v;
 
   bool? _resolve;
@@ -94,11 +96,9 @@ class EscalationPolicyInputStopOnBuilder
   EscalationPolicyInputStopOn build() => _build();
 
   _$EscalationPolicyInputStopOn _build() {
-    final _$result = _$v ??
-        _$EscalationPolicyInputStopOn._(
-          resolve: resolve,
-          snooze: snooze,
-        );
+    final _$result =
+        _$v ??
+        _$EscalationPolicyInputStopOn._(resolve: resolve, snooze: snooze);
     replace(_$result);
     return _$result;
   }

@@ -32,11 +32,11 @@ ExerciseRunCreateSpeedEnum _$exerciseRunCreateSpeedEnumValueOf(String name) {
 
 final BuiltSet<ExerciseRunCreateSpeedEnum> _$exerciseRunCreateSpeedEnumValues =
     BuiltSet<ExerciseRunCreateSpeedEnum>(const <ExerciseRunCreateSpeedEnum>[
-  _$exerciseRunCreateSpeedEnum_realtime,
-  _$exerciseRunCreateSpeedEnum_x10,
-  _$exerciseRunCreateSpeedEnum_x60,
-  _$exerciseRunCreateSpeedEnum_max,
-]);
+      _$exerciseRunCreateSpeedEnum_realtime,
+      _$exerciseRunCreateSpeedEnum_x10,
+      _$exerciseRunCreateSpeedEnum_x60,
+      _$exerciseRunCreateSpeedEnum_max,
+    ]);
 
 Serializer<ExerciseRunCreateSpeedEnum> _$exerciseRunCreateSpeedEnumSerializer =
     _$ExerciseRunCreateSpeedEnumSerializer();
@@ -62,16 +62,20 @@ class _$ExerciseRunCreateSpeedEnumSerializer
   final String wireName = 'ExerciseRunCreateSpeedEnum';
 
   @override
-  Object serialize(Serializers serializers, ExerciseRunCreateSpeedEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExerciseRunCreateSpeedEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExerciseRunCreateSpeedEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExerciseRunCreateSpeedEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExerciseRunCreateSpeedEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExerciseRunCreate extends ExerciseRunCreate {
@@ -98,23 +102,23 @@ class _$ExerciseRunCreate extends ExerciseRunCreate {
   @override
   final bool? dryRun;
 
-  factory _$ExerciseRunCreate(
-          [void Function(ExerciseRunCreateBuilder)? updates]) =>
-      (ExerciseRunCreateBuilder()..update(updates))._build();
+  factory _$ExerciseRunCreate([
+    void Function(ExerciseRunCreateBuilder)? updates,
+  ]) => (ExerciseRunCreateBuilder()..update(updates))._build();
 
-  _$ExerciseRunCreate._(
-      {required this.name,
-      this.ruleIds,
-      this.tag,
-      this.from,
-      this.to,
-      this.fromSeq,
-      this.toSeq,
-      this.speed,
-      this.channelIds,
-      this.enrich,
-      this.dryRun})
-      : super._();
+  _$ExerciseRunCreate._({
+    required this.name,
+    this.ruleIds,
+    this.tag,
+    this.from,
+    this.to,
+    this.fromSeq,
+    this.toSeq,
+    this.speed,
+    this.channelIds,
+    this.enrich,
+    this.dryRun,
+  }) : super._();
   @override
   ExerciseRunCreate rebuild(void Function(ExerciseRunCreateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -265,10 +269,14 @@ class ExerciseRunCreateBuilder
   _$ExerciseRunCreate _build() {
     _$ExerciseRunCreate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExerciseRunCreate._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ExerciseRunCreate', 'name'),
+              name,
+              r'ExerciseRunCreate',
+              'name',
+            ),
             ruleIds: _ruleIds?.build(),
             tag: tag,
             from: from,
@@ -290,7 +298,10 @@ class ExerciseRunCreateBuilder
         _channelIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExerciseRunCreate', _$failedField, e.toString());
+          r'ExerciseRunCreate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

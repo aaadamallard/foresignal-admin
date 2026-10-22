@@ -14,15 +14,15 @@ class _$PrecursorLagDistribution extends PrecursorLagDistribution {
   @override
   final String? p75;
 
-  factory _$PrecursorLagDistribution(
-          [void Function(PrecursorLagDistributionBuilder)? updates]) =>
-      (PrecursorLagDistributionBuilder()..update(updates))._build();
+  factory _$PrecursorLagDistribution([
+    void Function(PrecursorLagDistributionBuilder)? updates,
+  ]) => (PrecursorLagDistributionBuilder()..update(updates))._build();
 
   _$PrecursorLagDistribution._({this.p25, this.median, this.p75}) : super._();
   @override
   PrecursorLagDistribution rebuild(
-          void Function(PrecursorLagDistributionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorLagDistributionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorLagDistributionBuilder toBuilder() =>
@@ -103,12 +103,8 @@ class PrecursorLagDistributionBuilder
   PrecursorLagDistribution build() => _build();
 
   _$PrecursorLagDistribution _build() {
-    final _$result = _$v ??
-        _$PrecursorLagDistribution._(
-          p25: p25,
-          median: median,
-          p75: p75,
-        );
+    final _$result =
+        _$v ?? _$PrecursorLagDistribution._(p25: p25, median: median, p75: p75);
     replace(_$result);
     return _$result;
   }

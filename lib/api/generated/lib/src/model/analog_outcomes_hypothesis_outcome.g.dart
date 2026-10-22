@@ -13,17 +13,18 @@ class _$AnalogOutcomesHypothesisOutcome
   @override
   final String outcome;
 
-  factory _$AnalogOutcomesHypothesisOutcome(
-          [void Function(AnalogOutcomesHypothesisOutcomeBuilder)? updates]) =>
-      (AnalogOutcomesHypothesisOutcomeBuilder()..update(updates))._build();
+  factory _$AnalogOutcomesHypothesisOutcome([
+    void Function(AnalogOutcomesHypothesisOutcomeBuilder)? updates,
+  ]) => (AnalogOutcomesHypothesisOutcomeBuilder()..update(updates))._build();
 
-  _$AnalogOutcomesHypothesisOutcome._(
-      {required this.setId, required this.outcome})
-      : super._();
+  _$AnalogOutcomesHypothesisOutcome._({
+    required this.setId,
+    required this.outcome,
+  }) : super._();
   @override
   AnalogOutcomesHypothesisOutcome rebuild(
-          void Function(AnalogOutcomesHypothesisOutcomeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalogOutcomesHypothesisOutcomeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalogOutcomesHypothesisOutcomeBuilder toBuilder() =>
@@ -57,8 +58,10 @@ class _$AnalogOutcomesHypothesisOutcome
 
 class AnalogOutcomesHypothesisOutcomeBuilder
     implements
-        Builder<AnalogOutcomesHypothesisOutcome,
-            AnalogOutcomesHypothesisOutcomeBuilder> {
+        Builder<
+          AnalogOutcomesHypothesisOutcome,
+          AnalogOutcomesHypothesisOutcomeBuilder
+        > {
   _$AnalogOutcomesHypothesisOutcome? _$v;
 
   String? _setId;
@@ -97,12 +100,19 @@ class AnalogOutcomesHypothesisOutcomeBuilder
   AnalogOutcomesHypothesisOutcome build() => _build();
 
   _$AnalogOutcomesHypothesisOutcome _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalogOutcomesHypothesisOutcome._(
           setId: BuiltValueNullFieldError.checkNotNull(
-              setId, r'AnalogOutcomesHypothesisOutcome', 'setId'),
+            setId,
+            r'AnalogOutcomesHypothesisOutcome',
+            'setId',
+          ),
           outcome: BuiltValueNullFieldError.checkNotNull(
-              outcome, r'AnalogOutcomesHypothesisOutcome', 'outcome'),
+            outcome,
+            r'AnalogOutcomesHypothesisOutcome',
+            'outcome',
+          ),
         );
     replace(_$result);
     return _$result;

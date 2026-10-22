@@ -40,9 +40,9 @@ abstract class IntelBoardForecastsDueInner
 
   IntelBoardForecastsDueInner._();
 
-  factory IntelBoardForecastsDueInner(
-          [void updates(IntelBoardForecastsDueInnerBuilder b)]) =
-      _$IntelBoardForecastsDueInner;
+  factory IntelBoardForecastsDueInner([
+    void updates(IntelBoardForecastsDueInnerBuilder b),
+  ]) = _$IntelBoardForecastsDueInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardForecastsDueInnerBuilder b) => b;
@@ -57,7 +57,7 @@ class _$IntelBoardForecastsDueInnerSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardForecastsDueInner,
-    _$IntelBoardForecastsDueInner
+    _$IntelBoardForecastsDueInner,
   ];
 
   @override
@@ -105,9 +105,11 @@ class _$IntelBoardForecastsDueInnerSerializer
     IntelBoardForecastsDueInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,39 +125,49 @@ class _$IntelBoardForecastsDueInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.questionId = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'dueAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.dueAt = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.probability = valueDes;
           break;
         case r'estimativeTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IcdTerm),
-          ) as IcdTerm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IcdTerm),
+                  )
+                  as IcdTerm?;
           if (valueDes == null) continue;
           result.estimativeTerm = valueDes;
           break;

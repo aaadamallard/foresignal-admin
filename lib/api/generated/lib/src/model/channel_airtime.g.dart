@@ -25,15 +25,15 @@ class _$ChannelAirtime extends ChannelAirtime {
   factory _$ChannelAirtime([void Function(ChannelAirtimeBuilder)? updates]) =>
       (ChannelAirtimeBuilder()..update(updates))._build();
 
-  _$ChannelAirtime._(
-      {required this.windowSeconds,
-      required this.usedSeconds,
-      required this.limitSeconds,
-      required this.dutyCyclePercent,
-      required this.queued,
-      required this.foldedLastHour,
-      required this.droppedLastHour})
-      : super._();
+  _$ChannelAirtime._({
+    required this.windowSeconds,
+    required this.usedSeconds,
+    required this.limitSeconds,
+    required this.dutyCyclePercent,
+    required this.queued,
+    required this.foldedLastHour,
+    required this.droppedLastHour,
+  }) : super._();
   @override
   ChannelAirtime rebuild(void Function(ChannelAirtimeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -151,22 +151,44 @@ class ChannelAirtimeBuilder
   ChannelAirtime build() => _build();
 
   _$ChannelAirtime _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChannelAirtime._(
           windowSeconds: BuiltValueNullFieldError.checkNotNull(
-              windowSeconds, r'ChannelAirtime', 'windowSeconds'),
+            windowSeconds,
+            r'ChannelAirtime',
+            'windowSeconds',
+          ),
           usedSeconds: BuiltValueNullFieldError.checkNotNull(
-              usedSeconds, r'ChannelAirtime', 'usedSeconds'),
+            usedSeconds,
+            r'ChannelAirtime',
+            'usedSeconds',
+          ),
           limitSeconds: BuiltValueNullFieldError.checkNotNull(
-              limitSeconds, r'ChannelAirtime', 'limitSeconds'),
+            limitSeconds,
+            r'ChannelAirtime',
+            'limitSeconds',
+          ),
           dutyCyclePercent: BuiltValueNullFieldError.checkNotNull(
-              dutyCyclePercent, r'ChannelAirtime', 'dutyCyclePercent'),
+            dutyCyclePercent,
+            r'ChannelAirtime',
+            'dutyCyclePercent',
+          ),
           queued: BuiltValueNullFieldError.checkNotNull(
-              queued, r'ChannelAirtime', 'queued'),
+            queued,
+            r'ChannelAirtime',
+            'queued',
+          ),
           foldedLastHour: BuiltValueNullFieldError.checkNotNull(
-              foldedLastHour, r'ChannelAirtime', 'foldedLastHour'),
+            foldedLastHour,
+            r'ChannelAirtime',
+            'foldedLastHour',
+          ),
           droppedLastHour: BuiltValueNullFieldError.checkNotNull(
-              droppedLastHour, r'ChannelAirtime', 'droppedLastHour'),
+            droppedLastHour,
+            r'ChannelAirtime',
+            'droppedLastHour',
+          ),
         );
     replace(_$result);
     return _$result;

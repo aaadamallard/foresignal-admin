@@ -17,8 +17,10 @@ part 'ingest_outcome_rejections_inner.g.dart';
 @BuiltValue()
 abstract class IngestOutcomeRejectionsInner
     implements
-        Built<IngestOutcomeRejectionsInner,
-            IngestOutcomeRejectionsInnerBuilder> {
+        Built<
+          IngestOutcomeRejectionsInner,
+          IngestOutcomeRejectionsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'index')
   int? get index;
 
@@ -31,9 +33,9 @@ abstract class IngestOutcomeRejectionsInner
 
   IngestOutcomeRejectionsInner._();
 
-  factory IngestOutcomeRejectionsInner(
-          [void updates(IngestOutcomeRejectionsInnerBuilder b)]) =
-      _$IngestOutcomeRejectionsInner;
+  factory IngestOutcomeRejectionsInner([
+    void updates(IngestOutcomeRejectionsInnerBuilder b),
+  ]) = _$IngestOutcomeRejectionsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IngestOutcomeRejectionsInnerBuilder b) => b;
@@ -48,7 +50,7 @@ class _$IngestOutcomeRejectionsInnerSerializer
   @override
   final Iterable<Type> types = const [
     IngestOutcomeRejectionsInner,
-    _$IngestOutcomeRejectionsInner
+    _$IngestOutcomeRejectionsInner,
   ];
 
   @override
@@ -88,9 +90,11 @@ class _$IngestOutcomeRejectionsInnerSerializer
     IngestOutcomeRejectionsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -106,26 +110,32 @@ class _$IngestOutcomeRejectionsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'index':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.index = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.externalId = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

@@ -21,13 +21,13 @@ class _$EdpSnapshot extends EdpSnapshot {
   factory _$EdpSnapshot([void Function(EdpSnapshotBuilder)? updates]) =>
       (EdpSnapshotBuilder()..update(updates))._build();
 
-  _$EdpSnapshot._(
-      {required this.id,
-      required this.stream,
-      this.scope,
-      required this.page,
-      required this.final_})
-      : super._();
+  _$EdpSnapshot._({
+    required this.id,
+    required this.stream,
+    this.scope,
+    required this.page,
+    required this.final_,
+  }) : super._();
   @override
   EdpSnapshot rebuild(void Function(EdpSnapshotBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -124,16 +124,26 @@ class EdpSnapshotBuilder implements Builder<EdpSnapshot, EdpSnapshotBuilder> {
   EdpSnapshot build() => _build();
 
   _$EdpSnapshot _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpSnapshot._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'EdpSnapshot', 'id'),
           stream: BuiltValueNullFieldError.checkNotNull(
-              stream, r'EdpSnapshot', 'stream'),
+            stream,
+            r'EdpSnapshot',
+            'stream',
+          ),
           scope: scope,
           page: BuiltValueNullFieldError.checkNotNull(
-              page, r'EdpSnapshot', 'page'),
+            page,
+            r'EdpSnapshot',
+            'page',
+          ),
           final_: BuiltValueNullFieldError.checkNotNull(
-              final_, r'EdpSnapshot', 'final_'),
+            final_,
+            r'EdpSnapshot',
+            'final_',
+          ),
         );
     replace(_$result);
     return _$result;

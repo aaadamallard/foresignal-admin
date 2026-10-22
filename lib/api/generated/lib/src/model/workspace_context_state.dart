@@ -30,8 +30,9 @@ abstract class WorkspaceContextState
 
   WorkspaceContextState._();
 
-  factory WorkspaceContextState(
-      [void updates(WorkspaceContextStateBuilder b)]) = _$WorkspaceContextState;
+  factory WorkspaceContextState([
+    void updates(WorkspaceContextStateBuilder b),
+  ]) = _$WorkspaceContextState;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WorkspaceContextStateBuilder b) => b;
@@ -46,7 +47,7 @@ class _$WorkspaceContextStateSerializer
   @override
   final Iterable<Type> types = const [
     WorkspaceContextState,
-    _$WorkspaceContextState
+    _$WorkspaceContextState,
   ];
 
   @override
@@ -80,9 +81,11 @@ class _$WorkspaceContextStateSerializer
     WorkspaceContextState object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,24 +101,27 @@ class _$WorkspaceContextStateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'workspaceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.workspaceId = valueDes;
           break;
         case r'contextVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.contextVersion = valueDes;
           break;
         case r'context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WorkspaceContext),
-          ) as WorkspaceContext;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WorkspaceContext),
+                  )
+                  as WorkspaceContext;
           result.context.replace(valueDes);
           break;
         default:

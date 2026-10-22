@@ -16,7 +16,8 @@ const CycleRunFailedEventCadenceEnum _$cycleRunFailedEventCadenceEnum_onDemand =
     const CycleRunFailedEventCadenceEnum._('onDemand');
 
 CycleRunFailedEventCadenceEnum _$cycleRunFailedEventCadenceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'daily':
       return _$cycleRunFailedEventCadenceEnum_daily;
@@ -32,16 +33,18 @@ CycleRunFailedEventCadenceEnum _$cycleRunFailedEventCadenceEnumValueOf(
 }
 
 final BuiltSet<CycleRunFailedEventCadenceEnum>
-    _$cycleRunFailedEventCadenceEnumValues = BuiltSet<
-        CycleRunFailedEventCadenceEnum>(const <CycleRunFailedEventCadenceEnum>[
-  _$cycleRunFailedEventCadenceEnum_daily,
-  _$cycleRunFailedEventCadenceEnum_weekly,
-  _$cycleRunFailedEventCadenceEnum_monthly,
-  _$cycleRunFailedEventCadenceEnum_onDemand,
-]);
+_$cycleRunFailedEventCadenceEnumValues =
+    BuiltSet<CycleRunFailedEventCadenceEnum>(
+      const <CycleRunFailedEventCadenceEnum>[
+        _$cycleRunFailedEventCadenceEnum_daily,
+        _$cycleRunFailedEventCadenceEnum_weekly,
+        _$cycleRunFailedEventCadenceEnum_monthly,
+        _$cycleRunFailedEventCadenceEnum_onDemand,
+      ],
+    );
 
 Serializer<CycleRunFailedEventCadenceEnum>
-    _$cycleRunFailedEventCadenceEnumSerializer =
+_$cycleRunFailedEventCadenceEnumSerializer =
     _$CycleRunFailedEventCadenceEnumSerializer();
 
 class _$CycleRunFailedEventCadenceEnumSerializer
@@ -66,16 +69,19 @@ class _$CycleRunFailedEventCadenceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, CycleRunFailedEventCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CycleRunFailedEventCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CycleRunFailedEventCadenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CycleRunFailedEventCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CycleRunFailedEventCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CycleRunFailedEvent extends CycleRunFailedEvent {
@@ -92,22 +98,22 @@ class _$CycleRunFailedEvent extends CycleRunFailedEvent {
   @override
   final DateTime at;
 
-  factory _$CycleRunFailedEvent(
-          [void Function(CycleRunFailedEventBuilder)? updates]) =>
-      (CycleRunFailedEventBuilder()..update(updates))._build();
+  factory _$CycleRunFailedEvent([
+    void Function(CycleRunFailedEventBuilder)? updates,
+  ]) => (CycleRunFailedEventBuilder()..update(updates))._build();
 
-  _$CycleRunFailedEvent._(
-      {required this.runId,
-      this.cycleId,
-      this.situationId,
-      required this.cadence,
-      required this.reason,
-      required this.at})
-      : super._();
+  _$CycleRunFailedEvent._({
+    required this.runId,
+    this.cycleId,
+    this.situationId,
+    required this.cadence,
+    required this.reason,
+    required this.at,
+  }) : super._();
   @override
   CycleRunFailedEvent rebuild(
-          void Function(CycleRunFailedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CycleRunFailedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CycleRunFailedEventBuilder toBuilder() =>
@@ -212,18 +218,31 @@ class CycleRunFailedEventBuilder
   CycleRunFailedEvent build() => _build();
 
   _$CycleRunFailedEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CycleRunFailedEvent._(
           runId: BuiltValueNullFieldError.checkNotNull(
-              runId, r'CycleRunFailedEvent', 'runId'),
+            runId,
+            r'CycleRunFailedEvent',
+            'runId',
+          ),
           cycleId: cycleId,
           situationId: situationId,
           cadence: BuiltValueNullFieldError.checkNotNull(
-              cadence, r'CycleRunFailedEvent', 'cadence'),
+            cadence,
+            r'CycleRunFailedEvent',
+            'cadence',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'CycleRunFailedEvent', 'reason'),
+            reason,
+            r'CycleRunFailedEvent',
+            'reason',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'CycleRunFailedEvent', 'at'),
+            at,
+            r'CycleRunFailedEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -19,12 +19,12 @@ class _$TileKeyCreate extends TileKeyCreate {
   factory _$TileKeyCreate([void Function(TileKeyCreateBuilder)? updates]) =>
       (TileKeyCreateBuilder()..update(updates))._build();
 
-  _$TileKeyCreate._(
-      {required this.name,
-      required this.prefixes,
-      required this.ttl,
-      this.restrictions})
-      : super._();
+  _$TileKeyCreate._({
+    required this.name,
+    required this.prefixes,
+    required this.ttl,
+    this.restrictions,
+  }) : super._();
   @override
   TileKeyCreate rebuild(void Function(TileKeyCreateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -118,13 +118,20 @@ class TileKeyCreateBuilder
   _$TileKeyCreate _build() {
     _$TileKeyCreate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TileKeyCreate._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'TileKeyCreate', 'name'),
+              name,
+              r'TileKeyCreate',
+              'name',
+            ),
             prefixes: prefixes.build(),
             ttl: BuiltValueNullFieldError.checkNotNull(
-                ttl, r'TileKeyCreate', 'ttl'),
+              ttl,
+              r'TileKeyCreate',
+              'ttl',
+            ),
             restrictions: _restrictions?.build(),
           );
     } catch (_) {
@@ -137,7 +144,10 @@ class TileKeyCreateBuilder
         _restrictions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TileKeyCreate', _$failedField, e.toString());
+          r'TileKeyCreate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

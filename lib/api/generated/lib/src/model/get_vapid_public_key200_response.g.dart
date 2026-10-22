@@ -10,15 +10,15 @@ class _$GetVapidPublicKey200Response extends GetVapidPublicKey200Response {
   @override
   final String publicKey;
 
-  factory _$GetVapidPublicKey200Response(
-          [void Function(GetVapidPublicKey200ResponseBuilder)? updates]) =>
-      (GetVapidPublicKey200ResponseBuilder()..update(updates))._build();
+  factory _$GetVapidPublicKey200Response([
+    void Function(GetVapidPublicKey200ResponseBuilder)? updates,
+  ]) => (GetVapidPublicKey200ResponseBuilder()..update(updates))._build();
 
   _$GetVapidPublicKey200Response._({required this.publicKey}) : super._();
   @override
   GetVapidPublicKey200Response rebuild(
-          void Function(GetVapidPublicKey200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GetVapidPublicKey200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GetVapidPublicKey200ResponseBuilder toBuilder() =>
@@ -41,16 +41,18 @@ class _$GetVapidPublicKey200Response extends GetVapidPublicKey200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GetVapidPublicKey200Response')
-          ..add('publicKey', publicKey))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'GetVapidPublicKey200Response',
+    )..add('publicKey', publicKey)).toString();
   }
 }
 
 class GetVapidPublicKey200ResponseBuilder
     implements
-        Builder<GetVapidPublicKey200Response,
-            GetVapidPublicKey200ResponseBuilder> {
+        Builder<
+          GetVapidPublicKey200Response,
+          GetVapidPublicKey200ResponseBuilder
+        > {
   _$GetVapidPublicKey200Response? _$v;
 
   String? _publicKey;
@@ -84,10 +86,14 @@ class GetVapidPublicKey200ResponseBuilder
   GetVapidPublicKey200Response build() => _build();
 
   _$GetVapidPublicKey200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GetVapidPublicKey200Response._(
           publicKey: BuiltValueNullFieldError.checkNotNull(
-              publicKey, r'GetVapidPublicKey200Response', 'publicKey'),
+            publicKey,
+            r'GetVapidPublicKey200Response',
+            'publicKey',
+          ),
         );
     replace(_$result);
     return _$result;

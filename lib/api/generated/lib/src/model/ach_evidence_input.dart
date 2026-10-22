@@ -106,8 +106,10 @@ class _$AchEvidenceInputSerializer
       yield r'ratings';
       yield serializers.serialize(
         object.ratings,
-        specifiedType: const FullType(BuiltMap,
-            [FullType(String), FullType(AchEvidenceInputRatingsEnum)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(AchEvidenceInputRatingsEnum),
+        ]),
       );
     }
     if (object.citations != null) {
@@ -125,9 +127,11 @@ class _$AchEvidenceInputSerializer
     AchEvidenceInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -143,56 +147,77 @@ class _$AchEvidenceInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AchEvidenceInputSource_Enum),
-          ) as AchEvidenceInputSource_Enum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AchEvidenceInputSource_Enum),
+                  )
+                  as AchEvidenceInputSource_Enum;
           result.source_ = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.description = valueDes;
           break;
         case r'credibility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AchEvidenceInputCredibilityEnum),
-          ) as AchEvidenceInputCredibilityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AchEvidenceInputCredibilityEnum,
+                    ),
+                  )
+                  as AchEvidenceInputCredibilityEnum;
           result.credibility = valueDes;
           break;
         case r'relevance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AchEvidenceInputRelevanceEnum),
-          ) as AchEvidenceInputRelevanceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AchEvidenceInputRelevanceEnum,
+                    ),
+                  )
+                  as AchEvidenceInputRelevanceEnum;
           result.relevance = valueDes;
           break;
         case r'ratings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap,
-                [FullType(String), FullType(AchEvidenceInputRatingsEnum)]),
-          ) as BuiltMap<String, AchEvidenceInputRatingsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(AchEvidenceInputRatingsEnum),
+                    ]),
+                  )
+                  as BuiltMap<String, AchEvidenceInputRatingsEnum>?;
           if (valueDes == null) continue;
           result.ratings.replace(valueDes);
           break;
         case r'citations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.citations.replace(valueDes);
           break;

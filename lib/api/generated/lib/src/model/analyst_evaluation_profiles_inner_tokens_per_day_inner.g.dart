@@ -13,22 +13,23 @@ class _$AnalystEvaluationProfilesInnerTokensPerDayInner
   @override
   final int tokens;
 
-  factory _$AnalystEvaluationProfilesInnerTokensPerDayInner(
-          [void Function(
-                  AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder)?
-              updates]) =>
+  factory _$AnalystEvaluationProfilesInnerTokensPerDayInner([
+    void Function(AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder)?
+    updates,
+  ]) =>
       (AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder()
             ..update(updates))
           ._build();
 
-  _$AnalystEvaluationProfilesInnerTokensPerDayInner._(
-      {required this.date, required this.tokens})
-      : super._();
+  _$AnalystEvaluationProfilesInnerTokensPerDayInner._({
+    required this.date,
+    required this.tokens,
+  }) : super._();
   @override
   AnalystEvaluationProfilesInnerTokensPerDayInner rebuild(
-          void Function(AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder)
+    updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder toBuilder() =>
@@ -54,7 +55,8 @@ class _$AnalystEvaluationProfilesInnerTokensPerDayInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'AnalystEvaluationProfilesInnerTokensPerDayInner')
+            r'AnalystEvaluationProfilesInnerTokensPerDayInner',
+          )
           ..add('date', date)
           ..add('tokens', tokens))
         .toString();
@@ -63,8 +65,10 @@ class _$AnalystEvaluationProfilesInnerTokensPerDayInner
 
 class AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder
     implements
-        Builder<AnalystEvaluationProfilesInnerTokensPerDayInner,
-            AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder> {
+        Builder<
+          AnalystEvaluationProfilesInnerTokensPerDayInner,
+          AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder
+        > {
   _$AnalystEvaluationProfilesInnerTokensPerDayInner? _$v;
 
   Date? _date;
@@ -96,8 +100,9 @@ class AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder
 
   @override
   void update(
-      void Function(AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder)?
-          updates) {
+    void Function(AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder)?
+    updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -105,12 +110,19 @@ class AnalystEvaluationProfilesInnerTokensPerDayInnerBuilder
   AnalystEvaluationProfilesInnerTokensPerDayInner build() => _build();
 
   _$AnalystEvaluationProfilesInnerTokensPerDayInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalystEvaluationProfilesInnerTokensPerDayInner._(
           date: BuiltValueNullFieldError.checkNotNull(
-              date, r'AnalystEvaluationProfilesInnerTokensPerDayInner', 'date'),
-          tokens: BuiltValueNullFieldError.checkNotNull(tokens,
-              r'AnalystEvaluationProfilesInnerTokensPerDayInner', 'tokens'),
+            date,
+            r'AnalystEvaluationProfilesInnerTokensPerDayInner',
+            'date',
+          ),
+          tokens: BuiltValueNullFieldError.checkNotNull(
+            tokens,
+            r'AnalystEvaluationProfilesInnerTokensPerDayInner',
+            'tokens',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -19,12 +19,12 @@ class _$PresenceEvent extends PresenceEvent {
   factory _$PresenceEvent([void Function(PresenceEventBuilder)? updates]) =>
       (PresenceEventBuilder()..update(updates))._build();
 
-  _$PresenceEvent._(
-      {required this.workspaceId,
-      required this.clients,
-      this.change,
-      required this.at})
-      : super._();
+  _$PresenceEvent._({
+    required this.workspaceId,
+    required this.clients,
+    this.change,
+    required this.at,
+  }) : super._();
   @override
   PresenceEvent rebuild(void Function(PresenceEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -119,14 +119,21 @@ class PresenceEventBuilder
   _$PresenceEvent _build() {
     _$PresenceEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PresenceEvent._(
             workspaceId: BuiltValueNullFieldError.checkNotNull(
-                workspaceId, r'PresenceEvent', 'workspaceId'),
+              workspaceId,
+              r'PresenceEvent',
+              'workspaceId',
+            ),
             clients: clients.build(),
             change: _change?.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'PresenceEvent', 'at'),
+              at,
+              r'PresenceEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -137,7 +144,10 @@ class PresenceEventBuilder
         _change?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PresenceEvent', _$failedField, e.toString());
+          r'PresenceEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -16,17 +16,20 @@ class _$ChronicleLinkScores extends ChronicleLinkScores {
   @override
   final ChronicleLinkScoresEvidence? topics;
 
-  factory _$ChronicleLinkScores(
-          [void Function(ChronicleLinkScoresBuilder)? updates]) =>
-      (ChronicleLinkScoresBuilder()..update(updates))._build();
+  factory _$ChronicleLinkScores([
+    void Function(ChronicleLinkScoresBuilder)? updates,
+  ]) => (ChronicleLinkScoresBuilder()..update(updates))._build();
 
-  _$ChronicleLinkScores._(
-      {this.evidence, this.entities, this.areaTime, this.topics})
-      : super._();
+  _$ChronicleLinkScores._({
+    this.evidence,
+    this.entities,
+    this.areaTime,
+    this.topics,
+  }) : super._();
   @override
   ChronicleLinkScores rebuild(
-          void Function(ChronicleLinkScoresBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleLinkScoresBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleLinkScoresBuilder toBuilder() =>
@@ -124,7 +127,8 @@ class ChronicleLinkScoresBuilder
   _$ChronicleLinkScores _build() {
     _$ChronicleLinkScores _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleLinkScores._(
             evidence: _evidence?.build(),
             entities: _entities?.build(),
@@ -144,7 +148,10 @@ class ChronicleLinkScoresBuilder
         _topics?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleLinkScores', _$failedField, e.toString());
+          r'ChronicleLinkScores',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

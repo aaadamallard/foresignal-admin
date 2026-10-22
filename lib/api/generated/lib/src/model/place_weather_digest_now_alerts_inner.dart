@@ -18,8 +18,10 @@ part 'place_weather_digest_now_alerts_inner.g.dart';
 @BuiltValue()
 abstract class PlaceWeatherDigestNowAlertsInner
     implements
-        Built<PlaceWeatherDigestNowAlertsInner,
-            PlaceWeatherDigestNowAlertsInnerBuilder> {
+        Built<
+          PlaceWeatherDigestNowAlertsInner,
+          PlaceWeatherDigestNowAlertsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -34,9 +36,9 @@ abstract class PlaceWeatherDigestNowAlertsInner
 
   PlaceWeatherDigestNowAlertsInner._();
 
-  factory PlaceWeatherDigestNowAlertsInner(
-          [void updates(PlaceWeatherDigestNowAlertsInnerBuilder b)]) =
-      _$PlaceWeatherDigestNowAlertsInner;
+  factory PlaceWeatherDigestNowAlertsInner([
+    void updates(PlaceWeatherDigestNowAlertsInnerBuilder b),
+  ]) = _$PlaceWeatherDigestNowAlertsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestNowAlertsInnerBuilder b) => b;
@@ -51,7 +53,7 @@ class _$PlaceWeatherDigestNowAlertsInnerSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestNowAlertsInner,
-    _$PlaceWeatherDigestNowAlertsInner
+    _$PlaceWeatherDigestNowAlertsInner,
   ];
 
   @override
@@ -94,9 +96,11 @@ class _$PlaceWeatherDigestNowAlertsInnerSerializer
     PlaceWeatherDigestNowAlertsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +116,40 @@ class _$PlaceWeatherDigestNowAlertsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.event = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;
         case r'expires':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expires = valueDes;
           break;

@@ -36,8 +36,9 @@ abstract class IndicatorSignalSeries
 
   IndicatorSignalSeries._();
 
-  factory IndicatorSignalSeries(
-      [void updates(IndicatorSignalSeriesBuilder b)]) = _$IndicatorSignalSeries;
+  factory IndicatorSignalSeries([
+    void updates(IndicatorSignalSeriesBuilder b),
+  ]) = _$IndicatorSignalSeries;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IndicatorSignalSeriesBuilder b) => b;
@@ -52,7 +53,7 @@ class _$IndicatorSignalSeriesSerializer
   @override
   final Iterable<Type> types = const [
     IndicatorSignalSeries,
-    _$IndicatorSignalSeries
+    _$IndicatorSignalSeries,
   ];
 
   @override
@@ -86,8 +87,9 @@ class _$IndicatorSignalSeriesSerializer
       yield r'direction';
       yield serializers.serialize(
         object.direction,
-        specifiedType:
-            const FullType.nullable(IndicatorSignalSeriesDirectionEnum),
+        specifiedType: const FullType.nullable(
+          IndicatorSignalSeriesDirectionEnum,
+        ),
       );
     }
   }
@@ -98,9 +100,11 @@ class _$IndicatorSignalSeriesSerializer
     IndicatorSignalSeries object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,35 +120,45 @@ class _$IndicatorSignalSeriesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'condition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IndicatorSignalSeriesCondition),
-          ) as IndicatorSignalSeriesCondition?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorSignalSeriesCondition,
+                    ),
+                  )
+                  as IndicatorSignalSeriesCondition?;
           if (valueDes == null) continue;
           result.condition.replace(valueDes);
           break;
         case r'changePoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.changePoint = valueDes;
           break;
         case r'direction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IndicatorSignalSeriesDirectionEnum),
-          ) as IndicatorSignalSeriesDirectionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorSignalSeriesDirectionEnum,
+                    ),
+                  )
+                  as IndicatorSignalSeriesDirectionEnum?;
           if (valueDes == null) continue;
           result.direction = valueDes;
           break;

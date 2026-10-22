@@ -18,21 +18,21 @@ class _$IntelBoardSituationsInner extends IntelBoardSituationsInner {
   @override
   final DateTime? lastActivityAt;
 
-  factory _$IntelBoardSituationsInner(
-          [void Function(IntelBoardSituationsInnerBuilder)? updates]) =>
-      (IntelBoardSituationsInnerBuilder()..update(updates))._build();
+  factory _$IntelBoardSituationsInner([
+    void Function(IntelBoardSituationsInnerBuilder)? updates,
+  ]) => (IntelBoardSituationsInnerBuilder()..update(updates))._build();
 
-  _$IntelBoardSituationsInner._(
-      {required this.id,
-      required this.title,
-      this.status,
-      required this.severity,
-      this.lastActivityAt})
-      : super._();
+  _$IntelBoardSituationsInner._({
+    required this.id,
+    required this.title,
+    this.status,
+    required this.severity,
+    this.lastActivityAt,
+  }) : super._();
   @override
   IntelBoardSituationsInner rebuild(
-          void Function(IntelBoardSituationsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardSituationsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardSituationsInnerBuilder toBuilder() =>
@@ -130,15 +130,25 @@ class IntelBoardSituationsInnerBuilder
   IntelBoardSituationsInner build() => _build();
 
   _$IntelBoardSituationsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardSituationsInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'IntelBoardSituationsInner', 'id'),
+            id,
+            r'IntelBoardSituationsInner',
+            'id',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'IntelBoardSituationsInner', 'title'),
+            title,
+            r'IntelBoardSituationsInner',
+            'title',
+          ),
           status: status,
           severity: BuiltValueNullFieldError.checkNotNull(
-              severity, r'IntelBoardSituationsInner', 'severity'),
+            severity,
+            r'IntelBoardSituationsInner',
+            'severity',
+          ),
           lastActivityAt: lastActivityAt,
         );
     replace(_$result);

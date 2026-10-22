@@ -10,9 +10,9 @@ class _$CredentialsUpdate extends CredentialsUpdate {
   @override
   final BuiltMap<String, String> values;
 
-  factory _$CredentialsUpdate(
-          [void Function(CredentialsUpdateBuilder)? updates]) =>
-      (CredentialsUpdateBuilder()..update(updates))._build();
+  factory _$CredentialsUpdate([
+    void Function(CredentialsUpdateBuilder)? updates,
+  ]) => (CredentialsUpdateBuilder()..update(updates))._build();
 
   _$CredentialsUpdate._({required this.values}) : super._();
   @override
@@ -39,9 +39,9 @@ class _$CredentialsUpdate extends CredentialsUpdate {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CredentialsUpdate')
-          ..add('values', values))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'CredentialsUpdate',
+    )..add('values', values)).toString();
   }
 }
 
@@ -83,10 +83,7 @@ class CredentialsUpdateBuilder
   _$CredentialsUpdate _build() {
     _$CredentialsUpdate _$result;
     try {
-      _$result = _$v ??
-          _$CredentialsUpdate._(
-            values: values.build(),
-          );
+      _$result = _$v ?? _$CredentialsUpdate._(values: values.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -94,7 +91,10 @@ class CredentialsUpdateBuilder
         values.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CredentialsUpdate', _$failedField, e.toString());
+          r'CredentialsUpdate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

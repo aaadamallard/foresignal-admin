@@ -11,7 +11,7 @@ const IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnum_maritimeDisruption =
 const IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnum_aviationAnomaly =
     const IntelEventSummaryTypeEnum._('aviationAnomaly');
 const IntelEventSummaryTypeEnum
-    _$intelEventSummaryTypeEnum_infrastructureDisruption =
+_$intelEventSummaryTypeEnum_infrastructureDisruption =
     const IntelEventSummaryTypeEnum._('infrastructureDisruption');
 const IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnum_weatherImpact =
     const IntelEventSummaryTypeEnum._('weatherImpact');
@@ -41,13 +41,13 @@ IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnumValueOf(String name) {
 
 final BuiltSet<IntelEventSummaryTypeEnum> _$intelEventSummaryTypeEnumValues =
     BuiltSet<IntelEventSummaryTypeEnum>(const <IntelEventSummaryTypeEnum>[
-  _$intelEventSummaryTypeEnum_maritimeDisruption,
-  _$intelEventSummaryTypeEnum_aviationAnomaly,
-  _$intelEventSummaryTypeEnum_infrastructureDisruption,
-  _$intelEventSummaryTypeEnum_weatherImpact,
-  _$intelEventSummaryTypeEnum_seismic,
-  _$intelEventSummaryTypeEnum_custom,
-]);
+      _$intelEventSummaryTypeEnum_maritimeDisruption,
+      _$intelEventSummaryTypeEnum_aviationAnomaly,
+      _$intelEventSummaryTypeEnum_infrastructureDisruption,
+      _$intelEventSummaryTypeEnum_weatherImpact,
+      _$intelEventSummaryTypeEnum_seismic,
+      _$intelEventSummaryTypeEnum_custom,
+    ]);
 
 const IntelEventSummaryStatusEnum _$intelEventSummaryStatusEnum_emerging =
     const IntelEventSummaryStatusEnum._('emerging');
@@ -74,26 +74,26 @@ IntelEventSummaryStatusEnum _$intelEventSummaryStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<IntelEventSummaryStatusEnum>
-    _$intelEventSummaryStatusEnumValues =
+_$intelEventSummaryStatusEnumValues =
     BuiltSet<IntelEventSummaryStatusEnum>(const <IntelEventSummaryStatusEnum>[
-  _$intelEventSummaryStatusEnum_emerging,
-  _$intelEventSummaryStatusEnum_active,
-  _$intelEventSummaryStatusEnum_resolved,
-  _$intelEventSummaryStatusEnum_dismissed,
-]);
+      _$intelEventSummaryStatusEnum_emerging,
+      _$intelEventSummaryStatusEnum_active,
+      _$intelEventSummaryStatusEnum_resolved,
+      _$intelEventSummaryStatusEnum_dismissed,
+    ]);
 
 const IntelEventSummaryConfidenceLabelEnum
-    _$intelEventSummaryConfidenceLabelEnum_low =
+_$intelEventSummaryConfidenceLabelEnum_low =
     const IntelEventSummaryConfidenceLabelEnum._('low');
 const IntelEventSummaryConfidenceLabelEnum
-    _$intelEventSummaryConfidenceLabelEnum_moderate =
+_$intelEventSummaryConfidenceLabelEnum_moderate =
     const IntelEventSummaryConfidenceLabelEnum._('moderate');
 const IntelEventSummaryConfidenceLabelEnum
-    _$intelEventSummaryConfidenceLabelEnum_high =
+_$intelEventSummaryConfidenceLabelEnum_high =
     const IntelEventSummaryConfidenceLabelEnum._('high');
 
 IntelEventSummaryConfidenceLabelEnum
-    _$intelEventSummaryConfidenceLabelEnumValueOf(String name) {
+_$intelEventSummaryConfidenceLabelEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$intelEventSummaryConfidenceLabelEnum_low;
@@ -107,28 +107,30 @@ IntelEventSummaryConfidenceLabelEnum
 }
 
 final BuiltSet<IntelEventSummaryConfidenceLabelEnum>
-    _$intelEventSummaryConfidenceLabelEnumValues = BuiltSet<
-        IntelEventSummaryConfidenceLabelEnum>(const <IntelEventSummaryConfidenceLabelEnum>[
-  _$intelEventSummaryConfidenceLabelEnum_low,
-  _$intelEventSummaryConfidenceLabelEnum_moderate,
-  _$intelEventSummaryConfidenceLabelEnum_high,
-]);
+_$intelEventSummaryConfidenceLabelEnumValues =
+    BuiltSet<IntelEventSummaryConfidenceLabelEnum>(
+      const <IntelEventSummaryConfidenceLabelEnum>[
+        _$intelEventSummaryConfidenceLabelEnum_low,
+        _$intelEventSummaryConfidenceLabelEnum_moderate,
+        _$intelEventSummaryConfidenceLabelEnum_high,
+      ],
+    );
 
 const IntelEventSummaryEvidenceQualityEnum
-    _$intelEventSummaryEvidenceQualityEnum_strong =
+_$intelEventSummaryEvidenceQualityEnum_strong =
     const IntelEventSummaryEvidenceQualityEnum._('strong');
 const IntelEventSummaryEvidenceQualityEnum
-    _$intelEventSummaryEvidenceQualityEnum_moderate =
+_$intelEventSummaryEvidenceQualityEnum_moderate =
     const IntelEventSummaryEvidenceQualityEnum._('moderate');
 const IntelEventSummaryEvidenceQualityEnum
-    _$intelEventSummaryEvidenceQualityEnum_weak =
+_$intelEventSummaryEvidenceQualityEnum_weak =
     const IntelEventSummaryEvidenceQualityEnum._('weak');
 const IntelEventSummaryEvidenceQualityEnum
-    _$intelEventSummaryEvidenceQualityEnum_insufficient =
+_$intelEventSummaryEvidenceQualityEnum_insufficient =
     const IntelEventSummaryEvidenceQualityEnum._('insufficient');
 
 IntelEventSummaryEvidenceQualityEnum
-    _$intelEventSummaryEvidenceQualityEnumValueOf(String name) {
+_$intelEventSummaryEvidenceQualityEnumValueOf(String name) {
   switch (name) {
     case 'strong':
       return _$intelEventSummaryEvidenceQualityEnum_strong;
@@ -144,13 +146,15 @@ IntelEventSummaryEvidenceQualityEnum
 }
 
 final BuiltSet<IntelEventSummaryEvidenceQualityEnum>
-    _$intelEventSummaryEvidenceQualityEnumValues = BuiltSet<
-        IntelEventSummaryEvidenceQualityEnum>(const <IntelEventSummaryEvidenceQualityEnum>[
-  _$intelEventSummaryEvidenceQualityEnum_strong,
-  _$intelEventSummaryEvidenceQualityEnum_moderate,
-  _$intelEventSummaryEvidenceQualityEnum_weak,
-  _$intelEventSummaryEvidenceQualityEnum_insufficient,
-]);
+_$intelEventSummaryEvidenceQualityEnumValues =
+    BuiltSet<IntelEventSummaryEvidenceQualityEnum>(
+      const <IntelEventSummaryEvidenceQualityEnum>[
+        _$intelEventSummaryEvidenceQualityEnum_strong,
+        _$intelEventSummaryEvidenceQualityEnum_moderate,
+        _$intelEventSummaryEvidenceQualityEnum_weak,
+        _$intelEventSummaryEvidenceQualityEnum_insufficient,
+      ],
+    );
 
 const IntelEventSummaryOriginEnum _$intelEventSummaryOriginEnum_recipe =
     const IntelEventSummaryOriginEnum._('recipe');
@@ -177,27 +181,27 @@ IntelEventSummaryOriginEnum _$intelEventSummaryOriginEnumValueOf(String name) {
 }
 
 final BuiltSet<IntelEventSummaryOriginEnum>
-    _$intelEventSummaryOriginEnumValues =
+_$intelEventSummaryOriginEnumValues =
     BuiltSet<IntelEventSummaryOriginEnum>(const <IntelEventSummaryOriginEnum>[
-  _$intelEventSummaryOriginEnum_recipe,
-  _$intelEventSummaryOriginEnum_analyst,
-  _$intelEventSummaryOriginEnum_agent,
-  _$intelEventSummaryOriginEnum_operator_,
-]);
+      _$intelEventSummaryOriginEnum_recipe,
+      _$intelEventSummaryOriginEnum_analyst,
+      _$intelEventSummaryOriginEnum_agent,
+      _$intelEventSummaryOriginEnum_operator_,
+    ]);
 
 Serializer<IntelEventSummaryTypeEnum> _$intelEventSummaryTypeEnumSerializer =
     _$IntelEventSummaryTypeEnumSerializer();
 Serializer<IntelEventSummaryStatusEnum>
-    _$intelEventSummaryStatusEnumSerializer =
+_$intelEventSummaryStatusEnumSerializer =
     _$IntelEventSummaryStatusEnumSerializer();
 Serializer<IntelEventSummaryConfidenceLabelEnum>
-    _$intelEventSummaryConfidenceLabelEnumSerializer =
+_$intelEventSummaryConfidenceLabelEnumSerializer =
     _$IntelEventSummaryConfidenceLabelEnumSerializer();
 Serializer<IntelEventSummaryEvidenceQualityEnum>
-    _$intelEventSummaryEvidenceQualityEnumSerializer =
+_$intelEventSummaryEvidenceQualityEnumSerializer =
     _$IntelEventSummaryEvidenceQualityEnumSerializer();
 Serializer<IntelEventSummaryOriginEnum>
-    _$intelEventSummaryOriginEnumSerializer =
+_$intelEventSummaryOriginEnumSerializer =
     _$IntelEventSummaryOriginEnumSerializer();
 
 class _$IntelEventSummaryTypeEnumSerializer
@@ -225,16 +229,20 @@ class _$IntelEventSummaryTypeEnumSerializer
   final String wireName = 'IntelEventSummaryTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventSummaryTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventSummaryTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventSummaryTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventSummaryTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventSummaryTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventSummaryStatusEnumSerializer
@@ -258,16 +266,20 @@ class _$IntelEventSummaryStatusEnumSerializer
   final String wireName = 'IntelEventSummaryStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventSummaryStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventSummaryStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventSummaryStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventSummaryStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventSummaryStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventSummaryConfidenceLabelEnumSerializer
@@ -285,23 +297,26 @@ class _$IntelEventSummaryConfidenceLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelEventSummaryConfidenceLabelEnum
+    IntelEventSummaryConfidenceLabelEnum,
   ];
   @override
   final String wireName = 'IntelEventSummaryConfidenceLabelEnum';
 
   @override
   Object serialize(
-          Serializers serializers, IntelEventSummaryConfidenceLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelEventSummaryConfidenceLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventSummaryConfidenceLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventSummaryConfidenceLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventSummaryConfidenceLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventSummaryEvidenceQualityEnumSerializer
@@ -321,23 +336,26 @@ class _$IntelEventSummaryEvidenceQualityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelEventSummaryEvidenceQualityEnum
+    IntelEventSummaryEvidenceQualityEnum,
   ];
   @override
   final String wireName = 'IntelEventSummaryEvidenceQualityEnum';
 
   @override
   Object serialize(
-          Serializers serializers, IntelEventSummaryEvidenceQualityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelEventSummaryEvidenceQualityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventSummaryEvidenceQualityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventSummaryEvidenceQualityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventSummaryEvidenceQualityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventSummaryOriginEnumSerializer
@@ -361,16 +379,20 @@ class _$IntelEventSummaryOriginEnumSerializer
   final String wireName = 'IntelEventSummaryOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventSummaryOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventSummaryOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventSummaryOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventSummaryOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventSummaryOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventSummary extends IntelEventSummary {
@@ -421,35 +443,35 @@ class _$IntelEventSummary extends IntelEventSummary {
   @override
   final DateTime updatedAt;
 
-  factory _$IntelEventSummary(
-          [void Function(IntelEventSummaryBuilder)? updates]) =>
-      (IntelEventSummaryBuilder()..update(updates))._build();
+  factory _$IntelEventSummary([
+    void Function(IntelEventSummaryBuilder)? updates,
+  ]) => (IntelEventSummaryBuilder()..update(updates))._build();
 
-  _$IntelEventSummary._(
-      {required this.id,
-      required this.type,
-      required this.title,
-      required this.status,
-      required this.severity,
-      required this.confidence,
-      this.rawConfidence,
-      required this.confidenceLabel,
-      this.confidenceMethod,
-      this.calibrated,
-      required this.evidenceQuality,
-      required this.memberCount,
-      this.signalFamilies,
-      required this.startTime,
-      this.endTime,
-      this.lastEvidenceAt,
-      this.centroid,
-      this.regionTags,
-      this.private,
-      this.origin,
-      this.mergedInto,
-      required this.version,
-      required this.updatedAt})
-      : super._();
+  _$IntelEventSummary._({
+    required this.id,
+    required this.type,
+    required this.title,
+    required this.status,
+    required this.severity,
+    required this.confidence,
+    this.rawConfidence,
+    required this.confidenceLabel,
+    this.confidenceMethod,
+    this.calibrated,
+    required this.evidenceQuality,
+    required this.memberCount,
+    this.signalFamilies,
+    required this.startTime,
+    this.endTime,
+    this.lastEvidenceAt,
+    this.centroid,
+    this.regionTags,
+    this.private,
+    this.origin,
+    this.mergedInto,
+    required this.version,
+    required this.updatedAt,
+  }) : super._();
   @override
   IntelEventSummary rebuild(void Function(IntelEventSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -705,32 +727,63 @@ class IntelEventSummaryBuilder
   _$IntelEventSummary _build() {
     _$IntelEventSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventSummary._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'IntelEventSummary', 'id'),
+              id,
+              r'IntelEventSummary',
+              'id',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'IntelEventSummary', 'type'),
+              type,
+              r'IntelEventSummary',
+              'type',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'IntelEventSummary', 'title'),
+              title,
+              r'IntelEventSummary',
+              'title',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'IntelEventSummary', 'status'),
+              status,
+              r'IntelEventSummary',
+              'status',
+            ),
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'IntelEventSummary', 'severity'),
+              severity,
+              r'IntelEventSummary',
+              'severity',
+            ),
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'IntelEventSummary', 'confidence'),
+              confidence,
+              r'IntelEventSummary',
+              'confidence',
+            ),
             rawConfidence: rawConfidence,
             confidenceLabel: BuiltValueNullFieldError.checkNotNull(
-                confidenceLabel, r'IntelEventSummary', 'confidenceLabel'),
+              confidenceLabel,
+              r'IntelEventSummary',
+              'confidenceLabel',
+            ),
             confidenceMethod: confidenceMethod,
             calibrated: calibrated,
             evidenceQuality: BuiltValueNullFieldError.checkNotNull(
-                evidenceQuality, r'IntelEventSummary', 'evidenceQuality'),
+              evidenceQuality,
+              r'IntelEventSummary',
+              'evidenceQuality',
+            ),
             memberCount: BuiltValueNullFieldError.checkNotNull(
-                memberCount, r'IntelEventSummary', 'memberCount'),
+              memberCount,
+              r'IntelEventSummary',
+              'memberCount',
+            ),
             signalFamilies: _signalFamilies?.build(),
             startTime: BuiltValueNullFieldError.checkNotNull(
-                startTime, r'IntelEventSummary', 'startTime'),
+              startTime,
+              r'IntelEventSummary',
+              'startTime',
+            ),
             endTime: endTime,
             lastEvidenceAt: lastEvidenceAt,
             centroid: _centroid?.build(),
@@ -739,9 +792,15 @@ class IntelEventSummaryBuilder
             origin: origin,
             mergedInto: mergedInto,
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'IntelEventSummary', 'version'),
+              version,
+              r'IntelEventSummary',
+              'version',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'IntelEventSummary', 'updatedAt'),
+              updatedAt,
+              r'IntelEventSummary',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -755,7 +814,10 @@ class IntelEventSummaryBuilder
         _regionTags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventSummary', _$failedField, e.toString());
+          r'IntelEventSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

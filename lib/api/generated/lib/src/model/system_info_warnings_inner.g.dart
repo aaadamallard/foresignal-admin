@@ -7,17 +7,17 @@ part of 'system_info_warnings_inner.dart';
 // **************************************************************************
 
 const SystemInfoWarningsInnerSeverityEnum
-    _$systemInfoWarningsInnerSeverityEnum_info =
+_$systemInfoWarningsInnerSeverityEnum_info =
     const SystemInfoWarningsInnerSeverityEnum._('info');
 const SystemInfoWarningsInnerSeverityEnum
-    _$systemInfoWarningsInnerSeverityEnum_warning =
+_$systemInfoWarningsInnerSeverityEnum_warning =
     const SystemInfoWarningsInnerSeverityEnum._('warning');
 const SystemInfoWarningsInnerSeverityEnum
-    _$systemInfoWarningsInnerSeverityEnum_critical =
+_$systemInfoWarningsInnerSeverityEnum_critical =
     const SystemInfoWarningsInnerSeverityEnum._('critical');
 
 SystemInfoWarningsInnerSeverityEnum
-    _$systemInfoWarningsInnerSeverityEnumValueOf(String name) {
+_$systemInfoWarningsInnerSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$systemInfoWarningsInnerSeverityEnum_info;
@@ -31,15 +31,17 @@ SystemInfoWarningsInnerSeverityEnum
 }
 
 final BuiltSet<SystemInfoWarningsInnerSeverityEnum>
-    _$systemInfoWarningsInnerSeverityEnumValues = BuiltSet<
-        SystemInfoWarningsInnerSeverityEnum>(const <SystemInfoWarningsInnerSeverityEnum>[
-  _$systemInfoWarningsInnerSeverityEnum_info,
-  _$systemInfoWarningsInnerSeverityEnum_warning,
-  _$systemInfoWarningsInnerSeverityEnum_critical,
-]);
+_$systemInfoWarningsInnerSeverityEnumValues =
+    BuiltSet<SystemInfoWarningsInnerSeverityEnum>(
+      const <SystemInfoWarningsInnerSeverityEnum>[
+        _$systemInfoWarningsInnerSeverityEnum_info,
+        _$systemInfoWarningsInnerSeverityEnum_warning,
+        _$systemInfoWarningsInnerSeverityEnum_critical,
+      ],
+    );
 
 Serializer<SystemInfoWarningsInnerSeverityEnum>
-    _$systemInfoWarningsInnerSeverityEnumSerializer =
+_$systemInfoWarningsInnerSeverityEnumSerializer =
     _$SystemInfoWarningsInnerSeverityEnumSerializer();
 
 class _$SystemInfoWarningsInnerSeverityEnumSerializer
@@ -57,23 +59,26 @@ class _$SystemInfoWarningsInnerSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SystemInfoWarningsInnerSeverityEnum
+    SystemInfoWarningsInnerSeverityEnum,
   ];
   @override
   final String wireName = 'SystemInfoWarningsInnerSeverityEnum';
 
   @override
   Object serialize(
-          Serializers serializers, SystemInfoWarningsInnerSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SystemInfoWarningsInnerSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SystemInfoWarningsInnerSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemInfoWarningsInnerSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemInfoWarningsInnerSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemInfoWarningsInner extends SystemInfoWarningsInner {
@@ -84,17 +89,19 @@ class _$SystemInfoWarningsInner extends SystemInfoWarningsInner {
   @override
   final String message;
 
-  factory _$SystemInfoWarningsInner(
-          [void Function(SystemInfoWarningsInnerBuilder)? updates]) =>
-      (SystemInfoWarningsInnerBuilder()..update(updates))._build();
+  factory _$SystemInfoWarningsInner([
+    void Function(SystemInfoWarningsInnerBuilder)? updates,
+  ]) => (SystemInfoWarningsInnerBuilder()..update(updates))._build();
 
-  _$SystemInfoWarningsInner._(
-      {required this.code, this.severity, required this.message})
-      : super._();
+  _$SystemInfoWarningsInner._({
+    required this.code,
+    this.severity,
+    required this.message,
+  }) : super._();
   @override
   SystemInfoWarningsInner rebuild(
-          void Function(SystemInfoWarningsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoWarningsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoWarningsInnerBuilder toBuilder() =>
@@ -176,13 +183,20 @@ class SystemInfoWarningsInnerBuilder
   SystemInfoWarningsInner build() => _build();
 
   _$SystemInfoWarningsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoWarningsInner._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'SystemInfoWarningsInner', 'code'),
+            code,
+            r'SystemInfoWarningsInner',
+            'code',
+          ),
           severity: severity,
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'SystemInfoWarningsInner', 'message'),
+            message,
+            r'SystemInfoWarningsInner',
+            'message',
+          ),
         );
     replace(_$result);
     return _$result;

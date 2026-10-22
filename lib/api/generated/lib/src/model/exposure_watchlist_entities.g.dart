@@ -7,17 +7,17 @@ part of 'exposure_watchlist_entities.dart';
 // **************************************************************************
 
 const ExposureWatchlistEntitiesStatusEnum
-    _$exposureWatchlistEntitiesStatusEnum_ok =
+_$exposureWatchlistEntitiesStatusEnum_ok =
     const ExposureWatchlistEntitiesStatusEnum._('ok');
 const ExposureWatchlistEntitiesStatusEnum
-    _$exposureWatchlistEntitiesStatusEnum_unavailable =
+_$exposureWatchlistEntitiesStatusEnum_unavailable =
     const ExposureWatchlistEntitiesStatusEnum._('unavailable');
 const ExposureWatchlistEntitiesStatusEnum
-    _$exposureWatchlistEntitiesStatusEnum_notInstalled =
+_$exposureWatchlistEntitiesStatusEnum_notInstalled =
     const ExposureWatchlistEntitiesStatusEnum._('notInstalled');
 
 ExposureWatchlistEntitiesStatusEnum
-    _$exposureWatchlistEntitiesStatusEnumValueOf(String name) {
+_$exposureWatchlistEntitiesStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$exposureWatchlistEntitiesStatusEnum_ok;
@@ -31,15 +31,17 @@ ExposureWatchlistEntitiesStatusEnum
 }
 
 final BuiltSet<ExposureWatchlistEntitiesStatusEnum>
-    _$exposureWatchlistEntitiesStatusEnumValues = BuiltSet<
-        ExposureWatchlistEntitiesStatusEnum>(const <ExposureWatchlistEntitiesStatusEnum>[
-  _$exposureWatchlistEntitiesStatusEnum_ok,
-  _$exposureWatchlistEntitiesStatusEnum_unavailable,
-  _$exposureWatchlistEntitiesStatusEnum_notInstalled,
-]);
+_$exposureWatchlistEntitiesStatusEnumValues =
+    BuiltSet<ExposureWatchlistEntitiesStatusEnum>(
+      const <ExposureWatchlistEntitiesStatusEnum>[
+        _$exposureWatchlistEntitiesStatusEnum_ok,
+        _$exposureWatchlistEntitiesStatusEnum_unavailable,
+        _$exposureWatchlistEntitiesStatusEnum_notInstalled,
+      ],
+    );
 
 Serializer<ExposureWatchlistEntitiesStatusEnum>
-    _$exposureWatchlistEntitiesStatusEnumSerializer =
+_$exposureWatchlistEntitiesStatusEnumSerializer =
     _$ExposureWatchlistEntitiesStatusEnumSerializer();
 
 class _$ExposureWatchlistEntitiesStatusEnumSerializer
@@ -57,23 +59,26 @@ class _$ExposureWatchlistEntitiesStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ExposureWatchlistEntitiesStatusEnum
+    ExposureWatchlistEntitiesStatusEnum,
   ];
   @override
   final String wireName = 'ExposureWatchlistEntitiesStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ExposureWatchlistEntitiesStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExposureWatchlistEntitiesStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExposureWatchlistEntitiesStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExposureWatchlistEntitiesStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExposureWatchlistEntitiesStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExposureWatchlistEntities extends ExposureWatchlistEntities {
@@ -84,17 +89,19 @@ class _$ExposureWatchlistEntities extends ExposureWatchlistEntities {
   @override
   final BuiltList<ExposureWatchlistEntitiesCountsInner>? counts;
 
-  factory _$ExposureWatchlistEntities(
-          [void Function(ExposureWatchlistEntitiesBuilder)? updates]) =>
-      (ExposureWatchlistEntitiesBuilder()..update(updates))._build();
+  factory _$ExposureWatchlistEntities([
+    void Function(ExposureWatchlistEntitiesBuilder)? updates,
+  ]) => (ExposureWatchlistEntitiesBuilder()..update(updates))._build();
 
-  _$ExposureWatchlistEntities._(
-      {required this.status, this.attribution, this.counts})
-      : super._();
+  _$ExposureWatchlistEntities._({
+    required this.status,
+    this.attribution,
+    this.counts,
+  }) : super._();
   @override
   ExposureWatchlistEntities rebuild(
-          void Function(ExposureWatchlistEntitiesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExposureWatchlistEntitiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExposureWatchlistEntitiesBuilder toBuilder() =>
@@ -182,10 +189,14 @@ class ExposureWatchlistEntitiesBuilder
   _$ExposureWatchlistEntities _build() {
     _$ExposureWatchlistEntities _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExposureWatchlistEntities._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExposureWatchlistEntities', 'status'),
+              status,
+              r'ExposureWatchlistEntities',
+              'status',
+            ),
             attribution: _attribution?.build(),
             counts: _counts?.build(),
           );
@@ -198,7 +209,10 @@ class ExposureWatchlistEntitiesBuilder
         _counts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExposureWatchlistEntities', _$failedField, e.toString());
+          r'ExposureWatchlistEntities',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

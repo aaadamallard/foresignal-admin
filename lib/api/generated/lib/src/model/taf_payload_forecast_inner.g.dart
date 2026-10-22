@@ -22,23 +22,23 @@ class _$TafPayloadForecastInner extends TafPayloadForecastInner {
   @override
   final BuiltList<BuiltMap<String, JsonObject?>>? clouds;
 
-  factory _$TafPayloadForecastInner(
-          [void Function(TafPayloadForecastInnerBuilder)? updates]) =>
-      (TafPayloadForecastInnerBuilder()..update(updates))._build();
+  factory _$TafPayloadForecastInner([
+    void Function(TafPayloadForecastInnerBuilder)? updates,
+  ]) => (TafPayloadForecastInnerBuilder()..update(updates))._build();
 
-  _$TafPayloadForecastInner._(
-      {this.changeIndicator,
-      this.from,
-      this.to,
-      this.wind,
-      this.visibility,
-      this.wx,
-      this.clouds})
-      : super._();
+  _$TafPayloadForecastInner._({
+    this.changeIndicator,
+    this.from,
+    this.to,
+    this.wind,
+    this.visibility,
+    this.wx,
+    this.clouds,
+  }) : super._();
   @override
   TafPayloadForecastInner rebuild(
-          void Function(TafPayloadForecastInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TafPayloadForecastInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TafPayloadForecastInnerBuilder toBuilder() =>
@@ -157,7 +157,8 @@ class TafPayloadForecastInnerBuilder
   _$TafPayloadForecastInner _build() {
     _$TafPayloadForecastInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TafPayloadForecastInner._(
             changeIndicator: changeIndicator,
             from: from,
@@ -179,7 +180,10 @@ class TafPayloadForecastInnerBuilder
         _clouds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TafPayloadForecastInner', _$failedField, e.toString());
+          r'TafPayloadForecastInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

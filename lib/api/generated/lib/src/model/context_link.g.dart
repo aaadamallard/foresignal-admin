@@ -20,8 +20,8 @@ ContextLinkVersionEnum _$contextLinkVersionEnumValueOf(String name) {
 
 final BuiltSet<ContextLinkVersionEnum> _$contextLinkVersionEnumValues =
     BuiltSet<ContextLinkVersionEnum>(const <ContextLinkVersionEnum>[
-  _$contextLinkVersionEnum_number1,
-]);
+      _$contextLinkVersionEnum_number1,
+    ]);
 
 Serializer<ContextLinkVersionEnum> _$contextLinkVersionEnumSerializer =
     _$ContextLinkVersionEnumSerializer();
@@ -41,15 +41,20 @@ class _$ContextLinkVersionEnumSerializer
   final String wireName = 'ContextLinkVersionEnum';
 
   @override
-  Object serialize(Serializers serializers, ContextLinkVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ContextLinkVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ContextLinkVersionEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ContextLinkVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ContextLinkVersionEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ContextLinkVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ContextLink extends ContextLink {
@@ -67,13 +72,13 @@ class _$ContextLink extends ContextLink {
   factory _$ContextLink([void Function(ContextLinkBuilder)? updates]) =>
       (ContextLinkBuilder()..update(updates))._build();
 
-  _$ContextLink._(
-      {required this.version,
-      this.workspaceId,
-      required this.payload,
-      required this.fragment,
-      required this.bytes})
-      : super._();
+  _$ContextLink._({
+    required this.version,
+    this.workspaceId,
+    required this.payload,
+    required this.fragment,
+    required this.bytes,
+  }) : super._();
   @override
   ContextLink rebuild(void Function(ContextLinkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -170,17 +175,30 @@ class ContextLinkBuilder implements Builder<ContextLink, ContextLinkBuilder> {
   ContextLink build() => _build();
 
   _$ContextLink _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ContextLink._(
           version: BuiltValueNullFieldError.checkNotNull(
-              version, r'ContextLink', 'version'),
+            version,
+            r'ContextLink',
+            'version',
+          ),
           workspaceId: workspaceId,
           payload: BuiltValueNullFieldError.checkNotNull(
-              payload, r'ContextLink', 'payload'),
+            payload,
+            r'ContextLink',
+            'payload',
+          ),
           fragment: BuiltValueNullFieldError.checkNotNull(
-              fragment, r'ContextLink', 'fragment'),
+            fragment,
+            r'ContextLink',
+            'fragment',
+          ),
           bytes: BuiltValueNullFieldError.checkNotNull(
-              bytes, r'ContextLink', 'bytes'),
+            bytes,
+            r'ContextLink',
+            'bytes',
+          ),
         );
     replace(_$result);
     return _$result;

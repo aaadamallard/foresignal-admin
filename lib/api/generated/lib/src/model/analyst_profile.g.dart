@@ -24,40 +24,41 @@ AnalystProfileEffortEnum _$analystProfileEffortEnumValueOf(String name) {
 
 final BuiltSet<AnalystProfileEffortEnum> _$analystProfileEffortEnumValues =
     BuiltSet<AnalystProfileEffortEnum>(const <AnalystProfileEffortEnum>[
-  _$analystProfileEffortEnum_low,
-  _$analystProfileEffortEnum_medium,
-]);
+      _$analystProfileEffortEnum_low,
+      _$analystProfileEffortEnum_medium,
+    ]);
 
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeWatch =
+_$analystProfileAllowedActionsEnum_proposeWatch =
     const AnalystProfileAllowedActionsEnum._('proposeWatch');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeIntelEvent =
+_$analystProfileAllowedActionsEnum_proposeIntelEvent =
     const AnalystProfileAllowedActionsEnum._('proposeIntelEvent');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeInvestigationItem =
+_$analystProfileAllowedActionsEnum_proposeInvestigationItem =
     const AnalystProfileAllowedActionsEnum._('proposeInvestigationItem');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_annotateEvent =
+_$analystProfileAllowedActionsEnum_annotateEvent =
     const AnalystProfileAllowedActionsEnum._('annotateEvent');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeHypothesisSet =
+_$analystProfileAllowedActionsEnum_proposeHypothesisSet =
     const AnalystProfileAllowedActionsEnum._('proposeHypothesisSet');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeIndicator =
+_$analystProfileAllowedActionsEnum_proposeIndicator =
     const AnalystProfileAllowedActionsEnum._('proposeIndicator');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeQuestion =
+_$analystProfileAllowedActionsEnum_proposeQuestion =
     const AnalystProfileAllowedActionsEnum._('proposeQuestion');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeSituationMerge =
+_$analystProfileAllowedActionsEnum_proposeSituationMerge =
     const AnalystProfileAllowedActionsEnum._('proposeSituationMerge');
 const AnalystProfileAllowedActionsEnum
-    _$analystProfileAllowedActionsEnum_proposeChronicle =
+_$analystProfileAllowedActionsEnum_proposeChronicle =
     const AnalystProfileAllowedActionsEnum._('proposeChronicle');
 
 AnalystProfileAllowedActionsEnum _$analystProfileAllowedActionsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'proposeWatch':
       return _$analystProfileAllowedActionsEnum_proposeWatch;
@@ -83,31 +84,33 @@ AnalystProfileAllowedActionsEnum _$analystProfileAllowedActionsEnumValueOf(
 }
 
 final BuiltSet<AnalystProfileAllowedActionsEnum>
-    _$analystProfileAllowedActionsEnumValues = BuiltSet<
-        AnalystProfileAllowedActionsEnum>(const <AnalystProfileAllowedActionsEnum>[
-  _$analystProfileAllowedActionsEnum_proposeWatch,
-  _$analystProfileAllowedActionsEnum_proposeIntelEvent,
-  _$analystProfileAllowedActionsEnum_proposeInvestigationItem,
-  _$analystProfileAllowedActionsEnum_annotateEvent,
-  _$analystProfileAllowedActionsEnum_proposeHypothesisSet,
-  _$analystProfileAllowedActionsEnum_proposeIndicator,
-  _$analystProfileAllowedActionsEnum_proposeQuestion,
-  _$analystProfileAllowedActionsEnum_proposeSituationMerge,
-  _$analystProfileAllowedActionsEnum_proposeChronicle,
-]);
+_$analystProfileAllowedActionsEnumValues =
+    BuiltSet<AnalystProfileAllowedActionsEnum>(
+      const <AnalystProfileAllowedActionsEnum>[
+        _$analystProfileAllowedActionsEnum_proposeWatch,
+        _$analystProfileAllowedActionsEnum_proposeIntelEvent,
+        _$analystProfileAllowedActionsEnum_proposeInvestigationItem,
+        _$analystProfileAllowedActionsEnum_annotateEvent,
+        _$analystProfileAllowedActionsEnum_proposeHypothesisSet,
+        _$analystProfileAllowedActionsEnum_proposeIndicator,
+        _$analystProfileAllowedActionsEnum_proposeQuestion,
+        _$analystProfileAllowedActionsEnum_proposeSituationMerge,
+        _$analystProfileAllowedActionsEnum_proposeChronicle,
+      ],
+    );
 
 const AnalystProfileNotifyMinPriorityEnum
-    _$analystProfileNotifyMinPriorityEnum_low =
+_$analystProfileNotifyMinPriorityEnum_low =
     const AnalystProfileNotifyMinPriorityEnum._('low');
 const AnalystProfileNotifyMinPriorityEnum
-    _$analystProfileNotifyMinPriorityEnum_normal =
+_$analystProfileNotifyMinPriorityEnum_normal =
     const AnalystProfileNotifyMinPriorityEnum._('normal');
 const AnalystProfileNotifyMinPriorityEnum
-    _$analystProfileNotifyMinPriorityEnum_high =
+_$analystProfileNotifyMinPriorityEnum_high =
     const AnalystProfileNotifyMinPriorityEnum._('high');
 
 AnalystProfileNotifyMinPriorityEnum
-    _$analystProfileNotifyMinPriorityEnumValueOf(String name) {
+_$analystProfileNotifyMinPriorityEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$analystProfileNotifyMinPriorityEnum_low;
@@ -121,20 +124,22 @@ AnalystProfileNotifyMinPriorityEnum
 }
 
 final BuiltSet<AnalystProfileNotifyMinPriorityEnum>
-    _$analystProfileNotifyMinPriorityEnumValues = BuiltSet<
-        AnalystProfileNotifyMinPriorityEnum>(const <AnalystProfileNotifyMinPriorityEnum>[
-  _$analystProfileNotifyMinPriorityEnum_low,
-  _$analystProfileNotifyMinPriorityEnum_normal,
-  _$analystProfileNotifyMinPriorityEnum_high,
-]);
+_$analystProfileNotifyMinPriorityEnumValues =
+    BuiltSet<AnalystProfileNotifyMinPriorityEnum>(
+      const <AnalystProfileNotifyMinPriorityEnum>[
+        _$analystProfileNotifyMinPriorityEnum_low,
+        _$analystProfileNotifyMinPriorityEnum_normal,
+        _$analystProfileNotifyMinPriorityEnum_high,
+      ],
+    );
 
 Serializer<AnalystProfileEffortEnum> _$analystProfileEffortEnumSerializer =
     _$AnalystProfileEffortEnumSerializer();
 Serializer<AnalystProfileAllowedActionsEnum>
-    _$analystProfileAllowedActionsEnumSerializer =
+_$analystProfileAllowedActionsEnumSerializer =
     _$AnalystProfileAllowedActionsEnumSerializer();
 Serializer<AnalystProfileNotifyMinPriorityEnum>
-    _$analystProfileNotifyMinPriorityEnumSerializer =
+_$analystProfileNotifyMinPriorityEnumSerializer =
     _$AnalystProfileNotifyMinPriorityEnumSerializer();
 
 class _$AnalystProfileEffortEnumSerializer
@@ -154,16 +159,20 @@ class _$AnalystProfileEffortEnumSerializer
   final String wireName = 'AnalystProfileEffortEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystProfileEffortEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystProfileEffortEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystProfileEffortEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystProfileEffortEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystProfileEffortEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystProfileAllowedActionsEnumSerializer
@@ -198,16 +207,19 @@ class _$AnalystProfileAllowedActionsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalystProfileAllowedActionsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalystProfileAllowedActionsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystProfileAllowedActionsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystProfileAllowedActionsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystProfileAllowedActionsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystProfileNotifyMinPriorityEnumSerializer
@@ -225,23 +237,26 @@ class _$AnalystProfileNotifyMinPriorityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AnalystProfileNotifyMinPriorityEnum
+    AnalystProfileNotifyMinPriorityEnum,
   ];
   @override
   final String wireName = 'AnalystProfileNotifyMinPriorityEnum';
 
   @override
   Object serialize(
-          Serializers serializers, AnalystProfileNotifyMinPriorityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalystProfileNotifyMinPriorityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystProfileNotifyMinPriorityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystProfileNotifyMinPriorityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystProfileNotifyMinPriorityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystProfile extends AnalystProfile {
@@ -295,31 +310,31 @@ class _$AnalystProfile extends AnalystProfile {
   factory _$AnalystProfile([void Function(AnalystProfileBuilder)? updates]) =>
       (AnalystProfileBuilder()..update(updates))._build();
 
-  _$AnalystProfile._(
-      {required this.id,
-      required this.name,
-      required this.enabled,
-      required this.schedule,
-      this.scope,
-      this.lookback,
-      this.instructions,
-      this.providerId,
-      required this.effort,
-      this.maxRunsPerDay,
-      this.maxTokensPerRun,
-      this.maxToolCalls,
-      this.maxWallSeconds,
-      required this.allowActions,
-      this.allowedActions,
-      this.maxAutoActionsPerDay,
-      this.channelIds,
-      this.notifyMinPriority,
-      required this.ownerTokenId,
-      this.nextRunAt,
-      this.lastRunAt,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$AnalystProfile._({
+    required this.id,
+    required this.name,
+    required this.enabled,
+    required this.schedule,
+    this.scope,
+    this.lookback,
+    this.instructions,
+    this.providerId,
+    required this.effort,
+    this.maxRunsPerDay,
+    this.maxTokensPerRun,
+    this.maxToolCalls,
+    this.maxWallSeconds,
+    required this.allowActions,
+    this.allowedActions,
+    this.maxAutoActionsPerDay,
+    this.channelIds,
+    this.notifyMinPriority,
+    required this.ownerTokenId,
+    this.nextRunAt,
+    this.lastRunAt,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   AnalystProfile rebuild(void Function(AnalystProfileBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -487,8 +502,8 @@ class AnalystProfileBuilder
       _$this._allowedActions ??=
           ListBuilder<AnalystProfileAllowedActionsEnum>();
   set allowedActions(
-          ListBuilder<AnalystProfileAllowedActionsEnum>? allowedActions) =>
-      _$this._allowedActions = allowedActions;
+    ListBuilder<AnalystProfileAllowedActionsEnum>? allowedActions,
+  ) => _$this._allowedActions = allowedActions;
 
   int? _maxAutoActionsPerDay;
   int? get maxAutoActionsPerDay => _$this._maxAutoActionsPerDay;
@@ -505,8 +520,8 @@ class AnalystProfileBuilder
   AnalystProfileNotifyMinPriorityEnum? get notifyMinPriority =>
       _$this._notifyMinPriority;
   set notifyMinPriority(
-          AnalystProfileNotifyMinPriorityEnum? notifyMinPriority) =>
-      _$this._notifyMinPriority = notifyMinPriority;
+    AnalystProfileNotifyMinPriorityEnum? notifyMinPriority,
+  ) => _$this._notifyMinPriority = notifyMinPriority;
 
   String? _ownerTokenId;
   String? get ownerTokenId => _$this._ownerTokenId;
@@ -579,39 +594,64 @@ class AnalystProfileBuilder
   _$AnalystProfile _build() {
     _$AnalystProfile _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystProfile._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AnalystProfile', 'id'),
+              id,
+              r'AnalystProfile',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'AnalystProfile', 'name'),
+              name,
+              r'AnalystProfile',
+              'name',
+            ),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'AnalystProfile', 'enabled'),
+              enabled,
+              r'AnalystProfile',
+              'enabled',
+            ),
             schedule: schedule.build(),
             scope: _scope?.build(),
             lookback: lookback,
             instructions: instructions,
             providerId: providerId,
             effort: BuiltValueNullFieldError.checkNotNull(
-                effort, r'AnalystProfile', 'effort'),
+              effort,
+              r'AnalystProfile',
+              'effort',
+            ),
             maxRunsPerDay: maxRunsPerDay,
             maxTokensPerRun: maxTokensPerRun,
             maxToolCalls: maxToolCalls,
             maxWallSeconds: maxWallSeconds,
             allowActions: BuiltValueNullFieldError.checkNotNull(
-                allowActions, r'AnalystProfile', 'allowActions'),
+              allowActions,
+              r'AnalystProfile',
+              'allowActions',
+            ),
             allowedActions: _allowedActions?.build(),
             maxAutoActionsPerDay: maxAutoActionsPerDay,
             channelIds: _channelIds?.build(),
             notifyMinPriority: notifyMinPriority,
             ownerTokenId: BuiltValueNullFieldError.checkNotNull(
-                ownerTokenId, r'AnalystProfile', 'ownerTokenId'),
+              ownerTokenId,
+              r'AnalystProfile',
+              'ownerTokenId',
+            ),
             nextRunAt: nextRunAt,
             lastRunAt: lastRunAt,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AnalystProfile', 'createdAt'),
+              createdAt,
+              r'AnalystProfile',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'AnalystProfile', 'updatedAt'),
+              updatedAt,
+              r'AnalystProfile',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -628,7 +668,10 @@ class AnalystProfileBuilder
         _channelIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystProfile', _$failedField, e.toString());
+          r'AnalystProfile',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

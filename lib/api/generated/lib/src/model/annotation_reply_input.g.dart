@@ -12,15 +12,15 @@ class _$AnnotationReplyInput extends AnnotationReplyInput {
   @override
   final bool? private;
 
-  factory _$AnnotationReplyInput(
-          [void Function(AnnotationReplyInputBuilder)? updates]) =>
-      (AnnotationReplyInputBuilder()..update(updates))._build();
+  factory _$AnnotationReplyInput([
+    void Function(AnnotationReplyInputBuilder)? updates,
+  ]) => (AnnotationReplyInputBuilder()..update(updates))._build();
 
   _$AnnotationReplyInput._({required this.body, this.private}) : super._();
   @override
   AnnotationReplyInput rebuild(
-          void Function(AnnotationReplyInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnnotationReplyInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnnotationReplyInputBuilder toBuilder() =>
@@ -92,10 +92,14 @@ class AnnotationReplyInputBuilder
   AnnotationReplyInput build() => _build();
 
   _$AnnotationReplyInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnnotationReplyInput._(
           body: BuiltValueNullFieldError.checkNotNull(
-              body, r'AnnotationReplyInput', 'body'),
+            body,
+            r'AnnotationReplyInput',
+            'body',
+          ),
           private: private,
         );
     replace(_$result);

@@ -28,10 +28,10 @@ WindowStatePayloadTypeEnum _$windowStatePayloadTypeEnumValueOf(String name) {
 
 final BuiltSet<WindowStatePayloadTypeEnum> _$windowStatePayloadTypeEnumValues =
     BuiltSet<WindowStatePayloadTypeEnum>(const <WindowStatePayloadTypeEnum>[
-  _$windowStatePayloadTypeEnum_count,
-  _$windowStatePayloadTypeEnum_absence,
-  _$windowStatePayloadTypeEnum_anomaly,
-]);
+      _$windowStatePayloadTypeEnum_count,
+      _$windowStatePayloadTypeEnum_absence,
+      _$windowStatePayloadTypeEnum_anomaly,
+    ]);
 
 const WindowStatePayloadStateEnum _$windowStatePayloadStateEnum_active =
     const WindowStatePayloadStateEnum._('active');
@@ -58,18 +58,18 @@ WindowStatePayloadStateEnum _$windowStatePayloadStateEnumValueOf(String name) {
 }
 
 final BuiltSet<WindowStatePayloadStateEnum>
-    _$windowStatePayloadStateEnumValues =
+_$windowStatePayloadStateEnumValues =
     BuiltSet<WindowStatePayloadStateEnum>(const <WindowStatePayloadStateEnum>[
-  _$windowStatePayloadStateEnum_active,
-  _$windowStatePayloadStateEnum_clear,
-  _$windowStatePayloadStateEnum_unknown,
-  _$windowStatePayloadStateEnum_learning,
-]);
+      _$windowStatePayloadStateEnum_active,
+      _$windowStatePayloadStateEnum_clear,
+      _$windowStatePayloadStateEnum_unknown,
+      _$windowStatePayloadStateEnum_learning,
+    ]);
 
 Serializer<WindowStatePayloadTypeEnum> _$windowStatePayloadTypeEnumSerializer =
     _$WindowStatePayloadTypeEnumSerializer();
 Serializer<WindowStatePayloadStateEnum>
-    _$windowStatePayloadStateEnumSerializer =
+_$windowStatePayloadStateEnumSerializer =
     _$WindowStatePayloadStateEnumSerializer();
 
 class _$WindowStatePayloadTypeEnumSerializer
@@ -91,16 +91,20 @@ class _$WindowStatePayloadTypeEnumSerializer
   final String wireName = 'WindowStatePayloadTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, WindowStatePayloadTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WindowStatePayloadTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WindowStatePayloadTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WindowStatePayloadTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WindowStatePayloadTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WindowStatePayloadStateEnumSerializer
@@ -124,16 +128,20 @@ class _$WindowStatePayloadStateEnumSerializer
   final String wireName = 'WindowStatePayloadStateEnum';
 
   @override
-  Object serialize(Serializers serializers, WindowStatePayloadStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WindowStatePayloadStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WindowStatePayloadStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WindowStatePayloadStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WindowStatePayloadStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WindowStatePayload extends WindowStatePayload {
@@ -158,26 +166,26 @@ class _$WindowStatePayload extends WindowStatePayload {
   @override
   final bool? automated;
 
-  factory _$WindowStatePayload(
-          [void Function(WindowStatePayloadBuilder)? updates]) =>
-      (WindowStatePayloadBuilder()..update(updates))._build();
+  factory _$WindowStatePayload([
+    void Function(WindowStatePayloadBuilder)? updates,
+  ]) => (WindowStatePayloadBuilder()..update(updates))._build();
 
-  _$WindowStatePayload._(
-      {required this.ruleId,
-      this.name,
-      required this.type,
-      required this.groupKey,
-      required this.state,
-      this.value,
-      this.threshold,
-      this.reason,
-      this.detector,
-      this.automated})
-      : super._();
+  _$WindowStatePayload._({
+    required this.ruleId,
+    this.name,
+    required this.type,
+    required this.groupKey,
+    required this.state,
+    this.value,
+    this.threshold,
+    this.reason,
+    this.detector,
+    this.automated,
+  }) : super._();
   @override
   WindowStatePayload rebuild(
-          void Function(WindowStatePayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WindowStatePayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WindowStatePayloadBuilder toBuilder() =>
@@ -315,17 +323,30 @@ class WindowStatePayloadBuilder
   _$WindowStatePayload _build() {
     _$WindowStatePayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WindowStatePayload._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'WindowStatePayload', 'ruleId'),
+              ruleId,
+              r'WindowStatePayload',
+              'ruleId',
+            ),
             name: name,
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'WindowStatePayload', 'type'),
+              type,
+              r'WindowStatePayload',
+              'type',
+            ),
             groupKey: BuiltValueNullFieldError.checkNotNull(
-                groupKey, r'WindowStatePayload', 'groupKey'),
+              groupKey,
+              r'WindowStatePayload',
+              'groupKey',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'WindowStatePayload', 'state'),
+              state,
+              r'WindowStatePayload',
+              'state',
+            ),
             value: value,
             threshold: threshold,
             reason: reason,
@@ -339,7 +360,10 @@ class WindowStatePayloadBuilder
         _detector?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WindowStatePayload', _$failedField, e.toString());
+          r'WindowStatePayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

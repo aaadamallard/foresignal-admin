@@ -12,15 +12,15 @@ class _$ReportRevisionPage extends ReportRevisionPage {
   @override
   final String? nextCursor;
 
-  factory _$ReportRevisionPage(
-          [void Function(ReportRevisionPageBuilder)? updates]) =>
-      (ReportRevisionPageBuilder()..update(updates))._build();
+  factory _$ReportRevisionPage([
+    void Function(ReportRevisionPageBuilder)? updates,
+  ]) => (ReportRevisionPageBuilder()..update(updates))._build();
 
   _$ReportRevisionPage._({required this.items, this.nextCursor}) : super._();
   @override
   ReportRevisionPage rebuild(
-          void Function(ReportRevisionPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReportRevisionPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReportRevisionPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ReportRevisionPageBuilder
   _$ReportRevisionPage _build() {
     _$ReportRevisionPage _$result;
     try {
-      _$result = _$v ??
-          _$ReportRevisionPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ReportRevisionPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ReportRevisionPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportRevisionPage', _$failedField, e.toString());
+          r'ReportRevisionPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

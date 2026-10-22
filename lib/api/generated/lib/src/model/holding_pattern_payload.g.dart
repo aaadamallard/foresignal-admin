@@ -9,17 +9,18 @@ part of 'holding_pattern_payload.dart';
 const HoldingPatternPayloadStatusEnum _$holdingPatternPayloadStatusEnum_ok =
     const HoldingPatternPayloadStatusEnum._('ok');
 const HoldingPatternPayloadStatusEnum
-    _$holdingPatternPayloadStatusEnum_insufficientData =
+_$holdingPatternPayloadStatusEnum_insufficientData =
     const HoldingPatternPayloadStatusEnum._('insufficientData');
 const HoldingPatternPayloadStatusEnum
-    _$holdingPatternPayloadStatusEnum_noCoverage =
+_$holdingPatternPayloadStatusEnum_noCoverage =
     const HoldingPatternPayloadStatusEnum._('noCoverage');
 const HoldingPatternPayloadStatusEnum
-    _$holdingPatternPayloadStatusEnum_degradedInput =
+_$holdingPatternPayloadStatusEnum_degradedInput =
     const HoldingPatternPayloadStatusEnum._('degradedInput');
 
 HoldingPatternPayloadStatusEnum _$holdingPatternPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$holdingPatternPayloadStatusEnum_ok;
@@ -35,16 +36,18 @@ HoldingPatternPayloadStatusEnum _$holdingPatternPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<HoldingPatternPayloadStatusEnum>
-    _$holdingPatternPayloadStatusEnumValues = BuiltSet<
-        HoldingPatternPayloadStatusEnum>(const <HoldingPatternPayloadStatusEnum>[
-  _$holdingPatternPayloadStatusEnum_ok,
-  _$holdingPatternPayloadStatusEnum_insufficientData,
-  _$holdingPatternPayloadStatusEnum_noCoverage,
-  _$holdingPatternPayloadStatusEnum_degradedInput,
-]);
+_$holdingPatternPayloadStatusEnumValues =
+    BuiltSet<HoldingPatternPayloadStatusEnum>(
+      const <HoldingPatternPayloadStatusEnum>[
+        _$holdingPatternPayloadStatusEnum_ok,
+        _$holdingPatternPayloadStatusEnum_insufficientData,
+        _$holdingPatternPayloadStatusEnum_noCoverage,
+        _$holdingPatternPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 Serializer<HoldingPatternPayloadStatusEnum>
-    _$holdingPatternPayloadStatusEnumSerializer =
+_$holdingPatternPayloadStatusEnumSerializer =
     _$HoldingPatternPayloadStatusEnumSerializer();
 
 class _$HoldingPatternPayloadStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$HoldingPatternPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HoldingPatternPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HoldingPatternPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HoldingPatternPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HoldingPatternPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HoldingPatternPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HoldingPatternPayload extends HoldingPatternPayload {
@@ -105,27 +111,27 @@ class _$HoldingPatternPayload extends HoldingPatternPayload {
   @override
   final HoldingPatternPayloadNearestAirport? nearestAirport;
 
-  factory _$HoldingPatternPayload(
-          [void Function(HoldingPatternPayloadBuilder)? updates]) =>
-      (HoldingPatternPayloadBuilder()..update(updates))._build();
+  factory _$HoldingPatternPayload([
+    void Function(HoldingPatternPayloadBuilder)? updates,
+  ]) => (HoldingPatternPayloadBuilder()..update(updates))._build();
 
-  _$HoldingPatternPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.hex,
-      required this.turnsDeg,
-      this.durationMin,
-      this.altitudeFt,
-      this.nearestAirport})
-      : super._();
+  _$HoldingPatternPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.hex,
+    required this.turnsDeg,
+    this.durationMin,
+    this.altitudeFt,
+    this.nearestAirport,
+  }) : super._();
   @override
   HoldingPatternPayload rebuild(
-          void Function(HoldingPatternPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HoldingPatternPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HoldingPatternPayloadBuilder toBuilder() =>
@@ -237,8 +243,8 @@ class HoldingPatternPayloadBuilder
   HoldingPatternPayloadNearestAirportBuilder get nearestAirport =>
       _$this._nearestAirport ??= HoldingPatternPayloadNearestAirportBuilder();
   set nearestAirport(
-          HoldingPatternPayloadNearestAirportBuilder? nearestAirport) =>
-      _$this._nearestAirport = nearestAirport;
+    HoldingPatternPayloadNearestAirportBuilder? nearestAirport,
+  ) => _$this._nearestAirport = nearestAirport;
 
   HoldingPatternPayloadBuilder() {
     HoldingPatternPayload._defaults(this);
@@ -279,21 +285,37 @@ class HoldingPatternPayloadBuilder
   _$HoldingPatternPayload _build() {
     _$HoldingPatternPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HoldingPatternPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'HoldingPatternPayload', 'automated'),
+              automated,
+              r'HoldingPatternPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'HoldingPatternPayload', 'notAWarning'),
+              notAWarning,
+              r'HoldingPatternPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'HoldingPatternPayload', 'status'),
+              status,
+              r'HoldingPatternPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             hex: BuiltValueNullFieldError.checkNotNull(
-                hex, r'HoldingPatternPayload', 'hex'),
+              hex,
+              r'HoldingPatternPayload',
+              'hex',
+            ),
             turnsDeg: BuiltValueNullFieldError.checkNotNull(
-                turnsDeg, r'HoldingPatternPayload', 'turnsDeg'),
+              turnsDeg,
+              r'HoldingPatternPayload',
+              'turnsDeg',
+            ),
             durationMin: durationMin,
             altitudeFt: altitudeFt,
             nearestAirport: _nearestAirport?.build(),
@@ -311,7 +333,10 @@ class HoldingPatternPayloadBuilder
         _nearestAirport?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HoldingPatternPayload', _$failedField, e.toString());
+          r'HoldingPatternPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

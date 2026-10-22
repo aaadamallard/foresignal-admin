@@ -9,11 +9,12 @@ part of 'hypothesis_review_input.dart';
 const HypothesisReviewInputCauseEnum _$hypothesisReviewInputCauseEnum_review =
     const HypothesisReviewInputCauseEnum._('review');
 const HypothesisReviewInputCauseEnum
-    _$hypothesisReviewInputCauseEnum_operator_ =
+_$hypothesisReviewInputCauseEnum_operator_ =
     const HypothesisReviewInputCauseEnum._('operator_');
 
 HypothesisReviewInputCauseEnum _$hypothesisReviewInputCauseEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'review':
       return _$hypothesisReviewInputCauseEnum_review;
@@ -25,14 +26,16 @@ HypothesisReviewInputCauseEnum _$hypothesisReviewInputCauseEnumValueOf(
 }
 
 final BuiltSet<HypothesisReviewInputCauseEnum>
-    _$hypothesisReviewInputCauseEnumValues = BuiltSet<
-        HypothesisReviewInputCauseEnum>(const <HypothesisReviewInputCauseEnum>[
-  _$hypothesisReviewInputCauseEnum_review,
-  _$hypothesisReviewInputCauseEnum_operator_,
-]);
+_$hypothesisReviewInputCauseEnumValues =
+    BuiltSet<HypothesisReviewInputCauseEnum>(
+      const <HypothesisReviewInputCauseEnum>[
+        _$hypothesisReviewInputCauseEnum_review,
+        _$hypothesisReviewInputCauseEnum_operator_,
+      ],
+    );
 
 Serializer<HypothesisReviewInputCauseEnum>
-    _$hypothesisReviewInputCauseEnumSerializer =
+_$hypothesisReviewInputCauseEnumSerializer =
     _$HypothesisReviewInputCauseEnumSerializer();
 
 class _$HypothesisReviewInputCauseEnumSerializer
@@ -53,16 +56,19 @@ class _$HypothesisReviewInputCauseEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HypothesisReviewInputCauseEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HypothesisReviewInputCauseEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisReviewInputCauseEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisReviewInputCauseEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisReviewInputCauseEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisReviewInput extends HypothesisReviewInput {
@@ -85,25 +91,25 @@ class _$HypothesisReviewInput extends HypothesisReviewInput {
   @override
   final int? version;
 
-  factory _$HypothesisReviewInput(
-          [void Function(HypothesisReviewInputBuilder)? updates]) =>
-      (HypothesisReviewInputBuilder()..update(updates))._build();
+  factory _$HypothesisReviewInput([
+    void Function(HypothesisReviewInputBuilder)? updates,
+  ]) => (HypothesisReviewInputBuilder()..update(updates))._build();
 
-  _$HypothesisReviewInput._(
-      {this.cause,
-      required this.rationale,
-      this.proposalId,
-      this.probabilities,
-      this.lr,
-      this.assumptions,
-      this.exceedCap,
-      this.citations,
-      this.version})
-      : super._();
+  _$HypothesisReviewInput._({
+    this.cause,
+    required this.rationale,
+    this.proposalId,
+    this.probabilities,
+    this.lr,
+    this.assumptions,
+    this.exceedCap,
+    this.citations,
+    this.version,
+  }) : super._();
   @override
   HypothesisReviewInput rebuild(
-          void Function(HypothesisReviewInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisReviewInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisReviewInputBuilder toBuilder() =>
@@ -187,8 +193,8 @@ class HypothesisReviewInputBuilder
       _$this._assumptions ??=
           ListBuilder<HypothesisReviewInputAssumptionsInner>();
   set assumptions(
-          ListBuilder<HypothesisReviewInputAssumptionsInner>? assumptions) =>
-      _$this._assumptions = assumptions;
+    ListBuilder<HypothesisReviewInputAssumptionsInner>? assumptions,
+  ) => _$this._assumptions = assumptions;
 
   bool? _exceedCap;
   bool? get exceedCap => _$this._exceedCap;
@@ -241,11 +247,15 @@ class HypothesisReviewInputBuilder
   _$HypothesisReviewInput _build() {
     _$HypothesisReviewInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisReviewInput._(
             cause: cause,
             rationale: BuiltValueNullFieldError.checkNotNull(
-                rationale, r'HypothesisReviewInput', 'rationale'),
+              rationale,
+              r'HypothesisReviewInput',
+              'rationale',
+            ),
             proposalId: proposalId,
             probabilities: probabilities,
             lr: _lr?.build(),
@@ -266,7 +276,10 @@ class HypothesisReviewInputBuilder
         _citations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisReviewInput', _$failedField, e.toString());
+          r'HypothesisReviewInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

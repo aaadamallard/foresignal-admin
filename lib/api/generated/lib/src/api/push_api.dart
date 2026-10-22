@@ -56,16 +56,10 @@ class PushApi {
     final _path = r'/v1/push/subscriptions';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -77,14 +71,13 @@ class PushApi {
 
     try {
       const _type = FullType(PushSubscriptionInput);
-      _bodyData =
-          _serializers.serialize(pushSubscriptionInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        pushSubscriptionInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -107,9 +100,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PushSubscription),
-            ) as PushSubscription;
+                  rawResponse,
+                  specifiedType: const FullType(PushSubscription),
+                )
+                as PushSubscription;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -156,21 +150,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/devices/{deviceId}'.replaceAll(
-        '{' r'deviceId' '}',
-        encodeQueryParameter(_serializers, deviceId, const FullType(String))
-            .toString());
+      '{'
+      r'deviceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        deviceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -212,21 +206,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/providers/{providerId}'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -268,22 +262,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/subscriptions/{subscriptionId}'.replaceAll(
-        '{' r'subscriptionId' '}',
-        encodeQueryParameter(
-                _serializers, subscriptionId, const FullType(String))
-            .toString());
+      '{'
+      r'subscriptionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        subscriptionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -325,13 +318,8 @@ class PushApi {
     final _path = r'/v1/push/vapid-public-key';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
@@ -350,9 +338,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(GetVapidPublicKey200Response),
-            ) as GetVapidPublicKey200Response;
+                  rawResponse,
+                  specifiedType: const FullType(GetVapidPublicKey200Response),
+                )
+                as GetVapidPublicKey200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -399,16 +388,10 @@ class PushApi {
     final _path = r'/v1/push/devices';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -430,9 +413,12 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(PushDevice)]),
-            ) as BuiltList<PushDevice>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(PushDevice),
+                  ]),
+                )
+                as BuiltList<PushDevice>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -479,16 +465,10 @@ class PushApi {
     final _path = r'/v1/push/providers';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -510,10 +490,12 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(PushProvider)]),
-            ) as BuiltList<PushProvider>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(PushProvider),
+                  ]),
+                )
+                as BuiltList<PushProvider>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -560,16 +542,10 @@ class PushApi {
     final _path = r'/v1/push/subscriptions';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -591,10 +567,12 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(PushSubscription)]),
-            ) as BuiltList<PushSubscription>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(PushSubscription),
+                  ]),
+                )
+                as BuiltList<PushSubscription>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -643,21 +621,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/providers/{providerId}'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -669,14 +647,13 @@ class PushApi {
 
     try {
       const _type = FullType(PushProviderInput);
-      _bodyData =
-          _serializers.serialize(pushProviderInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        pushProviderInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -699,9 +676,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PushProvider),
-            ) as PushProvider;
+                  rawResponse,
+                  specifiedType: const FullType(PushProvider),
+                )
+                as PushProvider;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -750,16 +728,10 @@ class PushApi {
     final _path = r'/v1/push/devices';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -774,10 +746,7 @@ class PushApi {
       _bodyData = _serializers.serialize(pushDeviceInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -800,9 +769,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PushDevice),
-            ) as PushDevice;
+                  rawResponse,
+                  specifiedType: const FullType(PushDevice),
+                )
+                as PushDevice;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -849,21 +819,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/devices/{deviceId}/test'.replaceAll(
-        '{' r'deviceId' '}',
-        encodeQueryParameter(_serializers, deviceId, const FullType(String))
-            .toString());
+      '{'
+      r'deviceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        deviceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -885,9 +855,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PushTestResult),
-            ) as PushTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(PushTestResult),
+                )
+                as PushTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -936,21 +907,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/providers/{providerId}/test'.replaceAll(
-        '{' r'providerId' '}',
-        encodeQueryParameter(_serializers, providerId, const FullType(String))
-            .toString());
+      '{'
+      r'providerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        providerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -964,14 +935,13 @@ class PushApi {
       const _type = FullType(PushProviderTestRequest);
       _bodyData = pushProviderTestRequest == null
           ? null
-          : _serializers.serialize(pushProviderTestRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              pushProviderTestRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -994,9 +964,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PushTestResult),
-            ) as PushTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(PushTestResult),
+                )
+                as PushTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1045,21 +1016,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/devices/{deviceId}'.replaceAll(
-        '{' r'deviceId' '}',
-        encodeQueryParameter(_serializers, deviceId, const FullType(String))
-            .toString());
+      '{'
+      r'deviceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        deviceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1071,14 +1042,13 @@ class PushApi {
 
     try {
       const _type = FullType(PushDeviceUpdate);
-      _bodyData =
-          _serializers.serialize(pushDeviceUpdate, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        pushDeviceUpdate,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1101,9 +1071,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PushDevice),
-            ) as PushDevice;
+                  rawResponse,
+                  specifiedType: const FullType(PushDevice),
+                )
+                as PushDevice;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1152,22 +1123,21 @@ class PushApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/push/subscriptions/{subscriptionId}/verify'.replaceAll(
-        '{' r'subscriptionId' '}',
-        encodeQueryParameter(
-                _serializers, subscriptionId, const FullType(String))
-            .toString());
+      '{'
+      r'subscriptionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        subscriptionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1179,14 +1149,13 @@ class PushApi {
 
     try {
       const _type = FullType(PushSubscriptionVerify);
-      _bodyData =
-          _serializers.serialize(pushSubscriptionVerify, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        pushSubscriptionVerify,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1209,9 +1178,10 @@ class PushApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PushSubscription),
-            ) as PushSubscription;
+                  rawResponse,
+                  specifiedType: const FullType(PushSubscription),
+                )
+                as PushSubscription;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

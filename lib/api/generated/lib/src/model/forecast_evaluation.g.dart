@@ -18,7 +18,8 @@ const ForecastEvaluationStatusEnum _$forecastEvaluationStatusEnum_cancelled =
     const ForecastEvaluationStatusEnum._('cancelled');
 
 ForecastEvaluationStatusEnum _$forecastEvaluationStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'queued':
       return _$forecastEvaluationStatusEnum_queued;
@@ -36,17 +37,17 @@ ForecastEvaluationStatusEnum _$forecastEvaluationStatusEnumValueOf(
 }
 
 final BuiltSet<ForecastEvaluationStatusEnum>
-    _$forecastEvaluationStatusEnumValues =
+_$forecastEvaluationStatusEnumValues =
     BuiltSet<ForecastEvaluationStatusEnum>(const <ForecastEvaluationStatusEnum>[
-  _$forecastEvaluationStatusEnum_queued,
-  _$forecastEvaluationStatusEnum_running,
-  _$forecastEvaluationStatusEnum_done,
-  _$forecastEvaluationStatusEnum_failed,
-  _$forecastEvaluationStatusEnum_cancelled,
-]);
+      _$forecastEvaluationStatusEnum_queued,
+      _$forecastEvaluationStatusEnum_running,
+      _$forecastEvaluationStatusEnum_done,
+      _$forecastEvaluationStatusEnum_failed,
+      _$forecastEvaluationStatusEnum_cancelled,
+    ]);
 
 Serializer<ForecastEvaluationStatusEnum>
-    _$forecastEvaluationStatusEnumSerializer =
+_$forecastEvaluationStatusEnumSerializer =
     _$ForecastEvaluationStatusEnumSerializer();
 
 class _$ForecastEvaluationStatusEnumSerializer
@@ -72,16 +73,20 @@ class _$ForecastEvaluationStatusEnumSerializer
   final String wireName = 'ForecastEvaluationStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ForecastEvaluationStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ForecastEvaluationStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastEvaluationStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastEvaluationStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastEvaluationStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastEvaluation extends ForecastEvaluation {
@@ -124,35 +129,35 @@ class _$ForecastEvaluation extends ForecastEvaluation {
   @override
   final String? manifestId;
 
-  factory _$ForecastEvaluation(
-          [void Function(ForecastEvaluationBuilder)? updates]) =>
-      (ForecastEvaluationBuilder()..update(updates))._build();
+  factory _$ForecastEvaluation([
+    void Function(ForecastEvaluationBuilder)? updates,
+  ]) => (ForecastEvaluationBuilder()..update(updates))._build();
 
-  _$ForecastEvaluation._(
-      {required this.id,
-      required this.forecasterId,
-      required this.from,
-      required this.to,
-      this.categories,
-      this.maxQuestions,
-      required this.status,
-      this.progress,
-      required this.questionsConsidered,
-      required this.questionsEvaluated,
-      required this.skipped,
-      this.scorecard,
-      required this.caveats,
-      this.error,
-      required this.createdBy,
-      required this.createdAt,
-      this.startedAt,
-      this.finishedAt,
-      this.manifestId})
-      : super._();
+  _$ForecastEvaluation._({
+    required this.id,
+    required this.forecasterId,
+    required this.from,
+    required this.to,
+    this.categories,
+    this.maxQuestions,
+    required this.status,
+    this.progress,
+    required this.questionsConsidered,
+    required this.questionsEvaluated,
+    required this.skipped,
+    this.scorecard,
+    required this.caveats,
+    this.error,
+    required this.createdBy,
+    required this.createdAt,
+    this.startedAt,
+    this.finishedAt,
+    this.manifestId,
+  }) : super._();
   @override
   ForecastEvaluation rebuild(
-          void Function(ForecastEvaluationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastEvaluationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastEvaluationBuilder toBuilder() =>
@@ -370,37 +375,61 @@ class ForecastEvaluationBuilder
   _$ForecastEvaluation _build() {
     _$ForecastEvaluation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastEvaluation._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ForecastEvaluation', 'id'),
+              id,
+              r'ForecastEvaluation',
+              'id',
+            ),
             forecasterId: BuiltValueNullFieldError.checkNotNull(
-                forecasterId, r'ForecastEvaluation', 'forecasterId'),
+              forecasterId,
+              r'ForecastEvaluation',
+              'forecasterId',
+            ),
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'ForecastEvaluation', 'from'),
+              from,
+              r'ForecastEvaluation',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, r'ForecastEvaluation', 'to'),
+              to,
+              r'ForecastEvaluation',
+              'to',
+            ),
             categories: _categories?.build(),
             maxQuestions: maxQuestions,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ForecastEvaluation', 'status'),
+              status,
+              r'ForecastEvaluation',
+              'status',
+            ),
             progress: progress,
             questionsConsidered: BuiltValueNullFieldError.checkNotNull(
-                questionsConsidered,
-                r'ForecastEvaluation',
-                'questionsConsidered'),
+              questionsConsidered,
+              r'ForecastEvaluation',
+              'questionsConsidered',
+            ),
             questionsEvaluated: BuiltValueNullFieldError.checkNotNull(
-                questionsEvaluated,
-                r'ForecastEvaluation',
-                'questionsEvaluated'),
+              questionsEvaluated,
+              r'ForecastEvaluation',
+              'questionsEvaluated',
+            ),
             skipped: skipped.build(),
             scorecard: _scorecard?.build(),
             caveats: caveats.build(),
             error: error,
             createdBy: BuiltValueNullFieldError.checkNotNull(
-                createdBy, r'ForecastEvaluation', 'createdBy'),
+              createdBy,
+              r'ForecastEvaluation',
+              'createdBy',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ForecastEvaluation', 'createdAt'),
+              createdAt,
+              r'ForecastEvaluation',
+              'createdAt',
+            ),
             startedAt: startedAt,
             finishedAt: finishedAt,
             manifestId: manifestId,
@@ -419,7 +448,10 @@ class ForecastEvaluationBuilder
         caveats.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastEvaluation', _$failedField, e.toString());
+          r'ForecastEvaluation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

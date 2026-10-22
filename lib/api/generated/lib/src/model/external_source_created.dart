@@ -26,8 +26,9 @@ abstract class ExternalSourceCreated
 
   ExternalSourceCreated._();
 
-  factory ExternalSourceCreated(
-      [void updates(ExternalSourceCreatedBuilder b)]) = _$ExternalSourceCreated;
+  factory ExternalSourceCreated([
+    void updates(ExternalSourceCreatedBuilder b),
+  ]) = _$ExternalSourceCreated;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalSourceCreatedBuilder b) => b;
@@ -42,7 +43,7 @@ class _$ExternalSourceCreatedSerializer
   @override
   final Iterable<Type> types = const [
     ExternalSourceCreated,
-    _$ExternalSourceCreated
+    _$ExternalSourceCreated,
   ];
 
   @override
@@ -71,9 +72,11 @@ class _$ExternalSourceCreatedSerializer
     ExternalSourceCreated object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +92,21 @@ class _$ExternalSourceCreatedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExternalSource),
-          ) as ExternalSource;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExternalSource),
+                  )
+                  as ExternalSource;
           result.source_.replace(valueDes);
           break;
         case r'ingestKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ingestKey = valueDes;
           break;
         default:

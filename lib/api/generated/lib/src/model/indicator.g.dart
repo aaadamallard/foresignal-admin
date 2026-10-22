@@ -28,10 +28,10 @@ IndicatorCredibilityEnum _$indicatorCredibilityEnumValueOf(String name) {
 
 final BuiltSet<IndicatorCredibilityEnum> _$indicatorCredibilityEnumValues =
     BuiltSet<IndicatorCredibilityEnum>(const <IndicatorCredibilityEnum>[
-  _$indicatorCredibilityEnum_H,
-  _$indicatorCredibilityEnum_M,
-  _$indicatorCredibilityEnum_L,
-]);
+      _$indicatorCredibilityEnum_H,
+      _$indicatorCredibilityEnum_M,
+      _$indicatorCredibilityEnum_L,
+    ]);
 
 const IndicatorRelevanceEnum _$indicatorRelevanceEnum_H =
     const IndicatorRelevanceEnum._('H');
@@ -55,10 +55,10 @@ IndicatorRelevanceEnum _$indicatorRelevanceEnumValueOf(String name) {
 
 final BuiltSet<IndicatorRelevanceEnum> _$indicatorRelevanceEnumValues =
     BuiltSet<IndicatorRelevanceEnum>(const <IndicatorRelevanceEnum>[
-  _$indicatorRelevanceEnum_H,
-  _$indicatorRelevanceEnum_M,
-  _$indicatorRelevanceEnum_L,
-]);
+      _$indicatorRelevanceEnum_H,
+      _$indicatorRelevanceEnum_M,
+      _$indicatorRelevanceEnum_L,
+    ]);
 
 const IndicatorStateEnum _$indicatorStateEnum_pending =
     const IndicatorStateEnum._('pending');
@@ -98,14 +98,14 @@ IndicatorStateEnum _$indicatorStateEnumValueOf(String name) {
 
 final BuiltSet<IndicatorStateEnum> _$indicatorStateEnumValues =
     BuiltSet<IndicatorStateEnum>(const <IndicatorStateEnum>[
-  _$indicatorStateEnum_pending,
-  _$indicatorStateEnum_emerging,
-  _$indicatorStateEnum_observed,
-  _$indicatorStateEnum_absent,
-  _$indicatorStateEnum_unknownCoverage,
-  _$indicatorStateEnum_retired,
-  _$indicatorStateEnum_reported,
-]);
+      _$indicatorStateEnum_pending,
+      _$indicatorStateEnum_emerging,
+      _$indicatorStateEnum_observed,
+      _$indicatorStateEnum_absent,
+      _$indicatorStateEnum_unknownCoverage,
+      _$indicatorStateEnum_retired,
+      _$indicatorStateEnum_reported,
+    ]);
 
 const IndicatorOriginEnum _$indicatorOriginEnum_operator_ =
     const IndicatorOriginEnum._('operator_');
@@ -129,10 +129,10 @@ IndicatorOriginEnum _$indicatorOriginEnumValueOf(String name) {
 
 final BuiltSet<IndicatorOriginEnum> _$indicatorOriginEnumValues =
     BuiltSet<IndicatorOriginEnum>(const <IndicatorOriginEnum>[
-  _$indicatorOriginEnum_operator_,
-  _$indicatorOriginEnum_agent,
-  _$indicatorOriginEnum_analyst,
-]);
+      _$indicatorOriginEnum_operator_,
+      _$indicatorOriginEnum_agent,
+      _$indicatorOriginEnum_analyst,
+    ]);
 
 Serializer<IndicatorCredibilityEnum> _$indicatorCredibilityEnumSerializer =
     _$IndicatorCredibilityEnumSerializer();
@@ -162,16 +162,20 @@ class _$IndicatorCredibilityEnumSerializer
   final String wireName = 'IndicatorCredibilityEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorCredibilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorCredibilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorCredibilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorCredibilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorCredibilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorRelevanceEnumSerializer
@@ -193,15 +197,20 @@ class _$IndicatorRelevanceEnumSerializer
   final String wireName = 'IndicatorRelevanceEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorRelevanceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorRelevanceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  IndicatorRelevanceEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorRelevanceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  IndicatorRelevanceEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorRelevanceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorStateEnumSerializer
@@ -231,15 +240,20 @@ class _$IndicatorStateEnumSerializer
   final String wireName = 'IndicatorStateEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  IndicatorStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  IndicatorStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorOriginEnumSerializer
@@ -261,15 +275,20 @@ class _$IndicatorOriginEnumSerializer
   final String wireName = 'IndicatorOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  IndicatorOriginEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  IndicatorOriginEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Indicator extends Indicator {
@@ -311,25 +330,25 @@ class _$Indicator extends Indicator {
   factory _$Indicator([void Function(IndicatorBuilder)? updates]) =>
       (IndicatorBuilder()..update(updates))._build();
 
-  _$Indicator._(
-      {required this.id,
-      required this.setId,
-      required this.description,
-      required this.signal,
-      required this.signalFamily,
-      required this.credibility,
-      required this.relevance,
-      this.expectedBy,
-      required this.lr,
-      this.absenceLr,
-      required this.state,
-      this.watchRuleId,
-      this.pDetect,
-      this.observedEvidence,
-      this.lastStateChangeAt,
-      required this.origin,
-      this.version})
-      : super._();
+  _$Indicator._({
+    required this.id,
+    required this.setId,
+    required this.description,
+    required this.signal,
+    required this.signalFamily,
+    required this.credibility,
+    required this.relevance,
+    this.expectedBy,
+    required this.lr,
+    this.absenceLr,
+    required this.state,
+    this.watchRuleId,
+    this.pDetect,
+    this.observedEvidence,
+    this.lastStateChangeAt,
+    required this.origin,
+    this.version,
+  }) : super._();
   @override
   Indicator rebuild(void Function(IndicatorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -532,31 +551,53 @@ class IndicatorBuilder implements Builder<Indicator, IndicatorBuilder> {
   _$Indicator _build() {
     _$Indicator _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Indicator._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Indicator', 'id'),
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'Indicator', 'setId'),
+              setId,
+              r'Indicator',
+              'setId',
+            ),
             description: BuiltValueNullFieldError.checkNotNull(
-                description, r'Indicator', 'description'),
+              description,
+              r'Indicator',
+              'description',
+            ),
             signal: signal.build(),
             signalFamily: BuiltValueNullFieldError.checkNotNull(
-                signalFamily, r'Indicator', 'signalFamily'),
+              signalFamily,
+              r'Indicator',
+              'signalFamily',
+            ),
             credibility: BuiltValueNullFieldError.checkNotNull(
-                credibility, r'Indicator', 'credibility'),
+              credibility,
+              r'Indicator',
+              'credibility',
+            ),
             relevance: BuiltValueNullFieldError.checkNotNull(
-                relevance, r'Indicator', 'relevance'),
+              relevance,
+              r'Indicator',
+              'relevance',
+            ),
             expectedBy: expectedBy,
             lr: lr.build(),
             absenceLr: _absenceLr?.build(),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'Indicator', 'state'),
+              state,
+              r'Indicator',
+              'state',
+            ),
             watchRuleId: watchRuleId,
             pDetect: pDetect,
             observedEvidence: observedEvidence,
             lastStateChangeAt: lastStateChangeAt,
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'Indicator', 'origin'),
+              origin,
+              r'Indicator',
+              'origin',
+            ),
             version: version,
           );
     } catch (_) {
@@ -571,7 +612,10 @@ class IndicatorBuilder implements Builder<Indicator, IndicatorBuilder> {
         _absenceLr?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Indicator', _$failedField, e.toString());
+          r'Indicator',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

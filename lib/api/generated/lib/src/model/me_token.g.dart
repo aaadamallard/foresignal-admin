@@ -6,12 +6,15 @@ part of 'me_token.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const MeTokenScopeEnum _$meTokenScopeEnum_read =
-    const MeTokenScopeEnum._('read');
-const MeTokenScopeEnum _$meTokenScopeEnum_agent =
-    const MeTokenScopeEnum._('agent');
-const MeTokenScopeEnum _$meTokenScopeEnum_admin =
-    const MeTokenScopeEnum._('admin');
+const MeTokenScopeEnum _$meTokenScopeEnum_read = const MeTokenScopeEnum._(
+  'read',
+);
+const MeTokenScopeEnum _$meTokenScopeEnum_agent = const MeTokenScopeEnum._(
+  'agent',
+);
+const MeTokenScopeEnum _$meTokenScopeEnum_admin = const MeTokenScopeEnum._(
+  'admin',
+);
 
 MeTokenScopeEnum _$meTokenScopeEnumValueOf(String name) {
   switch (name) {
@@ -28,10 +31,10 @@ MeTokenScopeEnum _$meTokenScopeEnumValueOf(String name) {
 
 final BuiltSet<MeTokenScopeEnum> _$meTokenScopeEnumValues =
     BuiltSet<MeTokenScopeEnum>(const <MeTokenScopeEnum>[
-  _$meTokenScopeEnum_read,
-  _$meTokenScopeEnum_agent,
-  _$meTokenScopeEnum_admin,
-]);
+      _$meTokenScopeEnum_read,
+      _$meTokenScopeEnum_agent,
+      _$meTokenScopeEnum_admin,
+    ]);
 
 Serializer<MeTokenScopeEnum> _$meTokenScopeEnumSerializer =
     _$MeTokenScopeEnumSerializer();
@@ -55,15 +58,20 @@ class _$MeTokenScopeEnumSerializer
   final String wireName = 'MeTokenScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, MeTokenScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MeTokenScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MeTokenScopeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MeTokenScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MeTokenScopeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MeTokenScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MeToken extends MeToken {
@@ -81,13 +89,13 @@ class _$MeToken extends MeToken {
   factory _$MeToken([void Function(MeTokenBuilder)? updates]) =>
       (MeTokenBuilder()..update(updates))._build();
 
-  _$MeToken._(
-      {required this.id,
-      required this.name,
-      required this.scope,
-      this.tokenPrefix,
-      this.expiresAt})
-      : super._();
+  _$MeToken._({
+    required this.id,
+    required this.name,
+    required this.scope,
+    this.tokenPrefix,
+    this.expiresAt,
+  }) : super._();
   @override
   MeToken rebuild(void Function(MeTokenBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -184,12 +192,16 @@ class MeTokenBuilder implements Builder<MeToken, MeTokenBuilder> {
   MeToken build() => _build();
 
   _$MeToken _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MeToken._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'MeToken', 'id'),
           name: BuiltValueNullFieldError.checkNotNull(name, r'MeToken', 'name'),
-          scope:
-              BuiltValueNullFieldError.checkNotNull(scope, r'MeToken', 'scope'),
+          scope: BuiltValueNullFieldError.checkNotNull(
+            scope,
+            r'MeToken',
+            'scope',
+          ),
           tokenPrefix: tokenPrefix,
           expiresAt: expiresAt,
         );

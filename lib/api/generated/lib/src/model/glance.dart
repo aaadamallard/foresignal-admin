@@ -128,16 +128,20 @@ class _$GlanceSerializer implements PrimitiveSerializer<Glance> {
       yield r'links';
       yield serializers.serialize(
         object.links,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.sections != null) {
       yield r'sections';
       yield serializers.serialize(
         object.sections,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -148,9 +152,11 @@ class _$GlanceSerializer implements PrimitiveSerializer<Glance> {
     Glance object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -166,73 +172,92 @@ class _$GlanceSerializer implements PrimitiveSerializer<Glance> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'serverTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.serverTime = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(GlanceStatusEnum),
-          ) as GlanceStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(GlanceStatusEnum),
+                  )
+                  as GlanceStatusEnum;
           result.status = valueDes;
           break;
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(GlanceAlerts),
-          ) as GlanceAlerts?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(GlanceAlerts),
+                  )
+                  as GlanceAlerts?;
           if (valueDes == null) continue;
           result.alerts.replace(valueDes);
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(GlanceSources),
-          ) as GlanceSources?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(GlanceSources),
+                  )
+                  as GlanceSources?;
           if (valueDes == null) continue;
           result.sources.replace(valueDes);
           break;
         case r'briefing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(GlanceBriefing),
-          ) as GlanceBriefing?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(GlanceBriefing),
+                  )
+                  as GlanceBriefing?;
           if (valueDes == null) continue;
           result.briefing.replace(valueDes);
           break;
         case r'activity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(GlanceActivity),
-          ) as GlanceActivity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(GlanceActivity),
+                  )
+                  as GlanceActivity?;
           if (valueDes == null) continue;
           result.activity.replace(valueDes);
           break;
         case r'lastSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.lastSeq = valueDes;
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;
         case r'sections':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.sections.replace(valueDes);
           break;

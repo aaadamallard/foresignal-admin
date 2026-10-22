@@ -40,13 +40,13 @@ WxAreaPayloadFieldEnum _$wxAreaPayloadFieldEnumValueOf(String name) {
 
 final BuiltSet<WxAreaPayloadFieldEnum> _$wxAreaPayloadFieldEnumValues =
     BuiltSet<WxAreaPayloadFieldEnum>(const <WxAreaPayloadFieldEnum>[
-  _$wxAreaPayloadFieldEnum_refl,
-  _$wxAreaPayloadFieldEnum_mesh,
-  _$wxAreaPayloadFieldEnum_precip,
-  _$wxAreaPayloadFieldEnum_rotation,
-  _$wxAreaPayloadFieldEnum_qpe1h,
-  _$wxAreaPayloadFieldEnum_ffg,
-]);
+      _$wxAreaPayloadFieldEnum_refl,
+      _$wxAreaPayloadFieldEnum_mesh,
+      _$wxAreaPayloadFieldEnum_precip,
+      _$wxAreaPayloadFieldEnum_rotation,
+      _$wxAreaPayloadFieldEnum_qpe1h,
+      _$wxAreaPayloadFieldEnum_ffg,
+    ]);
 
 Serializer<WxAreaPayloadFieldEnum> _$wxAreaPayloadFieldEnumSerializer =
     _$WxAreaPayloadFieldEnumSerializer();
@@ -76,15 +76,20 @@ class _$WxAreaPayloadFieldEnumSerializer
   final String wireName = 'WxAreaPayloadFieldEnum';
 
   @override
-  Object serialize(Serializers serializers, WxAreaPayloadFieldEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WxAreaPayloadFieldEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  WxAreaPayloadFieldEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WxAreaPayloadFieldEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  WxAreaPayloadFieldEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WxAreaPayloadFieldEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WxAreaPayload extends WxAreaPayload {
@@ -112,18 +117,18 @@ class _$WxAreaPayload extends WxAreaPayload {
   factory _$WxAreaPayload([void Function(WxAreaPayloadBuilder)? updates]) =>
       (WxAreaPayloadBuilder()..update(updates))._build();
 
-  _$WxAreaPayload._(
-      {required this.field,
-      required this.threshold,
-      required this.aoi,
-      required this.status,
-      this.asOf,
-      this.areaKm2,
-      this.maxValue,
-      this.coveragePct,
-      this.automated,
-      this.notAWarning})
-      : super._();
+  _$WxAreaPayload._({
+    required this.field,
+    required this.threshold,
+    required this.aoi,
+    required this.status,
+    this.asOf,
+    this.areaKm2,
+    this.maxValue,
+    this.coveragePct,
+    this.automated,
+    this.notAWarning,
+  }) : super._();
   @override
   WxAreaPayload rebuild(void Function(WxAreaPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -261,16 +266,29 @@ class WxAreaPayloadBuilder
   WxAreaPayload build() => _build();
 
   _$WxAreaPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WxAreaPayload._(
           field: BuiltValueNullFieldError.checkNotNull(
-              field, r'WxAreaPayload', 'field'),
+            field,
+            r'WxAreaPayload',
+            'field',
+          ),
           threshold: BuiltValueNullFieldError.checkNotNull(
-              threshold, r'WxAreaPayload', 'threshold'),
+            threshold,
+            r'WxAreaPayload',
+            'threshold',
+          ),
           aoi: BuiltValueNullFieldError.checkNotNull(
-              aoi, r'WxAreaPayload', 'aoi'),
+            aoi,
+            r'WxAreaPayload',
+            'aoi',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'WxAreaPayload', 'status'),
+            status,
+            r'WxAreaPayload',
+            'status',
+          ),
           asOf: asOf,
           areaKm2: areaKm2,
           maxValue: maxValue,

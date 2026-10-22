@@ -18,21 +18,21 @@ class _$EnsembleRefitResultExtremizing extends EnsembleRefitResultExtremizing {
   @override
   final num? logScoreImprovement;
 
-  factory _$EnsembleRefitResultExtremizing(
-          [void Function(EnsembleRefitResultExtremizingBuilder)? updates]) =>
-      (EnsembleRefitResultExtremizingBuilder()..update(updates))._build();
+  factory _$EnsembleRefitResultExtremizing([
+    void Function(EnsembleRefitResultExtremizingBuilder)? updates,
+  ]) => (EnsembleRefitResultExtremizingBuilder()..update(updates))._build();
 
-  _$EnsembleRefitResultExtremizing._(
-      {required this.a,
-      required this.enabled,
-      required this.nResolutions,
-      required this.distinctForecasterTypes,
-      this.logScoreImprovement})
-      : super._();
+  _$EnsembleRefitResultExtremizing._({
+    required this.a,
+    required this.enabled,
+    required this.nResolutions,
+    required this.distinctForecasterTypes,
+    this.logScoreImprovement,
+  }) : super._();
   @override
   EnsembleRefitResultExtremizing rebuild(
-          void Function(EnsembleRefitResultExtremizingBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EnsembleRefitResultExtremizingBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EnsembleRefitResultExtremizingBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$EnsembleRefitResultExtremizing extends EnsembleRefitResultExtremizing {
 
 class EnsembleRefitResultExtremizingBuilder
     implements
-        Builder<EnsembleRefitResultExtremizing,
-            EnsembleRefitResultExtremizingBuilder> {
+        Builder<
+          EnsembleRefitResultExtremizing,
+          EnsembleRefitResultExtremizingBuilder
+        > {
   _$EnsembleRefitResultExtremizing? _$v;
 
   num? _a;
@@ -132,18 +134,29 @@ class EnsembleRefitResultExtremizingBuilder
   EnsembleRefitResultExtremizing build() => _build();
 
   _$EnsembleRefitResultExtremizing _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EnsembleRefitResultExtremizing._(
           a: BuiltValueNullFieldError.checkNotNull(
-              a, r'EnsembleRefitResultExtremizing', 'a'),
+            a,
+            r'EnsembleRefitResultExtremizing',
+            'a',
+          ),
           enabled: BuiltValueNullFieldError.checkNotNull(
-              enabled, r'EnsembleRefitResultExtremizing', 'enabled'),
+            enabled,
+            r'EnsembleRefitResultExtremizing',
+            'enabled',
+          ),
           nResolutions: BuiltValueNullFieldError.checkNotNull(
-              nResolutions, r'EnsembleRefitResultExtremizing', 'nResolutions'),
+            nResolutions,
+            r'EnsembleRefitResultExtremizing',
+            'nResolutions',
+          ),
           distinctForecasterTypes: BuiltValueNullFieldError.checkNotNull(
-              distinctForecasterTypes,
-              r'EnsembleRefitResultExtremizing',
-              'distinctForecasterTypes'),
+            distinctForecasterTypes,
+            r'EnsembleRefitResultExtremizing',
+            'distinctForecasterTypes',
+          ),
           logScoreImprovement: logScoreImprovement,
         );
     replace(_$result);

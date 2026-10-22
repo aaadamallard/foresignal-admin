@@ -18,17 +18,17 @@ class _$MediaMatchResult extends MediaMatchResult {
   @override
   final BuiltList<Caveat> caveats;
 
-  factory _$MediaMatchResult(
-          [void Function(MediaMatchResultBuilder)? updates]) =>
-      (MediaMatchResultBuilder()..update(updates))._build();
+  factory _$MediaMatchResult([
+    void Function(MediaMatchResultBuilder)? updates,
+  ]) => (MediaMatchResultBuilder()..update(updates))._build();
 
-  _$MediaMatchResult._(
-      {required this.query,
-      required this.maxDistance,
-      required this.matches,
-      this.referenceWindowStart,
-      required this.caveats})
-      : super._();
+  _$MediaMatchResult._({
+    required this.query,
+    required this.maxDistance,
+    required this.matches,
+    this.referenceWindowStart,
+    required this.caveats,
+  }) : super._();
   @override
   MediaMatchResult rebuild(void Function(MediaMatchResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -132,11 +132,15 @@ class MediaMatchResultBuilder
   _$MediaMatchResult _build() {
     _$MediaMatchResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MediaMatchResult._(
             query: query.build(),
             maxDistance: BuiltValueNullFieldError.checkNotNull(
-                maxDistance, r'MediaMatchResult', 'maxDistance'),
+              maxDistance,
+              r'MediaMatchResult',
+              'maxDistance',
+            ),
             matches: matches.build(),
             referenceWindowStart: referenceWindowStart,
             caveats: caveats.build(),
@@ -154,7 +158,10 @@ class MediaMatchResultBuilder
         caveats.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MediaMatchResult', _$failedField, e.toString());
+          r'MediaMatchResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

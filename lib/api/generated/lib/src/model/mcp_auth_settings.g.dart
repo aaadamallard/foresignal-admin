@@ -28,10 +28,10 @@ McpAuthSettingsModeEnum _$mcpAuthSettingsModeEnumValueOf(String name) {
 
 final BuiltSet<McpAuthSettingsModeEnum> _$mcpAuthSettingsModeEnumValues =
     BuiltSet<McpAuthSettingsModeEnum>(const <McpAuthSettingsModeEnum>[
-  _$mcpAuthSettingsModeEnum_token,
-  _$mcpAuthSettingsModeEnum_oauth,
-  _$mcpAuthSettingsModeEnum_both,
-]);
+      _$mcpAuthSettingsModeEnum_token,
+      _$mcpAuthSettingsModeEnum_oauth,
+      _$mcpAuthSettingsModeEnum_both,
+    ]);
 
 const McpAuthSettingsScopeMapEnum _$mcpAuthSettingsScopeMapEnum_read =
     const McpAuthSettingsScopeMapEnum._('read');
@@ -50,11 +50,12 @@ McpAuthSettingsScopeMapEnum _$mcpAuthSettingsScopeMapEnumValueOf(String name) {
 }
 
 final BuiltSet<McpAuthSettingsScopeMapEnum>
-    _$mcpAuthSettingsScopeMapEnumValues =
-    BuiltSet<McpAuthSettingsScopeMapEnum>(const <McpAuthSettingsScopeMapEnum>[
-  _$mcpAuthSettingsScopeMapEnum_read,
-  _$mcpAuthSettingsScopeMapEnum_agent,
-]);
+_$mcpAuthSettingsScopeMapEnumValues = BuiltSet<McpAuthSettingsScopeMapEnum>(
+  const <McpAuthSettingsScopeMapEnum>[
+    _$mcpAuthSettingsScopeMapEnum_read,
+    _$mcpAuthSettingsScopeMapEnum_agent,
+  ],
+);
 
 const McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnum_scope =
     const McpAuthSettingsScopeClaimEnum._('scope');
@@ -62,7 +63,8 @@ const McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnum_scp =
     const McpAuthSettingsScopeClaimEnum._('scp');
 
 McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'scope':
       return _$mcpAuthSettingsScopeClaimEnum_scope;
@@ -74,11 +76,12 @@ McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnumValueOf(
 }
 
 final BuiltSet<McpAuthSettingsScopeClaimEnum>
-    _$mcpAuthSettingsScopeClaimEnumValues = BuiltSet<
-        McpAuthSettingsScopeClaimEnum>(const <McpAuthSettingsScopeClaimEnum>[
-  _$mcpAuthSettingsScopeClaimEnum_scope,
-  _$mcpAuthSettingsScopeClaimEnum_scp,
-]);
+_$mcpAuthSettingsScopeClaimEnumValues = BuiltSet<McpAuthSettingsScopeClaimEnum>(
+  const <McpAuthSettingsScopeClaimEnum>[
+    _$mcpAuthSettingsScopeClaimEnum_scope,
+    _$mcpAuthSettingsScopeClaimEnum_scp,
+  ],
+);
 
 const McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnum_RS256 =
     const McpAuthSettingsAllowedAlgsEnum._('RS256');
@@ -90,7 +93,8 @@ const McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnum_ed25519 =
     const McpAuthSettingsAllowedAlgsEnum._('ed25519');
 
 McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'RS256':
       return _$mcpAuthSettingsAllowedAlgsEnum_RS256;
@@ -106,24 +110,26 @@ McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnumValueOf(
 }
 
 final BuiltSet<McpAuthSettingsAllowedAlgsEnum>
-    _$mcpAuthSettingsAllowedAlgsEnumValues = BuiltSet<
-        McpAuthSettingsAllowedAlgsEnum>(const <McpAuthSettingsAllowedAlgsEnum>[
-  _$mcpAuthSettingsAllowedAlgsEnum_RS256,
-  _$mcpAuthSettingsAllowedAlgsEnum_ES256,
-  _$mcpAuthSettingsAllowedAlgsEnum_edDSA,
-  _$mcpAuthSettingsAllowedAlgsEnum_ed25519,
-]);
+_$mcpAuthSettingsAllowedAlgsEnumValues =
+    BuiltSet<McpAuthSettingsAllowedAlgsEnum>(
+      const <McpAuthSettingsAllowedAlgsEnum>[
+        _$mcpAuthSettingsAllowedAlgsEnum_RS256,
+        _$mcpAuthSettingsAllowedAlgsEnum_ES256,
+        _$mcpAuthSettingsAllowedAlgsEnum_edDSA,
+        _$mcpAuthSettingsAllowedAlgsEnum_ed25519,
+      ],
+    );
 
 Serializer<McpAuthSettingsModeEnum> _$mcpAuthSettingsModeEnumSerializer =
     _$McpAuthSettingsModeEnumSerializer();
 Serializer<McpAuthSettingsScopeMapEnum>
-    _$mcpAuthSettingsScopeMapEnumSerializer =
+_$mcpAuthSettingsScopeMapEnumSerializer =
     _$McpAuthSettingsScopeMapEnumSerializer();
 Serializer<McpAuthSettingsScopeClaimEnum>
-    _$mcpAuthSettingsScopeClaimEnumSerializer =
+_$mcpAuthSettingsScopeClaimEnumSerializer =
     _$McpAuthSettingsScopeClaimEnumSerializer();
 Serializer<McpAuthSettingsAllowedAlgsEnum>
-    _$mcpAuthSettingsAllowedAlgsEnumSerializer =
+_$mcpAuthSettingsAllowedAlgsEnumSerializer =
     _$McpAuthSettingsAllowedAlgsEnumSerializer();
 
 class _$McpAuthSettingsModeEnumSerializer
@@ -145,16 +151,20 @@ class _$McpAuthSettingsModeEnumSerializer
   final String wireName = 'McpAuthSettingsModeEnum';
 
   @override
-  Object serialize(Serializers serializers, McpAuthSettingsModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    McpAuthSettingsModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   McpAuthSettingsModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      McpAuthSettingsModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => McpAuthSettingsModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$McpAuthSettingsScopeMapEnumSerializer
@@ -174,16 +184,20 @@ class _$McpAuthSettingsScopeMapEnumSerializer
   final String wireName = 'McpAuthSettingsScopeMapEnum';
 
   @override
-  Object serialize(Serializers serializers, McpAuthSettingsScopeMapEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    McpAuthSettingsScopeMapEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   McpAuthSettingsScopeMapEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      McpAuthSettingsScopeMapEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => McpAuthSettingsScopeMapEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$McpAuthSettingsScopeClaimEnumSerializer
@@ -204,16 +218,19 @@ class _$McpAuthSettingsScopeClaimEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, McpAuthSettingsScopeClaimEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    McpAuthSettingsScopeClaimEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   McpAuthSettingsScopeClaimEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      McpAuthSettingsScopeClaimEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => McpAuthSettingsScopeClaimEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$McpAuthSettingsAllowedAlgsEnumSerializer
@@ -238,16 +255,19 @@ class _$McpAuthSettingsAllowedAlgsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, McpAuthSettingsAllowedAlgsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    McpAuthSettingsAllowedAlgsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   McpAuthSettingsAllowedAlgsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      McpAuthSettingsAllowedAlgsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => McpAuthSettingsAllowedAlgsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$McpAuthSettings extends McpAuthSettings {
@@ -269,15 +289,15 @@ class _$McpAuthSettings extends McpAuthSettings {
   factory _$McpAuthSettings([void Function(McpAuthSettingsBuilder)? updates]) =>
       (McpAuthSettingsBuilder()..update(updates))._build();
 
-  _$McpAuthSettings._(
-      {required this.mode,
-      this.issuer,
-      this.audience,
-      this.jwksUri,
-      this.scopeMap,
-      this.scopeClaim,
-      this.allowedAlgs})
-      : super._();
+  _$McpAuthSettings._({
+    required this.mode,
+    this.issuer,
+    this.audience,
+    this.jwksUri,
+    this.scopeMap,
+    this.scopeClaim,
+    this.allowedAlgs,
+  }) : super._();
   @override
   McpAuthSettings rebuild(void Function(McpAuthSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -398,10 +418,14 @@ class McpAuthSettingsBuilder
   _$McpAuthSettings _build() {
     _$McpAuthSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$McpAuthSettings._(
             mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'McpAuthSettings', 'mode'),
+              mode,
+              r'McpAuthSettings',
+              'mode',
+            ),
             issuer: issuer,
             audience: audience,
             jwksUri: jwksUri,
@@ -419,7 +443,10 @@ class McpAuthSettingsBuilder
         _allowedAlgs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'McpAuthSettings', _$failedField, e.toString());
+          r'McpAuthSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

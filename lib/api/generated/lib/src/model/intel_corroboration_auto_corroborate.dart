@@ -18,8 +18,10 @@ part 'intel_corroboration_auto_corroborate.g.dart';
 @BuiltValue()
 abstract class IntelCorroborationAutoCorroborate
     implements
-        Built<IntelCorroborationAutoCorroborate,
-            IntelCorroborationAutoCorroborateBuilder> {
+        Built<
+          IntelCorroborationAutoCorroborate,
+          IntelCorroborationAutoCorroborateBuilder
+        > {
   /// Whether a lone event searches for corroboration on creation (default true)
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
@@ -38,9 +40,9 @@ abstract class IntelCorroborationAutoCorroborate
 
   IntelCorroborationAutoCorroborate._();
 
-  factory IntelCorroborationAutoCorroborate(
-          [void updates(IntelCorroborationAutoCorroborateBuilder b)]) =
-      _$IntelCorroborationAutoCorroborate;
+  factory IntelCorroborationAutoCorroborate([
+    void updates(IntelCorroborationAutoCorroborateBuilder b),
+  ]) = _$IntelCorroborationAutoCorroborate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelCorroborationAutoCorroborateBuilder b) => b;
@@ -55,7 +57,7 @@ class _$IntelCorroborationAutoCorroborateSerializer
   @override
   final Iterable<Type> types = const [
     IntelCorroborationAutoCorroborate,
-    _$IntelCorroborationAutoCorroborate
+    _$IntelCorroborationAutoCorroborate,
   ];
 
   @override
@@ -102,9 +104,11 @@ class _$IntelCorroborationAutoCorroborateSerializer
     IntelCorroborationAutoCorroborate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,34 +124,42 @@ class _$IntelCorroborationAutoCorroborateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'withinKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.withinKm = valueDes;
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.window = valueDes;
           break;
         case r'maxMembers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxMembers = valueDes;
           break;

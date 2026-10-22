@@ -12,15 +12,15 @@ class _$OgcCollectionExtent extends OgcCollectionExtent {
   @override
   final OgcCollectionExtentTemporal? temporal;
 
-  factory _$OgcCollectionExtent(
-          [void Function(OgcCollectionExtentBuilder)? updates]) =>
-      (OgcCollectionExtentBuilder()..update(updates))._build();
+  factory _$OgcCollectionExtent([
+    void Function(OgcCollectionExtentBuilder)? updates,
+  ]) => (OgcCollectionExtentBuilder()..update(updates))._build();
 
   _$OgcCollectionExtent._({this.spatial, this.temporal}) : super._();
   @override
   OgcCollectionExtent rebuild(
-          void Function(OgcCollectionExtentBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCollectionExtentBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCollectionExtentBuilder toBuilder() =>
@@ -98,7 +98,8 @@ class OgcCollectionExtentBuilder
   _$OgcCollectionExtent _build() {
     _$OgcCollectionExtent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCollectionExtent._(
             spatial: _spatial?.build(),
             temporal: _temporal?.build(),
@@ -112,7 +113,10 @@ class OgcCollectionExtentBuilder
         _temporal?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCollectionExtent', _$failedField, e.toString());
+          r'OgcCollectionExtent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

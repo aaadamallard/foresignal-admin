@@ -44,14 +44,14 @@ OwnTracksMessageTypeEnum _$ownTracksMessageTypeEnumValueOf(String name) {
 
 final BuiltSet<OwnTracksMessageTypeEnum> _$ownTracksMessageTypeEnumValues =
     BuiltSet<OwnTracksMessageTypeEnum>(const <OwnTracksMessageTypeEnum>[
-  _$ownTracksMessageTypeEnum_location,
-  _$ownTracksMessageTypeEnum_transition,
-  _$ownTracksMessageTypeEnum_waypoint,
-  _$ownTracksMessageTypeEnum_lwt,
-  _$ownTracksMessageTypeEnum_card,
-  _$ownTracksMessageTypeEnum_status,
-  _$ownTracksMessageTypeEnum_encrypted,
-]);
+      _$ownTracksMessageTypeEnum_location,
+      _$ownTracksMessageTypeEnum_transition,
+      _$ownTracksMessageTypeEnum_waypoint,
+      _$ownTracksMessageTypeEnum_lwt,
+      _$ownTracksMessageTypeEnum_card,
+      _$ownTracksMessageTypeEnum_status,
+      _$ownTracksMessageTypeEnum_encrypted,
+    ]);
 
 Serializer<OwnTracksMessageTypeEnum> _$ownTracksMessageTypeEnumSerializer =
     _$OwnTracksMessageTypeEnumSerializer();
@@ -83,16 +83,20 @@ class _$OwnTracksMessageTypeEnumSerializer
   final String wireName = 'OwnTracksMessageTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, OwnTracksMessageTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OwnTracksMessageTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OwnTracksMessageTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OwnTracksMessageTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OwnTracksMessageTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OwnTracksMessage extends OwnTracksMessage {
@@ -127,27 +131,27 @@ class _$OwnTracksMessage extends OwnTracksMessage {
   @override
   final int? wtst;
 
-  factory _$OwnTracksMessage(
-          [void Function(OwnTracksMessageBuilder)? updates]) =>
-      (OwnTracksMessageBuilder()..update(updates))._build();
+  factory _$OwnTracksMessage([
+    void Function(OwnTracksMessageBuilder)? updates,
+  ]) => (OwnTracksMessageBuilder()..update(updates))._build();
 
-  _$OwnTracksMessage._(
-      {required this.type,
-      this.lat,
-      this.lon,
-      this.tst,
-      this.acc,
-      this.alt,
-      this.vel,
-      this.cog,
-      this.batt,
-      this.bs,
-      this.conn,
-      this.tid,
-      this.event,
-      this.desc,
-      this.wtst})
-      : super._();
+  _$OwnTracksMessage._({
+    required this.type,
+    this.lat,
+    this.lon,
+    this.tst,
+    this.acc,
+    this.alt,
+    this.vel,
+    this.cog,
+    this.batt,
+    this.bs,
+    this.conn,
+    this.tid,
+    this.event,
+    this.desc,
+    this.wtst,
+  }) : super._();
   @override
   OwnTracksMessage rebuild(void Function(OwnTracksMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -326,10 +330,14 @@ class OwnTracksMessageBuilder
   OwnTracksMessage build() => _build();
 
   _$OwnTracksMessage _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OwnTracksMessage._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'OwnTracksMessage', 'type'),
+            type,
+            r'OwnTracksMessage',
+            'type',
+          ),
           lat: lat,
           lon: lon,
           tst: tst,

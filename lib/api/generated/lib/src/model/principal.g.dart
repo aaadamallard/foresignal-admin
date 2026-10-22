@@ -6,12 +6,15 @@ part of 'principal.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const PrincipalKindEnum _$principalKindEnum_person =
-    const PrincipalKindEnum._('person');
-const PrincipalKindEnum _$principalKindEnum_agent =
-    const PrincipalKindEnum._('agent');
-const PrincipalKindEnum _$principalKindEnum_service =
-    const PrincipalKindEnum._('service');
+const PrincipalKindEnum _$principalKindEnum_person = const PrincipalKindEnum._(
+  'person',
+);
+const PrincipalKindEnum _$principalKindEnum_agent = const PrincipalKindEnum._(
+  'agent',
+);
+const PrincipalKindEnum _$principalKindEnum_service = const PrincipalKindEnum._(
+  'service',
+);
 
 PrincipalKindEnum _$principalKindEnumValueOf(String name) {
   switch (name) {
@@ -28,10 +31,10 @@ PrincipalKindEnum _$principalKindEnumValueOf(String name) {
 
 final BuiltSet<PrincipalKindEnum> _$principalKindEnumValues =
     BuiltSet<PrincipalKindEnum>(const <PrincipalKindEnum>[
-  _$principalKindEnum_person,
-  _$principalKindEnum_agent,
-  _$principalKindEnum_service,
-]);
+      _$principalKindEnum_person,
+      _$principalKindEnum_agent,
+      _$principalKindEnum_service,
+    ]);
 
 Serializer<PrincipalKindEnum> _$principalKindEnumSerializer =
     _$PrincipalKindEnumSerializer();
@@ -55,15 +58,20 @@ class _$PrincipalKindEnumSerializer
   final String wireName = 'PrincipalKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PrincipalKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrincipalKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PrincipalKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrincipalKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PrincipalKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrincipalKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Principal extends Principal {
@@ -95,20 +103,20 @@ class _$Principal extends Principal {
   factory _$Principal([void Function(PrincipalBuilder)? updates]) =>
       (PrincipalBuilder()..update(updates))._build();
 
-  _$Principal._(
-      {required this.id,
-      required this.handle,
-      required this.displayName,
-      required this.kind,
-      this.email,
-      this.avatarMediaId,
-      this.timezone,
-      this.organization,
-      required this.disabled,
-      this.tokenCount,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$Principal._({
+    required this.id,
+    required this.handle,
+    required this.displayName,
+    required this.kind,
+    this.email,
+    this.avatarMediaId,
+    this.timezone,
+    this.organization,
+    required this.disabled,
+    this.tokenCount,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   Principal rebuild(void Function(PrincipalBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -262,24 +270,40 @@ class PrincipalBuilder implements Builder<Principal, PrincipalBuilder> {
   Principal build() => _build();
 
   _$Principal _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Principal._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'Principal', 'id'),
           handle: BuiltValueNullFieldError.checkNotNull(
-              handle, r'Principal', 'handle'),
+            handle,
+            r'Principal',
+            'handle',
+          ),
           displayName: BuiltValueNullFieldError.checkNotNull(
-              displayName, r'Principal', 'displayName'),
-          kind:
-              BuiltValueNullFieldError.checkNotNull(kind, r'Principal', 'kind'),
+            displayName,
+            r'Principal',
+            'displayName',
+          ),
+          kind: BuiltValueNullFieldError.checkNotNull(
+            kind,
+            r'Principal',
+            'kind',
+          ),
           email: email,
           avatarMediaId: avatarMediaId,
           timezone: timezone,
           organization: organization,
           disabled: BuiltValueNullFieldError.checkNotNull(
-              disabled, r'Principal', 'disabled'),
+            disabled,
+            r'Principal',
+            'disabled',
+          ),
           tokenCount: tokenCount,
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'Principal', 'createdAt'),
+            createdAt,
+            r'Principal',
+            'createdAt',
+          ),
           updatedAt: updatedAt,
         );
     replace(_$result);

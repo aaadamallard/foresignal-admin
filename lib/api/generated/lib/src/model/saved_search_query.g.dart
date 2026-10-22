@@ -20,18 +20,18 @@ class _$SavedSearchQuery extends SavedSearchQuery {
   @override
   final BuiltList<String>? tags;
 
-  factory _$SavedSearchQuery(
-          [void Function(SavedSearchQueryBuilder)? updates]) =>
-      (SavedSearchQueryBuilder()..update(updates))._build();
+  factory _$SavedSearchQuery([
+    void Function(SavedSearchQueryBuilder)? updates,
+  ]) => (SavedSearchQueryBuilder()..update(updates))._build();
 
-  _$SavedSearchQuery._(
-      {this.types,
-      this.text,
-      this.filters,
-      this.area,
-      this.timeWindow,
-      this.tags})
-      : super._();
+  _$SavedSearchQuery._({
+    this.types,
+    this.text,
+    this.filters,
+    this.area,
+    this.timeWindow,
+    this.tags,
+  }) : super._();
   @override
   SavedSearchQuery rebuild(void Function(SavedSearchQueryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -145,7 +145,8 @@ class SavedSearchQueryBuilder
   _$SavedSearchQuery _build() {
     _$SavedSearchQuery _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearchQuery._(
             types: _types?.build(),
             text: text,
@@ -170,7 +171,10 @@ class SavedSearchQueryBuilder
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchQuery', _$failedField, e.toString());
+          r'SavedSearchQuery',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

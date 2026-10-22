@@ -20,8 +20,10 @@ part 'correlation_recipe_definition_contradictions_inner.g.dart';
 @BuiltValue()
 abstract class CorrelationRecipeDefinitionContradictionsInner
     implements
-        Built<CorrelationRecipeDefinitionContradictionsInner,
-            CorrelationRecipeDefinitionContradictionsInnerBuilder> {
+        Built<
+          CorrelationRecipeDefinitionContradictionsInner,
+          CorrelationRecipeDefinitionContradictionsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'kinds')
   BuiltList<String>? get kinds;
 
@@ -41,20 +43,19 @@ abstract class CorrelationRecipeDefinitionContradictionsInner
 
   CorrelationRecipeDefinitionContradictionsInner._();
 
-  factory CorrelationRecipeDefinitionContradictionsInner(
-          [void updates(
-              CorrelationRecipeDefinitionContradictionsInnerBuilder b)]) =
-      _$CorrelationRecipeDefinitionContradictionsInner;
+  factory CorrelationRecipeDefinitionContradictionsInner([
+    void updates(CorrelationRecipeDefinitionContradictionsInnerBuilder b),
+  ]) = _$CorrelationRecipeDefinitionContradictionsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          CorrelationRecipeDefinitionContradictionsInnerBuilder b) =>
-      b;
+    CorrelationRecipeDefinitionContradictionsInnerBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CorrelationRecipeDefinitionContradictionsInner>
-      get serializer =>
-          _$CorrelationRecipeDefinitionContradictionsInnerSerializer();
+  get serializer =>
+      _$CorrelationRecipeDefinitionContradictionsInnerSerializer();
 }
 
 class _$CorrelationRecipeDefinitionContradictionsInnerSerializer
@@ -63,7 +64,7 @@ class _$CorrelationRecipeDefinitionContradictionsInnerSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeDefinitionContradictionsInner,
-    _$CorrelationRecipeDefinitionContradictionsInner
+    _$CorrelationRecipeDefinitionContradictionsInner,
   ];
 
   @override
@@ -115,9 +116,11 @@ class _$CorrelationRecipeDefinitionContradictionsInnerSerializer
     CorrelationRecipeDefinitionContradictionsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,44 +136,56 @@ class _$CorrelationRecipeDefinitionContradictionsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kinds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.kinds.replace(valueDes);
           break;
         case r'healthOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.healthOf.replace(valueDes);
           break;
         case r'withinKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.withinKm = valueDes;
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.window = valueDes;
           break;
         case r'alternative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.alternative = valueDes;
           break;
         default:

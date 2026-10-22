@@ -17,8 +17,10 @@ part 'sample_track_request_points_inner.g.dart';
 @BuiltValue()
 abstract class SampleTrackRequestPointsInner
     implements
-        Built<SampleTrackRequestPointsInner,
-            SampleTrackRequestPointsInnerBuilder> {
+        Built<
+          SampleTrackRequestPointsInner,
+          SampleTrackRequestPointsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'lon')
   num get lon;
 
@@ -30,9 +32,9 @@ abstract class SampleTrackRequestPointsInner
 
   SampleTrackRequestPointsInner._();
 
-  factory SampleTrackRequestPointsInner(
-          [void updates(SampleTrackRequestPointsInnerBuilder b)]) =
-      _$SampleTrackRequestPointsInner;
+  factory SampleTrackRequestPointsInner([
+    void updates(SampleTrackRequestPointsInnerBuilder b),
+  ]) = _$SampleTrackRequestPointsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SampleTrackRequestPointsInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$SampleTrackRequestPointsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SampleTrackRequestPointsInner,
-    _$SampleTrackRequestPointsInner
+    _$SampleTrackRequestPointsInner,
   ];
 
   @override
@@ -59,15 +61,9 @@ class _$SampleTrackRequestPointsInnerSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'lon';
-    yield serializers.serialize(
-      object.lon,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lon, specifiedType: const FullType(num));
     yield r'lat';
-    yield serializers.serialize(
-      object.lat,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lat, specifiedType: const FullType(num));
     yield r'time';
     yield serializers.serialize(
       object.time,
@@ -81,9 +77,11 @@ class _$SampleTrackRequestPointsInnerSerializer
     SampleTrackRequestPointsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +97,24 @@ class _$SampleTrackRequestPointsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lon = valueDes;
           break;
         case r'lat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lat = valueDes;
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         default:

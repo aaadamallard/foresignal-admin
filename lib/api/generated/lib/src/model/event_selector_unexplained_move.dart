@@ -15,17 +15,19 @@ part 'event_selector_unexplained_move.g.dart';
 @BuiltValue()
 abstract class EventSelectorUnexplainedMove
     implements
-        Built<EventSelectorUnexplainedMove,
-            EventSelectorUnexplainedMoveBuilder> {
+        Built<
+          EventSelectorUnexplainedMove,
+          EventSelectorUnexplainedMoveBuilder
+        > {
   /// Signal family from the 119 registry (`intel/signal-families.json`, operator-extensible), e.g. `ais-behaviour`, `aviation-military`, `aviation-ops`, `conflict`, `outage`, `internet-measurement`, `gnss-interference`, `nav-warning`, `attention`, `seismic`, `fire`, `weather-severe`, `cyber`, `markets`, `sanctions`, `health`, `space`
   @BuiltValueField(wireName: r'family')
   String get family;
 
   EventSelectorUnexplainedMove._();
 
-  factory EventSelectorUnexplainedMove(
-          [void updates(EventSelectorUnexplainedMoveBuilder b)]) =
-      _$EventSelectorUnexplainedMove;
+  factory EventSelectorUnexplainedMove([
+    void updates(EventSelectorUnexplainedMoveBuilder b),
+  ]) = _$EventSelectorUnexplainedMove;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventSelectorUnexplainedMoveBuilder b) => b;
@@ -40,7 +42,7 @@ class _$EventSelectorUnexplainedMoveSerializer
   @override
   final Iterable<Type> types = const [
     EventSelectorUnexplainedMove,
-    _$EventSelectorUnexplainedMove
+    _$EventSelectorUnexplainedMove,
   ];
 
   @override
@@ -64,9 +66,11 @@ class _$EventSelectorUnexplainedMoveSerializer
     EventSelectorUnexplainedMove object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -82,10 +86,12 @@ class _$EventSelectorUnexplainedMoveSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         default:

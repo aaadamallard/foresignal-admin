@@ -41,9 +41,9 @@ abstract class ProductTemporalRunsInner
 
   ProductTemporalRunsInner._();
 
-  factory ProductTemporalRunsInner(
-          [void updates(ProductTemporalRunsInnerBuilder b)]) =
-      _$ProductTemporalRunsInner;
+  factory ProductTemporalRunsInner([
+    void updates(ProductTemporalRunsInnerBuilder b),
+  ]) = _$ProductTemporalRunsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProductTemporalRunsInnerBuilder b) => b;
@@ -58,7 +58,7 @@ class _$ProductTemporalRunsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ProductTemporalRunsInner,
-    _$ProductTemporalRunsInner
+    _$ProductTemporalRunsInner,
   ];
 
   @override
@@ -108,9 +108,11 @@ class _$ProductTemporalRunsInnerSerializer
     ProductTemporalRunsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,40 +128,54 @@ class _$ProductTemporalRunsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'run':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.run = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ProductTemporalRunsInnerStatusEnum),
-          ) as ProductTemporalRunsInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ProductTemporalRunsInnerStatusEnum,
+                    ),
+                  )
+                  as ProductTemporalRunsInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'steps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltList<int>?;
           if (valueDes == null) continue;
           result.steps.replace(valueDes);
           break;
         case r'validFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validFrom = valueDes;
           break;
         case r'validTo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.validTo = valueDes;
           break;

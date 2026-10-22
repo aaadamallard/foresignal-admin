@@ -18,7 +18,7 @@ class _$InboxPage extends InboxPage {
       (InboxPageBuilder()..update(updates))._build();
 
   _$InboxPage._({required this.items, this.nextCursor, this.unread})
-      : super._();
+    : super._();
   @override
   InboxPage rebuild(void Function(InboxPageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -102,7 +102,8 @@ class InboxPageBuilder implements Builder<InboxPage, InboxPageBuilder> {
   _$InboxPage _build() {
     _$InboxPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InboxPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -115,7 +116,10 @@ class InboxPageBuilder implements Builder<InboxPage, InboxPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InboxPage', _$failedField, e.toString());
+          r'InboxPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

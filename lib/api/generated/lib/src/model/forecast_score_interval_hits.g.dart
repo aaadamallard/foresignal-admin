@@ -12,15 +12,15 @@ class _$ForecastScoreIntervalHits extends ForecastScoreIntervalHits {
   @override
   final bool? p25p75;
 
-  factory _$ForecastScoreIntervalHits(
-          [void Function(ForecastScoreIntervalHitsBuilder)? updates]) =>
-      (ForecastScoreIntervalHitsBuilder()..update(updates))._build();
+  factory _$ForecastScoreIntervalHits([
+    void Function(ForecastScoreIntervalHitsBuilder)? updates,
+  ]) => (ForecastScoreIntervalHitsBuilder()..update(updates))._build();
 
   _$ForecastScoreIntervalHits._({this.p05p95, this.p25p75}) : super._();
   @override
   ForecastScoreIntervalHits rebuild(
-          void Function(ForecastScoreIntervalHitsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastScoreIntervalHitsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastScoreIntervalHitsBuilder toBuilder() =>
@@ -93,11 +93,8 @@ class ForecastScoreIntervalHitsBuilder
   ForecastScoreIntervalHits build() => _build();
 
   _$ForecastScoreIntervalHits _build() {
-    final _$result = _$v ??
-        _$ForecastScoreIntervalHits._(
-          p05p95: p05p95,
-          p25p75: p25p75,
-        );
+    final _$result =
+        _$v ?? _$ForecastScoreIntervalHits._(p05p95: p05p95, p25p75: p25p75);
     replace(_$result);
     return _$result;
   }

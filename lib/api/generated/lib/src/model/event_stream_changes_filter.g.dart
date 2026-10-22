@@ -32,28 +32,28 @@ class _$EventStreamChangesFilter extends EventStreamChangesFilter {
   @override
   final String? inWatchlist;
 
-  factory _$EventStreamChangesFilter(
-          [void Function(EventStreamChangesFilterBuilder)? updates]) =>
-      (EventStreamChangesFilterBuilder()..update(updates))._build();
+  factory _$EventStreamChangesFilter([
+    void Function(EventStreamChangesFilterBuilder)? updates,
+  ]) => (EventStreamChangesFilterBuilder()..update(updates))._build();
 
-  _$EventStreamChangesFilter._(
-      {this.source_,
-      this.kind,
-      this.externalId,
-      this.bbox,
-      this.near,
-      this.radiusKm,
-      this.live,
-      this.touches,
-      this.payload,
-      this.place,
-      this.view,
-      this.inWatchlist})
-      : super._();
+  _$EventStreamChangesFilter._({
+    this.source_,
+    this.kind,
+    this.externalId,
+    this.bbox,
+    this.near,
+    this.radiusKm,
+    this.live,
+    this.touches,
+    this.payload,
+    this.place,
+    this.view,
+    this.inWatchlist,
+  }) : super._();
   @override
   EventStreamChangesFilter rebuild(
-          void Function(EventStreamChangesFilterBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStreamChangesFilterBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStreamChangesFilterBuilder toBuilder() =>
@@ -210,7 +210,8 @@ class EventStreamChangesFilterBuilder
   _$EventStreamChangesFilter _build() {
     _$EventStreamChangesFilter _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStreamChangesFilter._(
             source_: _source_?.build(),
             kind: _kind?.build(),
@@ -239,7 +240,10 @@ class EventStreamChangesFilterBuilder
         _place?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStreamChangesFilter', _$failedField, e.toString());
+          r'EventStreamChangesFilter',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -31,18 +31,18 @@ class _$DigestCount extends DigestCount {
   factory _$DigestCount([void Function(DigestCountBuilder)? updates]) =>
       (DigestCountBuilder()..update(updates))._build();
 
-  _$DigestCount._(
-      {required this.sourceId,
-      required this.kind,
-      required this.new_,
-      required this.changed,
-      required this.removed,
-      this.edges,
-      this.routine,
-      this.entities,
-      this.byReason,
-      this.previous})
-      : super._();
+  _$DigestCount._({
+    required this.sourceId,
+    required this.kind,
+    required this.new_,
+    required this.changed,
+    required this.removed,
+    this.edges,
+    this.routine,
+    this.entities,
+    this.byReason,
+    this.previous,
+  }) : super._();
   @override
   DigestCount rebuild(void Function(DigestCountBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -187,18 +187,34 @@ class DigestCountBuilder implements Builder<DigestCount, DigestCountBuilder> {
   _$DigestCount _build() {
     _$DigestCount _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DigestCount._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'DigestCount', 'sourceId'),
+              sourceId,
+              r'DigestCount',
+              'sourceId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'DigestCount', 'kind'),
+              kind,
+              r'DigestCount',
+              'kind',
+            ),
             new_: BuiltValueNullFieldError.checkNotNull(
-                new_, r'DigestCount', 'new_'),
+              new_,
+              r'DigestCount',
+              'new_',
+            ),
             changed: BuiltValueNullFieldError.checkNotNull(
-                changed, r'DigestCount', 'changed'),
+              changed,
+              r'DigestCount',
+              'changed',
+            ),
             removed: BuiltValueNullFieldError.checkNotNull(
-                removed, r'DigestCount', 'removed'),
+              removed,
+              r'DigestCount',
+              'removed',
+            ),
             edges: edges,
             routine: routine,
             entities: _entities?.build(),
@@ -216,7 +232,10 @@ class DigestCountBuilder implements Builder<DigestCount, DigestCountBuilder> {
         _previous?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DigestCount', _$failedField, e.toString());
+          r'DigestCount',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

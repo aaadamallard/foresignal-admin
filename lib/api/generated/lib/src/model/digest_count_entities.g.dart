@@ -16,16 +16,16 @@ class _$DigestCountEntities extends DigestCountEntities {
   @override
   final int? edges;
 
-  factory _$DigestCountEntities(
-          [void Function(DigestCountEntitiesBuilder)? updates]) =>
-      (DigestCountEntitiesBuilder()..update(updates))._build();
+  factory _$DigestCountEntities([
+    void Function(DigestCountEntitiesBuilder)? updates,
+  ]) => (DigestCountEntitiesBuilder()..update(updates))._build();
 
   _$DigestCountEntities._({this.new_, this.changed, this.removed, this.edges})
-      : super._();
+    : super._();
   @override
   DigestCountEntities rebuild(
-          void Function(DigestCountEntitiesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DigestCountEntitiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DigestCountEntitiesBuilder toBuilder() =>
@@ -113,7 +113,8 @@ class DigestCountEntitiesBuilder
   DigestCountEntities build() => _build();
 
   _$DigestCountEntities _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestCountEntities._(
           new_: new_,
           changed: changed,

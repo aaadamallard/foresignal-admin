@@ -7,46 +7,47 @@ part of 'scorecard_entry.dart';
 // **************************************************************************
 
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_baseRate =
+_$scorecardEntryForecasterTypeEnum_baseRate =
     const ScorecardEntryForecasterTypeEnum._('baseRate');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_climatology =
+_$scorecardEntryForecasterTypeEnum_climatology =
     const ScorecardEntryForecasterTypeEnum._('climatology');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_persistence =
+_$scorecardEntryForecasterTypeEnum_persistence =
     const ScorecardEntryForecasterTypeEnum._('persistence');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_statistical =
+_$scorecardEntryForecasterTypeEnum_statistical =
     const ScorecardEntryForecasterTypeEnum._('statistical');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_precursor =
+_$scorecardEntryForecasterTypeEnum_precursor =
     const ScorecardEntryForecasterTypeEnum._('precursor');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_analog =
+_$scorecardEntryForecasterTypeEnum_analog =
     const ScorecardEntryForecasterTypeEnum._('analog');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_threshold =
+_$scorecardEntryForecasterTypeEnum_threshold =
     const ScorecardEntryForecasterTypeEnum._('threshold');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_impact =
+_$scorecardEntryForecasterTypeEnum_impact =
     const ScorecardEntryForecasterTypeEnum._('impact');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_indicatorBayes =
+_$scorecardEntryForecasterTypeEnum_indicatorBayes =
     const ScorecardEntryForecasterTypeEnum._('indicatorBayes');
 const ScorecardEntryForecasterTypeEnum _$scorecardEntryForecasterTypeEnum_llm =
     const ScorecardEntryForecasterTypeEnum._('llm');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_operator_ =
+_$scorecardEntryForecasterTypeEnum_operator_ =
     const ScorecardEntryForecasterTypeEnum._('operator_');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_external_ =
+_$scorecardEntryForecasterTypeEnum_external_ =
     const ScorecardEntryForecasterTypeEnum._('external_');
 const ScorecardEntryForecasterTypeEnum
-    _$scorecardEntryForecasterTypeEnum_ensemble =
+_$scorecardEntryForecasterTypeEnum_ensemble =
     const ScorecardEntryForecasterTypeEnum._('ensemble');
 
 ScorecardEntryForecasterTypeEnum _$scorecardEntryForecasterTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'baseRate':
       return _$scorecardEntryForecasterTypeEnum_baseRate;
@@ -80,22 +81,24 @@ ScorecardEntryForecasterTypeEnum _$scorecardEntryForecasterTypeEnumValueOf(
 }
 
 final BuiltSet<ScorecardEntryForecasterTypeEnum>
-    _$scorecardEntryForecasterTypeEnumValues = BuiltSet<
-        ScorecardEntryForecasterTypeEnum>(const <ScorecardEntryForecasterTypeEnum>[
-  _$scorecardEntryForecasterTypeEnum_baseRate,
-  _$scorecardEntryForecasterTypeEnum_climatology,
-  _$scorecardEntryForecasterTypeEnum_persistence,
-  _$scorecardEntryForecasterTypeEnum_statistical,
-  _$scorecardEntryForecasterTypeEnum_precursor,
-  _$scorecardEntryForecasterTypeEnum_analog,
-  _$scorecardEntryForecasterTypeEnum_threshold,
-  _$scorecardEntryForecasterTypeEnum_impact,
-  _$scorecardEntryForecasterTypeEnum_indicatorBayes,
-  _$scorecardEntryForecasterTypeEnum_llm,
-  _$scorecardEntryForecasterTypeEnum_operator_,
-  _$scorecardEntryForecasterTypeEnum_external_,
-  _$scorecardEntryForecasterTypeEnum_ensemble,
-]);
+_$scorecardEntryForecasterTypeEnumValues =
+    BuiltSet<ScorecardEntryForecasterTypeEnum>(
+      const <ScorecardEntryForecasterTypeEnum>[
+        _$scorecardEntryForecasterTypeEnum_baseRate,
+        _$scorecardEntryForecasterTypeEnum_climatology,
+        _$scorecardEntryForecasterTypeEnum_persistence,
+        _$scorecardEntryForecasterTypeEnum_statistical,
+        _$scorecardEntryForecasterTypeEnum_precursor,
+        _$scorecardEntryForecasterTypeEnum_analog,
+        _$scorecardEntryForecasterTypeEnum_threshold,
+        _$scorecardEntryForecasterTypeEnum_impact,
+        _$scorecardEntryForecasterTypeEnum_indicatorBayes,
+        _$scorecardEntryForecasterTypeEnum_llm,
+        _$scorecardEntryForecasterTypeEnum_operator_,
+        _$scorecardEntryForecasterTypeEnum_external_,
+        _$scorecardEntryForecasterTypeEnum_ensemble,
+      ],
+    );
 
 const ScorecardEntryLabelEnum _$scorecardEntryLabelEnum_ok =
     const ScorecardEntryLabelEnum._('ok');
@@ -115,12 +118,12 @@ ScorecardEntryLabelEnum _$scorecardEntryLabelEnumValueOf(String name) {
 
 final BuiltSet<ScorecardEntryLabelEnum> _$scorecardEntryLabelEnumValues =
     BuiltSet<ScorecardEntryLabelEnum>(const <ScorecardEntryLabelEnum>[
-  _$scorecardEntryLabelEnum_ok,
-  _$scorecardEntryLabelEnum_insufficient,
-]);
+      _$scorecardEntryLabelEnum_ok,
+      _$scorecardEntryLabelEnum_insufficient,
+    ]);
 
 Serializer<ScorecardEntryForecasterTypeEnum>
-    _$scorecardEntryForecasterTypeEnumSerializer =
+_$scorecardEntryForecasterTypeEnumSerializer =
     _$ScorecardEntryForecasterTypeEnumSerializer();
 Serializer<ScorecardEntryLabelEnum> _$scorecardEntryLabelEnumSerializer =
     _$ScorecardEntryLabelEnumSerializer();
@@ -165,16 +168,19 @@ class _$ScorecardEntryForecasterTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ScorecardEntryForecasterTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ScorecardEntryForecasterTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ScorecardEntryForecasterTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ScorecardEntryForecasterTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ScorecardEntryForecasterTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ScorecardEntryLabelEnumSerializer
@@ -194,16 +200,20 @@ class _$ScorecardEntryLabelEnumSerializer
   final String wireName = 'ScorecardEntryLabelEnum';
 
   @override
-  Object serialize(Serializers serializers, ScorecardEntryLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ScorecardEntryLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ScorecardEntryLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ScorecardEntryLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ScorecardEntryLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ScorecardEntry extends ScorecardEntry {
@@ -245,25 +255,25 @@ class _$ScorecardEntry extends ScorecardEntry {
   factory _$ScorecardEntry([void Function(ScorecardEntryBuilder)? updates]) =>
       (ScorecardEntryBuilder()..update(updates))._build();
 
-  _$ScorecardEntry._(
-      {required this.forecasterId,
-      this.forecasterType,
-      this.category,
-      required this.nResolved,
-      this.nForecasts,
-      required this.label,
-      this.brier,
-      this.logScore,
-      this.rps,
-      this.crps,
-      this.timeAveragedBrier,
-      this.intervalCoverage,
-      this.murphy,
-      this.skill,
-      this.bias,
-      this.recalibration,
-      this.ensembleWeight})
-      : super._();
+  _$ScorecardEntry._({
+    required this.forecasterId,
+    this.forecasterType,
+    this.category,
+    required this.nResolved,
+    this.nForecasts,
+    required this.label,
+    this.brier,
+    this.logScore,
+    this.rps,
+    this.crps,
+    this.timeAveragedBrier,
+    this.intervalCoverage,
+    this.murphy,
+    this.skill,
+    this.bias,
+    this.recalibration,
+    this.ensembleWeight,
+  }) : super._();
   @override
   ScorecardEntry rebuild(void Function(ScorecardEntryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -397,8 +407,8 @@ class ScorecardEntryBuilder
   ScorecardEntryIntervalCoverageBuilder get intervalCoverage =>
       _$this._intervalCoverage ??= ScorecardEntryIntervalCoverageBuilder();
   set intervalCoverage(
-          ScorecardEntryIntervalCoverageBuilder? intervalCoverage) =>
-      _$this._intervalCoverage = intervalCoverage;
+    ScorecardEntryIntervalCoverageBuilder? intervalCoverage,
+  ) => _$this._intervalCoverage = intervalCoverage;
 
   ScorecardEntryMurphyBuilder? _murphy;
   ScorecardEntryMurphyBuilder get murphy =>
@@ -471,17 +481,27 @@ class ScorecardEntryBuilder
   _$ScorecardEntry _build() {
     _$ScorecardEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ScorecardEntry._(
             forecasterId: BuiltValueNullFieldError.checkNotNull(
-                forecasterId, r'ScorecardEntry', 'forecasterId'),
+              forecasterId,
+              r'ScorecardEntry',
+              'forecasterId',
+            ),
             forecasterType: forecasterType,
             category: category,
             nResolved: BuiltValueNullFieldError.checkNotNull(
-                nResolved, r'ScorecardEntry', 'nResolved'),
+              nResolved,
+              r'ScorecardEntry',
+              'nResolved',
+            ),
             nForecasts: nForecasts,
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'ScorecardEntry', 'label'),
+              label,
+              r'ScorecardEntry',
+              'label',
+            ),
             brier: brier,
             logScore: logScore,
             rps: rps,
@@ -509,7 +529,10 @@ class ScorecardEntryBuilder
         _recalibration?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ScorecardEntry', _$failedField, e.toString());
+          r'ScorecardEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -18,21 +18,21 @@ class _$PrecursorHistoryInner extends PrecursorHistoryInner {
   @override
   final String? reason;
 
-  factory _$PrecursorHistoryInner(
-          [void Function(PrecursorHistoryInnerBuilder)? updates]) =>
-      (PrecursorHistoryInnerBuilder()..update(updates))._build();
+  factory _$PrecursorHistoryInner([
+    void Function(PrecursorHistoryInnerBuilder)? updates,
+  ]) => (PrecursorHistoryInnerBuilder()..update(updates))._build();
 
-  _$PrecursorHistoryInner._(
-      {required this.at,
-      required this.by,
-      this.from,
-      required this.to,
-      this.reason})
-      : super._();
+  _$PrecursorHistoryInner._({
+    required this.at,
+    required this.by,
+    this.from,
+    required this.to,
+    this.reason,
+  }) : super._();
   @override
   PrecursorHistoryInner rebuild(
-          void Function(PrecursorHistoryInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorHistoryInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorHistoryInnerBuilder toBuilder() =>
@@ -128,15 +128,25 @@ class PrecursorHistoryInnerBuilder
   PrecursorHistoryInner build() => _build();
 
   _$PrecursorHistoryInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorHistoryInner._(
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'PrecursorHistoryInner', 'at'),
+            at,
+            r'PrecursorHistoryInner',
+            'at',
+          ),
           by: BuiltValueNullFieldError.checkNotNull(
-              by, r'PrecursorHistoryInner', 'by'),
+            by,
+            r'PrecursorHistoryInner',
+            'by',
+          ),
           from: from,
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'PrecursorHistoryInner', 'to'),
+            to,
+            r'PrecursorHistoryInner',
+            'to',
+          ),
           reason: reason,
         );
     replace(_$result);

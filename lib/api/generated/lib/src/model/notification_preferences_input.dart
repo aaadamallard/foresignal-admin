@@ -17,16 +17,18 @@ part 'notification_preferences_input.g.dart';
 @BuiltValue()
 abstract class NotificationPreferencesInput
     implements
-        Built<NotificationPreferencesInput,
-            NotificationPreferencesInputBuilder> {
+        Built<
+          NotificationPreferencesInput,
+          NotificationPreferencesInputBuilder
+        > {
   @BuiltValueField(wireName: r'items')
   BuiltList<NotificationPreferenceInput> get items;
 
   NotificationPreferencesInput._();
 
-  factory NotificationPreferencesInput(
-          [void updates(NotificationPreferencesInputBuilder b)]) =
-      _$NotificationPreferencesInput;
+  factory NotificationPreferencesInput([
+    void updates(NotificationPreferencesInputBuilder b),
+  ]) = _$NotificationPreferencesInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationPreferencesInputBuilder b) => b;
@@ -41,7 +43,7 @@ class _$NotificationPreferencesInputSerializer
   @override
   final Iterable<Type> types = const [
     NotificationPreferencesInput,
-    _$NotificationPreferencesInput
+    _$NotificationPreferencesInput,
   ];
 
   @override
@@ -55,8 +57,9 @@ class _$NotificationPreferencesInputSerializer
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType:
-          const FullType(BuiltList, [FullType(NotificationPreferenceInput)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NotificationPreferenceInput),
+      ]),
     );
   }
 
@@ -66,9 +69,11 @@ class _$NotificationPreferencesInputSerializer
     NotificationPreferencesInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -84,11 +89,14 @@ class _$NotificationPreferencesInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(NotificationPreferenceInput)]),
-          ) as BuiltList<NotificationPreferenceInput>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NotificationPreferenceInput),
+                    ]),
+                  )
+                  as BuiltList<NotificationPreferenceInput>;
           result.items.replace(valueDes);
           break;
         default:

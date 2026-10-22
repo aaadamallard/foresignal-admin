@@ -36,12 +36,12 @@ SocialPostCollectionEnum _$socialPostCollectionEnumValueOf(String name) {
 
 final BuiltSet<SocialPostCollectionEnum> _$socialPostCollectionEnumValues =
     BuiltSet<SocialPostCollectionEnum>(const <SocialPostCollectionEnum>[
-  _$socialPostCollectionEnum_stream,
-  _$socialPostCollectionEnum_search,
-  _$socialPostCollectionEnum_sample,
-  _$socialPostCollectionEnum_cue,
-  _$socialPostCollectionEnum_import_,
-]);
+      _$socialPostCollectionEnum_stream,
+      _$socialPostCollectionEnum_search,
+      _$socialPostCollectionEnum_sample,
+      _$socialPostCollectionEnum_cue,
+      _$socialPostCollectionEnum_import_,
+    ]);
 
 Serializer<SocialPostCollectionEnum> _$socialPostCollectionEnumSerializer =
     _$SocialPostCollectionEnumSerializer();
@@ -69,16 +69,20 @@ class _$SocialPostCollectionEnumSerializer
   final String wireName = 'SocialPostCollectionEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialPostCollectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialPostCollectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialPostCollectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialPostCollectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialPostCollectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialPost extends SocialPost {
@@ -146,38 +150,38 @@ class _$SocialPost extends SocialPost {
   factory _$SocialPost([void Function(SocialPostBuilder)? updates]) =>
       (SocialPostBuilder()..update(updates))._build();
 
-  _$SocialPost._(
-      {required this.platform,
-      required this.postId,
-      this.url,
-      required this.author,
-      required this.authorKey,
-      this.text,
-      this.language,
-      required this.createdAt,
-      required this.observedAt,
-      this.replyTo,
-      this.quoteOf,
-      this.repostOf,
-      this.links,
-      this.hashtags,
-      this.mentions,
-      this.media,
-      this.engagement,
-      this.geo,
-      this.channel,
-      required this.collection,
-      this.topicIds,
-      this.cueId,
-      required this.deleted,
-      required this.ref,
-      required this.sourceId,
-      required this.externalId,
-      required this.seq,
-      this.version,
-      this.collectionType,
-      this.narrativeIds})
-      : super._();
+  _$SocialPost._({
+    required this.platform,
+    required this.postId,
+    this.url,
+    required this.author,
+    required this.authorKey,
+    this.text,
+    this.language,
+    required this.createdAt,
+    required this.observedAt,
+    this.replyTo,
+    this.quoteOf,
+    this.repostOf,
+    this.links,
+    this.hashtags,
+    this.mentions,
+    this.media,
+    this.engagement,
+    this.geo,
+    this.channel,
+    required this.collection,
+    this.topicIds,
+    this.cueId,
+    required this.deleted,
+    required this.ref,
+    required this.sourceId,
+    required this.externalId,
+    required this.seq,
+    this.version,
+    this.collectionType,
+    this.narrativeIds,
+  }) : super._();
   @override
   SocialPost rebuild(void Function(SocialPostBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -489,22 +493,38 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
   _$SocialPost _build() {
     _$SocialPost _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPost._(
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'SocialPost', 'platform'),
+              platform,
+              r'SocialPost',
+              'platform',
+            ),
             postId: BuiltValueNullFieldError.checkNotNull(
-                postId, r'SocialPost', 'postId'),
+              postId,
+              r'SocialPost',
+              'postId',
+            ),
             url: url,
             author: author.build(),
             authorKey: BuiltValueNullFieldError.checkNotNull(
-                authorKey, r'SocialPost', 'authorKey'),
+              authorKey,
+              r'SocialPost',
+              'authorKey',
+            ),
             text: text,
             language: language,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'SocialPost', 'createdAt'),
+              createdAt,
+              r'SocialPost',
+              'createdAt',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'SocialPost', 'observedAt'),
+              observedAt,
+              r'SocialPost',
+              'observedAt',
+            ),
             replyTo: _replyTo?.build(),
             quoteOf: _quoteOf?.build(),
             repostOf: _repostOf?.build(),
@@ -516,19 +536,37 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
             geo: _geo?.build(),
             channel: channel,
             collection: BuiltValueNullFieldError.checkNotNull(
-                collection, r'SocialPost', 'collection'),
+              collection,
+              r'SocialPost',
+              'collection',
+            ),
             topicIds: _topicIds?.build(),
             cueId: cueId,
             deleted: BuiltValueNullFieldError.checkNotNull(
-                deleted, r'SocialPost', 'deleted'),
+              deleted,
+              r'SocialPost',
+              'deleted',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'SocialPost', 'ref'),
+              ref,
+              r'SocialPost',
+              'ref',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'SocialPost', 'sourceId'),
+              sourceId,
+              r'SocialPost',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'SocialPost', 'externalId'),
+              externalId,
+              r'SocialPost',
+              'externalId',
+            ),
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'SocialPost', 'seq'),
+              seq,
+              r'SocialPost',
+              'seq',
+            ),
             version: version,
             collectionType: collectionType,
             narrativeIds: _narrativeIds?.build(),
@@ -565,7 +603,10 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
         _narrativeIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPost', _$failedField, e.toString());
+          r'SocialPost',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

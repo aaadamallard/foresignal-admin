@@ -136,8 +136,9 @@ class _$TimelineSerializer implements PrimitiveSerializer<Timeline> {
       yield r'alerts';
       yield serializers.serialize(
         object.alerts,
-        specifiedType:
-            const FullType(BuiltList, [FullType(TimelineAlertsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(TimelineAlertsInner),
+        ]),
       );
     }
     if (object.maxBucket != null) {
@@ -176,9 +177,11 @@ class _$TimelineSerializer implements PrimitiveSerializer<Timeline> {
     Timeline object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -194,95 +197,121 @@ class _$TimelineSerializer implements PrimitiveSerializer<Timeline> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         case r'bucket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.bucket = valueDes;
           break;
         case r'timeField':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimelineTimeFieldEnum),
-          ) as TimelineTimeFieldEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimelineTimeFieldEnum),
+                  )
+                  as TimelineTimeFieldEnum;
           result.timeField = valueDes;
           break;
         case r'measure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TimelineMeasureEnum),
-          ) as TimelineMeasureEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TimelineMeasureEnum),
+                  )
+                  as TimelineMeasureEnum?;
           if (valueDes == null) continue;
           result.measure = valueDes;
           break;
         case r'groupBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TimelineGroupByEnum),
-          ) as TimelineGroupByEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TimelineGroupByEnum),
+                  )
+                  as TimelineGroupByEnum?;
           if (valueDes == null) continue;
           result.groupBy = valueDes;
           break;
         case r'buckets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(TimelineBucket)]),
-          ) as BuiltList<TimelineBucket>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(TimelineBucket),
+                    ]),
+                  )
+                  as BuiltList<TimelineBucket>;
           result.buckets.replace(valueDes);
           break;
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(TimelineAlertsInner)]),
-          ) as BuiltList<TimelineAlertsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(TimelineAlertsInner),
+                    ]),
+                  )
+                  as BuiltList<TimelineAlertsInner>?;
           if (valueDes == null) continue;
           result.alerts.replace(valueDes);
           break;
         case r'maxBucket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxBucket = valueDes;
           break;
         case r'approximate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.approximate = valueDes;
           break;
         case r'retainedFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.retainedFrom = valueDes;
           break;
         case r'backend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TimelineBackendEnum),
-          ) as TimelineBackendEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TimelineBackendEnum),
+                  )
+                  as TimelineBackendEnum?;
           if (valueDes == null) continue;
           result.backend = valueDes;
           break;

@@ -36,8 +36,9 @@ abstract class SavedSearchResultPage
 
   SavedSearchResultPage._();
 
-  factory SavedSearchResultPage(
-      [void updates(SavedSearchResultPageBuilder b)]) = _$SavedSearchResultPage;
+  factory SavedSearchResultPage([
+    void updates(SavedSearchResultPageBuilder b),
+  ]) = _$SavedSearchResultPage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SavedSearchResultPageBuilder b) => b;
@@ -52,7 +53,7 @@ class _$SavedSearchResultPageSerializer
   @override
   final Iterable<Type> types = const [
     SavedSearchResultPage,
-    _$SavedSearchResultPage
+    _$SavedSearchResultPage,
   ];
 
   @override
@@ -97,9 +98,11 @@ class _$SavedSearchResultPageSerializer
     SavedSearchResultPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,34 +118,43 @@ class _$SavedSearchResultPageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SavedSearchHit)]),
-          ) as BuiltList<SavedSearchHit>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SavedSearchHit),
+                    ]),
+                  )
+                  as BuiltList<SavedSearchHit>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;
         case r'ranAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.ranAt = valueDes;
           break;
         case r'semantic':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.semantic = valueDes;
           break;

@@ -14,16 +14,16 @@ class _$SystemRastersRenderQueue extends SystemRastersRenderQueue {
   @override
   final int? poolSize;
 
-  factory _$SystemRastersRenderQueue(
-          [void Function(SystemRastersRenderQueueBuilder)? updates]) =>
-      (SystemRastersRenderQueueBuilder()..update(updates))._build();
+  factory _$SystemRastersRenderQueue([
+    void Function(SystemRastersRenderQueueBuilder)? updates,
+  ]) => (SystemRastersRenderQueueBuilder()..update(updates))._build();
 
   _$SystemRastersRenderQueue._({this.depth, this.active, this.poolSize})
-      : super._();
+    : super._();
   @override
   SystemRastersRenderQueue rebuild(
-          void Function(SystemRastersRenderQueueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemRastersRenderQueueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemRastersRenderQueueBuilder toBuilder() =>
@@ -104,7 +104,8 @@ class SystemRastersRenderQueueBuilder
   SystemRastersRenderQueue build() => _build();
 
   _$SystemRastersRenderQueue _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemRastersRenderQueue._(
           depth: depth,
           active: active,

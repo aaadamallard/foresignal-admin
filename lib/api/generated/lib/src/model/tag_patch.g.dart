@@ -21,9 +21,13 @@ class _$TagPatch extends TagPatch {
   factory _$TagPatch([void Function(TagPatchBuilder)? updates]) =>
       (TagPatchBuilder()..update(updates))._build();
 
-  _$TagPatch._(
-      {this.name, this.color, this.description, this.visibility, this.tlp})
-      : super._();
+  _$TagPatch._({
+    this.name,
+    this.color,
+    this.description,
+    this.visibility,
+    this.tlp,
+  }) : super._();
   @override
   TagPatch rebuild(void Function(TagPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -120,7 +124,8 @@ class TagPatchBuilder implements Builder<TagPatch, TagPatchBuilder> {
   TagPatch build() => _build();
 
   _$TagPatch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TagPatch._(
           name: name,
           color: color,

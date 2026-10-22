@@ -28,10 +28,10 @@ FindingEventEventEnum _$findingEventEventEnumValueOf(String name) {
 
 final BuiltSet<FindingEventEventEnum> _$findingEventEventEnumValues =
     BuiltSet<FindingEventEventEnum>(const <FindingEventEventEnum>[
-  _$findingEventEventEnum_findingPeriodCreated,
-  _$findingEventEventEnum_findingPeriodUpdated,
-  _$findingEventEventEnum_findingPeriodDismissed,
-]);
+      _$findingEventEventEnum_findingPeriodCreated,
+      _$findingEventEventEnum_findingPeriodUpdated,
+      _$findingEventEventEnum_findingPeriodDismissed,
+    ]);
 
 Serializer<FindingEventEventEnum> _$findingEventEventEnumSerializer =
     _$FindingEventEventEnumSerializer();
@@ -55,15 +55,20 @@ class _$FindingEventEventEnumSerializer
   final String wireName = 'FindingEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, FindingEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FindingEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  FindingEventEventEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FindingEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  FindingEventEventEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FindingEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FindingEvent extends FindingEvent {
@@ -77,9 +82,11 @@ class _$FindingEvent extends FindingEvent {
   factory _$FindingEvent([void Function(FindingEventBuilder)? updates]) =>
       (FindingEventBuilder()..update(updates))._build();
 
-  _$FindingEvent._(
-      {required this.event, required this.finding, required this.at})
-      : super._();
+  _$FindingEvent._({
+    required this.event,
+    required this.finding,
+    required this.at,
+  }) : super._();
   @override
   FindingEvent rebuild(void Function(FindingEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -164,13 +171,20 @@ class FindingEventBuilder
   _$FindingEvent _build() {
     _$FindingEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FindingEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'FindingEvent', 'event'),
+              event,
+              r'FindingEvent',
+              'event',
+            ),
             finding: finding.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'FindingEvent', 'at'),
+              at,
+              r'FindingEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -179,7 +193,10 @@ class FindingEventBuilder
         finding.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FindingEvent', _$failedField, e.toString());
+          r'FindingEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

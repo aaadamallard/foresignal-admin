@@ -74,8 +74,9 @@ class _$NarrativeEventSerializer
       yield r'changed';
       yield serializers.serialize(
         object.changed,
-        specifiedType:
-            const FullType(BuiltList, [FullType(NarrativeEventChangedEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(NarrativeEventChangedEnum),
+        ]),
       );
     }
     yield r'at';
@@ -91,9 +92,11 @@ class _$NarrativeEventSerializer
     NarrativeEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,33 +112,42 @@ class _$NarrativeEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NarrativeEventEventEnum),
-          ) as NarrativeEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(NarrativeEventEventEnum),
+                  )
+                  as NarrativeEventEventEnum;
           result.event = valueDes;
           break;
         case r'narrative':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NarrativeSummary),
-          ) as NarrativeSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(NarrativeSummary),
+                  )
+                  as NarrativeSummary;
           result.narrative.replace(valueDes);
           break;
         case r'changed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(NarrativeEventChangedEnum)]),
-          ) as BuiltList<NarrativeEventChangedEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(NarrativeEventChangedEnum),
+                    ]),
+                  )
+                  as BuiltList<NarrativeEventChangedEnum>?;
           if (valueDes == null) continue;
           result.changed.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

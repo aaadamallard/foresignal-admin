@@ -68,8 +68,9 @@ abstract class OgcCoverageCollection
 
   OgcCoverageCollection._();
 
-  factory OgcCoverageCollection(
-      [void updates(OgcCoverageCollectionBuilder b)]) = _$OgcCoverageCollection;
+  factory OgcCoverageCollection([
+    void updates(OgcCoverageCollectionBuilder b),
+  ]) = _$OgcCoverageCollection;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCoverageCollectionBuilder b) => b;
@@ -84,7 +85,7 @@ class _$OgcCoverageCollectionSerializer
   @override
   final Iterable<Type> types = const [
     OgcCoverageCollection,
-    _$OgcCoverageCollection
+    _$OgcCoverageCollection,
   ];
 
   @override
@@ -139,7 +140,7 @@ class _$OgcCoverageCollectionSerializer
         object.parameterNames,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
+          FullType(BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
         ]),
       );
     }
@@ -177,9 +178,11 @@ class _$OgcCoverageCollectionSerializer
     OgcCoverageCollection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -195,95 +198,128 @@ class _$OgcCoverageCollectionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'itemType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OgcCoverageCollectionItemTypeEnum),
-          ) as OgcCoverageCollectionItemTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OgcCoverageCollectionItemTypeEnum,
+                    ),
+                  )
+                  as OgcCoverageCollectionItemTypeEnum;
           result.itemType = valueDes;
           break;
         case r'extent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(OgcCoverageCollectionExtent),
-          ) as OgcCoverageCollectionExtent?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCoverageCollectionExtent,
+                    ),
+                  )
+                  as OgcCoverageCollectionExtent?;
           if (valueDes == null) continue;
           result.extent.replace(valueDes);
           break;
         case r'data_queries':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OgcCoverageCollectionDataQueries),
-          ) as OgcCoverageCollectionDataQueries?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCoverageCollectionDataQueries,
+                    ),
+                  )
+                  as OgcCoverageCollectionDataQueries?;
           if (valueDes == null) continue;
           result.dataQueries.replace(valueDes);
           break;
         case r'parameter_names':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(
-                  BuiltMap, [FullType(String), FullType.nullable(JsonObject)])
-            ]),
-          ) as BuiltMap<String, BuiltMap<String, JsonObject?>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltMap, [
+                        FullType(String),
+                        FullType.nullable(JsonObject),
+                      ]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltMap<String, JsonObject?>>?;
           if (valueDes == null) continue;
           result.parameterNames.replace(valueDes);
           break;
         case r'output_formats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.outputFormats.replace(valueDes);
           break;
         case r'crs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.crs.replace(valueDes);
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.attribution = valueDes;
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>;
           result.links.replace(valueDes);
           break;
         default:

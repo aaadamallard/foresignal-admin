@@ -100,9 +100,11 @@ class _$TagAssignmentSerializer implements PrimitiveSerializer<TagAssignment> {
     TagAssignment object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,40 +120,50 @@ class _$TagAssignmentSerializer implements PrimitiveSerializer<TagAssignment> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'tagId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tagId = valueDes;
           break;
         case r'tag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Tag),
-          ) as Tag?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Tag),
+                  )
+                  as Tag?;
           if (valueDes == null) continue;
           result.tag.replace(valueDes);
           break;
         case r'objectRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectRef = valueDes;
           break;
         case r'assignedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrincipalSummary),
-          ) as PrincipalSummary?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PrincipalSummary),
+                  )
+                  as PrincipalSummary?;
           if (valueDes == null) continue;
           result.assignedBy.replace(valueDes);
           break;
         case r'assignedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.assignedAt = valueDes;
           break;
         default:

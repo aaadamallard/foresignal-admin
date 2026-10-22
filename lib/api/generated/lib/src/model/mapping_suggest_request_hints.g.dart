@@ -14,16 +14,16 @@ class _$MappingSuggestRequestHints extends MappingSuggestRequestHints {
   @override
   final String? sourceId;
 
-  factory _$MappingSuggestRequestHints(
-          [void Function(MappingSuggestRequestHintsBuilder)? updates]) =>
-      (MappingSuggestRequestHintsBuilder()..update(updates))._build();
+  factory _$MappingSuggestRequestHints([
+    void Function(MappingSuggestRequestHintsBuilder)? updates,
+  ]) => (MappingSuggestRequestHintsBuilder()..update(updates))._build();
 
   _$MappingSuggestRequestHints._({this.kind, this.description, this.sourceId})
-      : super._();
+    : super._();
   @override
   MappingSuggestRequestHints rebuild(
-          void Function(MappingSuggestRequestHintsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingSuggestRequestHintsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingSuggestRequestHintsBuilder toBuilder() =>
@@ -104,7 +104,8 @@ class MappingSuggestRequestHintsBuilder
   MappingSuggestRequestHints build() => _build();
 
   _$MappingSuggestRequestHints _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MappingSuggestRequestHints._(
           kind: kind,
           description: description,

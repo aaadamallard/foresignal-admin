@@ -7,14 +7,14 @@ part of 'custom_source_input.dart';
 // **************************************************************************
 
 const CustomSourceInputObservedAtModeEnum
-    _$customSourceInputObservedAtModeEnum_UPSTREAM =
+_$customSourceInputObservedAtModeEnum_UPSTREAM =
     const CustomSourceInputObservedAtModeEnum._('UPSTREAM');
 const CustomSourceInputObservedAtModeEnum
-    _$customSourceInputObservedAtModeEnum_RECEIVED =
+_$customSourceInputObservedAtModeEnum_RECEIVED =
     const CustomSourceInputObservedAtModeEnum._('RECEIVED');
 
 CustomSourceInputObservedAtModeEnum
-    _$customSourceInputObservedAtModeEnumValueOf(String name) {
+_$customSourceInputObservedAtModeEnumValueOf(String name) {
   switch (name) {
     case 'UPSTREAM':
       return _$customSourceInputObservedAtModeEnum_UPSTREAM;
@@ -26,11 +26,13 @@ CustomSourceInputObservedAtModeEnum
 }
 
 final BuiltSet<CustomSourceInputObservedAtModeEnum>
-    _$customSourceInputObservedAtModeEnumValues = BuiltSet<
-        CustomSourceInputObservedAtModeEnum>(const <CustomSourceInputObservedAtModeEnum>[
-  _$customSourceInputObservedAtModeEnum_UPSTREAM,
-  _$customSourceInputObservedAtModeEnum_RECEIVED,
-]);
+_$customSourceInputObservedAtModeEnumValues =
+    BuiltSet<CustomSourceInputObservedAtModeEnum>(
+      const <CustomSourceInputObservedAtModeEnum>[
+        _$customSourceInputObservedAtModeEnum_UPSTREAM,
+        _$customSourceInputObservedAtModeEnum_RECEIVED,
+      ],
+    );
 
 const CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnum_RECEIVED =
     const CustomSourceInputTtlAnchorEnum._('RECEIVED');
@@ -38,7 +40,8 @@ const CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnum_OBSERVED =
     const CustomSourceInputTtlAnchorEnum._('OBSERVED');
 
 CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'RECEIVED':
       return _$customSourceInputTtlAnchorEnum_RECEIVED;
@@ -50,18 +53,21 @@ CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnumValueOf(
 }
 
 final BuiltSet<CustomSourceInputTtlAnchorEnum>
-    _$customSourceInputTtlAnchorEnumValues = BuiltSet<
-        CustomSourceInputTtlAnchorEnum>(const <CustomSourceInputTtlAnchorEnum>[
-  _$customSourceInputTtlAnchorEnum_RECEIVED,
-  _$customSourceInputTtlAnchorEnum_OBSERVED,
-]);
+_$customSourceInputTtlAnchorEnumValues =
+    BuiltSet<CustomSourceInputTtlAnchorEnum>(
+      const <CustomSourceInputTtlAnchorEnum>[
+        _$customSourceInputTtlAnchorEnum_RECEIVED,
+        _$customSourceInputTtlAnchorEnum_OBSERVED,
+      ],
+    );
 
 const CustomSourceInputProfileEnum
-    _$customSourceInputProfileEnum_personalLocation =
+_$customSourceInputProfileEnum_personalLocation =
     const CustomSourceInputProfileEnum._('personalLocation');
 
 CustomSourceInputProfileEnum _$customSourceInputProfileEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'personalLocation':
       return _$customSourceInputProfileEnum_personalLocation;
@@ -71,19 +77,20 @@ CustomSourceInputProfileEnum _$customSourceInputProfileEnumValueOf(
 }
 
 final BuiltSet<CustomSourceInputProfileEnum>
-    _$customSourceInputProfileEnumValues =
-    BuiltSet<CustomSourceInputProfileEnum>(const <CustomSourceInputProfileEnum>[
-  _$customSourceInputProfileEnum_personalLocation,
-]);
+_$customSourceInputProfileEnumValues = BuiltSet<CustomSourceInputProfileEnum>(
+  const <CustomSourceInputProfileEnum>[
+    _$customSourceInputProfileEnum_personalLocation,
+  ],
+);
 
 Serializer<CustomSourceInputObservedAtModeEnum>
-    _$customSourceInputObservedAtModeEnumSerializer =
+_$customSourceInputObservedAtModeEnumSerializer =
     _$CustomSourceInputObservedAtModeEnumSerializer();
 Serializer<CustomSourceInputTtlAnchorEnum>
-    _$customSourceInputTtlAnchorEnumSerializer =
+_$customSourceInputTtlAnchorEnumSerializer =
     _$CustomSourceInputTtlAnchorEnumSerializer();
 Serializer<CustomSourceInputProfileEnum>
-    _$customSourceInputProfileEnumSerializer =
+_$customSourceInputProfileEnumSerializer =
     _$CustomSourceInputProfileEnumSerializer();
 
 class _$CustomSourceInputObservedAtModeEnumSerializer
@@ -99,23 +106,26 @@ class _$CustomSourceInputObservedAtModeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CustomSourceInputObservedAtModeEnum
+    CustomSourceInputObservedAtModeEnum,
   ];
   @override
   final String wireName = 'CustomSourceInputObservedAtModeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, CustomSourceInputObservedAtModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CustomSourceInputObservedAtModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CustomSourceInputObservedAtModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CustomSourceInputObservedAtModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CustomSourceInputObservedAtModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CustomSourceInputTtlAnchorEnumSerializer
@@ -136,16 +146,19 @@ class _$CustomSourceInputTtlAnchorEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, CustomSourceInputTtlAnchorEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CustomSourceInputTtlAnchorEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CustomSourceInputTtlAnchorEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CustomSourceInputTtlAnchorEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CustomSourceInputTtlAnchorEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CustomSourceInputProfileEnumSerializer
@@ -163,16 +176,20 @@ class _$CustomSourceInputProfileEnumSerializer
   final String wireName = 'CustomSourceInputProfileEnum';
 
   @override
-  Object serialize(Serializers serializers, CustomSourceInputProfileEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CustomSourceInputProfileEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CustomSourceInputProfileEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CustomSourceInputProfileEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CustomSourceInputProfileEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CustomSourceInput extends CustomSourceInput {
@@ -237,42 +254,42 @@ class _$CustomSourceInput extends CustomSourceInput {
   @override
   final LicenceTerms? licenceTerms;
 
-  factory _$CustomSourceInput(
-          [void Function(CustomSourceInputBuilder)? updates]) =>
-      (CustomSourceInputBuilder()..update(updates))._build();
+  factory _$CustomSourceInput([
+    void Function(CustomSourceInputBuilder)? updates,
+  ]) => (CustomSourceInputBuilder()..update(updates))._build();
 
-  _$CustomSourceInput._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.kinds,
-      this.attribution,
-      this.recordTtl,
-      this.tileProperties,
-      this.searchFields,
-      this.embedFields,
-      this.rankField,
-      this.rateLimitPerMinute,
-      this.observedAtMode,
-      this.ttlAnchor,
-      this.volatileFields,
-      this.significantFields,
-      this.titleField,
-      this.fieldSpecs,
-      this.private,
-      this.licence,
-      this.recordsPerMinute,
-      this.formats,
-      this.verifiers,
-      this.profile,
-      this.mapping,
-      this.preset,
-      this.presetParams,
-      this.allowPathKey,
-      this.ingestAllowCidrs,
-      this.captureSamples,
-      this.licenceTerms})
-      : super._();
+  _$CustomSourceInput._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.kinds,
+    this.attribution,
+    this.recordTtl,
+    this.tileProperties,
+    this.searchFields,
+    this.embedFields,
+    this.rankField,
+    this.rateLimitPerMinute,
+    this.observedAtMode,
+    this.ttlAnchor,
+    this.volatileFields,
+    this.significantFields,
+    this.titleField,
+    this.fieldSpecs,
+    this.private,
+    this.licence,
+    this.recordsPerMinute,
+    this.formats,
+    this.verifiers,
+    this.profile,
+    this.mapping,
+    this.preset,
+    this.presetParams,
+    this.allowPathKey,
+    this.ingestAllowCidrs,
+    this.captureSamples,
+    this.licenceTerms,
+  }) : super._();
   @override
   CustomSourceInput rebuild(void Function(CustomSourceInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -603,12 +620,19 @@ class CustomSourceInputBuilder
   _$CustomSourceInput _build() {
     _$CustomSourceInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CustomSourceInput._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CustomSourceInput', 'id'),
+              id,
+              r'CustomSourceInput',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'CustomSourceInput', 'name'),
+              name,
+              r'CustomSourceInput',
+              'name',
+            ),
             description: description,
             kinds: kinds.build(),
             attribution: attribution,
@@ -677,7 +701,10 @@ class CustomSourceInputBuilder
         _licenceTerms?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CustomSourceInput', _$failedField, e.toString());
+          r'CustomSourceInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

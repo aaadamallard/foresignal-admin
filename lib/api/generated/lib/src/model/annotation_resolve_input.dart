@@ -20,9 +20,9 @@ abstract class AnnotationResolveInput
 
   AnnotationResolveInput._();
 
-  factory AnnotationResolveInput(
-          [void updates(AnnotationResolveInputBuilder b)]) =
-      _$AnnotationResolveInput;
+  factory AnnotationResolveInput([
+    void updates(AnnotationResolveInputBuilder b),
+  ]) = _$AnnotationResolveInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnnotationResolveInputBuilder b) => b;
@@ -37,7 +37,7 @@ class _$AnnotationResolveInputSerializer
   @override
   final Iterable<Type> types = const [
     AnnotationResolveInput,
-    _$AnnotationResolveInput
+    _$AnnotationResolveInput,
   ];
 
   @override
@@ -63,9 +63,11 @@ class _$AnnotationResolveInputSerializer
     AnnotationResolveInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +83,12 @@ class _$AnnotationResolveInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'resolved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.resolved = valueDes;
           break;

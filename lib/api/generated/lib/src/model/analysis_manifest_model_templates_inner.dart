@@ -16,8 +16,10 @@ part 'analysis_manifest_model_templates_inner.g.dart';
 @BuiltValue()
 abstract class AnalysisManifestModelTemplatesInner
     implements
-        Built<AnalysisManifestModelTemplatesInner,
-            AnalysisManifestModelTemplatesInnerBuilder> {
+        Built<
+          AnalysisManifestModelTemplatesInner,
+          AnalysisManifestModelTemplatesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'templateId')
   String get templateId;
 
@@ -26,9 +28,9 @@ abstract class AnalysisManifestModelTemplatesInner
 
   AnalysisManifestModelTemplatesInner._();
 
-  factory AnalysisManifestModelTemplatesInner(
-          [void updates(AnalysisManifestModelTemplatesInnerBuilder b)]) =
-      _$AnalysisManifestModelTemplatesInner;
+  factory AnalysisManifestModelTemplatesInner([
+    void updates(AnalysisManifestModelTemplatesInnerBuilder b),
+  ]) = _$AnalysisManifestModelTemplatesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalysisManifestModelTemplatesInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$AnalysisManifestModelTemplatesInnerSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisManifestModelTemplatesInner,
-    _$AnalysisManifestModelTemplatesInner
+    _$AnalysisManifestModelTemplatesInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$AnalysisManifestModelTemplatesInnerSerializer
     AnalysisManifestModelTemplatesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$AnalysisManifestModelTemplatesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'templateId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.templateId = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         default:

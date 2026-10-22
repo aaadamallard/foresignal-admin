@@ -166,9 +166,11 @@ class _$LegendSerializer implements PrimitiveSerializer<Legend> {
     Legend object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -184,92 +186,116 @@ class _$LegendSerializer implements PrimitiveSerializer<Legend> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'productId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.productId = valueDes;
           break;
         case r'styleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.styleId = valueDes;
           break;
         case r'styleVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.styleVersion = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LegendTypeEnum),
-          ) as LegendTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(LegendTypeEnum),
+                  )
+                  as LegendTypeEnum;
           result.type = valueDes;
           break;
         case r'units':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.units = valueDes;
           break;
         case r'unitsLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.unitsLabel = valueDes;
           break;
         case r'stops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleStop)]),
-          ) as BuiltList<StyleStop>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleStop),
+                    ]),
+                  )
+                  as BuiltList<StyleStop>?;
           if (valueDes == null) continue;
           result.stops.replace(valueDes);
           break;
         case r'ticks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(LegendTick)]),
-          ) as BuiltList<LegendTick>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(LegendTick),
+                    ]),
+                  )
+                  as BuiltList<LegendTick>?;
           if (valueDes == null) continue;
           result.ticks.replace(valueDes);
           break;
         case r'categories':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleCategory)]),
-          ) as BuiltList<StyleCategory>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleCategory),
+                    ]),
+                  )
+                  as BuiltList<StyleCategory>?;
           if (valueDes == null) continue;
           result.categories.replace(valueDes);
           break;
         case r'specials':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleSpecial)]),
-          ) as BuiltList<StyleSpecial>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleSpecial),
+                    ]),
+                  )
+                  as BuiltList<StyleSpecial>?;
           if (valueDes == null) continue;
           result.specials.replace(valueDes);
           break;
         case r'meaning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(StyleMeaning)]),
-          ) as BuiltList<StyleMeaning>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(StyleMeaning),
+                    ]),
+                  )
+                  as BuiltList<StyleMeaning>?;
           if (valueDes == null) continue;
           result.meaning.replace(valueDes);
           break;

@@ -156,9 +156,11 @@ class _$IndicatorSignalSerializer
     IndicatorSignal object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -174,73 +176,99 @@ class _$IndicatorSignalSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IndicatorSignalTypeEnum),
-          ) as IndicatorSignalTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IndicatorSignalTypeEnum),
+                  )
+                  as IndicatorSignalTypeEnum;
           result.type = valueDes;
           break;
         case r'rule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(TriggerRuleInput),
-          ) as TriggerRuleInput?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(TriggerRuleInput),
+                  )
+                  as TriggerRuleInput?;
           if (valueDes == null) continue;
           result.rule.replace(valueDes);
           break;
         case r'precursorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.precursorId = valueDes;
           break;
         case r'series':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndicatorSignalSeries),
-          ) as IndicatorSignalSeries?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorSignalSeries,
+                    ),
+                  )
+                  as IndicatorSignalSeries?;
           if (valueDes == null) continue;
           result.series.replace(valueDes);
           break;
         case r'intelEvent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndicatorSignalIntelEvent),
-          ) as IndicatorSignalIntelEvent?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorSignalIntelEvent,
+                    ),
+                  )
+                  as IndicatorSignalIntelEvent?;
           if (valueDes == null) continue;
           result.intelEvent.replace(valueDes);
           break;
         case r'situation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndicatorSignalSituation),
-          ) as IndicatorSignalSituation?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorSignalSituation,
+                    ),
+                  )
+                  as IndicatorSignalSituation?;
           if (valueDes == null) continue;
           result.situation.replace(valueDes);
           break;
         case r'question':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndicatorSignalQuestion),
-          ) as IndicatorSignalQuestion?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorSignalQuestion,
+                    ),
+                  )
+                  as IndicatorSignalQuestion?;
           if (valueDes == null) continue;
           result.question.replace(valueDes);
           break;
         case r'emerging':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.emerging = valueDes;
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseRate = valueDes;
           break;

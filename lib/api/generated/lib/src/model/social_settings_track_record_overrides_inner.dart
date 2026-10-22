@@ -20,8 +20,10 @@ part 'social_settings_track_record_overrides_inner.g.dart';
 @BuiltValue()
 abstract class SocialSettingsTrackRecordOverridesInner
     implements
-        Built<SocialSettingsTrackRecordOverridesInner,
-            SocialSettingsTrackRecordOverridesInnerBuilder> {
+        Built<
+          SocialSettingsTrackRecordOverridesInner,
+          SocialSettingsTrackRecordOverridesInnerBuilder
+        > {
   /// Social network: `bluesky`, `mastodon`, `reddit`, `youtube`, `x`, `threads`, `instagram`, or the platform an EDP provider (024, 138) declares
   @BuiltValueField(wireName: r'platform')
   String get platform;
@@ -42,9 +44,9 @@ abstract class SocialSettingsTrackRecordOverridesInner
 
   SocialSettingsTrackRecordOverridesInner._();
 
-  factory SocialSettingsTrackRecordOverridesInner(
-          [void updates(SocialSettingsTrackRecordOverridesInnerBuilder b)]) =
-      _$SocialSettingsTrackRecordOverridesInner;
+  factory SocialSettingsTrackRecordOverridesInner([
+    void updates(SocialSettingsTrackRecordOverridesInnerBuilder b),
+  ]) = _$SocialSettingsTrackRecordOverridesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsTrackRecordOverridesInnerBuilder b) => b;
@@ -59,7 +61,7 @@ class _$SocialSettingsTrackRecordOverridesInnerSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsTrackRecordOverridesInner,
-    _$SocialSettingsTrackRecordOverridesInner
+    _$SocialSettingsTrackRecordOverridesInner,
   ];
 
   @override
@@ -93,7 +95,8 @@ class _$SocialSettingsTrackRecordOverridesInnerSerializer
     yield serializers.serialize(
       object.reliability,
       specifiedType: const FullType(
-          SocialSettingsTrackRecordOverridesInnerReliabilityEnum),
+        SocialSettingsTrackRecordOverridesInnerReliabilityEnum,
+      ),
     );
     if (object.note != null) {
       yield r'note';
@@ -110,9 +113,11 @@ class _$SocialSettingsTrackRecordOverridesInnerSerializer
     SocialSettingsTrackRecordOverridesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -128,41 +133,52 @@ class _$SocialSettingsTrackRecordOverridesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'account':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.account = valueDes;
           break;
         case r'channel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.channel = valueDes;
           break;
         case r'reliability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                SocialSettingsTrackRecordOverridesInnerReliabilityEnum),
-          ) as SocialSettingsTrackRecordOverridesInnerReliabilityEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialSettingsTrackRecordOverridesInnerReliabilityEnum,
+                    ),
+                  )
+                  as SocialSettingsTrackRecordOverridesInnerReliabilityEnum;
           result.reliability = valueDes;
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;
@@ -216,16 +232,15 @@ class SocialSettingsTrackRecordOverridesInnerReliabilityEnum extends EnumClass {
       _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F;
 
   static Serializer<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>
-      get serializer =>
-          _$socialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer;
+  get serializer =>
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer;
 
   const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>
-      get values =>
-          _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValues;
+  get values => _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValues;
   static SocialSettingsTrackRecordOverridesInnerReliabilityEnum valueOf(
-          String name) =>
-      _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValueOf(name);
+    String name,
+  ) => _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValueOf(name);
 }

@@ -56,17 +56,17 @@ ExternalBindingTargetEnum _$externalBindingTargetEnumValueOf(String name) {
 
 final BuiltSet<ExternalBindingTargetEnum> _$externalBindingTargetEnumValues =
     BuiltSet<ExternalBindingTargetEnum>(const <ExternalBindingTargetEnum>[
-  _$externalBindingTargetEnum_series,
-  _$externalBindingTargetEnum_canonicalFamily,
-  _$externalBindingTargetEnum_social,
-  _$externalBindingTargetEnum_news,
-  _$externalBindingTargetEnum_evidence,
-  _$externalBindingTargetEnum_indicator,
-  _$externalBindingTargetEnum_forecast,
-  _$externalBindingTargetEnum_place,
-  _$externalBindingTargetEnum_situation,
-  _$externalBindingTargetEnum_chronicle,
-]);
+      _$externalBindingTargetEnum_series,
+      _$externalBindingTargetEnum_canonicalFamily,
+      _$externalBindingTargetEnum_social,
+      _$externalBindingTargetEnum_news,
+      _$externalBindingTargetEnum_evidence,
+      _$externalBindingTargetEnum_indicator,
+      _$externalBindingTargetEnum_forecast,
+      _$externalBindingTargetEnum_place,
+      _$externalBindingTargetEnum_situation,
+      _$externalBindingTargetEnum_chronicle,
+    ]);
 
 const ExternalBindingStateEnum _$externalBindingStateEnum_active =
     const ExternalBindingStateEnum._('active');
@@ -94,11 +94,11 @@ ExternalBindingStateEnum _$externalBindingStateEnumValueOf(String name) {
 
 final BuiltSet<ExternalBindingStateEnum> _$externalBindingStateEnumValues =
     BuiltSet<ExternalBindingStateEnum>(const <ExternalBindingStateEnum>[
-  _$externalBindingStateEnum_active,
-  _$externalBindingStateEnum_disabled,
-  _$externalBindingStateEnum_backfilling,
-  _$externalBindingStateEnum_error,
-]);
+      _$externalBindingStateEnum_active,
+      _$externalBindingStateEnum_disabled,
+      _$externalBindingStateEnum_backfilling,
+      _$externalBindingStateEnum_error,
+    ]);
 
 Serializer<ExternalBindingTargetEnum> _$externalBindingTargetEnumSerializer =
     _$ExternalBindingTargetEnumSerializer();
@@ -138,16 +138,20 @@ class _$ExternalBindingTargetEnumSerializer
   final String wireName = 'ExternalBindingTargetEnum';
 
   @override
-  Object serialize(Serializers serializers, ExternalBindingTargetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExternalBindingTargetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalBindingTargetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalBindingTargetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalBindingTargetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalBindingStateEnumSerializer
@@ -171,16 +175,20 @@ class _$ExternalBindingStateEnumSerializer
   final String wireName = 'ExternalBindingStateEnum';
 
   @override
-  Object serialize(Serializers serializers, ExternalBindingStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExternalBindingStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalBindingStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalBindingStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalBindingStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalBinding extends ExternalBinding {
@@ -222,25 +230,25 @@ class _$ExternalBinding extends ExternalBinding {
   factory _$ExternalBinding([void Function(ExternalBindingBuilder)? updates]) =>
       (ExternalBindingBuilder()..update(updates))._build();
 
-  _$ExternalBinding._(
-      {required this.streamId,
-      required this.target,
-      this.config,
-      this.filter,
-      this.enabled,
-      this.backfill,
-      required this.id,
-      required this.sourceId,
-      this.manifestSha256,
-      required this.state,
-      this.applied,
-      this.lastError,
-      this.createdBy,
-      required this.createdAt,
-      this.targetRef,
-      this.updatedAt,
-      this.lastAppliedAt})
-      : super._();
+  _$ExternalBinding._({
+    required this.streamId,
+    required this.target,
+    this.config,
+    this.filter,
+    this.enabled,
+    this.backfill,
+    required this.id,
+    required this.sourceId,
+    this.manifestSha256,
+    required this.state,
+    this.applied,
+    this.lastError,
+    this.createdBy,
+    required this.createdAt,
+    this.targetRef,
+    this.updatedAt,
+    this.lastAppliedAt,
+  }) : super._();
   @override
   ExternalBinding rebuild(void Function(ExternalBindingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -442,28 +450,47 @@ class ExternalBindingBuilder
   _$ExternalBinding _build() {
     _$ExternalBinding _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalBinding._(
             streamId: BuiltValueNullFieldError.checkNotNull(
-                streamId, r'ExternalBinding', 'streamId'),
+              streamId,
+              r'ExternalBinding',
+              'streamId',
+            ),
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'ExternalBinding', 'target'),
+              target,
+              r'ExternalBinding',
+              'target',
+            ),
             config: _config?.build(),
             filter: _filter?.build(),
             enabled: enabled,
             backfill: backfill,
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ExternalBinding', 'id'),
+              id,
+              r'ExternalBinding',
+              'id',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'ExternalBinding', 'sourceId'),
+              sourceId,
+              r'ExternalBinding',
+              'sourceId',
+            ),
             manifestSha256: manifestSha256,
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'ExternalBinding', 'state'),
+              state,
+              r'ExternalBinding',
+              'state',
+            ),
             applied: applied,
             lastError: lastError,
             createdBy: createdBy,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ExternalBinding', 'createdAt'),
+              createdAt,
+              r'ExternalBinding',
+              'createdAt',
+            ),
             targetRef: targetRef,
             updatedAt: updatedAt,
             lastAppliedAt: lastAppliedAt,
@@ -477,7 +504,10 @@ class ExternalBindingBuilder
         _filter?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalBinding', _$failedField, e.toString());
+          r'ExternalBinding',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,16 +12,16 @@ class _$AssessmentPromptTemplatesInner extends AssessmentPromptTemplatesInner {
   @override
   final String version;
 
-  factory _$AssessmentPromptTemplatesInner(
-          [void Function(AssessmentPromptTemplatesInnerBuilder)? updates]) =>
-      (AssessmentPromptTemplatesInnerBuilder()..update(updates))._build();
+  factory _$AssessmentPromptTemplatesInner([
+    void Function(AssessmentPromptTemplatesInnerBuilder)? updates,
+  ]) => (AssessmentPromptTemplatesInnerBuilder()..update(updates))._build();
 
   _$AssessmentPromptTemplatesInner._({required this.id, required this.version})
-      : super._();
+    : super._();
   @override
   AssessmentPromptTemplatesInner rebuild(
-          void Function(AssessmentPromptTemplatesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentPromptTemplatesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentPromptTemplatesInnerBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$AssessmentPromptTemplatesInner extends AssessmentPromptTemplatesInner {
 
 class AssessmentPromptTemplatesInnerBuilder
     implements
-        Builder<AssessmentPromptTemplatesInner,
-            AssessmentPromptTemplatesInnerBuilder> {
+        Builder<
+          AssessmentPromptTemplatesInner,
+          AssessmentPromptTemplatesInnerBuilder
+        > {
   _$AssessmentPromptTemplatesInner? _$v;
 
   String? _id;
@@ -95,12 +97,19 @@ class AssessmentPromptTemplatesInnerBuilder
   AssessmentPromptTemplatesInner build() => _build();
 
   _$AssessmentPromptTemplatesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AssessmentPromptTemplatesInner._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'AssessmentPromptTemplatesInner', 'id'),
+            id,
+            r'AssessmentPromptTemplatesInner',
+            'id',
+          ),
           version: BuiltValueNullFieldError.checkNotNull(
-              version, r'AssessmentPromptTemplatesInner', 'version'),
+            version,
+            r'AssessmentPromptTemplatesInner',
+            'version',
+          ),
         );
     replace(_$result);
     return _$result;

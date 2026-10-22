@@ -7,30 +7,31 @@ part of 'situation_social_section_narratives_inner.dart';
 // **************************************************************************
 
 const SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnum_unassessed =
+_$situationSocialSectionNarrativesInnerStatusEnum_unassessed =
     const SituationSocialSectionNarrativesInnerStatusEnum._('unassessed');
 const SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnum_pending =
+_$situationSocialSectionNarrativesInnerStatusEnum_pending =
     const SituationSocialSectionNarrativesInnerStatusEnum._('pending');
 const SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnum_corroborated =
+_$situationSocialSectionNarrativesInnerStatusEnum_corroborated =
     const SituationSocialSectionNarrativesInnerStatusEnum._('corroborated');
 const SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnum_unobserved =
+_$situationSocialSectionNarrativesInnerStatusEnum_unobserved =
     const SituationSocialSectionNarrativesInnerStatusEnum._('unobserved');
 const SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnum_contradicted =
+_$situationSocialSectionNarrativesInnerStatusEnum_contradicted =
     const SituationSocialSectionNarrativesInnerStatusEnum._('contradicted');
 const SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnum_mixed =
+_$situationSocialSectionNarrativesInnerStatusEnum_mixed =
     const SituationSocialSectionNarrativesInnerStatusEnum._('mixed');
 const SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage =
+_$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage =
     const SituationSocialSectionNarrativesInnerStatusEnum._(
-        'insufficientCoverage');
+      'insufficientCoverage',
+    );
 
 SituationSocialSectionNarrativesInnerStatusEnum
-    _$situationSocialSectionNarrativesInnerStatusEnumValueOf(String name) {
+_$situationSocialSectionNarrativesInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'unassessed':
       return _$situationSocialSectionNarrativesInnerStatusEnum_unassessed;
@@ -52,26 +53,28 @@ SituationSocialSectionNarrativesInnerStatusEnum
 }
 
 final BuiltSet<SituationSocialSectionNarrativesInnerStatusEnum>
-    _$situationSocialSectionNarrativesInnerStatusEnumValues = BuiltSet<
-        SituationSocialSectionNarrativesInnerStatusEnum>(const <SituationSocialSectionNarrativesInnerStatusEnum>[
-  _$situationSocialSectionNarrativesInnerStatusEnum_unassessed,
-  _$situationSocialSectionNarrativesInnerStatusEnum_pending,
-  _$situationSocialSectionNarrativesInnerStatusEnum_corroborated,
-  _$situationSocialSectionNarrativesInnerStatusEnum_unobserved,
-  _$situationSocialSectionNarrativesInnerStatusEnum_contradicted,
-  _$situationSocialSectionNarrativesInnerStatusEnum_mixed,
-  _$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage,
-]);
+_$situationSocialSectionNarrativesInnerStatusEnumValues =
+    BuiltSet<SituationSocialSectionNarrativesInnerStatusEnum>(
+      const <SituationSocialSectionNarrativesInnerStatusEnum>[
+        _$situationSocialSectionNarrativesInnerStatusEnum_unassessed,
+        _$situationSocialSectionNarrativesInnerStatusEnum_pending,
+        _$situationSocialSectionNarrativesInnerStatusEnum_corroborated,
+        _$situationSocialSectionNarrativesInnerStatusEnum_unobserved,
+        _$situationSocialSectionNarrativesInnerStatusEnum_contradicted,
+        _$situationSocialSectionNarrativesInnerStatusEnum_mixed,
+        _$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage,
+      ],
+    );
 
 const SituationSocialSectionNarrativesInnerFoundByEnum
-    _$situationSocialSectionNarrativesInnerFoundByEnum_organic =
+_$situationSocialSectionNarrativesInnerFoundByEnum_organic =
     const SituationSocialSectionNarrativesInnerFoundByEnum._('organic');
 const SituationSocialSectionNarrativesInnerFoundByEnum
-    _$situationSocialSectionNarrativesInnerFoundByEnum_cue =
+_$situationSocialSectionNarrativesInnerFoundByEnum_cue =
     const SituationSocialSectionNarrativesInnerFoundByEnum._('cue');
 
 SituationSocialSectionNarrativesInnerFoundByEnum
-    _$situationSocialSectionNarrativesInnerFoundByEnumValueOf(String name) {
+_$situationSocialSectionNarrativesInnerFoundByEnumValueOf(String name) {
   switch (name) {
     case 'organic':
       return _$situationSocialSectionNarrativesInnerFoundByEnum_organic;
@@ -83,17 +86,19 @@ SituationSocialSectionNarrativesInnerFoundByEnum
 }
 
 final BuiltSet<SituationSocialSectionNarrativesInnerFoundByEnum>
-    _$situationSocialSectionNarrativesInnerFoundByEnumValues = BuiltSet<
-        SituationSocialSectionNarrativesInnerFoundByEnum>(const <SituationSocialSectionNarrativesInnerFoundByEnum>[
-  _$situationSocialSectionNarrativesInnerFoundByEnum_organic,
-  _$situationSocialSectionNarrativesInnerFoundByEnum_cue,
-]);
+_$situationSocialSectionNarrativesInnerFoundByEnumValues =
+    BuiltSet<SituationSocialSectionNarrativesInnerFoundByEnum>(
+      const <SituationSocialSectionNarrativesInnerFoundByEnum>[
+        _$situationSocialSectionNarrativesInnerFoundByEnum_organic,
+        _$situationSocialSectionNarrativesInnerFoundByEnum_cue,
+      ],
+    );
 
 Serializer<SituationSocialSectionNarrativesInnerStatusEnum>
-    _$situationSocialSectionNarrativesInnerStatusEnumSerializer =
+_$situationSocialSectionNarrativesInnerStatusEnumSerializer =
     _$SituationSocialSectionNarrativesInnerStatusEnumSerializer();
 Serializer<SituationSocialSectionNarrativesInnerFoundByEnum>
-    _$situationSocialSectionNarrativesInnerFoundByEnumSerializer =
+_$situationSocialSectionNarrativesInnerFoundByEnumSerializer =
     _$SituationSocialSectionNarrativesInnerFoundByEnumSerializer();
 
 class _$SituationSocialSectionNarrativesInnerStatusEnumSerializer
@@ -120,23 +125,26 @@ class _$SituationSocialSectionNarrativesInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SituationSocialSectionNarrativesInnerStatusEnum
+    SituationSocialSectionNarrativesInnerStatusEnum,
   ];
   @override
   final String wireName = 'SituationSocialSectionNarrativesInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SituationSocialSectionNarrativesInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationSocialSectionNarrativesInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationSocialSectionNarrativesInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationSocialSectionNarrativesInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationSocialSectionNarrativesInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationSocialSectionNarrativesInnerFoundByEnumSerializer
@@ -153,23 +161,26 @@ class _$SituationSocialSectionNarrativesInnerFoundByEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SituationSocialSectionNarrativesInnerFoundByEnum
+    SituationSocialSectionNarrativesInnerFoundByEnum,
   ];
   @override
   final String wireName = 'SituationSocialSectionNarrativesInnerFoundByEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SituationSocialSectionNarrativesInnerFoundByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationSocialSectionNarrativesInnerFoundByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationSocialSectionNarrativesInnerFoundByEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationSocialSectionNarrativesInnerFoundByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationSocialSectionNarrativesInnerFoundByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationSocialSectionNarrativesInner
@@ -191,27 +202,25 @@ class _$SituationSocialSectionNarrativesInner
   @override
   final SituationSocialSectionNarrativesInnerFoundByEnum? foundBy;
 
-  factory _$SituationSocialSectionNarrativesInner(
-          [void Function(SituationSocialSectionNarrativesInnerBuilder)?
-              updates]) =>
-      (SituationSocialSectionNarrativesInnerBuilder()..update(updates))
-          ._build();
+  factory _$SituationSocialSectionNarrativesInner([
+    void Function(SituationSocialSectionNarrativesInnerBuilder)? updates,
+  ]) => (SituationSocialSectionNarrativesInnerBuilder()..update(updates))
+      ._build();
 
-  _$SituationSocialSectionNarrativesInner._(
-      {required this.narrativeId,
-      required this.title,
-      required this.status,
-      this.velocity,
-      this.originConcentration,
-      required this.evidenceGroupCount,
-      this.leadOverPhysicalSeconds,
-      this.foundBy})
-      : super._();
+  _$SituationSocialSectionNarrativesInner._({
+    required this.narrativeId,
+    required this.title,
+    required this.status,
+    this.velocity,
+    this.originConcentration,
+    required this.evidenceGroupCount,
+    this.leadOverPhysicalSeconds,
+    this.foundBy,
+  }) : super._();
   @override
   SituationSocialSectionNarrativesInner rebuild(
-          void Function(SituationSocialSectionNarrativesInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationSocialSectionNarrativesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationSocialSectionNarrativesInnerBuilder toBuilder() =>
@@ -249,7 +258,8 @@ class _$SituationSocialSectionNarrativesInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'SituationSocialSectionNarrativesInner')
+            r'SituationSocialSectionNarrativesInner',
+          )
           ..add('narrativeId', narrativeId)
           ..add('title', title)
           ..add('status', status)
@@ -264,8 +274,10 @@ class _$SituationSocialSectionNarrativesInner
 
 class SituationSocialSectionNarrativesInnerBuilder
     implements
-        Builder<SituationSocialSectionNarrativesInner,
-            SituationSocialSectionNarrativesInnerBuilder> {
+        Builder<
+          SituationSocialSectionNarrativesInner,
+          SituationSocialSectionNarrativesInnerBuilder
+        > {
   _$SituationSocialSectionNarrativesInner? _$v;
 
   String? _narrativeId;
@@ -333,7 +345,8 @@ class SituationSocialSectionNarrativesInnerBuilder
 
   @override
   void update(
-      void Function(SituationSocialSectionNarrativesInnerBuilder)? updates) {
+    void Function(SituationSocialSectionNarrativesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -341,20 +354,31 @@ class SituationSocialSectionNarrativesInnerBuilder
   SituationSocialSectionNarrativesInner build() => _build();
 
   _$SituationSocialSectionNarrativesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationSocialSectionNarrativesInner._(
-          narrativeId: BuiltValueNullFieldError.checkNotNull(narrativeId,
-              r'SituationSocialSectionNarrativesInner', 'narrativeId'),
+          narrativeId: BuiltValueNullFieldError.checkNotNull(
+            narrativeId,
+            r'SituationSocialSectionNarrativesInner',
+            'narrativeId',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'SituationSocialSectionNarrativesInner', 'title'),
+            title,
+            r'SituationSocialSectionNarrativesInner',
+            'title',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'SituationSocialSectionNarrativesInner', 'status'),
+            status,
+            r'SituationSocialSectionNarrativesInner',
+            'status',
+          ),
           velocity: velocity,
           originConcentration: originConcentration,
           evidenceGroupCount: BuiltValueNullFieldError.checkNotNull(
-              evidenceGroupCount,
-              r'SituationSocialSectionNarrativesInner',
-              'evidenceGroupCount'),
+            evidenceGroupCount,
+            r'SituationSocialSectionNarrativesInner',
+            'evidenceGroupCount',
+          ),
           leadOverPhysicalSeconds: leadOverPhysicalSeconds,
           foundBy: foundBy,
         );

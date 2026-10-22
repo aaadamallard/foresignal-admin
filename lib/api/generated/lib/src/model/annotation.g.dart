@@ -6,8 +6,9 @@ part of 'annotation.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const AnnotationKindEnum _$annotationKindEnum_note =
-    const AnnotationKindEnum._('note');
+const AnnotationKindEnum _$annotationKindEnum_note = const AnnotationKindEnum._(
+  'note',
+);
 const AnnotationKindEnum _$annotationKindEnum_verdict =
     const AnnotationKindEnum._('verdict');
 
@@ -24,9 +25,9 @@ AnnotationKindEnum _$annotationKindEnumValueOf(String name) {
 
 final BuiltSet<AnnotationKindEnum> _$annotationKindEnumValues =
     BuiltSet<AnnotationKindEnum>(const <AnnotationKindEnum>[
-  _$annotationKindEnum_note,
-  _$annotationKindEnum_verdict,
-]);
+      _$annotationKindEnum_note,
+      _$annotationKindEnum_verdict,
+    ]);
 
 const AnnotationVerdictEnum _$annotationVerdictEnum_confirmed =
     const AnnotationVerdictEnum._('confirmed');
@@ -54,11 +55,11 @@ AnnotationVerdictEnum _$annotationVerdictEnumValueOf(String name) {
 
 final BuiltSet<AnnotationVerdictEnum> _$annotationVerdictEnumValues =
     BuiltSet<AnnotationVerdictEnum>(const <AnnotationVerdictEnum>[
-  _$annotationVerdictEnum_confirmed,
-  _$annotationVerdictEnum_rejected,
-  _$annotationVerdictEnum_needsReview,
-  _$annotationVerdictEnum_duplicateOf,
-]);
+      _$annotationVerdictEnum_confirmed,
+      _$annotationVerdictEnum_rejected,
+      _$annotationVerdictEnum_needsReview,
+      _$annotationVerdictEnum_duplicateOf,
+    ]);
 
 Serializer<AnnotationKindEnum> _$annotationKindEnumSerializer =
     _$AnnotationKindEnumSerializer();
@@ -82,15 +83,20 @@ class _$AnnotationKindEnumSerializer
   final String wireName = 'AnnotationKindEnum';
 
   @override
-  Object serialize(Serializers serializers, AnnotationKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnnotationKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AnnotationKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnnotationKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AnnotationKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnnotationKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnnotationVerdictEnumSerializer
@@ -114,15 +120,20 @@ class _$AnnotationVerdictEnumSerializer
   final String wireName = 'AnnotationVerdictEnum';
 
   @override
-  Object serialize(Serializers serializers, AnnotationVerdictEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnnotationVerdictEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AnnotationVerdictEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnnotationVerdictEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AnnotationVerdictEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnnotationVerdictEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Annotation extends Annotation {
@@ -172,29 +183,29 @@ class _$Annotation extends Annotation {
   factory _$Annotation([void Function(AnnotationBuilder)? updates]) =>
       (AnnotationBuilder()..update(updates))._build();
 
-  _$Annotation._(
-      {required this.id,
-      this.ref,
-      required this.targetRef,
-      required this.kind,
-      this.verdict,
-      this.duplicateOfRef,
-      this.body,
-      this.tags,
-      required this.author,
-      required this.private,
-      this.statusApplied,
-      required this.createdAt,
-      required this.updatedAt,
-      this.deletedAt,
-      this.parentId,
-      this.mentions,
-      this.droppedMentions,
-      this.resolved,
-      this.editedAt,
-      this.tlp,
-      this.visibility})
-      : super._();
+  _$Annotation._({
+    required this.id,
+    this.ref,
+    required this.targetRef,
+    required this.kind,
+    this.verdict,
+    this.duplicateOfRef,
+    this.body,
+    this.tags,
+    required this.author,
+    required this.private,
+    this.statusApplied,
+    required this.createdAt,
+    required this.updatedAt,
+    this.deletedAt,
+    this.parentId,
+    this.mentions,
+    this.droppedMentions,
+    this.resolved,
+    this.editedAt,
+    this.tlp,
+    this.visibility,
+  }) : super._();
   @override
   Annotation rebuild(void Function(AnnotationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -426,27 +437,46 @@ class AnnotationBuilder implements Builder<Annotation, AnnotationBuilder> {
   _$Annotation _build() {
     _$Annotation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Annotation._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Annotation', 'id'),
             ref: ref,
             targetRef: BuiltValueNullFieldError.checkNotNull(
-                targetRef, r'Annotation', 'targetRef'),
+              targetRef,
+              r'Annotation',
+              'targetRef',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'Annotation', 'kind'),
+              kind,
+              r'Annotation',
+              'kind',
+            ),
             verdict: verdict,
             duplicateOfRef: duplicateOfRef,
             body: body,
             tags: _tags?.build(),
             author: BuiltValueNullFieldError.checkNotNull(
-                author, r'Annotation', 'author'),
+              author,
+              r'Annotation',
+              'author',
+            ),
             private: BuiltValueNullFieldError.checkNotNull(
-                private, r'Annotation', 'private'),
+              private,
+              r'Annotation',
+              'private',
+            ),
             statusApplied: statusApplied,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Annotation', 'createdAt'),
+              createdAt,
+              r'Annotation',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Annotation', 'updatedAt'),
+              updatedAt,
+              r'Annotation',
+              'updatedAt',
+            ),
             deletedAt: deletedAt,
             parentId: parentId,
             mentions: _mentions?.build(),
@@ -468,7 +498,10 @@ class AnnotationBuilder implements Builder<Annotation, AnnotationBuilder> {
         _droppedMentions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Annotation', _$failedField, e.toString());
+          r'Annotation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

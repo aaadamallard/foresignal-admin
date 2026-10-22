@@ -18,21 +18,21 @@ class _$OutlookPublishedEvent extends OutlookPublishedEvent {
   @override
   final String? recordRef;
 
-  factory _$OutlookPublishedEvent(
-          [void Function(OutlookPublishedEventBuilder)? updates]) =>
-      (OutlookPublishedEventBuilder()..update(updates))._build();
+  factory _$OutlookPublishedEvent([
+    void Function(OutlookPublishedEventBuilder)? updates,
+  ]) => (OutlookPublishedEventBuilder()..update(updates))._build();
 
-  _$OutlookPublishedEvent._(
-      {required this.region,
-      required this.family,
-      required this.publishedAt,
-      this.windows,
-      this.recordRef})
-      : super._();
+  _$OutlookPublishedEvent._({
+    required this.region,
+    required this.family,
+    required this.publishedAt,
+    this.windows,
+    this.recordRef,
+  }) : super._();
   @override
   OutlookPublishedEvent rebuild(
-          void Function(OutlookPublishedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OutlookPublishedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OutlookPublishedEventBuilder toBuilder() =>
@@ -131,14 +131,24 @@ class OutlookPublishedEventBuilder
   _$OutlookPublishedEvent _build() {
     _$OutlookPublishedEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OutlookPublishedEvent._(
             region: BuiltValueNullFieldError.checkNotNull(
-                region, r'OutlookPublishedEvent', 'region'),
+              region,
+              r'OutlookPublishedEvent',
+              'region',
+            ),
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'OutlookPublishedEvent', 'family'),
+              family,
+              r'OutlookPublishedEvent',
+              'family',
+            ),
             publishedAt: BuiltValueNullFieldError.checkNotNull(
-                publishedAt, r'OutlookPublishedEvent', 'publishedAt'),
+              publishedAt,
+              r'OutlookPublishedEvent',
+              'publishedAt',
+            ),
             windows: _windows?.build(),
             recordRef: recordRef,
           );
@@ -149,7 +159,10 @@ class OutlookPublishedEventBuilder
         _windows?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OutlookPublishedEvent', _$failedField, e.toString());
+          r'OutlookPublishedEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

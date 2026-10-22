@@ -37,9 +37,9 @@ class _$MetricSettings extends MetricSettings {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'MetricSettings')
-          ..add('projections', projections))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'MetricSettings',
+    )..add('projections', projections)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class MetricSettingsBuilder
   _$MetricSettings _build() {
     _$MetricSettings _$result;
     try {
-      _$result = _$v ??
-          _$MetricSettings._(
-            projections: projections.build(),
-          );
+      _$result = _$v ?? _$MetricSettings._(projections: projections.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -93,7 +90,10 @@ class MetricSettingsBuilder
         projections.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MetricSettings', _$failedField, e.toString());
+          r'MetricSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

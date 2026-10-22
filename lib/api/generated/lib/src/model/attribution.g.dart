@@ -29,17 +29,17 @@ class _$Attribution extends Attribution {
   factory _$Attribution([void Function(AttributionBuilder)? updates]) =>
       (AttributionBuilder()..update(updates))._build();
 
-  _$Attribution._(
-      {required this.text,
-      this.html,
-      this.url,
-      required this.licence,
-      this.licenceUrl,
-      required this.requiredDisplay,
-      this.sourceId,
-      this.termsUrl,
-      this.count})
-      : super._();
+  _$Attribution._({
+    required this.text,
+    this.html,
+    this.url,
+    required this.licence,
+    this.licenceUrl,
+    required this.requiredDisplay,
+    this.sourceId,
+    this.termsUrl,
+    this.count,
+  }) : super._();
   @override
   Attribution rebuild(void Function(AttributionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -169,17 +169,27 @@ class AttributionBuilder implements Builder<Attribution, AttributionBuilder> {
   Attribution build() => _build();
 
   _$Attribution _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Attribution._(
           text: BuiltValueNullFieldError.checkNotNull(
-              text, r'Attribution', 'text'),
+            text,
+            r'Attribution',
+            'text',
+          ),
           html: html,
           url: url,
           licence: BuiltValueNullFieldError.checkNotNull(
-              licence, r'Attribution', 'licence'),
+            licence,
+            r'Attribution',
+            'licence',
+          ),
           licenceUrl: licenceUrl,
           requiredDisplay: BuiltValueNullFieldError.checkNotNull(
-              requiredDisplay, r'Attribution', 'requiredDisplay'),
+            requiredDisplay,
+            r'Attribution',
+            'requiredDisplay',
+          ),
           sourceId: sourceId,
           termsUrl: termsUrl,
           count: count,

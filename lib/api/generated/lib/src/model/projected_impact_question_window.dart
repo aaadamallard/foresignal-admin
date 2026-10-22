@@ -16,8 +16,10 @@ part 'projected_impact_question_window.g.dart';
 @BuiltValue()
 abstract class ProjectedImpactQuestionWindow
     implements
-        Built<ProjectedImpactQuestionWindow,
-            ProjectedImpactQuestionWindowBuilder> {
+        Built<
+          ProjectedImpactQuestionWindow,
+          ProjectedImpactQuestionWindowBuilder
+        > {
   @BuiltValueField(wireName: r'start')
   DateTime? get start;
 
@@ -26,9 +28,9 @@ abstract class ProjectedImpactQuestionWindow
 
   ProjectedImpactQuestionWindow._();
 
-  factory ProjectedImpactQuestionWindow(
-          [void updates(ProjectedImpactQuestionWindowBuilder b)]) =
-      _$ProjectedImpactQuestionWindow;
+  factory ProjectedImpactQuestionWindow([
+    void updates(ProjectedImpactQuestionWindowBuilder b),
+  ]) = _$ProjectedImpactQuestionWindow;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProjectedImpactQuestionWindowBuilder b) => b;
@@ -43,7 +45,7 @@ class _$ProjectedImpactQuestionWindowSerializer
   @override
   final Iterable<Type> types = const [
     ProjectedImpactQuestionWindow,
-    _$ProjectedImpactQuestionWindow
+    _$ProjectedImpactQuestionWindow,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$ProjectedImpactQuestionWindowSerializer
     ProjectedImpactQuestionWindow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$ProjectedImpactQuestionWindowSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'start':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.start = valueDes;
           break;
         case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.end = valueDes;
           break;

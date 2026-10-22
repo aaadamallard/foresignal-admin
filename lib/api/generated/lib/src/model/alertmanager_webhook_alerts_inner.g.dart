@@ -7,14 +7,14 @@ part of 'alertmanager_webhook_alerts_inner.dart';
 // **************************************************************************
 
 const AlertmanagerWebhookAlertsInnerStatusEnum
-    _$alertmanagerWebhookAlertsInnerStatusEnum_firing =
+_$alertmanagerWebhookAlertsInnerStatusEnum_firing =
     const AlertmanagerWebhookAlertsInnerStatusEnum._('firing');
 const AlertmanagerWebhookAlertsInnerStatusEnum
-    _$alertmanagerWebhookAlertsInnerStatusEnum_resolved =
+_$alertmanagerWebhookAlertsInnerStatusEnum_resolved =
     const AlertmanagerWebhookAlertsInnerStatusEnum._('resolved');
 
 AlertmanagerWebhookAlertsInnerStatusEnum
-    _$alertmanagerWebhookAlertsInnerStatusEnumValueOf(String name) {
+_$alertmanagerWebhookAlertsInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'firing':
       return _$alertmanagerWebhookAlertsInnerStatusEnum_firing;
@@ -26,14 +26,16 @@ AlertmanagerWebhookAlertsInnerStatusEnum
 }
 
 final BuiltSet<AlertmanagerWebhookAlertsInnerStatusEnum>
-    _$alertmanagerWebhookAlertsInnerStatusEnumValues = BuiltSet<
-        AlertmanagerWebhookAlertsInnerStatusEnum>(const <AlertmanagerWebhookAlertsInnerStatusEnum>[
-  _$alertmanagerWebhookAlertsInnerStatusEnum_firing,
-  _$alertmanagerWebhookAlertsInnerStatusEnum_resolved,
-]);
+_$alertmanagerWebhookAlertsInnerStatusEnumValues =
+    BuiltSet<AlertmanagerWebhookAlertsInnerStatusEnum>(
+      const <AlertmanagerWebhookAlertsInnerStatusEnum>[
+        _$alertmanagerWebhookAlertsInnerStatusEnum_firing,
+        _$alertmanagerWebhookAlertsInnerStatusEnum_resolved,
+      ],
+    );
 
 Serializer<AlertmanagerWebhookAlertsInnerStatusEnum>
-    _$alertmanagerWebhookAlertsInnerStatusEnumSerializer =
+_$alertmanagerWebhookAlertsInnerStatusEnumSerializer =
     _$AlertmanagerWebhookAlertsInnerStatusEnumSerializer();
 
 class _$AlertmanagerWebhookAlertsInnerStatusEnumSerializer
@@ -49,23 +51,26 @@ class _$AlertmanagerWebhookAlertsInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AlertmanagerWebhookAlertsInnerStatusEnum
+    AlertmanagerWebhookAlertsInnerStatusEnum,
   ];
   @override
   final String wireName = 'AlertmanagerWebhookAlertsInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          AlertmanagerWebhookAlertsInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AlertmanagerWebhookAlertsInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AlertmanagerWebhookAlertsInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertmanagerWebhookAlertsInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertmanagerWebhookAlertsInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertmanagerWebhookAlertsInner extends AlertmanagerWebhookAlertsInner {
@@ -84,23 +89,23 @@ class _$AlertmanagerWebhookAlertsInner extends AlertmanagerWebhookAlertsInner {
   @override
   final String fingerprint;
 
-  factory _$AlertmanagerWebhookAlertsInner(
-          [void Function(AlertmanagerWebhookAlertsInnerBuilder)? updates]) =>
-      (AlertmanagerWebhookAlertsInnerBuilder()..update(updates))._build();
+  factory _$AlertmanagerWebhookAlertsInner([
+    void Function(AlertmanagerWebhookAlertsInnerBuilder)? updates,
+  ]) => (AlertmanagerWebhookAlertsInnerBuilder()..update(updates))._build();
 
-  _$AlertmanagerWebhookAlertsInner._(
-      {required this.status,
-      required this.labels,
-      this.annotations,
-      required this.startsAt,
-      this.endsAt,
-      this.generatorURL,
-      required this.fingerprint})
-      : super._();
+  _$AlertmanagerWebhookAlertsInner._({
+    required this.status,
+    required this.labels,
+    this.annotations,
+    required this.startsAt,
+    this.endsAt,
+    this.generatorURL,
+    required this.fingerprint,
+  }) : super._();
   @override
   AlertmanagerWebhookAlertsInner rebuild(
-          void Function(AlertmanagerWebhookAlertsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AlertmanagerWebhookAlertsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AlertmanagerWebhookAlertsInnerBuilder toBuilder() =>
@@ -149,8 +154,10 @@ class _$AlertmanagerWebhookAlertsInner extends AlertmanagerWebhookAlertsInner {
 
 class AlertmanagerWebhookAlertsInnerBuilder
     implements
-        Builder<AlertmanagerWebhookAlertsInner,
-            AlertmanagerWebhookAlertsInnerBuilder> {
+        Builder<
+          AlertmanagerWebhookAlertsInner,
+          AlertmanagerWebhookAlertsInnerBuilder
+        > {
   _$AlertmanagerWebhookAlertsInner? _$v;
 
   AlertmanagerWebhookAlertsInnerStatusEnum? _status;
@@ -220,18 +227,28 @@ class AlertmanagerWebhookAlertsInnerBuilder
   _$AlertmanagerWebhookAlertsInner _build() {
     _$AlertmanagerWebhookAlertsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AlertmanagerWebhookAlertsInner._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AlertmanagerWebhookAlertsInner', 'status'),
+              status,
+              r'AlertmanagerWebhookAlertsInner',
+              'status',
+            ),
             labels: labels.build(),
             annotations: _annotations?.build(),
             startsAt: BuiltValueNullFieldError.checkNotNull(
-                startsAt, r'AlertmanagerWebhookAlertsInner', 'startsAt'),
+              startsAt,
+              r'AlertmanagerWebhookAlertsInner',
+              'startsAt',
+            ),
             endsAt: endsAt,
             generatorURL: generatorURL,
             fingerprint: BuiltValueNullFieldError.checkNotNull(
-                fingerprint, r'AlertmanagerWebhookAlertsInner', 'fingerprint'),
+              fingerprint,
+              r'AlertmanagerWebhookAlertsInner',
+              'fingerprint',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -242,7 +259,10 @@ class AlertmanagerWebhookAlertsInnerBuilder
         _annotations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AlertmanagerWebhookAlertsInner', _$failedField, e.toString());
+          r'AlertmanagerWebhookAlertsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

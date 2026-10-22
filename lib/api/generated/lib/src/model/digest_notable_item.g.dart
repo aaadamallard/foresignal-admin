@@ -30,23 +30,23 @@ class _$DigestNotableItem extends DigestNotableItem {
   @override
   final String? link;
 
-  factory _$DigestNotableItem(
-          [void Function(DigestNotableItemBuilder)? updates]) =>
-      (DigestNotableItemBuilder()..update(updates))._build();
+  factory _$DigestNotableItem([
+    void Function(DigestNotableItemBuilder)? updates,
+  ]) => (DigestNotableItemBuilder()..update(updates))._build();
 
-  _$DigestNotableItem._(
-      {required this.id,
-      this.source_,
-      this.externalId,
-      this.kind,
-      required this.seq,
-      this.title,
-      this.live,
-      this.observedAt,
-      this.effectiveTime,
-      this.rankValue,
-      this.link})
-      : super._();
+  _$DigestNotableItem._({
+    required this.id,
+    this.source_,
+    this.externalId,
+    this.kind,
+    required this.seq,
+    this.title,
+    this.live,
+    this.observedAt,
+    this.effectiveTime,
+    this.rankValue,
+    this.link,
+  }) : super._();
   @override
   DigestNotableItem rebuild(void Function(DigestNotableItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -194,15 +194,22 @@ class DigestNotableItemBuilder
   DigestNotableItem build() => _build();
 
   _$DigestNotableItem _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestNotableItem._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'DigestNotableItem', 'id'),
+            id,
+            r'DigestNotableItem',
+            'id',
+          ),
           source_: source_,
           externalId: externalId,
           kind: kind,
           seq: BuiltValueNullFieldError.checkNotNull(
-              seq, r'DigestNotableItem', 'seq'),
+            seq,
+            r'DigestNotableItem',
+            'seq',
+          ),
           title: title,
           live: live,
           observedAt: observedAt,

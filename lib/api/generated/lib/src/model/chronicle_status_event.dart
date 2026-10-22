@@ -65,7 +65,7 @@ class _$ChronicleStatusEventSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleStatusEvent,
-    _$ChronicleStatusEvent
+    _$ChronicleStatusEvent,
   ];
 
   @override
@@ -90,8 +90,9 @@ class _$ChronicleStatusEventSerializer
       yield r'previousStatus';
       yield serializers.serialize(
         object.previousStatus,
-        specifiedType:
-            const FullType.nullable(ChronicleStatusEventPreviousStatusEnum),
+        specifiedType: const FullType.nullable(
+          ChronicleStatusEventPreviousStatusEnum,
+        ),
       );
     }
     if (object.capState != null) {
@@ -128,9 +129,11 @@ class _$ChronicleStatusEventSerializer
     ChronicleStatusEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -146,58 +149,76 @@ class _$ChronicleStatusEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chronicleId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleStatusEventStatusEnum),
-          ) as ChronicleStatusEventStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleStatusEventStatusEnum,
+                    ),
+                  )
+                  as ChronicleStatusEventStatusEnum;
           result.status = valueDes;
           break;
         case r'previousStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ChronicleStatusEventPreviousStatusEnum),
-          ) as ChronicleStatusEventPreviousStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleStatusEventPreviousStatusEnum,
+                    ),
+                  )
+                  as ChronicleStatusEventPreviousStatusEnum?;
           if (valueDes == null) continue;
           result.previousStatus = valueDes;
           break;
         case r'capState':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ChronicleStatusEventCapStateEnum),
-          ) as ChronicleStatusEventCapStateEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleStatusEventCapStateEnum,
+                    ),
+                  )
+                  as ChronicleStatusEventCapStateEnum?;
           if (valueDes == null) continue;
           result.capState = valueDes;
           break;
         case r'bytesUsed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.bytesUsed = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

@@ -23,26 +23,24 @@ class _$BenchmarkCaseExpectationsFindingsInner
   @override
   final FindingSeverity? minSeverity;
 
-  factory _$BenchmarkCaseExpectationsFindingsInner(
-          [void Function(BenchmarkCaseExpectationsFindingsInnerBuilder)?
-              updates]) =>
-      (BenchmarkCaseExpectationsFindingsInnerBuilder()..update(updates))
-          ._build();
+  factory _$BenchmarkCaseExpectationsFindingsInner([
+    void Function(BenchmarkCaseExpectationsFindingsInnerBuilder)? updates,
+  ]) => (BenchmarkCaseExpectationsFindingsInnerBuilder()..update(updates))
+      ._build();
 
-  _$BenchmarkCaseExpectationsFindingsInner._(
-      {required this.findingType,
-      required this.present,
-      this.regionCodes,
-      this.seriesRef,
-      this.from,
-      this.to,
-      this.minSeverity})
-      : super._();
+  _$BenchmarkCaseExpectationsFindingsInner._({
+    required this.findingType,
+    required this.present,
+    this.regionCodes,
+    this.seriesRef,
+    this.from,
+    this.to,
+    this.minSeverity,
+  }) : super._();
   @override
   BenchmarkCaseExpectationsFindingsInner rebuild(
-          void Function(BenchmarkCaseExpectationsFindingsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkCaseExpectationsFindingsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkCaseExpectationsFindingsInnerBuilder toBuilder() =>
@@ -78,7 +76,8 @@ class _$BenchmarkCaseExpectationsFindingsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'BenchmarkCaseExpectationsFindingsInner')
+            r'BenchmarkCaseExpectationsFindingsInner',
+          )
           ..add('findingType', findingType)
           ..add('present', present)
           ..add('regionCodes', regionCodes)
@@ -92,8 +91,10 @@ class _$BenchmarkCaseExpectationsFindingsInner
 
 class BenchmarkCaseExpectationsFindingsInnerBuilder
     implements
-        Builder<BenchmarkCaseExpectationsFindingsInner,
-            BenchmarkCaseExpectationsFindingsInnerBuilder> {
+        Builder<
+          BenchmarkCaseExpectationsFindingsInner,
+          BenchmarkCaseExpectationsFindingsInnerBuilder
+        > {
   _$BenchmarkCaseExpectationsFindingsInner? _$v;
 
   String? _findingType;
@@ -153,7 +154,8 @@ class BenchmarkCaseExpectationsFindingsInnerBuilder
 
   @override
   void update(
-      void Function(BenchmarkCaseExpectationsFindingsInnerBuilder)? updates) {
+    void Function(BenchmarkCaseExpectationsFindingsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -163,12 +165,19 @@ class BenchmarkCaseExpectationsFindingsInnerBuilder
   _$BenchmarkCaseExpectationsFindingsInner _build() {
     _$BenchmarkCaseExpectationsFindingsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkCaseExpectationsFindingsInner._(
-            findingType: BuiltValueNullFieldError.checkNotNull(findingType,
-                r'BenchmarkCaseExpectationsFindingsInner', 'findingType'),
+            findingType: BuiltValueNullFieldError.checkNotNull(
+              findingType,
+              r'BenchmarkCaseExpectationsFindingsInner',
+              'findingType',
+            ),
             present: BuiltValueNullFieldError.checkNotNull(
-                present, r'BenchmarkCaseExpectationsFindingsInner', 'present'),
+              present,
+              r'BenchmarkCaseExpectationsFindingsInner',
+              'present',
+            ),
             regionCodes: _regionCodes?.build(),
             seriesRef: seriesRef,
             from: from,
@@ -182,9 +191,10 @@ class BenchmarkCaseExpectationsFindingsInnerBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkCaseExpectationsFindingsInner',
-            _$failedField,
-            e.toString());
+          r'BenchmarkCaseExpectationsFindingsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

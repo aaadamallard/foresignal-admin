@@ -52,8 +52,9 @@ class _$UpdateTokenRequestSerializer
         ? null
         : serializers.serialize(
             object.licencePolicy,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(UpdateTokenRequestLicencePolicyEnum)]),
+            specifiedType: const FullType.nullable(BuiltList, [
+              FullType(UpdateTokenRequestLicencePolicyEnum),
+            ]),
           );
   }
 
@@ -63,9 +64,11 @@ class _$UpdateTokenRequestSerializer
     UpdateTokenRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,11 +84,14 @@ class _$UpdateTokenRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'licencePolicy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(UpdateTokenRequestLicencePolicyEnum)]),
-          ) as BuiltList<UpdateTokenRequestLicencePolicyEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(UpdateTokenRequestLicencePolicyEnum),
+                    ]),
+                  )
+                  as BuiltList<UpdateTokenRequestLicencePolicyEnum>?;
           if (valueDes == null) continue;
           result.licencePolicy.replace(valueDes);
           break;

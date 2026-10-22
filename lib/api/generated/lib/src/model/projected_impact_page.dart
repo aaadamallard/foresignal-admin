@@ -42,7 +42,7 @@ class _$ProjectedImpactPageSerializer
   @override
   final Iterable<Type> types = const [
     ProjectedImpactPage,
-    _$ProjectedImpactPage
+    _$ProjectedImpactPage,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$ProjectedImpactPageSerializer
     ProjectedImpactPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +93,23 @@ class _$ProjectedImpactPageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ProjectedImpact)]),
-          ) as BuiltList<ProjectedImpact>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ProjectedImpact),
+                    ]),
+                  )
+                  as BuiltList<ProjectedImpact>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

@@ -54,9 +54,9 @@ abstract class PrecursorCandidateInput
 
   PrecursorCandidateInput._();
 
-  factory PrecursorCandidateInput(
-          [void updates(PrecursorCandidateInputBuilder b)]) =
-      _$PrecursorCandidateInput;
+  factory PrecursorCandidateInput([
+    void updates(PrecursorCandidateInputBuilder b),
+  ]) = _$PrecursorCandidateInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorCandidateInputBuilder b) => b;
@@ -71,7 +71,7 @@ class _$PrecursorCandidateInputSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorCandidateInput,
-    _$PrecursorCandidateInput
+    _$PrecursorCandidateInput,
   ];
 
   @override
@@ -138,9 +138,11 @@ class _$PrecursorCandidateInputSerializer
     PrecursorCandidateInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,63 +158,82 @@ class _$PrecursorCandidateInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorCandidateInputKindEnum),
-          ) as PrecursorCandidateInputKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PrecursorCandidateInputKindEnum,
+                    ),
+                  )
+                  as PrecursorCandidateInputKindEnum;
           result.kind = valueDes;
           break;
         case r'antecedent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorSide),
-          ) as PrecursorSide;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorSide),
+                  )
+                  as PrecursorSide;
           result.antecedent.replace(valueDes);
           break;
         case r'consequent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PrecursorSide),
-          ) as PrecursorSide;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(PrecursorSide),
+                  )
+                  as PrecursorSide;
           result.consequent.replace(valueDes);
           break;
         case r'spatial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PrecursorSpatial),
-          ) as PrecursorSpatial?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PrecursorSpatial),
+                  )
+                  as PrecursorSpatial?;
           if (valueDes == null) continue;
           result.spatial.replace(valueDes);
           break;
         case r'lagMin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lagMin = valueDes;
           break;
         case r'lagMax':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.lagMax = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;

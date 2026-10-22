@@ -16,17 +16,20 @@ class _$ForecastResolutionInput extends ForecastResolutionInput {
   @override
   final String? note;
 
-  factory _$ForecastResolutionInput(
-          [void Function(ForecastResolutionInputBuilder)? updates]) =>
-      (ForecastResolutionInputBuilder()..update(updates))._build();
+  factory _$ForecastResolutionInput([
+    void Function(ForecastResolutionInputBuilder)? updates,
+  ]) => (ForecastResolutionInputBuilder()..update(updates))._build();
 
-  _$ForecastResolutionInput._(
-      {this.outcome, this.value, required this.evidence, this.note})
-      : super._();
+  _$ForecastResolutionInput._({
+    this.outcome,
+    this.value,
+    required this.evidence,
+    this.note,
+  }) : super._();
   @override
   ForecastResolutionInput rebuild(
-          void Function(ForecastResolutionInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastResolutionInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastResolutionInputBuilder toBuilder() =>
@@ -118,7 +121,8 @@ class ForecastResolutionInputBuilder
   _$ForecastResolutionInput _build() {
     _$ForecastResolutionInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastResolutionInput._(
             outcome: outcome,
             value: value,
@@ -132,7 +136,10 @@ class ForecastResolutionInputBuilder
         evidence.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastResolutionInput', _$failedField, e.toString());
+          r'ForecastResolutionInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

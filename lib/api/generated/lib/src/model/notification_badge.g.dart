@@ -14,13 +14,15 @@ class _$NotificationBadge extends NotificationBadge {
   @override
   final int? latestId;
 
-  factory _$NotificationBadge(
-          [void Function(NotificationBadgeBuilder)? updates]) =>
-      (NotificationBadgeBuilder()..update(updates))._build();
+  factory _$NotificationBadge([
+    void Function(NotificationBadgeBuilder)? updates,
+  ]) => (NotificationBadgeBuilder()..update(updates))._build();
 
-  _$NotificationBadge._(
-      {required this.unread, required this.unreadCritical, this.latestId})
-      : super._();
+  _$NotificationBadge._({
+    required this.unread,
+    required this.unreadCritical,
+    this.latestId,
+  }) : super._();
   @override
   NotificationBadge rebuild(void Function(NotificationBadgeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -104,12 +106,19 @@ class NotificationBadgeBuilder
   NotificationBadge build() => _build();
 
   _$NotificationBadge _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NotificationBadge._(
           unread: BuiltValueNullFieldError.checkNotNull(
-              unread, r'NotificationBadge', 'unread'),
+            unread,
+            r'NotificationBadge',
+            'unread',
+          ),
           unreadCritical: BuiltValueNullFieldError.checkNotNull(
-              unreadCritical, r'NotificationBadge', 'unreadCritical'),
+            unreadCritical,
+            r'NotificationBadge',
+            'unreadCritical',
+          ),
           latestId: latestId,
         );
     replace(_$result);

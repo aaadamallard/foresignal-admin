@@ -21,13 +21,13 @@ class _$RecordEvidence extends RecordEvidence {
   factory _$RecordEvidence([void Function(RecordEvidenceBuilder)? updates]) =>
       (RecordEvidenceBuilder()..update(updates))._build();
 
-  _$RecordEvidence._(
-      {required this.sourceId,
-      required this.externalId,
-      required this.originator,
-      required this.links,
-      required this.canonicalEvents})
-      : super._();
+  _$RecordEvidence._({
+    required this.sourceId,
+    required this.externalId,
+    required this.originator,
+    required this.links,
+    required this.canonicalEvents,
+  }) : super._();
   @override
   RecordEvidence rebuild(void Function(RecordEvidenceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -132,12 +132,19 @@ class RecordEvidenceBuilder
   _$RecordEvidence _build() {
     _$RecordEvidence _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecordEvidence._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'RecordEvidence', 'sourceId'),
+              sourceId,
+              r'RecordEvidence',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'RecordEvidence', 'externalId'),
+              externalId,
+              r'RecordEvidence',
+              'externalId',
+            ),
             originator: originator.build(),
             links: links.build(),
             canonicalEvents: canonicalEvents.build(),
@@ -153,7 +160,10 @@ class RecordEvidenceBuilder
         canonicalEvents.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecordEvidence', _$failedField, e.toString());
+          r'RecordEvidence',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

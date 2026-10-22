@@ -15,17 +15,19 @@ class _$ExportLicenceSummaryLicencesInner
   @override
   final int rows;
 
-  factory _$ExportLicenceSummaryLicencesInner(
-          [void Function(ExportLicenceSummaryLicencesInnerBuilder)? updates]) =>
-      (ExportLicenceSummaryLicencesInnerBuilder()..update(updates))._build();
+  factory _$ExportLicenceSummaryLicencesInner([
+    void Function(ExportLicenceSummaryLicencesInnerBuilder)? updates,
+  ]) => (ExportLicenceSummaryLicencesInnerBuilder()..update(updates))._build();
 
-  _$ExportLicenceSummaryLicencesInner._(
-      {required this.terms, required this.sources, required this.rows})
-      : super._();
+  _$ExportLicenceSummaryLicencesInner._({
+    required this.terms,
+    required this.sources,
+    required this.rows,
+  }) : super._();
   @override
   ExportLicenceSummaryLicencesInner rebuild(
-          void Function(ExportLicenceSummaryLicencesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExportLicenceSummaryLicencesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExportLicenceSummaryLicencesInnerBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$ExportLicenceSummaryLicencesInner
 
 class ExportLicenceSummaryLicencesInnerBuilder
     implements
-        Builder<ExportLicenceSummaryLicencesInner,
-            ExportLicenceSummaryLicencesInnerBuilder> {
+        Builder<
+          ExportLicenceSummaryLicencesInner,
+          ExportLicenceSummaryLicencesInnerBuilder
+        > {
   _$ExportLicenceSummaryLicencesInner? _$v;
 
   LicenceTermsBuilder? _terms;
@@ -100,7 +104,8 @@ class ExportLicenceSummaryLicencesInnerBuilder
 
   @override
   void update(
-      void Function(ExportLicenceSummaryLicencesInnerBuilder)? updates) {
+    void Function(ExportLicenceSummaryLicencesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -110,12 +115,16 @@ class ExportLicenceSummaryLicencesInnerBuilder
   _$ExportLicenceSummaryLicencesInner _build() {
     _$ExportLicenceSummaryLicencesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExportLicenceSummaryLicencesInner._(
             terms: terms.build(),
             sources: sources.build(),
             rows: BuiltValueNullFieldError.checkNotNull(
-                rows, r'ExportLicenceSummaryLicencesInner', 'rows'),
+              rows,
+              r'ExportLicenceSummaryLicencesInner',
+              'rows',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -126,7 +135,10 @@ class ExportLicenceSummaryLicencesInnerBuilder
         sources.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExportLicenceSummaryLicencesInner', _$failedField, e.toString());
+          r'ExportLicenceSummaryLicencesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

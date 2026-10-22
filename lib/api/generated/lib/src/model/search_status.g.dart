@@ -31,18 +31,18 @@ class _$SearchStatus extends SearchStatus {
   factory _$SearchStatus([void Function(SearchStatusBuilder)? updates]) =>
       (SearchStatusBuilder()..update(updates))._build();
 
-  _$SearchStatus._(
-      {required this.semanticEnabled,
-      this.reason,
-      this.model,
-      this.dimensions,
-      required this.documents,
-      this.backlog,
-      this.reindexing,
-      this.activeModel,
-      this.reindex,
-      this.degraded})
-      : super._();
+  _$SearchStatus._({
+    required this.semanticEnabled,
+    this.reason,
+    this.model,
+    this.dimensions,
+    required this.documents,
+    this.backlog,
+    this.reindexing,
+    this.activeModel,
+    this.reindex,
+    this.degraded,
+  }) : super._();
   @override
   SearchStatus rebuild(void Function(SearchStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -184,15 +184,22 @@ class SearchStatusBuilder
   _$SearchStatus _build() {
     _$SearchStatus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SearchStatus._(
             semanticEnabled: BuiltValueNullFieldError.checkNotNull(
-                semanticEnabled, r'SearchStatus', 'semanticEnabled'),
+              semanticEnabled,
+              r'SearchStatus',
+              'semanticEnabled',
+            ),
             reason: reason,
             model: model,
             dimensions: dimensions,
             documents: BuiltValueNullFieldError.checkNotNull(
-                documents, r'SearchStatus', 'documents'),
+              documents,
+              r'SearchStatus',
+              'documents',
+            ),
             backlog: backlog,
             reindexing: reindexing,
             activeModel: activeModel,
@@ -206,7 +213,10 @@ class SearchStatusBuilder
         _reindex?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SearchStatus', _$failedField, e.toString());
+          r'SearchStatus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

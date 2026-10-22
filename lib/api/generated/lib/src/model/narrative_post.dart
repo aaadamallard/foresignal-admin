@@ -100,9 +100,11 @@ class _$NarrativePostSerializer implements PrimitiveSerializer<NarrativePost> {
     NarrativePost object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,38 +120,48 @@ class _$NarrativePostSerializer implements PrimitiveSerializer<NarrativePost> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'post':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialPost),
-          ) as SocialPost;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialPost),
+                  )
+                  as SocialPost;
           result.post.replace(valueDes);
           break;
         case r'linkReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NarrativePostLinkReasonEnum),
-          ) as NarrativePostLinkReasonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(NarrativePostLinkReasonEnum),
+                  )
+                  as NarrativePostLinkReasonEnum;
           result.linkReason = valueDes;
           break;
         case r'evidenceGroupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.evidenceGroupId = valueDes;
           break;
         case r'joinedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.joinedAt = valueDes;
           break;
         case r'centrality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.centrality = valueDes;
           break;

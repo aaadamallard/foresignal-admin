@@ -39,8 +39,9 @@ abstract class OutlookPublishedEvent
 
   OutlookPublishedEvent._();
 
-  factory OutlookPublishedEvent(
-      [void updates(OutlookPublishedEventBuilder b)]) = _$OutlookPublishedEvent;
+  factory OutlookPublishedEvent([
+    void updates(OutlookPublishedEventBuilder b),
+  ]) = _$OutlookPublishedEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OutlookPublishedEventBuilder b) => b;
@@ -55,7 +56,7 @@ class _$OutlookPublishedEventSerializer
   @override
   final Iterable<Type> types = const [
     OutlookPublishedEvent,
-    _$OutlookPublishedEvent
+    _$OutlookPublishedEvent,
   ];
 
   @override
@@ -103,9 +104,11 @@ class _$OutlookPublishedEventSerializer
     OutlookPublishedEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,40 +124,51 @@ class _$OutlookPublishedEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'region':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.region = valueDes;
           break;
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'publishedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.publishedAt = valueDes;
           break;
         case r'windows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(OutlookWindow)]),
-          ) as BuiltList<OutlookWindow>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(OutlookWindow),
+                    ]),
+                  )
+                  as BuiltList<OutlookWindow>?;
           if (valueDes == null) continue;
           result.windows.replace(valueDes);
           break;
         case r'recordRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.recordRef = valueDes;
           break;

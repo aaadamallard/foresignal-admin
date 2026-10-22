@@ -116,8 +116,10 @@ class _$EventSelectorSerializer implements PrimitiveSerializer<EventSelector> {
       yield r'rule';
       yield serializers.serialize(
         object.rule,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.alertRuleId != null) {
@@ -219,9 +221,11 @@ class _$EventSelectorSerializer implements PrimitiveSerializer<EventSelector> {
     EventSelector object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -237,120 +241,157 @@ class _$EventSelectorSerializer implements PrimitiveSerializer<EventSelector> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'rule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.rule.replace(valueDes);
           break;
         case r'alertRuleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.alertRuleId = valueDes;
           break;
         case r'alertRuleTag':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.alertRuleTag = valueDes;
           break;
         case r'intelEventType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.intelEventType = valueDes;
           break;
         case r'anomalyRuleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.anomalyRuleId = valueDes;
           break;
         case r'classification':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.classification = valueDes;
           break;
         case r'situationActivated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EventSelectorSituationActivated),
-          ) as EventSelectorSituationActivated?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EventSelectorSituationActivated,
+                    ),
+                  )
+                  as EventSelectorSituationActivated?;
           if (valueDes == null) continue;
           result.situationActivated.replace(valueDes);
           break;
         case r'changePoint':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(EventSelectorChangePoint),
-          ) as EventSelectorChangePoint?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EventSelectorChangePoint,
+                    ),
+                  )
+                  as EventSelectorChangePoint?;
           if (valueDes == null) continue;
           result.changePoint.replace(valueDes);
           break;
         case r'unexplainedMove':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EventSelectorUnexplainedMove),
-          ) as EventSelectorUnexplainedMove?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EventSelectorUnexplainedMove,
+                    ),
+                  )
+                  as EventSelectorUnexplainedMove?;
           if (valueDes == null) continue;
           result.unexplainedMove.replace(valueDes);
           break;
         case r'referenceFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.referenceFamily = valueDes;
           break;
         case r'timestamps':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(DateTime)]),
-          ) as BuiltList<DateTime>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DateTime),
+                    ]),
+                  )
+                  as BuiltList<DateTime>?;
           if (valueDes == null) continue;
           result.timestamps.replace(valueDes);
           break;
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EventSelectorMinSeverityEnum),
-          ) as EventSelectorMinSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EventSelectorMinSeverityEnum,
+                    ),
+                  )
+                  as EventSelectorMinSeverityEnum?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;

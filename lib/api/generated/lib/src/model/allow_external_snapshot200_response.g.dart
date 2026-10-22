@@ -15,17 +15,19 @@ class _$AllowExternalSnapshot200Response
   @override
   final IngestOutcome outcome;
 
-  factory _$AllowExternalSnapshot200Response(
-          [void Function(AllowExternalSnapshot200ResponseBuilder)? updates]) =>
-      (AllowExternalSnapshot200ResponseBuilder()..update(updates))._build();
+  factory _$AllowExternalSnapshot200Response([
+    void Function(AllowExternalSnapshot200ResponseBuilder)? updates,
+  ]) => (AllowExternalSnapshot200ResponseBuilder()..update(updates))._build();
 
-  _$AllowExternalSnapshot200Response._(
-      {required this.snapshotId, required this.removed, required this.outcome})
-      : super._();
+  _$AllowExternalSnapshot200Response._({
+    required this.snapshotId,
+    required this.removed,
+    required this.outcome,
+  }) : super._();
   @override
   AllowExternalSnapshot200Response rebuild(
-          void Function(AllowExternalSnapshot200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AllowExternalSnapshot200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AllowExternalSnapshot200ResponseBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$AllowExternalSnapshot200Response
 
 class AllowExternalSnapshot200ResponseBuilder
     implements
-        Builder<AllowExternalSnapshot200Response,
-            AllowExternalSnapshot200ResponseBuilder> {
+        Builder<
+          AllowExternalSnapshot200Response,
+          AllowExternalSnapshot200ResponseBuilder
+        > {
   _$AllowExternalSnapshot200Response? _$v;
 
   String? _snapshotId;
@@ -110,12 +114,19 @@ class AllowExternalSnapshot200ResponseBuilder
   _$AllowExternalSnapshot200Response _build() {
     _$AllowExternalSnapshot200Response _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AllowExternalSnapshot200Response._(
             snapshotId: BuiltValueNullFieldError.checkNotNull(
-                snapshotId, r'AllowExternalSnapshot200Response', 'snapshotId'),
+              snapshotId,
+              r'AllowExternalSnapshot200Response',
+              'snapshotId',
+            ),
             removed: BuiltValueNullFieldError.checkNotNull(
-                removed, r'AllowExternalSnapshot200Response', 'removed'),
+              removed,
+              r'AllowExternalSnapshot200Response',
+              'removed',
+            ),
             outcome: outcome.build(),
           );
     } catch (_) {
@@ -125,7 +136,10 @@ class AllowExternalSnapshot200ResponseBuilder
         outcome.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AllowExternalSnapshot200Response', _$failedField, e.toString());
+          r'AllowExternalSnapshot200Response',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

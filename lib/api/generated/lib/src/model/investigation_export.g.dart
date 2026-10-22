@@ -16,20 +16,20 @@ class _$InvestigationExport extends InvestigationExport {
   @override
   final BuiltList<String> attributions;
 
-  factory _$InvestigationExport(
-          [void Function(InvestigationExportBuilder)? updates]) =>
-      (InvestigationExportBuilder()..update(updates))._build();
+  factory _$InvestigationExport([
+    void Function(InvestigationExportBuilder)? updates,
+  ]) => (InvestigationExportBuilder()..update(updates))._build();
 
-  _$InvestigationExport._(
-      {required this.header,
-      required this.generatedAt,
-      required this.investigation,
-      required this.attributions})
-      : super._();
+  _$InvestigationExport._({
+    required this.header,
+    required this.generatedAt,
+    required this.investigation,
+    required this.attributions,
+  }) : super._();
   @override
   InvestigationExport rebuild(
-          void Function(InvestigationExportBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InvestigationExportBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InvestigationExportBuilder toBuilder() =>
@@ -123,12 +123,19 @@ class InvestigationExportBuilder
   _$InvestigationExport _build() {
     _$InvestigationExport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InvestigationExport._(
             header: BuiltValueNullFieldError.checkNotNull(
-                header, r'InvestigationExport', 'header'),
+              header,
+              r'InvestigationExport',
+              'header',
+            ),
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'InvestigationExport', 'generatedAt'),
+              generatedAt,
+              r'InvestigationExport',
+              'generatedAt',
+            ),
             investigation: investigation.build(),
             attributions: attributions.build(),
           );
@@ -141,7 +148,10 @@ class InvestigationExportBuilder
         attributions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InvestigationExport', _$failedField, e.toString());
+          r'InvestigationExport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

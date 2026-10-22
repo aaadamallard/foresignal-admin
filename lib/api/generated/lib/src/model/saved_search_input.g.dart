@@ -18,17 +18,17 @@ class _$SavedSearchInput extends SavedSearchInput {
   @override
   final bool? notify;
 
-  factory _$SavedSearchInput(
-          [void Function(SavedSearchInputBuilder)? updates]) =>
-      (SavedSearchInputBuilder()..update(updates))._build();
+  factory _$SavedSearchInput([
+    void Function(SavedSearchInputBuilder)? updates,
+  ]) => (SavedSearchInputBuilder()..update(updates))._build();
 
-  _$SavedSearchInput._(
-      {required this.name,
-      required this.query,
-      this.visibility,
-      this.tlp,
-      this.notify})
-      : super._();
+  _$SavedSearchInput._({
+    required this.name,
+    required this.query,
+    this.visibility,
+    this.tlp,
+    this.notify,
+  }) : super._();
   @override
   SavedSearchInput rebuild(void Function(SavedSearchInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -130,10 +130,14 @@ class SavedSearchInputBuilder
   _$SavedSearchInput _build() {
     _$SavedSearchInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearchInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SavedSearchInput', 'name'),
+              name,
+              r'SavedSearchInput',
+              'name',
+            ),
             query: query.build(),
             visibility: visibility,
             tlp: tlp,
@@ -146,7 +150,10 @@ class SavedSearchInputBuilder
         query.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchInput', _$failedField, e.toString());
+          r'SavedSearchInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

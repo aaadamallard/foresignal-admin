@@ -7,11 +7,12 @@ part of 'forecast_submitted_event.dart';
 // **************************************************************************
 
 const ForecastSubmittedEventEventEnum
-    _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted =
+_$forecastSubmittedEventEventEnum_forecastPeriodSubmitted =
     const ForecastSubmittedEventEventEnum._('forecastPeriodSubmitted');
 
 ForecastSubmittedEventEventEnum _$forecastSubmittedEventEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'forecastPeriodSubmitted':
       return _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted;
@@ -21,13 +22,15 @@ ForecastSubmittedEventEventEnum _$forecastSubmittedEventEventEnumValueOf(
 }
 
 final BuiltSet<ForecastSubmittedEventEventEnum>
-    _$forecastSubmittedEventEventEnumValues = BuiltSet<
-        ForecastSubmittedEventEventEnum>(const <ForecastSubmittedEventEventEnum>[
-  _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted,
-]);
+_$forecastSubmittedEventEventEnumValues =
+    BuiltSet<ForecastSubmittedEventEventEnum>(
+      const <ForecastSubmittedEventEventEnum>[
+        _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted,
+      ],
+    );
 
 Serializer<ForecastSubmittedEventEventEnum>
-    _$forecastSubmittedEventEventEnumSerializer =
+_$forecastSubmittedEventEventEnumSerializer =
     _$ForecastSubmittedEventEventEnumSerializer();
 
 class _$ForecastSubmittedEventEventEnumSerializer
@@ -46,16 +49,19 @@ class _$ForecastSubmittedEventEventEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecastSubmittedEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecastSubmittedEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecastSubmittedEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecastSubmittedEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecastSubmittedEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecastSubmittedEvent extends ForecastSubmittedEvent {
@@ -76,24 +82,24 @@ class _$ForecastSubmittedEvent extends ForecastSubmittedEvent {
   @override
   final bool? private;
 
-  factory _$ForecastSubmittedEvent(
-          [void Function(ForecastSubmittedEventBuilder)? updates]) =>
-      (ForecastSubmittedEventBuilder()..update(updates))._build();
+  factory _$ForecastSubmittedEvent([
+    void Function(ForecastSubmittedEventBuilder)? updates,
+  ]) => (ForecastSubmittedEventBuilder()..update(updates))._build();
 
-  _$ForecastSubmittedEvent._(
-      {required this.event,
-      required this.questionId,
-      required this.forecastId,
-      required this.forecasterId,
-      required this.madeAt,
-      this.probability,
-      this.estimativeTerm,
-      this.private})
-      : super._();
+  _$ForecastSubmittedEvent._({
+    required this.event,
+    required this.questionId,
+    required this.forecastId,
+    required this.forecasterId,
+    required this.madeAt,
+    this.probability,
+    this.estimativeTerm,
+    this.private,
+  }) : super._();
   @override
   ForecastSubmittedEvent rebuild(
-          void Function(ForecastSubmittedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastSubmittedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastSubmittedEventBuilder toBuilder() =>
@@ -214,18 +220,34 @@ class ForecastSubmittedEventBuilder
   ForecastSubmittedEvent build() => _build();
 
   _$ForecastSubmittedEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastSubmittedEvent._(
           event: BuiltValueNullFieldError.checkNotNull(
-              event, r'ForecastSubmittedEvent', 'event'),
+            event,
+            r'ForecastSubmittedEvent',
+            'event',
+          ),
           questionId: BuiltValueNullFieldError.checkNotNull(
-              questionId, r'ForecastSubmittedEvent', 'questionId'),
+            questionId,
+            r'ForecastSubmittedEvent',
+            'questionId',
+          ),
           forecastId: BuiltValueNullFieldError.checkNotNull(
-              forecastId, r'ForecastSubmittedEvent', 'forecastId'),
+            forecastId,
+            r'ForecastSubmittedEvent',
+            'forecastId',
+          ),
           forecasterId: BuiltValueNullFieldError.checkNotNull(
-              forecasterId, r'ForecastSubmittedEvent', 'forecasterId'),
+            forecasterId,
+            r'ForecastSubmittedEvent',
+            'forecasterId',
+          ),
           madeAt: BuiltValueNullFieldError.checkNotNull(
-              madeAt, r'ForecastSubmittedEvent', 'madeAt'),
+            madeAt,
+            r'ForecastSubmittedEvent',
+            'madeAt',
+          ),
           probability: probability,
           estimativeTerm: estimativeTerm,
           private: private,

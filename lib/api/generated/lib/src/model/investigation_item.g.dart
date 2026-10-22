@@ -17,12 +17,12 @@ const InvestigationItemItemTypeEnum _$investigationItemItemTypeEnum_anomaly =
 const InvestigationItemItemTypeEnum _$investigationItemItemTypeEnum_place =
     const InvestigationItemItemTypeEnum._('place');
 const InvestigationItemItemTypeEnum
-    _$investigationItemItemTypeEnum_briefingRun =
+_$investigationItemItemTypeEnum_briefingRun =
     const InvestigationItemItemTypeEnum._('briefingRun');
 const InvestigationItemItemTypeEnum _$investigationItemItemTypeEnum_note =
     const InvestigationItemItemTypeEnum._('note');
 const InvestigationItemItemTypeEnum
-    _$investigationItemItemTypeEnum_evidenceItem =
+_$investigationItemItemTypeEnum_evidenceItem =
     const InvestigationItemItemTypeEnum._('evidenceItem');
 const InvestigationItemItemTypeEnum _$investigationItemItemTypeEnum_attachment =
     const InvestigationItemItemTypeEnum._('attachment');
@@ -30,7 +30,8 @@ const InvestigationItemItemTypeEnum _$investigationItemItemTypeEnum_object =
     const InvestigationItemItemTypeEnum._('object');
 
 InvestigationItemItemTypeEnum _$investigationItemItemTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'event':
       return _$investigationItemItemTypeEnum_event;
@@ -58,22 +59,23 @@ InvestigationItemItemTypeEnum _$investigationItemItemTypeEnumValueOf(
 }
 
 final BuiltSet<InvestigationItemItemTypeEnum>
-    _$investigationItemItemTypeEnumValues = BuiltSet<
-        InvestigationItemItemTypeEnum>(const <InvestigationItemItemTypeEnum>[
-  _$investigationItemItemTypeEnum_event,
-  _$investigationItemItemTypeEnum_alert,
-  _$investigationItemItemTypeEnum_record,
-  _$investigationItemItemTypeEnum_anomaly,
-  _$investigationItemItemTypeEnum_place,
-  _$investigationItemItemTypeEnum_briefingRun,
-  _$investigationItemItemTypeEnum_note,
-  _$investigationItemItemTypeEnum_evidenceItem,
-  _$investigationItemItemTypeEnum_attachment,
-  _$investigationItemItemTypeEnum_object,
-]);
+_$investigationItemItemTypeEnumValues = BuiltSet<InvestigationItemItemTypeEnum>(
+  const <InvestigationItemItemTypeEnum>[
+    _$investigationItemItemTypeEnum_event,
+    _$investigationItemItemTypeEnum_alert,
+    _$investigationItemItemTypeEnum_record,
+    _$investigationItemItemTypeEnum_anomaly,
+    _$investigationItemItemTypeEnum_place,
+    _$investigationItemItemTypeEnum_briefingRun,
+    _$investigationItemItemTypeEnum_note,
+    _$investigationItemItemTypeEnum_evidenceItem,
+    _$investigationItemItemTypeEnum_attachment,
+    _$investigationItemItemTypeEnum_object,
+  ],
+);
 
 Serializer<InvestigationItemItemTypeEnum>
-    _$investigationItemItemTypeEnumSerializer =
+_$investigationItemItemTypeEnumSerializer =
     _$InvestigationItemItemTypeEnumSerializer();
 
 class _$InvestigationItemItemTypeEnumSerializer
@@ -110,16 +112,19 @@ class _$InvestigationItemItemTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, InvestigationItemItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    InvestigationItemItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InvestigationItemItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InvestigationItemItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InvestigationItemItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InvestigationItem extends InvestigationItem {
@@ -142,21 +147,21 @@ class _$InvestigationItem extends InvestigationItem {
   @override
   final String? objectRef;
 
-  factory _$InvestigationItem(
-          [void Function(InvestigationItemBuilder)? updates]) =>
-      (InvestigationItemBuilder()..update(updates))._build();
+  factory _$InvestigationItem([
+    void Function(InvestigationItemBuilder)? updates,
+  ]) => (InvestigationItemBuilder()..update(updates))._build();
 
-  _$InvestigationItem._(
-      {required this.id,
-      required this.itemType,
-      required this.ref,
-      this.seq,
-      this.snapshot,
-      this.note,
-      required this.addedAt,
-      required this.addedBy,
-      this.objectRef})
-      : super._();
+  _$InvestigationItem._({
+    required this.id,
+    required this.itemType,
+    required this.ref,
+    this.seq,
+    this.snapshot,
+    this.note,
+    required this.addedAt,
+    required this.addedBy,
+    this.objectRef,
+  }) : super._();
   @override
   InvestigationItem rebuild(void Function(InvestigationItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -292,21 +297,37 @@ class InvestigationItemBuilder
   _$InvestigationItem _build() {
     _$InvestigationItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InvestigationItem._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'InvestigationItem', 'id'),
+              id,
+              r'InvestigationItem',
+              'id',
+            ),
             itemType: BuiltValueNullFieldError.checkNotNull(
-                itemType, r'InvestigationItem', 'itemType'),
+              itemType,
+              r'InvestigationItem',
+              'itemType',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'InvestigationItem', 'ref'),
+              ref,
+              r'InvestigationItem',
+              'ref',
+            ),
             seq: seq,
             snapshot: _snapshot?.build(),
             note: note,
             addedAt: BuiltValueNullFieldError.checkNotNull(
-                addedAt, r'InvestigationItem', 'addedAt'),
+              addedAt,
+              r'InvestigationItem',
+              'addedAt',
+            ),
             addedBy: BuiltValueNullFieldError.checkNotNull(
-                addedBy, r'InvestigationItem', 'addedBy'),
+              addedBy,
+              r'InvestigationItem',
+              'addedBy',
+            ),
             objectRef: objectRef,
           );
     } catch (_) {
@@ -316,7 +337,10 @@ class InvestigationItemBuilder
         _snapshot?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InvestigationItem', _$failedField, e.toString());
+          r'InvestigationItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

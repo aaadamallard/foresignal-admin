@@ -63,7 +63,7 @@ class _$IngestPolicySampledSerializer
   @override
   final Iterable<Type> types = const [
     IngestPolicySampled,
-    _$IngestPolicySampled
+    _$IngestPolicySampled,
   ];
 
   @override
@@ -120,9 +120,11 @@ class _$IngestPolicySampledSerializer
     IngestPolicySampled object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -138,48 +140,60 @@ class _$IngestPolicySampledSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IngestPolicySampledModeEnum),
-          ) as IngestPolicySampledModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IngestPolicySampledModeEnum),
+                  )
+                  as IngestPolicySampledModeEnum;
           result.mode = valueDes;
           break;
         case r'minInterval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.minInterval = valueDes;
           break;
         case r'keyframe':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.keyframe = valueDes;
           break;
         case r'minDeviationMeters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minDeviationMeters = valueDes;
           break;
         case r'thresholds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.thresholds = valueDes;
           break;
         case r'edgeMinInterval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.edgeMinInterval = valueDes;
           break;

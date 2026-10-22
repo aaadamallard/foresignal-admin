@@ -20,7 +20,7 @@ class _$Coverage extends Coverage {
       (CoverageBuilder()..update(updates))._build();
 
   _$Coverage._({this.receivers, this.expected, this.actual, this.region})
-      : super._();
+    : super._();
   @override
   Coverage rebuild(void Function(CoverageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -111,7 +111,8 @@ class CoverageBuilder implements Builder<Coverage, CoverageBuilder> {
   _$Coverage _build() {
     _$Coverage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Coverage._(
             receivers: receivers,
             expected: expected,
@@ -125,7 +126,10 @@ class CoverageBuilder implements Builder<Coverage, CoverageBuilder> {
         _region?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Coverage', _$failedField, e.toString());
+          r'Coverage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

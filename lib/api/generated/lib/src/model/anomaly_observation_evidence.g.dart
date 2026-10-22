@@ -11,18 +11,18 @@ class _$AnomalyObservationEvidence extends AnomalyObservationEvidence {
   final BuiltList<AnomalyObservationEvidenceSamplesInner>? samples;
   @override
   final BuiltList<AnomalyObservationEvidenceFetchLogRangesInner>?
-      fetchLogRanges;
+  fetchLogRanges;
 
-  factory _$AnomalyObservationEvidence(
-          [void Function(AnomalyObservationEvidenceBuilder)? updates]) =>
-      (AnomalyObservationEvidenceBuilder()..update(updates))._build();
+  factory _$AnomalyObservationEvidence([
+    void Function(AnomalyObservationEvidenceBuilder)? updates,
+  ]) => (AnomalyObservationEvidenceBuilder()..update(updates))._build();
 
   _$AnomalyObservationEvidence._({this.samples, this.fetchLogRanges})
-      : super._();
+    : super._();
   @override
   AnomalyObservationEvidence rebuild(
-          void Function(AnomalyObservationEvidenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyObservationEvidenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyObservationEvidenceBuilder toBuilder() =>
@@ -67,12 +67,11 @@ class AnomalyObservationEvidenceBuilder
 
   ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>? _fetchLogRanges;
   ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>
-      get fetchLogRanges => _$this._fetchLogRanges ??=
-          ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>();
+  get fetchLogRanges => _$this._fetchLogRanges ??=
+      ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>();
   set fetchLogRanges(
-          ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>?
-              fetchLogRanges) =>
-      _$this._fetchLogRanges = fetchLogRanges;
+    ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>? fetchLogRanges,
+  ) => _$this._fetchLogRanges = fetchLogRanges;
 
   AnomalyObservationEvidenceBuilder() {
     AnomalyObservationEvidence._defaults(this);
@@ -104,7 +103,8 @@ class AnomalyObservationEvidenceBuilder
   _$AnomalyObservationEvidence _build() {
     _$AnomalyObservationEvidence _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnomalyObservationEvidence._(
             samples: _samples?.build(),
             fetchLogRanges: _fetchLogRanges?.build(),
@@ -118,7 +118,10 @@ class AnomalyObservationEvidenceBuilder
         _fetchLogRanges?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnomalyObservationEvidence', _$failedField, e.toString());
+          r'AnomalyObservationEvidence',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

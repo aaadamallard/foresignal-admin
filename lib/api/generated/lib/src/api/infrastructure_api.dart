@@ -54,16 +54,10 @@ class InfrastructureApi {
     final _path = r'/v1/infra/affected';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -75,14 +69,13 @@ class InfrastructureApi {
 
     try {
       const _type = FullType(InfraImpactRequest);
-      _bodyData =
-          _serializers.serialize(infraImpactRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        infraImpactRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -105,9 +98,10 @@ class InfrastructureApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraImpactResult),
-            ) as InfraImpactResult;
+                  rawResponse,
+                  specifiedType: const FullType(InfraImpactResult),
+                )
+                as InfraImpactResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -156,21 +150,21 @@ class InfrastructureApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/infra/nodes/{nodeId}'.replaceAll(
-        '{' r'nodeId' '}',
-        encodeQueryParameter(_serializers, nodeId, const FullType(int))
-            .toString());
+      '{'
+      r'nodeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        nodeId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -179,8 +173,11 @@ class InfrastructureApi {
 
     final _queryParameters = <String, dynamic>{
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -199,9 +196,10 @@ class InfrastructureApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraNode),
-            ) as InfraNode;
+                  rawResponse,
+                  specifiedType: const FullType(InfraNode),
+                )
+                as InfraNode;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -248,16 +246,10 @@ class InfrastructureApi {
     final _path = r'/v1/infra/status';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -279,9 +271,10 @@ class InfrastructureApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraStatus),
-            ) as InfraStatus;
+                  rawResponse,
+                  specifiedType: const FullType(InfraStatus),
+                )
+                as InfraStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -340,16 +333,10 @@ class InfrastructureApi {
     final _path = r'/v1/infra/edges';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -358,8 +345,11 @@ class InfrastructureApi {
 
     final _queryParameters = <String, dynamic>{
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (method != null)
         r'method': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -375,14 +365,23 @@ class InfrastructureApi {
           format: ListFormat.multi,
         ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -401,9 +400,10 @@ class InfrastructureApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraEdgePage),
-            ) as InfraEdgePage;
+                  rawResponse,
+                  specifiedType: const FullType(InfraEdgePage),
+                )
+                as InfraEdgePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -462,16 +462,10 @@ class InfrastructureApi {
     final _path = r'/v1/infra/nodes';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -480,8 +474,11 @@ class InfrastructureApi {
 
     final _queryParameters = <String, dynamic>{
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (type != null)
         r'type': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -492,14 +489,23 @@ class InfrastructureApi {
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -518,9 +524,10 @@ class InfrastructureApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraNodePage),
-            ) as InfraNodePage;
+                  rawResponse,
+                  specifiedType: const FullType(InfraNodePage),
+                )
+                as InfraNodePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -567,16 +574,10 @@ class InfrastructureApi {
     final _path = r'/v1/infra/rebuild';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -598,9 +599,10 @@ class InfrastructureApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(InfraBuild),
-            ) as InfraBuild;
+                  rawResponse,
+                  specifiedType: const FullType(InfraBuild),
+                )
+                as InfraBuild;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

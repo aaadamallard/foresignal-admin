@@ -22,9 +22,9 @@ abstract class IngestDeviceSetupTraccar
 
   IngestDeviceSetupTraccar._();
 
-  factory IngestDeviceSetupTraccar(
-          [void updates(IngestDeviceSetupTraccarBuilder b)]) =
-      _$IngestDeviceSetupTraccar;
+  factory IngestDeviceSetupTraccar([
+    void updates(IngestDeviceSetupTraccarBuilder b),
+  ]) = _$IngestDeviceSetupTraccar;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IngestDeviceSetupTraccarBuilder b) => b;
@@ -39,7 +39,7 @@ class _$IngestDeviceSetupTraccarSerializer
   @override
   final Iterable<Type> types = const [
     IngestDeviceSetupTraccar,
-    _$IngestDeviceSetupTraccar
+    _$IngestDeviceSetupTraccar,
   ];
 
   @override
@@ -65,9 +65,11 @@ class _$IngestDeviceSetupTraccarSerializer
     IngestDeviceSetupTraccar object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,10 +85,12 @@ class _$IngestDeviceSetupTraccarSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'serverUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.serverUrl = valueDes;
           break;

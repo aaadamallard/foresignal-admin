@@ -33,9 +33,9 @@ abstract class RegistrationTokenInput
 
   RegistrationTokenInput._();
 
-  factory RegistrationTokenInput(
-          [void updates(RegistrationTokenInputBuilder b)]) =
-      _$RegistrationTokenInput;
+  factory RegistrationTokenInput([
+    void updates(RegistrationTokenInputBuilder b),
+  ]) = _$RegistrationTokenInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RegistrationTokenInputBuilder b) => b;
@@ -50,7 +50,7 @@ class _$RegistrationTokenInputSerializer
   @override
   final Iterable<Type> types = const [
     RegistrationTokenInput,
-    _$RegistrationTokenInput
+    _$RegistrationTokenInput,
   ];
 
   @override
@@ -95,9 +95,11 @@ class _$RegistrationTokenInputSerializer
     RegistrationTokenInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -113,33 +115,41 @@ class _$RegistrationTokenInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'expiresAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expiresAt = valueDes;
           break;
         case r'maxUses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxUses = valueDes;
           break;
         case r'sourceIdPrefix':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceIdPrefix = valueDes;
           break;

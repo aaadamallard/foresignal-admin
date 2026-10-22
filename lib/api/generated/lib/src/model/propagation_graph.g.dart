@@ -38,27 +38,27 @@ class _$PropagationGraph extends PropagationGraph {
   @override
   final String? manifestId;
 
-  factory _$PropagationGraph(
-          [void Function(PropagationGraphBuilder)? updates]) =>
-      (PropagationGraphBuilder()..update(updates))._build();
+  factory _$PropagationGraph([
+    void Function(PropagationGraphBuilder)? updates,
+  ]) => (PropagationGraphBuilder()..update(updates))._build();
 
-  _$PropagationGraph._(
-      {required this.narrativeId,
-      required this.summarised,
-      required this.totalNodes,
-      required this.totalEdges,
-      required this.nodes,
-      required this.edges,
-      required this.earliestByPlatform,
-      this.firstNewsPickup,
-      required this.descentShare,
-      required this.crossPlatformOrder,
-      this.medianRepostDelaySeconds,
-      this.provenanceChain,
-      required this.tracer,
-      required this.computedAt,
-      this.manifestId})
-      : super._();
+  _$PropagationGraph._({
+    required this.narrativeId,
+    required this.summarised,
+    required this.totalNodes,
+    required this.totalEdges,
+    required this.nodes,
+    required this.edges,
+    required this.earliestByPlatform,
+    this.firstNewsPickup,
+    required this.descentShare,
+    required this.crossPlatformOrder,
+    this.medianRepostDelaySeconds,
+    this.provenanceChain,
+    required this.tracer,
+    required this.computedAt,
+    this.manifestId,
+  }) : super._();
   @override
   PropagationGraph rebuild(void Function(PropagationGraphBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -167,16 +167,15 @@ class PropagationGraphBuilder
       _$this._earliestByPlatform ??=
           ListBuilder<PropagationGraphEarliestByPlatformInner>();
   set earliestByPlatform(
-          ListBuilder<PropagationGraphEarliestByPlatformInner>?
-              earliestByPlatform) =>
-      _$this._earliestByPlatform = earliestByPlatform;
+    ListBuilder<PropagationGraphEarliestByPlatformInner>? earliestByPlatform,
+  ) => _$this._earliestByPlatform = earliestByPlatform;
 
   PropagationGraphFirstNewsPickupBuilder? _firstNewsPickup;
   PropagationGraphFirstNewsPickupBuilder get firstNewsPickup =>
       _$this._firstNewsPickup ??= PropagationGraphFirstNewsPickupBuilder();
   set firstNewsPickup(
-          PropagationGraphFirstNewsPickupBuilder? firstNewsPickup) =>
-      _$this._firstNewsPickup = firstNewsPickup;
+    PropagationGraphFirstNewsPickupBuilder? firstNewsPickup,
+  ) => _$this._firstNewsPickup = firstNewsPickup;
 
   num? _descentShare;
   num? get descentShare => _$this._descentShare;
@@ -187,9 +186,8 @@ class PropagationGraphBuilder
       _$this._crossPlatformOrder ??=
           ListBuilder<PropagationGraphCrossPlatformOrderInner>();
   set crossPlatformOrder(
-          ListBuilder<PropagationGraphCrossPlatformOrderInner>?
-              crossPlatformOrder) =>
-      _$this._crossPlatformOrder = crossPlatformOrder;
+    ListBuilder<PropagationGraphCrossPlatformOrderInner>? crossPlatformOrder,
+  ) => _$this._crossPlatformOrder = crossPlatformOrder;
 
   num? _medianRepostDelaySeconds;
   num? get medianRepostDelaySeconds => _$this._medianRepostDelaySeconds;
@@ -257,28 +255,47 @@ class PropagationGraphBuilder
   _$PropagationGraph _build() {
     _$PropagationGraph _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PropagationGraph._(
             narrativeId: BuiltValueNullFieldError.checkNotNull(
-                narrativeId, r'PropagationGraph', 'narrativeId'),
+              narrativeId,
+              r'PropagationGraph',
+              'narrativeId',
+            ),
             summarised: BuiltValueNullFieldError.checkNotNull(
-                summarised, r'PropagationGraph', 'summarised'),
+              summarised,
+              r'PropagationGraph',
+              'summarised',
+            ),
             totalNodes: BuiltValueNullFieldError.checkNotNull(
-                totalNodes, r'PropagationGraph', 'totalNodes'),
+              totalNodes,
+              r'PropagationGraph',
+              'totalNodes',
+            ),
             totalEdges: BuiltValueNullFieldError.checkNotNull(
-                totalEdges, r'PropagationGraph', 'totalEdges'),
+              totalEdges,
+              r'PropagationGraph',
+              'totalEdges',
+            ),
             nodes: nodes.build(),
             edges: edges.build(),
             earliestByPlatform: earliestByPlatform.build(),
             firstNewsPickup: _firstNewsPickup?.build(),
             descentShare: BuiltValueNullFieldError.checkNotNull(
-                descentShare, r'PropagationGraph', 'descentShare'),
+              descentShare,
+              r'PropagationGraph',
+              'descentShare',
+            ),
             crossPlatformOrder: crossPlatformOrder.build(),
             medianRepostDelaySeconds: medianRepostDelaySeconds,
             provenanceChain: _provenanceChain?.build(),
             tracer: tracer.build(),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'PropagationGraph', 'computedAt'),
+              computedAt,
+              r'PropagationGraph',
+              'computedAt',
+            ),
             manifestId: manifestId,
           );
     } catch (_) {
@@ -302,7 +319,10 @@ class PropagationGraphBuilder
         tracer.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PropagationGraph', _$failedField, e.toString());
+          r'PropagationGraph',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

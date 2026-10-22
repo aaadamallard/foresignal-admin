@@ -26,9 +26,9 @@ abstract class InfraImpactResultSummary
 
   InfraImpactResultSummary._();
 
-  factory InfraImpactResultSummary(
-          [void updates(InfraImpactResultSummaryBuilder b)]) =
-      _$InfraImpactResultSummary;
+  factory InfraImpactResultSummary([
+    void updates(InfraImpactResultSummaryBuilder b),
+  ]) = _$InfraImpactResultSummary;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InfraImpactResultSummaryBuilder b) => b;
@@ -43,7 +43,7 @@ class _$InfraImpactResultSummarySerializer
   @override
   final Iterable<Type> types = const [
     InfraImpactResultSummary,
-    _$InfraImpactResultSummary
+    _$InfraImpactResultSummary,
   ];
 
   @override
@@ -60,7 +60,7 @@ class _$InfraImpactResultSummarySerializer
         object.byType,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(BuiltMap, [FullType(String), FullType(int)])
+          FullType(BuiltMap, [FullType(String), FullType(int)]),
         ]),
       );
     }
@@ -68,8 +68,10 @@ class _$InfraImpactResultSummarySerializer
       yield r'byLabel';
       yield serializers.serialize(
         object.byLabel,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
   }
@@ -80,9 +82,11 @@ class _$InfraImpactResultSummarySerializer
     InfraImpactResultSummary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,22 +102,28 @@ class _$InfraImpactResultSummarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'byType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(BuiltMap, [FullType(String), FullType(int)])
-            ]),
-          ) as BuiltMap<String, BuiltMap<String, int>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltMap, [FullType(String), FullType(int)]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltMap<String, int>>?;
           if (valueDes == null) continue;
           result.byType.replace(valueDes);
           break;
         case r'byLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byLabel.replace(valueDes);
           break;

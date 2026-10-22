@@ -29,9 +29,9 @@ abstract class ChronicleLayerEstimate
 
   ChronicleLayerEstimate._();
 
-  factory ChronicleLayerEstimate(
-          [void updates(ChronicleLayerEstimateBuilder b)]) =
-      _$ChronicleLayerEstimate;
+  factory ChronicleLayerEstimate([
+    void updates(ChronicleLayerEstimateBuilder b),
+  ]) = _$ChronicleLayerEstimate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleLayerEstimateBuilder b) => b;
@@ -46,7 +46,7 @@ class _$ChronicleLayerEstimateSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleLayerEstimate,
-    _$ChronicleLayerEstimate
+    _$ChronicleLayerEstimate,
   ];
 
   @override
@@ -82,9 +82,11 @@ class _$ChronicleLayerEstimateSerializer
     ChronicleLayerEstimate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,24 +102,24 @@ class _$ChronicleLayerEstimateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'rowsPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.rowsPerDay = valueDes;
           break;
         case r'bytesPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.bytesPerDay = valueDes;
           break;
         case r'basis':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.basis = valueDes;
           break;

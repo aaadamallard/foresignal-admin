@@ -23,14 +23,14 @@ class _$CycleScope extends CycleScope {
   factory _$CycleScope([void Function(CycleScopeBuilder)? updates]) =>
       (CycleScopeBuilder()..update(updates))._build();
 
-  _$CycleScope._(
-      {this.regionCodes,
-      this.themes,
-      this.situationIds,
-      this.hypothesisSetIds,
-      this.sourceIds,
-      this.categories})
-      : super._();
+  _$CycleScope._({
+    this.regionCodes,
+    this.themes,
+    this.situationIds,
+    this.hypothesisSetIds,
+    this.sourceIds,
+    this.categories,
+  }) : super._();
   @override
   CycleScope rebuild(void Function(CycleScopeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -146,7 +146,8 @@ class CycleScopeBuilder implements Builder<CycleScope, CycleScopeBuilder> {
   _$CycleScope _build() {
     _$CycleScope _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CycleScope._(
             regionCodes: _regionCodes?.build(),
             themes: _themes?.build(),
@@ -171,7 +172,10 @@ class CycleScopeBuilder implements Builder<CycleScope, CycleScopeBuilder> {
         _categories?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CycleScope', _$failedField, e.toString());
+          r'CycleScope',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

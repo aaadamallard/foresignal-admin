@@ -14,17 +14,19 @@ class _$PackageManifestSender extends PackageManifestSender {
   @override
   final String keyId;
 
-  factory _$PackageManifestSender(
-          [void Function(PackageManifestSenderBuilder)? updates]) =>
-      (PackageManifestSenderBuilder()..update(updates))._build();
+  factory _$PackageManifestSender([
+    void Function(PackageManifestSenderBuilder)? updates,
+  ]) => (PackageManifestSenderBuilder()..update(updates))._build();
 
-  _$PackageManifestSender._(
-      {required this.instanceId, this.instanceName, required this.keyId})
-      : super._();
+  _$PackageManifestSender._({
+    required this.instanceId,
+    this.instanceName,
+    required this.keyId,
+  }) : super._();
   @override
   PackageManifestSender rebuild(
-          void Function(PackageManifestSenderBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PackageManifestSenderBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PackageManifestSenderBuilder toBuilder() =>
@@ -104,13 +106,20 @@ class PackageManifestSenderBuilder
   PackageManifestSender build() => _build();
 
   _$PackageManifestSender _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PackageManifestSender._(
           instanceId: BuiltValueNullFieldError.checkNotNull(
-              instanceId, r'PackageManifestSender', 'instanceId'),
+            instanceId,
+            r'PackageManifestSender',
+            'instanceId',
+          ),
           instanceName: instanceName,
           keyId: BuiltValueNullFieldError.checkNotNull(
-              keyId, r'PackageManifestSender', 'keyId'),
+            keyId,
+            r'PackageManifestSender',
+            'keyId',
+          ),
         );
     replace(_$result);
     return _$result;

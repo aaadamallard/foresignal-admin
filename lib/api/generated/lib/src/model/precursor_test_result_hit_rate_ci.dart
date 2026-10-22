@@ -18,8 +18,10 @@ part 'precursor_test_result_hit_rate_ci.g.dart';
 @BuiltValue()
 abstract class PrecursorTestResultHitRateCi
     implements
-        Built<PrecursorTestResultHitRateCi,
-            PrecursorTestResultHitRateCiBuilder> {
+        Built<
+          PrecursorTestResultHitRateCi,
+          PrecursorTestResultHitRateCiBuilder
+        > {
   @BuiltValueField(wireName: r'lower')
   num? get lower;
 
@@ -32,9 +34,9 @@ abstract class PrecursorTestResultHitRateCi
 
   PrecursorTestResultHitRateCi._();
 
-  factory PrecursorTestResultHitRateCi(
-          [void updates(PrecursorTestResultHitRateCiBuilder b)]) =
-      _$PrecursorTestResultHitRateCi;
+  factory PrecursorTestResultHitRateCi([
+    void updates(PrecursorTestResultHitRateCiBuilder b),
+  ]) = _$PrecursorTestResultHitRateCi;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorTestResultHitRateCiBuilder b) => b;
@@ -49,7 +51,7 @@ class _$PrecursorTestResultHitRateCiSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorTestResultHitRateCi,
-    _$PrecursorTestResultHitRateCi
+    _$PrecursorTestResultHitRateCi,
   ];
 
   @override
@@ -89,9 +91,11 @@ class _$PrecursorTestResultHitRateCiSerializer
     PrecursorTestResultHitRateCi object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,27 +111,34 @@ class _$PrecursorTestResultHitRateCiSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lower':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lower = valueDes;
           break;
         case r'upper':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.upper = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PrecursorTestResultHitRateCiMethodEnum),
-          ) as PrecursorTestResultHitRateCiMethodEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PrecursorTestResultHitRateCiMethodEnum,
+                    ),
+                  )
+                  as PrecursorTestResultHitRateCiMethodEnum?;
           if (valueDes == null) continue;
           result.method = valueDes;
           break;

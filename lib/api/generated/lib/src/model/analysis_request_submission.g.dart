@@ -7,14 +7,14 @@ part of 'analysis_request_submission.dart';
 // **************************************************************************
 
 const AnalysisRequestSubmissionOrientationEnum
-    _$analysisRequestSubmissionOrientationEnum_same =
+_$analysisRequestSubmissionOrientationEnum_same =
     const AnalysisRequestSubmissionOrientationEnum._('same');
 const AnalysisRequestSubmissionOrientationEnum
-    _$analysisRequestSubmissionOrientationEnum_inverse =
+_$analysisRequestSubmissionOrientationEnum_inverse =
     const AnalysisRequestSubmissionOrientationEnum._('inverse');
 
 AnalysisRequestSubmissionOrientationEnum
-    _$analysisRequestSubmissionOrientationEnumValueOf(String name) {
+_$analysisRequestSubmissionOrientationEnumValueOf(String name) {
   switch (name) {
     case 'same':
       return _$analysisRequestSubmissionOrientationEnum_same;
@@ -26,14 +26,16 @@ AnalysisRequestSubmissionOrientationEnum
 }
 
 final BuiltSet<AnalysisRequestSubmissionOrientationEnum>
-    _$analysisRequestSubmissionOrientationEnumValues = BuiltSet<
-        AnalysisRequestSubmissionOrientationEnum>(const <AnalysisRequestSubmissionOrientationEnum>[
-  _$analysisRequestSubmissionOrientationEnum_same,
-  _$analysisRequestSubmissionOrientationEnum_inverse,
-]);
+_$analysisRequestSubmissionOrientationEnumValues =
+    BuiltSet<AnalysisRequestSubmissionOrientationEnum>(
+      const <AnalysisRequestSubmissionOrientationEnum>[
+        _$analysisRequestSubmissionOrientationEnum_same,
+        _$analysisRequestSubmissionOrientationEnum_inverse,
+      ],
+    );
 
 Serializer<AnalysisRequestSubmissionOrientationEnum>
-    _$analysisRequestSubmissionOrientationEnumSerializer =
+_$analysisRequestSubmissionOrientationEnumSerializer =
     _$AnalysisRequestSubmissionOrientationEnumSerializer();
 
 class _$AnalysisRequestSubmissionOrientationEnumSerializer
@@ -49,23 +51,26 @@ class _$AnalysisRequestSubmissionOrientationEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AnalysisRequestSubmissionOrientationEnum
+    AnalysisRequestSubmissionOrientationEnum,
   ];
   @override
   final String wireName = 'AnalysisRequestSubmissionOrientationEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          AnalysisRequestSubmissionOrientationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalysisRequestSubmissionOrientationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalysisRequestSubmissionOrientationEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalysisRequestSubmissionOrientationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalysisRequestSubmissionOrientationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalysisRequestSubmission extends AnalysisRequestSubmission {
@@ -78,20 +83,20 @@ class _$AnalysisRequestSubmission extends AnalysisRequestSubmission {
   @override
   final String? horizon;
 
-  factory _$AnalysisRequestSubmission(
-          [void Function(AnalysisRequestSubmissionBuilder)? updates]) =>
-      (AnalysisRequestSubmissionBuilder()..update(updates))._build();
+  factory _$AnalysisRequestSubmission([
+    void Function(AnalysisRequestSubmissionBuilder)? updates,
+  ]) => (AnalysisRequestSubmissionBuilder()..update(updates))._build();
 
-  _$AnalysisRequestSubmission._(
-      {required this.forecasterId,
-      required this.questionId,
-      this.orientation,
-      this.horizon})
-      : super._();
+  _$AnalysisRequestSubmission._({
+    required this.forecasterId,
+    required this.questionId,
+    this.orientation,
+    this.horizon,
+  }) : super._();
   @override
   AnalysisRequestSubmission rebuild(
-          void Function(AnalysisRequestSubmissionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisRequestSubmissionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisRequestSubmissionBuilder toBuilder() =>
@@ -182,12 +187,19 @@ class AnalysisRequestSubmissionBuilder
   AnalysisRequestSubmission build() => _build();
 
   _$AnalysisRequestSubmission _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalysisRequestSubmission._(
           forecasterId: BuiltValueNullFieldError.checkNotNull(
-              forecasterId, r'AnalysisRequestSubmission', 'forecasterId'),
+            forecasterId,
+            r'AnalysisRequestSubmission',
+            'forecasterId',
+          ),
           questionId: BuiltValueNullFieldError.checkNotNull(
-              questionId, r'AnalysisRequestSubmission', 'questionId'),
+            questionId,
+            r'AnalysisRequestSubmission',
+            'questionId',
+          ),
           orientation: orientation,
           horizon: horizon,
         );

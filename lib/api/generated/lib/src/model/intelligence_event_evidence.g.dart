@@ -14,17 +14,19 @@ class _$IntelligenceEventEvidence extends IntelligenceEventEvidence {
   @override
   final BuiltList<IntelEventMember> members;
 
-  factory _$IntelligenceEventEvidence(
-          [void Function(IntelligenceEventEvidenceBuilder)? updates]) =>
-      (IntelligenceEventEvidenceBuilder()..update(updates))._build();
+  factory _$IntelligenceEventEvidence([
+    void Function(IntelligenceEventEvidenceBuilder)? updates,
+  ]) => (IntelligenceEventEvidenceBuilder()..update(updates))._build();
 
-  _$IntelligenceEventEvidence._(
-      {required this.memberCount, this.signalFamilies, required this.members})
-      : super._();
+  _$IntelligenceEventEvidence._({
+    required this.memberCount,
+    this.signalFamilies,
+    required this.members,
+  }) : super._();
   @override
   IntelligenceEventEvidence rebuild(
-          void Function(IntelligenceEventEvidenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelligenceEventEvidenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelligenceEventEvidenceBuilder toBuilder() =>
@@ -111,10 +113,14 @@ class IntelligenceEventEvidenceBuilder
   _$IntelligenceEventEvidence _build() {
     _$IntelligenceEventEvidence _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelligenceEventEvidence._(
             memberCount: BuiltValueNullFieldError.checkNotNull(
-                memberCount, r'IntelligenceEventEvidence', 'memberCount'),
+              memberCount,
+              r'IntelligenceEventEvidence',
+              'memberCount',
+            ),
             signalFamilies: _signalFamilies?.build(),
             members: members.build(),
           );
@@ -127,7 +133,10 @@ class IntelligenceEventEvidenceBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelligenceEventEvidence', _$failedField, e.toString());
+          r'IntelligenceEventEvidence',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

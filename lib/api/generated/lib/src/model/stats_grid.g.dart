@@ -20,8 +20,8 @@ StatsGridTypeEnum _$statsGridTypeEnumValueOf(String name) {
 
 final BuiltSet<StatsGridTypeEnum> _$statsGridTypeEnumValues =
     BuiltSet<StatsGridTypeEnum>(const <StatsGridTypeEnum>[
-  _$statsGridTypeEnum_featureCollection,
-]);
+      _$statsGridTypeEnum_featureCollection,
+    ]);
 
 const StatsGridCellSystemEnum _$statsGridCellSystemEnum_h3 =
     const StatsGridCellSystemEnum._('h3');
@@ -41,9 +41,9 @@ StatsGridCellSystemEnum _$statsGridCellSystemEnumValueOf(String name) {
 
 final BuiltSet<StatsGridCellSystemEnum> _$statsGridCellSystemEnumValues =
     BuiltSet<StatsGridCellSystemEnum>(const <StatsGridCellSystemEnum>[
-  _$statsGridCellSystemEnum_h3,
-  _$statsGridCellSystemEnum_hex3857,
-]);
+      _$statsGridCellSystemEnum_h3,
+      _$statsGridCellSystemEnum_hex3857,
+    ]);
 
 const StatsGridBackendEnum _$statsGridBackendEnum_rollup =
     const StatsGridBackendEnum._('rollup');
@@ -63,9 +63,9 @@ StatsGridBackendEnum _$statsGridBackendEnumValueOf(String name) {
 
 final BuiltSet<StatsGridBackendEnum> _$statsGridBackendEnumValues =
     BuiltSet<StatsGridBackendEnum>(const <StatsGridBackendEnum>[
-  _$statsGridBackendEnum_rollup,
-  _$statsGridBackendEnum_raw,
-]);
+      _$statsGridBackendEnum_rollup,
+      _$statsGridBackendEnum_raw,
+    ]);
 
 Serializer<StatsGridTypeEnum> _$statsGridTypeEnumSerializer =
     _$StatsGridTypeEnumSerializer();
@@ -89,15 +89,20 @@ class _$StatsGridTypeEnumSerializer
   final String wireName = 'StatsGridTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsGridTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsGridTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsGridTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsGridTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsGridTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsGridTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsGridCellSystemEnumSerializer
@@ -117,16 +122,20 @@ class _$StatsGridCellSystemEnumSerializer
   final String wireName = 'StatsGridCellSystemEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsGridCellSystemEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsGridCellSystemEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StatsGridCellSystemEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsGridCellSystemEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsGridCellSystemEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsGridBackendEnumSerializer
@@ -146,15 +155,20 @@ class _$StatsGridBackendEnumSerializer
   final String wireName = 'StatsGridBackendEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsGridBackendEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsGridBackendEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsGridBackendEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsGridBackendEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsGridBackendEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsGridBackendEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsGrid extends StatsGrid {
@@ -176,15 +190,15 @@ class _$StatsGrid extends StatsGrid {
   factory _$StatsGrid([void Function(StatsGridBuilder)? updates]) =>
       (StatsGridBuilder()..update(updates))._build();
 
-  _$StatsGrid._(
-      {required this.type,
-      required this.cellSystem,
-      this.res,
-      this.sizeKm,
-      this.measure,
-      this.backend,
-      required this.features})
-      : super._();
+  _$StatsGrid._({
+    required this.type,
+    required this.cellSystem,
+    this.res,
+    this.sizeKm,
+    this.measure,
+    this.backend,
+    required this.features,
+  }) : super._();
   @override
   StatsGrid rebuild(void Function(StatsGridBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -302,12 +316,19 @@ class StatsGridBuilder implements Builder<StatsGrid, StatsGridBuilder> {
   _$StatsGrid _build() {
     _$StatsGrid _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StatsGrid._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'StatsGrid', 'type'),
+              type,
+              r'StatsGrid',
+              'type',
+            ),
             cellSystem: BuiltValueNullFieldError.checkNotNull(
-                cellSystem, r'StatsGrid', 'cellSystem'),
+              cellSystem,
+              r'StatsGrid',
+              'cellSystem',
+            ),
             res: res,
             sizeKm: sizeKm,
             measure: measure,
@@ -321,7 +342,10 @@ class StatsGridBuilder implements Builder<StatsGrid, StatsGridBuilder> {
         features.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StatsGrid', _$failedField, e.toString());
+          r'StatsGrid',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

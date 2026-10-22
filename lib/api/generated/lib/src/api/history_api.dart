@@ -67,16 +67,10 @@ class HistoryApi {
     final _path = r'/v1/history/frames';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -99,8 +93,11 @@ class HistoryApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -108,19 +105,31 @@ class HistoryApi {
           const FullType(BuiltList, [FullType(String)]),
           format: ListFormat.csv,
         ),
-      r'from':
-          encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+      r'from': encodeQueryParameter(
+        _serializers,
+        from,
+        const FullType(DateTime),
+      ),
       r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       r'step': encodeQueryParameter(_serializers, step, const FullType(String)),
       if (maxFrames != null)
-        r'maxFrames':
-            encodeQueryParameter(_serializers, maxFrames, const FullType(int)),
+        r'maxFrames': encodeQueryParameter(
+          _serializers,
+          maxFrames,
+          const FullType(int),
+        ),
       if (geometry != null)
         r'geometry': encodeQueryParameter(
-            _serializers, geometry, const FullType(String)),
+          _serializers,
+          geometry,
+          const FullType(String),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -139,9 +148,10 @@ class HistoryApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(HistoryFrames),
-            ) as HistoryFrames;
+                  rawResponse,
+                  specifiedType: const FullType(HistoryFrames),
+                )
+                as HistoryFrames;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -209,14 +219,25 @@ class HistoryApi {
   }) async {
     final _path = r'/v1/records/{sourceId}/{externalId}/track'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'externalId' '}',
-            encodeQueryParameter(
-                    _serializers, externalId, const FullType(String))
-                .toString());
+          '{'
+          r'externalId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            externalId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -225,11 +246,7 @@ class HistoryApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -238,21 +255,33 @@ class HistoryApi {
 
     final _queryParameters = <String, dynamic>{
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (tolerance != null)
         r'tolerance': encodeQueryParameter(
-            _serializers, tolerance, const FullType(String)),
+          _serializers,
+          tolerance,
+          const FullType(String),
+        ),
       if (maxPoints != null)
-        r'maxPoints':
-            encodeQueryParameter(_serializers, maxPoints, const FullType(int)),
+        r'maxPoints': encodeQueryParameter(
+          _serializers,
+          maxPoints,
+          const FullType(int),
+        ),
       if (gap != null)
         r'gap': encodeQueryParameter(_serializers, gap, const FullType(String)),
       if (includeLive != null)
         r'includeLive': encodeQueryParameter(
-            _serializers, includeLive, const FullType(bool)),
+          _serializers,
+          includeLive,
+          const FullType(bool),
+        ),
       if (fields != null)
         r'fields': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -261,8 +290,11 @@ class HistoryApi {
           format: ListFormat.csv,
         ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -281,9 +313,10 @@ class HistoryApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Track),
-            ) as Track;
+                  rawResponse,
+                  specifiedType: const FullType(Track),
+                )
+                as Track;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -354,16 +387,10 @@ class HistoryApi {
     final _path = r'/v1/timeline';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -386,8 +413,11 @@ class HistoryApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -395,27 +425,48 @@ class HistoryApi {
           const FullType(BuiltList, [FullType(String)]),
           format: ListFormat.csv,
         ),
-      r'from':
-          encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+      r'from': encodeQueryParameter(
+        _serializers,
+        from,
+        const FullType(DateTime),
+      ),
       r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (bucket != null)
-        r'bucket':
-            encodeQueryParameter(_serializers, bucket, const FullType(String)),
+        r'bucket': encodeQueryParameter(
+          _serializers,
+          bucket,
+          const FullType(String),
+        ),
       if (timeField != null)
         r'timeField': encodeQueryParameter(
-            _serializers, timeField, const FullType(String)),
+          _serializers,
+          timeField,
+          const FullType(String),
+        ),
       if (measure != null)
-        r'measure':
-            encodeQueryParameter(_serializers, measure, const FullType(String)),
+        r'measure': encodeQueryParameter(
+          _serializers,
+          measure,
+          const FullType(String),
+        ),
       if (groupBy != null)
-        r'groupBy':
-            encodeQueryParameter(_serializers, groupBy, const FullType(String)),
+        r'groupBy': encodeQueryParameter(
+          _serializers,
+          groupBy,
+          const FullType(String),
+        ),
       if (includeKeyframes != null)
         r'includeKeyframes': encodeQueryParameter(
-            _serializers, includeKeyframes, const FullType(bool)),
+          _serializers,
+          includeKeyframes,
+          const FullType(bool),
+        ),
       if (includeAlerts != null)
         r'includeAlerts': encodeQueryParameter(
-            _serializers, includeAlerts, const FullType(bool)),
+          _serializers,
+          includeAlerts,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -434,9 +485,10 @@ class HistoryApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Timeline),
-            ) as Timeline;
+                  rawResponse,
+                  specifiedType: const FullType(Timeline),
+                )
+                as Timeline;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

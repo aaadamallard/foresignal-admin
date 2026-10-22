@@ -23,24 +23,23 @@ class _$DeclarativePushPayloadNotification
   @override
   final PushPayload? data;
 
-  factory _$DeclarativePushPayloadNotification(
-          [void Function(DeclarativePushPayloadNotificationBuilder)?
-              updates]) =>
-      (DeclarativePushPayloadNotificationBuilder()..update(updates))._build();
+  factory _$DeclarativePushPayloadNotification([
+    void Function(DeclarativePushPayloadNotificationBuilder)? updates,
+  ]) => (DeclarativePushPayloadNotificationBuilder()..update(updates))._build();
 
-  _$DeclarativePushPayloadNotification._(
-      {required this.title,
-      this.body,
-      required this.navigate,
-      this.lang,
-      this.tag,
-      this.silent,
-      this.data})
-      : super._();
+  _$DeclarativePushPayloadNotification._({
+    required this.title,
+    this.body,
+    required this.navigate,
+    this.lang,
+    this.tag,
+    this.silent,
+    this.data,
+  }) : super._();
   @override
   DeclarativePushPayloadNotification rebuild(
-          void Function(DeclarativePushPayloadNotificationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DeclarativePushPayloadNotificationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DeclarativePushPayloadNotificationBuilder toBuilder() =>
@@ -89,8 +88,10 @@ class _$DeclarativePushPayloadNotification
 
 class DeclarativePushPayloadNotificationBuilder
     implements
-        Builder<DeclarativePushPayloadNotification,
-            DeclarativePushPayloadNotificationBuilder> {
+        Builder<
+          DeclarativePushPayloadNotification,
+          DeclarativePushPayloadNotificationBuilder
+        > {
   _$DeclarativePushPayloadNotification? _$v;
 
   String? _title;
@@ -147,7 +148,8 @@ class DeclarativePushPayloadNotificationBuilder
 
   @override
   void update(
-      void Function(DeclarativePushPayloadNotificationBuilder)? updates) {
+    void Function(DeclarativePushPayloadNotificationBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -157,13 +159,20 @@ class DeclarativePushPayloadNotificationBuilder
   _$DeclarativePushPayloadNotification _build() {
     _$DeclarativePushPayloadNotification _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DeclarativePushPayloadNotification._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'DeclarativePushPayloadNotification', 'title'),
+              title,
+              r'DeclarativePushPayloadNotification',
+              'title',
+            ),
             body: body,
             navigate: BuiltValueNullFieldError.checkNotNull(
-                navigate, r'DeclarativePushPayloadNotification', 'navigate'),
+              navigate,
+              r'DeclarativePushPayloadNotification',
+              'navigate',
+            ),
             lang: lang,
             tag: tag,
             silent: silent,
@@ -176,7 +185,10 @@ class DeclarativePushPayloadNotificationBuilder
         _data?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DeclarativePushPayloadNotification', _$failedField, e.toString());
+          r'DeclarativePushPayloadNotification',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

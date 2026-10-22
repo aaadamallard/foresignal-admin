@@ -144,24 +144,30 @@ class _$CoverageStatsSerializer implements PrimitiveSerializer<CoverageStats> {
       yield r'byCountry';
       yield serializers.serialize(
         object.byCountry,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.byOutletType != null) {
       yield r'byOutletType';
       yield serializers.serialize(
         object.byOutletType,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.byFactuality != null) {
       yield r'byFactuality';
       yield serializers.serialize(
         object.byFactuality,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     yield r'coverageBalance';
@@ -241,9 +247,11 @@ class _$CoverageStatsSerializer implements PrimitiveSerializer<CoverageStats> {
     CoverageStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -259,136 +267,175 @@ class _$CoverageStatsSerializer implements PrimitiveSerializer<CoverageStats> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CoverageStatsScopeEnum),
-          ) as CoverageStatsScopeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CoverageStatsScopeEnum,
+                    ),
+                  )
+                  as CoverageStatsScopeEnum?;
           if (valueDes == null) continue;
           result.scope = valueDes;
           break;
         case r'articles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoverageStatsArticles),
-          ) as CoverageStatsArticles;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoverageStatsArticles),
+                  )
+                  as CoverageStatsArticles;
           result.articles.replace(valueDes);
           break;
         case r'evidenceGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoverageStatsArticles),
-          ) as CoverageStatsArticles;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoverageStatsArticles),
+                  )
+                  as CoverageStatsArticles;
           result.evidenceGroups.replace(valueDes);
           break;
         case r'byCountry':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byCountry.replace(valueDes);
           break;
         case r'byOutletType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byOutletType.replace(valueDes);
           break;
         case r'byFactuality':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byFactuality.replace(valueDes);
           break;
         case r'coverageBalance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoverageStatsCoverageBalance),
-          ) as CoverageStatsCoverageBalance;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoverageStatsCoverageBalance),
+                  )
+                  as CoverageStatsCoverageBalance;
           result.coverageBalance.replace(valueDes);
           break;
         case r'stateAffiliatedShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.stateAffiliatedShare = valueDes;
           break;
         case r'nRated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nRated = valueDes;
           break;
         case r'blindspot':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CoverageStatsBlindspotEnum),
-          ) as CoverageStatsBlindspotEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CoverageStatsBlindspotEnum,
+                    ),
+                  )
+                  as CoverageStatsBlindspotEnum?;
           if (valueDes == null) continue;
           result.blindspot = valueDes;
           break;
         case r'corroborated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.corroborated = valueDes;
           break;
         case r'corroboratedShare':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.corroboratedShare = valueDes;
           break;
         case r'skewed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.skewed = valueDes;
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;
         case r'analyzer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DetectorRef),
-          ) as DetectorRef?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DetectorRef),
+                  )
+                  as DetectorRef?;
           if (valueDes == null) continue;
           result.analyzer.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.computedAt = valueDes;
           break;

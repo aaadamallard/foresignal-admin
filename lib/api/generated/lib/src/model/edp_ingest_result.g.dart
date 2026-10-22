@@ -17,9 +17,11 @@ class _$EdpIngestResult extends EdpIngestResult {
   factory _$EdpIngestResult([void Function(EdpIngestResultBuilder)? updates]) =>
       (EdpIngestResultBuilder()..update(updates))._build();
 
-  _$EdpIngestResult._(
-      {required this.accepted, required this.rejected, this.outcome})
-      : super._();
+  _$EdpIngestResult._({
+    required this.accepted,
+    required this.rejected,
+    this.outcome,
+  }) : super._();
   @override
   EdpIngestResult rebuild(void Function(EdpIngestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -106,10 +108,14 @@ class EdpIngestResultBuilder
   _$EdpIngestResult _build() {
     _$EdpIngestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpIngestResult._(
             accepted: BuiltValueNullFieldError.checkNotNull(
-                accepted, r'EdpIngestResult', 'accepted'),
+              accepted,
+              r'EdpIngestResult',
+              'accepted',
+            ),
             rejected: rejected.build(),
             outcome: _outcome?.build(),
           );
@@ -122,7 +128,10 @@ class EdpIngestResultBuilder
         _outcome?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpIngestResult', _$failedField, e.toString());
+          r'EdpIngestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

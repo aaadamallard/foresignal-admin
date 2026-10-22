@@ -23,14 +23,14 @@ class _$TaxiiCollection extends TaxiiCollection {
   factory _$TaxiiCollection([void Function(TaxiiCollectionBuilder)? updates]) =>
       (TaxiiCollectionBuilder()..update(updates))._build();
 
-  _$TaxiiCollection._(
-      {required this.id,
-      required this.title,
-      this.description,
-      required this.canRead,
-      required this.canWrite,
-      this.mediaTypes})
-      : super._();
+  _$TaxiiCollection._({
+    required this.id,
+    required this.title,
+    this.description,
+    required this.canRead,
+    required this.canWrite,
+    this.mediaTypes,
+  }) : super._();
   @override
   TaxiiCollection rebuild(void Function(TaxiiCollectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -140,17 +140,30 @@ class TaxiiCollectionBuilder
   _$TaxiiCollection _build() {
     _$TaxiiCollection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TaxiiCollection._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'TaxiiCollection', 'id'),
+              id,
+              r'TaxiiCollection',
+              'id',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'TaxiiCollection', 'title'),
+              title,
+              r'TaxiiCollection',
+              'title',
+            ),
             description: description,
             canRead: BuiltValueNullFieldError.checkNotNull(
-                canRead, r'TaxiiCollection', 'canRead'),
+              canRead,
+              r'TaxiiCollection',
+              'canRead',
+            ),
             canWrite: BuiltValueNullFieldError.checkNotNull(
-                canWrite, r'TaxiiCollection', 'canWrite'),
+              canWrite,
+              r'TaxiiCollection',
+              'canWrite',
+            ),
             mediaTypes: _mediaTypes?.build(),
           );
     } catch (_) {
@@ -160,7 +173,10 @@ class TaxiiCollectionBuilder
         _mediaTypes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TaxiiCollection', _$failedField, e.toString());
+          r'TaxiiCollection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

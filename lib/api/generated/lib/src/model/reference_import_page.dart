@@ -43,7 +43,7 @@ class _$ReferenceImportPageSerializer
   @override
   final Iterable<Type> types = const [
     ReferenceImportPage,
-    _$ReferenceImportPage
+    _$ReferenceImportPage,
   ];
 
   @override
@@ -74,9 +74,11 @@ class _$ReferenceImportPageSerializer
     ReferenceImportPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +94,23 @@ class _$ReferenceImportPageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ReferenceImport)]),
-          ) as BuiltList<ReferenceImport>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ReferenceImport),
+                    ]),
+                  )
+                  as BuiltList<ReferenceImport>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

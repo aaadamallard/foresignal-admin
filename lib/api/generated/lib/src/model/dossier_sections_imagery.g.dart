@@ -9,17 +9,18 @@ part of 'dossier_sections_imagery.dart';
 const DossierSectionsImageryStatusEnum _$dossierSectionsImageryStatusEnum_ok =
     const DossierSectionsImageryStatusEnum._('ok');
 const DossierSectionsImageryStatusEnum
-    _$dossierSectionsImageryStatusEnum_empty =
+_$dossierSectionsImageryStatusEnum_empty =
     const DossierSectionsImageryStatusEnum._('empty');
 const DossierSectionsImageryStatusEnum
-    _$dossierSectionsImageryStatusEnum_unavailable =
+_$dossierSectionsImageryStatusEnum_unavailable =
     const DossierSectionsImageryStatusEnum._('unavailable');
 const DossierSectionsImageryStatusEnum
-    _$dossierSectionsImageryStatusEnum_notInstalled =
+_$dossierSectionsImageryStatusEnum_notInstalled =
     const DossierSectionsImageryStatusEnum._('notInstalled');
 
 DossierSectionsImageryStatusEnum _$dossierSectionsImageryStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$dossierSectionsImageryStatusEnum_ok;
@@ -35,16 +36,18 @@ DossierSectionsImageryStatusEnum _$dossierSectionsImageryStatusEnumValueOf(
 }
 
 final BuiltSet<DossierSectionsImageryStatusEnum>
-    _$dossierSectionsImageryStatusEnumValues = BuiltSet<
-        DossierSectionsImageryStatusEnum>(const <DossierSectionsImageryStatusEnum>[
-  _$dossierSectionsImageryStatusEnum_ok,
-  _$dossierSectionsImageryStatusEnum_empty,
-  _$dossierSectionsImageryStatusEnum_unavailable,
-  _$dossierSectionsImageryStatusEnum_notInstalled,
-]);
+_$dossierSectionsImageryStatusEnumValues =
+    BuiltSet<DossierSectionsImageryStatusEnum>(
+      const <DossierSectionsImageryStatusEnum>[
+        _$dossierSectionsImageryStatusEnum_ok,
+        _$dossierSectionsImageryStatusEnum_empty,
+        _$dossierSectionsImageryStatusEnum_unavailable,
+        _$dossierSectionsImageryStatusEnum_notInstalled,
+      ],
+    );
 
 Serializer<DossierSectionsImageryStatusEnum>
-    _$dossierSectionsImageryStatusEnumSerializer =
+_$dossierSectionsImageryStatusEnumSerializer =
     _$DossierSectionsImageryStatusEnumSerializer();
 
 class _$DossierSectionsImageryStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$DossierSectionsImageryStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DossierSectionsImageryStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DossierSectionsImageryStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsImageryStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsImageryStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsImageryStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsImagery extends DossierSectionsImagery {
@@ -95,22 +101,22 @@ class _$DossierSectionsImagery extends DossierSectionsImagery {
   @override
   final BuiltList<DossierSectionsImageryItemsInner>? items;
 
-  factory _$DossierSectionsImagery(
-          [void Function(DossierSectionsImageryBuilder)? updates]) =>
-      (DossierSectionsImageryBuilder()..update(updates))._build();
+  factory _$DossierSectionsImagery([
+    void Function(DossierSectionsImageryBuilder)? updates,
+  ]) => (DossierSectionsImageryBuilder()..update(updates))._build();
 
-  _$DossierSectionsImagery._(
-      {required this.status,
-      this.message,
-      this.links,
-      this.facets,
-      this.truncated,
-      this.items})
-      : super._();
+  _$DossierSectionsImagery._({
+    required this.status,
+    this.message,
+    this.links,
+    this.facets,
+    this.truncated,
+    this.items,
+  }) : super._();
   @override
   DossierSectionsImagery rebuild(
-          void Function(DossierSectionsImageryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsImageryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsImageryBuilder toBuilder() =>
@@ -223,10 +229,14 @@ class DossierSectionsImageryBuilder
   _$DossierSectionsImagery _build() {
     _$DossierSectionsImagery _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsImagery._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DossierSectionsImagery', 'status'),
+              status,
+              r'DossierSectionsImagery',
+              'status',
+            ),
             message: message,
             links: _links?.build(),
             facets: _facets?.build(),
@@ -245,7 +255,10 @@ class DossierSectionsImageryBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsImagery', _$failedField, e.toString());
+          r'DossierSectionsImagery',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

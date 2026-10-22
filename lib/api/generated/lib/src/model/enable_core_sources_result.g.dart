@@ -14,17 +14,19 @@ class _$EnableCoreSourcesResult extends EnableCoreSourcesResult {
   @override
   final int skipped;
 
-  factory _$EnableCoreSourcesResult(
-          [void Function(EnableCoreSourcesResultBuilder)? updates]) =>
-      (EnableCoreSourcesResultBuilder()..update(updates))._build();
+  factory _$EnableCoreSourcesResult([
+    void Function(EnableCoreSourcesResultBuilder)? updates,
+  ]) => (EnableCoreSourcesResultBuilder()..update(updates))._build();
 
-  _$EnableCoreSourcesResult._(
-      {required this.enabled, required this.count, required this.skipped})
-      : super._();
+  _$EnableCoreSourcesResult._({
+    required this.enabled,
+    required this.count,
+    required this.skipped,
+  }) : super._();
   @override
   EnableCoreSourcesResult rebuild(
-          void Function(EnableCoreSourcesResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EnableCoreSourcesResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EnableCoreSourcesResultBuilder toBuilder() =>
@@ -107,13 +109,20 @@ class EnableCoreSourcesResultBuilder
   _$EnableCoreSourcesResult _build() {
     _$EnableCoreSourcesResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EnableCoreSourcesResult._(
             enabled: enabled.build(),
             count: BuiltValueNullFieldError.checkNotNull(
-                count, r'EnableCoreSourcesResult', 'count'),
+              count,
+              r'EnableCoreSourcesResult',
+              'count',
+            ),
             skipped: BuiltValueNullFieldError.checkNotNull(
-                skipped, r'EnableCoreSourcesResult', 'skipped'),
+              skipped,
+              r'EnableCoreSourcesResult',
+              'skipped',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -122,7 +131,10 @@ class EnableCoreSourcesResultBuilder
         enabled.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EnableCoreSourcesResult', _$failedField, e.toString());
+          r'EnableCoreSourcesResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

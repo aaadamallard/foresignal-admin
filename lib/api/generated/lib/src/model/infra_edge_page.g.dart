@@ -92,11 +92,9 @@ class InfraEdgePageBuilder
   _$InfraEdgePage _build() {
     _$InfraEdgePage _$result;
     try {
-      _$result = _$v ??
-          _$InfraEdgePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$InfraEdgePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class InfraEdgePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraEdgePage', _$failedField, e.toString());
+          r'InfraEdgePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

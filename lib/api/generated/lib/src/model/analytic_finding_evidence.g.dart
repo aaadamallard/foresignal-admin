@@ -14,17 +14,19 @@ class _$AnalyticFindingEvidence extends AnalyticFindingEvidence {
   @override
   final bool? valuesWithheld;
 
-  factory _$AnalyticFindingEvidence(
-          [void Function(AnalyticFindingEvidenceBuilder)? updates]) =>
-      (AnalyticFindingEvidenceBuilder()..update(updates))._build();
+  factory _$AnalyticFindingEvidence([
+    void Function(AnalyticFindingEvidenceBuilder)? updates,
+  ]) => (AnalyticFindingEvidenceBuilder()..update(updates))._build();
 
-  _$AnalyticFindingEvidence._(
-      {required this.seriesRefs, required this.members, this.valuesWithheld})
-      : super._();
+  _$AnalyticFindingEvidence._({
+    required this.seriesRefs,
+    required this.members,
+    this.valuesWithheld,
+  }) : super._();
   @override
   AnalyticFindingEvidence rebuild(
-          void Function(AnalyticFindingEvidenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalyticFindingEvidenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalyticFindingEvidenceBuilder toBuilder() =>
@@ -110,7 +112,8 @@ class AnalyticFindingEvidenceBuilder
   _$AnalyticFindingEvidence _build() {
     _$AnalyticFindingEvidence _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalyticFindingEvidence._(
             seriesRefs: seriesRefs.build(),
             members: members.build(),
@@ -125,7 +128,10 @@ class AnalyticFindingEvidenceBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalyticFindingEvidence', _$failedField, e.toString());
+          r'AnalyticFindingEvidence',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

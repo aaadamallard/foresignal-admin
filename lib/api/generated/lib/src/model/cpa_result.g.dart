@@ -31,18 +31,18 @@ class _$CpaResult extends CpaResult {
   factory _$CpaResult([void Function(CpaResultBuilder)? updates]) =>
       (CpaResultBuilder()..update(updates))._build();
 
-  _$CpaResult._(
-      {required this.a,
-      required this.b,
-      required this.t0,
-      required this.tcpaSeconds,
-      required this.cpaAt,
-      required this.dcpaMeters,
-      this.verticalSeparationM,
-      this.horizon,
-      required this.asOf,
-      required this.stale})
-      : super._();
+  _$CpaResult._({
+    required this.a,
+    required this.b,
+    required this.t0,
+    required this.tcpaSeconds,
+    required this.cpaAt,
+    required this.dcpaMeters,
+    this.verticalSeparationM,
+    this.horizon,
+    required this.asOf,
+    required this.stale,
+  }) : super._();
   @override
   CpaResult rebuild(void Function(CpaResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -182,23 +182,39 @@ class CpaResultBuilder implements Builder<CpaResult, CpaResultBuilder> {
   _$CpaResult _build() {
     _$CpaResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CpaResult._(
             a: a.build(),
             b: b.build(),
             t0: BuiltValueNullFieldError.checkNotNull(t0, r'CpaResult', 't0'),
             tcpaSeconds: BuiltValueNullFieldError.checkNotNull(
-                tcpaSeconds, r'CpaResult', 'tcpaSeconds'),
+              tcpaSeconds,
+              r'CpaResult',
+              'tcpaSeconds',
+            ),
             cpaAt: BuiltValueNullFieldError.checkNotNull(
-                cpaAt, r'CpaResult', 'cpaAt'),
+              cpaAt,
+              r'CpaResult',
+              'cpaAt',
+            ),
             dcpaMeters: BuiltValueNullFieldError.checkNotNull(
-                dcpaMeters, r'CpaResult', 'dcpaMeters'),
+              dcpaMeters,
+              r'CpaResult',
+              'dcpaMeters',
+            ),
             verticalSeparationM: verticalSeparationM,
             horizon: horizon,
             asOf: BuiltValueNullFieldError.checkNotNull(
-                asOf, r'CpaResult', 'asOf'),
+              asOf,
+              r'CpaResult',
+              'asOf',
+            ),
             stale: BuiltValueNullFieldError.checkNotNull(
-                stale, r'CpaResult', 'stale'),
+              stale,
+              r'CpaResult',
+              'stale',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -209,7 +225,10 @@ class CpaResultBuilder implements Builder<CpaResult, CpaResultBuilder> {
         b.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CpaResult', _$failedField, e.toString());
+          r'CpaResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -81,7 +81,7 @@ class _$OpaqueChronicleLinkSerializer
   @override
   final Iterable<Type> types = const [
     OpaqueChronicleLink,
-    _$OpaqueChronicleLink
+    _$OpaqueChronicleLink,
   ];
 
   @override
@@ -117,8 +117,9 @@ class _$OpaqueChronicleLinkSerializer
     yield r'dimensions';
     yield serializers.serialize(
       object.dimensions,
-      specifiedType: const FullType(
-          BuiltList, [FullType(OpaqueChronicleLinkDimensionsEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OpaqueChronicleLinkDimensionsEnum),
+      ]),
     );
     yield r'timeOverlap';
     yield serializers.serialize(
@@ -150,8 +151,9 @@ class _$OpaqueChronicleLinkSerializer
       yield r'accessRequestStatus';
       yield serializers.serialize(
         object.accessRequestStatus,
-        specifiedType:
-            const FullType.nullable(OpaqueChronicleLinkAccessRequestStatusEnum),
+        specifiedType: const FullType.nullable(
+          OpaqueChronicleLinkAccessRequestStatusEnum,
+        ),
       );
     }
   }
@@ -162,9 +164,11 @@ class _$OpaqueChronicleLinkSerializer
     OpaqueChronicleLink object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -180,79 +184,107 @@ class _$OpaqueChronicleLinkSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'linkId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.linkId = valueDes;
           break;
         case r'disclosure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OpaqueChronicleLinkDisclosureEnum),
-          ) as OpaqueChronicleLinkDisclosureEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OpaqueChronicleLinkDisclosureEnum,
+                    ),
+                  )
+                  as OpaqueChronicleLinkDisclosureEnum;
           result.disclosure = valueDes;
           break;
         case r'chronicleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.chronicleId = valueDes;
           break;
         case r'strength':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OpaqueChronicleLinkStrengthEnum),
-          ) as OpaqueChronicleLinkStrengthEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OpaqueChronicleLinkStrengthEnum,
+                    ),
+                  )
+                  as OpaqueChronicleLinkStrengthEnum;
           result.strength = valueDes;
           break;
         case r'dimensions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(OpaqueChronicleLinkDimensionsEnum)]),
-          ) as BuiltList<OpaqueChronicleLinkDimensionsEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OpaqueChronicleLinkDimensionsEnum),
+                    ]),
+                  )
+                  as BuiltList<OpaqueChronicleLinkDimensionsEnum>;
           result.dimensions.replace(valueDes);
           break;
         case r'timeOverlap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OpaqueChronicleLinkTimeOverlapEnum),
-          ) as OpaqueChronicleLinkTimeOverlapEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OpaqueChronicleLinkTimeOverlapEnum,
+                    ),
+                  )
+                  as OpaqueChronicleLinkTimeOverlapEnum;
           result.timeOverlap = valueDes;
           break;
         case r'remote':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.remote = valueDes;
           break;
         case r'ownerHandle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ownerHandle = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'accessRequestStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                OpaqueChronicleLinkAccessRequestStatusEnum),
-          ) as OpaqueChronicleLinkAccessRequestStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OpaqueChronicleLinkAccessRequestStatusEnum,
+                    ),
+                  )
+                  as OpaqueChronicleLinkAccessRequestStatusEnum?;
           if (valueDes == null) continue;
           result.accessRequestStatus = valueDes;
           break;
@@ -383,7 +415,7 @@ class OpaqueChronicleLinkAccessRequestStatusEnum extends EnumClass {
       _$opaqueChronicleLinkAccessRequestStatusEnum_declined;
 
   static Serializer<OpaqueChronicleLinkAccessRequestStatusEnum>
-      get serializer => _$opaqueChronicleLinkAccessRequestStatusEnumSerializer;
+  get serializer => _$opaqueChronicleLinkAccessRequestStatusEnumSerializer;
 
   const OpaqueChronicleLinkAccessRequestStatusEnum._(String name) : super(name);
 

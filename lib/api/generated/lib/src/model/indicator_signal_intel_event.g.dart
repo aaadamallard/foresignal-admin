@@ -16,17 +16,20 @@ class _$IndicatorSignalIntelEvent extends IndicatorSignalIntelEvent {
   @override
   final String? bbox;
 
-  factory _$IndicatorSignalIntelEvent(
-          [void Function(IndicatorSignalIntelEventBuilder)? updates]) =>
-      (IndicatorSignalIntelEventBuilder()..update(updates))._build();
+  factory _$IndicatorSignalIntelEvent([
+    void Function(IndicatorSignalIntelEventBuilder)? updates,
+  ]) => (IndicatorSignalIntelEventBuilder()..update(updates))._build();
 
-  _$IndicatorSignalIntelEvent._(
-      {required this.type, this.regionCodes, this.placeId, this.bbox})
-      : super._();
+  _$IndicatorSignalIntelEvent._({
+    required this.type,
+    this.regionCodes,
+    this.placeId,
+    this.bbox,
+  }) : super._();
   @override
   IndicatorSignalIntelEvent rebuild(
-          void Function(IndicatorSignalIntelEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndicatorSignalIntelEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndicatorSignalIntelEventBuilder toBuilder() =>
@@ -119,10 +122,14 @@ class IndicatorSignalIntelEventBuilder
   _$IndicatorSignalIntelEvent _build() {
     _$IndicatorSignalIntelEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndicatorSignalIntelEvent._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'IndicatorSignalIntelEvent', 'type'),
+              type,
+              r'IndicatorSignalIntelEvent',
+              'type',
+            ),
             regionCodes: _regionCodes?.build(),
             placeId: placeId,
             bbox: bbox,
@@ -134,7 +141,10 @@ class IndicatorSignalIntelEventBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndicatorSignalIntelEvent', _$failedField, e.toString());
+          r'IndicatorSignalIntelEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

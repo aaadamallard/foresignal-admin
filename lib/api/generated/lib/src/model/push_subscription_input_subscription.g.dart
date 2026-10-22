@@ -13,17 +13,18 @@ class _$PushSubscriptionInputSubscription
   @override
   final PushSubscriptionInputSubscriptionKeys keys;
 
-  factory _$PushSubscriptionInputSubscription(
-          [void Function(PushSubscriptionInputSubscriptionBuilder)? updates]) =>
-      (PushSubscriptionInputSubscriptionBuilder()..update(updates))._build();
+  factory _$PushSubscriptionInputSubscription([
+    void Function(PushSubscriptionInputSubscriptionBuilder)? updates,
+  ]) => (PushSubscriptionInputSubscriptionBuilder()..update(updates))._build();
 
-  _$PushSubscriptionInputSubscription._(
-      {required this.endpoint, required this.keys})
-      : super._();
+  _$PushSubscriptionInputSubscription._({
+    required this.endpoint,
+    required this.keys,
+  }) : super._();
   @override
   PushSubscriptionInputSubscription rebuild(
-          void Function(PushSubscriptionInputSubscriptionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushSubscriptionInputSubscriptionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushSubscriptionInputSubscriptionBuilder toBuilder() =>
@@ -57,8 +58,10 @@ class _$PushSubscriptionInputSubscription
 
 class PushSubscriptionInputSubscriptionBuilder
     implements
-        Builder<PushSubscriptionInputSubscription,
-            PushSubscriptionInputSubscriptionBuilder> {
+        Builder<
+          PushSubscriptionInputSubscription,
+          PushSubscriptionInputSubscriptionBuilder
+        > {
   _$PushSubscriptionInputSubscription? _$v;
 
   String? _endpoint;
@@ -92,7 +95,8 @@ class PushSubscriptionInputSubscriptionBuilder
 
   @override
   void update(
-      void Function(PushSubscriptionInputSubscriptionBuilder)? updates) {
+    void Function(PushSubscriptionInputSubscriptionBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -102,10 +106,14 @@ class PushSubscriptionInputSubscriptionBuilder
   _$PushSubscriptionInputSubscription _build() {
     _$PushSubscriptionInputSubscription _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushSubscriptionInputSubscription._(
             endpoint: BuiltValueNullFieldError.checkNotNull(
-                endpoint, r'PushSubscriptionInputSubscription', 'endpoint'),
+              endpoint,
+              r'PushSubscriptionInputSubscription',
+              'endpoint',
+            ),
             keys: keys.build(),
           );
     } catch (_) {
@@ -115,7 +123,10 @@ class PushSubscriptionInputSubscriptionBuilder
         keys.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushSubscriptionInputSubscription', _$failedField, e.toString());
+          r'PushSubscriptionInputSubscription',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

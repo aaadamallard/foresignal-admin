@@ -19,23 +19,26 @@ class _$ForecastNumericCalibrationQuantileReliabilityInner
   @override
   final int? n;
 
-  factory _$ForecastNumericCalibrationQuantileReliabilityInner(
-          [void Function(
-                  ForecastNumericCalibrationQuantileReliabilityInnerBuilder)?
-              updates]) =>
+  factory _$ForecastNumericCalibrationQuantileReliabilityInner([
+    void Function(ForecastNumericCalibrationQuantileReliabilityInnerBuilder)?
+    updates,
+  ]) =>
       (ForecastNumericCalibrationQuantileReliabilityInnerBuilder()
             ..update(updates))
           ._build();
 
-  _$ForecastNumericCalibrationQuantileReliabilityInner._(
-      {this.level, this.quantile, this.nominal, this.empirical, this.n})
-      : super._();
+  _$ForecastNumericCalibrationQuantileReliabilityInner._({
+    this.level,
+    this.quantile,
+    this.nominal,
+    this.empirical,
+    this.n,
+  }) : super._();
   @override
   ForecastNumericCalibrationQuantileReliabilityInner rebuild(
-          void Function(
-                  ForecastNumericCalibrationQuantileReliabilityInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastNumericCalibrationQuantileReliabilityInnerBuilder)
+    updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastNumericCalibrationQuantileReliabilityInnerBuilder toBuilder() =>
@@ -68,7 +71,8 @@ class _$ForecastNumericCalibrationQuantileReliabilityInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ForecastNumericCalibrationQuantileReliabilityInner')
+            r'ForecastNumericCalibrationQuantileReliabilityInner',
+          )
           ..add('level', level)
           ..add('quantile', quantile)
           ..add('nominal', nominal)
@@ -80,8 +84,10 @@ class _$ForecastNumericCalibrationQuantileReliabilityInner
 
 class ForecastNumericCalibrationQuantileReliabilityInnerBuilder
     implements
-        Builder<ForecastNumericCalibrationQuantileReliabilityInner,
-            ForecastNumericCalibrationQuantileReliabilityInnerBuilder> {
+        Builder<
+          ForecastNumericCalibrationQuantileReliabilityInner,
+          ForecastNumericCalibrationQuantileReliabilityInnerBuilder
+        > {
   _$ForecastNumericCalibrationQuantileReliabilityInner? _$v;
 
   num? _level;
@@ -128,8 +134,9 @@ class ForecastNumericCalibrationQuantileReliabilityInnerBuilder
 
   @override
   void update(
-      void Function(ForecastNumericCalibrationQuantileReliabilityInnerBuilder)?
-          updates) {
+    void Function(ForecastNumericCalibrationQuantileReliabilityInnerBuilder)?
+    updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -137,7 +144,8 @@ class ForecastNumericCalibrationQuantileReliabilityInnerBuilder
   ForecastNumericCalibrationQuantileReliabilityInner build() => _build();
 
   _$ForecastNumericCalibrationQuantileReliabilityInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastNumericCalibrationQuantileReliabilityInner._(
           level: level,
           quantile: quantile,

@@ -22,9 +22,9 @@ abstract class EventSelectorChangePoint
 
   EventSelectorChangePoint._();
 
-  factory EventSelectorChangePoint(
-          [void updates(EventSelectorChangePointBuilder b)]) =
-      _$EventSelectorChangePoint;
+  factory EventSelectorChangePoint([
+    void updates(EventSelectorChangePointBuilder b),
+  ]) = _$EventSelectorChangePoint;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventSelectorChangePointBuilder b) => b;
@@ -39,7 +39,7 @@ class _$EventSelectorChangePointSerializer
   @override
   final Iterable<Type> types = const [
     EventSelectorChangePoint,
-    _$EventSelectorChangePoint
+    _$EventSelectorChangePoint,
   ];
 
   @override
@@ -63,9 +63,11 @@ class _$EventSelectorChangePointSerializer
     EventSelectorChangePoint object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +83,12 @@ class _$EventSelectorChangePointSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         default:

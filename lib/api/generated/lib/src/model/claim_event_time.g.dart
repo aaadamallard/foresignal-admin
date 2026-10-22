@@ -18,7 +18,7 @@ class _$ClaimEventTime extends ClaimEventTime {
       (ClaimEventTimeBuilder()..update(updates))._build();
 
   _$ClaimEventTime._({required this.from, this.to, required this.precision})
-      : super._();
+    : super._();
   @override
   ClaimEventTime rebuild(void Function(ClaimEventTimeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -100,13 +100,20 @@ class ClaimEventTimeBuilder
   ClaimEventTime build() => _build();
 
   _$ClaimEventTime _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ClaimEventTime._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'ClaimEventTime', 'from'),
+            from,
+            r'ClaimEventTime',
+            'from',
+          ),
           to: to,
           precision: BuiltValueNullFieldError.checkNotNull(
-              precision, r'ClaimEventTime', 'precision'),
+            precision,
+            r'ClaimEventTime',
+            'precision',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -8,12 +8,15 @@ part of 'trip_run.dart';
 
 const TripRunStatusEnum _$tripRunStatusEnum_delivered =
     const TripRunStatusEnum._('delivered');
-const TripRunStatusEnum _$tripRunStatusEnum_skipped =
-    const TripRunStatusEnum._('skipped');
-const TripRunStatusEnum _$tripRunStatusEnum_dryRun =
-    const TripRunStatusEnum._('dryRun');
-const TripRunStatusEnum _$tripRunStatusEnum_failed =
-    const TripRunStatusEnum._('failed');
+const TripRunStatusEnum _$tripRunStatusEnum_skipped = const TripRunStatusEnum._(
+  'skipped',
+);
+const TripRunStatusEnum _$tripRunStatusEnum_dryRun = const TripRunStatusEnum._(
+  'dryRun',
+);
+const TripRunStatusEnum _$tripRunStatusEnum_failed = const TripRunStatusEnum._(
+  'failed',
+);
 
 TripRunStatusEnum _$tripRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -32,11 +35,11 @@ TripRunStatusEnum _$tripRunStatusEnumValueOf(String name) {
 
 final BuiltSet<TripRunStatusEnum> _$tripRunStatusEnumValues =
     BuiltSet<TripRunStatusEnum>(const <TripRunStatusEnum>[
-  _$tripRunStatusEnum_delivered,
-  _$tripRunStatusEnum_skipped,
-  _$tripRunStatusEnum_dryRun,
-  _$tripRunStatusEnum_failed,
-]);
+      _$tripRunStatusEnum_delivered,
+      _$tripRunStatusEnum_skipped,
+      _$tripRunStatusEnum_dryRun,
+      _$tripRunStatusEnum_failed,
+    ]);
 
 Serializer<TripRunStatusEnum> _$tripRunStatusEnumSerializer =
     _$TripRunStatusEnumSerializer();
@@ -62,15 +65,20 @@ class _$TripRunStatusEnumSerializer
   final String wireName = 'TripRunStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, TripRunStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TripRunStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  TripRunStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TripRunStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  TripRunStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TripRunStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TripRun extends TripRun {
@@ -96,17 +104,17 @@ class _$TripRun extends TripRun {
   factory _$TripRun([void Function(TripRunBuilder)? updates]) =>
       (TripRunBuilder()..update(updates))._build();
 
-  _$TripRun._(
-      {required this.id,
-      required this.tripId,
-      required this.occurrence,
-      required this.status,
-      required this.clear,
-      required this.hazards,
-      this.briefing,
-      this.deliveredAt,
-      required this.createdAt})
-      : super._();
+  _$TripRun._({
+    required this.id,
+    required this.tripId,
+    required this.occurrence,
+    required this.status,
+    required this.clear,
+    required this.hazards,
+    this.briefing,
+    this.deliveredAt,
+    required this.createdAt,
+  }) : super._();
   @override
   TripRun rebuild(void Function(TripRunBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -238,22 +246,38 @@ class TripRunBuilder implements Builder<TripRun, TripRunBuilder> {
   _$TripRun _build() {
     _$TripRun _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TripRun._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'TripRun', 'id'),
             tripId: BuiltValueNullFieldError.checkNotNull(
-                tripId, r'TripRun', 'tripId'),
+              tripId,
+              r'TripRun',
+              'tripId',
+            ),
             occurrence: BuiltValueNullFieldError.checkNotNull(
-                occurrence, r'TripRun', 'occurrence'),
+              occurrence,
+              r'TripRun',
+              'occurrence',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'TripRun', 'status'),
+              status,
+              r'TripRun',
+              'status',
+            ),
             clear: BuiltValueNullFieldError.checkNotNull(
-                clear, r'TripRun', 'clear'),
+              clear,
+              r'TripRun',
+              'clear',
+            ),
             hazards: hazards.build(),
             briefing: briefing,
             deliveredAt: deliveredAt,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'TripRun', 'createdAt'),
+              createdAt,
+              r'TripRun',
+              'createdAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -262,7 +286,10 @@ class TripRunBuilder implements Builder<TripRun, TripRunBuilder> {
         hazards.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TripRun', _$failedField, e.toString());
+          r'TripRun',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

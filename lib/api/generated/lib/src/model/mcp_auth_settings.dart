@@ -110,8 +110,10 @@ class _$McpAuthSettingsSerializer
       yield r'scopeMap';
       yield serializers.serialize(
         object.scopeMap,
-        specifiedType: const FullType(BuiltMap,
-            [FullType(String), FullType(McpAuthSettingsScopeMapEnum)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(McpAuthSettingsScopeMapEnum),
+        ]),
       );
     }
     if (object.scopeClaim != null) {
@@ -125,8 +127,9 @@ class _$McpAuthSettingsSerializer
       yield r'allowedAlgs';
       yield serializers.serialize(
         object.allowedAlgs,
-        specifiedType: const FullType(
-            BuiltList, [FullType(McpAuthSettingsAllowedAlgsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(McpAuthSettingsAllowedAlgsEnum),
+        ]),
       );
     }
   }
@@ -137,9 +140,11 @@ class _$McpAuthSettingsSerializer
     McpAuthSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -155,60 +160,78 @@ class _$McpAuthSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(McpAuthSettingsModeEnum),
-          ) as McpAuthSettingsModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(McpAuthSettingsModeEnum),
+                  )
+                  as McpAuthSettingsModeEnum;
           result.mode = valueDes;
           break;
         case r'issuer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.issuer = valueDes;
           break;
         case r'audience':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.audience = valueDes;
           break;
         case r'jwksUri':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.jwksUri = valueDes;
           break;
         case r'scopeMap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap,
-                [FullType(String), FullType(McpAuthSettingsScopeMapEnum)]),
-          ) as BuiltMap<String, McpAuthSettingsScopeMapEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(McpAuthSettingsScopeMapEnum),
+                    ]),
+                  )
+                  as BuiltMap<String, McpAuthSettingsScopeMapEnum>?;
           if (valueDes == null) continue;
           result.scopeMap.replace(valueDes);
           break;
         case r'scopeClaim':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(McpAuthSettingsScopeClaimEnum),
-          ) as McpAuthSettingsScopeClaimEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      McpAuthSettingsScopeClaimEnum,
+                    ),
+                  )
+                  as McpAuthSettingsScopeClaimEnum?;
           if (valueDes == null) continue;
           result.scopeClaim = valueDes;
           break;
         case r'allowedAlgs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(McpAuthSettingsAllowedAlgsEnum)]),
-          ) as BuiltList<McpAuthSettingsAllowedAlgsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(McpAuthSettingsAllowedAlgsEnum),
+                    ]),
+                  )
+                  as BuiltList<McpAuthSettingsAllowedAlgsEnum>?;
           if (valueDes == null) continue;
           result.allowedAlgs.replace(valueDes);
           break;

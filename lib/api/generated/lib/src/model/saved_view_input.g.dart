@@ -31,16 +31,16 @@ SavedViewInputTimeFieldEnum _$savedViewInputTimeFieldEnumValueOf(String name) {
 }
 
 final BuiltSet<SavedViewInputTimeFieldEnum>
-    _$savedViewInputTimeFieldEnumValues =
+_$savedViewInputTimeFieldEnumValues =
     BuiltSet<SavedViewInputTimeFieldEnum>(const <SavedViewInputTimeFieldEnum>[
-  _$savedViewInputTimeFieldEnum_effective,
-  _$savedViewInputTimeFieldEnum_observed,
-  _$savedViewInputTimeFieldEnum_event,
-  _$savedViewInputTimeFieldEnum_ingested,
-]);
+      _$savedViewInputTimeFieldEnum_effective,
+      _$savedViewInputTimeFieldEnum_observed,
+      _$savedViewInputTimeFieldEnum_event,
+      _$savedViewInputTimeFieldEnum_ingested,
+    ]);
 
 Serializer<SavedViewInputTimeFieldEnum>
-    _$savedViewInputTimeFieldEnumSerializer =
+_$savedViewInputTimeFieldEnumSerializer =
     _$SavedViewInputTimeFieldEnumSerializer();
 
 class _$SavedViewInputTimeFieldEnumSerializer
@@ -64,16 +64,20 @@ class _$SavedViewInputTimeFieldEnumSerializer
   final String wireName = 'SavedViewInputTimeFieldEnum';
 
   @override
-  Object serialize(Serializers serializers, SavedViewInputTimeFieldEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SavedViewInputTimeFieldEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SavedViewInputTimeFieldEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SavedViewInputTimeFieldEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SavedViewInputTimeFieldEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SavedViewInput extends SavedViewInput {
@@ -103,19 +107,19 @@ class _$SavedViewInput extends SavedViewInput {
   factory _$SavedViewInput([void Function(SavedViewInputBuilder)? updates]) =>
       (SavedViewInputBuilder()..update(updates))._build();
 
-  _$SavedViewInput._(
-      {required this.slug,
-      required this.name,
-      this.sources,
-      this.kinds,
-      this.placeIds,
-      this.bbox,
-      this.area,
-      this.conditions,
-      this.timeField,
-      this.includeExpired,
-      this.fields})
-      : super._();
+  _$SavedViewInput._({
+    required this.slug,
+    required this.name,
+    this.sources,
+    this.kinds,
+    this.placeIds,
+    this.bbox,
+    this.area,
+    this.conditions,
+    this.timeField,
+    this.includeExpired,
+    this.fields,
+  }) : super._();
   @override
   SavedViewInput rebuild(void Function(SavedViewInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -268,12 +272,19 @@ class SavedViewInputBuilder
   _$SavedViewInput _build() {
     _$SavedViewInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedViewInput._(
             slug: BuiltValueNullFieldError.checkNotNull(
-                slug, r'SavedViewInput', 'slug'),
+              slug,
+              r'SavedViewInput',
+              'slug',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'SavedViewInput', 'name'),
+              name,
+              r'SavedViewInput',
+              'name',
+            ),
             sources: _sources?.build(),
             kinds: _kinds?.build(),
             placeIds: _placeIds?.build(),
@@ -304,7 +315,10 @@ class SavedViewInputBuilder
         _fields?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedViewInput', _$failedField, e.toString());
+          r'SavedViewInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

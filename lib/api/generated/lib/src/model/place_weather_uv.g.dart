@@ -89,11 +89,8 @@ class PlaceWeatherUvBuilder
   PlaceWeatherUv build() => _build();
 
   _$PlaceWeatherUv _build() {
-    final _$result = _$v ??
-        _$PlaceWeatherUv._(
-          status: status,
-          maxToday: maxToday,
-        );
+    final _$result =
+        _$v ?? _$PlaceWeatherUv._(status: status, maxToday: maxToday);
     replace(_$result);
     return _$result;
   }

@@ -21,9 +21,9 @@ abstract class FieldEncodingsVelocityJson
 
   FieldEncodingsVelocityJson._();
 
-  factory FieldEncodingsVelocityJson(
-          [void updates(FieldEncodingsVelocityJsonBuilder b)]) =
-      _$FieldEncodingsVelocityJson;
+  factory FieldEncodingsVelocityJson([
+    void updates(FieldEncodingsVelocityJsonBuilder b),
+  ]) = _$FieldEncodingsVelocityJson;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FieldEncodingsVelocityJsonBuilder b) => b;
@@ -38,7 +38,7 @@ class _$FieldEncodingsVelocityJsonSerializer
   @override
   final Iterable<Type> types = const [
     FieldEncodingsVelocityJson,
-    _$FieldEncodingsVelocityJson
+    _$FieldEncodingsVelocityJson,
   ];
 
   @override
@@ -64,9 +64,11 @@ class _$FieldEncodingsVelocityJsonSerializer
     FieldEncodingsVelocityJson object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -82,10 +84,12 @@ class _$FieldEncodingsVelocityJsonSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.url = valueDes;
           break;

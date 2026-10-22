@@ -25,9 +25,9 @@ abstract class PurgeReportCitingDocuments
 
   PurgeReportCitingDocuments._();
 
-  factory PurgeReportCitingDocuments(
-          [void updates(PurgeReportCitingDocumentsBuilder b)]) =
-      _$PurgeReportCitingDocuments;
+  factory PurgeReportCitingDocuments([
+    void updates(PurgeReportCitingDocumentsBuilder b),
+  ]) = _$PurgeReportCitingDocuments;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PurgeReportCitingDocumentsBuilder b) => b;
@@ -42,7 +42,7 @@ class _$PurgeReportCitingDocumentsSerializer
   @override
   final Iterable<Type> types = const [
     PurgeReportCitingDocuments,
-    _$PurgeReportCitingDocuments
+    _$PurgeReportCitingDocuments,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$PurgeReportCitingDocumentsSerializer
     PurgeReportCitingDocuments object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$PurgeReportCitingDocumentsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'askMessages':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.askMessages = valueDes;
           break;
         case r'briefingRuns':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.briefingRuns = valueDes;
           break;

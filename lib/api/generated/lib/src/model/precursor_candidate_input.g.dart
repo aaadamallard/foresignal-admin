@@ -12,7 +12,8 @@ const PrecursorCandidateInputKindEnum _$precursorCandidateInputKindEnum_series =
     const PrecursorCandidateInputKindEnum._('series');
 
 PrecursorCandidateInputKindEnum _$precursorCandidateInputKindEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'event':
       return _$precursorCandidateInputKindEnum_event;
@@ -24,14 +25,16 @@ PrecursorCandidateInputKindEnum _$precursorCandidateInputKindEnumValueOf(
 }
 
 final BuiltSet<PrecursorCandidateInputKindEnum>
-    _$precursorCandidateInputKindEnumValues = BuiltSet<
-        PrecursorCandidateInputKindEnum>(const <PrecursorCandidateInputKindEnum>[
-  _$precursorCandidateInputKindEnum_event,
-  _$precursorCandidateInputKindEnum_series,
-]);
+_$precursorCandidateInputKindEnumValues =
+    BuiltSet<PrecursorCandidateInputKindEnum>(
+      const <PrecursorCandidateInputKindEnum>[
+        _$precursorCandidateInputKindEnum_event,
+        _$precursorCandidateInputKindEnum_series,
+      ],
+    );
 
 Serializer<PrecursorCandidateInputKindEnum>
-    _$precursorCandidateInputKindEnumSerializer =
+_$precursorCandidateInputKindEnumSerializer =
     _$PrecursorCandidateInputKindEnumSerializer();
 
 class _$PrecursorCandidateInputKindEnumSerializer
@@ -52,16 +55,19 @@ class _$PrecursorCandidateInputKindEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PrecursorCandidateInputKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecursorCandidateInputKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorCandidateInputKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorCandidateInputKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorCandidateInputKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorCandidateInput extends PrecursorCandidateInput {
@@ -82,24 +88,24 @@ class _$PrecursorCandidateInput extends PrecursorCandidateInput {
   @override
   final BuiltList<String>? regionCodes;
 
-  factory _$PrecursorCandidateInput(
-          [void Function(PrecursorCandidateInputBuilder)? updates]) =>
-      (PrecursorCandidateInputBuilder()..update(updates))._build();
+  factory _$PrecursorCandidateInput([
+    void Function(PrecursorCandidateInputBuilder)? updates,
+  ]) => (PrecursorCandidateInputBuilder()..update(updates))._build();
 
-  _$PrecursorCandidateInput._(
-      {this.name,
-      required this.kind,
-      required this.antecedent,
-      required this.consequent,
-      this.spatial,
-      this.lagMin,
-      required this.lagMax,
-      this.regionCodes})
-      : super._();
+  _$PrecursorCandidateInput._({
+    this.name,
+    required this.kind,
+    required this.antecedent,
+    required this.consequent,
+    this.spatial,
+    this.lagMin,
+    required this.lagMax,
+    this.regionCodes,
+  }) : super._();
   @override
   PrecursorCandidateInput rebuild(
-          void Function(PrecursorCandidateInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorCandidateInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorCandidateInputBuilder toBuilder() =>
@@ -229,17 +235,24 @@ class PrecursorCandidateInputBuilder
   _$PrecursorCandidateInput _build() {
     _$PrecursorCandidateInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorCandidateInput._(
             name: name,
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'PrecursorCandidateInput', 'kind'),
+              kind,
+              r'PrecursorCandidateInput',
+              'kind',
+            ),
             antecedent: antecedent.build(),
             consequent: consequent.build(),
             spatial: _spatial?.build(),
             lagMin: lagMin,
             lagMax: BuiltValueNullFieldError.checkNotNull(
-                lagMax, r'PrecursorCandidateInput', 'lagMax'),
+              lagMax,
+              r'PrecursorCandidateInput',
+              'lagMax',
+            ),
             regionCodes: _regionCodes?.build(),
           );
     } catch (_) {
@@ -256,7 +269,10 @@ class PrecursorCandidateInputBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorCandidateInput', _$failedField, e.toString());
+          r'PrecursorCandidateInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

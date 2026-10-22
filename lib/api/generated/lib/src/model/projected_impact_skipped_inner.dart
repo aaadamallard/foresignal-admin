@@ -33,9 +33,9 @@ abstract class ProjectedImpactSkippedInner
 
   ProjectedImpactSkippedInner._();
 
-  factory ProjectedImpactSkippedInner(
-          [void updates(ProjectedImpactSkippedInnerBuilder b)]) =
-      _$ProjectedImpactSkippedInner;
+  factory ProjectedImpactSkippedInner([
+    void updates(ProjectedImpactSkippedInnerBuilder b),
+  ]) = _$ProjectedImpactSkippedInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProjectedImpactSkippedInnerBuilder b) => b;
@@ -50,7 +50,7 @@ class _$ProjectedImpactSkippedInnerSerializer
   @override
   final Iterable<Type> types = const [
     ProjectedImpactSkippedInner,
-    _$ProjectedImpactSkippedInner
+    _$ProjectedImpactSkippedInner,
   ];
 
   @override
@@ -93,9 +93,11 @@ class _$ProjectedImpactSkippedInnerSerializer
     ProjectedImpactSkippedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,33 +113,41 @@ class _$ProjectedImpactSkippedInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'impactFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.impactFamily = valueDes;
           break;
         case r'regionClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionClass = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.reason = valueDes;
           break;
         default:

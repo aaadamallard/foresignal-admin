@@ -20,8 +20,10 @@ part 'rule_backtest_result_samples_inner.g.dart';
 @BuiltValue()
 abstract class RuleBacktestResultSamplesInner
     implements
-        Built<RuleBacktestResultSamplesInner,
-            RuleBacktestResultSamplesInnerBuilder> {
+        Built<
+          RuleBacktestResultSamplesInner,
+          RuleBacktestResultSamplesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'seq')
   int get seq;
 
@@ -40,9 +42,9 @@ abstract class RuleBacktestResultSamplesInner
 
   RuleBacktestResultSamplesInner._();
 
-  factory RuleBacktestResultSamplesInner(
-          [void updates(RuleBacktestResultSamplesInnerBuilder b)]) =
-      _$RuleBacktestResultSamplesInner;
+  factory RuleBacktestResultSamplesInner([
+    void updates(RuleBacktestResultSamplesInnerBuilder b),
+  ]) = _$RuleBacktestResultSamplesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultSamplesInnerBuilder b) => b;
@@ -57,7 +59,7 @@ class _$RuleBacktestResultSamplesInnerSerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultSamplesInner,
-    _$RuleBacktestResultSamplesInner
+    _$RuleBacktestResultSamplesInner,
   ];
 
   @override
@@ -69,10 +71,7 @@ class _$RuleBacktestResultSamplesInnerSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'seq';
-    yield serializers.serialize(
-      object.seq,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.seq, specifiedType: const FullType(int));
     yield r'source';
     yield serializers.serialize(
       object.source_,
@@ -103,9 +102,11 @@ class _$RuleBacktestResultSamplesInnerSerializer
     RuleBacktestResultSamplesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,39 +122,47 @@ class _$RuleBacktestResultSamplesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.seq = valueDes;
           break;
         case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.source_ = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.externalId = valueDes;
           break;
         case r'observedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.observedAt = valueDes;
           break;
         case r'edge':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(RuleBacktestResultSamplesInnerEdgeEnum),
-          ) as RuleBacktestResultSamplesInnerEdgeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RuleBacktestResultSamplesInnerEdgeEnum,
+                    ),
+                  )
+                  as RuleBacktestResultSamplesInnerEdgeEnum?;
           if (valueDes == null) continue;
           result.edge = valueDes;
           break;

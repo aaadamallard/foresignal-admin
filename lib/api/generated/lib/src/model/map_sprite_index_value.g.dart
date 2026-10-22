@@ -20,22 +20,22 @@ class _$MapSpriteIndexValue extends MapSpriteIndexValue {
   @override
   final bool? sdf;
 
-  factory _$MapSpriteIndexValue(
-          [void Function(MapSpriteIndexValueBuilder)? updates]) =>
-      (MapSpriteIndexValueBuilder()..update(updates))._build();
+  factory _$MapSpriteIndexValue([
+    void Function(MapSpriteIndexValueBuilder)? updates,
+  ]) => (MapSpriteIndexValueBuilder()..update(updates))._build();
 
-  _$MapSpriteIndexValue._(
-      {required this.x,
-      required this.y,
-      required this.width,
-      required this.height,
-      required this.pixelRatio,
-      this.sdf})
-      : super._();
+  _$MapSpriteIndexValue._({
+    required this.x,
+    required this.y,
+    required this.width,
+    required this.height,
+    required this.pixelRatio,
+    this.sdf,
+  }) : super._();
   @override
   MapSpriteIndexValue rebuild(
-          void Function(MapSpriteIndexValueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MapSpriteIndexValueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MapSpriteIndexValueBuilder toBuilder() =>
@@ -139,18 +139,34 @@ class MapSpriteIndexValueBuilder
   MapSpriteIndexValue build() => _build();
 
   _$MapSpriteIndexValue _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MapSpriteIndexValue._(
           x: BuiltValueNullFieldError.checkNotNull(
-              x, r'MapSpriteIndexValue', 'x'),
+            x,
+            r'MapSpriteIndexValue',
+            'x',
+          ),
           y: BuiltValueNullFieldError.checkNotNull(
-              y, r'MapSpriteIndexValue', 'y'),
+            y,
+            r'MapSpriteIndexValue',
+            'y',
+          ),
           width: BuiltValueNullFieldError.checkNotNull(
-              width, r'MapSpriteIndexValue', 'width'),
+            width,
+            r'MapSpriteIndexValue',
+            'width',
+          ),
           height: BuiltValueNullFieldError.checkNotNull(
-              height, r'MapSpriteIndexValue', 'height'),
+            height,
+            r'MapSpriteIndexValue',
+            'height',
+          ),
           pixelRatio: BuiltValueNullFieldError.checkNotNull(
-              pixelRatio, r'MapSpriteIndexValue', 'pixelRatio'),
+            pixelRatio,
+            r'MapSpriteIndexValue',
+            'pixelRatio',
+          ),
           sdf: sdf,
         );
     replace(_$result);

@@ -24,9 +24,9 @@ RelatedObjectDirectionEnum _$relatedObjectDirectionEnumValueOf(String name) {
 
 final BuiltSet<RelatedObjectDirectionEnum> _$relatedObjectDirectionEnumValues =
     BuiltSet<RelatedObjectDirectionEnum>(const <RelatedObjectDirectionEnum>[
-  _$relatedObjectDirectionEnum_out_,
-  _$relatedObjectDirectionEnum_in_,
-]);
+      _$relatedObjectDirectionEnum_out_,
+      _$relatedObjectDirectionEnum_in_,
+    ]);
 
 Serializer<RelatedObjectDirectionEnum> _$relatedObjectDirectionEnumSerializer =
     _$RelatedObjectDirectionEnumSerializer();
@@ -48,16 +48,20 @@ class _$RelatedObjectDirectionEnumSerializer
   final String wireName = 'RelatedObjectDirectionEnum';
 
   @override
-  Object serialize(Serializers serializers, RelatedObjectDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RelatedObjectDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RelatedObjectDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RelatedObjectDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RelatedObjectDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RelatedObject extends RelatedObject {
@@ -73,12 +77,12 @@ class _$RelatedObject extends RelatedObject {
   factory _$RelatedObject([void Function(RelatedObjectBuilder)? updates]) =>
       (RelatedObjectBuilder()..update(updates))._build();
 
-  _$RelatedObject._(
-      {required this.relation,
-      required this.direction,
-      required this.object,
-      this.distanceKm})
-      : super._();
+  _$RelatedObject._({
+    required this.relation,
+    required this.direction,
+    required this.object,
+    this.distanceKm,
+  }) : super._();
   @override
   RelatedObject rebuild(void Function(RelatedObjectBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -172,11 +176,15 @@ class RelatedObjectBuilder
   _$RelatedObject _build() {
     _$RelatedObject _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RelatedObject._(
             relation: relation.build(),
             direction: BuiltValueNullFieldError.checkNotNull(
-                direction, r'RelatedObject', 'direction'),
+              direction,
+              r'RelatedObject',
+              'direction',
+            ),
             object: object.build(),
             distanceKm: distanceKm,
           );
@@ -190,7 +198,10 @@ class RelatedObjectBuilder
         object.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RelatedObject', _$failedField, e.toString());
+          r'RelatedObject',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

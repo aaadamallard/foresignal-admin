@@ -10,15 +10,15 @@ class _$AnalystProposalDecision extends AnalystProposalDecision {
   @override
   final String? reason;
 
-  factory _$AnalystProposalDecision(
-          [void Function(AnalystProposalDecisionBuilder)? updates]) =>
-      (AnalystProposalDecisionBuilder()..update(updates))._build();
+  factory _$AnalystProposalDecision([
+    void Function(AnalystProposalDecisionBuilder)? updates,
+  ]) => (AnalystProposalDecisionBuilder()..update(updates))._build();
 
   _$AnalystProposalDecision._({this.reason}) : super._();
   @override
   AnalystProposalDecision rebuild(
-          void Function(AnalystProposalDecisionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystProposalDecisionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystProposalDecisionBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$AnalystProposalDecision extends AnalystProposalDecision {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AnalystProposalDecision')
-          ..add('reason', reason))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AnalystProposalDecision',
+    )..add('reason', reason)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class AnalystProposalDecisionBuilder
   AnalystProposalDecision build() => _build();
 
   _$AnalystProposalDecision _build() {
-    final _$result = _$v ??
-        _$AnalystProposalDecision._(
-          reason: reason,
-        );
+    final _$result = _$v ?? _$AnalystProposalDecision._(reason: reason);
     replace(_$result);
     return _$result;
   }

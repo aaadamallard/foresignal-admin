@@ -32,11 +32,11 @@ PackageManifestTypeEnum _$packageManifestTypeEnumValueOf(String name) {
 
 final BuiltSet<PackageManifestTypeEnum> _$packageManifestTypeEnumValues =
     BuiltSet<PackageManifestTypeEnum>(const <PackageManifestTypeEnum>[
-  _$packageManifestTypeEnum_report,
-  _$packageManifestTypeEnum_investigation,
-  _$packageManifestTypeEnum_chronicleExtract,
-  _$packageManifestTypeEnum_evidence,
-]);
+      _$packageManifestTypeEnum_report,
+      _$packageManifestTypeEnum_investigation,
+      _$packageManifestTypeEnum_chronicleExtract,
+      _$packageManifestTypeEnum_evidence,
+    ]);
 
 Serializer<PackageManifestTypeEnum> _$packageManifestTypeEnumSerializer =
     _$PackageManifestTypeEnumSerializer();
@@ -62,16 +62,20 @@ class _$PackageManifestTypeEnumSerializer
   final String wireName = 'PackageManifestTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PackageManifestTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PackageManifestTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PackageManifestTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PackageManifestTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PackageManifestTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PackageManifest extends PackageManifest {
@@ -103,20 +107,20 @@ class _$PackageManifest extends PackageManifest {
   factory _$PackageManifest([void Function(PackageManifestBuilder)? updates]) =>
       (PackageManifestBuilder()..update(updates))._build();
 
-  _$PackageManifest._(
-      {required this.packageId,
-      required this.type,
-      required this.objectRef,
-      required this.sender,
-      required this.authors,
-      required this.tlp,
-      required this.createdAt,
-      this.recipients,
-      required this.contentHashes,
-      this.message,
-      this.provenanceChain,
-      this.title})
-      : super._();
+  _$PackageManifest._({
+    required this.packageId,
+    required this.type,
+    required this.objectRef,
+    required this.sender,
+    required this.authors,
+    required this.tlp,
+    required this.createdAt,
+    this.recipients,
+    required this.contentHashes,
+    this.message,
+    this.provenanceChain,
+    this.title,
+  }) : super._();
   @override
   PackageManifest rebuild(void Function(PackageManifestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -279,20 +283,36 @@ class PackageManifestBuilder
   _$PackageManifest _build() {
     _$PackageManifest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PackageManifest._(
             packageId: BuiltValueNullFieldError.checkNotNull(
-                packageId, r'PackageManifest', 'packageId'),
+              packageId,
+              r'PackageManifest',
+              'packageId',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'PackageManifest', 'type'),
+              type,
+              r'PackageManifest',
+              'type',
+            ),
             objectRef: BuiltValueNullFieldError.checkNotNull(
-                objectRef, r'PackageManifest', 'objectRef'),
+              objectRef,
+              r'PackageManifest',
+              'objectRef',
+            ),
             sender: sender.build(),
             authors: authors.build(),
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'PackageManifest', 'tlp'),
+              tlp,
+              r'PackageManifest',
+              'tlp',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'PackageManifest', 'createdAt'),
+              createdAt,
+              r'PackageManifest',
+              'createdAt',
+            ),
             recipients: recipients,
             contentHashes: contentHashes.build(),
             message: message,
@@ -314,7 +334,10 @@ class PackageManifestBuilder
         _provenanceChain?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PackageManifest', _$failedField, e.toString());
+          r'PackageManifest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -14,17 +14,19 @@ class _$ChronicleSummaryStorage extends ChronicleSummaryStorage {
   @override
   final int? rows;
 
-  factory _$ChronicleSummaryStorage(
-          [void Function(ChronicleSummaryStorageBuilder)? updates]) =>
-      (ChronicleSummaryStorageBuilder()..update(updates))._build();
+  factory _$ChronicleSummaryStorage([
+    void Function(ChronicleSummaryStorageBuilder)? updates,
+  ]) => (ChronicleSummaryStorageBuilder()..update(updates))._build();
 
-  _$ChronicleSummaryStorage._(
-      {required this.bytesUsed, required this.sizeCapBytes, this.rows})
-      : super._();
+  _$ChronicleSummaryStorage._({
+    required this.bytesUsed,
+    required this.sizeCapBytes,
+    this.rows,
+  }) : super._();
   @override
   ChronicleSummaryStorage rebuild(
-          void Function(ChronicleSummaryStorageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSummaryStorageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSummaryStorageBuilder toBuilder() =>
@@ -105,12 +107,19 @@ class ChronicleSummaryStorageBuilder
   ChronicleSummaryStorage build() => _build();
 
   _$ChronicleSummaryStorage _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSummaryStorage._(
           bytesUsed: BuiltValueNullFieldError.checkNotNull(
-              bytesUsed, r'ChronicleSummaryStorage', 'bytesUsed'),
+            bytesUsed,
+            r'ChronicleSummaryStorage',
+            'bytesUsed',
+          ),
           sizeCapBytes: BuiltValueNullFieldError.checkNotNull(
-              sizeCapBytes, r'ChronicleSummaryStorage', 'sizeCapBytes'),
+            sizeCapBytes,
+            r'ChronicleSummaryStorage',
+            'sizeCapBytes',
+          ),
           rows: rows,
         );
     replace(_$result);

@@ -7,23 +7,23 @@ part of 'ownership_chain_node_paths_inner.dart';
 // **************************************************************************
 
 const OwnershipChainNodePathsInnerRelationTypesEnum
-    _$ownershipChainNodePathsInnerRelationTypesEnum_owns =
+_$ownershipChainNodePathsInnerRelationTypesEnum_owns =
     const OwnershipChainNodePathsInnerRelationTypesEnum._('owns');
 const OwnershipChainNodePathsInnerRelationTypesEnum
-    _$ownershipChainNodePathsInnerRelationTypesEnum_controls =
+_$ownershipChainNodePathsInnerRelationTypesEnum_controls =
     const OwnershipChainNodePathsInnerRelationTypesEnum._('controls');
 const OwnershipChainNodePathsInnerRelationTypesEnum
-    _$ownershipChainNodePathsInnerRelationTypesEnum_officerOf =
+_$ownershipChainNodePathsInnerRelationTypesEnum_officerOf =
     const OwnershipChainNodePathsInnerRelationTypesEnum._('officerOf');
 const OwnershipChainNodePathsInnerRelationTypesEnum
-    _$ownershipChainNodePathsInnerRelationTypesEnum_beneficialOwner =
+_$ownershipChainNodePathsInnerRelationTypesEnum_beneficialOwner =
     const OwnershipChainNodePathsInnerRelationTypesEnum._('beneficialOwner');
 const OwnershipChainNodePathsInnerRelationTypesEnum
-    _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith =
+_$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith =
     const OwnershipChainNodePathsInnerRelationTypesEnum._('affiliatedWith');
 
 OwnershipChainNodePathsInnerRelationTypesEnum
-    _$ownershipChainNodePathsInnerRelationTypesEnumValueOf(String name) {
+_$ownershipChainNodePathsInnerRelationTypesEnumValueOf(String name) {
   switch (name) {
     case 'owns':
       return _$ownershipChainNodePathsInnerRelationTypesEnum_owns;
@@ -41,30 +41,32 @@ OwnershipChainNodePathsInnerRelationTypesEnum
 }
 
 final BuiltSet<OwnershipChainNodePathsInnerRelationTypesEnum>
-    _$ownershipChainNodePathsInnerRelationTypesEnumValues = BuiltSet<
-        OwnershipChainNodePathsInnerRelationTypesEnum>(const <OwnershipChainNodePathsInnerRelationTypesEnum>[
-  _$ownershipChainNodePathsInnerRelationTypesEnum_owns,
-  _$ownershipChainNodePathsInnerRelationTypesEnum_controls,
-  _$ownershipChainNodePathsInnerRelationTypesEnum_officerOf,
-  _$ownershipChainNodePathsInnerRelationTypesEnum_beneficialOwner,
-  _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith,
-]);
+_$ownershipChainNodePathsInnerRelationTypesEnumValues =
+    BuiltSet<OwnershipChainNodePathsInnerRelationTypesEnum>(
+      const <OwnershipChainNodePathsInnerRelationTypesEnum>[
+        _$ownershipChainNodePathsInnerRelationTypesEnum_owns,
+        _$ownershipChainNodePathsInnerRelationTypesEnum_controls,
+        _$ownershipChainNodePathsInnerRelationTypesEnum_officerOf,
+        _$ownershipChainNodePathsInnerRelationTypesEnum_beneficialOwner,
+        _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith,
+      ],
+    );
 
 const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
-    _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_confirmed =
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_confirmed =
     const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum._('confirmed');
 const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
-    _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_likely =
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_likely =
     const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum._('likely');
 const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
-    _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible =
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible =
     const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum._('possible');
 const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
-    _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative =
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative =
     const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum._('speculative');
 
 OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
-    _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValueOf(String name) {
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValueOf(String name) {
   switch (name) {
     case 'confirmed':
       return _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_confirmed;
@@ -80,19 +82,21 @@ OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
 }
 
 final BuiltSet<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>
-    _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValues = BuiltSet<
-        OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>(const <OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>[
-  _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_confirmed,
-  _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_likely,
-  _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible,
-  _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative,
-]);
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValues =
+    BuiltSet<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>(
+      const <OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>[
+        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_confirmed,
+        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_likely,
+        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible,
+        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative,
+      ],
+    );
 
 Serializer<OwnershipChainNodePathsInnerRelationTypesEnum>
-    _$ownershipChainNodePathsInnerRelationTypesEnumSerializer =
+_$ownershipChainNodePathsInnerRelationTypesEnumSerializer =
     _$OwnershipChainNodePathsInnerRelationTypesEnumSerializer();
 Serializer<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>
-    _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer =
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer =
     _$OwnershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer();
 
 class _$OwnershipChainNodePathsInnerRelationTypesEnumSerializer
@@ -115,23 +119,26 @@ class _$OwnershipChainNodePathsInnerRelationTypesEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OwnershipChainNodePathsInnerRelationTypesEnum
+    OwnershipChainNodePathsInnerRelationTypesEnum,
   ];
   @override
   final String wireName = 'OwnershipChainNodePathsInnerRelationTypesEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          OwnershipChainNodePathsInnerRelationTypesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OwnershipChainNodePathsInnerRelationTypesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OwnershipChainNodePathsInnerRelationTypesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OwnershipChainNodePathsInnerRelationTypesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OwnershipChainNodePathsInnerRelationTypesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OwnershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer
@@ -152,23 +159,26 @@ class _$OwnershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
+    OwnershipChainNodePathsInnerWeakestEdgeLabelEnum,
   ];
   @override
   final String wireName = 'OwnershipChainNodePathsInnerWeakestEdgeLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          OwnershipChainNodePathsInnerWeakestEdgeLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OwnershipChainNodePathsInnerWeakestEdgeLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OwnershipChainNodePathsInnerWeakestEdgeLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OwnershipChainNodePathsInnerWeakestEdgeLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OwnershipChainNodePathsInnerWeakestEdgeLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OwnershipChainNodePathsInner extends OwnershipChainNodePathsInner {
@@ -181,20 +191,20 @@ class _$OwnershipChainNodePathsInner extends OwnershipChainNodePathsInner {
   @override
   final OwnershipChainNodePathsInnerWeakestEdgeLabelEnum weakestEdgeLabel;
 
-  factory _$OwnershipChainNodePathsInner(
-          [void Function(OwnershipChainNodePathsInnerBuilder)? updates]) =>
-      (OwnershipChainNodePathsInnerBuilder()..update(updates))._build();
+  factory _$OwnershipChainNodePathsInner([
+    void Function(OwnershipChainNodePathsInnerBuilder)? updates,
+  ]) => (OwnershipChainNodePathsInnerBuilder()..update(updates))._build();
 
-  _$OwnershipChainNodePathsInner._(
-      {required this.from,
-      required this.hops,
-      this.relationTypes,
-      required this.weakestEdgeLabel})
-      : super._();
+  _$OwnershipChainNodePathsInner._({
+    required this.from,
+    required this.hops,
+    this.relationTypes,
+    required this.weakestEdgeLabel,
+  }) : super._();
   @override
   OwnershipChainNodePathsInner rebuild(
-          void Function(OwnershipChainNodePathsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OwnershipChainNodePathsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OwnershipChainNodePathsInnerBuilder toBuilder() =>
@@ -234,8 +244,10 @@ class _$OwnershipChainNodePathsInner extends OwnershipChainNodePathsInner {
 
 class OwnershipChainNodePathsInnerBuilder
     implements
-        Builder<OwnershipChainNodePathsInner,
-            OwnershipChainNodePathsInnerBuilder> {
+        Builder<
+          OwnershipChainNodePathsInner,
+          OwnershipChainNodePathsInnerBuilder
+        > {
   _$OwnershipChainNodePathsInner? _$v;
 
   String? _from;
@@ -248,19 +260,18 @@ class OwnershipChainNodePathsInnerBuilder
 
   ListBuilder<OwnershipChainNodePathsInnerRelationTypesEnum>? _relationTypes;
   ListBuilder<OwnershipChainNodePathsInnerRelationTypesEnum>
-      get relationTypes => _$this._relationTypes ??=
-          ListBuilder<OwnershipChainNodePathsInnerRelationTypesEnum>();
+  get relationTypes => _$this._relationTypes ??=
+      ListBuilder<OwnershipChainNodePathsInnerRelationTypesEnum>();
   set relationTypes(
-          ListBuilder<OwnershipChainNodePathsInnerRelationTypesEnum>?
-              relationTypes) =>
-      _$this._relationTypes = relationTypes;
+    ListBuilder<OwnershipChainNodePathsInnerRelationTypesEnum>? relationTypes,
+  ) => _$this._relationTypes = relationTypes;
 
   OwnershipChainNodePathsInnerWeakestEdgeLabelEnum? _weakestEdgeLabel;
   OwnershipChainNodePathsInnerWeakestEdgeLabelEnum? get weakestEdgeLabel =>
       _$this._weakestEdgeLabel;
   set weakestEdgeLabel(
-          OwnershipChainNodePathsInnerWeakestEdgeLabelEnum? weakestEdgeLabel) =>
-      _$this._weakestEdgeLabel = weakestEdgeLabel;
+    OwnershipChainNodePathsInnerWeakestEdgeLabelEnum? weakestEdgeLabel,
+  ) => _$this._weakestEdgeLabel = weakestEdgeLabel;
 
   OwnershipChainNodePathsInnerBuilder() {
     OwnershipChainNodePathsInner._defaults(this);
@@ -294,16 +305,21 @@ class OwnershipChainNodePathsInnerBuilder
   _$OwnershipChainNodePathsInner _build() {
     _$OwnershipChainNodePathsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OwnershipChainNodePathsInner._(
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'OwnershipChainNodePathsInner', 'from'),
+              from,
+              r'OwnershipChainNodePathsInner',
+              'from',
+            ),
             hops: hops.build(),
             relationTypes: _relationTypes?.build(),
             weakestEdgeLabel: BuiltValueNullFieldError.checkNotNull(
-                weakestEdgeLabel,
-                r'OwnershipChainNodePathsInner',
-                'weakestEdgeLabel'),
+              weakestEdgeLabel,
+              r'OwnershipChainNodePathsInner',
+              'weakestEdgeLabel',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -314,7 +330,10 @@ class OwnershipChainNodePathsInnerBuilder
         _relationTypes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OwnershipChainNodePathsInner', _$failedField, e.toString());
+          r'OwnershipChainNodePathsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

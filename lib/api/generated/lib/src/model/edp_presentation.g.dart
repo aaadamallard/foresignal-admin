@@ -23,14 +23,14 @@ class _$EdpPresentation extends EdpPresentation {
   factory _$EdpPresentation([void Function(EdpPresentationBuilder)? updates]) =>
       (EdpPresentationBuilder()..update(updates))._build();
 
-  _$EdpPresentation._(
-      {this.color,
-      this.icon,
-      this.labelField,
-      this.minZoom,
-      this.maxZoom,
-      this.tileProperties})
-      : super._();
+  _$EdpPresentation._({
+    this.color,
+    this.icon,
+    this.labelField,
+    this.minZoom,
+    this.maxZoom,
+    this.tileProperties,
+  }) : super._();
   @override
   EdpPresentation rebuild(void Function(EdpPresentationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -140,7 +140,8 @@ class EdpPresentationBuilder
   _$EdpPresentation _build() {
     _$EdpPresentation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpPresentation._(
             color: color,
             icon: icon,
@@ -156,7 +157,10 @@ class EdpPresentationBuilder
         _tileProperties?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpPresentation', _$failedField, e.toString());
+          r'EdpPresentation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

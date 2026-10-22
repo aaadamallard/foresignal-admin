@@ -323,9 +323,9 @@ abstract class StreamEvents200Response
 
   StreamEvents200Response._();
 
-  factory StreamEvents200Response(
-          [void updates(StreamEvents200ResponseBuilder b)]) =
-      _$StreamEvents200Response;
+  factory StreamEvents200Response([
+    void updates(StreamEvents200ResponseBuilder b),
+  ]) = _$StreamEvents200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StreamEvents200ResponseBuilder b) => b;
@@ -340,7 +340,7 @@ class _$StreamEvents200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     StreamEvents200Response,
-    _$StreamEvents200Response
+    _$StreamEvents200Response,
   ];
 
   @override
@@ -359,9 +359,13 @@ class _$StreamEvents200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -427,8 +431,9 @@ class _$StreamEvents200ResponseSerializer
       FullType(PresenceEvent),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }
@@ -666,7 +671,7 @@ class StreamEvents200ResponseSignatureStatusEnum extends EnumClass {
       _$streamEvents200ResponseSignatureStatusEnum_unknownKey;
 
   static Serializer<StreamEvents200ResponseSignatureStatusEnum>
-      get serializer => _$streamEvents200ResponseSignatureStatusEnumSerializer;
+  get serializer => _$streamEvents200ResponseSignatureStatusEnumSerializer;
 
   const StreamEvents200ResponseSignatureStatusEnum._(String name) : super(name);
 
@@ -834,7 +839,7 @@ class StreamEvents200ResponseSignificantIndicatorsEnum extends EnumClass {
       _$streamEvents200ResponseSignificantIndicatorsEnum_synchrony;
   @BuiltValueEnumConst(wireName: r'textDuplication')
   static const StreamEvents200ResponseSignificantIndicatorsEnum
-      textDuplication =
+  textDuplication =
       _$streamEvents200ResponseSignificantIndicatorsEnum_textDuplication;
   @BuiltValueEnumConst(wireName: r'accountAgeSkew')
   static const StreamEvents200ResponseSignificantIndicatorsEnum accountAgeSkew =
@@ -844,17 +849,17 @@ class StreamEvents200ResponseSignificantIndicatorsEnum extends EnumClass {
       _$streamEvents200ResponseSignificantIndicatorsEnum_coRepostBursts;
 
   static Serializer<StreamEvents200ResponseSignificantIndicatorsEnum>
-      get serializer =>
-          _$streamEvents200ResponseSignificantIndicatorsEnumSerializer;
+  get serializer =>
+      _$streamEvents200ResponseSignificantIndicatorsEnumSerializer;
 
   const StreamEvents200ResponseSignificantIndicatorsEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<StreamEvents200ResponseSignificantIndicatorsEnum>
-      get values => _$streamEvents200ResponseSignificantIndicatorsEnumValues;
+  get values => _$streamEvents200ResponseSignificantIndicatorsEnumValues;
   static StreamEvents200ResponseSignificantIndicatorsEnum valueOf(
-          String name) =>
-      _$streamEvents200ResponseSignificantIndicatorsEnumValueOf(name);
+    String name,
+  ) => _$streamEvents200ResponseSignificantIndicatorsEnumValueOf(name);
 }
 
 class StreamEvents200ResponseFeedbackEnum extends EnumClass {
@@ -891,10 +896,10 @@ class StreamEvents200ResponseSuppressedReasonEnum extends EnumClass {
       _$streamEvents200ResponseSuppressedReasonEnum_ruleSnoozed;
 
   static Serializer<StreamEvents200ResponseSuppressedReasonEnum>
-      get serializer => _$streamEvents200ResponseSuppressedReasonEnumSerializer;
+  get serializer => _$streamEvents200ResponseSuppressedReasonEnumSerializer;
 
   const StreamEvents200ResponseSuppressedReasonEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<StreamEvents200ResponseSuppressedReasonEnum> get values =>
       _$streamEvents200ResponseSuppressedReasonEnumValues;

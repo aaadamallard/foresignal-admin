@@ -14,16 +14,16 @@ class _$RecordMappingTombstone extends RecordMappingTombstone {
   @override
   final BuiltList<JsonObject?>? in_;
 
-  factory _$RecordMappingTombstone(
-          [void Function(RecordMappingTombstoneBuilder)? updates]) =>
-      (RecordMappingTombstoneBuilder()..update(updates))._build();
+  factory _$RecordMappingTombstone([
+    void Function(RecordMappingTombstoneBuilder)? updates,
+  ]) => (RecordMappingTombstoneBuilder()..update(updates))._build();
 
   _$RecordMappingTombstone._({required this.path, this.equals, this.in_})
-      : super._();
+    : super._();
   @override
   RecordMappingTombstone rebuild(
-          void Function(RecordMappingTombstoneBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecordMappingTombstoneBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecordMappingTombstoneBuilder toBuilder() =>
@@ -106,10 +106,14 @@ class RecordMappingTombstoneBuilder
   _$RecordMappingTombstone _build() {
     _$RecordMappingTombstone _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecordMappingTombstone._(
             path: BuiltValueNullFieldError.checkNotNull(
-                path, r'RecordMappingTombstone', 'path'),
+              path,
+              r'RecordMappingTombstone',
+              'path',
+            ),
             equals: equals,
             in_: _in_?.build(),
           );
@@ -120,7 +124,10 @@ class RecordMappingTombstoneBuilder
         _in_?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecordMappingTombstone', _$failedField, e.toString());
+          r'RecordMappingTombstone',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

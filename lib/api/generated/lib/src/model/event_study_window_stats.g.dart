@@ -24,24 +24,24 @@ class _$EventStudyWindowStats extends EventStudyWindowStats {
   @override
   final EventStudyWindowStatsPlacebo? placebo;
 
-  factory _$EventStudyWindowStats(
-          [void Function(EventStudyWindowStatsBuilder)? updates]) =>
-      (EventStudyWindowStatsBuilder()..update(updates))._build();
+  factory _$EventStudyWindowStats([
+    void Function(EventStudyWindowStatsBuilder)? updates,
+  ]) => (EventStudyWindowStatsBuilder()..update(updates))._build();
 
-  _$EventStudyWindowStats._(
-      {required this.window,
-      this.caar,
-      this.standardisedZ,
-      this.standardisedP,
-      this.corradoStat,
-      this.corradoP,
-      this.placeboP,
-      this.placebo})
-      : super._();
+  _$EventStudyWindowStats._({
+    required this.window,
+    this.caar,
+    this.standardisedZ,
+    this.standardisedP,
+    this.corradoStat,
+    this.corradoP,
+    this.placeboP,
+    this.placebo,
+  }) : super._();
   @override
   EventStudyWindowStats rebuild(
-          void Function(EventStudyWindowStatsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStudyWindowStatsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStudyWindowStatsBuilder toBuilder() =>
@@ -167,7 +167,8 @@ class EventStudyWindowStatsBuilder
   _$EventStudyWindowStats _build() {
     _$EventStudyWindowStats _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStudyWindowStats._(
             window: window.build(),
             caar: caar,
@@ -188,7 +189,10 @@ class EventStudyWindowStatsBuilder
         _placebo?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStudyWindowStats', _$failedField, e.toString());
+          r'EventStudyWindowStats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

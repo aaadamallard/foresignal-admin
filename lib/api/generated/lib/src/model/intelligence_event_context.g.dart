@@ -10,15 +10,15 @@ class _$IntelligenceEventContext extends IntelligenceEventContext {
   @override
   final BuiltMap<String, JsonObject?>? weather;
 
-  factory _$IntelligenceEventContext(
-          [void Function(IntelligenceEventContextBuilder)? updates]) =>
-      (IntelligenceEventContextBuilder()..update(updates))._build();
+  factory _$IntelligenceEventContext([
+    void Function(IntelligenceEventContextBuilder)? updates,
+  ]) => (IntelligenceEventContextBuilder()..update(updates))._build();
 
   _$IntelligenceEventContext._({this.weather}) : super._();
   @override
   IntelligenceEventContext rebuild(
-          void Function(IntelligenceEventContextBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelligenceEventContextBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelligenceEventContextBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$IntelligenceEventContext extends IntelligenceEventContext {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IntelligenceEventContext')
-          ..add('weather', weather))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'IntelligenceEventContext',
+    )..add('weather', weather)).toString();
   }
 }
 
@@ -86,10 +86,8 @@ class IntelligenceEventContextBuilder
   _$IntelligenceEventContext _build() {
     _$IntelligenceEventContext _$result;
     try {
-      _$result = _$v ??
-          _$IntelligenceEventContext._(
-            weather: _weather?.build(),
-          );
+      _$result =
+          _$v ?? _$IntelligenceEventContext._(weather: _weather?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -97,7 +95,10 @@ class IntelligenceEventContextBuilder
         _weather?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelligenceEventContext', _$failedField, e.toString());
+          r'IntelligenceEventContext',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

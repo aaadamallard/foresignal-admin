@@ -36,9 +36,9 @@ abstract class SocialSettingsAttentionGap
 
   SocialSettingsAttentionGap._();
 
-  factory SocialSettingsAttentionGap(
-          [void updates(SocialSettingsAttentionGapBuilder b)]) =
-      _$SocialSettingsAttentionGap;
+  factory SocialSettingsAttentionGap([
+    void updates(SocialSettingsAttentionGapBuilder b),
+  ]) = _$SocialSettingsAttentionGap;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsAttentionGapBuilder b) => b;
@@ -53,7 +53,7 @@ class _$SocialSettingsAttentionGapSerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsAttentionGap,
-    _$SocialSettingsAttentionGap
+    _$SocialSettingsAttentionGap,
   ];
 
   @override
@@ -68,8 +68,9 @@ class _$SocialSettingsAttentionGapSerializer
       yield r'minSeverity';
       yield serializers.serialize(
         object.minSeverity,
-        specifiedType:
-            const FullType(SocialSettingsAttentionGapMinSeverityEnum),
+        specifiedType: const FullType(
+          SocialSettingsAttentionGapMinSeverityEnum,
+        ),
       );
     }
     if (object.percentile != null) {
@@ -101,9 +102,11 @@ class _$SocialSettingsAttentionGapSerializer
     SocialSettingsAttentionGap object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,35 +122,44 @@ class _$SocialSettingsAttentionGapSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                SocialSettingsAttentionGapMinSeverityEnum),
-          ) as SocialSettingsAttentionGapMinSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialSettingsAttentionGapMinSeverityEnum,
+                    ),
+                  )
+                  as SocialSettingsAttentionGapMinSeverityEnum?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;
         case r'percentile':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.percentile = valueDes;
           break;
         case r'lookbackDays':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.lookbackDays = valueDes;
           break;
         case r'windowHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.windowHours = valueDes;
           break;

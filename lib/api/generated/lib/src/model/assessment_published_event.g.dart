@@ -7,20 +7,20 @@ part of 'assessment_published_event.dart';
 // **************************************************************************
 
 const AssessmentPublishedEventCadenceEnum
-    _$assessmentPublishedEventCadenceEnum_daily =
+_$assessmentPublishedEventCadenceEnum_daily =
     const AssessmentPublishedEventCadenceEnum._('daily');
 const AssessmentPublishedEventCadenceEnum
-    _$assessmentPublishedEventCadenceEnum_weekly =
+_$assessmentPublishedEventCadenceEnum_weekly =
     const AssessmentPublishedEventCadenceEnum._('weekly');
 const AssessmentPublishedEventCadenceEnum
-    _$assessmentPublishedEventCadenceEnum_monthly =
+_$assessmentPublishedEventCadenceEnum_monthly =
     const AssessmentPublishedEventCadenceEnum._('monthly');
 const AssessmentPublishedEventCadenceEnum
-    _$assessmentPublishedEventCadenceEnum_onDemand =
+_$assessmentPublishedEventCadenceEnum_onDemand =
     const AssessmentPublishedEventCadenceEnum._('onDemand');
 
 AssessmentPublishedEventCadenceEnum
-    _$assessmentPublishedEventCadenceEnumValueOf(String name) {
+_$assessmentPublishedEventCadenceEnumValueOf(String name) {
   switch (name) {
     case 'daily':
       return _$assessmentPublishedEventCadenceEnum_daily;
@@ -36,29 +36,32 @@ AssessmentPublishedEventCadenceEnum
 }
 
 final BuiltSet<AssessmentPublishedEventCadenceEnum>
-    _$assessmentPublishedEventCadenceEnumValues = BuiltSet<
-        AssessmentPublishedEventCadenceEnum>(const <AssessmentPublishedEventCadenceEnum>[
-  _$assessmentPublishedEventCadenceEnum_daily,
-  _$assessmentPublishedEventCadenceEnum_weekly,
-  _$assessmentPublishedEventCadenceEnum_monthly,
-  _$assessmentPublishedEventCadenceEnum_onDemand,
-]);
+_$assessmentPublishedEventCadenceEnumValues =
+    BuiltSet<AssessmentPublishedEventCadenceEnum>(
+      const <AssessmentPublishedEventCadenceEnum>[
+        _$assessmentPublishedEventCadenceEnum_daily,
+        _$assessmentPublishedEventCadenceEnum_weekly,
+        _$assessmentPublishedEventCadenceEnum_monthly,
+        _$assessmentPublishedEventCadenceEnum_onDemand,
+      ],
+    );
 
 const AssessmentPublishedEventStatusEnum
-    _$assessmentPublishedEventStatusEnum_ok =
+_$assessmentPublishedEventStatusEnum_ok =
     const AssessmentPublishedEventStatusEnum._('ok');
 const AssessmentPublishedEventStatusEnum
-    _$assessmentPublishedEventStatusEnum_partial =
+_$assessmentPublishedEventStatusEnum_partial =
     const AssessmentPublishedEventStatusEnum._('partial');
 const AssessmentPublishedEventStatusEnum
-    _$assessmentPublishedEventStatusEnum_digestOnly =
+_$assessmentPublishedEventStatusEnum_digestOnly =
     const AssessmentPublishedEventStatusEnum._('digestOnly');
 const AssessmentPublishedEventStatusEnum
-    _$assessmentPublishedEventStatusEnum_failed =
+_$assessmentPublishedEventStatusEnum_failed =
     const AssessmentPublishedEventStatusEnum._('failed');
 
 AssessmentPublishedEventStatusEnum _$assessmentPublishedEventStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$assessmentPublishedEventStatusEnum_ok;
@@ -74,19 +77,21 @@ AssessmentPublishedEventStatusEnum _$assessmentPublishedEventStatusEnumValueOf(
 }
 
 final BuiltSet<AssessmentPublishedEventStatusEnum>
-    _$assessmentPublishedEventStatusEnumValues = BuiltSet<
-        AssessmentPublishedEventStatusEnum>(const <AssessmentPublishedEventStatusEnum>[
-  _$assessmentPublishedEventStatusEnum_ok,
-  _$assessmentPublishedEventStatusEnum_partial,
-  _$assessmentPublishedEventStatusEnum_digestOnly,
-  _$assessmentPublishedEventStatusEnum_failed,
-]);
+_$assessmentPublishedEventStatusEnumValues =
+    BuiltSet<AssessmentPublishedEventStatusEnum>(
+      const <AssessmentPublishedEventStatusEnum>[
+        _$assessmentPublishedEventStatusEnum_ok,
+        _$assessmentPublishedEventStatusEnum_partial,
+        _$assessmentPublishedEventStatusEnum_digestOnly,
+        _$assessmentPublishedEventStatusEnum_failed,
+      ],
+    );
 
 Serializer<AssessmentPublishedEventCadenceEnum>
-    _$assessmentPublishedEventCadenceEnumSerializer =
+_$assessmentPublishedEventCadenceEnumSerializer =
     _$AssessmentPublishedEventCadenceEnumSerializer();
 Serializer<AssessmentPublishedEventStatusEnum>
-    _$assessmentPublishedEventStatusEnumSerializer =
+_$assessmentPublishedEventStatusEnumSerializer =
     _$AssessmentPublishedEventStatusEnumSerializer();
 
 class _$AssessmentPublishedEventCadenceEnumSerializer
@@ -106,23 +111,26 @@ class _$AssessmentPublishedEventCadenceEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AssessmentPublishedEventCadenceEnum
+    AssessmentPublishedEventCadenceEnum,
   ];
   @override
   final String wireName = 'AssessmentPublishedEventCadenceEnum';
 
   @override
   Object serialize(
-          Serializers serializers, AssessmentPublishedEventCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AssessmentPublishedEventCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AssessmentPublishedEventCadenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentPublishedEventCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentPublishedEventCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentPublishedEventStatusEnumSerializer
@@ -147,16 +155,19 @@ class _$AssessmentPublishedEventStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AssessmentPublishedEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AssessmentPublishedEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AssessmentPublishedEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentPublishedEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentPublishedEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentPublishedEvent extends AssessmentPublishedEvent {
@@ -181,26 +192,26 @@ class _$AssessmentPublishedEvent extends AssessmentPublishedEvent {
   @override
   final DateTime at;
 
-  factory _$AssessmentPublishedEvent(
-          [void Function(AssessmentPublishedEventBuilder)? updates]) =>
-      (AssessmentPublishedEventBuilder()..update(updates))._build();
+  factory _$AssessmentPublishedEvent([
+    void Function(AssessmentPublishedEventBuilder)? updates,
+  ]) => (AssessmentPublishedEventBuilder()..update(updates))._build();
 
-  _$AssessmentPublishedEvent._(
-      {required this.assessmentId,
-      this.cycleId,
-      this.situationId,
-      required this.cadence,
-      required this.status,
-      this.periodStart,
-      this.periodEnd,
-      this.headline,
-      this.private,
-      required this.at})
-      : super._();
+  _$AssessmentPublishedEvent._({
+    required this.assessmentId,
+    this.cycleId,
+    this.situationId,
+    required this.cadence,
+    required this.status,
+    this.periodStart,
+    this.periodEnd,
+    this.headline,
+    this.private,
+    required this.at,
+  }) : super._();
   @override
   AssessmentPublishedEvent rebuild(
-          void Function(AssessmentPublishedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentPublishedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentPublishedEventBuilder toBuilder() =>
@@ -339,22 +350,35 @@ class AssessmentPublishedEventBuilder
   AssessmentPublishedEvent build() => _build();
 
   _$AssessmentPublishedEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AssessmentPublishedEvent._(
           assessmentId: BuiltValueNullFieldError.checkNotNull(
-              assessmentId, r'AssessmentPublishedEvent', 'assessmentId'),
+            assessmentId,
+            r'AssessmentPublishedEvent',
+            'assessmentId',
+          ),
           cycleId: cycleId,
           situationId: situationId,
           cadence: BuiltValueNullFieldError.checkNotNull(
-              cadence, r'AssessmentPublishedEvent', 'cadence'),
+            cadence,
+            r'AssessmentPublishedEvent',
+            'cadence',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'AssessmentPublishedEvent', 'status'),
+            status,
+            r'AssessmentPublishedEvent',
+            'status',
+          ),
           periodStart: periodStart,
           periodEnd: periodEnd,
           headline: headline,
           private: private,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'AssessmentPublishedEvent', 'at'),
+            at,
+            r'AssessmentPublishedEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

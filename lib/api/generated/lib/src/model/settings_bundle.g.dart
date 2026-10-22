@@ -51,28 +51,28 @@ class _$SettingsBundle extends SettingsBundle {
   factory _$SettingsBundle([void Function(SettingsBundleBuilder)? updates]) =>
       (SettingsBundleBuilder()..update(updates))._build();
 
-  _$SettingsBundle._(
-      {this.exportedAt,
-      this.foresignalVersion,
-      required this.sources,
-      this.retention,
-      this.cors,
-      this.security,
-      this.server,
-      this.triggers,
-      this.channels,
-      this.briefings,
-      this.customSources,
-      this.llmProviders,
-      this.llmSettings,
-      this.notifications,
-      this.watchdog,
-      this.pushProviders,
-      this.places,
-      this.views,
-      this.watchlists,
-      this.warnings})
-      : super._();
+  _$SettingsBundle._({
+    this.exportedAt,
+    this.foresignalVersion,
+    required this.sources,
+    this.retention,
+    this.cors,
+    this.security,
+    this.server,
+    this.triggers,
+    this.channels,
+    this.briefings,
+    this.customSources,
+    this.llmProviders,
+    this.llmSettings,
+    this.notifications,
+    this.watchdog,
+    this.pushProviders,
+    this.places,
+    this.views,
+    this.watchlists,
+    this.warnings,
+  }) : super._();
   @override
   SettingsBundle rebuild(void Function(SettingsBundleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -322,7 +322,8 @@ class SettingsBundleBuilder
   _$SettingsBundle _build() {
     _$SettingsBundle _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SettingsBundle._(
             exportedAt: exportedAt,
             foresignalVersion: foresignalVersion,
@@ -386,7 +387,10 @@ class SettingsBundleBuilder
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SettingsBundle', _$failedField, e.toString());
+          r'SettingsBundle',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

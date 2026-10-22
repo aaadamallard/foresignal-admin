@@ -18,8 +18,10 @@ part 'native_push_payload_fcm_message_android.g.dart';
 @BuiltValue()
 abstract class NativePushPayloadFcmMessageAndroid
     implements
-        Built<NativePushPayloadFcmMessageAndroid,
-            NativePushPayloadFcmMessageAndroidBuilder> {
+        Built<
+          NativePushPayloadFcmMessageAndroid,
+          NativePushPayloadFcmMessageAndroidBuilder
+        > {
   @BuiltValueField(wireName: r'priority')
   NativePushPayloadFcmMessageAndroidPriorityEnum? get priority;
   // enum priorityEnum {  HIGH,  NORMAL,  };
@@ -32,9 +34,9 @@ abstract class NativePushPayloadFcmMessageAndroid
 
   NativePushPayloadFcmMessageAndroid._();
 
-  factory NativePushPayloadFcmMessageAndroid(
-          [void updates(NativePushPayloadFcmMessageAndroidBuilder b)]) =
-      _$NativePushPayloadFcmMessageAndroid;
+  factory NativePushPayloadFcmMessageAndroid([
+    void updates(NativePushPayloadFcmMessageAndroidBuilder b),
+  ]) = _$NativePushPayloadFcmMessageAndroid;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NativePushPayloadFcmMessageAndroidBuilder b) => b;
@@ -49,7 +51,7 @@ class _$NativePushPayloadFcmMessageAndroidSerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadFcmMessageAndroid,
-    _$NativePushPayloadFcmMessageAndroid
+    _$NativePushPayloadFcmMessageAndroid,
   ];
 
   @override
@@ -64,8 +66,9 @@ class _$NativePushPayloadFcmMessageAndroidSerializer
       yield r'priority';
       yield serializers.serialize(
         object.priority,
-        specifiedType:
-            const FullType(NativePushPayloadFcmMessageAndroidPriorityEnum),
+        specifiedType: const FullType(
+          NativePushPayloadFcmMessageAndroidPriorityEnum,
+        ),
       );
     }
     if (object.ttl != null) {
@@ -90,9 +93,11 @@ class _$NativePushPayloadFcmMessageAndroidSerializer
     NativePushPayloadFcmMessageAndroid object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,27 +113,34 @@ class _$NativePushPayloadFcmMessageAndroidSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'priority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                NativePushPayloadFcmMessageAndroidPriorityEnum),
-          ) as NativePushPayloadFcmMessageAndroidPriorityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NativePushPayloadFcmMessageAndroidPriorityEnum,
+                    ),
+                  )
+                  as NativePushPayloadFcmMessageAndroidPriorityEnum?;
           if (valueDes == null) continue;
           result.priority = valueDes;
           break;
         case r'ttl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ttl = valueDes;
           break;
         case r'collapse_key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.collapseKey = valueDes;
           break;
@@ -170,11 +182,10 @@ class NativePushPayloadFcmMessageAndroidPriorityEnum extends EnumClass {
       _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL;
 
   static Serializer<NativePushPayloadFcmMessageAndroidPriorityEnum>
-      get serializer =>
-          _$nativePushPayloadFcmMessageAndroidPriorityEnumSerializer;
+  get serializer => _$nativePushPayloadFcmMessageAndroidPriorityEnumSerializer;
 
   const NativePushPayloadFcmMessageAndroidPriorityEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<NativePushPayloadFcmMessageAndroidPriorityEnum> get values =>
       _$nativePushPayloadFcmMessageAndroidPriorityEnumValues;

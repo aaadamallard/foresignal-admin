@@ -18,8 +18,10 @@ part 'propagation_graph_first_news_pickup.g.dart';
 @BuiltValue()
 abstract class PropagationGraphFirstNewsPickup
     implements
-        Built<PropagationGraphFirstNewsPickup,
-            PropagationGraphFirstNewsPickupBuilder> {
+        Built<
+          PropagationGraphFirstNewsPickup,
+          PropagationGraphFirstNewsPickupBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'storyId')
   String get storyId;
@@ -36,9 +38,9 @@ abstract class PropagationGraphFirstNewsPickup
 
   PropagationGraphFirstNewsPickup._();
 
-  factory PropagationGraphFirstNewsPickup(
-          [void updates(PropagationGraphFirstNewsPickupBuilder b)]) =
-      _$PropagationGraphFirstNewsPickup;
+  factory PropagationGraphFirstNewsPickup([
+    void updates(PropagationGraphFirstNewsPickupBuilder b),
+  ]) = _$PropagationGraphFirstNewsPickup;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PropagationGraphFirstNewsPickupBuilder b) => b;
@@ -53,7 +55,7 @@ class _$PropagationGraphFirstNewsPickupSerializer
   @override
   final Iterable<Type> types = const [
     PropagationGraphFirstNewsPickup,
-    _$PropagationGraphFirstNewsPickup
+    _$PropagationGraphFirstNewsPickup,
   ];
 
   @override
@@ -96,9 +98,11 @@ class _$PropagationGraphFirstNewsPickupSerializer
     PropagationGraphFirstNewsPickup object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,32 +118,40 @@ class _$PropagationGraphFirstNewsPickupSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'storyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.storyId = valueDes;
           break;
         case r'articleRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.articleRef = valueDes;
           break;
         case r'observedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.observedAt = valueDes;
           break;
         case r'afterFirstPostSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.afterFirstPostSeconds = valueDes;
           break;

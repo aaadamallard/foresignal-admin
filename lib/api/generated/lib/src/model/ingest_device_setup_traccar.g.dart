@@ -10,15 +10,15 @@ class _$IngestDeviceSetupTraccar extends IngestDeviceSetupTraccar {
   @override
   final String? serverUrl;
 
-  factory _$IngestDeviceSetupTraccar(
-          [void Function(IngestDeviceSetupTraccarBuilder)? updates]) =>
-      (IngestDeviceSetupTraccarBuilder()..update(updates))._build();
+  factory _$IngestDeviceSetupTraccar([
+    void Function(IngestDeviceSetupTraccarBuilder)? updates,
+  ]) => (IngestDeviceSetupTraccarBuilder()..update(updates))._build();
 
   _$IngestDeviceSetupTraccar._({this.serverUrl}) : super._();
   @override
   IngestDeviceSetupTraccar rebuild(
-          void Function(IngestDeviceSetupTraccarBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestDeviceSetupTraccarBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestDeviceSetupTraccarBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$IngestDeviceSetupTraccar extends IngestDeviceSetupTraccar {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IngestDeviceSetupTraccar')
-          ..add('serverUrl', serverUrl))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'IngestDeviceSetupTraccar',
+    )..add('serverUrl', serverUrl)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class IngestDeviceSetupTraccarBuilder
   IngestDeviceSetupTraccar build() => _build();
 
   _$IngestDeviceSetupTraccar _build() {
-    final _$result = _$v ??
-        _$IngestDeviceSetupTraccar._(
-          serverUrl: serverUrl,
-        );
+    final _$result = _$v ?? _$IngestDeviceSetupTraccar._(serverUrl: serverUrl);
     replace(_$result);
     return _$result;
   }

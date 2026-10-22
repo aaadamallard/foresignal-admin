@@ -16,20 +16,20 @@ class _$ExternalBindingEvent extends ExternalBindingEvent {
   @override
   final DateTime at;
 
-  factory _$ExternalBindingEvent(
-          [void Function(ExternalBindingEventBuilder)? updates]) =>
-      (ExternalBindingEventBuilder()..update(updates))._build();
+  factory _$ExternalBindingEvent([
+    void Function(ExternalBindingEventBuilder)? updates,
+  ]) => (ExternalBindingEventBuilder()..update(updates))._build();
 
-  _$ExternalBindingEvent._(
-      {required this.bindingId,
-      required this.sourceId,
-      required this.reason,
-      required this.at})
-      : super._();
+  _$ExternalBindingEvent._({
+    required this.bindingId,
+    required this.sourceId,
+    required this.reason,
+    required this.at,
+  }) : super._();
   @override
   ExternalBindingEvent rebuild(
-          void Function(ExternalBindingEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalBindingEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalBindingEventBuilder toBuilder() =>
@@ -117,16 +117,29 @@ class ExternalBindingEventBuilder
   ExternalBindingEvent build() => _build();
 
   _$ExternalBindingEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalBindingEvent._(
           bindingId: BuiltValueNullFieldError.checkNotNull(
-              bindingId, r'ExternalBindingEvent', 'bindingId'),
+            bindingId,
+            r'ExternalBindingEvent',
+            'bindingId',
+          ),
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'ExternalBindingEvent', 'sourceId'),
+            sourceId,
+            r'ExternalBindingEvent',
+            'sourceId',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ExternalBindingEvent', 'reason'),
+            reason,
+            r'ExternalBindingEvent',
+            'reason',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'ExternalBindingEvent', 'at'),
+            at,
+            r'ExternalBindingEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -20,8 +20,8 @@ OgcCollectionItemTypeEnum _$ogcCollectionItemTypeEnumValueOf(String name) {
 
 final BuiltSet<OgcCollectionItemTypeEnum> _$ogcCollectionItemTypeEnumValues =
     BuiltSet<OgcCollectionItemTypeEnum>(const <OgcCollectionItemTypeEnum>[
-  _$ogcCollectionItemTypeEnum_feature,
-]);
+      _$ogcCollectionItemTypeEnum_feature,
+    ]);
 
 Serializer<OgcCollectionItemTypeEnum> _$ogcCollectionItemTypeEnumSerializer =
     _$OgcCollectionItemTypeEnumSerializer();
@@ -41,16 +41,20 @@ class _$OgcCollectionItemTypeEnumSerializer
   final String wireName = 'OgcCollectionItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, OgcCollectionItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcCollectionItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OgcCollectionItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcCollectionItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcCollectionItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcCollection extends OgcCollection {
@@ -74,16 +78,16 @@ class _$OgcCollection extends OgcCollection {
   factory _$OgcCollection([void Function(OgcCollectionBuilder)? updates]) =>
       (OgcCollectionBuilder()..update(updates))._build();
 
-  _$OgcCollection._(
-      {required this.id,
-      this.title,
-      this.description,
-      required this.itemType,
-      this.crs,
-      this.attribution,
-      this.extent,
-      required this.links})
-      : super._();
+  _$OgcCollection._({
+    required this.id,
+    this.title,
+    this.description,
+    required this.itemType,
+    this.crs,
+    this.attribution,
+    this.extent,
+    required this.links,
+  }) : super._();
   @override
   OgcCollection rebuild(void Function(OgcCollectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -209,14 +213,21 @@ class OgcCollectionBuilder
   _$OgcCollection _build() {
     _$OgcCollection _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCollection._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'OgcCollection', 'id'),
+              id,
+              r'OgcCollection',
+              'id',
+            ),
             title: title,
             description: description,
             itemType: BuiltValueNullFieldError.checkNotNull(
-                itemType, r'OgcCollection', 'itemType'),
+              itemType,
+              r'OgcCollection',
+              'itemType',
+            ),
             crs: _crs?.build(),
             attribution: attribution,
             extent: _extent?.build(),
@@ -234,7 +245,10 @@ class OgcCollectionBuilder
         links.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCollection', _$failedField, e.toString());
+          r'OgcCollection',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

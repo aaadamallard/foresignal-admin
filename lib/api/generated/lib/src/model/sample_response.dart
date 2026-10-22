@@ -84,15 +84,9 @@ class _$SampleResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'lon';
-    yield serializers.serialize(
-      object.lon,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lon, specifiedType: const FullType(num));
     yield r'lat';
-    yield serializers.serialize(
-      object.lat,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lat, specifiedType: const FullType(num));
     if (object.placeId != null) {
       yield r'placeId';
       yield serializers.serialize(
@@ -146,9 +140,11 @@ class _$SampleResponseSerializer
     SampleResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -164,70 +160,84 @@ class _$SampleResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'lon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lon = valueDes;
           break;
         case r'lat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lat = valueDes;
           break;
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.placeId = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.timezone = valueDes;
           break;
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.time = valueDes;
           break;
         case r'serverTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.serverTime = valueDes;
           break;
         case r'values':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(SampleValue)]),
-          ) as BuiltList<SampleValue>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SampleValue),
+                    ]),
+                  )
+                  as BuiltList<SampleValue>;
           result.values.replace(valueDes);
           break;
         case r'disagreement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ModelDisagreement),
-          ) as ModelDisagreement?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ModelDisagreement),
+                  )
+                  as ModelDisagreement?;
           if (valueDes == null) continue;
           result.disagreement.replace(valueDes);
           break;
         case r'position':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SamplePosition),
-          ) as SamplePosition?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SamplePosition),
+                  )
+                  as SamplePosition?;
           if (valueDes == null) continue;
           result.position.replace(valueDes);
           break;

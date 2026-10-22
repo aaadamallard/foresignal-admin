@@ -27,25 +27,26 @@ IngestFormatInfoMethodsEnum _$ingestFormatInfoMethodsEnumValueOf(String name) {
 }
 
 final BuiltSet<IngestFormatInfoMethodsEnum>
-    _$ingestFormatInfoMethodsEnumValues =
+_$ingestFormatInfoMethodsEnumValues =
     BuiltSet<IngestFormatInfoMethodsEnum>(const <IngestFormatInfoMethodsEnum>[
-  _$ingestFormatInfoMethodsEnum_GET,
-  _$ingestFormatInfoMethodsEnum_POST,
-  _$ingestFormatInfoMethodsEnum_PUT,
-]);
+      _$ingestFormatInfoMethodsEnum_GET,
+      _$ingestFormatInfoMethodsEnum_POST,
+      _$ingestFormatInfoMethodsEnum_PUT,
+    ]);
 
 const IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnum_none =
     const IngestFormatInfoVerifiersEnum._('none');
 const IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnum_hmacSha256 =
     const IngestFormatInfoVerifiersEnum._('hmacSha256');
 const IngestFormatInfoVerifiersEnum
-    _$ingestFormatInfoVerifiersEnum_standardWebhooks =
+_$ingestFormatInfoVerifiersEnum_standardWebhooks =
     const IngestFormatInfoVerifiersEnum._('standardWebhooks');
 const IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnum_foresignal =
     const IngestFormatInfoVerifiersEnum._('foresignal');
 
 IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'none':
       return _$ingestFormatInfoVerifiersEnum_none;
@@ -61,19 +62,20 @@ IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnumValueOf(
 }
 
 final BuiltSet<IngestFormatInfoVerifiersEnum>
-    _$ingestFormatInfoVerifiersEnumValues = BuiltSet<
-        IngestFormatInfoVerifiersEnum>(const <IngestFormatInfoVerifiersEnum>[
-  _$ingestFormatInfoVerifiersEnum_none,
-  _$ingestFormatInfoVerifiersEnum_hmacSha256,
-  _$ingestFormatInfoVerifiersEnum_standardWebhooks,
-  _$ingestFormatInfoVerifiersEnum_foresignal,
-]);
+_$ingestFormatInfoVerifiersEnumValues = BuiltSet<IngestFormatInfoVerifiersEnum>(
+  const <IngestFormatInfoVerifiersEnum>[
+    _$ingestFormatInfoVerifiersEnum_none,
+    _$ingestFormatInfoVerifiersEnum_hmacSha256,
+    _$ingestFormatInfoVerifiersEnum_standardWebhooks,
+    _$ingestFormatInfoVerifiersEnum_foresignal,
+  ],
+);
 
 Serializer<IngestFormatInfoMethodsEnum>
-    _$ingestFormatInfoMethodsEnumSerializer =
+_$ingestFormatInfoMethodsEnumSerializer =
     _$IngestFormatInfoMethodsEnumSerializer();
 Serializer<IngestFormatInfoVerifiersEnum>
-    _$ingestFormatInfoVerifiersEnumSerializer =
+_$ingestFormatInfoVerifiersEnumSerializer =
     _$IngestFormatInfoVerifiersEnumSerializer();
 
 class _$IngestFormatInfoMethodsEnumSerializer
@@ -95,16 +97,20 @@ class _$IngestFormatInfoMethodsEnumSerializer
   final String wireName = 'IngestFormatInfoMethodsEnum';
 
   @override
-  Object serialize(Serializers serializers, IngestFormatInfoMethodsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IngestFormatInfoMethodsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IngestFormatInfoMethodsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestFormatInfoMethodsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestFormatInfoMethodsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestFormatInfoVerifiersEnumSerializer
@@ -129,16 +135,19 @@ class _$IngestFormatInfoVerifiersEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IngestFormatInfoVerifiersEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IngestFormatInfoVerifiersEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IngestFormatInfoVerifiersEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IngestFormatInfoVerifiersEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IngestFormatInfoVerifiersEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IngestFormatInfo extends IngestFormatInfo {
@@ -157,19 +166,19 @@ class _$IngestFormatInfo extends IngestFormatInfo {
   @override
   final bool? reserved;
 
-  factory _$IngestFormatInfo(
-          [void Function(IngestFormatInfoBuilder)? updates]) =>
-      (IngestFormatInfoBuilder()..update(updates))._build();
+  factory _$IngestFormatInfo([
+    void Function(IngestFormatInfoBuilder)? updates,
+  ]) => (IngestFormatInfoBuilder()..update(updates))._build();
 
-  _$IngestFormatInfo._(
-      {required this.id,
-      this.description,
-      required this.mediaTypes,
-      this.methods,
-      this.options,
-      this.verifiers,
-      this.reserved})
-      : super._();
+  _$IngestFormatInfo._({
+    required this.id,
+    this.description,
+    required this.mediaTypes,
+    this.methods,
+    this.options,
+    this.verifiers,
+    this.reserved,
+  }) : super._();
   @override
   IngestFormatInfo rebuild(void Function(IngestFormatInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -294,10 +303,14 @@ class IngestFormatInfoBuilder
   _$IngestFormatInfo _build() {
     _$IngestFormatInfo _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IngestFormatInfo._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'IngestFormatInfo', 'id'),
+              id,
+              r'IngestFormatInfo',
+              'id',
+            ),
             description: description,
             mediaTypes: mediaTypes.build(),
             methods: _methods?.build(),
@@ -318,7 +331,10 @@ class IngestFormatInfoBuilder
         _verifiers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IngestFormatInfo', _$failedField, e.toString());
+          r'IngestFormatInfo',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

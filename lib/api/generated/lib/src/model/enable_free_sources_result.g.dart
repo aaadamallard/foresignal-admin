@@ -14,17 +14,19 @@ class _$EnableFreeSourcesResult extends EnableFreeSourcesResult {
   @override
   final int skipped;
 
-  factory _$EnableFreeSourcesResult(
-          [void Function(EnableFreeSourcesResultBuilder)? updates]) =>
-      (EnableFreeSourcesResultBuilder()..update(updates))._build();
+  factory _$EnableFreeSourcesResult([
+    void Function(EnableFreeSourcesResultBuilder)? updates,
+  ]) => (EnableFreeSourcesResultBuilder()..update(updates))._build();
 
-  _$EnableFreeSourcesResult._(
-      {required this.enabled, required this.count, required this.skipped})
-      : super._();
+  _$EnableFreeSourcesResult._({
+    required this.enabled,
+    required this.count,
+    required this.skipped,
+  }) : super._();
   @override
   EnableFreeSourcesResult rebuild(
-          void Function(EnableFreeSourcesResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EnableFreeSourcesResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EnableFreeSourcesResultBuilder toBuilder() =>
@@ -107,13 +109,20 @@ class EnableFreeSourcesResultBuilder
   _$EnableFreeSourcesResult _build() {
     _$EnableFreeSourcesResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EnableFreeSourcesResult._(
             enabled: enabled.build(),
             count: BuiltValueNullFieldError.checkNotNull(
-                count, r'EnableFreeSourcesResult', 'count'),
+              count,
+              r'EnableFreeSourcesResult',
+              'count',
+            ),
             skipped: BuiltValueNullFieldError.checkNotNull(
-                skipped, r'EnableFreeSourcesResult', 'skipped'),
+              skipped,
+              r'EnableFreeSourcesResult',
+              'skipped',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -122,7 +131,10 @@ class EnableFreeSourcesResultBuilder
         enabled.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EnableFreeSourcesResult', _$failedField, e.toString());
+          r'EnableFreeSourcesResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

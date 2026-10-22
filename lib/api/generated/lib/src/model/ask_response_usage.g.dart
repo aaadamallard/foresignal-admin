@@ -20,18 +20,18 @@ class _$AskResponseUsage extends AskResponseUsage {
   @override
   final int? durationMs;
 
-  factory _$AskResponseUsage(
-          [void Function(AskResponseUsageBuilder)? updates]) =>
-      (AskResponseUsageBuilder()..update(updates))._build();
+  factory _$AskResponseUsage([
+    void Function(AskResponseUsageBuilder)? updates,
+  ]) => (AskResponseUsageBuilder()..update(updates))._build();
 
-  _$AskResponseUsage._(
-      {this.provider,
-      this.model,
-      this.inputTokens,
-      this.outputTokens,
-      this.toolCalls,
-      this.durationMs})
-      : super._();
+  _$AskResponseUsage._({
+    this.provider,
+    this.model,
+    this.inputTokens,
+    this.outputTokens,
+    this.toolCalls,
+    this.durationMs,
+  }) : super._();
   @override
   AskResponseUsage rebuild(void Function(AskResponseUsageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -138,7 +138,8 @@ class AskResponseUsageBuilder
   AskResponseUsage build() => _build();
 
   _$AskResponseUsage _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AskResponseUsage._(
           provider: provider,
           model: model,

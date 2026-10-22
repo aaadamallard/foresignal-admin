@@ -37,8 +37,9 @@ abstract class PlaceWeatherDigestNow
 
   PlaceWeatherDigestNow._();
 
-  factory PlaceWeatherDigestNow(
-      [void updates(PlaceWeatherDigestNowBuilder b)]) = _$PlaceWeatherDigestNow;
+  factory PlaceWeatherDigestNow([
+    void updates(PlaceWeatherDigestNowBuilder b),
+  ]) = _$PlaceWeatherDigestNow;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PlaceWeatherDigestNowBuilder b) => b;
@@ -53,7 +54,7 @@ class _$PlaceWeatherDigestNowSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherDigestNow,
-    _$PlaceWeatherDigestNow
+    _$PlaceWeatherDigestNow,
   ];
 
   @override
@@ -82,8 +83,9 @@ class _$PlaceWeatherDigestNowSerializer
       yield r'alerts';
       yield serializers.serialize(
         object.alerts,
-        specifiedType: const FullType(
-            BuiltList, [FullType(PlaceWeatherDigestNowAlertsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(PlaceWeatherDigestNowAlertsInner),
+        ]),
       );
     }
     if (object.alertsStatus != null) {
@@ -101,9 +103,11 @@ class _$PlaceWeatherDigestNowSerializer
     PlaceWeatherDigestNow object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,37 +123,50 @@ class _$PlaceWeatherDigestNowSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'radar':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherDigestNowRadar),
-          ) as PlaceWeatherDigestNowRadar?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNowRadar,
+                    ),
+                  )
+                  as PlaceWeatherDigestNowRadar?;
           if (valueDes == null) continue;
           result.radar.replace(valueDes);
           break;
         case r'lightning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PlaceWeatherDigestNowLightning),
-          ) as PlaceWeatherDigestNowLightning?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNowLightning,
+                    ),
+                  )
+                  as PlaceWeatherDigestNowLightning?;
           if (valueDes == null) continue;
           result.lightning.replace(valueDes);
           break;
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(PlaceWeatherDigestNowAlertsInner)]),
-          ) as BuiltList<PlaceWeatherDigestNowAlertsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(PlaceWeatherDigestNowAlertsInner),
+                    ]),
+                  )
+                  as BuiltList<PlaceWeatherDigestNowAlertsInner>?;
           if (valueDes == null) continue;
           result.alerts.replace(valueDes);
           break;
         case r'alertsStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(PlaceWeatherDigestNowAlertsStatus),
-          ) as PlaceWeatherDigestNowAlertsStatus?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNowAlertsStatus,
+                    ),
+                  )
+                  as PlaceWeatherDigestNowAlertsStatus?;
           if (valueDes == null) continue;
           result.alertsStatus.replace(valueDes);
           break;

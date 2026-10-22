@@ -24,9 +24,9 @@ ReportPatchStatusEnum _$reportPatchStatusEnumValueOf(String name) {
 
 final BuiltSet<ReportPatchStatusEnum> _$reportPatchStatusEnumValues =
     BuiltSet<ReportPatchStatusEnum>(const <ReportPatchStatusEnum>[
-  _$reportPatchStatusEnum_draft,
-  _$reportPatchStatusEnum_review,
-]);
+      _$reportPatchStatusEnum_draft,
+      _$reportPatchStatusEnum_review,
+    ]);
 
 Serializer<ReportPatchStatusEnum> _$reportPatchStatusEnumSerializer =
     _$ReportPatchStatusEnumSerializer();
@@ -48,15 +48,20 @@ class _$ReportPatchStatusEnumSerializer
   final String wireName = 'ReportPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ReportPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReportPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ReportPatchStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ReportPatchStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportPatch extends ReportPatch {
@@ -84,18 +89,18 @@ class _$ReportPatch extends ReportPatch {
   factory _$ReportPatch([void Function(ReportPatchBuilder)? updates]) =>
       (ReportPatchBuilder()..update(updates))._build();
 
-  _$ReportPatch._(
-      {this.title,
-      this.subtitle,
-      this.status,
-      this.authors,
-      this.tlp,
-      this.visibility,
-      this.timeWindow,
-      this.area,
-      this.blockOrder,
-      this.version})
-      : super._();
+  _$ReportPatch._({
+    this.title,
+    this.subtitle,
+    this.status,
+    this.authors,
+    this.tlp,
+    this.visibility,
+    this.timeWindow,
+    this.area,
+    this.blockOrder,
+    this.version,
+  }) : super._();
   @override
   ReportPatch rebuild(void Function(ReportPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -237,7 +242,8 @@ class ReportPatchBuilder implements Builder<ReportPatch, ReportPatchBuilder> {
   _$ReportPatch _build() {
     _$ReportPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportPatch._(
             title: title,
             subtitle: subtitle,
@@ -264,7 +270,10 @@ class ReportPatchBuilder implements Builder<ReportPatch, ReportPatchBuilder> {
         _blockOrder?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportPatch', _$failedField, e.toString());
+          r'ReportPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

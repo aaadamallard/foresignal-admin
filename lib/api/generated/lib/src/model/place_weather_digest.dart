@@ -111,9 +111,11 @@ class _$PlaceWeatherDigestSerializer
     PlaceWeatherDigest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -129,47 +131,65 @@ class _$PlaceWeatherDigestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.placeId = valueDes;
           break;
         case r'place':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.place = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.timezone = valueDes;
           break;
         case r'now':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherDigestNow),
-          ) as PlaceWeatherDigestNow?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNow,
+                    ),
+                  )
+                  as PlaceWeatherDigestNow?;
           if (valueDes == null) continue;
           result.now.replace(valueDes);
           break;
         case r'period':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherDigestPeriod),
-          ) as PlaceWeatherDigestPeriod?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestPeriod,
+                    ),
+                  )
+                  as PlaceWeatherDigestPeriod?;
           if (valueDes == null) continue;
           result.period.replace(valueDes);
           break;
         case r'next':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherDigestNext),
-          ) as PlaceWeatherDigestNext?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherDigestNext,
+                    ),
+                  )
+                  as PlaceWeatherDigestNext?;
           if (valueDes == null) continue;
           result.next.replace(valueDes);
           break;

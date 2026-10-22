@@ -15,10 +15,10 @@ const InfraRulesRulesInnerIdEnum _$infraRulesRulesInnerIdEnum_lineSubstation =
 const InfraRulesRulesInnerIdEnum _$infraRulesRulesInnerIdEnum_plantSubstation =
     const InfraRulesRulesInnerIdEnum._('plantSubstation');
 const InfraRulesRulesInnerIdEnum
-    _$infraRulesRulesInnerIdEnum_substationCriticalLoad =
+_$infraRulesRulesInnerIdEnum_substationCriticalLoad =
     const InfraRulesRulesInnerIdEnum._('substationCriticalLoad');
 const InfraRulesRulesInnerIdEnum
-    _$infraRulesRulesInnerIdEnum_airportPortServes =
+_$infraRulesRulesInnerIdEnum_airportPortServes =
     const InfraRulesRulesInnerIdEnum._('airportPortServes');
 
 InfraRulesRulesInnerIdEnum _$infraRulesRulesInnerIdEnumValueOf(String name) {
@@ -42,27 +42,28 @@ InfraRulesRulesInnerIdEnum _$infraRulesRulesInnerIdEnumValueOf(String name) {
 
 final BuiltSet<InfraRulesRulesInnerIdEnum> _$infraRulesRulesInnerIdEnumValues =
     BuiltSet<InfraRulesRulesInnerIdEnum>(const <InfraRulesRulesInnerIdEnum>[
-  _$infraRulesRulesInnerIdEnum_cableLanding,
-  _$infraRulesRulesInnerIdEnum_ixpFacility,
-  _$infraRulesRulesInnerIdEnum_lineSubstation,
-  _$infraRulesRulesInnerIdEnum_plantSubstation,
-  _$infraRulesRulesInnerIdEnum_substationCriticalLoad,
-  _$infraRulesRulesInnerIdEnum_airportPortServes,
-]);
+      _$infraRulesRulesInnerIdEnum_cableLanding,
+      _$infraRulesRulesInnerIdEnum_ixpFacility,
+      _$infraRulesRulesInnerIdEnum_lineSubstation,
+      _$infraRulesRulesInnerIdEnum_plantSubstation,
+      _$infraRulesRulesInnerIdEnum_substationCriticalLoad,
+      _$infraRulesRulesInnerIdEnum_airportPortServes,
+    ]);
 
 const InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnum_declared =
     const InfraRulesRulesInnerMethodEnum._('declared');
 const InfraRulesRulesInnerMethodEnum
-    _$infraRulesRulesInnerMethodEnum_topological =
+_$infraRulesRulesInnerMethodEnum_topological =
     const InfraRulesRulesInnerMethodEnum._('topological');
 const InfraRulesRulesInnerMethodEnum
-    _$infraRulesRulesInnerMethodEnum_proximity =
+_$infraRulesRulesInnerMethodEnum_proximity =
     const InfraRulesRulesInnerMethodEnum._('proximity');
 const InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnum_inferred =
     const InfraRulesRulesInnerMethodEnum._('inferred');
 
 InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'declared':
       return _$infraRulesRulesInnerMethodEnum_declared;
@@ -78,35 +79,38 @@ InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnumValueOf(
 }
 
 final BuiltSet<InfraRulesRulesInnerMethodEnum>
-    _$infraRulesRulesInnerMethodEnumValues = BuiltSet<
-        InfraRulesRulesInnerMethodEnum>(const <InfraRulesRulesInnerMethodEnum>[
-  _$infraRulesRulesInnerMethodEnum_declared,
-  _$infraRulesRulesInnerMethodEnum_topological,
-  _$infraRulesRulesInnerMethodEnum_proximity,
-  _$infraRulesRulesInnerMethodEnum_inferred,
-]);
+_$infraRulesRulesInnerMethodEnumValues =
+    BuiltSet<InfraRulesRulesInnerMethodEnum>(
+      const <InfraRulesRulesInnerMethodEnum>[
+        _$infraRulesRulesInnerMethodEnum_declared,
+        _$infraRulesRulesInnerMethodEnum_topological,
+        _$infraRulesRulesInnerMethodEnum_proximity,
+        _$infraRulesRulesInnerMethodEnum_inferred,
+      ],
+    );
 
 const InfraRulesRulesInnerRelationEnum
-    _$infraRulesRulesInnerRelationEnum_suppliesPower =
+_$infraRulesRulesInnerRelationEnum_suppliesPower =
     const InfraRulesRulesInnerRelationEnum._('suppliesPower');
 const InfraRulesRulesInnerRelationEnum
-    _$infraRulesRulesInnerRelationEnum_transmitsPower =
+_$infraRulesRulesInnerRelationEnum_transmitsPower =
     const InfraRulesRulesInnerRelationEnum._('transmitsPower');
 const InfraRulesRulesInnerRelationEnum
-    _$infraRulesRulesInnerRelationEnum_landsAt =
+_$infraRulesRulesInnerRelationEnum_landsAt =
     const InfraRulesRulesInnerRelationEnum._('landsAt');
 const InfraRulesRulesInnerRelationEnum
-    _$infraRulesRulesInnerRelationEnum_interconnects =
+_$infraRulesRulesInnerRelationEnum_interconnects =
     const InfraRulesRulesInnerRelationEnum._('interconnects');
 const InfraRulesRulesInnerRelationEnum
-    _$infraRulesRulesInnerRelationEnum_hosts =
+_$infraRulesRulesInnerRelationEnum_hosts =
     const InfraRulesRulesInnerRelationEnum._('hosts');
 const InfraRulesRulesInnerRelationEnum
-    _$infraRulesRulesInnerRelationEnum_serves =
+_$infraRulesRulesInnerRelationEnum_serves =
     const InfraRulesRulesInnerRelationEnum._('serves');
 
 InfraRulesRulesInnerRelationEnum _$infraRulesRulesInnerRelationEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'suppliesPower':
       return _$infraRulesRulesInnerRelationEnum_suppliesPower;
@@ -126,15 +130,17 @@ InfraRulesRulesInnerRelationEnum _$infraRulesRulesInnerRelationEnumValueOf(
 }
 
 final BuiltSet<InfraRulesRulesInnerRelationEnum>
-    _$infraRulesRulesInnerRelationEnumValues = BuiltSet<
-        InfraRulesRulesInnerRelationEnum>(const <InfraRulesRulesInnerRelationEnum>[
-  _$infraRulesRulesInnerRelationEnum_suppliesPower,
-  _$infraRulesRulesInnerRelationEnum_transmitsPower,
-  _$infraRulesRulesInnerRelationEnum_landsAt,
-  _$infraRulesRulesInnerRelationEnum_interconnects,
-  _$infraRulesRulesInnerRelationEnum_hosts,
-  _$infraRulesRulesInnerRelationEnum_serves,
-]);
+_$infraRulesRulesInnerRelationEnumValues =
+    BuiltSet<InfraRulesRulesInnerRelationEnum>(
+      const <InfraRulesRulesInnerRelationEnum>[
+        _$infraRulesRulesInnerRelationEnum_suppliesPower,
+        _$infraRulesRulesInnerRelationEnum_transmitsPower,
+        _$infraRulesRulesInnerRelationEnum_landsAt,
+        _$infraRulesRulesInnerRelationEnum_interconnects,
+        _$infraRulesRulesInnerRelationEnum_hosts,
+        _$infraRulesRulesInnerRelationEnum_serves,
+      ],
+    );
 
 const InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnum_confirmed =
     const InfraRulesRulesInnerLabelEnum._('confirmed');
@@ -143,11 +149,12 @@ const InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnum_likely =
 const InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnum_possible =
     const InfraRulesRulesInnerLabelEnum._('possible');
 const InfraRulesRulesInnerLabelEnum
-    _$infraRulesRulesInnerLabelEnum_speculative =
+_$infraRulesRulesInnerLabelEnum_speculative =
     const InfraRulesRulesInnerLabelEnum._('speculative');
 
 InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'confirmed':
       return _$infraRulesRulesInnerLabelEnum_confirmed;
@@ -163,24 +170,25 @@ InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnumValueOf(
 }
 
 final BuiltSet<InfraRulesRulesInnerLabelEnum>
-    _$infraRulesRulesInnerLabelEnumValues = BuiltSet<
-        InfraRulesRulesInnerLabelEnum>(const <InfraRulesRulesInnerLabelEnum>[
-  _$infraRulesRulesInnerLabelEnum_confirmed,
-  _$infraRulesRulesInnerLabelEnum_likely,
-  _$infraRulesRulesInnerLabelEnum_possible,
-  _$infraRulesRulesInnerLabelEnum_speculative,
-]);
+_$infraRulesRulesInnerLabelEnumValues = BuiltSet<InfraRulesRulesInnerLabelEnum>(
+  const <InfraRulesRulesInnerLabelEnum>[
+    _$infraRulesRulesInnerLabelEnum_confirmed,
+    _$infraRulesRulesInnerLabelEnum_likely,
+    _$infraRulesRulesInnerLabelEnum_possible,
+    _$infraRulesRulesInnerLabelEnum_speculative,
+  ],
+);
 
 Serializer<InfraRulesRulesInnerIdEnum> _$infraRulesRulesInnerIdEnumSerializer =
     _$InfraRulesRulesInnerIdEnumSerializer();
 Serializer<InfraRulesRulesInnerMethodEnum>
-    _$infraRulesRulesInnerMethodEnumSerializer =
+_$infraRulesRulesInnerMethodEnumSerializer =
     _$InfraRulesRulesInnerMethodEnumSerializer();
 Serializer<InfraRulesRulesInnerRelationEnum>
-    _$infraRulesRulesInnerRelationEnumSerializer =
+_$infraRulesRulesInnerRelationEnumSerializer =
     _$InfraRulesRulesInnerRelationEnumSerializer();
 Serializer<InfraRulesRulesInnerLabelEnum>
-    _$infraRulesRulesInnerLabelEnumSerializer =
+_$infraRulesRulesInnerLabelEnumSerializer =
     _$InfraRulesRulesInnerLabelEnumSerializer();
 
 class _$InfraRulesRulesInnerIdEnumSerializer
@@ -208,16 +216,20 @@ class _$InfraRulesRulesInnerIdEnumSerializer
   final String wireName = 'InfraRulesRulesInnerIdEnum';
 
   @override
-  Object serialize(Serializers serializers, InfraRulesRulesInnerIdEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraRulesRulesInnerIdEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraRulesRulesInnerIdEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraRulesRulesInnerIdEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraRulesRulesInnerIdEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraRulesRulesInnerMethodEnumSerializer
@@ -242,16 +254,19 @@ class _$InfraRulesRulesInnerMethodEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, InfraRulesRulesInnerMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    InfraRulesRulesInnerMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraRulesRulesInnerMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraRulesRulesInnerMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraRulesRulesInnerMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraRulesRulesInnerRelationEnumSerializer
@@ -280,16 +295,19 @@ class _$InfraRulesRulesInnerRelationEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, InfraRulesRulesInnerRelationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    InfraRulesRulesInnerRelationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraRulesRulesInnerRelationEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraRulesRulesInnerRelationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraRulesRulesInnerRelationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraRulesRulesInnerLabelEnumSerializer
@@ -314,16 +332,19 @@ class _$InfraRulesRulesInnerLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, InfraRulesRulesInnerLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    InfraRulesRulesInnerLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraRulesRulesInnerLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraRulesRulesInnerLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraRulesRulesInnerLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraRulesRulesInner extends InfraRulesRulesInner {
@@ -340,22 +361,22 @@ class _$InfraRulesRulesInner extends InfraRulesRulesInner {
   @override
   final BuiltMap<String, JsonObject?>? params;
 
-  factory _$InfraRulesRulesInner(
-          [void Function(InfraRulesRulesInnerBuilder)? updates]) =>
-      (InfraRulesRulesInnerBuilder()..update(updates))._build();
+  factory _$InfraRulesRulesInner([
+    void Function(InfraRulesRulesInnerBuilder)? updates,
+  ]) => (InfraRulesRulesInnerBuilder()..update(updates))._build();
 
-  _$InfraRulesRulesInner._(
-      {required this.id,
-      required this.enabled,
-      this.method,
-      this.relation,
-      this.label,
-      this.params})
-      : super._();
+  _$InfraRulesRulesInner._({
+    required this.id,
+    required this.enabled,
+    this.method,
+    this.relation,
+    this.label,
+    this.params,
+  }) : super._();
   @override
   InfraRulesRulesInner rebuild(
-          void Function(InfraRulesRulesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InfraRulesRulesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InfraRulesRulesInnerBuilder toBuilder() =>
@@ -464,12 +485,19 @@ class InfraRulesRulesInnerBuilder
   _$InfraRulesRulesInner _build() {
     _$InfraRulesRulesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraRulesRulesInner._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'InfraRulesRulesInner', 'id'),
+              id,
+              r'InfraRulesRulesInner',
+              'id',
+            ),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'InfraRulesRulesInner', 'enabled'),
+              enabled,
+              r'InfraRulesRulesInner',
+              'enabled',
+            ),
             method: method,
             relation: relation,
             label: label,
@@ -482,7 +510,10 @@ class InfraRulesRulesInnerBuilder
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraRulesRulesInner', _$failedField, e.toString());
+          r'InfraRulesRulesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

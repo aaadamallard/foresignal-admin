@@ -159,8 +159,9 @@ class _$SituationChangesSerializer
       yield r'keyValues';
       yield serializers.serialize(
         object.keyValues,
-        specifiedType: const FullType(
-            BuiltList, [FullType(SituationChangesKeyValuesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SituationChangesKeyValuesInner),
+        ]),
       );
     }
     if (object.manifestId != null) {
@@ -178,9 +179,11 @@ class _$SituationChangesSerializer
     SituationChanges object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -196,93 +199,123 @@ class _$SituationChangesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.situationId = valueDes;
           break;
         case r'since':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.since = valueDes;
           break;
         case r'baselineDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.baselineDay = valueDes;
           break;
         case r'now':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.now = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationChangesStatus),
-          ) as SituationChangesStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SituationChangesStatus),
+                  )
+                  as SituationChangesStatus;
           result.status.replace(valueDes);
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationChangesSeverity),
-          ) as SituationChangesSeverity;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SituationChangesSeverity),
+                  )
+                  as SituationChangesSeverity;
           result.severity.replace(valueDes);
           break;
         case r'newMembers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationChangesNewMembers),
-          ) as SituationChangesNewMembers;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SituationChangesNewMembers),
+                  )
+                  as SituationChangesNewMembers;
           result.newMembers.replace(valueDes);
           break;
         case r'area':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SituationChangesArea),
-          ) as SituationChangesArea?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SituationChangesArea,
+                    ),
+                  )
+                  as SituationChangesArea?;
           if (valueDes == null) continue;
           result.area.replace(valueDes);
           break;
         case r'regionsAdded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.regionsAdded.replace(valueDes);
           break;
         case r'regionsRemoved':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionsRemoved.replace(valueDes);
           break;
         case r'keyValues':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SituationChangesKeyValuesInner)]),
-          ) as BuiltList<SituationChangesKeyValuesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SituationChangesKeyValuesInner),
+                    ]),
+                  )
+                  as BuiltList<SituationChangesKeyValuesInner>?;
           if (valueDes == null) continue;
           result.keyValues.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;

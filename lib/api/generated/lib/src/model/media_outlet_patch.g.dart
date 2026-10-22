@@ -56,17 +56,17 @@ MediaOutletPatchTypeEnum _$mediaOutletPatchTypeEnumValueOf(String name) {
 
 final BuiltSet<MediaOutletPatchTypeEnum> _$mediaOutletPatchTypeEnumValues =
     BuiltSet<MediaOutletPatchTypeEnum>(const <MediaOutletPatchTypeEnum>[
-  _$mediaOutletPatchTypeEnum_wire,
-  _$mediaOutletPatchTypeEnum_national,
-  _$mediaOutletPatchTypeEnum_regional,
-  _$mediaOutletPatchTypeEnum_local,
-  _$mediaOutletPatchTypeEnum_publicBroadcaster,
-  _$mediaOutletPatchTypeEnum_stateAffiliated,
-  _$mediaOutletPatchTypeEnum_aggregator,
-  _$mediaOutletPatchTypeEnum_blog,
-  _$mediaOutletPatchTypeEnum_official,
-  _$mediaOutletPatchTypeEnum_other,
-]);
+      _$mediaOutletPatchTypeEnum_wire,
+      _$mediaOutletPatchTypeEnum_national,
+      _$mediaOutletPatchTypeEnum_regional,
+      _$mediaOutletPatchTypeEnum_local,
+      _$mediaOutletPatchTypeEnum_publicBroadcaster,
+      _$mediaOutletPatchTypeEnum_stateAffiliated,
+      _$mediaOutletPatchTypeEnum_aggregator,
+      _$mediaOutletPatchTypeEnum_blog,
+      _$mediaOutletPatchTypeEnum_official,
+      _$mediaOutletPatchTypeEnum_other,
+    ]);
 
 Serializer<MediaOutletPatchTypeEnum> _$mediaOutletPatchTypeEnumSerializer =
     _$MediaOutletPatchTypeEnumSerializer();
@@ -104,16 +104,20 @@ class _$MediaOutletPatchTypeEnumSerializer
   final String wireName = 'MediaOutletPatchTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaOutletPatchTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaOutletPatchTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MediaOutletPatchTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaOutletPatchTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaOutletPatchTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaOutletPatch extends MediaOutletPatch {
@@ -134,20 +138,20 @@ class _$MediaOutletPatch extends MediaOutletPatch {
   @override
   final BuiltList<String>? aggregates;
 
-  factory _$MediaOutletPatch(
-          [void Function(MediaOutletPatchBuilder)? updates]) =>
-      (MediaOutletPatchBuilder()..update(updates))._build();
+  factory _$MediaOutletPatch([
+    void Function(MediaOutletPatchBuilder)? updates,
+  ]) => (MediaOutletPatchBuilder()..update(updates))._build();
 
-  _$MediaOutletPatch._(
-      {this.name,
-      this.type,
-      this.ownerOrg,
-      this.parentOrg,
-      this.wikidataQid,
-      this.domains,
-      this.mergeOutletIds,
-      this.aggregates})
-      : super._();
+  _$MediaOutletPatch._({
+    this.name,
+    this.type,
+    this.ownerOrg,
+    this.parentOrg,
+    this.wikidataQid,
+    this.domains,
+    this.mergeOutletIds,
+    this.aggregates,
+  }) : super._();
   @override
   MediaOutletPatch rebuild(void Function(MediaOutletPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -276,7 +280,8 @@ class MediaOutletPatchBuilder
   _$MediaOutletPatch _build() {
     _$MediaOutletPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MediaOutletPatch._(
             name: name,
             type: type,
@@ -298,7 +303,10 @@ class MediaOutletPatchBuilder
         _aggregates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MediaOutletPatch', _$failedField, e.toString());
+          r'MediaOutletPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

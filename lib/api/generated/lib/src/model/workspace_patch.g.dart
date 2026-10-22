@@ -24,9 +24,9 @@ WorkspacePatchMembersEnum _$workspacePatchMembersEnumValueOf(String name) {
 
 final BuiltSet<WorkspacePatchMembersEnum> _$workspacePatchMembersEnumValues =
     BuiltSet<WorkspacePatchMembersEnum>(const <WorkspacePatchMembersEnum>[
-  _$workspacePatchMembersEnum_viewer,
-  _$workspacePatchMembersEnum_editor,
-]);
+      _$workspacePatchMembersEnum_viewer,
+      _$workspacePatchMembersEnum_editor,
+    ]);
 
 Serializer<WorkspacePatchMembersEnum> _$workspacePatchMembersEnumSerializer =
     _$WorkspacePatchMembersEnumSerializer();
@@ -48,16 +48,20 @@ class _$WorkspacePatchMembersEnumSerializer
   final String wireName = 'WorkspacePatchMembersEnum';
 
   @override
-  Object serialize(Serializers serializers, WorkspacePatchMembersEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WorkspacePatchMembersEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WorkspacePatchMembersEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WorkspacePatchMembersEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WorkspacePatchMembersEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WorkspacePatch extends WorkspacePatch {
@@ -75,13 +79,13 @@ class _$WorkspacePatch extends WorkspacePatch {
   factory _$WorkspacePatch([void Function(WorkspacePatchBuilder)? updates]) =>
       (WorkspacePatchBuilder()..update(updates))._build();
 
-  _$WorkspacePatch._(
-      {this.name,
-      this.members,
-      this.savedViewIds,
-      this.investigationId,
-      this.private})
-      : super._();
+  _$WorkspacePatch._({
+    this.name,
+    this.members,
+    this.savedViewIds,
+    this.investigationId,
+    this.private,
+  }) : super._();
   @override
   WorkspacePatch rebuild(void Function(WorkspacePatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -186,7 +190,8 @@ class WorkspacePatchBuilder
   _$WorkspacePatch _build() {
     _$WorkspacePatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WorkspacePatch._(
             name: name,
             members: _members?.build(),
@@ -203,7 +208,10 @@ class WorkspacePatchBuilder
         _savedViewIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WorkspacePatch', _$failedField, e.toString());
+          r'WorkspacePatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

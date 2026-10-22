@@ -14,17 +14,19 @@ class _$IntelEventAlternative extends IntelEventAlternative {
   @override
   final BuiltList<String>? supportingMemberIds;
 
-  factory _$IntelEventAlternative(
-          [void Function(IntelEventAlternativeBuilder)? updates]) =>
-      (IntelEventAlternativeBuilder()..update(updates))._build();
+  factory _$IntelEventAlternative([
+    void Function(IntelEventAlternativeBuilder)? updates,
+  ]) => (IntelEventAlternativeBuilder()..update(updates))._build();
 
-  _$IntelEventAlternative._(
-      {required this.hypothesis, required this.basis, this.supportingMemberIds})
-      : super._();
+  _$IntelEventAlternative._({
+    required this.hypothesis,
+    required this.basis,
+    this.supportingMemberIds,
+  }) : super._();
   @override
   IntelEventAlternative rebuild(
-          void Function(IntelEventAlternativeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelEventAlternativeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelEventAlternativeBuilder toBuilder() =>
@@ -108,12 +110,19 @@ class IntelEventAlternativeBuilder
   _$IntelEventAlternative _build() {
     _$IntelEventAlternative _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventAlternative._(
             hypothesis: BuiltValueNullFieldError.checkNotNull(
-                hypothesis, r'IntelEventAlternative', 'hypothesis'),
+              hypothesis,
+              r'IntelEventAlternative',
+              'hypothesis',
+            ),
             basis: BuiltValueNullFieldError.checkNotNull(
-                basis, r'IntelEventAlternative', 'basis'),
+              basis,
+              r'IntelEventAlternative',
+              'basis',
+            ),
             supportingMemberIds: _supportingMemberIds?.build(),
           );
     } catch (_) {
@@ -123,7 +132,10 @@ class IntelEventAlternativeBuilder
         _supportingMemberIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventAlternative', _$failedField, e.toString());
+          r'IntelEventAlternative',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

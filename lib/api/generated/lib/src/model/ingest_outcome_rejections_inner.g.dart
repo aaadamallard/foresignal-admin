@@ -14,16 +14,16 @@ class _$IngestOutcomeRejectionsInner extends IngestOutcomeRejectionsInner {
   @override
   final String? reason;
 
-  factory _$IngestOutcomeRejectionsInner(
-          [void Function(IngestOutcomeRejectionsInnerBuilder)? updates]) =>
-      (IngestOutcomeRejectionsInnerBuilder()..update(updates))._build();
+  factory _$IngestOutcomeRejectionsInner([
+    void Function(IngestOutcomeRejectionsInnerBuilder)? updates,
+  ]) => (IngestOutcomeRejectionsInnerBuilder()..update(updates))._build();
 
   _$IngestOutcomeRejectionsInner._({this.index, this.externalId, this.reason})
-      : super._();
+    : super._();
   @override
   IngestOutcomeRejectionsInner rebuild(
-          void Function(IngestOutcomeRejectionsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestOutcomeRejectionsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestOutcomeRejectionsInnerBuilder toBuilder() =>
@@ -60,8 +60,10 @@ class _$IngestOutcomeRejectionsInner extends IngestOutcomeRejectionsInner {
 
 class IngestOutcomeRejectionsInnerBuilder
     implements
-        Builder<IngestOutcomeRejectionsInner,
-            IngestOutcomeRejectionsInnerBuilder> {
+        Builder<
+          IngestOutcomeRejectionsInner,
+          IngestOutcomeRejectionsInnerBuilder
+        > {
   _$IngestOutcomeRejectionsInner? _$v;
 
   int? _index;
@@ -105,7 +107,8 @@ class IngestOutcomeRejectionsInnerBuilder
   IngestOutcomeRejectionsInner build() => _build();
 
   _$IngestOutcomeRejectionsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestOutcomeRejectionsInner._(
           index: index,
           externalId: externalId,

@@ -18,21 +18,21 @@ class _$ExportLicenceSummary extends ExportLicenceSummary {
   @override
   final BuiltList<ExportLicenceSummaryExcludedInner>? excluded;
 
-  factory _$ExportLicenceSummary(
-          [void Function(ExportLicenceSummaryBuilder)? updates]) =>
-      (ExportLicenceSummaryBuilder()..update(updates))._build();
+  factory _$ExportLicenceSummary([
+    void Function(ExportLicenceSummaryBuilder)? updates,
+  ]) => (ExportLicenceSummaryBuilder()..update(updates))._build();
 
-  _$ExportLicenceSummary._(
-      {required this.licences,
-      required this.attributions,
-      required this.personalUseOnly,
-      this.personalUseSources,
-      this.excluded})
-      : super._();
+  _$ExportLicenceSummary._({
+    required this.licences,
+    required this.attributions,
+    required this.personalUseOnly,
+    this.personalUseSources,
+    this.excluded,
+  }) : super._();
   @override
   ExportLicenceSummary rebuild(
-          void Function(ExportLicenceSummaryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExportLicenceSummaryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExportLicenceSummaryBuilder toBuilder() =>
@@ -139,12 +139,16 @@ class ExportLicenceSummaryBuilder
   _$ExportLicenceSummary _build() {
     _$ExportLicenceSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExportLicenceSummary._(
             licences: licences.build(),
             attributions: attributions.build(),
             personalUseOnly: BuiltValueNullFieldError.checkNotNull(
-                personalUseOnly, r'ExportLicenceSummary', 'personalUseOnly'),
+              personalUseOnly,
+              r'ExportLicenceSummary',
+              'personalUseOnly',
+            ),
             personalUseSources: _personalUseSources?.build(),
             excluded: _excluded?.build(),
           );
@@ -162,7 +166,10 @@ class ExportLicenceSummaryBuilder
         _excluded?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExportLicenceSummary', _$failedField, e.toString());
+          r'ExportLicenceSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

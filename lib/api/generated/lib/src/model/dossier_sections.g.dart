@@ -25,15 +25,15 @@ class _$DossierSections extends DossierSections {
   factory _$DossierSections([void Function(DossierSectionsBuilder)? updates]) =>
       (DossierSectionsBuilder()..update(updates))._build();
 
-  _$DossierSections._(
-      {this.overview,
-      this.imagery,
-      this.forecast,
-      this.impacts,
-      this.related,
-      this.timeline,
-      this.analysis})
-      : super._();
+  _$DossierSections._({
+    this.overview,
+    this.imagery,
+    this.forecast,
+    this.impacts,
+    this.related,
+    this.timeline,
+    this.analysis,
+  }) : super._();
   @override
   DossierSections rebuild(void Function(DossierSectionsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -163,7 +163,8 @@ class DossierSectionsBuilder
   _$DossierSections _build() {
     _$DossierSections _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSections._(
             overview: _overview?.build(),
             imagery: _imagery?.build(),
@@ -192,7 +193,10 @@ class DossierSectionsBuilder
         _analysis?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSections', _$failedField, e.toString());
+          r'DossierSections',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,14 +7,14 @@ part of 'get_forecast_calibration200_response.dart';
 // **************************************************************************
 
 const GetForecastCalibration200ResponseLabelEnum
-    _$getForecastCalibration200ResponseLabelEnum_ok =
+_$getForecastCalibration200ResponseLabelEnum_ok =
     const GetForecastCalibration200ResponseLabelEnum._('ok');
 const GetForecastCalibration200ResponseLabelEnum
-    _$getForecastCalibration200ResponseLabelEnum_insufficient =
+_$getForecastCalibration200ResponseLabelEnum_insufficient =
     const GetForecastCalibration200ResponseLabelEnum._('insufficient');
 
 GetForecastCalibration200ResponseLabelEnum
-    _$getForecastCalibration200ResponseLabelEnumValueOf(String name) {
+_$getForecastCalibration200ResponseLabelEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$getForecastCalibration200ResponseLabelEnum_ok;
@@ -26,21 +26,23 @@ GetForecastCalibration200ResponseLabelEnum
 }
 
 final BuiltSet<GetForecastCalibration200ResponseLabelEnum>
-    _$getForecastCalibration200ResponseLabelEnumValues = BuiltSet<
-        GetForecastCalibration200ResponseLabelEnum>(const <GetForecastCalibration200ResponseLabelEnum>[
-  _$getForecastCalibration200ResponseLabelEnum_ok,
-  _$getForecastCalibration200ResponseLabelEnum_insufficient,
-]);
+_$getForecastCalibration200ResponseLabelEnumValues =
+    BuiltSet<GetForecastCalibration200ResponseLabelEnum>(
+      const <GetForecastCalibration200ResponseLabelEnum>[
+        _$getForecastCalibration200ResponseLabelEnum_ok,
+        _$getForecastCalibration200ResponseLabelEnum_insufficient,
+      ],
+    );
 
 const GetForecastCalibration200ResponseMethodEnum
-    _$getForecastCalibration200ResponseMethodEnum_corp =
+_$getForecastCalibration200ResponseMethodEnum_corp =
     const GetForecastCalibration200ResponseMethodEnum._('corp');
 const GetForecastCalibration200ResponseMethodEnum
-    _$getForecastCalibration200ResponseMethodEnum_bins =
+_$getForecastCalibration200ResponseMethodEnum_bins =
     const GetForecastCalibration200ResponseMethodEnum._('bins');
 
 GetForecastCalibration200ResponseMethodEnum
-    _$getForecastCalibration200ResponseMethodEnumValueOf(String name) {
+_$getForecastCalibration200ResponseMethodEnumValueOf(String name) {
   switch (name) {
     case 'corp':
       return _$getForecastCalibration200ResponseMethodEnum_corp;
@@ -52,18 +54,20 @@ GetForecastCalibration200ResponseMethodEnum
 }
 
 final BuiltSet<GetForecastCalibration200ResponseMethodEnum>
-    _$getForecastCalibration200ResponseMethodEnumValues = BuiltSet<
-        GetForecastCalibration200ResponseMethodEnum>(const <GetForecastCalibration200ResponseMethodEnum>[
-  _$getForecastCalibration200ResponseMethodEnum_corp,
-  _$getForecastCalibration200ResponseMethodEnum_bins,
-]);
+_$getForecastCalibration200ResponseMethodEnumValues =
+    BuiltSet<GetForecastCalibration200ResponseMethodEnum>(
+      const <GetForecastCalibration200ResponseMethodEnum>[
+        _$getForecastCalibration200ResponseMethodEnum_corp,
+        _$getForecastCalibration200ResponseMethodEnum_bins,
+      ],
+    );
 
 const GetForecastCalibration200ResponseTypeEnum
-    _$getForecastCalibration200ResponseTypeEnum_numeric =
+_$getForecastCalibration200ResponseTypeEnum_numeric =
     const GetForecastCalibration200ResponseTypeEnum._('numeric');
 
 GetForecastCalibration200ResponseTypeEnum
-    _$getForecastCalibration200ResponseTypeEnumValueOf(String name) {
+_$getForecastCalibration200ResponseTypeEnumValueOf(String name) {
   switch (name) {
     case 'numeric':
       return _$getForecastCalibration200ResponseTypeEnum_numeric;
@@ -73,19 +77,21 @@ GetForecastCalibration200ResponseTypeEnum
 }
 
 final BuiltSet<GetForecastCalibration200ResponseTypeEnum>
-    _$getForecastCalibration200ResponseTypeEnumValues = BuiltSet<
-        GetForecastCalibration200ResponseTypeEnum>(const <GetForecastCalibration200ResponseTypeEnum>[
-  _$getForecastCalibration200ResponseTypeEnum_numeric,
-]);
+_$getForecastCalibration200ResponseTypeEnumValues =
+    BuiltSet<GetForecastCalibration200ResponseTypeEnum>(
+      const <GetForecastCalibration200ResponseTypeEnum>[
+        _$getForecastCalibration200ResponseTypeEnum_numeric,
+      ],
+    );
 
 Serializer<GetForecastCalibration200ResponseLabelEnum>
-    _$getForecastCalibration200ResponseLabelEnumSerializer =
+_$getForecastCalibration200ResponseLabelEnumSerializer =
     _$GetForecastCalibration200ResponseLabelEnumSerializer();
 Serializer<GetForecastCalibration200ResponseMethodEnum>
-    _$getForecastCalibration200ResponseMethodEnumSerializer =
+_$getForecastCalibration200ResponseMethodEnumSerializer =
     _$GetForecastCalibration200ResponseMethodEnumSerializer();
 Serializer<GetForecastCalibration200ResponseTypeEnum>
-    _$getForecastCalibration200ResponseTypeEnumSerializer =
+_$getForecastCalibration200ResponseTypeEnumSerializer =
     _$GetForecastCalibration200ResponseTypeEnumSerializer();
 
 class _$GetForecastCalibration200ResponseLabelEnumSerializer
@@ -101,23 +107,26 @@ class _$GetForecastCalibration200ResponseLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    GetForecastCalibration200ResponseLabelEnum
+    GetForecastCalibration200ResponseLabelEnum,
   ];
   @override
   final String wireName = 'GetForecastCalibration200ResponseLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          GetForecastCalibration200ResponseLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GetForecastCalibration200ResponseLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GetForecastCalibration200ResponseLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GetForecastCalibration200ResponseLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GetForecastCalibration200ResponseLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GetForecastCalibration200ResponseMethodEnumSerializer
@@ -134,23 +143,26 @@ class _$GetForecastCalibration200ResponseMethodEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    GetForecastCalibration200ResponseMethodEnum
+    GetForecastCalibration200ResponseMethodEnum,
   ];
   @override
   final String wireName = 'GetForecastCalibration200ResponseMethodEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          GetForecastCalibration200ResponseMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GetForecastCalibration200ResponseMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GetForecastCalibration200ResponseMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GetForecastCalibration200ResponseMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GetForecastCalibration200ResponseMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GetForecastCalibration200ResponseTypeEnumSerializer
@@ -164,23 +176,26 @@ class _$GetForecastCalibration200ResponseTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    GetForecastCalibration200ResponseTypeEnum
+    GetForecastCalibration200ResponseTypeEnum,
   ];
   @override
   final String wireName = 'GetForecastCalibration200ResponseTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          GetForecastCalibration200ResponseTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    GetForecastCalibration200ResponseTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GetForecastCalibration200ResponseTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GetForecastCalibration200ResponseTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GetForecastCalibration200ResponseTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GetForecastCalibration200Response
@@ -188,15 +203,15 @@ class _$GetForecastCalibration200Response
   @override
   final OneOf oneOf;
 
-  factory _$GetForecastCalibration200Response(
-          [void Function(GetForecastCalibration200ResponseBuilder)? updates]) =>
-      (GetForecastCalibration200ResponseBuilder()..update(updates))._build();
+  factory _$GetForecastCalibration200Response([
+    void Function(GetForecastCalibration200ResponseBuilder)? updates,
+  ]) => (GetForecastCalibration200ResponseBuilder()..update(updates))._build();
 
   _$GetForecastCalibration200Response._({required this.oneOf}) : super._();
   @override
   GetForecastCalibration200Response rebuild(
-          void Function(GetForecastCalibration200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GetForecastCalibration200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GetForecastCalibration200ResponseBuilder toBuilder() =>
@@ -218,16 +233,18 @@ class _$GetForecastCalibration200Response
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GetForecastCalibration200Response')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'GetForecastCalibration200Response',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
 class GetForecastCalibration200ResponseBuilder
     implements
-        Builder<GetForecastCalibration200Response,
-            GetForecastCalibration200ResponseBuilder> {
+        Builder<
+          GetForecastCalibration200Response,
+          GetForecastCalibration200ResponseBuilder
+        > {
   _$GetForecastCalibration200Response? _$v;
 
   OneOf? _oneOf;
@@ -254,7 +271,8 @@ class GetForecastCalibration200ResponseBuilder
 
   @override
   void update(
-      void Function(GetForecastCalibration200ResponseBuilder)? updates) {
+    void Function(GetForecastCalibration200ResponseBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -262,10 +280,14 @@ class GetForecastCalibration200ResponseBuilder
   GetForecastCalibration200Response build() => _build();
 
   _$GetForecastCalibration200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GetForecastCalibration200Response._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'GetForecastCalibration200Response', 'oneOf'),
+            oneOf,
+            r'GetForecastCalibration200Response',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

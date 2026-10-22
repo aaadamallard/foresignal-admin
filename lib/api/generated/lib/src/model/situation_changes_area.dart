@@ -44,7 +44,7 @@ class _$SituationChangesAreaSerializer
   @override
   final Iterable<Type> types = const [
     SituationChangesArea,
-    _$SituationChangesArea
+    _$SituationChangesArea,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$SituationChangesAreaSerializer
     SituationChangesArea object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,26 +104,32 @@ class _$SituationChangesAreaSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'beforeKm2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.beforeKm2 = valueDes;
           break;
         case r'afterKm2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.afterKm2 = valueDes;
           break;
         case r'deltaKm2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.deltaKm2 = valueDes;
           break;

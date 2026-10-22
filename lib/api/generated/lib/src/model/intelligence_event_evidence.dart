@@ -31,9 +31,9 @@ abstract class IntelligenceEventEvidence
 
   IntelligenceEventEvidence._();
 
-  factory IntelligenceEventEvidence(
-          [void updates(IntelligenceEventEvidenceBuilder b)]) =
-      _$IntelligenceEventEvidence;
+  factory IntelligenceEventEvidence([
+    void updates(IntelligenceEventEvidenceBuilder b),
+  ]) = _$IntelligenceEventEvidence;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelligenceEventEvidenceBuilder b) => b;
@@ -48,7 +48,7 @@ class _$IntelligenceEventEvidenceSerializer
   @override
   final Iterable<Type> types = const [
     IntelligenceEventEvidence,
-    _$IntelligenceEventEvidence
+    _$IntelligenceEventEvidence,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$IntelligenceEventEvidenceSerializer
     IntelligenceEventEvidence object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,27 +104,32 @@ class _$IntelligenceEventEvidenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'memberCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.memberCount = valueDes;
           break;
         case r'signalFamilies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.signalFamilies.replace(valueDes);
           break;
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(IntelEventMember)]),
-          ) as BuiltList<IntelEventMember>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(IntelEventMember),
+                    ]),
+                  )
+                  as BuiltList<IntelEventMember>;
           result.members.replace(valueDes);
           break;
         default:

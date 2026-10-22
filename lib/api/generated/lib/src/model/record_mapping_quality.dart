@@ -44,7 +44,7 @@ class _$RecordMappingQualitySerializer
   @override
   final Iterable<Type> types = const [
     RecordMappingQuality,
-    _$RecordMappingQuality
+    _$RecordMappingQuality,
   ];
 
   @override
@@ -66,8 +66,10 @@ class _$RecordMappingQualitySerializer
       yield r'extra';
       yield serializers.serialize(
         object.extra,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -78,9 +80,11 @@ class _$RecordMappingQualitySerializer
     RecordMappingQuality object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,19 +100,25 @@ class _$RecordMappingQualitySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accuracyMeters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.accuracyMeters = valueDes;
           break;
         case r'extra':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.extra.replace(valueDes);
           break;

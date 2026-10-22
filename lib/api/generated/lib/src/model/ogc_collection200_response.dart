@@ -39,9 +39,9 @@ abstract class OgcCollection200Response
 
   OgcCollection200Response._();
 
-  factory OgcCollection200Response(
-          [void updates(OgcCollection200ResponseBuilder b)]) =
-      _$OgcCollection200Response;
+  factory OgcCollection200Response([
+    void updates(OgcCollection200ResponseBuilder b),
+  ]) = _$OgcCollection200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCollection200ResponseBuilder b) => b;
@@ -56,7 +56,7 @@ class _$OgcCollection200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     OgcCollection200Response,
-    _$OgcCollection200Response
+    _$OgcCollection200Response,
   ];
 
   @override
@@ -75,8 +75,10 @@ class _$OgcCollection200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -92,8 +94,9 @@ class _$OgcCollection200ResponseSerializer
       FullType(OgcCoverageCollection),
     ]);
     oneOfDataSrc = serialized;
-    result.oneOf = serializers.deserialize(oneOfDataSrc,
-        specifiedType: targetType) as OneOf;
+    result.oneOf =
+        serializers.deserialize(oneOfDataSrc, specifiedType: targetType)
+            as OneOf;
     return result.build();
   }
 }

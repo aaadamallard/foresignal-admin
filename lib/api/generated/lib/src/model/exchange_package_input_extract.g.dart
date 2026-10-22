@@ -14,16 +14,16 @@ class _$ExchangePackageInputExtract extends ExchangePackageInputExtract {
   @override
   final BuiltList<String>? layers;
 
-  factory _$ExchangePackageInputExtract(
-          [void Function(ExchangePackageInputExtractBuilder)? updates]) =>
-      (ExchangePackageInputExtractBuilder()..update(updates))._build();
+  factory _$ExchangePackageInputExtract([
+    void Function(ExchangePackageInputExtractBuilder)? updates,
+  ]) => (ExchangePackageInputExtractBuilder()..update(updates))._build();
 
   _$ExchangePackageInputExtract._({this.from, this.to, this.layers})
-      : super._();
+    : super._();
   @override
   ExchangePackageInputExtract rebuild(
-          void Function(ExchangePackageInputExtractBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExchangePackageInputExtractBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExchangePackageInputExtractBuilder toBuilder() =>
@@ -60,8 +60,10 @@ class _$ExchangePackageInputExtract extends ExchangePackageInputExtract {
 
 class ExchangePackageInputExtractBuilder
     implements
-        Builder<ExchangePackageInputExtract,
-            ExchangePackageInputExtractBuilder> {
+        Builder<
+          ExchangePackageInputExtract,
+          ExchangePackageInputExtractBuilder
+        > {
   _$ExchangePackageInputExtract? _$v;
 
   DateTime? _from;
@@ -107,7 +109,8 @@ class ExchangePackageInputExtractBuilder
   _$ExchangePackageInputExtract _build() {
     _$ExchangePackageInputExtract _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExchangePackageInputExtract._(
             from: from,
             to: to,
@@ -120,7 +123,10 @@ class ExchangePackageInputExtractBuilder
         _layers?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExchangePackageInputExtract', _$failedField, e.toString());
+          r'ExchangePackageInputExtract',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

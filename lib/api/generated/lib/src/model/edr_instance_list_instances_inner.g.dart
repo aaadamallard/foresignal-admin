@@ -16,17 +16,20 @@ class _$EdrInstanceListInstancesInner extends EdrInstanceListInstancesInner {
   @override
   final BuiltList<OgcLink> links;
 
-  factory _$EdrInstanceListInstancesInner(
-          [void Function(EdrInstanceListInstancesInnerBuilder)? updates]) =>
-      (EdrInstanceListInstancesInnerBuilder()..update(updates))._build();
+  factory _$EdrInstanceListInstancesInner([
+    void Function(EdrInstanceListInstancesInnerBuilder)? updates,
+  ]) => (EdrInstanceListInstancesInnerBuilder()..update(updates))._build();
 
-  _$EdrInstanceListInstancesInner._(
-      {required this.id, this.title, this.extent, required this.links})
-      : super._();
+  _$EdrInstanceListInstancesInner._({
+    required this.id,
+    this.title,
+    this.extent,
+    required this.links,
+  }) : super._();
   @override
   EdrInstanceListInstancesInner rebuild(
-          void Function(EdrInstanceListInstancesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdrInstanceListInstancesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdrInstanceListInstancesInnerBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$EdrInstanceListInstancesInner extends EdrInstanceListInstancesInner {
 
 class EdrInstanceListInstancesInnerBuilder
     implements
-        Builder<EdrInstanceListInstancesInner,
-            EdrInstanceListInstancesInnerBuilder> {
+        Builder<
+          EdrInstanceListInstancesInner,
+          EdrInstanceListInstancesInnerBuilder
+        > {
   _$EdrInstanceListInstancesInner? _$v;
 
   String? _id;
@@ -120,10 +125,14 @@ class EdrInstanceListInstancesInnerBuilder
   _$EdrInstanceListInstancesInner _build() {
     _$EdrInstanceListInstancesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdrInstanceListInstancesInner._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdrInstanceListInstancesInner', 'id'),
+              id,
+              r'EdrInstanceListInstancesInner',
+              'id',
+            ),
             title: title,
             extent: _extent?.build(),
             links: links.build(),
@@ -137,7 +146,10 @@ class EdrInstanceListInstancesInnerBuilder
         links.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdrInstanceListInstancesInner', _$failedField, e.toString());
+          r'EdrInstanceListInstancesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -15,16 +15,18 @@ part 'dossier_sections_overview_links.g.dart';
 @BuiltValue()
 abstract class DossierSectionsOverviewLinks
     implements
-        Built<DossierSectionsOverviewLinks,
-            DossierSectionsOverviewLinksBuilder> {
+        Built<
+          DossierSectionsOverviewLinks,
+          DossierSectionsOverviewLinksBuilder
+        > {
   @BuiltValueField(wireName: r'full')
   String? get full;
 
   DossierSectionsOverviewLinks._();
 
-  factory DossierSectionsOverviewLinks(
-          [void updates(DossierSectionsOverviewLinksBuilder b)]) =
-      _$DossierSectionsOverviewLinks;
+  factory DossierSectionsOverviewLinks([
+    void updates(DossierSectionsOverviewLinksBuilder b),
+  ]) = _$DossierSectionsOverviewLinks;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsOverviewLinksBuilder b) => b;
@@ -39,7 +41,7 @@ class _$DossierSectionsOverviewLinksSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsOverviewLinks,
-    _$DossierSectionsOverviewLinks
+    _$DossierSectionsOverviewLinks,
   ];
 
   @override
@@ -65,9 +67,11 @@ class _$DossierSectionsOverviewLinksSerializer
     DossierSectionsOverviewLinks object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,10 +87,12 @@ class _$DossierSectionsOverviewLinksSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'full':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.full = valueDes;
           break;

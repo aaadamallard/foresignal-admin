@@ -16,17 +16,20 @@ class _$SocialPlatformStream extends SocialPlatformStream {
   @override
   final SocialPlatformStreamLastGap? lastGap;
 
-  factory _$SocialPlatformStream(
-          [void Function(SocialPlatformStreamBuilder)? updates]) =>
-      (SocialPlatformStreamBuilder()..update(updates))._build();
+  factory _$SocialPlatformStream([
+    void Function(SocialPlatformStreamBuilder)? updates,
+  ]) => (SocialPlatformStreamBuilder()..update(updates))._build();
 
-  _$SocialPlatformStream._(
-      {this.lagSeconds, this.cursor, this.connectedSince, this.lastGap})
-      : super._();
+  _$SocialPlatformStream._({
+    this.lagSeconds,
+    this.cursor,
+    this.connectedSince,
+    this.lastGap,
+  }) : super._();
   @override
   SocialPlatformStream rebuild(
-          void Function(SocialPlatformStreamBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformStreamBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformStreamBuilder toBuilder() =>
@@ -119,7 +122,8 @@ class SocialPlatformStreamBuilder
   _$SocialPlatformStream _build() {
     _$SocialPlatformStream _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPlatformStream._(
             lagSeconds: lagSeconds,
             cursor: cursor,
@@ -133,7 +137,10 @@ class SocialPlatformStreamBuilder
         _lastGap?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPlatformStream', _$failedField, e.toString());
+          r'SocialPlatformStream',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

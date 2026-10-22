@@ -51,9 +51,9 @@ abstract class LlmProviderInputOptions
 
   LlmProviderInputOptions._();
 
-  factory LlmProviderInputOptions(
-          [void updates(LlmProviderInputOptionsBuilder b)]) =
-      _$LlmProviderInputOptions;
+  factory LlmProviderInputOptions([
+    void updates(LlmProviderInputOptionsBuilder b),
+  ]) = _$LlmProviderInputOptions;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(LlmProviderInputOptionsBuilder b) => b;
@@ -68,7 +68,7 @@ class _$LlmProviderInputOptionsSerializer
   @override
   final Iterable<Type> types = const [
     LlmProviderInputOptions,
-    _$LlmProviderInputOptions
+    _$LlmProviderInputOptions,
   ];
 
   @override
@@ -104,8 +104,10 @@ class _$LlmProviderInputOptionsSerializer
       yield r'extraHeaders';
       yield serializers.serialize(
         object.extraHeaders,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.local != null) {
@@ -137,9 +139,11 @@ class _$LlmProviderInputOptionsSerializer
     LlmProviderInputOptions object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -155,60 +159,77 @@ class _$LlmProviderInputOptionsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'effort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(LlmProviderInputOptionsEffortEnum),
-          ) as LlmProviderInputOptionsEffortEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      LlmProviderInputOptionsEffortEnum,
+                    ),
+                  )
+                  as LlmProviderInputOptionsEffortEnum?;
           if (valueDes == null) continue;
           result.effort = valueDes;
           break;
         case r'maxTokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxTokens = valueDes;
           break;
         case r'temperature':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.temperature = valueDes;
           break;
         case r'extraHeaders':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.extraHeaders.replace(valueDes);
           break;
         case r'local':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.local = valueDes;
           break;
         case r'ttsModel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ttsModel = valueDes;
           break;
         case r'ttsCharactersPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.ttsCharactersPerDay = valueDes;
           break;

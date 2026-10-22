@@ -63,7 +63,7 @@ class _$InfraRulesRulesInnerSerializer
   @override
   final Iterable<Type> types = const [
     InfraRulesRulesInner,
-    _$InfraRulesRulesInner
+    _$InfraRulesRulesInner,
   ];
 
   @override
@@ -109,8 +109,10 @@ class _$InfraRulesRulesInnerSerializer
       yield r'params';
       yield serializers.serialize(
         object.params,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -121,9 +123,11 @@ class _$InfraRulesRulesInnerSerializer
     InfraRulesRulesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -139,52 +143,69 @@ class _$InfraRulesRulesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InfraRulesRulesInnerIdEnum),
-          ) as InfraRulesRulesInnerIdEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(InfraRulesRulesInnerIdEnum),
+                  )
+                  as InfraRulesRulesInnerIdEnum;
           result.id = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(InfraRulesRulesInnerMethodEnum),
-          ) as InfraRulesRulesInnerMethodEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      InfraRulesRulesInnerMethodEnum,
+                    ),
+                  )
+                  as InfraRulesRulesInnerMethodEnum?;
           if (valueDes == null) continue;
           result.method = valueDes;
           break;
         case r'relation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(InfraRulesRulesInnerRelationEnum),
-          ) as InfraRulesRulesInnerRelationEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      InfraRulesRulesInnerRelationEnum,
+                    ),
+                  )
+                  as InfraRulesRulesInnerRelationEnum?;
           if (valueDes == null) continue;
           result.relation = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(InfraRulesRulesInnerLabelEnum),
-          ) as InfraRulesRulesInnerLabelEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      InfraRulesRulesInnerLabelEnum,
+                    ),
+                  )
+                  as InfraRulesRulesInnerLabelEnum?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.params.replace(valueDes);
           break;

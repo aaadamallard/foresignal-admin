@@ -13,16 +13,16 @@ class _$StructureDiffContentTypeChanged
   @override
   final String to;
 
-  factory _$StructureDiffContentTypeChanged(
-          [void Function(StructureDiffContentTypeChangedBuilder)? updates]) =>
-      (StructureDiffContentTypeChangedBuilder()..update(updates))._build();
+  factory _$StructureDiffContentTypeChanged([
+    void Function(StructureDiffContentTypeChangedBuilder)? updates,
+  ]) => (StructureDiffContentTypeChangedBuilder()..update(updates))._build();
 
   _$StructureDiffContentTypeChanged._({required this.from, required this.to})
-      : super._();
+    : super._();
   @override
   StructureDiffContentTypeChanged rebuild(
-          void Function(StructureDiffContentTypeChangedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StructureDiffContentTypeChangedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StructureDiffContentTypeChangedBuilder toBuilder() =>
@@ -56,8 +56,10 @@ class _$StructureDiffContentTypeChanged
 
 class StructureDiffContentTypeChangedBuilder
     implements
-        Builder<StructureDiffContentTypeChanged,
-            StructureDiffContentTypeChangedBuilder> {
+        Builder<
+          StructureDiffContentTypeChanged,
+          StructureDiffContentTypeChangedBuilder
+        > {
   _$StructureDiffContentTypeChanged? _$v;
 
   String? _from;
@@ -96,12 +98,19 @@ class StructureDiffContentTypeChangedBuilder
   StructureDiffContentTypeChanged build() => _build();
 
   _$StructureDiffContentTypeChanged _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StructureDiffContentTypeChanged._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'StructureDiffContentTypeChanged', 'from'),
+            from,
+            r'StructureDiffContentTypeChanged',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'StructureDiffContentTypeChanged', 'to'),
+            to,
+            r'StructureDiffContentTypeChanged',
+            'to',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -12,15 +12,15 @@ class _$IngestDeviceSetupGpslogger extends IngestDeviceSetupGpslogger {
   @override
   final String? method;
 
-  factory _$IngestDeviceSetupGpslogger(
-          [void Function(IngestDeviceSetupGpsloggerBuilder)? updates]) =>
-      (IngestDeviceSetupGpsloggerBuilder()..update(updates))._build();
+  factory _$IngestDeviceSetupGpslogger([
+    void Function(IngestDeviceSetupGpsloggerBuilder)? updates,
+  ]) => (IngestDeviceSetupGpsloggerBuilder()..update(updates))._build();
 
   _$IngestDeviceSetupGpslogger._({this.urlTemplate, this.method}) : super._();
   @override
   IngestDeviceSetupGpslogger rebuild(
-          void Function(IngestDeviceSetupGpsloggerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestDeviceSetupGpsloggerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestDeviceSetupGpsloggerBuilder toBuilder() =>
@@ -93,7 +93,8 @@ class IngestDeviceSetupGpsloggerBuilder
   IngestDeviceSetupGpslogger build() => _build();
 
   _$IngestDeviceSetupGpslogger _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IngestDeviceSetupGpslogger._(
           urlTemplate: urlTemplate,
           method: method,

@@ -36,9 +36,9 @@ abstract class IndicatorSignalIntelEvent
 
   IndicatorSignalIntelEvent._();
 
-  factory IndicatorSignalIntelEvent(
-          [void updates(IndicatorSignalIntelEventBuilder b)]) =
-      _$IndicatorSignalIntelEvent;
+  factory IndicatorSignalIntelEvent([
+    void updates(IndicatorSignalIntelEventBuilder b),
+  ]) = _$IndicatorSignalIntelEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IndicatorSignalIntelEventBuilder b) => b;
@@ -53,7 +53,7 @@ class _$IndicatorSignalIntelEventSerializer
   @override
   final Iterable<Type> types = const [
     IndicatorSignalIntelEvent,
-    _$IndicatorSignalIntelEvent
+    _$IndicatorSignalIntelEvent,
   ];
 
   @override
@@ -98,9 +98,11 @@ class _$IndicatorSignalIntelEventSerializer
     IndicatorSignalIntelEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,34 +118,43 @@ class _$IndicatorSignalIntelEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.type = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.placeId = valueDes;
           break;
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.bbox = valueDes;
           break;

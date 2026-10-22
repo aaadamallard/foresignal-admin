@@ -27,16 +27,16 @@ class _$JsonFeed extends JsonFeed {
   factory _$JsonFeed([void Function(JsonFeedBuilder)? updates]) =>
       (JsonFeedBuilder()..update(updates))._build();
 
-  _$JsonFeed._(
-      {required this.version,
-      required this.title,
-      this.homePageUrl,
-      this.feedUrl,
-      this.description,
-      this.language,
-      this.authors,
-      required this.items})
-      : super._();
+  _$JsonFeed._({
+    required this.version,
+    required this.title,
+    this.homePageUrl,
+    this.feedUrl,
+    this.description,
+    this.language,
+    this.authors,
+    required this.items,
+  }) : super._();
   @override
   JsonFeed rebuild(void Function(JsonFeedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -162,12 +162,19 @@ class JsonFeedBuilder implements Builder<JsonFeed, JsonFeedBuilder> {
   _$JsonFeed _build() {
     _$JsonFeed _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$JsonFeed._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'JsonFeed', 'version'),
+              version,
+              r'JsonFeed',
+              'version',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'JsonFeed', 'title'),
+              title,
+              r'JsonFeed',
+              'title',
+            ),
             homePageUrl: homePageUrl,
             feedUrl: feedUrl,
             description: description,
@@ -184,7 +191,10 @@ class JsonFeedBuilder implements Builder<JsonFeed, JsonFeedBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'JsonFeed', _$failedField, e.toString());
+          r'JsonFeed',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

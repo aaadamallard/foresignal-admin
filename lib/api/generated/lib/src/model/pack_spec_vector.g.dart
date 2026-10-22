@@ -101,7 +101,8 @@ class PackSpecVectorBuilder
   _$PackSpecVector _build() {
     _$PackSpecVector _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PackSpecVector._(
             sources: _sources?.build(),
             kinds: _kinds?.build(),
@@ -116,7 +117,10 @@ class PackSpecVectorBuilder
         _kinds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PackSpecVector', _$failedField, e.toString());
+          r'PackSpecVector',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

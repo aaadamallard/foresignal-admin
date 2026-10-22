@@ -18,21 +18,21 @@ class _$PlaceWeatherForecastGfs extends PlaceWeatherForecastGfs {
   @override
   final num? precip24hMm;
 
-  factory _$PlaceWeatherForecastGfs(
-          [void Function(PlaceWeatherForecastGfsBuilder)? updates]) =>
-      (PlaceWeatherForecastGfsBuilder()..update(updates))._build();
+  factory _$PlaceWeatherForecastGfs([
+    void Function(PlaceWeatherForecastGfsBuilder)? updates,
+  ]) => (PlaceWeatherForecastGfsBuilder()..update(updates))._build();
 
-  _$PlaceWeatherForecastGfs._(
-      {this.status,
-      this.asOf,
-      this.statusText,
-      this.gustMax24h,
-      this.precip24hMm})
-      : super._();
+  _$PlaceWeatherForecastGfs._({
+    this.status,
+    this.asOf,
+    this.statusText,
+    this.gustMax24h,
+    this.precip24hMm,
+  }) : super._();
   @override
   PlaceWeatherForecastGfs rebuild(
-          void Function(PlaceWeatherForecastGfsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherForecastGfsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherForecastGfsBuilder toBuilder() =>
@@ -129,7 +129,8 @@ class PlaceWeatherForecastGfsBuilder
   PlaceWeatherForecastGfs build() => _build();
 
   _$PlaceWeatherForecastGfs _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherForecastGfs._(
           status: status,
           asOf: asOf,

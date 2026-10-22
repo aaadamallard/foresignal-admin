@@ -12,15 +12,15 @@ class _$RuleBacktestResultWindow extends RuleBacktestResultWindow {
   @override
   final int? unknownSteps;
 
-  factory _$RuleBacktestResultWindow(
-          [void Function(RuleBacktestResultWindowBuilder)? updates]) =>
-      (RuleBacktestResultWindowBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultWindow([
+    void Function(RuleBacktestResultWindowBuilder)? updates,
+  ]) => (RuleBacktestResultWindowBuilder()..update(updates))._build();
 
   _$RuleBacktestResultWindow._({this.steps, this.unknownSteps}) : super._();
   @override
   RuleBacktestResultWindow rebuild(
-          void Function(RuleBacktestResultWindowBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultWindowBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultWindowBuilder toBuilder() =>
@@ -93,11 +93,9 @@ class RuleBacktestResultWindowBuilder
   RuleBacktestResultWindow build() => _build();
 
   _$RuleBacktestResultWindow _build() {
-    final _$result = _$v ??
-        _$RuleBacktestResultWindow._(
-          steps: steps,
-          unknownSteps: unknownSteps,
-        );
+    final _$result =
+        _$v ??
+        _$RuleBacktestResultWindow._(steps: steps, unknownSteps: unknownSteps);
     replace(_$result);
     return _$result;
   }

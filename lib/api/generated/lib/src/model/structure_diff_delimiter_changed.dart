@@ -16,8 +16,10 @@ part 'structure_diff_delimiter_changed.g.dart';
 @BuiltValue()
 abstract class StructureDiffDelimiterChanged
     implements
-        Built<StructureDiffDelimiterChanged,
-            StructureDiffDelimiterChangedBuilder> {
+        Built<
+          StructureDiffDelimiterChanged,
+          StructureDiffDelimiterChangedBuilder
+        > {
   @BuiltValueField(wireName: r'from')
   String get from;
 
@@ -26,9 +28,9 @@ abstract class StructureDiffDelimiterChanged
 
   StructureDiffDelimiterChanged._();
 
-  factory StructureDiffDelimiterChanged(
-          [void updates(StructureDiffDelimiterChangedBuilder b)]) =
-      _$StructureDiffDelimiterChanged;
+  factory StructureDiffDelimiterChanged([
+    void updates(StructureDiffDelimiterChangedBuilder b),
+  ]) = _$StructureDiffDelimiterChanged;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StructureDiffDelimiterChangedBuilder b) => b;
@@ -43,7 +45,7 @@ class _$StructureDiffDelimiterChangedSerializer
   @override
   final Iterable<Type> types = const [
     StructureDiffDelimiterChanged,
-    _$StructureDiffDelimiterChanged
+    _$StructureDiffDelimiterChanged,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$StructureDiffDelimiterChangedSerializer
     StructureDiffDelimiterChanged object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$StructureDiffDelimiterChangedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.to = valueDes;
           break;
         default:

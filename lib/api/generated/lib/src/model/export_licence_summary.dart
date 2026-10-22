@@ -57,7 +57,7 @@ class _$ExportLicenceSummarySerializer
   @override
   final Iterable<Type> types = const [
     ExportLicenceSummary,
-    _$ExportLicenceSummary
+    _$ExportLicenceSummary,
   ];
 
   @override
@@ -71,8 +71,9 @@ class _$ExportLicenceSummarySerializer
     yield r'licences';
     yield serializers.serialize(
       object.licences,
-      specifiedType: const FullType(
-          BuiltList, [FullType(ExportLicenceSummaryLicencesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ExportLicenceSummaryLicencesInner),
+      ]),
     );
     yield r'attributions';
     yield serializers.serialize(
@@ -95,8 +96,9 @@ class _$ExportLicenceSummarySerializer
       yield r'excluded';
       yield serializers.serialize(
         object.excluded,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ExportLicenceSummaryExcludedInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ExportLicenceSummaryExcludedInner),
+        ]),
       );
     }
   }
@@ -107,9 +109,11 @@ class _$ExportLicenceSummarySerializer
     ExportLicenceSummary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,42 +129,57 @@ class _$ExportLicenceSummarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'licences':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ExportLicenceSummaryLicencesInner)]),
-          ) as BuiltList<ExportLicenceSummaryLicencesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ExportLicenceSummaryLicencesInner),
+                    ]),
+                  )
+                  as BuiltList<ExportLicenceSummaryLicencesInner>;
           result.licences.replace(valueDes);
           break;
         case r'attributions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>;
           result.attributions.replace(valueDes);
           break;
         case r'personalUseOnly':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.personalUseOnly = valueDes;
           break;
         case r'personalUseSources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.personalUseSources.replace(valueDes);
           break;
         case r'excluded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ExportLicenceSummaryExcludedInner)]),
-          ) as BuiltList<ExportLicenceSummaryExcludedInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ExportLicenceSummaryExcludedInner),
+                    ]),
+                  )
+                  as BuiltList<ExportLicenceSummaryExcludedInner>?;
           if (valueDes == null) continue;
           result.excluded.replace(valueDes);
           break;

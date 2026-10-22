@@ -156,8 +156,9 @@ class _$ChronicleLinkSerializer implements PrimitiveSerializer<ChronicleLink> {
     yield r'dimensions';
     yield serializers.serialize(
       object.dimensions,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleLinkDimensionsEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleLinkDimensionsEnum),
+      ]),
     );
     if (object.scores != null) {
       yield r'scores';
@@ -231,9 +232,11 @@ class _$ChronicleLinkSerializer implements PrimitiveSerializer<ChronicleLink> {
     ChronicleLink object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -249,134 +252,173 @@ class _$ChronicleLinkSerializer implements PrimitiveSerializer<ChronicleLink> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'linkId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.linkId = valueDes;
           break;
         case r'disclosure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleLinkDisclosureEnum),
-          ) as ChronicleLinkDisclosureEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ChronicleLinkDisclosureEnum),
+                  )
+                  as ChronicleLinkDisclosureEnum;
           result.disclosure = valueDes;
           break;
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.a = valueDes;
           break;
         case r'b':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.b = valueDes;
           break;
         case r'other':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ObjectEnvelope),
-          ) as ObjectEnvelope?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ObjectEnvelope),
+                  )
+                  as ObjectEnvelope?;
           if (valueDes == null) continue;
           result.other.replace(valueDes);
           break;
         case r'strength':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleLinkStrengthEnum),
-          ) as ChronicleLinkStrengthEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ChronicleLinkStrengthEnum),
+                  )
+                  as ChronicleLinkStrengthEnum;
           result.strength = valueDes;
           break;
         case r'dimensions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleLinkDimensionsEnum)]),
-          ) as BuiltList<ChronicleLinkDimensionsEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleLinkDimensionsEnum),
+                    ]),
+                  )
+                  as BuiltList<ChronicleLinkDimensionsEnum>;
           result.dimensions.replace(valueDes);
           break;
         case r'scores':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ChronicleLinkScores),
-          ) as ChronicleLinkScores?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ChronicleLinkScores),
+                  )
+                  as ChronicleLinkScores?;
           if (valueDes == null) continue;
           result.scores.replace(valueDes);
           break;
         case r'temporal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleLinkTemporalEnum),
-          ) as ChronicleLinkTemporalEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ChronicleLinkTemporalEnum),
+                  )
+                  as ChronicleLinkTemporalEnum;
           result.temporal = valueDes;
           break;
         case r'timeOverlap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ChronicleLinkTimeOverlapEnum),
-          ) as ChronicleLinkTimeOverlapEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleLinkTimeOverlapEnum,
+                    ),
+                  )
+                  as ChronicleLinkTimeOverlapEnum?;
           if (valueDes == null) continue;
           result.timeOverlap = valueDes;
           break;
         case r'sharedSituations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.sharedSituations.replace(valueDes);
           break;
         case r'sharedCanonicalEvents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.sharedCanonicalEvents.replace(valueDes);
           break;
         case r'sharedEntities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.sharedEntities.replace(valueDes);
           break;
         case r'sharedKeyCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.sharedKeyCount = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleLinkStatusEnum),
-          ) as ChronicleLinkStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ChronicleLinkStatusEnum),
+                  )
+                  as ChronicleLinkStatusEnum;
           result.status = valueDes;
           break;
         case r'firstFound':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.firstFound = valueDes;
           break;
         case r'lastUpdated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastUpdated = valueDes;
           break;

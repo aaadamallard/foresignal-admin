@@ -48,8 +48,9 @@ class _$IngestRecordsSerializer implements PrimitiveSerializer<IngestRecords> {
     yield r'records';
     yield serializers.serialize(
       object.records,
-      specifiedType:
-          const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NormalizedRecordPreview),
+      ]),
     );
   }
 
@@ -59,9 +60,11 @@ class _$IngestRecordsSerializer implements PrimitiveSerializer<IngestRecords> {
     IngestRecords object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -77,11 +80,14 @@ class _$IngestRecordsSerializer implements PrimitiveSerializer<IngestRecords> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'records':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
-          ) as BuiltList<NormalizedRecordPreview>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NormalizedRecordPreview),
+                    ]),
+                  )
+                  as BuiltList<NormalizedRecordPreview>;
           result.records.replace(valueDes);
           break;
         default:

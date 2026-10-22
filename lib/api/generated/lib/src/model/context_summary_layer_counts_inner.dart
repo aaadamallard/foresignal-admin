@@ -17,8 +17,10 @@ part 'context_summary_layer_counts_inner.g.dart';
 @BuiltValue()
 abstract class ContextSummaryLayerCountsInner
     implements
-        Built<ContextSummaryLayerCountsInner,
-            ContextSummaryLayerCountsInnerBuilder> {
+        Built<
+          ContextSummaryLayerCountsInner,
+          ContextSummaryLayerCountsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'layer')
   String get layer;
 
@@ -30,9 +32,9 @@ abstract class ContextSummaryLayerCountsInner
 
   ContextSummaryLayerCountsInner._();
 
-  factory ContextSummaryLayerCountsInner(
-          [void updates(ContextSummaryLayerCountsInnerBuilder b)]) =
-      _$ContextSummaryLayerCountsInner;
+  factory ContextSummaryLayerCountsInner([
+    void updates(ContextSummaryLayerCountsInnerBuilder b),
+  ]) = _$ContextSummaryLayerCountsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContextSummaryLayerCountsInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$ContextSummaryLayerCountsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ContextSummaryLayerCountsInner,
-    _$ContextSummaryLayerCountsInner
+    _$ContextSummaryLayerCountsInner,
   ];
 
   @override
@@ -83,9 +85,11 @@ class _$ContextSummaryLayerCountsInnerSerializer
     ContextSummaryLayerCountsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +105,27 @@ class _$ContextSummaryLayerCountsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'layer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.layer = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         case r'liveCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.liveCount = valueDes;
           break;

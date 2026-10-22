@@ -16,8 +16,10 @@ part 'correlation_recipe_definition_dedup.g.dart';
 @BuiltValue()
 abstract class CorrelationRecipeDefinitionDedup
     implements
-        Built<CorrelationRecipeDefinitionDedup,
-            CorrelationRecipeDefinitionDedupBuilder> {
+        Built<
+          CorrelationRecipeDefinitionDedup,
+          CorrelationRecipeDefinitionDedupBuilder
+        > {
   @BuiltValueField(wireName: r'radiusKm')
   num? get radiusKm;
 
@@ -27,9 +29,9 @@ abstract class CorrelationRecipeDefinitionDedup
 
   CorrelationRecipeDefinitionDedup._();
 
-  factory CorrelationRecipeDefinitionDedup(
-          [void updates(CorrelationRecipeDefinitionDedupBuilder b)]) =
-      _$CorrelationRecipeDefinitionDedup;
+  factory CorrelationRecipeDefinitionDedup([
+    void updates(CorrelationRecipeDefinitionDedupBuilder b),
+  ]) = _$CorrelationRecipeDefinitionDedup;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeDefinitionDedupBuilder b) => b;
@@ -44,7 +46,7 @@ class _$CorrelationRecipeDefinitionDedupSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeDefinitionDedup,
-    _$CorrelationRecipeDefinitionDedup
+    _$CorrelationRecipeDefinitionDedup,
   ];
 
   @override
@@ -77,9 +79,11 @@ class _$CorrelationRecipeDefinitionDedupSerializer
     CorrelationRecipeDefinitionDedup object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -95,18 +99,22 @@ class _$CorrelationRecipeDefinitionDedupSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'radiusKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.radiusKm = valueDes;
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.window = valueDes;
           break;

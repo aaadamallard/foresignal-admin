@@ -141,15 +141,17 @@ class _$EvidenceEventSerializer implements PrimitiveSerializer<EvidenceEvent> {
     yield r'qualityFlags';
     yield serializers.serialize(
       object.qualityFlags,
-      specifiedType:
-          const FullType(BuiltList, [FullType(EvidenceEventQualityFlagsEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(EvidenceEventQualityFlagsEnum),
+      ]),
     );
     if (object.flagsAdded != null) {
       yield r'flagsAdded';
       yield serializers.serialize(
         object.flagsAdded,
-        specifiedType:
-            const FullType(BuiltList, [FullType(EvidenceEventFlagsAddedEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(EvidenceEventFlagsAddedEnum),
+        ]),
       );
     }
     if (object.mergedInto != null) {
@@ -174,9 +176,11 @@ class _$EvidenceEventSerializer implements PrimitiveSerializer<EvidenceEvent> {
     EvidenceEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -192,94 +196,116 @@ class _$EvidenceEventSerializer implements PrimitiveSerializer<EvidenceEvent> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'canonicalEventId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.canonicalEventId = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.family = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EvidenceEventStatusEnum),
-          ) as EvidenceEventStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(EvidenceEventStatusEnum),
+                  )
+                  as EvidenceEventStatusEnum;
           result.status = valueDes;
           break;
         case r'eventTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.eventTime = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'observationCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.observationCount = valueDes;
           break;
         case r'evidenceGroupCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.evidenceGroupCount = valueDes;
           break;
         case r'qualityFlags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(EvidenceEventQualityFlagsEnum)]),
-          ) as BuiltList<EvidenceEventQualityFlagsEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(EvidenceEventQualityFlagsEnum),
+                    ]),
+                  )
+                  as BuiltList<EvidenceEventQualityFlagsEnum>;
           result.qualityFlags.replace(valueDes);
           break;
         case r'flagsAdded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(EvidenceEventFlagsAddedEnum)]),
-          ) as BuiltList<EvidenceEventFlagsAddedEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EvidenceEventFlagsAddedEnum),
+                    ]),
+                  )
+                  as BuiltList<EvidenceEventFlagsAddedEnum>?;
           if (valueDes == null) continue;
           result.flagsAdded.replace(valueDes);
           break;
         case r'mergedInto':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mergedInto = valueDes;
           break;
         case r'mergedFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.mergedFrom.replace(valueDes);
           break;

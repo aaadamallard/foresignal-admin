@@ -25,9 +25,9 @@ abstract class AnalysisCycleInputSchedule
 
   AnalysisCycleInputSchedule._();
 
-  factory AnalysisCycleInputSchedule(
-          [void updates(AnalysisCycleInputScheduleBuilder b)]) =
-      _$AnalysisCycleInputSchedule;
+  factory AnalysisCycleInputSchedule([
+    void updates(AnalysisCycleInputScheduleBuilder b),
+  ]) = _$AnalysisCycleInputSchedule;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalysisCycleInputScheduleBuilder b) => b;
@@ -42,7 +42,7 @@ class _$AnalysisCycleInputScheduleSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisCycleInputSchedule,
-    _$AnalysisCycleInputSchedule
+    _$AnalysisCycleInputSchedule,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$AnalysisCycleInputScheduleSerializer
     AnalysisCycleInputSchedule object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$AnalysisCycleInputScheduleSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'cron':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.cron = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.timezone = valueDes;
           break;
         default:

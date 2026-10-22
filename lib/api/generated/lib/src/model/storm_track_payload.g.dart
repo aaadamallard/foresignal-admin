@@ -23,14 +23,15 @@ StormTrackPayloadStatusEnum _$stormTrackPayloadStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<StormTrackPayloadStatusEnum>
-    _$stormTrackPayloadStatusEnumValues =
-    BuiltSet<StormTrackPayloadStatusEnum>(const <StormTrackPayloadStatusEnum>[
-  _$stormTrackPayloadStatusEnum_active,
-  _$stormTrackPayloadStatusEnum_ended,
-]);
+_$stormTrackPayloadStatusEnumValues = BuiltSet<StormTrackPayloadStatusEnum>(
+  const <StormTrackPayloadStatusEnum>[
+    _$stormTrackPayloadStatusEnum_active,
+    _$stormTrackPayloadStatusEnum_ended,
+  ],
+);
 
 Serializer<StormTrackPayloadStatusEnum>
-    _$stormTrackPayloadStatusEnumSerializer =
+_$stormTrackPayloadStatusEnumSerializer =
     _$StormTrackPayloadStatusEnumSerializer();
 
 class _$StormTrackPayloadStatusEnumSerializer
@@ -50,16 +51,20 @@ class _$StormTrackPayloadStatusEnumSerializer
   final String wireName = 'StormTrackPayloadStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, StormTrackPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StormTrackPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormTrackPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormTrackPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormTrackPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormTrackPayload extends StormTrackPayload {
@@ -84,22 +89,22 @@ class _$StormTrackPayload extends StormTrackPayload {
   @override
   final DetectorRef? detector;
 
-  factory _$StormTrackPayload(
-          [void Function(StormTrackPayloadBuilder)? updates]) =>
-      (StormTrackPayloadBuilder()..update(updates))._build();
+  factory _$StormTrackPayload([
+    void Function(StormTrackPayloadBuilder)? updates,
+  ]) => (StormTrackPayloadBuilder()..update(updates))._build();
 
-  _$StormTrackPayload._(
-      {required this.cell,
-      this.history,
-      required this.motion,
-      this.trend,
-      this.lightningJump,
-      this.nowcast,
-      required this.status,
-      this.mergedInto,
-      this.parentTrackId,
-      this.detector})
-      : super._();
+  _$StormTrackPayload._({
+    required this.cell,
+    this.history,
+    required this.motion,
+    this.trend,
+    this.lightningJump,
+    this.nowcast,
+    required this.status,
+    this.mergedInto,
+    this.parentTrackId,
+    this.detector,
+  }) : super._();
   @override
   StormTrackPayload rebuild(void Function(StormTrackPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -250,7 +255,8 @@ class StormTrackPayloadBuilder
   _$StormTrackPayload _build() {
     _$StormTrackPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StormTrackPayload._(
             cell: cell.build(),
             history: _history?.build(),
@@ -259,7 +265,10 @@ class StormTrackPayloadBuilder
             lightningJump: _lightningJump?.build(),
             nowcast: _nowcast?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'StormTrackPayload', 'status'),
+              status,
+              r'StormTrackPayload',
+              'status',
+            ),
             mergedInto: mergedInto,
             parentTrackId: parentTrackId,
             detector: _detector?.build(),
@@ -284,7 +293,10 @@ class StormTrackPayloadBuilder
         _detector?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StormTrackPayload', _$failedField, e.toString());
+          r'StormTrackPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -32,20 +32,21 @@ PrecursorSpatialRuleEnum _$precursorSpatialRuleEnumValueOf(String name) {
 
 final BuiltSet<PrecursorSpatialRuleEnum> _$precursorSpatialRuleEnumValues =
     BuiltSet<PrecursorSpatialRuleEnum>(const <PrecursorSpatialRuleEnum>[
-  _$precursorSpatialRuleEnum_sameEntity,
-  _$precursorSpatialRuleEnum_withinKm,
-  _$precursorSpatialRuleEnum_sameRegion,
-  _$precursorSpatialRuleEnum_none,
-]);
+      _$precursorSpatialRuleEnum_sameEntity,
+      _$precursorSpatialRuleEnum_withinKm,
+      _$precursorSpatialRuleEnum_sameRegion,
+      _$precursorSpatialRuleEnum_none,
+    ]);
 
 const PrecursorSpatialRegionLevelEnum
-    _$precursorSpatialRegionLevelEnum_country =
+_$precursorSpatialRegionLevelEnum_country =
     const PrecursorSpatialRegionLevelEnum._('country');
 const PrecursorSpatialRegionLevelEnum _$precursorSpatialRegionLevelEnum_admin1 =
     const PrecursorSpatialRegionLevelEnum._('admin1');
 
 PrecursorSpatialRegionLevelEnum _$precursorSpatialRegionLevelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'country':
       return _$precursorSpatialRegionLevelEnum_country;
@@ -57,16 +58,18 @@ PrecursorSpatialRegionLevelEnum _$precursorSpatialRegionLevelEnumValueOf(
 }
 
 final BuiltSet<PrecursorSpatialRegionLevelEnum>
-    _$precursorSpatialRegionLevelEnumValues = BuiltSet<
-        PrecursorSpatialRegionLevelEnum>(const <PrecursorSpatialRegionLevelEnum>[
-  _$precursorSpatialRegionLevelEnum_country,
-  _$precursorSpatialRegionLevelEnum_admin1,
-]);
+_$precursorSpatialRegionLevelEnumValues =
+    BuiltSet<PrecursorSpatialRegionLevelEnum>(
+      const <PrecursorSpatialRegionLevelEnum>[
+        _$precursorSpatialRegionLevelEnum_country,
+        _$precursorSpatialRegionLevelEnum_admin1,
+      ],
+    );
 
 Serializer<PrecursorSpatialRuleEnum> _$precursorSpatialRuleEnumSerializer =
     _$PrecursorSpatialRuleEnumSerializer();
 Serializer<PrecursorSpatialRegionLevelEnum>
-    _$precursorSpatialRegionLevelEnumSerializer =
+_$precursorSpatialRegionLevelEnumSerializer =
     _$PrecursorSpatialRegionLevelEnumSerializer();
 
 class _$PrecursorSpatialRuleEnumSerializer
@@ -90,16 +93,20 @@ class _$PrecursorSpatialRuleEnumSerializer
   final String wireName = 'PrecursorSpatialRuleEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorSpatialRuleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorSpatialRuleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorSpatialRuleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorSpatialRuleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorSpatialRuleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorSpatialRegionLevelEnumSerializer
@@ -120,16 +127,19 @@ class _$PrecursorSpatialRegionLevelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PrecursorSpatialRegionLevelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecursorSpatialRegionLevelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorSpatialRegionLevelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorSpatialRegionLevelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorSpatialRegionLevelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorSpatial extends PrecursorSpatial {
@@ -140,12 +150,12 @@ class _$PrecursorSpatial extends PrecursorSpatial {
   @override
   final PrecursorSpatialRegionLevelEnum? regionLevel;
 
-  factory _$PrecursorSpatial(
-          [void Function(PrecursorSpatialBuilder)? updates]) =>
-      (PrecursorSpatialBuilder()..update(updates))._build();
+  factory _$PrecursorSpatial([
+    void Function(PrecursorSpatialBuilder)? updates,
+  ]) => (PrecursorSpatialBuilder()..update(updates))._build();
 
   _$PrecursorSpatial._({required this.rule, this.withinKm, this.regionLevel})
-      : super._();
+    : super._();
   @override
   PrecursorSpatial rebuild(void Function(PrecursorSpatialBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -229,10 +239,14 @@ class PrecursorSpatialBuilder
   PrecursorSpatial build() => _build();
 
   _$PrecursorSpatial _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorSpatial._(
           rule: BuiltValueNullFieldError.checkNotNull(
-              rule, r'PrecursorSpatial', 'rule'),
+            rule,
+            r'PrecursorSpatial',
+            'rule',
+          ),
           withinKm: withinKm,
           regionLevel: regionLevel,
         );

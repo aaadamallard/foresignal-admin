@@ -48,7 +48,7 @@ class _$RecordMappingSpreadSerializer
   @override
   final Iterable<Type> types = const [
     RecordMappingSpread,
-    _$RecordMappingSpread
+    _$RecordMappingSpread,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$RecordMappingSpreadSerializer
     RecordMappingSpread object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,25 +106,33 @@ class _$RecordMappingSpreadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RecordMappingSpreadTypeEnum),
-          ) as RecordMappingSpreadTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RecordMappingSpreadTypeEnum,
+                    ),
+                  )
+                  as RecordMappingSpreadTypeEnum?;
           if (valueDes == null) continue;
           result.type = valueDes;
           break;
         case r'max':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.max = valueDes;
           break;

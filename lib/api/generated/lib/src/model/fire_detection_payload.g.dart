@@ -7,17 +7,17 @@ part of 'fire_detection_payload.dart';
 // **************************************************************************
 
 const FireDetectionPayloadConfidenceClassEnum
-    _$fireDetectionPayloadConfidenceClassEnum_low =
+_$fireDetectionPayloadConfidenceClassEnum_low =
     const FireDetectionPayloadConfidenceClassEnum._('low');
 const FireDetectionPayloadConfidenceClassEnum
-    _$fireDetectionPayloadConfidenceClassEnum_nominal =
+_$fireDetectionPayloadConfidenceClassEnum_nominal =
     const FireDetectionPayloadConfidenceClassEnum._('nominal');
 const FireDetectionPayloadConfidenceClassEnum
-    _$fireDetectionPayloadConfidenceClassEnum_high =
+_$fireDetectionPayloadConfidenceClassEnum_high =
     const FireDetectionPayloadConfidenceClassEnum._('high');
 
 FireDetectionPayloadConfidenceClassEnum
-    _$fireDetectionPayloadConfidenceClassEnumValueOf(String name) {
+_$fireDetectionPayloadConfidenceClassEnumValueOf(String name) {
   switch (name) {
     case 'low':
       return _$fireDetectionPayloadConfidenceClassEnum_low;
@@ -31,15 +31,17 @@ FireDetectionPayloadConfidenceClassEnum
 }
 
 final BuiltSet<FireDetectionPayloadConfidenceClassEnum>
-    _$fireDetectionPayloadConfidenceClassEnumValues = BuiltSet<
-        FireDetectionPayloadConfidenceClassEnum>(const <FireDetectionPayloadConfidenceClassEnum>[
-  _$fireDetectionPayloadConfidenceClassEnum_low,
-  _$fireDetectionPayloadConfidenceClassEnum_nominal,
-  _$fireDetectionPayloadConfidenceClassEnum_high,
-]);
+_$fireDetectionPayloadConfidenceClassEnumValues =
+    BuiltSet<FireDetectionPayloadConfidenceClassEnum>(
+      const <FireDetectionPayloadConfidenceClassEnum>[
+        _$fireDetectionPayloadConfidenceClassEnum_low,
+        _$fireDetectionPayloadConfidenceClassEnum_nominal,
+        _$fireDetectionPayloadConfidenceClassEnum_high,
+      ],
+    );
 
 Serializer<FireDetectionPayloadConfidenceClassEnum>
-    _$fireDetectionPayloadConfidenceClassEnumSerializer =
+_$fireDetectionPayloadConfidenceClassEnumSerializer =
     _$FireDetectionPayloadConfidenceClassEnumSerializer();
 
 class _$FireDetectionPayloadConfidenceClassEnumSerializer
@@ -57,23 +59,26 @@ class _$FireDetectionPayloadConfidenceClassEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    FireDetectionPayloadConfidenceClassEnum
+    FireDetectionPayloadConfidenceClassEnum,
   ];
   @override
   final String wireName = 'FireDetectionPayloadConfidenceClassEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          FireDetectionPayloadConfidenceClassEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FireDetectionPayloadConfidenceClassEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FireDetectionPayloadConfidenceClassEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FireDetectionPayloadConfidenceClassEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FireDetectionPayloadConfidenceClassEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FireDetectionPayload extends FireDetectionPayload {
@@ -118,36 +123,36 @@ class _$FireDetectionPayload extends FireDetectionPayload {
   @override
   final String? label;
 
-  factory _$FireDetectionPayload(
-          [void Function(FireDetectionPayloadBuilder)? updates]) =>
-      (FireDetectionPayloadBuilder()..update(updates))._build();
+  factory _$FireDetectionPayload([
+    void Function(FireDetectionPayloadBuilder)? updates,
+  ]) => (FireDetectionPayloadBuilder()..update(updates))._build();
 
-  _$FireDetectionPayload._(
-      {this.maskCode,
-      this.confidence,
-      this.confidenceClass,
-      this.instrument,
-      this.brightK,
-      this.bright2K,
-      this.scanKm,
-      this.trackKm,
-      this.daynight,
-      this.version,
-      this.type,
-      this.temporallyFiltered,
-      this.frpMw,
-      this.tempK,
-      this.areaKm2,
-      required this.satellite,
-      this.method,
-      this.ecosystem,
-      this.source_,
-      this.label})
-      : super._();
+  _$FireDetectionPayload._({
+    this.maskCode,
+    this.confidence,
+    this.confidenceClass,
+    this.instrument,
+    this.brightK,
+    this.bright2K,
+    this.scanKm,
+    this.trackKm,
+    this.daynight,
+    this.version,
+    this.type,
+    this.temporallyFiltered,
+    this.frpMw,
+    this.tempK,
+    this.areaKm2,
+    required this.satellite,
+    this.method,
+    this.ecosystem,
+    this.source_,
+    this.label,
+  }) : super._();
   @override
   FireDetectionPayload rebuild(
-          void Function(FireDetectionPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FireDetectionPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FireDetectionPayloadBuilder toBuilder() =>
@@ -249,8 +254,8 @@ class FireDetectionPayloadBuilder
   FireDetectionPayloadConfidenceClassEnum? get confidenceClass =>
       _$this._confidenceClass;
   set confidenceClass(
-          FireDetectionPayloadConfidenceClassEnum? confidenceClass) =>
-      _$this._confidenceClass = confidenceClass;
+    FireDetectionPayloadConfidenceClassEnum? confidenceClass,
+  ) => _$this._confidenceClass = confidenceClass;
 
   String? _instrument;
   String? get instrument => _$this._instrument;
@@ -367,7 +372,8 @@ class FireDetectionPayloadBuilder
   FireDetectionPayload build() => _build();
 
   _$FireDetectionPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FireDetectionPayload._(
           maskCode: maskCode,
           confidence: confidence,
@@ -385,7 +391,10 @@ class FireDetectionPayloadBuilder
           tempK: tempK,
           areaKm2: areaKm2,
           satellite: BuiltValueNullFieldError.checkNotNull(
-              satellite, r'FireDetectionPayload', 'satellite'),
+            satellite,
+            r'FireDetectionPayload',
+            'satellite',
+          ),
           method: method,
           ecosystem: ecosystem,
           source_: source_,

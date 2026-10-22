@@ -12,16 +12,16 @@ class _$FeedKeyCreatedUrlsInner extends FeedKeyCreatedUrlsInner {
   @override
   final String url;
 
-  factory _$FeedKeyCreatedUrlsInner(
-          [void Function(FeedKeyCreatedUrlsInnerBuilder)? updates]) =>
-      (FeedKeyCreatedUrlsInnerBuilder()..update(updates))._build();
+  factory _$FeedKeyCreatedUrlsInner([
+    void Function(FeedKeyCreatedUrlsInnerBuilder)? updates,
+  ]) => (FeedKeyCreatedUrlsInnerBuilder()..update(updates))._build();
 
   _$FeedKeyCreatedUrlsInner._({required this.prefix, required this.url})
-      : super._();
+    : super._();
   @override
   FeedKeyCreatedUrlsInner rebuild(
-          void Function(FeedKeyCreatedUrlsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FeedKeyCreatedUrlsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FeedKeyCreatedUrlsInnerBuilder toBuilder() =>
@@ -94,12 +94,19 @@ class FeedKeyCreatedUrlsInnerBuilder
   FeedKeyCreatedUrlsInner build() => _build();
 
   _$FeedKeyCreatedUrlsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FeedKeyCreatedUrlsInner._(
           prefix: BuiltValueNullFieldError.checkNotNull(
-              prefix, r'FeedKeyCreatedUrlsInner', 'prefix'),
+            prefix,
+            r'FeedKeyCreatedUrlsInner',
+            'prefix',
+          ),
           url: BuiltValueNullFieldError.checkNotNull(
-              url, r'FeedKeyCreatedUrlsInner', 'url'),
+            url,
+            r'FeedKeyCreatedUrlsInner',
+            'url',
+          ),
         );
     replace(_$result);
     return _$result;

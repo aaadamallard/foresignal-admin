@@ -18,8 +18,10 @@ part 'mesh_channel_common_config_airtime_custom.g.dart';
 @BuiltValue()
 abstract class MeshChannelCommonConfigAirtimeCustom
     implements
-        Built<MeshChannelCommonConfigAirtimeCustom,
-            MeshChannelCommonConfigAirtimeCustomBuilder> {
+        Built<
+          MeshChannelCommonConfigAirtimeCustom,
+          MeshChannelCommonConfigAirtimeCustomBuilder
+        > {
   @BuiltValueField(wireName: r'spreadingFactor')
   int? get spreadingFactor;
 
@@ -35,9 +37,9 @@ abstract class MeshChannelCommonConfigAirtimeCustom
 
   MeshChannelCommonConfigAirtimeCustom._();
 
-  factory MeshChannelCommonConfigAirtimeCustom(
-          [void updates(MeshChannelCommonConfigAirtimeCustomBuilder b)]) =
-      _$MeshChannelCommonConfigAirtimeCustom;
+  factory MeshChannelCommonConfigAirtimeCustom([
+    void updates(MeshChannelCommonConfigAirtimeCustomBuilder b),
+  ]) = _$MeshChannelCommonConfigAirtimeCustom;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(MeshChannelCommonConfigAirtimeCustomBuilder b) => b;
@@ -52,7 +54,7 @@ class _$MeshChannelCommonConfigAirtimeCustomSerializer
   @override
   final Iterable<Type> types = const [
     MeshChannelCommonConfigAirtimeCustom,
-    _$MeshChannelCommonConfigAirtimeCustom
+    _$MeshChannelCommonConfigAirtimeCustom,
   ];
 
   @override
@@ -99,9 +101,11 @@ class _$MeshChannelCommonConfigAirtimeCustomSerializer
     MeshChannelCommonConfigAirtimeCustom object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,34 +121,42 @@ class _$MeshChannelCommonConfigAirtimeCustomSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'spreadingFactor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.spreadingFactor = valueDes;
           break;
         case r'bandwidthKhz':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.bandwidthKhz = valueDes;
           break;
         case r'codingRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.codingRate = valueDes;
           break;
         case r'preambleSymbols':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.preambleSymbols = valueDes;
           break;

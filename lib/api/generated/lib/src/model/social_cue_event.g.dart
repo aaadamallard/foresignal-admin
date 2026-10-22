@@ -20,8 +20,8 @@ SocialCueEventEventEnum _$socialCueEventEventEnumValueOf(String name) {
 
 final BuiltSet<SocialCueEventEventEnum> _$socialCueEventEventEnumValues =
     BuiltSet<SocialCueEventEventEnum>(const <SocialCueEventEventEnum>[
-  _$socialCueEventEventEnum_cuePeriodCompleted,
-]);
+      _$socialCueEventEventEnum_cuePeriodCompleted,
+    ]);
 
 Serializer<SocialCueEventEventEnum> _$socialCueEventEventEnumSerializer =
     _$SocialCueEventEventEnumSerializer();
@@ -41,16 +41,20 @@ class _$SocialCueEventEventEnumSerializer
   final String wireName = 'SocialCueEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialCueEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialCueEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialCueEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialCueEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialCueEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialCueEvent extends SocialCueEvent {
@@ -136,10 +140,14 @@ class SocialCueEventBuilder
   _$SocialCueEvent _build() {
     _$SocialCueEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialCueEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'SocialCueEvent', 'event'),
+              event,
+              r'SocialCueEvent',
+              'event',
+            ),
             cue: cue.build(),
           );
     } catch (_) {
@@ -149,7 +157,10 @@ class SocialCueEventBuilder
         cue.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialCueEvent', _$failedField, e.toString());
+          r'SocialCueEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,15 +12,15 @@ class _$StyleFragmentMetadata extends StyleFragmentMetadata {
   @override
   final BuiltList<Attribution>? attribution;
 
-  factory _$StyleFragmentMetadata(
-          [void Function(StyleFragmentMetadataBuilder)? updates]) =>
-      (StyleFragmentMetadataBuilder()..update(updates))._build();
+  factory _$StyleFragmentMetadata([
+    void Function(StyleFragmentMetadataBuilder)? updates,
+  ]) => (StyleFragmentMetadataBuilder()..update(updates))._build();
 
   _$StyleFragmentMetadata._({this.legends, this.attribution}) : super._();
   @override
   StyleFragmentMetadata rebuild(
-          void Function(StyleFragmentMetadataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StyleFragmentMetadataBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StyleFragmentMetadataBuilder toBuilder() =>
@@ -97,7 +97,8 @@ class StyleFragmentMetadataBuilder
   _$StyleFragmentMetadata _build() {
     _$StyleFragmentMetadata _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StyleFragmentMetadata._(
             legends: _legends?.build(),
             attribution: _attribution?.build(),
@@ -111,7 +112,10 @@ class StyleFragmentMetadataBuilder
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StyleFragmentMetadata', _$failedField, e.toString());
+          r'StyleFragmentMetadata',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

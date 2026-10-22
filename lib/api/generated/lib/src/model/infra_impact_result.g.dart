@@ -24,20 +24,20 @@ class _$InfraImpactResult extends InfraImpactResult {
   @override
   final bool truncated;
 
-  factory _$InfraImpactResult(
-          [void Function(InfraImpactResultBuilder)? updates]) =>
-      (InfraImpactResultBuilder()..update(updates))._build();
+  factory _$InfraImpactResult([
+    void Function(InfraImpactResultBuilder)? updates,
+  ]) => (InfraImpactResultBuilder()..update(updates))._build();
 
-  _$InfraImpactResult._(
-      {required this.buildId,
-      this.approximateArea,
-      required this.direct,
-      required this.dependents,
-      required this.summary,
-      required this.caveats,
-      required this.attribution,
-      required this.truncated})
-      : super._();
+  _$InfraImpactResult._({
+    required this.buildId,
+    this.approximateArea,
+    required this.direct,
+    required this.dependents,
+    required this.summary,
+    required this.caveats,
+    required this.attribution,
+    required this.truncated,
+  }) : super._();
   @override
   InfraImpactResult rebuild(void Function(InfraImpactResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -170,10 +170,14 @@ class InfraImpactResultBuilder
   _$InfraImpactResult _build() {
     _$InfraImpactResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraImpactResult._(
             buildId: BuiltValueNullFieldError.checkNotNull(
-                buildId, r'InfraImpactResult', 'buildId'),
+              buildId,
+              r'InfraImpactResult',
+              'buildId',
+            ),
             approximateArea: approximateArea,
             direct: direct.build(),
             dependents: dependents.build(),
@@ -181,7 +185,10 @@ class InfraImpactResultBuilder
             caveats: caveats.build(),
             attribution: attribution.build(),
             truncated: BuiltValueNullFieldError.checkNotNull(
-                truncated, r'InfraImpactResult', 'truncated'),
+              truncated,
+              r'InfraImpactResult',
+              'truncated',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -198,7 +205,10 @@ class InfraImpactResultBuilder
         attribution.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraImpactResult', _$failedField, e.toString());
+          r'InfraImpactResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

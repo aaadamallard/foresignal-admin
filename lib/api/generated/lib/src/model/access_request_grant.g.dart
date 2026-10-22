@@ -7,17 +7,18 @@ part of 'access_request_grant.dart';
 // **************************************************************************
 
 const AccessRequestGrantDeliveredAsEnum
-    _$accessRequestGrantDeliveredAsEnum_acl =
+_$accessRequestGrantDeliveredAsEnum_acl =
     const AccessRequestGrantDeliveredAsEnum._('acl');
 const AccessRequestGrantDeliveredAsEnum
-    _$accessRequestGrantDeliveredAsEnum_report =
+_$accessRequestGrantDeliveredAsEnum_report =
     const AccessRequestGrantDeliveredAsEnum._('report');
 const AccessRequestGrantDeliveredAsEnum
-    _$accessRequestGrantDeliveredAsEnum_chronicleExtract =
+_$accessRequestGrantDeliveredAsEnum_chronicleExtract =
     const AccessRequestGrantDeliveredAsEnum._('chronicleExtract');
 
 AccessRequestGrantDeliveredAsEnum _$accessRequestGrantDeliveredAsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'acl':
       return _$accessRequestGrantDeliveredAsEnum_acl;
@@ -31,12 +32,14 @@ AccessRequestGrantDeliveredAsEnum _$accessRequestGrantDeliveredAsEnumValueOf(
 }
 
 final BuiltSet<AccessRequestGrantDeliveredAsEnum>
-    _$accessRequestGrantDeliveredAsEnumValues = BuiltSet<
-        AccessRequestGrantDeliveredAsEnum>(const <AccessRequestGrantDeliveredAsEnum>[
-  _$accessRequestGrantDeliveredAsEnum_acl,
-  _$accessRequestGrantDeliveredAsEnum_report,
-  _$accessRequestGrantDeliveredAsEnum_chronicleExtract,
-]);
+_$accessRequestGrantDeliveredAsEnumValues =
+    BuiltSet<AccessRequestGrantDeliveredAsEnum>(
+      const <AccessRequestGrantDeliveredAsEnum>[
+        _$accessRequestGrantDeliveredAsEnum_acl,
+        _$accessRequestGrantDeliveredAsEnum_report,
+        _$accessRequestGrantDeliveredAsEnum_chronicleExtract,
+      ],
+    );
 
 const AccessRequestGrantRoleEnum _$accessRequestGrantRoleEnum_viewer =
     const AccessRequestGrantRoleEnum._('viewer');
@@ -56,12 +59,12 @@ AccessRequestGrantRoleEnum _$accessRequestGrantRoleEnumValueOf(String name) {
 
 final BuiltSet<AccessRequestGrantRoleEnum> _$accessRequestGrantRoleEnumValues =
     BuiltSet<AccessRequestGrantRoleEnum>(const <AccessRequestGrantRoleEnum>[
-  _$accessRequestGrantRoleEnum_viewer,
-  _$accessRequestGrantRoleEnum_commenter,
-]);
+      _$accessRequestGrantRoleEnum_viewer,
+      _$accessRequestGrantRoleEnum_commenter,
+    ]);
 
 Serializer<AccessRequestGrantDeliveredAsEnum>
-    _$accessRequestGrantDeliveredAsEnumSerializer =
+_$accessRequestGrantDeliveredAsEnumSerializer =
     _$AccessRequestGrantDeliveredAsEnumSerializer();
 Serializer<AccessRequestGrantRoleEnum> _$accessRequestGrantRoleEnumSerializer =
     _$AccessRequestGrantRoleEnumSerializer();
@@ -86,16 +89,19 @@ class _$AccessRequestGrantDeliveredAsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AccessRequestGrantDeliveredAsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AccessRequestGrantDeliveredAsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AccessRequestGrantDeliveredAsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AccessRequestGrantDeliveredAsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AccessRequestGrantDeliveredAsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AccessRequestGrantRoleEnumSerializer
@@ -115,16 +121,20 @@ class _$AccessRequestGrantRoleEnumSerializer
   final String wireName = 'AccessRequestGrantRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, AccessRequestGrantRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AccessRequestGrantRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AccessRequestGrantRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AccessRequestGrantRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AccessRequestGrantRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AccessRequestGrant extends AccessRequestGrant {
@@ -135,16 +145,16 @@ class _$AccessRequestGrant extends AccessRequestGrant {
   @override
   final String? packageId;
 
-  factory _$AccessRequestGrant(
-          [void Function(AccessRequestGrantBuilder)? updates]) =>
-      (AccessRequestGrantBuilder()..update(updates))._build();
+  factory _$AccessRequestGrant([
+    void Function(AccessRequestGrantBuilder)? updates,
+  ]) => (AccessRequestGrantBuilder()..update(updates))._build();
 
   _$AccessRequestGrant._({required this.deliveredAs, this.role, this.packageId})
-      : super._();
+    : super._();
   @override
   AccessRequestGrant rebuild(
-          void Function(AccessRequestGrantBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AccessRequestGrantBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AccessRequestGrantBuilder toBuilder() =>
@@ -225,10 +235,14 @@ class AccessRequestGrantBuilder
   AccessRequestGrant build() => _build();
 
   _$AccessRequestGrant _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AccessRequestGrant._(
           deliveredAs: BuiltValueNullFieldError.checkNotNull(
-              deliveredAs, r'AccessRequestGrant', 'deliveredAs'),
+            deliveredAs,
+            r'AccessRequestGrant',
+            'deliveredAs',
+          ),
           role: role,
           packageId: packageId,
         );

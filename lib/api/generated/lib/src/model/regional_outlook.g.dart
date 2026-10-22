@@ -12,7 +12,8 @@ const RegionalOutlookRegionLevelEnum _$regionalOutlookRegionLevelEnum_admin1 =
     const RegionalOutlookRegionLevelEnum._('admin1');
 
 RegionalOutlookRegionLevelEnum _$regionalOutlookRegionLevelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'country':
       return _$regionalOutlookRegionLevelEnum_country;
@@ -24,14 +25,16 @@ RegionalOutlookRegionLevelEnum _$regionalOutlookRegionLevelEnumValueOf(
 }
 
 final BuiltSet<RegionalOutlookRegionLevelEnum>
-    _$regionalOutlookRegionLevelEnumValues = BuiltSet<
-        RegionalOutlookRegionLevelEnum>(const <RegionalOutlookRegionLevelEnum>[
-  _$regionalOutlookRegionLevelEnum_country,
-  _$regionalOutlookRegionLevelEnum_admin1,
-]);
+_$regionalOutlookRegionLevelEnumValues =
+    BuiltSet<RegionalOutlookRegionLevelEnum>(
+      const <RegionalOutlookRegionLevelEnum>[
+        _$regionalOutlookRegionLevelEnum_country,
+        _$regionalOutlookRegionLevelEnum_admin1,
+      ],
+    );
 
 Serializer<RegionalOutlookRegionLevelEnum>
-    _$regionalOutlookRegionLevelEnumSerializer =
+_$regionalOutlookRegionLevelEnumSerializer =
     _$RegionalOutlookRegionLevelEnumSerializer();
 
 class _$RegionalOutlookRegionLevelEnumSerializer
@@ -52,16 +55,19 @@ class _$RegionalOutlookRegionLevelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, RegionalOutlookRegionLevelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RegionalOutlookRegionLevelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RegionalOutlookRegionLevelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RegionalOutlookRegionLevelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RegionalOutlookRegionLevelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RegionalOutlook extends RegionalOutlook {
@@ -103,25 +109,25 @@ class _$RegionalOutlook extends RegionalOutlook {
   factory _$RegionalOutlook([void Function(RegionalOutlookBuilder)? updates]) =>
       (RegionalOutlookBuilder()..update(updates))._build();
 
-  _$RegionalOutlook._(
-      {required this.region,
-      required this.regionLevel,
-      required this.family,
-      this.category,
-      required this.publishedAt,
-      required this.modelVersion,
-      this.asOfSeq,
-      this.manifestId,
-      required this.windows,
-      this.history,
-      this.skill,
-      this.lowReportingDensity,
-      this.lowDetectability,
-      this.caveats,
-      this.recordRef,
-      this.id,
-      this.source_})
-      : super._();
+  _$RegionalOutlook._({
+    required this.region,
+    required this.regionLevel,
+    required this.family,
+    this.category,
+    required this.publishedAt,
+    required this.modelVersion,
+    this.asOfSeq,
+    this.manifestId,
+    required this.windows,
+    this.history,
+    this.skill,
+    this.lowReportingDensity,
+    this.lowDetectability,
+    this.caveats,
+    this.recordRef,
+    this.id,
+    this.source_,
+  }) : super._();
   @override
   RegionalOutlook rebuild(void Function(RegionalOutlookBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -323,19 +329,35 @@ class RegionalOutlookBuilder
   _$RegionalOutlook _build() {
     _$RegionalOutlook _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RegionalOutlook._(
             region: BuiltValueNullFieldError.checkNotNull(
-                region, r'RegionalOutlook', 'region'),
+              region,
+              r'RegionalOutlook',
+              'region',
+            ),
             regionLevel: BuiltValueNullFieldError.checkNotNull(
-                regionLevel, r'RegionalOutlook', 'regionLevel'),
+              regionLevel,
+              r'RegionalOutlook',
+              'regionLevel',
+            ),
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'RegionalOutlook', 'family'),
+              family,
+              r'RegionalOutlook',
+              'family',
+            ),
             category: category,
             publishedAt: BuiltValueNullFieldError.checkNotNull(
-                publishedAt, r'RegionalOutlook', 'publishedAt'),
+              publishedAt,
+              r'RegionalOutlook',
+              'publishedAt',
+            ),
             modelVersion: BuiltValueNullFieldError.checkNotNull(
-                modelVersion, r'RegionalOutlook', 'modelVersion'),
+              modelVersion,
+              r'RegionalOutlook',
+              'modelVersion',
+            ),
             asOfSeq: asOfSeq,
             manifestId: manifestId,
             windows: windows.build(),
@@ -362,7 +384,10 @@ class RegionalOutlookBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RegionalOutlook', _$failedField, e.toString());
+          r'RegionalOutlook',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

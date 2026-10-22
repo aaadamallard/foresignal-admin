@@ -10,15 +10,15 @@ class _$FederationIngestBatch extends FederationIngestBatch {
   @override
   final BuiltList<FederationItem> items;
 
-  factory _$FederationIngestBatch(
-          [void Function(FederationIngestBatchBuilder)? updates]) =>
-      (FederationIngestBatchBuilder()..update(updates))._build();
+  factory _$FederationIngestBatch([
+    void Function(FederationIngestBatchBuilder)? updates,
+  ]) => (FederationIngestBatchBuilder()..update(updates))._build();
 
   _$FederationIngestBatch._({required this.items}) : super._();
   @override
   FederationIngestBatch rebuild(
-          void Function(FederationIngestBatchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FederationIngestBatchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FederationIngestBatchBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$FederationIngestBatch extends FederationIngestBatch {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'FederationIngestBatch')
-          ..add('items', items))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'FederationIngestBatch',
+    )..add('items', items)).toString();
   }
 }
 
@@ -84,10 +84,7 @@ class FederationIngestBatchBuilder
   _$FederationIngestBatch _build() {
     _$FederationIngestBatch _$result;
     try {
-      _$result = _$v ??
-          _$FederationIngestBatch._(
-            items: items.build(),
-          );
+      _$result = _$v ?? _$FederationIngestBatch._(items: items.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95,7 +92,10 @@ class FederationIngestBatchBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FederationIngestBatch', _$failedField, e.toString());
+          r'FederationIngestBatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

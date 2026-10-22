@@ -12,9 +12,9 @@ class _$PrecursorTestPage extends PrecursorTestPage {
   @override
   final String? nextCursor;
 
-  factory _$PrecursorTestPage(
-          [void Function(PrecursorTestPageBuilder)? updates]) =>
-      (PrecursorTestPageBuilder()..update(updates))._build();
+  factory _$PrecursorTestPage([
+    void Function(PrecursorTestPageBuilder)? updates,
+  ]) => (PrecursorTestPageBuilder()..update(updates))._build();
 
   _$PrecursorTestPage._({required this.items, this.nextCursor}) : super._();
   @override
@@ -94,11 +94,9 @@ class PrecursorTestPageBuilder
   _$PrecursorTestPage _build() {
     _$PrecursorTestPage _$result;
     try {
-      _$result = _$v ??
-          _$PrecursorTestPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$PrecursorTestPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -106,7 +104,10 @@ class PrecursorTestPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorTestPage', _$failedField, e.toString());
+          r'PrecursorTestPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

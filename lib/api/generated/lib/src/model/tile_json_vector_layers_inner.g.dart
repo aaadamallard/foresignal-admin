@@ -18,21 +18,21 @@ class _$TileJsonVectorLayersInner extends TileJsonVectorLayersInner {
   @override
   final BuiltMap<String, String> fields;
 
-  factory _$TileJsonVectorLayersInner(
-          [void Function(TileJsonVectorLayersInnerBuilder)? updates]) =>
-      (TileJsonVectorLayersInnerBuilder()..update(updates))._build();
+  factory _$TileJsonVectorLayersInner([
+    void Function(TileJsonVectorLayersInnerBuilder)? updates,
+  ]) => (TileJsonVectorLayersInnerBuilder()..update(updates))._build();
 
-  _$TileJsonVectorLayersInner._(
-      {required this.id,
-      this.description,
-      this.minzoom,
-      this.maxzoom,
-      required this.fields})
-      : super._();
+  _$TileJsonVectorLayersInner._({
+    required this.id,
+    this.description,
+    this.minzoom,
+    this.maxzoom,
+    required this.fields,
+  }) : super._();
   @override
   TileJsonVectorLayersInner rebuild(
-          void Function(TileJsonVectorLayersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TileJsonVectorLayersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TileJsonVectorLayersInnerBuilder toBuilder() =>
@@ -132,10 +132,14 @@ class TileJsonVectorLayersInnerBuilder
   _$TileJsonVectorLayersInner _build() {
     _$TileJsonVectorLayersInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TileJsonVectorLayersInner._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'TileJsonVectorLayersInner', 'id'),
+              id,
+              r'TileJsonVectorLayersInner',
+              'id',
+            ),
             description: description,
             minzoom: minzoom,
             maxzoom: maxzoom,
@@ -148,7 +152,10 @@ class TileJsonVectorLayersInnerBuilder
         fields.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TileJsonVectorLayersInner', _$failedField, e.toString());
+          r'TileJsonVectorLayersInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

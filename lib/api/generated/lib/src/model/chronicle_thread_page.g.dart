@@ -16,17 +16,20 @@ class _$ChronicleThreadPage extends ChronicleThreadPage {
   @override
   final int? readUpTo;
 
-  factory _$ChronicleThreadPage(
-          [void Function(ChronicleThreadPageBuilder)? updates]) =>
-      (ChronicleThreadPageBuilder()..update(updates))._build();
+  factory _$ChronicleThreadPage([
+    void Function(ChronicleThreadPageBuilder)? updates,
+  ]) => (ChronicleThreadPageBuilder()..update(updates))._build();
 
-  _$ChronicleThreadPage._(
-      {required this.items, this.nextCursor, this.unreadCount, this.readUpTo})
-      : super._();
+  _$ChronicleThreadPage._({
+    required this.items,
+    this.nextCursor,
+    this.unreadCount,
+    this.readUpTo,
+  }) : super._();
   @override
   ChronicleThreadPage rebuild(
-          void Function(ChronicleThreadPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleThreadPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleThreadPageBuilder toBuilder() =>
@@ -117,7 +120,8 @@ class ChronicleThreadPageBuilder
   _$ChronicleThreadPage _build() {
     _$ChronicleThreadPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleThreadPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -131,7 +135,10 @@ class ChronicleThreadPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleThreadPage', _$failedField, e.toString());
+          r'ChronicleThreadPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

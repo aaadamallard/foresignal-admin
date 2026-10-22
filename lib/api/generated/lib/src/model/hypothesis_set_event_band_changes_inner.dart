@@ -20,8 +20,10 @@ part 'hypothesis_set_event_band_changes_inner.g.dart';
 @BuiltValue()
 abstract class HypothesisSetEventBandChangesInner
     implements
-        Built<HypothesisSetEventBandChangesInner,
-            HypothesisSetEventBandChangesInnerBuilder> {
+        Built<
+          HypothesisSetEventBandChangesInner,
+          HypothesisSetEventBandChangesInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'hypothesisId')
   String get hypothesisId;
@@ -42,9 +44,9 @@ abstract class HypothesisSetEventBandChangesInner
 
   HypothesisSetEventBandChangesInner._();
 
-  factory HypothesisSetEventBandChangesInner(
-          [void updates(HypothesisSetEventBandChangesInnerBuilder b)]) =
-      _$HypothesisSetEventBandChangesInner;
+  factory HypothesisSetEventBandChangesInner([
+    void updates(HypothesisSetEventBandChangesInnerBuilder b),
+  ]) = _$HypothesisSetEventBandChangesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisSetEventBandChangesInnerBuilder b) => b;
@@ -59,7 +61,7 @@ class _$HypothesisSetEventBandChangesInnerSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisSetEventBandChangesInner,
-    _$HypothesisSetEventBandChangesInner
+    _$HypothesisSetEventBandChangesInner,
   ];
 
   @override
@@ -105,9 +107,11 @@ class _$HypothesisSetEventBandChangesInnerSerializer
     HypothesisSetEventBandChangesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,39 +127,46 @@ class _$HypothesisSetEventBandChangesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'hypothesisId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hypothesisId = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
           break;
         case r'fromTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IcdTerm),
-          ) as IcdTerm;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IcdTerm),
+                  )
+                  as IcdTerm;
           result.fromTerm = valueDes;
           break;
         case r'toTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IcdTerm),
-          ) as IcdTerm;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(IcdTerm),
+                  )
+                  as IcdTerm;
           result.toTerm = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.probability = valueDes;
           break;
         default:

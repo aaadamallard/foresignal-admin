@@ -16,8 +16,10 @@ part 'attention_topic_input_wiki_articles_inner.g.dart';
 @BuiltValue()
 abstract class AttentionTopicInputWikiArticlesInner
     implements
-        Built<AttentionTopicInputWikiArticlesInner,
-            AttentionTopicInputWikiArticlesInnerBuilder> {
+        Built<
+          AttentionTopicInputWikiArticlesInner,
+          AttentionTopicInputWikiArticlesInnerBuilder
+        > {
   @BuiltValueField(wireName: r'project')
   String get project;
 
@@ -26,9 +28,9 @@ abstract class AttentionTopicInputWikiArticlesInner
 
   AttentionTopicInputWikiArticlesInner._();
 
-  factory AttentionTopicInputWikiArticlesInner(
-          [void updates(AttentionTopicInputWikiArticlesInnerBuilder b)]) =
-      _$AttentionTopicInputWikiArticlesInner;
+  factory AttentionTopicInputWikiArticlesInner([
+    void updates(AttentionTopicInputWikiArticlesInnerBuilder b),
+  ]) = _$AttentionTopicInputWikiArticlesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AttentionTopicInputWikiArticlesInnerBuilder b) => b;
@@ -43,7 +45,7 @@ class _$AttentionTopicInputWikiArticlesInnerSerializer
   @override
   final Iterable<Type> types = const [
     AttentionTopicInputWikiArticlesInner,
-    _$AttentionTopicInputWikiArticlesInner
+    _$AttentionTopicInputWikiArticlesInner,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$AttentionTopicInputWikiArticlesInnerSerializer
     AttentionTopicInputWikiArticlesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$AttentionTopicInputWikiArticlesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'project':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.project = valueDes;
           break;
         case r'article':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.article = valueDes;
           break;
         default:

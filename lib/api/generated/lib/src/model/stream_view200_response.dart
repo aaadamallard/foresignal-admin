@@ -60,8 +60,9 @@ abstract class StreamView200Response
 
   StreamView200Response._();
 
-  factory StreamView200Response(
-      [void updates(StreamView200ResponseBuilder b)]) = _$StreamView200Response;
+  factory StreamView200Response([
+    void updates(StreamView200ResponseBuilder b),
+  ]) = _$StreamView200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StreamView200ResponseBuilder b) => b;
@@ -76,7 +77,7 @@ class _$StreamView200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     StreamView200Response,
-    _$StreamView200Response
+    _$StreamView200Response,
   ];
 
   @override
@@ -95,9 +96,13 @@ class _$StreamView200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -117,8 +122,9 @@ class _$StreamView200ResponseSerializer
       FullType(JsonObject),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }

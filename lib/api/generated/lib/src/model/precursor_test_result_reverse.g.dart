@@ -16,17 +16,20 @@ class _$PrecursorTestResultReverse extends PrecursorTestResultReverse {
   @override
   final num? pValue;
 
-  factory _$PrecursorTestResultReverse(
-          [void Function(PrecursorTestResultReverseBuilder)? updates]) =>
-      (PrecursorTestResultReverseBuilder()..update(updates))._build();
+  factory _$PrecursorTestResultReverse([
+    void Function(PrecursorTestResultReverseBuilder)? updates,
+  ]) => (PrecursorTestResultReverseBuilder()..update(updates))._build();
 
-  _$PrecursorTestResultReverse._(
-      {this.hits, this.hitRate, this.lift, this.pValue})
-      : super._();
+  _$PrecursorTestResultReverse._({
+    this.hits,
+    this.hitRate,
+    this.lift,
+    this.pValue,
+  }) : super._();
   @override
   PrecursorTestResultReverse rebuild(
-          void Function(PrecursorTestResultReverseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorTestResultReverseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorTestResultReverseBuilder toBuilder() =>
@@ -115,7 +118,8 @@ class PrecursorTestResultReverseBuilder
   PrecursorTestResultReverse build() => _build();
 
   _$PrecursorTestResultReverse _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorTestResultReverse._(
           hits: hits,
           hitRate: hitRate,

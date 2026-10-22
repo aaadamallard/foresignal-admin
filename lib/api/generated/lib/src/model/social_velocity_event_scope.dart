@@ -27,9 +27,9 @@ abstract class SocialVelocityEventScope
 
   SocialVelocityEventScope._();
 
-  factory SocialVelocityEventScope(
-          [void updates(SocialVelocityEventScopeBuilder b)]) =
-      _$SocialVelocityEventScope;
+  factory SocialVelocityEventScope([
+    void updates(SocialVelocityEventScopeBuilder b),
+  ]) = _$SocialVelocityEventScope;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialVelocityEventScopeBuilder b) => b;
@@ -44,7 +44,7 @@ class _$SocialVelocityEventScopeSerializer
   @override
   final Iterable<Type> types = const [
     SocialVelocityEventScope,
-    _$SocialVelocityEventScope
+    _$SocialVelocityEventScope,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$SocialVelocityEventScopeSerializer
     SocialVelocityEventScope object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +93,23 @@ class _$SocialVelocityEventScopeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialVelocityEventScopeTypeEnum),
-          ) as SocialVelocityEventScopeTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialVelocityEventScopeTypeEnum,
+                    ),
+                  )
+                  as SocialVelocityEventScopeTypeEnum;
           result.type = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         default:

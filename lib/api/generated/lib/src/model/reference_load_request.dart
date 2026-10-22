@@ -37,7 +37,7 @@ class _$ReferenceLoadRequestSerializer
   @override
   final Iterable<Type> types = const [
     ReferenceLoadRequest,
-    _$ReferenceLoadRequest
+    _$ReferenceLoadRequest,
   ];
 
   @override
@@ -61,9 +61,11 @@ class _$ReferenceLoadRequestSerializer
     ReferenceLoadRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -79,10 +81,14 @@ class _$ReferenceLoadRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'datasets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.datasets.replace(valueDes);
           break;
         default:

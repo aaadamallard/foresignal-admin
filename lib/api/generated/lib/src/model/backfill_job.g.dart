@@ -36,12 +36,12 @@ BackfillJobStatusEnum _$backfillJobStatusEnumValueOf(String name) {
 
 final BuiltSet<BackfillJobStatusEnum> _$backfillJobStatusEnumValues =
     BuiltSet<BackfillJobStatusEnum>(const <BackfillJobStatusEnum>[
-  _$backfillJobStatusEnum_queued,
-  _$backfillJobStatusEnum_running,
-  _$backfillJobStatusEnum_done,
-  _$backfillJobStatusEnum_failed,
-  _$backfillJobStatusEnum_cancelled,
-]);
+      _$backfillJobStatusEnum_queued,
+      _$backfillJobStatusEnum_running,
+      _$backfillJobStatusEnum_done,
+      _$backfillJobStatusEnum_failed,
+      _$backfillJobStatusEnum_cancelled,
+    ]);
 
 Serializer<BackfillJobStatusEnum> _$backfillJobStatusEnumSerializer =
     _$BackfillJobStatusEnumSerializer();
@@ -69,15 +69,20 @@ class _$BackfillJobStatusEnumSerializer
   final String wireName = 'BackfillJobStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, BackfillJobStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BackfillJobStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BackfillJobStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BackfillJobStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BackfillJobStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BackfillJobStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BackfillJob extends BackfillJob {
@@ -107,19 +112,19 @@ class _$BackfillJob extends BackfillJob {
   factory _$BackfillJob([void Function(BackfillJobBuilder)? updates]) =>
       (BackfillJobBuilder()..update(updates))._build();
 
-  _$BackfillJob._(
-      {required this.id,
-      required this.sourceId,
-      required this.status,
-      required this.from,
-      this.cursor,
-      this.pagesFetched,
-      this.versionsWritten,
-      required this.createdAt,
-      this.startedAt,
-      this.finishedAt,
-      this.error})
-      : super._();
+  _$BackfillJob._({
+    required this.id,
+    required this.sourceId,
+    required this.status,
+    required this.from,
+    this.cursor,
+    this.pagesFetched,
+    this.versionsWritten,
+    required this.createdAt,
+    this.startedAt,
+    this.finishedAt,
+    this.error,
+  }) : super._();
   @override
   BackfillJob rebuild(void Function(BackfillJobBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -265,20 +270,33 @@ class BackfillJobBuilder implements Builder<BackfillJob, BackfillJobBuilder> {
   BackfillJob build() => _build();
 
   _$BackfillJob _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BackfillJob._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'BackfillJob', 'id'),
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'BackfillJob', 'sourceId'),
+            sourceId,
+            r'BackfillJob',
+            'sourceId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'BackfillJob', 'status'),
+            status,
+            r'BackfillJob',
+            'status',
+          ),
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'BackfillJob', 'from'),
+            from,
+            r'BackfillJob',
+            'from',
+          ),
           cursor: cursor,
           pagesFetched: pagesFetched,
           versionsWritten: versionsWritten,
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'BackfillJob', 'createdAt'),
+            createdAt,
+            r'BackfillJob',
+            'createdAt',
+          ),
           startedAt: startedAt,
           finishedAt: finishedAt,
           error: error,

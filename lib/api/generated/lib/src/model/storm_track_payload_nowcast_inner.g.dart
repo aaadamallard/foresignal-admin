@@ -7,17 +7,17 @@ part of 'storm_track_payload_nowcast_inner.dart';
 // **************************************************************************
 
 const StormTrackPayloadNowcastInnerLeadMinutesEnum
-    _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number15 =
+_$stormTrackPayloadNowcastInnerLeadMinutesEnum_number15 =
     const StormTrackPayloadNowcastInnerLeadMinutesEnum._('number15');
 const StormTrackPayloadNowcastInnerLeadMinutesEnum
-    _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number30 =
+_$stormTrackPayloadNowcastInnerLeadMinutesEnum_number30 =
     const StormTrackPayloadNowcastInnerLeadMinutesEnum._('number30');
 const StormTrackPayloadNowcastInnerLeadMinutesEnum
-    _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60 =
+_$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60 =
     const StormTrackPayloadNowcastInnerLeadMinutesEnum._('number60');
 
 StormTrackPayloadNowcastInnerLeadMinutesEnum
-    _$stormTrackPayloadNowcastInnerLeadMinutesEnumValueOf(String name) {
+_$stormTrackPayloadNowcastInnerLeadMinutesEnumValueOf(String name) {
   switch (name) {
     case 'number15':
       return _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number15;
@@ -31,19 +31,21 @@ StormTrackPayloadNowcastInnerLeadMinutesEnum
 }
 
 final BuiltSet<StormTrackPayloadNowcastInnerLeadMinutesEnum>
-    _$stormTrackPayloadNowcastInnerLeadMinutesEnumValues = BuiltSet<
-        StormTrackPayloadNowcastInnerLeadMinutesEnum>(const <StormTrackPayloadNowcastInnerLeadMinutesEnum>[
-  _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number15,
-  _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number30,
-  _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60,
-]);
+_$stormTrackPayloadNowcastInnerLeadMinutesEnumValues =
+    BuiltSet<StormTrackPayloadNowcastInnerLeadMinutesEnum>(
+      const <StormTrackPayloadNowcastInnerLeadMinutesEnum>[
+        _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number15,
+        _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number30,
+        _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60,
+      ],
+    );
 
 const StormTrackPayloadNowcastInnerMethodEnum
-    _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection =
+_$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection =
     const StormTrackPayloadNowcastInnerMethodEnum._('linearAdvection');
 
 StormTrackPayloadNowcastInnerMethodEnum
-    _$stormTrackPayloadNowcastInnerMethodEnumValueOf(String name) {
+_$stormTrackPayloadNowcastInnerMethodEnumValueOf(String name) {
   switch (name) {
     case 'linearAdvection':
       return _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection;
@@ -53,16 +55,18 @@ StormTrackPayloadNowcastInnerMethodEnum
 }
 
 final BuiltSet<StormTrackPayloadNowcastInnerMethodEnum>
-    _$stormTrackPayloadNowcastInnerMethodEnumValues = BuiltSet<
-        StormTrackPayloadNowcastInnerMethodEnum>(const <StormTrackPayloadNowcastInnerMethodEnum>[
-  _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection,
-]);
+_$stormTrackPayloadNowcastInnerMethodEnumValues =
+    BuiltSet<StormTrackPayloadNowcastInnerMethodEnum>(
+      const <StormTrackPayloadNowcastInnerMethodEnum>[
+        _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection,
+      ],
+    );
 
 Serializer<StormTrackPayloadNowcastInnerLeadMinutesEnum>
-    _$stormTrackPayloadNowcastInnerLeadMinutesEnumSerializer =
+_$stormTrackPayloadNowcastInnerLeadMinutesEnumSerializer =
     _$StormTrackPayloadNowcastInnerLeadMinutesEnumSerializer();
 Serializer<StormTrackPayloadNowcastInnerMethodEnum>
-    _$stormTrackPayloadNowcastInnerMethodEnumSerializer =
+_$stormTrackPayloadNowcastInnerMethodEnumSerializer =
     _$StormTrackPayloadNowcastInnerMethodEnumSerializer();
 
 class _$StormTrackPayloadNowcastInnerLeadMinutesEnumSerializer
@@ -81,23 +85,26 @@ class _$StormTrackPayloadNowcastInnerLeadMinutesEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StormTrackPayloadNowcastInnerLeadMinutesEnum
+    StormTrackPayloadNowcastInnerLeadMinutesEnum,
   ];
   @override
   final String wireName = 'StormTrackPayloadNowcastInnerLeadMinutesEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StormTrackPayloadNowcastInnerLeadMinutesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StormTrackPayloadNowcastInnerLeadMinutesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormTrackPayloadNowcastInnerLeadMinutesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormTrackPayloadNowcastInnerLeadMinutesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormTrackPayloadNowcastInnerLeadMinutesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormTrackPayloadNowcastInnerMethodEnumSerializer
@@ -111,23 +118,26 @@ class _$StormTrackPayloadNowcastInnerMethodEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StormTrackPayloadNowcastInnerMethodEnum
+    StormTrackPayloadNowcastInnerMethodEnum,
   ];
   @override
   final String wireName = 'StormTrackPayloadNowcastInnerMethodEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StormTrackPayloadNowcastInnerMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StormTrackPayloadNowcastInnerMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormTrackPayloadNowcastInnerMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormTrackPayloadNowcastInnerMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormTrackPayloadNowcastInnerMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormTrackPayloadNowcastInner extends StormTrackPayloadNowcastInner {
@@ -136,17 +146,18 @@ class _$StormTrackPayloadNowcastInner extends StormTrackPayloadNowcastInner {
   @override
   final StormTrackPayloadNowcastInnerMethodEnum method;
 
-  factory _$StormTrackPayloadNowcastInner(
-          [void Function(StormTrackPayloadNowcastInnerBuilder)? updates]) =>
-      (StormTrackPayloadNowcastInnerBuilder()..update(updates))._build();
+  factory _$StormTrackPayloadNowcastInner([
+    void Function(StormTrackPayloadNowcastInnerBuilder)? updates,
+  ]) => (StormTrackPayloadNowcastInnerBuilder()..update(updates))._build();
 
-  _$StormTrackPayloadNowcastInner._(
-      {required this.leadMinutes, required this.method})
-      : super._();
+  _$StormTrackPayloadNowcastInner._({
+    required this.leadMinutes,
+    required this.method,
+  }) : super._();
   @override
   StormTrackPayloadNowcastInner rebuild(
-          void Function(StormTrackPayloadNowcastInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StormTrackPayloadNowcastInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StormTrackPayloadNowcastInnerBuilder toBuilder() =>
@@ -180,8 +191,10 @@ class _$StormTrackPayloadNowcastInner extends StormTrackPayloadNowcastInner {
 
 class StormTrackPayloadNowcastInnerBuilder
     implements
-        Builder<StormTrackPayloadNowcastInner,
-            StormTrackPayloadNowcastInnerBuilder> {
+        Builder<
+          StormTrackPayloadNowcastInner,
+          StormTrackPayloadNowcastInnerBuilder
+        > {
   _$StormTrackPayloadNowcastInner? _$v;
 
   StormTrackPayloadNowcastInnerLeadMinutesEnum? _leadMinutes;
@@ -223,12 +236,19 @@ class StormTrackPayloadNowcastInnerBuilder
   StormTrackPayloadNowcastInner build() => _build();
 
   _$StormTrackPayloadNowcastInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StormTrackPayloadNowcastInner._(
           leadMinutes: BuiltValueNullFieldError.checkNotNull(
-              leadMinutes, r'StormTrackPayloadNowcastInner', 'leadMinutes'),
+            leadMinutes,
+            r'StormTrackPayloadNowcastInner',
+            'leadMinutes',
+          ),
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'StormTrackPayloadNowcastInner', 'method'),
+            method,
+            r'StormTrackPayloadNowcastInner',
+            'method',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -75,40 +75,40 @@ class _$RecordVersion extends RecordVersion {
   factory _$RecordVersion([void Function(RecordVersionBuilder)? updates]) =>
       (RecordVersionBuilder()..update(updates))._build();
 
-  _$RecordVersion._(
-      {required this.id,
-      required this.source_,
-      required this.externalId,
-      required this.kind,
-      required this.version,
-      required this.seq,
-      required this.observedAt,
-      required this.ingestedAt,
-      this.validUntil,
-      this.tombstone,
-      this.geometry,
-      required this.payload,
-      this.attribution,
-      this.title,
-      this.persistedObservedAt,
-      this.eventTime,
-      this.validFrom,
-      this.quality,
-      this.live,
-      this.qaFlags,
-      this.distanceKm,
-      this.observer,
-      this.region,
-      this.entityId,
-      this.provenance,
-      this.globalRef,
-      required this.persistReason,
-      this.prevSeq,
-      this.historyTier,
-      required this.receivedAt,
-      this.batchId,
-      this.downsampled})
-      : super._();
+  _$RecordVersion._({
+    required this.id,
+    required this.source_,
+    required this.externalId,
+    required this.kind,
+    required this.version,
+    required this.seq,
+    required this.observedAt,
+    required this.ingestedAt,
+    this.validUntil,
+    this.tombstone,
+    this.geometry,
+    required this.payload,
+    this.attribution,
+    this.title,
+    this.persistedObservedAt,
+    this.eventTime,
+    this.validFrom,
+    this.quality,
+    this.live,
+    this.qaFlags,
+    this.distanceKm,
+    this.observer,
+    this.region,
+    this.entityId,
+    this.provenance,
+    this.globalRef,
+    required this.persistReason,
+    this.prevSeq,
+    this.historyTier,
+    required this.receivedAt,
+    this.batchId,
+    this.downsampled,
+  }) : super._();
   @override
   RecordVersion rebuild(void Function(RecordVersionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -432,24 +432,49 @@ class RecordVersionBuilder
   _$RecordVersion _build() {
     _$RecordVersion _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecordVersion._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'RecordVersion', 'id'),
+              id,
+              r'RecordVersion',
+              'id',
+            ),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'RecordVersion', 'source_'),
+              source_,
+              r'RecordVersion',
+              'source_',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'RecordVersion', 'externalId'),
+              externalId,
+              r'RecordVersion',
+              'externalId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'RecordVersion', 'kind'),
+              kind,
+              r'RecordVersion',
+              'kind',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'RecordVersion', 'version'),
+              version,
+              r'RecordVersion',
+              'version',
+            ),
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'RecordVersion', 'seq'),
+              seq,
+              r'RecordVersion',
+              'seq',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'RecordVersion', 'observedAt'),
+              observedAt,
+              r'RecordVersion',
+              'observedAt',
+            ),
             ingestedAt: BuiltValueNullFieldError.checkNotNull(
-                ingestedAt, r'RecordVersion', 'ingestedAt'),
+              ingestedAt,
+              r'RecordVersion',
+              'ingestedAt',
+            ),
             validUntil: validUntil,
             tombstone: tombstone,
             geometry: _geometry?.build(),
@@ -469,11 +494,17 @@ class RecordVersionBuilder
             provenance: _provenance?.build(),
             globalRef: globalRef,
             persistReason: BuiltValueNullFieldError.checkNotNull(
-                persistReason, r'RecordVersion', 'persistReason'),
+              persistReason,
+              r'RecordVersion',
+              'persistReason',
+            ),
             prevSeq: prevSeq,
             historyTier: historyTier,
             receivedAt: BuiltValueNullFieldError.checkNotNull(
-                receivedAt, r'RecordVersion', 'receivedAt'),
+              receivedAt,
+              r'RecordVersion',
+              'receivedAt',
+            ),
             batchId: batchId,
             downsampled: downsampled,
           );
@@ -497,7 +528,10 @@ class RecordVersionBuilder
         _provenance?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecordVersion', _$failedField, e.toString());
+          r'RecordVersion',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

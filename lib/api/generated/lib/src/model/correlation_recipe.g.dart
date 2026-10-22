@@ -23,14 +23,15 @@ CorrelationRecipeOriginEnum _$correlationRecipeOriginEnumValueOf(String name) {
 }
 
 final BuiltSet<CorrelationRecipeOriginEnum>
-    _$correlationRecipeOriginEnumValues =
-    BuiltSet<CorrelationRecipeOriginEnum>(const <CorrelationRecipeOriginEnum>[
-  _$correlationRecipeOriginEnum_bundled,
-  _$correlationRecipeOriginEnum_operator_,
-]);
+_$correlationRecipeOriginEnumValues = BuiltSet<CorrelationRecipeOriginEnum>(
+  const <CorrelationRecipeOriginEnum>[
+    _$correlationRecipeOriginEnum_bundled,
+    _$correlationRecipeOriginEnum_operator_,
+  ],
+);
 
 Serializer<CorrelationRecipeOriginEnum>
-    _$correlationRecipeOriginEnumSerializer =
+_$correlationRecipeOriginEnumSerializer =
     _$CorrelationRecipeOriginEnumSerializer();
 
 class _$CorrelationRecipeOriginEnumSerializer
@@ -50,16 +51,20 @@ class _$CorrelationRecipeOriginEnumSerializer
   final String wireName = 'CorrelationRecipeOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, CorrelationRecipeOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CorrelationRecipeOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CorrelationRecipeOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CorrelationRecipeOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CorrelationRecipeOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CorrelationRecipe extends CorrelationRecipe {
@@ -84,22 +89,22 @@ class _$CorrelationRecipe extends CorrelationRecipe {
   @override
   final String? lastError;
 
-  factory _$CorrelationRecipe(
-          [void Function(CorrelationRecipeBuilder)? updates]) =>
-      (CorrelationRecipeBuilder()..update(updates))._build();
+  factory _$CorrelationRecipe([
+    void Function(CorrelationRecipeBuilder)? updates,
+  ]) => (CorrelationRecipeBuilder()..update(updates))._build();
 
-  _$CorrelationRecipe._(
-      {required this.id,
-      required this.version,
-      this.builtIn,
-      this.origin,
-      required this.enabled,
-      required this.definition,
-      this.params,
-      this.disabledReason,
-      this.lastRunAt,
-      this.lastError})
-      : super._();
+  _$CorrelationRecipe._({
+    required this.id,
+    required this.version,
+    this.builtIn,
+    this.origin,
+    required this.enabled,
+    required this.definition,
+    this.params,
+    this.disabledReason,
+    this.lastRunAt,
+    this.lastError,
+  }) : super._();
   @override
   CorrelationRecipe rebuild(void Function(CorrelationRecipeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -245,16 +250,26 @@ class CorrelationRecipeBuilder
   _$CorrelationRecipe _build() {
     _$CorrelationRecipe _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorrelationRecipe._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CorrelationRecipe', 'id'),
+              id,
+              r'CorrelationRecipe',
+              'id',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'CorrelationRecipe', 'version'),
+              version,
+              r'CorrelationRecipe',
+              'version',
+            ),
             builtIn: builtIn,
             origin: origin,
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'CorrelationRecipe', 'enabled'),
+              enabled,
+              r'CorrelationRecipe',
+              'enabled',
+            ),
             definition: definition.build(),
             params: _params?.build(),
             disabledReason: disabledReason,
@@ -270,7 +285,10 @@ class CorrelationRecipeBuilder
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorrelationRecipe', _$failedField, e.toString());
+          r'CorrelationRecipe',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

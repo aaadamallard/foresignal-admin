@@ -47,26 +47,26 @@ class _$NewsArticle extends NewsArticle {
   factory _$NewsArticle([void Function(NewsArticleBuilder)? updates]) =>
       (NewsArticleBuilder()..update(updates))._build();
 
-  _$NewsArticle._(
-      {required this.ref,
-      required this.externalId,
-      required this.title,
-      required this.url,
-      required this.domain,
-      this.outletId,
-      this.outletName,
-      this.language,
-      this.sourceCountry,
-      required this.seenAt,
-      this.publishedAt,
-      this.topicIds,
-      this.summary,
-      this.imageUrl,
-      this.storyId,
-      this.evidenceGroupId,
-      this.syndicated,
-      required this.sourceId})
-      : super._();
+  _$NewsArticle._({
+    required this.ref,
+    required this.externalId,
+    required this.title,
+    required this.url,
+    required this.domain,
+    this.outletId,
+    this.outletName,
+    this.language,
+    this.sourceCountry,
+    required this.seenAt,
+    this.publishedAt,
+    this.topicIds,
+    this.summary,
+    this.imageUrl,
+    this.storyId,
+    this.evidenceGroupId,
+    this.syndicated,
+    required this.sourceId,
+  }) : super._();
   @override
   NewsArticle rebuild(void Function(NewsArticleBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -272,24 +272,43 @@ class NewsArticleBuilder implements Builder<NewsArticle, NewsArticleBuilder> {
   _$NewsArticle _build() {
     _$NewsArticle _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NewsArticle._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'NewsArticle', 'ref'),
+              ref,
+              r'NewsArticle',
+              'ref',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'NewsArticle', 'externalId'),
+              externalId,
+              r'NewsArticle',
+              'externalId',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'NewsArticle', 'title'),
+              title,
+              r'NewsArticle',
+              'title',
+            ),
             url: BuiltValueNullFieldError.checkNotNull(
-                url, r'NewsArticle', 'url'),
+              url,
+              r'NewsArticle',
+              'url',
+            ),
             domain: BuiltValueNullFieldError.checkNotNull(
-                domain, r'NewsArticle', 'domain'),
+              domain,
+              r'NewsArticle',
+              'domain',
+            ),
             outletId: outletId,
             outletName: outletName,
             language: language,
             sourceCountry: sourceCountry,
             seenAt: BuiltValueNullFieldError.checkNotNull(
-                seenAt, r'NewsArticle', 'seenAt'),
+              seenAt,
+              r'NewsArticle',
+              'seenAt',
+            ),
             publishedAt: publishedAt,
             topicIds: _topicIds?.build(),
             summary: summary,
@@ -298,7 +317,10 @@ class NewsArticleBuilder implements Builder<NewsArticle, NewsArticleBuilder> {
             evidenceGroupId: evidenceGroupId,
             syndicated: syndicated,
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'NewsArticle', 'sourceId'),
+              sourceId,
+              r'NewsArticle',
+              'sourceId',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -307,7 +329,10 @@ class NewsArticleBuilder implements Builder<NewsArticle, NewsArticleBuilder> {
         _topicIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NewsArticle', _$failedField, e.toString());
+          r'NewsArticle',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

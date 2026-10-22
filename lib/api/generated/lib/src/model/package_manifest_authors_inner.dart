@@ -35,9 +35,9 @@ abstract class PackageManifestAuthorsInner
 
   PackageManifestAuthorsInner._();
 
-  factory PackageManifestAuthorsInner(
-          [void updates(PackageManifestAuthorsInnerBuilder b)]) =
-      _$PackageManifestAuthorsInner;
+  factory PackageManifestAuthorsInner([
+    void updates(PackageManifestAuthorsInnerBuilder b),
+  ]) = _$PackageManifestAuthorsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PackageManifestAuthorsInnerBuilder b) => b;
@@ -52,7 +52,7 @@ class _$PackageManifestAuthorsInnerSerializer
   @override
   final Iterable<Type> types = const [
     PackageManifestAuthorsInner,
-    _$PackageManifestAuthorsInner
+    _$PackageManifestAuthorsInner,
   ];
 
   @override
@@ -93,9 +93,11 @@ class _$PackageManifestAuthorsInnerSerializer
     PackageManifestAuthorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,32 +113,42 @@ class _$PackageManifestAuthorsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'handle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.handle = valueDes;
           break;
         case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.displayName = valueDes;
           break;
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PackageManifestAuthorsInnerRoleEnum),
-          ) as PackageManifestAuthorsInnerRoleEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PackageManifestAuthorsInnerRoleEnum,
+                    ),
+                  )
+                  as PackageManifestAuthorsInnerRoleEnum;
           result.role = valueDes;
           break;
         default:

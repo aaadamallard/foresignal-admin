@@ -41,9 +41,9 @@ abstract class SituationSocialSection
 
   SituationSocialSection._();
 
-  factory SituationSocialSection(
-          [void updates(SituationSocialSectionBuilder b)]) =
-      _$SituationSocialSection;
+  factory SituationSocialSection([
+    void updates(SituationSocialSectionBuilder b),
+  ]) = _$SituationSocialSection;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationSocialSectionBuilder b) => b;
@@ -58,7 +58,7 @@ class _$SituationSocialSectionSerializer
   @override
   final Iterable<Type> types = const [
     SituationSocialSection,
-    _$SituationSocialSection
+    _$SituationSocialSection,
   ];
 
   @override
@@ -72,8 +72,9 @@ class _$SituationSocialSectionSerializer
     yield r'narratives';
     yield serializers.serialize(
       object.narratives,
-      specifiedType: const FullType(
-          BuiltList, [FullType(SituationSocialSectionNarrativesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SituationSocialSectionNarrativesInner),
+      ]),
     );
     yield r'socialEvidenceGroups';
     yield serializers.serialize(
@@ -84,8 +85,9 @@ class _$SituationSocialSectionSerializer
       yield r'attentionGap';
       yield serializers.serialize(
         object.attentionGap,
-        specifiedType:
-            const FullType.nullable(SituationSocialSectionAttentionGap),
+        specifiedType: const FullType.nullable(
+          SituationSocialSectionAttentionGap,
+        ),
       );
     }
     yield r'socialCoverageOk';
@@ -108,9 +110,11 @@ class _$SituationSocialSectionSerializer
     SituationSocialSection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,41 +130,50 @@ class _$SituationSocialSectionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'narratives':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(SituationSocialSectionNarrativesInner)]),
-          ) as BuiltList<SituationSocialSectionNarrativesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SituationSocialSectionNarrativesInner),
+                    ]),
+                  )
+                  as BuiltList<SituationSocialSectionNarrativesInner>;
           result.narratives.replace(valueDes);
           break;
         case r'socialEvidenceGroups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.socialEvidenceGroups = valueDes;
           break;
         case r'attentionGap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SituationSocialSectionAttentionGap),
-          ) as SituationSocialSectionAttentionGap?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SituationSocialSectionAttentionGap,
+                    ),
+                  )
+                  as SituationSocialSectionAttentionGap?;
           if (valueDes == null) continue;
           result.attentionGap.replace(valueDes);
           break;
         case r'socialCoverageOk':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.socialCoverageOk = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

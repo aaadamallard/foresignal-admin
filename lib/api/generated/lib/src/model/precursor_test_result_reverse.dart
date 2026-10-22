@@ -33,9 +33,9 @@ abstract class PrecursorTestResultReverse
 
   PrecursorTestResultReverse._();
 
-  factory PrecursorTestResultReverse(
-          [void updates(PrecursorTestResultReverseBuilder b)]) =
-      _$PrecursorTestResultReverse;
+  factory PrecursorTestResultReverse([
+    void updates(PrecursorTestResultReverseBuilder b),
+  ]) = _$PrecursorTestResultReverse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorTestResultReverseBuilder b) => b;
@@ -50,7 +50,7 @@ class _$PrecursorTestResultReverseSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorTestResultReverse,
-    _$PrecursorTestResultReverse
+    _$PrecursorTestResultReverse,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$PrecursorTestResultReverseSerializer
     PrecursorTestResultReverse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,34 +117,42 @@ class _$PrecursorTestResultReverseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'hits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.hits = valueDes;
           break;
         case r'hitRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.hitRate = valueDes;
           break;
         case r'lift':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lift = valueDes;
           break;
         case r'pValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.pValue = valueDes;
           break;

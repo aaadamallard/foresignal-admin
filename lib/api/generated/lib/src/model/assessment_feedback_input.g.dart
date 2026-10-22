@@ -7,17 +7,18 @@ part of 'assessment_feedback_input.dart';
 // **************************************************************************
 
 const AssessmentFeedbackInputRatingEnum
-    _$assessmentFeedbackInputRatingEnum_useful =
+_$assessmentFeedbackInputRatingEnum_useful =
     const AssessmentFeedbackInputRatingEnum._('useful');
 const AssessmentFeedbackInputRatingEnum
-    _$assessmentFeedbackInputRatingEnum_notUseful =
+_$assessmentFeedbackInputRatingEnum_notUseful =
     const AssessmentFeedbackInputRatingEnum._('notUseful');
 const AssessmentFeedbackInputRatingEnum
-    _$assessmentFeedbackInputRatingEnum_wrong =
+_$assessmentFeedbackInputRatingEnum_wrong =
     const AssessmentFeedbackInputRatingEnum._('wrong');
 
 AssessmentFeedbackInputRatingEnum _$assessmentFeedbackInputRatingEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'useful':
       return _$assessmentFeedbackInputRatingEnum_useful;
@@ -31,15 +32,17 @@ AssessmentFeedbackInputRatingEnum _$assessmentFeedbackInputRatingEnumValueOf(
 }
 
 final BuiltSet<AssessmentFeedbackInputRatingEnum>
-    _$assessmentFeedbackInputRatingEnumValues = BuiltSet<
-        AssessmentFeedbackInputRatingEnum>(const <AssessmentFeedbackInputRatingEnum>[
-  _$assessmentFeedbackInputRatingEnum_useful,
-  _$assessmentFeedbackInputRatingEnum_notUseful,
-  _$assessmentFeedbackInputRatingEnum_wrong,
-]);
+_$assessmentFeedbackInputRatingEnumValues =
+    BuiltSet<AssessmentFeedbackInputRatingEnum>(
+      const <AssessmentFeedbackInputRatingEnum>[
+        _$assessmentFeedbackInputRatingEnum_useful,
+        _$assessmentFeedbackInputRatingEnum_notUseful,
+        _$assessmentFeedbackInputRatingEnum_wrong,
+      ],
+    );
 
 Serializer<AssessmentFeedbackInputRatingEnum>
-    _$assessmentFeedbackInputRatingEnumSerializer =
+_$assessmentFeedbackInputRatingEnumSerializer =
     _$AssessmentFeedbackInputRatingEnumSerializer();
 
 class _$AssessmentFeedbackInputRatingEnumSerializer
@@ -62,16 +65,19 @@ class _$AssessmentFeedbackInputRatingEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AssessmentFeedbackInputRatingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AssessmentFeedbackInputRatingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AssessmentFeedbackInputRatingEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentFeedbackInputRatingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentFeedbackInputRatingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentFeedbackInput extends AssessmentFeedbackInput {
@@ -80,15 +86,15 @@ class _$AssessmentFeedbackInput extends AssessmentFeedbackInput {
   @override
   final String? comment;
 
-  factory _$AssessmentFeedbackInput(
-          [void Function(AssessmentFeedbackInputBuilder)? updates]) =>
-      (AssessmentFeedbackInputBuilder()..update(updates))._build();
+  factory _$AssessmentFeedbackInput([
+    void Function(AssessmentFeedbackInputBuilder)? updates,
+  ]) => (AssessmentFeedbackInputBuilder()..update(updates))._build();
 
   _$AssessmentFeedbackInput._({required this.rating, this.comment}) : super._();
   @override
   AssessmentFeedbackInput rebuild(
-          void Function(AssessmentFeedbackInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentFeedbackInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentFeedbackInputBuilder toBuilder() =>
@@ -162,10 +168,14 @@ class AssessmentFeedbackInputBuilder
   AssessmentFeedbackInput build() => _build();
 
   _$AssessmentFeedbackInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AssessmentFeedbackInput._(
           rating: BuiltValueNullFieldError.checkNotNull(
-              rating, r'AssessmentFeedbackInput', 'rating'),
+            rating,
+            r'AssessmentFeedbackInput',
+            'rating',
+          ),
           comment: comment,
         );
     replace(_$result);

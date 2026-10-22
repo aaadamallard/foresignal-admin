@@ -92,11 +92,9 @@ class AssessmentPageBuilder
   _$AssessmentPage _build() {
     _$AssessmentPage _$result;
     try {
-      _$result = _$v ??
-          _$AssessmentPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AssessmentPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class AssessmentPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AssessmentPage', _$failedField, e.toString());
+          r'AssessmentPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

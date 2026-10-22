@@ -6,14 +6,18 @@ part of 'report.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ReportStatusEnum _$reportStatusEnum_draft =
-    const ReportStatusEnum._('draft');
-const ReportStatusEnum _$reportStatusEnum_review =
-    const ReportStatusEnum._('review');
-const ReportStatusEnum _$reportStatusEnum_published =
-    const ReportStatusEnum._('published');
-const ReportStatusEnum _$reportStatusEnum_retracted =
-    const ReportStatusEnum._('retracted');
+const ReportStatusEnum _$reportStatusEnum_draft = const ReportStatusEnum._(
+  'draft',
+);
+const ReportStatusEnum _$reportStatusEnum_review = const ReportStatusEnum._(
+  'review',
+);
+const ReportStatusEnum _$reportStatusEnum_published = const ReportStatusEnum._(
+  'published',
+);
+const ReportStatusEnum _$reportStatusEnum_retracted = const ReportStatusEnum._(
+  'retracted',
+);
 
 ReportStatusEnum _$reportStatusEnumValueOf(String name) {
   switch (name) {
@@ -32,11 +36,11 @@ ReportStatusEnum _$reportStatusEnumValueOf(String name) {
 
 final BuiltSet<ReportStatusEnum> _$reportStatusEnumValues =
     BuiltSet<ReportStatusEnum>(const <ReportStatusEnum>[
-  _$reportStatusEnum_draft,
-  _$reportStatusEnum_review,
-  _$reportStatusEnum_published,
-  _$reportStatusEnum_retracted,
-]);
+      _$reportStatusEnum_draft,
+      _$reportStatusEnum_review,
+      _$reportStatusEnum_published,
+      _$reportStatusEnum_retracted,
+    ]);
 
 const ReportTemplateEnum _$reportTemplateEnum_situationBrief =
     const ReportTemplateEnum._('situationBrief');
@@ -68,12 +72,12 @@ ReportTemplateEnum _$reportTemplateEnumValueOf(String name) {
 
 final BuiltSet<ReportTemplateEnum> _$reportTemplateEnumValues =
     BuiltSet<ReportTemplateEnum>(const <ReportTemplateEnum>[
-  _$reportTemplateEnum_situationBrief,
-  _$reportTemplateEnum_investigationSummary,
-  _$reportTemplateEnum_chronicleRecap,
-  _$reportTemplateEnum_weeklyAssessment,
-  _$reportTemplateEnum_custom,
-]);
+      _$reportTemplateEnum_situationBrief,
+      _$reportTemplateEnum_investigationSummary,
+      _$reportTemplateEnum_chronicleRecap,
+      _$reportTemplateEnum_weeklyAssessment,
+      _$reportTemplateEnum_custom,
+    ]);
 
 Serializer<ReportStatusEnum> _$reportStatusEnumSerializer =
     _$ReportStatusEnumSerializer();
@@ -101,15 +105,20 @@ class _$ReportStatusEnumSerializer
   final String wireName = 'ReportStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ReportStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReportStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ReportStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ReportStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportTemplateEnumSerializer
@@ -135,15 +144,20 @@ class _$ReportTemplateEnumSerializer
   final String wireName = 'ReportTemplateEnum';
 
   @override
-  Object serialize(Serializers serializers, ReportTemplateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReportTemplateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ReportTemplateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportTemplateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ReportTemplateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportTemplateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Report extends Report {
@@ -199,32 +213,32 @@ class _$Report extends Report {
   factory _$Report([void Function(ReportBuilder)? updates]) =>
       (ReportBuilder()..update(updates))._build();
 
-  _$Report._(
-      {required this.id,
-      required this.ref,
-      required this.displayId,
-      required this.title,
-      this.subtitle,
-      required this.status,
-      required this.owner,
-      required this.authors,
-      required this.tlp,
-      required this.visibility,
-      required this.source_,
-      this.template,
-      this.timeWindow,
-      this.area,
-      required this.blocks,
-      this.machineGenerated,
-      required this.version,
-      this.publishedRevision,
-      this.publishedAt,
-      this.manifestId,
-      this.provenanceChain,
-      this.tags,
-      required this.createdAt,
-      this.updatedAt})
-      : super._();
+  _$Report._({
+    required this.id,
+    required this.ref,
+    required this.displayId,
+    required this.title,
+    this.subtitle,
+    required this.status,
+    required this.owner,
+    required this.authors,
+    required this.tlp,
+    required this.visibility,
+    required this.source_,
+    this.template,
+    this.timeWindow,
+    this.area,
+    required this.blocks,
+    this.machineGenerated,
+    required this.version,
+    this.publishedRevision,
+    this.publishedAt,
+    this.manifestId,
+    this.provenanceChain,
+    this.tags,
+    required this.createdAt,
+    this.updatedAt,
+  }) : super._();
   @override
   Report rebuild(void Function(ReportBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -484,22 +498,35 @@ class ReportBuilder implements Builder<Report, ReportBuilder> {
   _$Report _build() {
     _$Report _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Report._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Report', 'id'),
             ref: BuiltValueNullFieldError.checkNotNull(ref, r'Report', 'ref'),
             displayId: BuiltValueNullFieldError.checkNotNull(
-                displayId, r'Report', 'displayId'),
+              displayId,
+              r'Report',
+              'displayId',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Report', 'title'),
+              title,
+              r'Report',
+              'title',
+            ),
             subtitle: subtitle,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Report', 'status'),
+              status,
+              r'Report',
+              'status',
+            ),
             owner: owner.build(),
             authors: authors.build(),
             tlp: BuiltValueNullFieldError.checkNotNull(tlp, r'Report', 'tlp'),
             visibility: BuiltValueNullFieldError.checkNotNull(
-                visibility, r'Report', 'visibility'),
+              visibility,
+              r'Report',
+              'visibility',
+            ),
             source_: source_.build(),
             template: template,
             timeWindow: _timeWindow?.build(),
@@ -507,14 +534,20 @@ class ReportBuilder implements Builder<Report, ReportBuilder> {
             blocks: blocks.build(),
             machineGenerated: machineGenerated,
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'Report', 'version'),
+              version,
+              r'Report',
+              'version',
+            ),
             publishedRevision: publishedRevision,
             publishedAt: publishedAt,
             manifestId: manifestId,
             provenanceChain: _provenanceChain?.build(),
             tags: _tags?.build(),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Report', 'createdAt'),
+              createdAt,
+              r'Report',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {
@@ -541,7 +574,10 @@ class ReportBuilder implements Builder<Report, ReportBuilder> {
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Report', _$failedField, e.toString());
+          r'Report',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

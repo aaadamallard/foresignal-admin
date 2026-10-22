@@ -16,8 +16,10 @@ part 'retention_run_result_per_source_value.g.dart';
 @BuiltValue()
 abstract class RetentionRunResultPerSourceValue
     implements
-        Built<RetentionRunResultPerSourceValue,
-            RetentionRunResultPerSourceValueBuilder> {
+        Built<
+          RetentionRunResultPerSourceValue,
+          RetentionRunResultPerSourceValueBuilder
+        > {
   @BuiltValueField(wireName: r'versionsDeleted')
   int? get versionsDeleted;
 
@@ -26,9 +28,9 @@ abstract class RetentionRunResultPerSourceValue
 
   RetentionRunResultPerSourceValue._();
 
-  factory RetentionRunResultPerSourceValue(
-          [void updates(RetentionRunResultPerSourceValueBuilder b)]) =
-      _$RetentionRunResultPerSourceValue;
+  factory RetentionRunResultPerSourceValue([
+    void updates(RetentionRunResultPerSourceValueBuilder b),
+  ]) = _$RetentionRunResultPerSourceValue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RetentionRunResultPerSourceValueBuilder b) => b;
@@ -43,7 +45,7 @@ class _$RetentionRunResultPerSourceValueSerializer
   @override
   final Iterable<Type> types = const [
     RetentionRunResultPerSourceValue,
-    _$RetentionRunResultPerSourceValue
+    _$RetentionRunResultPerSourceValue,
   ];
 
   @override
@@ -76,9 +78,11 @@ class _$RetentionRunResultPerSourceValueSerializer
     RetentionRunResultPerSourceValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +98,22 @@ class _$RetentionRunResultPerSourceValueSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'versionsDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.versionsDeleted = valueDes;
           break;
         case r'floorSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.floorSeq = valueDes;
           break;

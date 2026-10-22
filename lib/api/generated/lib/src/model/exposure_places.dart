@@ -72,8 +72,9 @@ class _$ExposurePlacesSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ExposurePlacesItemsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ExposurePlacesItemsInner),
+        ]),
       );
     }
   }
@@ -84,9 +85,11 @@ class _$ExposurePlacesSerializer
     ExposurePlaces object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,27 +105,35 @@ class _$ExposurePlacesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExposurePlacesStatusEnum),
-          ) as ExposurePlacesStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExposurePlacesStatusEnum),
+                  )
+                  as ExposurePlacesStatusEnum;
           result.status = valueDes;
           break;
         case r'attribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Attribution)]),
-          ) as BuiltList<Attribution>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Attribution),
+                    ]),
+                  )
+                  as BuiltList<Attribution>?;
           if (valueDes == null) continue;
           result.attribution.replace(valueDes);
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ExposurePlacesItemsInner)]),
-          ) as BuiltList<ExposurePlacesItemsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ExposurePlacesItemsInner),
+                    ]),
+                  )
+                  as BuiltList<ExposurePlacesItemsInner>?;
           if (valueDes == null) continue;
           result.items.replace(valueDes);
           break;

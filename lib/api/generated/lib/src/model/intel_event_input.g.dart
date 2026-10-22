@@ -11,7 +11,7 @@ const IntelEventInputTypeEnum _$intelEventInputTypeEnum_maritimeDisruption =
 const IntelEventInputTypeEnum _$intelEventInputTypeEnum_aviationAnomaly =
     const IntelEventInputTypeEnum._('aviationAnomaly');
 const IntelEventInputTypeEnum
-    _$intelEventInputTypeEnum_infrastructureDisruption =
+_$intelEventInputTypeEnum_infrastructureDisruption =
     const IntelEventInputTypeEnum._('infrastructureDisruption');
 const IntelEventInputTypeEnum _$intelEventInputTypeEnum_weatherImpact =
     const IntelEventInputTypeEnum._('weatherImpact');
@@ -41,13 +41,13 @@ IntelEventInputTypeEnum _$intelEventInputTypeEnumValueOf(String name) {
 
 final BuiltSet<IntelEventInputTypeEnum> _$intelEventInputTypeEnumValues =
     BuiltSet<IntelEventInputTypeEnum>(const <IntelEventInputTypeEnum>[
-  _$intelEventInputTypeEnum_maritimeDisruption,
-  _$intelEventInputTypeEnum_aviationAnomaly,
-  _$intelEventInputTypeEnum_infrastructureDisruption,
-  _$intelEventInputTypeEnum_weatherImpact,
-  _$intelEventInputTypeEnum_seismic,
-  _$intelEventInputTypeEnum_custom,
-]);
+      _$intelEventInputTypeEnum_maritimeDisruption,
+      _$intelEventInputTypeEnum_aviationAnomaly,
+      _$intelEventInputTypeEnum_infrastructureDisruption,
+      _$intelEventInputTypeEnum_weatherImpact,
+      _$intelEventInputTypeEnum_seismic,
+      _$intelEventInputTypeEnum_custom,
+    ]);
 
 const IntelEventInputOriginEnum _$intelEventInputOriginEnum_agent =
     const IntelEventInputOriginEnum._('agent');
@@ -67,9 +67,9 @@ IntelEventInputOriginEnum _$intelEventInputOriginEnumValueOf(String name) {
 
 final BuiltSet<IntelEventInputOriginEnum> _$intelEventInputOriginEnumValues =
     BuiltSet<IntelEventInputOriginEnum>(const <IntelEventInputOriginEnum>[
-  _$intelEventInputOriginEnum_agent,
-  _$intelEventInputOriginEnum_operator_,
-]);
+      _$intelEventInputOriginEnum_agent,
+      _$intelEventInputOriginEnum_operator_,
+    ]);
 
 Serializer<IntelEventInputTypeEnum> _$intelEventInputTypeEnumSerializer =
     _$IntelEventInputTypeEnumSerializer();
@@ -101,16 +101,20 @@ class _$IntelEventInputTypeEnumSerializer
   final String wireName = 'IntelEventInputTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventInputTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventInputOriginEnumSerializer
@@ -130,16 +134,20 @@ class _$IntelEventInputOriginEnumSerializer
   final String wireName = 'IntelEventInputOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventInputOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventInputOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventInputOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventInputOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventInputOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventInput extends IntelEventInput {
@@ -165,17 +173,17 @@ class _$IntelEventInput extends IntelEventInput {
   factory _$IntelEventInput([void Function(IntelEventInputBuilder)? updates]) =>
       (IntelEventInputBuilder()..update(updates))._build();
 
-  _$IntelEventInput._(
-      {required this.type,
-      required this.title,
-      this.severity,
-      this.origin,
-      this.geometry,
-      this.startTime,
-      this.endTime,
-      this.notes,
-      required this.members})
-      : super._();
+  _$IntelEventInput._({
+    required this.type,
+    required this.title,
+    this.severity,
+    this.origin,
+    this.geometry,
+    this.startTime,
+    this.endTime,
+    this.notes,
+    required this.members,
+  }) : super._();
   @override
   IntelEventInput rebuild(void Function(IntelEventInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -309,12 +317,19 @@ class IntelEventInputBuilder
   _$IntelEventInput _build() {
     _$IntelEventInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventInput._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'IntelEventInput', 'type'),
+              type,
+              r'IntelEventInput',
+              'type',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'IntelEventInput', 'title'),
+              title,
+              r'IntelEventInput',
+              'title',
+            ),
             severity: severity,
             origin: origin,
             geometry: _geometry?.build(),
@@ -333,7 +348,10 @@ class IntelEventInputBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventInput', _$failedField, e.toString());
+          r'IntelEventInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

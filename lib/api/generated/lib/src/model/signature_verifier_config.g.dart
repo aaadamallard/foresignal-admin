@@ -7,20 +7,21 @@ part of 'signature_verifier_config.dart';
 // **************************************************************************
 
 const SignatureVerifierConfigSchemeEnum
-    _$signatureVerifierConfigSchemeEnum_none =
+_$signatureVerifierConfigSchemeEnum_none =
     const SignatureVerifierConfigSchemeEnum._('none');
 const SignatureVerifierConfigSchemeEnum
-    _$signatureVerifierConfigSchemeEnum_hmacSha256 =
+_$signatureVerifierConfigSchemeEnum_hmacSha256 =
     const SignatureVerifierConfigSchemeEnum._('hmacSha256');
 const SignatureVerifierConfigSchemeEnum
-    _$signatureVerifierConfigSchemeEnum_standardWebhooks =
+_$signatureVerifierConfigSchemeEnum_standardWebhooks =
     const SignatureVerifierConfigSchemeEnum._('standardWebhooks');
 const SignatureVerifierConfigSchemeEnum
-    _$signatureVerifierConfigSchemeEnum_foresignal =
+_$signatureVerifierConfigSchemeEnum_foresignal =
     const SignatureVerifierConfigSchemeEnum._('foresignal');
 
 SignatureVerifierConfigSchemeEnum _$signatureVerifierConfigSchemeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'none':
       return _$signatureVerifierConfigSchemeEnum_none;
@@ -36,16 +37,18 @@ SignatureVerifierConfigSchemeEnum _$signatureVerifierConfigSchemeEnumValueOf(
 }
 
 final BuiltSet<SignatureVerifierConfigSchemeEnum>
-    _$signatureVerifierConfigSchemeEnumValues = BuiltSet<
-        SignatureVerifierConfigSchemeEnum>(const <SignatureVerifierConfigSchemeEnum>[
-  _$signatureVerifierConfigSchemeEnum_none,
-  _$signatureVerifierConfigSchemeEnum_hmacSha256,
-  _$signatureVerifierConfigSchemeEnum_standardWebhooks,
-  _$signatureVerifierConfigSchemeEnum_foresignal,
-]);
+_$signatureVerifierConfigSchemeEnumValues =
+    BuiltSet<SignatureVerifierConfigSchemeEnum>(
+      const <SignatureVerifierConfigSchemeEnum>[
+        _$signatureVerifierConfigSchemeEnum_none,
+        _$signatureVerifierConfigSchemeEnum_hmacSha256,
+        _$signatureVerifierConfigSchemeEnum_standardWebhooks,
+        _$signatureVerifierConfigSchemeEnum_foresignal,
+      ],
+    );
 
 Serializer<SignatureVerifierConfigSchemeEnum>
-    _$signatureVerifierConfigSchemeEnumSerializer =
+_$signatureVerifierConfigSchemeEnumSerializer =
     _$SignatureVerifierConfigSchemeEnumSerializer();
 
 class _$SignatureVerifierConfigSchemeEnumSerializer
@@ -70,16 +73,19 @@ class _$SignatureVerifierConfigSchemeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SignatureVerifierConfigSchemeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SignatureVerifierConfigSchemeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SignatureVerifierConfigSchemeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SignatureVerifierConfigSchemeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SignatureVerifierConfigSchemeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SignatureVerifierConfig extends SignatureVerifierConfig {
@@ -94,21 +100,21 @@ class _$SignatureVerifierConfig extends SignatureVerifierConfig {
   @override
   final bool? keyOptional;
 
-  factory _$SignatureVerifierConfig(
-          [void Function(SignatureVerifierConfigBuilder)? updates]) =>
-      (SignatureVerifierConfigBuilder()..update(updates))._build();
+  factory _$SignatureVerifierConfig([
+    void Function(SignatureVerifierConfigBuilder)? updates,
+  ]) => (SignatureVerifierConfigBuilder()..update(updates))._build();
 
-  _$SignatureVerifierConfig._(
-      {required this.scheme,
-      this.header,
-      this.secret,
-      this.secretSet,
-      this.keyOptional})
-      : super._();
+  _$SignatureVerifierConfig._({
+    required this.scheme,
+    this.header,
+    this.secret,
+    this.secretSet,
+    this.keyOptional,
+  }) : super._();
   @override
   SignatureVerifierConfig rebuild(
-          void Function(SignatureVerifierConfigBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SignatureVerifierConfigBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SignatureVerifierConfigBuilder toBuilder() =>
@@ -206,10 +212,14 @@ class SignatureVerifierConfigBuilder
   SignatureVerifierConfig build() => _build();
 
   _$SignatureVerifierConfig _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SignatureVerifierConfig._(
           scheme: BuiltValueNullFieldError.checkNotNull(
-              scheme, r'SignatureVerifierConfig', 'scheme'),
+            scheme,
+            r'SignatureVerifierConfig',
+            'scheme',
+          ),
           header: header,
           secret: secret,
           secretSet: secretSet,

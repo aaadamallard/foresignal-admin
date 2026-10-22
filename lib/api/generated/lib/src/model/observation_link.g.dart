@@ -37,21 +37,21 @@ class _$ObservationLink extends ObservationLink {
   factory _$ObservationLink([void Function(ObservationLinkBuilder)? updates]) =>
       (ObservationLinkBuilder()..update(updates))._build();
 
-  _$ObservationLink._(
-      {required this.canonicalEventId,
-      this.recordRef,
-      required this.sourceId,
-      required this.externalId,
-      required this.seq,
-      this.version,
-      required this.originatorId,
-      this.originator,
-      this.upstreamEventId,
-      required this.evidenceGroupId,
-      required this.linkConfidence,
-      required this.linkReason,
-      required this.linkedAt})
-      : super._();
+  _$ObservationLink._({
+    required this.canonicalEventId,
+    this.recordRef,
+    required this.sourceId,
+    required this.externalId,
+    required this.seq,
+    this.version,
+    required this.originatorId,
+    this.originator,
+    this.upstreamEventId,
+    required this.evidenceGroupId,
+    required this.linkConfidence,
+    required this.linkReason,
+    required this.linkedAt,
+  }) : super._();
   @override
   ObservationLink rebuild(void Function(ObservationLinkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -223,29 +223,54 @@ class ObservationLinkBuilder
   _$ObservationLink _build() {
     _$ObservationLink _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObservationLink._(
             canonicalEventId: BuiltValueNullFieldError.checkNotNull(
-                canonicalEventId, r'ObservationLink', 'canonicalEventId'),
+              canonicalEventId,
+              r'ObservationLink',
+              'canonicalEventId',
+            ),
             recordRef: recordRef,
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'ObservationLink', 'sourceId'),
+              sourceId,
+              r'ObservationLink',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'ObservationLink', 'externalId'),
+              externalId,
+              r'ObservationLink',
+              'externalId',
+            ),
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'ObservationLink', 'seq'),
+              seq,
+              r'ObservationLink',
+              'seq',
+            ),
             version: version,
             originatorId: BuiltValueNullFieldError.checkNotNull(
-                originatorId, r'ObservationLink', 'originatorId'),
+              originatorId,
+              r'ObservationLink',
+              'originatorId',
+            ),
             originator: _originator?.build(),
             upstreamEventId: upstreamEventId,
             evidenceGroupId: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupId, r'ObservationLink', 'evidenceGroupId'),
+              evidenceGroupId,
+              r'ObservationLink',
+              'evidenceGroupId',
+            ),
             linkConfidence: BuiltValueNullFieldError.checkNotNull(
-                linkConfidence, r'ObservationLink', 'linkConfidence'),
+              linkConfidence,
+              r'ObservationLink',
+              'linkConfidence',
+            ),
             linkReason: linkReason.build(),
             linkedAt: BuiltValueNullFieldError.checkNotNull(
-                linkedAt, r'ObservationLink', 'linkedAt'),
+              linkedAt,
+              r'ObservationLink',
+              'linkedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -257,7 +282,10 @@ class ObservationLinkBuilder
         linkReason.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObservationLink', _$failedField, e.toString());
+          r'ObservationLink',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

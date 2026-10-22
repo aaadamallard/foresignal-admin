@@ -28,10 +28,10 @@ BenchmarkRunSuiteEnum _$benchmarkRunSuiteEnumValueOf(String name) {
 
 final BuiltSet<BenchmarkRunSuiteEnum> _$benchmarkRunSuiteEnumValues =
     BuiltSet<BenchmarkRunSuiteEnum>(const <BenchmarkRunSuiteEnum>[
-  _$benchmarkRunSuiteEnum_synthetic,
-  _$benchmarkRunSuiteEnum_historical,
-  _$benchmarkRunSuiteEnum_all,
-]);
+      _$benchmarkRunSuiteEnum_synthetic,
+      _$benchmarkRunSuiteEnum_historical,
+      _$benchmarkRunSuiteEnum_all,
+    ]);
 
 const BenchmarkRunJobStatusEnum _$benchmarkRunJobStatusEnum_queued =
     const BenchmarkRunJobStatusEnum._('queued');
@@ -63,12 +63,12 @@ BenchmarkRunJobStatusEnum _$benchmarkRunJobStatusEnumValueOf(String name) {
 
 final BuiltSet<BenchmarkRunJobStatusEnum> _$benchmarkRunJobStatusEnumValues =
     BuiltSet<BenchmarkRunJobStatusEnum>(const <BenchmarkRunJobStatusEnum>[
-  _$benchmarkRunJobStatusEnum_queued,
-  _$benchmarkRunJobStatusEnum_running,
-  _$benchmarkRunJobStatusEnum_done,
-  _$benchmarkRunJobStatusEnum_failed,
-  _$benchmarkRunJobStatusEnum_cancelled,
-]);
+      _$benchmarkRunJobStatusEnum_queued,
+      _$benchmarkRunJobStatusEnum_running,
+      _$benchmarkRunJobStatusEnum_done,
+      _$benchmarkRunJobStatusEnum_failed,
+      _$benchmarkRunJobStatusEnum_cancelled,
+    ]);
 
 const BenchmarkRunStatusEnum _$benchmarkRunStatusEnum_pass =
     const BenchmarkRunStatusEnum._('pass');
@@ -92,10 +92,10 @@ BenchmarkRunStatusEnum _$benchmarkRunStatusEnumValueOf(String name) {
 
 final BuiltSet<BenchmarkRunStatusEnum> _$benchmarkRunStatusEnumValues =
     BuiltSet<BenchmarkRunStatusEnum>(const <BenchmarkRunStatusEnum>[
-  _$benchmarkRunStatusEnum_pass,
-  _$benchmarkRunStatusEnum_warn,
-  _$benchmarkRunStatusEnum_fail,
-]);
+      _$benchmarkRunStatusEnum_pass,
+      _$benchmarkRunStatusEnum_warn,
+      _$benchmarkRunStatusEnum_fail,
+    ]);
 
 Serializer<BenchmarkRunSuiteEnum> _$benchmarkRunSuiteEnumSerializer =
     _$BenchmarkRunSuiteEnumSerializer();
@@ -123,15 +123,20 @@ class _$BenchmarkRunSuiteEnumSerializer
   final String wireName = 'BenchmarkRunSuiteEnum';
 
   @override
-  Object serialize(Serializers serializers, BenchmarkRunSuiteEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkRunSuiteEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BenchmarkRunSuiteEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkRunSuiteEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BenchmarkRunSuiteEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkRunSuiteEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkRunJobStatusEnumSerializer
@@ -157,16 +162,20 @@ class _$BenchmarkRunJobStatusEnumSerializer
   final String wireName = 'BenchmarkRunJobStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, BenchmarkRunJobStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkRunJobStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkRunJobStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkRunJobStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkRunJobStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkRunStatusEnumSerializer
@@ -188,15 +197,20 @@ class _$BenchmarkRunStatusEnumSerializer
   final String wireName = 'BenchmarkRunStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, BenchmarkRunStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkRunStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BenchmarkRunStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkRunStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BenchmarkRunStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkRunStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkRun extends BenchmarkRun {
@@ -234,23 +248,23 @@ class _$BenchmarkRun extends BenchmarkRun {
   factory _$BenchmarkRun([void Function(BenchmarkRunBuilder)? updates]) =>
       (BenchmarkRunBuilder()..update(updates))._build();
 
-  _$BenchmarkRun._(
-      {required this.id,
-      required this.suite,
-      required this.suiteVersion,
-      this.scorerVersion,
-      required this.seed,
-      required this.components,
-      required this.jobStatus,
-      this.progress,
-      this.status,
-      this.results,
-      this.manifestId,
-      this.createdBy,
-      this.startedAt,
-      this.finishedAt,
-      this.error})
-      : super._();
+  _$BenchmarkRun._({
+    required this.id,
+    required this.suite,
+    required this.suiteVersion,
+    this.scorerVersion,
+    required this.seed,
+    required this.components,
+    required this.jobStatus,
+    this.progress,
+    this.status,
+    this.results,
+    this.manifestId,
+    this.createdBy,
+    this.startedAt,
+    this.finishedAt,
+    this.error,
+  }) : super._();
   @override
   BenchmarkRun rebuild(void Function(BenchmarkRunBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -436,20 +450,36 @@ class BenchmarkRunBuilder
   _$BenchmarkRun _build() {
     _$BenchmarkRun _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkRun._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'BenchmarkRun', 'id'),
+              id,
+              r'BenchmarkRun',
+              'id',
+            ),
             suite: BuiltValueNullFieldError.checkNotNull(
-                suite, r'BenchmarkRun', 'suite'),
+              suite,
+              r'BenchmarkRun',
+              'suite',
+            ),
             suiteVersion: BuiltValueNullFieldError.checkNotNull(
-                suiteVersion, r'BenchmarkRun', 'suiteVersion'),
+              suiteVersion,
+              r'BenchmarkRun',
+              'suiteVersion',
+            ),
             scorerVersion: scorerVersion,
             seed: BuiltValueNullFieldError.checkNotNull(
-                seed, r'BenchmarkRun', 'seed'),
+              seed,
+              r'BenchmarkRun',
+              'seed',
+            ),
             components: components.build(),
             jobStatus: BuiltValueNullFieldError.checkNotNull(
-                jobStatus, r'BenchmarkRun', 'jobStatus'),
+              jobStatus,
+              r'BenchmarkRun',
+              'jobStatus',
+            ),
             progress: progress,
             status: status,
             results: _results?.build(),
@@ -469,7 +499,10 @@ class BenchmarkRunBuilder
         _results?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkRun', _$failedField, e.toString());
+          r'BenchmarkRun',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

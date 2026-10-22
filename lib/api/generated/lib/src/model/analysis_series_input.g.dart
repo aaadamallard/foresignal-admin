@@ -7,17 +7,18 @@ part of 'analysis_series_input.dart';
 // **************************************************************************
 
 const AnalysisSeriesInputDetectorsEnum
-    _$analysisSeriesInputDetectorsEnum_changepointCusum =
+_$analysisSeriesInputDetectorsEnum_changepointCusum =
     const AnalysisSeriesInputDetectorsEnum._('changepointCusum');
 const AnalysisSeriesInputDetectorsEnum
-    _$analysisSeriesInputDetectorsEnum_changepointBocpd =
+_$analysisSeriesInputDetectorsEnum_changepointBocpd =
     const AnalysisSeriesInputDetectorsEnum._('changepointBocpd');
 const AnalysisSeriesInputDetectorsEnum
-    _$analysisSeriesInputDetectorsEnum_forecast =
+_$analysisSeriesInputDetectorsEnum_forecast =
     const AnalysisSeriesInputDetectorsEnum._('forecast');
 
 AnalysisSeriesInputDetectorsEnum _$analysisSeriesInputDetectorsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'changepointCusum':
       return _$analysisSeriesInputDetectorsEnum_changepointCusum;
@@ -31,12 +32,14 @@ AnalysisSeriesInputDetectorsEnum _$analysisSeriesInputDetectorsEnumValueOf(
 }
 
 final BuiltSet<AnalysisSeriesInputDetectorsEnum>
-    _$analysisSeriesInputDetectorsEnumValues = BuiltSet<
-        AnalysisSeriesInputDetectorsEnum>(const <AnalysisSeriesInputDetectorsEnum>[
-  _$analysisSeriesInputDetectorsEnum_changepointCusum,
-  _$analysisSeriesInputDetectorsEnum_changepointBocpd,
-  _$analysisSeriesInputDetectorsEnum_forecast,
-]);
+_$analysisSeriesInputDetectorsEnumValues =
+    BuiltSet<AnalysisSeriesInputDetectorsEnum>(
+      const <AnalysisSeriesInputDetectorsEnum>[
+        _$analysisSeriesInputDetectorsEnum_changepointCusum,
+        _$analysisSeriesInputDetectorsEnum_changepointBocpd,
+        _$analysisSeriesInputDetectorsEnum_forecast,
+      ],
+    );
 
 const AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnum_hour =
     const AnalysisSeriesInputFrequencyEnum._('hour');
@@ -46,7 +49,8 @@ const AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnum_week =
     const AnalysisSeriesInputFrequencyEnum._('week');
 
 AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'hour':
       return _$analysisSeriesInputFrequencyEnum_hour;
@@ -60,18 +64,20 @@ AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnumValueOf(
 }
 
 final BuiltSet<AnalysisSeriesInputFrequencyEnum>
-    _$analysisSeriesInputFrequencyEnumValues = BuiltSet<
-        AnalysisSeriesInputFrequencyEnum>(const <AnalysisSeriesInputFrequencyEnum>[
-  _$analysisSeriesInputFrequencyEnum_hour,
-  _$analysisSeriesInputFrequencyEnum_day,
-  _$analysisSeriesInputFrequencyEnum_week,
-]);
+_$analysisSeriesInputFrequencyEnumValues =
+    BuiltSet<AnalysisSeriesInputFrequencyEnum>(
+      const <AnalysisSeriesInputFrequencyEnum>[
+        _$analysisSeriesInputFrequencyEnum_hour,
+        _$analysisSeriesInputFrequencyEnum_day,
+        _$analysisSeriesInputFrequencyEnum_week,
+      ],
+    );
 
 Serializer<AnalysisSeriesInputDetectorsEnum>
-    _$analysisSeriesInputDetectorsEnumSerializer =
+_$analysisSeriesInputDetectorsEnumSerializer =
     _$AnalysisSeriesInputDetectorsEnumSerializer();
 Serializer<AnalysisSeriesInputFrequencyEnum>
-    _$analysisSeriesInputFrequencyEnumSerializer =
+_$analysisSeriesInputFrequencyEnumSerializer =
     _$AnalysisSeriesInputFrequencyEnumSerializer();
 
 class _$AnalysisSeriesInputDetectorsEnumSerializer
@@ -94,16 +100,19 @@ class _$AnalysisSeriesInputDetectorsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalysisSeriesInputDetectorsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalysisSeriesInputDetectorsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalysisSeriesInputDetectorsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalysisSeriesInputDetectorsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalysisSeriesInputDetectorsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalysisSeriesInputFrequencyEnumSerializer
@@ -126,16 +135,19 @@ class _$AnalysisSeriesInputFrequencyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalysisSeriesInputFrequencyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalysisSeriesInputFrequencyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalysisSeriesInputFrequencyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalysisSeriesInputFrequencyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalysisSeriesInputFrequencyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalysisSeriesInput extends AnalysisSeriesInput {
@@ -154,23 +166,23 @@ class _$AnalysisSeriesInput extends AnalysisSeriesInput {
   @override
   final BuiltList<WatchPair>? watchPairs;
 
-  factory _$AnalysisSeriesInput(
-          [void Function(AnalysisSeriesInputBuilder)? updates]) =>
-      (AnalysisSeriesInputBuilder()..update(updates))._build();
+  factory _$AnalysisSeriesInput([
+    void Function(AnalysisSeriesInputBuilder)? updates,
+  ]) => (AnalysisSeriesInputBuilder()..update(updates))._build();
 
-  _$AnalysisSeriesInput._(
-      {required this.ref,
-      this.enabled,
-      this.detectors,
-      this.frequency,
-      this.family,
-      this.regionCode,
-      this.watchPairs})
-      : super._();
+  _$AnalysisSeriesInput._({
+    required this.ref,
+    this.enabled,
+    this.detectors,
+    this.frequency,
+    this.family,
+    this.regionCode,
+    this.watchPairs,
+  }) : super._();
   @override
   AnalysisSeriesInput rebuild(
-          void Function(AnalysisSeriesInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisSeriesInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisSeriesInputBuilder toBuilder() =>
@@ -289,10 +301,14 @@ class AnalysisSeriesInputBuilder
   _$AnalysisSeriesInput _build() {
     _$AnalysisSeriesInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalysisSeriesInput._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'AnalysisSeriesInput', 'ref'),
+              ref,
+              r'AnalysisSeriesInput',
+              'ref',
+            ),
             enabled: enabled,
             detectors: _detectors?.build(),
             frequency: frequency,
@@ -310,7 +326,10 @@ class AnalysisSeriesInputBuilder
         _watchPairs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalysisSeriesInput', _$failedField, e.toString());
+          r'AnalysisSeriesInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

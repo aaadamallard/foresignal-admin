@@ -31,13 +31,13 @@ LedgerQuestionBriefTypeEnum _$ledgerQuestionBriefTypeEnumValueOf(String name) {
 }
 
 final BuiltSet<LedgerQuestionBriefTypeEnum>
-    _$ledgerQuestionBriefTypeEnumValues =
+_$ledgerQuestionBriefTypeEnumValues =
     BuiltSet<LedgerQuestionBriefTypeEnum>(const <LedgerQuestionBriefTypeEnum>[
-  _$ledgerQuestionBriefTypeEnum_binary,
-  _$ledgerQuestionBriefTypeEnum_multiple,
-  _$ledgerQuestionBriefTypeEnum_ordered,
-  _$ledgerQuestionBriefTypeEnum_numeric,
-]);
+      _$ledgerQuestionBriefTypeEnum_binary,
+      _$ledgerQuestionBriefTypeEnum_multiple,
+      _$ledgerQuestionBriefTypeEnum_ordered,
+      _$ledgerQuestionBriefTypeEnum_numeric,
+    ]);
 
 const LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnum_open =
     const LedgerQuestionBriefStatusEnum._('open');
@@ -49,7 +49,8 @@ const LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnum_annulled =
     const LedgerQuestionBriefStatusEnum._('annulled');
 
 LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'open':
       return _$ledgerQuestionBriefStatusEnum_open;
@@ -65,19 +66,20 @@ LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnumValueOf(
 }
 
 final BuiltSet<LedgerQuestionBriefStatusEnum>
-    _$ledgerQuestionBriefStatusEnumValues = BuiltSet<
-        LedgerQuestionBriefStatusEnum>(const <LedgerQuestionBriefStatusEnum>[
-  _$ledgerQuestionBriefStatusEnum_open,
-  _$ledgerQuestionBriefStatusEnum_closed,
-  _$ledgerQuestionBriefStatusEnum_resolved,
-  _$ledgerQuestionBriefStatusEnum_annulled,
-]);
+_$ledgerQuestionBriefStatusEnumValues = BuiltSet<LedgerQuestionBriefStatusEnum>(
+  const <LedgerQuestionBriefStatusEnum>[
+    _$ledgerQuestionBriefStatusEnum_open,
+    _$ledgerQuestionBriefStatusEnum_closed,
+    _$ledgerQuestionBriefStatusEnum_resolved,
+    _$ledgerQuestionBriefStatusEnum_annulled,
+  ],
+);
 
 Serializer<LedgerQuestionBriefTypeEnum>
-    _$ledgerQuestionBriefTypeEnumSerializer =
+_$ledgerQuestionBriefTypeEnumSerializer =
     _$LedgerQuestionBriefTypeEnumSerializer();
 Serializer<LedgerQuestionBriefStatusEnum>
-    _$ledgerQuestionBriefStatusEnumSerializer =
+_$ledgerQuestionBriefStatusEnumSerializer =
     _$LedgerQuestionBriefStatusEnumSerializer();
 
 class _$LedgerQuestionBriefTypeEnumSerializer
@@ -101,16 +103,20 @@ class _$LedgerQuestionBriefTypeEnumSerializer
   final String wireName = 'LedgerQuestionBriefTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, LedgerQuestionBriefTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LedgerQuestionBriefTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LedgerQuestionBriefTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LedgerQuestionBriefTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LedgerQuestionBriefTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LedgerQuestionBriefStatusEnumSerializer
@@ -135,16 +141,19 @@ class _$LedgerQuestionBriefStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, LedgerQuestionBriefStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LedgerQuestionBriefStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LedgerQuestionBriefStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LedgerQuestionBriefStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LedgerQuestionBriefStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LedgerQuestionBrief extends LedgerQuestionBrief {
@@ -183,33 +192,33 @@ class _$LedgerQuestionBrief extends LedgerQuestionBrief {
   @override
   final DateTime? updatedAt;
 
-  factory _$LedgerQuestionBrief(
-          [void Function(LedgerQuestionBriefBuilder)? updates]) =>
-      (LedgerQuestionBriefBuilder()..update(updates))._build();
+  factory _$LedgerQuestionBrief([
+    void Function(LedgerQuestionBriefBuilder)? updates,
+  ]) => (LedgerQuestionBriefBuilder()..update(updates))._build();
 
-  _$LedgerQuestionBrief._(
-      {required this.id,
-      this.ref,
-      required this.title,
-      required this.type,
-      required this.status,
-      this.closesAt,
-      this.resolveBy,
-      this.resolutionCriteria,
-      this.probability,
-      this.estimativeTerm,
-      this.distribution,
-      this.quantiles,
-      required this.issuer,
-      this.forecasters,
-      this.knowledgeCutoff,
-      this.baseRate,
-      this.updatedAt})
-      : super._();
+  _$LedgerQuestionBrief._({
+    required this.id,
+    this.ref,
+    required this.title,
+    required this.type,
+    required this.status,
+    this.closesAt,
+    this.resolveBy,
+    this.resolutionCriteria,
+    this.probability,
+    this.estimativeTerm,
+    this.distribution,
+    this.quantiles,
+    required this.issuer,
+    this.forecasters,
+    this.knowledgeCutoff,
+    this.baseRate,
+    this.updatedAt,
+  }) : super._();
   @override
   LedgerQuestionBrief rebuild(
-          void Function(LedgerQuestionBriefBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(LedgerQuestionBriefBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   LedgerQuestionBriefBuilder toBuilder() =>
@@ -350,8 +359,8 @@ class LedgerQuestionBriefBuilder
       _$this._forecasters ??=
           ListBuilder<LedgerQuestionBriefForecastersInner>();
   set forecasters(
-          ListBuilder<LedgerQuestionBriefForecastersInner>? forecasters) =>
-      _$this._forecasters = forecasters;
+    ListBuilder<LedgerQuestionBriefForecastersInner>? forecasters,
+  ) => _$this._forecasters = forecasters;
 
   Date? _knowledgeCutoff;
   Date? get knowledgeCutoff => _$this._knowledgeCutoff;
@@ -411,17 +420,30 @@ class LedgerQuestionBriefBuilder
   _$LedgerQuestionBrief _build() {
     _$LedgerQuestionBrief _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LedgerQuestionBrief._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'LedgerQuestionBrief', 'id'),
+              id,
+              r'LedgerQuestionBrief',
+              'id',
+            ),
             ref: ref,
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'LedgerQuestionBrief', 'title'),
+              title,
+              r'LedgerQuestionBrief',
+              'title',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'LedgerQuestionBrief', 'type'),
+              type,
+              r'LedgerQuestionBrief',
+              'type',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'LedgerQuestionBrief', 'status'),
+              status,
+              r'LedgerQuestionBrief',
+              'status',
+            ),
             closesAt: closesAt,
             resolveBy: resolveBy,
             resolutionCriteria: resolutionCriteria,
@@ -430,7 +452,10 @@ class LedgerQuestionBriefBuilder
             distribution: distribution,
             quantiles: _quantiles?.build(),
             issuer: BuiltValueNullFieldError.checkNotNull(
-                issuer, r'LedgerQuestionBrief', 'issuer'),
+              issuer,
+              r'LedgerQuestionBrief',
+              'issuer',
+            ),
             forecasters: _forecasters?.build(),
             knowledgeCutoff: knowledgeCutoff,
             baseRate: baseRate,
@@ -446,7 +471,10 @@ class LedgerQuestionBriefBuilder
         _forecasters?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LedgerQuestionBrief', _$failedField, e.toString());
+          r'LedgerQuestionBrief',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

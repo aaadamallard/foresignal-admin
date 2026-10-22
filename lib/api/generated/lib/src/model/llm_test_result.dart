@@ -102,9 +102,11 @@ class _$LlmTestResultSerializer implements PrimitiveSerializer<LlmTestResult> {
     LlmTestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,41 +122,53 @@ class _$LlmTestResultSerializer implements PrimitiveSerializer<LlmTestResult> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.success = valueDes;
           break;
         case r'chat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(LlmTestResultChat),
-          ) as LlmTestResultChat?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(LlmTestResultChat),
+                  )
+                  as LlmTestResultChat?;
           if (valueDes == null) continue;
           result.chat.replace(valueDes);
           break;
         case r'embedding':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(LlmTestResultEmbedding),
-          ) as LlmTestResultEmbedding?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      LlmTestResultEmbedding,
+                    ),
+                  )
+                  as LlmTestResultEmbedding?;
           if (valueDes == null) continue;
           result.embedding.replace(valueDes);
           break;
         case r'error':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.error = valueDes;
           break;
         case r'refusalCategory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.refusalCategory = valueDes;
           break;

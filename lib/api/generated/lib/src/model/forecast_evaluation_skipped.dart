@@ -26,9 +26,9 @@ abstract class ForecastEvaluationSkipped
 
   ForecastEvaluationSkipped._();
 
-  factory ForecastEvaluationSkipped(
-          [void updates(ForecastEvaluationSkippedBuilder b)]) =
-      _$ForecastEvaluationSkipped;
+  factory ForecastEvaluationSkipped([
+    void updates(ForecastEvaluationSkippedBuilder b),
+  ]) = _$ForecastEvaluationSkipped;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastEvaluationSkippedBuilder b) => b;
@@ -43,7 +43,7 @@ class _$ForecastEvaluationSkippedSerializer
   @override
   final Iterable<Type> types = const [
     ForecastEvaluationSkipped,
-    _$ForecastEvaluationSkipped
+    _$ForecastEvaluationSkipped,
   ];
 
   @override
@@ -74,9 +74,11 @@ class _$ForecastEvaluationSkippedSerializer
     ForecastEvaluationSkipped object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,17 +94,18 @@ class _$ForecastEvaluationSkippedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'leakageRisk':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.leakageRisk = valueDes;
           break;
         case r'other':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.other = valueDes;
           break;

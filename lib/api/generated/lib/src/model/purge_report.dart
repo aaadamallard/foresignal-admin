@@ -118,9 +118,11 @@ class _$PurgeReportSerializer implements PrimitiveSerializer<PurgeReport> {
     PurgeReport object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,56 +138,66 @@ class _$PurgeReportSerializer implements PrimitiveSerializer<PurgeReport> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'tombstoneSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.tombstoneSeq = valueDes;
           break;
         case r'versionsDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.versionsDeleted = valueDes;
           break;
         case r'alertsRedacted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alertsRedacted = valueDes;
           break;
         case r'alertsDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alertsDeleted = valueDes;
           break;
         case r'embeddingsDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.embeddingsDeleted = valueDes;
           break;
         case r'notificationsRedacted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.notificationsRedacted = valueDes;
           break;
         case r'citingDocuments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PurgeReportCitingDocuments),
-          ) as PurgeReportCitingDocuments?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PurgeReportCitingDocuments,
+                    ),
+                  )
+                  as PurgeReportCitingDocuments?;
           if (valueDes == null) continue;
           result.citingDocuments.replace(valueDes);
           break;

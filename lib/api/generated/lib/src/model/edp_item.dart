@@ -161,8 +161,10 @@ class _$EdpItemSerializer implements PrimitiveSerializer<EdpItem> {
     FullType specifiedType = FullType.unspecified,
   }) {
     final oneOf = object.oneOf;
-    return serializers.serialize(oneOf.value,
-        specifiedType: FullType(oneOf.valueType))!;
+    return serializers.serialize(
+      oneOf.value,
+      specifiedType: FullType(oneOf.valueType),
+    )!;
   }
 
   @override
@@ -176,8 +178,12 @@ class _$EdpItemSerializer implements PrimitiveSerializer<EdpItem> {
     final serializedList = (serialized as Iterable<Object?>).toList();
     final discIndex =
         serializedList.indexOf(EdpItem.discriminatorFieldName) + 1;
-    final discValue = serializers.deserialize(serializedList[discIndex],
-        specifiedType: FullType(String)) as String;
+    final discValue =
+        serializers.deserialize(
+              serializedList[discIndex],
+              specifiedType: FullType(String),
+            )
+            as String;
     oneOfDataSrc = serialized;
     final oneOfTypes = [
       EdpDeleteItem,
@@ -192,62 +198,78 @@ class _$EdpItemSerializer implements PrimitiveSerializer<EdpItem> {
     Type oneOfType;
     switch (discValue) {
       case r'delete':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(EdpDeleteItem),
-        ) as EdpDeleteItem;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(EdpDeleteItem),
+                )
+                as EdpDeleteItem;
         oneOfType = EdpDeleteItem;
         break;
       case r'document':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(EdpDocumentItem),
-        ) as EdpDocumentItem;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(EdpDocumentItem),
+                )
+                as EdpDocumentItem;
         oneOfType = EdpDocumentItem;
         break;
       case r'event':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(EdpEventItem),
-        ) as EdpEventItem;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(EdpEventItem),
+                )
+                as EdpEventItem;
         oneOfType = EdpEventItem;
         break;
       case r'feature':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(EdpFeatureItem),
-        ) as EdpFeatureItem;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(EdpFeatureItem),
+                )
+                as EdpFeatureItem;
         oneOfType = EdpFeatureItem;
         break;
       case r'forecast':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(EdpForecastItem),
-        ) as EdpForecastItem;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(EdpForecastItem),
+                )
+                as EdpForecastItem;
         oneOfType = EdpForecastItem;
         break;
       case r'observation':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(EdpObservationItem),
-        ) as EdpObservationItem;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(EdpObservationItem),
+                )
+                as EdpObservationItem;
         oneOfType = EdpObservationItem;
         break;
       case r'status':
-        oneOfResult = serializers.deserialize(
-          oneOfDataSrc,
-          specifiedType: FullType(EdpStatusItem),
-        ) as EdpStatusItem;
+        oneOfResult =
+            serializers.deserialize(
+                  oneOfDataSrc,
+                  specifiedType: FullType(EdpStatusItem),
+                )
+                as EdpStatusItem;
         oneOfType = EdpStatusItem;
         break;
       default:
         throw UnsupportedError(
-            "Couldn't deserialize oneOf for the discriminator value: ${discValue}");
+          "Couldn't deserialize oneOf for the discriminator value: ${discValue}",
+        );
     }
     result.oneOf = OneOfDynamic(
-        typeIndex: oneOfTypes.indexOf(oneOfType),
-        types: oneOfTypes,
-        value: oneOfResult);
+      typeIndex: oneOfTypes.indexOf(oneOfType),
+      types: oneOfTypes,
+      value: oneOfResult,
+    );
     return result.build();
   }
 }

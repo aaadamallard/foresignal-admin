@@ -24,9 +24,9 @@ abstract class RasterFramePagePrefetch
 
   RasterFramePagePrefetch._();
 
-  factory RasterFramePagePrefetch(
-          [void updates(RasterFramePagePrefetchBuilder b)]) =
-      _$RasterFramePagePrefetch;
+  factory RasterFramePagePrefetch([
+    void updates(RasterFramePagePrefetchBuilder b),
+  ]) = _$RasterFramePagePrefetch;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RasterFramePagePrefetchBuilder b) => b;
@@ -41,7 +41,7 @@ class _$RasterFramePagePrefetchSerializer
   @override
   final Iterable<Type> types = const [
     RasterFramePagePrefetch,
-    _$RasterFramePagePrefetch
+    _$RasterFramePagePrefetch,
   ];
 
   @override
@@ -72,9 +72,11 @@ class _$RasterFramePagePrefetchSerializer
     RasterFramePagePrefetch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +92,18 @@ class _$RasterFramePagePrefetchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'recommendedFrames':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.recommendedFrames = valueDes;
           break;
         case r'maxZoomForAnimation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxZoomForAnimation = valueDes;
           break;

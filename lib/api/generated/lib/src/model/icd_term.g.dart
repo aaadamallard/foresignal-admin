@@ -58,7 +58,7 @@ class _$IcdTermMeta {
   BuiltSet<IcdTerm> get values => _$values;
 }
 
-abstract class _$IcdTermMixin {
+mixin _$IcdTermMixin {
   // ignore: non_constant_identifier_names
   _$IcdTermMeta get IcdTerm => const _$IcdTermMeta();
 }
@@ -91,15 +91,20 @@ class _$IcdTermSerializer implements PrimitiveSerializer<IcdTerm> {
   final String wireName = 'IcdTerm';
 
   @override
-  Object serialize(Serializers serializers, IcdTerm object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IcdTerm object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  IcdTerm deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IcdTerm.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  IcdTerm deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IcdTerm.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

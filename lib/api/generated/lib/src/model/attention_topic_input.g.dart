@@ -28,26 +28,26 @@ class _$AttentionTopicInput extends AttentionTopicInput {
   @override
   final AttentionTopicSocial? social;
 
-  factory _$AttentionTopicInput(
-          [void Function(AttentionTopicInputBuilder)? updates]) =>
-      (AttentionTopicInputBuilder()..update(updates))._build();
+  factory _$AttentionTopicInput([
+    void Function(AttentionTopicInputBuilder)? updates,
+  ]) => (AttentionTopicInputBuilder()..update(updates))._build();
 
-  _$AttentionTopicInput._(
-      {required this.id,
-      required this.name,
-      this.description,
-      this.gdeltQuery,
-      this.wikiArticles,
-      this.keywords,
-      this.regionCodes,
-      this.themes,
-      this.enabled,
-      this.social})
-      : super._();
+  _$AttentionTopicInput._({
+    required this.id,
+    required this.name,
+    this.description,
+    this.gdeltQuery,
+    this.wikiArticles,
+    this.keywords,
+    this.regionCodes,
+    this.themes,
+    this.enabled,
+    this.social,
+  }) : super._();
   @override
   AttentionTopicInput rebuild(
-          void Function(AttentionTopicInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AttentionTopicInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AttentionTopicInputBuilder toBuilder() =>
@@ -128,8 +128,8 @@ class AttentionTopicInputBuilder
       _$this._wikiArticles ??=
           ListBuilder<AttentionTopicInputWikiArticlesInner>();
   set wikiArticles(
-          ListBuilder<AttentionTopicInputWikiArticlesInner>? wikiArticles) =>
-      _$this._wikiArticles = wikiArticles;
+    ListBuilder<AttentionTopicInputWikiArticlesInner>? wikiArticles,
+  ) => _$this._wikiArticles = wikiArticles;
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
@@ -193,12 +193,19 @@ class AttentionTopicInputBuilder
   _$AttentionTopicInput _build() {
     _$AttentionTopicInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AttentionTopicInput._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AttentionTopicInput', 'id'),
+              id,
+              r'AttentionTopicInput',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'AttentionTopicInput', 'name'),
+              name,
+              r'AttentionTopicInput',
+              'name',
+            ),
             description: description,
             gdeltQuery: gdeltQuery,
             wikiArticles: _wikiArticles?.build(),
@@ -224,7 +231,10 @@ class AttentionTopicInputBuilder
         _social?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AttentionTopicInput', _$failedField, e.toString());
+          r'AttentionTopicInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

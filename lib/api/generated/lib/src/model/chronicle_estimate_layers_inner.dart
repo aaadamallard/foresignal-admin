@@ -21,8 +21,10 @@ part 'chronicle_estimate_layers_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleEstimateLayersInner
     implements
-        Built<ChronicleEstimateLayersInner,
-            ChronicleEstimateLayersInnerBuilder> {
+        Built<
+          ChronicleEstimateLayersInner,
+          ChronicleEstimateLayersInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'layerId')
   String get layerId;
@@ -44,9 +46,9 @@ abstract class ChronicleEstimateLayersInner
 
   ChronicleEstimateLayersInner._();
 
-  factory ChronicleEstimateLayersInner(
-          [void updates(ChronicleEstimateLayersInnerBuilder b)]) =
-      _$ChronicleEstimateLayersInner;
+  factory ChronicleEstimateLayersInner([
+    void updates(ChronicleEstimateLayersInnerBuilder b),
+  ]) = _$ChronicleEstimateLayersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleEstimateLayersInnerBuilder b) => b;
@@ -61,7 +63,7 @@ class _$ChronicleEstimateLayersInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleEstimateLayersInner,
-    _$ChronicleEstimateLayersInner
+    _$ChronicleEstimateLayersInner,
   ];
 
   @override
@@ -116,9 +118,11 @@ class _$ChronicleEstimateLayersInnerSerializer
     ChronicleEstimateLayersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -134,47 +138,53 @@ class _$ChronicleEstimateLayersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'layerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.layerId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'capture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CaptureMode),
-          ) as CaptureMode?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(CaptureMode),
+                  )
+                  as CaptureMode?;
           if (valueDes == null) continue;
           result.capture.replace(valueDes);
           break;
         case r'rowsPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.rowsPerDay = valueDes;
           break;
         case r'bytesPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.bytesPerDay = valueDes;
           break;
         case r'basis':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.basis = valueDes;
           break;

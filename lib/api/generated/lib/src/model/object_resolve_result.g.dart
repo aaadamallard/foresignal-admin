@@ -14,17 +14,19 @@ class _$ObjectResolveResult extends ObjectResolveResult {
   @override
   final DateTime? asOf;
 
-  factory _$ObjectResolveResult(
-          [void Function(ObjectResolveResultBuilder)? updates]) =>
-      (ObjectResolveResultBuilder()..update(updates))._build();
+  factory _$ObjectResolveResult([
+    void Function(ObjectResolveResultBuilder)? updates,
+  ]) => (ObjectResolveResultBuilder()..update(updates))._build();
 
-  _$ObjectResolveResult._(
-      {required this.items, required this.missing, this.asOf})
-      : super._();
+  _$ObjectResolveResult._({
+    required this.items,
+    required this.missing,
+    this.asOf,
+  }) : super._();
   @override
   ObjectResolveResult rebuild(
-          void Function(ObjectResolveResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObjectResolveResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObjectResolveResultBuilder toBuilder() =>
@@ -107,7 +109,8 @@ class ObjectResolveResultBuilder
   _$ObjectResolveResult _build() {
     _$ObjectResolveResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObjectResolveResult._(
             items: items.build(),
             missing: missing.build(),
@@ -122,7 +125,10 @@ class ObjectResolveResultBuilder
         missing.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObjectResolveResult', _$failedField, e.toString());
+          r'ObjectResolveResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

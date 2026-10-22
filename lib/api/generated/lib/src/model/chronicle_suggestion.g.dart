@@ -7,14 +7,15 @@ part of 'chronicle_suggestion.dart';
 // **************************************************************************
 
 const ChronicleSuggestionTextOriginEnum
-    _$chronicleSuggestionTextOriginEnum_deterministic =
+_$chronicleSuggestionTextOriginEnum_deterministic =
     const ChronicleSuggestionTextOriginEnum._('deterministic');
 const ChronicleSuggestionTextOriginEnum
-    _$chronicleSuggestionTextOriginEnum_llm =
+_$chronicleSuggestionTextOriginEnum_llm =
     const ChronicleSuggestionTextOriginEnum._('llm');
 
 ChronicleSuggestionTextOriginEnum _$chronicleSuggestionTextOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'deterministic':
       return _$chronicleSuggestionTextOriginEnum_deterministic;
@@ -26,14 +27,16 @@ ChronicleSuggestionTextOriginEnum _$chronicleSuggestionTextOriginEnumValueOf(
 }
 
 final BuiltSet<ChronicleSuggestionTextOriginEnum>
-    _$chronicleSuggestionTextOriginEnumValues = BuiltSet<
-        ChronicleSuggestionTextOriginEnum>(const <ChronicleSuggestionTextOriginEnum>[
-  _$chronicleSuggestionTextOriginEnum_deterministic,
-  _$chronicleSuggestionTextOriginEnum_llm,
-]);
+_$chronicleSuggestionTextOriginEnumValues =
+    BuiltSet<ChronicleSuggestionTextOriginEnum>(
+      const <ChronicleSuggestionTextOriginEnum>[
+        _$chronicleSuggestionTextOriginEnum_deterministic,
+        _$chronicleSuggestionTextOriginEnum_llm,
+      ],
+    );
 
 Serializer<ChronicleSuggestionTextOriginEnum>
-    _$chronicleSuggestionTextOriginEnumSerializer =
+_$chronicleSuggestionTextOriginEnumSerializer =
     _$ChronicleSuggestionTextOriginEnumSerializer();
 
 class _$ChronicleSuggestionTextOriginEnumSerializer
@@ -54,16 +57,19 @@ class _$ChronicleSuggestionTextOriginEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ChronicleSuggestionTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChronicleSuggestionTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSuggestionTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSuggestionTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSuggestionTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSuggestion extends ChronicleSuggestion {
@@ -76,17 +82,20 @@ class _$ChronicleSuggestion extends ChronicleSuggestion {
   @override
   final ChronicleSuggestionTextOriginEnum? textOrigin;
 
-  factory _$ChronicleSuggestion(
-          [void Function(ChronicleSuggestionBuilder)? updates]) =>
-      (ChronicleSuggestionBuilder()..update(updates))._build();
+  factory _$ChronicleSuggestion([
+    void Function(ChronicleSuggestionBuilder)? updates,
+  ]) => (ChronicleSuggestionBuilder()..update(updates))._build();
 
-  _$ChronicleSuggestion._(
-      {required this.draft, this.estimate, this.rationale, this.textOrigin})
-      : super._();
+  _$ChronicleSuggestion._({
+    required this.draft,
+    this.estimate,
+    this.rationale,
+    this.textOrigin,
+  }) : super._();
   @override
   ChronicleSuggestion rebuild(
-          void Function(ChronicleSuggestionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSuggestionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSuggestionBuilder toBuilder() =>
@@ -181,7 +190,8 @@ class ChronicleSuggestionBuilder
   _$ChronicleSuggestion _build() {
     _$ChronicleSuggestion _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSuggestion._(
             draft: draft.build(),
             estimate: _estimate?.build(),
@@ -199,7 +209,10 @@ class ChronicleSuggestionBuilder
         _rationale?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSuggestion', _$failedField, e.toString());
+          r'ChronicleSuggestion',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -136,16 +136,20 @@ class _$IndicatorPatchSerializer
       yield r'lr';
       yield serializers.serialize(
         object.lr,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType(IndicatorLikelihood)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(IndicatorLikelihood),
+        ]),
       );
     }
     if (object.absenceLr != null) {
       yield r'absenceLr';
       yield serializers.serialize(
         object.absenceLr,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(num)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(num),
+        ]),
       );
     }
     if (object.state != null) {
@@ -170,9 +174,11 @@ class _$IndicatorPatchSerializer
     IndicatorPatch object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -188,85 +194,114 @@ class _$IndicatorPatchSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'signal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndicatorSignal),
-          ) as IndicatorSignal?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IndicatorSignal),
+                  )
+                  as IndicatorSignal?;
           if (valueDes == null) continue;
           result.signal.replace(valueDes);
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.signalFamily = valueDes;
           break;
         case r'credibility':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IndicatorPatchCredibilityEnum),
-          ) as IndicatorPatchCredibilityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorPatchCredibilityEnum,
+                    ),
+                  )
+                  as IndicatorPatchCredibilityEnum?;
           if (valueDes == null) continue;
           result.credibility = valueDes;
           break;
         case r'relevance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndicatorPatchRelevanceEnum),
-          ) as IndicatorPatchRelevanceEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorPatchRelevanceEnum,
+                    ),
+                  )
+                  as IndicatorPatchRelevanceEnum?;
           if (valueDes == null) continue;
           result.relevance = valueDes;
           break;
         case r'expectedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expectedBy = valueDes;
           break;
         case r'lr':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(IndicatorLikelihood)]),
-          ) as BuiltMap<String, IndicatorLikelihood>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(IndicatorLikelihood),
+                    ]),
+                  )
+                  as BuiltMap<String, IndicatorLikelihood>?;
           if (valueDes == null) continue;
           result.lr.replace(valueDes);
           break;
         case r'absenceLr':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(num)]),
-          ) as BuiltMap<String, num>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(num),
+                    ]),
+                  )
+                  as BuiltMap<String, num>?;
           if (valueDes == null) continue;
           result.absenceLr.replace(valueDes);
           break;
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IndicatorPatchStateEnum),
-          ) as IndicatorPatchStateEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorPatchStateEnum,
+                    ),
+                  )
+                  as IndicatorPatchStateEnum?;
           if (valueDes == null) continue;
           result.state = valueDes;
           break;
         case r'observedEvidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.observedEvidence = valueDes;
           break;

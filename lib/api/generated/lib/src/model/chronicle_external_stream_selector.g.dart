@@ -7,11 +7,11 @@ part of 'chronicle_external_stream_selector.dart';
 // **************************************************************************
 
 const ChronicleExternalStreamSelectorTypeEnum
-    _$chronicleExternalStreamSelectorTypeEnum_externalStream =
+_$chronicleExternalStreamSelectorTypeEnum_externalStream =
     const ChronicleExternalStreamSelectorTypeEnum._('externalStream');
 
 ChronicleExternalStreamSelectorTypeEnum
-    _$chronicleExternalStreamSelectorTypeEnumValueOf(String name) {
+_$chronicleExternalStreamSelectorTypeEnumValueOf(String name) {
   switch (name) {
     case 'externalStream':
       return _$chronicleExternalStreamSelectorTypeEnum_externalStream;
@@ -21,13 +21,15 @@ ChronicleExternalStreamSelectorTypeEnum
 }
 
 final BuiltSet<ChronicleExternalStreamSelectorTypeEnum>
-    _$chronicleExternalStreamSelectorTypeEnumValues = BuiltSet<
-        ChronicleExternalStreamSelectorTypeEnum>(const <ChronicleExternalStreamSelectorTypeEnum>[
-  _$chronicleExternalStreamSelectorTypeEnum_externalStream,
-]);
+_$chronicleExternalStreamSelectorTypeEnumValues =
+    BuiltSet<ChronicleExternalStreamSelectorTypeEnum>(
+      const <ChronicleExternalStreamSelectorTypeEnum>[
+        _$chronicleExternalStreamSelectorTypeEnum_externalStream,
+      ],
+    );
 
 Serializer<ChronicleExternalStreamSelectorTypeEnum>
-    _$chronicleExternalStreamSelectorTypeEnumSerializer =
+_$chronicleExternalStreamSelectorTypeEnumSerializer =
     _$ChronicleExternalStreamSelectorTypeEnumSerializer();
 
 class _$ChronicleExternalStreamSelectorTypeEnumSerializer
@@ -41,23 +43,26 @@ class _$ChronicleExternalStreamSelectorTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleExternalStreamSelectorTypeEnum
+    ChronicleExternalStreamSelectorTypeEnum,
   ];
   @override
   final String wireName = 'ChronicleExternalStreamSelectorTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleExternalStreamSelectorTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleExternalStreamSelectorTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleExternalStreamSelectorTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleExternalStreamSelectorTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleExternalStreamSelectorTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleExternalStreamSelector
@@ -71,20 +76,20 @@ class _$ChronicleExternalStreamSelector
   @override
   final BuiltList<BuiltMap<String, JsonObject?>>? filter;
 
-  factory _$ChronicleExternalStreamSelector(
-          [void Function(ChronicleExternalStreamSelectorBuilder)? updates]) =>
-      (ChronicleExternalStreamSelectorBuilder()..update(updates))._build();
+  factory _$ChronicleExternalStreamSelector([
+    void Function(ChronicleExternalStreamSelectorBuilder)? updates,
+  ]) => (ChronicleExternalStreamSelectorBuilder()..update(updates))._build();
 
-  _$ChronicleExternalStreamSelector._(
-      {required this.type,
-      required this.sourceId,
-      required this.streamId,
-      this.filter})
-      : super._();
+  _$ChronicleExternalStreamSelector._({
+    required this.type,
+    required this.sourceId,
+    required this.streamId,
+    this.filter,
+  }) : super._();
   @override
   ChronicleExternalStreamSelector rebuild(
-          void Function(ChronicleExternalStreamSelectorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleExternalStreamSelectorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleExternalStreamSelectorBuilder toBuilder() =>
@@ -124,8 +129,10 @@ class _$ChronicleExternalStreamSelector
 
 class ChronicleExternalStreamSelectorBuilder
     implements
-        Builder<ChronicleExternalStreamSelector,
-            ChronicleExternalStreamSelectorBuilder> {
+        Builder<
+          ChronicleExternalStreamSelector,
+          ChronicleExternalStreamSelectorBuilder
+        > {
   _$ChronicleExternalStreamSelector? _$v;
 
   ChronicleExternalStreamSelectorTypeEnum? _type;
@@ -179,14 +186,24 @@ class ChronicleExternalStreamSelectorBuilder
   _$ChronicleExternalStreamSelector _build() {
     _$ChronicleExternalStreamSelector _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleExternalStreamSelector._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ChronicleExternalStreamSelector', 'type'),
+              type,
+              r'ChronicleExternalStreamSelector',
+              'type',
+            ),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'ChronicleExternalStreamSelector', 'sourceId'),
+              sourceId,
+              r'ChronicleExternalStreamSelector',
+              'sourceId',
+            ),
             streamId: BuiltValueNullFieldError.checkNotNull(
-                streamId, r'ChronicleExternalStreamSelector', 'streamId'),
+              streamId,
+              r'ChronicleExternalStreamSelector',
+              'streamId',
+            ),
             filter: _filter?.build(),
           );
     } catch (_) {
@@ -196,7 +213,10 @@ class ChronicleExternalStreamSelectorBuilder
         _filter?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleExternalStreamSelector', _$failedField, e.toString());
+          r'ChronicleExternalStreamSelector',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

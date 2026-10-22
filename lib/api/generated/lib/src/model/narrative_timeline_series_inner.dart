@@ -18,8 +18,10 @@ part 'narrative_timeline_series_inner.g.dart';
 @BuiltValue()
 abstract class NarrativeTimelineSeriesInner
     implements
-        Built<NarrativeTimelineSeriesInner,
-            NarrativeTimelineSeriesInnerBuilder> {
+        Built<
+          NarrativeTimelineSeriesInner,
+          NarrativeTimelineSeriesInnerBuilder
+        > {
   /// Social network: `bluesky`, `mastodon`, `reddit`, `youtube`, `x`, `threads`, `instagram`, or the platform an EDP provider (024, 138) declares
   @BuiltValueField(wireName: r'platform')
   String get platform;
@@ -29,9 +31,9 @@ abstract class NarrativeTimelineSeriesInner
 
   NarrativeTimelineSeriesInner._();
 
-  factory NarrativeTimelineSeriesInner(
-          [void updates(NarrativeTimelineSeriesInnerBuilder b)]) =
-      _$NarrativeTimelineSeriesInner;
+  factory NarrativeTimelineSeriesInner([
+    void updates(NarrativeTimelineSeriesInnerBuilder b),
+  ]) = _$NarrativeTimelineSeriesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NarrativeTimelineSeriesInnerBuilder b) => b;
@@ -46,7 +48,7 @@ class _$NarrativeTimelineSeriesInnerSerializer
   @override
   final Iterable<Type> types = const [
     NarrativeTimelineSeriesInner,
-    _$NarrativeTimelineSeriesInner
+    _$NarrativeTimelineSeriesInner,
   ];
 
   @override
@@ -65,8 +67,9 @@ class _$NarrativeTimelineSeriesInnerSerializer
     yield r'points';
     yield serializers.serialize(
       object.points,
-      specifiedType: const FullType(
-          BuiltList, [FullType(NarrativeTimelineSeriesInnerPointsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NarrativeTimelineSeriesInnerPointsInner),
+      ]),
     );
   }
 
@@ -76,9 +79,11 @@ class _$NarrativeTimelineSeriesInnerSerializer
     NarrativeTimelineSeriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +99,23 @@ class _$NarrativeTimelineSeriesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'points':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(NarrativeTimelineSeriesInnerPointsInner)]),
-          ) as BuiltList<NarrativeTimelineSeriesInnerPointsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NarrativeTimelineSeriesInnerPointsInner),
+                    ]),
+                  )
+                  as BuiltList<NarrativeTimelineSeriesInnerPointsInner>;
           result.points.replace(valueDes);
           break;
         default:

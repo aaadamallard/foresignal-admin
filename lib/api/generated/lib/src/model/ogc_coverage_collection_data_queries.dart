@@ -20,8 +20,10 @@ part 'ogc_coverage_collection_data_queries.g.dart';
 @BuiltValue()
 abstract class OgcCoverageCollectionDataQueries
     implements
-        Built<OgcCoverageCollectionDataQueries,
-            OgcCoverageCollectionDataQueriesBuilder> {
+        Built<
+          OgcCoverageCollectionDataQueries,
+          OgcCoverageCollectionDataQueriesBuilder
+        > {
   @BuiltValueField(wireName: r'position')
   OgcCoverageCollectionDataQueriesPosition? get position;
 
@@ -33,9 +35,9 @@ abstract class OgcCoverageCollectionDataQueries
 
   OgcCoverageCollectionDataQueries._();
 
-  factory OgcCoverageCollectionDataQueries(
-          [void updates(OgcCoverageCollectionDataQueriesBuilder b)]) =
-      _$OgcCoverageCollectionDataQueries;
+  factory OgcCoverageCollectionDataQueries([
+    void updates(OgcCoverageCollectionDataQueriesBuilder b),
+  ]) = _$OgcCoverageCollectionDataQueries;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCoverageCollectionDataQueriesBuilder b) => b;
@@ -50,7 +52,7 @@ class _$OgcCoverageCollectionDataQueriesSerializer
   @override
   final Iterable<Type> types = const [
     OgcCoverageCollectionDataQueries,
-    _$OgcCoverageCollectionDataQueries
+    _$OgcCoverageCollectionDataQueries,
   ];
 
   @override
@@ -79,8 +81,9 @@ class _$OgcCoverageCollectionDataQueriesSerializer
       yield r'instances';
       yield serializers.serialize(
         object.instances,
-        specifiedType:
-            const FullType(OgcCoverageCollectionDataQueriesInstances),
+        specifiedType: const FullType(
+          OgcCoverageCollectionDataQueriesInstances,
+        ),
       );
     }
   }
@@ -91,9 +94,11 @@ class _$OgcCoverageCollectionDataQueriesSerializer
     OgcCoverageCollectionDataQueries object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,29 +114,38 @@ class _$OgcCoverageCollectionDataQueriesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'position':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                OgcCoverageCollectionDataQueriesPosition),
-          ) as OgcCoverageCollectionDataQueriesPosition?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCoverageCollectionDataQueriesPosition,
+                    ),
+                  )
+                  as OgcCoverageCollectionDataQueriesPosition?;
           if (valueDes == null) continue;
           result.position.replace(valueDes);
           break;
         case r'area':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(OgcCoverageCollectionDataQueriesArea),
-          ) as OgcCoverageCollectionDataQueriesArea?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCoverageCollectionDataQueriesArea,
+                    ),
+                  )
+                  as OgcCoverageCollectionDataQueriesArea?;
           if (valueDes == null) continue;
           result.area.replace(valueDes);
           break;
         case r'instances':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                OgcCoverageCollectionDataQueriesInstances),
-          ) as OgcCoverageCollectionDataQueriesInstances?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OgcCoverageCollectionDataQueriesInstances,
+                    ),
+                  )
+                  as OgcCoverageCollectionDataQueriesInstances?;
           if (valueDes == null) continue;
           result.instances.replace(valueDes);
           break;

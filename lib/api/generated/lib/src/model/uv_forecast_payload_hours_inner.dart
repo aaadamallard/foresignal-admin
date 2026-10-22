@@ -25,9 +25,9 @@ abstract class UvForecastPayloadHoursInner
 
   UvForecastPayloadHoursInner._();
 
-  factory UvForecastPayloadHoursInner(
-          [void updates(UvForecastPayloadHoursInnerBuilder b)]) =
-      _$UvForecastPayloadHoursInner;
+  factory UvForecastPayloadHoursInner([
+    void updates(UvForecastPayloadHoursInnerBuilder b),
+  ]) = _$UvForecastPayloadHoursInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UvForecastPayloadHoursInnerBuilder b) => b;
@@ -42,7 +42,7 @@ class _$UvForecastPayloadHoursInnerSerializer
   @override
   final Iterable<Type> types = const [
     UvForecastPayloadHoursInner,
-    _$UvForecastPayloadHoursInner
+    _$UvForecastPayloadHoursInner,
   ];
 
   @override
@@ -59,10 +59,7 @@ class _$UvForecastPayloadHoursInnerSerializer
       specifiedType: const FullType(DateTime),
     );
     yield r'uv';
-    yield serializers.serialize(
-      object.uv,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.uv, specifiedType: const FullType(num));
   }
 
   @override
@@ -71,9 +68,11 @@ class _$UvForecastPayloadHoursInnerSerializer
     UvForecastPayloadHoursInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +88,18 @@ class _$UvForecastPayloadHoursInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         case r'uv':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.uv = valueDes;
           break;
         default:

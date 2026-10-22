@@ -23,11 +23,11 @@ AnomalyBaselineSlotModeEnum _$anomalyBaselineSlotModeEnumValueOf(String name) {
 }
 
 final BuiltSet<AnomalyBaselineSlotModeEnum>
-    _$anomalyBaselineSlotModeEnumValues =
+_$anomalyBaselineSlotModeEnumValues =
     BuiltSet<AnomalyBaselineSlotModeEnum>(const <AnomalyBaselineSlotModeEnum>[
-  _$anomalyBaselineSlotModeEnum_hourOfWeek,
-  _$anomalyBaselineSlotModeEnum_hourOfDay,
-]);
+      _$anomalyBaselineSlotModeEnum_hourOfWeek,
+      _$anomalyBaselineSlotModeEnum_hourOfDay,
+    ]);
 
 const AnomalyBaselineBucketEnum _$anomalyBaselineBucketEnum_n15m =
     const AnomalyBaselineBucketEnum._('n15m');
@@ -47,19 +47,20 @@ AnomalyBaselineBucketEnum _$anomalyBaselineBucketEnumValueOf(String name) {
 
 final BuiltSet<AnomalyBaselineBucketEnum> _$anomalyBaselineBucketEnumValues =
     BuiltSet<AnomalyBaselineBucketEnum>(const <AnomalyBaselineBucketEnum>[
-  _$anomalyBaselineBucketEnum_n15m,
-  _$anomalyBaselineBucketEnum_n1h,
-]);
+      _$anomalyBaselineBucketEnum_n15m,
+      _$anomalyBaselineBucketEnum_n1h,
+    ]);
 
 const AnomalyBaselineSamplePathEnum
-    _$anomalyBaselineSamplePathEnum_activitySample =
+_$anomalyBaselineSamplePathEnum_activitySample =
     const AnomalyBaselineSamplePathEnum._('activitySample');
 const AnomalyBaselineSamplePathEnum
-    _$anomalyBaselineSamplePathEnum_activityRollup =
+_$anomalyBaselineSamplePathEnum_activityRollup =
     const AnomalyBaselineSamplePathEnum._('activityRollup');
 
 AnomalyBaselineSamplePathEnum _$anomalyBaselineSamplePathEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'activitySample':
       return _$anomalyBaselineSamplePathEnum_activitySample;
@@ -71,19 +72,20 @@ AnomalyBaselineSamplePathEnum _$anomalyBaselineSamplePathEnumValueOf(
 }
 
 final BuiltSet<AnomalyBaselineSamplePathEnum>
-    _$anomalyBaselineSamplePathEnumValues = BuiltSet<
-        AnomalyBaselineSamplePathEnum>(const <AnomalyBaselineSamplePathEnum>[
-  _$anomalyBaselineSamplePathEnum_activitySample,
-  _$anomalyBaselineSamplePathEnum_activityRollup,
-]);
+_$anomalyBaselineSamplePathEnumValues = BuiltSet<AnomalyBaselineSamplePathEnum>(
+  const <AnomalyBaselineSamplePathEnum>[
+    _$anomalyBaselineSamplePathEnum_activitySample,
+    _$anomalyBaselineSamplePathEnum_activityRollup,
+  ],
+);
 
 Serializer<AnomalyBaselineSlotModeEnum>
-    _$anomalyBaselineSlotModeEnumSerializer =
+_$anomalyBaselineSlotModeEnumSerializer =
     _$AnomalyBaselineSlotModeEnumSerializer();
 Serializer<AnomalyBaselineBucketEnum> _$anomalyBaselineBucketEnumSerializer =
     _$AnomalyBaselineBucketEnumSerializer();
 Serializer<AnomalyBaselineSamplePathEnum>
-    _$anomalyBaselineSamplePathEnumSerializer =
+_$anomalyBaselineSamplePathEnumSerializer =
     _$AnomalyBaselineSamplePathEnumSerializer();
 
 class _$AnomalyBaselineSlotModeEnumSerializer
@@ -103,16 +105,20 @@ class _$AnomalyBaselineSlotModeEnumSerializer
   final String wireName = 'AnomalyBaselineSlotModeEnum';
 
   @override
-  Object serialize(Serializers serializers, AnomalyBaselineSlotModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyBaselineSlotModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyBaselineSlotModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyBaselineSlotModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyBaselineSlotModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyBaselineBucketEnumSerializer
@@ -132,16 +138,20 @@ class _$AnomalyBaselineBucketEnumSerializer
   final String wireName = 'AnomalyBaselineBucketEnum';
 
   @override
-  Object serialize(Serializers serializers, AnomalyBaselineBucketEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyBaselineBucketEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyBaselineBucketEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyBaselineBucketEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyBaselineBucketEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyBaselineSamplePathEnumSerializer
@@ -162,16 +172,19 @@ class _$AnomalyBaselineSamplePathEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnomalyBaselineSamplePathEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnomalyBaselineSamplePathEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyBaselineSamplePathEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyBaselineSamplePathEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyBaselineSamplePathEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyBaseline extends AnomalyBaseline {
@@ -199,18 +212,18 @@ class _$AnomalyBaseline extends AnomalyBaseline {
   factory _$AnomalyBaseline([void Function(AnomalyBaselineBuilder)? updates]) =>
       (AnomalyBaselineBuilder()..update(updates))._build();
 
-  _$AnomalyBaseline._(
-      {required this.ruleId,
-      required this.slotMode,
-      required this.bucket,
-      required this.weeksAvailable,
-      this.minWeeks,
-      required this.learning,
-      this.learningUntil,
-      this.lowConfidence,
-      this.samplePath,
-      required this.slots})
-      : super._();
+  _$AnomalyBaseline._({
+    required this.ruleId,
+    required this.slotMode,
+    required this.bucket,
+    required this.weeksAvailable,
+    this.minWeeks,
+    required this.learning,
+    this.learningUntil,
+    this.lowConfidence,
+    this.samplePath,
+    required this.slots,
+  }) : super._();
   @override
   AnomalyBaseline rebuild(void Function(AnomalyBaselineBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -356,19 +369,35 @@ class AnomalyBaselineBuilder
   _$AnomalyBaseline _build() {
     _$AnomalyBaseline _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnomalyBaseline._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'AnomalyBaseline', 'ruleId'),
+              ruleId,
+              r'AnomalyBaseline',
+              'ruleId',
+            ),
             slotMode: BuiltValueNullFieldError.checkNotNull(
-                slotMode, r'AnomalyBaseline', 'slotMode'),
+              slotMode,
+              r'AnomalyBaseline',
+              'slotMode',
+            ),
             bucket: BuiltValueNullFieldError.checkNotNull(
-                bucket, r'AnomalyBaseline', 'bucket'),
+              bucket,
+              r'AnomalyBaseline',
+              'bucket',
+            ),
             weeksAvailable: BuiltValueNullFieldError.checkNotNull(
-                weeksAvailable, r'AnomalyBaseline', 'weeksAvailable'),
+              weeksAvailable,
+              r'AnomalyBaseline',
+              'weeksAvailable',
+            ),
             minWeeks: minWeeks,
             learning: BuiltValueNullFieldError.checkNotNull(
-                learning, r'AnomalyBaseline', 'learning'),
+              learning,
+              r'AnomalyBaseline',
+              'learning',
+            ),
             learningUntil: learningUntil,
             lowConfidence: lowConfidence,
             samplePath: samplePath,
@@ -381,7 +410,10 @@ class AnomalyBaselineBuilder
         slots.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnomalyBaseline', _$failedField, e.toString());
+          r'AnomalyBaseline',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

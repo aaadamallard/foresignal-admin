@@ -23,14 +23,14 @@ class _$AnalogOutcomes extends AnalogOutcomes {
   factory _$AnalogOutcomes([void Function(AnalogOutcomesBuilder)? updates]) =>
       (AnalogOutcomesBuilder()..update(updates))._build();
 
-  _$AnalogOutcomes._(
-      {this.durationDays,
-      this.peakSeverity,
-      this.followOnFamilies7d,
-      this.followOnFamilies30d,
-      this.hypothesisOutcome,
-      this.targetOutcomeOccurred})
-      : super._();
+  _$AnalogOutcomes._({
+    this.durationDays,
+    this.peakSeverity,
+    this.followOnFamilies7d,
+    this.followOnFamilies30d,
+    this.hypothesisOutcome,
+    this.targetOutcomeOccurred,
+  }) : super._();
   @override
   AnalogOutcomes rebuild(void Function(AnalogOutcomesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -105,8 +105,8 @@ class AnalogOutcomesBuilder
   AnalogOutcomesHypothesisOutcomeBuilder get hypothesisOutcome =>
       _$this._hypothesisOutcome ??= AnalogOutcomesHypothesisOutcomeBuilder();
   set hypothesisOutcome(
-          AnalogOutcomesHypothesisOutcomeBuilder? hypothesisOutcome) =>
-      _$this._hypothesisOutcome = hypothesisOutcome;
+    AnalogOutcomesHypothesisOutcomeBuilder? hypothesisOutcome,
+  ) => _$this._hypothesisOutcome = hypothesisOutcome;
 
   bool? _targetOutcomeOccurred;
   bool? get targetOutcomeOccurred => _$this._targetOutcomeOccurred;
@@ -147,7 +147,8 @@ class AnalogOutcomesBuilder
   _$AnalogOutcomes _build() {
     _$AnalogOutcomes _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalogOutcomes._(
             durationDays: durationDays,
             peakSeverity: peakSeverity,
@@ -167,7 +168,10 @@ class AnalogOutcomesBuilder
         _hypothesisOutcome?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalogOutcomes', _$failedField, e.toString());
+          r'AnalogOutcomes',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

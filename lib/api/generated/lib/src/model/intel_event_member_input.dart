@@ -63,8 +63,9 @@ abstract class IntelEventMemberInput
 
   IntelEventMemberInput._();
 
-  factory IntelEventMemberInput(
-      [void updates(IntelEventMemberInputBuilder b)]) = _$IntelEventMemberInput;
+  factory IntelEventMemberInput([
+    void updates(IntelEventMemberInputBuilder b),
+  ]) = _$IntelEventMemberInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelEventMemberInputBuilder b) => b;
@@ -79,7 +80,7 @@ class _$IntelEventMemberInputSerializer
   @override
   final Iterable<Type> types = const [
     IntelEventMemberInput,
-    _$IntelEventMemberInput
+    _$IntelEventMemberInput,
   ];
 
   @override
@@ -166,9 +167,11 @@ class _$IntelEventMemberInputSerializer
     IntelEventMemberInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -184,82 +187,105 @@ class _$IntelEventMemberInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'memberType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IntelEventMemberInputMemberTypeEnum),
-          ) as IntelEventMemberInputMemberTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IntelEventMemberInputMemberTypeEnum,
+                    ),
+                  )
+                  as IntelEventMemberInputMemberTypeEnum;
           result.memberType = valueDes;
           break;
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IntelEventMemberInputRoleEnum),
-          ) as IntelEventMemberInputRoleEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelEventMemberInputRoleEnum,
+                    ),
+                  )
+                  as IntelEventMemberInputRoleEnum?;
           if (valueDes == null) continue;
           result.role = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.sourceId = valueDes;
           break;
         case r'externalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.externalId = valueDes;
           break;
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.seq = valueDes;
           break;
         case r'alertId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alertId = valueDes;
           break;
         case r'anomalyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.anomalyId = valueDes;
           break;
         case r'eventId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.eventId = valueDes;
           break;
         case r'signalFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.signalFamily = valueDes;
           break;
         case r'weight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.weight = valueDes;
           break;

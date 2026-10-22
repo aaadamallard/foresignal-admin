@@ -7,14 +7,14 @@ part of 'package_manifest_authors_inner.dart';
 // **************************************************************************
 
 const PackageManifestAuthorsInnerRoleEnum
-    _$packageManifestAuthorsInnerRoleEnum_author =
+_$packageManifestAuthorsInnerRoleEnum_author =
     const PackageManifestAuthorsInnerRoleEnum._('author');
 const PackageManifestAuthorsInnerRoleEnum
-    _$packageManifestAuthorsInnerRoleEnum_forwarder =
+_$packageManifestAuthorsInnerRoleEnum_forwarder =
     const PackageManifestAuthorsInnerRoleEnum._('forwarder');
 
 PackageManifestAuthorsInnerRoleEnum
-    _$packageManifestAuthorsInnerRoleEnumValueOf(String name) {
+_$packageManifestAuthorsInnerRoleEnumValueOf(String name) {
   switch (name) {
     case 'author':
       return _$packageManifestAuthorsInnerRoleEnum_author;
@@ -26,14 +26,16 @@ PackageManifestAuthorsInnerRoleEnum
 }
 
 final BuiltSet<PackageManifestAuthorsInnerRoleEnum>
-    _$packageManifestAuthorsInnerRoleEnumValues = BuiltSet<
-        PackageManifestAuthorsInnerRoleEnum>(const <PackageManifestAuthorsInnerRoleEnum>[
-  _$packageManifestAuthorsInnerRoleEnum_author,
-  _$packageManifestAuthorsInnerRoleEnum_forwarder,
-]);
+_$packageManifestAuthorsInnerRoleEnumValues =
+    BuiltSet<PackageManifestAuthorsInnerRoleEnum>(
+      const <PackageManifestAuthorsInnerRoleEnum>[
+        _$packageManifestAuthorsInnerRoleEnum_author,
+        _$packageManifestAuthorsInnerRoleEnum_forwarder,
+      ],
+    );
 
 Serializer<PackageManifestAuthorsInnerRoleEnum>
-    _$packageManifestAuthorsInnerRoleEnumSerializer =
+_$packageManifestAuthorsInnerRoleEnumSerializer =
     _$PackageManifestAuthorsInnerRoleEnumSerializer();
 
 class _$PackageManifestAuthorsInnerRoleEnumSerializer
@@ -49,23 +51,26 @@ class _$PackageManifestAuthorsInnerRoleEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PackageManifestAuthorsInnerRoleEnum
+    PackageManifestAuthorsInnerRoleEnum,
   ];
   @override
   final String wireName = 'PackageManifestAuthorsInnerRoleEnum';
 
   @override
   Object serialize(
-          Serializers serializers, PackageManifestAuthorsInnerRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PackageManifestAuthorsInnerRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PackageManifestAuthorsInnerRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PackageManifestAuthorsInnerRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PackageManifestAuthorsInnerRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PackageManifestAuthorsInner extends PackageManifestAuthorsInner {
@@ -78,20 +83,20 @@ class _$PackageManifestAuthorsInner extends PackageManifestAuthorsInner {
   @override
   final PackageManifestAuthorsInnerRoleEnum role;
 
-  factory _$PackageManifestAuthorsInner(
-          [void Function(PackageManifestAuthorsInnerBuilder)? updates]) =>
-      (PackageManifestAuthorsInnerBuilder()..update(updates))._build();
+  factory _$PackageManifestAuthorsInner([
+    void Function(PackageManifestAuthorsInnerBuilder)? updates,
+  ]) => (PackageManifestAuthorsInnerBuilder()..update(updates))._build();
 
-  _$PackageManifestAuthorsInner._(
-      {required this.handle,
-      this.displayName,
-      required this.instanceId,
-      required this.role})
-      : super._();
+  _$PackageManifestAuthorsInner._({
+    required this.handle,
+    this.displayName,
+    required this.instanceId,
+    required this.role,
+  }) : super._();
   @override
   PackageManifestAuthorsInner rebuild(
-          void Function(PackageManifestAuthorsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PackageManifestAuthorsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PackageManifestAuthorsInnerBuilder toBuilder() =>
@@ -131,8 +136,10 @@ class _$PackageManifestAuthorsInner extends PackageManifestAuthorsInner {
 
 class PackageManifestAuthorsInnerBuilder
     implements
-        Builder<PackageManifestAuthorsInner,
-            PackageManifestAuthorsInnerBuilder> {
+        Builder<
+          PackageManifestAuthorsInner,
+          PackageManifestAuthorsInnerBuilder
+        > {
   _$PackageManifestAuthorsInner? _$v;
 
   String? _handle;
@@ -181,15 +188,25 @@ class PackageManifestAuthorsInnerBuilder
   PackageManifestAuthorsInner build() => _build();
 
   _$PackageManifestAuthorsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PackageManifestAuthorsInner._(
           handle: BuiltValueNullFieldError.checkNotNull(
-              handle, r'PackageManifestAuthorsInner', 'handle'),
+            handle,
+            r'PackageManifestAuthorsInner',
+            'handle',
+          ),
           displayName: displayName,
           instanceId: BuiltValueNullFieldError.checkNotNull(
-              instanceId, r'PackageManifestAuthorsInner', 'instanceId'),
+            instanceId,
+            r'PackageManifestAuthorsInner',
+            'instanceId',
+          ),
           role: BuiltValueNullFieldError.checkNotNull(
-              role, r'PackageManifestAuthorsInner', 'role'),
+            role,
+            r'PackageManifestAuthorsInner',
+            'role',
+          ),
         );
     replace(_$result);
     return _$result;

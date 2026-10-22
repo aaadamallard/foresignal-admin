@@ -68,20 +68,20 @@ EntityKeyInputKeyTypeEnum _$entityKeyInputKeyTypeEnumValueOf(String name) {
 
 final BuiltSet<EntityKeyInputKeyTypeEnum> _$entityKeyInputKeyTypeEnumValues =
     BuiltSet<EntityKeyInputKeyTypeEnum>(const <EntityKeyInputKeyTypeEnum>[
-  _$entityKeyInputKeyTypeEnum_airframe,
-  _$entityKeyInputKeyTypeEnum_icao24,
-  _$entityKeyInputKeyTypeEnum_registration,
-  _$entityKeyInputKeyTypeEnum_imo,
-  _$entityKeyInputKeyTypeEnum_mmsi,
-  _$entityKeyInputKeyTypeEnum_norad,
-  _$entityKeyInputKeyTypeEnum_cospar,
-  _$entityKeyInputKeyTypeEnum_callsign,
-  _$entityKeyInputKeyTypeEnum_lei,
-  _$entityKeyInputKeyTypeEnum_companyNumber,
-  _$entityKeyInputKeyTypeEnum_taxId,
-  _$entityKeyInputKeyTypeEnum_officerId,
-  _$entityKeyInputKeyTypeEnum_personKey,
-]);
+      _$entityKeyInputKeyTypeEnum_airframe,
+      _$entityKeyInputKeyTypeEnum_icao24,
+      _$entityKeyInputKeyTypeEnum_registration,
+      _$entityKeyInputKeyTypeEnum_imo,
+      _$entityKeyInputKeyTypeEnum_mmsi,
+      _$entityKeyInputKeyTypeEnum_norad,
+      _$entityKeyInputKeyTypeEnum_cospar,
+      _$entityKeyInputKeyTypeEnum_callsign,
+      _$entityKeyInputKeyTypeEnum_lei,
+      _$entityKeyInputKeyTypeEnum_companyNumber,
+      _$entityKeyInputKeyTypeEnum_taxId,
+      _$entityKeyInputKeyTypeEnum_officerId,
+      _$entityKeyInputKeyTypeEnum_personKey,
+    ]);
 
 Serializer<EntityKeyInputKeyTypeEnum> _$entityKeyInputKeyTypeEnumSerializer =
     _$EntityKeyInputKeyTypeEnumSerializer();
@@ -125,16 +125,20 @@ class _$EntityKeyInputKeyTypeEnumSerializer
   final String wireName = 'EntityKeyInputKeyTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityKeyInputKeyTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityKeyInputKeyTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EntityKeyInputKeyTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityKeyInputKeyTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityKeyInputKeyTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityKeyInput extends EntityKeyInput {
@@ -154,14 +158,14 @@ class _$EntityKeyInput extends EntityKeyInput {
   factory _$EntityKeyInput([void Function(EntityKeyInputBuilder)? updates]) =>
       (EntityKeyInputBuilder()..update(updates))._build();
 
-  _$EntityKeyInput._(
-      {required this.keyType,
-      required this.keyValue,
-      this.confidence,
-      this.validFrom,
-      this.validTo,
-      this.force})
-      : super._();
+  _$EntityKeyInput._({
+    required this.keyType,
+    required this.keyValue,
+    this.confidence,
+    this.validFrom,
+    this.validTo,
+    this.force,
+  }) : super._();
   @override
   EntityKeyInput rebuild(void Function(EntityKeyInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -267,12 +271,19 @@ class EntityKeyInputBuilder
   EntityKeyInput build() => _build();
 
   _$EntityKeyInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EntityKeyInput._(
           keyType: BuiltValueNullFieldError.checkNotNull(
-              keyType, r'EntityKeyInput', 'keyType'),
+            keyType,
+            r'EntityKeyInput',
+            'keyType',
+          ),
           keyValue: BuiltValueNullFieldError.checkNotNull(
-              keyValue, r'EntityKeyInput', 'keyValue'),
+            keyValue,
+            r'EntityKeyInput',
+            'keyValue',
+          ),
           confidence: confidence,
           validFrom: validFrom,
           validTo: validTo,

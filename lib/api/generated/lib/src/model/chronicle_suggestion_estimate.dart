@@ -31,9 +31,9 @@ abstract class ChronicleSuggestionEstimate
 
   ChronicleSuggestionEstimate._();
 
-  factory ChronicleSuggestionEstimate(
-          [void updates(ChronicleSuggestionEstimateBuilder b)]) =
-      _$ChronicleSuggestionEstimate;
+  factory ChronicleSuggestionEstimate([
+    void updates(ChronicleSuggestionEstimateBuilder b),
+  ]) = _$ChronicleSuggestionEstimate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSuggestionEstimateBuilder b) => b;
@@ -48,7 +48,7 @@ class _$ChronicleSuggestionEstimateSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSuggestionEstimate,
-    _$ChronicleSuggestionEstimate
+    _$ChronicleSuggestionEstimate,
   ];
 
   @override
@@ -77,8 +77,9 @@ class _$ChronicleSuggestionEstimateSerializer
       yield r'layers';
       yield serializers.serialize(
         object.layers,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ChronicleSuggestionEstimateLayersInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleSuggestionEstimateLayersInner),
+        ]),
       );
     }
   }
@@ -89,9 +90,11 @@ class _$ChronicleSuggestionEstimateSerializer
     ChronicleSuggestionEstimate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -107,27 +110,34 @@ class _$ChronicleSuggestionEstimateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalRowsPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.totalRowsPerDay = valueDes;
           break;
         case r'totalBytesPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.totalBytesPerDay = valueDes;
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ChronicleSuggestionEstimateLayersInner)]),
-          ) as BuiltList<ChronicleSuggestionEstimateLayersInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleSuggestionEstimateLayersInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleSuggestionEstimateLayersInner>?;
           if (valueDes == null) continue;
           result.layers.replace(valueDes);
           break;

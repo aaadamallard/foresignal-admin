@@ -22,8 +22,10 @@ part 'social_platform_settings_options.g.dart';
 @BuiltValue()
 abstract class SocialPlatformSettingsOptions
     implements
-        Built<SocialPlatformSettingsOptions,
-            SocialPlatformSettingsOptionsBuilder> {
+        Built<
+          SocialPlatformSettingsOptions,
+          SocialPlatformSettingsOptionsBuilder
+        > {
   /// Mastodon instance hosts
   @BuiltValueField(wireName: r'instances')
   BuiltList<String>? get instances;
@@ -55,9 +57,9 @@ abstract class SocialPlatformSettingsOptions
 
   SocialPlatformSettingsOptions._();
 
-  factory SocialPlatformSettingsOptions(
-          [void updates(SocialPlatformSettingsOptionsBuilder b)]) =
-      _$SocialPlatformSettingsOptions;
+  factory SocialPlatformSettingsOptions([
+    void updates(SocialPlatformSettingsOptionsBuilder b),
+  ]) = _$SocialPlatformSettingsOptions;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPlatformSettingsOptionsBuilder b) => b;
@@ -72,7 +74,7 @@ class _$SocialPlatformSettingsOptionsSerializer
   @override
   final Iterable<Type> types = const [
     SocialPlatformSettingsOptions,
-    _$SocialPlatformSettingsOptions
+    _$SocialPlatformSettingsOptions,
   ];
 
   @override
@@ -129,8 +131,9 @@ class _$SocialPlatformSettingsOptionsSerializer
       yield r'fieldsParam';
       yield serializers.serialize(
         object.fieldsParam,
-        specifiedType:
-            const FullType(SocialPlatformSettingsOptionsFieldsParamEnum),
+        specifiedType: const FullType(
+          SocialPlatformSettingsOptionsFieldsParamEnum,
+        ),
       );
     }
   }
@@ -141,9 +144,11 @@ class _$SocialPlatformSettingsOptionsSerializer
     SocialPlatformSettingsOptions object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -159,60 +164,76 @@ class _$SocialPlatformSettingsOptionsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'instances':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.instances.replace(valueDes);
           break;
         case r'replay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.replay = valueDes;
           break;
         case r'standingCounts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.standingCounts = valueDes;
           break;
         case r'fullArchive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.fullArchive = valueDes;
           break;
         case r'comments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.comments = valueDes;
           break;
         case r'maxResults':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxResults = valueDes;
           break;
         case r'fieldsParam':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                SocialPlatformSettingsOptionsFieldsParamEnum),
-          ) as SocialPlatformSettingsOptionsFieldsParamEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SocialPlatformSettingsOptionsFieldsParamEnum,
+                    ),
+                  )
+                  as SocialPlatformSettingsOptionsFieldsParamEnum?;
           if (valueDes == null) continue;
           result.fieldsParam = valueDes;
           break;
@@ -255,11 +276,10 @@ class SocialPlatformSettingsOptionsFieldsParamEnum extends EnumClass {
       _$socialPlatformSettingsOptionsFieldsParamEnum_tweet;
 
   static Serializer<SocialPlatformSettingsOptionsFieldsParamEnum>
-      get serializer =>
-          _$socialPlatformSettingsOptionsFieldsParamEnumSerializer;
+  get serializer => _$socialPlatformSettingsOptionsFieldsParamEnumSerializer;
 
   const SocialPlatformSettingsOptionsFieldsParamEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<SocialPlatformSettingsOptionsFieldsParamEnum> get values =>
       _$socialPlatformSettingsOptionsFieldsParamEnumValues;

@@ -22,9 +22,9 @@ abstract class NotificationActionParams
 
   NotificationActionParams._();
 
-  factory NotificationActionParams(
-          [void updates(NotificationActionParamsBuilder b)]) =
-      _$NotificationActionParams;
+  factory NotificationActionParams([
+    void updates(NotificationActionParamsBuilder b),
+  ]) = _$NotificationActionParams;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationActionParamsBuilder b) => b;
@@ -39,7 +39,7 @@ class _$NotificationActionParamsSerializer
   @override
   final Iterable<Type> types = const [
     NotificationActionParams,
-    _$NotificationActionParams
+    _$NotificationActionParams,
   ];
 
   @override
@@ -65,9 +65,11 @@ class _$NotificationActionParamsSerializer
     NotificationActionParams object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -83,10 +85,12 @@ class _$NotificationActionParamsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'duration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.duration = valueDes;
           break;

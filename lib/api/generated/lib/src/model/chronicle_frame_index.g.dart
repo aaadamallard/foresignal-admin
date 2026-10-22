@@ -22,23 +22,23 @@ class _$ChronicleFrameIndex extends ChronicleFrameIndex {
   @override
   final bool? truncated;
 
-  factory _$ChronicleFrameIndex(
-          [void Function(ChronicleFrameIndexBuilder)? updates]) =>
-      (ChronicleFrameIndexBuilder()..update(updates))._build();
+  factory _$ChronicleFrameIndex([
+    void Function(ChronicleFrameIndexBuilder)? updates,
+  ]) => (ChronicleFrameIndexBuilder()..update(updates))._build();
 
-  _$ChronicleFrameIndex._(
-      {required this.chronicleId,
-      required this.from,
-      required this.to,
-      required this.step,
-      this.layers,
-      required this.frames,
-      this.truncated})
-      : super._();
+  _$ChronicleFrameIndex._({
+    required this.chronicleId,
+    required this.from,
+    required this.to,
+    required this.step,
+    this.layers,
+    required this.frames,
+    this.truncated,
+  }) : super._();
   @override
   ChronicleFrameIndex rebuild(
-          void Function(ChronicleFrameIndexBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleFrameIndexBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleFrameIndexBuilder toBuilder() =>
@@ -154,16 +154,29 @@ class ChronicleFrameIndexBuilder
   _$ChronicleFrameIndex _build() {
     _$ChronicleFrameIndex _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleFrameIndex._(
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleFrameIndex', 'chronicleId'),
+              chronicleId,
+              r'ChronicleFrameIndex',
+              'chronicleId',
+            ),
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'ChronicleFrameIndex', 'from'),
+              from,
+              r'ChronicleFrameIndex',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, r'ChronicleFrameIndex', 'to'),
+              to,
+              r'ChronicleFrameIndex',
+              'to',
+            ),
             step: BuiltValueNullFieldError.checkNotNull(
-                step, r'ChronicleFrameIndex', 'step'),
+              step,
+              r'ChronicleFrameIndex',
+              'step',
+            ),
             layers: _layers?.build(),
             frames: frames.build(),
             truncated: truncated,
@@ -177,7 +190,10 @@ class ChronicleFrameIndexBuilder
         frames.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleFrameIndex', _$failedField, e.toString());
+          r'ChronicleFrameIndex',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

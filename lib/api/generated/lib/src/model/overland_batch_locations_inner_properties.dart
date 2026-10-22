@@ -25,8 +25,10 @@ part 'overland_batch_locations_inner_properties.g.dart';
 @BuiltValue()
 abstract class OverlandBatchLocationsInnerProperties
     implements
-        Built<OverlandBatchLocationsInnerProperties,
-            OverlandBatchLocationsInnerPropertiesBuilder> {
+        Built<
+          OverlandBatchLocationsInnerProperties,
+          OverlandBatchLocationsInnerPropertiesBuilder
+        > {
   @BuiltValueField(wireName: r'timestamp')
   DateTime? get timestamp;
 
@@ -61,9 +63,9 @@ abstract class OverlandBatchLocationsInnerProperties
 
   OverlandBatchLocationsInnerProperties._();
 
-  factory OverlandBatchLocationsInnerProperties(
-          [void updates(OverlandBatchLocationsInnerPropertiesBuilder b)]) =
-      _$OverlandBatchLocationsInnerProperties;
+  factory OverlandBatchLocationsInnerProperties([
+    void updates(OverlandBatchLocationsInnerPropertiesBuilder b),
+  ]) = _$OverlandBatchLocationsInnerProperties;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OverlandBatchLocationsInnerPropertiesBuilder b) => b;
@@ -78,7 +80,7 @@ class _$OverlandBatchLocationsInnerPropertiesSerializer
   @override
   final Iterable<Type> types = const [
     OverlandBatchLocationsInnerProperties,
-    _$OverlandBatchLocationsInnerProperties
+    _$OverlandBatchLocationsInnerProperties,
   ];
 
   @override
@@ -167,9 +169,11 @@ class _$OverlandBatchLocationsInnerPropertiesSerializer
     OverlandBatchLocationsInnerProperties object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -185,83 +189,104 @@ class _$OverlandBatchLocationsInnerPropertiesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'timestamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.timestamp = valueDes;
           break;
         case r'horizontal_accuracy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.horizontalAccuracy = valueDes;
           break;
         case r'altitude':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.altitude = valueDes;
           break;
         case r'speed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.speed = valueDes;
           break;
         case r'course':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.course = valueDes;
           break;
         case r'motion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.motion.replace(valueDes);
           break;
         case r'battery_level':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.batteryLevel = valueDes;
           break;
         case r'battery_state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.batteryState = valueDes;
           break;
         case r'wifi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.wifi = valueDes;
           break;
         case r'device_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.deviceId = valueDes;
           break;

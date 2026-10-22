@@ -22,8 +22,10 @@ part 'channel_interactive_status_chats_inner.g.dart';
 @BuiltValue()
 abstract class ChannelInteractiveStatusChatsInner
     implements
-        Built<ChannelInteractiveStatusChatsInner,
-            ChannelInteractiveStatusChatsInnerBuilder> {
+        Built<
+          ChannelInteractiveStatusChatsInner,
+          ChannelInteractiveStatusChatsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'chatId')
   String get chatId;
 
@@ -49,9 +51,9 @@ abstract class ChannelInteractiveStatusChatsInner
 
   ChannelInteractiveStatusChatsInner._();
 
-  factory ChannelInteractiveStatusChatsInner(
-          [void updates(ChannelInteractiveStatusChatsInnerBuilder b)]) =
-      _$ChannelInteractiveStatusChatsInner;
+  factory ChannelInteractiveStatusChatsInner([
+    void updates(ChannelInteractiveStatusChatsInnerBuilder b),
+  ]) = _$ChannelInteractiveStatusChatsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChannelInteractiveStatusChatsInnerBuilder b) => b;
@@ -66,7 +68,7 @@ class _$ChannelInteractiveStatusChatsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChannelInteractiveStatusChatsInner,
-    _$ChannelInteractiveStatusChatsInner
+    _$ChannelInteractiveStatusChatsInner,
   ];
 
   @override
@@ -92,8 +94,9 @@ class _$ChannelInteractiveStatusChatsInnerSerializer
     yield r'scope';
     yield serializers.serialize(
       object.scope,
-      specifiedType:
-          const FullType(ChannelInteractiveStatusChatsInnerScopeEnum),
+      specifiedType: const FullType(
+        ChannelInteractiveStatusChatsInnerScopeEnum,
+      ),
     );
     if (object.userIds != null) {
       yield r'userIds';
@@ -129,9 +132,11 @@ class _$ChannelInteractiveStatusChatsInnerSerializer
     ChannelInteractiveStatusChatsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -147,57 +152,73 @@ class _$ChannelInteractiveStatusChatsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'chatId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.chatId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(ChannelInteractiveStatusChatsInnerScopeEnum),
-          ) as ChannelInteractiveStatusChatsInnerScopeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChannelInteractiveStatusChatsInnerScopeEnum,
+                    ),
+                  )
+                  as ChannelInteractiveStatusChatsInnerScopeEnum;
           result.scope = valueDes;
           break;
         case r'userIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.userIds.replace(valueDes);
           break;
         case r'privateAccess':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.privateAccess = valueDes;
           break;
         case r'active':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.active = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;
@@ -239,10 +260,10 @@ class ChannelInteractiveStatusChatsInnerScopeEnum extends EnumClass {
       _$channelInteractiveStatusChatsInnerScopeEnum_agent;
 
   static Serializer<ChannelInteractiveStatusChatsInnerScopeEnum>
-      get serializer => _$channelInteractiveStatusChatsInnerScopeEnumSerializer;
+  get serializer => _$channelInteractiveStatusChatsInnerScopeEnumSerializer;
 
   const ChannelInteractiveStatusChatsInnerScopeEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ChannelInteractiveStatusChatsInnerScopeEnum> get values =>
       _$channelInteractiveStatusChatsInnerScopeEnumValues;

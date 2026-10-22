@@ -90,10 +90,14 @@ class PluginListBuilder implements Builder<PluginList, PluginListBuilder> {
   _$PluginList _build() {
     _$PluginList _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PluginList._(
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'PluginList', 'enabled'),
+              enabled,
+              r'PluginList',
+              'enabled',
+            ),
             plugins: plugins.build(),
           );
     } catch (_) {
@@ -103,7 +107,10 @@ class PluginListBuilder implements Builder<PluginList, PluginListBuilder> {
         plugins.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PluginList', _$failedField, e.toString());
+          r'PluginList',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

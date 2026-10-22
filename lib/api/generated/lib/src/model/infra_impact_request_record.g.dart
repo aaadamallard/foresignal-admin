@@ -12,17 +12,18 @@ class _$InfraImpactRequestRecord extends InfraImpactRequestRecord {
   @override
   final String externalId;
 
-  factory _$InfraImpactRequestRecord(
-          [void Function(InfraImpactRequestRecordBuilder)? updates]) =>
-      (InfraImpactRequestRecordBuilder()..update(updates))._build();
+  factory _$InfraImpactRequestRecord([
+    void Function(InfraImpactRequestRecordBuilder)? updates,
+  ]) => (InfraImpactRequestRecordBuilder()..update(updates))._build();
 
-  _$InfraImpactRequestRecord._(
-      {required this.sourceId, required this.externalId})
-      : super._();
+  _$InfraImpactRequestRecord._({
+    required this.sourceId,
+    required this.externalId,
+  }) : super._();
   @override
   InfraImpactRequestRecord rebuild(
-          void Function(InfraImpactRequestRecordBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InfraImpactRequestRecordBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InfraImpactRequestRecordBuilder toBuilder() =>
@@ -95,12 +96,19 @@ class InfraImpactRequestRecordBuilder
   InfraImpactRequestRecord build() => _build();
 
   _$InfraImpactRequestRecord _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$InfraImpactRequestRecord._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'InfraImpactRequestRecord', 'sourceId'),
+            sourceId,
+            r'InfraImpactRequestRecord',
+            'sourceId',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'InfraImpactRequestRecord', 'externalId'),
+            externalId,
+            r'InfraImpactRequestRecord',
+            'externalId',
+          ),
         );
     replace(_$result);
     return _$result;

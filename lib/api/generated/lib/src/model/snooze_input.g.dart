@@ -86,11 +86,7 @@ class SnoozeInputBuilder implements Builder<SnoozeInput, SnoozeInputBuilder> {
   SnoozeInput build() => _build();
 
   _$SnoozeInput _build() {
-    final _$result = _$v ??
-        _$SnoozeInput._(
-          until: until,
-          for_: for_,
-        );
+    final _$result = _$v ?? _$SnoozeInput._(until: until, for_: for_);
     replace(_$result);
     return _$result;
   }

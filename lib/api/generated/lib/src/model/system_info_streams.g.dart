@@ -18,17 +18,17 @@ class _$SystemInfoStreams extends SystemInfoStreams {
   @override
   final int? eventSubscribers;
 
-  factory _$SystemInfoStreams(
-          [void Function(SystemInfoStreamsBuilder)? updates]) =>
-      (SystemInfoStreamsBuilder()..update(updates))._build();
+  factory _$SystemInfoStreams([
+    void Function(SystemInfoStreamsBuilder)? updates,
+  ]) => (SystemInfoStreamsBuilder()..update(updates))._build();
 
-  _$SystemInfoStreams._(
-      {this.clients,
-      this.maxClients,
-      this.changeSubscribers,
-      this.alertSubscribers,
-      this.eventSubscribers})
-      : super._();
+  _$SystemInfoStreams._({
+    this.clients,
+    this.maxClients,
+    this.changeSubscribers,
+    this.alertSubscribers,
+    this.eventSubscribers,
+  }) : super._();
   @override
   SystemInfoStreams rebuild(void Function(SystemInfoStreamsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -130,7 +130,8 @@ class SystemInfoStreamsBuilder
   SystemInfoStreams build() => _build();
 
   _$SystemInfoStreams _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoStreams._(
           clients: clients,
           maxClients: maxClients,

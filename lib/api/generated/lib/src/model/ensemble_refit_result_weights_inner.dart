@@ -18,8 +18,10 @@ part 'ensemble_refit_result_weights_inner.g.dart';
 @BuiltValue()
 abstract class EnsembleRefitResultWeightsInner
     implements
-        Built<EnsembleRefitResultWeightsInner,
-            EnsembleRefitResultWeightsInnerBuilder> {
+        Built<
+          EnsembleRefitResultWeightsInner,
+          EnsembleRefitResultWeightsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'forecasterId')
   String get forecasterId;
 
@@ -34,9 +36,9 @@ abstract class EnsembleRefitResultWeightsInner
 
   EnsembleRefitResultWeightsInner._();
 
-  factory EnsembleRefitResultWeightsInner(
-          [void updates(EnsembleRefitResultWeightsInnerBuilder b)]) =
-      _$EnsembleRefitResultWeightsInner;
+  factory EnsembleRefitResultWeightsInner([
+    void updates(EnsembleRefitResultWeightsInnerBuilder b),
+  ]) = _$EnsembleRefitResultWeightsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EnsembleRefitResultWeightsInnerBuilder b) => b;
@@ -51,7 +53,7 @@ class _$EnsembleRefitResultWeightsInnerSerializer
   @override
   final Iterable<Type> types = const [
     EnsembleRefitResultWeightsInner,
-    _$EnsembleRefitResultWeightsInner
+    _$EnsembleRefitResultWeightsInner,
   ];
 
   @override
@@ -79,10 +81,7 @@ class _$EnsembleRefitResultWeightsInnerSerializer
     );
     if (object.n != null) {
       yield r'n';
-      yield serializers.serialize(
-        object.n,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.n, specifiedType: const FullType(int));
     }
   }
 
@@ -92,9 +91,11 @@ class _$EnsembleRefitResultWeightsInnerSerializer
     EnsembleRefitResultWeightsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,31 +111,36 @@ class _$EnsembleRefitResultWeightsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.forecasterId = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.category = valueDes;
           break;
         case r'weight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.weight = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n = valueDes;
           break;

@@ -16,20 +16,20 @@ class _$BaselineRebuildResult extends BaselineRebuildResult {
   @override
   final DateTime? backfillFrom;
 
-  factory _$BaselineRebuildResult(
-          [void Function(BaselineRebuildResultBuilder)? updates]) =>
-      (BaselineRebuildResultBuilder()..update(updates))._build();
+  factory _$BaselineRebuildResult([
+    void Function(BaselineRebuildResultBuilder)? updates,
+  ]) => (BaselineRebuildResultBuilder()..update(updates))._build();
 
-  _$BaselineRebuildResult._(
-      {required this.ruleId,
-      required this.accepted,
-      this.weeksAvailable,
-      this.backfillFrom})
-      : super._();
+  _$BaselineRebuildResult._({
+    required this.ruleId,
+    required this.accepted,
+    this.weeksAvailable,
+    this.backfillFrom,
+  }) : super._();
   @override
   BaselineRebuildResult rebuild(
-          void Function(BaselineRebuildResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BaselineRebuildResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BaselineRebuildResultBuilder toBuilder() =>
@@ -119,12 +119,19 @@ class BaselineRebuildResultBuilder
   BaselineRebuildResult build() => _build();
 
   _$BaselineRebuildResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$BaselineRebuildResult._(
           ruleId: BuiltValueNullFieldError.checkNotNull(
-              ruleId, r'BaselineRebuildResult', 'ruleId'),
+            ruleId,
+            r'BaselineRebuildResult',
+            'ruleId',
+          ),
           accepted: BuiltValueNullFieldError.checkNotNull(
-              accepted, r'BaselineRebuildResult', 'accepted'),
+            accepted,
+            r'BaselineRebuildResult',
+            'accepted',
+          ),
           weeksAvailable: weeksAvailable,
           backfillFrom: backfillFrom,
         );

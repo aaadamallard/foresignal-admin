@@ -18,21 +18,21 @@ class _$SituationEvidenceFamiliesInner extends SituationEvidenceFamiliesInner {
   @override
   final bool? more;
 
-  factory _$SituationEvidenceFamiliesInner(
-          [void Function(SituationEvidenceFamiliesInnerBuilder)? updates]) =>
-      (SituationEvidenceFamiliesInnerBuilder()..update(updates))._build();
+  factory _$SituationEvidenceFamiliesInner([
+    void Function(SituationEvidenceFamiliesInnerBuilder)? updates,
+  ]) => (SituationEvidenceFamiliesInnerBuilder()..update(updates))._build();
 
-  _$SituationEvidenceFamiliesInner._(
-      {required this.family,
-      required this.count,
-      this.coreCount,
-      required this.members,
-      this.more})
-      : super._();
+  _$SituationEvidenceFamiliesInner._({
+    required this.family,
+    required this.count,
+    this.coreCount,
+    required this.members,
+    this.more,
+  }) : super._();
   @override
   SituationEvidenceFamiliesInner rebuild(
-          void Function(SituationEvidenceFamiliesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationEvidenceFamiliesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationEvidenceFamiliesInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$SituationEvidenceFamiliesInner extends SituationEvidenceFamiliesInner {
 
 class SituationEvidenceFamiliesInnerBuilder
     implements
-        Builder<SituationEvidenceFamiliesInner,
-            SituationEvidenceFamiliesInnerBuilder> {
+        Builder<
+          SituationEvidenceFamiliesInner,
+          SituationEvidenceFamiliesInnerBuilder
+        > {
   _$SituationEvidenceFamiliesInner? _$v;
 
   String? _family;
@@ -134,12 +136,19 @@ class SituationEvidenceFamiliesInnerBuilder
   _$SituationEvidenceFamiliesInner _build() {
     _$SituationEvidenceFamiliesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationEvidenceFamiliesInner._(
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'SituationEvidenceFamiliesInner', 'family'),
+              family,
+              r'SituationEvidenceFamiliesInner',
+              'family',
+            ),
             count: BuiltValueNullFieldError.checkNotNull(
-                count, r'SituationEvidenceFamiliesInner', 'count'),
+              count,
+              r'SituationEvidenceFamiliesInner',
+              'count',
+            ),
             coreCount: coreCount,
             members: members.build(),
             more: more,
@@ -151,7 +160,10 @@ class SituationEvidenceFamiliesInnerBuilder
         members.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationEvidenceFamiliesInner', _$failedField, e.toString());
+          r'SituationEvidenceFamiliesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

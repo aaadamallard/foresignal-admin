@@ -51,16 +51,10 @@ class PatternOfLifeApi {
     final _path = r'/v1/pol/subjects';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -75,10 +69,7 @@ class PatternOfLifeApi {
       _bodyData = _serializers.serialize(polSubjectInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -101,9 +92,10 @@ class PatternOfLifeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PolSubject),
-            ) as PolSubject;
+                  rawResponse,
+                  specifiedType: const FullType(PolSubject),
+                )
+                as PolSubject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -150,21 +142,21 @@ class PatternOfLifeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/pol/subjects/{subjectId}'.replaceAll(
-        '{' r'subjectId' '}',
-        encodeQueryParameter(_serializers, subjectId, const FullType(String))
-            .toString());
+      '{'
+      r'subjectId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        subjectId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -210,21 +202,21 @@ class PatternOfLifeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/pol/subjects/{subjectId}/places'.replaceAll(
-        '{' r'subjectId' '}',
-        encodeQueryParameter(_serializers, subjectId, const FullType(String))
-            .toString());
+      '{'
+      r'subjectId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        subjectId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -233,11 +225,17 @@ class PatternOfLifeApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -256,9 +254,10 @@ class PatternOfLifeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PolPlacePage),
-            ) as PolPlacePage;
+                  rawResponse,
+                  specifiedType: const FullType(PolPlacePage),
+                )
+                as PolPlacePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -313,21 +312,21 @@ class PatternOfLifeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/pol/subjects/{subjectId}/stays'.replaceAll(
-        '{' r'subjectId' '}',
-        encodeQueryParameter(_serializers, subjectId, const FullType(String))
-            .toString());
+      '{'
+      r'subjectId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        subjectId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -336,16 +335,25 @@ class PatternOfLifeApi {
 
     final _queryParameters = <String, dynamic>{
       if (from != null)
-        r'from':
-            encodeQueryParameter(_serializers, from, const FullType(DateTime)),
+        r'from': encodeQueryParameter(
+          _serializers,
+          from,
+          const FullType(DateTime),
+        ),
       if (to != null)
         r'to': encodeQueryParameter(_serializers, to, const FullType(DateTime)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -364,9 +372,10 @@ class PatternOfLifeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PolStayPage),
-            ) as PolStayPage;
+                  rawResponse,
+                  specifiedType: const FullType(PolStayPage),
+                )
+                as PolStayPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -417,16 +426,10 @@ class PatternOfLifeApi {
     final _path = r'/v1/pol/subjects';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -435,11 +438,17 @@ class PatternOfLifeApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -458,9 +467,10 @@ class PatternOfLifeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PolSubjectPage),
-            ) as PolSubjectPage;
+                  rawResponse,
+                  specifiedType: const FullType(PolSubjectPage),
+                )
+                as PolSubjectPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -507,21 +517,21 @@ class PatternOfLifeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/pol/subjects/{subjectId}/recompute'.replaceAll(
-        '{' r'subjectId' '}',
-        encodeQueryParameter(_serializers, subjectId, const FullType(String))
-            .toString());
+      '{'
+      r'subjectId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        subjectId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -543,9 +553,10 @@ class PatternOfLifeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PolSubject),
-            ) as PolSubject;
+                  rawResponse,
+                  specifiedType: const FullType(PolSubject),
+                )
+                as PolSubject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -594,21 +605,21 @@ class PatternOfLifeApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/pol/places/{placeId}'.replaceAll(
-        '{' r'placeId' '}',
-        encodeQueryParameter(_serializers, placeId, const FullType(String))
-            .toString());
+      '{'
+      r'placeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        placeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -623,10 +634,7 @@ class PatternOfLifeApi {
       _bodyData = _serializers.serialize(polPlaceInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -649,9 +657,10 @@ class PatternOfLifeApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PolPlace),
-            ) as PolPlace;
+                  rawResponse,
+                  specifiedType: const FullType(PolPlace),
+                )
+                as PolPlace;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

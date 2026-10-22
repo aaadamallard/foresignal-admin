@@ -16,7 +16,8 @@ const NotificationMessageEventEnum _$notificationMessageEventEnum_test =
     const NotificationMessageEventEnum._('test');
 
 NotificationMessageEventEnum _$notificationMessageEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'alert':
       return _$notificationMessageEventEnum_alert;
@@ -32,25 +33,26 @@ NotificationMessageEventEnum _$notificationMessageEventEnumValueOf(
 }
 
 final BuiltSet<NotificationMessageEventEnum>
-    _$notificationMessageEventEnumValues =
+_$notificationMessageEventEnumValues =
     BuiltSet<NotificationMessageEventEnum>(const <NotificationMessageEventEnum>[
-  _$notificationMessageEventEnum_alert,
-  _$notificationMessageEventEnum_briefing,
-  _$notificationMessageEventEnum_system,
-  _$notificationMessageEventEnum_test,
-]);
+      _$notificationMessageEventEnum_alert,
+      _$notificationMessageEventEnum_briefing,
+      _$notificationMessageEventEnum_system,
+      _$notificationMessageEventEnum_test,
+    ]);
 
 const NotificationMessageSeverityEnum _$notificationMessageSeverityEnum_info =
     const NotificationMessageSeverityEnum._('info');
 const NotificationMessageSeverityEnum
-    _$notificationMessageSeverityEnum_warning =
+_$notificationMessageSeverityEnum_warning =
     const NotificationMessageSeverityEnum._('warning');
 const NotificationMessageSeverityEnum
-    _$notificationMessageSeverityEnum_critical =
+_$notificationMessageSeverityEnum_critical =
     const NotificationMessageSeverityEnum._('critical');
 
 NotificationMessageSeverityEnum _$notificationMessageSeverityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'info':
       return _$notificationMessageSeverityEnum_info;
@@ -64,18 +66,20 @@ NotificationMessageSeverityEnum _$notificationMessageSeverityEnumValueOf(
 }
 
 final BuiltSet<NotificationMessageSeverityEnum>
-    _$notificationMessageSeverityEnumValues = BuiltSet<
-        NotificationMessageSeverityEnum>(const <NotificationMessageSeverityEnum>[
-  _$notificationMessageSeverityEnum_info,
-  _$notificationMessageSeverityEnum_warning,
-  _$notificationMessageSeverityEnum_critical,
-]);
+_$notificationMessageSeverityEnumValues =
+    BuiltSet<NotificationMessageSeverityEnum>(
+      const <NotificationMessageSeverityEnum>[
+        _$notificationMessageSeverityEnum_info,
+        _$notificationMessageSeverityEnum_warning,
+        _$notificationMessageSeverityEnum_critical,
+      ],
+    );
 
 Serializer<NotificationMessageEventEnum>
-    _$notificationMessageEventEnumSerializer =
+_$notificationMessageEventEnumSerializer =
     _$NotificationMessageEventEnumSerializer();
 Serializer<NotificationMessageSeverityEnum>
-    _$notificationMessageSeverityEnumSerializer =
+_$notificationMessageSeverityEnumSerializer =
     _$NotificationMessageSeverityEnumSerializer();
 
 class _$NotificationMessageEventEnumSerializer
@@ -99,16 +103,20 @@ class _$NotificationMessageEventEnumSerializer
   final String wireName = 'NotificationMessageEventEnum';
 
   @override
-  Object serialize(Serializers serializers, NotificationMessageEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationMessageEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationMessageEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationMessageEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationMessageEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationMessageSeverityEnumSerializer
@@ -131,16 +139,19 @@ class _$NotificationMessageSeverityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, NotificationMessageSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NotificationMessageSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationMessageSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationMessageSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationMessageSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationMessage extends NotificationMessage {
@@ -177,32 +188,32 @@ class _$NotificationMessage extends NotificationMessage {
   @override
   final bool? exercise;
 
-  factory _$NotificationMessage(
-          [void Function(NotificationMessageBuilder)? updates]) =>
-      (NotificationMessageBuilder()..update(updates))._build();
+  factory _$NotificationMessage([
+    void Function(NotificationMessageBuilder)? updates,
+  ]) => (NotificationMessageBuilder()..update(updates))._build();
 
-  _$NotificationMessage._(
-      {required this.id,
-      required this.event,
-      required this.subtype,
-      required this.title,
-      this.shortTitle,
-      this.bodyMarkdown,
-      required this.severity,
-      this.url,
-      this.links,
-      this.data,
-      this.tags,
-      this.attachments,
-      this.updateOf,
-      this.origin,
-      this.createdAt,
-      this.exercise})
-      : super._();
+  _$NotificationMessage._({
+    required this.id,
+    required this.event,
+    required this.subtype,
+    required this.title,
+    this.shortTitle,
+    this.bodyMarkdown,
+    required this.severity,
+    this.url,
+    this.links,
+    this.data,
+    this.tags,
+    this.attachments,
+    this.updateOf,
+    this.origin,
+    this.createdAt,
+    this.exercise,
+  }) : super._();
   @override
   NotificationMessage rebuild(
-          void Function(NotificationMessageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationMessageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationMessageBuilder toBuilder() =>
@@ -393,20 +404,36 @@ class NotificationMessageBuilder
   _$NotificationMessage _build() {
     _$NotificationMessage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NotificationMessage._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'NotificationMessage', 'id'),
+              id,
+              r'NotificationMessage',
+              'id',
+            ),
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'NotificationMessage', 'event'),
+              event,
+              r'NotificationMessage',
+              'event',
+            ),
             subtype: BuiltValueNullFieldError.checkNotNull(
-                subtype, r'NotificationMessage', 'subtype'),
+              subtype,
+              r'NotificationMessage',
+              'subtype',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'NotificationMessage', 'title'),
+              title,
+              r'NotificationMessage',
+              'title',
+            ),
             shortTitle: shortTitle,
             bodyMarkdown: bodyMarkdown,
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'NotificationMessage', 'severity'),
+              severity,
+              r'NotificationMessage',
+              'severity',
+            ),
             url: url,
             links: _links?.build(),
             data: _data?.build(),
@@ -430,7 +457,10 @@ class NotificationMessageBuilder
         _attachments?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationMessage', _$failedField, e.toString());
+          r'NotificationMessage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

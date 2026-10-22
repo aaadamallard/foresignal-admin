@@ -52,21 +52,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}/items'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -78,14 +78,13 @@ class WatchlistsApi {
 
     try {
       const _type = FullType(WatchlistItemsInput);
-      _bodyData =
-          _serializers.serialize(watchlistItemsInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        watchlistItemsInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -108,9 +107,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WatchlistImportResult),
-            ) as WatchlistImportResult;
+                  rawResponse,
+                  specifiedType: const FullType(WatchlistImportResult),
+                )
+                as WatchlistImportResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -159,16 +159,10 @@ class WatchlistsApi {
     final _path = r'/v1/watchlists';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -183,10 +177,7 @@ class WatchlistsApi {
       _bodyData = _serializers.serialize(watchlistInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -209,9 +200,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Watchlist),
-            ) as Watchlist;
+                  rawResponse,
+                  specifiedType: const FullType(Watchlist),
+                )
+                as Watchlist;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -258,21 +250,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -314,21 +306,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}/export'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -394,21 +386,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -430,9 +422,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Watchlist),
-            ) as Watchlist;
+                  rawResponse,
+                  specifiedType: const FullType(Watchlist),
+                )
+                as Watchlist;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -485,21 +478,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}/import'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -509,11 +502,17 @@ class WatchlistsApi {
 
     final _queryParameters = <String, dynamic>{
       if (mode != null)
-        r'mode':
-            encodeQueryParameter(_serializers, mode, const FullType(String)),
+        r'mode': encodeQueryParameter(
+          _serializers,
+          mode,
+          const FullType(String),
+        ),
       if (dryRun != null)
-        r'dryRun':
-            encodeQueryParameter(_serializers, dryRun, const FullType(bool)),
+        r'dryRun': encodeQueryParameter(
+          _serializers,
+          dryRun,
+          const FullType(bool),
+        ),
     };
 
     dynamic _bodyData;
@@ -550,9 +549,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WatchlistImportResult),
-            ) as WatchlistImportResult;
+                  rawResponse,
+                  specifiedType: const FullType(WatchlistImportResult),
+                )
+                as WatchlistImportResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -605,21 +605,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}/items'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -630,11 +630,17 @@ class WatchlistsApi {
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -653,9 +659,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WatchlistItemPage),
-            ) as WatchlistItemPage;
+                  rawResponse,
+                  specifiedType: const FullType(WatchlistItemPage),
+                )
+                as WatchlistItemPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -706,16 +713,10 @@ class WatchlistsApi {
     final _path = r'/v1/watchlists';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -724,11 +725,17 @@ class WatchlistsApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -747,9 +754,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WatchlistPage),
-            ) as WatchlistPage;
+                  rawResponse,
+                  specifiedType: const FullType(WatchlistPage),
+                )
+                as WatchlistPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -798,21 +806,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}/items'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -844,9 +852,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(WatchlistImportResult),
-            ) as WatchlistImportResult;
+                  rawResponse,
+                  specifiedType: const FullType(WatchlistImportResult),
+                )
+                as WatchlistImportResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -895,21 +904,21 @@ class WatchlistsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/watchlists/{watchlistId}'.replaceAll(
-        '{' r'watchlistId' '}',
-        encodeQueryParameter(_serializers, watchlistId, const FullType(String))
-            .toString());
+      '{'
+      r'watchlistId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        watchlistId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -924,10 +933,7 @@ class WatchlistsApi {
       _bodyData = _serializers.serialize(watchlistInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -950,9 +956,10 @@ class WatchlistsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Watchlist),
-            ) as Watchlist;
+                  rawResponse,
+                  specifiedType: const FullType(Watchlist),
+                )
+                as Watchlist;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

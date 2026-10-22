@@ -17,8 +17,10 @@ part 'correlation_recipe_definition_activate_at.g.dart';
 @BuiltValue()
 abstract class CorrelationRecipeDefinitionActivateAt
     implements
-        Built<CorrelationRecipeDefinitionActivateAt,
-            CorrelationRecipeDefinitionActivateAtBuilder> {
+        Built<
+          CorrelationRecipeDefinitionActivateAt,
+          CorrelationRecipeDefinitionActivateAtBuilder
+        > {
   @BuiltValueField(wireName: r'members')
   int? get members;
 
@@ -31,9 +33,9 @@ abstract class CorrelationRecipeDefinitionActivateAt
 
   CorrelationRecipeDefinitionActivateAt._();
 
-  factory CorrelationRecipeDefinitionActivateAt(
-          [void updates(CorrelationRecipeDefinitionActivateAtBuilder b)]) =
-      _$CorrelationRecipeDefinitionActivateAt;
+  factory CorrelationRecipeDefinitionActivateAt([
+    void updates(CorrelationRecipeDefinitionActivateAtBuilder b),
+  ]) = _$CorrelationRecipeDefinitionActivateAt;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CorrelationRecipeDefinitionActivateAtBuilder b) => b;
@@ -48,7 +50,7 @@ class _$CorrelationRecipeDefinitionActivateAtSerializer
   @override
   final Iterable<Type> types = const [
     CorrelationRecipeDefinitionActivateAt,
-    _$CorrelationRecipeDefinitionActivateAt
+    _$CorrelationRecipeDefinitionActivateAt,
   ];
 
   @override
@@ -88,9 +90,11 @@ class _$CorrelationRecipeDefinitionActivateAtSerializer
     CorrelationRecipeDefinitionActivateAt object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -106,26 +110,32 @@ class _$CorrelationRecipeDefinitionActivateAtSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.members = valueDes;
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'modalities':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.modalities = valueDes;
           break;

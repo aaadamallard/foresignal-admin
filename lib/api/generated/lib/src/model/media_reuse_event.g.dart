@@ -20,8 +20,8 @@ MediaReuseEventEventEnum _$mediaReuseEventEventEnumValueOf(String name) {
 
 final BuiltSet<MediaReuseEventEventEnum> _$mediaReuseEventEventEnumValues =
     BuiltSet<MediaReuseEventEventEnum>(const <MediaReuseEventEventEnum>[
-  _$mediaReuseEventEventEnum_mediaPeriodReuse,
-]);
+      _$mediaReuseEventEventEnum_mediaPeriodReuse,
+    ]);
 
 const MediaReuseEventReasonEnum _$mediaReuseEventReasonEnum_earlier =
     const MediaReuseEventReasonEnum._('earlier');
@@ -41,9 +41,9 @@ MediaReuseEventReasonEnum _$mediaReuseEventReasonEnumValueOf(String name) {
 
 final BuiltSet<MediaReuseEventReasonEnum> _$mediaReuseEventReasonEnumValues =
     BuiltSet<MediaReuseEventReasonEnum>(const <MediaReuseEventReasonEnum>[
-  _$mediaReuseEventReasonEnum_earlier,
-  _$mediaReuseEventReasonEnum_elsewhere,
-]);
+      _$mediaReuseEventReasonEnum_earlier,
+      _$mediaReuseEventReasonEnum_elsewhere,
+    ]);
 
 Serializer<MediaReuseEventEventEnum> _$mediaReuseEventEventEnumSerializer =
     _$MediaReuseEventEventEnumSerializer();
@@ -65,16 +65,20 @@ class _$MediaReuseEventEventEnumSerializer
   final String wireName = 'MediaReuseEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaReuseEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaReuseEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MediaReuseEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaReuseEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaReuseEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaReuseEventReasonEnumSerializer
@@ -94,16 +98,20 @@ class _$MediaReuseEventReasonEnumSerializer
   final String wireName = 'MediaReuseEventReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaReuseEventReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaReuseEventReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MediaReuseEventReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaReuseEventReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaReuseEventReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaReuseEvent extends MediaReuseEvent {
@@ -127,16 +135,16 @@ class _$MediaReuseEvent extends MediaReuseEvent {
   factory _$MediaReuseEvent([void Function(MediaReuseEventBuilder)? updates]) =>
       (MediaReuseEventBuilder()..update(updates))._build();
 
-  _$MediaReuseEvent._(
-      {required this.event,
-      required this.findingId,
-      required this.fingerprintId,
-      required this.narrativeId,
-      this.earlierNarrativeId,
-      required this.firstSeenAt,
-      required this.reason,
-      required this.at})
-      : super._();
+  _$MediaReuseEvent._({
+    required this.event,
+    required this.findingId,
+    required this.fingerprintId,
+    required this.narrativeId,
+    this.earlierNarrativeId,
+    required this.firstSeenAt,
+    required this.reason,
+    required this.at,
+  }) : super._();
   @override
   MediaReuseEvent rebuild(void Function(MediaReuseEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -260,23 +268,45 @@ class MediaReuseEventBuilder
   MediaReuseEvent build() => _build();
 
   _$MediaReuseEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaReuseEvent._(
           event: BuiltValueNullFieldError.checkNotNull(
-              event, r'MediaReuseEvent', 'event'),
+            event,
+            r'MediaReuseEvent',
+            'event',
+          ),
           findingId: BuiltValueNullFieldError.checkNotNull(
-              findingId, r'MediaReuseEvent', 'findingId'),
+            findingId,
+            r'MediaReuseEvent',
+            'findingId',
+          ),
           fingerprintId: BuiltValueNullFieldError.checkNotNull(
-              fingerprintId, r'MediaReuseEvent', 'fingerprintId'),
+            fingerprintId,
+            r'MediaReuseEvent',
+            'fingerprintId',
+          ),
           narrativeId: BuiltValueNullFieldError.checkNotNull(
-              narrativeId, r'MediaReuseEvent', 'narrativeId'),
+            narrativeId,
+            r'MediaReuseEvent',
+            'narrativeId',
+          ),
           earlierNarrativeId: earlierNarrativeId,
           firstSeenAt: BuiltValueNullFieldError.checkNotNull(
-              firstSeenAt, r'MediaReuseEvent', 'firstSeenAt'),
+            firstSeenAt,
+            r'MediaReuseEvent',
+            'firstSeenAt',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'MediaReuseEvent', 'reason'),
+            reason,
+            r'MediaReuseEvent',
+            'reason',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'MediaReuseEvent', 'at'),
+            at,
+            r'MediaReuseEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

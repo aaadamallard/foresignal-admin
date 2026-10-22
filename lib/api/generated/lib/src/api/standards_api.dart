@@ -53,16 +53,10 @@ class StandardsApi {
     final _path = r'/v1/export/stix';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -78,8 +72,11 @@ class StandardsApi {
           format: ListFormat.multi,
         ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -98,9 +95,10 @@ class StandardsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StixBundle),
-            ) as StixBundle;
+                  rawResponse,
+                  specifiedType: const FullType(StixBundle),
+                )
+                as StixBundle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -147,16 +145,10 @@ class StandardsApi {
     final _path = r'/fdsnws/event/1/version';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -222,16 +214,10 @@ class StandardsApi {
     final _path = r'/fdsnws/event/1/application.wadl';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -297,16 +283,10 @@ class StandardsApi {
     final _path = r'/taxii2/foresignal/';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -328,9 +308,10 @@ class StandardsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TaxiiApiRoot),
-            ) as TaxiiApiRoot;
+                  rawResponse,
+                  specifiedType: const FullType(TaxiiApiRoot),
+                )
+                as TaxiiApiRoot;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -377,21 +358,21 @@ class StandardsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/taxii2/foresignal/collections/{collectionId}/'.replaceAll(
-        '{' r'collectionId' '}',
-        encodeQueryParameter(_serializers, collectionId, const FullType(String))
-            .toString());
+      '{'
+      r'collectionId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        collectionId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -413,9 +394,10 @@ class StandardsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TaxiiCollection),
-            ) as TaxiiCollection;
+                  rawResponse,
+                  specifiedType: const FullType(TaxiiCollection),
+                )
+                as TaxiiCollection;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -469,22 +451,21 @@ class StandardsApi {
   }) async {
     final _path = r'/taxii2/foresignal/collections/{collectionId}/objects/'
         .replaceAll(
-            '{' r'collectionId' '}',
-            encodeQueryParameter(
-                    _serializers, collectionId, const FullType(String))
-                .toString());
+          '{'
+          r'collectionId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            collectionId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -494,13 +475,22 @@ class StandardsApi {
     final _queryParameters = <String, dynamic>{
       if (addedAfter != null)
         r'added_after': encodeQueryParameter(
-            _serializers, addedAfter, const FullType(DateTime)),
+          _serializers,
+          addedAfter,
+          const FullType(DateTime),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (next != null)
-        r'next':
-            encodeQueryParameter(_serializers, next, const FullType(String)),
+        r'next': encodeQueryParameter(
+          _serializers,
+          next,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -519,9 +509,10 @@ class StandardsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TaxiiEnvelope),
-            ) as TaxiiEnvelope;
+                  rawResponse,
+                  specifiedType: const FullType(TaxiiEnvelope),
+                )
+                as TaxiiEnvelope;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -568,16 +559,10 @@ class StandardsApi {
     final _path = r'/taxii2/';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -599,9 +584,10 @@ class StandardsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TaxiiDiscovery),
-            ) as TaxiiDiscovery;
+                  rawResponse,
+                  specifiedType: const FullType(TaxiiDiscovery),
+                )
+                as TaxiiDiscovery;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -648,16 +634,10 @@ class StandardsApi {
     final _path = r'/taxii2/foresignal/collections/';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -679,9 +659,10 @@ class StandardsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TaxiiCollections),
-            ) as TaxiiCollections;
+                  rawResponse,
+                  specifiedType: const FullType(TaxiiCollections),
+                )
+                as TaxiiCollections;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -760,16 +741,10 @@ class StandardsApi {
     final _path = r'/fdsnws/event/1/query';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -779,52 +754,100 @@ class StandardsApi {
     final _queryParameters = <String, dynamic>{
       if (starttime != null)
         r'starttime': encodeQueryParameter(
-            _serializers, starttime, const FullType(DateTime)),
+          _serializers,
+          starttime,
+          const FullType(DateTime),
+        ),
       if (endtime != null)
         r'endtime': encodeQueryParameter(
-            _serializers, endtime, const FullType(DateTime)),
+          _serializers,
+          endtime,
+          const FullType(DateTime),
+        ),
       if (minlatitude != null)
         r'minlatitude': encodeQueryParameter(
-            _serializers, minlatitude, const FullType(num)),
+          _serializers,
+          minlatitude,
+          const FullType(num),
+        ),
       if (maxlatitude != null)
         r'maxlatitude': encodeQueryParameter(
-            _serializers, maxlatitude, const FullType(num)),
+          _serializers,
+          maxlatitude,
+          const FullType(num),
+        ),
       if (minlongitude != null)
         r'minlongitude': encodeQueryParameter(
-            _serializers, minlongitude, const FullType(num)),
+          _serializers,
+          minlongitude,
+          const FullType(num),
+        ),
       if (maxlongitude != null)
         r'maxlongitude': encodeQueryParameter(
-            _serializers, maxlongitude, const FullType(num)),
+          _serializers,
+          maxlongitude,
+          const FullType(num),
+        ),
       if (latitude != null)
-        r'latitude':
-            encodeQueryParameter(_serializers, latitude, const FullType(num)),
+        r'latitude': encodeQueryParameter(
+          _serializers,
+          latitude,
+          const FullType(num),
+        ),
       if (longitude != null)
-        r'longitude':
-            encodeQueryParameter(_serializers, longitude, const FullType(num)),
+        r'longitude': encodeQueryParameter(
+          _serializers,
+          longitude,
+          const FullType(num),
+        ),
       if (minradius != null)
-        r'minradius':
-            encodeQueryParameter(_serializers, minradius, const FullType(num)),
+        r'minradius': encodeQueryParameter(
+          _serializers,
+          minradius,
+          const FullType(num),
+        ),
       if (maxradius != null)
-        r'maxradius':
-            encodeQueryParameter(_serializers, maxradius, const FullType(num)),
+        r'maxradius': encodeQueryParameter(
+          _serializers,
+          maxradius,
+          const FullType(num),
+        ),
       if (minmagnitude != null)
         r'minmagnitude': encodeQueryParameter(
-            _serializers, minmagnitude, const FullType(num)),
+          _serializers,
+          minmagnitude,
+          const FullType(num),
+        ),
       if (maxmagnitude != null)
         r'maxmagnitude': encodeQueryParameter(
-            _serializers, maxmagnitude, const FullType(num)),
+          _serializers,
+          maxmagnitude,
+          const FullType(num),
+        ),
       if (orderby != null)
-        r'orderby':
-            encodeQueryParameter(_serializers, orderby, const FullType(String)),
+        r'orderby': encodeQueryParameter(
+          _serializers,
+          orderby,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (nodata != null)
-        r'nodata':
-            encodeQueryParameter(_serializers, nodata, const FullType(int)),
+        r'nodata': encodeQueryParameter(
+          _serializers,
+          nodata,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(

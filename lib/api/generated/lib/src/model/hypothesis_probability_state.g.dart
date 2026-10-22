@@ -18,21 +18,21 @@ class _$HypothesisProbabilityState extends HypothesisProbabilityState {
   @override
   final ConfidenceLevel? confidence;
 
-  factory _$HypothesisProbabilityState(
-          [void Function(HypothesisProbabilityStateBuilder)? updates]) =>
-      (HypothesisProbabilityStateBuilder()..update(updates))._build();
+  factory _$HypothesisProbabilityState([
+    void Function(HypothesisProbabilityStateBuilder)? updates,
+  ]) => (HypothesisProbabilityStateBuilder()..update(updates))._build();
 
-  _$HypothesisProbabilityState._(
-      {required this.hypothesisId,
-      this.label,
-      required this.probability,
-      required this.estimativeTerm,
-      this.confidence})
-      : super._();
+  _$HypothesisProbabilityState._({
+    required this.hypothesisId,
+    this.label,
+    required this.probability,
+    required this.estimativeTerm,
+    this.confidence,
+  }) : super._();
   @override
   HypothesisProbabilityState rebuild(
-          void Function(HypothesisProbabilityStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisProbabilityStateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisProbabilityStateBuilder toBuilder() =>
@@ -131,15 +131,25 @@ class HypothesisProbabilityStateBuilder
   HypothesisProbabilityState build() => _build();
 
   _$HypothesisProbabilityState _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisProbabilityState._(
           hypothesisId: BuiltValueNullFieldError.checkNotNull(
-              hypothesisId, r'HypothesisProbabilityState', 'hypothesisId'),
+            hypothesisId,
+            r'HypothesisProbabilityState',
+            'hypothesisId',
+          ),
           label: label,
           probability: BuiltValueNullFieldError.checkNotNull(
-              probability, r'HypothesisProbabilityState', 'probability'),
+            probability,
+            r'HypothesisProbabilityState',
+            'probability',
+          ),
           estimativeTerm: BuiltValueNullFieldError.checkNotNull(
-              estimativeTerm, r'HypothesisProbabilityState', 'estimativeTerm'),
+            estimativeTerm,
+            r'HypothesisProbabilityState',
+            'estimativeTerm',
+          ),
           confidence: confidence,
         );
     replace(_$result);

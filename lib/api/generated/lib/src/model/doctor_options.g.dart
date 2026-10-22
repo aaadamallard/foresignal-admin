@@ -28,10 +28,10 @@ DoctorOptionsLlmEnum _$doctorOptionsLlmEnumValueOf(String name) {
 
 final BuiltSet<DoctorOptionsLlmEnum> _$doctorOptionsLlmEnumValues =
     BuiltSet<DoctorOptionsLlmEnum>(const <DoctorOptionsLlmEnum>[
-  _$doctorOptionsLlmEnum_auto,
-  _$doctorOptionsLlmEnum_on_,
-  _$doctorOptionsLlmEnum_off,
-]);
+      _$doctorOptionsLlmEnum_auto,
+      _$doctorOptionsLlmEnum_on_,
+      _$doctorOptionsLlmEnum_off,
+    ]);
 
 const DoctorOptionsDetailEnum _$doctorOptionsDetailEnum_compact =
     const DoctorOptionsDetailEnum._('compact');
@@ -51,9 +51,9 @@ DoctorOptionsDetailEnum _$doctorOptionsDetailEnumValueOf(String name) {
 
 final BuiltSet<DoctorOptionsDetailEnum> _$doctorOptionsDetailEnumValues =
     BuiltSet<DoctorOptionsDetailEnum>(const <DoctorOptionsDetailEnum>[
-  _$doctorOptionsDetailEnum_compact,
-  _$doctorOptionsDetailEnum_full,
-]);
+      _$doctorOptionsDetailEnum_compact,
+      _$doctorOptionsDetailEnum_full,
+    ]);
 
 Serializer<DoctorOptionsLlmEnum> _$doctorOptionsLlmEnumSerializer =
     _$DoctorOptionsLlmEnumSerializer();
@@ -79,15 +79,20 @@ class _$DoctorOptionsLlmEnumSerializer
   final String wireName = 'DoctorOptionsLlmEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorOptionsLlmEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorOptionsLlmEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  DoctorOptionsLlmEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorOptionsLlmEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  DoctorOptionsLlmEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorOptionsLlmEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorOptionsDetailEnumSerializer
@@ -107,16 +112,20 @@ class _$DoctorOptionsDetailEnumSerializer
   final String wireName = 'DoctorOptionsDetailEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorOptionsDetailEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorOptionsDetailEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DoctorOptionsDetailEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorOptionsDetailEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorOptionsDetailEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorOptions extends DoctorOptions {
@@ -212,12 +221,8 @@ class DoctorOptionsBuilder
   DoctorOptions build() => _build();
 
   _$DoctorOptions _build() {
-    final _$result = _$v ??
-        _$DoctorOptions._(
-          probe: probe,
-          llm: llm,
-          detail: detail,
-        );
+    final _$result =
+        _$v ?? _$DoctorOptions._(probe: probe, llm: llm, detail: detail);
     replace(_$result);
     return _$result;
   }

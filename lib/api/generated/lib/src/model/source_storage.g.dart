@@ -27,16 +27,16 @@ class _$SourceStorage extends SourceStorage {
   factory _$SourceStorage([void Function(SourceStorageBuilder)? updates]) =>
       (SourceStorageBuilder()..update(updates))._build();
 
-  _$SourceStorage._(
-      {this.observationsPerMinute,
-      this.versionsPerMinute,
-      this.persistRatio,
-      this.triggerEdgeShare,
-      this.bytesPerDay,
-      this.projectedBytes,
-      this.lateLastHour,
-      this.clampedLastHour})
-      : super._();
+  _$SourceStorage._({
+    this.observationsPerMinute,
+    this.versionsPerMinute,
+    this.persistRatio,
+    this.triggerEdgeShare,
+    this.bytesPerDay,
+    this.projectedBytes,
+    this.lateLastHour,
+    this.clampedLastHour,
+  }) : super._();
   @override
   SourceStorage rebuild(void Function(SourceStorageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -163,7 +163,8 @@ class SourceStorageBuilder
   SourceStorage build() => _build();
 
   _$SourceStorage _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SourceStorage._(
           observationsPerMinute: observationsPerMinute,
           versionsPerMinute: versionsPerMinute,

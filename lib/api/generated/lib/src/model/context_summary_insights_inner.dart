@@ -65,9 +65,9 @@ abstract class ContextSummaryInsightsInner
 
   ContextSummaryInsightsInner._();
 
-  factory ContextSummaryInsightsInner(
-          [void updates(ContextSummaryInsightsInnerBuilder b)]) =
-      _$ContextSummaryInsightsInner;
+  factory ContextSummaryInsightsInner([
+    void updates(ContextSummaryInsightsInnerBuilder b),
+  ]) = _$ContextSummaryInsightsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ContextSummaryInsightsInnerBuilder b) => b;
@@ -82,7 +82,7 @@ class _$ContextSummaryInsightsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ContextSummaryInsightsInner,
-    _$ContextSummaryInsightsInner
+    _$ContextSummaryInsightsInner,
   ];
 
   @override
@@ -154,8 +154,9 @@ class _$ContextSummaryInsightsInnerSerializer
       yield r'textOrigin';
       yield serializers.serialize(
         object.textOrigin,
-        specifiedType:
-            const FullType(ContextSummaryInsightsInnerTextOriginEnum),
+        specifiedType: const FullType(
+          ContextSummaryInsightsInnerTextOriginEnum,
+        ),
       );
     }
   }
@@ -166,9 +167,11 @@ class _$ContextSummaryInsightsInnerSerializer
     ContextSummaryInsightsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -184,80 +187,103 @@ class _$ContextSummaryInsightsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ContextSummaryInsightsInnerKindEnum),
-          ) as ContextSummaryInsightsInnerKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ContextSummaryInsightsInnerKindEnum,
+                    ),
+                  )
+                  as ContextSummaryInsightsInnerKindEnum;
           result.kind = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.probability = valueDes;
           break;
         case r'estimativeTerm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(IcdTerm),
-          ) as IcdTerm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(IcdTerm),
+                  )
+                  as IcdTerm?;
           if (valueDes == null) continue;
           result.estimativeTerm = valueDes;
           break;
         case r'issuer':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.issuer = valueDes;
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.baseRate = valueDes;
           break;
         case r'knowledgeCutoff':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.knowledgeCutoff = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.at = valueDes;
           break;
         case r'textOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                ContextSummaryInsightsInnerTextOriginEnum),
-          ) as ContextSummaryInsightsInnerTextOriginEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ContextSummaryInsightsInnerTextOriginEnum,
+                    ),
+                  )
+                  as ContextSummaryInsightsInnerTextOriginEnum?;
           if (valueDes == null) continue;
           result.textOrigin = valueDes;
           break;

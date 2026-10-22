@@ -7,7 +7,7 @@ part of 'series_forecast_model.dart';
 // **************************************************************************
 
 const SeriesForecastModelMethodEnum
-    _$seriesForecastModelMethodEnum_seasonalNaive =
+_$seriesForecastModelMethodEnum_seasonalNaive =
     const SeriesForecastModelMethodEnum._('seasonalNaive');
 const SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnum_etsAnn =
     const SeriesForecastModelMethodEnum._('etsAnn');
@@ -16,11 +16,12 @@ const SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnum_etsAaa =
 const SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnum_nbGlm =
     const SeriesForecastModelMethodEnum._('nbGlm');
 const SeriesForecastModelMethodEnum
-    _$seriesForecastModelMethodEnum_dampedTrend =
+_$seriesForecastModelMethodEnum_dampedTrend =
     const SeriesForecastModelMethodEnum._('dampedTrend');
 
 SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'seasonalNaive':
       return _$seriesForecastModelMethodEnum_seasonalNaive;
@@ -38,17 +39,18 @@ SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnumValueOf(
 }
 
 final BuiltSet<SeriesForecastModelMethodEnum>
-    _$seriesForecastModelMethodEnumValues = BuiltSet<
-        SeriesForecastModelMethodEnum>(const <SeriesForecastModelMethodEnum>[
-  _$seriesForecastModelMethodEnum_seasonalNaive,
-  _$seriesForecastModelMethodEnum_etsAnn,
-  _$seriesForecastModelMethodEnum_etsAaa,
-  _$seriesForecastModelMethodEnum_nbGlm,
-  _$seriesForecastModelMethodEnum_dampedTrend,
-]);
+_$seriesForecastModelMethodEnumValues = BuiltSet<SeriesForecastModelMethodEnum>(
+  const <SeriesForecastModelMethodEnum>[
+    _$seriesForecastModelMethodEnum_seasonalNaive,
+    _$seriesForecastModelMethodEnum_etsAnn,
+    _$seriesForecastModelMethodEnum_etsAaa,
+    _$seriesForecastModelMethodEnum_nbGlm,
+    _$seriesForecastModelMethodEnum_dampedTrend,
+  ],
+);
 
 Serializer<SeriesForecastModelMethodEnum>
-    _$seriesForecastModelMethodEnumSerializer =
+_$seriesForecastModelMethodEnumSerializer =
     _$SeriesForecastModelMethodEnumSerializer();
 
 class _$SeriesForecastModelMethodEnumSerializer
@@ -75,16 +77,19 @@ class _$SeriesForecastModelMethodEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SeriesForecastModelMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SeriesForecastModelMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesForecastModelMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesForecastModelMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesForecastModelMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesForecastModel extends SeriesForecastModel {
@@ -105,24 +110,24 @@ class _$SeriesForecastModel extends SeriesForecastModel {
   @override
   final String? manifestId;
 
-  factory _$SeriesForecastModel(
-          [void Function(SeriesForecastModelBuilder)? updates]) =>
-      (SeriesForecastModelBuilder()..update(updates))._build();
+  factory _$SeriesForecastModel([
+    void Function(SeriesForecastModelBuilder)? updates,
+  ]) => (SeriesForecastModelBuilder()..update(updates))._build();
 
-  _$SeriesForecastModel._(
-      {required this.ref,
-      required this.method,
-      this.params,
-      required this.backtest,
-      required this.selectedAt,
-      this.nextSelectionAt,
-      required this.version,
-      this.manifestId})
-      : super._();
+  _$SeriesForecastModel._({
+    required this.ref,
+    required this.method,
+    this.params,
+    required this.backtest,
+    required this.selectedAt,
+    this.nextSelectionAt,
+    required this.version,
+    this.manifestId,
+  }) : super._();
   @override
   SeriesForecastModel rebuild(
-          void Function(SeriesForecastModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SeriesForecastModelBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SeriesForecastModelBuilder toBuilder() =>
@@ -249,19 +254,32 @@ class SeriesForecastModelBuilder
   _$SeriesForecastModel _build() {
     _$SeriesForecastModel _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesForecastModel._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'SeriesForecastModel', 'ref'),
+              ref,
+              r'SeriesForecastModel',
+              'ref',
+            ),
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'SeriesForecastModel', 'method'),
+              method,
+              r'SeriesForecastModel',
+              'method',
+            ),
             params: _params?.build(),
             backtest: backtest.build(),
             selectedAt: BuiltValueNullFieldError.checkNotNull(
-                selectedAt, r'SeriesForecastModel', 'selectedAt'),
+              selectedAt,
+              r'SeriesForecastModel',
+              'selectedAt',
+            ),
             nextSelectionAt: nextSelectionAt,
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'SeriesForecastModel', 'version'),
+              version,
+              r'SeriesForecastModel',
+              'version',
+            ),
             manifestId: manifestId,
           );
     } catch (_) {
@@ -273,7 +291,10 @@ class SeriesForecastModelBuilder
         backtest.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesForecastModel', _$failedField, e.toString());
+          r'SeriesForecastModel',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

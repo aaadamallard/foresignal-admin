@@ -14,16 +14,16 @@ class _$EdpValidationRequest extends EdpValidationRequest {
   @override
   final BuiltList<BuiltMap<String, JsonObject?>>? items;
 
-  factory _$EdpValidationRequest(
-          [void Function(EdpValidationRequestBuilder)? updates]) =>
-      (EdpValidationRequestBuilder()..update(updates))._build();
+  factory _$EdpValidationRequest([
+    void Function(EdpValidationRequestBuilder)? updates,
+  ]) => (EdpValidationRequestBuilder()..update(updates))._build();
 
   _$EdpValidationRequest._({this.manifest, this.sourceId, this.items})
-      : super._();
+    : super._();
   @override
   EdpValidationRequest rebuild(
-          void Function(EdpValidationRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpValidationRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpValidationRequestBuilder toBuilder() =>
@@ -107,7 +107,8 @@ class EdpValidationRequestBuilder
   _$EdpValidationRequest _build() {
     _$EdpValidationRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpValidationRequest._(
             manifest: _manifest?.build(),
             sourceId: sourceId,
@@ -123,7 +124,10 @@ class EdpValidationRequestBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpValidationRequest', _$failedField, e.toString());
+          r'EdpValidationRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

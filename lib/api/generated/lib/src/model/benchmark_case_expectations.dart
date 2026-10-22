@@ -37,9 +37,9 @@ abstract class BenchmarkCaseExpectations
 
   BenchmarkCaseExpectations._();
 
-  factory BenchmarkCaseExpectations(
-          [void updates(BenchmarkCaseExpectationsBuilder b)]) =
-      _$BenchmarkCaseExpectations;
+  factory BenchmarkCaseExpectations([
+    void updates(BenchmarkCaseExpectationsBuilder b),
+  ]) = _$BenchmarkCaseExpectations;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkCaseExpectationsBuilder b) => b;
@@ -54,7 +54,7 @@ class _$BenchmarkCaseExpectationsSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkCaseExpectations,
-    _$BenchmarkCaseExpectations
+    _$BenchmarkCaseExpectations,
   ];
 
   @override
@@ -69,24 +69,27 @@ class _$BenchmarkCaseExpectationsSerializer
       yield r'findings';
       yield serializers.serialize(
         object.findings,
-        specifiedType: const FullType(
-            BuiltList, [FullType(BenchmarkCaseExpectationsFindingsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BenchmarkCaseExpectationsFindingsInner),
+        ]),
       );
     }
     if (object.precursors != null) {
       yield r'precursors';
       yield serializers.serialize(
         object.precursors,
-        specifiedType: const FullType(
-            BuiltList, [FullType(BenchmarkCaseExpectationsPrecursorsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BenchmarkCaseExpectationsPrecursorsInner),
+        ]),
       );
     }
     if (object.questions != null) {
       yield r'questions';
       yield serializers.serialize(
         object.questions,
-        specifiedType: const FullType(
-            BuiltList, [FullType(BenchmarkCaseExpectationsQuestionsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(BenchmarkCaseExpectationsQuestionsInner),
+        ]),
       );
     }
     if (object.notes != null) {
@@ -104,9 +107,11 @@ class _$BenchmarkCaseExpectationsSerializer
     BenchmarkCaseExpectations object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -122,37 +127,48 @@ class _$BenchmarkCaseExpectationsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'findings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(BenchmarkCaseExpectationsFindingsInner)]),
-          ) as BuiltList<BenchmarkCaseExpectationsFindingsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BenchmarkCaseExpectationsFindingsInner),
+                    ]),
+                  )
+                  as BuiltList<BenchmarkCaseExpectationsFindingsInner>?;
           if (valueDes == null) continue;
           result.findings.replace(valueDes);
           break;
         case r'precursors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(BenchmarkCaseExpectationsPrecursorsInner)]),
-          ) as BuiltList<BenchmarkCaseExpectationsPrecursorsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BenchmarkCaseExpectationsPrecursorsInner),
+                    ]),
+                  )
+                  as BuiltList<BenchmarkCaseExpectationsPrecursorsInner>?;
           if (valueDes == null) continue;
           result.precursors.replace(valueDes);
           break;
         case r'questions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(BenchmarkCaseExpectationsQuestionsInner)]),
-          ) as BuiltList<BenchmarkCaseExpectationsQuestionsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BenchmarkCaseExpectationsQuestionsInner),
+                    ]),
+                  )
+                  as BuiltList<BenchmarkCaseExpectationsQuestionsInner>?;
           if (valueDes == null) continue;
           result.questions.replace(valueDes);
           break;
         case r'notes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.notes = valueDes;
           break;

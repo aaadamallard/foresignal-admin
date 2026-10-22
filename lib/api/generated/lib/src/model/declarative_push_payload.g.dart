@@ -7,11 +7,12 @@ part of 'declarative_push_payload.dart';
 // **************************************************************************
 
 const DeclarativePushPayloadWebPushEnum
-    _$declarativePushPayloadWebPushEnum_number8030 =
+_$declarativePushPayloadWebPushEnum_number8030 =
     const DeclarativePushPayloadWebPushEnum._('number8030');
 
 DeclarativePushPayloadWebPushEnum _$declarativePushPayloadWebPushEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'number8030':
       return _$declarativePushPayloadWebPushEnum_number8030;
@@ -21,13 +22,15 @@ DeclarativePushPayloadWebPushEnum _$declarativePushPayloadWebPushEnumValueOf(
 }
 
 final BuiltSet<DeclarativePushPayloadWebPushEnum>
-    _$declarativePushPayloadWebPushEnumValues = BuiltSet<
-        DeclarativePushPayloadWebPushEnum>(const <DeclarativePushPayloadWebPushEnum>[
-  _$declarativePushPayloadWebPushEnum_number8030,
-]);
+_$declarativePushPayloadWebPushEnumValues =
+    BuiltSet<DeclarativePushPayloadWebPushEnum>(
+      const <DeclarativePushPayloadWebPushEnum>[
+        _$declarativePushPayloadWebPushEnum_number8030,
+      ],
+    );
 
 Serializer<DeclarativePushPayloadWebPushEnum>
-    _$declarativePushPayloadWebPushEnumSerializer =
+_$declarativePushPayloadWebPushEnumSerializer =
     _$DeclarativePushPayloadWebPushEnumSerializer();
 
 class _$DeclarativePushPayloadWebPushEnumSerializer
@@ -46,16 +49,19 @@ class _$DeclarativePushPayloadWebPushEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DeclarativePushPayloadWebPushEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DeclarativePushPayloadWebPushEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DeclarativePushPayloadWebPushEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DeclarativePushPayloadWebPushEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DeclarativePushPayloadWebPushEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DeclarativePushPayload extends DeclarativePushPayload {
@@ -64,17 +70,18 @@ class _$DeclarativePushPayload extends DeclarativePushPayload {
   @override
   final DeclarativePushPayloadNotification notification;
 
-  factory _$DeclarativePushPayload(
-          [void Function(DeclarativePushPayloadBuilder)? updates]) =>
-      (DeclarativePushPayloadBuilder()..update(updates))._build();
+  factory _$DeclarativePushPayload([
+    void Function(DeclarativePushPayloadBuilder)? updates,
+  ]) => (DeclarativePushPayloadBuilder()..update(updates))._build();
 
-  _$DeclarativePushPayload._(
-      {required this.webPush, required this.notification})
-      : super._();
+  _$DeclarativePushPayload._({
+    required this.webPush,
+    required this.notification,
+  }) : super._();
   @override
   DeclarativePushPayload rebuild(
-          void Function(DeclarativePushPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DeclarativePushPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DeclarativePushPayloadBuilder toBuilder() =>
@@ -151,10 +158,14 @@ class DeclarativePushPayloadBuilder
   _$DeclarativePushPayload _build() {
     _$DeclarativePushPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DeclarativePushPayload._(
             webPush: BuiltValueNullFieldError.checkNotNull(
-                webPush, r'DeclarativePushPayload', 'webPush'),
+              webPush,
+              r'DeclarativePushPayload',
+              'webPush',
+            ),
             notification: notification.build(),
           );
     } catch (_) {
@@ -164,7 +175,10 @@ class DeclarativePushPayloadBuilder
         notification.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DeclarativePushPayload', _$failedField, e.toString());
+          r'DeclarativePushPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -29,9 +29,9 @@ abstract class AnalystProfileSchedule
 
   AnalystProfileSchedule._();
 
-  factory AnalystProfileSchedule(
-          [void updates(AnalystProfileScheduleBuilder b)]) =
-      _$AnalystProfileSchedule;
+  factory AnalystProfileSchedule([
+    void updates(AnalystProfileScheduleBuilder b),
+  ]) = _$AnalystProfileSchedule;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalystProfileScheduleBuilder b) => b;
@@ -46,7 +46,7 @@ class _$AnalystProfileScheduleSerializer
   @override
   final Iterable<Type> types = const [
     AnalystProfileSchedule,
-    _$AnalystProfileSchedule
+    _$AnalystProfileSchedule,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$AnalystProfileScheduleSerializer
     AnalystProfileSchedule object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,32 @@ class _$AnalystProfileScheduleSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'cron':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.cron = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.timezone = valueDes;
           break;
         case r'every':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.every = valueDes;
           break;

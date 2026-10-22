@@ -7,11 +7,11 @@ part of 'chronicle_social_volume_selector.dart';
 // **************************************************************************
 
 const ChronicleSocialVolumeSelectorTypeEnum
-    _$chronicleSocialVolumeSelectorTypeEnum_socialVolume =
+_$chronicleSocialVolumeSelectorTypeEnum_socialVolume =
     const ChronicleSocialVolumeSelectorTypeEnum._('socialVolume');
 
 ChronicleSocialVolumeSelectorTypeEnum
-    _$chronicleSocialVolumeSelectorTypeEnumValueOf(String name) {
+_$chronicleSocialVolumeSelectorTypeEnumValueOf(String name) {
   switch (name) {
     case 'socialVolume':
       return _$chronicleSocialVolumeSelectorTypeEnum_socialVolume;
@@ -21,26 +21,28 @@ ChronicleSocialVolumeSelectorTypeEnum
 }
 
 final BuiltSet<ChronicleSocialVolumeSelectorTypeEnum>
-    _$chronicleSocialVolumeSelectorTypeEnumValues = BuiltSet<
-        ChronicleSocialVolumeSelectorTypeEnum>(const <ChronicleSocialVolumeSelectorTypeEnum>[
-  _$chronicleSocialVolumeSelectorTypeEnum_socialVolume,
-]);
+_$chronicleSocialVolumeSelectorTypeEnumValues =
+    BuiltSet<ChronicleSocialVolumeSelectorTypeEnum>(
+      const <ChronicleSocialVolumeSelectorTypeEnum>[
+        _$chronicleSocialVolumeSelectorTypeEnum_socialVolume,
+      ],
+    );
 
 const ChronicleSocialVolumeSelectorMetricsEnum
-    _$chronicleSocialVolumeSelectorMetricsEnum_posts =
+_$chronicleSocialVolumeSelectorMetricsEnum_posts =
     const ChronicleSocialVolumeSelectorMetricsEnum._('posts');
 const ChronicleSocialVolumeSelectorMetricsEnum
-    _$chronicleSocialVolumeSelectorMetricsEnum_uniqueAuthors =
+_$chronicleSocialVolumeSelectorMetricsEnum_uniqueAuthors =
     const ChronicleSocialVolumeSelectorMetricsEnum._('uniqueAuthors');
 const ChronicleSocialVolumeSelectorMetricsEnum
-    _$chronicleSocialVolumeSelectorMetricsEnum_reposts =
+_$chronicleSocialVolumeSelectorMetricsEnum_reposts =
     const ChronicleSocialVolumeSelectorMetricsEnum._('reposts');
 const ChronicleSocialVolumeSelectorMetricsEnum
-    _$chronicleSocialVolumeSelectorMetricsEnum_engagement =
+_$chronicleSocialVolumeSelectorMetricsEnum_engagement =
     const ChronicleSocialVolumeSelectorMetricsEnum._('engagement');
 
 ChronicleSocialVolumeSelectorMetricsEnum
-    _$chronicleSocialVolumeSelectorMetricsEnumValueOf(String name) {
+_$chronicleSocialVolumeSelectorMetricsEnumValueOf(String name) {
   switch (name) {
     case 'posts':
       return _$chronicleSocialVolumeSelectorMetricsEnum_posts;
@@ -56,19 +58,21 @@ ChronicleSocialVolumeSelectorMetricsEnum
 }
 
 final BuiltSet<ChronicleSocialVolumeSelectorMetricsEnum>
-    _$chronicleSocialVolumeSelectorMetricsEnumValues = BuiltSet<
-        ChronicleSocialVolumeSelectorMetricsEnum>(const <ChronicleSocialVolumeSelectorMetricsEnum>[
-  _$chronicleSocialVolumeSelectorMetricsEnum_posts,
-  _$chronicleSocialVolumeSelectorMetricsEnum_uniqueAuthors,
-  _$chronicleSocialVolumeSelectorMetricsEnum_reposts,
-  _$chronicleSocialVolumeSelectorMetricsEnum_engagement,
-]);
+_$chronicleSocialVolumeSelectorMetricsEnumValues =
+    BuiltSet<ChronicleSocialVolumeSelectorMetricsEnum>(
+      const <ChronicleSocialVolumeSelectorMetricsEnum>[
+        _$chronicleSocialVolumeSelectorMetricsEnum_posts,
+        _$chronicleSocialVolumeSelectorMetricsEnum_uniqueAuthors,
+        _$chronicleSocialVolumeSelectorMetricsEnum_reposts,
+        _$chronicleSocialVolumeSelectorMetricsEnum_engagement,
+      ],
+    );
 
 Serializer<ChronicleSocialVolumeSelectorTypeEnum>
-    _$chronicleSocialVolumeSelectorTypeEnumSerializer =
+_$chronicleSocialVolumeSelectorTypeEnumSerializer =
     _$ChronicleSocialVolumeSelectorTypeEnumSerializer();
 Serializer<ChronicleSocialVolumeSelectorMetricsEnum>
-    _$chronicleSocialVolumeSelectorMetricsEnumSerializer =
+_$chronicleSocialVolumeSelectorMetricsEnumSerializer =
     _$ChronicleSocialVolumeSelectorMetricsEnumSerializer();
 
 class _$ChronicleSocialVolumeSelectorTypeEnumSerializer
@@ -82,23 +86,26 @@ class _$ChronicleSocialVolumeSelectorTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleSocialVolumeSelectorTypeEnum
+    ChronicleSocialVolumeSelectorTypeEnum,
   ];
   @override
   final String wireName = 'ChronicleSocialVolumeSelectorTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ChronicleSocialVolumeSelectorTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChronicleSocialVolumeSelectorTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSocialVolumeSelectorTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSocialVolumeSelectorTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSocialVolumeSelectorTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSocialVolumeSelectorMetricsEnumSerializer
@@ -118,23 +125,26 @@ class _$ChronicleSocialVolumeSelectorMetricsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleSocialVolumeSelectorMetricsEnum
+    ChronicleSocialVolumeSelectorMetricsEnum,
   ];
   @override
   final String wireName = 'ChronicleSocialVolumeSelectorMetricsEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleSocialVolumeSelectorMetricsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleSocialVolumeSelectorMetricsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSocialVolumeSelectorMetricsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSocialVolumeSelectorMetricsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSocialVolumeSelectorMetricsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSocialVolumeSelector extends ChronicleSocialVolumeSelector {
@@ -147,17 +157,20 @@ class _$ChronicleSocialVolumeSelector extends ChronicleSocialVolumeSelector {
   @override
   final BuiltList<ChronicleSocialVolumeSelectorMetricsEnum>? metrics;
 
-  factory _$ChronicleSocialVolumeSelector(
-          [void Function(ChronicleSocialVolumeSelectorBuilder)? updates]) =>
-      (ChronicleSocialVolumeSelectorBuilder()..update(updates))._build();
+  factory _$ChronicleSocialVolumeSelector([
+    void Function(ChronicleSocialVolumeSelectorBuilder)? updates,
+  ]) => (ChronicleSocialVolumeSelectorBuilder()..update(updates))._build();
 
-  _$ChronicleSocialVolumeSelector._(
-      {required this.type, required this.scopes, this.platforms, this.metrics})
-      : super._();
+  _$ChronicleSocialVolumeSelector._({
+    required this.type,
+    required this.scopes,
+    this.platforms,
+    this.metrics,
+  }) : super._();
   @override
   ChronicleSocialVolumeSelector rebuild(
-          void Function(ChronicleSocialVolumeSelectorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSocialVolumeSelectorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSocialVolumeSelectorBuilder toBuilder() =>
@@ -197,8 +210,10 @@ class _$ChronicleSocialVolumeSelector extends ChronicleSocialVolumeSelector {
 
 class ChronicleSocialVolumeSelectorBuilder
     implements
-        Builder<ChronicleSocialVolumeSelector,
-            ChronicleSocialVolumeSelectorBuilder> {
+        Builder<
+          ChronicleSocialVolumeSelector,
+          ChronicleSocialVolumeSelectorBuilder
+        > {
   _$ChronicleSocialVolumeSelector? _$v;
 
   ChronicleSocialVolumeSelectorTypeEnum? _type;
@@ -257,10 +272,14 @@ class ChronicleSocialVolumeSelectorBuilder
   _$ChronicleSocialVolumeSelector _build() {
     _$ChronicleSocialVolumeSelector _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSocialVolumeSelector._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ChronicleSocialVolumeSelector', 'type'),
+              type,
+              r'ChronicleSocialVolumeSelector',
+              'type',
+            ),
             scopes: scopes.build(),
             platforms: _platforms?.build(),
             metrics: _metrics?.build(),
@@ -276,7 +295,10 @@ class ChronicleSocialVolumeSelectorBuilder
         _metrics?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSocialVolumeSelector', _$failedField, e.toString());
+          r'ChronicleSocialVolumeSelector',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

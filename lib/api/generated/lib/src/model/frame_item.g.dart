@@ -29,17 +29,17 @@ class _$FrameItem extends FrameItem {
   factory _$FrameItem([void Function(FrameItemBuilder)? updates]) =>
       (FrameItemBuilder()..update(updates))._build();
 
-  _$FrameItem._(
-      {required this.id,
-      required this.kind,
-      this.title,
-      required this.observedAt,
-      required this.version,
-      this.lon,
-      this.lat,
-      this.geometry,
-      this.props})
-      : super._();
+  _$FrameItem._({
+    required this.id,
+    required this.kind,
+    this.title,
+    required this.observedAt,
+    required this.version,
+    this.lon,
+    this.lat,
+    this.geometry,
+    this.props,
+  }) : super._();
   @override
   FrameItem rebuild(void Function(FrameItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -171,16 +171,26 @@ class FrameItemBuilder implements Builder<FrameItem, FrameItemBuilder> {
   _$FrameItem _build() {
     _$FrameItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FrameItem._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'FrameItem', 'id'),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'FrameItem', 'kind'),
+              kind,
+              r'FrameItem',
+              'kind',
+            ),
             title: title,
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'FrameItem', 'observedAt'),
+              observedAt,
+              r'FrameItem',
+              'observedAt',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'FrameItem', 'version'),
+              version,
+              r'FrameItem',
+              'version',
+            ),
             lon: lon,
             lat: lat,
             geometry: _geometry?.build(),
@@ -195,7 +205,10 @@ class FrameItemBuilder implements Builder<FrameItem, FrameItemBuilder> {
         _props?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FrameItem', _$failedField, e.toString());
+          r'FrameItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

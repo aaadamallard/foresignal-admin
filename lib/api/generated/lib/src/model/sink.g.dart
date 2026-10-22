@@ -8,16 +8,20 @@ part of 'sink.dart';
 
 const SinkTypeEnum _$sinkTypeEnum_mqttState = const SinkTypeEnum._('mqttState');
 const SinkTypeEnum _$sinkTypeEnum_cot = const SinkTypeEnum._('cot');
-const SinkTypeEnum _$sinkTypeEnum_readsbJson =
-    const SinkTypeEnum._('readsbJson');
+const SinkTypeEnum _$sinkTypeEnum_readsbJson = const SinkTypeEnum._(
+  'readsbJson',
+);
 const SinkTypeEnum _$sinkTypeEnum_sbs = const SinkTypeEnum._('sbs');
 const SinkTypeEnum _$sinkTypeEnum_nmeaAivdm = const SinkTypeEnum._('nmeaAivdm');
-const SinkTypeEnum _$sinkTypeEnum_aprsIsServe =
-    const SinkTypeEnum._('aprsIsServe');
-const SinkTypeEnum _$sinkTypeEnum_cloudevents =
-    const SinkTypeEnum._('cloudevents');
-const SinkTypeEnum _$sinkTypeEnum_federationPush =
-    const SinkTypeEnum._('federationPush');
+const SinkTypeEnum _$sinkTypeEnum_aprsIsServe = const SinkTypeEnum._(
+  'aprsIsServe',
+);
+const SinkTypeEnum _$sinkTypeEnum_cloudevents = const SinkTypeEnum._(
+  'cloudevents',
+);
+const SinkTypeEnum _$sinkTypeEnum_federationPush = const SinkTypeEnum._(
+  'federationPush',
+);
 
 SinkTypeEnum _$sinkTypeEnumValueOf(String name) {
   switch (name) {
@@ -44,20 +48,22 @@ SinkTypeEnum _$sinkTypeEnumValueOf(String name) {
 
 final BuiltSet<SinkTypeEnum> _$sinkTypeEnumValues =
     BuiltSet<SinkTypeEnum>(const <SinkTypeEnum>[
-  _$sinkTypeEnum_mqttState,
-  _$sinkTypeEnum_cot,
-  _$sinkTypeEnum_readsbJson,
-  _$sinkTypeEnum_sbs,
-  _$sinkTypeEnum_nmeaAivdm,
-  _$sinkTypeEnum_aprsIsServe,
-  _$sinkTypeEnum_cloudevents,
-  _$sinkTypeEnum_federationPush,
-]);
+      _$sinkTypeEnum_mqttState,
+      _$sinkTypeEnum_cot,
+      _$sinkTypeEnum_readsbJson,
+      _$sinkTypeEnum_sbs,
+      _$sinkTypeEnum_nmeaAivdm,
+      _$sinkTypeEnum_aprsIsServe,
+      _$sinkTypeEnum_cloudevents,
+      _$sinkTypeEnum_federationPush,
+    ]);
 
-const SinkKindEnum _$sinkKindEnum_CHANGE_FEED =
-    const SinkKindEnum._('CHANGE_FEED');
-const SinkKindEnum _$sinkKindEnum_STATE_MIRROR =
-    const SinkKindEnum._('STATE_MIRROR');
+const SinkKindEnum _$sinkKindEnum_CHANGE_FEED = const SinkKindEnum._(
+  'CHANGE_FEED',
+);
+const SinkKindEnum _$sinkKindEnum_STATE_MIRROR = const SinkKindEnum._(
+  'STATE_MIRROR',
+);
 
 SinkKindEnum _$sinkKindEnumValueOf(String name) {
   switch (name) {
@@ -70,11 +76,9 @@ SinkKindEnum _$sinkKindEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<SinkKindEnum> _$sinkKindEnumValues =
-    BuiltSet<SinkKindEnum>(const <SinkKindEnum>[
-  _$sinkKindEnum_CHANGE_FEED,
-  _$sinkKindEnum_STATE_MIRROR,
-]);
+final BuiltSet<SinkKindEnum> _$sinkKindEnumValues = BuiltSet<SinkKindEnum>(
+  const <SinkKindEnum>[_$sinkKindEnum_CHANGE_FEED, _$sinkKindEnum_STATE_MIRROR],
+);
 
 const SinkModeEnum _$sinkModeEnum_PUSH = const SinkModeEnum._('PUSH');
 const SinkModeEnum _$sinkModeEnum_SERVE = const SinkModeEnum._('SERVE');
@@ -90,15 +94,14 @@ SinkModeEnum _$sinkModeEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<SinkModeEnum> _$sinkModeEnumValues =
-    BuiltSet<SinkModeEnum>(const <SinkModeEnum>[
-  _$sinkModeEnum_PUSH,
-  _$sinkModeEnum_SERVE,
-]);
+final BuiltSet<SinkModeEnum> _$sinkModeEnumValues = BuiltSet<SinkModeEnum>(
+  const <SinkModeEnum>[_$sinkModeEnum_PUSH, _$sinkModeEnum_SERVE],
+);
 
 const SinkStateEnum _$sinkStateEnum_RUNNING = const SinkStateEnum._('RUNNING');
-const SinkStateEnum _$sinkStateEnum_RESYNCING =
-    const SinkStateEnum._('RESYNCING');
+const SinkStateEnum _$sinkStateEnum_RESYNCING = const SinkStateEnum._(
+  'RESYNCING',
+);
 const SinkStateEnum _$sinkStateEnum_FAILING = const SinkStateEnum._('FAILING');
 const SinkStateEnum _$sinkStateEnum_STOPPED = const SinkStateEnum._('STOPPED');
 
@@ -119,11 +122,11 @@ SinkStateEnum _$sinkStateEnumValueOf(String name) {
 
 final BuiltSet<SinkStateEnum> _$sinkStateEnumValues =
     BuiltSet<SinkStateEnum>(const <SinkStateEnum>[
-  _$sinkStateEnum_RUNNING,
-  _$sinkStateEnum_RESYNCING,
-  _$sinkStateEnum_FAILING,
-  _$sinkStateEnum_STOPPED,
-]);
+      _$sinkStateEnum_RUNNING,
+      _$sinkStateEnum_RESYNCING,
+      _$sinkStateEnum_FAILING,
+      _$sinkStateEnum_STOPPED,
+    ]);
 
 Serializer<SinkTypeEnum> _$sinkTypeEnumSerializer = _$SinkTypeEnumSerializer();
 Serializer<SinkKindEnum> _$sinkKindEnumSerializer = _$SinkKindEnumSerializer();
@@ -159,15 +162,20 @@ class _$SinkTypeEnumSerializer implements PrimitiveSerializer<SinkTypeEnum> {
   final String wireName = 'SinkTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkKindEnumSerializer implements PrimitiveSerializer<SinkKindEnum> {
@@ -186,15 +194,20 @@ class _$SinkKindEnumSerializer implements PrimitiveSerializer<SinkKindEnum> {
   final String wireName = 'SinkKindEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkModeEnumSerializer implements PrimitiveSerializer<SinkModeEnum> {
@@ -213,15 +226,20 @@ class _$SinkModeEnumSerializer implements PrimitiveSerializer<SinkModeEnum> {
   final String wireName = 'SinkModeEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SinkStateEnumSerializer implements PrimitiveSerializer<SinkStateEnum> {
@@ -244,15 +262,20 @@ class _$SinkStateEnumSerializer implements PrimitiveSerializer<SinkStateEnum> {
   final String wireName = 'SinkStateEnum';
 
   @override
-  Object serialize(Serializers serializers, SinkStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SinkStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SinkStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SinkStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SinkStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SinkStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Sink extends Sink {
@@ -284,20 +307,20 @@ class _$Sink extends Sink {
   factory _$Sink([void Function(SinkBuilder)? updates]) =>
       (SinkBuilder()..update(updates))._build();
 
-  _$Sink._(
-      {required this.id,
-      required this.type,
-      required this.kind,
-      required this.mode,
-      required this.name,
-      required this.enabled,
-      required this.config,
-      this.secretsSet,
-      required this.filter,
-      this.state,
-      required this.createdAt,
-      required this.updatedAt})
-      : super._();
+  _$Sink._({
+    required this.id,
+    required this.type,
+    required this.kind,
+    required this.mode,
+    required this.name,
+    required this.enabled,
+    required this.config,
+    this.secretsSet,
+    required this.filter,
+    this.state,
+    required this.createdAt,
+    required this.updatedAt,
+  }) : super._();
   @override
   Sink rebuild(void Function(SinkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -456,7 +479,8 @@ class SinkBuilder implements Builder<Sink, SinkBuilder> {
   _$Sink _build() {
     _$Sink _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Sink._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Sink', 'id'),
             type: BuiltValueNullFieldError.checkNotNull(type, r'Sink', 'type'),
@@ -464,15 +488,24 @@ class SinkBuilder implements Builder<Sink, SinkBuilder> {
             mode: BuiltValueNullFieldError.checkNotNull(mode, r'Sink', 'mode'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'Sink', 'name'),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'Sink', 'enabled'),
+              enabled,
+              r'Sink',
+              'enabled',
+            ),
             config: config.build(),
             secretsSet: _secretsSet?.build(),
             filter: filter.build(),
             state: state,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Sink', 'createdAt'),
+              createdAt,
+              r'Sink',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Sink', 'updatedAt'),
+              updatedAt,
+              r'Sink',
+              'updatedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;

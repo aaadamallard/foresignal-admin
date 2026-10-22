@@ -7,14 +7,14 @@ part of 'lead_time_stats_groups_inner.dart';
 // **************************************************************************
 
 const LeadTimeStatsGroupsInnerFoundByEnum
-    _$leadTimeStatsGroupsInnerFoundByEnum_organic =
+_$leadTimeStatsGroupsInnerFoundByEnum_organic =
     const LeadTimeStatsGroupsInnerFoundByEnum._('organic');
 const LeadTimeStatsGroupsInnerFoundByEnum
-    _$leadTimeStatsGroupsInnerFoundByEnum_cue =
+_$leadTimeStatsGroupsInnerFoundByEnum_cue =
     const LeadTimeStatsGroupsInnerFoundByEnum._('cue');
 
 LeadTimeStatsGroupsInnerFoundByEnum
-    _$leadTimeStatsGroupsInnerFoundByEnumValueOf(String name) {
+_$leadTimeStatsGroupsInnerFoundByEnumValueOf(String name) {
   switch (name) {
     case 'organic':
       return _$leadTimeStatsGroupsInnerFoundByEnum_organic;
@@ -26,14 +26,16 @@ LeadTimeStatsGroupsInnerFoundByEnum
 }
 
 final BuiltSet<LeadTimeStatsGroupsInnerFoundByEnum>
-    _$leadTimeStatsGroupsInnerFoundByEnumValues = BuiltSet<
-        LeadTimeStatsGroupsInnerFoundByEnum>(const <LeadTimeStatsGroupsInnerFoundByEnum>[
-  _$leadTimeStatsGroupsInnerFoundByEnum_organic,
-  _$leadTimeStatsGroupsInnerFoundByEnum_cue,
-]);
+_$leadTimeStatsGroupsInnerFoundByEnumValues =
+    BuiltSet<LeadTimeStatsGroupsInnerFoundByEnum>(
+      const <LeadTimeStatsGroupsInnerFoundByEnum>[
+        _$leadTimeStatsGroupsInnerFoundByEnum_organic,
+        _$leadTimeStatsGroupsInnerFoundByEnum_cue,
+      ],
+    );
 
 Serializer<LeadTimeStatsGroupsInnerFoundByEnum>
-    _$leadTimeStatsGroupsInnerFoundByEnumSerializer =
+_$leadTimeStatsGroupsInnerFoundByEnumSerializer =
     _$LeadTimeStatsGroupsInnerFoundByEnumSerializer();
 
 class _$LeadTimeStatsGroupsInnerFoundByEnumSerializer
@@ -49,23 +51,26 @@ class _$LeadTimeStatsGroupsInnerFoundByEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    LeadTimeStatsGroupsInnerFoundByEnum
+    LeadTimeStatsGroupsInnerFoundByEnum,
   ];
   @override
   final String wireName = 'LeadTimeStatsGroupsInnerFoundByEnum';
 
   @override
   Object serialize(
-          Serializers serializers, LeadTimeStatsGroupsInnerFoundByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    LeadTimeStatsGroupsInnerFoundByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   LeadTimeStatsGroupsInnerFoundByEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LeadTimeStatsGroupsInnerFoundByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LeadTimeStatsGroupsInnerFoundByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LeadTimeStatsGroupsInner extends LeadTimeStatsGroupsInner {
@@ -90,26 +95,26 @@ class _$LeadTimeStatsGroupsInner extends LeadTimeStatsGroupsInner {
   @override
   final LeadTimeSummary? outOfSampleOverPhysical;
 
-  factory _$LeadTimeStatsGroupsInner(
-          [void Function(LeadTimeStatsGroupsInnerBuilder)? updates]) =>
-      (LeadTimeStatsGroupsInnerBuilder()..update(updates))._build();
+  factory _$LeadTimeStatsGroupsInner([
+    void Function(LeadTimeStatsGroupsInnerBuilder)? updates,
+  ]) => (LeadTimeStatsGroupsInnerBuilder()..update(updates))._build();
 
-  _$LeadTimeStatsGroupsInner._(
-      {required this.claimType,
-      required this.platform,
-      this.regionCode,
-      required this.foundBy,
-      required this.comparisons,
-      required this.outOfSample,
-      required this.overPhysical,
-      required this.overNews,
-      required this.overOfficial,
-      this.outOfSampleOverPhysical})
-      : super._();
+  _$LeadTimeStatsGroupsInner._({
+    required this.claimType,
+    required this.platform,
+    this.regionCode,
+    required this.foundBy,
+    required this.comparisons,
+    required this.outOfSample,
+    required this.overPhysical,
+    required this.overNews,
+    required this.overOfficial,
+    this.outOfSampleOverPhysical,
+  }) : super._();
   @override
   LeadTimeStatsGroupsInner rebuild(
-          void Function(LeadTimeStatsGroupsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(LeadTimeStatsGroupsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   LeadTimeStatsGroupsInnerBuilder toBuilder() =>
@@ -216,8 +221,8 @@ class LeadTimeStatsGroupsInnerBuilder
   LeadTimeSummaryBuilder get outOfSampleOverPhysical =>
       _$this._outOfSampleOverPhysical ??= LeadTimeSummaryBuilder();
   set outOfSampleOverPhysical(
-          LeadTimeSummaryBuilder? outOfSampleOverPhysical) =>
-      _$this._outOfSampleOverPhysical = outOfSampleOverPhysical;
+    LeadTimeSummaryBuilder? outOfSampleOverPhysical,
+  ) => _$this._outOfSampleOverPhysical = outOfSampleOverPhysical;
 
   LeadTimeStatsGroupsInnerBuilder() {
     LeadTimeStatsGroupsInner._defaults(this);
@@ -257,19 +262,35 @@ class LeadTimeStatsGroupsInnerBuilder
   _$LeadTimeStatsGroupsInner _build() {
     _$LeadTimeStatsGroupsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LeadTimeStatsGroupsInner._(
             claimType: BuiltValueNullFieldError.checkNotNull(
-                claimType, r'LeadTimeStatsGroupsInner', 'claimType'),
+              claimType,
+              r'LeadTimeStatsGroupsInner',
+              'claimType',
+            ),
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'LeadTimeStatsGroupsInner', 'platform'),
+              platform,
+              r'LeadTimeStatsGroupsInner',
+              'platform',
+            ),
             regionCode: regionCode,
             foundBy: BuiltValueNullFieldError.checkNotNull(
-                foundBy, r'LeadTimeStatsGroupsInner', 'foundBy'),
+              foundBy,
+              r'LeadTimeStatsGroupsInner',
+              'foundBy',
+            ),
             comparisons: BuiltValueNullFieldError.checkNotNull(
-                comparisons, r'LeadTimeStatsGroupsInner', 'comparisons'),
+              comparisons,
+              r'LeadTimeStatsGroupsInner',
+              'comparisons',
+            ),
             outOfSample: BuiltValueNullFieldError.checkNotNull(
-                outOfSample, r'LeadTimeStatsGroupsInner', 'outOfSample'),
+              outOfSample,
+              r'LeadTimeStatsGroupsInner',
+              'outOfSample',
+            ),
             overPhysical: overPhysical.build(),
             overNews: overNews.build(),
             overOfficial: overOfficial.build(),
@@ -288,7 +309,10 @@ class LeadTimeStatsGroupsInnerBuilder
         _outOfSampleOverPhysical?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LeadTimeStatsGroupsInner', _$failedField, e.toString());
+          r'LeadTimeStatsGroupsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -19,9 +19,12 @@ class _$SocialPostLink extends SocialPostLink {
   factory _$SocialPostLink([void Function(SocialPostLinkBuilder)? updates]) =>
       (SocialPostLinkBuilder()..update(updates))._build();
 
-  _$SocialPostLink._(
-      {required this.platform, required this.postId, this.ref, this.url})
-      : super._();
+  _$SocialPostLink._({
+    required this.platform,
+    required this.postId,
+    this.ref,
+    this.url,
+  }) : super._();
   @override
   SocialPostLink rebuild(void Function(SocialPostLinkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -111,12 +114,19 @@ class SocialPostLinkBuilder
   SocialPostLink build() => _build();
 
   _$SocialPostLink _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialPostLink._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'SocialPostLink', 'platform'),
+            platform,
+            r'SocialPostLink',
+            'platform',
+          ),
           postId: BuiltValueNullFieldError.checkNotNull(
-              postId, r'SocialPostLink', 'postId'),
+            postId,
+            r'SocialPostLink',
+            'postId',
+          ),
           ref: ref,
           url: url,
         );

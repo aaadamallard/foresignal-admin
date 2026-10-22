@@ -12,16 +12,16 @@ class _$NotificationDeliveryPage extends NotificationDeliveryPage {
   @override
   final String? nextCursor;
 
-  factory _$NotificationDeliveryPage(
-          [void Function(NotificationDeliveryPageBuilder)? updates]) =>
-      (NotificationDeliveryPageBuilder()..update(updates))._build();
+  factory _$NotificationDeliveryPage([
+    void Function(NotificationDeliveryPageBuilder)? updates,
+  ]) => (NotificationDeliveryPageBuilder()..update(updates))._build();
 
   _$NotificationDeliveryPage._({required this.items, this.nextCursor})
-      : super._();
+    : super._();
   @override
   NotificationDeliveryPage rebuild(
-          void Function(NotificationDeliveryPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationDeliveryPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationDeliveryPageBuilder toBuilder() =>
@@ -97,7 +97,8 @@ class NotificationDeliveryPageBuilder
   _$NotificationDeliveryPage _build() {
     _$NotificationDeliveryPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NotificationDeliveryPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -109,7 +110,10 @@ class NotificationDeliveryPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationDeliveryPage', _$failedField, e.toString());
+          r'NotificationDeliveryPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

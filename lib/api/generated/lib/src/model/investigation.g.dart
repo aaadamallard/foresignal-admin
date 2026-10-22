@@ -32,11 +32,11 @@ InvestigationStatusEnum _$investigationStatusEnumValueOf(String name) {
 
 final BuiltSet<InvestigationStatusEnum> _$investigationStatusEnumValues =
     BuiltSet<InvestigationStatusEnum>(const <InvestigationStatusEnum>[
-  _$investigationStatusEnum_open,
-  _$investigationStatusEnum_closed,
-  _$investigationStatusEnum_active,
-  _$investigationStatusEnum_archived,
-]);
+      _$investigationStatusEnum_open,
+      _$investigationStatusEnum_closed,
+      _$investigationStatusEnum_active,
+      _$investigationStatusEnum_archived,
+    ]);
 
 Serializer<InvestigationStatusEnum> _$investigationStatusEnumSerializer =
     _$InvestigationStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$InvestigationStatusEnumSerializer
   final String wireName = 'InvestigationStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, InvestigationStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InvestigationStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InvestigationStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InvestigationStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InvestigationStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Investigation extends Investigation {
@@ -119,28 +123,28 @@ class _$Investigation extends Investigation {
   factory _$Investigation([void Function(InvestigationBuilder)? updates]) =>
       (InvestigationBuilder()..update(updates))._build();
 
-  _$Investigation._(
-      {required this.id,
-      required this.displayId,
-      required this.title,
-      required this.status,
-      this.summary,
-      this.tags,
-      this.itemCount,
-      this.items,
-      required this.createdBy,
-      required this.createdAt,
-      required this.updatedAt,
-      this.owner,
-      this.visibility,
-      this.tlp,
-      this.members,
-      this.workspaceId,
-      this.hypothesisSetIds,
-      this.questionIds,
-      this.chronicleIds,
-      this.reportIds})
-      : super._();
+  _$Investigation._({
+    required this.id,
+    required this.displayId,
+    required this.title,
+    required this.status,
+    this.summary,
+    this.tags,
+    this.itemCount,
+    this.items,
+    required this.createdBy,
+    required this.createdAt,
+    required this.updatedAt,
+    this.owner,
+    this.visibility,
+    this.tlp,
+    this.members,
+    this.workspaceId,
+    this.hypothesisSetIds,
+    this.questionIds,
+    this.chronicleIds,
+    this.reportIds,
+  }) : super._();
   @override
   Investigation rebuild(void Function(InvestigationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -372,26 +376,48 @@ class InvestigationBuilder
   _$Investigation _build() {
     _$Investigation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Investigation._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'Investigation', 'id'),
+              id,
+              r'Investigation',
+              'id',
+            ),
             displayId: BuiltValueNullFieldError.checkNotNull(
-                displayId, r'Investigation', 'displayId'),
+              displayId,
+              r'Investigation',
+              'displayId',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'Investigation', 'title'),
+              title,
+              r'Investigation',
+              'title',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Investigation', 'status'),
+              status,
+              r'Investigation',
+              'status',
+            ),
             summary: summary,
             tags: _tags?.build(),
             itemCount: itemCount,
             items: _items?.build(),
             createdBy: BuiltValueNullFieldError.checkNotNull(
-                createdBy, r'Investigation', 'createdBy'),
+              createdBy,
+              r'Investigation',
+              'createdBy',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Investigation', 'createdAt'),
+              createdAt,
+              r'Investigation',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Investigation', 'updatedAt'),
+              updatedAt,
+              r'Investigation',
+              'updatedAt',
+            ),
             owner: _owner?.build(),
             visibility: visibility,
             tlp: tlp,
@@ -427,7 +453,10 @@ class InvestigationBuilder
         _reportIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Investigation', _$failedField, e.toString());
+          r'Investigation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -82,7 +82,7 @@ class _$GroundStationPayloadSerializer
   @override
   final Iterable<Type> types = const [
     GroundStationPayload,
-    _$GroundStationPayload
+    _$GroundStationPayload,
   ];
 
   @override
@@ -158,8 +158,9 @@ class _$GroundStationPayloadSerializer
       yield r'satdumpMode';
       yield serializers.serialize(
         object.satdumpMode,
-        specifiedType:
-            const FullType.nullable(GroundStationPayloadSatdumpModeEnum),
+        specifiedType: const FullType.nullable(
+          GroundStationPayloadSatdumpModeEnum,
+        ),
       );
     }
     yield r'title';
@@ -175,9 +176,11 @@ class _$GroundStationPayloadSerializer
     GroundStationPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -193,90 +196,115 @@ class _$GroundStationPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'state':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(GroundStationPayloadStateEnum),
-          ) as GroundStationPayloadStateEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      GroundStationPayloadStateEnum,
+                    ),
+                  )
+                  as GroundStationPayloadStateEnum;
           result.state = valueDes;
           break;
         case r'currentTarget':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.currentTarget = valueDes;
           break;
         case r'frequencyHz':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.frequencyHz = valueDes;
           break;
         case r'az':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.az = valueDes;
           break;
         case r'el':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.el = valueDes;
           break;
         case r'snrDb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.snrDb = valueDes;
           break;
         case r'nextAos':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.nextAos = valueDes;
           break;
         case r'nextLos':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.nextLos = valueDes;
           break;
         case r'rotatorEngaged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.rotatorEngaged = valueDes;
           break;
         case r'satdumpMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(GroundStationPayloadSatdumpModeEnum),
-          ) as GroundStationPayloadSatdumpModeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      GroundStationPayloadSatdumpModeEnum,
+                    ),
+                  )
+                  as GroundStationPayloadSatdumpModeEnum?;
           if (valueDes == null) continue;
           result.satdumpMode = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         default:

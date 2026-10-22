@@ -28,10 +28,10 @@ OutlookWindowStatusEnum _$outlookWindowStatusEnumValueOf(String name) {
 
 final BuiltSet<OutlookWindowStatusEnum> _$outlookWindowStatusEnumValues =
     BuiltSet<OutlookWindowStatusEnum>(const <OutlookWindowStatusEnum>[
-  _$outlookWindowStatusEnum_open,
-  _$outlookWindowStatusEnum_resolved,
-  _$outlookWindowStatusEnum_annulled,
-]);
+      _$outlookWindowStatusEnum_open,
+      _$outlookWindowStatusEnum_resolved,
+      _$outlookWindowStatusEnum_annulled,
+    ]);
 
 const OutlookWindowExceedanceEnum _$outlookWindowExceedanceEnum_aboveP95 =
     const OutlookWindowExceedanceEnum._('aboveP95');
@@ -50,16 +50,17 @@ OutlookWindowExceedanceEnum _$outlookWindowExceedanceEnumValueOf(String name) {
 }
 
 final BuiltSet<OutlookWindowExceedanceEnum>
-    _$outlookWindowExceedanceEnumValues =
-    BuiltSet<OutlookWindowExceedanceEnum>(const <OutlookWindowExceedanceEnum>[
-  _$outlookWindowExceedanceEnum_aboveP95,
-  _$outlookWindowExceedanceEnum_belowP05,
-]);
+_$outlookWindowExceedanceEnumValues = BuiltSet<OutlookWindowExceedanceEnum>(
+  const <OutlookWindowExceedanceEnum>[
+    _$outlookWindowExceedanceEnum_aboveP95,
+    _$outlookWindowExceedanceEnum_belowP05,
+  ],
+);
 
 Serializer<OutlookWindowStatusEnum> _$outlookWindowStatusEnumSerializer =
     _$OutlookWindowStatusEnumSerializer();
 Serializer<OutlookWindowExceedanceEnum>
-    _$outlookWindowExceedanceEnumSerializer =
+_$outlookWindowExceedanceEnumSerializer =
     _$OutlookWindowExceedanceEnumSerializer();
 
 class _$OutlookWindowStatusEnumSerializer
@@ -81,16 +82,20 @@ class _$OutlookWindowStatusEnumSerializer
   final String wireName = 'OutlookWindowStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, OutlookWindowStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OutlookWindowStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OutlookWindowStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OutlookWindowStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OutlookWindowStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OutlookWindowExceedanceEnumSerializer
@@ -110,16 +115,20 @@ class _$OutlookWindowExceedanceEnumSerializer
   final String wireName = 'OutlookWindowExceedanceEnum';
 
   @override
-  Object serialize(Serializers serializers, OutlookWindowExceedanceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OutlookWindowExceedanceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OutlookWindowExceedanceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OutlookWindowExceedanceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OutlookWindowExceedanceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OutlookWindow extends OutlookWindow {
@@ -145,17 +154,17 @@ class _$OutlookWindow extends OutlookWindow {
   factory _$OutlookWindow([void Function(OutlookWindowBuilder)? updates]) =>
       (OutlookWindowBuilder()..update(updates))._build();
 
-  _$OutlookWindow._(
-      {required this.index,
-      required this.windowStart,
-      required this.windowEnd,
-      required this.quantiles,
-      this.questionId,
-      required this.status,
-      this.actual,
-      this.withinP10P90,
-      this.exceedance})
-      : super._();
+  _$OutlookWindow._({
+    required this.index,
+    required this.windowStart,
+    required this.windowEnd,
+    required this.quantiles,
+    this.questionId,
+    required this.status,
+    this.actual,
+    this.withinP10P90,
+    this.exceedance,
+  }) : super._();
   @override
   OutlookWindow rebuild(void Function(OutlookWindowBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -288,18 +297,31 @@ class OutlookWindowBuilder
   _$OutlookWindow _build() {
     _$OutlookWindow _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OutlookWindow._(
             index: BuiltValueNullFieldError.checkNotNull(
-                index, r'OutlookWindow', 'index'),
+              index,
+              r'OutlookWindow',
+              'index',
+            ),
             windowStart: BuiltValueNullFieldError.checkNotNull(
-                windowStart, r'OutlookWindow', 'windowStart'),
+              windowStart,
+              r'OutlookWindow',
+              'windowStart',
+            ),
             windowEnd: BuiltValueNullFieldError.checkNotNull(
-                windowEnd, r'OutlookWindow', 'windowEnd'),
+              windowEnd,
+              r'OutlookWindow',
+              'windowEnd',
+            ),
             quantiles: quantiles.build(),
             questionId: questionId,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'OutlookWindow', 'status'),
+              status,
+              r'OutlookWindow',
+              'status',
+            ),
             actual: actual,
             withinP10P90: withinP10P90,
             exceedance: exceedance,
@@ -311,7 +333,10 @@ class OutlookWindowBuilder
         quantiles.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OutlookWindow', _$failedField, e.toString());
+          r'OutlookWindow',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

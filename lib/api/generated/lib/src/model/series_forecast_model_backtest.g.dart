@@ -16,20 +16,20 @@ class _$SeriesForecastModelBacktest extends SeriesForecastModelBacktest {
   @override
   final BuiltList<SeriesForecastModelBacktestResultsInner> results;
 
-  factory _$SeriesForecastModelBacktest(
-          [void Function(SeriesForecastModelBacktestBuilder)? updates]) =>
-      (SeriesForecastModelBacktestBuilder()..update(updates))._build();
+  factory _$SeriesForecastModelBacktest([
+    void Function(SeriesForecastModelBacktestBuilder)? updates,
+  ]) => (SeriesForecastModelBacktestBuilder()..update(updates))._build();
 
-  _$SeriesForecastModelBacktest._(
-      {required this.origins,
-      this.spacing,
-      this.selectionHorizon,
-      required this.results})
-      : super._();
+  _$SeriesForecastModelBacktest._({
+    required this.origins,
+    this.spacing,
+    this.selectionHorizon,
+    required this.results,
+  }) : super._();
   @override
   SeriesForecastModelBacktest rebuild(
-          void Function(SeriesForecastModelBacktestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SeriesForecastModelBacktestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SeriesForecastModelBacktestBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$SeriesForecastModelBacktest extends SeriesForecastModelBacktest {
 
 class SeriesForecastModelBacktestBuilder
     implements
-        Builder<SeriesForecastModelBacktest,
-            SeriesForecastModelBacktestBuilder> {
+        Builder<
+          SeriesForecastModelBacktest,
+          SeriesForecastModelBacktestBuilder
+        > {
   _$SeriesForecastModelBacktest? _$v;
 
   int? _origins;
@@ -125,10 +127,14 @@ class SeriesForecastModelBacktestBuilder
   _$SeriesForecastModelBacktest _build() {
     _$SeriesForecastModelBacktest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesForecastModelBacktest._(
             origins: BuiltValueNullFieldError.checkNotNull(
-                origins, r'SeriesForecastModelBacktest', 'origins'),
+              origins,
+              r'SeriesForecastModelBacktest',
+              'origins',
+            ),
             spacing: spacing,
             selectionHorizon: selectionHorizon,
             results: results.build(),
@@ -140,7 +146,10 @@ class SeriesForecastModelBacktestBuilder
         results.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesForecastModelBacktest', _$failedField, e.toString());
+          r'SeriesForecastModelBacktest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

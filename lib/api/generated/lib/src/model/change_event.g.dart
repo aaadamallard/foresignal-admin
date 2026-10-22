@@ -55,30 +55,30 @@ class _$ChangeEvent extends ChangeEvent {
   factory _$ChangeEvent([void Function(ChangeEventBuilder)? updates]) =>
       (ChangeEventBuilder()..update(updates))._build();
 
-  _$ChangeEvent._(
-      {required this.seq,
-      required this.source_,
-      required this.externalId,
-      required this.kind,
-      required this.version,
-      required this.observedAt,
-      required this.tombstone,
-      this.geometry,
-      this.payload,
-      this.prevSeq,
-      this.historyTier,
-      this.persistReason,
-      this.eventTime,
-      this.validUntil,
-      this.qaFlags,
-      this.bbox,
-      this.prevPersistedBbox,
-      this.prevLiveBbox,
-      this.leftFilter,
-      this.purged,
-      this.validFrom,
-      this.globalRef})
-      : super._();
+  _$ChangeEvent._({
+    required this.seq,
+    required this.source_,
+    required this.externalId,
+    required this.kind,
+    required this.version,
+    required this.observedAt,
+    required this.tombstone,
+    this.geometry,
+    this.payload,
+    this.prevSeq,
+    this.historyTier,
+    this.persistReason,
+    this.eventTime,
+    this.validUntil,
+    this.qaFlags,
+    this.bbox,
+    this.prevPersistedBbox,
+    this.prevLiveBbox,
+    this.leftFilter,
+    this.purged,
+    this.validFrom,
+    this.globalRef,
+  }) : super._();
   @override
   ChangeEvent rebuild(void Function(ChangeEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -326,22 +326,44 @@ class ChangeEventBuilder
   _$ChangeEvent _build() {
     _$ChangeEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChangeEvent._(
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'ChangeEvent', 'seq'),
+              seq,
+              r'ChangeEvent',
+              'seq',
+            ),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'ChangeEvent', 'source_'),
+              source_,
+              r'ChangeEvent',
+              'source_',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'ChangeEvent', 'externalId'),
+              externalId,
+              r'ChangeEvent',
+              'externalId',
+            ),
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'ChangeEvent', 'kind'),
+              kind,
+              r'ChangeEvent',
+              'kind',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'ChangeEvent', 'version'),
+              version,
+              r'ChangeEvent',
+              'version',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'ChangeEvent', 'observedAt'),
+              observedAt,
+              r'ChangeEvent',
+              'observedAt',
+            ),
             tombstone: BuiltValueNullFieldError.checkNotNull(
-                tombstone, r'ChangeEvent', 'tombstone'),
+              tombstone,
+              r'ChangeEvent',
+              'tombstone',
+            ),
             geometry: _geometry?.build(),
             payload: _payload?.build(),
             prevSeq: prevSeq,
@@ -374,7 +396,10 @@ class ChangeEventBuilder
         _prevLiveBbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChangeEvent', _$failedField, e.toString());
+          r'ChangeEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

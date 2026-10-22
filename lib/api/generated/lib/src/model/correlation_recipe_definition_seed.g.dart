@@ -15,17 +15,19 @@ class _$CorrelationRecipeDefinitionSeed
   @override
   final BuiltList<Condition>? conditions;
 
-  factory _$CorrelationRecipeDefinitionSeed(
-          [void Function(CorrelationRecipeDefinitionSeedBuilder)? updates]) =>
-      (CorrelationRecipeDefinitionSeedBuilder()..update(updates))._build();
+  factory _$CorrelationRecipeDefinitionSeed([
+    void Function(CorrelationRecipeDefinitionSeedBuilder)? updates,
+  ]) => (CorrelationRecipeDefinitionSeedBuilder()..update(updates))._build();
 
-  _$CorrelationRecipeDefinitionSeed._(
-      {this.kinds, this.sources, this.conditions})
-      : super._();
+  _$CorrelationRecipeDefinitionSeed._({
+    this.kinds,
+    this.sources,
+    this.conditions,
+  }) : super._();
   @override
   CorrelationRecipeDefinitionSeed rebuild(
-          void Function(CorrelationRecipeDefinitionSeedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeDefinitionSeedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeDefinitionSeedBuilder toBuilder() =>
@@ -62,8 +64,10 @@ class _$CorrelationRecipeDefinitionSeed
 
 class CorrelationRecipeDefinitionSeedBuilder
     implements
-        Builder<CorrelationRecipeDefinitionSeed,
-            CorrelationRecipeDefinitionSeedBuilder> {
+        Builder<
+          CorrelationRecipeDefinitionSeed,
+          CorrelationRecipeDefinitionSeedBuilder
+        > {
   _$CorrelationRecipeDefinitionSeed? _$v;
 
   ListBuilder<String>? _kinds;
@@ -111,7 +115,8 @@ class CorrelationRecipeDefinitionSeedBuilder
   _$CorrelationRecipeDefinitionSeed _build() {
     _$CorrelationRecipeDefinitionSeed _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorrelationRecipeDefinitionSeed._(
             kinds: _kinds?.build(),
             sources: _sources?.build(),
@@ -128,7 +133,10 @@ class CorrelationRecipeDefinitionSeedBuilder
         _conditions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorrelationRecipeDefinitionSeed', _$failedField, e.toString());
+          r'CorrelationRecipeDefinitionSeed',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

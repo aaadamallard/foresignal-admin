@@ -52,7 +52,7 @@ class _$DoctorReportSummarySerializer
   @override
   final Iterable<Type> types = const [
     DoctorReportSummary,
-    _$DoctorReportSummary
+    _$DoctorReportSummary,
   ];
 
   @override
@@ -93,9 +93,11 @@ class _$DoctorReportSummarySerializer
     DoctorReportSummary object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,33 +113,44 @@ class _$DoctorReportSummarySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DoctorReportSummaryStatusEnum),
-          ) as DoctorReportSummaryStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      DoctorReportSummaryStatusEnum,
+                    ),
+                  )
+                  as DoctorReportSummaryStatusEnum;
           result.status = valueDes;
           break;
         case r'topFinding':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(DoctorReportSummaryTopFinding),
-          ) as DoctorReportSummaryTopFinding?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      DoctorReportSummaryTopFinding,
+                    ),
+                  )
+                  as DoctorReportSummaryTopFinding?;
           if (valueDes == null) continue;
           result.topFinding.replace(valueDes);
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         default:

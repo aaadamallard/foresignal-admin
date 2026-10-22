@@ -16,17 +16,20 @@ class _$SystemRastersCachesValue extends SystemRastersCachesValue {
   @override
   final num? evictionRate;
 
-  factory _$SystemRastersCachesValue(
-          [void Function(SystemRastersCachesValueBuilder)? updates]) =>
-      (SystemRastersCachesValueBuilder()..update(updates))._build();
+  factory _$SystemRastersCachesValue([
+    void Function(SystemRastersCachesValueBuilder)? updates,
+  ]) => (SystemRastersCachesValueBuilder()..update(updates))._build();
 
-  _$SystemRastersCachesValue._(
-      {this.sizeBytes, this.maxBytes, this.hitRate, this.evictionRate})
-      : super._();
+  _$SystemRastersCachesValue._({
+    this.sizeBytes,
+    this.maxBytes,
+    this.hitRate,
+    this.evictionRate,
+  }) : super._();
   @override
   SystemRastersCachesValue rebuild(
-          void Function(SystemRastersCachesValueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemRastersCachesValueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemRastersCachesValueBuilder toBuilder() =>
@@ -115,7 +118,8 @@ class SystemRastersCachesValueBuilder
   SystemRastersCachesValue build() => _build();
 
   _$SystemRastersCachesValue _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemRastersCachesValue._(
           sizeBytes: sizeBytes,
           maxBytes: maxBytes,

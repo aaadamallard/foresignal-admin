@@ -18,7 +18,7 @@ class _$StyleStop extends StyleStop {
       (StyleStopBuilder()..update(updates))._build();
 
   _$StyleStop._({required this.value, required this.color, this.label})
-      : super._();
+    : super._();
   @override
   StyleStop rebuild(void Function(StyleStopBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -99,12 +99,19 @@ class StyleStopBuilder implements Builder<StyleStop, StyleStopBuilder> {
   StyleStop build() => _build();
 
   _$StyleStop _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StyleStop._(
           value: BuiltValueNullFieldError.checkNotNull(
-              value, r'StyleStop', 'value'),
+            value,
+            r'StyleStop',
+            'value',
+          ),
           color: BuiltValueNullFieldError.checkNotNull(
-              color, r'StyleStop', 'color'),
+            color,
+            r'StyleStop',
+            'color',
+          ),
           label: label,
         );
     replace(_$result);

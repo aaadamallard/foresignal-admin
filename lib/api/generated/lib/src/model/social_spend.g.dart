@@ -20,8 +20,8 @@ SocialSpendCurrencyEnum _$socialSpendCurrencyEnumValueOf(String name) {
 
 final BuiltSet<SocialSpendCurrencyEnum> _$socialSpendCurrencyEnumValues =
     BuiltSet<SocialSpendCurrencyEnum>(const <SocialSpendCurrencyEnum>[
-  _$socialSpendCurrencyEnum_USD,
-]);
+      _$socialSpendCurrencyEnum_USD,
+    ]);
 
 Serializer<SocialSpendCurrencyEnum> _$socialSpendCurrencyEnumSerializer =
     _$SocialSpendCurrencyEnumSerializer();
@@ -41,16 +41,20 @@ class _$SocialSpendCurrencyEnumSerializer
   final String wireName = 'SocialSpendCurrencyEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialSpendCurrencyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialSpendCurrencyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialSpendCurrencyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialSpendCurrencyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialSpendCurrencyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialSpend extends SocialSpend {
@@ -72,15 +76,15 @@ class _$SocialSpend extends SocialSpend {
   factory _$SocialSpend([void Function(SocialSpendBuilder)? updates]) =>
       (SocialSpendBuilder()..update(updates))._build();
 
-  _$SocialSpend._(
-      {required this.currency,
-      required this.spentThisMonth,
-      this.monthlyCapUsd,
-      this.projectedThisMonth,
-      this.standingCountsEstimateMonthly,
-      this.pricesAsOf,
-      this.refusedThisMonth})
-      : super._();
+  _$SocialSpend._({
+    required this.currency,
+    required this.spentThisMonth,
+    this.monthlyCapUsd,
+    this.projectedThisMonth,
+    this.standingCountsEstimateMonthly,
+    this.pricesAsOf,
+    this.refusedThisMonth,
+  }) : super._();
   @override
   SocialSpend rebuild(void Function(SocialSpendBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -200,12 +204,19 @@ class SocialSpendBuilder implements Builder<SocialSpend, SocialSpendBuilder> {
   SocialSpend build() => _build();
 
   _$SocialSpend _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialSpend._(
           currency: BuiltValueNullFieldError.checkNotNull(
-              currency, r'SocialSpend', 'currency'),
+            currency,
+            r'SocialSpend',
+            'currency',
+          ),
           spentThisMonth: BuiltValueNullFieldError.checkNotNull(
-              spentThisMonth, r'SocialSpend', 'spentThisMonth'),
+            spentThisMonth,
+            r'SocialSpend',
+            'spentThisMonth',
+          ),
           monthlyCapUsd: monthlyCapUsd,
           projectedThisMonth: projectedThisMonth,
           standingCountsEstimateMonthly: standingCountsEstimateMonthly,

@@ -12,15 +12,15 @@ class _$SocialComparisonPage extends SocialComparisonPage {
   @override
   final String? nextCursor;
 
-  factory _$SocialComparisonPage(
-          [void Function(SocialComparisonPageBuilder)? updates]) =>
-      (SocialComparisonPageBuilder()..update(updates))._build();
+  factory _$SocialComparisonPage([
+    void Function(SocialComparisonPageBuilder)? updates,
+  ]) => (SocialComparisonPageBuilder()..update(updates))._build();
 
   _$SocialComparisonPage._({required this.items, this.nextCursor}) : super._();
   @override
   SocialComparisonPage rebuild(
-          void Function(SocialComparisonPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialComparisonPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialComparisonPageBuilder toBuilder() =>
@@ -95,7 +95,8 @@ class SocialComparisonPageBuilder
   _$SocialComparisonPage _build() {
     _$SocialComparisonPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialComparisonPage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -107,7 +108,10 @@ class SocialComparisonPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialComparisonPage', _$failedField, e.toString());
+          r'SocialComparisonPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -10,15 +10,15 @@ class _$EventSelectorUnexplainedMove extends EventSelectorUnexplainedMove {
   @override
   final String family;
 
-  factory _$EventSelectorUnexplainedMove(
-          [void Function(EventSelectorUnexplainedMoveBuilder)? updates]) =>
-      (EventSelectorUnexplainedMoveBuilder()..update(updates))._build();
+  factory _$EventSelectorUnexplainedMove([
+    void Function(EventSelectorUnexplainedMoveBuilder)? updates,
+  ]) => (EventSelectorUnexplainedMoveBuilder()..update(updates))._build();
 
   _$EventSelectorUnexplainedMove._({required this.family}) : super._();
   @override
   EventSelectorUnexplainedMove rebuild(
-          void Function(EventSelectorUnexplainedMoveBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventSelectorUnexplainedMoveBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventSelectorUnexplainedMoveBuilder toBuilder() =>
@@ -40,16 +40,18 @@ class _$EventSelectorUnexplainedMove extends EventSelectorUnexplainedMove {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'EventSelectorUnexplainedMove')
-          ..add('family', family))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'EventSelectorUnexplainedMove',
+    )..add('family', family)).toString();
   }
 }
 
 class EventSelectorUnexplainedMoveBuilder
     implements
-        Builder<EventSelectorUnexplainedMove,
-            EventSelectorUnexplainedMoveBuilder> {
+        Builder<
+          EventSelectorUnexplainedMove,
+          EventSelectorUnexplainedMoveBuilder
+        > {
   _$EventSelectorUnexplainedMove? _$v;
 
   String? _family;
@@ -83,10 +85,14 @@ class EventSelectorUnexplainedMoveBuilder
   EventSelectorUnexplainedMove build() => _build();
 
   _$EventSelectorUnexplainedMove _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EventSelectorUnexplainedMove._(
           family: BuiltValueNullFieldError.checkNotNull(
-              family, r'EventSelectorUnexplainedMove', 'family'),
+            family,
+            r'EventSelectorUnexplainedMove',
+            'family',
+          ),
         );
     replace(_$result);
     return _$result;

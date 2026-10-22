@@ -42,7 +42,7 @@ class _$RegionalOutlookPageSerializer
   @override
   final Iterable<Type> types = const [
     RegionalOutlookPage,
-    _$RegionalOutlookPage
+    _$RegionalOutlookPage,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$RegionalOutlookPageSerializer
     RegionalOutlookPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +93,23 @@ class _$RegionalOutlookPageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(RegionalOutlook)]),
-          ) as BuiltList<RegionalOutlook>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(RegionalOutlook),
+                    ]),
+                  )
+                  as BuiltList<RegionalOutlook>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

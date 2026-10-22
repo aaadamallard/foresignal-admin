@@ -10,15 +10,15 @@ class _$TuningSuggestionDismiss extends TuningSuggestionDismiss {
   @override
   final String? reason;
 
-  factory _$TuningSuggestionDismiss(
-          [void Function(TuningSuggestionDismissBuilder)? updates]) =>
-      (TuningSuggestionDismissBuilder()..update(updates))._build();
+  factory _$TuningSuggestionDismiss([
+    void Function(TuningSuggestionDismissBuilder)? updates,
+  ]) => (TuningSuggestionDismissBuilder()..update(updates))._build();
 
   _$TuningSuggestionDismiss._({this.reason}) : super._();
   @override
   TuningSuggestionDismiss rebuild(
-          void Function(TuningSuggestionDismissBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TuningSuggestionDismissBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TuningSuggestionDismissBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$TuningSuggestionDismiss extends TuningSuggestionDismiss {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'TuningSuggestionDismiss')
-          ..add('reason', reason))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'TuningSuggestionDismiss',
+    )..add('reason', reason)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class TuningSuggestionDismissBuilder
   TuningSuggestionDismiss build() => _build();
 
   _$TuningSuggestionDismiss _build() {
-    final _$result = _$v ??
-        _$TuningSuggestionDismiss._(
-          reason: reason,
-        );
+    final _$result = _$v ?? _$TuningSuggestionDismiss._(reason: reason);
     replace(_$result);
     return _$result;
   }

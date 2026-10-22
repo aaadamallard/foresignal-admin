@@ -10,15 +10,15 @@ class _$WatchlistItemsInput extends WatchlistItemsInput {
   @override
   final BuiltList<WatchlistItemInput> items;
 
-  factory _$WatchlistItemsInput(
-          [void Function(WatchlistItemsInputBuilder)? updates]) =>
-      (WatchlistItemsInputBuilder()..update(updates))._build();
+  factory _$WatchlistItemsInput([
+    void Function(WatchlistItemsInputBuilder)? updates,
+  ]) => (WatchlistItemsInputBuilder()..update(updates))._build();
 
   _$WatchlistItemsInput._({required this.items}) : super._();
   @override
   WatchlistItemsInput rebuild(
-          void Function(WatchlistItemsInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WatchlistItemsInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WatchlistItemsInputBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$WatchlistItemsInput extends WatchlistItemsInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'WatchlistItemsInput')
-          ..add('items', items))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'WatchlistItemsInput',
+    )..add('items', items)).toString();
   }
 }
 
@@ -84,10 +84,7 @@ class WatchlistItemsInputBuilder
   _$WatchlistItemsInput _build() {
     _$WatchlistItemsInput _$result;
     try {
-      _$result = _$v ??
-          _$WatchlistItemsInput._(
-            items: items.build(),
-          );
+      _$result = _$v ?? _$WatchlistItemsInput._(items: items.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -95,7 +92,10 @@ class WatchlistItemsInputBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchlistItemsInput', _$failedField, e.toString());
+          r'WatchlistItemsInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

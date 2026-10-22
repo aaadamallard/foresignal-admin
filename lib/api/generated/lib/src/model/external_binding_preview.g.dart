@@ -16,20 +16,20 @@ class _$ExternalBindingPreview extends ExternalBindingPreview {
   @override
   final BuiltList<String>? errors;
 
-  factory _$ExternalBindingPreview(
-          [void Function(ExternalBindingPreviewBuilder)? updates]) =>
-      (ExternalBindingPreviewBuilder()..update(updates))._build();
+  factory _$ExternalBindingPreview([
+    void Function(ExternalBindingPreviewBuilder)? updates,
+  ]) => (ExternalBindingPreviewBuilder()..update(updates))._build();
 
-  _$ExternalBindingPreview._(
-      {required this.evaluated,
-      required this.matched,
-      required this.effects,
-      this.errors})
-      : super._();
+  _$ExternalBindingPreview._({
+    required this.evaluated,
+    required this.matched,
+    required this.effects,
+    this.errors,
+  }) : super._();
   @override
   ExternalBindingPreview rebuild(
-          void Function(ExternalBindingPreviewBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalBindingPreviewBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalBindingPreviewBuilder toBuilder() =>
@@ -121,12 +121,19 @@ class ExternalBindingPreviewBuilder
   _$ExternalBindingPreview _build() {
     _$ExternalBindingPreview _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExternalBindingPreview._(
             evaluated: BuiltValueNullFieldError.checkNotNull(
-                evaluated, r'ExternalBindingPreview', 'evaluated'),
+              evaluated,
+              r'ExternalBindingPreview',
+              'evaluated',
+            ),
             matched: BuiltValueNullFieldError.checkNotNull(
-                matched, r'ExternalBindingPreview', 'matched'),
+              matched,
+              r'ExternalBindingPreview',
+              'matched',
+            ),
             effects: effects.build(),
             errors: _errors?.build(),
           );
@@ -139,7 +146,10 @@ class ExternalBindingPreviewBuilder
         _errors?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalBindingPreview', _$failedField, e.toString());
+          r'ExternalBindingPreview',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

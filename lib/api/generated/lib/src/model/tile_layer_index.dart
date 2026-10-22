@@ -59,8 +59,9 @@ class _$TileLayerIndexSerializer
     yield r'layers';
     yield serializers.serialize(
       object.layers,
-      specifiedType:
-          const FullType(BuiltList, [FullType(TileLayerIndexLayersInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(TileLayerIndexLayersInner),
+      ]),
     );
   }
 
@@ -70,9 +71,11 @@ class _$TileLayerIndexSerializer
     TileLayerIndex object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,18 +91,23 @@ class _$TileLayerIndexSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tilejson':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TileLayerIndexTilejsonEnum),
-          ) as TileLayerIndexTilejsonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TileLayerIndexTilejsonEnum),
+                  )
+                  as TileLayerIndexTilejsonEnum;
           result.tilejson = valueDes;
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(TileLayerIndexLayersInner)]),
-          ) as BuiltList<TileLayerIndexLayersInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(TileLayerIndexLayersInner),
+                    ]),
+                  )
+                  as BuiltList<TileLayerIndexLayersInner>;
           result.layers.replace(valueDes);
           break;
         default:

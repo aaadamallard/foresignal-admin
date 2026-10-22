@@ -20,8 +20,10 @@ part 'ogc_tile_matrix_set_list_tile_matrix_sets_inner.g.dart';
 @BuiltValue()
 abstract class OgcTileMatrixSetListTileMatrixSetsInner
     implements
-        Built<OgcTileMatrixSetListTileMatrixSetsInner,
-            OgcTileMatrixSetListTileMatrixSetsInnerBuilder> {
+        Built<
+          OgcTileMatrixSetListTileMatrixSetsInner,
+          OgcTileMatrixSetListTileMatrixSetsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'id')
   OgcTileMatrixSetListTileMatrixSetsInnerIdEnum get id;
   // enum idEnum {  WebMercatorQuad,  WorldCRS84Quad,  };
@@ -37,9 +39,9 @@ abstract class OgcTileMatrixSetListTileMatrixSetsInner
 
   OgcTileMatrixSetListTileMatrixSetsInner._();
 
-  factory OgcTileMatrixSetListTileMatrixSetsInner(
-          [void updates(OgcTileMatrixSetListTileMatrixSetsInnerBuilder b)]) =
-      _$OgcTileMatrixSetListTileMatrixSetsInner;
+  factory OgcTileMatrixSetListTileMatrixSetsInner([
+    void updates(OgcTileMatrixSetListTileMatrixSetsInnerBuilder b),
+  ]) = _$OgcTileMatrixSetListTileMatrixSetsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcTileMatrixSetListTileMatrixSetsInnerBuilder b) => b;
@@ -54,7 +56,7 @@ class _$OgcTileMatrixSetListTileMatrixSetsInnerSerializer
   @override
   final Iterable<Type> types = const [
     OgcTileMatrixSetListTileMatrixSetsInner,
-    _$OgcTileMatrixSetListTileMatrixSetsInner
+    _$OgcTileMatrixSetListTileMatrixSetsInner,
   ];
 
   @override
@@ -68,8 +70,9 @@ class _$OgcTileMatrixSetListTileMatrixSetsInnerSerializer
     yield r'id';
     yield serializers.serialize(
       object.id,
-      specifiedType:
-          const FullType(OgcTileMatrixSetListTileMatrixSetsInnerIdEnum),
+      specifiedType: const FullType(
+        OgcTileMatrixSetListTileMatrixSetsInnerIdEnum,
+      ),
     );
     if (object.title != null) {
       yield r'title';
@@ -98,9 +101,11 @@ class _$OgcTileMatrixSetListTileMatrixSetsInnerSerializer
     OgcTileMatrixSetListTileMatrixSetsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -116,34 +121,45 @@ class _$OgcTileMatrixSetListTileMatrixSetsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(OgcTileMatrixSetListTileMatrixSetsInnerIdEnum),
-          ) as OgcTileMatrixSetListTileMatrixSetsInnerIdEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      OgcTileMatrixSetListTileMatrixSetsInnerIdEnum,
+                    ),
+                  )
+                  as OgcTileMatrixSetListTileMatrixSetsInnerIdEnum;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'uri':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.uri = valueDes;
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>;
           result.links.replace(valueDes);
           break;
         default:
@@ -184,11 +200,10 @@ class OgcTileMatrixSetListTileMatrixSetsInnerIdEnum extends EnumClass {
       _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad;
 
   static Serializer<OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>
-      get serializer =>
-          _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer;
+  get serializer => _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer;
 
   const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<OgcTileMatrixSetListTileMatrixSetsInnerIdEnum> get values =>
       _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValues;

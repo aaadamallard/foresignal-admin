@@ -32,11 +32,11 @@ SeriesPointStatusEnum _$seriesPointStatusEnumValueOf(String name) {
 
 final BuiltSet<SeriesPointStatusEnum> _$seriesPointStatusEnumValues =
     BuiltSet<SeriesPointStatusEnum>(const <SeriesPointStatusEnum>[
-  _$seriesPointStatusEnum_final_,
-  _$seriesPointStatusEnum_preliminary,
-  _$seriesPointStatusEnum_estimated,
-  _$seriesPointStatusEnum_forecast,
-]);
+      _$seriesPointStatusEnum_final_,
+      _$seriesPointStatusEnum_preliminary,
+      _$seriesPointStatusEnum_estimated,
+      _$seriesPointStatusEnum_forecast,
+    ]);
 
 Serializer<SeriesPointStatusEnum> _$seriesPointStatusEnumSerializer =
     _$SeriesPointStatusEnumSerializer();
@@ -62,15 +62,20 @@ class _$SeriesPointStatusEnumSerializer
   final String wireName = 'SeriesPointStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesPointStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesPointStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SeriesPointStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesPointStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SeriesPointStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesPointStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesPoint extends SeriesPoint {
@@ -100,19 +105,19 @@ class _$SeriesPoint extends SeriesPoint {
   factory _$SeriesPoint([void Function(SeriesPointBuilder)? updates]) =>
       (SeriesPointBuilder()..update(updates))._build();
 
-  _$SeriesPoint._(
-      {required this.period,
-      required this.periodStart,
-      required this.periodEnd,
-      this.value,
-      required this.unit,
-      required this.status,
-      this.extra,
-      this.version,
-      this.observedAt,
-      this.knownAt,
-      this.coverageOk})
-      : super._();
+  _$SeriesPoint._({
+    required this.period,
+    required this.periodStart,
+    required this.periodEnd,
+    this.value,
+    required this.unit,
+    required this.status,
+    this.extra,
+    this.version,
+    this.observedAt,
+    this.knownAt,
+    this.coverageOk,
+  }) : super._();
   @override
   SeriesPoint rebuild(void Function(SeriesPointBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -260,19 +265,35 @@ class SeriesPointBuilder implements Builder<SeriesPoint, SeriesPointBuilder> {
   _$SeriesPoint _build() {
     _$SeriesPoint _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesPoint._(
             period: BuiltValueNullFieldError.checkNotNull(
-                period, r'SeriesPoint', 'period'),
+              period,
+              r'SeriesPoint',
+              'period',
+            ),
             periodStart: BuiltValueNullFieldError.checkNotNull(
-                periodStart, r'SeriesPoint', 'periodStart'),
+              periodStart,
+              r'SeriesPoint',
+              'periodStart',
+            ),
             periodEnd: BuiltValueNullFieldError.checkNotNull(
-                periodEnd, r'SeriesPoint', 'periodEnd'),
+              periodEnd,
+              r'SeriesPoint',
+              'periodEnd',
+            ),
             value: value,
             unit: BuiltValueNullFieldError.checkNotNull(
-                unit, r'SeriesPoint', 'unit'),
+              unit,
+              r'SeriesPoint',
+              'unit',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SeriesPoint', 'status'),
+              status,
+              r'SeriesPoint',
+              'status',
+            ),
             extra: _extra?.build(),
             version: version,
             observedAt: observedAt,
@@ -286,7 +307,10 @@ class SeriesPointBuilder implements Builder<SeriesPoint, SeriesPointBuilder> {
         _extra?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesPoint', _$failedField, e.toString());
+          r'SeriesPoint',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

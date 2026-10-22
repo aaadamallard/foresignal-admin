@@ -46,22 +46,22 @@ class MapStylesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/map/icons/{name}.png'.replaceAll(
-        '{' r'name' '}',
-        encodeQueryParameter(_serializers, name, const FullType(String))
-            .toString());
+      '{'
+      r'name'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        name,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -127,21 +127,21 @@ class MapStylesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/map/sprites/{spriteFile}'.replaceAll(
-        '{' r'spriteFile' '}',
-        encodeQueryParameter(_serializers, spriteFile, const FullType(String))
-            .toString());
+      '{'
+      r'spriteFile'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        spriteFile,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -163,10 +163,13 @@ class MapStylesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  BuiltMap, [FullType(String), FullType(MapSpriteIndexValue)]),
-            ) as BuiltMap<String, MapSpriteIndexValue>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltMap, [
+                    FullType(String),
+                    FullType(MapSpriteIndexValue),
+                  ]),
+                )
+                as BuiltMap<String, MapSpriteIndexValue>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -217,16 +220,10 @@ class MapStylesApi {
     final _path = r'/v1/map/style.json';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -235,11 +232,17 @@ class MapStylesApi {
 
     final _queryParameters = <String, dynamic>{
       if (layers != null)
-        r'layers':
-            encodeQueryParameter(_serializers, layers, const FullType(String)),
+        r'layers': encodeQueryParameter(
+          _serializers,
+          layers,
+          const FullType(String),
+        ),
       if (theme != null)
-        r'theme':
-            encodeQueryParameter(_serializers, theme, const FullType(String)),
+        r'theme': encodeQueryParameter(
+          _serializers,
+          theme,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -258,9 +261,10 @@ class MapStylesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(MapStyle),
-            ) as MapStyle;
+                  rawResponse,
+                  specifiedType: const FullType(MapStyle),
+                )
+                as MapStyle;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

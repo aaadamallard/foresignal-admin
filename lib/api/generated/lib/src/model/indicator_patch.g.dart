@@ -14,7 +14,8 @@ const IndicatorPatchCredibilityEnum _$indicatorPatchCredibilityEnum_L =
     const IndicatorPatchCredibilityEnum._('L');
 
 IndicatorPatchCredibilityEnum _$indicatorPatchCredibilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'H':
       return _$indicatorPatchCredibilityEnum_H;
@@ -28,12 +29,13 @@ IndicatorPatchCredibilityEnum _$indicatorPatchCredibilityEnumValueOf(
 }
 
 final BuiltSet<IndicatorPatchCredibilityEnum>
-    _$indicatorPatchCredibilityEnumValues = BuiltSet<
-        IndicatorPatchCredibilityEnum>(const <IndicatorPatchCredibilityEnum>[
-  _$indicatorPatchCredibilityEnum_H,
-  _$indicatorPatchCredibilityEnum_M,
-  _$indicatorPatchCredibilityEnum_L,
-]);
+_$indicatorPatchCredibilityEnumValues = BuiltSet<IndicatorPatchCredibilityEnum>(
+  const <IndicatorPatchCredibilityEnum>[
+    _$indicatorPatchCredibilityEnum_H,
+    _$indicatorPatchCredibilityEnum_M,
+    _$indicatorPatchCredibilityEnum_L,
+  ],
+);
 
 const IndicatorPatchRelevanceEnum _$indicatorPatchRelevanceEnum_H =
     const IndicatorPatchRelevanceEnum._('H');
@@ -56,12 +58,12 @@ IndicatorPatchRelevanceEnum _$indicatorPatchRelevanceEnumValueOf(String name) {
 }
 
 final BuiltSet<IndicatorPatchRelevanceEnum>
-    _$indicatorPatchRelevanceEnumValues =
+_$indicatorPatchRelevanceEnumValues =
     BuiltSet<IndicatorPatchRelevanceEnum>(const <IndicatorPatchRelevanceEnum>[
-  _$indicatorPatchRelevanceEnum_H,
-  _$indicatorPatchRelevanceEnum_M,
-  _$indicatorPatchRelevanceEnum_L,
-]);
+      _$indicatorPatchRelevanceEnum_H,
+      _$indicatorPatchRelevanceEnum_M,
+      _$indicatorPatchRelevanceEnum_L,
+    ]);
 
 const IndicatorPatchStateEnum _$indicatorPatchStateEnum_observed =
     const IndicatorPatchStateEnum._('observed');
@@ -81,15 +83,15 @@ IndicatorPatchStateEnum _$indicatorPatchStateEnumValueOf(String name) {
 
 final BuiltSet<IndicatorPatchStateEnum> _$indicatorPatchStateEnumValues =
     BuiltSet<IndicatorPatchStateEnum>(const <IndicatorPatchStateEnum>[
-  _$indicatorPatchStateEnum_observed,
-  _$indicatorPatchStateEnum_absent,
-]);
+      _$indicatorPatchStateEnum_observed,
+      _$indicatorPatchStateEnum_absent,
+    ]);
 
 Serializer<IndicatorPatchCredibilityEnum>
-    _$indicatorPatchCredibilityEnumSerializer =
+_$indicatorPatchCredibilityEnumSerializer =
     _$IndicatorPatchCredibilityEnumSerializer();
 Serializer<IndicatorPatchRelevanceEnum>
-    _$indicatorPatchRelevanceEnumSerializer =
+_$indicatorPatchRelevanceEnumSerializer =
     _$IndicatorPatchRelevanceEnumSerializer();
 Serializer<IndicatorPatchStateEnum> _$indicatorPatchStateEnumSerializer =
     _$IndicatorPatchStateEnumSerializer();
@@ -114,16 +116,19 @@ class _$IndicatorPatchCredibilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorPatchCredibilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorPatchCredibilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorPatchCredibilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorPatchCredibilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorPatchCredibilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorPatchRelevanceEnumSerializer
@@ -145,16 +150,20 @@ class _$IndicatorPatchRelevanceEnumSerializer
   final String wireName = 'IndicatorPatchRelevanceEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorPatchRelevanceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorPatchRelevanceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorPatchRelevanceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorPatchRelevanceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorPatchRelevanceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorPatchStateEnumSerializer
@@ -174,16 +183,20 @@ class _$IndicatorPatchStateEnumSerializer
   final String wireName = 'IndicatorPatchStateEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorPatchStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorPatchStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorPatchStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorPatchStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorPatchStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorPatch extends IndicatorPatch {
@@ -211,18 +224,18 @@ class _$IndicatorPatch extends IndicatorPatch {
   factory _$IndicatorPatch([void Function(IndicatorPatchBuilder)? updates]) =>
       (IndicatorPatchBuilder()..update(updates))._build();
 
-  _$IndicatorPatch._(
-      {this.description,
-      this.signal,
-      this.signalFamily,
-      this.credibility,
-      this.relevance,
-      this.expectedBy,
-      this.lr,
-      this.absenceLr,
-      this.state,
-      this.observedEvidence})
-      : super._();
+  _$IndicatorPatch._({
+    this.description,
+    this.signal,
+    this.signalFamily,
+    this.credibility,
+    this.relevance,
+    this.expectedBy,
+    this.lr,
+    this.absenceLr,
+    this.state,
+    this.observedEvidence,
+  }) : super._();
   @override
   IndicatorPatch rebuild(void Function(IndicatorPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -369,7 +382,8 @@ class IndicatorPatchBuilder
   _$IndicatorPatch _build() {
     _$IndicatorPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndicatorPatch._(
             description: description,
             signal: _signal?.build(),
@@ -394,7 +408,10 @@ class IndicatorPatchBuilder
         _absenceLr?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndicatorPatch', _$failedField, e.toString());
+          r'IndicatorPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

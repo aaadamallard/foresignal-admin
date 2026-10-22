@@ -56,9 +56,9 @@ abstract class IngestRecordsPathKeyRequest
 
   IngestRecordsPathKeyRequest._();
 
-  factory IngestRecordsPathKeyRequest(
-          [void updates(IngestRecordsPathKeyRequestBuilder b)]) =
-      _$IngestRecordsPathKeyRequest;
+  factory IngestRecordsPathKeyRequest([
+    void updates(IngestRecordsPathKeyRequestBuilder b),
+  ]) = _$IngestRecordsPathKeyRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IngestRecordsPathKeyRequestBuilder b) => b;
@@ -73,7 +73,7 @@ class _$IngestRecordsPathKeyRequestSerializer
   @override
   final Iterable<Type> types = const [
     IngestRecordsPathKeyRequest,
-    _$IngestRecordsPathKeyRequest
+    _$IngestRecordsPathKeyRequest,
   ];
 
   @override
@@ -92,9 +92,13 @@ class _$IngestRecordsPathKeyRequestSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -113,8 +117,9 @@ class _$IngestRecordsPathKeyRequestSerializer
       FullType(IngestRecords),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }

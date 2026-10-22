@@ -20,17 +20,22 @@ class _$PrecursorTestResultLag extends PrecursorTestResultLag {
   @override
   final String? mean;
 
-  factory _$PrecursorTestResultLag(
-          [void Function(PrecursorTestResultLagBuilder)? updates]) =>
-      (PrecursorTestResultLagBuilder()..update(updates))._build();
+  factory _$PrecursorTestResultLag([
+    void Function(PrecursorTestResultLagBuilder)? updates,
+  ]) => (PrecursorTestResultLagBuilder()..update(updates))._build();
 
-  _$PrecursorTestResultLag._(
-      {this.min, this.p25, this.median, this.p75, this.max, this.mean})
-      : super._();
+  _$PrecursorTestResultLag._({
+    this.min,
+    this.p25,
+    this.median,
+    this.p75,
+    this.max,
+    this.mean,
+  }) : super._();
   @override
   PrecursorTestResultLag rebuild(
-          void Function(PrecursorTestResultLagBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorTestResultLagBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorTestResultLagBuilder toBuilder() =>
@@ -134,7 +139,8 @@ class PrecursorTestResultLagBuilder
   PrecursorTestResultLag build() => _build();
 
   _$PrecursorTestResultLag _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorTestResultLag._(
           min: min,
           p25: p25,

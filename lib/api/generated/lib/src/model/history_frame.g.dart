@@ -17,9 +17,11 @@ class _$HistoryFrame extends HistoryFrame {
   factory _$HistoryFrame([void Function(HistoryFrameBuilder)? updates]) =>
       (HistoryFrameBuilder()..update(updates))._build();
 
-  _$HistoryFrame._(
-      {required this.t, required this.upserts, required this.removals})
-      : super._();
+  _$HistoryFrame._({
+    required this.t,
+    required this.upserts,
+    required this.removals,
+  }) : super._();
   @override
   HistoryFrame rebuild(void Function(HistoryFrameBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -106,7 +108,8 @@ class HistoryFrameBuilder
   _$HistoryFrame _build() {
     _$HistoryFrame _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HistoryFrame._(
             t: BuiltValueNullFieldError.checkNotNull(t, r'HistoryFrame', 't'),
             upserts: upserts.build(),
@@ -121,7 +124,10 @@ class HistoryFrameBuilder
         removals.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HistoryFrame', _$failedField, e.toString());
+          r'HistoryFrame',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

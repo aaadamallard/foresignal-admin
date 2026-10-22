@@ -64,7 +64,7 @@ class _$PlaceWeatherResponseSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherResponse,
-    _$PlaceWeatherResponse
+    _$PlaceWeatherResponse,
   ];
 
   @override
@@ -126,9 +126,11 @@ class _$PlaceWeatherResponseSerializer
     PlaceWeatherResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -144,57 +146,72 @@ class _$PlaceWeatherResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.placeId = valueDes;
           break;
         case r'place':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.place = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.timezone = valueDes;
           break;
         case r'record':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Record),
-          ) as Record?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Record),
+                  )
+                  as Record?;
           if (valueDes == null) continue;
           result.record.replace(valueDes);
           break;
         case r'weather':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeather),
-          ) as PlaceWeather?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeather),
+                  )
+                  as PlaceWeather?;
           if (valueDes == null) continue;
           result.weather.replace(valueDes);
           break;
         case r'forecastSeries':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ForecastSeries)]),
-          ) as BuiltList<ForecastSeries>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ForecastSeries),
+                    ]),
+                  )
+                  as BuiltList<ForecastSeries>;
           result.forecastSeries.replace(valueDes);
           break;
         case r'serverTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.serverTime = valueDes;
           break;
         default:

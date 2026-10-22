@@ -51,23 +51,32 @@ class WebSubApi {
   }) async {
     final _path = r'/v1/websub/{sourceId}/{token}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'token' '}',
-            encodeQueryParameter(_serializers, token, const FullType(String))
-                .toString());
+          '{'
+          r'token'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            token,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
         r'X-Hub-Signature': xHubSignature,
         ...?headers,
       },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -78,10 +87,7 @@ class WebSubApi {
       _bodyData = body;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -137,39 +143,61 @@ class WebSubApi {
   }) async {
     final _path = r'/v1/websub/{sourceId}/{token}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'token' '}',
-            encodeQueryParameter(_serializers, token, const FullType(String))
-                .toString());
+          '{'
+          r'token'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            token,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       validateStatus: validateStatus,
     );
 
     final _queryParameters = <String, dynamic>{
       r'hub.mode': encodeQueryParameter(
-          _serializers, hubPeriodMode, const FullType(String)),
+        _serializers,
+        hubPeriodMode,
+        const FullType(String),
+      ),
       r'hub.topic': encodeQueryParameter(
-          _serializers, hubPeriodTopic, const FullType(String)),
+        _serializers,
+        hubPeriodTopic,
+        const FullType(String),
+      ),
       if (hubPeriodChallenge != null)
         r'hub.challenge': encodeQueryParameter(
-            _serializers, hubPeriodChallenge, const FullType(String)),
+          _serializers,
+          hubPeriodChallenge,
+          const FullType(String),
+        ),
       if (hubPeriodLeaseSeconds != null)
         r'hub.lease_seconds': encodeQueryParameter(
-            _serializers, hubPeriodLeaseSeconds, const FullType(int)),
+          _serializers,
+          hubPeriodLeaseSeconds,
+          const FullType(int),
+        ),
       if (hubPeriodReason != null)
         r'hub.reason': encodeQueryParameter(
-            _serializers, hubPeriodReason, const FullType(String)),
+          _serializers,
+          hubPeriodReason,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(

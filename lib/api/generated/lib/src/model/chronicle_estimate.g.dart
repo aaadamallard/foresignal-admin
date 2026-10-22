@@ -26,21 +26,21 @@ class _$ChronicleEstimate extends ChronicleEstimate {
   @override
   final BuiltList<Caveat>? caveats;
 
-  factory _$ChronicleEstimate(
-          [void Function(ChronicleEstimateBuilder)? updates]) =>
-      (ChronicleEstimateBuilder()..update(updates))._build();
+  factory _$ChronicleEstimate([
+    void Function(ChronicleEstimateBuilder)? updates,
+  ]) => (ChronicleEstimateBuilder()..update(updates))._build();
 
-  _$ChronicleEstimate._(
-      {required this.chronicleId,
-      required this.computedAt,
-      required this.layers,
-      required this.totalRowsPerDay,
-      required this.totalBytesPerDay,
-      required this.sizeCapBytes,
-      this.bytesUsed,
-      this.daysToCap,
-      this.caveats})
-      : super._();
+  _$ChronicleEstimate._({
+    required this.chronicleId,
+    required this.computedAt,
+    required this.layers,
+    required this.totalRowsPerDay,
+    required this.totalBytesPerDay,
+    required this.sizeCapBytes,
+    this.bytesUsed,
+    this.daysToCap,
+    this.caveats,
+  }) : super._();
   @override
   ChronicleEstimate rebuild(void Function(ChronicleEstimateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -177,19 +177,35 @@ class ChronicleEstimateBuilder
   _$ChronicleEstimate _build() {
     _$ChronicleEstimate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleEstimate._(
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleEstimate', 'chronicleId'),
+              chronicleId,
+              r'ChronicleEstimate',
+              'chronicleId',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'ChronicleEstimate', 'computedAt'),
+              computedAt,
+              r'ChronicleEstimate',
+              'computedAt',
+            ),
             layers: layers.build(),
             totalRowsPerDay: BuiltValueNullFieldError.checkNotNull(
-                totalRowsPerDay, r'ChronicleEstimate', 'totalRowsPerDay'),
+              totalRowsPerDay,
+              r'ChronicleEstimate',
+              'totalRowsPerDay',
+            ),
             totalBytesPerDay: BuiltValueNullFieldError.checkNotNull(
-                totalBytesPerDay, r'ChronicleEstimate', 'totalBytesPerDay'),
+              totalBytesPerDay,
+              r'ChronicleEstimate',
+              'totalBytesPerDay',
+            ),
             sizeCapBytes: BuiltValueNullFieldError.checkNotNull(
-                sizeCapBytes, r'ChronicleEstimate', 'sizeCapBytes'),
+              sizeCapBytes,
+              r'ChronicleEstimate',
+              'sizeCapBytes',
+            ),
             bytesUsed: bytesUsed,
             daysToCap: daysToCap,
             caveats: _caveats?.build(),
@@ -204,7 +220,10 @@ class ChronicleEstimateBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleEstimate', _$failedField, e.toString());
+          r'ChronicleEstimate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

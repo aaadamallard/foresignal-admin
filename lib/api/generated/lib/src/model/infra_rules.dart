@@ -56,8 +56,9 @@ class _$InfraRulesSerializer implements PrimitiveSerializer<InfraRules> {
     yield r'rules';
     yield serializers.serialize(
       object.rules,
-      specifiedType:
-          const FullType(BuiltList, [FullType(InfraRulesRulesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(InfraRulesRulesInner),
+      ]),
     );
   }
 
@@ -67,9 +68,11 @@ class _$InfraRulesSerializer implements PrimitiveSerializer<InfraRules> {
     InfraRules object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -85,19 +88,24 @@ class _$InfraRulesSerializer implements PrimitiveSerializer<InfraRules> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.version = valueDes;
           break;
         case r'rules':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(InfraRulesRulesInner)]),
-          ) as BuiltList<InfraRulesRulesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(InfraRulesRulesInner),
+                    ]),
+                  )
+                  as BuiltList<InfraRulesRulesInner>;
           result.rules.replace(valueDes);
           break;
         default:

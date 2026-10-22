@@ -10,15 +10,15 @@ class _$NotificationActionParams extends NotificationActionParams {
   @override
   final String? duration;
 
-  factory _$NotificationActionParams(
-          [void Function(NotificationActionParamsBuilder)? updates]) =>
-      (NotificationActionParamsBuilder()..update(updates))._build();
+  factory _$NotificationActionParams([
+    void Function(NotificationActionParamsBuilder)? updates,
+  ]) => (NotificationActionParamsBuilder()..update(updates))._build();
 
   _$NotificationActionParams._({this.duration}) : super._();
   @override
   NotificationActionParams rebuild(
-          void Function(NotificationActionParamsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationActionParamsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationActionParamsBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$NotificationActionParams extends NotificationActionParams {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'NotificationActionParams')
-          ..add('duration', duration))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'NotificationActionParams',
+    )..add('duration', duration)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class NotificationActionParamsBuilder
   NotificationActionParams build() => _build();
 
   _$NotificationActionParams _build() {
-    final _$result = _$v ??
-        _$NotificationActionParams._(
-          duration: duration,
-        );
+    final _$result = _$v ?? _$NotificationActionParams._(duration: duration);
     replace(_$result);
     return _$result;
   }

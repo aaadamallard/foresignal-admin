@@ -14,17 +14,19 @@ class _$AnalysisRequestResult extends AnalysisRequestResult {
   @override
   final String? forecastId;
 
-  factory _$AnalysisRequestResult(
-          [void Function(AnalysisRequestResultBuilder)? updates]) =>
-      (AnalysisRequestResultBuilder()..update(updates))._build();
+  factory _$AnalysisRequestResult([
+    void Function(AnalysisRequestResultBuilder)? updates,
+  ]) => (AnalysisRequestResultBuilder()..update(updates))._build();
 
-  _$AnalysisRequestResult._(
-      {required this.correlationId, required this.recorded, this.forecastId})
-      : super._();
+  _$AnalysisRequestResult._({
+    required this.correlationId,
+    required this.recorded,
+    this.forecastId,
+  }) : super._();
   @override
   AnalysisRequestResult rebuild(
-          void Function(AnalysisRequestResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalysisRequestResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalysisRequestResultBuilder toBuilder() =>
@@ -105,12 +107,19 @@ class AnalysisRequestResultBuilder
   AnalysisRequestResult build() => _build();
 
   _$AnalysisRequestResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalysisRequestResult._(
           correlationId: BuiltValueNullFieldError.checkNotNull(
-              correlationId, r'AnalysisRequestResult', 'correlationId'),
+            correlationId,
+            r'AnalysisRequestResult',
+            'correlationId',
+          ),
           recorded: BuiltValueNullFieldError.checkNotNull(
-              recorded, r'AnalysisRequestResult', 'recorded'),
+            recorded,
+            r'AnalysisRequestResult',
+            'recorded',
+          ),
           forecastId: forecastId,
         );
     replace(_$result);

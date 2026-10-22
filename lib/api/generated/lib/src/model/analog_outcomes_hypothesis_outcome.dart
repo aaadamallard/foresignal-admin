@@ -16,8 +16,10 @@ part 'analog_outcomes_hypothesis_outcome.g.dart';
 @BuiltValue()
 abstract class AnalogOutcomesHypothesisOutcome
     implements
-        Built<AnalogOutcomesHypothesisOutcome,
-            AnalogOutcomesHypothesisOutcomeBuilder> {
+        Built<
+          AnalogOutcomesHypothesisOutcome,
+          AnalogOutcomesHypothesisOutcomeBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'setId')
   String get setId;
@@ -27,9 +29,9 @@ abstract class AnalogOutcomesHypothesisOutcome
 
   AnalogOutcomesHypothesisOutcome._();
 
-  factory AnalogOutcomesHypothesisOutcome(
-          [void updates(AnalogOutcomesHypothesisOutcomeBuilder b)]) =
-      _$AnalogOutcomesHypothesisOutcome;
+  factory AnalogOutcomesHypothesisOutcome([
+    void updates(AnalogOutcomesHypothesisOutcomeBuilder b),
+  ]) = _$AnalogOutcomesHypothesisOutcome;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalogOutcomesHypothesisOutcomeBuilder b) => b;
@@ -44,7 +46,7 @@ class _$AnalogOutcomesHypothesisOutcomeSerializer
   @override
   final Iterable<Type> types = const [
     AnalogOutcomesHypothesisOutcome,
-    _$AnalogOutcomesHypothesisOutcome
+    _$AnalogOutcomesHypothesisOutcome,
   ];
 
   @override
@@ -73,9 +75,11 @@ class _$AnalogOutcomesHypothesisOutcomeSerializer
     AnalogOutcomesHypothesisOutcome object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +95,21 @@ class _$AnalogOutcomesHypothesisOutcomeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'outcome':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.outcome = valueDes;
           break;
         default:

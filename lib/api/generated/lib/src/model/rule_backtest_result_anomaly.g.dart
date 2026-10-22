@@ -14,17 +14,19 @@ class _$RuleBacktestResultAnomaly extends RuleBacktestResultAnomaly {
   @override
   final int? coverageDrops;
 
-  factory _$RuleBacktestResultAnomaly(
-          [void Function(RuleBacktestResultAnomalyBuilder)? updates]) =>
-      (RuleBacktestResultAnomalyBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultAnomaly([
+    void Function(RuleBacktestResultAnomalyBuilder)? updates,
+  ]) => (RuleBacktestResultAnomalyBuilder()..update(updates))._build();
 
-  _$RuleBacktestResultAnomaly._(
-      {this.warmupConsumed, this.byClassification, this.coverageDrops})
-      : super._();
+  _$RuleBacktestResultAnomaly._({
+    this.warmupConsumed,
+    this.byClassification,
+    this.coverageDrops,
+  }) : super._();
   @override
   RuleBacktestResultAnomaly rebuild(
-          void Function(RuleBacktestResultAnomalyBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultAnomalyBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultAnomalyBuilder toBuilder() =>
@@ -111,7 +113,8 @@ class RuleBacktestResultAnomalyBuilder
   _$RuleBacktestResultAnomaly _build() {
     _$RuleBacktestResultAnomaly _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RuleBacktestResultAnomaly._(
             warmupConsumed: warmupConsumed,
             byClassification: _byClassification?.build(),
@@ -124,7 +127,10 @@ class RuleBacktestResultAnomalyBuilder
         _byClassification?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RuleBacktestResultAnomaly', _$failedField, e.toString());
+          r'RuleBacktestResultAnomaly',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

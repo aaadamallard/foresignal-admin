@@ -14,17 +14,19 @@ class _$RecipeBacktestResultOverlap extends RecipeBacktestResultOverlap {
   @override
   final int? onlyActual;
 
-  factory _$RecipeBacktestResultOverlap(
-          [void Function(RecipeBacktestResultOverlapBuilder)? updates]) =>
-      (RecipeBacktestResultOverlapBuilder()..update(updates))._build();
+  factory _$RecipeBacktestResultOverlap([
+    void Function(RecipeBacktestResultOverlapBuilder)? updates,
+  ]) => (RecipeBacktestResultOverlapBuilder()..update(updates))._build();
 
-  _$RecipeBacktestResultOverlap._(
-      {this.matched, this.onlyBacktest, this.onlyActual})
-      : super._();
+  _$RecipeBacktestResultOverlap._({
+    this.matched,
+    this.onlyBacktest,
+    this.onlyActual,
+  }) : super._();
   @override
   RecipeBacktestResultOverlap rebuild(
-          void Function(RecipeBacktestResultOverlapBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecipeBacktestResultOverlapBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecipeBacktestResultOverlapBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$RecipeBacktestResultOverlap extends RecipeBacktestResultOverlap {
 
 class RecipeBacktestResultOverlapBuilder
     implements
-        Builder<RecipeBacktestResultOverlap,
-            RecipeBacktestResultOverlapBuilder> {
+        Builder<
+          RecipeBacktestResultOverlap,
+          RecipeBacktestResultOverlapBuilder
+        > {
   _$RecipeBacktestResultOverlap? _$v;
 
   int? _matched;
@@ -106,7 +110,8 @@ class RecipeBacktestResultOverlapBuilder
   RecipeBacktestResultOverlap build() => _build();
 
   _$RecipeBacktestResultOverlap _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RecipeBacktestResultOverlap._(
           matched: matched,
           onlyBacktest: onlyBacktest,

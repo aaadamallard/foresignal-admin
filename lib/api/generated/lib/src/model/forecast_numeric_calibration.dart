@@ -50,7 +50,7 @@ abstract class ForecastNumericCalibration
   /// Empirical coverage P(y ≤ q) of each stated quantile vs its nominal level
   @BuiltValueField(wireName: r'quantileReliability')
   BuiltList<ForecastNumericCalibrationQuantileReliabilityInner>
-      get quantileReliability;
+  get quantileReliability;
 
   @BuiltValueField(wireName: r'pit')
   ForecastNumericCalibrationPit get pit;
@@ -66,9 +66,9 @@ abstract class ForecastNumericCalibration
 
   ForecastNumericCalibration._();
 
-  factory ForecastNumericCalibration(
-          [void updates(ForecastNumericCalibrationBuilder b)]) =
-      _$ForecastNumericCalibration;
+  factory ForecastNumericCalibration([
+    void updates(ForecastNumericCalibrationBuilder b),
+  ]) = _$ForecastNumericCalibration;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastNumericCalibrationBuilder b) => b;
@@ -83,7 +83,7 @@ class _$ForecastNumericCalibrationSerializer
   @override
   final Iterable<Type> types = const [
     ForecastNumericCalibration,
-    _$ForecastNumericCalibration
+    _$ForecastNumericCalibration,
   ];
 
   @override
@@ -114,10 +114,7 @@ class _$ForecastNumericCalibrationSerializer
       specifiedType: const FullType(ForecastNumericCalibrationTypeEnum),
     );
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     yield r'label';
     yield serializers.serialize(
       object.label,
@@ -126,8 +123,9 @@ class _$ForecastNumericCalibrationSerializer
     yield r'quantileReliability';
     yield serializers.serialize(
       object.quantileReliability,
-      specifiedType: const FullType(BuiltList,
-          [FullType(ForecastNumericCalibrationQuantileReliabilityInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ForecastNumericCalibrationQuantileReliabilityInner),
+      ]),
     );
     yield r'pit';
     yield serializers.serialize(
@@ -159,9 +157,11 @@ class _$ForecastNumericCalibrationSerializer
     ForecastNumericCalibration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -177,78 +177,107 @@ class _$ForecastNumericCalibrationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.forecasterId = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.category = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastNumericCalibrationTypeEnum),
-          ) as ForecastNumericCalibrationTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecastNumericCalibrationTypeEnum,
+                    ),
+                  )
+                  as ForecastNumericCalibrationTypeEnum;
           result.type = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastNumericCalibrationLabelEnum),
-          ) as ForecastNumericCalibrationLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecastNumericCalibrationLabelEnum,
+                    ),
+                  )
+                  as ForecastNumericCalibrationLabelEnum;
           result.label = valueDes;
           break;
         case r'quantileReliability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(ForecastNumericCalibrationQuantileReliabilityInner)]),
-          ) as BuiltList<ForecastNumericCalibrationQuantileReliabilityInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        ForecastNumericCalibrationQuantileReliabilityInner,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    ForecastNumericCalibrationQuantileReliabilityInner
+                  >;
           result.quantileReliability.replace(valueDes);
           break;
         case r'pit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastNumericCalibrationPit),
-          ) as ForecastNumericCalibrationPit;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecastNumericCalibrationPit,
+                    ),
+                  )
+                  as ForecastNumericCalibrationPit;
           result.pit.replace(valueDes);
           break;
         case r'summary':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ForecastNumericCalibrationSummary),
-          ) as ForecastNumericCalibrationSummary?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ForecastNumericCalibrationSummary,
+                    ),
+                  )
+                  as ForecastNumericCalibrationSummary?;
           if (valueDes == null) continue;
           result.summary.replace(valueDes);
           break;
         case r'scorerVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.scorerVersion = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         default:

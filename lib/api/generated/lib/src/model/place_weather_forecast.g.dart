@@ -12,15 +12,15 @@ class _$PlaceWeatherForecast extends PlaceWeatherForecast {
   @override
   final PlaceWeatherForecastNws? nws;
 
-  factory _$PlaceWeatherForecast(
-          [void Function(PlaceWeatherForecastBuilder)? updates]) =>
-      (PlaceWeatherForecastBuilder()..update(updates))._build();
+  factory _$PlaceWeatherForecast([
+    void Function(PlaceWeatherForecastBuilder)? updates,
+  ]) => (PlaceWeatherForecastBuilder()..update(updates))._build();
 
   _$PlaceWeatherForecast._({this.gfs, this.nws}) : super._();
   @override
   PlaceWeatherForecast rebuild(
-          void Function(PlaceWeatherForecastBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherForecastBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherForecastBuilder toBuilder() =>
@@ -96,11 +96,9 @@ class PlaceWeatherForecastBuilder
   _$PlaceWeatherForecast _build() {
     _$PlaceWeatherForecast _$result;
     try {
-      _$result = _$v ??
-          _$PlaceWeatherForecast._(
-            gfs: _gfs?.build(),
-            nws: _nws?.build(),
-          );
+      _$result =
+          _$v ??
+          _$PlaceWeatherForecast._(gfs: _gfs?.build(), nws: _nws?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -110,7 +108,10 @@ class PlaceWeatherForecastBuilder
         _nws?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceWeatherForecast', _$failedField, e.toString());
+          r'PlaceWeatherForecast',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

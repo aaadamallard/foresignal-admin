@@ -17,11 +17,12 @@ const SituationMemberMemberTypeEnum _$situationMemberMemberTypeEnum_anomaly =
 const SituationMemberMemberTypeEnum _$situationMemberMemberTypeEnum_record =
     const SituationMemberMemberTypeEnum._('record');
 const SituationMemberMemberTypeEnum
-    _$situationMemberMemberTypeEnum_investigation =
+_$situationMemberMemberTypeEnum_investigation =
     const SituationMemberMemberTypeEnum._('investigation');
 
 SituationMemberMemberTypeEnum _$situationMemberMemberTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'intelEvent':
       return _$situationMemberMemberTypeEnum_intelEvent;
@@ -41,15 +42,16 @@ SituationMemberMemberTypeEnum _$situationMemberMemberTypeEnumValueOf(
 }
 
 final BuiltSet<SituationMemberMemberTypeEnum>
-    _$situationMemberMemberTypeEnumValues = BuiltSet<
-        SituationMemberMemberTypeEnum>(const <SituationMemberMemberTypeEnum>[
-  _$situationMemberMemberTypeEnum_intelEvent,
-  _$situationMemberMemberTypeEnum_finding,
-  _$situationMemberMemberTypeEnum_alert,
-  _$situationMemberMemberTypeEnum_anomaly,
-  _$situationMemberMemberTypeEnum_record,
-  _$situationMemberMemberTypeEnum_investigation,
-]);
+_$situationMemberMemberTypeEnumValues = BuiltSet<SituationMemberMemberTypeEnum>(
+  const <SituationMemberMemberTypeEnum>[
+    _$situationMemberMemberTypeEnum_intelEvent,
+    _$situationMemberMemberTypeEnum_finding,
+    _$situationMemberMemberTypeEnum_alert,
+    _$situationMemberMemberTypeEnum_anomaly,
+    _$situationMemberMemberTypeEnum_record,
+    _$situationMemberMemberTypeEnum_investigation,
+  ],
+);
 
 const SituationMemberRoleEnum _$situationMemberRoleEnum_core =
     const SituationMemberRoleEnum._('core');
@@ -69,12 +71,12 @@ SituationMemberRoleEnum _$situationMemberRoleEnumValueOf(String name) {
 
 final BuiltSet<SituationMemberRoleEnum> _$situationMemberRoleEnumValues =
     BuiltSet<SituationMemberRoleEnum>(const <SituationMemberRoleEnum>[
-  _$situationMemberRoleEnum_core,
-  _$situationMemberRoleEnum_context,
-]);
+      _$situationMemberRoleEnum_core,
+      _$situationMemberRoleEnum_context,
+    ]);
 
 Serializer<SituationMemberMemberTypeEnum>
-    _$situationMemberMemberTypeEnumSerializer =
+_$situationMemberMemberTypeEnumSerializer =
     _$SituationMemberMemberTypeEnumSerializer();
 Serializer<SituationMemberRoleEnum> _$situationMemberRoleEnumSerializer =
     _$SituationMemberRoleEnumSerializer();
@@ -105,16 +107,19 @@ class _$SituationMemberMemberTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationMemberMemberTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationMemberMemberTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationMemberMemberTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationMemberMemberTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationMemberMemberTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationMemberRoleEnumSerializer
@@ -134,16 +139,20 @@ class _$SituationMemberRoleEnumSerializer
   final String wireName = 'SituationMemberRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, SituationMemberRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationMemberRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationMemberRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationMemberRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationMemberRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationMember extends SituationMember {
@@ -185,25 +194,25 @@ class _$SituationMember extends SituationMember {
   factory _$SituationMember([void Function(SituationMemberBuilder)? updates]) =>
       (SituationMemberBuilder()..update(updates))._build();
 
-  _$SituationMember._(
-      {required this.id,
-      required this.situationId,
-      required this.memberType,
-      required this.ref,
-      required this.objectRef,
-      this.seq,
-      this.version,
-      this.kind,
-      this.signalFamily,
-      this.title,
-      this.severity,
-      this.observedAt,
-      required this.role,
-      this.joinReason,
-      required this.corroboration,
-      required this.addedAt,
-      required this.addedBy})
-      : super._();
+  _$SituationMember._({
+    required this.id,
+    required this.situationId,
+    required this.memberType,
+    required this.ref,
+    required this.objectRef,
+    this.seq,
+    this.version,
+    this.kind,
+    this.signalFamily,
+    this.title,
+    this.severity,
+    this.observedAt,
+    required this.role,
+    this.joinReason,
+    required this.corroboration,
+    required this.addedAt,
+    required this.addedBy,
+  }) : super._();
   @override
   SituationMember rebuild(void Function(SituationMemberBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -403,18 +412,34 @@ class SituationMemberBuilder
   _$SituationMember _build() {
     _$SituationMember _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationMember._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SituationMember', 'id'),
+              id,
+              r'SituationMember',
+              'id',
+            ),
             situationId: BuiltValueNullFieldError.checkNotNull(
-                situationId, r'SituationMember', 'situationId'),
+              situationId,
+              r'SituationMember',
+              'situationId',
+            ),
             memberType: BuiltValueNullFieldError.checkNotNull(
-                memberType, r'SituationMember', 'memberType'),
+              memberType,
+              r'SituationMember',
+              'memberType',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'SituationMember', 'ref'),
+              ref,
+              r'SituationMember',
+              'ref',
+            ),
             objectRef: BuiltValueNullFieldError.checkNotNull(
-                objectRef, r'SituationMember', 'objectRef'),
+              objectRef,
+              r'SituationMember',
+              'objectRef',
+            ),
             seq: seq,
             version: version,
             kind: kind,
@@ -423,14 +448,26 @@ class SituationMemberBuilder
             severity: severity,
             observedAt: observedAt,
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'SituationMember', 'role'),
+              role,
+              r'SituationMember',
+              'role',
+            ),
             joinReason: _joinReason?.build(),
             corroboration: BuiltValueNullFieldError.checkNotNull(
-                corroboration, r'SituationMember', 'corroboration'),
+              corroboration,
+              r'SituationMember',
+              'corroboration',
+            ),
             addedAt: BuiltValueNullFieldError.checkNotNull(
-                addedAt, r'SituationMember', 'addedAt'),
+              addedAt,
+              r'SituationMember',
+              'addedAt',
+            ),
             addedBy: BuiltValueNullFieldError.checkNotNull(
-                addedBy, r'SituationMember', 'addedBy'),
+              addedBy,
+              r'SituationMember',
+              'addedBy',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -439,7 +476,10 @@ class SituationMemberBuilder
         _joinReason?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationMember', _$failedField, e.toString());
+          r'SituationMember',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

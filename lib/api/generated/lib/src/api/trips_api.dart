@@ -50,21 +50,21 @@ class TripsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/trips/{tripId}/check'.replaceAll(
-        '{' r'tripId' '}',
-        encodeQueryParameter(_serializers, tripId, const FullType(String))
-            .toString());
+      '{'
+      r'tripId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tripId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -81,10 +81,7 @@ class TripsApi {
           : _serializers.serialize(tripCheckRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -107,9 +104,10 @@ class TripsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TripRun),
-            ) as TripRun;
+                  rawResponse,
+                  specifiedType: const FullType(TripRun),
+                )
+                as TripRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -158,16 +156,10 @@ class TripsApi {
     final _path = r'/v1/trips';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -182,10 +174,7 @@ class TripsApi {
       _bodyData = _serializers.serialize(tripInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -208,9 +197,10 @@ class TripsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Trip),
-            ) as Trip;
+                  rawResponse,
+                  specifiedType: const FullType(Trip),
+                )
+                as Trip;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -257,21 +247,21 @@ class TripsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/trips/{tripId}'.replaceAll(
-        '{' r'tripId' '}',
-        encodeQueryParameter(_serializers, tripId, const FullType(String))
-            .toString());
+      '{'
+      r'tripId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tripId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -313,21 +303,21 @@ class TripsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/trips/{tripId}'.replaceAll(
-        '{' r'tripId' '}',
-        encodeQueryParameter(_serializers, tripId, const FullType(String))
-            .toString());
+      '{'
+      r'tripId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tripId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -349,9 +339,10 @@ class TripsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Trip),
-            ) as Trip;
+                  rawResponse,
+                  specifiedType: const FullType(Trip),
+                )
+                as Trip;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -402,21 +393,21 @@ class TripsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/trips/{tripId}/runs'.replaceAll(
-        '{' r'tripId' '}',
-        encodeQueryParameter(_serializers, tripId, const FullType(String))
-            .toString());
+      '{'
+      r'tripId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tripId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -425,11 +416,17 @@ class TripsApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -448,9 +445,10 @@ class TripsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TripRunPage),
-            ) as TripRunPage;
+                  rawResponse,
+                  specifiedType: const FullType(TripRunPage),
+                )
+                as TripRunPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -501,16 +499,10 @@ class TripsApi {
     final _path = r'/v1/trips';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -519,11 +511,17 @@ class TripsApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -542,9 +540,10 @@ class TripsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TripPage),
-            ) as TripPage;
+                  rawResponse,
+                  specifiedType: const FullType(TripPage),
+                )
+                as TripPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -593,21 +592,21 @@ class TripsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/trips/{tripId}'.replaceAll(
-        '{' r'tripId' '}',
-        encodeQueryParameter(_serializers, tripId, const FullType(String))
-            .toString());
+      '{'
+      r'tripId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tripId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -622,10 +621,7 @@ class TripsApi {
       _bodyData = _serializers.serialize(tripInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -648,9 +644,10 @@ class TripsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Trip),
-            ) as Trip;
+                  rawResponse,
+                  specifiedType: const FullType(Trip),
+                )
+                as Trip;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

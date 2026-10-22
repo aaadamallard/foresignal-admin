@@ -20,8 +20,8 @@ OgcQueryablesTypeEnum _$ogcQueryablesTypeEnumValueOf(String name) {
 
 final BuiltSet<OgcQueryablesTypeEnum> _$ogcQueryablesTypeEnumValues =
     BuiltSet<OgcQueryablesTypeEnum>(const <OgcQueryablesTypeEnum>[
-  _$ogcQueryablesTypeEnum_object,
-]);
+      _$ogcQueryablesTypeEnum_object,
+    ]);
 
 Serializer<OgcQueryablesTypeEnum> _$ogcQueryablesTypeEnumSerializer =
     _$OgcQueryablesTypeEnumSerializer();
@@ -41,15 +41,20 @@ class _$OgcQueryablesTypeEnumSerializer
   final String wireName = 'OgcQueryablesTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, OgcQueryablesTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcQueryablesTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  OgcQueryablesTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcQueryablesTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  OgcQueryablesTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcQueryablesTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcQueryables extends OgcQueryables {
@@ -69,14 +74,14 @@ class _$OgcQueryables extends OgcQueryables {
   factory _$OgcQueryables([void Function(OgcQueryablesBuilder)? updates]) =>
       (OgcQueryablesBuilder()..update(updates))._build();
 
-  _$OgcQueryables._(
-      {this.dollarSchema,
-      this.dollarId,
-      required this.type,
-      this.title,
-      required this.properties,
-      this.additionalProperties})
-      : super._();
+  _$OgcQueryables._({
+    this.dollarSchema,
+    this.dollarId,
+    required this.type,
+    this.title,
+    required this.properties,
+    this.additionalProperties,
+  }) : super._();
   @override
   OgcQueryables rebuild(void Function(OgcQueryablesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -147,8 +152,8 @@ class OgcQueryablesBuilder
       _$this._properties ??=
           MapBuilder<String, BuiltMap<String, JsonObject?>>();
   set properties(
-          MapBuilder<String, BuiltMap<String, JsonObject?>>? properties) =>
-      _$this._properties = properties;
+    MapBuilder<String, BuiltMap<String, JsonObject?>>? properties,
+  ) => _$this._properties = properties;
 
   bool? _additionalProperties;
   bool? get additionalProperties => _$this._additionalProperties;
@@ -189,12 +194,16 @@ class OgcQueryablesBuilder
   _$OgcQueryables _build() {
     _$OgcQueryables _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcQueryables._(
             dollarSchema: dollarSchema,
             dollarId: dollarId,
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'OgcQueryables', 'type'),
+              type,
+              r'OgcQueryables',
+              'type',
+            ),
             title: title,
             properties: properties.build(),
             additionalProperties: additionalProperties,
@@ -206,7 +215,10 @@ class OgcQueryablesBuilder
         properties.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcQueryables', _$failedField, e.toString());
+          r'OgcQueryables',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

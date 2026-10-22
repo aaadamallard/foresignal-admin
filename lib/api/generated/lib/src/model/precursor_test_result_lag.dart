@@ -40,9 +40,9 @@ abstract class PrecursorTestResultLag
 
   PrecursorTestResultLag._();
 
-  factory PrecursorTestResultLag(
-          [void updates(PrecursorTestResultLagBuilder b)]) =
-      _$PrecursorTestResultLag;
+  factory PrecursorTestResultLag([
+    void updates(PrecursorTestResultLagBuilder b),
+  ]) = _$PrecursorTestResultLag;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorTestResultLagBuilder b) => b;
@@ -57,7 +57,7 @@ class _$PrecursorTestResultLagSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorTestResultLag,
-    _$PrecursorTestResultLag
+    _$PrecursorTestResultLag,
   ];
 
   @override
@@ -118,9 +118,11 @@ class _$PrecursorTestResultLagSerializer
     PrecursorTestResultLag object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,50 +138,62 @@ class _$PrecursorTestResultLagSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'min':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.min = valueDes;
           break;
         case r'p25':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.p25 = valueDes;
           break;
         case r'median':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.median = valueDes;
           break;
         case r'p75':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.p75 = valueDes;
           break;
         case r'max':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.max = valueDes;
           break;
         case r'mean':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.mean = valueDes;
           break;

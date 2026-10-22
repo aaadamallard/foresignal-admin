@@ -19,10 +19,9 @@ NativePushPayloadApnsEVEnum _$nativePushPayloadApnsEVEnumValueOf(String name) {
 }
 
 final BuiltSet<NativePushPayloadApnsEVEnum>
-    _$nativePushPayloadApnsEVEnumValues =
-    BuiltSet<NativePushPayloadApnsEVEnum>(const <NativePushPayloadApnsEVEnum>[
-  _$nativePushPayloadApnsEVEnum_number1,
-]);
+_$nativePushPayloadApnsEVEnumValues = BuiltSet<NativePushPayloadApnsEVEnum>(
+  const <NativePushPayloadApnsEVEnum>[_$nativePushPayloadApnsEVEnum_number1],
+);
 
 const NativePushPayloadApnsESEnum _$nativePushPayloadApnsESEnum_info =
     const NativePushPayloadApnsESEnum._('info');
@@ -45,12 +44,12 @@ NativePushPayloadApnsESEnum _$nativePushPayloadApnsESEnumValueOf(String name) {
 }
 
 final BuiltSet<NativePushPayloadApnsESEnum>
-    _$nativePushPayloadApnsESEnumValues =
+_$nativePushPayloadApnsESEnumValues =
     BuiltSet<NativePushPayloadApnsESEnum>(const <NativePushPayloadApnsESEnum>[
-  _$nativePushPayloadApnsESEnum_info,
-  _$nativePushPayloadApnsESEnum_warning,
-  _$nativePushPayloadApnsESEnum_critical,
-]);
+      _$nativePushPayloadApnsESEnum_info,
+      _$nativePushPayloadApnsESEnum_warning,
+      _$nativePushPayloadApnsESEnum_critical,
+    ]);
 
 const NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnum_alert =
     const NativePushPayloadApnsEEvEnum._('alert');
@@ -60,7 +59,8 @@ const NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnum_system =
     const NativePushPayloadApnsEEvEnum._('system');
 
 NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'alert':
       return _$nativePushPayloadApnsEEvEnum_alert;
@@ -74,21 +74,21 @@ NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnumValueOf(
 }
 
 final BuiltSet<NativePushPayloadApnsEEvEnum>
-    _$nativePushPayloadApnsEEvEnumValues =
+_$nativePushPayloadApnsEEvEnumValues =
     BuiltSet<NativePushPayloadApnsEEvEnum>(const <NativePushPayloadApnsEEvEnum>[
-  _$nativePushPayloadApnsEEvEnum_alert,
-  _$nativePushPayloadApnsEEvEnum_briefing,
-  _$nativePushPayloadApnsEEvEnum_system,
-]);
+      _$nativePushPayloadApnsEEvEnum_alert,
+      _$nativePushPayloadApnsEEvEnum_briefing,
+      _$nativePushPayloadApnsEEvEnum_system,
+    ]);
 
 Serializer<NativePushPayloadApnsEVEnum>
-    _$nativePushPayloadApnsEVEnumSerializer =
+_$nativePushPayloadApnsEVEnumSerializer =
     _$NativePushPayloadApnsEVEnumSerializer();
 Serializer<NativePushPayloadApnsESEnum>
-    _$nativePushPayloadApnsESEnumSerializer =
+_$nativePushPayloadApnsESEnumSerializer =
     _$NativePushPayloadApnsESEnumSerializer();
 Serializer<NativePushPayloadApnsEEvEnum>
-    _$nativePushPayloadApnsEEvEnumSerializer =
+_$nativePushPayloadApnsEEvEnumSerializer =
     _$NativePushPayloadApnsEEvEnumSerializer();
 
 class _$NativePushPayloadApnsEVEnumSerializer
@@ -106,16 +106,20 @@ class _$NativePushPayloadApnsEVEnumSerializer
   final String wireName = 'NativePushPayloadApnsEVEnum';
 
   @override
-  Object serialize(Serializers serializers, NativePushPayloadApnsEVEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NativePushPayloadApnsEVEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NativePushPayloadApnsEVEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NativePushPayloadApnsEVEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NativePushPayloadApnsEVEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NativePushPayloadApnsESEnumSerializer
@@ -137,16 +141,20 @@ class _$NativePushPayloadApnsESEnumSerializer
   final String wireName = 'NativePushPayloadApnsESEnum';
 
   @override
-  Object serialize(Serializers serializers, NativePushPayloadApnsESEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NativePushPayloadApnsESEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NativePushPayloadApnsESEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NativePushPayloadApnsESEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NativePushPayloadApnsESEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NativePushPayloadApnsEEvEnumSerializer
@@ -168,16 +176,20 @@ class _$NativePushPayloadApnsEEvEnumSerializer
   final String wireName = 'NativePushPayloadApnsEEvEnum';
 
   @override
-  Object serialize(Serializers serializers, NativePushPayloadApnsEEvEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NativePushPayloadApnsEEvEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NativePushPayloadApnsEEvEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NativePushPayloadApnsEEvEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NativePushPayloadApnsEEvEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NativePushPayloadApnsE extends NativePushPayloadApnsE {
@@ -194,22 +206,22 @@ class _$NativePushPayloadApnsE extends NativePushPayloadApnsE {
   @override
   final String? l;
 
-  factory _$NativePushPayloadApnsE(
-          [void Function(NativePushPayloadApnsEBuilder)? updates]) =>
-      (NativePushPayloadApnsEBuilder()..update(updates))._build();
+  factory _$NativePushPayloadApnsE([
+    void Function(NativePushPayloadApnsEBuilder)? updates,
+  ]) => (NativePushPayloadApnsEBuilder()..update(updates))._build();
 
-  _$NativePushPayloadApnsE._(
-      {required this.v,
-      required this.id,
-      this.a,
-      required this.s,
-      required this.ev,
-      this.l})
-      : super._();
+  _$NativePushPayloadApnsE._({
+    required this.v,
+    required this.id,
+    this.a,
+    required this.s,
+    required this.ev,
+    this.l,
+  }) : super._();
   @override
   NativePushPayloadApnsE rebuild(
-          void Function(NativePushPayloadApnsEBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadApnsEBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadApnsEBuilder toBuilder() =>
@@ -313,17 +325,30 @@ class NativePushPayloadApnsEBuilder
   NativePushPayloadApnsE build() => _build();
 
   _$NativePushPayloadApnsE _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NativePushPayloadApnsE._(
           v: BuiltValueNullFieldError.checkNotNull(
-              v, r'NativePushPayloadApnsE', 'v'),
+            v,
+            r'NativePushPayloadApnsE',
+            'v',
+          ),
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'NativePushPayloadApnsE', 'id'),
+            id,
+            r'NativePushPayloadApnsE',
+            'id',
+          ),
           a: a,
           s: BuiltValueNullFieldError.checkNotNull(
-              s, r'NativePushPayloadApnsE', 's'),
+            s,
+            r'NativePushPayloadApnsE',
+            's',
+          ),
           ev: BuiltValueNullFieldError.checkNotNull(
-              ev, r'NativePushPayloadApnsE', 'ev'),
+            ev,
+            r'NativePushPayloadApnsE',
+            'ev',
+          ),
           l: l,
         );
     replace(_$result);

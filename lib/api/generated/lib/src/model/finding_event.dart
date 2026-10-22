@@ -75,9 +75,11 @@ class _$FindingEventSerializer implements PrimitiveSerializer<FindingEvent> {
     FindingEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,24 +95,30 @@ class _$FindingEventSerializer implements PrimitiveSerializer<FindingEvent> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FindingEventEventEnum),
-          ) as FindingEventEventEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FindingEventEventEnum),
+                  )
+                  as FindingEventEventEnum;
           result.event = valueDes;
           break;
         case r'finding':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FindingEventFinding),
-          ) as FindingEventFinding;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FindingEventFinding),
+                  )
+                  as FindingEventFinding;
           result.finding.replace(valueDes);
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         default:

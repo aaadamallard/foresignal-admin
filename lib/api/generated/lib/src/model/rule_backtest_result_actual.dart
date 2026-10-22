@@ -26,9 +26,9 @@ abstract class RuleBacktestResultActual
 
   RuleBacktestResultActual._();
 
-  factory RuleBacktestResultActual(
-          [void updates(RuleBacktestResultActualBuilder b)]) =
-      _$RuleBacktestResultActual;
+  factory RuleBacktestResultActual([
+    void updates(RuleBacktestResultActualBuilder b),
+  ]) = _$RuleBacktestResultActual;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleBacktestResultActualBuilder b) => b;
@@ -43,7 +43,7 @@ class _$RuleBacktestResultActualSerializer
   @override
   final Iterable<Type> types = const [
     RuleBacktestResultActual,
-    _$RuleBacktestResultActual
+    _$RuleBacktestResultActual,
   ];
 
   @override
@@ -76,9 +76,11 @@ class _$RuleBacktestResultActualSerializer
     RuleBacktestResultActual object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,18 +96,22 @@ class _$RuleBacktestResultActualSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.alerts = valueDes;
           break;
         case r'comparable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.comparable = valueDes;
           break;

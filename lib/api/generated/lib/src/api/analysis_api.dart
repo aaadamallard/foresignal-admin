@@ -68,21 +68,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/backtests/{backtestId}'.replaceAll(
-        '{' r'backtestId' '}',
-        encodeQueryParameter(_serializers, backtestId, const FullType(String))
-            .toString());
+      '{'
+      r'backtestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        backtestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -104,9 +104,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BacktestJob),
-            ) as BacktestJob;
+                  rawResponse,
+                  specifiedType: const FullType(BacktestJob),
+                )
+                as BacktestJob;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -153,21 +154,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/jobs/{jobId}'.replaceAll(
-        '{' r'jobId' '}',
-        encodeQueryParameter(_serializers, jobId, const FullType(String))
-            .toString());
+      '{'
+      r'jobId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        jobId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -211,16 +212,10 @@ class AnalysisApi {
     final _path = r'/v1/backtests';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -235,10 +230,7 @@ class AnalysisApi {
       _bodyData = _serializers.serialize(backtestRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -261,9 +253,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BacktestJob),
-            ) as BacktestJob;
+                  rawResponse,
+                  specifiedType: const FullType(BacktestJob),
+                )
+                as BacktestJob;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -312,16 +305,10 @@ class AnalysisApi {
     final _path = r'/v1/base-rates';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -336,10 +323,7 @@ class AnalysisApi {
       _bodyData = _serializers.serialize(baseRateInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -362,9 +346,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BaseRate),
-            ) as BaseRate;
+                  rawResponse,
+                  specifiedType: const FullType(BaseRate),
+                )
+                as BaseRate;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -413,16 +398,10 @@ class AnalysisApi {
     final _path = r'/v1/benchmarks/cases';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -434,14 +413,13 @@ class AnalysisApi {
 
     try {
       const _type = FullType(BenchmarkCaseInput);
-      _bodyData =
-          _serializers.serialize(benchmarkCaseInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        benchmarkCaseInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -464,9 +442,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BenchmarkCase),
-            ) as BenchmarkCase;
+                  rawResponse,
+                  specifiedType: const FullType(BenchmarkCase),
+                )
+                as BenchmarkCase;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -515,16 +494,10 @@ class AnalysisApi {
     final _path = r'/v1/benchmarks/runs';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -536,14 +509,13 @@ class AnalysisApi {
 
     try {
       const _type = FullType(BenchmarkRunInput);
-      _bodyData =
-          _serializers.serialize(benchmarkRunInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        benchmarkRunInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -566,9 +538,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BenchmarkRun),
-            ) as BenchmarkRun;
+                  rawResponse,
+                  specifiedType: const FullType(BenchmarkRun),
+                )
+                as BenchmarkRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -617,16 +590,10 @@ class AnalysisApi {
     final _path = r'/v1/precursor-tests';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -638,14 +605,13 @@ class AnalysisApi {
 
     try {
       const _type = FullType(PrecursorTestInput);
-      _bodyData =
-          _serializers.serialize(precursorTestInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        precursorTestInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -668,9 +634,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PrecursorTest),
-            ) as PrecursorTest;
+                  rawResponse,
+                  specifiedType: const FullType(PrecursorTest),
+                )
+                as PrecursorTest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -719,16 +686,10 @@ class AnalysisApi {
     final _path = r'/v1/reference-imports';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -740,14 +701,13 @@ class AnalysisApi {
 
     try {
       const _type = FullType(ReferenceImportRequest);
-      _bodyData =
-          _serializers.serialize(referenceImportRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        referenceImportRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -770,9 +730,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReferenceImport),
-            ) as ReferenceImport;
+                  rawResponse,
+                  specifiedType: const FullType(ReferenceImport),
+                )
+                as ReferenceImport;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -819,21 +780,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/base-rates/{baseRateId}'.replaceAll(
-        '{' r'baseRateId' '}',
-        encodeQueryParameter(_serializers, baseRateId, const FullType(String))
-            .toString());
+      '{'
+      r'baseRateId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        baseRateId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -875,21 +836,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/benchmarks/cases/{caseId}'.replaceAll(
-        '{' r'caseId' '}',
-        encodeQueryParameter(_serializers, caseId, const FullType(String))
-            .toString());
+      '{'
+      r'caseId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        caseId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -931,22 +892,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/precursor-tests/{precursorTestId}'.replaceAll(
-        '{' r'precursorTestId' '}',
-        encodeQueryParameter(
-                _serializers, precursorTestId, const FullType(String))
-            .toString());
+      '{'
+      r'precursorTestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        precursorTestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -988,21 +948,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/reference-imports/{importId}'.replaceAll(
-        '{' r'importId' '}',
-        encodeQueryParameter(_serializers, importId, const FullType(String))
-            .toString());
+      '{'
+      r'importId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        importId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1044,21 +1004,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/backtests/{backtestId}'.replaceAll(
-        '{' r'backtestId' '}',
-        encodeQueryParameter(_serializers, backtestId, const FullType(String))
-            .toString());
+      '{'
+      r'backtestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        backtestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1080,9 +1040,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BacktestJob),
-            ) as BacktestJob;
+                  rawResponse,
+                  specifiedType: const FullType(BacktestJob),
+                )
+                as BacktestJob;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1129,21 +1090,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/base-rates/{baseRateId}'.replaceAll(
-        '{' r'baseRateId' '}',
-        encodeQueryParameter(_serializers, baseRateId, const FullType(String))
-            .toString());
+      '{'
+      r'baseRateId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        baseRateId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1165,9 +1126,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BaseRate),
-            ) as BaseRate;
+                  rawResponse,
+                  specifiedType: const FullType(BaseRate),
+                )
+                as BaseRate;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1214,21 +1176,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/benchmarks/runs/{runId}'.replaceAll(
-        '{' r'runId' '}',
-        encodeQueryParameter(_serializers, runId, const FullType(String))
-            .toString());
+      '{'
+      r'runId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        runId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1250,9 +1212,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BenchmarkRun),
-            ) as BenchmarkRun;
+                  rawResponse,
+                  specifiedType: const FullType(BenchmarkRun),
+                )
+                as BenchmarkRun;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1299,16 +1262,10 @@ class AnalysisApi {
     final _path = r'/v1/benchmarks/status';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1330,9 +1287,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BenchmarkStatus),
-            ) as BenchmarkStatus;
+                  rawResponse,
+                  specifiedType: const FullType(BenchmarkStatus),
+                )
+                as BenchmarkStatus;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1379,21 +1337,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/jobs/{jobId}'.replaceAll(
-        '{' r'jobId' '}',
-        encodeQueryParameter(_serializers, jobId, const FullType(String))
-            .toString());
+      '{'
+      r'jobId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        jobId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1415,9 +1373,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BacktestJob),
-            ) as BacktestJob;
+                  rawResponse,
+                  specifiedType: const FullType(BacktestJob),
+                )
+                as BacktestJob;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1464,22 +1423,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/precursor-tests/{precursorTestId}'.replaceAll(
-        '{' r'precursorTestId' '}',
-        encodeQueryParameter(
-                _serializers, precursorTestId, const FullType(String))
-            .toString());
+      '{'
+      r'precursorTestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        precursorTestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1501,9 +1459,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PrecursorTest),
-            ) as PrecursorTest;
+                  rawResponse,
+                  specifiedType: const FullType(PrecursorTest),
+                )
+                as PrecursorTest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1550,21 +1509,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/reference-imports/{importId}'.replaceAll(
-        '{' r'importId' '}',
-        encodeQueryParameter(_serializers, importId, const FullType(String))
-            .toString());
+      '{'
+      r'importId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        importId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1586,9 +1545,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReferenceImport),
-            ) as ReferenceImport;
+                  rawResponse,
+                  specifiedType: const FullType(ReferenceImport),
+                )
+                as ReferenceImport;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1639,21 +1599,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/situations/{situationId}/analogs'.replaceAll(
-        '{' r'situationId' '}',
-        encodeQueryParameter(_serializers, situationId, const FullType(String))
-            .toString());
+      '{'
+      r'situationId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        situationId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1664,8 +1624,11 @@ class AnalysisApi {
       if (k != null)
         r'k': encodeQueryParameter(_serializers, k, const FullType(int)),
       if (outcome != null)
-        r'outcome':
-            encodeQueryParameter(_serializers, outcome, const FullType(String)),
+        r'outcome': encodeQueryParameter(
+          _serializers,
+          outcome,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1684,9 +1647,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AnalogResult),
-            ) as AnalogResult;
+                  rawResponse,
+                  specifiedType: const FullType(AnalogResult),
+                )
+                as AnalogResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1735,21 +1699,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/quality'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1758,8 +1722,11 @@ class AnalysisApi {
 
     final _queryParameters = <String, dynamic>{
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1778,9 +1745,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RuleQuality),
-            ) as RuleQuality;
+                  rawResponse,
+                  specifiedType: const FullType(RuleQuality),
+                )
+                as RuleQuality;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1835,21 +1803,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/triggers/{ruleId}/suggestions'.replaceAll(
-        '{' r'ruleId' '}',
-        encodeQueryParameter(_serializers, ruleId, const FullType(String))
-            .toString());
+      '{'
+      r'ruleId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        ruleId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1858,17 +1826,29 @@ class AnalysisApi {
 
     final _queryParameters = <String, dynamic>{
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (simulate != null)
-        r'simulate':
-            encodeQueryParameter(_serializers, simulate, const FullType(bool)),
+        r'simulate': encodeQueryParameter(
+          _serializers,
+          simulate,
+          const FullType(bool),
+        ),
       if (explain != null)
-        r'explain':
-            encodeQueryParameter(_serializers, explain, const FullType(bool)),
+        r'explain': encodeQueryParameter(
+          _serializers,
+          explain,
+          const FullType(bool),
+        ),
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1887,9 +1867,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TuningSuggestionList),
-            ) as TuningSuggestionList;
+                  rawResponse,
+                  specifiedType: const FullType(TuningSuggestionList),
+                )
+                as TuningSuggestionList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1944,16 +1925,10 @@ class AnalysisApi {
     final _path = r'/v1/backtests';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1962,17 +1937,29 @@ class AnalysisApi {
 
     final _queryParameters = <String, dynamic>{
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
+        r'type': encodeQueryParameter(
+          _serializers,
+          type,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1991,9 +1978,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BacktestJobPage),
-            ) as BacktestJobPage;
+                  rawResponse,
+                  specifiedType: const FullType(BacktestJobPage),
+                )
+                as BacktestJobPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2050,16 +2038,10 @@ class AnalysisApi {
     final _path = r'/v1/base-rates';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2082,14 +2064,23 @@ class AnalysisApi {
           format: ListFormat.multi,
         ),
       if (window != null)
-        r'window':
-            encodeQueryParameter(_serializers, window, const FullType(String)),
+        r'window': encodeQueryParameter(
+          _serializers,
+          window,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2108,9 +2099,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BaseRatePage),
-            ) as BaseRatePage;
+                  rawResponse,
+                  specifiedType: const FullType(BaseRatePage),
+                )
+                as BaseRatePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2163,16 +2155,10 @@ class AnalysisApi {
     final _path = r'/v1/benchmarks/cases';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2181,14 +2167,23 @@ class AnalysisApi {
 
     final _queryParameters = <String, dynamic>{
       if (source_ != null)
-        r'source':
-            encodeQueryParameter(_serializers, source_, const FullType(String)),
+        r'source': encodeQueryParameter(
+          _serializers,
+          source_,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2207,9 +2202,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BenchmarkCasePage),
-            ) as BenchmarkCasePage;
+                  rawResponse,
+                  specifiedType: const FullType(BenchmarkCasePage),
+                )
+                as BenchmarkCasePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2264,16 +2260,10 @@ class AnalysisApi {
     final _path = r'/v1/benchmarks/runs';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2282,17 +2272,29 @@ class AnalysisApi {
 
     final _queryParameters = <String, dynamic>{
       if (suite != null)
-        r'suite':
-            encodeQueryParameter(_serializers, suite, const FullType(String)),
+        r'suite': encodeQueryParameter(
+          _serializers,
+          suite,
+          const FullType(String),
+        ),
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2311,9 +2313,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BenchmarkRunPage),
-            ) as BenchmarkRunPage;
+                  rawResponse,
+                  specifiedType: const FullType(BenchmarkRunPage),
+                )
+                as BenchmarkRunPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2364,16 +2367,10 @@ class AnalysisApi {
     final _path = r'/v1/precursor-tests';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2382,11 +2379,17 @@ class AnalysisApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2405,9 +2408,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PrecursorTestPage),
-            ) as PrecursorTestPage;
+                  rawResponse,
+                  specifiedType: const FullType(PrecursorTestPage),
+                )
+                as PrecursorTestPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2462,16 +2466,10 @@ class AnalysisApi {
     final _path = r'/v1/reference-imports';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2480,17 +2478,29 @@ class AnalysisApi {
 
     final _queryParameters = <String, dynamic>{
       if (dataset != null)
-        r'dataset':
-            encodeQueryParameter(_serializers, dataset, const FullType(String)),
+        r'dataset': encodeQueryParameter(
+          _serializers,
+          dataset,
+          const FullType(String),
+        ),
       if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
+        r'status': encodeQueryParameter(
+          _serializers,
+          status,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -2509,9 +2519,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ReferenceImportPage),
-            ) as ReferenceImportPage;
+                  rawResponse,
+                  specifiedType: const FullType(ReferenceImportPage),
+                )
+                as ReferenceImportPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2560,16 +2571,10 @@ class AnalysisApi {
     final _path = r'/v1/analogs/query';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2584,10 +2589,7 @@ class AnalysisApi {
       _bodyData = _serializers.serialize(analogQuery, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2610,9 +2612,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AnalogResult),
-            ) as AnalogResult;
+                  rawResponse,
+                  specifiedType: const FullType(AnalogResult),
+                )
+                as AnalogResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2661,16 +2664,10 @@ class AnalysisApi {
     final _path = r'/v1/base-rates/query';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2682,14 +2679,13 @@ class AnalysisApi {
 
     try {
       const _type = FullType(BaseRateDefinition);
-      _bodyData =
-          _serializers.serialize(baseRateDefinition, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        baseRateDefinition,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2712,9 +2708,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BaseRate),
-            ) as BaseRate;
+                  rawResponse,
+                  specifiedType: const FullType(BaseRate),
+                )
+                as BaseRate;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2761,16 +2758,10 @@ class AnalysisApi {
     final _path = r'/v1/base-rates/refresh';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2792,9 +2783,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BacktestJob),
-            ) as BacktestJob;
+                  rawResponse,
+                  specifiedType: const FullType(BacktestJob),
+                )
+                as BacktestJob;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2843,22 +2835,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/precursor-tests/{precursorTestId}/test'.replaceAll(
-        '{' r'precursorTestId' '}',
-        encodeQueryParameter(
-                _serializers, precursorTestId, const FullType(String))
-            .toString());
+      '{'
+      r'precursorTestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        precursorTestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2870,14 +2861,13 @@ class AnalysisApi {
 
     try {
       const _type = FullType(PrecursorTestRunRequest);
-      _bodyData =
-          _serializers.serialize(precursorTestRunRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        precursorTestRunRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2900,9 +2890,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BacktestJob),
-            ) as BacktestJob;
+                  rawResponse,
+                  specifiedType: const FullType(BacktestJob),
+                )
+                as BacktestJob;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2951,22 +2942,21 @@ class AnalysisApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/precursor-tests/{precursorTestId}'.replaceAll(
-        '{' r'precursorTestId' '}',
-        encodeQueryParameter(
-                _serializers, precursorTestId, const FullType(String))
-            .toString());
+      '{'
+      r'precursorTestId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        precursorTestId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -2978,14 +2968,13 @@ class AnalysisApi {
 
     try {
       const _type = FullType(PrecursorTestInput);
-      _bodyData =
-          _serializers.serialize(precursorTestInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        precursorTestInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -3008,9 +2997,10 @@ class AnalysisApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PrecursorTest),
-            ) as PrecursorTest;
+                  rawResponse,
+                  specifiedType: const FullType(PrecursorTest),
+                )
+                as PrecursorTest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

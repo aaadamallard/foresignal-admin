@@ -7,12 +7,14 @@ part of 'social_platform_state_event.dart';
 // **************************************************************************
 
 const SocialPlatformStateEventEventEnum
-    _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState =
+_$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState =
     const SocialPlatformStateEventEventEnum._(
-        'socialPeriodPlatformPeriodState');
+      'socialPeriodPlatformPeriodState',
+    );
 
 SocialPlatformStateEventEventEnum _$socialPlatformStateEventEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'socialPeriodPlatformPeriodState':
       return _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState;
@@ -22,13 +24,15 @@ SocialPlatformStateEventEventEnum _$socialPlatformStateEventEventEnumValueOf(
 }
 
 final BuiltSet<SocialPlatformStateEventEventEnum>
-    _$socialPlatformStateEventEventEnumValues = BuiltSet<
-        SocialPlatformStateEventEventEnum>(const <SocialPlatformStateEventEventEnum>[
-  _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState,
-]);
+_$socialPlatformStateEventEventEnumValues =
+    BuiltSet<SocialPlatformStateEventEventEnum>(
+      const <SocialPlatformStateEventEventEnum>[
+        _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState,
+      ],
+    );
 
 Serializer<SocialPlatformStateEventEventEnum>
-    _$socialPlatformStateEventEventEnumSerializer =
+_$socialPlatformStateEventEventEnumSerializer =
     _$SocialPlatformStateEventEventEnumSerializer();
 
 class _$SocialPlatformStateEventEventEnumSerializer
@@ -47,16 +51,19 @@ class _$SocialPlatformStateEventEventEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SocialPlatformStateEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SocialPlatformStateEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialPlatformStateEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialPlatformStateEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialPlatformStateEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialPlatformStateEvent extends SocialPlatformStateEvent {
@@ -75,23 +82,23 @@ class _$SocialPlatformStateEvent extends SocialPlatformStateEvent {
   @override
   final DateTime at;
 
-  factory _$SocialPlatformStateEvent(
-          [void Function(SocialPlatformStateEventBuilder)? updates]) =>
-      (SocialPlatformStateEventBuilder()..update(updates))._build();
+  factory _$SocialPlatformStateEvent([
+    void Function(SocialPlatformStateEventBuilder)? updates,
+  ]) => (SocialPlatformStateEventBuilder()..update(updates))._build();
 
-  _$SocialPlatformStateEvent._(
-      {required this.event,
-      required this.platformId,
-      required this.state,
-      this.previousState,
-      this.reason,
-      this.spend,
-      required this.at})
-      : super._();
+  _$SocialPlatformStateEvent._({
+    required this.event,
+    required this.platformId,
+    required this.state,
+    this.previousState,
+    this.reason,
+    this.spend,
+    required this.at,
+  }) : super._();
   @override
   SocialPlatformStateEvent rebuild(
-          void Function(SocialPlatformStateEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformStateEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformStateEventBuilder toBuilder() =>
@@ -208,19 +215,32 @@ class SocialPlatformStateEventBuilder
   _$SocialPlatformStateEvent _build() {
     _$SocialPlatformStateEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPlatformStateEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'SocialPlatformStateEvent', 'event'),
+              event,
+              r'SocialPlatformStateEvent',
+              'event',
+            ),
             platformId: BuiltValueNullFieldError.checkNotNull(
-                platformId, r'SocialPlatformStateEvent', 'platformId'),
+              platformId,
+              r'SocialPlatformStateEvent',
+              'platformId',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'SocialPlatformStateEvent', 'state'),
+              state,
+              r'SocialPlatformStateEvent',
+              'state',
+            ),
             previousState: previousState,
             reason: reason,
             spend: _spend?.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'SocialPlatformStateEvent', 'at'),
+              at,
+              r'SocialPlatformStateEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -229,7 +249,10 @@ class SocialPlatformStateEventBuilder
         _spend?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPlatformStateEvent', _$failedField, e.toString());
+          r'SocialPlatformStateEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

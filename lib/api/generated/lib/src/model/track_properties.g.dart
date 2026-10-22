@@ -43,24 +43,24 @@ class _$TrackProperties extends TrackProperties {
   factory _$TrackProperties([void Function(TrackPropertiesBuilder)? updates]) =>
       (TrackPropertiesBuilder()..update(updates))._build();
 
-  _$TrackProperties._(
-      {required this.sourceId,
-      required this.externalId,
-      this.kind,
-      required this.from,
-      required this.to,
-      required this.times,
-      this.values,
-      this.live,
-      this.pointsScanned,
-      required this.pointsReturned,
-      this.toleranceMeters,
-      required this.segments,
-      this.approximate,
-      this.downsampled,
-      this.truncated,
-      required this.watermarkSeq})
-      : super._();
+  _$TrackProperties._({
+    required this.sourceId,
+    required this.externalId,
+    this.kind,
+    required this.from,
+    required this.to,
+    required this.times,
+    this.values,
+    this.live,
+    this.pointsScanned,
+    required this.pointsReturned,
+    this.toleranceMeters,
+    required this.segments,
+    this.approximate,
+    this.downsampled,
+    this.truncated,
+    required this.watermarkSeq,
+  }) : super._();
   @override
   TrackProperties rebuild(void Function(TrackPropertiesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -254,31 +254,53 @@ class TrackPropertiesBuilder
   _$TrackProperties _build() {
     _$TrackProperties _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TrackProperties._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'TrackProperties', 'sourceId'),
+              sourceId,
+              r'TrackProperties',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'TrackProperties', 'externalId'),
+              externalId,
+              r'TrackProperties',
+              'externalId',
+            ),
             kind: kind,
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'TrackProperties', 'from'),
+              from,
+              r'TrackProperties',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, r'TrackProperties', 'to'),
+              to,
+              r'TrackProperties',
+              'to',
+            ),
             times: times.build(),
             values: _values?.build(),
             live: live,
             pointsScanned: pointsScanned,
             pointsReturned: BuiltValueNullFieldError.checkNotNull(
-                pointsReturned, r'TrackProperties', 'pointsReturned'),
+              pointsReturned,
+              r'TrackProperties',
+              'pointsReturned',
+            ),
             toleranceMeters: toleranceMeters,
             segments: BuiltValueNullFieldError.checkNotNull(
-                segments, r'TrackProperties', 'segments'),
+              segments,
+              r'TrackProperties',
+              'segments',
+            ),
             approximate: approximate,
             downsampled: downsampled,
             truncated: truncated,
             watermarkSeq: BuiltValueNullFieldError.checkNotNull(
-                watermarkSeq, r'TrackProperties', 'watermarkSeq'),
+              watermarkSeq,
+              r'TrackProperties',
+              'watermarkSeq',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -289,7 +311,10 @@ class TrackPropertiesBuilder
         _values?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TrackProperties', _$failedField, e.toString());
+          r'TrackProperties',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

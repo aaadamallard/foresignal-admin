@@ -59,26 +59,31 @@ class RecordsApi {
   }) async {
     final _path = r'/v1/records/{sourceId}/{externalId}/export'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'externalId' '}',
-            encodeQueryParameter(
-                    _serializers, externalId, const FullType(String))
-                .toString());
+          '{'
+          r'externalId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            externalId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -87,8 +92,11 @@ class RecordsApi {
 
     final _queryParameters = <String, dynamic>{
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -153,9 +161,15 @@ class RecordsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/kinds/{kind}/schema'.replaceAll(
-        '{' r'kind' '}',
-        encodeQueryParameter(_serializers, kind, const FullType(String))
-            .toString());
+      '{'
+      r'kind'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        kind,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -164,11 +178,7 @@ class RecordsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -190,9 +200,10 @@ class RecordsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(KindSchema),
-            ) as KindSchema;
+                  rawResponse,
+                  specifiedType: const FullType(KindSchema),
+                )
+                as KindSchema;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -256,14 +267,25 @@ class RecordsApi {
   }) async {
     final _path = r'/v1/records/{sourceId}/{externalId}'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'externalId' '}',
-            encodeQueryParameter(
-                    _serializers, externalId, const FullType(String))
-                .toString());
+          '{'
+          r'externalId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            externalId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -274,11 +296,7 @@ class RecordsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -287,8 +305,11 @@ class RecordsApi {
 
     final _queryParameters = <String, dynamic>{
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (include != null)
         r'include': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -297,11 +318,17 @@ class RecordsApi {
           format: ListFormat.csv,
         ),
       if (fields != null)
-        r'fields':
-            encodeQueryParameter(_serializers, fields, const FullType(String)),
+        r'fields': encodeQueryParameter(
+          _serializers,
+          fields,
+          const FullType(String),
+        ),
       if (precision != null)
-        r'precision':
-            encodeQueryParameter(_serializers, precision, const FullType(int)),
+        r'precision': encodeQueryParameter(
+          _serializers,
+          precision,
+          const FullType(int),
+        ),
       if (licencePolicy != null)
         r'licencePolicy': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -327,9 +354,10 @@ class RecordsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Record),
-            ) as Record;
+                  rawResponse,
+                  specifiedType: const FullType(Record),
+                )
+                as Record;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -384,11 +412,7 @@ class RecordsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -410,9 +434,12 @@ class RecordsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(KindSummary)]),
-            ) as BuiltList<KindSummary>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(KindSummary),
+                  ]),
+                )
+                as BuiltList<KindSummary>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -476,14 +503,25 @@ class RecordsApi {
   }) async {
     final _path = r'/v1/records/{sourceId}/{externalId}/versions'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'externalId' '}',
-            encodeQueryParameter(
-                    _serializers, externalId, const FullType(String))
-                .toString());
+          '{'
+          r'externalId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            externalId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -493,11 +531,7 @@ class RecordsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -506,17 +540,29 @@ class RecordsApi {
 
     final _queryParameters = <String, dynamic>{
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (include != null)
         r'include': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -549,9 +595,10 @@ class RecordsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RecordVersionPage),
-            ) as RecordVersionPage;
+                  rawResponse,
+                  specifiedType: const FullType(RecordVersionPage),
+                )
+                as RecordVersionPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -670,11 +717,7 @@ class RecordsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -697,28 +740,49 @@ class RecordsApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (since != null)
-        r'since':
-            encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'since': encodeQueryParameter(
+          _serializers,
+          since,
+          const FullType(DateTime),
+        ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (includeExpired != null)
         r'includeExpired': encodeQueryParameter(
-            _serializers, includeExpired, const FullType(bool)),
+          _serializers,
+          includeExpired,
+          const FullType(bool),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (externalId != null)
         r'externalId': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -727,26 +791,47 @@ class RecordsApi {
           format: ListFormat.multi,
         ),
       if (near != null)
-        r'near':
-            encodeQueryParameter(_serializers, near, const FullType(String)),
+        r'near': encodeQueryParameter(
+          _serializers,
+          near,
+          const FullType(String),
+        ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (timeField != null)
         r'timeField': encodeQueryParameter(
-            _serializers, timeField, const FullType(String)),
+          _serializers,
+          timeField,
+          const FullType(String),
+        ),
       if (order != null)
-        r'order':
-            encodeQueryParameter(_serializers, order, const FullType(String)),
+        r'order': encodeQueryParameter(
+          _serializers,
+          order,
+          const FullType(String),
+        ),
       if (sort != null)
-        r'sort':
-            encodeQueryParameter(_serializers, sort, const FullType(String)),
+        r'sort': encodeQueryParameter(
+          _serializers,
+          sort,
+          const FullType(String),
+        ),
       if (asOfSeq != null)
-        r'asOfSeq':
-            encodeQueryParameter(_serializers, asOfSeq, const FullType(int)),
+        r'asOfSeq': encodeQueryParameter(
+          _serializers,
+          asOfSeq,
+          const FullType(int),
+        ),
       if (asOf != null)
-        r'asOf':
-            encodeQueryParameter(_serializers, asOf, const FullType(DateTime)),
+        r'asOf': encodeQueryParameter(
+          _serializers,
+          asOf,
+          const FullType(DateTime),
+        ),
       if (include != null)
         r'include': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -755,14 +840,23 @@ class RecordsApi {
           format: ListFormat.csv,
         ),
       if (fields != null)
-        r'fields':
-            encodeQueryParameter(_serializers, fields, const FullType(String)),
+        r'fields': encodeQueryParameter(
+          _serializers,
+          fields,
+          const FullType(String),
+        ),
       if (precision != null)
-        r'precision':
-            encodeQueryParameter(_serializers, precision, const FullType(int)),
+        r'precision': encodeQueryParameter(
+          _serializers,
+          precision,
+          const FullType(int),
+        ),
       if (simplify != null)
-        r'simplify':
-            encodeQueryParameter(_serializers, simplify, const FullType(num)),
+        r'simplify': encodeQueryParameter(
+          _serializers,
+          simplify,
+          const FullType(num),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -771,14 +865,23 @@ class RecordsApi {
           format: ListFormat.csv,
         ),
       if (view != null)
-        r'view':
-            encodeQueryParameter(_serializers, view, const FullType(String)),
+        r'view': encodeQueryParameter(
+          _serializers,
+          view,
+          const FullType(String),
+        ),
       if (inWatchlist != null)
         r'inWatchlist': encodeQueryParameter(
-            _serializers, inWatchlist, const FullType(String)),
+          _serializers,
+          inWatchlist,
+          const FullType(String),
+        ),
       if (count != null)
-        r'count':
-            encodeQueryParameter(_serializers, count, const FullType(bool)),
+        r'count': encodeQueryParameter(
+          _serializers,
+          count,
+          const FullType(bool),
+        ),
       if (country != null)
         r'country': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -825,9 +928,10 @@ class RecordsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ListRecords200Response),
-            ) as ListRecords200Response;
+                  rawResponse,
+                  specifiedType: const FullType(ListRecords200Response),
+                )
+                as ListRecords200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -879,26 +983,31 @@ class RecordsApi {
   }) async {
     final _path = r'/v1/records/{sourceId}/{externalId}/purge'
         .replaceAll(
-            '{' r'sourceId' '}',
-            encodeQueryParameter(_serializers, sourceId, const FullType(String))
-                .toString())
+          '{'
+          r'sourceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            sourceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'externalId' '}',
-            encodeQueryParameter(
-                    _serializers, externalId, const FullType(String))
-                .toString());
+          '{'
+          r'externalId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            externalId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -915,10 +1024,7 @@ class RecordsApi {
           : _serializers.serialize(purgeRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -941,9 +1047,10 @@ class RecordsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PurgeReport),
-            ) as PurgeReport;
+                  rawResponse,
+                  specifiedType: const FullType(PurgeReport),
+                )
+                as PurgeReport;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1039,11 +1146,7 @@ class RecordsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1066,25 +1169,46 @@ class RecordsApi {
           format: ListFormat.multi,
         ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
-      r'since':
-          encodeQueryParameter(_serializers, since, const FullType(DateTime)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
+      r'since': encodeQueryParameter(
+        _serializers,
+        since,
+        const FullType(DateTime),
+      ),
       if (until != null)
-        r'until':
-            encodeQueryParameter(_serializers, until, const FullType(DateTime)),
+        r'until': encodeQueryParameter(
+          _serializers,
+          until,
+          const FullType(DateTime),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (timeField != null)
         r'timeField': encodeQueryParameter(
-            _serializers, timeField, const FullType(String)),
+          _serializers,
+          timeField,
+          const FullType(String),
+        ),
       if (externalId != null)
         r'externalId': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1093,20 +1217,35 @@ class RecordsApi {
           format: ListFormat.multi,
         ),
       if (near != null)
-        r'near':
-            encodeQueryParameter(_serializers, near, const FullType(String)),
+        r'near': encodeQueryParameter(
+          _serializers,
+          near,
+          const FullType(String),
+        ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (fields != null)
-        r'fields':
-            encodeQueryParameter(_serializers, fields, const FullType(String)),
+        r'fields': encodeQueryParameter(
+          _serializers,
+          fields,
+          const FullType(String),
+        ),
       if (precision != null)
-        r'precision':
-            encodeQueryParameter(_serializers, precision, const FullType(int)),
+        r'precision': encodeQueryParameter(
+          _serializers,
+          precision,
+          const FullType(int),
+        ),
       if (simplify != null)
-        r'simplify':
-            encodeQueryParameter(_serializers, simplify, const FullType(num)),
+        r'simplify': encodeQueryParameter(
+          _serializers,
+          simplify,
+          const FullType(num),
+        ),
       if (place != null)
         r'place': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1115,14 +1254,23 @@ class RecordsApi {
           format: ListFormat.csv,
         ),
       if (view != null)
-        r'view':
-            encodeQueryParameter(_serializers, view, const FullType(String)),
+        r'view': encodeQueryParameter(
+          _serializers,
+          view,
+          const FullType(String),
+        ),
       if (inWatchlist != null)
         r'inWatchlist': encodeQueryParameter(
-            _serializers, inWatchlist, const FullType(String)),
+          _serializers,
+          inWatchlist,
+          const FullType(String),
+        ),
       if (count != null)
-        r'count':
-            encodeQueryParameter(_serializers, count, const FullType(bool)),
+        r'count': encodeQueryParameter(
+          _serializers,
+          count,
+          const FullType(bool),
+        ),
       if (licencePolicy != null)
         r'licencePolicy': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1148,9 +1296,10 @@ class RecordsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(QueryHistory200Response),
-            ) as QueryHistory200Response;
+                  rawResponse,
+                  specifiedType: const FullType(QueryHistory200Response),
+                )
+                as QueryHistory200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

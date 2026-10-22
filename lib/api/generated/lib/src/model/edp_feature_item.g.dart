@@ -20,8 +20,8 @@ EdpFeatureItemTypeEnum _$edpFeatureItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpFeatureItemTypeEnum> _$edpFeatureItemTypeEnumValues =
     BuiltSet<EdpFeatureItemTypeEnum>(const <EdpFeatureItemTypeEnum>[
-  _$edpFeatureItemTypeEnum_feature,
-]);
+      _$edpFeatureItemTypeEnum_feature,
+    ]);
 
 Serializer<EdpFeatureItemTypeEnum> _$edpFeatureItemTypeEnumSerializer =
     _$EdpFeatureItemTypeEnumSerializer();
@@ -41,15 +41,20 @@ class _$EdpFeatureItemTypeEnumSerializer
   final String wireName = 'EdpFeatureItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpFeatureItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpFeatureItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpFeatureItemTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpFeatureItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpFeatureItemTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpFeatureItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpFeatureItem extends EdpFeatureItem {
@@ -75,17 +80,17 @@ class _$EdpFeatureItem extends EdpFeatureItem {
   factory _$EdpFeatureItem([void Function(EdpFeatureItemBuilder)? updates]) =>
       (EdpFeatureItemBuilder()..update(updates))._build();
 
-  _$EdpFeatureItem._(
-      {required this.stream,
-      required this.type,
-      required this.id,
-      this.observedAt,
-      this.properties,
-      this.geometry,
-      this.eventTime,
-      this.validUntil,
-      this.origin})
-      : super._();
+  _$EdpFeatureItem._({
+    required this.stream,
+    required this.type,
+    required this.id,
+    this.observedAt,
+    this.properties,
+    this.geometry,
+    this.eventTime,
+    this.validUntil,
+    this.origin,
+  }) : super._();
   @override
   EdpFeatureItem rebuild(void Function(EdpFeatureItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -219,14 +224,24 @@ class EdpFeatureItemBuilder
   _$EdpFeatureItem _build() {
     _$EdpFeatureItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpFeatureItem._(
             stream: BuiltValueNullFieldError.checkNotNull(
-                stream, r'EdpFeatureItem', 'stream'),
+              stream,
+              r'EdpFeatureItem',
+              'stream',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'EdpFeatureItem', 'type'),
+              type,
+              r'EdpFeatureItem',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpFeatureItem', 'id'),
+              id,
+              r'EdpFeatureItem',
+              'id',
+            ),
             observedAt: observedAt,
             properties: _properties?.build(),
             geometry: _geometry?.build(),
@@ -246,7 +261,10 @@ class EdpFeatureItemBuilder
         _origin?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpFeatureItem', _$failedField, e.toString());
+          r'EdpFeatureItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

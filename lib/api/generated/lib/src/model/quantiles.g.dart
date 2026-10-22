@@ -25,15 +25,15 @@ class _$Quantiles extends Quantiles {
   factory _$Quantiles([void Function(QuantilesBuilder)? updates]) =>
       (QuantilesBuilder()..update(updates))._build();
 
-  _$Quantiles._(
-      {required this.p05,
-      this.p10,
-      required this.p25,
-      required this.p50,
-      required this.p75,
-      this.p90,
-      required this.p95})
-      : super._();
+  _$Quantiles._({
+    required this.p05,
+    this.p10,
+    required this.p25,
+    required this.p50,
+    required this.p75,
+    this.p90,
+    required this.p95,
+  }) : super._();
   @override
   Quantiles rebuild(void Function(QuantilesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -146,7 +146,8 @@ class QuantilesBuilder implements Builder<Quantiles, QuantilesBuilder> {
   Quantiles build() => _build();
 
   _$Quantiles _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Quantiles._(
           p05: BuiltValueNullFieldError.checkNotNull(p05, r'Quantiles', 'p05'),
           p10: p10,

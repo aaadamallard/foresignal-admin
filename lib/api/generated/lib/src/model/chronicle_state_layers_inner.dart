@@ -50,9 +50,9 @@ abstract class ChronicleStateLayersInner
 
   ChronicleStateLayersInner._();
 
-  factory ChronicleStateLayersInner(
-          [void updates(ChronicleStateLayersInnerBuilder b)]) =
-      _$ChronicleStateLayersInner;
+  factory ChronicleStateLayersInner([
+    void updates(ChronicleStateLayersInnerBuilder b),
+  ]) = _$ChronicleStateLayersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleStateLayersInnerBuilder b) => b;
@@ -67,7 +67,7 @@ class _$ChronicleStateLayersInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleStateLayersInner,
-    _$ChronicleStateLayersInner
+    _$ChronicleStateLayersInner,
   ];
 
   @override
@@ -105,15 +105,17 @@ class _$ChronicleStateLayersInnerSerializer
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleRecordVersion)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleRecordVersion),
+      ]),
     );
     if (object.rollups != null) {
       yield r'rollups';
       yield serializers.serialize(
         object.rollups,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ChronicleStateLayersInnerRollupsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ChronicleStateLayersInnerRollupsInner),
+        ]),
       );
     }
     yield r'nextCursor';
@@ -131,9 +133,11 @@ class _$ChronicleStateLayersInnerSerializer
     ChronicleStateLayersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -149,57 +153,70 @@ class _$ChronicleStateLayersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'layerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.layerId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'capture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CaptureMode),
-          ) as CaptureMode?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(CaptureMode),
+                  )
+                  as CaptureMode?;
           if (valueDes == null) continue;
           result.capture.replace(valueDes);
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ChronicleRecordVersion)]),
-          ) as BuiltList<ChronicleRecordVersion>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleRecordVersion),
+                    ]),
+                  )
+                  as BuiltList<ChronicleRecordVersion>;
           result.items.replace(valueDes);
           break;
         case r'rollups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ChronicleStateLayersInnerRollupsInner)]),
-          ) as BuiltList<ChronicleStateLayersInnerRollupsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ChronicleStateLayersInnerRollupsInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleStateLayersInnerRollupsInner>?;
           if (valueDes == null) continue;
           result.rollups.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

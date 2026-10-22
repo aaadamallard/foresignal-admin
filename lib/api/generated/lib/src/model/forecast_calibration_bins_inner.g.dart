@@ -18,21 +18,21 @@ class _$ForecastCalibrationBinsInner extends ForecastCalibrationBinsInner {
   @override
   final num? observedFrequency;
 
-  factory _$ForecastCalibrationBinsInner(
-          [void Function(ForecastCalibrationBinsInnerBuilder)? updates]) =>
-      (ForecastCalibrationBinsInnerBuilder()..update(updates))._build();
+  factory _$ForecastCalibrationBinsInner([
+    void Function(ForecastCalibrationBinsInnerBuilder)? updates,
+  ]) => (ForecastCalibrationBinsInnerBuilder()..update(updates))._build();
 
-  _$ForecastCalibrationBinsInner._(
-      {required this.lower,
-      required this.upper,
-      required this.n,
-      this.meanForecast,
-      this.observedFrequency})
-      : super._();
+  _$ForecastCalibrationBinsInner._({
+    required this.lower,
+    required this.upper,
+    required this.n,
+    this.meanForecast,
+    this.observedFrequency,
+  }) : super._();
   @override
   ForecastCalibrationBinsInner rebuild(
-          void Function(ForecastCalibrationBinsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastCalibrationBinsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastCalibrationBinsInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$ForecastCalibrationBinsInner extends ForecastCalibrationBinsInner {
 
 class ForecastCalibrationBinsInnerBuilder
     implements
-        Builder<ForecastCalibrationBinsInner,
-            ForecastCalibrationBinsInnerBuilder> {
+        Builder<
+          ForecastCalibrationBinsInner,
+          ForecastCalibrationBinsInnerBuilder
+        > {
   _$ForecastCalibrationBinsInner? _$v;
 
   num? _lower;
@@ -131,14 +133,24 @@ class ForecastCalibrationBinsInnerBuilder
   ForecastCalibrationBinsInner build() => _build();
 
   _$ForecastCalibrationBinsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastCalibrationBinsInner._(
           lower: BuiltValueNullFieldError.checkNotNull(
-              lower, r'ForecastCalibrationBinsInner', 'lower'),
+            lower,
+            r'ForecastCalibrationBinsInner',
+            'lower',
+          ),
           upper: BuiltValueNullFieldError.checkNotNull(
-              upper, r'ForecastCalibrationBinsInner', 'upper'),
+            upper,
+            r'ForecastCalibrationBinsInner',
+            'upper',
+          ),
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'ForecastCalibrationBinsInner', 'n'),
+            n,
+            r'ForecastCalibrationBinsInner',
+            'n',
+          ),
           meanForecast: meanForecast,
           observedFrequency: observedFrequency,
         );

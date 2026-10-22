@@ -16,13 +16,16 @@ class _$InfraEdgeEvidence extends InfraEdgeEvidence {
   @override
   final String? notes;
 
-  factory _$InfraEdgeEvidence(
-          [void Function(InfraEdgeEvidenceBuilder)? updates]) =>
-      (InfraEdgeEvidenceBuilder()..update(updates))._build();
+  factory _$InfraEdgeEvidence([
+    void Function(InfraEdgeEvidenceBuilder)? updates,
+  ]) => (InfraEdgeEvidenceBuilder()..update(updates))._build();
 
-  _$InfraEdgeEvidence._(
-      {this.dataset, this.distanceKm, this.matched, this.notes})
-      : super._();
+  _$InfraEdgeEvidence._({
+    this.dataset,
+    this.distanceKm,
+    this.matched,
+    this.notes,
+  }) : super._();
   @override
   InfraEdgeEvidence rebuild(void Function(InfraEdgeEvidenceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -117,7 +120,8 @@ class InfraEdgeEvidenceBuilder
   _$InfraEdgeEvidence _build() {
     _$InfraEdgeEvidence _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraEdgeEvidence._(
             dataset: dataset,
             distanceKm: distanceKm,
@@ -131,7 +135,10 @@ class InfraEdgeEvidenceBuilder
         _matched?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraEdgeEvidence', _$failedField, e.toString());
+          r'InfraEdgeEvidence',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

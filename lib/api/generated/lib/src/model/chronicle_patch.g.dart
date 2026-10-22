@@ -33,19 +33,19 @@ class _$ChroniclePatch extends ChroniclePatch {
   factory _$ChroniclePatch([void Function(ChroniclePatchBuilder)? updates]) =>
       (ChroniclePatchBuilder()..update(updates))._build();
 
-  _$ChroniclePatch._(
-      {this.name,
-      this.description,
-      this.visibility,
-      this.tlp,
-      this.area,
-      this.retention,
-      this.sizeCapBytes,
-      this.situationIds,
-      this.hypothesisSetIds,
-      this.investigationIds,
-      this.topicIds})
-      : super._();
+  _$ChroniclePatch._({
+    this.name,
+    this.description,
+    this.visibility,
+    this.tlp,
+    this.area,
+    this.retention,
+    this.sizeCapBytes,
+    this.situationIds,
+    this.hypothesisSetIds,
+    this.investigationIds,
+    this.topicIds,
+  }) : super._();
   @override
   ChroniclePatch rebuild(void Function(ChroniclePatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -200,7 +200,8 @@ class ChroniclePatchBuilder
   _$ChroniclePatch _build() {
     _$ChroniclePatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChroniclePatch._(
             name: name,
             description: description,
@@ -230,7 +231,10 @@ class ChroniclePatchBuilder
         _topicIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChroniclePatch', _$failedField, e.toString());
+          r'ChroniclePatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

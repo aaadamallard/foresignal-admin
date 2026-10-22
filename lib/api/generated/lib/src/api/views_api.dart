@@ -52,16 +52,10 @@ class ViewsApi {
     final _path = r'/v1/views';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -76,10 +70,7 @@ class ViewsApi {
       _bodyData = _serializers.serialize(savedViewInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -102,9 +93,10 @@ class ViewsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedView),
-            ) as SavedView;
+                  rawResponse,
+                  specifiedType: const FullType(SavedView),
+                )
+                as SavedView;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -151,21 +143,21 @@ class ViewsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/views/{viewId}'.replaceAll(
-        '{' r'viewId' '}',
-        encodeQueryParameter(_serializers, viewId, const FullType(String))
-            .toString());
+      '{'
+      r'viewId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        viewId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -207,21 +199,21 @@ class ViewsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/views/{viewId}'.replaceAll(
-        '{' r'viewId' '}',
-        encodeQueryParameter(_serializers, viewId, const FullType(String))
-            .toString());
+      '{'
+      r'viewId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        viewId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -243,9 +235,10 @@ class ViewsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedView),
-            ) as SavedView;
+                  rawResponse,
+                  specifiedType: const FullType(SavedView),
+                )
+                as SavedView;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -298,21 +291,21 @@ class ViewsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/views/{viewId}/records'.replaceAll(
-        '{' r'viewId' '}',
-        encodeQueryParameter(_serializers, viewId, const FullType(String))
-            .toString());
+      '{'
+      r'viewId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        viewId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -321,14 +314,23 @@ class ViewsApi {
 
     final _queryParameters = <String, dynamic>{
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -347,9 +349,10 @@ class ViewsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(RecordPage),
-            ) as RecordPage;
+                  rawResponse,
+                  specifiedType: const FullType(RecordPage),
+                )
+                as RecordPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -405,34 +408,40 @@ class ViewsApi {
   }) async {
     final _path = r'/v1/views/{viewId}/tiles/{z}/{x}/{y}.mvt'
         .replaceAll(
-            '{' r'viewId' '}',
-            encodeQueryParameter(_serializers, viewId, const FullType(String))
-                .toString())
+          '{'
+          r'viewId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            viewId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'z' '}',
-            encodeQueryParameter(_serializers, z, const FullType(int))
-                .toString())
+          '{'
+          r'z'
+          '}',
+          encodeQueryParameter(_serializers, z, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'x' '}',
-            encodeQueryParameter(_serializers, x, const FullType(int))
-                .toString())
+          '{'
+          r'x'
+          '}',
+          encodeQueryParameter(_serializers, x, const FullType(int)).toString(),
+        )
         .replaceAll(
-            '{' r'y' '}',
-            encodeQueryParameter(_serializers, y, const FullType(int))
-                .toString());
+          '{'
+          r'y'
+          '}',
+          encodeQueryParameter(_serializers, y, const FullType(int)).toString(),
+        );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -441,8 +450,11 @@ class ViewsApi {
 
     final _queryParameters = <String, dynamic>{
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -507,21 +519,21 @@ class ViewsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/views/{viewId}/tiles.json'.replaceAll(
-        '{' r'viewId' '}',
-        encodeQueryParameter(_serializers, viewId, const FullType(String))
-            .toString());
+      '{'
+      r'viewId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        viewId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -530,8 +542,11 @@ class ViewsApi {
 
     final _queryParameters = <String, dynamic>{
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -550,9 +565,10 @@ class ViewsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TileJson),
-            ) as TileJson;
+                  rawResponse,
+                  specifiedType: const FullType(TileJson),
+                )
+                as TileJson;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -603,16 +619,10 @@ class ViewsApi {
     final _path = r'/v1/views';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -621,11 +631,17 @@ class ViewsApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -644,9 +660,10 @@ class ViewsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedViewPage),
-            ) as SavedViewPage;
+                  rawResponse,
+                  specifiedType: const FullType(SavedViewPage),
+                )
+                as SavedViewPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -699,9 +716,15 @@ class ViewsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/views/{viewId}/stream'.replaceAll(
-        '{' r'viewId' '}',
-        encodeQueryParameter(_serializers, viewId, const FullType(String))
-            .toString());
+      '{'
+      r'viewId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        viewId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -710,11 +733,7 @@ class ViewsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -723,11 +742,17 @@ class ViewsApi {
 
     final _queryParameters = <String, dynamic>{
       if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(int)),
+        r'after': encodeQueryParameter(
+          _serializers,
+          after,
+          const FullType(int),
+        ),
       if (ticket != null)
-        r'ticket':
-            encodeQueryParameter(_serializers, ticket, const FullType(String)),
+        r'ticket': encodeQueryParameter(
+          _serializers,
+          ticket,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -746,9 +771,10 @@ class ViewsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StreamView200Response),
-            ) as StreamView200Response;
+                  rawResponse,
+                  specifiedType: const FullType(StreamView200Response),
+                )
+                as StreamView200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -797,21 +823,21 @@ class ViewsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/views/{viewId}'.replaceAll(
-        '{' r'viewId' '}',
-        encodeQueryParameter(_serializers, viewId, const FullType(String))
-            .toString());
+      '{'
+      r'viewId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        viewId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -826,10 +852,7 @@ class ViewsApi {
       _bodyData = _serializers.serialize(savedViewInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -852,9 +875,10 @@ class ViewsApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(SavedView),
-            ) as SavedView;
+                  rawResponse,
+                  specifiedType: const FullType(SavedView),
+                )
+                as SavedView;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

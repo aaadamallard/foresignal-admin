@@ -49,16 +49,10 @@ class PlacesApi {
     final _path = r'/v1/places';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -73,10 +67,7 @@ class PlacesApi {
       _bodyData = _serializers.serialize(placeInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -99,9 +90,10 @@ class PlacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Place),
-            ) as Place;
+                  rawResponse,
+                  specifiedType: const FullType(Place),
+                )
+                as Place;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -150,21 +142,21 @@ class PlacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/places/{placeId}'.replaceAll(
-        '{' r'placeId' '}',
-        encodeQueryParameter(_serializers, placeId, const FullType(String))
-            .toString());
+      '{'
+      r'placeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        placeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -173,8 +165,11 @@ class PlacesApi {
 
     final _queryParameters = <String, dynamic>{
       if (force != null)
-        r'force':
-            encodeQueryParameter(_serializers, force, const FullType(bool)),
+        r'force': encodeQueryParameter(
+          _serializers,
+          force,
+          const FullType(bool),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -213,21 +208,21 @@ class PlacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/places/{placeId}'.replaceAll(
-        '{' r'placeId' '}',
-        encodeQueryParameter(_serializers, placeId, const FullType(String))
-            .toString());
+      '{'
+      r'placeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        placeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -249,9 +244,10 @@ class PlacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Place),
-            ) as Place;
+                  rawResponse,
+                  specifiedType: const FullType(Place),
+                )
+                as Place;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -298,21 +294,21 @@ class PlacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/places/{placeId}/weather'.replaceAll(
-        '{' r'placeId' '}',
-        encodeQueryParameter(_serializers, placeId, const FullType(String))
-            .toString());
+      '{'
+      r'placeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        placeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -334,9 +330,10 @@ class PlacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PlaceWeatherResponse),
-            ) as PlaceWeatherResponse;
+                  rawResponse,
+                  specifiedType: const FullType(PlaceWeatherResponse),
+                )
+                as PlaceWeatherResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -383,16 +380,10 @@ class PlacesApi {
     final _path = r'/v1/places/aoi';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -414,9 +405,10 @@ class PlacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PlacesAoi),
-            ) as PlacesAoi;
+                  rawResponse,
+                  specifiedType: const FullType(PlacesAoi),
+                )
+                as PlacesAoi;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -471,16 +463,10 @@ class PlacesApi {
     final _path = r'/v1/places';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -489,16 +475,25 @@ class PlacesApi {
 
     final _queryParameters = <String, dynamic>{
       if (kind != null)
-        r'kind':
-            encodeQueryParameter(_serializers, kind, const FullType(String)),
+        r'kind': encodeQueryParameter(
+          _serializers,
+          kind,
+          const FullType(String),
+        ),
       if (tag != null)
         r'tag': encodeQueryParameter(_serializers, tag, const FullType(String)),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -517,9 +512,10 @@ class PlacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PlacePage),
-            ) as PlacePage;
+                  rawResponse,
+                  specifiedType: const FullType(PlacePage),
+                )
+                as PlacePage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -568,21 +564,21 @@ class PlacesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/places/{placeId}'.replaceAll(
-        '{' r'placeId' '}',
-        encodeQueryParameter(_serializers, placeId, const FullType(String))
-            .toString());
+      '{'
+      r'placeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        placeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -597,10 +593,7 @@ class PlacesApi {
       _bodyData = _serializers.serialize(placeInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -623,9 +616,10 @@ class PlacesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Place),
-            ) as Place;
+                  rawResponse,
+                  specifiedType: const FullType(Place),
+                )
+                as Place;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

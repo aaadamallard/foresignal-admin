@@ -24,9 +24,9 @@ PushProviderTypeEnum _$pushProviderTypeEnumValueOf(String name) {
 
 final BuiltSet<PushProviderTypeEnum> _$pushProviderTypeEnumValues =
     BuiltSet<PushProviderTypeEnum>(const <PushProviderTypeEnum>[
-  _$pushProviderTypeEnum_apns,
-  _$pushProviderTypeEnum_fcm,
-]);
+      _$pushProviderTypeEnum_apns,
+      _$pushProviderTypeEnum_fcm,
+    ]);
 
 Serializer<PushProviderTypeEnum> _$pushProviderTypeEnumSerializer =
     _$PushProviderTypeEnumSerializer();
@@ -48,15 +48,20 @@ class _$PushProviderTypeEnumSerializer
   final String wireName = 'PushProviderTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PushProviderTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushProviderTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PushProviderTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushProviderTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PushProviderTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushProviderTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushProvider extends PushProvider {
@@ -82,17 +87,17 @@ class _$PushProvider extends PushProvider {
   factory _$PushProvider([void Function(PushProviderBuilder)? updates]) =>
       (PushProviderBuilder()..update(updates))._build();
 
-  _$PushProvider._(
-      {required this.id,
-      required this.type,
-      required this.appIds,
-      required this.config,
-      this.secretFields,
-      required this.enabled,
-      this.lastTestAt,
-      this.lastError,
-      this.updatedAt})
-      : super._();
+  _$PushProvider._({
+    required this.id,
+    required this.type,
+    required this.appIds,
+    required this.config,
+    this.secretFields,
+    required this.enabled,
+    this.lastTestAt,
+    this.lastError,
+    this.updatedAt,
+  }) : super._();
   @override
   PushProvider rebuild(void Function(PushProviderBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -227,17 +232,27 @@ class PushProviderBuilder
   _$PushProvider _build() {
     _$PushProvider _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushProvider._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PushProvider', 'id'),
+              id,
+              r'PushProvider',
+              'id',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'PushProvider', 'type'),
+              type,
+              r'PushProvider',
+              'type',
+            ),
             appIds: appIds.build(),
             config: config.build(),
             secretFields: _secretFields?.build(),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'PushProvider', 'enabled'),
+              enabled,
+              r'PushProvider',
+              'enabled',
+            ),
             lastTestAt: lastTestAt,
             lastError: lastError,
             updatedAt: updatedAt,
@@ -253,7 +268,10 @@ class PushProviderBuilder
         _secretFields?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushProvider', _$failedField, e.toString());
+          r'PushProvider',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

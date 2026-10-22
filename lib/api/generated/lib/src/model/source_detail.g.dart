@@ -17,9 +17,11 @@ class _$SourceDetail extends SourceDetail {
   factory _$SourceDetail([void Function(SourceDetailBuilder)? updates]) =>
       (SourceDetailBuilder()..update(updates))._build();
 
-  _$SourceDetail._(
-      {required this.descriptor, required this.settings, required this.health})
-      : super._();
+  _$SourceDetail._({
+    required this.descriptor,
+    required this.settings,
+    required this.health,
+  }) : super._();
   @override
   SourceDetail rebuild(void Function(SourceDetailBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -106,7 +108,8 @@ class SourceDetailBuilder
   _$SourceDetail _build() {
     _$SourceDetail _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SourceDetail._(
             descriptor: descriptor.build(),
             settings: settings.build(),
@@ -123,7 +126,10 @@ class SourceDetailBuilder
         health.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SourceDetail', _$failedField, e.toString());
+          r'SourceDetail',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -21,13 +21,14 @@ const SocialCollectionPathPathEnum _$socialCollectionPathPathEnum_channelPoll =
 const SocialCollectionPathPathEnum _$socialCollectionPathPathEnum_accountPoll =
     const SocialCollectionPathPathEnum._('accountPoll');
 const SocialCollectionPathPathEnum
-    _$socialCollectionPathPathEnum_hashtagSearch =
+_$socialCollectionPathPathEnum_hashtagSearch =
     const SocialCollectionPathPathEnum._('hashtagSearch');
 const SocialCollectionPathPathEnum _$socialCollectionPathPathEnum_cue =
     const SocialCollectionPathPathEnum._('cue');
 
 SocialCollectionPathPathEnum _$socialCollectionPathPathEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'stream':
       return _$socialCollectionPathPathEnum_stream;
@@ -53,21 +54,21 @@ SocialCollectionPathPathEnum _$socialCollectionPathPathEnumValueOf(
 }
 
 final BuiltSet<SocialCollectionPathPathEnum>
-    _$socialCollectionPathPathEnumValues =
+_$socialCollectionPathPathEnumValues =
     BuiltSet<SocialCollectionPathPathEnum>(const <SocialCollectionPathPathEnum>[
-  _$socialCollectionPathPathEnum_stream,
-  _$socialCollectionPathPathEnum_replay,
-  _$socialCollectionPathPathEnum_search,
-  _$socialCollectionPathPathEnum_counts,
-  _$socialCollectionPathPathEnum_trends,
-  _$socialCollectionPathPathEnum_channelPoll,
-  _$socialCollectionPathPathEnum_accountPoll,
-  _$socialCollectionPathPathEnum_hashtagSearch,
-  _$socialCollectionPathPathEnum_cue,
-]);
+      _$socialCollectionPathPathEnum_stream,
+      _$socialCollectionPathPathEnum_replay,
+      _$socialCollectionPathPathEnum_search,
+      _$socialCollectionPathPathEnum_counts,
+      _$socialCollectionPathPathEnum_trends,
+      _$socialCollectionPathPathEnum_channelPoll,
+      _$socialCollectionPathPathEnum_accountPoll,
+      _$socialCollectionPathPathEnum_hashtagSearch,
+      _$socialCollectionPathPathEnum_cue,
+    ]);
 
 Serializer<SocialCollectionPathPathEnum>
-    _$socialCollectionPathPathEnumSerializer =
+_$socialCollectionPathPathEnumSerializer =
     _$SocialCollectionPathPathEnumSerializer();
 
 class _$SocialCollectionPathPathEnumSerializer
@@ -101,16 +102,20 @@ class _$SocialCollectionPathPathEnumSerializer
   final String wireName = 'SocialCollectionPathPathEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialCollectionPathPathEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialCollectionPathPathEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialCollectionPathPathEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialCollectionPathPathEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialCollectionPathPathEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialCollectionPath extends SocialCollectionPath {
@@ -123,20 +128,20 @@ class _$SocialCollectionPath extends SocialCollectionPath {
   @override
   final bool feedsBaselines;
 
-  factory _$SocialCollectionPath(
-          [void Function(SocialCollectionPathBuilder)? updates]) =>
-      (SocialCollectionPathBuilder()..update(updates))._build();
+  factory _$SocialCollectionPath([
+    void Function(SocialCollectionPathBuilder)? updates,
+  ]) => (SocialCollectionPathBuilder()..update(updates))._build();
 
-  _$SocialCollectionPath._(
-      {required this.path,
-      required this.collectionType,
-      required this.enabled,
-      required this.feedsBaselines})
-      : super._();
+  _$SocialCollectionPath._({
+    required this.path,
+    required this.collectionType,
+    required this.enabled,
+    required this.feedsBaselines,
+  }) : super._();
   @override
   SocialCollectionPath rebuild(
-          void Function(SocialCollectionPathBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialCollectionPathBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialCollectionPathBuilder toBuilder() =>
@@ -226,16 +231,29 @@ class SocialCollectionPathBuilder
   SocialCollectionPath build() => _build();
 
   _$SocialCollectionPath _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialCollectionPath._(
           path: BuiltValueNullFieldError.checkNotNull(
-              path, r'SocialCollectionPath', 'path'),
+            path,
+            r'SocialCollectionPath',
+            'path',
+          ),
           collectionType: BuiltValueNullFieldError.checkNotNull(
-              collectionType, r'SocialCollectionPath', 'collectionType'),
+            collectionType,
+            r'SocialCollectionPath',
+            'collectionType',
+          ),
           enabled: BuiltValueNullFieldError.checkNotNull(
-              enabled, r'SocialCollectionPath', 'enabled'),
+            enabled,
+            r'SocialCollectionPath',
+            'enabled',
+          ),
           feedsBaselines: BuiltValueNullFieldError.checkNotNull(
-              feedsBaselines, r'SocialCollectionPath', 'feedsBaselines'),
+            feedsBaselines,
+            r'SocialCollectionPath',
+            'feedsBaselines',
+          ),
         );
     replace(_$result);
     return _$result;

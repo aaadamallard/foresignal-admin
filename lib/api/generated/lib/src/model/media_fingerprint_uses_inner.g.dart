@@ -14,17 +14,19 @@ class _$MediaFingerprintUsesInner extends MediaFingerprintUsesInner {
   @override
   final String? platform;
 
-  factory _$MediaFingerprintUsesInner(
-          [void Function(MediaFingerprintUsesInnerBuilder)? updates]) =>
-      (MediaFingerprintUsesInnerBuilder()..update(updates))._build();
+  factory _$MediaFingerprintUsesInner([
+    void Function(MediaFingerprintUsesInnerBuilder)? updates,
+  ]) => (MediaFingerprintUsesInnerBuilder()..update(updates))._build();
 
-  _$MediaFingerprintUsesInner._(
-      {required this.postRef, required this.seenAt, this.platform})
-      : super._();
+  _$MediaFingerprintUsesInner._({
+    required this.postRef,
+    required this.seenAt,
+    this.platform,
+  }) : super._();
   @override
   MediaFingerprintUsesInner rebuild(
-          void Function(MediaFingerprintUsesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MediaFingerprintUsesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MediaFingerprintUsesInnerBuilder toBuilder() =>
@@ -105,12 +107,19 @@ class MediaFingerprintUsesInnerBuilder
   MediaFingerprintUsesInner build() => _build();
 
   _$MediaFingerprintUsesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaFingerprintUsesInner._(
           postRef: BuiltValueNullFieldError.checkNotNull(
-              postRef, r'MediaFingerprintUsesInner', 'postRef'),
+            postRef,
+            r'MediaFingerprintUsesInner',
+            'postRef',
+          ),
           seenAt: BuiltValueNullFieldError.checkNotNull(
-              seenAt, r'MediaFingerprintUsesInner', 'seenAt'),
+            seenAt,
+            r'MediaFingerprintUsesInner',
+            'seenAt',
+          ),
           platform: platform,
         );
     replace(_$result);

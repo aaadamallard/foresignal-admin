@@ -28,9 +28,9 @@ abstract class PushPayloadActionsInner
 
   PushPayloadActionsInner._();
 
-  factory PushPayloadActionsInner(
-          [void updates(PushPayloadActionsInnerBuilder b)]) =
-      _$PushPayloadActionsInner;
+  factory PushPayloadActionsInner([
+    void updates(PushPayloadActionsInnerBuilder b),
+  ]) = _$PushPayloadActionsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushPayloadActionsInnerBuilder b) => b;
@@ -45,7 +45,7 @@ class _$PushPayloadActionsInnerSerializer
   @override
   final Iterable<Type> types = const [
     PushPayloadActionsInner,
-    _$PushPayloadActionsInner
+    _$PushPayloadActionsInner,
   ];
 
   @override
@@ -79,9 +79,11 @@ class _$PushPayloadActionsInnerSerializer
     PushPayloadActionsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,24 +99,30 @@ class _$PushPayloadActionsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'action':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.action = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.url = valueDes;
           break;
         default:

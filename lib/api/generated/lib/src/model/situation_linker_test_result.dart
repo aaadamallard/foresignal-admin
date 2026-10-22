@@ -44,9 +44,9 @@ abstract class SituationLinkerTestResult
 
   SituationLinkerTestResult._();
 
-  factory SituationLinkerTestResult(
-          [void updates(SituationLinkerTestResultBuilder b)]) =
-      _$SituationLinkerTestResult;
+  factory SituationLinkerTestResult([
+    void updates(SituationLinkerTestResultBuilder b),
+  ]) = _$SituationLinkerTestResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationLinkerTestResultBuilder b) => b;
@@ -61,7 +61,7 @@ class _$SituationLinkerTestResultSerializer
   @override
   final Iterable<Type> types = const [
     SituationLinkerTestResult,
-    _$SituationLinkerTestResult
+    _$SituationLinkerTestResult,
   ];
 
   @override
@@ -97,8 +97,9 @@ class _$SituationLinkerTestResultSerializer
     yield r'decisions';
     yield serializers.serialize(
       object.decisions,
-      specifiedType:
-          const FullType(BuiltList, [FullType(SituationLinkDecision)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SituationLinkDecision),
+      ]),
     );
     if (object.truncated != null) {
       yield r'truncated';
@@ -115,9 +116,11 @@ class _$SituationLinkerTestResultSerializer
     SituationLinkerTestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,47 +136,54 @@ class _$SituationLinkerTestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'fromSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.fromSeq = valueDes;
           break;
         case r'toSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.toSeq = valueDes;
           break;
         case r'linkerVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.linkerVersion = valueDes;
           break;
         case r'inputsConsidered':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.inputsConsidered = valueDes;
           break;
         case r'decisions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SituationLinkDecision)]),
-          ) as BuiltList<SituationLinkDecision>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SituationLinkDecision),
+                    ]),
+                  )
+                  as BuiltList<SituationLinkDecision>;
           result.decisions.replace(valueDes);
           break;
         case r'truncated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.truncated = valueDes;
           break;

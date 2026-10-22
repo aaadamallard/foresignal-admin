@@ -14,7 +14,8 @@ const IndicatorInputCredibilityEnum _$indicatorInputCredibilityEnum_L =
     const IndicatorInputCredibilityEnum._('L');
 
 IndicatorInputCredibilityEnum _$indicatorInputCredibilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'H':
       return _$indicatorInputCredibilityEnum_H;
@@ -28,12 +29,13 @@ IndicatorInputCredibilityEnum _$indicatorInputCredibilityEnumValueOf(
 }
 
 final BuiltSet<IndicatorInputCredibilityEnum>
-    _$indicatorInputCredibilityEnumValues = BuiltSet<
-        IndicatorInputCredibilityEnum>(const <IndicatorInputCredibilityEnum>[
-  _$indicatorInputCredibilityEnum_H,
-  _$indicatorInputCredibilityEnum_M,
-  _$indicatorInputCredibilityEnum_L,
-]);
+_$indicatorInputCredibilityEnumValues = BuiltSet<IndicatorInputCredibilityEnum>(
+  const <IndicatorInputCredibilityEnum>[
+    _$indicatorInputCredibilityEnum_H,
+    _$indicatorInputCredibilityEnum_M,
+    _$indicatorInputCredibilityEnum_L,
+  ],
+);
 
 const IndicatorInputRelevanceEnum _$indicatorInputRelevanceEnum_H =
     const IndicatorInputRelevanceEnum._('H');
@@ -56,18 +58,18 @@ IndicatorInputRelevanceEnum _$indicatorInputRelevanceEnumValueOf(String name) {
 }
 
 final BuiltSet<IndicatorInputRelevanceEnum>
-    _$indicatorInputRelevanceEnumValues =
+_$indicatorInputRelevanceEnumValues =
     BuiltSet<IndicatorInputRelevanceEnum>(const <IndicatorInputRelevanceEnum>[
-  _$indicatorInputRelevanceEnum_H,
-  _$indicatorInputRelevanceEnum_M,
-  _$indicatorInputRelevanceEnum_L,
-]);
+      _$indicatorInputRelevanceEnum_H,
+      _$indicatorInputRelevanceEnum_M,
+      _$indicatorInputRelevanceEnum_L,
+    ]);
 
 Serializer<IndicatorInputCredibilityEnum>
-    _$indicatorInputCredibilityEnumSerializer =
+_$indicatorInputCredibilityEnumSerializer =
     _$IndicatorInputCredibilityEnumSerializer();
 Serializer<IndicatorInputRelevanceEnum>
-    _$indicatorInputRelevanceEnumSerializer =
+_$indicatorInputRelevanceEnumSerializer =
     _$IndicatorInputRelevanceEnumSerializer();
 
 class _$IndicatorInputCredibilityEnumSerializer
@@ -90,16 +92,19 @@ class _$IndicatorInputCredibilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorInputCredibilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorInputCredibilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorInputCredibilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorInputCredibilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorInputCredibilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorInputRelevanceEnumSerializer
@@ -121,16 +126,20 @@ class _$IndicatorInputRelevanceEnumSerializer
   final String wireName = 'IndicatorInputRelevanceEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorInputRelevanceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorInputRelevanceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorInputRelevanceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorInputRelevanceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorInputRelevanceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorInput extends IndicatorInput {
@@ -154,16 +163,16 @@ class _$IndicatorInput extends IndicatorInput {
   factory _$IndicatorInput([void Function(IndicatorInputBuilder)? updates]) =>
       (IndicatorInputBuilder()..update(updates))._build();
 
-  _$IndicatorInput._(
-      {required this.description,
-      required this.signal,
-      required this.signalFamily,
-      required this.credibility,
-      required this.relevance,
-      this.expectedBy,
-      required this.lr,
-      this.absenceLr})
-      : super._();
+  _$IndicatorInput._({
+    required this.description,
+    required this.signal,
+    required this.signalFamily,
+    required this.credibility,
+    required this.relevance,
+    this.expectedBy,
+    required this.lr,
+    this.absenceLr,
+  }) : super._();
   @override
   IndicatorInput rebuild(void Function(IndicatorInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -293,17 +302,30 @@ class IndicatorInputBuilder
   _$IndicatorInput _build() {
     _$IndicatorInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndicatorInput._(
             description: BuiltValueNullFieldError.checkNotNull(
-                description, r'IndicatorInput', 'description'),
+              description,
+              r'IndicatorInput',
+              'description',
+            ),
             signal: signal.build(),
             signalFamily: BuiltValueNullFieldError.checkNotNull(
-                signalFamily, r'IndicatorInput', 'signalFamily'),
+              signalFamily,
+              r'IndicatorInput',
+              'signalFamily',
+            ),
             credibility: BuiltValueNullFieldError.checkNotNull(
-                credibility, r'IndicatorInput', 'credibility'),
+              credibility,
+              r'IndicatorInput',
+              'credibility',
+            ),
             relevance: BuiltValueNullFieldError.checkNotNull(
-                relevance, r'IndicatorInput', 'relevance'),
+              relevance,
+              r'IndicatorInput',
+              'relevance',
+            ),
             expectedBy: expectedBy,
             lr: lr.build(),
             absenceLr: _absenceLr?.build(),
@@ -320,7 +342,10 @@ class IndicatorInputBuilder
         _absenceLr?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndicatorInput', _$failedField, e.toString());
+          r'IndicatorInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

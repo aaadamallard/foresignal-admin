@@ -10,15 +10,15 @@ class _$PushProviderTestRequest extends PushProviderTestRequest {
   @override
   final String? deviceId;
 
-  factory _$PushProviderTestRequest(
-          [void Function(PushProviderTestRequestBuilder)? updates]) =>
-      (PushProviderTestRequestBuilder()..update(updates))._build();
+  factory _$PushProviderTestRequest([
+    void Function(PushProviderTestRequestBuilder)? updates,
+  ]) => (PushProviderTestRequestBuilder()..update(updates))._build();
 
   _$PushProviderTestRequest._({this.deviceId}) : super._();
   @override
   PushProviderTestRequest rebuild(
-          void Function(PushProviderTestRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushProviderTestRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushProviderTestRequestBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$PushProviderTestRequest extends PushProviderTestRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PushProviderTestRequest')
-          ..add('deviceId', deviceId))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PushProviderTestRequest',
+    )..add('deviceId', deviceId)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class PushProviderTestRequestBuilder
   PushProviderTestRequest build() => _build();
 
   _$PushProviderTestRequest _build() {
-    final _$result = _$v ??
-        _$PushProviderTestRequest._(
-          deviceId: deviceId,
-        );
+    final _$result = _$v ?? _$PushProviderTestRequest._(deviceId: deviceId);
     replace(_$result);
     return _$result;
   }

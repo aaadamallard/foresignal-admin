@@ -13,20 +13,19 @@ class _$PushSubscriptionInputSubscriptionKeys
   @override
   final String auth;
 
-  factory _$PushSubscriptionInputSubscriptionKeys(
-          [void Function(PushSubscriptionInputSubscriptionKeysBuilder)?
-              updates]) =>
-      (PushSubscriptionInputSubscriptionKeysBuilder()..update(updates))
-          ._build();
+  factory _$PushSubscriptionInputSubscriptionKeys([
+    void Function(PushSubscriptionInputSubscriptionKeysBuilder)? updates,
+  ]) => (PushSubscriptionInputSubscriptionKeysBuilder()..update(updates))
+      ._build();
 
-  _$PushSubscriptionInputSubscriptionKeys._(
-      {required this.p256dh, required this.auth})
-      : super._();
+  _$PushSubscriptionInputSubscriptionKeys._({
+    required this.p256dh,
+    required this.auth,
+  }) : super._();
   @override
   PushSubscriptionInputSubscriptionKeys rebuild(
-          void Function(PushSubscriptionInputSubscriptionKeysBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushSubscriptionInputSubscriptionKeysBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushSubscriptionInputSubscriptionKeysBuilder toBuilder() =>
@@ -52,7 +51,8 @@ class _$PushSubscriptionInputSubscriptionKeys
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'PushSubscriptionInputSubscriptionKeys')
+            r'PushSubscriptionInputSubscriptionKeys',
+          )
           ..add('p256dh', p256dh)
           ..add('auth', auth))
         .toString();
@@ -61,8 +61,10 @@ class _$PushSubscriptionInputSubscriptionKeys
 
 class PushSubscriptionInputSubscriptionKeysBuilder
     implements
-        Builder<PushSubscriptionInputSubscriptionKeys,
-            PushSubscriptionInputSubscriptionKeysBuilder> {
+        Builder<
+          PushSubscriptionInputSubscriptionKeys,
+          PushSubscriptionInputSubscriptionKeysBuilder
+        > {
   _$PushSubscriptionInputSubscriptionKeys? _$v;
 
   String? _p256dh;
@@ -94,7 +96,8 @@ class PushSubscriptionInputSubscriptionKeysBuilder
 
   @override
   void update(
-      void Function(PushSubscriptionInputSubscriptionKeysBuilder)? updates) {
+    void Function(PushSubscriptionInputSubscriptionKeysBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -102,12 +105,19 @@ class PushSubscriptionInputSubscriptionKeysBuilder
   PushSubscriptionInputSubscriptionKeys build() => _build();
 
   _$PushSubscriptionInputSubscriptionKeys _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PushSubscriptionInputSubscriptionKeys._(
           p256dh: BuiltValueNullFieldError.checkNotNull(
-              p256dh, r'PushSubscriptionInputSubscriptionKeys', 'p256dh'),
+            p256dh,
+            r'PushSubscriptionInputSubscriptionKeys',
+            'p256dh',
+          ),
           auth: BuiltValueNullFieldError.checkNotNull(
-              auth, r'PushSubscriptionInputSubscriptionKeys', 'auth'),
+            auth,
+            r'PushSubscriptionInputSubscriptionKeys',
+            'auth',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -29,9 +29,9 @@ abstract class SystemRastersRenderQueue
 
   SystemRastersRenderQueue._();
 
-  factory SystemRastersRenderQueue(
-          [void updates(SystemRastersRenderQueueBuilder b)]) =
-      _$SystemRastersRenderQueue;
+  factory SystemRastersRenderQueue([
+    void updates(SystemRastersRenderQueueBuilder b),
+  ]) = _$SystemRastersRenderQueue;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemRastersRenderQueueBuilder b) => b;
@@ -46,7 +46,7 @@ class _$SystemRastersRenderQueueSerializer
   @override
   final Iterable<Type> types = const [
     SystemRastersRenderQueue,
-    _$SystemRastersRenderQueue
+    _$SystemRastersRenderQueue,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$SystemRastersRenderQueueSerializer
     SystemRastersRenderQueue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,32 @@ class _$SystemRastersRenderQueueSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'depth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.depth = valueDes;
           break;
         case r'active':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.active = valueDes;
           break;
         case r'poolSize':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.poolSize = valueDes;
           break;

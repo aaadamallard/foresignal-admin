@@ -14,16 +14,16 @@ class _$SocialPlatformPrice extends SocialPlatformPrice {
   @override
   final int? per;
 
-  factory _$SocialPlatformPrice(
-          [void Function(SocialPlatformPriceBuilder)? updates]) =>
-      (SocialPlatformPriceBuilder()..update(updates))._build();
+  factory _$SocialPlatformPrice([
+    void Function(SocialPlatformPriceBuilder)? updates,
+  ]) => (SocialPlatformPriceBuilder()..update(updates))._build();
 
   _$SocialPlatformPrice._({required this.item, required this.usd, this.per})
-      : super._();
+    : super._();
   @override
   SocialPlatformPrice rebuild(
-          void Function(SocialPlatformPriceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformPriceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformPriceBuilder toBuilder() =>
@@ -103,12 +103,19 @@ class SocialPlatformPriceBuilder
   SocialPlatformPrice build() => _build();
 
   _$SocialPlatformPrice _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialPlatformPrice._(
           item: BuiltValueNullFieldError.checkNotNull(
-              item, r'SocialPlatformPrice', 'item'),
+            item,
+            r'SocialPlatformPrice',
+            'item',
+          ),
           usd: BuiltValueNullFieldError.checkNotNull(
-              usd, r'SocialPlatformPrice', 'usd'),
+            usd,
+            r'SocialPlatformPrice',
+            'usd',
+          ),
           per: per,
         );
     replace(_$result);

@@ -17,8 +17,10 @@ part 'propagation_graph_earliest_by_platform_inner.g.dart';
 @BuiltValue()
 abstract class PropagationGraphEarliestByPlatformInner
     implements
-        Built<PropagationGraphEarliestByPlatformInner,
-            PropagationGraphEarliestByPlatformInnerBuilder> {
+        Built<
+          PropagationGraphEarliestByPlatformInner,
+          PropagationGraphEarliestByPlatformInnerBuilder
+        > {
   /// Social network: `bluesky`, `mastodon`, `reddit`, `youtube`, `x`, `threads`, `instagram`, or the platform an EDP provider (024, 138) declares
   @BuiltValueField(wireName: r'platform')
   String get platform;
@@ -32,9 +34,9 @@ abstract class PropagationGraphEarliestByPlatformInner
 
   PropagationGraphEarliestByPlatformInner._();
 
-  factory PropagationGraphEarliestByPlatformInner(
-          [void updates(PropagationGraphEarliestByPlatformInnerBuilder b)]) =
-      _$PropagationGraphEarliestByPlatformInner;
+  factory PropagationGraphEarliestByPlatformInner([
+    void updates(PropagationGraphEarliestByPlatformInnerBuilder b),
+  ]) = _$PropagationGraphEarliestByPlatformInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PropagationGraphEarliestByPlatformInnerBuilder b) => b;
@@ -49,7 +51,7 @@ class _$PropagationGraphEarliestByPlatformInnerSerializer
   @override
   final Iterable<Type> types = const [
     PropagationGraphEarliestByPlatformInner,
-    _$PropagationGraphEarliestByPlatformInner
+    _$PropagationGraphEarliestByPlatformInner,
   ];
 
   @override
@@ -83,9 +85,11 @@ class _$PropagationGraphEarliestByPlatformInnerSerializer
     PropagationGraphEarliestByPlatformInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +105,30 @@ class _$PropagationGraphEarliestByPlatformInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'platform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.platform = valueDes;
           break;
         case r'postRef':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.postRef = valueDes;
           break;
         case r'observedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.observedAt = valueDes;
           break;
         default:

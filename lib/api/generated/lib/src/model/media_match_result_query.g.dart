@@ -7,13 +7,14 @@ part of 'media_match_result_query.dart';
 // **************************************************************************
 
 const MediaMatchResultQuerySource_Enum
-    _$mediaMatchResultQuerySourceEnum_upload =
+_$mediaMatchResultQuerySourceEnum_upload =
     const MediaMatchResultQuerySource_Enum._('upload');
 const MediaMatchResultQuerySource_Enum _$mediaMatchResultQuerySourceEnum_pdq =
     const MediaMatchResultQuerySource_Enum._('pdq');
 
 MediaMatchResultQuerySource_Enum _$mediaMatchResultQuerySourceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'upload':
       return _$mediaMatchResultQuerySourceEnum_upload;
@@ -25,14 +26,16 @@ MediaMatchResultQuerySource_Enum _$mediaMatchResultQuerySourceEnumValueOf(
 }
 
 final BuiltSet<MediaMatchResultQuerySource_Enum>
-    _$mediaMatchResultQuerySourceEnumValues = BuiltSet<
-        MediaMatchResultQuerySource_Enum>(const <MediaMatchResultQuerySource_Enum>[
-  _$mediaMatchResultQuerySourceEnum_upload,
-  _$mediaMatchResultQuerySourceEnum_pdq,
-]);
+_$mediaMatchResultQuerySourceEnumValues =
+    BuiltSet<MediaMatchResultQuerySource_Enum>(
+      const <MediaMatchResultQuerySource_Enum>[
+        _$mediaMatchResultQuerySourceEnum_upload,
+        _$mediaMatchResultQuerySourceEnum_pdq,
+      ],
+    );
 
 Serializer<MediaMatchResultQuerySource_Enum>
-    _$mediaMatchResultQuerySourceEnumSerializer =
+_$mediaMatchResultQuerySourceEnumSerializer =
     _$MediaMatchResultQuerySource_EnumSerializer();
 
 class _$MediaMatchResultQuerySource_EnumSerializer
@@ -53,16 +56,19 @@ class _$MediaMatchResultQuerySource_EnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, MediaMatchResultQuerySource_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    MediaMatchResultQuerySource_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MediaMatchResultQuerySource_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaMatchResultQuerySource_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaMatchResultQuerySource_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MediaMatchResultQuery extends MediaMatchResultQuery {
@@ -73,17 +79,19 @@ class _$MediaMatchResultQuery extends MediaMatchResultQuery {
   @override
   final MediaMatchResultQuerySource_Enum source_;
 
-  factory _$MediaMatchResultQuery(
-          [void Function(MediaMatchResultQueryBuilder)? updates]) =>
-      (MediaMatchResultQueryBuilder()..update(updates))._build();
+  factory _$MediaMatchResultQuery([
+    void Function(MediaMatchResultQueryBuilder)? updates,
+  ]) => (MediaMatchResultQueryBuilder()..update(updates))._build();
 
-  _$MediaMatchResultQuery._(
-      {required this.pdq, this.quality, required this.source_})
-      : super._();
+  _$MediaMatchResultQuery._({
+    required this.pdq,
+    this.quality,
+    required this.source_,
+  }) : super._();
   @override
   MediaMatchResultQuery rebuild(
-          void Function(MediaMatchResultQueryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MediaMatchResultQueryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MediaMatchResultQueryBuilder toBuilder() =>
@@ -164,13 +172,20 @@ class MediaMatchResultQueryBuilder
   MediaMatchResultQuery build() => _build();
 
   _$MediaMatchResultQuery _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaMatchResultQuery._(
           pdq: BuiltValueNullFieldError.checkNotNull(
-              pdq, r'MediaMatchResultQuery', 'pdq'),
+            pdq,
+            r'MediaMatchResultQuery',
+            'pdq',
+          ),
           quality: quality,
           source_: BuiltValueNullFieldError.checkNotNull(
-              source_, r'MediaMatchResultQuery', 'source_'),
+            source_,
+            r'MediaMatchResultQuery',
+            'source_',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -12,7 +12,8 @@ const WatchlistImportResultModeEnum _$watchlistImportResultModeEnum_replace =
     const WatchlistImportResultModeEnum._('replace');
 
 WatchlistImportResultModeEnum _$watchlistImportResultModeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'merge':
       return _$watchlistImportResultModeEnum_merge;
@@ -24,14 +25,15 @@ WatchlistImportResultModeEnum _$watchlistImportResultModeEnumValueOf(
 }
 
 final BuiltSet<WatchlistImportResultModeEnum>
-    _$watchlistImportResultModeEnumValues = BuiltSet<
-        WatchlistImportResultModeEnum>(const <WatchlistImportResultModeEnum>[
-  _$watchlistImportResultModeEnum_merge,
-  _$watchlistImportResultModeEnum_replace,
-]);
+_$watchlistImportResultModeEnumValues = BuiltSet<WatchlistImportResultModeEnum>(
+  const <WatchlistImportResultModeEnum>[
+    _$watchlistImportResultModeEnum_merge,
+    _$watchlistImportResultModeEnum_replace,
+  ],
+);
 
 Serializer<WatchlistImportResultModeEnum>
-    _$watchlistImportResultModeEnumSerializer =
+_$watchlistImportResultModeEnumSerializer =
     _$WatchlistImportResultModeEnumSerializer();
 
 class _$WatchlistImportResultModeEnumSerializer
@@ -52,16 +54,19 @@ class _$WatchlistImportResultModeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, WatchlistImportResultModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    WatchlistImportResultModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WatchlistImportResultModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WatchlistImportResultModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WatchlistImportResultModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WatchlistImportResult extends WatchlistImportResult {
@@ -82,24 +87,24 @@ class _$WatchlistImportResult extends WatchlistImportResult {
   @override
   final int itemCount;
 
-  factory _$WatchlistImportResult(
-          [void Function(WatchlistImportResultBuilder)? updates]) =>
-      (WatchlistImportResultBuilder()..update(updates))._build();
+  factory _$WatchlistImportResult([
+    void Function(WatchlistImportResultBuilder)? updates,
+  ]) => (WatchlistImportResultBuilder()..update(updates))._build();
 
-  _$WatchlistImportResult._(
-      {required this.dryRun,
-      this.mode,
-      required this.added,
-      required this.updated,
-      required this.removed,
-      this.unchanged,
-      required this.invalid,
-      required this.itemCount})
-      : super._();
+  _$WatchlistImportResult._({
+    required this.dryRun,
+    this.mode,
+    required this.added,
+    required this.updated,
+    required this.removed,
+    this.unchanged,
+    required this.invalid,
+    required this.itemCount,
+  }) : super._();
   @override
   WatchlistImportResult rebuild(
-          void Function(WatchlistImportResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WatchlistImportResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WatchlistImportResultBuilder toBuilder() =>
@@ -223,21 +228,37 @@ class WatchlistImportResultBuilder
   _$WatchlistImportResult _build() {
     _$WatchlistImportResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WatchlistImportResult._(
             dryRun: BuiltValueNullFieldError.checkNotNull(
-                dryRun, r'WatchlistImportResult', 'dryRun'),
+              dryRun,
+              r'WatchlistImportResult',
+              'dryRun',
+            ),
             mode: mode,
             added: BuiltValueNullFieldError.checkNotNull(
-                added, r'WatchlistImportResult', 'added'),
+              added,
+              r'WatchlistImportResult',
+              'added',
+            ),
             updated: BuiltValueNullFieldError.checkNotNull(
-                updated, r'WatchlistImportResult', 'updated'),
+              updated,
+              r'WatchlistImportResult',
+              'updated',
+            ),
             removed: BuiltValueNullFieldError.checkNotNull(
-                removed, r'WatchlistImportResult', 'removed'),
+              removed,
+              r'WatchlistImportResult',
+              'removed',
+            ),
             unchanged: unchanged,
             invalid: invalid.build(),
             itemCount: BuiltValueNullFieldError.checkNotNull(
-                itemCount, r'WatchlistImportResult', 'itemCount'),
+              itemCount,
+              r'WatchlistImportResult',
+              'itemCount',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -246,7 +267,10 @@ class WatchlistImportResultBuilder
         invalid.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchlistImportResult', _$failedField, e.toString());
+          r'WatchlistImportResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

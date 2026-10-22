@@ -126,9 +126,11 @@ class _$SocialVolumeSerializer implements PrimitiveSerializer<SocialVolume> {
     SocialVolume object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -144,61 +146,79 @@ class _$SocialVolumeSerializer implements PrimitiveSerializer<SocialVolume> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialVolumeScope),
-          ) as SocialVolumeScope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialVolumeScope),
+                  )
+                  as SocialVolumeScope;
           result.scope.replace(valueDes);
           break;
         case r'metric':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialVolumeMetricEnum),
-          ) as SocialVolumeMetricEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialVolumeMetricEnum),
+                  )
+                  as SocialVolumeMetricEnum;
           result.metric = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SocialVolumeIntervalEnum),
-          ) as SocialVolumeIntervalEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(SocialVolumeIntervalEnum),
+                  )
+                  as SocialVolumeIntervalEnum;
           result.interval = valueDes;
           break;
         case r'since':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.since = valueDes;
           break;
         case r'until':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.until = valueDes;
           break;
         case r'series':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(SocialVolumeSeries)]),
-          ) as BuiltList<SocialVolumeSeries>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SocialVolumeSeries),
+                    ]),
+                  )
+                  as BuiltList<SocialVolumeSeries>;
           result.series.replace(valueDes);
           break;
         case r'baseline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.baseline.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;

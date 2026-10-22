@@ -80,23 +80,23 @@ RegionNearCompass16Enum _$regionNearCompass16EnumValueOf(String name) {
 
 final BuiltSet<RegionNearCompass16Enum> _$regionNearCompass16EnumValues =
     BuiltSet<RegionNearCompass16Enum>(const <RegionNearCompass16Enum>[
-  _$regionNearCompass16Enum_N,
-  _$regionNearCompass16Enum_NNE,
-  _$regionNearCompass16Enum_NE,
-  _$regionNearCompass16Enum_ENE,
-  _$regionNearCompass16Enum_E,
-  _$regionNearCompass16Enum_ESE,
-  _$regionNearCompass16Enum_SE,
-  _$regionNearCompass16Enum_SSE,
-  _$regionNearCompass16Enum_S,
-  _$regionNearCompass16Enum_SSW,
-  _$regionNearCompass16Enum_SW,
-  _$regionNearCompass16Enum_WSW,
-  _$regionNearCompass16Enum_W,
-  _$regionNearCompass16Enum_WNW,
-  _$regionNearCompass16Enum_NW,
-  _$regionNearCompass16Enum_NNW,
-]);
+      _$regionNearCompass16Enum_N,
+      _$regionNearCompass16Enum_NNE,
+      _$regionNearCompass16Enum_NE,
+      _$regionNearCompass16Enum_ENE,
+      _$regionNearCompass16Enum_E,
+      _$regionNearCompass16Enum_ESE,
+      _$regionNearCompass16Enum_SE,
+      _$regionNearCompass16Enum_SSE,
+      _$regionNearCompass16Enum_S,
+      _$regionNearCompass16Enum_SSW,
+      _$regionNearCompass16Enum_SW,
+      _$regionNearCompass16Enum_WSW,
+      _$regionNearCompass16Enum_W,
+      _$regionNearCompass16Enum_WNW,
+      _$regionNearCompass16Enum_NW,
+      _$regionNearCompass16Enum_NNW,
+    ]);
 
 Serializer<RegionNearCompass16Enum> _$regionNearCompass16EnumSerializer =
     _$RegionNearCompass16EnumSerializer();
@@ -146,16 +146,20 @@ class _$RegionNearCompass16EnumSerializer
   final String wireName = 'RegionNearCompass16Enum';
 
   @override
-  Object serialize(Serializers serializers, RegionNearCompass16Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RegionNearCompass16Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RegionNearCompass16Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RegionNearCompass16Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RegionNearCompass16Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RegionNear extends RegionNear {
@@ -181,17 +185,17 @@ class _$RegionNear extends RegionNear {
   factory _$RegionNear([void Function(RegionNearBuilder)? updates]) =>
       (RegionNearBuilder()..update(updates))._build();
 
-  _$RegionNear._(
-      {required this.geonameid,
-      required this.name,
-      this.iso2,
-      this.admin1,
-      required this.distanceKm,
-      this.bearingDeg,
-      required this.compass16,
-      this.population,
-      this.text})
-      : super._();
+  _$RegionNear._({
+    required this.geonameid,
+    required this.name,
+    this.iso2,
+    this.admin1,
+    required this.distanceKm,
+    this.bearingDeg,
+    required this.compass16,
+    this.population,
+    this.text,
+  }) : super._();
   @override
   RegionNear rebuild(void Function(RegionNearBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -321,19 +325,32 @@ class RegionNearBuilder implements Builder<RegionNear, RegionNearBuilder> {
   RegionNear build() => _build();
 
   _$RegionNear _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RegionNear._(
           geonameid: BuiltValueNullFieldError.checkNotNull(
-              geonameid, r'RegionNear', 'geonameid'),
+            geonameid,
+            r'RegionNear',
+            'geonameid',
+          ),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'RegionNear', 'name'),
+            name,
+            r'RegionNear',
+            'name',
+          ),
           iso2: iso2,
           admin1: admin1,
           distanceKm: BuiltValueNullFieldError.checkNotNull(
-              distanceKm, r'RegionNear', 'distanceKm'),
+            distanceKm,
+            r'RegionNear',
+            'distanceKm',
+          ),
           bearingDeg: bearingDeg,
           compass16: BuiltValueNullFieldError.checkNotNull(
-              compass16, r'RegionNear', 'compass16'),
+            compass16,
+            r'RegionNear',
+            'compass16',
+          ),
           population: population,
           text: text,
         );

@@ -92,11 +92,9 @@ class ShareLinkPageBuilder
   _$ShareLinkPage _build() {
     _$ShareLinkPage _$result;
     try {
-      _$result = _$v ??
-          _$ShareLinkPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ShareLinkPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class ShareLinkPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ShareLinkPage', _$failedField, e.toString());
+          r'ShareLinkPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

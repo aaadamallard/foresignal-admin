@@ -12,16 +12,16 @@ class _$StatsRollupRebuildRequest extends StatsRollupRebuildRequest {
   @override
   final DateTime to;
 
-  factory _$StatsRollupRebuildRequest(
-          [void Function(StatsRollupRebuildRequestBuilder)? updates]) =>
-      (StatsRollupRebuildRequestBuilder()..update(updates))._build();
+  factory _$StatsRollupRebuildRequest([
+    void Function(StatsRollupRebuildRequestBuilder)? updates,
+  ]) => (StatsRollupRebuildRequestBuilder()..update(updates))._build();
 
   _$StatsRollupRebuildRequest._({required this.from, required this.to})
-      : super._();
+    : super._();
   @override
   StatsRollupRebuildRequest rebuild(
-          void Function(StatsRollupRebuildRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StatsRollupRebuildRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StatsRollupRebuildRequestBuilder toBuilder() =>
@@ -94,12 +94,19 @@ class StatsRollupRebuildRequestBuilder
   StatsRollupRebuildRequest build() => _build();
 
   _$StatsRollupRebuildRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StatsRollupRebuildRequest._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'StatsRollupRebuildRequest', 'from'),
+            from,
+            r'StatsRollupRebuildRequest',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'StatsRollupRebuildRequest', 'to'),
+            to,
+            r'StatsRollupRebuildRequest',
+            'to',
+          ),
         );
     replace(_$result);
     return _$result;

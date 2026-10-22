@@ -14,17 +14,19 @@ class _$PushPayloadActionsInner extends PushPayloadActionsInner {
   @override
   final String url;
 
-  factory _$PushPayloadActionsInner(
-          [void Function(PushPayloadActionsInnerBuilder)? updates]) =>
-      (PushPayloadActionsInnerBuilder()..update(updates))._build();
+  factory _$PushPayloadActionsInner([
+    void Function(PushPayloadActionsInnerBuilder)? updates,
+  ]) => (PushPayloadActionsInnerBuilder()..update(updates))._build();
 
-  _$PushPayloadActionsInner._(
-      {required this.action, required this.title, required this.url})
-      : super._();
+  _$PushPayloadActionsInner._({
+    required this.action,
+    required this.title,
+    required this.url,
+  }) : super._();
   @override
   PushPayloadActionsInner rebuild(
-          void Function(PushPayloadActionsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PushPayloadActionsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PushPayloadActionsInnerBuilder toBuilder() =>
@@ -105,14 +107,24 @@ class PushPayloadActionsInnerBuilder
   PushPayloadActionsInner build() => _build();
 
   _$PushPayloadActionsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PushPayloadActionsInner._(
           action: BuiltValueNullFieldError.checkNotNull(
-              action, r'PushPayloadActionsInner', 'action'),
+            action,
+            r'PushPayloadActionsInner',
+            'action',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'PushPayloadActionsInner', 'title'),
+            title,
+            r'PushPayloadActionsInner',
+            'title',
+          ),
           url: BuiltValueNullFieldError.checkNotNull(
-              url, r'PushPayloadActionsInner', 'url'),
+            url,
+            r'PushPayloadActionsInner',
+            'url',
+          ),
         );
     replace(_$result);
     return _$result;

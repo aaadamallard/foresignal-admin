@@ -92,11 +92,9 @@ class AnnotationPageBuilder
   _$AnnotationPage _build() {
     _$AnnotationPage _$result;
     try {
-      _$result = _$v ??
-          _$AnnotationPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AnnotationPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class AnnotationPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnnotationPage', _$failedField, e.toString());
+          r'AnnotationPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

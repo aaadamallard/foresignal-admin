@@ -50,16 +50,10 @@ class PeersApi {
     final _path = r'/v1/peers';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -74,10 +68,7 @@ class PeersApi {
       _bodyData = _serializers.serialize(peerCreate, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -100,9 +91,10 @@ class PeersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Peer),
-            ) as Peer;
+                  rawResponse,
+                  specifiedType: const FullType(Peer),
+                )
+                as Peer;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -149,21 +141,21 @@ class PeersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/peers/{peerId}'.replaceAll(
-        '{' r'peerId' '}',
-        encodeQueryParameter(_serializers, peerId, const FullType(String))
-            .toString());
+      '{'
+      r'peerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        peerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -205,21 +197,21 @@ class PeersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/peers/{peerId}'.replaceAll(
-        '{' r'peerId' '}',
-        encodeQueryParameter(_serializers, peerId, const FullType(String))
-            .toString());
+      '{'
+      r'peerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        peerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -241,9 +233,10 @@ class PeersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Peer),
-            ) as Peer;
+                  rawResponse,
+                  specifiedType: const FullType(Peer),
+                )
+                as Peer;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -294,16 +287,10 @@ class PeersApi {
     final _path = r'/v1/peers';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -312,11 +299,17 @@ class PeersApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -335,9 +328,10 @@ class PeersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PeerPage),
-            ) as PeerPage;
+                  rawResponse,
+                  specifiedType: const FullType(PeerPage),
+                )
+                as PeerPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -384,21 +378,21 @@ class PeersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/peers/{peerId}/resync'.replaceAll(
-        '{' r'peerId' '}',
-        encodeQueryParameter(_serializers, peerId, const FullType(String))
-            .toString());
+      '{'
+      r'peerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        peerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -420,9 +414,10 @@ class PeersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Peer),
-            ) as Peer;
+                  rawResponse,
+                  specifiedType: const FullType(Peer),
+                )
+                as Peer;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -469,21 +464,21 @@ class PeersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/peers/{peerId}/ingest-key'.replaceAll(
-        '{' r'peerId' '}',
-        encodeQueryParameter(_serializers, peerId, const FullType(String))
-            .toString());
+      '{'
+      r'peerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        peerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -505,9 +500,10 @@ class PeersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PeerIngestKey),
-            ) as PeerIngestKey;
+                  rawResponse,
+                  specifiedType: const FullType(PeerIngestKey),
+                )
+                as PeerIngestKey;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -554,21 +550,21 @@ class PeersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/peers/{peerId}/test'.replaceAll(
-        '{' r'peerId' '}',
-        encodeQueryParameter(_serializers, peerId, const FullType(String))
-            .toString());
+      '{'
+      r'peerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        peerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -590,9 +586,10 @@ class PeersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PeerTestResult),
-            ) as PeerTestResult;
+                  rawResponse,
+                  specifiedType: const FullType(PeerTestResult),
+                )
+                as PeerTestResult;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -641,21 +638,21 @@ class PeersApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/peers/{peerId}'.replaceAll(
-        '{' r'peerId' '}',
-        encodeQueryParameter(_serializers, peerId, const FullType(String))
-            .toString());
+      '{'
+      r'peerId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        peerId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -670,10 +667,7 @@ class PeersApi {
       _bodyData = _serializers.serialize(peerUpdate, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -696,9 +690,10 @@ class PeersApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Peer),
-            ) as Peer;
+                  rawResponse,
+                  specifiedType: const FullType(Peer),
+                )
+                as Peer;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

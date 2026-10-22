@@ -28,9 +28,9 @@ abstract class SocialSettingsVelocity
 
   SocialSettingsVelocity._();
 
-  factory SocialSettingsVelocity(
-          [void updates(SocialSettingsVelocityBuilder b)]) =
-      _$SocialSettingsVelocity;
+  factory SocialSettingsVelocity([
+    void updates(SocialSettingsVelocityBuilder b),
+  ]) = _$SocialSettingsVelocity;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialSettingsVelocityBuilder b) => b;
@@ -45,7 +45,7 @@ class _$SocialSettingsVelocitySerializer
   @override
   final Iterable<Type> types = const [
     SocialSettingsVelocity,
-    _$SocialSettingsVelocity
+    _$SocialSettingsVelocity,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$SocialSettingsVelocitySerializer
     SocialSettingsVelocity object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +105,32 @@ class _$SocialSettingsVelocitySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'minRatio':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.minRatio = valueDes;
           break;
         case r'minUniqueAuthors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minUniqueAuthors = valueDes;
           break;
         case r'dedupHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.dedupHours = valueDes;
           break;

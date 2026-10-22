@@ -116,9 +116,9 @@ abstract class SettingsBundleChannelsInner
 
   SettingsBundleChannelsInner._();
 
-  factory SettingsBundleChannelsInner(
-          [void updates(SettingsBundleChannelsInnerBuilder b)]) =
-      _$SettingsBundleChannelsInner;
+  factory SettingsBundleChannelsInner([
+    void updates(SettingsBundleChannelsInnerBuilder b),
+  ]) = _$SettingsBundleChannelsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SettingsBundleChannelsInnerBuilder b) => b;
@@ -133,7 +133,7 @@ class _$SettingsBundleChannelsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SettingsBundleChannelsInner,
-    _$SettingsBundleChannelsInner
+    _$SettingsBundleChannelsInner,
   ];
 
   @override
@@ -165,16 +165,19 @@ class _$SettingsBundleChannelsInnerSerializer
       yield r'secrets';
       yield serializers.serialize(
         object.secrets,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
     if (object.events != null) {
       yield r'events';
       yield serializers.serialize(
         object.events,
-        specifiedType: const FullType(
-            BuiltList, [FullType(SettingsBundleChannelsInnerEventsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SettingsBundleChannelsInnerEventsEnum),
+        ]),
       );
     }
     if (object.ruleIds != null) {
@@ -188,8 +191,9 @@ class _$SettingsBundleChannelsInnerSerializer
       yield r'minSeverity';
       yield serializers.serialize(
         object.minSeverity,
-        specifiedType:
-            const FullType(SettingsBundleChannelsInnerMinSeverityEnum),
+        specifiedType: const FullType(
+          SettingsBundleChannelsInnerMinSeverityEnum,
+        ),
       );
     }
     if (object.titleTemplate != null) {
@@ -289,9 +293,11 @@ class _$SettingsBundleChannelsInnerSerializer
     SettingsBundleChannelsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -307,165 +313,213 @@ class _$SettingsBundleChannelsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SettingsBundleChannelsInnerTypeEnum),
-          ) as SettingsBundleChannelsInnerTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SettingsBundleChannelsInnerTypeEnum,
+                    ),
+                  )
+                  as SettingsBundleChannelsInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SettingsBundleChannelsInnerConfig),
-          ) as SettingsBundleChannelsInnerConfig?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SettingsBundleChannelsInnerConfig,
+                    ),
+                  )
+                  as SettingsBundleChannelsInnerConfig?;
           if (valueDes == null) continue;
           result.config.replace(valueDes);
           break;
         case r'secrets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>?;
           if (valueDes == null) continue;
           result.secrets.replace(valueDes);
           break;
         case r'events':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SettingsBundleChannelsInnerEventsEnum)]),
-          ) as BuiltList<SettingsBundleChannelsInnerEventsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SettingsBundleChannelsInnerEventsEnum),
+                    ]),
+                  )
+                  as BuiltList<SettingsBundleChannelsInnerEventsEnum>?;
           if (valueDes == null) continue;
           result.events.replace(valueDes);
           break;
         case r'ruleIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.ruleIds.replace(valueDes);
           break;
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                SettingsBundleChannelsInnerMinSeverityEnum),
-          ) as SettingsBundleChannelsInnerMinSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SettingsBundleChannelsInnerMinSeverityEnum,
+                    ),
+                  )
+                  as SettingsBundleChannelsInnerMinSeverityEnum?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;
         case r'titleTemplate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.titleTemplate = valueDes;
           break;
         case r'bodyTemplate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.bodyTemplate = valueDes;
           break;
         case r'waitForEnrichmentSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.waitForEnrichmentSeconds = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.timezone = valueDes;
           break;
         case r'quietHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(QuietHours),
-          ) as QuietHours?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(QuietHours),
+                  )
+                  as QuietHours?;
           if (valueDes == null) continue;
           result.quietHours.replace(valueDes);
           break;
         case r'groupWindowSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.groupWindowSeconds = valueDes;
           break;
         case r'backlogCap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.backlogCap = valueDes;
           break;
         case r'editInPlace':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.editInPlace = valueDes;
           break;
         case r'deferWhileActiveSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.deferWhileActiveSeconds = valueDes;
           break;
         case r'acceptExercise':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.acceptExercise = valueDes;
           break;
         case r'language':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.language = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         default:
@@ -610,11 +664,11 @@ class SettingsBundleChannelsInnerEventsEnum extends EnumClass {
       _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolved;
   @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
   static const SettingsBundleChannelsInnerEventsEnum
-      forecastPeriodResolutionNeeded =
+  forecastPeriodResolutionNeeded =
       _$settingsBundleChannelsInnerEventsEnum_forecastPeriodResolutionNeeded;
   @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
   static const SettingsBundleChannelsInnerEventsEnum
-      hypothesisPeriodBandChanged =
+  hypothesisPeriodBandChanged =
       _$settingsBundleChannelsInnerEventsEnum_hypothesisPeriodBandChanged;
   @BuiltValueEnumConst(wireName: r'indicator.observed')
   static const SettingsBundleChannelsInnerEventsEnum indicatorPeriodObserved =
@@ -639,7 +693,7 @@ class SettingsBundleChannelsInnerEventsEnum extends EnumClass {
       _$settingsBundleChannelsInnerEventsEnum_packagePeriodReceived;
   @BuiltValueEnumConst(wireName: r'chronicle.access.requested')
   static const SettingsBundleChannelsInnerEventsEnum
-      chroniclePeriodAccessPeriodRequested =
+  chroniclePeriodAccessPeriodRequested =
       _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested;
   @BuiltValueEnumConst(wireName: r'saved-search.matches')
   static const SettingsBundleChannelsInnerEventsEnum savedSearchPeriodMatches =
@@ -668,7 +722,7 @@ class SettingsBundleChannelsInnerMinSeverityEnum extends EnumClass {
       _$settingsBundleChannelsInnerMinSeverityEnum_critical;
 
   static Serializer<SettingsBundleChannelsInnerMinSeverityEnum>
-      get serializer => _$settingsBundleChannelsInnerMinSeverityEnumSerializer;
+  get serializer => _$settingsBundleChannelsInnerMinSeverityEnumSerializer;
 
   const SettingsBundleChannelsInnerMinSeverityEnum._(String name) : super(name);
 

@@ -7,26 +7,26 @@ part of 'situation_link_decision.dart';
 // **************************************************************************
 
 const SituationLinkDecisionMemberTypeEnum
-    _$situationLinkDecisionMemberTypeEnum_intelEvent =
+_$situationLinkDecisionMemberTypeEnum_intelEvent =
     const SituationLinkDecisionMemberTypeEnum._('intelEvent');
 const SituationLinkDecisionMemberTypeEnum
-    _$situationLinkDecisionMemberTypeEnum_finding =
+_$situationLinkDecisionMemberTypeEnum_finding =
     const SituationLinkDecisionMemberTypeEnum._('finding');
 const SituationLinkDecisionMemberTypeEnum
-    _$situationLinkDecisionMemberTypeEnum_alert =
+_$situationLinkDecisionMemberTypeEnum_alert =
     const SituationLinkDecisionMemberTypeEnum._('alert');
 const SituationLinkDecisionMemberTypeEnum
-    _$situationLinkDecisionMemberTypeEnum_anomaly =
+_$situationLinkDecisionMemberTypeEnum_anomaly =
     const SituationLinkDecisionMemberTypeEnum._('anomaly');
 const SituationLinkDecisionMemberTypeEnum
-    _$situationLinkDecisionMemberTypeEnum_record =
+_$situationLinkDecisionMemberTypeEnum_record =
     const SituationLinkDecisionMemberTypeEnum._('record');
 const SituationLinkDecisionMemberTypeEnum
-    _$situationLinkDecisionMemberTypeEnum_investigation =
+_$situationLinkDecisionMemberTypeEnum_investigation =
     const SituationLinkDecisionMemberTypeEnum._('investigation');
 
 SituationLinkDecisionMemberTypeEnum
-    _$situationLinkDecisionMemberTypeEnumValueOf(String name) {
+_$situationLinkDecisionMemberTypeEnumValueOf(String name) {
   switch (name) {
     case 'intelEvent':
       return _$situationLinkDecisionMemberTypeEnum_intelEvent;
@@ -46,15 +46,17 @@ SituationLinkDecisionMemberTypeEnum
 }
 
 final BuiltSet<SituationLinkDecisionMemberTypeEnum>
-    _$situationLinkDecisionMemberTypeEnumValues = BuiltSet<
-        SituationLinkDecisionMemberTypeEnum>(const <SituationLinkDecisionMemberTypeEnum>[
-  _$situationLinkDecisionMemberTypeEnum_intelEvent,
-  _$situationLinkDecisionMemberTypeEnum_finding,
-  _$situationLinkDecisionMemberTypeEnum_alert,
-  _$situationLinkDecisionMemberTypeEnum_anomaly,
-  _$situationLinkDecisionMemberTypeEnum_record,
-  _$situationLinkDecisionMemberTypeEnum_investigation,
-]);
+_$situationLinkDecisionMemberTypeEnumValues =
+    BuiltSet<SituationLinkDecisionMemberTypeEnum>(
+      const <SituationLinkDecisionMemberTypeEnum>[
+        _$situationLinkDecisionMemberTypeEnum_intelEvent,
+        _$situationLinkDecisionMemberTypeEnum_finding,
+        _$situationLinkDecisionMemberTypeEnum_alert,
+        _$situationLinkDecisionMemberTypeEnum_anomaly,
+        _$situationLinkDecisionMemberTypeEnum_record,
+        _$situationLinkDecisionMemberTypeEnum_investigation,
+      ],
+    );
 
 const SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnum_join =
     const SituationLinkDecisionActionEnum._('join');
@@ -63,11 +65,12 @@ const SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnum_seed =
 const SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnum_skip =
     const SituationLinkDecisionActionEnum._('skip');
 const SituationLinkDecisionActionEnum
-    _$situationLinkDecisionActionEnum_alreadyMember =
+_$situationLinkDecisionActionEnum_alreadyMember =
     const SituationLinkDecisionActionEnum._('alreadyMember');
 
 SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'join':
       return _$situationLinkDecisionActionEnum_join;
@@ -83,19 +86,21 @@ SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnumValueOf(
 }
 
 final BuiltSet<SituationLinkDecisionActionEnum>
-    _$situationLinkDecisionActionEnumValues = BuiltSet<
-        SituationLinkDecisionActionEnum>(const <SituationLinkDecisionActionEnum>[
-  _$situationLinkDecisionActionEnum_join,
-  _$situationLinkDecisionActionEnum_seed,
-  _$situationLinkDecisionActionEnum_skip,
-  _$situationLinkDecisionActionEnum_alreadyMember,
-]);
+_$situationLinkDecisionActionEnumValues =
+    BuiltSet<SituationLinkDecisionActionEnum>(
+      const <SituationLinkDecisionActionEnum>[
+        _$situationLinkDecisionActionEnum_join,
+        _$situationLinkDecisionActionEnum_seed,
+        _$situationLinkDecisionActionEnum_skip,
+        _$situationLinkDecisionActionEnum_alreadyMember,
+      ],
+    );
 
 Serializer<SituationLinkDecisionMemberTypeEnum>
-    _$situationLinkDecisionMemberTypeEnumSerializer =
+_$situationLinkDecisionMemberTypeEnumSerializer =
     _$SituationLinkDecisionMemberTypeEnumSerializer();
 Serializer<SituationLinkDecisionActionEnum>
-    _$situationLinkDecisionActionEnumSerializer =
+_$situationLinkDecisionActionEnumSerializer =
     _$SituationLinkDecisionActionEnumSerializer();
 
 class _$SituationLinkDecisionMemberTypeEnumSerializer
@@ -119,23 +124,26 @@ class _$SituationLinkDecisionMemberTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SituationLinkDecisionMemberTypeEnum
+    SituationLinkDecisionMemberTypeEnum,
   ];
   @override
   final String wireName = 'SituationLinkDecisionMemberTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, SituationLinkDecisionMemberTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationLinkDecisionMemberTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationLinkDecisionMemberTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationLinkDecisionMemberTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationLinkDecisionMemberTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationLinkDecisionActionEnumSerializer
@@ -160,16 +168,19 @@ class _$SituationLinkDecisionActionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SituationLinkDecisionActionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SituationLinkDecisionActionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationLinkDecisionActionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationLinkDecisionActionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationLinkDecisionActionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationLinkDecision extends SituationLinkDecision {
@@ -194,26 +205,26 @@ class _$SituationLinkDecision extends SituationLinkDecision {
   @override
   final BuiltList<SituationLinkDecisionCandidatesInner>? candidates;
 
-  factory _$SituationLinkDecision(
-          [void Function(SituationLinkDecisionBuilder)? updates]) =>
-      (SituationLinkDecisionBuilder()..update(updates))._build();
+  factory _$SituationLinkDecision([
+    void Function(SituationLinkDecisionBuilder)? updates,
+  ]) => (SituationLinkDecisionBuilder()..update(updates))._build();
 
-  _$SituationLinkDecision._(
-      {required this.seq,
-      required this.inputRef,
-      this.memberType,
-      this.signalFamily,
-      required this.action,
-      this.situationId,
-      this.seedTitle,
-      this.score,
-      this.joinReason,
-      this.candidates})
-      : super._();
+  _$SituationLinkDecision._({
+    required this.seq,
+    required this.inputRef,
+    this.memberType,
+    this.signalFamily,
+    required this.action,
+    this.situationId,
+    this.seedTitle,
+    this.score,
+    this.joinReason,
+    this.candidates,
+  }) : super._();
   @override
   SituationLinkDecision rebuild(
-          void Function(SituationLinkDecisionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationLinkDecisionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationLinkDecisionBuilder toBuilder() =>
@@ -318,8 +329,8 @@ class SituationLinkDecisionBuilder
       _$this._candidates ??=
           ListBuilder<SituationLinkDecisionCandidatesInner>();
   set candidates(
-          ListBuilder<SituationLinkDecisionCandidatesInner>? candidates) =>
-      _$this._candidates = candidates;
+    ListBuilder<SituationLinkDecisionCandidatesInner>? candidates,
+  ) => _$this._candidates = candidates;
 
   SituationLinkDecisionBuilder() {
     SituationLinkDecision._defaults(this);
@@ -359,16 +370,26 @@ class SituationLinkDecisionBuilder
   _$SituationLinkDecision _build() {
     _$SituationLinkDecision _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationLinkDecision._(
             seq: BuiltValueNullFieldError.checkNotNull(
-                seq, r'SituationLinkDecision', 'seq'),
+              seq,
+              r'SituationLinkDecision',
+              'seq',
+            ),
             inputRef: BuiltValueNullFieldError.checkNotNull(
-                inputRef, r'SituationLinkDecision', 'inputRef'),
+              inputRef,
+              r'SituationLinkDecision',
+              'inputRef',
+            ),
             memberType: memberType,
             signalFamily: signalFamily,
             action: BuiltValueNullFieldError.checkNotNull(
-                action, r'SituationLinkDecision', 'action'),
+              action,
+              r'SituationLinkDecision',
+              'action',
+            ),
             situationId: situationId,
             seedTitle: seedTitle,
             score: score,
@@ -384,7 +405,10 @@ class SituationLinkDecisionBuilder
         _candidates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationLinkDecision', _$failedField, e.toString());
+          r'SituationLinkDecision',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

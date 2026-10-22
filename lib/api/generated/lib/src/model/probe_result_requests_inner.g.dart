@@ -24,24 +24,24 @@ class _$ProbeResultRequestsInner extends ProbeResultRequestsInner {
   @override
   final String? body;
 
-  factory _$ProbeResultRequestsInner(
-          [void Function(ProbeResultRequestsInnerBuilder)? updates]) =>
-      (ProbeResultRequestsInnerBuilder()..update(updates))._build();
+  factory _$ProbeResultRequestsInner([
+    void Function(ProbeResultRequestsInnerBuilder)? updates,
+  ]) => (ProbeResultRequestsInnerBuilder()..update(updates))._build();
 
-  _$ProbeResultRequestsInner._(
-      {this.method,
-      this.url,
-      this.status,
-      this.durationMs,
-      this.contentType,
-      this.bytes,
-      this.truncated,
-      this.body})
-      : super._();
+  _$ProbeResultRequestsInner._({
+    this.method,
+    this.url,
+    this.status,
+    this.durationMs,
+    this.contentType,
+    this.bytes,
+    this.truncated,
+    this.body,
+  }) : super._();
   @override
   ProbeResultRequestsInner rebuild(
-          void Function(ProbeResultRequestsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProbeResultRequestsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProbeResultRequestsInnerBuilder toBuilder() =>
@@ -162,7 +162,8 @@ class ProbeResultRequestsInnerBuilder
   ProbeResultRequestsInner build() => _build();
 
   _$ProbeResultRequestsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProbeResultRequestsInner._(
           method: method,
           url: url,

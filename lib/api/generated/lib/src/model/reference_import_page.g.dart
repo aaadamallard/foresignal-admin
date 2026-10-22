@@ -12,15 +12,15 @@ class _$ReferenceImportPage extends ReferenceImportPage {
   @override
   final String? nextCursor;
 
-  factory _$ReferenceImportPage(
-          [void Function(ReferenceImportPageBuilder)? updates]) =>
-      (ReferenceImportPageBuilder()..update(updates))._build();
+  factory _$ReferenceImportPage([
+    void Function(ReferenceImportPageBuilder)? updates,
+  ]) => (ReferenceImportPageBuilder()..update(updates))._build();
 
   _$ReferenceImportPage._({required this.items, this.nextCursor}) : super._();
   @override
   ReferenceImportPage rebuild(
-          void Function(ReferenceImportPageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReferenceImportPageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReferenceImportPageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ReferenceImportPageBuilder
   _$ReferenceImportPage _build() {
     _$ReferenceImportPage _$result;
     try {
-      _$result = _$v ??
-          _$ReferenceImportPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ReferenceImportPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ReferenceImportPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReferenceImportPage', _$failedField, e.toString());
+          r'ReferenceImportPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

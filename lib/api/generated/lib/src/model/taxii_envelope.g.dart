@@ -103,12 +103,9 @@ class TaxiiEnvelopeBuilder
   _$TaxiiEnvelope _build() {
     _$TaxiiEnvelope _$result;
     try {
-      _$result = _$v ??
-          _$TaxiiEnvelope._(
-            more: more,
-            next: next,
-            objects: _objects?.build(),
-          );
+      _$result =
+          _$v ??
+          _$TaxiiEnvelope._(more: more, next: next, objects: _objects?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -116,7 +113,10 @@ class TaxiiEnvelopeBuilder
         _objects?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TaxiiEnvelope', _$failedField, e.toString());
+          r'TaxiiEnvelope',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

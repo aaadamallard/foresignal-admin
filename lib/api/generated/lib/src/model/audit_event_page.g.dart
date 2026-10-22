@@ -92,11 +92,9 @@ class AuditEventPageBuilder
   _$AuditEventPage _build() {
     _$AuditEventPage _$result;
     try {
-      _$result = _$v ??
-          _$AuditEventPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$AuditEventPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class AuditEventPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AuditEventPage', _$failedField, e.toString());
+          r'AuditEventPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

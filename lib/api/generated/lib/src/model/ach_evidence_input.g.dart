@@ -44,14 +44,14 @@ AchEvidenceInputSource_Enum _$achEvidenceInputSourceEnumValueOf(String name) {
 
 final BuiltSet<AchEvidenceInputSource_Enum> _$achEvidenceInputSourceEnumValues =
     BuiltSet<AchEvidenceInputSource_Enum>(const <AchEvidenceInputSource_Enum>[
-  _$achEvidenceInputSourceEnum_record,
-  _$achEvidenceInputSourceEnum_finding,
-  _$achEvidenceInputSourceEnum_intelEvent,
-  _$achEvidenceInputSourceEnum_alert,
-  _$achEvidenceInputSourceEnum_manual,
-  _$achEvidenceInputSourceEnum_evidenceItem,
-  _$achEvidenceInputSourceEnum_socialClaim,
-]);
+      _$achEvidenceInputSourceEnum_record,
+      _$achEvidenceInputSourceEnum_finding,
+      _$achEvidenceInputSourceEnum_intelEvent,
+      _$achEvidenceInputSourceEnum_alert,
+      _$achEvidenceInputSourceEnum_manual,
+      _$achEvidenceInputSourceEnum_evidenceItem,
+      _$achEvidenceInputSourceEnum_socialClaim,
+    ]);
 
 const AchEvidenceInputCredibilityEnum _$achEvidenceInputCredibilityEnum_H =
     const AchEvidenceInputCredibilityEnum._('H');
@@ -61,7 +61,8 @@ const AchEvidenceInputCredibilityEnum _$achEvidenceInputCredibilityEnum_L =
     const AchEvidenceInputCredibilityEnum._('L');
 
 AchEvidenceInputCredibilityEnum _$achEvidenceInputCredibilityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'H':
       return _$achEvidenceInputCredibilityEnum_H;
@@ -75,12 +76,14 @@ AchEvidenceInputCredibilityEnum _$achEvidenceInputCredibilityEnumValueOf(
 }
 
 final BuiltSet<AchEvidenceInputCredibilityEnum>
-    _$achEvidenceInputCredibilityEnumValues = BuiltSet<
-        AchEvidenceInputCredibilityEnum>(const <AchEvidenceInputCredibilityEnum>[
-  _$achEvidenceInputCredibilityEnum_H,
-  _$achEvidenceInputCredibilityEnum_M,
-  _$achEvidenceInputCredibilityEnum_L,
-]);
+_$achEvidenceInputCredibilityEnumValues =
+    BuiltSet<AchEvidenceInputCredibilityEnum>(
+      const <AchEvidenceInputCredibilityEnum>[
+        _$achEvidenceInputCredibilityEnum_H,
+        _$achEvidenceInputCredibilityEnum_M,
+        _$achEvidenceInputCredibilityEnum_L,
+      ],
+    );
 
 const AchEvidenceInputRelevanceEnum _$achEvidenceInputRelevanceEnum_H =
     const AchEvidenceInputRelevanceEnum._('H');
@@ -90,7 +93,8 @@ const AchEvidenceInputRelevanceEnum _$achEvidenceInputRelevanceEnum_L =
     const AchEvidenceInputRelevanceEnum._('L');
 
 AchEvidenceInputRelevanceEnum _$achEvidenceInputRelevanceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'H':
       return _$achEvidenceInputRelevanceEnum_H;
@@ -104,12 +108,13 @@ AchEvidenceInputRelevanceEnum _$achEvidenceInputRelevanceEnumValueOf(
 }
 
 final BuiltSet<AchEvidenceInputRelevanceEnum>
-    _$achEvidenceInputRelevanceEnumValues = BuiltSet<
-        AchEvidenceInputRelevanceEnum>(const <AchEvidenceInputRelevanceEnum>[
-  _$achEvidenceInputRelevanceEnum_H,
-  _$achEvidenceInputRelevanceEnum_M,
-  _$achEvidenceInputRelevanceEnum_L,
-]);
+_$achEvidenceInputRelevanceEnumValues = BuiltSet<AchEvidenceInputRelevanceEnum>(
+  const <AchEvidenceInputRelevanceEnum>[
+    _$achEvidenceInputRelevanceEnum_H,
+    _$achEvidenceInputRelevanceEnum_M,
+    _$achEvidenceInputRelevanceEnum_L,
+  ],
+);
 
 const AchEvidenceInputRatingsEnum _$achEvidenceInputRatingsEnum_CC =
     const AchEvidenceInputRatingsEnum._('CC');
@@ -144,26 +149,26 @@ AchEvidenceInputRatingsEnum _$achEvidenceInputRatingsEnumValueOf(String name) {
 }
 
 final BuiltSet<AchEvidenceInputRatingsEnum>
-    _$achEvidenceInputRatingsEnumValues =
+_$achEvidenceInputRatingsEnumValues =
     BuiltSet<AchEvidenceInputRatingsEnum>(const <AchEvidenceInputRatingsEnum>[
-  _$achEvidenceInputRatingsEnum_CC,
-  _$achEvidenceInputRatingsEnum_C,
-  _$achEvidenceInputRatingsEnum_N,
-  _$achEvidenceInputRatingsEnum_NA,
-  _$achEvidenceInputRatingsEnum_I,
-  _$achEvidenceInputRatingsEnum_II,
-]);
+      _$achEvidenceInputRatingsEnum_CC,
+      _$achEvidenceInputRatingsEnum_C,
+      _$achEvidenceInputRatingsEnum_N,
+      _$achEvidenceInputRatingsEnum_NA,
+      _$achEvidenceInputRatingsEnum_I,
+      _$achEvidenceInputRatingsEnum_II,
+    ]);
 
 Serializer<AchEvidenceInputSource_Enum> _$achEvidenceInputSourceEnumSerializer =
     _$AchEvidenceInputSource_EnumSerializer();
 Serializer<AchEvidenceInputCredibilityEnum>
-    _$achEvidenceInputCredibilityEnumSerializer =
+_$achEvidenceInputCredibilityEnumSerializer =
     _$AchEvidenceInputCredibilityEnumSerializer();
 Serializer<AchEvidenceInputRelevanceEnum>
-    _$achEvidenceInputRelevanceEnumSerializer =
+_$achEvidenceInputRelevanceEnumSerializer =
     _$AchEvidenceInputRelevanceEnumSerializer();
 Serializer<AchEvidenceInputRatingsEnum>
-    _$achEvidenceInputRatingsEnumSerializer =
+_$achEvidenceInputRatingsEnumSerializer =
     _$AchEvidenceInputRatingsEnumSerializer();
 
 class _$AchEvidenceInputSource_EnumSerializer
@@ -193,16 +198,20 @@ class _$AchEvidenceInputSource_EnumSerializer
   final String wireName = 'AchEvidenceInputSource_Enum';
 
   @override
-  Object serialize(Serializers serializers, AchEvidenceInputSource_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AchEvidenceInputSource_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AchEvidenceInputSource_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AchEvidenceInputSource_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AchEvidenceInputSource_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AchEvidenceInputCredibilityEnumSerializer
@@ -225,16 +234,19 @@ class _$AchEvidenceInputCredibilityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AchEvidenceInputCredibilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AchEvidenceInputCredibilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AchEvidenceInputCredibilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AchEvidenceInputCredibilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AchEvidenceInputCredibilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AchEvidenceInputRelevanceEnumSerializer
@@ -257,16 +269,19 @@ class _$AchEvidenceInputRelevanceEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AchEvidenceInputRelevanceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AchEvidenceInputRelevanceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AchEvidenceInputRelevanceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AchEvidenceInputRelevanceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AchEvidenceInputRelevanceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AchEvidenceInputRatingsEnumSerializer
@@ -294,16 +309,20 @@ class _$AchEvidenceInputRatingsEnumSerializer
   final String wireName = 'AchEvidenceInputRatingsEnum';
 
   @override
-  Object serialize(Serializers serializers, AchEvidenceInputRatingsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AchEvidenceInputRatingsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AchEvidenceInputRatingsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AchEvidenceInputRatingsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AchEvidenceInputRatingsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AchEvidenceInput extends AchEvidenceInput {
@@ -322,19 +341,19 @@ class _$AchEvidenceInput extends AchEvidenceInput {
   @override
   final BuiltList<String>? citations;
 
-  factory _$AchEvidenceInput(
-          [void Function(AchEvidenceInputBuilder)? updates]) =>
-      (AchEvidenceInputBuilder()..update(updates))._build();
+  factory _$AchEvidenceInput([
+    void Function(AchEvidenceInputBuilder)? updates,
+  ]) => (AchEvidenceInputBuilder()..update(updates))._build();
 
-  _$AchEvidenceInput._(
-      {required this.source_,
-      this.ref,
-      required this.description,
-      required this.credibility,
-      required this.relevance,
-      this.ratings,
-      this.citations})
-      : super._();
+  _$AchEvidenceInput._({
+    required this.source_,
+    this.ref,
+    required this.description,
+    required this.credibility,
+    required this.relevance,
+    this.ratings,
+    this.citations,
+  }) : super._();
   @override
   AchEvidenceInput rebuild(void Function(AchEvidenceInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -458,17 +477,30 @@ class AchEvidenceInputBuilder
   _$AchEvidenceInput _build() {
     _$AchEvidenceInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AchEvidenceInput._(
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'AchEvidenceInput', 'source_'),
+              source_,
+              r'AchEvidenceInput',
+              'source_',
+            ),
             ref: ref,
             description: BuiltValueNullFieldError.checkNotNull(
-                description, r'AchEvidenceInput', 'description'),
+              description,
+              r'AchEvidenceInput',
+              'description',
+            ),
             credibility: BuiltValueNullFieldError.checkNotNull(
-                credibility, r'AchEvidenceInput', 'credibility'),
+              credibility,
+              r'AchEvidenceInput',
+              'credibility',
+            ),
             relevance: BuiltValueNullFieldError.checkNotNull(
-                relevance, r'AchEvidenceInput', 'relevance'),
+              relevance,
+              r'AchEvidenceInput',
+              'relevance',
+            ),
             ratings: _ratings?.build(),
             citations: _citations?.build(),
           );
@@ -481,7 +513,10 @@ class AchEvidenceInputBuilder
         _citations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AchEvidenceInput', _$failedField, e.toString());
+          r'AchEvidenceInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

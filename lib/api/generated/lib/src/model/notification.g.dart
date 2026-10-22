@@ -28,10 +28,10 @@ NotificationEventEnum _$notificationEventEnumValueOf(String name) {
 
 final BuiltSet<NotificationEventEnum> _$notificationEventEnumValues =
     BuiltSet<NotificationEventEnum>(const <NotificationEventEnum>[
-  _$notificationEventEnum_alert,
-  _$notificationEventEnum_briefing,
-  _$notificationEventEnum_system,
-]);
+      _$notificationEventEnum_alert,
+      _$notificationEventEnum_briefing,
+      _$notificationEventEnum_system,
+    ]);
 
 const NotificationSeverityEnum _$notificationSeverityEnum_info =
     const NotificationSeverityEnum._('info');
@@ -55,10 +55,10 @@ NotificationSeverityEnum _$notificationSeverityEnumValueOf(String name) {
 
 final BuiltSet<NotificationSeverityEnum> _$notificationSeverityEnumValues =
     BuiltSet<NotificationSeverityEnum>(const <NotificationSeverityEnum>[
-  _$notificationSeverityEnum_info,
-  _$notificationSeverityEnum_warning,
-  _$notificationSeverityEnum_critical,
-]);
+      _$notificationSeverityEnum_info,
+      _$notificationSeverityEnum_warning,
+      _$notificationSeverityEnum_critical,
+    ]);
 
 const NotificationAlertStateEnum _$notificationAlertStateEnum_firing =
     const NotificationAlertStateEnum._('firing');
@@ -82,10 +82,10 @@ NotificationAlertStateEnum _$notificationAlertStateEnumValueOf(String name) {
 
 final BuiltSet<NotificationAlertStateEnum> _$notificationAlertStateEnumValues =
     BuiltSet<NotificationAlertStateEnum>(const <NotificationAlertStateEnum>[
-  _$notificationAlertStateEnum_firing,
-  _$notificationAlertStateEnum_acknowledged,
-  _$notificationAlertStateEnum_resolved,
-]);
+      _$notificationAlertStateEnum_firing,
+      _$notificationAlertStateEnum_acknowledged,
+      _$notificationAlertStateEnum_resolved,
+    ]);
 
 Serializer<NotificationEventEnum> _$notificationEventEnumSerializer =
     _$NotificationEventEnumSerializer();
@@ -113,15 +113,20 @@ class _$NotificationEventEnumSerializer
   final String wireName = 'NotificationEventEnum';
 
   @override
-  Object serialize(Serializers serializers, NotificationEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  NotificationEventEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  NotificationEventEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationSeverityEnumSerializer
@@ -143,16 +148,20 @@ class _$NotificationSeverityEnumSerializer
   final String wireName = 'NotificationSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, NotificationSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationAlertStateEnumSerializer
@@ -174,16 +183,20 @@ class _$NotificationAlertStateEnumSerializer
   final String wireName = 'NotificationAlertStateEnum';
 
   @override
-  Object serialize(Serializers serializers, NotificationAlertStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationAlertStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationAlertStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationAlertStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationAlertStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Notification extends Notification {
@@ -215,20 +228,20 @@ class _$Notification extends Notification {
   factory _$Notification([void Function(NotificationBuilder)? updates]) =>
       (NotificationBuilder()..update(updates))._build();
 
-  _$Notification._(
-      {required this.id,
-      required this.event,
-      this.subtype,
-      required this.severity,
-      required this.title,
-      this.body,
-      this.alertId,
-      this.briefingRunId,
-      this.ruleId,
-      required this.createdAt,
-      required this.read,
-      this.alertState})
-      : super._();
+  _$Notification._({
+    required this.id,
+    required this.event,
+    this.subtype,
+    required this.severity,
+    required this.title,
+    this.body,
+    this.alertId,
+    this.briefingRunId,
+    this.ruleId,
+    required this.createdAt,
+    required this.read,
+    this.alertState,
+  }) : super._();
   @override
   Notification rebuild(void Function(NotificationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -385,24 +398,40 @@ class NotificationBuilder
   Notification build() => _build();
 
   _$Notification _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Notification._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'Notification', 'id'),
           event: BuiltValueNullFieldError.checkNotNull(
-              event, r'Notification', 'event'),
+            event,
+            r'Notification',
+            'event',
+          ),
           subtype: subtype,
           severity: BuiltValueNullFieldError.checkNotNull(
-              severity, r'Notification', 'severity'),
+            severity,
+            r'Notification',
+            'severity',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'Notification', 'title'),
+            title,
+            r'Notification',
+            'title',
+          ),
           body: body,
           alertId: alertId,
           briefingRunId: briefingRunId,
           ruleId: ruleId,
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'Notification', 'createdAt'),
+            createdAt,
+            r'Notification',
+            'createdAt',
+          ),
           read: BuiltValueNullFieldError.checkNotNull(
-              read, r'Notification', 'read'),
+            read,
+            r'Notification',
+            'read',
+          ),
           alertState: alertState,
         );
     replace(_$result);

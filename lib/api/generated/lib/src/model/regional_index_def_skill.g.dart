@@ -26,25 +26,25 @@ class _$RegionalIndexDefSkill extends RegionalIndexDefSkill {
   @override
   final String? baseline;
 
-  factory _$RegionalIndexDefSkill(
-          [void Function(RegionalIndexDefSkillBuilder)? updates]) =>
-      (RegionalIndexDefSkillBuilder()..update(updates))._build();
+  factory _$RegionalIndexDefSkill([
+    void Function(RegionalIndexDefSkillBuilder)? updates,
+  ]) => (RegionalIndexDefSkillBuilder()..update(updates))._build();
 
-  _$RegionalIndexDefSkill._(
-      {required this.evaluatedAt,
-      required this.n,
-      this.pinballLoss,
-      this.logScore,
-      this.baselinePinballLoss,
-      this.baselineLogScore,
-      this.skillPinball,
-      this.skillLog,
-      this.baseline})
-      : super._();
+  _$RegionalIndexDefSkill._({
+    required this.evaluatedAt,
+    required this.n,
+    this.pinballLoss,
+    this.logScore,
+    this.baselinePinballLoss,
+    this.baselineLogScore,
+    this.skillPinball,
+    this.skillLog,
+    this.baseline,
+  }) : super._();
   @override
   RegionalIndexDefSkill rebuild(
-          void Function(RegionalIndexDefSkillBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexDefSkillBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexDefSkillBuilder toBuilder() =>
@@ -174,12 +174,19 @@ class RegionalIndexDefSkillBuilder
   RegionalIndexDefSkill build() => _build();
 
   _$RegionalIndexDefSkill _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RegionalIndexDefSkill._(
           evaluatedAt: BuiltValueNullFieldError.checkNotNull(
-              evaluatedAt, r'RegionalIndexDefSkill', 'evaluatedAt'),
+            evaluatedAt,
+            r'RegionalIndexDefSkill',
+            'evaluatedAt',
+          ),
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'RegionalIndexDefSkill', 'n'),
+            n,
+            r'RegionalIndexDefSkill',
+            'n',
+          ),
           pinballLoss: pinballLoss,
           logScore: logScore,
           baselinePinballLoss: baselinePinballLoss,

@@ -86,10 +86,14 @@ class TimeRangeBuilder implements Builder<TimeRange, TimeRangeBuilder> {
   TimeRange build() => _build();
 
   _$TimeRange _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TimeRange._(
           start: BuiltValueNullFieldError.checkNotNull(
-              start, r'TimeRange', 'start'),
+            start,
+            r'TimeRange',
+            'start',
+          ),
           end: end,
         );
     replace(_$result);

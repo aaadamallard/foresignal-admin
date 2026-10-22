@@ -6,8 +6,9 @@ part of 'stats_top.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const StatsTopByEnum _$statsTopByEnum_source_ =
-    const StatsTopByEnum._('source_');
+const StatsTopByEnum _$statsTopByEnum_source_ = const StatsTopByEnum._(
+  'source_',
+);
 const StatsTopByEnum _$statsTopByEnum_kind = const StatsTopByEnum._('kind');
 const StatsTopByEnum _$statsTopByEnum_cell = const StatsTopByEnum._('cell');
 const StatsTopByEnum _$statsTopByEnum_entity = const StatsTopByEnum._('entity');
@@ -29,11 +30,11 @@ StatsTopByEnum _$statsTopByEnumValueOf(String name) {
 
 final BuiltSet<StatsTopByEnum> _$statsTopByEnumValues =
     BuiltSet<StatsTopByEnum>(const <StatsTopByEnum>[
-  _$statsTopByEnum_source_,
-  _$statsTopByEnum_kind,
-  _$statsTopByEnum_cell,
-  _$statsTopByEnum_entity,
-]);
+      _$statsTopByEnum_source_,
+      _$statsTopByEnum_kind,
+      _$statsTopByEnum_cell,
+      _$statsTopByEnum_entity,
+    ]);
 
 const StatsTopBackendEnum _$statsTopBackendEnum_rollup =
     const StatsTopBackendEnum._('rollup');
@@ -57,10 +58,10 @@ StatsTopBackendEnum _$statsTopBackendEnumValueOf(String name) {
 
 final BuiltSet<StatsTopBackendEnum> _$statsTopBackendEnumValues =
     BuiltSet<StatsTopBackendEnum>(const <StatsTopBackendEnum>[
-  _$statsTopBackendEnum_rollup,
-  _$statsTopBackendEnum_raw,
-  _$statsTopBackendEnum_mixed,
-]);
+      _$statsTopBackendEnum_rollup,
+      _$statsTopBackendEnum_raw,
+      _$statsTopBackendEnum_mixed,
+    ]);
 
 Serializer<StatsTopByEnum> _$statsTopByEnumSerializer =
     _$StatsTopByEnumSerializer();
@@ -88,15 +89,20 @@ class _$StatsTopByEnumSerializer
   final String wireName = 'StatsTopByEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsTopByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsTopByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsTopByEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsTopByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsTopByEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsTopByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsTopBackendEnumSerializer
@@ -118,15 +124,20 @@ class _$StatsTopBackendEnumSerializer
   final String wireName = 'StatsTopBackendEnum';
 
   @override
-  Object serialize(Serializers serializers, StatsTopBackendEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StatsTopBackendEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StatsTopBackendEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StatsTopBackendEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StatsTopBackendEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StatsTopBackendEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StatsTop extends StatsTop {
@@ -146,14 +157,14 @@ class _$StatsTop extends StatsTop {
   factory _$StatsTop([void Function(StatsTopBuilder)? updates]) =>
       (StatsTopBuilder()..update(updates))._build();
 
-  _$StatsTop._(
-      {required this.by,
-      required this.measure,
-      this.from,
-      this.to,
-      this.backend,
-      required this.items})
-      : super._();
+  _$StatsTop._({
+    required this.by,
+    required this.measure,
+    this.from,
+    this.to,
+    this.backend,
+    required this.items,
+  }) : super._();
   @override
   StatsTop rebuild(void Function(StatsTopBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -261,11 +272,15 @@ class StatsTopBuilder implements Builder<StatsTop, StatsTopBuilder> {
   _$StatsTop _build() {
     _$StatsTop _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StatsTop._(
             by: BuiltValueNullFieldError.checkNotNull(by, r'StatsTop', 'by'),
             measure: BuiltValueNullFieldError.checkNotNull(
-                measure, r'StatsTop', 'measure'),
+              measure,
+              r'StatsTop',
+              'measure',
+            ),
             from: from,
             to: to,
             backend: backend,
@@ -278,7 +293,10 @@ class StatsTopBuilder implements Builder<StatsTop, StatsTopBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StatsTop', _$failedField, e.toString());
+          r'StatsTop',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

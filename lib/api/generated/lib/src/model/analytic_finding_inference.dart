@@ -39,9 +39,9 @@ abstract class AnalyticFindingInference
 
   AnalyticFindingInference._();
 
-  factory AnalyticFindingInference(
-          [void updates(AnalyticFindingInferenceBuilder b)]) =
-      _$AnalyticFindingInference;
+  factory AnalyticFindingInference([
+    void updates(AnalyticFindingInferenceBuilder b),
+  ]) = _$AnalyticFindingInference;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalyticFindingInferenceBuilder b) => b;
@@ -56,7 +56,7 @@ class _$AnalyticFindingInferenceSerializer
   @override
   final Iterable<Type> types = const [
     AnalyticFindingInference,
-    _$AnalyticFindingInference
+    _$AnalyticFindingInference,
   ];
 
   @override
@@ -75,8 +75,10 @@ class _$AnalyticFindingInferenceSerializer
     yield r'stats';
     yield serializers.serialize(
       object.stats,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType.nullable(JsonObject),
+      ]),
     );
     yield r'baseRate';
     yield serializers.serialize(
@@ -96,9 +98,11 @@ class _$AnalyticFindingInferenceSerializer
     AnalyticFindingInference object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -114,32 +118,42 @@ class _$AnalyticFindingInferenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.detector.replace(valueDes);
           break;
         case r'stats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>;
           result.stats.replace(valueDes);
           break;
         case r'baseRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FindingBaseRate),
-          ) as FindingBaseRate;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(FindingBaseRate),
+                  )
+                  as FindingBaseRate;
           result.baseRate.replace(valueDes);
           break;
         case r'explanation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.explanation = valueDes;
           break;
         default:

@@ -108,9 +108,11 @@ class _$StatsTopSerializer implements PrimitiveSerializer<StatsTop> {
     StatsTop object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,49 +128,62 @@ class _$StatsTopSerializer implements PrimitiveSerializer<StatsTop> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'by':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatsTopByEnum),
-          ) as StatsTopByEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatsTopByEnum),
+                  )
+                  as StatsTopByEnum;
           result.by = valueDes;
           break;
         case r'measure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.measure = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;
         case r'backend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatsTopBackendEnum),
-          ) as StatsTopBackendEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(StatsTopBackendEnum),
+                  )
+                  as StatsTopBackendEnum?;
           if (valueDes == null) continue;
           result.backend = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(StatsTopItemsInner)]),
-          ) as BuiltList<StatsTopItemsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(StatsTopItemsInner),
+                    ]),
+                  )
+                  as BuiltList<StatsTopItemsInner>;
           result.items.replace(valueDes);
           break;
         default:

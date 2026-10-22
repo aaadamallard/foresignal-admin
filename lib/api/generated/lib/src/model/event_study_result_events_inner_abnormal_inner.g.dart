@@ -15,20 +15,20 @@ class _$EventStudyResultEventsInnerAbnormalInner
   @override
   final num? cumulative;
 
-  factory _$EventStudyResultEventsInnerAbnormalInner(
-          [void Function(EventStudyResultEventsInnerAbnormalInnerBuilder)?
-              updates]) =>
-      (EventStudyResultEventsInnerAbnormalInnerBuilder()..update(updates))
-          ._build();
+  factory _$EventStudyResultEventsInnerAbnormalInner([
+    void Function(EventStudyResultEventsInnerAbnormalInnerBuilder)? updates,
+  ]) => (EventStudyResultEventsInnerAbnormalInnerBuilder()..update(updates))
+      ._build();
 
-  _$EventStudyResultEventsInnerAbnormalInner._(
-      {required this.offset, this.value, this.cumulative})
-      : super._();
+  _$EventStudyResultEventsInnerAbnormalInner._({
+    required this.offset,
+    this.value,
+    this.cumulative,
+  }) : super._();
   @override
   EventStudyResultEventsInnerAbnormalInner rebuild(
-          void Function(EventStudyResultEventsInnerAbnormalInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStudyResultEventsInnerAbnormalInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStudyResultEventsInnerAbnormalInnerBuilder toBuilder() =>
@@ -56,7 +56,8 @@ class _$EventStudyResultEventsInnerAbnormalInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'EventStudyResultEventsInnerAbnormalInner')
+            r'EventStudyResultEventsInnerAbnormalInner',
+          )
           ..add('offset', offset)
           ..add('value', value)
           ..add('cumulative', cumulative))
@@ -66,8 +67,10 @@ class _$EventStudyResultEventsInnerAbnormalInner
 
 class EventStudyResultEventsInnerAbnormalInnerBuilder
     implements
-        Builder<EventStudyResultEventsInnerAbnormalInner,
-            EventStudyResultEventsInnerAbnormalInnerBuilder> {
+        Builder<
+          EventStudyResultEventsInnerAbnormalInner,
+          EventStudyResultEventsInnerAbnormalInnerBuilder
+        > {
   _$EventStudyResultEventsInnerAbnormalInner? _$v;
 
   int? _offset;
@@ -104,7 +107,8 @@ class EventStudyResultEventsInnerAbnormalInnerBuilder
 
   @override
   void update(
-      void Function(EventStudyResultEventsInnerAbnormalInnerBuilder)? updates) {
+    void Function(EventStudyResultEventsInnerAbnormalInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -112,10 +116,14 @@ class EventStudyResultEventsInnerAbnormalInnerBuilder
   EventStudyResultEventsInnerAbnormalInner build() => _build();
 
   _$EventStudyResultEventsInnerAbnormalInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EventStudyResultEventsInnerAbnormalInner._(
           offset: BuiltValueNullFieldError.checkNotNull(
-              offset, r'EventStudyResultEventsInnerAbnormalInner', 'offset'),
+            offset,
+            r'EventStudyResultEventsInnerAbnormalInner',
+            'offset',
+          ),
           value: value,
           cumulative: cumulative,
         );

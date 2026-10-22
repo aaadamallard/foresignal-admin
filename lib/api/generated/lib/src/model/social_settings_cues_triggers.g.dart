@@ -22,23 +22,23 @@ class _$SocialSettingsCuesTriggers extends SocialSettingsCuesTriggers {
   @override
   final int? minEvidenceGroups;
 
-  factory _$SocialSettingsCuesTriggers(
-          [void Function(SocialSettingsCuesTriggersBuilder)? updates]) =>
-      (SocialSettingsCuesTriggersBuilder()..update(updates))._build();
+  factory _$SocialSettingsCuesTriggers([
+    void Function(SocialSettingsCuesTriggersBuilder)? updates,
+  ]) => (SocialSettingsCuesTriggersBuilder()..update(updates))._build();
 
-  _$SocialSettingsCuesTriggers._(
-      {this.situationActivated,
-      this.situationEscalated,
-      this.findingTypes,
-      this.anomalies,
-      this.criticalAlerts,
-      this.canonicalFamilies,
-      this.minEvidenceGroups})
-      : super._();
+  _$SocialSettingsCuesTriggers._({
+    this.situationActivated,
+    this.situationEscalated,
+    this.findingTypes,
+    this.anomalies,
+    this.criticalAlerts,
+    this.canonicalFamilies,
+    this.minEvidenceGroups,
+  }) : super._();
   @override
   SocialSettingsCuesTriggers rebuild(
-          void Function(SocialSettingsCuesTriggersBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsCuesTriggersBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsCuesTriggersBuilder toBuilder() =>
@@ -161,7 +161,8 @@ class SocialSettingsCuesTriggersBuilder
   _$SocialSettingsCuesTriggers _build() {
     _$SocialSettingsCuesTriggers _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialSettingsCuesTriggers._(
             situationActivated: situationActivated,
             situationEscalated: situationEscalated,
@@ -181,7 +182,10 @@ class SocialSettingsCuesTriggersBuilder
         _canonicalFamilies?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialSettingsCuesTriggers', _$failedField, e.toString());
+          r'SocialSettingsCuesTriggers',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,23 +7,24 @@ part of 'projected_impact_dependency_paths_inner.dart';
 // **************************************************************************
 
 const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-    _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_confirmed =
+_$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_confirmed =
     const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum._(
-        'confirmed');
+      'confirmed',
+    );
 const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-    _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_likely =
+_$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_likely =
     const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum._('likely');
 const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-    _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_possible =
+_$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_possible =
     const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum._('possible');
 const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-    _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_speculative =
+_$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_speculative =
     const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum._(
-        'speculative');
+      'speculative',
+    );
 
 ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-    _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValueOf(
-        String name) {
+_$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValueOf(String name) {
   switch (name) {
     case 'confirmed':
       return _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_confirmed;
@@ -39,22 +40,25 @@ ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
 }
 
 final BuiltSet<ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>
-    _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValues = BuiltSet<
-        ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>(const <ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>[
-  _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_confirmed,
-  _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_likely,
-  _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_possible,
-  _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_speculative,
-]);
+_$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValues =
+    BuiltSet<ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>(
+      const <ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>[
+        _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_confirmed,
+        _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_likely,
+        _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_possible,
+        _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_speculative,
+      ],
+    );
 
 Serializer<ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>
-    _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumSerializer =
+_$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumSerializer =
     _$ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnumSerializer();
 
 class _$ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnumSerializer
     implements
         PrimitiveSerializer<
-            ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum> {
+          ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'confirmed': 'confirmed',
     'likely': 'likely',
@@ -70,24 +74,27 @@ class _$ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
+    ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum,
   ];
   @override
   final String wireName =
       'ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProjectedImpactDependencyPathsInner
@@ -100,26 +107,26 @@ class _$ProjectedImpactDependencyPathsInner
   final BuiltList<String>? hops;
   @override
   final ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-      weakestEdgeLabel;
+  weakestEdgeLabel;
   @override
   final int? depth;
 
-  factory _$ProjectedImpactDependencyPathsInner(
-          [void Function(ProjectedImpactDependencyPathsInnerBuilder)?
-              updates]) =>
+  factory _$ProjectedImpactDependencyPathsInner([
+    void Function(ProjectedImpactDependencyPathsInnerBuilder)? updates,
+  ]) =>
       (ProjectedImpactDependencyPathsInnerBuilder()..update(updates))._build();
 
-  _$ProjectedImpactDependencyPathsInner._(
-      {required this.from,
-      required this.to,
-      this.hops,
-      required this.weakestEdgeLabel,
-      this.depth})
-      : super._();
+  _$ProjectedImpactDependencyPathsInner._({
+    required this.from,
+    required this.to,
+    this.hops,
+    required this.weakestEdgeLabel,
+    this.depth,
+  }) : super._();
   @override
   ProjectedImpactDependencyPathsInner rebuild(
-          void Function(ProjectedImpactDependencyPathsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProjectedImpactDependencyPathsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProjectedImpactDependencyPathsInnerBuilder toBuilder() =>
@@ -162,8 +169,10 @@ class _$ProjectedImpactDependencyPathsInner
 
 class ProjectedImpactDependencyPathsInnerBuilder
     implements
-        Builder<ProjectedImpactDependencyPathsInner,
-            ProjectedImpactDependencyPathsInnerBuilder> {
+        Builder<
+          ProjectedImpactDependencyPathsInner,
+          ProjectedImpactDependencyPathsInnerBuilder
+        > {
   _$ProjectedImpactDependencyPathsInner? _$v;
 
   String? _from;
@@ -180,11 +189,10 @@ class ProjectedImpactDependencyPathsInnerBuilder
 
   ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum? _weakestEdgeLabel;
   ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum?
-      get weakestEdgeLabel => _$this._weakestEdgeLabel;
+  get weakestEdgeLabel => _$this._weakestEdgeLabel;
   set weakestEdgeLabel(
-          ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum?
-              weakestEdgeLabel) =>
-      _$this._weakestEdgeLabel = weakestEdgeLabel;
+    ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum? weakestEdgeLabel,
+  ) => _$this._weakestEdgeLabel = weakestEdgeLabel;
 
   int? _depth;
   int? get depth => _$this._depth;
@@ -214,7 +222,8 @@ class ProjectedImpactDependencyPathsInnerBuilder
 
   @override
   void update(
-      void Function(ProjectedImpactDependencyPathsInnerBuilder)? updates) {
+    void Function(ProjectedImpactDependencyPathsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -224,17 +233,25 @@ class ProjectedImpactDependencyPathsInnerBuilder
   _$ProjectedImpactDependencyPathsInner _build() {
     _$ProjectedImpactDependencyPathsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProjectedImpactDependencyPathsInner._(
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'ProjectedImpactDependencyPathsInner', 'from'),
+              from,
+              r'ProjectedImpactDependencyPathsInner',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, r'ProjectedImpactDependencyPathsInner', 'to'),
+              to,
+              r'ProjectedImpactDependencyPathsInner',
+              'to',
+            ),
             hops: _hops?.build(),
             weakestEdgeLabel: BuiltValueNullFieldError.checkNotNull(
-                weakestEdgeLabel,
-                r'ProjectedImpactDependencyPathsInner',
-                'weakestEdgeLabel'),
+              weakestEdgeLabel,
+              r'ProjectedImpactDependencyPathsInner',
+              'weakestEdgeLabel',
+            ),
             depth: depth,
           );
     } catch (_) {
@@ -243,8 +260,11 @@ class ProjectedImpactDependencyPathsInnerBuilder
         _$failedField = 'hops';
         _hops?.build();
       } catch (e) {
-        throw BuiltValueNestedFieldError(r'ProjectedImpactDependencyPathsInner',
-            _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'ProjectedImpactDependencyPathsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

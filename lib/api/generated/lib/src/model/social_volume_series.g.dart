@@ -20,22 +20,22 @@ class _$SocialVolumeSeries extends SocialVolumeSeries {
   @override
   final BuiltList<SocialVolumePoint> points;
 
-  factory _$SocialVolumeSeries(
-          [void Function(SocialVolumeSeriesBuilder)? updates]) =>
-      (SocialVolumeSeriesBuilder()..update(updates))._build();
+  factory _$SocialVolumeSeries([
+    void Function(SocialVolumeSeriesBuilder)? updates,
+  ]) => (SocialVolumeSeriesBuilder()..update(updates))._build();
 
-  _$SocialVolumeSeries._(
-      {required this.platform,
-      this.language,
-      required this.seriesRef,
-      required this.collectionType,
-      required this.baselineEligible,
-      required this.points})
-      : super._();
+  _$SocialVolumeSeries._({
+    required this.platform,
+    this.language,
+    required this.seriesRef,
+    required this.collectionType,
+    required this.baselineEligible,
+    required this.points,
+  }) : super._();
   @override
   SocialVolumeSeries rebuild(
-          void Function(SocialVolumeSeriesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialVolumeSeriesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialVolumeSeriesBuilder toBuilder() =>
@@ -144,17 +144,30 @@ class SocialVolumeSeriesBuilder
   _$SocialVolumeSeries _build() {
     _$SocialVolumeSeries _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialVolumeSeries._(
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'SocialVolumeSeries', 'platform'),
+              platform,
+              r'SocialVolumeSeries',
+              'platform',
+            ),
             language: language,
             seriesRef: BuiltValueNullFieldError.checkNotNull(
-                seriesRef, r'SocialVolumeSeries', 'seriesRef'),
+              seriesRef,
+              r'SocialVolumeSeries',
+              'seriesRef',
+            ),
             collectionType: BuiltValueNullFieldError.checkNotNull(
-                collectionType, r'SocialVolumeSeries', 'collectionType'),
+              collectionType,
+              r'SocialVolumeSeries',
+              'collectionType',
+            ),
             baselineEligible: BuiltValueNullFieldError.checkNotNull(
-                baselineEligible, r'SocialVolumeSeries', 'baselineEligible'),
+              baselineEligible,
+              r'SocialVolumeSeries',
+              'baselineEligible',
+            ),
             points: points.build(),
           );
     } catch (_) {
@@ -164,7 +177,10 @@ class SocialVolumeSeriesBuilder
         points.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialVolumeSeries', _$failedField, e.toString());
+          r'SocialVolumeSeries',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

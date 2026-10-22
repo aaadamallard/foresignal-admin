@@ -32,24 +32,25 @@ ReceivedPackageTypeEnum _$receivedPackageTypeEnumValueOf(String name) {
 
 final BuiltSet<ReceivedPackageTypeEnum> _$receivedPackageTypeEnumValues =
     BuiltSet<ReceivedPackageTypeEnum>(const <ReceivedPackageTypeEnum>[
-  _$receivedPackageTypeEnum_report,
-  _$receivedPackageTypeEnum_investigation,
-  _$receivedPackageTypeEnum_chronicleExtract,
-  _$receivedPackageTypeEnum_evidence,
-]);
+      _$receivedPackageTypeEnum_report,
+      _$receivedPackageTypeEnum_investigation,
+      _$receivedPackageTypeEnum_chronicleExtract,
+      _$receivedPackageTypeEnum_evidence,
+    ]);
 
 const ReceivedPackageSignatureStatusEnum
-    _$receivedPackageSignatureStatusEnum_valid =
+_$receivedPackageSignatureStatusEnum_valid =
     const ReceivedPackageSignatureStatusEnum._('valid');
 const ReceivedPackageSignatureStatusEnum
-    _$receivedPackageSignatureStatusEnum_invalid =
+_$receivedPackageSignatureStatusEnum_invalid =
     const ReceivedPackageSignatureStatusEnum._('invalid');
 const ReceivedPackageSignatureStatusEnum
-    _$receivedPackageSignatureStatusEnum_unknownKey =
+_$receivedPackageSignatureStatusEnum_unknownKey =
     const ReceivedPackageSignatureStatusEnum._('unknownKey');
 
 ReceivedPackageSignatureStatusEnum _$receivedPackageSignatureStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'valid':
       return _$receivedPackageSignatureStatusEnum_valid;
@@ -63,12 +64,14 @@ ReceivedPackageSignatureStatusEnum _$receivedPackageSignatureStatusEnumValueOf(
 }
 
 final BuiltSet<ReceivedPackageSignatureStatusEnum>
-    _$receivedPackageSignatureStatusEnumValues = BuiltSet<
-        ReceivedPackageSignatureStatusEnum>(const <ReceivedPackageSignatureStatusEnum>[
-  _$receivedPackageSignatureStatusEnum_valid,
-  _$receivedPackageSignatureStatusEnum_invalid,
-  _$receivedPackageSignatureStatusEnum_unknownKey,
-]);
+_$receivedPackageSignatureStatusEnumValues =
+    BuiltSet<ReceivedPackageSignatureStatusEnum>(
+      const <ReceivedPackageSignatureStatusEnum>[
+        _$receivedPackageSignatureStatusEnum_valid,
+        _$receivedPackageSignatureStatusEnum_invalid,
+        _$receivedPackageSignatureStatusEnum_unknownKey,
+      ],
+    );
 
 const ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnum_peerJwks =
     const ReceivedPackageKeySourceEnum._('peerJwks');
@@ -76,7 +79,8 @@ const ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnum_pinned =
     const ReceivedPackageKeySourceEnum._('pinned');
 
 ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'peerJwks':
       return _$receivedPackageKeySourceEnum_peerJwks;
@@ -88,11 +92,12 @@ ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnumValueOf(
 }
 
 final BuiltSet<ReceivedPackageKeySourceEnum>
-    _$receivedPackageKeySourceEnumValues =
-    BuiltSet<ReceivedPackageKeySourceEnum>(const <ReceivedPackageKeySourceEnum>[
-  _$receivedPackageKeySourceEnum_peerJwks,
-  _$receivedPackageKeySourceEnum_pinned,
-]);
+_$receivedPackageKeySourceEnumValues = BuiltSet<ReceivedPackageKeySourceEnum>(
+  const <ReceivedPackageKeySourceEnum>[
+    _$receivedPackageKeySourceEnum_peerJwks,
+    _$receivedPackageKeySourceEnum_pinned,
+  ],
+);
 
 const ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnum_peer =
     const ReceivedPackageReceivedViaEnum._('peer');
@@ -100,7 +105,8 @@ const ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnum_import_ =
     const ReceivedPackageReceivedViaEnum._('import_');
 
 ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'peer':
       return _$receivedPackageReceivedViaEnum_peer;
@@ -112,22 +118,24 @@ ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnumValueOf(
 }
 
 final BuiltSet<ReceivedPackageReceivedViaEnum>
-    _$receivedPackageReceivedViaEnumValues = BuiltSet<
-        ReceivedPackageReceivedViaEnum>(const <ReceivedPackageReceivedViaEnum>[
-  _$receivedPackageReceivedViaEnum_peer,
-  _$receivedPackageReceivedViaEnum_import_,
-]);
+_$receivedPackageReceivedViaEnumValues =
+    BuiltSet<ReceivedPackageReceivedViaEnum>(
+      const <ReceivedPackageReceivedViaEnum>[
+        _$receivedPackageReceivedViaEnum_peer,
+        _$receivedPackageReceivedViaEnum_import_,
+      ],
+    );
 
 Serializer<ReceivedPackageTypeEnum> _$receivedPackageTypeEnumSerializer =
     _$ReceivedPackageTypeEnumSerializer();
 Serializer<ReceivedPackageSignatureStatusEnum>
-    _$receivedPackageSignatureStatusEnumSerializer =
+_$receivedPackageSignatureStatusEnumSerializer =
     _$ReceivedPackageSignatureStatusEnumSerializer();
 Serializer<ReceivedPackageKeySourceEnum>
-    _$receivedPackageKeySourceEnumSerializer =
+_$receivedPackageKeySourceEnumSerializer =
     _$ReceivedPackageKeySourceEnumSerializer();
 Serializer<ReceivedPackageReceivedViaEnum>
-    _$receivedPackageReceivedViaEnumSerializer =
+_$receivedPackageReceivedViaEnumSerializer =
     _$ReceivedPackageReceivedViaEnumSerializer();
 
 class _$ReceivedPackageTypeEnumSerializer
@@ -151,16 +159,20 @@ class _$ReceivedPackageTypeEnumSerializer
   final String wireName = 'ReceivedPackageTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ReceivedPackageTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReceivedPackageTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReceivedPackageTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReceivedPackageTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReceivedPackageTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReceivedPackageSignatureStatusEnumSerializer
@@ -183,16 +195,19 @@ class _$ReceivedPackageSignatureStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ReceivedPackageSignatureStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ReceivedPackageSignatureStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReceivedPackageSignatureStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReceivedPackageSignatureStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReceivedPackageSignatureStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReceivedPackageKeySourceEnumSerializer
@@ -212,16 +227,20 @@ class _$ReceivedPackageKeySourceEnumSerializer
   final String wireName = 'ReceivedPackageKeySourceEnum';
 
   @override
-  Object serialize(Serializers serializers, ReceivedPackageKeySourceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReceivedPackageKeySourceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReceivedPackageKeySourceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReceivedPackageKeySourceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReceivedPackageKeySourceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReceivedPackageReceivedViaEnumSerializer
@@ -242,16 +261,19 @@ class _$ReceivedPackageReceivedViaEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ReceivedPackageReceivedViaEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ReceivedPackageReceivedViaEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReceivedPackageReceivedViaEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReceivedPackageReceivedViaEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReceivedPackageReceivedViaEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReceivedPackage extends ReceivedPackage {
@@ -295,26 +317,26 @@ class _$ReceivedPackage extends ReceivedPackage {
   factory _$ReceivedPackage([void Function(ReceivedPackageBuilder)? updates]) =>
       (ReceivedPackageBuilder()..update(updates))._build();
 
-  _$ReceivedPackage._(
-      {required this.id,
-      required this.packageId,
-      required this.type,
-      required this.objectRef,
-      required this.title,
-      required this.sender,
-      required this.authors,
-      required this.tlp,
-      required this.signatureStatus,
-      this.keySource,
-      required this.hashesVerified,
-      required this.receivedVia,
-      required this.receivedAt,
-      this.recipients,
-      this.message,
-      this.acknowledgedAt,
-      this.provenanceChain,
-      this.contents})
-      : super._();
+  _$ReceivedPackage._({
+    required this.id,
+    required this.packageId,
+    required this.type,
+    required this.objectRef,
+    required this.title,
+    required this.sender,
+    required this.authors,
+    required this.tlp,
+    required this.signatureStatus,
+    this.keySource,
+    required this.hashesVerified,
+    required this.receivedVia,
+    required this.receivedAt,
+    this.recipients,
+    this.message,
+    this.acknowledgedAt,
+    this.provenanceChain,
+    this.contents,
+  }) : super._();
   @override
   ReceivedPackage rebuild(void Function(ReceivedPackageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -533,31 +555,62 @@ class ReceivedPackageBuilder
   _$ReceivedPackage _build() {
     _$ReceivedPackage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReceivedPackage._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ReceivedPackage', 'id'),
+              id,
+              r'ReceivedPackage',
+              'id',
+            ),
             packageId: BuiltValueNullFieldError.checkNotNull(
-                packageId, r'ReceivedPackage', 'packageId'),
+              packageId,
+              r'ReceivedPackage',
+              'packageId',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ReceivedPackage', 'type'),
+              type,
+              r'ReceivedPackage',
+              'type',
+            ),
             objectRef: BuiltValueNullFieldError.checkNotNull(
-                objectRef, r'ReceivedPackage', 'objectRef'),
+              objectRef,
+              r'ReceivedPackage',
+              'objectRef',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'ReceivedPackage', 'title'),
+              title,
+              r'ReceivedPackage',
+              'title',
+            ),
             sender: sender.build(),
             authors: authors.build(),
             tlp: BuiltValueNullFieldError.checkNotNull(
-                tlp, r'ReceivedPackage', 'tlp'),
+              tlp,
+              r'ReceivedPackage',
+              'tlp',
+            ),
             signatureStatus: BuiltValueNullFieldError.checkNotNull(
-                signatureStatus, r'ReceivedPackage', 'signatureStatus'),
+              signatureStatus,
+              r'ReceivedPackage',
+              'signatureStatus',
+            ),
             keySource: keySource,
             hashesVerified: BuiltValueNullFieldError.checkNotNull(
-                hashesVerified, r'ReceivedPackage', 'hashesVerified'),
+              hashesVerified,
+              r'ReceivedPackage',
+              'hashesVerified',
+            ),
             receivedVia: BuiltValueNullFieldError.checkNotNull(
-                receivedVia, r'ReceivedPackage', 'receivedVia'),
+              receivedVia,
+              r'ReceivedPackage',
+              'receivedVia',
+            ),
             receivedAt: BuiltValueNullFieldError.checkNotNull(
-                receivedAt, r'ReceivedPackage', 'receivedAt'),
+              receivedAt,
+              r'ReceivedPackage',
+              'receivedAt',
+            ),
             recipients: _recipients?.build(),
             message: message,
             acknowledgedAt: acknowledgedAt,
@@ -581,7 +634,10 @@ class ReceivedPackageBuilder
         _contents?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReceivedPackage', _$failedField, e.toString());
+          r'ReceivedPackage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

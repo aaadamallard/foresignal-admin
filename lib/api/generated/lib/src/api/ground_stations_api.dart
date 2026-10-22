@@ -43,22 +43,22 @@ class GroundStationsApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/ground-stations/{sourceId}/polarplot.jpeg'.replaceAll(
-        '{' r'sourceId' '}',
-        encodeQueryParameter(_serializers, sourceId, const FullType(String))
-            .toString());
+      '{'
+      r'sourceId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        sourceId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
       responseType: ResponseType.bytes,
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },

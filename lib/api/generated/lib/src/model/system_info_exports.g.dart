@@ -18,17 +18,17 @@ class _$SystemInfoExports extends SystemInfoExports {
   @override
   final int? maxConcurrent;
 
-  factory _$SystemInfoExports(
-          [void Function(SystemInfoExportsBuilder)? updates]) =>
-      (SystemInfoExportsBuilder()..update(updates))._build();
+  factory _$SystemInfoExports([
+    void Function(SystemInfoExportsBuilder)? updates,
+  ]) => (SystemInfoExportsBuilder()..update(updates))._build();
 
-  _$SystemInfoExports._(
-      {this.queued,
-      this.running,
-      this.bytes,
-      this.quotaBytes,
-      this.maxConcurrent})
-      : super._();
+  _$SystemInfoExports._({
+    this.queued,
+    this.running,
+    this.bytes,
+    this.quotaBytes,
+    this.maxConcurrent,
+  }) : super._();
   @override
   SystemInfoExports rebuild(void Function(SystemInfoExportsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,7 +128,8 @@ class SystemInfoExportsBuilder
   SystemInfoExports build() => _build();
 
   _$SystemInfoExports _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoExports._(
           queued: queued,
           running: running,

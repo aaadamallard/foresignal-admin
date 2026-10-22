@@ -32,11 +32,11 @@ ExerciseRunSpeedEnum _$exerciseRunSpeedEnumValueOf(String name) {
 
 final BuiltSet<ExerciseRunSpeedEnum> _$exerciseRunSpeedEnumValues =
     BuiltSet<ExerciseRunSpeedEnum>(const <ExerciseRunSpeedEnum>[
-  _$exerciseRunSpeedEnum_realtime,
-  _$exerciseRunSpeedEnum_x10,
-  _$exerciseRunSpeedEnum_x60,
-  _$exerciseRunSpeedEnum_max,
-]);
+      _$exerciseRunSpeedEnum_realtime,
+      _$exerciseRunSpeedEnum_x10,
+      _$exerciseRunSpeedEnum_x60,
+      _$exerciseRunSpeedEnum_max,
+    ]);
 
 const ExerciseRunStatusEnum _$exerciseRunStatusEnum_PLANNED =
     const ExerciseRunStatusEnum._('PLANNED');
@@ -68,12 +68,12 @@ ExerciseRunStatusEnum _$exerciseRunStatusEnumValueOf(String name) {
 
 final BuiltSet<ExerciseRunStatusEnum> _$exerciseRunStatusEnumValues =
     BuiltSet<ExerciseRunStatusEnum>(const <ExerciseRunStatusEnum>[
-  _$exerciseRunStatusEnum_PLANNED,
-  _$exerciseRunStatusEnum_RUNNING,
-  _$exerciseRunStatusEnum_DONE,
-  _$exerciseRunStatusEnum_CANCELLED,
-  _$exerciseRunStatusEnum_FAILED,
-]);
+      _$exerciseRunStatusEnum_PLANNED,
+      _$exerciseRunStatusEnum_RUNNING,
+      _$exerciseRunStatusEnum_DONE,
+      _$exerciseRunStatusEnum_CANCELLED,
+      _$exerciseRunStatusEnum_FAILED,
+    ]);
 
 Serializer<ExerciseRunSpeedEnum> _$exerciseRunSpeedEnumSerializer =
     _$ExerciseRunSpeedEnumSerializer();
@@ -101,15 +101,20 @@ class _$ExerciseRunSpeedEnumSerializer
   final String wireName = 'ExerciseRunSpeedEnum';
 
   @override
-  Object serialize(Serializers serializers, ExerciseRunSpeedEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExerciseRunSpeedEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExerciseRunSpeedEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExerciseRunSpeedEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExerciseRunSpeedEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExerciseRunSpeedEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExerciseRunStatusEnumSerializer
@@ -135,15 +140,20 @@ class _$ExerciseRunStatusEnumSerializer
   final String wireName = 'ExerciseRunStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ExerciseRunStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ExerciseRunStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ExerciseRunStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExerciseRunStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ExerciseRunStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExerciseRunStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExerciseRun extends ExerciseRun {
@@ -187,26 +197,26 @@ class _$ExerciseRun extends ExerciseRun {
   factory _$ExerciseRun([void Function(ExerciseRunBuilder)? updates]) =>
       (ExerciseRunBuilder()..update(updates))._build();
 
-  _$ExerciseRun._(
-      {required this.id,
-      required this.name,
-      this.ruleIds,
-      this.tag,
-      this.from,
-      this.to,
-      this.fromSeq,
-      this.toSeq,
-      this.speed,
-      this.channelIds,
-      this.enrich,
-      this.dryRun,
-      required this.status,
-      this.createdBy,
-      required this.createdAt,
-      this.startedAt,
-      this.finishedAt,
-      this.stats})
-      : super._();
+  _$ExerciseRun._({
+    required this.id,
+    required this.name,
+    this.ruleIds,
+    this.tag,
+    this.from,
+    this.to,
+    this.fromSeq,
+    this.toSeq,
+    this.speed,
+    this.channelIds,
+    this.enrich,
+    this.dryRun,
+    required this.status,
+    this.createdBy,
+    required this.createdAt,
+    this.startedAt,
+    this.finishedAt,
+    this.stats,
+  }) : super._();
   @override
   ExerciseRun rebuild(void Function(ExerciseRunBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -411,11 +421,15 @@ class ExerciseRunBuilder implements Builder<ExerciseRun, ExerciseRunBuilder> {
   _$ExerciseRun _build() {
     _$ExerciseRun _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ExerciseRun._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'ExerciseRun', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ExerciseRun', 'name'),
+              name,
+              r'ExerciseRun',
+              'name',
+            ),
             ruleIds: _ruleIds?.build(),
             tag: tag,
             from: from,
@@ -427,10 +441,16 @@ class ExerciseRunBuilder implements Builder<ExerciseRun, ExerciseRunBuilder> {
             enrich: enrich,
             dryRun: dryRun,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ExerciseRun', 'status'),
+              status,
+              r'ExerciseRun',
+              'status',
+            ),
             createdBy: createdBy,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ExerciseRun', 'createdAt'),
+              createdAt,
+              r'ExerciseRun',
+              'createdAt',
+            ),
             startedAt: startedAt,
             finishedAt: finishedAt,
             stats: _stats?.build(),
@@ -448,7 +468,10 @@ class ExerciseRunBuilder implements Builder<ExerciseRun, ExerciseRunBuilder> {
         _stats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExerciseRun', _$failedField, e.toString());
+          r'ExerciseRun',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

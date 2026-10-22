@@ -36,30 +36,30 @@ class _$RetentionRunResult extends RetentionRunResult {
   @override
   final BuiltMap<String, RetentionRunResultPerSourceValue>? perSource;
 
-  factory _$RetentionRunResult(
-          [void Function(RetentionRunResultBuilder)? updates]) =>
-      (RetentionRunResultBuilder()..update(updates))._build();
+  factory _$RetentionRunResult([
+    void Function(RetentionRunResultBuilder)? updates,
+  ]) => (RetentionRunResultBuilder()..update(updates))._build();
 
-  _$RetentionRunResult._(
-      {this.startedAt,
-      this.durationMs,
-      required this.versionsDeleted,
-      required this.headsDeleted,
-      this.alertsDeleted,
-      this.usageRowsDeleted,
-      this.partitionsDropped,
-      this.headsPurged,
-      this.fetchLogDeleted,
-      this.seqClockDeleted,
-      this.notificationsDeleted,
-      this.skippedSources,
-      this.consumerClamp,
-      this.perSource})
-      : super._();
+  _$RetentionRunResult._({
+    this.startedAt,
+    this.durationMs,
+    required this.versionsDeleted,
+    required this.headsDeleted,
+    this.alertsDeleted,
+    this.usageRowsDeleted,
+    this.partitionsDropped,
+    this.headsPurged,
+    this.fetchLogDeleted,
+    this.seqClockDeleted,
+    this.notificationsDeleted,
+    this.skippedSources,
+    this.consumerClamp,
+    this.perSource,
+  }) : super._();
   @override
   RetentionRunResult rebuild(
-          void Function(RetentionRunResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RetentionRunResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RetentionRunResultBuilder toBuilder() =>
@@ -199,8 +199,8 @@ class RetentionRunResultBuilder
       _$this._perSource ??=
           MapBuilder<String, RetentionRunResultPerSourceValue>();
   set perSource(
-          MapBuilder<String, RetentionRunResultPerSourceValue>? perSource) =>
-      _$this._perSource = perSource;
+    MapBuilder<String, RetentionRunResultPerSourceValue>? perSource,
+  ) => _$this._perSource = perSource;
 
   RetentionRunResultBuilder() {
     RetentionRunResult._defaults(this);
@@ -244,14 +244,21 @@ class RetentionRunResultBuilder
   _$RetentionRunResult _build() {
     _$RetentionRunResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RetentionRunResult._(
             startedAt: startedAt,
             durationMs: durationMs,
             versionsDeleted: BuiltValueNullFieldError.checkNotNull(
-                versionsDeleted, r'RetentionRunResult', 'versionsDeleted'),
+              versionsDeleted,
+              r'RetentionRunResult',
+              'versionsDeleted',
+            ),
             headsDeleted: BuiltValueNullFieldError.checkNotNull(
-                headsDeleted, r'RetentionRunResult', 'headsDeleted'),
+              headsDeleted,
+              r'RetentionRunResult',
+              'headsDeleted',
+            ),
             alertsDeleted: alertsDeleted,
             usageRowsDeleted: usageRowsDeleted,
             partitionsDropped: partitionsDropped,
@@ -274,7 +281,10 @@ class RetentionRunResultBuilder
         _perSource?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RetentionRunResult', _$failedField, e.toString());
+          r'RetentionRunResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

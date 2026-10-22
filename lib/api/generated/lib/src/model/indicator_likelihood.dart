@@ -58,7 +58,7 @@ class _$IndicatorLikelihoodSerializer
   @override
   final Iterable<Type> types = const [
     IndicatorLikelihood,
-    _$IndicatorLikelihood
+    _$IndicatorLikelihood,
   ];
 
   @override
@@ -108,9 +108,11 @@ class _$IndicatorLikelihoodSerializer
     IndicatorLikelihood object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,40 +128,54 @@ class _$IndicatorLikelihoodSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'class':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IndicatorLikelihoodClass_Enum),
-          ) as IndicatorLikelihoodClass_Enum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IndicatorLikelihoodClass_Enum,
+                    ),
+                  )
+                  as IndicatorLikelihoodClass_Enum;
           result.class_ = valueDes;
           break;
         case r'direction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IndicatorLikelihoodDirectionEnum),
-          ) as IndicatorLikelihoodDirectionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IndicatorLikelihoodDirectionEnum,
+                    ),
+                  )
+                  as IndicatorLikelihoodDirectionEnum;
           result.direction = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.value = valueDes;
           break;
         case r'rationale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.rationale = valueDes;
           break;
         case r'effective':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.effective = valueDes;
           break;

@@ -24,9 +24,9 @@ AnalystFeedbackTargetEnum _$analystFeedbackTargetEnumValueOf(String name) {
 
 final BuiltSet<AnalystFeedbackTargetEnum> _$analystFeedbackTargetEnumValues =
     BuiltSet<AnalystFeedbackTargetEnum>(const <AnalystFeedbackTargetEnum>[
-  _$analystFeedbackTargetEnum_note,
-  _$analystFeedbackTargetEnum_proposal,
-]);
+      _$analystFeedbackTargetEnum_note,
+      _$analystFeedbackTargetEnum_proposal,
+    ]);
 
 const AnalystFeedbackRatingEnum _$analystFeedbackRatingEnum_useful =
     const AnalystFeedbackRatingEnum._('useful');
@@ -50,10 +50,10 @@ AnalystFeedbackRatingEnum _$analystFeedbackRatingEnumValueOf(String name) {
 
 final BuiltSet<AnalystFeedbackRatingEnum> _$analystFeedbackRatingEnumValues =
     BuiltSet<AnalystFeedbackRatingEnum>(const <AnalystFeedbackRatingEnum>[
-  _$analystFeedbackRatingEnum_useful,
-  _$analystFeedbackRatingEnum_notUseful,
-  _$analystFeedbackRatingEnum_wrong,
-]);
+      _$analystFeedbackRatingEnum_useful,
+      _$analystFeedbackRatingEnum_notUseful,
+      _$analystFeedbackRatingEnum_wrong,
+    ]);
 
 Serializer<AnalystFeedbackTargetEnum> _$analystFeedbackTargetEnumSerializer =
     _$AnalystFeedbackTargetEnumSerializer();
@@ -77,16 +77,20 @@ class _$AnalystFeedbackTargetEnumSerializer
   final String wireName = 'AnalystFeedbackTargetEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystFeedbackTargetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystFeedbackTargetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystFeedbackTargetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystFeedbackTargetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystFeedbackTargetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystFeedbackRatingEnumSerializer
@@ -108,16 +112,20 @@ class _$AnalystFeedbackRatingEnumSerializer
   final String wireName = 'AnalystFeedbackRatingEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystFeedbackRatingEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystFeedbackRatingEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystFeedbackRatingEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystFeedbackRatingEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystFeedbackRatingEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystFeedback extends AnalystFeedback {
@@ -139,15 +147,15 @@ class _$AnalystFeedback extends AnalystFeedback {
   factory _$AnalystFeedback([void Function(AnalystFeedbackBuilder)? updates]) =>
       (AnalystFeedbackBuilder()..update(updates))._build();
 
-  _$AnalystFeedback._(
-      {required this.id,
-      required this.target,
-      required this.targetId,
-      required this.rating,
-      this.comment,
-      required this.by,
-      required this.at})
-      : super._();
+  _$AnalystFeedback._({
+    required this.id,
+    required this.target,
+    required this.targetId,
+    required this.rating,
+    this.comment,
+    required this.by,
+    required this.at,
+  }) : super._();
   @override
   AnalystFeedback rebuild(void Function(AnalystFeedbackBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -261,21 +269,40 @@ class AnalystFeedbackBuilder
   AnalystFeedback build() => _build();
 
   _$AnalystFeedback _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalystFeedback._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'AnalystFeedback', 'id'),
+            id,
+            r'AnalystFeedback',
+            'id',
+          ),
           target: BuiltValueNullFieldError.checkNotNull(
-              target, r'AnalystFeedback', 'target'),
+            target,
+            r'AnalystFeedback',
+            'target',
+          ),
           targetId: BuiltValueNullFieldError.checkNotNull(
-              targetId, r'AnalystFeedback', 'targetId'),
+            targetId,
+            r'AnalystFeedback',
+            'targetId',
+          ),
           rating: BuiltValueNullFieldError.checkNotNull(
-              rating, r'AnalystFeedback', 'rating'),
+            rating,
+            r'AnalystFeedback',
+            'rating',
+          ),
           comment: comment,
           by: BuiltValueNullFieldError.checkNotNull(
-              by, r'AnalystFeedback', 'by'),
+            by,
+            r'AnalystFeedback',
+            'by',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'AnalystFeedback', 'at'),
+            at,
+            r'AnalystFeedback',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

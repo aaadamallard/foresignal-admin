@@ -24,8 +24,9 @@ abstract class DoctorReportLlmTokens
 
   DoctorReportLlmTokens._();
 
-  factory DoctorReportLlmTokens(
-      [void updates(DoctorReportLlmTokensBuilder b)]) = _$DoctorReportLlmTokens;
+  factory DoctorReportLlmTokens([
+    void updates(DoctorReportLlmTokensBuilder b),
+  ]) = _$DoctorReportLlmTokens;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DoctorReportLlmTokensBuilder b) => b;
@@ -40,7 +41,7 @@ class _$DoctorReportLlmTokensSerializer
   @override
   final Iterable<Type> types = const [
     DoctorReportLlmTokens,
-    _$DoctorReportLlmTokens
+    _$DoctorReportLlmTokens,
   ];
 
   @override
@@ -73,9 +74,11 @@ class _$DoctorReportLlmTokensSerializer
     DoctorReportLlmTokens object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +94,22 @@ class _$DoctorReportLlmTokensSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'input':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.input = valueDes;
           break;
         case r'output':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.output = valueDes;
           break;

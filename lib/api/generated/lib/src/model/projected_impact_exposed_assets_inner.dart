@@ -21,8 +21,10 @@ part 'projected_impact_exposed_assets_inner.g.dart';
 @BuiltValue()
 abstract class ProjectedImpactExposedAssetsInner
     implements
-        Built<ProjectedImpactExposedAssetsInner,
-            ProjectedImpactExposedAssetsInnerBuilder> {
+        Built<
+          ProjectedImpactExposedAssetsInner,
+          ProjectedImpactExposedAssetsInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'ref')
   String get ref;
@@ -48,9 +50,9 @@ abstract class ProjectedImpactExposedAssetsInner
 
   ProjectedImpactExposedAssetsInner._();
 
-  factory ProjectedImpactExposedAssetsInner(
-          [void updates(ProjectedImpactExposedAssetsInnerBuilder b)]) =
-      _$ProjectedImpactExposedAssetsInner;
+  factory ProjectedImpactExposedAssetsInner([
+    void updates(ProjectedImpactExposedAssetsInnerBuilder b),
+  ]) = _$ProjectedImpactExposedAssetsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProjectedImpactExposedAssetsInnerBuilder b) => b;
@@ -65,7 +67,7 @@ class _$ProjectedImpactExposedAssetsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ProjectedImpactExposedAssetsInner,
-    _$ProjectedImpactExposedAssetsInner
+    _$ProjectedImpactExposedAssetsInner,
   ];
 
   @override
@@ -129,9 +131,11 @@ class _$ProjectedImpactExposedAssetsInnerSerializer
     ProjectedImpactExposedAssetsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -147,56 +151,67 @@ class _$ProjectedImpactExposedAssetsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.kind = valueDes;
           break;
         case r'pHazard':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pHazard = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;
         case r'population':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.population = valueDes;
           break;
         case r'band':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.band = valueDes;
           break;

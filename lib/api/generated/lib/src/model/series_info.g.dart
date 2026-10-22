@@ -52,16 +52,16 @@ SeriesInfoFrequencyEnum _$seriesInfoFrequencyEnumValueOf(String name) {
 
 final BuiltSet<SeriesInfoFrequencyEnum> _$seriesInfoFrequencyEnumValues =
     BuiltSet<SeriesInfoFrequencyEnum>(const <SeriesInfoFrequencyEnum>[
-  _$seriesInfoFrequencyEnum_PT15S,
-  _$seriesInfoFrequencyEnum_PT15M,
-  _$seriesInfoFrequencyEnum_PT30M,
-  _$seriesInfoFrequencyEnum_PT1H,
-  _$seriesInfoFrequencyEnum_P1D,
-  _$seriesInfoFrequencyEnum_P1W,
-  _$seriesInfoFrequencyEnum_P1M,
-  _$seriesInfoFrequencyEnum_P3M,
-  _$seriesInfoFrequencyEnum_P1Y,
-]);
+      _$seriesInfoFrequencyEnum_PT15S,
+      _$seriesInfoFrequencyEnum_PT15M,
+      _$seriesInfoFrequencyEnum_PT30M,
+      _$seriesInfoFrequencyEnum_PT1H,
+      _$seriesInfoFrequencyEnum_P1D,
+      _$seriesInfoFrequencyEnum_P1W,
+      _$seriesInfoFrequencyEnum_P1M,
+      _$seriesInfoFrequencyEnum_P3M,
+      _$seriesInfoFrequencyEnum_P1Y,
+    ]);
 
 const SeriesInfoStatusEnum _$seriesInfoStatusEnum_final_ =
     const SeriesInfoStatusEnum._('final_');
@@ -89,11 +89,11 @@ SeriesInfoStatusEnum _$seriesInfoStatusEnumValueOf(String name) {
 
 final BuiltSet<SeriesInfoStatusEnum> _$seriesInfoStatusEnumValues =
     BuiltSet<SeriesInfoStatusEnum>(const <SeriesInfoStatusEnum>[
-  _$seriesInfoStatusEnum_final_,
-  _$seriesInfoStatusEnum_preliminary,
-  _$seriesInfoStatusEnum_estimated,
-  _$seriesInfoStatusEnum_forecast,
-]);
+      _$seriesInfoStatusEnum_final_,
+      _$seriesInfoStatusEnum_preliminary,
+      _$seriesInfoStatusEnum_estimated,
+      _$seriesInfoStatusEnum_forecast,
+    ]);
 
 Serializer<SeriesInfoFrequencyEnum> _$seriesInfoFrequencyEnumSerializer =
     _$SeriesInfoFrequencyEnumSerializer();
@@ -131,16 +131,20 @@ class _$SeriesInfoFrequencyEnumSerializer
   final String wireName = 'SeriesInfoFrequencyEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesInfoFrequencyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesInfoFrequencyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesInfoFrequencyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesInfoFrequencyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesInfoFrequencyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesInfoStatusEnumSerializer
@@ -164,15 +168,20 @@ class _$SeriesInfoStatusEnumSerializer
   final String wireName = 'SeriesInfoStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesInfoStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesInfoStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SeriesInfoStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesInfoStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SeriesInfoStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesInfoStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesInfo extends SeriesInfo {
@@ -200,18 +209,18 @@ class _$SeriesInfo extends SeriesInfo {
   factory _$SeriesInfo([void Function(SeriesInfoBuilder)? updates]) =>
       (SeriesInfoBuilder()..update(updates))._build();
 
-  _$SeriesInfo._(
-      {required this.sourceId,
-      required this.series,
-      required this.seriesName,
-      this.dataset,
-      required this.unit,
-      required this.frequency,
-      this.area,
-      this.latestPeriod,
-      this.latestValue,
-      this.status})
-      : super._();
+  _$SeriesInfo._({
+    required this.sourceId,
+    required this.series,
+    required this.seriesName,
+    this.dataset,
+    required this.unit,
+    required this.frequency,
+    this.area,
+    this.latestPeriod,
+    this.latestValue,
+    this.status,
+  }) : super._();
   @override
   SeriesInfo rebuild(void Function(SeriesInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -349,19 +358,35 @@ class SeriesInfoBuilder implements Builder<SeriesInfo, SeriesInfoBuilder> {
   SeriesInfo build() => _build();
 
   _$SeriesInfo _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SeriesInfo._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'SeriesInfo', 'sourceId'),
+            sourceId,
+            r'SeriesInfo',
+            'sourceId',
+          ),
           series: BuiltValueNullFieldError.checkNotNull(
-              series, r'SeriesInfo', 'series'),
+            series,
+            r'SeriesInfo',
+            'series',
+          ),
           seriesName: BuiltValueNullFieldError.checkNotNull(
-              seriesName, r'SeriesInfo', 'seriesName'),
+            seriesName,
+            r'SeriesInfo',
+            'seriesName',
+          ),
           dataset: dataset,
           unit: BuiltValueNullFieldError.checkNotNull(
-              unit, r'SeriesInfo', 'unit'),
+            unit,
+            r'SeriesInfo',
+            'unit',
+          ),
           frequency: BuiltValueNullFieldError.checkNotNull(
-              frequency, r'SeriesInfo', 'frequency'),
+            frequency,
+            r'SeriesInfo',
+            'frequency',
+          ),
           area: area,
           latestPeriod: latestPeriod,
           latestValue: latestValue,

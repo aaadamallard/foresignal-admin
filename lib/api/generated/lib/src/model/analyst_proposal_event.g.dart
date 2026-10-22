@@ -18,7 +18,8 @@ const AnalystProposalEventChangeEnum _$analystProposalEventChangeEnum_failed =
     const AnalystProposalEventChangeEnum._('failed');
 
 AnalystProposalEventChangeEnum _$analystProposalEventChangeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'created':
       return _$analystProposalEventChangeEnum_created;
@@ -36,17 +37,19 @@ AnalystProposalEventChangeEnum _$analystProposalEventChangeEnumValueOf(
 }
 
 final BuiltSet<AnalystProposalEventChangeEnum>
-    _$analystProposalEventChangeEnumValues = BuiltSet<
-        AnalystProposalEventChangeEnum>(const <AnalystProposalEventChangeEnum>[
-  _$analystProposalEventChangeEnum_created,
-  _$analystProposalEventChangeEnum_executed,
-  _$analystProposalEventChangeEnum_rejected,
-  _$analystProposalEventChangeEnum_expired,
-  _$analystProposalEventChangeEnum_failed,
-]);
+_$analystProposalEventChangeEnumValues =
+    BuiltSet<AnalystProposalEventChangeEnum>(
+      const <AnalystProposalEventChangeEnum>[
+        _$analystProposalEventChangeEnum_created,
+        _$analystProposalEventChangeEnum_executed,
+        _$analystProposalEventChangeEnum_rejected,
+        _$analystProposalEventChangeEnum_expired,
+        _$analystProposalEventChangeEnum_failed,
+      ],
+    );
 
 Serializer<AnalystProposalEventChangeEnum>
-    _$analystProposalEventChangeEnumSerializer =
+_$analystProposalEventChangeEnumSerializer =
     _$AnalystProposalEventChangeEnumSerializer();
 
 class _$AnalystProposalEventChangeEnumSerializer
@@ -73,16 +76,19 @@ class _$AnalystProposalEventChangeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnalystProposalEventChangeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnalystProposalEventChangeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystProposalEventChangeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystProposalEventChangeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystProposalEventChangeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystProposalEvent extends AnalystProposalEvent {
@@ -91,16 +97,16 @@ class _$AnalystProposalEvent extends AnalystProposalEvent {
   @override
   final AnalystProposal proposal;
 
-  factory _$AnalystProposalEvent(
-          [void Function(AnalystProposalEventBuilder)? updates]) =>
-      (AnalystProposalEventBuilder()..update(updates))._build();
+  factory _$AnalystProposalEvent([
+    void Function(AnalystProposalEventBuilder)? updates,
+  ]) => (AnalystProposalEventBuilder()..update(updates))._build();
 
   _$AnalystProposalEvent._({required this.change, required this.proposal})
-      : super._();
+    : super._();
   @override
   AnalystProposalEvent rebuild(
-          void Function(AnalystProposalEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystProposalEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystProposalEventBuilder toBuilder() =>
@@ -175,10 +181,14 @@ class AnalystProposalEventBuilder
   _$AnalystProposalEvent _build() {
     _$AnalystProposalEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystProposalEvent._(
             change: BuiltValueNullFieldError.checkNotNull(
-                change, r'AnalystProposalEvent', 'change'),
+              change,
+              r'AnalystProposalEvent',
+              'change',
+            ),
             proposal: proposal.build(),
           );
     } catch (_) {
@@ -188,7 +198,10 @@ class AnalystProposalEventBuilder
         proposal.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystProposalEvent', _$failedField, e.toString());
+          r'AnalystProposalEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

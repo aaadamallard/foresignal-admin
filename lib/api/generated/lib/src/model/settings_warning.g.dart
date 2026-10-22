@@ -89,12 +89,19 @@ class SettingsWarningBuilder
   SettingsWarning build() => _build();
 
   _$SettingsWarning _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SettingsWarning._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'SettingsWarning', 'code'),
+            code,
+            r'SettingsWarning',
+            'code',
+          ),
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'SettingsWarning', 'message'),
+            message,
+            r'SettingsWarning',
+            'message',
+          ),
         );
     replace(_$result);
     return _$result;

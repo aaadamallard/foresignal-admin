@@ -15,18 +15,20 @@ class _$ExposureWatchlistEntitiesCountsInner
   @override
   final int count;
 
-  factory _$ExposureWatchlistEntitiesCountsInner(
-          [void Function(ExposureWatchlistEntitiesCountsInnerBuilder)?
-              updates]) =>
+  factory _$ExposureWatchlistEntitiesCountsInner([
+    void Function(ExposureWatchlistEntitiesCountsInnerBuilder)? updates,
+  ]) =>
       (ExposureWatchlistEntitiesCountsInnerBuilder()..update(updates))._build();
 
-  _$ExposureWatchlistEntitiesCountsInner._(
-      {required this.watchlistId, this.name, required this.count})
-      : super._();
+  _$ExposureWatchlistEntitiesCountsInner._({
+    required this.watchlistId,
+    this.name,
+    required this.count,
+  }) : super._();
   @override
   ExposureWatchlistEntitiesCountsInner rebuild(
-          void Function(ExposureWatchlistEntitiesCountsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExposureWatchlistEntitiesCountsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExposureWatchlistEntitiesCountsInnerBuilder toBuilder() =>
@@ -63,8 +65,10 @@ class _$ExposureWatchlistEntitiesCountsInner
 
 class ExposureWatchlistEntitiesCountsInnerBuilder
     implements
-        Builder<ExposureWatchlistEntitiesCountsInner,
-            ExposureWatchlistEntitiesCountsInnerBuilder> {
+        Builder<
+          ExposureWatchlistEntitiesCountsInner,
+          ExposureWatchlistEntitiesCountsInnerBuilder
+        > {
   _$ExposureWatchlistEntitiesCountsInner? _$v;
 
   String? _watchlistId;
@@ -101,7 +105,8 @@ class ExposureWatchlistEntitiesCountsInnerBuilder
 
   @override
   void update(
-      void Function(ExposureWatchlistEntitiesCountsInnerBuilder)? updates) {
+    void Function(ExposureWatchlistEntitiesCountsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -109,13 +114,20 @@ class ExposureWatchlistEntitiesCountsInnerBuilder
   ExposureWatchlistEntitiesCountsInner build() => _build();
 
   _$ExposureWatchlistEntitiesCountsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExposureWatchlistEntitiesCountsInner._(
-          watchlistId: BuiltValueNullFieldError.checkNotNull(watchlistId,
-              r'ExposureWatchlistEntitiesCountsInner', 'watchlistId'),
+          watchlistId: BuiltValueNullFieldError.checkNotNull(
+            watchlistId,
+            r'ExposureWatchlistEntitiesCountsInner',
+            'watchlistId',
+          ),
           name: name,
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'ExposureWatchlistEntitiesCountsInner', 'count'),
+            count,
+            r'ExposureWatchlistEntitiesCountsInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -7,7 +7,7 @@ part of 'backtest_caveat.dart';
 // **************************************************************************
 
 const BacktestCaveatCodeEnum
-    _$backtestCaveatCodeEnum_RANGE_CLAMPED_BY_RETENTION =
+_$backtestCaveatCodeEnum_RANGE_CLAMPED_BY_RETENTION =
     const BacktestCaveatCodeEnum._('RANGE_CLAMPED_BY_RETENTION');
 const BacktestCaveatCodeEnum _$backtestCaveatCodeEnum_DOWNSAMPLED_RANGE =
     const BacktestCaveatCodeEnum._('DOWNSAMPLED_RANGE');
@@ -18,7 +18,7 @@ const BacktestCaveatCodeEnum _$backtestCaveatCodeEnum_COVERAGE_GAPS =
 const BacktestCaveatCodeEnum _$backtestCaveatCodeEnum_DEFINITION_DIFFERS =
     const BacktestCaveatCodeEnum._('DEFINITION_DIFFERS');
 const BacktestCaveatCodeEnum
-    _$backtestCaveatCodeEnum_ENTITY_RESOLUTION_CHANGED =
+_$backtestCaveatCodeEnum_ENTITY_RESOLUTION_CHANGED =
     const BacktestCaveatCodeEnum._('ENTITY_RESOLUTION_CHANGED');
 const BacktestCaveatCodeEnum _$backtestCaveatCodeEnum_WINDOW_APPROXIMATE =
     const BacktestCaveatCodeEnum._('WINDOW_APPROXIMATE');
@@ -54,16 +54,16 @@ BacktestCaveatCodeEnum _$backtestCaveatCodeEnumValueOf(String name) {
 
 final BuiltSet<BacktestCaveatCodeEnum> _$backtestCaveatCodeEnumValues =
     BuiltSet<BacktestCaveatCodeEnum>(const <BacktestCaveatCodeEnum>[
-  _$backtestCaveatCodeEnum_RANGE_CLAMPED_BY_RETENTION,
-  _$backtestCaveatCodeEnum_DOWNSAMPLED_RANGE,
-  _$backtestCaveatCodeEnum_SAMPLED_SOURCE,
-  _$backtestCaveatCodeEnum_COVERAGE_GAPS,
-  _$backtestCaveatCodeEnum_DEFINITION_DIFFERS,
-  _$backtestCaveatCodeEnum_ENTITY_RESOLUTION_CHANGED,
-  _$backtestCaveatCodeEnum_WINDOW_APPROXIMATE,
-  _$backtestCaveatCodeEnum_SMALL_SAMPLE,
-  _$backtestCaveatCodeEnum_NOT_GROUND_TRUTH,
-]);
+      _$backtestCaveatCodeEnum_RANGE_CLAMPED_BY_RETENTION,
+      _$backtestCaveatCodeEnum_DOWNSAMPLED_RANGE,
+      _$backtestCaveatCodeEnum_SAMPLED_SOURCE,
+      _$backtestCaveatCodeEnum_COVERAGE_GAPS,
+      _$backtestCaveatCodeEnum_DEFINITION_DIFFERS,
+      _$backtestCaveatCodeEnum_ENTITY_RESOLUTION_CHANGED,
+      _$backtestCaveatCodeEnum_WINDOW_APPROXIMATE,
+      _$backtestCaveatCodeEnum_SMALL_SAMPLE,
+      _$backtestCaveatCodeEnum_NOT_GROUND_TRUTH,
+    ]);
 
 Serializer<BacktestCaveatCodeEnum> _$backtestCaveatCodeEnumSerializer =
     _$BacktestCaveatCodeEnumSerializer();
@@ -99,15 +99,20 @@ class _$BacktestCaveatCodeEnumSerializer
   final String wireName = 'BacktestCaveatCodeEnum';
 
   @override
-  Object serialize(Serializers serializers, BacktestCaveatCodeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BacktestCaveatCodeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BacktestCaveatCodeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BacktestCaveatCodeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BacktestCaveatCodeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BacktestCaveatCodeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BacktestCaveat extends BacktestCaveat {
@@ -122,7 +127,7 @@ class _$BacktestCaveat extends BacktestCaveat {
       (BacktestCaveatBuilder()..update(updates))._build();
 
   _$BacktestCaveat._({required this.code, required this.text, this.data})
-      : super._();
+    : super._();
   @override
   BacktestCaveat rebuild(void Function(BacktestCaveatBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -207,12 +212,19 @@ class BacktestCaveatBuilder
   _$BacktestCaveat _build() {
     _$BacktestCaveat _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BacktestCaveat._(
             code: BuiltValueNullFieldError.checkNotNull(
-                code, r'BacktestCaveat', 'code'),
+              code,
+              r'BacktestCaveat',
+              'code',
+            ),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'BacktestCaveat', 'text'),
+              text,
+              r'BacktestCaveat',
+              'text',
+            ),
             data: _data?.build(),
           );
     } catch (_) {
@@ -222,7 +234,10 @@ class BacktestCaveatBuilder
         _data?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BacktestCaveat', _$failedField, e.toString());
+          r'BacktestCaveat',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

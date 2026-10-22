@@ -26,9 +26,9 @@ abstract class DigestStatsNotableInner
 
   DigestStatsNotableInner._();
 
-  factory DigestStatsNotableInner(
-          [void updates(DigestStatsNotableInnerBuilder b)]) =
-      _$DigestStatsNotableInner;
+  factory DigestStatsNotableInner([
+    void updates(DigestStatsNotableInnerBuilder b),
+  ]) = _$DigestStatsNotableInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DigestStatsNotableInnerBuilder b) => b;
@@ -43,7 +43,7 @@ class _$DigestStatsNotableInnerSerializer
   @override
   final Iterable<Type> types = const [
     DigestStatsNotableInner,
-    _$DigestStatsNotableInner
+    _$DigestStatsNotableInner,
   ];
 
   @override
@@ -72,9 +72,11 @@ class _$DigestStatsNotableInnerSerializer
     DigestStatsNotableInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,18 +92,23 @@ class _$DigestStatsNotableInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.kind = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(DigestNotableItem)]),
-          ) as BuiltList<DigestNotableItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(DigestNotableItem),
+                    ]),
+                  )
+                  as BuiltList<DigestNotableItem>;
           result.items.replace(valueDes);
           break;
         default:

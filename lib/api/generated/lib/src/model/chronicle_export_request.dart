@@ -35,9 +35,9 @@ abstract class ChronicleExportRequest
 
   ChronicleExportRequest._();
 
-  factory ChronicleExportRequest(
-          [void updates(ChronicleExportRequestBuilder b)]) =
-      _$ChronicleExportRequest;
+  factory ChronicleExportRequest([
+    void updates(ChronicleExportRequestBuilder b),
+  ]) = _$ChronicleExportRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleExportRequestBuilder b) => b;
@@ -52,7 +52,7 @@ class _$ChronicleExportRequestSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleExportRequest,
-    _$ChronicleExportRequest
+    _$ChronicleExportRequest,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$ChronicleExportRequestSerializer
     ChronicleExportRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,34 +117,45 @@ class _$ChronicleExportRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ChronicleExportRequestFormatEnum),
-          ) as ChronicleExportRequestFormatEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ChronicleExportRequestFormatEnum,
+                    ),
+                  )
+                  as ChronicleExportRequestFormatEnum;
           result.format = valueDes;
           break;
         case r'layers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.layers.replace(valueDes);
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.to = valueDes;
           break;

@@ -155,8 +155,10 @@ class _$ExportManifestSerializer
       yield r'spec';
       yield serializers.serialize(
         object.spec,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.rowCount != null) {
@@ -169,8 +171,9 @@ class _$ExportManifestSerializer
     yield r'files';
     yield serializers.serialize(
       object.files,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ExportManifestFilesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ExportManifestFilesInner),
+      ]),
     );
     yield r'licence';
     yield serializers.serialize(
@@ -199,9 +202,11 @@ class _$ExportManifestSerializer
     ExportManifest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -217,110 +222,144 @@ class _$ExportManifestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'manifestVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ExportManifestManifestVersionEnum),
-          ) as ExportManifestManifestVersionEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExportManifestManifestVersionEnum,
+                    ),
+                  )
+                  as ExportManifestManifestVersionEnum?;
           if (valueDes == null) continue;
           result.manifestVersion = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExportManifestKindEnum),
-          ) as ExportManifestKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExportManifestKindEnum),
+                  )
+                  as ExportManifestKindEnum;
           result.kind = valueDes;
           break;
         case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExportManifestFormatEnum),
-          ) as ExportManifestFormatEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExportManifestFormatEnum),
+                  )
+                  as ExportManifestFormatEnum;
           result.format = valueDes;
           break;
         case r'instanceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.instanceId = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.createdAt = valueDes;
           break;
         case r'watermarkSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.watermarkSeq = valueDes;
           break;
         case r'atSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.atSeq = valueDes;
           break;
         case r'spec':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.spec.replace(valueDes);
           break;
         case r'rowCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.rowCount = valueDes;
           break;
         case r'files':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ExportManifestFilesInner)]),
-          ) as BuiltList<ExportManifestFilesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ExportManifestFilesInner),
+                    ]),
+                  )
+                  as BuiltList<ExportManifestFilesInner>;
           result.files.replace(valueDes);
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExportLicenceSummary),
-          ) as ExportLicenceSummary;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ExportLicenceSummary),
+                  )
+                  as ExportLicenceSummary;
           result.licence.replace(valueDes);
           break;
         case r'personalUse':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.personalUse = valueDes;
           break;
         case r'signature':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ExportManifestSignature),
-          ) as ExportManifestSignature?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExportManifestSignature,
+                    ),
+                  )
+                  as ExportManifestSignature?;
           if (valueDes == null) continue;
           result.signature.replace(valueDes);
           break;

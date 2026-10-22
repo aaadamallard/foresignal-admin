@@ -89,8 +89,9 @@ class _$InformationValueSerializer
     yield r'indicators';
     yield serializers.serialize(
       object.indicators,
-      specifiedType: const FullType(
-          BuiltList, [FullType(InformationValueIndicatorsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(InformationValueIndicatorsInner),
+      ]),
     );
   }
 
@@ -100,9 +101,11 @@ class _$InformationValueSerializer
     InformationValue object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,40 +121,48 @@ class _$InformationValueSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         case r'entropy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.entropy = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.version = valueDes;
           break;
         case r'indicators':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(InformationValueIndicatorsInner)]),
-          ) as BuiltList<InformationValueIndicatorsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(InformationValueIndicatorsInner),
+                    ]),
+                  )
+                  as BuiltList<InformationValueIndicatorsInner>;
           result.indicators.replace(valueDes);
           break;
         default:

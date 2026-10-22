@@ -12,15 +12,15 @@ class _$RecordMappingQuality extends RecordMappingQuality {
   @override
   final BuiltMap<String, JsonObject?>? extra;
 
-  factory _$RecordMappingQuality(
-          [void Function(RecordMappingQualityBuilder)? updates]) =>
-      (RecordMappingQualityBuilder()..update(updates))._build();
+  factory _$RecordMappingQuality([
+    void Function(RecordMappingQualityBuilder)? updates,
+  ]) => (RecordMappingQualityBuilder()..update(updates))._build();
 
   _$RecordMappingQuality._({this.accuracyMeters, this.extra}) : super._();
   @override
   RecordMappingQuality rebuild(
-          void Function(RecordMappingQualityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RecordMappingQualityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RecordMappingQualityBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class RecordMappingQualityBuilder
   _$RecordMappingQuality _build() {
     _$RecordMappingQuality _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecordMappingQuality._(
             accuracyMeters: accuracyMeters,
             extra: _extra?.build(),
@@ -108,7 +109,10 @@ class RecordMappingQualityBuilder
         _extra?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecordMappingQuality', _$failedField, e.toString());
+          r'RecordMappingQuality',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

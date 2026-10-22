@@ -36,12 +36,12 @@ DetectabilityMethodsEnum _$detectabilityMethodsEnumValueOf(String name) {
 
 final BuiltSet<DetectabilityMethodsEnum> _$detectabilityMethodsEnumValues =
     BuiltSet<DetectabilityMethodsEnum>(const <DetectabilityMethodsEnum>[
-  _$detectabilityMethodsEnum_captureRecapture,
-  _$detectabilityMethodsEnum_presenceProxy,
-  _$detectabilityMethodsEnum_receiverRange,
-  _$detectabilityMethodsEnum_declared,
-  _$detectabilityMethodsEnum_platformVolume,
-]);
+      _$detectabilityMethodsEnum_captureRecapture,
+      _$detectabilityMethodsEnum_presenceProxy,
+      _$detectabilityMethodsEnum_receiverRange,
+      _$detectabilityMethodsEnum_declared,
+      _$detectabilityMethodsEnum_platformVolume,
+    ]);
 
 Serializer<DetectabilityMethodsEnum> _$detectabilityMethodsEnumSerializer =
     _$DetectabilityMethodsEnumSerializer();
@@ -69,16 +69,20 @@ class _$DetectabilityMethodsEnumSerializer
   final String wireName = 'DetectabilityMethodsEnum';
 
   @override
-  Object serialize(Serializers serializers, DetectabilityMethodsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DetectabilityMethodsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DetectabilityMethodsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DetectabilityMethodsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DetectabilityMethodsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Detectability extends Detectability {
@@ -114,22 +118,22 @@ class _$Detectability extends Detectability {
   factory _$Detectability([void Function(DetectabilityBuilder)? updates]) =>
       (DetectabilityBuilder()..update(updates))._build();
 
-  _$Detectability._(
-      {required this.family,
-      this.regionCode,
-      this.cell,
-      this.band,
-      required this.at,
-      required this.p,
-      required this.lo,
-      required this.hi,
-      required this.methods,
-      required this.sources,
-      this.confidence,
-      required this.absenceOk,
-      this.reason,
-      this.estimates})
-      : super._();
+  _$Detectability._({
+    required this.family,
+    this.regionCode,
+    this.cell,
+    this.band,
+    required this.at,
+    required this.p,
+    required this.lo,
+    required this.hi,
+    required this.methods,
+    required this.sources,
+    this.confidence,
+    required this.absenceOk,
+    this.reason,
+    this.estimates,
+  }) : super._();
   @override
   Detectability rebuild(void Function(DetectabilityBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -306,25 +310,41 @@ class DetectabilityBuilder
   _$Detectability _build() {
     _$Detectability _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Detectability._(
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'Detectability', 'family'),
+              family,
+              r'Detectability',
+              'family',
+            ),
             regionCode: regionCode,
             cell: cell,
             band: band,
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'Detectability', 'at'),
+              at,
+              r'Detectability',
+              'at',
+            ),
             p: BuiltValueNullFieldError.checkNotNull(p, r'Detectability', 'p'),
             lo: BuiltValueNullFieldError.checkNotNull(
-                lo, r'Detectability', 'lo'),
+              lo,
+              r'Detectability',
+              'lo',
+            ),
             hi: BuiltValueNullFieldError.checkNotNull(
-                hi, r'Detectability', 'hi'),
+              hi,
+              r'Detectability',
+              'hi',
+            ),
             methods: methods.build(),
             sources: sources.build(),
             confidence: confidence,
             absenceOk: BuiltValueNullFieldError.checkNotNull(
-                absenceOk, r'Detectability', 'absenceOk'),
+              absenceOk,
+              r'Detectability',
+              'absenceOk',
+            ),
             reason: reason,
             estimates: _estimates?.build(),
           );
@@ -340,7 +360,10 @@ class DetectabilityBuilder
         _estimates?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Detectability', _$failedField, e.toString());
+          r'Detectability',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -11,7 +11,7 @@ const IntelligenceEventTypeEnum _$intelligenceEventTypeEnum_maritimeDisruption =
 const IntelligenceEventTypeEnum _$intelligenceEventTypeEnum_aviationAnomaly =
     const IntelligenceEventTypeEnum._('aviationAnomaly');
 const IntelligenceEventTypeEnum
-    _$intelligenceEventTypeEnum_infrastructureDisruption =
+_$intelligenceEventTypeEnum_infrastructureDisruption =
     const IntelligenceEventTypeEnum._('infrastructureDisruption');
 const IntelligenceEventTypeEnum _$intelligenceEventTypeEnum_weatherImpact =
     const IntelligenceEventTypeEnum._('weatherImpact');
@@ -41,13 +41,13 @@ IntelligenceEventTypeEnum _$intelligenceEventTypeEnumValueOf(String name) {
 
 final BuiltSet<IntelligenceEventTypeEnum> _$intelligenceEventTypeEnumValues =
     BuiltSet<IntelligenceEventTypeEnum>(const <IntelligenceEventTypeEnum>[
-  _$intelligenceEventTypeEnum_maritimeDisruption,
-  _$intelligenceEventTypeEnum_aviationAnomaly,
-  _$intelligenceEventTypeEnum_infrastructureDisruption,
-  _$intelligenceEventTypeEnum_weatherImpact,
-  _$intelligenceEventTypeEnum_seismic,
-  _$intelligenceEventTypeEnum_custom,
-]);
+      _$intelligenceEventTypeEnum_maritimeDisruption,
+      _$intelligenceEventTypeEnum_aviationAnomaly,
+      _$intelligenceEventTypeEnum_infrastructureDisruption,
+      _$intelligenceEventTypeEnum_weatherImpact,
+      _$intelligenceEventTypeEnum_seismic,
+      _$intelligenceEventTypeEnum_custom,
+    ]);
 
 const IntelligenceEventStatusEnum _$intelligenceEventStatusEnum_emerging =
     const IntelligenceEventStatusEnum._('emerging');
@@ -74,13 +74,13 @@ IntelligenceEventStatusEnum _$intelligenceEventStatusEnumValueOf(String name) {
 }
 
 final BuiltSet<IntelligenceEventStatusEnum>
-    _$intelligenceEventStatusEnumValues =
+_$intelligenceEventStatusEnumValues =
     BuiltSet<IntelligenceEventStatusEnum>(const <IntelligenceEventStatusEnum>[
-  _$intelligenceEventStatusEnum_emerging,
-  _$intelligenceEventStatusEnum_active,
-  _$intelligenceEventStatusEnum_resolved,
-  _$intelligenceEventStatusEnum_dismissed,
-]);
+      _$intelligenceEventStatusEnum_emerging,
+      _$intelligenceEventStatusEnum_active,
+      _$intelligenceEventStatusEnum_resolved,
+      _$intelligenceEventStatusEnum_dismissed,
+    ]);
 
 const IntelligenceEventOriginEnum _$intelligenceEventOriginEnum_recipe =
     const IntelligenceEventOriginEnum._('recipe');
@@ -107,21 +107,21 @@ IntelligenceEventOriginEnum _$intelligenceEventOriginEnumValueOf(String name) {
 }
 
 final BuiltSet<IntelligenceEventOriginEnum>
-    _$intelligenceEventOriginEnumValues =
+_$intelligenceEventOriginEnumValues =
     BuiltSet<IntelligenceEventOriginEnum>(const <IntelligenceEventOriginEnum>[
-  _$intelligenceEventOriginEnum_recipe,
-  _$intelligenceEventOriginEnum_analyst,
-  _$intelligenceEventOriginEnum_agent,
-  _$intelligenceEventOriginEnum_operator_,
-]);
+      _$intelligenceEventOriginEnum_recipe,
+      _$intelligenceEventOriginEnum_analyst,
+      _$intelligenceEventOriginEnum_agent,
+      _$intelligenceEventOriginEnum_operator_,
+    ]);
 
 Serializer<IntelligenceEventTypeEnum> _$intelligenceEventTypeEnumSerializer =
     _$IntelligenceEventTypeEnumSerializer();
 Serializer<IntelligenceEventStatusEnum>
-    _$intelligenceEventStatusEnumSerializer =
+_$intelligenceEventStatusEnumSerializer =
     _$IntelligenceEventStatusEnumSerializer();
 Serializer<IntelligenceEventOriginEnum>
-    _$intelligenceEventOriginEnumSerializer =
+_$intelligenceEventOriginEnumSerializer =
     _$IntelligenceEventOriginEnumSerializer();
 
 class _$IntelligenceEventTypeEnumSerializer
@@ -149,16 +149,20 @@ class _$IntelligenceEventTypeEnumSerializer
   final String wireName = 'IntelligenceEventTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelligenceEventTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelligenceEventTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelligenceEventTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelligenceEventTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelligenceEventTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelligenceEventStatusEnumSerializer
@@ -182,16 +186,20 @@ class _$IntelligenceEventStatusEnumSerializer
   final String wireName = 'IntelligenceEventStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelligenceEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelligenceEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelligenceEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelligenceEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelligenceEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelligenceEventOriginEnumSerializer
@@ -215,16 +223,20 @@ class _$IntelligenceEventOriginEnumSerializer
   final String wireName = 'IntelligenceEventOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelligenceEventOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelligenceEventOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelligenceEventOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelligenceEventOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelligenceEventOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelligenceEvent extends IntelligenceEvent {
@@ -275,35 +287,35 @@ class _$IntelligenceEvent extends IntelligenceEvent {
   @override
   final String? manifestId;
 
-  factory _$IntelligenceEvent(
-          [void Function(IntelligenceEventBuilder)? updates]) =>
-      (IntelligenceEventBuilder()..update(updates))._build();
+  factory _$IntelligenceEvent([
+    void Function(IntelligenceEventBuilder)? updates,
+  ]) => (IntelligenceEventBuilder()..update(updates))._build();
 
-  _$IntelligenceEvent._(
-      {required this.id,
-      required this.type,
-      required this.title,
-      required this.status,
-      required this.severity,
-      this.severityOverridden,
-      this.private,
-      required this.origin,
-      this.recipeId,
-      this.recipeVersion,
-      required this.detector,
-      this.mergedInto,
-      this.notes,
-      required this.version,
-      required this.createdAt,
-      required this.updatedAt,
-      required this.evidence,
-      required this.inference,
-      required this.speculation,
-      this.context,
-      this.exposure,
-      this.log,
-      this.manifestId})
-      : super._();
+  _$IntelligenceEvent._({
+    required this.id,
+    required this.type,
+    required this.title,
+    required this.status,
+    required this.severity,
+    this.severityOverridden,
+    this.private,
+    required this.origin,
+    this.recipeId,
+    this.recipeVersion,
+    required this.detector,
+    this.mergedInto,
+    this.notes,
+    required this.version,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.evidence,
+    required this.inference,
+    required this.speculation,
+    this.context,
+    this.exposure,
+    this.log,
+    this.manifestId,
+  }) : super._();
   @override
   IntelligenceEvent rebuild(void Function(IntelligenceEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -559,33 +571,61 @@ class IntelligenceEventBuilder
   _$IntelligenceEvent _build() {
     _$IntelligenceEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelligenceEvent._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'IntelligenceEvent', 'id'),
+              id,
+              r'IntelligenceEvent',
+              'id',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'IntelligenceEvent', 'type'),
+              type,
+              r'IntelligenceEvent',
+              'type',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'IntelligenceEvent', 'title'),
+              title,
+              r'IntelligenceEvent',
+              'title',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'IntelligenceEvent', 'status'),
+              status,
+              r'IntelligenceEvent',
+              'status',
+            ),
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'IntelligenceEvent', 'severity'),
+              severity,
+              r'IntelligenceEvent',
+              'severity',
+            ),
             severityOverridden: severityOverridden,
             private: private,
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'IntelligenceEvent', 'origin'),
+              origin,
+              r'IntelligenceEvent',
+              'origin',
+            ),
             recipeId: recipeId,
             recipeVersion: recipeVersion,
             detector: detector.build(),
             mergedInto: mergedInto,
             notes: notes,
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'IntelligenceEvent', 'version'),
+              version,
+              r'IntelligenceEvent',
+              'version',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'IntelligenceEvent', 'createdAt'),
+              createdAt,
+              r'IntelligenceEvent',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'IntelligenceEvent', 'updatedAt'),
+              updatedAt,
+              r'IntelligenceEvent',
+              'updatedAt',
+            ),
             evidence: evidence.build(),
             inference: inference.build(),
             speculation: speculation.build(),
@@ -614,7 +654,10 @@ class IntelligenceEventBuilder
         _log?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelligenceEvent', _$failedField, e.toString());
+          r'IntelligenceEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

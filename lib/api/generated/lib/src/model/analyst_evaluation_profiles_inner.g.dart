@@ -15,7 +15,7 @@ class _$AnalystEvaluationProfilesInner extends AnalystEvaluationProfilesInner {
   final num? noopShare;
   @override
   final BuiltList<AnalystEvaluationProfilesInnerTokensPerDayInner>?
-      tokensPerDay;
+  tokensPerDay;
   @override
   final num? proposalAcceptanceRate;
   @override
@@ -27,25 +27,25 @@ class _$AnalystEvaluationProfilesInner extends AnalystEvaluationProfilesInner {
   @override
   final num? citationsDroppedPerRun;
 
-  factory _$AnalystEvaluationProfilesInner(
-          [void Function(AnalystEvaluationProfilesInnerBuilder)? updates]) =>
-      (AnalystEvaluationProfilesInnerBuilder()..update(updates))._build();
+  factory _$AnalystEvaluationProfilesInner([
+    void Function(AnalystEvaluationProfilesInnerBuilder)? updates,
+  ]) => (AnalystEvaluationProfilesInnerBuilder()..update(updates))._build();
 
-  _$AnalystEvaluationProfilesInner._(
-      {required this.profileId,
-      required this.runsByStatus,
-      this.noopShare,
-      this.tokensPerDay,
-      this.proposalAcceptanceRate,
-      this.notesDismissedShare,
-      this.usefulRatio,
-      this.wrongRatio,
-      this.citationsDroppedPerRun})
-      : super._();
+  _$AnalystEvaluationProfilesInner._({
+    required this.profileId,
+    required this.runsByStatus,
+    this.noopShare,
+    this.tokensPerDay,
+    this.proposalAcceptanceRate,
+    this.notesDismissedShare,
+    this.usefulRatio,
+    this.wrongRatio,
+    this.citationsDroppedPerRun,
+  }) : super._();
   @override
   AnalystEvaluationProfilesInner rebuild(
-          void Function(AnalystEvaluationProfilesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalystEvaluationProfilesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalystEvaluationProfilesInnerBuilder toBuilder() =>
@@ -100,8 +100,10 @@ class _$AnalystEvaluationProfilesInner extends AnalystEvaluationProfilesInner {
 
 class AnalystEvaluationProfilesInnerBuilder
     implements
-        Builder<AnalystEvaluationProfilesInner,
-            AnalystEvaluationProfilesInnerBuilder> {
+        Builder<
+          AnalystEvaluationProfilesInner,
+          AnalystEvaluationProfilesInnerBuilder
+        > {
   _$AnalystEvaluationProfilesInner? _$v;
 
   String? _profileId;
@@ -120,12 +122,11 @@ class AnalystEvaluationProfilesInnerBuilder
 
   ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>? _tokensPerDay;
   ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>
-      get tokensPerDay => _$this._tokensPerDay ??=
-          ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>();
+  get tokensPerDay => _$this._tokensPerDay ??=
+      ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>();
   set tokensPerDay(
-          ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>?
-              tokensPerDay) =>
-      _$this._tokensPerDay = tokensPerDay;
+    ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>? tokensPerDay,
+  ) => _$this._tokensPerDay = tokensPerDay;
 
   num? _proposalAcceptanceRate;
   num? get proposalAcceptanceRate => _$this._proposalAcceptanceRate;
@@ -187,10 +188,14 @@ class AnalystEvaluationProfilesInnerBuilder
   _$AnalystEvaluationProfilesInner _build() {
     _$AnalystEvaluationProfilesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystEvaluationProfilesInner._(
             profileId: BuiltValueNullFieldError.checkNotNull(
-                profileId, r'AnalystEvaluationProfilesInner', 'profileId'),
+              profileId,
+              r'AnalystEvaluationProfilesInner',
+              'profileId',
+            ),
             runsByStatus: runsByStatus.build(),
             noopShare: noopShare,
             tokensPerDay: _tokensPerDay?.build(),
@@ -210,7 +215,10 @@ class AnalystEvaluationProfilesInnerBuilder
         _tokensPerDay?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystEvaluationProfilesInner', _$failedField, e.toString());
+          r'AnalystEvaluationProfilesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

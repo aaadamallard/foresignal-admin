@@ -14,17 +14,19 @@ class _$CorrelationRecipeCreate extends CorrelationRecipeCreate {
   @override
   final bool? enabled;
 
-  factory _$CorrelationRecipeCreate(
-          [void Function(CorrelationRecipeCreateBuilder)? updates]) =>
-      (CorrelationRecipeCreateBuilder()..update(updates))._build();
+  factory _$CorrelationRecipeCreate([
+    void Function(CorrelationRecipeCreateBuilder)? updates,
+  ]) => (CorrelationRecipeCreateBuilder()..update(updates))._build();
 
-  _$CorrelationRecipeCreate._(
-      {required this.id, required this.definition, this.enabled})
-      : super._();
+  _$CorrelationRecipeCreate._({
+    required this.id,
+    required this.definition,
+    this.enabled,
+  }) : super._();
   @override
   CorrelationRecipeCreate rebuild(
-          void Function(CorrelationRecipeCreateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeCreateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeCreateBuilder toBuilder() =>
@@ -109,10 +111,14 @@ class CorrelationRecipeCreateBuilder
   _$CorrelationRecipeCreate _build() {
     _$CorrelationRecipeCreate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorrelationRecipeCreate._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CorrelationRecipeCreate', 'id'),
+              id,
+              r'CorrelationRecipeCreate',
+              'id',
+            ),
             definition: definition.build(),
             enabled: enabled,
           );
@@ -123,7 +129,10 @@ class CorrelationRecipeCreateBuilder
         definition.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorrelationRecipeCreate', _$failedField, e.toString());
+          r'CorrelationRecipeCreate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

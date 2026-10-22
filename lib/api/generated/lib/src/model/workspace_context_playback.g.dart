@@ -7,14 +7,15 @@ part of 'workspace_context_playback.dart';
 // **************************************************************************
 
 const WorkspaceContextPlaybackStateEnum
-    _$workspaceContextPlaybackStateEnum_playing =
+_$workspaceContextPlaybackStateEnum_playing =
     const WorkspaceContextPlaybackStateEnum._('playing');
 const WorkspaceContextPlaybackStateEnum
-    _$workspaceContextPlaybackStateEnum_paused =
+_$workspaceContextPlaybackStateEnum_paused =
     const WorkspaceContextPlaybackStateEnum._('paused');
 
 WorkspaceContextPlaybackStateEnum _$workspaceContextPlaybackStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'playing':
       return _$workspaceContextPlaybackStateEnum_playing;
@@ -26,14 +27,16 @@ WorkspaceContextPlaybackStateEnum _$workspaceContextPlaybackStateEnumValueOf(
 }
 
 final BuiltSet<WorkspaceContextPlaybackStateEnum>
-    _$workspaceContextPlaybackStateEnumValues = BuiltSet<
-        WorkspaceContextPlaybackStateEnum>(const <WorkspaceContextPlaybackStateEnum>[
-  _$workspaceContextPlaybackStateEnum_playing,
-  _$workspaceContextPlaybackStateEnum_paused,
-]);
+_$workspaceContextPlaybackStateEnumValues =
+    BuiltSet<WorkspaceContextPlaybackStateEnum>(
+      const <WorkspaceContextPlaybackStateEnum>[
+        _$workspaceContextPlaybackStateEnum_playing,
+        _$workspaceContextPlaybackStateEnum_paused,
+      ],
+    );
 
 Serializer<WorkspaceContextPlaybackStateEnum>
-    _$workspaceContextPlaybackStateEnumSerializer =
+_$workspaceContextPlaybackStateEnumSerializer =
     _$WorkspaceContextPlaybackStateEnumSerializer();
 
 class _$WorkspaceContextPlaybackStateEnumSerializer
@@ -54,16 +57,19 @@ class _$WorkspaceContextPlaybackStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, WorkspaceContextPlaybackStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    WorkspaceContextPlaybackStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WorkspaceContextPlaybackStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WorkspaceContextPlaybackStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WorkspaceContextPlaybackStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WorkspaceContextPlayback extends WorkspaceContextPlayback {
@@ -72,15 +78,15 @@ class _$WorkspaceContextPlayback extends WorkspaceContextPlayback {
   @override
   final num? rate;
 
-  factory _$WorkspaceContextPlayback(
-          [void Function(WorkspaceContextPlaybackBuilder)? updates]) =>
-      (WorkspaceContextPlaybackBuilder()..update(updates))._build();
+  factory _$WorkspaceContextPlayback([
+    void Function(WorkspaceContextPlaybackBuilder)? updates,
+  ]) => (WorkspaceContextPlaybackBuilder()..update(updates))._build();
 
   _$WorkspaceContextPlayback._({required this.state, this.rate}) : super._();
   @override
   WorkspaceContextPlayback rebuild(
-          void Function(WorkspaceContextPlaybackBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WorkspaceContextPlaybackBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WorkspaceContextPlaybackBuilder toBuilder() =>
@@ -153,10 +159,14 @@ class WorkspaceContextPlaybackBuilder
   WorkspaceContextPlayback build() => _build();
 
   _$WorkspaceContextPlayback _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$WorkspaceContextPlayback._(
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'WorkspaceContextPlayback', 'state'),
+            state,
+            r'WorkspaceContextPlayback',
+            'state',
+          ),
           rate: rate,
         );
     replace(_$result);

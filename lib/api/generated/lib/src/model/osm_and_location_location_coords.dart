@@ -20,8 +20,10 @@ part 'osm_and_location_location_coords.g.dart';
 @BuiltValue()
 abstract class OsmAndLocationLocationCoords
     implements
-        Built<OsmAndLocationLocationCoords,
-            OsmAndLocationLocationCoordsBuilder> {
+        Built<
+          OsmAndLocationLocationCoords,
+          OsmAndLocationLocationCoordsBuilder
+        > {
   @BuiltValueField(wireName: r'latitude')
   num get latitude;
 
@@ -43,9 +45,9 @@ abstract class OsmAndLocationLocationCoords
 
   OsmAndLocationLocationCoords._();
 
-  factory OsmAndLocationLocationCoords(
-          [void updates(OsmAndLocationLocationCoordsBuilder b)]) =
-      _$OsmAndLocationLocationCoords;
+  factory OsmAndLocationLocationCoords([
+    void updates(OsmAndLocationLocationCoordsBuilder b),
+  ]) = _$OsmAndLocationLocationCoords;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OsmAndLocationLocationCoordsBuilder b) => b;
@@ -60,7 +62,7 @@ class _$OsmAndLocationLocationCoordsSerializer
   @override
   final Iterable<Type> types = const [
     OsmAndLocationLocationCoords,
-    _$OsmAndLocationLocationCoords
+    _$OsmAndLocationLocationCoords,
   ];
 
   @override
@@ -117,9 +119,11 @@ class _$OsmAndLocationLocationCoordsSerializer
     OsmAndLocationLocationCoords object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,48 +139,54 @@ class _$OsmAndLocationLocationCoordsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'latitude':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.latitude = valueDes;
           break;
         case r'longitude':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.longitude = valueDes;
           break;
         case r'speed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.speed = valueDes;
           break;
         case r'heading':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.heading = valueDes;
           break;
         case r'accuracy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.accuracy = valueDes;
           break;
         case r'altitude':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.altitude = valueDes;
           break;

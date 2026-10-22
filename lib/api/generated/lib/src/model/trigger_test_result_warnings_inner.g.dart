@@ -12,17 +12,18 @@ class _$TriggerTestResultWarningsInner extends TriggerTestResultWarningsInner {
   @override
   final String message;
 
-  factory _$TriggerTestResultWarningsInner(
-          [void Function(TriggerTestResultWarningsInnerBuilder)? updates]) =>
-      (TriggerTestResultWarningsInnerBuilder()..update(updates))._build();
+  factory _$TriggerTestResultWarningsInner([
+    void Function(TriggerTestResultWarningsInnerBuilder)? updates,
+  ]) => (TriggerTestResultWarningsInnerBuilder()..update(updates))._build();
 
-  _$TriggerTestResultWarningsInner._(
-      {required this.code, required this.message})
-      : super._();
+  _$TriggerTestResultWarningsInner._({
+    required this.code,
+    required this.message,
+  }) : super._();
   @override
   TriggerTestResultWarningsInner rebuild(
-          void Function(TriggerTestResultWarningsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TriggerTestResultWarningsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TriggerTestResultWarningsInnerBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$TriggerTestResultWarningsInner extends TriggerTestResultWarningsInner {
 
 class TriggerTestResultWarningsInnerBuilder
     implements
-        Builder<TriggerTestResultWarningsInner,
-            TriggerTestResultWarningsInnerBuilder> {
+        Builder<
+          TriggerTestResultWarningsInner,
+          TriggerTestResultWarningsInnerBuilder
+        > {
   _$TriggerTestResultWarningsInner? _$v;
 
   String? _code;
@@ -96,12 +99,19 @@ class TriggerTestResultWarningsInnerBuilder
   TriggerTestResultWarningsInner build() => _build();
 
   _$TriggerTestResultWarningsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$TriggerTestResultWarningsInner._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'TriggerTestResultWarningsInner', 'code'),
+            code,
+            r'TriggerTestResultWarningsInner',
+            'code',
+          ),
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'TriggerTestResultWarningsInner', 'message'),
+            message,
+            r'TriggerTestResultWarningsInner',
+            'message',
+          ),
         );
     replace(_$result);
     return _$result;

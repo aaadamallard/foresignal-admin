@@ -27,15 +27,15 @@ ModelDisagreementFieldsEnum _$modelDisagreementFieldsEnumValueOf(String name) {
 }
 
 final BuiltSet<ModelDisagreementFieldsEnum>
-    _$modelDisagreementFieldsEnumValues =
+_$modelDisagreementFieldsEnumValues =
     BuiltSet<ModelDisagreementFieldsEnum>(const <ModelDisagreementFieldsEnum>[
-  _$modelDisagreementFieldsEnum_gust,
-  _$modelDisagreementFieldsEnum_precip24h,
-  _$modelDisagreementFieldsEnum_t2mMax,
-]);
+      _$modelDisagreementFieldsEnum_gust,
+      _$modelDisagreementFieldsEnum_precip24h,
+      _$modelDisagreementFieldsEnum_t2mMax,
+    ]);
 
 Serializer<ModelDisagreementFieldsEnum>
-    _$modelDisagreementFieldsEnumSerializer =
+_$modelDisagreementFieldsEnumSerializer =
     _$ModelDisagreementFieldsEnumSerializer();
 
 class _$ModelDisagreementFieldsEnumSerializer
@@ -57,16 +57,20 @@ class _$ModelDisagreementFieldsEnumSerializer
   final String wireName = 'ModelDisagreementFieldsEnum';
 
   @override
-  Object serialize(Serializers serializers, ModelDisagreementFieldsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ModelDisagreementFieldsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ModelDisagreementFieldsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ModelDisagreementFieldsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ModelDisagreementFieldsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ModelDisagreement extends ModelDisagreement {
@@ -77,13 +81,15 @@ class _$ModelDisagreement extends ModelDisagreement {
   @override
   final BuiltList<String> models;
 
-  factory _$ModelDisagreement(
-          [void Function(ModelDisagreementBuilder)? updates]) =>
-      (ModelDisagreementBuilder()..update(updates))._build();
+  factory _$ModelDisagreement([
+    void Function(ModelDisagreementBuilder)? updates,
+  ]) => (ModelDisagreementBuilder()..update(updates))._build();
 
-  _$ModelDisagreement._(
-      {required this.fields, required this.spread, required this.models})
-      : super._();
+  _$ModelDisagreement._({
+    required this.fields,
+    required this.spread,
+    required this.models,
+  }) : super._();
   @override
   ModelDisagreement rebuild(void Function(ModelDisagreementBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -171,7 +177,8 @@ class ModelDisagreementBuilder
   _$ModelDisagreement _build() {
     _$ModelDisagreement _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ModelDisagreement._(
             fields: fields.build(),
             spread: spread.build(),
@@ -188,7 +195,10 @@ class ModelDisagreementBuilder
         models.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ModelDisagreement', _$failedField, e.toString());
+          r'ModelDisagreement',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -22,8 +22,10 @@ part 'native_push_payload_fcm_message_data.g.dart';
 @BuiltValue()
 abstract class NativePushPayloadFcmMessageData
     implements
-        Built<NativePushPayloadFcmMessageData,
-            NativePushPayloadFcmMessageDataBuilder> {
+        Built<
+          NativePushPayloadFcmMessageData,
+          NativePushPayloadFcmMessageDataBuilder
+        > {
   @BuiltValueField(wireName: r'v')
   String? get v;
 
@@ -51,9 +53,9 @@ abstract class NativePushPayloadFcmMessageData
 
   NativePushPayloadFcmMessageData._();
 
-  factory NativePushPayloadFcmMessageData(
-          [void updates(NativePushPayloadFcmMessageDataBuilder b)]) =
-      _$NativePushPayloadFcmMessageData;
+  factory NativePushPayloadFcmMessageData([
+    void updates(NativePushPayloadFcmMessageDataBuilder b),
+  ]) = _$NativePushPayloadFcmMessageData;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NativePushPayloadFcmMessageDataBuilder b) => b;
@@ -68,7 +70,7 @@ class _$NativePushPayloadFcmMessageDataSerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadFcmMessageData,
-    _$NativePushPayloadFcmMessageData
+    _$NativePushPayloadFcmMessageData,
   ];
 
   @override
@@ -143,9 +145,11 @@ class _$NativePushPayloadFcmMessageDataSerializer
     NativePushPayloadFcmMessageData object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,66 +165,82 @@ class _$NativePushPayloadFcmMessageDataSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'v':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.v = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.id = valueDes;
           break;
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.a = valueDes;
           break;
         case r's':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.s = valueDes;
           break;
         case r'ev':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ev = valueDes;
           break;
         case r'l':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.l = valueDes;
           break;
         case r't':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.t = valueDes;
           break;
         case r'c':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.c = valueDes;
           break;

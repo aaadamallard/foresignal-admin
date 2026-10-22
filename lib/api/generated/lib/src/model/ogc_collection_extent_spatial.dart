@@ -26,9 +26,9 @@ abstract class OgcCollectionExtentSpatial
 
   OgcCollectionExtentSpatial._();
 
-  factory OgcCollectionExtentSpatial(
-          [void updates(OgcCollectionExtentSpatialBuilder b)]) =
-      _$OgcCollectionExtentSpatial;
+  factory OgcCollectionExtentSpatial([
+    void updates(OgcCollectionExtentSpatialBuilder b),
+  ]) = _$OgcCollectionExtentSpatial;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCollectionExtentSpatialBuilder b) => b;
@@ -43,7 +43,7 @@ class _$OgcCollectionExtentSpatialSerializer
   @override
   final Iterable<Type> types = const [
     OgcCollectionExtentSpatial,
-    _$OgcCollectionExtentSpatial
+    _$OgcCollectionExtentSpatial,
   ];
 
   @override
@@ -59,7 +59,7 @@ class _$OgcCollectionExtentSpatialSerializer
       yield serializers.serialize(
         object.bbox,
         specifiedType: const FullType(BuiltList, [
-          FullType(BuiltList, [FullType(num)])
+          FullType(BuiltList, [FullType(num)]),
         ]),
       );
     }
@@ -78,9 +78,11 @@ class _$OgcCollectionExtentSpatialSerializer
     OgcCollectionExtentSpatial object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,20 +98,24 @@ class _$OgcCollectionExtentSpatialSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'bbox':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(BuiltList, [FullType(num)])
-            ]),
-          ) as BuiltList<BuiltList<num>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BuiltList, [FullType(num)]),
+                    ]),
+                  )
+                  as BuiltList<BuiltList<num>>?;
           if (valueDes == null) continue;
           result.bbox.replace(valueDes);
           break;
         case r'crs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.crs = valueDes;
           break;

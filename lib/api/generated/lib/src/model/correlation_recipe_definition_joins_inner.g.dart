@@ -7,14 +7,14 @@ part of 'correlation_recipe_definition_joins_inner.dart';
 // **************************************************************************
 
 const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
-    _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country =
+_$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country =
     const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum._('country');
 const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
-    _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1 =
+_$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1 =
     const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum._('admin1');
 
 CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
-    _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValueOf(String name) {
+_$correlationRecipeDefinitionJoinsInnerSameRegionEnumValueOf(String name) {
   switch (name) {
     case 'country':
       return _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country;
@@ -26,24 +26,26 @@ CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
 }
 
 final BuiltSet<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>
-    _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValues = BuiltSet<
-        CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>(const <CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>[
-  _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country,
-  _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1,
-]);
+_$correlationRecipeDefinitionJoinsInnerSameRegionEnumValues =
+    BuiltSet<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>(
+      const <CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>[
+        _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country,
+        _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1,
+      ],
+    );
 
 const CorrelationRecipeDefinitionJoinsInnerRoleEnum
-    _$correlationRecipeDefinitionJoinsInnerRoleEnum_supporting =
+_$correlationRecipeDefinitionJoinsInnerRoleEnum_supporting =
     const CorrelationRecipeDefinitionJoinsInnerRoleEnum._('supporting');
 const CorrelationRecipeDefinitionJoinsInnerRoleEnum
-    _$correlationRecipeDefinitionJoinsInnerRoleEnum_contradicting =
+_$correlationRecipeDefinitionJoinsInnerRoleEnum_contradicting =
     const CorrelationRecipeDefinitionJoinsInnerRoleEnum._('contradicting');
 const CorrelationRecipeDefinitionJoinsInnerRoleEnum
-    _$correlationRecipeDefinitionJoinsInnerRoleEnum_context =
+_$correlationRecipeDefinitionJoinsInnerRoleEnum_context =
     const CorrelationRecipeDefinitionJoinsInnerRoleEnum._('context');
 
 CorrelationRecipeDefinitionJoinsInnerRoleEnum
-    _$correlationRecipeDefinitionJoinsInnerRoleEnumValueOf(String name) {
+_$correlationRecipeDefinitionJoinsInnerRoleEnumValueOf(String name) {
   switch (name) {
     case 'supporting':
       return _$correlationRecipeDefinitionJoinsInnerRoleEnum_supporting;
@@ -57,24 +59,27 @@ CorrelationRecipeDefinitionJoinsInnerRoleEnum
 }
 
 final BuiltSet<CorrelationRecipeDefinitionJoinsInnerRoleEnum>
-    _$correlationRecipeDefinitionJoinsInnerRoleEnumValues = BuiltSet<
-        CorrelationRecipeDefinitionJoinsInnerRoleEnum>(const <CorrelationRecipeDefinitionJoinsInnerRoleEnum>[
-  _$correlationRecipeDefinitionJoinsInnerRoleEnum_supporting,
-  _$correlationRecipeDefinitionJoinsInnerRoleEnum_contradicting,
-  _$correlationRecipeDefinitionJoinsInnerRoleEnum_context,
-]);
+_$correlationRecipeDefinitionJoinsInnerRoleEnumValues =
+    BuiltSet<CorrelationRecipeDefinitionJoinsInnerRoleEnum>(
+      const <CorrelationRecipeDefinitionJoinsInnerRoleEnum>[
+        _$correlationRecipeDefinitionJoinsInnerRoleEnum_supporting,
+        _$correlationRecipeDefinitionJoinsInnerRoleEnum_contradicting,
+        _$correlationRecipeDefinitionJoinsInnerRoleEnum_context,
+      ],
+    );
 
 Serializer<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>
-    _$correlationRecipeDefinitionJoinsInnerSameRegionEnumSerializer =
+_$correlationRecipeDefinitionJoinsInnerSameRegionEnumSerializer =
     _$CorrelationRecipeDefinitionJoinsInnerSameRegionEnumSerializer();
 Serializer<CorrelationRecipeDefinitionJoinsInnerRoleEnum>
-    _$correlationRecipeDefinitionJoinsInnerRoleEnumSerializer =
+_$correlationRecipeDefinitionJoinsInnerRoleEnumSerializer =
     _$CorrelationRecipeDefinitionJoinsInnerRoleEnumSerializer();
 
 class _$CorrelationRecipeDefinitionJoinsInnerSameRegionEnumSerializer
     implements
         PrimitiveSerializer<
-            CorrelationRecipeDefinitionJoinsInnerSameRegionEnum> {
+          CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'country': 'country',
     'admin1': 'admin1',
@@ -86,23 +91,26 @@ class _$CorrelationRecipeDefinitionJoinsInnerSameRegionEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
+    CorrelationRecipeDefinitionJoinsInnerSameRegionEnum,
   ];
   @override
   final String wireName = 'CorrelationRecipeDefinitionJoinsInnerSameRegionEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          CorrelationRecipeDefinitionJoinsInnerSameRegionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CorrelationRecipeDefinitionJoinsInnerSameRegionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CorrelationRecipeDefinitionJoinsInnerSameRegionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CorrelationRecipeDefinitionJoinsInnerSameRegionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CorrelationRecipeDefinitionJoinsInnerSameRegionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CorrelationRecipeDefinitionJoinsInnerRoleEnumSerializer
@@ -121,23 +129,26 @@ class _$CorrelationRecipeDefinitionJoinsInnerRoleEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    CorrelationRecipeDefinitionJoinsInnerRoleEnum
+    CorrelationRecipeDefinitionJoinsInnerRoleEnum,
   ];
   @override
   final String wireName = 'CorrelationRecipeDefinitionJoinsInnerRoleEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          CorrelationRecipeDefinitionJoinsInnerRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CorrelationRecipeDefinitionJoinsInnerRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CorrelationRecipeDefinitionJoinsInnerRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CorrelationRecipeDefinitionJoinsInnerRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CorrelationRecipeDefinitionJoinsInnerRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CorrelationRecipeDefinitionJoinsInner
@@ -163,29 +174,27 @@ class _$CorrelationRecipeDefinitionJoinsInner
   @override
   final num? weight;
 
-  factory _$CorrelationRecipeDefinitionJoinsInner(
-          [void Function(CorrelationRecipeDefinitionJoinsInnerBuilder)?
-              updates]) =>
-      (CorrelationRecipeDefinitionJoinsInnerBuilder()..update(updates))
-          ._build();
+  factory _$CorrelationRecipeDefinitionJoinsInner([
+    void Function(CorrelationRecipeDefinitionJoinsInnerBuilder)? updates,
+  ]) => (CorrelationRecipeDefinitionJoinsInnerBuilder()..update(updates))
+      ._build();
 
-  _$CorrelationRecipeDefinitionJoinsInner._(
-      {this.kinds,
-      this.conditions,
-      this.withinKm,
-      this.sameRegion,
-      this.sameEntity,
-      this.sharedAttribute,
-      this.window,
-      this.role,
-      this.signalFamily,
-      this.weight})
-      : super._();
+  _$CorrelationRecipeDefinitionJoinsInner._({
+    this.kinds,
+    this.conditions,
+    this.withinKm,
+    this.sameRegion,
+    this.sameEntity,
+    this.sharedAttribute,
+    this.window,
+    this.role,
+    this.signalFamily,
+    this.weight,
+  }) : super._();
   @override
   CorrelationRecipeDefinitionJoinsInner rebuild(
-          void Function(CorrelationRecipeDefinitionJoinsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeDefinitionJoinsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeDefinitionJoinsInnerBuilder toBuilder() =>
@@ -227,7 +236,8 @@ class _$CorrelationRecipeDefinitionJoinsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CorrelationRecipeDefinitionJoinsInner')
+            r'CorrelationRecipeDefinitionJoinsInner',
+          )
           ..add('kinds', kinds)
           ..add('conditions', conditions)
           ..add('withinKm', withinKm)
@@ -244,8 +254,10 @@ class _$CorrelationRecipeDefinitionJoinsInner
 
 class CorrelationRecipeDefinitionJoinsInnerBuilder
     implements
-        Builder<CorrelationRecipeDefinitionJoinsInner,
-            CorrelationRecipeDefinitionJoinsInnerBuilder> {
+        Builder<
+          CorrelationRecipeDefinitionJoinsInner,
+          CorrelationRecipeDefinitionJoinsInnerBuilder
+        > {
   _$CorrelationRecipeDefinitionJoinsInner? _$v;
 
   ListBuilder<String>? _kinds;
@@ -266,8 +278,8 @@ class CorrelationRecipeDefinitionJoinsInnerBuilder
   CorrelationRecipeDefinitionJoinsInnerSameRegionEnum? get sameRegion =>
       _$this._sameRegion;
   set sameRegion(
-          CorrelationRecipeDefinitionJoinsInnerSameRegionEnum? sameRegion) =>
-      _$this._sameRegion = sameRegion;
+    CorrelationRecipeDefinitionJoinsInnerSameRegionEnum? sameRegion,
+  ) => _$this._sameRegion = sameRegion;
 
   bool? _sameEntity;
   bool? get sameEntity => _$this._sameEntity;
@@ -326,7 +338,8 @@ class CorrelationRecipeDefinitionJoinsInnerBuilder
 
   @override
   void update(
-      void Function(CorrelationRecipeDefinitionJoinsInnerBuilder)? updates) {
+    void Function(CorrelationRecipeDefinitionJoinsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -336,7 +349,8 @@ class CorrelationRecipeDefinitionJoinsInnerBuilder
   _$CorrelationRecipeDefinitionJoinsInner _build() {
     _$CorrelationRecipeDefinitionJoinsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CorrelationRecipeDefinitionJoinsInner._(
             kinds: _kinds?.build(),
             conditions: _conditions?.build(),
@@ -361,9 +375,10 @@ class CorrelationRecipeDefinitionJoinsInnerBuilder
         _window?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CorrelationRecipeDefinitionJoinsInner',
-            _$failedField,
-            e.toString());
+          r'CorrelationRecipeDefinitionJoinsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

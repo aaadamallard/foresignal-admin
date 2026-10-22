@@ -48,8 +48,9 @@ abstract class InteractiveChatConfig
 
   InteractiveChatConfig._();
 
-  factory InteractiveChatConfig(
-      [void updates(InteractiveChatConfigBuilder b)]) = _$InteractiveChatConfig;
+  factory InteractiveChatConfig([
+    void updates(InteractiveChatConfigBuilder b),
+  ]) = _$InteractiveChatConfig;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InteractiveChatConfigBuilder b) => b;
@@ -64,7 +65,7 @@ class _$InteractiveChatConfigSerializer
   @override
   final Iterable<Type> types = const [
     InteractiveChatConfig,
-    _$InteractiveChatConfig
+    _$InteractiveChatConfig,
   ];
 
   @override
@@ -125,9 +126,11 @@ class _$InteractiveChatConfigSerializer
     InteractiveChatConfig object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -143,51 +146,64 @@ class _$InteractiveChatConfigSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'interactive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.interactive = valueDes;
           break;
         case r'allowedChats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(AllowedChat)]),
-          ) as BuiltList<AllowedChat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AllowedChat),
+                    ]),
+                  )
+                  as BuiltList<AllowedChat>?;
           if (valueDes == null) continue;
           result.allowedChats.replace(valueDes);
           break;
         case r'askRateLimitPerHour':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.askRateLimitPerHour = valueDes;
           break;
         case r'commandRateLimit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.commandRateLimit = valueDes;
           break;
         case r'takeOverWebhook':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.takeOverWebhook = valueDes;
           break;
         case r'discoveryMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.discoveryMode = valueDes;
           break;

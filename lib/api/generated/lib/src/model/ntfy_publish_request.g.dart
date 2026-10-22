@@ -20,22 +20,22 @@ class _$NtfyPublishRequest extends NtfyPublishRequest {
   @override
   final String? click;
 
-  factory _$NtfyPublishRequest(
-          [void Function(NtfyPublishRequestBuilder)? updates]) =>
-      (NtfyPublishRequestBuilder()..update(updates))._build();
+  factory _$NtfyPublishRequest([
+    void Function(NtfyPublishRequestBuilder)? updates,
+  ]) => (NtfyPublishRequestBuilder()..update(updates))._build();
 
-  _$NtfyPublishRequest._(
-      {required this.topic,
-      this.message,
-      this.title,
-      this.priority,
-      this.tags,
-      this.click})
-      : super._();
+  _$NtfyPublishRequest._({
+    required this.topic,
+    this.message,
+    this.title,
+    this.priority,
+    this.tags,
+    this.click,
+  }) : super._();
   @override
   NtfyPublishRequest rebuild(
-          void Function(NtfyPublishRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NtfyPublishRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NtfyPublishRequestBuilder toBuilder() =>
@@ -141,10 +141,14 @@ class NtfyPublishRequestBuilder
   _$NtfyPublishRequest _build() {
     _$NtfyPublishRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NtfyPublishRequest._(
             topic: BuiltValueNullFieldError.checkNotNull(
-                topic, r'NtfyPublishRequest', 'topic'),
+              topic,
+              r'NtfyPublishRequest',
+              'topic',
+            ),
             message: message,
             title: title,
             priority: priority,
@@ -158,7 +162,10 @@ class NtfyPublishRequestBuilder
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NtfyPublishRequest', _$failedField, e.toString());
+          r'NtfyPublishRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

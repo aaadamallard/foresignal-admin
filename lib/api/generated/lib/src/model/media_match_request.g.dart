@@ -14,12 +14,12 @@ class _$MediaMatchRequest extends MediaMatchRequest {
   @override
   final int? limit;
 
-  factory _$MediaMatchRequest(
-          [void Function(MediaMatchRequestBuilder)? updates]) =>
-      (MediaMatchRequestBuilder()..update(updates))._build();
+  factory _$MediaMatchRequest([
+    void Function(MediaMatchRequestBuilder)? updates,
+  ]) => (MediaMatchRequestBuilder()..update(updates))._build();
 
   _$MediaMatchRequest._({required this.pdq, this.maxDistance, this.limit})
-      : super._();
+    : super._();
   @override
   MediaMatchRequest rebuild(void Function(MediaMatchRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -102,10 +102,14 @@ class MediaMatchRequestBuilder
   MediaMatchRequest build() => _build();
 
   _$MediaMatchRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MediaMatchRequest._(
           pdq: BuiltValueNullFieldError.checkNotNull(
-              pdq, r'MediaMatchRequest', 'pdq'),
+            pdq,
+            r'MediaMatchRequest',
+            'pdq',
+          ),
           maxDistance: maxDistance,
           limit: limit,
         );

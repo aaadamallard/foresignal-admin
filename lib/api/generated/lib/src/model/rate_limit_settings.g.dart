@@ -22,19 +22,19 @@ class _$RateLimitSettings extends RateLimitSettings {
   @override
   final int? metricsPerMinute;
 
-  factory _$RateLimitSettings(
-          [void Function(RateLimitSettingsBuilder)? updates]) =>
-      (RateLimitSettingsBuilder()..update(updates))._build();
+  factory _$RateLimitSettings([
+    void Function(RateLimitSettingsBuilder)? updates,
+  ]) => (RateLimitSettingsBuilder()..update(updates))._build();
 
-  _$RateLimitSettings._(
-      {this.read,
-      this.tiles,
-      this.stream,
-      this.expensive,
-      this.write,
-      this.anonymous,
-      this.metricsPerMinute})
-      : super._();
+  _$RateLimitSettings._({
+    this.read,
+    this.tiles,
+    this.stream,
+    this.expensive,
+    this.write,
+    this.anonymous,
+    this.metricsPerMinute,
+  }) : super._();
   @override
   RateLimitSettings rebuild(void Function(RateLimitSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -153,7 +153,8 @@ class RateLimitSettingsBuilder
   _$RateLimitSettings _build() {
     _$RateLimitSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RateLimitSettings._(
             read: read,
             tiles: tiles,
@@ -170,7 +171,10 @@ class RateLimitSettingsBuilder
         _stream?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RateLimitSettings', _$failedField, e.toString());
+          r'RateLimitSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

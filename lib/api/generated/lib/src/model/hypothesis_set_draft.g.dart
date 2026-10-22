@@ -14,7 +14,8 @@ const HypothesisSetDraftEffortEnum _$hypothesisSetDraftEffortEnum_high =
     const HypothesisSetDraftEffortEnum._('high');
 
 HypothesisSetDraftEffortEnum _$hypothesisSetDraftEffortEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'low':
       return _$hypothesisSetDraftEffortEnum_low;
@@ -28,18 +29,19 @@ HypothesisSetDraftEffortEnum _$hypothesisSetDraftEffortEnumValueOf(
 }
 
 final BuiltSet<HypothesisSetDraftEffortEnum>
-    _$hypothesisSetDraftEffortEnumValues =
+_$hypothesisSetDraftEffortEnumValues =
     BuiltSet<HypothesisSetDraftEffortEnum>(const <HypothesisSetDraftEffortEnum>[
-  _$hypothesisSetDraftEffortEnum_low,
-  _$hypothesisSetDraftEffortEnum_medium,
-  _$hypothesisSetDraftEffortEnum_high,
-]);
+      _$hypothesisSetDraftEffortEnum_low,
+      _$hypothesisSetDraftEffortEnum_medium,
+      _$hypothesisSetDraftEffortEnum_high,
+    ]);
 
 const HypothesisSetDraftTextOriginEnum _$hypothesisSetDraftTextOriginEnum_llm =
     const HypothesisSetDraftTextOriginEnum._('llm');
 
 HypothesisSetDraftTextOriginEnum _$hypothesisSetDraftTextOriginEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'llm':
       return _$hypothesisSetDraftTextOriginEnum_llm;
@@ -49,16 +51,18 @@ HypothesisSetDraftTextOriginEnum _$hypothesisSetDraftTextOriginEnumValueOf(
 }
 
 final BuiltSet<HypothesisSetDraftTextOriginEnum>
-    _$hypothesisSetDraftTextOriginEnumValues = BuiltSet<
-        HypothesisSetDraftTextOriginEnum>(const <HypothesisSetDraftTextOriginEnum>[
-  _$hypothesisSetDraftTextOriginEnum_llm,
-]);
+_$hypothesisSetDraftTextOriginEnumValues =
+    BuiltSet<HypothesisSetDraftTextOriginEnum>(
+      const <HypothesisSetDraftTextOriginEnum>[
+        _$hypothesisSetDraftTextOriginEnum_llm,
+      ],
+    );
 
 Serializer<HypothesisSetDraftEffortEnum>
-    _$hypothesisSetDraftEffortEnumSerializer =
+_$hypothesisSetDraftEffortEnumSerializer =
     _$HypothesisSetDraftEffortEnumSerializer();
 Serializer<HypothesisSetDraftTextOriginEnum>
-    _$hypothesisSetDraftTextOriginEnumSerializer =
+_$hypothesisSetDraftTextOriginEnumSerializer =
     _$HypothesisSetDraftTextOriginEnumSerializer();
 
 class _$HypothesisSetDraftEffortEnumSerializer
@@ -80,16 +84,20 @@ class _$HypothesisSetDraftEffortEnumSerializer
   final String wireName = 'HypothesisSetDraftEffortEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetDraftEffortEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetDraftEffortEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetDraftEffortEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetDraftEffortEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetDraftEffortEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetDraftTextOriginEnumSerializer
@@ -108,16 +116,19 @@ class _$HypothesisSetDraftTextOriginEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, HypothesisSetDraftTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HypothesisSetDraftTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetDraftTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetDraftTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetDraftTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetDraft extends HypothesisSetDraft {
@@ -140,25 +151,25 @@ class _$HypothesisSetDraft extends HypothesisSetDraft {
   @override
   final HypothesisSetDraftTextOriginEnum? textOrigin;
 
-  factory _$HypothesisSetDraft(
-          [void Function(HypothesisSetDraftBuilder)? updates]) =>
-      (HypothesisSetDraftBuilder()..update(updates))._build();
+  factory _$HypothesisSetDraft([
+    void Function(HypothesisSetDraftBuilder)? updates,
+  ]) => (HypothesisSetDraftBuilder()..update(updates))._build();
 
-  _$HypothesisSetDraft._(
-      {required this.set_,
-      required this.valid,
-      required this.warnings,
-      this.toolCalls,
-      this.model,
-      this.effort,
-      this.usage,
-      this.manifestId,
-      this.textOrigin})
-      : super._();
+  _$HypothesisSetDraft._({
+    required this.set_,
+    required this.valid,
+    required this.warnings,
+    this.toolCalls,
+    this.model,
+    this.effort,
+    this.usage,
+    this.manifestId,
+    this.textOrigin,
+  }) : super._();
   @override
   HypothesisSetDraft rebuild(
-          void Function(HypothesisSetDraftBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetDraftBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetDraftBuilder toBuilder() =>
@@ -295,11 +306,15 @@ class HypothesisSetDraftBuilder
   _$HypothesisSetDraft _build() {
     _$HypothesisSetDraft _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisSetDraft._(
             set_: set_.build(),
             valid: BuiltValueNullFieldError.checkNotNull(
-                valid, r'HypothesisSetDraft', 'valid'),
+              valid,
+              r'HypothesisSetDraft',
+              'valid',
+            ),
             warnings: warnings.build(),
             toolCalls: _toolCalls?.build(),
             model: model,
@@ -323,7 +338,10 @@ class HypothesisSetDraftBuilder
         _usage?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisSetDraft', _$failedField, e.toString());
+          r'HypothesisSetDraft',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

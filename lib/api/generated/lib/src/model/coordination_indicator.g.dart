@@ -20,22 +20,22 @@ class _$CoordinationIndicator extends CoordinationIndicator {
   @override
   final bool available;
 
-  factory _$CoordinationIndicator(
-          [void Function(CoordinationIndicatorBuilder)? updates]) =>
-      (CoordinationIndicatorBuilder()..update(updates))._build();
+  factory _$CoordinationIndicator([
+    void Function(CoordinationIndicatorBuilder)? updates,
+  ]) => (CoordinationIndicatorBuilder()..update(updates))._build();
 
-  _$CoordinationIndicator._(
-      {this.value,
-      this.nullExpectation,
-      this.pValue,
-      this.qValue,
-      this.n,
-      required this.available})
-      : super._();
+  _$CoordinationIndicator._({
+    this.value,
+    this.nullExpectation,
+    this.pValue,
+    this.qValue,
+    this.n,
+    required this.available,
+  }) : super._();
   @override
   CoordinationIndicator rebuild(
-          void Function(CoordinationIndicatorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CoordinationIndicatorBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CoordinationIndicatorBuilder toBuilder() =>
@@ -140,7 +140,8 @@ class CoordinationIndicatorBuilder
   CoordinationIndicator build() => _build();
 
   _$CoordinationIndicator _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CoordinationIndicator._(
           value: value,
           nullExpectation: nullExpectation,
@@ -148,7 +149,10 @@ class CoordinationIndicatorBuilder
           qValue: qValue,
           n: n,
           available: BuiltValueNullFieldError.checkNotNull(
-              available, r'CoordinationIndicator', 'available'),
+            available,
+            r'CoordinationIndicator',
+            'available',
+          ),
         );
     replace(_$result);
     return _$result;

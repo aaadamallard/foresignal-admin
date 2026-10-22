@@ -8,10 +8,12 @@ part of 'weather_section_status.dart';
 
 const WeatherSectionStatus _$ok = const WeatherSectionStatus._('ok');
 const WeatherSectionStatus _$stale = const WeatherSectionStatus._('stale');
-const WeatherSectionStatus _$noCoverage =
-    const WeatherSectionStatus._('noCoverage');
-const WeatherSectionStatus _$unavailable =
-    const WeatherSectionStatus._('unavailable');
+const WeatherSectionStatus _$noCoverage = const WeatherSectionStatus._(
+  'noCoverage',
+);
+const WeatherSectionStatus _$unavailable = const WeatherSectionStatus._(
+  'unavailable',
+);
 
 WeatherSectionStatus _$valueOf(String name) {
   switch (name) {
@@ -28,13 +30,9 @@ WeatherSectionStatus _$valueOf(String name) {
   }
 }
 
-final BuiltSet<WeatherSectionStatus> _$values =
-    BuiltSet<WeatherSectionStatus>(const <WeatherSectionStatus>[
-  _$ok,
-  _$stale,
-  _$noCoverage,
-  _$unavailable,
-]);
+final BuiltSet<WeatherSectionStatus> _$values = BuiltSet<WeatherSectionStatus>(
+  const <WeatherSectionStatus>[_$ok, _$stale, _$noCoverage, _$unavailable],
+);
 
 class _$WeatherSectionStatusMeta {
   const _$WeatherSectionStatusMeta();
@@ -46,7 +44,7 @@ class _$WeatherSectionStatusMeta {
   BuiltSet<WeatherSectionStatus> get values => _$values;
 }
 
-abstract class _$WeatherSectionStatusMixin {
+mixin _$WeatherSectionStatusMixin {
   // ignore: non_constant_identifier_names
   _$WeatherSectionStatusMeta get WeatherSectionStatus =>
       const _$WeatherSectionStatusMeta();
@@ -76,15 +74,20 @@ class _$WeatherSectionStatusSerializer
   final String wireName = 'WeatherSectionStatus';
 
   @override
-  Object serialize(Serializers serializers, WeatherSectionStatus object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WeatherSectionStatus object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  WeatherSectionStatus deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WeatherSectionStatus.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  WeatherSectionStatus deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WeatherSectionStatus.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

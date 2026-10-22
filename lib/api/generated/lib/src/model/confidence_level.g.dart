@@ -23,12 +23,9 @@ ConfidenceLevel _$valueOf(String name) {
   }
 }
 
-final BuiltSet<ConfidenceLevel> _$values =
-    BuiltSet<ConfidenceLevel>(const <ConfidenceLevel>[
-  _$low,
-  _$moderate,
-  _$high,
-]);
+final BuiltSet<ConfidenceLevel> _$values = BuiltSet<ConfidenceLevel>(
+  const <ConfidenceLevel>[_$low, _$moderate, _$high],
+);
 
 class _$ConfidenceLevelMeta {
   const _$ConfidenceLevelMeta();
@@ -39,7 +36,7 @@ class _$ConfidenceLevelMeta {
   BuiltSet<ConfidenceLevel> get values => _$values;
 }
 
-abstract class _$ConfidenceLevelMixin {
+mixin _$ConfidenceLevelMixin {
   // ignore: non_constant_identifier_names
   _$ConfidenceLevelMeta get ConfidenceLevel => const _$ConfidenceLevelMeta();
 }
@@ -66,15 +63,20 @@ class _$ConfidenceLevelSerializer
   final String wireName = 'ConfidenceLevel';
 
   @override
-  Object serialize(Serializers serializers, ConfidenceLevel object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ConfidenceLevel object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ConfidenceLevel deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ConfidenceLevel.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ConfidenceLevel deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ConfidenceLevel.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

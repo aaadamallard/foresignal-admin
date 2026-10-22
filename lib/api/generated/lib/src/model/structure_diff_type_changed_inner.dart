@@ -17,8 +17,10 @@ part 'structure_diff_type_changed_inner.g.dart';
 @BuiltValue()
 abstract class StructureDiffTypeChangedInner
     implements
-        Built<StructureDiffTypeChangedInner,
-            StructureDiffTypeChangedInnerBuilder> {
+        Built<
+          StructureDiffTypeChangedInner,
+          StructureDiffTypeChangedInnerBuilder
+        > {
   @BuiltValueField(wireName: r'path')
   String get path;
 
@@ -30,9 +32,9 @@ abstract class StructureDiffTypeChangedInner
 
   StructureDiffTypeChangedInner._();
 
-  factory StructureDiffTypeChangedInner(
-          [void updates(StructureDiffTypeChangedInnerBuilder b)]) =
-      _$StructureDiffTypeChangedInner;
+  factory StructureDiffTypeChangedInner([
+    void updates(StructureDiffTypeChangedInnerBuilder b),
+  ]) = _$StructureDiffTypeChangedInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StructureDiffTypeChangedInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$StructureDiffTypeChangedInnerSerializer
   @override
   final Iterable<Type> types = const [
     StructureDiffTypeChangedInner,
-    _$StructureDiffTypeChangedInner
+    _$StructureDiffTypeChangedInner,
   ];
 
   @override
@@ -81,9 +83,11 @@ class _$StructureDiffTypeChangedInnerSerializer
     StructureDiffTypeChangedInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +103,30 @@ class _$StructureDiffTypeChangedInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.to = valueDes;
           break;
         default:

@@ -14,19 +14,19 @@ class _$CyclePacketCoverage extends CyclePacketCoverage {
   @override
   final BuiltList<String>? lowReportingDensityRegions;
 
-  factory _$CyclePacketCoverage(
-          [void Function(CyclePacketCoverageBuilder)? updates]) =>
-      (CyclePacketCoverageBuilder()..update(updates))._build();
+  factory _$CyclePacketCoverage([
+    void Function(CyclePacketCoverageBuilder)? updates,
+  ]) => (CyclePacketCoverageBuilder()..update(updates))._build();
 
-  _$CyclePacketCoverage._(
-      {this.failingSources,
-      this.degradedSources,
-      this.lowReportingDensityRegions})
-      : super._();
+  _$CyclePacketCoverage._({
+    this.failingSources,
+    this.degradedSources,
+    this.lowReportingDensityRegions,
+  }) : super._();
   @override
   CyclePacketCoverage rebuild(
-          void Function(CyclePacketCoverageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CyclePacketCoverageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CyclePacketCoverageBuilder toBuilder() =>
@@ -81,8 +81,8 @@ class CyclePacketCoverageBuilder
   ListBuilder<String> get lowReportingDensityRegions =>
       _$this._lowReportingDensityRegions ??= ListBuilder<String>();
   set lowReportingDensityRegions(
-          ListBuilder<String>? lowReportingDensityRegions) =>
-      _$this._lowReportingDensityRegions = lowReportingDensityRegions;
+    ListBuilder<String>? lowReportingDensityRegions,
+  ) => _$this._lowReportingDensityRegions = lowReportingDensityRegions;
 
   CyclePacketCoverageBuilder() {
     CyclePacketCoverage._defaults(this);
@@ -115,7 +115,8 @@ class CyclePacketCoverageBuilder
   _$CyclePacketCoverage _build() {
     _$CyclePacketCoverage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CyclePacketCoverage._(
             failingSources: _failingSources?.build(),
             degradedSources: _degradedSources?.build(),
@@ -132,7 +133,10 @@ class CyclePacketCoverageBuilder
         _lowReportingDensityRegions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CyclePacketCoverage', _$failedField, e.toString());
+          r'CyclePacketCoverage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -18,8 +18,10 @@ part 'hypothesis_coincidence_baseline.g.dart';
 @BuiltValue()
 abstract class HypothesisCoincidenceBaseline
     implements
-        Built<HypothesisCoincidenceBaseline,
-            HypothesisCoincidenceBaselineBuilder> {
+        Built<
+          HypothesisCoincidenceBaseline,
+          HypothesisCoincidenceBaselineBuilder
+        > {
   @BuiltValueField(wireName: r'placeboRate')
   num get placeboRate;
 
@@ -34,9 +36,9 @@ abstract class HypothesisCoincidenceBaseline
 
   HypothesisCoincidenceBaseline._();
 
-  factory HypothesisCoincidenceBaseline(
-          [void updates(HypothesisCoincidenceBaselineBuilder b)]) =
-      _$HypothesisCoincidenceBaseline;
+  factory HypothesisCoincidenceBaseline([
+    void updates(HypothesisCoincidenceBaselineBuilder b),
+  ]) = _$HypothesisCoincidenceBaseline;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisCoincidenceBaselineBuilder b) => b;
@@ -51,7 +53,7 @@ class _$HypothesisCoincidenceBaselineSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisCoincidenceBaseline,
-    _$HypothesisCoincidenceBaseline
+    _$HypothesisCoincidenceBaseline,
   ];
 
   @override
@@ -94,9 +96,11 @@ class _$HypothesisCoincidenceBaselineSerializer
     HypothesisCoincidenceBaseline object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,32 +116,37 @@ class _$HypothesisCoincidenceBaselineSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'placeboRate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.placeboRate = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.method = valueDes;
           break;
         case r'eventStudyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.eventStudyId = valueDes;
           break;
         case r'nPlacebo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.nPlacebo = valueDes;
           break;

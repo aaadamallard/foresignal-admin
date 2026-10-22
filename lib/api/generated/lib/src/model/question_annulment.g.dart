@@ -28,10 +28,10 @@ QuestionAnnulmentCodeEnum _$questionAnnulmentCodeEnumValueOf(String name) {
 
 final BuiltSet<QuestionAnnulmentCodeEnum> _$questionAnnulmentCodeEnumValues =
     BuiltSet<QuestionAnnulmentCodeEnum>(const <QuestionAnnulmentCodeEnum>[
-  _$questionAnnulmentCodeEnum_LOW_DETECTABILITY,
-  _$questionAnnulmentCodeEnum_COVERAGE_GAP,
-  _$questionAnnulmentCodeEnum_OPERATOR,
-]);
+      _$questionAnnulmentCodeEnum_LOW_DETECTABILITY,
+      _$questionAnnulmentCodeEnum_COVERAGE_GAP,
+      _$questionAnnulmentCodeEnum_OPERATOR,
+    ]);
 
 Serializer<QuestionAnnulmentCodeEnum> _$questionAnnulmentCodeEnumSerializer =
     _$QuestionAnnulmentCodeEnumSerializer();
@@ -55,16 +55,20 @@ class _$QuestionAnnulmentCodeEnumSerializer
   final String wireName = 'QuestionAnnulmentCodeEnum';
 
   @override
-  Object serialize(Serializers serializers, QuestionAnnulmentCodeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    QuestionAnnulmentCodeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   QuestionAnnulmentCodeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      QuestionAnnulmentCodeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => QuestionAnnulmentCodeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$QuestionAnnulment extends QuestionAnnulment {
@@ -77,16 +81,16 @@ class _$QuestionAnnulment extends QuestionAnnulment {
   @override
   final String by;
 
-  factory _$QuestionAnnulment(
-          [void Function(QuestionAnnulmentBuilder)? updates]) =>
-      (QuestionAnnulmentBuilder()..update(updates))._build();
+  factory _$QuestionAnnulment([
+    void Function(QuestionAnnulmentBuilder)? updates,
+  ]) => (QuestionAnnulmentBuilder()..update(updates))._build();
 
-  _$QuestionAnnulment._(
-      {required this.code,
-      required this.reason,
-      required this.at,
-      required this.by})
-      : super._();
+  _$QuestionAnnulment._({
+    required this.code,
+    required this.reason,
+    required this.at,
+    required this.by,
+  }) : super._();
   @override
   QuestionAnnulment rebuild(void Function(QuestionAnnulmentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -177,16 +181,29 @@ class QuestionAnnulmentBuilder
   QuestionAnnulment build() => _build();
 
   _$QuestionAnnulment _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$QuestionAnnulment._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'QuestionAnnulment', 'code'),
+            code,
+            r'QuestionAnnulment',
+            'code',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'QuestionAnnulment', 'reason'),
+            reason,
+            r'QuestionAnnulment',
+            'reason',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'QuestionAnnulment', 'at'),
+            at,
+            r'QuestionAnnulment',
+            'at',
+          ),
           by: BuiltValueNullFieldError.checkNotNull(
-              by, r'QuestionAnnulment', 'by'),
+            by,
+            r'QuestionAnnulment',
+            'by',
+          ),
         );
     replace(_$result);
     return _$result;

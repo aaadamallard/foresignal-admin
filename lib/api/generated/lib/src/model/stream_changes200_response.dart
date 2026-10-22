@@ -61,9 +61,9 @@ abstract class StreamChanges200Response
 
   StreamChanges200Response._();
 
-  factory StreamChanges200Response(
-          [void updates(StreamChanges200ResponseBuilder b)]) =
-      _$StreamChanges200Response;
+  factory StreamChanges200Response([
+    void updates(StreamChanges200ResponseBuilder b),
+  ]) = _$StreamChanges200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StreamChanges200ResponseBuilder b) => b;
@@ -78,7 +78,7 @@ class _$StreamChanges200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     StreamChanges200Response,
-    _$StreamChanges200Response
+    _$StreamChanges200Response,
   ];
 
   @override
@@ -97,9 +97,13 @@ class _$StreamChanges200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -119,8 +123,9 @@ class _$StreamChanges200ResponseSerializer
       FullType(JsonObject),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }

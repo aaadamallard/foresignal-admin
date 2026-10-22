@@ -99,8 +99,9 @@ class _$HypothesisSetDraftSerializer
     yield r'warnings';
     yield serializers.serialize(
       object.warnings,
-      specifiedType: const FullType(
-          BuiltList, [FullType(HypothesisSetDraftWarningsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(HypothesisSetDraftWarningsInner),
+      ]),
     );
     if (object.toolCalls != null) {
       yield r'toolCalls';
@@ -152,9 +153,11 @@ class _$HypothesisSetDraftSerializer
     HypothesisSetDraft object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -170,75 +173,99 @@ class _$HypothesisSetDraftSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'set':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HypothesisSetInput),
-          ) as HypothesisSetInput;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(HypothesisSetInput),
+                  )
+                  as HypothesisSetInput;
           result.set_.replace(valueDes);
           break;
         case r'valid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.valid = valueDes;
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(HypothesisSetDraftWarningsInner)]),
-          ) as BuiltList<HypothesisSetDraftWarningsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(HypothesisSetDraftWarningsInner),
+                    ]),
+                  )
+                  as BuiltList<HypothesisSetDraftWarningsInner>;
           result.warnings.replace(valueDes);
           break;
         case r'toolCalls':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.toolCalls.replace(valueDes);
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.model = valueDes;
           break;
         case r'effort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HypothesisSetDraftEffortEnum),
-          ) as HypothesisSetDraftEffortEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisSetDraftEffortEnum,
+                    ),
+                  )
+                  as HypothesisSetDraftEffortEnum?;
           if (valueDes == null) continue;
           result.effort = valueDes;
           break;
         case r'usage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(HypothesisSetDraftUsage),
-          ) as HypothesisSetDraftUsage?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisSetDraftUsage,
+                    ),
+                  )
+                  as HypothesisSetDraftUsage?;
           if (valueDes == null) continue;
           result.usage.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
         case r'textOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HypothesisSetDraftTextOriginEnum),
-          ) as HypothesisSetDraftTextOriginEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisSetDraftTextOriginEnum,
+                    ),
+                  )
+                  as HypothesisSetDraftTextOriginEnum?;
           if (valueDes == null) continue;
           result.textOrigin = valueDes;
           break;

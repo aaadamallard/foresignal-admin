@@ -7,11 +7,11 @@ part of 'precursor_test_result.dart';
 // **************************************************************************
 
 const PrecursorTestResultPermutationsEnum
-    _$precursorTestResultPermutationsEnum_number200 =
+_$precursorTestResultPermutationsEnum_number200 =
     const PrecursorTestResultPermutationsEnum._('number200');
 
 PrecursorTestResultPermutationsEnum
-    _$precursorTestResultPermutationsEnumValueOf(String name) {
+_$precursorTestResultPermutationsEnumValueOf(String name) {
   switch (name) {
     case 'number200':
       return _$precursorTestResultPermutationsEnum_number200;
@@ -21,16 +21,18 @@ PrecursorTestResultPermutationsEnum
 }
 
 final BuiltSet<PrecursorTestResultPermutationsEnum>
-    _$precursorTestResultPermutationsEnumValues = BuiltSet<
-        PrecursorTestResultPermutationsEnum>(const <PrecursorTestResultPermutationsEnum>[
-  _$precursorTestResultPermutationsEnum_number200,
-]);
+_$precursorTestResultPermutationsEnumValues =
+    BuiltSet<PrecursorTestResultPermutationsEnum>(
+      const <PrecursorTestResultPermutationsEnum>[
+        _$precursorTestResultPermutationsEnum_number200,
+      ],
+    );
 
 const PrecursorTestResultVerdictEnum
-    _$precursorTestResultVerdictEnum_insufficient =
+_$precursorTestResultVerdictEnum_insufficient =
     const PrecursorTestResultVerdictEnum._('insufficient');
 const PrecursorTestResultVerdictEnum
-    _$precursorTestResultVerdictEnum_noEvidenceOfPrecedence =
+_$precursorTestResultVerdictEnum_noEvidenceOfPrecedence =
     const PrecursorTestResultVerdictEnum._('noEvidenceOfPrecedence');
 const PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnum_weak =
     const PrecursorTestResultVerdictEnum._('weak');
@@ -38,7 +40,8 @@ const PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnum_notable =
     const PrecursorTestResultVerdictEnum._('notable');
 
 PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'insufficient':
       return _$precursorTestResultVerdictEnum_insufficient;
@@ -54,19 +57,21 @@ PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnumValueOf(
 }
 
 final BuiltSet<PrecursorTestResultVerdictEnum>
-    _$precursorTestResultVerdictEnumValues = BuiltSet<
-        PrecursorTestResultVerdictEnum>(const <PrecursorTestResultVerdictEnum>[
-  _$precursorTestResultVerdictEnum_insufficient,
-  _$precursorTestResultVerdictEnum_noEvidenceOfPrecedence,
-  _$precursorTestResultVerdictEnum_weak,
-  _$precursorTestResultVerdictEnum_notable,
-]);
+_$precursorTestResultVerdictEnumValues =
+    BuiltSet<PrecursorTestResultVerdictEnum>(
+      const <PrecursorTestResultVerdictEnum>[
+        _$precursorTestResultVerdictEnum_insufficient,
+        _$precursorTestResultVerdictEnum_noEvidenceOfPrecedence,
+        _$precursorTestResultVerdictEnum_weak,
+        _$precursorTestResultVerdictEnum_notable,
+      ],
+    );
 
 Serializer<PrecursorTestResultPermutationsEnum>
-    _$precursorTestResultPermutationsEnumSerializer =
+_$precursorTestResultPermutationsEnumSerializer =
     _$PrecursorTestResultPermutationsEnumSerializer();
 Serializer<PrecursorTestResultVerdictEnum>
-    _$precursorTestResultVerdictEnumSerializer =
+_$precursorTestResultVerdictEnumSerializer =
     _$PrecursorTestResultVerdictEnumSerializer();
 
 class _$PrecursorTestResultPermutationsEnumSerializer
@@ -80,23 +85,26 @@ class _$PrecursorTestResultPermutationsEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PrecursorTestResultPermutationsEnum
+    PrecursorTestResultPermutationsEnum,
   ];
   @override
   final String wireName = 'PrecursorTestResultPermutationsEnum';
 
   @override
   Object serialize(
-          Serializers serializers, PrecursorTestResultPermutationsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecursorTestResultPermutationsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorTestResultPermutationsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorTestResultPermutationsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorTestResultPermutationsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorTestResultVerdictEnumSerializer
@@ -121,16 +129,19 @@ class _$PrecursorTestResultVerdictEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PrecursorTestResultVerdictEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecursorTestResultVerdictEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorTestResultVerdictEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorTestResultVerdictEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorTestResultVerdictEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorTestResult extends PrecursorTestResult {
@@ -171,34 +182,34 @@ class _$PrecursorTestResult extends PrecursorTestResult {
   @override
   final BuiltList<BacktestCaveat> caveats;
 
-  factory _$PrecursorTestResult(
-          [void Function(PrecursorTestResultBuilder)? updates]) =>
-      (PrecursorTestResultBuilder()..update(updates))._build();
+  factory _$PrecursorTestResult([
+    void Function(PrecursorTestResultBuilder)? updates,
+  ]) => (PrecursorTestResultBuilder()..update(updates))._build();
 
-  _$PrecursorTestResult._(
-      {required this.testerVersion,
-      required this.nAntecedent,
-      this.nConsequent,
-      required this.hits,
-      this.hitRate,
-      this.hitRateCi,
-      this.lag,
-      this.baseRate,
-      this.lift,
-      this.pValue,
-      this.permutations,
-      this.seed,
-      this.reverse,
-      this.coOccurrenceNotPrecedence,
-      required this.verdict,
-      this.multipleTesting,
-      required this.statement,
-      required this.caveats})
-      : super._();
+  _$PrecursorTestResult._({
+    required this.testerVersion,
+    required this.nAntecedent,
+    this.nConsequent,
+    required this.hits,
+    this.hitRate,
+    this.hitRateCi,
+    this.lag,
+    this.baseRate,
+    this.lift,
+    this.pValue,
+    this.permutations,
+    this.seed,
+    this.reverse,
+    this.coOccurrenceNotPrecedence,
+    required this.verdict,
+    this.multipleTesting,
+    required this.statement,
+    required this.caveats,
+  }) : super._();
   @override
   PrecursorTestResult rebuild(
-          void Function(PrecursorTestResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorTestResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorTestResultBuilder toBuilder() =>
@@ -355,8 +366,8 @@ class PrecursorTestResultBuilder
   PrecursorTestResultMultipleTestingBuilder get multipleTesting =>
       _$this._multipleTesting ??= PrecursorTestResultMultipleTestingBuilder();
   set multipleTesting(
-          PrecursorTestResultMultipleTestingBuilder? multipleTesting) =>
-      _$this._multipleTesting = multipleTesting;
+    PrecursorTestResultMultipleTestingBuilder? multipleTesting,
+  ) => _$this._multipleTesting = multipleTesting;
 
   String? _statement;
   String? get statement => _$this._statement;
@@ -414,15 +425,25 @@ class PrecursorTestResultBuilder
   _$PrecursorTestResult _build() {
     _$PrecursorTestResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorTestResult._(
             testerVersion: BuiltValueNullFieldError.checkNotNull(
-                testerVersion, r'PrecursorTestResult', 'testerVersion'),
+              testerVersion,
+              r'PrecursorTestResult',
+              'testerVersion',
+            ),
             nAntecedent: BuiltValueNullFieldError.checkNotNull(
-                nAntecedent, r'PrecursorTestResult', 'nAntecedent'),
+              nAntecedent,
+              r'PrecursorTestResult',
+              'nAntecedent',
+            ),
             nConsequent: nConsequent,
             hits: BuiltValueNullFieldError.checkNotNull(
-                hits, r'PrecursorTestResult', 'hits'),
+              hits,
+              r'PrecursorTestResult',
+              'hits',
+            ),
             hitRate: hitRate,
             hitRateCi: _hitRateCi?.build(),
             lag: _lag?.build(),
@@ -434,10 +455,16 @@ class PrecursorTestResultBuilder
             reverse: _reverse?.build(),
             coOccurrenceNotPrecedence: coOccurrenceNotPrecedence,
             verdict: BuiltValueNullFieldError.checkNotNull(
-                verdict, r'PrecursorTestResult', 'verdict'),
+              verdict,
+              r'PrecursorTestResult',
+              'verdict',
+            ),
             multipleTesting: _multipleTesting?.build(),
             statement: BuiltValueNullFieldError.checkNotNull(
-                statement, r'PrecursorTestResult', 'statement'),
+              statement,
+              r'PrecursorTestResult',
+              'statement',
+            ),
             caveats: caveats.build(),
           );
     } catch (_) {
@@ -458,7 +485,10 @@ class PrecursorTestResultBuilder
         caveats.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorTestResult', _$failedField, e.toString());
+          r'PrecursorTestResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

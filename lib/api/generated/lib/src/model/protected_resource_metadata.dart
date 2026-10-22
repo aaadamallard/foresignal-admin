@@ -36,7 +36,7 @@ abstract class ProtectedResourceMetadata
 
   @BuiltValueField(wireName: r'bearer_methods_supported')
   BuiltList<ProtectedResourceMetadataBearerMethodsSupportedEnum>
-      get bearerMethodsSupported;
+  get bearerMethodsSupported;
   // enum bearerMethodsSupportedEnum {  header,  };
 
   @BuiltValueField(wireName: r'resource_name')
@@ -49,9 +49,9 @@ abstract class ProtectedResourceMetadata
 
   ProtectedResourceMetadata._();
 
-  factory ProtectedResourceMetadata(
-          [void updates(ProtectedResourceMetadataBuilder b)]) =
-      _$ProtectedResourceMetadata;
+  factory ProtectedResourceMetadata([
+    void updates(ProtectedResourceMetadataBuilder b),
+  ]) = _$ProtectedResourceMetadata;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProtectedResourceMetadataBuilder b) => b;
@@ -66,7 +66,7 @@ class _$ProtectedResourceMetadataSerializer
   @override
   final Iterable<Type> types = const [
     ProtectedResourceMetadata,
-    _$ProtectedResourceMetadata
+    _$ProtectedResourceMetadata,
   ];
 
   @override
@@ -97,15 +97,17 @@ class _$ProtectedResourceMetadataSerializer
     yield r'bearer_methods_supported';
     yield serializers.serialize(
       object.bearerMethodsSupported,
-      specifiedType: const FullType(BuiltList,
-          [FullType(ProtectedResourceMetadataBearerMethodsSupportedEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ProtectedResourceMetadataBearerMethodsSupportedEnum),
+      ]),
     );
     if (object.resourceName != null) {
       yield r'resource_name';
       yield serializers.serialize(
         object.resourceName,
-        specifiedType:
-            const FullType(ProtectedResourceMetadataResourceNameEnum),
+        specifiedType: const FullType(
+          ProtectedResourceMetadataResourceNameEnum,
+        ),
       );
     }
     if (object.resourceDocumentation != null) {
@@ -123,9 +125,11 @@ class _$ProtectedResourceMetadataSerializer
     ProtectedResourceMetadata object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -141,51 +145,71 @@ class _$ProtectedResourceMetadataSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'resource':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.resource = valueDes;
           break;
         case r'authorization_servers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.authorizationServers.replace(valueDes);
           break;
         case r'scopes_supported':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.scopesSupported.replace(valueDes);
           break;
         case r'bearer_methods_supported':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(ProtectedResourceMetadataBearerMethodsSupportedEnum)
-            ]),
-          ) as BuiltList<ProtectedResourceMetadataBearerMethodsSupportedEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        ProtectedResourceMetadataBearerMethodsSupportedEnum,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    ProtectedResourceMetadataBearerMethodsSupportedEnum
+                  >;
           result.bearerMethodsSupported.replace(valueDes);
           break;
         case r'resource_name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                ProtectedResourceMetadataResourceNameEnum),
-          ) as ProtectedResourceMetadataResourceNameEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ProtectedResourceMetadataResourceNameEnum,
+                    ),
+                  )
+                  as ProtectedResourceMetadataResourceNameEnum?;
           if (valueDes == null) continue;
           result.resourceName = valueDes;
           break;
         case r'resource_documentation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.resourceDocumentation = valueDes;
           break;
@@ -224,17 +248,17 @@ class ProtectedResourceMetadataBearerMethodsSupportedEnum extends EnumClass {
       _$protectedResourceMetadataBearerMethodsSupportedEnum_header;
 
   static Serializer<ProtectedResourceMetadataBearerMethodsSupportedEnum>
-      get serializer =>
-          _$protectedResourceMetadataBearerMethodsSupportedEnumSerializer;
+  get serializer =>
+      _$protectedResourceMetadataBearerMethodsSupportedEnumSerializer;
 
   const ProtectedResourceMetadataBearerMethodsSupportedEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ProtectedResourceMetadataBearerMethodsSupportedEnum>
-      get values => _$protectedResourceMetadataBearerMethodsSupportedEnumValues;
+  get values => _$protectedResourceMetadataBearerMethodsSupportedEnumValues;
   static ProtectedResourceMetadataBearerMethodsSupportedEnum valueOf(
-          String name) =>
-      _$protectedResourceMetadataBearerMethodsSupportedEnumValueOf(name);
+    String name,
+  ) => _$protectedResourceMetadataBearerMethodsSupportedEnumValueOf(name);
 }
 
 class ProtectedResourceMetadataResourceNameEnum extends EnumClass {

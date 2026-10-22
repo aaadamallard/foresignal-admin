@@ -40,13 +40,13 @@ InfraEdgeRelationEnum _$infraEdgeRelationEnumValueOf(String name) {
 
 final BuiltSet<InfraEdgeRelationEnum> _$infraEdgeRelationEnumValues =
     BuiltSet<InfraEdgeRelationEnum>(const <InfraEdgeRelationEnum>[
-  _$infraEdgeRelationEnum_suppliesPower,
-  _$infraEdgeRelationEnum_transmitsPower,
-  _$infraEdgeRelationEnum_landsAt,
-  _$infraEdgeRelationEnum_interconnects,
-  _$infraEdgeRelationEnum_hosts,
-  _$infraEdgeRelationEnum_serves,
-]);
+      _$infraEdgeRelationEnum_suppliesPower,
+      _$infraEdgeRelationEnum_transmitsPower,
+      _$infraEdgeRelationEnum_landsAt,
+      _$infraEdgeRelationEnum_interconnects,
+      _$infraEdgeRelationEnum_hosts,
+      _$infraEdgeRelationEnum_serves,
+    ]);
 
 const InfraEdgeMethodEnum _$infraEdgeMethodEnum_declared =
     const InfraEdgeMethodEnum._('declared');
@@ -74,11 +74,11 @@ InfraEdgeMethodEnum _$infraEdgeMethodEnumValueOf(String name) {
 
 final BuiltSet<InfraEdgeMethodEnum> _$infraEdgeMethodEnumValues =
     BuiltSet<InfraEdgeMethodEnum>(const <InfraEdgeMethodEnum>[
-  _$infraEdgeMethodEnum_declared,
-  _$infraEdgeMethodEnum_topological,
-  _$infraEdgeMethodEnum_proximity,
-  _$infraEdgeMethodEnum_inferred,
-]);
+      _$infraEdgeMethodEnum_declared,
+      _$infraEdgeMethodEnum_topological,
+      _$infraEdgeMethodEnum_proximity,
+      _$infraEdgeMethodEnum_inferred,
+    ]);
 
 const InfraEdgeLabelEnum _$infraEdgeLabelEnum_confirmed =
     const InfraEdgeLabelEnum._('confirmed');
@@ -106,11 +106,11 @@ InfraEdgeLabelEnum _$infraEdgeLabelEnumValueOf(String name) {
 
 final BuiltSet<InfraEdgeLabelEnum> _$infraEdgeLabelEnumValues =
     BuiltSet<InfraEdgeLabelEnum>(const <InfraEdgeLabelEnum>[
-  _$infraEdgeLabelEnum_confirmed,
-  _$infraEdgeLabelEnum_likely,
-  _$infraEdgeLabelEnum_possible,
-  _$infraEdgeLabelEnum_speculative,
-]);
+      _$infraEdgeLabelEnum_confirmed,
+      _$infraEdgeLabelEnum_likely,
+      _$infraEdgeLabelEnum_possible,
+      _$infraEdgeLabelEnum_speculative,
+    ]);
 
 Serializer<InfraEdgeRelationEnum> _$infraEdgeRelationEnumSerializer =
     _$InfraEdgeRelationEnumSerializer();
@@ -144,15 +144,20 @@ class _$InfraEdgeRelationEnumSerializer
   final String wireName = 'InfraEdgeRelationEnum';
 
   @override
-  Object serialize(Serializers serializers, InfraEdgeRelationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraEdgeRelationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  InfraEdgeRelationEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraEdgeRelationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  InfraEdgeRelationEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraEdgeRelationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraEdgeMethodEnumSerializer
@@ -176,15 +181,20 @@ class _$InfraEdgeMethodEnumSerializer
   final String wireName = 'InfraEdgeMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, InfraEdgeMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraEdgeMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  InfraEdgeMethodEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraEdgeMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  InfraEdgeMethodEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraEdgeMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraEdgeLabelEnumSerializer
@@ -208,15 +218,20 @@ class _$InfraEdgeLabelEnumSerializer
   final String wireName = 'InfraEdgeLabelEnum';
 
   @override
-  Object serialize(Serializers serializers, InfraEdgeLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraEdgeLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  InfraEdgeLabelEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraEdgeLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  InfraEdgeLabelEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraEdgeLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraEdge extends InfraEdge {
@@ -250,21 +265,21 @@ class _$InfraEdge extends InfraEdge {
   factory _$InfraEdge([void Function(InfraEdgeBuilder)? updates]) =>
       (InfraEdgeBuilder()..update(updates))._build();
 
-  _$InfraEdge._(
-      {required this.id,
-      required this.fromNode,
-      required this.toNode,
-      required this.relation,
-      required this.method,
-      required this.label,
-      required this.score,
-      required this.ruleId,
-      required this.ruleVersion,
-      this.params,
-      this.evidence,
-      required this.licence,
-      this.builtAt})
-      : super._();
+  _$InfraEdge._({
+    required this.id,
+    required this.fromNode,
+    required this.toNode,
+    required this.relation,
+    required this.method,
+    required this.label,
+    required this.score,
+    required this.ruleId,
+    required this.ruleVersion,
+    this.params,
+    this.evidence,
+    required this.licence,
+    this.builtAt,
+  }) : super._();
   @override
   InfraEdge rebuild(void Function(InfraEdgeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -431,29 +446,57 @@ class InfraEdgeBuilder implements Builder<InfraEdge, InfraEdgeBuilder> {
   _$InfraEdge _build() {
     _$InfraEdge _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraEdge._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'InfraEdge', 'id'),
             fromNode: BuiltValueNullFieldError.checkNotNull(
-                fromNode, r'InfraEdge', 'fromNode'),
+              fromNode,
+              r'InfraEdge',
+              'fromNode',
+            ),
             toNode: BuiltValueNullFieldError.checkNotNull(
-                toNode, r'InfraEdge', 'toNode'),
+              toNode,
+              r'InfraEdge',
+              'toNode',
+            ),
             relation: BuiltValueNullFieldError.checkNotNull(
-                relation, r'InfraEdge', 'relation'),
+              relation,
+              r'InfraEdge',
+              'relation',
+            ),
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'InfraEdge', 'method'),
+              method,
+              r'InfraEdge',
+              'method',
+            ),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'InfraEdge', 'label'),
+              label,
+              r'InfraEdge',
+              'label',
+            ),
             score: BuiltValueNullFieldError.checkNotNull(
-                score, r'InfraEdge', 'score'),
+              score,
+              r'InfraEdge',
+              'score',
+            ),
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'InfraEdge', 'ruleId'),
+              ruleId,
+              r'InfraEdge',
+              'ruleId',
+            ),
             ruleVersion: BuiltValueNullFieldError.checkNotNull(
-                ruleVersion, r'InfraEdge', 'ruleVersion'),
+              ruleVersion,
+              r'InfraEdge',
+              'ruleVersion',
+            ),
             params: _params?.build(),
             evidence: _evidence?.build(),
             licence: BuiltValueNullFieldError.checkNotNull(
-                licence, r'InfraEdge', 'licence'),
+              licence,
+              r'InfraEdge',
+              'licence',
+            ),
             builtAt: builtAt,
           );
     } catch (_) {
@@ -465,7 +508,10 @@ class InfraEdgeBuilder implements Builder<InfraEdge, InfraEdgeBuilder> {
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraEdge', _$failedField, e.toString());
+          r'InfraEdge',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

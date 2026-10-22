@@ -12,15 +12,15 @@ class _$InfraImpactResultSummary extends InfraImpactResultSummary {
   @override
   final BuiltMap<String, int>? byLabel;
 
-  factory _$InfraImpactResultSummary(
-          [void Function(InfraImpactResultSummaryBuilder)? updates]) =>
-      (InfraImpactResultSummaryBuilder()..update(updates))._build();
+  factory _$InfraImpactResultSummary([
+    void Function(InfraImpactResultSummaryBuilder)? updates,
+  ]) => (InfraImpactResultSummaryBuilder()..update(updates))._build();
 
   _$InfraImpactResultSummary._({this.byType, this.byLabel}) : super._();
   @override
   InfraImpactResultSummary rebuild(
-          void Function(InfraImpactResultSummaryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(InfraImpactResultSummaryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   InfraImpactResultSummaryBuilder toBuilder() =>
@@ -98,7 +98,8 @@ class InfraImpactResultSummaryBuilder
   _$InfraImpactResultSummary _build() {
     _$InfraImpactResultSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraImpactResultSummary._(
             byType: _byType?.build(),
             byLabel: _byLabel?.build(),
@@ -112,7 +113,10 @@ class InfraImpactResultSummaryBuilder
         _byLabel?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraImpactResultSummary', _$failedField, e.toString());
+          r'InfraImpactResultSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

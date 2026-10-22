@@ -20,7 +20,7 @@ class _$LeadTimeSummary extends LeadTimeSummary {
       (LeadTimeSummaryBuilder()..update(updates))._build();
 
   _$LeadTimeSummary._({required this.n, this.median, this.p25, this.p75})
-      : super._();
+    : super._();
   @override
   LeadTimeSummary rebuild(void Function(LeadTimeSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -110,7 +110,8 @@ class LeadTimeSummaryBuilder
   LeadTimeSummary build() => _build();
 
   _$LeadTimeSummary _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LeadTimeSummary._(
           n: BuiltValueNullFieldError.checkNotNull(n, r'LeadTimeSummary', 'n'),
           median: median,

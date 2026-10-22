@@ -111,8 +111,9 @@ class _$StatsGridSerializer implements PrimitiveSerializer<StatsGrid> {
     yield r'features';
     yield serializers.serialize(
       object.features,
-      specifiedType:
-          const FullType(BuiltList, [FullType(StatsGridFeaturesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(StatsGridFeaturesInner),
+      ]),
     );
   }
 
@@ -122,9 +123,11 @@ class _$StatsGridSerializer implements PrimitiveSerializer<StatsGrid> {
     StatsGrid object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -140,57 +143,74 @@ class _$StatsGridSerializer implements PrimitiveSerializer<StatsGrid> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatsGridTypeEnum),
-          ) as StatsGridTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatsGridTypeEnum),
+                  )
+                  as StatsGridTypeEnum;
           result.type = valueDes;
           break;
         case r'cellSystem':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StatsGridCellSystemEnum),
-          ) as StatsGridCellSystemEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(StatsGridCellSystemEnum),
+                  )
+                  as StatsGridCellSystemEnum;
           result.cellSystem = valueDes;
           break;
         case r'res':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.res = valueDes;
           break;
         case r'sizeKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.sizeKm = valueDes;
           break;
         case r'measure':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.measure = valueDes;
           break;
         case r'backend':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(StatsGridBackendEnum),
-          ) as StatsGridBackendEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      StatsGridBackendEnum,
+                    ),
+                  )
+                  as StatsGridBackendEnum?;
           if (valueDes == null) continue;
           result.backend = valueDes;
           break;
         case r'features':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(StatsGridFeaturesInner)]),
-          ) as BuiltList<StatsGridFeaturesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(StatsGridFeaturesInner),
+                    ]),
+                  )
+                  as BuiltList<StatsGridFeaturesInner>;
           result.features.replace(valueDes);
           break;
         default:

@@ -6,8 +6,9 @@ part of 'push_payload.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const PushPayloadVEnum _$pushPayloadVEnum_number1 =
-    const PushPayloadVEnum._('number1');
+const PushPayloadVEnum _$pushPayloadVEnum_number1 = const PushPayloadVEnum._(
+  'number1',
+);
 
 PushPayloadVEnum _$pushPayloadVEnumValueOf(String name) {
   switch (name) {
@@ -20,8 +21,8 @@ PushPayloadVEnum _$pushPayloadVEnumValueOf(String name) {
 
 final BuiltSet<PushPayloadVEnum> _$pushPayloadVEnumValues =
     BuiltSet<PushPayloadVEnum>(const <PushPayloadVEnum>[
-  _$pushPayloadVEnum_number1,
-]);
+      _$pushPayloadVEnum_number1,
+    ]);
 
 const PushPayloadEventEnum _$pushPayloadEventEnum_alert =
     const PushPayloadEventEnum._('alert');
@@ -49,11 +50,11 @@ PushPayloadEventEnum _$pushPayloadEventEnumValueOf(String name) {
 
 final BuiltSet<PushPayloadEventEnum> _$pushPayloadEventEnumValues =
     BuiltSet<PushPayloadEventEnum>(const <PushPayloadEventEnum>[
-  _$pushPayloadEventEnum_alert,
-  _$pushPayloadEventEnum_briefing,
-  _$pushPayloadEventEnum_system,
-  _$pushPayloadEventEnum_verify,
-]);
+      _$pushPayloadEventEnum_alert,
+      _$pushPayloadEventEnum_briefing,
+      _$pushPayloadEventEnum_system,
+      _$pushPayloadEventEnum_verify,
+    ]);
 
 const PushPayloadSeverityEnum _$pushPayloadSeverityEnum_info =
     const PushPayloadSeverityEnum._('info');
@@ -77,10 +78,10 @@ PushPayloadSeverityEnum _$pushPayloadSeverityEnumValueOf(String name) {
 
 final BuiltSet<PushPayloadSeverityEnum> _$pushPayloadSeverityEnumValues =
     BuiltSet<PushPayloadSeverityEnum>(const <PushPayloadSeverityEnum>[
-  _$pushPayloadSeverityEnum_info,
-  _$pushPayloadSeverityEnum_warning,
-  _$pushPayloadSeverityEnum_critical,
-]);
+      _$pushPayloadSeverityEnum_info,
+      _$pushPayloadSeverityEnum_warning,
+      _$pushPayloadSeverityEnum_critical,
+    ]);
 
 Serializer<PushPayloadVEnum> _$pushPayloadVEnumSerializer =
     _$PushPayloadVEnumSerializer();
@@ -104,15 +105,20 @@ class _$PushPayloadVEnumSerializer
   final String wireName = 'PushPayloadVEnum';
 
   @override
-  Object serialize(Serializers serializers, PushPayloadVEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushPayloadVEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PushPayloadVEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushPayloadVEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PushPayloadVEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushPayloadVEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushPayloadEventEnumSerializer
@@ -136,15 +142,20 @@ class _$PushPayloadEventEnumSerializer
   final String wireName = 'PushPayloadEventEnum';
 
   @override
-  Object serialize(Serializers serializers, PushPayloadEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushPayloadEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PushPayloadEventEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushPayloadEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PushPayloadEventEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushPayloadEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushPayloadSeverityEnumSerializer
@@ -166,16 +177,20 @@ class _$PushPayloadSeverityEnumSerializer
   final String wireName = 'PushPayloadSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, PushPayloadSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PushPayloadSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PushPayloadSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PushPayloadSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PushPayloadSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PushPayload extends PushPayload {
@@ -225,29 +240,29 @@ class _$PushPayload extends PushPayload {
   factory _$PushPayload([void Function(PushPayloadBuilder)? updates]) =>
       (PushPayloadBuilder()..update(updates))._build();
 
-  _$PushPayload._(
-      {required this.v,
-      required this.event,
-      this.id,
-      this.alertId,
-      this.ruleId,
-      this.severity,
-      this.title,
-      this.shortTitle,
-      this.body,
-      this.url,
-      this.links,
-      this.tags,
-      this.lang,
-      this.tag,
-      this.silent,
-      this.ts,
-      this.actions,
-      this.confirmUrl,
-      this.subscriptionId,
-      this.code,
-      this.exercise})
-      : super._();
+  _$PushPayload._({
+    required this.v,
+    required this.event,
+    this.id,
+    this.alertId,
+    this.ruleId,
+    this.severity,
+    this.title,
+    this.shortTitle,
+    this.body,
+    this.url,
+    this.links,
+    this.tags,
+    this.lang,
+    this.tag,
+    this.silent,
+    this.ts,
+    this.actions,
+    this.confirmUrl,
+    this.subscriptionId,
+    this.code,
+    this.exercise,
+  }) : super._();
   @override
   PushPayload rebuild(void Function(PushPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -479,11 +494,15 @@ class PushPayloadBuilder implements Builder<PushPayload, PushPayloadBuilder> {
   _$PushPayload _build() {
     _$PushPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PushPayload._(
             v: BuiltValueNullFieldError.checkNotNull(v, r'PushPayload', 'v'),
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'PushPayload', 'event'),
+              event,
+              r'PushPayload',
+              'event',
+            ),
             id: id,
             alertId: alertId,
             ruleId: ruleId,
@@ -516,7 +535,10 @@ class PushPayloadBuilder implements Builder<PushPayload, PushPayloadBuilder> {
         _actions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PushPayload', _$failedField, e.toString());
+          r'PushPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

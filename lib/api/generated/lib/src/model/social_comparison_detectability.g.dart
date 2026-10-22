@@ -20,22 +20,22 @@ class _$SocialComparisonDetectability extends SocialComparisonDetectability {
   @override
   final String? reason;
 
-  factory _$SocialComparisonDetectability(
-          [void Function(SocialComparisonDetectabilityBuilder)? updates]) =>
-      (SocialComparisonDetectabilityBuilder()..update(updates))._build();
+  factory _$SocialComparisonDetectability([
+    void Function(SocialComparisonDetectabilityBuilder)? updates,
+  ]) => (SocialComparisonDetectabilityBuilder()..update(updates))._build();
 
-  _$SocialComparisonDetectability._(
-      {required this.p,
-      required this.lo,
-      required this.hi,
-      required this.methods,
-      required this.ok,
-      this.reason})
-      : super._();
+  _$SocialComparisonDetectability._({
+    required this.p,
+    required this.lo,
+    required this.hi,
+    required this.methods,
+    required this.ok,
+    this.reason,
+  }) : super._();
   @override
   SocialComparisonDetectability rebuild(
-          void Function(SocialComparisonDetectabilityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialComparisonDetectabilityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialComparisonDetectabilityBuilder toBuilder() =>
@@ -81,8 +81,10 @@ class _$SocialComparisonDetectability extends SocialComparisonDetectability {
 
 class SocialComparisonDetectabilityBuilder
     implements
-        Builder<SocialComparisonDetectability,
-            SocialComparisonDetectabilityBuilder> {
+        Builder<
+          SocialComparisonDetectability,
+          SocialComparisonDetectabilityBuilder
+        > {
   _$SocialComparisonDetectability? _$v;
 
   num? _p;
@@ -143,17 +145,30 @@ class SocialComparisonDetectabilityBuilder
   _$SocialComparisonDetectability _build() {
     _$SocialComparisonDetectability _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialComparisonDetectability._(
             p: BuiltValueNullFieldError.checkNotNull(
-                p, r'SocialComparisonDetectability', 'p'),
+              p,
+              r'SocialComparisonDetectability',
+              'p',
+            ),
             lo: BuiltValueNullFieldError.checkNotNull(
-                lo, r'SocialComparisonDetectability', 'lo'),
+              lo,
+              r'SocialComparisonDetectability',
+              'lo',
+            ),
             hi: BuiltValueNullFieldError.checkNotNull(
-                hi, r'SocialComparisonDetectability', 'hi'),
+              hi,
+              r'SocialComparisonDetectability',
+              'hi',
+            ),
             methods: methods.build(),
             ok: BuiltValueNullFieldError.checkNotNull(
-                ok, r'SocialComparisonDetectability', 'ok'),
+              ok,
+              r'SocialComparisonDetectability',
+              'ok',
+            ),
             reason: reason,
           );
     } catch (_) {
@@ -163,7 +178,10 @@ class SocialComparisonDetectabilityBuilder
         methods.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialComparisonDetectability', _$failedField, e.toString());
+          r'SocialComparisonDetectability',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

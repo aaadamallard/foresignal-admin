@@ -18,7 +18,7 @@ class _$TimelineBucket extends TimelineBucket {
       (TimelineBucketBuilder()..update(updates))._build();
 
   _$TimelineBucket._({required this.t, required this.total, this.counts})
-      : super._();
+    : super._();
   @override
   TimelineBucket rebuild(void Function(TimelineBucketBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -103,11 +103,15 @@ class TimelineBucketBuilder
   _$TimelineBucket _build() {
     _$TimelineBucket _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TimelineBucket._(
             t: BuiltValueNullFieldError.checkNotNull(t, r'TimelineBucket', 't'),
             total: BuiltValueNullFieldError.checkNotNull(
-                total, r'TimelineBucket', 'total'),
+              total,
+              r'TimelineBucket',
+              'total',
+            ),
             counts: _counts?.build(),
           );
     } catch (_) {
@@ -117,7 +121,10 @@ class TimelineBucketBuilder
         _counts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TimelineBucket', _$failedField, e.toString());
+          r'TimelineBucket',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

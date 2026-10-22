@@ -26,25 +26,25 @@ class _$ChannelInteractiveStatus extends ChannelInteractiveStatus {
   @override
   final BuiltList<ChannelInteractiveStatusChatsInner> chats;
 
-  factory _$ChannelInteractiveStatus(
-          [void Function(ChannelInteractiveStatusBuilder)? updates]) =>
-      (ChannelInteractiveStatusBuilder()..update(updates))._build();
+  factory _$ChannelInteractiveStatus([
+    void Function(ChannelInteractiveStatusBuilder)? updates,
+  ]) => (ChannelInteractiveStatusBuilder()..update(updates))._build();
 
-  _$ChannelInteractiveStatus._(
-      {required this.interactive,
-      this.chatopsEnabled,
-      required this.connected,
-      required this.status,
-      this.statusReason,
-      this.lastPollAt,
-      this.lastError,
-      this.discoveryModeUntil,
-      required this.chats})
-      : super._();
+  _$ChannelInteractiveStatus._({
+    required this.interactive,
+    this.chatopsEnabled,
+    required this.connected,
+    required this.status,
+    this.statusReason,
+    this.lastPollAt,
+    this.lastError,
+    this.discoveryModeUntil,
+    required this.chats,
+  }) : super._();
   @override
   ChannelInteractiveStatus rebuild(
-          void Function(ChannelInteractiveStatusBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChannelInteractiveStatusBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChannelInteractiveStatusBuilder toBuilder() =>
@@ -179,15 +179,25 @@ class ChannelInteractiveStatusBuilder
   _$ChannelInteractiveStatus _build() {
     _$ChannelInteractiveStatus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChannelInteractiveStatus._(
             interactive: BuiltValueNullFieldError.checkNotNull(
-                interactive, r'ChannelInteractiveStatus', 'interactive'),
+              interactive,
+              r'ChannelInteractiveStatus',
+              'interactive',
+            ),
             chatopsEnabled: chatopsEnabled,
             connected: BuiltValueNullFieldError.checkNotNull(
-                connected, r'ChannelInteractiveStatus', 'connected'),
+              connected,
+              r'ChannelInteractiveStatus',
+              'connected',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ChannelInteractiveStatus', 'status'),
+              status,
+              r'ChannelInteractiveStatus',
+              'status',
+            ),
             statusReason: statusReason,
             lastPollAt: lastPollAt,
             lastError: lastError,
@@ -201,7 +211,10 @@ class ChannelInteractiveStatusBuilder
         chats.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChannelInteractiveStatus', _$failedField, e.toString());
+          r'ChannelInteractiveStatus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

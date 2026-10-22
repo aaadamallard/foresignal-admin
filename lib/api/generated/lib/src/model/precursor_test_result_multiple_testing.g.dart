@@ -13,18 +13,18 @@ class _$PrecursorTestResultMultipleTesting
   @override
   final num? bonferroniPValue;
 
-  factory _$PrecursorTestResultMultipleTesting(
-          [void Function(PrecursorTestResultMultipleTestingBuilder)?
-              updates]) =>
-      (PrecursorTestResultMultipleTestingBuilder()..update(updates))._build();
+  factory _$PrecursorTestResultMultipleTesting([
+    void Function(PrecursorTestResultMultipleTestingBuilder)? updates,
+  ]) => (PrecursorTestResultMultipleTestingBuilder()..update(updates))._build();
 
-  _$PrecursorTestResultMultipleTesting._(
-      {this.testsLast30d, this.bonferroniPValue})
-      : super._();
+  _$PrecursorTestResultMultipleTesting._({
+    this.testsLast30d,
+    this.bonferroniPValue,
+  }) : super._();
   @override
   PrecursorTestResultMultipleTesting rebuild(
-          void Function(PrecursorTestResultMultipleTestingBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorTestResultMultipleTestingBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorTestResultMultipleTestingBuilder toBuilder() =>
@@ -58,8 +58,10 @@ class _$PrecursorTestResultMultipleTesting
 
 class PrecursorTestResultMultipleTestingBuilder
     implements
-        Builder<PrecursorTestResultMultipleTesting,
-            PrecursorTestResultMultipleTestingBuilder> {
+        Builder<
+          PrecursorTestResultMultipleTesting,
+          PrecursorTestResultMultipleTestingBuilder
+        > {
   _$PrecursorTestResultMultipleTesting? _$v;
 
   int? _testsLast30d;
@@ -92,7 +94,8 @@ class PrecursorTestResultMultipleTestingBuilder
 
   @override
   void update(
-      void Function(PrecursorTestResultMultipleTestingBuilder)? updates) {
+    void Function(PrecursorTestResultMultipleTestingBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -100,7 +103,8 @@ class PrecursorTestResultMultipleTestingBuilder
   PrecursorTestResultMultipleTesting build() => _build();
 
   _$PrecursorTestResultMultipleTesting _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorTestResultMultipleTesting._(
           testsLast30d: testsLast30d,
           bonferroniPValue: bonferroniPValue,

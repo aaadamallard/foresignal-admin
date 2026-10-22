@@ -16,17 +16,20 @@ class _$CyclePacketForecasts extends CyclePacketForecasts {
   @override
   final BuiltList<CyclePacketItem>? scorecardChanges;
 
-  factory _$CyclePacketForecasts(
-          [void Function(CyclePacketForecastsBuilder)? updates]) =>
-      (CyclePacketForecastsBuilder()..update(updates))._build();
+  factory _$CyclePacketForecasts([
+    void Function(CyclePacketForecastsBuilder)? updates,
+  ]) => (CyclePacketForecastsBuilder()..update(updates))._build();
 
-  _$CyclePacketForecasts._(
-      {this.opened, this.due, this.resolved, this.scorecardChanges})
-      : super._();
+  _$CyclePacketForecasts._({
+    this.opened,
+    this.due,
+    this.resolved,
+    this.scorecardChanges,
+  }) : super._();
   @override
   CyclePacketForecasts rebuild(
-          void Function(CyclePacketForecastsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CyclePacketForecastsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CyclePacketForecastsBuilder toBuilder() =>
@@ -122,7 +125,8 @@ class CyclePacketForecastsBuilder
   _$CyclePacketForecasts _build() {
     _$CyclePacketForecasts _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CyclePacketForecasts._(
             opened: _opened?.build(),
             due: _due?.build(),
@@ -142,7 +146,10 @@ class CyclePacketForecastsBuilder
         _scorecardChanges?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CyclePacketForecasts', _$failedField, e.toString());
+          r'CyclePacketForecasts',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

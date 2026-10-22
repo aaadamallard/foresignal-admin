@@ -18,21 +18,21 @@ class _$EdpValidationReport extends EdpValidationReport {
   @override
   final BuiltList<EdpItemRejection>? rejected;
 
-  factory _$EdpValidationReport(
-          [void Function(EdpValidationReportBuilder)? updates]) =>
-      (EdpValidationReportBuilder()..update(updates))._build();
+  factory _$EdpValidationReport([
+    void Function(EdpValidationReportBuilder)? updates,
+  ]) => (EdpValidationReportBuilder()..update(updates))._build();
 
-  _$EdpValidationReport._(
-      {this.manifestValid,
-      this.manifestErrors,
-      this.breakingChanges,
-      this.itemsValid,
-      this.rejected})
-      : super._();
+  _$EdpValidationReport._({
+    this.manifestValid,
+    this.manifestErrors,
+    this.breakingChanges,
+    this.itemsValid,
+    this.rejected,
+  }) : super._();
   @override
   EdpValidationReport rebuild(
-          void Function(EdpValidationReportBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpValidationReportBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpValidationReportBuilder toBuilder() =>
@@ -87,8 +87,8 @@ class EdpValidationReportBuilder
       _$this._manifestErrors ??=
           ListBuilder<EdpItemRejectionSchemaErrorsInner>();
   set manifestErrors(
-          ListBuilder<EdpItemRejectionSchemaErrorsInner>? manifestErrors) =>
-      _$this._manifestErrors = manifestErrors;
+    ListBuilder<EdpItemRejectionSchemaErrorsInner>? manifestErrors,
+  ) => _$this._manifestErrors = manifestErrors;
 
   ListBuilder<String>? _breakingChanges;
   ListBuilder<String> get breakingChanges =>
@@ -139,7 +139,8 @@ class EdpValidationReportBuilder
   _$EdpValidationReport _build() {
     _$EdpValidationReport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpValidationReport._(
             manifestValid: manifestValid,
             manifestErrors: _manifestErrors?.build(),
@@ -159,7 +160,10 @@ class EdpValidationReportBuilder
         _rejected?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpValidationReport', _$failedField, e.toString());
+          r'EdpValidationReport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

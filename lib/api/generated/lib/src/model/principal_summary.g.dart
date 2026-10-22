@@ -28,10 +28,10 @@ PrincipalSummaryKindEnum _$principalSummaryKindEnumValueOf(String name) {
 
 final BuiltSet<PrincipalSummaryKindEnum> _$principalSummaryKindEnumValues =
     BuiltSet<PrincipalSummaryKindEnum>(const <PrincipalSummaryKindEnum>[
-  _$principalSummaryKindEnum_person,
-  _$principalSummaryKindEnum_agent,
-  _$principalSummaryKindEnum_service,
-]);
+      _$principalSummaryKindEnum_person,
+      _$principalSummaryKindEnum_agent,
+      _$principalSummaryKindEnum_service,
+    ]);
 
 Serializer<PrincipalSummaryKindEnum> _$principalSummaryKindEnumSerializer =
     _$PrincipalSummaryKindEnumSerializer();
@@ -55,16 +55,20 @@ class _$PrincipalSummaryKindEnumSerializer
   final String wireName = 'PrincipalSummaryKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PrincipalSummaryKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrincipalSummaryKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrincipalSummaryKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrincipalSummaryKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrincipalSummaryKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrincipalSummary extends PrincipalSummary {
@@ -79,17 +83,17 @@ class _$PrincipalSummary extends PrincipalSummary {
   @override
   final String? avatarMediaId;
 
-  factory _$PrincipalSummary(
-          [void Function(PrincipalSummaryBuilder)? updates]) =>
-      (PrincipalSummaryBuilder()..update(updates))._build();
+  factory _$PrincipalSummary([
+    void Function(PrincipalSummaryBuilder)? updates,
+  ]) => (PrincipalSummaryBuilder()..update(updates))._build();
 
-  _$PrincipalSummary._(
-      {required this.id,
-      required this.handle,
-      required this.displayName,
-      required this.kind,
-      this.avatarMediaId})
-      : super._();
+  _$PrincipalSummary._({
+    required this.id,
+    required this.handle,
+    required this.displayName,
+    required this.kind,
+    this.avatarMediaId,
+  }) : super._();
   @override
   PrincipalSummary rebuild(void Function(PrincipalSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -189,16 +193,29 @@ class PrincipalSummaryBuilder
   PrincipalSummary build() => _build();
 
   _$PrincipalSummary _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrincipalSummary._(
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'PrincipalSummary', 'id'),
+            id,
+            r'PrincipalSummary',
+            'id',
+          ),
           handle: BuiltValueNullFieldError.checkNotNull(
-              handle, r'PrincipalSummary', 'handle'),
+            handle,
+            r'PrincipalSummary',
+            'handle',
+          ),
           displayName: BuiltValueNullFieldError.checkNotNull(
-              displayName, r'PrincipalSummary', 'displayName'),
+            displayName,
+            r'PrincipalSummary',
+            'displayName',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'PrincipalSummary', 'kind'),
+            kind,
+            r'PrincipalSummary',
+            'kind',
+          ),
           avatarMediaId: avatarMediaId,
         );
     replace(_$result);

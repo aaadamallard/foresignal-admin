@@ -7,17 +7,18 @@ part of 'benchmark_component_result.dart';
 // **************************************************************************
 
 const BenchmarkComponentResultStatusEnum
-    _$benchmarkComponentResultStatusEnum_pass =
+_$benchmarkComponentResultStatusEnum_pass =
     const BenchmarkComponentResultStatusEnum._('pass');
 const BenchmarkComponentResultStatusEnum
-    _$benchmarkComponentResultStatusEnum_warn =
+_$benchmarkComponentResultStatusEnum_warn =
     const BenchmarkComponentResultStatusEnum._('warn');
 const BenchmarkComponentResultStatusEnum
-    _$benchmarkComponentResultStatusEnum_fail =
+_$benchmarkComponentResultStatusEnum_fail =
     const BenchmarkComponentResultStatusEnum._('fail');
 
 BenchmarkComponentResultStatusEnum _$benchmarkComponentResultStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'pass':
       return _$benchmarkComponentResultStatusEnum_pass;
@@ -31,15 +32,17 @@ BenchmarkComponentResultStatusEnum _$benchmarkComponentResultStatusEnumValueOf(
 }
 
 final BuiltSet<BenchmarkComponentResultStatusEnum>
-    _$benchmarkComponentResultStatusEnumValues = BuiltSet<
-        BenchmarkComponentResultStatusEnum>(const <BenchmarkComponentResultStatusEnum>[
-  _$benchmarkComponentResultStatusEnum_pass,
-  _$benchmarkComponentResultStatusEnum_warn,
-  _$benchmarkComponentResultStatusEnum_fail,
-]);
+_$benchmarkComponentResultStatusEnumValues =
+    BuiltSet<BenchmarkComponentResultStatusEnum>(
+      const <BenchmarkComponentResultStatusEnum>[
+        _$benchmarkComponentResultStatusEnum_pass,
+        _$benchmarkComponentResultStatusEnum_warn,
+        _$benchmarkComponentResultStatusEnum_fail,
+      ],
+    );
 
 Serializer<BenchmarkComponentResultStatusEnum>
-    _$benchmarkComponentResultStatusEnumSerializer =
+_$benchmarkComponentResultStatusEnumSerializer =
     _$BenchmarkComponentResultStatusEnumSerializer();
 
 class _$BenchmarkComponentResultStatusEnumSerializer
@@ -62,16 +65,19 @@ class _$BenchmarkComponentResultStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, BenchmarkComponentResultStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    BenchmarkComponentResultStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkComponentResultStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkComponentResultStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkComponentResultStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkComponentResult extends BenchmarkComponentResult {
@@ -90,23 +96,23 @@ class _$BenchmarkComponentResult extends BenchmarkComponentResult {
   @override
   final BuiltList<Caveat>? caveats;
 
-  factory _$BenchmarkComponentResult(
-          [void Function(BenchmarkComponentResultBuilder)? updates]) =>
-      (BenchmarkComponentResultBuilder()..update(updates))._build();
+  factory _$BenchmarkComponentResult([
+    void Function(BenchmarkComponentResultBuilder)? updates,
+  ]) => (BenchmarkComponentResultBuilder()..update(updates))._build();
 
-  _$BenchmarkComponentResult._(
-      {required this.component,
-      required this.componentVersion,
-      required this.status,
-      required this.metrics,
-      this.thresholds,
-      this.scenarios,
-      this.caveats})
-      : super._();
+  _$BenchmarkComponentResult._({
+    required this.component,
+    required this.componentVersion,
+    required this.status,
+    required this.metrics,
+    this.thresholds,
+    this.scenarios,
+    this.caveats,
+  }) : super._();
   @override
   BenchmarkComponentResult rebuild(
-          void Function(BenchmarkComponentResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BenchmarkComponentResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BenchmarkComponentResultBuilder toBuilder() =>
@@ -182,16 +188,16 @@ class BenchmarkComponentResultBuilder
       _$this._thresholds ??=
           ListBuilder<BenchmarkComponentResultThresholdsInner>();
   set thresholds(
-          ListBuilder<BenchmarkComponentResultThresholdsInner>? thresholds) =>
-      _$this._thresholds = thresholds;
+    ListBuilder<BenchmarkComponentResultThresholdsInner>? thresholds,
+  ) => _$this._thresholds = thresholds;
 
   ListBuilder<BenchmarkComponentResultScenariosInner>? _scenarios;
   ListBuilder<BenchmarkComponentResultScenariosInner> get scenarios =>
       _$this._scenarios ??=
           ListBuilder<BenchmarkComponentResultScenariosInner>();
   set scenarios(
-          ListBuilder<BenchmarkComponentResultScenariosInner>? scenarios) =>
-      _$this._scenarios = scenarios;
+    ListBuilder<BenchmarkComponentResultScenariosInner>? scenarios,
+  ) => _$this._scenarios = scenarios;
 
   ListBuilder<Caveat>? _caveats;
   ListBuilder<Caveat> get caveats => _$this._caveats ??= ListBuilder<Caveat>();
@@ -232,16 +238,24 @@ class BenchmarkComponentResultBuilder
   _$BenchmarkComponentResult _build() {
     _$BenchmarkComponentResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkComponentResult._(
             component: BuiltValueNullFieldError.checkNotNull(
-                component, r'BenchmarkComponentResult', 'component'),
+              component,
+              r'BenchmarkComponentResult',
+              'component',
+            ),
             componentVersion: BuiltValueNullFieldError.checkNotNull(
-                componentVersion,
-                r'BenchmarkComponentResult',
-                'componentVersion'),
+              componentVersion,
+              r'BenchmarkComponentResult',
+              'componentVersion',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'BenchmarkComponentResult', 'status'),
+              status,
+              r'BenchmarkComponentResult',
+              'status',
+            ),
             metrics: metrics.build(),
             thresholds: _thresholds?.build(),
             scenarios: _scenarios?.build(),
@@ -260,7 +274,10 @@ class BenchmarkComponentResultBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkComponentResult', _$failedField, e.toString());
+          r'BenchmarkComponentResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

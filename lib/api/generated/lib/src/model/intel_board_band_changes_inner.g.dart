@@ -24,24 +24,24 @@ class _$IntelBoardBandChangesInner extends IntelBoardBandChangesInner {
   @override
   final DateTime at;
 
-  factory _$IntelBoardBandChangesInner(
-          [void Function(IntelBoardBandChangesInnerBuilder)? updates]) =>
-      (IntelBoardBandChangesInnerBuilder()..update(updates))._build();
+  factory _$IntelBoardBandChangesInner([
+    void Function(IntelBoardBandChangesInnerBuilder)? updates,
+  ]) => (IntelBoardBandChangesInnerBuilder()..update(updates))._build();
 
-  _$IntelBoardBandChangesInner._(
-      {required this.setId,
-      required this.hypothesisId,
-      this.question,
-      this.label,
-      this.fromTerm,
-      required this.toTerm,
-      this.probability,
-      required this.at})
-      : super._();
+  _$IntelBoardBandChangesInner._({
+    required this.setId,
+    required this.hypothesisId,
+    this.question,
+    this.label,
+    this.fromTerm,
+    required this.toTerm,
+    this.probability,
+    required this.at,
+  }) : super._();
   @override
   IntelBoardBandChangesInner rebuild(
-          void Function(IntelBoardBandChangesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardBandChangesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardBandChangesInnerBuilder toBuilder() =>
@@ -162,20 +162,33 @@ class IntelBoardBandChangesInnerBuilder
   IntelBoardBandChangesInner build() => _build();
 
   _$IntelBoardBandChangesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardBandChangesInner._(
           setId: BuiltValueNullFieldError.checkNotNull(
-              setId, r'IntelBoardBandChangesInner', 'setId'),
+            setId,
+            r'IntelBoardBandChangesInner',
+            'setId',
+          ),
           hypothesisId: BuiltValueNullFieldError.checkNotNull(
-              hypothesisId, r'IntelBoardBandChangesInner', 'hypothesisId'),
+            hypothesisId,
+            r'IntelBoardBandChangesInner',
+            'hypothesisId',
+          ),
           question: question,
           label: label,
           fromTerm: fromTerm,
           toTerm: BuiltValueNullFieldError.checkNotNull(
-              toTerm, r'IntelBoardBandChangesInner', 'toTerm'),
+            toTerm,
+            r'IntelBoardBandChangesInner',
+            'toTerm',
+          ),
           probability: probability,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'IntelBoardBandChangesInner', 'at'),
+            at,
+            r'IntelBoardBandChangesInner',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -20,22 +20,22 @@ class _$SocialPhysicalEvidence extends SocialPhysicalEvidence {
   @override
   final bool? negates;
 
-  factory _$SocialPhysicalEvidence(
-          [void Function(SocialPhysicalEvidenceBuilder)? updates]) =>
-      (SocialPhysicalEvidenceBuilder()..update(updates))._build();
+  factory _$SocialPhysicalEvidence([
+    void Function(SocialPhysicalEvidenceBuilder)? updates,
+  ]) => (SocialPhysicalEvidenceBuilder()..update(updates))._build();
 
-  _$SocialPhysicalEvidence._(
-      {required this.ref,
-      required this.family,
-      required this.originator,
-      required this.firstObservedAt,
-      this.distanceKm,
-      this.negates})
-      : super._();
+  _$SocialPhysicalEvidence._({
+    required this.ref,
+    required this.family,
+    required this.originator,
+    required this.firstObservedAt,
+    this.distanceKm,
+    this.negates,
+  }) : super._();
   @override
   SocialPhysicalEvidence rebuild(
-          void Function(SocialPhysicalEvidenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPhysicalEvidenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPhysicalEvidenceBuilder toBuilder() =>
@@ -140,16 +140,29 @@ class SocialPhysicalEvidenceBuilder
   SocialPhysicalEvidence build() => _build();
 
   _$SocialPhysicalEvidence _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialPhysicalEvidence._(
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'SocialPhysicalEvidence', 'ref'),
+            ref,
+            r'SocialPhysicalEvidence',
+            'ref',
+          ),
           family: BuiltValueNullFieldError.checkNotNull(
-              family, r'SocialPhysicalEvidence', 'family'),
+            family,
+            r'SocialPhysicalEvidence',
+            'family',
+          ),
           originator: BuiltValueNullFieldError.checkNotNull(
-              originator, r'SocialPhysicalEvidence', 'originator'),
+            originator,
+            r'SocialPhysicalEvidence',
+            'originator',
+          ),
           firstObservedAt: BuiltValueNullFieldError.checkNotNull(
-              firstObservedAt, r'SocialPhysicalEvidence', 'firstObservedAt'),
+            firstObservedAt,
+            r'SocialPhysicalEvidence',
+            'firstObservedAt',
+          ),
           distanceKm: distanceKm,
           negates: negates,
         );

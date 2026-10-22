@@ -7,11 +7,11 @@ part of 'storm_track_payload_lightning_jump.dart';
 // **************************************************************************
 
 const StormTrackPayloadLightningJumpMethodEnum
-    _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1 =
+_$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1 =
     const StormTrackPayloadLightningJumpMethodEnum._('n2sigmaGlmV1');
 
 StormTrackPayloadLightningJumpMethodEnum
-    _$stormTrackPayloadLightningJumpMethodEnumValueOf(String name) {
+_$stormTrackPayloadLightningJumpMethodEnumValueOf(String name) {
   switch (name) {
     case 'n2sigmaGlmV1':
       return _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1;
@@ -21,13 +21,15 @@ StormTrackPayloadLightningJumpMethodEnum
 }
 
 final BuiltSet<StormTrackPayloadLightningJumpMethodEnum>
-    _$stormTrackPayloadLightningJumpMethodEnumValues = BuiltSet<
-        StormTrackPayloadLightningJumpMethodEnum>(const <StormTrackPayloadLightningJumpMethodEnum>[
-  _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1,
-]);
+_$stormTrackPayloadLightningJumpMethodEnumValues =
+    BuiltSet<StormTrackPayloadLightningJumpMethodEnum>(
+      const <StormTrackPayloadLightningJumpMethodEnum>[
+        _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1,
+      ],
+    );
 
 Serializer<StormTrackPayloadLightningJumpMethodEnum>
-    _$stormTrackPayloadLightningJumpMethodEnumSerializer =
+_$stormTrackPayloadLightningJumpMethodEnumSerializer =
     _$StormTrackPayloadLightningJumpMethodEnumSerializer();
 
 class _$StormTrackPayloadLightningJumpMethodEnumSerializer
@@ -41,23 +43,26 @@ class _$StormTrackPayloadLightningJumpMethodEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StormTrackPayloadLightningJumpMethodEnum
+    StormTrackPayloadLightningJumpMethodEnum,
   ];
   @override
   final String wireName = 'StormTrackPayloadLightningJumpMethodEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StormTrackPayloadLightningJumpMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StormTrackPayloadLightningJumpMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StormTrackPayloadLightningJumpMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StormTrackPayloadLightningJumpMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StormTrackPayloadLightningJumpMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StormTrackPayloadLightningJump extends StormTrackPayloadLightningJump {
@@ -70,17 +75,20 @@ class _$StormTrackPayloadLightningJump extends StormTrackPayloadLightningJump {
   @override
   final StormTrackPayloadLightningJumpMethodEnum method;
 
-  factory _$StormTrackPayloadLightningJump(
-          [void Function(StormTrackPayloadLightningJumpBuilder)? updates]) =>
-      (StormTrackPayloadLightningJumpBuilder()..update(updates))._build();
+  factory _$StormTrackPayloadLightningJump([
+    void Function(StormTrackPayloadLightningJumpBuilder)? updates,
+  ]) => (StormTrackPayloadLightningJumpBuilder()..update(updates))._build();
 
-  _$StormTrackPayloadLightningJump._(
-      {required this.at, this.sigma, this.rateFpm, required this.method})
-      : super._();
+  _$StormTrackPayloadLightningJump._({
+    required this.at,
+    this.sigma,
+    this.rateFpm,
+    required this.method,
+  }) : super._();
   @override
   StormTrackPayloadLightningJump rebuild(
-          void Function(StormTrackPayloadLightningJumpBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StormTrackPayloadLightningJumpBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StormTrackPayloadLightningJumpBuilder toBuilder() =>
@@ -120,8 +128,10 @@ class _$StormTrackPayloadLightningJump extends StormTrackPayloadLightningJump {
 
 class StormTrackPayloadLightningJumpBuilder
     implements
-        Builder<StormTrackPayloadLightningJump,
-            StormTrackPayloadLightningJumpBuilder> {
+        Builder<
+          StormTrackPayloadLightningJump,
+          StormTrackPayloadLightningJumpBuilder
+        > {
   _$StormTrackPayloadLightningJump? _$v;
 
   DateTime? _at;
@@ -171,14 +181,21 @@ class StormTrackPayloadLightningJumpBuilder
   StormTrackPayloadLightningJump build() => _build();
 
   _$StormTrackPayloadLightningJump _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StormTrackPayloadLightningJump._(
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'StormTrackPayloadLightningJump', 'at'),
+            at,
+            r'StormTrackPayloadLightningJump',
+            'at',
+          ),
           sigma: sigma,
           rateFpm: rateFpm,
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'StormTrackPayloadLightningJump', 'method'),
+            method,
+            r'StormTrackPayloadLightningJump',
+            'method',
+          ),
         );
     replace(_$result);
     return _$result;

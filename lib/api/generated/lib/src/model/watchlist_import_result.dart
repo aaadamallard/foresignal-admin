@@ -52,8 +52,9 @@ abstract class WatchlistImportResult
 
   WatchlistImportResult._();
 
-  factory WatchlistImportResult(
-      [void updates(WatchlistImportResultBuilder b)]) = _$WatchlistImportResult;
+  factory WatchlistImportResult([
+    void updates(WatchlistImportResultBuilder b),
+  ]) = _$WatchlistImportResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WatchlistImportResultBuilder b) => b;
@@ -68,7 +69,7 @@ class _$WatchlistImportResultSerializer
   @override
   final Iterable<Type> types = const [
     WatchlistImportResult,
-    _$WatchlistImportResult
+    _$WatchlistImportResult,
   ];
 
   @override
@@ -116,8 +117,9 @@ class _$WatchlistImportResultSerializer
     yield r'invalid';
     yield serializers.serialize(
       object.invalid,
-      specifiedType: const FullType(
-          BuiltList, [FullType(WatchlistImportResultInvalidInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(WatchlistImportResultInvalidInner),
+      ]),
     );
     yield r'itemCount';
     yield serializers.serialize(
@@ -132,9 +134,11 @@ class _$WatchlistImportResultSerializer
     WatchlistImportResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -150,63 +154,69 @@ class _$WatchlistImportResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'dryRun':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.dryRun = valueDes;
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(WatchlistImportResultModeEnum),
-          ) as WatchlistImportResultModeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WatchlistImportResultModeEnum,
+                    ),
+                  )
+                  as WatchlistImportResultModeEnum?;
           if (valueDes == null) continue;
           result.mode = valueDes;
           break;
         case r'added':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.added = valueDes;
           break;
         case r'updated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.updated = valueDes;
           break;
         case r'removed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.removed = valueDes;
           break;
         case r'unchanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.unchanged = valueDes;
           break;
         case r'invalid':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(WatchlistImportResultInvalidInner)]),
-          ) as BuiltList<WatchlistImportResultInvalidInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(WatchlistImportResultInvalidInner),
+                    ]),
+                  )
+                  as BuiltList<WatchlistImportResultInvalidInner>;
           result.invalid.replace(valueDes);
           break;
         case r'itemCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.itemCount = valueDes;
           break;
         default:

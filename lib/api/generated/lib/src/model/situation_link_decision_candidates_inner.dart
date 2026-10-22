@@ -16,8 +16,10 @@ part 'situation_link_decision_candidates_inner.g.dart';
 @BuiltValue()
 abstract class SituationLinkDecisionCandidatesInner
     implements
-        Built<SituationLinkDecisionCandidatesInner,
-            SituationLinkDecisionCandidatesInnerBuilder> {
+        Built<
+          SituationLinkDecisionCandidatesInner,
+          SituationLinkDecisionCandidatesInnerBuilder
+        > {
   /// ULID identifier
   @BuiltValueField(wireName: r'situationId')
   String get situationId;
@@ -27,9 +29,9 @@ abstract class SituationLinkDecisionCandidatesInner
 
   SituationLinkDecisionCandidatesInner._();
 
-  factory SituationLinkDecisionCandidatesInner(
-          [void updates(SituationLinkDecisionCandidatesInnerBuilder b)]) =
-      _$SituationLinkDecisionCandidatesInner;
+  factory SituationLinkDecisionCandidatesInner([
+    void updates(SituationLinkDecisionCandidatesInnerBuilder b),
+  ]) = _$SituationLinkDecisionCandidatesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SituationLinkDecisionCandidatesInnerBuilder b) => b;
@@ -44,7 +46,7 @@ class _$SituationLinkDecisionCandidatesInnerSerializer
   @override
   final Iterable<Type> types = const [
     SituationLinkDecisionCandidatesInner,
-    _$SituationLinkDecisionCandidatesInner
+    _$SituationLinkDecisionCandidatesInner,
   ];
 
   @override
@@ -73,9 +75,11 @@ class _$SituationLinkDecisionCandidatesInnerSerializer
     SituationLinkDecisionCandidatesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,17 +95,18 @@ class _$SituationLinkDecisionCandidatesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.situationId = valueDes;
           break;
         case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.score = valueDes;
           break;
         default:

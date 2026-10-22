@@ -7,13 +7,16 @@ part of 'media.dart';
 // **************************************************************************
 
 const MediaRoleEnum _$mediaRoleEnum_image = const MediaRoleEnum._('image');
-const MediaRoleEnum _$mediaRoleEnum_thumbnail =
-    const MediaRoleEnum._('thumbnail');
-const MediaRoleEnum _$mediaRoleEnum_projected =
-    const MediaRoleEnum._('projected');
+const MediaRoleEnum _$mediaRoleEnum_thumbnail = const MediaRoleEnum._(
+  'thumbnail',
+);
+const MediaRoleEnum _$mediaRoleEnum_projected = const MediaRoleEnum._(
+  'projected',
+);
 const MediaRoleEnum _$mediaRoleEnum_map = const MediaRoleEnum._('map');
-const MediaRoleEnum _$mediaRoleEnum_document =
-    const MediaRoleEnum._('document');
+const MediaRoleEnum _$mediaRoleEnum_document = const MediaRoleEnum._(
+  'document',
+);
 const MediaRoleEnum _$mediaRoleEnum_audio = const MediaRoleEnum._('audio');
 
 MediaRoleEnum _$mediaRoleEnumValueOf(String name) {
@@ -37,13 +40,13 @@ MediaRoleEnum _$mediaRoleEnumValueOf(String name) {
 
 final BuiltSet<MediaRoleEnum> _$mediaRoleEnumValues =
     BuiltSet<MediaRoleEnum>(const <MediaRoleEnum>[
-  _$mediaRoleEnum_image,
-  _$mediaRoleEnum_thumbnail,
-  _$mediaRoleEnum_projected,
-  _$mediaRoleEnum_map,
-  _$mediaRoleEnum_document,
-  _$mediaRoleEnum_audio,
-]);
+      _$mediaRoleEnum_image,
+      _$mediaRoleEnum_thumbnail,
+      _$mediaRoleEnum_projected,
+      _$mediaRoleEnum_map,
+      _$mediaRoleEnum_document,
+      _$mediaRoleEnum_audio,
+    ]);
 
 Serializer<MediaRoleEnum> _$mediaRoleEnumSerializer =
     _$MediaRoleEnumSerializer();
@@ -72,15 +75,20 @@ class _$MediaRoleEnumSerializer implements PrimitiveSerializer<MediaRoleEnum> {
   final String wireName = 'MediaRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, MediaRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MediaRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MediaRoleEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MediaRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MediaRoleEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MediaRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Media extends Media {
@@ -122,25 +130,25 @@ class _$Media extends Media {
   factory _$Media([void Function(MediaBuilder)? updates]) =>
       (MediaBuilder()..update(updates))._build();
 
-  _$Media._(
-      {required this.id,
-      required this.sha256,
-      required this.contentType,
-      required this.width,
-      required this.height,
-      required this.bytes,
-      required this.role,
-      this.sourceId,
-      this.recordSourceId,
-      this.recordExternalId,
-      this.recordRef,
-      this.licence,
-      required this.createdAt,
-      this.expiresAt,
-      this.variantOf,
-      this.variantWidth,
-      this.links})
-      : super._();
+  _$Media._({
+    required this.id,
+    required this.sha256,
+    required this.contentType,
+    required this.width,
+    required this.height,
+    required this.bytes,
+    required this.role,
+    this.sourceId,
+    this.recordSourceId,
+    this.recordExternalId,
+    this.recordRef,
+    this.licence,
+    required this.createdAt,
+    this.expiresAt,
+    this.variantOf,
+    this.variantWidth,
+    this.links,
+  }) : super._();
   @override
   Media rebuild(void Function(MediaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -337,19 +345,35 @@ class MediaBuilder implements Builder<Media, MediaBuilder> {
   _$Media _build() {
     _$Media _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Media._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Media', 'id'),
             sha256: BuiltValueNullFieldError.checkNotNull(
-                sha256, r'Media', 'sha256'),
+              sha256,
+              r'Media',
+              'sha256',
+            ),
             contentType: BuiltValueNullFieldError.checkNotNull(
-                contentType, r'Media', 'contentType'),
-            width:
-                BuiltValueNullFieldError.checkNotNull(width, r'Media', 'width'),
+              contentType,
+              r'Media',
+              'contentType',
+            ),
+            width: BuiltValueNullFieldError.checkNotNull(
+              width,
+              r'Media',
+              'width',
+            ),
             height: BuiltValueNullFieldError.checkNotNull(
-                height, r'Media', 'height'),
-            bytes:
-                BuiltValueNullFieldError.checkNotNull(bytes, r'Media', 'bytes'),
+              height,
+              r'Media',
+              'height',
+            ),
+            bytes: BuiltValueNullFieldError.checkNotNull(
+              bytes,
+              r'Media',
+              'bytes',
+            ),
             role: BuiltValueNullFieldError.checkNotNull(role, r'Media', 'role'),
             sourceId: sourceId,
             recordSourceId: recordSourceId,
@@ -357,7 +381,10 @@ class MediaBuilder implements Builder<Media, MediaBuilder> {
             recordRef: recordRef,
             licence: licence,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Media', 'createdAt'),
+              createdAt,
+              r'Media',
+              'createdAt',
+            ),
             expiresAt: expiresAt,
             variantOf: variantOf,
             variantWidth: variantWidth,

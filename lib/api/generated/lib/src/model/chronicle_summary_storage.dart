@@ -28,9 +28,9 @@ abstract class ChronicleSummaryStorage
 
   ChronicleSummaryStorage._();
 
-  factory ChronicleSummaryStorage(
-          [void updates(ChronicleSummaryStorageBuilder b)]) =
-      _$ChronicleSummaryStorage;
+  factory ChronicleSummaryStorage([
+    void updates(ChronicleSummaryStorageBuilder b),
+  ]) = _$ChronicleSummaryStorage;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSummaryStorageBuilder b) => b;
@@ -45,7 +45,7 @@ class _$ChronicleSummaryStorageSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSummaryStorage,
-    _$ChronicleSummaryStorage
+    _$ChronicleSummaryStorage,
   ];
 
   @override
@@ -81,9 +81,11 @@ class _$ChronicleSummaryStorageSerializer
     ChronicleSummaryStorage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +101,24 @@ class _$ChronicleSummaryStorageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'bytesUsed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.bytesUsed = valueDes;
           break;
         case r'sizeCapBytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.sizeCapBytes = valueDes;
           break;
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.rows = valueDes;
           break;

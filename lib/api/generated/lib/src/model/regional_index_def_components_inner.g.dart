@@ -7,20 +7,20 @@ part of 'regional_index_def_components_inner.dart';
 // **************************************************************************
 
 const RegionalIndexDefComponentsInnerTransformEnum
-    _$regionalIndexDefComponentsInnerTransformEnum_log1p =
+_$regionalIndexDefComponentsInnerTransformEnum_log1p =
     const RegionalIndexDefComponentsInnerTransformEnum._('log1p');
 const RegionalIndexDefComponentsInnerTransformEnum
-    _$regionalIndexDefComponentsInnerTransformEnum_zscore =
+_$regionalIndexDefComponentsInnerTransformEnum_zscore =
     const RegionalIndexDefComponentsInnerTransformEnum._('zscore');
 const RegionalIndexDefComponentsInnerTransformEnum
-    _$regionalIndexDefComponentsInnerTransformEnum_pctrank =
+_$regionalIndexDefComponentsInnerTransformEnum_pctrank =
     const RegionalIndexDefComponentsInnerTransformEnum._('pctrank');
 const RegionalIndexDefComponentsInnerTransformEnum
-    _$regionalIndexDefComponentsInnerTransformEnum_level =
+_$regionalIndexDefComponentsInnerTransformEnum_level =
     const RegionalIndexDefComponentsInnerTransformEnum._('level');
 
 RegionalIndexDefComponentsInnerTransformEnum
-    _$regionalIndexDefComponentsInnerTransformEnumValueOf(String name) {
+_$regionalIndexDefComponentsInnerTransformEnumValueOf(String name) {
   switch (name) {
     case 'log1p':
       return _$regionalIndexDefComponentsInnerTransformEnum_log1p;
@@ -36,26 +36,28 @@ RegionalIndexDefComponentsInnerTransformEnum
 }
 
 final BuiltSet<RegionalIndexDefComponentsInnerTransformEnum>
-    _$regionalIndexDefComponentsInnerTransformEnumValues = BuiltSet<
-        RegionalIndexDefComponentsInnerTransformEnum>(const <RegionalIndexDefComponentsInnerTransformEnum>[
-  _$regionalIndexDefComponentsInnerTransformEnum_log1p,
-  _$regionalIndexDefComponentsInnerTransformEnum_zscore,
-  _$regionalIndexDefComponentsInnerTransformEnum_pctrank,
-  _$regionalIndexDefComponentsInnerTransformEnum_level,
-]);
+_$regionalIndexDefComponentsInnerTransformEnumValues =
+    BuiltSet<RegionalIndexDefComponentsInnerTransformEnum>(
+      const <RegionalIndexDefComponentsInnerTransformEnum>[
+        _$regionalIndexDefComponentsInnerTransformEnum_log1p,
+        _$regionalIndexDefComponentsInnerTransformEnum_zscore,
+        _$regionalIndexDefComponentsInnerTransformEnum_pctrank,
+        _$regionalIndexDefComponentsInnerTransformEnum_level,
+      ],
+    );
 
 const RegionalIndexDefComponentsInnerWindowEnum
-    _$regionalIndexDefComponentsInnerWindowEnum_P7D =
+_$regionalIndexDefComponentsInnerWindowEnum_P7D =
     const RegionalIndexDefComponentsInnerWindowEnum._('P7D');
 const RegionalIndexDefComponentsInnerWindowEnum
-    _$regionalIndexDefComponentsInnerWindowEnum_P28D =
+_$regionalIndexDefComponentsInnerWindowEnum_P28D =
     const RegionalIndexDefComponentsInnerWindowEnum._('P28D');
 const RegionalIndexDefComponentsInnerWindowEnum
-    _$regionalIndexDefComponentsInnerWindowEnum_P90D =
+_$regionalIndexDefComponentsInnerWindowEnum_P90D =
     const RegionalIndexDefComponentsInnerWindowEnum._('P90D');
 
 RegionalIndexDefComponentsInnerWindowEnum
-    _$regionalIndexDefComponentsInnerWindowEnumValueOf(String name) {
+_$regionalIndexDefComponentsInnerWindowEnumValueOf(String name) {
   switch (name) {
     case 'P7D':
       return _$regionalIndexDefComponentsInnerWindowEnum_P7D;
@@ -69,22 +71,24 @@ RegionalIndexDefComponentsInnerWindowEnum
 }
 
 final BuiltSet<RegionalIndexDefComponentsInnerWindowEnum>
-    _$regionalIndexDefComponentsInnerWindowEnumValues = BuiltSet<
-        RegionalIndexDefComponentsInnerWindowEnum>(const <RegionalIndexDefComponentsInnerWindowEnum>[
-  _$regionalIndexDefComponentsInnerWindowEnum_P7D,
-  _$regionalIndexDefComponentsInnerWindowEnum_P28D,
-  _$regionalIndexDefComponentsInnerWindowEnum_P90D,
-]);
+_$regionalIndexDefComponentsInnerWindowEnumValues =
+    BuiltSet<RegionalIndexDefComponentsInnerWindowEnum>(
+      const <RegionalIndexDefComponentsInnerWindowEnum>[
+        _$regionalIndexDefComponentsInnerWindowEnum_P7D,
+        _$regionalIndexDefComponentsInnerWindowEnum_P28D,
+        _$regionalIndexDefComponentsInnerWindowEnum_P90D,
+      ],
+    );
 
 const RegionalIndexDefComponentsInnerDirectionEnum
-    _$regionalIndexDefComponentsInnerDirectionEnum_number1 =
+_$regionalIndexDefComponentsInnerDirectionEnum_number1 =
     const RegionalIndexDefComponentsInnerDirectionEnum._('number1');
 const RegionalIndexDefComponentsInnerDirectionEnum
-    _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1 =
+_$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1 =
     const RegionalIndexDefComponentsInnerDirectionEnum._('numberNegative1');
 
 RegionalIndexDefComponentsInnerDirectionEnum
-    _$regionalIndexDefComponentsInnerDirectionEnumValueOf(String name) {
+_$regionalIndexDefComponentsInnerDirectionEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$regionalIndexDefComponentsInnerDirectionEnum_number1;
@@ -96,20 +100,22 @@ RegionalIndexDefComponentsInnerDirectionEnum
 }
 
 final BuiltSet<RegionalIndexDefComponentsInnerDirectionEnum>
-    _$regionalIndexDefComponentsInnerDirectionEnumValues = BuiltSet<
-        RegionalIndexDefComponentsInnerDirectionEnum>(const <RegionalIndexDefComponentsInnerDirectionEnum>[
-  _$regionalIndexDefComponentsInnerDirectionEnum_number1,
-  _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1,
-]);
+_$regionalIndexDefComponentsInnerDirectionEnumValues =
+    BuiltSet<RegionalIndexDefComponentsInnerDirectionEnum>(
+      const <RegionalIndexDefComponentsInnerDirectionEnum>[
+        _$regionalIndexDefComponentsInnerDirectionEnum_number1,
+        _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1,
+      ],
+    );
 
 Serializer<RegionalIndexDefComponentsInnerTransformEnum>
-    _$regionalIndexDefComponentsInnerTransformEnumSerializer =
+_$regionalIndexDefComponentsInnerTransformEnumSerializer =
     _$RegionalIndexDefComponentsInnerTransformEnumSerializer();
 Serializer<RegionalIndexDefComponentsInnerWindowEnum>
-    _$regionalIndexDefComponentsInnerWindowEnumSerializer =
+_$regionalIndexDefComponentsInnerWindowEnumSerializer =
     _$RegionalIndexDefComponentsInnerWindowEnumSerializer();
 Serializer<RegionalIndexDefComponentsInnerDirectionEnum>
-    _$regionalIndexDefComponentsInnerDirectionEnumSerializer =
+_$regionalIndexDefComponentsInnerDirectionEnumSerializer =
     _$RegionalIndexDefComponentsInnerDirectionEnumSerializer();
 
 class _$RegionalIndexDefComponentsInnerTransformEnumSerializer
@@ -130,23 +136,26 @@ class _$RegionalIndexDefComponentsInnerTransformEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    RegionalIndexDefComponentsInnerTransformEnum
+    RegionalIndexDefComponentsInnerTransformEnum,
   ];
   @override
   final String wireName = 'RegionalIndexDefComponentsInnerTransformEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          RegionalIndexDefComponentsInnerTransformEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RegionalIndexDefComponentsInnerTransformEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RegionalIndexDefComponentsInnerTransformEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RegionalIndexDefComponentsInnerTransformEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RegionalIndexDefComponentsInnerTransformEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RegionalIndexDefComponentsInnerWindowEnumSerializer
@@ -164,23 +173,26 @@ class _$RegionalIndexDefComponentsInnerWindowEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    RegionalIndexDefComponentsInnerWindowEnum
+    RegionalIndexDefComponentsInnerWindowEnum,
   ];
   @override
   final String wireName = 'RegionalIndexDefComponentsInnerWindowEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          RegionalIndexDefComponentsInnerWindowEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RegionalIndexDefComponentsInnerWindowEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RegionalIndexDefComponentsInnerWindowEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RegionalIndexDefComponentsInnerWindowEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RegionalIndexDefComponentsInnerWindowEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RegionalIndexDefComponentsInnerDirectionEnumSerializer
@@ -197,23 +209,26 @@ class _$RegionalIndexDefComponentsInnerDirectionEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    RegionalIndexDefComponentsInnerDirectionEnum
+    RegionalIndexDefComponentsInnerDirectionEnum,
   ];
   @override
   final String wireName = 'RegionalIndexDefComponentsInnerDirectionEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          RegionalIndexDefComponentsInnerDirectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RegionalIndexDefComponentsInnerDirectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RegionalIndexDefComponentsInnerDirectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RegionalIndexDefComponentsInnerDirectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RegionalIndexDefComponentsInnerDirectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RegionalIndexDefComponentsInner
@@ -231,22 +246,22 @@ class _$RegionalIndexDefComponentsInner
   @override
   final num? floor;
 
-  factory _$RegionalIndexDefComponentsInner(
-          [void Function(RegionalIndexDefComponentsInnerBuilder)? updates]) =>
-      (RegionalIndexDefComponentsInnerBuilder()..update(updates))._build();
+  factory _$RegionalIndexDefComponentsInner([
+    void Function(RegionalIndexDefComponentsInnerBuilder)? updates,
+  ]) => (RegionalIndexDefComponentsInnerBuilder()..update(updates))._build();
 
-  _$RegionalIndexDefComponentsInner._(
-      {required this.key,
-      required this.ref,
-      required this.transform,
-      required this.window,
-      required this.direction,
-      this.floor})
-      : super._();
+  _$RegionalIndexDefComponentsInner._({
+    required this.key,
+    required this.ref,
+    required this.transform,
+    required this.window,
+    required this.direction,
+    this.floor,
+  }) : super._();
   @override
   RegionalIndexDefComponentsInner rebuild(
-          void Function(RegionalIndexDefComponentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexDefComponentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexDefComponentsInnerBuilder toBuilder() =>
@@ -292,8 +307,10 @@ class _$RegionalIndexDefComponentsInner
 
 class RegionalIndexDefComponentsInnerBuilder
     implements
-        Builder<RegionalIndexDefComponentsInner,
-            RegionalIndexDefComponentsInnerBuilder> {
+        Builder<
+          RegionalIndexDefComponentsInner,
+          RegionalIndexDefComponentsInnerBuilder
+        > {
   _$RegionalIndexDefComponentsInner? _$v;
 
   String? _key;
@@ -357,18 +374,34 @@ class RegionalIndexDefComponentsInnerBuilder
   RegionalIndexDefComponentsInner build() => _build();
 
   _$RegionalIndexDefComponentsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RegionalIndexDefComponentsInner._(
           key: BuiltValueNullFieldError.checkNotNull(
-              key, r'RegionalIndexDefComponentsInner', 'key'),
+            key,
+            r'RegionalIndexDefComponentsInner',
+            'key',
+          ),
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'RegionalIndexDefComponentsInner', 'ref'),
+            ref,
+            r'RegionalIndexDefComponentsInner',
+            'ref',
+          ),
           transform: BuiltValueNullFieldError.checkNotNull(
-              transform, r'RegionalIndexDefComponentsInner', 'transform'),
+            transform,
+            r'RegionalIndexDefComponentsInner',
+            'transform',
+          ),
           window: BuiltValueNullFieldError.checkNotNull(
-              window, r'RegionalIndexDefComponentsInner', 'window'),
+            window,
+            r'RegionalIndexDefComponentsInner',
+            'window',
+          ),
           direction: BuiltValueNullFieldError.checkNotNull(
-              direction, r'RegionalIndexDefComponentsInner', 'direction'),
+            direction,
+            r'RegionalIndexDefComponentsInner',
+            'direction',
+          ),
           floor: floor,
         );
     replace(_$result);

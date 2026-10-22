@@ -66,9 +66,9 @@ abstract class CoordinationIndicators
 
   CoordinationIndicators._();
 
-  factory CoordinationIndicators(
-          [void updates(CoordinationIndicatorsBuilder b)]) =
-      _$CoordinationIndicators;
+  factory CoordinationIndicators([
+    void updates(CoordinationIndicatorsBuilder b),
+  ]) = _$CoordinationIndicators;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CoordinationIndicatorsBuilder b) => b;
@@ -83,7 +83,7 @@ class _$CoordinationIndicatorsSerializer
   @override
   final Iterable<Type> types = const [
     CoordinationIndicators,
-    _$CoordinationIndicators
+    _$CoordinationIndicators,
   ];
 
   @override
@@ -161,9 +161,11 @@ class _$CoordinationIndicatorsSerializer
     CoordinationIndicators object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -179,82 +181,101 @@ class _$CoordinationIndicatorsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'narrativeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.narrativeId = valueDes;
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimeRange),
-          ) as TimeRange;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimeRange),
+                  )
+                  as TimeRange;
           result.window.replace(valueDes);
           break;
         case r'synchrony':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoordinationIndicator),
-          ) as CoordinationIndicator;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoordinationIndicator),
+                  )
+                  as CoordinationIndicator;
           result.synchrony.replace(valueDes);
           break;
         case r'textDuplication':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoordinationIndicator),
-          ) as CoordinationIndicator;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoordinationIndicator),
+                  )
+                  as CoordinationIndicator;
           result.textDuplication.replace(valueDes);
           break;
         case r'accountAgeSkew':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoordinationIndicator),
-          ) as CoordinationIndicator;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoordinationIndicator),
+                  )
+                  as CoordinationIndicator;
           result.accountAgeSkew.replace(valueDes);
           break;
         case r'coRepostBursts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CoordinationIndicator),
-          ) as CoordinationIndicator;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CoordinationIndicator),
+                  )
+                  as CoordinationIndicator;
           result.coRepostBursts.replace(valueDes);
           break;
         case r'significantCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.significantCount = valueDes;
           break;
         case r'findingId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.findingId = valueDes;
           break;
         case r'statement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statement = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DetectorRef),
-          ) as DetectorRef;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DetectorRef),
+                  )
+                  as DetectorRef;
           result.detector.replace(valueDes);
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         default:

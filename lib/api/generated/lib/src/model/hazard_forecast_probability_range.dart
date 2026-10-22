@@ -16,8 +16,10 @@ part 'hazard_forecast_probability_range.g.dart';
 @BuiltValue()
 abstract class HazardForecastProbabilityRange
     implements
-        Built<HazardForecastProbabilityRange,
-            HazardForecastProbabilityRangeBuilder> {
+        Built<
+          HazardForecastProbabilityRange,
+          HazardForecastProbabilityRangeBuilder
+        > {
   @BuiltValueField(wireName: r'low')
   num get low;
 
@@ -26,9 +28,9 @@ abstract class HazardForecastProbabilityRange
 
   HazardForecastProbabilityRange._();
 
-  factory HazardForecastProbabilityRange(
-          [void updates(HazardForecastProbabilityRangeBuilder b)]) =
-      _$HazardForecastProbabilityRange;
+  factory HazardForecastProbabilityRange([
+    void updates(HazardForecastProbabilityRangeBuilder b),
+  ]) = _$HazardForecastProbabilityRange;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HazardForecastProbabilityRangeBuilder b) => b;
@@ -43,7 +45,7 @@ class _$HazardForecastProbabilityRangeSerializer
   @override
   final Iterable<Type> types = const [
     HazardForecastProbabilityRange,
-    _$HazardForecastProbabilityRange
+    _$HazardForecastProbabilityRange,
   ];
 
   @override
@@ -55,10 +57,7 @@ class _$HazardForecastProbabilityRangeSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'low';
-    yield serializers.serialize(
-      object.low,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.low, specifiedType: const FullType(num));
     if (object.high != null) {
       yield r'high';
       yield serializers.serialize(
@@ -74,9 +73,11 @@ class _$HazardForecastProbabilityRangeSerializer
     HazardForecastProbabilityRange object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,17 +93,18 @@ class _$HazardForecastProbabilityRangeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'low':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.low = valueDes;
           break;
         case r'high':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.high = valueDes;
           break;

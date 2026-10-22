@@ -152,9 +152,11 @@ class _$AnomalyBaselineSerializer
     AnomalyBaseline object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -170,79 +172,98 @@ class _$AnomalyBaselineSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'slotMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnomalyBaselineSlotModeEnum),
-          ) as AnomalyBaselineSlotModeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnomalyBaselineSlotModeEnum),
+                  )
+                  as AnomalyBaselineSlotModeEnum;
           result.slotMode = valueDes;
           break;
         case r'bucket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AnomalyBaselineBucketEnum),
-          ) as AnomalyBaselineBucketEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(AnomalyBaselineBucketEnum),
+                  )
+                  as AnomalyBaselineBucketEnum;
           result.bucket = valueDes;
           break;
         case r'weeksAvailable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.weeksAvailable = valueDes;
           break;
         case r'minWeeks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minWeeks = valueDes;
           break;
         case r'learning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.learning = valueDes;
           break;
         case r'learningUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.learningUntil = valueDes;
           break;
         case r'lowConfidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.lowConfidence = valueDes;
           break;
         case r'samplePath':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AnomalyBaselineSamplePathEnum),
-          ) as AnomalyBaselineSamplePathEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnomalyBaselineSamplePathEnum,
+                    ),
+                  )
+                  as AnomalyBaselineSamplePathEnum?;
           if (valueDes == null) continue;
           result.samplePath = valueDes;
           break;
         case r'slots':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(AnomalyBaselineSlot)]),
-          ) as BuiltList<AnomalyBaselineSlot>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AnomalyBaselineSlot),
+                    ]),
+                  )
+                  as BuiltList<AnomalyBaselineSlot>;
           result.slots.replace(valueDes);
           break;
         default:

@@ -7,17 +7,17 @@ part of 'event_stream_alerts_filter.dart';
 // **************************************************************************
 
 const EventStreamAlertsFilterMinSeverityEnum
-    _$eventStreamAlertsFilterMinSeverityEnum_info =
+_$eventStreamAlertsFilterMinSeverityEnum_info =
     const EventStreamAlertsFilterMinSeverityEnum._('info');
 const EventStreamAlertsFilterMinSeverityEnum
-    _$eventStreamAlertsFilterMinSeverityEnum_warning =
+_$eventStreamAlertsFilterMinSeverityEnum_warning =
     const EventStreamAlertsFilterMinSeverityEnum._('warning');
 const EventStreamAlertsFilterMinSeverityEnum
-    _$eventStreamAlertsFilterMinSeverityEnum_critical =
+_$eventStreamAlertsFilterMinSeverityEnum_critical =
     const EventStreamAlertsFilterMinSeverityEnum._('critical');
 
 EventStreamAlertsFilterMinSeverityEnum
-    _$eventStreamAlertsFilterMinSeverityEnumValueOf(String name) {
+_$eventStreamAlertsFilterMinSeverityEnumValueOf(String name) {
   switch (name) {
     case 'info':
       return _$eventStreamAlertsFilterMinSeverityEnum_info;
@@ -31,15 +31,17 @@ EventStreamAlertsFilterMinSeverityEnum
 }
 
 final BuiltSet<EventStreamAlertsFilterMinSeverityEnum>
-    _$eventStreamAlertsFilterMinSeverityEnumValues = BuiltSet<
-        EventStreamAlertsFilterMinSeverityEnum>(const <EventStreamAlertsFilterMinSeverityEnum>[
-  _$eventStreamAlertsFilterMinSeverityEnum_info,
-  _$eventStreamAlertsFilterMinSeverityEnum_warning,
-  _$eventStreamAlertsFilterMinSeverityEnum_critical,
-]);
+_$eventStreamAlertsFilterMinSeverityEnumValues =
+    BuiltSet<EventStreamAlertsFilterMinSeverityEnum>(
+      const <EventStreamAlertsFilterMinSeverityEnum>[
+        _$eventStreamAlertsFilterMinSeverityEnum_info,
+        _$eventStreamAlertsFilterMinSeverityEnum_warning,
+        _$eventStreamAlertsFilterMinSeverityEnum_critical,
+      ],
+    );
 
 Serializer<EventStreamAlertsFilterMinSeverityEnum>
-    _$eventStreamAlertsFilterMinSeverityEnumSerializer =
+_$eventStreamAlertsFilterMinSeverityEnumSerializer =
     _$EventStreamAlertsFilterMinSeverityEnumSerializer();
 
 class _$EventStreamAlertsFilterMinSeverityEnumSerializer
@@ -57,23 +59,26 @@ class _$EventStreamAlertsFilterMinSeverityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    EventStreamAlertsFilterMinSeverityEnum
+    EventStreamAlertsFilterMinSeverityEnum,
   ];
   @override
   final String wireName = 'EventStreamAlertsFilterMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          EventStreamAlertsFilterMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EventStreamAlertsFilterMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EventStreamAlertsFilterMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EventStreamAlertsFilterMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EventStreamAlertsFilterMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EventStreamAlertsFilter extends EventStreamAlertsFilter {
@@ -88,21 +93,21 @@ class _$EventStreamAlertsFilter extends EventStreamAlertsFilter {
   @override
   final bool? includeSuppressed;
 
-  factory _$EventStreamAlertsFilter(
-          [void Function(EventStreamAlertsFilterBuilder)? updates]) =>
-      (EventStreamAlertsFilterBuilder()..update(updates))._build();
+  factory _$EventStreamAlertsFilter([
+    void Function(EventStreamAlertsFilterBuilder)? updates,
+  ]) => (EventStreamAlertsFilterBuilder()..update(updates))._build();
 
-  _$EventStreamAlertsFilter._(
-      {this.minSeverity,
-      this.ruleId,
-      this.source_,
-      this.kind,
-      this.includeSuppressed})
-      : super._();
+  _$EventStreamAlertsFilter._({
+    this.minSeverity,
+    this.ruleId,
+    this.source_,
+    this.kind,
+    this.includeSuppressed,
+  }) : super._();
   @override
   EventStreamAlertsFilter rebuild(
-          void Function(EventStreamAlertsFilterBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStreamAlertsFilterBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStreamAlertsFilterBuilder toBuilder() =>
@@ -204,7 +209,8 @@ class EventStreamAlertsFilterBuilder
   _$EventStreamAlertsFilter _build() {
     _$EventStreamAlertsFilter _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStreamAlertsFilter._(
             minSeverity: minSeverity,
             ruleId: _ruleId?.build(),
@@ -223,7 +229,10 @@ class EventStreamAlertsFilterBuilder
         _kind?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStreamAlertsFilter', _$failedField, e.toString());
+          r'EventStreamAlertsFilter',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

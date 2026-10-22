@@ -27,9 +27,9 @@ abstract class PushProviderInputSecrets
 
   PushProviderInputSecrets._();
 
-  factory PushProviderInputSecrets(
-          [void updates(PushProviderInputSecretsBuilder b)]) =
-      _$PushProviderInputSecrets;
+  factory PushProviderInputSecrets([
+    void updates(PushProviderInputSecretsBuilder b),
+  ]) = _$PushProviderInputSecrets;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushProviderInputSecretsBuilder b) => b;
@@ -44,7 +44,7 @@ class _$PushProviderInputSecretsSerializer
   @override
   final Iterable<Type> types = const [
     PushProviderInputSecrets,
-    _$PushProviderInputSecrets
+    _$PushProviderInputSecrets,
   ];
 
   @override
@@ -77,9 +77,11 @@ class _$PushProviderInputSecretsSerializer
     PushProviderInputSecrets object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -95,18 +97,22 @@ class _$PushProviderInputSecretsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'p8':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.p8 = valueDes;
           break;
         case r'serviceAccountJson':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.serviceAccountJson = valueDes;
           break;

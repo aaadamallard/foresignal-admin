@@ -7,17 +7,18 @@ part of 'json_feed_item_foresignal.dart';
 // **************************************************************************
 
 const JsonFeedItemForesignalSeverityEnum
-    _$jsonFeedItemForesignalSeverityEnum_info =
+_$jsonFeedItemForesignalSeverityEnum_info =
     const JsonFeedItemForesignalSeverityEnum._('info');
 const JsonFeedItemForesignalSeverityEnum
-    _$jsonFeedItemForesignalSeverityEnum_warning =
+_$jsonFeedItemForesignalSeverityEnum_warning =
     const JsonFeedItemForesignalSeverityEnum._('warning');
 const JsonFeedItemForesignalSeverityEnum
-    _$jsonFeedItemForesignalSeverityEnum_critical =
+_$jsonFeedItemForesignalSeverityEnum_critical =
     const JsonFeedItemForesignalSeverityEnum._('critical');
 
 JsonFeedItemForesignalSeverityEnum _$jsonFeedItemForesignalSeverityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'info':
       return _$jsonFeedItemForesignalSeverityEnum_info;
@@ -31,24 +32,27 @@ JsonFeedItemForesignalSeverityEnum _$jsonFeedItemForesignalSeverityEnumValueOf(
 }
 
 final BuiltSet<JsonFeedItemForesignalSeverityEnum>
-    _$jsonFeedItemForesignalSeverityEnumValues = BuiltSet<
-        JsonFeedItemForesignalSeverityEnum>(const <JsonFeedItemForesignalSeverityEnum>[
-  _$jsonFeedItemForesignalSeverityEnum_info,
-  _$jsonFeedItemForesignalSeverityEnum_warning,
-  _$jsonFeedItemForesignalSeverityEnum_critical,
-]);
+_$jsonFeedItemForesignalSeverityEnumValues =
+    BuiltSet<JsonFeedItemForesignalSeverityEnum>(
+      const <JsonFeedItemForesignalSeverityEnum>[
+        _$jsonFeedItemForesignalSeverityEnum_info,
+        _$jsonFeedItemForesignalSeverityEnum_warning,
+        _$jsonFeedItemForesignalSeverityEnum_critical,
+      ],
+    );
 
 const JsonFeedItemForesignalStateEnum _$jsonFeedItemForesignalStateEnum_firing =
     const JsonFeedItemForesignalStateEnum._('firing');
 const JsonFeedItemForesignalStateEnum
-    _$jsonFeedItemForesignalStateEnum_acknowledged =
+_$jsonFeedItemForesignalStateEnum_acknowledged =
     const JsonFeedItemForesignalStateEnum._('acknowledged');
 const JsonFeedItemForesignalStateEnum
-    _$jsonFeedItemForesignalStateEnum_resolved =
+_$jsonFeedItemForesignalStateEnum_resolved =
     const JsonFeedItemForesignalStateEnum._('resolved');
 
 JsonFeedItemForesignalStateEnum _$jsonFeedItemForesignalStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'firing':
       return _$jsonFeedItemForesignalStateEnum_firing;
@@ -62,18 +66,20 @@ JsonFeedItemForesignalStateEnum _$jsonFeedItemForesignalStateEnumValueOf(
 }
 
 final BuiltSet<JsonFeedItemForesignalStateEnum>
-    _$jsonFeedItemForesignalStateEnumValues = BuiltSet<
-        JsonFeedItemForesignalStateEnum>(const <JsonFeedItemForesignalStateEnum>[
-  _$jsonFeedItemForesignalStateEnum_firing,
-  _$jsonFeedItemForesignalStateEnum_acknowledged,
-  _$jsonFeedItemForesignalStateEnum_resolved,
-]);
+_$jsonFeedItemForesignalStateEnumValues =
+    BuiltSet<JsonFeedItemForesignalStateEnum>(
+      const <JsonFeedItemForesignalStateEnum>[
+        _$jsonFeedItemForesignalStateEnum_firing,
+        _$jsonFeedItemForesignalStateEnum_acknowledged,
+        _$jsonFeedItemForesignalStateEnum_resolved,
+      ],
+    );
 
 Serializer<JsonFeedItemForesignalSeverityEnum>
-    _$jsonFeedItemForesignalSeverityEnumSerializer =
+_$jsonFeedItemForesignalSeverityEnumSerializer =
     _$JsonFeedItemForesignalSeverityEnumSerializer();
 Serializer<JsonFeedItemForesignalStateEnum>
-    _$jsonFeedItemForesignalStateEnumSerializer =
+_$jsonFeedItemForesignalStateEnumSerializer =
     _$JsonFeedItemForesignalStateEnumSerializer();
 
 class _$JsonFeedItemForesignalSeverityEnumSerializer
@@ -96,16 +102,19 @@ class _$JsonFeedItemForesignalSeverityEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, JsonFeedItemForesignalSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    JsonFeedItemForesignalSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   JsonFeedItemForesignalSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JsonFeedItemForesignalSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JsonFeedItemForesignalSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JsonFeedItemForesignalStateEnumSerializer
@@ -128,16 +137,19 @@ class _$JsonFeedItemForesignalStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, JsonFeedItemForesignalStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    JsonFeedItemForesignalStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   JsonFeedItemForesignalStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      JsonFeedItemForesignalStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => JsonFeedItemForesignalStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$JsonFeedItemForesignal extends JsonFeedItemForesignal {
@@ -152,21 +164,21 @@ class _$JsonFeedItemForesignal extends JsonFeedItemForesignal {
   @override
   final Geometry? geometry;
 
-  factory _$JsonFeedItemForesignal(
-          [void Function(JsonFeedItemForesignalBuilder)? updates]) =>
-      (JsonFeedItemForesignalBuilder()..update(updates))._build();
+  factory _$JsonFeedItemForesignal([
+    void Function(JsonFeedItemForesignalBuilder)? updates,
+  ]) => (JsonFeedItemForesignalBuilder()..update(updates))._build();
 
-  _$JsonFeedItemForesignal._(
-      {this.severity,
-      this.state,
-      this.sourceId,
-      this.externalId,
-      this.geometry})
-      : super._();
+  _$JsonFeedItemForesignal._({
+    this.severity,
+    this.state,
+    this.sourceId,
+    this.externalId,
+    this.geometry,
+  }) : super._();
   @override
   JsonFeedItemForesignal rebuild(
-          void Function(JsonFeedItemForesignalBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(JsonFeedItemForesignalBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   JsonFeedItemForesignalBuilder toBuilder() =>
@@ -265,7 +277,8 @@ class JsonFeedItemForesignalBuilder
   _$JsonFeedItemForesignal _build() {
     _$JsonFeedItemForesignal _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$JsonFeedItemForesignal._(
             severity: severity,
             state: state,
@@ -280,7 +293,10 @@ class JsonFeedItemForesignalBuilder
         _geometry?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'JsonFeedItemForesignal', _$failedField, e.toString());
+          r'JsonFeedItemForesignal',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -14,17 +14,19 @@ class _$SystemInfoNotifications extends SystemInfoNotifications {
   @override
   final int? failedLast24h;
 
-  factory _$SystemInfoNotifications(
-          [void Function(SystemInfoNotificationsBuilder)? updates]) =>
-      (SystemInfoNotificationsBuilder()..update(updates))._build();
+  factory _$SystemInfoNotifications([
+    void Function(SystemInfoNotificationsBuilder)? updates,
+  ]) => (SystemInfoNotificationsBuilder()..update(updates))._build();
 
-  _$SystemInfoNotifications._(
-      {this.channels, this.pendingDeliveries, this.failedLast24h})
-      : super._();
+  _$SystemInfoNotifications._({
+    this.channels,
+    this.pendingDeliveries,
+    this.failedLast24h,
+  }) : super._();
   @override
   SystemInfoNotifications rebuild(
-          void Function(SystemInfoNotificationsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoNotificationsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoNotificationsBuilder toBuilder() =>
@@ -107,7 +109,8 @@ class SystemInfoNotificationsBuilder
   SystemInfoNotifications build() => _build();
 
   _$SystemInfoNotifications _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoNotifications._(
           channels: channels,
           pendingDeliveries: pendingDeliveries,

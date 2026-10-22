@@ -21,13 +21,13 @@ class _$LlmModelInfo extends LlmModelInfo {
   factory _$LlmModelInfo([void Function(LlmModelInfoBuilder)? updates]) =>
       (LlmModelInfoBuilder()..update(updates))._build();
 
-  _$LlmModelInfo._(
-      {required this.id,
-      this.displayName,
-      this.contextWindow,
-      this.supportsTools,
-      this.supportsEmbeddings})
-      : super._();
+  _$LlmModelInfo._({
+    required this.id,
+    this.displayName,
+    this.contextWindow,
+    this.supportsTools,
+    this.supportsEmbeddings,
+  }) : super._();
   @override
   LlmModelInfo rebuild(void Function(LlmModelInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -128,7 +128,8 @@ class LlmModelInfoBuilder
   LlmModelInfo build() => _build();
 
   _$LlmModelInfo _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LlmModelInfo._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'LlmModelInfo', 'id'),
           displayName: displayName,

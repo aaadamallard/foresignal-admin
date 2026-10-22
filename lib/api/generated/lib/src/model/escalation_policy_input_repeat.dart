@@ -25,9 +25,9 @@ abstract class EscalationPolicyInputRepeat
 
   EscalationPolicyInputRepeat._();
 
-  factory EscalationPolicyInputRepeat(
-          [void updates(EscalationPolicyInputRepeatBuilder b)]) =
-      _$EscalationPolicyInputRepeat;
+  factory EscalationPolicyInputRepeat([
+    void updates(EscalationPolicyInputRepeatBuilder b),
+  ]) = _$EscalationPolicyInputRepeat;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EscalationPolicyInputRepeatBuilder b) => b;
@@ -42,7 +42,7 @@ class _$EscalationPolicyInputRepeatSerializer
   @override
   final Iterable<Type> types = const [
     EscalationPolicyInputRepeat,
-    _$EscalationPolicyInputRepeat
+    _$EscalationPolicyInputRepeat,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$EscalationPolicyInputRepeatSerializer
     EscalationPolicyInputRepeat object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,15 @@ class _$EscalationPolicyInputRepeatSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'everyMinutes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.everyMinutes = valueDes;
           break;
         case r'maxTimes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.maxTimes = valueDes;
           break;
         default:

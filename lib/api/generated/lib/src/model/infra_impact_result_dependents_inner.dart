@@ -22,8 +22,10 @@ part 'infra_impact_result_dependents_inner.g.dart';
 @BuiltValue()
 abstract class InfraImpactResultDependentsInner
     implements
-        Built<InfraImpactResultDependentsInner,
-            InfraImpactResultDependentsInnerBuilder> {
+        Built<
+          InfraImpactResultDependentsInner,
+          InfraImpactResultDependentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'node')
   InfraNode get node;
 
@@ -44,9 +46,9 @@ abstract class InfraImpactResultDependentsInner
 
   InfraImpactResultDependentsInner._();
 
-  factory InfraImpactResultDependentsInner(
-          [void updates(InfraImpactResultDependentsInnerBuilder b)]) =
-      _$InfraImpactResultDependentsInner;
+  factory InfraImpactResultDependentsInner([
+    void updates(InfraImpactResultDependentsInnerBuilder b),
+  ]) = _$InfraImpactResultDependentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InfraImpactResultDependentsInnerBuilder b) => b;
@@ -61,7 +63,7 @@ class _$InfraImpactResultDependentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     InfraImpactResultDependentsInner,
-    _$InfraImpactResultDependentsInner
+    _$InfraImpactResultDependentsInner,
   ];
 
   @override
@@ -85,8 +87,9 @@ class _$InfraImpactResultDependentsInnerSerializer
     yield r'pathLabel';
     yield serializers.serialize(
       object.pathLabel,
-      specifiedType:
-          const FullType(InfraImpactResultDependentsInnerPathLabelEnum),
+      specifiedType: const FullType(
+        InfraImpactResultDependentsInnerPathLabelEnum,
+      ),
     );
     yield r'pathScore';
     yield serializers.serialize(
@@ -96,8 +99,9 @@ class _$InfraImpactResultDependentsInnerSerializer
     yield r'path';
     yield serializers.serialize(
       object.path,
-      specifiedType: const FullType(
-          BuiltList, [FullType(InfraImpactResultDependentsInnerPathInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(InfraImpactResultDependentsInnerPathInner),
+      ]),
     );
   }
 
@@ -107,9 +111,11 @@ class _$InfraImpactResultDependentsInnerSerializer
     InfraImpactResultDependentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,40 +131,46 @@ class _$InfraImpactResultDependentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'node':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InfraNode),
-          ) as InfraNode;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(InfraNode),
+                  )
+                  as InfraNode;
           result.node.replace(valueDes);
           break;
         case r'depth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.depth = valueDes;
           break;
         case r'pathLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(InfraImpactResultDependentsInnerPathLabelEnum),
-          ) as InfraImpactResultDependentsInnerPathLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      InfraImpactResultDependentsInnerPathLabelEnum,
+                    ),
+                  )
+                  as InfraImpactResultDependentsInnerPathLabelEnum;
           result.pathLabel = valueDes;
           break;
         case r'pathScore':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pathScore = valueDes;
           break;
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(InfraImpactResultDependentsInnerPathInner)]),
-          ) as BuiltList<InfraImpactResultDependentsInnerPathInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(InfraImpactResultDependentsInnerPathInner),
+                    ]),
+                  )
+                  as BuiltList<InfraImpactResultDependentsInnerPathInner>;
           result.path.replace(valueDes);
           break;
         default:
@@ -206,11 +218,10 @@ class InfraImpactResultDependentsInnerPathLabelEnum extends EnumClass {
       _$infraImpactResultDependentsInnerPathLabelEnum_speculative;
 
   static Serializer<InfraImpactResultDependentsInnerPathLabelEnum>
-      get serializer =>
-          _$infraImpactResultDependentsInnerPathLabelEnumSerializer;
+  get serializer => _$infraImpactResultDependentsInnerPathLabelEnumSerializer;
 
   const InfraImpactResultDependentsInnerPathLabelEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<InfraImpactResultDependentsInnerPathLabelEnum> get values =>
       _$infraImpactResultDependentsInnerPathLabelEnumValues;

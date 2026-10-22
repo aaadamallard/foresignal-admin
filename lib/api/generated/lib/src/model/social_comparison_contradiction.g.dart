@@ -7,14 +7,14 @@ part of 'social_comparison_contradiction.dart';
 // **************************************************************************
 
 const SocialComparisonContradictionReasonEnum
-    _$socialComparisonContradictionReasonEnum_negatingRecord =
+_$socialComparisonContradictionReasonEnum_negatingRecord =
     const SocialComparisonContradictionReasonEnum._('negatingRecord');
 const SocialComparisonContradictionReasonEnum
-    _$socialComparisonContradictionReasonEnum_mediaReuse =
+_$socialComparisonContradictionReasonEnum_mediaReuse =
     const SocialComparisonContradictionReasonEnum._('mediaReuse');
 
 SocialComparisonContradictionReasonEnum
-    _$socialComparisonContradictionReasonEnumValueOf(String name) {
+_$socialComparisonContradictionReasonEnumValueOf(String name) {
   switch (name) {
     case 'negatingRecord':
       return _$socialComparisonContradictionReasonEnum_negatingRecord;
@@ -26,14 +26,16 @@ SocialComparisonContradictionReasonEnum
 }
 
 final BuiltSet<SocialComparisonContradictionReasonEnum>
-    _$socialComparisonContradictionReasonEnumValues = BuiltSet<
-        SocialComparisonContradictionReasonEnum>(const <SocialComparisonContradictionReasonEnum>[
-  _$socialComparisonContradictionReasonEnum_negatingRecord,
-  _$socialComparisonContradictionReasonEnum_mediaReuse,
-]);
+_$socialComparisonContradictionReasonEnumValues =
+    BuiltSet<SocialComparisonContradictionReasonEnum>(
+      const <SocialComparisonContradictionReasonEnum>[
+        _$socialComparisonContradictionReasonEnum_negatingRecord,
+        _$socialComparisonContradictionReasonEnum_mediaReuse,
+      ],
+    );
 
 Serializer<SocialComparisonContradictionReasonEnum>
-    _$socialComparisonContradictionReasonEnumSerializer =
+_$socialComparisonContradictionReasonEnumSerializer =
     _$SocialComparisonContradictionReasonEnumSerializer();
 
 class _$SocialComparisonContradictionReasonEnumSerializer
@@ -49,23 +51,26 @@ class _$SocialComparisonContradictionReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SocialComparisonContradictionReasonEnum
+    SocialComparisonContradictionReasonEnum,
   ];
   @override
   final String wireName = 'SocialComparisonContradictionReasonEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SocialComparisonContradictionReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialComparisonContradictionReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonContradictionReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonContradictionReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonContradictionReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparisonContradiction extends SocialComparisonContradiction {
@@ -74,16 +79,16 @@ class _$SocialComparisonContradiction extends SocialComparisonContradiction {
   @override
   final String ref;
 
-  factory _$SocialComparisonContradiction(
-          [void Function(SocialComparisonContradictionBuilder)? updates]) =>
-      (SocialComparisonContradictionBuilder()..update(updates))._build();
+  factory _$SocialComparisonContradiction([
+    void Function(SocialComparisonContradictionBuilder)? updates,
+  ]) => (SocialComparisonContradictionBuilder()..update(updates))._build();
 
   _$SocialComparisonContradiction._({required this.reason, required this.ref})
-      : super._();
+    : super._();
   @override
   SocialComparisonContradiction rebuild(
-          void Function(SocialComparisonContradictionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialComparisonContradictionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialComparisonContradictionBuilder toBuilder() =>
@@ -117,8 +122,10 @@ class _$SocialComparisonContradiction extends SocialComparisonContradiction {
 
 class SocialComparisonContradictionBuilder
     implements
-        Builder<SocialComparisonContradiction,
-            SocialComparisonContradictionBuilder> {
+        Builder<
+          SocialComparisonContradiction,
+          SocialComparisonContradictionBuilder
+        > {
   _$SocialComparisonContradiction? _$v;
 
   SocialComparisonContradictionReasonEnum? _reason;
@@ -158,12 +165,19 @@ class SocialComparisonContradictionBuilder
   SocialComparisonContradiction build() => _build();
 
   _$SocialComparisonContradiction _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialComparisonContradiction._(
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'SocialComparisonContradiction', 'reason'),
+            reason,
+            r'SocialComparisonContradiction',
+            'reason',
+          ),
           ref: BuiltValueNullFieldError.checkNotNull(
-              ref, r'SocialComparisonContradiction', 'ref'),
+            ref,
+            r'SocialComparisonContradiction',
+            'ref',
+          ),
         );
     replace(_$result);
     return _$result;

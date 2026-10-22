@@ -58,7 +58,7 @@ class _$NotificationSettingsSerializer
   @override
   final Iterable<Type> types = const [
     NotificationSettings,
-    _$NotificationSettings
+    _$NotificationSettings,
   ];
 
   @override
@@ -81,7 +81,8 @@ class _$NotificationSettingsSerializer
       yield serializers.serialize(
         object.pauseBypassSeverity,
         specifiedType: const FullType.nullable(
-            NotificationSettingsPauseBypassSeverityEnum),
+          NotificationSettingsPauseBypassSeverityEnum,
+        ),
       );
     }
     if (object.chatops != null) {
@@ -113,9 +114,11 @@ class _$NotificationSettingsSerializer
     NotificationSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -131,43 +134,56 @@ class _$NotificationSettingsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'pausedUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.pausedUntil = valueDes;
           break;
         case r'pauseBypassSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                NotificationSettingsPauseBypassSeverityEnum),
-          ) as NotificationSettingsPauseBypassSeverityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NotificationSettingsPauseBypassSeverityEnum,
+                    ),
+                  )
+                  as NotificationSettingsPauseBypassSeverityEnum?;
           if (valueDes == null) continue;
           result.pauseBypassSeverity = valueDes;
           break;
         case r'chatops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(NotificationSettingsChatops),
-          ) as NotificationSettingsChatops?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NotificationSettingsChatops,
+                    ),
+                  )
+                  as NotificationSettingsChatops?;
           if (valueDes == null) continue;
           result.chatops.replace(valueDes);
           break;
         case r'imageLinks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.imageLinks = valueDes;
           break;
         case r'defaultLanguage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.defaultLanguage = valueDes;
           break;
@@ -212,10 +228,10 @@ class NotificationSettingsPauseBypassSeverityEnum extends EnumClass {
       _$notificationSettingsPauseBypassSeverityEnum_critical;
 
   static Serializer<NotificationSettingsPauseBypassSeverityEnum>
-      get serializer => _$notificationSettingsPauseBypassSeverityEnumSerializer;
+  get serializer => _$notificationSettingsPauseBypassSeverityEnumSerializer;
 
   const NotificationSettingsPauseBypassSeverityEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<NotificationSettingsPauseBypassSeverityEnum> get values =>
       _$notificationSettingsPauseBypassSeverityEnumValues;

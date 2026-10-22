@@ -28,15 +28,17 @@ SystemInfoStatusEnum _$systemInfoStatusEnumValueOf(String name) {
 
 final BuiltSet<SystemInfoStatusEnum> _$systemInfoStatusEnumValues =
     BuiltSet<SystemInfoStatusEnum>(const <SystemInfoStatusEnum>[
-  _$systemInfoStatusEnum_ok,
-  _$systemInfoStatusEnum_degraded,
-  _$systemInfoStatusEnum_down,
-]);
+      _$systemInfoStatusEnum_ok,
+      _$systemInfoStatusEnum_degraded,
+      _$systemInfoStatusEnum_down,
+    ]);
 
-const SystemInfoModeEnum _$systemInfoModeEnum_full =
-    const SystemInfoModeEnum._('full');
-const SystemInfoModeEnum _$systemInfoModeEnum_edge =
-    const SystemInfoModeEnum._('edge');
+const SystemInfoModeEnum _$systemInfoModeEnum_full = const SystemInfoModeEnum._(
+  'full',
+);
+const SystemInfoModeEnum _$systemInfoModeEnum_edge = const SystemInfoModeEnum._(
+  'edge',
+);
 
 SystemInfoModeEnum _$systemInfoModeEnumValueOf(String name) {
   switch (name) {
@@ -51,9 +53,9 @@ SystemInfoModeEnum _$systemInfoModeEnumValueOf(String name) {
 
 final BuiltSet<SystemInfoModeEnum> _$systemInfoModeEnumValues =
     BuiltSet<SystemInfoModeEnum>(const <SystemInfoModeEnum>[
-  _$systemInfoModeEnum_full,
-  _$systemInfoModeEnum_edge,
-]);
+      _$systemInfoModeEnum_full,
+      _$systemInfoModeEnum_edge,
+    ]);
 
 Serializer<SystemInfoStatusEnum> _$systemInfoStatusEnumSerializer =
     _$SystemInfoStatusEnumSerializer();
@@ -79,15 +81,20 @@ class _$SystemInfoStatusEnumSerializer
   final String wireName = 'SystemInfoStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SystemInfoStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SystemInfoStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SystemInfoStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemInfoStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SystemInfoStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemInfoStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemInfoModeEnumSerializer
@@ -107,15 +114,20 @@ class _$SystemInfoModeEnumSerializer
   final String wireName = 'SystemInfoModeEnum';
 
   @override
-  Object serialize(Serializers serializers, SystemInfoModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SystemInfoModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SystemInfoModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemInfoModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SystemInfoModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemInfoModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemInfo extends SystemInfo {
@@ -181,37 +193,37 @@ class _$SystemInfo extends SystemInfo {
   factory _$SystemInfo([void Function(SystemInfoBuilder)? updates]) =>
       (SystemInfoBuilder()..update(updates))._build();
 
-  _$SystemInfo._(
-      {required this.version,
-      required this.startedAt,
-      this.uptimeSeconds,
-      this.database,
-      this.records,
-      this.sources,
-      this.scheduler,
-      this.streams,
-      this.notifications,
-      this.llm,
-      this.search,
-      this.mcp,
-      this.apiVersion,
-      this.status,
-      this.features,
-      this.limits,
-      this.history,
-      this.catchUp,
-      this.ingestWriter,
-      this.warnings,
-      this.security,
-      this.rasters,
-      this.mqtt,
-      this.rasterFormats,
-      this.sinks,
-      this.exports,
-      this.archive,
-      this.holds,
-      this.mode})
-      : super._();
+  _$SystemInfo._({
+    required this.version,
+    required this.startedAt,
+    this.uptimeSeconds,
+    this.database,
+    this.records,
+    this.sources,
+    this.scheduler,
+    this.streams,
+    this.notifications,
+    this.llm,
+    this.search,
+    this.mcp,
+    this.apiVersion,
+    this.status,
+    this.features,
+    this.limits,
+    this.history,
+    this.catchUp,
+    this.ingestWriter,
+    this.warnings,
+    this.security,
+    this.rasters,
+    this.mqtt,
+    this.rasterFormats,
+    this.sinks,
+    this.exports,
+    this.archive,
+    this.holds,
+    this.mode,
+  }) : super._();
   @override
   SystemInfo rebuild(void Function(SystemInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -531,12 +543,19 @@ class SystemInfoBuilder implements Builder<SystemInfo, SystemInfoBuilder> {
   _$SystemInfo _build() {
     _$SystemInfo _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SystemInfo._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'SystemInfo', 'version'),
+              version,
+              r'SystemInfo',
+              'version',
+            ),
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'SystemInfo', 'startedAt'),
+              startedAt,
+              r'SystemInfo',
+              'startedAt',
+            ),
             uptimeSeconds: uptimeSeconds,
             database: _database?.build(),
             records: _records?.build(),
@@ -617,7 +636,10 @@ class SystemInfoBuilder implements Builder<SystemInfo, SystemInfoBuilder> {
         _holds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SystemInfo', _$failedField, e.toString());
+          r'SystemInfo',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

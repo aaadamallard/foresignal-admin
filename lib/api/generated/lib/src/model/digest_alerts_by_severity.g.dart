@@ -14,16 +14,16 @@ class _$DigestAlertsBySeverity extends DigestAlertsBySeverity {
   @override
   final int? info;
 
-  factory _$DigestAlertsBySeverity(
-          [void Function(DigestAlertsBySeverityBuilder)? updates]) =>
-      (DigestAlertsBySeverityBuilder()..update(updates))._build();
+  factory _$DigestAlertsBySeverity([
+    void Function(DigestAlertsBySeverityBuilder)? updates,
+  ]) => (DigestAlertsBySeverityBuilder()..update(updates))._build();
 
   _$DigestAlertsBySeverity._({this.critical, this.warning, this.info})
-      : super._();
+    : super._();
   @override
   DigestAlertsBySeverity rebuild(
-          void Function(DigestAlertsBySeverityBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DigestAlertsBySeverityBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DigestAlertsBySeverityBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class DigestAlertsBySeverityBuilder
   DigestAlertsBySeverity build() => _build();
 
   _$DigestAlertsBySeverity _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestAlertsBySeverity._(
           critical: critical,
           warning: warning,

@@ -14,17 +14,19 @@ class _$DigestAlertsByRuleInner extends DigestAlertsByRuleInner {
   @override
   final int count;
 
-  factory _$DigestAlertsByRuleInner(
-          [void Function(DigestAlertsByRuleInnerBuilder)? updates]) =>
-      (DigestAlertsByRuleInnerBuilder()..update(updates))._build();
+  factory _$DigestAlertsByRuleInner([
+    void Function(DigestAlertsByRuleInnerBuilder)? updates,
+  ]) => (DigestAlertsByRuleInnerBuilder()..update(updates))._build();
 
-  _$DigestAlertsByRuleInner._(
-      {required this.ruleId, this.ruleName, required this.count})
-      : super._();
+  _$DigestAlertsByRuleInner._({
+    required this.ruleId,
+    this.ruleName,
+    required this.count,
+  }) : super._();
   @override
   DigestAlertsByRuleInner rebuild(
-          void Function(DigestAlertsByRuleInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DigestAlertsByRuleInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DigestAlertsByRuleInnerBuilder toBuilder() =>
@@ -105,13 +107,20 @@ class DigestAlertsByRuleInnerBuilder
   DigestAlertsByRuleInner build() => _build();
 
   _$DigestAlertsByRuleInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestAlertsByRuleInner._(
           ruleId: BuiltValueNullFieldError.checkNotNull(
-              ruleId, r'DigestAlertsByRuleInner', 'ruleId'),
+            ruleId,
+            r'DigestAlertsByRuleInner',
+            'ruleId',
+          ),
           ruleName: ruleName,
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'DigestAlertsByRuleInner', 'count'),
+            count,
+            r'DigestAlertsByRuleInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

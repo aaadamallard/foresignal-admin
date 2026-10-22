@@ -27,25 +27,25 @@ class _$OgcTileMatrixSetTileMatricesInner
   @override
   final String? cornerOfOrigin;
 
-  factory _$OgcTileMatrixSetTileMatricesInner(
-          [void Function(OgcTileMatrixSetTileMatricesInnerBuilder)? updates]) =>
-      (OgcTileMatrixSetTileMatricesInnerBuilder()..update(updates))._build();
+  factory _$OgcTileMatrixSetTileMatricesInner([
+    void Function(OgcTileMatrixSetTileMatricesInnerBuilder)? updates,
+  ]) => (OgcTileMatrixSetTileMatricesInnerBuilder()..update(updates))._build();
 
-  _$OgcTileMatrixSetTileMatricesInner._(
-      {required this.id,
-      required this.scaleDenominator,
-      this.cellSize,
-      required this.pointOfOrigin,
-      required this.tileWidth,
-      required this.tileHeight,
-      required this.matrixWidth,
-      required this.matrixHeight,
-      this.cornerOfOrigin})
-      : super._();
+  _$OgcTileMatrixSetTileMatricesInner._({
+    required this.id,
+    required this.scaleDenominator,
+    this.cellSize,
+    required this.pointOfOrigin,
+    required this.tileWidth,
+    required this.tileHeight,
+    required this.matrixWidth,
+    required this.matrixHeight,
+    this.cornerOfOrigin,
+  }) : super._();
   @override
   OgcTileMatrixSetTileMatricesInner rebuild(
-          void Function(OgcTileMatrixSetTileMatricesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcTileMatrixSetTileMatricesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcTileMatrixSetTileMatricesInnerBuilder toBuilder() =>
@@ -100,8 +100,10 @@ class _$OgcTileMatrixSetTileMatricesInner
 
 class OgcTileMatrixSetTileMatricesInnerBuilder
     implements
-        Builder<OgcTileMatrixSetTileMatricesInner,
-            OgcTileMatrixSetTileMatricesInnerBuilder> {
+        Builder<
+          OgcTileMatrixSetTileMatricesInner,
+          OgcTileMatrixSetTileMatricesInnerBuilder
+        > {
   _$OgcTileMatrixSetTileMatricesInner? _$v;
 
   String? _id;
@@ -172,7 +174,8 @@ class OgcTileMatrixSetTileMatricesInnerBuilder
 
   @override
   void update(
-      void Function(OgcTileMatrixSetTileMatricesInnerBuilder)? updates) {
+    void Function(OgcTileMatrixSetTileMatricesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -182,24 +185,41 @@ class OgcTileMatrixSetTileMatricesInnerBuilder
   _$OgcTileMatrixSetTileMatricesInner _build() {
     _$OgcTileMatrixSetTileMatricesInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcTileMatrixSetTileMatricesInner._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'OgcTileMatrixSetTileMatricesInner', 'id'),
+              id,
+              r'OgcTileMatrixSetTileMatricesInner',
+              'id',
+            ),
             scaleDenominator: BuiltValueNullFieldError.checkNotNull(
-                scaleDenominator,
-                r'OgcTileMatrixSetTileMatricesInner',
-                'scaleDenominator'),
+              scaleDenominator,
+              r'OgcTileMatrixSetTileMatricesInner',
+              'scaleDenominator',
+            ),
             cellSize: cellSize,
             pointOfOrigin: pointOfOrigin.build(),
             tileWidth: BuiltValueNullFieldError.checkNotNull(
-                tileWidth, r'OgcTileMatrixSetTileMatricesInner', 'tileWidth'),
+              tileWidth,
+              r'OgcTileMatrixSetTileMatricesInner',
+              'tileWidth',
+            ),
             tileHeight: BuiltValueNullFieldError.checkNotNull(
-                tileHeight, r'OgcTileMatrixSetTileMatricesInner', 'tileHeight'),
-            matrixWidth: BuiltValueNullFieldError.checkNotNull(matrixWidth,
-                r'OgcTileMatrixSetTileMatricesInner', 'matrixWidth'),
-            matrixHeight: BuiltValueNullFieldError.checkNotNull(matrixHeight,
-                r'OgcTileMatrixSetTileMatricesInner', 'matrixHeight'),
+              tileHeight,
+              r'OgcTileMatrixSetTileMatricesInner',
+              'tileHeight',
+            ),
+            matrixWidth: BuiltValueNullFieldError.checkNotNull(
+              matrixWidth,
+              r'OgcTileMatrixSetTileMatricesInner',
+              'matrixWidth',
+            ),
+            matrixHeight: BuiltValueNullFieldError.checkNotNull(
+              matrixHeight,
+              r'OgcTileMatrixSetTileMatricesInner',
+              'matrixHeight',
+            ),
             cornerOfOrigin: cornerOfOrigin,
           );
     } catch (_) {
@@ -209,7 +229,10 @@ class OgcTileMatrixSetTileMatricesInnerBuilder
         pointOfOrigin.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcTileMatrixSetTileMatricesInner', _$failedField, e.toString());
+          r'OgcTileMatrixSetTileMatricesInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

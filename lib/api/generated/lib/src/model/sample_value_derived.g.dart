@@ -14,16 +14,16 @@ class _$SampleValueDerived extends SampleValueDerived {
   @override
   final String? compass;
 
-  factory _$SampleValueDerived(
-          [void Function(SampleValueDerivedBuilder)? updates]) =>
-      (SampleValueDerivedBuilder()..update(updates))._build();
+  factory _$SampleValueDerived([
+    void Function(SampleValueDerivedBuilder)? updates,
+  ]) => (SampleValueDerivedBuilder()..update(updates))._build();
 
   _$SampleValueDerived._({this.speedMs, this.fromDeg, this.compass})
-      : super._();
+    : super._();
   @override
   SampleValueDerived rebuild(
-          void Function(SampleValueDerivedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SampleValueDerivedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SampleValueDerivedBuilder toBuilder() =>
@@ -103,7 +103,8 @@ class SampleValueDerivedBuilder
   SampleValueDerived build() => _build();
 
   _$SampleValueDerived _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SampleValueDerived._(
           speedMs: speedMs,
           fromDeg: fromDeg,

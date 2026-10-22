@@ -29,9 +29,9 @@ abstract class ChronicleSummaryGapsInner
 
   ChronicleSummaryGapsInner._();
 
-  factory ChronicleSummaryGapsInner(
-          [void updates(ChronicleSummaryGapsInnerBuilder b)]) =
-      _$ChronicleSummaryGapsInner;
+  factory ChronicleSummaryGapsInner([
+    void updates(ChronicleSummaryGapsInnerBuilder b),
+  ]) = _$ChronicleSummaryGapsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSummaryGapsInnerBuilder b) => b;
@@ -46,7 +46,7 @@ class _$ChronicleSummaryGapsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSummaryGapsInner,
-    _$ChronicleSummaryGapsInner
+    _$ChronicleSummaryGapsInner,
   ];
 
   @override
@@ -82,9 +82,11 @@ class _$ChronicleSummaryGapsInnerSerializer
     ChronicleSummaryGapsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -100,24 +102,30 @@ class _$ChronicleSummaryGapsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.to = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

@@ -17,9 +17,11 @@ class _$MqttConnections extends MqttConnections {
   factory _$MqttConnections([void Function(MqttConnectionsBuilder)? updates]) =>
       (MqttConnectionsBuilder()..update(updates))._build();
 
-  _$MqttConnections._(
-      {required this.connections, required this.connected, this.lastError})
-      : super._();
+  _$MqttConnections._({
+    required this.connections,
+    required this.connected,
+    this.lastError,
+  }) : super._();
   @override
   MqttConnections rebuild(void Function(MqttConnectionsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -101,12 +103,19 @@ class MqttConnectionsBuilder
   MqttConnections build() => _build();
 
   _$MqttConnections _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MqttConnections._(
           connections: BuiltValueNullFieldError.checkNotNull(
-              connections, r'MqttConnections', 'connections'),
+            connections,
+            r'MqttConnections',
+            'connections',
+          ),
           connected: BuiltValueNullFieldError.checkNotNull(
-              connected, r'MqttConnections', 'connected'),
+            connected,
+            r'MqttConnections',
+            'connected',
+          ),
           lastError: lastError,
         );
     replace(_$result);

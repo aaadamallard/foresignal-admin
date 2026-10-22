@@ -61,7 +61,7 @@ class _$SituationSpeculationSerializer
   @override
   final Iterable<Type> types = const [
     SituationSpeculation,
-    _$SituationSpeculation
+    _$SituationSpeculation,
   ];
 
   @override
@@ -120,9 +120,11 @@ class _$SituationSpeculationSerializer
     SituationSpeculation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -138,50 +140,65 @@ class _$SituationSpeculationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(SituationSpeculationLabelEnum),
-          ) as SituationSpeculationLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SituationSpeculationLabelEnum,
+                    ),
+                  )
+                  as SituationSpeculationLabelEnum;
           result.label = valueDes;
           break;
         case r'textOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(SituationSpeculationTextOriginEnum),
-          ) as SituationSpeculationTextOriginEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SituationSpeculationTextOriginEnum,
+                    ),
+                  )
+                  as SituationSpeculationTextOriginEnum?;
           if (valueDes == null) continue;
           result.textOrigin = valueDes;
           break;
         case r'brief':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.brief = valueDes;
           break;
         case r'briefGeneratedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.briefGeneratedAt = valueDes;
           break;
         case r'briefModel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.briefModel = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;

@@ -26,21 +26,21 @@ class _$ChronicleSummary extends ChronicleSummary {
   @override
   final BuiltList<ChronicleSummaryGapsInner> gaps;
 
-  factory _$ChronicleSummary(
-          [void Function(ChronicleSummaryBuilder)? updates]) =>
-      (ChronicleSummaryBuilder()..update(updates))._build();
+  factory _$ChronicleSummary([
+    void Function(ChronicleSummaryBuilder)? updates,
+  ]) => (ChronicleSummaryBuilder()..update(updates))._build();
 
-  _$ChronicleSummary._(
-      {required this.chronicleId,
-      required this.span,
-      required this.layers,
-      this.topEntities,
-      this.situations,
-      this.hypothesisSets,
-      this.forecasts,
-      required this.storage,
-      required this.gaps})
-      : super._();
+  _$ChronicleSummary._({
+    required this.chronicleId,
+    required this.span,
+    required this.layers,
+    this.topEntities,
+    this.situations,
+    this.hypothesisSets,
+    this.forecasts,
+    required this.storage,
+    required this.gaps,
+  }) : super._();
   @override
   ChronicleSummary rebuild(void Function(ChronicleSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -186,10 +186,14 @@ class ChronicleSummaryBuilder
   _$ChronicleSummary _build() {
     _$ChronicleSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSummary._(
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleSummary', 'chronicleId'),
+              chronicleId,
+              r'ChronicleSummary',
+              'chronicleId',
+            ),
             span: span.build(),
             layers: layers.build(),
             topEntities: _topEntities?.build(),
@@ -220,7 +224,10 @@ class ChronicleSummaryBuilder
         gaps.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSummary', _$failedField, e.toString());
+          r'ChronicleSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

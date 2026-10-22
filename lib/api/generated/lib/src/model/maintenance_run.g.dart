@@ -28,10 +28,10 @@ MaintenanceRunTriggerEnum _$maintenanceRunTriggerEnumValueOf(String name) {
 
 final BuiltSet<MaintenanceRunTriggerEnum> _$maintenanceRunTriggerEnumValues =
     BuiltSet<MaintenanceRunTriggerEnum>(const <MaintenanceRunTriggerEnum>[
-  _$maintenanceRunTriggerEnum_monthlyCycle,
-  _$maintenanceRunTriggerEnum_manual,
-  _$maintenanceRunTriggerEnum_schedule,
-]);
+      _$maintenanceRunTriggerEnum_monthlyCycle,
+      _$maintenanceRunTriggerEnum_manual,
+      _$maintenanceRunTriggerEnum_schedule,
+    ]);
 
 const MaintenanceRunStatusEnum _$maintenanceRunStatusEnum_running =
     const MaintenanceRunStatusEnum._('running');
@@ -59,11 +59,11 @@ MaintenanceRunStatusEnum _$maintenanceRunStatusEnumValueOf(String name) {
 
 final BuiltSet<MaintenanceRunStatusEnum> _$maintenanceRunStatusEnumValues =
     BuiltSet<MaintenanceRunStatusEnum>(const <MaintenanceRunStatusEnum>[
-  _$maintenanceRunStatusEnum_running,
-  _$maintenanceRunStatusEnum_done,
-  _$maintenanceRunStatusEnum_partial,
-  _$maintenanceRunStatusEnum_failed,
-]);
+      _$maintenanceRunStatusEnum_running,
+      _$maintenanceRunStatusEnum_done,
+      _$maintenanceRunStatusEnum_partial,
+      _$maintenanceRunStatusEnum_failed,
+    ]);
 
 Serializer<MaintenanceRunTriggerEnum> _$maintenanceRunTriggerEnumSerializer =
     _$MaintenanceRunTriggerEnumSerializer();
@@ -89,16 +89,20 @@ class _$MaintenanceRunTriggerEnumSerializer
   final String wireName = 'MaintenanceRunTriggerEnum';
 
   @override
-  Object serialize(Serializers serializers, MaintenanceRunTriggerEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MaintenanceRunTriggerEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MaintenanceRunTriggerEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MaintenanceRunTriggerEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MaintenanceRunTriggerEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MaintenanceRunStatusEnumSerializer
@@ -122,16 +126,20 @@ class _$MaintenanceRunStatusEnumSerializer
   final String wireName = 'MaintenanceRunStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, MaintenanceRunStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MaintenanceRunStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   MaintenanceRunStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MaintenanceRunStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MaintenanceRunStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MaintenanceRun extends MaintenanceRun {
@@ -151,14 +159,14 @@ class _$MaintenanceRun extends MaintenanceRun {
   factory _$MaintenanceRun([void Function(MaintenanceRunBuilder)? updates]) =>
       (MaintenanceRunBuilder()..update(updates))._build();
 
-  _$MaintenanceRun._(
-      {required this.id,
-      required this.trigger,
-      required this.status,
-      required this.startedAt,
-      this.finishedAt,
-      required this.steps})
-      : super._();
+  _$MaintenanceRun._({
+    required this.id,
+    required this.trigger,
+    required this.status,
+    required this.startedAt,
+    this.finishedAt,
+    required this.steps,
+  }) : super._();
   @override
   MaintenanceRun rebuild(void Function(MaintenanceRunBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -268,16 +276,29 @@ class MaintenanceRunBuilder
   _$MaintenanceRun _build() {
     _$MaintenanceRun _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MaintenanceRun._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'MaintenanceRun', 'id'),
+              id,
+              r'MaintenanceRun',
+              'id',
+            ),
             trigger: BuiltValueNullFieldError.checkNotNull(
-                trigger, r'MaintenanceRun', 'trigger'),
+              trigger,
+              r'MaintenanceRun',
+              'trigger',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'MaintenanceRun', 'status'),
+              status,
+              r'MaintenanceRun',
+              'status',
+            ),
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'MaintenanceRun', 'startedAt'),
+              startedAt,
+              r'MaintenanceRun',
+              'startedAt',
+            ),
             finishedAt: finishedAt,
             steps: steps.build(),
           );
@@ -288,7 +309,10 @@ class MaintenanceRunBuilder
         steps.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MaintenanceRun', _$failedField, e.toString());
+          r'MaintenanceRun',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

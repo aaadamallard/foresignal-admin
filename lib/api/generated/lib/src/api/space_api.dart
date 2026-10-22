@@ -58,16 +58,10 @@ class SpaceApi {
     final _path = r'/compat/celestrak/gp.php';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -76,23 +70,41 @@ class SpaceApi {
 
     final _queryParameters = <String, dynamic>{
       if (GROUP != null)
-        r'GROUP':
-            encodeQueryParameter(_serializers, GROUP, const FullType(String)),
+        r'GROUP': encodeQueryParameter(
+          _serializers,
+          GROUP,
+          const FullType(String),
+        ),
       if (CATNR != null)
-        r'CATNR':
-            encodeQueryParameter(_serializers, CATNR, const FullType(String)),
+        r'CATNR': encodeQueryParameter(
+          _serializers,
+          CATNR,
+          const FullType(String),
+        ),
       if (INTDES != null)
-        r'INTDES':
-            encodeQueryParameter(_serializers, INTDES, const FullType(String)),
+        r'INTDES': encodeQueryParameter(
+          _serializers,
+          INTDES,
+          const FullType(String),
+        ),
       if (NAME != null)
-        r'NAME':
-            encodeQueryParameter(_serializers, NAME, const FullType(String)),
+        r'NAME': encodeQueryParameter(
+          _serializers,
+          NAME,
+          const FullType(String),
+        ),
       if (SPECIAL != null)
-        r'SPECIAL':
-            encodeQueryParameter(_serializers, SPECIAL, const FullType(String)),
+        r'SPECIAL': encodeQueryParameter(
+          _serializers,
+          SPECIAL,
+          const FullType(String),
+        ),
       if (FORMAT != null)
-        r'FORMAT':
-            encodeQueryParameter(_serializers, FORMAT, const FullType(String)),
+        r'FORMAT': encodeQueryParameter(
+          _serializers,
+          FORMAT,
+          const FullType(String),
+        ),
       if (key != null)
         r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
     };
@@ -171,16 +183,10 @@ class SpaceApi {
     final _path = r'/compat/celestrak/NORAD/elements/gp.php';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -189,23 +195,41 @@ class SpaceApi {
 
     final _queryParameters = <String, dynamic>{
       if (GROUP != null)
-        r'GROUP':
-            encodeQueryParameter(_serializers, GROUP, const FullType(String)),
+        r'GROUP': encodeQueryParameter(
+          _serializers,
+          GROUP,
+          const FullType(String),
+        ),
       if (CATNR != null)
-        r'CATNR':
-            encodeQueryParameter(_serializers, CATNR, const FullType(String)),
+        r'CATNR': encodeQueryParameter(
+          _serializers,
+          CATNR,
+          const FullType(String),
+        ),
       if (INTDES != null)
-        r'INTDES':
-            encodeQueryParameter(_serializers, INTDES, const FullType(String)),
+        r'INTDES': encodeQueryParameter(
+          _serializers,
+          INTDES,
+          const FullType(String),
+        ),
       if (NAME != null)
-        r'NAME':
-            encodeQueryParameter(_serializers, NAME, const FullType(String)),
+        r'NAME': encodeQueryParameter(
+          _serializers,
+          NAME,
+          const FullType(String),
+        ),
       if (SPECIAL != null)
-        r'SPECIAL':
-            encodeQueryParameter(_serializers, SPECIAL, const FullType(String)),
+        r'SPECIAL': encodeQueryParameter(
+          _serializers,
+          SPECIAL,
+          const FullType(String),
+        ),
       if (FORMAT != null)
-        r'FORMAT':
-            encodeQueryParameter(_serializers, FORMAT, const FullType(String)),
+        r'FORMAT': encodeQueryParameter(
+          _serializers,
+          FORMAT,
+          const FullType(String),
+        ),
       if (key != null)
         r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
     };
@@ -272,21 +296,21 @@ class SpaceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/compat/celestrak/NORAD/elements/{group}.txt'.replaceAll(
-        '{' r'group' '}',
-        encodeQueryParameter(_serializers, group, const FullType(String))
-            .toString());
+      '{'
+      r'group'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        group,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },

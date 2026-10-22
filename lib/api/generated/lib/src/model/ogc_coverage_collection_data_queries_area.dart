@@ -16,16 +16,18 @@ part 'ogc_coverage_collection_data_queries_area.g.dart';
 @BuiltValue()
 abstract class OgcCoverageCollectionDataQueriesArea
     implements
-        Built<OgcCoverageCollectionDataQueriesArea,
-            OgcCoverageCollectionDataQueriesAreaBuilder> {
+        Built<
+          OgcCoverageCollectionDataQueriesArea,
+          OgcCoverageCollectionDataQueriesAreaBuilder
+        > {
   @BuiltValueField(wireName: r'link')
   OgcLink? get link;
 
   OgcCoverageCollectionDataQueriesArea._();
 
-  factory OgcCoverageCollectionDataQueriesArea(
-          [void updates(OgcCoverageCollectionDataQueriesAreaBuilder b)]) =
-      _$OgcCoverageCollectionDataQueriesArea;
+  factory OgcCoverageCollectionDataQueriesArea([
+    void updates(OgcCoverageCollectionDataQueriesAreaBuilder b),
+  ]) = _$OgcCoverageCollectionDataQueriesArea;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(OgcCoverageCollectionDataQueriesAreaBuilder b) => b;
@@ -40,7 +42,7 @@ class _$OgcCoverageCollectionDataQueriesAreaSerializer
   @override
   final Iterable<Type> types = const [
     OgcCoverageCollectionDataQueriesArea,
-    _$OgcCoverageCollectionDataQueriesArea
+    _$OgcCoverageCollectionDataQueriesArea,
   ];
 
   @override
@@ -66,9 +68,11 @@ class _$OgcCoverageCollectionDataQueriesAreaSerializer
     OgcCoverageCollectionDataQueriesArea object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -84,10 +88,12 @@ class _$OgcCoverageCollectionDataQueriesAreaSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'link':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(OgcLink),
-          ) as OgcLink?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(OgcLink),
+                  )
+                  as OgcLink?;
           if (valueDes == null) continue;
           result.link.replace(valueDes);
           break;

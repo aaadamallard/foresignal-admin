@@ -27,9 +27,9 @@ abstract class ReferenceImportRequest
 
   ReferenceImportRequest._();
 
-  factory ReferenceImportRequest(
-          [void updates(ReferenceImportRequestBuilder b)]) =
-      _$ReferenceImportRequest;
+  factory ReferenceImportRequest([
+    void updates(ReferenceImportRequestBuilder b),
+  ]) = _$ReferenceImportRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ReferenceImportRequestBuilder b) => b;
@@ -44,7 +44,7 @@ class _$ReferenceImportRequestSerializer
   @override
   final Iterable<Type> types = const [
     ReferenceImportRequest,
-    _$ReferenceImportRequest
+    _$ReferenceImportRequest,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$ReferenceImportRequestSerializer
     ReferenceImportRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,25 @@ class _$ReferenceImportRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'dataset':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReferenceImportRequestDatasetEnum),
-          ) as ReferenceImportRequestDatasetEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ReferenceImportRequestDatasetEnum,
+                    ),
+                  )
+                  as ReferenceImportRequestDatasetEnum;
           result.dataset = valueDes;
           break;
         case r'params':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ReferenceImportRequestParams),
-          ) as ReferenceImportRequestParams?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ReferenceImportRequestParams,
+                    ),
+                  )
+                  as ReferenceImportRequestParams?;
           if (valueDes == null) continue;
           result.params.replace(valueDes);
           break;

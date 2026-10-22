@@ -7,17 +7,17 @@ part of 'edp_source_info_licence.dart';
 // **************************************************************************
 
 const EdpSourceInfoLicenceRedistributionEnum
-    _$edpSourceInfoLicenceRedistributionEnum_allowed =
+_$edpSourceInfoLicenceRedistributionEnum_allowed =
     const EdpSourceInfoLicenceRedistributionEnum._('allowed');
 const EdpSourceInfoLicenceRedistributionEnum
-    _$edpSourceInfoLicenceRedistributionEnum_localOnly =
+_$edpSourceInfoLicenceRedistributionEnum_localOnly =
     const EdpSourceInfoLicenceRedistributionEnum._('localOnly');
 const EdpSourceInfoLicenceRedistributionEnum
-    _$edpSourceInfoLicenceRedistributionEnum_unknown =
+_$edpSourceInfoLicenceRedistributionEnum_unknown =
     const EdpSourceInfoLicenceRedistributionEnum._('unknown');
 
 EdpSourceInfoLicenceRedistributionEnum
-    _$edpSourceInfoLicenceRedistributionEnumValueOf(String name) {
+_$edpSourceInfoLicenceRedistributionEnumValueOf(String name) {
   switch (name) {
     case 'allowed':
       return _$edpSourceInfoLicenceRedistributionEnum_allowed;
@@ -31,15 +31,17 @@ EdpSourceInfoLicenceRedistributionEnum
 }
 
 final BuiltSet<EdpSourceInfoLicenceRedistributionEnum>
-    _$edpSourceInfoLicenceRedistributionEnumValues = BuiltSet<
-        EdpSourceInfoLicenceRedistributionEnum>(const <EdpSourceInfoLicenceRedistributionEnum>[
-  _$edpSourceInfoLicenceRedistributionEnum_allowed,
-  _$edpSourceInfoLicenceRedistributionEnum_localOnly,
-  _$edpSourceInfoLicenceRedistributionEnum_unknown,
-]);
+_$edpSourceInfoLicenceRedistributionEnumValues =
+    BuiltSet<EdpSourceInfoLicenceRedistributionEnum>(
+      const <EdpSourceInfoLicenceRedistributionEnum>[
+        _$edpSourceInfoLicenceRedistributionEnum_allowed,
+        _$edpSourceInfoLicenceRedistributionEnum_localOnly,
+        _$edpSourceInfoLicenceRedistributionEnum_unknown,
+      ],
+    );
 
 Serializer<EdpSourceInfoLicenceRedistributionEnum>
-    _$edpSourceInfoLicenceRedistributionEnumSerializer =
+_$edpSourceInfoLicenceRedistributionEnumSerializer =
     _$EdpSourceInfoLicenceRedistributionEnumSerializer();
 
 class _$EdpSourceInfoLicenceRedistributionEnumSerializer
@@ -57,23 +59,26 @@ class _$EdpSourceInfoLicenceRedistributionEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    EdpSourceInfoLicenceRedistributionEnum
+    EdpSourceInfoLicenceRedistributionEnum,
   ];
   @override
   final String wireName = 'EdpSourceInfoLicenceRedistributionEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          EdpSourceInfoLicenceRedistributionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpSourceInfoLicenceRedistributionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpSourceInfoLicenceRedistributionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpSourceInfoLicenceRedistributionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpSourceInfoLicenceRedistributionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpSourceInfoLicence extends EdpSourceInfoLicence {
@@ -86,17 +91,20 @@ class _$EdpSourceInfoLicence extends EdpSourceInfoLicence {
   @override
   final EdpSourceInfoLicenceRedistributionEnum? redistribution;
 
-  factory _$EdpSourceInfoLicence(
-          [void Function(EdpSourceInfoLicenceBuilder)? updates]) =>
-      (EdpSourceInfoLicenceBuilder()..update(updates))._build();
+  factory _$EdpSourceInfoLicence([
+    void Function(EdpSourceInfoLicenceBuilder)? updates,
+  ]) => (EdpSourceInfoLicenceBuilder()..update(updates))._build();
 
-  _$EdpSourceInfoLicence._(
-      {this.id, this.url, this.attribution, this.redistribution})
-      : super._();
+  _$EdpSourceInfoLicence._({
+    this.id,
+    this.url,
+    this.attribution,
+    this.redistribution,
+  }) : super._();
   @override
   EdpSourceInfoLicence rebuild(
-          void Function(EdpSourceInfoLicenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpSourceInfoLicenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpSourceInfoLicenceBuilder toBuilder() =>
@@ -186,7 +194,8 @@ class EdpSourceInfoLicenceBuilder
   EdpSourceInfoLicence build() => _build();
 
   _$EdpSourceInfoLicence _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpSourceInfoLicence._(
           id: id,
           url: url,

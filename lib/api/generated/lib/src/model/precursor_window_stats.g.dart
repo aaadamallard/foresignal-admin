@@ -7,24 +7,25 @@ part of 'precursor_window_stats.dart';
 // **************************************************************************
 
 const PrecursorWindowStatsVerdictEnum
-    _$precursorWindowStatsVerdictEnum_insufficient =
+_$precursorWindowStatsVerdictEnum_insufficient =
     const PrecursorWindowStatsVerdictEnum._('insufficient');
 const PrecursorWindowStatsVerdictEnum
-    _$precursorWindowStatsVerdictEnum_noEvidenceOfPrecedence =
+_$precursorWindowStatsVerdictEnum_noEvidenceOfPrecedence =
     const PrecursorWindowStatsVerdictEnum._('noEvidenceOfPrecedence');
 const PrecursorWindowStatsVerdictEnum _$precursorWindowStatsVerdictEnum_weak =
     const PrecursorWindowStatsVerdictEnum._('weak');
 const PrecursorWindowStatsVerdictEnum
-    _$precursorWindowStatsVerdictEnum_notable =
+_$precursorWindowStatsVerdictEnum_notable =
     const PrecursorWindowStatsVerdictEnum._('notable');
 const PrecursorWindowStatsVerdictEnum
-    _$precursorWindowStatsVerdictEnum_validated =
+_$precursorWindowStatsVerdictEnum_validated =
     const PrecursorWindowStatsVerdictEnum._('validated');
 const PrecursorWindowStatsVerdictEnum _$precursorWindowStatsVerdictEnum_failed =
     const PrecursorWindowStatsVerdictEnum._('failed');
 
 PrecursorWindowStatsVerdictEnum _$precursorWindowStatsVerdictEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'insufficient':
       return _$precursorWindowStatsVerdictEnum_insufficient;
@@ -44,18 +45,20 @@ PrecursorWindowStatsVerdictEnum _$precursorWindowStatsVerdictEnumValueOf(
 }
 
 final BuiltSet<PrecursorWindowStatsVerdictEnum>
-    _$precursorWindowStatsVerdictEnumValues = BuiltSet<
-        PrecursorWindowStatsVerdictEnum>(const <PrecursorWindowStatsVerdictEnum>[
-  _$precursorWindowStatsVerdictEnum_insufficient,
-  _$precursorWindowStatsVerdictEnum_noEvidenceOfPrecedence,
-  _$precursorWindowStatsVerdictEnum_weak,
-  _$precursorWindowStatsVerdictEnum_notable,
-  _$precursorWindowStatsVerdictEnum_validated,
-  _$precursorWindowStatsVerdictEnum_failed,
-]);
+_$precursorWindowStatsVerdictEnumValues =
+    BuiltSet<PrecursorWindowStatsVerdictEnum>(
+      const <PrecursorWindowStatsVerdictEnum>[
+        _$precursorWindowStatsVerdictEnum_insufficient,
+        _$precursorWindowStatsVerdictEnum_noEvidenceOfPrecedence,
+        _$precursorWindowStatsVerdictEnum_weak,
+        _$precursorWindowStatsVerdictEnum_notable,
+        _$precursorWindowStatsVerdictEnum_validated,
+        _$precursorWindowStatsVerdictEnum_failed,
+      ],
+    );
 
 Serializer<PrecursorWindowStatsVerdictEnum>
-    _$precursorWindowStatsVerdictEnumSerializer =
+_$precursorWindowStatsVerdictEnumSerializer =
     _$PrecursorWindowStatsVerdictEnumSerializer();
 
 class _$PrecursorWindowStatsVerdictEnumSerializer
@@ -84,16 +87,19 @@ class _$PrecursorWindowStatsVerdictEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PrecursorWindowStatsVerdictEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PrecursorWindowStatsVerdictEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorWindowStatsVerdictEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorWindowStatsVerdictEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorWindowStatsVerdictEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorWindowStats extends PrecursorWindowStats {
@@ -132,33 +138,33 @@ class _$PrecursorWindowStats extends PrecursorWindowStats {
   @override
   final String? reason;
 
-  factory _$PrecursorWindowStats(
-          [void Function(PrecursorWindowStatsBuilder)? updates]) =>
-      (PrecursorWindowStatsBuilder()..update(updates))._build();
+  factory _$PrecursorWindowStats([
+    void Function(PrecursorWindowStatsBuilder)? updates,
+  ]) => (PrecursorWindowStatsBuilder()..update(updates))._build();
 
-  _$PrecursorWindowStats._(
-      {required this.window,
-      required this.n,
-      this.hits,
-      this.hitRate,
-      this.hitRateInterval,
-      this.baseRate,
-      this.lift,
-      this.correlation,
-      this.bestLag,
-      this.p,
-      this.adjustedP,
-      required this.verdict,
-      this.reverse,
-      this.lowDetectabilityExcluded,
-      this.coverageGapFraction,
-      this.blockLength,
-      this.reason})
-      : super._();
+  _$PrecursorWindowStats._({
+    required this.window,
+    required this.n,
+    this.hits,
+    this.hitRate,
+    this.hitRateInterval,
+    this.baseRate,
+    this.lift,
+    this.correlation,
+    this.bestLag,
+    this.p,
+    this.adjustedP,
+    required this.verdict,
+    this.reverse,
+    this.lowDetectabilityExcluded,
+    this.coverageGapFraction,
+    this.blockLength,
+    this.reason,
+  }) : super._();
   @override
   PrecursorWindowStats rebuild(
-          void Function(PrecursorWindowStatsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorWindowStatsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorWindowStatsBuilder toBuilder() =>
@@ -359,11 +365,15 @@ class PrecursorWindowStatsBuilder
   _$PrecursorWindowStats _build() {
     _$PrecursorWindowStats _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorWindowStats._(
             window: window.build(),
             n: BuiltValueNullFieldError.checkNotNull(
-                n, r'PrecursorWindowStats', 'n'),
+              n,
+              r'PrecursorWindowStats',
+              'n',
+            ),
             hits: hits,
             hitRate: hitRate,
             hitRateInterval: _hitRateInterval?.build(),
@@ -374,7 +384,10 @@ class PrecursorWindowStatsBuilder
             p: p,
             adjustedP: adjustedP,
             verdict: BuiltValueNullFieldError.checkNotNull(
-                verdict, r'PrecursorWindowStats', 'verdict'),
+              verdict,
+              r'PrecursorWindowStats',
+              'verdict',
+            ),
             reverse: _reverse?.build(),
             lowDetectabilityExcluded: lowDetectabilityExcluded,
             coverageGapFraction: coverageGapFraction,
@@ -394,7 +407,10 @@ class PrecursorWindowStatsBuilder
         _reverse?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorWindowStats', _$failedField, e.toString());
+          r'PrecursorWindowStats',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

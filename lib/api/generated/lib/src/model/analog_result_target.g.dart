@@ -16,17 +16,20 @@ class _$AnalogResultTarget extends AnalogResultTarget {
   @override
   final DateTime? to;
 
-  factory _$AnalogResultTarget(
-          [void Function(AnalogResultTargetBuilder)? updates]) =>
-      (AnalogResultTargetBuilder()..update(updates))._build();
+  factory _$AnalogResultTarget([
+    void Function(AnalogResultTargetBuilder)? updates,
+  ]) => (AnalogResultTargetBuilder()..update(updates))._build();
 
-  _$AnalogResultTarget._(
-      {this.situationId, this.regionCode, this.from, this.to})
-      : super._();
+  _$AnalogResultTarget._({
+    this.situationId,
+    this.regionCode,
+    this.from,
+    this.to,
+  }) : super._();
   @override
   AnalogResultTarget rebuild(
-          void Function(AnalogResultTargetBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnalogResultTargetBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnalogResultTargetBuilder toBuilder() =>
@@ -114,7 +117,8 @@ class AnalogResultTargetBuilder
   AnalogResultTarget build() => _build();
 
   _$AnalogResultTarget _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AnalogResultTarget._(
           situationId: situationId,
           regionCode: regionCode,

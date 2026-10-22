@@ -23,14 +23,14 @@ class _$PushTestResult extends PushTestResult {
   factory _$PushTestResult([void Function(PushTestResultBuilder)? updates]) =>
       (PushTestResultBuilder()..update(updates))._build();
 
-  _$PushTestResult._(
-      {required this.success,
-      this.credentialMinted,
-      this.sent,
-      this.status,
-      this.reason,
-      this.error})
-      : super._();
+  _$PushTestResult._({
+    required this.success,
+    this.credentialMinted,
+    this.sent,
+    this.status,
+    this.reason,
+    this.error,
+  }) : super._();
   @override
   PushTestResult rebuild(void Function(PushTestResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -137,10 +137,14 @@ class PushTestResultBuilder
   PushTestResult build() => _build();
 
   _$PushTestResult _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PushTestResult._(
           success: BuiltValueNullFieldError.checkNotNull(
-              success, r'PushTestResult', 'success'),
+            success,
+            r'PushTestResult',
+            'success',
+          ),
           credentialMinted: credentialMinted,
           sent: sent,
           status: status,

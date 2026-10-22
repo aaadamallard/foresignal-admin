@@ -9,17 +9,18 @@ part of 'aircraft_fusion_payload.dart';
 const AircraftFusionPayloadStatusEnum _$aircraftFusionPayloadStatusEnum_ok =
     const AircraftFusionPayloadStatusEnum._('ok');
 const AircraftFusionPayloadStatusEnum
-    _$aircraftFusionPayloadStatusEnum_insufficientData =
+_$aircraftFusionPayloadStatusEnum_insufficientData =
     const AircraftFusionPayloadStatusEnum._('insufficientData');
 const AircraftFusionPayloadStatusEnum
-    _$aircraftFusionPayloadStatusEnum_noCoverage =
+_$aircraftFusionPayloadStatusEnum_noCoverage =
     const AircraftFusionPayloadStatusEnum._('noCoverage');
 const AircraftFusionPayloadStatusEnum
-    _$aircraftFusionPayloadStatusEnum_degradedInput =
+_$aircraftFusionPayloadStatusEnum_degradedInput =
     const AircraftFusionPayloadStatusEnum._('degradedInput');
 
 AircraftFusionPayloadStatusEnum _$aircraftFusionPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$aircraftFusionPayloadStatusEnum_ok;
@@ -35,29 +36,31 @@ AircraftFusionPayloadStatusEnum _$aircraftFusionPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<AircraftFusionPayloadStatusEnum>
-    _$aircraftFusionPayloadStatusEnumValues = BuiltSet<
-        AircraftFusionPayloadStatusEnum>(const <AircraftFusionPayloadStatusEnum>[
-  _$aircraftFusionPayloadStatusEnum_ok,
-  _$aircraftFusionPayloadStatusEnum_insufficientData,
-  _$aircraftFusionPayloadStatusEnum_noCoverage,
-  _$aircraftFusionPayloadStatusEnum_degradedInput,
-]);
+_$aircraftFusionPayloadStatusEnumValues =
+    BuiltSet<AircraftFusionPayloadStatusEnum>(
+      const <AircraftFusionPayloadStatusEnum>[
+        _$aircraftFusionPayloadStatusEnum_ok,
+        _$aircraftFusionPayloadStatusEnum_insufficientData,
+        _$aircraftFusionPayloadStatusEnum_noCoverage,
+        _$aircraftFusionPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 const AircraftFusionPayloadPositionSourceEnum
-    _$aircraftFusionPayloadPositionSourceEnum_adsb =
+_$aircraftFusionPayloadPositionSourceEnum_adsb =
     const AircraftFusionPayloadPositionSourceEnum._('adsb');
 const AircraftFusionPayloadPositionSourceEnum
-    _$aircraftFusionPayloadPositionSourceEnum_mlat =
+_$aircraftFusionPayloadPositionSourceEnum_mlat =
     const AircraftFusionPayloadPositionSourceEnum._('mlat');
 const AircraftFusionPayloadPositionSourceEnum
-    _$aircraftFusionPayloadPositionSourceEnum_tisb =
+_$aircraftFusionPayloadPositionSourceEnum_tisb =
     const AircraftFusionPayloadPositionSourceEnum._('tisb');
 const AircraftFusionPayloadPositionSourceEnum
-    _$aircraftFusionPayloadPositionSourceEnum_other =
+_$aircraftFusionPayloadPositionSourceEnum_other =
     const AircraftFusionPayloadPositionSourceEnum._('other');
 
 AircraftFusionPayloadPositionSourceEnum
-    _$aircraftFusionPayloadPositionSourceEnumValueOf(String name) {
+_$aircraftFusionPayloadPositionSourceEnumValueOf(String name) {
   switch (name) {
     case 'adsb':
       return _$aircraftFusionPayloadPositionSourceEnum_adsb;
@@ -73,19 +76,21 @@ AircraftFusionPayloadPositionSourceEnum
 }
 
 final BuiltSet<AircraftFusionPayloadPositionSourceEnum>
-    _$aircraftFusionPayloadPositionSourceEnumValues = BuiltSet<
-        AircraftFusionPayloadPositionSourceEnum>(const <AircraftFusionPayloadPositionSourceEnum>[
-  _$aircraftFusionPayloadPositionSourceEnum_adsb,
-  _$aircraftFusionPayloadPositionSourceEnum_mlat,
-  _$aircraftFusionPayloadPositionSourceEnum_tisb,
-  _$aircraftFusionPayloadPositionSourceEnum_other,
-]);
+_$aircraftFusionPayloadPositionSourceEnumValues =
+    BuiltSet<AircraftFusionPayloadPositionSourceEnum>(
+      const <AircraftFusionPayloadPositionSourceEnum>[
+        _$aircraftFusionPayloadPositionSourceEnum_adsb,
+        _$aircraftFusionPayloadPositionSourceEnum_mlat,
+        _$aircraftFusionPayloadPositionSourceEnum_tisb,
+        _$aircraftFusionPayloadPositionSourceEnum_other,
+      ],
+    );
 
 Serializer<AircraftFusionPayloadStatusEnum>
-    _$aircraftFusionPayloadStatusEnumSerializer =
+_$aircraftFusionPayloadStatusEnumSerializer =
     _$AircraftFusionPayloadStatusEnumSerializer();
 Serializer<AircraftFusionPayloadPositionSourceEnum>
-    _$aircraftFusionPayloadPositionSourceEnumSerializer =
+_$aircraftFusionPayloadPositionSourceEnumSerializer =
     _$AircraftFusionPayloadPositionSourceEnumSerializer();
 
 class _$AircraftFusionPayloadStatusEnumSerializer
@@ -110,16 +115,19 @@ class _$AircraftFusionPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AircraftFusionPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AircraftFusionPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AircraftFusionPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AircraftFusionPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AircraftFusionPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AircraftFusionPayloadPositionSourceEnumSerializer
@@ -139,23 +147,26 @@ class _$AircraftFusionPayloadPositionSourceEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AircraftFusionPayloadPositionSourceEnum
+    AircraftFusionPayloadPositionSourceEnum,
   ];
   @override
   final String wireName = 'AircraftFusionPayloadPositionSourceEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          AircraftFusionPayloadPositionSourceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AircraftFusionPayloadPositionSourceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AircraftFusionPayloadPositionSourceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AircraftFusionPayloadPositionSourceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AircraftFusionPayloadPositionSourceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AircraftFusionPayload extends AircraftFusionPayload {
@@ -180,26 +191,26 @@ class _$AircraftFusionPayload extends AircraftFusionPayload {
   @override
   final AircraftFusionPayloadPositionSourceEnum? positionSource;
 
-  factory _$AircraftFusionPayload(
-          [void Function(AircraftFusionPayloadBuilder)? updates]) =>
-      (AircraftFusionPayloadBuilder()..update(updates))._build();
+  factory _$AircraftFusionPayload([
+    void Function(AircraftFusionPayloadBuilder)? updates,
+  ]) => (AircraftFusionPayloadBuilder()..update(updates))._build();
 
-  _$AircraftFusionPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.hex,
-      required this.sources,
-      required this.primarySource,
-      this.positionSource})
-      : super._();
+  _$AircraftFusionPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.hex,
+    required this.sources,
+    required this.primarySource,
+    this.positionSource,
+  }) : super._();
   @override
   AircraftFusionPayload rebuild(
-          void Function(AircraftFusionPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AircraftFusionPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AircraftFusionPayloadBuilder toBuilder() =>
@@ -345,22 +356,38 @@ class AircraftFusionPayloadBuilder
   _$AircraftFusionPayload _build() {
     _$AircraftFusionPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AircraftFusionPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'AircraftFusionPayload', 'automated'),
+              automated,
+              r'AircraftFusionPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'AircraftFusionPayload', 'notAWarning'),
+              notAWarning,
+              r'AircraftFusionPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AircraftFusionPayload', 'status'),
+              status,
+              r'AircraftFusionPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             hex: BuiltValueNullFieldError.checkNotNull(
-                hex, r'AircraftFusionPayload', 'hex'),
+              hex,
+              r'AircraftFusionPayload',
+              'hex',
+            ),
             sources: sources.build(),
             primarySource: BuiltValueNullFieldError.checkNotNull(
-                primarySource, r'AircraftFusionPayload', 'primarySource'),
+              primarySource,
+              r'AircraftFusionPayload',
+              'primarySource',
+            ),
             positionSource: positionSource,
           );
     } catch (_) {
@@ -376,7 +403,10 @@ class AircraftFusionPayloadBuilder
         sources.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AircraftFusionPayload', _$failedField, e.toString());
+          r'AircraftFusionPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

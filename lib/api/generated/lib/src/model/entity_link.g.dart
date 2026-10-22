@@ -68,20 +68,20 @@ EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnumValueOf(String name) {
 
 final BuiltSet<EntityLinkKeyTypeEnum> _$entityLinkKeyTypeEnumValues =
     BuiltSet<EntityLinkKeyTypeEnum>(const <EntityLinkKeyTypeEnum>[
-  _$entityLinkKeyTypeEnum_airframe,
-  _$entityLinkKeyTypeEnum_icao24,
-  _$entityLinkKeyTypeEnum_registration,
-  _$entityLinkKeyTypeEnum_imo,
-  _$entityLinkKeyTypeEnum_mmsi,
-  _$entityLinkKeyTypeEnum_norad,
-  _$entityLinkKeyTypeEnum_cospar,
-  _$entityLinkKeyTypeEnum_callsign,
-  _$entityLinkKeyTypeEnum_lei,
-  _$entityLinkKeyTypeEnum_companyNumber,
-  _$entityLinkKeyTypeEnum_taxId,
-  _$entityLinkKeyTypeEnum_officerId,
-  _$entityLinkKeyTypeEnum_personKey,
-]);
+      _$entityLinkKeyTypeEnum_airframe,
+      _$entityLinkKeyTypeEnum_icao24,
+      _$entityLinkKeyTypeEnum_registration,
+      _$entityLinkKeyTypeEnum_imo,
+      _$entityLinkKeyTypeEnum_mmsi,
+      _$entityLinkKeyTypeEnum_norad,
+      _$entityLinkKeyTypeEnum_cospar,
+      _$entityLinkKeyTypeEnum_callsign,
+      _$entityLinkKeyTypeEnum_lei,
+      _$entityLinkKeyTypeEnum_companyNumber,
+      _$entityLinkKeyTypeEnum_taxId,
+      _$entityLinkKeyTypeEnum_officerId,
+      _$entityLinkKeyTypeEnum_personKey,
+    ]);
 
 Serializer<EntityLinkKeyTypeEnum> _$entityLinkKeyTypeEnumSerializer =
     _$EntityLinkKeyTypeEnumSerializer();
@@ -125,15 +125,20 @@ class _$EntityLinkKeyTypeEnumSerializer
   final String wireName = 'EntityLinkKeyTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EntityLinkKeyTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EntityLinkKeyTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EntityLinkKeyTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EntityLinkKeyTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EntityLinkKeyTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EntityLinkKeyTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EntityLink extends EntityLink {
@@ -157,16 +162,16 @@ class _$EntityLink extends EntityLink {
   factory _$EntityLink([void Function(EntityLinkBuilder)? updates]) =>
       (EntityLinkBuilder()..update(updates))._build();
 
-  _$EntityLink._(
-      {required this.sourceId,
-      required this.externalId,
-      required this.keyType,
-      required this.keyValue,
-      required this.confidence,
-      required this.validFrom,
-      this.validTo,
-      this.firstSeq})
-      : super._();
+  _$EntityLink._({
+    required this.sourceId,
+    required this.externalId,
+    required this.keyType,
+    required this.keyValue,
+    required this.confidence,
+    required this.validFrom,
+    this.validTo,
+    this.firstSeq,
+  }) : super._();
   @override
   EntityLink rebuild(void Function(EntityLinkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -287,20 +292,39 @@ class EntityLinkBuilder implements Builder<EntityLink, EntityLinkBuilder> {
   EntityLink build() => _build();
 
   _$EntityLink _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EntityLink._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'EntityLink', 'sourceId'),
+            sourceId,
+            r'EntityLink',
+            'sourceId',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'EntityLink', 'externalId'),
+            externalId,
+            r'EntityLink',
+            'externalId',
+          ),
           keyType: BuiltValueNullFieldError.checkNotNull(
-              keyType, r'EntityLink', 'keyType'),
+            keyType,
+            r'EntityLink',
+            'keyType',
+          ),
           keyValue: BuiltValueNullFieldError.checkNotNull(
-              keyValue, r'EntityLink', 'keyValue'),
+            keyValue,
+            r'EntityLink',
+            'keyValue',
+          ),
           confidence: BuiltValueNullFieldError.checkNotNull(
-              confidence, r'EntityLink', 'confidence'),
+            confidence,
+            r'EntityLink',
+            'confidence',
+          ),
           validFrom: BuiltValueNullFieldError.checkNotNull(
-              validFrom, r'EntityLink', 'validFrom'),
+            validFrom,
+            r'EntityLink',
+            'validFrom',
+          ),
           validTo: validTo,
           firstSeq: firstSeq,
         );

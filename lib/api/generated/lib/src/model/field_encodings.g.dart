@@ -21,9 +21,13 @@ class _$FieldEncodings extends FieldEncodings {
   factory _$FieldEncodings([void Function(FieldEncodingsBuilder)? updates]) =>
       (FieldEncodingsBuilder()..update(updates))._build();
 
-  _$FieldEncodings._(
-      {this.velocityJson, this.pngUv, this.i16, this.pngTiles, this.tilejson})
-      : super._();
+  _$FieldEncodings._({
+    this.velocityJson,
+    this.pngUv,
+    this.i16,
+    this.pngTiles,
+    this.tilejson,
+  }) : super._();
   @override
   FieldEncodings rebuild(void Function(FieldEncodingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -129,7 +133,8 @@ class FieldEncodingsBuilder
   _$FieldEncodings _build() {
     _$FieldEncodings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FieldEncodings._(
             velocityJson: _velocityJson?.build(),
             pngUv: _pngUv?.build(),
@@ -150,7 +155,10 @@ class FieldEncodingsBuilder
         _pngTiles?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FieldEncodings', _$failedField, e.toString());
+          r'FieldEncodings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

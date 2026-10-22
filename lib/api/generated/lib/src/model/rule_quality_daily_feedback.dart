@@ -33,9 +33,9 @@ abstract class RuleQualityDailyFeedback
 
   RuleQualityDailyFeedback._();
 
-  factory RuleQualityDailyFeedback(
-          [void updates(RuleQualityDailyFeedbackBuilder b)]) =
-      _$RuleQualityDailyFeedback;
+  factory RuleQualityDailyFeedback([
+    void updates(RuleQualityDailyFeedbackBuilder b),
+  ]) = _$RuleQualityDailyFeedback;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RuleQualityDailyFeedbackBuilder b) => b;
@@ -50,7 +50,7 @@ class _$RuleQualityDailyFeedbackSerializer
   @override
   final Iterable<Type> types = const [
     RuleQualityDailyFeedback,
-    _$RuleQualityDailyFeedback
+    _$RuleQualityDailyFeedback,
   ];
 
   @override
@@ -97,9 +97,11 @@ class _$RuleQualityDailyFeedbackSerializer
     RuleQualityDailyFeedback object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -115,34 +117,42 @@ class _$RuleQualityDailyFeedbackSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'useful':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.useful = valueDes;
           break;
         case r'noise':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.noise = valueDes;
           break;
         case r'late':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.late_ = valueDes;
           break;
         case r'false_positive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.falsePositive = valueDes;
           break;

@@ -28,10 +28,10 @@ BenchmarkCaseSource_Enum _$benchmarkCaseSourceEnumValueOf(String name) {
 
 final BuiltSet<BenchmarkCaseSource_Enum> _$benchmarkCaseSourceEnumValues =
     BuiltSet<BenchmarkCaseSource_Enum>(const <BenchmarkCaseSource_Enum>[
-  _$benchmarkCaseSourceEnum_operator_,
-  _$benchmarkCaseSourceEnum_agent,
-  _$benchmarkCaseSourceEnum_auto,
-]);
+      _$benchmarkCaseSourceEnum_operator_,
+      _$benchmarkCaseSourceEnum_agent,
+      _$benchmarkCaseSourceEnum_auto,
+    ]);
 
 Serializer<BenchmarkCaseSource_Enum> _$benchmarkCaseSourceEnumSerializer =
     _$BenchmarkCaseSource_EnumSerializer();
@@ -55,16 +55,20 @@ class _$BenchmarkCaseSource_EnumSerializer
   final String wireName = 'BenchmarkCaseSource_Enum';
 
   @override
-  Object serialize(Serializers serializers, BenchmarkCaseSource_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BenchmarkCaseSource_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   BenchmarkCaseSource_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BenchmarkCaseSource_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BenchmarkCaseSource_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$BenchmarkCase extends BenchmarkCase {
@@ -92,18 +96,18 @@ class _$BenchmarkCase extends BenchmarkCase {
   factory _$BenchmarkCase([void Function(BenchmarkCaseBuilder)? updates]) =>
       (BenchmarkCaseBuilder()..update(updates))._build();
 
-  _$BenchmarkCase._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.windowFrom,
-      required this.windowTo,
-      required this.regionCodes,
-      required this.expectations,
-      required this.source_,
-      this.createdBy,
-      required this.createdAt})
-      : super._();
+  _$BenchmarkCase._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.windowFrom,
+    required this.windowTo,
+    required this.regionCodes,
+    required this.expectations,
+    required this.source_,
+    this.createdBy,
+    required this.createdAt,
+  }) : super._();
   @override
   BenchmarkCase rebuild(void Function(BenchmarkCaseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -247,24 +251,43 @@ class BenchmarkCaseBuilder
   _$BenchmarkCase _build() {
     _$BenchmarkCase _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BenchmarkCase._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'BenchmarkCase', 'id'),
+              id,
+              r'BenchmarkCase',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'BenchmarkCase', 'name'),
+              name,
+              r'BenchmarkCase',
+              'name',
+            ),
             description: description,
             windowFrom: BuiltValueNullFieldError.checkNotNull(
-                windowFrom, r'BenchmarkCase', 'windowFrom'),
+              windowFrom,
+              r'BenchmarkCase',
+              'windowFrom',
+            ),
             windowTo: BuiltValueNullFieldError.checkNotNull(
-                windowTo, r'BenchmarkCase', 'windowTo'),
+              windowTo,
+              r'BenchmarkCase',
+              'windowTo',
+            ),
             regionCodes: regionCodes.build(),
             expectations: expectations.build(),
             source_: BuiltValueNullFieldError.checkNotNull(
-                source_, r'BenchmarkCase', 'source_'),
+              source_,
+              r'BenchmarkCase',
+              'source_',
+            ),
             createdBy: createdBy,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'BenchmarkCase', 'createdAt'),
+              createdAt,
+              r'BenchmarkCase',
+              'createdAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -275,7 +298,10 @@ class BenchmarkCaseBuilder
         expectations.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BenchmarkCase', _$failedField, e.toString());
+          r'BenchmarkCase',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

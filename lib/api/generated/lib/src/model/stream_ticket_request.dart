@@ -48,7 +48,7 @@ class _$StreamTicketRequestSerializer
   @override
   final Iterable<Type> types = const [
     StreamTicketRequest,
-    _$StreamTicketRequest
+    _$StreamTicketRequest,
   ];
 
   @override
@@ -86,9 +86,11 @@ class _$StreamTicketRequestSerializer
     StreamTicketRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,26 +106,35 @@ class _$StreamTicketRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'purpose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StreamTicketRequestPurposeEnum),
-          ) as StreamTicketRequestPurposeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StreamTicketRequestPurposeEnum,
+                    ),
+                  )
+                  as StreamTicketRequestPurposeEnum;
           result.purpose = valueDes;
           break;
         case r'paths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.paths.replace(valueDes);
           break;
         case r'ttl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ttl = valueDes;
           break;

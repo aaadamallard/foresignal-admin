@@ -40,7 +40,7 @@ class _$ChronicleLayerStatsSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleLayerStats,
-    _$ChronicleLayerStats
+    _$ChronicleLayerStats,
   ];
 
   @override
@@ -73,9 +73,11 @@ class _$ChronicleLayerStatsSerializer
     ChronicleLayerStats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,18 +93,22 @@ class _$ChronicleLayerStatsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'rows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.rows = valueDes;
           break;
         case r'bytes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.bytes = valueDes;
           break;

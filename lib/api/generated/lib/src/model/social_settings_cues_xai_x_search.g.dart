@@ -12,15 +12,15 @@ class _$SocialSettingsCuesXaiXSearch extends SocialSettingsCuesXaiXSearch {
   @override
   final int? maxResults;
 
-  factory _$SocialSettingsCuesXaiXSearch(
-          [void Function(SocialSettingsCuesXaiXSearchBuilder)? updates]) =>
-      (SocialSettingsCuesXaiXSearchBuilder()..update(updates))._build();
+  factory _$SocialSettingsCuesXaiXSearch([
+    void Function(SocialSettingsCuesXaiXSearchBuilder)? updates,
+  ]) => (SocialSettingsCuesXaiXSearchBuilder()..update(updates))._build();
 
   _$SocialSettingsCuesXaiXSearch._({this.enabled, this.maxResults}) : super._();
   @override
   SocialSettingsCuesXaiXSearch rebuild(
-          void Function(SocialSettingsCuesXaiXSearchBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsCuesXaiXSearchBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsCuesXaiXSearchBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$SocialSettingsCuesXaiXSearch extends SocialSettingsCuesXaiXSearch {
 
 class SocialSettingsCuesXaiXSearchBuilder
     implements
-        Builder<SocialSettingsCuesXaiXSearch,
-            SocialSettingsCuesXaiXSearchBuilder> {
+        Builder<
+          SocialSettingsCuesXaiXSearch,
+          SocialSettingsCuesXaiXSearchBuilder
+        > {
   _$SocialSettingsCuesXaiXSearch? _$v;
 
   bool? _enabled;
@@ -94,7 +96,8 @@ class SocialSettingsCuesXaiXSearchBuilder
   SocialSettingsCuesXaiXSearch build() => _build();
 
   _$SocialSettingsCuesXaiXSearch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialSettingsCuesXaiXSearch._(
           enabled: enabled,
           maxResults: maxResults,

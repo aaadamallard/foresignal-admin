@@ -6,8 +6,9 @@ part of 'briefing.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const BriefingModeEnum _$briefingModeEnum_digest =
-    const BriefingModeEnum._('digest');
+const BriefingModeEnum _$briefingModeEnum_digest = const BriefingModeEnum._(
+  'digest',
+);
 const BriefingModeEnum _$briefingModeEnum_llm = const BriefingModeEnum._('llm');
 
 BriefingModeEnum _$briefingModeEnumValueOf(String name) {
@@ -23,9 +24,9 @@ BriefingModeEnum _$briefingModeEnumValueOf(String name) {
 
 final BuiltSet<BriefingModeEnum> _$briefingModeEnumValues =
     BuiltSet<BriefingModeEnum>(const <BriefingModeEnum>[
-  _$briefingModeEnum_digest,
-  _$briefingModeEnum_llm,
-]);
+      _$briefingModeEnum_digest,
+      _$briefingModeEnum_llm,
+    ]);
 
 Serializer<BriefingModeEnum> _$briefingModeEnumSerializer =
     _$BriefingModeEnumSerializer();
@@ -47,15 +48,20 @@ class _$BriefingModeEnumSerializer
   final String wireName = 'BriefingModeEnum';
 
   @override
-  Object serialize(Serializers serializers, BriefingModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    BriefingModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  BriefingModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BriefingModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  BriefingModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => BriefingModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Briefing extends Briefing {
@@ -99,26 +105,26 @@ class _$Briefing extends Briefing {
   factory _$Briefing([void Function(BriefingBuilder)? updates]) =>
       (BriefingBuilder()..update(updates))._build();
 
-  _$Briefing._(
-      {required this.name,
-      this.enabled,
-      required this.schedule,
-      this.timezone,
-      this.scope,
-      this.lookback,
-      this.mode,
-      this.instructions,
-      this.channelIds,
-      this.maxItemsPerKind,
-      this.audio,
-      required this.id,
-      required this.createdAt,
-      this.updatedAt,
-      this.nextRunAt,
-      this.lastRunAt,
-      this.lastRunStatus,
-      this.warnings})
-      : super._();
+  _$Briefing._({
+    required this.name,
+    this.enabled,
+    required this.schedule,
+    this.timezone,
+    this.scope,
+    this.lookback,
+    this.mode,
+    this.instructions,
+    this.channelIds,
+    this.maxItemsPerKind,
+    this.audio,
+    required this.id,
+    required this.createdAt,
+    this.updatedAt,
+    this.nextRunAt,
+    this.lastRunAt,
+    this.lastRunStatus,
+    this.warnings,
+  }) : super._();
   @override
   Briefing rebuild(void Function(BriefingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -327,13 +333,20 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
   _$Briefing _build() {
     _$Briefing _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Briefing._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'Briefing', 'name'),
+              name,
+              r'Briefing',
+              'name',
+            ),
             enabled: enabled,
             schedule: BuiltValueNullFieldError.checkNotNull(
-                schedule, r'Briefing', 'schedule'),
+              schedule,
+              r'Briefing',
+              'schedule',
+            ),
             timezone: timezone,
             scope: _scope?.build(),
             lookback: lookback,
@@ -344,7 +357,10 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
             audio: _audio?.build(),
             id: BuiltValueNullFieldError.checkNotNull(id, r'Briefing', 'id'),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Briefing', 'createdAt'),
+              createdAt,
+              r'Briefing',
+              'createdAt',
+            ),
             updatedAt: updatedAt,
             nextRunAt: nextRunAt,
             lastRunAt: lastRunAt,
@@ -367,7 +383,10 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Briefing', _$failedField, e.toString());
+          r'Briefing',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

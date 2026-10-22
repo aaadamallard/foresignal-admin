@@ -19,22 +19,21 @@ class _$HypothesisSetEventBandChangesInner
   @override
   final num probability;
 
-  factory _$HypothesisSetEventBandChangesInner(
-          [void Function(HypothesisSetEventBandChangesInnerBuilder)?
-              updates]) =>
-      (HypothesisSetEventBandChangesInnerBuilder()..update(updates))._build();
+  factory _$HypothesisSetEventBandChangesInner([
+    void Function(HypothesisSetEventBandChangesInnerBuilder)? updates,
+  ]) => (HypothesisSetEventBandChangesInnerBuilder()..update(updates))._build();
 
-  _$HypothesisSetEventBandChangesInner._(
-      {required this.hypothesisId,
-      this.label,
-      required this.fromTerm,
-      required this.toTerm,
-      required this.probability})
-      : super._();
+  _$HypothesisSetEventBandChangesInner._({
+    required this.hypothesisId,
+    this.label,
+    required this.fromTerm,
+    required this.toTerm,
+    required this.probability,
+  }) : super._();
   @override
   HypothesisSetEventBandChangesInner rebuild(
-          void Function(HypothesisSetEventBandChangesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetEventBandChangesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetEventBandChangesInnerBuilder toBuilder() =>
@@ -77,8 +76,10 @@ class _$HypothesisSetEventBandChangesInner
 
 class HypothesisSetEventBandChangesInnerBuilder
     implements
-        Builder<HypothesisSetEventBandChangesInner,
-            HypothesisSetEventBandChangesInnerBuilder> {
+        Builder<
+          HypothesisSetEventBandChangesInner,
+          HypothesisSetEventBandChangesInnerBuilder
+        > {
   _$HypothesisSetEventBandChangesInner? _$v;
 
   String? _hypothesisId;
@@ -125,7 +126,8 @@ class HypothesisSetEventBandChangesInnerBuilder
 
   @override
   void update(
-      void Function(HypothesisSetEventBandChangesInnerBuilder)? updates) {
+    void Function(HypothesisSetEventBandChangesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -133,17 +135,30 @@ class HypothesisSetEventBandChangesInnerBuilder
   HypothesisSetEventBandChangesInner build() => _build();
 
   _$HypothesisSetEventBandChangesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisSetEventBandChangesInner._(
-          hypothesisId: BuiltValueNullFieldError.checkNotNull(hypothesisId,
-              r'HypothesisSetEventBandChangesInner', 'hypothesisId'),
+          hypothesisId: BuiltValueNullFieldError.checkNotNull(
+            hypothesisId,
+            r'HypothesisSetEventBandChangesInner',
+            'hypothesisId',
+          ),
           label: label,
           fromTerm: BuiltValueNullFieldError.checkNotNull(
-              fromTerm, r'HypothesisSetEventBandChangesInner', 'fromTerm'),
+            fromTerm,
+            r'HypothesisSetEventBandChangesInner',
+            'fromTerm',
+          ),
           toTerm: BuiltValueNullFieldError.checkNotNull(
-              toTerm, r'HypothesisSetEventBandChangesInner', 'toTerm'),
-          probability: BuiltValueNullFieldError.checkNotNull(probability,
-              r'HypothesisSetEventBandChangesInner', 'probability'),
+            toTerm,
+            r'HypothesisSetEventBandChangesInner',
+            'toTerm',
+          ),
+          probability: BuiltValueNullFieldError.checkNotNull(
+            probability,
+            r'HypothesisSetEventBandChangesInner',
+            'probability',
+          ),
         );
     replace(_$result);
     return _$result;

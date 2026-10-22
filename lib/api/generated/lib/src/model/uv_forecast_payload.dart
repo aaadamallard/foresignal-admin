@@ -66,8 +66,9 @@ class _$UvForecastPayloadSerializer
     yield r'hours';
     yield serializers.serialize(
       object.hours,
-      specifiedType:
-          const FullType(BuiltList, [FullType(UvForecastPayloadHoursInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(UvForecastPayloadHoursInner),
+      ]),
     );
     if (object.maxUv != null) {
       yield r'maxUv';
@@ -91,9 +92,11 @@ class _$UvForecastPayloadSerializer
     UvForecastPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,33 +112,42 @@ class _$UvForecastPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'zip':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.zip = valueDes;
           break;
         case r'hours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UvForecastPayloadHoursInner)]),
-          ) as BuiltList<UvForecastPayloadHoursInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UvForecastPayloadHoursInner),
+                    ]),
+                  )
+                  as BuiltList<UvForecastPayloadHoursInner>;
           result.hours.replace(valueDes);
           break;
         case r'maxUv':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.maxUv = valueDes;
           break;
         case r'maxAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.maxAt = valueDes;
           break;

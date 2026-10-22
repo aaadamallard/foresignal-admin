@@ -20,8 +20,10 @@ part 'regional_index_value_components_inner.g.dart';
 @BuiltValue()
 abstract class RegionalIndexValueComponentsInner
     implements
-        Built<RegionalIndexValueComponentsInner,
-            RegionalIndexValueComponentsInnerBuilder> {
+        Built<
+          RegionalIndexValueComponentsInner,
+          RegionalIndexValueComponentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'key')
   String get key;
 
@@ -43,9 +45,9 @@ abstract class RegionalIndexValueComponentsInner
 
   RegionalIndexValueComponentsInner._();
 
-  factory RegionalIndexValueComponentsInner(
-          [void updates(RegionalIndexValueComponentsInnerBuilder b)]) =
-      _$RegionalIndexValueComponentsInner;
+  factory RegionalIndexValueComponentsInner([
+    void updates(RegionalIndexValueComponentsInnerBuilder b),
+  ]) = _$RegionalIndexValueComponentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RegionalIndexValueComponentsInnerBuilder b) => b;
@@ -60,7 +62,7 @@ class _$RegionalIndexValueComponentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     RegionalIndexValueComponentsInner,
-    _$RegionalIndexValueComponentsInner
+    _$RegionalIndexValueComponentsInner,
   ];
 
   @override
@@ -113,9 +115,11 @@ class _$RegionalIndexValueComponentsInnerSerializer
     RegionalIndexValueComponentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -131,46 +135,49 @@ class _$RegionalIndexValueComponentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.key = valueDes;
           break;
         case r'raw':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.raw = valueDes;
           break;
         case r'normalised':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.normalised = valueDes;
           break;
         case r'weight':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.weight = valueDes;
           break;
         case r'contribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.contribution = valueDes;
           break;
         case r'missing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.missing = valueDes;
           break;

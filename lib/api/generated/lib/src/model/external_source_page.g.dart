@@ -12,15 +12,15 @@ class _$ExternalSourcePage extends ExternalSourcePage {
   @override
   final String? nextCursor;
 
-  factory _$ExternalSourcePage(
-          [void Function(ExternalSourcePageBuilder)? updates]) =>
-      (ExternalSourcePageBuilder()..update(updates))._build();
+  factory _$ExternalSourcePage([
+    void Function(ExternalSourcePageBuilder)? updates,
+  ]) => (ExternalSourcePageBuilder()..update(updates))._build();
 
   _$ExternalSourcePage._({required this.items, this.nextCursor}) : super._();
   @override
   ExternalSourcePage rebuild(
-          void Function(ExternalSourcePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalSourcePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalSourcePageBuilder toBuilder() =>
@@ -95,11 +95,9 @@ class ExternalSourcePageBuilder
   _$ExternalSourcePage _build() {
     _$ExternalSourcePage _$result;
     try {
-      _$result = _$v ??
-          _$ExternalSourcePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ExternalSourcePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -107,7 +105,10 @@ class ExternalSourcePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExternalSourcePage', _$failedField, e.toString());
+          r'ExternalSourcePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

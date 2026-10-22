@@ -21,9 +21,9 @@ abstract class SystemInfoRasterFormats
 
   SystemInfoRasterFormats._();
 
-  factory SystemInfoRasterFormats(
-          [void updates(SystemInfoRasterFormatsBuilder b)]) =
-      _$SystemInfoRasterFormats;
+  factory SystemInfoRasterFormats([
+    void updates(SystemInfoRasterFormatsBuilder b),
+  ]) = _$SystemInfoRasterFormats;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemInfoRasterFormatsBuilder b) => b;
@@ -38,7 +38,7 @@ class _$SystemInfoRasterFormatsSerializer
   @override
   final Iterable<Type> types = const [
     SystemInfoRasterFormats,
-    _$SystemInfoRasterFormats
+    _$SystemInfoRasterFormats,
   ];
 
   @override
@@ -64,9 +64,11 @@ class _$SystemInfoRasterFormatsSerializer
     SystemInfoRasterFormats object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -82,10 +84,14 @@ class _$SystemInfoRasterFormatsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'webp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoRasterFormatsWebp),
-          ) as SystemInfoRasterFormatsWebp?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoRasterFormatsWebp,
+                    ),
+                  )
+                  as SystemInfoRasterFormatsWebp?;
           if (valueDes == null) continue;
           result.webp.replace(valueDes);
           break;

@@ -32,11 +32,11 @@ AssessmentCadenceEnum _$assessmentCadenceEnumValueOf(String name) {
 
 final BuiltSet<AssessmentCadenceEnum> _$assessmentCadenceEnumValues =
     BuiltSet<AssessmentCadenceEnum>(const <AssessmentCadenceEnum>[
-  _$assessmentCadenceEnum_daily,
-  _$assessmentCadenceEnum_weekly,
-  _$assessmentCadenceEnum_monthly,
-  _$assessmentCadenceEnum_onDemand,
-]);
+      _$assessmentCadenceEnum_daily,
+      _$assessmentCadenceEnum_weekly,
+      _$assessmentCadenceEnum_monthly,
+      _$assessmentCadenceEnum_onDemand,
+    ]);
 
 const AssessmentStatusEnum _$assessmentStatusEnum_ok =
     const AssessmentStatusEnum._('ok');
@@ -64,11 +64,11 @@ AssessmentStatusEnum _$assessmentStatusEnumValueOf(String name) {
 
 final BuiltSet<AssessmentStatusEnum> _$assessmentStatusEnumValues =
     BuiltSet<AssessmentStatusEnum>(const <AssessmentStatusEnum>[
-  _$assessmentStatusEnum_ok,
-  _$assessmentStatusEnum_partial,
-  _$assessmentStatusEnum_digestOnly,
-  _$assessmentStatusEnum_failed,
-]);
+      _$assessmentStatusEnum_ok,
+      _$assessmentStatusEnum_partial,
+      _$assessmentStatusEnum_digestOnly,
+      _$assessmentStatusEnum_failed,
+    ]);
 
 const AssessmentEffortEnum _$assessmentEffortEnum_low =
     const AssessmentEffortEnum._('low');
@@ -92,10 +92,10 @@ AssessmentEffortEnum _$assessmentEffortEnumValueOf(String name) {
 
 final BuiltSet<AssessmentEffortEnum> _$assessmentEffortEnumValues =
     BuiltSet<AssessmentEffortEnum>(const <AssessmentEffortEnum>[
-  _$assessmentEffortEnum_low,
-  _$assessmentEffortEnum_medium,
-  _$assessmentEffortEnum_high,
-]);
+      _$assessmentEffortEnum_low,
+      _$assessmentEffortEnum_medium,
+      _$assessmentEffortEnum_high,
+    ]);
 
 Serializer<AssessmentCadenceEnum> _$assessmentCadenceEnumSerializer =
     _$AssessmentCadenceEnumSerializer();
@@ -125,15 +125,20 @@ class _$AssessmentCadenceEnumSerializer
   final String wireName = 'AssessmentCadenceEnum';
 
   @override
-  Object serialize(Serializers serializers, AssessmentCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AssessmentCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AssessmentCadenceEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AssessmentCadenceEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentStatusEnumSerializer
@@ -157,15 +162,20 @@ class _$AssessmentStatusEnumSerializer
   final String wireName = 'AssessmentStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AssessmentStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AssessmentStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AssessmentStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AssessmentStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AssessmentEffortEnumSerializer
@@ -187,15 +197,20 @@ class _$AssessmentEffortEnumSerializer
   final String wireName = 'AssessmentEffortEnum';
 
   @override
-  Object serialize(Serializers serializers, AssessmentEffortEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AssessmentEffortEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AssessmentEffortEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AssessmentEffortEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AssessmentEffortEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AssessmentEffortEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Assessment extends Assessment {
@@ -257,35 +272,35 @@ class _$Assessment extends Assessment {
   factory _$Assessment([void Function(AssessmentBuilder)? updates]) =>
       (AssessmentBuilder()..update(updates))._build();
 
-  _$Assessment._(
-      {required this.id,
-      this.ref,
-      this.cycleId,
-      this.situationId,
-      required this.cadence,
-      required this.periodStart,
-      required this.periodEnd,
-      this.previousAssessmentId,
-      required this.status,
-      required this.bluf,
-      this.headline,
-      required this.sections,
-      this.markdown,
-      this.html,
-      this.packetRef,
-      this.roles,
-      this.model,
-      this.effort,
-      this.manifestId,
-      this.promptTemplates,
-      this.citations,
-      this.lintWarnings,
-      this.footer,
-      required this.private,
-      required this.createdAt,
-      this.coverage,
-      this.social})
-      : super._();
+  _$Assessment._({
+    required this.id,
+    this.ref,
+    this.cycleId,
+    this.situationId,
+    required this.cadence,
+    required this.periodStart,
+    required this.periodEnd,
+    this.previousAssessmentId,
+    required this.status,
+    required this.bluf,
+    this.headline,
+    required this.sections,
+    this.markdown,
+    this.html,
+    this.packetRef,
+    this.roles,
+    this.model,
+    this.effort,
+    this.manifestId,
+    this.promptTemplates,
+    this.citations,
+    this.lintWarnings,
+    this.footer,
+    required this.private,
+    required this.createdAt,
+    this.coverage,
+    this.social,
+  }) : super._();
   @override
   Assessment rebuild(void Function(AssessmentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -483,8 +498,8 @@ class AssessmentBuilder implements Builder<Assessment, AssessmentBuilder> {
   ListBuilder<AssessmentPromptTemplatesInner> get promptTemplates =>
       _$this._promptTemplates ??= ListBuilder<AssessmentPromptTemplatesInner>();
   set promptTemplates(
-          ListBuilder<AssessmentPromptTemplatesInner>? promptTemplates) =>
-      _$this._promptTemplates = promptTemplates;
+    ListBuilder<AssessmentPromptTemplatesInner>? promptTemplates,
+  ) => _$this._promptTemplates = promptTemplates;
 
   ListBuilder<String>? _citations;
   ListBuilder<String> get citations =>
@@ -576,21 +591,34 @@ class AssessmentBuilder implements Builder<Assessment, AssessmentBuilder> {
   _$Assessment _build() {
     _$Assessment _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Assessment._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Assessment', 'id'),
             ref: ref,
             cycleId: cycleId,
             situationId: situationId,
             cadence: BuiltValueNullFieldError.checkNotNull(
-                cadence, r'Assessment', 'cadence'),
+              cadence,
+              r'Assessment',
+              'cadence',
+            ),
             periodStart: BuiltValueNullFieldError.checkNotNull(
-                periodStart, r'Assessment', 'periodStart'),
+              periodStart,
+              r'Assessment',
+              'periodStart',
+            ),
             periodEnd: BuiltValueNullFieldError.checkNotNull(
-                periodEnd, r'Assessment', 'periodEnd'),
+              periodEnd,
+              r'Assessment',
+              'periodEnd',
+            ),
             previousAssessmentId: previousAssessmentId,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Assessment', 'status'),
+              status,
+              r'Assessment',
+              'status',
+            ),
             bluf: bluf.build(),
             headline: headline,
             sections: sections.build(),
@@ -606,9 +634,15 @@ class AssessmentBuilder implements Builder<Assessment, AssessmentBuilder> {
             lintWarnings: _lintWarnings?.build(),
             footer: footer,
             private: BuiltValueNullFieldError.checkNotNull(
-                private, r'Assessment', 'private'),
+              private,
+              r'Assessment',
+              'private',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Assessment', 'createdAt'),
+              createdAt,
+              r'Assessment',
+              'createdAt',
+            ),
             coverage: _coverage?.build(),
             social: _social?.build(),
           );
@@ -637,7 +671,10 @@ class AssessmentBuilder implements Builder<Assessment, AssessmentBuilder> {
         _social?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Assessment', _$failedField, e.toString());
+          r'Assessment',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

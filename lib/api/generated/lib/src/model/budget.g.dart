@@ -17,9 +17,11 @@ class _$Budget extends Budget {
   factory _$Budget([void Function(BudgetBuilder)? updates]) =>
       (BudgetBuilder()..update(updates))._build();
 
-  _$Budget._(
-      {required this.perMinute, required this.perDay, this.monthlyCapUsd})
-      : super._();
+  _$Budget._({
+    required this.perMinute,
+    required this.perDay,
+    this.monthlyCapUsd,
+  }) : super._();
   @override
   Budget rebuild(void Function(BudgetBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -101,12 +103,19 @@ class BudgetBuilder implements Builder<Budget, BudgetBuilder> {
   Budget build() => _build();
 
   _$Budget _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Budget._(
           perMinute: BuiltValueNullFieldError.checkNotNull(
-              perMinute, r'Budget', 'perMinute'),
+            perMinute,
+            r'Budget',
+            'perMinute',
+          ),
           perDay: BuiltValueNullFieldError.checkNotNull(
-              perDay, r'Budget', 'perDay'),
+            perDay,
+            r'Budget',
+            'perDay',
+          ),
           monthlyCapUsd: monthlyCapUsd,
         );
     replace(_$result);

@@ -16,20 +16,20 @@ class _$BaseRateUnconditional extends BaseRateUnconditional {
   @override
   final int? nWindows;
 
-  factory _$BaseRateUnconditional(
-          [void Function(BaseRateUnconditionalBuilder)? updates]) =>
-      (BaseRateUnconditionalBuilder()..update(updates))._build();
+  factory _$BaseRateUnconditional([
+    void Function(BaseRateUnconditionalBuilder)? updates,
+  ]) => (BaseRateUnconditionalBuilder()..update(updates))._build();
 
-  _$BaseRateUnconditional._(
-      {required this.ratePerWindow,
-      required this.pAtLeastOne,
-      required this.interval,
-      this.nWindows})
-      : super._();
+  _$BaseRateUnconditional._({
+    required this.ratePerWindow,
+    required this.pAtLeastOne,
+    required this.interval,
+    this.nWindows,
+  }) : super._();
   @override
   BaseRateUnconditional rebuild(
-          void Function(BaseRateUnconditionalBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BaseRateUnconditionalBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BaseRateUnconditionalBuilder toBuilder() =>
@@ -121,12 +121,19 @@ class BaseRateUnconditionalBuilder
   _$BaseRateUnconditional _build() {
     _$BaseRateUnconditional _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BaseRateUnconditional._(
             ratePerWindow: BuiltValueNullFieldError.checkNotNull(
-                ratePerWindow, r'BaseRateUnconditional', 'ratePerWindow'),
+              ratePerWindow,
+              r'BaseRateUnconditional',
+              'ratePerWindow',
+            ),
             pAtLeastOne: BuiltValueNullFieldError.checkNotNull(
-                pAtLeastOne, r'BaseRateUnconditional', 'pAtLeastOne'),
+              pAtLeastOne,
+              r'BaseRateUnconditional',
+              'pAtLeastOne',
+            ),
             interval: interval.build(),
             nWindows: nWindows,
           );
@@ -137,7 +144,10 @@ class BaseRateUnconditionalBuilder
         interval.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BaseRateUnconditional', _$failedField, e.toString());
+          r'BaseRateUnconditional',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

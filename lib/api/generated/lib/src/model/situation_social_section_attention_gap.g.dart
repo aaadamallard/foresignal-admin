@@ -17,21 +17,20 @@ class _$SituationSocialSectionAttentionGap
   @override
   final BuiltList<String>? platforms;
 
-  factory _$SituationSocialSectionAttentionGap(
-          [void Function(SituationSocialSectionAttentionGapBuilder)?
-              updates]) =>
-      (SituationSocialSectionAttentionGapBuilder()..update(updates))._build();
+  factory _$SituationSocialSectionAttentionGap([
+    void Function(SituationSocialSectionAttentionGapBuilder)? updates,
+  ]) => (SituationSocialSectionAttentionGapBuilder()..update(updates))._build();
 
-  _$SituationSocialSectionAttentionGap._(
-      {required this.findingId,
-      required this.expected,
-      required this.observed,
-      this.platforms})
-      : super._();
+  _$SituationSocialSectionAttentionGap._({
+    required this.findingId,
+    required this.expected,
+    required this.observed,
+    this.platforms,
+  }) : super._();
   @override
   SituationSocialSectionAttentionGap rebuild(
-          void Function(SituationSocialSectionAttentionGapBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationSocialSectionAttentionGapBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationSocialSectionAttentionGapBuilder toBuilder() =>
@@ -71,8 +70,10 @@ class _$SituationSocialSectionAttentionGap
 
 class SituationSocialSectionAttentionGapBuilder
     implements
-        Builder<SituationSocialSectionAttentionGap,
-            SituationSocialSectionAttentionGapBuilder> {
+        Builder<
+          SituationSocialSectionAttentionGap,
+          SituationSocialSectionAttentionGapBuilder
+        > {
   _$SituationSocialSectionAttentionGap? _$v;
 
   String? _findingId;
@@ -116,7 +117,8 @@ class SituationSocialSectionAttentionGapBuilder
 
   @override
   void update(
-      void Function(SituationSocialSectionAttentionGapBuilder)? updates) {
+    void Function(SituationSocialSectionAttentionGapBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -126,14 +128,24 @@ class SituationSocialSectionAttentionGapBuilder
   _$SituationSocialSectionAttentionGap _build() {
     _$SituationSocialSectionAttentionGap _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationSocialSectionAttentionGap._(
             findingId: BuiltValueNullFieldError.checkNotNull(
-                findingId, r'SituationSocialSectionAttentionGap', 'findingId'),
+              findingId,
+              r'SituationSocialSectionAttentionGap',
+              'findingId',
+            ),
             expected: BuiltValueNullFieldError.checkNotNull(
-                expected, r'SituationSocialSectionAttentionGap', 'expected'),
+              expected,
+              r'SituationSocialSectionAttentionGap',
+              'expected',
+            ),
             observed: BuiltValueNullFieldError.checkNotNull(
-                observed, r'SituationSocialSectionAttentionGap', 'observed'),
+              observed,
+              r'SituationSocialSectionAttentionGap',
+              'observed',
+            ),
             platforms: _platforms?.build(),
           );
     } catch (_) {
@@ -143,7 +155,10 @@ class SituationSocialSectionAttentionGapBuilder
         _platforms?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationSocialSectionAttentionGap', _$failedField, e.toString());
+          r'SituationSocialSectionAttentionGap',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

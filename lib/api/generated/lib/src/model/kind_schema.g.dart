@@ -23,14 +23,14 @@ class _$KindSchema extends KindSchema {
   factory _$KindSchema([void Function(KindSchemaBuilder)? updates]) =>
       (KindSchemaBuilder()..update(updates))._build();
 
-  _$KindSchema._(
-      {this.dollarSchema,
-      this.title,
-      this.type,
-      this.properties,
-      this.xDisplay,
-      this.xConflicts})
-      : super._();
+  _$KindSchema._({
+    this.dollarSchema,
+    this.title,
+    this.type,
+    this.properties,
+    this.xDisplay,
+    this.xConflicts,
+  }) : super._();
   @override
   KindSchema rebuild(void Function(KindSchemaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -141,7 +141,8 @@ class KindSchemaBuilder implements Builder<KindSchema, KindSchemaBuilder> {
   _$KindSchema _build() {
     _$KindSchema _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KindSchema._(
             dollarSchema: dollarSchema,
             title: title,
@@ -161,7 +162,10 @@ class KindSchemaBuilder implements Builder<KindSchema, KindSchemaBuilder> {
         _xConflicts?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KindSchema', _$failedField, e.toString());
+          r'KindSchema',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

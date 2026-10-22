@@ -76,9 +76,9 @@ abstract class FeltReportEstimatePayload
 
   FeltReportEstimatePayload._();
 
-  factory FeltReportEstimatePayload(
-          [void updates(FeltReportEstimatePayloadBuilder b)]) =
-      _$FeltReportEstimatePayload;
+  factory FeltReportEstimatePayload([
+    void updates(FeltReportEstimatePayloadBuilder b),
+  ]) = _$FeltReportEstimatePayload;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(FeltReportEstimatePayloadBuilder b) => b;
@@ -93,7 +93,7 @@ class _$FeltReportEstimatePayloadSerializer
   @override
   final Iterable<Type> types = const [
     FeltReportEstimatePayload,
-    _$FeltReportEstimatePayload
+    _$FeltReportEstimatePayload,
   ];
 
   @override
@@ -135,8 +135,9 @@ class _$FeltReportEstimatePayloadSerializer
       yield r'evidence';
       yield serializers.serialize(
         object.evidence,
-        specifiedType:
-            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(DerivedEvidenceRef),
+        ]),
       );
     }
     yield r'eventId';
@@ -150,10 +151,7 @@ class _$FeltReportEstimatePayloadSerializer
       specifiedType: const FullType(String),
     );
     yield r'mmi';
-    yield serializers.serialize(
-      object.mmi,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.mmi, specifiedType: const FullType(num));
     if (object.distanceKm != null) {
       yield r'distanceKm';
       yield serializers.serialize(
@@ -178,7 +176,8 @@ class _$FeltReportEstimatePayloadSerializer
       yield serializers.serialize(
         object.coefficientSet,
         specifiedType: const FullType.nullable(
-            FeltReportEstimatePayloadCoefficientSetEnum),
+          FeltReportEstimatePayloadCoefficientSetEnum,
+        ),
       );
     }
   }
@@ -189,9 +188,11 @@ class _$FeltReportEstimatePayloadSerializer
     FeltReportEstimatePayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -207,100 +208,131 @@ class _$FeltReportEstimatePayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'detector':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AircraftFusionPayloadDetector),
-          ) as AircraftFusionPayloadDetector;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      AircraftFusionPayloadDetector,
+                    ),
+                  )
+                  as AircraftFusionPayloadDetector;
           result.detector.replace(valueDes);
           break;
         case r'confidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.confidence = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FeltReportEstimatePayloadStatusEnum),
-          ) as FeltReportEstimatePayloadStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      FeltReportEstimatePayloadStatusEnum,
+                    ),
+                  )
+                  as FeltReportEstimatePayloadStatusEnum;
           result.status = valueDes;
           break;
         case r'evidence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(DerivedEvidenceRef)]),
-          ) as BuiltList<DerivedEvidenceRef>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DerivedEvidenceRef),
+                    ]),
+                  )
+                  as BuiltList<DerivedEvidenceRef>?;
           if (valueDes == null) continue;
           result.evidence.replace(valueDes);
           break;
         case r'eventId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventId = valueDes;
           break;
         case r'placeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.placeId = valueDes;
           break;
         case r'mmi':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.mmi = valueDes;
           break;
         case r'distanceKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.distanceKm = valueDes;
           break;
         case r'feltLikely':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.feltLikely = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FeltReportEstimatePayloadMethodEnum),
-          ) as FeltReportEstimatePayloadMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      FeltReportEstimatePayloadMethodEnum,
+                    ),
+                  )
+                  as FeltReportEstimatePayloadMethodEnum;
           result.method = valueDes;
           break;
         case r'coefficientSet':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                FeltReportEstimatePayloadCoefficientSetEnum),
-          ) as FeltReportEstimatePayloadCoefficientSetEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      FeltReportEstimatePayloadCoefficientSetEnum,
+                    ),
+                  )
+                  as FeltReportEstimatePayloadCoefficientSetEnum?;
           if (valueDes == null) continue;
           result.coefficientSet = valueDes;
           break;
@@ -386,10 +418,10 @@ class FeltReportEstimatePayloadCoefficientSetEnum extends EnumClass {
       _$feltReportEstimatePayloadCoefficientSetEnum_ceus;
 
   static Serializer<FeltReportEstimatePayloadCoefficientSetEnum>
-      get serializer => _$feltReportEstimatePayloadCoefficientSetEnumSerializer;
+  get serializer => _$feltReportEstimatePayloadCoefficientSetEnumSerializer;
 
   const FeltReportEstimatePayloadCoefficientSetEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<FeltReportEstimatePayloadCoefficientSetEnum> get values =>
       _$feltReportEstimatePayloadCoefficientSetEnumValues;

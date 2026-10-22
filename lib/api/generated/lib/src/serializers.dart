@@ -3422,2220 +3422,2405 @@ part 'serializers.g.dart';
   WorkspaceViewport,
   WxAreaPayload,
 ])
-Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExerciseRun)]),
-        () => ListBuilder<ExerciseRun>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RegionalIndexDef)]),
-        () => ListBuilder<RegionalIndexDef>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleCluster)]),
-        () => ListBuilder<ChronicleCluster>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SampleResponse)]),
-        () => ListBuilder<SampleResponse>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType(SignatureVerifierConfig)]),
-        () => MapBuilder<String, SignatureVerifierConfig>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CpaResult)]),
-        () => ListBuilder<CpaResult>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelBoardBandChangesInner)]),
-        () => ListBuilder<IntelBoardBandChangesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NarrativeSummary)]),
-        () => ListBuilder<NarrativeSummary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [
-          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
-        ]),
-        () => ListBuilder<BuiltMap<String, JsonObject>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Alert)]),
-        () => ListBuilder<Alert>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap,
-            [FullType(String), FullType(RetentionRunResultPerSourceValue)]),
-        () => MapBuilder<String, RetentionRunResultPerSourceValue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialCueResultsInner)]),
-        () => ListBuilder<SocialCueResultsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType.nullable(String)]),
-        () => MapBuilder<String, String?>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TileLayerIndexLayersInner)]),
-        () => ListBuilder<TileLayerIndexLayersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Precursor)]),
-        () => ListBuilder<Precursor>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(WindowState)]),
-        () => ListBuilder<WindowState>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(JsonFeedItem)]),
-        () => ListBuilder<JsonFeedItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChronicleStateLayersInnerRollupsInner)]),
-        () => ListBuilder<ChronicleStateLayersInnerRollupsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ClientPresence)]),
-        () => ListBuilder<ClientPresence>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OwnershipChainNodePathsInner)]),
-        () => ListBuilder<OwnershipChainNodePathsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PropagationEdge)]),
-        () => ListBuilder<PropagationEdge>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PushProvider)]),
-        () => ListBuilder<PushProvider>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NotificationPreference)]),
-        () => ListBuilder<NotificationPreference>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalystNote)]),
-        () => ListBuilder<AnalystNote>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BacktestCaveat)]),
-        () => ListBuilder<BacktestCaveat>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RecordVersion)]),
-        () => ListBuilder<RecordVersion>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MappingTestResultSamplesInner)]),
-        () => ListBuilder<MappingTestResultSamplesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PrecursorBatch)]),
-        () => ListBuilder<PrecursorBatch>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialPlatformPrice)]),
-        () => ListBuilder<SocialPlatformPrice>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DigestActive)]),
-        () => ListBuilder<DigestActive>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TimeRange)]),
-        () => ListBuilder<TimeRange>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Peer)]),
-        () => ListBuilder<Peer>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(OgcTileMatrixSetListTileMatrixSetsInner)]),
-        () => ListBuilder<OgcTileMatrixSetListTileMatrixSetsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Channel)]),
-        () => ListBuilder<Channel>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RatingsImportResultErrorsInner)]),
-        () => ListBuilder<RatingsImportResultErrorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(WatchlistItem)]),
-        () => ListBuilder<WatchlistItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AttentionTopic)]),
-        () => ListBuilder<AttentionTopic>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialPlatform)]),
-        () => ListBuilder<SocialPlatform>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PrincipalSummary)]),
-        () => ListBuilder<PrincipalSummary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(num)]),
-        () => MapBuilder<String, num>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastCalibrationCurveInner)]),
-        () => ListBuilder<ForecastCalibrationCurveInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FetchLogEntry)]),
-        () => ListBuilder<FetchLogEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalyticFinding)]),
-        () => ListBuilder<AnalyticFinding>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AskAction)]),
-        () => ListBuilder<AskAction>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InfraEdge)]),
-        () => ListBuilder<InfraEdge>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(BuiltMap)]),
-        () => MapBuilder<String, BuiltMap>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InvestigationItem)]),
-        () => ListBuilder<InvestigationItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EnsembleRefitResultPlattInner)]),
-        () => ListBuilder<EnsembleRefitResultPlattInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HypothesisSet)]),
-        () => ListBuilder<HypothesisSet>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NewsStory)]),
-        () => ListBuilder<NewsStory>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DigestStatsNotableInner)]),
-        () => ListBuilder<DigestStatsNotableInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DateTime)]),
-        () => ListBuilder<DateTime>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(UvForecastPayloadHoursInner)]),
-        () => ListBuilder<UvForecastPayloadHoursInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StatsTopItemsInner)]),
-        () => ListBuilder<StatsTopItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SystemInfoHistoryTiersInner)]),
-        () => ListBuilder<SystemInfoHistoryTiersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RuleQualityDaily)]),
-        () => ListBuilder<RuleQualityDaily>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RegionProfile)]),
-        () => ListBuilder<RegionProfile>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastCitationsInner)]),
-        () => ListBuilder<ForecastCitationsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationMember)]),
-        () => ListBuilder<SituationMember>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AttentionTopicSocialChannel)]),
-        () => ListBuilder<AttentionTopicSocialChannel>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChannelInteractiveStatusChatsInner)]),
-        () => ListBuilder<ChannelInteractiveStatusChatsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SearchResult)]),
-        () => ListBuilder<SearchResult>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SituationLinkDecisionCandidatesInner)]),
-        () => ListBuilder<SituationLinkDecisionCandidatesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NotificationLink)]),
-        () => ListBuilder<NotificationLink>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Annotation)]),
-        () => ListBuilder<Annotation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelEventLogEntry)]),
-        () => ListBuilder<IntelEventLogEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ContextSummaryActivityInner)]),
-        () => ListBuilder<ContextSummaryActivityInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TimelineTickFramesInner)]),
-        () => ListBuilder<TimelineTickFramesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HistoryFrame)]),
-        () => ListBuilder<HistoryFrame>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ObservationLink)]),
-        () => ListBuilder<ObservationLink>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OutlookWindow)]),
-        () => ListBuilder<OutlookWindow>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LeadTimeStatsGroupsInner)]),
-        () => ListBuilder<LeadTimeStatsGroupsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Condition)]),
-        () => ListBuilder<Condition>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EnsembleRefitResultWeightsInner)]),
-        () => ListBuilder<EnsembleRefitResultWeightsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationTimelineEntry)]),
-        () => ListBuilder<SituationTimelineEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialCueQuery)]),
-        () => ListBuilder<SocialCueQuery>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExternalQuestionLink)]),
-        () => ListBuilder<ExternalQuestionLink>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MediaRating)]),
-        () => ListBuilder<MediaRating>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ContextSummaryInsightsInner)]),
-        () => ListBuilder<ContextSummaryInsightsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelEventSummary)]),
-        () => ListBuilder<IntelEventSummary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SensorPassesInner)]),
-        () => ListBuilder<SensorPassesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Briefing)]),
-        () => ListBuilder<Briefing>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CyclePacketItem)]),
-        () => ListBuilder<CyclePacketItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
-        () => ListBuilder<DerivedEvidenceRef>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AlertSignal)]),
-        () => ListBuilder<AlertSignal>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExportManifestFilesInner)]),
-        () => ListBuilder<ExportManifestFilesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleLayerInput)]),
-        () => ListBuilder<ChronicleLayerInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalystEvaluationProfilesInner)]),
-        () => ListBuilder<AnalystEvaluationProfilesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StyleSpecial)]),
-        () => ListBuilder<StyleSpecial>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType(MapSpriteIndexValue)]),
-        () => MapBuilder<String, MapSpriteIndexValue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleSketchPackage)]),
-        () => ListBuilder<ChronicleSketchPackage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(IntelBoardIndicatorsObservedInner)]),
-        () => ListBuilder<IntelBoardIndicatorsObservedInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProductTemporalRunsInner)]),
-        () => ListBuilder<ProductTemporalRunsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MediaProvider)]),
-        () => ListBuilder<MediaProvider>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MappingRejection)]),
-        () => ListBuilder<MappingRejection>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IngestFormatOption)]),
-        () => ListBuilder<IngestFormatOption>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(StructureDiffPresenceDroppedInner)]),
-        () => ListBuilder<StructureDiffPresenceDroppedInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EdpSuggestedBinding)]),
-        () => ListBuilder<EdpSuggestedBinding>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FieldThreshold)]),
-        () => ListBuilder<FieldThreshold>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ReportRevision)]),
-        () => ListBuilder<ReportRevision>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList,
-            [FullType(AnalystEvaluationProfilesInnerTokensPerDayInner)]),
-        () => ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RecordMappingFilterInner)]),
-        () => ListBuilder<RecordMappingFilterInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IngestDevice)]),
-        () => ListBuilder<IngestDevice>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelligenceEvent)]),
-        () => ListBuilder<IntelligenceEvent>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProjectedImpactSkippedInner)]),
-        () => ListBuilder<ProjectedImpactSkippedInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StatsGridFeaturesInner)]),
-        () => ListBuilder<StatsGridFeaturesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Chronicle)]),
-        () => ListBuilder<Chronicle>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(int)]),
-        () => MapBuilder<String, int>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DigestCount)]),
-        () => ListBuilder<DigestCount>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [
-          FullType(BuiltList, [FullType(num)])
-        ]),
-        () => ListBuilder<BuiltList<num>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnomalyBaselineSlot)]),
-        () => ListBuilder<AnomalyBaselineSlot>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(AnalysisManifestModelTemplatesInner)]),
-        () => ListBuilder<AnalysisManifestModelTemplatesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Hold)]),
-        () => ListBuilder<Hold>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ObjectAclEntry)]),
-        () => ListBuilder<ObjectAclEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(HypothesisSetEventBandChangesInner)]),
-        () => ListBuilder<HypothesisSetEventBandChangesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(WatchPair)]),
-        () => ListBuilder<WatchPair>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Indicator)]),
-        () => ListBuilder<Indicator>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(WatchlistItemInput)]),
-        () => ListBuilder<WatchlistItemInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialCollectionPath)]),
-        () => ListBuilder<SocialCollectionPath>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SampleTrackResponsePointsInner)]),
-        () => ListBuilder<SampleTrackResponsePointsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DigestNotableItem)]),
-        () => ListBuilder<DigestNotableItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(BenchmarkCaseExpectationsFindingsInner)]),
-        () => ListBuilder<BenchmarkCaseExpectationsFindingsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ActiveWindowWindowsInner)]),
-        () => ListBuilder<ActiveWindowWindowsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastCalibrationBinsInner)]),
-        () => ListBuilder<ForecastCalibrationBinsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(WatchlistImportResultInvalidInner)]),
-        () => ListBuilder<WatchlistImportResultInvalidInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StyleMeaning)]),
-        () => ListBuilder<StyleMeaning>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RuleBacktestResultVariantsInner)]),
-        () => ListBuilder<RuleBacktestResultVariantsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TimelineBucket)]),
-        () => ListBuilder<TimelineBucket>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HypothesisReviewInputLrInner)]),
-        () => ListBuilder<HypothesisReviewInputLrInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CustomSource)]),
-        () => ListBuilder<CustomSource>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FederationItem)]),
-        () => ListBuilder<FederationItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PackageManifestAuthorsInner)]),
-        () => ListBuilder<PackageManifestAuthorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Observer)]),
-        () => ListBuilder<Observer>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChannelTypeConfigFieldsInner)]),
-        () => ListBuilder<ChannelTypeConfigFieldsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Sensor)]),
-        () => ListBuilder<Sensor>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(KindSummary)]),
-        () => ListBuilder<KindSummary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(DossierSectionsForecastOfficialInner)]),
-        () => ListBuilder<DossierSectionsForecastOfficialInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleSummaryTopEntitiesInner)]),
-        () => ListBuilder<ChronicleSummaryTopEntitiesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(LedgerQuestionBriefForecastersInner)]),
-        () => ListBuilder<LedgerQuestionBriefForecastersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationTheme)]),
-        () => ListBuilder<SituationTheme>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExternalBinding)]),
-        () => ListBuilder<ExternalBinding>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CorrelationRecipe)]),
-        () => ListBuilder<CorrelationRecipe>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NewsStoryOutletsInner)]),
-        () => ListBuilder<NewsStoryOutletsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NarrativeLogEntry)]),
-        () => ListBuilder<NarrativeLogEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelCalibrationCurveInner)]),
-        () => ListBuilder<IntelCalibrationCurveInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalysisSeries)]),
-        () => ListBuilder<AnalysisSeries>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalystProfile)]),
-        () => ListBuilder<AnalystProfile>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialComparisonRevision)]),
-        () => ListBuilder<SocialComparisonRevision>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(KeyAssumptionInput)]),
-        () => ListBuilder<KeyAssumptionInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BenchmarkComponentResult)]),
-        () => ListBuilder<BenchmarkComponentResult>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BaseRate)]),
-        () => ListBuilder<BaseRate>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NarrativePlatformStats)]),
-        () => ListBuilder<NarrativePlatformStats>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TriggerTestResultWarningsInner)]),
-        () => ListBuilder<TriggerTestResultWarningsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OutletConsensus)]),
-        () => ListBuilder<OutletConsensus>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DoctorFinding)]),
-        () => ListBuilder<DoctorFinding>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OverlandBatchLocationsInner)]),
-        () => ListBuilder<OverlandBatchLocationsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TileJsonVectorLayersInner)]),
-        () => ListBuilder<TileJsonVectorLayersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MetarPayloadSkyInner)]),
-        () => ListBuilder<MetarPayloadSkyInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(CorrelationRecipeDefinitionJoinsInner)]),
-        () => ListBuilder<CorrelationRecipeDefinitionJoinsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MeGroupsInner)]),
-        () => ListBuilder<MeGroupsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(String)]),
-        () => MapBuilder<String, String>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OgcTileSetListTilesetsInner)]),
-        () => ListBuilder<OgcTileSetListTilesetsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(AssessmentCoverageSituationsInner)]),
-        () => ListBuilder<AssessmentCoverageSituationsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ForecastNumericCalibrationPitBinsInner)]),
-        () => ListBuilder<ForecastNumericCalibrationPitBinsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StyleStop)]),
-        () => ListBuilder<StyleStop>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DossierSectionsImpactsItemsInner)]),
-        () => ListBuilder<DossierSectionsImpactsItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Jwk)]),
-        () => ListBuilder<Jwk>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TagAssignment)]),
-        () => ListBuilder<TagAssignment>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AssessmentSectionsInner)]),
-        () => ListBuilder<AssessmentSectionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AccessRequest)]),
-        () => ListBuilder<AccessRequest>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProjectedImpactInputsInner)]),
-        () => ListBuilder<ProjectedImpactInputsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PrecisionComponentsInner)]),
-        () => ListBuilder<PrecisionComponentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CanonicalEvent)]),
-        () => ListBuilder<CanonicalEvent>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(OgcTileMatrixSetTileMatricesInner)]),
-        () => ListBuilder<OgcTileMatrixSetTileMatricesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(NarrativeTimelineSeriesInnerPointsInner)]),
-        () => ListBuilder<NarrativeTimelineSeriesInnerPointsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ReceivedPackage)]),
-        () => ListBuilder<ReceivedPackage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CapturedSample)]),
-        () => ListBuilder<CapturedSample>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Caveat)]),
-        () => ListBuilder<Caveat>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(GroupMember)]),
-        () => ListBuilder<GroupMember>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList,
-            [FullType(CorrelationRecipeDefinitionContradictionsInner)]),
-        () => ListBuilder<CorrelationRecipeDefinitionContradictionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(DossierSectionsTimelineItemsInner)]),
-        () => ListBuilder<DossierSectionsTimelineItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Investigation)]),
-        () => ListBuilder<Investigation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SituationSocialSectionNarrativesInner)]),
-        () => ListBuilder<SituationSocialSectionNarrativesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StructureDiffTypeChangedInner)]),
-        () => ListBuilder<StructureDiffTypeChangedInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [
-          FullType(String),
-          FullType(BuiltList, [
-            FullType(BuiltList, [FullType(num)])
-          ])
-        ]),
-        () => MapBuilder<String, BuiltList<BuiltList<num>>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IndexFitResultComponentsInner)]),
-        () => ListBuilder<IndexFitResultComponentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialPostMedia)]),
-        () => ListBuilder<SocialPostMedia>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IngestOutcomeRejectionsInner)]),
-        () => ListBuilder<IngestOutcomeRejectionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ReceivedPackageContentsInner)]),
-        () => ListBuilder<ReceivedPackageContentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Trip)]),
-        () => ListBuilder<Trip>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(String)]),
-        () => ListBuilder<String>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChronicleSummaryLayersInnerSeriesInner)]),
-        () => ListBuilder<ChronicleSummaryLayersInnerSeriesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [
-          FullType(String),
-          FullType(BuiltMap, [FullType(String), FullType(JsonObject)])
-        ]),
-        () => MapBuilder<String, BuiltMap<String, JsonObject>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(EdpItemRejectionSchemaErrorsInner)]),
-        () => ListBuilder<EdpItemRejectionSchemaErrorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TriggerRule)]),
-        () => ListBuilder<TriggerRule>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OwnershipChainNode)]),
-        () => ListBuilder<OwnershipChainNode>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProvenanceHop)]),
-        () => ListBuilder<ProvenanceHop>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RegionalIndexDefFloorsInner)]),
-        () => ListBuilder<RegionalIndexDefFloorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationEvidenceFamiliesInner)]),
-        () => ListBuilder<SituationEvidenceFamiliesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [
-          FullType(String),
-          FullType(SocialSettingsCompareFamilyWindowsValue)
-        ]),
-        () => MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProblemErrorsInner)]),
-        () => ListBuilder<ProblemErrorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(CommonDependenciesDependenciesInner)]),
-        () => ListBuilder<CommonDependenciesDependenciesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TriggerRuleInputConditionsInner)]),
-        () => ListBuilder<TriggerRuleInputConditionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExerciseStatsSkippedRulesInner)]),
-        () => ListBuilder<ExerciseStatsSkippedRulesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(GroupMemberInput)]),
-        () => ListBuilder<GroupMemberInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ObjectAclEntryInput)]),
-        () => ListBuilder<ObjectAclEntryInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TripRun)]),
-        () => ListBuilder<TripRun>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LegendTick)]),
-        () => ListBuilder<LegendTick>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ProjectedImpactExposedAssetsInner)]),
-        () => ListBuilder<ProjectedImpactExposedAssetsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MappingPreset)]),
-        () => ListBuilder<MappingPreset>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NotificationAction)]),
-        () => ListBuilder<NotificationAction>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StyleCategory)]),
-        () => ListBuilder<StyleCategory>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(EdpPresentation)]),
-        () => MapBuilder<String, EdpPresentation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AskMessage)]),
-        () => ListBuilder<AskMessage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PushPayloadActionsInner)]),
-        () => ListBuilder<PushPayloadActionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelBoardSituationsInner)]),
-        () => ListBuilder<IntelBoardSituationsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(StructureDiffRenameCandidatesInner)]),
-        () => ListBuilder<StructureDiffRenameCandidatesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HypothesisRevision)]),
-        () => ListBuilder<HypothesisRevision>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType.nullable(JsonObject)]),
-        () => ListBuilder<JsonObject>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(RuleBacktestResultTopEntitiesInner)]),
-        () => ListBuilder<RuleBacktestResultTopEntitiesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalysisCycle)]),
-        () => ListBuilder<AnalysisCycle>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CycleRun)]),
-        () => ListBuilder<CycleRun>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ObjectAction)]),
-        () => ListBuilder<ObjectAction>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Feature)]),
-        () => ListBuilder<Feature>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MappingField)]),
-        () => ListBuilder<MappingField>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BaseRateLicencesInner)]),
-        () => ListBuilder<BaseRateLicencesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RegionalIndexDefComponentsInner)]),
-        () => ListBuilder<RegionalIndexDefComponentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialPhysicalEvidence)]),
-        () => ListBuilder<SocialPhysicalEvidence>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelBoardForecastsDueInner)]),
-        () => ListBuilder<IntelBoardForecastsDueInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TripHazard)]),
-        () => ListBuilder<TripHazard>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationChangesKeyValuesInner)]),
-        () => ListBuilder<SituationChangesKeyValuesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MetricProjectionLabelsInner)]),
-        () => ListBuilder<MetricProjectionLabelsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleClusterMembersInner)]),
-        () => ListBuilder<ChronicleClusterMembersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExchangePackageDeliveriesInner)]),
-        () => ListBuilder<ExchangePackageDeliveriesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList,
-            [FullType(DeclaredObservabilityKindsValueThresholdsInner)]),
-        () => ListBuilder<DeclaredObservabilityKindsValueThresholdsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType(SystemRastersCachesValue)]),
-        () => MapBuilder<String, SystemRastersCachesValue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RelatedObject)]),
-        () => ListBuilder<RelatedObject>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StatsResponseThresholdsInner)]),
-        () => ListBuilder<StatsResponseThresholdsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Change)]),
-        () => ListBuilder<Change>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EdrInstanceListInstancesInner)]),
-        () => ListBuilder<EdrInstanceListInstancesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
-        () => ListBuilder<NormalizedRecordPreview>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Assessment)]),
-        () => ListBuilder<Assessment>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SourceHealth)]),
-        () => ListBuilder<SourceHealth>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Entity)]),
-        () => ListBuilder<Entity>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HypothesisInput)]),
-        () => ListBuilder<HypothesisInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Claim)]),
-        () => ListBuilder<Claim>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TafPayloadForecastInner)]),
-        () => ListBuilder<TafPayloadForecastInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(GlanceAlertsLatestInner)]),
-        () => ListBuilder<GlanceAlertsLatestInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DoctorReport)]),
-        () => ListBuilder<DoctorReport>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(int)]),
-        () => ListBuilder<int>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TransitCatalogEntry)]),
-        () => ListBuilder<TransitCatalogEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExportJob)]),
-        () => ListBuilder<ExportJob>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RegionalOutlook)]),
-        () => ListBuilder<RegionalOutlook>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PresenceEventClientsInner)]),
-        () => ListBuilder<PresenceEventClientsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap,
-            [FullType(String), FullType(DeclaredObservabilityKindsValue)]),
-        () => MapBuilder<String, DeclaredObservabilityKindsValue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList,
-            [FullType(ForecastNumericCalibrationQuantileReliabilityInner)]),
-        () => ListBuilder<ForecastNumericCalibrationQuantileReliabilityInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SeriesForecastModelBacktestResultsInner)]),
-        () => ListBuilder<SeriesForecastModelBacktestResultsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BriefingRun)]),
-        () => ListBuilder<BriefingRun>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EvidenceGroup)]),
-        () => ListBuilder<EvidenceGroup>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(BenchmarkCaseExpectationsQuestionsInner)]),
-        () => ListBuilder<BenchmarkCaseExpectationsQuestionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AllowedChat)]),
-        () => ListBuilder<AllowedChat>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExternalSource)]),
-        () => ListBuilder<ExternalSource>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SatellitePassPayloadRfSnrByElevationInner)]),
-        () => ListBuilder<SatellitePassPayloadRfSnrByElevationInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Attribution)]),
-        () => ListBuilder<Attribution>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ReportBundleAttachmentsInner)]),
-        () => ListBuilder<ReportBundleAttachmentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Attachment)]),
-        () => ListBuilder<Attachment>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HypothesisProbabilityState)]),
-        () => ListBuilder<HypothesisProbabilityState>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProbeResultRequestsInner)]),
-        () => ListBuilder<ProbeResultRequestsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OutletConsensusProvidersInner)]),
-        () => ListBuilder<OutletConsensusProvidersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EdpItem)]),
-        () => ListBuilder<EdpItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MetricProjection)]),
-        () => ListBuilder<MetricProjection>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelEventAlternative)]),
-        () => ListBuilder<IntelEventAlternative>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AssessmentPromptTemplatesInner)]),
-        () => ListBuilder<AssessmentPromptTemplatesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationSummary)]),
-        () => ListBuilder<SituationSummary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ContextSummaryLayerCountsInner)]),
-        () => ListBuilder<ContextSummaryLayerCountsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(KindDisplay)]),
-        () => MapBuilder<String, KindDisplay>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalystClaim)]),
-        () => ListBuilder<AnalystClaim>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ObservabilityEstimate)]),
-        () => ListBuilder<ObservabilityEstimate>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(UsagePoint)]),
-        () => ListBuilder<UsagePoint>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(KeyAssumption)]),
-        () => ListBuilder<KeyAssumption>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastSeriesPoint)]),
-        () => ListBuilder<ForecastSeriesPoint>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OgcCollection200Response)]),
-        () => ListBuilder<OgcCollection200Response>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ClusterTimelineItem)]),
-        () => ListBuilder<ClusterTimelineItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialComparison)]),
-        () => ListBuilder<SocialComparison>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleRecordVersion)]),
-        () => ListBuilder<ChronicleRecordVersion>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PairingCode)]),
-        () => ListBuilder<PairingCode>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SocialVersusObservedLeadTimesInner)]),
-        () => ListBuilder<SocialVersusObservedLeadTimesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EntityRecord)]),
-        () => ListBuilder<EntityRecord>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Detectability)]),
-        () => ListBuilder<Detectability>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LlmModelInfo)]),
-        () => ListBuilder<LlmModelInfo>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelCalibration)]),
-        () => ListBuilder<IntelCalibration>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MapStyleMetadataLayersInner)]),
-        () => ListBuilder<MapStyleMetadataLayersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IngestFormatInfo)]),
-        () => ListBuilder<IngestFormatInfo>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DigestHealthItem)]),
-        () => ListBuilder<DigestHealthItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AchMatrixHypothesesInner)]),
-        () => ListBuilder<AchMatrixHypothesesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TimelineAlertsInner)]),
-        () => ListBuilder<TimelineAlertsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Watchlist)]),
-        () => ListBuilder<Watchlist>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(num)]),
-        () => ListBuilder<num>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(FieldSpec)]),
-        () => MapBuilder<String, FieldSpec>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SavedView)]),
-        () => ListBuilder<SavedView>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialCoverage)]),
-        () => ListBuilder<SocialCoverage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Notification)]),
-        () => ListBuilder<Notification>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChannelType)]),
-        () => ListBuilder<ChannelType>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ShareLink)]),
-        () => ListBuilder<ShareLink>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Tag)]),
-        () => ListBuilder<Tag>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BacktestJob)]),
-        () => ListBuilder<BacktestJob>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EdpDocumentItemMediaInner)]),
-        () => ListBuilder<EdpDocumentItemMediaInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialCoverageBucket)]),
-        () => ListBuilder<SocialCoverageBucket>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastSeries)]),
-        () => ListBuilder<ForecastSeries>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(CollectionGapRecommendationsInner)]),
-        () => ListBuilder<CollectionGapRecommendationsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ReportSendRecipientsInner)]),
-        () => ListBuilder<ReportSendRecipientsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(RegionalIndexValueComponentsInner)]),
-        () => ListBuilder<RegionalIndexValueComponentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OgcLink)]),
-        () => ListBuilder<OgcLink>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleLayer)]),
-        () => ListBuilder<ChronicleLayer>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CountryRef)]),
-        () => ListBuilder<CountryRef>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RuleBacktestResultSamplesInner)]),
-        () => ListBuilder<RuleBacktestResultSamplesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChronicleSketchBatchResultRejectedInner)]),
-        () => ListBuilder<ChronicleSketchBatchResultRejectedInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialQuota)]),
-        () => ListBuilder<SocialQuota>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InfraRulesRulesInner)]),
-        () => ListBuilder<InfraRulesRulesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LlmUsagePoint)]),
-        () => ListBuilder<LlmUsagePoint>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProjectedImpact)]),
-        () => ListBuilder<ProjectedImpact>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LlmProvider)]),
-        () => ListBuilder<LlmProvider>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationLinkDecision)]),
-        () => ListBuilder<SituationLinkDecision>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(BenchmarkComponentResultThresholdsInner)]),
-        () => ListBuilder<BenchmarkComponentResultThresholdsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(BenchmarkComponentResultScenariosInner)]),
-        () => ListBuilder<BenchmarkComponentResultScenariosInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(HazardForecastProbabilityFieldInner)]),
-        () => ListBuilder<HazardForecastProbabilityFieldInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SettingsBundleChannelsInner)]),
-        () => ListBuilder<SettingsBundleChannelsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ExposureWatchlistEntitiesCountsInner)]),
-        () => ListBuilder<ExposureWatchlistEntitiesCountsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RuleBacktestResultPerDayInner)]),
-        () => ListBuilder<RuleBacktestResultPerDayInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ExportLicenceSummaryExcludedInner)]),
-        () => ListBuilder<ExportLicenceSummaryExcludedInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ProductTemporalRetentionLadderInner)]),
-        () => ListBuilder<ProductTemporalRetentionLadderInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType.nullable(num)]),
-        () => ListBuilder<num>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MediaFingerprint)]),
-        () => ListBuilder<MediaFingerprint>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType(SourceSettingsUpdate)]),
-        () => MapBuilder<String, SourceSettingsUpdate>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CredentialField)]),
-        () => ListBuilder<CredentialField>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InfraImpactResultDependentsInner)]),
-        () => ListBuilder<InfraImpactResultDependentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ReferenceImport)]),
-        () => ListBuilder<ReferenceImport>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(TriggerTestResultWindowEvaluationsInner)]),
-        () => ListBuilder<TriggerTestResultWindowEvaluationsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SatellitePassPayloadProductsInner)]),
-        () => ListBuilder<SatellitePassPayloadProductsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ImpactRate)]),
-        () => ListBuilder<ImpactRate>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SystemInfoWarningsInner)]),
-        () => ListBuilder<SystemInfoWarningsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SinkStatusClientsPeersInner)]),
-        () => ListBuilder<SinkStatusClientsPeersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SocialVersusObservedNarrativesInner)]),
-        () => ListBuilder<SocialVersusObservedNarrativesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InboxItem)]),
-        () => ListBuilder<InboxItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NarrativeTimelineSeriesInner)]),
-        () => ListBuilder<NarrativeTimelineSeriesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SeriesSample)]),
-        () => ListBuilder<SeriesSample>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EntityKey)]),
-        () => ListBuilder<EntityKey>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-        () => MapBuilder<String, JsonObject>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PrecursorCandidate)]),
-        () => ListBuilder<PrecursorCandidate>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastScore)]),
-        () => ListBuilder<ForecastScore>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [
-          FullType(BuiltList, [FullType(DateTime)])
-        ]),
-        () => ListBuilder<BuiltList<DateTime>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NotificationPreferenceInput)]),
-        () => ListBuilder<NotificationPreferenceInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleEstimateLayersInner)]),
-        () => ListBuilder<ChronicleEstimateLayersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Report)]),
-        () => ListBuilder<Report>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(EventStudyResultEventsInnerAbnormalInner)]),
-        () => ListBuilder<EventStudyResultEventsInnerAbnormalInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExportFile)]),
-        () => ListBuilder<ExportFile>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EvidenceItem)]),
-        () => ListBuilder<EvidenceItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialVolumePoint)]),
-        () => ListBuilder<SocialVolumePoint>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SampleTrackRequestPointsInner)]),
-        () => ListBuilder<SampleTrackRequestPointsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(JsonFeedItemAuthorsInner)]),
-        () => ListBuilder<JsonFeedItemAuthorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalystProposal)]),
-        () => ListBuilder<AnalystProposal>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FeedKey)]),
-        () => ListBuilder<FeedKey>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [
-          FullType(String),
-          FullType(BuiltMap, [FullType(String), FullType(int)])
-        ]),
-        () => MapBuilder<String, BuiltMap<String, int>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ImportMediaRatingsRequest1RowsInner)]),
-        () => ListBuilder<ImportMediaRatingsRequest1RowsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType(CycleRunRolesInner)]),
-        () => MapBuilder<String, CycleRunRolesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ApiToken)]),
-        () => ListBuilder<ApiToken>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(PlaceWeatherDigestPeriodHazardsEnteredInner)]),
-        () => ListBuilder<PlaceWeatherDigestPeriodHazardsEnteredInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PlaceWeatherDigest)]),
-        () => ListBuilder<PlaceWeatherDigest>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationStatus)]),
-        () => ListBuilder<SituationStatus>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProvenanceChainEntry)]),
-        () => ListBuilder<ProvenanceChainEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Sink)]),
-        () => ListBuilder<Sink>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastHistorySeriesInner)]),
-        () => ListBuilder<ForecastHistorySeriesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ObjectEnvelope)]),
-        () => ListBuilder<ObjectEnvelope>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SettingsBundleWatchlistsInner)]),
-        () => ListBuilder<SettingsBundleWatchlistsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CustomSourceInput)]),
-        () => ListBuilder<CustomSourceInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RegionalIndexValue)]),
-        () => ListBuilder<RegionalIndexValue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(WeatherContextWarningsItemsInner)]),
-        () => ListBuilder<WeatherContextWarningsItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Hypothesis)]),
-        () => ListBuilder<Hypothesis>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ProjectedImpactDependencyPathsInner)]),
-        () => ListBuilder<ProjectedImpactDependencyPathsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SavedSearchHit)]),
-        () => ListBuilder<SavedSearchHit>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialPlatformId)]),
-        () => ListBuilder<SocialPlatformId>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Relation)]),
-        () => ListBuilder<Relation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(BenchmarkCaseExpectationsPrecursorsInner)]),
-        () => ListBuilder<BenchmarkCaseExpectationsPrecursorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChannelWarningsInner)]),
-        () => ListBuilder<ChannelWarningsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SourceSummary)]),
-        () => ListBuilder<SourceSummary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MediaOutlet)]),
-        () => ListBuilder<MediaOutlet>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TimelineTick)]),
-        () => ListBuilder<TimelineTick>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SinkType)]),
-        () => ListBuilder<SinkType>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FieldManifestComponentsInner)]),
-        () => ListBuilder<FieldManifestComponentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RevisionDriver)]),
-        () => ListBuilder<RevisionDriver>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Place)]),
-        () => ListBuilder<Place>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(VelocityJsonComponent)]),
-        () => ListBuilder<VelocityJsonComponent>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PrecursorTest)]),
-        () => ListBuilder<PrecursorTest>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Forecast)]),
-        () => ListBuilder<Forecast>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CompactMessage)]),
-        () => ListBuilder<CompactMessage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(InfraImpactResultDependentsInnerPathInner)]),
-        () => ListBuilder<InfraImpactResultDependentsInnerPathInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IndicatorInput)]),
-        () => ListBuilder<IndicatorInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(SocialSettingsTrackRecordOverridesInner)]),
-        () => ListBuilder<SocialSettingsTrackRecordOverridesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelBoardLatestAssessmentsInner)]),
-        () => ListBuilder<IntelBoardLatestAssessmentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType(IndicatorLikelihood)]),
-        () => MapBuilder<String, IndicatorLikelihood>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TuningSuggestionRecord)]),
-        () => ListBuilder<TuningSuggestionRecord>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ArchivePartition)]),
-        () => ListBuilder<ArchivePartition>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleStateLayersInner)]),
-        () => ListBuilder<ChronicleStateLayersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SeriesCatalogEntry)]),
-        () => ListBuilder<SeriesCatalogEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType.nullable(DateTime)]),
-        () => ListBuilder<DateTime>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialVolumeSeries)]),
-        () => ListBuilder<SocialVolumeSeries>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RasterFrame)]),
-        () => ListBuilder<RasterFrame>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CycleRunRolesInner)]),
-        () => ListBuilder<CycleRunRolesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [
-          FullType(String),
-          FullType(BuiltList, [FullType(String)])
-        ]),
-        () => MapBuilder<String, BuiltList<String>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SavedSearch)]),
-        () => ListBuilder<SavedSearch>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NewsArticle)]),
-        () => ListBuilder<NewsArticle>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalysisManifest)]),
-        () => ListBuilder<AnalysisManifest>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HistoryFrameRemovalsInner)]),
-        () => ListBuilder<HistoryFrameRemovalsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PrecursorHistoryInner)]),
-        () => ListBuilder<PrecursorHistoryInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExposurePlacesItemsInner)]),
-        () => ListBuilder<ExposurePlacesItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EdpItemRejection)]),
-        () => ListBuilder<EdpItemRejection>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [
-          FullType(BuiltList, [FullType(int)])
-        ]),
-        () => ListBuilder<BuiltList<int>>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList,
-            [FullType(AnomalyObservationEvidenceFetchLogRangesInner)]),
-        () => ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StatsSeriesSeriesInner)]),
-        () => ListBuilder<StatsSeriesSeriesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelEventMemberInput)]),
-        () => ListBuilder<IntelEventMemberInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PushSubscription)]),
-        () => ListBuilder<PushSubscription>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RegistrationToken)]),
-        () => ListBuilder<RegistrationToken>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PolStay)]),
-        () => ListBuilder<PolStay>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleSummaryLayersInner)]),
-        () => ListBuilder<ChronicleSummaryLayersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList,
-            [FullType(CommonDependenciesDependenciesInnerPathsInner)]),
-        () => ListBuilder<CommonDependenciesDependenciesInnerPathsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(OgcTileSetTileMatrixSetLimitsInner)]),
-        () => ListBuilder<OgcTileSetTileMatrixSetLimitsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ForecastQuestionSummary)]),
-        () => ListBuilder<ForecastQuestionSummary>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MappingWarning)]),
-        () => ListBuilder<MappingWarning>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LlmProviderInput)]),
-        () => ListBuilder<LlmProviderInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LedgerQuestionBrief)]),
-        () => ListBuilder<LedgerQuestionBrief>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnalystRun)]),
-        () => ListBuilder<AnalystRun>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Group)]),
-        () => ListBuilder<Group>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(AnomalyObservationEvidenceSamplesInner)]),
-        () => ListBuilder<AnomalyObservationEvidenceSamplesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleSummaryGapsInner)]),
-        () => ListBuilder<ChronicleSummaryGapsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DossierSectionsImageryItemsInner)]),
-        () => ListBuilder<DossierSectionsImageryItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ExternalBindingPreviewEffectsInner)]),
-        () => ListBuilder<ExternalBindingPreviewEffectsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AssessmentBundleObjectsInner)]),
-        () => ListBuilder<AssessmentBundleObjectsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(RecipeBacktestResultEventsInner)]),
-        () => ListBuilder<RecipeBacktestResultEventsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FeedKeyCreatedUrlsInner)]),
-        () => ListBuilder<FeedKeyCreatedUrlsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Style)]),
-        () => ListBuilder<Style>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BenchmarkStatusComponentsInner)]),
-        () => ListBuilder<BenchmarkStatusComponentsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ForecastHistorySeriesInnerPointsInner)]),
-        () => ListBuilder<ForecastHistorySeriesInnerPointsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(PropagationGraphEarliestByPlatformInner)]),
-        () => ListBuilder<PropagationGraphEarliestByPlatformInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ScorecardEntry)]),
-        () => ListBuilder<ScorecardEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Forecaster)]),
-        () => ListBuilder<Forecaster>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-        () => MapBuilder<String, JsonObject?>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleFrameIndexFramesInner)]),
-        () => ListBuilder<ChronicleFrameIndexFramesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialPost)]),
-        () => ListBuilder<SocialPost>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ParamSpec)]),
-        () => ListBuilder<ParamSpec>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AchEvidence)]),
-        () => ListBuilder<AchEvidence>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExternalStreamStats)]),
-        () => ListBuilder<ExternalStreamStats>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EntityAlias)]),
-        () => ListBuilder<EntityAlias>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Workspace)]),
-        () => ListBuilder<Workspace>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleRelatedPageItemsInner)]),
-        () => ListBuilder<ChronicleRelatedPageItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Analog)]),
-        () => ListBuilder<Analog>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ChronicleThreadItem)]),
-        () => ListBuilder<ChronicleThreadItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StormTrackPayloadNowcastInner)]),
-        () => ListBuilder<StormTrackPayloadNowcastInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BenchmarkRun)]),
-        () => ListBuilder<BenchmarkRun>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PlaceWeatherDigestNowAlertsInner)]),
-        () => ListBuilder<PlaceWeatherDigestNowAlertsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NwsForecastPayloadHazardsInner)]),
-        () => ListBuilder<NwsForecastPayloadHazardsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(AttentionTopicSocialAccountsInner)]),
-        () => ListBuilder<AttentionTopicSocialAccountsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AlertmanagerWebhookAlertsInner)]),
-        () => ListBuilder<AlertmanagerWebhookAlertsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChronicleSketchBatchAccessRequestsInner)]),
-        () => ListBuilder<ChronicleSketchBatchAccessRequestsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NarrativePost)]),
-        () => ListBuilder<NarrativePost>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MediaMatch)]),
-        () => ListBuilder<MediaMatch>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ProductLoopFramesInner)]),
-        () => ListBuilder<ProductLoopFramesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TileKey)]),
-        () => ListBuilder<TileKey>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ArchivePartitionFilesInner)]),
-        () => ListBuilder<ArchivePartitionFilesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FindingSeverity)]),
-        () => ListBuilder<FindingSeverity>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ReferenceDataset)]),
-        () => ListBuilder<ReferenceDataset>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(AttentionTopicInputWikiArticlesInner)]),
-        () => ListBuilder<AttentionTopicInputWikiArticlesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Record)]),
-        () => ListBuilder<Record>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TaxiiCollection)]),
-        () => ListBuilder<TaxiiCollection>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltSet, [FullType(String)]),
-        () => SetBuilder<String>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PolSubject)]),
-        () => ListBuilder<PolSubject>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InformationValueIndicatorsInner)]),
-        () => ListBuilder<InformationValueIndicatorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(HypothesisReviewInputAssumptionsInner)]),
-        () => ListBuilder<HypothesisReviewInputAssumptionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChronicleSketchBatchAccessDecisionsInner)]),
-        () => ListBuilder<ChronicleSketchBatchAccessDecisionsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Product)]),
-        () => ListBuilder<Product>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType.nullable(num)]),
-        () => MapBuilder<String, num?>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SituationMemberInput)]),
-        () => ListBuilder<SituationMemberInput>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SettingsWarning)]),
-        () => ListBuilder<SettingsWarning>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OgcFeature)]),
-        () => ListBuilder<OgcFeature>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BenchmarkCase)]),
-        () => ListBuilder<BenchmarkCase>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ExchangePackage)]),
-        () => ListBuilder<ExchangePackage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SharedItem)]),
-        () => ListBuilder<SharedItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EscalationStep)]),
-        () => ListBuilder<EscalationStep>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EventStudyResultEventsInner)]),
-        () => ListBuilder<EventStudyResultEventsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Plugin)]),
-        () => ListBuilder<Plugin>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(KeyJudgment)]),
-        () => ListBuilder<KeyJudgment>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AnomalyObservation)]),
-        () => ListBuilder<AnomalyObservation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DigestAlertsByRuleInner)]),
-        () => ListBuilder<DigestAlertsByRuleInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SeriesPoint)]),
-        () => ListBuilder<SeriesPoint>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(NotificationDelivery)]),
-        () => ListBuilder<NotificationDelivery>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChronicleSocialVolumeSelectorScopesInner)]),
-        () => ListBuilder<ChronicleSocialVolumeSelectorScopesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(DeceptionPayloadChecksInner)]),
-        () => ListBuilder<DeceptionPayloadChecksInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelCalibrationBinsInner)]),
-        () => ListBuilder<IntelCalibrationBinsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(PropagationGraphCrossPlatformOrderInner)]),
-        () => ListBuilder<PropagationGraphCrossPlatformOrderInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TuningLogEntry)]),
-        () => ListBuilder<TuningLogEntry>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EdpStream)]),
-        () => ListBuilder<EdpStream>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MediaFingerprintUsesInner)]),
-        () => ListBuilder<MediaFingerprintUsesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelBoardBenchmarksInner)]),
-        () => ListBuilder<IntelBoardBenchmarksInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PolPlace)]),
-        () => ListBuilder<PolPlace>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SampleValue)]),
-        () => ListBuilder<SampleValue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(HypothesisSetDraftWarningsInner)]),
-        () => ListBuilder<HypothesisSetDraftWarningsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(StatsSeriesSeriesInnerPointsInner)]),
-        () => ListBuilder<StatsSeriesSeriesInnerPointsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TagAssignResultSkippedInner)]),
-        () => ListBuilder<TagAssignResultSkippedInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ExportLicenceSummaryLicencesInner)]),
-        () => ListBuilder<ExportLicenceSummaryLicencesInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ChronicleSuggestionEstimateLayersInner)]),
-        () => ListBuilder<ChronicleSuggestionEstimateLayersInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InfraNode)]),
-        () => ListBuilder<InfraNode>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AskThreadPageItemsInner)]),
-        () => ListBuilder<AskThreadPageItemsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(JsonFeedAuthorsInner)]),
-        () => ListBuilder<JsonFeedAuthorsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(IntelEventMember)]),
-        () => ListBuilder<IntelEventMember>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(FrameItem)]),
-        () => ListBuilder<FrameItem>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialCue)]),
-        () => ListBuilder<SocialCue>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PropagationNode)]),
-        () => ListBuilder<PropagationNode>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SeriesForecastForecastsInner)]),
-        () => ListBuilder<SeriesForecastForecastsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CollectionGap)]),
-        () => ListBuilder<CollectionGap>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AuditEvent)]),
-        () => ListBuilder<AuditEvent>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(StormTrackPayloadHistoryInner)]),
-        () => ListBuilder<StormTrackPayloadHistoryInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MaintenanceRunStepsInner)]),
-        () => ListBuilder<MaintenanceRunStepsInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AskCitation)]),
-        () => ListBuilder<AskCitation>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(bool)]),
-        () => MapBuilder<String, bool>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(EscalationPolicy)]),
-        () => ListBuilder<EscalationPolicy>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltMap, [FullType(String), FullType(Severity)]),
-        () => MapBuilder<String, Severity>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(PushDevice)]),
-        () => ListBuilder<PushDevice>(),
-      )
-      ..add(Change.serializer)
-      ..add(const OneOfSerializer())
-      ..add(const AnyOfSerializer())
-      ..add(const DateSerializer())
-      ..add(Iso8601DateTimeSerializer()))
-    .build();
+Serializers serializers =
+    (_$serializers.toBuilder()
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExerciseRun)]),
+            () => ListBuilder<ExerciseRun>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RegionalIndexDef)]),
+            () => ListBuilder<RegionalIndexDef>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleCluster)]),
+            () => ListBuilder<ChronicleCluster>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SampleResponse)]),
+            () => ListBuilder<SampleResponse>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(SignatureVerifierConfig),
+            ]),
+            () => MapBuilder<String, SignatureVerifierConfig>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CpaResult)]),
+            () => ListBuilder<CpaResult>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelBoardBandChangesInner)]),
+            () => ListBuilder<IntelBoardBandChangesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NarrativeSummary)]),
+            () => ListBuilder<NarrativeSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            ]),
+            () => ListBuilder<BuiltMap<String, JsonObject>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Alert)]),
+            () => ListBuilder<Alert>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(RetentionRunResultPerSourceValue),
+            ]),
+            () => MapBuilder<String, RetentionRunResultPerSourceValue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialCueResultsInner)]),
+            () => ListBuilder<SocialCueResultsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType.nullable(String),
+            ]),
+            () => MapBuilder<String, String?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TileLayerIndexLayersInner)]),
+            () => ListBuilder<TileLayerIndexLayersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Precursor)]),
+            () => ListBuilder<Precursor>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(WindowState)]),
+            () => ListBuilder<WindowState>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(JsonFeedItem)]),
+            () => ListBuilder<JsonFeedItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleStateLayersInnerRollupsInner),
+            ]),
+            () => ListBuilder<ChronicleStateLayersInnerRollupsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ClientPresence)]),
+            () => ListBuilder<ClientPresence>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OwnershipChainNodePathsInner)]),
+            () => ListBuilder<OwnershipChainNodePathsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PropagationEdge)]),
+            () => ListBuilder<PropagationEdge>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PushProvider)]),
+            () => ListBuilder<PushProvider>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NotificationPreference)]),
+            () => ListBuilder<NotificationPreference>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalystNote)]),
+            () => ListBuilder<AnalystNote>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BacktestCaveat)]),
+            () => ListBuilder<BacktestCaveat>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RecordVersion)]),
+            () => ListBuilder<RecordVersion>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(MappingTestResultSamplesInner),
+            ]),
+            () => ListBuilder<MappingTestResultSamplesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PrecursorBatch)]),
+            () => ListBuilder<PrecursorBatch>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialPlatformPrice)]),
+            () => ListBuilder<SocialPlatformPrice>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DigestActive)]),
+            () => ListBuilder<DigestActive>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TimeRange)]),
+            () => ListBuilder<TimeRange>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Peer)]),
+            () => ListBuilder<Peer>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(OgcTileMatrixSetListTileMatrixSetsInner),
+            ]),
+            () => ListBuilder<OgcTileMatrixSetListTileMatrixSetsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Channel)]),
+            () => ListBuilder<Channel>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RatingsImportResultErrorsInner),
+            ]),
+            () => ListBuilder<RatingsImportResultErrorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(WatchlistItem)]),
+            () => ListBuilder<WatchlistItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AttentionTopic)]),
+            () => ListBuilder<AttentionTopic>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialPlatform)]),
+            () => ListBuilder<SocialPlatform>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PrincipalSummary)]),
+            () => ListBuilder<PrincipalSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(num)]),
+            () => MapBuilder<String, num>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ForecastCalibrationCurveInner),
+            ]),
+            () => ListBuilder<ForecastCalibrationCurveInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FetchLogEntry)]),
+            () => ListBuilder<FetchLogEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalyticFinding)]),
+            () => ListBuilder<AnalyticFinding>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AskAction)]),
+            () => ListBuilder<AskAction>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(InfraEdge)]),
+            () => ListBuilder<InfraEdge>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(BuiltMap)]),
+            () => MapBuilder<String, BuiltMap>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(InvestigationItem)]),
+            () => ListBuilder<InvestigationItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(EnsembleRefitResultPlattInner),
+            ]),
+            () => ListBuilder<EnsembleRefitResultPlattInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(HypothesisSet)]),
+            () => ListBuilder<HypothesisSet>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NewsStory)]),
+            () => ListBuilder<NewsStory>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DigestStatsNotableInner)]),
+            () => ListBuilder<DigestStatsNotableInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DateTime)]),
+            () => ListBuilder<DateTime>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(UvForecastPayloadHoursInner)]),
+            () => ListBuilder<UvForecastPayloadHoursInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StatsTopItemsInner)]),
+            () => ListBuilder<StatsTopItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SystemInfoHistoryTiersInner)]),
+            () => ListBuilder<SystemInfoHistoryTiersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RuleQualityDaily)]),
+            () => ListBuilder<RuleQualityDaily>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RegionProfile)]),
+            () => ListBuilder<RegionProfile>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ForecastCitationsInner)]),
+            () => ListBuilder<ForecastCitationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SituationMember)]),
+            () => ListBuilder<SituationMember>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AttentionTopicSocialChannel)]),
+            () => ListBuilder<AttentionTopicSocialChannel>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChannelInteractiveStatusChatsInner),
+            ]),
+            () => ListBuilder<ChannelInteractiveStatusChatsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SearchResult)]),
+            () => ListBuilder<SearchResult>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SituationLinkDecisionCandidatesInner),
+            ]),
+            () => ListBuilder<SituationLinkDecisionCandidatesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NotificationLink)]),
+            () => ListBuilder<NotificationLink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Annotation)]),
+            () => ListBuilder<Annotation>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelEventLogEntry)]),
+            () => ListBuilder<IntelEventLogEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ContextSummaryActivityInner)]),
+            () => ListBuilder<ContextSummaryActivityInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TimelineTickFramesInner)]),
+            () => ListBuilder<TimelineTickFramesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(HistoryFrame)]),
+            () => ListBuilder<HistoryFrame>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ObservationLink)]),
+            () => ListBuilder<ObservationLink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OutlookWindow)]),
+            () => ListBuilder<OutlookWindow>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LeadTimeStatsGroupsInner)]),
+            () => ListBuilder<LeadTimeStatsGroupsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Condition)]),
+            () => ListBuilder<Condition>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(EnsembleRefitResultWeightsInner),
+            ]),
+            () => ListBuilder<EnsembleRefitResultWeightsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SituationTimelineEntry)]),
+            () => ListBuilder<SituationTimelineEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialCueQuery)]),
+            () => ListBuilder<SocialCueQuery>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExternalQuestionLink)]),
+            () => ListBuilder<ExternalQuestionLink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MediaRating)]),
+            () => ListBuilder<MediaRating>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ContextSummaryInsightsInner)]),
+            () => ListBuilder<ContextSummaryInsightsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelEventSummary)]),
+            () => ListBuilder<IntelEventSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SensorPassesInner)]),
+            () => ListBuilder<SensorPassesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Briefing)]),
+            () => ListBuilder<Briefing>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CyclePacketItem)]),
+            () => ListBuilder<CyclePacketItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DerivedEvidenceRef)]),
+            () => ListBuilder<DerivedEvidenceRef>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AlertSignal)]),
+            () => ListBuilder<AlertSignal>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExportManifestFilesInner)]),
+            () => ListBuilder<ExportManifestFilesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleLayerInput)]),
+            () => ListBuilder<ChronicleLayerInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AnalystEvaluationProfilesInner),
+            ]),
+            () => ListBuilder<AnalystEvaluationProfilesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StyleSpecial)]),
+            () => ListBuilder<StyleSpecial>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(MapSpriteIndexValue),
+            ]),
+            () => MapBuilder<String, MapSpriteIndexValue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleSketchPackage)]),
+            () => ListBuilder<ChronicleSketchPackage>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(IntelBoardIndicatorsObservedInner),
+            ]),
+            () => ListBuilder<IntelBoardIndicatorsObservedInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProductTemporalRunsInner)]),
+            () => ListBuilder<ProductTemporalRunsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MediaProvider)]),
+            () => ListBuilder<MediaProvider>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MappingRejection)]),
+            () => ListBuilder<MappingRejection>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IngestFormatOption)]),
+            () => ListBuilder<IngestFormatOption>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(StructureDiffPresenceDroppedInner),
+            ]),
+            () => ListBuilder<StructureDiffPresenceDroppedInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EdpSuggestedBinding)]),
+            () => ListBuilder<EdpSuggestedBinding>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FieldThreshold)]),
+            () => ListBuilder<FieldThreshold>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReportRevision)]),
+            () => ListBuilder<ReportRevision>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AnalystEvaluationProfilesInnerTokensPerDayInner),
+            ]),
+            () =>
+                ListBuilder<AnalystEvaluationProfilesInnerTokensPerDayInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RecordMappingFilterInner)]),
+            () => ListBuilder<RecordMappingFilterInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IngestDevice)]),
+            () => ListBuilder<IngestDevice>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelligenceEvent)]),
+            () => ListBuilder<IntelligenceEvent>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProjectedImpactSkippedInner)]),
+            () => ListBuilder<ProjectedImpactSkippedInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StatsGridFeaturesInner)]),
+            () => ListBuilder<StatsGridFeaturesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Chronicle)]),
+            () => ListBuilder<Chronicle>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+            () => MapBuilder<String, int>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DigestCount)]),
+            () => ListBuilder<DigestCount>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BuiltList, [FullType(num)]),
+            ]),
+            () => ListBuilder<BuiltList<num>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnomalyBaselineSlot)]),
+            () => ListBuilder<AnomalyBaselineSlot>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AnalysisManifestModelTemplatesInner),
+            ]),
+            () => ListBuilder<AnalysisManifestModelTemplatesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Hold)]),
+            () => ListBuilder<Hold>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ObjectAclEntry)]),
+            () => ListBuilder<ObjectAclEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(HypothesisSetEventBandChangesInner),
+            ]),
+            () => ListBuilder<HypothesisSetEventBandChangesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(WatchPair)]),
+            () => ListBuilder<WatchPair>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Indicator)]),
+            () => ListBuilder<Indicator>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(WatchlistItemInput)]),
+            () => ListBuilder<WatchlistItemInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialCollectionPath)]),
+            () => ListBuilder<SocialCollectionPath>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SampleTrackResponsePointsInner),
+            ]),
+            () => ListBuilder<SampleTrackResponsePointsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DigestNotableItem)]),
+            () => ListBuilder<DigestNotableItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BenchmarkCaseExpectationsFindingsInner),
+            ]),
+            () => ListBuilder<BenchmarkCaseExpectationsFindingsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ActiveWindowWindowsInner)]),
+            () => ListBuilder<ActiveWindowWindowsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ForecastCalibrationBinsInner)]),
+            () => ListBuilder<ForecastCalibrationBinsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(WatchlistImportResultInvalidInner),
+            ]),
+            () => ListBuilder<WatchlistImportResultInvalidInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StyleMeaning)]),
+            () => ListBuilder<StyleMeaning>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RuleBacktestResultVariantsInner),
+            ]),
+            () => ListBuilder<RuleBacktestResultVariantsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TimelineBucket)]),
+            () => ListBuilder<TimelineBucket>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(HypothesisReviewInputLrInner)]),
+            () => ListBuilder<HypothesisReviewInputLrInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CustomSource)]),
+            () => ListBuilder<CustomSource>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FederationItem)]),
+            () => ListBuilder<FederationItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PackageManifestAuthorsInner)]),
+            () => ListBuilder<PackageManifestAuthorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Observer)]),
+            () => ListBuilder<Observer>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChannelTypeConfigFieldsInner)]),
+            () => ListBuilder<ChannelTypeConfigFieldsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Sensor)]),
+            () => ListBuilder<Sensor>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(KindSummary)]),
+            () => ListBuilder<KindSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(DossierSectionsForecastOfficialInner),
+            ]),
+            () => ListBuilder<DossierSectionsForecastOfficialInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleSummaryTopEntitiesInner),
+            ]),
+            () => ListBuilder<ChronicleSummaryTopEntitiesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(LedgerQuestionBriefForecastersInner),
+            ]),
+            () => ListBuilder<LedgerQuestionBriefForecastersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SituationTheme)]),
+            () => ListBuilder<SituationTheme>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExternalBinding)]),
+            () => ListBuilder<ExternalBinding>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CorrelationRecipe)]),
+            () => ListBuilder<CorrelationRecipe>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NewsStoryOutletsInner)]),
+            () => ListBuilder<NewsStoryOutletsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NarrativeLogEntry)]),
+            () => ListBuilder<NarrativeLogEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelCalibrationCurveInner)]),
+            () => ListBuilder<IntelCalibrationCurveInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalysisSeries)]),
+            () => ListBuilder<AnalysisSeries>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalystProfile)]),
+            () => ListBuilder<AnalystProfile>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialComparisonRevision)]),
+            () => ListBuilder<SocialComparisonRevision>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(KeyAssumptionInput)]),
+            () => ListBuilder<KeyAssumptionInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BenchmarkComponentResult)]),
+            () => ListBuilder<BenchmarkComponentResult>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BaseRate)]),
+            () => ListBuilder<BaseRate>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NarrativePlatformStats)]),
+            () => ListBuilder<NarrativePlatformStats>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(TriggerTestResultWarningsInner),
+            ]),
+            () => ListBuilder<TriggerTestResultWarningsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OutletConsensus)]),
+            () => ListBuilder<OutletConsensus>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DoctorFinding)]),
+            () => ListBuilder<DoctorFinding>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OverlandBatchLocationsInner)]),
+            () => ListBuilder<OverlandBatchLocationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TileJsonVectorLayersInner)]),
+            () => ListBuilder<TileJsonVectorLayersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MetarPayloadSkyInner)]),
+            () => ListBuilder<MetarPayloadSkyInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(CorrelationRecipeDefinitionJoinsInner),
+            ]),
+            () => ListBuilder<CorrelationRecipeDefinitionJoinsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MeGroupsInner)]),
+            () => ListBuilder<MeGroupsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+            () => MapBuilder<String, String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OgcTileSetListTilesetsInner)]),
+            () => ListBuilder<OgcTileSetListTilesetsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AssessmentCoverageSituationsInner),
+            ]),
+            () => ListBuilder<AssessmentCoverageSituationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ForecastNumericCalibrationPitBinsInner),
+            ]),
+            () => ListBuilder<ForecastNumericCalibrationPitBinsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StyleStop)]),
+            () => ListBuilder<StyleStop>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(DossierSectionsImpactsItemsInner),
+            ]),
+            () => ListBuilder<DossierSectionsImpactsItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Jwk)]),
+            () => ListBuilder<Jwk>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TagAssignment)]),
+            () => ListBuilder<TagAssignment>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AssessmentSectionsInner)]),
+            () => ListBuilder<AssessmentSectionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AccessRequest)]),
+            () => ListBuilder<AccessRequest>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProjectedImpactInputsInner)]),
+            () => ListBuilder<ProjectedImpactInputsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PrecisionComponentsInner)]),
+            () => ListBuilder<PrecisionComponentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CanonicalEvent)]),
+            () => ListBuilder<CanonicalEvent>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(OgcTileMatrixSetTileMatricesInner),
+            ]),
+            () => ListBuilder<OgcTileMatrixSetTileMatricesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(NarrativeTimelineSeriesInnerPointsInner),
+            ]),
+            () => ListBuilder<NarrativeTimelineSeriesInnerPointsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReceivedPackage)]),
+            () => ListBuilder<ReceivedPackage>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CapturedSample)]),
+            () => ListBuilder<CapturedSample>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Caveat)]),
+            () => ListBuilder<Caveat>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(GroupMember)]),
+            () => ListBuilder<GroupMember>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(CorrelationRecipeDefinitionContradictionsInner),
+            ]),
+            () => ListBuilder<CorrelationRecipeDefinitionContradictionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(DossierSectionsTimelineItemsInner),
+            ]),
+            () => ListBuilder<DossierSectionsTimelineItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Investigation)]),
+            () => ListBuilder<Investigation>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SituationSocialSectionNarrativesInner),
+            ]),
+            () => ListBuilder<SituationSocialSectionNarrativesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(StructureDiffTypeChangedInner),
+            ]),
+            () => ListBuilder<StructureDiffTypeChangedInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(BuiltList, [
+                FullType(BuiltList, [FullType(num)]),
+              ]),
+            ]),
+            () => MapBuilder<String, BuiltList<BuiltList<num>>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(IndexFitResultComponentsInner),
+            ]),
+            () => ListBuilder<IndexFitResultComponentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialPostMedia)]),
+            () => ListBuilder<SocialPostMedia>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IngestOutcomeRejectionsInner)]),
+            () => ListBuilder<IngestOutcomeRejectionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReceivedPackageContentsInner)]),
+            () => ListBuilder<ReceivedPackageContentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Trip)]),
+            () => ListBuilder<Trip>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleSummaryLayersInnerSeriesInner),
+            ]),
+            () => ListBuilder<ChronicleSummaryLayersInnerSeriesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            ]),
+            () => MapBuilder<String, BuiltMap<String, JsonObject>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(EdpItemRejectionSchemaErrorsInner),
+            ]),
+            () => ListBuilder<EdpItemRejectionSchemaErrorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TriggerRule)]),
+            () => ListBuilder<TriggerRule>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OwnershipChainNode)]),
+            () => ListBuilder<OwnershipChainNode>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProvenanceHop)]),
+            () => ListBuilder<ProvenanceHop>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RegionalIndexDefFloorsInner)]),
+            () => ListBuilder<RegionalIndexDefFloorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SituationEvidenceFamiliesInner),
+            ]),
+            () => ListBuilder<SituationEvidenceFamiliesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(SocialSettingsCompareFamilyWindowsValue),
+            ]),
+            () => MapBuilder<String, SocialSettingsCompareFamilyWindowsValue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProblemErrorsInner)]),
+            () => ListBuilder<ProblemErrorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(CommonDependenciesDependenciesInner),
+            ]),
+            () => ListBuilder<CommonDependenciesDependenciesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(TriggerRuleInputConditionsInner),
+            ]),
+            () => ListBuilder<TriggerRuleInputConditionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ExerciseStatsSkippedRulesInner),
+            ]),
+            () => ListBuilder<ExerciseStatsSkippedRulesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(GroupMemberInput)]),
+            () => ListBuilder<GroupMemberInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ObjectAclEntryInput)]),
+            () => ListBuilder<ObjectAclEntryInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TripRun)]),
+            () => ListBuilder<TripRun>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LegendTick)]),
+            () => ListBuilder<LegendTick>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ProjectedImpactExposedAssetsInner),
+            ]),
+            () => ListBuilder<ProjectedImpactExposedAssetsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MappingPreset)]),
+            () => ListBuilder<MappingPreset>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NotificationAction)]),
+            () => ListBuilder<NotificationAction>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StyleCategory)]),
+            () => ListBuilder<StyleCategory>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(EdpPresentation),
+            ]),
+            () => MapBuilder<String, EdpPresentation>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AskMessage)]),
+            () => ListBuilder<AskMessage>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PushPayloadActionsInner)]),
+            () => ListBuilder<PushPayloadActionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelBoardSituationsInner)]),
+            () => ListBuilder<IntelBoardSituationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(StructureDiffRenameCandidatesInner),
+            ]),
+            () => ListBuilder<StructureDiffRenameCandidatesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(HypothesisRevision)]),
+            () => ListBuilder<HypothesisRevision>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+            () => ListBuilder<JsonObject>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RuleBacktestResultTopEntitiesInner),
+            ]),
+            () => ListBuilder<RuleBacktestResultTopEntitiesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalysisCycle)]),
+            () => ListBuilder<AnalysisCycle>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CycleRun)]),
+            () => ListBuilder<CycleRun>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ObjectAction)]),
+            () => ListBuilder<ObjectAction>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Feature)]),
+            () => ListBuilder<Feature>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MappingField)]),
+            () => ListBuilder<MappingField>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BaseRateLicencesInner)]),
+            () => ListBuilder<BaseRateLicencesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RegionalIndexDefComponentsInner),
+            ]),
+            () => ListBuilder<RegionalIndexDefComponentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialPhysicalEvidence)]),
+            () => ListBuilder<SocialPhysicalEvidence>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelBoardForecastsDueInner)]),
+            () => ListBuilder<IntelBoardForecastsDueInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TripHazard)]),
+            () => ListBuilder<TripHazard>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SituationChangesKeyValuesInner),
+            ]),
+            () => ListBuilder<SituationChangesKeyValuesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MetricProjectionLabelsInner)]),
+            () => ListBuilder<MetricProjectionLabelsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleClusterMembersInner)]),
+            () => ListBuilder<ChronicleClusterMembersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ExchangePackageDeliveriesInner),
+            ]),
+            () => ListBuilder<ExchangePackageDeliveriesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(DeclaredObservabilityKindsValueThresholdsInner),
+            ]),
+            () => ListBuilder<DeclaredObservabilityKindsValueThresholdsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(SystemRastersCachesValue),
+            ]),
+            () => MapBuilder<String, SystemRastersCachesValue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RelatedObject)]),
+            () => ListBuilder<RelatedObject>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StatsResponseThresholdsInner)]),
+            () => ListBuilder<StatsResponseThresholdsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Change)]),
+            () => ListBuilder<Change>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(EdrInstanceListInstancesInner),
+            ]),
+            () => ListBuilder<EdrInstanceListInstancesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NormalizedRecordPreview)]),
+            () => ListBuilder<NormalizedRecordPreview>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Assessment)]),
+            () => ListBuilder<Assessment>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SourceHealth)]),
+            () => ListBuilder<SourceHealth>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Entity)]),
+            () => ListBuilder<Entity>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(HypothesisInput)]),
+            () => ListBuilder<HypothesisInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Claim)]),
+            () => ListBuilder<Claim>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TafPayloadForecastInner)]),
+            () => ListBuilder<TafPayloadForecastInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(GlanceAlertsLatestInner)]),
+            () => ListBuilder<GlanceAlertsLatestInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DoctorReport)]),
+            () => ListBuilder<DoctorReport>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(int)]),
+            () => ListBuilder<int>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TransitCatalogEntry)]),
+            () => ListBuilder<TransitCatalogEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExportJob)]),
+            () => ListBuilder<ExportJob>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RegionalOutlook)]),
+            () => ListBuilder<RegionalOutlook>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PresenceEventClientsInner)]),
+            () => ListBuilder<PresenceEventClientsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(DeclaredObservabilityKindsValue),
+            ]),
+            () => MapBuilder<String, DeclaredObservabilityKindsValue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ForecastNumericCalibrationQuantileReliabilityInner),
+            ]),
+            () =>
+                ListBuilder<
+                  ForecastNumericCalibrationQuantileReliabilityInner
+                >(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SeriesForecastModelBacktestResultsInner),
+            ]),
+            () => ListBuilder<SeriesForecastModelBacktestResultsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BriefingRun)]),
+            () => ListBuilder<BriefingRun>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EvidenceGroup)]),
+            () => ListBuilder<EvidenceGroup>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BenchmarkCaseExpectationsQuestionsInner),
+            ]),
+            () => ListBuilder<BenchmarkCaseExpectationsQuestionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AllowedChat)]),
+            () => ListBuilder<AllowedChat>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExternalSource)]),
+            () => ListBuilder<ExternalSource>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SatellitePassPayloadRfSnrByElevationInner),
+            ]),
+            () => ListBuilder<SatellitePassPayloadRfSnrByElevationInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Attribution)]),
+            () => ListBuilder<Attribution>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReportBundleAttachmentsInner)]),
+            () => ListBuilder<ReportBundleAttachmentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Attachment)]),
+            () => ListBuilder<Attachment>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(HypothesisProbabilityState)]),
+            () => ListBuilder<HypothesisProbabilityState>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProbeResultRequestsInner)]),
+            () => ListBuilder<ProbeResultRequestsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(OutletConsensusProvidersInner),
+            ]),
+            () => ListBuilder<OutletConsensusProvidersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EdpItem)]),
+            () => ListBuilder<EdpItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MetricProjection)]),
+            () => ListBuilder<MetricProjection>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelEventAlternative)]),
+            () => ListBuilder<IntelEventAlternative>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AssessmentPromptTemplatesInner),
+            ]),
+            () => ListBuilder<AssessmentPromptTemplatesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SituationSummary)]),
+            () => ListBuilder<SituationSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ContextSummaryLayerCountsInner),
+            ]),
+            () => ListBuilder<ContextSummaryLayerCountsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(KindDisplay)]),
+            () => MapBuilder<String, KindDisplay>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalystClaim)]),
+            () => ListBuilder<AnalystClaim>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ObservabilityEstimate)]),
+            () => ListBuilder<ObservabilityEstimate>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(UsagePoint)]),
+            () => ListBuilder<UsagePoint>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(KeyAssumption)]),
+            () => ListBuilder<KeyAssumption>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ForecastSeriesPoint)]),
+            () => ListBuilder<ForecastSeriesPoint>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OgcCollection200Response)]),
+            () => ListBuilder<OgcCollection200Response>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ClusterTimelineItem)]),
+            () => ListBuilder<ClusterTimelineItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialComparison)]),
+            () => ListBuilder<SocialComparison>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleRecordVersion)]),
+            () => ListBuilder<ChronicleRecordVersion>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PairingCode)]),
+            () => ListBuilder<PairingCode>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SocialVersusObservedLeadTimesInner),
+            ]),
+            () => ListBuilder<SocialVersusObservedLeadTimesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EntityRecord)]),
+            () => ListBuilder<EntityRecord>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Detectability)]),
+            () => ListBuilder<Detectability>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LlmModelInfo)]),
+            () => ListBuilder<LlmModelInfo>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelCalibration)]),
+            () => ListBuilder<IntelCalibration>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MapStyleMetadataLayersInner)]),
+            () => ListBuilder<MapStyleMetadataLayersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IngestFormatInfo)]),
+            () => ListBuilder<IngestFormatInfo>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DigestHealthItem)]),
+            () => ListBuilder<DigestHealthItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AchMatrixHypothesesInner)]),
+            () => ListBuilder<AchMatrixHypothesesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TimelineAlertsInner)]),
+            () => ListBuilder<TimelineAlertsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Watchlist)]),
+            () => ListBuilder<Watchlist>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(num)]),
+            () => ListBuilder<num>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(FieldSpec)]),
+            () => MapBuilder<String, FieldSpec>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SavedView)]),
+            () => ListBuilder<SavedView>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialCoverage)]),
+            () => ListBuilder<SocialCoverage>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Notification)]),
+            () => ListBuilder<Notification>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChannelType)]),
+            () => ListBuilder<ChannelType>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ShareLink)]),
+            () => ListBuilder<ShareLink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Tag)]),
+            () => ListBuilder<Tag>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BacktestJob)]),
+            () => ListBuilder<BacktestJob>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EdpDocumentItemMediaInner)]),
+            () => ListBuilder<EdpDocumentItemMediaInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialCoverageBucket)]),
+            () => ListBuilder<SocialCoverageBucket>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ForecastSeries)]),
+            () => ListBuilder<ForecastSeries>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(CollectionGapRecommendationsInner),
+            ]),
+            () => ListBuilder<CollectionGapRecommendationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReportSendRecipientsInner)]),
+            () => ListBuilder<ReportSendRecipientsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RegionalIndexValueComponentsInner),
+            ]),
+            () => ListBuilder<RegionalIndexValueComponentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OgcLink)]),
+            () => ListBuilder<OgcLink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleLayer)]),
+            () => ListBuilder<ChronicleLayer>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CountryRef)]),
+            () => ListBuilder<CountryRef>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RuleBacktestResultSamplesInner),
+            ]),
+            () => ListBuilder<RuleBacktestResultSamplesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleSketchBatchResultRejectedInner),
+            ]),
+            () => ListBuilder<ChronicleSketchBatchResultRejectedInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialQuota)]),
+            () => ListBuilder<SocialQuota>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(InfraRulesRulesInner)]),
+            () => ListBuilder<InfraRulesRulesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LlmUsagePoint)]),
+            () => ListBuilder<LlmUsagePoint>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProjectedImpact)]),
+            () => ListBuilder<ProjectedImpact>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LlmProvider)]),
+            () => ListBuilder<LlmProvider>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SituationLinkDecision)]),
+            () => ListBuilder<SituationLinkDecision>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BenchmarkComponentResultThresholdsInner),
+            ]),
+            () => ListBuilder<BenchmarkComponentResultThresholdsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BenchmarkComponentResultScenariosInner),
+            ]),
+            () => ListBuilder<BenchmarkComponentResultScenariosInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(HazardForecastProbabilityFieldInner),
+            ]),
+            () => ListBuilder<HazardForecastProbabilityFieldInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SettingsBundleChannelsInner)]),
+            () => ListBuilder<SettingsBundleChannelsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ExposureWatchlistEntitiesCountsInner),
+            ]),
+            () => ListBuilder<ExposureWatchlistEntitiesCountsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RuleBacktestResultPerDayInner),
+            ]),
+            () => ListBuilder<RuleBacktestResultPerDayInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ExportLicenceSummaryExcludedInner),
+            ]),
+            () => ListBuilder<ExportLicenceSummaryExcludedInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ProductTemporalRetentionLadderInner),
+            ]),
+            () => ListBuilder<ProductTemporalRetentionLadderInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType.nullable(num)]),
+            () => ListBuilder<num>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MediaFingerprint)]),
+            () => ListBuilder<MediaFingerprint>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(SourceSettingsUpdate),
+            ]),
+            () => MapBuilder<String, SourceSettingsUpdate>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CredentialField)]),
+            () => ListBuilder<CredentialField>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(InfraImpactResultDependentsInner),
+            ]),
+            () => ListBuilder<InfraImpactResultDependentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReferenceImport)]),
+            () => ListBuilder<ReferenceImport>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(TriggerTestResultWindowEvaluationsInner),
+            ]),
+            () => ListBuilder<TriggerTestResultWindowEvaluationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SatellitePassPayloadProductsInner),
+            ]),
+            () => ListBuilder<SatellitePassPayloadProductsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ImpactRate)]),
+            () => ListBuilder<ImpactRate>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SystemInfoWarningsInner)]),
+            () => ListBuilder<SystemInfoWarningsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SinkStatusClientsPeersInner)]),
+            () => ListBuilder<SinkStatusClientsPeersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SocialVersusObservedNarrativesInner),
+            ]),
+            () => ListBuilder<SocialVersusObservedNarrativesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(InboxItem)]),
+            () => ListBuilder<InboxItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NarrativeTimelineSeriesInner)]),
+            () => ListBuilder<NarrativeTimelineSeriesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SeriesSample)]),
+            () => ListBuilder<SeriesSample>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EntityKey)]),
+            () => ListBuilder<EntityKey>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+            () => MapBuilder<String, JsonObject>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PrecursorCandidate)]),
+            () => ListBuilder<PrecursorCandidate>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ForecastScore)]),
+            () => ListBuilder<ForecastScore>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BuiltList, [FullType(DateTime)]),
+            ]),
+            () => ListBuilder<BuiltList<DateTime>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NotificationPreferenceInput)]),
+            () => ListBuilder<NotificationPreferenceInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleEstimateLayersInner)]),
+            () => ListBuilder<ChronicleEstimateLayersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Report)]),
+            () => ListBuilder<Report>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(EventStudyResultEventsInnerAbnormalInner),
+            ]),
+            () => ListBuilder<EventStudyResultEventsInnerAbnormalInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExportFile)]),
+            () => ListBuilder<ExportFile>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EvidenceItem)]),
+            () => ListBuilder<EvidenceItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialVolumePoint)]),
+            () => ListBuilder<SocialVolumePoint>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SampleTrackRequestPointsInner),
+            ]),
+            () => ListBuilder<SampleTrackRequestPointsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(JsonFeedItemAuthorsInner)]),
+            () => ListBuilder<JsonFeedItemAuthorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalystProposal)]),
+            () => ListBuilder<AnalystProposal>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FeedKey)]),
+            () => ListBuilder<FeedKey>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(BuiltMap, [FullType(String), FullType(int)]),
+            ]),
+            () => MapBuilder<String, BuiltMap<String, int>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ImportMediaRatingsRequest1RowsInner),
+            ]),
+            () => ListBuilder<ImportMediaRatingsRequest1RowsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(CycleRunRolesInner),
+            ]),
+            () => MapBuilder<String, CycleRunRolesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ApiToken)]),
+            () => ListBuilder<ApiToken>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(PlaceWeatherDigestPeriodHazardsEnteredInner),
+            ]),
+            () => ListBuilder<PlaceWeatherDigestPeriodHazardsEnteredInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PlaceWeatherDigest)]),
+            () => ListBuilder<PlaceWeatherDigest>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SituationStatus)]),
+            () => ListBuilder<SituationStatus>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProvenanceChainEntry)]),
+            () => ListBuilder<ProvenanceChainEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Sink)]),
+            () => ListBuilder<Sink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ForecastHistorySeriesInner)]),
+            () => ListBuilder<ForecastHistorySeriesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ObjectEnvelope)]),
+            () => ListBuilder<ObjectEnvelope>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SettingsBundleWatchlistsInner),
+            ]),
+            () => ListBuilder<SettingsBundleWatchlistsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CustomSourceInput)]),
+            () => ListBuilder<CustomSourceInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RegionalIndexValue)]),
+            () => ListBuilder<RegionalIndexValue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(WeatherContextWarningsItemsInner),
+            ]),
+            () => ListBuilder<WeatherContextWarningsItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Hypothesis)]),
+            () => ListBuilder<Hypothesis>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ProjectedImpactDependencyPathsInner),
+            ]),
+            () => ListBuilder<ProjectedImpactDependencyPathsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SavedSearchHit)]),
+            () => ListBuilder<SavedSearchHit>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialPlatformId)]),
+            () => ListBuilder<SocialPlatformId>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Relation)]),
+            () => ListBuilder<Relation>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BenchmarkCaseExpectationsPrecursorsInner),
+            ]),
+            () => ListBuilder<BenchmarkCaseExpectationsPrecursorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChannelWarningsInner)]),
+            () => ListBuilder<ChannelWarningsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SourceSummary)]),
+            () => ListBuilder<SourceSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MediaOutlet)]),
+            () => ListBuilder<MediaOutlet>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TimelineTick)]),
+            () => ListBuilder<TimelineTick>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SinkType)]),
+            () => ListBuilder<SinkType>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FieldManifestComponentsInner)]),
+            () => ListBuilder<FieldManifestComponentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RevisionDriver)]),
+            () => ListBuilder<RevisionDriver>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Place)]),
+            () => ListBuilder<Place>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(VelocityJsonComponent)]),
+            () => ListBuilder<VelocityJsonComponent>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PrecursorTest)]),
+            () => ListBuilder<PrecursorTest>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Forecast)]),
+            () => ListBuilder<Forecast>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CompactMessage)]),
+            () => ListBuilder<CompactMessage>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(InfraImpactResultDependentsInnerPathInner),
+            ]),
+            () => ListBuilder<InfraImpactResultDependentsInnerPathInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IndicatorInput)]),
+            () => ListBuilder<IndicatorInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SocialSettingsTrackRecordOverridesInner),
+            ]),
+            () => ListBuilder<SocialSettingsTrackRecordOverridesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(IntelBoardLatestAssessmentsInner),
+            ]),
+            () => ListBuilder<IntelBoardLatestAssessmentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(IndicatorLikelihood),
+            ]),
+            () => MapBuilder<String, IndicatorLikelihood>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TuningSuggestionRecord)]),
+            () => ListBuilder<TuningSuggestionRecord>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ArchivePartition)]),
+            () => ListBuilder<ArchivePartition>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleStateLayersInner)]),
+            () => ListBuilder<ChronicleStateLayersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SeriesCatalogEntry)]),
+            () => ListBuilder<SeriesCatalogEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType.nullable(DateTime)]),
+            () => ListBuilder<DateTime>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialVolumeSeries)]),
+            () => ListBuilder<SocialVolumeSeries>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RasterFrame)]),
+            () => ListBuilder<RasterFrame>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CycleRunRolesInner)]),
+            () => ListBuilder<CycleRunRolesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType(BuiltList, [FullType(String)]),
+            ]),
+            () => MapBuilder<String, BuiltList<String>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SavedSearch)]),
+            () => ListBuilder<SavedSearch>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NewsArticle)]),
+            () => ListBuilder<NewsArticle>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalysisManifest)]),
+            () => ListBuilder<AnalysisManifest>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(HistoryFrameRemovalsInner)]),
+            () => ListBuilder<HistoryFrameRemovalsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PrecursorHistoryInner)]),
+            () => ListBuilder<PrecursorHistoryInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExposurePlacesItemsInner)]),
+            () => ListBuilder<ExposurePlacesItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EdpItemRejection)]),
+            () => ListBuilder<EdpItemRejection>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BuiltList, [FullType(int)]),
+            ]),
+            () => ListBuilder<BuiltList<int>>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AnomalyObservationEvidenceFetchLogRangesInner),
+            ]),
+            () => ListBuilder<AnomalyObservationEvidenceFetchLogRangesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(StatsSeriesSeriesInner)]),
+            () => ListBuilder<StatsSeriesSeriesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelEventMemberInput)]),
+            () => ListBuilder<IntelEventMemberInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PushSubscription)]),
+            () => ListBuilder<PushSubscription>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RegistrationToken)]),
+            () => ListBuilder<RegistrationToken>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PolStay)]),
+            () => ListBuilder<PolStay>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleSummaryLayersInner)]),
+            () => ListBuilder<ChronicleSummaryLayersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(CommonDependenciesDependenciesInnerPathsInner),
+            ]),
+            () => ListBuilder<CommonDependenciesDependenciesInnerPathsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(OgcTileSetTileMatrixSetLimitsInner),
+            ]),
+            () => ListBuilder<OgcTileSetTileMatrixSetLimitsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ForecastQuestionSummary)]),
+            () => ListBuilder<ForecastQuestionSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MappingWarning)]),
+            () => ListBuilder<MappingWarning>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LlmProviderInput)]),
+            () => ListBuilder<LlmProviderInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LedgerQuestionBrief)]),
+            () => ListBuilder<LedgerQuestionBrief>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnalystRun)]),
+            () => ListBuilder<AnalystRun>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Group)]),
+            () => ListBuilder<Group>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AnomalyObservationEvidenceSamplesInner),
+            ]),
+            () => ListBuilder<AnomalyObservationEvidenceSamplesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleSummaryGapsInner)]),
+            () => ListBuilder<ChronicleSummaryGapsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(DossierSectionsImageryItemsInner),
+            ]),
+            () => ListBuilder<DossierSectionsImageryItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ExternalBindingPreviewEffectsInner),
+            ]),
+            () => ListBuilder<ExternalBindingPreviewEffectsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AssessmentBundleObjectsInner)]),
+            () => ListBuilder<AssessmentBundleObjectsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(RecipeBacktestResultEventsInner),
+            ]),
+            () => ListBuilder<RecipeBacktestResultEventsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FeedKeyCreatedUrlsInner)]),
+            () => ListBuilder<FeedKeyCreatedUrlsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Style)]),
+            () => ListBuilder<Style>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BenchmarkStatusComponentsInner),
+            ]),
+            () => ListBuilder<BenchmarkStatusComponentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ForecastHistorySeriesInnerPointsInner),
+            ]),
+            () => ListBuilder<ForecastHistorySeriesInnerPointsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(PropagationGraphEarliestByPlatformInner),
+            ]),
+            () => ListBuilder<PropagationGraphEarliestByPlatformInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ScorecardEntry)]),
+            () => ListBuilder<ScorecardEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Forecaster)]),
+            () => ListBuilder<Forecaster>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleFrameIndexFramesInner),
+            ]),
+            () => ListBuilder<ChronicleFrameIndexFramesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialPost)]),
+            () => ListBuilder<SocialPost>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ParamSpec)]),
+            () => ListBuilder<ParamSpec>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AchEvidence)]),
+            () => ListBuilder<AchEvidence>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExternalStreamStats)]),
+            () => ListBuilder<ExternalStreamStats>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EntityAlias)]),
+            () => ListBuilder<EntityAlias>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Workspace)]),
+            () => ListBuilder<Workspace>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleRelatedPageItemsInner),
+            ]),
+            () => ListBuilder<ChronicleRelatedPageItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Analog)]),
+            () => ListBuilder<Analog>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ChronicleThreadItem)]),
+            () => ListBuilder<ChronicleThreadItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(StormTrackPayloadNowcastInner),
+            ]),
+            () => ListBuilder<StormTrackPayloadNowcastInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BenchmarkRun)]),
+            () => ListBuilder<BenchmarkRun>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(PlaceWeatherDigestNowAlertsInner),
+            ]),
+            () => ListBuilder<PlaceWeatherDigestNowAlertsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(NwsForecastPayloadHazardsInner),
+            ]),
+            () => ListBuilder<NwsForecastPayloadHazardsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AttentionTopicSocialAccountsInner),
+            ]),
+            () => ListBuilder<AttentionTopicSocialAccountsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AlertmanagerWebhookAlertsInner),
+            ]),
+            () => ListBuilder<AlertmanagerWebhookAlertsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleSketchBatchAccessRequestsInner),
+            ]),
+            () => ListBuilder<ChronicleSketchBatchAccessRequestsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NarrativePost)]),
+            () => ListBuilder<NarrativePost>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MediaMatch)]),
+            () => ListBuilder<MediaMatch>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ProductLoopFramesInner)]),
+            () => ListBuilder<ProductLoopFramesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TileKey)]),
+            () => ListBuilder<TileKey>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ArchivePartitionFilesInner)]),
+            () => ListBuilder<ArchivePartitionFilesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FindingSeverity)]),
+            () => ListBuilder<FindingSeverity>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReferenceDataset)]),
+            () => ListBuilder<ReferenceDataset>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(AttentionTopicInputWikiArticlesInner),
+            ]),
+            () => ListBuilder<AttentionTopicInputWikiArticlesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Record)]),
+            () => ListBuilder<Record>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TaxiiCollection)]),
+            () => ListBuilder<TaxiiCollection>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltSet, [FullType(String)]),
+            () => SetBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PolSubject)]),
+            () => ListBuilder<PolSubject>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(InformationValueIndicatorsInner),
+            ]),
+            () => ListBuilder<InformationValueIndicatorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(HypothesisReviewInputAssumptionsInner),
+            ]),
+            () => ListBuilder<HypothesisReviewInputAssumptionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleSketchBatchAccessDecisionsInner),
+            ]),
+            () => ListBuilder<ChronicleSketchBatchAccessDecisionsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Product)]),
+            () => ListBuilder<Product>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [
+              FullType(String),
+              FullType.nullable(num),
+            ]),
+            () => MapBuilder<String, num?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SituationMemberInput)]),
+            () => ListBuilder<SituationMemberInput>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SettingsWarning)]),
+            () => ListBuilder<SettingsWarning>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(OgcFeature)]),
+            () => ListBuilder<OgcFeature>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BenchmarkCase)]),
+            () => ListBuilder<BenchmarkCase>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ExchangePackage)]),
+            () => ListBuilder<ExchangePackage>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SharedItem)]),
+            () => ListBuilder<SharedItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EscalationStep)]),
+            () => ListBuilder<EscalationStep>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EventStudyResultEventsInner)]),
+            () => ListBuilder<EventStudyResultEventsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Plugin)]),
+            () => ListBuilder<Plugin>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(KeyJudgment)]),
+            () => ListBuilder<KeyJudgment>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AnomalyObservation)]),
+            () => ListBuilder<AnomalyObservation>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DigestAlertsByRuleInner)]),
+            () => ListBuilder<DigestAlertsByRuleInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SeriesPoint)]),
+            () => ListBuilder<SeriesPoint>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NotificationDelivery)]),
+            () => ListBuilder<NotificationDelivery>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleSocialVolumeSelectorScopesInner),
+            ]),
+            () => ListBuilder<ChronicleSocialVolumeSelectorScopesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DeceptionPayloadChecksInner)]),
+            () => ListBuilder<DeceptionPayloadChecksInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelCalibrationBinsInner)]),
+            () => ListBuilder<IntelCalibrationBinsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(PropagationGraphCrossPlatformOrderInner),
+            ]),
+            () => ListBuilder<PropagationGraphCrossPlatformOrderInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TuningLogEntry)]),
+            () => ListBuilder<TuningLogEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EdpStream)]),
+            () => ListBuilder<EdpStream>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MediaFingerprintUsesInner)]),
+            () => ListBuilder<MediaFingerprintUsesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelBoardBenchmarksInner)]),
+            () => ListBuilder<IntelBoardBenchmarksInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PolPlace)]),
+            () => ListBuilder<PolPlace>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SampleValue)]),
+            () => ListBuilder<SampleValue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(HypothesisSetDraftWarningsInner),
+            ]),
+            () => ListBuilder<HypothesisSetDraftWarningsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(StatsSeriesSeriesInnerPointsInner),
+            ]),
+            () => ListBuilder<StatsSeriesSeriesInnerPointsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(TagAssignResultSkippedInner)]),
+            () => ListBuilder<TagAssignResultSkippedInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ExportLicenceSummaryLicencesInner),
+            ]),
+            () => ListBuilder<ExportLicenceSummaryLicencesInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(ChronicleSuggestionEstimateLayersInner),
+            ]),
+            () => ListBuilder<ChronicleSuggestionEstimateLayersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(InfraNode)]),
+            () => ListBuilder<InfraNode>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AskThreadPageItemsInner)]),
+            () => ListBuilder<AskThreadPageItemsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(JsonFeedAuthorsInner)]),
+            () => ListBuilder<JsonFeedAuthorsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(IntelEventMember)]),
+            () => ListBuilder<IntelEventMember>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(FrameItem)]),
+            () => ListBuilder<FrameItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SocialCue)]),
+            () => ListBuilder<SocialCue>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PropagationNode)]),
+            () => ListBuilder<PropagationNode>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SeriesForecastForecastsInner)]),
+            () => ListBuilder<SeriesForecastForecastsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CollectionGap)]),
+            () => ListBuilder<CollectionGap>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AuditEvent)]),
+            () => ListBuilder<AuditEvent>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(StormTrackPayloadHistoryInner),
+            ]),
+            () => ListBuilder<StormTrackPayloadHistoryInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(MaintenanceRunStepsInner)]),
+            () => ListBuilder<MaintenanceRunStepsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(AskCitation)]),
+            () => ListBuilder<AskCitation>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(bool)]),
+            () => MapBuilder<String, bool>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EscalationPolicy)]),
+            () => ListBuilder<EscalationPolicy>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, [FullType(String), FullType(Severity)]),
+            () => MapBuilder<String, Severity>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PushDevice)]),
+            () => ListBuilder<PushDevice>(),
+          )
+          ..add(Change.serializer)
+          ..add(const OneOfSerializer())
+          ..add(const AnyOfSerializer())
+          ..add(const DateSerializer())
+          ..add(Iso8601DateTimeSerializer()))
+        .build();
 
 Serializers standardSerializers =
     (serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

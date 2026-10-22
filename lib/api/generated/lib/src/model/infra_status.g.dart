@@ -21,13 +21,13 @@ class _$InfraStatus extends InfraStatus {
   factory _$InfraStatus([void Function(InfraStatusBuilder)? updates]) =>
       (InfraStatusBuilder()..update(updates))._build();
 
-  _$InfraStatus._(
-      {required this.built,
-      required this.building,
-      this.lastBuild,
-      this.nodesByType,
-      this.osmExtractDate})
-      : super._();
+  _$InfraStatus._({
+    required this.built,
+    required this.building,
+    this.lastBuild,
+    this.nodesByType,
+    this.osmExtractDate,
+  }) : super._();
   @override
   InfraStatus rebuild(void Function(InfraStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -129,12 +129,19 @@ class InfraStatusBuilder implements Builder<InfraStatus, InfraStatusBuilder> {
   _$InfraStatus _build() {
     _$InfraStatus _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraStatus._(
             built: BuiltValueNullFieldError.checkNotNull(
-                built, r'InfraStatus', 'built'),
+              built,
+              r'InfraStatus',
+              'built',
+            ),
             building: BuiltValueNullFieldError.checkNotNull(
-                building, r'InfraStatus', 'building'),
+              building,
+              r'InfraStatus',
+              'building',
+            ),
             lastBuild: _lastBuild?.build(),
             nodesByType: _nodesByType?.build(),
             osmExtractDate: osmExtractDate,
@@ -148,7 +155,10 @@ class InfraStatusBuilder implements Builder<InfraStatus, InfraStatusBuilder> {
         _nodesByType?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraStatus', _$failedField, e.toString());
+          r'InfraStatus',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

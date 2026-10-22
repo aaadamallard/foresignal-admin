@@ -16,17 +16,20 @@ class _$RelationProvenance extends RelationProvenance {
   @override
   final String? operator_;
 
-  factory _$RelationProvenance(
-          [void Function(RelationProvenanceBuilder)? updates]) =>
-      (RelationProvenanceBuilder()..update(updates))._build();
+  factory _$RelationProvenance([
+    void Function(RelationProvenanceBuilder)? updates,
+  ]) => (RelationProvenanceBuilder()..update(updates))._build();
 
-  _$RelationProvenance._(
-      {this.component, this.version, this.manifestId, this.operator_})
-      : super._();
+  _$RelationProvenance._({
+    this.component,
+    this.version,
+    this.manifestId,
+    this.operator_,
+  }) : super._();
   @override
   RelationProvenance rebuild(
-          void Function(RelationProvenanceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RelationProvenanceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RelationProvenanceBuilder toBuilder() =>
@@ -114,7 +117,8 @@ class RelationProvenanceBuilder
   RelationProvenance build() => _build();
 
   _$RelationProvenance _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RelationProvenance._(
           component: component,
           version: version,

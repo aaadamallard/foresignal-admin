@@ -16,17 +16,20 @@ class _$AssessmentBundleObjectsInner extends AssessmentBundleObjectsInner {
   @override
   final Provenance? provenance;
 
-  factory _$AssessmentBundleObjectsInner(
-          [void Function(AssessmentBundleObjectsInnerBuilder)? updates]) =>
-      (AssessmentBundleObjectsInnerBuilder()..update(updates))._build();
+  factory _$AssessmentBundleObjectsInner([
+    void Function(AssessmentBundleObjectsInnerBuilder)? updates,
+  ]) => (AssessmentBundleObjectsInnerBuilder()..update(updates))._build();
 
-  _$AssessmentBundleObjectsInner._(
-      {required this.ref, required this.envelope, this.data, this.provenance})
-      : super._();
+  _$AssessmentBundleObjectsInner._({
+    required this.ref,
+    required this.envelope,
+    this.data,
+    this.provenance,
+  }) : super._();
   @override
   AssessmentBundleObjectsInner rebuild(
-          void Function(AssessmentBundleObjectsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AssessmentBundleObjectsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AssessmentBundleObjectsInnerBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$AssessmentBundleObjectsInner extends AssessmentBundleObjectsInner {
 
 class AssessmentBundleObjectsInnerBuilder
     implements
-        Builder<AssessmentBundleObjectsInner,
-            AssessmentBundleObjectsInnerBuilder> {
+        Builder<
+          AssessmentBundleObjectsInner,
+          AssessmentBundleObjectsInnerBuilder
+        > {
   _$AssessmentBundleObjectsInner? _$v;
 
   String? _ref;
@@ -122,10 +127,14 @@ class AssessmentBundleObjectsInnerBuilder
   _$AssessmentBundleObjectsInner _build() {
     _$AssessmentBundleObjectsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AssessmentBundleObjectsInner._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'AssessmentBundleObjectsInner', 'ref'),
+              ref,
+              r'AssessmentBundleObjectsInner',
+              'ref',
+            ),
             envelope: envelope.build(),
             data: _data?.build(),
             provenance: _provenance?.build(),
@@ -141,7 +150,10 @@ class AssessmentBundleObjectsInnerBuilder
         _provenance?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AssessmentBundleObjectsInner', _$failedField, e.toString());
+          r'AssessmentBundleObjectsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

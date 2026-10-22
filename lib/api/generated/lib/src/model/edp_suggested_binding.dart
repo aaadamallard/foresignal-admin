@@ -43,7 +43,7 @@ class _$EdpSuggestedBindingSerializer
   @override
   final Iterable<Type> types = const [
     EdpSuggestedBinding,
-    _$EdpSuggestedBinding
+    _$EdpSuggestedBinding,
   ];
 
   @override
@@ -63,8 +63,10 @@ class _$EdpSuggestedBindingSerializer
       yield r'config';
       yield serializers.serialize(
         object.config,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -75,9 +77,11 @@ class _$EdpSuggestedBindingSerializer
     EdpSuggestedBinding object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +97,26 @@ class _$EdpSuggestedBindingSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'target':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(EdpSuggestedBindingTargetEnum),
-          ) as EdpSuggestedBindingTargetEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      EdpSuggestedBindingTargetEnum,
+                    ),
+                  )
+                  as EdpSuggestedBindingTargetEnum;
           result.target = valueDes;
           break;
         case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.config.replace(valueDes);
           break;

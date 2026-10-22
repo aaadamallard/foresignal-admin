@@ -7,26 +7,26 @@ part of 'evidence_item_patch.dart';
 // **************************************************************************
 
 const EvidenceItemPatchSourceReliabilityEnum
-    _$evidenceItemPatchSourceReliabilityEnum_A =
+_$evidenceItemPatchSourceReliabilityEnum_A =
     const EvidenceItemPatchSourceReliabilityEnum._('A');
 const EvidenceItemPatchSourceReliabilityEnum
-    _$evidenceItemPatchSourceReliabilityEnum_B =
+_$evidenceItemPatchSourceReliabilityEnum_B =
     const EvidenceItemPatchSourceReliabilityEnum._('B');
 const EvidenceItemPatchSourceReliabilityEnum
-    _$evidenceItemPatchSourceReliabilityEnum_C =
+_$evidenceItemPatchSourceReliabilityEnum_C =
     const EvidenceItemPatchSourceReliabilityEnum._('C');
 const EvidenceItemPatchSourceReliabilityEnum
-    _$evidenceItemPatchSourceReliabilityEnum_D =
+_$evidenceItemPatchSourceReliabilityEnum_D =
     const EvidenceItemPatchSourceReliabilityEnum._('D');
 const EvidenceItemPatchSourceReliabilityEnum
-    _$evidenceItemPatchSourceReliabilityEnum_E =
+_$evidenceItemPatchSourceReliabilityEnum_E =
     const EvidenceItemPatchSourceReliabilityEnum._('E');
 const EvidenceItemPatchSourceReliabilityEnum
-    _$evidenceItemPatchSourceReliabilityEnum_F =
+_$evidenceItemPatchSourceReliabilityEnum_F =
     const EvidenceItemPatchSourceReliabilityEnum._('F');
 
 EvidenceItemPatchSourceReliabilityEnum
-    _$evidenceItemPatchSourceReliabilityEnumValueOf(String name) {
+_$evidenceItemPatchSourceReliabilityEnumValueOf(String name) {
   switch (name) {
     case 'A':
       return _$evidenceItemPatchSourceReliabilityEnum_A;
@@ -46,18 +46,20 @@ EvidenceItemPatchSourceReliabilityEnum
 }
 
 final BuiltSet<EvidenceItemPatchSourceReliabilityEnum>
-    _$evidenceItemPatchSourceReliabilityEnumValues = BuiltSet<
-        EvidenceItemPatchSourceReliabilityEnum>(const <EvidenceItemPatchSourceReliabilityEnum>[
-  _$evidenceItemPatchSourceReliabilityEnum_A,
-  _$evidenceItemPatchSourceReliabilityEnum_B,
-  _$evidenceItemPatchSourceReliabilityEnum_C,
-  _$evidenceItemPatchSourceReliabilityEnum_D,
-  _$evidenceItemPatchSourceReliabilityEnum_E,
-  _$evidenceItemPatchSourceReliabilityEnum_F,
-]);
+_$evidenceItemPatchSourceReliabilityEnumValues =
+    BuiltSet<EvidenceItemPatchSourceReliabilityEnum>(
+      const <EvidenceItemPatchSourceReliabilityEnum>[
+        _$evidenceItemPatchSourceReliabilityEnum_A,
+        _$evidenceItemPatchSourceReliabilityEnum_B,
+        _$evidenceItemPatchSourceReliabilityEnum_C,
+        _$evidenceItemPatchSourceReliabilityEnum_D,
+        _$evidenceItemPatchSourceReliabilityEnum_E,
+        _$evidenceItemPatchSourceReliabilityEnum_F,
+      ],
+    );
 
 Serializer<EvidenceItemPatchSourceReliabilityEnum>
-    _$evidenceItemPatchSourceReliabilityEnumSerializer =
+_$evidenceItemPatchSourceReliabilityEnumSerializer =
     _$EvidenceItemPatchSourceReliabilityEnumSerializer();
 
 class _$EvidenceItemPatchSourceReliabilityEnumSerializer
@@ -81,23 +83,26 @@ class _$EvidenceItemPatchSourceReliabilityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    EvidenceItemPatchSourceReliabilityEnum
+    EvidenceItemPatchSourceReliabilityEnum,
   ];
   @override
   final String wireName = 'EvidenceItemPatchSourceReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          EvidenceItemPatchSourceReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EvidenceItemPatchSourceReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EvidenceItemPatchSourceReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EvidenceItemPatchSourceReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EvidenceItemPatchSourceReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EvidenceItemPatch extends EvidenceItemPatch {
@@ -128,25 +133,25 @@ class _$EvidenceItemPatch extends EvidenceItemPatch {
   @override
   final String? tlp;
 
-  factory _$EvidenceItemPatch(
-          [void Function(EvidenceItemPatchBuilder)? updates]) =>
-      (EvidenceItemPatchBuilder()..update(updates))._build();
+  factory _$EvidenceItemPatch([
+    void Function(EvidenceItemPatchBuilder)? updates,
+  ]) => (EvidenceItemPatchBuilder()..update(updates))._build();
 
-  _$EvidenceItemPatch._(
-      {this.title,
-      this.description,
-      this.attachmentIds,
-      this.url,
-      this.sourceDescription,
-      this.sourceReliability,
-      this.informationCredibility,
-      this.citedSourceId,
-      this.citedRefs,
-      this.geometry,
-      this.eventTime,
-      this.visibility,
-      this.tlp})
-      : super._();
+  _$EvidenceItemPatch._({
+    this.title,
+    this.description,
+    this.attachmentIds,
+    this.url,
+    this.sourceDescription,
+    this.sourceReliability,
+    this.informationCredibility,
+    this.citedSourceId,
+    this.citedRefs,
+    this.geometry,
+    this.eventTime,
+    this.visibility,
+    this.tlp,
+  }) : super._();
   @override
   EvidenceItemPatch rebuild(void Function(EvidenceItemPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -245,8 +250,8 @@ class EvidenceItemPatchBuilder
   EvidenceItemPatchSourceReliabilityEnum? get sourceReliability =>
       _$this._sourceReliability;
   set sourceReliability(
-          EvidenceItemPatchSourceReliabilityEnum? sourceReliability) =>
-      _$this._sourceReliability = sourceReliability;
+    EvidenceItemPatchSourceReliabilityEnum? sourceReliability,
+  ) => _$this._sourceReliability = sourceReliability;
 
   int? _informationCredibility;
   int? get informationCredibility => _$this._informationCredibility;
@@ -321,7 +326,8 @@ class EvidenceItemPatchBuilder
   _$EvidenceItemPatch _build() {
     _$EvidenceItemPatch _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EvidenceItemPatch._(
             title: title,
             description: description,
@@ -349,7 +355,10 @@ class EvidenceItemPatchBuilder
         _geometry?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EvidenceItemPatch', _$failedField, e.toString());
+          r'EvidenceItemPatch',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

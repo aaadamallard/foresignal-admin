@@ -22,23 +22,23 @@ class _$EventStudyResultEventsInner extends EventStudyResultEventsInner {
   @override
   final EventStudyResultEventsInnerCar? car;
 
-  factory _$EventStudyResultEventsInner(
-          [void Function(EventStudyResultEventsInnerBuilder)? updates]) =>
-      (EventStudyResultEventsInnerBuilder()..update(updates))._build();
+  factory _$EventStudyResultEventsInner([
+    void Function(EventStudyResultEventsInnerBuilder)? updates,
+  ]) => (EventStudyResultEventsInnerBuilder()..update(updates))._build();
 
-  _$EventStudyResultEventsInner._(
-      {required this.at,
-      this.ref,
-      required this.clusterId,
-      this.excluded,
-      this.estimationPoints,
-      this.abnormal,
-      this.car})
-      : super._();
+  _$EventStudyResultEventsInner._({
+    required this.at,
+    this.ref,
+    required this.clusterId,
+    this.excluded,
+    this.estimationPoints,
+    this.abnormal,
+    this.car,
+  }) : super._();
   @override
   EventStudyResultEventsInner rebuild(
-          void Function(EventStudyResultEventsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EventStudyResultEventsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EventStudyResultEventsInnerBuilder toBuilder() =>
@@ -87,8 +87,10 @@ class _$EventStudyResultEventsInner extends EventStudyResultEventsInner {
 
 class EventStudyResultEventsInnerBuilder
     implements
-        Builder<EventStudyResultEventsInner,
-            EventStudyResultEventsInnerBuilder> {
+        Builder<
+          EventStudyResultEventsInner,
+          EventStudyResultEventsInnerBuilder
+        > {
   _$EventStudyResultEventsInner? _$v;
 
   DateTime? _at;
@@ -117,8 +119,8 @@ class EventStudyResultEventsInnerBuilder
       _$this._abnormal ??=
           ListBuilder<EventStudyResultEventsInnerAbnormalInner>();
   set abnormal(
-          ListBuilder<EventStudyResultEventsInnerAbnormalInner>? abnormal) =>
-      _$this._abnormal = abnormal;
+    ListBuilder<EventStudyResultEventsInnerAbnormalInner>? abnormal,
+  ) => _$this._abnormal = abnormal;
 
   EventStudyResultEventsInnerCarBuilder? _car;
   EventStudyResultEventsInnerCarBuilder get car =>
@@ -160,13 +162,20 @@ class EventStudyResultEventsInnerBuilder
   _$EventStudyResultEventsInner _build() {
     _$EventStudyResultEventsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventStudyResultEventsInner._(
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'EventStudyResultEventsInner', 'at'),
+              at,
+              r'EventStudyResultEventsInner',
+              'at',
+            ),
             ref: ref,
             clusterId: BuiltValueNullFieldError.checkNotNull(
-                clusterId, r'EventStudyResultEventsInner', 'clusterId'),
+              clusterId,
+              r'EventStudyResultEventsInner',
+              'clusterId',
+            ),
             excluded: excluded,
             estimationPoints: estimationPoints,
             abnormal: _abnormal?.build(),
@@ -181,7 +190,10 @@ class EventStudyResultEventsInnerBuilder
         _car?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventStudyResultEventsInner', _$failedField, e.toString());
+          r'EventStudyResultEventsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

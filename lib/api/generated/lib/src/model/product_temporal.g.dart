@@ -28,10 +28,10 @@ ProductTemporalTypeEnum _$productTemporalTypeEnumValueOf(String name) {
 
 final BuiltSet<ProductTemporalTypeEnum> _$productTemporalTypeEnumValues =
     BuiltSet<ProductTemporalTypeEnum>(const <ProductTemporalTypeEnum>[
-  _$productTemporalTypeEnum_observation,
-  _$productTemporalTypeEnum_forecast,
-  _$productTemporalTypeEnum_pass,
-]);
+      _$productTemporalTypeEnum_observation,
+      _$productTemporalTypeEnum_forecast,
+      _$productTemporalTypeEnum_pass,
+    ]);
 
 Serializer<ProductTemporalTypeEnum> _$productTemporalTypeEnumSerializer =
     _$ProductTemporalTypeEnumSerializer();
@@ -55,16 +55,20 @@ class _$ProductTemporalTypeEnumSerializer
   final String wireName = 'ProductTemporalTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ProductTemporalTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProductTemporalTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProductTemporalTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProductTemporalTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProductTemporalTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProductTemporal extends ProductTemporal {
@@ -86,15 +90,15 @@ class _$ProductTemporal extends ProductTemporal {
   factory _$ProductTemporal([void Function(ProductTemporalBuilder)? updates]) =>
       (ProductTemporalBuilder()..update(updates))._build();
 
-  _$ProductTemporal._(
-      {required this.type,
-      this.cadence,
-      this.maxGap,
-      this.earliest,
-      this.latest,
-      this.retention,
-      this.runs})
-      : super._();
+  _$ProductTemporal._({
+    required this.type,
+    this.cadence,
+    this.maxGap,
+    this.earliest,
+    this.latest,
+    this.retention,
+    this.runs,
+  }) : super._();
   @override
   ProductTemporal rebuild(void Function(ProductTemporalBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -213,10 +217,14 @@ class ProductTemporalBuilder
   _$ProductTemporal _build() {
     _$ProductTemporal _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProductTemporal._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ProductTemporal', 'type'),
+              type,
+              r'ProductTemporal',
+              'type',
+            ),
             cadence: cadence,
             maxGap: maxGap,
             earliest: earliest,
@@ -233,7 +241,10 @@ class ProductTemporalBuilder
         _runs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProductTemporal', _$failedField, e.toString());
+          r'ProductTemporal',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

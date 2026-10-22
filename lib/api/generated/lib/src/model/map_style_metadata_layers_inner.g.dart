@@ -18,21 +18,21 @@ class _$MapStyleMetadataLayersInner extends MapStyleMetadataLayersInner {
   @override
   final num? aggBelowZoom;
 
-  factory _$MapStyleMetadataLayersInner(
-          [void Function(MapStyleMetadataLayersInnerBuilder)? updates]) =>
-      (MapStyleMetadataLayersInnerBuilder()..update(updates))._build();
+  factory _$MapStyleMetadataLayersInner([
+    void Function(MapStyleMetadataLayersInnerBuilder)? updates,
+  ]) => (MapStyleMetadataLayersInnerBuilder()..update(updates))._build();
 
-  _$MapStyleMetadataLayersInner._(
-      {required this.id,
-      required this.kinds,
-      this.attribution,
-      this.minzoom,
-      this.aggBelowZoom})
-      : super._();
+  _$MapStyleMetadataLayersInner._({
+    required this.id,
+    required this.kinds,
+    this.attribution,
+    this.minzoom,
+    this.aggBelowZoom,
+  }) : super._();
   @override
   MapStyleMetadataLayersInner rebuild(
-          void Function(MapStyleMetadataLayersInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MapStyleMetadataLayersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MapStyleMetadataLayersInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$MapStyleMetadataLayersInner extends MapStyleMetadataLayersInner {
 
 class MapStyleMetadataLayersInnerBuilder
     implements
-        Builder<MapStyleMetadataLayersInner,
-            MapStyleMetadataLayersInnerBuilder> {
+        Builder<
+          MapStyleMetadataLayersInner,
+          MapStyleMetadataLayersInnerBuilder
+        > {
   _$MapStyleMetadataLayersInner? _$v;
 
   String? _id;
@@ -132,10 +134,14 @@ class MapStyleMetadataLayersInnerBuilder
   _$MapStyleMetadataLayersInner _build() {
     _$MapStyleMetadataLayersInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MapStyleMetadataLayersInner._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'MapStyleMetadataLayersInner', 'id'),
+              id,
+              r'MapStyleMetadataLayersInner',
+              'id',
+            ),
             kinds: kinds.build(),
             attribution: attribution,
             minzoom: minzoom,
@@ -148,7 +154,10 @@ class MapStyleMetadataLayersInnerBuilder
         kinds.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MapStyleMetadataLayersInner', _$failedField, e.toString());
+          r'MapStyleMetadataLayersInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

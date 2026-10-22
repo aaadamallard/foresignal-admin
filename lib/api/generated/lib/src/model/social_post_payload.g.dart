@@ -15,11 +15,12 @@ const SocialPostPayloadCollectionEnum _$socialPostPayloadCollectionEnum_sample =
 const SocialPostPayloadCollectionEnum _$socialPostPayloadCollectionEnum_cue =
     const SocialPostPayloadCollectionEnum._('cue');
 const SocialPostPayloadCollectionEnum
-    _$socialPostPayloadCollectionEnum_import_ =
+_$socialPostPayloadCollectionEnum_import_ =
     const SocialPostPayloadCollectionEnum._('import_');
 
 SocialPostPayloadCollectionEnum _$socialPostPayloadCollectionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'stream':
       return _$socialPostPayloadCollectionEnum_stream;
@@ -37,17 +38,19 @@ SocialPostPayloadCollectionEnum _$socialPostPayloadCollectionEnumValueOf(
 }
 
 final BuiltSet<SocialPostPayloadCollectionEnum>
-    _$socialPostPayloadCollectionEnumValues = BuiltSet<
-        SocialPostPayloadCollectionEnum>(const <SocialPostPayloadCollectionEnum>[
-  _$socialPostPayloadCollectionEnum_stream,
-  _$socialPostPayloadCollectionEnum_search,
-  _$socialPostPayloadCollectionEnum_sample,
-  _$socialPostPayloadCollectionEnum_cue,
-  _$socialPostPayloadCollectionEnum_import_,
-]);
+_$socialPostPayloadCollectionEnumValues =
+    BuiltSet<SocialPostPayloadCollectionEnum>(
+      const <SocialPostPayloadCollectionEnum>[
+        _$socialPostPayloadCollectionEnum_stream,
+        _$socialPostPayloadCollectionEnum_search,
+        _$socialPostPayloadCollectionEnum_sample,
+        _$socialPostPayloadCollectionEnum_cue,
+        _$socialPostPayloadCollectionEnum_import_,
+      ],
+    );
 
 Serializer<SocialPostPayloadCollectionEnum>
-    _$socialPostPayloadCollectionEnumSerializer =
+_$socialPostPayloadCollectionEnumSerializer =
     _$SocialPostPayloadCollectionEnumSerializer();
 
 class _$SocialPostPayloadCollectionEnumSerializer
@@ -74,16 +77,19 @@ class _$SocialPostPayloadCollectionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SocialPostPayloadCollectionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SocialPostPayloadCollectionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialPostPayloadCollectionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialPostPayloadCollectionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialPostPayloadCollectionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialPostPayload extends SocialPostPayload {
@@ -134,35 +140,35 @@ class _$SocialPostPayload extends SocialPostPayload {
   @override
   final bool deleted;
 
-  factory _$SocialPostPayload(
-          [void Function(SocialPostPayloadBuilder)? updates]) =>
-      (SocialPostPayloadBuilder()..update(updates))._build();
+  factory _$SocialPostPayload([
+    void Function(SocialPostPayloadBuilder)? updates,
+  ]) => (SocialPostPayloadBuilder()..update(updates))._build();
 
-  _$SocialPostPayload._(
-      {required this.platform,
-      required this.postId,
-      this.url,
-      required this.author,
-      required this.authorKey,
-      this.text,
-      this.language,
-      required this.createdAt,
-      required this.observedAt,
-      this.replyTo,
-      this.quoteOf,
-      this.repostOf,
-      this.links,
-      this.hashtags,
-      this.mentions,
-      this.media,
-      this.engagement,
-      this.geo,
-      this.channel,
-      required this.collection,
-      this.topicIds,
-      this.cueId,
-      required this.deleted})
-      : super._();
+  _$SocialPostPayload._({
+    required this.platform,
+    required this.postId,
+    this.url,
+    required this.author,
+    required this.authorKey,
+    this.text,
+    this.language,
+    required this.createdAt,
+    required this.observedAt,
+    this.replyTo,
+    this.quoteOf,
+    this.repostOf,
+    this.links,
+    this.hashtags,
+    this.mentions,
+    this.media,
+    this.engagement,
+    this.geo,
+    this.channel,
+    required this.collection,
+    this.topicIds,
+    this.cueId,
+    required this.deleted,
+  }) : super._();
   @override
   SocialPostPayload rebuild(void Function(SocialPostPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -417,22 +423,38 @@ class SocialPostPayloadBuilder
   _$SocialPostPayload _build() {
     _$SocialPostPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialPostPayload._(
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'SocialPostPayload', 'platform'),
+              platform,
+              r'SocialPostPayload',
+              'platform',
+            ),
             postId: BuiltValueNullFieldError.checkNotNull(
-                postId, r'SocialPostPayload', 'postId'),
+              postId,
+              r'SocialPostPayload',
+              'postId',
+            ),
             url: url,
             author: author.build(),
             authorKey: BuiltValueNullFieldError.checkNotNull(
-                authorKey, r'SocialPostPayload', 'authorKey'),
+              authorKey,
+              r'SocialPostPayload',
+              'authorKey',
+            ),
             text: text,
             language: language,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'SocialPostPayload', 'createdAt'),
+              createdAt,
+              r'SocialPostPayload',
+              'createdAt',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'SocialPostPayload', 'observedAt'),
+              observedAt,
+              r'SocialPostPayload',
+              'observedAt',
+            ),
             replyTo: _replyTo?.build(),
             quoteOf: _quoteOf?.build(),
             repostOf: _repostOf?.build(),
@@ -444,11 +466,17 @@ class SocialPostPayloadBuilder
             geo: _geo?.build(),
             channel: channel,
             collection: BuiltValueNullFieldError.checkNotNull(
-                collection, r'SocialPostPayload', 'collection'),
+              collection,
+              r'SocialPostPayload',
+              'collection',
+            ),
             topicIds: _topicIds?.build(),
             cueId: cueId,
             deleted: BuiltValueNullFieldError.checkNotNull(
-                deleted, r'SocialPostPayload', 'deleted'),
+              deleted,
+              r'SocialPostPayload',
+              'deleted',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -479,7 +507,10 @@ class SocialPostPayloadBuilder
         _topicIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPostPayload', _$failedField, e.toString());
+          r'SocialPostPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

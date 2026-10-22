@@ -18,21 +18,21 @@ class _$SystemInfoScheduler extends SystemInfoScheduler {
   @override
   final int? ingestQueueDepth;
 
-  factory _$SystemInfoScheduler(
-          [void Function(SystemInfoSchedulerBuilder)? updates]) =>
-      (SystemInfoSchedulerBuilder()..update(updates))._build();
+  factory _$SystemInfoScheduler([
+    void Function(SystemInfoSchedulerBuilder)? updates,
+  ]) => (SystemInfoSchedulerBuilder()..update(updates))._build();
 
-  _$SystemInfoScheduler._(
-      {this.running,
-      this.scheduledSources,
-      this.activeFetches,
-      this.activeStreams,
-      this.ingestQueueDepth})
-      : super._();
+  _$SystemInfoScheduler._({
+    this.running,
+    this.scheduledSources,
+    this.activeFetches,
+    this.activeStreams,
+    this.ingestQueueDepth,
+  }) : super._();
   @override
   SystemInfoScheduler rebuild(
-          void Function(SystemInfoSchedulerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SystemInfoSchedulerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SystemInfoSchedulerBuilder toBuilder() =>
@@ -132,7 +132,8 @@ class SystemInfoSchedulerBuilder
   SystemInfoScheduler build() => _build();
 
   _$SystemInfoScheduler _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoScheduler._(
           running: running,
           scheduledSources: scheduledSources,

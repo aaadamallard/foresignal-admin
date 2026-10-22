@@ -13,16 +13,16 @@ class _$RetentionRunResultPerSourceValue
   @override
   final int? floorSeq;
 
-  factory _$RetentionRunResultPerSourceValue(
-          [void Function(RetentionRunResultPerSourceValueBuilder)? updates]) =>
-      (RetentionRunResultPerSourceValueBuilder()..update(updates))._build();
+  factory _$RetentionRunResultPerSourceValue([
+    void Function(RetentionRunResultPerSourceValueBuilder)? updates,
+  ]) => (RetentionRunResultPerSourceValueBuilder()..update(updates))._build();
 
   _$RetentionRunResultPerSourceValue._({this.versionsDeleted, this.floorSeq})
-      : super._();
+    : super._();
   @override
   RetentionRunResultPerSourceValue rebuild(
-          void Function(RetentionRunResultPerSourceValueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RetentionRunResultPerSourceValueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RetentionRunResultPerSourceValueBuilder toBuilder() =>
@@ -56,8 +56,10 @@ class _$RetentionRunResultPerSourceValue
 
 class RetentionRunResultPerSourceValueBuilder
     implements
-        Builder<RetentionRunResultPerSourceValue,
-            RetentionRunResultPerSourceValueBuilder> {
+        Builder<
+          RetentionRunResultPerSourceValue,
+          RetentionRunResultPerSourceValueBuilder
+        > {
   _$RetentionRunResultPerSourceValue? _$v;
 
   int? _versionsDeleted;
@@ -97,7 +99,8 @@ class RetentionRunResultPerSourceValueBuilder
   RetentionRunResultPerSourceValue build() => _build();
 
   _$RetentionRunResultPerSourceValue _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RetentionRunResultPerSourceValue._(
           versionsDeleted: versionsDeleted,
           floorSeq: floorSeq,

@@ -37,9 +37,9 @@ abstract class WeatherContextLightning
 
   WeatherContextLightning._();
 
-  factory WeatherContextLightning(
-          [void updates(WeatherContextLightningBuilder b)]) =
-      _$WeatherContextLightning;
+  factory WeatherContextLightning([
+    void updates(WeatherContextLightningBuilder b),
+  ]) = _$WeatherContextLightning;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WeatherContextLightningBuilder b) => b;
@@ -54,7 +54,7 @@ class _$WeatherContextLightningSerializer
   @override
   final Iterable<Type> types = const [
     WeatherContextLightning,
-    _$WeatherContextLightning
+    _$WeatherContextLightning,
   ];
 
   @override
@@ -99,9 +99,11 @@ class _$WeatherContextLightningSerializer
     WeatherContextLightning object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,33 +119,41 @@ class _$WeatherContextLightningSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WeatherSectionStatus),
-          ) as WeatherSectionStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WeatherSectionStatus),
+                  )
+                  as WeatherSectionStatus;
           result.status = valueDes;
           break;
         case r'asOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.asOf = valueDes;
           break;
         case r'statusText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.statusText = valueDes;
           break;
         case r'flashes20km15m':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.flashes20km15m = valueDes;
           break;

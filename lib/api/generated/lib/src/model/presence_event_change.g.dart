@@ -23,14 +23,15 @@ PresenceEventChangeTypeEnum _$presenceEventChangeTypeEnumValueOf(String name) {
 }
 
 final BuiltSet<PresenceEventChangeTypeEnum>
-    _$presenceEventChangeTypeEnumValues =
-    BuiltSet<PresenceEventChangeTypeEnum>(const <PresenceEventChangeTypeEnum>[
-  _$presenceEventChangeTypeEnum_joined,
-  _$presenceEventChangeTypeEnum_left,
-]);
+_$presenceEventChangeTypeEnumValues = BuiltSet<PresenceEventChangeTypeEnum>(
+  const <PresenceEventChangeTypeEnum>[
+    _$presenceEventChangeTypeEnum_joined,
+    _$presenceEventChangeTypeEnum_left,
+  ],
+);
 
 Serializer<PresenceEventChangeTypeEnum>
-    _$presenceEventChangeTypeEnumSerializer =
+_$presenceEventChangeTypeEnumSerializer =
     _$PresenceEventChangeTypeEnumSerializer();
 
 class _$PresenceEventChangeTypeEnumSerializer
@@ -50,16 +51,20 @@ class _$PresenceEventChangeTypeEnumSerializer
   final String wireName = 'PresenceEventChangeTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PresenceEventChangeTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PresenceEventChangeTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PresenceEventChangeTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PresenceEventChangeTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PresenceEventChangeTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PresenceEventChange extends PresenceEventChange {
@@ -68,16 +73,16 @@ class _$PresenceEventChange extends PresenceEventChange {
   @override
   final String clientId;
 
-  factory _$PresenceEventChange(
-          [void Function(PresenceEventChangeBuilder)? updates]) =>
-      (PresenceEventChangeBuilder()..update(updates))._build();
+  factory _$PresenceEventChange([
+    void Function(PresenceEventChangeBuilder)? updates,
+  ]) => (PresenceEventChangeBuilder()..update(updates))._build();
 
   _$PresenceEventChange._({required this.type, required this.clientId})
-      : super._();
+    : super._();
   @override
   PresenceEventChange rebuild(
-          void Function(PresenceEventChangeBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PresenceEventChangeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PresenceEventChangeBuilder toBuilder() =>
@@ -149,12 +154,19 @@ class PresenceEventChangeBuilder
   PresenceEventChange build() => _build();
 
   _$PresenceEventChange _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PresenceEventChange._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'PresenceEventChange', 'type'),
+            type,
+            r'PresenceEventChange',
+            'type',
+          ),
           clientId: BuiltValueNullFieldError.checkNotNull(
-              clientId, r'PresenceEventChange', 'clientId'),
+            clientId,
+            r'PresenceEventChange',
+            'clientId',
+          ),
         );
     replace(_$result);
     return _$result;

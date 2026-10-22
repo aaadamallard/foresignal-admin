@@ -35,20 +35,20 @@ class _$ImportReport extends ImportReport {
   factory _$ImportReport([void Function(ImportReportBuilder)? updates]) =>
       (ImportReportBuilder()..update(updates))._build();
 
-  _$ImportReport._(
-      {required this.sourcesApplied,
-      required this.sourcesUnknown,
-      this.triggersUpserted,
-      this.channelsUpserted,
-      this.briefingsUpserted,
-      this.customSourcesUpserted,
-      this.llmProvidersUpserted,
-      this.warnings,
-      this.placesUpserted,
-      this.viewsUpserted,
-      this.watchlistsUpserted,
-      this.pushProvidersUpserted})
-      : super._();
+  _$ImportReport._({
+    required this.sourcesApplied,
+    required this.sourcesUnknown,
+    this.triggersUpserted,
+    this.channelsUpserted,
+    this.briefingsUpserted,
+    this.customSourcesUpserted,
+    this.llmProvidersUpserted,
+    this.warnings,
+    this.placesUpserted,
+    this.viewsUpserted,
+    this.watchlistsUpserted,
+    this.pushProvidersUpserted,
+  }) : super._();
   @override
   ImportReport rebuild(void Function(ImportReportBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -218,7 +218,8 @@ class ImportReportBuilder
   _$ImportReport _build() {
     _$ImportReport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ImportReport._(
             sourcesApplied: sourcesApplied.build(),
             sourcesUnknown: sourcesUnknown.build(),
@@ -245,7 +246,10 @@ class ImportReportBuilder
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ImportReport', _$failedField, e.toString());
+          r'ImportReport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -10,15 +10,15 @@ class _$AdminTokenResponse extends AdminTokenResponse {
   @override
   final String token;
 
-  factory _$AdminTokenResponse(
-          [void Function(AdminTokenResponseBuilder)? updates]) =>
-      (AdminTokenResponseBuilder()..update(updates))._build();
+  factory _$AdminTokenResponse([
+    void Function(AdminTokenResponseBuilder)? updates,
+  ]) => (AdminTokenResponseBuilder()..update(updates))._build();
 
   _$AdminTokenResponse._({required this.token}) : super._();
   @override
   AdminTokenResponse rebuild(
-          void Function(AdminTokenResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AdminTokenResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AdminTokenResponseBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$AdminTokenResponse extends AdminTokenResponse {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AdminTokenResponse')
-          ..add('token', token))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'AdminTokenResponse',
+    )..add('token', token)).toString();
   }
 }
 
@@ -81,10 +81,14 @@ class AdminTokenResponseBuilder
   AdminTokenResponse build() => _build();
 
   _$AdminTokenResponse _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AdminTokenResponse._(
           token: BuiltValueNullFieldError.checkNotNull(
-              token, r'AdminTokenResponse', 'token'),
+            token,
+            r'AdminTokenResponse',
+            'token',
+          ),
         );
     replace(_$result);
     return _$result;

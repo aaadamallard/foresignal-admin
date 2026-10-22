@@ -19,21 +19,21 @@ class _$RuleBacktestResultVariantsInner
   @override
   final RuleBacktestResultOverlap? overlap;
 
-  factory _$RuleBacktestResultVariantsInner(
-          [void Function(RuleBacktestResultVariantsInnerBuilder)? updates]) =>
-      (RuleBacktestResultVariantsInnerBuilder()..update(updates))._build();
+  factory _$RuleBacktestResultVariantsInner([
+    void Function(RuleBacktestResultVariantsInnerBuilder)? updates,
+  ]) => (RuleBacktestResultVariantsInnerBuilder()..update(updates))._build();
 
-  _$RuleBacktestResultVariantsInner._(
-      {required this.index,
-      required this.patch_,
-      required this.wouldFire,
-      this.perDay,
-      this.overlap})
-      : super._();
+  _$RuleBacktestResultVariantsInner._({
+    required this.index,
+    required this.patch_,
+    required this.wouldFire,
+    this.perDay,
+    this.overlap,
+  }) : super._();
   @override
   RuleBacktestResultVariantsInner rebuild(
-          void Function(RuleBacktestResultVariantsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RuleBacktestResultVariantsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RuleBacktestResultVariantsInnerBuilder toBuilder() =>
@@ -76,8 +76,10 @@ class _$RuleBacktestResultVariantsInner
 
 class RuleBacktestResultVariantsInnerBuilder
     implements
-        Builder<RuleBacktestResultVariantsInner,
-            RuleBacktestResultVariantsInnerBuilder> {
+        Builder<
+          RuleBacktestResultVariantsInner,
+          RuleBacktestResultVariantsInnerBuilder
+        > {
   _$RuleBacktestResultVariantsInner? _$v;
 
   int? _index;
@@ -139,13 +141,20 @@ class RuleBacktestResultVariantsInnerBuilder
   _$RuleBacktestResultVariantsInner _build() {
     _$RuleBacktestResultVariantsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RuleBacktestResultVariantsInner._(
             index: BuiltValueNullFieldError.checkNotNull(
-                index, r'RuleBacktestResultVariantsInner', 'index'),
+              index,
+              r'RuleBacktestResultVariantsInner',
+              'index',
+            ),
             patch_: patch_.build(),
             wouldFire: BuiltValueNullFieldError.checkNotNull(
-                wouldFire, r'RuleBacktestResultVariantsInner', 'wouldFire'),
+              wouldFire,
+              r'RuleBacktestResultVariantsInner',
+              'wouldFire',
+            ),
             perDay: _perDay?.build(),
             overlap: _overlap?.build(),
           );
@@ -161,7 +170,10 @@ class RuleBacktestResultVariantsInnerBuilder
         _overlap?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RuleBacktestResultVariantsInner', _$failedField, e.toString());
+          r'RuleBacktestResultVariantsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -20,8 +20,8 @@ NtfyMessageEventEnum _$ntfyMessageEventEnumValueOf(String name) {
 
 final BuiltSet<NtfyMessageEventEnum> _$ntfyMessageEventEnumValues =
     BuiltSet<NtfyMessageEventEnum>(const <NtfyMessageEventEnum>[
-  _$ntfyMessageEventEnum_message,
-]);
+      _$ntfyMessageEventEnum_message,
+    ]);
 
 Serializer<NtfyMessageEventEnum> _$ntfyMessageEventEnumSerializer =
     _$NtfyMessageEventEnumSerializer();
@@ -41,15 +41,20 @@ class _$NtfyMessageEventEnumSerializer
   final String wireName = 'NtfyMessageEventEnum';
 
   @override
-  Object serialize(Serializers serializers, NtfyMessageEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NtfyMessageEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  NtfyMessageEventEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NtfyMessageEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  NtfyMessageEventEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NtfyMessageEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NtfyMessage extends NtfyMessage {
@@ -75,17 +80,17 @@ class _$NtfyMessage extends NtfyMessage {
   factory _$NtfyMessage([void Function(NtfyMessageBuilder)? updates]) =>
       (NtfyMessageBuilder()..update(updates))._build();
 
-  _$NtfyMessage._(
-      {required this.id,
-      required this.time,
-      required this.event,
-      required this.topic,
-      this.message,
-      this.title,
-      this.priority,
-      this.tags,
-      this.click})
-      : super._();
+  _$NtfyMessage._({
+    required this.id,
+    required this.time,
+    required this.event,
+    required this.topic,
+    this.message,
+    this.title,
+    this.priority,
+    this.tags,
+    this.click,
+  }) : super._();
   @override
   NtfyMessage rebuild(void Function(NtfyMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -216,15 +221,25 @@ class NtfyMessageBuilder implements Builder<NtfyMessage, NtfyMessageBuilder> {
   _$NtfyMessage _build() {
     _$NtfyMessage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NtfyMessage._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'NtfyMessage', 'id'),
             time: BuiltValueNullFieldError.checkNotNull(
-                time, r'NtfyMessage', 'time'),
+              time,
+              r'NtfyMessage',
+              'time',
+            ),
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'NtfyMessage', 'event'),
+              event,
+              r'NtfyMessage',
+              'event',
+            ),
             topic: BuiltValueNullFieldError.checkNotNull(
-                topic, r'NtfyMessage', 'topic'),
+              topic,
+              r'NtfyMessage',
+              'topic',
+            ),
             message: message,
             title: title,
             priority: priority,
@@ -238,7 +253,10 @@ class NtfyMessageBuilder implements Builder<NtfyMessage, NtfyMessageBuilder> {
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NtfyMessage', _$failedField, e.toString());
+          r'NtfyMessage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

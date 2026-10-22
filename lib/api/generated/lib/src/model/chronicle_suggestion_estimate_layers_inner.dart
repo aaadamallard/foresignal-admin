@@ -17,8 +17,10 @@ part 'chronicle_suggestion_estimate_layers_inner.g.dart';
 @BuiltValue()
 abstract class ChronicleSuggestionEstimateLayersInner
     implements
-        Built<ChronicleSuggestionEstimateLayersInner,
-            ChronicleSuggestionEstimateLayersInnerBuilder> {
+        Built<
+          ChronicleSuggestionEstimateLayersInner,
+          ChronicleSuggestionEstimateLayersInnerBuilder
+        > {
   @BuiltValueField(wireName: r'name')
   String get name;
 
@@ -30,9 +32,9 @@ abstract class ChronicleSuggestionEstimateLayersInner
 
   ChronicleSuggestionEstimateLayersInner._();
 
-  factory ChronicleSuggestionEstimateLayersInner(
-          [void updates(ChronicleSuggestionEstimateLayersInnerBuilder b)]) =
-      _$ChronicleSuggestionEstimateLayersInner;
+  factory ChronicleSuggestionEstimateLayersInner([
+    void updates(ChronicleSuggestionEstimateLayersInnerBuilder b),
+  ]) = _$ChronicleSuggestionEstimateLayersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleSuggestionEstimateLayersInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$ChronicleSuggestionEstimateLayersInnerSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleSuggestionEstimateLayersInner,
-    _$ChronicleSuggestionEstimateLayersInner
+    _$ChronicleSuggestionEstimateLayersInner,
   ];
 
   @override
@@ -85,9 +87,11 @@ class _$ChronicleSuggestionEstimateLayersInnerSerializer
     ChronicleSuggestionEstimateLayersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,25 +107,31 @@ class _$ChronicleSuggestionEstimateLayersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'rowsPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.rowsPerDay = valueDes;
           break;
         case r'bytesPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.bytesPerDay = valueDes;
           break;

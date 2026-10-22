@@ -18,7 +18,7 @@ class _$GroupInput extends GroupInput {
       (GroupInputBuilder()..update(updates))._build();
 
   _$GroupInput._({required this.name, this.description, this.members})
-      : super._();
+    : super._();
   @override
   GroupInput rebuild(void Function(GroupInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -103,10 +103,14 @@ class GroupInputBuilder implements Builder<GroupInput, GroupInputBuilder> {
   _$GroupInput _build() {
     _$GroupInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$GroupInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'GroupInput', 'name'),
+              name,
+              r'GroupInput',
+              'name',
+            ),
             description: description,
             members: _members?.build(),
           );
@@ -117,7 +121,10 @@ class GroupInputBuilder implements Builder<GroupInput, GroupInputBuilder> {
         _members?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GroupInput', _$failedField, e.toString());
+          r'GroupInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

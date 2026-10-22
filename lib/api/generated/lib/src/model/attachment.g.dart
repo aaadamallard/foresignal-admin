@@ -21,13 +21,13 @@ class _$Attachment extends Attachment {
   factory _$Attachment([void Function(AttachmentBuilder)? updates]) =>
       (AttachmentBuilder()..update(updates))._build();
 
-  _$Attachment._(
-      {required this.filename,
-      required this.contentType,
-      required this.bytes,
-      this.mediaId,
-      this.url})
-      : super._();
+  _$Attachment._({
+    required this.filename,
+    required this.contentType,
+    required this.bytes,
+    this.mediaId,
+    this.url,
+  }) : super._();
   @override
   Attachment rebuild(void Function(AttachmentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -124,14 +124,24 @@ class AttachmentBuilder implements Builder<Attachment, AttachmentBuilder> {
   Attachment build() => _build();
 
   _$Attachment _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$Attachment._(
           filename: BuiltValueNullFieldError.checkNotNull(
-              filename, r'Attachment', 'filename'),
+            filename,
+            r'Attachment',
+            'filename',
+          ),
           contentType: BuiltValueNullFieldError.checkNotNull(
-              contentType, r'Attachment', 'contentType'),
+            contentType,
+            r'Attachment',
+            'contentType',
+          ),
           bytes: BuiltValueNullFieldError.checkNotNull(
-              bytes, r'Attachment', 'bytes'),
+            bytes,
+            r'Attachment',
+            'bytes',
+          ),
           mediaId: mediaId,
           url: url,
         );

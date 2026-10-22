@@ -19,12 +19,12 @@ class _$SeriesPointPage extends SeriesPointPage {
   factory _$SeriesPointPage([void Function(SeriesPointPageBuilder)? updates]) =>
       (SeriesPointPageBuilder()..update(updates))._build();
 
-  _$SeriesPointPage._(
-      {required this.series,
-      required this.items,
-      this.nextCursor,
-      this.truncated})
-      : super._();
+  _$SeriesPointPage._({
+    required this.series,
+    required this.items,
+    this.nextCursor,
+    this.truncated,
+  }) : super._();
   @override
   SeriesPointPage rebuild(void Function(SeriesPointPageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -118,7 +118,8 @@ class SeriesPointPageBuilder
   _$SeriesPointPage _build() {
     _$SeriesPointPage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesPointPage._(
             series: series.build(),
             items: items.build(),
@@ -134,7 +135,10 @@ class SeriesPointPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesPointPage', _$failedField, e.toString());
+          r'SeriesPointPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

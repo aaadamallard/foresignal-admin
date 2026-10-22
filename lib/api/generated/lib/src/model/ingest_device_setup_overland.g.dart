@@ -12,15 +12,15 @@ class _$IngestDeviceSetupOverland extends IngestDeviceSetupOverland {
   @override
   final String? token;
 
-  factory _$IngestDeviceSetupOverland(
-          [void Function(IngestDeviceSetupOverlandBuilder)? updates]) =>
-      (IngestDeviceSetupOverlandBuilder()..update(updates))._build();
+  factory _$IngestDeviceSetupOverland([
+    void Function(IngestDeviceSetupOverlandBuilder)? updates,
+  ]) => (IngestDeviceSetupOverlandBuilder()..update(updates))._build();
 
   _$IngestDeviceSetupOverland._({this.endpoint, this.token}) : super._();
   @override
   IngestDeviceSetupOverland rebuild(
-          void Function(IngestDeviceSetupOverlandBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IngestDeviceSetupOverlandBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IngestDeviceSetupOverlandBuilder toBuilder() =>
@@ -93,11 +93,8 @@ class IngestDeviceSetupOverlandBuilder
   IngestDeviceSetupOverland build() => _build();
 
   _$IngestDeviceSetupOverland _build() {
-    final _$result = _$v ??
-        _$IngestDeviceSetupOverland._(
-          endpoint: endpoint,
-          token: token,
-        );
+    final _$result =
+        _$v ?? _$IngestDeviceSetupOverland._(endpoint: endpoint, token: token);
     replace(_$result);
     return _$result;
   }

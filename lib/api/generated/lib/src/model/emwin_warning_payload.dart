@@ -84,7 +84,7 @@ class _$EmwinWarningPayloadSerializer
   @override
   final Iterable<Type> types = const [
     EmwinWarningPayload,
-    _$EmwinWarningPayload
+    _$EmwinWarningPayload,
   ];
 
   @override
@@ -116,10 +116,7 @@ class _$EmwinWarningPayloadSerializer
       specifiedType: const FullType(String),
     );
     yield r'etn';
-    yield serializers.serialize(
-      object.etn,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.etn, specifiedType: const FullType(int));
     yield r'validFrom';
     yield serializers.serialize(
       object.validFrom,
@@ -169,9 +166,11 @@ class _$EmwinWarningPayloadSerializer
     EmwinWarningPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -187,92 +186,116 @@ class _$EmwinWarningPayloadSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'action':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.action = valueDes;
           break;
         case r'phenomena':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.phenomena = valueDes;
           break;
         case r'significance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.significance = valueDes;
           break;
         case r'office':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.office = valueDes;
           break;
         case r'etn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.etn = valueDes;
           break;
         case r'validFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.validFrom = valueDes;
           break;
         case r'validUntil':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.validUntil = valueDes;
           break;
         case r'headline':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.headline = valueDes;
           break;
         case r'fallback':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.fallback = valueDes;
           break;
         case r'authoritativeSource':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(EmwinWarningPayloadAuthoritativeSourceEnum),
-          ) as EmwinWarningPayloadAuthoritativeSourceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      EmwinWarningPayloadAuthoritativeSourceEnum,
+                    ),
+                  )
+                  as EmwinWarningPayloadAuthoritativeSourceEnum;
           result.authoritativeSource = valueDes;
           break;
         case r'duplicateOf':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EmwinWarningPayloadDuplicateOf),
-          ) as EmwinWarningPayloadDuplicateOf?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EmwinWarningPayloadDuplicateOf,
+                    ),
+                  )
+                  as EmwinWarningPayloadDuplicateOf?;
           if (valueDes == null) continue;
           result.duplicateOf.replace(valueDes);
           break;
         case r'receivedVia':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EmwinWarningPayloadReceivedViaEnum),
-          ) as EmwinWarningPayloadReceivedViaEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EmwinWarningPayloadReceivedViaEnum,
+                    ),
+                  )
+                  as EmwinWarningPayloadReceivedViaEnum?;
           if (valueDes == null) continue;
           result.receivedVia = valueDes;
           break;
@@ -311,7 +334,7 @@ class EmwinWarningPayloadAuthoritativeSourceEnum extends EnumClass {
       _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts;
 
   static Serializer<EmwinWarningPayloadAuthoritativeSourceEnum>
-      get serializer => _$emwinWarningPayloadAuthoritativeSourceEnumSerializer;
+  get serializer => _$emwinWarningPayloadAuthoritativeSourceEnumSerializer;
 
   const EmwinWarningPayloadAuthoritativeSourceEnum._(String name) : super(name);
 

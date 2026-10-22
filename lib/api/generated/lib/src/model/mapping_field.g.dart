@@ -32,11 +32,11 @@ MappingFieldTypeEnum _$mappingFieldTypeEnumValueOf(String name) {
 
 final BuiltSet<MappingFieldTypeEnum> _$mappingFieldTypeEnumValues =
     BuiltSet<MappingFieldTypeEnum>(const <MappingFieldTypeEnum>[
-  _$mappingFieldTypeEnum_number,
-  _$mappingFieldTypeEnum_integer,
-  _$mappingFieldTypeEnum_string,
-  _$mappingFieldTypeEnum_boolean,
-]);
+      _$mappingFieldTypeEnum_number,
+      _$mappingFieldTypeEnum_integer,
+      _$mappingFieldTypeEnum_string,
+      _$mappingFieldTypeEnum_boolean,
+    ]);
 
 Serializer<MappingFieldTypeEnum> _$mappingFieldTypeEnumSerializer =
     _$MappingFieldTypeEnumSerializer();
@@ -62,15 +62,20 @@ class _$MappingFieldTypeEnumSerializer
   final String wireName = 'MappingFieldTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, MappingFieldTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    MappingFieldTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  MappingFieldTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      MappingFieldTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  MappingFieldTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => MappingFieldTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$MappingField extends MappingField {
@@ -94,16 +99,16 @@ class _$MappingField extends MappingField {
   factory _$MappingField([void Function(MappingFieldBuilder)? updates]) =>
       (MappingFieldBuilder()..update(updates))._build();
 
-  _$MappingField._(
-      {required this.name,
-      required this.path,
-      required this.type,
-      this.unit,
-      this.scale,
-      this.offset,
-      this.default_,
-      this.sentinels})
-      : super._();
+  _$MappingField._({
+    required this.name,
+    required this.path,
+    required this.type,
+    this.unit,
+    this.scale,
+    this.offset,
+    this.default_,
+    this.sentinels,
+  }) : super._();
   @override
   MappingField rebuild(void Function(MappingFieldBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -230,14 +235,24 @@ class MappingFieldBuilder
   _$MappingField _build() {
     _$MappingField _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingField._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'MappingField', 'name'),
+              name,
+              r'MappingField',
+              'name',
+            ),
             path: BuiltValueNullFieldError.checkNotNull(
-                path, r'MappingField', 'path'),
+              path,
+              r'MappingField',
+              'path',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'MappingField', 'type'),
+              type,
+              r'MappingField',
+              'type',
+            ),
             unit: _unit?.build(),
             scale: scale,
             offset: offset,
@@ -254,7 +269,10 @@ class MappingFieldBuilder
         _sentinels?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingField', _$failedField, e.toString());
+          r'MappingField',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

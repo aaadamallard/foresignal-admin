@@ -23,8 +23,10 @@ part 'benchmark_component_result_thresholds_inner.g.dart';
 @BuiltValue()
 abstract class BenchmarkComponentResultThresholdsInner
     implements
-        Built<BenchmarkComponentResultThresholdsInner,
-            BenchmarkComponentResultThresholdsInnerBuilder> {
+        Built<
+          BenchmarkComponentResultThresholdsInner,
+          BenchmarkComponentResultThresholdsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'metric')
   String get metric;
 
@@ -57,9 +59,9 @@ abstract class BenchmarkComponentResultThresholdsInner
 
   BenchmarkComponentResultThresholdsInner._();
 
-  factory BenchmarkComponentResultThresholdsInner(
-          [void updates(BenchmarkComponentResultThresholdsInnerBuilder b)]) =
-      _$BenchmarkComponentResultThresholdsInner;
+  factory BenchmarkComponentResultThresholdsInner([
+    void updates(BenchmarkComponentResultThresholdsInnerBuilder b),
+  ]) = _$BenchmarkComponentResultThresholdsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkComponentResultThresholdsInnerBuilder b) => b;
@@ -74,7 +76,7 @@ class _$BenchmarkComponentResultThresholdsInnerSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkComponentResultThresholdsInner,
-    _$BenchmarkComponentResultThresholdsInner
+    _$BenchmarkComponentResultThresholdsInner,
   ];
 
   @override
@@ -93,8 +95,9 @@ class _$BenchmarkComponentResultThresholdsInnerSerializer
     yield r'comparator';
     yield serializers.serialize(
       object.comparator,
-      specifiedType:
-          const FullType(BenchmarkComponentResultThresholdsInnerComparatorEnum),
+      specifiedType: const FullType(
+        BenchmarkComponentResultThresholdsInnerComparatorEnum,
+      ),
     );
     yield r'threshold';
     yield serializers.serialize(
@@ -111,8 +114,9 @@ class _$BenchmarkComponentResultThresholdsInnerSerializer
     yield r'status';
     yield serializers.serialize(
       object.status,
-      specifiedType:
-          const FullType(BenchmarkComponentResultThresholdsInnerStatusEnum),
+      specifiedType: const FullType(
+        BenchmarkComponentResultThresholdsInnerStatusEnum,
+      ),
     );
     if (object.warn != null) {
       yield r'warn';
@@ -143,9 +147,11 @@ class _$BenchmarkComponentResultThresholdsInnerSerializer
     BenchmarkComponentResultThresholdsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -161,64 +167,79 @@ class _$BenchmarkComponentResultThresholdsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'metric':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.metric = valueDes;
           break;
         case r'comparator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BenchmarkComponentResultThresholdsInnerComparatorEnum),
-          ) as BenchmarkComponentResultThresholdsInnerComparatorEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkComponentResultThresholdsInnerComparatorEnum,
+                    ),
+                  )
+                  as BenchmarkComponentResultThresholdsInnerComparatorEnum;
           result.comparator = valueDes;
           break;
         case r'threshold':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.threshold = valueDes;
           break;
         case r'observed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.observed = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BenchmarkComponentResultThresholdsInnerStatusEnum),
-          ) as BenchmarkComponentResultThresholdsInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkComponentResultThresholdsInnerStatusEnum,
+                    ),
+                  )
+                  as BenchmarkComponentResultThresholdsInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'warn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.warn = valueDes;
           break;
         case r'scenario':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.scenario = valueDes;
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.note = valueDes;
           break;
@@ -266,18 +287,17 @@ class BenchmarkComponentResultThresholdsInnerComparatorEnum extends EnumClass {
       _$benchmarkComponentResultThresholdsInnerComparatorEnum_within;
 
   static Serializer<BenchmarkComponentResultThresholdsInnerComparatorEnum>
-      get serializer =>
-          _$benchmarkComponentResultThresholdsInnerComparatorEnumSerializer;
+  get serializer =>
+      _$benchmarkComponentResultThresholdsInnerComparatorEnumSerializer;
 
   const BenchmarkComponentResultThresholdsInnerComparatorEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<BenchmarkComponentResultThresholdsInnerComparatorEnum>
-      get values =>
-          _$benchmarkComponentResultThresholdsInnerComparatorEnumValues;
+  get values => _$benchmarkComponentResultThresholdsInnerComparatorEnumValues;
   static BenchmarkComponentResultThresholdsInnerComparatorEnum valueOf(
-          String name) =>
-      _$benchmarkComponentResultThresholdsInnerComparatorEnumValueOf(name);
+    String name,
+  ) => _$benchmarkComponentResultThresholdsInnerComparatorEnumValueOf(name);
 }
 
 /// Result against the documented thresholds
@@ -293,15 +313,15 @@ class BenchmarkComponentResultThresholdsInnerStatusEnum extends EnumClass {
       _$benchmarkComponentResultThresholdsInnerStatusEnum_fail;
 
   static Serializer<BenchmarkComponentResultThresholdsInnerStatusEnum>
-      get serializer =>
-          _$benchmarkComponentResultThresholdsInnerStatusEnumSerializer;
+  get serializer =>
+      _$benchmarkComponentResultThresholdsInnerStatusEnumSerializer;
 
   const BenchmarkComponentResultThresholdsInnerStatusEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<BenchmarkComponentResultThresholdsInnerStatusEnum>
-      get values => _$benchmarkComponentResultThresholdsInnerStatusEnumValues;
+  get values => _$benchmarkComponentResultThresholdsInnerStatusEnumValues;
   static BenchmarkComponentResultThresholdsInnerStatusEnum valueOf(
-          String name) =>
-      _$benchmarkComponentResultThresholdsInnerStatusEnumValueOf(name);
+    String name,
+  ) => _$benchmarkComponentResultThresholdsInnerStatusEnumValueOf(name);
 }

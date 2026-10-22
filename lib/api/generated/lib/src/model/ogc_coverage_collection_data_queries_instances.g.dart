@@ -11,18 +11,16 @@ class _$OgcCoverageCollectionDataQueriesInstances
   @override
   final OgcLink? link;
 
-  factory _$OgcCoverageCollectionDataQueriesInstances(
-          [void Function(OgcCoverageCollectionDataQueriesInstancesBuilder)?
-              updates]) =>
-      (OgcCoverageCollectionDataQueriesInstancesBuilder()..update(updates))
-          ._build();
+  factory _$OgcCoverageCollectionDataQueriesInstances([
+    void Function(OgcCoverageCollectionDataQueriesInstancesBuilder)? updates,
+  ]) => (OgcCoverageCollectionDataQueriesInstancesBuilder()..update(updates))
+      ._build();
 
   _$OgcCoverageCollectionDataQueriesInstances._({this.link}) : super._();
   @override
   OgcCoverageCollectionDataQueriesInstances rebuild(
-          void Function(OgcCoverageCollectionDataQueriesInstancesBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionDataQueriesInstancesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionDataQueriesInstancesBuilder toBuilder() =>
@@ -46,16 +44,17 @@ class _$OgcCoverageCollectionDataQueriesInstances
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'OgcCoverageCollectionDataQueriesInstances')
-          ..add('link', link))
-        .toString();
+      r'OgcCoverageCollectionDataQueriesInstances',
+    )..add('link', link)).toString();
   }
 }
 
 class OgcCoverageCollectionDataQueriesInstancesBuilder
     implements
-        Builder<OgcCoverageCollectionDataQueriesInstances,
-            OgcCoverageCollectionDataQueriesInstancesBuilder> {
+        Builder<
+          OgcCoverageCollectionDataQueriesInstances,
+          OgcCoverageCollectionDataQueriesInstancesBuilder
+        > {
   _$OgcCoverageCollectionDataQueriesInstances? _$v;
 
   OgcLinkBuilder? _link;
@@ -82,8 +81,8 @@ class OgcCoverageCollectionDataQueriesInstancesBuilder
 
   @override
   void update(
-      void Function(OgcCoverageCollectionDataQueriesInstancesBuilder)?
-          updates) {
+    void Function(OgcCoverageCollectionDataQueriesInstancesBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -93,10 +92,9 @@ class OgcCoverageCollectionDataQueriesInstancesBuilder
   _$OgcCoverageCollectionDataQueriesInstances _build() {
     _$OgcCoverageCollectionDataQueriesInstances _$result;
     try {
-      _$result = _$v ??
-          _$OgcCoverageCollectionDataQueriesInstances._(
-            link: _link?.build(),
-          );
+      _$result =
+          _$v ??
+          _$OgcCoverageCollectionDataQueriesInstances._(link: _link?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,9 +102,10 @@ class OgcCoverageCollectionDataQueriesInstancesBuilder
         _link?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCoverageCollectionDataQueriesInstances',
-            _$failedField,
-            e.toString());
+          r'OgcCoverageCollectionDataQueriesInstances',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

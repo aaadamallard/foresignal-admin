@@ -12,16 +12,16 @@ class _$PrecursorCandidatePage extends PrecursorCandidatePage {
   @override
   final String? nextCursor;
 
-  factory _$PrecursorCandidatePage(
-          [void Function(PrecursorCandidatePageBuilder)? updates]) =>
-      (PrecursorCandidatePageBuilder()..update(updates))._build();
+  factory _$PrecursorCandidatePage([
+    void Function(PrecursorCandidatePageBuilder)? updates,
+  ]) => (PrecursorCandidatePageBuilder()..update(updates))._build();
 
   _$PrecursorCandidatePage._({required this.items, this.nextCursor})
-      : super._();
+    : super._();
   @override
   PrecursorCandidatePage rebuild(
-          void Function(PrecursorCandidatePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorCandidatePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorCandidatePageBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class PrecursorCandidatePageBuilder
   _$PrecursorCandidatePage _build() {
     _$PrecursorCandidatePage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorCandidatePage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -108,7 +109,10 @@ class PrecursorCandidatePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorCandidatePage', _$failedField, e.toString());
+          r'PrecursorCandidatePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

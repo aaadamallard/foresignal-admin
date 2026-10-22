@@ -30,8 +30,9 @@ abstract class IntelBoardCalibration
 
   IntelBoardCalibration._();
 
-  factory IntelBoardCalibration(
-      [void updates(IntelBoardCalibrationBuilder b)]) = _$IntelBoardCalibration;
+  factory IntelBoardCalibration([
+    void updates(IntelBoardCalibrationBuilder b),
+  ]) = _$IntelBoardCalibration;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IntelBoardCalibrationBuilder b) => b;
@@ -46,7 +47,7 @@ class _$IntelBoardCalibrationSerializer
   @override
   final Iterable<Type> types = const [
     IntelBoardCalibration,
-    _$IntelBoardCalibration
+    _$IntelBoardCalibration,
   ];
 
   @override
@@ -86,9 +87,11 @@ class _$IntelBoardCalibrationSerializer
     IntelBoardCalibration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,28 +107,36 @@ class _$IntelBoardCalibrationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.window = valueDes;
           break;
         case r'ensemble':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IntelBoardCalibrationEnsemble),
-          ) as IntelBoardCalibrationEnsemble?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelBoardCalibrationEnsemble,
+                    ),
+                  )
+                  as IntelBoardCalibrationEnsemble?;
           if (valueDes == null) continue;
           result.ensemble.replace(valueDes);
           break;
         case r'operator':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IntelBoardCalibrationOperator),
-          ) as IntelBoardCalibrationOperator?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IntelBoardCalibrationOperator,
+                    ),
+                  )
+                  as IntelBoardCalibrationOperator?;
           if (valueDes == null) continue;
           result.operator_.replace(valueDes);
           break;

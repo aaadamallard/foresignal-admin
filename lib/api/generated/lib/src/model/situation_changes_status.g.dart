@@ -14,17 +14,19 @@ class _$SituationChangesStatus extends SituationChangesStatus {
   @override
   final bool changed;
 
-  factory _$SituationChangesStatus(
-          [void Function(SituationChangesStatusBuilder)? updates]) =>
-      (SituationChangesStatusBuilder()..update(updates))._build();
+  factory _$SituationChangesStatus([
+    void Function(SituationChangesStatusBuilder)? updates,
+  ]) => (SituationChangesStatusBuilder()..update(updates))._build();
 
-  _$SituationChangesStatus._(
-      {this.before, required this.after, required this.changed})
-      : super._();
+  _$SituationChangesStatus._({
+    this.before,
+    required this.after,
+    required this.changed,
+  }) : super._();
   @override
   SituationChangesStatus rebuild(
-          void Function(SituationChangesStatusBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationChangesStatusBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationChangesStatusBuilder toBuilder() =>
@@ -104,13 +106,20 @@ class SituationChangesStatusBuilder
   SituationChangesStatus build() => _build();
 
   _$SituationChangesStatus _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationChangesStatus._(
           before: before,
           after: BuiltValueNullFieldError.checkNotNull(
-              after, r'SituationChangesStatus', 'after'),
+            after,
+            r'SituationChangesStatus',
+            'after',
+          ),
           changed: BuiltValueNullFieldError.checkNotNull(
-              changed, r'SituationChangesStatus', 'changed'),
+            changed,
+            r'SituationChangesStatus',
+            'changed',
+          ),
         );
     replace(_$result);
     return _$result;

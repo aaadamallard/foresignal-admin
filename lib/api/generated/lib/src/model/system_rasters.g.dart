@@ -24,9 +24,9 @@ SystemRastersProfileEnum _$systemRastersProfileEnumValueOf(String name) {
 
 final BuiltSet<SystemRastersProfileEnum> _$systemRastersProfileEnumValues =
     BuiltSet<SystemRastersProfileEnum>(const <SystemRastersProfileEnum>[
-  _$systemRastersProfileEnum_small,
-  _$systemRastersProfileEnum_large,
-]);
+      _$systemRastersProfileEnum_small,
+      _$systemRastersProfileEnum_large,
+    ]);
 
 Serializer<SystemRastersProfileEnum> _$systemRastersProfileEnumSerializer =
     _$SystemRastersProfileEnumSerializer();
@@ -48,16 +48,20 @@ class _$SystemRastersProfileEnumSerializer
   final String wireName = 'SystemRastersProfileEnum';
 
   @override
-  Object serialize(Serializers serializers, SystemRastersProfileEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SystemRastersProfileEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SystemRastersProfileEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SystemRastersProfileEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SystemRastersProfileEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SystemRasters extends SystemRasters {
@@ -89,20 +93,20 @@ class _$SystemRasters extends SystemRasters {
   factory _$SystemRasters([void Function(SystemRastersBuilder)? updates]) =>
       (SystemRastersBuilder()..update(updates))._build();
 
-  _$SystemRasters._(
-      {required this.profile,
-      this.products,
-      this.frames,
-      this.storeBytes,
-      this.mediaBytes,
-      this.diskQuotaGb,
-      this.diskQuotaPct,
-      this.caches,
-      this.renderQueue,
-      this.renderBusyLastHour,
-      this.mbDownloadedToday,
-      this.glm})
-      : super._();
+  _$SystemRasters._({
+    required this.profile,
+    this.products,
+    this.frames,
+    this.storeBytes,
+    this.mediaBytes,
+    this.diskQuotaGb,
+    this.diskQuotaPct,
+    this.caches,
+    this.renderQueue,
+    this.renderBusyLastHour,
+    this.mbDownloadedToday,
+    this.glm,
+  }) : super._();
   @override
   SystemRasters rebuild(void Function(SystemRastersBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -264,10 +268,14 @@ class SystemRastersBuilder
   _$SystemRasters _build() {
     _$SystemRasters _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SystemRasters._(
             profile: BuiltValueNullFieldError.checkNotNull(
-                profile, r'SystemRasters', 'profile'),
+              profile,
+              r'SystemRasters',
+              'profile',
+            ),
             products: products,
             frames: frames,
             storeBytes: storeBytes,
@@ -292,7 +300,10 @@ class SystemRastersBuilder
         _glm?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SystemRasters', _$failedField, e.toString());
+          r'SystemRasters',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

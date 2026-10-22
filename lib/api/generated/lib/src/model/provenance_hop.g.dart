@@ -21,13 +21,13 @@ class _$ProvenanceHop extends ProvenanceHop {
   factory _$ProvenanceHop([void Function(ProvenanceHopBuilder)? updates]) =>
       (ProvenanceHopBuilder()..update(updates))._build();
 
-  _$ProvenanceHop._(
-      {required this.instanceId,
-      required this.sourceId,
-      required this.externalId,
-      required this.seq,
-      required this.ingestedAt})
-      : super._();
+  _$ProvenanceHop._({
+    required this.instanceId,
+    required this.sourceId,
+    required this.externalId,
+    required this.seq,
+    required this.ingestedAt,
+  }) : super._();
   @override
   ProvenanceHop rebuild(void Function(ProvenanceHopBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -125,18 +125,34 @@ class ProvenanceHopBuilder
   ProvenanceHop build() => _build();
 
   _$ProvenanceHop _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProvenanceHop._(
           instanceId: BuiltValueNullFieldError.checkNotNull(
-              instanceId, r'ProvenanceHop', 'instanceId'),
+            instanceId,
+            r'ProvenanceHop',
+            'instanceId',
+          ),
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'ProvenanceHop', 'sourceId'),
+            sourceId,
+            r'ProvenanceHop',
+            'sourceId',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'ProvenanceHop', 'externalId'),
+            externalId,
+            r'ProvenanceHop',
+            'externalId',
+          ),
           seq: BuiltValueNullFieldError.checkNotNull(
-              seq, r'ProvenanceHop', 'seq'),
+            seq,
+            r'ProvenanceHop',
+            'seq',
+          ),
           ingestedAt: BuiltValueNullFieldError.checkNotNull(
-              ingestedAt, r'ProvenanceHop', 'ingestedAt'),
+            ingestedAt,
+            r'ProvenanceHop',
+            'ingestedAt',
+          ),
         );
     replace(_$result);
     return _$result;

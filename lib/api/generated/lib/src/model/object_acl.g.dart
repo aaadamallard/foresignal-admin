@@ -25,15 +25,15 @@ class _$ObjectAcl extends ObjectAcl {
   factory _$ObjectAcl([void Function(ObjectAclBuilder)? updates]) =>
       (ObjectAclBuilder()..update(updates))._build();
 
-  _$ObjectAcl._(
-      {required this.ref,
-      required this.type,
-      required this.owner,
-      required this.visibility,
-      required this.tlp,
-      required this.entries,
-      this.updatedAt})
-      : super._();
+  _$ObjectAcl._({
+    required this.ref,
+    required this.type,
+    required this.owner,
+    required this.visibility,
+    required this.tlp,
+    required this.entries,
+    this.updatedAt,
+  }) : super._();
   @override
   ObjectAcl rebuild(void Function(ObjectAclBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -151,17 +151,30 @@ class ObjectAclBuilder implements Builder<ObjectAcl, ObjectAclBuilder> {
   _$ObjectAcl _build() {
     _$ObjectAcl _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ObjectAcl._(
-            ref:
-                BuiltValueNullFieldError.checkNotNull(ref, r'ObjectAcl', 'ref'),
+            ref: BuiltValueNullFieldError.checkNotNull(
+              ref,
+              r'ObjectAcl',
+              'ref',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ObjectAcl', 'type'),
+              type,
+              r'ObjectAcl',
+              'type',
+            ),
             owner: owner.build(),
             visibility: BuiltValueNullFieldError.checkNotNull(
-                visibility, r'ObjectAcl', 'visibility'),
-            tlp:
-                BuiltValueNullFieldError.checkNotNull(tlp, r'ObjectAcl', 'tlp'),
+              visibility,
+              r'ObjectAcl',
+              'visibility',
+            ),
+            tlp: BuiltValueNullFieldError.checkNotNull(
+              tlp,
+              r'ObjectAcl',
+              'tlp',
+            ),
             entries: entries.build(),
             updatedAt: updatedAt,
           );
@@ -175,7 +188,10 @@ class ObjectAclBuilder implements Builder<ObjectAcl, ObjectAclBuilder> {
         entries.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ObjectAcl', _$failedField, e.toString());
+          r'ObjectAcl',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

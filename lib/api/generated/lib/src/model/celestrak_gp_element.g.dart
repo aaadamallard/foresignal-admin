@@ -42,33 +42,33 @@ class _$CelestrakGpElement extends CelestrakGpElement {
   @override
   final num? MEAN_MOTION_DDOT;
 
-  factory _$CelestrakGpElement(
-          [void Function(CelestrakGpElementBuilder)? updates]) =>
-      (CelestrakGpElementBuilder()..update(updates))._build();
+  factory _$CelestrakGpElement([
+    void Function(CelestrakGpElementBuilder)? updates,
+  ]) => (CelestrakGpElementBuilder()..update(updates))._build();
 
-  _$CelestrakGpElement._(
-      {required this.OBJECT_NAME,
-      required this.OBJECT_ID,
-      required this.EPOCH,
-      required this.MEAN_MOTION,
-      required this.ECCENTRICITY,
-      required this.INCLINATION,
-      required this.RA_OF_ASC_NODE,
-      required this.ARG_OF_PERICENTER,
-      required this.MEAN_ANOMALY,
-      this.EPHEMERIS_TYPE,
-      this.CLASSIFICATION_TYPE,
-      required this.NORAD_CAT_ID,
-      this.ELEMENT_SET_NO,
-      this.REV_AT_EPOCH,
-      this.BSTAR,
-      this.MEAN_MOTION_DOT,
-      this.MEAN_MOTION_DDOT})
-      : super._();
+  _$CelestrakGpElement._({
+    required this.OBJECT_NAME,
+    required this.OBJECT_ID,
+    required this.EPOCH,
+    required this.MEAN_MOTION,
+    required this.ECCENTRICITY,
+    required this.INCLINATION,
+    required this.RA_OF_ASC_NODE,
+    required this.ARG_OF_PERICENTER,
+    required this.MEAN_ANOMALY,
+    this.EPHEMERIS_TYPE,
+    this.CLASSIFICATION_TYPE,
+    required this.NORAD_CAT_ID,
+    this.ELEMENT_SET_NO,
+    this.REV_AT_EPOCH,
+    this.BSTAR,
+    this.MEAN_MOTION_DOT,
+    this.MEAN_MOTION_DDOT,
+  }) : super._();
   @override
   CelestrakGpElement rebuild(
-          void Function(CelestrakGpElementBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CelestrakGpElementBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CelestrakGpElementBuilder toBuilder() =>
@@ -267,30 +267,61 @@ class CelestrakGpElementBuilder
   CelestrakGpElement build() => _build();
 
   _$CelestrakGpElement _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CelestrakGpElement._(
           OBJECT_NAME: BuiltValueNullFieldError.checkNotNull(
-              OBJECT_NAME, r'CelestrakGpElement', 'OBJECT_NAME'),
+            OBJECT_NAME,
+            r'CelestrakGpElement',
+            'OBJECT_NAME',
+          ),
           OBJECT_ID: BuiltValueNullFieldError.checkNotNull(
-              OBJECT_ID, r'CelestrakGpElement', 'OBJECT_ID'),
+            OBJECT_ID,
+            r'CelestrakGpElement',
+            'OBJECT_ID',
+          ),
           EPOCH: BuiltValueNullFieldError.checkNotNull(
-              EPOCH, r'CelestrakGpElement', 'EPOCH'),
+            EPOCH,
+            r'CelestrakGpElement',
+            'EPOCH',
+          ),
           MEAN_MOTION: BuiltValueNullFieldError.checkNotNull(
-              MEAN_MOTION, r'CelestrakGpElement', 'MEAN_MOTION'),
+            MEAN_MOTION,
+            r'CelestrakGpElement',
+            'MEAN_MOTION',
+          ),
           ECCENTRICITY: BuiltValueNullFieldError.checkNotNull(
-              ECCENTRICITY, r'CelestrakGpElement', 'ECCENTRICITY'),
+            ECCENTRICITY,
+            r'CelestrakGpElement',
+            'ECCENTRICITY',
+          ),
           INCLINATION: BuiltValueNullFieldError.checkNotNull(
-              INCLINATION, r'CelestrakGpElement', 'INCLINATION'),
+            INCLINATION,
+            r'CelestrakGpElement',
+            'INCLINATION',
+          ),
           RA_OF_ASC_NODE: BuiltValueNullFieldError.checkNotNull(
-              RA_OF_ASC_NODE, r'CelestrakGpElement', 'RA_OF_ASC_NODE'),
+            RA_OF_ASC_NODE,
+            r'CelestrakGpElement',
+            'RA_OF_ASC_NODE',
+          ),
           ARG_OF_PERICENTER: BuiltValueNullFieldError.checkNotNull(
-              ARG_OF_PERICENTER, r'CelestrakGpElement', 'ARG_OF_PERICENTER'),
+            ARG_OF_PERICENTER,
+            r'CelestrakGpElement',
+            'ARG_OF_PERICENTER',
+          ),
           MEAN_ANOMALY: BuiltValueNullFieldError.checkNotNull(
-              MEAN_ANOMALY, r'CelestrakGpElement', 'MEAN_ANOMALY'),
+            MEAN_ANOMALY,
+            r'CelestrakGpElement',
+            'MEAN_ANOMALY',
+          ),
           EPHEMERIS_TYPE: EPHEMERIS_TYPE,
           CLASSIFICATION_TYPE: CLASSIFICATION_TYPE,
           NORAD_CAT_ID: BuiltValueNullFieldError.checkNotNull(
-              NORAD_CAT_ID, r'CelestrakGpElement', 'NORAD_CAT_ID'),
+            NORAD_CAT_ID,
+            r'CelestrakGpElement',
+            'NORAD_CAT_ID',
+          ),
           ELEMENT_SET_NO: ELEMENT_SET_NO,
           REV_AT_EPOCH: REV_AT_EPOCH,
           BSTAR: BSTAR,

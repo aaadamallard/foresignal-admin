@@ -36,8 +36,9 @@ abstract class PrecursorHistoryInner
 
   PrecursorHistoryInner._();
 
-  factory PrecursorHistoryInner(
-      [void updates(PrecursorHistoryInnerBuilder b)]) = _$PrecursorHistoryInner;
+  factory PrecursorHistoryInner([
+    void updates(PrecursorHistoryInnerBuilder b),
+  ]) = _$PrecursorHistoryInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecursorHistoryInnerBuilder b) => b;
@@ -52,7 +53,7 @@ class _$PrecursorHistoryInnerSerializer
   @override
   final Iterable<Type> types = const [
     PrecursorHistoryInner,
-    _$PrecursorHistoryInner
+    _$PrecursorHistoryInner,
   ];
 
   @override
@@ -100,9 +101,11 @@ class _$PrecursorHistoryInnerSerializer
     PrecursorHistoryInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,39 +121,49 @@ class _$PrecursorHistoryInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'by':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.by = valueDes;
           break;
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.to = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

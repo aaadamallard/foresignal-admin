@@ -37,21 +37,21 @@ class _$ChronicleLayer extends ChronicleLayer {
   factory _$ChronicleLayer([void Function(ChronicleLayerBuilder)? updates]) =>
       (ChronicleLayerBuilder()..update(updates))._build();
 
-  _$ChronicleLayer._(
-      {required this.id,
-      required this.chronicleId,
-      required this.name,
-      this.selector,
-      this.areaOverride,
-      required this.capture,
-      this.effectiveCapture,
-      required this.enabled,
-      required this.addedAt,
-      this.addedAtSeq,
-      this.removedAt,
-      this.estimate,
-      this.stats})
-      : super._();
+  _$ChronicleLayer._({
+    required this.id,
+    required this.chronicleId,
+    required this.name,
+    this.selector,
+    this.areaOverride,
+    required this.capture,
+    this.effectiveCapture,
+    required this.enabled,
+    required this.addedAt,
+    this.addedAtSeq,
+    this.removedAt,
+    this.estimate,
+    this.stats,
+  }) : super._();
   @override
   ChronicleLayer rebuild(void Function(ChronicleLayerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -222,22 +222,38 @@ class ChronicleLayerBuilder
   _$ChronicleLayer _build() {
     _$ChronicleLayer _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleLayer._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ChronicleLayer', 'id'),
+              id,
+              r'ChronicleLayer',
+              'id',
+            ),
             chronicleId: BuiltValueNullFieldError.checkNotNull(
-                chronicleId, r'ChronicleLayer', 'chronicleId'),
+              chronicleId,
+              r'ChronicleLayer',
+              'chronicleId',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ChronicleLayer', 'name'),
+              name,
+              r'ChronicleLayer',
+              'name',
+            ),
             selector: selector,
             areaOverride: _areaOverride?.build(),
             capture: capture.build(),
             effectiveCapture: _effectiveCapture?.build(),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'ChronicleLayer', 'enabled'),
+              enabled,
+              r'ChronicleLayer',
+              'enabled',
+            ),
             addedAt: BuiltValueNullFieldError.checkNotNull(
-                addedAt, r'ChronicleLayer', 'addedAt'),
+              addedAt,
+              r'ChronicleLayer',
+              'addedAt',
+            ),
             addedAtSeq: addedAtSeq,
             removedAt: removedAt,
             estimate: _estimate?.build(),
@@ -259,7 +275,10 @@ class ChronicleLayerBuilder
         _stats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleLayer', _$failedField, e.toString());
+          r'ChronicleLayer',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -22,9 +22,9 @@ abstract class ChronicleActivateRequest
 
   ChronicleActivateRequest._();
 
-  factory ChronicleActivateRequest(
-          [void updates(ChronicleActivateRequestBuilder b)]) =
-      _$ChronicleActivateRequest;
+  factory ChronicleActivateRequest([
+    void updates(ChronicleActivateRequestBuilder b),
+  ]) = _$ChronicleActivateRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChronicleActivateRequestBuilder b) => b;
@@ -39,7 +39,7 @@ class _$ChronicleActivateRequestSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleActivateRequest,
-    _$ChronicleActivateRequest
+    _$ChronicleActivateRequest,
   ];
 
   @override
@@ -54,8 +54,9 @@ class _$ChronicleActivateRequestSerializer
       yield r'backfill';
       yield serializers.serialize(
         object.backfill,
-        specifiedType:
-            const FullType.nullable(ChronicleActivateRequestBackfill),
+        specifiedType: const FullType.nullable(
+          ChronicleActivateRequestBackfill,
+        ),
       );
     }
   }
@@ -66,9 +67,11 @@ class _$ChronicleActivateRequestSerializer
     ChronicleActivateRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -84,11 +87,14 @@ class _$ChronicleActivateRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'backfill':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ChronicleActivateRequestBackfill),
-          ) as ChronicleActivateRequestBackfill?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ChronicleActivateRequestBackfill,
+                    ),
+                  )
+                  as ChronicleActivateRequestBackfill?;
           if (valueDes == null) continue;
           result.backfill.replace(valueDes);
           break;

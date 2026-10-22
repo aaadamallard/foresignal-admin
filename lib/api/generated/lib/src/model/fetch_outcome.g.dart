@@ -47,26 +47,26 @@ class _$FetchOutcome extends FetchOutcome {
   factory _$FetchOutcome([void Function(FetchOutcomeBuilder)? updates]) =>
       (FetchOutcomeBuilder()..update(updates))._build();
 
-  _$FetchOutcome._(
-      {required this.sourceId,
-      this.startedAt,
-      this.durationMs,
-      required this.success,
-      required this.recordsSeen,
-      required this.recordsChanged,
-      this.fromSeq,
-      this.toSeq,
-      this.error,
-      this.fetchId,
-      this.persisted,
-      this.live,
-      this.touched,
-      this.touchesThrottled,
-      this.late_,
-      this.skipped,
-      this.rejected,
-      this.byReason})
-      : super._();
+  _$FetchOutcome._({
+    required this.sourceId,
+    this.startedAt,
+    this.durationMs,
+    required this.success,
+    required this.recordsSeen,
+    required this.recordsChanged,
+    this.fromSeq,
+    this.toSeq,
+    this.error,
+    this.fetchId,
+    this.persisted,
+    this.live,
+    this.touched,
+    this.touchesThrottled,
+    this.late_,
+    this.skipped,
+    this.rejected,
+    this.byReason,
+  }) : super._();
   @override
   FetchOutcome rebuild(void Function(FetchOutcomeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -274,18 +274,31 @@ class FetchOutcomeBuilder
   _$FetchOutcome _build() {
     _$FetchOutcome _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FetchOutcome._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'FetchOutcome', 'sourceId'),
+              sourceId,
+              r'FetchOutcome',
+              'sourceId',
+            ),
             startedAt: startedAt,
             durationMs: durationMs,
             success: BuiltValueNullFieldError.checkNotNull(
-                success, r'FetchOutcome', 'success'),
+              success,
+              r'FetchOutcome',
+              'success',
+            ),
             recordsSeen: BuiltValueNullFieldError.checkNotNull(
-                recordsSeen, r'FetchOutcome', 'recordsSeen'),
+              recordsSeen,
+              r'FetchOutcome',
+              'recordsSeen',
+            ),
             recordsChanged: BuiltValueNullFieldError.checkNotNull(
-                recordsChanged, r'FetchOutcome', 'recordsChanged'),
+              recordsChanged,
+              r'FetchOutcome',
+              'recordsChanged',
+            ),
             fromSeq: fromSeq,
             toSeq: toSeq,
             error: error,
@@ -306,7 +319,10 @@ class FetchOutcomeBuilder
         _byReason?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FetchOutcome', _$failedField, e.toString());
+          r'FetchOutcome',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

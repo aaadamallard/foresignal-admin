@@ -7,14 +7,15 @@ part of 'field_encodings_png_tiles.dart';
 // **************************************************************************
 
 const FieldEncodingsPngTilesTmsEnum
-    _$fieldEncodingsPngTilesTmsEnum_webMercatorQuad =
+_$fieldEncodingsPngTilesTmsEnum_webMercatorQuad =
     const FieldEncodingsPngTilesTmsEnum._('webMercatorQuad');
 const FieldEncodingsPngTilesTmsEnum
-    _$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad =
+_$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad =
     const FieldEncodingsPngTilesTmsEnum._('worldCRS84Quad');
 
 FieldEncodingsPngTilesTmsEnum _$fieldEncodingsPngTilesTmsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'webMercatorQuad':
       return _$fieldEncodingsPngTilesTmsEnum_webMercatorQuad;
@@ -26,14 +27,15 @@ FieldEncodingsPngTilesTmsEnum _$fieldEncodingsPngTilesTmsEnumValueOf(
 }
 
 final BuiltSet<FieldEncodingsPngTilesTmsEnum>
-    _$fieldEncodingsPngTilesTmsEnumValues = BuiltSet<
-        FieldEncodingsPngTilesTmsEnum>(const <FieldEncodingsPngTilesTmsEnum>[
-  _$fieldEncodingsPngTilesTmsEnum_webMercatorQuad,
-  _$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad,
-]);
+_$fieldEncodingsPngTilesTmsEnumValues = BuiltSet<FieldEncodingsPngTilesTmsEnum>(
+  const <FieldEncodingsPngTilesTmsEnum>[
+    _$fieldEncodingsPngTilesTmsEnum_webMercatorQuad,
+    _$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad,
+  ],
+);
 
 Serializer<FieldEncodingsPngTilesTmsEnum>
-    _$fieldEncodingsPngTilesTmsEnumSerializer =
+_$fieldEncodingsPngTilesTmsEnumSerializer =
     _$FieldEncodingsPngTilesTmsEnumSerializer();
 
 class _$FieldEncodingsPngTilesTmsEnumSerializer
@@ -54,16 +56,19 @@ class _$FieldEncodingsPngTilesTmsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, FieldEncodingsPngTilesTmsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FieldEncodingsPngTilesTmsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FieldEncodingsPngTilesTmsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FieldEncodingsPngTilesTmsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FieldEncodingsPngTilesTmsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FieldEncodingsPngTiles extends FieldEncodingsPngTiles {
@@ -84,24 +89,24 @@ class _$FieldEncodingsPngTiles extends FieldEncodingsPngTiles {
   @override
   final int? maxzoom;
 
-  factory _$FieldEncodingsPngTiles(
-          [void Function(FieldEncodingsPngTilesBuilder)? updates]) =>
-      (FieldEncodingsPngTilesBuilder()..update(updates))._build();
+  factory _$FieldEncodingsPngTiles([
+    void Function(FieldEncodingsPngTilesBuilder)? updates,
+  ]) => (FieldEncodingsPngTilesBuilder()..update(updates))._build();
 
-  _$FieldEncodingsPngTiles._(
-      {this.template,
-      this.tms,
-      this.uMin,
-      this.uMax,
-      this.vMin,
-      this.vMax,
-      this.minzoom,
-      this.maxzoom})
-      : super._();
+  _$FieldEncodingsPngTiles._({
+    this.template,
+    this.tms,
+    this.uMin,
+    this.uMax,
+    this.vMin,
+    this.vMax,
+    this.minzoom,
+    this.maxzoom,
+  }) : super._();
   @override
   FieldEncodingsPngTiles rebuild(
-          void Function(FieldEncodingsPngTilesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FieldEncodingsPngTilesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FieldEncodingsPngTilesBuilder toBuilder() =>
@@ -221,7 +226,8 @@ class FieldEncodingsPngTilesBuilder
   FieldEncodingsPngTiles build() => _build();
 
   _$FieldEncodingsPngTiles _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FieldEncodingsPngTiles._(
           template: template,
           tms: tms,

@@ -22,23 +22,23 @@ class _$BaseRateRefreshResult extends BaseRateRefreshResult {
   @override
   final DetectorRef? computer;
 
-  factory _$BaseRateRefreshResult(
-          [void Function(BaseRateRefreshResultBuilder)? updates]) =>
-      (BaseRateRefreshResultBuilder()..update(updates))._build();
+  factory _$BaseRateRefreshResult([
+    void Function(BaseRateRefreshResultBuilder)? updates,
+  ]) => (BaseRateRefreshResultBuilder()..update(updates))._build();
 
-  _$BaseRateRefreshResult._(
-      {required this.profiles,
-      required this.rates,
-      this.skipped,
-      this.removed,
-      required this.families,
-      this.regions,
-      this.computer})
-      : super._();
+  _$BaseRateRefreshResult._({
+    required this.profiles,
+    required this.rates,
+    this.skipped,
+    this.removed,
+    required this.families,
+    this.regions,
+    this.computer,
+  }) : super._();
   @override
   BaseRateRefreshResult rebuild(
-          void Function(BaseRateRefreshResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(BaseRateRefreshResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   BaseRateRefreshResultBuilder toBuilder() =>
@@ -153,12 +153,19 @@ class BaseRateRefreshResultBuilder
   _$BaseRateRefreshResult _build() {
     _$BaseRateRefreshResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$BaseRateRefreshResult._(
             profiles: BuiltValueNullFieldError.checkNotNull(
-                profiles, r'BaseRateRefreshResult', 'profiles'),
+              profiles,
+              r'BaseRateRefreshResult',
+              'profiles',
+            ),
             rates: BuiltValueNullFieldError.checkNotNull(
-                rates, r'BaseRateRefreshResult', 'rates'),
+              rates,
+              r'BaseRateRefreshResult',
+              'rates',
+            ),
             skipped: skipped,
             removed: removed,
             families: families.build(),
@@ -175,7 +182,10 @@ class BaseRateRefreshResultBuilder
         _computer?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'BaseRateRefreshResult', _$failedField, e.toString());
+          r'BaseRateRefreshResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

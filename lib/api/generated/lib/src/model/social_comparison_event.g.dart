@@ -7,11 +7,12 @@ part of 'social_comparison_event.dart';
 // **************************************************************************
 
 const SocialComparisonEventEventEnum
-    _$socialComparisonEventEventEnum_comparisonPeriodUpdated =
+_$socialComparisonEventEventEnum_comparisonPeriodUpdated =
     const SocialComparisonEventEventEnum._('comparisonPeriodUpdated');
 
 SocialComparisonEventEventEnum _$socialComparisonEventEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'comparisonPeriodUpdated':
       return _$socialComparisonEventEventEnum_comparisonPeriodUpdated;
@@ -21,29 +22,32 @@ SocialComparisonEventEventEnum _$socialComparisonEventEventEnumValueOf(
 }
 
 final BuiltSet<SocialComparisonEventEventEnum>
-    _$socialComparisonEventEventEnumValues = BuiltSet<
-        SocialComparisonEventEventEnum>(const <SocialComparisonEventEventEnum>[
-  _$socialComparisonEventEventEnum_comparisonPeriodUpdated,
-]);
+_$socialComparisonEventEventEnumValues =
+    BuiltSet<SocialComparisonEventEventEnum>(
+      const <SocialComparisonEventEventEnum>[
+        _$socialComparisonEventEventEnum_comparisonPeriodUpdated,
+      ],
+    );
 
 const SocialComparisonEventStatusEnum
-    _$socialComparisonEventStatusEnum_pending =
+_$socialComparisonEventStatusEnum_pending =
     const SocialComparisonEventStatusEnum._('pending');
 const SocialComparisonEventStatusEnum
-    _$socialComparisonEventStatusEnum_corroborated =
+_$socialComparisonEventStatusEnum_corroborated =
     const SocialComparisonEventStatusEnum._('corroborated');
 const SocialComparisonEventStatusEnum
-    _$socialComparisonEventStatusEnum_unobserved =
+_$socialComparisonEventStatusEnum_unobserved =
     const SocialComparisonEventStatusEnum._('unobserved');
 const SocialComparisonEventStatusEnum
-    _$socialComparisonEventStatusEnum_contradicted =
+_$socialComparisonEventStatusEnum_contradicted =
     const SocialComparisonEventStatusEnum._('contradicted');
 const SocialComparisonEventStatusEnum
-    _$socialComparisonEventStatusEnum_insufficientCoverage =
+_$socialComparisonEventStatusEnum_insufficientCoverage =
     const SocialComparisonEventStatusEnum._('insufficientCoverage');
 
 SocialComparisonEventStatusEnum _$socialComparisonEventStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'pending':
       return _$socialComparisonEventStatusEnum_pending;
@@ -61,33 +65,35 @@ SocialComparisonEventStatusEnum _$socialComparisonEventStatusEnumValueOf(
 }
 
 final BuiltSet<SocialComparisonEventStatusEnum>
-    _$socialComparisonEventStatusEnumValues = BuiltSet<
-        SocialComparisonEventStatusEnum>(const <SocialComparisonEventStatusEnum>[
-  _$socialComparisonEventStatusEnum_pending,
-  _$socialComparisonEventStatusEnum_corroborated,
-  _$socialComparisonEventStatusEnum_unobserved,
-  _$socialComparisonEventStatusEnum_contradicted,
-  _$socialComparisonEventStatusEnum_insufficientCoverage,
-]);
+_$socialComparisonEventStatusEnumValues =
+    BuiltSet<SocialComparisonEventStatusEnum>(
+      const <SocialComparisonEventStatusEnum>[
+        _$socialComparisonEventStatusEnum_pending,
+        _$socialComparisonEventStatusEnum_corroborated,
+        _$socialComparisonEventStatusEnum_unobserved,
+        _$socialComparisonEventStatusEnum_contradicted,
+        _$socialComparisonEventStatusEnum_insufficientCoverage,
+      ],
+    );
 
 const SocialComparisonEventPreviousStatusEnum
-    _$socialComparisonEventPreviousStatusEnum_pending =
+_$socialComparisonEventPreviousStatusEnum_pending =
     const SocialComparisonEventPreviousStatusEnum._('pending');
 const SocialComparisonEventPreviousStatusEnum
-    _$socialComparisonEventPreviousStatusEnum_corroborated =
+_$socialComparisonEventPreviousStatusEnum_corroborated =
     const SocialComparisonEventPreviousStatusEnum._('corroborated');
 const SocialComparisonEventPreviousStatusEnum
-    _$socialComparisonEventPreviousStatusEnum_unobserved =
+_$socialComparisonEventPreviousStatusEnum_unobserved =
     const SocialComparisonEventPreviousStatusEnum._('unobserved');
 const SocialComparisonEventPreviousStatusEnum
-    _$socialComparisonEventPreviousStatusEnum_contradicted =
+_$socialComparisonEventPreviousStatusEnum_contradicted =
     const SocialComparisonEventPreviousStatusEnum._('contradicted');
 const SocialComparisonEventPreviousStatusEnum
-    _$socialComparisonEventPreviousStatusEnum_insufficientCoverage =
+_$socialComparisonEventPreviousStatusEnum_insufficientCoverage =
     const SocialComparisonEventPreviousStatusEnum._('insufficientCoverage');
 
 SocialComparisonEventPreviousStatusEnum
-    _$socialComparisonEventPreviousStatusEnumValueOf(String name) {
+_$socialComparisonEventPreviousStatusEnumValueOf(String name) {
   switch (name) {
     case 'pending':
       return _$socialComparisonEventPreviousStatusEnum_pending;
@@ -105,23 +111,25 @@ SocialComparisonEventPreviousStatusEnum
 }
 
 final BuiltSet<SocialComparisonEventPreviousStatusEnum>
-    _$socialComparisonEventPreviousStatusEnumValues = BuiltSet<
-        SocialComparisonEventPreviousStatusEnum>(const <SocialComparisonEventPreviousStatusEnum>[
-  _$socialComparisonEventPreviousStatusEnum_pending,
-  _$socialComparisonEventPreviousStatusEnum_corroborated,
-  _$socialComparisonEventPreviousStatusEnum_unobserved,
-  _$socialComparisonEventPreviousStatusEnum_contradicted,
-  _$socialComparisonEventPreviousStatusEnum_insufficientCoverage,
-]);
+_$socialComparisonEventPreviousStatusEnumValues =
+    BuiltSet<SocialComparisonEventPreviousStatusEnum>(
+      const <SocialComparisonEventPreviousStatusEnum>[
+        _$socialComparisonEventPreviousStatusEnum_pending,
+        _$socialComparisonEventPreviousStatusEnum_corroborated,
+        _$socialComparisonEventPreviousStatusEnum_unobserved,
+        _$socialComparisonEventPreviousStatusEnum_contradicted,
+        _$socialComparisonEventPreviousStatusEnum_insufficientCoverage,
+      ],
+    );
 
 Serializer<SocialComparisonEventEventEnum>
-    _$socialComparisonEventEventEnumSerializer =
+_$socialComparisonEventEventEnumSerializer =
     _$SocialComparisonEventEventEnumSerializer();
 Serializer<SocialComparisonEventStatusEnum>
-    _$socialComparisonEventStatusEnumSerializer =
+_$socialComparisonEventStatusEnumSerializer =
     _$SocialComparisonEventStatusEnumSerializer();
 Serializer<SocialComparisonEventPreviousStatusEnum>
-    _$socialComparisonEventPreviousStatusEnumSerializer =
+_$socialComparisonEventPreviousStatusEnumSerializer =
     _$SocialComparisonEventPreviousStatusEnumSerializer();
 
 class _$SocialComparisonEventEventEnumSerializer
@@ -140,16 +148,19 @@ class _$SocialComparisonEventEventEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SocialComparisonEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SocialComparisonEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparisonEventStatusEnumSerializer
@@ -176,16 +187,19 @@ class _$SocialComparisonEventStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SocialComparisonEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SocialComparisonEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparisonEventPreviousStatusEnumSerializer
@@ -207,23 +221,26 @@ class _$SocialComparisonEventPreviousStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SocialComparisonEventPreviousStatusEnum
+    SocialComparisonEventPreviousStatusEnum,
   ];
   @override
   final String wireName = 'SocialComparisonEventPreviousStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SocialComparisonEventPreviousStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialComparisonEventPreviousStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonEventPreviousStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonEventPreviousStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonEventPreviousStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparisonEvent extends SocialComparisonEvent {
@@ -244,24 +261,24 @@ class _$SocialComparisonEvent extends SocialComparisonEvent {
   @override
   final DateTime evaluatedAt;
 
-  factory _$SocialComparisonEvent(
-          [void Function(SocialComparisonEventBuilder)? updates]) =>
-      (SocialComparisonEventBuilder()..update(updates))._build();
+  factory _$SocialComparisonEvent([
+    void Function(SocialComparisonEventBuilder)? updates,
+  ]) => (SocialComparisonEventBuilder()..update(updates))._build();
 
-  _$SocialComparisonEvent._(
-      {required this.event,
-      required this.comparisonId,
-      required this.claimId,
-      required this.narrativeId,
-      required this.status,
-      this.previousStatus,
-      required this.revision,
-      required this.evaluatedAt})
-      : super._();
+  _$SocialComparisonEvent._({
+    required this.event,
+    required this.comparisonId,
+    required this.claimId,
+    required this.narrativeId,
+    required this.status,
+    this.previousStatus,
+    required this.revision,
+    required this.evaluatedAt,
+  }) : super._();
   @override
   SocialComparisonEvent rebuild(
-          void Function(SocialComparisonEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialComparisonEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialComparisonEventBuilder toBuilder() =>
@@ -384,23 +401,45 @@ class SocialComparisonEventBuilder
   SocialComparisonEvent build() => _build();
 
   _$SocialComparisonEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialComparisonEvent._(
           event: BuiltValueNullFieldError.checkNotNull(
-              event, r'SocialComparisonEvent', 'event'),
+            event,
+            r'SocialComparisonEvent',
+            'event',
+          ),
           comparisonId: BuiltValueNullFieldError.checkNotNull(
-              comparisonId, r'SocialComparisonEvent', 'comparisonId'),
+            comparisonId,
+            r'SocialComparisonEvent',
+            'comparisonId',
+          ),
           claimId: BuiltValueNullFieldError.checkNotNull(
-              claimId, r'SocialComparisonEvent', 'claimId'),
+            claimId,
+            r'SocialComparisonEvent',
+            'claimId',
+          ),
           narrativeId: BuiltValueNullFieldError.checkNotNull(
-              narrativeId, r'SocialComparisonEvent', 'narrativeId'),
+            narrativeId,
+            r'SocialComparisonEvent',
+            'narrativeId',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'SocialComparisonEvent', 'status'),
+            status,
+            r'SocialComparisonEvent',
+            'status',
+          ),
           previousStatus: previousStatus,
           revision: BuiltValueNullFieldError.checkNotNull(
-              revision, r'SocialComparisonEvent', 'revision'),
+            revision,
+            r'SocialComparisonEvent',
+            'revision',
+          ),
           evaluatedAt: BuiltValueNullFieldError.checkNotNull(
-              evaluatedAt, r'SocialComparisonEvent', 'evaluatedAt'),
+            evaluatedAt,
+            r'SocialComparisonEvent',
+            'evaluatedAt',
+          ),
         );
     replace(_$result);
     return _$result;

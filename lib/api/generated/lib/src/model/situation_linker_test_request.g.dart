@@ -12,16 +12,16 @@ class _$SituationLinkerTestRequest extends SituationLinkerTestRequest {
   @override
   final int toSeq;
 
-  factory _$SituationLinkerTestRequest(
-          [void Function(SituationLinkerTestRequestBuilder)? updates]) =>
-      (SituationLinkerTestRequestBuilder()..update(updates))._build();
+  factory _$SituationLinkerTestRequest([
+    void Function(SituationLinkerTestRequestBuilder)? updates,
+  ]) => (SituationLinkerTestRequestBuilder()..update(updates))._build();
 
   _$SituationLinkerTestRequest._({required this.fromSeq, required this.toSeq})
-      : super._();
+    : super._();
   @override
   SituationLinkerTestRequest rebuild(
-          void Function(SituationLinkerTestRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationLinkerTestRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationLinkerTestRequestBuilder toBuilder() =>
@@ -94,12 +94,19 @@ class SituationLinkerTestRequestBuilder
   SituationLinkerTestRequest build() => _build();
 
   _$SituationLinkerTestRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SituationLinkerTestRequest._(
           fromSeq: BuiltValueNullFieldError.checkNotNull(
-              fromSeq, r'SituationLinkerTestRequest', 'fromSeq'),
+            fromSeq,
+            r'SituationLinkerTestRequest',
+            'fromSeq',
+          ),
           toSeq: BuiltValueNullFieldError.checkNotNull(
-              toSeq, r'SituationLinkerTestRequest', 'toSeq'),
+            toSeq,
+            r'SituationLinkerTestRequest',
+            'toSeq',
+          ),
         );
     replace(_$result);
     return _$result;

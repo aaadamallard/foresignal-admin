@@ -9,16 +9,17 @@ part of 'package_received_event.dart';
 const PackageReceivedEventTypeEnum _$packageReceivedEventTypeEnum_report =
     const PackageReceivedEventTypeEnum._('report');
 const PackageReceivedEventTypeEnum
-    _$packageReceivedEventTypeEnum_investigation =
+_$packageReceivedEventTypeEnum_investigation =
     const PackageReceivedEventTypeEnum._('investigation');
 const PackageReceivedEventTypeEnum
-    _$packageReceivedEventTypeEnum_chronicleExtract =
+_$packageReceivedEventTypeEnum_chronicleExtract =
     const PackageReceivedEventTypeEnum._('chronicleExtract');
 const PackageReceivedEventTypeEnum _$packageReceivedEventTypeEnum_evidence =
     const PackageReceivedEventTypeEnum._('evidence');
 
 PackageReceivedEventTypeEnum _$packageReceivedEventTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'report':
       return _$packageReceivedEventTypeEnum_report;
@@ -34,26 +35,26 @@ PackageReceivedEventTypeEnum _$packageReceivedEventTypeEnumValueOf(
 }
 
 final BuiltSet<PackageReceivedEventTypeEnum>
-    _$packageReceivedEventTypeEnumValues =
+_$packageReceivedEventTypeEnumValues =
     BuiltSet<PackageReceivedEventTypeEnum>(const <PackageReceivedEventTypeEnum>[
-  _$packageReceivedEventTypeEnum_report,
-  _$packageReceivedEventTypeEnum_investigation,
-  _$packageReceivedEventTypeEnum_chronicleExtract,
-  _$packageReceivedEventTypeEnum_evidence,
-]);
+      _$packageReceivedEventTypeEnum_report,
+      _$packageReceivedEventTypeEnum_investigation,
+      _$packageReceivedEventTypeEnum_chronicleExtract,
+      _$packageReceivedEventTypeEnum_evidence,
+    ]);
 
 const PackageReceivedEventSignatureStatusEnum
-    _$packageReceivedEventSignatureStatusEnum_valid =
+_$packageReceivedEventSignatureStatusEnum_valid =
     const PackageReceivedEventSignatureStatusEnum._('valid');
 const PackageReceivedEventSignatureStatusEnum
-    _$packageReceivedEventSignatureStatusEnum_invalid =
+_$packageReceivedEventSignatureStatusEnum_invalid =
     const PackageReceivedEventSignatureStatusEnum._('invalid');
 const PackageReceivedEventSignatureStatusEnum
-    _$packageReceivedEventSignatureStatusEnum_unknownKey =
+_$packageReceivedEventSignatureStatusEnum_unknownKey =
     const PackageReceivedEventSignatureStatusEnum._('unknownKey');
 
 PackageReceivedEventSignatureStatusEnum
-    _$packageReceivedEventSignatureStatusEnumValueOf(String name) {
+_$packageReceivedEventSignatureStatusEnumValueOf(String name) {
   switch (name) {
     case 'valid':
       return _$packageReceivedEventSignatureStatusEnum_valid;
@@ -67,18 +68,20 @@ PackageReceivedEventSignatureStatusEnum
 }
 
 final BuiltSet<PackageReceivedEventSignatureStatusEnum>
-    _$packageReceivedEventSignatureStatusEnumValues = BuiltSet<
-        PackageReceivedEventSignatureStatusEnum>(const <PackageReceivedEventSignatureStatusEnum>[
-  _$packageReceivedEventSignatureStatusEnum_valid,
-  _$packageReceivedEventSignatureStatusEnum_invalid,
-  _$packageReceivedEventSignatureStatusEnum_unknownKey,
-]);
+_$packageReceivedEventSignatureStatusEnumValues =
+    BuiltSet<PackageReceivedEventSignatureStatusEnum>(
+      const <PackageReceivedEventSignatureStatusEnum>[
+        _$packageReceivedEventSignatureStatusEnum_valid,
+        _$packageReceivedEventSignatureStatusEnum_invalid,
+        _$packageReceivedEventSignatureStatusEnum_unknownKey,
+      ],
+    );
 
 Serializer<PackageReceivedEventTypeEnum>
-    _$packageReceivedEventTypeEnumSerializer =
+_$packageReceivedEventTypeEnumSerializer =
     _$PackageReceivedEventTypeEnumSerializer();
 Serializer<PackageReceivedEventSignatureStatusEnum>
-    _$packageReceivedEventSignatureStatusEnumSerializer =
+_$packageReceivedEventSignatureStatusEnumSerializer =
     _$PackageReceivedEventSignatureStatusEnumSerializer();
 
 class _$PackageReceivedEventTypeEnumSerializer
@@ -102,16 +105,20 @@ class _$PackageReceivedEventTypeEnumSerializer
   final String wireName = 'PackageReceivedEventTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, PackageReceivedEventTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PackageReceivedEventTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PackageReceivedEventTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PackageReceivedEventTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PackageReceivedEventTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PackageReceivedEventSignatureStatusEnumSerializer
@@ -129,23 +136,26 @@ class _$PackageReceivedEventSignatureStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    PackageReceivedEventSignatureStatusEnum
+    PackageReceivedEventSignatureStatusEnum,
   ];
   @override
   final String wireName = 'PackageReceivedEventSignatureStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          PackageReceivedEventSignatureStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PackageReceivedEventSignatureStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PackageReceivedEventSignatureStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PackageReceivedEventSignatureStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PackageReceivedEventSignatureStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PackageReceivedEvent extends PackageReceivedEvent {
@@ -166,24 +176,24 @@ class _$PackageReceivedEvent extends PackageReceivedEvent {
   @override
   final DateTime at;
 
-  factory _$PackageReceivedEvent(
-          [void Function(PackageReceivedEventBuilder)? updates]) =>
-      (PackageReceivedEventBuilder()..update(updates))._build();
+  factory _$PackageReceivedEvent([
+    void Function(PackageReceivedEventBuilder)? updates,
+  ]) => (PackageReceivedEventBuilder()..update(updates))._build();
 
-  _$PackageReceivedEvent._(
-      {required this.receivedId,
-      required this.packageId,
-      required this.type,
-      required this.senderInstanceId,
-      this.title,
-      required this.tlp,
-      this.signatureStatus,
-      required this.at})
-      : super._();
+  _$PackageReceivedEvent._({
+    required this.receivedId,
+    required this.packageId,
+    required this.type,
+    required this.senderInstanceId,
+    this.title,
+    required this.tlp,
+    this.signatureStatus,
+    required this.at,
+  }) : super._();
   @override
   PackageReceivedEvent rebuild(
-          void Function(PackageReceivedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PackageReceivedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PackageReceivedEventBuilder toBuilder() =>
@@ -266,8 +276,8 @@ class PackageReceivedEventBuilder
   PackageReceivedEventSignatureStatusEnum? get signatureStatus =>
       _$this._signatureStatus;
   set signatureStatus(
-          PackageReceivedEventSignatureStatusEnum? signatureStatus) =>
-      _$this._signatureStatus = signatureStatus;
+    PackageReceivedEventSignatureStatusEnum? signatureStatus,
+  ) => _$this._signatureStatus = signatureStatus;
 
   DateTime? _at;
   DateTime? get at => _$this._at;
@@ -307,22 +317,41 @@ class PackageReceivedEventBuilder
   PackageReceivedEvent build() => _build();
 
   _$PackageReceivedEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PackageReceivedEvent._(
           receivedId: BuiltValueNullFieldError.checkNotNull(
-              receivedId, r'PackageReceivedEvent', 'receivedId'),
+            receivedId,
+            r'PackageReceivedEvent',
+            'receivedId',
+          ),
           packageId: BuiltValueNullFieldError.checkNotNull(
-              packageId, r'PackageReceivedEvent', 'packageId'),
+            packageId,
+            r'PackageReceivedEvent',
+            'packageId',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'PackageReceivedEvent', 'type'),
+            type,
+            r'PackageReceivedEvent',
+            'type',
+          ),
           senderInstanceId: BuiltValueNullFieldError.checkNotNull(
-              senderInstanceId, r'PackageReceivedEvent', 'senderInstanceId'),
+            senderInstanceId,
+            r'PackageReceivedEvent',
+            'senderInstanceId',
+          ),
           title: title,
           tlp: BuiltValueNullFieldError.checkNotNull(
-              tlp, r'PackageReceivedEvent', 'tlp'),
+            tlp,
+            r'PackageReceivedEvent',
+            'tlp',
+          ),
           signatureStatus: signatureStatus,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'PackageReceivedEvent', 'at'),
+            at,
+            r'PackageReceivedEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

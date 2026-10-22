@@ -7,11 +7,11 @@ part of 'emwin_warning_payload.dart';
 // **************************************************************************
 
 const EmwinWarningPayloadAuthoritativeSourceEnum
-    _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts =
+_$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts =
     const EmwinWarningPayloadAuthoritativeSourceEnum._('nwsAlerts');
 
 EmwinWarningPayloadAuthoritativeSourceEnum
-    _$emwinWarningPayloadAuthoritativeSourceEnumValueOf(String name) {
+_$emwinWarningPayloadAuthoritativeSourceEnumValueOf(String name) {
   switch (name) {
     case 'nwsAlerts':
       return _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts;
@@ -21,17 +21,20 @@ EmwinWarningPayloadAuthoritativeSourceEnum
 }
 
 final BuiltSet<EmwinWarningPayloadAuthoritativeSourceEnum>
-    _$emwinWarningPayloadAuthoritativeSourceEnumValues = BuiltSet<
-        EmwinWarningPayloadAuthoritativeSourceEnum>(const <EmwinWarningPayloadAuthoritativeSourceEnum>[
-  _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts,
-]);
+_$emwinWarningPayloadAuthoritativeSourceEnumValues =
+    BuiltSet<EmwinWarningPayloadAuthoritativeSourceEnum>(
+      const <EmwinWarningPayloadAuthoritativeSourceEnum>[
+        _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts,
+      ],
+    );
 
 const EmwinWarningPayloadReceivedViaEnum
-    _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN =
+_$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN =
     const EmwinWarningPayloadReceivedViaEnum._('receivedViaGOESHRITEMWIN');
 
 EmwinWarningPayloadReceivedViaEnum _$emwinWarningPayloadReceivedViaEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'receivedViaGOESHRITEMWIN':
       return _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN;
@@ -41,16 +44,18 @@ EmwinWarningPayloadReceivedViaEnum _$emwinWarningPayloadReceivedViaEnumValueOf(
 }
 
 final BuiltSet<EmwinWarningPayloadReceivedViaEnum>
-    _$emwinWarningPayloadReceivedViaEnumValues = BuiltSet<
-        EmwinWarningPayloadReceivedViaEnum>(const <EmwinWarningPayloadReceivedViaEnum>[
-  _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN,
-]);
+_$emwinWarningPayloadReceivedViaEnumValues =
+    BuiltSet<EmwinWarningPayloadReceivedViaEnum>(
+      const <EmwinWarningPayloadReceivedViaEnum>[
+        _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN,
+      ],
+    );
 
 Serializer<EmwinWarningPayloadAuthoritativeSourceEnum>
-    _$emwinWarningPayloadAuthoritativeSourceEnumSerializer =
+_$emwinWarningPayloadAuthoritativeSourceEnumSerializer =
     _$EmwinWarningPayloadAuthoritativeSourceEnumSerializer();
 Serializer<EmwinWarningPayloadReceivedViaEnum>
-    _$emwinWarningPayloadReceivedViaEnumSerializer =
+_$emwinWarningPayloadReceivedViaEnumSerializer =
     _$EmwinWarningPayloadReceivedViaEnumSerializer();
 
 class _$EmwinWarningPayloadAuthoritativeSourceEnumSerializer
@@ -64,23 +69,26 @@ class _$EmwinWarningPayloadAuthoritativeSourceEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    EmwinWarningPayloadAuthoritativeSourceEnum
+    EmwinWarningPayloadAuthoritativeSourceEnum,
   ];
   @override
   final String wireName = 'EmwinWarningPayloadAuthoritativeSourceEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          EmwinWarningPayloadAuthoritativeSourceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EmwinWarningPayloadAuthoritativeSourceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EmwinWarningPayloadAuthoritativeSourceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EmwinWarningPayloadAuthoritativeSourceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EmwinWarningPayloadAuthoritativeSourceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EmwinWarningPayloadReceivedViaEnumSerializer
@@ -99,16 +107,19 @@ class _$EmwinWarningPayloadReceivedViaEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EmwinWarningPayloadReceivedViaEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EmwinWarningPayloadReceivedViaEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EmwinWarningPayloadReceivedViaEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EmwinWarningPayloadReceivedViaEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EmwinWarningPayloadReceivedViaEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EmwinWarningPayload extends EmwinWarningPayload {
@@ -137,28 +148,28 @@ class _$EmwinWarningPayload extends EmwinWarningPayload {
   @override
   final EmwinWarningPayloadReceivedViaEnum? receivedVia;
 
-  factory _$EmwinWarningPayload(
-          [void Function(EmwinWarningPayloadBuilder)? updates]) =>
-      (EmwinWarningPayloadBuilder()..update(updates))._build();
+  factory _$EmwinWarningPayload([
+    void Function(EmwinWarningPayloadBuilder)? updates,
+  ]) => (EmwinWarningPayloadBuilder()..update(updates))._build();
 
-  _$EmwinWarningPayload._(
-      {required this.action,
-      required this.phenomena,
-      required this.significance,
-      required this.office,
-      required this.etn,
-      required this.validFrom,
-      required this.validUntil,
-      this.headline,
-      required this.fallback,
-      required this.authoritativeSource,
-      this.duplicateOf,
-      this.receivedVia})
-      : super._();
+  _$EmwinWarningPayload._({
+    required this.action,
+    required this.phenomena,
+    required this.significance,
+    required this.office,
+    required this.etn,
+    required this.validFrom,
+    required this.validUntil,
+    this.headline,
+    required this.fallback,
+    required this.authoritativeSource,
+    this.duplicateOf,
+    this.receivedVia,
+  }) : super._();
   @override
   EmwinWarningPayload rebuild(
-          void Function(EmwinWarningPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EmwinWarningPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EmwinWarningPayloadBuilder toBuilder() =>
@@ -264,8 +275,8 @@ class EmwinWarningPayloadBuilder
   EmwinWarningPayloadAuthoritativeSourceEnum? get authoritativeSource =>
       _$this._authoritativeSource;
   set authoritativeSource(
-          EmwinWarningPayloadAuthoritativeSourceEnum? authoritativeSource) =>
-      _$this._authoritativeSource = authoritativeSource;
+    EmwinWarningPayloadAuthoritativeSourceEnum? authoritativeSource,
+  ) => _$this._authoritativeSource = authoritativeSource;
 
   EmwinWarningPayloadDuplicateOfBuilder? _duplicateOf;
   EmwinWarningPayloadDuplicateOfBuilder get duplicateOf =>
@@ -318,29 +329,55 @@ class EmwinWarningPayloadBuilder
   _$EmwinWarningPayload _build() {
     _$EmwinWarningPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EmwinWarningPayload._(
             action: BuiltValueNullFieldError.checkNotNull(
-                action, r'EmwinWarningPayload', 'action'),
+              action,
+              r'EmwinWarningPayload',
+              'action',
+            ),
             phenomena: BuiltValueNullFieldError.checkNotNull(
-                phenomena, r'EmwinWarningPayload', 'phenomena'),
+              phenomena,
+              r'EmwinWarningPayload',
+              'phenomena',
+            ),
             significance: BuiltValueNullFieldError.checkNotNull(
-                significance, r'EmwinWarningPayload', 'significance'),
+              significance,
+              r'EmwinWarningPayload',
+              'significance',
+            ),
             office: BuiltValueNullFieldError.checkNotNull(
-                office, r'EmwinWarningPayload', 'office'),
+              office,
+              r'EmwinWarningPayload',
+              'office',
+            ),
             etn: BuiltValueNullFieldError.checkNotNull(
-                etn, r'EmwinWarningPayload', 'etn'),
+              etn,
+              r'EmwinWarningPayload',
+              'etn',
+            ),
             validFrom: BuiltValueNullFieldError.checkNotNull(
-                validFrom, r'EmwinWarningPayload', 'validFrom'),
+              validFrom,
+              r'EmwinWarningPayload',
+              'validFrom',
+            ),
             validUntil: BuiltValueNullFieldError.checkNotNull(
-                validUntil, r'EmwinWarningPayload', 'validUntil'),
+              validUntil,
+              r'EmwinWarningPayload',
+              'validUntil',
+            ),
             headline: headline,
             fallback: BuiltValueNullFieldError.checkNotNull(
-                fallback, r'EmwinWarningPayload', 'fallback'),
+              fallback,
+              r'EmwinWarningPayload',
+              'fallback',
+            ),
             authoritativeSource: BuiltValueNullFieldError.checkNotNull(
-                authoritativeSource,
-                r'EmwinWarningPayload',
-                'authoritativeSource'),
+              authoritativeSource,
+              r'EmwinWarningPayload',
+              'authoritativeSource',
+            ),
             duplicateOf: _duplicateOf?.build(),
             receivedVia: receivedVia,
           );
@@ -351,7 +388,10 @@ class EmwinWarningPayloadBuilder
         _duplicateOf?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EmwinWarningPayload', _$failedField, e.toString());
+          r'EmwinWarningPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

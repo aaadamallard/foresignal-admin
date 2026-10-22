@@ -32,11 +32,11 @@ SituationSummaryOriginEnum _$situationSummaryOriginEnumValueOf(String name) {
 
 final BuiltSet<SituationSummaryOriginEnum> _$situationSummaryOriginEnumValues =
     BuiltSet<SituationSummaryOriginEnum>(const <SituationSummaryOriginEnum>[
-  _$situationSummaryOriginEnum_auto,
-  _$situationSummaryOriginEnum_operator_,
-  _$situationSummaryOriginEnum_agent,
-  _$situationSummaryOriginEnum_analyst,
-]);
+      _$situationSummaryOriginEnum_auto,
+      _$situationSummaryOriginEnum_operator_,
+      _$situationSummaryOriginEnum_agent,
+      _$situationSummaryOriginEnum_analyst,
+    ]);
 
 Serializer<SituationSummaryOriginEnum> _$situationSummaryOriginEnumSerializer =
     _$SituationSummaryOriginEnumSerializer();
@@ -62,16 +62,20 @@ class _$SituationSummaryOriginEnumSerializer
   final String wireName = 'SituationSummaryOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, SituationSummaryOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationSummaryOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationSummaryOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationSummaryOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationSummaryOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationSummary extends SituationSummary {
@@ -118,33 +122,33 @@ class _$SituationSummary extends SituationSummary {
   @override
   final DateTime? updatedAt;
 
-  factory _$SituationSummary(
-          [void Function(SituationSummaryBuilder)? updates]) =>
-      (SituationSummaryBuilder()..update(updates))._build();
+  factory _$SituationSummary([
+    void Function(SituationSummaryBuilder)? updates,
+  ]) => (SituationSummaryBuilder()..update(updates))._build();
 
-  _$SituationSummary._(
-      {required this.id,
-      required this.title,
-      required this.theme,
-      required this.status,
-      required this.severity,
-      this.severityOverridden,
-      required this.regionCodes,
-      this.bbox,
-      this.centroid,
-      required this.startedAt,
-      required this.lastActivityAt,
-      this.closedAt,
-      required this.memberCount,
-      required this.signalFamilies,
-      this.corroborationShare,
-      required this.summary,
-      required this.origin,
-      this.mergedInto,
-      required this.private,
-      required this.version,
-      this.updatedAt})
-      : super._();
+  _$SituationSummary._({
+    required this.id,
+    required this.title,
+    required this.theme,
+    required this.status,
+    required this.severity,
+    this.severityOverridden,
+    required this.regionCodes,
+    this.bbox,
+    this.centroid,
+    required this.startedAt,
+    required this.lastActivityAt,
+    this.closedAt,
+    required this.memberCount,
+    required this.signalFamilies,
+    this.corroborationShare,
+    required this.summary,
+    required this.origin,
+    this.mergedInto,
+    required this.private,
+    required this.version,
+    this.updatedAt,
+  }) : super._();
   @override
   SituationSummary rebuild(void Function(SituationSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -380,40 +384,77 @@ class SituationSummaryBuilder
   _$SituationSummary _build() {
     _$SituationSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationSummary._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SituationSummary', 'id'),
+              id,
+              r'SituationSummary',
+              'id',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SituationSummary', 'title'),
+              title,
+              r'SituationSummary',
+              'title',
+            ),
             theme: BuiltValueNullFieldError.checkNotNull(
-                theme, r'SituationSummary', 'theme'),
+              theme,
+              r'SituationSummary',
+              'theme',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SituationSummary', 'status'),
+              status,
+              r'SituationSummary',
+              'status',
+            ),
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'SituationSummary', 'severity'),
+              severity,
+              r'SituationSummary',
+              'severity',
+            ),
             severityOverridden: severityOverridden,
             regionCodes: regionCodes.build(),
             bbox: _bbox?.build(),
             centroid: _centroid?.build(),
             startedAt: BuiltValueNullFieldError.checkNotNull(
-                startedAt, r'SituationSummary', 'startedAt'),
+              startedAt,
+              r'SituationSummary',
+              'startedAt',
+            ),
             lastActivityAt: BuiltValueNullFieldError.checkNotNull(
-                lastActivityAt, r'SituationSummary', 'lastActivityAt'),
+              lastActivityAt,
+              r'SituationSummary',
+              'lastActivityAt',
+            ),
             closedAt: closedAt,
             memberCount: BuiltValueNullFieldError.checkNotNull(
-                memberCount, r'SituationSummary', 'memberCount'),
+              memberCount,
+              r'SituationSummary',
+              'memberCount',
+            ),
             signalFamilies: signalFamilies.build(),
             corroborationShare: corroborationShare,
             summary: BuiltValueNullFieldError.checkNotNull(
-                summary, r'SituationSummary', 'summary'),
+              summary,
+              r'SituationSummary',
+              'summary',
+            ),
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'SituationSummary', 'origin'),
+              origin,
+              r'SituationSummary',
+              'origin',
+            ),
             mergedInto: mergedInto,
             private: BuiltValueNullFieldError.checkNotNull(
-                private, r'SituationSummary', 'private'),
+              private,
+              r'SituationSummary',
+              'private',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'SituationSummary', 'version'),
+              version,
+              r'SituationSummary',
+              'version',
+            ),
             updatedAt: updatedAt,
           );
     } catch (_) {
@@ -430,7 +471,10 @@ class SituationSummaryBuilder
         signalFamilies.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationSummary', _$failedField, e.toString());
+          r'SituationSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

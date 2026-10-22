@@ -7,17 +7,17 @@ part of 'chronicle_social_volume_selector_scopes_inner.dart';
 // **************************************************************************
 
 const ChronicleSocialVolumeSelectorScopesInnerTypeEnum
-    _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_topic =
+_$chronicleSocialVolumeSelectorScopesInnerTypeEnum_topic =
     const ChronicleSocialVolumeSelectorScopesInnerTypeEnum._('topic');
 const ChronicleSocialVolumeSelectorScopesInnerTypeEnum
-    _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place =
+_$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place =
     const ChronicleSocialVolumeSelectorScopesInnerTypeEnum._('place');
 const ChronicleSocialVolumeSelectorScopesInnerTypeEnum
-    _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity =
+_$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity =
     const ChronicleSocialVolumeSelectorScopesInnerTypeEnum._('entity');
 
 ChronicleSocialVolumeSelectorScopesInnerTypeEnum
-    _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValueOf(String name) {
+_$chronicleSocialVolumeSelectorScopesInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'topic':
       return _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_topic;
@@ -31,15 +31,17 @@ ChronicleSocialVolumeSelectorScopesInnerTypeEnum
 }
 
 final BuiltSet<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>
-    _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValues = BuiltSet<
-        ChronicleSocialVolumeSelectorScopesInnerTypeEnum>(const <ChronicleSocialVolumeSelectorScopesInnerTypeEnum>[
-  _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_topic,
-  _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place,
-  _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity,
-]);
+_$chronicleSocialVolumeSelectorScopesInnerTypeEnumValues =
+    BuiltSet<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>(
+      const <ChronicleSocialVolumeSelectorScopesInnerTypeEnum>[
+        _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_topic,
+        _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place,
+        _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity,
+      ],
+    );
 
 Serializer<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>
-    _$chronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer =
+_$chronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer =
     _$ChronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer();
 
 class _$ChronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer
@@ -58,23 +60,26 @@ class _$ChronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChronicleSocialVolumeSelectorScopesInnerTypeEnum
+    ChronicleSocialVolumeSelectorScopesInnerTypeEnum,
   ];
   @override
   final String wireName = 'ChronicleSocialVolumeSelectorScopesInnerTypeEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          ChronicleSocialVolumeSelectorScopesInnerTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleSocialVolumeSelectorScopesInnerTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleSocialVolumeSelectorScopesInnerTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleSocialVolumeSelectorScopesInnerTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleSocialVolumeSelectorScopesInnerTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleSocialVolumeSelectorScopesInner
@@ -84,20 +89,19 @@ class _$ChronicleSocialVolumeSelectorScopesInner
   @override
   final String id;
 
-  factory _$ChronicleSocialVolumeSelectorScopesInner(
-          [void Function(ChronicleSocialVolumeSelectorScopesInnerBuilder)?
-              updates]) =>
-      (ChronicleSocialVolumeSelectorScopesInnerBuilder()..update(updates))
-          ._build();
+  factory _$ChronicleSocialVolumeSelectorScopesInner([
+    void Function(ChronicleSocialVolumeSelectorScopesInnerBuilder)? updates,
+  ]) => (ChronicleSocialVolumeSelectorScopesInnerBuilder()..update(updates))
+      ._build();
 
-  _$ChronicleSocialVolumeSelectorScopesInner._(
-      {required this.type, required this.id})
-      : super._();
+  _$ChronicleSocialVolumeSelectorScopesInner._({
+    required this.type,
+    required this.id,
+  }) : super._();
   @override
   ChronicleSocialVolumeSelectorScopesInner rebuild(
-          void Function(ChronicleSocialVolumeSelectorScopesInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSocialVolumeSelectorScopesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSocialVolumeSelectorScopesInnerBuilder toBuilder() =>
@@ -123,7 +127,8 @@ class _$ChronicleSocialVolumeSelectorScopesInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ChronicleSocialVolumeSelectorScopesInner')
+            r'ChronicleSocialVolumeSelectorScopesInner',
+          )
           ..add('type', type)
           ..add('id', id))
         .toString();
@@ -132,8 +137,10 @@ class _$ChronicleSocialVolumeSelectorScopesInner
 
 class ChronicleSocialVolumeSelectorScopesInnerBuilder
     implements
-        Builder<ChronicleSocialVolumeSelectorScopesInner,
-            ChronicleSocialVolumeSelectorScopesInnerBuilder> {
+        Builder<
+          ChronicleSocialVolumeSelectorScopesInner,
+          ChronicleSocialVolumeSelectorScopesInnerBuilder
+        > {
   _$ChronicleSocialVolumeSelectorScopesInner? _$v;
 
   ChronicleSocialVolumeSelectorScopesInnerTypeEnum? _type;
@@ -166,7 +173,8 @@ class ChronicleSocialVolumeSelectorScopesInnerBuilder
 
   @override
   void update(
-      void Function(ChronicleSocialVolumeSelectorScopesInnerBuilder)? updates) {
+    void Function(ChronicleSocialVolumeSelectorScopesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -174,12 +182,19 @@ class ChronicleSocialVolumeSelectorScopesInnerBuilder
   ChronicleSocialVolumeSelectorScopesInner build() => _build();
 
   _$ChronicleSocialVolumeSelectorScopesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSocialVolumeSelectorScopesInner._(
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'ChronicleSocialVolumeSelectorScopesInner', 'type'),
+            type,
+            r'ChronicleSocialVolumeSelectorScopesInner',
+            'type',
+          ),
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'ChronicleSocialVolumeSelectorScopesInner', 'id'),
+            id,
+            r'ChronicleSocialVolumeSelectorScopesInner',
+            'id',
+          ),
         );
     replace(_$result);
     return _$result;

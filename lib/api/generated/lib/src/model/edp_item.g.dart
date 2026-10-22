@@ -6,20 +6,27 @@ part of 'edp_item.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EdpItemTypeEnum _$edpItemTypeEnum_feature =
-    const EdpItemTypeEnum._('feature');
-const EdpItemTypeEnum _$edpItemTypeEnum_event =
-    const EdpItemTypeEnum._('event');
-const EdpItemTypeEnum _$edpItemTypeEnum_observation =
-    const EdpItemTypeEnum._('observation');
-const EdpItemTypeEnum _$edpItemTypeEnum_document =
-    const EdpItemTypeEnum._('document');
-const EdpItemTypeEnum _$edpItemTypeEnum_forecast =
-    const EdpItemTypeEnum._('forecast');
-const EdpItemTypeEnum _$edpItemTypeEnum_delete =
-    const EdpItemTypeEnum._('delete');
-const EdpItemTypeEnum _$edpItemTypeEnum_status =
-    const EdpItemTypeEnum._('status');
+const EdpItemTypeEnum _$edpItemTypeEnum_feature = const EdpItemTypeEnum._(
+  'feature',
+);
+const EdpItemTypeEnum _$edpItemTypeEnum_event = const EdpItemTypeEnum._(
+  'event',
+);
+const EdpItemTypeEnum _$edpItemTypeEnum_observation = const EdpItemTypeEnum._(
+  'observation',
+);
+const EdpItemTypeEnum _$edpItemTypeEnum_document = const EdpItemTypeEnum._(
+  'document',
+);
+const EdpItemTypeEnum _$edpItemTypeEnum_forecast = const EdpItemTypeEnum._(
+  'forecast',
+);
+const EdpItemTypeEnum _$edpItemTypeEnum_delete = const EdpItemTypeEnum._(
+  'delete',
+);
+const EdpItemTypeEnum _$edpItemTypeEnum_status = const EdpItemTypeEnum._(
+  'status',
+);
 
 EdpItemTypeEnum _$edpItemTypeEnumValueOf(String name) {
   switch (name) {
@@ -44,14 +51,14 @@ EdpItemTypeEnum _$edpItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpItemTypeEnum> _$edpItemTypeEnumValues =
     BuiltSet<EdpItemTypeEnum>(const <EdpItemTypeEnum>[
-  _$edpItemTypeEnum_feature,
-  _$edpItemTypeEnum_event,
-  _$edpItemTypeEnum_observation,
-  _$edpItemTypeEnum_document,
-  _$edpItemTypeEnum_forecast,
-  _$edpItemTypeEnum_delete,
-  _$edpItemTypeEnum_status,
-]);
+      _$edpItemTypeEnum_feature,
+      _$edpItemTypeEnum_event,
+      _$edpItemTypeEnum_observation,
+      _$edpItemTypeEnum_document,
+      _$edpItemTypeEnum_forecast,
+      _$edpItemTypeEnum_delete,
+      _$edpItemTypeEnum_status,
+    ]);
 
 const EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnum_socialPost =
     const EdpItemDocumentTypeEnum._('socialPost');
@@ -83,19 +90,21 @@ EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpItemDocumentTypeEnum> _$edpItemDocumentTypeEnumValues =
     BuiltSet<EdpItemDocumentTypeEnum>(const <EdpItemDocumentTypeEnum>[
-  _$edpItemDocumentTypeEnum_socialPost,
-  _$edpItemDocumentTypeEnum_article,
-  _$edpItemDocumentTypeEnum_report,
-  _$edpItemDocumentTypeEnum_transcript,
-  _$edpItemDocumentTypeEnum_note,
-]);
+      _$edpItemDocumentTypeEnum_socialPost,
+      _$edpItemDocumentTypeEnum_article,
+      _$edpItemDocumentTypeEnum_report,
+      _$edpItemDocumentTypeEnum_transcript,
+      _$edpItemDocumentTypeEnum_note,
+    ]);
 
-const EdpItemHealthEnum _$edpItemHealthEnum_ok =
-    const EdpItemHealthEnum._('ok');
+const EdpItemHealthEnum _$edpItemHealthEnum_ok = const EdpItemHealthEnum._(
+  'ok',
+);
 const EdpItemHealthEnum _$edpItemHealthEnum_degraded =
     const EdpItemHealthEnum._('degraded');
-const EdpItemHealthEnum _$edpItemHealthEnum_blocked =
-    const EdpItemHealthEnum._('blocked');
+const EdpItemHealthEnum _$edpItemHealthEnum_blocked = const EdpItemHealthEnum._(
+  'blocked',
+);
 const EdpItemHealthEnum _$edpItemHealthEnum_layoutChanged =
     const EdpItemHealthEnum._('layoutChanged');
 const EdpItemHealthEnum _$edpItemHealthEnum_geoRestricted =
@@ -120,12 +129,12 @@ EdpItemHealthEnum _$edpItemHealthEnumValueOf(String name) {
 
 final BuiltSet<EdpItemHealthEnum> _$edpItemHealthEnumValues =
     BuiltSet<EdpItemHealthEnum>(const <EdpItemHealthEnum>[
-  _$edpItemHealthEnum_ok,
-  _$edpItemHealthEnum_degraded,
-  _$edpItemHealthEnum_blocked,
-  _$edpItemHealthEnum_layoutChanged,
-  _$edpItemHealthEnum_geoRestricted,
-]);
+      _$edpItemHealthEnum_ok,
+      _$edpItemHealthEnum_degraded,
+      _$edpItemHealthEnum_blocked,
+      _$edpItemHealthEnum_layoutChanged,
+      _$edpItemHealthEnum_geoRestricted,
+    ]);
 
 Serializer<EdpItemTypeEnum> _$edpItemTypeEnumSerializer =
     _$EdpItemTypeEnumSerializer();
@@ -161,15 +170,20 @@ class _$EdpItemTypeEnumSerializer
   final String wireName = 'EdpItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpItemTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpItemTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpItemDocumentTypeEnumSerializer
@@ -195,16 +209,20 @@ class _$EdpItemDocumentTypeEnumSerializer
   final String wireName = 'EdpItemDocumentTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpItemDocumentTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpItemDocumentTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpItemDocumentTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpItemDocumentTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpItemDocumentTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpItemHealthEnumSerializer
@@ -230,15 +248,20 @@ class _$EdpItemHealthEnumSerializer
   final String wireName = 'EdpItemHealthEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpItemHealthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpItemHealthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  EdpItemHealthEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpItemHealthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  EdpItemHealthEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpItemHealthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpItem extends EdpItem {
@@ -272,8 +295,9 @@ class _$EdpItem extends EdpItem {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'EdpItem')..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'EdpItem',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -311,10 +335,14 @@ class EdpItemBuilder implements Builder<EdpItem, EdpItemBuilder> {
   EdpItem build() => _build();
 
   _$EdpItem _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EdpItem._(
-          oneOf:
-              BuiltValueNullFieldError.checkNotNull(oneOf, r'EdpItem', 'oneOf'),
+          oneOf: BuiltValueNullFieldError.checkNotNull(
+            oneOf,
+            r'EdpItem',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

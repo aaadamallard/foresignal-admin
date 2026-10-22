@@ -32,11 +32,11 @@ HypothesisTypeEnum _$hypothesisTypeEnumValueOf(String name) {
 
 final BuiltSet<HypothesisTypeEnum> _$hypothesisTypeEnumValues =
     BuiltSet<HypothesisTypeEnum>(const <HypothesisTypeEnum>[
-  _$hypothesisTypeEnum_outcome,
-  _$hypothesisTypeEnum_explanation,
-  _$hypothesisTypeEnum_speculativeLink,
-  _$hypothesisTypeEnum_other,
-]);
+      _$hypothesisTypeEnum_outcome,
+      _$hypothesisTypeEnum_explanation,
+      _$hypothesisTypeEnum_speculativeLink,
+      _$hypothesisTypeEnum_other,
+    ]);
 
 const HypothesisStatusEnum _$hypothesisStatusEnum_open =
     const HypothesisStatusEnum._('open');
@@ -64,11 +64,11 @@ HypothesisStatusEnum _$hypothesisStatusEnumValueOf(String name) {
 
 final BuiltSet<HypothesisStatusEnum> _$hypothesisStatusEnumValues =
     BuiltSet<HypothesisStatusEnum>(const <HypothesisStatusEnum>[
-  _$hypothesisStatusEnum_open,
-  _$hypothesisStatusEnum_confirmed,
-  _$hypothesisStatusEnum_refuted,
-  _$hypothesisStatusEnum_expired,
-]);
+      _$hypothesisStatusEnum_open,
+      _$hypothesisStatusEnum_confirmed,
+      _$hypothesisStatusEnum_refuted,
+      _$hypothesisStatusEnum_expired,
+    ]);
 
 Serializer<HypothesisTypeEnum> _$hypothesisTypeEnumSerializer =
     _$HypothesisTypeEnumSerializer();
@@ -96,15 +96,20 @@ class _$HypothesisTypeEnumSerializer
   final String wireName = 'HypothesisTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  HypothesisTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  HypothesisTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisStatusEnumSerializer
@@ -128,15 +133,20 @@ class _$HypothesisStatusEnumSerializer
   final String wireName = 'HypothesisStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  HypothesisStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  HypothesisStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Hypothesis extends Hypothesis {
@@ -186,29 +196,29 @@ class _$Hypothesis extends Hypothesis {
   factory _$Hypothesis([void Function(HypothesisBuilder)? updates]) =>
       (HypothesisBuilder()..update(updates))._build();
 
-  _$Hypothesis._(
-      {required this.id,
-      required this.setId,
-      required this.label,
-      required this.statement,
-      required this.type,
-      required this.prior,
-      required this.priorBasis,
-      required this.probability,
-      required this.estimativeTerm,
-      required this.confidence,
-      this.confidenceBasis,
-      this.ledgerOutcome,
-      required this.status,
-      this.change,
-      this.linkedFindingIds,
-      this.coincidenceBaseline,
-      this.alternatives,
-      this.probabilityCap,
-      this.capOverride,
-      this.version,
-      this.newsCoverage})
-      : super._();
+  _$Hypothesis._({
+    required this.id,
+    required this.setId,
+    required this.label,
+    required this.statement,
+    required this.type,
+    required this.prior,
+    required this.priorBasis,
+    required this.probability,
+    required this.estimativeTerm,
+    required this.confidence,
+    this.confidenceBasis,
+    this.ledgerOutcome,
+    required this.status,
+    this.change,
+    this.linkedFindingIds,
+    this.coincidenceBaseline,
+    this.alternatives,
+    this.probabilityCap,
+    this.capOverride,
+    this.version,
+    this.newsCoverage,
+  }) : super._();
   @override
   Hypothesis rebuild(void Function(HypothesisBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -376,8 +386,8 @@ class HypothesisBuilder implements Builder<Hypothesis, HypothesisBuilder> {
   HypothesisCoincidenceBaselineBuilder get coincidenceBaseline =>
       _$this._coincidenceBaseline ??= HypothesisCoincidenceBaselineBuilder();
   set coincidenceBaseline(
-          HypothesisCoincidenceBaselineBuilder? coincidenceBaseline) =>
-      _$this._coincidenceBaseline = coincidenceBaseline;
+    HypothesisCoincidenceBaselineBuilder? coincidenceBaseline,
+  ) => _$this._coincidenceBaseline = coincidenceBaseline;
 
   ListBuilder<String>? _alternatives;
   ListBuilder<String> get alternatives =>
@@ -455,30 +465,58 @@ class HypothesisBuilder implements Builder<Hypothesis, HypothesisBuilder> {
   _$Hypothesis _build() {
     _$Hypothesis _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Hypothesis._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Hypothesis', 'id'),
             setId: BuiltValueNullFieldError.checkNotNull(
-                setId, r'Hypothesis', 'setId'),
+              setId,
+              r'Hypothesis',
+              'setId',
+            ),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'Hypothesis', 'label'),
+              label,
+              r'Hypothesis',
+              'label',
+            ),
             statement: BuiltValueNullFieldError.checkNotNull(
-                statement, r'Hypothesis', 'statement'),
+              statement,
+              r'Hypothesis',
+              'statement',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'Hypothesis', 'type'),
+              type,
+              r'Hypothesis',
+              'type',
+            ),
             prior: BuiltValueNullFieldError.checkNotNull(
-                prior, r'Hypothesis', 'prior'),
+              prior,
+              r'Hypothesis',
+              'prior',
+            ),
             priorBasis: priorBasis.build(),
             probability: BuiltValueNullFieldError.checkNotNull(
-                probability, r'Hypothesis', 'probability'),
+              probability,
+              r'Hypothesis',
+              'probability',
+            ),
             estimativeTerm: BuiltValueNullFieldError.checkNotNull(
-                estimativeTerm, r'Hypothesis', 'estimativeTerm'),
+              estimativeTerm,
+              r'Hypothesis',
+              'estimativeTerm',
+            ),
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'Hypothesis', 'confidence'),
+              confidence,
+              r'Hypothesis',
+              'confidence',
+            ),
             confidenceBasis: _confidenceBasis?.build(),
             ledgerOutcome: ledgerOutcome,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'Hypothesis', 'status'),
+              status,
+              r'Hypothesis',
+              'status',
+            ),
             change: _change?.build(),
             linkedFindingIds: _linkedFindingIds?.build(),
             coincidenceBaseline: _coincidenceBaseline?.build(),
@@ -513,7 +551,10 @@ class HypothesisBuilder implements Builder<Hypothesis, HypothesisBuilder> {
         _newsCoverage?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Hypothesis', _$failedField, e.toString());
+          r'Hypothesis',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

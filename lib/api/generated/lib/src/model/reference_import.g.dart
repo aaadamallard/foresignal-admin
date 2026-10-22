@@ -32,11 +32,11 @@ ReferenceImportDatasetEnum _$referenceImportDatasetEnumValueOf(String name) {
 
 final BuiltSet<ReferenceImportDatasetEnum> _$referenceImportDatasetEnumValues =
     BuiltSet<ReferenceImportDatasetEnum>(const <ReferenceImportDatasetEnum>[
-  _$referenceImportDatasetEnum_ucdpGed,
-  _$referenceImportDatasetEnum_acled,
-  _$referenceImportDatasetEnum_usgsComcat,
-  _$referenceImportDatasetEnum_gdacs,
-]);
+      _$referenceImportDatasetEnum_ucdpGed,
+      _$referenceImportDatasetEnum_acled,
+      _$referenceImportDatasetEnum_usgsComcat,
+      _$referenceImportDatasetEnum_gdacs,
+    ]);
 
 const ReferenceImportStatusEnum _$referenceImportStatusEnum_queued =
     const ReferenceImportStatusEnum._('queued');
@@ -72,13 +72,13 @@ ReferenceImportStatusEnum _$referenceImportStatusEnumValueOf(String name) {
 
 final BuiltSet<ReferenceImportStatusEnum> _$referenceImportStatusEnumValues =
     BuiltSet<ReferenceImportStatusEnum>(const <ReferenceImportStatusEnum>[
-  _$referenceImportStatusEnum_queued,
-  _$referenceImportStatusEnum_running,
-  _$referenceImportStatusEnum_done,
-  _$referenceImportStatusEnum_failed,
-  _$referenceImportStatusEnum_skipped,
-  _$referenceImportStatusEnum_cancelled,
-]);
+      _$referenceImportStatusEnum_queued,
+      _$referenceImportStatusEnum_running,
+      _$referenceImportStatusEnum_done,
+      _$referenceImportStatusEnum_failed,
+      _$referenceImportStatusEnum_skipped,
+      _$referenceImportStatusEnum_cancelled,
+    ]);
 
 const ReferenceImportEgressEnum _$referenceImportEgressEnum_OPEN =
     const ReferenceImportEgressEnum._('OPEN');
@@ -98,9 +98,9 @@ ReferenceImportEgressEnum _$referenceImportEgressEnumValueOf(String name) {
 
 final BuiltSet<ReferenceImportEgressEnum> _$referenceImportEgressEnumValues =
     BuiltSet<ReferenceImportEgressEnum>(const <ReferenceImportEgressEnum>[
-  _$referenceImportEgressEnum_OPEN,
-  _$referenceImportEgressEnum_LOCAL_ONLY,
-]);
+      _$referenceImportEgressEnum_OPEN,
+      _$referenceImportEgressEnum_LOCAL_ONLY,
+    ]);
 
 Serializer<ReferenceImportDatasetEnum> _$referenceImportDatasetEnumSerializer =
     _$ReferenceImportDatasetEnumSerializer();
@@ -130,16 +130,20 @@ class _$ReferenceImportDatasetEnumSerializer
   final String wireName = 'ReferenceImportDatasetEnum';
 
   @override
-  Object serialize(Serializers serializers, ReferenceImportDatasetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReferenceImportDatasetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReferenceImportDatasetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReferenceImportDatasetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReferenceImportDatasetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReferenceImportStatusEnumSerializer
@@ -167,16 +171,20 @@ class _$ReferenceImportStatusEnumSerializer
   final String wireName = 'ReferenceImportStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ReferenceImportStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReferenceImportStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReferenceImportStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReferenceImportStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReferenceImportStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReferenceImportEgressEnumSerializer
@@ -196,16 +204,20 @@ class _$ReferenceImportEgressEnumSerializer
   final String wireName = 'ReferenceImportEgressEnum';
 
   @override
-  Object serialize(Serializers serializers, ReferenceImportEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReferenceImportEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReferenceImportEgressEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReferenceImportEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReferenceImportEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReferenceImport extends ReferenceImport {
@@ -251,27 +263,27 @@ class _$ReferenceImport extends ReferenceImport {
   factory _$ReferenceImport([void Function(ReferenceImportBuilder)? updates]) =>
       (ReferenceImportBuilder()..update(updates))._build();
 
-  _$ReferenceImport._(
-      {required this.id,
-      required this.dataset,
-      this.params,
-      required this.status,
-      this.statusReason,
-      this.progress,
-      this.fileSha256,
-      required this.rowsRead,
-      required this.rowsWritten,
-      this.periodFrom,
-      this.periodTo,
-      required this.licence,
-      required this.egress,
-      this.jobId,
-      this.startedAt,
-      this.finishedAt,
-      this.error,
-      required this.createdBy,
-      required this.createdAt})
-      : super._();
+  _$ReferenceImport._({
+    required this.id,
+    required this.dataset,
+    this.params,
+    required this.status,
+    this.statusReason,
+    this.progress,
+    this.fileSha256,
+    required this.rowsRead,
+    required this.rowsWritten,
+    this.periodFrom,
+    this.periodTo,
+    required this.licence,
+    required this.egress,
+    this.jobId,
+    this.startedAt,
+    this.finishedAt,
+    this.error,
+    required this.createdBy,
+    required this.createdAt,
+  }) : super._();
   @override
   ReferenceImport rebuild(void Function(ReferenceImportBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -485,36 +497,64 @@ class ReferenceImportBuilder
   _$ReferenceImport _build() {
     _$ReferenceImport _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReferenceImport._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ReferenceImport', 'id'),
+              id,
+              r'ReferenceImport',
+              'id',
+            ),
             dataset: BuiltValueNullFieldError.checkNotNull(
-                dataset, r'ReferenceImport', 'dataset'),
+              dataset,
+              r'ReferenceImport',
+              'dataset',
+            ),
             params: _params?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ReferenceImport', 'status'),
+              status,
+              r'ReferenceImport',
+              'status',
+            ),
             statusReason: statusReason,
             progress: progress,
             fileSha256: fileSha256,
             rowsRead: BuiltValueNullFieldError.checkNotNull(
-                rowsRead, r'ReferenceImport', 'rowsRead'),
+              rowsRead,
+              r'ReferenceImport',
+              'rowsRead',
+            ),
             rowsWritten: BuiltValueNullFieldError.checkNotNull(
-                rowsWritten, r'ReferenceImport', 'rowsWritten'),
+              rowsWritten,
+              r'ReferenceImport',
+              'rowsWritten',
+            ),
             periodFrom: periodFrom,
             periodTo: periodTo,
             licence: BuiltValueNullFieldError.checkNotNull(
-                licence, r'ReferenceImport', 'licence'),
+              licence,
+              r'ReferenceImport',
+              'licence',
+            ),
             egress: BuiltValueNullFieldError.checkNotNull(
-                egress, r'ReferenceImport', 'egress'),
+              egress,
+              r'ReferenceImport',
+              'egress',
+            ),
             jobId: jobId,
             startedAt: startedAt,
             finishedAt: finishedAt,
             error: error,
             createdBy: BuiltValueNullFieldError.checkNotNull(
-                createdBy, r'ReferenceImport', 'createdBy'),
+              createdBy,
+              r'ReferenceImport',
+              'createdBy',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ReferenceImport', 'createdAt'),
+              createdAt,
+              r'ReferenceImport',
+              'createdAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -523,7 +563,10 @@ class ReferenceImportBuilder
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReferenceImport', _$failedField, e.toString());
+          r'ReferenceImport',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

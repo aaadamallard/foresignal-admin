@@ -12,15 +12,15 @@ class _$MetarPayloadSkyInner extends MetarPayloadSkyInner {
   @override
   final int? baseFtAgl;
 
-  factory _$MetarPayloadSkyInner(
-          [void Function(MetarPayloadSkyInnerBuilder)? updates]) =>
-      (MetarPayloadSkyInnerBuilder()..update(updates))._build();
+  factory _$MetarPayloadSkyInner([
+    void Function(MetarPayloadSkyInnerBuilder)? updates,
+  ]) => (MetarPayloadSkyInnerBuilder()..update(updates))._build();
 
   _$MetarPayloadSkyInner._({required this.cover, this.baseFtAgl}) : super._();
   @override
   MetarPayloadSkyInner rebuild(
-          void Function(MetarPayloadSkyInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MetarPayloadSkyInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MetarPayloadSkyInnerBuilder toBuilder() =>
@@ -92,10 +92,14 @@ class MetarPayloadSkyInnerBuilder
   MetarPayloadSkyInner build() => _build();
 
   _$MetarPayloadSkyInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MetarPayloadSkyInner._(
           cover: BuiltValueNullFieldError.checkNotNull(
-              cover, r'MetarPayloadSkyInner', 'cover'),
+            cover,
+            r'MetarPayloadSkyInner',
+            'cover',
+          ),
           baseFtAgl: baseFtAgl,
         );
     replace(_$result);

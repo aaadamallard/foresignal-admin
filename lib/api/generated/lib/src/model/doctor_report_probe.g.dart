@@ -9,17 +9,18 @@ part of 'doctor_report_probe.dart';
 const DoctorReportProbeSkipReasonEnum _$doctorReportProbeSkipReasonEnum_budget =
     const DoctorReportProbeSkipReasonEnum._('budget');
 const DoctorReportProbeSkipReasonEnum
-    _$doctorReportProbeSkipReasonEnum_backoff =
+_$doctorReportProbeSkipReasonEnum_backoff =
     const DoctorReportProbeSkipReasonEnum._('backoff');
 const DoctorReportProbeSkipReasonEnum
-    _$doctorReportProbeSkipReasonEnum_noUpstream =
+_$doctorReportProbeSkipReasonEnum_noUpstream =
     const DoctorReportProbeSkipReasonEnum._('noUpstream');
 const DoctorReportProbeSkipReasonEnum
-    _$doctorReportProbeSkipReasonEnum_notRequested =
+_$doctorReportProbeSkipReasonEnum_notRequested =
     const DoctorReportProbeSkipReasonEnum._('notRequested');
 
 DoctorReportProbeSkipReasonEnum _$doctorReportProbeSkipReasonEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'budget':
       return _$doctorReportProbeSkipReasonEnum_budget;
@@ -35,16 +36,18 @@ DoctorReportProbeSkipReasonEnum _$doctorReportProbeSkipReasonEnumValueOf(
 }
 
 final BuiltSet<DoctorReportProbeSkipReasonEnum>
-    _$doctorReportProbeSkipReasonEnumValues = BuiltSet<
-        DoctorReportProbeSkipReasonEnum>(const <DoctorReportProbeSkipReasonEnum>[
-  _$doctorReportProbeSkipReasonEnum_budget,
-  _$doctorReportProbeSkipReasonEnum_backoff,
-  _$doctorReportProbeSkipReasonEnum_noUpstream,
-  _$doctorReportProbeSkipReasonEnum_notRequested,
-]);
+_$doctorReportProbeSkipReasonEnumValues =
+    BuiltSet<DoctorReportProbeSkipReasonEnum>(
+      const <DoctorReportProbeSkipReasonEnum>[
+        _$doctorReportProbeSkipReasonEnum_budget,
+        _$doctorReportProbeSkipReasonEnum_backoff,
+        _$doctorReportProbeSkipReasonEnum_noUpstream,
+        _$doctorReportProbeSkipReasonEnum_notRequested,
+      ],
+    );
 
 Serializer<DoctorReportProbeSkipReasonEnum>
-    _$doctorReportProbeSkipReasonEnumSerializer =
+_$doctorReportProbeSkipReasonEnumSerializer =
     _$DoctorReportProbeSkipReasonEnumSerializer();
 
 class _$DoctorReportProbeSkipReasonEnumSerializer
@@ -69,16 +72,19 @@ class _$DoctorReportProbeSkipReasonEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DoctorReportProbeSkipReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DoctorReportProbeSkipReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DoctorReportProbeSkipReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorReportProbeSkipReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorReportProbeSkipReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorReportProbe extends DoctorReportProbe {
@@ -105,23 +111,23 @@ class _$DoctorReportProbe extends DoctorReportProbe {
   @override
   final String? error;
 
-  factory _$DoctorReportProbe(
-          [void Function(DoctorReportProbeBuilder)? updates]) =>
-      (DoctorReportProbeBuilder()..update(updates))._build();
+  factory _$DoctorReportProbe([
+    void Function(DoctorReportProbeBuilder)? updates,
+  ]) => (DoctorReportProbeBuilder()..update(updates))._build();
 
-  _$DoctorReportProbe._(
-      {required this.skipped,
-      this.status,
-      this.httpStatus,
-      this.contentType,
-      this.bytes,
-      this.url,
-      this.durationMs,
-      this.skipReason,
-      this.records,
-      this.requests,
-      this.error})
-      : super._();
+  _$DoctorReportProbe._({
+    required this.skipped,
+    this.status,
+    this.httpStatus,
+    this.contentType,
+    this.bytes,
+    this.url,
+    this.durationMs,
+    this.skipReason,
+    this.records,
+    this.requests,
+    this.error,
+  }) : super._();
   @override
   DoctorReportProbe rebuild(void Function(DoctorReportProbeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -269,10 +275,14 @@ class DoctorReportProbeBuilder
   DoctorReportProbe build() => _build();
 
   _$DoctorReportProbe _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DoctorReportProbe._(
           skipped: BuiltValueNullFieldError.checkNotNull(
-              skipped, r'DoctorReportProbe', 'skipped'),
+            skipped,
+            r'DoctorReportProbe',
+            'skipped',
+          ),
           status: status,
           httpStatus: httpStatus,
           contentType: contentType,

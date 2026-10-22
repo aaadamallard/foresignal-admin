@@ -16,20 +16,20 @@ class _$HypothesisCoincidenceBaseline extends HypothesisCoincidenceBaseline {
   @override
   final int? nPlacebo;
 
-  factory _$HypothesisCoincidenceBaseline(
-          [void Function(HypothesisCoincidenceBaselineBuilder)? updates]) =>
-      (HypothesisCoincidenceBaselineBuilder()..update(updates))._build();
+  factory _$HypothesisCoincidenceBaseline([
+    void Function(HypothesisCoincidenceBaselineBuilder)? updates,
+  ]) => (HypothesisCoincidenceBaselineBuilder()..update(updates))._build();
 
-  _$HypothesisCoincidenceBaseline._(
-      {required this.placeboRate,
-      required this.method,
-      this.eventStudyId,
-      this.nPlacebo})
-      : super._();
+  _$HypothesisCoincidenceBaseline._({
+    required this.placeboRate,
+    required this.method,
+    this.eventStudyId,
+    this.nPlacebo,
+  }) : super._();
   @override
   HypothesisCoincidenceBaseline rebuild(
-          void Function(HypothesisCoincidenceBaselineBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisCoincidenceBaselineBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisCoincidenceBaselineBuilder toBuilder() =>
@@ -69,8 +69,10 @@ class _$HypothesisCoincidenceBaseline extends HypothesisCoincidenceBaseline {
 
 class HypothesisCoincidenceBaselineBuilder
     implements
-        Builder<HypothesisCoincidenceBaseline,
-            HypothesisCoincidenceBaselineBuilder> {
+        Builder<
+          HypothesisCoincidenceBaseline,
+          HypothesisCoincidenceBaselineBuilder
+        > {
   _$HypothesisCoincidenceBaseline? _$v;
 
   num? _placeboRate;
@@ -119,12 +121,19 @@ class HypothesisCoincidenceBaselineBuilder
   HypothesisCoincidenceBaseline build() => _build();
 
   _$HypothesisCoincidenceBaseline _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisCoincidenceBaseline._(
           placeboRate: BuiltValueNullFieldError.checkNotNull(
-              placeboRate, r'HypothesisCoincidenceBaseline', 'placeboRate'),
+            placeboRate,
+            r'HypothesisCoincidenceBaseline',
+            'placeboRate',
+          ),
           method: BuiltValueNullFieldError.checkNotNull(
-              method, r'HypothesisCoincidenceBaseline', 'method'),
+            method,
+            r'HypothesisCoincidenceBaseline',
+            'method',
+          ),
           eventStudyId: eventStudyId,
           nPlacebo: nPlacebo,
         );

@@ -69,8 +69,9 @@ class _$NarrativeTimelineSerializer
     yield r'series';
     yield serializers.serialize(
       object.series,
-      specifiedType:
-          const FullType(BuiltList, [FullType(NarrativeTimelineSeriesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NarrativeTimelineSeriesInner),
+      ]),
     );
   }
 
@@ -80,9 +81,11 @@ class _$NarrativeTimelineSerializer
     NarrativeTimeline object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,25 +101,34 @@ class _$NarrativeTimelineSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'narrativeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.narrativeId = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NarrativeTimelineIntervalEnum),
-          ) as NarrativeTimelineIntervalEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NarrativeTimelineIntervalEnum,
+                    ),
+                  )
+                  as NarrativeTimelineIntervalEnum;
           result.interval = valueDes;
           break;
         case r'series':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(NarrativeTimelineSeriesInner)]),
-          ) as BuiltList<NarrativeTimelineSeriesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NarrativeTimelineSeriesInner),
+                    ]),
+                  )
+                  as BuiltList<NarrativeTimelineSeriesInner>;
           result.series.replace(valueDes);
           break;
         default:

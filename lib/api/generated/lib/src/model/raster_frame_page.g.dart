@@ -21,13 +21,13 @@ class _$RasterFramePage extends RasterFramePage {
   factory _$RasterFramePage([void Function(RasterFramePageBuilder)? updates]) =>
       (RasterFramePageBuilder()..update(updates))._build();
 
-  _$RasterFramePage._(
-      {required this.items,
-      this.nextCursor,
-      this.prefetch,
-      required this.serverTime,
-      this.earliest})
-      : super._();
+  _$RasterFramePage._({
+    required this.items,
+    this.nextCursor,
+    this.prefetch,
+    required this.serverTime,
+    this.earliest,
+  }) : super._();
   @override
   RasterFramePage rebuild(void Function(RasterFramePageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -130,13 +130,17 @@ class RasterFramePageBuilder
   _$RasterFramePage _build() {
     _$RasterFramePage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RasterFramePage._(
             items: items.build(),
             nextCursor: nextCursor,
             prefetch: _prefetch?.build(),
             serverTime: BuiltValueNullFieldError.checkNotNull(
-                serverTime, r'RasterFramePage', 'serverTime'),
+              serverTime,
+              r'RasterFramePage',
+              'serverTime',
+            ),
             earliest: earliest,
           );
     } catch (_) {
@@ -149,7 +153,10 @@ class RasterFramePageBuilder
         _prefetch?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RasterFramePage', _$failedField, e.toString());
+          r'RasterFramePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -18,8 +18,10 @@ part 'forecast_calibration_decomposition.g.dart';
 @BuiltValue()
 abstract class ForecastCalibrationDecomposition
     implements
-        Built<ForecastCalibrationDecomposition,
-            ForecastCalibrationDecompositionBuilder> {
+        Built<
+          ForecastCalibrationDecomposition,
+          ForecastCalibrationDecompositionBuilder
+        > {
   @BuiltValueField(wireName: r'score')
   num get score;
 
@@ -34,9 +36,9 @@ abstract class ForecastCalibrationDecomposition
 
   ForecastCalibrationDecomposition._();
 
-  factory ForecastCalibrationDecomposition(
-          [void updates(ForecastCalibrationDecompositionBuilder b)]) =
-      _$ForecastCalibrationDecomposition;
+  factory ForecastCalibrationDecomposition([
+    void updates(ForecastCalibrationDecompositionBuilder b),
+  ]) = _$ForecastCalibrationDecomposition;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastCalibrationDecompositionBuilder b) => b;
@@ -51,7 +53,7 @@ class _$ForecastCalibrationDecompositionSerializer
   @override
   final Iterable<Type> types = const [
     ForecastCalibrationDecomposition,
-    _$ForecastCalibrationDecomposition
+    _$ForecastCalibrationDecomposition,
   ];
 
   @override
@@ -90,9 +92,11 @@ class _$ForecastCalibrationDecompositionSerializer
     ForecastCalibrationDecomposition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,31 +112,27 @@ class _$ForecastCalibrationDecompositionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'score':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.score = valueDes;
           break;
         case r'miscalibration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.miscalibration = valueDes;
           break;
         case r'discrimination':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.discrimination = valueDes;
           break;
         case r'uncertainty':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.uncertainty = valueDes;
           break;
         default:

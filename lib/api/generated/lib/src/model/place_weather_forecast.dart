@@ -42,7 +42,7 @@ class _$PlaceWeatherForecastSerializer
   @override
   final Iterable<Type> types = const [
     PlaceWeatherForecast,
-    _$PlaceWeatherForecast
+    _$PlaceWeatherForecast,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$PlaceWeatherForecastSerializer
     PlaceWeatherForecast object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,26 @@ class _$PlaceWeatherForecastSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'gfs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherForecastGfs),
-          ) as PlaceWeatherForecastGfs?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherForecastGfs,
+                    ),
+                  )
+                  as PlaceWeatherForecastGfs?;
           if (valueDes == null) continue;
           result.gfs.replace(valueDes);
           break;
         case r'nws':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherForecastNws),
-          ) as PlaceWeatherForecastNws?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherForecastNws,
+                    ),
+                  )
+                  as PlaceWeatherForecastNws?;
           if (valueDes == null) continue;
           result.nws.replace(valueDes);
           break;

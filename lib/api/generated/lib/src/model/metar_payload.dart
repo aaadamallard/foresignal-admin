@@ -207,8 +207,9 @@ class _$MetarPayloadSerializer implements PrimitiveSerializer<MetarPayload> {
       yield r'sky';
       yield serializers.serialize(
         object.sky,
-        specifiedType:
-            const FullType(BuiltList, [FullType(MetarPayloadSkyInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(MetarPayloadSkyInner),
+        ]),
       );
     }
     if (object.flightCategory != null) {
@@ -233,9 +234,11 @@ class _$MetarPayloadSerializer implements PrimitiveSerializer<MetarPayload> {
     MetarPayload object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -251,138 +254,176 @@ class _$MetarPayloadSerializer implements PrimitiveSerializer<MetarPayload> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'raw':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.raw = valueDes;
           break;
         case r'stationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.stationId = valueDes;
           break;
         case r'metarType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(MetarPayloadMetarTypeEnum),
-          ) as MetarPayloadMetarTypeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MetarPayloadMetarTypeEnum,
+                    ),
+                  )
+                  as MetarPayloadMetarTypeEnum?;
           if (valueDes == null) continue;
           result.metarType = valueDes;
           break;
         case r'tempC':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.tempC = valueDes;
           break;
         case r'dewpointC':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.dewpointC = valueDes;
           break;
         case r'windDirDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.windDirDeg = valueDes;
           break;
         case r'windVariable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.windVariable = valueDes;
           break;
         case r'windKt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.windKt = valueDes;
           break;
         case r'gustKt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.gustKt = valueDes;
           break;
         case r'visibilitySm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.visibilitySm = valueDes;
           break;
         case r'visibilityPlus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.visibilityPlus = valueDes;
           break;
         case r'altimInHg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.altimInHg = valueDes;
           break;
         case r'slpMb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.slpMb = valueDes;
           break;
         case r'wx':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.wx = valueDes;
           break;
         case r'sky':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(MetarPayloadSkyInner)]),
-          ) as BuiltList<MetarPayloadSkyInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(MetarPayloadSkyInner),
+                    ]),
+                  )
+                  as BuiltList<MetarPayloadSkyInner>?;
           if (valueDes == null) continue;
           result.sky.replace(valueDes);
           break;
         case r'flightCategory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(MetarPayloadFlightCategoryEnum),
-          ) as MetarPayloadFlightCategoryEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      MetarPayloadFlightCategoryEnum,
+                    ),
+                  )
+                  as MetarPayloadFlightCategoryEnum?;
           if (valueDes == null) continue;
           result.flightCategory = valueDes;
           break;
         case r'elevationM':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.elevationM = valueDes;
           break;

@@ -9,17 +9,18 @@ part of 'canonical_event.dart';
 const CanonicalEventQualityFlagsEnum _$canonicalEventQualityFlagsEnum_ECHO =
     const CanonicalEventQualityFlagsEnum._('ECHO');
 const CanonicalEventQualityFlagsEnum
-    _$canonicalEventQualityFlagsEnum_TIMESTAMP_CONFLICT =
+_$canonicalEventQualityFlagsEnum_TIMESTAMP_CONFLICT =
     const CanonicalEventQualityFlagsEnum._('TIMESTAMP_CONFLICT');
 const CanonicalEventQualityFlagsEnum
-    _$canonicalEventQualityFlagsEnum_SINGLE_ORIGINATOR =
+_$canonicalEventQualityFlagsEnum_SINGLE_ORIGINATOR =
     const CanonicalEventQualityFlagsEnum._('SINGLE_ORIGINATOR');
 const CanonicalEventQualityFlagsEnum
-    _$canonicalEventQualityFlagsEnum_LATE_REVISION =
+_$canonicalEventQualityFlagsEnum_LATE_REVISION =
     const CanonicalEventQualityFlagsEnum._('LATE_REVISION');
 
 CanonicalEventQualityFlagsEnum _$canonicalEventQualityFlagsEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ECHO':
       return _$canonicalEventQualityFlagsEnum_ECHO;
@@ -35,13 +36,15 @@ CanonicalEventQualityFlagsEnum _$canonicalEventQualityFlagsEnumValueOf(
 }
 
 final BuiltSet<CanonicalEventQualityFlagsEnum>
-    _$canonicalEventQualityFlagsEnumValues = BuiltSet<
-        CanonicalEventQualityFlagsEnum>(const <CanonicalEventQualityFlagsEnum>[
-  _$canonicalEventQualityFlagsEnum_ECHO,
-  _$canonicalEventQualityFlagsEnum_TIMESTAMP_CONFLICT,
-  _$canonicalEventQualityFlagsEnum_SINGLE_ORIGINATOR,
-  _$canonicalEventQualityFlagsEnum_LATE_REVISION,
-]);
+_$canonicalEventQualityFlagsEnumValues =
+    BuiltSet<CanonicalEventQualityFlagsEnum>(
+      const <CanonicalEventQualityFlagsEnum>[
+        _$canonicalEventQualityFlagsEnum_ECHO,
+        _$canonicalEventQualityFlagsEnum_TIMESTAMP_CONFLICT,
+        _$canonicalEventQualityFlagsEnum_SINGLE_ORIGINATOR,
+        _$canonicalEventQualityFlagsEnum_LATE_REVISION,
+      ],
+    );
 
 const CanonicalEventStatusEnum _$canonicalEventStatusEnum_open =
     const CanonicalEventStatusEnum._('open');
@@ -65,13 +68,13 @@ CanonicalEventStatusEnum _$canonicalEventStatusEnumValueOf(String name) {
 
 final BuiltSet<CanonicalEventStatusEnum> _$canonicalEventStatusEnumValues =
     BuiltSet<CanonicalEventStatusEnum>(const <CanonicalEventStatusEnum>[
-  _$canonicalEventStatusEnum_open,
-  _$canonicalEventStatusEnum_merged,
-  _$canonicalEventStatusEnum_closed,
-]);
+      _$canonicalEventStatusEnum_open,
+      _$canonicalEventStatusEnum_merged,
+      _$canonicalEventStatusEnum_closed,
+    ]);
 
 Serializer<CanonicalEventQualityFlagsEnum>
-    _$canonicalEventQualityFlagsEnumSerializer =
+_$canonicalEventQualityFlagsEnumSerializer =
     _$CanonicalEventQualityFlagsEnumSerializer();
 Serializer<CanonicalEventStatusEnum> _$canonicalEventStatusEnumSerializer =
     _$CanonicalEventStatusEnumSerializer();
@@ -98,16 +101,19 @@ class _$CanonicalEventQualityFlagsEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, CanonicalEventQualityFlagsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    CanonicalEventQualityFlagsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CanonicalEventQualityFlagsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CanonicalEventQualityFlagsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CanonicalEventQualityFlagsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CanonicalEventStatusEnumSerializer
@@ -129,16 +135,20 @@ class _$CanonicalEventStatusEnumSerializer
   final String wireName = 'CanonicalEventStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, CanonicalEventStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    CanonicalEventStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   CanonicalEventStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      CanonicalEventStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => CanonicalEventStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$CanonicalEvent extends CanonicalEvent {
@@ -182,26 +192,26 @@ class _$CanonicalEvent extends CanonicalEvent {
   factory _$CanonicalEvent([void Function(CanonicalEventBuilder)? updates]) =>
       (CanonicalEventBuilder()..update(updates))._build();
 
-  _$CanonicalEvent._(
-      {required this.id,
-      required this.ref,
-      required this.family,
-      required this.eventTime,
-      this.geometry,
-      this.regionCodes,
-      this.firstObservedAt,
-      this.firstObservationRef,
-      required this.observationCount,
-      required this.evidenceGroupCount,
-      required this.qualityFlags,
-      required this.status,
-      this.mergedInto,
-      required this.resolverVersion,
-      required this.createdAt,
-      required this.updatedAt,
-      this.observations,
-      this.evidenceGroups})
-      : super._();
+  _$CanonicalEvent._({
+    required this.id,
+    required this.ref,
+    required this.family,
+    required this.eventTime,
+    this.geometry,
+    this.regionCodes,
+    this.firstObservedAt,
+    this.firstObservationRef,
+    required this.observationCount,
+    required this.evidenceGroupCount,
+    required this.qualityFlags,
+    required this.status,
+    this.mergedInto,
+    required this.resolverVersion,
+    required this.createdAt,
+    required this.updatedAt,
+    this.observations,
+    this.evidenceGroups,
+  }) : super._();
   @override
   CanonicalEvent rebuild(void Function(CanonicalEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -418,34 +428,65 @@ class CanonicalEventBuilder
   _$CanonicalEvent _build() {
     _$CanonicalEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$CanonicalEvent._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'CanonicalEvent', 'id'),
+              id,
+              r'CanonicalEvent',
+              'id',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'CanonicalEvent', 'ref'),
+              ref,
+              r'CanonicalEvent',
+              'ref',
+            ),
             family: BuiltValueNullFieldError.checkNotNull(
-                family, r'CanonicalEvent', 'family'),
+              family,
+              r'CanonicalEvent',
+              'family',
+            ),
             eventTime: BuiltValueNullFieldError.checkNotNull(
-                eventTime, r'CanonicalEvent', 'eventTime'),
+              eventTime,
+              r'CanonicalEvent',
+              'eventTime',
+            ),
             geometry: _geometry?.build(),
             regionCodes: _regionCodes?.build(),
             firstObservedAt: firstObservedAt,
             firstObservationRef: firstObservationRef,
             observationCount: BuiltValueNullFieldError.checkNotNull(
-                observationCount, r'CanonicalEvent', 'observationCount'),
+              observationCount,
+              r'CanonicalEvent',
+              'observationCount',
+            ),
             evidenceGroupCount: BuiltValueNullFieldError.checkNotNull(
-                evidenceGroupCount, r'CanonicalEvent', 'evidenceGroupCount'),
+              evidenceGroupCount,
+              r'CanonicalEvent',
+              'evidenceGroupCount',
+            ),
             qualityFlags: qualityFlags.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'CanonicalEvent', 'status'),
+              status,
+              r'CanonicalEvent',
+              'status',
+            ),
             mergedInto: mergedInto,
             resolverVersion: BuiltValueNullFieldError.checkNotNull(
-                resolverVersion, r'CanonicalEvent', 'resolverVersion'),
+              resolverVersion,
+              r'CanonicalEvent',
+              'resolverVersion',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'CanonicalEvent', 'createdAt'),
+              createdAt,
+              r'CanonicalEvent',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'CanonicalEvent', 'updatedAt'),
+              updatedAt,
+              r'CanonicalEvent',
+              'updatedAt',
+            ),
             observations: _observations?.build(),
             evidenceGroups: _evidenceGroups?.build(),
           );
@@ -466,7 +507,10 @@ class CanonicalEventBuilder
         _evidenceGroups?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'CanonicalEvent', _$failedField, e.toString());
+          r'CanonicalEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

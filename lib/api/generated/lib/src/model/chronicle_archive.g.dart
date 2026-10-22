@@ -32,11 +32,11 @@ ChronicleArchiveStateEnum _$chronicleArchiveStateEnumValueOf(String name) {
 
 final BuiltSet<ChronicleArchiveStateEnum> _$chronicleArchiveStateEnumValues =
     BuiltSet<ChronicleArchiveStateEnum>(const <ChronicleArchiveStateEnum>[
-  _$chronicleArchiveStateEnum_pending,
-  _$chronicleArchiveStateEnum_archived,
-  _$chronicleArchiveStateEnum_restoring,
-  _$chronicleArchiveStateEnum_failed,
-]);
+      _$chronicleArchiveStateEnum_pending,
+      _$chronicleArchiveStateEnum_archived,
+      _$chronicleArchiveStateEnum_restoring,
+      _$chronicleArchiveStateEnum_failed,
+    ]);
 
 Serializer<ChronicleArchiveStateEnum> _$chronicleArchiveStateEnumSerializer =
     _$ChronicleArchiveStateEnumSerializer();
@@ -62,16 +62,20 @@ class _$ChronicleArchiveStateEnumSerializer
   final String wireName = 'ChronicleArchiveStateEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleArchiveStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleArchiveStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleArchiveStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleArchiveStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleArchiveStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleArchive extends ChronicleArchive {
@@ -86,17 +90,17 @@ class _$ChronicleArchive extends ChronicleArchive {
   @override
   final String? error;
 
-  factory _$ChronicleArchive(
-          [void Function(ChronicleArchiveBuilder)? updates]) =>
-      (ChronicleArchiveBuilder()..update(updates))._build();
+  factory _$ChronicleArchive([
+    void Function(ChronicleArchiveBuilder)? updates,
+  ]) => (ChronicleArchiveBuilder()..update(updates))._build();
 
-  _$ChronicleArchive._(
-      {required this.state,
-      this.exportId,
-      this.archivedAt,
-      this.bytes,
-      this.error})
-      : super._();
+  _$ChronicleArchive._({
+    required this.state,
+    this.exportId,
+    this.archivedAt,
+    this.bytes,
+    this.error,
+  }) : super._();
   @override
   ChronicleArchive rebuild(void Function(ChronicleArchiveBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -195,10 +199,14 @@ class ChronicleArchiveBuilder
   ChronicleArchive build() => _build();
 
   _$ChronicleArchive _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleArchive._(
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'ChronicleArchive', 'state'),
+            state,
+            r'ChronicleArchive',
+            'state',
+          ),
           exportId: exportId,
           archivedAt: archivedAt,
           bytes: bytes,

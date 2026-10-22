@@ -15,18 +15,19 @@ class _$HypothesisPatchProbabilityOverride
   @override
   final bool? exceedCap;
 
-  factory _$HypothesisPatchProbabilityOverride(
-          [void Function(HypothesisPatchProbabilityOverrideBuilder)?
-              updates]) =>
-      (HypothesisPatchProbabilityOverrideBuilder()..update(updates))._build();
+  factory _$HypothesisPatchProbabilityOverride([
+    void Function(HypothesisPatchProbabilityOverrideBuilder)? updates,
+  ]) => (HypothesisPatchProbabilityOverrideBuilder()..update(updates))._build();
 
-  _$HypothesisPatchProbabilityOverride._(
-      {required this.probability, required this.rationale, this.exceedCap})
-      : super._();
+  _$HypothesisPatchProbabilityOverride._({
+    required this.probability,
+    required this.rationale,
+    this.exceedCap,
+  }) : super._();
   @override
   HypothesisPatchProbabilityOverride rebuild(
-          void Function(HypothesisPatchProbabilityOverrideBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisPatchProbabilityOverrideBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisPatchProbabilityOverrideBuilder toBuilder() =>
@@ -63,8 +64,10 @@ class _$HypothesisPatchProbabilityOverride
 
 class HypothesisPatchProbabilityOverrideBuilder
     implements
-        Builder<HypothesisPatchProbabilityOverride,
-            HypothesisPatchProbabilityOverrideBuilder> {
+        Builder<
+          HypothesisPatchProbabilityOverride,
+          HypothesisPatchProbabilityOverrideBuilder
+        > {
   _$HypothesisPatchProbabilityOverride? _$v;
 
   num? _probability;
@@ -101,7 +104,8 @@ class HypothesisPatchProbabilityOverrideBuilder
 
   @override
   void update(
-      void Function(HypothesisPatchProbabilityOverrideBuilder)? updates) {
+    void Function(HypothesisPatchProbabilityOverrideBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -109,12 +113,19 @@ class HypothesisPatchProbabilityOverrideBuilder
   HypothesisPatchProbabilityOverride build() => _build();
 
   _$HypothesisPatchProbabilityOverride _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisPatchProbabilityOverride._(
-          probability: BuiltValueNullFieldError.checkNotNull(probability,
-              r'HypothesisPatchProbabilityOverride', 'probability'),
+          probability: BuiltValueNullFieldError.checkNotNull(
+            probability,
+            r'HypothesisPatchProbabilityOverride',
+            'probability',
+          ),
           rationale: BuiltValueNullFieldError.checkNotNull(
-              rationale, r'HypothesisPatchProbabilityOverride', 'rationale'),
+            rationale,
+            r'HypothesisPatchProbabilityOverride',
+            'rationale',
+          ),
           exceedCap: exceedCap,
         );
     replace(_$result);

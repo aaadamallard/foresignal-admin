@@ -36,28 +36,28 @@ RevisionDriverKindEnum _$revisionDriverKindEnumValueOf(String name) {
 
 final BuiltSet<RevisionDriverKindEnum> _$revisionDriverKindEnumValues =
     BuiltSet<RevisionDriverKindEnum>(const <RevisionDriverKindEnum>[
-  _$revisionDriverKindEnum_indicator,
-  _$revisionDriverKindEnum_evidence,
-  _$revisionDriverKindEnum_baseRate,
-  _$revisionDriverKindEnum_review,
-  _$revisionDriverKindEnum_operator_,
-]);
+      _$revisionDriverKindEnum_indicator,
+      _$revisionDriverKindEnum_evidence,
+      _$revisionDriverKindEnum_baseRate,
+      _$revisionDriverKindEnum_review,
+      _$revisionDriverKindEnum_operator_,
+    ]);
 
 const RevisionDriverSuppressionReasonEnum
-    _$revisionDriverSuppressionReasonEnum_sameEvidenceGroup =
+_$revisionDriverSuppressionReasonEnum_sameEvidenceGroup =
     const RevisionDriverSuppressionReasonEnum._('sameEvidenceGroup');
 const RevisionDriverSuppressionReasonEnum
-    _$revisionDriverSuppressionReasonEnum_sameFamilyDay =
+_$revisionDriverSuppressionReasonEnum_sameFamilyDay =
     const RevisionDriverSuppressionReasonEnum._('sameFamilyDay');
 const RevisionDriverSuppressionReasonEnum
-    _$revisionDriverSuppressionReasonEnum_damped =
+_$revisionDriverSuppressionReasonEnum_damped =
     const RevisionDriverSuppressionReasonEnum._('damped');
 const RevisionDriverSuppressionReasonEnum
-    _$revisionDriverSuppressionReasonEnum_capped =
+_$revisionDriverSuppressionReasonEnum_capped =
     const RevisionDriverSuppressionReasonEnum._('capped');
 
 RevisionDriverSuppressionReasonEnum
-    _$revisionDriverSuppressionReasonEnumValueOf(String name) {
+_$revisionDriverSuppressionReasonEnumValueOf(String name) {
   switch (name) {
     case 'sameEvidenceGroup':
       return _$revisionDriverSuppressionReasonEnum_sameEvidenceGroup;
@@ -73,18 +73,20 @@ RevisionDriverSuppressionReasonEnum
 }
 
 final BuiltSet<RevisionDriverSuppressionReasonEnum>
-    _$revisionDriverSuppressionReasonEnumValues = BuiltSet<
-        RevisionDriverSuppressionReasonEnum>(const <RevisionDriverSuppressionReasonEnum>[
-  _$revisionDriverSuppressionReasonEnum_sameEvidenceGroup,
-  _$revisionDriverSuppressionReasonEnum_sameFamilyDay,
-  _$revisionDriverSuppressionReasonEnum_damped,
-  _$revisionDriverSuppressionReasonEnum_capped,
-]);
+_$revisionDriverSuppressionReasonEnumValues =
+    BuiltSet<RevisionDriverSuppressionReasonEnum>(
+      const <RevisionDriverSuppressionReasonEnum>[
+        _$revisionDriverSuppressionReasonEnum_sameEvidenceGroup,
+        _$revisionDriverSuppressionReasonEnum_sameFamilyDay,
+        _$revisionDriverSuppressionReasonEnum_damped,
+        _$revisionDriverSuppressionReasonEnum_capped,
+      ],
+    );
 
 Serializer<RevisionDriverKindEnum> _$revisionDriverKindEnumSerializer =
     _$RevisionDriverKindEnumSerializer();
 Serializer<RevisionDriverSuppressionReasonEnum>
-    _$revisionDriverSuppressionReasonEnumSerializer =
+_$revisionDriverSuppressionReasonEnumSerializer =
     _$RevisionDriverSuppressionReasonEnumSerializer();
 
 class _$RevisionDriverKindEnumSerializer
@@ -110,15 +112,20 @@ class _$RevisionDriverKindEnumSerializer
   final String wireName = 'RevisionDriverKindEnum';
 
   @override
-  Object serialize(Serializers serializers, RevisionDriverKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RevisionDriverKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  RevisionDriverKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RevisionDriverKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  RevisionDriverKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RevisionDriverKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RevisionDriverSuppressionReasonEnumSerializer
@@ -138,23 +145,26 @@ class _$RevisionDriverSuppressionReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    RevisionDriverSuppressionReasonEnum
+    RevisionDriverSuppressionReasonEnum,
   ];
   @override
   final String wireName = 'RevisionDriverSuppressionReasonEnum';
 
   @override
   Object serialize(
-          Serializers serializers, RevisionDriverSuppressionReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    RevisionDriverSuppressionReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RevisionDriverSuppressionReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RevisionDriverSuppressionReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RevisionDriverSuppressionReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RevisionDriver extends RevisionDriver {
@@ -184,19 +194,19 @@ class _$RevisionDriver extends RevisionDriver {
   factory _$RevisionDriver([void Function(RevisionDriverBuilder)? updates]) =>
       (RevisionDriverBuilder()..update(updates))._build();
 
-  _$RevisionDriver._(
-      {required this.kind,
-      this.id,
-      this.ref,
-      required this.hypothesisId,
-      this.signalFamily,
-      this.lr,
-      this.lnLr,
-      this.pDetect,
-      required this.applied,
-      required this.suppressed,
-      this.suppressionReason})
-      : super._();
+  _$RevisionDriver._({
+    required this.kind,
+    this.id,
+    this.ref,
+    required this.hypothesisId,
+    this.signalFamily,
+    this.lr,
+    this.lnLr,
+    this.pDetect,
+    required this.applied,
+    required this.suppressed,
+    this.suppressionReason,
+  }) : super._();
   @override
   RevisionDriver rebuild(void Function(RevisionDriverBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -305,8 +315,8 @@ class RevisionDriverBuilder
   RevisionDriverSuppressionReasonEnum? get suppressionReason =>
       _$this._suppressionReason;
   set suppressionReason(
-          RevisionDriverSuppressionReasonEnum? suppressionReason) =>
-      _$this._suppressionReason = suppressionReason;
+    RevisionDriverSuppressionReasonEnum? suppressionReason,
+  ) => _$this._suppressionReason = suppressionReason;
 
   RevisionDriverBuilder() {
     RevisionDriver._defaults(this);
@@ -345,22 +355,35 @@ class RevisionDriverBuilder
   RevisionDriver build() => _build();
 
   _$RevisionDriver _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RevisionDriver._(
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'RevisionDriver', 'kind'),
+            kind,
+            r'RevisionDriver',
+            'kind',
+          ),
           id: id,
           ref: ref,
           hypothesisId: BuiltValueNullFieldError.checkNotNull(
-              hypothesisId, r'RevisionDriver', 'hypothesisId'),
+            hypothesisId,
+            r'RevisionDriver',
+            'hypothesisId',
+          ),
           signalFamily: signalFamily,
           lr: lr,
           lnLr: lnLr,
           pDetect: pDetect,
           applied: BuiltValueNullFieldError.checkNotNull(
-              applied, r'RevisionDriver', 'applied'),
+            applied,
+            r'RevisionDriver',
+            'applied',
+          ),
           suppressed: BuiltValueNullFieldError.checkNotNull(
-              suppressed, r'RevisionDriver', 'suppressed'),
+            suppressed,
+            r'RevisionDriver',
+            'suppressed',
+          ),
           suppressionReason: suppressionReason,
         );
     replace(_$result);

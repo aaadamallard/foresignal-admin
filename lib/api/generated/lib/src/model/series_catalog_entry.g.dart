@@ -26,7 +26,8 @@ const SeriesCatalogEntryFrequencyEnum _$seriesCatalogEntryFrequencyEnum_P1Y =
     const SeriesCatalogEntryFrequencyEnum._('P1Y');
 
 SeriesCatalogEntryFrequencyEnum _$seriesCatalogEntryFrequencyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'PT15S':
       return _$seriesCatalogEntryFrequencyEnum_PT15S;
@@ -52,18 +53,20 @@ SeriesCatalogEntryFrequencyEnum _$seriesCatalogEntryFrequencyEnumValueOf(
 }
 
 final BuiltSet<SeriesCatalogEntryFrequencyEnum>
-    _$seriesCatalogEntryFrequencyEnumValues = BuiltSet<
-        SeriesCatalogEntryFrequencyEnum>(const <SeriesCatalogEntryFrequencyEnum>[
-  _$seriesCatalogEntryFrequencyEnum_PT15S,
-  _$seriesCatalogEntryFrequencyEnum_PT15M,
-  _$seriesCatalogEntryFrequencyEnum_PT30M,
-  _$seriesCatalogEntryFrequencyEnum_PT1H,
-  _$seriesCatalogEntryFrequencyEnum_P1D,
-  _$seriesCatalogEntryFrequencyEnum_P1W,
-  _$seriesCatalogEntryFrequencyEnum_P1M,
-  _$seriesCatalogEntryFrequencyEnum_P3M,
-  _$seriesCatalogEntryFrequencyEnum_P1Y,
-]);
+_$seriesCatalogEntryFrequencyEnumValues =
+    BuiltSet<SeriesCatalogEntryFrequencyEnum>(
+      const <SeriesCatalogEntryFrequencyEnum>[
+        _$seriesCatalogEntryFrequencyEnum_PT15S,
+        _$seriesCatalogEntryFrequencyEnum_PT15M,
+        _$seriesCatalogEntryFrequencyEnum_PT30M,
+        _$seriesCatalogEntryFrequencyEnum_PT1H,
+        _$seriesCatalogEntryFrequencyEnum_P1D,
+        _$seriesCatalogEntryFrequencyEnum_P1W,
+        _$seriesCatalogEntryFrequencyEnum_P1M,
+        _$seriesCatalogEntryFrequencyEnum_P3M,
+        _$seriesCatalogEntryFrequencyEnum_P1Y,
+      ],
+    );
 
 const SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnum_final_ =
     const SeriesCatalogEntryStatusEnum._('final_');
@@ -75,7 +78,8 @@ const SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnum_forecast =
     const SeriesCatalogEntryStatusEnum._('forecast');
 
 SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'final_':
       return _$seriesCatalogEntryStatusEnum_final_;
@@ -91,13 +95,13 @@ SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnumValueOf(
 }
 
 final BuiltSet<SeriesCatalogEntryStatusEnum>
-    _$seriesCatalogEntryStatusEnumValues =
+_$seriesCatalogEntryStatusEnumValues =
     BuiltSet<SeriesCatalogEntryStatusEnum>(const <SeriesCatalogEntryStatusEnum>[
-  _$seriesCatalogEntryStatusEnum_final_,
-  _$seriesCatalogEntryStatusEnum_preliminary,
-  _$seriesCatalogEntryStatusEnum_estimated,
-  _$seriesCatalogEntryStatusEnum_forecast,
-]);
+      _$seriesCatalogEntryStatusEnum_final_,
+      _$seriesCatalogEntryStatusEnum_preliminary,
+      _$seriesCatalogEntryStatusEnum_estimated,
+      _$seriesCatalogEntryStatusEnum_forecast,
+    ]);
 
 const SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnum_price =
     const SeriesCatalogEntryFamilyEnum._('price');
@@ -121,7 +125,8 @@ const SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnum_structural =
     const SeriesCatalogEntryFamilyEnum._('structural');
 
 SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'price':
       return _$seriesCatalogEntryFamilyEnum_price;
@@ -149,34 +154,35 @@ SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnumValueOf(
 }
 
 final BuiltSet<SeriesCatalogEntryFamilyEnum>
-    _$seriesCatalogEntryFamilyEnumValues =
+_$seriesCatalogEntryFamilyEnumValues =
     BuiltSet<SeriesCatalogEntryFamilyEnum>(const <SeriesCatalogEntryFamilyEnum>[
-  _$seriesCatalogEntryFamilyEnum_price,
-  _$seriesCatalogEntryFamilyEnum_volume,
-  _$seriesCatalogEntryFamilyEnum_openInterest,
-  _$seriesCatalogEntryFamilyEnum_position,
-  _$seriesCatalogEntryFamilyEnum_rate,
-  _$seriesCatalogEntryFamilyEnum_attention,
-  _$seriesCatalogEntryFamilyEnum_tone,
-  _$seriesCatalogEntryFamilyEnum_count,
-  _$seriesCatalogEntryFamilyEnum_index,
-  _$seriesCatalogEntryFamilyEnum_structural,
-]);
+      _$seriesCatalogEntryFamilyEnum_price,
+      _$seriesCatalogEntryFamilyEnum_volume,
+      _$seriesCatalogEntryFamilyEnum_openInterest,
+      _$seriesCatalogEntryFamilyEnum_position,
+      _$seriesCatalogEntryFamilyEnum_rate,
+      _$seriesCatalogEntryFamilyEnum_attention,
+      _$seriesCatalogEntryFamilyEnum_tone,
+      _$seriesCatalogEntryFamilyEnum_count,
+      _$seriesCatalogEntryFamilyEnum_index,
+      _$seriesCatalogEntryFamilyEnum_structural,
+    ]);
 
 const SeriesCatalogEntryTransformEnum
-    _$seriesCatalogEntryTransformEnum_logReturn =
+_$seriesCatalogEntryTransformEnum_logReturn =
     const SeriesCatalogEntryTransformEnum._('logReturn');
 const SeriesCatalogEntryTransformEnum
-    _$seriesCatalogEntryTransformEnum_logLevel =
+_$seriesCatalogEntryTransformEnum_logLevel =
     const SeriesCatalogEntryTransformEnum._('logLevel');
 const SeriesCatalogEntryTransformEnum
-    _$seriesCatalogEntryTransformEnum_difference =
+_$seriesCatalogEntryTransformEnum_difference =
     const SeriesCatalogEntryTransformEnum._('difference');
 const SeriesCatalogEntryTransformEnum _$seriesCatalogEntryTransformEnum_level =
     const SeriesCatalogEntryTransformEnum._('level');
 
 SeriesCatalogEntryTransformEnum _$seriesCatalogEntryTransformEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'logReturn':
       return _$seriesCatalogEntryTransformEnum_logReturn;
@@ -192,13 +198,15 @@ SeriesCatalogEntryTransformEnum _$seriesCatalogEntryTransformEnumValueOf(
 }
 
 final BuiltSet<SeriesCatalogEntryTransformEnum>
-    _$seriesCatalogEntryTransformEnumValues = BuiltSet<
-        SeriesCatalogEntryTransformEnum>(const <SeriesCatalogEntryTransformEnum>[
-  _$seriesCatalogEntryTransformEnum_logReturn,
-  _$seriesCatalogEntryTransformEnum_logLevel,
-  _$seriesCatalogEntryTransformEnum_difference,
-  _$seriesCatalogEntryTransformEnum_level,
-]);
+_$seriesCatalogEntryTransformEnumValues =
+    BuiltSet<SeriesCatalogEntryTransformEnum>(
+      const <SeriesCatalogEntryTransformEnum>[
+        _$seriesCatalogEntryTransformEnum_logReturn,
+        _$seriesCatalogEntryTransformEnum_logLevel,
+        _$seriesCatalogEntryTransformEnum_difference,
+        _$seriesCatalogEntryTransformEnum_level,
+      ],
+    );
 
 const SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnum_OPEN =
     const SeriesCatalogEntryEgressEnum._('OPEN');
@@ -206,7 +214,8 @@ const SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnum_LOCAL_ONLY =
     const SeriesCatalogEntryEgressEnum._('LOCAL_ONLY');
 
 SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'OPEN':
       return _$seriesCatalogEntryEgressEnum_OPEN;
@@ -218,26 +227,27 @@ SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnumValueOf(
 }
 
 final BuiltSet<SeriesCatalogEntryEgressEnum>
-    _$seriesCatalogEntryEgressEnumValues =
-    BuiltSet<SeriesCatalogEntryEgressEnum>(const <SeriesCatalogEntryEgressEnum>[
-  _$seriesCatalogEntryEgressEnum_OPEN,
-  _$seriesCatalogEntryEgressEnum_LOCAL_ONLY,
-]);
+_$seriesCatalogEntryEgressEnumValues = BuiltSet<SeriesCatalogEntryEgressEnum>(
+  const <SeriesCatalogEntryEgressEnum>[
+    _$seriesCatalogEntryEgressEnum_OPEN,
+    _$seriesCatalogEntryEgressEnum_LOCAL_ONLY,
+  ],
+);
 
 Serializer<SeriesCatalogEntryFrequencyEnum>
-    _$seriesCatalogEntryFrequencyEnumSerializer =
+_$seriesCatalogEntryFrequencyEnumSerializer =
     _$SeriesCatalogEntryFrequencyEnumSerializer();
 Serializer<SeriesCatalogEntryStatusEnum>
-    _$seriesCatalogEntryStatusEnumSerializer =
+_$seriesCatalogEntryStatusEnumSerializer =
     _$SeriesCatalogEntryStatusEnumSerializer();
 Serializer<SeriesCatalogEntryFamilyEnum>
-    _$seriesCatalogEntryFamilyEnumSerializer =
+_$seriesCatalogEntryFamilyEnumSerializer =
     _$SeriesCatalogEntryFamilyEnumSerializer();
 Serializer<SeriesCatalogEntryTransformEnum>
-    _$seriesCatalogEntryTransformEnumSerializer =
+_$seriesCatalogEntryTransformEnumSerializer =
     _$SeriesCatalogEntryTransformEnumSerializer();
 Serializer<SeriesCatalogEntryEgressEnum>
-    _$seriesCatalogEntryEgressEnumSerializer =
+_$seriesCatalogEntryEgressEnumSerializer =
     _$SeriesCatalogEntryEgressEnumSerializer();
 
 class _$SeriesCatalogEntryFrequencyEnumSerializer
@@ -272,16 +282,19 @@ class _$SeriesCatalogEntryFrequencyEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SeriesCatalogEntryFrequencyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SeriesCatalogEntryFrequencyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesCatalogEntryFrequencyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesCatalogEntryFrequencyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesCatalogEntryFrequencyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesCatalogEntryStatusEnumSerializer
@@ -305,16 +318,20 @@ class _$SeriesCatalogEntryStatusEnumSerializer
   final String wireName = 'SeriesCatalogEntryStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesCatalogEntryStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesCatalogEntryStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesCatalogEntryStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesCatalogEntryStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesCatalogEntryStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesCatalogEntryFamilyEnumSerializer
@@ -350,16 +367,20 @@ class _$SeriesCatalogEntryFamilyEnumSerializer
   final String wireName = 'SeriesCatalogEntryFamilyEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesCatalogEntryFamilyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesCatalogEntryFamilyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesCatalogEntryFamilyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesCatalogEntryFamilyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesCatalogEntryFamilyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesCatalogEntryTransformEnumSerializer
@@ -384,16 +405,19 @@ class _$SeriesCatalogEntryTransformEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SeriesCatalogEntryTransformEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SeriesCatalogEntryTransformEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesCatalogEntryTransformEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesCatalogEntryTransformEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesCatalogEntryTransformEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesCatalogEntryEgressEnumSerializer
@@ -413,16 +437,20 @@ class _$SeriesCatalogEntryEgressEnumSerializer
   final String wireName = 'SeriesCatalogEntryEgressEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesCatalogEntryEgressEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesCatalogEntryEgressEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesCatalogEntryEgressEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesCatalogEntryEgressEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesCatalogEntryEgressEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesCatalogEntry extends SeriesCatalogEntry {
@@ -461,33 +489,33 @@ class _$SeriesCatalogEntry extends SeriesCatalogEntry {
   @override
   final String? attribution;
 
-  factory _$SeriesCatalogEntry(
-          [void Function(SeriesCatalogEntryBuilder)? updates]) =>
-      (SeriesCatalogEntryBuilder()..update(updates))._build();
+  factory _$SeriesCatalogEntry([
+    void Function(SeriesCatalogEntryBuilder)? updates,
+  ]) => (SeriesCatalogEntryBuilder()..update(updates))._build();
 
-  _$SeriesCatalogEntry._(
-      {required this.sourceId,
-      required this.series,
-      required this.seriesName,
-      this.dataset,
-      required this.unit,
-      required this.frequency,
-      this.area,
-      this.latestPeriod,
-      this.latestValue,
-      this.status,
-      required this.family,
-      required this.transform,
-      required this.releaseLagDays,
-      required this.egress,
-      this.regionCode,
-      this.topicId,
-      this.attribution})
-      : super._();
+  _$SeriesCatalogEntry._({
+    required this.sourceId,
+    required this.series,
+    required this.seriesName,
+    this.dataset,
+    required this.unit,
+    required this.frequency,
+    this.area,
+    this.latestPeriod,
+    this.latestValue,
+    this.status,
+    required this.family,
+    required this.transform,
+    required this.releaseLagDays,
+    required this.egress,
+    this.regionCode,
+    this.topicId,
+    this.attribution,
+  }) : super._();
   @override
   SeriesCatalogEntry rebuild(
-          void Function(SeriesCatalogEntryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SeriesCatalogEntryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SeriesCatalogEntryBuilder toBuilder() =>
@@ -682,31 +710,59 @@ class SeriesCatalogEntryBuilder
   SeriesCatalogEntry build() => _build();
 
   _$SeriesCatalogEntry _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SeriesCatalogEntry._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'SeriesCatalogEntry', 'sourceId'),
+            sourceId,
+            r'SeriesCatalogEntry',
+            'sourceId',
+          ),
           series: BuiltValueNullFieldError.checkNotNull(
-              series, r'SeriesCatalogEntry', 'series'),
+            series,
+            r'SeriesCatalogEntry',
+            'series',
+          ),
           seriesName: BuiltValueNullFieldError.checkNotNull(
-              seriesName, r'SeriesCatalogEntry', 'seriesName'),
+            seriesName,
+            r'SeriesCatalogEntry',
+            'seriesName',
+          ),
           dataset: dataset,
           unit: BuiltValueNullFieldError.checkNotNull(
-              unit, r'SeriesCatalogEntry', 'unit'),
+            unit,
+            r'SeriesCatalogEntry',
+            'unit',
+          ),
           frequency: BuiltValueNullFieldError.checkNotNull(
-              frequency, r'SeriesCatalogEntry', 'frequency'),
+            frequency,
+            r'SeriesCatalogEntry',
+            'frequency',
+          ),
           area: area,
           latestPeriod: latestPeriod,
           latestValue: latestValue,
           status: status,
           family: BuiltValueNullFieldError.checkNotNull(
-              family, r'SeriesCatalogEntry', 'family'),
+            family,
+            r'SeriesCatalogEntry',
+            'family',
+          ),
           transform: BuiltValueNullFieldError.checkNotNull(
-              transform, r'SeriesCatalogEntry', 'transform'),
+            transform,
+            r'SeriesCatalogEntry',
+            'transform',
+          ),
           releaseLagDays: BuiltValueNullFieldError.checkNotNull(
-              releaseLagDays, r'SeriesCatalogEntry', 'releaseLagDays'),
+            releaseLagDays,
+            r'SeriesCatalogEntry',
+            'releaseLagDays',
+          ),
           egress: BuiltValueNullFieldError.checkNotNull(
-              egress, r'SeriesCatalogEntry', 'egress'),
+            egress,
+            r'SeriesCatalogEntry',
+            'egress',
+          ),
           regionCode: regionCode,
           topicId: topicId,
           attribution: attribution,

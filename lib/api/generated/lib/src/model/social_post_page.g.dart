@@ -92,11 +92,9 @@ class SocialPostPageBuilder
   _$SocialPostPage _build() {
     _$SocialPostPage _$result;
     try {
-      _$result = _$v ??
-          _$SocialPostPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SocialPostPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class SocialPostPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialPostPage', _$failedField, e.toString());
+          r'SocialPostPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

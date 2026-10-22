@@ -16,17 +16,19 @@ part 'event_selector_situation_activated.g.dart';
 @BuiltValue()
 abstract class EventSelectorSituationActivated
     implements
-        Built<EventSelectorSituationActivated,
-            EventSelectorSituationActivatedBuilder> {
+        Built<
+          EventSelectorSituationActivated,
+          EventSelectorSituationActivatedBuilder
+        > {
   @BuiltValueField(wireName: r'theme')
   SituationTheme? get theme;
   // enum themeEnum {  maritime,  aviation,  conflict,  infrastructure,  weather,  cyber,  markets,  health,  space,  mixed,  };
 
   EventSelectorSituationActivated._();
 
-  factory EventSelectorSituationActivated(
-          [void updates(EventSelectorSituationActivatedBuilder b)]) =
-      _$EventSelectorSituationActivated;
+  factory EventSelectorSituationActivated([
+    void updates(EventSelectorSituationActivatedBuilder b),
+  ]) = _$EventSelectorSituationActivated;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventSelectorSituationActivatedBuilder b) => b;
@@ -41,7 +43,7 @@ class _$EventSelectorSituationActivatedSerializer
   @override
   final Iterable<Type> types = const [
     EventSelectorSituationActivated,
-    _$EventSelectorSituationActivated
+    _$EventSelectorSituationActivated,
   ];
 
   @override
@@ -67,9 +69,11 @@ class _$EventSelectorSituationActivatedSerializer
     EventSelectorSituationActivated object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -85,10 +89,12 @@ class _$EventSelectorSituationActivatedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'theme':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SituationTheme),
-          ) as SituationTheme?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SituationTheme),
+                  )
+                  as SituationTheme?;
           if (valueDes == null) continue;
           result.theme = valueDes;
           break;

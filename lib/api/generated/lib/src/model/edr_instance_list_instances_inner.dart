@@ -21,8 +21,10 @@ part 'edr_instance_list_instances_inner.g.dart';
 @BuiltValue()
 abstract class EdrInstanceListInstancesInner
     implements
-        Built<EdrInstanceListInstancesInner,
-            EdrInstanceListInstancesInnerBuilder> {
+        Built<
+          EdrInstanceListInstancesInner,
+          EdrInstanceListInstancesInnerBuilder
+        > {
   /// Run time, ISO extended
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -38,9 +40,9 @@ abstract class EdrInstanceListInstancesInner
 
   EdrInstanceListInstancesInner._();
 
-  factory EdrInstanceListInstancesInner(
-          [void updates(EdrInstanceListInstancesInnerBuilder b)]) =
-      _$EdrInstanceListInstancesInner;
+  factory EdrInstanceListInstancesInner([
+    void updates(EdrInstanceListInstancesInnerBuilder b),
+  ]) = _$EdrInstanceListInstancesInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EdrInstanceListInstancesInnerBuilder b) => b;
@@ -55,7 +57,7 @@ class _$EdrInstanceListInstancesInnerSerializer
   @override
   final Iterable<Type> types = const [
     EdrInstanceListInstancesInner,
-    _$EdrInstanceListInstancesInner
+    _$EdrInstanceListInstancesInner,
   ];
 
   @override
@@ -82,8 +84,10 @@ class _$EdrInstanceListInstancesInnerSerializer
       yield r'extent';
       yield serializers.serialize(
         object.extent,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     yield r'links';
@@ -99,9 +103,11 @@ class _$EdrInstanceListInstancesInnerSerializer
     EdrInstanceListInstancesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -117,34 +123,46 @@ class _$EdrInstanceListInstancesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'extent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.extent.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OgcLink)]),
-          ) as BuiltList<OgcLink>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcLink),
+                    ]),
+                  )
+                  as BuiltList<OgcLink>;
           result.links.replace(valueDes);
           break;
         default:

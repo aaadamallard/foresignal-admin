@@ -24,9 +24,9 @@ abstract class ArchiveSettingsSecrets
 
   ArchiveSettingsSecrets._();
 
-  factory ArchiveSettingsSecrets(
-          [void updates(ArchiveSettingsSecretsBuilder b)]) =
-      _$ArchiveSettingsSecrets;
+  factory ArchiveSettingsSecrets([
+    void updates(ArchiveSettingsSecretsBuilder b),
+  ]) = _$ArchiveSettingsSecrets;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ArchiveSettingsSecretsBuilder b) => b;
@@ -41,7 +41,7 @@ class _$ArchiveSettingsSecretsSerializer
   @override
   final Iterable<Type> types = const [
     ArchiveSettingsSecrets,
-    _$ArchiveSettingsSecrets
+    _$ArchiveSettingsSecrets,
   ];
 
   @override
@@ -74,9 +74,11 @@ class _$ArchiveSettingsSecretsSerializer
     ArchiveSettingsSecrets object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,18 +94,22 @@ class _$ArchiveSettingsSecretsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accessKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.accessKey = valueDes;
           break;
         case r'secretKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.secretKey = valueDes;
           break;

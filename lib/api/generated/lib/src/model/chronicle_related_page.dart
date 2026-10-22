@@ -43,7 +43,7 @@ class _$ChronicleRelatedPageSerializer
   @override
   final Iterable<Type> types = const [
     ChronicleRelatedPage,
-    _$ChronicleRelatedPage
+    _$ChronicleRelatedPage,
   ];
 
   @override
@@ -57,8 +57,9 @@ class _$ChronicleRelatedPageSerializer
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ChronicleRelatedPageItemsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ChronicleRelatedPageItemsInner),
+      ]),
     );
     yield r'nextCursor';
     yield object.nextCursor == null
@@ -75,9 +76,11 @@ class _$ChronicleRelatedPageSerializer
     ChronicleRelatedPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +96,23 @@ class _$ChronicleRelatedPageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ChronicleRelatedPageItemsInner)]),
-          ) as BuiltList<ChronicleRelatedPageItemsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ChronicleRelatedPageItemsInner),
+                    ]),
+                  )
+                  as BuiltList<ChronicleRelatedPageItemsInner>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

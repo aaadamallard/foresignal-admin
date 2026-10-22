@@ -24,9 +24,9 @@ PrecursorCandidateKindEnum _$precursorCandidateKindEnumValueOf(String name) {
 
 final BuiltSet<PrecursorCandidateKindEnum> _$precursorCandidateKindEnumValues =
     BuiltSet<PrecursorCandidateKindEnum>(const <PrecursorCandidateKindEnum>[
-  _$precursorCandidateKindEnum_event,
-  _$precursorCandidateKindEnum_series,
-]);
+      _$precursorCandidateKindEnum_event,
+      _$precursorCandidateKindEnum_series,
+    ]);
 
 Serializer<PrecursorCandidateKindEnum> _$precursorCandidateKindEnumSerializer =
     _$PrecursorCandidateKindEnumSerializer();
@@ -48,16 +48,20 @@ class _$PrecursorCandidateKindEnumSerializer
   final String wireName = 'PrecursorCandidateKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PrecursorCandidateKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PrecursorCandidateKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PrecursorCandidateKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PrecursorCandidateKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PrecursorCandidateKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PrecursorCandidate extends PrecursorCandidate {
@@ -84,27 +88,27 @@ class _$PrecursorCandidate extends PrecursorCandidate {
   @override
   final DateTime createdAt;
 
-  factory _$PrecursorCandidate(
-          [void Function(PrecursorCandidateBuilder)? updates]) =>
-      (PrecursorCandidateBuilder()..update(updates))._build();
+  factory _$PrecursorCandidate([
+    void Function(PrecursorCandidateBuilder)? updates,
+  ]) => (PrecursorCandidateBuilder()..update(updates))._build();
 
-  _$PrecursorCandidate._(
-      {this.name,
-      required this.kind,
-      required this.antecedent,
-      required this.consequent,
-      this.spatial,
-      required this.lagMin,
-      required this.lagMax,
-      this.regionCodes,
-      required this.id,
-      required this.createdBy,
-      required this.createdAt})
-      : super._();
+  _$PrecursorCandidate._({
+    this.name,
+    required this.kind,
+    required this.antecedent,
+    required this.consequent,
+    this.spatial,
+    required this.lagMin,
+    required this.lagMax,
+    this.regionCodes,
+    required this.id,
+    required this.createdBy,
+    required this.createdAt,
+  }) : super._();
   @override
   PrecursorCandidate rebuild(
-          void Function(PrecursorCandidateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorCandidateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorCandidateBuilder toBuilder() =>
@@ -257,25 +261,44 @@ class PrecursorCandidateBuilder
   _$PrecursorCandidate _build() {
     _$PrecursorCandidate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PrecursorCandidate._(
             name: name,
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'PrecursorCandidate', 'kind'),
+              kind,
+              r'PrecursorCandidate',
+              'kind',
+            ),
             antecedent: antecedent.build(),
             consequent: consequent.build(),
             spatial: _spatial?.build(),
             lagMin: BuiltValueNullFieldError.checkNotNull(
-                lagMin, r'PrecursorCandidate', 'lagMin'),
+              lagMin,
+              r'PrecursorCandidate',
+              'lagMin',
+            ),
             lagMax: BuiltValueNullFieldError.checkNotNull(
-                lagMax, r'PrecursorCandidate', 'lagMax'),
+              lagMax,
+              r'PrecursorCandidate',
+              'lagMax',
+            ),
             regionCodes: _regionCodes?.build(),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PrecursorCandidate', 'id'),
+              id,
+              r'PrecursorCandidate',
+              'id',
+            ),
             createdBy: BuiltValueNullFieldError.checkNotNull(
-                createdBy, r'PrecursorCandidate', 'createdBy'),
+              createdBy,
+              r'PrecursorCandidate',
+              'createdBy',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'PrecursorCandidate', 'createdAt'),
+              createdAt,
+              r'PrecursorCandidate',
+              'createdAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -291,7 +314,10 @@ class PrecursorCandidateBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PrecursorCandidate', _$failedField, e.toString());
+          r'PrecursorCandidate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

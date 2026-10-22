@@ -113,8 +113,9 @@ class _$JsonFeedSerializer implements PrimitiveSerializer<JsonFeed> {
       yield r'authors';
       yield serializers.serialize(
         object.authors,
-        specifiedType:
-            const FullType(BuiltList, [FullType(JsonFeedAuthorsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(JsonFeedAuthorsInner),
+        ]),
       );
     }
     yield r'items';
@@ -130,9 +131,11 @@ class _$JsonFeedSerializer implements PrimitiveSerializer<JsonFeed> {
     JsonFeed object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -148,65 +151,84 @@ class _$JsonFeedSerializer implements PrimitiveSerializer<JsonFeed> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'home_page_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.homePageUrl = valueDes;
           break;
         case r'feed_url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.feedUrl = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'language':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.language = valueDes;
           break;
         case r'authors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(JsonFeedAuthorsInner)]),
-          ) as BuiltList<JsonFeedAuthorsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(JsonFeedAuthorsInner),
+                    ]),
+                  )
+                  as BuiltList<JsonFeedAuthorsInner>?;
           if (valueDes == null) continue;
           result.authors.replace(valueDes);
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(JsonFeedItem)]),
-          ) as BuiltList<JsonFeedItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(JsonFeedItem),
+                    ]),
+                  )
+                  as BuiltList<JsonFeedItem>;
           result.items.replace(valueDes);
           break;
         default:

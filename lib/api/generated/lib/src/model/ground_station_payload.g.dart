@@ -18,7 +18,8 @@ const GroundStationPayloadStateEnum _$groundStationPayloadStateEnum_unknown =
     const GroundStationPayloadStateEnum._('unknown');
 
 GroundStationPayloadStateEnum _$groundStationPayloadStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'idle':
       return _$groundStationPayloadStateEnum_idle;
@@ -36,24 +37,25 @@ GroundStationPayloadStateEnum _$groundStationPayloadStateEnumValueOf(
 }
 
 final BuiltSet<GroundStationPayloadStateEnum>
-    _$groundStationPayloadStateEnumValues = BuiltSet<
-        GroundStationPayloadStateEnum>(const <GroundStationPayloadStateEnum>[
-  _$groundStationPayloadStateEnum_idle,
-  _$groundStationPayloadStateEnum_tracking,
-  _$groundStationPayloadStateEnum_receiving,
-  _$groundStationPayloadStateEnum_locked,
-  _$groundStationPayloadStateEnum_unknown,
-]);
+_$groundStationPayloadStateEnumValues = BuiltSet<GroundStationPayloadStateEnum>(
+  const <GroundStationPayloadStateEnum>[
+    _$groundStationPayloadStateEnum_idle,
+    _$groundStationPayloadStateEnum_tracking,
+    _$groundStationPayloadStateEnum_receiving,
+    _$groundStationPayloadStateEnum_locked,
+    _$groundStationPayloadStateEnum_unknown,
+  ],
+);
 
 const GroundStationPayloadSatdumpModeEnum
-    _$groundStationPayloadSatdumpModeEnum_live =
+_$groundStationPayloadSatdumpModeEnum_live =
     const GroundStationPayloadSatdumpModeEnum._('live');
 const GroundStationPayloadSatdumpModeEnum
-    _$groundStationPayloadSatdumpModeEnum_autotrack =
+_$groundStationPayloadSatdumpModeEnum_autotrack =
     const GroundStationPayloadSatdumpModeEnum._('autotrack');
 
 GroundStationPayloadSatdumpModeEnum
-    _$groundStationPayloadSatdumpModeEnumValueOf(String name) {
+_$groundStationPayloadSatdumpModeEnumValueOf(String name) {
   switch (name) {
     case 'live':
       return _$groundStationPayloadSatdumpModeEnum_live;
@@ -65,17 +67,19 @@ GroundStationPayloadSatdumpModeEnum
 }
 
 final BuiltSet<GroundStationPayloadSatdumpModeEnum>
-    _$groundStationPayloadSatdumpModeEnumValues = BuiltSet<
-        GroundStationPayloadSatdumpModeEnum>(const <GroundStationPayloadSatdumpModeEnum>[
-  _$groundStationPayloadSatdumpModeEnum_live,
-  _$groundStationPayloadSatdumpModeEnum_autotrack,
-]);
+_$groundStationPayloadSatdumpModeEnumValues =
+    BuiltSet<GroundStationPayloadSatdumpModeEnum>(
+      const <GroundStationPayloadSatdumpModeEnum>[
+        _$groundStationPayloadSatdumpModeEnum_live,
+        _$groundStationPayloadSatdumpModeEnum_autotrack,
+      ],
+    );
 
 Serializer<GroundStationPayloadStateEnum>
-    _$groundStationPayloadStateEnumSerializer =
+_$groundStationPayloadStateEnumSerializer =
     _$GroundStationPayloadStateEnumSerializer();
 Serializer<GroundStationPayloadSatdumpModeEnum>
-    _$groundStationPayloadSatdumpModeEnumSerializer =
+_$groundStationPayloadSatdumpModeEnumSerializer =
     _$GroundStationPayloadSatdumpModeEnumSerializer();
 
 class _$GroundStationPayloadStateEnumSerializer
@@ -102,16 +106,19 @@ class _$GroundStationPayloadStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, GroundStationPayloadStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    GroundStationPayloadStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GroundStationPayloadStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GroundStationPayloadStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GroundStationPayloadStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GroundStationPayloadSatdumpModeEnumSerializer
@@ -127,23 +134,26 @@ class _$GroundStationPayloadSatdumpModeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    GroundStationPayloadSatdumpModeEnum
+    GroundStationPayloadSatdumpModeEnum,
   ];
   @override
   final String wireName = 'GroundStationPayloadSatdumpModeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, GroundStationPayloadSatdumpModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    GroundStationPayloadSatdumpModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   GroundStationPayloadSatdumpModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      GroundStationPayloadSatdumpModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => GroundStationPayloadSatdumpModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$GroundStationPayload extends GroundStationPayload {
@@ -170,27 +180,27 @@ class _$GroundStationPayload extends GroundStationPayload {
   @override
   final String title;
 
-  factory _$GroundStationPayload(
-          [void Function(GroundStationPayloadBuilder)? updates]) =>
-      (GroundStationPayloadBuilder()..update(updates))._build();
+  factory _$GroundStationPayload([
+    void Function(GroundStationPayloadBuilder)? updates,
+  ]) => (GroundStationPayloadBuilder()..update(updates))._build();
 
-  _$GroundStationPayload._(
-      {required this.state,
-      this.currentTarget,
-      this.frequencyHz,
-      this.az,
-      this.el,
-      this.snrDb,
-      this.nextAos,
-      this.nextLos,
-      this.rotatorEngaged,
-      this.satdumpMode,
-      required this.title})
-      : super._();
+  _$GroundStationPayload._({
+    required this.state,
+    this.currentTarget,
+    this.frequencyHz,
+    this.az,
+    this.el,
+    this.snrDb,
+    this.nextAos,
+    this.nextLos,
+    this.rotatorEngaged,
+    this.satdumpMode,
+    required this.title,
+  }) : super._();
   @override
   GroundStationPayload rebuild(
-          void Function(GroundStationPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GroundStationPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GroundStationPayloadBuilder toBuilder() =>
@@ -337,10 +347,14 @@ class GroundStationPayloadBuilder
   GroundStationPayload build() => _build();
 
   _$GroundStationPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$GroundStationPayload._(
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'GroundStationPayload', 'state'),
+            state,
+            r'GroundStationPayload',
+            'state',
+          ),
           currentTarget: currentTarget,
           frequencyHz: frequencyHz,
           az: az,
@@ -351,7 +365,10 @@ class GroundStationPayloadBuilder
           rotatorEngaged: rotatorEngaged,
           satdumpMode: satdumpMode,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'GroundStationPayload', 'title'),
+            title,
+            r'GroundStationPayload',
+            'title',
+          ),
         );
     replace(_$result);
     return _$result;

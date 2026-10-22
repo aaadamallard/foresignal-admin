@@ -9,7 +9,7 @@ part of 'edp_suggested_binding.dart';
 const EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnum_series =
     const EdpSuggestedBindingTargetEnum._('series');
 const EdpSuggestedBindingTargetEnum
-    _$edpSuggestedBindingTargetEnum_canonicalFamily =
+_$edpSuggestedBindingTargetEnum_canonicalFamily =
     const EdpSuggestedBindingTargetEnum._('canonicalFamily');
 const EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnum_social =
     const EdpSuggestedBindingTargetEnum._('social');
@@ -29,7 +29,8 @@ const EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnum_chronicle =
     const EdpSuggestedBindingTargetEnum._('chronicle');
 
 EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'series':
       return _$edpSuggestedBindingTargetEnum_series;
@@ -57,22 +58,23 @@ EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnumValueOf(
 }
 
 final BuiltSet<EdpSuggestedBindingTargetEnum>
-    _$edpSuggestedBindingTargetEnumValues = BuiltSet<
-        EdpSuggestedBindingTargetEnum>(const <EdpSuggestedBindingTargetEnum>[
-  _$edpSuggestedBindingTargetEnum_series,
-  _$edpSuggestedBindingTargetEnum_canonicalFamily,
-  _$edpSuggestedBindingTargetEnum_social,
-  _$edpSuggestedBindingTargetEnum_news,
-  _$edpSuggestedBindingTargetEnum_evidence,
-  _$edpSuggestedBindingTargetEnum_indicator,
-  _$edpSuggestedBindingTargetEnum_forecast,
-  _$edpSuggestedBindingTargetEnum_place,
-  _$edpSuggestedBindingTargetEnum_situation,
-  _$edpSuggestedBindingTargetEnum_chronicle,
-]);
+_$edpSuggestedBindingTargetEnumValues = BuiltSet<EdpSuggestedBindingTargetEnum>(
+  const <EdpSuggestedBindingTargetEnum>[
+    _$edpSuggestedBindingTargetEnum_series,
+    _$edpSuggestedBindingTargetEnum_canonicalFamily,
+    _$edpSuggestedBindingTargetEnum_social,
+    _$edpSuggestedBindingTargetEnum_news,
+    _$edpSuggestedBindingTargetEnum_evidence,
+    _$edpSuggestedBindingTargetEnum_indicator,
+    _$edpSuggestedBindingTargetEnum_forecast,
+    _$edpSuggestedBindingTargetEnum_place,
+    _$edpSuggestedBindingTargetEnum_situation,
+    _$edpSuggestedBindingTargetEnum_chronicle,
+  ],
+);
 
 Serializer<EdpSuggestedBindingTargetEnum>
-    _$edpSuggestedBindingTargetEnumSerializer =
+_$edpSuggestedBindingTargetEnumSerializer =
     _$EdpSuggestedBindingTargetEnumSerializer();
 
 class _$EdpSuggestedBindingTargetEnumSerializer
@@ -109,16 +111,19 @@ class _$EdpSuggestedBindingTargetEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, EdpSuggestedBindingTargetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    EdpSuggestedBindingTargetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpSuggestedBindingTargetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpSuggestedBindingTargetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpSuggestedBindingTargetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpSuggestedBinding extends EdpSuggestedBinding {
@@ -127,15 +132,15 @@ class _$EdpSuggestedBinding extends EdpSuggestedBinding {
   @override
   final BuiltMap<String, JsonObject?>? config;
 
-  factory _$EdpSuggestedBinding(
-          [void Function(EdpSuggestedBindingBuilder)? updates]) =>
-      (EdpSuggestedBindingBuilder()..update(updates))._build();
+  factory _$EdpSuggestedBinding([
+    void Function(EdpSuggestedBindingBuilder)? updates,
+  ]) => (EdpSuggestedBindingBuilder()..update(updates))._build();
 
   _$EdpSuggestedBinding._({required this.target, this.config}) : super._();
   @override
   EdpSuggestedBinding rebuild(
-          void Function(EdpSuggestedBindingBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EdpSuggestedBindingBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EdpSuggestedBindingBuilder toBuilder() =>
@@ -211,10 +216,14 @@ class EdpSuggestedBindingBuilder
   _$EdpSuggestedBinding _build() {
     _$EdpSuggestedBinding _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpSuggestedBinding._(
             target: BuiltValueNullFieldError.checkNotNull(
-                target, r'EdpSuggestedBinding', 'target'),
+              target,
+              r'EdpSuggestedBinding',
+              'target',
+            ),
             config: _config?.build(),
           );
     } catch (_) {
@@ -224,7 +233,10 @@ class EdpSuggestedBindingBuilder
         _config?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpSuggestedBinding', _$failedField, e.toString());
+          r'EdpSuggestedBinding',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

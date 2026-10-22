@@ -6,26 +6,33 @@ part of 'param_spec.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ParamSpecTypeEnum _$paramSpecTypeEnum_string =
-    const ParamSpecTypeEnum._('string');
-const ParamSpecTypeEnum _$paramSpecTypeEnum_integer =
-    const ParamSpecTypeEnum._('integer');
-const ParamSpecTypeEnum _$paramSpecTypeEnum_number =
-    const ParamSpecTypeEnum._('number');
-const ParamSpecTypeEnum _$paramSpecTypeEnum_boolean =
-    const ParamSpecTypeEnum._('boolean');
+const ParamSpecTypeEnum _$paramSpecTypeEnum_string = const ParamSpecTypeEnum._(
+  'string',
+);
+const ParamSpecTypeEnum _$paramSpecTypeEnum_integer = const ParamSpecTypeEnum._(
+  'integer',
+);
+const ParamSpecTypeEnum _$paramSpecTypeEnum_number = const ParamSpecTypeEnum._(
+  'number',
+);
+const ParamSpecTypeEnum _$paramSpecTypeEnum_boolean = const ParamSpecTypeEnum._(
+  'boolean',
+);
 const ParamSpecTypeEnum _$paramSpecTypeEnum_duration =
     const ParamSpecTypeEnum._('duration');
-const ParamSpecTypeEnum _$paramSpecTypeEnum_bbox =
-    const ParamSpecTypeEnum._('bbox');
+const ParamSpecTypeEnum _$paramSpecTypeEnum_bbox = const ParamSpecTypeEnum._(
+  'bbox',
+);
 const ParamSpecTypeEnum _$paramSpecTypeEnum_stringList =
     const ParamSpecTypeEnum._('stringList');
-const ParamSpecTypeEnum _$paramSpecTypeEnum_lanUrl =
-    const ParamSpecTypeEnum._('lanUrl');
+const ParamSpecTypeEnum _$paramSpecTypeEnum_lanUrl = const ParamSpecTypeEnum._(
+  'lanUrl',
+);
 const ParamSpecTypeEnum _$paramSpecTypeEnum_inboxPath =
     const ParamSpecTypeEnum._('inboxPath');
-const ParamSpecTypeEnum _$paramSpecTypeEnum_json =
-    const ParamSpecTypeEnum._('json');
+const ParamSpecTypeEnum _$paramSpecTypeEnum_json = const ParamSpecTypeEnum._(
+  'json',
+);
 
 ParamSpecTypeEnum _$paramSpecTypeEnumValueOf(String name) {
   switch (name) {
@@ -56,17 +63,17 @@ ParamSpecTypeEnum _$paramSpecTypeEnumValueOf(String name) {
 
 final BuiltSet<ParamSpecTypeEnum> _$paramSpecTypeEnumValues =
     BuiltSet<ParamSpecTypeEnum>(const <ParamSpecTypeEnum>[
-  _$paramSpecTypeEnum_string,
-  _$paramSpecTypeEnum_integer,
-  _$paramSpecTypeEnum_number,
-  _$paramSpecTypeEnum_boolean,
-  _$paramSpecTypeEnum_duration,
-  _$paramSpecTypeEnum_bbox,
-  _$paramSpecTypeEnum_stringList,
-  _$paramSpecTypeEnum_lanUrl,
-  _$paramSpecTypeEnum_inboxPath,
-  _$paramSpecTypeEnum_json,
-]);
+      _$paramSpecTypeEnum_string,
+      _$paramSpecTypeEnum_integer,
+      _$paramSpecTypeEnum_number,
+      _$paramSpecTypeEnum_boolean,
+      _$paramSpecTypeEnum_duration,
+      _$paramSpecTypeEnum_bbox,
+      _$paramSpecTypeEnum_stringList,
+      _$paramSpecTypeEnum_lanUrl,
+      _$paramSpecTypeEnum_inboxPath,
+      _$paramSpecTypeEnum_json,
+    ]);
 
 Serializer<ParamSpecTypeEnum> _$paramSpecTypeEnumSerializer =
     _$ParamSpecTypeEnumSerializer();
@@ -104,15 +111,20 @@ class _$ParamSpecTypeEnumSerializer
   final String wireName = 'ParamSpecTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ParamSpecTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ParamSpecTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ParamSpecTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ParamSpecTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ParamSpecTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ParamSpecTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ParamSpec extends ParamSpec {
@@ -132,14 +144,14 @@ class _$ParamSpec extends ParamSpec {
   factory _$ParamSpec([void Function(ParamSpecBuilder)? updates]) =>
       (ParamSpecBuilder()..update(updates))._build();
 
-  _$ParamSpec._(
-      {required this.name,
-      required this.type,
-      this.description,
-      this.default_,
-      this.required_,
-      this.allowed})
-      : super._();
+  _$ParamSpec._({
+    required this.name,
+    required this.type,
+    this.description,
+    this.default_,
+    this.required_,
+    this.allowed,
+  }) : super._();
   @override
   ParamSpec rebuild(void Function(ParamSpecBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -246,12 +258,19 @@ class ParamSpecBuilder implements Builder<ParamSpec, ParamSpecBuilder> {
   _$ParamSpec _build() {
     _$ParamSpec _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ParamSpec._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ParamSpec', 'name'),
+              name,
+              r'ParamSpec',
+              'name',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ParamSpec', 'type'),
+              type,
+              r'ParamSpec',
+              'type',
+            ),
             description: description,
             default_: default_,
             required_: required_,
@@ -264,7 +283,10 @@ class ParamSpecBuilder implements Builder<ParamSpec, ParamSpecBuilder> {
         _allowed?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ParamSpec', _$failedField, e.toString());
+          r'ParamSpec',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

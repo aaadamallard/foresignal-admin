@@ -7,42 +7,42 @@ part of 'infra_node.dart';
 // **************************************************************************
 
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_powerPeriodGeneration =
+_$infraNodeFacilityTypeEnum_powerPeriodGeneration =
     const InfraNodeFacilityTypeEnum._('powerPeriodGeneration');
 const InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnum_powerPeriodNuclear =
     const InfraNodeFacilityTypeEnum._('powerPeriodNuclear');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_powerPeriodSubstation =
+_$infraNodeFacilityTypeEnum_powerPeriodSubstation =
     const InfraNodeFacilityTypeEnum._('powerPeriodSubstation');
 const InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnum_powerPeriodLine =
     const InfraNodeFacilityTypeEnum._('powerPeriodLine');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_telecomPeriodDatacentre =
+_$infraNodeFacilityTypeEnum_telecomPeriodDatacentre =
     const InfraNodeFacilityTypeEnum._('telecomPeriodDatacentre');
 const InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnum_telecomPeriodIxp =
     const InfraNodeFacilityTypeEnum._('telecomPeriodIxp');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_telecomPeriodExchange =
+_$infraNodeFacilityTypeEnum_telecomPeriodExchange =
     const InfraNodeFacilityTypeEnum._('telecomPeriodExchange');
 const InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnum_telecomPeriodCable =
     const InfraNodeFacilityTypeEnum._('telecomPeriodCable');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_telecomPeriodLanding =
+_$infraNodeFacilityTypeEnum_telecomPeriodLanding =
     const InfraNodeFacilityTypeEnum._('telecomPeriodLanding');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_transportPeriodAirport =
+_$infraNodeFacilityTypeEnum_transportPeriodAirport =
     const InfraNodeFacilityTypeEnum._('transportPeriodAirport');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_transportPeriodPort =
+_$infraNodeFacilityTypeEnum_transportPeriodPort =
     const InfraNodeFacilityTypeEnum._('transportPeriodPort');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_healthPeriodHospital =
+_$infraNodeFacilityTypeEnum_healthPeriodHospital =
     const InfraNodeFacilityTypeEnum._('healthPeriodHospital');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_waterPeriodTreatment =
+_$infraNodeFacilityTypeEnum_waterPeriodTreatment =
     const InfraNodeFacilityTypeEnum._('waterPeriodTreatment');
 const InfraNodeFacilityTypeEnum
-    _$infraNodeFacilityTypeEnum_spacePeriodSpaceport =
+_$infraNodeFacilityTypeEnum_spacePeriodSpaceport =
     const InfraNodeFacilityTypeEnum._('spacePeriodSpaceport');
 
 InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnumValueOf(String name) {
@@ -82,21 +82,21 @@ InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnumValueOf(String name) {
 
 final BuiltSet<InfraNodeFacilityTypeEnum> _$infraNodeFacilityTypeEnumValues =
     BuiltSet<InfraNodeFacilityTypeEnum>(const <InfraNodeFacilityTypeEnum>[
-  _$infraNodeFacilityTypeEnum_powerPeriodGeneration,
-  _$infraNodeFacilityTypeEnum_powerPeriodNuclear,
-  _$infraNodeFacilityTypeEnum_powerPeriodSubstation,
-  _$infraNodeFacilityTypeEnum_powerPeriodLine,
-  _$infraNodeFacilityTypeEnum_telecomPeriodDatacentre,
-  _$infraNodeFacilityTypeEnum_telecomPeriodIxp,
-  _$infraNodeFacilityTypeEnum_telecomPeriodExchange,
-  _$infraNodeFacilityTypeEnum_telecomPeriodCable,
-  _$infraNodeFacilityTypeEnum_telecomPeriodLanding,
-  _$infraNodeFacilityTypeEnum_transportPeriodAirport,
-  _$infraNodeFacilityTypeEnum_transportPeriodPort,
-  _$infraNodeFacilityTypeEnum_healthPeriodHospital,
-  _$infraNodeFacilityTypeEnum_waterPeriodTreatment,
-  _$infraNodeFacilityTypeEnum_spacePeriodSpaceport,
-]);
+      _$infraNodeFacilityTypeEnum_powerPeriodGeneration,
+      _$infraNodeFacilityTypeEnum_powerPeriodNuclear,
+      _$infraNodeFacilityTypeEnum_powerPeriodSubstation,
+      _$infraNodeFacilityTypeEnum_powerPeriodLine,
+      _$infraNodeFacilityTypeEnum_telecomPeriodDatacentre,
+      _$infraNodeFacilityTypeEnum_telecomPeriodIxp,
+      _$infraNodeFacilityTypeEnum_telecomPeriodExchange,
+      _$infraNodeFacilityTypeEnum_telecomPeriodCable,
+      _$infraNodeFacilityTypeEnum_telecomPeriodLanding,
+      _$infraNodeFacilityTypeEnum_transportPeriodAirport,
+      _$infraNodeFacilityTypeEnum_transportPeriodPort,
+      _$infraNodeFacilityTypeEnum_healthPeriodHospital,
+      _$infraNodeFacilityTypeEnum_waterPeriodTreatment,
+      _$infraNodeFacilityTypeEnum_spacePeriodSpaceport,
+    ]);
 
 Serializer<InfraNodeFacilityTypeEnum> _$infraNodeFacilityTypeEnumSerializer =
     _$InfraNodeFacilityTypeEnumSerializer();
@@ -142,16 +142,20 @@ class _$InfraNodeFacilityTypeEnumSerializer
   final String wireName = 'InfraNodeFacilityTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, InfraNodeFacilityTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    InfraNodeFacilityTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   InfraNodeFacilityTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      InfraNodeFacilityTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => InfraNodeFacilityTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$InfraNode extends InfraNode {
@@ -185,21 +189,21 @@ class _$InfraNode extends InfraNode {
   factory _$InfraNode([void Function(InfraNodeBuilder)? updates]) =>
       (InfraNodeBuilder()..update(updates))._build();
 
-  _$InfraNode._(
-      {required this.id,
-      required this.sourceId,
-      required this.externalId,
-      required this.facilityType,
-      this.name,
-      required this.geometry,
-      this.point,
-      this.attributes,
-      this.regionTags,
-      required this.licence,
-      this.builtAt,
-      this.edges,
-      this.attribution})
-      : super._();
+  _$InfraNode._({
+    required this.id,
+    required this.sourceId,
+    required this.externalId,
+    required this.facilityType,
+    this.name,
+    required this.geometry,
+    this.point,
+    this.attributes,
+    this.regionTags,
+    required this.licence,
+    this.builtAt,
+    this.edges,
+    this.attribution,
+  }) : super._();
   @override
   InfraNode rebuild(void Function(InfraNodeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -369,22 +373,35 @@ class InfraNodeBuilder implements Builder<InfraNode, InfraNodeBuilder> {
   _$InfraNode _build() {
     _$InfraNode _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$InfraNode._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'InfraNode', 'id'),
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'InfraNode', 'sourceId'),
+              sourceId,
+              r'InfraNode',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'InfraNode', 'externalId'),
+              externalId,
+              r'InfraNode',
+              'externalId',
+            ),
             facilityType: BuiltValueNullFieldError.checkNotNull(
-                facilityType, r'InfraNode', 'facilityType'),
+              facilityType,
+              r'InfraNode',
+              'facilityType',
+            ),
             name: name,
             geometry: geometry.build(),
             point: _point?.build(),
             attributes: _attributes?.build(),
             regionTags: _regionTags?.build(),
             licence: BuiltValueNullFieldError.checkNotNull(
-                licence, r'InfraNode', 'licence'),
+              licence,
+              r'InfraNode',
+              'licence',
+            ),
             builtAt: builtAt,
             edges: _edges?.build(),
             attribution: _attribution?.build(),
@@ -407,7 +424,10 @@ class InfraNodeBuilder implements Builder<InfraNode, InfraNodeBuilder> {
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'InfraNode', _$failedField, e.toString());
+          r'InfraNode',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

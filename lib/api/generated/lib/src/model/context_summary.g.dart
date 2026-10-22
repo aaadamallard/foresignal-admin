@@ -29,17 +29,17 @@ class _$ContextSummary extends ContextSummary {
   factory _$ContextSummary([void Function(ContextSummaryBuilder)? updates]) =>
       (ContextSummaryBuilder()..update(updates))._build();
 
-  _$ContextSummary._(
-      {this.context,
-      required this.generatedAt,
-      this.cacheAgeSeconds,
-      required this.layerCounts,
-      required this.activity,
-      required this.insights,
-      required this.related,
-      this.narrative,
-      this.truncated})
-      : super._();
+  _$ContextSummary._({
+    this.context,
+    required this.generatedAt,
+    this.cacheAgeSeconds,
+    required this.layerCounts,
+    required this.activity,
+    required this.insights,
+    required this.related,
+    this.narrative,
+    this.truncated,
+  }) : super._();
   @override
   ContextSummary rebuild(void Function(ContextSummaryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -184,11 +184,15 @@ class ContextSummaryBuilder
   _$ContextSummary _build() {
     _$ContextSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ContextSummary._(
             context: _context?.build(),
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'ContextSummary', 'generatedAt'),
+              generatedAt,
+              r'ContextSummary',
+              'generatedAt',
+            ),
             cacheAgeSeconds: cacheAgeSeconds,
             layerCounts: layerCounts.build(),
             activity: activity.build(),
@@ -215,7 +219,10 @@ class ContextSummaryBuilder
         _narrative?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ContextSummary', _$failedField, e.toString());
+          r'ContextSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

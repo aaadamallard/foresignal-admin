@@ -7,23 +7,24 @@ part of 'external_source_state_event.dart';
 // **************************************************************************
 
 const ExternalSourceStateEventChangeEnum
-    _$externalSourceStateEventChangeEnum_registered =
+_$externalSourceStateEventChangeEnum_registered =
     const ExternalSourceStateEventChangeEnum._('registered');
 const ExternalSourceStateEventChangeEnum
-    _$externalSourceStateEventChangeEnum_approved =
+_$externalSourceStateEventChangeEnum_approved =
     const ExternalSourceStateEventChangeEnum._('approved');
 const ExternalSourceStateEventChangeEnum
-    _$externalSourceStateEventChangeEnum_suspended =
+_$externalSourceStateEventChangeEnum_suspended =
     const ExternalSourceStateEventChangeEnum._('suspended');
 const ExternalSourceStateEventChangeEnum
-    _$externalSourceStateEventChangeEnum_manifestChanged =
+_$externalSourceStateEventChangeEnum_manifestChanged =
     const ExternalSourceStateEventChangeEnum._('manifestChanged');
 const ExternalSourceStateEventChangeEnum
-    _$externalSourceStateEventChangeEnum_deleted =
+_$externalSourceStateEventChangeEnum_deleted =
     const ExternalSourceStateEventChangeEnum._('deleted');
 
 ExternalSourceStateEventChangeEnum _$externalSourceStateEventChangeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'registered':
       return _$externalSourceStateEventChangeEnum_registered;
@@ -41,17 +42,19 @@ ExternalSourceStateEventChangeEnum _$externalSourceStateEventChangeEnumValueOf(
 }
 
 final BuiltSet<ExternalSourceStateEventChangeEnum>
-    _$externalSourceStateEventChangeEnumValues = BuiltSet<
-        ExternalSourceStateEventChangeEnum>(const <ExternalSourceStateEventChangeEnum>[
-  _$externalSourceStateEventChangeEnum_registered,
-  _$externalSourceStateEventChangeEnum_approved,
-  _$externalSourceStateEventChangeEnum_suspended,
-  _$externalSourceStateEventChangeEnum_manifestChanged,
-  _$externalSourceStateEventChangeEnum_deleted,
-]);
+_$externalSourceStateEventChangeEnumValues =
+    BuiltSet<ExternalSourceStateEventChangeEnum>(
+      const <ExternalSourceStateEventChangeEnum>[
+        _$externalSourceStateEventChangeEnum_registered,
+        _$externalSourceStateEventChangeEnum_approved,
+        _$externalSourceStateEventChangeEnum_suspended,
+        _$externalSourceStateEventChangeEnum_manifestChanged,
+        _$externalSourceStateEventChangeEnum_deleted,
+      ],
+    );
 
 Serializer<ExternalSourceStateEventChangeEnum>
-    _$externalSourceStateEventChangeEnumSerializer =
+_$externalSourceStateEventChangeEnumSerializer =
     _$ExternalSourceStateEventChangeEnumSerializer();
 
 class _$ExternalSourceStateEventChangeEnumSerializer
@@ -78,16 +81,19 @@ class _$ExternalSourceStateEventChangeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ExternalSourceStateEventChangeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExternalSourceStateEventChangeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalSourceStateEventChangeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalSourceStateEventChangeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalSourceStateEventChangeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalSourceStateEvent extends ExternalSourceStateEvent {
@@ -100,20 +106,20 @@ class _$ExternalSourceStateEvent extends ExternalSourceStateEvent {
   @override
   final DateTime at;
 
-  factory _$ExternalSourceStateEvent(
-          [void Function(ExternalSourceStateEventBuilder)? updates]) =>
-      (ExternalSourceStateEventBuilder()..update(updates))._build();
+  factory _$ExternalSourceStateEvent([
+    void Function(ExternalSourceStateEventBuilder)? updates,
+  ]) => (ExternalSourceStateEventBuilder()..update(updates))._build();
 
-  _$ExternalSourceStateEvent._(
-      {required this.sourceId,
-      this.state,
-      required this.change,
-      required this.at})
-      : super._();
+  _$ExternalSourceStateEvent._({
+    required this.sourceId,
+    this.state,
+    required this.change,
+    required this.at,
+  }) : super._();
   @override
   ExternalSourceStateEvent rebuild(
-          void Function(ExternalSourceStateEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalSourceStateEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalSourceStateEventBuilder toBuilder() =>
@@ -203,15 +209,25 @@ class ExternalSourceStateEventBuilder
   ExternalSourceStateEvent build() => _build();
 
   _$ExternalSourceStateEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalSourceStateEvent._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'ExternalSourceStateEvent', 'sourceId'),
+            sourceId,
+            r'ExternalSourceStateEvent',
+            'sourceId',
+          ),
           state: state,
           change: BuiltValueNullFieldError.checkNotNull(
-              change, r'ExternalSourceStateEvent', 'change'),
+            change,
+            r'ExternalSourceStateEvent',
+            'change',
+          ),
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'ExternalSourceStateEvent', 'at'),
+            at,
+            r'ExternalSourceStateEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

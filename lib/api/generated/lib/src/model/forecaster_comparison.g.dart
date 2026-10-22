@@ -9,11 +9,12 @@ part of 'forecaster_comparison.dart';
 const ForecasterComparisonLabelEnum _$forecasterComparisonLabelEnum_ok =
     const ForecasterComparisonLabelEnum._('ok');
 const ForecasterComparisonLabelEnum
-    _$forecasterComparisonLabelEnum_insufficient =
+_$forecasterComparisonLabelEnum_insufficient =
     const ForecasterComparisonLabelEnum._('insufficient');
 
 ForecasterComparisonLabelEnum _$forecasterComparisonLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$forecasterComparisonLabelEnum_ok;
@@ -25,17 +26,19 @@ ForecasterComparisonLabelEnum _$forecasterComparisonLabelEnumValueOf(
 }
 
 final BuiltSet<ForecasterComparisonLabelEnum>
-    _$forecasterComparisonLabelEnumValues = BuiltSet<
-        ForecasterComparisonLabelEnum>(const <ForecasterComparisonLabelEnum>[
-  _$forecasterComparisonLabelEnum_ok,
-  _$forecasterComparisonLabelEnum_insufficient,
-]);
+_$forecasterComparisonLabelEnumValues = BuiltSet<ForecasterComparisonLabelEnum>(
+  const <ForecasterComparisonLabelEnum>[
+    _$forecasterComparisonLabelEnum_ok,
+    _$forecasterComparisonLabelEnum_insufficient,
+  ],
+);
 
 const ForecasterComparisonMetricEnum _$forecasterComparisonMetricEnum_brier =
     const ForecasterComparisonMetricEnum._('brier');
 
 ForecasterComparisonMetricEnum _$forecasterComparisonMetricEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'brier':
       return _$forecasterComparisonMetricEnum_brier;
@@ -45,16 +48,18 @@ ForecasterComparisonMetricEnum _$forecasterComparisonMetricEnumValueOf(
 }
 
 final BuiltSet<ForecasterComparisonMetricEnum>
-    _$forecasterComparisonMetricEnumValues = BuiltSet<
-        ForecasterComparisonMetricEnum>(const <ForecasterComparisonMetricEnum>[
-  _$forecasterComparisonMetricEnum_brier,
-]);
+_$forecasterComparisonMetricEnumValues =
+    BuiltSet<ForecasterComparisonMetricEnum>(
+      const <ForecasterComparisonMetricEnum>[
+        _$forecasterComparisonMetricEnum_brier,
+      ],
+    );
 
 Serializer<ForecasterComparisonLabelEnum>
-    _$forecasterComparisonLabelEnumSerializer =
+_$forecasterComparisonLabelEnumSerializer =
     _$ForecasterComparisonLabelEnumSerializer();
 Serializer<ForecasterComparisonMetricEnum>
-    _$forecasterComparisonMetricEnumSerializer =
+_$forecasterComparisonMetricEnumSerializer =
     _$ForecasterComparisonMetricEnumSerializer();
 
 class _$ForecasterComparisonLabelEnumSerializer
@@ -75,16 +80,19 @@ class _$ForecasterComparisonLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecasterComparisonLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecasterComparisonLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecasterComparisonLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecasterComparisonLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecasterComparisonLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecasterComparisonMetricEnumSerializer
@@ -103,16 +111,19 @@ class _$ForecasterComparisonMetricEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ForecasterComparisonMetricEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ForecasterComparisonMetricEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ForecasterComparisonMetricEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ForecasterComparisonMetricEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ForecasterComparisonMetricEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ForecasterComparison extends ForecasterComparison {
@@ -141,28 +152,28 @@ class _$ForecasterComparison extends ForecasterComparison {
   @override
   final DateTime computedAt;
 
-  factory _$ForecasterComparison(
-          [void Function(ForecasterComparisonBuilder)? updates]) =>
-      (ForecasterComparisonBuilder()..update(updates))._build();
+  factory _$ForecasterComparison([
+    void Function(ForecasterComparisonBuilder)? updates,
+  ]) => (ForecasterComparisonBuilder()..update(updates))._build();
 
-  _$ForecasterComparison._(
-      {required this.a,
-      required this.b,
-      this.category,
-      required this.nShared,
-      required this.label,
-      required this.metric,
-      this.meanScoreA,
-      this.meanScoreB,
-      this.meanDifference,
-      this.interval,
-      required this.scorerVersion,
-      required this.computedAt})
-      : super._();
+  _$ForecasterComparison._({
+    required this.a,
+    required this.b,
+    this.category,
+    required this.nShared,
+    required this.label,
+    required this.metric,
+    this.meanScoreA,
+    this.meanScoreB,
+    this.meanDifference,
+    this.interval,
+    required this.scorerVersion,
+    required this.computedAt,
+  }) : super._();
   @override
   ForecasterComparison rebuild(
-          void Function(ForecasterComparisonBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecasterComparisonBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecasterComparisonBuilder toBuilder() =>
@@ -319,27 +330,49 @@ class ForecasterComparisonBuilder
   _$ForecasterComparison _build() {
     _$ForecasterComparison _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecasterComparison._(
             a: BuiltValueNullFieldError.checkNotNull(
-                a, r'ForecasterComparison', 'a'),
+              a,
+              r'ForecasterComparison',
+              'a',
+            ),
             b: BuiltValueNullFieldError.checkNotNull(
-                b, r'ForecasterComparison', 'b'),
+              b,
+              r'ForecasterComparison',
+              'b',
+            ),
             category: category,
             nShared: BuiltValueNullFieldError.checkNotNull(
-                nShared, r'ForecasterComparison', 'nShared'),
+              nShared,
+              r'ForecasterComparison',
+              'nShared',
+            ),
             label: BuiltValueNullFieldError.checkNotNull(
-                label, r'ForecasterComparison', 'label'),
+              label,
+              r'ForecasterComparison',
+              'label',
+            ),
             metric: BuiltValueNullFieldError.checkNotNull(
-                metric, r'ForecasterComparison', 'metric'),
+              metric,
+              r'ForecasterComparison',
+              'metric',
+            ),
             meanScoreA: meanScoreA,
             meanScoreB: meanScoreB,
             meanDifference: meanDifference,
             interval: _interval?.build(),
             scorerVersion: BuiltValueNullFieldError.checkNotNull(
-                scorerVersion, r'ForecasterComparison', 'scorerVersion'),
+              scorerVersion,
+              r'ForecasterComparison',
+              'scorerVersion',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'ForecasterComparison', 'computedAt'),
+              computedAt,
+              r'ForecasterComparison',
+              'computedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -348,7 +381,10 @@ class ForecasterComparisonBuilder
         _interval?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecasterComparison', _$failedField, e.toString());
+          r'ForecasterComparison',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

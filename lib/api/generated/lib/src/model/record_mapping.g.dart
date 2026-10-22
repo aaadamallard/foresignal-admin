@@ -20,8 +20,8 @@ RecordMappingVersionEnum _$recordMappingVersionEnumValueOf(String name) {
 
 final BuiltSet<RecordMappingVersionEnum> _$recordMappingVersionEnumValues =
     BuiltSet<RecordMappingVersionEnum>(const <RecordMappingVersionEnum>[
-  _$recordMappingVersionEnum_number1,
-]);
+      _$recordMappingVersionEnum_number1,
+    ]);
 
 Serializer<RecordMappingVersionEnum> _$recordMappingVersionEnumSerializer =
     _$RecordMappingVersionEnumSerializer();
@@ -41,16 +41,20 @@ class _$RecordMappingVersionEnumSerializer
   final String wireName = 'RecordMappingVersionEnum';
 
   @override
-  Object serialize(Serializers serializers, RecordMappingVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    RecordMappingVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   RecordMappingVersionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      RecordMappingVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => RecordMappingVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$RecordMapping extends RecordMapping {
@@ -88,23 +92,23 @@ class _$RecordMapping extends RecordMapping {
   factory _$RecordMapping([void Function(RecordMappingBuilder)? updates]) =>
       (RecordMappingBuilder()..update(updates))._build();
 
-  _$RecordMapping._(
-      {required this.version,
-      this.select,
-      this.externalId,
-      this.kind,
-      this.observedAt,
-      this.eventTime,
-      this.validUntil,
-      this.geometry,
-      this.tombstone,
-      this.quality,
-      this.fields,
-      this.pairs,
-      this.drop,
-      this.filter,
-      this.spread})
-      : super._();
+  _$RecordMapping._({
+    required this.version,
+    this.select,
+    this.externalId,
+    this.kind,
+    this.observedAt,
+    this.eventTime,
+    this.validUntil,
+    this.geometry,
+    this.tombstone,
+    this.quality,
+    this.fields,
+    this.pairs,
+    this.drop,
+    this.filter,
+    this.spread,
+  }) : super._();
   @override
   RecordMapping rebuild(void Function(RecordMappingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -293,10 +297,14 @@ class RecordMappingBuilder
   _$RecordMapping _build() {
     _$RecordMapping _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RecordMapping._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'RecordMapping', 'version'),
+              version,
+              r'RecordMapping',
+              'version',
+            ),
             select: select,
             externalId: externalId,
             kind: kind,
@@ -331,7 +339,10 @@ class RecordMappingBuilder
         _spread?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RecordMapping', _$failedField, e.toString());
+          r'RecordMapping',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

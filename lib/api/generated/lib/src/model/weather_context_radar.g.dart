@@ -18,21 +18,21 @@ class _$WeatherContextRadar extends WeatherContextRadar {
   @override
   final WeatherContextRadarNearestCell? nearestCell;
 
-  factory _$WeatherContextRadar(
-          [void Function(WeatherContextRadarBuilder)? updates]) =>
-      (WeatherContextRadarBuilder()..update(updates))._build();
+  factory _$WeatherContextRadar([
+    void Function(WeatherContextRadarBuilder)? updates,
+  ]) => (WeatherContextRadarBuilder()..update(updates))._build();
 
-  _$WeatherContextRadar._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.maxDbz,
-      this.nearestCell})
-      : super._();
+  _$WeatherContextRadar._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.maxDbz,
+    this.nearestCell,
+  }) : super._();
   @override
   WeatherContextRadar rebuild(
-          void Function(WeatherContextRadarBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(WeatherContextRadarBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   WeatherContextRadarBuilder toBuilder() =>
@@ -132,10 +132,14 @@ class WeatherContextRadarBuilder
   _$WeatherContextRadar _build() {
     _$WeatherContextRadar _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WeatherContextRadar._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'WeatherContextRadar', 'status'),
+              status,
+              r'WeatherContextRadar',
+              'status',
+            ),
             asOf: asOf,
             statusText: statusText,
             maxDbz: maxDbz,
@@ -148,7 +152,10 @@ class WeatherContextRadarBuilder
         _nearestCell?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WeatherContextRadar', _$failedField, e.toString());
+          r'WeatherContextRadar',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

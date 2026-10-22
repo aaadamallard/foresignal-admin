@@ -14,12 +14,12 @@ class _$SystemRastersGlm extends SystemRastersGlm {
   @override
   final DateTime? newestFileAt;
 
-  factory _$SystemRastersGlm(
-          [void Function(SystemRastersGlmBuilder)? updates]) =>
-      (SystemRastersGlmBuilder()..update(updates))._build();
+  factory _$SystemRastersGlm([
+    void Function(SystemRastersGlmBuilder)? updates,
+  ]) => (SystemRastersGlmBuilder()..update(updates))._build();
 
   _$SystemRastersGlm._({this.ringFlashes, this.archiveBytes, this.newestFileAt})
-      : super._();
+    : super._();
   @override
   SystemRastersGlm rebuild(void Function(SystemRastersGlmBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -103,7 +103,8 @@ class SystemRastersGlmBuilder
   SystemRastersGlm build() => _build();
 
   _$SystemRastersGlm _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemRastersGlm._(
           ringFlashes: ringFlashes,
           archiveBytes: archiveBytes,

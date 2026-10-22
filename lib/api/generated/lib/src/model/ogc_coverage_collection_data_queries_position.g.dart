@@ -11,18 +11,16 @@ class _$OgcCoverageCollectionDataQueriesPosition
   @override
   final OgcLink? link;
 
-  factory _$OgcCoverageCollectionDataQueriesPosition(
-          [void Function(OgcCoverageCollectionDataQueriesPositionBuilder)?
-              updates]) =>
-      (OgcCoverageCollectionDataQueriesPositionBuilder()..update(updates))
-          ._build();
+  factory _$OgcCoverageCollectionDataQueriesPosition([
+    void Function(OgcCoverageCollectionDataQueriesPositionBuilder)? updates,
+  ]) => (OgcCoverageCollectionDataQueriesPositionBuilder()..update(updates))
+      ._build();
 
   _$OgcCoverageCollectionDataQueriesPosition._({this.link}) : super._();
   @override
   OgcCoverageCollectionDataQueriesPosition rebuild(
-          void Function(OgcCoverageCollectionDataQueriesPositionBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCoverageCollectionDataQueriesPositionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCoverageCollectionDataQueriesPositionBuilder toBuilder() =>
@@ -46,16 +44,17 @@ class _$OgcCoverageCollectionDataQueriesPosition
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'OgcCoverageCollectionDataQueriesPosition')
-          ..add('link', link))
-        .toString();
+      r'OgcCoverageCollectionDataQueriesPosition',
+    )..add('link', link)).toString();
   }
 }
 
 class OgcCoverageCollectionDataQueriesPositionBuilder
     implements
-        Builder<OgcCoverageCollectionDataQueriesPosition,
-            OgcCoverageCollectionDataQueriesPositionBuilder> {
+        Builder<
+          OgcCoverageCollectionDataQueriesPosition,
+          OgcCoverageCollectionDataQueriesPositionBuilder
+        > {
   _$OgcCoverageCollectionDataQueriesPosition? _$v;
 
   OgcLinkBuilder? _link;
@@ -82,7 +81,8 @@ class OgcCoverageCollectionDataQueriesPositionBuilder
 
   @override
   void update(
-      void Function(OgcCoverageCollectionDataQueriesPositionBuilder)? updates) {
+    void Function(OgcCoverageCollectionDataQueriesPositionBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -92,10 +92,9 @@ class OgcCoverageCollectionDataQueriesPositionBuilder
   _$OgcCoverageCollectionDataQueriesPosition _build() {
     _$OgcCoverageCollectionDataQueriesPosition _$result;
     try {
-      _$result = _$v ??
-          _$OgcCoverageCollectionDataQueriesPosition._(
-            link: _link?.build(),
-          );
+      _$result =
+          _$v ??
+          _$OgcCoverageCollectionDataQueriesPosition._(link: _link?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,9 +102,10 @@ class OgcCoverageCollectionDataQueriesPositionBuilder
         _link?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCoverageCollectionDataQueriesPosition',
-            _$failedField,
-            e.toString());
+          r'OgcCoverageCollectionDataQueriesPosition',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

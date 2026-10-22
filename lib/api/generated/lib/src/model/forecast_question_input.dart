@@ -75,8 +75,9 @@ abstract class ForecastQuestionInput
 
   ForecastQuestionInput._();
 
-  factory ForecastQuestionInput(
-      [void updates(ForecastQuestionInputBuilder b)]) = _$ForecastQuestionInput;
+  factory ForecastQuestionInput([
+    void updates(ForecastQuestionInputBuilder b),
+  ]) = _$ForecastQuestionInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastQuestionInputBuilder b) => b;
@@ -91,7 +92,7 @@ class _$ForecastQuestionInputSerializer
   @override
   final Iterable<Type> types = const [
     ForecastQuestionInput,
-    _$ForecastQuestionInput
+    _$ForecastQuestionInput,
   ];
 
   @override
@@ -187,9 +188,11 @@ class _$ForecastQuestionInputSerializer
     ForecastQuestionInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -205,100 +208,129 @@ class _$ForecastQuestionInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastQuestionInputTypeEnum),
-          ) as ForecastQuestionInputTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecastQuestionInputTypeEnum,
+                    ),
+                  )
+                  as ForecastQuestionInputTypeEnum;
           result.type = valueDes;
           break;
         case r'outcomes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(QuestionOutcomes),
-          ) as QuestionOutcomes?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(QuestionOutcomes),
+                  )
+                  as QuestionOutcomes?;
           if (valueDes == null) continue;
           result.outcomes.replace(valueDes);
           break;
         case r'resolutionCriteria':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.resolutionCriteria = valueDes;
           break;
         case r'resolver':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastResolver),
-          ) as ForecastResolver;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ForecastResolver),
+                  )
+                  as ForecastResolver;
           result.resolver.replace(valueDes);
           break;
         case r'opensAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.opensAt = valueDes;
           break;
         case r'closesAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.closesAt = valueDes;
           break;
         case r'resolveBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.resolveBy = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.category = valueDes;
           break;
         case r'tags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.tags.replace(valueDes);
           break;
         case r'links':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(QuestionLinks),
-          ) as QuestionLinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(QuestionLinks),
+                  )
+                  as QuestionLinks?;
           if (valueDes == null) continue;
           result.links.replace(valueDes);
           break;
         case r'dedupKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.dedupKey = valueDes;
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;

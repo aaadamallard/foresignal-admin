@@ -7,14 +7,14 @@ part of 'external_question_link.dart';
 // **************************************************************************
 
 const ExternalQuestionLinkOrientationEnum
-    _$externalQuestionLinkOrientationEnum_same =
+_$externalQuestionLinkOrientationEnum_same =
     const ExternalQuestionLinkOrientationEnum._('same');
 const ExternalQuestionLinkOrientationEnum
-    _$externalQuestionLinkOrientationEnum_inverse =
+_$externalQuestionLinkOrientationEnum_inverse =
     const ExternalQuestionLinkOrientationEnum._('inverse');
 
 ExternalQuestionLinkOrientationEnum
-    _$externalQuestionLinkOrientationEnumValueOf(String name) {
+_$externalQuestionLinkOrientationEnumValueOf(String name) {
   switch (name) {
     case 'same':
       return _$externalQuestionLinkOrientationEnum_same;
@@ -26,14 +26,16 @@ ExternalQuestionLinkOrientationEnum
 }
 
 final BuiltSet<ExternalQuestionLinkOrientationEnum>
-    _$externalQuestionLinkOrientationEnumValues = BuiltSet<
-        ExternalQuestionLinkOrientationEnum>(const <ExternalQuestionLinkOrientationEnum>[
-  _$externalQuestionLinkOrientationEnum_same,
-  _$externalQuestionLinkOrientationEnum_inverse,
-]);
+_$externalQuestionLinkOrientationEnumValues =
+    BuiltSet<ExternalQuestionLinkOrientationEnum>(
+      const <ExternalQuestionLinkOrientationEnum>[
+        _$externalQuestionLinkOrientationEnum_same,
+        _$externalQuestionLinkOrientationEnum_inverse,
+      ],
+    );
 
 Serializer<ExternalQuestionLinkOrientationEnum>
-    _$externalQuestionLinkOrientationEnumSerializer =
+_$externalQuestionLinkOrientationEnumSerializer =
     _$ExternalQuestionLinkOrientationEnumSerializer();
 
 class _$ExternalQuestionLinkOrientationEnumSerializer
@@ -49,23 +51,26 @@ class _$ExternalQuestionLinkOrientationEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ExternalQuestionLinkOrientationEnum
+    ExternalQuestionLinkOrientationEnum,
   ];
   @override
   final String wireName = 'ExternalQuestionLinkOrientationEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ExternalQuestionLinkOrientationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ExternalQuestionLinkOrientationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ExternalQuestionLinkOrientationEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ExternalQuestionLinkOrientationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ExternalQuestionLinkOrientationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ExternalQuestionLink extends ExternalQuestionLink {
@@ -88,25 +93,25 @@ class _$ExternalQuestionLink extends ExternalQuestionLink {
   @override
   final DateTime? lastForecastAt;
 
-  factory _$ExternalQuestionLink(
-          [void Function(ExternalQuestionLinkBuilder)? updates]) =>
-      (ExternalQuestionLinkBuilder()..update(updates))._build();
+  factory _$ExternalQuestionLink([
+    void Function(ExternalQuestionLinkBuilder)? updates,
+  ]) => (ExternalQuestionLinkBuilder()..update(updates))._build();
 
-  _$ExternalQuestionLink._(
-      {required this.streamId,
-      required this.externalQuestionId,
-      required this.questionId,
-      this.orientation,
-      required this.id,
-      required this.sourceId,
-      required this.forecasterId,
-      required this.createdAt,
-      this.lastForecastAt})
-      : super._();
+  _$ExternalQuestionLink._({
+    required this.streamId,
+    required this.externalQuestionId,
+    required this.questionId,
+    this.orientation,
+    required this.id,
+    required this.sourceId,
+    required this.forecasterId,
+    required this.createdAt,
+    this.lastForecastAt,
+  }) : super._();
   @override
   ExternalQuestionLink rebuild(
-          void Function(ExternalQuestionLinkBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ExternalQuestionLinkBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ExternalQuestionLinkBuilder toBuilder() =>
@@ -237,25 +242,45 @@ class ExternalQuestionLinkBuilder
   ExternalQuestionLink build() => _build();
 
   _$ExternalQuestionLink _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ExternalQuestionLink._(
           streamId: BuiltValueNullFieldError.checkNotNull(
-              streamId, r'ExternalQuestionLink', 'streamId'),
+            streamId,
+            r'ExternalQuestionLink',
+            'streamId',
+          ),
           externalQuestionId: BuiltValueNullFieldError.checkNotNull(
-              externalQuestionId,
-              r'ExternalQuestionLink',
-              'externalQuestionId'),
+            externalQuestionId,
+            r'ExternalQuestionLink',
+            'externalQuestionId',
+          ),
           questionId: BuiltValueNullFieldError.checkNotNull(
-              questionId, r'ExternalQuestionLink', 'questionId'),
+            questionId,
+            r'ExternalQuestionLink',
+            'questionId',
+          ),
           orientation: orientation,
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'ExternalQuestionLink', 'id'),
+            id,
+            r'ExternalQuestionLink',
+            'id',
+          ),
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'ExternalQuestionLink', 'sourceId'),
+            sourceId,
+            r'ExternalQuestionLink',
+            'sourceId',
+          ),
           forecasterId: BuiltValueNullFieldError.checkNotNull(
-              forecasterId, r'ExternalQuestionLink', 'forecasterId'),
+            forecasterId,
+            r'ExternalQuestionLink',
+            'forecasterId',
+          ),
           createdAt: BuiltValueNullFieldError.checkNotNull(
-              createdAt, r'ExternalQuestionLink', 'createdAt'),
+            createdAt,
+            r'ExternalQuestionLink',
+            'createdAt',
+          ),
           lastForecastAt: lastForecastAt,
         );
     replace(_$result);

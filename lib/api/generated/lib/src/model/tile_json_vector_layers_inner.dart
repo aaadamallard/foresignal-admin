@@ -39,9 +39,9 @@ abstract class TileJsonVectorLayersInner
 
   TileJsonVectorLayersInner._();
 
-  factory TileJsonVectorLayersInner(
-          [void updates(TileJsonVectorLayersInnerBuilder b)]) =
-      _$TileJsonVectorLayersInner;
+  factory TileJsonVectorLayersInner([
+    void updates(TileJsonVectorLayersInnerBuilder b),
+  ]) = _$TileJsonVectorLayersInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(TileJsonVectorLayersInnerBuilder b) => b;
@@ -56,7 +56,7 @@ class _$TileJsonVectorLayersInnerSerializer
   @override
   final Iterable<Type> types = const [
     TileJsonVectorLayersInner,
-    _$TileJsonVectorLayersInner
+    _$TileJsonVectorLayersInner,
   ];
 
   @override
@@ -96,8 +96,10 @@ class _$TileJsonVectorLayersInnerSerializer
     yield r'fields';
     yield serializers.serialize(
       object.fields,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(String)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(String),
+      ]),
     );
   }
 
@@ -107,9 +109,11 @@ class _$TileJsonVectorLayersInnerSerializer
     TileJsonVectorLayersInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,42 +129,54 @@ class _$TileJsonVectorLayersInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'minzoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.minzoom = valueDes;
           break;
         case r'maxzoom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxzoom = valueDes;
           break;
         case r'fields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>;
           result.fields.replace(valueDes);
           break;
         default:

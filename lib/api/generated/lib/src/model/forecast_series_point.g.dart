@@ -26,25 +26,25 @@ class _$ForecastSeriesPoint extends ForecastSeriesPoint {
   @override
   final num? smokeUgM3;
 
-  factory _$ForecastSeriesPoint(
-          [void Function(ForecastSeriesPointBuilder)? updates]) =>
-      (ForecastSeriesPointBuilder()..update(updates))._build();
+  factory _$ForecastSeriesPoint([
+    void Function(ForecastSeriesPointBuilder)? updates,
+  ]) => (ForecastSeriesPointBuilder()..update(updates))._build();
 
-  _$ForecastSeriesPoint._(
-      {required this.time,
-      this.tempC,
-      this.windSpeedMs,
-      this.windFromDeg,
-      this.gustMs,
-      this.popPct,
-      this.precipMm,
-      this.skyCoverPct,
-      this.smokeUgM3})
-      : super._();
+  _$ForecastSeriesPoint._({
+    required this.time,
+    this.tempC,
+    this.windSpeedMs,
+    this.windFromDeg,
+    this.gustMs,
+    this.popPct,
+    this.precipMm,
+    this.skyCoverPct,
+    this.smokeUgM3,
+  }) : super._();
   @override
   ForecastSeriesPoint rebuild(
-          void Function(ForecastSeriesPointBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastSeriesPointBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastSeriesPointBuilder toBuilder() =>
@@ -172,10 +172,14 @@ class ForecastSeriesPointBuilder
   ForecastSeriesPoint build() => _build();
 
   _$ForecastSeriesPoint _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastSeriesPoint._(
           time: BuiltValueNullFieldError.checkNotNull(
-              time, r'ForecastSeriesPoint', 'time'),
+            time,
+            r'ForecastSeriesPoint',
+            'time',
+          ),
           tempC: tempC,
           windSpeedMs: windSpeedMs,
           windFromDeg: windFromDeg,

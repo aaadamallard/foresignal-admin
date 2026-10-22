@@ -37,21 +37,21 @@ class _$ForecastScore extends ForecastScore {
   factory _$ForecastScore([void Function(ForecastScoreBuilder)? updates]) =>
       (ForecastScoreBuilder()..update(updates))._build();
 
-  _$ForecastScore._(
-      {required this.questionId,
-      required this.forecasterId,
-      this.brier,
-      this.logScore,
-      this.rps,
-      this.crps,
-      this.pinball,
-      this.intervalHits,
-      this.timeAveragedBrier,
-      required this.nDays,
-      this.finalProbability,
-      required this.scorerVersion,
-      required this.computedAt})
-      : super._();
+  _$ForecastScore._({
+    required this.questionId,
+    required this.forecasterId,
+    this.brier,
+    this.logScore,
+    this.rps,
+    this.crps,
+    this.pinball,
+    this.intervalHits,
+    this.timeAveragedBrier,
+    required this.nDays,
+    this.finalProbability,
+    required this.scorerVersion,
+    required this.computedAt,
+  }) : super._();
   @override
   ForecastScore rebuild(void Function(ForecastScoreBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -221,12 +221,19 @@ class ForecastScoreBuilder
   _$ForecastScore _build() {
     _$ForecastScore _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastScore._(
             questionId: BuiltValueNullFieldError.checkNotNull(
-                questionId, r'ForecastScore', 'questionId'),
+              questionId,
+              r'ForecastScore',
+              'questionId',
+            ),
             forecasterId: BuiltValueNullFieldError.checkNotNull(
-                forecasterId, r'ForecastScore', 'forecasterId'),
+              forecasterId,
+              r'ForecastScore',
+              'forecasterId',
+            ),
             brier: brier,
             logScore: logScore,
             rps: rps,
@@ -235,12 +242,21 @@ class ForecastScoreBuilder
             intervalHits: _intervalHits?.build(),
             timeAveragedBrier: timeAveragedBrier,
             nDays: BuiltValueNullFieldError.checkNotNull(
-                nDays, r'ForecastScore', 'nDays'),
+              nDays,
+              r'ForecastScore',
+              'nDays',
+            ),
             finalProbability: finalProbability,
             scorerVersion: BuiltValueNullFieldError.checkNotNull(
-                scorerVersion, r'ForecastScore', 'scorerVersion'),
+              scorerVersion,
+              r'ForecastScore',
+              'scorerVersion',
+            ),
             computedAt: BuiltValueNullFieldError.checkNotNull(
-                computedAt, r'ForecastScore', 'computedAt'),
+              computedAt,
+              r'ForecastScore',
+              'computedAt',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -251,7 +267,10 @@ class ForecastScoreBuilder
         _intervalHits?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastScore', _$failedField, e.toString());
+          r'ForecastScore',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

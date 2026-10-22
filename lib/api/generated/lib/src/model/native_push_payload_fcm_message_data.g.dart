@@ -25,17 +25,24 @@ class _$NativePushPayloadFcmMessageData
   @override
   final String? c;
 
-  factory _$NativePushPayloadFcmMessageData(
-          [void Function(NativePushPayloadFcmMessageDataBuilder)? updates]) =>
-      (NativePushPayloadFcmMessageDataBuilder()..update(updates))._build();
+  factory _$NativePushPayloadFcmMessageData([
+    void Function(NativePushPayloadFcmMessageDataBuilder)? updates,
+  ]) => (NativePushPayloadFcmMessageDataBuilder()..update(updates))._build();
 
-  _$NativePushPayloadFcmMessageData._(
-      {this.v, this.id, this.a, this.s, this.ev, this.l, this.t, this.c})
-      : super._();
+  _$NativePushPayloadFcmMessageData._({
+    this.v,
+    this.id,
+    this.a,
+    this.s,
+    this.ev,
+    this.l,
+    this.t,
+    this.c,
+  }) : super._();
   @override
   NativePushPayloadFcmMessageData rebuild(
-          void Function(NativePushPayloadFcmMessageDataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadFcmMessageDataBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadFcmMessageDataBuilder toBuilder() =>
@@ -87,8 +94,10 @@ class _$NativePushPayloadFcmMessageData
 
 class NativePushPayloadFcmMessageDataBuilder
     implements
-        Builder<NativePushPayloadFcmMessageData,
-            NativePushPayloadFcmMessageDataBuilder> {
+        Builder<
+          NativePushPayloadFcmMessageData,
+          NativePushPayloadFcmMessageDataBuilder
+        > {
   _$NativePushPayloadFcmMessageData? _$v;
 
   String? _v;
@@ -157,7 +166,8 @@ class NativePushPayloadFcmMessageDataBuilder
   NativePushPayloadFcmMessageData build() => _build();
 
   _$NativePushPayloadFcmMessageData _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NativePushPayloadFcmMessageData._(
           v: v,
           id: id,

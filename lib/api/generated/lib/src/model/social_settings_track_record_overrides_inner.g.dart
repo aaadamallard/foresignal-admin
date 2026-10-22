@@ -7,27 +7,26 @@ part of 'social_settings_track_record_overrides_inner.dart';
 // **************************************************************************
 
 const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_A =
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnum_A =
     const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._('A');
 const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_B =
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnum_B =
     const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._('B');
 const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_C =
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnum_C =
     const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._('C');
 const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_D =
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnum_D =
     const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._('D');
 const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E =
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E =
     const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._('E');
 const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F =
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F =
     const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._('F');
 
 SocialSettingsTrackRecordOverridesInnerReliabilityEnum
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValueOf(
-        String name) {
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnumValueOf(String name) {
   switch (name) {
     case 'A':
       return _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_A;
@@ -47,24 +46,27 @@ SocialSettingsTrackRecordOverridesInnerReliabilityEnum
 }
 
 final BuiltSet<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValues = BuiltSet<
-        SocialSettingsTrackRecordOverridesInnerReliabilityEnum>(const <SocialSettingsTrackRecordOverridesInnerReliabilityEnum>[
-  _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_A,
-  _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_B,
-  _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_C,
-  _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_D,
-  _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E,
-  _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F,
-]);
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnumValues =
+    BuiltSet<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>(
+      const <SocialSettingsTrackRecordOverridesInnerReliabilityEnum>[
+        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_A,
+        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_B,
+        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_C,
+        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_D,
+        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E,
+        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F,
+      ],
+    );
 
 Serializer<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>
-    _$socialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer =
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer =
     _$SocialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer();
 
 class _$SocialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer
     implements
         PrimitiveSerializer<
-            SocialSettingsTrackRecordOverridesInnerReliabilityEnum> {
+          SocialSettingsTrackRecordOverridesInnerReliabilityEnum
+        > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'A': 'A',
     'B': 'B',
@@ -84,24 +86,27 @@ class _$SocialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SocialSettingsTrackRecordOverridesInnerReliabilityEnum
+    SocialSettingsTrackRecordOverridesInnerReliabilityEnum,
   ];
   @override
   final String wireName =
       'SocialSettingsTrackRecordOverridesInnerReliabilityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SocialSettingsTrackRecordOverridesInnerReliabilityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialSettingsTrackRecordOverridesInnerReliabilityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialSettingsTrackRecordOverridesInnerReliabilityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialSettingsTrackRecordOverridesInnerReliabilityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialSettingsTrackRecordOverridesInnerReliabilityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialSettingsTrackRecordOverridesInner
@@ -117,24 +122,22 @@ class _$SocialSettingsTrackRecordOverridesInner
   @override
   final String? note;
 
-  factory _$SocialSettingsTrackRecordOverridesInner(
-          [void Function(SocialSettingsTrackRecordOverridesInnerBuilder)?
-              updates]) =>
-      (SocialSettingsTrackRecordOverridesInnerBuilder()..update(updates))
-          ._build();
+  factory _$SocialSettingsTrackRecordOverridesInner([
+    void Function(SocialSettingsTrackRecordOverridesInnerBuilder)? updates,
+  ]) => (SocialSettingsTrackRecordOverridesInnerBuilder()..update(updates))
+      ._build();
 
-  _$SocialSettingsTrackRecordOverridesInner._(
-      {required this.platform,
-      this.account,
-      this.channel,
-      required this.reliability,
-      this.note})
-      : super._();
+  _$SocialSettingsTrackRecordOverridesInner._({
+    required this.platform,
+    this.account,
+    this.channel,
+    required this.reliability,
+    this.note,
+  }) : super._();
   @override
   SocialSettingsTrackRecordOverridesInner rebuild(
-          void Function(SocialSettingsTrackRecordOverridesInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsTrackRecordOverridesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsTrackRecordOverridesInnerBuilder toBuilder() =>
@@ -166,7 +169,8 @@ class _$SocialSettingsTrackRecordOverridesInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'SocialSettingsTrackRecordOverridesInner')
+            r'SocialSettingsTrackRecordOverridesInner',
+          )
           ..add('platform', platform)
           ..add('account', account)
           ..add('channel', channel)
@@ -178,8 +182,10 @@ class _$SocialSettingsTrackRecordOverridesInner
 
 class SocialSettingsTrackRecordOverridesInnerBuilder
     implements
-        Builder<SocialSettingsTrackRecordOverridesInner,
-            SocialSettingsTrackRecordOverridesInnerBuilder> {
+        Builder<
+          SocialSettingsTrackRecordOverridesInner,
+          SocialSettingsTrackRecordOverridesInnerBuilder
+        > {
   _$SocialSettingsTrackRecordOverridesInner? _$v;
 
   String? _platform;
@@ -198,9 +204,8 @@ class SocialSettingsTrackRecordOverridesInnerBuilder
   SocialSettingsTrackRecordOverridesInnerReliabilityEnum? get reliability =>
       _$this._reliability;
   set reliability(
-          SocialSettingsTrackRecordOverridesInnerReliabilityEnum?
-              reliability) =>
-      _$this._reliability = reliability;
+    SocialSettingsTrackRecordOverridesInnerReliabilityEnum? reliability,
+  ) => _$this._reliability = reliability;
 
   String? _note;
   String? get note => _$this._note;
@@ -230,7 +235,8 @@ class SocialSettingsTrackRecordOverridesInnerBuilder
 
   @override
   void update(
-      void Function(SocialSettingsTrackRecordOverridesInnerBuilder)? updates) {
+    void Function(SocialSettingsTrackRecordOverridesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -238,14 +244,21 @@ class SocialSettingsTrackRecordOverridesInnerBuilder
   SocialSettingsTrackRecordOverridesInner build() => _build();
 
   _$SocialSettingsTrackRecordOverridesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialSettingsTrackRecordOverridesInner._(
           platform: BuiltValueNullFieldError.checkNotNull(
-              platform, r'SocialSettingsTrackRecordOverridesInner', 'platform'),
+            platform,
+            r'SocialSettingsTrackRecordOverridesInner',
+            'platform',
+          ),
           account: account,
           channel: channel,
-          reliability: BuiltValueNullFieldError.checkNotNull(reliability,
-              r'SocialSettingsTrackRecordOverridesInner', 'reliability'),
+          reliability: BuiltValueNullFieldError.checkNotNull(
+            reliability,
+            r'SocialSettingsTrackRecordOverridesInner',
+            'reliability',
+          ),
           note: note,
         );
     replace(_$result);

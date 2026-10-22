@@ -26,21 +26,21 @@ class _$RuleQualityDaily extends RuleQualityDaily {
   @override
   final int? suppressedByRateCap;
 
-  factory _$RuleQualityDaily(
-          [void Function(RuleQualityDailyBuilder)? updates]) =>
-      (RuleQualityDailyBuilder()..update(updates))._build();
+  factory _$RuleQualityDaily([
+    void Function(RuleQualityDailyBuilder)? updates,
+  ]) => (RuleQualityDailyBuilder()..update(updates))._build();
 
-  _$RuleQualityDaily._(
-      {required this.ruleId,
-      required this.day,
-      required this.fired,
-      this.feedback,
-      this.signals,
-      this.medianAckSeconds,
-      this.flaps,
-      this.suppressedByCooldown,
-      this.suppressedByRateCap})
-      : super._();
+  _$RuleQualityDaily._({
+    required this.ruleId,
+    required this.day,
+    required this.fired,
+    this.feedback,
+    this.signals,
+    this.medianAckSeconds,
+    this.flaps,
+    this.suppressedByCooldown,
+    this.suppressedByRateCap,
+  }) : super._();
   @override
   RuleQualityDaily rebuild(void Function(RuleQualityDailyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -180,14 +180,24 @@ class RuleQualityDailyBuilder
   _$RuleQualityDaily _build() {
     _$RuleQualityDaily _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RuleQualityDaily._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'RuleQualityDaily', 'ruleId'),
+              ruleId,
+              r'RuleQualityDaily',
+              'ruleId',
+            ),
             day: BuiltValueNullFieldError.checkNotNull(
-                day, r'RuleQualityDaily', 'day'),
+              day,
+              r'RuleQualityDaily',
+              'day',
+            ),
             fired: BuiltValueNullFieldError.checkNotNull(
-                fired, r'RuleQualityDaily', 'fired'),
+              fired,
+              r'RuleQualityDaily',
+              'fired',
+            ),
             feedback: _feedback?.build(),
             signals: _signals?.build(),
             medianAckSeconds: medianAckSeconds,
@@ -204,7 +214,10 @@ class RuleQualityDailyBuilder
         _signals?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RuleQualityDaily', _$failedField, e.toString());
+          r'RuleQualityDaily',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

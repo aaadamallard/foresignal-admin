@@ -7,14 +7,14 @@ part of 'field_manifest_components_inner.dart';
 // **************************************************************************
 
 const FieldManifestComponentsInnerNameEnum
-    _$fieldManifestComponentsInnerNameEnum_u =
+_$fieldManifestComponentsInnerNameEnum_u =
     const FieldManifestComponentsInnerNameEnum._('u');
 const FieldManifestComponentsInnerNameEnum
-    _$fieldManifestComponentsInnerNameEnum_v =
+_$fieldManifestComponentsInnerNameEnum_v =
     const FieldManifestComponentsInnerNameEnum._('v');
 
 FieldManifestComponentsInnerNameEnum
-    _$fieldManifestComponentsInnerNameEnumValueOf(String name) {
+_$fieldManifestComponentsInnerNameEnumValueOf(String name) {
   switch (name) {
     case 'u':
       return _$fieldManifestComponentsInnerNameEnum_u;
@@ -26,14 +26,16 @@ FieldManifestComponentsInnerNameEnum
 }
 
 final BuiltSet<FieldManifestComponentsInnerNameEnum>
-    _$fieldManifestComponentsInnerNameEnumValues = BuiltSet<
-        FieldManifestComponentsInnerNameEnum>(const <FieldManifestComponentsInnerNameEnum>[
-  _$fieldManifestComponentsInnerNameEnum_u,
-  _$fieldManifestComponentsInnerNameEnum_v,
-]);
+_$fieldManifestComponentsInnerNameEnumValues =
+    BuiltSet<FieldManifestComponentsInnerNameEnum>(
+      const <FieldManifestComponentsInnerNameEnum>[
+        _$fieldManifestComponentsInnerNameEnum_u,
+        _$fieldManifestComponentsInnerNameEnum_v,
+      ],
+    );
 
 Serializer<FieldManifestComponentsInnerNameEnum>
-    _$fieldManifestComponentsInnerNameEnumSerializer =
+_$fieldManifestComponentsInnerNameEnumSerializer =
     _$FieldManifestComponentsInnerNameEnumSerializer();
 
 class _$FieldManifestComponentsInnerNameEnumSerializer
@@ -49,23 +51,26 @@ class _$FieldManifestComponentsInnerNameEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    FieldManifestComponentsInnerNameEnum
+    FieldManifestComponentsInnerNameEnum,
   ];
   @override
   final String wireName = 'FieldManifestComponentsInnerNameEnum';
 
   @override
   Object serialize(
-          Serializers serializers, FieldManifestComponentsInnerNameEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FieldManifestComponentsInnerNameEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FieldManifestComponentsInnerNameEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FieldManifestComponentsInnerNameEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FieldManifestComponentsInnerNameEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FieldManifestComponentsInner extends FieldManifestComponentsInner {
@@ -74,16 +79,16 @@ class _$FieldManifestComponentsInner extends FieldManifestComponentsInner {
   @override
   final int offset;
 
-  factory _$FieldManifestComponentsInner(
-          [void Function(FieldManifestComponentsInnerBuilder)? updates]) =>
-      (FieldManifestComponentsInnerBuilder()..update(updates))._build();
+  factory _$FieldManifestComponentsInner([
+    void Function(FieldManifestComponentsInnerBuilder)? updates,
+  ]) => (FieldManifestComponentsInnerBuilder()..update(updates))._build();
 
   _$FieldManifestComponentsInner._({required this.name, required this.offset})
-      : super._();
+    : super._();
   @override
   FieldManifestComponentsInner rebuild(
-          void Function(FieldManifestComponentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FieldManifestComponentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FieldManifestComponentsInnerBuilder toBuilder() =>
@@ -117,8 +122,10 @@ class _$FieldManifestComponentsInner extends FieldManifestComponentsInner {
 
 class FieldManifestComponentsInnerBuilder
     implements
-        Builder<FieldManifestComponentsInner,
-            FieldManifestComponentsInnerBuilder> {
+        Builder<
+          FieldManifestComponentsInner,
+          FieldManifestComponentsInnerBuilder
+        > {
   _$FieldManifestComponentsInner? _$v;
 
   FieldManifestComponentsInnerNameEnum? _name;
@@ -157,12 +164,19 @@ class FieldManifestComponentsInnerBuilder
   FieldManifestComponentsInner build() => _build();
 
   _$FieldManifestComponentsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$FieldManifestComponentsInner._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'FieldManifestComponentsInner', 'name'),
+            name,
+            r'FieldManifestComponentsInner',
+            'name',
+          ),
           offset: BuiltValueNullFieldError.checkNotNull(
-              offset, r'FieldManifestComponentsInner', 'offset'),
+            offset,
+            r'FieldManifestComponentsInner',
+            'offset',
+          ),
         );
     replace(_$result);
     return _$result;

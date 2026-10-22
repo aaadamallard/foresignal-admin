@@ -15,18 +15,19 @@ const ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnum_view =
 const ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnum_track =
     const ShareLinkCreatedTargetTypeEnum._('track');
 const ShareLinkCreatedTargetTypeEnum
-    _$shareLinkCreatedTargetTypeEnum_briefingRun =
+_$shareLinkCreatedTargetTypeEnum_briefingRun =
     const ShareLinkCreatedTargetTypeEnum._('briefingRun');
 const ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnum_export_ =
     const ShareLinkCreatedTargetTypeEnum._('export_');
 const ShareLinkCreatedTargetTypeEnum
-    _$shareLinkCreatedTargetTypeEnum_workspace =
+_$shareLinkCreatedTargetTypeEnum_workspace =
     const ShareLinkCreatedTargetTypeEnum._('workspace');
 const ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnum_report =
     const ShareLinkCreatedTargetTypeEnum._('report');
 
 ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$shareLinkCreatedTargetTypeEnum_record;
@@ -50,17 +51,19 @@ ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnumValueOf(
 }
 
 final BuiltSet<ShareLinkCreatedTargetTypeEnum>
-    _$shareLinkCreatedTargetTypeEnumValues = BuiltSet<
-        ShareLinkCreatedTargetTypeEnum>(const <ShareLinkCreatedTargetTypeEnum>[
-  _$shareLinkCreatedTargetTypeEnum_record,
-  _$shareLinkCreatedTargetTypeEnum_alert,
-  _$shareLinkCreatedTargetTypeEnum_view,
-  _$shareLinkCreatedTargetTypeEnum_track,
-  _$shareLinkCreatedTargetTypeEnum_briefingRun,
-  _$shareLinkCreatedTargetTypeEnum_export_,
-  _$shareLinkCreatedTargetTypeEnum_workspace,
-  _$shareLinkCreatedTargetTypeEnum_report,
-]);
+_$shareLinkCreatedTargetTypeEnumValues =
+    BuiltSet<ShareLinkCreatedTargetTypeEnum>(
+      const <ShareLinkCreatedTargetTypeEnum>[
+        _$shareLinkCreatedTargetTypeEnum_record,
+        _$shareLinkCreatedTargetTypeEnum_alert,
+        _$shareLinkCreatedTargetTypeEnum_view,
+        _$shareLinkCreatedTargetTypeEnum_track,
+        _$shareLinkCreatedTargetTypeEnum_briefingRun,
+        _$shareLinkCreatedTargetTypeEnum_export_,
+        _$shareLinkCreatedTargetTypeEnum_workspace,
+        _$shareLinkCreatedTargetTypeEnum_report,
+      ],
+    );
 
 const ShareLinkCreatedStatusEnum _$shareLinkCreatedStatusEnum_active =
     const ShareLinkCreatedStatusEnum._('active');
@@ -88,14 +91,14 @@ ShareLinkCreatedStatusEnum _$shareLinkCreatedStatusEnumValueOf(String name) {
 
 final BuiltSet<ShareLinkCreatedStatusEnum> _$shareLinkCreatedStatusEnumValues =
     BuiltSet<ShareLinkCreatedStatusEnum>(const <ShareLinkCreatedStatusEnum>[
-  _$shareLinkCreatedStatusEnum_active,
-  _$shareLinkCreatedStatusEnum_expired,
-  _$shareLinkCreatedStatusEnum_revoked,
-  _$shareLinkCreatedStatusEnum_exhausted,
-]);
+      _$shareLinkCreatedStatusEnum_active,
+      _$shareLinkCreatedStatusEnum_expired,
+      _$shareLinkCreatedStatusEnum_revoked,
+      _$shareLinkCreatedStatusEnum_exhausted,
+    ]);
 
 Serializer<ShareLinkCreatedTargetTypeEnum>
-    _$shareLinkCreatedTargetTypeEnumSerializer =
+_$shareLinkCreatedTargetTypeEnumSerializer =
     _$ShareLinkCreatedTargetTypeEnumSerializer();
 Serializer<ShareLinkCreatedStatusEnum> _$shareLinkCreatedStatusEnumSerializer =
     _$ShareLinkCreatedStatusEnumSerializer();
@@ -130,16 +133,19 @@ class _$ShareLinkCreatedTargetTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ShareLinkCreatedTargetTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ShareLinkCreatedTargetTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ShareLinkCreatedTargetTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ShareLinkCreatedTargetTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ShareLinkCreatedTargetTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ShareLinkCreatedStatusEnumSerializer
@@ -163,16 +169,20 @@ class _$ShareLinkCreatedStatusEnumSerializer
   final String wireName = 'ShareLinkCreatedStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ShareLinkCreatedStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ShareLinkCreatedStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ShareLinkCreatedStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ShareLinkCreatedStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ShareLinkCreatedStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ShareLinkCreated extends ShareLinkCreated {
@@ -211,29 +221,29 @@ class _$ShareLinkCreated extends ShareLinkCreated {
   @override
   final String url;
 
-  factory _$ShareLinkCreated(
-          [void Function(ShareLinkCreatedBuilder)? updates]) =>
-      (ShareLinkCreatedBuilder()..update(updates))._build();
+  factory _$ShareLinkCreated([
+    void Function(ShareLinkCreatedBuilder)? updates,
+  ]) => (ShareLinkCreatedBuilder()..update(updates))._build();
 
-  _$ShareLinkCreated._(
-      {required this.id,
-      required this.keyPrefix,
-      required this.targetType,
-      required this.targetRef,
-      this.fieldMask,
-      this.precisionM,
-      this.masked,
-      required this.expiresAt,
-      this.maxUses,
-      required this.uses,
-      required this.status,
-      this.createdBy,
-      required this.createdAt,
-      this.revokedAt,
-      this.lastUsedAt,
-      required this.key,
-      required this.url})
-      : super._();
+  _$ShareLinkCreated._({
+    required this.id,
+    required this.keyPrefix,
+    required this.targetType,
+    required this.targetRef,
+    this.fieldMask,
+    this.precisionM,
+    this.masked,
+    required this.expiresAt,
+    this.maxUses,
+    required this.uses,
+    required this.status,
+    this.createdBy,
+    required this.createdAt,
+    this.revokedAt,
+    this.lastUsedAt,
+    required this.key,
+    required this.url,
+  }) : super._();
   @override
   ShareLinkCreated rebuild(void Function(ShareLinkCreatedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -433,35 +443,66 @@ class ShareLinkCreatedBuilder
   _$ShareLinkCreated _build() {
     _$ShareLinkCreated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ShareLinkCreated._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'ShareLinkCreated', 'id'),
+              id,
+              r'ShareLinkCreated',
+              'id',
+            ),
             keyPrefix: BuiltValueNullFieldError.checkNotNull(
-                keyPrefix, r'ShareLinkCreated', 'keyPrefix'),
+              keyPrefix,
+              r'ShareLinkCreated',
+              'keyPrefix',
+            ),
             targetType: BuiltValueNullFieldError.checkNotNull(
-                targetType, r'ShareLinkCreated', 'targetType'),
+              targetType,
+              r'ShareLinkCreated',
+              'targetType',
+            ),
             targetRef: BuiltValueNullFieldError.checkNotNull(
-                targetRef, r'ShareLinkCreated', 'targetRef'),
+              targetRef,
+              r'ShareLinkCreated',
+              'targetRef',
+            ),
             fieldMask: _fieldMask?.build(),
             precisionM: precisionM,
             masked: masked,
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'ShareLinkCreated', 'expiresAt'),
+              expiresAt,
+              r'ShareLinkCreated',
+              'expiresAt',
+            ),
             maxUses: maxUses,
             uses: BuiltValueNullFieldError.checkNotNull(
-                uses, r'ShareLinkCreated', 'uses'),
+              uses,
+              r'ShareLinkCreated',
+              'uses',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ShareLinkCreated', 'status'),
+              status,
+              r'ShareLinkCreated',
+              'status',
+            ),
             createdBy: createdBy,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'ShareLinkCreated', 'createdAt'),
+              createdAt,
+              r'ShareLinkCreated',
+              'createdAt',
+            ),
             revokedAt: revokedAt,
             lastUsedAt: lastUsedAt,
             key: BuiltValueNullFieldError.checkNotNull(
-                key, r'ShareLinkCreated', 'key'),
+              key,
+              r'ShareLinkCreated',
+              'key',
+            ),
             url: BuiltValueNullFieldError.checkNotNull(
-                url, r'ShareLinkCreated', 'url'),
+              url,
+              r'ShareLinkCreated',
+              'url',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -470,7 +511,10 @@ class ShareLinkCreatedBuilder
         _fieldMask?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ShareLinkCreated', _$failedField, e.toString());
+          r'ShareLinkCreated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

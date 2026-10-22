@@ -25,15 +25,15 @@ class _$LlmUsagePoint extends LlmUsagePoint {
   factory _$LlmUsagePoint([void Function(LlmUsagePointBuilder)? updates]) =>
       (LlmUsagePointBuilder()..update(updates))._build();
 
-  _$LlmUsagePoint._(
-      {required this.t,
-      required this.requests,
-      required this.inputTokens,
-      required this.outputTokens,
-      this.cachedTokens,
-      this.errors,
-      this.refused})
-      : super._();
+  _$LlmUsagePoint._({
+    required this.t,
+    required this.requests,
+    required this.inputTokens,
+    required this.outputTokens,
+    this.cachedTokens,
+    this.errors,
+    this.refused,
+  }) : super._();
   @override
   LlmUsagePoint rebuild(void Function(LlmUsagePointBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -147,15 +147,25 @@ class LlmUsagePointBuilder
   LlmUsagePoint build() => _build();
 
   _$LlmUsagePoint _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$LlmUsagePoint._(
           t: BuiltValueNullFieldError.checkNotNull(t, r'LlmUsagePoint', 't'),
           requests: BuiltValueNullFieldError.checkNotNull(
-              requests, r'LlmUsagePoint', 'requests'),
+            requests,
+            r'LlmUsagePoint',
+            'requests',
+          ),
           inputTokens: BuiltValueNullFieldError.checkNotNull(
-              inputTokens, r'LlmUsagePoint', 'inputTokens'),
+            inputTokens,
+            r'LlmUsagePoint',
+            'inputTokens',
+          ),
           outputTokens: BuiltValueNullFieldError.checkNotNull(
-              outputTokens, r'LlmUsagePoint', 'outputTokens'),
+            outputTokens,
+            r'LlmUsagePoint',
+            'outputTokens',
+          ),
           cachedTokens: cachedTokens,
           errors: errors,
           refused: refused,

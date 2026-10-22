@@ -91,11 +91,8 @@ class PolPlacePageBuilder
   _$PolPlacePage _build() {
     _$PolPlacePage _$result;
     try {
-      _$result = _$v ??
-          _$PolPlacePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$PolPlacePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class PolPlacePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolPlacePage', _$failedField, e.toString());
+          r'PolPlacePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

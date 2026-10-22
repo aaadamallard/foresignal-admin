@@ -19,10 +19,9 @@ ChronicleLinkDisclosureEnum _$chronicleLinkDisclosureEnumValueOf(String name) {
 }
 
 final BuiltSet<ChronicleLinkDisclosureEnum>
-    _$chronicleLinkDisclosureEnumValues =
-    BuiltSet<ChronicleLinkDisclosureEnum>(const <ChronicleLinkDisclosureEnum>[
-  _$chronicleLinkDisclosureEnum_full,
-]);
+_$chronicleLinkDisclosureEnumValues = BuiltSet<ChronicleLinkDisclosureEnum>(
+  const <ChronicleLinkDisclosureEnum>[_$chronicleLinkDisclosureEnum_full],
+);
 
 const ChronicleLinkStrengthEnum _$chronicleLinkStrengthEnum_low =
     const ChronicleLinkStrengthEnum._('low');
@@ -46,10 +45,10 @@ ChronicleLinkStrengthEnum _$chronicleLinkStrengthEnumValueOf(String name) {
 
 final BuiltSet<ChronicleLinkStrengthEnum> _$chronicleLinkStrengthEnumValues =
     BuiltSet<ChronicleLinkStrengthEnum>(const <ChronicleLinkStrengthEnum>[
-  _$chronicleLinkStrengthEnum_low,
-  _$chronicleLinkStrengthEnum_medium,
-  _$chronicleLinkStrengthEnum_high,
-]);
+      _$chronicleLinkStrengthEnum_low,
+      _$chronicleLinkStrengthEnum_medium,
+      _$chronicleLinkStrengthEnum_high,
+    ]);
 
 const ChronicleLinkDimensionsEnum _$chronicleLinkDimensionsEnum_evidence =
     const ChronicleLinkDimensionsEnum._('evidence');
@@ -76,13 +75,13 @@ ChronicleLinkDimensionsEnum _$chronicleLinkDimensionsEnumValueOf(String name) {
 }
 
 final BuiltSet<ChronicleLinkDimensionsEnum>
-    _$chronicleLinkDimensionsEnumValues =
+_$chronicleLinkDimensionsEnumValues =
     BuiltSet<ChronicleLinkDimensionsEnum>(const <ChronicleLinkDimensionsEnum>[
-  _$chronicleLinkDimensionsEnum_evidence,
-  _$chronicleLinkDimensionsEnum_entities,
-  _$chronicleLinkDimensionsEnum_areaTime,
-  _$chronicleLinkDimensionsEnum_topics,
-]);
+      _$chronicleLinkDimensionsEnum_evidence,
+      _$chronicleLinkDimensionsEnum_entities,
+      _$chronicleLinkDimensionsEnum_areaTime,
+      _$chronicleLinkDimensionsEnum_topics,
+    ]);
 
 const ChronicleLinkTemporalEnum _$chronicleLinkTemporalEnum_aPrecedesB =
     const ChronicleLinkTemporalEnum._('aPrecedesB');
@@ -106,10 +105,10 @@ ChronicleLinkTemporalEnum _$chronicleLinkTemporalEnumValueOf(String name) {
 
 final BuiltSet<ChronicleLinkTemporalEnum> _$chronicleLinkTemporalEnumValues =
     BuiltSet<ChronicleLinkTemporalEnum>(const <ChronicleLinkTemporalEnum>[
-  _$chronicleLinkTemporalEnum_aPrecedesB,
-  _$chronicleLinkTemporalEnum_bPrecedesA,
-  _$chronicleLinkTemporalEnum_concurrent,
-]);
+      _$chronicleLinkTemporalEnum_aPrecedesB,
+      _$chronicleLinkTemporalEnum_bPrecedesA,
+      _$chronicleLinkTemporalEnum_concurrent,
+    ]);
 
 const ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnum_none =
     const ChronicleLinkTimeOverlapEnum._('none');
@@ -119,7 +118,8 @@ const ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnum_full =
     const ChronicleLinkTimeOverlapEnum._('full');
 
 ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'none':
       return _$chronicleLinkTimeOverlapEnum_none;
@@ -133,12 +133,12 @@ ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnumValueOf(
 }
 
 final BuiltSet<ChronicleLinkTimeOverlapEnum>
-    _$chronicleLinkTimeOverlapEnumValues =
+_$chronicleLinkTimeOverlapEnumValues =
     BuiltSet<ChronicleLinkTimeOverlapEnum>(const <ChronicleLinkTimeOverlapEnum>[
-  _$chronicleLinkTimeOverlapEnum_none,
-  _$chronicleLinkTimeOverlapEnum_partial,
-  _$chronicleLinkTimeOverlapEnum_full,
-]);
+      _$chronicleLinkTimeOverlapEnum_none,
+      _$chronicleLinkTimeOverlapEnum_partial,
+      _$chronicleLinkTimeOverlapEnum_full,
+    ]);
 
 const ChronicleLinkStatusEnum _$chronicleLinkStatusEnum_active =
     const ChronicleLinkStatusEnum._('active');
@@ -158,22 +158,22 @@ ChronicleLinkStatusEnum _$chronicleLinkStatusEnumValueOf(String name) {
 
 final BuiltSet<ChronicleLinkStatusEnum> _$chronicleLinkStatusEnumValues =
     BuiltSet<ChronicleLinkStatusEnum>(const <ChronicleLinkStatusEnum>[
-  _$chronicleLinkStatusEnum_active,
-  _$chronicleLinkStatusEnum_dismissed,
-]);
+      _$chronicleLinkStatusEnum_active,
+      _$chronicleLinkStatusEnum_dismissed,
+    ]);
 
 Serializer<ChronicleLinkDisclosureEnum>
-    _$chronicleLinkDisclosureEnumSerializer =
+_$chronicleLinkDisclosureEnumSerializer =
     _$ChronicleLinkDisclosureEnumSerializer();
 Serializer<ChronicleLinkStrengthEnum> _$chronicleLinkStrengthEnumSerializer =
     _$ChronicleLinkStrengthEnumSerializer();
 Serializer<ChronicleLinkDimensionsEnum>
-    _$chronicleLinkDimensionsEnumSerializer =
+_$chronicleLinkDimensionsEnumSerializer =
     _$ChronicleLinkDimensionsEnumSerializer();
 Serializer<ChronicleLinkTemporalEnum> _$chronicleLinkTemporalEnumSerializer =
     _$ChronicleLinkTemporalEnumSerializer();
 Serializer<ChronicleLinkTimeOverlapEnum>
-    _$chronicleLinkTimeOverlapEnumSerializer =
+_$chronicleLinkTimeOverlapEnumSerializer =
     _$ChronicleLinkTimeOverlapEnumSerializer();
 Serializer<ChronicleLinkStatusEnum> _$chronicleLinkStatusEnumSerializer =
     _$ChronicleLinkStatusEnumSerializer();
@@ -193,16 +193,20 @@ class _$ChronicleLinkDisclosureEnumSerializer
   final String wireName = 'ChronicleLinkDisclosureEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleLinkDisclosureEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleLinkDisclosureEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleLinkDisclosureEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleLinkDisclosureEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleLinkDisclosureEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleLinkStrengthEnumSerializer
@@ -224,16 +228,20 @@ class _$ChronicleLinkStrengthEnumSerializer
   final String wireName = 'ChronicleLinkStrengthEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleLinkStrengthEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleLinkStrengthEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleLinkStrengthEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleLinkStrengthEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleLinkStrengthEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleLinkDimensionsEnumSerializer
@@ -257,16 +265,20 @@ class _$ChronicleLinkDimensionsEnumSerializer
   final String wireName = 'ChronicleLinkDimensionsEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleLinkDimensionsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleLinkDimensionsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleLinkDimensionsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleLinkDimensionsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleLinkDimensionsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleLinkTemporalEnumSerializer
@@ -288,16 +300,20 @@ class _$ChronicleLinkTemporalEnumSerializer
   final String wireName = 'ChronicleLinkTemporalEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleLinkTemporalEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleLinkTemporalEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleLinkTemporalEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleLinkTemporalEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleLinkTemporalEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleLinkTimeOverlapEnumSerializer
@@ -319,16 +335,20 @@ class _$ChronicleLinkTimeOverlapEnumSerializer
   final String wireName = 'ChronicleLinkTimeOverlapEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleLinkTimeOverlapEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleLinkTimeOverlapEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleLinkTimeOverlapEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleLinkTimeOverlapEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleLinkTimeOverlapEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleLinkStatusEnumSerializer
@@ -348,16 +368,20 @@ class _$ChronicleLinkStatusEnumSerializer
   final String wireName = 'ChronicleLinkStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ChronicleLinkStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChronicleLinkStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChronicleLinkStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChronicleLinkStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChronicleLinkStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChronicleLink extends ChronicleLink {
@@ -399,25 +423,25 @@ class _$ChronicleLink extends ChronicleLink {
   factory _$ChronicleLink([void Function(ChronicleLinkBuilder)? updates]) =>
       (ChronicleLinkBuilder()..update(updates))._build();
 
-  _$ChronicleLink._(
-      {required this.linkId,
-      required this.disclosure,
-      required this.a,
-      required this.b,
-      this.other,
-      required this.strength,
-      required this.dimensions,
-      this.scores,
-      required this.temporal,
-      this.timeOverlap,
-      this.sharedSituations,
-      this.sharedCanonicalEvents,
-      this.sharedEntities,
-      this.sharedKeyCount,
-      required this.status,
-      required this.firstFound,
-      this.lastUpdated})
-      : super._();
+  _$ChronicleLink._({
+    required this.linkId,
+    required this.disclosure,
+    required this.a,
+    required this.b,
+    this.other,
+    required this.strength,
+    required this.dimensions,
+    this.scores,
+    required this.temporal,
+    this.timeOverlap,
+    this.sharedSituations,
+    this.sharedCanonicalEvents,
+    this.sharedEntities,
+    this.sharedKeyCount,
+    required this.status,
+    required this.firstFound,
+    this.lastUpdated,
+  }) : super._();
   @override
   ChronicleLink rebuild(void Function(ChronicleLinkBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -627,30 +651,49 @@ class ChronicleLinkBuilder
   _$ChronicleLink _build() {
     _$ChronicleLink _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleLink._(
             linkId: BuiltValueNullFieldError.checkNotNull(
-                linkId, r'ChronicleLink', 'linkId'),
+              linkId,
+              r'ChronicleLink',
+              'linkId',
+            ),
             disclosure: BuiltValueNullFieldError.checkNotNull(
-                disclosure, r'ChronicleLink', 'disclosure'),
+              disclosure,
+              r'ChronicleLink',
+              'disclosure',
+            ),
             a: BuiltValueNullFieldError.checkNotNull(a, r'ChronicleLink', 'a'),
             b: BuiltValueNullFieldError.checkNotNull(b, r'ChronicleLink', 'b'),
             other: _other?.build(),
             strength: BuiltValueNullFieldError.checkNotNull(
-                strength, r'ChronicleLink', 'strength'),
+              strength,
+              r'ChronicleLink',
+              'strength',
+            ),
             dimensions: dimensions.build(),
             scores: _scores?.build(),
             temporal: BuiltValueNullFieldError.checkNotNull(
-                temporal, r'ChronicleLink', 'temporal'),
+              temporal,
+              r'ChronicleLink',
+              'temporal',
+            ),
             timeOverlap: timeOverlap,
             sharedSituations: _sharedSituations?.build(),
             sharedCanonicalEvents: _sharedCanonicalEvents?.build(),
             sharedEntities: _sharedEntities?.build(),
             sharedKeyCount: sharedKeyCount,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ChronicleLink', 'status'),
+              status,
+              r'ChronicleLink',
+              'status',
+            ),
             firstFound: BuiltValueNullFieldError.checkNotNull(
-                firstFound, r'ChronicleLink', 'firstFound'),
+              firstFound,
+              r'ChronicleLink',
+              'firstFound',
+            ),
             lastUpdated: lastUpdated,
           );
     } catch (_) {
@@ -672,7 +715,10 @@ class ChronicleLinkBuilder
         _sharedEntities?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleLink', _$failedField, e.toString());
+          r'ChronicleLink',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

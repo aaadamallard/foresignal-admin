@@ -24,9 +24,9 @@ AnalogResultMethodEnum _$analogResultMethodEnumValueOf(String name) {
 
 final BuiltSet<AnalogResultMethodEnum> _$analogResultMethodEnumValues =
     BuiltSet<AnalogResultMethodEnum>(const <AnalogResultMethodEnum>[
-  _$analogResultMethodEnum_fused,
-  _$analogResultMethodEnum_featureOnly,
-]);
+      _$analogResultMethodEnum_fused,
+      _$analogResultMethodEnum_featureOnly,
+    ]);
 
 Serializer<AnalogResultMethodEnum> _$analogResultMethodEnumSerializer =
     _$AnalogResultMethodEnumSerializer();
@@ -48,15 +48,20 @@ class _$AnalogResultMethodEnumSerializer
   final String wireName = 'AnalogResultMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalogResultMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalogResultMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AnalogResultMethodEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalogResultMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AnalogResultMethodEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalogResultMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalogResult extends AnalogResult {
@@ -86,19 +91,19 @@ class _$AnalogResult extends AnalogResult {
   factory _$AnalogResult([void Function(AnalogResultBuilder)? updates]) =>
       (AnalogResultBuilder()..update(updates))._build();
 
-  _$AnalogResult._(
-      {required this.target,
-      required this.k,
-      required this.countFound,
-      required this.method,
-      this.methodNote,
-      this.signature,
-      required this.analogs,
-      this.outcomeDistribution,
-      required this.caveats,
-      required this.detector,
-      required this.manifestId})
-      : super._();
+  _$AnalogResult._({
+    required this.target,
+    required this.k,
+    required this.countFound,
+    required this.method,
+    this.methodNote,
+    this.signature,
+    required this.analogs,
+    this.outcomeDistribution,
+    required this.caveats,
+    required this.detector,
+    required this.manifestId,
+  }) : super._();
   @override
   AnalogResult rebuild(void Function(AnalogResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -198,8 +203,8 @@ class AnalogResultBuilder
   AnalogResultOutcomeDistributionBuilder get outcomeDistribution =>
       _$this._outcomeDistribution ??= AnalogResultOutcomeDistributionBuilder();
   set outcomeDistribution(
-          AnalogResultOutcomeDistributionBuilder? outcomeDistribution) =>
-      _$this._outcomeDistribution = outcomeDistribution;
+    AnalogResultOutcomeDistributionBuilder? outcomeDistribution,
+  ) => _$this._outcomeDistribution = outcomeDistribution;
 
   ListBuilder<Caveat>? _caveats;
   ListBuilder<Caveat> get caveats => _$this._caveats ??= ListBuilder<Caveat>();
@@ -252,14 +257,21 @@ class AnalogResultBuilder
   _$AnalogResult _build() {
     _$AnalogResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalogResult._(
             target: target.build(),
             k: BuiltValueNullFieldError.checkNotNull(k, r'AnalogResult', 'k'),
             countFound: BuiltValueNullFieldError.checkNotNull(
-                countFound, r'AnalogResult', 'countFound'),
+              countFound,
+              r'AnalogResult',
+              'countFound',
+            ),
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'AnalogResult', 'method'),
+              method,
+              r'AnalogResult',
+              'method',
+            ),
             methodNote: methodNote,
             signature: _signature?.build(),
             analogs: analogs.build(),
@@ -267,7 +279,10 @@ class AnalogResultBuilder
             caveats: caveats.build(),
             detector: detector.build(),
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'AnalogResult', 'manifestId'),
+              manifestId,
+              r'AnalogResult',
+              'manifestId',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -287,7 +302,10 @@ class AnalogResultBuilder
         detector.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalogResult', _$failedField, e.toString());
+          r'AnalogResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

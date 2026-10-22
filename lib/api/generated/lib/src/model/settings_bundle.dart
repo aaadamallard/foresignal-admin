@@ -162,8 +162,10 @@ class _$SettingsBundleSerializer
     yield r'sources';
     yield serializers.serialize(
       object.sources,
-      specifiedType: const FullType(
-          BuiltMap, [FullType(String), FullType(SourceSettingsUpdate)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(SourceSettingsUpdate),
+      ]),
     );
     if (object.retention != null) {
       yield r'retention';
@@ -204,8 +206,9 @@ class _$SettingsBundleSerializer
       yield r'channels';
       yield serializers.serialize(
         object.channels,
-        specifiedType:
-            const FullType(BuiltList, [FullType(SettingsBundleChannelsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SettingsBundleChannelsInner),
+        ]),
       );
     }
     if (object.briefings != null) {
@@ -275,8 +278,9 @@ class _$SettingsBundleSerializer
       yield r'watchlists';
       yield serializers.serialize(
         object.watchlists,
-        specifiedType: const FullType(
-            BuiltList, [FullType(SettingsBundleWatchlistsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SettingsBundleWatchlistsInner),
+        ]),
       );
     }
     if (object.warnings != null) {
@@ -294,9 +298,11 @@ class _$SettingsBundleSerializer
     SettingsBundle object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -312,172 +318,226 @@ class _$SettingsBundleSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'exportedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.exportedAt = valueDes;
           break;
         case r'foresignalVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.foresignalVersion = valueDes;
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType(SourceSettingsUpdate)]),
-          ) as BuiltMap<String, SourceSettingsUpdate>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(SourceSettingsUpdate),
+                    ]),
+                  )
+                  as BuiltMap<String, SourceSettingsUpdate>;
           result.sources.replace(valueDes);
           break;
         case r'retention':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(RetentionSettings),
-          ) as RetentionSettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(RetentionSettings),
+                  )
+                  as RetentionSettings?;
           if (valueDes == null) continue;
           result.retention.replace(valueDes);
           break;
         case r'cors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CorsSettings),
-          ) as CorsSettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(CorsSettings),
+                  )
+                  as CorsSettings?;
           if (valueDes == null) continue;
           result.cors.replace(valueDes);
           break;
         case r'security':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SecuritySettings),
-          ) as SecuritySettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SecuritySettings),
+                  )
+                  as SecuritySettings?;
           if (valueDes == null) continue;
           result.security.replace(valueDes);
           break;
         case r'server':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ServerSettings),
-          ) as ServerSettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ServerSettings),
+                  )
+                  as ServerSettings?;
           if (valueDes == null) continue;
           result.server.replace(valueDes);
           break;
         case r'triggers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(TriggerRule)]),
-          ) as BuiltList<TriggerRule>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(TriggerRule),
+                    ]),
+                  )
+                  as BuiltList<TriggerRule>?;
           if (valueDes == null) continue;
           result.triggers.replace(valueDes);
           break;
         case r'channels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SettingsBundleChannelsInner)]),
-          ) as BuiltList<SettingsBundleChannelsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SettingsBundleChannelsInner),
+                    ]),
+                  )
+                  as BuiltList<SettingsBundleChannelsInner>?;
           if (valueDes == null) continue;
           result.channels.replace(valueDes);
           break;
         case r'briefings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Briefing)]),
-          ) as BuiltList<Briefing>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Briefing),
+                    ]),
+                  )
+                  as BuiltList<Briefing>?;
           if (valueDes == null) continue;
           result.briefings.replace(valueDes);
           break;
         case r'customSources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(CustomSourceInput)]),
-          ) as BuiltList<CustomSourceInput>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(CustomSourceInput),
+                    ]),
+                  )
+                  as BuiltList<CustomSourceInput>?;
           if (valueDes == null) continue;
           result.customSources.replace(valueDes);
           break;
         case r'llmProviders':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(LlmProviderInput)]),
-          ) as BuiltList<LlmProviderInput>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(LlmProviderInput),
+                    ]),
+                  )
+                  as BuiltList<LlmProviderInput>?;
           if (valueDes == null) continue;
           result.llmProviders.replace(valueDes);
           break;
         case r'llmSettings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(LlmSettings),
-          ) as LlmSettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(LlmSettings),
+                  )
+                  as LlmSettings?;
           if (valueDes == null) continue;
           result.llmSettings.replace(valueDes);
           break;
         case r'notifications':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(NotificationSettings),
-          ) as NotificationSettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NotificationSettings,
+                    ),
+                  )
+                  as NotificationSettings?;
           if (valueDes == null) continue;
           result.notifications.replace(valueDes);
           break;
         case r'watchdog':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WatchdogSettings),
-          ) as WatchdogSettings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(WatchdogSettings),
+                  )
+                  as WatchdogSettings?;
           if (valueDes == null) continue;
           result.watchdog.replace(valueDes);
           break;
         case r'pushProviders':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(PushProvider)]),
-          ) as BuiltList<PushProvider>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(PushProvider),
+                    ]),
+                  )
+                  as BuiltList<PushProvider>?;
           if (valueDes == null) continue;
           result.pushProviders.replace(valueDes);
           break;
         case r'places':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Place)]),
-          ) as BuiltList<Place>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Place),
+                    ]),
+                  )
+                  as BuiltList<Place>?;
           if (valueDes == null) continue;
           result.places.replace(valueDes);
           break;
         case r'views':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(SavedView)]),
-          ) as BuiltList<SavedView>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SavedView),
+                    ]),
+                  )
+                  as BuiltList<SavedView>?;
           if (valueDes == null) continue;
           result.views.replace(valueDes);
           break;
         case r'watchlists':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SettingsBundleWatchlistsInner)]),
-          ) as BuiltList<SettingsBundleWatchlistsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SettingsBundleWatchlistsInner),
+                    ]),
+                  )
+                  as BuiltList<SettingsBundleWatchlistsInner>?;
           if (valueDes == null) continue;
           result.watchlists.replace(valueDes);
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;

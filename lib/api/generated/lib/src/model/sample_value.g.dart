@@ -24,9 +24,9 @@ SampleValueMethodEnum _$sampleValueMethodEnumValueOf(String name) {
 
 final BuiltSet<SampleValueMethodEnum> _$sampleValueMethodEnumValues =
     BuiltSet<SampleValueMethodEnum>(const <SampleValueMethodEnum>[
-  _$sampleValueMethodEnum_nearest,
-  _$sampleValueMethodEnum_bilinear,
-]);
+      _$sampleValueMethodEnum_nearest,
+      _$sampleValueMethodEnum_bilinear,
+    ]);
 
 const SampleValueCoverageEnum _$sampleValueCoverageEnum_CONUS =
     const SampleValueCoverageEnum._('CONUS');
@@ -54,11 +54,11 @@ SampleValueCoverageEnum _$sampleValueCoverageEnumValueOf(String name) {
 
 final BuiltSet<SampleValueCoverageEnum> _$sampleValueCoverageEnumValues =
     BuiltSet<SampleValueCoverageEnum>(const <SampleValueCoverageEnum>[
-  _$sampleValueCoverageEnum_CONUS,
-  _$sampleValueCoverageEnum_global,
-  _$sampleValueCoverageEnum_stationDisc,
-  _$sampleValueCoverageEnum_swath,
-]);
+      _$sampleValueCoverageEnum_CONUS,
+      _$sampleValueCoverageEnum_global,
+      _$sampleValueCoverageEnum_stationDisc,
+      _$sampleValueCoverageEnum_swath,
+    ]);
 
 Serializer<SampleValueMethodEnum> _$sampleValueMethodEnumSerializer =
     _$SampleValueMethodEnumSerializer();
@@ -82,15 +82,20 @@ class _$SampleValueMethodEnumSerializer
   final String wireName = 'SampleValueMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, SampleValueMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SampleValueMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SampleValueMethodEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SampleValueMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SampleValueMethodEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SampleValueMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SampleValueCoverageEnumSerializer
@@ -114,16 +119,20 @@ class _$SampleValueCoverageEnumSerializer
   final String wireName = 'SampleValueCoverageEnum';
 
   @override
-  Object serialize(Serializers serializers, SampleValueCoverageEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SampleValueCoverageEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SampleValueCoverageEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SampleValueCoverageEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SampleValueCoverageEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SampleValue extends SampleValue {
@@ -167,26 +176,26 @@ class _$SampleValue extends SampleValue {
   factory _$SampleValue([void Function(SampleValueBuilder)? updates]) =>
       (SampleValueBuilder()..update(updates))._build();
 
-  _$SampleValue._(
-      {required this.productId,
-      this.value,
-      this.u,
-      this.v,
-      this.derived,
-      this.units,
-      this.label,
-      this.frameKey,
-      this.validTime,
-      this.localTime,
-      this.ageMinutes,
-      this.run,
-      this.step,
-      this.method,
-      this.coverage,
-      required this.status,
-      this.statusText,
-      required this.attribution})
-      : super._();
+  _$SampleValue._({
+    required this.productId,
+    this.value,
+    this.u,
+    this.v,
+    this.derived,
+    this.units,
+    this.label,
+    this.frameKey,
+    this.validTime,
+    this.localTime,
+    this.ageMinutes,
+    this.run,
+    this.step,
+    this.method,
+    this.coverage,
+    required this.status,
+    this.statusText,
+    required this.attribution,
+  }) : super._();
   @override
   SampleValue rebuild(void Function(SampleValueBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -393,10 +402,14 @@ class SampleValueBuilder implements Builder<SampleValue, SampleValueBuilder> {
   _$SampleValue _build() {
     _$SampleValue _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SampleValue._(
             productId: BuiltValueNullFieldError.checkNotNull(
-                productId, r'SampleValue', 'productId'),
+              productId,
+              r'SampleValue',
+              'productId',
+            ),
             value: value,
             u: u,
             v: v,
@@ -412,7 +425,10 @@ class SampleValueBuilder implements Builder<SampleValue, SampleValueBuilder> {
             method: method,
             coverage: coverage,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SampleValue', 'status'),
+              status,
+              r'SampleValue',
+              'status',
+            ),
             statusText: statusText,
             attribution: attribution.build(),
           );
@@ -426,7 +442,10 @@ class SampleValueBuilder implements Builder<SampleValue, SampleValueBuilder> {
         attribution.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SampleValue', _$failedField, e.toString());
+          r'SampleValue',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

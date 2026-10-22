@@ -47,16 +47,10 @@ class AttentionApi {
     final _path = r'/v1/attention/topics';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -68,14 +62,13 @@ class AttentionApi {
 
     try {
       const _type = FullType(AttentionTopicInput);
-      _bodyData =
-          _serializers.serialize(attentionTopicInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        attentionTopicInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -98,9 +91,10 @@ class AttentionApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AttentionTopic),
-            ) as AttentionTopic;
+                  rawResponse,
+                  specifiedType: const FullType(AttentionTopic),
+                )
+                as AttentionTopic;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -147,21 +141,21 @@ class AttentionApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/attention/topics/{topicId}'.replaceAll(
-        '{' r'topicId' '}',
-        encodeQueryParameter(_serializers, topicId, const FullType(String))
-            .toString());
+      '{'
+      r'topicId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        topicId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -203,21 +197,21 @@ class AttentionApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/attention/topics/{topicId}'.replaceAll(
-        '{' r'topicId' '}',
-        encodeQueryParameter(_serializers, topicId, const FullType(String))
-            .toString());
+      '{'
+      r'topicId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        topicId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -239,9 +233,10 @@ class AttentionApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AttentionTopic),
-            ) as AttentionTopic;
+                  rawResponse,
+                  specifiedType: const FullType(AttentionTopic),
+                )
+                as AttentionTopic;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -294,16 +289,10 @@ class AttentionApi {
     final _path = r'/v1/attention/topics';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -312,14 +301,23 @@ class AttentionApi {
 
     final _queryParameters = <String, dynamic>{
       if (enabled != null)
-        r'enabled':
-            encodeQueryParameter(_serializers, enabled, const FullType(bool)),
+        r'enabled': encodeQueryParameter(
+          _serializers,
+          enabled,
+          const FullType(bool),
+        ),
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -338,9 +336,10 @@ class AttentionApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AttentionTopicPage),
-            ) as AttentionTopicPage;
+                  rawResponse,
+                  specifiedType: const FullType(AttentionTopicPage),
+                )
+                as AttentionTopicPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -389,21 +388,21 @@ class AttentionApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/attention/topics/{topicId}'.replaceAll(
-        '{' r'topicId' '}',
-        encodeQueryParameter(_serializers, topicId, const FullType(String))
-            .toString());
+      '{'
+      r'topicId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        topicId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -415,14 +414,13 @@ class AttentionApi {
 
     try {
       const _type = FullType(AttentionTopicInput);
-      _bodyData =
-          _serializers.serialize(attentionTopicInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        attentionTopicInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -445,9 +443,10 @@ class AttentionApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AttentionTopic),
-            ) as AttentionTopic;
+                  rawResponse,
+                  specifiedType: const FullType(AttentionTopic),
+                )
+                as AttentionTopic;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

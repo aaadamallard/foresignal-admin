@@ -25,15 +25,15 @@ class _$Dossier extends Dossier {
   factory _$Dossier([void Function(DossierBuilder)? updates]) =>
       (DossierBuilder()..update(updates))._build();
 
-  _$Dossier._(
-      {required this.ref,
-      required this.envelope,
-      this.asOf,
-      required this.generatedAt,
-      required this.sections,
-      this.truncated,
-      this.coverage})
-      : super._();
+  _$Dossier._({
+    required this.ref,
+    required this.envelope,
+    this.asOf,
+    required this.generatedAt,
+    required this.sections,
+    this.truncated,
+    this.coverage,
+  }) : super._();
   @override
   Dossier rebuild(void Function(DossierBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -151,13 +151,17 @@ class DossierBuilder implements Builder<Dossier, DossierBuilder> {
   _$Dossier _build() {
     _$Dossier _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Dossier._(
             ref: BuiltValueNullFieldError.checkNotNull(ref, r'Dossier', 'ref'),
             envelope: envelope.build(),
             asOf: asOf,
             generatedAt: BuiltValueNullFieldError.checkNotNull(
-                generatedAt, r'Dossier', 'generatedAt'),
+              generatedAt,
+              r'Dossier',
+              'generatedAt',
+            ),
             sections: sections.build(),
             truncated: truncated,
             coverage: _coverage?.build(),
@@ -175,7 +179,10 @@ class DossierBuilder implements Builder<Dossier, DossierBuilder> {
         _coverage?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Dossier', _$failedField, e.toString());
+          r'Dossier',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

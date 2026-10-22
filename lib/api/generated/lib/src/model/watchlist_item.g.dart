@@ -28,10 +28,10 @@ WatchlistItemOriginEnum _$watchlistItemOriginEnumValueOf(String name) {
 
 final BuiltSet<WatchlistItemOriginEnum> _$watchlistItemOriginEnumValues =
     BuiltSet<WatchlistItemOriginEnum>(const <WatchlistItemOriginEnum>[
-  _$watchlistItemOriginEnum_manual,
-  _$watchlistItemOriginEnum_csv,
-  _$watchlistItemOriginEnum_json,
-]);
+      _$watchlistItemOriginEnum_manual,
+      _$watchlistItemOriginEnum_csv,
+      _$watchlistItemOriginEnum_json,
+    ]);
 
 Serializer<WatchlistItemOriginEnum> _$watchlistItemOriginEnumSerializer =
     _$WatchlistItemOriginEnumSerializer();
@@ -55,16 +55,20 @@ class _$WatchlistItemOriginEnumSerializer
   final String wireName = 'WatchlistItemOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, WatchlistItemOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    WatchlistItemOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   WatchlistItemOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      WatchlistItemOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => WatchlistItemOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$WatchlistItem extends WatchlistItem {
@@ -84,14 +88,14 @@ class _$WatchlistItem extends WatchlistItem {
   factory _$WatchlistItem([void Function(WatchlistItemBuilder)? updates]) =>
       (WatchlistItemBuilder()..update(updates))._build();
 
-  _$WatchlistItem._(
-      {required this.value,
-      this.label,
-      this.notes,
-      this.tags,
-      required this.addedAt,
-      required this.origin})
-      : super._();
+  _$WatchlistItem._({
+    required this.value,
+    this.label,
+    this.notes,
+    this.tags,
+    required this.addedAt,
+    required this.origin,
+  }) : super._();
   @override
   WatchlistItem rebuild(void Function(WatchlistItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -199,17 +203,27 @@ class WatchlistItemBuilder
   _$WatchlistItem _build() {
     _$WatchlistItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$WatchlistItem._(
             value: BuiltValueNullFieldError.checkNotNull(
-                value, r'WatchlistItem', 'value'),
+              value,
+              r'WatchlistItem',
+              'value',
+            ),
             label: label,
             notes: notes,
             tags: _tags?.build(),
             addedAt: BuiltValueNullFieldError.checkNotNull(
-                addedAt, r'WatchlistItem', 'addedAt'),
+              addedAt,
+              r'WatchlistItem',
+              'addedAt',
+            ),
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'WatchlistItem', 'origin'),
+              origin,
+              r'WatchlistItem',
+              'origin',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -218,7 +232,10 @@ class WatchlistItemBuilder
         _tags?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'WatchlistItem', _$failedField, e.toString());
+          r'WatchlistItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

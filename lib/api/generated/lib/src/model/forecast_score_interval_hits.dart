@@ -25,9 +25,9 @@ abstract class ForecastScoreIntervalHits
 
   ForecastScoreIntervalHits._();
 
-  factory ForecastScoreIntervalHits(
-          [void updates(ForecastScoreIntervalHitsBuilder b)]) =
-      _$ForecastScoreIntervalHits;
+  factory ForecastScoreIntervalHits([
+    void updates(ForecastScoreIntervalHitsBuilder b),
+  ]) = _$ForecastScoreIntervalHits;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ForecastScoreIntervalHitsBuilder b) => b;
@@ -42,7 +42,7 @@ class _$ForecastScoreIntervalHitsSerializer
   @override
   final Iterable<Type> types = const [
     ForecastScoreIntervalHits,
-    _$ForecastScoreIntervalHits
+    _$ForecastScoreIntervalHits,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$ForecastScoreIntervalHitsSerializer
     ForecastScoreIntervalHits object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$ForecastScoreIntervalHitsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'p05p95':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.p05p95 = valueDes;
           break;
         case r'p25p75':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.p25p75 = valueDes;
           break;

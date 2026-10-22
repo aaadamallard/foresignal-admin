@@ -28,10 +28,10 @@ ResetEventReasonEnum _$resetEventReasonEnumValueOf(String name) {
 
 final BuiltSet<ResetEventReasonEnum> _$resetEventReasonEnumValues =
     BuiltSet<ResetEventReasonEnum>(const <ResetEventReasonEnum>[
-  _$resetEventReasonEnum_bufferOverflow,
-  _$resetEventReasonEnum_replayCap,
-  _$resetEventReasonEnum_resyncRequired,
-]);
+      _$resetEventReasonEnum_bufferOverflow,
+      _$resetEventReasonEnum_replayCap,
+      _$resetEventReasonEnum_resyncRequired,
+    ]);
 
 Serializer<ResetEventReasonEnum> _$resetEventReasonEnumSerializer =
     _$ResetEventReasonEnumSerializer();
@@ -55,15 +55,20 @@ class _$ResetEventReasonEnumSerializer
   final String wireName = 'ResetEventReasonEnum';
 
   @override
-  Object serialize(Serializers serializers, ResetEventReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ResetEventReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ResetEventReasonEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ResetEventReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ResetEventReasonEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ResetEventReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ResetEvent extends ResetEvent {
@@ -78,7 +83,7 @@ class _$ResetEvent extends ResetEvent {
       (ResetEventBuilder()..update(updates))._build();
 
   _$ResetEvent._({required this.reason, this.resumeAfter, this.watermarkSeq})
-      : super._();
+    : super._();
   @override
   ResetEvent rebuild(void Function(ResetEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -159,10 +164,14 @@ class ResetEventBuilder implements Builder<ResetEvent, ResetEventBuilder> {
   ResetEvent build() => _build();
 
   _$ResetEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ResetEvent._(
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ResetEvent', 'reason'),
+            reason,
+            r'ResetEvent',
+            'reason',
+          ),
           resumeAfter: resumeAfter,
           watermarkSeq: watermarkSeq,
         );

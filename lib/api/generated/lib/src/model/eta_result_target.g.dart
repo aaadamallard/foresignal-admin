@@ -91,11 +91,8 @@ class EtaResultTargetBuilder
   _$EtaResultTarget _build() {
     _$EtaResultTarget _$result;
     try {
-      _$result = _$v ??
-          _$EtaResultTarget._(
-            placeId: placeId,
-            point: point.build(),
-          );
+      _$result =
+          _$v ?? _$EtaResultTarget._(placeId: placeId, point: point.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -103,7 +100,10 @@ class EtaResultTargetBuilder
         point.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EtaResultTarget', _$failedField, e.toString());
+          r'EtaResultTarget',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

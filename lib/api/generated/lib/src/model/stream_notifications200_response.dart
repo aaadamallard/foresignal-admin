@@ -34,16 +34,18 @@ part 'stream_notifications200_response.g.dart';
 @BuiltValue()
 abstract class StreamNotifications200Response
     implements
-        Built<StreamNotifications200Response,
-            StreamNotifications200ResponseBuilder> {
+        Built<
+          StreamNotifications200Response,
+          StreamNotifications200ResponseBuilder
+        > {
   /// Any Of [JsonObject], [Notification], [NotificationBadge]
   AnyOf get anyOf;
 
   StreamNotifications200Response._();
 
-  factory StreamNotifications200Response(
-          [void updates(StreamNotifications200ResponseBuilder b)]) =
-      _$StreamNotifications200Response;
+  factory StreamNotifications200Response([
+    void updates(StreamNotifications200ResponseBuilder b),
+  ]) = _$StreamNotifications200Response;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StreamNotifications200ResponseBuilder b) => b;
@@ -58,7 +60,7 @@ class _$StreamNotifications200ResponseSerializer
   @override
   final Iterable<Type> types = const [
     StreamNotifications200Response,
-    _$StreamNotifications200Response
+    _$StreamNotifications200Response,
   ];
 
   @override
@@ -77,9 +79,13 @@ class _$StreamNotifications200ResponseSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+    return serializers.serialize(
+      anyOf,
+      specifiedType: FullType(
+        AnyOf,
+        anyOf.types.map((type) => FullType(type)).toList(),
+      ),
+    )!;
   }
 
   @override
@@ -96,8 +102,9 @@ class _$StreamNotifications200ResponseSerializer
       FullType(JsonObject),
     ]);
     anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    result.anyOf =
+        serializers.deserialize(anyOfDataSrc, specifiedType: targetType)
+            as AnyOf;
     return result.build();
   }
 }
@@ -136,7 +143,7 @@ class StreamNotifications200ResponseSeverityEnum extends EnumClass {
       _$streamNotifications200ResponseSeverityEnum_critical;
 
   static Serializer<StreamNotifications200ResponseSeverityEnum>
-      get serializer => _$streamNotifications200ResponseSeverityEnumSerializer;
+  get serializer => _$streamNotifications200ResponseSeverityEnumSerializer;
 
   const StreamNotifications200ResponseSeverityEnum._(String name) : super(name);
 
@@ -159,11 +166,10 @@ class StreamNotifications200ResponseAlertStateEnum extends EnumClass {
       _$streamNotifications200ResponseAlertStateEnum_resolved;
 
   static Serializer<StreamNotifications200ResponseAlertStateEnum>
-      get serializer =>
-          _$streamNotifications200ResponseAlertStateEnumSerializer;
+  get serializer => _$streamNotifications200ResponseAlertStateEnumSerializer;
 
   const StreamNotifications200ResponseAlertStateEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<StreamNotifications200ResponseAlertStateEnum> get values =>
       _$streamNotifications200ResponseAlertStateEnumValues;

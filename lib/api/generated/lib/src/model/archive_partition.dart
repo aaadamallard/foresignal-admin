@@ -94,8 +94,9 @@ class _$ArchivePartitionSerializer
     yield r'files';
     yield serializers.serialize(
       object.files,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ArchivePartitionFilesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ArchivePartitionFilesInner),
+      ]),
     );
     if (object.licence != null) {
       yield r'licence';
@@ -112,9 +113,11 @@ class _$ArchivePartitionSerializer
     ArchivePartition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -130,46 +133,61 @@ class _$ArchivePartitionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'tier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ArchivePartitionTierEnum),
-          ) as ArchivePartitionTierEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ArchivePartitionTierEnum),
+                  )
+                  as ArchivePartitionTierEnum;
           result.tier = valueDes;
           break;
         case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceId = valueDes;
           break;
         case r'date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Date),
-          ) as Date;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Date),
+                  )
+                  as Date;
           result.date = valueDes;
           break;
         case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.path = valueDes;
           break;
         case r'files':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ArchivePartitionFilesInner)]),
-          ) as BuiltList<ArchivePartitionFilesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ArchivePartitionFilesInner),
+                    ]),
+                  )
+                  as BuiltList<ArchivePartitionFilesInner>;
           result.files.replace(valueDes);
           break;
         case r'licence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ExportLicenceSummary),
-          ) as ExportLicenceSummary?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ExportLicenceSummary,
+                    ),
+                  )
+                  as ExportLicenceSummary?;
           if (valueDes == null) continue;
           result.licence.replace(valueDes);
           break;

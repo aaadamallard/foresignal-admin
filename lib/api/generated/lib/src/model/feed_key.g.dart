@@ -31,18 +31,18 @@ class _$FeedKey extends FeedKey {
   factory _$FeedKey([void Function(FeedKeyBuilder)? updates]) =>
       (FeedKeyBuilder()..update(updates))._build();
 
-  _$FeedKey._(
-      {required this.id,
-      required this.name,
-      required this.keyPrefix,
-      required this.prefixes,
-      required this.restrictions,
-      this.privateAccess,
-      required this.createdAt,
-      required this.expiresAt,
-      this.lastUsedAt,
-      this.revokedAt})
-      : super._();
+  _$FeedKey._({
+    required this.id,
+    required this.name,
+    required this.keyPrefix,
+    required this.prefixes,
+    required this.restrictions,
+    this.privateAccess,
+    required this.createdAt,
+    required this.expiresAt,
+    this.lastUsedAt,
+    this.revokedAt,
+  }) : super._();
   @override
   FeedKey rebuild(void Function(FeedKeyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -185,20 +185,33 @@ class FeedKeyBuilder implements Builder<FeedKey, FeedKeyBuilder> {
   _$FeedKey _build() {
     _$FeedKey _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FeedKey._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'FeedKey', 'id'),
-            name:
-                BuiltValueNullFieldError.checkNotNull(name, r'FeedKey', 'name'),
+            name: BuiltValueNullFieldError.checkNotNull(
+              name,
+              r'FeedKey',
+              'name',
+            ),
             keyPrefix: BuiltValueNullFieldError.checkNotNull(
-                keyPrefix, r'FeedKey', 'keyPrefix'),
+              keyPrefix,
+              r'FeedKey',
+              'keyPrefix',
+            ),
             prefixes: prefixes.build(),
             restrictions: restrictions.build(),
             privateAccess: privateAccess,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'FeedKey', 'createdAt'),
+              createdAt,
+              r'FeedKey',
+              'createdAt',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'FeedKey', 'expiresAt'),
+              expiresAt,
+              r'FeedKey',
+              'expiresAt',
+            ),
             lastUsedAt: lastUsedAt,
             revokedAt: revokedAt,
           );
@@ -211,7 +224,10 @@ class FeedKeyBuilder implements Builder<FeedKey, FeedKeyBuilder> {
         restrictions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FeedKey', _$failedField, e.toString());
+          r'FeedKey',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

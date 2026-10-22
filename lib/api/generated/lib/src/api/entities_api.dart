@@ -51,21 +51,21 @@ class EntitiesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/entities/{entityId}/keys'.replaceAll(
-        '{' r'entityId' '}',
-        encodeQueryParameter(_serializers, entityId, const FullType(String))
-            .toString());
+      '{'
+      r'entityId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        entityId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -80,10 +80,7 @@ class EntitiesApi {
       _bodyData = _serializers.serialize(entityKeyInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -106,9 +103,10 @@ class EntitiesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EntityKey),
-            ) as EntityKey;
+                  rawResponse,
+                  specifiedType: const FullType(EntityKey),
+                )
+                as EntityKey;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -155,21 +153,21 @@ class EntitiesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/entities/{entityId}'.replaceAll(
-        '{' r'entityId' '}',
-        encodeQueryParameter(_serializers, entityId, const FullType(String))
-            .toString());
+      '{'
+      r'entityId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        entityId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -191,9 +189,10 @@ class EntitiesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Entity),
-            ) as Entity;
+                  rawResponse,
+                  specifiedType: const FullType(Entity),
+                )
+                as Entity;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -252,16 +251,10 @@ class EntitiesApi {
     final _path = r'/v1/entities';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -272,18 +265,27 @@ class EntitiesApi {
       if (q != null)
         r'q': encodeQueryParameter(_serializers, q, const FullType(String)),
       if (type != null)
-        r'type':
-            encodeQueryParameter(_serializers, type, const FullType(String)),
+        r'type': encodeQueryParameter(
+          _serializers,
+          type,
+          const FullType(String),
+        ),
       if (key != null)
         r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
       if (at != null)
         r'at': encodeQueryParameter(_serializers, at, const FullType(DateTime)),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (after != null)
-        r'after':
-            encodeQueryParameter(_serializers, after, const FullType(String)),
+        r'after': encodeQueryParameter(
+          _serializers,
+          after,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -302,9 +304,10 @@ class EntitiesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EntityPage),
-            ) as EntityPage;
+                  rawResponse,
+                  specifiedType: const FullType(EntityPage),
+                )
+                as EntityPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -357,21 +360,21 @@ class EntitiesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/entities/{entityId}/records'.replaceAll(
-        '{' r'entityId' '}',
-        encodeQueryParameter(_serializers, entityId, const FullType(String))
-            .toString());
+      '{'
+      r'entityId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        entityId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -383,10 +386,16 @@ class EntitiesApi {
         r'at': encodeQueryParameter(_serializers, at, const FullType(DateTime)),
       if (includeClosed != null)
         r'includeClosed': encodeQueryParameter(
-            _serializers, includeClosed, const FullType(bool)),
+          _serializers,
+          includeClosed,
+          const FullType(bool),
+        ),
       if (format != null)
-        r'format':
-            encodeQueryParameter(_serializers, format, const FullType(String)),
+        r'format': encodeQueryParameter(
+          _serializers,
+          format,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -405,9 +414,10 @@ class EntitiesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EntityRecordList),
-            ) as EntityRecordList;
+                  rawResponse,
+                  specifiedType: const FullType(EntityRecordList),
+                )
+                as EntityRecordList;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -456,21 +466,21 @@ class EntitiesApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/entities/{entityId}/merge'.replaceAll(
-        '{' r'entityId' '}',
-        encodeQueryParameter(_serializers, entityId, const FullType(String))
-            .toString());
+      '{'
+      r'entityId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        entityId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -482,14 +492,13 @@ class EntitiesApi {
 
     try {
       const _type = FullType(EntityMergeInput);
-      _bodyData =
-          _serializers.serialize(entityMergeInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        entityMergeInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -512,9 +521,10 @@ class EntitiesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Entity),
-            ) as Entity;
+                  rawResponse,
+                  specifiedType: const FullType(Entity),
+                )
+                as Entity;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -565,16 +575,10 @@ class EntitiesApi {
     final _path = r'/v1/entities/resolve';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -603,9 +607,10 @@ class EntitiesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Entity),
-            ) as Entity;
+                  rawResponse,
+                  specifiedType: const FullType(Entity),
+                )
+                as Entity;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -655,25 +660,31 @@ class EntitiesApi {
   }) async {
     final _path = r'/v1/entities/{entityId}/keys/{keyId}'
         .replaceAll(
-            '{' r'entityId' '}',
-            encodeQueryParameter(_serializers, entityId, const FullType(String))
-                .toString())
+          '{'
+          r'entityId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            entityId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'keyId' '}',
-            encodeQueryParameter(_serializers, keyId, const FullType(int))
-                .toString());
+          '{'
+          r'keyId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            keyId,
+            const FullType(int),
+          ).toString(),
+        );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -695,9 +706,10 @@ class EntitiesApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EntityKey),
-            ) as EntityKey;
+                  rawResponse,
+                  specifiedType: const FullType(EntityKey),
+                )
+                as EntityKey;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

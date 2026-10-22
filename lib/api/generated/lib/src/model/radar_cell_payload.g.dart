@@ -22,19 +22,19 @@ class _$RadarCellPayload extends RadarCellPayload {
   @override
   final bool? notAWarning;
 
-  factory _$RadarCellPayload(
-          [void Function(RadarCellPayloadBuilder)? updates]) =>
-      (RadarCellPayloadBuilder()..update(updates))._build();
+  factory _$RadarCellPayload([
+    void Function(RadarCellPayloadBuilder)? updates,
+  ]) => (RadarCellPayloadBuilder()..update(updates))._build();
 
-  _$RadarCellPayload._(
-      {required this.maxDbz,
-      required this.areaKm2,
-      this.meshMax,
-      this.glmFlashes5m,
-      this.motion,
-      this.automated,
-      this.notAWarning})
-      : super._();
+  _$RadarCellPayload._({
+    required this.maxDbz,
+    required this.areaKm2,
+    this.meshMax,
+    this.glmFlashes5m,
+    this.motion,
+    this.automated,
+    this.notAWarning,
+  }) : super._();
   @override
   RadarCellPayload rebuild(void Function(RadarCellPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -152,12 +152,19 @@ class RadarCellPayloadBuilder
   _$RadarCellPayload _build() {
     _$RadarCellPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$RadarCellPayload._(
             maxDbz: BuiltValueNullFieldError.checkNotNull(
-                maxDbz, r'RadarCellPayload', 'maxDbz'),
+              maxDbz,
+              r'RadarCellPayload',
+              'maxDbz',
+            ),
             areaKm2: BuiltValueNullFieldError.checkNotNull(
-                areaKm2, r'RadarCellPayload', 'areaKm2'),
+              areaKm2,
+              r'RadarCellPayload',
+              'areaKm2',
+            ),
             meshMax: meshMax,
             glmFlashes5m: glmFlashes5m,
             motion: _motion?.build(),
@@ -171,7 +178,10 @@ class RadarCellPayloadBuilder
         _motion?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'RadarCellPayload', _$failedField, e.toString());
+          r'RadarCellPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

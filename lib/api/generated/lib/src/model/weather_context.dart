@@ -167,9 +167,11 @@ class _$WeatherContextSerializer
     WeatherContext object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -185,81 +187,107 @@ class _$WeatherContextSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WeatherContextStatusEnum),
-          ) as WeatherContextStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(WeatherContextStatusEnum),
+                  )
+                  as WeatherContextStatusEnum;
           result.status = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.at = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.computedAt = valueDes;
           break;
         case r'radar':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WeatherContextRadar),
-          ) as WeatherContextRadar?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(WeatherContextRadar),
+                  )
+                  as WeatherContextRadar?;
           if (valueDes == null) continue;
           result.radar.replace(valueDes);
           break;
         case r'lightning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WeatherContextLightning),
-          ) as WeatherContextLightning?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WeatherContextLightning,
+                    ),
+                  )
+                  as WeatherContextLightning?;
           if (valueDes == null) continue;
           result.lightning.replace(valueDes);
           break;
         case r'precip':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WeatherContextPrecip),
-          ) as WeatherContextPrecip?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WeatherContextPrecip,
+                    ),
+                  )
+                  as WeatherContextPrecip?;
           if (valueDes == null) continue;
           result.precip.replace(valueDes);
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WeatherContextWarnings),
-          ) as WeatherContextWarnings?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      WeatherContextWarnings,
+                    ),
+                  )
+                  as WeatherContextWarnings?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;
         case r'wind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WeatherContextWind),
-          ) as WeatherContextWind?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(WeatherContextWind),
+                  )
+                  as WeatherContextWind?;
           if (valueDes == null) continue;
           result.wind.replace(valueDes);
           break;
         case r'smoke':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(WeatherContextSmoke),
-          ) as WeatherContextSmoke?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(WeatherContextSmoke),
+                  )
+                  as WeatherContextSmoke?;
           if (valueDes == null) continue;
           result.smoke.replace(valueDes);
           break;
         case r'summary':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.summary = valueDes;
           break;

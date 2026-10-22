@@ -19,12 +19,12 @@ class _$SamplePosition extends SamplePosition {
   factory _$SamplePosition([void Function(SamplePositionBuilder)? updates]) =>
       (SamplePositionBuilder()..update(updates))._build();
 
-  _$SamplePosition._(
-      {required this.lon,
-      required this.lat,
-      required this.observedAt,
-      required this.ageSeconds})
-      : super._();
+  _$SamplePosition._({
+    required this.lon,
+    required this.lat,
+    required this.observedAt,
+    required this.ageSeconds,
+  }) : super._();
   @override
   SamplePosition rebuild(void Function(SamplePositionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,16 +114,29 @@ class SamplePositionBuilder
   SamplePosition build() => _build();
 
   _$SamplePosition _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SamplePosition._(
           lon: BuiltValueNullFieldError.checkNotNull(
-              lon, r'SamplePosition', 'lon'),
+            lon,
+            r'SamplePosition',
+            'lon',
+          ),
           lat: BuiltValueNullFieldError.checkNotNull(
-              lat, r'SamplePosition', 'lat'),
+            lat,
+            r'SamplePosition',
+            'lat',
+          ),
           observedAt: BuiltValueNullFieldError.checkNotNull(
-              observedAt, r'SamplePosition', 'observedAt'),
+            observedAt,
+            r'SamplePosition',
+            'observedAt',
+          ),
           ageSeconds: BuiltValueNullFieldError.checkNotNull(
-              ageSeconds, r'SamplePosition', 'ageSeconds'),
+            ageSeconds,
+            r'SamplePosition',
+            'ageSeconds',
+          ),
         );
     replace(_$result);
     return _$result;

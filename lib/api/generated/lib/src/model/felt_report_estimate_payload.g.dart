@@ -7,20 +7,20 @@ part of 'felt_report_estimate_payload.dart';
 // **************************************************************************
 
 const FeltReportEstimatePayloadStatusEnum
-    _$feltReportEstimatePayloadStatusEnum_ok =
+_$feltReportEstimatePayloadStatusEnum_ok =
     const FeltReportEstimatePayloadStatusEnum._('ok');
 const FeltReportEstimatePayloadStatusEnum
-    _$feltReportEstimatePayloadStatusEnum_insufficientData =
+_$feltReportEstimatePayloadStatusEnum_insufficientData =
     const FeltReportEstimatePayloadStatusEnum._('insufficientData');
 const FeltReportEstimatePayloadStatusEnum
-    _$feltReportEstimatePayloadStatusEnum_noCoverage =
+_$feltReportEstimatePayloadStatusEnum_noCoverage =
     const FeltReportEstimatePayloadStatusEnum._('noCoverage');
 const FeltReportEstimatePayloadStatusEnum
-    _$feltReportEstimatePayloadStatusEnum_degradedInput =
+_$feltReportEstimatePayloadStatusEnum_degradedInput =
     const FeltReportEstimatePayloadStatusEnum._('degradedInput');
 
 FeltReportEstimatePayloadStatusEnum
-    _$feltReportEstimatePayloadStatusEnumValueOf(String name) {
+_$feltReportEstimatePayloadStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$feltReportEstimatePayloadStatusEnum_ok;
@@ -36,23 +36,25 @@ FeltReportEstimatePayloadStatusEnum
 }
 
 final BuiltSet<FeltReportEstimatePayloadStatusEnum>
-    _$feltReportEstimatePayloadStatusEnumValues = BuiltSet<
-        FeltReportEstimatePayloadStatusEnum>(const <FeltReportEstimatePayloadStatusEnum>[
-  _$feltReportEstimatePayloadStatusEnum_ok,
-  _$feltReportEstimatePayloadStatusEnum_insufficientData,
-  _$feltReportEstimatePayloadStatusEnum_noCoverage,
-  _$feltReportEstimatePayloadStatusEnum_degradedInput,
-]);
+_$feltReportEstimatePayloadStatusEnumValues =
+    BuiltSet<FeltReportEstimatePayloadStatusEnum>(
+      const <FeltReportEstimatePayloadStatusEnum>[
+        _$feltReportEstimatePayloadStatusEnum_ok,
+        _$feltReportEstimatePayloadStatusEnum_insufficientData,
+        _$feltReportEstimatePayloadStatusEnum_noCoverage,
+        _$feltReportEstimatePayloadStatusEnum_degradedInput,
+      ],
+    );
 
 const FeltReportEstimatePayloadMethodEnum
-    _$feltReportEstimatePayloadMethodEnum_shakemap =
+_$feltReportEstimatePayloadMethodEnum_shakemap =
     const FeltReportEstimatePayloadMethodEnum._('shakemap');
 const FeltReportEstimatePayloadMethodEnum
-    _$feltReportEstimatePayloadMethodEnum_ipeAw2007 =
+_$feltReportEstimatePayloadMethodEnum_ipeAw2007 =
     const FeltReportEstimatePayloadMethodEnum._('ipeAw2007');
 
 FeltReportEstimatePayloadMethodEnum
-    _$feltReportEstimatePayloadMethodEnumValueOf(String name) {
+_$feltReportEstimatePayloadMethodEnumValueOf(String name) {
   switch (name) {
     case 'shakemap':
       return _$feltReportEstimatePayloadMethodEnum_shakemap;
@@ -64,21 +66,23 @@ FeltReportEstimatePayloadMethodEnum
 }
 
 final BuiltSet<FeltReportEstimatePayloadMethodEnum>
-    _$feltReportEstimatePayloadMethodEnumValues = BuiltSet<
-        FeltReportEstimatePayloadMethodEnum>(const <FeltReportEstimatePayloadMethodEnum>[
-  _$feltReportEstimatePayloadMethodEnum_shakemap,
-  _$feltReportEstimatePayloadMethodEnum_ipeAw2007,
-]);
+_$feltReportEstimatePayloadMethodEnumValues =
+    BuiltSet<FeltReportEstimatePayloadMethodEnum>(
+      const <FeltReportEstimatePayloadMethodEnum>[
+        _$feltReportEstimatePayloadMethodEnum_shakemap,
+        _$feltReportEstimatePayloadMethodEnum_ipeAw2007,
+      ],
+    );
 
 const FeltReportEstimatePayloadCoefficientSetEnum
-    _$feltReportEstimatePayloadCoefficientSetEnum_california =
+_$feltReportEstimatePayloadCoefficientSetEnum_california =
     const FeltReportEstimatePayloadCoefficientSetEnum._('california');
 const FeltReportEstimatePayloadCoefficientSetEnum
-    _$feltReportEstimatePayloadCoefficientSetEnum_ceus =
+_$feltReportEstimatePayloadCoefficientSetEnum_ceus =
     const FeltReportEstimatePayloadCoefficientSetEnum._('ceus');
 
 FeltReportEstimatePayloadCoefficientSetEnum
-    _$feltReportEstimatePayloadCoefficientSetEnumValueOf(String name) {
+_$feltReportEstimatePayloadCoefficientSetEnumValueOf(String name) {
   switch (name) {
     case 'california':
       return _$feltReportEstimatePayloadCoefficientSetEnum_california;
@@ -90,20 +94,22 @@ FeltReportEstimatePayloadCoefficientSetEnum
 }
 
 final BuiltSet<FeltReportEstimatePayloadCoefficientSetEnum>
-    _$feltReportEstimatePayloadCoefficientSetEnumValues = BuiltSet<
-        FeltReportEstimatePayloadCoefficientSetEnum>(const <FeltReportEstimatePayloadCoefficientSetEnum>[
-  _$feltReportEstimatePayloadCoefficientSetEnum_california,
-  _$feltReportEstimatePayloadCoefficientSetEnum_ceus,
-]);
+_$feltReportEstimatePayloadCoefficientSetEnumValues =
+    BuiltSet<FeltReportEstimatePayloadCoefficientSetEnum>(
+      const <FeltReportEstimatePayloadCoefficientSetEnum>[
+        _$feltReportEstimatePayloadCoefficientSetEnum_california,
+        _$feltReportEstimatePayloadCoefficientSetEnum_ceus,
+      ],
+    );
 
 Serializer<FeltReportEstimatePayloadStatusEnum>
-    _$feltReportEstimatePayloadStatusEnumSerializer =
+_$feltReportEstimatePayloadStatusEnumSerializer =
     _$FeltReportEstimatePayloadStatusEnumSerializer();
 Serializer<FeltReportEstimatePayloadMethodEnum>
-    _$feltReportEstimatePayloadMethodEnumSerializer =
+_$feltReportEstimatePayloadMethodEnumSerializer =
     _$FeltReportEstimatePayloadMethodEnumSerializer();
 Serializer<FeltReportEstimatePayloadCoefficientSetEnum>
-    _$feltReportEstimatePayloadCoefficientSetEnumSerializer =
+_$feltReportEstimatePayloadCoefficientSetEnumSerializer =
     _$FeltReportEstimatePayloadCoefficientSetEnumSerializer();
 
 class _$FeltReportEstimatePayloadStatusEnumSerializer
@@ -123,23 +129,26 @@ class _$FeltReportEstimatePayloadStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    FeltReportEstimatePayloadStatusEnum
+    FeltReportEstimatePayloadStatusEnum,
   ];
   @override
   final String wireName = 'FeltReportEstimatePayloadStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, FeltReportEstimatePayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FeltReportEstimatePayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FeltReportEstimatePayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FeltReportEstimatePayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FeltReportEstimatePayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FeltReportEstimatePayloadMethodEnumSerializer
@@ -155,23 +164,26 @@ class _$FeltReportEstimatePayloadMethodEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    FeltReportEstimatePayloadMethodEnum
+    FeltReportEstimatePayloadMethodEnum,
   ];
   @override
   final String wireName = 'FeltReportEstimatePayloadMethodEnum';
 
   @override
   Object serialize(
-          Serializers serializers, FeltReportEstimatePayloadMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FeltReportEstimatePayloadMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FeltReportEstimatePayloadMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FeltReportEstimatePayloadMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FeltReportEstimatePayloadMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FeltReportEstimatePayloadCoefficientSetEnumSerializer
@@ -188,23 +200,26 @@ class _$FeltReportEstimatePayloadCoefficientSetEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    FeltReportEstimatePayloadCoefficientSetEnum
+    FeltReportEstimatePayloadCoefficientSetEnum,
   ];
   @override
   final String wireName = 'FeltReportEstimatePayloadCoefficientSetEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          FeltReportEstimatePayloadCoefficientSetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FeltReportEstimatePayloadCoefficientSetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FeltReportEstimatePayloadCoefficientSetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FeltReportEstimatePayloadCoefficientSetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FeltReportEstimatePayloadCoefficientSetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FeltReportEstimatePayload extends FeltReportEstimatePayload {
@@ -235,29 +250,29 @@ class _$FeltReportEstimatePayload extends FeltReportEstimatePayload {
   @override
   final FeltReportEstimatePayloadCoefficientSetEnum? coefficientSet;
 
-  factory _$FeltReportEstimatePayload(
-          [void Function(FeltReportEstimatePayloadBuilder)? updates]) =>
-      (FeltReportEstimatePayloadBuilder()..update(updates))._build();
+  factory _$FeltReportEstimatePayload([
+    void Function(FeltReportEstimatePayloadBuilder)? updates,
+  ]) => (FeltReportEstimatePayloadBuilder()..update(updates))._build();
 
-  _$FeltReportEstimatePayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.eventId,
-      required this.placeId,
-      required this.mmi,
-      this.distanceKm,
-      this.feltLikely,
-      required this.method,
-      this.coefficientSet})
-      : super._();
+  _$FeltReportEstimatePayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.eventId,
+    required this.placeId,
+    required this.mmi,
+    this.distanceKm,
+    this.feltLikely,
+    required this.method,
+    this.coefficientSet,
+  }) : super._();
   @override
   FeltReportEstimatePayload rebuild(
-          void Function(FeltReportEstimatePayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(FeltReportEstimatePayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   FeltReportEstimatePayloadBuilder toBuilder() =>
@@ -385,8 +400,8 @@ class FeltReportEstimatePayloadBuilder
   FeltReportEstimatePayloadCoefficientSetEnum? get coefficientSet =>
       _$this._coefficientSet;
   set coefficientSet(
-          FeltReportEstimatePayloadCoefficientSetEnum? coefficientSet) =>
-      _$this._coefficientSet = coefficientSet;
+    FeltReportEstimatePayloadCoefficientSetEnum? coefficientSet,
+  ) => _$this._coefficientSet = coefficientSet;
 
   FeltReportEstimatePayloadBuilder() {
     FeltReportEstimatePayload._defaults(this);
@@ -429,27 +444,49 @@ class FeltReportEstimatePayloadBuilder
   _$FeltReportEstimatePayload _build() {
     _$FeltReportEstimatePayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FeltReportEstimatePayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'FeltReportEstimatePayload', 'automated'),
+              automated,
+              r'FeltReportEstimatePayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'FeltReportEstimatePayload', 'notAWarning'),
+              notAWarning,
+              r'FeltReportEstimatePayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'FeltReportEstimatePayload', 'status'),
+              status,
+              r'FeltReportEstimatePayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             eventId: BuiltValueNullFieldError.checkNotNull(
-                eventId, r'FeltReportEstimatePayload', 'eventId'),
+              eventId,
+              r'FeltReportEstimatePayload',
+              'eventId',
+            ),
             placeId: BuiltValueNullFieldError.checkNotNull(
-                placeId, r'FeltReportEstimatePayload', 'placeId'),
+              placeId,
+              r'FeltReportEstimatePayload',
+              'placeId',
+            ),
             mmi: BuiltValueNullFieldError.checkNotNull(
-                mmi, r'FeltReportEstimatePayload', 'mmi'),
+              mmi,
+              r'FeltReportEstimatePayload',
+              'mmi',
+            ),
             distanceKm: distanceKm,
             feltLikely: feltLikely,
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'FeltReportEstimatePayload', 'method'),
+              method,
+              r'FeltReportEstimatePayload',
+              'method',
+            ),
             coefficientSet: coefficientSet,
           );
     } catch (_) {
@@ -462,7 +499,10 @@ class FeltReportEstimatePayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FeltReportEstimatePayload', _$failedField, e.toString());
+          r'FeltReportEstimatePayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

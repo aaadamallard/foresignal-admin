@@ -12,16 +12,16 @@ class _$ChannelWarningsInner extends ChannelWarningsInner {
   @override
   final String message;
 
-  factory _$ChannelWarningsInner(
-          [void Function(ChannelWarningsInnerBuilder)? updates]) =>
-      (ChannelWarningsInnerBuilder()..update(updates))._build();
+  factory _$ChannelWarningsInner([
+    void Function(ChannelWarningsInnerBuilder)? updates,
+  ]) => (ChannelWarningsInnerBuilder()..update(updates))._build();
 
   _$ChannelWarningsInner._({required this.code, required this.message})
-      : super._();
+    : super._();
   @override
   ChannelWarningsInner rebuild(
-          void Function(ChannelWarningsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChannelWarningsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChannelWarningsInnerBuilder toBuilder() =>
@@ -93,12 +93,19 @@ class ChannelWarningsInnerBuilder
   ChannelWarningsInner build() => _build();
 
   _$ChannelWarningsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChannelWarningsInner._(
           code: BuiltValueNullFieldError.checkNotNull(
-              code, r'ChannelWarningsInner', 'code'),
+            code,
+            r'ChannelWarningsInner',
+            'code',
+          ),
           message: BuiltValueNullFieldError.checkNotNull(
-              message, r'ChannelWarningsInner', 'message'),
+            message,
+            r'ChannelWarningsInner',
+            'message',
+          ),
         );
     replace(_$result);
     return _$result;

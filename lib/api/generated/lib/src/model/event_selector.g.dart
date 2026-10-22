@@ -18,7 +18,8 @@ const EventSelectorMinSeverityEnum _$eventSelectorMinSeverityEnum_significant =
     const EventSelectorMinSeverityEnum._('significant');
 
 EventSelectorMinSeverityEnum _$eventSelectorMinSeverityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'info':
       return _$eventSelectorMinSeverityEnum_info;
@@ -36,17 +37,17 @@ EventSelectorMinSeverityEnum _$eventSelectorMinSeverityEnumValueOf(
 }
 
 final BuiltSet<EventSelectorMinSeverityEnum>
-    _$eventSelectorMinSeverityEnumValues =
+_$eventSelectorMinSeverityEnumValues =
     BuiltSet<EventSelectorMinSeverityEnum>(const <EventSelectorMinSeverityEnum>[
-  _$eventSelectorMinSeverityEnum_info,
-  _$eventSelectorMinSeverityEnum_warning,
-  _$eventSelectorMinSeverityEnum_critical,
-  _$eventSelectorMinSeverityEnum_notable,
-  _$eventSelectorMinSeverityEnum_significant,
-]);
+      _$eventSelectorMinSeverityEnum_info,
+      _$eventSelectorMinSeverityEnum_warning,
+      _$eventSelectorMinSeverityEnum_critical,
+      _$eventSelectorMinSeverityEnum_notable,
+      _$eventSelectorMinSeverityEnum_significant,
+    ]);
 
 Serializer<EventSelectorMinSeverityEnum>
-    _$eventSelectorMinSeverityEnumSerializer =
+_$eventSelectorMinSeverityEnumSerializer =
     _$EventSelectorMinSeverityEnumSerializer();
 
 class _$EventSelectorMinSeverityEnumSerializer
@@ -72,16 +73,20 @@ class _$EventSelectorMinSeverityEnumSerializer
   final String wireName = 'EventSelectorMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, EventSelectorMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EventSelectorMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EventSelectorMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EventSelectorMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EventSelectorMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EventSelector extends EventSelector {
@@ -117,22 +122,22 @@ class _$EventSelector extends EventSelector {
   factory _$EventSelector([void Function(EventSelectorBuilder)? updates]) =>
       (EventSelectorBuilder()..update(updates))._build();
 
-  _$EventSelector._(
-      {this.rule,
-      this.alertRuleId,
-      this.alertRuleTag,
-      this.intelEventType,
-      this.anomalyRuleId,
-      this.classification,
-      this.situationActivated,
-      this.changePoint,
-      this.unexplainedMove,
-      this.referenceFamily,
-      this.timestamps,
-      this.minSeverity,
-      this.regionCodes,
-      this.label})
-      : super._();
+  _$EventSelector._({
+    this.rule,
+    this.alertRuleId,
+    this.alertRuleTag,
+    this.intelEventType,
+    this.anomalyRuleId,
+    this.classification,
+    this.situationActivated,
+    this.changePoint,
+    this.unexplainedMove,
+    this.referenceFamily,
+    this.timestamps,
+    this.minSeverity,
+    this.regionCodes,
+    this.label,
+  }) : super._();
   @override
   EventSelector rebuild(void Function(EventSelectorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -238,8 +243,8 @@ class EventSelectorBuilder
   EventSelectorSituationActivatedBuilder get situationActivated =>
       _$this._situationActivated ??= EventSelectorSituationActivatedBuilder();
   set situationActivated(
-          EventSelectorSituationActivatedBuilder? situationActivated) =>
-      _$this._situationActivated = situationActivated;
+    EventSelectorSituationActivatedBuilder? situationActivated,
+  ) => _$this._situationActivated = situationActivated;
 
   EventSelectorChangePointBuilder? _changePoint;
   EventSelectorChangePointBuilder get changePoint =>
@@ -321,7 +326,8 @@ class EventSelectorBuilder
   _$EventSelector _build() {
     _$EventSelector _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EventSelector._(
             rule: _rule?.build(),
             alertRuleId: alertRuleId,
@@ -358,7 +364,10 @@ class EventSelectorBuilder
         _regionCodes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EventSelector', _$failedField, e.toString());
+          r'EventSelector',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

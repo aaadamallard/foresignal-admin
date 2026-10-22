@@ -67,9 +67,11 @@ class _$OsmAndLocationSerializer
     OsmAndLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -85,17 +87,21 @@ class _$OsmAndLocationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'device_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceId = valueDes;
           break;
         case r'location':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OsmAndLocationLocation),
-          ) as OsmAndLocationLocation;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OsmAndLocationLocation),
+                  )
+                  as OsmAndLocationLocation;
           result.location.replace(valueDes);
           break;
         default:

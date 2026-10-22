@@ -12,16 +12,16 @@ class _$ForecastEvaluationSkipped extends ForecastEvaluationSkipped {
   @override
   final int? other;
 
-  factory _$ForecastEvaluationSkipped(
-          [void Function(ForecastEvaluationSkippedBuilder)? updates]) =>
-      (ForecastEvaluationSkippedBuilder()..update(updates))._build();
+  factory _$ForecastEvaluationSkipped([
+    void Function(ForecastEvaluationSkippedBuilder)? updates,
+  ]) => (ForecastEvaluationSkippedBuilder()..update(updates))._build();
 
   _$ForecastEvaluationSkipped._({required this.leakageRisk, this.other})
-      : super._();
+    : super._();
   @override
   ForecastEvaluationSkipped rebuild(
-          void Function(ForecastEvaluationSkippedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastEvaluationSkippedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastEvaluationSkippedBuilder toBuilder() =>
@@ -94,10 +94,14 @@ class ForecastEvaluationSkippedBuilder
   ForecastEvaluationSkipped build() => _build();
 
   _$ForecastEvaluationSkipped _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastEvaluationSkipped._(
           leakageRisk: BuiltValueNullFieldError.checkNotNull(
-              leakageRisk, r'ForecastEvaluationSkipped', 'leakageRisk'),
+            leakageRisk,
+            r'ForecastEvaluationSkipped',
+            'leakageRisk',
+          ),
           other: other,
         );
     replace(_$result);

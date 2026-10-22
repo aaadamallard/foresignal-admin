@@ -50,9 +50,9 @@ abstract class EventStudyResultEventsInner
 
   EventStudyResultEventsInner._();
 
-  factory EventStudyResultEventsInner(
-          [void updates(EventStudyResultEventsInnerBuilder b)]) =
-      _$EventStudyResultEventsInner;
+  factory EventStudyResultEventsInner([
+    void updates(EventStudyResultEventsInnerBuilder b),
+  ]) = _$EventStudyResultEventsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(EventStudyResultEventsInnerBuilder b) => b;
@@ -67,7 +67,7 @@ class _$EventStudyResultEventsInnerSerializer
   @override
   final Iterable<Type> types = const [
     EventStudyResultEventsInner,
-    _$EventStudyResultEventsInner
+    _$EventStudyResultEventsInner,
   ];
 
   @override
@@ -113,8 +113,9 @@ class _$EventStudyResultEventsInnerSerializer
       yield r'abnormal';
       yield serializers.serialize(
         object.abnormal,
-        specifiedType: const FullType(
-            BuiltList, [FullType(EventStudyResultEventsInnerAbnormalInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(EventStudyResultEventsInnerAbnormalInner),
+        ]),
       );
     }
     if (object.car != null) {
@@ -132,9 +133,11 @@ class _$EventStudyResultEventsInnerSerializer
     EventStudyResultEventsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -150,58 +153,71 @@ class _$EventStudyResultEventsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'clusterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.clusterId = valueDes;
           break;
         case r'excluded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.excluded = valueDes;
           break;
         case r'estimationPoints':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.estimationPoints = valueDes;
           break;
         case r'abnormal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList,
-                [FullType(EventStudyResultEventsInnerAbnormalInner)]),
-          ) as BuiltList<EventStudyResultEventsInnerAbnormalInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EventStudyResultEventsInnerAbnormalInner),
+                    ]),
+                  )
+                  as BuiltList<EventStudyResultEventsInnerAbnormalInner>?;
           if (valueDes == null) continue;
           result.abnormal.replace(valueDes);
           break;
         case r'car':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(EventStudyResultEventsInnerCar),
-          ) as EventStudyResultEventsInnerCar?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      EventStudyResultEventsInnerCar,
+                    ),
+                  )
+                  as EventStudyResultEventsInnerCar?;
           if (valueDes == null) continue;
           result.car.replace(valueDes);
           break;

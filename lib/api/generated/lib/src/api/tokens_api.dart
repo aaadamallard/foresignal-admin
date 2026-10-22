@@ -62,13 +62,8 @@ class TokensApi {
     final _path = r'/v1/pairing/claim';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{'secure': <Map<String, String>>[], ...?extra},
       contentType: 'application/json',
       validateStatus: validateStatus,
     );
@@ -80,10 +75,7 @@ class TokensApi {
       _bodyData = _serializers.serialize(pairingClaim, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -106,9 +98,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiTokenCreated),
-            ) as ApiTokenCreated;
+                  rawResponse,
+                  specifiedType: const FullType(ApiTokenCreated),
+                )
+                as ApiTokenCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -157,16 +150,10 @@ class TokensApi {
     final _path = r'/v1/feed-keys';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -181,10 +168,7 @@ class TokensApi {
       _bodyData = _serializers.serialize(feedKeyInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -207,9 +191,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(FeedKeyCreated),
-            ) as FeedKeyCreated;
+                  rawResponse,
+                  specifiedType: const FullType(FeedKeyCreated),
+                )
+                as FeedKeyCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -258,16 +243,10 @@ class TokensApi {
     final _path = r'/v1/pairing-codes';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -279,14 +258,13 @@ class TokensApi {
 
     try {
       const _type = FullType(PairingCodeInput);
-      _bodyData =
-          _serializers.serialize(pairingCodeInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        pairingCodeInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -309,9 +287,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PairingCodeCreated),
-            ) as PairingCodeCreated;
+                  rawResponse,
+                  specifiedType: const FullType(PairingCodeCreated),
+                )
+                as PairingCodeCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -360,16 +339,10 @@ class TokensApi {
     final _path = r'/v1/stream-tickets';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -381,14 +354,13 @@ class TokensApi {
 
     try {
       const _type = FullType(StreamTicketRequest);
-      _bodyData =
-          _serializers.serialize(streamTicketRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        streamTicketRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -411,9 +383,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(StreamTicket),
-            ) as StreamTicket;
+                  rawResponse,
+                  specifiedType: const FullType(StreamTicket),
+                )
+                as StreamTicket;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -462,16 +435,10 @@ class TokensApi {
     final _path = r'/v1/tile-keys';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -486,10 +453,7 @@ class TokensApi {
       _bodyData = _serializers.serialize(tileKeyCreate, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -512,9 +476,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TileKeyCreated),
-            ) as TileKeyCreated;
+                  rawResponse,
+                  specifiedType: const FullType(TileKeyCreated),
+                )
+                as TileKeyCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -563,16 +528,10 @@ class TokensApi {
     final _path = r'/v1/tokens';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -587,10 +546,7 @@ class TokensApi {
       _bodyData = _serializers.serialize(apiTokenInput, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -613,9 +569,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiTokenCreated),
-            ) as ApiTokenCreated;
+                  rawResponse,
+                  specifiedType: const FullType(ApiTokenCreated),
+                )
+                as ApiTokenCreated;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -662,22 +619,21 @@ class TokensApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/pairing-codes/{pairingCodeId}'.replaceAll(
-        '{' r'pairingCodeId' '}',
-        encodeQueryParameter(
-                _serializers, pairingCodeId, const FullType(String))
-            .toString());
+      '{'
+      r'pairingCodeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        pairingCodeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -719,22 +675,21 @@ class TokensApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/pairing-codes/{pairingCodeId}/qr.svg'.replaceAll(
-        '{' r'pairingCodeId' '}',
-        encodeQueryParameter(
-                _serializers, pairingCodeId, const FullType(String))
-            .toString());
+      '{'
+      r'pairingCodeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        pairingCodeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -800,16 +755,10 @@ class TokensApi {
     final _path = r'/v1/feed-keys';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -831,9 +780,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(FeedKey)]),
-            ) as BuiltList<FeedKey>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [FullType(FeedKey)]),
+                )
+                as BuiltList<FeedKey>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -880,16 +830,10 @@ class TokensApi {
     final _path = r'/v1/pairing-codes';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -911,9 +855,12 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(PairingCode)]),
-            ) as BuiltList<PairingCode>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(PairingCode),
+                  ]),
+                )
+                as BuiltList<PairingCode>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -964,16 +911,10 @@ class TokensApi {
     final _path = r'/v1/tile-keys';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -982,11 +923,17 @@ class TokensApi {
 
     final _queryParameters = <String, dynamic>{
       if (cursor != null)
-        r'cursor':
-            encodeQueryParameter(_serializers, cursor, const FullType(String)),
+        r'cursor': encodeQueryParameter(
+          _serializers,
+          cursor,
+          const FullType(String),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1005,9 +952,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TileKeyPage),
-            ) as TileKeyPage;
+                  rawResponse,
+                  specifiedType: const FullType(TileKeyPage),
+                )
+                as TileKeyPage;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1054,16 +1002,10 @@ class TokensApi {
     final _path = r'/v1/tokens';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1085,9 +1027,12 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(ApiToken)]),
-            ) as BuiltList<ApiToken>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(ApiToken),
+                  ]),
+                )
+                as BuiltList<ApiToken>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1134,21 +1079,21 @@ class TokensApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/feed-keys/{feedKeyId}'.replaceAll(
-        '{' r'feedKeyId' '}',
-        encodeQueryParameter(_serializers, feedKeyId, const FullType(String))
-            .toString());
+      '{'
+      r'feedKeyId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        feedKeyId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1190,21 +1135,21 @@ class TokensApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tile-keys/{tileKeyId}'.replaceAll(
-        '{' r'tileKeyId' '}',
-        encodeQueryParameter(_serializers, tileKeyId, const FullType(String))
-            .toString());
+      '{'
+      r'tileKeyId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tileKeyId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1246,21 +1191,21 @@ class TokensApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tokens/{tokenId}'.replaceAll(
-        '{' r'tokenId' '}',
-        encodeQueryParameter(_serializers, tokenId, const FullType(String))
-            .toString());
+      '{'
+      r'tokenId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tokenId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1304,16 +1249,10 @@ class TokensApi {
     final _path = r'/v1/tokens/current/device';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1328,10 +1267,7 @@ class TokensApi {
       _bodyData = _serializers.serialize(deviceInfo, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1354,9 +1290,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiToken),
-            ) as ApiToken;
+                  rawResponse,
+                  specifiedType: const FullType(ApiToken),
+                )
+                as ApiToken;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1405,21 +1342,21 @@ class TokensApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/tokens/{tokenId}'.replaceAll(
-        '{' r'tokenId' '}',
-        encodeQueryParameter(_serializers, tokenId, const FullType(String))
-            .toString());
+      '{'
+      r'tokenId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        tokenId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PATCH',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -1431,14 +1368,13 @@ class TokensApi {
 
     try {
       const _type = FullType(UpdateTokenRequest);
-      _bodyData =
-          _serializers.serialize(updateTokenRequest, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        updateTokenRequest,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1461,9 +1397,10 @@ class TokensApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiToken),
-            ) as ApiToken;
+                  rawResponse,
+                  specifiedType: const FullType(ApiToken),
+                )
+                as ApiToken;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

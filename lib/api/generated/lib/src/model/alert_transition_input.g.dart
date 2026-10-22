@@ -7,20 +7,21 @@ part of 'alert_transition_input.dart';
 // **************************************************************************
 
 const AlertTransitionInputFeedbackEnum
-    _$alertTransitionInputFeedbackEnum_useful =
+_$alertTransitionInputFeedbackEnum_useful =
     const AlertTransitionInputFeedbackEnum._('useful');
 const AlertTransitionInputFeedbackEnum
-    _$alertTransitionInputFeedbackEnum_noise =
+_$alertTransitionInputFeedbackEnum_noise =
     const AlertTransitionInputFeedbackEnum._('noise');
 const AlertTransitionInputFeedbackEnum
-    _$alertTransitionInputFeedbackEnum_late_ =
+_$alertTransitionInputFeedbackEnum_late_ =
     const AlertTransitionInputFeedbackEnum._('late_');
 const AlertTransitionInputFeedbackEnum
-    _$alertTransitionInputFeedbackEnum_falsePositive =
+_$alertTransitionInputFeedbackEnum_falsePositive =
     const AlertTransitionInputFeedbackEnum._('falsePositive');
 
 AlertTransitionInputFeedbackEnum _$alertTransitionInputFeedbackEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'useful':
       return _$alertTransitionInputFeedbackEnum_useful;
@@ -36,16 +37,18 @@ AlertTransitionInputFeedbackEnum _$alertTransitionInputFeedbackEnumValueOf(
 }
 
 final BuiltSet<AlertTransitionInputFeedbackEnum>
-    _$alertTransitionInputFeedbackEnumValues = BuiltSet<
-        AlertTransitionInputFeedbackEnum>(const <AlertTransitionInputFeedbackEnum>[
-  _$alertTransitionInputFeedbackEnum_useful,
-  _$alertTransitionInputFeedbackEnum_noise,
-  _$alertTransitionInputFeedbackEnum_late_,
-  _$alertTransitionInputFeedbackEnum_falsePositive,
-]);
+_$alertTransitionInputFeedbackEnumValues =
+    BuiltSet<AlertTransitionInputFeedbackEnum>(
+      const <AlertTransitionInputFeedbackEnum>[
+        _$alertTransitionInputFeedbackEnum_useful,
+        _$alertTransitionInputFeedbackEnum_noise,
+        _$alertTransitionInputFeedbackEnum_late_,
+        _$alertTransitionInputFeedbackEnum_falsePositive,
+      ],
+    );
 
 Serializer<AlertTransitionInputFeedbackEnum>
-    _$alertTransitionInputFeedbackEnumSerializer =
+_$alertTransitionInputFeedbackEnumSerializer =
     _$AlertTransitionInputFeedbackEnumSerializer();
 
 class _$AlertTransitionInputFeedbackEnumSerializer
@@ -70,16 +73,19 @@ class _$AlertTransitionInputFeedbackEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AlertTransitionInputFeedbackEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AlertTransitionInputFeedbackEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AlertTransitionInputFeedbackEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AlertTransitionInputFeedbackEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AlertTransitionInputFeedbackEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AlertTransitionInput extends AlertTransitionInput {
@@ -88,15 +94,15 @@ class _$AlertTransitionInput extends AlertTransitionInput {
   @override
   final AlertTransitionInputFeedbackEnum? feedback;
 
-  factory _$AlertTransitionInput(
-          [void Function(AlertTransitionInputBuilder)? updates]) =>
-      (AlertTransitionInputBuilder()..update(updates))._build();
+  factory _$AlertTransitionInput([
+    void Function(AlertTransitionInputBuilder)? updates,
+  ]) => (AlertTransitionInputBuilder()..update(updates))._build();
 
   _$AlertTransitionInput._({this.note, this.feedback}) : super._();
   @override
   AlertTransitionInput rebuild(
-          void Function(AlertTransitionInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AlertTransitionInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AlertTransitionInputBuilder toBuilder() =>
@@ -169,11 +175,8 @@ class AlertTransitionInputBuilder
   AlertTransitionInput build() => _build();
 
   _$AlertTransitionInput _build() {
-    final _$result = _$v ??
-        _$AlertTransitionInput._(
-          note: note,
-          feedback: feedback,
-        );
+    final _$result =
+        _$v ?? _$AlertTransitionInput._(note: note, feedback: feedback);
     replace(_$result);
     return _$result;
   }

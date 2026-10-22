@@ -12,17 +12,18 @@ class _$ForecastCalibrationCurveInner extends ForecastCalibrationCurveInner {
   @override
   final num calibrated;
 
-  factory _$ForecastCalibrationCurveInner(
-          [void Function(ForecastCalibrationCurveInnerBuilder)? updates]) =>
-      (ForecastCalibrationCurveInnerBuilder()..update(updates))._build();
+  factory _$ForecastCalibrationCurveInner([
+    void Function(ForecastCalibrationCurveInnerBuilder)? updates,
+  ]) => (ForecastCalibrationCurveInnerBuilder()..update(updates))._build();
 
-  _$ForecastCalibrationCurveInner._(
-      {required this.forecast, required this.calibrated})
-      : super._();
+  _$ForecastCalibrationCurveInner._({
+    required this.forecast,
+    required this.calibrated,
+  }) : super._();
   @override
   ForecastCalibrationCurveInner rebuild(
-          void Function(ForecastCalibrationCurveInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastCalibrationCurveInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastCalibrationCurveInnerBuilder toBuilder() =>
@@ -56,8 +57,10 @@ class _$ForecastCalibrationCurveInner extends ForecastCalibrationCurveInner {
 
 class ForecastCalibrationCurveInnerBuilder
     implements
-        Builder<ForecastCalibrationCurveInner,
-            ForecastCalibrationCurveInnerBuilder> {
+        Builder<
+          ForecastCalibrationCurveInner,
+          ForecastCalibrationCurveInnerBuilder
+        > {
   _$ForecastCalibrationCurveInner? _$v;
 
   num? _forecast;
@@ -96,12 +99,19 @@ class ForecastCalibrationCurveInnerBuilder
   ForecastCalibrationCurveInner build() => _build();
 
   _$ForecastCalibrationCurveInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastCalibrationCurveInner._(
           forecast: BuiltValueNullFieldError.checkNotNull(
-              forecast, r'ForecastCalibrationCurveInner', 'forecast'),
+            forecast,
+            r'ForecastCalibrationCurveInner',
+            'forecast',
+          ),
           calibrated: BuiltValueNullFieldError.checkNotNull(
-              calibrated, r'ForecastCalibrationCurveInner', 'calibrated'),
+            calibrated,
+            r'ForecastCalibrationCurveInner',
+            'calibrated',
+          ),
         );
     replace(_$result);
     return _$result;

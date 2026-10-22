@@ -20,8 +20,10 @@ part 'projected_impact_dependency_paths_inner.g.dart';
 @BuiltValue()
 abstract class ProjectedImpactDependencyPathsInner
     implements
-        Built<ProjectedImpactDependencyPathsInner,
-            ProjectedImpactDependencyPathsInnerBuilder> {
+        Built<
+          ProjectedImpactDependencyPathsInner,
+          ProjectedImpactDependencyPathsInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'from')
   String get from;
@@ -44,9 +46,9 @@ abstract class ProjectedImpactDependencyPathsInner
 
   ProjectedImpactDependencyPathsInner._();
 
-  factory ProjectedImpactDependencyPathsInner(
-          [void updates(ProjectedImpactDependencyPathsInnerBuilder b)]) =
-      _$ProjectedImpactDependencyPathsInner;
+  factory ProjectedImpactDependencyPathsInner([
+    void updates(ProjectedImpactDependencyPathsInnerBuilder b),
+  ]) = _$ProjectedImpactDependencyPathsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProjectedImpactDependencyPathsInnerBuilder b) => b;
@@ -61,7 +63,7 @@ class _$ProjectedImpactDependencyPathsInnerSerializer
   @override
   final Iterable<Type> types = const [
     ProjectedImpactDependencyPathsInner,
-    _$ProjectedImpactDependencyPathsInner
+    _$ProjectedImpactDependencyPathsInner,
   ];
 
   @override
@@ -93,7 +95,8 @@ class _$ProjectedImpactDependencyPathsInnerSerializer
     yield serializers.serialize(
       object.weakestEdgeLabel,
       specifiedType: const FullType(
-          ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum),
+        ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum,
+      ),
     );
     if (object.depth != null) {
       yield r'depth';
@@ -110,9 +113,11 @@ class _$ProjectedImpactDependencyPathsInnerSerializer
     ProjectedImpactDependencyPathsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -128,41 +133,53 @@ class _$ProjectedImpactDependencyPathsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.from = valueDes;
           break;
         case r'to':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.to = valueDes;
           break;
         case r'hops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.hops.replace(valueDes);
           break;
         case r'weakestEdgeLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum),
-          ) as ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum,
+                    ),
+                  )
+                  as ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum;
           result.weakestEdgeLabel = valueDes;
           break;
         case r'depth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.depth = valueDes;
           break;
@@ -200,31 +217,29 @@ class ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
     extends EnumClass {
   @BuiltValueEnumConst(wireName: r'confirmed')
   static const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-      confirmed =
+  confirmed =
       _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_confirmed;
   @BuiltValueEnumConst(wireName: r'likely')
   static const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum likely =
       _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_likely;
   @BuiltValueEnumConst(wireName: r'possible')
   static const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-      possible =
-      _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_possible;
+  possible = _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_possible;
   @BuiltValueEnumConst(wireName: r'speculative')
   static const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
-      speculative =
+  speculative =
       _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_speculative;
 
   static Serializer<ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>
-      get serializer =>
-          _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumSerializer;
+  get serializer =>
+      _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumSerializer;
 
   const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>
-      get values =>
-          _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValues;
+  get values => _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValues;
   static ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum valueOf(
-          String name) =>
-      _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValueOf(name);
+    String name,
+  ) => _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnumValueOf(name);
 }

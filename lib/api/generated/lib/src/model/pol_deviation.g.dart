@@ -9,14 +9,15 @@ part of 'pol_deviation.dart';
 const PolDeviationDeviationTypeEnum _$polDeviationDeviationTypeEnum_NEW_PLACE =
     const PolDeviationDeviationTypeEnum._('NEW_PLACE');
 const PolDeviationDeviationTypeEnum
-    _$polDeviationDeviationTypeEnum_UNUSUAL_TIME =
+_$polDeviationDeviationTypeEnum_UNUSUAL_TIME =
     const PolDeviationDeviationTypeEnum._('UNUSUAL_TIME');
 const PolDeviationDeviationTypeEnum
-    _$polDeviationDeviationTypeEnum_EXPECTED_ABSENT =
+_$polDeviationDeviationTypeEnum_EXPECTED_ABSENT =
     const PolDeviationDeviationTypeEnum._('EXPECTED_ABSENT');
 
 PolDeviationDeviationTypeEnum _$polDeviationDeviationTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'NEW_PLACE':
       return _$polDeviationDeviationTypeEnum_NEW_PLACE;
@@ -30,15 +31,16 @@ PolDeviationDeviationTypeEnum _$polDeviationDeviationTypeEnumValueOf(
 }
 
 final BuiltSet<PolDeviationDeviationTypeEnum>
-    _$polDeviationDeviationTypeEnumValues = BuiltSet<
-        PolDeviationDeviationTypeEnum>(const <PolDeviationDeviationTypeEnum>[
-  _$polDeviationDeviationTypeEnum_NEW_PLACE,
-  _$polDeviationDeviationTypeEnum_UNUSUAL_TIME,
-  _$polDeviationDeviationTypeEnum_EXPECTED_ABSENT,
-]);
+_$polDeviationDeviationTypeEnumValues = BuiltSet<PolDeviationDeviationTypeEnum>(
+  const <PolDeviationDeviationTypeEnum>[
+    _$polDeviationDeviationTypeEnum_NEW_PLACE,
+    _$polDeviationDeviationTypeEnum_UNUSUAL_TIME,
+    _$polDeviationDeviationTypeEnum_EXPECTED_ABSENT,
+  ],
+);
 
 Serializer<PolDeviationDeviationTypeEnum>
-    _$polDeviationDeviationTypeEnumSerializer =
+_$polDeviationDeviationTypeEnumSerializer =
     _$PolDeviationDeviationTypeEnumSerializer();
 
 class _$PolDeviationDeviationTypeEnumSerializer
@@ -61,16 +63,19 @@ class _$PolDeviationDeviationTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, PolDeviationDeviationTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    PolDeviationDeviationTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PolDeviationDeviationTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PolDeviationDeviationTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PolDeviationDeviationTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PolDeviation extends PolDeviation {
@@ -98,18 +103,18 @@ class _$PolDeviation extends PolDeviation {
   factory _$PolDeviation([void Function(PolDeviationBuilder)? updates]) =>
       (PolDeviationBuilder()..update(updates))._build();
 
-  _$PolDeviation._(
-      {required this.subjectId,
-      this.subjectRef,
-      required this.deviationType,
-      required this.at,
-      this.placeId,
-      this.placeLabel,
-      this.stay,
-      this.hourOfWeek,
-      this.bucketShare,
-      this.lastSeenAt})
-      : super._();
+  _$PolDeviation._({
+    required this.subjectId,
+    this.subjectRef,
+    required this.deviationType,
+    required this.at,
+    this.placeId,
+    this.placeLabel,
+    this.stay,
+    this.hourOfWeek,
+    this.bucketShare,
+    this.lastSeenAt,
+  }) : super._();
   @override
   PolDeviation rebuild(void Function(PolDeviationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -251,15 +256,25 @@ class PolDeviationBuilder
   _$PolDeviation _build() {
     _$PolDeviation _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PolDeviation._(
             subjectId: BuiltValueNullFieldError.checkNotNull(
-                subjectId, r'PolDeviation', 'subjectId'),
+              subjectId,
+              r'PolDeviation',
+              'subjectId',
+            ),
             subjectRef: subjectRef,
             deviationType: BuiltValueNullFieldError.checkNotNull(
-                deviationType, r'PolDeviation', 'deviationType'),
+              deviationType,
+              r'PolDeviation',
+              'deviationType',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'PolDeviation', 'at'),
+              at,
+              r'PolDeviation',
+              'at',
+            ),
             placeId: placeId,
             placeLabel: placeLabel,
             stay: _stay?.build(),
@@ -274,7 +289,10 @@ class PolDeviationBuilder
         _stay?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolDeviation', _$failedField, e.toString());
+          r'PolDeviation',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

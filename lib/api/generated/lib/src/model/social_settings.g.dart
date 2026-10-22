@@ -31,18 +31,18 @@ class _$SocialSettings extends SocialSettings {
   factory _$SocialSettings([void Function(SocialSettingsBuilder)? updates]) =>
       (SocialSettingsBuilder()..update(updates))._build();
 
-  _$SocialSettings._(
-      {this.languages,
-      this.minRegionBaseline,
-      this.velocity,
-      this.llmClaimMinPosts,
-      this.llmClaimMinEvidenceGroups,
-      this.keepMedia,
-      this.trackRecord,
-      this.compare,
-      this.attentionGap,
-      this.cues})
-      : super._();
+  _$SocialSettings._({
+    this.languages,
+    this.minRegionBaseline,
+    this.velocity,
+    this.llmClaimMinPosts,
+    this.llmClaimMinEvidenceGroups,
+    this.keepMedia,
+    this.trackRecord,
+    this.compare,
+    this.attentionGap,
+    this.cues,
+  }) : super._();
   @override
   SocialSettings rebuild(void Function(SocialSettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -196,7 +196,8 @@ class SocialSettingsBuilder
   _$SocialSettings _build() {
     _$SocialSettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialSettings._(
             languages: _languages?.build(),
             minRegionBaseline: minRegionBaseline,
@@ -228,7 +229,10 @@ class SocialSettingsBuilder
         _cues?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialSettings', _$failedField, e.toString());
+          r'SocialSettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

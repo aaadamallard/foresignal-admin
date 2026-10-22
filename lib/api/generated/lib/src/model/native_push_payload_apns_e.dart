@@ -45,9 +45,9 @@ abstract class NativePushPayloadApnsE
 
   NativePushPayloadApnsE._();
 
-  factory NativePushPayloadApnsE(
-          [void updates(NativePushPayloadApnsEBuilder b)]) =
-      _$NativePushPayloadApnsE;
+  factory NativePushPayloadApnsE([
+    void updates(NativePushPayloadApnsEBuilder b),
+  ]) = _$NativePushPayloadApnsE;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NativePushPayloadApnsEBuilder b) => b;
@@ -62,7 +62,7 @@ class _$NativePushPayloadApnsESerializer
   @override
   final Iterable<Type> types = const [
     NativePushPayloadApnsE,
-    _$NativePushPayloadApnsE
+    _$NativePushPayloadApnsE,
   ];
 
   @override
@@ -79,10 +79,7 @@ class _$NativePushPayloadApnsESerializer
       specifiedType: const FullType(NativePushPayloadApnsEVEnum),
     );
     yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.id, specifiedType: const FullType(int));
     if (object.a != null) {
       yield r'a';
       yield serializers.serialize(
@@ -115,9 +112,11 @@ class _$NativePushPayloadApnsESerializer
     NativePushPayloadApnsE object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,46 +132,55 @@ class _$NativePushPayloadApnsESerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'v':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NativePushPayloadApnsEVEnum),
-          ) as NativePushPayloadApnsEVEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(NativePushPayloadApnsEVEnum),
+                  )
+                  as NativePushPayloadApnsEVEnum;
           result.v = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.id = valueDes;
           break;
         case r'a':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.a = valueDes;
           break;
         case r's':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NativePushPayloadApnsESEnum),
-          ) as NativePushPayloadApnsESEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(NativePushPayloadApnsESEnum),
+                  )
+                  as NativePushPayloadApnsESEnum;
           result.s = valueDes;
           break;
         case r'ev':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NativePushPayloadApnsEEvEnum),
-          ) as NativePushPayloadApnsEEvEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(NativePushPayloadApnsEEvEnum),
+                  )
+                  as NativePushPayloadApnsEEvEnum;
           result.ev = valueDes;
           break;
         case r'l':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.l = valueDes;
           break;

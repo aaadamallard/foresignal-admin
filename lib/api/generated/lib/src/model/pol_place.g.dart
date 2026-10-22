@@ -35,20 +35,20 @@ class _$PolPlace extends PolPlace {
   factory _$PolPlace([void Function(PolPlaceBuilder)? updates]) =>
       (PolPlaceBuilder()..update(updates))._build();
 
-  _$PolPlace._(
-      {required this.id,
-      required this.subjectId,
-      required this.clusterId,
-      required this.centroid,
-      required this.radiusM,
-      required this.visits,
-      required this.totalDwellMinutes,
-      required this.hourOfWeek,
-      required this.firstSeen,
-      required this.lastSeen,
-      this.label,
-      this.private})
-      : super._();
+  _$PolPlace._({
+    required this.id,
+    required this.subjectId,
+    required this.clusterId,
+    required this.centroid,
+    required this.radiusM,
+    required this.visits,
+    required this.totalDwellMinutes,
+    required this.hourOfWeek,
+    required this.firstSeen,
+    required this.lastSeen,
+    this.label,
+    this.private,
+  }) : super._();
   @override
   PolPlace rebuild(void Function(PolPlaceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -205,25 +205,47 @@ class PolPlaceBuilder implements Builder<PolPlace, PolPlaceBuilder> {
   _$PolPlace _build() {
     _$PolPlace _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PolPlace._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'PolPlace', 'id'),
             subjectId: BuiltValueNullFieldError.checkNotNull(
-                subjectId, r'PolPlace', 'subjectId'),
+              subjectId,
+              r'PolPlace',
+              'subjectId',
+            ),
             clusterId: BuiltValueNullFieldError.checkNotNull(
-                clusterId, r'PolPlace', 'clusterId'),
+              clusterId,
+              r'PolPlace',
+              'clusterId',
+            ),
             centroid: centroid.build(),
             radiusM: BuiltValueNullFieldError.checkNotNull(
-                radiusM, r'PolPlace', 'radiusM'),
+              radiusM,
+              r'PolPlace',
+              'radiusM',
+            ),
             visits: BuiltValueNullFieldError.checkNotNull(
-                visits, r'PolPlace', 'visits'),
+              visits,
+              r'PolPlace',
+              'visits',
+            ),
             totalDwellMinutes: BuiltValueNullFieldError.checkNotNull(
-                totalDwellMinutes, r'PolPlace', 'totalDwellMinutes'),
+              totalDwellMinutes,
+              r'PolPlace',
+              'totalDwellMinutes',
+            ),
             hourOfWeek: hourOfWeek.build(),
             firstSeen: BuiltValueNullFieldError.checkNotNull(
-                firstSeen, r'PolPlace', 'firstSeen'),
+              firstSeen,
+              r'PolPlace',
+              'firstSeen',
+            ),
             lastSeen: BuiltValueNullFieldError.checkNotNull(
-                lastSeen, r'PolPlace', 'lastSeen'),
+              lastSeen,
+              r'PolPlace',
+              'lastSeen',
+            ),
             label: label,
             private: private,
           );
@@ -237,7 +259,10 @@ class PolPlaceBuilder implements Builder<PolPlace, PolPlaceBuilder> {
         hourOfWeek.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PolPlace', _$failedField, e.toString());
+          r'PolPlace',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

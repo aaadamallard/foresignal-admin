@@ -83,7 +83,7 @@ class _$AttentionTopicSocialSerializer
   @override
   final Iterable<Type> types = const [
     AttentionTopicSocial,
-    _$AttentionTopicSocial
+    _$AttentionTopicSocial,
   ];
 
   @override
@@ -100,7 +100,7 @@ class _$AttentionTopicSocialSerializer
         object.terms,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(BuiltList, [FullType(String)])
+          FullType(BuiltList, [FullType(String)]),
         ]),
       );
     }
@@ -115,16 +115,18 @@ class _$AttentionTopicSocialSerializer
       yield r'accounts';
       yield serializers.serialize(
         object.accounts,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AttentionTopicSocialAccountsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AttentionTopicSocialAccountsInner),
+        ]),
       );
     }
     if (object.channels != null) {
       yield r'channels';
       yield serializers.serialize(
         object.channels,
-        specifiedType:
-            const FullType(BuiltList, [FullType(AttentionTopicSocialChannel)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AttentionTopicSocialChannel),
+        ]),
       );
     }
     if (object.exclude != null) {
@@ -177,9 +179,11 @@ class _$AttentionTopicSocialSerializer
     AttentionTopicSocial object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -195,94 +199,123 @@ class _$AttentionTopicSocialSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'terms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltMap, [
-              FullType(String),
-              FullType(BuiltList, [FullType(String)])
-            ]),
-          ) as BuiltMap<String, BuiltList<String>>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(BuiltList, [FullType(String)]),
+                    ]),
+                  )
+                  as BuiltMap<String, BuiltList<String>>?;
           if (valueDes == null) continue;
           result.terms.replace(valueDes);
           break;
         case r'hashtags':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.hashtags.replace(valueDes);
           break;
         case r'accounts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AttentionTopicSocialAccountsInner)]),
-          ) as BuiltList<AttentionTopicSocialAccountsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AttentionTopicSocialAccountsInner),
+                    ]),
+                  )
+                  as BuiltList<AttentionTopicSocialAccountsInner>?;
           if (valueDes == null) continue;
           result.accounts.replace(valueDes);
           break;
         case r'channels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AttentionTopicSocialChannel)]),
-          ) as BuiltList<AttentionTopicSocialChannel>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AttentionTopicSocialChannel),
+                    ]),
+                  )
+                  as BuiltList<AttentionTopicSocialChannel>?;
           if (valueDes == null) continue;
           result.channels.replace(valueDes);
           break;
         case r'exclude':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.exclude.replace(valueDes);
           break;
         case r'platforms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.platforms.replace(valueDes);
           break;
         case r'placeIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.placeIds.replace(valueDes);
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'entityRefs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.entityRefs.replace(valueDes);
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AttentionTopicSocialModeEnum),
-          ) as AttentionTopicSocialModeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AttentionTopicSocialModeEnum,
+                    ),
+                  )
+                  as AttentionTopicSocialModeEnum?;
           if (valueDes == null) continue;
           result.mode = valueDes;
           break;

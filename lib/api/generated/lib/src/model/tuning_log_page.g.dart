@@ -92,11 +92,9 @@ class TuningLogPageBuilder
   _$TuningLogPage _build() {
     _$TuningLogPage _$result;
     try {
-      _$result = _$v ??
-          _$TuningLogPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$TuningLogPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class TuningLogPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TuningLogPage', _$failedField, e.toString());
+          r'TuningLogPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

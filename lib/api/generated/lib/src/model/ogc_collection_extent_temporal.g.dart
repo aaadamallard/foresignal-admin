@@ -12,15 +12,15 @@ class _$OgcCollectionExtentTemporal extends OgcCollectionExtentTemporal {
   @override
   final String? trs;
 
-  factory _$OgcCollectionExtentTemporal(
-          [void Function(OgcCollectionExtentTemporalBuilder)? updates]) =>
-      (OgcCollectionExtentTemporalBuilder()..update(updates))._build();
+  factory _$OgcCollectionExtentTemporal([
+    void Function(OgcCollectionExtentTemporalBuilder)? updates,
+  ]) => (OgcCollectionExtentTemporalBuilder()..update(updates))._build();
 
   _$OgcCollectionExtentTemporal._({this.interval, this.trs}) : super._();
   @override
   OgcCollectionExtentTemporal rebuild(
-          void Function(OgcCollectionExtentTemporalBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCollectionExtentTemporalBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCollectionExtentTemporalBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$OgcCollectionExtentTemporal extends OgcCollectionExtentTemporal {
 
 class OgcCollectionExtentTemporalBuilder
     implements
-        Builder<OgcCollectionExtentTemporal,
-            OgcCollectionExtentTemporalBuilder> {
+        Builder<
+          OgcCollectionExtentTemporal,
+          OgcCollectionExtentTemporalBuilder
+        > {
   _$OgcCollectionExtentTemporal? _$v;
 
   ListBuilder<BuiltList<DateTime?>>? _interval;
@@ -98,7 +100,8 @@ class OgcCollectionExtentTemporalBuilder
   _$OgcCollectionExtentTemporal _build() {
     _$OgcCollectionExtentTemporal _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcCollectionExtentTemporal._(
             interval: _interval?.build(),
             trs: trs,
@@ -110,7 +113,10 @@ class OgcCollectionExtentTemporalBuilder
         _interval?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcCollectionExtentTemporal', _$failedField, e.toString());
+          r'OgcCollectionExtentTemporal',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

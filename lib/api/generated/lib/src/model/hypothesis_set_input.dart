@@ -193,16 +193,18 @@ class _$HypothesisSetInputSerializer
       yield r'assumptions';
       yield serializers.serialize(
         object.assumptions,
-        specifiedType:
-            const FullType(BuiltList, [FullType(KeyAssumptionInput)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(KeyAssumptionInput),
+        ]),
       );
     }
     if (object.ledgerQuestion != null) {
       yield r'ledgerQuestion';
       yield serializers.serialize(
         object.ledgerQuestion,
-        specifiedType:
-            const FullType.nullable(HypothesisSetInputLedgerQuestion),
+        specifiedType: const FullType.nullable(
+          HypothesisSetInputLedgerQuestion,
+        ),
       );
     }
     if (object.proposalId != null) {
@@ -220,9 +222,11 @@ class _$HypothesisSetInputSerializer
     HypothesisSetInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -238,124 +242,162 @@ class _$HypothesisSetInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'question':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.question = valueDes;
           break;
         case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.description = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HypothesisSetInputKindEnum),
-          ) as HypothesisSetInputKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(HypothesisSetInputKindEnum),
+                  )
+                  as HypothesisSetInputKindEnum;
           result.kind = valueDes;
           break;
         case r'cadence':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HypothesisSetInputCadenceEnum),
-          ) as HypothesisSetInputCadenceEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      HypothesisSetInputCadenceEnum,
+                    ),
+                  )
+                  as HypothesisSetInputCadenceEnum;
           result.cadence = valueDes;
           break;
         case r'horizon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Date),
-          ) as Date?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Date),
+                  )
+                  as Date?;
           if (valueDes == null) continue;
           result.horizon = valueDes;
           break;
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.situationId = valueDes;
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.questionId = valueDes;
           break;
         case r'regionCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.regionCodes.replace(valueDes);
           break;
         case r'themes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.themes.replace(valueDes);
           break;
         case r'private':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.private = valueDes;
           break;
         case r'hypotheses':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(HypothesisInput)]),
-          ) as BuiltList<HypothesisInput>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(HypothesisInput),
+                    ]),
+                  )
+                  as BuiltList<HypothesisInput>;
           result.hypotheses.replace(valueDes);
           break;
         case r'indicators':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(IndicatorInput)]),
-          ) as BuiltList<IndicatorInput>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(IndicatorInput),
+                    ]),
+                  )
+                  as BuiltList<IndicatorInput>?;
           if (valueDes == null) continue;
           result.indicators.replace(valueDes);
           break;
         case r'assumptions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(KeyAssumptionInput)]),
-          ) as BuiltList<KeyAssumptionInput>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(KeyAssumptionInput),
+                    ]),
+                  )
+                  as BuiltList<KeyAssumptionInput>?;
           if (valueDes == null) continue;
           result.assumptions.replace(valueDes);
           break;
         case r'ledgerQuestion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HypothesisSetInputLedgerQuestion),
-          ) as HypothesisSetInputLedgerQuestion?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisSetInputLedgerQuestion,
+                    ),
+                  )
+                  as HypothesisSetInputLedgerQuestion?;
           if (valueDes == null) continue;
           result.ledgerQuestion.replace(valueDes);
           break;
         case r'proposalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.proposalId = valueDes;
           break;

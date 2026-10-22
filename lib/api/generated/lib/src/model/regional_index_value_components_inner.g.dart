@@ -21,22 +21,22 @@ class _$RegionalIndexValueComponentsInner
   @override
   final bool? missing;
 
-  factory _$RegionalIndexValueComponentsInner(
-          [void Function(RegionalIndexValueComponentsInnerBuilder)? updates]) =>
-      (RegionalIndexValueComponentsInnerBuilder()..update(updates))._build();
+  factory _$RegionalIndexValueComponentsInner([
+    void Function(RegionalIndexValueComponentsInnerBuilder)? updates,
+  ]) => (RegionalIndexValueComponentsInnerBuilder()..update(updates))._build();
 
-  _$RegionalIndexValueComponentsInner._(
-      {required this.key,
-      this.raw,
-      required this.normalised,
-      required this.weight,
-      required this.contribution,
-      this.missing})
-      : super._();
+  _$RegionalIndexValueComponentsInner._({
+    required this.key,
+    this.raw,
+    required this.normalised,
+    required this.weight,
+    required this.contribution,
+    this.missing,
+  }) : super._();
   @override
   RegionalIndexValueComponentsInner rebuild(
-          void Function(RegionalIndexValueComponentsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(RegionalIndexValueComponentsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   RegionalIndexValueComponentsInnerBuilder toBuilder() =>
@@ -82,8 +82,10 @@ class _$RegionalIndexValueComponentsInner
 
 class RegionalIndexValueComponentsInnerBuilder
     implements
-        Builder<RegionalIndexValueComponentsInner,
-            RegionalIndexValueComponentsInnerBuilder> {
+        Builder<
+          RegionalIndexValueComponentsInner,
+          RegionalIndexValueComponentsInnerBuilder
+        > {
   _$RegionalIndexValueComponentsInner? _$v;
 
   String? _key;
@@ -135,7 +137,8 @@ class RegionalIndexValueComponentsInnerBuilder
 
   @override
   void update(
-      void Function(RegionalIndexValueComponentsInnerBuilder)? updates) {
+    void Function(RegionalIndexValueComponentsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -143,17 +146,30 @@ class RegionalIndexValueComponentsInnerBuilder
   RegionalIndexValueComponentsInner build() => _build();
 
   _$RegionalIndexValueComponentsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RegionalIndexValueComponentsInner._(
           key: BuiltValueNullFieldError.checkNotNull(
-              key, r'RegionalIndexValueComponentsInner', 'key'),
+            key,
+            r'RegionalIndexValueComponentsInner',
+            'key',
+          ),
           raw: raw,
           normalised: BuiltValueNullFieldError.checkNotNull(
-              normalised, r'RegionalIndexValueComponentsInner', 'normalised'),
+            normalised,
+            r'RegionalIndexValueComponentsInner',
+            'normalised',
+          ),
           weight: BuiltValueNullFieldError.checkNotNull(
-              weight, r'RegionalIndexValueComponentsInner', 'weight'),
-          contribution: BuiltValueNullFieldError.checkNotNull(contribution,
-              r'RegionalIndexValueComponentsInner', 'contribution'),
+            weight,
+            r'RegionalIndexValueComponentsInner',
+            'weight',
+          ),
+          contribution: BuiltValueNullFieldError.checkNotNull(
+            contribution,
+            r'RegionalIndexValueComponentsInner',
+            'contribution',
+          ),
           missing: missing,
         );
     replace(_$result);

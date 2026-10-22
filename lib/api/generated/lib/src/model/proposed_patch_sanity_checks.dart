@@ -25,9 +25,9 @@ abstract class ProposedPatchSanityChecks
 
   ProposedPatchSanityChecks._();
 
-  factory ProposedPatchSanityChecks(
-          [void updates(ProposedPatchSanityChecksBuilder b)]) =
-      _$ProposedPatchSanityChecks;
+  factory ProposedPatchSanityChecks([
+    void updates(ProposedPatchSanityChecksBuilder b),
+  ]) = _$ProposedPatchSanityChecks;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ProposedPatchSanityChecksBuilder b) => b;
@@ -42,7 +42,7 @@ class _$ProposedPatchSanityChecksSerializer
   @override
   final Iterable<Type> types = const [
     ProposedPatchSanityChecks,
-    _$ProposedPatchSanityChecks
+    _$ProposedPatchSanityChecks,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$ProposedPatchSanityChecksSerializer
     ProposedPatchSanityChecks object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$ProposedPatchSanityChecksSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'bracesBalanced':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.bracesBalanced = valueDes;
           break;
         case r'classNameUnchanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.classNameUnchanged = valueDes;
           break;

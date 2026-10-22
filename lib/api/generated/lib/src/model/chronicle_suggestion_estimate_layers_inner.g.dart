@@ -15,20 +15,20 @@ class _$ChronicleSuggestionEstimateLayersInner
   @override
   final num? bytesPerDay;
 
-  factory _$ChronicleSuggestionEstimateLayersInner(
-          [void Function(ChronicleSuggestionEstimateLayersInnerBuilder)?
-              updates]) =>
-      (ChronicleSuggestionEstimateLayersInnerBuilder()..update(updates))
-          ._build();
+  factory _$ChronicleSuggestionEstimateLayersInner([
+    void Function(ChronicleSuggestionEstimateLayersInnerBuilder)? updates,
+  ]) => (ChronicleSuggestionEstimateLayersInnerBuilder()..update(updates))
+      ._build();
 
-  _$ChronicleSuggestionEstimateLayersInner._(
-      {required this.name, this.rowsPerDay, this.bytesPerDay})
-      : super._();
+  _$ChronicleSuggestionEstimateLayersInner._({
+    required this.name,
+    this.rowsPerDay,
+    this.bytesPerDay,
+  }) : super._();
   @override
   ChronicleSuggestionEstimateLayersInner rebuild(
-          void Function(ChronicleSuggestionEstimateLayersInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSuggestionEstimateLayersInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSuggestionEstimateLayersInnerBuilder toBuilder() =>
@@ -56,7 +56,8 @@ class _$ChronicleSuggestionEstimateLayersInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ChronicleSuggestionEstimateLayersInner')
+            r'ChronicleSuggestionEstimateLayersInner',
+          )
           ..add('name', name)
           ..add('rowsPerDay', rowsPerDay)
           ..add('bytesPerDay', bytesPerDay))
@@ -66,8 +67,10 @@ class _$ChronicleSuggestionEstimateLayersInner
 
 class ChronicleSuggestionEstimateLayersInnerBuilder
     implements
-        Builder<ChronicleSuggestionEstimateLayersInner,
-            ChronicleSuggestionEstimateLayersInnerBuilder> {
+        Builder<
+          ChronicleSuggestionEstimateLayersInner,
+          ChronicleSuggestionEstimateLayersInnerBuilder
+        > {
   _$ChronicleSuggestionEstimateLayersInner? _$v;
 
   String? _name;
@@ -104,7 +107,8 @@ class ChronicleSuggestionEstimateLayersInnerBuilder
 
   @override
   void update(
-      void Function(ChronicleSuggestionEstimateLayersInnerBuilder)? updates) {
+    void Function(ChronicleSuggestionEstimateLayersInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -112,10 +116,14 @@ class ChronicleSuggestionEstimateLayersInnerBuilder
   ChronicleSuggestionEstimateLayersInner build() => _build();
 
   _$ChronicleSuggestionEstimateLayersInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSuggestionEstimateLayersInner._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'ChronicleSuggestionEstimateLayersInner', 'name'),
+            name,
+            r'ChronicleSuggestionEstimateLayersInner',
+            'name',
+          ),
           rowsPerDay: rowsPerDay,
           bytesPerDay: bytesPerDay,
         );

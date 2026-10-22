@@ -113,10 +113,7 @@ class _$CompactMessageSerializer
       specifiedType: const FullType(CompactMessageN0Enum),
     );
     yield r'1';
-    yield serializers.serialize(
-      object.n1,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n1, specifiedType: const FullType(int));
     if (object.n2 != null) {
       yield r'2';
       yield serializers.serialize(
@@ -125,10 +122,7 @@ class _$CompactMessageSerializer
       );
     }
     yield r'3';
-    yield serializers.serialize(
-      object.n3,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n3, specifiedType: const FullType(int));
     if (object.n4 != null) {
       yield r'4';
       yield serializers.serialize(
@@ -151,10 +145,7 @@ class _$CompactMessageSerializer
       );
     }
     yield r'7';
-    yield serializers.serialize(
-      object.n7,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n7, specifiedType: const FullType(int));
     if (object.n8 != null) {
       yield r'8';
       yield serializers.serialize(
@@ -198,9 +189,11 @@ class _$CompactMessageSerializer
     CompactMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -216,102 +209,119 @@ class _$CompactMessageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'0':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CompactMessageN0Enum),
-          ) as CompactMessageN0Enum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CompactMessageN0Enum),
+                  )
+                  as CompactMessageN0Enum;
           result.n0 = valueDes;
           break;
         case r'1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n1 = valueDes;
           break;
         case r'2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.n2 = valueDes;
           break;
         case r'3':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n3 = valueDes;
           break;
         case r'4':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.n4 = valueDes;
           break;
         case r'5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n5 = valueDes;
           break;
         case r'6':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n6 = valueDes;
           break;
         case r'7':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n7 = valueDes;
           break;
         case r'8':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.n8 = valueDes;
           break;
         case r'9':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.n9 = valueDes;
           break;
         case r'10':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.n10 = valueDes;
           break;
         case r'11':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.n11 = valueDes;
           break;
         case r'12':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.n12 = valueDes;
           break;

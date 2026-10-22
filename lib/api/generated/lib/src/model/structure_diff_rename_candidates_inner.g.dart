@@ -7,17 +7,17 @@ part of 'structure_diff_rename_candidates_inner.dart';
 // **************************************************************************
 
 const StructureDiffRenameCandidatesInnerReasonEnum
-    _$structureDiffRenameCandidatesInnerReasonEnum_nameSimilarity =
+_$structureDiffRenameCandidatesInnerReasonEnum_nameSimilarity =
     const StructureDiffRenameCandidatesInnerReasonEnum._('nameSimilarity');
 const StructureDiffRenameCandidatesInnerReasonEnum
-    _$structureDiffRenameCandidatesInnerReasonEnum_snakeCamel =
+_$structureDiffRenameCandidatesInnerReasonEnum_snakeCamel =
     const StructureDiffRenameCandidatesInnerReasonEnum._('snakeCamel');
 const StructureDiffRenameCandidatesInnerReasonEnum
-    _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution =
+_$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution =
     const StructureDiffRenameCandidatesInnerReasonEnum._('valueDistribution');
 
 StructureDiffRenameCandidatesInnerReasonEnum
-    _$structureDiffRenameCandidatesInnerReasonEnumValueOf(String name) {
+_$structureDiffRenameCandidatesInnerReasonEnumValueOf(String name) {
   switch (name) {
     case 'nameSimilarity':
       return _$structureDiffRenameCandidatesInnerReasonEnum_nameSimilarity;
@@ -31,15 +31,17 @@ StructureDiffRenameCandidatesInnerReasonEnum
 }
 
 final BuiltSet<StructureDiffRenameCandidatesInnerReasonEnum>
-    _$structureDiffRenameCandidatesInnerReasonEnumValues = BuiltSet<
-        StructureDiffRenameCandidatesInnerReasonEnum>(const <StructureDiffRenameCandidatesInnerReasonEnum>[
-  _$structureDiffRenameCandidatesInnerReasonEnum_nameSimilarity,
-  _$structureDiffRenameCandidatesInnerReasonEnum_snakeCamel,
-  _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution,
-]);
+_$structureDiffRenameCandidatesInnerReasonEnumValues =
+    BuiltSet<StructureDiffRenameCandidatesInnerReasonEnum>(
+      const <StructureDiffRenameCandidatesInnerReasonEnum>[
+        _$structureDiffRenameCandidatesInnerReasonEnum_nameSimilarity,
+        _$structureDiffRenameCandidatesInnerReasonEnum_snakeCamel,
+        _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution,
+      ],
+    );
 
 Serializer<StructureDiffRenameCandidatesInnerReasonEnum>
-    _$structureDiffRenameCandidatesInnerReasonEnumSerializer =
+_$structureDiffRenameCandidatesInnerReasonEnumSerializer =
     _$StructureDiffRenameCandidatesInnerReasonEnumSerializer();
 
 class _$StructureDiffRenameCandidatesInnerReasonEnumSerializer
@@ -58,23 +60,26 @@ class _$StructureDiffRenameCandidatesInnerReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    StructureDiffRenameCandidatesInnerReasonEnum
+    StructureDiffRenameCandidatesInnerReasonEnum,
   ];
   @override
   final String wireName = 'StructureDiffRenameCandidatesInnerReasonEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          StructureDiffRenameCandidatesInnerReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StructureDiffRenameCandidatesInnerReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StructureDiffRenameCandidatesInnerReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StructureDiffRenameCandidatesInnerReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StructureDiffRenameCandidatesInnerReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StructureDiffRenameCandidatesInner
@@ -90,22 +95,21 @@ class _$StructureDiffRenameCandidatesInner
   @override
   final bool? readByParser;
 
-  factory _$StructureDiffRenameCandidatesInner(
-          [void Function(StructureDiffRenameCandidatesInnerBuilder)?
-              updates]) =>
-      (StructureDiffRenameCandidatesInnerBuilder()..update(updates))._build();
+  factory _$StructureDiffRenameCandidatesInner([
+    void Function(StructureDiffRenameCandidatesInnerBuilder)? updates,
+  ]) => (StructureDiffRenameCandidatesInnerBuilder()..update(updates))._build();
 
-  _$StructureDiffRenameCandidatesInner._(
-      {required this.from,
-      required this.to,
-      required this.score,
-      required this.reason,
-      this.readByParser})
-      : super._();
+  _$StructureDiffRenameCandidatesInner._({
+    required this.from,
+    required this.to,
+    required this.score,
+    required this.reason,
+    this.readByParser,
+  }) : super._();
   @override
   StructureDiffRenameCandidatesInner rebuild(
-          void Function(StructureDiffRenameCandidatesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StructureDiffRenameCandidatesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StructureDiffRenameCandidatesInnerBuilder toBuilder() =>
@@ -148,8 +152,10 @@ class _$StructureDiffRenameCandidatesInner
 
 class StructureDiffRenameCandidatesInnerBuilder
     implements
-        Builder<StructureDiffRenameCandidatesInner,
-            StructureDiffRenameCandidatesInnerBuilder> {
+        Builder<
+          StructureDiffRenameCandidatesInner,
+          StructureDiffRenameCandidatesInnerBuilder
+        > {
   _$StructureDiffRenameCandidatesInner? _$v;
 
   String? _from;
@@ -197,7 +203,8 @@ class StructureDiffRenameCandidatesInnerBuilder
 
   @override
   void update(
-      void Function(StructureDiffRenameCandidatesInnerBuilder)? updates) {
+    void Function(StructureDiffRenameCandidatesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -205,16 +212,29 @@ class StructureDiffRenameCandidatesInnerBuilder
   StructureDiffRenameCandidatesInner build() => _build();
 
   _$StructureDiffRenameCandidatesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StructureDiffRenameCandidatesInner._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'StructureDiffRenameCandidatesInner', 'from'),
+            from,
+            r'StructureDiffRenameCandidatesInner',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'StructureDiffRenameCandidatesInner', 'to'),
+            to,
+            r'StructureDiffRenameCandidatesInner',
+            'to',
+          ),
           score: BuiltValueNullFieldError.checkNotNull(
-              score, r'StructureDiffRenameCandidatesInner', 'score'),
+            score,
+            r'StructureDiffRenameCandidatesInner',
+            'score',
+          ),
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'StructureDiffRenameCandidatesInner', 'reason'),
+            reason,
+            r'StructureDiffRenameCandidatesInner',
+            'reason',
+          ),
           readByParser: readByParser,
         );
     replace(_$result);

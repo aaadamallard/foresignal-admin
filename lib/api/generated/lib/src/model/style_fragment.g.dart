@@ -20,8 +20,8 @@ StyleFragmentVersionEnum _$styleFragmentVersionEnumValueOf(String name) {
 
 final BuiltSet<StyleFragmentVersionEnum> _$styleFragmentVersionEnumValues =
     BuiltSet<StyleFragmentVersionEnum>(const <StyleFragmentVersionEnum>[
-  _$styleFragmentVersionEnum_number8,
-]);
+      _$styleFragmentVersionEnum_number8,
+    ]);
 
 Serializer<StyleFragmentVersionEnum> _$styleFragmentVersionEnumSerializer =
     _$StyleFragmentVersionEnumSerializer();
@@ -41,16 +41,20 @@ class _$StyleFragmentVersionEnumSerializer
   final String wireName = 'StyleFragmentVersionEnum';
 
   @override
-  Object serialize(Serializers serializers, StyleFragmentVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StyleFragmentVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StyleFragmentVersionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StyleFragmentVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StyleFragmentVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StyleFragment extends StyleFragment {
@@ -66,12 +70,12 @@ class _$StyleFragment extends StyleFragment {
   factory _$StyleFragment([void Function(StyleFragmentBuilder)? updates]) =>
       (StyleFragmentBuilder()..update(updates))._build();
 
-  _$StyleFragment._(
-      {required this.version,
-      required this.sources,
-      required this.layers,
-      this.metadata})
-      : super._();
+  _$StyleFragment._({
+    required this.version,
+    required this.sources,
+    required this.layers,
+    this.metadata,
+  }) : super._();
   @override
   StyleFragment rebuild(void Function(StyleFragmentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -169,10 +173,14 @@ class StyleFragmentBuilder
   _$StyleFragment _build() {
     _$StyleFragment _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$StyleFragment._(
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'StyleFragment', 'version'),
+              version,
+              r'StyleFragment',
+              'version',
+            ),
             sources: sources.build(),
             layers: layers.build(),
             metadata: _metadata?.build(),
@@ -188,7 +196,10 @@ class StyleFragmentBuilder
         _metadata?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'StyleFragment', _$failedField, e.toString());
+          r'StyleFragment',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

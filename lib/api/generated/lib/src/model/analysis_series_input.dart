@@ -67,7 +67,7 @@ class _$AnalysisSeriesInputSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisSeriesInput,
-    _$AnalysisSeriesInput
+    _$AnalysisSeriesInput,
   ];
 
   @override
@@ -94,8 +94,9 @@ class _$AnalysisSeriesInputSerializer
       yield r'detectors';
       yield serializers.serialize(
         object.detectors,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AnalysisSeriesInputDetectorsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AnalysisSeriesInputDetectorsEnum),
+        ]),
       );
     }
     if (object.frequency != null) {
@@ -134,9 +135,11 @@ class _$AnalysisSeriesInputSerializer
     AnalysisSeriesInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -152,60 +155,77 @@ class _$AnalysisSeriesInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'detectors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AnalysisSeriesInputDetectorsEnum)]),
-          ) as BuiltList<AnalysisSeriesInputDetectorsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AnalysisSeriesInputDetectorsEnum),
+                    ]),
+                  )
+                  as BuiltList<AnalysisSeriesInputDetectorsEnum>?;
           if (valueDes == null) continue;
           result.detectors.replace(valueDes);
           break;
         case r'frequency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AnalysisSeriesInputFrequencyEnum),
-          ) as AnalysisSeriesInputFrequencyEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnalysisSeriesInputFrequencyEnum,
+                    ),
+                  )
+                  as AnalysisSeriesInputFrequencyEnum?;
           if (valueDes == null) continue;
           result.frequency = valueDes;
           break;
         case r'family':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.family = valueDes;
           break;
         case r'regionCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionCode = valueDes;
           break;
         case r'watchPairs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(WatchPair)]),
-          ) as BuiltList<WatchPair>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(WatchPair),
+                    ]),
+                  )
+                  as BuiltList<WatchPair>?;
           if (valueDes == null) continue;
           result.watchPairs.replace(valueDes);
           break;

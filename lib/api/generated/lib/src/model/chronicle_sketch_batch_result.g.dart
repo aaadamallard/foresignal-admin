@@ -12,17 +12,18 @@ class _$ChronicleSketchBatchResult extends ChronicleSketchBatchResult {
   @override
   final BuiltList<ChronicleSketchBatchResultRejectedInner> rejected;
 
-  factory _$ChronicleSketchBatchResult(
-          [void Function(ChronicleSketchBatchResultBuilder)? updates]) =>
-      (ChronicleSketchBatchResultBuilder()..update(updates))._build();
+  factory _$ChronicleSketchBatchResult([
+    void Function(ChronicleSketchBatchResultBuilder)? updates,
+  ]) => (ChronicleSketchBatchResultBuilder()..update(updates))._build();
 
-  _$ChronicleSketchBatchResult._(
-      {required this.accepted, required this.rejected})
-      : super._();
+  _$ChronicleSketchBatchResult._({
+    required this.accepted,
+    required this.rejected,
+  }) : super._();
   @override
   ChronicleSketchBatchResult rebuild(
-          void Function(ChronicleSketchBatchResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSketchBatchResultBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSketchBatchResultBuilder toBuilder() =>
@@ -68,8 +69,8 @@ class ChronicleSketchBatchResultBuilder
       _$this._rejected ??=
           ListBuilder<ChronicleSketchBatchResultRejectedInner>();
   set rejected(
-          ListBuilder<ChronicleSketchBatchResultRejectedInner>? rejected) =>
-      _$this._rejected = rejected;
+    ListBuilder<ChronicleSketchBatchResultRejectedInner>? rejected,
+  ) => _$this._rejected = rejected;
 
   ChronicleSketchBatchResultBuilder() {
     ChronicleSketchBatchResult._defaults(this);
@@ -101,10 +102,14 @@ class ChronicleSketchBatchResultBuilder
   _$ChronicleSketchBatchResult _build() {
     _$ChronicleSketchBatchResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChronicleSketchBatchResult._(
             accepted: BuiltValueNullFieldError.checkNotNull(
-                accepted, r'ChronicleSketchBatchResult', 'accepted'),
+              accepted,
+              r'ChronicleSketchBatchResult',
+              'accepted',
+            ),
             rejected: rejected.build(),
           );
     } catch (_) {
@@ -114,7 +119,10 @@ class ChronicleSketchBatchResultBuilder
         rejected.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChronicleSketchBatchResult', _$failedField, e.toString());
+          r'ChronicleSketchBatchResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

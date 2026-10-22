@@ -12,15 +12,15 @@ class _$SituationTimelinePage extends SituationTimelinePage {
   @override
   final String? nextCursor;
 
-  factory _$SituationTimelinePage(
-          [void Function(SituationTimelinePageBuilder)? updates]) =>
-      (SituationTimelinePageBuilder()..update(updates))._build();
+  factory _$SituationTimelinePage([
+    void Function(SituationTimelinePageBuilder)? updates,
+  ]) => (SituationTimelinePageBuilder()..update(updates))._build();
 
   _$SituationTimelinePage._({required this.items, this.nextCursor}) : super._();
   @override
   SituationTimelinePage rebuild(
-          void Function(SituationTimelinePageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SituationTimelinePageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SituationTimelinePageBuilder toBuilder() =>
@@ -96,7 +96,8 @@ class SituationTimelinePageBuilder
   _$SituationTimelinePage _build() {
     _$SituationTimelinePage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationTimelinePage._(
             items: items.build(),
             nextCursor: nextCursor,
@@ -108,7 +109,10 @@ class SituationTimelinePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationTimelinePage', _$failedField, e.toString());
+          r'SituationTimelinePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

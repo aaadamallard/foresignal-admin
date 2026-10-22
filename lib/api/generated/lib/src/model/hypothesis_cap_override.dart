@@ -28,8 +28,9 @@ abstract class HypothesisCapOverride
 
   HypothesisCapOverride._();
 
-  factory HypothesisCapOverride(
-      [void updates(HypothesisCapOverrideBuilder b)]) = _$HypothesisCapOverride;
+  factory HypothesisCapOverride([
+    void updates(HypothesisCapOverrideBuilder b),
+  ]) = _$HypothesisCapOverride;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisCapOverrideBuilder b) => b;
@@ -44,7 +45,7 @@ class _$HypothesisCapOverrideSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisCapOverride,
-    _$HypothesisCapOverride
+    _$HypothesisCapOverride,
   ];
 
   @override
@@ -78,9 +79,11 @@ class _$HypothesisCapOverrideSerializer
     HypothesisCapOverride object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,24 +99,30 @@ class _$HypothesisCapOverrideSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'by':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.by = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'rationale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.rationale = valueDes;
           break;
         default:

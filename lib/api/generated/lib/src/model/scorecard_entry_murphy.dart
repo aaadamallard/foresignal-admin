@@ -52,7 +52,7 @@ class _$ScorecardEntryMurphySerializer
   @override
   final Iterable<Type> types = const [
     ScorecardEntryMurphy,
-    _$ScorecardEntryMurphy
+    _$ScorecardEntryMurphy,
   ];
 
   @override
@@ -100,9 +100,11 @@ class _$ScorecardEntryMurphySerializer
     ScorecardEntryMurphy object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -118,39 +120,40 @@ class _$ScorecardEntryMurphySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'reliability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.reliability = valueDes;
           break;
         case r'resolution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.resolution = valueDes;
           break;
         case r'uncertainty':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.uncertainty = valueDes;
           break;
         case r'withinBinVariance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.withinBinVariance = valueDes;
           break;
         case r'withinBinCovariance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.withinBinCovariance = valueDes;
           break;

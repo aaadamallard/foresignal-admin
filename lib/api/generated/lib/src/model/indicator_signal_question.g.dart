@@ -12,16 +12,16 @@ class _$IndicatorSignalQuestion extends IndicatorSignalQuestion {
   @override
   final String outcome;
 
-  factory _$IndicatorSignalQuestion(
-          [void Function(IndicatorSignalQuestionBuilder)? updates]) =>
-      (IndicatorSignalQuestionBuilder()..update(updates))._build();
+  factory _$IndicatorSignalQuestion([
+    void Function(IndicatorSignalQuestionBuilder)? updates,
+  ]) => (IndicatorSignalQuestionBuilder()..update(updates))._build();
 
   _$IndicatorSignalQuestion._({required this.questionId, required this.outcome})
-      : super._();
+    : super._();
   @override
   IndicatorSignalQuestion rebuild(
-          void Function(IndicatorSignalQuestionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndicatorSignalQuestionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndicatorSignalQuestionBuilder toBuilder() =>
@@ -94,12 +94,19 @@ class IndicatorSignalQuestionBuilder
   IndicatorSignalQuestion build() => _build();
 
   _$IndicatorSignalQuestion _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IndicatorSignalQuestion._(
           questionId: BuiltValueNullFieldError.checkNotNull(
-              questionId, r'IndicatorSignalQuestion', 'questionId'),
+            questionId,
+            r'IndicatorSignalQuestion',
+            'questionId',
+          ),
           outcome: BuiltValueNullFieldError.checkNotNull(
-              outcome, r'IndicatorSignalQuestion', 'outcome'),
+            outcome,
+            r'IndicatorSignalQuestion',
+            'outcome',
+          ),
         );
     replace(_$result);
     return _$result;

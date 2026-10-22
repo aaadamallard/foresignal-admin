@@ -32,11 +32,11 @@ IndexFitResultStatusEnum _$indexFitResultStatusEnumValueOf(String name) {
 
 final BuiltSet<IndexFitResultStatusEnum> _$indexFitResultStatusEnumValues =
     BuiltSet<IndexFitResultStatusEnum>(const <IndexFitResultStatusEnum>[
-  _$indexFitResultStatusEnum_queued,
-  _$indexFitResultStatusEnum_running,
-  _$indexFitResultStatusEnum_done,
-  _$indexFitResultStatusEnum_failed,
-]);
+      _$indexFitResultStatusEnum_queued,
+      _$indexFitResultStatusEnum_running,
+      _$indexFitResultStatusEnum_done,
+      _$indexFitResultStatusEnum_failed,
+    ]);
 
 Serializer<IndexFitResultStatusEnum> _$indexFitResultStatusEnumSerializer =
     _$IndexFitResultStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$IndexFitResultStatusEnumSerializer
   final String wireName = 'IndexFitResultStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, IndexFitResultStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndexFitResultStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndexFitResultStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndexFitResultStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndexFitResultStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndexFitResult extends IndexFitResult {
@@ -113,25 +117,25 @@ class _$IndexFitResult extends IndexFitResult {
   factory _$IndexFitResult([void Function(IndexFitResultBuilder)? updates]) =>
       (IndexFitResultBuilder()..update(updates))._build();
 
-  _$IndexFitResult._(
-      {required this.id,
-      required this.indexId,
-      required this.status,
-      this.startedAt,
-      this.finishedAt,
-      this.method,
-      this.lambda,
-      this.regions,
-      this.origins,
-      this.proposedWeights,
-      this.weightsVersion,
-      this.skill,
-      this.components,
-      this.applied,
-      this.appliedAt,
-      this.manifestId,
-      this.error})
-      : super._();
+  _$IndexFitResult._({
+    required this.id,
+    required this.indexId,
+    required this.status,
+    this.startedAt,
+    this.finishedAt,
+    this.method,
+    this.lambda,
+    this.regions,
+    this.origins,
+    this.proposedWeights,
+    this.weightsVersion,
+    this.skill,
+    this.components,
+    this.applied,
+    this.appliedAt,
+    this.manifestId,
+    this.error,
+  }) : super._();
   @override
   IndexFitResult rebuild(void Function(IndexFitResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -332,14 +336,24 @@ class IndexFitResultBuilder
   _$IndexFitResult _build() {
     _$IndexFitResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IndexFitResult._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'IndexFitResult', 'id'),
+              id,
+              r'IndexFitResult',
+              'id',
+            ),
             indexId: BuiltValueNullFieldError.checkNotNull(
-                indexId, r'IndexFitResult', 'indexId'),
+              indexId,
+              r'IndexFitResult',
+              'indexId',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'IndexFitResult', 'status'),
+              status,
+              r'IndexFitResult',
+              'status',
+            ),
             startedAt: startedAt,
             finishedAt: finishedAt,
             method: method,
@@ -364,7 +378,10 @@ class IndexFitResultBuilder
         _components?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IndexFitResult', _$failedField, e.toString());
+          r'IndexFitResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

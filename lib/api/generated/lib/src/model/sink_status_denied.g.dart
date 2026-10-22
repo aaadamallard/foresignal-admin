@@ -14,12 +14,12 @@ class _$SinkStatusDenied extends SinkStatusDenied {
   @override
   final BuiltMap<String, int>? bySource;
 
-  factory _$SinkStatusDenied(
-          [void Function(SinkStatusDeniedBuilder)? updates]) =>
-      (SinkStatusDeniedBuilder()..update(updates))._build();
+  factory _$SinkStatusDenied([
+    void Function(SinkStatusDeniedBuilder)? updates,
+  ]) => (SinkStatusDeniedBuilder()..update(updates))._build();
 
   _$SinkStatusDenied._({required this.total, this.byReason, this.bySource})
-      : super._();
+    : super._();
   @override
   SinkStatusDenied rebuild(void Function(SinkStatusDeniedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -108,10 +108,14 @@ class SinkStatusDeniedBuilder
   _$SinkStatusDenied _build() {
     _$SinkStatusDenied _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SinkStatusDenied._(
             total: BuiltValueNullFieldError.checkNotNull(
-                total, r'SinkStatusDenied', 'total'),
+              total,
+              r'SinkStatusDenied',
+              'total',
+            ),
             byReason: _byReason?.build(),
             bySource: _bySource?.build(),
           );
@@ -124,7 +128,10 @@ class SinkStatusDeniedBuilder
         _bySource?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SinkStatusDenied', _$failedField, e.toString());
+          r'SinkStatusDenied',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

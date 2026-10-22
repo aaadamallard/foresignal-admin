@@ -7,20 +7,20 @@ part of 'hf_propagation_anomaly_payload.dart';
 // **************************************************************************
 
 const HfPropagationAnomalyPayloadStatusEnum
-    _$hfPropagationAnomalyPayloadStatusEnum_ok =
+_$hfPropagationAnomalyPayloadStatusEnum_ok =
     const HfPropagationAnomalyPayloadStatusEnum._('ok');
 const HfPropagationAnomalyPayloadStatusEnum
-    _$hfPropagationAnomalyPayloadStatusEnum_insufficientData =
+_$hfPropagationAnomalyPayloadStatusEnum_insufficientData =
     const HfPropagationAnomalyPayloadStatusEnum._('insufficientData');
 const HfPropagationAnomalyPayloadStatusEnum
-    _$hfPropagationAnomalyPayloadStatusEnum_noCoverage =
+_$hfPropagationAnomalyPayloadStatusEnum_noCoverage =
     const HfPropagationAnomalyPayloadStatusEnum._('noCoverage');
 const HfPropagationAnomalyPayloadStatusEnum
-    _$hfPropagationAnomalyPayloadStatusEnum_degradedInput =
+_$hfPropagationAnomalyPayloadStatusEnum_degradedInput =
     const HfPropagationAnomalyPayloadStatusEnum._('degradedInput');
 
 HfPropagationAnomalyPayloadStatusEnum
-    _$hfPropagationAnomalyPayloadStatusEnumValueOf(String name) {
+_$hfPropagationAnomalyPayloadStatusEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$hfPropagationAnomalyPayloadStatusEnum_ok;
@@ -36,16 +36,18 @@ HfPropagationAnomalyPayloadStatusEnum
 }
 
 final BuiltSet<HfPropagationAnomalyPayloadStatusEnum>
-    _$hfPropagationAnomalyPayloadStatusEnumValues = BuiltSet<
-        HfPropagationAnomalyPayloadStatusEnum>(const <HfPropagationAnomalyPayloadStatusEnum>[
-  _$hfPropagationAnomalyPayloadStatusEnum_ok,
-  _$hfPropagationAnomalyPayloadStatusEnum_insufficientData,
-  _$hfPropagationAnomalyPayloadStatusEnum_noCoverage,
-  _$hfPropagationAnomalyPayloadStatusEnum_degradedInput,
-]);
+_$hfPropagationAnomalyPayloadStatusEnumValues =
+    BuiltSet<HfPropagationAnomalyPayloadStatusEnum>(
+      const <HfPropagationAnomalyPayloadStatusEnum>[
+        _$hfPropagationAnomalyPayloadStatusEnum_ok,
+        _$hfPropagationAnomalyPayloadStatusEnum_insufficientData,
+        _$hfPropagationAnomalyPayloadStatusEnum_noCoverage,
+        _$hfPropagationAnomalyPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 Serializer<HfPropagationAnomalyPayloadStatusEnum>
-    _$hfPropagationAnomalyPayloadStatusEnumSerializer =
+_$hfPropagationAnomalyPayloadStatusEnumSerializer =
     _$HfPropagationAnomalyPayloadStatusEnumSerializer();
 
 class _$HfPropagationAnomalyPayloadStatusEnumSerializer
@@ -65,23 +67,26 @@ class _$HfPropagationAnomalyPayloadStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    HfPropagationAnomalyPayloadStatusEnum
+    HfPropagationAnomalyPayloadStatusEnum,
   ];
   @override
   final String wireName = 'HfPropagationAnomalyPayloadStatusEnum';
 
   @override
   Object serialize(
-          Serializers serializers, HfPropagationAnomalyPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    HfPropagationAnomalyPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HfPropagationAnomalyPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HfPropagationAnomalyPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HfPropagationAnomalyPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HfPropagationAnomalyPayload extends HfPropagationAnomalyPayload {
@@ -120,33 +125,33 @@ class _$HfPropagationAnomalyPayload extends HfPropagationAnomalyPayload {
   @override
   final String? flareConcurrent;
 
-  factory _$HfPropagationAnomalyPayload(
-          [void Function(HfPropagationAnomalyPayloadBuilder)? updates]) =>
-      (HfPropagationAnomalyPayloadBuilder()..update(updates))._build();
+  factory _$HfPropagationAnomalyPayload([
+    void Function(HfPropagationAnomalyPayloadBuilder)? updates,
+  ]) => (HfPropagationAnomalyPayloadBuilder()..update(updates))._build();
 
-  _$HfPropagationAnomalyPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.band,
-      required this.pathClass,
-      required this.utcHour,
-      this.spotCount,
-      this.baselineSpotCount,
-      this.spotDropPct,
-      this.medianSnrDb,
-      this.baselineMedianSnrDb,
-      this.snrDropDb,
-      this.sunlit,
-      this.flareConcurrent})
-      : super._();
+  _$HfPropagationAnomalyPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.band,
+    required this.pathClass,
+    required this.utcHour,
+    this.spotCount,
+    this.baselineSpotCount,
+    this.spotDropPct,
+    this.medianSnrDb,
+    this.baselineMedianSnrDb,
+    this.snrDropDb,
+    this.sunlit,
+    this.flareConcurrent,
+  }) : super._();
   @override
   HfPropagationAnomalyPayload rebuild(
-          void Function(HfPropagationAnomalyPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HfPropagationAnomalyPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HfPropagationAnomalyPayloadBuilder toBuilder() =>
@@ -225,8 +230,10 @@ class _$HfPropagationAnomalyPayload extends HfPropagationAnomalyPayload {
 
 class HfPropagationAnomalyPayloadBuilder
     implements
-        Builder<HfPropagationAnomalyPayload,
-            HfPropagationAnomalyPayloadBuilder> {
+        Builder<
+          HfPropagationAnomalyPayload,
+          HfPropagationAnomalyPayloadBuilder
+        > {
   _$HfPropagationAnomalyPayload? _$v;
 
   bool? _automated;
@@ -350,23 +357,42 @@ class HfPropagationAnomalyPayloadBuilder
   _$HfPropagationAnomalyPayload _build() {
     _$HfPropagationAnomalyPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HfPropagationAnomalyPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'HfPropagationAnomalyPayload', 'automated'),
+              automated,
+              r'HfPropagationAnomalyPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'HfPropagationAnomalyPayload', 'notAWarning'),
+              notAWarning,
+              r'HfPropagationAnomalyPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'HfPropagationAnomalyPayload', 'status'),
+              status,
+              r'HfPropagationAnomalyPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             band: BuiltValueNullFieldError.checkNotNull(
-                band, r'HfPropagationAnomalyPayload', 'band'),
+              band,
+              r'HfPropagationAnomalyPayload',
+              'band',
+            ),
             pathClass: BuiltValueNullFieldError.checkNotNull(
-                pathClass, r'HfPropagationAnomalyPayload', 'pathClass'),
+              pathClass,
+              r'HfPropagationAnomalyPayload',
+              'pathClass',
+            ),
             utcHour: BuiltValueNullFieldError.checkNotNull(
-                utcHour, r'HfPropagationAnomalyPayload', 'utcHour'),
+              utcHour,
+              r'HfPropagationAnomalyPayload',
+              'utcHour',
+            ),
             spotCount: spotCount,
             baselineSpotCount: baselineSpotCount,
             spotDropPct: spotDropPct,
@@ -386,7 +412,10 @@ class HfPropagationAnomalyPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HfPropagationAnomalyPayload', _$failedField, e.toString());
+          r'HfPropagationAnomalyPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

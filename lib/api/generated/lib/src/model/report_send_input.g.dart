@@ -21,13 +21,13 @@ class _$ReportSendInput extends ReportSendInput {
   factory _$ReportSendInput([void Function(ReportSendInputBuilder)? updates]) =>
       (ReportSendInputBuilder()..update(updates))._build();
 
-  _$ReportSendInput._(
-      {this.principals,
-      this.groups,
-      this.channels,
-      this.message,
-      this.revision})
-      : super._();
+  _$ReportSendInput._({
+    this.principals,
+    this.groups,
+    this.channels,
+    this.message,
+    this.revision,
+  }) : super._();
   @override
   ReportSendInput rebuild(void Function(ReportSendInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -130,7 +130,8 @@ class ReportSendInputBuilder
   _$ReportSendInput _build() {
     _$ReportSendInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportSendInput._(
             principals: _principals?.build(),
             groups: _groups?.build(),
@@ -149,7 +150,10 @@ class ReportSendInputBuilder
         _channels?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportSendInput', _$failedField, e.toString());
+          r'ReportSendInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

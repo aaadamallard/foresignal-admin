@@ -92,11 +92,9 @@ class SocialCuePageBuilder
   _$SocialCuePage _build() {
     _$SocialCuePage _$result;
     try {
-      _$result = _$v ??
-          _$SocialCuePage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SocialCuePage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class SocialCuePageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialCuePage', _$failedField, e.toString());
+          r'SocialCuePage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

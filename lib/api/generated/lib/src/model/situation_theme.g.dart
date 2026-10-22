@@ -9,8 +9,9 @@ part of 'situation_theme.dart';
 const SituationTheme _$maritime = const SituationTheme._('maritime');
 const SituationTheme _$aviation = const SituationTheme._('aviation');
 const SituationTheme _$conflict = const SituationTheme._('conflict');
-const SituationTheme _$infrastructure =
-    const SituationTheme._('infrastructure');
+const SituationTheme _$infrastructure = const SituationTheme._(
+  'infrastructure',
+);
 const SituationTheme _$weather = const SituationTheme._('weather');
 const SituationTheme _$cyber = const SituationTheme._('cyber');
 const SituationTheme _$markets = const SituationTheme._('markets');
@@ -47,17 +48,17 @@ SituationTheme _$valueOf(String name) {
 
 final BuiltSet<SituationTheme> _$values =
     BuiltSet<SituationTheme>(const <SituationTheme>[
-  _$maritime,
-  _$aviation,
-  _$conflict,
-  _$infrastructure,
-  _$weather,
-  _$cyber,
-  _$markets,
-  _$health,
-  _$space,
-  _$mixed,
-]);
+      _$maritime,
+      _$aviation,
+      _$conflict,
+      _$infrastructure,
+      _$weather,
+      _$cyber,
+      _$markets,
+      _$health,
+      _$space,
+      _$mixed,
+    ]);
 
 class _$SituationThemeMeta {
   const _$SituationThemeMeta();
@@ -75,7 +76,7 @@ class _$SituationThemeMeta {
   BuiltSet<SituationTheme> get values => _$values;
 }
 
-abstract class _$SituationThemeMixin {
+mixin _$SituationThemeMixin {
   // ignore: non_constant_identifier_names
   _$SituationThemeMeta get SituationTheme => const _$SituationThemeMeta();
 }
@@ -116,15 +117,20 @@ class _$SituationThemeSerializer
   final String wireName = 'SituationTheme';
 
   @override
-  Object serialize(Serializers serializers, SituationTheme object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationTheme object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SituationTheme deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationTheme.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SituationTheme deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationTheme.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

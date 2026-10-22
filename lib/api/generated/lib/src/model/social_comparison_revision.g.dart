@@ -7,23 +7,24 @@ part of 'social_comparison_revision.dart';
 // **************************************************************************
 
 const SocialComparisonRevisionStatusEnum
-    _$socialComparisonRevisionStatusEnum_pending =
+_$socialComparisonRevisionStatusEnum_pending =
     const SocialComparisonRevisionStatusEnum._('pending');
 const SocialComparisonRevisionStatusEnum
-    _$socialComparisonRevisionStatusEnum_corroborated =
+_$socialComparisonRevisionStatusEnum_corroborated =
     const SocialComparisonRevisionStatusEnum._('corroborated');
 const SocialComparisonRevisionStatusEnum
-    _$socialComparisonRevisionStatusEnum_unobserved =
+_$socialComparisonRevisionStatusEnum_unobserved =
     const SocialComparisonRevisionStatusEnum._('unobserved');
 const SocialComparisonRevisionStatusEnum
-    _$socialComparisonRevisionStatusEnum_contradicted =
+_$socialComparisonRevisionStatusEnum_contradicted =
     const SocialComparisonRevisionStatusEnum._('contradicted');
 const SocialComparisonRevisionStatusEnum
-    _$socialComparisonRevisionStatusEnum_insufficientCoverage =
+_$socialComparisonRevisionStatusEnum_insufficientCoverage =
     const SocialComparisonRevisionStatusEnum._('insufficientCoverage');
 
 SocialComparisonRevisionStatusEnum _$socialComparisonRevisionStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'pending':
       return _$socialComparisonRevisionStatusEnum_pending;
@@ -41,33 +42,35 @@ SocialComparisonRevisionStatusEnum _$socialComparisonRevisionStatusEnumValueOf(
 }
 
 final BuiltSet<SocialComparisonRevisionStatusEnum>
-    _$socialComparisonRevisionStatusEnumValues = BuiltSet<
-        SocialComparisonRevisionStatusEnum>(const <SocialComparisonRevisionStatusEnum>[
-  _$socialComparisonRevisionStatusEnum_pending,
-  _$socialComparisonRevisionStatusEnum_corroborated,
-  _$socialComparisonRevisionStatusEnum_unobserved,
-  _$socialComparisonRevisionStatusEnum_contradicted,
-  _$socialComparisonRevisionStatusEnum_insufficientCoverage,
-]);
+_$socialComparisonRevisionStatusEnumValues =
+    BuiltSet<SocialComparisonRevisionStatusEnum>(
+      const <SocialComparisonRevisionStatusEnum>[
+        _$socialComparisonRevisionStatusEnum_pending,
+        _$socialComparisonRevisionStatusEnum_corroborated,
+        _$socialComparisonRevisionStatusEnum_unobserved,
+        _$socialComparisonRevisionStatusEnum_contradicted,
+        _$socialComparisonRevisionStatusEnum_insufficientCoverage,
+      ],
+    );
 
 const SocialComparisonRevisionPreviousStatusEnum
-    _$socialComparisonRevisionPreviousStatusEnum_pending =
+_$socialComparisonRevisionPreviousStatusEnum_pending =
     const SocialComparisonRevisionPreviousStatusEnum._('pending');
 const SocialComparisonRevisionPreviousStatusEnum
-    _$socialComparisonRevisionPreviousStatusEnum_corroborated =
+_$socialComparisonRevisionPreviousStatusEnum_corroborated =
     const SocialComparisonRevisionPreviousStatusEnum._('corroborated');
 const SocialComparisonRevisionPreviousStatusEnum
-    _$socialComparisonRevisionPreviousStatusEnum_unobserved =
+_$socialComparisonRevisionPreviousStatusEnum_unobserved =
     const SocialComparisonRevisionPreviousStatusEnum._('unobserved');
 const SocialComparisonRevisionPreviousStatusEnum
-    _$socialComparisonRevisionPreviousStatusEnum_contradicted =
+_$socialComparisonRevisionPreviousStatusEnum_contradicted =
     const SocialComparisonRevisionPreviousStatusEnum._('contradicted');
 const SocialComparisonRevisionPreviousStatusEnum
-    _$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage =
+_$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage =
     const SocialComparisonRevisionPreviousStatusEnum._('insufficientCoverage');
 
 SocialComparisonRevisionPreviousStatusEnum
-    _$socialComparisonRevisionPreviousStatusEnumValueOf(String name) {
+_$socialComparisonRevisionPreviousStatusEnumValueOf(String name) {
   switch (name) {
     case 'pending':
       return _$socialComparisonRevisionPreviousStatusEnum_pending;
@@ -85,20 +88,22 @@ SocialComparisonRevisionPreviousStatusEnum
 }
 
 final BuiltSet<SocialComparisonRevisionPreviousStatusEnum>
-    _$socialComparisonRevisionPreviousStatusEnumValues = BuiltSet<
-        SocialComparisonRevisionPreviousStatusEnum>(const <SocialComparisonRevisionPreviousStatusEnum>[
-  _$socialComparisonRevisionPreviousStatusEnum_pending,
-  _$socialComparisonRevisionPreviousStatusEnum_corroborated,
-  _$socialComparisonRevisionPreviousStatusEnum_unobserved,
-  _$socialComparisonRevisionPreviousStatusEnum_contradicted,
-  _$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage,
-]);
+_$socialComparisonRevisionPreviousStatusEnumValues =
+    BuiltSet<SocialComparisonRevisionPreviousStatusEnum>(
+      const <SocialComparisonRevisionPreviousStatusEnum>[
+        _$socialComparisonRevisionPreviousStatusEnum_pending,
+        _$socialComparisonRevisionPreviousStatusEnum_corroborated,
+        _$socialComparisonRevisionPreviousStatusEnum_unobserved,
+        _$socialComparisonRevisionPreviousStatusEnum_contradicted,
+        _$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage,
+      ],
+    );
 
 Serializer<SocialComparisonRevisionStatusEnum>
-    _$socialComparisonRevisionStatusEnumSerializer =
+_$socialComparisonRevisionStatusEnumSerializer =
     _$SocialComparisonRevisionStatusEnumSerializer();
 Serializer<SocialComparisonRevisionPreviousStatusEnum>
-    _$socialComparisonRevisionPreviousStatusEnumSerializer =
+_$socialComparisonRevisionPreviousStatusEnumSerializer =
     _$SocialComparisonRevisionPreviousStatusEnumSerializer();
 
 class _$SocialComparisonRevisionStatusEnumSerializer
@@ -125,16 +130,19 @@ class _$SocialComparisonRevisionStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SocialComparisonRevisionStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SocialComparisonRevisionStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonRevisionStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonRevisionStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonRevisionStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparisonRevisionPreviousStatusEnumSerializer
@@ -156,23 +164,26 @@ class _$SocialComparisonRevisionPreviousStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SocialComparisonRevisionPreviousStatusEnum
+    SocialComparisonRevisionPreviousStatusEnum,
   ];
   @override
   final String wireName = 'SocialComparisonRevisionPreviousStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SocialComparisonRevisionPreviousStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialComparisonRevisionPreviousStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonRevisionPreviousStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonRevisionPreviousStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonRevisionPreviousStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparisonRevision extends SocialComparisonRevision {
@@ -191,23 +202,23 @@ class _$SocialComparisonRevision extends SocialComparisonRevision {
   @override
   final String? manifestId;
 
-  factory _$SocialComparisonRevision(
-          [void Function(SocialComparisonRevisionBuilder)? updates]) =>
-      (SocialComparisonRevisionBuilder()..update(updates))._build();
+  factory _$SocialComparisonRevision([
+    void Function(SocialComparisonRevisionBuilder)? updates,
+  ]) => (SocialComparisonRevisionBuilder()..update(updates))._build();
 
-  _$SocialComparisonRevision._(
-      {required this.revision,
-      required this.at,
-      required this.status,
-      this.previousStatus,
-      required this.reason,
-      this.physicalEvidenceRefs,
-      this.manifestId})
-      : super._();
+  _$SocialComparisonRevision._({
+    required this.revision,
+    required this.at,
+    required this.status,
+    this.previousStatus,
+    required this.reason,
+    this.physicalEvidenceRefs,
+    this.manifestId,
+  }) : super._();
   @override
   SocialComparisonRevision rebuild(
-          void Function(SocialComparisonRevisionBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialComparisonRevisionBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialComparisonRevisionBuilder toBuilder() =>
@@ -276,8 +287,8 @@ class SocialComparisonRevisionBuilder
   SocialComparisonRevisionPreviousStatusEnum? get previousStatus =>
       _$this._previousStatus;
   set previousStatus(
-          SocialComparisonRevisionPreviousStatusEnum? previousStatus) =>
-      _$this._previousStatus = previousStatus;
+    SocialComparisonRevisionPreviousStatusEnum? previousStatus,
+  ) => _$this._previousStatus = previousStatus;
 
   String? _reason;
   String? get reason => _$this._reason;
@@ -328,17 +339,30 @@ class SocialComparisonRevisionBuilder
   _$SocialComparisonRevision _build() {
     _$SocialComparisonRevision _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialComparisonRevision._(
             revision: BuiltValueNullFieldError.checkNotNull(
-                revision, r'SocialComparisonRevision', 'revision'),
+              revision,
+              r'SocialComparisonRevision',
+              'revision',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'SocialComparisonRevision', 'at'),
+              at,
+              r'SocialComparisonRevision',
+              'at',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SocialComparisonRevision', 'status'),
+              status,
+              r'SocialComparisonRevision',
+              'status',
+            ),
             previousStatus: previousStatus,
             reason: BuiltValueNullFieldError.checkNotNull(
-                reason, r'SocialComparisonRevision', 'reason'),
+              reason,
+              r'SocialComparisonRevision',
+              'reason',
+            ),
             physicalEvidenceRefs: _physicalEvidenceRefs?.build(),
             manifestId: manifestId,
           );
@@ -349,7 +373,10 @@ class SocialComparisonRevisionBuilder
         _physicalEvidenceRefs?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialComparisonRevision', _$failedField, e.toString());
+          r'SocialComparisonRevision',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

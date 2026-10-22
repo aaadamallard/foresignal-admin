@@ -7,22 +7,23 @@ part of 'report_draft_request.dart';
 // **************************************************************************
 
 const ReportDraftRequestTemplateEnum
-    _$reportDraftRequestTemplateEnum_situationBrief =
+_$reportDraftRequestTemplateEnum_situationBrief =
     const ReportDraftRequestTemplateEnum._('situationBrief');
 const ReportDraftRequestTemplateEnum
-    _$reportDraftRequestTemplateEnum_investigationSummary =
+_$reportDraftRequestTemplateEnum_investigationSummary =
     const ReportDraftRequestTemplateEnum._('investigationSummary');
 const ReportDraftRequestTemplateEnum
-    _$reportDraftRequestTemplateEnum_chronicleRecap =
+_$reportDraftRequestTemplateEnum_chronicleRecap =
     const ReportDraftRequestTemplateEnum._('chronicleRecap');
 const ReportDraftRequestTemplateEnum
-    _$reportDraftRequestTemplateEnum_weeklyAssessment =
+_$reportDraftRequestTemplateEnum_weeklyAssessment =
     const ReportDraftRequestTemplateEnum._('weeklyAssessment');
 const ReportDraftRequestTemplateEnum _$reportDraftRequestTemplateEnum_custom =
     const ReportDraftRequestTemplateEnum._('custom');
 
 ReportDraftRequestTemplateEnum _$reportDraftRequestTemplateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'situationBrief':
       return _$reportDraftRequestTemplateEnum_situationBrief;
@@ -40,17 +41,19 @@ ReportDraftRequestTemplateEnum _$reportDraftRequestTemplateEnumValueOf(
 }
 
 final BuiltSet<ReportDraftRequestTemplateEnum>
-    _$reportDraftRequestTemplateEnumValues = BuiltSet<
-        ReportDraftRequestTemplateEnum>(const <ReportDraftRequestTemplateEnum>[
-  _$reportDraftRequestTemplateEnum_situationBrief,
-  _$reportDraftRequestTemplateEnum_investigationSummary,
-  _$reportDraftRequestTemplateEnum_chronicleRecap,
-  _$reportDraftRequestTemplateEnum_weeklyAssessment,
-  _$reportDraftRequestTemplateEnum_custom,
-]);
+_$reportDraftRequestTemplateEnumValues =
+    BuiltSet<ReportDraftRequestTemplateEnum>(
+      const <ReportDraftRequestTemplateEnum>[
+        _$reportDraftRequestTemplateEnum_situationBrief,
+        _$reportDraftRequestTemplateEnum_investigationSummary,
+        _$reportDraftRequestTemplateEnum_chronicleRecap,
+        _$reportDraftRequestTemplateEnum_weeklyAssessment,
+        _$reportDraftRequestTemplateEnum_custom,
+      ],
+    );
 
 Serializer<ReportDraftRequestTemplateEnum>
-    _$reportDraftRequestTemplateEnumSerializer =
+_$reportDraftRequestTemplateEnumSerializer =
     _$ReportDraftRequestTemplateEnumSerializer();
 
 class _$ReportDraftRequestTemplateEnumSerializer
@@ -77,16 +80,19 @@ class _$ReportDraftRequestTemplateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ReportDraftRequestTemplateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ReportDraftRequestTemplateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReportDraftRequestTemplateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReportDraftRequestTemplateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReportDraftRequestTemplateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReportDraftRequest extends ReportDraftRequest {
@@ -105,23 +111,23 @@ class _$ReportDraftRequest extends ReportDraftRequest {
   @override
   final String? assessmentId;
 
-  factory _$ReportDraftRequest(
-          [void Function(ReportDraftRequestBuilder)? updates]) =>
-      (ReportDraftRequestBuilder()..update(updates))._build();
+  factory _$ReportDraftRequest([
+    void Function(ReportDraftRequestBuilder)? updates,
+  ]) => (ReportDraftRequestBuilder()..update(updates))._build();
 
-  _$ReportDraftRequest._(
-      {required this.source_,
-      this.template,
-      this.title,
-      this.timeWindow,
-      this.area,
-      this.narrative,
-      this.assessmentId})
-      : super._();
+  _$ReportDraftRequest._({
+    required this.source_,
+    this.template,
+    this.title,
+    this.timeWindow,
+    this.area,
+    this.narrative,
+    this.assessmentId,
+  }) : super._();
   @override
   ReportDraftRequest rebuild(
-          void Function(ReportDraftRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReportDraftRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReportDraftRequestBuilder toBuilder() =>
@@ -237,7 +243,8 @@ class ReportDraftRequestBuilder
   _$ReportDraftRequest _build() {
     _$ReportDraftRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReportDraftRequest._(
             source_: source_.build(),
             template: template,
@@ -259,7 +266,10 @@ class ReportDraftRequestBuilder
         _area?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReportDraftRequest', _$failedField, e.toString());
+          r'ReportDraftRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -92,11 +92,9 @@ class IntelEventPageBuilder
   _$IntelEventPage _build() {
     _$IntelEventPage _$result;
     try {
-      _$result = _$v ??
-          _$IntelEventPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$IntelEventPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class IntelEventPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventPage', _$failedField, e.toString());
+          r'IntelEventPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

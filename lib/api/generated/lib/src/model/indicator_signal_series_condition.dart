@@ -17,8 +17,10 @@ part 'indicator_signal_series_condition.g.dart';
 @BuiltValue()
 abstract class IndicatorSignalSeriesCondition
     implements
-        Built<IndicatorSignalSeriesCondition,
-            IndicatorSignalSeriesConditionBuilder> {
+        Built<
+          IndicatorSignalSeriesCondition,
+          IndicatorSignalSeriesConditionBuilder
+        > {
   @BuiltValueField(wireName: r'op')
   IndicatorSignalSeriesConditionOpEnum get op;
   // enum opEnum {  gt,  gte,  lt,  lte,  };
@@ -28,9 +30,9 @@ abstract class IndicatorSignalSeriesCondition
 
   IndicatorSignalSeriesCondition._();
 
-  factory IndicatorSignalSeriesCondition(
-          [void updates(IndicatorSignalSeriesConditionBuilder b)]) =
-      _$IndicatorSignalSeriesCondition;
+  factory IndicatorSignalSeriesCondition([
+    void updates(IndicatorSignalSeriesConditionBuilder b),
+  ]) = _$IndicatorSignalSeriesCondition;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IndicatorSignalSeriesConditionBuilder b) => b;
@@ -45,7 +47,7 @@ class _$IndicatorSignalSeriesConditionSerializer
   @override
   final Iterable<Type> types = const [
     IndicatorSignalSeriesCondition,
-    _$IndicatorSignalSeriesCondition
+    _$IndicatorSignalSeriesCondition,
   ];
 
   @override
@@ -74,9 +76,11 @@ class _$IndicatorSignalSeriesConditionSerializer
     IndicatorSignalSeriesCondition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,17 +96,20 @@ class _$IndicatorSignalSeriesConditionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'op':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IndicatorSignalSeriesConditionOpEnum),
-          ) as IndicatorSignalSeriesConditionOpEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      IndicatorSignalSeriesConditionOpEnum,
+                    ),
+                  )
+                  as IndicatorSignalSeriesConditionOpEnum;
           result.op = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.value = valueDes;
           break;
         default:

@@ -17,8 +17,10 @@ part 'social_comparison_contradiction.g.dart';
 @BuiltValue()
 abstract class SocialComparisonContradiction
     implements
-        Built<SocialComparisonContradiction,
-            SocialComparisonContradictionBuilder> {
+        Built<
+          SocialComparisonContradiction,
+          SocialComparisonContradictionBuilder
+        > {
   @BuiltValueField(wireName: r'reason')
   SocialComparisonContradictionReasonEnum get reason;
   // enum reasonEnum {  negating-record,  media-reuse,  };
@@ -29,9 +31,9 @@ abstract class SocialComparisonContradiction
 
   SocialComparisonContradiction._();
 
-  factory SocialComparisonContradiction(
-          [void updates(SocialComparisonContradictionBuilder b)]) =
-      _$SocialComparisonContradiction;
+  factory SocialComparisonContradiction([
+    void updates(SocialComparisonContradictionBuilder b),
+  ]) = _$SocialComparisonContradiction;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialComparisonContradictionBuilder b) => b;
@@ -46,7 +48,7 @@ class _$SocialComparisonContradictionSerializer
   @override
   final Iterable<Type> types = const [
     SocialComparisonContradiction,
-    _$SocialComparisonContradiction
+    _$SocialComparisonContradiction,
   ];
 
   @override
@@ -75,9 +77,11 @@ class _$SocialComparisonContradictionSerializer
     SocialComparisonContradiction object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +97,23 @@ class _$SocialComparisonContradictionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(SocialComparisonContradictionReasonEnum),
-          ) as SocialComparisonContradictionReasonEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      SocialComparisonContradictionReasonEnum,
+                    ),
+                  )
+                  as SocialComparisonContradictionReasonEnum;
           result.reason = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         default:

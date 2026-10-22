@@ -46,8 +46,9 @@ abstract class AnalysisManifestModel
 
   AnalysisManifestModel._();
 
-  factory AnalysisManifestModel(
-      [void updates(AnalysisManifestModelBuilder b)]) = _$AnalysisManifestModel;
+  factory AnalysisManifestModel([
+    void updates(AnalysisManifestModelBuilder b),
+  ]) = _$AnalysisManifestModel;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalysisManifestModelBuilder b) => b;
@@ -62,7 +63,7 @@ class _$AnalysisManifestModelSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisManifestModel,
-    _$AnalysisManifestModel
+    _$AnalysisManifestModel,
   ];
 
   @override
@@ -115,8 +116,9 @@ class _$AnalysisManifestModelSerializer
       yield r'templates';
       yield serializers.serialize(
         object.templates,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AnalysisManifestModelTemplatesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AnalysisManifestModelTemplatesInner),
+        ]),
       );
     }
   }
@@ -127,9 +129,11 @@ class _$AnalysisManifestModelSerializer
     AnalysisManifestModel object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -145,57 +149,72 @@ class _$AnalysisManifestModelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.provider = valueDes;
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.model = valueDes;
           break;
         case r'effort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.effort = valueDes;
           break;
         case r'promptHash':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.promptHash = valueDes;
           break;
         case r'toolsHash':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.toolsHash = valueDes;
           break;
         case r'samples':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.samples = valueDes;
           break;
         case r'templates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AnalysisManifestModelTemplatesInner)]),
-          ) as BuiltList<AnalysisManifestModelTemplatesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AnalysisManifestModelTemplatesInner),
+                    ]),
+                  )
+                  as BuiltList<AnalysisManifestModelTemplatesInner>?;
           if (valueDes == null) continue;
           result.templates.replace(valueDes);
           break;

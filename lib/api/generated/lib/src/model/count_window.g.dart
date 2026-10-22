@@ -25,15 +25,15 @@ class _$CountWindow extends CountWindow {
   factory _$CountWindow([void Function(CountWindowBuilder)? updates]) =>
       (CountWindowBuilder()..update(updates))._build();
 
-  _$CountWindow._(
-      {required this.window,
-      this.step,
-      this.distinctBy,
-      this.groupBy,
-      this.maxGroups,
-      required this.op,
-      required this.threshold})
-      : super._();
+  _$CountWindow._({
+    required this.window,
+    this.step,
+    this.distinctBy,
+    this.groupBy,
+    this.maxGroups,
+    required this.op,
+    required this.threshold,
+  }) : super._();
   @override
   CountWindow rebuild(void Function(CountWindowBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -146,17 +146,24 @@ class CountWindowBuilder implements Builder<CountWindow, CountWindowBuilder> {
   CountWindow build() => _build();
 
   _$CountWindow _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CountWindow._(
           window: BuiltValueNullFieldError.checkNotNull(
-              window, r'CountWindow', 'window'),
+            window,
+            r'CountWindow',
+            'window',
+          ),
           step: step,
           distinctBy: distinctBy,
           groupBy: groupBy,
           maxGroups: maxGroups,
           op: BuiltValueNullFieldError.checkNotNull(op, r'CountWindow', 'op'),
           threshold: BuiltValueNullFieldError.checkNotNull(
-              threshold, r'CountWindow', 'threshold'),
+            threshold,
+            r'CountWindow',
+            'threshold',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -19,12 +19,12 @@ class _$DigestActive extends DigestActive {
   factory _$DigestActive([void Function(DigestActiveBuilder)? updates]) =>
       (DigestActiveBuilder()..update(updates))._build();
 
-  _$DigestActive._(
-      {required this.sourceId,
-      required this.kind,
-      required this.entities,
-      this.previous})
-      : super._();
+  _$DigestActive._({
+    required this.sourceId,
+    required this.kind,
+    required this.entities,
+    this.previous,
+  }) : super._();
   @override
   DigestActive rebuild(void Function(DigestActiveBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -114,14 +114,24 @@ class DigestActiveBuilder
   DigestActive build() => _build();
 
   _$DigestActive _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$DigestActive._(
           sourceId: BuiltValueNullFieldError.checkNotNull(
-              sourceId, r'DigestActive', 'sourceId'),
+            sourceId,
+            r'DigestActive',
+            'sourceId',
+          ),
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'DigestActive', 'kind'),
+            kind,
+            r'DigestActive',
+            'kind',
+          ),
           entities: BuiltValueNullFieldError.checkNotNull(
-              entities, r'DigestActive', 'entities'),
+            entities,
+            r'DigestActive',
+            'entities',
+          ),
           previous: previous,
         );
     replace(_$result);

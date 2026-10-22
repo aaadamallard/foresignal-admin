@@ -76,22 +76,22 @@ DoctorFindingCodeEnum _$doctorFindingCodeEnumValueOf(String name) {
 
 final BuiltSet<DoctorFindingCodeEnum> _$doctorFindingCodeEnumValues =
     BuiltSet<DoctorFindingCodeEnum>(const <DoctorFindingCodeEnum>[
-  _$doctorFindingCodeEnum_AUTH_FAILED,
-  _$doctorFindingCodeEnum_UA_BLOCKED,
-  _$doctorFindingCodeEnum_ENDPOINT_MOVED,
-  _$doctorFindingCodeEnum_RATE_LIMITED,
-  _$doctorFindingCodeEnum_UPSTREAM_ERROR,
-  _$doctorFindingCodeEnum_HTML_INSTEAD_OF_DATA,
-  _$doctorFindingCodeEnum_EMPTY_RESULT,
-  _$doctorFindingCodeEnum_FIELD_RENAMED,
-  _$doctorFindingCodeEnum_FIELD_REMOVED,
-  _$doctorFindingCodeEnum_TYPE_CHANGED,
-  _$doctorFindingCodeEnum_FORMAT_CHANGED,
-  _$doctorFindingCodeEnum_PARSER_REJECTS,
-  _$doctorFindingCodeEnum_COVERAGE_DROPPED,
-  _$doctorFindingCodeEnum_NO_CHANGE_DETECTED,
-  _$doctorFindingCodeEnum_PROBE_SKIPPED_BUDGET,
-]);
+      _$doctorFindingCodeEnum_AUTH_FAILED,
+      _$doctorFindingCodeEnum_UA_BLOCKED,
+      _$doctorFindingCodeEnum_ENDPOINT_MOVED,
+      _$doctorFindingCodeEnum_RATE_LIMITED,
+      _$doctorFindingCodeEnum_UPSTREAM_ERROR,
+      _$doctorFindingCodeEnum_HTML_INSTEAD_OF_DATA,
+      _$doctorFindingCodeEnum_EMPTY_RESULT,
+      _$doctorFindingCodeEnum_FIELD_RENAMED,
+      _$doctorFindingCodeEnum_FIELD_REMOVED,
+      _$doctorFindingCodeEnum_TYPE_CHANGED,
+      _$doctorFindingCodeEnum_FORMAT_CHANGED,
+      _$doctorFindingCodeEnum_PARSER_REJECTS,
+      _$doctorFindingCodeEnum_COVERAGE_DROPPED,
+      _$doctorFindingCodeEnum_NO_CHANGE_DETECTED,
+      _$doctorFindingCodeEnum_PROBE_SKIPPED_BUDGET,
+    ]);
 
 Serializer<DoctorFindingCodeEnum> _$doctorFindingCodeEnumSerializer =
     _$DoctorFindingCodeEnumSerializer();
@@ -139,15 +139,20 @@ class _$DoctorFindingCodeEnumSerializer
   final String wireName = 'DoctorFindingCodeEnum';
 
   @override
-  Object serialize(Serializers serializers, DoctorFindingCodeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    DoctorFindingCodeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  DoctorFindingCodeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DoctorFindingCodeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  DoctorFindingCodeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DoctorFindingCodeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DoctorFinding extends DoctorFinding {
@@ -167,14 +172,14 @@ class _$DoctorFinding extends DoctorFinding {
   factory _$DoctorFinding([void Function(DoctorFindingBuilder)? updates]) =>
       (DoctorFindingBuilder()..update(updates))._build();
 
-  _$DoctorFinding._(
-      {required this.code,
-      required this.severity,
-      required this.evidence,
-      this.path,
-      required this.suggestedAction,
-      this.heuristic})
-      : super._();
+  _$DoctorFinding._({
+    required this.code,
+    required this.severity,
+    required this.evidence,
+    this.path,
+    required this.suggestedAction,
+    this.heuristic,
+  }) : super._();
   @override
   DoctorFinding rebuild(void Function(DoctorFindingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -284,16 +289,26 @@ class DoctorFindingBuilder
   _$DoctorFinding _build() {
     _$DoctorFinding _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DoctorFinding._(
             code: BuiltValueNullFieldError.checkNotNull(
-                code, r'DoctorFinding', 'code'),
+              code,
+              r'DoctorFinding',
+              'code',
+            ),
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'DoctorFinding', 'severity'),
+              severity,
+              r'DoctorFinding',
+              'severity',
+            ),
             evidence: evidence.build(),
             path: path,
             suggestedAction: BuiltValueNullFieldError.checkNotNull(
-                suggestedAction, r'DoctorFinding', 'suggestedAction'),
+              suggestedAction,
+              r'DoctorFinding',
+              'suggestedAction',
+            ),
             heuristic: heuristic,
           );
     } catch (_) {
@@ -303,7 +318,10 @@ class DoctorFindingBuilder
         evidence.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DoctorFinding', _$failedField, e.toString());
+          r'DoctorFinding',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

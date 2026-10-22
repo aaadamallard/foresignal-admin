@@ -13,20 +13,19 @@ class _$ChronicleSummaryLayersInnerSeriesInner
   @override
   final int count;
 
-  factory _$ChronicleSummaryLayersInnerSeriesInner(
-          [void Function(ChronicleSummaryLayersInnerSeriesInnerBuilder)?
-              updates]) =>
-      (ChronicleSummaryLayersInnerSeriesInnerBuilder()..update(updates))
-          ._build();
+  factory _$ChronicleSummaryLayersInnerSeriesInner([
+    void Function(ChronicleSummaryLayersInnerSeriesInnerBuilder)? updates,
+  ]) => (ChronicleSummaryLayersInnerSeriesInnerBuilder()..update(updates))
+      ._build();
 
-  _$ChronicleSummaryLayersInnerSeriesInner._(
-      {required this.t, required this.count})
-      : super._();
+  _$ChronicleSummaryLayersInnerSeriesInner._({
+    required this.t,
+    required this.count,
+  }) : super._();
   @override
   ChronicleSummaryLayersInnerSeriesInner rebuild(
-          void Function(ChronicleSummaryLayersInnerSeriesInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSummaryLayersInnerSeriesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSummaryLayersInnerSeriesInnerBuilder toBuilder() =>
@@ -52,7 +51,8 @@ class _$ChronicleSummaryLayersInnerSeriesInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ChronicleSummaryLayersInnerSeriesInner')
+            r'ChronicleSummaryLayersInnerSeriesInner',
+          )
           ..add('t', t)
           ..add('count', count))
         .toString();
@@ -61,8 +61,10 @@ class _$ChronicleSummaryLayersInnerSeriesInner
 
 class ChronicleSummaryLayersInnerSeriesInnerBuilder
     implements
-        Builder<ChronicleSummaryLayersInnerSeriesInner,
-            ChronicleSummaryLayersInnerSeriesInnerBuilder> {
+        Builder<
+          ChronicleSummaryLayersInnerSeriesInner,
+          ChronicleSummaryLayersInnerSeriesInnerBuilder
+        > {
   _$ChronicleSummaryLayersInnerSeriesInner? _$v;
 
   DateTime? _t;
@@ -94,7 +96,8 @@ class ChronicleSummaryLayersInnerSeriesInnerBuilder
 
   @override
   void update(
-      void Function(ChronicleSummaryLayersInnerSeriesInnerBuilder)? updates) {
+    void Function(ChronicleSummaryLayersInnerSeriesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -102,12 +105,19 @@ class ChronicleSummaryLayersInnerSeriesInnerBuilder
   ChronicleSummaryLayersInnerSeriesInner build() => _build();
 
   _$ChronicleSummaryLayersInnerSeriesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSummaryLayersInnerSeriesInner._(
           t: BuiltValueNullFieldError.checkNotNull(
-              t, r'ChronicleSummaryLayersInnerSeriesInner', 't'),
+            t,
+            r'ChronicleSummaryLayersInnerSeriesInner',
+            't',
+          ),
           count: BuiltValueNullFieldError.checkNotNull(
-              count, r'ChronicleSummaryLayersInnerSeriesInner', 'count'),
+            count,
+            r'ChronicleSummaryLayersInnerSeriesInner',
+            'count',
+          ),
         );
     replace(_$result);
     return _$result;

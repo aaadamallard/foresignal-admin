@@ -52,8 +52,9 @@ class _$AskThreadPageSerializer implements PrimitiveSerializer<AskThreadPage> {
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType:
-          const FullType(BuiltList, [FullType(AskThreadPageItemsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(AskThreadPageItemsInner),
+      ]),
     );
     if (object.nextCursor != null) {
       yield r'nextCursor';
@@ -70,9 +71,11 @@ class _$AskThreadPageSerializer implements PrimitiveSerializer<AskThreadPage> {
     AskThreadPage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -88,18 +91,23 @@ class _$AskThreadPageSerializer implements PrimitiveSerializer<AskThreadPage> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(AskThreadPageItemsInner)]),
-          ) as BuiltList<AskThreadPageItemsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(AskThreadPageItemsInner),
+                    ]),
+                  )
+                  as BuiltList<AskThreadPageItemsInner>;
           result.items.replace(valueDes);
           break;
         case r'nextCursor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.nextCursor = valueDes;
           break;

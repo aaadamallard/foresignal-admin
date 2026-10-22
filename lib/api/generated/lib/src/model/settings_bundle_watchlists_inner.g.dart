@@ -12,15 +12,15 @@ class _$SettingsBundleWatchlistsInner extends SettingsBundleWatchlistsInner {
   @override
   final BuiltList<WatchlistItem>? items;
 
-  factory _$SettingsBundleWatchlistsInner(
-          [void Function(SettingsBundleWatchlistsInnerBuilder)? updates]) =>
-      (SettingsBundleWatchlistsInnerBuilder()..update(updates))._build();
+  factory _$SettingsBundleWatchlistsInner([
+    void Function(SettingsBundleWatchlistsInnerBuilder)? updates,
+  ]) => (SettingsBundleWatchlistsInnerBuilder()..update(updates))._build();
 
   _$SettingsBundleWatchlistsInner._({this.watchlist, this.items}) : super._();
   @override
   SettingsBundleWatchlistsInner rebuild(
-          void Function(SettingsBundleWatchlistsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SettingsBundleWatchlistsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SettingsBundleWatchlistsInnerBuilder toBuilder() =>
@@ -54,8 +54,10 @@ class _$SettingsBundleWatchlistsInner extends SettingsBundleWatchlistsInner {
 
 class SettingsBundleWatchlistsInnerBuilder
     implements
-        Builder<SettingsBundleWatchlistsInner,
-            SettingsBundleWatchlistsInnerBuilder> {
+        Builder<
+          SettingsBundleWatchlistsInner,
+          SettingsBundleWatchlistsInnerBuilder
+        > {
   _$SettingsBundleWatchlistsInner? _$v;
 
   WatchlistBuilder? _watchlist;
@@ -97,7 +99,8 @@ class SettingsBundleWatchlistsInnerBuilder
   _$SettingsBundleWatchlistsInner _build() {
     _$SettingsBundleWatchlistsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SettingsBundleWatchlistsInner._(
             watchlist: _watchlist?.build(),
             items: _items?.build(),
@@ -111,7 +114,10 @@ class SettingsBundleWatchlistsInnerBuilder
         _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SettingsBundleWatchlistsInner', _$failedField, e.toString());
+          r'SettingsBundleWatchlistsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

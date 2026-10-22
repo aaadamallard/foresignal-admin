@@ -54,9 +54,9 @@ abstract class NotificationPreference
 
   NotificationPreference._();
 
-  factory NotificationPreference(
-          [void updates(NotificationPreferenceBuilder b)]) =
-      _$NotificationPreference;
+  factory NotificationPreference([
+    void updates(NotificationPreferenceBuilder b),
+  ]) = _$NotificationPreference;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(NotificationPreferenceBuilder b) => b;
@@ -71,7 +71,7 @@ class _$NotificationPreferenceSerializer
   @override
   final Iterable<Type> types = const [
     NotificationPreference,
-    _$NotificationPreference
+    _$NotificationPreference,
   ];
 
   @override
@@ -97,8 +97,9 @@ class _$NotificationPreferenceSerializer
     yield r'eventTypes';
     yield serializers.serialize(
       object.eventTypes,
-      specifiedType: const FullType(
-          BuiltList, [FullType(NotificationPreferenceEventTypesEnum)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(NotificationPreferenceEventTypesEnum),
+      ]),
     );
     yield r'channel';
     yield serializers.serialize(
@@ -139,9 +140,11 @@ class _$NotificationPreferenceSerializer
     NotificationPreference object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -157,63 +160,82 @@ class _$NotificationPreferenceSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'principalId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.principalId = valueDes;
           break;
         case r'eventTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(NotificationPreferenceEventTypesEnum)]),
-          ) as BuiltList<NotificationPreferenceEventTypesEnum>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(NotificationPreferenceEventTypesEnum),
+                    ]),
+                  )
+                  as BuiltList<NotificationPreferenceEventTypesEnum>;
           result.eventTypes.replace(valueDes);
           break;
         case r'channel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(NotificationPreferenceChannel),
-          ) as NotificationPreferenceChannel;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      NotificationPreferenceChannel,
+                    ),
+                  )
+                  as NotificationPreferenceChannel;
           result.channel.replace(valueDes);
           break;
         case r'quietHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(QuietHours),
-          ) as QuietHours?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(QuietHours),
+                  )
+                  as QuietHours?;
           if (valueDes == null) continue;
           result.quietHours.replace(valueDes);
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;

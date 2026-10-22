@@ -7,19 +7,20 @@ part of 'intel_event_stream_event.dart';
 // **************************************************************************
 
 const IntelEventStreamEventChangeEnum
-    _$intelEventStreamEventChangeEnum_created =
+_$intelEventStreamEventChangeEnum_created =
     const IntelEventStreamEventChangeEnum._('created');
 const IntelEventStreamEventChangeEnum
-    _$intelEventStreamEventChangeEnum_updated =
+_$intelEventStreamEventChangeEnum_updated =
     const IntelEventStreamEventChangeEnum._('updated');
 const IntelEventStreamEventChangeEnum
-    _$intelEventStreamEventChangeEnum_resolved =
+_$intelEventStreamEventChangeEnum_resolved =
     const IntelEventStreamEventChangeEnum._('resolved');
 const IntelEventStreamEventChangeEnum _$intelEventStreamEventChangeEnum_merged =
     const IntelEventStreamEventChangeEnum._('merged');
 
 IntelEventStreamEventChangeEnum _$intelEventStreamEventChangeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'created':
       return _$intelEventStreamEventChangeEnum_created;
@@ -35,16 +36,18 @@ IntelEventStreamEventChangeEnum _$intelEventStreamEventChangeEnumValueOf(
 }
 
 final BuiltSet<IntelEventStreamEventChangeEnum>
-    _$intelEventStreamEventChangeEnumValues = BuiltSet<
-        IntelEventStreamEventChangeEnum>(const <IntelEventStreamEventChangeEnum>[
-  _$intelEventStreamEventChangeEnum_created,
-  _$intelEventStreamEventChangeEnum_updated,
-  _$intelEventStreamEventChangeEnum_resolved,
-  _$intelEventStreamEventChangeEnum_merged,
-]);
+_$intelEventStreamEventChangeEnumValues =
+    BuiltSet<IntelEventStreamEventChangeEnum>(
+      const <IntelEventStreamEventChangeEnum>[
+        _$intelEventStreamEventChangeEnum_created,
+        _$intelEventStreamEventChangeEnum_updated,
+        _$intelEventStreamEventChangeEnum_resolved,
+        _$intelEventStreamEventChangeEnum_merged,
+      ],
+    );
 
 Serializer<IntelEventStreamEventChangeEnum>
-    _$intelEventStreamEventChangeEnumSerializer =
+_$intelEventStreamEventChangeEnumSerializer =
     _$IntelEventStreamEventChangeEnumSerializer();
 
 class _$IntelEventStreamEventChangeEnumSerializer
@@ -69,16 +72,19 @@ class _$IntelEventStreamEventChangeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IntelEventStreamEventChangeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelEventStreamEventChangeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventStreamEventChangeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventStreamEventChangeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventStreamEventChangeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventStreamEvent extends IntelEventStreamEvent {
@@ -93,21 +99,21 @@ class _$IntelEventStreamEvent extends IntelEventStreamEvent {
   @override
   final String? mergedInto;
 
-  factory _$IntelEventStreamEvent(
-          [void Function(IntelEventStreamEventBuilder)? updates]) =>
-      (IntelEventStreamEventBuilder()..update(updates))._build();
+  factory _$IntelEventStreamEvent([
+    void Function(IntelEventStreamEventBuilder)? updates,
+  ]) => (IntelEventStreamEventBuilder()..update(updates))._build();
 
-  _$IntelEventStreamEvent._(
-      {required this.eventId,
-      required this.change,
-      required this.version,
-      required this.summary,
-      this.mergedInto})
-      : super._();
+  _$IntelEventStreamEvent._({
+    required this.eventId,
+    required this.change,
+    required this.version,
+    required this.summary,
+    this.mergedInto,
+  }) : super._();
   @override
   IntelEventStreamEvent rebuild(
-          void Function(IntelEventStreamEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelEventStreamEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelEventStreamEventBuilder toBuilder() =>
@@ -207,14 +213,24 @@ class IntelEventStreamEventBuilder
   _$IntelEventStreamEvent _build() {
     _$IntelEventStreamEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventStreamEvent._(
             eventId: BuiltValueNullFieldError.checkNotNull(
-                eventId, r'IntelEventStreamEvent', 'eventId'),
+              eventId,
+              r'IntelEventStreamEvent',
+              'eventId',
+            ),
             change: BuiltValueNullFieldError.checkNotNull(
-                change, r'IntelEventStreamEvent', 'change'),
+              change,
+              r'IntelEventStreamEvent',
+              'change',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'IntelEventStreamEvent', 'version'),
+              version,
+              r'IntelEventStreamEvent',
+              'version',
+            ),
             summary: summary.build(),
             mergedInto: mergedInto,
           );
@@ -225,7 +241,10 @@ class IntelEventStreamEventBuilder
         summary.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventStreamEvent', _$failedField, e.toString());
+          r'IntelEventStreamEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

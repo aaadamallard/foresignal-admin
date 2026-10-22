@@ -9,17 +9,18 @@ part of 'chokepoint_uturn_payload.dart';
 const ChokepointUturnPayloadStatusEnum _$chokepointUturnPayloadStatusEnum_ok =
     const ChokepointUturnPayloadStatusEnum._('ok');
 const ChokepointUturnPayloadStatusEnum
-    _$chokepointUturnPayloadStatusEnum_insufficientData =
+_$chokepointUturnPayloadStatusEnum_insufficientData =
     const ChokepointUturnPayloadStatusEnum._('insufficientData');
 const ChokepointUturnPayloadStatusEnum
-    _$chokepointUturnPayloadStatusEnum_noCoverage =
+_$chokepointUturnPayloadStatusEnum_noCoverage =
     const ChokepointUturnPayloadStatusEnum._('noCoverage');
 const ChokepointUturnPayloadStatusEnum
-    _$chokepointUturnPayloadStatusEnum_degradedInput =
+_$chokepointUturnPayloadStatusEnum_degradedInput =
     const ChokepointUturnPayloadStatusEnum._('degradedInput');
 
 ChokepointUturnPayloadStatusEnum _$chokepointUturnPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$chokepointUturnPayloadStatusEnum_ok;
@@ -35,26 +36,28 @@ ChokepointUturnPayloadStatusEnum _$chokepointUturnPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<ChokepointUturnPayloadStatusEnum>
-    _$chokepointUturnPayloadStatusEnumValues = BuiltSet<
-        ChokepointUturnPayloadStatusEnum>(const <ChokepointUturnPayloadStatusEnum>[
-  _$chokepointUturnPayloadStatusEnum_ok,
-  _$chokepointUturnPayloadStatusEnum_insufficientData,
-  _$chokepointUturnPayloadStatusEnum_noCoverage,
-  _$chokepointUturnPayloadStatusEnum_degradedInput,
-]);
+_$chokepointUturnPayloadStatusEnumValues =
+    BuiltSet<ChokepointUturnPayloadStatusEnum>(
+      const <ChokepointUturnPayloadStatusEnum>[
+        _$chokepointUturnPayloadStatusEnum_ok,
+        _$chokepointUturnPayloadStatusEnum_insufficientData,
+        _$chokepointUturnPayloadStatusEnum_noCoverage,
+        _$chokepointUturnPayloadStatusEnum_degradedInput,
+      ],
+    );
 
 const ChokepointUturnPayloadManoeuvreEnum
-    _$chokepointUturnPayloadManoeuvreEnum_courseChange =
+_$chokepointUturnPayloadManoeuvreEnum_courseChange =
     const ChokepointUturnPayloadManoeuvreEnum._('courseChange');
 const ChokepointUturnPayloadManoeuvreEnum
-    _$chokepointUturnPayloadManoeuvreEnum_uTurn =
+_$chokepointUturnPayloadManoeuvreEnum_uTurn =
     const ChokepointUturnPayloadManoeuvreEnum._('uTurn');
 const ChokepointUturnPayloadManoeuvreEnum
-    _$chokepointUturnPayloadManoeuvreEnum_speedDrop =
+_$chokepointUturnPayloadManoeuvreEnum_speedDrop =
     const ChokepointUturnPayloadManoeuvreEnum._('speedDrop');
 
 ChokepointUturnPayloadManoeuvreEnum
-    _$chokepointUturnPayloadManoeuvreEnumValueOf(String name) {
+_$chokepointUturnPayloadManoeuvreEnumValueOf(String name) {
   switch (name) {
     case 'courseChange':
       return _$chokepointUturnPayloadManoeuvreEnum_courseChange;
@@ -68,18 +71,20 @@ ChokepointUturnPayloadManoeuvreEnum
 }
 
 final BuiltSet<ChokepointUturnPayloadManoeuvreEnum>
-    _$chokepointUturnPayloadManoeuvreEnumValues = BuiltSet<
-        ChokepointUturnPayloadManoeuvreEnum>(const <ChokepointUturnPayloadManoeuvreEnum>[
-  _$chokepointUturnPayloadManoeuvreEnum_courseChange,
-  _$chokepointUturnPayloadManoeuvreEnum_uTurn,
-  _$chokepointUturnPayloadManoeuvreEnum_speedDrop,
-]);
+_$chokepointUturnPayloadManoeuvreEnumValues =
+    BuiltSet<ChokepointUturnPayloadManoeuvreEnum>(
+      const <ChokepointUturnPayloadManoeuvreEnum>[
+        _$chokepointUturnPayloadManoeuvreEnum_courseChange,
+        _$chokepointUturnPayloadManoeuvreEnum_uTurn,
+        _$chokepointUturnPayloadManoeuvreEnum_speedDrop,
+      ],
+    );
 
 Serializer<ChokepointUturnPayloadStatusEnum>
-    _$chokepointUturnPayloadStatusEnumSerializer =
+_$chokepointUturnPayloadStatusEnumSerializer =
     _$ChokepointUturnPayloadStatusEnumSerializer();
 Serializer<ChokepointUturnPayloadManoeuvreEnum>
-    _$chokepointUturnPayloadManoeuvreEnumSerializer =
+_$chokepointUturnPayloadManoeuvreEnumSerializer =
     _$ChokepointUturnPayloadManoeuvreEnumSerializer();
 
 class _$ChokepointUturnPayloadStatusEnumSerializer
@@ -104,16 +109,19 @@ class _$ChokepointUturnPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ChokepointUturnPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChokepointUturnPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChokepointUturnPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChokepointUturnPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChokepointUturnPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChokepointUturnPayloadManoeuvreEnumSerializer
@@ -131,23 +139,26 @@ class _$ChokepointUturnPayloadManoeuvreEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ChokepointUturnPayloadManoeuvreEnum
+    ChokepointUturnPayloadManoeuvreEnum,
   ];
   @override
   final String wireName = 'ChokepointUturnPayloadManoeuvreEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ChokepointUturnPayloadManoeuvreEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ChokepointUturnPayloadManoeuvreEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChokepointUturnPayloadManoeuvreEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChokepointUturnPayloadManoeuvreEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChokepointUturnPayloadManoeuvreEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChokepointUturnPayload extends ChokepointUturnPayload {
@@ -176,28 +187,28 @@ class _$ChokepointUturnPayload extends ChokepointUturnPayload {
   @override
   final num? speedDropPct;
 
-  factory _$ChokepointUturnPayload(
-          [void Function(ChokepointUturnPayloadBuilder)? updates]) =>
-      (ChokepointUturnPayloadBuilder()..update(updates))._build();
+  factory _$ChokepointUturnPayload([
+    void Function(ChokepointUturnPayloadBuilder)? updates,
+  ]) => (ChokepointUturnPayloadBuilder()..update(updates))._build();
 
-  _$ChokepointUturnPayload._(
-      {required this.automated,
-      required this.notAWarning,
-      required this.detector,
-      this.confidence,
-      required this.status,
-      this.evidence,
-      required this.mmsi,
-      required this.chokepointId,
-      required this.at,
-      required this.manoeuvre,
-      this.courseChangeDeg,
-      this.speedDropPct})
-      : super._();
+  _$ChokepointUturnPayload._({
+    required this.automated,
+    required this.notAWarning,
+    required this.detector,
+    this.confidence,
+    required this.status,
+    this.evidence,
+    required this.mmsi,
+    required this.chokepointId,
+    required this.at,
+    required this.manoeuvre,
+    this.courseChangeDeg,
+    this.speedDropPct,
+  }) : super._();
   @override
   ChokepointUturnPayload rebuild(
-          void Function(ChokepointUturnPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChokepointUturnPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChokepointUturnPayloadBuilder toBuilder() =>
@@ -358,25 +369,47 @@ class ChokepointUturnPayloadBuilder
   _$ChokepointUturnPayload _build() {
     _$ChokepointUturnPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChokepointUturnPayload._(
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'ChokepointUturnPayload', 'automated'),
+              automated,
+              r'ChokepointUturnPayload',
+              'automated',
+            ),
             notAWarning: BuiltValueNullFieldError.checkNotNull(
-                notAWarning, r'ChokepointUturnPayload', 'notAWarning'),
+              notAWarning,
+              r'ChokepointUturnPayload',
+              'notAWarning',
+            ),
             detector: detector.build(),
             confidence: confidence,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ChokepointUturnPayload', 'status'),
+              status,
+              r'ChokepointUturnPayload',
+              'status',
+            ),
             evidence: _evidence?.build(),
             mmsi: BuiltValueNullFieldError.checkNotNull(
-                mmsi, r'ChokepointUturnPayload', 'mmsi'),
+              mmsi,
+              r'ChokepointUturnPayload',
+              'mmsi',
+            ),
             chokepointId: BuiltValueNullFieldError.checkNotNull(
-                chokepointId, r'ChokepointUturnPayload', 'chokepointId'),
+              chokepointId,
+              r'ChokepointUturnPayload',
+              'chokepointId',
+            ),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ChokepointUturnPayload', 'at'),
+              at,
+              r'ChokepointUturnPayload',
+              'at',
+            ),
             manoeuvre: BuiltValueNullFieldError.checkNotNull(
-                manoeuvre, r'ChokepointUturnPayload', 'manoeuvre'),
+              manoeuvre,
+              r'ChokepointUturnPayload',
+              'manoeuvre',
+            ),
             courseChangeDeg: courseChangeDeg,
             speedDropPct: speedDropPct,
           );
@@ -390,7 +423,10 @@ class ChokepointUturnPayloadBuilder
         _evidence?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChokepointUturnPayload', _$failedField, e.toString());
+          r'ChokepointUturnPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

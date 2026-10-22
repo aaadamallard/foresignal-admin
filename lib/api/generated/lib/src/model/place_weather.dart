@@ -214,9 +214,11 @@ class _$PlaceWeatherSerializer implements PrimitiveSerializer<PlaceWeather> {
     PlaceWeather object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -232,118 +234,149 @@ class _$PlaceWeatherSerializer implements PrimitiveSerializer<PlaceWeather> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'place':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.place = valueDes;
           break;
         case r'radiusKm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.radiusKm = valueDes;
           break;
         case r'radar':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherRadar),
-          ) as PlaceWeatherRadar?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherRadar),
+                  )
+                  as PlaceWeatherRadar?;
           if (valueDes == null) continue;
           result.radar.replace(valueDes);
           break;
         case r'hail':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherHail),
-          ) as PlaceWeatherHail?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherHail),
+                  )
+                  as PlaceWeatherHail?;
           if (valueDes == null) continue;
           result.hail.replace(valueDes);
           break;
         case r'precip':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherPrecip),
-          ) as PlaceWeatherPrecip?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherPrecip),
+                  )
+                  as PlaceWeatherPrecip?;
           if (valueDes == null) continue;
           result.precip.replace(valueDes);
           break;
         case r'lightning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherLightning),
-          ) as PlaceWeatherLightning?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherLightning,
+                    ),
+                  )
+                  as PlaceWeatherLightning?;
           if (valueDes == null) continue;
           result.lightning.replace(valueDes);
           break;
         case r'cell':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherCell),
-          ) as PlaceWeatherCell?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherCell),
+                  )
+                  as PlaceWeatherCell?;
           if (valueDes == null) continue;
           result.cell.replace(valueDes);
           break;
         case r'smoke':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherSmoke),
-          ) as PlaceWeatherSmoke?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherSmoke),
+                  )
+                  as PlaceWeatherSmoke?;
           if (valueDes == null) continue;
           result.smoke.replace(valueDes);
           break;
         case r'forecast':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherForecast),
-          ) as PlaceWeatherForecast?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      PlaceWeatherForecast,
+                    ),
+                  )
+                  as PlaceWeatherForecast?;
           if (valueDes == null) continue;
           result.forecast.replace(valueDes);
           break;
         case r'automated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.automated = valueDes;
           break;
         case r'notAWarning':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.notAWarning = valueDes;
           break;
         case r'marine':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherMarine),
-          ) as PlaceWeatherMarine?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherMarine),
+                  )
+                  as PlaceWeatherMarine?;
           if (valueDes == null) continue;
           result.marine.replace(valueDes);
           break;
         case r'aurora':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherAurora),
-          ) as PlaceWeatherAurora?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherAurora),
+                  )
+                  as PlaceWeatherAurora?;
           if (valueDes == null) continue;
           result.aurora.replace(valueDes);
           break;
         case r'heat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherHeat),
-          ) as PlaceWeatherHeat?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherHeat),
+                  )
+                  as PlaceWeatherHeat?;
           if (valueDes == null) continue;
           result.heat.replace(valueDes);
           break;
         case r'uv':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(PlaceWeatherUv),
-          ) as PlaceWeatherUv?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(PlaceWeatherUv),
+                  )
+                  as PlaceWeatherUv?;
           if (valueDes == null) continue;
           result.uv.replace(valueDes);
           break;

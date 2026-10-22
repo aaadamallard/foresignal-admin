@@ -14,15 +14,15 @@ class _$SituationEvidence extends SituationEvidence {
   @override
   final SituationEvidenceCorroboration corroboration;
 
-  factory _$SituationEvidence(
-          [void Function(SituationEvidenceBuilder)? updates]) =>
-      (SituationEvidenceBuilder()..update(updates))._build();
+  factory _$SituationEvidence([
+    void Function(SituationEvidenceBuilder)? updates,
+  ]) => (SituationEvidenceBuilder()..update(updates))._build();
 
-  _$SituationEvidence._(
-      {required this.memberCounts,
-      required this.families,
-      required this.corroboration})
-      : super._();
+  _$SituationEvidence._({
+    required this.memberCounts,
+    required this.families,
+    required this.corroboration,
+  }) : super._();
   @override
   SituationEvidence rebuild(void Function(SituationEvidenceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -113,7 +113,8 @@ class SituationEvidenceBuilder
   _$SituationEvidence _build() {
     _$SituationEvidence _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationEvidence._(
             memberCounts: memberCounts.build(),
             families: families.build(),
@@ -130,7 +131,10 @@ class SituationEvidenceBuilder
         corroboration.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationEvidence', _$failedField, e.toString());
+          r'SituationEvidence',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

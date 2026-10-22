@@ -92,26 +92,26 @@ ChannelInputTypeEnum _$channelInputTypeEnumValueOf(String name) {
 
 final BuiltSet<ChannelInputTypeEnum> _$channelInputTypeEnumValues =
     BuiltSet<ChannelInputTypeEnum>(const <ChannelInputTypeEnum>[
-  _$channelInputTypeEnum_webhook,
-  _$channelInputTypeEnum_slack,
-  _$channelInputTypeEnum_mattermost,
-  _$channelInputTypeEnum_discord,
-  _$channelInputTypeEnum_teams,
-  _$channelInputTypeEnum_googleChat,
-  _$channelInputTypeEnum_telegram,
-  _$channelInputTypeEnum_matrix,
-  _$channelInputTypeEnum_ntfy,
-  _$channelInputTypeEnum_gotify,
-  _$channelInputTypeEnum_pushover,
-  _$channelInputTypeEnum_email,
-  _$channelInputTypeEnum_webpush,
-  _$channelInputTypeEnum_homeassistant,
-  _$channelInputTypeEnum_apprise,
-  _$channelInputTypeEnum_zulip,
-  _$channelInputTypeEnum_mqtt,
-  _$channelInputTypeEnum_meshtastic,
-  _$channelInputTypeEnum_meshcore,
-]);
+      _$channelInputTypeEnum_webhook,
+      _$channelInputTypeEnum_slack,
+      _$channelInputTypeEnum_mattermost,
+      _$channelInputTypeEnum_discord,
+      _$channelInputTypeEnum_teams,
+      _$channelInputTypeEnum_googleChat,
+      _$channelInputTypeEnum_telegram,
+      _$channelInputTypeEnum_matrix,
+      _$channelInputTypeEnum_ntfy,
+      _$channelInputTypeEnum_gotify,
+      _$channelInputTypeEnum_pushover,
+      _$channelInputTypeEnum_email,
+      _$channelInputTypeEnum_webpush,
+      _$channelInputTypeEnum_homeassistant,
+      _$channelInputTypeEnum_apprise,
+      _$channelInputTypeEnum_zulip,
+      _$channelInputTypeEnum_mqtt,
+      _$channelInputTypeEnum_meshtastic,
+      _$channelInputTypeEnum_meshcore,
+    ]);
 
 const ChannelInputEventsEnum _$channelInputEventsEnum_alert =
     const ChannelInputEventsEnum._('alert');
@@ -122,7 +122,7 @@ const ChannelInputEventsEnum _$channelInputEventsEnum_system =
 const ChannelInputEventsEnum _$channelInputEventsEnum_chroniclePeriodProposed =
     const ChannelInputEventsEnum._('chroniclePeriodProposed');
 const ChannelInputEventsEnum
-    _$channelInputEventsEnum_chroniclePeriodCapWarning =
+_$channelInputEventsEnum_chroniclePeriodCapWarning =
     const ChannelInputEventsEnum._('chroniclePeriodCapWarning');
 const ChannelInputEventsEnum _$channelInputEventsEnum_chroniclePeriodGap =
     const ChannelInputEventsEnum._('chroniclePeriodGap');
@@ -141,17 +141,17 @@ const ChannelInputEventsEnum _$channelInputEventsEnum_findingPeriodSignificant =
 const ChannelInputEventsEnum _$channelInputEventsEnum_forecastPeriodResolved =
     const ChannelInputEventsEnum._('forecastPeriodResolved');
 const ChannelInputEventsEnum
-    _$channelInputEventsEnum_forecastPeriodResolutionNeeded =
+_$channelInputEventsEnum_forecastPeriodResolutionNeeded =
     const ChannelInputEventsEnum._('forecastPeriodResolutionNeeded');
 const ChannelInputEventsEnum
-    _$channelInputEventsEnum_hypothesisPeriodBandChanged =
+_$channelInputEventsEnum_hypothesisPeriodBandChanged =
     const ChannelInputEventsEnum._('hypothesisPeriodBandChanged');
 const ChannelInputEventsEnum _$channelInputEventsEnum_indicatorPeriodObserved =
     const ChannelInputEventsEnum._('indicatorPeriodObserved');
 const ChannelInputEventsEnum _$channelInputEventsEnum_assumptionPeriodBroken =
     const ChannelInputEventsEnum._('assumptionPeriodBroken');
 const ChannelInputEventsEnum
-    _$channelInputEventsEnum_assessmentPeriodPublished =
+_$channelInputEventsEnum_assessmentPeriodPublished =
     const ChannelInputEventsEnum._('assessmentPeriodPublished');
 const ChannelInputEventsEnum _$channelInputEventsEnum_mention =
     const ChannelInputEventsEnum._('mention');
@@ -162,7 +162,7 @@ const ChannelInputEventsEnum _$channelInputEventsEnum_reportPeriodReceived =
 const ChannelInputEventsEnum _$channelInputEventsEnum_packagePeriodReceived =
     const ChannelInputEventsEnum._('packagePeriodReceived');
 const ChannelInputEventsEnum
-    _$channelInputEventsEnum_chroniclePeriodAccessPeriodRequested =
+_$channelInputEventsEnum_chroniclePeriodAccessPeriodRequested =
     const ChannelInputEventsEnum._('chroniclePeriodAccessPeriodRequested');
 const ChannelInputEventsEnum _$channelInputEventsEnum_savedSearchPeriodMatches =
     const ChannelInputEventsEnum._('savedSearchPeriodMatches');
@@ -224,31 +224,31 @@ ChannelInputEventsEnum _$channelInputEventsEnumValueOf(String name) {
 
 final BuiltSet<ChannelInputEventsEnum> _$channelInputEventsEnumValues =
     BuiltSet<ChannelInputEventsEnum>(const <ChannelInputEventsEnum>[
-  _$channelInputEventsEnum_alert,
-  _$channelInputEventsEnum_briefing,
-  _$channelInputEventsEnum_system,
-  _$channelInputEventsEnum_chroniclePeriodProposed,
-  _$channelInputEventsEnum_chroniclePeriodCapWarning,
-  _$channelInputEventsEnum_chroniclePeriodGap,
-  _$channelInputEventsEnum_socialPeriodDivergence,
-  _$channelInputEventsEnum_socialPeriodAttentionGap,
-  _$channelInputEventsEnum_analystPeriodNote,
-  _$channelInputEventsEnum_situationPeriodActivated,
-  _$channelInputEventsEnum_situationPeriodEscalated,
-  _$channelInputEventsEnum_findingPeriodSignificant,
-  _$channelInputEventsEnum_forecastPeriodResolved,
-  _$channelInputEventsEnum_forecastPeriodResolutionNeeded,
-  _$channelInputEventsEnum_hypothesisPeriodBandChanged,
-  _$channelInputEventsEnum_indicatorPeriodObserved,
-  _$channelInputEventsEnum_assumptionPeriodBroken,
-  _$channelInputEventsEnum_assessmentPeriodPublished,
-  _$channelInputEventsEnum_mention,
-  _$channelInputEventsEnum_share,
-  _$channelInputEventsEnum_reportPeriodReceived,
-  _$channelInputEventsEnum_packagePeriodReceived,
-  _$channelInputEventsEnum_chroniclePeriodAccessPeriodRequested,
-  _$channelInputEventsEnum_savedSearchPeriodMatches,
-]);
+      _$channelInputEventsEnum_alert,
+      _$channelInputEventsEnum_briefing,
+      _$channelInputEventsEnum_system,
+      _$channelInputEventsEnum_chroniclePeriodProposed,
+      _$channelInputEventsEnum_chroniclePeriodCapWarning,
+      _$channelInputEventsEnum_chroniclePeriodGap,
+      _$channelInputEventsEnum_socialPeriodDivergence,
+      _$channelInputEventsEnum_socialPeriodAttentionGap,
+      _$channelInputEventsEnum_analystPeriodNote,
+      _$channelInputEventsEnum_situationPeriodActivated,
+      _$channelInputEventsEnum_situationPeriodEscalated,
+      _$channelInputEventsEnum_findingPeriodSignificant,
+      _$channelInputEventsEnum_forecastPeriodResolved,
+      _$channelInputEventsEnum_forecastPeriodResolutionNeeded,
+      _$channelInputEventsEnum_hypothesisPeriodBandChanged,
+      _$channelInputEventsEnum_indicatorPeriodObserved,
+      _$channelInputEventsEnum_assumptionPeriodBroken,
+      _$channelInputEventsEnum_assessmentPeriodPublished,
+      _$channelInputEventsEnum_mention,
+      _$channelInputEventsEnum_share,
+      _$channelInputEventsEnum_reportPeriodReceived,
+      _$channelInputEventsEnum_packagePeriodReceived,
+      _$channelInputEventsEnum_chroniclePeriodAccessPeriodRequested,
+      _$channelInputEventsEnum_savedSearchPeriodMatches,
+    ]);
 
 const ChannelInputMinSeverityEnum _$channelInputMinSeverityEnum_info =
     const ChannelInputMinSeverityEnum._('info');
@@ -271,19 +271,19 @@ ChannelInputMinSeverityEnum _$channelInputMinSeverityEnumValueOf(String name) {
 }
 
 final BuiltSet<ChannelInputMinSeverityEnum>
-    _$channelInputMinSeverityEnumValues =
+_$channelInputMinSeverityEnumValues =
     BuiltSet<ChannelInputMinSeverityEnum>(const <ChannelInputMinSeverityEnum>[
-  _$channelInputMinSeverityEnum_info,
-  _$channelInputMinSeverityEnum_warning,
-  _$channelInputMinSeverityEnum_critical,
-]);
+      _$channelInputMinSeverityEnum_info,
+      _$channelInputMinSeverityEnum_warning,
+      _$channelInputMinSeverityEnum_critical,
+    ]);
 
 Serializer<ChannelInputTypeEnum> _$channelInputTypeEnumSerializer =
     _$ChannelInputTypeEnumSerializer();
 Serializer<ChannelInputEventsEnum> _$channelInputEventsEnumSerializer =
     _$ChannelInputEventsEnumSerializer();
 Serializer<ChannelInputMinSeverityEnum>
-    _$channelInputMinSeverityEnumSerializer =
+_$channelInputMinSeverityEnumSerializer =
     _$ChannelInputMinSeverityEnumSerializer();
 
 class _$ChannelInputTypeEnumSerializer
@@ -337,15 +337,20 @@ class _$ChannelInputTypeEnumSerializer
   final String wireName = 'ChannelInputTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ChannelInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChannelInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ChannelInputTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChannelInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ChannelInputTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChannelInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChannelInputEventsEnumSerializer
@@ -409,15 +414,20 @@ class _$ChannelInputEventsEnumSerializer
   final String wireName = 'ChannelInputEventsEnum';
 
   @override
-  Object serialize(Serializers serializers, ChannelInputEventsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChannelInputEventsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ChannelInputEventsEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChannelInputEventsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ChannelInputEventsEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChannelInputEventsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChannelInputMinSeverityEnumSerializer
@@ -439,16 +449,20 @@ class _$ChannelInputMinSeverityEnumSerializer
   final String wireName = 'ChannelInputMinSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, ChannelInputMinSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChannelInputMinSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ChannelInputMinSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChannelInputMinSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChannelInputMinSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChannelInput extends ChannelInput {
@@ -494,27 +508,27 @@ class _$ChannelInput extends ChannelInput {
   factory _$ChannelInput([void Function(ChannelInputBuilder)? updates]) =>
       (ChannelInputBuilder()..update(updates))._build();
 
-  _$ChannelInput._(
-      {required this.name,
-      required this.type,
-      this.config,
-      this.secrets,
-      this.events,
-      this.ruleIds,
-      this.minSeverity,
-      this.titleTemplate,
-      this.bodyTemplate,
-      this.waitForEnrichmentSeconds,
-      this.enabled,
-      this.timezone,
-      this.quietHours,
-      this.groupWindowSeconds,
-      this.backlogCap,
-      this.editInPlace,
-      this.deferWhileActiveSeconds,
-      this.acceptExercise,
-      this.language})
-      : super._();
+  _$ChannelInput._({
+    required this.name,
+    required this.type,
+    this.config,
+    this.secrets,
+    this.events,
+    this.ruleIds,
+    this.minSeverity,
+    this.titleTemplate,
+    this.bodyTemplate,
+    this.waitForEnrichmentSeconds,
+    this.enabled,
+    this.timezone,
+    this.quietHours,
+    this.groupWindowSeconds,
+    this.backlogCap,
+    this.editInPlace,
+    this.deferWhileActiveSeconds,
+    this.acceptExercise,
+    this.language,
+  }) : super._();
   @override
   ChannelInput rebuild(void Function(ChannelInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -739,12 +753,19 @@ class ChannelInputBuilder
   _$ChannelInput _build() {
     _$ChannelInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChannelInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ChannelInput', 'name'),
+              name,
+              r'ChannelInput',
+              'name',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'ChannelInput', 'type'),
+              type,
+              r'ChannelInput',
+              'type',
+            ),
             config: _config?.build(),
             secrets: _secrets?.build(),
             events: _events?.build(),
@@ -779,7 +800,10 @@ class ChannelInputBuilder
         _quietHours?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChannelInput', _$failedField, e.toString());
+          r'ChannelInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

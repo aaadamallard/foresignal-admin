@@ -17,9 +17,11 @@ class _$MotionSpec extends MotionSpec {
   factory _$MotionSpec([void Function(MotionSpecBuilder)? updates]) =>
       (MotionSpecBuilder()..update(updates))._build();
 
-  _$MotionSpec._(
-      {required this.speedField, required this.speedUnit, this.courseField})
-      : super._();
+  _$MotionSpec._({
+    required this.speedField,
+    required this.speedUnit,
+    this.courseField,
+  }) : super._();
   @override
   MotionSpec rebuild(void Function(MotionSpecBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -100,12 +102,19 @@ class MotionSpecBuilder implements Builder<MotionSpec, MotionSpecBuilder> {
   MotionSpec build() => _build();
 
   _$MotionSpec _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$MotionSpec._(
           speedField: BuiltValueNullFieldError.checkNotNull(
-              speedField, r'MotionSpec', 'speedField'),
+            speedField,
+            r'MotionSpec',
+            'speedField',
+          ),
           speedUnit: BuiltValueNullFieldError.checkNotNull(
-              speedUnit, r'MotionSpec', 'speedUnit'),
+            speedUnit,
+            r'MotionSpec',
+            'speedUnit',
+          ),
           courseField: courseField,
         );
     replace(_$result);

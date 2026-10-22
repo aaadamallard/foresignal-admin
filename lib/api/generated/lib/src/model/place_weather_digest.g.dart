@@ -20,22 +20,22 @@ class _$PlaceWeatherDigest extends PlaceWeatherDigest {
   @override
   final PlaceWeatherDigestNext? next;
 
-  factory _$PlaceWeatherDigest(
-          [void Function(PlaceWeatherDigestBuilder)? updates]) =>
-      (PlaceWeatherDigestBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigest([
+    void Function(PlaceWeatherDigestBuilder)? updates,
+  ]) => (PlaceWeatherDigestBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigest._(
-      {required this.placeId,
-      required this.place,
-      required this.timezone,
-      this.now,
-      this.period,
-      this.next})
-      : super._();
+  _$PlaceWeatherDigest._({
+    required this.placeId,
+    required this.place,
+    required this.timezone,
+    this.now,
+    this.period,
+    this.next,
+  }) : super._();
   @override
   PlaceWeatherDigest rebuild(
-          void Function(PlaceWeatherDigestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestBuilder toBuilder() =>
@@ -145,14 +145,24 @@ class PlaceWeatherDigestBuilder
   _$PlaceWeatherDigest _build() {
     _$PlaceWeatherDigest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PlaceWeatherDigest._(
             placeId: BuiltValueNullFieldError.checkNotNull(
-                placeId, r'PlaceWeatherDigest', 'placeId'),
+              placeId,
+              r'PlaceWeatherDigest',
+              'placeId',
+            ),
             place: BuiltValueNullFieldError.checkNotNull(
-                place, r'PlaceWeatherDigest', 'place'),
+              place,
+              r'PlaceWeatherDigest',
+              'place',
+            ),
             timezone: BuiltValueNullFieldError.checkNotNull(
-                timezone, r'PlaceWeatherDigest', 'timezone'),
+              timezone,
+              r'PlaceWeatherDigest',
+              'timezone',
+            ),
             now: _now?.build(),
             period: _period?.build(),
             next: _next?.build(),
@@ -168,7 +178,10 @@ class PlaceWeatherDigestBuilder
         _next?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PlaceWeatherDigest', _$failedField, e.toString());
+          r'PlaceWeatherDigest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

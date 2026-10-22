@@ -11,7 +11,7 @@ const AnalystProposalTypeEnum _$analystProposalTypeEnum_proposeWatch =
 const AnalystProposalTypeEnum _$analystProposalTypeEnum_proposeIntelEvent =
     const AnalystProposalTypeEnum._('proposeIntelEvent');
 const AnalystProposalTypeEnum
-    _$analystProposalTypeEnum_proposeInvestigationItem =
+_$analystProposalTypeEnum_proposeInvestigationItem =
     const AnalystProposalTypeEnum._('proposeInvestigationItem');
 const AnalystProposalTypeEnum _$analystProposalTypeEnum_annotateEvent =
     const AnalystProposalTypeEnum._('annotateEvent');
@@ -53,16 +53,16 @@ AnalystProposalTypeEnum _$analystProposalTypeEnumValueOf(String name) {
 
 final BuiltSet<AnalystProposalTypeEnum> _$analystProposalTypeEnumValues =
     BuiltSet<AnalystProposalTypeEnum>(const <AnalystProposalTypeEnum>[
-  _$analystProposalTypeEnum_proposeWatch,
-  _$analystProposalTypeEnum_proposeIntelEvent,
-  _$analystProposalTypeEnum_proposeInvestigationItem,
-  _$analystProposalTypeEnum_annotateEvent,
-  _$analystProposalTypeEnum_proposeChronicle,
-  _$analystProposalTypeEnum_proposeHypothesisSet,
-  _$analystProposalTypeEnum_proposeIndicator,
-  _$analystProposalTypeEnum_proposeQuestion,
-  _$analystProposalTypeEnum_proposeSituationMerge,
-]);
+      _$analystProposalTypeEnum_proposeWatch,
+      _$analystProposalTypeEnum_proposeIntelEvent,
+      _$analystProposalTypeEnum_proposeInvestigationItem,
+      _$analystProposalTypeEnum_annotateEvent,
+      _$analystProposalTypeEnum_proposeChronicle,
+      _$analystProposalTypeEnum_proposeHypothesisSet,
+      _$analystProposalTypeEnum_proposeIndicator,
+      _$analystProposalTypeEnum_proposeQuestion,
+      _$analystProposalTypeEnum_proposeSituationMerge,
+    ]);
 
 const AnalystProposalStatusEnum _$analystProposalStatusEnum_pending =
     const AnalystProposalStatusEnum._('pending');
@@ -94,12 +94,12 @@ AnalystProposalStatusEnum _$analystProposalStatusEnumValueOf(String name) {
 
 final BuiltSet<AnalystProposalStatusEnum> _$analystProposalStatusEnumValues =
     BuiltSet<AnalystProposalStatusEnum>(const <AnalystProposalStatusEnum>[
-  _$analystProposalStatusEnum_pending,
-  _$analystProposalStatusEnum_executed,
-  _$analystProposalStatusEnum_rejected,
-  _$analystProposalStatusEnum_expired,
-  _$analystProposalStatusEnum_failed,
-]);
+      _$analystProposalStatusEnum_pending,
+      _$analystProposalStatusEnum_executed,
+      _$analystProposalStatusEnum_rejected,
+      _$analystProposalStatusEnum_expired,
+      _$analystProposalStatusEnum_failed,
+    ]);
 
 Serializer<AnalystProposalTypeEnum> _$analystProposalTypeEnumSerializer =
     _$AnalystProposalTypeEnumSerializer();
@@ -137,16 +137,20 @@ class _$AnalystProposalTypeEnumSerializer
   final String wireName = 'AnalystProposalTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystProposalTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystProposalTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystProposalTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystProposalTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystProposalTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystProposalStatusEnumSerializer
@@ -172,16 +176,20 @@ class _$AnalystProposalStatusEnumSerializer
   final String wireName = 'AnalystProposalStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, AnalystProposalStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnalystProposalStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnalystProposalStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnalystProposalStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnalystProposalStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnalystProposal extends AnalystProposal {
@@ -221,24 +229,24 @@ class _$AnalystProposal extends AnalystProposal {
   factory _$AnalystProposal([void Function(AnalystProposalBuilder)? updates]) =>
       (AnalystProposalBuilder()..update(updates))._build();
 
-  _$AnalystProposal._(
-      {required this.id,
-      required this.runId,
-      required this.profileId,
-      required this.type,
-      required this.payload,
-      this.rationale,
-      this.citations,
-      required this.status,
-      this.autoExecuted,
-      this.executedRef,
-      this.decidedBy,
-      this.decidedAt,
-      this.reason,
-      required this.createdAt,
-      required this.expiresAt,
-      this.chronicleDraft})
-      : super._();
+  _$AnalystProposal._({
+    required this.id,
+    required this.runId,
+    required this.profileId,
+    required this.type,
+    required this.payload,
+    this.rationale,
+    this.citations,
+    required this.status,
+    this.autoExecuted,
+    this.executedRef,
+    this.decidedBy,
+    this.decidedAt,
+    this.reason,
+    required this.createdAt,
+    required this.expiresAt,
+    this.chronicleDraft,
+  }) : super._();
   @override
   AnalystProposal rebuild(void Function(AnalystProposalBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -432,30 +440,52 @@ class AnalystProposalBuilder
   _$AnalystProposal _build() {
     _$AnalystProposal _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnalystProposal._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'AnalystProposal', 'id'),
+              id,
+              r'AnalystProposal',
+              'id',
+            ),
             runId: BuiltValueNullFieldError.checkNotNull(
-                runId, r'AnalystProposal', 'runId'),
+              runId,
+              r'AnalystProposal',
+              'runId',
+            ),
             profileId: BuiltValueNullFieldError.checkNotNull(
-                profileId, r'AnalystProposal', 'profileId'),
+              profileId,
+              r'AnalystProposal',
+              'profileId',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'AnalystProposal', 'type'),
+              type,
+              r'AnalystProposal',
+              'type',
+            ),
             payload: payload.build(),
             rationale: rationale,
             citations: _citations?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'AnalystProposal', 'status'),
+              status,
+              r'AnalystProposal',
+              'status',
+            ),
             autoExecuted: autoExecuted,
             executedRef: executedRef,
             decidedBy: decidedBy,
             decidedAt: decidedAt,
             reason: reason,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'AnalystProposal', 'createdAt'),
+              createdAt,
+              r'AnalystProposal',
+              'createdAt',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'AnalystProposal', 'expiresAt'),
+              expiresAt,
+              r'AnalystProposal',
+              'expiresAt',
+            ),
             chronicleDraft: _chronicleDraft?.build(),
           );
     } catch (_) {
@@ -471,7 +501,10 @@ class AnalystProposalBuilder
         _chronicleDraft?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnalystProposal', _$failedField, e.toString());
+          r'AnalystProposal',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

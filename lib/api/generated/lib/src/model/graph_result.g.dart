@@ -21,13 +21,13 @@ class _$GraphResult extends GraphResult {
   factory _$GraphResult([void Function(GraphResultBuilder)? updates]) =>
       (GraphResultBuilder()..update(updates))._build();
 
-  _$GraphResult._(
-      {required this.nodes,
-      required this.edges,
-      this.missing,
-      this.truncated,
-      this.asOf})
-      : super._();
+  _$GraphResult._({
+    required this.nodes,
+    required this.edges,
+    this.missing,
+    this.truncated,
+    this.asOf,
+  }) : super._();
   @override
   GraphResult rebuild(void Function(GraphResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -127,7 +127,8 @@ class GraphResultBuilder implements Builder<GraphResult, GraphResultBuilder> {
   _$GraphResult _build() {
     _$GraphResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$GraphResult._(
             nodes: nodes.build(),
             edges: edges.build(),
@@ -146,7 +147,10 @@ class GraphResultBuilder implements Builder<GraphResult, GraphResultBuilder> {
         _missing?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'GraphResult', _$failedField, e.toString());
+          r'GraphResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

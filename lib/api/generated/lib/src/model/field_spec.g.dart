@@ -6,20 +6,26 @@ part of 'field_spec.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const FieldSpecTypeEnum _$fieldSpecTypeEnum_STRING =
-    const FieldSpecTypeEnum._('STRING');
-const FieldSpecTypeEnum _$fieldSpecTypeEnum_INTEGER =
-    const FieldSpecTypeEnum._('INTEGER');
-const FieldSpecTypeEnum _$fieldSpecTypeEnum_NUMBER =
-    const FieldSpecTypeEnum._('NUMBER');
-const FieldSpecTypeEnum _$fieldSpecTypeEnum_BOOLEAN =
-    const FieldSpecTypeEnum._('BOOLEAN');
+const FieldSpecTypeEnum _$fieldSpecTypeEnum_STRING = const FieldSpecTypeEnum._(
+  'STRING',
+);
+const FieldSpecTypeEnum _$fieldSpecTypeEnum_INTEGER = const FieldSpecTypeEnum._(
+  'INTEGER',
+);
+const FieldSpecTypeEnum _$fieldSpecTypeEnum_NUMBER = const FieldSpecTypeEnum._(
+  'NUMBER',
+);
+const FieldSpecTypeEnum _$fieldSpecTypeEnum_BOOLEAN = const FieldSpecTypeEnum._(
+  'BOOLEAN',
+);
 const FieldSpecTypeEnum _$fieldSpecTypeEnum_TIMESTAMP =
     const FieldSpecTypeEnum._('TIMESTAMP');
-const FieldSpecTypeEnum _$fieldSpecTypeEnum_OBJECT =
-    const FieldSpecTypeEnum._('OBJECT');
-const FieldSpecTypeEnum _$fieldSpecTypeEnum_ARRAY =
-    const FieldSpecTypeEnum._('ARRAY');
+const FieldSpecTypeEnum _$fieldSpecTypeEnum_OBJECT = const FieldSpecTypeEnum._(
+  'OBJECT',
+);
+const FieldSpecTypeEnum _$fieldSpecTypeEnum_ARRAY = const FieldSpecTypeEnum._(
+  'ARRAY',
+);
 
 FieldSpecTypeEnum _$fieldSpecTypeEnumValueOf(String name) {
   switch (name) {
@@ -44,14 +50,14 @@ FieldSpecTypeEnum _$fieldSpecTypeEnumValueOf(String name) {
 
 final BuiltSet<FieldSpecTypeEnum> _$fieldSpecTypeEnumValues =
     BuiltSet<FieldSpecTypeEnum>(const <FieldSpecTypeEnum>[
-  _$fieldSpecTypeEnum_STRING,
-  _$fieldSpecTypeEnum_INTEGER,
-  _$fieldSpecTypeEnum_NUMBER,
-  _$fieldSpecTypeEnum_BOOLEAN,
-  _$fieldSpecTypeEnum_TIMESTAMP,
-  _$fieldSpecTypeEnum_OBJECT,
-  _$fieldSpecTypeEnum_ARRAY,
-]);
+      _$fieldSpecTypeEnum_STRING,
+      _$fieldSpecTypeEnum_INTEGER,
+      _$fieldSpecTypeEnum_NUMBER,
+      _$fieldSpecTypeEnum_BOOLEAN,
+      _$fieldSpecTypeEnum_TIMESTAMP,
+      _$fieldSpecTypeEnum_OBJECT,
+      _$fieldSpecTypeEnum_ARRAY,
+    ]);
 
 Serializer<FieldSpecTypeEnum> _$fieldSpecTypeEnumSerializer =
     _$FieldSpecTypeEnumSerializer();
@@ -83,15 +89,20 @@ class _$FieldSpecTypeEnumSerializer
   final String wireName = 'FieldSpecTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, FieldSpecTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FieldSpecTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  FieldSpecTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FieldSpecTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  FieldSpecTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FieldSpecTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FieldSpec extends FieldSpec {
@@ -119,18 +130,18 @@ class _$FieldSpec extends FieldSpec {
   factory _$FieldSpec([void Function(FieldSpecBuilder)? updates]) =>
       (FieldSpecBuilder()..update(updates))._build();
 
-  _$FieldSpec._(
-      {required this.type,
-      this.unit,
-      this.unitLabel,
-      this.label,
-      this.description,
-      this.datum,
-      this.format,
-      this.enumLabels,
-      this.kinds,
-      this.noLink})
-      : super._();
+  _$FieldSpec._({
+    required this.type,
+    this.unit,
+    this.unitLabel,
+    this.label,
+    this.description,
+    this.datum,
+    this.format,
+    this.enumLabels,
+    this.kinds,
+    this.noLink,
+  }) : super._();
   @override
   FieldSpec rebuild(void Function(FieldSpecBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -271,10 +282,14 @@ class FieldSpecBuilder implements Builder<FieldSpec, FieldSpecBuilder> {
   _$FieldSpec _build() {
     _$FieldSpec _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FieldSpec._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'FieldSpec', 'type'),
+              type,
+              r'FieldSpec',
+              'type',
+            ),
             unit: unit,
             unitLabel: unitLabel,
             label: label,
@@ -294,7 +309,10 @@ class FieldSpecBuilder implements Builder<FieldSpec, FieldSpecBuilder> {
         _kinds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FieldSpec', _$failedField, e.toString());
+          r'FieldSpec',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

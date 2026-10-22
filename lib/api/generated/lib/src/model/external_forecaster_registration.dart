@@ -19,8 +19,10 @@ part 'external_forecaster_registration.g.dart';
 @BuiltValue()
 abstract class ExternalForecasterRegistration
     implements
-        Built<ExternalForecasterRegistration,
-            ExternalForecasterRegistrationBuilder> {
+        Built<
+          ExternalForecasterRegistration,
+          ExternalForecasterRegistrationBuilder
+        > {
   /// Forecaster id, conventionally edp:{sourceId}/{streamId}.
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -35,9 +37,9 @@ abstract class ExternalForecasterRegistration
 
   ExternalForecasterRegistration._();
 
-  factory ExternalForecasterRegistration(
-          [void updates(ExternalForecasterRegistrationBuilder b)]) =
-      _$ExternalForecasterRegistration;
+  factory ExternalForecasterRegistration([
+    void updates(ExternalForecasterRegistrationBuilder b),
+  ]) = _$ExternalForecasterRegistration;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ExternalForecasterRegistrationBuilder b) => b;
@@ -52,7 +54,7 @@ class _$ExternalForecasterRegistrationSerializer
   @override
   final Iterable<Type> types = const [
     ExternalForecasterRegistration,
-    _$ExternalForecasterRegistration
+    _$ExternalForecasterRegistration,
   ];
 
   @override
@@ -79,8 +81,10 @@ class _$ExternalForecasterRegistrationSerializer
       yield r'config';
       yield serializers.serialize(
         object.config,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -91,9 +95,11 @@ class _$ExternalForecasterRegistrationSerializer
     ExternalForecasterRegistration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -109,26 +115,34 @@ class _$ExternalForecasterRegistrationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.name = valueDes;
           break;
         case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.config.replace(valueDes);
           break;

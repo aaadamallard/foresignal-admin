@@ -17,8 +17,10 @@ part 'hypothesis_patch_probability_override.g.dart';
 @BuiltValue()
 abstract class HypothesisPatchProbabilityOverride
     implements
-        Built<HypothesisPatchProbabilityOverride,
-            HypothesisPatchProbabilityOverrideBuilder> {
+        Built<
+          HypothesisPatchProbabilityOverride,
+          HypothesisPatchProbabilityOverrideBuilder
+        > {
   @BuiltValueField(wireName: r'probability')
   num get probability;
 
@@ -31,9 +33,9 @@ abstract class HypothesisPatchProbabilityOverride
 
   HypothesisPatchProbabilityOverride._();
 
-  factory HypothesisPatchProbabilityOverride(
-          [void updates(HypothesisPatchProbabilityOverrideBuilder b)]) =
-      _$HypothesisPatchProbabilityOverride;
+  factory HypothesisPatchProbabilityOverride([
+    void updates(HypothesisPatchProbabilityOverrideBuilder b),
+  ]) = _$HypothesisPatchProbabilityOverride;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(HypothesisPatchProbabilityOverrideBuilder b) => b;
@@ -48,7 +50,7 @@ class _$HypothesisPatchProbabilityOverrideSerializer
   @override
   final Iterable<Type> types = const [
     HypothesisPatchProbabilityOverride,
-    _$HypothesisPatchProbabilityOverride
+    _$HypothesisPatchProbabilityOverride,
   ];
 
   @override
@@ -84,9 +86,11 @@ class _$HypothesisPatchProbabilityOverrideSerializer
     HypothesisPatchProbabilityOverride object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,24 +106,27 @@ class _$HypothesisPatchProbabilityOverrideSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'probability':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.probability = valueDes;
           break;
         case r'rationale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.rationale = valueDes;
           break;
         case r'exceedCap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.exceedCap = valueDes;
           break;

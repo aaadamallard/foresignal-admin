@@ -18,17 +18,17 @@ class _$SecuritySettings extends SecuritySettings {
   @override
   final bool? exposeMlat;
 
-  factory _$SecuritySettings(
-          [void Function(SecuritySettingsBuilder)? updates]) =>
-      (SecuritySettingsBuilder()..update(updates))._build();
+  factory _$SecuritySettings([
+    void Function(SecuritySettingsBuilder)? updates,
+  ]) => (SecuritySettingsBuilder()..update(updates))._build();
 
-  _$SecuritySettings._(
-      {required this.openReads,
-      this.exposeObserver,
-      this.anonymous,
-      this.metricsOpen,
-      this.exposeMlat})
-      : super._();
+  _$SecuritySettings._({
+    required this.openReads,
+    this.exposeObserver,
+    this.anonymous,
+    this.metricsOpen,
+    this.exposeMlat,
+  }) : super._();
   @override
   SecuritySettings rebuild(void Function(SecuritySettingsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -132,10 +132,14 @@ class SecuritySettingsBuilder
   _$SecuritySettings _build() {
     _$SecuritySettings _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SecuritySettings._(
             openReads: BuiltValueNullFieldError.checkNotNull(
-                openReads, r'SecuritySettings', 'openReads'),
+              openReads,
+              r'SecuritySettings',
+              'openReads',
+            ),
             exposeObserver: exposeObserver,
             anonymous: _anonymous?.build(),
             metricsOpen: metricsOpen,
@@ -148,7 +152,10 @@ class SecuritySettingsBuilder
         _anonymous?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SecuritySettings', _$failedField, e.toString());
+          r'SecuritySettings',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -30,9 +30,9 @@ abstract class StormTrackPayloadMotion
 
   StormTrackPayloadMotion._();
 
-  factory StormTrackPayloadMotion(
-          [void updates(StormTrackPayloadMotionBuilder b)]) =
-      _$StormTrackPayloadMotion;
+  factory StormTrackPayloadMotion([
+    void updates(StormTrackPayloadMotionBuilder b),
+  ]) = _$StormTrackPayloadMotion;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StormTrackPayloadMotionBuilder b) => b;
@@ -47,7 +47,7 @@ class _$StormTrackPayloadMotionSerializer
   @override
   final Iterable<Type> types = const [
     StormTrackPayloadMotion,
-    _$StormTrackPayloadMotion
+    _$StormTrackPayloadMotion,
   ];
 
   @override
@@ -81,9 +81,11 @@ class _$StormTrackPayloadMotionSerializer
     StormTrackPayloadMotion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +101,26 @@ class _$StormTrackPayloadMotionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'speedKmh':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.speedKmh = valueDes;
           break;
         case r'bearingDeg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.bearingDeg = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StormTrackPayloadMotionMethodEnum),
-          ) as StormTrackPayloadMotionMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      StormTrackPayloadMotionMethodEnum,
+                    ),
+                  )
+                  as StormTrackPayloadMotionMethodEnum;
           result.method = valueDes;
           break;
         default:

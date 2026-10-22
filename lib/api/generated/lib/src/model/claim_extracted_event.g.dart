@@ -7,11 +7,12 @@ part of 'claim_extracted_event.dart';
 // **************************************************************************
 
 const ClaimExtractedEventEventEnum
-    _$claimExtractedEventEventEnum_claimPeriodExtracted =
+_$claimExtractedEventEventEnum_claimPeriodExtracted =
     const ClaimExtractedEventEventEnum._('claimPeriodExtracted');
 
 ClaimExtractedEventEventEnum _$claimExtractedEventEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'claimPeriodExtracted':
       return _$claimExtractedEventEventEnum_claimPeriodExtracted;
@@ -21,13 +22,14 @@ ClaimExtractedEventEventEnum _$claimExtractedEventEventEnumValueOf(
 }
 
 final BuiltSet<ClaimExtractedEventEventEnum>
-    _$claimExtractedEventEventEnumValues =
-    BuiltSet<ClaimExtractedEventEventEnum>(const <ClaimExtractedEventEventEnum>[
-  _$claimExtractedEventEventEnum_claimPeriodExtracted,
-]);
+_$claimExtractedEventEventEnumValues = BuiltSet<ClaimExtractedEventEventEnum>(
+  const <ClaimExtractedEventEventEnum>[
+    _$claimExtractedEventEventEnum_claimPeriodExtracted,
+  ],
+);
 
 Serializer<ClaimExtractedEventEventEnum>
-    _$claimExtractedEventEventEnumSerializer =
+_$claimExtractedEventEventEnumSerializer =
     _$ClaimExtractedEventEventEnumSerializer();
 
 class _$ClaimExtractedEventEventEnumSerializer
@@ -45,16 +47,20 @@ class _$ClaimExtractedEventEventEnumSerializer
   final String wireName = 'ClaimExtractedEventEventEnum';
 
   @override
-  Object serialize(Serializers serializers, ClaimExtractedEventEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ClaimExtractedEventEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ClaimExtractedEventEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ClaimExtractedEventEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ClaimExtractedEventEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ClaimExtractedEvent extends ClaimExtractedEvent {
@@ -65,17 +71,19 @@ class _$ClaimExtractedEvent extends ClaimExtractedEvent {
   @override
   final DateTime at;
 
-  factory _$ClaimExtractedEvent(
-          [void Function(ClaimExtractedEventBuilder)? updates]) =>
-      (ClaimExtractedEventBuilder()..update(updates))._build();
+  factory _$ClaimExtractedEvent([
+    void Function(ClaimExtractedEventBuilder)? updates,
+  ]) => (ClaimExtractedEventBuilder()..update(updates))._build();
 
-  _$ClaimExtractedEvent._(
-      {required this.event, required this.claim, required this.at})
-      : super._();
+  _$ClaimExtractedEvent._({
+    required this.event,
+    required this.claim,
+    required this.at,
+  }) : super._();
   @override
   ClaimExtractedEvent rebuild(
-          void Function(ClaimExtractedEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ClaimExtractedEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ClaimExtractedEventBuilder toBuilder() =>
@@ -157,13 +165,20 @@ class ClaimExtractedEventBuilder
   _$ClaimExtractedEvent _build() {
     _$ClaimExtractedEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ClaimExtractedEvent._(
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'ClaimExtractedEvent', 'event'),
+              event,
+              r'ClaimExtractedEvent',
+              'event',
+            ),
             claim: claim.build(),
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'ClaimExtractedEvent', 'at'),
+              at,
+              r'ClaimExtractedEvent',
+              'at',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -172,7 +187,10 @@ class ClaimExtractedEventBuilder
         claim.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ClaimExtractedEvent', _$failedField, e.toString());
+          r'ClaimExtractedEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

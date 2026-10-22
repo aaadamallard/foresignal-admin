@@ -90,11 +90,8 @@ class ClaimPageBuilder implements Builder<ClaimPage, ClaimPageBuilder> {
   _$ClaimPage _build() {
     _$ClaimPage _$result;
     try {
-      _$result = _$v ??
-          _$ClaimPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$ClaimPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class ClaimPageBuilder implements Builder<ClaimPage, ClaimPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ClaimPage', _$failedField, e.toString());
+          r'ClaimPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

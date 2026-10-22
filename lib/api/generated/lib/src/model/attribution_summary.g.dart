@@ -12,16 +12,16 @@ class _$AttributionSummary extends AttributionSummary {
   @override
   final String text;
 
-  factory _$AttributionSummary(
-          [void Function(AttributionSummaryBuilder)? updates]) =>
-      (AttributionSummaryBuilder()..update(updates))._build();
+  factory _$AttributionSummary([
+    void Function(AttributionSummaryBuilder)? updates,
+  ]) => (AttributionSummaryBuilder()..update(updates))._build();
 
   _$AttributionSummary._({required this.attributions, required this.text})
-      : super._();
+    : super._();
   @override
   AttributionSummary rebuild(
-          void Function(AttributionSummaryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AttributionSummaryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AttributionSummaryBuilder toBuilder() =>
@@ -97,11 +97,15 @@ class AttributionSummaryBuilder
   _$AttributionSummary _build() {
     _$AttributionSummary _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AttributionSummary._(
             attributions: attributions.build(),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'AttributionSummary', 'text'),
+              text,
+              r'AttributionSummary',
+              'text',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -110,7 +114,10 @@ class AttributionSummaryBuilder
         attributions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AttributionSummary', _$failedField, e.toString());
+          r'AttributionSummary',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

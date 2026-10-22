@@ -92,11 +92,9 @@ class ExerciseRunPageBuilder
   _$ExerciseRunPage _build() {
     _$ExerciseRunPage _$result;
     try {
-      _$result = _$v ??
-          _$ExerciseRunPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$ExerciseRunPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class ExerciseRunPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ExerciseRunPage', _$failedField, e.toString());
+          r'ExerciseRunPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

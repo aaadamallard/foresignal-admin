@@ -24,9 +24,9 @@ ProjectedImpactStatusEnum _$projectedImpactStatusEnumValueOf(String name) {
 
 final BuiltSet<ProjectedImpactStatusEnum> _$projectedImpactStatusEnumValues =
     BuiltSet<ProjectedImpactStatusEnum>(const <ProjectedImpactStatusEnum>[
-  _$projectedImpactStatusEnum_active,
-  _$projectedImpactStatusEnum_superseded,
-]);
+      _$projectedImpactStatusEnum_active,
+      _$projectedImpactStatusEnum_superseded,
+    ]);
 
 Serializer<ProjectedImpactStatusEnum> _$projectedImpactStatusEnumSerializer =
     _$ProjectedImpactStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$ProjectedImpactStatusEnumSerializer
   final String wireName = 'ProjectedImpactStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, ProjectedImpactStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ProjectedImpactStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ProjectedImpactStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ProjectedImpactStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ProjectedImpactStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ProjectedImpact extends ProjectedImpact {
@@ -119,35 +123,35 @@ class _$ProjectedImpact extends ProjectedImpact {
   factory _$ProjectedImpact([void Function(ProjectedImpactBuilder)? updates]) =>
       (ProjectedImpactBuilder()..update(updates))._build();
 
-  _$ProjectedImpact._(
-      {required this.findingId,
-      this.ref,
-      required this.hazard,
-      required this.impactFamily,
-      required this.admin1,
-      this.regionClass,
-      required this.pHazard,
-      required this.pConditional,
-      required this.pImpact,
-      required this.interval,
-      required this.n,
-      this.severity,
-      this.exposedAssets,
-      this.dependencyPaths,
-      this.inputs,
-      this.skipped,
-      required this.labels,
-      this.questionId,
-      required this.status,
-      this.supersededBy,
-      required this.detectedAt,
-      this.manifestId,
-      this.version,
-      this.caveats,
-      this.admin1Name,
-      this.lagHours,
-      this.questionWindow})
-      : super._();
+  _$ProjectedImpact._({
+    required this.findingId,
+    this.ref,
+    required this.hazard,
+    required this.impactFamily,
+    required this.admin1,
+    this.regionClass,
+    required this.pHazard,
+    required this.pConditional,
+    required this.pImpact,
+    required this.interval,
+    required this.n,
+    this.severity,
+    this.exposedAssets,
+    this.dependencyPaths,
+    this.inputs,
+    this.skipped,
+    required this.labels,
+    this.questionId,
+    required this.status,
+    this.supersededBy,
+    required this.detectedAt,
+    this.manifestId,
+    this.version,
+    this.caveats,
+    this.admin1Name,
+    this.lagHours,
+    this.questionWindow,
+  }) : super._();
   @override
   ProjectedImpact rebuild(void Function(ProjectedImpactBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -316,16 +320,16 @@ class ProjectedImpactBuilder
       _$this._exposedAssets ??=
           ListBuilder<ProjectedImpactExposedAssetsInner>();
   set exposedAssets(
-          ListBuilder<ProjectedImpactExposedAssetsInner>? exposedAssets) =>
-      _$this._exposedAssets = exposedAssets;
+    ListBuilder<ProjectedImpactExposedAssetsInner>? exposedAssets,
+  ) => _$this._exposedAssets = exposedAssets;
 
   ListBuilder<ProjectedImpactDependencyPathsInner>? _dependencyPaths;
   ListBuilder<ProjectedImpactDependencyPathsInner> get dependencyPaths =>
       _$this._dependencyPaths ??=
           ListBuilder<ProjectedImpactDependencyPathsInner>();
   set dependencyPaths(
-          ListBuilder<ProjectedImpactDependencyPathsInner>? dependencyPaths) =>
-      _$this._dependencyPaths = dependencyPaths;
+    ListBuilder<ProjectedImpactDependencyPathsInner>? dependencyPaths,
+  ) => _$this._dependencyPaths = dependencyPaths;
 
   ListBuilder<ProjectedImpactInputsInner>? _inputs;
   ListBuilder<ProjectedImpactInputsInner> get inputs =>
@@ -440,26 +444,48 @@ class ProjectedImpactBuilder
   _$ProjectedImpact _build() {
     _$ProjectedImpact _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ProjectedImpact._(
             findingId: BuiltValueNullFieldError.checkNotNull(
-                findingId, r'ProjectedImpact', 'findingId'),
+              findingId,
+              r'ProjectedImpact',
+              'findingId',
+            ),
             ref: ref,
             hazard: hazard.build(),
             impactFamily: BuiltValueNullFieldError.checkNotNull(
-                impactFamily, r'ProjectedImpact', 'impactFamily'),
+              impactFamily,
+              r'ProjectedImpact',
+              'impactFamily',
+            ),
             admin1: BuiltValueNullFieldError.checkNotNull(
-                admin1, r'ProjectedImpact', 'admin1'),
+              admin1,
+              r'ProjectedImpact',
+              'admin1',
+            ),
             regionClass: regionClass,
             pHazard: BuiltValueNullFieldError.checkNotNull(
-                pHazard, r'ProjectedImpact', 'pHazard'),
+              pHazard,
+              r'ProjectedImpact',
+              'pHazard',
+            ),
             pConditional: BuiltValueNullFieldError.checkNotNull(
-                pConditional, r'ProjectedImpact', 'pConditional'),
+              pConditional,
+              r'ProjectedImpact',
+              'pConditional',
+            ),
             pImpact: BuiltValueNullFieldError.checkNotNull(
-                pImpact, r'ProjectedImpact', 'pImpact'),
+              pImpact,
+              r'ProjectedImpact',
+              'pImpact',
+            ),
             interval: interval.build(),
             n: BuiltValueNullFieldError.checkNotNull(
-                n, r'ProjectedImpact', 'n'),
+              n,
+              r'ProjectedImpact',
+              'n',
+            ),
             severity: severity,
             exposedAssets: _exposedAssets?.build(),
             dependencyPaths: _dependencyPaths?.build(),
@@ -468,10 +494,16 @@ class ProjectedImpactBuilder
             labels: labels.build(),
             questionId: questionId,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'ProjectedImpact', 'status'),
+              status,
+              r'ProjectedImpact',
+              'status',
+            ),
             supersededBy: supersededBy,
             detectedAt: BuiltValueNullFieldError.checkNotNull(
-                detectedAt, r'ProjectedImpact', 'detectedAt'),
+              detectedAt,
+              r'ProjectedImpact',
+              'detectedAt',
+            ),
             manifestId: manifestId,
             version: version,
             caveats: _caveats?.build(),
@@ -506,7 +538,10 @@ class ProjectedImpactBuilder
         _questionWindow?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ProjectedImpact', _$failedField, e.toString());
+          r'ProjectedImpact',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

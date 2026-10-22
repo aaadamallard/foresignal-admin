@@ -100,7 +100,8 @@ class EdpCoverageBuilder implements Builder<EdpCoverage, EdpCoverageBuilder> {
   _$EdpCoverage _build() {
     _$EdpCoverage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpCoverage._(
             area: _area?.build(),
             family: family,
@@ -113,7 +114,10 @@ class EdpCoverageBuilder implements Builder<EdpCoverage, EdpCoverageBuilder> {
         _area?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpCoverage', _$failedField, e.toString());
+          r'EdpCoverage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

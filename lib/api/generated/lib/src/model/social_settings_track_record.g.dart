@@ -16,17 +16,20 @@ class _$SocialSettingsTrackRecord extends SocialSettingsTrackRecord {
   @override
   final BuiltList<SocialSettingsTrackRecordOverridesInner>? overrides;
 
-  factory _$SocialSettingsTrackRecord(
-          [void Function(SocialSettingsTrackRecordBuilder)? updates]) =>
-      (SocialSettingsTrackRecordBuilder()..update(updates))._build();
+  factory _$SocialSettingsTrackRecord([
+    void Function(SocialSettingsTrackRecordBuilder)? updates,
+  ]) => (SocialSettingsTrackRecordBuilder()..update(updates))._build();
 
-  _$SocialSettingsTrackRecord._(
-      {this.minAssessed, this.gradeEShare, this.gradeDShare, this.overrides})
-      : super._();
+  _$SocialSettingsTrackRecord._({
+    this.minAssessed,
+    this.gradeEShare,
+    this.gradeDShare,
+    this.overrides,
+  }) : super._();
   @override
   SocialSettingsTrackRecord rebuild(
-          void Function(SocialSettingsTrackRecordBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialSettingsTrackRecordBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialSettingsTrackRecordBuilder toBuilder() =>
@@ -86,8 +89,8 @@ class SocialSettingsTrackRecordBuilder
       _$this._overrides ??=
           ListBuilder<SocialSettingsTrackRecordOverridesInner>();
   set overrides(
-          ListBuilder<SocialSettingsTrackRecordOverridesInner>? overrides) =>
-      _$this._overrides = overrides;
+    ListBuilder<SocialSettingsTrackRecordOverridesInner>? overrides,
+  ) => _$this._overrides = overrides;
 
   SocialSettingsTrackRecordBuilder() {
     SocialSettingsTrackRecord._defaults(this);
@@ -121,7 +124,8 @@ class SocialSettingsTrackRecordBuilder
   _$SocialSettingsTrackRecord _build() {
     _$SocialSettingsTrackRecord _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialSettingsTrackRecord._(
             minAssessed: minAssessed,
             gradeEShare: gradeEShare,
@@ -135,7 +139,10 @@ class SocialSettingsTrackRecordBuilder
         _overrides?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialSettingsTrackRecord', _$failedField, e.toString());
+          r'SocialSettingsTrackRecord',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

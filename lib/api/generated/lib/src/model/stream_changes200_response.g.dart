@@ -7,17 +7,18 @@ part of 'stream_changes200_response.dart';
 // **************************************************************************
 
 const StreamChanges200ResponseReasonEnum
-    _$streamChanges200ResponseReasonEnum_bufferOverflow =
+_$streamChanges200ResponseReasonEnum_bufferOverflow =
     const StreamChanges200ResponseReasonEnum._('bufferOverflow');
 const StreamChanges200ResponseReasonEnum
-    _$streamChanges200ResponseReasonEnum_replayCap =
+_$streamChanges200ResponseReasonEnum_replayCap =
     const StreamChanges200ResponseReasonEnum._('replayCap');
 const StreamChanges200ResponseReasonEnum
-    _$streamChanges200ResponseReasonEnum_resyncRequired =
+_$streamChanges200ResponseReasonEnum_resyncRequired =
     const StreamChanges200ResponseReasonEnum._('resyncRequired');
 
 StreamChanges200ResponseReasonEnum _$streamChanges200ResponseReasonEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'bufferOverflow':
       return _$streamChanges200ResponseReasonEnum_bufferOverflow;
@@ -31,15 +32,17 @@ StreamChanges200ResponseReasonEnum _$streamChanges200ResponseReasonEnumValueOf(
 }
 
 final BuiltSet<StreamChanges200ResponseReasonEnum>
-    _$streamChanges200ResponseReasonEnumValues = BuiltSet<
-        StreamChanges200ResponseReasonEnum>(const <StreamChanges200ResponseReasonEnum>[
-  _$streamChanges200ResponseReasonEnum_bufferOverflow,
-  _$streamChanges200ResponseReasonEnum_replayCap,
-  _$streamChanges200ResponseReasonEnum_resyncRequired,
-]);
+_$streamChanges200ResponseReasonEnumValues =
+    BuiltSet<StreamChanges200ResponseReasonEnum>(
+      const <StreamChanges200ResponseReasonEnum>[
+        _$streamChanges200ResponseReasonEnum_bufferOverflow,
+        _$streamChanges200ResponseReasonEnum_replayCap,
+        _$streamChanges200ResponseReasonEnum_resyncRequired,
+      ],
+    );
 
 Serializer<StreamChanges200ResponseReasonEnum>
-    _$streamChanges200ResponseReasonEnumSerializer =
+_$streamChanges200ResponseReasonEnumSerializer =
     _$StreamChanges200ResponseReasonEnumSerializer();
 
 class _$StreamChanges200ResponseReasonEnumSerializer
@@ -62,31 +65,34 @@ class _$StreamChanges200ResponseReasonEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, StreamChanges200ResponseReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StreamChanges200ResponseReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamChanges200ResponseReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamChanges200ResponseReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamChanges200ResponseReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamChanges200Response extends StreamChanges200Response {
   @override
   final AnyOf anyOf;
 
-  factory _$StreamChanges200Response(
-          [void Function(StreamChanges200ResponseBuilder)? updates]) =>
-      (StreamChanges200ResponseBuilder()..update(updates))._build();
+  factory _$StreamChanges200Response([
+    void Function(StreamChanges200ResponseBuilder)? updates,
+  ]) => (StreamChanges200ResponseBuilder()..update(updates))._build();
 
   _$StreamChanges200Response._({required this.anyOf}) : super._();
   @override
   StreamChanges200Response rebuild(
-          void Function(StreamChanges200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StreamChanges200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StreamChanges200ResponseBuilder toBuilder() =>
@@ -108,9 +114,9 @@ class _$StreamChanges200Response extends StreamChanges200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'StreamChanges200Response')
-          ..add('anyOf', anyOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'StreamChanges200Response',
+    )..add('anyOf', anyOf)).toString();
   }
 }
 
@@ -150,10 +156,14 @@ class StreamChanges200ResponseBuilder
   StreamChanges200Response build() => _build();
 
   _$StreamChanges200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StreamChanges200Response._(
           anyOf: BuiltValueNullFieldError.checkNotNull(
-              anyOf, r'StreamChanges200Response', 'anyOf'),
+            anyOf,
+            r'StreamChanges200Response',
+            'anyOf',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -59,9 +59,11 @@ class _$MapStyleMetadataSerializer
     MapStyleMetadata object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -77,10 +79,12 @@ class _$MapStyleMetadataSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'foresignal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(MapStyleMetadata),
-          ) as MapStyleMetadata?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(MapStyleMetadata),
+                  )
+                  as MapStyleMetadata?;
           if (valueDes == null) continue;
           result.foresignal.replace(valueDes);
           break;

@@ -58,9 +58,9 @@ abstract class PrecisionComponentsInner
 
   PrecisionComponentsInner._();
 
-  factory PrecisionComponentsInner(
-          [void updates(PrecisionComponentsInnerBuilder b)]) =
-      _$PrecisionComponentsInner;
+  factory PrecisionComponentsInner([
+    void updates(PrecisionComponentsInnerBuilder b),
+  ]) = _$PrecisionComponentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PrecisionComponentsInnerBuilder b) => b;
@@ -75,7 +75,7 @@ class _$PrecisionComponentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     PrecisionComponentsInner,
-    _$PrecisionComponentsInner
+    _$PrecisionComponentsInner,
   ];
 
   @override
@@ -147,9 +147,11 @@ class _$PrecisionComponentsInnerSerializer
     PrecisionComponentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -165,70 +167,80 @@ class _$PrecisionComponentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'component':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(PrecisionComponentsInnerComponentEnum),
-          ) as PrecisionComponentsInnerComponentEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      PrecisionComponentsInnerComponentEnum,
+                    ),
+                  )
+                  as PrecisionComponentsInnerComponentEnum;
           result.component = valueDes;
           break;
         case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.key = valueDes;
           break;
         case r'confirmed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.confirmed = valueDes;
           break;
         case r'rejected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.rejected = valueDes;
           break;
         case r'duplicate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.duplicate = valueDes;
           break;
         case r'needsReview':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.needsReview = valueDes;
           break;
         case r'labelled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.labelled = valueDes;
           break;
         case r'precision':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.precision = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(ImpactRateInterval),
-          ) as ImpactRateInterval?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ImpactRateInterval),
+                  )
+                  as ImpactRateInterval?;
           if (valueDes == null) continue;
           result.interval.replace(valueDes);
           break;

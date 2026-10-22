@@ -24,9 +24,9 @@ KeyJudgmentTextOriginEnum _$keyJudgmentTextOriginEnumValueOf(String name) {
 
 final BuiltSet<KeyJudgmentTextOriginEnum> _$keyJudgmentTextOriginEnumValues =
     BuiltSet<KeyJudgmentTextOriginEnum>(const <KeyJudgmentTextOriginEnum>[
-  _$keyJudgmentTextOriginEnum_deterministic,
-  _$keyJudgmentTextOriginEnum_llm,
-]);
+      _$keyJudgmentTextOriginEnum_deterministic,
+      _$keyJudgmentTextOriginEnum_llm,
+    ]);
 
 Serializer<KeyJudgmentTextOriginEnum> _$keyJudgmentTextOriginEnumSerializer =
     _$KeyJudgmentTextOriginEnumSerializer();
@@ -48,16 +48,20 @@ class _$KeyJudgmentTextOriginEnumSerializer
   final String wireName = 'KeyJudgmentTextOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, KeyJudgmentTextOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    KeyJudgmentTextOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   KeyJudgmentTextOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      KeyJudgmentTextOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => KeyJudgmentTextOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$KeyJudgment extends KeyJudgment {
@@ -91,21 +95,21 @@ class _$KeyJudgment extends KeyJudgment {
   factory _$KeyJudgment([void Function(KeyJudgmentBuilder)? updates]) =>
       (KeyJudgmentBuilder()..update(updates))._build();
 
-  _$KeyJudgment._(
-      {this.id,
-      required this.text,
-      this.probability,
-      this.estimativeTerm,
-      this.confidence,
-      this.confidenceStatement,
-      required this.citations,
-      this.hypothesisSetId,
-      this.questionId,
-      required this.textOrigin,
-      this.change,
-      this.downgraded,
-      this.warnings})
-      : super._();
+  _$KeyJudgment._({
+    this.id,
+    required this.text,
+    this.probability,
+    this.estimativeTerm,
+    this.confidence,
+    this.confidenceStatement,
+    required this.citations,
+    this.hypothesisSetId,
+    this.questionId,
+    required this.textOrigin,
+    this.change,
+    this.downgraded,
+    this.warnings,
+  }) : super._();
   @override
   KeyJudgment rebuild(void Function(KeyJudgmentBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -277,11 +281,15 @@ class KeyJudgmentBuilder implements Builder<KeyJudgment, KeyJudgmentBuilder> {
   _$KeyJudgment _build() {
     _$KeyJudgment _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KeyJudgment._(
             id: id,
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'KeyJudgment', 'text'),
+              text,
+              r'KeyJudgment',
+              'text',
+            ),
             probability: probability,
             estimativeTerm: estimativeTerm,
             confidence: confidence,
@@ -290,7 +298,10 @@ class KeyJudgmentBuilder implements Builder<KeyJudgment, KeyJudgmentBuilder> {
             hypothesisSetId: hypothesisSetId,
             questionId: questionId,
             textOrigin: BuiltValueNullFieldError.checkNotNull(
-                textOrigin, r'KeyJudgment', 'textOrigin'),
+              textOrigin,
+              r'KeyJudgment',
+              'textOrigin',
+            ),
             change: _change?.build(),
             downgraded: downgraded,
             warnings: _warnings?.build(),
@@ -308,7 +319,10 @@ class KeyJudgmentBuilder implements Builder<KeyJudgment, KeyJudgmentBuilder> {
         _warnings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KeyJudgment', _$failedField, e.toString());
+          r'KeyJudgment',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

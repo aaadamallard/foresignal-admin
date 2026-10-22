@@ -28,9 +28,9 @@ abstract class DigestAlertsByRuleInner
 
   DigestAlertsByRuleInner._();
 
-  factory DigestAlertsByRuleInner(
-          [void updates(DigestAlertsByRuleInnerBuilder b)]) =
-      _$DigestAlertsByRuleInner;
+  factory DigestAlertsByRuleInner([
+    void updates(DigestAlertsByRuleInnerBuilder b),
+  ]) = _$DigestAlertsByRuleInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DigestAlertsByRuleInnerBuilder b) => b;
@@ -45,7 +45,7 @@ class _$DigestAlertsByRuleInnerSerializer
   @override
   final Iterable<Type> types = const [
     DigestAlertsByRuleInner,
-    _$DigestAlertsByRuleInner
+    _$DigestAlertsByRuleInner,
   ];
 
   @override
@@ -81,9 +81,11 @@ class _$DigestAlertsByRuleInnerSerializer
     DigestAlertsByRuleInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,25 +101,28 @@ class _$DigestAlertsByRuleInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'ruleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ruleId = valueDes;
           break;
         case r'ruleName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ruleName = valueDes;
           break;
         case r'count':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.count = valueDes;
           break;
         default:

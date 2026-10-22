@@ -12,16 +12,16 @@ class _$UvForecastPayloadHoursInner extends UvForecastPayloadHoursInner {
   @override
   final num uv;
 
-  factory _$UvForecastPayloadHoursInner(
-          [void Function(UvForecastPayloadHoursInnerBuilder)? updates]) =>
-      (UvForecastPayloadHoursInnerBuilder()..update(updates))._build();
+  factory _$UvForecastPayloadHoursInner([
+    void Function(UvForecastPayloadHoursInnerBuilder)? updates,
+  ]) => (UvForecastPayloadHoursInnerBuilder()..update(updates))._build();
 
   _$UvForecastPayloadHoursInner._({required this.time, required this.uv})
-      : super._();
+    : super._();
   @override
   UvForecastPayloadHoursInner rebuild(
-          void Function(UvForecastPayloadHoursInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(UvForecastPayloadHoursInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   UvForecastPayloadHoursInnerBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$UvForecastPayloadHoursInner extends UvForecastPayloadHoursInner {
 
 class UvForecastPayloadHoursInnerBuilder
     implements
-        Builder<UvForecastPayloadHoursInner,
-            UvForecastPayloadHoursInnerBuilder> {
+        Builder<
+          UvForecastPayloadHoursInner,
+          UvForecastPayloadHoursInnerBuilder
+        > {
   _$UvForecastPayloadHoursInner? _$v;
 
   DateTime? _time;
@@ -95,12 +97,19 @@ class UvForecastPayloadHoursInnerBuilder
   UvForecastPayloadHoursInner build() => _build();
 
   _$UvForecastPayloadHoursInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$UvForecastPayloadHoursInner._(
           time: BuiltValueNullFieldError.checkNotNull(
-              time, r'UvForecastPayloadHoursInner', 'time'),
+            time,
+            r'UvForecastPayloadHoursInner',
+            'time',
+          ),
           uv: BuiltValueNullFieldError.checkNotNull(
-              uv, r'UvForecastPayloadHoursInner', 'uv'),
+            uv,
+            r'UvForecastPayloadHoursInner',
+            'uv',
+          ),
         );
     replace(_$result);
     return _$result;

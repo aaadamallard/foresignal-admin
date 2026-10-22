@@ -32,11 +32,11 @@ IntelEventPatchStatusEnum _$intelEventPatchStatusEnumValueOf(String name) {
 
 final BuiltSet<IntelEventPatchStatusEnum> _$intelEventPatchStatusEnumValues =
     BuiltSet<IntelEventPatchStatusEnum>(const <IntelEventPatchStatusEnum>[
-  _$intelEventPatchStatusEnum_emerging,
-  _$intelEventPatchStatusEnum_active,
-  _$intelEventPatchStatusEnum_resolved,
-  _$intelEventPatchStatusEnum_dismissed,
-]);
+      _$intelEventPatchStatusEnum_emerging,
+      _$intelEventPatchStatusEnum_active,
+      _$intelEventPatchStatusEnum_resolved,
+      _$intelEventPatchStatusEnum_dismissed,
+    ]);
 
 Serializer<IntelEventPatchStatusEnum> _$intelEventPatchStatusEnumSerializer =
     _$IntelEventPatchStatusEnumSerializer();
@@ -62,16 +62,20 @@ class _$IntelEventPatchStatusEnumSerializer
   final String wireName = 'IntelEventPatchStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventPatchStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventPatchStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventPatchStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventPatchStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventPatchStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventPatch extends IntelEventPatch {
@@ -88,7 +92,7 @@ class _$IntelEventPatch extends IntelEventPatch {
       (IntelEventPatchBuilder()..update(updates))._build();
 
   _$IntelEventPatch._({this.title, this.status, this.severity, this.notes})
-      : super._();
+    : super._();
   @override
   IntelEventPatch rebuild(void Function(IntelEventPatchBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -178,7 +182,8 @@ class IntelEventPatchBuilder
   IntelEventPatch build() => _build();
 
   _$IntelEventPatch _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelEventPatch._(
           title: title,
           status: status,

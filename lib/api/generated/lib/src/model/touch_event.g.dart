@@ -21,13 +21,13 @@ class _$TouchEvent extends TouchEvent {
   factory _$TouchEvent([void Function(TouchEventBuilder)? updates]) =>
       (TouchEventBuilder()..update(updates))._build();
 
-  _$TouchEvent._(
-      {required this.sourceId,
-      required this.externalId,
-      required this.observedAt,
-      this.validUntil,
-      this.bbox})
-      : super._();
+  _$TouchEvent._({
+    required this.sourceId,
+    required this.externalId,
+    required this.observedAt,
+    this.validUntil,
+    this.bbox,
+  }) : super._();
   @override
   TouchEvent rebuild(void Function(TouchEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -126,14 +126,24 @@ class TouchEventBuilder implements Builder<TouchEvent, TouchEventBuilder> {
   _$TouchEvent _build() {
     _$TouchEvent _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TouchEvent._(
             sourceId: BuiltValueNullFieldError.checkNotNull(
-                sourceId, r'TouchEvent', 'sourceId'),
+              sourceId,
+              r'TouchEvent',
+              'sourceId',
+            ),
             externalId: BuiltValueNullFieldError.checkNotNull(
-                externalId, r'TouchEvent', 'externalId'),
+              externalId,
+              r'TouchEvent',
+              'externalId',
+            ),
             observedAt: BuiltValueNullFieldError.checkNotNull(
-                observedAt, r'TouchEvent', 'observedAt'),
+              observedAt,
+              r'TouchEvent',
+              'observedAt',
+            ),
             validUntil: validUntil,
             bbox: _bbox?.build(),
           );
@@ -144,7 +154,10 @@ class TouchEventBuilder implements Builder<TouchEvent, TouchEventBuilder> {
         _bbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TouchEvent', _$failedField, e.toString());
+          r'TouchEvent',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

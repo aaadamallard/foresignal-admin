@@ -31,18 +31,18 @@ class _$SocialCueInput extends SocialCueInput {
   factory _$SocialCueInput([void Function(SocialCueInputBuilder)? updates]) =>
       (SocialCueInputBuilder()..update(updates))._build();
 
-  _$SocialCueInput._(
-      {this.placeId,
-      this.regionCode,
-      this.bbox,
-      this.entityRef,
-      this.situationId,
-      this.terms,
-      this.families,
-      this.platforms,
-      required this.window,
-      this.maxCostUsd})
-      : super._();
+  _$SocialCueInput._({
+    this.placeId,
+    this.regionCode,
+    this.bbox,
+    this.entityRef,
+    this.situationId,
+    this.terms,
+    this.families,
+    this.platforms,
+    required this.window,
+    this.maxCostUsd,
+  }) : super._();
   @override
   SocialCueInput rebuild(void Function(SocialCueInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -185,7 +185,8 @@ class SocialCueInputBuilder
   _$SocialCueInput _build() {
     _$SocialCueInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialCueInput._(
             placeId: placeId,
             regionCode: regionCode,
@@ -211,7 +212,10 @@ class SocialCueInputBuilder
         window.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialCueInput', _$failedField, e.toString());
+          r'SocialCueInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,14 +7,14 @@ part of 'ogc_tile_matrix_set_list_tile_matrix_sets_inner.dart';
 // **************************************************************************
 
 const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
-    _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad =
+_$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad =
     const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum._('webMercatorQuad');
 const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
-    _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad =
+_$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad =
     const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum._('worldCRS84Quad');
 
 OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
-    _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValueOf(String name) {
+_$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValueOf(String name) {
   switch (name) {
     case 'webMercatorQuad':
       return _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad;
@@ -26,14 +26,16 @@ OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
 }
 
 final BuiltSet<OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>
-    _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValues = BuiltSet<
-        OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>(const <OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>[
-  _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad,
-  _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad,
-]);
+_$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValues =
+    BuiltSet<OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>(
+      const <OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>[
+        _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad,
+        _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad,
+      ],
+    );
 
 Serializer<OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>
-    _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer =
+_$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer =
     _$OgcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer();
 
 class _$OgcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer
@@ -50,23 +52,26 @@ class _$OgcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
+    OgcTileMatrixSetListTileMatrixSetsInnerIdEnum,
   ];
   @override
   final String wireName = 'OgcTileMatrixSetListTileMatrixSetsInnerIdEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          OgcTileMatrixSetListTileMatrixSetsInnerIdEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    OgcTileMatrixSetListTileMatrixSetsInnerIdEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OgcTileMatrixSetListTileMatrixSetsInnerIdEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcTileMatrixSetListTileMatrixSetsInnerIdEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcTileMatrixSetListTileMatrixSetsInnerIdEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcTileMatrixSetListTileMatrixSetsInner
@@ -80,20 +85,21 @@ class _$OgcTileMatrixSetListTileMatrixSetsInner
   @override
   final BuiltList<OgcLink> links;
 
-  factory _$OgcTileMatrixSetListTileMatrixSetsInner(
-          [void Function(OgcTileMatrixSetListTileMatrixSetsInnerBuilder)?
-              updates]) =>
-      (OgcTileMatrixSetListTileMatrixSetsInnerBuilder()..update(updates))
-          ._build();
+  factory _$OgcTileMatrixSetListTileMatrixSetsInner([
+    void Function(OgcTileMatrixSetListTileMatrixSetsInnerBuilder)? updates,
+  ]) => (OgcTileMatrixSetListTileMatrixSetsInnerBuilder()..update(updates))
+      ._build();
 
-  _$OgcTileMatrixSetListTileMatrixSetsInner._(
-      {required this.id, this.title, this.uri, required this.links})
-      : super._();
+  _$OgcTileMatrixSetListTileMatrixSetsInner._({
+    required this.id,
+    this.title,
+    this.uri,
+    required this.links,
+  }) : super._();
   @override
   OgcTileMatrixSetListTileMatrixSetsInner rebuild(
-          void Function(OgcTileMatrixSetListTileMatrixSetsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcTileMatrixSetListTileMatrixSetsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcTileMatrixSetListTileMatrixSetsInnerBuilder toBuilder() =>
@@ -123,7 +129,8 @@ class _$OgcTileMatrixSetListTileMatrixSetsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'OgcTileMatrixSetListTileMatrixSetsInner')
+            r'OgcTileMatrixSetListTileMatrixSetsInner',
+          )
           ..add('id', id)
           ..add('title', title)
           ..add('uri', uri)
@@ -134,8 +141,10 @@ class _$OgcTileMatrixSetListTileMatrixSetsInner
 
 class OgcTileMatrixSetListTileMatrixSetsInnerBuilder
     implements
-        Builder<OgcTileMatrixSetListTileMatrixSetsInner,
-            OgcTileMatrixSetListTileMatrixSetsInnerBuilder> {
+        Builder<
+          OgcTileMatrixSetListTileMatrixSetsInner,
+          OgcTileMatrixSetListTileMatrixSetsInnerBuilder
+        > {
   _$OgcTileMatrixSetListTileMatrixSetsInner? _$v;
 
   OgcTileMatrixSetListTileMatrixSetsInnerIdEnum? _id;
@@ -177,7 +186,8 @@ class OgcTileMatrixSetListTileMatrixSetsInnerBuilder
 
   @override
   void update(
-      void Function(OgcTileMatrixSetListTileMatrixSetsInnerBuilder)? updates) {
+    void Function(OgcTileMatrixSetListTileMatrixSetsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -187,10 +197,14 @@ class OgcTileMatrixSetListTileMatrixSetsInnerBuilder
   _$OgcTileMatrixSetListTileMatrixSetsInner _build() {
     _$OgcTileMatrixSetListTileMatrixSetsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$OgcTileMatrixSetListTileMatrixSetsInner._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'OgcTileMatrixSetListTileMatrixSetsInner', 'id'),
+              id,
+              r'OgcTileMatrixSetListTileMatrixSetsInner',
+              'id',
+            ),
             title: title,
             uri: uri,
             links: links.build(),
@@ -202,9 +216,10 @@ class OgcTileMatrixSetListTileMatrixSetsInnerBuilder
         links.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'OgcTileMatrixSetListTileMatrixSetsInner',
-            _$failedField,
-            e.toString());
+          r'OgcTileMatrixSetListTileMatrixSetsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

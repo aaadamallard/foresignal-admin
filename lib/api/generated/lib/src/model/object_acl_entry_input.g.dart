@@ -31,16 +31,16 @@ ObjectAclEntryInputRoleEnum _$objectAclEntryInputRoleEnumValueOf(String name) {
 }
 
 final BuiltSet<ObjectAclEntryInputRoleEnum>
-    _$objectAclEntryInputRoleEnumValues =
+_$objectAclEntryInputRoleEnumValues =
     BuiltSet<ObjectAclEntryInputRoleEnum>(const <ObjectAclEntryInputRoleEnum>[
-  _$objectAclEntryInputRoleEnum_viewer,
-  _$objectAclEntryInputRoleEnum_commenter,
-  _$objectAclEntryInputRoleEnum_editor,
-  _$objectAclEntryInputRoleEnum_owner,
-]);
+      _$objectAclEntryInputRoleEnum_viewer,
+      _$objectAclEntryInputRoleEnum_commenter,
+      _$objectAclEntryInputRoleEnum_editor,
+      _$objectAclEntryInputRoleEnum_owner,
+    ]);
 
 Serializer<ObjectAclEntryInputRoleEnum>
-    _$objectAclEntryInputRoleEnumSerializer =
+_$objectAclEntryInputRoleEnumSerializer =
     _$ObjectAclEntryInputRoleEnumSerializer();
 
 class _$ObjectAclEntryInputRoleEnumSerializer
@@ -64,16 +64,20 @@ class _$ObjectAclEntryInputRoleEnumSerializer
   final String wireName = 'ObjectAclEntryInputRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, ObjectAclEntryInputRoleEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ObjectAclEntryInputRoleEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ObjectAclEntryInputRoleEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ObjectAclEntryInputRoleEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ObjectAclEntryInputRoleEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ObjectAclEntryInput extends ObjectAclEntryInput {
@@ -84,17 +88,19 @@ class _$ObjectAclEntryInput extends ObjectAclEntryInput {
   @override
   final DateTime? expiresAt;
 
-  factory _$ObjectAclEntryInput(
-          [void Function(ObjectAclEntryInputBuilder)? updates]) =>
-      (ObjectAclEntryInputBuilder()..update(updates))._build();
+  factory _$ObjectAclEntryInput([
+    void Function(ObjectAclEntryInputBuilder)? updates,
+  ]) => (ObjectAclEntryInputBuilder()..update(updates))._build();
 
-  _$ObjectAclEntryInput._(
-      {required this.grantee, required this.role, this.expiresAt})
-      : super._();
+  _$ObjectAclEntryInput._({
+    required this.grantee,
+    required this.role,
+    this.expiresAt,
+  }) : super._();
   @override
   ObjectAclEntryInput rebuild(
-          void Function(ObjectAclEntryInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ObjectAclEntryInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ObjectAclEntryInputBuilder toBuilder() =>
@@ -174,12 +180,19 @@ class ObjectAclEntryInputBuilder
   ObjectAclEntryInput build() => _build();
 
   _$ObjectAclEntryInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ObjectAclEntryInput._(
           grantee: BuiltValueNullFieldError.checkNotNull(
-              grantee, r'ObjectAclEntryInput', 'grantee'),
+            grantee,
+            r'ObjectAclEntryInput',
+            'grantee',
+          ),
           role: BuiltValueNullFieldError.checkNotNull(
-              role, r'ObjectAclEntryInput', 'role'),
+            role,
+            r'ObjectAclEntryInput',
+            'role',
+          ),
           expiresAt: expiresAt,
         );
     replace(_$result);

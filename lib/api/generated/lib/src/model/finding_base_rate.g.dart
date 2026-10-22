@@ -7,13 +7,13 @@ part of 'finding_base_rate.dart';
 // **************************************************************************
 
 const FindingBaseRateMethodEnum
-    _$findingBaseRateMethodEnum_detectorFalseAlarmRate =
+_$findingBaseRateMethodEnum_detectorFalseAlarmRate =
     const FindingBaseRateMethodEnum._('detectorFalseAlarmRate');
 const FindingBaseRateMethodEnum
-    _$findingBaseRateMethodEnum_placeboDistribution =
+_$findingBaseRateMethodEnum_placeboDistribution =
     const FindingBaseRateMethodEnum._('placeboDistribution');
 const FindingBaseRateMethodEnum
-    _$findingBaseRateMethodEnum_independenceBaseline =
+_$findingBaseRateMethodEnum_independenceBaseline =
     const FindingBaseRateMethodEnum._('independenceBaseline');
 const FindingBaseRateMethodEnum _$findingBaseRateMethodEnum_precursorBaseRate =
     const FindingBaseRateMethodEnum._('precursorBaseRate');
@@ -39,12 +39,12 @@ FindingBaseRateMethodEnum _$findingBaseRateMethodEnumValueOf(String name) {
 
 final BuiltSet<FindingBaseRateMethodEnum> _$findingBaseRateMethodEnumValues =
     BuiltSet<FindingBaseRateMethodEnum>(const <FindingBaseRateMethodEnum>[
-  _$findingBaseRateMethodEnum_detectorFalseAlarmRate,
-  _$findingBaseRateMethodEnum_placeboDistribution,
-  _$findingBaseRateMethodEnum_independenceBaseline,
-  _$findingBaseRateMethodEnum_precursorBaseRate,
-  _$findingBaseRateMethodEnum_other,
-]);
+      _$findingBaseRateMethodEnum_detectorFalseAlarmRate,
+      _$findingBaseRateMethodEnum_placeboDistribution,
+      _$findingBaseRateMethodEnum_independenceBaseline,
+      _$findingBaseRateMethodEnum_precursorBaseRate,
+      _$findingBaseRateMethodEnum_other,
+    ]);
 
 Serializer<FindingBaseRateMethodEnum> _$findingBaseRateMethodEnumSerializer =
     _$FindingBaseRateMethodEnumSerializer();
@@ -72,16 +72,20 @@ class _$FindingBaseRateMethodEnumSerializer
   final String wireName = 'FindingBaseRateMethodEnum';
 
   @override
-  Object serialize(Serializers serializers, FindingBaseRateMethodEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    FindingBaseRateMethodEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FindingBaseRateMethodEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FindingBaseRateMethodEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FindingBaseRateMethodEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FindingBaseRate extends FindingBaseRate {
@@ -101,14 +105,14 @@ class _$FindingBaseRate extends FindingBaseRate {
   factory _$FindingBaseRate([void Function(FindingBaseRateBuilder)? updates]) =>
       (FindingBaseRateBuilder()..update(updates))._build();
 
-  _$FindingBaseRate._(
-      {this.value,
-      required this.unit,
-      required this.method,
-      this.n,
-      this.period,
-      required this.text})
-      : super._();
+  _$FindingBaseRate._({
+    this.value,
+    required this.unit,
+    required this.method,
+    this.n,
+    this.period,
+    required this.text,
+  }) : super._();
   @override
   FindingBaseRate rebuild(void Function(FindingBaseRateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -216,17 +220,27 @@ class FindingBaseRateBuilder
   _$FindingBaseRate _build() {
     _$FindingBaseRate _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FindingBaseRate._(
             value: value,
             unit: BuiltValueNullFieldError.checkNotNull(
-                unit, r'FindingBaseRate', 'unit'),
+              unit,
+              r'FindingBaseRate',
+              'unit',
+            ),
             method: BuiltValueNullFieldError.checkNotNull(
-                method, r'FindingBaseRate', 'method'),
+              method,
+              r'FindingBaseRate',
+              'method',
+            ),
             n: n,
             period: _period?.build(),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, r'FindingBaseRate', 'text'),
+              text,
+              r'FindingBaseRate',
+              'text',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -235,7 +249,10 @@ class FindingBaseRateBuilder
         _period?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FindingBaseRate', _$failedField, e.toString());
+          r'FindingBaseRate',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

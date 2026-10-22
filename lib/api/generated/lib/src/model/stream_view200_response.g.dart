@@ -7,17 +7,18 @@ part of 'stream_view200_response.dart';
 // **************************************************************************
 
 const StreamView200ResponseReasonEnum
-    _$streamView200ResponseReasonEnum_bufferOverflow =
+_$streamView200ResponseReasonEnum_bufferOverflow =
     const StreamView200ResponseReasonEnum._('bufferOverflow');
 const StreamView200ResponseReasonEnum
-    _$streamView200ResponseReasonEnum_replayCap =
+_$streamView200ResponseReasonEnum_replayCap =
     const StreamView200ResponseReasonEnum._('replayCap');
 const StreamView200ResponseReasonEnum
-    _$streamView200ResponseReasonEnum_resyncRequired =
+_$streamView200ResponseReasonEnum_resyncRequired =
     const StreamView200ResponseReasonEnum._('resyncRequired');
 
 StreamView200ResponseReasonEnum _$streamView200ResponseReasonEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'bufferOverflow':
       return _$streamView200ResponseReasonEnum_bufferOverflow;
@@ -31,15 +32,17 @@ StreamView200ResponseReasonEnum _$streamView200ResponseReasonEnumValueOf(
 }
 
 final BuiltSet<StreamView200ResponseReasonEnum>
-    _$streamView200ResponseReasonEnumValues = BuiltSet<
-        StreamView200ResponseReasonEnum>(const <StreamView200ResponseReasonEnum>[
-  _$streamView200ResponseReasonEnum_bufferOverflow,
-  _$streamView200ResponseReasonEnum_replayCap,
-  _$streamView200ResponseReasonEnum_resyncRequired,
-]);
+_$streamView200ResponseReasonEnumValues =
+    BuiltSet<StreamView200ResponseReasonEnum>(
+      const <StreamView200ResponseReasonEnum>[
+        _$streamView200ResponseReasonEnum_bufferOverflow,
+        _$streamView200ResponseReasonEnum_replayCap,
+        _$streamView200ResponseReasonEnum_resyncRequired,
+      ],
+    );
 
 Serializer<StreamView200ResponseReasonEnum>
-    _$streamView200ResponseReasonEnumSerializer =
+_$streamView200ResponseReasonEnumSerializer =
     _$StreamView200ResponseReasonEnumSerializer();
 
 class _$StreamView200ResponseReasonEnumSerializer
@@ -62,31 +65,34 @@ class _$StreamView200ResponseReasonEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, StreamView200ResponseReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    StreamView200ResponseReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   StreamView200ResponseReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StreamView200ResponseReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StreamView200ResponseReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StreamView200Response extends StreamView200Response {
   @override
   final AnyOf anyOf;
 
-  factory _$StreamView200Response(
-          [void Function(StreamView200ResponseBuilder)? updates]) =>
-      (StreamView200ResponseBuilder()..update(updates))._build();
+  factory _$StreamView200Response([
+    void Function(StreamView200ResponseBuilder)? updates,
+  ]) => (StreamView200ResponseBuilder()..update(updates))._build();
 
   _$StreamView200Response._({required this.anyOf}) : super._();
   @override
   StreamView200Response rebuild(
-          void Function(StreamView200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(StreamView200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   StreamView200ResponseBuilder toBuilder() =>
@@ -108,9 +114,9 @@ class _$StreamView200Response extends StreamView200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'StreamView200Response')
-          ..add('anyOf', anyOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'StreamView200Response',
+    )..add('anyOf', anyOf)).toString();
   }
 }
 
@@ -149,10 +155,14 @@ class StreamView200ResponseBuilder
   StreamView200Response build() => _build();
 
   _$StreamView200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StreamView200Response._(
           anyOf: BuiltValueNullFieldError.checkNotNull(
-              anyOf, r'StreamView200Response', 'anyOf'),
+            anyOf,
+            r'StreamView200Response',
+            'anyOf',
+          ),
         );
     replace(_$result);
     return _$result;

@@ -19,12 +19,12 @@ class _$TagAssignResult extends TagAssignResult {
   factory _$TagAssignResult([void Function(TagAssignResultBuilder)? updates]) =>
       (TagAssignResultBuilder()..update(updates))._build();
 
-  _$TagAssignResult._(
-      {required this.tagId,
-      required this.changed,
-      required this.unchanged,
-      required this.skipped})
-      : super._();
+  _$TagAssignResult._({
+    required this.tagId,
+    required this.changed,
+    required this.unchanged,
+    required this.skipped,
+  }) : super._();
   @override
   TagAssignResult rebuild(void Function(TagAssignResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -118,14 +118,24 @@ class TagAssignResultBuilder
   _$TagAssignResult _build() {
     _$TagAssignResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TagAssignResult._(
             tagId: BuiltValueNullFieldError.checkNotNull(
-                tagId, r'TagAssignResult', 'tagId'),
+              tagId,
+              r'TagAssignResult',
+              'tagId',
+            ),
             changed: BuiltValueNullFieldError.checkNotNull(
-                changed, r'TagAssignResult', 'changed'),
+              changed,
+              r'TagAssignResult',
+              'changed',
+            ),
             unchanged: BuiltValueNullFieldError.checkNotNull(
-                unchanged, r'TagAssignResult', 'unchanged'),
+              unchanged,
+              r'TagAssignResult',
+              'unchanged',
+            ),
             skipped: skipped.build(),
           );
     } catch (_) {
@@ -135,7 +145,10 @@ class TagAssignResultBuilder
         skipped.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TagAssignResult', _$failedField, e.toString());
+          r'TagAssignResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

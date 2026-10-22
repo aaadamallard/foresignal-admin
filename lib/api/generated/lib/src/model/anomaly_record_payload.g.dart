@@ -16,7 +16,8 @@ const AnomalyRecordPayloadStateEnum _$anomalyRecordPayloadStateEnum_learning =
     const AnomalyRecordPayloadStateEnum._('learning');
 
 AnomalyRecordPayloadStateEnum _$anomalyRecordPayloadStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'active':
       return _$anomalyRecordPayloadStateEnum_active;
@@ -32,35 +33,36 @@ AnomalyRecordPayloadStateEnum _$anomalyRecordPayloadStateEnumValueOf(
 }
 
 final BuiltSet<AnomalyRecordPayloadStateEnum>
-    _$anomalyRecordPayloadStateEnumValues = BuiltSet<
-        AnomalyRecordPayloadStateEnum>(const <AnomalyRecordPayloadStateEnum>[
-  _$anomalyRecordPayloadStateEnum_active,
-  _$anomalyRecordPayloadStateEnum_clear,
-  _$anomalyRecordPayloadStateEnum_unknown,
-  _$anomalyRecordPayloadStateEnum_learning,
-]);
+_$anomalyRecordPayloadStateEnumValues = BuiltSet<AnomalyRecordPayloadStateEnum>(
+  const <AnomalyRecordPayloadStateEnum>[
+    _$anomalyRecordPayloadStateEnum_active,
+    _$anomalyRecordPayloadStateEnum_clear,
+    _$anomalyRecordPayloadStateEnum_unknown,
+    _$anomalyRecordPayloadStateEnum_learning,
+  ],
+);
 
 const AnomalyRecordPayloadClassificationEnum
-    _$anomalyRecordPayloadClassificationEnum_activityUp =
+_$anomalyRecordPayloadClassificationEnum_activityUp =
     const AnomalyRecordPayloadClassificationEnum._('activityUp');
 const AnomalyRecordPayloadClassificationEnum
-    _$anomalyRecordPayloadClassificationEnum_activityDown =
+_$anomalyRecordPayloadClassificationEnum_activityDown =
     const AnomalyRecordPayloadClassificationEnum._('activityDown');
 const AnomalyRecordPayloadClassificationEnum
-    _$anomalyRecordPayloadClassificationEnum_coverageDrop =
+_$anomalyRecordPayloadClassificationEnum_coverageDrop =
     const AnomalyRecordPayloadClassificationEnum._('coverageDrop');
 const AnomalyRecordPayloadClassificationEnum
-    _$anomalyRecordPayloadClassificationEnum_insufficientCoverage =
+_$anomalyRecordPayloadClassificationEnum_insufficientCoverage =
     const AnomalyRecordPayloadClassificationEnum._('insufficientCoverage');
 const AnomalyRecordPayloadClassificationEnum
-    _$anomalyRecordPayloadClassificationEnum_learning =
+_$anomalyRecordPayloadClassificationEnum_learning =
     const AnomalyRecordPayloadClassificationEnum._('learning');
 const AnomalyRecordPayloadClassificationEnum
-    _$anomalyRecordPayloadClassificationEnum_normal =
+_$anomalyRecordPayloadClassificationEnum_normal =
     const AnomalyRecordPayloadClassificationEnum._('normal');
 
 AnomalyRecordPayloadClassificationEnum
-    _$anomalyRecordPayloadClassificationEnumValueOf(String name) {
+_$anomalyRecordPayloadClassificationEnumValueOf(String name) {
   switch (name) {
     case 'activityUp':
       return _$anomalyRecordPayloadClassificationEnum_activityUp;
@@ -80,21 +82,23 @@ AnomalyRecordPayloadClassificationEnum
 }
 
 final BuiltSet<AnomalyRecordPayloadClassificationEnum>
-    _$anomalyRecordPayloadClassificationEnumValues = BuiltSet<
-        AnomalyRecordPayloadClassificationEnum>(const <AnomalyRecordPayloadClassificationEnum>[
-  _$anomalyRecordPayloadClassificationEnum_activityUp,
-  _$anomalyRecordPayloadClassificationEnum_activityDown,
-  _$anomalyRecordPayloadClassificationEnum_coverageDrop,
-  _$anomalyRecordPayloadClassificationEnum_insufficientCoverage,
-  _$anomalyRecordPayloadClassificationEnum_learning,
-  _$anomalyRecordPayloadClassificationEnum_normal,
-]);
+_$anomalyRecordPayloadClassificationEnumValues =
+    BuiltSet<AnomalyRecordPayloadClassificationEnum>(
+      const <AnomalyRecordPayloadClassificationEnum>[
+        _$anomalyRecordPayloadClassificationEnum_activityUp,
+        _$anomalyRecordPayloadClassificationEnum_activityDown,
+        _$anomalyRecordPayloadClassificationEnum_coverageDrop,
+        _$anomalyRecordPayloadClassificationEnum_insufficientCoverage,
+        _$anomalyRecordPayloadClassificationEnum_learning,
+        _$anomalyRecordPayloadClassificationEnum_normal,
+      ],
+    );
 
 Serializer<AnomalyRecordPayloadStateEnum>
-    _$anomalyRecordPayloadStateEnumSerializer =
+_$anomalyRecordPayloadStateEnumSerializer =
     _$AnomalyRecordPayloadStateEnumSerializer();
 Serializer<AnomalyRecordPayloadClassificationEnum>
-    _$anomalyRecordPayloadClassificationEnumSerializer =
+_$anomalyRecordPayloadClassificationEnumSerializer =
     _$AnomalyRecordPayloadClassificationEnumSerializer();
 
 class _$AnomalyRecordPayloadStateEnumSerializer
@@ -119,16 +123,19 @@ class _$AnomalyRecordPayloadStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, AnomalyRecordPayloadStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    AnomalyRecordPayloadStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyRecordPayloadStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyRecordPayloadStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyRecordPayloadStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyRecordPayloadClassificationEnumSerializer
@@ -152,23 +159,26 @@ class _$AnomalyRecordPayloadClassificationEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    AnomalyRecordPayloadClassificationEnum
+    AnomalyRecordPayloadClassificationEnum,
   ];
   @override
   final String wireName = 'AnomalyRecordPayloadClassificationEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          AnomalyRecordPayloadClassificationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AnomalyRecordPayloadClassificationEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   AnomalyRecordPayloadClassificationEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AnomalyRecordPayloadClassificationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AnomalyRecordPayloadClassificationEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AnomalyRecordPayload extends AnomalyRecordPayload {
@@ -193,26 +203,26 @@ class _$AnomalyRecordPayload extends AnomalyRecordPayload {
   @override
   final bool? automated;
 
-  factory _$AnomalyRecordPayload(
-          [void Function(AnomalyRecordPayloadBuilder)? updates]) =>
-      (AnomalyRecordPayloadBuilder()..update(updates))._build();
+  factory _$AnomalyRecordPayload([
+    void Function(AnomalyRecordPayloadBuilder)? updates,
+  ]) => (AnomalyRecordPayloadBuilder()..update(updates))._build();
 
-  _$AnomalyRecordPayload._(
-      {required this.ruleId,
-      this.name,
-      required this.groupKey,
-      this.state,
-      this.observed,
-      this.expected,
-      this.pValue,
-      required this.classification,
-      this.detector,
-      this.automated})
-      : super._();
+  _$AnomalyRecordPayload._({
+    required this.ruleId,
+    this.name,
+    required this.groupKey,
+    this.state,
+    this.observed,
+    this.expected,
+    this.pValue,
+    required this.classification,
+    this.detector,
+    this.automated,
+  }) : super._();
   @override
   AnomalyRecordPayload rebuild(
-          void Function(AnomalyRecordPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(AnomalyRecordPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   AnomalyRecordPayloadBuilder toBuilder() =>
@@ -352,19 +362,29 @@ class AnomalyRecordPayloadBuilder
   _$AnomalyRecordPayload _build() {
     _$AnomalyRecordPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$AnomalyRecordPayload._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'AnomalyRecordPayload', 'ruleId'),
+              ruleId,
+              r'AnomalyRecordPayload',
+              'ruleId',
+            ),
             name: name,
             groupKey: BuiltValueNullFieldError.checkNotNull(
-                groupKey, r'AnomalyRecordPayload', 'groupKey'),
+              groupKey,
+              r'AnomalyRecordPayload',
+              'groupKey',
+            ),
             state: state,
             observed: observed,
             expected: expected,
             pValue: pValue,
             classification: BuiltValueNullFieldError.checkNotNull(
-                classification, r'AnomalyRecordPayload', 'classification'),
+              classification,
+              r'AnomalyRecordPayload',
+              'classification',
+            ),
             detector: _detector?.build(),
             automated: automated,
           );
@@ -375,7 +395,10 @@ class AnomalyRecordPayloadBuilder
         _detector?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AnomalyRecordPayload', _$failedField, e.toString());
+          r'AnomalyRecordPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

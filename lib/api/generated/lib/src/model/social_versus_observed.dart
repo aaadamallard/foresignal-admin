@@ -66,7 +66,7 @@ class _$SocialVersusObservedSerializer
   @override
   final Iterable<Type> types = const [
     SocialVersusObserved,
-    _$SocialVersusObserved
+    _$SocialVersusObserved,
   ];
 
   @override
@@ -80,14 +80,17 @@ class _$SocialVersusObservedSerializer
     yield r'narrativesByStatus';
     yield serializers.serialize(
       object.narrativesByStatus,
-      specifiedType:
-          const FullType(BuiltMap, [FullType(String), FullType(int)]),
+      specifiedType: const FullType(BuiltMap, [
+        FullType(String),
+        FullType(int),
+      ]),
     );
     yield r'narratives';
     yield serializers.serialize(
       object.narratives,
-      specifiedType: const FullType(
-          BuiltList, [FullType(SocialVersusObservedNarrativesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(SocialVersusObservedNarrativesInner),
+      ]),
     );
     if (object.attentionGapFindingIds != null) {
       yield r'attentionGapFindingIds';
@@ -100,8 +103,9 @@ class _$SocialVersusObservedSerializer
       yield r'leadTimes';
       yield serializers.serialize(
         object.leadTimes,
-        specifiedType: const FullType(
-            BuiltList, [FullType(SocialVersusObservedLeadTimesInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SocialVersusObservedLeadTimesInner),
+        ]),
       );
     }
     if (object.mediaReuseFindingIds != null) {
@@ -133,9 +137,11 @@ class _$SocialVersusObservedSerializer
     SocialVersusObserved object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -151,63 +157,85 @@ class _$SocialVersusObservedSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'narrativesByStatus':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>;
           result.narrativesByStatus.replace(valueDes);
           break;
         case r'narratives':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(SocialVersusObservedNarrativesInner)]),
-          ) as BuiltList<SocialVersusObservedNarrativesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(SocialVersusObservedNarrativesInner),
+                    ]),
+                  )
+                  as BuiltList<SocialVersusObservedNarrativesInner>;
           result.narratives.replace(valueDes);
           break;
         case r'attentionGapFindingIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.attentionGapFindingIds.replace(valueDes);
           break;
         case r'leadTimes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SocialVersusObservedLeadTimesInner)]),
-          ) as BuiltList<SocialVersusObservedLeadTimesInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SocialVersusObservedLeadTimesInner),
+                    ]),
+                  )
+                  as BuiltList<SocialVersusObservedLeadTimesInner>?;
           if (valueDes == null) continue;
           result.leadTimes.replace(valueDes);
           break;
         case r'mediaReuseFindingIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.mediaReuseFindingIds.replace(valueDes);
           break;
         case r'coordinationFindingIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.coordinationFindingIds.replace(valueDes);
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;

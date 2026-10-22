@@ -68,8 +68,9 @@ class _$BenchmarkStatusSerializer
     yield r'components';
     yield serializers.serialize(
       object.components,
-      specifiedType:
-          const FullType(BuiltList, [FullType(BenchmarkStatusComponentsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(BenchmarkStatusComponentsInner),
+      ]),
     );
   }
 
@@ -79,9 +80,11 @@ class _$BenchmarkStatusSerializer
     BenchmarkStatus object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,25 +100,32 @@ class _$BenchmarkStatusSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'generatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.generatedAt = valueDes;
           break;
         case r'overall':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BenchmarkStatusOverallEnum),
-          ) as BenchmarkStatusOverallEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BenchmarkStatusOverallEnum),
+                  )
+                  as BenchmarkStatusOverallEnum;
           result.overall = valueDes;
           break;
         case r'components':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(BenchmarkStatusComponentsInner)]),
-          ) as BuiltList<BenchmarkStatusComponentsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(BenchmarkStatusComponentsInner),
+                    ]),
+                  )
+                  as BuiltList<BenchmarkStatusComponentsInner>;
           result.components.replace(valueDes);
           break;
         default:

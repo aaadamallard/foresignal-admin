@@ -10,7 +10,8 @@ const FieldManifestSchemaVersionEnum _$fieldManifestSchemaVersionEnum_number1 =
     const FieldManifestSchemaVersionEnum._('number1');
 
 FieldManifestSchemaVersionEnum _$fieldManifestSchemaVersionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'number1':
       return _$fieldManifestSchemaVersionEnum_number1;
@@ -20,13 +21,15 @@ FieldManifestSchemaVersionEnum _$fieldManifestSchemaVersionEnumValueOf(
 }
 
 final BuiltSet<FieldManifestSchemaVersionEnum>
-    _$fieldManifestSchemaVersionEnumValues = BuiltSet<
-        FieldManifestSchemaVersionEnum>(const <FieldManifestSchemaVersionEnum>[
-  _$fieldManifestSchemaVersionEnum_number1,
-]);
+_$fieldManifestSchemaVersionEnumValues =
+    BuiltSet<FieldManifestSchemaVersionEnum>(
+      const <FieldManifestSchemaVersionEnum>[
+        _$fieldManifestSchemaVersionEnum_number1,
+      ],
+    );
 
 Serializer<FieldManifestSchemaVersionEnum>
-    _$fieldManifestSchemaVersionEnumSerializer =
+_$fieldManifestSchemaVersionEnumSerializer =
     _$FieldManifestSchemaVersionEnumSerializer();
 
 class _$FieldManifestSchemaVersionEnumSerializer
@@ -45,16 +48,19 @@ class _$FieldManifestSchemaVersionEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, FieldManifestSchemaVersionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    FieldManifestSchemaVersionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   FieldManifestSchemaVersionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      FieldManifestSchemaVersionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => FieldManifestSchemaVersionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$FieldManifest extends FieldManifest {
@@ -92,23 +98,23 @@ class _$FieldManifest extends FieldManifest {
   factory _$FieldManifest([void Function(FieldManifestBuilder)? updates]) =>
       (FieldManifestBuilder()..update(updates))._build();
 
-  _$FieldManifest._(
-      {required this.schemaVersion,
-      required this.model,
-      required this.cycle,
-      required this.level,
-      required this.units,
-      required this.grid,
-      required this.stale,
-      required this.unavailable,
-      this.reason,
-      required this.components,
-      required this.byteLength,
-      required this.sha256,
-      this.attribution,
-      required this.dataUrl,
-      this.encodings})
-      : super._();
+  _$FieldManifest._({
+    required this.schemaVersion,
+    required this.model,
+    required this.cycle,
+    required this.level,
+    required this.units,
+    required this.grid,
+    required this.stale,
+    required this.unavailable,
+    this.reason,
+    required this.components,
+    required this.byteLength,
+    required this.sha256,
+    this.attribution,
+    required this.dataUrl,
+    this.encodings,
+  }) : super._();
   @override
   FieldManifest rebuild(void Function(FieldManifestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -297,31 +303,59 @@ class FieldManifestBuilder
   _$FieldManifest _build() {
     _$FieldManifest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$FieldManifest._(
             schemaVersion: BuiltValueNullFieldError.checkNotNull(
-                schemaVersion, r'FieldManifest', 'schemaVersion'),
+              schemaVersion,
+              r'FieldManifest',
+              'schemaVersion',
+            ),
             model: BuiltValueNullFieldError.checkNotNull(
-                model, r'FieldManifest', 'model'),
+              model,
+              r'FieldManifest',
+              'model',
+            ),
             cycle: cycle.build(),
             level: BuiltValueNullFieldError.checkNotNull(
-                level, r'FieldManifest', 'level'),
+              level,
+              r'FieldManifest',
+              'level',
+            ),
             units: BuiltValueNullFieldError.checkNotNull(
-                units, r'FieldManifest', 'units'),
+              units,
+              r'FieldManifest',
+              'units',
+            ),
             grid: grid.build(),
             stale: BuiltValueNullFieldError.checkNotNull(
-                stale, r'FieldManifest', 'stale'),
+              stale,
+              r'FieldManifest',
+              'stale',
+            ),
             unavailable: BuiltValueNullFieldError.checkNotNull(
-                unavailable, r'FieldManifest', 'unavailable'),
+              unavailable,
+              r'FieldManifest',
+              'unavailable',
+            ),
             reason: reason,
             components: components.build(),
             byteLength: BuiltValueNullFieldError.checkNotNull(
-                byteLength, r'FieldManifest', 'byteLength'),
+              byteLength,
+              r'FieldManifest',
+              'byteLength',
+            ),
             sha256: BuiltValueNullFieldError.checkNotNull(
-                sha256, r'FieldManifest', 'sha256'),
+              sha256,
+              r'FieldManifest',
+              'sha256',
+            ),
             attribution: _attribution?.build(),
             dataUrl: BuiltValueNullFieldError.checkNotNull(
-                dataUrl, r'FieldManifest', 'dataUrl'),
+              dataUrl,
+              r'FieldManifest',
+              'dataUrl',
+            ),
             encodings: _encodings?.build(),
           );
     } catch (_) {
@@ -343,7 +377,10 @@ class FieldManifestBuilder
         _encodings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'FieldManifest', _$failedField, e.toString());
+          r'FieldManifest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

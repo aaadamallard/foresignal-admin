@@ -15,7 +15,7 @@ const SocialComparisonStatusEnum _$socialComparisonStatusEnum_unobserved =
 const SocialComparisonStatusEnum _$socialComparisonStatusEnum_contradicted =
     const SocialComparisonStatusEnum._('contradicted');
 const SocialComparisonStatusEnum
-    _$socialComparisonStatusEnum_insufficientCoverage =
+_$socialComparisonStatusEnum_insufficientCoverage =
     const SocialComparisonStatusEnum._('insufficientCoverage');
 
 SocialComparisonStatusEnum _$socialComparisonStatusEnumValueOf(String name) {
@@ -37,12 +37,12 @@ SocialComparisonStatusEnum _$socialComparisonStatusEnumValueOf(String name) {
 
 final BuiltSet<SocialComparisonStatusEnum> _$socialComparisonStatusEnumValues =
     BuiltSet<SocialComparisonStatusEnum>(const <SocialComparisonStatusEnum>[
-  _$socialComparisonStatusEnum_pending,
-  _$socialComparisonStatusEnum_corroborated,
-  _$socialComparisonStatusEnum_unobserved,
-  _$socialComparisonStatusEnum_contradicted,
-  _$socialComparisonStatusEnum_insufficientCoverage,
-]);
+      _$socialComparisonStatusEnum_pending,
+      _$socialComparisonStatusEnum_corroborated,
+      _$socialComparisonStatusEnum_unobserved,
+      _$socialComparisonStatusEnum_contradicted,
+      _$socialComparisonStatusEnum_insufficientCoverage,
+    ]);
 
 const SocialComparisonFoundByEnum _$socialComparisonFoundByEnum_organic =
     const SocialComparisonFoundByEnum._('organic');
@@ -61,16 +61,17 @@ SocialComparisonFoundByEnum _$socialComparisonFoundByEnumValueOf(String name) {
 }
 
 final BuiltSet<SocialComparisonFoundByEnum>
-    _$socialComparisonFoundByEnumValues =
-    BuiltSet<SocialComparisonFoundByEnum>(const <SocialComparisonFoundByEnum>[
-  _$socialComparisonFoundByEnum_organic,
-  _$socialComparisonFoundByEnum_cue,
-]);
+_$socialComparisonFoundByEnumValues = BuiltSet<SocialComparisonFoundByEnum>(
+  const <SocialComparisonFoundByEnum>[
+    _$socialComparisonFoundByEnum_organic,
+    _$socialComparisonFoundByEnum_cue,
+  ],
+);
 
 Serializer<SocialComparisonStatusEnum> _$socialComparisonStatusEnumSerializer =
     _$SocialComparisonStatusEnumSerializer();
 Serializer<SocialComparisonFoundByEnum>
-    _$socialComparisonFoundByEnumSerializer =
+_$socialComparisonFoundByEnumSerializer =
     _$SocialComparisonFoundByEnumSerializer();
 
 class _$SocialComparisonStatusEnumSerializer
@@ -96,16 +97,20 @@ class _$SocialComparisonStatusEnumSerializer
   final String wireName = 'SocialComparisonStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialComparisonStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialComparisonStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparisonFoundByEnumSerializer
@@ -125,16 +130,20 @@ class _$SocialComparisonFoundByEnumSerializer
   final String wireName = 'SocialComparisonFoundByEnum';
 
   @override
-  Object serialize(Serializers serializers, SocialComparisonFoundByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialComparisonFoundByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialComparisonFoundByEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialComparisonFoundByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialComparisonFoundByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialComparison extends SocialComparison {
@@ -183,34 +192,34 @@ class _$SocialComparison extends SocialComparison {
   @override
   final BuiltList<Caveat>? caveats;
 
-  factory _$SocialComparison(
-          [void Function(SocialComparisonBuilder)? updates]) =>
-      (SocialComparisonBuilder()..update(updates))._build();
+  factory _$SocialComparison([
+    void Function(SocialComparisonBuilder)? updates,
+  ]) => (SocialComparisonBuilder()..update(updates))._build();
 
-  _$SocialComparison._(
-      {required this.id,
-      required this.ref,
-      required this.claimId,
-      required this.narrativeId,
-      required this.signalFamily,
-      required this.place,
-      required this.window,
-      required this.status,
-      required this.physicalEvidence,
-      required this.detectability,
-      required this.leadTimes,
-      this.contradiction,
-      required this.foundBy,
-      this.cueId,
-      this.questionId,
-      required this.revision,
-      this.finalAt,
-      required this.comparator,
-      required this.manifestId,
-      required this.evaluatedAt,
-      this.revisions,
-      this.caveats})
-      : super._();
+  _$SocialComparison._({
+    required this.id,
+    required this.ref,
+    required this.claimId,
+    required this.narrativeId,
+    required this.signalFamily,
+    required this.place,
+    required this.window,
+    required this.status,
+    required this.physicalEvidence,
+    required this.detectability,
+    required this.leadTimes,
+    this.contradiction,
+    required this.foundBy,
+    this.cueId,
+    this.questionId,
+    required this.revision,
+    this.finalAt,
+    required this.comparator,
+    required this.manifestId,
+    required this.evaluatedAt,
+    this.revisions,
+    this.caveats,
+  }) : super._();
   @override
   SocialComparison rebuild(void Function(SocialComparisonBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -460,38 +469,69 @@ class SocialComparisonBuilder
   _$SocialComparison _build() {
     _$SocialComparison _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialComparison._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'SocialComparison', 'id'),
+              id,
+              r'SocialComparison',
+              'id',
+            ),
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'SocialComparison', 'ref'),
+              ref,
+              r'SocialComparison',
+              'ref',
+            ),
             claimId: BuiltValueNullFieldError.checkNotNull(
-                claimId, r'SocialComparison', 'claimId'),
+              claimId,
+              r'SocialComparison',
+              'claimId',
+            ),
             narrativeId: BuiltValueNullFieldError.checkNotNull(
-                narrativeId, r'SocialComparison', 'narrativeId'),
+              narrativeId,
+              r'SocialComparison',
+              'narrativeId',
+            ),
             signalFamily: BuiltValueNullFieldError.checkNotNull(
-                signalFamily, r'SocialComparison', 'signalFamily'),
+              signalFamily,
+              r'SocialComparison',
+              'signalFamily',
+            ),
             place: place.build(),
             window: window.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SocialComparison', 'status'),
+              status,
+              r'SocialComparison',
+              'status',
+            ),
             physicalEvidence: physicalEvidence.build(),
             detectability: detectability.build(),
             leadTimes: leadTimes.build(),
             contradiction: _contradiction?.build(),
             foundBy: BuiltValueNullFieldError.checkNotNull(
-                foundBy, r'SocialComparison', 'foundBy'),
+              foundBy,
+              r'SocialComparison',
+              'foundBy',
+            ),
             cueId: cueId,
             questionId: questionId,
             revision: BuiltValueNullFieldError.checkNotNull(
-                revision, r'SocialComparison', 'revision'),
+              revision,
+              r'SocialComparison',
+              'revision',
+            ),
             finalAt: finalAt,
             comparator: comparator.build(),
             manifestId: BuiltValueNullFieldError.checkNotNull(
-                manifestId, r'SocialComparison', 'manifestId'),
+              manifestId,
+              r'SocialComparison',
+              'manifestId',
+            ),
             evaluatedAt: BuiltValueNullFieldError.checkNotNull(
-                evaluatedAt, r'SocialComparison', 'evaluatedAt'),
+              evaluatedAt,
+              r'SocialComparison',
+              'evaluatedAt',
+            ),
             revisions: _revisions?.build(),
             caveats: _caveats?.build(),
           );
@@ -521,7 +561,10 @@ class SocialComparisonBuilder
         _caveats?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialComparison', _$failedField, e.toString());
+          r'SocialComparison',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

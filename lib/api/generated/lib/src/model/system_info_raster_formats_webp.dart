@@ -25,9 +25,9 @@ abstract class SystemInfoRasterFormatsWebp
 
   SystemInfoRasterFormatsWebp._();
 
-  factory SystemInfoRasterFormatsWebp(
-          [void updates(SystemInfoRasterFormatsWebpBuilder b)]) =
-      _$SystemInfoRasterFormatsWebp;
+  factory SystemInfoRasterFormatsWebp([
+    void updates(SystemInfoRasterFormatsWebpBuilder b),
+  ]) = _$SystemInfoRasterFormatsWebp;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SystemInfoRasterFormatsWebpBuilder b) => b;
@@ -42,7 +42,7 @@ class _$SystemInfoRasterFormatsWebpSerializer
   @override
   final Iterable<Type> types = const [
     SystemInfoRasterFormatsWebp,
-    _$SystemInfoRasterFormatsWebp
+    _$SystemInfoRasterFormatsWebp,
   ];
 
   @override
@@ -75,9 +75,11 @@ class _$SystemInfoRasterFormatsWebpSerializer
     SystemInfoRasterFormatsWebp object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -93,18 +95,22 @@ class _$SystemInfoRasterFormatsWebpSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'available':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.available = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;

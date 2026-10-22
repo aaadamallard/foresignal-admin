@@ -7,10 +7,10 @@ part of 'satellite_pass_payload.dart';
 // **************************************************************************
 
 const SatellitePassPayloadStatusEnum
-    _$satellitePassPayloadStatusEnum_predicted =
+_$satellitePassPayloadStatusEnum_predicted =
     const SatellitePassPayloadStatusEnum._('predicted');
 const SatellitePassPayloadStatusEnum
-    _$satellitePassPayloadStatusEnum_receiving =
+_$satellitePassPayloadStatusEnum_receiving =
     const SatellitePassPayloadStatusEnum._('receiving');
 const SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnum_recorded =
     const SatellitePassPayloadStatusEnum._('recorded');
@@ -22,7 +22,8 @@ const SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnum_missed =
     const SatellitePassPayloadStatusEnum._('missed');
 
 SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'predicted':
       return _$satellitePassPayloadStatusEnum_predicted;
@@ -42,25 +43,27 @@ SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<SatellitePassPayloadStatusEnum>
-    _$satellitePassPayloadStatusEnumValues = BuiltSet<
-        SatellitePassPayloadStatusEnum>(const <SatellitePassPayloadStatusEnum>[
-  _$satellitePassPayloadStatusEnum_predicted,
-  _$satellitePassPayloadStatusEnum_receiving,
-  _$satellitePassPayloadStatusEnum_recorded,
-  _$satellitePassPayloadStatusEnum_decoded,
-  _$satellitePassPayloadStatusEnum_failed,
-  _$satellitePassPayloadStatusEnum_missed,
-]);
+_$satellitePassPayloadStatusEnumValues =
+    BuiltSet<SatellitePassPayloadStatusEnum>(
+      const <SatellitePassPayloadStatusEnum>[
+        _$satellitePassPayloadStatusEnum_predicted,
+        _$satellitePassPayloadStatusEnum_receiving,
+        _$satellitePassPayloadStatusEnum_recorded,
+        _$satellitePassPayloadStatusEnum_decoded,
+        _$satellitePassPayloadStatusEnum_failed,
+        _$satellitePassPayloadStatusEnum_missed,
+      ],
+    );
 
 const SatellitePassPayloadGeometrySourceEnum
-    _$satellitePassPayloadGeometrySourceEnum_footprint =
+_$satellitePassPayloadGeometrySourceEnum_footprint =
     const SatellitePassPayloadGeometrySourceEnum._('footprint');
 const SatellitePassPayloadGeometrySourceEnum
-    _$satellitePassPayloadGeometrySourceEnum_swath =
+_$satellitePassPayloadGeometrySourceEnum_swath =
     const SatellitePassPayloadGeometrySourceEnum._('swath');
 
 SatellitePassPayloadGeometrySourceEnum
-    _$satellitePassPayloadGeometrySourceEnumValueOf(String name) {
+_$satellitePassPayloadGeometrySourceEnumValueOf(String name) {
   switch (name) {
     case 'footprint':
       return _$satellitePassPayloadGeometrySourceEnum_footprint;
@@ -72,17 +75,19 @@ SatellitePassPayloadGeometrySourceEnum
 }
 
 final BuiltSet<SatellitePassPayloadGeometrySourceEnum>
-    _$satellitePassPayloadGeometrySourceEnumValues = BuiltSet<
-        SatellitePassPayloadGeometrySourceEnum>(const <SatellitePassPayloadGeometrySourceEnum>[
-  _$satellitePassPayloadGeometrySourceEnum_footprint,
-  _$satellitePassPayloadGeometrySourceEnum_swath,
-]);
+_$satellitePassPayloadGeometrySourceEnumValues =
+    BuiltSet<SatellitePassPayloadGeometrySourceEnum>(
+      const <SatellitePassPayloadGeometrySourceEnum>[
+        _$satellitePassPayloadGeometrySourceEnum_footprint,
+        _$satellitePassPayloadGeometrySourceEnum_swath,
+      ],
+    );
 
 Serializer<SatellitePassPayloadStatusEnum>
-    _$satellitePassPayloadStatusEnumSerializer =
+_$satellitePassPayloadStatusEnumSerializer =
     _$SatellitePassPayloadStatusEnumSerializer();
 Serializer<SatellitePassPayloadGeometrySourceEnum>
-    _$satellitePassPayloadGeometrySourceEnumSerializer =
+_$satellitePassPayloadGeometrySourceEnumSerializer =
     _$SatellitePassPayloadGeometrySourceEnumSerializer();
 
 class _$SatellitePassPayloadStatusEnumSerializer
@@ -111,16 +116,19 @@ class _$SatellitePassPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, SatellitePassPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    SatellitePassPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SatellitePassPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SatellitePassPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SatellitePassPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SatellitePassPayloadGeometrySourceEnumSerializer
@@ -136,23 +144,26 @@ class _$SatellitePassPayloadGeometrySourceEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SatellitePassPayloadGeometrySourceEnum
+    SatellitePassPayloadGeometrySourceEnum,
   ];
   @override
   final String wireName = 'SatellitePassPayloadGeometrySourceEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SatellitePassPayloadGeometrySourceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SatellitePassPayloadGeometrySourceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SatellitePassPayloadGeometrySourceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SatellitePassPayloadGeometrySourceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SatellitePassPayloadGeometrySourceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SatellitePassPayload extends SatellitePassPayload {
@@ -201,38 +212,38 @@ class _$SatellitePassPayload extends SatellitePassPayload {
   @override
   final bool? imminent;
 
-  factory _$SatellitePassPayload(
-          [void Function(SatellitePassPayloadBuilder)? updates]) =>
-      (SatellitePassPayloadBuilder()..update(updates))._build();
+  factory _$SatellitePassPayload([
+    void Function(SatellitePassPayloadBuilder)? updates,
+  ]) => (SatellitePassPayloadBuilder()..update(updates))._build();
 
-  _$SatellitePassPayload._(
-      {required this.status,
-      required this.satellite,
-      required this.satKey,
-      this.norad,
-      this.pipelineId,
-      this.frequencyHz,
-      required this.aos,
-      this.los,
-      this.maxElevationDeg,
-      this.rf,
-      this.instruments,
-      this.products,
-      this.tle,
-      this.satdumpVersion,
-      required this.title,
-      this.attribution,
-      this.geometrySource,
-      this.tca,
-      this.aosAzimuthDeg,
-      this.losAzimuthDeg,
-      this.place,
-      this.imminent})
-      : super._();
+  _$SatellitePassPayload._({
+    required this.status,
+    required this.satellite,
+    required this.satKey,
+    this.norad,
+    this.pipelineId,
+    this.frequencyHz,
+    required this.aos,
+    this.los,
+    this.maxElevationDeg,
+    this.rf,
+    this.instruments,
+    this.products,
+    this.tle,
+    this.satdumpVersion,
+    required this.title,
+    this.attribution,
+    this.geometrySource,
+    this.tca,
+    this.aosAzimuthDeg,
+    this.losAzimuthDeg,
+    this.place,
+    this.imminent,
+  }) : super._();
   @override
   SatellitePassPayload rebuild(
-          void Function(SatellitePassPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SatellitePassPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SatellitePassPayloadBuilder toBuilder() =>
@@ -479,19 +490,32 @@ class SatellitePassPayloadBuilder
   _$SatellitePassPayload _build() {
     _$SatellitePassPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SatellitePassPayload._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'SatellitePassPayload', 'status'),
+              status,
+              r'SatellitePassPayload',
+              'status',
+            ),
             satellite: BuiltValueNullFieldError.checkNotNull(
-                satellite, r'SatellitePassPayload', 'satellite'),
+              satellite,
+              r'SatellitePassPayload',
+              'satellite',
+            ),
             satKey: BuiltValueNullFieldError.checkNotNull(
-                satKey, r'SatellitePassPayload', 'satKey'),
+              satKey,
+              r'SatellitePassPayload',
+              'satKey',
+            ),
             norad: norad,
             pipelineId: pipelineId,
             frequencyHz: frequencyHz,
             aos: BuiltValueNullFieldError.checkNotNull(
-                aos, r'SatellitePassPayload', 'aos'),
+              aos,
+              r'SatellitePassPayload',
+              'aos',
+            ),
             los: los,
             maxElevationDeg: maxElevationDeg,
             rf: _rf?.build(),
@@ -500,7 +524,10 @@ class SatellitePassPayloadBuilder
             tle: tle,
             satdumpVersion: satdumpVersion,
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SatellitePassPayload', 'title'),
+              title,
+              r'SatellitePassPayload',
+              'title',
+            ),
             attribution: _attribution?.build(),
             geometrySource: geometrySource,
             tca: tca,
@@ -523,7 +550,10 @@ class SatellitePassPayloadBuilder
         _attribution?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SatellitePassPayload', _$failedField, e.toString());
+          r'SatellitePassPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

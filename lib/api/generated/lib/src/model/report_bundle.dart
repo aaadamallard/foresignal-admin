@@ -102,16 +102,19 @@ class _$ReportBundleSerializer implements PrimitiveSerializer<ReportBundle> {
       yield r'snapshots';
       yield serializers.serialize(
         object.snapshots,
-        specifiedType: const FullType(
-            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
     if (object.attachments != null) {
       yield r'attachments';
       yield serializers.serialize(
         object.attachments,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ReportBundleAttachmentsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ReportBundleAttachmentsInner),
+        ]),
       );
     }
     if (object.manifestId != null) {
@@ -136,9 +139,11 @@ class _$ReportBundleSerializer implements PrimitiveSerializer<ReportBundle> {
     ReportBundle object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -154,66 +159,84 @@ class _$ReportBundleSerializer implements PrimitiveSerializer<ReportBundle> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'report':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Report),
-          ) as Report;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Report),
+                  )
+                  as Report;
           result.report.replace(valueDes);
           break;
         case r'revision':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.revision = valueDes;
           break;
         case r'tlp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.tlp = valueDes;
           break;
         case r'envelopes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ObjectEnvelope)]),
-          ) as BuiltList<ObjectEnvelope>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ObjectEnvelope),
+                    ]),
+                  )
+                  as BuiltList<ObjectEnvelope>;
           result.envelopes.replace(valueDes);
           break;
         case r'snapshots':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
-          ) as BuiltMap<String, JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
           if (valueDes == null) continue;
           result.snapshots.replace(valueDes);
           break;
         case r'attachments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ReportBundleAttachmentsInner)]),
-          ) as BuiltList<ReportBundleAttachmentsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ReportBundleAttachmentsInner),
+                    ]),
+                  )
+                  as BuiltList<ReportBundleAttachmentsInner>?;
           if (valueDes == null) continue;
           result.attachments.replace(valueDes);
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
         case r'missing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.missing.replace(valueDes);
           break;

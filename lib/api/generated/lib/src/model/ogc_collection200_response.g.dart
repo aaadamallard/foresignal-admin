@@ -7,11 +7,11 @@ part of 'ogc_collection200_response.dart';
 // **************************************************************************
 
 const OgcCollection200ResponseItemTypeEnum
-    _$ogcCollection200ResponseItemTypeEnum_coverage =
+_$ogcCollection200ResponseItemTypeEnum_coverage =
     const OgcCollection200ResponseItemTypeEnum._('coverage');
 
 OgcCollection200ResponseItemTypeEnum
-    _$ogcCollection200ResponseItemTypeEnumValueOf(String name) {
+_$ogcCollection200ResponseItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'coverage':
       return _$ogcCollection200ResponseItemTypeEnum_coverage;
@@ -21,13 +21,15 @@ OgcCollection200ResponseItemTypeEnum
 }
 
 final BuiltSet<OgcCollection200ResponseItemTypeEnum>
-    _$ogcCollection200ResponseItemTypeEnumValues = BuiltSet<
-        OgcCollection200ResponseItemTypeEnum>(const <OgcCollection200ResponseItemTypeEnum>[
-  _$ogcCollection200ResponseItemTypeEnum_coverage,
-]);
+_$ogcCollection200ResponseItemTypeEnumValues =
+    BuiltSet<OgcCollection200ResponseItemTypeEnum>(
+      const <OgcCollection200ResponseItemTypeEnum>[
+        _$ogcCollection200ResponseItemTypeEnum_coverage,
+      ],
+    );
 
 Serializer<OgcCollection200ResponseItemTypeEnum>
-    _$ogcCollection200ResponseItemTypeEnumSerializer =
+_$ogcCollection200ResponseItemTypeEnumSerializer =
     _$OgcCollection200ResponseItemTypeEnumSerializer();
 
 class _$OgcCollection200ResponseItemTypeEnumSerializer
@@ -41,38 +43,41 @@ class _$OgcCollection200ResponseItemTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    OgcCollection200ResponseItemTypeEnum
+    OgcCollection200ResponseItemTypeEnum,
   ];
   @override
   final String wireName = 'OgcCollection200ResponseItemTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, OgcCollection200ResponseItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    OgcCollection200ResponseItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   OgcCollection200ResponseItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      OgcCollection200ResponseItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => OgcCollection200ResponseItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$OgcCollection200Response extends OgcCollection200Response {
   @override
   final OneOf oneOf;
 
-  factory _$OgcCollection200Response(
-          [void Function(OgcCollection200ResponseBuilder)? updates]) =>
-      (OgcCollection200ResponseBuilder()..update(updates))._build();
+  factory _$OgcCollection200Response([
+    void Function(OgcCollection200ResponseBuilder)? updates,
+  ]) => (OgcCollection200ResponseBuilder()..update(updates))._build();
 
   _$OgcCollection200Response._({required this.oneOf}) : super._();
   @override
   OgcCollection200Response rebuild(
-          void Function(OgcCollection200ResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(OgcCollection200ResponseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   OgcCollection200ResponseBuilder toBuilder() =>
@@ -94,9 +99,9 @@ class _$OgcCollection200Response extends OgcCollection200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'OgcCollection200Response')
-          ..add('oneOf', oneOf))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'OgcCollection200Response',
+    )..add('oneOf', oneOf)).toString();
   }
 }
 
@@ -136,10 +141,14 @@ class OgcCollection200ResponseBuilder
   OgcCollection200Response build() => _build();
 
   _$OgcCollection200Response _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$OgcCollection200Response._(
           oneOf: BuiltValueNullFieldError.checkNotNull(
-              oneOf, r'OgcCollection200Response', 'oneOf'),
+            oneOf,
+            r'OgcCollection200Response',
+            'oneOf',
+          ),
         );
     replace(_$result);
     return _$result;

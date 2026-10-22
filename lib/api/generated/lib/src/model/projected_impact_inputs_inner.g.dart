@@ -14,16 +14,16 @@ class _$ProjectedImpactInputsInner extends ProjectedImpactInputsInner {
   @override
   final String? ref;
 
-  factory _$ProjectedImpactInputsInner(
-          [void Function(ProjectedImpactInputsInnerBuilder)? updates]) =>
-      (ProjectedImpactInputsInnerBuilder()..update(updates))._build();
+  factory _$ProjectedImpactInputsInner([
+    void Function(ProjectedImpactInputsInnerBuilder)? updates,
+  ]) => (ProjectedImpactInputsInnerBuilder()..update(updates))._build();
 
   _$ProjectedImpactInputsInner._({required this.name, this.value, this.ref})
-      : super._();
+    : super._();
   @override
   ProjectedImpactInputsInner rebuild(
-          void Function(ProjectedImpactInputsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ProjectedImpactInputsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ProjectedImpactInputsInnerBuilder toBuilder() =>
@@ -104,10 +104,14 @@ class ProjectedImpactInputsInnerBuilder
   ProjectedImpactInputsInner build() => _build();
 
   _$ProjectedImpactInputsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ProjectedImpactInputsInner._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'ProjectedImpactInputsInner', 'name'),
+            name,
+            r'ProjectedImpactInputsInner',
+            'name',
+          ),
           value: value,
           ref: ref,
         );

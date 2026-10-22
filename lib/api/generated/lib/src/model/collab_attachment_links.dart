@@ -21,8 +21,9 @@ abstract class CollabAttachmentLinks
 
   CollabAttachmentLinks._();
 
-  factory CollabAttachmentLinks(
-      [void updates(CollabAttachmentLinksBuilder b)]) = _$CollabAttachmentLinks;
+  factory CollabAttachmentLinks([
+    void updates(CollabAttachmentLinksBuilder b),
+  ]) = _$CollabAttachmentLinks;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CollabAttachmentLinksBuilder b) => b;
@@ -37,7 +38,7 @@ class _$CollabAttachmentLinksSerializer
   @override
   final Iterable<Type> types = const [
     CollabAttachmentLinks,
-    _$CollabAttachmentLinks
+    _$CollabAttachmentLinks,
   ];
 
   @override
@@ -63,9 +64,11 @@ class _$CollabAttachmentLinksSerializer
     CollabAttachmentLinks object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -81,10 +84,12 @@ class _$CollabAttachmentLinksSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'content':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.content = valueDes;
           break;

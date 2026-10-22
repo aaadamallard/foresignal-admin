@@ -110,7 +110,7 @@ class _$AnalystProfileInputSerializer
   @override
   final Iterable<Type> types = const [
     AnalystProfileInput,
-    _$AnalystProfileInput
+    _$AnalystProfileInput,
   ];
 
   @override
@@ -214,8 +214,9 @@ class _$AnalystProfileInputSerializer
       yield r'allowedActions';
       yield serializers.serialize(
         object.allowedActions,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AnalystProfileInputAllowedActionsEnum)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(AnalystProfileInputAllowedActionsEnum),
+        ]),
       );
     }
     if (object.maxAutoActionsPerDay != null) {
@@ -247,9 +248,11 @@ class _$AnalystProfileInputSerializer
     AnalystProfileInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -265,141 +268,181 @@ class _$AnalystProfileInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.enabled = valueDes;
           break;
         case r'schedule':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AnalystProfileSchedule),
-          ) as AnalystProfileSchedule?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnalystProfileSchedule,
+                    ),
+                  )
+                  as AnalystProfileSchedule?;
           if (valueDes == null) continue;
           result.schedule.replace(valueDes);
           break;
         case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(AnalystProfileScope),
-          ) as AnalystProfileScope?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(AnalystProfileScope),
+                  )
+                  as AnalystProfileScope?;
           if (valueDes == null) continue;
           result.scope.replace(valueDes);
           break;
         case r'lookback':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.lookback = valueDes;
           break;
         case r'instructions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.instructions = valueDes;
           break;
         case r'providerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.providerId = valueDes;
           break;
         case r'effort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(AnalystProfileInputEffortEnum),
-          ) as AnalystProfileInputEffortEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnalystProfileInputEffortEnum,
+                    ),
+                  )
+                  as AnalystProfileInputEffortEnum?;
           if (valueDes == null) continue;
           result.effort = valueDes;
           break;
         case r'maxRunsPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxRunsPerDay = valueDes;
           break;
         case r'maxTokensPerRun':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxTokensPerRun = valueDes;
           break;
         case r'maxToolCalls':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxToolCalls = valueDes;
           break;
         case r'maxWallSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxWallSeconds = valueDes;
           break;
         case r'allowActions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.allowActions = valueDes;
           break;
         case r'allowedActions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(AnalystProfileInputAllowedActionsEnum)]),
-          ) as BuiltList<AnalystProfileInputAllowedActionsEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(AnalystProfileInputAllowedActionsEnum),
+                    ]),
+                  )
+                  as BuiltList<AnalystProfileInputAllowedActionsEnum>?;
           if (valueDes == null) continue;
           result.allowedActions.replace(valueDes);
           break;
         case r'maxAutoActionsPerDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.maxAutoActionsPerDay = valueDes;
           break;
         case r'channelIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.channelIds.replace(valueDes);
           break;
         case r'notifyMinPriority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                AnalystProfileInputNotifyMinPriorityEnum),
-          ) as AnalystProfileInputNotifyMinPriorityEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AnalystProfileInputNotifyMinPriorityEnum,
+                    ),
+                  )
+                  as AnalystProfileInputNotifyMinPriorityEnum?;
           if (valueDes == null) continue;
           result.notifyMinPriority = valueDes;
           break;

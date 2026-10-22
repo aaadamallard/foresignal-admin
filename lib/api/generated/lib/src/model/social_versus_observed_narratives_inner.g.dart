@@ -7,30 +7,31 @@ part of 'social_versus_observed_narratives_inner.dart';
 // **************************************************************************
 
 const SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnum_unassessed =
+_$socialVersusObservedNarrativesInnerStatusEnum_unassessed =
     const SocialVersusObservedNarrativesInnerStatusEnum._('unassessed');
 const SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnum_pending =
+_$socialVersusObservedNarrativesInnerStatusEnum_pending =
     const SocialVersusObservedNarrativesInnerStatusEnum._('pending');
 const SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnum_corroborated =
+_$socialVersusObservedNarrativesInnerStatusEnum_corroborated =
     const SocialVersusObservedNarrativesInnerStatusEnum._('corroborated');
 const SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnum_unobserved =
+_$socialVersusObservedNarrativesInnerStatusEnum_unobserved =
     const SocialVersusObservedNarrativesInnerStatusEnum._('unobserved');
 const SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnum_contradicted =
+_$socialVersusObservedNarrativesInnerStatusEnum_contradicted =
     const SocialVersusObservedNarrativesInnerStatusEnum._('contradicted');
 const SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnum_mixed =
+_$socialVersusObservedNarrativesInnerStatusEnum_mixed =
     const SocialVersusObservedNarrativesInnerStatusEnum._('mixed');
 const SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage =
+_$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage =
     const SocialVersusObservedNarrativesInnerStatusEnum._(
-        'insufficientCoverage');
+      'insufficientCoverage',
+    );
 
 SocialVersusObservedNarrativesInnerStatusEnum
-    _$socialVersusObservedNarrativesInnerStatusEnumValueOf(String name) {
+_$socialVersusObservedNarrativesInnerStatusEnumValueOf(String name) {
   switch (name) {
     case 'unassessed':
       return _$socialVersusObservedNarrativesInnerStatusEnum_unassessed;
@@ -52,19 +53,21 @@ SocialVersusObservedNarrativesInnerStatusEnum
 }
 
 final BuiltSet<SocialVersusObservedNarrativesInnerStatusEnum>
-    _$socialVersusObservedNarrativesInnerStatusEnumValues = BuiltSet<
-        SocialVersusObservedNarrativesInnerStatusEnum>(const <SocialVersusObservedNarrativesInnerStatusEnum>[
-  _$socialVersusObservedNarrativesInnerStatusEnum_unassessed,
-  _$socialVersusObservedNarrativesInnerStatusEnum_pending,
-  _$socialVersusObservedNarrativesInnerStatusEnum_corroborated,
-  _$socialVersusObservedNarrativesInnerStatusEnum_unobserved,
-  _$socialVersusObservedNarrativesInnerStatusEnum_contradicted,
-  _$socialVersusObservedNarrativesInnerStatusEnum_mixed,
-  _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage,
-]);
+_$socialVersusObservedNarrativesInnerStatusEnumValues =
+    BuiltSet<SocialVersusObservedNarrativesInnerStatusEnum>(
+      const <SocialVersusObservedNarrativesInnerStatusEnum>[
+        _$socialVersusObservedNarrativesInnerStatusEnum_unassessed,
+        _$socialVersusObservedNarrativesInnerStatusEnum_pending,
+        _$socialVersusObservedNarrativesInnerStatusEnum_corroborated,
+        _$socialVersusObservedNarrativesInnerStatusEnum_unobserved,
+        _$socialVersusObservedNarrativesInnerStatusEnum_contradicted,
+        _$socialVersusObservedNarrativesInnerStatusEnum_mixed,
+        _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage,
+      ],
+    );
 
 Serializer<SocialVersusObservedNarrativesInnerStatusEnum>
-    _$socialVersusObservedNarrativesInnerStatusEnumSerializer =
+_$socialVersusObservedNarrativesInnerStatusEnumSerializer =
     _$SocialVersusObservedNarrativesInnerStatusEnumSerializer();
 
 class _$SocialVersusObservedNarrativesInnerStatusEnumSerializer
@@ -91,23 +94,26 @@ class _$SocialVersusObservedNarrativesInnerStatusEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    SocialVersusObservedNarrativesInnerStatusEnum
+    SocialVersusObservedNarrativesInnerStatusEnum,
   ];
   @override
   final String wireName = 'SocialVersusObservedNarrativesInnerStatusEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          SocialVersusObservedNarrativesInnerStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SocialVersusObservedNarrativesInnerStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SocialVersusObservedNarrativesInnerStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SocialVersusObservedNarrativesInnerStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SocialVersusObservedNarrativesInnerStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SocialVersusObservedNarrativesInner
@@ -121,21 +127,21 @@ class _$SocialVersusObservedNarrativesInner
   @override
   final String? situationId;
 
-  factory _$SocialVersusObservedNarrativesInner(
-          [void Function(SocialVersusObservedNarrativesInnerBuilder)?
-              updates]) =>
+  factory _$SocialVersusObservedNarrativesInner([
+    void Function(SocialVersusObservedNarrativesInnerBuilder)? updates,
+  ]) =>
       (SocialVersusObservedNarrativesInnerBuilder()..update(updates))._build();
 
-  _$SocialVersusObservedNarrativesInner._(
-      {required this.narrativeId,
-      required this.title,
-      required this.status,
-      this.situationId})
-      : super._();
+  _$SocialVersusObservedNarrativesInner._({
+    required this.narrativeId,
+    required this.title,
+    required this.status,
+    this.situationId,
+  }) : super._();
   @override
   SocialVersusObservedNarrativesInner rebuild(
-          void Function(SocialVersusObservedNarrativesInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialVersusObservedNarrativesInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialVersusObservedNarrativesInnerBuilder toBuilder() =>
@@ -175,8 +181,10 @@ class _$SocialVersusObservedNarrativesInner
 
 class SocialVersusObservedNarrativesInnerBuilder
     implements
-        Builder<SocialVersusObservedNarrativesInner,
-            SocialVersusObservedNarrativesInnerBuilder> {
+        Builder<
+          SocialVersusObservedNarrativesInner,
+          SocialVersusObservedNarrativesInnerBuilder
+        > {
   _$SocialVersusObservedNarrativesInner? _$v;
 
   String? _narrativeId;
@@ -219,7 +227,8 @@ class SocialVersusObservedNarrativesInnerBuilder
 
   @override
   void update(
-      void Function(SocialVersusObservedNarrativesInnerBuilder)? updates) {
+    void Function(SocialVersusObservedNarrativesInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -227,14 +236,24 @@ class SocialVersusObservedNarrativesInnerBuilder
   SocialVersusObservedNarrativesInner build() => _build();
 
   _$SocialVersusObservedNarrativesInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SocialVersusObservedNarrativesInner._(
-          narrativeId: BuiltValueNullFieldError.checkNotNull(narrativeId,
-              r'SocialVersusObservedNarrativesInner', 'narrativeId'),
+          narrativeId: BuiltValueNullFieldError.checkNotNull(
+            narrativeId,
+            r'SocialVersusObservedNarrativesInner',
+            'narrativeId',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'SocialVersusObservedNarrativesInner', 'title'),
+            title,
+            r'SocialVersusObservedNarrativesInner',
+            'title',
+          ),
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'SocialVersusObservedNarrativesInner', 'status'),
+            status,
+            r'SocialVersusObservedNarrativesInner',
+            'status',
+          ),
           situationId: situationId,
         );
     replace(_$result);

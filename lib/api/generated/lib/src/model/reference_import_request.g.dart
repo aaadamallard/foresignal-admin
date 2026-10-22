@@ -7,20 +7,21 @@ part of 'reference_import_request.dart';
 // **************************************************************************
 
 const ReferenceImportRequestDatasetEnum
-    _$referenceImportRequestDatasetEnum_ucdpGed =
+_$referenceImportRequestDatasetEnum_ucdpGed =
     const ReferenceImportRequestDatasetEnum._('ucdpGed');
 const ReferenceImportRequestDatasetEnum
-    _$referenceImportRequestDatasetEnum_acled =
+_$referenceImportRequestDatasetEnum_acled =
     const ReferenceImportRequestDatasetEnum._('acled');
 const ReferenceImportRequestDatasetEnum
-    _$referenceImportRequestDatasetEnum_usgsComcat =
+_$referenceImportRequestDatasetEnum_usgsComcat =
     const ReferenceImportRequestDatasetEnum._('usgsComcat');
 const ReferenceImportRequestDatasetEnum
-    _$referenceImportRequestDatasetEnum_gdacs =
+_$referenceImportRequestDatasetEnum_gdacs =
     const ReferenceImportRequestDatasetEnum._('gdacs');
 
 ReferenceImportRequestDatasetEnum _$referenceImportRequestDatasetEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ucdpGed':
       return _$referenceImportRequestDatasetEnum_ucdpGed;
@@ -36,16 +37,18 @@ ReferenceImportRequestDatasetEnum _$referenceImportRequestDatasetEnumValueOf(
 }
 
 final BuiltSet<ReferenceImportRequestDatasetEnum>
-    _$referenceImportRequestDatasetEnumValues = BuiltSet<
-        ReferenceImportRequestDatasetEnum>(const <ReferenceImportRequestDatasetEnum>[
-  _$referenceImportRequestDatasetEnum_ucdpGed,
-  _$referenceImportRequestDatasetEnum_acled,
-  _$referenceImportRequestDatasetEnum_usgsComcat,
-  _$referenceImportRequestDatasetEnum_gdacs,
-]);
+_$referenceImportRequestDatasetEnumValues =
+    BuiltSet<ReferenceImportRequestDatasetEnum>(
+      const <ReferenceImportRequestDatasetEnum>[
+        _$referenceImportRequestDatasetEnum_ucdpGed,
+        _$referenceImportRequestDatasetEnum_acled,
+        _$referenceImportRequestDatasetEnum_usgsComcat,
+        _$referenceImportRequestDatasetEnum_gdacs,
+      ],
+    );
 
 Serializer<ReferenceImportRequestDatasetEnum>
-    _$referenceImportRequestDatasetEnumSerializer =
+_$referenceImportRequestDatasetEnumSerializer =
     _$ReferenceImportRequestDatasetEnumSerializer();
 
 class _$ReferenceImportRequestDatasetEnumSerializer
@@ -70,16 +73,19 @@ class _$ReferenceImportRequestDatasetEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, ReferenceImportRequestDatasetEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ReferenceImportRequestDatasetEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReferenceImportRequestDatasetEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReferenceImportRequestDatasetEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReferenceImportRequestDatasetEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReferenceImportRequest extends ReferenceImportRequest {
@@ -88,15 +94,15 @@ class _$ReferenceImportRequest extends ReferenceImportRequest {
   @override
   final ReferenceImportRequestParams? params;
 
-  factory _$ReferenceImportRequest(
-          [void Function(ReferenceImportRequestBuilder)? updates]) =>
-      (ReferenceImportRequestBuilder()..update(updates))._build();
+  factory _$ReferenceImportRequest([
+    void Function(ReferenceImportRequestBuilder)? updates,
+  ]) => (ReferenceImportRequestBuilder()..update(updates))._build();
 
   _$ReferenceImportRequest._({required this.dataset, this.params}) : super._();
   @override
   ReferenceImportRequest rebuild(
-          void Function(ReferenceImportRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ReferenceImportRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ReferenceImportRequestBuilder toBuilder() =>
@@ -173,10 +179,14 @@ class ReferenceImportRequestBuilder
   _$ReferenceImportRequest _build() {
     _$ReferenceImportRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ReferenceImportRequest._(
             dataset: BuiltValueNullFieldError.checkNotNull(
-                dataset, r'ReferenceImportRequest', 'dataset'),
+              dataset,
+              r'ReferenceImportRequest',
+              'dataset',
+            ),
             params: _params?.build(),
           );
     } catch (_) {
@@ -186,7 +196,10 @@ class ReferenceImportRequestBuilder
         _params?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ReferenceImportRequest', _$failedField, e.toString());
+          r'ReferenceImportRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

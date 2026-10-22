@@ -34,9 +34,9 @@ abstract class IndicatorSignalSituation
 
   IndicatorSignalSituation._();
 
-  factory IndicatorSignalSituation(
-          [void updates(IndicatorSignalSituationBuilder b)]) =
-      _$IndicatorSignalSituation;
+  factory IndicatorSignalSituation([
+    void updates(IndicatorSignalSituationBuilder b),
+  ]) = _$IndicatorSignalSituation;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(IndicatorSignalSituationBuilder b) => b;
@@ -51,7 +51,7 @@ class _$IndicatorSignalSituationSerializer
   @override
   final Iterable<Type> types = const [
     IndicatorSignalSituation,
-    _$IndicatorSignalSituation
+    _$IndicatorSignalSituation,
   ];
 
   @override
@@ -71,8 +71,9 @@ class _$IndicatorSignalSituationSerializer
       yield r'status';
       yield serializers.serialize(
         object.status,
-        specifiedType:
-            const FullType.nullable(IndicatorSignalSituationStatusEnum),
+        specifiedType: const FullType.nullable(
+          IndicatorSignalSituationStatusEnum,
+        ),
       );
     }
     if (object.minSeverity != null) {
@@ -90,9 +91,11 @@ class _$IndicatorSignalSituationSerializer
     IndicatorSignalSituation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,26 +111,33 @@ class _$IndicatorSignalSituationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'situationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.situationId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(IndicatorSignalSituationStatusEnum),
-          ) as IndicatorSignalSituationStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      IndicatorSignalSituationStatusEnum,
+                    ),
+                  )
+                  as IndicatorSignalSituationStatusEnum?;
           if (valueDes == null) continue;
           result.status = valueDes;
           break;
         case r'minSeverity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Severity),
-          ) as Severity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Severity),
+                  )
+                  as Severity?;
           if (valueDes == null) continue;
           result.minSeverity = valueDes;
           break;

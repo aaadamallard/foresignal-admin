@@ -17,8 +17,10 @@ part 'declared_observability_kinds_value_thresholds_inner.g.dart';
 @BuiltValue()
 abstract class DeclaredObservabilityKindsValueThresholdsInner
     implements
-        Built<DeclaredObservabilityKindsValueThresholdsInner,
-            DeclaredObservabilityKindsValueThresholdsInnerBuilder> {
+        Built<
+          DeclaredObservabilityKindsValueThresholdsInner,
+          DeclaredObservabilityKindsValueThresholdsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'field')
   String get field;
 
@@ -30,20 +32,19 @@ abstract class DeclaredObservabilityKindsValueThresholdsInner
 
   DeclaredObservabilityKindsValueThresholdsInner._();
 
-  factory DeclaredObservabilityKindsValueThresholdsInner(
-          [void updates(
-              DeclaredObservabilityKindsValueThresholdsInnerBuilder b)]) =
-      _$DeclaredObservabilityKindsValueThresholdsInner;
+  factory DeclaredObservabilityKindsValueThresholdsInner([
+    void updates(DeclaredObservabilityKindsValueThresholdsInnerBuilder b),
+  ]) = _$DeclaredObservabilityKindsValueThresholdsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          DeclaredObservabilityKindsValueThresholdsInnerBuilder b) =>
-      b;
+    DeclaredObservabilityKindsValueThresholdsInnerBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<DeclaredObservabilityKindsValueThresholdsInner>
-      get serializer =>
-          _$DeclaredObservabilityKindsValueThresholdsInnerSerializer();
+  get serializer =>
+      _$DeclaredObservabilityKindsValueThresholdsInnerSerializer();
 }
 
 class _$DeclaredObservabilityKindsValueThresholdsInnerSerializer
@@ -52,7 +53,7 @@ class _$DeclaredObservabilityKindsValueThresholdsInnerSerializer
   @override
   final Iterable<Type> types = const [
     DeclaredObservabilityKindsValueThresholdsInner,
-    _$DeclaredObservabilityKindsValueThresholdsInner
+    _$DeclaredObservabilityKindsValueThresholdsInner,
   ];
 
   @override
@@ -69,10 +70,7 @@ class _$DeclaredObservabilityKindsValueThresholdsInnerSerializer
       specifiedType: const FullType(String),
     );
     yield r'min';
-    yield serializers.serialize(
-      object.min,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.min, specifiedType: const FullType(num));
     if (object.area != null) {
       yield r'area';
       yield serializers.serialize(
@@ -88,9 +86,11 @@ class _$DeclaredObservabilityKindsValueThresholdsInnerSerializer
     DeclaredObservabilityKindsValueThresholdsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -106,24 +106,27 @@ class _$DeclaredObservabilityKindsValueThresholdsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'field':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.field = valueDes;
           break;
         case r'min':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.min = valueDes;
           break;
         case r'area':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.area = valueDes;
           break;

@@ -11,7 +11,7 @@ const IntelEventLogEntryActionEnum _$intelEventLogEntryActionEnum_created =
 const IntelEventLogEntryActionEnum _$intelEventLogEntryActionEnum_memberAdded =
     const IntelEventLogEntryActionEnum._('memberAdded');
 const IntelEventLogEntryActionEnum
-    _$intelEventLogEntryActionEnum_memberRemoved =
+_$intelEventLogEntryActionEnum_memberRemoved =
     const IntelEventLogEntryActionEnum._('memberRemoved');
 const IntelEventLogEntryActionEnum _$intelEventLogEntryActionEnum_status =
     const IntelEventLogEntryActionEnum._('status');
@@ -23,7 +23,8 @@ const IntelEventLogEntryActionEnum _$intelEventLogEntryActionEnum_reopened =
     const IntelEventLogEntryActionEnum._('reopened');
 
 IntelEventLogEntryActionEnum _$intelEventLogEntryActionEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'created':
       return _$intelEventLogEntryActionEnum_created;
@@ -45,19 +46,19 @@ IntelEventLogEntryActionEnum _$intelEventLogEntryActionEnumValueOf(
 }
 
 final BuiltSet<IntelEventLogEntryActionEnum>
-    _$intelEventLogEntryActionEnumValues =
+_$intelEventLogEntryActionEnumValues =
     BuiltSet<IntelEventLogEntryActionEnum>(const <IntelEventLogEntryActionEnum>[
-  _$intelEventLogEntryActionEnum_created,
-  _$intelEventLogEntryActionEnum_memberAdded,
-  _$intelEventLogEntryActionEnum_memberRemoved,
-  _$intelEventLogEntryActionEnum_status,
-  _$intelEventLogEntryActionEnum_merged,
-  _$intelEventLogEntryActionEnum_edited,
-  _$intelEventLogEntryActionEnum_reopened,
-]);
+      _$intelEventLogEntryActionEnum_created,
+      _$intelEventLogEntryActionEnum_memberAdded,
+      _$intelEventLogEntryActionEnum_memberRemoved,
+      _$intelEventLogEntryActionEnum_status,
+      _$intelEventLogEntryActionEnum_merged,
+      _$intelEventLogEntryActionEnum_edited,
+      _$intelEventLogEntryActionEnum_reopened,
+    ]);
 
 Serializer<IntelEventLogEntryActionEnum>
-    _$intelEventLogEntryActionEnumSerializer =
+_$intelEventLogEntryActionEnumSerializer =
     _$IntelEventLogEntryActionEnumSerializer();
 
 class _$IntelEventLogEntryActionEnumSerializer
@@ -87,16 +88,20 @@ class _$IntelEventLogEntryActionEnumSerializer
   final String wireName = 'IntelEventLogEntryActionEnum';
 
   @override
-  Object serialize(Serializers serializers, IntelEventLogEntryActionEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventLogEntryActionEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventLogEntryActionEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventLogEntryActionEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventLogEntryActionEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventLogEntry extends IntelEventLogEntry {
@@ -111,21 +116,21 @@ class _$IntelEventLogEntry extends IntelEventLogEntry {
   @override
   final BuiltMap<String, JsonObject?>? after;
 
-  factory _$IntelEventLogEntry(
-          [void Function(IntelEventLogEntryBuilder)? updates]) =>
-      (IntelEventLogEntryBuilder()..update(updates))._build();
+  factory _$IntelEventLogEntry([
+    void Function(IntelEventLogEntryBuilder)? updates,
+  ]) => (IntelEventLogEntryBuilder()..update(updates))._build();
 
-  _$IntelEventLogEntry._(
-      {required this.at,
-      required this.actor,
-      required this.action,
-      this.before,
-      this.after})
-      : super._();
+  _$IntelEventLogEntry._({
+    required this.at,
+    required this.actor,
+    required this.action,
+    this.before,
+    this.after,
+  }) : super._();
   @override
   IntelEventLogEntry rebuild(
-          void Function(IntelEventLogEntryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelEventLogEntryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelEventLogEntryBuilder toBuilder() =>
@@ -226,14 +231,24 @@ class IntelEventLogEntryBuilder
   _$IntelEventLogEntry _build() {
     _$IntelEventLogEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventLogEntry._(
             at: BuiltValueNullFieldError.checkNotNull(
-                at, r'IntelEventLogEntry', 'at'),
+              at,
+              r'IntelEventLogEntry',
+              'at',
+            ),
             actor: BuiltValueNullFieldError.checkNotNull(
-                actor, r'IntelEventLogEntry', 'actor'),
+              actor,
+              r'IntelEventLogEntry',
+              'actor',
+            ),
             action: BuiltValueNullFieldError.checkNotNull(
-                action, r'IntelEventLogEntry', 'action'),
+              action,
+              r'IntelEventLogEntry',
+              'action',
+            ),
             before: _before?.build(),
             after: _after?.build(),
           );
@@ -246,7 +261,10 @@ class IntelEventLogEntryBuilder
         _after?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventLogEntry', _$failedField, e.toString());
+          r'IntelEventLogEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

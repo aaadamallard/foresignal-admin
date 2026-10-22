@@ -175,8 +175,9 @@ class _$CycleRunRolesInnerSerializer
       yield r'promptTemplate';
       yield serializers.serialize(
         object.promptTemplate,
-        specifiedType:
-            const FullType.nullable(CycleRunRolesInnerPromptTemplate),
+        specifiedType: const FullType.nullable(
+          CycleRunRolesInnerPromptTemplate,
+        ),
       );
     }
     if (object.warnings != null) {
@@ -194,9 +195,11 @@ class _$CycleRunRolesInnerSerializer
     CycleRunRolesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -212,108 +215,138 @@ class _$CycleRunRolesInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'role':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CycleRunRolesInnerRoleEnum),
-          ) as CycleRunRolesInnerRoleEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CycleRunRolesInnerRoleEnum),
+                  )
+                  as CycleRunRolesInnerRoleEnum;
           result.role = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CycleRunRolesInnerStatusEnum),
-          ) as CycleRunRolesInnerStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(CycleRunRolesInnerStatusEnum),
+                  )
+                  as CycleRunRolesInnerStatusEnum;
           result.status = valueDes;
           break;
         case r'reason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.reason = valueDes;
           break;
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.provider = valueDes;
           break;
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.model = valueDes;
           break;
         case r'effort':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(CycleRunRolesInnerEffortEnum),
-          ) as CycleRunRolesInnerEffortEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CycleRunRolesInnerEffortEnum,
+                    ),
+                  )
+                  as CycleRunRolesInnerEffortEnum?;
           if (valueDes == null) continue;
           result.effort = valueDes;
           break;
         case r'inputTokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.inputTokens = valueDes;
           break;
         case r'outputTokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.outputTokens = valueDes;
           break;
         case r'cachedTokens':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.cachedTokens = valueDes;
           break;
         case r'forecastsSubmitted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.forecastsSubmitted = valueDes;
           break;
         case r'proposalIds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.proposalIds.replace(valueDes);
           break;
         case r'promptTemplate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(CycleRunRolesInnerPromptTemplate),
-          ) as CycleRunRolesInnerPromptTemplate?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      CycleRunRolesInnerPromptTemplate,
+                    ),
+                  )
+                  as CycleRunRolesInnerPromptTemplate?;
           if (valueDes == null) continue;
           result.promptTemplate.replace(valueDes);
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;

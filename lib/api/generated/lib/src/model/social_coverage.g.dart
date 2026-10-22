@@ -29,17 +29,17 @@ class _$SocialCoverage extends SocialCoverage {
   factory _$SocialCoverage([void Function(SocialCoverageBuilder)? updates]) =>
       (SocialCoverageBuilder()..update(updates))._build();
 
-  _$SocialCoverage._(
-      {required this.platform,
-      this.regionCode,
-      required this.since,
-      required this.until,
-      required this.buckets,
-      required this.completeShare,
-      this.baselinePostsPerHour,
-      required this.absenceOk,
-      this.reason})
-      : super._();
+  _$SocialCoverage._({
+    required this.platform,
+    this.regionCode,
+    required this.since,
+    required this.until,
+    required this.buckets,
+    required this.completeShare,
+    this.baselinePostsPerHour,
+    required this.absenceOk,
+    this.reason,
+  }) : super._();
   @override
   SocialCoverage rebuild(void Function(SocialCoverageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -175,21 +175,37 @@ class SocialCoverageBuilder
   _$SocialCoverage _build() {
     _$SocialCoverage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SocialCoverage._(
             platform: BuiltValueNullFieldError.checkNotNull(
-                platform, r'SocialCoverage', 'platform'),
+              platform,
+              r'SocialCoverage',
+              'platform',
+            ),
             regionCode: regionCode,
             since: BuiltValueNullFieldError.checkNotNull(
-                since, r'SocialCoverage', 'since'),
+              since,
+              r'SocialCoverage',
+              'since',
+            ),
             until: BuiltValueNullFieldError.checkNotNull(
-                until, r'SocialCoverage', 'until'),
+              until,
+              r'SocialCoverage',
+              'until',
+            ),
             buckets: buckets.build(),
             completeShare: BuiltValueNullFieldError.checkNotNull(
-                completeShare, r'SocialCoverage', 'completeShare'),
+              completeShare,
+              r'SocialCoverage',
+              'completeShare',
+            ),
             baselinePostsPerHour: baselinePostsPerHour,
             absenceOk: BuiltValueNullFieldError.checkNotNull(
-                absenceOk, r'SocialCoverage', 'absenceOk'),
+              absenceOk,
+              r'SocialCoverage',
+              'absenceOk',
+            ),
             reason: reason,
           );
     } catch (_) {
@@ -199,7 +215,10 @@ class SocialCoverageBuilder
         buckets.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SocialCoverage', _$failedField, e.toString());
+          r'SocialCoverage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

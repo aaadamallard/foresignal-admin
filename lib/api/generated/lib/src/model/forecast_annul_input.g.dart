@@ -10,15 +10,15 @@ class _$ForecastAnnulInput extends ForecastAnnulInput {
   @override
   final String reason;
 
-  factory _$ForecastAnnulInput(
-          [void Function(ForecastAnnulInputBuilder)? updates]) =>
-      (ForecastAnnulInputBuilder()..update(updates))._build();
+  factory _$ForecastAnnulInput([
+    void Function(ForecastAnnulInputBuilder)? updates,
+  ]) => (ForecastAnnulInputBuilder()..update(updates))._build();
 
   _$ForecastAnnulInput._({required this.reason}) : super._();
   @override
   ForecastAnnulInput rebuild(
-          void Function(ForecastAnnulInputBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastAnnulInputBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastAnnulInputBuilder toBuilder() =>
@@ -40,9 +40,9 @@ class _$ForecastAnnulInput extends ForecastAnnulInput {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'ForecastAnnulInput')
-          ..add('reason', reason))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'ForecastAnnulInput',
+    )..add('reason', reason)).toString();
   }
 }
 
@@ -81,10 +81,14 @@ class ForecastAnnulInputBuilder
   ForecastAnnulInput build() => _build();
 
   _$ForecastAnnulInput _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ForecastAnnulInput._(
           reason: BuiltValueNullFieldError.checkNotNull(
-              reason, r'ForecastAnnulInput', 'reason'),
+            reason,
+            r'ForecastAnnulInput',
+            'reason',
+          ),
         );
     replace(_$result);
     return _$result;

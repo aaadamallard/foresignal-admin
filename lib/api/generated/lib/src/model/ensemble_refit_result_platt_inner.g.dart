@@ -18,21 +18,21 @@ class _$EnsembleRefitResultPlattInner extends EnsembleRefitResultPlattInner {
   @override
   final int n;
 
-  factory _$EnsembleRefitResultPlattInner(
-          [void Function(EnsembleRefitResultPlattInnerBuilder)? updates]) =>
-      (EnsembleRefitResultPlattInnerBuilder()..update(updates))._build();
+  factory _$EnsembleRefitResultPlattInner([
+    void Function(EnsembleRefitResultPlattInnerBuilder)? updates,
+  ]) => (EnsembleRefitResultPlattInnerBuilder()..update(updates))._build();
 
-  _$EnsembleRefitResultPlattInner._(
-      {required this.forecasterId,
-      required this.category,
-      required this.a,
-      required this.b,
-      required this.n})
-      : super._();
+  _$EnsembleRefitResultPlattInner._({
+    required this.forecasterId,
+    required this.category,
+    required this.a,
+    required this.b,
+    required this.n,
+  }) : super._();
   @override
   EnsembleRefitResultPlattInner rebuild(
-          void Function(EnsembleRefitResultPlattInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EnsembleRefitResultPlattInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EnsembleRefitResultPlattInnerBuilder toBuilder() =>
@@ -75,8 +75,10 @@ class _$EnsembleRefitResultPlattInner extends EnsembleRefitResultPlattInner {
 
 class EnsembleRefitResultPlattInnerBuilder
     implements
-        Builder<EnsembleRefitResultPlattInner,
-            EnsembleRefitResultPlattInnerBuilder> {
+        Builder<
+          EnsembleRefitResultPlattInner,
+          EnsembleRefitResultPlattInnerBuilder
+        > {
   _$EnsembleRefitResultPlattInner? _$v;
 
   String? _forecasterId;
@@ -130,18 +132,34 @@ class EnsembleRefitResultPlattInnerBuilder
   EnsembleRefitResultPlattInner build() => _build();
 
   _$EnsembleRefitResultPlattInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EnsembleRefitResultPlattInner._(
           forecasterId: BuiltValueNullFieldError.checkNotNull(
-              forecasterId, r'EnsembleRefitResultPlattInner', 'forecasterId'),
+            forecasterId,
+            r'EnsembleRefitResultPlattInner',
+            'forecasterId',
+          ),
           category: BuiltValueNullFieldError.checkNotNull(
-              category, r'EnsembleRefitResultPlattInner', 'category'),
+            category,
+            r'EnsembleRefitResultPlattInner',
+            'category',
+          ),
           a: BuiltValueNullFieldError.checkNotNull(
-              a, r'EnsembleRefitResultPlattInner', 'a'),
+            a,
+            r'EnsembleRefitResultPlattInner',
+            'a',
+          ),
           b: BuiltValueNullFieldError.checkNotNull(
-              b, r'EnsembleRefitResultPlattInner', 'b'),
+            b,
+            r'EnsembleRefitResultPlattInner',
+            'b',
+          ),
           n: BuiltValueNullFieldError.checkNotNull(
-              n, r'EnsembleRefitResultPlattInner', 'n'),
+            n,
+            r'EnsembleRefitResultPlattInner',
+            'n',
+          ),
         );
     replace(_$result);
     return _$result;

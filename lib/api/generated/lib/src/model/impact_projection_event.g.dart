@@ -7,41 +7,41 @@ part of 'impact_projection_event.dart';
 // **************************************************************************
 
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_tropicalWind34 =
+_$impactProjectionEventHazardTypeEnum_tropicalWind34 =
     const ImpactProjectionEventHazardTypeEnum._('tropicalWind34');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_tropicalWind50 =
+_$impactProjectionEventHazardTypeEnum_tropicalWind50 =
     const ImpactProjectionEventHazardTypeEnum._('tropicalWind50');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_tropicalWind64 =
+_$impactProjectionEventHazardTypeEnum_tropicalWind64 =
     const ImpactProjectionEventHazardTypeEnum._('tropicalWind64');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_tropicalTrack =
+_$impactProjectionEventHazardTypeEnum_tropicalTrack =
     const ImpactProjectionEventHazardTypeEnum._('tropicalTrack');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_tornado =
+_$impactProjectionEventHazardTypeEnum_tornado =
     const ImpactProjectionEventHazardTypeEnum._('tornado');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_wind =
+_$impactProjectionEventHazardTypeEnum_wind =
     const ImpactProjectionEventHazardTypeEnum._('wind');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_hail =
+_$impactProjectionEventHazardTypeEnum_hail =
     const ImpactProjectionEventHazardTypeEnum._('hail');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_severeCategorical =
+_$impactProjectionEventHazardTypeEnum_severeCategorical =
     const ImpactProjectionEventHazardTypeEnum._('severeCategorical');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_excessiveRain =
+_$impactProjectionEventHazardTypeEnum_excessiveRain =
     const ImpactProjectionEventHazardTypeEnum._('excessiveRain');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_riverFlood =
+_$impactProjectionEventHazardTypeEnum_riverFlood =
     const ImpactProjectionEventHazardTypeEnum._('riverFlood');
 const ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnum_stormCell =
+_$impactProjectionEventHazardTypeEnum_stormCell =
     const ImpactProjectionEventHazardTypeEnum._('stormCell');
 
 ImpactProjectionEventHazardTypeEnum
-    _$impactProjectionEventHazardTypeEnumValueOf(String name) {
+_$impactProjectionEventHazardTypeEnumValueOf(String name) {
   switch (name) {
     case 'tropicalWind34':
       return _$impactProjectionEventHazardTypeEnum_tropicalWind34;
@@ -71,23 +71,25 @@ ImpactProjectionEventHazardTypeEnum
 }
 
 final BuiltSet<ImpactProjectionEventHazardTypeEnum>
-    _$impactProjectionEventHazardTypeEnumValues = BuiltSet<
-        ImpactProjectionEventHazardTypeEnum>(const <ImpactProjectionEventHazardTypeEnum>[
-  _$impactProjectionEventHazardTypeEnum_tropicalWind34,
-  _$impactProjectionEventHazardTypeEnum_tropicalWind50,
-  _$impactProjectionEventHazardTypeEnum_tropicalWind64,
-  _$impactProjectionEventHazardTypeEnum_tropicalTrack,
-  _$impactProjectionEventHazardTypeEnum_tornado,
-  _$impactProjectionEventHazardTypeEnum_wind,
-  _$impactProjectionEventHazardTypeEnum_hail,
-  _$impactProjectionEventHazardTypeEnum_severeCategorical,
-  _$impactProjectionEventHazardTypeEnum_excessiveRain,
-  _$impactProjectionEventHazardTypeEnum_riverFlood,
-  _$impactProjectionEventHazardTypeEnum_stormCell,
-]);
+_$impactProjectionEventHazardTypeEnumValues =
+    BuiltSet<ImpactProjectionEventHazardTypeEnum>(
+      const <ImpactProjectionEventHazardTypeEnum>[
+        _$impactProjectionEventHazardTypeEnum_tropicalWind34,
+        _$impactProjectionEventHazardTypeEnum_tropicalWind50,
+        _$impactProjectionEventHazardTypeEnum_tropicalWind64,
+        _$impactProjectionEventHazardTypeEnum_tropicalTrack,
+        _$impactProjectionEventHazardTypeEnum_tornado,
+        _$impactProjectionEventHazardTypeEnum_wind,
+        _$impactProjectionEventHazardTypeEnum_hail,
+        _$impactProjectionEventHazardTypeEnum_severeCategorical,
+        _$impactProjectionEventHazardTypeEnum_excessiveRain,
+        _$impactProjectionEventHazardTypeEnum_riverFlood,
+        _$impactProjectionEventHazardTypeEnum_stormCell,
+      ],
+    );
 
 Serializer<ImpactProjectionEventHazardTypeEnum>
-    _$impactProjectionEventHazardTypeEnumSerializer =
+_$impactProjectionEventHazardTypeEnumSerializer =
     _$ImpactProjectionEventHazardTypeEnumSerializer();
 
 class _$ImpactProjectionEventHazardTypeEnumSerializer
@@ -121,23 +123,26 @@ class _$ImpactProjectionEventHazardTypeEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    ImpactProjectionEventHazardTypeEnum
+    ImpactProjectionEventHazardTypeEnum,
   ];
   @override
   final String wireName = 'ImpactProjectionEventHazardTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, ImpactProjectionEventHazardTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    ImpactProjectionEventHazardTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ImpactProjectionEventHazardTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ImpactProjectionEventHazardTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ImpactProjectionEventHazardTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ImpactProjectionEvent extends ImpactProjectionEvent {
@@ -160,25 +165,25 @@ class _$ImpactProjectionEvent extends ImpactProjectionEvent {
   @override
   final DateTime at;
 
-  factory _$ImpactProjectionEvent(
-          [void Function(ImpactProjectionEventBuilder)? updates]) =>
-      (ImpactProjectionEventBuilder()..update(updates))._build();
+  factory _$ImpactProjectionEvent([
+    void Function(ImpactProjectionEventBuilder)? updates,
+  ]) => (ImpactProjectionEventBuilder()..update(updates))._build();
 
-  _$ImpactProjectionEvent._(
-      {required this.findingId,
-      required this.hazardType,
-      this.sourceRef,
-      required this.impactFamily,
-      required this.admin1,
-      required this.pImpact,
-      this.questionId,
-      this.supersededBy,
-      required this.at})
-      : super._();
+  _$ImpactProjectionEvent._({
+    required this.findingId,
+    required this.hazardType,
+    this.sourceRef,
+    required this.impactFamily,
+    required this.admin1,
+    required this.pImpact,
+    this.questionId,
+    this.supersededBy,
+    required this.at,
+  }) : super._();
   @override
   ImpactProjectionEvent rebuild(
-          void Function(ImpactProjectionEventBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ImpactProjectionEventBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ImpactProjectionEventBuilder toBuilder() =>
@@ -307,23 +312,42 @@ class ImpactProjectionEventBuilder
   ImpactProjectionEvent build() => _build();
 
   _$ImpactProjectionEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ImpactProjectionEvent._(
           findingId: BuiltValueNullFieldError.checkNotNull(
-              findingId, r'ImpactProjectionEvent', 'findingId'),
+            findingId,
+            r'ImpactProjectionEvent',
+            'findingId',
+          ),
           hazardType: BuiltValueNullFieldError.checkNotNull(
-              hazardType, r'ImpactProjectionEvent', 'hazardType'),
+            hazardType,
+            r'ImpactProjectionEvent',
+            'hazardType',
+          ),
           sourceRef: sourceRef,
           impactFamily: BuiltValueNullFieldError.checkNotNull(
-              impactFamily, r'ImpactProjectionEvent', 'impactFamily'),
+            impactFamily,
+            r'ImpactProjectionEvent',
+            'impactFamily',
+          ),
           admin1: BuiltValueNullFieldError.checkNotNull(
-              admin1, r'ImpactProjectionEvent', 'admin1'),
+            admin1,
+            r'ImpactProjectionEvent',
+            'admin1',
+          ),
           pImpact: BuiltValueNullFieldError.checkNotNull(
-              pImpact, r'ImpactProjectionEvent', 'pImpact'),
+            pImpact,
+            r'ImpactProjectionEvent',
+            'pImpact',
+          ),
           questionId: questionId,
           supersededBy: supersededBy,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'ImpactProjectionEvent', 'at'),
+            at,
+            r'ImpactProjectionEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

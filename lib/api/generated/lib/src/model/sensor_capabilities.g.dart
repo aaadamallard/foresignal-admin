@@ -16,17 +16,20 @@ class _$SensorCapabilities extends SensorCapabilities {
   @override
   final num? swathKm;
 
-  factory _$SensorCapabilities(
-          [void Function(SensorCapabilitiesBuilder)? updates]) =>
-      (SensorCapabilitiesBuilder()..update(updates))._build();
+  factory _$SensorCapabilities([
+    void Function(SensorCapabilitiesBuilder)? updates,
+  ]) => (SensorCapabilitiesBuilder()..update(updates))._build();
 
-  _$SensorCapabilities._(
-      {this.operator_, this.sensorTypes, this.resolutionM, this.swathKm})
-      : super._();
+  _$SensorCapabilities._({
+    this.operator_,
+    this.sensorTypes,
+    this.resolutionM,
+    this.swathKm,
+  }) : super._();
   @override
   SensorCapabilities rebuild(
-          void Function(SensorCapabilitiesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SensorCapabilitiesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SensorCapabilitiesBuilder toBuilder() =>
@@ -118,7 +121,8 @@ class SensorCapabilitiesBuilder
   _$SensorCapabilities _build() {
     _$SensorCapabilities _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SensorCapabilities._(
             operator_: operator_,
             sensorTypes: _sensorTypes?.build(),
@@ -132,7 +136,10 @@ class SensorCapabilitiesBuilder
         _sensorTypes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SensorCapabilities', _$failedField, e.toString());
+          r'SensorCapabilities',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -12,16 +12,16 @@ class _$NativePushPayloadApnsApsAlert extends NativePushPayloadApnsApsAlert {
   @override
   final String body;
 
-  factory _$NativePushPayloadApnsApsAlert(
-          [void Function(NativePushPayloadApnsApsAlertBuilder)? updates]) =>
-      (NativePushPayloadApnsApsAlertBuilder()..update(updates))._build();
+  factory _$NativePushPayloadApnsApsAlert([
+    void Function(NativePushPayloadApnsApsAlertBuilder)? updates,
+  ]) => (NativePushPayloadApnsApsAlertBuilder()..update(updates))._build();
 
   _$NativePushPayloadApnsApsAlert._({required this.title, required this.body})
-      : super._();
+    : super._();
   @override
   NativePushPayloadApnsApsAlert rebuild(
-          void Function(NativePushPayloadApnsApsAlertBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadApnsApsAlertBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadApnsApsAlertBuilder toBuilder() =>
@@ -55,8 +55,10 @@ class _$NativePushPayloadApnsApsAlert extends NativePushPayloadApnsApsAlert {
 
 class NativePushPayloadApnsApsAlertBuilder
     implements
-        Builder<NativePushPayloadApnsApsAlert,
-            NativePushPayloadApnsApsAlertBuilder> {
+        Builder<
+          NativePushPayloadApnsApsAlert,
+          NativePushPayloadApnsApsAlertBuilder
+        > {
   _$NativePushPayloadApnsApsAlert? _$v;
 
   String? _title;
@@ -95,12 +97,19 @@ class NativePushPayloadApnsApsAlertBuilder
   NativePushPayloadApnsApsAlert build() => _build();
 
   _$NativePushPayloadApnsApsAlert _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$NativePushPayloadApnsApsAlert._(
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'NativePushPayloadApnsApsAlert', 'title'),
+            title,
+            r'NativePushPayloadApnsApsAlert',
+            'title',
+          ),
           body: BuiltValueNullFieldError.checkNotNull(
-              body, r'NativePushPayloadApnsApsAlert', 'body'),
+            body,
+            r'NativePushPayloadApnsApsAlert',
+            'body',
+          ),
         );
     replace(_$result);
     return _$result;

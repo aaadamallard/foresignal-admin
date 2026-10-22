@@ -10,9 +10,9 @@ class _$CollectorSettings extends CollectorSettings {
   @override
   final int maxConcurrentPulls;
 
-  factory _$CollectorSettings(
-          [void Function(CollectorSettingsBuilder)? updates]) =>
-      (CollectorSettingsBuilder()..update(updates))._build();
+  factory _$CollectorSettings([
+    void Function(CollectorSettingsBuilder)? updates,
+  ]) => (CollectorSettingsBuilder()..update(updates))._build();
 
   _$CollectorSettings._({required this.maxConcurrentPulls}) : super._();
   @override
@@ -40,9 +40,9 @@ class _$CollectorSettings extends CollectorSettings {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'CollectorSettings')
-          ..add('maxConcurrentPulls', maxConcurrentPulls))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'CollectorSettings',
+    )..add('maxConcurrentPulls', maxConcurrentPulls)).toString();
   }
 }
 
@@ -82,10 +82,14 @@ class CollectorSettingsBuilder
   CollectorSettings build() => _build();
 
   _$CollectorSettings _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CollectorSettings._(
           maxConcurrentPulls: BuiltValueNullFieldError.checkNotNull(
-              maxConcurrentPulls, r'CollectorSettings', 'maxConcurrentPulls'),
+            maxConcurrentPulls,
+            r'CollectorSettings',
+            'maxConcurrentPulls',
+          ),
         );
     replace(_$result);
     return _$result;

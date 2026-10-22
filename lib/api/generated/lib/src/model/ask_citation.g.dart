@@ -32,11 +32,11 @@ AskCitationTypeEnum _$askCitationTypeEnumValueOf(String name) {
 
 final BuiltSet<AskCitationTypeEnum> _$askCitationTypeEnumValues =
     BuiltSet<AskCitationTypeEnum>(const <AskCitationTypeEnum>[
-  _$askCitationTypeEnum_record,
-  _$askCitationTypeEnum_alert,
-  _$askCitationTypeEnum_briefing,
-  _$askCitationTypeEnum_weather,
-]);
+      _$askCitationTypeEnum_record,
+      _$askCitationTypeEnum_alert,
+      _$askCitationTypeEnum_briefing,
+      _$askCitationTypeEnum_weather,
+    ]);
 
 Serializer<AskCitationTypeEnum> _$askCitationTypeEnumSerializer =
     _$AskCitationTypeEnumSerializer();
@@ -62,15 +62,20 @@ class _$AskCitationTypeEnumSerializer
   final String wireName = 'AskCitationTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, AskCitationTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    AskCitationTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  AskCitationTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      AskCitationTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  AskCitationTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => AskCitationTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$AskCitation extends AskCitation {
@@ -98,18 +103,18 @@ class _$AskCitation extends AskCitation {
   factory _$AskCitation([void Function(AskCitationBuilder)? updates]) =>
       (AskCitationBuilder()..update(updates))._build();
 
-  _$AskCitation._(
-      {required this.id,
-      this.seq,
-      required this.title,
-      this.type,
-      this.productId,
-      this.frameKey,
-      this.run,
-      this.step,
-      this.validTime,
-      this.ageMinutes})
-      : super._();
+  _$AskCitation._({
+    required this.id,
+    this.seq,
+    required this.title,
+    this.type,
+    this.productId,
+    this.frameKey,
+    this.run,
+    this.step,
+    this.validTime,
+    this.ageMinutes,
+  }) : super._();
   @override
   AskCitation rebuild(void Function(AskCitationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -246,12 +251,16 @@ class AskCitationBuilder implements Builder<AskCitation, AskCitationBuilder> {
   AskCitation build() => _build();
 
   _$AskCitation _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$AskCitation._(
           id: BuiltValueNullFieldError.checkNotNull(id, r'AskCitation', 'id'),
           seq: seq,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'AskCitation', 'title'),
+            title,
+            r'AskCitation',
+            'title',
+          ),
           type: type,
           productId: productId,
           frameKey: frameKey,

@@ -31,16 +31,16 @@ SavedSearchHitMatchedByEnum _$savedSearchHitMatchedByEnumValueOf(String name) {
 }
 
 final BuiltSet<SavedSearchHitMatchedByEnum>
-    _$savedSearchHitMatchedByEnumValues =
+_$savedSearchHitMatchedByEnumValues =
     BuiltSet<SavedSearchHitMatchedByEnum>(const <SavedSearchHitMatchedByEnum>[
-  _$savedSearchHitMatchedByEnum_text,
-  _$savedSearchHitMatchedByEnum_semantic,
-  _$savedSearchHitMatchedByEnum_hybrid,
-  _$savedSearchHitMatchedByEnum_filter,
-]);
+      _$savedSearchHitMatchedByEnum_text,
+      _$savedSearchHitMatchedByEnum_semantic,
+      _$savedSearchHitMatchedByEnum_hybrid,
+      _$savedSearchHitMatchedByEnum_filter,
+    ]);
 
 Serializer<SavedSearchHitMatchedByEnum>
-    _$savedSearchHitMatchedByEnumSerializer =
+_$savedSearchHitMatchedByEnumSerializer =
     _$SavedSearchHitMatchedByEnumSerializer();
 
 class _$SavedSearchHitMatchedByEnumSerializer
@@ -64,16 +64,20 @@ class _$SavedSearchHitMatchedByEnumSerializer
   final String wireName = 'SavedSearchHitMatchedByEnum';
 
   @override
-  Object serialize(Serializers serializers, SavedSearchHitMatchedByEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SavedSearchHitMatchedByEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SavedSearchHitMatchedByEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SavedSearchHitMatchedByEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SavedSearchHitMatchedByEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SavedSearchHit extends SavedSearchHit {
@@ -88,7 +92,7 @@ class _$SavedSearchHit extends SavedSearchHit {
       (SavedSearchHitBuilder()..update(updates))._build();
 
   _$SavedSearchHit._({required this.envelope, this.score, this.matchedBy})
-      : super._();
+    : super._();
   @override
   SavedSearchHit rebuild(void Function(SavedSearchHitBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -174,7 +178,8 @@ class SavedSearchHitBuilder
   _$SavedSearchHit _build() {
     _$SavedSearchHit _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SavedSearchHit._(
             envelope: envelope.build(),
             score: score,
@@ -187,7 +192,10 @@ class SavedSearchHitBuilder
         envelope.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchHit', _$failedField, e.toString());
+          r'SavedSearchHit',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

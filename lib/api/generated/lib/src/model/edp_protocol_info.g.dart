@@ -24,9 +24,9 @@ EdpProtocolInfoModesEnum _$edpProtocolInfoModesEnumValueOf(String name) {
 
 final BuiltSet<EdpProtocolInfoModesEnum> _$edpProtocolInfoModesEnumValues =
     BuiltSet<EdpProtocolInfoModesEnum>(const <EdpProtocolInfoModesEnum>[
-  _$edpProtocolInfoModesEnum_layer,
-  _$edpProtocolInfoModesEnum_atomic,
-]);
+      _$edpProtocolInfoModesEnum_layer,
+      _$edpProtocolInfoModesEnum_atomic,
+    ]);
 
 Serializer<EdpProtocolInfoModesEnum> _$edpProtocolInfoModesEnumSerializer =
     _$EdpProtocolInfoModesEnumSerializer();
@@ -48,16 +48,20 @@ class _$EdpProtocolInfoModesEnumSerializer
   final String wireName = 'EdpProtocolInfoModesEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpProtocolInfoModesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpProtocolInfoModesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpProtocolInfoModesEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpProtocolInfoModesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpProtocolInfoModesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpProtocolInfo extends EdpProtocolInfo {
@@ -79,15 +83,15 @@ class _$EdpProtocolInfo extends EdpProtocolInfo {
   factory _$EdpProtocolInfo([void Function(EdpProtocolInfoBuilder)? updates]) =>
       (EdpProtocolInfoBuilder()..update(updates))._build();
 
-  _$EdpProtocolInfo._(
-      {required this.protocol,
-      this.supported,
-      required this.itemTypes,
-      required this.modes,
-      this.schemas,
-      this.documentation,
-      this.maxMinor})
-      : super._();
+  _$EdpProtocolInfo._({
+    required this.protocol,
+    this.supported,
+    required this.itemTypes,
+    required this.modes,
+    this.schemas,
+    this.documentation,
+    this.maxMinor,
+  }) : super._();
   @override
   EdpProtocolInfo rebuild(void Function(EdpProtocolInfoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -210,10 +214,14 @@ class EdpProtocolInfoBuilder
   _$EdpProtocolInfo _build() {
     _$EdpProtocolInfo _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpProtocolInfo._(
             protocol: BuiltValueNullFieldError.checkNotNull(
-                protocol, r'EdpProtocolInfo', 'protocol'),
+              protocol,
+              r'EdpProtocolInfo',
+              'protocol',
+            ),
             supported: _supported?.build(),
             itemTypes: itemTypes.build(),
             modes: modes.build(),
@@ -234,7 +242,10 @@ class EdpProtocolInfoBuilder
         _schemas?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpProtocolInfo', _$failedField, e.toString());
+          r'EdpProtocolInfo',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

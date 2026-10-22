@@ -37,9 +37,9 @@ class _$PluginSettings extends PluginSettings {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PluginSettings')
-          ..add('enabled', enabled))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'PluginSettings',
+    )..add('enabled', enabled)).toString();
   }
 }
 
@@ -78,10 +78,14 @@ class PluginSettingsBuilder
   PluginSettings build() => _build();
 
   _$PluginSettings _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PluginSettings._(
           enabled: BuiltValueNullFieldError.checkNotNull(
-              enabled, r'PluginSettings', 'enabled'),
+            enabled,
+            r'PluginSettings',
+            'enabled',
+          ),
         );
     replace(_$result);
     return _$result;

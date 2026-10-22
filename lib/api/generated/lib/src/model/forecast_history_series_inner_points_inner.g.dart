@@ -19,24 +19,22 @@ class _$ForecastHistorySeriesInnerPointsInner
   @override
   final String forecastId;
 
-  factory _$ForecastHistorySeriesInnerPointsInner(
-          [void Function(ForecastHistorySeriesInnerPointsInnerBuilder)?
-              updates]) =>
-      (ForecastHistorySeriesInnerPointsInnerBuilder()..update(updates))
-          ._build();
+  factory _$ForecastHistorySeriesInnerPointsInner([
+    void Function(ForecastHistorySeriesInnerPointsInnerBuilder)? updates,
+  ]) => (ForecastHistorySeriesInnerPointsInnerBuilder()..update(updates))
+      ._build();
 
-  _$ForecastHistorySeriesInnerPointsInner._(
-      {required this.date,
-      this.probability,
-      this.distribution,
-      this.quantiles,
-      required this.forecastId})
-      : super._();
+  _$ForecastHistorySeriesInnerPointsInner._({
+    required this.date,
+    this.probability,
+    this.distribution,
+    this.quantiles,
+    required this.forecastId,
+  }) : super._();
   @override
   ForecastHistorySeriesInnerPointsInner rebuild(
-          void Function(ForecastHistorySeriesInnerPointsInnerBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ForecastHistorySeriesInnerPointsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ForecastHistorySeriesInnerPointsInnerBuilder toBuilder() =>
@@ -68,7 +66,8 @@ class _$ForecastHistorySeriesInnerPointsInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'ForecastHistorySeriesInnerPointsInner')
+            r'ForecastHistorySeriesInnerPointsInner',
+          )
           ..add('date', date)
           ..add('probability', probability)
           ..add('distribution', distribution)
@@ -80,8 +79,10 @@ class _$ForecastHistorySeriesInnerPointsInner
 
 class ForecastHistorySeriesInnerPointsInnerBuilder
     implements
-        Builder<ForecastHistorySeriesInnerPointsInner,
-            ForecastHistorySeriesInnerPointsInnerBuilder> {
+        Builder<
+          ForecastHistorySeriesInnerPointsInner,
+          ForecastHistorySeriesInnerPointsInnerBuilder
+        > {
   _$ForecastHistorySeriesInnerPointsInner? _$v;
 
   Date? _date;
@@ -130,7 +131,8 @@ class ForecastHistorySeriesInnerPointsInnerBuilder
 
   @override
   void update(
-      void Function(ForecastHistorySeriesInnerPointsInnerBuilder)? updates) {
+    void Function(ForecastHistorySeriesInnerPointsInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -140,15 +142,22 @@ class ForecastHistorySeriesInnerPointsInnerBuilder
   _$ForecastHistorySeriesInnerPointsInner _build() {
     _$ForecastHistorySeriesInnerPointsInner _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ForecastHistorySeriesInnerPointsInner._(
             date: BuiltValueNullFieldError.checkNotNull(
-                date, r'ForecastHistorySeriesInnerPointsInner', 'date'),
+              date,
+              r'ForecastHistorySeriesInnerPointsInner',
+              'date',
+            ),
             probability: probability,
             distribution: _distribution?.build(),
             quantiles: _quantiles?.build(),
-            forecastId: BuiltValueNullFieldError.checkNotNull(forecastId,
-                r'ForecastHistorySeriesInnerPointsInner', 'forecastId'),
+            forecastId: BuiltValueNullFieldError.checkNotNull(
+              forecastId,
+              r'ForecastHistorySeriesInnerPointsInner',
+              'forecastId',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -159,9 +168,10 @@ class ForecastHistorySeriesInnerPointsInnerBuilder
         _quantiles?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ForecastHistorySeriesInnerPointsInner',
-            _$failedField,
-            e.toString());
+          r'ForecastHistorySeriesInnerPointsInner',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -14,15 +14,15 @@ class _$SocialPlatformTerms extends SocialPlatformTerms {
   @override
   final String? costs;
 
-  factory _$SocialPlatformTerms(
-          [void Function(SocialPlatformTermsBuilder)? updates]) =>
-      (SocialPlatformTermsBuilder()..update(updates))._build();
+  factory _$SocialPlatformTerms([
+    void Function(SocialPlatformTermsBuilder)? updates,
+  ]) => (SocialPlatformTermsBuilder()..update(updates))._build();
 
   _$SocialPlatformTerms._({this.summary, this.url, this.costs}) : super._();
   @override
   SocialPlatformTerms rebuild(
-          void Function(SocialPlatformTermsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SocialPlatformTermsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SocialPlatformTermsBuilder toBuilder() =>
@@ -102,12 +102,9 @@ class SocialPlatformTermsBuilder
   SocialPlatformTerms build() => _build();
 
   _$SocialPlatformTerms _build() {
-    final _$result = _$v ??
-        _$SocialPlatformTerms._(
-          summary: summary,
-          url: url,
-          costs: costs,
-        );
+    final _$result =
+        _$v ??
+        _$SocialPlatformTerms._(summary: summary, url: url, costs: costs);
     replace(_$result);
     return _$result;
   }

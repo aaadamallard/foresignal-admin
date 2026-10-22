@@ -16,17 +16,20 @@ class _$NativePushPayloadFcmMessage extends NativePushPayloadFcmMessage {
   @override
   final BuiltMap<String, JsonObject?>? apns;
 
-  factory _$NativePushPayloadFcmMessage(
-          [void Function(NativePushPayloadFcmMessageBuilder)? updates]) =>
-      (NativePushPayloadFcmMessageBuilder()..update(updates))._build();
+  factory _$NativePushPayloadFcmMessage([
+    void Function(NativePushPayloadFcmMessageBuilder)? updates,
+  ]) => (NativePushPayloadFcmMessageBuilder()..update(updates))._build();
 
-  _$NativePushPayloadFcmMessage._(
-      {required this.token, required this.data, this.android, this.apns})
-      : super._();
+  _$NativePushPayloadFcmMessage._({
+    required this.token,
+    required this.data,
+    this.android,
+    this.apns,
+  }) : super._();
   @override
   NativePushPayloadFcmMessage rebuild(
-          void Function(NativePushPayloadFcmMessageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NativePushPayloadFcmMessageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NativePushPayloadFcmMessageBuilder toBuilder() =>
@@ -66,8 +69,10 @@ class _$NativePushPayloadFcmMessage extends NativePushPayloadFcmMessage {
 
 class NativePushPayloadFcmMessageBuilder
     implements
-        Builder<NativePushPayloadFcmMessage,
-            NativePushPayloadFcmMessageBuilder> {
+        Builder<
+          NativePushPayloadFcmMessage,
+          NativePushPayloadFcmMessageBuilder
+        > {
   _$NativePushPayloadFcmMessage? _$v;
 
   String? _token;
@@ -122,10 +127,14 @@ class NativePushPayloadFcmMessageBuilder
   _$NativePushPayloadFcmMessage _build() {
     _$NativePushPayloadFcmMessage _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NativePushPayloadFcmMessage._(
             token: BuiltValueNullFieldError.checkNotNull(
-                token, r'NativePushPayloadFcmMessage', 'token'),
+              token,
+              r'NativePushPayloadFcmMessage',
+              'token',
+            ),
             data: data.build(),
             android: _android?.build(),
             apns: _apns?.build(),
@@ -141,7 +150,10 @@ class NativePushPayloadFcmMessageBuilder
         _apns?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NativePushPayloadFcmMessage', _$failedField, e.toString());
+          r'NativePushPayloadFcmMessage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

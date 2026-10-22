@@ -92,11 +92,9 @@ class SavedSearchPageBuilder
   _$SavedSearchPage _build() {
     _$SavedSearchPage _$result;
     try {
-      _$result = _$v ??
-          _$SavedSearchPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SavedSearchPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class SavedSearchPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedSearchPage', _$failedField, e.toString());
+          r'SavedSearchPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

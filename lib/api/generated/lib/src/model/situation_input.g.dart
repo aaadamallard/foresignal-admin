@@ -24,9 +24,9 @@ SituationInputStatusEnum _$situationInputStatusEnumValueOf(String name) {
 
 final BuiltSet<SituationInputStatusEnum> _$situationInputStatusEnumValues =
     BuiltSet<SituationInputStatusEnum>(const <SituationInputStatusEnum>[
-  _$situationInputStatusEnum_emerging,
-  _$situationInputStatusEnum_active,
-]);
+      _$situationInputStatusEnum_emerging,
+      _$situationInputStatusEnum_active,
+    ]);
 
 Serializer<SituationInputStatusEnum> _$situationInputStatusEnumSerializer =
     _$SituationInputStatusEnumSerializer();
@@ -48,16 +48,20 @@ class _$SituationInputStatusEnumSerializer
   final String wireName = 'SituationInputStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, SituationInputStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SituationInputStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SituationInputStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SituationInputStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SituationInputStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SituationInput extends SituationInput {
@@ -83,17 +87,17 @@ class _$SituationInput extends SituationInput {
   factory _$SituationInput([void Function(SituationInputBuilder)? updates]) =>
       (SituationInputBuilder()..update(updates))._build();
 
-  _$SituationInput._(
-      {required this.title,
-      required this.theme,
-      this.status,
-      this.severityOverride,
-      this.regionCodes,
-      this.topicIds,
-      this.entityIds,
-      this.investigationIds,
-      this.members})
-      : super._();
+  _$SituationInput._({
+    required this.title,
+    required this.theme,
+    this.status,
+    this.severityOverride,
+    this.regionCodes,
+    this.topicIds,
+    this.entityIds,
+    this.investigationIds,
+    this.members,
+  }) : super._();
   @override
   SituationInput rebuild(void Function(SituationInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -235,12 +239,19 @@ class SituationInputBuilder
   _$SituationInput _build() {
     _$SituationInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SituationInput._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'SituationInput', 'title'),
+              title,
+              r'SituationInput',
+              'title',
+            ),
             theme: BuiltValueNullFieldError.checkNotNull(
-                theme, r'SituationInput', 'theme'),
+              theme,
+              r'SituationInput',
+              'theme',
+            ),
             status: status,
             severityOverride: severityOverride,
             regionCodes: _regionCodes?.build(),
@@ -264,7 +275,10 @@ class SituationInputBuilder
         _members?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SituationInput', _$failedField, e.toString());
+          r'SituationInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

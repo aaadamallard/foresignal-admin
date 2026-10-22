@@ -32,11 +32,11 @@ ReferenceDatasetStateEnum _$referenceDatasetStateEnumValueOf(String name) {
 
 final BuiltSet<ReferenceDatasetStateEnum> _$referenceDatasetStateEnumValues =
     BuiltSet<ReferenceDatasetStateEnum>(const <ReferenceDatasetStateEnum>[
-  _$referenceDatasetStateEnum_absent,
-  _$referenceDatasetStateEnum_loading,
-  _$referenceDatasetStateEnum_loaded,
-  _$referenceDatasetStateEnum_failed,
-]);
+      _$referenceDatasetStateEnum_absent,
+      _$referenceDatasetStateEnum_loading,
+      _$referenceDatasetStateEnum_loaded,
+      _$referenceDatasetStateEnum_failed,
+    ]);
 
 Serializer<ReferenceDatasetStateEnum> _$referenceDatasetStateEnumSerializer =
     _$ReferenceDatasetStateEnumSerializer();
@@ -62,16 +62,20 @@ class _$ReferenceDatasetStateEnumSerializer
   final String wireName = 'ReferenceDatasetStateEnum';
 
   @override
-  Object serialize(Serializers serializers, ReferenceDatasetStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ReferenceDatasetStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   ReferenceDatasetStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ReferenceDatasetStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ReferenceDatasetStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ReferenceDataset extends ReferenceDataset {
@@ -98,23 +102,23 @@ class _$ReferenceDataset extends ReferenceDataset {
   @override
   final String? error;
 
-  factory _$ReferenceDataset(
-          [void Function(ReferenceDatasetBuilder)? updates]) =>
-      (ReferenceDatasetBuilder()..update(updates))._build();
+  factory _$ReferenceDataset([
+    void Function(ReferenceDatasetBuilder)? updates,
+  ]) => (ReferenceDatasetBuilder()..update(updates))._build();
 
-  _$ReferenceDataset._(
-      {required this.name,
-      this.edition,
-      this.url,
-      this.sha256,
-      this.licence,
-      this.attribution,
-      this.rows,
-      this.loadedAt,
-      this.optional,
-      required this.state,
-      this.error})
-      : super._();
+  _$ReferenceDataset._({
+    required this.name,
+    this.edition,
+    this.url,
+    this.sha256,
+    this.licence,
+    this.attribution,
+    this.rows,
+    this.loadedAt,
+    this.optional,
+    required this.state,
+    this.error,
+  }) : super._();
   @override
   ReferenceDataset rebuild(void Function(ReferenceDatasetBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -261,10 +265,14 @@ class ReferenceDatasetBuilder
   ReferenceDataset build() => _build();
 
   _$ReferenceDataset _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ReferenceDataset._(
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'ReferenceDataset', 'name'),
+            name,
+            r'ReferenceDataset',
+            'name',
+          ),
           edition: edition,
           url: url,
           sha256: sha256,
@@ -274,7 +282,10 @@ class ReferenceDatasetBuilder
           loadedAt: loadedAt,
           optional: optional,
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'ReferenceDataset', 'state'),
+            state,
+            r'ReferenceDataset',
+            'state',
+          ),
           error: error,
         );
     replace(_$result);

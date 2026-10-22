@@ -52,16 +52,16 @@ SpcOutlookPayloadTypeEnum _$spcOutlookPayloadTypeEnumValueOf(String name) {
 
 final BuiltSet<SpcOutlookPayloadTypeEnum> _$spcOutlookPayloadTypeEnumValues =
     BuiltSet<SpcOutlookPayloadTypeEnum>(const <SpcOutlookPayloadTypeEnum>[
-  _$spcOutlookPayloadTypeEnum_cat,
-  _$spcOutlookPayloadTypeEnum_torn,
-  _$spcOutlookPayloadTypeEnum_wind,
-  _$spcOutlookPayloadTypeEnum_hail,
-  _$spcOutlookPayloadTypeEnum_sigtorn,
-  _$spcOutlookPayloadTypeEnum_sigwind,
-  _$spcOutlookPayloadTypeEnum_sighail,
-  _$spcOutlookPayloadTypeEnum_prob,
-  _$spcOutlookPayloadTypeEnum_sigprob,
-]);
+      _$spcOutlookPayloadTypeEnum_cat,
+      _$spcOutlookPayloadTypeEnum_torn,
+      _$spcOutlookPayloadTypeEnum_wind,
+      _$spcOutlookPayloadTypeEnum_hail,
+      _$spcOutlookPayloadTypeEnum_sigtorn,
+      _$spcOutlookPayloadTypeEnum_sigwind,
+      _$spcOutlookPayloadTypeEnum_sighail,
+      _$spcOutlookPayloadTypeEnum_prob,
+      _$spcOutlookPayloadTypeEnum_sigprob,
+    ]);
 
 Serializer<SpcOutlookPayloadTypeEnum> _$spcOutlookPayloadTypeEnumSerializer =
     _$SpcOutlookPayloadTypeEnumSerializer();
@@ -97,16 +97,20 @@ class _$SpcOutlookPayloadTypeEnumSerializer
   final String wireName = 'SpcOutlookPayloadTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, SpcOutlookPayloadTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SpcOutlookPayloadTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SpcOutlookPayloadTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SpcOutlookPayloadTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SpcOutlookPayloadTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SpcOutlookPayload extends SpcOutlookPayload {
@@ -129,21 +133,21 @@ class _$SpcOutlookPayload extends SpcOutlookPayload {
   @override
   final String title;
 
-  factory _$SpcOutlookPayload(
-          [void Function(SpcOutlookPayloadBuilder)? updates]) =>
-      (SpcOutlookPayloadBuilder()..update(updates))._build();
+  factory _$SpcOutlookPayload([
+    void Function(SpcOutlookPayloadBuilder)? updates,
+  ]) => (SpcOutlookPayloadBuilder()..update(updates))._build();
 
-  _$SpcOutlookPayload._(
-      {required this.day,
-      required this.type,
-      required this.label,
-      this.label2,
-      required this.dn,
-      this.issue,
-      this.valid,
-      this.expire,
-      required this.title})
-      : super._();
+  _$SpcOutlookPayload._({
+    required this.day,
+    required this.type,
+    required this.label,
+    this.label2,
+    required this.dn,
+    this.issue,
+    this.valid,
+    this.expire,
+    required this.title,
+  }) : super._();
   @override
   SpcOutlookPayload rebuild(void Function(SpcOutlookPayloadBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -274,22 +278,38 @@ class SpcOutlookPayloadBuilder
   SpcOutlookPayload build() => _build();
 
   _$SpcOutlookPayload _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SpcOutlookPayload._(
           day: BuiltValueNullFieldError.checkNotNull(
-              day, r'SpcOutlookPayload', 'day'),
+            day,
+            r'SpcOutlookPayload',
+            'day',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(
-              type, r'SpcOutlookPayload', 'type'),
+            type,
+            r'SpcOutlookPayload',
+            'type',
+          ),
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'SpcOutlookPayload', 'label'),
+            label,
+            r'SpcOutlookPayload',
+            'label',
+          ),
           label2: label2,
           dn: BuiltValueNullFieldError.checkNotNull(
-              dn, r'SpcOutlookPayload', 'dn'),
+            dn,
+            r'SpcOutlookPayload',
+            'dn',
+          ),
           issue: issue,
           valid: valid,
           expire: expire,
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'SpcOutlookPayload', 'title'),
+            title,
+            r'SpcOutlookPayload',
+            'title',
+          ),
         );
     replace(_$result);
     return _$result;

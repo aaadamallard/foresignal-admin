@@ -37,9 +37,9 @@ class _$IngestRecords extends IngestRecords {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'IngestRecords')
-          ..add('records', records))
-        .toString();
+    return (newBuiltValueToStringHelper(
+      r'IngestRecords',
+    )..add('records', records)).toString();
   }
 }
 
@@ -82,10 +82,7 @@ class IngestRecordsBuilder
   _$IngestRecords _build() {
     _$IngestRecords _$result;
     try {
-      _$result = _$v ??
-          _$IngestRecords._(
-            records: records.build(),
-          );
+      _$result = _$v ?? _$IngestRecords._(records: records.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -93,7 +90,10 @@ class IngestRecordsBuilder
         records.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IngestRecords', _$failedField, e.toString());
+          r'IngestRecords',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

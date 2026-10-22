@@ -39,22 +39,22 @@ class _$IngestOutcome extends IngestOutcome {
   factory _$IngestOutcome([void Function(IngestOutcomeBuilder)? updates]) =>
       (IngestOutcomeBuilder()..update(updates))._build();
 
-  _$IngestOutcome._(
-      {required this.seen,
-      required this.changed,
-      required this.rejected,
-      this.fromSeq,
-      this.toSeq,
-      this.rejections,
-      required this.persisted,
-      this.live,
-      this.touched,
-      this.touchesThrottled,
-      this.late_,
-      this.skipped,
-      this.byReason,
-      this.versionBytes})
-      : super._();
+  _$IngestOutcome._({
+    required this.seen,
+    required this.changed,
+    required this.rejected,
+    this.fromSeq,
+    this.toSeq,
+    this.rejections,
+    required this.persisted,
+    this.live,
+    this.touched,
+    this.touchesThrottled,
+    this.late_,
+    this.skipped,
+    this.byReason,
+    this.versionBytes,
+  }) : super._();
   @override
   IngestOutcome rebuild(void Function(IngestOutcomeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -231,19 +231,32 @@ class IngestOutcomeBuilder
   _$IngestOutcome _build() {
     _$IngestOutcome _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IngestOutcome._(
             seen: BuiltValueNullFieldError.checkNotNull(
-                seen, r'IngestOutcome', 'seen'),
+              seen,
+              r'IngestOutcome',
+              'seen',
+            ),
             changed: BuiltValueNullFieldError.checkNotNull(
-                changed, r'IngestOutcome', 'changed'),
+              changed,
+              r'IngestOutcome',
+              'changed',
+            ),
             rejected: BuiltValueNullFieldError.checkNotNull(
-                rejected, r'IngestOutcome', 'rejected'),
+              rejected,
+              r'IngestOutcome',
+              'rejected',
+            ),
             fromSeq: fromSeq,
             toSeq: toSeq,
             rejections: _rejections?.build(),
             persisted: BuiltValueNullFieldError.checkNotNull(
-                persisted, r'IngestOutcome', 'persisted'),
+              persisted,
+              r'IngestOutcome',
+              'persisted',
+            ),
             live: live,
             touched: touched,
             touchesThrottled: touchesThrottled,
@@ -262,7 +275,10 @@ class IngestOutcomeBuilder
         _byReason?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IngestOutcome', _$failedField, e.toString());
+          r'IngestOutcome',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -31,8 +31,9 @@ abstract class AnalysisRequestResult
 
   AnalysisRequestResult._();
 
-  factory AnalysisRequestResult(
-      [void updates(AnalysisRequestResultBuilder b)]) = _$AnalysisRequestResult;
+  factory AnalysisRequestResult([
+    void updates(AnalysisRequestResultBuilder b),
+  ]) = _$AnalysisRequestResult;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(AnalysisRequestResultBuilder b) => b;
@@ -47,7 +48,7 @@ class _$AnalysisRequestResultSerializer
   @override
   final Iterable<Type> types = const [
     AnalysisRequestResult,
-    _$AnalysisRequestResult
+    _$AnalysisRequestResult,
   ];
 
   @override
@@ -83,9 +84,11 @@ class _$AnalysisRequestResultSerializer
     AnalysisRequestResult object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,24 +104,30 @@ class _$AnalysisRequestResultSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'correlationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.correlationId = valueDes;
           break;
         case r'recorded':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.recorded = valueDes;
           break;
         case r'forecastId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.forecastId = valueDes;
           break;

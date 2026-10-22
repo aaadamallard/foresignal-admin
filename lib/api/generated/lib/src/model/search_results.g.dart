@@ -28,10 +28,10 @@ SearchResultsModeEnum _$searchResultsModeEnumValueOf(String name) {
 
 final BuiltSet<SearchResultsModeEnum> _$searchResultsModeEnumValues =
     BuiltSet<SearchResultsModeEnum>(const <SearchResultsModeEnum>[
-  _$searchResultsModeEnum_hybrid,
-  _$searchResultsModeEnum_semantic,
-  _$searchResultsModeEnum_text,
-]);
+      _$searchResultsModeEnum_hybrid,
+      _$searchResultsModeEnum_semantic,
+      _$searchResultsModeEnum_text,
+    ]);
 
 Serializer<SearchResultsModeEnum> _$searchResultsModeEnumSerializer =
     _$SearchResultsModeEnumSerializer();
@@ -55,15 +55,20 @@ class _$SearchResultsModeEnumSerializer
   final String wireName = 'SearchResultsModeEnum';
 
   @override
-  Object serialize(Serializers serializers, SearchResultsModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SearchResultsModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  SearchResultsModeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SearchResultsModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  SearchResultsModeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SearchResultsModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SearchResults extends SearchResults {
@@ -83,14 +88,14 @@ class _$SearchResults extends SearchResults {
   factory _$SearchResults([void Function(SearchResultsBuilder)? updates]) =>
       (SearchResultsBuilder()..update(updates))._build();
 
-  _$SearchResults._(
-      {required this.mode,
-      required this.items,
-      this.degraded,
-      this.attributions,
-      this.licenceFiltered,
-      this.reason})
-      : super._();
+  _$SearchResults._({
+    required this.mode,
+    required this.items,
+    this.degraded,
+    this.attributions,
+    this.licenceFiltered,
+    this.reason,
+  }) : super._();
   @override
   SearchResults rebuild(void Function(SearchResultsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -202,10 +207,14 @@ class SearchResultsBuilder
   _$SearchResults _build() {
     _$SearchResults _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SearchResults._(
             mode: BuiltValueNullFieldError.checkNotNull(
-                mode, r'SearchResults', 'mode'),
+              mode,
+              r'SearchResults',
+              'mode',
+            ),
             items: items.build(),
             degraded: degraded,
             attributions: _attributions?.build(),
@@ -222,7 +231,10 @@ class SearchResultsBuilder
         _attributions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SearchResults', _$failedField, e.toString());
+          r'SearchResults',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

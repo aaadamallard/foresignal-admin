@@ -17,20 +17,20 @@ class _$IntelBoardIndicatorsObservedInner
   @override
   final DateTime at;
 
-  factory _$IntelBoardIndicatorsObservedInner(
-          [void Function(IntelBoardIndicatorsObservedInnerBuilder)? updates]) =>
-      (IntelBoardIndicatorsObservedInnerBuilder()..update(updates))._build();
+  factory _$IntelBoardIndicatorsObservedInner([
+    void Function(IntelBoardIndicatorsObservedInnerBuilder)? updates,
+  ]) => (IntelBoardIndicatorsObservedInnerBuilder()..update(updates))._build();
 
-  _$IntelBoardIndicatorsObservedInner._(
-      {required this.indicatorId,
-      required this.setId,
-      this.description,
-      required this.at})
-      : super._();
+  _$IntelBoardIndicatorsObservedInner._({
+    required this.indicatorId,
+    required this.setId,
+    this.description,
+    required this.at,
+  }) : super._();
   @override
   IntelBoardIndicatorsObservedInner rebuild(
-          void Function(IntelBoardIndicatorsObservedInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelBoardIndicatorsObservedInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelBoardIndicatorsObservedInnerBuilder toBuilder() =>
@@ -70,8 +70,10 @@ class _$IntelBoardIndicatorsObservedInner
 
 class IntelBoardIndicatorsObservedInnerBuilder
     implements
-        Builder<IntelBoardIndicatorsObservedInner,
-            IntelBoardIndicatorsObservedInnerBuilder> {
+        Builder<
+          IntelBoardIndicatorsObservedInner,
+          IntelBoardIndicatorsObservedInnerBuilder
+        > {
   _$IntelBoardIndicatorsObservedInner? _$v;
 
   String? _indicatorId;
@@ -113,7 +115,8 @@ class IntelBoardIndicatorsObservedInnerBuilder
 
   @override
   void update(
-      void Function(IntelBoardIndicatorsObservedInnerBuilder)? updates) {
+    void Function(IntelBoardIndicatorsObservedInnerBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -121,15 +124,25 @@ class IntelBoardIndicatorsObservedInnerBuilder
   IntelBoardIndicatorsObservedInner build() => _build();
 
   _$IntelBoardIndicatorsObservedInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelBoardIndicatorsObservedInner._(
           indicatorId: BuiltValueNullFieldError.checkNotNull(
-              indicatorId, r'IntelBoardIndicatorsObservedInner', 'indicatorId'),
+            indicatorId,
+            r'IntelBoardIndicatorsObservedInner',
+            'indicatorId',
+          ),
           setId: BuiltValueNullFieldError.checkNotNull(
-              setId, r'IntelBoardIndicatorsObservedInner', 'setId'),
+            setId,
+            r'IntelBoardIndicatorsObservedInner',
+            'setId',
+          ),
           description: description,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'IntelBoardIndicatorsObservedInner', 'at'),
+            at,
+            r'IntelBoardIndicatorsObservedInner',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

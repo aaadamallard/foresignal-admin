@@ -14,17 +14,19 @@ class _$ChronicleSummaryGapsInner extends ChronicleSummaryGapsInner {
   @override
   final String? reason;
 
-  factory _$ChronicleSummaryGapsInner(
-          [void Function(ChronicleSummaryGapsInnerBuilder)? updates]) =>
-      (ChronicleSummaryGapsInnerBuilder()..update(updates))._build();
+  factory _$ChronicleSummaryGapsInner([
+    void Function(ChronicleSummaryGapsInnerBuilder)? updates,
+  ]) => (ChronicleSummaryGapsInnerBuilder()..update(updates))._build();
 
-  _$ChronicleSummaryGapsInner._(
-      {required this.from, required this.to, this.reason})
-      : super._();
+  _$ChronicleSummaryGapsInner._({
+    required this.from,
+    required this.to,
+    this.reason,
+  }) : super._();
   @override
   ChronicleSummaryGapsInner rebuild(
-          void Function(ChronicleSummaryGapsInnerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleSummaryGapsInnerBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleSummaryGapsInnerBuilder toBuilder() =>
@@ -105,12 +107,19 @@ class ChronicleSummaryGapsInnerBuilder
   ChronicleSummaryGapsInner build() => _build();
 
   _$ChronicleSummaryGapsInner _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleSummaryGapsInner._(
           from: BuiltValueNullFieldError.checkNotNull(
-              from, r'ChronicleSummaryGapsInner', 'from'),
+            from,
+            r'ChronicleSummaryGapsInner',
+            'from',
+          ),
           to: BuiltValueNullFieldError.checkNotNull(
-              to, r'ChronicleSummaryGapsInner', 'to'),
+            to,
+            r'ChronicleSummaryGapsInner',
+            'to',
+          ),
           reason: reason,
         );
     replace(_$result);

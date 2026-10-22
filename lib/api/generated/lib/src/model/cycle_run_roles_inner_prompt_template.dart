@@ -16,8 +16,10 @@ part 'cycle_run_roles_inner_prompt_template.g.dart';
 @BuiltValue()
 abstract class CycleRunRolesInnerPromptTemplate
     implements
-        Built<CycleRunRolesInnerPromptTemplate,
-            CycleRunRolesInnerPromptTemplateBuilder> {
+        Built<
+          CycleRunRolesInnerPromptTemplate,
+          CycleRunRolesInnerPromptTemplateBuilder
+        > {
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -26,9 +28,9 @@ abstract class CycleRunRolesInnerPromptTemplate
 
   CycleRunRolesInnerPromptTemplate._();
 
-  factory CycleRunRolesInnerPromptTemplate(
-          [void updates(CycleRunRolesInnerPromptTemplateBuilder b)]) =
-      _$CycleRunRolesInnerPromptTemplate;
+  factory CycleRunRolesInnerPromptTemplate([
+    void updates(CycleRunRolesInnerPromptTemplateBuilder b),
+  ]) = _$CycleRunRolesInnerPromptTemplate;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(CycleRunRolesInnerPromptTemplateBuilder b) => b;
@@ -43,7 +45,7 @@ class _$CycleRunRolesInnerPromptTemplateSerializer
   @override
   final Iterable<Type> types = const [
     CycleRunRolesInnerPromptTemplate,
-    _$CycleRunRolesInnerPromptTemplate
+    _$CycleRunRolesInnerPromptTemplate,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$CycleRunRolesInnerPromptTemplateSerializer
     CycleRunRolesInnerPromptTemplate object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$CycleRunRolesInnerPromptTemplateSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         default:

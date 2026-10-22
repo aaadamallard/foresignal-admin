@@ -112,8 +112,9 @@ class _$OgcTileMatrixSetSerializer
     yield r'tileMatrices';
     yield serializers.serialize(
       object.tileMatrices,
-      specifiedType: const FullType(
-          BuiltList, [FullType(OgcTileMatrixSetTileMatricesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OgcTileMatrixSetTileMatricesInner),
+      ]),
     );
   }
 
@@ -123,9 +124,11 @@ class _$OgcTileMatrixSetSerializer
     OgcTileMatrixSet object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -141,58 +144,74 @@ class _$OgcTileMatrixSetSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(OgcTileMatrixSetIdEnum),
-          ) as OgcTileMatrixSetIdEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(OgcTileMatrixSetIdEnum),
+                  )
+                  as OgcTileMatrixSetIdEnum;
           result.id = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.title = valueDes;
           break;
         case r'uri':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.uri = valueDes;
           break;
         case r'crs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.crs = valueDes;
           break;
         case r'orderedAxes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.orderedAxes.replace(valueDes);
           break;
         case r'wellKnownScaleSet':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.wellKnownScaleSet = valueDes;
           break;
         case r'tileMatrices':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(OgcTileMatrixSetTileMatricesInner)]),
-          ) as BuiltList<OgcTileMatrixSetTileMatricesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OgcTileMatrixSetTileMatricesInner),
+                    ]),
+                  )
+                  as BuiltList<OgcTileMatrixSetTileMatricesInner>;
           result.tileMatrices.replace(valueDes);
           break;
         default:

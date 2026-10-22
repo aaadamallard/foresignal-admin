@@ -28,9 +28,9 @@ abstract class ChannelTypeCapabilities
 
   ChannelTypeCapabilities._();
 
-  factory ChannelTypeCapabilities(
-          [void updates(ChannelTypeCapabilitiesBuilder b)]) =
-      _$ChannelTypeCapabilities;
+  factory ChannelTypeCapabilities([
+    void updates(ChannelTypeCapabilitiesBuilder b),
+  ]) = _$ChannelTypeCapabilities;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(ChannelTypeCapabilitiesBuilder b) => b;
@@ -45,7 +45,7 @@ class _$ChannelTypeCapabilitiesSerializer
   @override
   final Iterable<Type> types = const [
     ChannelTypeCapabilities,
-    _$ChannelTypeCapabilities
+    _$ChannelTypeCapabilities,
   ];
 
   @override
@@ -85,9 +85,11 @@ class _$ChannelTypeCapabilitiesSerializer
     ChannelTypeCapabilities object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,26 +105,32 @@ class _$ChannelTypeCapabilitiesSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'editInPlace':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.editInPlace = valueDes;
           break;
         case r'attachments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.attachments = valueDes;
           break;
         case r'fanOut':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.fanOut = valueDes;
           break;

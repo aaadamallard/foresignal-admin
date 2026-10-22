@@ -19,8 +19,10 @@ part 'common_dependencies_dependencies_inner_paths_inner.g.dart';
 @BuiltValue()
 abstract class CommonDependenciesDependenciesInnerPathsInner
     implements
-        Built<CommonDependenciesDependenciesInnerPathsInner,
-            CommonDependenciesDependenciesInnerPathsInnerBuilder> {
+        Built<
+          CommonDependenciesDependenciesInnerPathsInner,
+          CommonDependenciesDependenciesInnerPathsInnerBuilder
+        > {
   /// Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
   @BuiltValueField(wireName: r'from')
   String get from;
@@ -30,31 +32,29 @@ abstract class CommonDependenciesDependenciesInnerPathsInner
 
   @BuiltValueField(wireName: r'relationTypes')
   BuiltList<CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>?
-      get relationTypes;
+  get relationTypes;
   // enum relationTypesEnum {  member-of,  observed-by,  same-as,  located-in,  near,  depends-on,  affects,  derived-from,  evidence-for,  evidence-against,  about,  mentions,  precedes,  causes,  related-to,  owns,  controls,  officer-of,  beneficial-owner,  affiliated-with,  };
 
   /// Relation or dependency label (104 vocabulary)
   @BuiltValueField(wireName: r'weakestEdgeLabel')
   CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-      get weakestEdgeLabel;
+  get weakestEdgeLabel;
   // enum weakestEdgeLabelEnum {  confirmed,  likely,  possible,  speculative,  };
 
   CommonDependenciesDependenciesInnerPathsInner._();
 
-  factory CommonDependenciesDependenciesInnerPathsInner(
-          [void updates(
-              CommonDependenciesDependenciesInnerPathsInnerBuilder b)]) =
-      _$CommonDependenciesDependenciesInnerPathsInner;
+  factory CommonDependenciesDependenciesInnerPathsInner([
+    void updates(CommonDependenciesDependenciesInnerPathsInnerBuilder b),
+  ]) = _$CommonDependenciesDependenciesInnerPathsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          CommonDependenciesDependenciesInnerPathsInnerBuilder b) =>
-      b;
+    CommonDependenciesDependenciesInnerPathsInnerBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<CommonDependenciesDependenciesInnerPathsInner>
-      get serializer =>
-          _$CommonDependenciesDependenciesInnerPathsInnerSerializer();
+  get serializer => _$CommonDependenciesDependenciesInnerPathsInnerSerializer();
 }
 
 class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
@@ -63,7 +63,7 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
   @override
   final Iterable<Type> types = const [
     CommonDependenciesDependenciesInnerPathsInner,
-    _$CommonDependenciesDependenciesInnerPathsInner
+    _$CommonDependenciesDependenciesInnerPathsInner,
   ];
 
   @override
@@ -90,7 +90,8 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
         object.relationTypes,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum)
+            CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum,
+          ),
         ]),
       );
     }
@@ -98,7 +99,8 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
     yield serializers.serialize(
       object.weakestEdgeLabel,
       specifiedType: const FullType(
-          CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum),
+        CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum,
+      ),
     );
   }
 
@@ -108,9 +110,11 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
     CommonDependenciesDependenciesInnerPathsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -126,37 +130,50 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'from':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.from = valueDes;
           break;
         case r'hops':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.hops.replace(valueDes);
           break;
         case r'relationTypes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(BuiltList, [
-              FullType(
-                  CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum)
-            ]),
-          ) as BuiltList<
-              CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(
+                        CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+                  >?;
           if (valueDes == null) continue;
           result.relationTypes.replace(valueDes);
           break;
         case r'weakestEdgeLabel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum),
-          ) as CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum,
+                    ),
+                  )
+                  as CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum;
           result.weakestEdgeLabel = valueDes;
           break;
         default:
@@ -193,102 +210,103 @@ class CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
     extends EnumClass {
   @BuiltValueEnumConst(wireName: r'member-of')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      memberOf =
+  memberOf =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_memberOf;
   @BuiltValueEnumConst(wireName: r'observed-by')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      observedBy =
+  observedBy =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_observedBy;
   @BuiltValueEnumConst(wireName: r'same-as')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      sameAs =
+  sameAs =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_sameAs;
   @BuiltValueEnumConst(wireName: r'located-in')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      locatedIn =
+  locatedIn =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_locatedIn;
   @BuiltValueEnumConst(wireName: r'near')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      near =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_near;
+  near = _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_near;
   @BuiltValueEnumConst(wireName: r'depends-on')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      dependsOn =
+  dependsOn =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_dependsOn;
   @BuiltValueEnumConst(wireName: r'affects')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      affects =
+  affects =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affects;
   @BuiltValueEnumConst(wireName: r'derived-from')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      derivedFrom =
+  derivedFrom =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_derivedFrom;
   @BuiltValueEnumConst(wireName: r'evidence-for')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      evidenceFor =
+  evidenceFor =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceFor;
   @BuiltValueEnumConst(wireName: r'evidence-against')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      evidenceAgainst =
+  evidenceAgainst =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceAgainst;
   @BuiltValueEnumConst(wireName: r'about')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      about =
+  about =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_about;
   @BuiltValueEnumConst(wireName: r'mentions')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      mentions =
+  mentions =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_mentions;
   @BuiltValueEnumConst(wireName: r'precedes')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      precedes =
+  precedes =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_precedes;
   @BuiltValueEnumConst(wireName: r'causes')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      causes =
+  causes =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_causes;
   @BuiltValueEnumConst(wireName: r'related-to')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      relatedTo =
+  relatedTo =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_relatedTo;
   @BuiltValueEnumConst(wireName: r'owns')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      owns =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_owns;
+  owns = _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_owns;
   @BuiltValueEnumConst(wireName: r'controls')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      controls =
+  controls =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_controls;
   @BuiltValueEnumConst(wireName: r'officer-of')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      officerOf =
+  officerOf =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_officerOf;
   @BuiltValueEnumConst(wireName: r'beneficial-owner')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      beneficialOwner =
+  beneficialOwner =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_beneficialOwner;
   @BuiltValueEnumConst(wireName: r'affiliated-with')
   static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-      affiliatedWith =
+  affiliatedWith =
       _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affiliatedWith;
 
   static Serializer<
-          CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>
-      get serializer =>
-          _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer;
+    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+  >
+  get serializer =>
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer;
 
   const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-      String name)
-      : super(name);
+    String name,
+  ) : super(name);
 
   static BuiltSet<
-          CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>
-      get values =>
-          _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValues;
+    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
+  >
+  get values =>
+      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValues;
   static CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum valueOf(
-          String name) =>
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValueOf(
-          name);
+    String name,
+  ) => _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValueOf(
+    name,
+  );
 }
 
 /// Relation or dependency label (104 vocabulary)
@@ -296,36 +314,39 @@ class CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
     extends EnumClass {
   @BuiltValueEnumConst(wireName: r'confirmed')
   static const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-      confirmed =
+  confirmed =
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_confirmed;
   @BuiltValueEnumConst(wireName: r'likely')
   static const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-      likely =
+  likely =
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_likely;
   @BuiltValueEnumConst(wireName: r'possible')
   static const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-      possible =
+  possible =
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_possible;
   @BuiltValueEnumConst(wireName: r'speculative')
   static const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
-      speculative =
+  speculative =
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative;
 
   static Serializer<
-          CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>
-      get serializer =>
-          _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSerializer;
+    CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+  >
+  get serializer =>
+      _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSerializer;
 
   const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum._(
-      String name)
-      : super(name);
+    String name,
+  ) : super(name);
 
   static BuiltSet<
-          CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>
-      get values =>
-          _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValues;
-  static CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum valueOf(
-          String name) =>
+    CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+  >
+  get values =>
+      _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValues;
+  static CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+  valueOf(String name) =>
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValueOf(
-          name);
+        name,
+      );
 }

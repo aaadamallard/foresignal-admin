@@ -79,11 +79,7 @@ class MapsApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -99,31 +95,55 @@ class MapsApi {
           format: ListFormat.multi,
         ),
       if (center != null)
-        r'center':
-            encodeQueryParameter(_serializers, center, const FullType(String)),
+        r'center': encodeQueryParameter(
+          _serializers,
+          center,
+          const FullType(String),
+        ),
       if (radiusKm != null)
-        r'radiusKm':
-            encodeQueryParameter(_serializers, radiusKm, const FullType(num)),
+        r'radiusKm': encodeQueryParameter(
+          _serializers,
+          radiusKm,
+          const FullType(num),
+        ),
       if (bbox != null)
-        r'bbox':
-            encodeQueryParameter(_serializers, bbox, const FullType(String)),
+        r'bbox': encodeQueryParameter(
+          _serializers,
+          bbox,
+          const FullType(String),
+        ),
       if (time != null)
-        r'time':
-            encodeQueryParameter(_serializers, time, const FullType(String)),
+        r'time': encodeQueryParameter(
+          _serializers,
+          time,
+          const FullType(String),
+        ),
       if (run != null)
         r'run': encodeQueryParameter(_serializers, run, const FullType(String)),
       if (width != null)
-        r'width':
-            encodeQueryParameter(_serializers, width, const FullType(int)),
+        r'width': encodeQueryParameter(
+          _serializers,
+          width,
+          const FullType(int),
+        ),
       if (height != null)
-        r'height':
-            encodeQueryParameter(_serializers, height, const FullType(int)),
+        r'height': encodeQueryParameter(
+          _serializers,
+          height,
+          const FullType(int),
+        ),
       if (alert != null)
-        r'alert':
-            encodeQueryParameter(_serializers, alert, const FullType(int)),
+        r'alert': encodeQueryParameter(
+          _serializers,
+          alert,
+          const FullType(int),
+        ),
       if (place != null)
-        r'place':
-            encodeQueryParameter(_serializers, place, const FullType(String)),
+        r'place': encodeQueryParameter(
+          _serializers,
+          place,
+          const FullType(String),
+        ),
       if (style != null)
         r'style': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -132,11 +152,17 @@ class MapsApi {
           format: ListFormat.multi,
         ),
       if (theme != null)
-        r'theme':
-            encodeQueryParameter(_serializers, theme, const FullType(String)),
+        r'theme': encodeQueryParameter(
+          _serializers,
+          theme,
+          const FullType(String),
+        ),
       if (units != null)
-        r'units':
-            encodeQueryParameter(_serializers, units, const FullType(String)),
+        r'units': encodeQueryParameter(
+          _serializers,
+          units,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(

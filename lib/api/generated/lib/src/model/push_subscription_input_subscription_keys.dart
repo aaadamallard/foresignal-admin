@@ -16,8 +16,10 @@ part 'push_subscription_input_subscription_keys.g.dart';
 @BuiltValue()
 abstract class PushSubscriptionInputSubscriptionKeys
     implements
-        Built<PushSubscriptionInputSubscriptionKeys,
-            PushSubscriptionInputSubscriptionKeysBuilder> {
+        Built<
+          PushSubscriptionInputSubscriptionKeys,
+          PushSubscriptionInputSubscriptionKeysBuilder
+        > {
   @BuiltValueField(wireName: r'p256dh')
   String get p256dh;
 
@@ -26,9 +28,9 @@ abstract class PushSubscriptionInputSubscriptionKeys
 
   PushSubscriptionInputSubscriptionKeys._();
 
-  factory PushSubscriptionInputSubscriptionKeys(
-          [void updates(PushSubscriptionInputSubscriptionKeysBuilder b)]) =
-      _$PushSubscriptionInputSubscriptionKeys;
+  factory PushSubscriptionInputSubscriptionKeys([
+    void updates(PushSubscriptionInputSubscriptionKeysBuilder b),
+  ]) = _$PushSubscriptionInputSubscriptionKeys;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(PushSubscriptionInputSubscriptionKeysBuilder b) => b;
@@ -43,7 +45,7 @@ class _$PushSubscriptionInputSubscriptionKeysSerializer
   @override
   final Iterable<Type> types = const [
     PushSubscriptionInputSubscriptionKeys,
-    _$PushSubscriptionInputSubscriptionKeys
+    _$PushSubscriptionInputSubscriptionKeys,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$PushSubscriptionInputSubscriptionKeysSerializer
     PushSubscriptionInputSubscriptionKeys object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,17 +94,21 @@ class _$PushSubscriptionInputSubscriptionKeysSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'p256dh':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.p256dh = valueDes;
           break;
         case r'auth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.auth = valueDes;
           break;
         default:

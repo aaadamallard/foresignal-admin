@@ -29,9 +29,9 @@ abstract class SocialPlatformDeletionSync
 
   SocialPlatformDeletionSync._();
 
-  factory SocialPlatformDeletionSync(
-          [void updates(SocialPlatformDeletionSyncBuilder b)]) =
-      _$SocialPlatformDeletionSync;
+  factory SocialPlatformDeletionSync([
+    void updates(SocialPlatformDeletionSyncBuilder b),
+  ]) = _$SocialPlatformDeletionSync;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SocialPlatformDeletionSyncBuilder b) => b;
@@ -46,7 +46,7 @@ class _$SocialPlatformDeletionSyncSerializer
   @override
   final Iterable<Type> types = const [
     SocialPlatformDeletionSync,
-    _$SocialPlatformDeletionSync
+    _$SocialPlatformDeletionSync,
   ];
 
   @override
@@ -84,9 +84,11 @@ class _$SocialPlatformDeletionSyncSerializer
     SocialPlatformDeletionSync object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,25 +104,31 @@ class _$SocialPlatformDeletionSyncSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'enabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.enabled = valueDes;
           break;
         case r'lastRunAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.lastRunAt = valueDes;
           break;
         case r'tombstonedLast30d':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.tombstonedLast30d = valueDes;
           break;

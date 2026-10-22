@@ -12,15 +12,15 @@ class _$ImpactRateInterval extends ImpactRateInterval {
   @override
   final num hi;
 
-  factory _$ImpactRateInterval(
-          [void Function(ImpactRateIntervalBuilder)? updates]) =>
-      (ImpactRateIntervalBuilder()..update(updates))._build();
+  factory _$ImpactRateInterval([
+    void Function(ImpactRateIntervalBuilder)? updates,
+  ]) => (ImpactRateIntervalBuilder()..update(updates))._build();
 
   _$ImpactRateInterval._({required this.lo, required this.hi}) : super._();
   @override
   ImpactRateInterval rebuild(
-          void Function(ImpactRateIntervalBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ImpactRateIntervalBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ImpactRateIntervalBuilder toBuilder() =>
@@ -90,12 +90,19 @@ class ImpactRateIntervalBuilder
   ImpactRateInterval build() => _build();
 
   _$ImpactRateInterval _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ImpactRateInterval._(
           lo: BuiltValueNullFieldError.checkNotNull(
-              lo, r'ImpactRateInterval', 'lo'),
+            lo,
+            r'ImpactRateInterval',
+            'lo',
+          ),
           hi: BuiltValueNullFieldError.checkNotNull(
-              hi, r'ImpactRateInterval', 'hi'),
+            hi,
+            r'ImpactRateInterval',
+            'hi',
+          ),
         );
     replace(_$result);
     return _$result;

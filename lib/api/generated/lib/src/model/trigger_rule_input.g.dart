@@ -28,10 +28,10 @@ TriggerRuleInputModeEnum _$triggerRuleInputModeEnumValueOf(String name) {
 
 final BuiltSet<TriggerRuleInputModeEnum> _$triggerRuleInputModeEnumValues =
     BuiltSet<TriggerRuleInputModeEnum>(const <TriggerRuleInputModeEnum>[
-  _$triggerRuleInputModeEnum_match,
-  _$triggerRuleInputModeEnum_enter,
-  _$triggerRuleInputModeEnum_exit,
-]);
+      _$triggerRuleInputModeEnum_match,
+      _$triggerRuleInputModeEnum_enter,
+      _$triggerRuleInputModeEnum_exit,
+    ]);
 
 const TriggerRuleInputSeverityEnum _$triggerRuleInputSeverityEnum_info =
     const TriggerRuleInputSeverityEnum._('info');
@@ -41,7 +41,8 @@ const TriggerRuleInputSeverityEnum _$triggerRuleInputSeverityEnum_critical =
     const TriggerRuleInputSeverityEnum._('critical');
 
 TriggerRuleInputSeverityEnum _$triggerRuleInputSeverityEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'info':
       return _$triggerRuleInputSeverityEnum_info;
@@ -55,22 +56,23 @@ TriggerRuleInputSeverityEnum _$triggerRuleInputSeverityEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleInputSeverityEnum>
-    _$triggerRuleInputSeverityEnumValues =
+_$triggerRuleInputSeverityEnumValues =
     BuiltSet<TriggerRuleInputSeverityEnum>(const <TriggerRuleInputSeverityEnum>[
-  _$triggerRuleInputSeverityEnum_info,
-  _$triggerRuleInputSeverityEnum_warning,
-  _$triggerRuleInputSeverityEnum_critical,
-]);
+      _$triggerRuleInputSeverityEnum_info,
+      _$triggerRuleInputSeverityEnum_warning,
+      _$triggerRuleInputSeverityEnum_critical,
+    ]);
 
 const TriggerRuleInputCooldownScopeEnum
-    _$triggerRuleInputCooldownScopeEnum_record =
+_$triggerRuleInputCooldownScopeEnum_record =
     const TriggerRuleInputCooldownScopeEnum._('record');
 const TriggerRuleInputCooldownScopeEnum
-    _$triggerRuleInputCooldownScopeEnum_rule =
+_$triggerRuleInputCooldownScopeEnum_rule =
     const TriggerRuleInputCooldownScopeEnum._('rule');
 
 TriggerRuleInputCooldownScopeEnum _$triggerRuleInputCooldownScopeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'record':
       return _$triggerRuleInputCooldownScopeEnum_record;
@@ -82,21 +84,24 @@ TriggerRuleInputCooldownScopeEnum _$triggerRuleInputCooldownScopeEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleInputCooldownScopeEnum>
-    _$triggerRuleInputCooldownScopeEnumValues = BuiltSet<
-        TriggerRuleInputCooldownScopeEnum>(const <TriggerRuleInputCooldownScopeEnum>[
-  _$triggerRuleInputCooldownScopeEnum_record,
-  _$triggerRuleInputCooldownScopeEnum_rule,
-]);
+_$triggerRuleInputCooldownScopeEnumValues =
+    BuiltSet<TriggerRuleInputCooldownScopeEnum>(
+      const <TriggerRuleInputCooldownScopeEnum>[
+        _$triggerRuleInputCooldownScopeEnum_record,
+        _$triggerRuleInputCooldownScopeEnum_rule,
+      ],
+    );
 
 const TriggerRuleInputWeatherContextEnum
-    _$triggerRuleInputWeatherContextEnum_auto =
+_$triggerRuleInputWeatherContextEnum_auto =
     const TriggerRuleInputWeatherContextEnum._('auto');
 const TriggerRuleInputWeatherContextEnum
-    _$triggerRuleInputWeatherContextEnum_off =
+_$triggerRuleInputWeatherContextEnum_off =
     const TriggerRuleInputWeatherContextEnum._('off');
 
 TriggerRuleInputWeatherContextEnum _$triggerRuleInputWeatherContextEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'auto':
       return _$triggerRuleInputWeatherContextEnum_auto;
@@ -108,11 +113,13 @@ TriggerRuleInputWeatherContextEnum _$triggerRuleInputWeatherContextEnumValueOf(
 }
 
 final BuiltSet<TriggerRuleInputWeatherContextEnum>
-    _$triggerRuleInputWeatherContextEnumValues = BuiltSet<
-        TriggerRuleInputWeatherContextEnum>(const <TriggerRuleInputWeatherContextEnum>[
-  _$triggerRuleInputWeatherContextEnum_auto,
-  _$triggerRuleInputWeatherContextEnum_off,
-]);
+_$triggerRuleInputWeatherContextEnumValues =
+    BuiltSet<TriggerRuleInputWeatherContextEnum>(
+      const <TriggerRuleInputWeatherContextEnum>[
+        _$triggerRuleInputWeatherContextEnum_auto,
+        _$triggerRuleInputWeatherContextEnum_off,
+      ],
+    );
 
 const TriggerRuleInputTypeEnum _$triggerRuleInputTypeEnum_record =
     const TriggerRuleInputTypeEnum._('record');
@@ -140,22 +147,22 @@ TriggerRuleInputTypeEnum _$triggerRuleInputTypeEnumValueOf(String name) {
 
 final BuiltSet<TriggerRuleInputTypeEnum> _$triggerRuleInputTypeEnumValues =
     BuiltSet<TriggerRuleInputTypeEnum>(const <TriggerRuleInputTypeEnum>[
-  _$triggerRuleInputTypeEnum_record,
-  _$triggerRuleInputTypeEnum_count,
-  _$triggerRuleInputTypeEnum_absence,
-  _$triggerRuleInputTypeEnum_anomaly,
-]);
+      _$triggerRuleInputTypeEnum_record,
+      _$triggerRuleInputTypeEnum_count,
+      _$triggerRuleInputTypeEnum_absence,
+      _$triggerRuleInputTypeEnum_anomaly,
+    ]);
 
 Serializer<TriggerRuleInputModeEnum> _$triggerRuleInputModeEnumSerializer =
     _$TriggerRuleInputModeEnumSerializer();
 Serializer<TriggerRuleInputSeverityEnum>
-    _$triggerRuleInputSeverityEnumSerializer =
+_$triggerRuleInputSeverityEnumSerializer =
     _$TriggerRuleInputSeverityEnumSerializer();
 Serializer<TriggerRuleInputCooldownScopeEnum>
-    _$triggerRuleInputCooldownScopeEnumSerializer =
+_$triggerRuleInputCooldownScopeEnumSerializer =
     _$TriggerRuleInputCooldownScopeEnumSerializer();
 Serializer<TriggerRuleInputWeatherContextEnum>
-    _$triggerRuleInputWeatherContextEnumSerializer =
+_$triggerRuleInputWeatherContextEnumSerializer =
     _$TriggerRuleInputWeatherContextEnumSerializer();
 Serializer<TriggerRuleInputTypeEnum> _$triggerRuleInputTypeEnumSerializer =
     _$TriggerRuleInputTypeEnumSerializer();
@@ -179,16 +186,20 @@ class _$TriggerRuleInputModeEnumSerializer
   final String wireName = 'TriggerRuleInputModeEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleInputModeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleInputModeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputModeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputModeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputModeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputSeverityEnumSerializer
@@ -210,16 +221,20 @@ class _$TriggerRuleInputSeverityEnumSerializer
   final String wireName = 'TriggerRuleInputSeverityEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleInputSeverityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleInputSeverityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputSeverityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputSeverityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputSeverityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputCooldownScopeEnumSerializer
@@ -240,16 +255,19 @@ class _$TriggerRuleInputCooldownScopeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleInputCooldownScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleInputCooldownScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputCooldownScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputCooldownScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputCooldownScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputWeatherContextEnumSerializer
@@ -270,16 +288,19 @@ class _$TriggerRuleInputWeatherContextEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, TriggerRuleInputWeatherContextEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    TriggerRuleInputWeatherContextEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputWeatherContextEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputWeatherContextEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputWeatherContextEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInputTypeEnumSerializer
@@ -303,16 +324,20 @@ class _$TriggerRuleInputTypeEnumSerializer
   final String wireName = 'TriggerRuleInputTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, TriggerRuleInputTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    TriggerRuleInputTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   TriggerRuleInputTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      TriggerRuleInputTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => TriggerRuleInputTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$TriggerRuleInput extends TriggerRuleInput {
@@ -385,46 +410,46 @@ class _$TriggerRuleInput extends TriggerRuleInput {
   @override
   final TriggerRuleInputWindow? window;
 
-  factory _$TriggerRuleInput(
-          [void Function(TriggerRuleInputBuilder)? updates]) =>
-      (TriggerRuleInputBuilder()..update(updates))._build();
+  factory _$TriggerRuleInput([
+    void Function(TriggerRuleInputBuilder)? updates,
+  ]) => (TriggerRuleInputBuilder()..update(updates))._build();
 
-  _$TriggerRuleInput._(
-      {required this.name,
-      this.enabled,
-      this.source_,
-      this.kind,
-      this.conditions,
-      this.geofence,
-      this.mode,
-      this.onlyNew,
-      this.cooldown,
-      this.messageTemplate,
-      this.severity,
-      this.enrich,
-      this.enrichRadiusKm,
-      this.enrichWindow,
-      this.tags,
-      this.sources,
-      this.kinds,
-      this.bufferMeters,
-      this.hysteresisMeters,
-      this.near,
-      this.reappearAsEnter,
-      this.cooldownScope,
-      this.autoResolve,
-      this.maxAlertsPerHour,
-      this.autoDisableOnStorm,
-      this.activeFrom,
-      this.activeUntil,
-      this.activeWindow,
-      this.forecastHorizon,
-      this.escalationPolicyId,
-      this.geofenceRef,
-      this.weatherContext,
-      this.type,
-      this.window})
-      : super._();
+  _$TriggerRuleInput._({
+    required this.name,
+    this.enabled,
+    this.source_,
+    this.kind,
+    this.conditions,
+    this.geofence,
+    this.mode,
+    this.onlyNew,
+    this.cooldown,
+    this.messageTemplate,
+    this.severity,
+    this.enrich,
+    this.enrichRadiusKm,
+    this.enrichWindow,
+    this.tags,
+    this.sources,
+    this.kinds,
+    this.bufferMeters,
+    this.hysteresisMeters,
+    this.near,
+    this.reappearAsEnter,
+    this.cooldownScope,
+    this.autoResolve,
+    this.maxAlertsPerHour,
+    this.autoDisableOnStorm,
+    this.activeFrom,
+    this.activeUntil,
+    this.activeWindow,
+    this.forecastHorizon,
+    this.escalationPolicyId,
+    this.geofenceRef,
+    this.weatherContext,
+    this.type,
+    this.window,
+  }) : super._();
   @override
   TriggerRuleInput rebuild(void Function(TriggerRuleInputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -776,10 +801,14 @@ class TriggerRuleInputBuilder
   _$TriggerRuleInput _build() {
     _$TriggerRuleInput _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TriggerRuleInput._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'TriggerRuleInput', 'name'),
+              name,
+              r'TriggerRuleInput',
+              'name',
+            ),
             enabled: enabled,
             source_: source_,
             kind: kind,
@@ -839,7 +868,10 @@ class TriggerRuleInputBuilder
         _window?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TriggerRuleInput', _$failedField, e.toString());
+          r'TriggerRuleInput',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

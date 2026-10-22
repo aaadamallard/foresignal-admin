@@ -28,10 +28,10 @@ LlmProviderTypeEnum _$llmProviderTypeEnumValueOf(String name) {
 
 final BuiltSet<LlmProviderTypeEnum> _$llmProviderTypeEnumValues =
     BuiltSet<LlmProviderTypeEnum>(const <LlmProviderTypeEnum>[
-  _$llmProviderTypeEnum_anthropic,
-  _$llmProviderTypeEnum_openaiCompatible,
-  _$llmProviderTypeEnum_ollama,
-]);
+      _$llmProviderTypeEnum_anthropic,
+      _$llmProviderTypeEnum_openaiCompatible,
+      _$llmProviderTypeEnum_ollama,
+    ]);
 
 const LlmProviderRolesEnum _$llmProviderRolesEnum_chat =
     const LlmProviderRolesEnum._('chat');
@@ -55,10 +55,10 @@ LlmProviderRolesEnum _$llmProviderRolesEnumValueOf(String name) {
 
 final BuiltSet<LlmProviderRolesEnum> _$llmProviderRolesEnumValues =
     BuiltSet<LlmProviderRolesEnum>(const <LlmProviderRolesEnum>[
-  _$llmProviderRolesEnum_chat,
-  _$llmProviderRolesEnum_embedding,
-  _$llmProviderRolesEnum_tts,
-]);
+      _$llmProviderRolesEnum_chat,
+      _$llmProviderRolesEnum_embedding,
+      _$llmProviderRolesEnum_tts,
+    ]);
 
 const LlmProviderStatusEnum _$llmProviderStatusEnum_healthy =
     const LlmProviderStatusEnum._('healthy');
@@ -90,12 +90,12 @@ LlmProviderStatusEnum _$llmProviderStatusEnumValueOf(String name) {
 
 final BuiltSet<LlmProviderStatusEnum> _$llmProviderStatusEnumValues =
     BuiltSet<LlmProviderStatusEnum>(const <LlmProviderStatusEnum>[
-  _$llmProviderStatusEnum_healthy,
-  _$llmProviderStatusEnum_degraded,
-  _$llmProviderStatusEnum_failing,
-  _$llmProviderStatusEnum_idle,
-  _$llmProviderStatusEnum_disabled,
-]);
+      _$llmProviderStatusEnum_healthy,
+      _$llmProviderStatusEnum_degraded,
+      _$llmProviderStatusEnum_failing,
+      _$llmProviderStatusEnum_idle,
+      _$llmProviderStatusEnum_disabled,
+    ]);
 
 Serializer<LlmProviderTypeEnum> _$llmProviderTypeEnumSerializer =
     _$LlmProviderTypeEnumSerializer();
@@ -123,15 +123,20 @@ class _$LlmProviderTypeEnumSerializer
   final String wireName = 'LlmProviderTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, LlmProviderTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LlmProviderTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  LlmProviderTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LlmProviderTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  LlmProviderTypeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LlmProviderTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LlmProviderRolesEnumSerializer
@@ -153,15 +158,20 @@ class _$LlmProviderRolesEnumSerializer
   final String wireName = 'LlmProviderRolesEnum';
 
   @override
-  Object serialize(Serializers serializers, LlmProviderRolesEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LlmProviderRolesEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  LlmProviderRolesEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LlmProviderRolesEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  LlmProviderRolesEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LlmProviderRolesEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LlmProviderStatusEnumSerializer
@@ -187,15 +197,20 @@ class _$LlmProviderStatusEnumSerializer
   final String wireName = 'LlmProviderStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, LlmProviderStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    LlmProviderStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  LlmProviderStatusEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LlmProviderStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  LlmProviderStatusEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => LlmProviderStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$LlmProvider extends LlmProvider {
@@ -247,30 +262,30 @@ class _$LlmProvider extends LlmProvider {
   factory _$LlmProvider([void Function(LlmProviderBuilder)? updates]) =>
       (LlmProviderBuilder()..update(updates))._build();
 
-  _$LlmProvider._(
-      {required this.id,
-      required this.type,
-      this.baseUrl,
-      this.chatModel,
-      this.embeddingModel,
-      this.embeddingDimensions,
-      this.apiKeySet,
-      this.options,
-      this.requestsPerMinute,
-      this.tokensPerDay,
-      required this.enabled,
-      this.roles,
-      required this.status,
-      this.tokensToday,
-      this.lastError,
-      this.updatedAt,
-      this.supportsTools,
-      this.knowledgeCutoff,
-      this.lastSuccessAt,
-      this.lastErrorAt,
-      this.consecutiveFailures,
-      this.local})
-      : super._();
+  _$LlmProvider._({
+    required this.id,
+    required this.type,
+    this.baseUrl,
+    this.chatModel,
+    this.embeddingModel,
+    this.embeddingDimensions,
+    this.apiKeySet,
+    this.options,
+    this.requestsPerMinute,
+    this.tokensPerDay,
+    required this.enabled,
+    this.roles,
+    required this.status,
+    this.tokensToday,
+    this.lastError,
+    this.updatedAt,
+    this.supportsTools,
+    this.knowledgeCutoff,
+    this.lastSuccessAt,
+    this.lastErrorAt,
+    this.consecutiveFailures,
+    this.local,
+  }) : super._();
   @override
   LlmProvider rebuild(void Function(LlmProviderBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -515,11 +530,15 @@ class LlmProviderBuilder implements Builder<LlmProvider, LlmProviderBuilder> {
   _$LlmProvider _build() {
     _$LlmProvider _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$LlmProvider._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'LlmProvider', 'id'),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'LlmProvider', 'type'),
+              type,
+              r'LlmProvider',
+              'type',
+            ),
             baseUrl: baseUrl,
             chatModel: chatModel,
             embeddingModel: embeddingModel,
@@ -529,10 +548,16 @@ class LlmProviderBuilder implements Builder<LlmProvider, LlmProviderBuilder> {
             requestsPerMinute: requestsPerMinute,
             tokensPerDay: tokensPerDay,
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'LlmProvider', 'enabled'),
+              enabled,
+              r'LlmProvider',
+              'enabled',
+            ),
             roles: _roles?.build(),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'LlmProvider', 'status'),
+              status,
+              r'LlmProvider',
+              'status',
+            ),
             tokensToday: tokensToday,
             lastError: lastError,
             updatedAt: updatedAt,
@@ -553,7 +578,10 @@ class LlmProviderBuilder implements Builder<LlmProvider, LlmProviderBuilder> {
         _roles?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'LlmProvider', _$failedField, e.toString());
+          r'LlmProvider',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

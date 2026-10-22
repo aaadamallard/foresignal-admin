@@ -24,9 +24,9 @@ HypothesisSetKindEnum _$hypothesisSetKindEnumValueOf(String name) {
 
 final BuiltSet<HypothesisSetKindEnum> _$hypothesisSetKindEnumValues =
     BuiltSet<HypothesisSetKindEnum>(const <HypothesisSetKindEnum>[
-  _$hypothesisSetKindEnum_exclusive,
-  _$hypothesisSetKindEnum_independent,
-]);
+      _$hypothesisSetKindEnum_exclusive,
+      _$hypothesisSetKindEnum_independent,
+    ]);
 
 const HypothesisSetCadenceEnum _$hypothesisSetCadenceEnum_daily =
     const HypothesisSetCadenceEnum._('daily');
@@ -50,10 +50,10 @@ HypothesisSetCadenceEnum _$hypothesisSetCadenceEnumValueOf(String name) {
 
 final BuiltSet<HypothesisSetCadenceEnum> _$hypothesisSetCadenceEnumValues =
     BuiltSet<HypothesisSetCadenceEnum>(const <HypothesisSetCadenceEnum>[
-  _$hypothesisSetCadenceEnum_daily,
-  _$hypothesisSetCadenceEnum_weekly,
-  _$hypothesisSetCadenceEnum_monthly,
-]);
+      _$hypothesisSetCadenceEnum_daily,
+      _$hypothesisSetCadenceEnum_weekly,
+      _$hypothesisSetCadenceEnum_monthly,
+    ]);
 
 const HypothesisSetStatusEnum _$hypothesisSetStatusEnum_active =
     const HypothesisSetStatusEnum._('active');
@@ -77,10 +77,10 @@ HypothesisSetStatusEnum _$hypothesisSetStatusEnumValueOf(String name) {
 
 final BuiltSet<HypothesisSetStatusEnum> _$hypothesisSetStatusEnumValues =
     BuiltSet<HypothesisSetStatusEnum>(const <HypothesisSetStatusEnum>[
-  _$hypothesisSetStatusEnum_active,
-  _$hypothesisSetStatusEnum_resolved,
-  _$hypothesisSetStatusEnum_archived,
-]);
+      _$hypothesisSetStatusEnum_active,
+      _$hypothesisSetStatusEnum_resolved,
+      _$hypothesisSetStatusEnum_archived,
+    ]);
 
 const HypothesisSetOriginEnum _$hypothesisSetOriginEnum_operator_ =
     const HypothesisSetOriginEnum._('operator_');
@@ -104,10 +104,10 @@ HypothesisSetOriginEnum _$hypothesisSetOriginEnumValueOf(String name) {
 
 final BuiltSet<HypothesisSetOriginEnum> _$hypothesisSetOriginEnumValues =
     BuiltSet<HypothesisSetOriginEnum>(const <HypothesisSetOriginEnum>[
-  _$hypothesisSetOriginEnum_operator_,
-  _$hypothesisSetOriginEnum_agent,
-  _$hypothesisSetOriginEnum_analyst,
-]);
+      _$hypothesisSetOriginEnum_operator_,
+      _$hypothesisSetOriginEnum_agent,
+      _$hypothesisSetOriginEnum_analyst,
+    ]);
 
 Serializer<HypothesisSetKindEnum> _$hypothesisSetKindEnumSerializer =
     _$HypothesisSetKindEnumSerializer();
@@ -135,15 +135,20 @@ class _$HypothesisSetKindEnumSerializer
   final String wireName = 'HypothesisSetKindEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  HypothesisSetKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  HypothesisSetKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetCadenceEnumSerializer
@@ -165,16 +170,20 @@ class _$HypothesisSetCadenceEnumSerializer
   final String wireName = 'HypothesisSetCadenceEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetCadenceEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetCadenceEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetCadenceEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetCadenceEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetCadenceEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetStatusEnumSerializer
@@ -196,16 +205,20 @@ class _$HypothesisSetStatusEnumSerializer
   final String wireName = 'HypothesisSetStatusEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSetOriginEnumSerializer
@@ -227,16 +240,20 @@ class _$HypothesisSetOriginEnumSerializer
   final String wireName = 'HypothesisSetOriginEnum';
 
   @override
-  Object serialize(Serializers serializers, HypothesisSetOriginEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    HypothesisSetOriginEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   HypothesisSetOriginEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      HypothesisSetOriginEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => HypothesisSetOriginEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$HypothesisSet extends HypothesisSet {
@@ -298,35 +315,35 @@ class _$HypothesisSet extends HypothesisSet {
   factory _$HypothesisSet([void Function(HypothesisSetBuilder)? updates]) =>
       (HypothesisSetBuilder()..update(updates))._build();
 
-  _$HypothesisSet._(
-      {required this.id,
-      required this.question,
-      this.description,
-      required this.kind,
-      required this.cadence,
-      this.horizon,
-      required this.status,
-      this.situationId,
-      this.questionId,
-      this.regionCodes,
-      this.themes,
-      required this.origin,
-      required this.confidence,
-      this.lastReviewedAt,
-      this.nextReviewAt,
-      this.lastRevisionId,
-      this.lastRevisionAt,
-      required this.private,
-      required this.version,
-      required this.hypotheses,
-      this.indicators,
-      this.assumptions,
-      this.linkedQuestion,
-      this.recordRef,
-      required this.createdAt,
-      required this.updatedAt,
-      this.reviewFlagged})
-      : super._();
+  _$HypothesisSet._({
+    required this.id,
+    required this.question,
+    this.description,
+    required this.kind,
+    required this.cadence,
+    this.horizon,
+    required this.status,
+    this.situationId,
+    this.questionId,
+    this.regionCodes,
+    this.themes,
+    required this.origin,
+    required this.confidence,
+    this.lastReviewedAt,
+    this.nextReviewAt,
+    this.lastRevisionId,
+    this.lastRevisionAt,
+    required this.private,
+    required this.version,
+    required this.hypotheses,
+    this.indicators,
+    this.assumptions,
+    this.linkedQuestion,
+    this.recordRef,
+    required this.createdAt,
+    required this.updatedAt,
+    this.reviewFlagged,
+  }) : super._();
   @override
   HypothesisSet rebuild(void Function(HypothesisSetBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -618,45 +635,79 @@ class HypothesisSetBuilder
   _$HypothesisSet _build() {
     _$HypothesisSet _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$HypothesisSet._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'HypothesisSet', 'id'),
+              id,
+              r'HypothesisSet',
+              'id',
+            ),
             question: BuiltValueNullFieldError.checkNotNull(
-                question, r'HypothesisSet', 'question'),
+              question,
+              r'HypothesisSet',
+              'question',
+            ),
             description: description,
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, r'HypothesisSet', 'kind'),
+              kind,
+              r'HypothesisSet',
+              'kind',
+            ),
             cadence: BuiltValueNullFieldError.checkNotNull(
-                cadence, r'HypothesisSet', 'cadence'),
+              cadence,
+              r'HypothesisSet',
+              'cadence',
+            ),
             horizon: horizon,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'HypothesisSet', 'status'),
+              status,
+              r'HypothesisSet',
+              'status',
+            ),
             situationId: situationId,
             questionId: questionId,
             regionCodes: _regionCodes?.build(),
             themes: _themes?.build(),
             origin: BuiltValueNullFieldError.checkNotNull(
-                origin, r'HypothesisSet', 'origin'),
+              origin,
+              r'HypothesisSet',
+              'origin',
+            ),
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'HypothesisSet', 'confidence'),
+              confidence,
+              r'HypothesisSet',
+              'confidence',
+            ),
             lastReviewedAt: lastReviewedAt,
             nextReviewAt: nextReviewAt,
             lastRevisionId: lastRevisionId,
             lastRevisionAt: lastRevisionAt,
             private: BuiltValueNullFieldError.checkNotNull(
-                private, r'HypothesisSet', 'private'),
+              private,
+              r'HypothesisSet',
+              'private',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'HypothesisSet', 'version'),
+              version,
+              r'HypothesisSet',
+              'version',
+            ),
             hypotheses: hypotheses.build(),
             indicators: _indicators?.build(),
             assumptions: _assumptions?.build(),
             linkedQuestion: _linkedQuestion?.build(),
             recordRef: recordRef,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'HypothesisSet', 'createdAt'),
+              createdAt,
+              r'HypothesisSet',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'HypothesisSet', 'updatedAt'),
+              updatedAt,
+              r'HypothesisSet',
+              'updatedAt',
+            ),
             reviewFlagged: reviewFlagged,
           );
     } catch (_) {
@@ -677,7 +728,10 @@ class HypothesisSetBuilder
         _linkedQuestion?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HypothesisSet', _$failedField, e.toString());
+          r'HypothesisSet',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

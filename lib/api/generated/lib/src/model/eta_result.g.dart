@@ -31,18 +31,18 @@ class _$EtaResult extends EtaResult {
   factory _$EtaResult([void Function(EtaResultBuilder)? updates]) =>
       (EtaResultBuilder()..update(updates))._build();
 
-  _$EtaResult._(
-      {required this.record,
-      required this.target,
-      required this.distanceMeters,
-      this.bearingDeg,
-      this.bearingDiffDeg,
-      required this.approaching,
-      this.etaSeconds,
-      this.etaAt,
-      required this.asOf,
-      required this.stale})
-      : super._();
+  _$EtaResult._({
+    required this.record,
+    required this.target,
+    required this.distanceMeters,
+    this.bearingDeg,
+    this.bearingDiffDeg,
+    required this.approaching,
+    this.etaSeconds,
+    this.etaAt,
+    required this.asOf,
+    required this.stale,
+  }) : super._();
   @override
   EtaResult rebuild(void Function(EtaResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -185,22 +185,35 @@ class EtaResultBuilder implements Builder<EtaResult, EtaResultBuilder> {
   _$EtaResult _build() {
     _$EtaResult _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EtaResult._(
             record: record.build(),
             target: target.build(),
             distanceMeters: BuiltValueNullFieldError.checkNotNull(
-                distanceMeters, r'EtaResult', 'distanceMeters'),
+              distanceMeters,
+              r'EtaResult',
+              'distanceMeters',
+            ),
             bearingDeg: bearingDeg,
             bearingDiffDeg: bearingDiffDeg,
             approaching: BuiltValueNullFieldError.checkNotNull(
-                approaching, r'EtaResult', 'approaching'),
+              approaching,
+              r'EtaResult',
+              'approaching',
+            ),
             etaSeconds: etaSeconds,
             etaAt: etaAt,
             asOf: BuiltValueNullFieldError.checkNotNull(
-                asOf, r'EtaResult', 'asOf'),
+              asOf,
+              r'EtaResult',
+              'asOf',
+            ),
             stale: BuiltValueNullFieldError.checkNotNull(
-                stale, r'EtaResult', 'stale'),
+              stale,
+              r'EtaResult',
+              'stale',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -211,7 +224,10 @@ class EtaResultBuilder implements Builder<EtaResult, EtaResultBuilder> {
         target.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EtaResult', _$failedField, e.toString());
+          r'EtaResult',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

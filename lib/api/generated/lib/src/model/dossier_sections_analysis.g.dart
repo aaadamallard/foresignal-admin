@@ -9,17 +9,18 @@ part of 'dossier_sections_analysis.dart';
 const DossierSectionsAnalysisStatusEnum _$dossierSectionsAnalysisStatusEnum_ok =
     const DossierSectionsAnalysisStatusEnum._('ok');
 const DossierSectionsAnalysisStatusEnum
-    _$dossierSectionsAnalysisStatusEnum_empty =
+_$dossierSectionsAnalysisStatusEnum_empty =
     const DossierSectionsAnalysisStatusEnum._('empty');
 const DossierSectionsAnalysisStatusEnum
-    _$dossierSectionsAnalysisStatusEnum_unavailable =
+_$dossierSectionsAnalysisStatusEnum_unavailable =
     const DossierSectionsAnalysisStatusEnum._('unavailable');
 const DossierSectionsAnalysisStatusEnum
-    _$dossierSectionsAnalysisStatusEnum_notInstalled =
+_$dossierSectionsAnalysisStatusEnum_notInstalled =
     const DossierSectionsAnalysisStatusEnum._('notInstalled');
 
 DossierSectionsAnalysisStatusEnum _$dossierSectionsAnalysisStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'ok':
       return _$dossierSectionsAnalysisStatusEnum_ok;
@@ -35,16 +36,18 @@ DossierSectionsAnalysisStatusEnum _$dossierSectionsAnalysisStatusEnumValueOf(
 }
 
 final BuiltSet<DossierSectionsAnalysisStatusEnum>
-    _$dossierSectionsAnalysisStatusEnumValues = BuiltSet<
-        DossierSectionsAnalysisStatusEnum>(const <DossierSectionsAnalysisStatusEnum>[
-  _$dossierSectionsAnalysisStatusEnum_ok,
-  _$dossierSectionsAnalysisStatusEnum_empty,
-  _$dossierSectionsAnalysisStatusEnum_unavailable,
-  _$dossierSectionsAnalysisStatusEnum_notInstalled,
-]);
+_$dossierSectionsAnalysisStatusEnumValues =
+    BuiltSet<DossierSectionsAnalysisStatusEnum>(
+      const <DossierSectionsAnalysisStatusEnum>[
+        _$dossierSectionsAnalysisStatusEnum_ok,
+        _$dossierSectionsAnalysisStatusEnum_empty,
+        _$dossierSectionsAnalysisStatusEnum_unavailable,
+        _$dossierSectionsAnalysisStatusEnum_notInstalled,
+      ],
+    );
 
 Serializer<DossierSectionsAnalysisStatusEnum>
-    _$dossierSectionsAnalysisStatusEnumSerializer =
+_$dossierSectionsAnalysisStatusEnumSerializer =
     _$DossierSectionsAnalysisStatusEnumSerializer();
 
 class _$DossierSectionsAnalysisStatusEnumSerializer
@@ -69,16 +72,19 @@ class _$DossierSectionsAnalysisStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, DossierSectionsAnalysisStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    DossierSectionsAnalysisStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   DossierSectionsAnalysisStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      DossierSectionsAnalysisStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => DossierSectionsAnalysisStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$DossierSectionsAnalysis extends DossierSectionsAnalysis {
@@ -99,24 +105,24 @@ class _$DossierSectionsAnalysis extends DossierSectionsAnalysis {
   @override
   final BuiltList<ObjectEnvelope>? assessments;
 
-  factory _$DossierSectionsAnalysis(
-          [void Function(DossierSectionsAnalysisBuilder)? updates]) =>
-      (DossierSectionsAnalysisBuilder()..update(updates))._build();
+  factory _$DossierSectionsAnalysis([
+    void Function(DossierSectionsAnalysisBuilder)? updates,
+  ]) => (DossierSectionsAnalysisBuilder()..update(updates))._build();
 
-  _$DossierSectionsAnalysis._(
-      {required this.status,
-      this.message,
-      this.links,
-      this.facets,
-      this.truncated,
-      this.findings,
-      this.hypothesisSets,
-      this.assessments})
-      : super._();
+  _$DossierSectionsAnalysis._({
+    required this.status,
+    this.message,
+    this.links,
+    this.facets,
+    this.truncated,
+    this.findings,
+    this.hypothesisSets,
+    this.assessments,
+  }) : super._();
   @override
   DossierSectionsAnalysis rebuild(
-          void Function(DossierSectionsAnalysisBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(DossierSectionsAnalysisBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   DossierSectionsAnalysisBuilder toBuilder() =>
@@ -250,10 +256,14 @@ class DossierSectionsAnalysisBuilder
   _$DossierSectionsAnalysis _build() {
     _$DossierSectionsAnalysis _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$DossierSectionsAnalysis._(
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'DossierSectionsAnalysis', 'status'),
+              status,
+              r'DossierSectionsAnalysis',
+              'status',
+            ),
             message: message,
             links: _links?.build(),
             facets: _facets?.build(),
@@ -278,7 +288,10 @@ class DossierSectionsAnalysisBuilder
         _assessments?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'DossierSectionsAnalysis', _$failedField, e.toString());
+          r'DossierSectionsAnalysis',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

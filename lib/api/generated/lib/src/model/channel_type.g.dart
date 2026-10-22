@@ -6,40 +6,52 @@ part of 'channel_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ChannelTypeIdEnum _$channelTypeIdEnum_webhook =
-    const ChannelTypeIdEnum._('webhook');
-const ChannelTypeIdEnum _$channelTypeIdEnum_slack =
-    const ChannelTypeIdEnum._('slack');
+const ChannelTypeIdEnum _$channelTypeIdEnum_webhook = const ChannelTypeIdEnum._(
+  'webhook',
+);
+const ChannelTypeIdEnum _$channelTypeIdEnum_slack = const ChannelTypeIdEnum._(
+  'slack',
+);
 const ChannelTypeIdEnum _$channelTypeIdEnum_mattermost =
     const ChannelTypeIdEnum._('mattermost');
-const ChannelTypeIdEnum _$channelTypeIdEnum_discord =
-    const ChannelTypeIdEnum._('discord');
-const ChannelTypeIdEnum _$channelTypeIdEnum_teams =
-    const ChannelTypeIdEnum._('teams');
+const ChannelTypeIdEnum _$channelTypeIdEnum_discord = const ChannelTypeIdEnum._(
+  'discord',
+);
+const ChannelTypeIdEnum _$channelTypeIdEnum_teams = const ChannelTypeIdEnum._(
+  'teams',
+);
 const ChannelTypeIdEnum _$channelTypeIdEnum_googleChat =
     const ChannelTypeIdEnum._('googleChat');
 const ChannelTypeIdEnum _$channelTypeIdEnum_telegram =
     const ChannelTypeIdEnum._('telegram');
-const ChannelTypeIdEnum _$channelTypeIdEnum_matrix =
-    const ChannelTypeIdEnum._('matrix');
-const ChannelTypeIdEnum _$channelTypeIdEnum_ntfy =
-    const ChannelTypeIdEnum._('ntfy');
-const ChannelTypeIdEnum _$channelTypeIdEnum_gotify =
-    const ChannelTypeIdEnum._('gotify');
+const ChannelTypeIdEnum _$channelTypeIdEnum_matrix = const ChannelTypeIdEnum._(
+  'matrix',
+);
+const ChannelTypeIdEnum _$channelTypeIdEnum_ntfy = const ChannelTypeIdEnum._(
+  'ntfy',
+);
+const ChannelTypeIdEnum _$channelTypeIdEnum_gotify = const ChannelTypeIdEnum._(
+  'gotify',
+);
 const ChannelTypeIdEnum _$channelTypeIdEnum_pushover =
     const ChannelTypeIdEnum._('pushover');
-const ChannelTypeIdEnum _$channelTypeIdEnum_email =
-    const ChannelTypeIdEnum._('email');
-const ChannelTypeIdEnum _$channelTypeIdEnum_webpush =
-    const ChannelTypeIdEnum._('webpush');
+const ChannelTypeIdEnum _$channelTypeIdEnum_email = const ChannelTypeIdEnum._(
+  'email',
+);
+const ChannelTypeIdEnum _$channelTypeIdEnum_webpush = const ChannelTypeIdEnum._(
+  'webpush',
+);
 const ChannelTypeIdEnum _$channelTypeIdEnum_homeassistant =
     const ChannelTypeIdEnum._('homeassistant');
-const ChannelTypeIdEnum _$channelTypeIdEnum_apprise =
-    const ChannelTypeIdEnum._('apprise');
-const ChannelTypeIdEnum _$channelTypeIdEnum_zulip =
-    const ChannelTypeIdEnum._('zulip');
-const ChannelTypeIdEnum _$channelTypeIdEnum_mqtt =
-    const ChannelTypeIdEnum._('mqtt');
+const ChannelTypeIdEnum _$channelTypeIdEnum_apprise = const ChannelTypeIdEnum._(
+  'apprise',
+);
+const ChannelTypeIdEnum _$channelTypeIdEnum_zulip = const ChannelTypeIdEnum._(
+  'zulip',
+);
+const ChannelTypeIdEnum _$channelTypeIdEnum_mqtt = const ChannelTypeIdEnum._(
+  'mqtt',
+);
 const ChannelTypeIdEnum _$channelTypeIdEnum_meshtastic =
     const ChannelTypeIdEnum._('meshtastic');
 const ChannelTypeIdEnum _$channelTypeIdEnum_meshcore =
@@ -92,26 +104,26 @@ ChannelTypeIdEnum _$channelTypeIdEnumValueOf(String name) {
 
 final BuiltSet<ChannelTypeIdEnum> _$channelTypeIdEnumValues =
     BuiltSet<ChannelTypeIdEnum>(const <ChannelTypeIdEnum>[
-  _$channelTypeIdEnum_webhook,
-  _$channelTypeIdEnum_slack,
-  _$channelTypeIdEnum_mattermost,
-  _$channelTypeIdEnum_discord,
-  _$channelTypeIdEnum_teams,
-  _$channelTypeIdEnum_googleChat,
-  _$channelTypeIdEnum_telegram,
-  _$channelTypeIdEnum_matrix,
-  _$channelTypeIdEnum_ntfy,
-  _$channelTypeIdEnum_gotify,
-  _$channelTypeIdEnum_pushover,
-  _$channelTypeIdEnum_email,
-  _$channelTypeIdEnum_webpush,
-  _$channelTypeIdEnum_homeassistant,
-  _$channelTypeIdEnum_apprise,
-  _$channelTypeIdEnum_zulip,
-  _$channelTypeIdEnum_mqtt,
-  _$channelTypeIdEnum_meshtastic,
-  _$channelTypeIdEnum_meshcore,
-]);
+      _$channelTypeIdEnum_webhook,
+      _$channelTypeIdEnum_slack,
+      _$channelTypeIdEnum_mattermost,
+      _$channelTypeIdEnum_discord,
+      _$channelTypeIdEnum_teams,
+      _$channelTypeIdEnum_googleChat,
+      _$channelTypeIdEnum_telegram,
+      _$channelTypeIdEnum_matrix,
+      _$channelTypeIdEnum_ntfy,
+      _$channelTypeIdEnum_gotify,
+      _$channelTypeIdEnum_pushover,
+      _$channelTypeIdEnum_email,
+      _$channelTypeIdEnum_webpush,
+      _$channelTypeIdEnum_homeassistant,
+      _$channelTypeIdEnum_apprise,
+      _$channelTypeIdEnum_zulip,
+      _$channelTypeIdEnum_mqtt,
+      _$channelTypeIdEnum_meshtastic,
+      _$channelTypeIdEnum_meshcore,
+    ]);
 
 const ChannelTypeEventsEnum _$channelTypeEventsEnum_alert =
     const ChannelTypeEventsEnum._('alert');
@@ -135,10 +147,10 @@ ChannelTypeEventsEnum _$channelTypeEventsEnumValueOf(String name) {
 
 final BuiltSet<ChannelTypeEventsEnum> _$channelTypeEventsEnumValues =
     BuiltSet<ChannelTypeEventsEnum>(const <ChannelTypeEventsEnum>[
-  _$channelTypeEventsEnum_alert,
-  _$channelTypeEventsEnum_briefing,
-  _$channelTypeEventsEnum_system,
-]);
+      _$channelTypeEventsEnum_alert,
+      _$channelTypeEventsEnum_briefing,
+      _$channelTypeEventsEnum_system,
+    ]);
 
 Serializer<ChannelTypeIdEnum> _$channelTypeIdEnumSerializer =
     _$ChannelTypeIdEnumSerializer();
@@ -196,15 +208,20 @@ class _$ChannelTypeIdEnumSerializer
   final String wireName = 'ChannelTypeIdEnum';
 
   @override
-  Object serialize(Serializers serializers, ChannelTypeIdEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChannelTypeIdEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ChannelTypeIdEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChannelTypeIdEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ChannelTypeIdEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChannelTypeIdEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChannelTypeEventsEnumSerializer
@@ -226,15 +243,20 @@ class _$ChannelTypeEventsEnumSerializer
   final String wireName = 'ChannelTypeEventsEnum';
 
   @override
-  Object serialize(Serializers serializers, ChannelTypeEventsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    ChannelTypeEventsEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  ChannelTypeEventsEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ChannelTypeEventsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  ChannelTypeEventsEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ChannelTypeEventsEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$ChannelType extends ChannelType {
@@ -256,15 +278,15 @@ class _$ChannelType extends ChannelType {
   factory _$ChannelType([void Function(ChannelTypeBuilder)? updates]) =>
       (ChannelTypeBuilder()..update(updates))._build();
 
-  _$ChannelType._(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.configFields,
-      required this.secretFields,
-      this.events,
-      this.capabilities})
-      : super._();
+  _$ChannelType._({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.configFields,
+    required this.secretFields,
+    this.events,
+    this.capabilities,
+  }) : super._();
   @override
   ChannelType rebuild(void Function(ChannelTypeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -387,11 +409,15 @@ class ChannelTypeBuilder implements Builder<ChannelType, ChannelTypeBuilder> {
   _$ChannelType _build() {
     _$ChannelType _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$ChannelType._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'ChannelType', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ChannelType', 'name'),
+              name,
+              r'ChannelType',
+              'name',
+            ),
             description: description,
             configFields: configFields.build(),
             secretFields: secretFields.build(),
@@ -411,7 +437,10 @@ class ChannelTypeBuilder implements Builder<ChannelType, ChannelTypeBuilder> {
         _capabilities?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'ChannelType', _$failedField, e.toString());
+          r'ChannelType',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

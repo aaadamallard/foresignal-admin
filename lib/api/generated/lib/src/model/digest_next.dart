@@ -64,9 +64,11 @@ class _$DigestNextSerializer implements PrimitiveSerializer<DigestNext> {
     DigestNext object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -82,17 +84,18 @@ class _$DigestNextSerializer implements PrimitiveSerializer<DigestNext> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'sinceSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.sinceSeq = valueDes;
           break;
         case r'sinceAlertId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.sinceAlertId = valueDes;
           break;

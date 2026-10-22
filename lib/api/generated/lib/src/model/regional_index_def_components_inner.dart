@@ -21,8 +21,10 @@ part 'regional_index_def_components_inner.g.dart';
 @BuiltValue()
 abstract class RegionalIndexDefComponentsInner
     implements
-        Built<RegionalIndexDefComponentsInner,
-            RegionalIndexDefComponentsInnerBuilder> {
+        Built<
+          RegionalIndexDefComponentsInner,
+          RegionalIndexDefComponentsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'key')
   String get key;
 
@@ -47,9 +49,9 @@ abstract class RegionalIndexDefComponentsInner
 
   RegionalIndexDefComponentsInner._();
 
-  factory RegionalIndexDefComponentsInner(
-          [void updates(RegionalIndexDefComponentsInnerBuilder b)]) =
-      _$RegionalIndexDefComponentsInner;
+  factory RegionalIndexDefComponentsInner([
+    void updates(RegionalIndexDefComponentsInnerBuilder b),
+  ]) = _$RegionalIndexDefComponentsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(RegionalIndexDefComponentsInnerBuilder b) => b;
@@ -64,7 +66,7 @@ class _$RegionalIndexDefComponentsInnerSerializer
   @override
   final Iterable<Type> types = const [
     RegionalIndexDefComponentsInner,
-    _$RegionalIndexDefComponentsInner
+    _$RegionalIndexDefComponentsInner,
   ];
 
   @override
@@ -88,8 +90,9 @@ class _$RegionalIndexDefComponentsInnerSerializer
     yield r'transform';
     yield serializers.serialize(
       object.transform,
-      specifiedType:
-          const FullType(RegionalIndexDefComponentsInnerTransformEnum),
+      specifiedType: const FullType(
+        RegionalIndexDefComponentsInnerTransformEnum,
+      ),
     );
     yield r'window';
     yield serializers.serialize(
@@ -99,8 +102,9 @@ class _$RegionalIndexDefComponentsInnerSerializer
     yield r'direction';
     yield serializers.serialize(
       object.direction,
-      specifiedType:
-          const FullType(RegionalIndexDefComponentsInnerDirectionEnum),
+      specifiedType: const FullType(
+        RegionalIndexDefComponentsInnerDirectionEnum,
+      ),
     );
     if (object.floor != null) {
       yield r'floor';
@@ -117,9 +121,11 @@ class _$RegionalIndexDefComponentsInnerSerializer
     RegionalIndexDefComponentsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,48 +141,63 @@ class _$RegionalIndexDefComponentsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.key = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.ref = valueDes;
           break;
         case r'transform':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(RegionalIndexDefComponentsInnerTransformEnum),
-          ) as RegionalIndexDefComponentsInnerTransformEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RegionalIndexDefComponentsInnerTransformEnum,
+                    ),
+                  )
+                  as RegionalIndexDefComponentsInnerTransformEnum;
           result.transform = valueDes;
           break;
         case r'window':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(RegionalIndexDefComponentsInnerWindowEnum),
-          ) as RegionalIndexDefComponentsInnerWindowEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RegionalIndexDefComponentsInnerWindowEnum,
+                    ),
+                  )
+                  as RegionalIndexDefComponentsInnerWindowEnum;
           result.window = valueDes;
           break;
         case r'direction':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(RegionalIndexDefComponentsInnerDirectionEnum),
-          ) as RegionalIndexDefComponentsInnerDirectionEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      RegionalIndexDefComponentsInnerDirectionEnum,
+                    ),
+                  )
+                  as RegionalIndexDefComponentsInnerDirectionEnum;
           result.direction = valueDes;
           break;
         case r'floor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.floor = valueDes;
           break;
@@ -224,11 +245,10 @@ class RegionalIndexDefComponentsInnerTransformEnum extends EnumClass {
       _$regionalIndexDefComponentsInnerTransformEnum_level;
 
   static Serializer<RegionalIndexDefComponentsInnerTransformEnum>
-      get serializer =>
-          _$regionalIndexDefComponentsInnerTransformEnumSerializer;
+  get serializer => _$regionalIndexDefComponentsInnerTransformEnumSerializer;
 
   const RegionalIndexDefComponentsInnerTransformEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<RegionalIndexDefComponentsInnerTransformEnum> get values =>
       _$regionalIndexDefComponentsInnerTransformEnumValues;
@@ -267,11 +287,10 @@ class RegionalIndexDefComponentsInnerDirectionEnum extends EnumClass {
       _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1;
 
   static Serializer<RegionalIndexDefComponentsInnerDirectionEnum>
-      get serializer =>
-          _$regionalIndexDefComponentsInnerDirectionEnumSerializer;
+  get serializer => _$regionalIndexDefComponentsInnerDirectionEnumSerializer;
 
   const RegionalIndexDefComponentsInnerDirectionEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<RegionalIndexDefComponentsInnerDirectionEnum> get values =>
       _$regionalIndexDefComponentsInnerDirectionEnumValues;

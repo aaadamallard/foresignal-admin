@@ -92,11 +92,9 @@ class SavedViewPageBuilder
   _$SavedViewPage _build() {
     _$SavedViewPage _$result;
     try {
-      _$result = _$v ??
-          _$SavedViewPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ??
+          _$SavedViewPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -104,7 +102,10 @@ class SavedViewPageBuilder
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SavedViewPage', _$failedField, e.toString());
+          r'SavedViewPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

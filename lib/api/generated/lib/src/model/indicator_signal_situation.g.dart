@@ -7,20 +7,21 @@ part of 'indicator_signal_situation.dart';
 // **************************************************************************
 
 const IndicatorSignalSituationStatusEnum
-    _$indicatorSignalSituationStatusEnum_emerging =
+_$indicatorSignalSituationStatusEnum_emerging =
     const IndicatorSignalSituationStatusEnum._('emerging');
 const IndicatorSignalSituationStatusEnum
-    _$indicatorSignalSituationStatusEnum_active =
+_$indicatorSignalSituationStatusEnum_active =
     const IndicatorSignalSituationStatusEnum._('active');
 const IndicatorSignalSituationStatusEnum
-    _$indicatorSignalSituationStatusEnum_dormant =
+_$indicatorSignalSituationStatusEnum_dormant =
     const IndicatorSignalSituationStatusEnum._('dormant');
 const IndicatorSignalSituationStatusEnum
-    _$indicatorSignalSituationStatusEnum_closed =
+_$indicatorSignalSituationStatusEnum_closed =
     const IndicatorSignalSituationStatusEnum._('closed');
 
 IndicatorSignalSituationStatusEnum _$indicatorSignalSituationStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'emerging':
       return _$indicatorSignalSituationStatusEnum_emerging;
@@ -36,16 +37,18 @@ IndicatorSignalSituationStatusEnum _$indicatorSignalSituationStatusEnumValueOf(
 }
 
 final BuiltSet<IndicatorSignalSituationStatusEnum>
-    _$indicatorSignalSituationStatusEnumValues = BuiltSet<
-        IndicatorSignalSituationStatusEnum>(const <IndicatorSignalSituationStatusEnum>[
-  _$indicatorSignalSituationStatusEnum_emerging,
-  _$indicatorSignalSituationStatusEnum_active,
-  _$indicatorSignalSituationStatusEnum_dormant,
-  _$indicatorSignalSituationStatusEnum_closed,
-]);
+_$indicatorSignalSituationStatusEnumValues =
+    BuiltSet<IndicatorSignalSituationStatusEnum>(
+      const <IndicatorSignalSituationStatusEnum>[
+        _$indicatorSignalSituationStatusEnum_emerging,
+        _$indicatorSignalSituationStatusEnum_active,
+        _$indicatorSignalSituationStatusEnum_dormant,
+        _$indicatorSignalSituationStatusEnum_closed,
+      ],
+    );
 
 Serializer<IndicatorSignalSituationStatusEnum>
-    _$indicatorSignalSituationStatusEnumSerializer =
+_$indicatorSignalSituationStatusEnumSerializer =
     _$IndicatorSignalSituationStatusEnumSerializer();
 
 class _$IndicatorSignalSituationStatusEnumSerializer
@@ -70,16 +73,19 @@ class _$IndicatorSignalSituationStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorSignalSituationStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorSignalSituationStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorSignalSituationStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorSignalSituationStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorSignalSituationStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorSignalSituation extends IndicatorSignalSituation {
@@ -90,17 +96,19 @@ class _$IndicatorSignalSituation extends IndicatorSignalSituation {
   @override
   final Severity? minSeverity;
 
-  factory _$IndicatorSignalSituation(
-          [void Function(IndicatorSignalSituationBuilder)? updates]) =>
-      (IndicatorSignalSituationBuilder()..update(updates))._build();
+  factory _$IndicatorSignalSituation([
+    void Function(IndicatorSignalSituationBuilder)? updates,
+  ]) => (IndicatorSignalSituationBuilder()..update(updates))._build();
 
-  _$IndicatorSignalSituation._(
-      {required this.situationId, this.status, this.minSeverity})
-      : super._();
+  _$IndicatorSignalSituation._({
+    required this.situationId,
+    this.status,
+    this.minSeverity,
+  }) : super._();
   @override
   IndicatorSignalSituation rebuild(
-          void Function(IndicatorSignalSituationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IndicatorSignalSituationBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IndicatorSignalSituationBuilder toBuilder() =>
@@ -182,10 +190,14 @@ class IndicatorSignalSituationBuilder
   IndicatorSignalSituation build() => _build();
 
   _$IndicatorSignalSituation _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IndicatorSignalSituation._(
           situationId: BuiltValueNullFieldError.checkNotNull(
-              situationId, r'IndicatorSignalSituation', 'situationId'),
+            situationId,
+            r'IndicatorSignalSituation',
+            'situationId',
+          ),
           status: status,
           minSeverity: minSeverity,
         );

@@ -13,70 +13,72 @@ const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_briefing =
 const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_system =
     const NotificationDeliveryEventEnum._('system');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_socialPeriodDivergence =
+_$notificationDeliveryEventEnum_socialPeriodDivergence =
     const NotificationDeliveryEventEnum._('socialPeriodDivergence');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_socialPeriodAttentionGap =
+_$notificationDeliveryEventEnum_socialPeriodAttentionGap =
     const NotificationDeliveryEventEnum._('socialPeriodAttentionGap');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_analystPeriodNote =
+_$notificationDeliveryEventEnum_analystPeriodNote =
     const NotificationDeliveryEventEnum._('analystPeriodNote');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_situationPeriodActivated =
+_$notificationDeliveryEventEnum_situationPeriodActivated =
     const NotificationDeliveryEventEnum._('situationPeriodActivated');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_situationPeriodEscalated =
+_$notificationDeliveryEventEnum_situationPeriodEscalated =
     const NotificationDeliveryEventEnum._('situationPeriodEscalated');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_findingPeriodSignificant =
+_$notificationDeliveryEventEnum_findingPeriodSignificant =
     const NotificationDeliveryEventEnum._('findingPeriodSignificant');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_forecastPeriodResolved =
+_$notificationDeliveryEventEnum_forecastPeriodResolved =
     const NotificationDeliveryEventEnum._('forecastPeriodResolved');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded =
+_$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded =
     const NotificationDeliveryEventEnum._('forecastPeriodResolutionNeeded');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_hypothesisPeriodBandChanged =
+_$notificationDeliveryEventEnum_hypothesisPeriodBandChanged =
     const NotificationDeliveryEventEnum._('hypothesisPeriodBandChanged');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_indicatorPeriodObserved =
+_$notificationDeliveryEventEnum_indicatorPeriodObserved =
     const NotificationDeliveryEventEnum._('indicatorPeriodObserved');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_assumptionPeriodBroken =
+_$notificationDeliveryEventEnum_assumptionPeriodBroken =
     const NotificationDeliveryEventEnum._('assumptionPeriodBroken');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_assessmentPeriodPublished =
+_$notificationDeliveryEventEnum_assessmentPeriodPublished =
     const NotificationDeliveryEventEnum._('assessmentPeriodPublished');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_chroniclePeriodProposed =
+_$notificationDeliveryEventEnum_chroniclePeriodProposed =
     const NotificationDeliveryEventEnum._('chroniclePeriodProposed');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_chroniclePeriodCapWarning =
+_$notificationDeliveryEventEnum_chroniclePeriodCapWarning =
     const NotificationDeliveryEventEnum._('chroniclePeriodCapWarning');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_chroniclePeriodGap =
+_$notificationDeliveryEventEnum_chroniclePeriodGap =
     const NotificationDeliveryEventEnum._('chroniclePeriodGap');
 const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_mention =
     const NotificationDeliveryEventEnum._('mention');
 const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_share =
     const NotificationDeliveryEventEnum._('share');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_reportPeriodReceived =
+_$notificationDeliveryEventEnum_reportPeriodReceived =
     const NotificationDeliveryEventEnum._('reportPeriodReceived');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_packagePeriodReceived =
+_$notificationDeliveryEventEnum_packagePeriodReceived =
     const NotificationDeliveryEventEnum._('packagePeriodReceived');
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested =
+_$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested =
     const NotificationDeliveryEventEnum._(
-        'chroniclePeriodAccessPeriodRequested');
+      'chroniclePeriodAccessPeriodRequested',
+    );
 const NotificationDeliveryEventEnum
-    _$notificationDeliveryEventEnum_savedSearchPeriodMatches =
+_$notificationDeliveryEventEnum_savedSearchPeriodMatches =
     const NotificationDeliveryEventEnum._('savedSearchPeriodMatches');
 
 NotificationDeliveryEventEnum _$notificationDeliveryEventEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'alert':
       return _$notificationDeliveryEventEnum_alert;
@@ -132,49 +134,51 @@ NotificationDeliveryEventEnum _$notificationDeliveryEventEnumValueOf(
 }
 
 final BuiltSet<NotificationDeliveryEventEnum>
-    _$notificationDeliveryEventEnumValues = BuiltSet<
-        NotificationDeliveryEventEnum>(const <NotificationDeliveryEventEnum>[
-  _$notificationDeliveryEventEnum_alert,
-  _$notificationDeliveryEventEnum_briefing,
-  _$notificationDeliveryEventEnum_system,
-  _$notificationDeliveryEventEnum_socialPeriodDivergence,
-  _$notificationDeliveryEventEnum_socialPeriodAttentionGap,
-  _$notificationDeliveryEventEnum_analystPeriodNote,
-  _$notificationDeliveryEventEnum_situationPeriodActivated,
-  _$notificationDeliveryEventEnum_situationPeriodEscalated,
-  _$notificationDeliveryEventEnum_findingPeriodSignificant,
-  _$notificationDeliveryEventEnum_forecastPeriodResolved,
-  _$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded,
-  _$notificationDeliveryEventEnum_hypothesisPeriodBandChanged,
-  _$notificationDeliveryEventEnum_indicatorPeriodObserved,
-  _$notificationDeliveryEventEnum_assumptionPeriodBroken,
-  _$notificationDeliveryEventEnum_assessmentPeriodPublished,
-  _$notificationDeliveryEventEnum_chroniclePeriodProposed,
-  _$notificationDeliveryEventEnum_chroniclePeriodCapWarning,
-  _$notificationDeliveryEventEnum_chroniclePeriodGap,
-  _$notificationDeliveryEventEnum_mention,
-  _$notificationDeliveryEventEnum_share,
-  _$notificationDeliveryEventEnum_reportPeriodReceived,
-  _$notificationDeliveryEventEnum_packagePeriodReceived,
-  _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested,
-  _$notificationDeliveryEventEnum_savedSearchPeriodMatches,
-]);
+_$notificationDeliveryEventEnumValues = BuiltSet<NotificationDeliveryEventEnum>(
+  const <NotificationDeliveryEventEnum>[
+    _$notificationDeliveryEventEnum_alert,
+    _$notificationDeliveryEventEnum_briefing,
+    _$notificationDeliveryEventEnum_system,
+    _$notificationDeliveryEventEnum_socialPeriodDivergence,
+    _$notificationDeliveryEventEnum_socialPeriodAttentionGap,
+    _$notificationDeliveryEventEnum_analystPeriodNote,
+    _$notificationDeliveryEventEnum_situationPeriodActivated,
+    _$notificationDeliveryEventEnum_situationPeriodEscalated,
+    _$notificationDeliveryEventEnum_findingPeriodSignificant,
+    _$notificationDeliveryEventEnum_forecastPeriodResolved,
+    _$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded,
+    _$notificationDeliveryEventEnum_hypothesisPeriodBandChanged,
+    _$notificationDeliveryEventEnum_indicatorPeriodObserved,
+    _$notificationDeliveryEventEnum_assumptionPeriodBroken,
+    _$notificationDeliveryEventEnum_assessmentPeriodPublished,
+    _$notificationDeliveryEventEnum_chroniclePeriodProposed,
+    _$notificationDeliveryEventEnum_chroniclePeriodCapWarning,
+    _$notificationDeliveryEventEnum_chroniclePeriodGap,
+    _$notificationDeliveryEventEnum_mention,
+    _$notificationDeliveryEventEnum_share,
+    _$notificationDeliveryEventEnum_reportPeriodReceived,
+    _$notificationDeliveryEventEnum_packagePeriodReceived,
+    _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested,
+    _$notificationDeliveryEventEnum_savedSearchPeriodMatches,
+  ],
+);
 
 const NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnum_pending =
     const NotificationDeliveryStatusEnum._('pending');
 const NotificationDeliveryStatusEnum
-    _$notificationDeliveryStatusEnum_delivered =
+_$notificationDeliveryStatusEnum_delivered =
     const NotificationDeliveryStatusEnum._('delivered');
 const NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnum_failed =
     const NotificationDeliveryStatusEnum._('failed');
 const NotificationDeliveryStatusEnum
-    _$notificationDeliveryStatusEnum_suppressed =
+_$notificationDeliveryStatusEnum_suppressed =
     const NotificationDeliveryStatusEnum._('suppressed');
 const NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnum_unacked =
     const NotificationDeliveryStatusEnum._('unacked');
 
 NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'pending':
       return _$notificationDeliveryStatusEnum_pending;
@@ -192,14 +196,16 @@ NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnumValueOf(
 }
 
 final BuiltSet<NotificationDeliveryStatusEnum>
-    _$notificationDeliveryStatusEnumValues = BuiltSet<
-        NotificationDeliveryStatusEnum>(const <NotificationDeliveryStatusEnum>[
-  _$notificationDeliveryStatusEnum_pending,
-  _$notificationDeliveryStatusEnum_delivered,
-  _$notificationDeliveryStatusEnum_failed,
-  _$notificationDeliveryStatusEnum_suppressed,
-  _$notificationDeliveryStatusEnum_unacked,
-]);
+_$notificationDeliveryStatusEnumValues =
+    BuiltSet<NotificationDeliveryStatusEnum>(
+      const <NotificationDeliveryStatusEnum>[
+        _$notificationDeliveryStatusEnum_pending,
+        _$notificationDeliveryStatusEnum_delivered,
+        _$notificationDeliveryStatusEnum_failed,
+        _$notificationDeliveryStatusEnum_suppressed,
+        _$notificationDeliveryStatusEnum_unacked,
+      ],
+    );
 
 const NotificationDeliveryKindEnum _$notificationDeliveryKindEnum_send =
     const NotificationDeliveryKindEnum._('send');
@@ -211,7 +217,8 @@ const NotificationDeliveryKindEnum _$notificationDeliveryKindEnum_digest =
     const NotificationDeliveryKindEnum._('digest');
 
 NotificationDeliveryKindEnum _$notificationDeliveryKindEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'send':
       return _$notificationDeliveryKindEnum_send;
@@ -227,35 +234,35 @@ NotificationDeliveryKindEnum _$notificationDeliveryKindEnumValueOf(
 }
 
 final BuiltSet<NotificationDeliveryKindEnum>
-    _$notificationDeliveryKindEnumValues =
+_$notificationDeliveryKindEnumValues =
     BuiltSet<NotificationDeliveryKindEnum>(const <NotificationDeliveryKindEnum>[
-  _$notificationDeliveryKindEnum_send,
-  _$notificationDeliveryKindEnum_update_,
-  _$notificationDeliveryKindEnum_followup,
-  _$notificationDeliveryKindEnum_digest,
-]);
+      _$notificationDeliveryKindEnum_send,
+      _$notificationDeliveryKindEnum_update_,
+      _$notificationDeliveryKindEnum_followup,
+      _$notificationDeliveryKindEnum_digest,
+    ]);
 
 const NotificationDeliveryDeferredReasonEnum
-    _$notificationDeliveryDeferredReasonEnum_quietHours =
+_$notificationDeliveryDeferredReasonEnum_quietHours =
     const NotificationDeliveryDeferredReasonEnum._('quietHours');
 const NotificationDeliveryDeferredReasonEnum
-    _$notificationDeliveryDeferredReasonEnum_paused =
+_$notificationDeliveryDeferredReasonEnum_paused =
     const NotificationDeliveryDeferredReasonEnum._('paused');
 const NotificationDeliveryDeferredReasonEnum
-    _$notificationDeliveryDeferredReasonEnum_enrichment =
+_$notificationDeliveryDeferredReasonEnum_enrichment =
     const NotificationDeliveryDeferredReasonEnum._('enrichment');
 const NotificationDeliveryDeferredReasonEnum
-    _$notificationDeliveryDeferredReasonEnum_grouping =
+_$notificationDeliveryDeferredReasonEnum_grouping =
     const NotificationDeliveryDeferredReasonEnum._('grouping');
 const NotificationDeliveryDeferredReasonEnum
-    _$notificationDeliveryDeferredReasonEnum_presence =
+_$notificationDeliveryDeferredReasonEnum_presence =
     const NotificationDeliveryDeferredReasonEnum._('presence');
 const NotificationDeliveryDeferredReasonEnum
-    _$notificationDeliveryDeferredReasonEnum_airtime =
+_$notificationDeliveryDeferredReasonEnum_airtime =
     const NotificationDeliveryDeferredReasonEnum._('airtime');
 
 NotificationDeliveryDeferredReasonEnum
-    _$notificationDeliveryDeferredReasonEnumValueOf(String name) {
+_$notificationDeliveryDeferredReasonEnumValueOf(String name) {
   switch (name) {
     case 'quietHours':
       return _$notificationDeliveryDeferredReasonEnum_quietHours;
@@ -275,31 +282,33 @@ NotificationDeliveryDeferredReasonEnum
 }
 
 final BuiltSet<NotificationDeliveryDeferredReasonEnum>
-    _$notificationDeliveryDeferredReasonEnumValues = BuiltSet<
-        NotificationDeliveryDeferredReasonEnum>(const <NotificationDeliveryDeferredReasonEnum>[
-  _$notificationDeliveryDeferredReasonEnum_quietHours,
-  _$notificationDeliveryDeferredReasonEnum_paused,
-  _$notificationDeliveryDeferredReasonEnum_enrichment,
-  _$notificationDeliveryDeferredReasonEnum_grouping,
-  _$notificationDeliveryDeferredReasonEnum_presence,
-  _$notificationDeliveryDeferredReasonEnum_airtime,
-]);
+_$notificationDeliveryDeferredReasonEnumValues =
+    BuiltSet<NotificationDeliveryDeferredReasonEnum>(
+      const <NotificationDeliveryDeferredReasonEnum>[
+        _$notificationDeliveryDeferredReasonEnum_quietHours,
+        _$notificationDeliveryDeferredReasonEnum_paused,
+        _$notificationDeliveryDeferredReasonEnum_enrichment,
+        _$notificationDeliveryDeferredReasonEnum_grouping,
+        _$notificationDeliveryDeferredReasonEnum_presence,
+        _$notificationDeliveryDeferredReasonEnum_airtime,
+      ],
+    );
 
 const NotificationDeliveryAttachmentLevelEnum
-    _$notificationDeliveryAttachmentLevelEnum_map800 =
+_$notificationDeliveryAttachmentLevelEnum_map800 =
     const NotificationDeliveryAttachmentLevelEnum._('map800');
 const NotificationDeliveryAttachmentLevelEnum
-    _$notificationDeliveryAttachmentLevelEnum_map600 =
+_$notificationDeliveryAttachmentLevelEnum_map600 =
     const NotificationDeliveryAttachmentLevelEnum._('map600');
 const NotificationDeliveryAttachmentLevelEnum
-    _$notificationDeliveryAttachmentLevelEnum_thumbnail =
+_$notificationDeliveryAttachmentLevelEnum_thumbnail =
     const NotificationDeliveryAttachmentLevelEnum._('thumbnail');
 const NotificationDeliveryAttachmentLevelEnum
-    _$notificationDeliveryAttachmentLevelEnum_textOnly =
+_$notificationDeliveryAttachmentLevelEnum_textOnly =
     const NotificationDeliveryAttachmentLevelEnum._('textOnly');
 
 NotificationDeliveryAttachmentLevelEnum
-    _$notificationDeliveryAttachmentLevelEnumValueOf(String name) {
+_$notificationDeliveryAttachmentLevelEnumValueOf(String name) {
   switch (name) {
     case 'map800':
       return _$notificationDeliveryAttachmentLevelEnum_map800;
@@ -315,28 +324,30 @@ NotificationDeliveryAttachmentLevelEnum
 }
 
 final BuiltSet<NotificationDeliveryAttachmentLevelEnum>
-    _$notificationDeliveryAttachmentLevelEnumValues = BuiltSet<
-        NotificationDeliveryAttachmentLevelEnum>(const <NotificationDeliveryAttachmentLevelEnum>[
-  _$notificationDeliveryAttachmentLevelEnum_map800,
-  _$notificationDeliveryAttachmentLevelEnum_map600,
-  _$notificationDeliveryAttachmentLevelEnum_thumbnail,
-  _$notificationDeliveryAttachmentLevelEnum_textOnly,
-]);
+_$notificationDeliveryAttachmentLevelEnumValues =
+    BuiltSet<NotificationDeliveryAttachmentLevelEnum>(
+      const <NotificationDeliveryAttachmentLevelEnum>[
+        _$notificationDeliveryAttachmentLevelEnum_map800,
+        _$notificationDeliveryAttachmentLevelEnum_map600,
+        _$notificationDeliveryAttachmentLevelEnum_thumbnail,
+        _$notificationDeliveryAttachmentLevelEnum_textOnly,
+      ],
+    );
 
 Serializer<NotificationDeliveryEventEnum>
-    _$notificationDeliveryEventEnumSerializer =
+_$notificationDeliveryEventEnumSerializer =
     _$NotificationDeliveryEventEnumSerializer();
 Serializer<NotificationDeliveryStatusEnum>
-    _$notificationDeliveryStatusEnumSerializer =
+_$notificationDeliveryStatusEnumSerializer =
     _$NotificationDeliveryStatusEnumSerializer();
 Serializer<NotificationDeliveryKindEnum>
-    _$notificationDeliveryKindEnumSerializer =
+_$notificationDeliveryKindEnumSerializer =
     _$NotificationDeliveryKindEnumSerializer();
 Serializer<NotificationDeliveryDeferredReasonEnum>
-    _$notificationDeliveryDeferredReasonEnumSerializer =
+_$notificationDeliveryDeferredReasonEnumSerializer =
     _$NotificationDeliveryDeferredReasonEnumSerializer();
 Serializer<NotificationDeliveryAttachmentLevelEnum>
-    _$notificationDeliveryAttachmentLevelEnumSerializer =
+_$notificationDeliveryAttachmentLevelEnumSerializer =
     _$NotificationDeliveryAttachmentLevelEnumSerializer();
 
 class _$NotificationDeliveryEventEnumSerializer
@@ -401,16 +412,19 @@ class _$NotificationDeliveryEventEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, NotificationDeliveryEventEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NotificationDeliveryEventEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationDeliveryEventEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationDeliveryEventEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationDeliveryEventEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationDeliveryStatusEnumSerializer
@@ -437,16 +451,19 @@ class _$NotificationDeliveryStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, NotificationDeliveryStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    NotificationDeliveryStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationDeliveryStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationDeliveryStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationDeliveryStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationDeliveryKindEnumSerializer
@@ -470,16 +487,20 @@ class _$NotificationDeliveryKindEnumSerializer
   final String wireName = 'NotificationDeliveryKindEnum';
 
   @override
-  Object serialize(Serializers serializers, NotificationDeliveryKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationDeliveryKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationDeliveryKindEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationDeliveryKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationDeliveryKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationDeliveryDeferredReasonEnumSerializer
@@ -503,23 +524,26 @@ class _$NotificationDeliveryDeferredReasonEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NotificationDeliveryDeferredReasonEnum
+    NotificationDeliveryDeferredReasonEnum,
   ];
   @override
   final String wireName = 'NotificationDeliveryDeferredReasonEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NotificationDeliveryDeferredReasonEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationDeliveryDeferredReasonEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationDeliveryDeferredReasonEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationDeliveryDeferredReasonEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationDeliveryDeferredReasonEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationDeliveryAttachmentLevelEnumSerializer
@@ -539,23 +563,26 @@ class _$NotificationDeliveryAttachmentLevelEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    NotificationDeliveryAttachmentLevelEnum
+    NotificationDeliveryAttachmentLevelEnum,
   ];
   @override
   final String wireName = 'NotificationDeliveryAttachmentLevelEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          NotificationDeliveryAttachmentLevelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    NotificationDeliveryAttachmentLevelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   NotificationDeliveryAttachmentLevelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      NotificationDeliveryAttachmentLevelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => NotificationDeliveryAttachmentLevelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$NotificationDelivery extends NotificationDelivery {
@@ -596,34 +623,34 @@ class _$NotificationDelivery extends NotificationDelivery {
   @override
   final String? shortCode;
 
-  factory _$NotificationDelivery(
-          [void Function(NotificationDeliveryBuilder)? updates]) =>
-      (NotificationDeliveryBuilder()..update(updates))._build();
+  factory _$NotificationDelivery([
+    void Function(NotificationDeliveryBuilder)? updates,
+  ]) => (NotificationDeliveryBuilder()..update(updates))._build();
 
-  _$NotificationDelivery._(
-      {required this.id,
-      required this.event,
-      this.alertId,
-      this.briefingRunId,
-      required this.status,
-      required this.attempts,
-      this.lastError,
-      this.nextAttemptAt,
-      this.deliveredAt,
-      this.notificationId,
-      this.kind,
-      this.deferredReason,
-      this.edited,
-      this.note,
-      this.escalationStep,
-      this.attachmentLevel,
-      this.attachments,
-      this.shortCode})
-      : super._();
+  _$NotificationDelivery._({
+    required this.id,
+    required this.event,
+    this.alertId,
+    this.briefingRunId,
+    required this.status,
+    required this.attempts,
+    this.lastError,
+    this.nextAttemptAt,
+    this.deliveredAt,
+    this.notificationId,
+    this.kind,
+    this.deferredReason,
+    this.edited,
+    this.note,
+    this.escalationStep,
+    this.attachmentLevel,
+    this.attachments,
+    this.shortCode,
+  }) : super._();
   @override
   NotificationDelivery rebuild(
-          void Function(NotificationDeliveryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(NotificationDeliveryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   NotificationDeliveryBuilder toBuilder() =>
@@ -777,8 +804,8 @@ class NotificationDeliveryBuilder
   NotificationDeliveryAttachmentLevelEnum? get attachmentLevel =>
       _$this._attachmentLevel;
   set attachmentLevel(
-          NotificationDeliveryAttachmentLevelEnum? attachmentLevel) =>
-      _$this._attachmentLevel = attachmentLevel;
+    NotificationDeliveryAttachmentLevelEnum? attachmentLevel,
+  ) => _$this._attachmentLevel = attachmentLevel;
 
   ListBuilder<Attachment>? _attachments;
   ListBuilder<Attachment> get attachments =>
@@ -836,18 +863,31 @@ class NotificationDeliveryBuilder
   _$NotificationDelivery _build() {
     _$NotificationDelivery _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$NotificationDelivery._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'NotificationDelivery', 'id'),
+              id,
+              r'NotificationDelivery',
+              'id',
+            ),
             event: BuiltValueNullFieldError.checkNotNull(
-                event, r'NotificationDelivery', 'event'),
+              event,
+              r'NotificationDelivery',
+              'event',
+            ),
             alertId: alertId,
             briefingRunId: briefingRunId,
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'NotificationDelivery', 'status'),
+              status,
+              r'NotificationDelivery',
+              'status',
+            ),
             attempts: BuiltValueNullFieldError.checkNotNull(
-                attempts, r'NotificationDelivery', 'attempts'),
+              attempts,
+              r'NotificationDelivery',
+              'attempts',
+            ),
             lastError: lastError,
             nextAttemptAt: nextAttemptAt,
             deliveredAt: deliveredAt,
@@ -868,7 +908,10 @@ class NotificationDeliveryBuilder
         _attachments?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'NotificationDelivery', _$failedField, e.toString());
+          r'NotificationDelivery',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -17,8 +17,10 @@ part 'storm_track_payload_history_inner.g.dart';
 @BuiltValue()
 abstract class StormTrackPayloadHistoryInner
     implements
-        Built<StormTrackPayloadHistoryInner,
-            StormTrackPayloadHistoryInnerBuilder> {
+        Built<
+          StormTrackPayloadHistoryInner,
+          StormTrackPayloadHistoryInnerBuilder
+        > {
   @BuiltValueField(wireName: r'time')
   DateTime get time;
 
@@ -30,9 +32,9 @@ abstract class StormTrackPayloadHistoryInner
 
   StormTrackPayloadHistoryInner._();
 
-  factory StormTrackPayloadHistoryInner(
-          [void updates(StormTrackPayloadHistoryInnerBuilder b)]) =
-      _$StormTrackPayloadHistoryInner;
+  factory StormTrackPayloadHistoryInner([
+    void updates(StormTrackPayloadHistoryInnerBuilder b),
+  ]) = _$StormTrackPayloadHistoryInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(StormTrackPayloadHistoryInnerBuilder b) => b;
@@ -47,7 +49,7 @@ class _$StormTrackPayloadHistoryInnerSerializer
   @override
   final Iterable<Type> types = const [
     StormTrackPayloadHistoryInner,
-    _$StormTrackPayloadHistoryInner
+    _$StormTrackPayloadHistoryInner,
   ];
 
   @override
@@ -64,15 +66,9 @@ class _$StormTrackPayloadHistoryInnerSerializer
       specifiedType: const FullType(DateTime),
     );
     yield r'lon';
-    yield serializers.serialize(
-      object.lon,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lon, specifiedType: const FullType(num));
     yield r'lat';
-    yield serializers.serialize(
-      object.lat,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lat, specifiedType: const FullType(num));
   }
 
   @override
@@ -81,9 +77,11 @@ class _$StormTrackPayloadHistoryInnerSerializer
     StormTrackPayloadHistoryInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,24 +97,24 @@ class _$StormTrackPayloadHistoryInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         case r'lon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lon = valueDes;
           break;
         case r'lat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lat = valueDes;
           break;
         default:

@@ -65,8 +65,9 @@ class _$TimelineTickSerializer implements PrimitiveSerializer<TimelineTick> {
     yield r'frames';
     yield serializers.serialize(
       object.frames,
-      specifiedType:
-          const FullType(BuiltList, [FullType(TimelineTickFramesInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(TimelineTickFramesInner),
+      ]),
     );
   }
 
@@ -76,9 +77,11 @@ class _$TimelineTickSerializer implements PrimitiveSerializer<TimelineTick> {
     TimelineTick object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -94,25 +97,32 @@ class _$TimelineTickSerializer implements PrimitiveSerializer<TimelineTick> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'time':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.time = valueDes;
           break;
         case r'kind':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimelineTickKindEnum),
-          ) as TimelineTickKindEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(TimelineTickKindEnum),
+                  )
+                  as TimelineTickKindEnum;
           result.kind = valueDes;
           break;
         case r'frames':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(TimelineTickFramesInner)]),
-          ) as BuiltList<TimelineTickFramesInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(TimelineTickFramesInner),
+                    ]),
+                  )
+                  as BuiltList<TimelineTickFramesInner>;
           result.frames.replace(valueDes);
           break;
         default:

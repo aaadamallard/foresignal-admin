@@ -19,8 +19,10 @@ part 'weather_context_warnings_items_inner.g.dart';
 @BuiltValue()
 abstract class WeatherContextWarningsItemsInner
     implements
-        Built<WeatherContextWarningsItemsInner,
-            WeatherContextWarningsItemsInnerBuilder> {
+        Built<
+          WeatherContextWarningsItemsInner,
+          WeatherContextWarningsItemsInnerBuilder
+        > {
   /// nws-alert externalId
   @BuiltValueField(wireName: r'id')
   String get id;
@@ -40,9 +42,9 @@ abstract class WeatherContextWarningsItemsInner
 
   WeatherContextWarningsItemsInner._();
 
-  factory WeatherContextWarningsItemsInner(
-          [void updates(WeatherContextWarningsItemsInnerBuilder b)]) =
-      _$WeatherContextWarningsItemsInner;
+  factory WeatherContextWarningsItemsInner([
+    void updates(WeatherContextWarningsItemsInnerBuilder b),
+  ]) = _$WeatherContextWarningsItemsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(WeatherContextWarningsItemsInnerBuilder b) => b;
@@ -57,7 +59,7 @@ class _$WeatherContextWarningsItemsInnerSerializer
   @override
   final Iterable<Type> types = const [
     WeatherContextWarningsItemsInner,
-    _$WeatherContextWarningsItemsInner
+    _$WeatherContextWarningsItemsInner,
   ];
 
   @override
@@ -107,9 +109,11 @@ class _$WeatherContextWarningsItemsInnerSerializer
     WeatherContextWarningsItemsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -125,40 +129,50 @@ class _$WeatherContextWarningsItemsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'event':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.event = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;
         case r'expires':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.expires = valueDes;
           break;
         case r'untrusted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.untrusted = valueDes;
           break;

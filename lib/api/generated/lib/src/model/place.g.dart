@@ -7,8 +7,9 @@ part of 'place.dart';
 // **************************************************************************
 
 const PlaceShapeEnum _$placeShapeEnum_point = const PlaceShapeEnum._('point');
-const PlaceShapeEnum _$placeShapeEnum_polygon =
-    const PlaceShapeEnum._('polygon');
+const PlaceShapeEnum _$placeShapeEnum_polygon = const PlaceShapeEnum._(
+  'polygon',
+);
 const PlaceShapeEnum _$placeShapeEnum_route = const PlaceShapeEnum._('route');
 
 PlaceShapeEnum _$placeShapeEnumValueOf(String name) {
@@ -26,10 +27,10 @@ PlaceShapeEnum _$placeShapeEnumValueOf(String name) {
 
 final BuiltSet<PlaceShapeEnum> _$placeShapeEnumValues =
     BuiltSet<PlaceShapeEnum>(const <PlaceShapeEnum>[
-  _$placeShapeEnum_point,
-  _$placeShapeEnum_polygon,
-  _$placeShapeEnum_route,
-]);
+      _$placeShapeEnum_point,
+      _$placeShapeEnum_polygon,
+      _$placeShapeEnum_route,
+    ]);
 
 const PlaceKindEnum _$placeKindEnum_user = const PlaceKindEnum._('user');
 const PlaceKindEnum _$placeKindEnum_airport = const PlaceKindEnum._('airport');
@@ -48,12 +49,13 @@ PlaceKindEnum _$placeKindEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<PlaceKindEnum> _$placeKindEnumValues =
-    BuiltSet<PlaceKindEnum>(const <PlaceKindEnum>[
-  _$placeKindEnum_user,
-  _$placeKindEnum_airport,
-  _$placeKindEnum_asset,
-]);
+final BuiltSet<PlaceKindEnum> _$placeKindEnumValues = BuiltSet<PlaceKindEnum>(
+  const <PlaceKindEnum>[
+    _$placeKindEnum_user,
+    _$placeKindEnum_airport,
+    _$placeKindEnum_asset,
+  ],
+);
 
 Serializer<PlaceShapeEnum> _$placeShapeEnumSerializer =
     _$PlaceShapeEnumSerializer();
@@ -79,15 +81,20 @@ class _$PlaceShapeEnumSerializer
   final String wireName = 'PlaceShapeEnum';
 
   @override
-  Object serialize(Serializers serializers, PlaceShapeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PlaceShapeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PlaceShapeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PlaceShapeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PlaceShapeEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PlaceShapeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PlaceKindEnumSerializer implements PrimitiveSerializer<PlaceKindEnum> {
@@ -108,15 +115,20 @@ class _$PlaceKindEnumSerializer implements PrimitiveSerializer<PlaceKindEnum> {
   final String wireName = 'PlaceKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PlaceKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PlaceKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PlaceKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PlaceKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PlaceKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PlaceKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Place extends Place {
@@ -158,25 +170,25 @@ class _$Place extends Place {
   factory _$Place([void Function(PlaceBuilder)? updates]) =>
       (PlaceBuilder()..update(updates))._build();
 
-  _$Place._(
-      {required this.id,
-      required this.name,
-      required this.shape,
-      required this.geometry,
-      this.radiusKm,
-      this.bufferM,
-      this.timezone,
-      this.kind,
-      this.tags,
-      this.products,
-      this.sensitive,
-      this.attributes,
-      this.area,
-      required this.version,
-      required this.createdAt,
-      required this.updatedAt,
-      this.external_})
-      : super._();
+  _$Place._({
+    required this.id,
+    required this.name,
+    required this.shape,
+    required this.geometry,
+    this.radiusKm,
+    this.bufferM,
+    this.timezone,
+    this.kind,
+    this.tags,
+    this.products,
+    this.sensitive,
+    this.attributes,
+    this.area,
+    required this.version,
+    required this.createdAt,
+    required this.updatedAt,
+    this.external_,
+  }) : super._();
   @override
   Place rebuild(void Function(PlaceBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -376,12 +388,16 @@ class PlaceBuilder implements Builder<Place, PlaceBuilder> {
   _$Place _build() {
     _$Place _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Place._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Place', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'Place', 'name'),
-            shape:
-                BuiltValueNullFieldError.checkNotNull(shape, r'Place', 'shape'),
+            shape: BuiltValueNullFieldError.checkNotNull(
+              shape,
+              r'Place',
+              'shape',
+            ),
             geometry: geometry.build(),
             radiusKm: radiusKm,
             bufferM: bufferM,
@@ -393,11 +409,20 @@ class PlaceBuilder implements Builder<Place, PlaceBuilder> {
             attributes: _attributes?.build(),
             area: _area?.build(),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'Place', 'version'),
+              version,
+              r'Place',
+              'version',
+            ),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'Place', 'createdAt'),
+              createdAt,
+              r'Place',
+              'createdAt',
+            ),
             updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, r'Place', 'updatedAt'),
+              updatedAt,
+              r'Place',
+              'updatedAt',
+            ),
             external_: _external_?.build(),
           );
     } catch (_) {

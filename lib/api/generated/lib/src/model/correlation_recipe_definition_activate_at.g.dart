@@ -15,20 +15,20 @@ class _$CorrelationRecipeDefinitionActivateAt
   @override
   final int? modalities;
 
-  factory _$CorrelationRecipeDefinitionActivateAt(
-          [void Function(CorrelationRecipeDefinitionActivateAtBuilder)?
-              updates]) =>
-      (CorrelationRecipeDefinitionActivateAtBuilder()..update(updates))
-          ._build();
+  factory _$CorrelationRecipeDefinitionActivateAt([
+    void Function(CorrelationRecipeDefinitionActivateAtBuilder)? updates,
+  ]) => (CorrelationRecipeDefinitionActivateAtBuilder()..update(updates))
+      ._build();
 
-  _$CorrelationRecipeDefinitionActivateAt._(
-      {this.members, this.confidence, this.modalities})
-      : super._();
+  _$CorrelationRecipeDefinitionActivateAt._({
+    this.members,
+    this.confidence,
+    this.modalities,
+  }) : super._();
   @override
   CorrelationRecipeDefinitionActivateAt rebuild(
-          void Function(CorrelationRecipeDefinitionActivateAtBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(CorrelationRecipeDefinitionActivateAtBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   CorrelationRecipeDefinitionActivateAtBuilder toBuilder() =>
@@ -56,7 +56,8 @@ class _$CorrelationRecipeDefinitionActivateAt
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'CorrelationRecipeDefinitionActivateAt')
+            r'CorrelationRecipeDefinitionActivateAt',
+          )
           ..add('members', members)
           ..add('confidence', confidence)
           ..add('modalities', modalities))
@@ -66,8 +67,10 @@ class _$CorrelationRecipeDefinitionActivateAt
 
 class CorrelationRecipeDefinitionActivateAtBuilder
     implements
-        Builder<CorrelationRecipeDefinitionActivateAt,
-            CorrelationRecipeDefinitionActivateAtBuilder> {
+        Builder<
+          CorrelationRecipeDefinitionActivateAt,
+          CorrelationRecipeDefinitionActivateAtBuilder
+        > {
   _$CorrelationRecipeDefinitionActivateAt? _$v;
 
   int? _members;
@@ -104,7 +107,8 @@ class CorrelationRecipeDefinitionActivateAtBuilder
 
   @override
   void update(
-      void Function(CorrelationRecipeDefinitionActivateAtBuilder)? updates) {
+    void Function(CorrelationRecipeDefinitionActivateAtBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -112,7 +116,8 @@ class CorrelationRecipeDefinitionActivateAtBuilder
   CorrelationRecipeDefinitionActivateAt build() => _build();
 
   _$CorrelationRecipeDefinitionActivateAt _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$CorrelationRecipeDefinitionActivateAt._(
           members: members,
           confidence: confidence,

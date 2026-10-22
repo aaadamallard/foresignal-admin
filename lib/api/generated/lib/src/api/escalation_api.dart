@@ -48,16 +48,10 @@ class EscalationApi {
     final _path = r'/v1/escalation-policies';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -69,14 +63,13 @@ class EscalationApi {
 
     try {
       const _type = FullType(EscalationPolicyInput);
-      _bodyData =
-          _serializers.serialize(escalationPolicyInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        escalationPolicyInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -99,9 +92,10 @@ class EscalationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EscalationPolicy),
-            ) as EscalationPolicy;
+                  rawResponse,
+                  specifiedType: const FullType(EscalationPolicy),
+                )
+                as EscalationPolicy;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -148,21 +142,21 @@ class EscalationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/escalation-policies/{policyId}'.replaceAll(
-        '{' r'policyId' '}',
-        encodeQueryParameter(_serializers, policyId, const FullType(String))
-            .toString());
+      '{'
+      r'policyId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        policyId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -204,21 +198,21 @@ class EscalationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/alerts/{alertId}/escalation'.replaceAll(
-        '{' r'alertId' '}',
-        encodeQueryParameter(_serializers, alertId, const FullType(int))
-            .toString());
+      '{'
+      r'alertId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        alertId,
+        const FullType(int),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -240,9 +234,10 @@ class EscalationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Escalation),
-            ) as Escalation;
+                  rawResponse,
+                  specifiedType: const FullType(Escalation),
+                )
+                as Escalation;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -289,21 +284,21 @@ class EscalationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/escalation-policies/{policyId}'.replaceAll(
-        '{' r'policyId' '}',
-        encodeQueryParameter(_serializers, policyId, const FullType(String))
-            .toString());
+      '{'
+      r'policyId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        policyId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -325,9 +320,10 @@ class EscalationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EscalationPolicy),
-            ) as EscalationPolicy;
+                  rawResponse,
+                  specifiedType: const FullType(EscalationPolicy),
+                )
+                as EscalationPolicy;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -374,16 +370,10 @@ class EscalationApi {
     final _path = r'/v1/escalation-policies';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -405,10 +395,12 @@ class EscalationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(EscalationPolicy)]),
-            ) as BuiltList<EscalationPolicy>;
+                  rawResponse,
+                  specifiedType: const FullType(BuiltList, [
+                    FullType(EscalationPolicy),
+                  ]),
+                )
+                as BuiltList<EscalationPolicy>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -457,21 +449,21 @@ class EscalationApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/v1/escalation-policies/{policyId}'.replaceAll(
-        '{' r'policyId' '}',
-        encodeQueryParameter(_serializers, policyId, const FullType(String))
-            .toString());
+      '{'
+      r'policyId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        policyId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'bearerToken',
-          },
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
         ],
         ...?extra,
       },
@@ -483,14 +475,13 @@ class EscalationApi {
 
     try {
       const _type = FullType(EscalationPolicyInput);
-      _bodyData =
-          _serializers.serialize(escalationPolicyInput, specifiedType: _type);
+      _bodyData = _serializers.serialize(
+        escalationPolicyInput,
+        specifiedType: _type,
+      );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -513,9 +504,10 @@ class EscalationApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(EscalationPolicy),
-            ) as EscalationPolicy;
+                  rawResponse,
+                  specifiedType: const FullType(EscalationPolicy),
+                )
+                as EscalationPolicy;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

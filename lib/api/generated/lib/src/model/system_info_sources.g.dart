@@ -18,13 +18,17 @@ class _$SystemInfoSources extends SystemInfoSources {
   @override
   final int? failing;
 
-  factory _$SystemInfoSources(
-          [void Function(SystemInfoSourcesBuilder)? updates]) =>
-      (SystemInfoSourcesBuilder()..update(updates))._build();
+  factory _$SystemInfoSources([
+    void Function(SystemInfoSourcesBuilder)? updates,
+  ]) => (SystemInfoSourcesBuilder()..update(updates))._build();
 
-  _$SystemInfoSources._(
-      {this.total, this.enabled, this.healthy, this.degraded, this.failing})
-      : super._();
+  _$SystemInfoSources._({
+    this.total,
+    this.enabled,
+    this.healthy,
+    this.degraded,
+    this.failing,
+  }) : super._();
   @override
   SystemInfoSources rebuild(void Function(SystemInfoSourcesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -123,7 +127,8 @@ class SystemInfoSourcesBuilder
   SystemInfoSources build() => _build();
 
   _$SystemInfoSources _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SystemInfoSources._(
           total: total,
           enabled: enabled,

@@ -14,17 +14,19 @@ class _$HypothesisSetDraftUsage extends HypothesisSetDraftUsage {
   @override
   final int? cachedTokens;
 
-  factory _$HypothesisSetDraftUsage(
-          [void Function(HypothesisSetDraftUsageBuilder)? updates]) =>
-      (HypothesisSetDraftUsageBuilder()..update(updates))._build();
+  factory _$HypothesisSetDraftUsage([
+    void Function(HypothesisSetDraftUsageBuilder)? updates,
+  ]) => (HypothesisSetDraftUsageBuilder()..update(updates))._build();
 
-  _$HypothesisSetDraftUsage._(
-      {this.inputTokens, this.outputTokens, this.cachedTokens})
-      : super._();
+  _$HypothesisSetDraftUsage._({
+    this.inputTokens,
+    this.outputTokens,
+    this.cachedTokens,
+  }) : super._();
   @override
   HypothesisSetDraftUsage rebuild(
-          void Function(HypothesisSetDraftUsageBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(HypothesisSetDraftUsageBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   HypothesisSetDraftUsageBuilder toBuilder() =>
@@ -105,7 +107,8 @@ class HypothesisSetDraftUsageBuilder
   HypothesisSetDraftUsage build() => _build();
 
   _$HypothesisSetDraftUsage _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$HypothesisSetDraftUsage._(
           inputTokens: inputTokens,
           outputTokens: outputTokens,

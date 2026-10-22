@@ -19,8 +19,10 @@ part 'settings_bundle_watchlists_inner.g.dart';
 @BuiltValue()
 abstract class SettingsBundleWatchlistsInner
     implements
-        Built<SettingsBundleWatchlistsInner,
-            SettingsBundleWatchlistsInnerBuilder> {
+        Built<
+          SettingsBundleWatchlistsInner,
+          SettingsBundleWatchlistsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'watchlist')
   Watchlist? get watchlist;
 
@@ -29,9 +31,9 @@ abstract class SettingsBundleWatchlistsInner
 
   SettingsBundleWatchlistsInner._();
 
-  factory SettingsBundleWatchlistsInner(
-          [void updates(SettingsBundleWatchlistsInnerBuilder b)]) =
-      _$SettingsBundleWatchlistsInner;
+  factory SettingsBundleWatchlistsInner([
+    void updates(SettingsBundleWatchlistsInnerBuilder b),
+  ]) = _$SettingsBundleWatchlistsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(SettingsBundleWatchlistsInnerBuilder b) => b;
@@ -46,7 +48,7 @@ class _$SettingsBundleWatchlistsInnerSerializer
   @override
   final Iterable<Type> types = const [
     SettingsBundleWatchlistsInner,
-    _$SettingsBundleWatchlistsInner
+    _$SettingsBundleWatchlistsInner,
   ];
 
   @override
@@ -79,9 +81,11 @@ class _$SettingsBundleWatchlistsInnerSerializer
     SettingsBundleWatchlistsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,19 +101,24 @@ class _$SettingsBundleWatchlistsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'watchlist':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(Watchlist),
-          ) as Watchlist?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(Watchlist),
+                  )
+                  as Watchlist?;
           if (valueDes == null) continue;
           result.watchlist.replace(valueDes);
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(WatchlistItem)]),
-          ) as BuiltList<WatchlistItem>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(WatchlistItem),
+                    ]),
+                  )
+                  as BuiltList<WatchlistItem>?;
           if (valueDes == null) continue;
           result.items.replace(valueDes);
           break;

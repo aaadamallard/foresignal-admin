@@ -44,38 +44,39 @@ IndicatorEventStateEnum _$indicatorEventStateEnumValueOf(String name) {
 
 final BuiltSet<IndicatorEventStateEnum> _$indicatorEventStateEnumValues =
     BuiltSet<IndicatorEventStateEnum>(const <IndicatorEventStateEnum>[
-  _$indicatorEventStateEnum_pending,
-  _$indicatorEventStateEnum_emerging,
-  _$indicatorEventStateEnum_observed,
-  _$indicatorEventStateEnum_absent,
-  _$indicatorEventStateEnum_unknownCoverage,
-  _$indicatorEventStateEnum_retired,
-  _$indicatorEventStateEnum_reported,
-]);
+      _$indicatorEventStateEnum_pending,
+      _$indicatorEventStateEnum_emerging,
+      _$indicatorEventStateEnum_observed,
+      _$indicatorEventStateEnum_absent,
+      _$indicatorEventStateEnum_unknownCoverage,
+      _$indicatorEventStateEnum_retired,
+      _$indicatorEventStateEnum_reported,
+    ]);
 
 const IndicatorEventPreviousStateEnum
-    _$indicatorEventPreviousStateEnum_pending =
+_$indicatorEventPreviousStateEnum_pending =
     const IndicatorEventPreviousStateEnum._('pending');
 const IndicatorEventPreviousStateEnum
-    _$indicatorEventPreviousStateEnum_emerging =
+_$indicatorEventPreviousStateEnum_emerging =
     const IndicatorEventPreviousStateEnum._('emerging');
 const IndicatorEventPreviousStateEnum
-    _$indicatorEventPreviousStateEnum_observed =
+_$indicatorEventPreviousStateEnum_observed =
     const IndicatorEventPreviousStateEnum._('observed');
 const IndicatorEventPreviousStateEnum _$indicatorEventPreviousStateEnum_absent =
     const IndicatorEventPreviousStateEnum._('absent');
 const IndicatorEventPreviousStateEnum
-    _$indicatorEventPreviousStateEnum_unknownCoverage =
+_$indicatorEventPreviousStateEnum_unknownCoverage =
     const IndicatorEventPreviousStateEnum._('unknownCoverage');
 const IndicatorEventPreviousStateEnum
-    _$indicatorEventPreviousStateEnum_retired =
+_$indicatorEventPreviousStateEnum_retired =
     const IndicatorEventPreviousStateEnum._('retired');
 const IndicatorEventPreviousStateEnum
-    _$indicatorEventPreviousStateEnum_reported =
+_$indicatorEventPreviousStateEnum_reported =
     const IndicatorEventPreviousStateEnum._('reported');
 
 IndicatorEventPreviousStateEnum _$indicatorEventPreviousStateEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'pending':
       return _$indicatorEventPreviousStateEnum_pending;
@@ -97,21 +98,23 @@ IndicatorEventPreviousStateEnum _$indicatorEventPreviousStateEnumValueOf(
 }
 
 final BuiltSet<IndicatorEventPreviousStateEnum>
-    _$indicatorEventPreviousStateEnumValues = BuiltSet<
-        IndicatorEventPreviousStateEnum>(const <IndicatorEventPreviousStateEnum>[
-  _$indicatorEventPreviousStateEnum_pending,
-  _$indicatorEventPreviousStateEnum_emerging,
-  _$indicatorEventPreviousStateEnum_observed,
-  _$indicatorEventPreviousStateEnum_absent,
-  _$indicatorEventPreviousStateEnum_unknownCoverage,
-  _$indicatorEventPreviousStateEnum_retired,
-  _$indicatorEventPreviousStateEnum_reported,
-]);
+_$indicatorEventPreviousStateEnumValues =
+    BuiltSet<IndicatorEventPreviousStateEnum>(
+      const <IndicatorEventPreviousStateEnum>[
+        _$indicatorEventPreviousStateEnum_pending,
+        _$indicatorEventPreviousStateEnum_emerging,
+        _$indicatorEventPreviousStateEnum_observed,
+        _$indicatorEventPreviousStateEnum_absent,
+        _$indicatorEventPreviousStateEnum_unknownCoverage,
+        _$indicatorEventPreviousStateEnum_retired,
+        _$indicatorEventPreviousStateEnum_reported,
+      ],
+    );
 
 Serializer<IndicatorEventStateEnum> _$indicatorEventStateEnumSerializer =
     _$IndicatorEventStateEnumSerializer();
 Serializer<IndicatorEventPreviousStateEnum>
-    _$indicatorEventPreviousStateEnumSerializer =
+_$indicatorEventPreviousStateEnumSerializer =
     _$IndicatorEventPreviousStateEnumSerializer();
 
 class _$IndicatorEventStateEnumSerializer
@@ -141,16 +144,20 @@ class _$IndicatorEventStateEnumSerializer
   final String wireName = 'IndicatorEventStateEnum';
 
   @override
-  Object serialize(Serializers serializers, IndicatorEventStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IndicatorEventStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorEventStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorEventStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorEventStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorEventPreviousStateEnumSerializer
@@ -181,16 +188,19 @@ class _$IndicatorEventPreviousStateEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IndicatorEventPreviousStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IndicatorEventPreviousStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IndicatorEventPreviousStateEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IndicatorEventPreviousStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IndicatorEventPreviousStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IndicatorEvent extends IndicatorEvent {
@@ -218,18 +228,18 @@ class _$IndicatorEvent extends IndicatorEvent {
   factory _$IndicatorEvent([void Function(IndicatorEventBuilder)? updates]) =>
       (IndicatorEventBuilder()..update(updates))._build();
 
-  _$IndicatorEvent._(
-      {required this.indicatorId,
-      required this.setId,
-      this.description,
-      this.signalFamily,
-      required this.state,
-      this.previousState,
-      this.evidence,
-      this.revisionId,
-      this.private,
-      required this.at})
-      : super._();
+  _$IndicatorEvent._({
+    required this.indicatorId,
+    required this.setId,
+    this.description,
+    this.signalFamily,
+    required this.state,
+    this.previousState,
+    this.evidence,
+    this.revisionId,
+    this.private,
+    required this.at,
+  }) : super._();
   @override
   IndicatorEvent rebuild(void Function(IndicatorEventBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -368,22 +378,35 @@ class IndicatorEventBuilder
   IndicatorEvent build() => _build();
 
   _$IndicatorEvent _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IndicatorEvent._(
           indicatorId: BuiltValueNullFieldError.checkNotNull(
-              indicatorId, r'IndicatorEvent', 'indicatorId'),
+            indicatorId,
+            r'IndicatorEvent',
+            'indicatorId',
+          ),
           setId: BuiltValueNullFieldError.checkNotNull(
-              setId, r'IndicatorEvent', 'setId'),
+            setId,
+            r'IndicatorEvent',
+            'setId',
+          ),
           description: description,
           signalFamily: signalFamily,
           state: BuiltValueNullFieldError.checkNotNull(
-              state, r'IndicatorEvent', 'state'),
+            state,
+            r'IndicatorEvent',
+            'state',
+          ),
           previousState: previousState,
           evidence: evidence,
           revisionId: revisionId,
           private: private,
           at: BuiltValueNullFieldError.checkNotNull(
-              at, r'IndicatorEvent', 'at'),
+            at,
+            r'IndicatorEvent',
+            'at',
+          ),
         );
     replace(_$result);
     return _$result;

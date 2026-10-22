@@ -28,26 +28,26 @@ class _$TransitCatalogEntry extends TransitCatalogEntry {
   @override
   final BuiltList<String>? sourceIds;
 
-  factory _$TransitCatalogEntry(
-          [void Function(TransitCatalogEntryBuilder)? updates]) =>
-      (TransitCatalogEntryBuilder()..update(updates))._build();
+  factory _$TransitCatalogEntry([
+    void Function(TransitCatalogEntryBuilder)? updates,
+  ]) => (TransitCatalogEntryBuilder()..update(updates))._build();
 
-  _$TransitCatalogEntry._(
-      {required this.id,
-      required this.provider,
-      this.countryCode,
-      required this.entityType,
-      required this.directDownloadUrl,
-      this.licenseUrl,
-      this.staticReference,
-      required this.enabled,
-      this.sourceId,
-      this.sourceIds})
-      : super._();
+  _$TransitCatalogEntry._({
+    required this.id,
+    required this.provider,
+    this.countryCode,
+    required this.entityType,
+    required this.directDownloadUrl,
+    this.licenseUrl,
+    this.staticReference,
+    required this.enabled,
+    this.sourceId,
+    this.sourceIds,
+  }) : super._();
   @override
   TransitCatalogEntry rebuild(
-          void Function(TransitCatalogEntryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TransitCatalogEntryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TransitCatalogEntryBuilder toBuilder() =>
@@ -189,21 +189,37 @@ class TransitCatalogEntryBuilder
   _$TransitCatalogEntry _build() {
     _$TransitCatalogEntry _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TransitCatalogEntry._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'TransitCatalogEntry', 'id'),
+              id,
+              r'TransitCatalogEntry',
+              'id',
+            ),
             provider: BuiltValueNullFieldError.checkNotNull(
-                provider, r'TransitCatalogEntry', 'provider'),
+              provider,
+              r'TransitCatalogEntry',
+              'provider',
+            ),
             countryCode: countryCode,
             entityType: BuiltValueNullFieldError.checkNotNull(
-                entityType, r'TransitCatalogEntry', 'entityType'),
+              entityType,
+              r'TransitCatalogEntry',
+              'entityType',
+            ),
             directDownloadUrl: BuiltValueNullFieldError.checkNotNull(
-                directDownloadUrl, r'TransitCatalogEntry', 'directDownloadUrl'),
+              directDownloadUrl,
+              r'TransitCatalogEntry',
+              'directDownloadUrl',
+            ),
             licenseUrl: licenseUrl,
             staticReference: staticReference,
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'TransitCatalogEntry', 'enabled'),
+              enabled,
+              r'TransitCatalogEntry',
+              'enabled',
+            ),
             sourceId: sourceId,
             sourceIds: _sourceIds?.build(),
           );
@@ -214,7 +230,10 @@ class TransitCatalogEntryBuilder
         _sourceIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TransitCatalogEntry', _$failedField, e.toString());
+          r'TransitCatalogEntry',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

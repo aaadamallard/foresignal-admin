@@ -120,8 +120,9 @@ class _$OutletConsensusSerializer
     yield r'providers';
     yield serializers.serialize(
       object.providers,
-      specifiedType:
-          const FullType(BuiltList, [FullType(OutletConsensusProvidersInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(OutletConsensusProvidersInner),
+      ]),
     );
     if (object.computedAt != null) {
       yield r'computedAt';
@@ -138,9 +139,11 @@ class _$OutletConsensusSerializer
     OutletConsensus object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,64 +159,80 @@ class _$OutletConsensusSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'outletId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.outletId = valueDes;
           break;
         case r'dimension':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(JsonObject),
+                  )
+                  as JsonObject?;
           if (valueDes == null) continue;
           result.dimension = valueDes;
           break;
         case r'median':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.median = valueDes;
           break;
         case r'nProviders':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nProviders = valueDes;
           break;
         case r'disagreement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.disagreement = valueDes;
           break;
         case r'bucket':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(OutletConsensusBucketEnum),
-          ) as OutletConsensusBucketEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      OutletConsensusBucketEnum,
+                    ),
+                  )
+                  as OutletConsensusBucketEnum?;
           if (valueDes == null) continue;
           result.bucket = valueDes;
           break;
         case r'providers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(OutletConsensusProvidersInner)]),
-          ) as BuiltList<OutletConsensusProvidersInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(OutletConsensusProvidersInner),
+                    ]),
+                  )
+                  as BuiltList<OutletConsensusProvidersInner>;
           result.providers.replace(valueDes);
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
           if (valueDes == null) continue;
           result.computedAt = valueDes;
           break;

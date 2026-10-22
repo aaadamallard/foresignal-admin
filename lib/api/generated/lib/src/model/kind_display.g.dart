@@ -31,18 +31,18 @@ class _$KindDisplay extends KindDisplay {
   factory _$KindDisplay([void Function(KindDisplayBuilder)? updates]) =>
       (KindDisplayBuilder()..update(updates))._build();
 
-  _$KindDisplay._(
-      {this.titleTemplate,
-      this.icon,
-      this.colour,
-      this.sidc,
-      this.rotateField,
-      this.sizeField,
-      this.colorField,
-      this.iconField,
-      this.iconCases,
-      this.colorCases})
-      : super._();
+  _$KindDisplay._({
+    this.titleTemplate,
+    this.icon,
+    this.colour,
+    this.sidc,
+    this.rotateField,
+    this.sizeField,
+    this.colorField,
+    this.iconField,
+    this.iconCases,
+    this.colorCases,
+  }) : super._();
   @override
   KindDisplay rebuild(void Function(KindDisplayBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -186,7 +186,8 @@ class KindDisplayBuilder implements Builder<KindDisplay, KindDisplayBuilder> {
   _$KindDisplay _build() {
     _$KindDisplay _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$KindDisplay._(
             titleTemplate: titleTemplate,
             icon: icon,
@@ -208,7 +209,10 @@ class KindDisplayBuilder implements Builder<KindDisplay, KindDisplayBuilder> {
         _colorCases?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'KindDisplay', _$failedField, e.toString());
+          r'KindDisplay',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

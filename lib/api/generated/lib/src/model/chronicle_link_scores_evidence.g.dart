@@ -14,17 +14,19 @@ class _$ChronicleLinkScoresEvidence extends ChronicleLinkScoresEvidence {
   @override
   final num? sharedEstimate;
 
-  factory _$ChronicleLinkScoresEvidence(
-          [void Function(ChronicleLinkScoresEvidenceBuilder)? updates]) =>
-      (ChronicleLinkScoresEvidenceBuilder()..update(updates))._build();
+  factory _$ChronicleLinkScoresEvidence([
+    void Function(ChronicleLinkScoresEvidenceBuilder)? updates,
+  ]) => (ChronicleLinkScoresEvidenceBuilder()..update(updates))._build();
 
-  _$ChronicleLinkScoresEvidence._(
-      {this.jaccard, this.containment, this.sharedEstimate})
-      : super._();
+  _$ChronicleLinkScoresEvidence._({
+    this.jaccard,
+    this.containment,
+    this.sharedEstimate,
+  }) : super._();
   @override
   ChronicleLinkScoresEvidence rebuild(
-          void Function(ChronicleLinkScoresEvidenceBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleLinkScoresEvidenceBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleLinkScoresEvidenceBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$ChronicleLinkScoresEvidence extends ChronicleLinkScoresEvidence {
 
 class ChronicleLinkScoresEvidenceBuilder
     implements
-        Builder<ChronicleLinkScoresEvidence,
-            ChronicleLinkScoresEvidenceBuilder> {
+        Builder<
+          ChronicleLinkScoresEvidence,
+          ChronicleLinkScoresEvidenceBuilder
+        > {
   _$ChronicleLinkScoresEvidence? _$v;
 
   num? _jaccard;
@@ -107,7 +111,8 @@ class ChronicleLinkScoresEvidenceBuilder
   ChronicleLinkScoresEvidence build() => _build();
 
   _$ChronicleLinkScoresEvidence _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleLinkScoresEvidence._(
           jaccard: jaccard,
           containment: containment,

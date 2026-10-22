@@ -14,17 +14,19 @@ class _$ChronicleLayerEstimate extends ChronicleLayerEstimate {
   @override
   final String? basis;
 
-  factory _$ChronicleLayerEstimate(
-          [void Function(ChronicleLayerEstimateBuilder)? updates]) =>
-      (ChronicleLayerEstimateBuilder()..update(updates))._build();
+  factory _$ChronicleLayerEstimate([
+    void Function(ChronicleLayerEstimateBuilder)? updates,
+  ]) => (ChronicleLayerEstimateBuilder()..update(updates))._build();
 
-  _$ChronicleLayerEstimate._(
-      {required this.rowsPerDay, required this.bytesPerDay, this.basis})
-      : super._();
+  _$ChronicleLayerEstimate._({
+    required this.rowsPerDay,
+    required this.bytesPerDay,
+    this.basis,
+  }) : super._();
   @override
   ChronicleLayerEstimate rebuild(
-          void Function(ChronicleLayerEstimateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ChronicleLayerEstimateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ChronicleLayerEstimateBuilder toBuilder() =>
@@ -104,12 +106,19 @@ class ChronicleLayerEstimateBuilder
   ChronicleLayerEstimate build() => _build();
 
   _$ChronicleLayerEstimate _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$ChronicleLayerEstimate._(
           rowsPerDay: BuiltValueNullFieldError.checkNotNull(
-              rowsPerDay, r'ChronicleLayerEstimate', 'rowsPerDay'),
+            rowsPerDay,
+            r'ChronicleLayerEstimate',
+            'rowsPerDay',
+          ),
           bytesPerDay: BuiltValueNullFieldError.checkNotNull(
-              bytesPerDay, r'ChronicleLayerEstimate', 'bytesPerDay'),
+            bytesPerDay,
+            r'ChronicleLayerEstimate',
+            'bytesPerDay',
+          ),
           basis: basis,
         );
     replace(_$result);

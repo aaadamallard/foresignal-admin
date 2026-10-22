@@ -12,12 +12,12 @@ class _$RecipeTestRequest extends RecipeTestRequest {
   @override
   final int toSeq;
 
-  factory _$RecipeTestRequest(
-          [void Function(RecipeTestRequestBuilder)? updates]) =>
-      (RecipeTestRequestBuilder()..update(updates))._build();
+  factory _$RecipeTestRequest([
+    void Function(RecipeTestRequestBuilder)? updates,
+  ]) => (RecipeTestRequestBuilder()..update(updates))._build();
 
   _$RecipeTestRequest._({required this.fromSeq, required this.toSeq})
-      : super._();
+    : super._();
   @override
   RecipeTestRequest rebuild(void Function(RecipeTestRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -92,12 +92,19 @@ class RecipeTestRequestBuilder
   RecipeTestRequest build() => _build();
 
   _$RecipeTestRequest _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$RecipeTestRequest._(
           fromSeq: BuiltValueNullFieldError.checkNotNull(
-              fromSeq, r'RecipeTestRequest', 'fromSeq'),
+            fromSeq,
+            r'RecipeTestRequest',
+            'fromSeq',
+          ),
           toSeq: BuiltValueNullFieldError.checkNotNull(
-              toSeq, r'RecipeTestRequest', 'toSeq'),
+            toSeq,
+            r'RecipeTestRequest',
+            'toSeq',
+          ),
         );
     replace(_$result);
     return _$result;

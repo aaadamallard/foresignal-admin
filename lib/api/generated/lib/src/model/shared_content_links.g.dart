@@ -14,15 +14,15 @@ class _$SharedContentLinks extends SharedContentLinks {
   @override
   final String? download;
 
-  factory _$SharedContentLinks(
-          [void Function(SharedContentLinksBuilder)? updates]) =>
-      (SharedContentLinksBuilder()..update(updates))._build();
+  factory _$SharedContentLinks([
+    void Function(SharedContentLinksBuilder)? updates,
+  ]) => (SharedContentLinksBuilder()..update(updates))._build();
 
   _$SharedContentLinks._({this.geojson, this.tiles, this.download}) : super._();
   @override
   SharedContentLinks rebuild(
-          void Function(SharedContentLinksBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(SharedContentLinksBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   SharedContentLinksBuilder toBuilder() =>
@@ -102,7 +102,8 @@ class SharedContentLinksBuilder
   SharedContentLinks build() => _build();
 
   _$SharedContentLinks _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$SharedContentLinks._(
           geojson: geojson,
           tiles: tiles,

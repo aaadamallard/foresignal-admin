@@ -90,11 +90,8 @@ class HoldPageBuilder implements Builder<HoldPage, HoldPageBuilder> {
   _$HoldPage _build() {
     _$HoldPage _$result;
     try {
-      _$result = _$v ??
-          _$HoldPage._(
-            items: items.build(),
-            nextCursor: nextCursor,
-          );
+      _$result =
+          _$v ?? _$HoldPage._(items: items.build(), nextCursor: nextCursor);
     } catch (_) {
       late String _$failedField;
       try {
@@ -102,7 +99,10 @@ class HoldPageBuilder implements Builder<HoldPage, HoldPageBuilder> {
         items.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'HoldPage', _$failedField, e.toString());
+          r'HoldPage',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

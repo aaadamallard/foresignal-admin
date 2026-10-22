@@ -26,25 +26,25 @@ class _$PlaceWeatherDigestNextNws extends PlaceWeatherDigestNextNws {
   @override
   final DateTime? updatedAt;
 
-  factory _$PlaceWeatherDigestNextNws(
-          [void Function(PlaceWeatherDigestNextNwsBuilder)? updates]) =>
-      (PlaceWeatherDigestNextNwsBuilder()..update(updates))._build();
+  factory _$PlaceWeatherDigestNextNws([
+    void Function(PlaceWeatherDigestNextNwsBuilder)? updates,
+  ]) => (PlaceWeatherDigestNextNwsBuilder()..update(updates))._build();
 
-  _$PlaceWeatherDigestNextNws._(
-      {required this.status,
-      this.asOf,
-      this.statusText,
-      this.popMax24h,
-      this.qpf24hMm,
-      this.gustMaxMs24h,
-      this.tMaxC24h,
-      this.tMinC24h,
-      this.updatedAt})
-      : super._();
+  _$PlaceWeatherDigestNextNws._({
+    required this.status,
+    this.asOf,
+    this.statusText,
+    this.popMax24h,
+    this.qpf24hMm,
+    this.gustMaxMs24h,
+    this.tMaxC24h,
+    this.tMinC24h,
+    this.updatedAt,
+  }) : super._();
   @override
   PlaceWeatherDigestNextNws rebuild(
-          void Function(PlaceWeatherDigestNextNwsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PlaceWeatherDigestNextNwsBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PlaceWeatherDigestNextNwsBuilder toBuilder() =>
@@ -173,10 +173,14 @@ class PlaceWeatherDigestNextNwsBuilder
   PlaceWeatherDigestNextNws build() => _build();
 
   _$PlaceWeatherDigestNextNws _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PlaceWeatherDigestNextNws._(
           status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PlaceWeatherDigestNextNws', 'status'),
+            status,
+            r'PlaceWeatherDigestNextNws',
+            'status',
+          ),
           asOf: asOf,
           statusText: statusText,
           popMax24h: popMax24h,

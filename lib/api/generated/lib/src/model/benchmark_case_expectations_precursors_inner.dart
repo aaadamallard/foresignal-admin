@@ -20,8 +20,10 @@ part 'benchmark_case_expectations_precursors_inner.g.dart';
 @BuiltValue()
 abstract class BenchmarkCaseExpectationsPrecursorsInner
     implements
-        Built<BenchmarkCaseExpectationsPrecursorsInner,
-            BenchmarkCaseExpectationsPrecursorsInnerBuilder> {
+        Built<
+          BenchmarkCaseExpectationsPrecursorsInner,
+          BenchmarkCaseExpectationsPrecursorsInnerBuilder
+        > {
   @BuiltValueField(wireName: r'precursorId')
   String? get precursorId;
 
@@ -42,9 +44,9 @@ abstract class BenchmarkCaseExpectationsPrecursorsInner
 
   BenchmarkCaseExpectationsPrecursorsInner._();
 
-  factory BenchmarkCaseExpectationsPrecursorsInner(
-          [void updates(BenchmarkCaseExpectationsPrecursorsInnerBuilder b)]) =
-      _$BenchmarkCaseExpectationsPrecursorsInner;
+  factory BenchmarkCaseExpectationsPrecursorsInner([
+    void updates(BenchmarkCaseExpectationsPrecursorsInnerBuilder b),
+  ]) = _$BenchmarkCaseExpectationsPrecursorsInner;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(BenchmarkCaseExpectationsPrecursorsInnerBuilder b) => b;
@@ -59,7 +61,7 @@ class _$BenchmarkCaseExpectationsPrecursorsInnerSerializer
   @override
   final Iterable<Type> types = const [
     BenchmarkCaseExpectationsPrecursorsInner,
-    _$BenchmarkCaseExpectationsPrecursorsInner
+    _$BenchmarkCaseExpectationsPrecursorsInner,
   ];
 
   @override
@@ -94,8 +96,9 @@ class _$BenchmarkCaseExpectationsPrecursorsInnerSerializer
     yield r'expected';
     yield serializers.serialize(
       object.expected,
-      specifiedType:
-          const FullType(BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum),
+      specifiedType: const FullType(
+        BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum,
+      ),
     );
     if (object.lagHours != null) {
       yield r'lagHours';
@@ -112,9 +115,11 @@ class _$BenchmarkCaseExpectationsPrecursorsInnerSerializer
     BenchmarkCaseExpectationsPrecursorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -130,42 +135,53 @@ class _$BenchmarkCaseExpectationsPrecursorsInnerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'precursorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.precursorId = valueDes;
           break;
         case r'leader':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.leader = valueDes;
           break;
         case r'follower':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.follower = valueDes;
           break;
         case r'expected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum),
-          ) as BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum,
+                    ),
+                  )
+                  as BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum;
           result.expected = valueDes;
           break;
         case r'lagHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.lagHours = valueDes;
           break;
@@ -204,20 +220,19 @@ class BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum extends EnumClass {
       _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated;
   @BuiltValueEnumConst(wireName: r'not-validated')
   static const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
-      notValidated =
+  notValidated =
       _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated;
 
   static Serializer<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>
-      get serializer =>
-          _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer;
+  get serializer =>
+      _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer;
 
   const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>
-      get values =>
-          _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValues;
+  get values => _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValues;
   static BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum valueOf(
-          String name) =>
-      _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValueOf(name);
+    String name,
+  ) => _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValueOf(name);
 }

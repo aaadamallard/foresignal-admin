@@ -222,10 +222,7 @@ class _$ProjectedImpactSerializer
       specifiedType: const FullType(ProjectedImpactInterval),
     );
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     if (object.severity != null) {
       yield r'severity';
       yield serializers.serialize(
@@ -237,32 +234,36 @@ class _$ProjectedImpactSerializer
       yield r'exposedAssets';
       yield serializers.serialize(
         object.exposedAssets,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ProjectedImpactExposedAssetsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProjectedImpactExposedAssetsInner),
+        ]),
       );
     }
     if (object.dependencyPaths != null) {
       yield r'dependencyPaths';
       yield serializers.serialize(
         object.dependencyPaths,
-        specifiedType: const FullType(
-            BuiltList, [FullType(ProjectedImpactDependencyPathsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProjectedImpactDependencyPathsInner),
+        ]),
       );
     }
     if (object.inputs != null) {
       yield r'inputs';
       yield serializers.serialize(
         object.inputs,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ProjectedImpactInputsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProjectedImpactInputsInner),
+        ]),
       );
     }
     if (object.skipped != null) {
       yield r'skipped';
       yield serializers.serialize(
         object.skipped,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ProjectedImpactSkippedInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(ProjectedImpactSkippedInner),
+        ]),
       );
     }
     yield r'labels';
@@ -344,9 +345,11 @@ class _$ProjectedImpactSerializer
     ProjectedImpact object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -362,212 +365,262 @@ class _$ProjectedImpactSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'findingId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.findingId = valueDes;
           break;
         case r'ref':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ref = valueDes;
           break;
         case r'hazard':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HazardForecast),
-          ) as HazardForecast;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(HazardForecast),
+                  )
+                  as HazardForecast;
           result.hazard.replace(valueDes);
           break;
         case r'impactFamily':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.impactFamily = valueDes;
           break;
         case r'admin1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.admin1 = valueDes;
           break;
         case r'regionClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.regionClass = valueDes;
           break;
         case r'pHazard':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pHazard = valueDes;
           break;
         case r'pConditional':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pConditional = valueDes;
           break;
         case r'pImpact':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.pImpact = valueDes;
           break;
         case r'interval':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ProjectedImpactInterval),
-          ) as ProjectedImpactInterval;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ProjectedImpactInterval),
+                  )
+                  as ProjectedImpactInterval;
           result.interval.replace(valueDes);
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(FindingSeverity),
-          ) as FindingSeverity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(FindingSeverity),
+                  )
+                  as FindingSeverity?;
           if (valueDes == null) continue;
           result.severity = valueDes;
           break;
         case r'exposedAssets':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProjectedImpactExposedAssetsInner)]),
-          ) as BuiltList<ProjectedImpactExposedAssetsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProjectedImpactExposedAssetsInner),
+                    ]),
+                  )
+                  as BuiltList<ProjectedImpactExposedAssetsInner>?;
           if (valueDes == null) continue;
           result.exposedAssets.replace(valueDes);
           break;
         case r'dependencyPaths':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProjectedImpactDependencyPathsInner)]),
-          ) as BuiltList<ProjectedImpactDependencyPathsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProjectedImpactDependencyPathsInner),
+                    ]),
+                  )
+                  as BuiltList<ProjectedImpactDependencyPathsInner>?;
           if (valueDes == null) continue;
           result.dependencyPaths.replace(valueDes);
           break;
         case r'inputs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProjectedImpactInputsInner)]),
-          ) as BuiltList<ProjectedImpactInputsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProjectedImpactInputsInner),
+                    ]),
+                  )
+                  as BuiltList<ProjectedImpactInputsInner>?;
           if (valueDes == null) continue;
           result.inputs.replace(valueDes);
           break;
         case r'skipped':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(ProjectedImpactSkippedInner)]),
-          ) as BuiltList<ProjectedImpactSkippedInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ProjectedImpactSkippedInner),
+                    ]),
+                  )
+                  as BuiltList<ProjectedImpactSkippedInner>?;
           if (valueDes == null) continue;
           result.skipped.replace(valueDes);
           break;
         case r'labels':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.labels.replace(valueDes);
           break;
         case r'questionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.questionId = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ProjectedImpactStatusEnum),
-          ) as ProjectedImpactStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ProjectedImpactStatusEnum),
+                  )
+                  as ProjectedImpactStatusEnum;
           result.status = valueDes;
           break;
         case r'supersededBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.supersededBy = valueDes;
           break;
         case r'detectedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.detectedAt = valueDes;
           break;
         case r'manifestId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.manifestId = valueDes;
           break;
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.version = valueDes;
           break;
         case r'caveats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(Caveat)]),
-          ) as BuiltList<Caveat>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(Caveat),
+                    ]),
+                  )
+                  as BuiltList<Caveat>?;
           if (valueDes == null) continue;
           result.caveats.replace(valueDes);
           break;
         case r'admin1Name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.admin1Name = valueDes;
           break;
         case r'lagHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.lagHours = valueDes;
           break;
         case r'questionWindow':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ProjectedImpactQuestionWindow),
-          ) as ProjectedImpactQuestionWindow?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ProjectedImpactQuestionWindow,
+                    ),
+                  )
+                  as ProjectedImpactQuestionWindow?;
           if (valueDes == null) continue;
           result.questionWindow.replace(valueDes);
           break;

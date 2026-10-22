@@ -14,17 +14,19 @@ class _$MappingPreviewRequest extends MappingPreviewRequest {
   @override
   final String? sourceId;
 
-  factory _$MappingPreviewRequest(
-          [void Function(MappingPreviewRequestBuilder)? updates]) =>
-      (MappingPreviewRequestBuilder()..update(updates))._build();
+  factory _$MappingPreviewRequest([
+    void Function(MappingPreviewRequestBuilder)? updates,
+  ]) => (MappingPreviewRequestBuilder()..update(updates))._build();
 
-  _$MappingPreviewRequest._(
-      {required this.mapping, required this.sample, this.sourceId})
-      : super._();
+  _$MappingPreviewRequest._({
+    required this.mapping,
+    required this.sample,
+    this.sourceId,
+  }) : super._();
   @override
   MappingPreviewRequest rebuild(
-          void Function(MappingPreviewRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(MappingPreviewRequestBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   MappingPreviewRequestBuilder toBuilder() =>
@@ -107,7 +109,8 @@ class MappingPreviewRequestBuilder
   _$MappingPreviewRequest _build() {
     _$MappingPreviewRequest _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$MappingPreviewRequest._(
             mapping: mapping.build(),
             sample: sample.build(),
@@ -122,7 +125,10 @@ class MappingPreviewRequestBuilder
         sample.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'MappingPreviewRequest', _$failedField, e.toString());
+          r'MappingPreviewRequest',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

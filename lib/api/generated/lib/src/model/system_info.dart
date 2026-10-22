@@ -278,8 +278,10 @@ class _$SystemInfoSerializer implements PrimitiveSerializer<SystemInfo> {
       yield r'features';
       yield serializers.serialize(
         object.features,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(bool)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(bool),
+        ]),
       );
     }
     if (object.limits != null) {
@@ -314,8 +316,9 @@ class _$SystemInfoSerializer implements PrimitiveSerializer<SystemInfo> {
       yield r'warnings';
       yield serializers.serialize(
         object.warnings,
-        specifiedType:
-            const FullType(BuiltList, [FullType(SystemInfoWarningsInner)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(SystemInfoWarningsInner),
+        ]),
       );
     }
     if (object.security != null) {
@@ -389,9 +392,11 @@ class _$SystemInfoSerializer implements PrimitiveSerializer<SystemInfo> {
     SystemInfo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -407,234 +412,303 @@ class _$SystemInfoSerializer implements PrimitiveSerializer<SystemInfo> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.version = valueDes;
           break;
         case r'startedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.startedAt = valueDes;
           break;
         case r'uptimeSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(int),
-          ) as int?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
           if (valueDes == null) continue;
           result.uptimeSeconds = valueDes;
           break;
         case r'database':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoDatabase),
-          ) as SystemInfoDatabase?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoDatabase),
+                  )
+                  as SystemInfoDatabase?;
           if (valueDes == null) continue;
           result.database.replace(valueDes);
           break;
         case r'records':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoRecords),
-          ) as SystemInfoRecords?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoRecords),
+                  )
+                  as SystemInfoRecords?;
           if (valueDes == null) continue;
           result.records.replace(valueDes);
           break;
         case r'sources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoSources),
-          ) as SystemInfoSources?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoSources),
+                  )
+                  as SystemInfoSources?;
           if (valueDes == null) continue;
           result.sources.replace(valueDes);
           break;
         case r'scheduler':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoScheduler),
-          ) as SystemInfoScheduler?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoScheduler),
+                  )
+                  as SystemInfoScheduler?;
           if (valueDes == null) continue;
           result.scheduler.replace(valueDes);
           break;
         case r'streams':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoStreams),
-          ) as SystemInfoStreams?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoStreams),
+                  )
+                  as SystemInfoStreams?;
           if (valueDes == null) continue;
           result.streams.replace(valueDes);
           break;
         case r'notifications':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoNotifications),
-          ) as SystemInfoNotifications?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoNotifications,
+                    ),
+                  )
+                  as SystemInfoNotifications?;
           if (valueDes == null) continue;
           result.notifications.replace(valueDes);
           break;
         case r'llm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoLlm),
-          ) as SystemInfoLlm?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoLlm),
+                  )
+                  as SystemInfoLlm?;
           if (valueDes == null) continue;
           result.llm.replace(valueDes);
           break;
         case r'search':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoSearch),
-          ) as SystemInfoSearch?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoSearch),
+                  )
+                  as SystemInfoSearch?;
           if (valueDes == null) continue;
           result.search.replace(valueDes);
           break;
         case r'mcp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoMcp),
-          ) as SystemInfoMcp?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoMcp),
+                  )
+                  as SystemInfoMcp?;
           if (valueDes == null) continue;
           result.mcp.replace(valueDes);
           break;
         case r'apiVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.apiVersion = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoStatusEnum),
-          ) as SystemInfoStatusEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoStatusEnum,
+                    ),
+                  )
+                  as SystemInfoStatusEnum?;
           if (valueDes == null) continue;
           result.status = valueDes;
           break;
         case r'features':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(bool)]),
-          ) as BuiltMap<String, bool>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(bool),
+                    ]),
+                  )
+                  as BuiltMap<String, bool>?;
           if (valueDes == null) continue;
           result.features.replace(valueDes);
           break;
         case r'limits':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoLimits),
-          ) as SystemInfoLimits?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoLimits),
+                  )
+                  as SystemInfoLimits?;
           if (valueDes == null) continue;
           result.limits.replace(valueDes);
           break;
         case r'history':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoHistory),
-          ) as SystemInfoHistory?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoHistory),
+                  )
+                  as SystemInfoHistory?;
           if (valueDes == null) continue;
           result.history.replace(valueDes);
           break;
         case r'catchUp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoCatchUp),
-          ) as SystemInfoCatchUp?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoCatchUp),
+                  )
+                  as SystemInfoCatchUp?;
           if (valueDes == null) continue;
           result.catchUp.replace(valueDes);
           break;
         case r'ingestWriter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoIngestWriter),
-          ) as SystemInfoIngestWriter?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoIngestWriter,
+                    ),
+                  )
+                  as SystemInfoIngestWriter?;
           if (valueDes == null) continue;
           result.ingestWriter.replace(valueDes);
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType(SystemInfoWarningsInner)]),
-          ) as BuiltList<SystemInfoWarningsInner>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SystemInfoWarningsInner),
+                    ]),
+                  )
+                  as BuiltList<SystemInfoWarningsInner>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
           break;
         case r'security':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoSecurity),
-          ) as SystemInfoSecurity?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoSecurity),
+                  )
+                  as SystemInfoSecurity?;
           if (valueDes == null) continue;
           result.security.replace(valueDes);
           break;
         case r'rasters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemRasters),
-          ) as SystemRasters?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemRasters),
+                  )
+                  as SystemRasters?;
           if (valueDes == null) continue;
           result.rasters.replace(valueDes);
           break;
         case r'mqtt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(MqttConnections),
-          ) as MqttConnections?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(MqttConnections),
+                  )
+                  as MqttConnections?;
           if (valueDes == null) continue;
           result.mqtt.replace(valueDes);
           break;
         case r'rasterFormats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoRasterFormats),
-          ) as SystemInfoRasterFormats?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      SystemInfoRasterFormats,
+                    ),
+                  )
+                  as SystemInfoRasterFormats?;
           if (valueDes == null) continue;
           result.rasterFormats.replace(valueDes);
           break;
         case r'sinks':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoSinks),
-          ) as SystemInfoSinks?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoSinks),
+                  )
+                  as SystemInfoSinks?;
           if (valueDes == null) continue;
           result.sinks.replace(valueDes);
           break;
         case r'exports':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoExports),
-          ) as SystemInfoExports?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoExports),
+                  )
+                  as SystemInfoExports?;
           if (valueDes == null) continue;
           result.exports.replace(valueDes);
           break;
         case r'archive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoArchive),
-          ) as SystemInfoArchive?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoArchive),
+                  )
+                  as SystemInfoArchive?;
           if (valueDes == null) continue;
           result.archive.replace(valueDes);
           break;
         case r'holds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoHolds),
-          ) as SystemInfoHolds?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoHolds),
+                  )
+                  as SystemInfoHolds?;
           if (valueDes == null) continue;
           result.holds.replace(valueDes);
           break;
         case r'mode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(SystemInfoModeEnum),
-          ) as SystemInfoModeEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(SystemInfoModeEnum),
+                  )
+                  as SystemInfoModeEnum?;
           if (valueDes == null) continue;
           result.mode = valueDes;
           break;

@@ -83,7 +83,7 @@ class _$ForecastCalibrationSerializer
   @override
   final Iterable<Type> types = const [
     ForecastCalibration,
-    _$ForecastCalibration
+    _$ForecastCalibration,
   ];
 
   @override
@@ -109,10 +109,7 @@ class _$ForecastCalibrationSerializer
       );
     }
     yield r'n';
-    yield serializers.serialize(
-      object.n,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.n, specifiedType: const FullType(int));
     yield r'label';
     yield serializers.serialize(
       object.label,
@@ -126,21 +123,24 @@ class _$ForecastCalibrationSerializer
     yield r'curve';
     yield serializers.serialize(
       object.curve,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ForecastCalibrationCurveInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ForecastCalibrationCurveInner),
+      ]),
     );
     yield r'bins';
     yield serializers.serialize(
       object.bins,
-      specifiedType:
-          const FullType(BuiltList, [FullType(ForecastCalibrationBinsInner)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(ForecastCalibrationBinsInner),
+      ]),
     );
     if (object.decomposition != null) {
       yield r'decomposition';
       yield serializers.serialize(
         object.decomposition,
-        specifiedType:
-            const FullType.nullable(ForecastCalibrationDecomposition),
+        specifiedType: const FullType.nullable(
+          ForecastCalibrationDecomposition,
+        ),
       );
     }
     if (object.sharpness != null) {
@@ -168,9 +168,11 @@ class _$ForecastCalibrationSerializer
     ForecastCalibration object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -186,87 +188,111 @@ class _$ForecastCalibrationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'forecasterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.forecasterId = valueDes;
           break;
         case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.category = valueDes;
           break;
         case r'n':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.n = valueDes;
           break;
         case r'label':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastCalibrationLabelEnum),
-          ) as ForecastCalibrationLabelEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(ForecastCalibrationLabelEnum),
+                  )
+                  as ForecastCalibrationLabelEnum;
           result.label = valueDes;
           break;
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ForecastCalibrationMethodEnum),
-          ) as ForecastCalibrationMethodEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      ForecastCalibrationMethodEnum,
+                    ),
+                  )
+                  as ForecastCalibrationMethodEnum;
           result.method = valueDes;
           break;
         case r'curve':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ForecastCalibrationCurveInner)]),
-          ) as BuiltList<ForecastCalibrationCurveInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ForecastCalibrationCurveInner),
+                    ]),
+                  )
+                  as BuiltList<ForecastCalibrationCurveInner>;
           result.curve.replace(valueDes);
           break;
         case r'bins':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ForecastCalibrationBinsInner)]),
-          ) as BuiltList<ForecastCalibrationBinsInner>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(ForecastCalibrationBinsInner),
+                    ]),
+                  )
+                  as BuiltList<ForecastCalibrationBinsInner>;
           result.bins.replace(valueDes);
           break;
         case r'decomposition':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(ForecastCalibrationDecomposition),
-          ) as ForecastCalibrationDecomposition?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      ForecastCalibrationDecomposition,
+                    ),
+                  )
+                  as ForecastCalibrationDecomposition?;
           if (valueDes == null) continue;
           result.decomposition.replace(valueDes);
           break;
         case r'sharpness':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(num),
-          ) as num?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
           if (valueDes == null) continue;
           result.sharpness = valueDes;
           break;
         case r'scorerVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.scorerVersion = valueDes;
           break;
         case r'computedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.computedAt = valueDes;
           break;
         default:

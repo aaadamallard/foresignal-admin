@@ -101,12 +101,19 @@ class CaveatBuilder implements Builder<Caveat, CaveatBuilder> {
   _$Caveat _build() {
     _$Caveat _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Caveat._(
-            code:
-                BuiltValueNullFieldError.checkNotNull(code, r'Caveat', 'code'),
-            text:
-                BuiltValueNullFieldError.checkNotNull(text, r'Caveat', 'text'),
+            code: BuiltValueNullFieldError.checkNotNull(
+              code,
+              r'Caveat',
+              'code',
+            ),
+            text: BuiltValueNullFieldError.checkNotNull(
+              text,
+              r'Caveat',
+              'text',
+            ),
             data: _data?.build(),
           );
     } catch (_) {
@@ -116,7 +123,10 @@ class CaveatBuilder implements Builder<Caveat, CaveatBuilder> {
         _data?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Caveat', _$failedField, e.toString());
+          r'Caveat',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

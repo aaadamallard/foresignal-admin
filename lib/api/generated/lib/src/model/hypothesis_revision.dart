@@ -147,14 +147,16 @@ class _$HypothesisRevisionSerializer
     yield r'before';
     yield serializers.serialize(
       object.before,
-      specifiedType:
-          const FullType(BuiltList, [FullType(HypothesisProbabilityState)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(HypothesisProbabilityState),
+      ]),
     );
     yield r'after';
     yield serializers.serialize(
       object.after,
-      specifiedType:
-          const FullType(BuiltList, [FullType(HypothesisProbabilityState)]),
+      specifiedType: const FullType(BuiltList, [
+        FullType(HypothesisProbabilityState),
+      ]),
     );
     yield r'drivers';
     yield serializers.serialize(
@@ -214,9 +216,11 @@ class _$HypothesisRevisionSerializer
     HypothesisRevision object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -232,125 +236,159 @@ class _$HypothesisRevisionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'setId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.setId = valueDes;
           break;
         case r'at':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DateTime),
+                  )
+                  as DateTime;
           result.at = valueDes;
           break;
         case r'cause':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(HypothesisRevisionCauseEnum),
-          ) as HypothesisRevisionCauseEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(HypothesisRevisionCauseEnum),
+                  )
+                  as HypothesisRevisionCauseEnum;
           result.cause = valueDes;
           break;
         case r'actor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.actor = valueDes;
           break;
         case r'asOfSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.asOfSeq = valueDes;
           break;
         case r'before':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(HypothesisProbabilityState)]),
-          ) as BuiltList<HypothesisProbabilityState>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(HypothesisProbabilityState),
+                    ]),
+                  )
+                  as BuiltList<HypothesisProbabilityState>;
           result.before.replace(valueDes);
           break;
         case r'after':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(HypothesisProbabilityState)]),
-          ) as BuiltList<HypothesisProbabilityState>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(HypothesisProbabilityState),
+                    ]),
+                  )
+                  as BuiltList<HypothesisProbabilityState>;
           result.after.replace(valueDes);
           break;
         case r'drivers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(RevisionDriver)]),
-          ) as BuiltList<RevisionDriver>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(RevisionDriver),
+                    ]),
+                  )
+                  as BuiltList<RevisionDriver>;
           result.drivers.replace(valueDes);
           break;
         case r'citations':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.citations.replace(valueDes);
           break;
         case r'rationale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.rationale = valueDes;
           break;
         case r'rationaleOrigin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType.nullable(HypothesisRevisionRationaleOriginEnum),
-          ) as HypothesisRevisionRationaleOriginEnum?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      HypothesisRevisionRationaleOriginEnum,
+                    ),
+                  )
+                  as HypothesisRevisionRationaleOriginEnum?;
           if (valueDes == null) continue;
           result.rationaleOrigin = valueDes;
           break;
         case r'bandChanged':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.bandChanged = valueDes;
           break;
         case r'override':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(bool),
-          ) as bool?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
           if (valueDes == null) continue;
           result.override_ = valueDes;
           break;
         case r'ledgerForecastId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
           if (valueDes == null) continue;
           result.ledgerForecastId = valueDes;
           break;
         case r'updaterVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.updaterVersion = valueDes;
           break;
         default:

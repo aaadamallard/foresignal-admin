@@ -28,10 +28,10 @@ StyleSpecialKindEnum _$styleSpecialKindEnumValueOf(String name) {
 
 final BuiltSet<StyleSpecialKindEnum> _$styleSpecialKindEnumValues =
     BuiltSet<StyleSpecialKindEnum>(const <StyleSpecialKindEnum>[
-  _$styleSpecialKindEnum_noCoverage,
-  _$styleSpecialKindEnum_noEcho,
-  _$styleSpecialKindEnum_noData,
-]);
+      _$styleSpecialKindEnum_noCoverage,
+      _$styleSpecialKindEnum_noEcho,
+      _$styleSpecialKindEnum_noData,
+    ]);
 
 Serializer<StyleSpecialKindEnum> _$styleSpecialKindEnumSerializer =
     _$StyleSpecialKindEnumSerializer();
@@ -55,15 +55,20 @@ class _$StyleSpecialKindEnumSerializer
   final String wireName = 'StyleSpecialKindEnum';
 
   @override
-  Object serialize(Serializers serializers, StyleSpecialKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    StyleSpecialKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  StyleSpecialKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      StyleSpecialKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  StyleSpecialKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => StyleSpecialKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$StyleSpecial extends StyleSpecial {
@@ -77,9 +82,11 @@ class _$StyleSpecial extends StyleSpecial {
   factory _$StyleSpecial([void Function(StyleSpecialBuilder)? updates]) =>
       (StyleSpecialBuilder()..update(updates))._build();
 
-  _$StyleSpecial._(
-      {required this.kind, required this.color, required this.label})
-      : super._();
+  _$StyleSpecial._({
+    required this.kind,
+    required this.color,
+    required this.label,
+  }) : super._();
   @override
   StyleSpecial rebuild(void Function(StyleSpecialBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -161,14 +168,24 @@ class StyleSpecialBuilder
   StyleSpecial build() => _build();
 
   _$StyleSpecial _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$StyleSpecial._(
           kind: BuiltValueNullFieldError.checkNotNull(
-              kind, r'StyleSpecial', 'kind'),
+            kind,
+            r'StyleSpecial',
+            'kind',
+          ),
           color: BuiltValueNullFieldError.checkNotNull(
-              color, r'StyleSpecial', 'color'),
+            color,
+            r'StyleSpecial',
+            'color',
+          ),
           label: BuiltValueNullFieldError.checkNotNull(
-              label, r'StyleSpecial', 'label'),
+            label,
+            r'StyleSpecial',
+            'label',
+          ),
         );
     replace(_$result);
     return _$result;

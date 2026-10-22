@@ -7,11 +7,11 @@ part of 'emwin_warning_payload_duplicate_of.dart';
 // **************************************************************************
 
 const EmwinWarningPayloadDuplicateOfSource_Enum
-    _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts =
+_$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts =
     const EmwinWarningPayloadDuplicateOfSource_Enum._('nwsAlerts');
 
 EmwinWarningPayloadDuplicateOfSource_Enum
-    _$emwinWarningPayloadDuplicateOfSourceEnumValueOf(String name) {
+_$emwinWarningPayloadDuplicateOfSourceEnumValueOf(String name) {
   switch (name) {
     case 'nwsAlerts':
       return _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts;
@@ -21,13 +21,15 @@ EmwinWarningPayloadDuplicateOfSource_Enum
 }
 
 final BuiltSet<EmwinWarningPayloadDuplicateOfSource_Enum>
-    _$emwinWarningPayloadDuplicateOfSourceEnumValues = BuiltSet<
-        EmwinWarningPayloadDuplicateOfSource_Enum>(const <EmwinWarningPayloadDuplicateOfSource_Enum>[
-  _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts,
-]);
+_$emwinWarningPayloadDuplicateOfSourceEnumValues =
+    BuiltSet<EmwinWarningPayloadDuplicateOfSource_Enum>(
+      const <EmwinWarningPayloadDuplicateOfSource_Enum>[
+        _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts,
+      ],
+    );
 
 Serializer<EmwinWarningPayloadDuplicateOfSource_Enum>
-    _$emwinWarningPayloadDuplicateOfSourceEnumSerializer =
+_$emwinWarningPayloadDuplicateOfSourceEnumSerializer =
     _$EmwinWarningPayloadDuplicateOfSource_EnumSerializer();
 
 class _$EmwinWarningPayloadDuplicateOfSource_EnumSerializer
@@ -41,23 +43,26 @@ class _$EmwinWarningPayloadDuplicateOfSource_EnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    EmwinWarningPayloadDuplicateOfSource_Enum
+    EmwinWarningPayloadDuplicateOfSource_Enum,
   ];
   @override
   final String wireName = 'EmwinWarningPayloadDuplicateOfSource_Enum';
 
   @override
-  Object serialize(Serializers serializers,
-          EmwinWarningPayloadDuplicateOfSource_Enum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EmwinWarningPayloadDuplicateOfSource_Enum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EmwinWarningPayloadDuplicateOfSource_Enum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EmwinWarningPayloadDuplicateOfSource_Enum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EmwinWarningPayloadDuplicateOfSource_Enum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EmwinWarningPayloadDuplicateOf extends EmwinWarningPayloadDuplicateOf {
@@ -66,17 +71,18 @@ class _$EmwinWarningPayloadDuplicateOf extends EmwinWarningPayloadDuplicateOf {
   @override
   final String externalId;
 
-  factory _$EmwinWarningPayloadDuplicateOf(
-          [void Function(EmwinWarningPayloadDuplicateOfBuilder)? updates]) =>
-      (EmwinWarningPayloadDuplicateOfBuilder()..update(updates))._build();
+  factory _$EmwinWarningPayloadDuplicateOf([
+    void Function(EmwinWarningPayloadDuplicateOfBuilder)? updates,
+  ]) => (EmwinWarningPayloadDuplicateOfBuilder()..update(updates))._build();
 
-  _$EmwinWarningPayloadDuplicateOf._(
-      {required this.source_, required this.externalId})
-      : super._();
+  _$EmwinWarningPayloadDuplicateOf._({
+    required this.source_,
+    required this.externalId,
+  }) : super._();
   @override
   EmwinWarningPayloadDuplicateOf rebuild(
-          void Function(EmwinWarningPayloadDuplicateOfBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(EmwinWarningPayloadDuplicateOfBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   EmwinWarningPayloadDuplicateOfBuilder toBuilder() =>
@@ -110,8 +116,10 @@ class _$EmwinWarningPayloadDuplicateOf extends EmwinWarningPayloadDuplicateOf {
 
 class EmwinWarningPayloadDuplicateOfBuilder
     implements
-        Builder<EmwinWarningPayloadDuplicateOf,
-            EmwinWarningPayloadDuplicateOfBuilder> {
+        Builder<
+          EmwinWarningPayloadDuplicateOf,
+          EmwinWarningPayloadDuplicateOfBuilder
+        > {
   _$EmwinWarningPayloadDuplicateOf? _$v;
 
   EmwinWarningPayloadDuplicateOfSource_Enum? _source_;
@@ -151,12 +159,19 @@ class EmwinWarningPayloadDuplicateOfBuilder
   EmwinWarningPayloadDuplicateOf build() => _build();
 
   _$EmwinWarningPayloadDuplicateOf _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$EmwinWarningPayloadDuplicateOf._(
           source_: BuiltValueNullFieldError.checkNotNull(
-              source_, r'EmwinWarningPayloadDuplicateOf', 'source_'),
+            source_,
+            r'EmwinWarningPayloadDuplicateOf',
+            'source_',
+          ),
           externalId: BuiltValueNullFieldError.checkNotNull(
-              externalId, r'EmwinWarningPayloadDuplicateOf', 'externalId'),
+            externalId,
+            r'EmwinWarningPayloadDuplicateOf',
+            'externalId',
+          ),
         );
     replace(_$result);
     return _$result;

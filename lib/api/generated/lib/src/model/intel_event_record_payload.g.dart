@@ -7,25 +7,26 @@ part of 'intel_event_record_payload.dart';
 // **************************************************************************
 
 const IntelEventRecordPayloadTypeEnum
-    _$intelEventRecordPayloadTypeEnum_maritimeDisruption =
+_$intelEventRecordPayloadTypeEnum_maritimeDisruption =
     const IntelEventRecordPayloadTypeEnum._('maritimeDisruption');
 const IntelEventRecordPayloadTypeEnum
-    _$intelEventRecordPayloadTypeEnum_aviationAnomaly =
+_$intelEventRecordPayloadTypeEnum_aviationAnomaly =
     const IntelEventRecordPayloadTypeEnum._('aviationAnomaly');
 const IntelEventRecordPayloadTypeEnum
-    _$intelEventRecordPayloadTypeEnum_infrastructureDisruption =
+_$intelEventRecordPayloadTypeEnum_infrastructureDisruption =
     const IntelEventRecordPayloadTypeEnum._('infrastructureDisruption');
 const IntelEventRecordPayloadTypeEnum
-    _$intelEventRecordPayloadTypeEnum_weatherImpact =
+_$intelEventRecordPayloadTypeEnum_weatherImpact =
     const IntelEventRecordPayloadTypeEnum._('weatherImpact');
 const IntelEventRecordPayloadTypeEnum
-    _$intelEventRecordPayloadTypeEnum_seismic =
+_$intelEventRecordPayloadTypeEnum_seismic =
     const IntelEventRecordPayloadTypeEnum._('seismic');
 const IntelEventRecordPayloadTypeEnum _$intelEventRecordPayloadTypeEnum_custom =
     const IntelEventRecordPayloadTypeEnum._('custom');
 
 IntelEventRecordPayloadTypeEnum _$intelEventRecordPayloadTypeEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'maritimeDisruption':
       return _$intelEventRecordPayloadTypeEnum_maritimeDisruption;
@@ -45,31 +46,34 @@ IntelEventRecordPayloadTypeEnum _$intelEventRecordPayloadTypeEnumValueOf(
 }
 
 final BuiltSet<IntelEventRecordPayloadTypeEnum>
-    _$intelEventRecordPayloadTypeEnumValues = BuiltSet<
-        IntelEventRecordPayloadTypeEnum>(const <IntelEventRecordPayloadTypeEnum>[
-  _$intelEventRecordPayloadTypeEnum_maritimeDisruption,
-  _$intelEventRecordPayloadTypeEnum_aviationAnomaly,
-  _$intelEventRecordPayloadTypeEnum_infrastructureDisruption,
-  _$intelEventRecordPayloadTypeEnum_weatherImpact,
-  _$intelEventRecordPayloadTypeEnum_seismic,
-  _$intelEventRecordPayloadTypeEnum_custom,
-]);
+_$intelEventRecordPayloadTypeEnumValues =
+    BuiltSet<IntelEventRecordPayloadTypeEnum>(
+      const <IntelEventRecordPayloadTypeEnum>[
+        _$intelEventRecordPayloadTypeEnum_maritimeDisruption,
+        _$intelEventRecordPayloadTypeEnum_aviationAnomaly,
+        _$intelEventRecordPayloadTypeEnum_infrastructureDisruption,
+        _$intelEventRecordPayloadTypeEnum_weatherImpact,
+        _$intelEventRecordPayloadTypeEnum_seismic,
+        _$intelEventRecordPayloadTypeEnum_custom,
+      ],
+    );
 
 const IntelEventRecordPayloadStatusEnum
-    _$intelEventRecordPayloadStatusEnum_emerging =
+_$intelEventRecordPayloadStatusEnum_emerging =
     const IntelEventRecordPayloadStatusEnum._('emerging');
 const IntelEventRecordPayloadStatusEnum
-    _$intelEventRecordPayloadStatusEnum_active =
+_$intelEventRecordPayloadStatusEnum_active =
     const IntelEventRecordPayloadStatusEnum._('active');
 const IntelEventRecordPayloadStatusEnum
-    _$intelEventRecordPayloadStatusEnum_resolved =
+_$intelEventRecordPayloadStatusEnum_resolved =
     const IntelEventRecordPayloadStatusEnum._('resolved');
 const IntelEventRecordPayloadStatusEnum
-    _$intelEventRecordPayloadStatusEnum_dismissed =
+_$intelEventRecordPayloadStatusEnum_dismissed =
     const IntelEventRecordPayloadStatusEnum._('dismissed');
 
 IntelEventRecordPayloadStatusEnum _$intelEventRecordPayloadStatusEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'emerging':
       return _$intelEventRecordPayloadStatusEnum_emerging;
@@ -85,24 +89,27 @@ IntelEventRecordPayloadStatusEnum _$intelEventRecordPayloadStatusEnumValueOf(
 }
 
 final BuiltSet<IntelEventRecordPayloadStatusEnum>
-    _$intelEventRecordPayloadStatusEnumValues = BuiltSet<
-        IntelEventRecordPayloadStatusEnum>(const <IntelEventRecordPayloadStatusEnum>[
-  _$intelEventRecordPayloadStatusEnum_emerging,
-  _$intelEventRecordPayloadStatusEnum_active,
-  _$intelEventRecordPayloadStatusEnum_resolved,
-  _$intelEventRecordPayloadStatusEnum_dismissed,
-]);
+_$intelEventRecordPayloadStatusEnumValues =
+    BuiltSet<IntelEventRecordPayloadStatusEnum>(
+      const <IntelEventRecordPayloadStatusEnum>[
+        _$intelEventRecordPayloadStatusEnum_emerging,
+        _$intelEventRecordPayloadStatusEnum_active,
+        _$intelEventRecordPayloadStatusEnum_resolved,
+        _$intelEventRecordPayloadStatusEnum_dismissed,
+      ],
+    );
 
 const IntelEventRecordPayloadLabelEnum _$intelEventRecordPayloadLabelEnum_low =
     const IntelEventRecordPayloadLabelEnum._('low');
 const IntelEventRecordPayloadLabelEnum
-    _$intelEventRecordPayloadLabelEnum_moderate =
+_$intelEventRecordPayloadLabelEnum_moderate =
     const IntelEventRecordPayloadLabelEnum._('moderate');
 const IntelEventRecordPayloadLabelEnum _$intelEventRecordPayloadLabelEnum_high =
     const IntelEventRecordPayloadLabelEnum._('high');
 
 IntelEventRecordPayloadLabelEnum _$intelEventRecordPayloadLabelEnumValueOf(
-    String name) {
+  String name,
+) {
   switch (name) {
     case 'low':
       return _$intelEventRecordPayloadLabelEnum_low;
@@ -116,28 +123,30 @@ IntelEventRecordPayloadLabelEnum _$intelEventRecordPayloadLabelEnumValueOf(
 }
 
 final BuiltSet<IntelEventRecordPayloadLabelEnum>
-    _$intelEventRecordPayloadLabelEnumValues = BuiltSet<
-        IntelEventRecordPayloadLabelEnum>(const <IntelEventRecordPayloadLabelEnum>[
-  _$intelEventRecordPayloadLabelEnum_low,
-  _$intelEventRecordPayloadLabelEnum_moderate,
-  _$intelEventRecordPayloadLabelEnum_high,
-]);
+_$intelEventRecordPayloadLabelEnumValues =
+    BuiltSet<IntelEventRecordPayloadLabelEnum>(
+      const <IntelEventRecordPayloadLabelEnum>[
+        _$intelEventRecordPayloadLabelEnum_low,
+        _$intelEventRecordPayloadLabelEnum_moderate,
+        _$intelEventRecordPayloadLabelEnum_high,
+      ],
+    );
 
 const IntelEventRecordPayloadEvidenceQualityEnum
-    _$intelEventRecordPayloadEvidenceQualityEnum_strong =
+_$intelEventRecordPayloadEvidenceQualityEnum_strong =
     const IntelEventRecordPayloadEvidenceQualityEnum._('strong');
 const IntelEventRecordPayloadEvidenceQualityEnum
-    _$intelEventRecordPayloadEvidenceQualityEnum_moderate =
+_$intelEventRecordPayloadEvidenceQualityEnum_moderate =
     const IntelEventRecordPayloadEvidenceQualityEnum._('moderate');
 const IntelEventRecordPayloadEvidenceQualityEnum
-    _$intelEventRecordPayloadEvidenceQualityEnum_weak =
+_$intelEventRecordPayloadEvidenceQualityEnum_weak =
     const IntelEventRecordPayloadEvidenceQualityEnum._('weak');
 const IntelEventRecordPayloadEvidenceQualityEnum
-    _$intelEventRecordPayloadEvidenceQualityEnum_insufficient =
+_$intelEventRecordPayloadEvidenceQualityEnum_insufficient =
     const IntelEventRecordPayloadEvidenceQualityEnum._('insufficient');
 
 IntelEventRecordPayloadEvidenceQualityEnum
-    _$intelEventRecordPayloadEvidenceQualityEnumValueOf(String name) {
+_$intelEventRecordPayloadEvidenceQualityEnumValueOf(String name) {
   switch (name) {
     case 'strong':
       return _$intelEventRecordPayloadEvidenceQualityEnum_strong;
@@ -153,25 +162,27 @@ IntelEventRecordPayloadEvidenceQualityEnum
 }
 
 final BuiltSet<IntelEventRecordPayloadEvidenceQualityEnum>
-    _$intelEventRecordPayloadEvidenceQualityEnumValues = BuiltSet<
-        IntelEventRecordPayloadEvidenceQualityEnum>(const <IntelEventRecordPayloadEvidenceQualityEnum>[
-  _$intelEventRecordPayloadEvidenceQualityEnum_strong,
-  _$intelEventRecordPayloadEvidenceQualityEnum_moderate,
-  _$intelEventRecordPayloadEvidenceQualityEnum_weak,
-  _$intelEventRecordPayloadEvidenceQualityEnum_insufficient,
-]);
+_$intelEventRecordPayloadEvidenceQualityEnumValues =
+    BuiltSet<IntelEventRecordPayloadEvidenceQualityEnum>(
+      const <IntelEventRecordPayloadEvidenceQualityEnum>[
+        _$intelEventRecordPayloadEvidenceQualityEnum_strong,
+        _$intelEventRecordPayloadEvidenceQualityEnum_moderate,
+        _$intelEventRecordPayloadEvidenceQualityEnum_weak,
+        _$intelEventRecordPayloadEvidenceQualityEnum_insufficient,
+      ],
+    );
 
 Serializer<IntelEventRecordPayloadTypeEnum>
-    _$intelEventRecordPayloadTypeEnumSerializer =
+_$intelEventRecordPayloadTypeEnumSerializer =
     _$IntelEventRecordPayloadTypeEnumSerializer();
 Serializer<IntelEventRecordPayloadStatusEnum>
-    _$intelEventRecordPayloadStatusEnumSerializer =
+_$intelEventRecordPayloadStatusEnumSerializer =
     _$IntelEventRecordPayloadStatusEnumSerializer();
 Serializer<IntelEventRecordPayloadLabelEnum>
-    _$intelEventRecordPayloadLabelEnumSerializer =
+_$intelEventRecordPayloadLabelEnumSerializer =
     _$IntelEventRecordPayloadLabelEnumSerializer();
 Serializer<IntelEventRecordPayloadEvidenceQualityEnum>
-    _$intelEventRecordPayloadEvidenceQualityEnumSerializer =
+_$intelEventRecordPayloadEvidenceQualityEnumSerializer =
     _$IntelEventRecordPayloadEvidenceQualityEnumSerializer();
 
 class _$IntelEventRecordPayloadTypeEnumSerializer
@@ -200,16 +211,19 @@ class _$IntelEventRecordPayloadTypeEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IntelEventRecordPayloadTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelEventRecordPayloadTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventRecordPayloadTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventRecordPayloadTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventRecordPayloadTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventRecordPayloadStatusEnumSerializer
@@ -234,16 +248,19 @@ class _$IntelEventRecordPayloadStatusEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IntelEventRecordPayloadStatusEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelEventRecordPayloadStatusEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventRecordPayloadStatusEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventRecordPayloadStatusEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventRecordPayloadStatusEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventRecordPayloadLabelEnumSerializer
@@ -266,16 +283,19 @@ class _$IntelEventRecordPayloadLabelEnumSerializer
 
   @override
   Object serialize(
-          Serializers serializers, IntelEventRecordPayloadLabelEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+    Serializers serializers,
+    IntelEventRecordPayloadLabelEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventRecordPayloadLabelEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventRecordPayloadLabelEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventRecordPayloadLabelEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventRecordPayloadEvidenceQualityEnumSerializer
@@ -295,23 +315,26 @@ class _$IntelEventRecordPayloadEvidenceQualityEnumSerializer
 
   @override
   final Iterable<Type> types = const <Type>[
-    IntelEventRecordPayloadEvidenceQualityEnum
+    IntelEventRecordPayloadEvidenceQualityEnum,
   ];
   @override
   final String wireName = 'IntelEventRecordPayloadEvidenceQualityEnum';
 
   @override
-  Object serialize(Serializers serializers,
-          IntelEventRecordPayloadEvidenceQualityEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    IntelEventRecordPayloadEvidenceQualityEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   IntelEventRecordPayloadEvidenceQualityEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      IntelEventRecordPayloadEvidenceQualityEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => IntelEventRecordPayloadEvidenceQualityEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$IntelEventRecordPayload extends IntelEventRecordPayload {
@@ -336,26 +359,26 @@ class _$IntelEventRecordPayload extends IntelEventRecordPayload {
   @override
   final bool automated;
 
-  factory _$IntelEventRecordPayload(
-          [void Function(IntelEventRecordPayloadBuilder)? updates]) =>
-      (IntelEventRecordPayloadBuilder()..update(updates))._build();
+  factory _$IntelEventRecordPayload([
+    void Function(IntelEventRecordPayloadBuilder)? updates,
+  ]) => (IntelEventRecordPayloadBuilder()..update(updates))._build();
 
-  _$IntelEventRecordPayload._(
-      {required this.type,
-      required this.severity,
-      required this.status,
-      required this.confidence,
-      this.label,
-      this.evidenceQuality,
-      this.memberCount,
-      this.signalFamilies,
-      required this.title,
-      required this.automated})
-      : super._();
+  _$IntelEventRecordPayload._({
+    required this.type,
+    required this.severity,
+    required this.status,
+    required this.confidence,
+    this.label,
+    this.evidenceQuality,
+    this.memberCount,
+    this.signalFamilies,
+    required this.title,
+    required this.automated,
+  }) : super._();
   @override
   IntelEventRecordPayload rebuild(
-          void Function(IntelEventRecordPayloadBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelEventRecordPayloadBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelEventRecordPayloadBuilder toBuilder() =>
@@ -441,8 +464,8 @@ class IntelEventRecordPayloadBuilder
   IntelEventRecordPayloadEvidenceQualityEnum? get evidenceQuality =>
       _$this._evidenceQuality;
   set evidenceQuality(
-          IntelEventRecordPayloadEvidenceQualityEnum? evidenceQuality) =>
-      _$this._evidenceQuality = evidenceQuality;
+    IntelEventRecordPayloadEvidenceQualityEnum? evidenceQuality,
+  ) => _$this._evidenceQuality = evidenceQuality;
 
   int? _memberCount;
   int? get memberCount => _$this._memberCount;
@@ -500,24 +523,43 @@ class IntelEventRecordPayloadBuilder
   _$IntelEventRecordPayload _build() {
     _$IntelEventRecordPayload _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$IntelEventRecordPayload._(
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'IntelEventRecordPayload', 'type'),
+              type,
+              r'IntelEventRecordPayload',
+              'type',
+            ),
             severity: BuiltValueNullFieldError.checkNotNull(
-                severity, r'IntelEventRecordPayload', 'severity'),
+              severity,
+              r'IntelEventRecordPayload',
+              'severity',
+            ),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, r'IntelEventRecordPayload', 'status'),
+              status,
+              r'IntelEventRecordPayload',
+              'status',
+            ),
             confidence: BuiltValueNullFieldError.checkNotNull(
-                confidence, r'IntelEventRecordPayload', 'confidence'),
+              confidence,
+              r'IntelEventRecordPayload',
+              'confidence',
+            ),
             label: label,
             evidenceQuality: evidenceQuality,
             memberCount: memberCount,
             signalFamilies: _signalFamilies?.build(),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'IntelEventRecordPayload', 'title'),
+              title,
+              r'IntelEventRecordPayload',
+              'title',
+            ),
             automated: BuiltValueNullFieldError.checkNotNull(
-                automated, r'IntelEventRecordPayload', 'automated'),
+              automated,
+              r'IntelEventRecordPayload',
+              'automated',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -526,7 +568,10 @@ class IntelEventRecordPayloadBuilder
         _signalFamilies?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'IntelEventRecordPayload', _$failedField, e.toString());
+          r'IntelEventRecordPayload',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -56,8 +56,9 @@ class _$GeometrySerializer implements PrimitiveSerializer<Geometry> {
       yield r'coordinates';
       yield serializers.serialize(
         object.coordinates,
-        specifiedType:
-            const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType.nullable(JsonObject),
+        ]),
       );
     }
   }
@@ -68,9 +69,11 @@ class _$GeometrySerializer implements PrimitiveSerializer<Geometry> {
     Geometry object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -86,18 +89,23 @@ class _$GeometrySerializer implements PrimitiveSerializer<Geometry> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(GeometryTypeEnum),
-          ) as GeometryTypeEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(GeometryTypeEnum),
+                  )
+                  as GeometryTypeEnum;
           result.type = valueDes;
           break;
         case r'coordinates':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltList, [FullType.nullable(JsonObject)]),
-          ) as BuiltList<JsonObject?>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltList<JsonObject?>?;
           if (valueDes == null) continue;
           result.coordinates.replace(valueDes);
           break;

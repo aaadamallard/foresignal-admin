@@ -20,22 +20,22 @@ class _$TuningSuggestionList extends TuningSuggestionList {
   @override
   final String? jobId;
 
-  factory _$TuningSuggestionList(
-          [void Function(TuningSuggestionListBuilder)? updates]) =>
-      (TuningSuggestionListBuilder()..update(updates))._build();
+  factory _$TuningSuggestionList([
+    void Function(TuningSuggestionListBuilder)? updates,
+  ]) => (TuningSuggestionListBuilder()..update(updates))._build();
 
-  _$TuningSuggestionList._(
-      {required this.ruleId,
-      required this.since,
-      required this.suggesterVersion,
-      required this.suggestions,
-      this.simulationJobId,
-      this.jobId})
-      : super._();
+  _$TuningSuggestionList._({
+    required this.ruleId,
+    required this.since,
+    required this.suggesterVersion,
+    required this.suggestions,
+    this.simulationJobId,
+    this.jobId,
+  }) : super._();
   @override
   TuningSuggestionList rebuild(
-          void Function(TuningSuggestionListBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(TuningSuggestionListBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   TuningSuggestionListBuilder toBuilder() =>
@@ -145,14 +145,24 @@ class TuningSuggestionListBuilder
   _$TuningSuggestionList _build() {
     _$TuningSuggestionList _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$TuningSuggestionList._(
             ruleId: BuiltValueNullFieldError.checkNotNull(
-                ruleId, r'TuningSuggestionList', 'ruleId'),
+              ruleId,
+              r'TuningSuggestionList',
+              'ruleId',
+            ),
             since: BuiltValueNullFieldError.checkNotNull(
-                since, r'TuningSuggestionList', 'since'),
+              since,
+              r'TuningSuggestionList',
+              'since',
+            ),
             suggesterVersion: BuiltValueNullFieldError.checkNotNull(
-                suggesterVersion, r'TuningSuggestionList', 'suggesterVersion'),
+              suggesterVersion,
+              r'TuningSuggestionList',
+              'suggesterVersion',
+            ),
             suggestions: suggestions.build(),
             simulationJobId: simulationJobId,
             jobId: jobId,
@@ -164,7 +174,10 @@ class TuningSuggestionListBuilder
         suggestions.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'TuningSuggestionList', _$failedField, e.toString());
+          r'TuningSuggestionList',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

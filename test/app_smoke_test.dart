@@ -1,11 +1,13 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:foresignal_admin/app.dart';
+
+import 'support/test_app.dart';
 
 void main() {
-  testWidgets('the app starts and shows its title', (tester) async {
-    await tester.pumpWidget(const ProviderScope(child: ForeSignalAdminApp()));
+  testWidgets('the app starts on Connect when no backend is saved', (tester) async {
+    final container = testContainer(adapter: connectBackend());
+    addTearDown(container.dispose);
+    await tester.pumpWidget(testApp(container));
     await tester.pumpAndSettle();
-    expect(find.text(appTitle), findsOneWidget);
+    expect(find.text('Connect to ForeSignal'), findsOneWidget);
   });
 }

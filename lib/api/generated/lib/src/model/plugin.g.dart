@@ -17,10 +17,9 @@ PluginAbiEnum _$pluginAbiEnumValueOf(String name) {
   }
 }
 
-final BuiltSet<PluginAbiEnum> _$pluginAbiEnumValues =
-    BuiltSet<PluginAbiEnum>(const <PluginAbiEnum>[
-  _$pluginAbiEnum_number1,
-]);
+final BuiltSet<PluginAbiEnum> _$pluginAbiEnumValues = BuiltSet<PluginAbiEnum>(
+  const <PluginAbiEnum>[_$pluginAbiEnum_number1],
+);
 
 const PluginKindEnum _$pluginKindEnum_parser = const PluginKindEnum._('parser');
 
@@ -34,18 +33,20 @@ PluginKindEnum _$pluginKindEnumValueOf(String name) {
 }
 
 final BuiltSet<PluginKindEnum> _$pluginKindEnumValues =
-    BuiltSet<PluginKindEnum>(const <PluginKindEnum>[
-  _$pluginKindEnum_parser,
-]);
+    BuiltSet<PluginKindEnum>(const <PluginKindEnum>[_$pluginKindEnum_parser]);
 
-const PluginStateEnum _$pluginStateEnum_disabled =
-    const PluginStateEnum._('disabled');
-const PluginStateEnum _$pluginStateEnum_enabled =
-    const PluginStateEnum._('enabled');
-const PluginStateEnum _$pluginStateEnum_hashMismatch =
-    const PluginStateEnum._('hashMismatch');
-const PluginStateEnum _$pluginStateEnum_error =
-    const PluginStateEnum._('error');
+const PluginStateEnum _$pluginStateEnum_disabled = const PluginStateEnum._(
+  'disabled',
+);
+const PluginStateEnum _$pluginStateEnum_enabled = const PluginStateEnum._(
+  'enabled',
+);
+const PluginStateEnum _$pluginStateEnum_hashMismatch = const PluginStateEnum._(
+  'hashMismatch',
+);
+const PluginStateEnum _$pluginStateEnum_error = const PluginStateEnum._(
+  'error',
+);
 
 PluginStateEnum _$pluginStateEnumValueOf(String name) {
   switch (name) {
@@ -64,11 +65,11 @@ PluginStateEnum _$pluginStateEnumValueOf(String name) {
 
 final BuiltSet<PluginStateEnum> _$pluginStateEnumValues =
     BuiltSet<PluginStateEnum>(const <PluginStateEnum>[
-  _$pluginStateEnum_disabled,
-  _$pluginStateEnum_enabled,
-  _$pluginStateEnum_hashMismatch,
-  _$pluginStateEnum_error,
-]);
+      _$pluginStateEnum_disabled,
+      _$pluginStateEnum_enabled,
+      _$pluginStateEnum_hashMismatch,
+      _$pluginStateEnum_error,
+    ]);
 
 Serializer<PluginAbiEnum> _$pluginAbiEnumSerializer =
     _$PluginAbiEnumSerializer();
@@ -91,15 +92,20 @@ class _$PluginAbiEnumSerializer implements PrimitiveSerializer<PluginAbiEnum> {
   final String wireName = 'PluginAbiEnum';
 
   @override
-  Object serialize(Serializers serializers, PluginAbiEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PluginAbiEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PluginAbiEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PluginAbiEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PluginAbiEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PluginAbiEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PluginKindEnumSerializer
@@ -117,15 +123,20 @@ class _$PluginKindEnumSerializer
   final String wireName = 'PluginKindEnum';
 
   @override
-  Object serialize(Serializers serializers, PluginKindEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PluginKindEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PluginKindEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PluginKindEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PluginKindEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PluginKindEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PluginStateEnumSerializer
@@ -149,15 +160,20 @@ class _$PluginStateEnumSerializer
   final String wireName = 'PluginStateEnum';
 
   @override
-  Object serialize(Serializers serializers, PluginStateEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PluginStateEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
-  PluginStateEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PluginStateEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+  PluginStateEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PluginStateEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$Plugin extends Plugin {
@@ -189,20 +205,20 @@ class _$Plugin extends Plugin {
   factory _$Plugin([void Function(PluginBuilder)? updates]) =>
       (PluginBuilder()..update(updates))._build();
 
-  _$Plugin._(
-      {required this.name,
-      required this.version,
-      required this.abi,
-      required this.kind,
-      required this.sha256,
-      this.actualSha256,
-      required this.hashMatches,
-      required this.enabled,
-      required this.state,
-      this.error,
-      this.sourceIds,
-      this.loadedAt})
-      : super._();
+  _$Plugin._({
+    required this.name,
+    required this.version,
+    required this.abi,
+    required this.kind,
+    required this.sha256,
+    this.actualSha256,
+    required this.hashMatches,
+    required this.enabled,
+    required this.state,
+    this.error,
+    this.sourceIds,
+    this.loadedAt,
+  }) : super._();
   @override
   Plugin rebuild(void Function(PluginBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -359,24 +375,46 @@ class PluginBuilder implements Builder<Plugin, PluginBuilder> {
   _$Plugin _build() {
     _$Plugin _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$Plugin._(
-            name:
-                BuiltValueNullFieldError.checkNotNull(name, r'Plugin', 'name'),
+            name: BuiltValueNullFieldError.checkNotNull(
+              name,
+              r'Plugin',
+              'name',
+            ),
             version: BuiltValueNullFieldError.checkNotNull(
-                version, r'Plugin', 'version'),
+              version,
+              r'Plugin',
+              'version',
+            ),
             abi: BuiltValueNullFieldError.checkNotNull(abi, r'Plugin', 'abi'),
-            kind:
-                BuiltValueNullFieldError.checkNotNull(kind, r'Plugin', 'kind'),
+            kind: BuiltValueNullFieldError.checkNotNull(
+              kind,
+              r'Plugin',
+              'kind',
+            ),
             sha256: BuiltValueNullFieldError.checkNotNull(
-                sha256, r'Plugin', 'sha256'),
+              sha256,
+              r'Plugin',
+              'sha256',
+            ),
             actualSha256: actualSha256,
             hashMatches: BuiltValueNullFieldError.checkNotNull(
-                hashMatches, r'Plugin', 'hashMatches'),
+              hashMatches,
+              r'Plugin',
+              'hashMatches',
+            ),
             enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'Plugin', 'enabled'),
+              enabled,
+              r'Plugin',
+              'enabled',
+            ),
             state: BuiltValueNullFieldError.checkNotNull(
-                state, r'Plugin', 'state'),
+              state,
+              r'Plugin',
+              'state',
+            ),
             error: error,
             sourceIds: _sourceIds?.build(),
             loadedAt: loadedAt,
@@ -388,7 +426,10 @@ class PluginBuilder implements Builder<Plugin, PluginBuilder> {
         _sourceIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'Plugin', _$failedField, e.toString());
+          r'Plugin',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

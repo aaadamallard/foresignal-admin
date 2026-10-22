@@ -17,17 +17,20 @@ class _$IntelCorroborationAutoCorroborate
   @override
   final int? maxMembers;
 
-  factory _$IntelCorroborationAutoCorroborate(
-          [void Function(IntelCorroborationAutoCorroborateBuilder)? updates]) =>
-      (IntelCorroborationAutoCorroborateBuilder()..update(updates))._build();
+  factory _$IntelCorroborationAutoCorroborate([
+    void Function(IntelCorroborationAutoCorroborateBuilder)? updates,
+  ]) => (IntelCorroborationAutoCorroborateBuilder()..update(updates))._build();
 
-  _$IntelCorroborationAutoCorroborate._(
-      {this.enabled, this.withinKm, this.window, this.maxMembers})
-      : super._();
+  _$IntelCorroborationAutoCorroborate._({
+    this.enabled,
+    this.withinKm,
+    this.window,
+    this.maxMembers,
+  }) : super._();
   @override
   IntelCorroborationAutoCorroborate rebuild(
-          void Function(IntelCorroborationAutoCorroborateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(IntelCorroborationAutoCorroborateBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   IntelCorroborationAutoCorroborateBuilder toBuilder() =>
@@ -67,8 +70,10 @@ class _$IntelCorroborationAutoCorroborate
 
 class IntelCorroborationAutoCorroborateBuilder
     implements
-        Builder<IntelCorroborationAutoCorroborate,
-            IntelCorroborationAutoCorroborateBuilder> {
+        Builder<
+          IntelCorroborationAutoCorroborate,
+          IntelCorroborationAutoCorroborateBuilder
+        > {
   _$IntelCorroborationAutoCorroborate? _$v;
 
   bool? _enabled;
@@ -110,7 +115,8 @@ class IntelCorroborationAutoCorroborateBuilder
 
   @override
   void update(
-      void Function(IntelCorroborationAutoCorroborateBuilder)? updates) {
+    void Function(IntelCorroborationAutoCorroborateBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -118,7 +124,8 @@ class IntelCorroborationAutoCorroborateBuilder
   IntelCorroborationAutoCorroborate build() => _build();
 
   _$IntelCorroborationAutoCorroborate _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$IntelCorroborationAutoCorroborate._(
           enabled: enabled,
           withinKm: withinKm,

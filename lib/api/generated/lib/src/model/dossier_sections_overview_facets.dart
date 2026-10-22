@@ -17,8 +17,10 @@ part 'dossier_sections_overview_facets.g.dart';
 @BuiltValue()
 abstract class DossierSectionsOverviewFacets
     implements
-        Built<DossierSectionsOverviewFacets,
-            DossierSectionsOverviewFacetsBuilder> {
+        Built<
+          DossierSectionsOverviewFacets,
+          DossierSectionsOverviewFacetsBuilder
+        > {
   /// imagery | signals | reports | documents | sensor | social | other
   @BuiltValueField(wireName: r'byEvidenceClass')
   BuiltMap<String, int>? get byEvidenceClass;
@@ -28,9 +30,9 @@ abstract class DossierSectionsOverviewFacets
 
   DossierSectionsOverviewFacets._();
 
-  factory DossierSectionsOverviewFacets(
-          [void updates(DossierSectionsOverviewFacetsBuilder b)]) =
-      _$DossierSectionsOverviewFacets;
+  factory DossierSectionsOverviewFacets([
+    void updates(DossierSectionsOverviewFacetsBuilder b),
+  ]) = _$DossierSectionsOverviewFacets;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(DossierSectionsOverviewFacetsBuilder b) => b;
@@ -45,7 +47,7 @@ class _$DossierSectionsOverviewFacetsSerializer
   @override
   final Iterable<Type> types = const [
     DossierSectionsOverviewFacets,
-    _$DossierSectionsOverviewFacets
+    _$DossierSectionsOverviewFacets,
   ];
 
   @override
@@ -60,16 +62,20 @@ class _$DossierSectionsOverviewFacetsSerializer
       yield r'byEvidenceClass';
       yield serializers.serialize(
         object.byEvidenceClass,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
     if (object.bySource != null) {
       yield r'bySource';
       yield serializers.serialize(
         object.bySource,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(int)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(int),
+        ]),
       );
     }
   }
@@ -80,9 +86,11 @@ class _$DossierSectionsOverviewFacetsSerializer
     DossierSectionsOverviewFacets object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,20 +106,28 @@ class _$DossierSectionsOverviewFacetsSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'byEvidenceClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.byEvidenceClass.replace(valueDes);
           break;
         case r'bySource':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(
-                BuiltMap, [FullType(String), FullType(int)]),
-          ) as BuiltMap<String, int>?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType(int),
+                    ]),
+                  )
+                  as BuiltMap<String, int>?;
           if (valueDes == null) continue;
           result.bySource.replace(valueDes);
           break;

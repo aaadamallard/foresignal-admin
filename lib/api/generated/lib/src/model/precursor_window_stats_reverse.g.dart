@@ -14,17 +14,19 @@ class _$PrecursorWindowStatsReverse extends PrecursorWindowStatsReverse {
   @override
   final bool coMovement;
 
-  factory _$PrecursorWindowStatsReverse(
-          [void Function(PrecursorWindowStatsReverseBuilder)? updates]) =>
-      (PrecursorWindowStatsReverseBuilder()..update(updates))._build();
+  factory _$PrecursorWindowStatsReverse([
+    void Function(PrecursorWindowStatsReverseBuilder)? updates,
+  ]) => (PrecursorWindowStatsReverseBuilder()..update(updates))._build();
 
-  _$PrecursorWindowStatsReverse._(
-      {this.p, this.statistic, required this.coMovement})
-      : super._();
+  _$PrecursorWindowStatsReverse._({
+    this.p,
+    this.statistic,
+    required this.coMovement,
+  }) : super._();
   @override
   PrecursorWindowStatsReverse rebuild(
-          void Function(PrecursorWindowStatsReverseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PrecursorWindowStatsReverseBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PrecursorWindowStatsReverseBuilder toBuilder() =>
@@ -61,8 +63,10 @@ class _$PrecursorWindowStatsReverse extends PrecursorWindowStatsReverse {
 
 class PrecursorWindowStatsReverseBuilder
     implements
-        Builder<PrecursorWindowStatsReverse,
-            PrecursorWindowStatsReverseBuilder> {
+        Builder<
+          PrecursorWindowStatsReverse,
+          PrecursorWindowStatsReverseBuilder
+        > {
   _$PrecursorWindowStatsReverse? _$v;
 
   num? _p;
@@ -106,12 +110,16 @@ class PrecursorWindowStatsReverseBuilder
   PrecursorWindowStatsReverse build() => _build();
 
   _$PrecursorWindowStatsReverse _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         _$PrecursorWindowStatsReverse._(
           p: p,
           statistic: statistic,
           coMovement: BuiltValueNullFieldError.checkNotNull(
-              coMovement, r'PrecursorWindowStatsReverse', 'coMovement'),
+            coMovement,
+            r'PrecursorWindowStatsReverse',
+            'coMovement',
+          ),
         );
     replace(_$result);
     return _$result;

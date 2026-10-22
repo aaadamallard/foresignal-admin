@@ -20,8 +20,8 @@ EdpForecastItemTypeEnum _$edpForecastItemTypeEnumValueOf(String name) {
 
 final BuiltSet<EdpForecastItemTypeEnum> _$edpForecastItemTypeEnumValues =
     BuiltSet<EdpForecastItemTypeEnum>(const <EdpForecastItemTypeEnum>[
-  _$edpForecastItemTypeEnum_forecast,
-]);
+      _$edpForecastItemTypeEnum_forecast,
+    ]);
 
 Serializer<EdpForecastItemTypeEnum> _$edpForecastItemTypeEnumSerializer =
     _$EdpForecastItemTypeEnumSerializer();
@@ -41,16 +41,20 @@ class _$EdpForecastItemTypeEnumSerializer
   final String wireName = 'EdpForecastItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, EdpForecastItemTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    EdpForecastItemTypeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   EdpForecastItemTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      EdpForecastItemTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => EdpForecastItemTypeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$EdpForecastItem extends EdpForecastItem {
@@ -80,19 +84,19 @@ class _$EdpForecastItem extends EdpForecastItem {
   factory _$EdpForecastItem([void Function(EdpForecastItemBuilder)? updates]) =>
       (EdpForecastItemBuilder()..update(updates))._build();
 
-  _$EdpForecastItem._(
-      {required this.stream,
-      required this.type,
-      required this.id,
-      this.observedAt,
-      this.properties,
-      this.question,
-      this.questionRef,
-      this.probability,
-      this.quantiles,
-      required this.madeAt,
-      this.origin})
-      : super._();
+  _$EdpForecastItem._({
+    required this.stream,
+    required this.type,
+    required this.id,
+    this.observedAt,
+    this.properties,
+    this.question,
+    this.questionRef,
+    this.probability,
+    this.quantiles,
+    required this.madeAt,
+    this.origin,
+  }) : super._();
   @override
   EdpForecastItem rebuild(void Function(EdpForecastItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -244,14 +248,24 @@ class EdpForecastItemBuilder
   _$EdpForecastItem _build() {
     _$EdpForecastItem _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$EdpForecastItem._(
             stream: BuiltValueNullFieldError.checkNotNull(
-                stream, r'EdpForecastItem', 'stream'),
+              stream,
+              r'EdpForecastItem',
+              'stream',
+            ),
             type: BuiltValueNullFieldError.checkNotNull(
-                type, r'EdpForecastItem', 'type'),
+              type,
+              r'EdpForecastItem',
+              'type',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'EdpForecastItem', 'id'),
+              id,
+              r'EdpForecastItem',
+              'id',
+            ),
             observedAt: observedAt,
             properties: _properties?.build(),
             question: _question?.build(),
@@ -259,7 +273,10 @@ class EdpForecastItemBuilder
             probability: probability,
             quantiles: _quantiles?.build(),
             madeAt: BuiltValueNullFieldError.checkNotNull(
-                madeAt, r'EdpForecastItem', 'madeAt'),
+              madeAt,
+              r'EdpForecastItem',
+              'madeAt',
+            ),
             origin: _origin?.build(),
           );
     } catch (_) {
@@ -277,7 +294,10 @@ class EdpForecastItemBuilder
         _origin?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'EdpForecastItem', _$failedField, e.toString());
+          r'EdpForecastItem',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

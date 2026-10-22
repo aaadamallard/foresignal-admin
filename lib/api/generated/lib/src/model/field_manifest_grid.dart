@@ -65,35 +65,17 @@ class _$FieldManifestGridSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'nx';
-    yield serializers.serialize(
-      object.nx,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.nx, specifiedType: const FullType(int));
     yield r'ny';
-    yield serializers.serialize(
-      object.ny,
-      specifiedType: const FullType(int),
-    );
+    yield serializers.serialize(object.ny, specifiedType: const FullType(int));
     yield r'lo1';
-    yield serializers.serialize(
-      object.lo1,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.lo1, specifiedType: const FullType(num));
     yield r'la1';
-    yield serializers.serialize(
-      object.la1,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.la1, specifiedType: const FullType(num));
     yield r'dx';
-    yield serializers.serialize(
-      object.dx,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.dx, specifiedType: const FullType(num));
     yield r'dy';
-    yield serializers.serialize(
-      object.dy,
-      specifiedType: const FullType(num),
-    );
+    yield serializers.serialize(object.dy, specifiedType: const FullType(num));
   }
 
   @override
@@ -102,9 +84,11 @@ class _$FieldManifestGridSerializer
     FieldManifestGrid object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -120,45 +104,39 @@ class _$FieldManifestGridSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'nx':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.nx = valueDes;
           break;
         case r'ny':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.ny = valueDes;
           break;
         case r'lo1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.lo1 = valueDes;
           break;
         case r'la1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.la1 = valueDes;
           break;
         case r'dx':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.dx = valueDes;
           break;
         case r'dy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(num))
+                  as num;
           result.dy = valueDes;
           break;
         default:

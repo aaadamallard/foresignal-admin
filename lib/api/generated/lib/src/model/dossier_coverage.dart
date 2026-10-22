@@ -71,9 +71,11 @@ class _$DossierCoverageSerializer
     DossierCoverage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,17 +91,21 @@ class _$DossierCoverageSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DossierCoverageStatusEnum),
-          ) as DossierCoverageStatusEnum;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(DossierCoverageStatusEnum),
+                  )
+                  as DossierCoverageStatusEnum;
           result.status = valueDes;
           break;
         case r'stats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType.nullable(CoverageStats),
-          ) as CoverageStats?;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(CoverageStats),
+                  )
+                  as CoverageStats?;
           if (valueDes == null) continue;
           result.stats.replace(valueDes);
           break;

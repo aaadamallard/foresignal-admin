@@ -23,14 +23,15 @@ PairingCodeCreatedScopeEnum _$pairingCodeCreatedScopeEnumValueOf(String name) {
 }
 
 final BuiltSet<PairingCodeCreatedScopeEnum>
-    _$pairingCodeCreatedScopeEnumValues =
-    BuiltSet<PairingCodeCreatedScopeEnum>(const <PairingCodeCreatedScopeEnum>[
-  _$pairingCodeCreatedScopeEnum_read,
-  _$pairingCodeCreatedScopeEnum_agent,
-]);
+_$pairingCodeCreatedScopeEnumValues = BuiltSet<PairingCodeCreatedScopeEnum>(
+  const <PairingCodeCreatedScopeEnum>[
+    _$pairingCodeCreatedScopeEnum_read,
+    _$pairingCodeCreatedScopeEnum_agent,
+  ],
+);
 
 Serializer<PairingCodeCreatedScopeEnum>
-    _$pairingCodeCreatedScopeEnumSerializer =
+_$pairingCodeCreatedScopeEnumSerializer =
     _$PairingCodeCreatedScopeEnumSerializer();
 
 class _$PairingCodeCreatedScopeEnumSerializer
@@ -50,16 +51,20 @@ class _$PairingCodeCreatedScopeEnumSerializer
   final String wireName = 'PairingCodeCreatedScopeEnum';
 
   @override
-  Object serialize(Serializers serializers, PairingCodeCreatedScopeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    PairingCodeCreatedScopeEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   PairingCodeCreatedScopeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      PairingCodeCreatedScopeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => PairingCodeCreatedScopeEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$PairingCodeCreated extends PairingCodeCreated {
@@ -90,29 +95,29 @@ class _$PairingCodeCreated extends PairingCodeCreated {
   @override
   final String qrPayload;
 
-  factory _$PairingCodeCreated(
-          [void Function(PairingCodeCreatedBuilder)? updates]) =>
-      (PairingCodeCreatedBuilder()..update(updates))._build();
+  factory _$PairingCodeCreated([
+    void Function(PairingCodeCreatedBuilder)? updates,
+  ]) => (PairingCodeCreatedBuilder()..update(updates))._build();
 
-  _$PairingCodeCreated._(
-      {required this.id,
-      required this.name,
-      required this.scope,
-      this.restrictions,
-      this.principalId,
-      this.privateAccess,
-      required this.createdAt,
-      required this.expiresAt,
-      this.createdByTokenId,
-      this.claimedAt,
-      this.claimedTokenId,
-      required this.code,
-      required this.qrPayload})
-      : super._();
+  _$PairingCodeCreated._({
+    required this.id,
+    required this.name,
+    required this.scope,
+    this.restrictions,
+    this.principalId,
+    this.privateAccess,
+    required this.createdAt,
+    required this.expiresAt,
+    this.createdByTokenId,
+    this.claimedAt,
+    this.claimedTokenId,
+    required this.code,
+    required this.qrPayload,
+  }) : super._();
   @override
   PairingCodeCreated rebuild(
-          void Function(PairingCodeCreatedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(PairingCodeCreatedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   PairingCodeCreatedBuilder toBuilder() =>
@@ -279,28 +284,50 @@ class PairingCodeCreatedBuilder
   _$PairingCodeCreated _build() {
     _$PairingCodeCreated _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$PairingCodeCreated._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'PairingCodeCreated', 'id'),
+              id,
+              r'PairingCodeCreated',
+              'id',
+            ),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'PairingCodeCreated', 'name'),
+              name,
+              r'PairingCodeCreated',
+              'name',
+            ),
             scope: BuiltValueNullFieldError.checkNotNull(
-                scope, r'PairingCodeCreated', 'scope'),
+              scope,
+              r'PairingCodeCreated',
+              'scope',
+            ),
             restrictions: _restrictions?.build(),
             principalId: principalId,
             privateAccess: privateAccess,
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'PairingCodeCreated', 'createdAt'),
+              createdAt,
+              r'PairingCodeCreated',
+              'createdAt',
+            ),
             expiresAt: BuiltValueNullFieldError.checkNotNull(
-                expiresAt, r'PairingCodeCreated', 'expiresAt'),
+              expiresAt,
+              r'PairingCodeCreated',
+              'expiresAt',
+            ),
             createdByTokenId: createdByTokenId,
             claimedAt: claimedAt,
             claimedTokenId: claimedTokenId,
             code: BuiltValueNullFieldError.checkNotNull(
-                code, r'PairingCodeCreated', 'code'),
+              code,
+              r'PairingCodeCreated',
+              'code',
+            ),
             qrPayload: BuiltValueNullFieldError.checkNotNull(
-                qrPayload, r'PairingCodeCreated', 'qrPayload'),
+              qrPayload,
+              r'PairingCodeCreated',
+              'qrPayload',
+            ),
           );
     } catch (_) {
       late String _$failedField;
@@ -309,7 +336,10 @@ class PairingCodeCreatedBuilder
         _restrictions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'PairingCodeCreated', _$failedField, e.toString());
+          r'PairingCodeCreated',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

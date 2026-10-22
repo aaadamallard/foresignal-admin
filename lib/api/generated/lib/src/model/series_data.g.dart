@@ -36,12 +36,12 @@ SeriesDataFrequencyEnum _$seriesDataFrequencyEnumValueOf(String name) {
 
 final BuiltSet<SeriesDataFrequencyEnum> _$seriesDataFrequencyEnumValues =
     BuiltSet<SeriesDataFrequencyEnum>(const <SeriesDataFrequencyEnum>[
-  _$seriesDataFrequencyEnum_hour,
-  _$seriesDataFrequencyEnum_day,
-  _$seriesDataFrequencyEnum_week,
-  _$seriesDataFrequencyEnum_month,
-  _$seriesDataFrequencyEnum_irregular,
-]);
+      _$seriesDataFrequencyEnum_hour,
+      _$seriesDataFrequencyEnum_day,
+      _$seriesDataFrequencyEnum_week,
+      _$seriesDataFrequencyEnum_month,
+      _$seriesDataFrequencyEnum_irregular,
+    ]);
 
 Serializer<SeriesDataFrequencyEnum> _$seriesDataFrequencyEnumSerializer =
     _$SeriesDataFrequencyEnumSerializer();
@@ -69,16 +69,20 @@ class _$SeriesDataFrequencyEnumSerializer
   final String wireName = 'SeriesDataFrequencyEnum';
 
   @override
-  Object serialize(Serializers serializers, SeriesDataFrequencyEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
+  Object serialize(
+    Serializers serializers,
+    SeriesDataFrequencyEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
 
   @override
   SeriesDataFrequencyEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      SeriesDataFrequencyEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => SeriesDataFrequencyEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
 }
 
 class _$SeriesData extends SeriesData {
@@ -106,18 +110,18 @@ class _$SeriesData extends SeriesData {
   factory _$SeriesData([void Function(SeriesDataBuilder)? updates]) =>
       (SeriesDataBuilder()..update(updates))._build();
 
-  _$SeriesData._(
-      {required this.ref,
-      required this.from,
-      required this.to,
-      this.asOf,
-      required this.frequency,
-      this.unit,
-      this.family,
-      required this.valuesWithheld,
-      required this.points,
-      required this.gaps})
-      : super._();
+  _$SeriesData._({
+    required this.ref,
+    required this.from,
+    required this.to,
+    this.asOf,
+    required this.frequency,
+    this.unit,
+    this.family,
+    required this.valuesWithheld,
+    required this.points,
+    required this.gaps,
+  }) : super._();
   @override
   SeriesData rebuild(void Function(SeriesDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -259,20 +263,33 @@ class SeriesDataBuilder implements Builder<SeriesData, SeriesDataBuilder> {
   _$SeriesData _build() {
     _$SeriesData _$result;
     try {
-      _$result = _$v ??
+      _$result =
+          _$v ??
           _$SeriesData._(
             ref: BuiltValueNullFieldError.checkNotNull(
-                ref, r'SeriesData', 'ref'),
+              ref,
+              r'SeriesData',
+              'ref',
+            ),
             from: BuiltValueNullFieldError.checkNotNull(
-                from, r'SeriesData', 'from'),
+              from,
+              r'SeriesData',
+              'from',
+            ),
             to: BuiltValueNullFieldError.checkNotNull(to, r'SeriesData', 'to'),
             asOf: asOf,
             frequency: BuiltValueNullFieldError.checkNotNull(
-                frequency, r'SeriesData', 'frequency'),
+              frequency,
+              r'SeriesData',
+              'frequency',
+            ),
             unit: unit,
             family: family,
             valuesWithheld: BuiltValueNullFieldError.checkNotNull(
-                valuesWithheld, r'SeriesData', 'valuesWithheld'),
+              valuesWithheld,
+              r'SeriesData',
+              'valuesWithheld',
+            ),
             points: points.build(),
             gaps: gaps.build(),
           );
@@ -285,7 +302,10 @@ class SeriesDataBuilder implements Builder<SeriesData, SeriesDataBuilder> {
         gaps.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'SeriesData', _$failedField, e.toString());
+          r'SeriesData',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
